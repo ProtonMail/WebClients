@@ -242,10 +242,10 @@
         "Continuar con Outlook"
       ],
       "Copy '${ code }' to clipboard": [
-        "Copiar '${ code }' al portapapeles"
+        "Copiar «${ code }» al portapapeles"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "Copiar '${ code }' al portapapeles y mover a la papelera"
+        "Copiar «${ code }» al portapapeles y mover a la Papelera"
       ],
       "Copy address": [
         "Copiar la dirección"
@@ -970,7 +970,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Try again": [
         "Volver a intentar"
@@ -3876,10 +3877,10 @@
         "Para continuar recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, reconecte sus cuentas."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a su suscripción."
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádalo a su suscripción."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administración."
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administrador."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
@@ -4807,7 +4808,7 @@
         "No se procesará la importación."
       ],
       "No drive found to import": [
-        "No se ha encontrado ninguna unidad para importar"
+        "No se encontró ninguna unidad para importar"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
@@ -5414,6 +5415,9 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -6245,7 +6249,7 @@
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } le ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+        "${ LUMO_SHORT_APP_NAME } le ayuda a usted a redactar mejores correos electrónicos de forma rápida y sin esfuerzo."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Panel de ${ LUMO_SHORT_APP_NAME }"
@@ -6891,8 +6895,7 @@
         "Heredada de la carpeta padre"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7745,7 +7748,7 @@
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
       ],
       "${ boldBulkDelete }, archive, or move old emails to a folder.": [
         "${ boldBulkDelete }, archive o mueva los correos electrónicos antiguos a una carpeta."
@@ -8728,6 +8731,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } ahora clasifica automáticamente sus correos electrónicos en categorías como Principal, Social, Promociones y más, ayudándole a encontrar y gestionar mensajes con mayor facilidad."
+      ],
+      "Private by design.": [
+        "Privado por diseño."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Tiene ${ totalLabel } en su bandeja de entrada."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Tiene **${ count } conversación** en la categoría ${ categoryLabel }",
+        "Tiene **${ count } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Tiene **${ count } mensaje** en la categoría ${ categoryLabel }",
+        "Tiene **${ count } mensajes** en la categoría ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "No tiene conversaciones en esta categoría"
+      ],
+      "You have no messages in this category": [
+        "No tiene mensajes en esta categoría"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Seleccionó **${ checked } conversación** en la categoría ${ categoryLabel }",
+        "Seleccionó **${ checked } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Seleccionó **${ checked } mensaje** en la categoría ${ categoryLabel }",
+        "Seleccionó **${ checked } mensajes** en la categoría ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9276,7 +9310,7 @@
         "Extremadamente satisfactoria"
       ],
       "Filter": [
-        "Filtro"
+        "Filtrar"
       ],
       "Filter Name": [
         "Nombre del filtro"
@@ -9342,7 +9376,7 @@
         "Importar a:"
       ],
       "Import your emails": [
-        "Importar sus correos electrónicos"
+        "Importe sus correos electrónicos"
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
@@ -9873,6 +9907,27 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletines: noticias, correos editoriales y contenido no promocional"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal: correos personales y laborales más actualizaciones importantes"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promociones: ofertas, descuentos y correos de mercadeo"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social: actualizaciones de redes sociales, actividad y mensajes"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transacciones: recibos, reservas, facturas y órdenes"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Actualizaciones: confirmaciones automáticas, alertas y actualizaciones de cuenta"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10177,6 +10232,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesita reactivar las claves para ver la invitación actualizada"
+      ],
+      "Learn more.": [
+        "Más información."
       ]
     },
     "Loading info": {
@@ -12465,28 +12523,28 @@
         "Comience a escribir una dirección de correo"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Dígale a ${ subject } qué escribir. Ejemplo: “Anunciar próximos eventos en un boletín”"
+        "Dígale a ${ subject } qué escribir. Por ejemplo: «Anunciar los próximos eventos en un boletín»"
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Dígale a ${ subject } qué escribir. Ejemplo: “Cancelar mi suscripción al gimnasio”"
+        "Indique a ${ subject } qué escribir. Por ejemplo: «Cancelar mi suscripción al gimnasio»"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Dígale a ${ subject } qué escribir. Ejemplo: “Invitar a Ana a mi fiesta”"
+        "Indique a ${ subject } qué escribir. Por ejemplo: «Invitar a Ana a mi fiesta»"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Dígale a ${ subject } qué escribir. Ejemplo: “Agradecer a mi compañero de trabajo por su ayuda en un proyecto”"
+        "Dígale a ${ subject } qué escribir. Por ejemplo: «Agradecer a mi compañero de trabajo por su ayuda en un proyecto»"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
-        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
+        "Indíquele a ${ subject } qué escribir. Por ejemplo: «Escribir una carta de presentación para unas prácticas»"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+        "Dígale a ${ subject } qué escribir. Por ejemplo: «Escribir un correo de seguimiento a un cliente»"
       ],
       "Text": [
         "Texto"
       ],
       "the writing assistant": [
-        "El asistente de escritura"
+        "el asistente de escritura"
       ],
       "Thomas": [
         "Andrea"
@@ -14035,7 +14093,7 @@
         "Conversación eliminada"
       ],
       "Copied '${ code }' to clipboard": [
-        "Se ha copiado '${ code }' al portapapeles"
+        "Se copió «${ code }» al portapapeles"
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -14245,6 +14303,10 @@
       ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Movido a ${ label }. Los mensajes similares se categorizarán aquí en el futuro.",
+        "Movido a ${ label }. Los mensajes similares se categorizarán aquí en el futuro."
       ]
     },
     "Success notification": {
@@ -14590,7 +14652,7 @@
         "Cupón"
       ],
       "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
-        "Redacte mejores correos con ${ LUMO_SHORT_APP_NAME }"
+        "Redacte mejores correos electrónicos con ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create contact": [
         "Crear contacto"
@@ -15497,6 +15559,9 @@
       ],
       "Your newsletters in one place": [
         "Sus boletines en un solo lugar"
+      ],
+      "Your inbox, automatically organized": [
+        "Su bandeja de entrada, organizada automáticamente"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15548,7 +15613,7 @@
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
+        "¡Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Load image": [
         "Cargar imagen"

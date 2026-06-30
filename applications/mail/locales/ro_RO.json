@@ -2451,7 +2451,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicatele din importurile anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
+        "Duplicatele din importările anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4291,7 +4291,7 @@
         "Pentru acces nelimitat la asistentul de scriere și nu numai, achiziționați ${ BRAND_NAME } Duo."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Pentru acces nelimitat la asistentul de scriere și nu numai, achiziționați ${ LUMO_SHORT_APP_NAME }."
+        "Pentru acces nelimitat la asistentul de scriere și nu numai, treceți la ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
@@ -4370,7 +4370,7 @@
         "Pentru a continua să utilizați ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, adăugați-l la abonamentul actual."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Pentru a continua să utilizați ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, solicitați acces de la administrator."
+        "Pentru a continua să utilizați ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, solicitați acces de la administratorul organizației."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pentru a continua să utilizați asistentul de scriere, adăugați-l la abonament."
@@ -4421,7 +4421,7 @@
         "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Se vor importa mesajele vechi și sincroniza mesajele noi din Gmail de acum încolo."
+        "Se vor importa mesajele vechi și de acum înainte se vor sincroniza mesajele noi din Gmail."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
@@ -5983,6 +5983,9 @@
       ],
       "Security key": [
         "Cheie de securitate"
+      ],
+      "Touch your security key.": [
+        "Atingeți cheia de securitate."
       ]
     },
     "fido2: Label": {
@@ -7954,9 +7957,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9448,6 +9449,41 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } vă sortează acum automat mesajele în categorii precum Principal, Social, Promoții și altele, ajutându-vă să găsiți și să le gestionați mai ușor."
+      ],
+      "Private by design.": [
+        "Privat prin design."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "În „Primite” aveți: ${ totalLabel }"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**",
+        "Conversații existente în categoria ${ categoryLabel }: **${ count }**"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**",
+        "Mesaje existente în categoria ${ categoryLabel }: **${ count }**"
+      ],
+      "You have no conversations in this category": [
+        "Nu aveți conversații în această categorie"
+      ],
+      "You have no messages in this category": [
+        "Nu aveți mesaje în această categorie"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Conversații selectate din categoria ${ categoryLabel }: **${ checked }**"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**",
+        "Mesaje selectate din categoria ${ categoryLabel }: **${ checked }**"
       ]
     },
     "info": {
@@ -10221,7 +10257,7 @@
         "Loc"
       ],
       "Mail debugging information": [
-        "Informații de depanare a e-mailurilor"
+        "Informații de depanare a e-mailului"
       ],
       "Mail logs": [
         "Jurnal mesaje"
@@ -10609,6 +10645,24 @@
       ],
       "Category:": [
         "Categoria:"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Buletine informative - Știri, e-mailuri editoriale și conținut nepromoțional"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal - Adrese de e-mail personale și de serviciu, plus actualizări importante"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoții - Oferte, promoții și e-mailuri de marketing"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Actualizări de pe rețelele sociale, activitate și mesaje"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Tranzacții - Chitanțe, înregistrări, facturi și comenzi"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Actualizări - Confirmări automate, alerte și actualizări ale contului"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10953,6 +11007,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Learn more.": [
+        "Detalii."
       ]
     },
     "Link to calendar event": {
@@ -15457,6 +15514,11 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "S-a mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor.",
+        "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise aici în viitor."
       ]
     },
     "Success notification": {
@@ -16767,6 +16829,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Your inbox, automatically organized": [
+        "Contul de e-mail, organizată automat"
       ]
     },
     "Today icon tooltip in mini calendar": {

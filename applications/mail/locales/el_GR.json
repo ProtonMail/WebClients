@@ -332,7 +332,7 @@
         "Αντιγραφή του '${ code }' στο πρόχειρο"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "Αντιγραφή του '${ code }' στο πρόχειρο και μετακίνηση στον Κάδο Απορριμμάτων"
+        "Αντιγραφή του '${ code }' στο πρόχειρο και μετακίνηση στον Κάδο απορριμμάτων"
       ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
@@ -1526,7 +1526,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5933,6 +5934,9 @@
       ],
       "Security key": [
         "Κλειδί ασφαλείας"
+      ],
+      "Touch your security key.": [
+        "Αγγίξτε το κλειδί ασφαλείας σας."
       ]
     },
     "fido2: Label": {
@@ -6844,7 +6848,7 @@
         "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "Το ${ LUMO_SHORT_APP_NAME } σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου γρήγορα και ξεκούραστα."
+        "Το ${ LUMO_SHORT_APP_NAME } σάς βοηθά να δημιουργείτε καλύτερα email γρήγορα και ξεκούραστα."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } πίνακας"
@@ -7823,8 +7827,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9295,6 +9298,12 @@
       ],
       "All your files will be imported": [
         "Όλα τα αρχεία σας θα εισαχθούν"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "Το ${ MAIL_APP_NAME } ταξινομεί πλέον αυτόματα τα email σας σε κατηγορίες όπως Κύριος, Κοινωνικά, Προσφορές και άλλες, βοηθώντας σας να βρείτε και να κάνετε διαχείριση μηνυμάτων πιο εύκολα."
+      ],
+      "Private by design.": [
+        "Ιδιωτικό εξ αρχής."
       ]
     },
     "info": {
@@ -10243,7 +10252,7 @@
         "Παραλήπτης"
       ],
       "Refresh logs": [
-        "Ανανεώστε τα αρχεία καταγραφής"
+        "Ανανέωση αρχείων καταγραφής"
       ],
       "Region": [
         "Περιοχή"
@@ -10792,6 +10801,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "Learn more.": [
+        "Μάθετε περισσότερα."
       ]
     },
     "Link to calendar event": {
@@ -13182,7 +13194,7 @@
         "Θέμα"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ανακοινώστε επερχόμενα γεγονότα σε ένα ενημερωτικό δελτίο\""
+        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ανακοινώστε επερχόμενα συμβάντα σε ένα ενημερωτικό δελτίο\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
         "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ακύρωσε τη συνδρομή μου στο γυμναστήριο\""
@@ -13191,13 +13203,13 @@
         "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Προσκάλεσε την Ιωάννα στο πάρτι μου\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ευχαρίστησε το συνάδελφό μου για τη βοήθειά του σε ένα έργο\""
+        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: «Ευχαριστήστε τον συνάδελφό μου για τη βοήθειά του σε ένα έργο»"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
-        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Γράψε μια συνοδευτική επιστολή για πρακτική άσκηση\""
+        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Γράψτε μια συνοδευτική επιστολή για πρακτική άσκηση\""
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Γράψε ένα απαντητικό μήνυμα ηλεκτρονικού ταχυδρομείου σε έναν πελάτη\""
+        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: «Γράψτε ένα email παρακολούθησης σε έναν πελάτη»"
       ],
       "Text": [
         "Κείμενο"
@@ -15595,7 +15607,7 @@
         "Δημιουργήστε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
       "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
-        "Δημιουργήστε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου με το ${ LUMO_SHORT_APP_NAME }"
+        "Δημιουργήστε καλύτερα email με το ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create contact": [
         "Δημιουργία επαφής"
@@ -16460,6 +16472,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Your inbox, automatically organized": [
+        "Τα εισερχόμενά σας, αυτόματα οργανωμένα"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1728,7 +1728,8 @@
         "Mostrar assistente de escrita ${ BRAND_NAME } Scribe"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ]
     },
     "action": {
@@ -4435,6 +4436,21 @@
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Se uma mensagem aparecer na categoria errada, basta movê-la para a correta. Clique com o botão direito em uma mensagem para escolher uma nova categoria ou use o recurso de arrastar e soltar para onde ela pertence."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para continuar a usar o ${ LUMO_SHORT_APP_NAME } no ${ MAIL_APP_NAME }, adicione-o à sua assinatura."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para continuar a usar o ${ LUMO_SHORT_APP_NAME } no ${ MAIL_APP_NAME }, solicite acesso ao seu administrador."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Você é um dos primeiros a testar nossa nova visualização por categorias antes do lançamento. Seu feedback ajudará a melhorar a forma como o Proton Mail organiza os e-mails para todos."
       ]
     },
     "description": {
@@ -5375,7 +5391,7 @@
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "VAT number must start with ${ prefixes }": [
-        "O número de IVA deve começar por ${ prefixes }"
+        "O número de IVA deve começar com ${ prefixes }"
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
@@ -5426,6 +5442,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de reverse charge não é suportado para este plano"
       ]
     },
     "error": {
@@ -5886,6 +5908,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -6797,7 +6822,7 @@
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } ajuda você a elaborar melhores e-mails de forma rápida e sem esforço."
+        "O ${ LUMO_SHORT_APP_NAME } ajuda você a elaborar e-mails melhores de forma rápida e sem esforço."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Painel do ${ LUMO_SHORT_APP_NAME }"
@@ -7773,8 +7798,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8677,7 +8701,7 @@
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
-        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
+        "Para ajudar você a lembrar sua senha, pediremos que você a insira periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
@@ -9233,6 +9257,24 @@
       ],
       "All your files will be imported": [
         "Todos os seus arquivos serão importados"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "O ${ MAIL_APP_NAME } agora organiza automaticamente seus e-mails em categorias como Principal, Social, Promoções e outras, ajudando você a encontrar e gerenciar mensagens com mais facilidade."
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecione os marcadores que você deseja importar:"
+      ],
+      "Private by design.": [
+        "Privado por design."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporariamente indisponível devido à alta demanda. Tente novamente mais tarde."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Lembriremos você de verificar sua senha novamente mais tarde"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
       ]
     },
     "info": {
@@ -9302,6 +9344,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signatário ativo"
       ]
     },
     "Key pinning": {
@@ -10727,6 +10772,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Learn more.": [
+        "Saiba mais."
       ]
     },
     "Link to calendar event": {
@@ -12807,6 +12855,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "O mecanismo de reverse charge de IVA se aplica."
       ]
     },
     "Payments.Error": {
@@ -12952,6 +13003,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
+      ],
+      "This contact currently signs messages with this key": [
+        "Este contato assina atualmente as mensagens com esta chave"
       ]
     },
     "PGP key warning": {
@@ -13117,13 +13171,13 @@
         "Assunto"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Diga ao ${ subject } o que deve ser escrito. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
+        "Diga ao ${ subject } o que escrever. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Diga ao ${ subject } o que escrever. Exemplo: \"Cancelar minha inscrição na academia\"."
+        "Diga ao ${ subject } o que escrever. Exemplo: \"Cancelar minha inscrição na academia\""
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Diga ao ${ subject } o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
+        "Diga ao ${ subject } o que escrever. Exemplo: “Convide a Joana para minha festa”"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
         "Diga ao ${ subject } o que escrever. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
@@ -13132,13 +13186,13 @@
         "Diga ao ${ subject } o que deve ser escrito. Exemplo: ”Escrever uma carta de apresentação para um estágio”"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Diga ao ${ subject } o que deve ser escrito. Exemplo: ”Escreva um email de acompanhamento para um cliente”"
+        "Diga ao ${ subject } o que escrever. Exemplo: “Escreva um e-mail de acompanhamento para um cliente”"
       ],
       "Text": [
         "Texto"
       ],
       "the writing assistant": [
-        "O assistente de escrita"
+        "o assistente de escrita"
       ],
       "Thomas": [
         "Andrea"
@@ -16392,6 +16446,12 @@
       ],
       "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
         "Ajude a moldar o futuro das categorias de e-mail do ${ MAIL_APP_NAME }"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Crie e-mails melhores com o ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Your inbox, automatically organized": [
+        "Sua caixa de entrada, organizada automaticamente"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1694,6 +1694,36 @@
       ],
       "Your email writing assistant": [
         "メール執筆アシスタント"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "'${ code }'をクリップボードにコピー"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "'${ code }'をクリップボードにコピーしてごみ箱に移動"
+      ],
+      "Hide ${ title }": [
+        "${ title }を隠す"
+      ],
+      "Move to category...": [
+        "カテゴリに移動…"
+      ],
+      "Or remove forwarding address": [
+        "または転送先アドレスを削除する"
+      ],
+      "Show ${ title }": [
+        "${ title }を表示"
+      ],
+      "Start testing": [
+        "テストを開始"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
+      "Verify now": [
+        "今すぐ検証"
       ]
     },
     "action": {
@@ -2148,6 +2178,9 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "Contact your administrator to start a migration.": [
+        "移行を開始するには管理者に連絡してください。"
       ]
     },
     "Browser": {
@@ -3861,6 +3894,9 @@
       ],
       "Åland Islands": [
         "オーランド諸島"
+      ],
+      "Canary Islands": [
+        "カナリア諸島"
       ]
     },
     "customer_support.feature.all": {
@@ -4048,7 +4084,7 @@
         "${ BRAND_NAME }のパスワードを忘れても、アカウントとデータにアクセスできることを確認してください。"
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "執筆アシスタントなどを無制限に利用するには、${ LUMO_SHORT_APP_NAME } にアップグレードしましょう。"
+        "執筆アシスタントなどを無制限に利用するには、${ LUMO_SHORT_APP_NAME } にアップグレードしてください。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
@@ -4105,7 +4141,7 @@
         "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "${ MAIL_APP_NAME }内で${ LUMO_SHORT_APP_NAME }を使い続けるには、管理者にアクセスを頼んでください。"
+        "${ MAIL_APP_NAME } で ${ LUMO_SHORT_APP_NAME } を引き続き利用するには、管理者にアクセス権を申請してください。"
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "アカウントを可能な限り高度に保護するためには、回復用フレーズを設定してください。"
@@ -4244,6 +4280,18 @@
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "${ forwardingCount }件のGmailアドレスからメールを転送しています。接続することで、${ MAIL_APP_NAME }で受信および返信ができるようになります"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "チームを ${ BRAND_NAME } へスムーズにオンボーディングさせるために、Google、Outlookなどのサービスからデータをインポートしてください。"
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "メッセージが誤ったカテゴリに表示された場合は、正しいカテゴリに移動してください。メッセージを右クリックして新しいカテゴリを選択するか、ドラッグ＆ドロップで適切な場所に移動できます。"
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "${ MAIL_APP_NAME }で${ LUMO_SHORT_APP_NAME }を引き続き利用するには、サブスクリプションに追加してください。"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Proton Mailの新機能であるカテゴリビューが正式リリースされる前に、いち早くお試しいただけます。お客様からのフィードバックは、Proton Mailのメール分類機能の改善に役立てられます。"
       ]
     },
     "description": {
@@ -4374,6 +4422,9 @@
     "Easy switch": {
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "お客様は外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
       ]
     },
     "Edit billing address form note": {
@@ -5163,6 +5214,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "Address could not be added.": [
+        "アドレスを追加できませんでした。"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "サブスクリプションデータの読み込みに失敗しました。後ほどもう一度お試しください。"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "ABNが越境VATの対象として登録されているかご確認ください"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "このプランではリバースチャージ制度はサポートされていません"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "VAT番号は ${ prefixes } で始まる必要があります"
       ]
     },
     "error": {
@@ -5610,6 +5676,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "お客様の ${ BRAND_NAME } アカウントにリンクされたセキュリティキーを挿入してください。"
+      ],
+      "Touch your security key.": [
+        "セキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -5660,6 +5729,18 @@
       ],
       "Reset": [
         "リセット"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "フィルター (${ activeState.dropdownActiveCount })"
+      ],
+      "Has attachments": [
+        "添付ファイルあり"
+      ],
+      "Read": [
+        "既読"
+      ],
+      "Unread": [
+        "未読"
       ]
     },
     "Filter Actions": {
@@ -5901,6 +5982,9 @@
       ],
       "You've unlocked 1 GB": [
         "1GBのロックを解除しました"
+      ],
+      "Review import options": [
+        "インポートオプションを確認する"
       ]
     },
     "Gmail forwarding": {
@@ -5996,6 +6080,9 @@
       ],
       "Tell us more": [
         "より詳しく教えてください"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 執筆アシスタントのセットアップ"
       ]
     },
     "Hint": {
@@ -6314,6 +6401,9 @@
     "Import provider": {
       "Import from ${ providerName }": [
         "${ providerName } からインポート"
+      ],
+      "More import options": [
+        "その他のインポートオプション"
       ]
     },
     "Import warning": {
@@ -8757,6 +8847,69 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } を使用すると、お客様はより良いメールを迅速かつ簡単に作成できます。"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME }では、プライマリー、ソーシャル、プロモーションなどのカテゴリにメールが自動的に分類されるようになり、メッセージの検索や管理がより簡単になりました。"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME }は、エンドツーエンド暗号化ビデオ会議ソリューションです。プランに追加すると、安全な会議を開催できます。"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }はトラフィックを隠します。${ PASS_SHORT_APP_NAME }はユーザー情報を隠します\n— 無制限の **hide-my-email エイリアス**およびデータ漏洩が発生した場合の**ダークウェブ通知**。"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "紹介リンクを使って、**${ BRAND_NAME }に友達を招待しましょう**。"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "友達が登録すると、その友達は**${ refereeRewardAmount }**分のクレジットを獲得できます。"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "友達が登録するたびに、クレジットとして**${ referrerRewardAmount }**を獲得できます。"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
+      ],
+      "Automatically sort incoming emails into categories": [
+        "受信したメールを自動的にカテゴリへ振り分けます"
+      ],
+      "Choose your service to connect with": [
+        "接続するサービスを選択してください"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "パスワードを覚えていますか？ ${ verifyButton }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "${ bundlePlanPriceInline }のみ"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
+      "Password verified": [
+        "パスワードを確認しました"
+      ],
+      "Please select the labels you would like to import:": [
+        "インポートするラベルを選択してください："
+      ],
+      "Private by design.": [
+        "設計からプライベートに。"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "現在アクセスが集中しているため、一時的にご利用いただけません。後ほど再度お試しください。"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "パスワードを忘れないよう、定期的に入力をお願いしております。入力の頻度は徐々に少なくなります。"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "「${ activeSignerText }」キーを信頼して、この連絡先からの新規メッセージを検証します。"
+      ],
+      "We'll remind you to verify your password again later": [
+        "パスワードの確認は、後ほど改めてお願いすることになります"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "現在、お客様のアカウントはリバースチャージ制度を適用するように構成されていますが、これは選択されたプランではサポートされていません。手続きを進めるには、請求先住所からVAT番号を削除するか、別のプランを選択してください。"
       ]
     },
     "info": {
@@ -8820,6 +8973,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "アクティブな署名鍵"
+      ],
+      "Fallback": [
+        "フォールバック"
       ]
     },
     "Key pinning": {
@@ -9837,6 +9996,57 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "${ truncatedName }の登録を解除しました。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } ライティングアシスタント"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 文字"
+      ],
+      "Clear logs": [
+        "ログをクリア"
+      ],
+      "Context page": [
+        "コンテキストページ"
+      ],
+      "Context total": [
+        "コンテキスト合計"
+      ],
+      "Current context": [
+        "現在のコンテキスト"
+      ],
+      "Drive": [
+        "ドライブ"
+      ],
+      "Elements in store": [
+        "ストア内の要素"
+      ],
+      "Filter": [
+        "フィルター"
+      ],
+      "Information": [
+        "情報"
+      ],
+      "Label ID": [
+        "ラベルID"
+      ],
+      "Mail debugging information": [
+        "メールのデバッグ情報"
+      ],
+      "Mail logs": [
+        "メールログ"
+      ],
+      "Refresh logs": [
+        "ログを再読み込み"
+      ],
+      "Sort": [
+        "並び替え"
+      ],
+      "Store state": [
+        "ストアの状態"
+      ],
+      "Tab age": [
+        "タブの経過時間"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10168,6 +10378,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Learn more.": [
+        "より詳しく。"
       ]
     },
     "Link to settings": {
@@ -10333,6 +10546,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "ビデオ会議、${ n }名まで参加可能"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "主催者は、会議をコンピューターにローカル録画できます"
       ]
     },
     "meet_2025: Info": {
@@ -11029,6 +11245,21 @@
       ],
       "${ options }-day file version history": [
         "${ options }日間のファイルバージョン履歴"
+      ],
+      "Access all countries": [
+        "すべての国にアクセス"
+      ],
+      "Appointment scheduling": [
+        "日程調整ツール"
+      ],
+      "Dedicated servers optimized for speed": [
+        "速度に最適化された専用サーバー"
+      ],
+      "No streaming support": [
+        "ストリーミングはサポートされていません"
+      ],
+      "Unlock streaming": [
+        "ストリーミングのブロックを解除"
       ]
     },
     "new_plans: feature highlight": {
@@ -11653,6 +11884,18 @@
       ],
       "Maybe later": [
         "今度やる"
+      ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
+      "Skip for now": [
+        "今はスキップする"
+      ],
+      "Some popular services": [
+        "人気のサービス"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "セキュリティとプライバシーを向上させるため、日常的に利用しているサービスのアドレスを${ BRAND_NAME }アドレスに切り替えてください。"
       ]
     },
     "Onboarding modal": {
@@ -12145,6 +12388,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "Edit billing address": [
+        "請求先アドレスを編集"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "VATリバースチャージ方式が適用されます。"
       ]
     },
     "Payments.Error": {
@@ -12287,6 +12536,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
+      ],
+      "This contact currently signs messages with this key": [
+        "この連絡先は現在、この鍵でメッセージに署名しています"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "この鍵は、古いアプリでこの連絡先宛のメッセージを暗号化するために使用されます"
       ]
     },
     "PGP key warning": {
@@ -12425,7 +12680,7 @@
         "メールアドレスを入力"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "${ subject }に何を書けばいいのか伝えましょう。例：「ニュースレターで今後の予定を知らせる」"
+        "${ subject }に何を書くべきか指示してください。例：「ニュースレターで今後の予定を知らせる」"
       ],
       "Text": [
         "テキスト"
@@ -12489,6 +12744,21 @@
       ],
       "To": [
         "宛先"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "${ subject }に書く内容を伝えてください。例：「ジムのメンバーシップをキャンセルする」"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "${ subject } に何を書くか伝えてください。例: 「ジェーンをパーティーに招待して」"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "${ subject }に書く内容を伝えます。例: 「プロジェクトでの助けに対し同僚に感謝を伝える」"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "${ subject }に書くべき内容を指示してください。例：「インターンシップのカバーレターを書いて」"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "${ subject }に書く内容を伝えます。例: 「クライアントへのフォローアップメールを作成」"
       ]
     },
     "Placeholder for contact group name": {
@@ -13918,6 +14188,12 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "プレミアム機能を備えた ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、および ${ LUMO_APP_NAME }"
       ]
     },
     "subscription reminder": {
@@ -14283,6 +14559,9 @@
       ],
       "Thanks for the feedback!": [
         "フィードバックありがとうございます！"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' をクリップボードにコピーしました"
       ]
     },
     "Success notification": {
@@ -14643,7 +14922,7 @@
         "クーポン"
       ],
       "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
-        "${ LUMO_SHORT_APP_NAME }でより良いメールを作成"
+        "${ LUMO_SHORT_APP_NAME }でより優れたメールを作成"
       ],
       "Create contact": [
         "連絡先の作成"
@@ -15535,6 +15814,18 @@
       ],
       "Your newsletters in one place": [
         "ニュースレターを一か所に"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }のメールカテゴリの未来を形作るお手伝いをしてください"
+      ],
+      "Loading...": [
+        "読み込み中…"
+      ],
+      "Verify your password": [
+        "パスワードの確認"
+      ],
+      "Your inbox, automatically organized": [
+        "受信トレイを自動的に整理"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15629,6 +15920,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "これにより、あなたを特定または追跡するために使用される可能性のある場所、デバイス、およびその他の情報を誰も見ることができなくなります。"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "即時AIアシスタンス、専門スタッフも待機しています！"
       ]
     },
     "tooltip": {
@@ -16313,6 +16607,11 @@
       ],
       "Sun, ${ formatTime }": [
         "${ formatTime }日曜日"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }に切り替える"
       ]
     }
   }

@@ -1694,6 +1694,24 @@
       ],
       "Your email writing assistant": [
         "您電子郵件的撰寫幫手"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "將「${ code }」複製到剪貼簿"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "將「${ code }」複製到剪貼簿並移至垃圾桶"
+      ],
+      "Hide ${ title }": [
+        "隱藏 ${ title }"
+      ],
+      "Show ${ title }": [
+        "顯示 ${ title }"
+      ],
+      "Toggle VPN dashboard": [
+        "切換 VPN 儀表板"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ]
     },
     "action": {
@@ -2045,6 +2063,9 @@
       ],
       "Stronger protection against cyber threats": [
         "針對網路威脅的更強大保護"
+      ],
+      "Full chat history with easy search and favorites": [
+        "完整的聊天記錄，提供輕鬆的搜尋與收藏功能"
       ]
     },
     "BF2025: Tooltip": {
@@ -2096,6 +2117,9 @@
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
+      ],
+      "Contact your administrator to start a migration.": [
+        "聯絡您的管理員以開始遷移。"
       ]
     },
     "Browser": {
@@ -3498,6 +3522,9 @@
       ],
       "Åland Islands": [
         "奧蘭群島"
+      ],
+      "Canary Islands": [
+        "加那利群島"
       ]
     },
     "customer_support.feature.all": {
@@ -3852,6 +3879,27 @@
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "您將轉寄來自 ${ forwardingCount } Gmail 位址的電子郵件。若連線它，您將可以同時於 ${ MAIL_APP_NAME } 接收及回覆。"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "為了讓您的團隊順利加入 ${ BRAND_NAME }，請從 Google、Outlook 及其他服務匯入您的資料。"
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "如需無限存取寫作助理及更多功能，請升級至 ${ LUMO_SHORT_APP_NAME }。"
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "如果訊息出現在錯誤的類別中，只需將其移動到正確的類別即可。在訊息上按一下滑鼠右鍵以選擇新類別，或直接將其拖放至應屬的位置。"
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "若要繼續在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，請將其新增至您的訂閱。"
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "若要繼續在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，請向您的管理員請求存取權。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遺憾看到您要離開。如果您有時間，我們非常希望能了解您想要取消的原因。您的意見回饋有助於我們為大家將 ${ BRAND_NAME } 變得更好。"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "您是首批在正式發佈前試用我們全新類別檢視功能的使用者。您的意見回饋將有助於改善 Proton Mail 對所有使用者電子郵件的分類方式。"
       ]
     },
     "description": {
@@ -3982,6 +4030,9 @@
     "Easy switch": {
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "您正轉寄來自外部帳號的電子郵件至 ${ MAIL_APP_NAME }。"
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "若要轉寄最多 ${ MAX_SYNC_PAID_USER } 個帳號的電子郵件，請升級至 ${ planName }。"
       ]
     },
     "Email body for invitation": {
@@ -4746,6 +4797,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "無法載入訂閱資料。請稍後再試。"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "請檢查您的 ABN 是否已註冊跨境增值稅"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此方案不支援逆向徵稅機制"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "增值稅號碼必須以 ${ prefixes } 開頭"
       ]
     },
     "error": {
@@ -5171,6 +5234,9 @@
       ],
       "Security key": [
         "安全金鑰"
+      ],
+      "Touch your security key.": [
+        "觸碰您的安全性金鑰。"
       ]
     },
     "fido2: Label": {
@@ -5463,6 +5529,9 @@
       ],
       "Tell us more": [
         "請詳細說明"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "設定 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "Hint": {
@@ -8189,6 +8258,57 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } 哪些訂閱不再需要。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } 協助您快速且輕鬆地撰寫更好的電子郵件。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } 面板"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } 現在會自動將您的電子郵件分類為「主要」、「社群」、「促銷」等類別，協助您更輕鬆地尋找與管理訊息。"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "使用您的推薦連結**邀請朋友**加入 ${ BRAND_NAME }。"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "若他們訂閱，**即可獲得 ${ refereeRewardAmount }** 可用額度。"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "每有一位朋友訂閱，**您即可獲得 ${ referrerRewardAmount }** 可用額度。"
+      ],
+      "Automatically sort incoming emails into categories": [
+        "自動將傳入的電子郵件分類"
+      ],
+      "Password verified": [
+        "密碼已驗證"
+      ],
+      "Please select the labels you would like to import:": [
+        "請選取您想匯入的標籤："
+      ],
+      "Private by design.": [
+        "私有設計。"
+      ],
+      "This message will be purged on ${ value }": [
+        "此訊息將於 ${ value } 被清除"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "此操作將從此列表中移除該新聞信條目。這並不會為您取消訂閱該新聞信。若您收到新訊息，它將會再次出現。"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "為協助您記住您的密碼，我們會要求您定期輸入。隨著時間推移，要求的頻率會降低。"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任「${ activeSignerText }」金鑰以驗證來自此聯絡人的新訊息。"
+      ],
+      "We'll remind you to verify your password again later": [
+        "我們稍後會提醒您再次驗證您的密碼"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的帳號目前設定為套用反向收費機制。所選方案不支援此功能。若要繼續，請從帳單位址移除 VAT 號碼，或選取其他方案。"
       ]
     },
     "info": {
@@ -8249,6 +8369,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "作用中簽署者"
+      ],
+      "Fallback": [
+        "後備"
       ]
     },
     "Keyboard shortcut name": {
@@ -8443,6 +8569,9 @@
       ],
       "Message shortcuts": [
         "訊息快捷鍵"
+      ],
+      "Desktop app navigation": [
+        "桌面應用程式導覽"
       ]
     },
     "Label": {
@@ -9240,6 +9369,63 @@
       ],
       "Writing assistant": [
         "撰寫幫手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 個字元"
+      ],
+      "Clear logs": [
+        "清除日誌"
+      ],
+      "Context page": [
+        "上下文頁面"
+      ],
+      "Context total": [
+        "內容總計"
+      ],
+      "Current context": [
+        "目前上下文"
+      ],
+      "Drive": [
+        "磁碟"
+      ],
+      "Elements in store": [
+        "儲存區中的元素"
+      ],
+      "Email categories": [
+        "電子郵件分類"
+      ],
+      "Filter": [
+        "過濾"
+      ],
+      "Information": [
+        "資訊"
+      ],
+      "Label ID": [
+        "標籤 ID"
+      ],
+      "Mail debugging information": [
+        "郵件偵錯資訊"
+      ],
+      "Mail logs": [
+        "郵件日誌"
+      ],
+      "Refresh logs": [
+        "重新整理日誌"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "在 ${ CALENDAR_APP_NAME } 中使用預約頁面共享您的空閒時間，並透過 ${ MEET_APP_NAME } 舉辦安全會議。"
+      ],
+      "Sort": [
+        "排序"
+      ],
+      "Store state": [
+        "儲存區狀態"
+      ],
+      "Tab age": [
+        "索引標籤存留時間"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9544,6 +9730,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "Learn more.": [
+        "進一步瞭解。"
       ]
     },
     "Loading info": {
@@ -9690,6 +9879,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "視訊， ${ n } 參與者"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "主持人可以在他們的電腦上進行會議本地錄製"
       ]
     },
     "meet_2025: Info": {
@@ -10381,6 +10573,12 @@
       ],
       "${ options }-day file version history": [
         "історія версій файлів за ${ options } дня"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 個預約頁面進行預約排程"
+      ],
+      "No streaming support": [
+        "不支援串流"
       ]
     },
     "new_plans: feature highlight": {
@@ -11477,6 +11675,12 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的貨幣已變更為歐元 (€)，因為 SEPA 銀行轉帳僅支援以歐元付款。"
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（不含稅）"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "VAT 反向收費機制適用。"
       ]
     },
     "Payments.Error": {
@@ -11622,6 +11826,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
+      ],
+      "This contact currently signs messages with this key": [
+        "此聯絡人目前使用此金鑰簽署訊息"
       ]
     },
     "PGP key warning": {
@@ -11815,6 +12022,30 @@
       ],
       "To": [
         "收件者"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc。"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "告訴 ${ subject } 要寫什麼。例如： 「在通訊中公佈即將舉行的事件」"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "告訴 ${ subject } 要寫什麼。例如：「取消我的健身房會員資格」"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "告訴 ${ subject } 要寫什麼。例如：「邀請 Jane 來參加我的派對」"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "告訴 ${ subject } 要寫什麼。例如：「感謝同事在專案上的協助」"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "告訴 ${ subject } 要寫什麼。例如：「為實習寫一封求職信」"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "告訴 ${ subject } 要寫什麼。例如：「寫一封跟進電子郵件給客戶」"
+      ],
+      "the writing assistant": [
+        "撰寫幫手"
       ]
     },
     "Placeholder for contact group name": {
@@ -13354,6 +13585,9 @@
       ],
       "Thanks for the feedback!": [
         "感謝您的回饋意見！"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "已將 '${ code }' 複製至剪貼簿"
       ]
     },
     "Success notification": {
@@ -14553,6 +14787,15 @@
       ],
       "Your newsletters in one place": [
         "您的電子報集中在一處"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "使用 ${ LUMO_SHORT_APP_NAME } 編寫更好的電子郵件"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "協助形塑 ${ MAIL_APP_NAME } 電子郵件分類的未來"
+      ],
+      "Your inbox, automatically organized": [
+        "自動整理您的收件匣"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14641,6 +14884,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "此確保無人可察看地點，裝置，或任何可用於識別或追蹤您的資料。"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "即時 AI 協助，真人專家隨時待命！"
       ]
     },
     "tooltip": {
@@ -15856,6 +16102,9 @@
       ],
       "Some popular services": [
         "熱門的服務"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "將您每天使用的服務切換到您的 ${ BRAND_NAME } 位址，以獲得更好的安全性和隱私。"
       ]
     },
     "Received email icon": {

@@ -1656,7 +1656,8 @@
         "Der Tracker-Schutz hat das Laden einiger Bilder verhindert. Lade sie, wenn du dem Absender vertraust."
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1714,6 +1715,21 @@
       ],
       "Your email writing assistant": [
         "Dein E-Mail-Schreibassistent"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "'${ code }' in die Zwischenablage kopieren"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "'${ code }' in die Zwischenablage kopieren und in den Papierkorb verschieben"
+      ],
+      "Hide ${ title }": [
+        "${ title } ausblenden"
+      ],
+      "Move to category...": [
+        "In Kategorie verschieben..."
+      ],
+      "Show ${ title }": [
+        "${ title } Anzeigen"
       ]
     },
     "action": {
@@ -2212,6 +2228,9 @@
       ],
       "You": [
         "Du"
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
       ]
     },
     "Browser": {
@@ -4006,6 +4025,15 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Du gehörst zu den Ersten, die unsere neue Kategorieansicht vor dem offiziellen Start ausprobieren dürfen. Dein Feedback hilft uns dabei, E-Mails in Proton Mail für alle Nutzer besser zu ordnen."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Für unbegrenzten Zugriff auf den Schreibassistenten und mehr, upgrade auf ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Um ${ LUMO_SHORT_APP_NAME } weiterhin in ${ MAIL_APP_NAME } nutzen zu können, füge es deinem Abonnement hinzu."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Um ${ LUMO_SHORT_APP_NAME } weiterhin in ${ MAIL_APP_NAME } nutzen zu können, beantrage bitte die Zugriffsberechtigung bei deinem Administrator."
       ]
     },
     "description": {
@@ -5381,6 +5409,9 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -5679,6 +5710,9 @@
       ],
       "Tell us more": [
         "Erzähl uns mehr"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent einrichten"
       ]
     },
     "Hint": {
@@ -6671,8 +6705,7 @@
         "Von übergeordnetem Ordner übernommen"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8589,6 +8622,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } hilft dir, bessere E-Mails schnell und mühelos zu erstellen."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } Seitenleiste"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sortiert deine E-Mails jetzt automatisch in Kategorien wie Haupt, Sozial, Werbeaktionen und mehr, damit du Nachrichten leichter finden und verwalten kannst."
+      ],
+      "Private by design.": [
+        "Von Haus aus privat."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du hast ${ totalLabel } in deinem Posteingang."
+      ],
+      "You have no messages in this category": [
+        "Du hast keine Nachrichten in dieser Kategorie."
       ]
     },
     "info": {
@@ -9229,7 +9280,7 @@
         "Ort"
       ],
       "Mail debugging information": [
-        "Fehlersuche-Informationen per E-Mail"
+        "Informationen zur Fehlersuche in Mail"
       ],
       "Mail logs": [
         "E-Mail-Protokolle"
@@ -9439,7 +9490,7 @@
         "Systeminformationen"
       ],
       "Tab age": [
-        "Registerkarte „Alter“"
+        "Tab-Alter"
       ],
       "Tell us more about your experience": [
         "Erzähl uns mehr von deiner Erfahrung"
@@ -9715,6 +9766,12 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10019,6 +10076,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können."
+      ],
+      "Learn more.": [
+        "Mehr erfahren."
       ]
     },
     "Loading info": {
@@ -12371,6 +12431,27 @@
       ],
       "To": [
         "An"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Sag ${ subject }, was geschrieben werden soll. Beispiel: „Kündige bevorstehende Termine in einem Newsletter an“"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Kündige meine Mitgliedschaft im Fitnessstudio“"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Lade Jane zu meiner Party ein“"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Danke meinem Kollegen für die Hilfe bei einem Projekt“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Schreibe ein Anschreiben für ein Praktikum“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Verfasse eine Folge-E-Mail an einen Kunden“"
+      ],
+      "the writing assistant": [
+        "der Schreibassistent"
       ]
     },
     "Placeholder for contact group name": {
@@ -14038,6 +14119,9 @@
       ],
       "Thanks for the feedback!": [
         "Danke für die Rückmeldung."
+      ],
+      "Copied '${ code }' to clipboard": [
+        "„${ code }“ in die Zwischenablage kopiert"
       ]
     },
     "Success notification": {
@@ -15284,6 +15368,15 @@
       ],
       "Your newsletters in one place": [
         "Deine Newsletter an einem Ort"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Erstelle bessere E-Mails mit ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Your inbox, automatically organized": [
+        "Dein Posteingang, automatisch organisiert"
       ]
     },
     "Today icon tooltip in mini calendar": {

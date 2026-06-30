@@ -245,7 +245,7 @@
         "Copiar '${ code }' al portapapeles"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "Copiar '${ code }' al portapapeles y mover a la papelera"
+        "Copiar '${ code }' al portapapeles y mover a la Papelera"
       ],
       "Copy address": [
         "Copiar la dirección"
@@ -1726,6 +1726,10 @@
       ],
       "Your email writing assistant": [
         "Tu asistente de escritura de correo"
+      ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
       ]
     },
     "action": {
@@ -3821,7 +3825,7 @@
         "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Para tener acceso ilimitado al asistente de escritura y más, pásate a ${ LUMO_SHORT_APP_NAME }."
+        "Para tener acceso ilimitado al asistente de escritura y más, mejora a ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -3876,7 +3880,7 @@
         "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a tu suscripción."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita Acceder a tu administrador."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
@@ -4976,6 +4980,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Inténtalo de nuevo más tarde."
       ]
     },
     "error": {
@@ -5403,6 +5410,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Toca tu llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -6105,7 +6115,7 @@
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } te ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+        "${ LUMO_SHORT_APP_NAME } te ayuda a redactar mejores correos electrónicos de forma rápida y sin esfuerzo."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Panel de ${ LUMO_SHORT_APP_NAME }"
@@ -6699,8 +6709,7 @@
         "Heredado de la carpeta principal"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8623,6 +8632,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } ahora clasifica automáticamente tus correos electrónicos en categorías como Principal, Social, Promociones y más, ayudándote a encontrar y administrar mensajes con mayor facilidad."
+      ],
+      "Private by design.": [
+        "Privado por diseño."
       ]
     },
     "info": {
@@ -9407,7 +9422,7 @@
         "Leído"
       ],
       "Refresh logs": [
-        "Refrescar logs"
+        "Actualizar registros"
       ],
       "Region": [
         "Región"
@@ -10059,6 +10074,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesitas reactivar tus claves para ver la invitación actualizada."
+      ],
+      "Learn more.": [
+        "Más información."
       ]
     },
     "Loading info": {
@@ -12057,6 +12075,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
       ]
     },
     "Payments.Error": {
@@ -12355,13 +12376,13 @@
         "Dile a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Dile a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+        "Dile a ${ subject } qué escribir. Ejemplo: “Escribir un correo electrónico de seguimiento a un cliente”"
       ],
       "Text": [
         "Texto"
       ],
       "the writing assistant": [
-        "El asistente de escritura"
+        "el asistente de escritura"
       ],
       "Thomas": [
         "Andrea"
@@ -14432,7 +14453,7 @@
         "Cupón"
       ],
       "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
-        "Redacta mejores correos con ${ LUMO_SHORT_APP_NAME }"
+        "Redacta mejores correos electrónicos con ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create contact": [
         "Crear contacto"
@@ -15347,6 +15368,9 @@
       ],
       "Your newsletters in one place": [
         "Tus boletines en un solo lugar"
+      ],
+      "Your inbox, automatically organized": [
+        "Tu bandeja de entrada, organizada automáticamente"
       ]
     },
     "Today icon tooltip in mini calendar": {

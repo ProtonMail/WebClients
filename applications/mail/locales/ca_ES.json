@@ -1526,7 +1526,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4264,7 +4265,7 @@
         "Per obtenir accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ BRAND_NAME } Duo."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Per un accés il·limitat a l'assistent d'escriptura i més, actualitzeu a ${ LUMO_SHORT_APP_NAME }."
+        "Per un accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -4341,7 +4342,7 @@
         "Per continuar utilitzant ${ LUMO_SHORT_APP_NAME } a ${ MAIL_APP_NAME }, afegiu-lo a la vostra subscripció."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Per continuar utilitzant ${ LUMO_SHORT_APP_NAME } a ${ MAIL_APP_NAME }, sol·liciteu-ne l'accés al vostre administrador."
+        "Per continuar utilitzant ${ LUMO_SHORT_APP_NAME } a ${ MAIL_APP_NAME }, sol·liciteu l'accés al vostre administrador."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per continuar utilitzant l'assistent d'escriptura, afegiu-lo a la vostra subscripció."
@@ -5933,6 +5934,9 @@
       ],
       "Security key": [
         "Clau de seguretat"
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
       ]
     },
     "fido2: Label": {
@@ -7823,8 +7827,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9295,6 +9298,37 @@
       ],
       "All your files will be imported": [
         "S'importaran tots els vostres fitxers"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } ara classifica automàticament els vostres correus electrònics en categories com ara Principal, Social, Promocions i altres, la qual cosa us ajuda a trobar i gestionar els missatges amb més facilitat."
+      ],
+      "Private by design.": [
+        "Privat per disseny."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Teniu ${ totalLabel } a la vostra safata d'entrada."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Teniu **${ count } conversa** a la categoria ${ categoryLabel }",
+        "Teniu **${ count } converses** a la categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Teniu **${ count } missatge** a la categoria ${ categoryLabel }",
+        "Teniu **${ count } missatges** a la categoria ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "No teniu cap conversa en aquesta categoria"
+      ],
+      "You have no messages in this category": [
+        "No teniu cap missatge en aquesta categoria"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Heu seleccionat **${ checked } conversa** a la categoria ${ categoryLabel }",
+        "Heu seleccionat **${ checked } converses** a la categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Heu seleccionat **${ checked } missatge** a la categoria ${ categoryLabel }",
+        "Heu seleccionat **${ checked } missatges** a la categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9769,7 +9803,7 @@
         "Netejat"
       ],
       "Clear logs": [
-        "Buidar els registres"
+        "Netejar els registres"
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
@@ -10448,6 +10482,24 @@
       ],
       "Category:": [
         "Categoria:"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Butlletins: notícies, correus editorials i contingut no promocional"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal: correus electrònics personals i de feina, a més d'actualitzacions importants"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promocions: ofertes, descomptes i correus electrònics de màrqueting"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social: actualitzacions de xarxes socials, activitat i missatges"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaccions: rebuts, reserves, factures i comandes"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Actualitzacions: confirmacions automatitzades, alertes i actualitzacions del compte"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10792,6 +10844,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Cal que reactiveu les vostres claus per veure la invitació actualitzada"
+      ],
+      "Learn more.": [
+        "Per saber-ne més."
       ]
     },
     "Link to calendar event": {
@@ -15173,6 +15228,10 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "S'ha mogut a ${ label }. Els missatges similars es classificaran aquí en el futur.",
+        "S'han mogut a ${ label }. Els missatges similars es classificaran aquí en el futur."
       ]
     },
     "Success notification": {
@@ -16460,6 +16519,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Your inbox, automatically organized": [
+        "La vostra safata d'entrada, organitzada automàticament"
       ]
     },
     "Today icon tooltip in mini calendar": {

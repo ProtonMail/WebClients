@@ -971,7 +971,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Try again": [
         "Prøv igen"
@@ -3876,10 +3877,10 @@
         "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "Tilføj det til dit abonnement for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+        "Tilføj det til Deres abonnement for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Anmod om adgang fra din administrator for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+        "Anmod om adgang fra Deres admin for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
@@ -5423,6 +5424,9 @@
       ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
@@ -6270,7 +6274,7 @@
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } hjælper dig med at skrive bedre e-mails hurtigt og nemt."
+        "${ LUMO_SHORT_APP_NAME } hjælper Dem med at skrive bedre e-mails hurtigt og nemt."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME }-panel"
@@ -6940,8 +6944,7 @@
         "Nedarvet fra overordnet mappe"
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8737,6 +8740,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sorterer nu automatisk Deres e-mails i kategorier som Primær, Social, Reklamer og mere, hvilket gør det lettere for Dem at finde og administrere beskeder."
+      ],
+      "Private by design.": [
+        "Privat af design."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du har ${ totalLabel } i din indbakke."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i ${ categoryLabel } kategori",
+        "Du har **${ count } samtaler** i ${ categoryLabel } kategori"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } besked** i ${ categoryLabel } kategori",
+        "Du har **${ count } beskeder** i ${ categoryLabel } kategori"
+      ],
+      "You have no conversations in this category": [
+        "Du har ingen samtaler i denne kategori"
+      ],
+      "You have no messages in this category": [
+        "Du har ingen beskeder i denne kategori"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i ${ categoryLabel } kategori",
+        "Du valgte **${ checked } samtaler** i ${ categoryLabel } kategori"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } besked** i ${ categoryLabel } kategori",
+        "Du valgte **${ checked } beskeder** i ${ categoryLabel } kategori"
       ]
     },
     "info": {
@@ -9247,7 +9281,7 @@
         "fx på Amazon, eBay osv."
       ],
       "Elements in store": [
-        "Elementer i store"
+        "Elementer i lager"
       ],
       "Email": [
         "E-mail"
@@ -9379,7 +9413,7 @@
         "Mærk som"
       ],
       "Label ID": [
-        "Label ID"
+        "Etiket-ID"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -9403,10 +9437,10 @@
         "Placering"
       ],
       "Mail debugging information": [
-        "Mail fejlfindingsoplysninger"
+        "Mail-fejlfindingsoplysninger"
       ],
       "Mail logs": [
-        "Mail logs"
+        "Mail-logs"
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
@@ -9592,7 +9626,7 @@
         "Udsagn"
       ],
       "Store state": [
-        "Store state"
+        "Lagerstatus"
       ],
       "Street address": [
         "Adresse"
@@ -9613,7 +9647,7 @@
         "Systemoplysninger"
       ],
       "Tab age": [
-        "Tab alder"
+        "Fanealder"
       ],
       "Tell us more about your experience": [
         "Fortæl os mere om din oplevelse"
@@ -9885,6 +9919,24 @@
       ],
       "Unsafe or problematic": [
         "Usikkert eller problematisk"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhedsbreve - Nyheder, redaktionelle e-mails og ikke-promoverende indhold"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primær - Personlige og arbejdsmæssige e-mails samt vigtige opdateringer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Kampagner - Deals, tilbud og marketing-e-mails"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociale - Sociale medieopdateringer, aktivitet og beskeder"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitteringer, reservationer, regninger og ordrer"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Opdateringer - Automatiserede bekræftelser, advarsler og kontoopdateringer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10189,6 +10241,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du skal genaktivere dine nøgler for at se den opdateret invitation"
+      ],
+      "Learn more.": [
+        "Få mere at vide."
       ]
     },
     "Loading info": {
@@ -12477,16 +12532,16 @@
         "Begynd at indtaste en e-mailadresse"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Annoncér kommende begivenheder i et nyhedsbrev\""
+        "Fortæl ${ subject }, hvad der skal skrives. Eksempel: \"Annoncér kommende begivenheder i et nyhedsbrev\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Opsig mit medlemskab i fitnesscentret\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Annuller mit medlemskab i fitnesscentret\""
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Inviter Julie til min fest\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Inviter Jane til min fest\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Tak min kollega for hjælpe til med et projekt\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Tak min kollega for hjælpen med et projekt\""
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
         "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Skriv en ansøgning til en praktikplads\""
@@ -14118,7 +14173,7 @@
         "Samtale slettet"
       ],
       "Copied '${ code }' to clipboard": [
-        "Kopierede '${ code }' til udklipsholderen"
+        "'${ code }' blev kopieret til udklipsholderen"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -14312,6 +14367,10 @@
       ],
       "Thanks for the feedback!": [
         "Tak for tilbagemeldingen!"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttet til ${ label }. En lignende besked vil blive kategoriseret her i fremtiden",
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her i fremtiden"
       ]
     },
     "Success notification": {
@@ -15564,6 +15623,9 @@
       ],
       "Your newsletters in one place": [
         "Dine nyhedsbreve på ét sted"
+      ],
+      "Your inbox, automatically organized": [
+        "Deres indbakke, automatisk organiseret"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -961,7 +961,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Try again": [
         "Skús znova"
@@ -1727,6 +1730,18 @@
       ],
       "Your email writing assistant": [
         "Váš asistent písania emailov"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Skopírovať „${ code }“ do schránky"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Skopírovať „${ code }“ do schránky a presunúť do Koša"
+      ],
+      "Hide ${ title }": [
+        "Skryť ${ title }"
+      ],
+      "Show ${ title }": [
+        "Zobraziť ${ title }"
       ]
     },
     "action": {
@@ -4074,6 +4089,18 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Patríte medzi prvých, ktorí si môžu vyskúšať naše nové zobrazenie kategórií ešte pred jeho spustením. Vaša spätná väzba pomôže vylepšiť spôsob, akým Proton Mail triedi emaily pre každého."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Pre neobmedzený prístup k asistentovi písania a ďalším možnostiam zvýšte úroveň na ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Ak chcete naďalej používať ${ LUMO_SHORT_APP_NAME } v ${ MAIL_APP_NAME }, pridajte si ho k svojmu predplatnému."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Ak chcete naďalej používať ${ LUMO_SHORT_APP_NAME } v ${ MAIL_APP_NAME }, požiadajte o prístup svojho správcu."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importujeme vaše staré emaily a odteraz budeme synchronizovať nové správy z Gmailu"
       ]
     },
     "description": {
@@ -5030,6 +5057,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ]
     },
     "error": {
@@ -5466,6 +5502,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -5868,6 +5907,9 @@
       ],
       "Tell us more": [
         "Povedzte nám viac"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Nastaviť asistenta písania ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -7002,10 +7044,7 @@
         "Zdedené z nadradeného priečinka"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8977,6 +9016,54 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } vám pomáha rýchlo a jednoducho vytvárať lepšie emaily."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } teraz automaticky triedi vaše emaily do kategórií ako Primárny, Sociálne siete, Reklamy a ďalšie, čím vám pomáha ľahšie nájsť správy a spravovať ich."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
+      ],
+      "Private by design.": [
+        "Súkromné z podstaty."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Vo vašej schránke máte ${ totalLabel }."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Máte **${ count } konverzáciu** v kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácie** v kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** v kategórii ${ categoryLabel }",
+        "Máte **${ count } konverzácií** v kategórii ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Máte **${ count } správu** v kategórii ${ categoryLabel }",
+        "Máte **${ count } správy** v kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** v kategórii ${ categoryLabel }",
+        "Máte **${ count } správ** v kategórii ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "V tejto kategórii nemáte žiadne konverzácie"
+      ],
+      "You have no messages in this category": [
+        "V tejto kategórii nemáte žiadne správy"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } konverzáciu** v kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácie** v kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** v kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } konverzácií** v kategórii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Vybrali ste **${ checked } správu** v kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správy** v kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** v kategórii ${ categoryLabel }",
+        "Vybrali ste **${ checked } správ** v kategórii ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9474,7 +9561,7 @@
         "Stiahnuť záznamy"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "napr. Amazon, eBay, Etsy"
@@ -10093,6 +10180,72 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Clear logs": [
+        "Vyčistiť záznamy"
+      ],
+      "Context page": [
+        "Strana kontextu"
+      ],
+      "Context total": [
+        "Celkový kontext"
+      ],
+      "Current context": [
+        "Aktuálny kontext"
+      ],
+      "Elements in store": [
+        "Prvky v úložisku"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Import your emails": [
+        "Importovanie vašich emailov"
+      ],
+      "Information": [
+        "Informácia"
+      ],
+      "Label ID": [
+        "ID štítka"
+      ],
+      "Mail debugging information": [
+        "Ladiace informácie pošty"
+      ],
+      "Mail logs": [
+        "Záznamy emailov"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newslettery – novinky, redakčné emaily a obsah, ktorý nie je reklamného charakteru"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Hlavná – Osobné a pracovné emaily, ako aj dôležité aktualizácie"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Propagačné akcie – Zľavy, ponuky a marketingové emaily"
+      ],
+      "Refresh logs": [
+        "Obnoviť záznamy"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociálne siete – aktualizácie, aktivita a správy na sociálnych sieťach"
+      ],
+      "Sort": [
+        "Zoradiť"
+      ],
+      "Store state": [
+        "Stav úložiska"
+      ],
+      "Tab age": [
+        "Vek karty"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakcie – príjmy, rezervácie, faktúry a objednávky"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualizácie – Automatické potvrdenia, upozornenia a aktualizácie účtu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10397,6 +10550,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pre zobrazenie upravenej pozvánky musíte znovu aktivovať svoje kľúče"
+      ],
+      "Learn more.": [
+        "Zistiť viac."
       ]
     },
     "Loading info": {
@@ -12851,6 +13007,27 @@
       ],
       "To": [
         "Pre"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Povedzte ${ subject }, čo má napísať. Príklad: „Oznámenie o nadchádzajúcich udalostiach v newslettri“"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Povedzte ${ subject }, čo má napísať. Príklad: „Zrušiť moje členstvo v posilňovni“"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Povedzte ${ subject }, čo má napísať. Príklad: „Pozvi Janu na môj večierok“"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Povedzte ${ subject }, čo napísať. Príklad: „Poďakujte kolegovi za pomoc na projekte“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Povedzte ${ subject }, čo má napísať. Príklad: „Napíšte motivačný list na stáž“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Povedzte ${ subject }, čo napísať. Príklad: „Napíšte klientovi následný email“"
+      ],
+      "the writing assistant": [
+        "asistent písania"
       ]
     },
     "Placeholder for contact group name": {
@@ -14681,6 +14858,15 @@
       ],
       "Thanks for the feedback!": [
         "Ďakujeme za spätnú väzbu!"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "„${ code }“ bolo skopírované do schránky"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Presunuté do ${ label }. Podobná správa bude v budúcnosti zaradené do tejto kategórie.",
+        "Presunuté do ${ label }. Podobné správy budú v budúcnosti zaradené do tejto kategórie.",
+        "Presunuté do ${ label }. Podobné správy budú v budúcnosti zaradené do tejto kategórie.",
+        "Presunuté do ${ label }. Podobné správy budú v budúcnosti zaradené do tejto kategórie."
       ]
     },
     "Success notification": {
@@ -15973,6 +16159,15 @@
       ],
       "Your newsletters in one place": [
         "Vaše newslettre na jednom mieste"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Vytvárajte lepšie emaily s ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Your inbox, automatically organized": [
+        "Vaša doručená pošta, automaticky usporiadaná"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17621,6 +17816,11 @@
       ],
       "Sun, ${ formatTime }": [
         "Ne, ${ formatTime }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
       ]
     }
   }

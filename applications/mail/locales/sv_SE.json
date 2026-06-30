@@ -1487,7 +1487,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1726,6 +1727,9 @@
       ],
       "View headers": [
         "Visa rubriker"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopiera '${ code }' till urklipp och flytta till Papperskorg"
       ]
     },
     "action": {
@@ -1832,6 +1836,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Writing assistant seats": [
+        "Användarplatser för skrivassistent"
       ]
     },
     "Alert": {
@@ -2821,6 +2828,12 @@
       ],
       "Zero-access encryption": [
         "Kryptering med noll åtkomst"
+      ],
+      "Upload and query multiple large files": [
+        "Ladda upp och sök i flera stora filer"
+      ],
+      "Upload and query small files": [
+        "Ladda upp och sök i små filer"
       ]
     },
     "collider_2025: Info": {
@@ -4435,6 +4448,15 @@
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adress. Genom att ansluta den kommer du att kunna både ta emot och svara i ${ MAIL_APP_NAME }",
         "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adresser. Genom att ansluta dem kan du både ta emot och svara i ${ MAIL_APP_NAME }"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "För en sömlös introduktion av ditt team till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "För att fortsätta använda ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, lägg till det i din prenumeration."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "För att fortsätta använda ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, begär åtkomst från din admin."
       ]
     },
     "description": {
@@ -5401,6 +5423,27 @@
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Dina e-postmeddelanden kan inte dekrypteras på grund av en nylig lösenordsåterställning. Om du kommer ihåg ditt tidigare lösenord kan du ${ reActivateKeyLink } för att komma åt dina meddelanden. ${ learnMoreLink }"
+      ],
+      "Invalid VAT number": [
+        "Ogiltigt momsregistreringsnummer"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Kontrollera om ditt ABN är registrerat för moms vid gränsöverskridande handel"
+      ],
+      "Please complete the billing details": [
+        "Vänligen fyll i faktureringsdetaljer"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "System för omvänd skattskyldighet stöds inte för detta paket"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Oväntat fel, vi kan inte importera filerna"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsregistreringsnummer måste börja med ${ prefixes }"
       ]
     },
     "error": {
@@ -5861,6 +5904,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Touch your security key.": [
+        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -6186,6 +6232,9 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
+      ],
+      "Get storage bonus": [
+        "Skaffa lagringsbonus"
       ]
     },
     "Gmail forwarding": {
@@ -6281,6 +6330,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Konfigurera ${ LUMO_SHORT_APP_NAME } skrivassistent"
       ]
     },
     "Hint": {
@@ -7676,8 +7728,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9173,6 +9224,55 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Din prenumeration på ${ plan } kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Det återstående saldot på din prenumeration kommer att läggas till på ditt konto. Lifetime-erbjudandet för ${ PASS_SHORT_APP_NAME } har inget förnyelsepris – det är en engångsbetalning för att få livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } hjälper dig att skapa bättre e-post snabbt och enkelt."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME }-panel"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sorterar nu automatiskt din e-post i kategorier som Primär, Social, Kampanjer och mer, vilket hjälper dig att hitta och hantera meddelanden enklare."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } är en end-to-end-krypterad lösning för videokonferenser. Lägg till den i ditt paket för att hålla säkra möten."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } döljer din trafik. ${ PASS_SHORT_APP_NAME } döljer din identitet\n— obegränsade **hide-my-email-alias** och **varningar om dark web** om dina uppgifter någonsin läcker."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Ett e-postmeddelande för att avsluta prenumerationen kommer att skickas för din räkning."
+      ],
+      "No change will be made to the selected emails": [
+        "Inga ändringar kommer att göras för de valda e-postmeddelandena"
+      ],
+      "Private by design.": [
+        "Privat genom design."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Dessa konversationer sparas här baserat på din organisations policy för datalagring."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Detta tar bort nyhetsbrevet från den här listan. Det avslutar inte din prenumeration på nyhetsbrevet. Det kommer att dyka upp igen om du tar emot nya meddelanden."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du har ${ totalLabel } i din inkorg."
+      ],
+      "You have no conversations in this category": [
+        "Du har inga konversationer i denna kategori"
+      ],
+      "You have no messages in this category": [
+        "Du har inga meddelanden i denna kategori"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }. Du kan avbryt när som helst.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }. Du kan avbryt när som helst."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ]
     },
     "info": {
@@ -9242,6 +9342,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv undertecknare"
       ]
     },
     "Key pinning": {
@@ -9457,6 +9560,9 @@
       ],
       "Message shortcuts": [
         "Meddelandegenvägar"
+      ],
+      "Desktop app navigation": [
+        "Navigering i skrivbordsapp"
       ]
     },
     "Label": {
@@ -10296,6 +10402,30 @@
       ],
       "Undisclosed Recipients": [
         "Hemliga mottagare"
+      ],
+      "Context page": [
+        "Kontextsida"
+      ],
+      "Context total": [
+        "Kontext totalt"
+      ],
+      "Elements in store": [
+        "Element i lagring"
+      ],
+      "Mail debugging information": [
+        "Felsökningsinformation för Mail"
+      ],
+      "Mail logs": [
+        "E-postloggar"
+      ],
+      "Main reason for cancelling": [
+        "Huvudsaklig anledning till att avbryta"
+      ],
+      "Store state": [
+        "Lagra tillstånd"
+      ],
+      "Tab age": [
+        "Flikens ålder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10640,6 +10770,9 @@
       ],
       "Views": [
         "Visningar"
+      ],
+      "Learn more.": [
+        "Lär dig mer."
       ]
     },
     "Link to calendar event": {
@@ -10759,6 +10892,10 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-användarplats",
+        "${ seats } ${ MEET_APP_NAME }-användarplatser"
       ]
     },
     "meet_2025: Feature": {
@@ -11544,6 +11681,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Appointment scheduling": [
+        "Mötesbokning"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mötesbokning med ${ n } bokningssida",
+        "Mötesbokning med ${ n } bokningssidor"
+      ],
+      "Data retention policies": [
+        "Policy för datalagring"
       ]
     },
     "new_plans: feature highlight": {
@@ -12694,6 +12841,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Mekanism för omvänd moms-skattskyldighet tillämpas."
       ]
     },
     "Payments.Error": {
@@ -12757,6 +12907,12 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Förnyelsepriset är beroende av faktureringsregion och EIN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Förnyelsepriset är beroende av faktureringsregion och företagsnummer."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13038,6 +13194,24 @@
       ],
       "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
         "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Skriv ett uppföljande e-postmeddelande till en klient”"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Berätta för ${ subject } vad som ska skrivas. Exempel: ”Meddela kommande händelser i ett nyhetsbrev”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Berätta för ${ subject } vad som ska skrivas. Exempel: ”Avbryt mitt gymmedlemskap”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Berätta för ${ subject } vad som ska skrivas. Exempel: ”Bjud in Jane till min fest”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Berätta för ${ subject } vad du vill skriva. Exempel: ”Tacka min medarbetare för hjälpen med ett projekt”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Berätta för ${ subject } vad som ska skrivas. Exempel: ”Skriv ett personligt brev till en praktikplats”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Berätta för ${ subject } vad du vill skriva. Exempel: ”Skriv ett uppföljande e-postmeddelande till en klient”"
       ]
     },
     "Placeholder for contact group name": {
@@ -14564,6 +14738,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
       ]
     },
     "subscription reminder": {
@@ -14794,7 +14971,7 @@
         "Konversationer från ${ sendersList } kommer att flyttas till ${ folder }"
       ],
       "Copied '${ code }' to clipboard": [
-        "Kopierade '${ code }' till urklipp"
+        "'${ code }' har kopierats till urklipp"
       ],
       "Copied to clipboard": [
         "Kopierad till urklipp"
@@ -16239,6 +16416,15 @@
       ],
       "CC": [
         "Kopia"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Skapa bättre e-post med ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Reverse charge not supported": [
+        "Omvänd skattskyldighet stöds inte"
+      ],
+      "Your inbox, automatically organized": [
+        "Din inkorg, organiserad automatiskt"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16333,6 +16519,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Omedelbar AI-assistans, mänsklig expert nära till hands!"
       ]
     },
     "tooltip": {
@@ -16848,6 +17037,15 @@
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
         "Kontakterna för följande adresser har inaktiverat end-to-end-kryptering på sitt konto. Så motsvarande krypteringsinställningar har uppdaterats i enlighet med detta:"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } användarplats inkluderad",
+        "${ seats } användarplatser inkluderade"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-användarplatser under provperioden."
       ]
     }
   }

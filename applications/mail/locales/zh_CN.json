@@ -4239,7 +4239,7 @@
         "升级至 ${ BRAND_NAME } Duo，以获得无限制使用的写作助手等功能。"
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "升级至 ${ LUMO_SHORT_APP_NAME }，以获得无限制使用的写作助手及其他功能。"
+        "升级至 ${ LUMO_SHORT_APP_NAME }，以获得无限制使用写作助手及更多功能。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "如果您的密码或其他数据从第三方服务泄露，您会收到通知。"
@@ -5885,6 +5885,9 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Touch your security key.": [
+        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -9138,6 +9141,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } 现在会自动将您的邮件分类为主要、社交、促销等类别，帮助您更轻松地查找和管理邮件。"
+      ],
+      "Private by design.": [
+        "专为隐私打造"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "您的收件箱中有 ${ totalLabel }。"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中有 **${ count }** 项会话"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中有 **${ count }** 封邮件"
+      ],
+      "You have no conversations in this category": [
+        "您在该分类中没有会话"
+      ],
+      "You have no messages in this category": [
+        "您在该分类中没有邮件"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中已选 **${ checked } 项会话**"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 分类中已选 **${ checked } 封邮件**"
       ]
     },
     "info": {
@@ -9709,7 +9739,7 @@
         "例如：Amazon, eBay, Etsy"
       ],
       "Elements in store": [
-        "商店中的元素"
+        "存储中的元素"
       ],
       "Email": [
         "邮箱"
@@ -10147,7 +10177,7 @@
         "要求"
       ],
       "Store state": [
-        "商店状态"
+        "存储状态"
       ],
       "Street address": [
         "街道地址"
@@ -10283,6 +10313,24 @@
       ],
       "Category:": [
         "类别："
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "新闻通讯 - 新闻、社论类邮件和非促销内容"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "主要 - 个人和工作邮件，以及重要更新"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "促销 - 优惠、活动和营销邮件"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "社交 - 社交媒体更新、动态和消息"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "交易 - 收据、预订、账单和订单"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "更新 - 自动确认、提醒和账户更新"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10627,6 +10675,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要重新激活您的密钥才能看到更新的邀请"
+      ],
+      "Learn more.": [
+        "了解详情。"
       ]
     },
     "Link to calendar event": {
@@ -14885,6 +14936,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "已移至 ${ label }，类似的邮件将自动归类。"
       ]
     },
     "Success notification": {
@@ -16149,6 +16203,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Your inbox, automatically organized": [
+        "您的邮箱，自动分类"
       ]
     },
     "Today icon tooltip in mini calendar": {

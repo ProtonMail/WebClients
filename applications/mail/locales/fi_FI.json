@@ -1705,6 +1705,28 @@
       ],
       "Your email writing assistant": [
         "Sähköpostin kirjoitusavustajasi"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopioi ”${ code }” leikepöydälle"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopioi ”${ code }” leikepöydälle ja siirrä Roskakoriin"
+      ],
+      "Hide ${ title }": [
+        "Piilota ${ title }"
+      ],
+      "Move to category...": [
+        "Siirrä luokkaan..."
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
+      "Verify now": [
+        "Vahvista nyt"
       ]
     },
     "action": {
@@ -1785,6 +1807,19 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisenssi",
+        "${ seats } ${ MEET_APP_NAME } -lisenssiä"
+      ],
+      "Dedicated VPN servers": [
+        "Erilliset VPN-palvelimet"
+      ],
+      "Writing assistant seats": [
+        "Kirjoitusavustajan käyttöpaikat"
       ]
     },
     "Alert": {
@@ -2078,6 +2113,15 @@
       ],
       "Stronger protection against cyber threats": [
         "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Access advanced AI models": [
+        "Käytä kehittyneitä tekoälymalleja"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki palveluiden ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Koko keskusteluhistoria helpolla etsi-toiminnolla ja suosikeilla"
       ]
     },
     "Billing cycle option": {
@@ -2112,6 +2156,9 @@
       ],
       "Yearly": [
         "Vuosittain"
+      ],
+      "Lifetime access": [
+        "Elinikäinen käyttöoikeus"
       ]
     },
     "BOSS": {
@@ -2156,6 +2203,9 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Ota yhteyttä ylläpitäjään migraation aloittamiseksi."
       ]
     },
     "Browser": {
@@ -2385,6 +2435,9 @@
       "Total for ${ n } month": [
         "Summa ${ n } kuukaudelle",
         "Summa ${ n } kuukaudelle"
+      ],
+      "Subtotal": [
+        "Välisumma"
       ]
     },
     "Collapsible tooltip": {
@@ -2437,6 +2490,12 @@
       ],
       "Zero-access encryption": [
         "Zero Access -salaus"
+      ],
+      "Compliance with data protection regulations": [
+        "Tietosuojasäädösten noudattaminen"
+      ],
+      "Data never used for AI training": [
+        "Tietoja ei koskaan käytetä tekoälyn kouluttamiseen"
       ]
     },
     "collider_2025: Info": {
@@ -2451,6 +2510,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Yksityiset videopuhelut tärkeisiin keskusteluihin."
       ]
     },
     "color": {
@@ -3802,7 +3864,7 @@
         "Varmista, että pääset edelleen käsiksi tiliisi ja tietoihisi, vaikka kadottaisit ${ BRAND_NAME } -salasanasi."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Saat rajoittamattoman pääsyn kirjoitusavustajaan ja muihin ominaisuuksiin päivittämällä ${ LUMO_SHORT_APP_NAME }:on."
+        "Päivitä ${ LUMO_SHORT_APP_NAME } -palveluun saadaksesi rajoittamattoman pääsyn kirjoitusavustajaan ja muihin ominaisuuksiin."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
@@ -4008,6 +4070,24 @@
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Välität sähköposteja ${ forwardingCount } Gmail-osoitteesta. Kun yhdistät sen, voit sekä vastaanottaa että vastata viesteihin ${ MAIL_APP_NAME } -sovelluksessa",
         "Välität sähköposteja ${ forwardingCount } Gmail-osoitteesta. Kun yhdistät sen, voit sekä vastaanottaa että vastata viesteihin ${ MAIL_APP_NAME } -sovelluksessa"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voit tuoda tietosi Googlesta, Outlookista ja muualta tiimisi saumattomaksi ${ BRAND_NAME } -palveluun siirtymiseksi."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Jos viesti näkyy väärässä luokassa, siirtäkää se yksinkertaisesti oikeaan luokkaan. Valitkaa uusi luokka napsauttamalla viestiä hiiren kakkospainikkeella tai vetämällä ja pudottamalla se oikeaan paikkaan."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Jatkaaksesi ${ LUMO_SHORT_APP_NAME } -palvelun käyttöä ${ MAIL_APP_NAME } -sovelluksessa, lisää se tilaukseesi."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pyydä ylläpitäjältä oikeutta käyttää ${ LUMO_SHORT_APP_NAME } -palvelua osana ${ MAIL_APP_NAME } -palvelua."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "On ikävä nähdä teidän lähtevän. Jos teillä on hetki aikaa, arvostaisimme kovasti, jos kertoisitte, miksi haluatte peruuttaa. Palautteenne auttaa meitä tekemään ${ BRAND_NAME } -palvelusta paremman kaikille."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Olette ensimmäisten joukossa kokeilemassa uutta luokkanäkymäämme ennen sen julkaisua. Palautteenne auttaa parantamaan sitä, miten Proton Mail lajittelee sähköpostit kaikkien käyttäjien osalta."
       ]
     },
     "description": {
@@ -4942,6 +5022,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tarkistakaa, onko ABN-tunnuksenne rekisteröity valtioiden välistä ALV:ta varten"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Viestin salauksen purkamisessa ilmeni ongelma. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluumme."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "ALV-tunnuksen on alettava etuliitteillä ${ prefixes }"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Viestin salausta ei voi purkaa. Jos poistitte jonkin osoiteavaimistanne, kokeilkaa ${ reimportKeyLink } niitä. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Viestin salauksen purku epäonnistui. Viestin salaamiseen käytetty avain ei vastaa mitään osoitteeseen liitettyä avainta. Jos poistitte jonkin osoiteavaimistanne, kokeilkaa ${ reimportKeyLink } sitä. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -5374,6 +5469,9 @@
       ],
       "Security key": [
         "Suojausavain"
+      ],
+      "Touch your security key.": [
+        "Koskettakaa suoja-avaintanne."
       ]
     },
     "fido2: Label": {
@@ -5783,6 +5881,9 @@
       ],
       "Set up the writing assistant": [
         "Kirjoitusavustajan määrittäminen"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Määritä ${ LUMO_SHORT_APP_NAME } -kirjoitusavustaja"
       ]
     },
     "Hint": {
@@ -6193,7 +6294,7 @@
         "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
-        "${ LUMO_SHORT_APP_NAME } paneeli"
+        "${ LUMO_SHORT_APP_NAME } -paneeli"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME }illa tallennat salasanat, muistiinpanot ja muita arkaluonteisia tietoja päästä päähän -salattuna. Saatavilla alustoille: ${ ios }, ${ android } ja ${ browser }."
@@ -6773,8 +6874,7 @@
         "Peritty yläkansiosta"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8651,6 +8751,63 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } auttaa teitä laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } lajittelee nyt sähköpostinne automaattisesti luokkiin, kuten ensisijainen, sosiaalinen, tarjoukset ja muut, auttaen teitä löytämään ja hallitsemaan viestejä helpommin."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } on päästä päähän -salattu videoneuvotteluratkaisu. Lisää se tilaukseesi järjestääksesi suojattuja kokouksia."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteenne. ${ PASS_SHORT_APP_NAME } piilottaa henkilöllisyytenne\n— rajoittamattomat **hide-my-email-aliakset** ja **pimeän verkon hälytykset**, jos tietonne vuotavat."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**He saavat ${ refereeRewardAmount }** krediittiä, mikäli he tilaavat."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Saat ${ referrerRewardAmount }** krediittiä jokaisesta tilaavasta ystävästä."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Lajittele saapuvat sähköpostit automaattisesti luokkiin"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Muistatteko salasananne? ${ verifyButton }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Vain ${ bundlePlanPriceInline }"
+      ],
+      "Private by design.": [
+        "Suunniteltu yksityiseksi."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Tämä poistaa uutiskirjeen merkinnän tästä luettelosta. Tämä ei peru uutiskirjeen tilausta. Se ilmestyy takaisin, jos vastaanotat uusia viestejä."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Auttaaksemme teitä muistamaan salasananne, pyydämme teitä syöttämään sen säännöllisin väliajoin. Pyyntöjen määrä vähenee ajan myötä."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Luota \"${ activeSignerText }\" -avaimeen tämän yhteyshenkilön uusien viestien todentamiseksi."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Muistutamme teitä vahvistamaan salasananne uudelleen myöhemmin"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Saatte krediitit 1 kuukausi sen jälkeen, kun ystävänne tilaa vuositilauksen, ja 2 kuukautta sen jälkeen, kun he tilaavat kuukausitilauksen."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäivänne on ${ renewalTime }. Voitte peruuttaa tilauksen milloin tahansa. Ottakaa yhteyttä tukeen, jos haluatte muuttaa tilaustanne välittömästi."
       ]
     },
     "info": {
@@ -8717,6 +8874,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiivinen allekirjoittaja"
+      ],
+      "Fallback": [
+        "Varajärjestelmä"
       ]
     },
     "Keyboard shortcut name": {
@@ -8901,6 +9064,9 @@
       ],
       "Message shortcuts": [
         "Viestien pikanäppäimet"
+      ],
+      "Desktop app navigation": [
+        "Työpöytäsovelluksen navigointi"
       ]
     },
     "Label": {
@@ -9131,7 +9297,7 @@
         "esim. Amazon, eBay, Etsy"
       ],
       "Elements in store": [
-        "Elementit säiliössä"
+        "Elementit tallennustilassa"
       ],
       "Email": [
         "Sähköposti"
@@ -9500,7 +9666,7 @@
         "Ehto"
       ],
       "Store state": [
-        "Säilö tila"
+        "Tallenna tila"
       ],
       "Street address": [
         "Katuosoite"
@@ -9749,6 +9915,21 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } -kirjoitusavustaja"
+      ],
+      "Additional comments": [
+        "Lisäkommentit"
+      ],
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Main reason for cancelling": [
+        "Pääsyy peruutukselle"
+      ],
+      "Skip feedback": [
+        "Ohita palaute"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10071,6 +10252,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Sinun on aktivoitava avaimesi uudelleen nähdäksesi päivitetyn kutsun"
+      ],
+      "Learn more.": [
+        "Lue lisää."
       ]
     },
     "Link to settings": {
@@ -10213,6 +10397,31 @@
       "Up to ${ n } participant": [
         "Enintää ${ n } osallistuja",
         "Enintää ${ n } osallistujaa"
+      ],
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Luottamuksellinen videoneuvottelu tärkeisiin keskusteluihin"
+      ],
+      "24 hours per meeting": [
+        "24 tuntia per kokous"
+      ],
+      "60 minutes per meeting": [
+        "60 minuuttia per kokous"
+      ],
+      "Built-in chat": [
+        "Sisäänrakennettu chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Päästä päähän -salattu näytön jako ja tilapäinen puhelun aikainen keskustelu"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Järjestäjät voivat tallentaa kokouksia paikallisesti tietokoneilleen"
+      ],
+      "One active meeting at a time": [
+        "Vain yksi aktiivinen kokous kerrallaan"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokokoukset, ${ n } osallistuja",
+        "Videokokoukset, ${ n } osallistujaa"
       ]
     },
     "Message": {
@@ -10930,6 +11139,18 @@
       "${ options }-day file version history": [
         "سجل إصدارات الملف لمدة يوم واحد (${ options })",
         "سجل إصدارات الملف لمدة ${ options } يوم"
+      ],
+      "Access all countries": [
+        "Käytä kaikkia maita"
+      ],
+      "Data retention policies": [
+        "Tietojen säilytyskäytännöt"
+      ],
+      "No streaming support": [
+        "Ei suoratoiston tukea"
+      ],
+      "Unlock streaming": [
+        "Avaa suoratoiston lukitus"
       ]
     },
     "new_plans: feature highlight": {
@@ -11554,6 +11775,9 @@
       ],
       "Some popular services": [
         "Jotkut suositut palvelut"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Vaihda päivittäin käyttämäsi palvelut ${ BRAND_NAME } -osoitteeseesi paremman turvallisuuden ja yksityisyyden saavuttamiseksi."
       ]
     },
     "Onboarding modal": {
@@ -12189,6 +12413,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Suosittelemme, että muutat avaimen \"epäluotettavaksi\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tämä yhteystieto allekirjoittaa viestit tällä hetkellä tällä avaimella"
+      ],
+      "This key is used for message verification": [
+        "Tätä avainta käytetään viestien todentamiseen"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tätä avainta käytetään viestien salaamiseen tälle yhteystiedolle vanhemmilla sovelluksilla"
       ]
     },
     "PGP key warning": {
@@ -12321,7 +12554,7 @@
         "Aloita sähköpostiosoitteen kirjoitus"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Kerro ${ subject }, mitä kirjoittaa. Esimerkki: ”Ilmoita tulevista tapahtumista uutiskirjeessä”"
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: ”Ilmoita tulevista tapahtumista uutiskirjeessä”"
       ],
       "Text": [
         "Tekstitiedosto"
@@ -12388,6 +12621,24 @@
       ],
       "To": [
         "Osoitteeseen"
+      ],
+      "Anything you'd like us to know": [
+        "Haluatteko kertoa meille jotain muuta"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Kerro kohteelle ${ subject } mitä kirjoittaa. Esimerkki: ”Peruuta kuntosalijäsenyyteni”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kutsu Jaana juhliini\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kiitä työkaveria projektin avustamisesta\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Kertokaa kohteelle ${ subject }, mitä kirjoittaa. Esimerkiksi: \"Kirjoita saatekirje työharjoittelua varten\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kirjoita asiakkaalle jatkosähköposti\""
       ]
     },
     "Placeholder for contact group name": {
@@ -13232,6 +13483,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14118,6 +14372,9 @@
       ],
       "Thanks for the feedback!": [
         "Kiitos palautteesta!"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' kopioitu leikepöydälle"
       ]
     },
     "Success notification": {
@@ -15384,6 +15641,15 @@
       ],
       "Your newsletters in one place": [
         "Uutiskirjeesi yhdessä paikalla"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Auttakaa muokkaamaan ${ MAIL_APP_NAME }-sovelluksen sähköpostiluokkien tulevaisuutta"
+      ],
+      "Verify your password": [
+        "Vahvista salasananne"
+      ],
+      "Your inbox, automatically organized": [
+        "Saapuneet-kansio, joka on järjestetty automaattisesti"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16618,6 +16884,42 @@
       ],
       "Sun, ${ formatTime }": [
         "su, ${ formatTime }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Vaihda ${ CALENDAR_APP_NAME } -sovellukseen"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Vaihda kohteeseen ${ MAIL_APP_NAME }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-lisenssi"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
+        "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } käyttöpaikka sisältyy",
+        "${ seats } käyttöpaikkaa sisältyy"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada kokeilujakson aikana enintään ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-käyttöpaikkaa."
       ]
     }
   }

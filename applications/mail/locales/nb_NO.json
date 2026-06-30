@@ -1714,6 +1714,22 @@
       ],
       "Your email writing assistant": [
         "Din e-postskrivingsassistent"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopier «${ code }» til utklippstavlen"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopier «${ code }» til utklippstavlen og flytt til Papirkurv"
+      ],
+      "Hide ${ title }": [
+        "Skjul ${ title }"
+      ],
+      "Show ${ title }": [
+        "Vis ${ title }"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ]
     },
     "action": {
@@ -4007,6 +4023,15 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Du er blant de første som prøver den nye kategorivisningen vår før den lanseres. Tilbakemeldingene dine vil bidra til å forbedre hvordan Proton Mail sorterer e-poster for alle."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "For ubegrenset tilgang til skriveassistenten og mer, oppgrader til ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Legg til ${ LUMO_SHORT_APP_NAME } i abonnementet ditt for å fortsette å bruke det i ${ MAIL_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "For å fortsette å bruke ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, be om tilgang fra administratoren din."
       ]
     },
     "description": {
@@ -5373,6 +5398,9 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
+      ],
+      "Touch your security key.": [
+        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -5759,6 +5787,9 @@
       ],
       "Tell us more": [
         "Fortell oss mer"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Konfigurer ${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "Hint": {
@@ -6797,8 +6828,7 @@
         "Arvet fra overordnet mappe"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8672,6 +8702,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } hjelper deg med å lage bedre e-poster raskt og enkelt."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME }-panel"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sorterer nå e-postene dine automatisk i kategorier som Primær, Sosialt, Kampanjer og mer, noe som gjør det enklere for deg å finne og administrere meldinger."
+      ],
+      "Private by design.": [
+        "Privat som standard."
       ]
     },
     "info": {
@@ -9769,6 +9811,54 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skriveassistent"
+      ],
+      "Clear logs": [
+        "Tøm logger"
+      ],
+      "Context page": [
+        "Kontekstside"
+      ],
+      "Context total": [
+        "Kontekst totalt"
+      ],
+      "Current context": [
+        "Gjeldende kontekst"
+      ],
+      "Drive": [
+        "Stasjon"
+      ],
+      "Elements in store": [
+        "Elementer i lager"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Information": [
+        "Informasjon"
+      ],
+      "Label ID": [
+        "Etikett-ID"
+      ],
+      "Mail debugging information": [
+        "Feilsøkingsinformasjon for e-post"
+      ],
+      "Mail logs": [
+        "E-postlogger"
+      ],
+      "Refresh logs": [
+        "Oppdater logger"
+      ],
+      "Sort": [
+        "Sorter"
+      ],
+      "Store state": [
+        "Lagerstatus"
+      ],
+      "Tab age": [
+        "Fanealder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10073,6 +10163,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Learn more.": [
+        "Finn ut mer."
       ]
     },
     "Loading info": {
@@ -12425,6 +12518,27 @@
       ],
       "To": [
         "Til"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Fortell ${ subject } hva du vil at skal skrives. Eksempel: «Kunngjør kommende hendelser i et nyhetsbrev»"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Fortell ${ subject } hva du vil skrive. Eksempel: «Avbryt treningsmedlemskapet mitt»"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Fortell ${ subject } hva du vil skrive. Eksempel: «Inviter Jane til festen min»"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Fortell ${ subject } hva du vil skrive. Eksempel: «Takk kollegaen min for hjelpen på et prosjekt»"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Fortell ${ subject } hva som skal skrives. Eksempel: «Skriv et følgebrev for en praksisplass»"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Fortell ${ subject } hva du vil skrive. Eksempel: «Skriv en oppfølgings-e-post til en klient»"
+      ],
+      "the writing assistant": [
+        "skriveassistenten"
       ]
     },
     "Placeholder for contact group name": {
@@ -14117,6 +14231,9 @@
       ],
       "Thanks for the feedback!": [
         "Takk for tilbakemeldingen!"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Kopierte «${ code }» til utklippstavlen"
       ]
     },
     "Success notification": {
@@ -15363,6 +15480,12 @@
       ],
       "Your newsletters in one place": [
         "Dine nyhetsbrev på ett sted"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Lag bedre e-poster med ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Your inbox, automatically organized": [
+        "Din innboks, organisert automatisk"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15457,6 +15580,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Dette sikrer at ingen kan se plassering, enhet og annen informasjon som kan brukes til å identifisere eller spore deg."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
       ]
     },
     "tooltip": {

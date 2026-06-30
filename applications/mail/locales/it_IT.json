@@ -1696,6 +1696,40 @@
       ],
       "Your email writing assistant": [
         "Il tuo assistente per la scrittura di email"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Aggiungi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continua con ${ planOrAppName }"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Copia '${ code }' negli appunti"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copia '${ code }' negli appunti e sposta nel Cestino"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide ${ title }": [
+        "Nascondi ${ title }"
+      ],
+      "Move to category...": [
+        "Sposta in categoria..."
+      ],
+      "Show ${ title }": [
+        "Mostra ${ title }"
+      ],
+      "Start testing": [
+        "Inizia a testare"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
+      "Verify now": [
+        "Verifica ora"
       ]
     },
     "action": {
@@ -2056,6 +2090,15 @@
       ],
       "Unlimited daily chats": [
         "Chat giornaliere illimitate"
+      ],
+      "Access advanced AI models": [
+        "Accedi a modelli IA avanzati"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Cronologia chat completa con ricerca semplice e preferiti"
       ]
     },
     "Billing cycle option": {
@@ -2122,6 +2165,9 @@
       ],
       "What are you migrating?": [
         "Cosa stai migrando?"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contatta il tuo amministratore per avviare una migrazione."
       ]
     },
     "Browser": {
@@ -2583,6 +2629,9 @@
       "Total for ${ n } month": [
         "Totale per ${ n } mese",
         "Totale per ${ n } mesi"
+      ],
+      "Subtotal": [
+        "Subtotale"
       ]
     },
     "Collapsible tooltip": {
@@ -3805,6 +3854,9 @@
       ],
       "North Macedonia": [
         "Macedonia del Nord"
+      ],
+      "Canary Islands": [
+        "Isole Canarie"
       ]
     },
     "customer_support.feature.all": {
@@ -4170,6 +4222,27 @@
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Stai inoltrando email da ${ forwardingCount } indirizzi Gmail. Connettendolo, potrai ricevere e rispondere da ${ MAIL_APP_NAME }",
         "Stai inoltrando email da ${ forwardingCount } indirizzi Gmail. Collegandoli, potrai ricevere e rispondere in ${ MAIL_APP_NAME }"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per un onboarding senza problemi del tuo team a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Per accesso illimitato all'assistente alla scrittura e altro ancora, effettua l’upgrade a ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Se un messaggio appare nella categoria sbagliata, ti basta spostarlo in quella corretta. Fai clic destro su un messaggio per scegliere una nuova categoria, oppure usa il trascinare e rilasciare dove desideri."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Per continuare a usare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, aggiungilo al tuo abbonamento."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Per continuare a usare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, richiedi l'accesso al tuo amministratore."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Siamo spiacenti di vederti andare via. Se hai un momento, apprezzeremmo molto sapere perché vorresti annullare. Il tuo feedback ci aiuta a rendere ${ BRAND_NAME } migliore per tutti."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Sei tra i primi a provare la nostra nuova visualizzazione per categoria prima del suo lancio. Il tuo feedback aiuterà a migliorare il modo in cui Proton Mail organizza le email per tutti."
       ]
     },
     "description": {
@@ -5104,6 +5177,30 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Company name or personal name is required": [
+        "Il nome dell'azienda o il nome personale è obbligatorio"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Impossibile caricare i dati dell'abbonamento. Riprova più tardi."
+      ],
+      "Invalid VAT number": [
+        "Partita IVA non valida"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Controlla se il tuo ABN è registrato per l'IVA transfrontaliera"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Il regime di reverse charge non è previsto per questo piano"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "L'importo minimo della donazione è ${ price }"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Il numero di partita IVA deve iniziare con ${ prefixes }"
+      ],
+      "Wrong billing address": [
+        "Indirizzo di fatturazione errato"
       ]
     },
     "error": {
@@ -5537,6 +5634,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Tocca la tua chiave di sicurezza."
       ]
     },
     "fido2: Label": {
@@ -5819,6 +5919,15 @@
       ],
       "You've unlocked 1 GB": [
         "Hai sbloccato 1 GB"
+      ],
+      "Download apps": [
+        "Scarica le app"
+      ],
+      "Get storage bonus": [
+        "Ottieni bonus di archiviazione"
+      ],
+      "Review import options": [
+        "Esamina le opzioni di importazione"
       ]
     },
     "Gmail forwarding": {
@@ -5914,6 +6023,9 @@
       ],
       "Tell us more": [
         "Dicci di più"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configura l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6948,8 +7060,7 @@
         "Preso dalla cartella principale"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8749,6 +8860,84 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } ti aiuta a creare email migliori in modo rapido e senza sforzo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Pannello ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } ora ordina automaticamente le tue email in categorie come Principale, Social, Promozioni e altro, aiutandoti a trovare e gestire i messaggi più facilmente."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } è una soluzione di videoconferenza crittografata end-to-end. Aggiungila al tuo piano per ospitare riunioni sicure."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licenze ${ MEET_APP_NAME }"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } nasconde il tuo traffico. ${ PASS_SHORT_APP_NAME } nasconde la tua identità\n— **alias hide-my-email** illimitati e **avvisi sul dark web** in caso di perdite dei tuoi dati."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita i tuoi amici** a ${ BRAND_NAME } con il tuo link di affiliazione."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Loro ottengono ${ refereeRewardAmount }** in crediti se si abbonano."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Ottieni ${ referrerRewardAmount }** in crediti per ogni amico che si abbona."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Aggiungi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Ordina automaticamente le email in arrivo nelle categorie"
+      ],
+      "Choose your service to connect with": [
+        "Scegli il tuo servizio con cui connettere"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Ricordi la tua password? ${ verifyButton }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tutto ciò che è compreso in ${ planOrAppName }, più:"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "A soli ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita."
+      ],
+      "Password verified": [
+        "Password verificata"
+      ],
+      "Please select the labels you would like to import:": [
+        "Seleziona le etichette che desideri importare:"
+      ],
+      "Private by design.": [
+        "Privato per progettazione."
+      ],
+      "RECOMMENDED": [
+        "CONSIGLIATO"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporaneamente non disponibile a causa dell'elevato traffico. Riprova più tardi."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Per aiutarti a ricordare la tua password, ti chiederemo di inserirla periodicamente. Con il tempo te lo chiederemo sempre meno."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Considera la chiave \"${ activeSignerText }\" come attendibile per verificare i nuovi messaggi da questo contatto."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Ti ricorderemo di verificare di nuovo la tua password più tardi"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Il tuo account è attualmente configurato per applicare il regime di reverse charge. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
       ]
     },
     "info": {
@@ -8815,6 +9004,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Firmatario attivo"
+      ],
+      "Fallback": [
+        "Fallback"
       ]
     },
     "Key pinning": {
@@ -9015,6 +9210,9 @@
       ],
       "Message shortcuts": [
         "Scorciatoie messaggio"
+      ],
+      "Desktop app navigation": [
+        "Navigazione app desktop"
       ]
     },
     "Label": {
@@ -9806,6 +10004,75 @@
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caratteri"
+      ],
+      "Additional comments": [
+        "Commenti aggiuntivi"
+      ],
+      "Clear logs": [
+        "Pulisci i log"
+      ],
+      "Context page": [
+        "Pagina contesto"
+      ],
+      "Context total": [
+        "Totale contesto"
+      ],
+      "Continue cancelling": [
+        "Continua la cancellazione"
+      ],
+      "Current context": [
+        "Contesto attuale"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Elements in store": [
+        "Elementi nello store"
+      ],
+      "Email categories": [
+        "Categorie email"
+      ],
+      "Emails (last 6 months)": [
+        "Email (ultimi 6 mesi)"
+      ],
+      "Filter": [
+        "Filtra"
+      ],
+      "Information": [
+        "Informazioni"
+      ],
+      "Label ID": [
+        "ID etichetta"
+      ],
+      "Mail debugging information": [
+        "Informazioni di debug Mail"
+      ],
+      "Mail logs": [
+        "Log di Mail"
+      ],
+      "Main reason for cancelling": [
+        "Motivo principale dell'annullamento"
+      ],
+      "Refresh logs": [
+        "Aggiorna log"
+      ],
+      "Skip feedback": [
+        "Ignora feedback"
+      ],
+      "Sort": [
+        "Ordina"
+      ],
+      "Store state": [
+        "Memorizza lo stato"
+      ],
+      "Tab age": [
+        "Età della scheda"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10110,6 +10377,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "Learn more.": [
+        "Scopri di più."
       ]
     },
     "Loading info": {
@@ -10220,6 +10490,12 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Licenza ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licenze ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -10275,12 +10551,18 @@
       "Video meetings, ${ n } participant": [
         "Videoconferenze, ${ n } partecipante",
         "Videoconferenze, ${ n } partecipanti"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Gli host possono registrare le riunioni localmente sui propri computer"
       ]
     },
     "meet_2025: Info": {
       "${ seats } seat included": [
         "${ seats } licenza inclusa",
         "${ seats } licenze incluse"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_MEET_SEATS } licenze ${ MEET_SHORT_APP_NAME } durante il periodo di prova."
       ]
     },
     "Message": {
@@ -10971,6 +11253,27 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "Access all countries": [
+        "Accedi a tutti i Paesi"
+      ],
+      "Data retention policies": [
+        "Policy di conservazione dei dati"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Server dedicati ottimizzati per la velocità"
+      ],
+      "No streaming support": [
+        "Nessun supporto streaming"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat AI privata (${ LUMO_APP_NAME })"
+      ],
+      "Unlock streaming": [
+        "Sblocca streaming"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con ad-blocker e protezione da malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -11805,6 +12108,12 @@
       ],
       "All": [
         "Tutte"
+      ],
+      "Remind me later": [
+        "Ricordamelo più tardi"
+      ],
+      "Yes, don't show again": [
+        "Sì, non mostrare più"
       ]
     },
     "Option group": {
@@ -12065,6 +12374,27 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% imposte: ${ taxAmountElement }"
+      ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
+      "Including ${ rate }% tax": [
+        "Inclusa l'imposta del ${ rate }%"
+      ],
+      "Including ${ rate }% taxes": [
+        "Incluse imposte del ${ rate }%"
+      ],
+      "Tax ${ rate }%": [
+        "Imposta ${ rate }%"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Si applica il meccanismo di inversione contabile IVA."
       ]
     },
     "Payments.Error": {
@@ -12128,6 +12458,12 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dal numero di identificazione aziendale."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dal numero di partita IVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12201,6 +12537,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Ti consigliamo di \"non considerare attendibile\" questa chiave."
+      ],
+      "This contact currently signs messages with this key": [
+        "Questo contatto firma attualmente i messaggi con questa chiave"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Questa chiave viene utilizzata per crittografare i messaggi verso questo contatto sulle app meno recenti"
       ]
     },
     "PGP key warning": {
@@ -12382,6 +12724,42 @@
       ],
       "To": [
         "Al"
+      ],
+      "Anything you'd like us to know": [
+        "Qualcosa che vorresti farci sapere"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "Inserisci un nome"
+      ],
+      "San Francisco": [
+        "San Francisco"
+      ],
+      "Select a provider": [
+        "Seleziona un provider"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Dì a ${ subject } cosa scrivere. Esempio: “Annuncia i prossimi eventi in una newsletter”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Dì a ${ subject } cosa scrivere. Esempio: “Annulla l'abbonamento alla palestra”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Dì a ${ subject } cosa scrivere. Esempio: \"Invita Jane alla mia festa\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Dì a ${ subject } cosa scrivere. Esempio: \"Ringrazia il mio collega per l'aiuto su un progetto\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Di' a ${ subject } cosa scrivere. Esempio: “Scrivi una lettera di presentazione per uno stage”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Dì a ${ subject } cosa scrivere. Esempio: \"Scrivi un'email di sollecito a un cliente\""
+      ],
+      "the writing assistant": [
+        "l'assistente alla scrittura"
       ]
     },
     "Placeholder for contact group name": {
@@ -12980,6 +13358,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Apri in ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Apri in ${ appName } (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -13227,6 +13608,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantieni le tue password al sicuro e organizzate in varie casseforti"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13759,6 +14143,12 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, e ${ LUMO_APP_NAME } con funzionalità premium"
       ]
     },
     "subscription reminder": {
@@ -14153,6 +14543,9 @@
       ],
       "Thanks for the feedback!": [
         "Grazie per il feedback!"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' copiato negli appunti"
       ]
     },
     "Success notification": {
@@ -15415,6 +15808,31 @@
       ],
       "Your newsletters in one place": [
         "Le tue newsletter in un unico posto"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Scrivi email migliori con ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Aiutaci a definire il futuro delle categorie email in ${ MAIL_APP_NAME }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importa i tuoi dati in ${ BRAND_NAME }"
+      ],
+      "Loading...": [
+        "Caricamento..."
+      ],
+      "Mailing list": [
+        "Mailing list",
+        "Mailing lists"
+      ],
+      "Select data to import": [
+        "Seleziona i dati da importare"
+      ],
+      "Verify your password": [
+        "Verifica la tua password"
+      ],
+      "Your inbox, automatically organized": [
+        "La tua posta in arrivo, organizzata automaticamente"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15509,6 +15927,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Ciò garantisce che nessuno possa vedere la posizione, il dispositivo e altre informazioni che potrebbero essere utilizzate per identificarti o tracciarti."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistenza IA istantanea, esperto umano a tua disposizione!"
       ]
     },
     "tooltip": {
@@ -16204,6 +16625,24 @@
     "Filter": {
       "Filter": [
         "﻿Filtra"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtra (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtra e ordina le email"
+      ],
+      "Has attachments": [
+        "Con allegati"
+      ],
+      "Read": [
+        "Letto"
+      ],
+      "Reset": [
+        "Reimposta"
+      ],
+      "Unread": [
+        "Non letto"
       ]
     },
     "forwardmessage": {
@@ -16269,6 +16708,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Non hai nessun abbonamento a newsletter o a mailing list."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Caricamento dei tuoi abbonamenti alle newsletter in corso..."
       ]
     },
     "Layout mode": {
@@ -16332,11 +16774,29 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "Passa i servizi che usi ogni giorno al tuo indirizzo ${ BRAND_NAME } per una maggiore sicurezza e privacy."
+      ],
+      "Skip for now": [
+        "Ignora per ora"
       ]
     },
     "Provider option": {
       "Other": [
         "Altro"
+      ],
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {
@@ -16466,6 +16926,21 @@
       ],
       "Sun, ${ formatTime }": [
         "Dom, ${ formatTime }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato appositamente per proteggere i tuoi dispositivi e accelerare la tua navigazione bloccando annunci, tracker e malware."
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Passa a ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Passa a ${ MAIL_APP_NAME }"
       ]
     }
   }

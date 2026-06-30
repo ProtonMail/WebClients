@@ -260,10 +260,10 @@
         "Continuer avec Outlook"
       ],
       "Copy '${ code }' to clipboard": [
-        "Copier '${ code }' dans le presse-papier"
+        "Copier « ${ code } » dans le presse-papiers"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "Copier '${ code }' dans le presse-papier et déplacer dans la corbeille"
+        "Copier « ${ code } » dans le presse-papiers et déplacer dans la Corbeille"
       ],
       "Copy address": [
         "Copier l'adresse"
@@ -1051,7 +1051,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Try again": [
         "Réessayer"
@@ -4182,7 +4183,7 @@
         "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Pour un accès illimité à l'assistant d'écriture et plus encore, passez à l'abonnement ${ LUMO_SHORT_APP_NAME }."
+        "Pour un accès illimité à l'assistant d'écriture et plus encore, changez d'abonnement pour ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -4240,7 +4241,7 @@
         "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, ajoutez-le à votre abonnement."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre administrateur."
+        "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre admin."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
@@ -5804,6 +5805,9 @@
       ],
       "Security key": [
         "Clé de sécurité"
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -6670,7 +6674,7 @@
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } vous aide à rédiger des meilleurs messages, rapidement et sans effort."
+        "${ LUMO_SHORT_APP_NAME } vous aide à rédiger des messages de meilleure qualité, rapidement et sans effort."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Panneau ${ LUMO_SHORT_APP_NAME }"
@@ -7365,8 +7369,7 @@
         "Similaire au dossier principal"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9144,6 +9147,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } trie désormais automatiquement vos messages dans des catégories telles que Principal, Réseaux sociaux, Promotions, et bien plus, ce qui vous aide à trouver et à gérer vos messages plus facilement."
+      ],
+      "Private by design.": [
+        "Privé par conception."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Vous avez ${ totalLabel } dans votre boîte de réception."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
+        "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Vous avez **${ count } message** dans la catégorie ${ categoryLabel }",
+        "Vous avez **${ count } messages** dans la catégorie ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Vous n'avez aucune conversation dans cette catégorie"
+      ],
+      "You have no messages in this category": [
+        "Vous n'avez aucun message dans cette catégorie"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } conversation** dans la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** dans la catégorie ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } message** dans la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** dans la catégorie ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9572,7 +9606,7 @@
         "Nettoyé"
       ],
       "Clear logs": [
-        "Vider les journaux"
+        "Effacer les journaux"
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
@@ -9710,7 +9744,7 @@
         "Extrêmement satisfait"
       ],
       "Filter": [
-        "Filtrer"
+        "Filtre"
       ],
       "Filter Name": [
         "Nom du filtre"
@@ -9809,7 +9843,7 @@
         "Labelliser"
       ],
       "Label ID": [
-        "Label ID"
+        "ID de label"
       ],
       "Label messages as": [
         "Labelliser les messages"
@@ -10292,6 +10326,24 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletters - Actualités, e-mails éditoriaux et contenu non promotionnel"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal – E-mails personnels et professionnels, ainsi que mises à jour importantes"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promotions – Offres et e-mails marketing"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Mises à jour, activités et messages sur les réseaux sociaux"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transactions - Reçus, réservations, factures et commandes"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Mises à jour – Confirmations, alertes et mises à jour de compte automatisées"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10622,6 +10674,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Vous devez réactiver vos clés pour voir l'invitation mise à jour."
+      ],
+      "Learn more.": [
+        "En savoir plus."
       ]
     },
     "Link to settings": {
@@ -12938,22 +12993,22 @@
         "Objet"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annoncer des événements à venir dans une newsletter »"
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annoncer des événements à venir dans une newsletter »"
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annuler mon abonnement à la salle de sport »"
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annuler mon abonnement à la salle de sport »"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
         "Indiquez à ${ subject } ce qu’il faut écrire. Exemple : « Inviter Jeanne à ma fête »"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Remercie mon collègue pour son aide sur un projet »"
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Remerciez mon collègue pour son aide sur un projet »"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
-        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Rédiger une lettre de motivation pour un stage »"
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Rédiger une lettre de motivation pour un stage »"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Écrire un e-mail de relance à un client »"
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Écrire un message de relance à un client »"
       ],
       "Text": [
         "Texte"
@@ -14668,7 +14723,7 @@
         "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }"
       ],
       "Copied '${ code }' to clipboard": [
-        "Le code '${ code }' a été copié dans le presse-papier."
+        "« ${ code } » copié dans le presse-papiers"
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
@@ -14853,6 +14908,10 @@
       ],
       "Thanks for the feedback!": [
         "Merci pour les commentaires."
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Déplacé vers ${ label }. Un message similaire sera classé ici à l’avenir.",
+        "Déplacé vers ${ label }. Les messages similaires seront classés ici à l’avenir."
       ]
     },
     "Success notification": {
@@ -15239,7 +15298,7 @@
         "Code promo"
       ],
       "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
-        "Rédigez des meilleurs e-mails avec ${ LUMO_SHORT_APP_NAME }"
+        "Rédigez de meilleurs messages avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create contact": [
         "Créer un contact"
@@ -16140,6 +16199,9 @@
       ],
       "Your newsletters in one place": [
         "Vos newsletters en un seul endroit."
+      ],
+      "Your inbox, automatically organized": [
+        "Votre boite de réception, organisée automatiquement"
       ]
     },
     "Today icon tooltip in mini calendar": {

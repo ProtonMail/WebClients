@@ -1570,7 +1570,10 @@
         "Защите от трекеров предотвратила загрузку некоторых изображений. Загрузите их если доверяете отправителю."
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1625,6 +1628,102 @@
       ],
       "Your email writing assistant": [
         "Ваш помощник по написанию электронных писем"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Добавить ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add secret passphrase": [
+        "Добавить кодовую фразу"
+      ],
+      "Adds it above your existing message": [
+        "Добавляет его над вашим сообщением"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Получить адрес ${ BRAND_NAME }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Продолжить с ${ planOrAppName }"
+      ],
+      "Continue with categories": [
+        "Продолжить с категориями"
+      ],
+      "Continue without categories": [
+        "Продолжить без категорий"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Скопировать «${ code }» в буфер обмена"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Скопировать «${ code }» в буфер обмена и переместить в Корзину"
+      ],
+      "Download application logs": [
+        "Скачать журналы приложения"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Получите бесплатный адрес ${ BRAND_NAME }"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide ${ title }": [
+        "Скрыть ${ title }"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Присоединиться с ${ MEET_APP_NAME }"
+      ],
+      "Keep inbox as before": [
+        "Оставить почтовый ящик как раньше"
+      ],
+      "Most frequent": [
+        "Самые частые"
+      ],
+      "Move to category...": [
+        "Переместить в категорию..."
+      ],
+      "Or remove forwarding address": [
+        "Или удалите адрес пересылки"
+      ],
+      "Recently read": [
+        "Недавно прочитано"
+      ],
+      "Remove video conference": [
+        "Удалить видеоконференцию"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Выбрать рейтинг ${ n } из ${ to }"
+      ],
+      "Send Feedback": [
+        "Отправить обратную связь"
+      ],
+      "Send unsubscribe email": [
+        "Отправить электронное письмо об отписке"
+      ],
+      "Show ${ title }": [
+        "Показать ${ title }"
+      ],
+      "Start testing": [
+        "Начать тестирование"
+      ],
+      "Stop marking as read": [
+        "Перестать помечать как прочитанное"
+      ],
+      "Stop moving to Archive": [
+        "Перестать перемещать в Архив"
+      ],
+      "Stop moving to Trash": [
+        "Прекратить перемещение в Корзину"
+      ],
+      "Toggle referral": [
+        "Переключить реферальную программу"
+      ],
+      "Try categories": [
+        "Попробуйте категории"
+      ],
+      "Update secret passphrase": [
+        "Обновить секретную кодовую фразу"
+      ],
+      "Verify now": [
+        "Подтвердить сейчас"
       ]
     },
     "action": {
@@ -1700,6 +1799,30 @@
       ],
       "Dedicated VPN servers": [
         "Выделенные VPN-серверы"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Лицензия ${ LUMO_APP_NAME } AI"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } лицензия ${ MEET_APP_NAME }",
+        "${ seats } лицензии ${ MEET_APP_NAME }",
+        "${ seats } лицензий ${ MEET_APP_NAME }",
+        "${ seats } лицензий ${ MEET_APP_NAME }"
+      ],
+      "Domains": [
+        "Домены"
+      ],
+      "Servers": [
+        "Серверы"
+      ],
+      "Users": [
+        "Пользователи"
+      ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ],
+      "Writing assistant seats": [
+        "Лицензии помощника по написанию"
       ]
     },
     "Alert": {
@@ -1747,6 +1870,18 @@
       ],
       "Run on device": [
         "Запуск на устройстве"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Данные остаются на устройстве для защиты вашей конфиденциальности. Требуется скачивание и совместимое оборудование."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Журналы не ведутся для защиты вашей конфиденциальности. Более быстрая обработка."
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Безопасный запуск на серверах ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Безопасный запуск на устройстве"
       ]
     },
     "Assistant toggle": {
@@ -1789,6 +1924,12 @@
       ],
       "You have reached the trial limit.": [
         "Вы достигли лимита пробного периода."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "После окончания пробной версии ${ formattedDate1 } она превратится в платную подписку с автоматическим продлением каждые ${ renewCycle } мес. Плата не будет взиматься, если вы отмените её до ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "После окончания пробной версии ${ formattedDate1 } она превратится в платную подписку с ежемесячным автоматическим продлением. Плата не будет взиматься, если вы отмените её до ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -1931,6 +2072,12 @@
         "${ n } месяцев",
         "${ n } месяцев",
         "${ n } месяца"
+      ],
+      "Billed monthly": [
+        "Ежемесячная оплата"
+      ],
+      "Lifetime access": [
+        "Пожизненный доступ"
       ]
     },
     "Browser": {
@@ -2019,6 +2166,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Проблема с ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Authenticator problem": [
+        "Проблема с приложением-аутентификатором"
+      ],
+      "Meet problem": [
+        "Проблема с Meet"
       ]
     },
     "Button": {
@@ -2120,6 +2273,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Все платные функции ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователя"
       ]
     },
     "Checkout row": {
@@ -2137,6 +2296,15 @@
         "Итого за ${ n } месяца",
         "Итого за ${ n } месяцев",
         "Итого за ${ n } месяцев"
+      ],
+      "Subtotal": [
+        "Промежуточный итог"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Промежуточный итог за ${ cycle } месяц",
+        "Промежуточный итог за ${ cycle } месяца",
+        "Промежуточный итог за ${ cycle } месяцев",
+        "Промежуточный итог за ${ cycle } месяца"
       ]
     },
     "Collapsible tooltip": {
@@ -2153,6 +2321,15 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Добавить приложение ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Расширенная безопасность аккаунта и сети в одном тарифе"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Высокоскоростные чаты и расширенные функции ИИ."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Конфиденциальные видеозвонки для важных цепочек писем."
       ]
     },
     "color": {
@@ -3265,6 +3442,9 @@
       ],
       "North Macedonia": [
         "Северная Македония"
+      ],
+      "Canary Islands": [
+        "Канарские острова"
       ]
     },
     "customer_support.feature.all": {
@@ -3596,6 +3776,78 @@
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "С настраиваемым откладыванием вы можете скрыть письма и установить их повторное появление в лучшее время."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для удобного подключения вашей команды к ${ BRAND_NAME } импортируйте данные из Google, Outlook и других сервисов."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Чтобы получить доступ к помощнику по написанию текста без ограничений и другим функциям, перейдите на тариф ${ BRAND_NAME } Duo."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Чтобы получить доступ к помощнику по написанию без ограничений и другим функциям, выполните улучшение до ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Если сообщение появилось в неправильной категории, просто переместите его в нужную. Нажмите на сообщение правой кнопкой мыши, чтобы выбрать новую категорию, или перетащите его туда, где оно должно быть."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Чтобы подключить другой адрес Gmail, удалите дополнительные адреса Gmail, выполняющие пересылку на ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Чтобы подключить до ${ MAX_SYNC_PAID_USER } адреса Gmail, улучшите тариф до ${ planName }.",
+        "Чтобы подключить до ${ MAX_SYNC_PAID_USER } адресов Gmail, улучшите тариф до ${ planName }.",
+        "Чтобы подключить до ${ MAX_SYNC_PAID_USER } адресов Gmail, улучшите тариф до ${ planName }.",
+        "Чтобы подключить до ${ MAX_SYNC_PAID_USER } адресов Gmail, улучшите тариф до ${ planName }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Чтобы продолжить использовать ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME }, добавьте его в свою подписку."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Чтобы продолжить использовать ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME }, запросите доступ у вашего администратора."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ maxContactString } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Улучшите тариф до ${ planName }, чтобы подключить до ${ MAX_SYNC_PAID_USER } аккаунтов"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам жаль, что вы уходите. Если у вас есть минутка, мы были бы очень признательны, если бы вы рассказали, почему хотите отменить подписку. Ваша обратная связь помогает нам сделать ${ BRAND_NAME } лучше для всех."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Вы пересылаете ${ numAddressesOrSync } адрес Gmail в ${ MAIL_APP_NAME }.",
+        "Вы пересылаете ${ numAddressesOrSync } адреса Gmail в ${ MAIL_APP_NAME }.",
+        "Вы пересылаете ${ numAddressesOrSync } адресов Gmail в ${ MAIL_APP_NAME }.",
+        "Вы пересылаете ${ numAddressesOrSync } адресов Gmail в ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Вы пересылаете электронные письма с ${ forwardingCount } адреса Gmail. Подключив его, вы сможете как получать, так и отвечать на них в ${ MAIL_APP_NAME }",
+        "Вы пересылаете электронные письма с ${ forwardingCount } адресов Gmail. Подключив их, вы сможете как получать, так и отвечать на них в ${ MAIL_APP_NAME }",
+        "Вы пересылаете электронные письма с ${ forwardingCount } адресов Gmail. Подключив их, вы сможете как получать, так и отвечать на них в ${ MAIL_APP_NAME }",
+        "Вы пересылаете электронные письма с ${ forwardingCount } адресов Gmail. Подключив их, вы сможете как получать, так и отвечать на них в ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Вы подключили ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из ваших подключенных аккаунтов.",
+        "Вы подключили ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из ваших подключенных аккаунтов.",
+        "Вы подключили ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из ваших подключенных аккаунтов.",
+        "Вы подключили ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из ваших подключенных аккаунтов."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Вы подключили один внешний адрес аккаунта к ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ваш тариф поддерживает ${ MAX_SYNC_FREE_USER } адрес Gmail.",
+        "Ваш тариф поддерживает ${ MAX_SYNC_FREE_USER } адреса Gmail.",
+        "Ваш тариф поддерживает ${ MAX_SYNC_FREE_USER } адресов Gmail.",
+        "Ваш тариф поддерживает ${ MAX_SYNC_FREE_USER } адресов Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ваш тариф поддерживает в общей сложности ${ MAX_SYNC_PAID_USER } адрес Gmail",
+        "Ваш тариф поддерживает в общей сложности ${ MAX_SYNC_PAID_USER } адреса Gmail",
+        "Ваш тариф поддерживает в общей сложности ${ MAX_SYNC_PAID_USER } адресов Gmail",
+        "Ваш тариф поддерживает в общей сложности ${ MAX_SYNC_PAID_USER } адресов Gmail"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Вы одни из первых, кто пробует наш новый вид категорий до его запуска. Ваша обратная связь поможет улучшить то, как Proton Mail сортирует электронные письма для всех."
       ]
     },
     "description": {
@@ -3716,6 +3968,21 @@
       ],
       "This event was updated.": [
         "Это событие было обновлено."
+      ],
+      "DESCRIPTION:": [
+        "ОПИСАНИЕ:"
+      ],
+      "LOCATION:": [
+        "МЕСТОПОЛОЖЕНИЕ:"
+      ],
+      "TIME:": [
+        "ВРЕМЯ:"
+      ],
+      "TITLE:": [
+        "ЗАГОЛОВОК:"
+      ],
+      "You are invited to": [
+        "Вы приглашены на"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4410,6 +4677,81 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } для <${ email }>. Вы можете добавить другой ключ или отключить шифрование для этого контакта, чтобы решить проблему."
+      ],
+      "Address could not be added.": [
+        "Не удалось добавить адрес."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Размер вложений ограничен ${ readableAttachmentMaxSize }"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Невозможно установить срок действия, превышающий лимит, разрешенный политикой хранения."
+      ],
+      "Company name or personal name is required": [
+        "Требуется указать название компании или имя"
+      ],
+      "Failed loading group members": [
+        "Ошибка при загрузке членов группы"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не удалось загрузить данные о подписке. Повторите попытку позже."
+      ],
+      "Failed to open to contact": [
+        "Не удалось открыть контакт"
+      ],
+      "Failed to update secret passphrase": [
+        "Не удалось обновить кодовую фразу"
+      ],
+      "Invalid coupon": [
+        "Недействительный купон"
+      ],
+      "Invalid VAT number": [
+        "Недействительный номер НДС"
+      ],
+      "No address with sending permissions": [
+        "Нет адреса с правами на отправку"
+      ],
+      "Passphrase unavailable": [
+        "Кодовая фраза недоступна"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Пожалуйста, проверьте, зарегистрирован ли ваш ABN для трансграничного НДС"
+      ],
+      "Please complete the billing details": [
+        "Пожалуйста, заполните платежную информацию"
+      ],
+      "re-importing": [
+        "повторный импорт"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Механизм обратного начисления налога не поддерживается для этого тарифа"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Это действие нельзя выполнить для электронных писем в этой папке"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Минимальная сумма пожертвования составляет ${ price }"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Возникла проблема при попытке расшифровать ваше сообщение. Если проблема не исчезнет, обратитесь в нашу поддержку клиентов."
+      ],
+      "This field is invalid": [
+        "Это поле недействительно"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Номер НДС должен начинаться с ${ prefixes }"
+      ],
+      "Wrong billing address": [
+        "Неверный адрес для выставления счетов"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Не удалось расшифровать ваше сообщение. Если вы удалили какой-либо из своих ключей адреса, попробуйте ${ reimportKeyLink } их. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Ваше сообщение не удалось расшифровать. Ключ, использованный для того, чтобы зашифровать это сообщение, не совпадает ни с одним из ключей, связанных с вашим адресом. Если вы удалили какой-либо из ключей адреса, попробуйте ${ reimportKeyLink } их. ${ learnMoreLink }"
       ]
     },
     "Error importing calendar": {
@@ -4476,6 +4818,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Файл ${ formattedFilename } пуст."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Ваш файл ${ formattedFilename } содержит более ${ maxContactString } контактов."
       ]
     },
     "Error importing event": {
@@ -4576,6 +4921,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пока нет контактов. Начните с создания нового контакта"
+      ],
+      "An error occurred with the categories": [
+        "Произошла ошибка с категориями"
       ]
     },
     "Error notification": {
@@ -4733,6 +5081,15 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Семейные тарифы в настоящее время не поддерживают внешние аккаунты. Создайте адрес ${ BRAND_NAME } перед тем, как присоединиться. ${ link }"
+      ],
+      "View the invitation": [
+        "Посмотреть приглашение",
+        "Посмотреть приглашения",
+        "Посмотреть приглашения",
+        "Посмотреть приглашения"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4799,6 +5156,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Зашифрованное облачное хранение для файлов, фотографий и документов"
+      ],
+      "More premium features": [
+        "Больше платных функций"
       ]
     },
     "Features": {
@@ -4812,6 +5175,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Коснитесь своего ключа безопасности."
       ]
     },
     "fido2: Label": {
@@ -5110,6 +5476,18 @@
       ],
       "Tell us more": [
         "Расскажи подробнее"
+      ],
+      "Domain": [
+        "Домен"
+      ],
+      "Password ends with": [
+        "Пароль заканчивается на"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Настроить помощника по письму ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Username": [
+        "Имя пользователя"
       ]
     },
     "Hint": {
@@ -5344,6 +5722,12 @@
       ],
       "Your password is correct.": [
         "Ваш пароль правильный."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "В вашем внешнем аккаунте включена двухфакторная аутентификация."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "В вашем внешнем аккаунте электронной почты включена двухфакторная аутентификация."
       ]
     },
     "Import instructions": {
@@ -6048,10 +6432,7 @@
         "Унаследовано от родительской папки"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -7942,6 +8323,210 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe помогает вам быстро и без усилий создавать более качественные электронные письма."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } требует адрес ${ BRAND_NAME } для безопасной синхронизации событий и шифрования. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } требует адрес ${ BRAND_NAME } для безопасной синхронизации событий и шифрования. Получите бесплатный адрес ${ MAIL_APP_NAME } сейчас."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } помогает вам быстро и без усилий создавать более качественные электронные письма."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Панель ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } теперь автоматически сортирует ваши электронные письма по таким категориям, как «Основной», «Социальные сети», «Промоакции» и другие, помогая вам проще находить сообщения и управлять ими."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } — это решение для видеоконференций, зашифрованное сквозным методом. Добавьте его в свой тариф, чтобы проводить безопасные встречи."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } — лицензии"
+      ],
+      "${ unreadCount } newsletter": [
+        "Рассылка ${ unreadCount }",
+        "${ unreadCount } рассылки",
+        "${ unreadCount } рассылок",
+        "${ unreadCount } рассылок"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } скрывает ваш трафик. ${ PASS_SHORT_APP_NAME } скрывает ваши личные данные\n— неограниченное количество **псевдонимов hide-my-email** и **оповещений о даркнете** в случае утечки ваших данных."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Пригласите друзей** в ${ BRAND_NAME }, используя вашу реферальную ссылку."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Они получают ${ refereeRewardAmount }** в виде остатка на счете, если подпишутся."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Вы получаете ${ referrerRewardAmount }** в виде остатка на счете за каждого друга, который решит подписаться."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Добавить ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Все ваши контакты будут импортированы, до лимита ${ maxContact }",
+        "Все ваши контакты будут импортированы, до лимита в ${ maxContact } контакта",
+        "Все ваши контакты будут импортированы, до лимита в ${ maxContact } контактов",
+        "Все ваши контакты будут импортированы, до лимита в ${ maxContact } контактов"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "От вашего имени будет отправлено электронное письмо, чтобы отписаться."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Автоматически сортировать входящие электронные письма по категориям"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Категории работают так же, как спам-фильтры. ${ MAIL_APP_NAME } никогда не читает ваши электронные письма и не будет делиться вашими данными."
+      ],
+      "Choose a plan that works best for you.": [
+        "Выберите тариф, который лучше всего вам подходит."
+      ],
+      "Choose your service to connect with": [
+        "Выберите службу, которую хотите подключить"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Вы помните свой пароль? ${ verifyButton }"
+      ],
+      "Download application logs for troubleshooting": [
+        "Скачать журналы приложения для устранения неполадок"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Все возможности ${ planOrAppName }, а также:"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Для дополнительной безопасности вы можете установить кодовую фразу. Она не будет включена в приглашение в календарь, не забудьте поделиться ею с гостями отдельно."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Всего за ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
+      "Google Pay mark": [
+        "Пометить Google Pay"
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Храните свое имя пользователя и информацию о кредитной карте в безопасности, но всегда под рукой, добавив их в ${ PASS_APP_NAME }. Это бесплатно и включено в ваш аккаунт ${ BRAND_NAME }."
+      ],
+      "Learn more about the writing assistant": [
+        "Подробнее о помощнике по написанию"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Установите ${ MAIL_APP_NAME } как приложение по умолчанию для электронной почты."
+      ],
+      "Message view": [
+        "Просмотр сообщения"
+      ],
+      "No change will be made to the selected emails": [
+        "В выбранные электронные письма не будут внесены никакие изменения"
+      ],
+      "No messages to show": [
+        "Нет сообщений для отображения"
+      ],
+      "Password verified": [
+        "Пароль подтвержден"
+      ],
+      "Please select the labels you would like to import:": [
+        "Выберите ярлыки, которые вы хотите импортировать:"
+      ],
+      "Please wait for the action to be completed": [
+        "Пожалуйста, подождите завершения действия"
+      ],
+      "Private by design.": [
+        "Конфиденциальность по дизайну."
+      ],
+      "RECOMMENDED": [
+        "РЕКОМЕНДУЕМЫЙ"
+      ],
+      "Saving draft": [
+        "Сохранение черновика"
+      ],
+      "Scheduling message": [
+        "Сообщение ставится в очередь"
+      ],
+      "Selection pane": [
+        "Панель выбора"
+      ],
+      "Sending message": [
+        "Отправка сообщения"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Срок действия подписки истекает: чтобы сохранить преимущества вашего плана ${ planName }, перезапустите подписку в Apple App Store до ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Подписка заканчивается: чтобы сохранить преимущества ${ planName }, перезапустите подписку в Google Play Маркет до ${ byDate }. ${ reactivateLink }"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Временно недоступно из-за высокой нагрузки. Пожалуйста, попробуйте позже."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "В вашем почтовом ящике нет сообщений от этого отправителя."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Эти цепочки писем хранятся здесь согласно политике организации по хранению данных."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "К этому сообщению приложен ключ, который ещё не отмечен как доверенный."
+      ],
+      "This message will be purged on ${ value }": [
+        "Это сообщение будет удалено ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Это сообщение будет удалено сегодня в ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Это сообщение будет удалено завтра в ${ value }"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Это действие удалит запись о новостной рассылке из данного списка. Вы не будете отписаны от этой рассылки. Запись появится снова, если вы получите новые сообщения."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Чтобы помочь вам запомнить пароль, мы будем периодически просить вас ввести его. Со временем мы будем делать это всё реже."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Доверьтесь ключу \"${ activeSignerText }\", чтобы проверять новые сообщения от этого контакта."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Улучшите до ${ plan } для разблокировки"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Улучшите тариф, чтобы сохранить преимущества ${ planTitle }."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Мы напомним вам подтвердить пароль позже"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Благодаря новым категориям электронных писем в ваш основной почтовый ящик будут попадать только важные сообщения. Все остальное распределяется по категориям."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "В настоящее время вы вошли как ${ username }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Вы получите вознаграждение на остаток на счете через 1 месяц после того, как ваш друг подпишется на годовой тариф, и через 2 месяца после того, как он подпишется на месячный тариф."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
+        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
+        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
+        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш аккаунт в настоящее время настроен на применение механизма обратного начисления налога. Это не поддерживается для выбранного тарифа. Чтобы продолжить, либо удалите номер НДС из платежного адреса, либо выберите другой тариф."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Дата вашего следующего платежа: ${ renewalTime }. Вы можете отменить подписку в любое время."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Вы можете отменить подписку в любое время. Обратитесь в поддержку, если вам требуется немедленное изменение тарифа."
+      ],
+      "Your private writing assistant": [
+        "Ваш конфиденциальный помощник по написанию"
       ]
     },
     "info": {
@@ -8011,6 +8596,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Активный подписант"
+      ],
+      "Fallback": [
+        "Резервный"
       ]
     },
     "Keyboard shortcut name": {
@@ -8195,6 +8786,9 @@
       ],
       "Message shortcuts": [
         "Сочетания клавиш для сообщений"
+      ],
+      "Desktop app navigation": [
+        "Навигация в приложении для ПК"
       ]
     },
     "Label": {
@@ -8878,6 +9472,177 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (доверенный контакт)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Ассистент по написанию ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Безопасный доступ к ${ PASS_APP_NAME } из терминала, что идеально подходит для создания скриптов, автоматизации и рабочих процессов разработки."
+      ],
+      "Additional comments": [
+        "Дополнительные комментарии"
+      ],
+      "Always label sender's emails": [
+        "Всегда использовать ярлык для электронных писем отправителя"
+      ],
+      "Always move sender's emails": [
+        "Всегда перемещать электронные письма отправителя"
+      ],
+      "Automated confirmations and alerts": [
+        "Автоматические подтверждения и оповещения"
+      ],
+      "Bookings, billings, and orders": [
+        "Бронирования, счета и заказы"
+      ],
+      "Choose what to do instead": [
+        "Выберите другое действие"
+      ],
+      "Clear logs": [
+        "Очистить журналы"
+      ],
+      "Command line interface (CLI)": [
+        "Интерфейс командной строки (CLI)"
+      ],
+      "Context page": [
+        "Страница контекста"
+      ],
+      "Context total": [
+        "Итого по контексту"
+      ],
+      "Continue cancelling": [
+        "Продолжить отмену"
+      ],
+      "Current context": [
+        "Текущий контекст"
+      ],
+      "Deals, offers, marketing emails": [
+        "Акции, предложения, маркетинговые электронные письма"
+      ],
+      "Drive": [
+        "Хранилище"
+      ],
+      "Elements in store": [
+        "Элементы в хранилище"
+      ],
+      "Email categories": [
+        "Категории электронных писем"
+      ],
+      "Emails (last 6 months)": [
+        "Электронные письма (за последние 6 месяцев)"
+      ],
+      "Enable filter": [
+        "Включить фильтр"
+      ],
+      "Extremely Satisfied": [
+        "Полностью удовлетворен"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Не удалось создать папку ${ newFolderName }"
+      ],
+      "Filter": [
+        "Фильтр"
+      ],
+      "Filters": [
+        "Фильтры"
+      ],
+      "Go to Newsletters": [
+        "Перейти в «Рассылки»"
+      ],
+      "Go to Primary": [
+        "Перейти в «Основное»"
+      ],
+      "Go to Promotions": [
+        "Перейти в «Промоакции»"
+      ],
+      "Go to Social": [
+        "Перейти в «Соцсети»"
+      ],
+      "Go to Transactions": [
+        "Перейти в «Транзакции»"
+      ],
+      "Go to Updates": [
+        "Перейти в «Обновления»"
+      ],
+      "Has attachments": [
+        "С вложениями"
+      ],
+      "Information": [
+        "Информация"
+      ],
+      "Label ID": [
+        "ID ярлыка"
+      ],
+      "Last 6 months only": [
+        "Только за последние 6 месяцев"
+      ],
+      "Mail debugging information": [
+        "Информация об отладке почты"
+      ],
+      "Mail logs": [
+        "Журналы почты"
+      ],
+      "Main reason for cancelling": [
+        "Основная причина отмены"
+      ],
+      "Marked as read": [
+        "Помечено как прочитанное"
+      ],
+      "Move messages to": [
+        "Переместить сообщения в"
+      ],
+      "Moved to Trash": [
+        "Перемещено в Корзину"
+      ],
+      "Newsletter entry deleted": [
+        "Запись рассылки удалена"
+      ],
+      "Non-promotional content and news": [
+        "Непромоушен-контент и новости"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Личные и рабочие электронные письма, а также важные обновления и уведомления"
+      ],
+      "Promotions": [
+        "Акции"
+      ],
+      "Refresh logs": [
+        "Обновить журналы"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Удалить видеоконференцию ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Удалить видеоконференцию Zoom"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Поделитесь своей доступностью со страницами бронирования в ${ CALENDAR_APP_NAME } и проводите безопасные встречи с ${ MEET_APP_NAME }."
+      ],
+      "Skip feedback": [
+        "Пропустить обратную связь"
+      ],
+      "Social": [
+        "Социальные"
+      ],
+      "Social media updates and activity": [
+        "Обновления социальных сетей и активность"
+      ],
+      "Sort": [
+        "Сортировать"
+      ],
+      "Store state": [
+        "Сохранить состояние"
+      ],
+      "Tab age": [
+        "Возраст вкладки"
+      ],
+      "Tell us more about your experience": [
+        "Расскажите нам подробнее о своем опыте"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Фильтр отключен. ${ enableButton }"
+      ],
+      "Very Dissatisfied": [
+        "Очень не удовлетворен"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9170,6 +9935,21 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
+      ],
+      "Deleted": [
+        "Удалено"
+      ],
+      "Learn more.": [
+        "Подробнее."
+      ],
+      "Reactivate subscription": [
+        "Возобновить подписку"
+      ],
+      "Resume now": [
+        "Возобновить сейчас"
+      ],
+      "Terms and conditions": [
+        "Условия"
       ]
     },
     "Loading info": {
@@ -9222,6 +10002,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Чтобы продолжить пользоваться ${ BRAND_NAME }, пожалуйста, убедитесь, что вы больше не используете платные функции, или улучшите свой тариф."
       ]
     },
     "Log preference": {
@@ -9281,6 +10064,9 @@
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } написал:"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Ваш бесплатный пробный период завершился. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -9968,6 +10754,51 @@
         "история версий файла за ${ options } дней",
         "история версий файла за ${ options } дней",
         "Histórico de versões de ficheiros de ${ options } dias"
+      ],
+      "Access all countries": [
+        "Получите доступ ко всем странам"
+      ],
+      "Appointment scheduling": [
+        "Планирование встреч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планирование встреч с ${ n } страницей бронирования",
+        "Планирование встреч с ${ n } страницами бронирования",
+        "Планирование встреч с ${ n } страницами бронирования",
+        "Планирование встреч с ${ n } страницами бронирования"
+      ],
+      "Data retention policies": [
+        "Политика хранения данных"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Выделенные серверы, оптимизированные для скорости"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Преимущества существующего тарифа ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "No streaming support": [
+        "Поддержка стриминга отсутствует"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Телефонная поддержка (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ пользователей)"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Конфиденциальный AI-чат (${ LUMO_APP_NAME })"
+      ],
+      "Short domain (@pm.me)": [
+        "Короткий домен (@pm.me)"
+      ],
+      "Unlock streaming": [
+        "Разблокируйте стриминг"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Совместный доступ к хранилищу для ${ n } человека",
+        "Совместный доступ к хранилищу для ${ n } человек",
+        "Совместный доступ к хранилищу для ${ n } человек",
+        "Совместный доступ к хранилищу для ${ n } человек"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN с блокировщиком рекламы и защитой от вредоносных программ"
       ]
     },
     "new_plans: feature highlight": {
@@ -10333,6 +11164,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Поддержка по телефону доступна от команды поддержки клиентов ${ BRAND_NAME } в рабочее время согласно европейскому графику для клиентов с ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } или более пользователями"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10436,6 +11270,9 @@
       ],
       "The writing assistant is ready to use": [
         "Помощник по написанию готов к использованию"
+      ],
+      "Passphrase copied to clipboard": [
+        "Кодовая фраза скопирована в буфер обмена"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10515,6 +11352,12 @@
       ],
       "Your subscription renews soon": [
         "Ваша подписка скоро обновится"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Оформить ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -10656,6 +11499,15 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ваш домен и подписка готовы к использованию."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } означает, что вы никогда не увидите рекламные объявления в наших приложениях."
+      ],
+      "Ad-free promise": [
+        "Обещание отсутствия рекламы"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -10740,6 +11592,12 @@
       ],
       "All": [
         "Все"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Yes, don't show again": [
+        "Да, больше не показывать"
       ]
     },
     "Option group": {
@@ -10800,6 +11658,9 @@
       ],
       "Team policies": [
         "Политики команды"
+      ],
+      "File attachments (up to 10GB)": [
+        "Файловые вложения (до 10 ГБ)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -10863,6 +11724,9 @@
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -10939,6 +11803,96 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была изменена на евро (€), поскольку банковские переводы SEPA поддерживают оплату только в евро."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (без учета налогов)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Налог ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "Налоги ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Сумма к оплате после пробной версии ${ formattedDate }"
+      ],
+      "Edit billing address": [
+        "Изменить адрес для выставления счетов"
+      ],
+      "Including ${ rate }% tax": [
+        "Включая налог ${ rate } %"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Включая ${ rate }% налога: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Включая налоги ${ rate }%"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Включая налоги ${ rate } %: ${ taxAmountElement }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Для активации подписки после окончания пробной версии требуется способ оплаты."
+      ],
+      "Tax ${ rate }%": [
+        "Налог ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Налоги ${ rate } %"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Скидка действительна для ${ renewalsWithCoupon } продления.",
+        "Скидка действительна для ${ renewalsWithCoupon } продлений.",
+        "Скидка действительна для ${ renewalsWithCoupon } продлений.",
+        "Скидка действительна для ${ renewalsWithCoupon } продлений."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
+        "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
+        "Специальная цена со скидкой действует в течение ${ couponRedemptions } месяцев. Затем подписка будет автоматически продлена за ${ renewPriceStr } на 1 месяц. Вы можете отменить её в любое время.",
+        "Специальная цена со скидкой действует в течение ${ couponRedemptions } месяцев. Затем подписка будет автоматически продлена за ${ renewPriceStr } на 1 месяц. Вы можете отменить её в любое время."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Специальная цена со скидкой действует в течение первого ${ subscriptionLength } месяца.",
+        "Специальная цена со скидкой действует в течение первых ${ subscriptionLength } месяца.",
+        "Специальная цена со скидкой действует в течение первых ${ subscriptionLength } месяцев.",
+        "Специальная цена со скидкой действует в течение первых ${ subscriptionLength } месяца."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Специально сниженная цена действует в течение первого месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } каждый месяц. Вы можете отменить подписку в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Специальная цена со скидкой ${ priceWithDiscount } действует в течение ${ couponRedemptions } месяца. Затем подписка будет автоматически продлена за ${ renewPriceStr } на 1 месяц. Вы можете отменить её в любое время.",
+        "Специальная цена со скидкой ${ priceWithDiscount } действует в течение ${ couponRedemptions } месяцев. Затем подписка будет автоматически продлена за ${ renewPriceStr } на 1 месяц. Вы можете отменить её в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение ${ couponRedemptions } месяцев. Затем она будет автоматически продлеваться по цене ${ renewPriceStr } за 1 месяц. Вы можете отменить подписку в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться по цене ${ renewPriceStr } за 1 месяц. Вы можете отменить подписку в любое время."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Это действие расширяет существующую подписку. С вас будет взиматься плата только за новые дополнения и оставшееся время текущего платежного цикла. Дата продления вашей подписки не изменится."
+      ],
+      "This offer is not available with your current plan.": [
+        "Это предложение недоступно для вашего текущего тарифа."
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Применяется механизм обратного начисления НДС."
+      ],
+      "You already have a subscription to this plan.": [
+        "У вас уже есть подписка на этот тариф."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "У вас уже есть подписка на этот тариф. Вы можете изменить свою подписку на ${ subscriptionPlatform }."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Скоро вы будете перенаправлены на сайт PayPal для подтверждения платежа."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Скоро вы будете перенаправлены для подтверждения платежа."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Для вашей подписки в настоящее время действует скидка. Переход на это новое промо-предложение означает, что текущая скидка больше не будет применяться."
       ]
     },
     "Payments.Error": {
@@ -10986,6 +11940,18 @@
       ],
       "EIN": [
         "EIN"
+      ],
+      "Add ABN": [
+        "Добавить ABN"
+      ],
+      "Add Business Number": [
+        "Добавить бизнес-номер"
+      ],
+      "Add EIN": [
+        "Добавить EIN"
+      ],
+      "Add VAT number": [
+        "Добавить номер плательщика НДС"
       ]
     },
     "PGP key encryption warning": {
@@ -11011,6 +11977,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рекомендуем вам отозвать доверие у этого ключа."
+      ],
+      "This contact currently signs messages with this key": [
+        "Этот контакт в настоящее время подписывает сообщения этим ключом"
+      ],
+      "This key is used for message verification": [
+        "Этот ключ используется для проверки сообщения"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Этот ключ используется для шифрования сообщений этому контакту в старых версиях приложений"
       ]
     },
     "PGP key warning": {
@@ -11183,6 +12158,51 @@
       ],
       "To": [
         "Получатель"
+      ],
+      "Anything you'd like us to know": [
+        "Что бы вы хотели нам сообщить"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "Введите имя"
+      ],
+      "Enter passphrase": [
+        "Ввести кодовую фразу"
+      ],
+      "Optional feedback": [
+        "Дополнительная обратная связь"
+      ],
+      "San Francisco": [
+        "Сан-Франциско"
+      ],
+      "Select a provider": [
+        "Выберите провайдера"
+      ],
+      "Select country": [
+        "Выберите страну"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажите ${ subject }, что написать. Пример: «Анонсируйте предстоящие события в новостной рассылке»"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Скажите ${ subject }, что написать. К примеру: «Отменить мою подписку в спортзал»"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Скажите ${ subject }, что написать. Например: «Пригласи Джейн на мою вечеринку»"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Укажите ${ subject }, что написать. К примеру: «Поблагодари коллегу за помощь в проекте»"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Укажите ${ subject }, что написать. К примеру, «Напиши сопроводительное письмо на стажировку»"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Укажите ${ subject }, что написать. К примеру: «Напиши электронное письмо с напоминанием клиенту»"
+      ],
+      "the writing assistant": [
+        "помощник по написанию"
       ]
     },
     "Placeholder for contact group name": {
@@ -11843,6 +12863,9 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Храните свои пароли в безопасности и порядке в нескольких хранилищах"
       ]
     },
     "specialoffer: Tooltip": {
@@ -12000,6 +13023,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
+      ],
+      "${ app } storage used": [
+        "Использовано хранилище ${ app }"
+      ],
+      "Storage used": [
+        "Использовано хранилище"
       ]
     },
     "Subscription attribute": {
@@ -12345,6 +13374,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } и ${ LUMO_APP_NAME } с платными функциями"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Видеовстречи, до ${ PAID_PREMIUM_MAX_PARTICIPANTS } участника",
+        "Видеовстречи, до ${ PAID_PREMIUM_MAX_PARTICIPANTS } участников",
+        "Видеовстречи, до ${ PAID_PREMIUM_MAX_PARTICIPANTS } участников",
+        "Видеовстречи, до ${ PAID_PREMIUM_MAX_PARTICIPANTS } участника"
       ]
     },
     "subscription reminder": {
@@ -12776,6 +13817,24 @@
       ],
       "Thanks for the feedback!": [
         "Спасибо за отзыв!"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "С ${ elementsCount } цепочки снята звёздочка.",
+        "Со ${ elementsCount } цепочек писем сняты звёздочки.",
+        "Со ${ elementsCount } цепочек писем сняты звёздочки.",
+        "С ${ elementsCount } цепочек сняты звёздочки."
+      ],
+      "Conversation removed from Starred.": [
+        "С цепочки писем снята отметка «отмеченное звёздочкой»."
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Код «${ code }» скопирован в буфер обмена"
+      ],
+      "Message removed from Starred.": [
+        "С сообщения снята отметка «отмеченное звёздочкой»."
+      ],
+      "Secret passphrase updated": [
+        "Кодовая фраза обновлена"
       ]
     },
     "Success notification": {
@@ -12787,6 +13846,12 @@
       ],
       "The filter has been enabled": [
         "Фильтр включён"
+      ],
+      "The filter has been disabled": [
+        "Фильтр отключён"
+      ],
+      "The filter is active again": [
+        "Фильтр снова активен"
       ]
     },
     "Suffix": {
@@ -13951,6 +15016,99 @@
       ],
       "Your free trial has ended": [
         "Ваш бесплатный пробный период истек"
+      ],
+      "Choose a provider": [
+        "Выберите провайдера"
+      ],
+      "Craft better emails": [
+        "Создавайте более качественные электронные письма"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Создавайте лучшие электронные письма с помощью ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Create folder \"${ search }\"": [
+        "Создать папку «${ search }»"
+      ],
+      "Create label \"${ search }\"": [
+        "Создать ярлык «${ search }»"
+      ],
+      "Custom": [
+        "Пользовательский"
+      ],
+      "Fewer distractions, more focus": [
+        "Меньше отвлекающих факторов, больше концентрации"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Получите **${ referralInfo.uiData.refereeRewardAmount }** в качестве остатка на счете с ${ planTitle }"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Получить полный доступ к ${ CALENDAR_APP_NAME }"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Помогите сформировать будущее категорий электронных писем в ${ MAIL_APP_NAME }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Импортируйте свои данные в ${ BRAND_NAME }"
+      ],
+      "Keep this banner hidden?": [
+        "Скрыть этот баннер?"
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "Mailing list": [
+        "Список рассылки",
+        "Списки рассылки",
+        "Списки рассылки",
+        "Списки рассылки"
+      ],
+      "No active newsletters": [
+        "Нет активных новостных рассылок"
+      ],
+      "No newsletters found": [
+        "Рассылки не найдены"
+      ],
+      "No unsubscribed newsletters": [
+        "Нет отмененных подписок на рассылки"
+      ],
+      "Referral": [
+        "Реферальная программа"
+      ],
+      "Reverse charge not supported": [
+        "Обратное начисление налога не поддерживается"
+      ],
+      "Select data to import": [
+        "Выберите данные для импорта"
+      ],
+      "Share your link": [
+        "Поделиться ссылкой"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Чтобы открыть предпросмотр этой электронной таблицы, скачайте её."
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Чтобы посмотреть предпросмотр этой электронной таблицы, откройте ее в ${ SHEETS_APP_NAME } или скачайте."
+      ],
+      "Unsubscribe not available for this sender": [
+        "Отписка недоступна для этого отправителя"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Улучшите подписку, чтобы сохранить свои платные преимущества."
+      ],
+      "Verify your password": [
+        "Подтвердите ваш пароль"
+      ],
+      "We'd love to hear from you!": [
+        "Мы будем рады узнать ваше мнение!"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Ваша подписка на тариф ${ planTitle } началась"
+      ],
+      "Your inbox, automatically organized": [
+        "Ваш почтовый ящик, организованный автоматически"
+      ],
+      "Your newsletters in one place": [
+        "Ваши новостные рассылки в одном месте"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14045,11 +15203,17 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Это гарантирует, что никто не сможет увидеть местоположение, устройство и другую информацию, которая может быть использована для идентификации или отслеживания вас."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Мгновенная помощь ИИ, специалист всегда на связи!"
       ]
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: ИИ-помощник, который уважает вашу конфиденциальность"
       ]
     },
     "Tor out of date": {
@@ -14292,6 +15456,9 @@
         "Не удалось проверить подпись некоторых вложений.\nТем не менее вы можете скачать эти вложения, но оно могли быть подменены.",
         "Не удалось проверить подпись некоторых вложений.\nТем не менее вы можете скачать эти вложения, но оно могли быть подменены.",
         "Не удалось проверить подпись некоторых вложений.\nТем не менее вы можете скачать эти вложения, но оно могли быть подменены."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Ваша пробная версия заканчивается ${ textDate }. Если вы отмените подписку до ${ textDate }, плата списана не будет. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -14707,6 +15874,15 @@
       ],
       "Unlimited daily chats": [
         "Неограниченное количество ежедневных чатов"
+      ],
+      "Access advanced AI models": [
+        "Получите доступ к продвинутым моделям ИИ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Полная история чатов с возможностью быстрого поиска и добавления в избранное"
       ]
     },
     "Calendar attachment tooltip": {
@@ -14978,6 +16154,51 @@
     "collider_2025: feature": {
       "Unlimited daily chats": [
         "Неограниченное количество ежедневных чатов"
+      ],
+      "Access to advanced AI models": [
+        "Получить доступ к передовым моделям ИИ"
+      ],
+      "Basic chat history": [
+        "Базовая история чата"
+      ],
+      "Built and based in Europe": [
+        "Разработано и базируется в Европе"
+      ],
+      "Compliance with data protection regulations": [
+        "Соблюдение правовых норм по защите данных"
+      ],
+      "Data never used for AI training": [
+        "Данные никогда не используются для обучения ИИ"
+      ],
+      "Full chat history with search": [
+        "Полная история чатов с возможностью искать"
+      ],
+      "Large file upload support": [
+        "Поддержка загрузки больших файлов"
+      ],
+      "Limited daily chats": [
+        "Ограниченное количество ежедневных чатов"
+      ],
+      "Limited favorites": [
+        "Ограниченное количество избранного"
+      ],
+      "Strict no-logs policy": [
+        "Строгая политика отсутствия журналов активности"
+      ],
+      "Unlimited favorites for quick access": [
+        "Неограниченное количество избранного для быстрого получения доступа"
+      ],
+      "Upload and query multiple large files": [
+        "Загрузить и запросить несколько больших файлов"
+      ],
+      "Upload and query small files": [
+        "Загрузить и запросить небольшие файлы"
+      ],
+      "Web search access": [
+        "Получить доступ к Сети и искать"
+      ],
+      "Zero-access encryption": [
+        "Шифрование с нулевым доступом"
       ]
     },
     "Commander action": {
@@ -15109,6 +16330,15 @@
     "Duo offer": {
       "/month": [
         "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ для хранения, чтобы поделиться"
+      ],
+      "All premium features from your current plan": [
+        "Все платные функции вашего текущего тарифа"
+      ],
+      "Only": [
+        "Только"
       ]
     },
     "Email reminder banner": {
@@ -15286,6 +16516,18 @@
       ],
       "You've unlocked 1 GB": [
         "Вы разблокировали 1 ГБ"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Получить адрес ${ BRAND_NAME }"
+      ],
+      "Download apps": [
+        "Скачать приложения"
+      ],
+      "Get storage bonus": [
+        "Получить бонус к хранению"
+      ],
+      "Review import options": [
+        "Просмотреть параметры импорта"
       ]
     },
     "ICS widget label for event details": {
@@ -15413,6 +16655,21 @@
       ],
       "Maybe later": [
         "Может быть позже"
+      ],
+      "Choose a provider": [
+        "Выберите провайдера"
+      ],
+      "Protect your accounts": [
+        "Защитите свои аккаунты"
+      ],
+      "Skip for now": [
+        "Пропустить на этот раз"
+      ],
+      "Some popular services": [
+        "Некоторые популярные сервисы"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Переключите сервисы, которыми вы пользуетесь каждый день, на ваш адрес ${ BRAND_NAME }, чтобы обеспечить лучшую безопасность и конфиденциальность."
       ]
     },
     "Payments.Saved payment method details": {
@@ -15421,6 +16678,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Банковский перевод — ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay — карта, заканчивающаяся на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Plan description": {
@@ -15434,6 +16694,21 @@
     "Provider option": {
       "Other": [
         "Другая"
+      ],
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {
@@ -15517,6 +16792,9 @@
       ],
       "No unread messages found": [
         "Не найдено непрочитанных сообщений"
+      ],
+      "An action is being processed": [
+        "Действие выполняется"
       ]
     },
     "Send email with changed preferences": {
@@ -15618,6 +16896,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Открыть в ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Открыть в ${ appName } (бета)"
       ]
     },
     "Signature verification warning": {
@@ -15660,6 +16941,9 @@
       ],
       "Smallest first": [
         "Сначала маленькие"
+      ],
+      "Sort by": [
+        "Сортировать по"
       ]
     },
     "Spotlight": {
@@ -15743,6 +17027,9 @@
       ],
       "Show me how": [
         "Показать как"
+      ],
+      "Download the desktop app": [
+        "Скачать приложение для компьютера"
       ]
     },
     "WeekDay": {
@@ -15754,6 +17041,290 @@
       ],
       "Sun, ${ formatTime }": [
         "Во, ${ formatTime }"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } результат не показан",
+        "${ hiddenResultsCount } результата не показано",
+        "${ hiddenResultsCount } результатов не показано",
+        "${ hiddenResultsCount } результатов не показано"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Специально разработанная функция NetShield защищает ваши устройства и ускоряет работу в интернете, блокируя рекламу, трекеры и вредоносные программы."
+      ]
+    },
+    "BOSS": {
+      "Contact your administrator to start a migration.": [
+        "Свяжитесь с вашим администратором, чтобы начать миграцию."
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Получите в 4 раза больше места для хранения"
+      ],
+      "Share your plan": [
+        "Поделитесь своим тарифом"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Получите в 4 раза больше места для хранения с ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Поделитесь преимуществами своего тарифа с ${ BRAND_NAME } Duo"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Чтобы переслать электронные письма из ${ MAX_SYNC_PAID_USER } аккаунтов, улучшите тариф до ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Вы пересылаете электронные письма с одного внешнего аккаунта в ${ MAIL_APP_NAME }."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Доверенный контакт"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Пожалуйста, войдите с помощью адреса Gmail, который уже настроен на пересылку в ${ MAIL_APP_NAME }"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "Пожалуйста, войдите, используя тот же адрес Gmail, который вы подключили изначально"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Фильтр"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Фильтр (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Фильтрация и сортировка электронных писем"
+      ],
+      "Has attachments": [
+        "С вложениями"
+      ],
+      "Read": [
+        "Прочитано"
+      ],
+      "Reset": [
+        "Сбросить"
+      ],
+      "Unread": [
+        "Непрочитанное"
+      ]
+    },
+    "Import provider": {
+      "More import options": [
+        "Другие варианты импортировать"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Переключиться на ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Переключиться на ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Загрузка ваших подписок на рассылки..."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Здесь будут отображаться информационные рассылки или списки рассылки, от которых вы отписались."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "У вас нет активных новостных рассылок или подписок на списки рассылки."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "У вас нет ни новостных рассылок, ни подписок на списки рассылки."
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Лицензия ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } — лицензии"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } лицензия ${ MEET_APP_NAME }",
+        "${ seats } лицензии ${ MEET_APP_NAME }",
+        "${ seats } лицензий ${ MEET_APP_NAME }",
+        "${ seats } лицензии ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: конфиденциальная видеоконференцсвязь для важных цепочек писем"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } активная встреча одновременно",
+        "${ n } активные встречи одновременно",
+        "${ n } активных встреч одновременно",
+        "${ n } активных встреч одновременно"
+      ],
+      "${ n } participant": [
+        "${ n } участник",
+        "${ n } участника",
+        "${ n } участников",
+        "${ n } участников"
+      ],
+      "24 hours per meeting": [
+        "24 часа на встречу"
+      ],
+      "60 minutes per meeting": [
+        "60 минут на встречу"
+      ],
+      "Booking pages": [
+        "Страницы бронирования"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браузер, мобильные и настольные приложения"
+      ],
+      "Built-in chat": [
+        "Встроенный чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Демонстрация экрана с сквозным шифрованием и эфемерный чат во время звонка"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Организаторы могут записывать встречи локально на свои компьютеры"
+      ],
+      "Meeting recording": [
+        "Запись встречи"
+      ],
+      "One active meeting at a time": [
+        "Одна активная встреча одновременно"
+      ],
+      "Screen-sharing": [
+        "Демонстрация экрана"
+      ],
+      "Unlimited meetings per day": [
+        "Неограниченное количество встреч в день"
+      ],
+      "Up to ${ n } meeting per day": [
+        "До ${ n } встречи в день",
+        "До ${ n } встреч в день",
+        "До ${ n } встреч в день",
+        "До ${ n } встреч в день"
+      ],
+      "Up to ${ n } participant": [
+        "До ${ n } участника",
+        "До ${ n } участников",
+        "До ${ n } участников",
+        "До ${ n } участников"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Видеовстречи, ${ n } участник",
+        "Видеовстречи, ${ n } участника",
+        "Видеовстречи, ${ n } участников",
+        "Видеовстречи, ${ n } участников"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Включена ${ seats } лицензия",
+        "Включено ${ seats } лицензии",
+        "Включено ${ seats } лицензий",
+        "Включено ${ seats } лицензий"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы постоянно стремимся сделать ${ config.appName } лучше. Насколько вы удовлетворены своим опытом использования?"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Что-то пошло не так. Не удалось выполнить проверку Google Pay."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Остаток на счете за неиспользованную часть вашей предыдущей подписки на тариф"
+      ],
+      "Credits will be added to your balance": [
+        "Остаток на счете будет добавлен к вашему балансу"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Вы уверены, что хотите продолжить?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Если вы решите изменить тариф ${ planTitle }, вы можете потерять доступ к некоторым функциям."
+      ],
+      "Keep ${ planTitle }": [
+        "Сохранить ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Да, я уверен"
+      ],
+      "Your plan includes this feature already.": [
+        "Ваш тариф уже включает эту функцию."
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Цена продления зависит от региона выставления счета и ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Цена продления зависит от региона выставления счета и бизнес-номера."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Цена продления зависит от региона выставления счета и EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Цена продления зависит от региона выставления счета и номера НДС."
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } за рекомендацию"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "После этой даты ваш аккаунт будет переведен на более дешевую версию **${ BRAND_NAME } Free**. Если вы передумаете, вы сможете **возобновить подписку**, чтобы сохранить доступ к платным функциям."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Получите до ${ maxRewardAmount } в качестве остатка на счете. Вы получите ${ referrerRewardAmount }, когда приглашенный вами пользователь оформит подписку на тариф ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Друг присоединился",
+        "Друга присоединились",
+        "Друзей присоединилось",
+        "Друзья присоединились"
+      ],
+      "Invite friends. Get credits.": [
+        "Приглашайте друзей. Получайте остаток на счете."
+      ],
+      "Invited friends": [
+        "Приглашенные друзья"
+      ],
+      "More sharing options": [
+        "Больше вариантов для обмена"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "После начала действия вашей основной подписки вы сможете отменить ее в течение 30 дней и получить пропорциональный возврат средств."
+      ],
+      "Refer friends": [
+        "Порекомендуйте друзьям"
+      ],
+      "Start earning credits": [
+        "Начните получать остатки на счете"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Вы можете получить до **${ maxRewardAmount }** в качестве остатка на счете."
       ]
     }
   }

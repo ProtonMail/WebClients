@@ -274,10 +274,10 @@
         "Працягнуць з Outlook"
       ],
       "Copy '${ code }' to clipboard": [
-        "Скапіяваць '${ code }' у буфер абмену"
+        "Скапіяваць \"${ code }\" у буфер абмену"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "Скапіяваць '${ code }' у буфер абмену і перамясціць у сметніцу"
+        "Скапіяваць \"${ code }\" у буфер абмену і перамясціць у сметніцу"
       ],
       "Copy address": [
         "Скапіяваць адрас"
@@ -1153,7 +1153,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
@@ -4454,6 +4457,9 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Вы адзін з першых сярод тых, хто паспрабуе нашы новыя катэгорыі перад іх запускам. Вашы водгукі дапамогуць удасканаліць сартаванне лістоў у Proton Mail для кожнага карыстальніка."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Каб працягнуць карыстацца ${ LUMO_SHORT_APP_NAME } у ${ MAIL_APP_NAME }, дадайце яе ў сваю падпіску."
       ]
     },
     "description": {
@@ -5907,6 +5913,9 @@
       ],
       "Security key": [
         "Ключ бяспекі"
+      ],
+      "Touch your security key.": [
+        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -6857,7 +6866,7 @@
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } дапаможа вам хутка і лёгка ствараць лепшыя электронныя лісты."
+        "${ LUMO_SHORT_APP_NAME } дапаможа вам хутка і лёгка ствараць лепшыя лісты."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Панэль ${ LUMO_SHORT_APP_NAME }"
@@ -7733,10 +7742,7 @@
         "Унаследавана ад бацькоўскай папкі"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9456,6 +9462,12 @@
       ],
       "Your private writing assistant": [
         "Ваш прыватны памочнік у напісанні"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } цяпер аўтаматычна сартуе вашы лісты па катэгорыях, такіх як \"Асноўныя\", \"Сацыяльныя сеткі\", \"Рэкламныя\" і іншыя, што дапамагае вам лягчэй знаходзіць паведамленні і кіраваць імі."
+      ],
+      "Private by design.": [
+        "Прыватны з пачатку стварэння."
       ]
     },
     "info": {
@@ -10387,7 +10399,7 @@
         "Сістэмная інфармацыя"
       ],
       "Tab age": [
-        "Укладка ўзросту"
+        "Узрост укладкі"
       ],
       "Tell us more about your experience": [
         "Раскажыце нам больш пра свой досвед"
@@ -10613,6 +10625,15 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Адпісаны ад ${ truncatedName }."
+      ],
+      "Drive": [
+        "Дыск"
+      ],
+      "Elements in store": [
+        "Элементы ў сховішчы"
+      ],
+      "Store state": [
+        "Стан сховішча"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10944,6 +10965,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам неабходна паўторна актываваць ключы, каб паглядзець абноўленае запрашэнне"
+      ],
+      "Learn more.": [
+        "Даведацца больш."
       ]
     },
     "Link to settings": {
@@ -13414,19 +13438,19 @@
         "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Абвясці аб надыходзячых падзеях у інфармацыйнай рассылцы\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Скасуй мой абанемент у спартыўную залю\""
+        "Скажыце ${ subject }, што напісаць. Напрыклад: \"Скасуй мой абанемент у спартыўную залю\""
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Запрасі Алесю на маю вечарыну”"
+        "Скажыце ${ subject }, што напісаць. Напрыклад: “Запрасі Алесю на маю вечарыну”"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст падзякі майму калегу за дапамагу ў праекце\""
+        "Скажыце ${ subject }, што напісаць. Напрыклад: “Падзякуй майму калегу за дапамогу ў праекце”"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
         "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы суправаджальнае пісьмо на стажыроўку\""
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст кліенту\""
+        "Скажыце ${ subject }, што напісаць. Напрыклад: “Напішы электронны ліст кліенту”"
       ],
       "Text": [
         "з тэкстам"
@@ -16868,6 +16892,9 @@
       ],
       "Your newsletters in one place": [
         "Вашы рассылкі ў адным месцы"
+      ],
+      "Your inbox, automatically organized": [
+        "Ваша паштовая скрыня, аўтаматычна арганізаваная"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16962,6 +16989,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Гэта гарантуе, што ніхто не зможа бачыць ваша месцазнаходжанне, прыладу і іншыя звесткі, якія могуць быць выкарыстаны для вашага вызначэння або адсочвання."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
       ]
     },
     "tooltip": {

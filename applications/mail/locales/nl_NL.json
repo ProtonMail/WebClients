@@ -955,7 +955,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Try again": [
         "Opnieuw proberen"
@@ -1717,6 +1718,18 @@
       ],
       "Your email writing assistant": [
         "Uw e-mailschrijfassistent"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "'${ code }' kopiëren naar klembord"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "'${ code }' kopiëren naar klembord en verplaatsen naar Prullenbak"
+      ],
+      "Hide ${ title }": [
+        "${ title } verbergen"
+      ],
+      "Show ${ title }": [
+        "Toon ${ title }"
       ]
     },
     "action": {
@@ -4010,6 +4023,15 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "U bent een van de eersten die onze nieuwe categorieweergave uitprobeert voordat deze wordt gelanceerd. Uw feedback helpt bij het verbeteren van de manier waarop Proton Mail e-mails voor iedereen sorteert."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Upgrade naar ${ LUMO_SHORT_APP_NAME } voor onbeperkte toegang tot de schrijfhulp en meer."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Voeg ${ LUMO_SHORT_APP_NAME } toe aan uw abonnement om het te blijven gebruiken in ${ MAIL_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Vraag toegang aan bij uw beheerder om ${ LUMO_SHORT_APP_NAME } te blijven gebruiken in ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -5376,6 +5398,9 @@
       ],
       "Security key": [
         "Beveiligingssleutel"
+      ],
+      "Touch your security key.": [
+        "Raak uw beveiligingssleutel aan."
       ]
     },
     "fido2: Label": {
@@ -5762,6 +5787,9 @@
       ],
       "Tell us more": [
         "Vertel ons meer"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent instellen"
       ]
     },
     "Hint": {
@@ -6808,8 +6836,7 @@
         "Overgenomen van bovenliggende map"
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8675,6 +8702,43 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } helpt u om snel en moeiteloos betere e-mails te maken."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } paneel"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sorteert uw e-mails nu automatisch in categorieën zoals Primair, Sociaal, Promoties en meer, waardoor u berichten gemakkelijker kunt vinden en beheren."
+      ],
+      "Private by design.": [
+        "Privé door ontwerp."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "U heeft ${ totalLabel } in uw inbox."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "U heeft **${ count } gesprek** in ${ categoryLabel } categorie",
+        "U heeft **${ count } gesprekken** in ${ categoryLabel } categorie"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "U heeft **${ count } bericht** in ${ categoryLabel } categorie",
+        "U heeft **${ count } berichten** in ${ categoryLabel } category"
+      ],
+      "You have no conversations in this category": [
+        "U heeft geen gesprekken in deze categorie"
+      ],
+      "You have no messages in this category": [
+        "U heeft geen berichten in deze categorie"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "U selecteerde **${ checked } gesprek** in ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } gesprekken** in ${ categoryLabel } categorie"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "U selecteerde **${ checked } bericht** in ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } berichten** in ${ categoryLabel } categorie"
       ]
     },
     "info": {
@@ -9756,6 +9820,72 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent"
+      ],
+      "Clear logs": [
+        "Logboeken wissen"
+      ],
+      "Context page": [
+        "Contextpagina"
+      ],
+      "Context total": [
+        "Totaal context"
+      ],
+      "Current context": [
+        "Huidige context"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Elements in store": [
+        "Elementen in opslag"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Information": [
+        "Informatie"
+      ],
+      "Label ID": [
+        "Label-ID"
+      ],
+      "Mail debugging information": [
+        "Foutopsporingsinformatie voor Mail"
+      ],
+      "Mail logs": [
+        "Mail-logboeken"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nieuwsbrieven - Nieuws, redactionele e-mails en niet-promotionele inhoud"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primaire - Persoonlijke en zakelijke e-mails, plus belangrijke updates"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoties - Aanbiedingen, kortingen en marketingmails"
+      ],
+      "Refresh logs": [
+        "Logboeken vernieuwen"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociaal - Updates, activiteit en berichten op sociale media"
+      ],
+      "Sort": [
+        "Sorteren"
+      ],
+      "Store state": [
+        "Status van opslag"
+      ],
+      "Tab age": [
+        "Tabbladleeftijd"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transacties - Bonnen, boekingen, facturen en bestellingen"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Updates - Geautomatiseerde bevestigingen, meldingen en account updates"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10060,6 +10190,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
+      ],
+      "Learn more.": [
+        "Meer informatie."
       ]
     },
     "Loading info": {
@@ -12412,6 +12545,27 @@
       ],
       "To": [
         "Naar"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Vertel ${ subject } wat u wilt schrijven. Voorbeeld: \"Kondig een aankomende afspraak aan in een nieuwsbrief\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Vertel ${ subject } wat u wilt schrijven. Voorbeeld: \"Annuleer mijn sportschoolabonnement\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Vertel ${ subject } wat u wilt schrijven. Voorbeeld: “Nodig Jane uit voor mijn feest”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Vertel ${ subject } wat u wilt schrijven. Voorbeeld: \"Bedank mijn collega voor de hulp bij een project\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Vertel ${ subject } wat u wilt schrijven. Voorbeeld: \"Schrijf een motivatiebrief voor een stage\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Vertel ${ subject } wat u wilt schrijven. Voorbeeld: \"Schrijf een follow-up e-mail aan een klant\""
+      ],
+      "the writing assistant": [
+        "de schrijfassistent"
       ]
     },
     "Placeholder for contact group name": {
@@ -14104,6 +14258,13 @@
       ],
       "Thanks for the feedback!": [
         "Bedankt voor de feedback!"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' gekopieerd naar het klembord"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Verplaatst naar ${ label }. Vergelijkbaar bericht wordt in de toekomst hier ondergebracht.",
+        "Verplaatst naar ${ label }. Vergelijkbare berichten worden in de toekomst hier ondergebracht."
       ]
     },
     "Success notification": {
@@ -15350,6 +15511,12 @@
       ],
       "Your newsletters in one place": [
         "Jouw nieuwsbrieven op één plek"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Schrijf betere e-mails met ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Your inbox, automatically organized": [
+        "Uw inbox, automatisch georganiseerd"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15444,6 +15611,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Dit zorgt ervoor dat niemand locatie, apparaat en andere informatie kan zien die kan worden gebruikt om u te identificeren of te volgen."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-ondersteuning, menselijke expert binnen handbereik!"
       ]
     },
     "tooltip": {

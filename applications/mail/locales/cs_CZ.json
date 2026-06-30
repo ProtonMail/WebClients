@@ -1657,7 +1657,10 @@
         "Ochrana před sledováním zabránila načtení některých obrázků. Pokud odesílateli důvěřujete, načtěte je."
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1715,6 +1718,30 @@
       ],
       "Your email writing assistant": [
         "Váš asistent psaní e-mailů"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Zkopírovat '${ code }' do schránky"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Zkopírovat '${ code }' do schránky a přesunout do Koše"
+      ],
+      "Hide ${ title }": [
+        "Skrýt ${ title }"
+      ],
+      "Move to category...": [
+        "Přesunout do kategorie..."
+      ],
+      "Show ${ title }": [
+        "Zobrazit ${ title }"
+      ],
+      "Start testing": [
+        "Zahájit testování"
+      ],
+      "Verify now": [
+        "Ověřit nyní"
       ]
     },
     "action": {
@@ -2183,6 +2210,9 @@
       ],
       "What are you migrating?": [
         "Co migrujete?"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Pro zahájení migrace kontaktujte svého správce."
       ]
     },
     "Browser": {
@@ -3597,6 +3627,9 @@
       ],
       "Åland Islands": [
         "Ålandské ostrovy"
+      ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
       ]
     },
     "customer_support.feature.all": {
@@ -3987,6 +4020,24 @@
         "Přeposíláte e-maily ze ${ forwardingCount } adres Gmail. Jejich připojením budete moci přijímat poštu i odpovídat na ni v rámci aplikace ${ MAIL_APP_NAME }",
         "Přeposíláte e-maily z ${ forwardingCount } adres Gmail. Jejich připojením budete moci přijímat poštu i odpovídat na ni v rámci aplikace ${ MAIL_APP_NAME }",
         "Přeposíláte e-maily z ${ forwardingCount } adres Gmail. Jejich připojením budete moci přijímat poštu i odpovídat na ni v rámci aplikace ${ MAIL_APP_NAME }"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémové zahájení používání ${ BRAND_NAME } vaším týmem importujte data ze služeb Google, Outlook a dalších."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Pro neomezený přístup k asistentovi psaní a dalším možnostem upgradujte na ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Pokud se zpráva zobrazí ve špatné kategorii, jednoduše ji přesuňte do té správné. Klikněte pravým tlačítkem na zprávu a zvolte novou kategorii, nebo ji táhněte a pusťte tam, kam patří."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Chcete-li nadále používat ${ LUMO_SHORT_APP_NAME } v aplikaci ${ MAIL_APP_NAME }, přidejte si ji ke svému předplatnému."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Chcete-li pokračovat v používání ${ LUMO_SHORT_APP_NAME } v ${ MAIL_APP_NAME }, požádejte o přístup svého správce."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Patříte mezi první uživatele, kteří mohou před spuštěním vyzkoušet naše nové zobrazení kategorií. Vaše zpětná vazba pomůže zlepšit způsob, jakým Proton Mail třídí e-maily pro všechny uživatele."
       ]
     },
     "description": {
@@ -4937,6 +4988,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Zkontrolujte prosím, zda je vaše ABN registrováno pro přeshraniční DPH"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "DIČ musí začínat ${ prefixes }"
       ]
     },
     "error": {
@@ -5373,6 +5430,9 @@
       ],
       "Security key": [
         "Bezpečnostní klíč"
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
@@ -5683,6 +5743,9 @@
       ],
       "Tell us more": [
         "Řekněte nám více"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Nastavit asistenta psaní ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6710,10 +6773,7 @@
         "Převzato z nadřazené složky"
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8727,6 +8787,72 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } vám pomáhá rychle a snadno vytvářet lepší e-maily."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } nyní automaticky třídí vaše e-maily do kategorií, jako jsou Primární, Sociální sítě, Propagace a další, což vám pomáhá snadněji vyhledávat a spravovat vaše zprávy."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skrývá váš síťový provoz. ${ PASS_SHORT_APP_NAME } skrývá vaši identitu\n— neomezené **hide-my-email aliasy** a **upozornění na úniky na dark webu**, pokud by došlo k úniku vašich dat."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Automaticky třídit příchozí e-maily do kategorií"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvořte bezpečný cloud pro ${ memberCount } člena",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členy",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamatujete si své heslo? ${ verifyButton }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Za pouhých ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, které chcete importovat:"
+      ],
+      "Private by design.": [
+        "Soukromé už ze své podstaty."
+      ],
+      "RECOMMENDED": [
+        "DOPORUČENO"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Dočasně nedostupné z důvodu vysokého vytížení. Zkuste to prosím později."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
       ]
     },
     "info": {
@@ -8799,6 +8925,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivní podpisový klíč"
+      ],
+      "Fallback": [
+        "Záložní"
       ]
     },
     "Keyboard shortcut name": {
@@ -8983,6 +9115,9 @@
       ],
       "Message shortcuts": [
         "Zkratky zpráv"
+      ],
+      "Desktop app navigation": [
+        "Navigace desktopové aplikace"
       ]
     },
     "Label": {
@@ -9795,6 +9930,60 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
+      ],
+      "Clear logs": [
+        "Zrušit logy"
+      ],
+      "Context page": [
+        "Stránka kontextu"
+      ],
+      "Context total": [
+        "Celkový kontext"
+      ],
+      "Current context": [
+        "Aktuální kontext"
+      ],
+      "Drive": [
+        "Disk"
+      ],
+      "Elements in store": [
+        "Prvky v úložišti"
+      ],
+      "Email categories": [
+        "Kategorie e-mailů"
+      ],
+      "Filter": [
+        "Filtr"
+      ],
+      "Information": [
+        "Informace"
+      ],
+      "Label ID": [
+        "ID štítku"
+      ],
+      "Mail debugging information": [
+        "Informace pro ladění pošty"
+      ],
+      "Mail logs": [
+        "Logy e-mailů"
+      ],
+      "Refresh logs": [
+        "Obnovit logy"
+      ],
+      "Sort": [
+        "Seřadit"
+      ],
+      "Store state": [
+        "Stav úložiště"
+      ],
+      "Tab age": [
+        "Stáří záložky"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10099,6 +10288,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pro zobrazení upravené pozvánky musíte znovu aktivovat své klíče"
+      ],
+      "Learn more.": [
+        "Více informací."
       ]
     },
     "Loading info": {
@@ -11050,6 +11242,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
+      "Unlock streaming": [
+        "Odblokování streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -11476,6 +11677,12 @@
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
       ]
     },
     "Notification": {
@@ -12330,6 +12537,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v současnosti podepisuje zprávy tímto klíčem"
+      ],
+      "This key is used for message verification": [
+        "Tento klíč se používá k ověření zpráv"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento klíč se používá k šifrování zpráv tomuto kontaktu ve starších aplikacích"
       ]
     },
     "PGP key warning": {
@@ -12526,6 +12742,27 @@
       ],
       "To": [
         "Komu"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Sdělte ${ subject }, co má napsat. Příklad: „Oznamte nadcházející události ve zpravodaji“"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Sdělte subjektu ${ subject }, co má napsat. Příklad: „Zrušit moje členství v posilovně“"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Sdělte ${ subject }, co má napsat. Příklad: „Pozvi Janu na večírek“"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Sdělte ${ subject }, co má napsat. Příklad: „Poděkuj mému kolegovi za pomoc s projektem“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Sdělte ${ subject }, co má napsat. Příklad: „Napište motivační dopis na stáž“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Sdělte ${ subject }, co má napsat. Příklad: „Napiš následný e-mail zákazníkovi“"
+      ],
+      "the writing assistant": [
+        "asistent psaní"
       ]
     },
     "Placeholder for contact group name": {
@@ -14325,6 +14562,9 @@
       ],
       "Thanks for the feedback!": [
         "Děkujeme za zpětnou vazbu!"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "„${ code }“ zkopírován do schránky"
       ]
     },
     "Success notification": {
@@ -15602,6 +15842,21 @@
       ],
       "Your newsletters in one place": [
         "Vaše e-mailové zpravodaje na jednom místě"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Tvořte lepší e-maily s ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Pomozte utvářet budoucnost e-mailových kategorií v ${ MAIL_APP_NAME }"
+      ],
+      "Loading...": [
+        "Načítání..."
+      ],
+      "Verify your password": [
+        "Ověření hesla"
+      ],
+      "Your inbox, automatically organized": [
+        "Vaše doručená pošta, automaticky uspořádaná"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15696,6 +15951,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Díky tomu nikdo neuvidí údaje o poloze, zařízení a další informace, které by mohly být použity k vaší identifikaci nebo sledování."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ]
     },
     "tooltip": {
@@ -16994,6 +17252,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Nemáte aktivní e-mailové zpravodaje nebo odběry e-mailových seznamů."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Načítání vašeho odběru e-mailových zpravodajů..."
       ]
     },
     "Layout mode": {
@@ -17398,6 +17659,16 @@
       ],
       "Sun, ${ formatTime }": [
         "Neděle, ${ formatTime }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Přepnout na ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Přepnout na ${ MAIL_APP_NAME }"
       ]
     }
   }
