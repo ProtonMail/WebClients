@@ -56,6 +56,9 @@
       "Add": [
         "Thêm"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Thêm ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Thêm địa chỉ ${ BRAND_NAME }"
       ],
@@ -217,6 +220,9 @@
       ],
       "Continue import": [
         "Tiếp tục nhập"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Tiếp tục đến ${ planOrAppName }"
       ],
       "Continue with Free": [
         "Tiếp tục miễn phí"
@@ -536,6 +542,9 @@
       "Help and resources": [
         "Trợ giúp và tài nguyên"
       ],
+      "Hide": [
+        "Ẩn"
+      ],
       "Hide more benefits": [
         "Ẩn thêm lợi ích"
       ],
@@ -673,6 +682,9 @@
       ],
       "Or": [
         "Hoặc"
+      ],
+      "Or remove forwarding address": [
+        "Hoặc xóa địa chỉ chuyển tiếp"
       ],
       "Or use a different Gmail address": [
         "Hoặc sử dụng địa chỉ Gmail khác"
@@ -1115,6 +1127,9 @@
       "Verify domain": [
         "Xác minh miền"
       ],
+      "Verify now": [
+        "Xác minh ngay"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Xác minh miền ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1178,6 +1193,11 @@
         "Kích hoạt lại"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Mở trong ${ SHEETS_APP_NAME }"
+      ]
+    },
     "Addon": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Trợ lý soạn thảo ${ BRAND_NAME } Scribe"
@@ -1196,6 +1216,12 @@
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "Trợ lý AI ${ LUMO_APP_NAME } (dành cho ${ quantity } người dùng)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Giấy phép AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } chỗ"
       ],
       "${ price } per dedicated server": [
         "${ price } mỗi máy chủ chuyên dụng"
@@ -1218,11 +1244,32 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } chỗ"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } giấy phép ${ MEET_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } chỗ trợ lý soạn thảo"
       ],
       "${ users } user": [
         "${ users } người dùng"
+      ],
+      "Dedicated VPN servers": [
+        "Máy chủ VPN chuyên dụng"
+      ],
+      "Domains": [
+        "Miền"
+      ],
+      "Servers": [
+        "Máy chủ"
+      ],
+      "Users": [
+        "Người dùng"
+      ],
+      "Writing assistant": [
+        "Trợ lý soạn thảo"
+      ],
+      "Writing assistant seats": [
+        "Chỗ trợ lý soạn thảo"
       ]
     },
     "Address action": {
@@ -1614,6 +1661,52 @@
         "Không gian lưu trữ được chia sẻ trên tất cả các dịch vụ ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "Dung lượng lưu trữ 2 TB"
+      ],
+      "3 TB data storage": [
+        "3 TB dung lượng lưu trữ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Truy cập hơn 15.000 máy chủ tại hơn 120 quốc gia"
+      ],
+      "Access advanced AI models": [
+        "Truy cập các mô hình AI nâng cao"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tất cả tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Chặn quảng cáo, trình theo dõi và phần mềm độc hại"
+      ],
+      "Built-in 2FA authenticator": [
+        "Trình xác thực 2FA tích hợp"
+      ],
+      "Connect 10 devices at once": [
+        "Kết nối 10 thiết bị cùng lúc"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Toàn bộ lịch sử trò chuyện với tính năng tìm kiếm dễ dàng và mục yêu thích"
+      ],
+      "Individual accounts for 6 users": [
+        "Các tài khoản cá nhân dành cho 6 người dùng"
+      ],
+      "Individual accounts for you and a partner": [
+        "Các tài khoản cá nhân dành cho người dùng và đối tác"
+      ],
+      "Stronger protection against cyber threats": [
+        "Khả năng bảo vệ mạnh mẽ hơn trước các mối đe dọa mạng"
+      ],
+      "Unlimited daily chats": [
+        "Không giới hạn hội thoại hàng ngày"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield được thiết kế đặc biệt giúp bảo vệ các thiết bị và tăng tốc độ duyệt web bằng cách chặn quảng cáo, trình theo dõi và phần mềm độc hại."
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "Tự động gia hạn với giá ${ renewPrice }, trong ${ renewCycle } tháng"
@@ -1623,6 +1716,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } tháng"
+      ],
+      "${ n } year": [
+        "${ n } năm"
+      ],
       "1 month": [
         "1 tháng"
       ],
@@ -1632,8 +1731,14 @@
       "Annually": [
         "Hàng năm"
       ],
+      "Billed monthly": [
+        "Thanh toán hàng tháng"
+      ],
       "Lifetime": [
         "Trọn đời"
+      ],
+      "Lifetime access": [
+        "Truy cập trọn đời"
       ],
       "Monthly": [
         "Hàng tháng"
@@ -1930,6 +2035,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } người dùng"
+      ],
+      "Subtotal": [
+        "Tổng phụ"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Tổng phụ cho ${ cycle } tháng"
       ],
       "Total": [
         "Tổng"
@@ -2320,6 +2431,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Quần đảo Canary"
       ],
       "Cape Verde": [
         "Cape Verde"
@@ -2719,6 +2833,9 @@
       ],
       "North Korea": [
         "Triều Tiên"
+      ],
+      "North Macedonia": [
+        "Bắc Macedonia"
       ],
       "Northern Mariana Islands": [
         "Quần đảo Bắc Mariana"
@@ -3201,6 +3318,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Mọi người trong tổ chức đều có thể kết nối với các máy chủ được chia sẻ ở tất cả các quốc gia."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Để tích hợp nhóm vào ${ BRAND_NAME } một cách liền mạch, hãy nhập dữ liệu từ Google, Outlook và các nguồn khác."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nhận thông báo nếu mật khẩu hoặc dữ liệu khác bị rò rỉ từ một dịch vụ bên thứ ba."
       ],
@@ -3237,11 +3357,20 @@
       "This may happen if permissions were removed or your password changed.": [
         "Điều này có thể xảy ra nếu quyền truy cập bị xóa hoặc mật khẩu bị thay đổi."
       ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Để kết nối một địa chỉ Gmail khác, hãy xóa các địa chỉ Gmail chuyển tiếp đến ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Để kết nối tối đa ${ MAX_SYNC_PAID_USER } địa chỉ Gmail, hãy nâng cấp lên ${ planName }."
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "Để tiếp tục nhận và gửi thư Gmail trong ${ BRAND_NAME }, vui lòng kết nối lại tài khoản."
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Để tiếp tục nhận và gửi thư Gmail trong ${ BRAND_NAME }, vui lòng kết nối lại các tài khoản."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Để nhập qua tệp CSV và VCF, hãy đảm bảo tệp không vượt quá ${ MAX_IMPORT_FILE_SIZE_STRING } hoặc ${ maxContactString } liên hệ. Nếu tệp lớn hơn, vui lòng chia nhỏ thành các tệp bé hơn. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Để nhập liên hệ từ Google hoặc Outlook, ${ easySwitchLink }."
@@ -3255,6 +3384,9 @@
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Mở khóa 15 GB dung lượng lưu trữ chỉ với ${ config.offerPrice }."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Nâng cấp lên ${ planName } để kết nối tối đa ${ MAX_SYNC_PAID_USER } tài khoản"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Sử dụng hướng dẫn này để tổ chức nhanh chóng được hưởng lợi từ hệ sinh thái quyền riêng tư và mã hóa hàng đầu trong ngành của ${ BRAND_NAME }."
       ],
@@ -3266,6 +3398,9 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Đã bắt đầu nhập email từ Gmail. Hệ thống sẽ thông báo khi hoàn tất."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Rất tiếc khi thấy rời đi. Nếu có thời gian, vui lòng chia sẻ lý do muốn hủy. Phản hồi của đóng góp giúp cải thiện ${ BRAND_NAME } tốt hơn cho mọi người."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Đã có địa chỉ Gmail chuyển tiếp đến ${ MAIL_APP_NAME }. Hãy kết nối bên dưới để gửi và nhận email trực tiếp từ ${ MAIL_APP_NAME }."
@@ -3279,11 +3414,26 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Hiện đã có thể gửi email từ ${ BRAND_NAME } bằng địa chỉ này."
       ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Đang chuyển tiếp ${ numAddressesOrSync } địa chỉ Gmail tới ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Bạn đã kết nối ${ MAX_SYNC_PAID_USER } địa chỉ Gmail. Để thêm một địa chỉ khác, trước tiên hãy vô hiệu hóa một trong các tài khoản đã kết nối của bạn."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Đã kết nối một địa chỉ tài khoản bên ngoài với ${ MAIL_APP_NAME }."
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập ${ newUserStorageText } các thư Gmail gần đây nhất"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập các email Gmail gần đây nhất."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Gói của bạn hỗ trợ ${ MAX_SYNC_FREE_USER } địa chỉ Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Gói hỗ trợ tổng cộng ${ MAX_SYNC_PAID_USER } địa chỉ Gmail"
       ]
     },
     "description": {
@@ -3555,6 +3705,14 @@
         "Chia sẻ quyền lợi gói với ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Để chuyển tiếp email từ tối đa ${ MAX_SYNC_PAID_USER } tài khoản, hãy nâng cấp lên ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Đang chuyển tiếp email từ một tài khoản bên ngoài tới ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Các trường văn bản là tùy chọn. Thông tin cung cấp trong biểu mẫu này sẽ chỉ xuất hiện trên các hóa đơn được phát hành trong tương lai và sẽ không ảnh hưởng đến các hóa đơn hiện có."
@@ -3785,6 +3943,9 @@
       "A group with this name already exists": [
         "Đã tồn tại một nhóm với tên này"
       ],
+      "Address could not be added.": [
+        "Không thể thêm địa chỉ."
+      ],
       "Address is already added to your account": [
         "Địa chỉ đã được thêm vào tài khoản"
       ],
@@ -3811,6 +3972,9 @@
       ],
       "Checkout expired, please try again": [
         "Thanh toán đã hết hạn, hãy thử lại sau"
+      ],
+      "Company name or personal name is required": [
+        "Yêu cầu cung cấp tên công ty hoặc tên cá nhân"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Không thể tải hóa đơn. Vui lòng thử lại sau."
@@ -3845,6 +4009,9 @@
       "Enter 6 digits": [
         "Nhập 6 chữ số"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Nhập tên người dùng không bao gồm tên miền (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Lỗi kết nối với API Bitcoin."
       ],
@@ -3856,6 +4023,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Không thể tải hộp thoại OAuth."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Không tải được dữ liệu đăng ký. Vui lòng thử lại sau."
       ],
       "Failed to load the STL preview": [
         "Tải bản xem trước STL thất bại"
@@ -3917,6 +4087,9 @@
       "Invalid code": [
         "Mã không hợp lệ"
       ],
+      "Invalid coupon": [
+        "Phiếu mua hàng không hợp lệ"
+      ],
       "Invalid domain": [
         "miền không hợp lệ"
       ],
@@ -3940,6 +4113,9 @@
       ],
       "Invalid private key file": [
         "Tệp khóa riêng tư không hợp lệ"
+      ],
+      "Invalid VAT number": [
+        "Số VAT không hợp lệ"
       ],
       "Invalid verification code": [
         "Mã xác thực không hợp lệ"
@@ -4015,6 +4191,12 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Vui lòng thêm phương thức thanh toán trước khi kích hoạt lại gói đăng ký"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Vui lòng kiểm tra xem ABN đã được đăng ký thuế GTGT xuyên biên giới hay chưa"
+      ],
+      "Please complete the billing details": [
+        "Vui lòng hoàn tất chi tiết thanh toán"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Hãy thiết lập một miền tùy chọn trước khi thêm các địa chỉ."
@@ -4097,6 +4279,9 @@
       "Request timed out": [
         "Yêu cầu đã hết hạn"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Cơ chế tính thuế đảo ngược không được hỗ trợ cho gói này"
+      ],
       "Server not found": [
         "Không tìm thấy máy chủ"
       ],
@@ -4172,6 +4357,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Số tiền tối thiểu có thể nạp thêm vào là ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "Số tiền quyên góp tối thiểu là ${ price }"
+      ],
       "The policy name must be between 3 and 40 characters.": [
         "Tên chính sách phải dài từ 3 đến 40 ký tự."
       ],
@@ -4180,6 +4368,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Trường này vượt quá giới hạn ${ maximumLength } kí tự"
+      ],
+      "This field is invalid": [
+        "Trường này không hợp lệ"
       ],
       "This field is required": [
         "Trường này là bắt buộc"
@@ -4232,11 +4423,17 @@
       "Username must end with a letter or digit": [
         "Tên người dùng phải kết thúc bằng chữ hoặc số"
       ],
+      "VAT number must start with ${ prefixes }": [
+        "Mã số thuế VAT phải bắt đầu bằng ${ prefixes }"
+      ],
       "Verification did not succeed, please try again in an hour.": [
         "Xác minh không thành công, vui lòng thử lại trong một giờ."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Chúng tôi đã dừng ký DKIM do sự cố với cấu hình DNS. Vui lòng làm theo hướng dẫn dưới đây để tiếp tục ký."
+      ],
+      "Wrong billing address": [
+        "Địa chỉ thanh toán không đúng"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Sai cụm từ khôi phục. Thử lại hoặc dùng phương thức khôi phục khác."
@@ -4332,6 +4529,9 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Đã xảy ra lỗi khi tải lên tệp. Chưa chọn tệp nào."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tệp ${ formattedFilename } chứa hơn ${ maxContactString } liên hệ."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Tệp ${ formattedFilename } không có liên hệ nào để nhập."
@@ -4897,6 +5097,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Đã xảy ra lỗi trong quá trình xác thực khóa bảo mật. Vui lòng thử lại."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Có lỗi xảy ra khi đăng ký khóa bảo mật. Vui lòng thử lại."
       ]
@@ -4917,8 +5120,8 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Chắc chắn muốn xóa khóa bảo mật ${ name } không?"
       ],
-      "Insert your security key into your device's USB port.": [
-        "Chèn khóa bảo mật vào cổng USB của thiết bị."
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Chèn khóa bảo mật liên kết với Tài khoản ${ BRAND_NAME }."
       ],
       "Security key": [
         "Khóa bảo mật"
@@ -4931,6 +5134,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Thao tác này sẽ xóa tất cả các khóa bảo mật liên kết với tài khoản."
+      ],
+      "Touch your security key.": [
+        "Chạm vào khóa bảo mật."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Xác minh danh tính bằng khóa bảo mật vật lý U2F hoặc FIDO2"
@@ -5631,6 +5837,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } cũng có thể được sử dụng với một mật khẩu duy nhất thay thế cho cả mật khẩu đăng nhập và mật khẩu thứ hai. Để chuyển sang chế độ một mật khẩu, hãy nhập mật khẩu duy nhất muốn sử dụng và nhấp vào Lưu."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } là giải pháp hội nghị truyền hình được mã hóa đầu cuối. Hãy thêm vào gói để tổ chức các cuộc họp bảo mật."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } chỗ"
+      ],
       "${ n } address": [
         "${ n } địa chỉ"
       ],
@@ -5727,6 +5939,9 @@
       "${ vaultLink } updated": [
         "Đã cập nhật ${ vaultLink } "
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } ẩn lưu lượng. ${ PASS_SHORT_APP_NAME } ẩn danh tính\n— **biệt danh hide-my-email** không giới hạn và **cảnh báo dark-web** nếu dữ liệu bị rò rỉ."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Cần có ${ vpnPlus } để kết nối cấp Quốc gia."
       ],
@@ -5751,8 +5966,17 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Nhập mã hiện có** từ các ứng dụng 2FA khác, như Google Authenticator"
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Mời bạn bè** sử dụng ${ BRAND_NAME } bằng liên kết giới thiệu."
+      ],
       "**Sync codes** to all your devices": [
         "**Đồng bộ mã** tới tất cả thiết bị"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Bạn bè nhận ${ refereeRewardAmount }** dưới dạng tín dụng khi đăng ký."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Nhận ${ referrerRewardAmount }** dưới dạng tín dụng cho mỗi bạn bè đăng ký."
       ],
       "+ ${ invisibleCount } More": [
         "Thêm ${ invisibleCount }"
@@ -5801,6 +6025,12 @@
       ],
       "active": [
         "đang hoạt động"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Thêm ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Thêm ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "thêm phương thức khôi phục"
@@ -5861,6 +6091,9 @@
       ],
       "All your changes will be lost.": [
         "Tất cả thay đổi sẽ mất."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tất cả các liên hệ của bạn sẽ được nhập, tối đa ${ maxContact }"
       ],
       "Allocated": [
         "Sẽ phân bổ"
@@ -6063,6 +6296,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Tạo nhãn cho thư đã nhập, phạm vi thời gian cho lần nhập này và các nhãn muốn nhập."
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Tạo đám mây bảo mật cho ${ memberCount } thành viên"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Tạo và quản lý các tài khoản phụ cũng như gán địa chỉ email cho chúng trên miền tùy chỉnh."
       ],
@@ -6156,6 +6392,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "KHÔNG quên mật khẩu này. Nếu quên nó, bạn sẽ không thể quản lý tổ chức của mình."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Bạn có nhớ mật khẩu không? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Có muốn thu hồi tất cả các phiên khác với phiên hiện tại không?"
       ],
@@ -6206,6 +6445,9 @@
       ],
       "Drop to import": [
         "Thả để nhập"
+      ],
+      "Each code can only be used once": [
+        "Mỗi mã chỉ có thể sử dụng một lần."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Mỗi miền chỉ có thể có một bản ghi SPF (TXT). Nếu muốn giữ bản ghi SPF (TXT) hiện có, có thể thêm ${ spf } vào bản ghi hiện tại (đặt sau ${ spfValue })."
@@ -6273,6 +6515,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Đảm bảo liên lạc hoàn toàn riêng tư và đã mã hóa. Nhận địa chỉ email ${ BRAND_NAME } miễn phí ngay."
       ],
+      "Enter code": [
+        "Nhập mã"
+      ],
       "Enter key manually instead": [
         "Thay vào đó, hãy nhập phím theo cách thủ công"
       ],
@@ -6293,6 +6538,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Hãy nhập mã xác thực đã được gửi tới ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Chữ số ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Nhập chi tiết Tài khoản ${ BRAND_NAME }."
@@ -6318,6 +6566,9 @@
       "Everything in ${ planOrAppName }": [
         "Mọi thứ trong ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tất cả tính năng từ ${ planOrAppName }, cộng thêm:"
+      ],
       "Example: ${ spfExample }": [
         "Ví dụ: ${ spfExample }"
       ],
@@ -6336,11 +6587,20 @@
       "finance": [
         "tài chính"
       ],
+      "for ${ price }": [
+        "cho ${ price }"
+      ],
       "for choosing ${ product }": [
         "vì đã chọn ${ product }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Chỉ với ${ bundlePlanPriceInline }"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Đối với người dùng chuyển sang ${ MAIL_APP_NAME } từ dịch vụ email khác, hãy chọn tab ${ boldAddresses } và thêm tất cả các địa chỉ email đang hoạt động trước khi thay đổi bản ghi MX để đảm bảo quá trình chuyển đổi suôn sẻ."
+      ],
+      "Forgot password?": [
+        "Quên mật khẩu?"
       ],
       "Free trial": [
         "Dùng thử miễn phí"
@@ -6419,6 +6679,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Nếu mất thiết bị hỗ trợ xác thực hai yếu tố, có thể sử dụng các mã này thay vì mã xác thực hai yếu tố gồm 6 chữ số để đăng nhập vào tài khoản. Mỗi mã chỉ có thể được sử dụng một lần."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Nếu mất quyền truy cập vào ứng dụng xác thực, có thể sử dụng 1 trong 16 mã khôi phục sao lưu được cung cấp khi thiết lập xác thực hai yếu tố. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Nếu tiến hành hạ cấp, bạn sẽ mất truy cập vào các tính năng trả phí của ${ MAIL_APP_NAME } và ${ VPN_APP_NAME }."
@@ -6846,6 +7109,9 @@
       "Password must have:": [
         "Mật khẩu phải có:"
       ],
+      "Password verified": [
+        "Đã xác minh mật khẩu"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Các thanh toán được bảo vệ với mã hóa TLS và các luật riêng tư của Thụy Sĩ."
       ],
@@ -6893,6 +7159,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vui lòng chọn các thư mục muốn nhập:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vui lòng chọn các nhãn muốn nhập:"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Vui lòng thử lại bằng phương thức thanh toán khác hoặc liên hệ với ngân hàng."
@@ -6950,6 +7219,9 @@
       ],
       "Recently used servers:": [
         "Máy chủ đã sử dụng gần đây:"
+      ],
+      "RECOMMENDED": [
+        "KHUYẾN NGHỊ"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Được khuyến nghị trên các thiết bị tin cậy. ${ keepMeSignedInLearnMoreLink }"
@@ -7179,6 +7451,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro khuyên dùng với xếp hạng 4,2 trên 5 sao"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tạm thời không khả dụng do nhu cầu cao. Vui lòng thử lại sau."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tạm thời không khả dụng. Vui lòng kiểm tra lại sau."
       ],
@@ -7373,6 +7648,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Để chống lại thư rác và lạm dụng, vui lòng xác thực rằng bạn là con người."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Để hỗ trợ ghi nhớ mật khẩu, hệ thống sẽ yêu cầu nhập định kỳ. Tần suất yêu cầu sẽ giảm dần theo thời gian."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Để nhập sự kiện, trước tiên hãy tạo lịch trong ${ CALENDAR_APP_NAME }. Đây là nơi các sự kiện sẽ xuất hiện sau khi nhập."
@@ -7608,6 +7886,9 @@
       "We'll notify you when the import is done.": [
         "Sẽ có thông báo khi quá trình nhập hoàn tất."
       ],
+      "We'll remind you to verify your password again later": [
+        "Sẽ nhắc xác minh lại mật khẩu sau"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Chúng tôi sẽ gửi mã xác minh mới đến ${ strong }"
       ],
@@ -7815,6 +8096,12 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Sẽ không thể khôi phục dữ liệu bị khóa bằng các tệp khôi phục đã tải xuống. Việc này cũng sẽ vô hiệu hóa khôi phục dựa trên thiết bị."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Phần thưởng tín dụng sẽ nhận được sau 1 tháng kể từ khi bạn bè đăng ký gói năm và sau 2 tháng kể từ khi họ đăng ký gói tháng."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Sau đó, phí sẽ được tính ${ renewCycle } tháng một lần với giá ${ renewAmountStr }. Có thể hủy bất cứ lúc nào."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Đã kích hoạt chuyển tiếp trên ${ MAX_SYNC_PAID_USER } địa chỉ Gmail. Để thêm địa chỉ khác, trước tiên hãy vô hiệu hóa một trong số đó."
       ],
@@ -7839,6 +8126,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tài khoản có ít nhất một hóa đơn quá hạn. Sẽ sớm bị giới hạn truy cập. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tài khoản hiện được cấu hình để áp dụng cơ chế tính thuế đảo ngược. Cơ chế này không được hỗ trợ cho gói đã chọn. Để tiếp tục, hãy xóa mã số thuế VAT khỏi địa chỉ thanh toán hoặc chọn gói khác."
+      ],
       "Your account was successfully updated with this promotion": [
         "Tài khoản đã được nâng cấp thành công với gói khuyến mãi này"
       ],
@@ -7862,6 +8152,12 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Chúng tôi chỉ giữ thông tin đăng nhập đến khi nhập thư xong."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ngày thanh toán tiếp theo là ${ renewalTime }. Có thể hủy bất kỳ lúc nào."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Ngày lập hóa đơn tiếp theo là ${ renewalTime }. Có thể hủy bất cứ lúc nào. Vui lòng liên hệ bộ phận hỗ trợ nếu cần thay đổi gói ngay lập tức."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Tổ chức sử dụng đăng nhập một lần (SSO). Nhấn Đăng nhập để tiếp tục với nhà cung cấp SSO."
@@ -8093,6 +8389,9 @@
       "${ nbDay } day": [
         "${ nbDay } ngày"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } ký tự"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tạm thời không khả dụng. Vui lòng kiểm tra lại sau.)"
       ],
@@ -8116,6 +8415,9 @@
       ],
       "Add all organization members": [
         "Thêm tất cả thành viên tổ chức"
+      ],
+      "Additional comments": [
+        "Bình luận bổ sung"
       ],
       "Address": [
         "Địa chỉ"
@@ -8279,6 +8581,9 @@
       "Contacts": [
         "Liên hệ"
       ],
+      "Continue cancelling": [
+        "Tiếp tục hủy"
+      ],
       "Copy": [
         "Sao chép"
       ],
@@ -8345,6 +8650,9 @@
       "Don't show this again": [
         "Không hiển thị lại mục này"
       ],
+      "Drive": [
+        "Ổ đĩa"
+      ],
       "e.g. example.com": [
         "ví dụ: example.com"
       ],
@@ -8368,6 +8676,9 @@
       ],
       "Emails (last 3 months)": [
         "Email (3 tháng qua)"
+      ],
+      "Emails (last 6 months)": [
+        "Email (6 tháng qua)"
       ],
       "Emails (last month)": [
         "Email (tháng trước)"
@@ -8492,6 +8803,9 @@
       "Last 3 months only": [
         "Chỉ 3 tháng qua"
       ],
+      "Last 6 months only": [
+        "Chỉ 6 tháng qua"
+      ],
       "Last month only": [
         "Chỉ tháng trước"
       ],
@@ -8509,6 +8823,9 @@
       ],
       "Main": [
         "Chính"
+      ],
+      "Main reason for cancelling": [
+        "Lý do chính để hủy"
       ],
       "Manage categories": [
         "Quản lý danh mục"
@@ -8749,6 +9066,9 @@
       ],
       "Single sign-on URL": [
         "URL đăng nhập một lần"
+      ],
+      "Skip feedback": [
+        "Bỏ qua phản hồi"
       ],
       "Spam": [
         "Thư rác"
@@ -9008,6 +9328,9 @@
       "Create an alias": [
         "Tạo biệt danh"
       ],
+      "Don't have access to your 2FA?": [
+        "Không có quyền truy cập 2FA?"
+      ],
       "Encryption and keys": [
         "Mã hóa và khóa"
       ],
@@ -9023,11 +9346,17 @@
       "Forgot username?": [
         "Quên tên người dùng?"
       ],
+      "Frequent sign-in problems": [
+        "Sự cố đăng nhập thường gặp"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Nhận ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Nhận ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Nhận trợ giúp từ ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Nhóm"
@@ -9339,6 +9668,17 @@
         "Nhận ${ planTitle } với giá ${ discountedPriceElement }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Giấy phép ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } chỗ"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } chỗ ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Hội nghị truyền hình bảo mật cho các hội thoại quan trọng"
@@ -9346,11 +9686,17 @@
       "${ n } active meeting at a time": [
         "${ n } cuộc họp đang hoạt động cùng lúc"
       ],
+      "${ n } participant": [
+        "${ n } người tham dự"
+      ],
       "24 hours per meeting": [
         "24 giờ mỗi cuộc họp"
       ],
       "60 minutes per meeting": [
         "60 phút mỗi cuộc họp"
+      ],
+      "Booking pages": [
+        "Các trang đặt lịch"
       ],
       "Browser, mobile, and desktop apps": [
         "Ứng dụng trình duyệt, di động và máy tính để bàn"
@@ -9360,6 +9706,12 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Chia sẻ màn hình và trò chuyện trong cuộc gọi tạm thời đã mã hóa đầu cuối."
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Chủ trì có thể ghi lại cuộc họp cục bộ trên máy tính"
+      ],
+      "Meeting recording": [
+        "Ghi lại cuộc họp"
       ],
       "One active meeting at a time": [
         "Một cuộc họp đang hoạt động tại một thời điểm"
@@ -9375,6 +9727,17 @@
       ],
       "Up to ${ n } participant": [
         "Tối đa ${ n } người tham dự"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Cuộc họp video, ${ n } người tham dự"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Đã bao gồm ${ seats } chỗ"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Có thể có tối đa ${ TRIAL_MAX_MEET_SEATS } chỗ ${ MEET_SHORT_APP_NAME } trong thời gian bản dùng thử."
       ]
     },
     "Member action": {
@@ -9634,6 +9997,9 @@
       "${ n } VPN connection": [
         "${ n } kết nối VPN"
       ],
+      "${ options }-day file version history": [
+        "Lịch sử phiên bản tệp trong ${ options } ngày"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin trọn đời"
       ],
@@ -9688,6 +10054,9 @@
       "99.95% SLA": [
         "SLA 99,95 %"
       ],
+      "Access all countries": [
+        "Truy cập tất cả các quốc gia"
+      ],
       "Activity logs and policy": [
         "Nhật ký hoạt động và chính sách"
       ],
@@ -9714,6 +10083,12 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tất cả dịch vụ cơ bản của ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Lên lịch cuộc hẹn"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Lên lịch cuộc hẹn với ${ n } trang đặt lịch"
       ],
       "Apps for": [
         "Ứng dụng cho"
@@ -9772,8 +10147,14 @@
       "Data breach monitoring": [
         "Giám sát vi phạm dữ liệu"
       ],
+      "Data retention policies": [
+        "Chính sách lưu giữ dữ liệu"
+      ],
       "Dedicated servers and IP": [
         "Máy chủ và IP riêng biệt"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Máy chủ chuyên dụng được tối ưu hóa cho tốc độ"
       ],
       "Desktop app": [
         "Ứng dụng cho máy tính để bàn"
@@ -9847,6 +10228,9 @@
       "Multiple admin roles": [
         "Nhiều vai trò quản trị viên"
       ],
+      "No streaming support": [
+        "Không hỗ trợ phát trực tuyến"
+      ],
       "No-logs policy": [
         "Chính sách không ghi nhật ký"
       ],
@@ -9871,6 +10255,9 @@
       "Password-protected Emails": [
         "Email được bảo vệ bằng mật khẩu"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Hỗ trợ qua điện thoại (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ người dùng)"
+      ],
       "Priority email support": [
         "Hỗ trợ email ưu tiên"
       ],
@@ -9879,6 +10266,9 @@
       ],
       "Priority support & live chat": [
         "Hỗ trợ ưu tiên & trò chuyện trực tiếp"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Trò chuyện AI riêng tư (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Sao lưu ảnh riêng tư"
@@ -10000,6 +10390,9 @@
       "Unlimited volume/bandwidth": [
         "Không giới hạn lưu lượng/băng thông"
       ],
+      "Unlock streaming": [
+        "Mở khóa phát trực tuyến"
+      ],
       "Up to ${ n } user": [
         "Tối đa ${ n } người dùng"
       ],
@@ -10029,6 +10422,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "Chia sẻ kho với tối đa ${ n } người"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN với trình chặn quảng cáo và bảo vệ khỏi phần mềm độc hại"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Chúng tôi quét dark web để kiểm tra xem các địa chỉ hoặc biệt danh ${ BRAND_NAME } có bị rò rỉ hay không và thông báo ngay lập tức nếu phát hiện bất cứ điều gì."
@@ -10339,6 +10735,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Cá nhân hóa chữ ký email với logo, hình ảnh, biểu tượng mạng xã hội, liên kết đến chi tiết liên hệ và hơn thế nữa"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Hỗ trợ qua điện thoại được cung cấp bởi đội ngũ hỗ trợ khách hàng ${ BRAND_NAME } trong giờ làm việc tại Châu Âu, dành cho khách hàng có từ ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } người dùng trở lên"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Ngăn chặn thư bị truy cập bởi ${ BRAND_NAME } hoặc bên thứ ba. Những người duy nhất có thể đọc thư là người gửi và người nhận dự kiến."
       ],
@@ -10439,6 +10838,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } quốc gia"
+      ],
       "Access advanced VPN features": [
         "Truy cập các tính năng VPN nâng cao"
       ],
@@ -11278,6 +11680,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (chưa bao gồm thuế)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% thuế: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% thuế: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Số tiền đến hạn sau khi dùng thử vào ${ formattedDate }"
       ],
@@ -11299,11 +11710,26 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Trong thời gian này, sẽ không thể sửa đổi hoặc hủy đăng ký. Vui lòng đợi đến khi thanh toán hoàn tất trước khi thực hiện thay đổi. Cảm ơn vì đã kiên nhẫn."
       ],
+      "Edit billing address": [
+        "Chỉnh sửa địa chỉ thanh toán"
+      ],
       "Got it": [
         "Hiểu rồi"
       ],
       "I'm purchasing as a business": [
         "Tôi mua với tư cách doanh nghiệp"
+      ],
+      "Including ${ rate }% tax": [
+        "Đã bao gồm ${ rate }% thuế"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Đã bao gồm ${ rate }% thuế: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Bao gồm ${ rate }% thuế"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Đã bao gồm ${ rate }% thuế: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "Tháng/Năm"
@@ -11329,14 +11755,29 @@
       "Sorry, this offer is not available with your current plan.": [
         "Xin lỗi, ưu đãi này không khả dụng với gói hiện tại."
       ],
+      "Tax ${ rate }%": [
+        "Thuế ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Thuế ${ rate }%"
+      ],
       "terms and conditions": [
         "các điều khoản và điều kiện"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Mức giảm giá có hiệu lực cho ${ renewalsWithCoupon } lần gia hạn."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Giá giảm đặc biệt có hiệu lực trong ${ couponRedemptions } tháng. Sau đó, gói cước sẽ tự động gia hạn ở mức ${ renewPriceStr } trong 1 tháng. Bạn có thể hủy bất kỳ lúc nào."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Giá giảm đặc biệt có hiệu lực trong ${ subscriptionLength } tháng đầu tiên."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Giá giảm đặc biệt có hiệu lực cho tháng đầu tiên. Sau đó sẽ tự động gia hạn với giá ${ renewPriceStr } mỗi tháng. Có thể hủy bất kỳ lúc nào."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Giá giảm đặc biệt ${ priceWithDiscount } có hiệu lực trong ${ couponRedemptions } tháng. Sau đó, gói cước sẽ tự động gia hạn ở mức ${ renewPriceStr } trong 1 tháng. Bạn có thể hủy bất kỳ lúc nào."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Giá ưu đãi đặc biệt của ${ priceWithDiscount } có hiệu lực trong ${ subscriptionLength } tháng đầu tiên."
@@ -11364,6 +11805,9 @@
       ],
       "VAT number": [
         "Mã số thuế GTGT"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Cơ chế tính thuế VAT đảo ngược được áp dụng."
       ],
       "You already have a subscription to this plan.": [
         "Bạn đã có đăng ký cho gói này."
@@ -11458,6 +11902,20 @@
         "Miễn phí"
       ]
     },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Giá gia hạn phụ thuộc vào khu vực thanh toán và ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Giá gia hạn phụ thuộc vào khu vực thanh toán và Mã số Doanh nghiệp."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Giá gia hạn phụ thuộc vào khu vực thanh toán và EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Giá gia hạn phụ thuộc vào khu vực thanh toán và mã số thuế VAT."
+      ]
+    },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Apple Pay - thẻ có đuôi ${ paymentMethod.Details.Last4 }"
@@ -11533,6 +11991,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Thông tin cần chia sẻ"
+      ],
       "Anytown": [
         "Anytown"
       ],
@@ -11547,6 +12008,9 @@
       ],
       "Confirm": [
         "Xác nhận"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
       ],
       "domain.com": [
         "miền.com"
@@ -11568,6 +12032,9 @@
       ],
       "End date": [
         "Ngày kết thúc"
+      ],
+      "Enter a name": [
+        "Nhập tên"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -11605,6 +12072,9 @@
       "Postal code": [
         "Mã bưu chính"
       ],
+      "San Francisco": [
+        "San Francisco"
+      ],
       "Search": [
         "Tìm kiếm"
       ],
@@ -11625,6 +12095,9 @@
       ],
       "Select": [
         "Chọn"
+      ],
+      "Select a provider": [
+        "Chọn nhà cung cấp"
       ],
       "Select a reason": [
         "Chọn một lý do"
@@ -11768,6 +12241,26 @@
       ],
       "Unknown": [
         "Không xác định"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Khác"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q2campaign2026: Action": {
@@ -12738,6 +13231,14 @@
         "Được chia sẻ bởi ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Mở trong ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Mở trong ${ appName } (Beta)"
+      ]
+    },
     "Signup": {
       "1 month": [
         "1 tháng"
@@ -12957,6 +13458,9 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Nhận biệt danh không giới hạn để bảo vệ danh tính và giảm thư rác"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Giữ mật khẩu an toàn và ngăn nắp trong nhiều kho"
       ],
       "Protect your account from threats with Sentinel": [
         "Bảo vệ tài khoản khỏi các mối đe dọa với Sentinel"
@@ -13463,6 +13967,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Trợ lý soạn thảo ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } và ${ LUMO_APP_NAME } với các tính năng cao cấp"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } và ${ VPN_SHORT_APP_NAME } với các tính năng cao cấp"
       ],
@@ -13714,6 +14224,9 @@
       ],
       "Version history": [
         "Lịch sử phiên bản"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Cuộc họp video, tối đa ${ PAID_PREMIUM_MAX_PARTICIPANTS } người tham dự"
       ],
       "Watch the interview": [
         "Xem cuộc phỏng vấn"
@@ -14418,6 +14931,9 @@
       "Change second password": [
         "Thay đổi mật khẩu thứ hai"
       ],
+      "Choose a provider": [
+        "Chọn nhà cung cấp"
+      ],
       "Choose user affiliations": [
         "Chọn liên kết người dùng"
       ],
@@ -14513,6 +15029,9 @@
       ],
       "Currency": [
         "Tiền tệ"
+      ],
+      "Custom": [
+        "Tùy chỉnh"
       ],
       "Custom selection of users": [
         "Tùy chỉnh lựa chọn người dùng"
@@ -14790,6 +15309,9 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Nhập qua ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Nhập dữ liệu vào ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Thông tin bị lộ trong vi phạm"
       ],
@@ -14813,6 +15335,9 @@
       ],
       "Main password": [
         "Mật khẩu chính"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Di chuyển tổ chức sang ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Lịch nhỏ"
@@ -14982,6 +15507,9 @@
       "Restore administrator privileges": [
         "Khôi phục các đặc quyền quản trị viên"
       ],
+      "Reverse charge not supported": [
+        "Không hỗ trợ cơ chế đảo ngược tính thuế"
+      ],
       "Revoke certificate?": [
         "Thu hồi chứng chỉ?"
       ],
@@ -15008,6 +15536,9 @@
       ],
       "Select contact group": [
         "Chọn nhóm liên hệ"
+      ],
+      "Select data to import": [
+        "Chọn dữ liệu để nhập"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Gửi và nhận Gmail bằng ${ MAIL_APP_NAME }"
@@ -15209,6 +15740,9 @@
       ],
       "Verification failed": [
         "Không xác minh được"
+      ],
+      "Verify your password": [
+        "Xác minh mật khẩu"
       ],
       "Verifying your card...": [
         "Đang xác minh thẻ..."
@@ -15412,6 +15946,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Nếu đã mua hoặc nhận một mã quà tặng từ đội ngũ hỗ trợ của chúng tôi, có thể nhập nó ở đây."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Hỗ trợ AI tức thì, luôn có chuyên gia sẵn sàng!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Các thành viên không sử dụng 2FA sẽ nhận được email yêu cầu kích hoạt sớm nhất có thể. Người dùng đăng nhập một lần sẽ không nhận được email nhắc nhở."

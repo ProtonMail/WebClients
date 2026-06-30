@@ -494,6 +494,9 @@
       "Extend": [
         "续期"
       ],
+      "Finish": [
+        "完成"
+      ],
       "Fit to window": [
         "适应窗口大小"
       ],
@@ -889,6 +892,9 @@
       ],
       "Review": [
         "评论"
+      ],
+      "Review changes": [
+        "审阅更改"
       ],
       "Revoke": [
         "吊销"
@@ -5534,8 +5540,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
-      "Insert your security key into your device's USB port.": [
-        "将您的安全密钥插入设备 USB 接口中。"
+      "Insert your security key into your device.": [
+        "请将您的安全密钥插入设备！"
       ],
       "Security key": [
         "安全密钥"
@@ -5548,6 +5554,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "此操作将删除您的账户关联的所有安全密钥。"
+      ],
+      "Touch your security key.": [
+        "请触碰您的安全密钥！"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
@@ -5753,6 +5762,12 @@
       ],
       "General": [
         "常规"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "管理用户和群组、分配角色，并向成员授予许可证。"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "管理安全设置，并可查看所有事件日志和用户详情。"
       ],
       "Roles and permissions": [
         "角色与权限"
@@ -6227,8 +6242,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "${ BRAND_NAME } 企业套餐为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business 套餐为您的团队提供所需的所有协作工具，使其在工作中保持高效和有序，同时保护您的业务安全。"
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } 由独立资金支持，且运营不含广告。以下是这种独立性在实际中的运用示例。"
@@ -10788,7 +10803,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } 有新版本，请${ reloadButton }。"
+        "新版本 ${ appName } 可用，请${ reloadButton }。"
       ]
     },
     "Metadata title": {
@@ -13883,6 +13898,59 @@
         "正在测试 SAML 配置"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } 位新成员"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "已同步 ${ numberOfPendingGroups } 个群组"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "已同步 ${ numberOfPendingUsers } 位用户"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } 个群组"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "已同步 ${ pendingGroupsCount } 个群组"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } 位用户"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "已同步 ${ pendingUsersCount } 位用户"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "已同步 ${ usersText } 和 ${ groupsText }！"
+      ],
+      "Approve changes from your identity provider": [
+        "批准来自身份提供商的更改"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "需要最终批准才能授予所有 ${ BRAND_NAME } 服务的访问权限。"
+      ],
+      "From your identity provider": [
+        "来自您的身份提供商"
+      ],
+      "New": [
+        "新建"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "一旦获得批准，他们即可访问所有 ${ BRAND_NAME } 服务并安全地进行共享。"
+      ],
+      "Private user": [
+        "私有用户"
+      ],
+      "Review users and groups before finishing setup": [
+        "在完成设置前审阅用户和群组"
+      ],
+      "Updated": [
+        "已更新"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "您设为私有的用户需要接受邀请以完成设置。您批准后，我们会向他们发送邀请。"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "配置 SCIM"
@@ -14916,6 +14984,17 @@
     "State": {
       "Canceling your subscription, please wait": [
         "正在取消您的订阅，请稍候。"
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... 等待中"
+      ],
+      "completed": [
+        "已完成"
+      ],
+      "finalizing": [
+        "即将完成"
       ]
     },
     "Storage": {
@@ -16122,6 +16201,9 @@
       ],
       "Apply gift code": [
         "使用礼品码"
+      ],
+      "Approve changes": [
+        "批准更改"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "您是否已在浏览器中登录 ${ BRAND_NAME }？"
@@ -17746,6 +17828,15 @@
       ],
       "Invitation email": [
         "邀请邮件"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有用户、群组、安全、账单和系统配置。"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "管理用户和群组、分配角色，并向成员授予许可证。"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "管理安全设置，并可查看所有事件日志和用户详情。"
       ],
       "Name": [
         "名称"

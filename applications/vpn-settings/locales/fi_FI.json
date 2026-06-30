@@ -56,6 +56,9 @@
       "Add": [
         "Lisää"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Lisää ${ BRAND_NAME }-osoite"
       ],
@@ -1187,6 +1190,9 @@
       "Verify domain": [
         "Vahvista verkkotunnus"
       ],
+      "Verify now": [
+        "Vahvista nyt"
+      ],
       "Verify password": [
         "Vahvista salasana"
       ],
@@ -1278,6 +1284,9 @@
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME }-tekoälylisenssi"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } -käyttöpaikkaa"
+      ],
       "${ price } per dedicated server": [
         "${ price }/oma palvelin"
       ],
@@ -1302,6 +1311,10 @@
         "${ seats } ${ LUMO_APP_NAME }-lisenssi",
         "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisenssi",
+        "${ seats } ${ MEET_APP_NAME } -lisenssiä"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
         "${ seats } kirjoitusavustajalisenssiä"
@@ -1312,6 +1325,9 @@
       ],
       "Add-on": [
         "Lisäosa"
+      ],
+      "Dedicated VPN servers": [
+        "Erilliset VPN-palvelimet"
       ],
       "Domains": [
         "Verkkotunnukset"
@@ -1324,6 +1340,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "Writing assistant seats": [
+        "Kirjoitusavustajan käyttöpaikat"
       ]
     },
     "Address action": {
@@ -1601,6 +1620,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
       ],
@@ -1687,6 +1709,15 @@
       "3 TB data storage": [
         "3 Tt tallennustilaa"
       ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+      ],
+      "Access advanced AI models": [
+        "Käytä kehittyneitä tekoälymalleja"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki palveluiden ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
       "Block ads, trackers, and malware": [
         "Estä mainoksia, seurantoja ja haittaohjelmia"
       ],
@@ -1696,8 +1727,25 @@
       "Connect 10 devices at once": [
         "Yhdistä 10 laitetta samanaikaisesti"
       ],
+      "Full chat history with easy search and favorites": [
+        "Koko keskusteluhistoria helpolla etsi-toiminnolla ja suosikeilla"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
       ]
     },
     "Billing cycle": {
@@ -1732,6 +1780,9 @@
       ],
       "Lifetime": [
         "Elinikäinen"
+      ],
+      "Lifetime access": [
+        "Elinikäinen käyttöoikeus"
       ],
       "Monthly": [
         "Kuukausittainen"
@@ -1975,11 +2026,6 @@
         "Katso esittely"
       ]
     },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
-      ]
-    },
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tallennustilaa"
@@ -2036,6 +2082,9 @@
         "${ users } käyttäjä",
         "${ users } käyttäjää"
       ],
+      "Subtotal": [
+        "Välisumma"
+      ],
       "Subtotal for ${ cycle } month": [
         "Välisumma ${ cycle } kuukaudelle",
         "Välisumma ${ cycle } kuukaudelle"
@@ -2070,6 +2119,12 @@
       ],
       "Built and based in Europe": [
         "Rakennettu ja sijaitsee Euroopassa"
+      ],
+      "Compliance with data protection regulations": [
+        "Tietosuojasäädösten noudattaminen"
+      ],
+      "Data never used for AI training": [
+        "Tietoja ei koskaan käytetä tekoälyn kouluttamiseen"
       ],
       "Full chat history with search": [
         "Täysi keskusteluhistoria haulla"
@@ -2117,6 +2172,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Yksityiset videopuhelut tärkeisiin keskusteluihin."
       ]
     },
     "color": {
@@ -3279,6 +3337,9 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "Määritä käytännöt päättääksesi, kuka voi yhdistää jaettuihin palvelimiin kussakin maassa."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Voitte käyttää sähköpostianne ja kalenterianne helposti tietokoneella ja mobiililaitteella."
+      ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
       ],
@@ -3303,6 +3364,9 @@
       "Enough room for years of emails, attachments and more.": [
         "Tarpeeksi tilaa vuosien sähköposteille, liitteille ja muulle."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Varmistakaa turvallinen pääsy organisaation tietoihin, vaikka tiiminne työskentelisi etänä tai käyttäisi julkista Wi-Fi-yhteyttä."
+      ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Varmista ensiluokkainen tietoturva tilillesi ${ PROTON_SENTINEL_NAME } -ohjelmalla."
       ],
@@ -3311,6 +3375,9 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Kaikki organisaatiossanne voivat yhdistää jaettuihin palvelimiin kaikissa maissa."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voit tuoda tietosi Googlesta, Outlookista ja muualta tiimisi saumattomaksi ${ BRAND_NAME } -palveluun siirtymiseksi."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
@@ -3379,17 +3446,20 @@
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Päivitä ${ planName } -tilaukseen yhdistääksesi jopa ${ MAX_SYNC_PAID_USER } tiliä"
       ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Käyttäkää tätä opasta, jotta organisaationne pääsee viipymättä hyötymään ${ BRAND_NAME }:n alan johtavasta salaus- ja yksityisyys-ekosysteemistä."
+      ],
       "We can't access ${ boldEmails } anymore.": [
         "Emme voi enää käyttää ${ boldEmails } -osoitteita."
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
       ],
-      "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Tuomme vanhat sähköpostisi ja synkronoimme jatkossa uudet viestit Gmailista"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Olemme aloittaneet sähköpostienne tuomisen Gmailista. Ilmoitamme teille, kun se on valmis."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "On ikävä nähdä teidän lähtevän. Jos teillä on hetki aikaa, arvostaisimme kovasti, jos kertoisitte, miksi haluatte peruuttaa. Palautteenne auttaa meitä tekemään ${ BRAND_NAME } -palvelusta paremman kaikille."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Sinulla on jo Gmail-osoite, joka ohjataan ${ MAIL_APP_NAME } -sovellukseen. Yhdistä se alla, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME } -sovelluksesta."
@@ -3716,6 +3786,11 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Välität sähköposteja yhdeltä ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstikentät ovat valinnaisia. Tässä lomakkeessa antamanne tiedot näkyvät vain tulevaisuudessa laadittavissa laskuissa eivätkä vaikuta jo olemassa oleviin laskuihin."
       ]
     },
     "edm": {
@@ -4163,6 +4238,9 @@
       "Payments are currently not available, please try again later": [
         "Maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tarkistakaa, onko ABN-tunnuksenne rekisteröity valtioiden välistä ALV:ta varten"
+      ],
       "Please complete the billing details": [
         "Täydennä laskutustiedot"
       ],
@@ -4397,6 +4475,9 @@
       ],
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "ALV-tunnuksen on alettava etuliitteillä ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Vahvistus ei onnistunut. Yritä tunnin kuluttua uudelleen."
@@ -5110,9 +5191,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Kytke suojausavaimesi laitteen USB-porttiin."
-      ],
       "Security key": [
         "Suojausavain"
       ],
@@ -5124,6 +5202,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Tämä poistaa kaikki tiliisi liitetyt suojausavaimet."
+      ],
+      "Touch your security key.": [
+        "Koskettakaa suoja-avaintanne."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-suojausavaimella"
@@ -5878,6 +5959,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että toisen salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } on päästä päähän -salattu videoneuvotteluratkaisu. Lisää se tilaukseesi järjestääksesi suojattuja kokouksia."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
       "${ n } address": [
         "${ n } osoite",
         "${ n } osoitetta"
@@ -5992,6 +6079,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } päivitettiin"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteenne. ${ PASS_SHORT_APP_NAME } piilottaa henkilöllisyytenne\n— rajoittamattomat **hide-my-email-aliakset** ja **pimeän verkon hälytykset**, jos tietonne vuotavat."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Maakohtaiset yhteydet edellyttävät ${ vpnPlus } -tilausta."
       ],
@@ -6014,8 +6104,17 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**He saavat ${ refereeRewardAmount }** krediittiä, mikäli he tilaavat."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Saat ${ referrerRewardAmount }** krediittiä jokaisesta tilaavasta ystävästä."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Lisää",
@@ -6069,6 +6168,9 @@
       ],
       "Activity Monitor": [
         "Aktiviteettimonitori"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lisää ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -6213,6 +6315,9 @@
       ],
       "At least one application must be active": [
         "Ainakin yhden sovelluksen tulee olla aktiivisena"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Kokeilujaksonne päättyessä ${ boldCancelDate } tilauksenne alennetaan tasolle ${ boldProtonFree }. Kaikki käyttäjätilit poistetaan organisaatiostanne."
       ],
       "Attention required": [
         "Huomiota vaaditaan"
@@ -6462,6 +6567,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ÄLÄ kadota tätä salasanaa. Mikäli kadotat sen, et voi hallita organisaatiotasi."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Muistatteko salasananne? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Haluatko mitätöidä kaikki istunnot nykyistä lukuun ottamatta?"
       ],
@@ -6513,6 +6621,9 @@
       ],
       "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
         "Päästä päähän -salauksen vuoksi voit nollata salasanasi, mutta ${ DataLockedText }, kunnes käytät ${ DataRecoveryOptionsLink }:"
+      ],
+      "Each code can only be used once": [
+        "Jokaista koodia voi käyttää vain kerran."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Kullakin verkkotunnuksella voi olla vain yksi SPF (TXT) -tietue. Mikäli haluat pitää olemassaolevan SPF (TXT) -tietueen, voit lisätä ${ spf } nykyiseen tietueeseen (se tulee ${ spfValue } jälkeen)."
@@ -6604,6 +6715,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Syötä ${ BRAND_NAME }-tilisi tiedot."
       ],
@@ -6612,6 +6726,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Syöttäkää oma salasananne (luotettuna yhteystietona)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
@@ -6654,6 +6771,9 @@
       ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Vain ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
@@ -7755,6 +7875,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Auttaaksemme teitä muistamaan salasananne, pyydämme teitä syöttämään sen säännöllisin väliajoin. Pyyntöjen määrä vähenee ajan myötä."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
@@ -7992,6 +8115,9 @@
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
       ],
+      "We'll remind you to verify your password again later": [
+        "Muistutamme teitä vahvistamaan salasananne uudelleen myöhemmin"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Uusi vahvistuskoodi lähetetään kohteeseen ${ strong }"
       ],
@@ -8217,6 +8343,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Et voi palauttaa lukittuja tietoja lataamillasi palautustiedostoilla. Tämä poistaa myös laitepohjaisen palautuksen käytöstä."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Saatte krediitit 1 kuukausi sen jälkeen, kun ystävänne tilaa vuositilauksen, ja 2 kuukautta sen jälkeen, kun he tilaavat kuukausitilauksen."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
@@ -8279,6 +8408,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit peruuttaa milloin tahansa."
       ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäivänne on ${ renewalTime }. Voitte peruuttaa tilauksen milloin tahansa. Ottakaa yhteyttä tukeen, jos haluatte muuttaa tilaustanne välittömästi."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
       ],
@@ -8318,6 +8450,9 @@
       ],
       "YouTube": [
         "YouTube"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Menetätte myös ${ boldPlanTitle }-ominaisuuksien käyttöoikeuden:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
@@ -8532,6 +8667,9 @@
       "Add all organization members": [
         "Lisää kaikki organisaation jäsenet"
       ],
+      "Additional comments": [
+        "Lisäkommentit"
+      ],
       "Address": [
         "Osoite"
       ],
@@ -8693,6 +8831,9 @@
       ],
       "Contacts": [
         "Yhteystiedot"
+      ],
+      "Continue cancelling": [
+        "Jatka perumista"
       ],
       "Copy": [
         "Kopioi"
@@ -8883,8 +9024,8 @@
       "Import to:": [
         "Tuo kohteeseen:"
       ],
-      "Import your emails": [
-        "Tuo sähköpostisi"
+      "Include application logs in bug report": [
+        "Sisällytä sovelluslokit vikailmoitukseen"
       ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
@@ -8936,6 +9077,9 @@
       ],
       "Main": [
         "Pää"
+      ],
+      "Main reason for cancelling": [
+        "Pääsyy peruutukselle"
       ],
       "Manage categories": [
         "Hallitse kategorioita"
@@ -9184,6 +9328,9 @@
       "Single sign-on URL": [
         "Kertakirjautumisen URL-osoite"
       ],
+      "Skip feedback": [
+        "Ohita palaute"
+      ],
       "Spam": [
         "Roskaposti"
       ],
@@ -9312,6 +9459,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Your password (trusted contact)": [
+        "Salasananne (luotettu yhteystieto)"
       ],
       "ZIP code": [
         "Postinumero"
@@ -9463,6 +9613,9 @@
       ],
       "Details": [
         "Tiedot"
+      ],
+      "Don't have access to your 2FA?": [
+        "Eikö Teillä ole pääsyä 2FA-tunnistautumiseenne?"
       ],
       "Encryption and keys": [
         "Salaus ja avaimet"
@@ -9804,9 +9957,22 @@
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } ${ quantity } käyttäjälle)",
         "${ MEET_APP_NAME } ${ quantity } käyttäjälle)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-lisenssi"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
+        "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Luottamuksellinen videoneuvottelu tärkeisiin keskusteluihin"
+      ],
       "${ n } active meeting at a time": [
         "Enintään ${ n } kokus samanaikaisesti",
         "Enintään ${ n } kokusta samanaikaisesti"
@@ -9815,14 +9981,32 @@
         "${ n } osallistuja",
         "${ n } osallistujaa"
       ],
+      "24 hours per meeting": [
+        "24 tuntia per kokous"
+      ],
+      "60 minutes per meeting": [
+        "60 minuuttia per kokous"
+      ],
       "Booking pages": [
         "Ajanvaraussivut"
       ],
       "Browser, mobile, and desktop apps": [
         "Selain, mobiili- ja työpöytäsovellukset"
       ],
+      "Built-in chat": [
+        "Sisäänrakennettu chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Päästä päähän -salattu näytön jako ja tilapäinen puhelun aikainen keskustelu"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Järjestäjät voivat tallentaa kokouksia paikallisesti tietokoneilleen"
+      ],
       "Meeting recording": [
         "Kokoustallenne"
+      ],
+      "One active meeting at a time": [
+        "Vain yksi aktiivinen kokous kerrallaan"
       ],
       "Screen-sharing": [
         "Näytön jakaminen"
@@ -9837,6 +10021,19 @@
       "Up to ${ n } participant": [
         "Enintää ${ n } osallistuja",
         "Enintää ${ n } osallistujaa"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokokoukset, ${ n } osallistuja",
+        "Videokokoukset, ${ n } osallistujaa"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } käyttöpaikka sisältyy",
+        "${ seats } käyttöpaikkaa sisältyy"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada kokeilujakson aikana enintään ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-käyttöpaikkaa."
       ]
     },
     "Meet_launch": {
@@ -10150,6 +10347,10 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
+      "${ options }-day file version history": [
+        "سجل إصدارات الملف لمدة يوم واحد (${ options })",
+        "سجل إصدارات الملف لمدة ${ options } يوم"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin elinikäisesti"
       ],
@@ -10204,6 +10405,9 @@
       ],
       "99.95% SLA": [
         "99.95 % SLA"
+      ],
+      "Access all countries": [
+        "Käytä kaikkia maita"
       ],
       "Activity logs and policy": [
         "Toimintalokit ja käytäntö"
@@ -10296,6 +10500,9 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
+      "Data retention policies": [
+        "Tietojen säilytyskäytännöt"
+      ],
       "Dedicated servers and IP": [
         "Omat palvelimet ja kiinteät IP-osoitteet"
       ],
@@ -10374,6 +10581,9 @@
       ],
       "Multiple admin roles": [
         "Useita ylläpitäjien rooleja"
+      ],
+      "No streaming support": [
+        "Ei suoratoiston tukea"
       ],
       "No-logs policy": [
         "Lokivapaa käytäntö"
@@ -10533,6 +10743,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
+      ],
+      "Unlock streaming": [
+        "Avaa suoratoiston lukitus"
       ],
       "Up to ${ n } user": [
         "Enintään ${ n } käyttäjää",
@@ -11315,6 +11528,9 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " vierailkaa ${ helpCenterLink }-tukikeskuksessamme tai ${ contactSupportLink }."
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Peru koska tahansa ennen ${ cancelDate }."
       ],
@@ -11335,6 +11551,15 @@
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
+      ],
+      "Once your full subscription starts...": [
+        "Kun varsinainen tilauksenne alkaa..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Voitte silti peruuttaa 30 päivän kuluessa ja saada suhteellisen hyvityksen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
@@ -11839,6 +12064,9 @@
       "Got it": [
         "Selvä"
       ],
+      "I'm purchasing as a business": [
+        "Ostan yrityksenä"
+      ],
       "Including ${ rate }% tax": [
         "Sisältää ${ rate }% veron"
       ],
@@ -11920,6 +12148,9 @@
       "This offer is not available with your current plan.": [
         "Tämä tarjous ei ole saatavilla nykyiselle tilauksellesi."
       ],
+      "This payment method will become your new default for all future renewals.": [
+        "Tästä maksutavasta tulee uusi oletuksenne kaikissa tulevissa uusimisissa."
+      ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
       ],
@@ -11943,6 +12174,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Sinut ohjataan pian maksun vahvistamiseen."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Valuuttanne on vaihdettu euroiksi (€), koska SEPA-pankkisiirrot tukevat vain euroissa tehtäviä maksuja."
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -12029,6 +12263,9 @@
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Apple Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ],
+      "Bank transfer - ${ details }": [
+        "Pankkisiirto - ${ details }"
+      ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
@@ -12096,6 +12333,9 @@
       ],
       "Anderson": [
         "Andersson"
+      ],
+      "Anything you'd like us to know": [
+        "Haluatteko kertoa meille jotain muuta"
       ],
       "Anytown": [
         "Jokukaupunki"
@@ -12255,6 +12495,14 @@
         "Porttisi verkkovapauteen"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } kuukausi",
@@ -12269,8 +12517,14 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** -tilaajana voitte ottaa käyttöön palvelun **${ unlockPlanTitle }** ja muita ${ BRAND_NAME }-palveluita päivittämällä tilaukseen **${ upsellPlanTitle }**."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Lisää ${ BRAND_NAME }in palveluita.${ br }Yksi helppo tilaus."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Pysykää ${ currentPlanTitle }-tilauksessa"
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
@@ -13501,6 +13755,9 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
@@ -14859,6 +15116,9 @@
       "Account suspended": [
         "Tili on jäädytetty"
       ],
+      "Account temporarily locked": [
+        "Tili on väliaikaisesti lukittu"
+      ],
       "Action": [
         "Toiminto"
       ],
@@ -15437,6 +15697,9 @@
       "Main password": [
         "Pääsalasana"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Siirtäkää organisaationne palveluun ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Pienoiskalenteri"
       ],
@@ -15839,6 +16102,9 @@
       ],
       "Verify it’s you": [
         "Vahvista henkilöllisyytesi"
+      ],
+      "Verify your password": [
+        "Vahvista salasananne"
       ],
       "Verifying your card...": [
         "Vahvistetaan korttiasi..."
@@ -16647,6 +16913,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Salattu ja turvallinen ${ MAIL_APP_NAME }-sähköpostiosoite. Voitte helposti lähettää Bitcoinia kenelle tahansa pelkällä ${ BRAND_NAME }-nimellä."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Voitte vaihtaa Bitcoinia turvallisesti sähköpostitse monimutkaisten ja virhealttiiden 26-merkkisten Bitcoin-osoitteiden sijaan."
       ]
     },
     "wallet_signup_2024:app-switcher": {

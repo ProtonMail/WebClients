@@ -204,6 +204,9 @@
       "Continue import": [
         "Importálás folytatása"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Folytatás itt: ${ planOrAppName }"
+      ],
       "Continue with Free": [
         "Folytatás az ingyenes verzióval"
       ],
@@ -1160,6 +1163,15 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikált VPN szerverek"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Address action": {
@@ -1317,6 +1329,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ha lemondja, az ingyenes próbaidőszaka nem alakul át fizetős előfizetéssé, de a próbaidőszak végéig még használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free plan csomagra kerül át."
       ],
@@ -1472,6 +1487,14 @@
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
       ]
     },
+    "BF2025: Deal details": {
+      "3 TB data storage": [
+        "3 TB tárhely"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "15,000+ szerver elérése, 120+ országban"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatikusan megújul: ${ subscriptionManagerName }"
@@ -1494,6 +1517,9 @@
       ],
       "Annually": [
         "Évente"
+      ],
+      "Billed monthly": [
+        "Havonta számlázva"
       ],
       "Lifetime": [
         "Élettartam"
@@ -1801,6 +1827,9 @@
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ],
+      "Zero-access encryption": [
+        "Zéró hozzáférésű titkosítás"
       ]
     },
     "collider_2025: Info": {
@@ -2118,6 +2147,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanári-szigetek"
       ],
       "Cape Verde": [
         "Zöld-foki Köztársaság"
@@ -3030,6 +3062,10 @@
       "This may happen if permissions were removed or your password changed.": [
         "Ez olyankor fordulhat elő, ha az engedélyeket eltávolították, vagy megváltozott a jelszava."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } Gmail címmel való összekapcsolásához, váltson ${ planName } csomagra.",
+        "Akár ${ MAX_SYNC_PAID_USER } Gmail címmel való összekapcsolásához, váltson ${ planName } csomagra."
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókját."
       ],
@@ -3072,11 +3108,27 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Mostantól küldhet e-maileket a ${ BRAND_NAME } szolgáltatásból erről a címről."
       ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Jelenleg ${ numAddressesOrSync } Gmail címet továbbít a ${ MAIL_APP_NAME } fiókjába.",
+        "Jelenleg ${ numAddressesOrSync } Gmail címet továbbít a ${ MAIL_APP_NAME } fiókjába."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Jelenleg ${ MAX_SYNC_PAID_USER } Gmail cím van összekapcsolva. Újabb hozzáadásához, először kapcsolja ki az egyik meglévőt.",
+        "Jelenleg ${ MAX_SYNC_PAID_USER } Gmail cím van összekapcsolva. Újabb hozzáadásához, először kapcsolja ki az egyik meglévőt."
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail-üzeneteiből importálunk ${ newUserStorageText } mennyiséget"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail e-mailjeit importáljuk."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "A csomagja ${ MAX_SYNC_FREE_USER } Gmail címet támogat.",
+        "A csomagja összesen ${ MAX_SYNC_FREE_USER } Gmail címet támogat."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "A csomagja ${ MAX_SYNC_PAID_USER } Gmail címet támogat",
+        "A csomagja összesen ${ MAX_SYNC_PAID_USER } Gmail címet támogat"
       ]
     },
     "description": {
@@ -3533,6 +3585,9 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
+      "Address could not be added.": [
+        "A cím hozzáadása nem sikerült."
+      ],
       "Address is already added to your account": [
         "A cím már hozzá van adva a fiókjához"
       ],
@@ -3956,6 +4011,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
+      ],
+      "Wrong billing address": [
+        "Hibás számlázási cím"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módszert."
@@ -4611,9 +4669,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Biztos, hogy törli a hitelesítési kulcsot: ${ name }?"
       ],
-      "Insert your security key into your device's USB port.": [
-        "Csatlakoztassa a hitelesítési kulcsát az eszköz USB portjához."
-      ],
       "Security key": [
         "Hitelesítési kulcs"
       ],
@@ -5138,6 +5193,9 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Túl sok lekérdezés történt. Próbálja újra egy kis várakozás után."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
       "Use your app password if:": [
         "Az alkalmazásjelszót használja ha:"
@@ -5752,6 +5810,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó címkéket."
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
       ],
@@ -6012,6 +6074,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Amennyiben egy másik e-mail szolgáltatásról vált a ${ MAIL_APP_NAME } szolgáltatásra, válassza a ${ boldAddresses } lapot, és az MX rekord módosítása előtt vegyen fel minden aktív e-mail címet, a zökkenőmentes átállás érdekében."
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
       ],
       "Gateways": [
         "Átjárók"
@@ -8283,6 +8348,9 @@
       "Single sign-on URL": [
         "Egyszeri bejelentkezés URL"
       ],
+      "Skip feedback": [
+        "Visszajelzés kihagyása"
+      ],
       "Spam": [
         "Levélszemét"
       ],
@@ -8530,6 +8598,9 @@
       "Create an alias": [
         "E-mail álnév létrehozása"
       ],
+      "Don't have access to your 2FA?": [
+        "Nincs hozzáférése a kétlépcsős hitelesítéséhez?"
+      ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
@@ -8545,11 +8616,17 @@
       "Forgot username?": [
         "Elfelejtette a felhasználónevét?"
       ],
+      "Frequent sign-in problems": [
+        "Gyakori bejelentkezési problémák"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "${ BRAND_NAME } Pass beszerzése"
       ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } beszerzése"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Kérjen segítséget a(z) ${ LUMO_SHORT_APP_NAME } csapatától"
       ],
       "Groups": [
         "Csoportok"
@@ -8859,6 +8936,16 @@
         "${ seats } ${ MEET_APP_NAME } licenc"
       ]
     },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } résztvevő",
+        "${ n } résztvevő"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } résztvevő",
+        "Akár ${ n } résztvevő"
+      ]
+    },
     "meet_2025: Info": {
       "${ seats } seat included": [
         "${ seats } licencet tartalmaz",
@@ -9158,6 +9245,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Hozzáférés minden országhoz"
+      ],
       "Ad-blocker and malware protection": [
         "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
@@ -9181,6 +9271,10 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Minden alapvető ${ BRAND_NAME } szolgáltatás (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Időpontfoglalás ${ n } jelentkezési oldallal",
+        "Időpontfoglalás ${ n } jelentkezési oldallal"
       ],
       "Apps for": [
         "Alkalmazások ehhez:"
@@ -9906,6 +10000,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ország",
+        "${ n } ország"
+      ],
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
       ],
@@ -10704,6 +10802,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
       ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
+      ],
       "Got it": [
         "Értem."
       ],
@@ -10984,6 +11085,9 @@
       ],
       "Postal code": [
         "Irányítószám"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Keresés"
@@ -12919,6 +13023,10 @@
       "Version history": [
         "Verziótörténet"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videós megbeszélések, ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel",
+        "Videós megbeszélések, akár ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel"
+      ],
       "Watch the interview": [
         "Nézze meg az interjút"
       ],
@@ -14140,6 +14248,9 @@
       ],
       "Select contact group": [
         "Névjegy csoport kiválasztása"
+      ],
+      "Select data to import": [
+        "Válassza ki az importálni kívánt adatokat"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Gmail-üzenetek küldése és fogadása a ${ MAIL_APP_NAME } alkalmazással"

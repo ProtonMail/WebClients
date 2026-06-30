@@ -491,6 +491,9 @@
       "Extend": [
         "Ampliar"
       ],
+      "Finish": [
+        "Finalizar"
+      ],
       "Fit to window": [
         "Ajustar a la ventana"
       ],
@@ -2201,11 +2204,6 @@
         "Explora ahora"
       ]
     },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Se omiten los duplicados de las importaciones anteriores. Deshaz o importa mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
-      ]
-    },
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } de almacenamiento"
@@ -3647,9 +3645,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos las importaciones al llegar al 80 % de almacenamiento para reservar espacio para nuevos mensajes."
       ],
-      "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Se importan tus correos antiguos y se sincronizan los nuevos mensajes de Gmail a partir de ahora."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hemos empezado a importar tus correos electrónicos de Gmail. Te avisaremos cuando haya terminado."
       ],
@@ -4318,6 +4313,9 @@
       "Failed to load OAuth modal.": [
         "Error al cargar la ventana OAuth"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Inténtalo de nuevo más tarde."
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
@@ -4442,9 +4440,6 @@
       "No contacts found to import": [
         "No se han encontrado contactos para importar."
       ],
-      "No drive found to import": [
-        "No se ha encontrado ninguna unidad para importar"
-      ],
       "No emails found to import - the account does not have an inbox": [
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
@@ -4456,9 +4451,6 @@
       ],
       "Not a valid number": [
         "No es un número válido."
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hay suficiente espacio de almacenamiento en tu ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
@@ -4715,9 +4707,6 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Se ha producido un error inesperado. No podemos importar los contactos."
-      ],
-      "Unexpected error, we can't import the files": [
-        "Error inesperado, no se pueden importar los archivos"
       ],
       "Unknown error": [
         "Error desconocido"
@@ -5426,6 +5415,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Error al registrar tu llave de seguridad. Inténtalo de nuevo."
       ]
@@ -5446,8 +5438,11 @@
       "Are you sure you want to delete security key ${ name }?": [
         "¿Está seguro de que quieres eliminar la clave de seguridad ${ name }?"
       ],
-      "Insert your security key into your device's USB port.": [
-        "Inserta tu llave de seguridad en el puerto USB."
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device.": [
+        "Inserta tu llave de seguridad en tu dispositivo."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -5460,6 +5455,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Esto eliminará todas las llaves de seguridad vinculadas a tu cuenta."
+      ],
+      "Touch your security key.": [
+        "Toca tu llave de seguridad."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
@@ -5673,6 +5671,12 @@
       ],
       "General": [
         "General"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionar usuarios y grupos, asignar roles y asignar licencias a los miembros."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestiona la configuración de seguridad y puede ver todos los registros de eventos y los detalles de los usuarios."
       ],
       "Roles and permissions": [
         "Perfiles y permisos"
@@ -6155,6 +6159,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Los planes ${ BRAND_NAME } Business ofrecen a tu equipo todas las herramientas de colaboración que necesita para trabajar de forma productiva y organizada, al tiempo que protegen tu negocio."
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } se financia de manera independiente y funciona sin publicidad. A continuación se muestran ejemplos de cómo se ha utilizado esta independencia en la práctica."
@@ -6959,6 +6966,9 @@
       "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
         "Debido al cifrado de extremo a extremo, puedes restablecer tu contraseña, pero ${ DataLockedText } hasta que uses un ${ DataRecoveryOptionsLink }:"
       ],
+      "Each code can only be used once": [
+        "Cada código solo se puede usar una vez"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes añadir ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
       ],
@@ -7102,9 +7112,6 @@
       ],
       "Failed to fetch logs.": [
         "Error el obtener los registros."
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
       ],
       "Fill in user details": [
         "Rellena los datos del usuario."
@@ -9522,9 +9529,6 @@
       "Import to:": [
         "Importar a:"
       ],
-      "Import your emails": [
-        "Importar tus correos electrónicos"
-      ],
       "Include application logs in bug report": [
         "Incluir los registros de la aplicación en el informe de errores"
       ],
@@ -9977,7 +9981,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Para"
+        "Hasta"
       ]
     },
     "Label BYOE": {
@@ -10105,6 +10109,9 @@
       ],
       "Details": [
         "Detalles"
+      ],
+      "Don't have access to your 2FA?": [
+        "¿No tienes acceso a tu 2FA?"
       ],
       "Encryption and keys": [
         "Cifrado y claves"
@@ -12676,6 +12683,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
+      ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
       ],
       "Got it": [
         "Entiendo"
@@ -15844,9 +15854,6 @@
         "${ friendsSubscribed } amigo suscrito",
         "${ friendsSubscribed } amigos suscritos"
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
-      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizaciones"
       ],
@@ -17594,6 +17601,15 @@
       ],
       "Invitation email": [
         "Correo de invitación"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionar usuarios y grupos, asignar roles y asignar licencias a los miembros."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestiona la configuración de seguridad y puede ver todos los registros de eventos y los detalles de los usuarios."
       ],
       "Name": [
         "Nombre"
