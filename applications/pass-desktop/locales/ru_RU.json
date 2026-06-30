@@ -163,6 +163,9 @@
       "Continue offline": [
         "Продолжить оффлайн"
       ],
+      "Copy": [
+        "Копировать"
+      ],
       "Copy and close": [
         "Скопировать и закрыть"
       ],
@@ -324,6 +327,9 @@
       ],
       "Get Started": [
         "Начать"
+      ],
+      "Hide": [
+        "Скрыть"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
@@ -978,6 +984,9 @@
       "Error reporting problem": [
         "Ошибка при сообщении о проблеме"
       ],
+      "Failed loading group members": [
+        "Ошибка при загрузке членов группы"
+      ],
       "Failed removing the invite.": [
         "Не удалось удалить приглашение."
       ],
@@ -1366,6 +1375,17 @@
         "Очень маленький"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Домен"
+      ],
+      "Password ends with": [
+        "Пароль заканчивается на"
+      ],
+      "Username": [
+        "Имя пользователя"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Элемент \"${ payload.itemName }\" был отклонен"
@@ -1717,6 +1737,9 @@
       ],
       "Enter the address you want to email.": [
         "Введите адрес, на который вы хотите отправить электронное письмо."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your extra password": [
         "Введите дополнительный пароль"
@@ -2911,6 +2934,9 @@
       "Expired": [
         "Истекло"
       ],
+      "Expires in": [
+        "Истекает через"
+      ],
       "Export": [
         "Экспорт"
       ],
@@ -3898,6 +3924,9 @@
       ],
       "Coupon": [
         "Купон"
+      ],
+      "e.g. My automation script": [
+        "например, Мой скрипт автоматизации"
       ],
       "E.g., ": [
         "Например, "
