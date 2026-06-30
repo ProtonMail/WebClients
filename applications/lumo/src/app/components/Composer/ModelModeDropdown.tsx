@@ -88,7 +88,7 @@ export const ModelModeDropdown = () => {
                 <span className={clsx('font-medium', !isSmallScreen && 'hidden sm:block')}>
                     {currentModelOption.getLabel()}
                 </span>
-                <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak" />
+                <LumoIcon name="ChevronDown" width={12} height={12} />
             </Button>
 
             {isSmallScreen ? (
