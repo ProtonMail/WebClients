@@ -1380,6 +1380,9 @@
       "Review": [
         "Granska"
       ],
+      "Review changes": [
+        "Granska ändringar"
+      ],
       "Review recovery options": [
         "Granska återställningsalternativ"
       ],
@@ -2007,6 +2010,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Writing assistant seats": [
+        "Användarplatser för skrivassistent"
       ]
     },
     "Address action": {
@@ -3686,6 +3692,12 @@
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
       ],
+      "Upload and query multiple large files": [
+        "Ladda upp och sök i flera stora filer"
+      ],
+      "Upload and query small files": [
+        "Ladda upp och sök i små filer"
+      ],
       "Web search access": [
         "Webbsökningsåtkomst"
       ],
@@ -5238,6 +5250,9 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alla i din organisation kan ansluta till delade servrar i alla länder."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "För en sömlös introduktion av ditt team till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
@@ -7152,6 +7167,9 @@
       "Invalid URL": [
         "Ogiltig URL"
       ],
+      "Invalid VAT number": [
+        "Ogiltigt momsregistreringsnummer"
+      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
@@ -7213,6 +7231,9 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
+      ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
@@ -7248,6 +7269,12 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Lägg till en betalningsmetod innan du återaktiverar din prenumeration"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Kontrollera om ditt ABN är registrerat för moms vid gränsöverskridande handel"
+      ],
+      "Please complete the billing details": [
+        "Vänligen fyll i faktureringsdetaljer"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurera en anpassad domän innan du lägger till adresser."
@@ -7346,6 +7373,9 @@
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "System för omvänd skattskyldighet stöds inte för detta paket"
       ],
       "Server not found": [
         "Server hittades inte"
@@ -7497,6 +7527,9 @@
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
       ],
+      "Unexpected error, we can't import the files": [
+        "Oväntat fel, vi kan inte importera filerna"
+      ],
       "Unknown error": [
         "Okänt fel"
       ],
@@ -7517,6 +7550,9 @@
       ],
       "Validation error": [
         "Verifieringsfel"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsregistreringsnummer måste börja med ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verifieringen lyckades inte, försök igen om en timme."
@@ -8435,9 +8471,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Sätt in din säkerhetsnyckel i enhetens USB-port."
-      ],
       "Security key": [
         "Säkerhetsnyckel"
       ],
@@ -8449,6 +8482,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Detta kommer ta bort alla säkerhetsnycklar länkade till ditt konto."
+      ],
+      "Touch your security key.": [
+        "Tryck din säkerhetsnyckel."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekräfta din identitet med en fysisk U2F eller FIDO2 säkerhetsnyckel"
@@ -8531,7 +8567,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Arkivera"
+        "Arkiv"
       ],
       "Do not move": [
         "Flytta inte"
@@ -9578,6 +9614,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggning och andra lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på ”Spara”."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } är en end-to-end-krypterad lösning för videokonferenser. Lägg till den i ditt paket för att hålla säkra möten."
+      ],
       "${ n } address": [
         "${ n } adress",
         "${ n } adresser"
@@ -9723,6 +9762,9 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } uppdaterad"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } döljer din trafik. ${ PASS_SHORT_APP_NAME } döljer din identitet\n— obegränsade **hide-my-email-alias** och **varningar om dark web** om dina uppgifter någonsin läcker."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } krävs för anslutning på landsnivå."
@@ -10970,6 +11012,9 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
       ],
@@ -11793,6 +11838,9 @@
       "Request a phone call": [
         "Begär ett telefonsamtal"
       ],
+      "Required to complete the migration": [
+        "Krävs för att slutföra migreringen"
+      ],
       "Resend verification email": [
         "Skicka e-postverifiering igen"
       ],
@@ -12071,6 +12119,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
+      ],
+      "Synced from identity provider": [
+        "Synkroniserad från identitetsleverantör"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro rekommenderar med ett betyg på 4,2 av 5 stjärnor"
@@ -13023,11 +13074,18 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
+      ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "Du får kreditbelöningen 1 månad efter att din väns provperiod har avslutats."
       ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
         "Du får kreditbelöningen 2 månader efter att din väns provperiod avslutades."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }. Du kan avbryt när som helst.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }. Du kan avbryt när som helst."
       ],
       "You're now signed in on your TV.": [
         "Du är nu inloggad på din TV."
@@ -13047,6 +13105,9 @@
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-lösenord"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Din prenumeration på ${ plan } kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Det återstående saldot på din prenumeration kommer att läggas till på ditt konto. Lifetime-erbjudandet för ${ PASS_SHORT_APP_NAME } har inget förnyelsepris – det är en engångsbetalning för att få livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dina ${ VPN_APP_NAME }- och ${ MAIL_APP_NAME }-konton är länkade. För att ta bort båda, logga in på ${ loginLink } och ta bort ditt konto där."
       ],
@@ -13055,6 +13116,9 @@
       ],
       "Your account has been successfully updated.": [
         "Ditt konto har uppdaterats."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ],
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
@@ -13650,6 +13714,9 @@
       ],
       "Composer shortcuts": [
         "Kompositörsgenvägar"
+      ],
+      "Desktop app navigation": [
+        "Navigering i skrivbordsapp"
       ],
       "Folder shortcuts": [
         "Mappgenvägar"
@@ -14634,6 +14701,9 @@
       ],
       "Main": [
         "Huvud"
+      ],
+      "Main reason for cancelling": [
+        "Huvudsaklig anledning till att avbryta"
       ],
       "Manage categories": [
         "Hantera kategorier"
@@ -16073,6 +16143,10 @@
       ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-användarplats",
+        "${ seats } ${ MEET_APP_NAME }-användarplatser"
       ]
     },
     "meet_2025: Feature": {
@@ -16158,6 +16232,10 @@
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } användarplats inkluderad",
+        "${ seats } användarplatser inkluderade"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 ${ BRAND_NAME } e-postadresser"
       ],
@@ -16193,6 +16271,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-användarplatser under provperioden."
       ]
     },
     "Meet_launch": {
@@ -16214,6 +16295,9 @@
       ],
       "Add address": [
         "Lägg till adress"
+      ],
+      "Change backup password": [
+        "Ändra reservlösenord"
       ],
       "Change password": [
         "Ändra lösenord"
@@ -16853,6 +16937,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Mötesbokning"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mötesbokning med ${ n } bokningssida",
+        "Mötesbokning med ${ n } bokningssidor"
+      ],
       "Apps for": [
         "Appar för"
       ],
@@ -16909,6 +17000,9 @@
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
+      ],
+      "Data retention policies": [
+        "Policy för datalagring"
       ],
       "Dedicated account manager": [
         "Dedikerad kontohanterare"
@@ -18245,7 +18339,7 @@
         "Android"
       ],
       "Archive": [
-        "Arkivera"
+        "Arkiv"
       ],
       "Ask each time": [
         "Fråga varje gång"
@@ -19248,6 +19342,9 @@
       "VAT number": [
         "Momsnummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Mekanism för omvänd moms-skattskyldighet tillämpas."
+      ],
       "You already have a subscription to this plan.": [
         "Du har redan en prenumeration på detta paket."
       ],
@@ -19345,8 +19442,14 @@
       "Renewal price is dependent on the billing region and ABN.": [
         "Förnyelsepriset är beroende av faktureringsregion och ABN."
       ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Förnyelsepriset är beroende av faktureringsregion och företagsnummer."
+      ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Förnyelsepriset är beroende av faktureringsregion och EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -21092,6 +21195,51 @@
         "Testar SAML-konfiguration"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } ny medlem",
+        "${ memberCount } nya medlemmar"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grupp synkroniserad",
+        "${ numberOfPendingGroups } grupper synkroniserade"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } användare synkroniserad",
+        "${ numberOfPendingUsers } användare synkroniserade"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grupp",
+        "${ pendingGroupsCount } grupper"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grupp synkroniserad.",
+        "${ pendingGroupsCount } grupper synkroniserade."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } användare",
+        "${ pendingUsersCount } användare"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } användare synkroniserad.",
+        "${ pendingUsersCount } användare synkroniserade."
+      ],
+      "Approve changes from your identity provider": [
+        "Godkänn ändringar från din identitetsleverantör"
+      ],
+      "From your identity provider": [
+        "Från din identitetsleverantör"
+      ],
+      "New": [
+        "Nytt"
+      ],
+      "Private user": [
+        "Privat användare"
+      ],
+      "Updated": [
+        "Uppdaterad"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Konfigurera SCIM"
@@ -22777,6 +22925,9 @@
         "${ count } person",
         "${ count } personer"
       ],
+      "... waiting": [
+        "… väntar"
+      ],
       "Add a phone number": [
         "Lägg till ett telefonnummer"
       ],
@@ -22785,6 +22936,9 @@
       ],
       "Available on this device": [
         "Tillgänglig på denna enhet"
+      ],
+      "completed": [
+        "slutförd"
       ],
       "Disable recovery by email": [
         "Inaktivera återställning med e-post"
@@ -23127,6 +23281,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } och ${ LUMO_APP_NAME } med premiumfunktioner"
       ],
@@ -24343,6 +24500,9 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
+      "Approve changes": [
+        "Godkänn ändringar"
+      ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Är du redan inloggad på ${ BRAND_NAME } i en webbläsare?"
       ],
@@ -25514,6 +25674,9 @@
       "Reused passwords": [
         "Återanvända lösenord"
       ],
+      "Reverse charge not supported": [
+        "Omvänd skattskyldighet stöds inte"
+      ],
       "Revoke certificate?": [
         "Återkalla certifikat?"
       ],
@@ -26243,6 +26406,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Omedelbar AI-assistans, mänsklig expert nära till hands!"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meddelanden i mappen \"Skickat\" eller \"Utkast\" kommer att fortsätta att visas i den mappen, även om du flyttar dem till annan mapp."
@@ -27083,6 +27249,9 @@
       ],
       "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
         "Vårt mest exklusiva paket. Få förhandstillgång till nya funktioner och alla premium ${ BRAND_NAME } tjänster."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Överför Bitcoin på ett säkert sätt via e-post istället för att använda komplexa Bitcoin-adresser med 26 tecken som är känsliga för fel"
       ],
       "Securely hold and transact Bitcoin for free.": [
         "Håll Bitcoin säkert och utför transaktioner utan kostnad."
