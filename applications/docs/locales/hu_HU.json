@@ -205,6 +205,9 @@
       "Continue import": [
         "Importálás folytatása"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Folytatás itt: ${ planOrAppName }"
+      ],
       "Continue with Free": [
         "Folytatás az ingyenes verzióval"
       ],
@@ -900,6 +903,15 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikált VPN szerverek"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Alert": {
@@ -939,6 +951,11 @@
       "${ hiddenResultsCount } more result not shown": [
         "${ hiddenResultsCount } további eredmény nem látható",
         "${ hiddenResultsCount } további eredmény nem látható"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ]
     },
     "b2b_trials_Action": {
@@ -1023,6 +1040,14 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
+      ]
+    },
+    "BF2025: Deal details": {
+      "3 TB data storage": [
+        "3 TB tárhely"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "15,000+ szerver elérése, 120+ országban"
       ]
     },
     "Browser": {
@@ -1227,6 +1252,9 @@
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ],
+      "Zero-access encryption": [
+        "Zéró hozzáférésű titkosítás"
       ]
     },
     "collider_2025: Info": {
@@ -1526,6 +1554,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanári-szigetek"
       ],
       "Cape Verde": [
         "Zöld-foki Köztársaság"
@@ -2648,6 +2679,9 @@
       "Account does not exist": [
         "Fiók nem létezik"
       ],
+      "Address could not be added.": [
+        "A cím hozzáadása nem sikerült."
+      ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
@@ -3095,6 +3129,9 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Problémáink vannak a legutóbbi szerkesztések mentésével. Kérjük, frissítse az oldalt."
+      ],
+      "Wrong billing address": [
+        "Hibás számlázási cím"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
@@ -3812,6 +3849,9 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Túl sok lekérdezés történt. Próbálja újra egy kis várakozás után."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
+      ],
       "Use your app password if:": [
         "Az alkalmazásjelszót használja ha:"
       ],
@@ -4372,6 +4412,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "A legjobb eredményért addig ne videózzon vagy végezzem memóriaigényes műveletet, vagy darabolja a feltöltését kisebb részekre."
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Ingyen 5GB titkosított tárhely a kezdéshez"
@@ -5604,6 +5647,9 @@
       "Sign emails": [
         "Üzenetek aláírása"
       ],
+      "Skip feedback": [
+        "Visszajelzés kihagyása"
+      ],
       "Skip file": [
         "Fájl kihagyása"
       ],
@@ -5801,6 +5847,9 @@
       "Resume now": [
         "Folytatás most"
       ],
+      "Terms and conditions": [
+        "Felhasználási feltételek"
+      ],
       "Types of recovery methods": [
         "Helyreállítási módszerek típusai"
       ],
@@ -5901,6 +5950,16 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } résztvevő",
+        "${ n } résztvevő"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } résztvevő",
+        "Akár ${ n } résztvevő"
       ]
     },
     "Message": {
@@ -6303,6 +6362,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Hozzáférés minden országhoz"
+      ],
       "Ad-blocker and malware protection": [
         "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
@@ -6323,6 +6385,10 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Minden alapvető ${ BRAND_NAME } szolgáltatás (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Időpontfoglalás ${ n } jelentkezési oldallal",
+        "Időpontfoglalás ${ n } jelentkezési oldallal"
       ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
@@ -6976,6 +7042,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ország",
+        "${ n } ország"
+      ],
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
       ],
@@ -8194,6 +8264,11 @@
         "${ ownerName } által megosztva"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Új táblázat"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Ne írja alá"
@@ -9315,6 +9390,9 @@
       ],
       "Select contact group": [
         "Névjegy csoport kiválasztása"
+      ],
+      "Select data to import": [
+        "Válassza ki az importálni kívánt adatokat"
       ],
       "Select link expiration date": [
         "Hivatkozás lejárati dátumának kiválasztása"
