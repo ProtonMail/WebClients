@@ -1,45 +1,42 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
 import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
 import { getAuthorName, getNodeName } from '../../../../../utils/drive-sdk'
-import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 
 /**
  * Creates value for RecentDocumentsItem instances based on node data from SDK and response from /recents endpoint
  */
-export function createItemValue({
-  sdkData,
-  apiData,
-  isSharedWithMe,
-  path,
-  ancestorsNodeUids,
-  effectiveRole,
-}: {
-  sdkData: NodeEntity
-  apiData: RecentDocumentAPIItem
-  isSharedWithMe: boolean
-  path: string[]
-  ancestorsNodeUids: string[]
-  effectiveRole: MemberRole
-}): RecentDocumentsItemValue {
-  const { volumeId, nodeId: linkId } = splitNodeUid(sdkData.uid)
-  const { nodeId: parentLinkId } = sdkData.parentUid ? splitNodeUid(sdkData.parentUid) : {}
+export function createItemValue(
+  node: NodeEntity,
+  documentDetails: {
+    isSharedWithMe: boolean
+    path: string[]
+    ancestorsNodeUids: string[]
+    effectiveRole: MemberRole
+    lastOpenTime: number
+    deprecatedShareId?: string
+  },
+): RecentDocumentsItemValue {
+  const { lastOpenTime, path, isSharedWithMe, ancestorsNodeUids, deprecatedShareId, effectiveRole } = documentDetails
+
+  const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
+  const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
 
   return {
-    type: mimeTypeToProtonDocumentType(sdkData.mediaType) ?? 'document',
-    name: getNodeName(sdkData) ?? '',
+    type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
+    name: getNodeName(node) ?? '',
     linkId,
     parentLinkId,
     volumeId,
     // lastViewed and lastModified are the same - consistent with pre-SDK behavior
-    lastViewed: new ServerTime(apiData.LastOpenTime),
-    lastModified: new ServerTime(apiData.LastOpenTime),
-    createdBy: getAuthorName(sdkData),
+    lastViewed: new ServerTime(lastOpenTime),
+    lastModified: new ServerTime(lastOpenTime),
+    createdBy: getAuthorName(node),
     location: getLocation(path, isSharedWithMe),
     ancestorsNodeUids,
     isSharedWithMe,
-    shareId: apiData.ContextShareID,
+    shareId: deprecatedShareId ?? '',
     effectiveRole,
   }
 }
@@ -80,36 +77,5 @@ export function nodeToTrashedItemValue(node: NodeEntity): RecentDocumentsItemVal
     shareId: '',
     location: { type: 'root' },
     effectiveRole: node.directRole,
-  }
-}
-
-/**
- * Unlike createItemValue, this uses only SDK data (node argument)
- */
-export function nodeToRecentItemValue(
-  node: NodeEntity,
-  isSharedWithMe: boolean,
-  path: string[],
-  ancestorsNodeUids: string[],
-  effectiveRole: MemberRole,
-  shareId: string = '',
-): RecentDocumentsItemValue {
-  const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
-  const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
-
-  return {
-    name: getNodeName(node) ?? '',
-    type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
-    linkId,
-    parentLinkId,
-    volumeId,
-    lastViewed: new ServerTime(node.creationTime.getTime()),
-    lastModified: new ServerTime(node.creationTime.getTime()),
-    createdBy: getAuthorName(node),
-    isSharedWithMe,
-    location: getLocation(path, isSharedWithMe),
-    ancestorsNodeUids,
-    shareId,
-    effectiveRole,
   }
 }
