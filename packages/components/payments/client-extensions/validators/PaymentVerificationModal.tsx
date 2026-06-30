@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
-import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
-import { type CardPayment, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
 import Form from '../../../components/form/Form';
@@ -32,9 +30,7 @@ export interface Props {
     open?: boolean;
     onSubmit: () => void;
     onClose: (reason: 'succeeded' | 'cancelled') => void;
-    payment?: CardPayment;
     isAddCard?: boolean;
-    type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CARD;
     onProcess: () => PromiseWithController;
     initialProcess?: PromiseWithController;
     processingDelay?: number;
@@ -45,9 +41,7 @@ export interface Props {
 
 const PaymentVerificationModal = ({
     onSubmit,
-    payment,
     isAddCard,
-    type = PAYMENT_METHOD_TYPES.CARD,
     onProcess,
     initialProcess,
     processingDelay = DEFAULT_PROCESSING_DELAY,
@@ -56,12 +50,8 @@ const PaymentVerificationModal = ({
     onVerificationRejectedByUser,
     ...rest
 }: Props) => {
-    const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL].includes(type);
-
     let failTitle;
-    if (isPayPal) {
-        failTitle = c('Title').t`PayPal verification failed`;
-    } else if (isAddCard) {
+    if (isAddCard) {
         failTitle = c('Title').t`Verification failed`;
     } else {
         failTitle = c('Title').t`Payment failed`;
@@ -131,13 +121,10 @@ const PaymentVerificationModal = ({
                 {{
                     [STEPS.REDIRECT]: () => (
                         <>
-                            <p className="text-center">
+                            <p>
                                 {isAddCard
                                     ? c('Info').t`We need to authenticate your payment method with your bank.`
                                     : c('Info').t`We need to authenticate your payment with your bank.`}
-                            </p>
-                            <p className="text-center">
-                                <PaymentVerificationImage payment={payment} type={type} />
                             </p>
                             <div className="mb-4" data-testid="redirect-message">
                                 {isAddCard
@@ -150,11 +137,7 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.REDIRECTING]: () => (
                         <>
-                            <p className="text-center">
-                                {isPayPal
-                                    ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
-                                    : c('Info').t`You may be redirected to your bank’s website.`}
-                            </p>
+                            <p className="text-center">{c('Info').t`You may be redirected to your bank’s website.`}</p>
                             <Loader />
                             <div className="mb-4" data-testid="redirecting-message">{c('Info')
                                 .t`Don’t see anything? Remember to turn off pop-up blockers.`}</div>
@@ -162,11 +145,7 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.REDIRECTED]: () => (
                         <>
-                            <p>
-                                {isAddCard && !isPayPal
-                                    ? c('Info').t`Please authenticate your card in the verification tab.`
-                                    : c('Info').t`Please authenticate your payment in the verification tab.`}
-                            </p>
+                            <p>{c('Info').t`Please authenticate your payment in the verification tab.`}</p>
                             <div className="mb-4" data-testid="redirected-message">
                                 {c('Info').t`Verification may take a few minutes.`}
                             </div>
@@ -178,11 +157,7 @@ const PaymentVerificationModal = ({
                             <p>{!isAddCard && c('Info').t`We couldn’t process your payment.`}</p>
                             <img src={errorSvg} alt={c('Title').t`Error`} />
                             <p>
-                                {isPayPal
-                                    ? c('Info')
-                                          .t`Please try again, use a different payment method, or contact PayPal for assistance.`
-                                    : c('Info')
-                                          .t`Please try again using a different payment method, or contact your bank.`}
+                                {c('Info').t`Please try again using a different payment method, or contact your bank.`}
                             </p>
                             {error?.tryAgain ? (
                                 <p>

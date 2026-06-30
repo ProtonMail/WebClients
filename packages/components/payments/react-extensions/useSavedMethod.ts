@@ -7,8 +7,6 @@ import {
     type ExistingPaymentMethod,
     type PaymentVerificator,
     type SavedPaymentMethod,
-    type SavedPaymentMethodExternal,
-    type SavedPaymentMethodInternal,
     SavedPaymentProcessor,
 } from '@proton/payments';
 import type { PaymentProcessorHook } from '@proton/payments';
@@ -17,7 +15,7 @@ import noop from '@proton/utils/noop';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    savedMethod?: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod;
+    savedMethod?: SavedPaymentMethod;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
 }
 

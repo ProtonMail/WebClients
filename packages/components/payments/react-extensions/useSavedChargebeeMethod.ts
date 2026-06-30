@@ -12,15 +12,13 @@ import {
     type PaymentVerificatorV5,
     SavedChargebeePaymentProcessor,
     type SavedPaymentMethod,
-    type SavedPaymentMethodExternal,
-    type SavedPaymentMethodInternal,
 } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    savedMethod?: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod;
+    savedMethod?: SavedPaymentMethod;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
     onBeforeSepaPayment?: () => Promise<boolean>;
     onDeclined: ({
