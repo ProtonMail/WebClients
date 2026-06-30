@@ -36,7 +36,7 @@ export const SafetyReviewCards = <T extends { id: string }>({
             const currentProps: SafetyReviewCardsItemProps = isTop ? { firstItemId: item.id } : {};
             return (
                 <SafetyReviewCard id={item.id} key={item.id} index={reversedIndex}>
-                    {renderItem(item, currentProps)}
+                    {currentProps.firstItemId === item.id ? renderItem(item, currentProps) : null}
                 </SafetyReviewCard>
             );
         });
