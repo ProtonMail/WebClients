@@ -131,7 +131,7 @@ const PaymentMethodForm = ({
     const { loading: loadingHookProps, ...bitcoinProps } = bitcoinChargebee;
     const loadingBitcoin = useStableLoading([loadingHookProps]);
 
-    const savedMethod = methods.savedExternalSelectedMethod;
+    const savedMethod = methods.savedSelectedMethod;
 
     const discountAmount = discountPerCycle || couponDiscount;
     if (paymentMethodRequired && selectedMethodValue) {

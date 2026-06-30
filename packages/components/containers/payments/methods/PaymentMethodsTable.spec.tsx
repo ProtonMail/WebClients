@@ -32,7 +32,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const cardPaymentMethod: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details,
             Order: 1,
             ID: 'id123',
@@ -66,7 +66,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const paypalMethod: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             Details,
             Order: 1,
             ID: 'id123',
@@ -127,7 +127,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const cardPaymentMethod1: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details: Details1,
             Order: 1,
             ID: 'id-visa',
@@ -145,7 +145,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const cardPaymentMethod2: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details: Details2,
             Order: 2,
             ID: 'id-mastercard',
@@ -153,7 +153,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const paypalMethod: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             Details: {
                 BillingAgreementID: 'agreement-id-123',
                 PayerID: 'payer-id-123',
@@ -206,7 +206,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const cardPaymentMethod1: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details: Details1,
             Order: 1,
             ID: 'id-visa',
@@ -224,7 +224,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const cardPaymentMethod2: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details: Details2,
             Order: 2,
             ID: 'id-mastercard',
@@ -232,7 +232,7 @@ describe('PaymentMethodsTable', () => {
         };
 
         const paypalMethod: SavedPaymentMethod = {
-            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             Details: {
                 BillingAgreementID: 'agreement-id-123',
                 PayerID: 'payer-id-123',
