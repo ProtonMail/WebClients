@@ -1829,6 +1829,9 @@
       "Enter the address you want to email.": [
         "Syötä osoite, johon haluat lähettää sähköpostia."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"
       ],
@@ -2033,6 +2036,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -3105,6 +3112,9 @@
       "Expired tokens (${ expired.length })": [
         "Vanhentuneet tunnukset (${ expired.length })"
       ],
+      "Expires in": [
+        "Erääntyy"
+      ],
       "Expiry Date": [
         "Voimassaoloaika"
       ],
@@ -4055,6 +4065,9 @@
       ],
       "Coupon": [
         "Etukoodi"
+      ],
+      "e.g. My automation script": [
+        "esim. Oma automaatioskriptini"
       ],
       "E.g., ": [
         "Esim. "
