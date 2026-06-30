@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { DENSITY } from '@proton/shared/lib/constants';
+import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -17,6 +17,8 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
+import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
@@ -118,9 +120,41 @@ const MailboxListItems = ({
         <div className="overflow-auto h-full" ref={scrollContainerRef}>
             <div className="w-full shrink-0" ref={listRef}>
                 {elements.map((element, index) => {
+                    const isPlaceholder = element.ID.startsWith(PLACEHOLDER_ID_PREFIX);
+
+                    if (!isPlaceholder && index === 1 && labelID === MAILBOX_LABEL_IDS.INBOX) {
+                        return (
+                            <Fragment key={element.ID}>
+                                <CategoriesOnboardingSpotlight step={OnboardingStep.CATEGORIZE}>
+                                    <Item
+                                        conversationMode={conversationMode}
+                                        isCompactView={isCompactView}
+                                        labelID={labelID}
+                                        loading={mailboxListLoading}
+                                        columnLayout={columnLayout}
+                                        element={element}
+                                        checked={!!checkedIDsMap[element.ID || '']}
+                                        onCheck={onCheckOne}
+                                        onClick={onClick}
+                                        onContextMenu={onContextMenu}
+                                        onDragStart={handleDragStart}
+                                        onDragEnd={handleDragEnd}
+                                        dragged={!!draggedIDsMap[element.ID || '']}
+                                        index={index}
+                                        onFocus={onFocus}
+                                        userSettings={userSettings}
+                                        mailSettings={mailSettings}
+                                        onBack={onBack}
+                                        labels={labels}
+                                    />
+                                </CategoriesOnboardingSpotlight>
+                            </Fragment>
+                        );
+                    }
+
                     return (
                         <Fragment key={element.ID}>
-                            {element.ID.startsWith(PLACEHOLDER_ID_PREFIX) ? (
+                            {isPlaceholder ? (
                                 <SkeletonItem
                                     conversationMode={conversationMode}
                                     isCompactView={isCompactView}

@@ -18,3 +18,11 @@ export enum CategoriesOnboardingFlags {
 }
 
 export const FeatureValueDefault = -1 as const;
+
+export enum OnboardingStep {
+    NONE,
+    MESSAGE,
+    CATEGORIZE,
+    CUSTOMIZE,
+    DONE,
+}

@@ -16,7 +16,8 @@ import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesOnboardingProvider } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
-import { SpotlightCustomize } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { CategoriesOnboardingSpotlight } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { OnboardingStep } from 'proton-mail/components/categoryView/categoriesOnboarding/onboardingInterface';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from 'proton-mail/constants';
@@ -118,9 +119,9 @@ export const RouterMailboxContainer = () => {
                     actions={actions}
                     labelID={labelID}
                     settingsButton={
-                        <SpotlightCustomize>
+                        <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
                             <InboxQuickSettingsAppButton />
-                        </SpotlightCustomize>
+                        </CategoriesOnboardingSpotlight>
                     }
                     toolbar={
                         // Show toolbar in header when in row layout and an email is selected
