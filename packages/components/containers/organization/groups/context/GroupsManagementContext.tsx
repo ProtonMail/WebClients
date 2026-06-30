@@ -185,7 +185,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
                 domain: selectedDomain,
                 description: formValues.description,
                 permissions: formValues.permissions,
-                flags: GroupFlags.None,
+                flags: selectedGroup?.Flags ?? GroupFlags.None, // preserve existing flags on edit; new groups start with no flags
             },
         };
     };
