@@ -334,6 +334,9 @@
       "Get Started": [
         "Rozpocznij"
       ],
+      "Hide": [
+        "Ukryj"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Jak wyeksportować dane z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -979,6 +982,9 @@
       "Error reporting problem": [
         "Wystąpił błąd podczas zgłaszania problemu"
       ],
+      "Failed loading group members": [
+        "Błąd podczas wczytywania członków grupy"
+      ],
       "Failed removing the invite.": [
         "Nie udało się usunąć zaproszenia."
       ],
@@ -1366,6 +1372,12 @@
     "Header": {
       "Domain": [
         "Domena"
+      ],
+      "Password ends with": [
+        "Hasło kończy się na"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ]
     },
     "Info": {
@@ -1780,6 +1792,9 @@
       "Enter the address you want to email.": [
         "Wpisz adres odbiorcy."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra ${ digit }."
+      ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
       ],
@@ -1985,7 +2000,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -3035,6 +3053,9 @@
       "Expired": [
         "Wygasł"
       ],
+      "Expires in": [
+        "Wygasa za"
+      ],
       "Expiry Date": [
         "Data wygaśnięcia"
       ],
@@ -4006,6 +4027,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "e.g. My automation script": [
+        "np. Mój skrypt automatyzacji"
       ],
       "E.g., ": [
         "Np. "
