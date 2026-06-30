@@ -333,6 +333,9 @@
       "Download anyway": [
         "仍要下载"
       ],
+      "Download debug information": [
+        "下载调试信息"
+      ],
       "Download logs": [
         "下载日志"
       ],
@@ -642,6 +645,9 @@
       "Reload": [
         "刷新"
       ],
+      "Reload spreadsheet": [
+        "重新加载电子表格"
+      ],
       "Remove": [
         "移除"
       ],
@@ -671,6 +677,9 @@
       ],
       "Report a problem": [
         "反馈问题"
+      ],
+      "Report issue": [
+        "报告问题"
       ],
       "Request a call": [
         "申请电话沟通"
@@ -3933,6 +3942,9 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Touch your security key.": [
+        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -4697,6 +4709,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
       ],
+      "Disable table of contents": [
+        "禁用目录"
+      ],
       "Display word count": [
         "显示字数"
       ],
@@ -4750,6 +4765,9 @@
       ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
+      ],
+      "Enable table of contents": [
+        "启用目录"
       ],
       "End-to-end encrypted": [
         "端到端加密"
@@ -5092,6 +5110,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "只有同时知道链接和密码的人才能访问此文件夹。"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "哎呀！此电子表格无法保存您最近的编辑，因此我们已暂停编辑以防止您丢失工作。\n如果您愿意分享电子表格内容，请将下方的调试信息附在报告中，以帮助我们改进此体验。"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "打开指南并查看推荐操作和实用链接。"
@@ -6612,7 +6633,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } 有新版本，请${ reloadButton }。"
+        "新版本 ${ appName } 可用，请${ reloadButton }。"
       ]
     },
     "MIME type": {
@@ -9973,6 +9994,9 @@
       ],
       "Edit image": [
         "编辑图像"
+      ],
+      "Editing paused": [
+        "编辑已暂停"
       ],
       "Email addresses": [
         "邮箱地址"

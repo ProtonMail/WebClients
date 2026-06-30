@@ -1792,6 +1792,9 @@
       "Enter the address you want to email.": [
         "Syötä osoite, johon haluat lähettää sähköpostia."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"
       ],
@@ -3008,6 +3011,9 @@
       "Expired tokens (${ expired.length })": [
         "Vanhentuneet tunnukset (${ expired.length })"
       ],
+      "Expires in": [
+        "Erääntyy"
+      ],
       "Expiry Date": [
         "Voimassaoloaika"
       ],
@@ -4055,6 +4061,9 @@
       ],
       "Coupon": [
         "Etukoodi"
+      ],
+      "e.g. My automation script": [
+        "esim. Oma automaatioskriptini"
       ],
       "E.g., ": [
         "Esim. "

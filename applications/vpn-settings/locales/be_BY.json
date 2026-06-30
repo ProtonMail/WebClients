@@ -494,6 +494,9 @@
       "Extend": [
         "Падоўжыць"
       ],
+      "Finish": [
+        "Гатова"
+      ],
       "Fit to window": [
         "Па памеры акна"
       ],
@@ -2247,11 +2250,6 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -5636,9 +5634,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Устаўце ключ бяспекі ў порт USB вашай прылады."
-      ],
       "Security key": [
         "Ключ бяспекі"
       ],
@@ -5650,6 +5645,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Гэта выдаліць усе ключы, якія звязаны з вашым уліковым запісам."
+      ],
+      "Touch your security key.": [
+        "Дакраніцеся да свайго ключа бяспекі."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Спраўдзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
@@ -6379,9 +6377,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
-      ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "Тарыфныя планы ${ BRAND_NAME } Business даюць вашай камандзе ўсе інструменты для сумеснай працы, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } атрымлівае незлаежнае фінанстванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
@@ -7408,9 +7403,6 @@
       ],
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
       ],
       "Fill in user details": [
         "Запоўніце даныя карыстальніка"
@@ -9798,6 +9790,9 @@
       ],
       "Don't show this again": [
         "Больш не паказваць"
+      ],
+      "Drive": [
+        "Дыск"
       ],
       "e.g. example.com": [
         "напрыклад, example.com"
@@ -16624,9 +16619,6 @@
         "${ friendsSubscribed } сяброў падпісалася",
         "${ friendsSubscribed } сяброў падпісалася"
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
-      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } для арганізацый"
       ],
@@ -18044,6 +18036,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Уключае прафесійную электронную пошту @yourdomain.com, воблачнае сховішча з сумесным рэдагаваннем дакументаў, расклад і відэаканферэнцыі, менеджар пароляў, а таксама бяспечны ${ VPN_SHORT_APP_NAME } і многае іншае."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."

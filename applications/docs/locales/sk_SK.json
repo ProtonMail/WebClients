@@ -342,6 +342,9 @@
       "Download anyway": [
         "Napriek tomu stiahnuť"
       ],
+      "Download debug information": [
+        "Stiahnuť ladiace informácie"
+      ],
       "Download logs": [
         "Záznamy sťahovania"
       ],
@@ -384,11 +387,20 @@
       "Export contact group": [
         "Exportovať skupinu kontaktov"
       ],
+      "Export editor state for version": [
+        "Exportovať stav editora pre danú verziu"
+      ],
       "Export selection as .vcf": [
         "Exportovať výber ako .vcf"
       ],
+      "Export this version (as docx)": [
+        "Exportovať túto verziu (ako docx)"
+      ],
       "Export this version (as xlsx)": [
         "Exportovať túto verziu (ako xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Exportovať stav YJS pre danú verziu"
       ],
       "Forgot password?": [
         "Zabudli ste heslo?"
@@ -642,6 +654,9 @@
       "Reload": [
         "Obnoviť"
       ],
+      "Reload spreadsheet": [
+        "Znovu načítať tabuľku"
+      ],
       "Remove": [
         "Vymazať"
       ],
@@ -670,6 +685,9 @@
         "Nahradiť súbor"
       ],
       "Report a problem": [
+        "Nahlásiť problém"
+      ],
+      "Report issue": [
         "Nahlásiť problém"
       ],
       "Request a call": [
@@ -3200,6 +3218,9 @@
       "Failed to remove older revisions": [
         "Nepodarilo sa odstrániť staršie revízie"
       ],
+      "Failed to rename document": [
+        "Premenovanie dokumentu zlyhalo"
+      ],
       "Failed to rename document. Please try again later.": [
         "Pomenovanie dokumentu sa nepodarilo. Skúste to neskôr, prosím."
       ],
@@ -3296,6 +3317,9 @@
       "No contacts found to import": [
         "Neboli nájdené žiadne kontakty na import"
       ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
@@ -3304,6 +3328,9 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktov nemá emailovú adresu: ${ noEmailsContactNamesList }",
@@ -3532,6 +3559,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ],
       "Unknown error": [
         "Neznáma chyba"
@@ -4002,6 +4032,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -4880,6 +4913,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitálny podpis overený. Tento priečinok bol bezpečne nahraný prostredníctvom ${ emailAddress }."
       ],
+      "Disable table of contents": [
+        "Deaktivovať obsah"
+      ],
       "Display word count": [
         "Zobraziť počet slov"
       ],
@@ -4933,6 +4969,9 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
+      ],
+      "Enable table of contents": [
+        "Povoliť obsah"
       ],
       "End-to-end encrypted": [
         "End-to-end šifrované"
@@ -5008,6 +5047,9 @@
       ],
       "File will not be updated": [
         "Súbor nebude aktualizovaný"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
       ],
       "finance": [
         "financie"
@@ -5278,6 +5320,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto priečinku."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ups! Táto tabuľka nedokáže uložiť vaše posledné úpravy, preto sme úpravy pozastavili, aby ste o svoju prácu neprišli.\nPomôžte nám vylepšiť túto funkciu tým, že nahlásite tento problém. Ak vám nevadí zdieľať obsah tabuľky, priložte k hláseniu nižšie uvedené informácie o ladení."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
@@ -6200,7 +6245,7 @@
         "Stiahnuť aj tak"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "Duplicate found": [
         "Nájdený duplikát"
@@ -8247,6 +8292,9 @@
       "Failed to load invitation details": [
         "Nepodarilo sa načítať detaily pozvánky"
       ],
+      "Failed to load sharing details": [
+        "Nepodarilo sa načítať podrobnosti zdieľania"
+      ],
       "Failed to reject share invitation": [
         "Odmietnutie pozvania na zdieľanie zlyhalo"
       ],
@@ -10277,6 +10325,9 @@
         "${ emailsCount } emailových adries",
         "${ emailsCount } emailových adries"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
       "Account recovery": [
         "Obnovenie účtu"
       ],
@@ -10513,6 +10564,9 @@
       ],
       "Edit image": [
         "Upraviť obrázok"
+      ],
+      "Editing paused": [
+        "Úprava pozastavená"
       ],
       "Email addresses": [
         "Emailové adresy"

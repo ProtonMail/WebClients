@@ -870,6 +870,9 @@
       "Incorrect username": [
         "Nepravilno uporabniško ime"
       ],
+      "Invalid verification code": [
+        "Neveljavna koda za preverjanje"
+      ],
       "Not a valid number": [
         "Ni veljavna številka"
       ],
@@ -1308,9 +1311,6 @@
       "Custom email domains": [
         "E-poštne domene po meri"
       ],
-      "Data retention policies": [
-        "Pravilniki hrambe podatkov"
-      ],
       "Desktop app": [
         "Namizna aplikacija"
       ],
@@ -1554,6 +1554,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Koda je poslana na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Preverjanje uspešno"
       ]
     },
     "Title": {
@@ -1565,6 +1568,9 @@
       ],
       "Enter your password": [
         "Vnesite svoje geslo"
+      ],
+      "Human verification": [
+        "Ali si človek"
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"

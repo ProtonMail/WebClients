@@ -50,6 +50,9 @@
       "Add": [
         "추가"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
       "Add a date": [
         "날짜 추가"
       ],
@@ -3154,6 +3157,9 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } 비밀번호를 분실한 경우에도 계정과 데이터에 접근 가능한지 여부를 확인하세요."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "귀하의 팀이 ${ BRAND_NAME }(으)로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오세요."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
       ],
@@ -3248,10 +3254,10 @@
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ll get a secure email with the details shortly.": [
         "곧 세부사항이 담긴 보안 이메일이 발송됩니다."
@@ -3911,6 +3917,9 @@
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "귀하의 ABN이 국가 간 VAT에 등록되어 있는지 확인해 주세요."
+      ],
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
       ],
@@ -4417,7 +4426,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event popover close button": {
@@ -4631,6 +4640,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -5201,6 +5213,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME }가 IP를 가려 웹 사이트에서 사용자를 식별할 수 없게 됩니다."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }는 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }는 귀하의 신원을 숨깁니다.\n— 데이터가 유출될 경우 무제한 **hide-my-email 별칭** 및 **다크웹 알림**을 제공합니다."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
@@ -5263,6 +5278,9 @@
       ],
       "Ad targeting": [
         "광고 트래킹"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
@@ -5442,7 +5460,7 @@
         "복사한 링크 붙이기"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Country code": [
         "국가 코드"
@@ -5570,6 +5588,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
       ],
+      "Enter code": [
+        "코드 입력"
+      ],
       "Enter the code from your authenticator app": [
         "인증 앱에서 코드를 입력하세요."
       ],
@@ -5633,6 +5654,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "추가 보안을 위해 암호 문구를 설정할 수 있습니다. 이는 캘린더 초대에 포함되지 않으므로 초대 손님과 별도로 공유해야 합니다."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "단 ${ bundlePlanPriceInline }의 가격으로"
+      ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
       ],
@@ -5677,6 +5701,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -5936,6 +5963,9 @@
       "Password must have:": [
         "비밀번호는 다음 조건을 충족해야 합니다:"
       ],
+      "Password verified": [
+        "비밀번호 확인 완료"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
@@ -5971,6 +6001,9 @@
       ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
+      ],
+      "Please select the labels you would like to import:": [
+        "불러올 라벨을 선택해 주십시오:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "${ groupCount }개 그룹에 추가 할 이메일 주소를 선택하세요."
@@ -6141,7 +6174,7 @@
         "다음 참가자들은 사용자의 변경을 알 수 없습니다:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "당신이 초대를 거부한 것이 주최자에게 알려지지 않습니다:"
+        "초대를 거부한 것이 주최자에게 알려지지 않습니다:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
         "대답 변경을 원한한 것을 주최자가 알 수 없습니다."
@@ -6226,6 +6259,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
@@ -6703,11 +6739,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "활성 서명자"
+      ],
       "Compromised": [
         "유출됨"
       ],
       "Expired": [
         "만료됨"
+      ],
+      "Fallback": [
+        "대체용"
       ],
       "KOO": [
         "KOO"
@@ -6763,6 +6805,11 @@
     "Keyboard shortcut name, switch to Calendar": {
       "Switch to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }로 전환하기"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }으로 전환"
       ]
     },
     "Keyboard shortcut section name": {
@@ -6958,6 +7005,9 @@
       ],
       "Don't show this again": [
         "다시 보지 않기"
+      ],
+      "Drive": [
+        "드라이브"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
@@ -8088,6 +8138,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "모든 국가 접근"
+      ],
       "Ad-blocker and malware protection": [
         "광고 차단기 및 멀웨어 보호"
       ],
@@ -8111,6 +8164,9 @@
       ],
       "Appointment scheduling": [
         "일정 예약"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지가 포함된 약속 일정 예약"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -8240,6 +8296,9 @@
       ],
       "Multiple admin roles": [
         "다중 관리자 역할"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 미지원"
       ],
       "Online document editor": [
         "온라인 문서 편집기"
@@ -8390,6 +8449,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
+      ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
       ],
       "Up to ${ n } user": [
         "사용자 최대 ${ n }명"
@@ -9693,11 +9755,17 @@
       "External key automatically fetched via WKD.": [
         "외부 키가 자동적으로 WKD를 통해 가져와졌습니다."
       ],
+      "This contact currently signs messages with this key": [
+        "이 연락처는 현재 이 키로 메시지에 서명합니다"
+      ],
       "This key is used for message verification": [
         "이 키는 메시지 검증에 사용됩니다."
       ],
       "This key is used to encrypt messages to this contact": [
         "이 키는 이 연락처에 암호화된 메시지를 보내는데 사용했습니다."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "이 키는 이전 앱에서 이 연락처로 메시지를 암호화하는 데 사용됩니다"
       ],
       "We recommend that you \"untrust\" this key.": [
         "이 키를 \"신뢰하지 않는 것을\" 권장합니다."
@@ -10898,6 +10966,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
       ],
@@ -11982,6 +12056,9 @@
       "Merging contacts": [
         "연락처 병합"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+      ],
       "Minicalendar": [
         "간편 캘린더"
       ],
@@ -12411,6 +12488,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
       ],
       "Load image": [
         "이미지 불러오기"

@@ -584,6 +584,9 @@
       "North Korea": [
         "Північна Корея"
       ],
+      "North Macedonia": [
+        "Північна Македонія"
+      ],
       "Northern Mariana Islands": [
         "Північні Маріанські острови"
       ],
@@ -864,8 +867,14 @@
       "Enter 6 digits": [
         "Введіть 6 цифр"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Введіть ім'я користувача без домену (@example.com)"
+      ],
       "Incorrect username": [
         "Неправильне ім'я користувача"
+      ],
+      "Invalid verification code": [
+        "Недійсний код підтвердження"
       ],
       "Not a valid number": [
         "Номер недійсний"
@@ -915,9 +924,20 @@
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, пов'язаний із вашим обліковим записом ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Ключ безпеки"
+      ],
+      "Touch your security key.": [
+        "Торкніться свого ключа безпеки."
       ]
     },
     "fido2: Label": {
@@ -1035,8 +1055,14 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Створення кількох безплатних облікових записів заборонено нашими ${ termsLink }."
       ],
+      "Each code can only be used once": [
+        "Кожен код можна використати лише один раз"
+      ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
+      ],
+      "Enter code": [
+        "Введіть код"
       ],
       "Enter the code from your authenticator app": [
         "Введіть код з вашого додатку автентифікатора"
@@ -1044,8 +1070,14 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифра ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Введіть власний пароль (як довірена особа)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Увійдіть у ${ mailLink } для отримання додаткової інформації та видалення обмежень."
@@ -1058,6 +1090,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Якщо ви втратили доступ до своєї програми-автентифікатора, ви можете скористатися 1 із 16 резервних кодів відновлення, наданих під час налаштування двоетапної перевірки. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
@@ -1135,6 +1170,9 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (довірена особа)"
       ]
     },
     "Link": {
@@ -1212,6 +1250,12 @@
         "${ n } повідомлення на добу",
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
+      ],
+      "${ options }-day file version history": [
+        "історія версій файлів за ${ options } день",
+        "история версий файлов за ${ options } дня",
+        "история версий файлов за ${ options } дней",
+        "история версий файлов за ${ options } дней"
       ],
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
@@ -1483,6 +1527,11 @@
         "Пароль"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміум-функції ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Вхід не був успішно завершений."
@@ -1518,14 +1567,23 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Перевірка пройшла успішно"
       ]
     },
     "Title": {
       "Account restricted": [
         "Обліковий запис обмежено"
       ],
+      "Account temporarily locked": [
+        "Обліковий запис тимчасово заблоковано"
+      ],
       "Enter your password": [
         "Введіть ваш пароль"
+      ],
+      "Human verification": [
+        "Перевірка \"Я не робот\""
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"

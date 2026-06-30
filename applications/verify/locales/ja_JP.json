@@ -867,8 +867,14 @@
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "ドメイン（@example.com）を含めずにユーザー名を入力してください。"
+      ],
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
+      ],
+      "Invalid verification code": [
+        "無効な検証コード"
       ],
       "Not a valid number": [
         "無効な番号です"
@@ -924,8 +930,14 @@
       ]
     },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "お客様の ${ BRAND_NAME } アカウントにリンクされたセキュリティキーを挿入してください。"
+      ],
       "Security key": [
         "セキュリティキー"
+      ],
+      "Touch your security key.": [
+        "セキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -1031,11 +1043,17 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
+      "Enter code": [
+        "コードを入力してください"
+      ],
       "Enter the code from your authenticator app": [
         "認証アプリからのコードを入力してください"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。${ digit }桁目。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -1054,6 +1072,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリへのアクセスを失った場合は、2要素認証のセットアップ時に提供された16個のバックアップ回復用コードの1つを使用できます。${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
@@ -1187,6 +1208,9 @@
       ],
       "${ n } message per day": [
         "1日あたり${ n } 件のメッセージ"
+      ],
+      "${ options }-day file version history": [
+        "${ options }日間のファイルバージョン履歴"
       ],
       "${ size } attachment size": [
         "${ size } の添付ファイル"
@@ -1510,6 +1534,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
+      ],
+      "Verification successful": [
+        "検証に成功しました"
       ]
     },
     "Title": {
@@ -1521,6 +1548,9 @@
       ],
       "Enter your password": [
         "パスワードを入力してください"
+      ],
+      "Human verification": [
+        "人間であることの検証"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
