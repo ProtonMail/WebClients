@@ -55,7 +55,10 @@ import { quitTracker } from "./utils/log/quitTracker";
     initializeLog();
     captureUncaughtErrors();
     registerIOStreamErrorHandlers();
-    await initializeSentry();
+
+    if (!isPlaywrightTest) {
+        await initializeSentry();
+    }
     profiler.mark("sentry-done");
     logInitialAppInfo();
     handleStartupMailto();

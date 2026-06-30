@@ -103,12 +103,10 @@ export const viewCreationAppStartup = async () => {
 
     // We need this for E2E tests because Playwright waits for something
     // to be loaded before connecting to the browser view.
-    // We need to check if removing this after the Electron version update
-    // will work
     const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
     if (isPlaywrightTest) {
-        await mainWindow.loadURL("about:blank");
         mainWindow.show();
+        mainWindow.loadURL("about:blank").catch(() => {});
     }
 
     createViews();
@@ -201,7 +199,12 @@ export const viewCreationAppStartup = async () => {
 };
 
 const createView = (viewID: ViewID) => {
-    const view = new WebContentsView(getWindowConfig());
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    const view = new WebContentsView(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
+
+    if (isPlaywrightTest) {
+        view.webContents.loadURL("about:blank").catch(() => {});
+    }
 
     if (viewID) {
         handleBeforeHandle(viewID, view);
@@ -634,7 +637,8 @@ async function showLoadingPage(title: string): Promise<void> {
     }
 
     mainLogger.info("Show loading view");
-    loadingView = new WebContentsView(getWindowConfig());
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    loadingView = new WebContentsView(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
     await renderLoadingPage(loadingView, title);
 
     mainWindow.setContentView(loadingView);
