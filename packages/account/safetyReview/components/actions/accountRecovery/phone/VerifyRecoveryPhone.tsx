@@ -1,9 +1,13 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
+import { SendCodeToVerifyPhone } from '@proton/account/safetyReview/components/actions/accountRecovery/phone/SendCodeToVerifyPhone';
 import { VerifyRecoveryMethod } from '@proton/account/safetyReview/components/actions/accountRecovery/verify/VerifyRecoveryMethod';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
@@ -17,11 +21,35 @@ type Props = SafetyReviewAllProps & {
 };
 
 export const VerifyRecoveryPhone = (props: Props) => {
+    const [userSettings] = useUserSettings();
     const theme = useTheme();
     const isDarkTheme = theme.information.dark;
-    const formattedPhoneNumber = <FormattedPhoneValue value={props.recoveryItem.recoveryItem.data.value} />;
+    const formattedPhoneNumber = <FormattedPhoneValue value={userSettings.Phone.Value} />;
     const boldPhoneNumber = <b key="phone-number">{formattedPhoneNumber}</b>;
     const [loading, withLoading] = useLoading();
+
+    // Only send verify code immediately if the recovery phone was set in a previous step.
+    const [shouldSendVerifyCode, setShouldSendVerifyCode] = useState(() => {
+        // NOTE: Even though this card may be rendered in the background and would technically pick up a stale value, we abuse
+        // the fact that the 'verifyRecoveryPhone' is added dynamically after 'setRecoveryPhone' has completed, which
+        // will correctly let this card render with a populated actionsHistoryMap .
+        return props.safetyReview.state.actionsHistoryMap.get('setRecoveryPhone')?.type === 'completed';
+    });
+
+    if (!shouldSendVerifyCode) {
+        return (
+            <SendCodeToVerifyPhone
+                {...props}
+                onUpdate={() => {}}
+                onSkip={() => {
+                    props.safetyReview.actions.next('skipped', props.recoveryItem);
+                }}
+                onSendCode={() => {
+                    setShouldSendVerifyCode(true);
+                }}
+            />
+        );
+    }
 
     return (
         <>
@@ -52,7 +80,7 @@ export const VerifyRecoveryPhone = (props: Props) => {
                     // eslint-disable-next-line no-console
                     console.error(error);
                 }}
-                value={props.recoveryItem.recoveryItem.data.value}
+                value={userSettings.Phone.Value}
                 method="phone"
             />
             <SafetyReviewCta {...props} cta={c('safety_review').t`Verify`} />
