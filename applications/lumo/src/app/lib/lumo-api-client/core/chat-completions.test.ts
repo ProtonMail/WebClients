@@ -1,10 +1,5 @@
 import { Role } from '../../../types-api';
-import {
-    DEFAULT_CHAT_MODEL,
-    LUMO_LITE_MODEL,
-    LUMO_MAX_MODEL,
-    toChatCompletionsBody,
-} from './chat-completions';
+import { DEFAULT_CHAT_MODEL, LUMO_LITE_MODEL, LUMO_MAX_MODEL, toChatCompletionsBody } from './chat-completions';
 import type { LumoApiGenerationRequest } from './types';
 
 const baseRequest: LumoApiGenerationRequest = {
@@ -155,6 +150,18 @@ describe('toChatCompletionsBody', () => {
             client_type: 'frontend',
             request_key: 'encrypted-key',
             request_id: 'request-id',
+        });
+    });
+
+    it('maps image aspect ratio into the lumo extension', () => {
+        const request: LumoApiGenerationRequest = {
+            ...baseRequest,
+            options: { image_aspect_ratio: '16:9' },
+        };
+
+        expect(toChatCompletionsBody(request).lumo).toEqual({
+            client_type: 'frontend',
+            image_aspect_ratio: '16:9',
         });
     });
 });

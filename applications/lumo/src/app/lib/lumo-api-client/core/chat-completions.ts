@@ -87,6 +87,10 @@ function buildLumoExtension(
         );
     }
 
+    if (request.options?.image_aspect_ratio) {
+        lumo.image_aspect_ratio = request.options.image_aspect_ratio;
+    }
+
     return lumo;
 }
 
