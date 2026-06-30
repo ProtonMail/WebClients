@@ -51,7 +51,6 @@ export const Tab = ({ category, tabState }: Props) => {
         if (tabState !== TabState.ACTIVE) {
             sendReportCategoriesNav('tab', category.id);
         }
-        sendReportCategoriesNav('tab', category.id);
 
         void dispatch(updateLastSeenEventId({ labelID: category.id }));
     };
