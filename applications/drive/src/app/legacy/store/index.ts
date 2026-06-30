@@ -23,4 +23,3 @@ export { useSearchLibrary } from './_search';
 export { usePhotosRecovery } from './_photos';
 export { AlbumTag } from './_photos/interface';
 export type { Tag } from './_photos/interface';
-export { useDocumentActions } from './_documents';

@@ -5,9 +5,9 @@ import { generateNodeUid } from '@proton/drive';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { DownloadManager } from '../../../../modules/download/DownloadManager';
 import type { LinkDownload } from '../../../../legacy/store';
-import { useDocumentActions } from '../../../../legacy/store/_documents';
+import { DownloadManager } from '../../../../modules/download/DownloadManager';
+import { downloadDocument } from '../../../../utils/docs/openInDocs';
 import { hasFoldersSelected, noSelection } from './utils';
 
 interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
@@ -21,8 +21,6 @@ interface Props {
 }
 
 const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
-    const { downloadDocument } = useDocumentActions();
-
     const dm = DownloadManager.getInstance();
     const onClick = () => {
         // Document downloads are handled in two ways:
@@ -33,15 +31,13 @@ const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
             if (isProtonDocsDocument(item.mimeType)) {
                 void downloadDocument({
                     type: 'doc',
-                    shareId: item.rootShareId,
-                    linkId: item.linkId,
+                    uid: generateNodeUid(item.volumeId, item.linkId),
                 });
                 return;
             } else if (isProtonDocsSpreadsheet(item.mimeType)) {
                 void downloadDocument({
                     type: 'sheet',
-                    shareId: item.rootShareId,
-                    linkId: item.linkId,
+                    uid: generateNodeUid(item.volumeId, item.linkId),
                 });
                 return;
             }

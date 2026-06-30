@@ -3,14 +3,16 @@ import { useCallback, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveDragMove from '../../../../legacy/hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../../legacy/hooks/drive/useNavigate';
 import type { EncryptedLink, LinkShareUrl, useSearchView } from '../../../../legacy/store';
-import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../../legacy/store/_documents';
+import { useDriveDocsFeatureFlag } from '../../../../legacy/store/_documents';
 import { SortField } from '../../../../legacy/store/_views/utils/useSorting';
+import { openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -80,7 +82,6 @@ export const SearchLegacy = ({ shareId, searchView }: Props) => {
     const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
-    const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = searchView;
@@ -132,20 +133,20 @@ export const SearchLegacy = ({ shareId, searchView }: Props) => {
 
             if (isProtonDocsDocument(item.mimeType)) {
                 if (isDocsEnabled) {
-                    return openDocument({
-                        type: 'doc',
-                        linkId: item.linkId,
-                        shareId: item.rootShareId,
+                    return openDocsOrSheetsDocument({
+                        uid: generateNodeUid(item.volumeId, item.linkId),
+                        type: 'document',
+                        isNative: true,
                         openBehavior: 'tab',
                     });
                 }
                 return;
             } else if (isProtonDocsSpreadsheet(item.mimeType)) {
                 if (isDocsEnabled) {
-                    return openDocument({
-                        type: 'sheet',
-                        linkId: item.linkId,
-                        shareId: item.rootShareId,
+                    return openDocsOrSheetsDocument({
+                        uid: generateNodeUid(item.volumeId, item.linkId),
+                        type: 'spreadsheet',
+                        isNative: true,
                         openBehavior: 'tab',
                     });
                 }
@@ -155,7 +156,7 @@ export const SearchLegacy = ({ shareId, searchView }: Props) => {
             document.getSelection()?.removeAllRanges();
             navigateToLink(shareId, item.linkId, item.isFile);
         },
-        [navigateToLink, shareId, browserItems, isDocsEnabled, openDocument]
+        [navigateToLink, shareId, browserItems, isDocsEnabled]
     );
 
     const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
