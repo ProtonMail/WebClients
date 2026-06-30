@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { ContextSeparator } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
@@ -8,10 +9,10 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { DecryptedLink } from '../../../../legacy/store';
-import { useOpenInDocs } from '../../../../legacy/store/_documents';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../../modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../../modals/RevisionsModal';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';
 import {
@@ -60,7 +61,7 @@ export function DriveItemContextMenu({
 
     const { revisionsModal, showRevisionsModal } = useRevisionsModal();
 
-    const openInDocs = useOpenInDocs(selectedLink);
+    const openInDocsInfo = selectedLink?.mimeType ? getOpenInDocsInfo(selectedLink.mimeType) : undefined;
 
     return (
         <>
@@ -73,8 +74,23 @@ export function DriveItemContextMenu({
                         close={close}
                     />
                 )}
-                {isOnlyOneFileItem && openInDocs.canOpen && <OpenInDocsButton {...openInDocs} close={close} />}
-                {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}
+                {isOnlyOneFileItem && openInDocsInfo && selectedLink && (
+                    <OpenInDocsButton
+                        openDocument={() =>
+                            openDocsOrSheetsDocument({
+                                uid: generateNodeUid(selectedLink.volumeId, selectedLink.linkId),
+                                type: openInDocsInfo.type,
+                                isNative: openInDocsInfo.isNative,
+                                openBehavior: 'tab',
+                            })
+                        }
+                        type={openInDocsInfo.type}
+                        isNative={openInDocsInfo.isNative}
+                        mimeType={selectedLink.mimeType}
+                        close={close}
+                    />
+                )}
+                {(hasPreviewAvailable || (isOnlyOneFileItem && !!openInDocsInfo)) && <ContextSeparator />}
                 <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
                 {isAdmin && hasLink && (
                     <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />

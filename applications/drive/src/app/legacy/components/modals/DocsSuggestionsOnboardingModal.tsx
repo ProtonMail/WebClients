@@ -3,16 +3,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 import sharingOnboardingWelcome from '@proton/styles/assets/img/onboarding/drive-docs-suggestion-mode.png';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
-import { useDocumentActions } from '../../../legacy/store/_documents';
+import { createDocument } from '../../../utils/docs/openInDocs';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 
 export const DocsSuggestionsOnboardingModal = ({ onClose, ...props }: ModalProps) => {
     const { activeFolder } = useActiveShare();
-    const { createDocument } = useDocumentActions();
 
     return (
         <ModalTwo {...props} size="small">
@@ -33,8 +33,7 @@ export const DocsSuggestionsOnboardingModal = ({ onClose, ...props }: ModalProps
                     onClick={() => {
                         void createDocument({
                             type: 'doc',
-                            shareId: activeFolder.shareId,
-                            parentLinkId: activeFolder.linkId,
+                            parentUid: generateNodeUid(activeFolder.volumeId, activeFolder.linkId),
                         });
                         onClose?.();
                     }}
