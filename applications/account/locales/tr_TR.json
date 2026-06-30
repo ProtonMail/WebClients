@@ -1383,6 +1383,9 @@
       "Review": [
         "İncele"
       ],
+      "Review changes": [
+        "Değişiklikleri gözden geçir"
+      ],
       "Review recovery options": [
         "Kurtarma seçeneklerini gözden geçir"
       ],
@@ -3476,7 +3479,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Önceki içe aktarmalardan gelen yinelenen iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
+        "Önceki içe aktarmalardan gelen yinelenen mesajlar atlanacaktır. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski mesajları içe aktarabilirsiniz."
       ]
     },
     "Calendar access select label": {
@@ -5512,7 +5515,7 @@
         "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Eski e-postalarınız içe aktarılacak ve bundan sonra Gmail üzerine gelen yeni iletiler eşitlenecek"
+        "Eski e-postalarınızı içe aktaracağız ve bundan sonra Gmail'den gelen yeni mesajları senkronize edeceğiz"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
@@ -7385,7 +7388,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak bir drive bulunamadı"
+        "İçe aktarılacak sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -7406,7 +7409,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
+        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
@@ -7702,7 +7705,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
+        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -8645,8 +8648,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
+      "Insert your security key into your device.": [
+        "Güvenlik anahtarınızı cihazınıza takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -8659,6 +8662,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
+      ],
+      "Touch your security key.": [
+        "Güvenlik anahtarınıza dokunun."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
@@ -9071,6 +9077,12 @@
       ],
       "General": [
         "Genel"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Kullanıcıları ve grupları yönetin, roller atayın ve üyelere lisans tahsis edin."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Güvenlik ayarlarını yönetir ve tüm olay günlüklerini ve kullanıcı bilgilerini görüntüleyebilir."
       ],
       "Roles and permissions": [
         "Roller ve izinler"
@@ -9722,8 +9734,8 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } varsayılan takvim olarak ayarlanacak."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "${ BRAND_NAME } for Business tarifeleri ekibinize işlerinde verimli ve düzenli olmaları için gereken tüm iş birliği araçlarını sağlarken kuruluşunuzu da korur."
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business tarfiesi ekibinize işlerinde verimli ve düzenli olmaları için ihtiyaç duydukları tüm işbirliği araçlarını sunarken aynı zamanda işletmenizi de korur."
       ],
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
@@ -10777,7 +10789,7 @@
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Geçerli oturum dışındaki diğer tüm oturumları kapatmak istiyor musunuz?"
@@ -11060,7 +11072,7 @@
         "ZDNet değerlendirmesi"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
@@ -13062,7 +13074,7 @@
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "We'll remind you to verify your password again later": [
-        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -15158,6 +15170,9 @@
       "Newsletters": [
         "Duyurular"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Haber Bültenleri - Haberler, editoryal e-postalar ve tanıtım amaçlı olmayan içerikler"
+      ],
       "No": [
         "Hayır"
       ],
@@ -15249,7 +15264,7 @@
         "Parola"
       ],
       "Password check-ins": [
-        "Parola kontrolü"
+        "Parola denetimleri"
       ],
       "Password strength": [
         "Parola zorluğu"
@@ -15314,11 +15329,17 @@
       "Primary": [
         "Birincil saat dilimi"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Birincil - Kişisel ve iş e-postaları ile önemli güncellemeler"
+      ],
       "Priority support": [
         "Öncelikli destek"
       ],
       "Promotions": [
         "Kazançlar"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promosyonlar - Fırsatlar, teklifler ve pazarlama e-postaları"
       ],
       "Prompt to trust keys": [
         "Anahtarlara güvenilmesi sorulsun"
@@ -15495,6 +15516,9 @@
       "Social": [
         "Sosyal ağ"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve mesajlar"
+      ],
       "Social media updates and activity": [
         "Sosyal ağ güncellemeleri ve etkinlikleri"
       ],
@@ -15603,6 +15627,9 @@
       "Transactions": [
         "Hesap işlemleri"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "İşlemler - Makbuzlar, kayıtlar, faturalar ve siparişler"
+      ],
       "Two-password mode": [
         "İki parola kipi"
       ],
@@ -15623,6 +15650,9 @@
       ],
       "Updates": [
         "Güncellemeler"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Güncellemeler - Otomatik onaylar, uyarılar ve hesap güncellemeleri"
       ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
@@ -19489,10 +19519,10 @@
         "Verilerinizin şifresini çözmenin anahtarı olduğu için parolanızı ezberlediğinizden veya güvenli bir şekilde sakladığınızdan emin olun."
       ],
       "Turn off check-ins": [
-        "Kontrol özelliğini kapat"
+        "Denetimleri kapat"
       ],
       "Turn off password check-ins?": [
-        "Parola kontrolü kapatılsın mı?"
+        "Parola denetimleri kapatılsın mı?"
       ]
     },
     "passwordless": {
@@ -21697,6 +21727,66 @@
         "SAML yapılandırması sınanıyor"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } yeni üye",
+        "${ memberCount } yeni üye"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grup eşitlendi",
+        "${ numberOfPendingGroups } grup eşitlendi"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } kullanıcı eşitlendi",
+        "${ numberOfPendingUsers } kullanıcı eşitlendi"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grup",
+        "${ pendingGroupsCount } grup"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grup eşitlendi.",
+        "${ pendingGroupsCount } grup eşitlendi."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } kullanıcı",
+        "${ pendingUsersCount } kullanıcı"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } kullanıcı eşitlendi.",
+        "${ pendingUsersCount } kullanıcı eşitlendi."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } ve ${ groupsText } eşitlendi."
+      ],
+      "Approve changes from your identity provider": [
+        "Kimlik sağlayıcınızdan gelen değişiklikleri onaylayın"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Tüm ${ BRAND_NAME } hizmetlerine erişim izni vermek için nihai onay gereklidir."
+      ],
+      "From your identity provider": [
+        "Kimlik sağlayıcınızdan"
+      ],
+      "New": [
+        "Yeni"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Onaylandıktan sonra tüm ${ BRAND_NAME } hizmetlerine erişebilir ve güvenli bir şekilde paylaşım yapabilirler."
+      ],
+      "Private user": [
+        "Gizli kullanıcı"
+      ],
+      "Review users and groups before finishing setup": [
+        "Kurulumu tamamlamadan önce kullanıcıları ve grupları gözden geçirin"
+      ],
+      "Updated": [
+        "Güncellendi"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Gizli olarak ayarladığınız kullanıcıların kurulumu tamamlamak için daveti kabul etmeleri gerekir. Onayladığınızda onlara bir davet göndereceğiz."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "SCIM yapılandırması"
@@ -21878,7 +21968,7 @@
     },
     "Service provider": {
       "Add to ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } üzerine ekle"
+        "${ CALENDAR_APP_NAME } uygulamasına ekle"
       ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Takvim etkinliklerinize Zoom görüntülü görüşmeleri eklemenizi sağlar"
@@ -23391,6 +23481,9 @@
         "${ count } kişi",
         "${ count } kişi"
       ],
+      "... waiting": [
+        "... bekleniyor"
+      ],
       "Add a phone number": [
         "Bir telefon numarası ekle"
       ],
@@ -23400,11 +23493,17 @@
       "Available on this device": [
         "Bu aygıtta kullanılabilir"
       ],
+      "completed": [
+        "tamamlandı"
+      ],
       "Disable recovery by email": [
         "E-posta adresi ile kurtarmayı kapatın"
       ],
       "Disable recovery by phone": [
         "Telefon numarası ile kurtarmayı kapatın"
+      ],
+      "finalizing": [
+        "tamamlanıyor"
       ],
       "Generate a recovery phrase": [
         "Bir kurtarma ifadesi oluşturun"
@@ -24316,10 +24415,10 @@
         "Kuruluş adı güncellendi"
       ],
       "Password check-ins disabled": [
-        "Parola kontrolü devre dışı bırakıldı"
+        "Parola denetimleri kapatıldı"
       ],
       "Password check-ins enabled": [
-        "Parola kontrolü etkinleştirildi"
+        "Parola denetimleri açık"
       ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
@@ -24971,6 +25070,9 @@
       ],
       "Apply gift code": [
         "Hediye kodunu uygula"
+      ],
+      "Approve changes": [
+        "Değişiklikleri onayla"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Bir tarayıcıda ${ BRAND_NAME } oturumunuz açık mı?"
@@ -27461,6 +27563,15 @@
       ],
       "Invitation email": [
         "Davet e-postası"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturalandırmayı ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Kullanıcıları ve grupları yönetin, roller atayın ve üyelere lisans tahsis edin."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Güvenlik ayarlarını yönetir ve tüm olay günlüklerini ve kullanıcı bilgilerini görüntüleyebilir."
       ],
       "Name": [
         "Ad"
