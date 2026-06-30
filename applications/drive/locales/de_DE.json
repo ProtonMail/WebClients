@@ -956,6 +956,12 @@
       "Select country": [
         "Land wählen"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Wähle Bewertung ${ n } von ${ to }"
+      ],
+      "Send Feedback": [
+        "Feedback senden"
+      ],
       "Set as album cover": [
         "Setze als Album-Titelbild"
       ],
@@ -3711,9 +3717,6 @@
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
       ],
-      "No drive found to import": [
-        "Es wurde kein Laufwerk zum Importieren gefunden"
-      ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
@@ -3725,9 +3728,6 @@
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Einer der Kontakte hat keine E-Mail-Adresse: ${ noEmailsContactNamesList }",
@@ -3966,9 +3966,6 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
-      ],
-      "Unexpected error, we can't import the files": [
-        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Unbekannte Konfliktstrategie: ${ strategy }"
@@ -4487,6 +4484,9 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -5590,7 +5590,7 @@
         "Passwort eingeben"
       ],
       "Enter the code from your authenticator app": [
-        "Code aus deiner Authentifizierungs-App ein eingeben"
+        "Code aus deiner Authentifizierungs-App eingeben"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -5643,9 +5643,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Dateien und Ordner, die andere mit dir geteilt haben, werden hier angezeigt."
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
       ],
       "finance": [
         "Finanzen"
@@ -7347,6 +7344,9 @@
       "Download anyway": [
         "Trotzdem herunterladen"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplikat gefunden"
       ],
@@ -7409,6 +7409,9 @@
       ],
       "Extended address": [
         "Adresszusatz"
+      ],
+      "Extremely Satisfied": [
+        "Sehr zufrieden"
       ],
       "File": [
         "Datei"
@@ -7743,6 +7746,9 @@
       "System information": [
         "Systeminformationen"
       ],
+      "Tell us more about your experience": [
+        "Erzähl uns mehr von deiner Erfahrung"
+      ],
       "Theme": [
         "Farbschema"
       ],
@@ -7787,6 +7793,9 @@
       ],
       "Verification code": [
         "Verifizierungscode"
+      ],
+      "Very Dissatisfied": [
+        "Sehr unzufrieden"
       ],
       "Viewer": [
         "Betrachter"
@@ -9106,6 +9115,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wir sind stets bemüht, ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
       ]
     },
     "new_plans: Subtext": {
@@ -10585,6 +10599,9 @@
       ],
       "New name": [
         "Neuer Name"
+      ],
+      "Optional feedback": [
+        "Optionales Feedback"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -13216,6 +13233,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Wir konnten nicht bestätigen, dass der Knoten von ${ claimedKeyAuthor } erstellt wurde. Der Grund dafür ist: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Wir würden uns freuen, von dir zu hören."
       ],
       "Welcome offer": [
         "Willkommensangebot"

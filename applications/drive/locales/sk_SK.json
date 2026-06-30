@@ -966,6 +966,12 @@
       "Select country": [
         "Vyberte krajinu"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
+      ],
       "Set as album cover": [
         "Nastaviť ako obal albumu"
       ],
@@ -3778,6 +3784,9 @@
       "No contacts found to import": [
         "Neboli nájdené žiadne kontakty na import"
       ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
@@ -3789,6 +3798,9 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktov nemá emailovú adresu: ${ noEmailsContactNamesList }",
@@ -4035,6 +4047,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Neznáma stratégia riešenia konfliktu: ${ strategy }"
@@ -4561,6 +4576,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -5816,6 +5834,9 @@
       "Files and folders that others shared with you will appear here": [
         "Tu sa zobrazia súbory a priečinky, ktoré s vami zdieľajú iní."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
+      ],
       "finance": [
         "financie"
       ],
@@ -6361,6 +6382,12 @@
       ],
       "Preparing": [
         "Príprava"
+      ],
+      "Preparing download": [
+        "Príprava na stiahnutie"
+      ],
+      "Preparing…": [
+        "Príprava…"
       ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
@@ -7565,7 +7592,7 @@
         "Stiahnuť aj tak"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "Duplicate found": [
         "Nájdený duplikát"
@@ -7629,6 +7656,9 @@
       ],
       "Extended address": [
         "Rozšírená adresa"
+      ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
       ],
       "File": [
         "Súbor"
@@ -7963,6 +7993,9 @@
       "System information": [
         "Systémové informácie"
       ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
       "Theme": [
         "Vzhľad"
       ],
@@ -8007,6 +8040,9 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ],
       "Viewer": [
         "Čitateľ"
@@ -9345,6 +9381,11 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "Cena od ${ priceLine }"
@@ -9875,6 +9916,9 @@
       ],
       "Failed to accept share invitation": [
         "Prijatie pozvania na zdieľanie zlyhalo"
+      ],
+      "Failed to load sharing details": [
+        "Nepodarilo sa načítať podrobnosti zdieľania"
       ],
       "Failed to move, please try again": [
         "Presun zlyhal, skúste znovu, prosím"
@@ -10889,6 +10933,9 @@
       ],
       "New name": [
         "Nový názov"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -12672,6 +12719,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } z bezplatných nahratí."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
       "Account recovery": [
         "Obnovenie účtu"
       ],
@@ -12941,6 +12991,18 @@
       ],
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Elektronický podpis bol čiastočne overený. Tento priečinok bol nahratý pomocou verejne prístupného zdieľaného odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identita nemôže byť overená."
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Elektronický podpis overený. Tento súbor bol bezpečne vytvorený používateľom ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Elektronický podpis overený. Tento súbor bol bezpečne nahraný používateľom ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Elektronický podpis overený. Tento priečinok bol bezpečne vytvorený používateľom ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Elektronický podpis overený. Táto zložka bola bezpečne nahraná používateľom ${ author }."
       ],
       "Discard": [
         "Zahodiť"
@@ -13584,6 +13646,18 @@
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
       ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nemohli sme overiť, že tento súbor vytvoril používateľ ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nemohli sme overiť, že tento priečinok vytvoril používateľ ${ author }."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nemohli sme overiť, že tento súbor nahral používateľ ${ author }."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nemohli sme overiť, že tento priečinok nahral používateľ ${ author }."
+      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nemohli sme overiť, že tento súbor vytvoril anonymný používateľ."
       ],
@@ -13604,6 +13678,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Nepodarilo sa nám potvrdiť, že uzol vytvoril používateľ ${ claimedKeyAuthor }. Dôvod: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ],
       "Welcome offer": [
         "Uvítacia ponuka"
