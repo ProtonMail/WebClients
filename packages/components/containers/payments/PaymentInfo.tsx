@@ -8,13 +8,7 @@ interface Props {
 }
 
 const PaymentInfo = ({ paymentMethodType }: Props) => {
-    if (
-        methodMatches(paymentMethodType, [
-            PAYMENT_METHOD_TYPES.BITCOIN,
-            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
-            PAYMENT_METHOD_TYPES.CASH,
-        ])
-    ) {
+    if (methodMatches(paymentMethodType, [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, PAYMENT_METHOD_TYPES.CASH])) {
         return null;
     }
 
