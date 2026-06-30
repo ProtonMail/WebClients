@@ -7,7 +7,6 @@
  */
 import { assign, fromPromise, setup } from 'xstate';
 
-import type { MnemonicData } from '@proton/components/containers/resetPassword/interface';
 import type {
     AccountType,
     DelegatedAccessSummary,
@@ -17,6 +16,7 @@ import type {
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
+import type { MnemonicData } from '../actions';
 import { DeviceRecoveryLevel } from '../actions';
 
 type MnemonicDataWithoutAPI = Omit<MnemonicData, 'api'>;

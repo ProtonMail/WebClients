@@ -1,7 +1,6 @@
 import { createActor, fromPromise, waitFor } from 'xstate';
 import type { AnyActorLogic, StateValue } from 'xstate';
 
-import type { MnemonicData } from '@proton/components/containers/resetPassword/interface';
 import type {
     DelegatedAccessSummary,
     ExistingSession,
@@ -11,6 +10,7 @@ import type {
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
+import type { MnemonicData } from '../actions';
 import { DeviceRecoveryLevel } from '../actions';
 import {
     UnauthedForgotPasswordStateMachine,
