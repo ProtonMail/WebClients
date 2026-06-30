@@ -9,7 +9,7 @@
     --interaction-norm: #6D4AFF;
     --interaction-norm-hover: #7C5CFF;
     --interaction-norm-active: #8A6EFF;
-    
+
 
     --interaction-weak: #4A4658;
     --interaction-weak-hover: #5C5969;
@@ -128,9 +128,5 @@
     --lumo-logo-tag-pro-text: var(--text-dark);
     --lumo-logo-tag-plus-text: var(--interaction-weak-active);
 
-    --lumo-secondary-upsell-background: linear-gradient(
-        180deg,
-        rgb(197 183 255 / 0.42) 0%,
-        rgb(255 244 231 / 0.16) 100%
-    ), rgb(92 84 128);
+    --lumo-secondary-upsell-background: var(--interaction-solid-weak-custom);
 }

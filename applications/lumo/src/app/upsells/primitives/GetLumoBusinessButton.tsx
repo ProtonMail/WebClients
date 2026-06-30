@@ -10,7 +10,32 @@ import { getMarketingUrl } from '../../util/marketingUrls';
 
 import './GetLumoBusinessButton.scss';
 
-const GetLumoBusinessButton = () => {
+interface GetLumoBusinessButtonProps {
+    onClick?: () => void;
+    loading?: boolean;
+}
+
+const GetLumoBusinessButton = ({ onClick, loading }: GetLumoBusinessButtonProps) => {
+    const className = clsx('shrink-0', LUMO_UPGRADE_TRIGGER_CLASS, 'lumo-business-button');
+    const buttonText = c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} AI Pro`;
+
+    if (onClick) {
+        return (
+            <ButtonLike
+                as="button"
+                onClick={onClick}
+                loading={loading}
+                shape="solid"
+                color="norm"
+                size="medium"
+                fullWidth
+                className={className}
+            >
+                {buttonText}
+            </ButtonLike>
+        );
+    }
+
     return (
         <ButtonLike
             as={Href}
@@ -19,9 +44,9 @@ const GetLumoBusinessButton = () => {
             color="norm"
             size="medium"
             fullWidth
-            className={clsx('shrink-0', LUMO_UPGRADE_TRIGGER_CLASS, 'lumo-business-button')}
+            className={className}
         >
-            {c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} Business`}
+            {buttonText}
         </ButtonLike>
     );
 };

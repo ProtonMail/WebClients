@@ -1,0 +1,26 @@
+// Standard Lumo modal overlay colors.
+// Light: #E9EAFC at 80%. Dark: keyed off injected #lumo-dark-theme (not prefers-color-scheme).
+
+$lumo-backdrop-light: rgb(233 234 252 / 0.8);
+$lumo-backdrop-dark: rgb(16 18 23 / 0.7);
+$lumo-backdrop-blur: 4.5px;
+
+body .modal-two-backdrop {
+	background: $lumo-backdrop-light;
+	backdrop-filter: blur($lumo-backdrop-blur);
+}
+
+body:has(#lumo-dark-theme) .modal-two-backdrop {
+	background: $lumo-backdrop-dark;
+}
+
+.image-lightbox,
+.search-modal-overlay {
+	background: $lumo-backdrop-light;
+	backdrop-filter: blur($lumo-backdrop-blur);
+}
+
+body:has(#lumo-dark-theme) .image-lightbox,
+body:has(#lumo-dark-theme) .search-modal-overlay {
+	background: $lumo-backdrop-dark;
+}
