@@ -36,7 +36,7 @@ export const canUseNativeAuth = (): boolean => {
         if (platform === 'ios') {
             targetVersion = '2.1.0';
         } else if (platform === 'android') {
-            targetVersion = '2.0.0';
+            targetVersion = '2.1.0';
         }
 
         return targetVersion !== null && !isNativeVersionOlderThan(version, targetVersion);
