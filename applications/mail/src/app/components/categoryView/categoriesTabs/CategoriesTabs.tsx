@@ -4,12 +4,15 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
+import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { OnboardingStep } from '../categoriesOnboarding/onboardingInterface';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
@@ -81,6 +84,23 @@ export const CategoriesTabsList = () => {
                         categoryIDs,
                         selectAll,
                     });
+
+                    if (category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL) {
+                        return (
+                            <CategoriesOnboardingSpotlight step={OnboardingStep.MESSAGE}>
+                                <div
+                                    key={category.id}
+                                    className="tab-wrapper shrink-0"
+                                    onDragOver={handleDragOver(category.id)}
+                                    onDrop={handleDrop(category.id)}
+                                >
+                                    <ErrorBoundary component={<CategoryTabError />}>
+                                        <Tab category={category} tabState={tabState} />
+                                    </ErrorBoundary>
+                                </div>
+                            </CategoriesOnboardingSpotlight>
+                        );
+                    }
 
                     return (
                         <div

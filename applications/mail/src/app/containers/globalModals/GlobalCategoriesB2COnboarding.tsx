@@ -53,8 +53,16 @@ export const GlobalCategoriesB2COnboarding = () => {
             return;
         }
 
+        const updatedFlagValue = enableCategories
+            ? setBit(b2cModalProps.flagValue, CategoriesOnboardingFlags.INITIAL_MODAL)
+            : b2cModalProps.flagValue |
+              CategoriesOnboardingFlags.INITIAL_MODAL |
+              CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE |
+              CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE |
+              CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE;
+
         await handleChange({ checked: enableCategories, notification: false });
-        void update(setBit(b2cModalProps.flagValue, CategoriesOnboardingFlags.INITIAL_MODAL));
+        void update(updatedFlagValue);
 
         modalProps.onClose?.();
         if (enableCategories) {
