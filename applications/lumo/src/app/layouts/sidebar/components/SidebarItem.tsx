@@ -25,7 +25,7 @@ export const SidebarItem = ({
 }: SidebarItemProps) => (
     <button
         className={clsx(
-            'sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5',
+            'sidebar-item flex items-center w-full cursor-pointer px-1.5 py-2',
             className,
             showShortcutOnHover && 'show-shortcut-on-hover'
         )}
@@ -33,7 +33,7 @@ export const SidebarItem = ({
         aria-label={label}
         disabled={disabled}
     >
-        <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
+        <div className="sidebar-item-icon flex items-center justify-start shrink-0">
             <LumoIcon name={icon} size={16} className="rtl:mirror" />
         </div>
         <span className="sidebar-item-text flex-1 flex items-center justify-space-between text-nowrap overflow-hidden gap-2">

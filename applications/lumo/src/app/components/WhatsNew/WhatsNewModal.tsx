@@ -7,12 +7,10 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components';
 import { ModalContent, ModalTwo, ModalTwoFooter, StepDot, StepDots } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import blurBackground from '@proton/styles/assets/img/lumo/lumo-whats-new/blur.svg';
-import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
 import { LumoIcon } from '../LumoIcon/LumoIcon';
-import type { FeaturePoint, WhatsNewModalFeature, WhatsNewStageImageScale } from './types';
+import type { FeaturePoint, WhatsNewModalFeature } from './types';
 
 import './WhatsNew.scss';
 
@@ -28,7 +26,6 @@ const WhatsNewModal = ({ feature, onCallToAction, onCancel, open, ...modalProps 
     const currentStage = stages[step];
     const isFirstStep = step === 0;
     const isLastStep = step === stages.length - 1;
-    const imageScale: WhatsNewStageImageScale = currentStage?.imageScale ?? 'lg';
 
     useEffect(() => {
         if (open) {
@@ -91,41 +88,44 @@ const WhatsNewModal = ({ feature, onCallToAction, onCancel, open, ...modalProps 
             <Tooltip title={c('collider_2025:Action').t`Close`}>
                 <button
                     type="button"
-                    className="whats-new-modal-close inline-flex items-center justify-center border bg-norm color-norm"
+                    className="whats-new-modal-close absolute inline-flex items-center justify-center border bg-norm color-norm p-0 rounded w-custom h-custom"
+                    style={{ '--w-custom': '2.25rem', '--h-custom': '2.25rem' }}
                     onClick={onCancel}
                     aria-label={c('collider_2025:Action').t`Close`}
                 >
                     <IcCross size={4} />
                 </button>
             </Tooltip>
-            <div className="whats-new-modal-shell">
-                <div className="whats-new-modal-illustration flex items-center justify-center">
-                    <img src={blurBackground} alt="" className="whats-new-modal-illustration-blur" aria-hidden="true" />
+            <div className="flex flex-column flex-nowrap flex-1">
+                <div
+                    className="whats-new-modal-illustration relative overflow-hidden shrink-0 w-full flex items-center justify-center h-custom"
+                    style={{ '--h-custom': '20rem' }}
+                >
                     {currentStage.image && (
                         <img
                             src={currentStage.image}
                             alt={currentStage.imageAlt ?? ''}
-                            className={clsx(
-                                'whats-new-modal-illustration-image',
-                                `whats-new-modal-illustration-image--${imageScale}`
-                            )}
+                            className="relative z-1 w-full object-contain rounded-lg"
                         />
                     )}
                 </div>
-                <ModalContent>
-                    <div className="whats-new-content">
-                        <div className="flex flex-column flex-nowrap gap-2">
-                            <span className="whats-new-badge">{c('collider_2025: Feature').t`What's new`}</span>
-                            <h2 className="whats-new-title text-2xl text-semibold m-0">{currentStage.getTitle()}</h2>
-                            {currentStage.getDescription && (
-                                <p className="m-0 color-weak">{currentStage.getDescription()}</p>
-                            )}
-                            {renderFeaturePoints()}
-                        </div>
+                <ModalContent className="mt-6">
+                    <div className="flex flex-column flex-nowrap gap-2">
+                        <span className="self-start py-0.5 px-3 rounded-sm bg-weak color-weak text-sm text-normal">
+                            {c('collider_2025: Feature').t`What's new`}
+                        </span>
+                        <h2 className="whats-new-title text-2xl text-semibold m-0">{currentStage.getTitle()}</h2>
+                        {currentStage.getDescription && (
+                            <p className="m-0 color-weak lh-rg">{currentStage.getDescription()}</p>
+                        )}
+                        {renderFeaturePoints()}
                     </div>
                 </ModalContent>
-                <ModalTwoFooter>
-                    <div className="whats-new-modal-footer flex flex-row flex-nowrap items-center justify-space-between w-full gap-4">
+                <ModalTwoFooter className="mt-0">
+                    <div
+                        className="flex flex-row flex-nowrap items-center justify-space-between w-full gap-4 min-h-custom"
+                        style={{ '--min-h-custom': '2.25rem' }}
+                    >
                         {stages.length > 1 ? (
                             <StepDots value={step} ulClassName="mb-0">
                                 {range(0, stages.length).map((index) => (

@@ -21,19 +21,19 @@ import {
 import useLoading from '@proton/hooks/useLoading';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { stripUnshareableAttachmentContent } from '../../lib/imageAttachment';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectMessageById } from '../../redux/selectors';
 import type { Message } from '../../types';
-import { LumoIcon } from '../LumoIcon/LumoIcon';
 import {
     hasSeenNegativeFeedbackIntro,
     hasSeenPositiveFeedbackIntro,
     markNegativeFeedbackIntroSeen,
     markPositiveFeedbackIntroSeen,
 } from '../../util/feedbackIntroStorage';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 type FeedbackIntroType = 'positive' | 'negative';
 type FeedbackStep = 'form' | 'preview';
@@ -249,7 +249,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 <Button
                     icon
                     size="small"
-                    shape="solid"
+                    shape="ghost"
                     className="lumo-no-copy"
                     // style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
                     disabled={disableButtons}
@@ -267,7 +267,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 <Button
                     icon
                     size="small"
-                    shape="solid"
+                    shape="ghost"
                     className="lumo-no-copy"
                     // style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
                     disabled={disableButtons}
@@ -288,16 +288,17 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     </p>
                 </ModalTwoContent>
                 <ModalTwoFooter className="flex justify-end">
-                    <Button
-                        type="button"
-                        color="norm"
-                        onClick={handleIntroContinue}
-                    >{c('collider_2025: Action').t`Continue`}</Button>
+                    <Button type="button" color="norm" onClick={handleIntroContinue}>{c('collider_2025: Action')
+                        .t`Continue`}</Button>
                 </ModalTwoFooter>
             </ModalTwo>
             <ModalTwo
                 as={feedbackStep === 'form' ? 'form' : 'div'}
-                onSubmit={feedbackStep === 'form' ? (e: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(e)) : undefined}
+                onSubmit={
+                    feedbackStep === 'form'
+                        ? (e: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(e))
+                        : undefined
+                }
                 {...feedbackModal.modalProps}
             >
                 <ModalTwoHeader
@@ -346,7 +347,8 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                                     className="mr-2"
                                 />
                                 <label htmlFor={shareContentCheckboxId} className="flex-1 mt-0">
-                                    <span>{c('collider_2025: Info').t`Share your prompt and the response with us.`}</span>
+                                    <span>{c('collider_2025: Info')
+                                        .t`Share your prompt and the response with us.`}</span>
                                 </label>
                             </div>
                         </>

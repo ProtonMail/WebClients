@@ -74,7 +74,7 @@ const UploadMenuSection = ({
                 ref={uploadButtonRef}
                 icon
                 className={clsx(
-                    'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak rounded-full',
+                    'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center rounded-full',
                     showUploadMenu && 'is-active'
                 )}
                 onClick={handleUploadButtonClick}
@@ -158,7 +158,7 @@ export const ComposerToolbar = ({
                         <Button
                             ref={toolsButtonRef}
                             className={clsx(
-                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center color-weak py-1.5 rounded-full',
+                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center py-1.5 rounded-full',
                                 showToolsMenu && 'is-active'
                             )}
                             onClick={handleToolsButtonClick}
@@ -198,7 +198,7 @@ export const ComposerToolbar = ({
                     <Button
                         icon
                         id="voice-entry-mobile-button"
-                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak"
+                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center"
                         shape="ghost"
                         size="small"
                         onClick={sendVoiceEntryClickEvent}

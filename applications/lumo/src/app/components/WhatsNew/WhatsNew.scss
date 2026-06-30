@@ -24,29 +24,12 @@
 		overflow: visible;
 	}
 
-	.whats-new-modal-shell {
-		display: flex;
-		flex-flow: column nowrap;
-		flex-grow: 1;
-	}
 	svg {
 		border-radius: var(--border-radius-lg);
 	}
 
 	.feature-point svg {
 		border-radius: 0;
-	}
-
-	.whats-new-badge {
-		align-self: flex-start;
-		padding-block: rem(2);
-		padding-inline: rem(12);
-		border-radius: var(--border-radius-sm);
-		background-color: var(--background-weak);
-		color: var(--text-weak);
-		font-size: rem(14);
-		font-weight: var(--font-weight-normal);
-		line-height: rem(20);
 	}
 
 	.whats-new-title {
@@ -62,36 +45,15 @@
 		}
 	}
 
-	p {
-		line-height: 1.5;
-	}
-
 	.feature-point {
 		line-height: 26px;
 	}
 
-	.modal-two-content {
-		margin-block-start: 1.5rem;
-	}
-
-	.modal-two-footer {
-		margin-block-start: 0;
-	}
-
-	.whats-new-modal-footer {
-		min-block-size: rem(36);
-	}
-
 	.whats-new-modal-close {
-		position: absolute;
 		z-index: 10;
 		inset-block-start: 0;
 		inset-inline-end: 0;
 		transform: translate(calc(50% + #{rem(14)}), calc(-100% - #{rem(8)}));
-		inline-size: rem(36);
-		block-size: rem(36);
-		padding: 0;
-		border-radius: var(--border-radius-md);
 		cursor: pointer;
 		box-shadow:
 			0 rem(1) rem(3) rgb(0 0 0 / 0.06),
@@ -121,53 +83,14 @@
 		}
 
 		@media (width <= rem(768)) {
-			// inset-inline-end: auto;
 			inset-block-end: 0;
 			transform: translate(calc(50% - #{rem(16)}), calc(-100% - #{rem(8)}));
 		}
 	}
 
 	.whats-new-modal-illustration {
-		position: relative;
-		overflow: hidden;
-		flex-shrink: 0;
-		block-size: rem(320);
-		inline-size: 100%;
 		background: #f7f5ff;
 		border-start-start-radius: var(--border-radius-lg);
 		border-start-end-radius: var(--border-radius-lg);
-	}
-
-	.whats-new-modal-illustration-blur {
-		position: absolute;
-		inset: 0;
-		inline-size: 100%;
-		block-size: 100%;
-		object-fit: cover;
-		object-position: center;
-		pointer-events: none;
-	}
-
-	.whats-new-modal-illustration-image {
-		position: relative;
-		z-index: 1;
-		object-fit: contain;
-		object-position: center;
-
-		&--sm {
-			max-block-size: rem(160);
-			max-inline-size: 60%;
-		}
-
-		&--md {
-			max-block-size: rem(260);
-			max-inline-size: 80%;
-		}
-
-		&--lg {
-			max-block-size: rem(290);
-			max-inline-size: calc(100% - 2rem);
-			inline-size: 100%;
-		}
 	}
 }
