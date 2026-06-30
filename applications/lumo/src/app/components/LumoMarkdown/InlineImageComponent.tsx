@@ -108,7 +108,14 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
 
     // ── Error / loading states ─────────────────────────────────────────────────
 
-    if (error || !attachment) {
+    // The reference points to an attachment that doesn't exist in the store (e.g. a
+    // fabricated/duplicated `attachment:<id>` the model wrote into its prose). There is
+    // nothing to load or retry, so render nothing instead of a dead "Failed to load" box.
+    if (!attachment) {
+        return null;
+    }
+
+    if (error) {
         return (
             <span
                 className="inline-block p-4 rounded-lg border"
