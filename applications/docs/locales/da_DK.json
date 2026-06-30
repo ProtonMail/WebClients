@@ -336,6 +336,9 @@
       "Download anyway": [
         "Download alligevel"
       ],
+      "Download debug information": [
+        "Download fejlfindingsoplysninger"
+      ],
       "Download logs": [
         "Download logfiler"
       ],
@@ -378,11 +381,20 @@
       "Export contact group": [
         "Eksporter kontaktgruppe"
       ],
+      "Export editor state for version": [
+        "Eksportér editortilstand for version"
+      ],
       "Export selection as .vcf": [
         "Eksportér det valgte som .vcf"
       ],
+      "Export this version (as docx)": [
+        "Eksportér denne version (som docx)"
+      ],
       "Export this version (as xlsx)": [
         "Eksportér denne version (som xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Eksportér YJS-tilstand for version"
       ],
       "Forgot password?": [
         "Glemt adgangskode?"
@@ -639,6 +651,9 @@
       "Reload": [
         "Genindlæs"
       ],
+      "Reload spreadsheet": [
+        "Genindlæs regneark"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -668,6 +683,9 @@
       ],
       "Report a problem": [
         "Anmeld et problem"
+      ],
+      "Report issue": [
+        "Rapportér problem"
       ],
       "Request a call": [
         "Anmod om opkald"
@@ -3159,6 +3177,9 @@
       "Failed to remove older revisions": [
         "Kunne ikke fjerne ældre versioner"
       ],
+      "Failed to rename document": [
+        "Kunne ikke omdøbe dokumentet"
+      ],
       "Failed to rename document. Please try again later.": [
         "Det lykkedes ikke at omdøbe dokumentet. Prøv igen senere."
       ],
@@ -3945,6 +3966,9 @@
       ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
@@ -4747,6 +4771,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
+      "Disable table of contents": [
+        "Deaktivér indholdsfortegnelse"
+      ],
       "Display word count": [
         "Vis antal ord"
       ],
@@ -4800,6 +4827,9 @@
       ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
+      ],
+      "Enable table of contents": [
+        "Aktivér indholdsfortegnelse"
       ],
       "End-to-end encrypted": [
         "End-to-end krypteret"
@@ -5141,6 +5171,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ups! Dette regneark kan ikke gemme dine seneste redigeringer, så vi har sat redigeringen på pause for at forhindre dig i at miste dit arbejde.\nHjælp os med at forbedre denne situation ved at rapportere problemet. Hvis du er tryg ved at dele regnearksindhold, skal du vedhæfte fejlfindingsoplysningerne nedenfor til din rapport."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
@@ -9909,9 +9942,6 @@
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
-      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -10142,6 +10172,9 @@
       ],
       "Edit image": [
         "Redigér billede"
+      ],
+      "Editing paused": [
+        "Redigering sat på pause"
       ],
       "Email addresses": [
         "E-mailadresser"

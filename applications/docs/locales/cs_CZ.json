@@ -900,6 +900,9 @@
       "Verify account": [
         "Ověřit účet"
       ],
+      "Verify now": [
+        "Ověřit nyní"
+      ],
       "View": [
         "Zobrazit"
       ],
@@ -1819,6 +1822,9 @@
       "Canada": [
         "Kanada"
       ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
+      ],
       "Cape Verde": [
         "Kapverdské ostrovy"
       ],
@@ -2608,6 +2614,9 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Zajistěte si přístup ke svému účtu a datům i v případě ztráty hesla ${ BRAND_NAME }."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémové zahájení používání ${ BRAND_NAME } vaším týmem importujte data ze služeb Google, Outlook a dalších."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -3912,6 +3921,9 @@
       ],
       "Security key": [
         "Bezpečnostní klíč"
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
@@ -4541,8 +4553,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatické připojení**: Otevírá a připojuje k VPN, jakmile zapnete zařízení."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -4778,6 +4799,9 @@
       "Display word count": [
         "Zobrazit počet slov"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamatujete si své heslo? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Dokument je v koši"
       ],
@@ -4912,6 +4936,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 GB bezplatného šifrovaného úložného prostoru"
@@ -5174,6 +5201,9 @@
       "Password must have:": [
         "Heslo musí obsahovat:"
       ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
       "Pending invitations": [
         "Čekající pozvánky"
       ],
@@ -5206,6 +5236,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, které chcete importovat:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupiny.",
@@ -5477,6 +5510,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
       ],
@@ -5506,6 +5542,9 @@
       ],
       "Trash": [
         "Koš"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
@@ -5566,6 +5605,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -5858,11 +5900,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktivní podpisový klíč"
+      ],
       "Compromised": [
         "Kompromitovaný"
       ],
       "Expired": [
         "Prošlý"
+      ],
+      "Fallback": [
+        "Záložní"
       ],
       "KOO": [
         "KOO"
@@ -5892,6 +5940,9 @@
         "${ n } měsíce",
         "${ n } měsíců",
         "${ n } měsíců"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
@@ -6039,6 +6090,9 @@
       ],
       "Download anyway": [
         "Přesto stáhnout"
+      ],
+      "Drive": [
+        "Disk"
       ],
       "Duplicate found": [
         "Nalezeny duplicity"
@@ -7116,6 +7170,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
       ],
@@ -7278,6 +7335,9 @@
       "Multiple admin roles": [
         "Více rolí správce"
       ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
       "Online document editor": [
         "Online editor dokumentů"
       ],
@@ -7427,6 +7487,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
+      ],
+      "Unlock streaming": [
+        "Odblokování streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",
@@ -7837,6 +7900,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
+      ],
       "Access advanced VPN features": [
         "Odemkněte pokročilé VPN funkce"
       ],
@@ -8564,8 +8633,17 @@
       "External key automatically fetched via WKD.": [
         "Externí klíč byl automaticky stažen z WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v současnosti podepisuje zprávy tímto klíčem"
+      ],
+      "This key is used for message verification": [
+        "Tento klíč se používá k ověření zpráv"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Tento klíč se používá k šifrování zpráv tomuto kontaktu."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento klíč se používá k šifrování zpráv tomuto kontaktu ve starších aplikacích"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
@@ -10430,6 +10508,9 @@
       "Merging contacts": [
         "Slučování kontaktů"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrujte svou organizaci do ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Minikalendář"
       ],
@@ -10658,6 +10739,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
+      "Verify your password": [
+        "Ověření hesla"
+      ],
       "VPN explained": [
         "Vysvětlení VPN"
       ],
@@ -10748,6 +10832,9 @@
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ],
       "Load image": [
         "Načíst obrázek"

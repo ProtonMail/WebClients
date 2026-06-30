@@ -3253,9 +3253,6 @@
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
       ],
-      "No drive found to import": [
-        "Es wurde kein Laufwerk zum Importieren gefunden"
-      ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
@@ -3264,9 +3261,6 @@
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Einer der Kontakte hat keine E-Mail-Adresse: ${ noEmailsContactNamesList }",
@@ -3487,9 +3481,6 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
-      ],
-      "Unexpected error, we can't import the files": [
-        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -3954,6 +3945,9 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -4826,7 +4820,7 @@
         "Passwort eingeben"
       ],
       "Enter the code from your authenticator app": [
-        "Code aus deiner Authentifizierungs-App ein eingeben"
+        "Code aus deiner Authentifizierungs-App eingeben"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -4884,9 +4878,6 @@
       ],
       "File will not be updated": [
         "Datei wird nicht aktualisiert."
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
       ],
       "finance": [
         "Finanzen"
@@ -6055,6 +6046,9 @@
       ],
       "Download anyway": [
         "Trotzdem herunterladen"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Duplicate found": [
         "Duplikat gefunden"
