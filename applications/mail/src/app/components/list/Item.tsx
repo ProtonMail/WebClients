@@ -27,6 +27,8 @@ import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/us
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
+import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
+import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -88,6 +90,8 @@ const Item = ({
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
 
     const elementID = useMailSelector(selectElementID);
+
+    const { userIsInOnboarding, activeStep } = useCategoriesOnboarding();
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
@@ -225,6 +229,8 @@ const Item = ({
                     dragged && 'item-dragging',
                     useContentSearch && columnLayout && 'es-three-rows',
                     useContentSearch && !columnLayout && 'es-row-results',
+                    activeStep === OnboardingStep.CATEGORIZE && index !== 1 && 'opacity-30',
+                    activeStep !== OnboardingStep.CATEGORIZE && userIsInOnboarding && 'opacity-30',
                 ])}
                 style={{ '--index': index }}
                 ref={elementRef}
