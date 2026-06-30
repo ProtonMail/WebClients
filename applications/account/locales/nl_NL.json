@@ -8601,9 +8601,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
-      ],
       "Security key": [
         "Beveiligingssleutel"
       ],
@@ -8615,6 +8612,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Dit zal alle beveiligingssleutels voor uw account verwijderen."
+      ],
+      "Touch your security key.": [
+        "Raak uw beveiligingssleutel aan."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifieer uw identiteit met een fysieke U2F of FIDO2 beveiligingssleutel"
@@ -9677,9 +9677,6 @@
       ],
       "${ boldName } will be set as default calendar.": [
         "${ boldName } zal worden ingesteld als standaardagenda."
-      ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "${ BRAND_NAME } Business abonnementen bieden uw team alle samenwerkingstools die ze nodig hebben om productief en georganiseerd te werken, terwijl uw bedrijf wordt beschermd."
       ],
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
@@ -14659,6 +14656,9 @@
       "Donation amount": [
         "Donatiebedrag"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Duur"
       ],
@@ -15712,12 +15712,12 @@
     },
     "Label (begin date/advanced search)": {
       "From": [
-        "Afzender"
+        "Van"
       ]
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Naar"
+        "Tot"
       ]
     },
     "Label BYOE": {
@@ -18477,7 +18477,7 @@
         "Desktop"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Kies een weergavenaam om te beginnende. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
+        "Kies een weergavenaam om te beginnen. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
       ]
     },
     "Onboarding Trial": {
@@ -19892,7 +19892,7 @@
         "E-mailadres"
       ],
       "End date": [
-        "Eind datum"
+        "Einddatum"
       ],
       "Enter a name": [
         "Voer een naam in"
@@ -19988,7 +19988,7 @@
         "Selecteer provincie"
       ],
       "Start date": [
-        "Begindatum"
+        "Startdatum"
       ],
       "Text": [
         "Tekst"
@@ -21096,7 +21096,7 @@
         "Controleer de veiligheid van uw account"
       ],
       "Safeguard account now": [
-        "Veilige account nu"
+        "Beveilig account nu"
       ],
       "Safeguard your account": [
         "Bescherm uw account"
@@ -23637,7 +23637,7 @@
         "${ planName } geeft u toegang tot alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }. Privacy is ingebouwd, zodat u verder kunt, wetende dat uw gegevens en identiteit veilig zijn."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over uw gegevens en de beveiliging daarvan te hebben."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName } geeft u onbeperkte privacy en meer opslagruimte voor tot wel 2 personen."
@@ -26745,6 +26745,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclusief professioneel e-mailadres bij @yourdomain.com, cloudopslag met mogelijkheden voor gezamenlijke documentbewerking, planning en videoconferenties, wachtwoordbeheer, een beveiligde ${ VPN_SHORT_APP_NAME } en meer."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-ondersteuning, menselijke expert binnen handbereik!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Leden die geen 2FA gebruiken krijgen een e-mail met het verzoek om deze zo snel mogelijk in te schakelen. Single sign-on gebruikers zullen de e-mail herinnering niet ontvangen."

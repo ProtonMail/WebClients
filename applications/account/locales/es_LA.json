@@ -1383,6 +1383,9 @@
       "Review": [
         "Revisar"
       ],
+      "Review changes": [
+        "Revisar cambios"
+      ],
       "Review recovery options": [
         "Revisar opciones de recuperación"
       ],
@@ -5547,6 +5550,12 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
       ],
+      "You can still login with this address and re-connect at any time.": [
+        "Todavía puede iniciar sesión con esta dirección y volver a conectarse en cualquier momento."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
+      ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
         "Está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
@@ -7378,6 +7387,9 @@
       "No contacts found to import": [
         "No se encontraron contactos para importar"
       ],
+      "No drive found to import": [
+        "No se encontró ninguna unidad para importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
@@ -7395,6 +7407,9 @@
       ],
       "Not a valid number": [
         "Número no válido"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
@@ -7688,6 +7703,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Error inesperado, no podemos importar los contactos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
       ],
       "Unknown error": [
         "Error desconocido"
@@ -8633,8 +8651,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserte una clave de seguridad asociada con la cuenta de ${ BRAND_NAME }."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Inserte la llave de seguridad en el puerto USB."
+      "Insert your security key into your device.": [
+        "Inserte su llave de seguridad en su dispositivo."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -8647,6 +8665,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Esto eliminará todas las llaves de seguridad vinculadas a la cuenta."
+      ],
+      "Touch your security key.": [
+        "Toque su llave de seguridad."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique su identidad con una llave de seguridad U2F o FIDO2"
@@ -9059,6 +9080,12 @@
       ],
       "General": [
         "General"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionar usuarios y grupos, asignar roles y asignar licencias a los miembros."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionar configuración de seguridad y ver todos los registros de eventos y los detalles de los usuarios."
       ],
       "Roles and permissions": [
         "Roles y permisos"
@@ -9710,8 +9737,8 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } se definirá como calendario por defecto."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "Los planes de ${ BRAND_NAME } Business le ofrece a su equipo todas las herramientas de colaboración que necesitan para ser productivos y organizados en su trabajo, al tiempo que protege su negocio."
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Los planes ${ BRAND_NAME } Business ofrecen a su equipo todas las herramientas de colaboración que necesita para trabajar de forma productiva y organizada, al tiempo que protegen su negocio."
       ],
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
@@ -9861,8 +9888,8 @@
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
       ],
       "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "Se ha añadido ${ pendingAdminMemberCount } nuevo miembro a través de tu proveedor de identidad y está pendiente de revisión.",
-        "Se han añadido ${ pendingAdminMemberCount } nuevos miembros a través de tu proveedor de identidad y están pendientes de revisión."
+        "Se añadió ${ pendingAdminMemberCount } miembro nuevo a través de su proveedor de identidad y está pendiente de revisión.",
+        "Se añadió ${ pendingAdminMemberCount } miembros nuevos a través de su proveedor de identidad y está pendiente de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -11046,6 +11073,9 @@
       ],
       "Featured in ZDNet": [
         "Publicado en ZDNet"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
       ],
       "Fill in user details": [
         "Completar datos del usuario"
@@ -12398,6 +12428,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronice y gestione archivos con la aplicación ${ DRIVE_APP_NAME }. Cree y comparta documentos en ${ DOCS_APP_NAME } y guárdelos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
       ],
+      "Synced from identity provider": [
+        "Sincronizado desde el proveedor de identidad"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por TechRadar Pro con una calificación de 4,2 sobre 5 estrellas"
       ],
@@ -13661,6 +13694,9 @@
       "Declined": [
         "Rechazada"
       ],
+      "Group Owner": [
+        "Propietario del grupo"
+      ],
       "Paused": [
         "En pausa"
       ],
@@ -14708,6 +14744,9 @@
       "Donation amount": [
         "Monto de la donación"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Duración"
       ],
@@ -14781,7 +14820,7 @@
         "Ingresar código"
       ],
       "Enter current password": [
-        "Introduzca la contraseña actual"
+        "Ingrese la contraseña actual"
       ],
       "Enter name or email address": [
         "Ingrese nombre o dirección de correo"
@@ -14937,7 +14976,7 @@
         "Importar a:"
       ],
       "Import your emails": [
-        "Importar sus correos electrónicos"
+        "Importe sus correos electrónicos"
       ],
       "Inbox": [
         "Bandeja de entrada"
@@ -15134,6 +15173,9 @@
       "Newsletters": [
         "Boletines informativos"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletines: noticias, correos editoriales y contenido no promocional"
+      ],
       "No": [
         "No"
       ],
@@ -15224,6 +15266,9 @@
       "Password": [
         "Contraseña"
       ],
+      "Password check-ins": [
+        "Comprobaciones de contraseña"
+      ],
       "Password strength": [
         "Nivel de seguridad de la contraseña"
       ],
@@ -15287,11 +15332,17 @@
       "Primary": [
         "Principal"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal: correos personales y laborales más actualizaciones importantes"
+      ],
       "Priority support": [
         "Soporte prioritario"
       ],
       "Promotions": [
         "Promociones"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promociones: ofertas, descuentos y correos de mercadeo"
       ],
       "Prompt to trust keys": [
         "Solicitar confianza en las claves"
@@ -15468,6 +15519,9 @@
       "Social": [
         "Redes Sociales"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Social: actualizaciones de redes sociales, actividad y mensajes"
+      ],
       "Social media updates and activity": [
         "Actualizaciones y actividad de redes sociales"
       ],
@@ -15576,6 +15630,9 @@
       "Transactions": [
         "Transacciones"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transacciones: recibos, reservas, facturas y órdenes"
+      ],
       "Two-password mode": [
         "Modo de dos contraseñas"
       ],
@@ -15596,6 +15653,9 @@
       ],
       "Updates": [
         "Actualizaciones"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Actualizaciones: confirmaciones automáticas, alertas y actualizaciones de cuenta"
       ],
       "Upload 1 or more encryption keys": [
         "Cargue 1 o más claves de cifrado"
@@ -16642,6 +16702,9 @@
       ],
       "Add address": [
         "Agregar dirección"
+      ],
+      "Change backup password": [
+        "Cambiar contraseña de respaldo"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -19457,6 +19520,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Asegúrese de memorizar o guardar de manera segura porque es la clave para descifrar sus datos."
+      ],
+      "Turn off check-ins": [
+        "Desactivar comprobaciones"
+      ],
+      "Turn off password check-ins?": [
+        "¿Desactivar comprobaciones de contraseña?"
       ]
     },
     "passwordless": {
@@ -21540,7 +21609,7 @@
         "Esto restaurará el acceso a correos electrónicos, contactos, archivos, contraseñas y cualquier otro dato cifrado en su cuenta después de restablecer la contraseña."
       ],
       "To help you remember your password, we’ll periodically ask you to enter it.": [
-        "Para ayudarle a recordar su contraseña, se le pide que la introduzca periódicamente."
+        "Para ayudarle a recordar su contraseña, se le pide que la ingrese periódicamente."
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Para asegurarnos que la dirección de correo es suya, ingrese el código de verificación enviado a ${ boldEmail }."
@@ -21659,6 +21728,66 @@
       ],
       "Testing SAML configuration": [
         "Probando la configuración SAML"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } miembro nuevo",
+        "${ memberCount } miembros nuevos"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grupo sincronizado",
+        "${ numberOfPendingGroups } grupos sincronizados"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } usuario sincronizado",
+        "${ numberOfPendingUsers } usuarios sincronizados"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grupo",
+        "${ pendingGroupsCount } grupos"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grupo sincronizado.",
+        "${ pendingGroupsCount } grupos sincronizados."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } usuario",
+        "${ pendingUsersCount } usuarios"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } usuario sincronizado.",
+        "${ pendingUsersCount } usuarios sincronizados."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } y ${ groupsText } sincronizados."
+      ],
+      "Approve changes from your identity provider": [
+        "Aprobar cambios desde su proveedor de identidad"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Se necesita una aprobación final para acceder a través de todos los servicios de ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "Desde su proveedor de identidad"
+      ],
+      "New": [
+        "Nuevo"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Una vez aprobado, podrán acceder a todos los servicios de ${ BRAND_NAME } y compartir de forma segura."
+      ],
+      "Private user": [
+        "Usuario privado"
+      ],
+      "Review users and groups before finishing setup": [
+        "Revise usuarios y grupos antes de terminar la configuración"
+      ],
+      "Updated": [
+        "Actualizado"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Usuarios que ha establecido como privados necesitan aceptar la invitación para finalizar la configuración. Les enviaremos una invitación una vez que los apruebe."
       ]
     },
     "scim: Action": {
@@ -21841,6 +21970,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Añadir a ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Le permite agregar una videoconferencia de Zoom a cualquiera de sus eventos del calendario"
       ]
@@ -23352,6 +23484,9 @@
         "${ count } persona",
         "${ count } personas"
       ],
+      "... waiting": [
+        "... esperando"
+      ],
       "Add a phone number": [
         "Añadir un número de teléfono"
       ],
@@ -23361,11 +23496,17 @@
       "Available on this device": [
         "Disponible en este dispositivo"
       ],
+      "completed": [
+        "completado"
+      ],
       "Disable recovery by email": [
         "Desactivar recuperación por correo electrónico"
       ],
       "Disable recovery by phone": [
         "Desactivar la recuperación por teléfono"
+      ],
+      "finalizing": [
+        "finalizando"
       ],
       "Generate a recovery phrase": [
         "Generar una frase de recuperación"
@@ -24276,6 +24417,12 @@
       "Organization name updated": [
         "Nombre de la organización actualizado"
       ],
+      "Password check-ins disabled": [
+        "Se han desactivado las comprobaciones de contraseña"
+      ],
+      "Password check-ins enabled": [
+        "Comprobaciones de contraseña activadas"
+      ],
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles."
       ],
@@ -24926,6 +25073,9 @@
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
+      ],
+      "Approve changes": [
+        "Aprobar cambios"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "¿Ya ha iniciado sesión en ${ BRAND_NAME } en un navegador?"
@@ -26856,7 +27006,7 @@
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
+        "¡Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
@@ -27417,6 +27567,15 @@
       "Invitation email": [
         "Correo de invitación"
       ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionar usuarios y grupos, asignar roles y asignar licencias a los miembros."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionar configuración de seguridad y ver todos los registros de eventos y los detalles de los usuarios."
+      ],
       "Name": [
         "Nombre"
       ],
@@ -27449,6 +27608,9 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Users table: badge": {
