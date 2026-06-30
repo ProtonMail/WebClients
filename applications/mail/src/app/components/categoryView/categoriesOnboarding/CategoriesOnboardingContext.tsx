@@ -18,7 +18,7 @@ import { AudienceType, CategoriesOnboardingFlags, OnboardingStep } from './onboa
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 interface CategoriesOnboardingContextProps {
-    isOnboarding: boolean;
+    userIsInOnboarding: boolean;
     activeStep: OnboardingStep;
     handleSkip: () => void;
     completeCurrentStep: () => void;
@@ -129,9 +129,11 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         void b2cOnboardingViewFlag.update(setBit(flagValue, bit));
     };
 
-    const isOnboarding = activeStep !== OnboardingStep.NONE && activeStep !== OnboardingStep.DONE;
+    const userIsInOnboarding = activeStep !== OnboardingStep.NONE && activeStep !== OnboardingStep.DONE;
     return (
-        <CategoriesOnboardingContext.Provider value={{ activeStep, isOnboarding, handleSkip, completeCurrentStep }}>
+        <CategoriesOnboardingContext.Provider
+            value={{ activeStep, userIsInOnboarding, handleSkip, completeCurrentStep }}
+        >
             {children}
         </CategoriesOnboardingContext.Provider>
     );
