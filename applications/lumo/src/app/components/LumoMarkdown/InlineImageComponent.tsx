@@ -13,7 +13,7 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { clearAttachmentLoading } from '../../redux/slices/attachmentLoadingState';
 import { setPendingPrefill } from '../../redux/slices/composerActions';
 import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
-import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
+import { injectNativeImageGenerationHelper } from '../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
@@ -41,12 +41,10 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     const handleOpenOverlay = useCallback((mode: 'preview' | 'edit') => {
         setOverlayDefaultMode(mode);
         setOverlayOpen(true);
-        setNativeComposerVisibility(false);
     }, []);
 
     const handleCloseOverlay = useCallback(() => {
         setOverlayOpen(false);
-        setNativeComposerVisibility(true);
     }, []);
 
     const imageDataUrl = useMemo(() => {
@@ -84,6 +82,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
             // Prefill the current conversation's composer — do not navigate away.
             const prefill = description || c('collider_2025:Prefill').t`Edit this image:`;
             dispatch(setPendingPrefill(prefill));
+            injectNativeImageGenerationHelper(prefill);
         },
         [handleFilesSelected, dispatch]
     );

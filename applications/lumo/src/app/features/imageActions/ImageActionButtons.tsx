@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { IMAGE_STYLE_OPTIONS } from './styleOptions';
 
 const BUTTON_STYLE = 'image-action-btn flex flex-row gap-2 flex-nowrap items-center w-fit-content';
@@ -49,6 +50,7 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
     const [opensDown, setOpensDown] = useState(false);
     const [maxMenuHeight, setMaxMenuHeight] = useState<number | undefined>();
     const menuRef = useRef<HTMLSpanElement>(null);
+    const { isSmallScreen } = useIsLumoSmallScreen();
 
     useEffect(() => {
         if (!showMenu) return;
@@ -71,12 +73,16 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
         const spaceBelow = window.innerHeight - rect.bottom - MENU_VIEWPORT_MARGIN;
         const spaceAbove = rect.top - MENU_VIEWPORT_MARGIN;
 
+        // On mobile always open upward: the native composer is drawn outside the DOM,
+        // so `window.innerHeight` overestimates the space below and the menu would open
+        // down into the area covered by the composer and get cut off.
         const shouldOpenDown =
-            spaceBelow >= estimatedMenuHeight || (spaceBelow > spaceAbove && spaceBelow >= MENU_ITEM_HEIGHT * 2);
+            !isSmallScreen &&
+            (spaceBelow >= estimatedMenuHeight || (spaceBelow > spaceAbove && spaceBelow >= MENU_ITEM_HEIGHT * 2));
 
         setOpensDown(shouldOpenDown);
         setMaxMenuHeight(Math.max(MENU_ITEM_HEIGHT * 2, shouldOpenDown ? spaceBelow : spaceAbove));
-    }, [showMenu, side]);
+    }, [showMenu, side, isSmallScreen]);
 
     const wrapperClass = [
         'image-style-menu relative inline-block',

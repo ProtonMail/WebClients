@@ -10,8 +10,8 @@ import lumojiCreateLight from '@proton/styles/assets/img/lumo/lumoji-create-ligh
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
-import { FilesManagementView } from '../../components/Files';
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
+import { FilesManagementView } from '../../components/Files';
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
@@ -199,7 +199,7 @@ const CreateTabContent = ({
                 }}
             >
                 <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
-                    <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" className={"pb-4"} />
+                    <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" className={'pb-4'} />
                     <h1 className="main-text lh100 text-wrap-balance text-center mb-8 relative z-10">
                         {c('collider_2025:Title').t`What do you want to create today?`}
                     </h1>
@@ -261,7 +261,9 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
         async (imageData: string, _mode: DrawingMode, description: string) => {
             const file = base64ToFile(imageData, `edited-image-${Date.now()}.png`);
             handleFilesSelected([file]);
-            setComposerPrefill(description || c('collider_2025:Prefill').t`Edit this image:`);
+            const prompt = description || c('collider_2025:Prefill').t`Edit this image:`;
+            setComposerPrefill(prompt);
+            injectNativeImageGenerationHelper(prompt);
         },
         [handleFilesSelected]
     );
