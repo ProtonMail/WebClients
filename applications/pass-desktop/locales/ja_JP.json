@@ -1767,6 +1767,9 @@
       "Enter the address you want to email.": [
         "メールを送りたいアドレスを入力してください。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。${ digit }桁目。"
+      ],
       "Enter your extra password": [
         "追加パスワードを入力してください"
       ],
@@ -2959,6 +2962,9 @@
       "Expired tokens (${ expired.length })": [
         "期限切れトークン(${ expired.length })"
       ],
+      "Expires in": [
+        "有効期限"
+      ],
       "Expiry Date": [
         "有効期限"
       ],
@@ -3820,7 +3826,7 @@
         "ファイル"
       ],
       "View": [
-        "表示切り替え"
+        "表示"
       ],
       "Window": [
         "ウィンドウ"
@@ -4029,6 +4035,9 @@
       ],
       "Coupon": [
         "クーポン"
+      ],
+      "e.g. My automation script": [
+        "例：マイ自動化スクリプト"
       ],
       "E.g., ": [
         "例: "

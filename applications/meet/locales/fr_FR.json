@@ -4,9 +4,71 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(s'ouvre dans un nouvel onglet)"
+      ],
+      "camera off": [
+        "caméra éteinte"
+      ],
+      "camera on": [
+        "caméra allumée"
+      ],
+      "Meeting controls": [
+        "Contrôles de réunion"
+      ],
+      "microphone muted": [
+        "microphone coupé"
+      ],
+      "microphone on": [
+        "microphone allumé"
+      ]
+    },
     "Accessibility announcement": {
       "${ name } lowered their hand": [
         "${ name } a baissé la main."
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Connexion via relais TURN en raison de restrictions réseau. Cela peut augmenter la latence et affecter la qualité des appels."
+      ],
+      "Recording saved": [
+        "L'enregistrement a été enregistré."
+      ],
+      "Screen share started": [
+        "Partage d'écran démarré"
+      ],
+      "Screen share started by ${ name }": [
+        "Partage d'écran initié par ${ name }"
+      ],
+      "Screen share stopped": [
+        "Le partage d'écran s'est arrêté"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Partage d'écran arrêté par ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "La réunion se terminera dans 1 minute"
+      ],
+      "The meeting will close in 15 seconds": [
+        "La réunion se terminera dans 15 secondes."
+      ],
+      "The meeting will close in 30 seconds": [
+        "La réunion se terminera dans 30 secondes."
+      ],
+      "The meeting will end in 1 minute": [
+        "La réunion se terminera dans 1 minute"
+      ],
+      "The meeting will end in 10 minutes": [
+        "La réunion se terminera dans 10 minutes"
+      ],
+      "The meeting will end in 15 seconds": [
+        "La réunion se terminera dans 15 secondes."
+      ],
+      "The meeting will end in 5 minutes": [
+        "La réunion se terminera dans 5 minutes"
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Vous êtes le seul participant. La réunion se fermera dans 2 minutes si personne ne la rejoint."
       ],
       "Your camera has been turned off by the host": [
         "Votre caméra a été désactivée par l'hôte."
@@ -57,6 +119,9 @@
       ],
       "Close": [
         "Fermer"
+      ],
+      "Close preview": [
+        "Fermer l'aperçu"
       ],
       "Close this banner": [
         "Fermer cette bannière"
@@ -154,9 +219,6 @@
       "Enable camera": [
         "Activer la caméra"
       ],
-      "Enable video": [
-        "Activer la vidéo"
-      ],
       "Enable waiting room": [
         "Activer la salle d'attente"
       ],
@@ -222,6 +284,9 @@
       ],
       "Lower hand": [
         "Baisser la main"
+      ],
+      "Minimize preview": [
+        "Réduire l'aperçu"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
@@ -356,6 +421,9 @@
       "Skip": [
         "Ignorer"
       ],
+      "Skip to main content": [
+        "Passer au contenu principal"
+      ],
       "Start an instant meeting": [
         "Démarrer une réunion instantanée"
       ],
@@ -487,6 +555,9 @@
       "Meeting details": [
         "Informations de la réunion"
       ],
+      "More options": [
+        "Plus d'options"
+      ],
       "Noise cancellation": [
         "Suppression du bruit"
       ],
@@ -518,7 +589,7 @@
         "Afficher la durée"
       ],
       "Show floating thumbnail during screensharing": [
-        "Afficher la miniature flottante pendant le partage d'écran"
+        "Afficher une miniature flottante pendant le partage d'écran"
       ],
       "Show passphrase": [
         "Afficher la phrase secrète"
@@ -554,6 +625,44 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Applications ${ BRAND_NAME }"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Attribuer l'hôte"
+      ],
+      "Audio settings": [
+        "Paramètres audio"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Chat messages": [
+        "Messages du chat"
+      ],
+      "Device settings": [
+        "Paramètres de l'appareil"
+      ],
+      "Meeting details": [
+        "Information sur la réunion"
+      ],
+      "Meeting rooms": [
+        "Salles de réunion"
+      ],
+      "Participants": [
+        "Participants"
+      ],
+      "Participants list": [
+        "Liste des participants"
+      ],
+      "Primary navigation": [
+        "Navigation principale"
+      ],
+      "Settings": [
+        "Paramètres"
+      ],
+      "Video settings": [
+        "Paramètres vidéo"
       ]
     },
     "Badge": {
@@ -1566,6 +1675,9 @@
       "Failed to join meeting. Please try again later.": [
         "Impossible de rejoindre la réunion. Veuillez réessayer plus tard."
       ],
+      "Failed to join meeting. Please try again.": [
+        "Impossible de rejoindre la réunion. Veuillez réessayer."
+      ],
       "Failed to lock meeting": [
         "La réunion n'a pas pu être verrouillée"
       ],
@@ -1580,6 +1692,9 @@
       ],
       "Failed to send reaction. Please try again.": [
         "Impossible d'envoyer la réaction. Veuillez réessayer."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "La réunion n'a pas pu démarrer. Veuillez réessayer."
       ],
       "Failed to start recording": [
         "Le démarrage de l'enregistrement a échoué."
@@ -1705,6 +1820,9 @@
       ],
       "Security key": [
         "Clé de sécurité"
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -2101,6 +2219,9 @@
       "Loading meetings...": [
         "Chargement des réunions..."
       ],
+      "Loading recordings…": [
+        "Chargement des enregistrements en cours…"
+      ],
       "Loading...": [
         "Chargement en cours"
       ],
@@ -2145,6 +2266,9 @@
       ],
       "Member": [
         "Membre"
+      ],
+      "Message from ${ participantName }": [
+        "Message de ${ participantName }"
       ],
       "microphone": [
         "Microphone"
@@ -2215,6 +2339,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Nos réunions chiffrées de bout-en-bout protègent la confidentialité des données et favorisent une expression véritablement libre."
       ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Page ${ displayPage } sur ${ totalPages }"
+      ],
       "Participant": [
         "Participant"
       ],
@@ -2244,6 +2371,12 @@
       ],
       "privacy": [
         "confidentialité"
+      ],
+      "Quick reactions": [
+        "Réactions rapides"
+      ],
+      "Reactions": [
+        "Réactions"
       ],
       "Reconnected successfully": [
         "Reconnecté"
@@ -2416,6 +2549,9 @@
       "Video effects": [
         "Effets vidéo"
       ],
+      "Warning": [
+        "Attention"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
@@ -2545,6 +2681,9 @@
       "Copy invite link": [
         "Copier le lien d'invitation"
       ],
+      "Create meeting options": [
+        "Créer des options de réunion"
+      ],
       "Created": [
         "Créé"
       ],
@@ -2562,6 +2701,12 @@
       ],
       "Email address": [
         "Adresse e-mail"
+      ],
+      "Emoji picker": [
+        "Sélecteur d'emoji"
+      ],
+      "Emoji reactions": [
+        "Réactions Emoji"
       ],
       "Enabled": [
         "Activé"
@@ -2602,11 +2747,20 @@
       "Last used": [
         "Dernière utilisation"
       ],
+      "Leave meeting options": [
+        "Quitter les options de la réunion"
+      ],
       "Manage recordings": [
         "Gérer les enregistrements"
       ],
       "Meeting ID": [
         "Identifiant de la réunion"
+      ],
+      "Meeting link": [
+        "Lien de la réunion"
+      ],
+      "Message": [
+        "Message"
       ],
       "Microphone Active": [
         "Microphone actif"
@@ -2628,6 +2782,9 @@
       ],
       "Outlook Calendar": [
         "Calendrier Outlook"
+      ],
+      "Participant controls": [
+        "Contrôles des participants"
       ],
       "Passphrase": [
         "Phrase secrète"
@@ -2652,6 +2809,9 @@
       ],
       "Schedule meeting": [
         "Planifier une réunion"
+      ],
+      "Screen share": [
+        "Partage d'écran"
       ],
       "Selected Camera": [
         "Caméra sélectionnée"

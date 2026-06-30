@@ -956,6 +956,12 @@
       "Select country": [
         "Seleccionar país"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccione una puntuación del ${ n } al ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
+      ],
       "Set as album cover": [
         "Establecer como portada del álbum"
       ],
@@ -3726,6 +3732,9 @@
       "No contacts found to import": [
         "No se encontraron contactos para importar"
       ],
+      "No drive found to import": [
+        "No se encontró ninguna unidad para importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
@@ -3737,6 +3746,9 @@
       ],
       "Not a valid number": [
         "Número no válido"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
@@ -3975,6 +3987,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Error inesperado, no podemos importar los contactos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estrategia de conflicto desconocida: ${ strategy }"
@@ -4493,6 +4508,9 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -5650,6 +5668,9 @@
       "Files and folders that others shared with you will appear here": [
         "Los archivos y carpetas que otros comparten con usted aparecerán aquí"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+      ],
       "finance": [
         "finanzas"
       ],
@@ -6181,6 +6202,12 @@
       ],
       "Preparing": [
         "Preparando"
+      ],
+      "Preparing download": [
+        "Preparando la descarga"
+      ],
+      "Preparing…": [
+        "Preparando…"
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
@@ -7353,6 +7380,9 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplicado encontrado"
       ],
@@ -7415,6 +7445,9 @@
       ],
       "Extended address": [
         "Dirección ampliada"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfactoria"
       ],
       "File": [
         "Archivo"
@@ -7749,6 +7782,9 @@
       "System information": [
         "Información del sistema"
       ],
+      "Tell us more about your experience": [
+        "Cuéntenos más sobre su experiencia."
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7793,6 +7829,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Very Dissatisfied": [
+        "Poco satisfactoria"
       ],
       "Viewer": [
         "Lector"
@@ -9112,6 +9151,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     },
     "new_plans: Subtext": {
@@ -10591,6 +10635,9 @@
       ],
       "New name": [
         "Nombre nuevo"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -12546,16 +12593,16 @@
         "Firma digital parcialmente verificada. Esta carpeta fue cargada usando un enlace para compartir de acceso público por un usuario sin una cuenta de ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
       ],
       "Digital signature verified. This file was securely created by ${ author }.": [
-        "Firma digital verificada. Este archivo se ha creado de forma segura por ${ author }."
+        "Firma digital verificada. Este archivo se creó de forma segura por ${ author }."
       ],
       "Digital signature verified. This file was securely uploaded by ${ author }.": [
-        "Firma digital verificada. Este archivo se ha cargado de forma segura por ${ author }."
+        "Firma digital verificada. Este archivo se cargó de forma segura por ${ author }."
       ],
       "Digital signature verified. This folder was securely created by ${ author }.": [
-        "Firma digital verificada. Esta carpeta se ha creado de forma segura por ${ author }."
+        "Firma digital verificada. Esta carpeta se cargó de forma segura por ${ author }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ author }.": [
-        "Firma digital verificada. Esta carpeta se ha cargado de forma segura por ${ author }."
+        "Firma digital verificada. Esta carpeta se cargó de forma segura por ${ author }."
       ],
       "Discard": [
         "Descartar"
@@ -13221,10 +13268,13 @@
         "No hemos podido confirmar que ${ claimedContentAuthor } haya subido el contenido del archivo. El motivo es el siguiente: ${ activeRevision.contentAuthor.error.error }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
-        "No hemos podido confirmar que el nombre se ha creado o modificado por ${ claimedNameAuthor }. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
+        "No pudimos confirmar que el nombre se creó o modificó por ${ claimedNameAuthor }. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "No hemos podido confirmar que el nodo se ha creado por ${ claimedKeyAuthor }. El motivo es el siguiente: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber su opinión"
       ],
       "Welcome offer": [
         "Bienvenida la oferta"
@@ -13342,7 +13392,7 @@
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
+        "¡Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Load image": [
         "Cargar imagen"

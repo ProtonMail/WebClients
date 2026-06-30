@@ -584,6 +584,9 @@
       "North Korea": [
         "Corea del Nord"
       ],
+      "North Macedonia": [
+        "Macedonia del Nord"
+      ],
       "Northern Mariana Islands": [
         "Isole Marianne Settentrionali"
       ],
@@ -870,6 +873,9 @@
       "Incorrect username": [
         "Username non corretto"
       ],
+      "Invalid verification code": [
+        "Codice di verifica non valido"
+      ],
       "Not a valid number": [
         "Numero non valido"
       ],
@@ -918,9 +924,20 @@
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Touch your security key.": [
+        "Tocca la tua chiave di sicurezza."
       ]
     },
     "fido2: Label": {
@@ -1026,6 +1043,9 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Creare account gratuiti multipli non è permesso dal nostro ${ termsLink }."
       ],
+      "Each code can only be used once": [
+        "Ogni codice può essere utilizzato una sola volta"
+      ],
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
@@ -1037,6 +1057,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Inserisci il codice di verifica. Cifra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
@@ -1268,6 +1291,9 @@
       ],
       "Custom email domains": [
         "Domini email personalizzati"
+      ],
+      "Data retention policies": [
+        "Policy di conservazione dei dati"
       ],
       "Desktop app": [
         "Applicazione desktop"
@@ -1520,6 +1546,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Codice inviato a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifica riuscita"
       ]
     },
     "Title": {
@@ -1531,6 +1560,9 @@
       ],
       "Enter your password": [
         "Inserisci la tua password"
+      ],
+      "Human verification": [
+        "Verifica umana"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"

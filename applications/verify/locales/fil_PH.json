@@ -584,6 +584,9 @@
       "North Korea": [
         "North Korea"
       ],
+      "North Macedonia": [
+        "North Macedonia"
+      ],
       "Northern Mariana Islands": [
         "Northern Mariana Islands"
       ],
@@ -864,8 +867,14 @@
       "Enter 6 digits": [
         "Ilagay ang 6 na digit"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Ilagay ang username nang walang domain (@example.com)"
+      ],
       "Incorrect username": [
         "Maling username"
+      ],
+      "Invalid verification code": [
+        "Hindi valid na verification code"
       ],
       "Not a valid number": [
         "Hindi valid na numero"
@@ -915,9 +924,20 @@
         "Hindi ma-load ang page na ito. Paki-refresh ang page o suriin ang koneksyon sa internet."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Nagkaroon ng problema sa pag-authenticate gamit ang security key. Pakisubukang muli."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Ipasok ang security key na naka-link sa ${ BRAND_NAME } account."
+      ],
       "Security key": [
         "Security key"
+      ],
+      "Touch your security key.": [
+        "I-touch ang security key."
       ]
     },
     "fido2: Label": {
@@ -1023,14 +1043,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Hindi pinahihintulutan ng ${ termsLink } ang paggawa ng maraming libreng account."
       ],
+      "Each code can only be used once": [
+        "Ang bawat code ay magagamit lang nang isang beses"
+      ],
       "Edit email address": [
         "I-edit ang email address"
+      ],
+      "Enter code": [
+        "Ilagay ang code"
       ],
       "Enter the code from your authenticator app": [
         "Ilagay ang code mula sa authenticator app"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ilagay ang verification code na ipinadala sa ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ilagay ang verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ilagay ang sariling password (bilang admin ng organisasyon)."
@@ -1049,6 +1078,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Kung hindi makita ang email sa inbox, mangyaring tingnan ang spam folder."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Kung nawalan ng access sa authenticator app, maaaring gumamit ng 1 sa 16 na backup recovery code na ibinigay noong i-set up ang two-factor authentication. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Nawala ang koneksyon sa internet"
@@ -1259,6 +1291,9 @@
       ],
       "Custom email domains": [
         "Mga custom na domain ng email"
+      ],
+      "Data retention policies": [
+        "Mga patakaran sa pagpapanatili ng data"
       ],
       "Desktop app": [
         "Desktop app"
@@ -1511,6 +1546,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Ipinadala ang code sa ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Matagumpay ang pag-verify"
       ]
     },
     "Title": {
@@ -1522,6 +1560,9 @@
       ],
       "Enter your password": [
         "Ilagay ang password"
+      ],
+      "Human verification": [
+        "Pag-verify ng tao"
       ],
       "Invalid verification code": [
         "Invalid na verification code"

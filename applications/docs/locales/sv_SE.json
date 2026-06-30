@@ -336,6 +336,9 @@
       "Download anyway": [
         "Ladda ner ändå"
       ],
+      "Download debug information": [
+        "Ladda ner felsökningsinformation"
+      ],
       "Download logs": [
         "Ladda ner loggar"
       ],
@@ -380,6 +383,9 @@
       ],
       "Export selection as .vcf": [
         "Exportera val som .vcf"
+      ],
+      "Export this version (as docx)": [
+        "Exportera denna version (som docx)"
       ],
       "Export this version (as xlsx)": [
         "Exportera denna version (som xlsx)"
@@ -636,6 +642,9 @@
       "Reload": [
         "Ladda om"
       ],
+      "Reload spreadsheet": [
+        "Ladda om kalkylblad"
+      ],
       "Remove": [
         "Ta bort"
       ],
@@ -665,6 +674,9 @@
       ],
       "Report a problem": [
         "Rapportera ett problem"
+      ],
+      "Report issue": [
+        "Rapportera problem"
       ],
       "Request a call": [
         "Begär ett samtal"
@@ -1005,6 +1017,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Writing assistant seats": [
+        "Användarplatser för skrivassistent"
       ]
     },
     "Alert": {
@@ -1526,6 +1541,12 @@
       ],
       "Unlimited favorites for quick access": [
         "Obegränsade favoriter för snabb åtkomst"
+      ],
+      "Upload and query multiple large files": [
+        "Ladda upp och sök i flera stora filer"
+      ],
+      "Upload and query small files": [
+        "Ladda upp och sök i små filer"
       ],
       "Web search access": [
         "Webbsökningsåtkomst"
@@ -2631,6 +2652,9 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "För en sömlös introduktion av ditt team till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -3138,6 +3162,9 @@
       "Failed to remove older revisions": [
         "Misslyckades att ta bort äldre revisioner"
       ],
+      "Failed to rename document": [
+        "Misslyckades att byta namn på dokument"
+      ],
       "Failed to rename document. Please try again later.": [
         "Misslyckades att byta namn på dokument. Försök igen senare."
       ],
@@ -3241,6 +3268,9 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
+      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
         "Vissa kontakter har ingen e-postadress: ${ noEmailsContactNamesList } "
@@ -3319,6 +3349,9 @@
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "System för omvänd skattskyldighet stöds inte för detta paket"
       ],
       "Search failed": [
         "Sökning misslyckades"
@@ -3458,6 +3491,9 @@
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
       ],
+      "Unexpected error, we can't import the files": [
+        "Oväntat fel, vi kan inte importera filerna"
+      ],
       "Unknown error": [
         "Okänt fel"
       ],
@@ -3512,6 +3548,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Odekrypterbart namn"
       ]
     },
     "error": {
@@ -3915,6 +3954,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Touch your security key.": [
+        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -4717,6 +4759,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ emailAddress }."
       ],
+      "Disable table of contents": [
+        "Inaktivera innehållsförteckning"
+      ],
       "Display word count": [
         "Visa antalet ord"
       ],
@@ -4770,6 +4815,9 @@
       ],
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
+      ],
+      "Enable table of contents": [
+        "Aktivera innehållsförteckning"
       ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
@@ -4902,6 +4950,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
@@ -5641,6 +5692,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }. Du kan avbryt när som helst.",
+        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }. Du kan avbryt när som helst."
+      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du är på väg att avböja inbjudan att gå med i albumet ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
@@ -5658,6 +5716,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Din prenumeration på ${ plan } kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Det återstående saldot på din prenumeration kommer att läggas till på ditt konto. Lifetime-erbjudandet för ${ PASS_SHORT_APP_NAME } har inget förnyelsepris – det är en engångsbetalning för att få livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
@@ -5803,6 +5864,9 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktiv undertecknare"
+      ],
       "Compromised": [
         "Läckt"
       ],
@@ -6126,6 +6190,9 @@
       ],
       "Main": [
         "Huvud"
+      ],
+      "Main reason for cancelling": [
+        "Huvudsaklig anledning till att avbryta"
       ],
       "Make editor": [
         "Gör till redigerare"
@@ -6546,6 +6613,10 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-användarplats",
+        "${ seats } ${ MEET_APP_NAME }-användarplatser"
       ]
     },
     "meet_2025: Feature": {
@@ -7091,6 +7162,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Mötesbokning"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mötesbokning med ${ n } bokningssida",
+        "Mötesbokning med ${ n } bokningssidor"
+      ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
       ],
@@ -7141,6 +7219,9 @@
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
+      ],
+      "Data retention policies": [
+        "Policy för datalagring"
       ],
       "Dedicated servers optimized for speed": [
         "Dedikerade servrar optimerade för hastighet"
@@ -10113,6 +10194,9 @@
       "Edit image": [
         "Redigera bild"
       ],
+      "Editing paused": [
+        "Redigering pausad"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -10547,6 +10631,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelanden som sociala eller kampanjer. Du kan välja var du vill importera dessa e-postmeddelanden till."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Omedelbar AI-assistans, mänsklig expert nära till hands!"
+      ],
       "Load image": [
         "Ladda bild"
       ],
@@ -10709,6 +10796,9 @@
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
         "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME }-namn."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Överför Bitcoin på ett säkert sätt via e-post istället för att använda komplexa Bitcoin-adresser med 26 tecken som är känsliga för fel"
       ]
     },
     "wallet_signup_2024:app-switcher": {
