@@ -12,7 +12,6 @@ import { pageFromUrl } from '../../helpers/mailboxUrl';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import { useRouterNavigation } from '../../router/hooks/useRouterNavigation';
 import { useMailSelector } from '../../store/hooks';
-import { CategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboarding';
 import { CategoriesVisionaryOnboardingModal } from '../categoryView/categoriesVisionaryOnboarding/CategoriesVisionaryOnboardingModal';
 import MailboxListBannersWrapper from './MailboxListBannersWrapper';
 import MailboxListContainer from './MailboxListContainer';
@@ -109,7 +108,6 @@ export default function MailboxList({
                     checkedIDs={checkedIDs}
                     onCheckAll={handleCheckAll}
                 />
-                <CategoriesOnboarding />
                 <CategoriesVisionaryOnboardingModal />
                 <MailboxListItems
                     listRef={listRefToUse}

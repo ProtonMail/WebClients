@@ -18,7 +18,7 @@ import { AudienceType, FeatureValueDefault, type OnboardingInfo } from './onboar
 const B2B_REQUIRED_NUMBER_OF_MAILS = 20;
 const B2C_REQUIRED_NUMBER_OF_MAILS = 5;
 
-export const useCategoriesOnboarding = (): OnboardingInfo => {
+export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     const [user, loadingUser] = useUser();
     const [organization, loadingOrganization] = useOrganization();
 

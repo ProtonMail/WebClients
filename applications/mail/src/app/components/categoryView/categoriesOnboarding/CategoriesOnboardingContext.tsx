@@ -1,15 +1,29 @@
-import { useEffect, useRef } from 'react';
+import type { PropsWithChildren } from 'react';
+import { createContext, useContext, useEffect, useRef } from 'react';
 
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 
 import { hasSeenOnboardingModal } from './categoriesOnboarding.helpers';
 import { AudienceType } from './onboardingInterface';
-import { useCategoriesOnboarding } from './useCategoriesOnboarding';
+import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
-export const CategoriesOnboarding = () => {
+interface CategoriesOnboardingContextProps {}
+
+export const CategoriesOnboardingContext = createContext<CategoriesOnboardingContextProps | null>(null);
+
+export const useCategoriesOnboarding = () => {
+    const context = useContext(CategoriesOnboardingContext);
+    if (!context) {
+        throw new Error('useCategoriesOnboarding must be used within a CategoriesOnboardingContext');
+    }
+
+    return context;
+};
+
+export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) => {
     const { notify } = useMailGlobalModals();
-    const onboarding = useCategoriesOnboarding();
+    const onboarding = useCategoriesOnboardingEligibility();
     const hasTriggeredModalRef = useRef(false);
 
     useEffect(() => {
@@ -42,5 +56,5 @@ export const CategoriesOnboarding = () => {
         }
     }, [onboarding, notify]);
 
-    return null;
+    return <CategoriesOnboardingContext.Provider value={null}>{children}</CategoriesOnboardingContext.Provider>;
 };
