@@ -50,6 +50,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "დაამატეთ ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add a date": [
         "თარიღის დამატება"
       ],
@@ -215,6 +218,12 @@
       ],
       "Continue import": [
         "შემოტანის გაგრძელება"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "გაგრძელება ${ planOrAppName }-ზე"
+      ],
+      "Continue with Free": [
+        "უფასოთი გაგრძელება"
       ],
       "Continue with Google": [
         "Google-ით გაგრძელება"
@@ -698,6 +707,9 @@
       "Reconnect": [
         "თავიდან დაკავშირება"
       ],
+      "Reconnect to Gmail": [
+        "თავიდან დაკავშირება Gmail-თან"
+      ],
       "Reconnect to Zoom": [
         "თავიდან დაკავშირება Zoom-თან"
       ],
@@ -1077,6 +1089,9 @@
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-ის ლიცენზია"
+      ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME }-ის ადგილები"
       ],
@@ -1099,6 +1114,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } ლიცენზია",
         "${ seats }${ LUMO_APP_NAME } ლიცენზია"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ლიცენზია",
+        "${ seats } ${ MEET_APP_NAME } ლიცენზია"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
@@ -1221,6 +1240,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "მას შემდეგ, რაც საცდელი პერიოდი დასრულდება ${ formattedDate1 }-ში, ის გადაიქცევა ფასიან გამოწერად, რომელიც ავტომატურად განახლდება ყოველ ${ renewCycle } თვეში. თანხა არ ჩამოგეჭრებათ, თუ გააუქმებთ ${ formattedDate2 }-მდე."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "მას შემდეგ, რაც საცდელი პერიოდი დასრულდება ${ formattedDate1 }-ში, ის გადაიქცევა ფასიან გამოწერად, რომელიც ავტომატურად განახლდება ყოველთვიურად. თანხა არ ჩამოგეჭრებათ, თუ გააუქმებთ ${ formattedDate2 }-მდე."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
       ],
@@ -1366,8 +1391,17 @@
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
       ],
+      "Access 15,000+ servers in 120+ countries": [
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
+      ],
       "Access advanced AI models": [
         "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "Block ads, trackers, and malware": [
+        "დაბლოკეთ რეკლამები, ტრეკერები და მავნე პროგრამები"
       ],
       "Built-in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -1375,8 +1409,25 @@
       "Connect 10 devices at once": [
         "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
       ],
+      "Full chat history with easy search and favorites": [
+        "ჩატის სრული ისტორია მარტივი ძიებითა და რჩეულებით"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და თქვენი პარტნიორისთვის"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
+      ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "სპეციალურად შექმნილი NetShield იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერებისა და მავნე პროგრამების დაბლოკვით."
       ]
     },
     "Billing cycle option": {
@@ -1810,6 +1861,9 @@
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვის პროგრამა"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "ყველა პრემიუმ ფუნქცია ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-ისგან, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ისგან"
+      ],
       "Cancel and downgrade": [
         "გაუქმება და ტარიფის ჩამოწევა"
       ],
@@ -1851,6 +1905,10 @@
       ],
       "Subtotal": [
         "ქვეჯამი"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "შუალედური ჯამი ${ cycle } თვისთვის",
+        "შუალედური ჯამი ${ cycle } თვისთვის"
       ],
       "Total": [
         "ჯამი"
@@ -1919,6 +1977,9 @@
       ]
     },
     "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } არის კონფიდენციალურობაზე ორიენტირებული ხელოვნური ინტელექტი, რომელიც გეხმარებათ მეტი საქმე გააკეთოთ და ამავდროულად თქვენი მონაცემები უსაფრთხოდ შეინახოთ. გახსენით მისი სრული პოტენციალი და ისარგებლეთ ახალი ფუნქციების ადრეული წვდომით, მათი გამოშვებისთანავე."
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
       ],
@@ -2255,6 +2316,9 @@
       ],
       "Canada": [
         "კანადა"
+      ],
+      "Canary Islands": [
+        "კანარის კუნძულები"
       ],
       "Cape Verde": [
         "კაბო-ვერდე"
@@ -3073,6 +3137,9 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }-ში გაძლევთ საშუალებას სხვებთან ერთად იმუშაოთ უსაფრთხო, დაშიფრულ გარემოში."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
       ],
@@ -3090,6 +3157,9 @@
       ],
       "Availability unknown": [
         "წვდომადობა უცნობია"
+      ],
+      "Available storage: ${ storageText }": [
+        "ხელმისაწვდომი საცავი: ${ storageText }"
       ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "გააფერადეთ მოვლენები, რომ თქვენი დღე უკეთ დააორგანიზოთ, თვალყური ადევნოთ თქვენს დროს და ამოცანებს შესაბამისი პრიორიტეტი მიანიჭოთ."
@@ -3118,11 +3188,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "ადვილად დაასინქრონიზეთ ფაილები ღრუბლიდან სახლის კომპიუტერამდე და იქონიეთ მათზე წვდომა თქვენი მობილურიდან."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }-ზე გაგზავნილი ელფოსტები ახლა გამოჩნდება ${ MAIL_APP_NAME }-ში."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "წაახალისეთ 2FA-ის გამოყენება თქვენს ორგანიზაციაში დამატებითი უსაფრთხოებისთვის."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "საკმარისი ადგილი წლების განმავლობაში მიღებული ელფოსტისთვის, დანართებისთვის და სხვა."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "დარწმუნდით, რომ ორგანიზაციის მონაცემებთან წვდომა დაცულია მაშინაც კი, როცა თქვენი გუნდი ოფისში არაა, ან საჯარო WiFi-ს იყენებს."
@@ -3132,6 +3208,9 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "თქვენი გუნდის ${ BRAND_NAME }-ში შეუფერხებელი ადაპტაციისთვის, მოახდინეთ თქვენი მონაცემების იმპორტი Google-იდან, Outlook-იდან და სხვა სერვისებიდან."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -3166,8 +3245,20 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. ${ CALENDAR_APP_NAME }-ით სარგებლობა ჩვეულებრივ შეგიძლიათ."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "ეს შეიძლება მოხდეს იმ შემთხვევაში, თუ ნებართვები გაუქმდა ან თქვენი პაროლი შეიცვალა."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }-ში Gmail-ის შეტყობინებების მიღებისა და გაგზავნის გასაგრძელებლად, გთხოვთ, ხელახლა დააკავშიროთ თქვენი ანგარიში."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }-ში Gmail-ის შეტყობინებების მიღებისა და გაგზავნის გასაგრძელებლად, გთხოვთ, ხელახლა დააკავშიროთ თქვენი ანგარიშები."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "იმისათვის, რომ გქონდეთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის, დააყენეთ აღდგენის ფრაზა."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV და VCF ფაილების იმპორტისთვის, დარწმუნდით, რომ ფაილი არ აღემატება ${ MAX_IMPORT_FILE_SIZE_STRING }-ს ან არ შეიცავს ${ maxContactString } კონტაქტზე მეტს. თუ თქვენი ფაილი უფრო დიდია, გთხოვთ, დაყოთ ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
@@ -3175,8 +3266,26 @@
       "To start, give your organization a name.": [
         "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "განბლოკეთ 15 გბ საცავი სულ რაღაც ${ config.offerPrice }-ად."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "გამოიყენეთ ეს სახელმძღვანელო, რათა თქვენმა ორგანიზაციამ სწრაფად მიიღოს სარგებელი ${ BRAND_NAME }-ის ინდუსტრიაში მოწინავე დაშიფვრისა და კონფიდენციალურობის ეკოსისტემიდან."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "ჩვენ ვეღარ ვიღებთ წვდომას ${ boldEmails }-თან."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "ჩვენ შევაჩერებთ იმპორტს საცავის 80%-ზე, რათა დავტოვოთ ადგილი ახალი შეტყობინებებისთვის."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "დავიწყეთ თქვენი ელფოსტების იმპორტი Gmail-იდან. დასრულებისთანავე შეგატყობინებთ."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "გვწყინს თქვენი წასვლა. თუ თავისუფალი დრო გაქვთ, დიდად მადლობელი ვიქნებით, თუ გვეტყვით, რატომ გსურთ გაუქმება. თქვენი უკუკავშირი გვეხმარება, რომ ${ BRAND_NAME } უკეთესი გავხადოთ ყველასთვის."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "კონტაქტის ჯგუფებთან ერთად ელფოსტების გაგზავნა ამ ჯგუფის წევრებისთვის ერთი წკაპით შეგიძლიათ."
@@ -3187,11 +3296,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "წასაშლელად შეგიძლიათ, მონიშნოთ ის კონტაქტები, რომელთა შერწყმა და შენარჩუნება არ გსურთ. წაშლა მოხდება, მხოლოდ, შერწყმის ღილაკზე დაწკაპუნების შემდეგ"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "ამიერიდან შეგიძლიათ გააგზავნოთ ელფოსტა ${ BRAND_NAME }-დან ამ მისამართის გამოყენებით."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია, 2FA კი - ჩართული."
       ],
       "Your account and data recovery methods are set.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "თქვენს უფასო ${ MAIL_APP_NAME } ანგარიშს შეზღუდული საცავი აქვს, ამიტომ მოვახდენთ მხოლოდ თქვენი უახლესი Gmail შეტყობინებების ${ newUserStorageText }-ის იმპორტს"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "თქვენი უფასო ${ MAIL_APP_NAME } ანგარიში შეზღუდული საცავითაა, ამიტომ ჩვენ მხოლოდ თქვენს უახლეს Gmail-ის ელფოსტებს შემოვიტანთ."
       ],
       "You’ll get a secure email with the details shortly.": [
         "თქვენ მალე მიიღებთ დაცულ ელფოსტას დეტალებით."
@@ -3384,6 +3502,11 @@
         "90წთ"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "ტექსტური ველები არასავალდებულოა. ამ ფორმაში მითითებული ინფორმაცია მხოლოდ მომავალში გამოწერილ ინვოისებზე აისახება და გავლენას არ მოახდენს უკვე არსებულ ინვოისებზე."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "მოვლენის ჩასწორება"
@@ -3502,6 +3625,9 @@
         "${ list }-ს კონტაქტები არ გააჩნია",
         "${ list }-ს კონტაქტები არ გააჩნია"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } არის თქვენი მომხმარებლის სახელი. ${ emailAddress }-ის შესაქმნელად, გთხოვთ, გადახვიდეთ აქ: პარამეტრები > იდენტობა და მისამართები > მოკლე დომენი (pm.me)"
+      ],
       "A group with this name already exists": [
         "ჯგუფი ამ სახელით უკვე არსებობს"
       ],
@@ -3510,6 +3636,9 @@
       ],
       "Account does not exist": [
         "ანგარიში არ არსებობს"
+      ],
+      "Address could not be added.": [
+        "მისამართის დამატება ვერ მოხერხდა."
       ],
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
@@ -3567,6 +3696,9 @@
       ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
+      ],
+      "Company name or personal name is required": [
+        "კომპანიის სახელი ან პირადი სახელი სავალდებულოა"
       ],
       "Contact could not be saved": [
         "კონტაქტის შენახვის შეცდომა"
@@ -3627,6 +3759,9 @@
       "Enter 6 digits": [
         "შეიყვანეთ 6 ციფრი"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "შეიყვანეთ თქვენი მომხმარებლის სახელი დომენის (@example.com) გარეშე"
+      ],
       "Error": [
         "შეცდომა"
       ],
@@ -3662,6 +3797,9 @@
       ],
       "Failed to load OAuth modal.": [
         "შეუძლებელია Oauth-ის მოდალის ჩატვირთვა."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "გამოწერის მონაცემების ჩატვირთვა ვერ მოხერხდა. გთხოვთ, მოგვიანებით სცადოთ თავიდან."
       ],
       "Failed to open to contact": [
         "კონტაქტისთვის გახსნა ჩავარდა"
@@ -3843,6 +3981,12 @@
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "გთხოვთ შეამოწმოთ, არის თუ არა თქვენი ABN რეგისტრირებული ტრანსსასაზღვრო დღგ-ისთვის"
+      ],
+      "Please complete the billing details": [
+        "გთხოვთ, შეავსოთ ანგარიშსწორების დეტალები"
+      ],
       "Please configure a custom domain before adding addresses.": [
         "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
       ],
@@ -3914,6 +4058,9 @@
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "გადასახადის უკუდაბეგვრის სქემა არ არის მხარდაჭერილი ამ პაკეტისთვის"
+      ],
       "Self invitation not allowed": [
         "თვითმომწვევა აკრძალულია"
       ],
@@ -3943,6 +4090,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
+      ],
+      "Something went wrong while fetching available domains": [
+        "ხელმისაწვდომი დომენების მიღებისას შეცდომა მოხდა"
       ],
       "Something went wrong. Please try again.": [
         "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
@@ -3979,6 +4129,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "შემოწირულობის მინიმალური თანხაა ${ price }"
       ],
       "The sending key is not valid": [
         "გაგზავნის გასაღები არასწორია"
@@ -4036,6 +4189,9 @@
       ],
       "Validation error": [
         "გადამოწმების შეცდომა"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "დღგ-ის ნომერი უნდა იწყებოდეს ${ prefixes }-ით"
       ],
       "Wrong billing address": [
         "არასწორი გადახდის მისამართი"
@@ -4146,6 +4302,9 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "შეცდომა ფაილის ატვირთვისას. ფაილი არჩეული არაა."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "თქვენი ფაილი ${ formattedFilename } შეიცავს ${ maxContactString }-ზე მეტ კონტაქტს."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "თქვენს ფაილში ${ formattedFilename } შემოსატანი კონტაქტები ნაპოვნი არაა."
@@ -4405,6 +4564,9 @@
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ოჯახის პაკეტებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის მისამართი შექმენით. ${ link }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
@@ -4508,6 +4670,15 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ პრემიუმ ფუნქცია"
+      ],
+      "Custom email domain": [
+        "მორგებული ელფოსტის დომენი"
+      ],
+      "Email addresses": [
+        "ელფოსტის მისამართები"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "დაშიფრული ღრუბლოვანი საცავი ფაილებისთვის, ფოტოებისა და დოკუმენტებისთვის"
       ],
@@ -4526,9 +4697,20 @@
         "ჩქაროსნული კავშირი"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "თქვენი უსაფრთხოების გასაღებით ავტორიზაციისას მოხდა შეცდომა. გთხოვთ, სცადოთ თავიდან."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "ჩასვით უსაფრთხოების გასაღები, რომელიც დაკავშირებულია თქვენს ${ BRAND_NAME }-ის ანგარიშთან."
+      ],
       "Security key": [
         "უსაფრთხოების გასაღები"
+      ],
+      "Touch your security key.": [
+        "შეეხეთ თქვენს უსაფრთხოების გასაღებს."
       ]
     },
     "fido2: Label": {
@@ -5024,6 +5206,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } საჭიროებს ${ BRAND_NAME } მისამართს ღონისძიების უსაფრთხო სინქრონიზაციისა და დაშიფვრისთვის. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ახალი კალენდარი",
         "${ calendarsToBeCreatedCount } ახალი კალენდარი"
@@ -5061,11 +5246,20 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } არის ბოლოდან ბოლომდე დაშიფრული ვიდეოკონფერენციის გადაწყვეტა. დაამატეთ ის თქვენს პაკეტს უსაფრთხო შეხვედრების ჩასატარებლად."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-ის ადგილები"
+      ],
       "${ MEET_APP_NAME } video call": [
         "${ MEET_APP_NAME }-ის ვიდეოზარი"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME }-ის უვადო შემოთავაზებას არ აქვს განახლების ფასი, ეს არის ერთჯერადი გადახდა ${ PASS_SHORT_APP_NAME }-ზე უვადო წვდომისთვის. თქვენი ${ planTitle } გამოწერის განახლების ფასი და თარიღი უცვლელი რჩება."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
@@ -5118,6 +5312,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } ნიღბავს თქვენს IP მისამართს და ვებგვერდები თქვენს იდენტიფიკაციას ვერ მოახდენენ."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } მალავს თქვენს ტრაფიკს. ${ PASS_SHORT_APP_NAME } მალავს თქვენს იდენტობას\\n— ულიმიტო **hide-my-email ალიასები** და **dark-web გაფრთხილებები**, თუ თქვენი მონაცემები ოდესმე გაჟონავს."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
@@ -5128,8 +5325,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**მოიწვიეთ თქვენი მეგობრები** ${ BRAND_NAME }-ში თქვენი რეფერალური ბმულით."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**ისინი მიიღებენ ${ refereeRewardAmount }** კრედიტებს, თუ გამოიწერენ."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**თქვენ მიიღებთ ${ referrerRewardAmount }** კრედიტს ყოველი მეგობრისთვის, რომელიც გააკეთებს გამოწერას."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -5161,6 +5367,12 @@
       ],
       "Ad targeting": [
         "დამიზნებული რეკლამა"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "დაამატეთ ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "დაამატეთ ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "დამატებულია და ამოღებულ მონაწილეებს ეცნობებათ ამ სერიის ყველა მოვლენის შესახებ."
@@ -5233,6 +5445,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "თქვენი საცდელი პერიოდის დასრულებისას ${ boldCancelDate }, თქვენი პაკეტი დაქვეითდება ${ boldProtonFree }-მდე. მომხმარებელთა ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -5352,6 +5567,10 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "უსაფრთხო ღრუბლის შექმნა ${ memberCount } წევრისთვის",
+        "უსაფრთხო ღრუბლის შექმნა ${ memberCount } წევრისთვის"
+      ],
       "Create in": [
         "რაში შევქმნა"
       ],
@@ -5410,6 +5629,9 @@
       "Display events for calendar ${ Name }": [
         "მოვლენების ჩვენება კალენდრისთვის ${ Name }"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "გახსოვთ თქვენი პაროლი? ${ verifyButton }"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
       ],
@@ -5433,6 +5655,9 @@
       ],
       "Duplicate key updated": [
         "დუბლირებული გასაღები განახლებულია"
+      ],
+      "Each code can only be used once": [
+        "თითოეული კოდის გამოყენება შესაძლებელია მხოლოდ ერთხელ"
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -5467,6 +5692,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "შეიყვანეთ დამოწმების კოდი. ციფრი ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
       ],
@@ -5485,6 +5713,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "ყველაფერი ${ planOrAppName }-ში"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "ყველაფერი, რაც შედის ${ planOrAppName } პაკეტში, პლუს:"
       ],
       "Existent and added participants will be notified.": [
         "არსებულ და დამატებულ მონაწილეებს გაფრთხლება გაეგზავნებათ."
@@ -5512,6 +5743,15 @@
       ],
       "for ${ price }": [
         "${ price }-ისთვის"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "დამატებითი უსაფრთხოებისთვის, შეგიძლიათ დააყენოთ პაროლის ფრაზა. ის არ იქნება შეტანილი კალენდრის მოწვევაში, არ დაგავიწყდეთ მისი სტუმრებისთვის ცალკე გაზიარება."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "სულ რაღაც ${ bundlePlanPriceInline }-ად"
+      ],
+      "Forgot password?": [
+        "პაროლი დამავიწყდა?"
       ],
       "Frequency modifications will be lost.": [
         "სიხშირის ცვლილებები დაიკარგება."
@@ -5551,6 +5791,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "თუ დაკარგეთ წვდომა თქვენს აუტენტიფიკატორ აპლიკაციაზე, შეგიძლიათ გამოიყენოთ ორფაქტორიანი აუტენტიფიკაციის აწყობისას მოწოდებული 16 სარეზერვო აღდგენის კოდიდან 1. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "თუ მაინც აპირებთ, ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ MAIL_APP_NAME }-ის და ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
@@ -5805,6 +6048,9 @@
       "Password must have:": [
         "პაროლს უნდა ჰქონდეს:"
       ],
+      "Password verified": [
+        "პაროლი დამოწმებულია"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
       ],
@@ -5840,6 +6086,9 @@
       ],
       "Please select the folders you would like to import:": [
         "აირჩიეთ შემოსატანი საქაღალდეები:"
+      ],
+      "Please select the labels you would like to import:": [
+        "გთხოვთ, აირჩიოთ იარლიყები, რომელთა იმპორტსაც ისურვებთ:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "აირჩიეთ, ${ groupCount } ჯგუფში ელფოსტის რომელი მისამართ(ებ)-ის დამატება გსურთ.",
@@ -5973,6 +6222,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "გამოწერა მთავრდება: ${ planName }-ის უპირატესობების შესანარჩუნებლად, გადატვირთეთ თქვენი გამოწერა Apple App Store-ში ${ byDate }-მდე. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "გამოწერა მთავრდება: ${ planName }-ის უპირატესობების შესანარჩუნებლად, გადატვირთეთ თქვენი გამოწერა Google Play Store-ში ${ byDate }-მდე. ${ reactivateLink }"
+      ],
       "Surveillance": [
         "დაზვერვა"
       ],
@@ -6075,6 +6330,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "პაროლის დამახსოვრებაში დაგეხმარებით, თუ პერიოდულად მის შეყვანას გთხოვთ. დროთა განმავლობაში ამას სულ უფრო იშვიათად გთხოვთ."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "მოვლენების შემოსატანად ჯერ შექმენით კალენდარი ${ CALENDAR_APP_NAME }-ში. შემოტანილი მოვლენები ამ კალენდარში გამოჩნდება."
       ],
@@ -6102,11 +6360,20 @@
       "Tracking": [
         "ტრეკინგი"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "ენდეთ \"${ activeSignerText }\" გასაღებს ამ კონტაქტიდან მიღებული ახალი შეტყობინებების ვერიფიკაციისთვის."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "განაახლეთ ნებისმიერ დროს, რათა გადმოიტანოთ დანარჩენი"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "განაახლეთ ან გაასუფთავეთ საცავი ნებისმიერ დროს, რათა დანარჩენიც გადმოიტანოთ"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
@@ -6164,6 +6431,9 @@
       ],
       "We'll notify you when the import is done.": [
         "როდესაც შემოტანა დასრულდება, შეგატყობინებთ."
+      ],
+      "We'll remind you to verify your password again later": [
+        "მოგვიანებით კვლავ შეგახსენებთ პაროლის დადასტურებას"
       ],
       "We'll send a new verification code to ${ strong }": [
         "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
@@ -6329,6 +6599,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "თქვენ მიიღებთ კრედიტს 1 თვის შემდეგ, რაც თქვენი მეგობარი გამოიწერს წლიურ პაკეტს, ხოლო 2 თვის შემდეგ, რაც ისინი გამოიწერენ ყოველთვიურ პაკეტს."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "ამის შემდეგ, ყოველ ${ renewCycle } თვეში ჩამოგეჭრებათ ${ renewAmountStr }. გაუქმება შეგიძლიათ ნებისმიერ დროს.",
+        "ამის შემდეგ, ყოველ ${ renewCycle } თვეში ჩამოგეჭრებათ ${ renewAmountStr }. გაუქმება შეგიძლიათ ნებისმიერ დროს."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა):"
       ],
@@ -6341,8 +6618,14 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "თქვენი ${ plan } გამოწერა შეიცვლება ${ PASS_SHORT_APP_NAME } Lifetime-ით. თქვენი გამოწერის დარჩენილი ბალანსი დაგერიცხებათ თქვენს ანგარიშზე. ${ PASS_SHORT_APP_NAME }-ის უვადო შემოთავაზებას არ აქვს განახლების ფასი, ეს არის ერთჯერადი გადახდა ${ PASS_SHORT_APP_NAME }-ზე უვადო წვდომისთვის."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "თქვენს ანგარიშზე ყველაზე ცოტა ერთი გადაცილებული ინვოისია. წვდომა მალე შეიზღუდება. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "თქვენი ანგარიში ამჟამად კონფიგურირებულია გადასახადის უკუდაბეგვრის სქემის გამოსაყენებლად. ეს არ არის მხარდაჭერილი არჩეული პაკეტისთვის. გასაგრძელებლად, ამოშალეთ დღგ-ის (VAT) ნომერი ანგარიშსწორების მისამართიდან ან აირჩიეთ სხვა პაკეტი."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "თქვენი მისამართი გამორთულია. გაუქმების ელფოსტის გაგზავნა შეუძლებელია მოვლენის მონაწილეებისთვის. მაინც გსურთ ამ სერიის ყველა მოვლენის წაშლა?"
@@ -6382,6 +6665,12 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. გაუქმება შეგიძლიათ ნებისმიერ დროს."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. გაუქმება შეგიძლიათ ნებისმიერ დროს. გთხოვთ, დაუკავშირდეთ მხარდაჭერის სამსახურს, თუ გსურთ პაკეტის დაუყოვნებლივ შეცვლა."
       ],
       "Your online activity is protected": [
         "თქვენი აქტივობა ინტერნეეტში დაცულია"
@@ -6582,9 +6871,22 @@
         "კვირის ხედი"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }-ზე გადართვა"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "გადასვლა ${ MAIL_APP_NAME }-ზე"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "ძირითადი მოქმედებები"
+      ],
+      "Desktop app navigation": [
+        "კომპიუტერის აპის ნავიგაცია"
       ],
       "View options": [
         "პარამეტრების ნახვა"
@@ -6603,8 +6905,14 @@
         "${ n } თვე",
         "${ n } თვე"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } სიმბოლო"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "მიიღეთ უსაფრთხო წვდომა ${ PASS_APP_NAME }-ზე ტერმინალიდან, რაც იდეალურია სკრიპტების, ავტომატიზაციისა და დეველოპმენტის სამუშაო პროცესებისთვის."
       ],
       "Account holder": [
         "ანგარიშის მფლობელი"
@@ -6768,6 +7076,9 @@
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
       ],
@@ -6908,6 +7219,9 @@
       ],
       "Main": [
         "მთავარი"
+      ],
+      "Main reason for cancelling": [
+        "გაუქმების მთავარი მიზეზი"
       ],
       "Manage categories": [
         "კატეგორიების მართვა"
@@ -7382,6 +7696,9 @@
       "Learn more": [
         "გაიგეთ მეტი"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }-ის გამოყენების გასაგრძელებლად, გთხოვთ, დარწმუნდით, რომ აღარ იყენებთ პრემიუმ ფუნქციებს, ან განაახლეთ თქვენი პაკეტი."
+      ],
       "upgrade for more storage": [
         "აწიეთ ტარიფი მეტი საცავისთვის"
       ],
@@ -7441,7 +7758,22 @@
         "${ price }-თვის"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-ის ლიცენზია"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-ის ადგილები"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-ის ადგილი",
+        "${ seats } ${ MEET_APP_NAME }-ის ადგილი"
+      ]
+    },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: კონფიდენციალური ვიდეოკონფერენცია მნიშვნელოვანი მიმოწერებისთვის"
+      ],
       "${ n } active meeting at a time": [
         "${ n } ერთდროული აქტიური შეხვედრა",
         "${ n } ერთდროული აქტიური შეხვედრა"
@@ -7468,6 +7800,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "მასპინძლებს შეუძლიათ შეხვედრების ლოკალურად ჩაწერა თავიანთ კომპიუტერებზე"
+      ],
       "Meeting recording": [
         "შეხვედრის ჩანაწერი"
       ],
@@ -7487,6 +7822,19 @@
       "Up to ${ n } participant": [
         "${ n }-მდე მონაწილე",
         "${ n }-მდე მონაწილე"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ვიდეოშეხვედრები, ${ n } მონაწილე",
+        "ვიდეოშეხვედრები, ${ n } მონაწილე"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "შედის ${ seats } ადგილი",
+        "გათვალისწინებულია ${ seats } ადგილი"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "საცდელი პერიოდის განმავლობაში შეგიძლიათ გქონდეთ ${ TRIAL_MAX_MEET_SEATS }-მდე ${ MEET_SHORT_APP_NAME }-ის ადგილი."
       ]
     },
     "Message": {
@@ -7885,6 +8233,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "წვდომა ყველა ქვეყანასთან"
+      ],
       "Ad-blocker and malware protection": [
         "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
       ],
@@ -7905,6 +8256,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრების დაგეგმვა"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "შეხვედრების დაგეგმვა ${ n } დასაჯავშნი გვერდით",
+        "შეხვედრების დაგეგმვა ${ n } დასაჯავშნი გვერდით"
       ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
@@ -7956,6 +8314,12 @@
       ],
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
+      ],
+      "Data retention policies": [
+        "მონაცემთა შენახვის პოლიტიკა"
+      ],
+      "Dedicated servers optimized for speed": [
+        "სიჩქარეზე ოპტიმიზებული გამოყოფილი სერვერები"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -8030,6 +8394,9 @@
       "Multiple admin roles": [
         "მრავალი ადმინის როლი"
       ],
+      "No streaming support": [
+        "სტრიმინგის მხარდაჭერა არ არის"
+      ],
       "Online document editor": [
         "დოკუმენტების რედაქტორი ინტერნეტში"
       ],
@@ -8062,6 +8429,9 @@
       ],
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "პირადი AI ჩატი (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "კონფიდენციალური სურათების მარქაფი"
@@ -8177,6 +8547,9 @@
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
       ],
+      "Unlock streaming": [
+        "სტრიმინგის განბლოკვა"
+      ],
       "Up to ${ n } user": [
         "${ n }-მდე მომხმარებელი",
         "${ n }-მდე მომხმარებელი"
@@ -8208,6 +8581,9 @@
       "Vault sharing with up to ${ n } person": [
         "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
         "საცავის გაზიარება ${ n }-მდე პოროვნებასთან"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN რეკლამების ბლოკერითა და მავნე პროგრამებისგან დაცვით"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -8248,6 +8624,9 @@
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 გბ ღრუბლოვანი საცავი, რომელიც საშუალებას გაძლევთ მარტივად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია ბოლოდან ბოლომდე დაშიფვრით."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
@@ -8483,6 +8862,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა მხარდაჭერის გუნდისგან ევროპის სამუშაო საათებში, იმ კლიენტებისთვის, რომლებსაც ჰყავთ ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ან მეტი მომხმარებელი"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
       ],
@@ -8575,6 +8957,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ქვეყანა",
+        "${ n } ქვეყანა"
+      ],
       "Access advanced VPN features": [
         "VPN-ის დამატებითი თვისებების განბლოკვა"
       ],
@@ -8655,6 +9041,9 @@
       ],
       "Passphrase copied to clipboard": [
         "საკვანძო ფრაზა დაკოპირდა გაცვლის ბუფერში"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "თქვენი ${ BRAND_NAME } მისამართი მზადაა გამოსაყენებლად"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9229,6 +9618,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (გადასახადის გარეშე)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }%-იანი გადასახადი: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }%-იანი გადასახადები: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
       ],
@@ -9244,6 +9642,12 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "ამ დროის განმავლობაში, თქვენ ვერ შეძლებთ თქვენი გამოწერის შეცვლას ან გაუქმებას. გთხოვთ, დაელოდოთ გადახდის დასრულებას, სანამ რაიმე ცვლილებას შეეცდებით. გმადლობთ მოთმინებისთვის."
+      ],
+      "Edit billing address": [
+        "საგადასახადო მისამართის რედაქტირება"
+      ],
       "Got it": [
         "გავიგე"
       ],
@@ -9253,8 +9657,14 @@
       "Including ${ rate }% tax": [
         "${ rate }% გადასახადის ჩათვლით"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }%-იანი გადასახადის ჩათვლით: ${ taxAmountElement }"
+      ],
       "Including ${ rate }% taxes": [
         "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }%-იანი გადასახადების ჩათვლით: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -9287,9 +9697,20 @@
         "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
         "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "სპეციალური ფასდაკლებული ფასი მოქმედებს ${ couponRedemptions } თვის განმავლობაში. შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr }-ად 1 თვით. გაუქმება შეგიძლიათ ნებისმიერ დროს.",
+        "სპეციალური ფასდაკლებული ფასი მოქმედებს ${ couponRedemptions } თვის განმავლობაში. შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr }-ად 1 თვით. გაუქმება შეგიძლიათ ნებისმიერ დროს."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "სპეციალური ფასდაკლებული ფასი მოქმედებს პირველი თვის განმავლობაში. შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr }-ით ყოველთვე. შეგიძლიათ გაუქმება ნებისმიერ დროს."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "სპეციალური ფასდაკლებული ფასი ${ priceWithDiscount } მოქმედებს ${ couponRedemptions } თვის განმავლობაში. შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr }-ად 1 თვით. გაუქმება შეგიძლიათ ნებისმიერ დროს.",
+        "სპეციალური ფასდაკლებული ფასი ${ priceWithDiscount } მოქმედებს ${ couponRedemptions } თვის განმავლობაში. შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr }-ად 1 თვით. გაუქმება შეგიძლიათ ნებისმიერ დროს."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ${ priceWithDiscount }-მდე ვარგისია პირველი ${ subscriptionLength } თვეში.",
@@ -9301,6 +9722,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "ეს მოქმედება აფართოებს არსებულ გამოწერას. თქვენ ჩამოგეჭრებათ თანხა მხოლოდ ახალი დამატებებისთვის და მიმდინარე გადახდის ციკლის დარჩენილი დროისთვის. თქვენი გამოწერის განახლების თარიღი არ შეიცვლება."
       ],
       "This offer is not available with your current plan.": [
         "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
@@ -9314,8 +9738,14 @@
       "VAT number": [
         "დღგ ნომერი"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "გამოიყენება დღგ-ის უკუდაბეგვრის მექანიზმი."
+      ],
       "You already have a subscription to this plan.": [
         "თქვენ უკვე გაქვთ ეს სატარიფო გეგმა."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "თქვენ უკვე გაქვთ ამ პაკეტის გამოწერა. შეგიძლიათ შეცვალოთ თქვენი გამოწერა ${ subscriptionPlatform }-ზე."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
@@ -9328,6 +9758,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "თქვენს გამოწერაზე ამჟამად ვრცელდება ფასდაკლება. ამ ახალ აქციაზე გადასვლა ნიშნავს, რომ არსებული ფასდაკლება აღარ იქნება გამოყენებული."
       ]
     },
     "Payments.Error": {
@@ -9385,6 +9818,20 @@
         "Free"
       ]
     },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "განახლების ფასი დამოკიდებულია ანგარიშსწორების რეგიონსა და ABN-ზე."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "განახლების ფასი დამოკიდებულია ანგარიშსწორების რეგიონსა და ბიზნესის ნომერზე (Business Number)."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "განახლების ფასი დამოკიდებულია ანგარიშსწორების რეგიონსა და EIN-ზე."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "განახლების ფასი დამოკიდებულია ანგარიშსწორების რეგიონსა და დღგ-ის (VAT) ნომერზე."
+      ]
+    },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
@@ -9397,6 +9844,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "ამ გადახდის დადასტურებით, თქვენ აძლევთ უფლებამოსილებას ${ BRAND_NAME }-ს და Stripe-ს, ჩვენს საგადახდო მომსახურების პროვაიდერს, მისცენ თქვენს ბანკს მითითება შესაბამისად ჩამოაჭრას თანხა თქვენი ანგარიშიდან. თქვენ შეგიძლიათ დაიბრუნოთ თანხა ჩამოჭრის თარიღიდან 8 კვირის განმავლობაში, თქვენს ბანკთან გაფორმებული ხელშეკრულების პირობების შესაბამისად."
+      ],
       "Street address, postal code, and city": [
         "ქუჩის მსამართი, საფოსტო კოდი და ქალაქი"
       ]
@@ -9445,8 +9895,17 @@
       "External key automatically fetched via WKD.": [
         "გარე გასაღები ავტომატურადაა გამოთხოვილი WKD-ის გავლით."
       ],
+      "This contact currently signs messages with this key": [
+        "ეს კონტაქტი ამჟამად აწერს ხელს შეტყობინებებს ამ გასაღებით"
+      ],
+      "This key is used for message verification": [
+        "ეს გასაღები გამოიყენება შეტყობინების ვერიფიკაციისთვის"
+      ],
       "This key is used to encrypt messages to this contact": [
         "ეს გასაღები ამ კონტაქტისთვის შეტყობინებების დასაშიფრად გამოიყენება"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "ეს გასაღები გამოიყენება ამ კონტაქტისთვის შეტყობინებების დასაშიფრად ძველ აპებში"
       ],
       "We recommend that you \"untrust\" this key.": [
         "გირჩევთ, ეს გასაღები \"არასანდოდ\" გამოაცხადოთ."
@@ -9481,6 +9940,9 @@
       ],
       "Anderson": [
         "ღობეგლეჯიაშვილი"
+      ],
+      "Anything you'd like us to know": [
+        "არის კიდევ რამე, რაც გსურთ რომ ვიცოდეთ"
       ],
       "Anytown": [
         "თბილისი"
@@ -9619,6 +10081,14 @@
         "(სახელის გარეშე)"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "ყველა პრემიუმ ფუნქცია ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-ისგან, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ PASS_SHORT_APP_NAME }-ისგან."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "ყველა პრემიუმ ფუნქცია ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-ისგან, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ისგან"
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } თვე",
@@ -9626,6 +10096,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "როგორც **${ currentPlanTitle }** გამომწერი, თქვენ შეგიძლიათ განბლოკოთ **${ unlockPlanTitle }** და ${ BRAND_NAME }-ის სხვა სერვისები თქვენი პაკეტის **${ upsellPlanTitle }**-მდე განახლებით."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "მეტი ${ BRAND_NAME }-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
       ],
@@ -9800,6 +10273,12 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "ამ თარიღის შემდეგ, თქვენი ანგარიში დაქვეითდება **${ BRAND_NAME } Free**-ზე. თუ გადაიფიქრებთ, შეგიძლიათ **გამოიწეროთ ხელახლა**, რათა შეინარჩუნოთ წვდომა პრემიუმ ფუნქციებზე."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "მიიღეთ ${ maxRewardAmount }-მდე კრედიტის სახით. თქვენ მიიღებთ ${ referrerRewardAmount }-ს, როდესაც პირი, რომელსაც თქვენ იწვევთ, გამოიწერს ${ BRAND_NAME }-ის პაკეტს."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
@@ -10390,6 +10869,9 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
       ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "შეინახეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ სეიფში"
+      ],
       "Protect your account from threats with Sentinel": [
         "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
       ],
@@ -10633,6 +11115,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } და ${ LUMO_APP_NAME } პრემიუმ ფუნქციებით"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
       ],
@@ -10857,6 +11345,10 @@
       ],
       "Version history": [
         "ვერსიის ისტორია"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "ვიდეოშეხვედრები, ${ PAID_PREMIUM_MAX_PARTICIPANTS } მონაწილემდე",
+        "ვიდეოშეხვედრები, ${ PAID_PREMIUM_MAX_PARTICIPANTS } მონაწილემდე"
       ],
       "Watch the interview": [
         "ინტერვიუს ყურება"
@@ -11483,6 +11975,9 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Continue with free storage": [
+        "უფასო საცავით გაგრძელება"
+      ],
       "Continue with partial import?": [
         "გავაგრძელო ნაწილობრივი შემოტანით?"
       ],
@@ -11550,6 +12045,9 @@
       ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
+      ],
+      "Disconnected from Gmail": [
+        "გათიშულია Gmail-დან"
       ],
       "Does not repeat": [
         "არ მეორდება"
@@ -11641,6 +12139,9 @@
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "მიიღეთ მეტი საცავი ${ MAIL_APP_NAME } Plus-ით"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "მიიღეთ ${ appName[APP_NAME] } აპები"
       ],
@@ -11696,6 +12197,9 @@
       "Import groups": [
         "ჯგუფების შემოტანა"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "თქვენი მონაცემების იმპორტი ${ BRAND_NAME }-ში"
+      ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
       ],
@@ -11719,6 +12223,9 @@
       ],
       "Merging contacts": [
         "კონტაქტების შერწყმა"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "თქვენი ორგანიზაციის მიგრაცია ${ BRAND_NAME }-ში"
       ],
       "Minicalendar": [
         "მინიკალენდარი"
@@ -11833,6 +12340,9 @@
       ],
       "Reshare your calendars": [
         "თავიდან გააზიარეთ თქვენი კალენდრები"
+      ],
+      "Reverse charge not supported": [
+        "გადასახადის უკუდაბეგვრა (Reverse charge) არ არის მხარდაჭერილი"
       ],
       "Save": [
         "შენახვა"
@@ -11999,6 +12509,9 @@
       "Verification failed": [
         "გადამოწმების შეცდომა"
       ],
+      "Verify your password": [
+        "დაადასტურეთ თქვენი პაროლი"
+      ],
       "Verifying your card...": [
         "მიმდინარეობს ბარათის გადამოწმება ..."
       ],
@@ -12037,6 +12550,9 @@
       ],
       "When is it most important to use a VPN?": [
         "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
+      ],
+      "You are all set": [
+        "ყველაფერი მზადაა"
       ],
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
@@ -12140,6 +12656,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "თუ შეიძინეთ სასაჩუქრე ბარათი ან ის ჩვენი მხარდაჭერის გუნდისგან მიიღეთ, ის აქ შეგიძლიათ, შეიყვანოთ."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "ხელოვნური ინტელექტის მყისიერი დახმარება, ადამიანი ექსპერტი მუდამ მზადყოფნაშია!"
       ],
       "Load image": [
         "გამოსახულების ჩატვირთვა"
@@ -12301,6 +12820,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "${ MAIL_APP_NAME }-ის დაშიფრული და უსაფრთხო ელფოსტის მისამართი. თქვენ მარტივად შეგიძლიათ გაუგზავნოთ Bitcoin ნებისმიერს, მხოლოდ მისი ${ BRAND_NAME } სახელის გამოყენებით."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "უსაფრთხოდ გაცვალეთ Bitcoin ელფოსტით, ნაცვლად რთული, 26-სიმბოლოიანი Bitcoin მისამართებისა, რომლებიც ხშირად შეცდომის მიზეზი ხდება"
       ]
     },
     "wallet_signup_2024:app-switcher": {
