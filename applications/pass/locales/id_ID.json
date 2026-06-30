@@ -990,6 +990,9 @@
       "Error reporting problem": [
         "Terjadi masalah saat melaporkan kesalahan"
       ],
+      "Failed loading group members": [
+        "Gagal memuat anggota grup"
+      ],
       "Failed removing the invite.": [
         "Gagal menghapus undangan."
       ],
@@ -1692,6 +1695,9 @@
       "Enter the address you want to email.": [
         "Masukkan alamat yang ingin Anda kirimi email."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Masukkan kode verifikasi. Digit ${ digit }."
+      ],
       "Enter your extra password": [
         "Masukkan kata sandi tambahan Anda"
       ],
@@ -1880,9 +1886,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2850,6 +2853,9 @@
       ],
       "Expired": [
         "Kedaluwarsa"
+      ],
+      "Expires in": [
+        "Kedaluwarsa dalam"
       ],
       "Expiry Date": [
         "Tanggal Kedaluwarsa"
@@ -3868,6 +3874,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "e.g. My automation script": [
+        "mis. Skrip otomatisasi saya"
       ],
       "E.g., ": [
         "Mis., "
