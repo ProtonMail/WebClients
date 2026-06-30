@@ -4,6 +4,7 @@ import { disconnectBYOEAddress, reconnectBYOEAddress } from '@proton/activation/
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { disableAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ActiveKeyWithVersion, Address } from '@proton/shared/lib/interfaces';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
@@ -57,9 +58,11 @@ export const setAddressFlags = ({
 export const updateBYOEAddressConnection = ({
     address: initialAddress,
     type,
+    skipDisable = false,
 }: {
     address: Address;
     type: 'disconnect' | 'reconnect';
+    skipDisable?: boolean;
 }): ThunkAction<Promise<Address | undefined>, AddressKeysState & KtState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         if (!initialAddress) {
@@ -107,6 +110,9 @@ export const updateBYOEAddressConnection = ({
 
         if (type === 'disconnect') {
             await api(disconnectBYOEAddress(address.ID, newSignedKeyList));
+            if (!skipDisable) {
+                await api(disableAddress(address.ID));
+            }
         } else {
             await api(reconnectBYOEAddress(address.ID, newSignedKeyList));
         }
