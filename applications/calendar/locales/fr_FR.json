@@ -3958,9 +3958,6 @@
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
       ],
-      "No drive found to import": [
-        "Aucun lecteur détecté pour l'importation"
-      ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
@@ -3975,9 +3972,6 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "Number of occurrences cannot be empty": [
         "Le nombre d’occurrences ne peut pas être vide."
@@ -4216,9 +4210,6 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
-      ],
-      "Unexpected error, we can't import the files": [
-        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4756,6 +4747,9 @@
       ],
       "Security key": [
         "Clé de sécurité"
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -5797,9 +5791,6 @@
       ],
       "Failed to update meeting schedule": [
         "La mise à jour de la réunion n'a pas abouti."
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
       "finance": [
         "finance"
@@ -11963,9 +11954,6 @@
       ],
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
-      ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"
