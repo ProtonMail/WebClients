@@ -316,6 +316,7 @@ export {
     hasPassFamily,
     hasPassLaunchOffer,
     hasPassPro,
+    hasMspEligiblePlan,
     hasPlanWithAIAssistantIncluded,
     hasSomeAddonOrPlan,
     hasSomePlan,
