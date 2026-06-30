@@ -7,6 +7,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import {
+    injectNativeImageGenerationHelper,
+    setNativeComposerVisibility,
+} from '../../remote/nativeComposerBridgeHelpers';
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
 import { ImageDownloadButton, ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
@@ -59,6 +63,10 @@ export const ImagePreviewOverlay = ({
     const [mode, setMode] = useState<OverlayMode>(defaultMode);
     const [canvasDims, setCanvasDims] = useState<{ width: number; height: number } | null>(null);
     const [imageAspect, setImageAspect] = useState<number | null>(null);
+
+    useEffect(() => {
+        setNativeComposerVisibility(!isOpen);
+    }, [isOpen]);
 
     // Sync mode when overlay opens/closes
     useEffect(() => {
@@ -117,6 +125,7 @@ export const ImagePreviewOverlay = ({
 
     const handleStyleChange = (prompt: string) => {
         onChangeStyle?.(prompt);
+        injectNativeImageGenerationHelper(prompt);
         onClose();
     };
 
