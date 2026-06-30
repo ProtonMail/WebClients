@@ -2219,6 +2219,9 @@
       ],
       "You": [
         "Du"
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
       ]
     },
     "Browser": {
@@ -8587,6 +8590,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du hast ${ totalLabel } in deinem Posteingang."
+      ],
+      "You have no messages in this category": [
+        "Du hast keine Nachrichten in dieser Kategorie."
       ]
     },
     "info": {
@@ -15383,6 +15392,9 @@
       ],
       "Your newsletters in one place": [
         "Deine Newsletter an einem Ort"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {

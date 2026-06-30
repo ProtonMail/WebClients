@@ -8690,6 +8690,31 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du har ${ totalLabel } i din indbakke."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i ${ categoryLabel } kategori",
+        "Du har **${ count } samtaler** i ${ categoryLabel } kategori"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } besked** i ${ categoryLabel } kategori",
+        "Du har **${ count } beskeder** i ${ categoryLabel } kategori"
+      ],
+      "You have no conversations in this category": [
+        "Du har ingen samtaler i denne kategori"
+      ],
+      "You have no messages in this category": [
+        "Du har ingen beskeder i denne kategori"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i ${ categoryLabel } kategori",
+        "Du valgte **${ checked } samtaler** i ${ categoryLabel } kategori"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } besked** i ${ categoryLabel } kategori",
+        "Du valgte **${ checked } beskeder** i ${ categoryLabel } kategori"
       ]
     },
     "info": {
@@ -9832,6 +9857,24 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhedsbreve - Nyheder, redaktionelle e-mails og ikke-promoverende indhold"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primær - Personlige og arbejdsmæssige e-mails samt vigtige opdateringer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Kampagner - Deals, tilbud og marketing-e-mails"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociale - Sociale medieopdateringer, aktivitet og beskeder"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitteringer, reservationer, regninger og ordrer"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Opdateringer - Automatiserede bekræftelser, advarsler og kontoopdateringer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14340,6 +14383,10 @@
       ],
       "Thanks for the feedback!": [
         "Tak for tilbagemeldingen!"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttet til ${ label }. En lignende besked vil blive kategoriseret her i fremtiden",
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her i fremtiden"
       ]
     },
     "Success notification": {
