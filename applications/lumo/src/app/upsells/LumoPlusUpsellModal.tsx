@@ -9,8 +9,8 @@ import { CYCLE, PLANS, getPlanByName } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LUMO_BUSINESS_PATH } from '../constants';
-import { sendSubscriptionModalInitializedEvent, sendSubscriptionModalSubscribedEvent } from '../util/telemetry';
 import { getMarketingUrl } from '../util/marketingUrls';
+import { sendSubscriptionModalInitializedEvent, sendSubscriptionModalSubscribedEvent } from '../util/telemetry';
 import LumoUpsellModal, { type UpsellAudience } from './LumoUpsellModal';
 
 interface Props {
@@ -75,16 +75,16 @@ const LumoPlusUpsellModal = ({ modalProps, upsellRef }: Props) => {
         <LumoUpsellModal
             modalProps={modalProps}
             plusPlan={{
-                planName: c('collider_2025: Plan Name').t`${LUMO_SHORT_APP_NAME} AI Plus`,
+                planName: c('collider_2025: Plan Name').t`${LUMO_SHORT_APP_NAME} Plus`,
                 currency: lumoPlan.Currency,
                 monthlyAmount: plusMonthlyAmount,
-                ctaText: c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} AI Plus`,
+                ctaText: c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} Plus`,
             }}
             businessPlan={{
-                planName: c('collider_2025: Plan Name').t`${LUMO_SHORT_APP_NAME} AI Pro`,
+                planName: c('collider_2025: Plan Name').t`${LUMO_SHORT_APP_NAME} Pro`,
                 currency: lumoBusinessPlan?.Currency ?? lumoPlan.Currency,
                 monthlyAmount: 1199,
-                ctaText: c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} AI Pro`
+                ctaText: c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} Pro`,
             }}
             onUpgrade={handleUpgrade}
             loading={loadingSubscriptionModal}

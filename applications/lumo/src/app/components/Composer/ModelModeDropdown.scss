@@ -100,7 +100,7 @@
 	background: transparent;
 
 	&.is-selected {
-		background-color: var(--model-mode-selected-bg, #f5f6fe);
+		background-color: var(--model-mode-selected-background);
 	}
 
 	&:hover:not(.is-selected, .is-disabled) {
@@ -117,7 +117,7 @@
 	color: var(--text-norm);
 
 	&.is-active {
-		background-color: var(--model-mode-selected-bg, #f5f6fe);
+		background-color: var(--model-mode-selected-background);
 	}
 
 	&:hover:not(.is-active) {

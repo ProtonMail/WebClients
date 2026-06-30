@@ -9,7 +9,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
-import type { SearchItem } from '../../../../../lib/toolCall/types';
+import type { SearchItem, ToolCallName } from '../../../../../lib/toolCall/types';
 import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
@@ -17,6 +17,7 @@ import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from '../../..
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import LumoButton from '../../../../Buttons/LumoButton';
 import { ReferenceFilesButton } from '../../../../Files';
+import LumoAvatar from '../../../../LumoAvatar/LumoAvatar/LumoAvatar';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
@@ -24,7 +25,6 @@ import SiblingSelector from '../../../../SiblingSelector';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
-import { AvatarAndNotice } from './AvatarAndNotice';
 import { SuggestedQuestions } from './SuggestedQuestions';
 import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
@@ -45,6 +45,9 @@ interface AssistantActionToolbarProps {
     markdownContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     retryButtonRef: React.RefObject<HTMLButtonElement>;
+    isLastMessage: boolean;
+    isGenerating: boolean;
+    toolCallName?: ToolCallName;
 }
 
 const AssistantActionToolbar = ({
@@ -59,6 +62,9 @@ const AssistantActionToolbar = ({
     markdownContainerRef,
     onRetryPanelToggle,
     retryButtonRef,
+    isLastMessage,
+    isGenerating,
+    toolCallName,
 }: AssistantActionToolbarProps) => {
     const { hasTierErrors } = useTierErrors();
     const isGuest = useIsGuest();
@@ -73,57 +79,60 @@ const AssistantActionToolbar = ({
     };
 
     return (
-        <div
-            className={clsx([
-                'action-toolbar no-print text-sm w-full mt-2  ',
-                'flex flex-row items-center flex-1 gap-3',
-                'justify-end items-center',
-            ])}
-        >
-            <>
-                {!isGuest && (
+        <div className="flex flex-row flex-nowrap">
+            {isLastMessage && <LumoAvatar isGenerating={isGenerating} toolCallName={toolCallName} />}
+            <div
+                className={clsx([
+                    'action-toolbar no-print text-sm w-full',
+                    'flex flex-row items-center flex-1 gap-3',
+                    'justify-end items-center',
+                ])}
+            >
+                <>
+                    {!isGuest && (
+                        <div className="flex flex-row flex-nowrap gap-3">
+                            <AssistantFeedbackModal
+                                disabled={!isFinishedGenerating}
+                                setFeedbackSubmitted={setFeedbackSubmitted}
+                                feedbackSubmitted={feedbackSubmitted}
+                                message={message}
+                            />
+                        </div>
+                    )}
+                    {/* <div className="flex-1"></div> */}
                     <div className="flex flex-row flex-nowrap gap-3">
-                        <AssistantFeedbackModal
-                            disabled={!isFinishedGenerating}
-                            setFeedbackSubmitted={setFeedbackSubmitted}
-                            feedbackSubmitted={feedbackSubmitted}
+                        <SiblingSelector siblingInfo={siblingInfo} />
+                        {results && <SourcesButton results={results} onClick={onToggleMessageSource} />}
+                        <ReferenceFilesButton
+                            messageChain={messageChain}
                             message={message}
+                            onClick={onToggleFilesManagement}
+                        />
+                        <LumoCopyButton
+                            containerRef={markdownContainerRef}
+                            onSuccess={handleCopy}
+                            disabled={!isFinishedGenerating || generationFailed || isMessageEmpty}
+                            className="lumo-no-copy"
+                            shape="ghost"
+                        />
+                        <LumoButton
+                            buttonRef={retryButtonRef}
+                            className="lumo-no-copy"
+                            shape="ghost"
+                            iconName="RefreshCw"
+                            title={c('collider_2025:Action').t`Regenerate`}
+                            tooltipPlacement="top"
+                            onClick={() => {
+                                if (onRetryPanelToggle && retryButtonRef.current) {
+                                    onRetryPanelToggle(message.id, true, retryButtonRef.current);
+                                }
+                            }}
+                            disabled={!isFinishedGenerating || generationFailed || hasTierErrors}
                         />
                     </div>
-                )}
-                {/* <div className="flex-1"></div> */}
-                <div className="flex flex-row flex-nowrap gap-3">
-                    <SiblingSelector siblingInfo={siblingInfo} />
-                    {results && <SourcesButton results={results} onClick={onToggleMessageSource} />}
-                    <ReferenceFilesButton
-                        messageChain={messageChain}
-                        message={message}
-                        onClick={onToggleFilesManagement}
-                    />
-                    <LumoCopyButton
-                        containerRef={markdownContainerRef}
-                        onSuccess={handleCopy}
-                        disabled={!isFinishedGenerating || generationFailed || isMessageEmpty}
-                        className="lumo-no-copy"
-                        shape="solid"
-                    />
-                    <LumoButton
-                        buttonRef={retryButtonRef}
-                        className="lumo-no-copy"
-                        iconName="RefreshCw"
-                        title={c('collider_2025:Action').t`Regenerate`}
-                        tooltipPlacement="top"
-                        onClick={() => {
-                            if (onRetryPanelToggle && retryButtonRef.current) {
-                                onRetryPanelToggle(message.id, true, retryButtonRef.current);
-                            }
-                        }}
-                        disabled={!isFinishedGenerating || generationFailed || hasTierErrors}
-                    />
-                </div>
-            </>
+                </>
+            </div>
         </div>
-        // </div>
     );
 };
 
@@ -291,6 +300,9 @@ const AssistantMessage = ({
                                         markdownContainerRef={markdownContainerRef}
                                         onRetryPanelToggle={onRetryPanelToggle}
                                         retryButtonRef={retryButtonRef}
+                                        isLastMessage={isLastMessage}
+                                        isGenerating={isGenerating}
+                                        toolCallName={lastToolCallParsed?.name}
                                     />
 
                                     {shouldShowNextPromptSuggestions && message.suggestedQuestions && (
@@ -301,12 +313,10 @@ const AssistantMessage = ({
                         </div>
                     </div>
                 )}
-                {isLastMessage && (
-                    <AvatarAndNotice
-                        isFinishedGenerating={isFinishedGenerating}
-                        isGenerating={isGenerating}
-                        toolCallName={lastToolCallParsed?.name}
-                    />
+                {isLastMessage && isFinishedGenerating && (
+                    <div className="w-full text-right text-sm color-hint">
+                        {c('collider_2025:Info').t`Conversation encrypted`}
+                    </div>
                 )}
             </div>
 

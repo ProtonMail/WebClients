@@ -52,7 +52,7 @@ export const NewChatSidebarButton = () => {
                     onClick={isGuest ? handleGuestClick : handleNewChat}
                     aria-label={c('collider_2025:Button').t`New chat`}
                 >
-                    <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
+                    <div className="sidebar-item-icon flex items-center justify-start shrink-0">
                         <LumoIcon name="SquarePen" className="rtl:mirror" />
                     </div>
                     <span className="sidebar-item-text flex-1 flex items-center justify-space-between text-nowrap overflow-hidden gap-2 flex-nowrap">

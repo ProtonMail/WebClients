@@ -254,9 +254,9 @@ export const ModelModePanel = ({
                     isSheet ? 'model-mode-panel--sheet' : 'model-mode-panel--dropdown'
                 )}
             >
-                <div className="model-mode-panel-body flex flex-column flex-nowrap w-full gap-4">
+                <div className="model-mode-panel-body flex flex-column flex-nowrap w-full">
                     <div className="model-mode-section flex flex-column flex-nowrap gap-1 pb-3">
-                        <span className="model-mode-section-title">{c('collider_2025: Label').t`AI model`}</span>
+                        <span className="model-mode-section-title p-2">{c('collider_2025: Label').t`AI model`}</span>
                         {modelOptions.map((option) => {
                             const isDisabled = option.isDisabled?.() ?? false;
 
@@ -271,14 +271,10 @@ export const ModelModePanel = ({
                             );
                         })}
                     </div>
+                    <hr />
 
-                    <div
-                        className={clsx(
-                            'model-mode-section flex flex-column flex-nowrap pb-3',
-                            isSheet ? 'gap-1' : 'gap-2'
-                        )}
-                    >
-                        <span className="model-mode-section-title">{c('collider_2025: Label').t`Answer mode`}</span>
+                    <div className={clsx('model-mode-section flex flex-column flex-nowrap', isSheet && 'gap-1')}>
+                        <span className="model-mode-section-title p-2">{c('collider_2025: Label').t`Answer mode`}</span>
                         {isSheet ? (
                             responseModeOptions.map((option) => {
                                 return (
