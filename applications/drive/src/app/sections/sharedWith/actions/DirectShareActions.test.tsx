@@ -25,12 +25,12 @@ jest.mock('../../../legacy/store/_volumes/useVolumesState', () => ({
 
 jest.mock('../../../legacy/store/_shares/useShare');
 
-jest.mock('../../../legacy/store/_documents/useOpenDocument', () => ({
-    ...jest.requireActual('../../../legacy/store/_documents/useOpenDocument'),
-    useOpenDocument: jest.fn(() => ({
-        openDocumentWindow: jest.fn(),
-    })),
+jest.mock('../../../utils/docs/openInDocs', () => ({
+    getOpenInDocsInfo: () => undefined,
+    downloadDocument: jest.fn(),
+    openDocsOrSheetsDocument: jest.fn(),
 }));
+
 jest.mocked(useShare).mockReturnValue({
     getSharePrivateKey: jest.fn(),
     getShareWithKey: jest.fn(),

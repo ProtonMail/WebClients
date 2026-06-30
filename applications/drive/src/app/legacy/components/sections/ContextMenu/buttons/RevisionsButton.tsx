@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { generateNodeUid, getDrive } from '@proton/drive';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { useDocumentActions } from '../../../../../legacy/store/_documents';
 import type { useRevisionsModal } from '../../../../../modals/RevisionsModal';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
+import { openDocumentHistory } from '../../../../../utils/docs/openInDocs';
 
 type RevisionItem = {
     mimeType: string;
@@ -24,7 +24,6 @@ interface Props {
 
 // legacy version of the revision button, remove it when the legacy section is deleted
 export const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => {
-    const { openDocumentHistory } = useDocumentActions();
     const nodeUid = generateNodeUid(selectedLink.volumeId, selectedLink.linkId);
     return (
         <ContextMenuButton
@@ -34,9 +33,8 @@ export const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Pro
             action={() => {
                 if (isProtonDocsDocument(selectedLink.mimeType)) {
                     void openDocumentHistory({
+                        uid: nodeUid,
                         type: 'doc',
-                        shareId: selectedLink.rootShareId,
-                        linkId: selectedLink.linkId,
                     });
                 } else {
                     // Legacy so we force getDrive

@@ -4,9 +4,9 @@ import { generateNodeUid } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { LinkDownload } from '../../../../../legacy/store';
-import { useDocumentActions } from '../../../../../legacy/store/_documents';
 import { DownloadManager } from '../../../../../modules/download/DownloadManager';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
+import { downloadDocument } from '../../../../../utils/docs/openInDocs';
 
 interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
     rootShareId: string;
@@ -18,7 +18,6 @@ interface Props {
 }
 
 const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
-    const { downloadDocumentWithNodeUid } = useDocumentActions();
     const dm = DownloadManager.getInstance();
     const onClick = async () => {
         // Document downloads are handled in two ways:
@@ -27,16 +26,10 @@ const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
         if (selectedBrowserItems.length === 1) {
             const item = selectedBrowserItems[0];
             if (isProtonDocsDocument(item.mimeType)) {
-                void downloadDocumentWithNodeUid({
-                    nodeUid: generateNodeUid(item.volumeId, item.linkId),
-                    type: 'doc',
-                });
+                void downloadDocument({ uid: generateNodeUid(item.volumeId, item.linkId), type: 'doc' });
                 return;
             } else if (isProtonDocsSpreadsheet(item.mimeType)) {
-                void downloadDocumentWithNodeUid({
-                    nodeUid: generateNodeUid(item.volumeId, item.linkId),
-                    type: 'sheet',
-                });
+                void downloadDocument({ uid: generateNodeUid(item.volumeId, item.linkId), type: 'sheet' });
                 return;
             }
         }

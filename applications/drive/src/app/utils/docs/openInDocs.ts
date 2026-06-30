@@ -83,7 +83,7 @@ type DocumentUrlParams = {
       }
 );
 
-const buildDocumentUrl = (params: DocumentUrlParams): URL => {
+export const buildDocumentUrl = (params: DocumentUrlParams): URL => {
     const { type: originalType, mode } = params;
     const type = tmpConvertNewDocTypeToOld(originalType);
 
