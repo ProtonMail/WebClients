@@ -72,6 +72,9 @@
       "Add email address": [
         "Rnu tansa n yimayl"
       ],
+      "Add filter": [
+        "Rnu astay"
+      ],
       "Add folder": [
         "Rnu akaram"
       ],
@@ -89,6 +92,9 @@
       ],
       "Add public holidays": [
         "Rnu ismiras izayazen"
+      ],
+      "Add sieve filter": [
+        "Rnu astay Sieve"
       ],
       "Add user": [
         "Rnu aseqdac"
@@ -2646,6 +2652,11 @@
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "seqdec amwasis n usserṛeḥ Easy Switch"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Daɣen, nsemṣada s wudem awurman urtan CSV akked wurtan n vCard. Tzemreḍ ad tesneqdeḍ neɣ ad tbeddleḍ amṣada-a s ufus."
@@ -4961,6 +4972,9 @@
       "Link type": [
         "Anaw n useɣwen"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Agbur yettwalin yettwammesten s proxy-nneɣ mi ara yettwarmed umesten mgal anarrak."
+      ],
       "Loading": [
         "Azdam"
       ],
@@ -4984,6 +4998,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Iznan deg Tuzna neɣ deg Ukaram n yirewwayen ad qqimen ttbanen-d deg ukaram-a, ɣas ad ten-terreḍ ɣer ukaram-nniḍen."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Iznan yellan deg ukaram n Spam neɣ iḍumman ad ttwakksen seg wadeg Akk iznan."
       ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
@@ -6019,6 +6036,9 @@
       "Auto show remote images": [
         "Sken-d tugna s wudem awurman"
       ],
+      "Auto-advance": [
+        "Asfari amaku"
+      ],
       "Auto-delete unwanted messages": [
         "Tukksa tawurmant n yiznan ur tebɣiḍ ara"
       ],
@@ -6268,6 +6288,9 @@
       "Event notifications": [
         "Ilɣa n tedyant"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "Kkes spam/iḍumman seg Akk iznan"
+      ],
       "Expires": [
         "Ad ifat di"
       ],
@@ -6423,6 +6446,9 @@
       ],
       "New password": [
         "Awal uffir amaynut"
+      ],
+      "Newsletters": [
+        "Tinawin n yisallen"
       ],
       "No filter": [
         "Ulac imsizdeg"
@@ -6835,6 +6861,9 @@
       "Create account": [
         "Snulfu-d amiḍan"
       ],
+      "Don't have access to your 2FA?": [
+        "Ur tesiḍ ara anekcum ɣer 2FA-inek?"
+      ],
       "Encryption and keys": [
         "Awgelhen d tsura"
       ],
@@ -6844,11 +6873,17 @@
       "Forgot username?": [
         "Tettuḍ isem n useqdac?"
       ],
+      "Frequent sign-in problems": [
+        "Uguren n unekcum imezgiyen"
+      ],
       "General": [
         "Amatu"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Awi ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Awi tallelt seg ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Igrawen"
@@ -7485,6 +7520,9 @@
       ],
       "DNS leak prevention": [
         "Asewḥel n tuffɣa n DNS"
+      ],
+      "Easy Switch import assistant": [
+        "Amallal n usserṛeḥ Easy Switch"
       ],
       "Encrypted contact details": [
         "Talqayt n unermis awgelhan"
@@ -8330,6 +8368,11 @@
     "placeholder": {
       "Members": [
         "Imedrawen"
+      ]
+    },
+    "Plan description": {
+      "All ${ BRAND_NAME } premium products included in Duo.": [
+        "Akk ifarisen premium n ${ BRAND_NAME } llan deg Duo."
       ]
     },
     "Plans": {
@@ -9740,6 +9783,9 @@
       ],
       "Add PayPal payment method": [
         "Rnu tarrayt n uxelleṣ PayPal"
+      ],
+      "Add Sieve filter": [
+        "Rnu astay Sieve"
       ],
       "Add to allow list": [
         "Rnu ɣer tebdart n usireg"
