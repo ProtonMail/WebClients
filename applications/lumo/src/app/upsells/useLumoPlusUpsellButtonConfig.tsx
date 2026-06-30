@@ -31,7 +31,7 @@ const useLumoPlusUpsellButtonConfig = (feature: UPSELL_FEATURE, options?: Upsell
 
         if (hasBlackFridayOffer) {
             return {
-                getChatCTAContent: () => c('collider_2025: Link').t`upgrade to ${LUMO_SHORT_APP_NAME} AI Plus.`,
+                getChatCTAContent: () => c('collider_2025: Link').t`upgrade to ${LUMO_SHORT_APP_NAME} Plus.`,
                 onUpgrade: () => openLumoUpsellModal(feature),
                 showInSidebar: hasBlackFridayFreeOffer,
                 showInNavbar: hasBlackFridayFreeOffer || !isMobile(),

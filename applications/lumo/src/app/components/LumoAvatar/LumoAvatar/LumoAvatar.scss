@@ -1,7 +1,9 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 .lumo-avatar {
-	inline-size: 90px;
-	block-size: 90px;
+	inline-size: rem(70);
+	block-size: rem(70);
 	display: block;
-	margin-block: -6px;
-	margin-inline: -16px;
+	margin-block: rem(-6);
+	margin-inline: rem(-16);
 }

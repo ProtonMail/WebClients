@@ -85,10 +85,10 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
 
     const modalTitle = useMemo(() => {
         if (isBusinessAudience) {
-            return c('collider_2025: Upsell Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} AI Pro`;
+            return c('collider_2025: Upsell Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} Pro`;
         }
 
-        return c('collider_2025: Upsell Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} AI Plus`;
+        return c('collider_2025: Upsell Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} Plus`;
     }, [isBusinessAudience]);
 
     const ctaContent = loading ? (
