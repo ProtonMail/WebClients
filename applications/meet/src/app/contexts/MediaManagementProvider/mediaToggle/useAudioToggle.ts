@@ -21,6 +21,7 @@ import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
@@ -77,6 +78,8 @@ const isRoomInLivekitCloud = (room: Room) => {
  * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
  */
 export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
+    const isDtlnPerfMonitorEnabled = useFlag('MeetDtlnPerfMonitor');
+
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
@@ -332,7 +335,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         const processor = isAdvancedNoiseFilterSupported
             ? KrispNoiseFilter({ debugLogs: isKrispDebugEnabled })
-            : DTLNFilter();
+            : DTLNFilter({ isDtlnPerfMonitorEnabled, reportError });
 
         try {
             currentAudioTrack.setAudioContext(ctx);
