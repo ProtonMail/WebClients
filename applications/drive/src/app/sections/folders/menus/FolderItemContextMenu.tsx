@@ -5,7 +5,7 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
-import { useOpenInDocs } from '../../../legacy/store/_documents';
+import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { CopyButton } from '../buttons/CopyButton';
 import { CopyLinkContextButton } from '../buttons/CopyLinkContextButton';
@@ -58,7 +58,7 @@ export function FolderItemContextMenu({
 
     const canCopyPublicLink = canShareSelectedItem && selectedItem?.isSharedPublicly;
 
-    const openInDocs = useOpenInDocs(selectedItem);
+    const openInDocsInfo = selectedItem?.mimeType ? getOpenInDocsInfo(selectedItem.mimeType) : undefined;
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedItem?.mimeType && isPreviewAvailable(selectedItem.mimeType, selectedItem.size);
 
@@ -81,7 +81,7 @@ export function FolderItemContextMenu({
             {isOnlyOneFileItem && permissions.canOpenInDocs && (
                 <OpenInDocsButton type="context" selectedItems={selectedItems} close={close} />
             )}
-            {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen && permissions.canOpenInDocs)) && (
+            {(hasPreviewAvailable || (isOnlyOneFileItem && !!openInDocsInfo && permissions.canOpenInDocs)) && (
                 <ContextSeparator />
             )}
             <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
