@@ -8,12 +8,11 @@ import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payme
 import { getBankSvg } from '@proton/payments/ui';
 
 export type SavedMethodCustomType =
-    | PAYMENT_METHOD_TYPES.CARD
-    | PAYMENT_METHOD_TYPES.PAYPAL
     | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
     | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
     | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-    | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+    | PAYMENT_METHOD_TYPES.GOOGLE_PAY
+    | PAYMENT_METHOD_TYPES.APPLE_PAY;
 
 interface Props {
     type: SavedMethodCustomType;
@@ -21,7 +20,7 @@ interface Props {
 }
 
 const SavedPaymentMethodDetails = ({ type, details }: Props) => {
-    if (type === PAYMENT_METHOD_TYPES.CARD || type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         const { Brand, ExpMonth, ExpYear, Last4 } = details as SavedCardDetails;
         const bankIcon = getBankSvg(getCreditCardTypeByBrand(Brand));
         return (
@@ -33,7 +32,7 @@ const SavedPaymentMethodDetails = ({ type, details }: Props) => {
                 </div>
             </div>
         );
-    } else if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         const { Payer } = details as PayPalDetails;
         const bankIcon = getBankSvg('paypal');
         return (

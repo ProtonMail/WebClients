@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import type { SavedPaymentMethod, SavedPaymentMethodExternal, SavedPaymentMethodInternal } from '@proton/payments';
-import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import type { SavedPaymentMethod } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { applyHOCs } from '@proton/testing/lib/context/hocs';
 import {
     withApi,
@@ -21,6 +21,13 @@ jest.mock('../../hooks/useApi', () => {
         default: () => apiMock,
     };
 });
+
+// The Chargebee credit card form renders a third-party iframe and reads the chargebeeCard
+// hook, neither of which is exercised here. Stub it so the surrounding Payment UI can render.
+jest.mock('@proton/payments/ui/components/ChargebeeWrapper', () => ({
+    ...jest.requireActual('@proton/payments/ui/components/ChargebeeWrapper'),
+    ChargebeeCreditCardWrapper: () => <div data-testid="chargebee-credit-card-wrapper" />,
+}));
 
 let paymentMethods: SavedPaymentMethod[];
 let options;
@@ -43,7 +50,7 @@ beforeEach(() => {
     paymentMethods = [
         {
             ID: 'methodid1',
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Autopay: 1,
             Order: 497,
             Details: {
@@ -55,22 +62,20 @@ beforeEach(() => {
                 Country: 'US',
                 ZIP: '11111',
             },
-            External: MethodStorage.INTERNAL,
         },
         {
             ID: 'methodid2',
-            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             Order: 498,
             Details: {
                 BillingAgreementID: 'Billing1',
                 PayerID: 'Payer1',
                 Payer: 'buyer@example.com',
             },
-            External: MethodStorage.INTERNAL,
         },
         {
             ID: 'methodid3',
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Autopay: 0,
             Order: 499,
             Details: {
@@ -82,7 +87,6 @@ beforeEach(() => {
                 Country: 'US',
                 ZIP: '1211',
             },
-            External: MethodStorage.INTERNAL,
         },
     ];
 
@@ -135,8 +139,8 @@ describe('Payment', () => {
     });
 
     it('should render', () => {
-        const method = PAYMENT_METHOD_TYPES.CARD;
-        const savedMethodInternal = paymentMethods.find(({ ID }) => method === ID) as SavedPaymentMethodInternal;
+        const method = PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+        const savedMethod = paymentMethods.find(({ ID }) => method === ID);
 
         render(
             <WrappedPaymentsNoApi
@@ -147,7 +151,7 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                savedMethodInternal={savedMethodInternal}
+                savedMethod={savedMethod}
                 loading={false}
                 currency="USD"
                 iframeHandles={
@@ -184,12 +188,11 @@ describe('Payment', () => {
             <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="signup"
-                method={PAYMENT_METHOD_TYPES.CARD}
+                method={PAYMENT_METHOD_TYPES.CHARGEBEE_CARD}
                 amount={1000}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                savedMethodInternal={undefined}
                 loading={false}
                 currency="USD"
                 iframeHandles={
@@ -256,11 +259,10 @@ describe('Payment', () => {
                     Country: 'US',
                     ZIP: '11111',
                 },
-                External: MethodStorage.EXTERNAL,
             },
         ];
 
-        const savedMethodExternal = paymentMethods[0] as SavedPaymentMethodExternal;
+        const savedMethod = paymentMethods[0];
 
         const { container } = render(
             <WrappedPaymentsNoApi
@@ -271,7 +273,7 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                savedMethodExternal={savedMethodExternal}
+                savedMethod={savedMethod}
                 loading={false}
                 currency="USD"
                 iframeHandles={
@@ -336,11 +338,10 @@ describe('Payment', () => {
                     PayerID: 'Payer1',
                     Payer: '',
                 },
-                External: MethodStorage.INTERNAL,
             },
         ];
 
-        const savedMethodInternal: SavedPaymentMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
+        const savedMethod = paymentMethods[0];
 
         const { container } = render(
             <WrappedPaymentsNoApi
@@ -351,7 +352,7 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                savedMethodInternal={savedMethodInternal}
+                savedMethod={savedMethod}
                 loading={false}
                 currency="USD"
                 iframeHandles={
@@ -396,7 +397,6 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                savedMethodInternal={undefined}
                 loading={false}
                 currency="USD"
                 iframeHandles={
@@ -439,12 +439,11 @@ describe('Payment', () => {
                 <WrappedPaymentsNoApi
                     flow="subscription"
                     onMethod={() => {}}
-                    method={PAYMENT_METHOD_TYPES.CARD}
+                    method={PAYMENT_METHOD_TYPES.CHARGEBEE_CARD}
                     amount={1000}
                     isAuthenticated={true}
                     lastUsedMethod={lastUsedMethod}
                     allMethods={allMethods}
-                    savedMethodInternal={undefined}
                     loading={false}
                     currency="USD"
                     iframeHandles={
