@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
+import React from 'react';
 
-import { Icon } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
+import { type IconName, LumoIcon } from '../../components/LumoIcon/LumoIcon.tsx';
 
 export interface PlanFeature {
     icon: IconName;
@@ -20,7 +20,7 @@ export const PlanCard = ({ planName, features, children }: PlanCardProps) => (
         <ul className="unstyled m-0 flex flex-column gap-3 flex-auto">
             {features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-2 flex-nowrap">
-                    <Icon name={feature.icon} size={4} className="shrink-0 color-weak" />
+                    <LumoIcon name={feature.icon} size={16} className="shrink-0 color-weak" />
                     <span className="color-weak text-sm">{feature.getText()}</span>
                 </li>
             ))}
