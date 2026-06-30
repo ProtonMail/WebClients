@@ -1,6 +1,11 @@
 @use 'sass:map';
 @use '~@proton/styles/scss/lib/config' as *;
 
+.searchfield-container {
+	// Positioning context for the nested and stretched .searchfield-disabled-input-button
+	position: relative;
+}
+
 .searchfield-disabled-input-button {
 	position: absolute;
 	inline-size: 100%;
