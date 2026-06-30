@@ -70,6 +70,7 @@ export const getWindowPlaywrightConfig = (): BrowserWindowConstructorOptions => 
         webPreferences: {
             ...config.webPreferences,
             backgroundThrottling: false,
+            sandbox: false,
         },
     };
 };
