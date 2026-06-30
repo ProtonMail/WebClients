@@ -244,6 +244,8 @@ export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.P
 export const hasAnyB2bBundle = (subscription: MaybeFreeSubscription) =>
     hasBundlePro(subscription) || hasBundlePro2024(subscription) || hasBundleBiz2025(subscription);
 
+export const hasMspEligiblePlan = (subscription: MaybeFreeSubscription) => hasPassBusiness(subscription);
+
 export const hasFreeOrPlus = (subscription: MaybeFreeSubscription) =>
     hasFree(subscription) ||
     hasMail(subscription) ||
