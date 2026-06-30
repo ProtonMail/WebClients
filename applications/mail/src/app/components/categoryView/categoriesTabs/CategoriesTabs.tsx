@@ -84,7 +84,7 @@ export const CategoriesTabsList = () => {
                     return (
                         <div
                             key={category.id}
-                            className="tab-wrapper shrink-0"
+                            className="tab-wrapper flex-none min-w-0"
                             onDragOver={handleDragOver(category.id)}
                             onDrop={handleDrop(category.id)}
                         >
