@@ -33,6 +33,7 @@ export const TabBadge = ({ category, tabState, shouldShowCounter, shouldShowNewB
         return (
             <span
                 aria-label={label}
+                dir="ltr"
                 className={clsx(
                     'tag-count px-1.5 py-0.5 text-sm',
                     tabState === TabState.ACTIVE ? 'mail-category-color mail-category-count-bg' : 'bg-weak color-weak'
@@ -55,9 +56,9 @@ export const TabBadge = ({ category, tabState, shouldShowCounter, shouldShowNewB
         return (
             <span
                 aria-label={label}
+                dir="ltr"
                 className={clsx(
                     'tag-count px-1.5 py-0.5 text-sm',
-                    shouldShowCounter ? undefined : 'opacity-0',
                     tabState === TabState.ACTIVE ? 'mail-category-color mail-category-count-bg' : 'bg-weak color-weak'
                 )}
             >

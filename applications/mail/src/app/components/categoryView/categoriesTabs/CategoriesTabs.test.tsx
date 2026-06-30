@@ -21,7 +21,6 @@ jest.mock('./useCategoriesBadge', () => ({
     useCategoriesBadge: jest.fn(() => ({
         shouldShowCounter: false,
         shouldShowNewBadge: false,
-        handleTabClick: jest.fn(),
     })),
 }));
 
