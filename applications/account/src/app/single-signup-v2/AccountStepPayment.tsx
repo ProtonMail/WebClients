@@ -203,7 +203,7 @@ const AccountStepPayment = ({
                 let paymentType: 'cc' | 'pp' | 'btc';
                 if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
                     paymentType = 'pp';
-                } else if (type === PAYMENT_METHOD_TYPES.BITCOIN || type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+                } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
                     paymentType = 'btc';
                 } else {
                     paymentType = 'cc';
@@ -349,9 +349,7 @@ const AccountStepPayment = ({
 
     const isSignupPass = paymentFacade.flow === 'signup-pass' || paymentFacade.flow === 'signup-pass-upgrade';
 
-    const selectedMethodCard =
-        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD ||
-        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    const selectedMethodCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const showAlert3ds = selectedMethodCard && !isSignupPass;
 
     const loadingPaymentsForm = model.loadingDependencies;
@@ -425,9 +423,7 @@ const AccountStepPayment = ({
                         return;
                     }
 
-                    const isBitcoin =
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN ||
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+                    const isBitcoin = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
 
                     // Users who selected bitcoin, can't click "pay" to signup. They need to transfer BTC to the
                     // displayed address, and then the subscription will be created.

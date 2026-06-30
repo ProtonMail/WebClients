@@ -59,7 +59,7 @@ const PaymentMethodActions = ({ method, methods, app }: Props) => {
 
     const dropdownActions: DropdownActionProps[] = [];
 
-    if (method.Type === PAYMENT_METHOD_TYPES.CARD) {
+    if (method.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         const card: CardModel = toCardModel(method);
 
         dropdownActions.push({

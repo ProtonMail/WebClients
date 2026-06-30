@@ -21,7 +21,6 @@ export {
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     MAX_MEMBER_PASS_PRO_ADDON,
-    MethodStorage,
     MIN_MEMBER_PASS_B2B_ADDON,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
@@ -59,7 +58,6 @@ export {
     captureWrongPlanName,
     fixPlanIDs,
     fixPlanName,
-    isChargebeePaymentMethod,
     isCreditNoteInvoice,
     isCurrencyConversionInvoice,
     isRegularInvoice,
@@ -79,7 +77,6 @@ export {
 export type {
     AmountAndCurrency,
     AvailablePaymentMethod,
-    CardPayment,
     ChargeablePaymentParameters,
     ChargeablePaymentToken,
     ChargeableV5PaymentParameters,
@@ -110,33 +107,23 @@ export type {
     PaymentStatus,
     PaymentTokenResult,
     PayPalDetails,
-    PaypalPayment,
     PlainPaymentMethodType,
     PlanIDs,
     Pricing,
     RemoveEventListener,
     SavedCardDetails,
     SavedPaymentMethod,
-    SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
     SepaDetails,
     TokenPayment,
     TokenPaymentMethod,
     Transaction,
     TransactionResponse,
     V5PaymentToken,
-    WrappedCardPayment,
     WrappedCryptoPayment,
-    WrappedPaypalPayment,
 } from './core/interface';
 export { formatPaymentMethod, formatPaymentMethods, initializePaymentMethods, PaymentMethods } from './core/methods';
 export { isSavablePaymentMethod } from './core/payment-methods/helpers';
 export { useSepaCurrencyOverride } from './core/payment-methods/useSepaCurrencyOverride';
-export {
-    CardPaymentProcessor,
-    InvalidCardDataError,
-    type CardPaymentProcessorState,
-} from './core/payment-processors/cardPayment';
 export {
     ChargebeeCardPaymentProcessor,
     type ChargebeeCardPaymentProcessorState,
@@ -151,7 +138,6 @@ export {
     type PaymentProcessorType,
 } from './core/payment-processors/interface';
 export { PaymentProcessor, InvalidDataError } from './core/payment-processors/paymentProcessor';
-export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
 export {
@@ -366,16 +352,12 @@ export {
 } from './core/subscription/plans-map-wrapper';
 export { SelectedPlan } from './core/subscription/selected-plan';
 export {
-    isCardPayment,
     isExistingPaymentMethod,
     isFreeSubscription,
     isPaypalDetails,
-    isPaypalPayment,
     isSavedCardDetails,
     isSavedPaymentMethodApplePay,
-    isSavedPaymentMethodExternal,
     isSavedPaymentMethodGooglePay,
-    isSavedPaymentMethodInternal,
     isSavedPaymentMethodSepa,
     isSepaDetails,
     isTokenPayment,
