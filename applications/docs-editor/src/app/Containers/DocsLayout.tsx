@@ -97,13 +97,13 @@ function LeftPanel({ children }: React.PropsWithChildren) {
 }
 
 function RightPanel({ children }: React.PropsWithChildren) {
-  const { leftPanelWidth } = useDocsLayoutContext()
+  const { leftPanelWidth, leftPanelEnabled } = useDocsLayoutContext()
   return (
     <div
       className="relative grid scroll-pt-[20px] overflow-auto"
       style={{
         gridRow: 1,
-        gridColumn: '2 / 3',
+        gridColumn: leftPanelEnabled ? '2 / 3' : 1,
         '--right-panel-padding': `calc((100% + ${leftPanelWidth}px - ${EDITOR_WIDTH}px) / 2)`,
       }}
     >
