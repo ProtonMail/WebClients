@@ -873,6 +873,9 @@
       "Incorrect username": [
         "Falscher Benutzername"
       ],
+      "Invalid verification code": [
+        "Ungültiger Verifizierungscode"
+      ],
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
@@ -932,6 +935,9 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -1047,7 +1053,7 @@
         "Code eingeben"
       ],
       "Enter the code from your authenticator app": [
-        "Code aus deiner Authentifizierungs-App ein eingeben"
+        "Code aus deiner Authentifizierungs-App eingeben"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -1544,6 +1550,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifizierung erfolgreich"
       ]
     },
     "Title": {
@@ -1555,6 +1564,9 @@
       ],
       "Enter your password": [
         "Passwort eingeben"
+      ],
+      "Human verification": [
+        "Captcha"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"

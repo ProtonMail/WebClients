@@ -584,6 +584,9 @@
       "North Korea": [
         "كوريا الشمالية"
       ],
+      "North Macedonia": [
+        "مقدونيا الشمالية"
+      ],
       "Northern Mariana Islands": [
         "جزر ماريانا الشمالية"
       ],
@@ -864,8 +867,14 @@
       "Enter 6 digits": [
         "أدخل ٦ أرقام"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "أدخل اسم مستخدمك دون النطاق (@example.com)"
+      ],
       "Incorrect username": [
         "اسم مستخدم غير صحيح"
+      ],
+      "Invalid verification code": [
+        "رمز التحقق خاطئ"
       ],
       "Not a valid number": [
         "رقم غير صحيح"
@@ -915,9 +924,20 @@
         "لم نتمكن من تحميل هذه الصفحة. يرجى تحديث الصفحة أو التحقق من اتصالك بالإنترنت."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "حدث خطأ أثناء المصادقة باستخدام مفتاح الأمان. يرجى المحاولة مجددًا."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "إدراج مفتاح أمان مرتبط بحساب ${ BRAND_NAME }."
+      ],
       "Security key": [
         "مفتاح الأمان"
+      ],
+      "Touch your security key.": [
+        "المس مفتاح أمانك."
       ]
     },
     "fido2: Label": {
@@ -1047,14 +1067,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "إنشاء عدة حسابات مجانية غير مسموح به وفقًا لـ ‎${ termsLink }"
       ],
+      "Each code can only be used once": [
+        "يمكن استخدام كل رمز مرة واحدة فقط"
+      ],
       "Edit email address": [
         "تعديل عنوان البريد الإلكتروني"
+      ],
+      "Enter code": [
+        "أدخل الرمز"
       ],
       "Enter the code from your authenticator app": [
         "أدخل الرمز من تطبيق المصادقة لديك"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "إدخال رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
@@ -1073,6 +1102,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "إذا لم تجد البريد الإلكتروني في علبة الوارد الخاصة بك، يرجى التحقق من مجلد البريد المزعج الخاص بك."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "في حال فقدان الوصول إلى تطبيق المصادقة، يمكن استخدام رمز واحد من رموز الاسترداد الاحتياطية الـ 16 المقدمة عند إعداد المصادقة الثنائية. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "فُقد الاتصال بالإنترنت"
@@ -1574,6 +1606,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "تم إرسال الرمز إلى ${ methodTo }"
+      ],
+      "Verification successful": [
+        "تم التحقق بنجاح"
       ]
     },
     "Title": {
@@ -1585,6 +1620,9 @@
       ],
       "Enter your password": [
         "أدخل كلمة مرورك"
+      ],
+      "Human verification": [
+        "التحقق البشري"
       ],
       "Invalid verification code": [
         "رمز التحقق خاطئ"
@@ -1604,6 +1642,14 @@
         "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
         "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
         "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } حرفًا)",
+        "يُرجى تجربة اسم مستخدم أقصر (بحد أقصى ${ n } حرف)",
+        "يُرجى تجربة اسم مستخدم أقصر (بحد أقصى ${ n } حرفين)",
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } أحرف)",
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } حرفًا)",
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } حرفًا)"
       ]
     }
   }

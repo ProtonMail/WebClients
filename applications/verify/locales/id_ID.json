@@ -584,6 +584,9 @@
       "North Korea": [
         "Korea Utara"
       ],
+      "North Macedonia": [
+        "Makedonia Utara"
+      ],
       "Northern Mariana Islands": [
         "Kepulauan Mariana Utara"
       ],
@@ -864,8 +867,14 @@
       "Enter 6 digits": [
         "Masukkan 6 digit"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Masukkan nama pengguna tanpa domain (@example.com)"
+      ],
       "Incorrect username": [
         "Nama pengguna salah"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
       ],
       "Not a valid number": [
         "Nomor telepon tidak valid"
@@ -915,9 +924,20 @@
         "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan. Silakan coba lagi."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Sisipkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
       "Security key": [
         "Kunci keamanan"
+      ],
+      "Touch your security key.": [
+        "Sentuh kunci keamanan."
       ]
     },
     "fido2: Label": {
@@ -1017,14 +1037,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Membuat lebih dari satu akun gratis tidak diizinkan oleh ${ termsLink } kami."
       ],
+      "Each code can only be used once": [
+        "Setiap kode hanya dapat digunakan sekali"
+      ],
       "Edit email address": [
         "Sunting alamat email"
+      ],
+      "Enter code": [
+        "Masukkan kode"
       ],
       "Enter the code from your authenticator app": [
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Masukkan kode verifikasi. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
@@ -1043,6 +1072,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email ini pada kotak masuk, silakan periksa folder spam Anda."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jika kehilangan akses ke aplikasi autentikator, gunakan 1 dari 16 kode pemulihan cadangan yang disediakan saat menyiapkan autentikasi dua faktor. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
@@ -1177,6 +1209,9 @@
       "${ n } message per day": [
         "${ n } pesan per hari"
       ],
+      "${ options }-day file version history": [
+        "Riwayat versi file ${ options } hari"
+      ],
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
@@ -1245,6 +1280,9 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Data retention policies": [
+        "Kebijakan retensi data"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -1496,6 +1534,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
       ]
     },
     "Title": {
@@ -1507,6 +1548,9 @@
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
+      ],
+      "Human verification": [
+        "Verifikasi manusia"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
