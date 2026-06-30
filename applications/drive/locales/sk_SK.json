@@ -4204,6 +4204,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
+      ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ]
     },
     "error": {
@@ -4634,6 +4643,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -7594,6 +7606,15 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nepodarilo sa nám overiť, či ${ nameAuthor } nahral ${ nodeName }. Mohlo dôjsť k manipulácii s nasledujúcimi údajmi: poradie údajov v súbore. Otvorte len v prípade, ak mu dôverujete."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
+      ],
+      "Preparing download": [
+        "Príprava na stiahnutie"
+      ],
+      "Preparing…": [
+        "Príprava…"
       ]
     },
     "info": {
@@ -8467,7 +8488,7 @@
         "Emaily"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "Extremely Satisfied": [
         "Mimoriadna spokojnosť"
@@ -10530,6 +10551,9 @@
         "${ removed } fotografie boli odstránené z \"${ albumName }\"",
         "${ removed } fotografií bolo odstránených z \"${ albumName }\"",
         "${ removed } fotografií bolo odstránených z \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Nepodarilo sa načítať podrobnosti zdieľania"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14263,6 +14287,33 @@
       ],
       "We'd love to hear from you!": [
         "Radi si vypočujeme váš názor!"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Elektronický podpis overený. Tento súbor bol bezpečne vytvorený používateľom ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Elektronický podpis overený. Tento súbor bol bezpečne nahraný používateľom ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Elektronický podpis overený. Tento priečinok bol bezpečne vytvorený používateľom ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Elektronický podpis overený. Táto zložka bola bezpečne nahraná používateľom ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nemohli sme overiť, že tento súbor vytvoril používateľ ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nemohli sme overiť, že tento priečinok vytvoril používateľ ${ author }."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nemohli sme overiť, že tento súbor nahral používateľ ${ author }."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nemohli sme overiť, že tento priečinok nahral používateľ ${ author }."
       ]
     },
     "Today icon tooltip in mini calendar": {

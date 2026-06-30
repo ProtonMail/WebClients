@@ -4142,13 +4142,13 @@
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
       "No drive found to import": [
-        "İçe aktarılacak bir drive bulunamadı"
+        "İçe aktarılacak sürücü bulunamadı"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
+        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
+        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
       ]
     },
     "error": {
@@ -7359,7 +7359,7 @@
         "Tek bir şifrelenmiş paket. Tam kapsamlı iş koruması."
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
       ],
       "Forgot password?": [
         "Parolamı unuttum"
@@ -7371,7 +7371,7 @@
         "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
       ],
       "We'll remind you to verify your password again later": [
-        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ],
       "Upgrade to get more storage space": [
         "Daha fazla depolama alanı edinmek için tarifenizi yükseltin"
@@ -7386,7 +7386,13 @@
         "${ nameAuthor } tarafından yüklenen ${ nodeName } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+      ],
+      "Preparing download": [
+        "İndirmeye hazırlanıyor"
+      ],
+      "Preparing…": [
+        "Hazırlanıyor…"
       ]
     },
     "info": {
