@@ -1,0 +1,21 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.msp-billing-table.simple-table--responsive-cards {
+	@container (max-width: 35rem) {
+		tr {
+			position: relative;
+			padding-inline-end: calc(var(--space-3) + 2rem);
+		}
+
+		td {
+			text-align: start;
+		}
+
+		td.action-cell {
+			position: absolute;
+			inset-block-start: var(--space-2);
+			inset-inline-end: var(--space-2);
+			padding: 0;
+		}
+	}
+}

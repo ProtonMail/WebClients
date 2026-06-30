@@ -1,0 +1,37 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.msp-chart-legend-bar {
+	inline-size: rem(15);
+	block-size: rem(15);
+	border-radius: var(--border-radius-sm);
+	background: var(--signal-info-minor-1);
+	flex-shrink: 0;
+}
+
+.msp-chart-legend-line {
+	inline-size: rem(15);
+	block-size: rem(3);
+	border-radius: var(--border-radius-sm);
+	background: var(--primary);
+	flex-shrink: 0;
+}
+
+.msp-chart-tooltip-inner {
+	background: var(--background-invert);
+	color: var(--text-invert);
+	border-radius: var(--border-radius-md);
+	padding-block: rem(8);
+	padding-inline: rem(12);
+	min-inline-size: rem(140);
+	box-shadow: 0 rem(4) rem(12) rgb(0 0 0 / 0.18);
+}
+
+.msp-chart-tooltip-arrow {
+	inline-size: 0;
+	block-size: 0;
+	border-inline-start: rem(6) solid transparent;
+	border-inline-end: rem(6) solid transparent;
+	border-block-start: rem(6) solid var(--background-invert);
+	margin-block: 0;
+	margin-inline: auto;
+}
