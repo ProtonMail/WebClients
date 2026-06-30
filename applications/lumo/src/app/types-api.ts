@@ -161,6 +161,7 @@ export type ChatCompletionsLumoExtension = {
     target?: LumoCompletionTarget;
     request_key?: string;
     request_id?: string;
+    image_aspect_ratio?: ImageAspectRatio;
 };
 
 export type ChatCompletionsStreamOptions = {
@@ -273,7 +274,7 @@ export type ServerToolCallMessage = {
 // Server-side tool result returned after execution (chat.tool_result SSE chunk).
 export type ServerToolResultMessage = {
     type: 'server_tool_result';
-    // eslint-disable-next-line @typescript-eslint/naming-convention
+
     call_id: string;
     content: string;
     encrypted?: boolean;
