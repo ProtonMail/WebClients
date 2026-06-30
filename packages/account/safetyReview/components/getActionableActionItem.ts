@@ -6,9 +6,9 @@ export const getActionableActionItem = (
     actionsHistoryMap: SafetyReviewContainerState['actionsHistoryMap'],
     isPasswordReminderInASREnabled: boolean
 ) => {
-    // We always show password verification as the first step
-    if (value.id === 'passwordVerification' && value.recoveryItem.isAvailable) {
-        return isPasswordReminderInASREnabled ? !actionsHistoryMap.has(value.id) : false;
+    // We always show password verification as the first step irrespective of their reminder cycle
+    if (value.id === 'passwordVerification') {
+        return isPasswordReminderInASREnabled && value.recoveryItem.isAvailable && !actionsHistoryMap.has(value.id);
     }
 
     return value.recoveryItem.isAvailable && !value.recoveryItem.isEnabled && !actionsHistoryMap.has(value.id);
