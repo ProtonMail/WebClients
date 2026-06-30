@@ -4,26 +4,17 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+.apps-dropdown-button-icon {
+	stroke: var(--text-norm);
+	stroke-width: 0.4px;
+}
+
 .lumo-sidebar {
 	padding: #{rem(12)};
 	gap: #{rem(8)};
 	min-inline-size: 0;
 	max-inline-size: 100%;
 	overflow-x: hidden;
-
-	// ul {
-	// 	span {
-	// 		&.text-ellipsis {
-	// 			color: var(--collapsible-section-text-color);
-	// 		}
-	// 	}
-	// }
-
-	// // Add V2 icon styling
-	// svg {
-	// 	stroke-width: 0.3px;
-	// 	stroke: currentcolor;
-	// }
 
 	// `.lumo-plus-button` provides its own SVG styling, opt it out of the
 	// chunky-stroke treatment applied to the rest of the sidebar icons.
@@ -35,14 +26,13 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
+
+
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 		gap: #{rem(4)};
-
-		// gap: 0;
 	}
 
-	// Remove list styling from Lumo Plus button
 	li {
 		font-size: rem(14);
 		list-style: none !important;

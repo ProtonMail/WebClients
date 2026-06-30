@@ -1,5 +1,6 @@
 @use './assets/fonts/fonts.css' as *;
 @use '~@proton/styles/scss/proton-lumo' as *;
+@use './styles/lumo-modal-backdrop' as *;
 
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;

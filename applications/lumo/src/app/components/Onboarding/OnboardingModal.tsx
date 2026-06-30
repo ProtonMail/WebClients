@@ -150,7 +150,13 @@ const OnboardingModal = ({ onClick, ...modalProps }: Props & ModalProps) => {
     ];
 
     return (
-        <ModalTwo size="xlarge" className="onboarding-lumo-modal" disableCloseOnEscape {...modalProps}>
+        <ModalTwo
+            size="xlarge"
+            className="onboarding-lumo-modal"
+            disableCloseOnEscape
+            enableCloseWhenClickOutside
+            {...modalProps}
+        >
             <ModalTwoHeader hasClose />
             <ModalTwoContent>
                 <div className="onboarding-modal flex flex-column flex-nowrap gap-2 px-4">

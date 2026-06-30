@@ -62,7 +62,7 @@ export const MainLayout = ({ children }: Props) => {
     const isGuest = useIsGuest();
     return (
         <GhostChatProvider>
-            <SidebarProvider>
+            <SidebarProvider defaultMode={isGuest ? 'expanded' : 'hidden'}>
                 <SearchModalProvider>
                     <RightPanelProvider>
                         {!isGuest ? (

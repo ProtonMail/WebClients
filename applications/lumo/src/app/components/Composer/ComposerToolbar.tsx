@@ -158,7 +158,7 @@ export const ComposerToolbar = ({
                         <Button
                             ref={toolsButtonRef}
                             className={clsx(
-                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center py-1.5 rounded-full',
+                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center color-weak py-1.5 rounded-full',
                                 showToolsMenu && 'is-active'
                             )}
                             onClick={handleToolsButtonClick}
