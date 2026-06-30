@@ -873,6 +873,9 @@
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
+      "Invalid verification code": [
+        "잘못된 검증 코드"
+      ],
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
@@ -932,6 +935,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -1037,6 +1043,9 @@
       "Edit email address": [
         "이메일 주소 변경"
       ],
+      "Enter code": [
+        "코드 입력"
+      ],
       "Enter the code from your authenticator app": [
         "인증 앱에서 코드를 입력하세요."
       ],
@@ -1063,6 +1072,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -1522,6 +1534,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
+      ],
+      "Verification successful": [
+        "인증 성공"
       ]
     },
     "Title": {
@@ -1533,6 +1548,9 @@
       ],
       "Enter your password": [
         "비밀번호를 입력하세요"
+      ],
+      "Human verification": [
+        "사람임을 인증"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
