@@ -956,6 +956,12 @@
       "Select country": [
         "Επιλογή Χώρας"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Επιλέξτε βαθμολογία ${ n } από ${ to }"
+      ],
+      "Send Feedback": [
+        "Αποστολή Σχολίων"
+      ],
       "Set as album cover": [
         "Ορισμός ως εξώφυλλο άλμπουμ"
       ],
@@ -4502,6 +4508,9 @@
       ],
       "Security key": [
         "Κλειδί ασφαλείας"
+      ],
+      "Touch your security key.": [
+        "Αγγίξτε το κλειδί ασφαλείας σας."
       ]
     },
     "fido2: Label": {
@@ -6194,6 +6203,12 @@
       "Preparing": [
         "Προετοιμασία"
       ],
+      "Preparing download": [
+        "Προετοιμασία λήψης"
+      ],
+      "Preparing…": [
+        "Προετοιμασία…"
+      ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
@@ -7428,6 +7443,9 @@
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
+      "Extremely Satisfied": [
+        "Εξαιρετικά Ικανοποιημένος"
+      ],
       "File": [
         "Αρχείο"
       ],
@@ -7761,6 +7779,9 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
+      "Tell us more about your experience": [
+        "Πείτε μας περισσότερα για την εμπειρία σας"
+      ],
       "Theme": [
         "Θέμα"
       ],
@@ -7805,6 +7826,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "Very Dissatisfied": [
+        "Πολύ Δυσαρεστημένος"
       ],
       "Viewer": [
         "Θεατής"
@@ -9067,6 +9091,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     },
     "new_plans: Subtext": {
@@ -10546,6 +10575,9 @@
       ],
       "New name": [
         "Νέο όνομα"
+      ],
+      "Optional feedback": [
+        "Προαιρετικά σχόλια"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -13180,6 +13212,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Δεν μπορέσαμε να επιβεβαιώσουμε ότι ο κόμβος δημιουργήθηκε από τον ${ claimedKeyAuthor }. Ο λόγος είναι: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ],
       "Welcome offer": [
         "Προσφορά καλωσορίσματος"
