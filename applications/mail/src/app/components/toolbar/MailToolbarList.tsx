@@ -1,5 +1,6 @@
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
@@ -69,7 +70,10 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
             <>
                 <nav
                     ref={ref}
-                    className="mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-1 pl-4 pr-2"
+                    className={clsx(
+                        'mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-1 pl-4 pr-2',
+                        shouldShowTabs && 'toolbar--in-container h-fit-content'
+                    )}
                     data-shortcut-target="mailbox-toolbar"
                     aria-label={c('Label').t`Toolbar`}
                 >
@@ -110,7 +114,10 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
         <>
             <nav
                 ref={ref}
-                className="mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-1 pl-4 pr-2"
+                className={clsx(
+                    'mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-1 pl-4 pr-2',
+                    shouldShowTabs && 'toolbar--in-container h-fit-content'
+                )}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
             >

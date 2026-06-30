@@ -1,15 +1,20 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
+$tab-badge-ease: easing(ease-out-quint);
 
 .categories-tabs {
 	background-color: var(--toolbar-background-color);
-	container-type: inline-size;
 
 	.tab-container {
+		block-size: rem(44);
 		border-width: rem(3) 0;
-		padding-block: rem(10);
-		padding-inline: rem(14);
-		padding-inline-start: rem(16);
+		padding-block: 0;
+		padding-inline: rem(16) rem(14);
+		transition: color 0.2s ease;
 
 		&:focus-visible {
 			outline: $focus-ring-size solid var(--cat-border);
@@ -41,13 +46,13 @@
 			}
 		}
 
-		// Default (< 820px): icon-only — label and count hidden
+		// Default (< 820px): icon-only — label and count hidden. Shown again at ≥ 820px
+		// and, for the label, on the active tab or when dragging over it.
 		.tag-label,
 		.tag-count {
 			display: none;
 		}
 
-		// Show label for active tab or when dragging over it
 		&[aria-selected='true'],
 		&.hovered {
 			.tag-label,
@@ -56,14 +61,18 @@
 			}
 		}
 
-		// Reserves width to avoid layout shift when label gets semibold weight
-		.tag-label::before {
-			display: block;
-			content: attr(title);
-			font-weight: 600;
-			block-size: 0;
-			overflow: hidden;
-			visibility: hidden;
+		.tag-label {
+			transition: color 0.2s ease;
+
+			// Reserves width to avoid layout shift when label gets semibold weight
+			&::before {
+				display: block;
+				content: attr(title);
+				font-weight: 600;
+				block-size: 0;
+				overflow: hidden;
+				visibility: hidden;
+			}
 		}
 
 		.tag-count {
@@ -72,10 +81,11 @@
 		}
 	}
 
-	// Medium and above (≥ 820px): expand tabs, show labels and counts
-	@container (min-width: #{rem(820)}) {
+	// Medium and above (≥ 820px): tabs grow to share the bar width, labels + counts shown
+	@include media('>=#{em(820, 16)}') {
 		.tab-wrapper {
-			max-inline-size: rem(136);
+			flex: 1 1 0; // grow evenly, capped at the spec's 200px
+			max-inline-size: rem(200);
 		}
 
 		.tab-container {
@@ -86,16 +96,10 @@
 		}
 	}
 
-	// Large (≥ 1024px): wider tabs, larger font
-	@container (min-width: #{rem(1024)}) {
-		.tab-wrapper {
-			max-inline-size: rem(200);
-		}
-
-		.tab-container {
-			.tag-label {
-				font-size: rem(13);
-			}
+	// Large (≥ 1024px): larger label font
+	@include media('>=#{em(1024, 16)}') {
+		.tab-container .tag-label {
+			font-size: rem(13);
 		}
 	}
 }
