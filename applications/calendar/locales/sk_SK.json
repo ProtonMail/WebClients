@@ -4028,6 +4028,9 @@
       "No contacts found to import": [
         "Neboli nájdené žiadne kontakty na import"
       ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
@@ -4042,6 +4045,9 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
       ],
       "Number of occurrences cannot be empty": [
         "Počet výskytov nemôže byť prázdny"
@@ -4288,6 +4294,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ],
       "Unknown error": [
         "Neznáma chyba"
@@ -4835,6 +4844,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -5956,6 +5968,9 @@
       ],
       "Failed to update meeting schedule": [
         "Nepodarilo sa aktualizovať rozvrh schôdzky"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
       ],
       "finance": [
         "financie"
@@ -12403,6 +12418,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
       ],
       "Account recovery": [
         "Obnovenie účtu"
