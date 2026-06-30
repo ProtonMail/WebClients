@@ -584,6 +584,9 @@
       "North Korea": [
         "Северная Корея"
       ],
+      "North Macedonia": [
+        "Северная Македония"
+      ],
       "Northern Mariana Islands": [
         "Северные Марианские Острова"
       ],
@@ -870,6 +873,9 @@
       "Incorrect username": [
         "Некорректное имя пользователя"
       ],
+      "Invalid verification code": [
+        "Неверный код подтверждения"
+      ],
       "Not a valid number": [
         "Номер недействителен"
       ],
@@ -918,9 +924,20 @@
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Не удалось выполнить аутентификацию с помощью ключа безопасности. Пожалуйста, попробуйте еще раз."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Ключ безопасности"
+      ],
+      "Touch your security key.": [
+        "Коснитесь своего ключа безопасности."
       ]
     },
     "fido2: Label": {
@@ -1038,8 +1055,14 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Создание нескольких бесплатных учетных записей не допускается нашим ${ termsLink }."
       ],
+      "Each code can only be used once": [
+        "Каждый код можно использовать только один раз"
+      ],
       "Edit email address": [
         "Изменить адрес электронной почты"
+      ],
+      "Enter code": [
+        "Введите код"
       ],
       "Enter the code from your authenticator app": [
         "Введите код из приложения-аутентификатора"
@@ -1047,8 +1070,14 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Введите свой пароль как администратора организации."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Введите собственный пароль (как доверенный контакт)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Для получения дополнительной информации и снятия ограничений, пожалуйста, войдите на ${ mailLink }."
@@ -1061,6 +1090,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Если вы потеряли доступ к своему приложению для аутентификации, вы можете использовать 1 из 16 резервных кодов восстановления, предоставленных при настройке двухфакторной аутентификации. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
@@ -1138,6 +1170,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (доверенный контакт)"
       ]
     },
     "Link": {
@@ -1216,6 +1251,12 @@
         "${ n } сообщений в день",
         "Сообщений в день: ${ n }"
       ],
+      "${ options }-day file version history": [
+        "история версий файлов за ${ options } день",
+        "история версий файла за ${ options } дней",
+        "история версий файла за ${ options } дней",
+        "Histórico de versões de ficheiros de ${ options } dias"
+      ],
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
@@ -1279,6 +1320,9 @@
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
+      "Data retention policies": [
+        "Политика хранения данных"
+      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -1326,6 +1370,9 @@
       ],
       "Share files with no size limit": [
         "Делитесь файлами без ограничений по размеру"
+      ],
+      "Short domain (@pm.me)": [
+        "Короткий домен (@pm.me)"
       ],
       "SMTP submission": [
         "Отправки через SMTP"
@@ -1477,6 +1524,11 @@
         "Пароль"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Вход не был успешно завершен."
@@ -1512,14 +1564,23 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
       ]
     },
     "Title": {
       "Account restricted": [
         "Аккаунт ограничен"
       ],
+      "Account temporarily locked": [
+        "Аккаунт временно заблокирован"
+      ],
       "Enter your password": [
         "Введите пароль"
+      ],
+      "Human verification": [
+        "Проверка \"Я не робот\""
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
