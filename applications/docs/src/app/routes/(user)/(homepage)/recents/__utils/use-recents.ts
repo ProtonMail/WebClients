@@ -4,6 +4,7 @@ import {
   type DriveEvent,
   type NodeEntity,
   type ProtonDriveClient,
+  MemberRole,
   NodeType,
   generateNodeUid,
   getDrive,
@@ -11,13 +12,15 @@ import {
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { extractNodeUid, getFullPath, getIsSharedWithMe } from '~/utils/drive-sdk'
-import { createItemValue, nodeToRecentItemValue } from './create-document-items'
+import { getFullPathFromAncestry, getIsSharedWithMe } from '~/utils/drive-sdk'
+import { createItemValue } from './create-document-items'
 import { useRecentsStore } from './use-recents-store'
-import { getNodeEffectiveRole } from '~/utils/get-node-effective-role'
+import { getRoleFromHierarchy } from '~/utils/get-role-from-ancestors'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 import type { SDKEventListener } from '~/utils/drive-events'
+import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
+import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()
@@ -41,44 +44,37 @@ export function useRecents(drive: ProtonDriveClient) {
     setIsRecentsUpdating(true)
 
     const response = await docsApi.fetchRecentDocuments()
-    const responseValue = response.getValue()
+    const { RecentDocuments: documents } = response.getValue()
 
-    const promises = responseValue.RecentDocuments.map(async (document) => {
-      try {
-        const node = await drive.getNode(generateNodeUid(document.VolumeID, document.LinkID))
-        const { path, ancestry } = await getFullPath(drive, node.uid)
-        const ancestorsNodeUids = ancestry.map(extractNodeUid)
-        const effectiveRole = await getNodeEffectiveRole(drive, node)
-        const { addresses } = useRecentsStore.getState()
-        return {
-          sdkData: node,
-          apiData: document,
-          isSharedWithMe: getIsSharedWithMe(node, addresses),
-          path,
-          ancestorsNodeUids,
-          effectiveRole,
-        }
-      } catch (error: any) {
-        logger.error('Failed to load document with SDK', error)
-        createNotification({
-          type: 'error',
-          text: c('Error').t`Failed to load document details`,
-        })
+    // Gather nodes to load
+    const uidsToLoad = new Set<string>()
+    for (const document of documents) {
+      uidsToLoad.add(generateNodeUid(document.VolumeID, document.LinkID))
+      for (const ancestorLinkID of document.AncestorIDs) {
+        uidsToLoad.add(generateNodeUid(document.VolumeID, ancestorLinkID))
       }
-    })
-    const documents = (await Promise.all(promises)).filter((item) => !!item) // without "undefined" items from error state
+    }
+
+    // Load all the nodes
+    const nodesByUid = new Map<string, NodeEntity>()
+    for await (const node of drive.iterateNodes([...uidsToLoad])) {
+      // not a missing node
+      if ('uid' in node) {
+        nodesByUid.set(node.uid, node)
+      }
+    }
 
     setIsRecentsUpdating(false)
 
-    return documents
-  }, [docsApi, drive, logger, createNotification])
+    return documents.map((document) => prepareDocumentData(nodesByUid, document, addresses))
+  }, [addresses, docsApi, drive])
 
   const updateRecentDocuments = useCallback(
     () =>
       fetchRecents()
         .then((documents) => {
           const { setRecentDocuments, setInitialized } = useRecentsStore.getState()
-          setRecentDocuments(documents.map(createItemValue))
+          setRecentDocuments(documents.map(([node, documentDetails]) => createItemValue(node, documentDetails)))
           setInitialized()
         })
         .catch((error) => {
@@ -107,12 +103,17 @@ export function useRecents(drive: ProtonDriveClient) {
 
   const recentsListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
-    const { setDocument, removeChildrenOf, removeDocument, addresses } = useRecentsStore.getState()
+    const { setDocument, setRecentDocuments, removeChildrenOf, removeDocument, addresses } = useRecentsStore.getState()
+
+    if (event.type === 'node_deleted') {
+      removeDocument(event.nodeUid)
+    }
 
     if (event.type === 'node_created') {
       const node = await drive.getNode(event.nodeUid)
       if (mimeTypeToProtonDocumentType(node.mediaType)) {
-        setDocument(await buildDocument(drive, addresses, node))
+        // Adding a new document
+        setDocument(await loadDocument(drive, event.nodeUid, addresses))
       }
     }
 
@@ -127,33 +128,35 @@ export function useRecents(drive: ProtonDriveClient) {
         }
       } else {
         if (mimeTypeToProtonDocumentType(node.mediaType)) {
-          setDocument(await buildDocument(drive, addresses, node))
-        } else if (node.type === NodeType.Folder) {
-          const childrenOfUpdatedFolder = []
+          // Existing document was updated
           const { recentDocuments } = useRecentsStore.getState()
+          const document = recentDocuments[node.uid]
+          setDocument(await loadDocument(drive, event.nodeUid, addresses, document))
+        } else if (node.type === NodeType.Folder) {
+          const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
+
+          const { recentDocuments } = useRecentsStore.getState()
+          // Which of already loaded documents are children of the updated folder?
           for (const documentNodeUid in recentDocuments) {
             if (recentDocuments[documentNodeUid].ancestorsNodeUids?.includes(node.uid)) {
               childrenOfUpdatedFolder.push(recentDocuments[documentNodeUid])
             }
           }
+
           // In case we have children of the updated folder we'll only reload existing nodes
           if (childrenOfUpdatedFolder.length > 0) {
-            for (const document of childrenOfUpdatedFolder) {
-              setDocument(await reloadDocument(drive, document, addresses))
-            }
+            const updatedDocuments = await Promise.all(
+              childrenOfUpdatedFolder.map((document) =>
+                loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), addresses, document),
+              ),
+            )
+            setRecentDocuments(updatedDocuments)
           } else {
             // This is probably a folder restored from trash - reload everything
-            const documentNodesOfUpdatedFolder = await getAllDocumentsRecursively(drive, node.uid)
-            for (const documentNode of documentNodesOfUpdatedFolder) {
-              setDocument(await buildDocument(drive, addresses, documentNode))
-            }
+            // Currently not supported
           }
         }
       }
-    }
-
-    if (event.type === 'node_deleted') {
-      removeDocument(event.nodeUid)
     }
   }, [])
 
@@ -167,41 +170,70 @@ export function useRecents(drive: ProtonDriveClient) {
   }
 }
 
-async function reloadDocument(
-  drive: ProtonDriveClient,
-  document: { volumeId: string; linkId: string },
+function prepareDocumentData(
+  nodesByUid: Map<string, NodeEntity>,
+  document: RecentDocumentAPIItem,
   addresses: Address[] | undefined,
 ) {
-  const documentNode = await drive.getNode(generateNodeUid(document.volumeId, document.linkId))
-  const freshDocument = await buildDocument(drive, addresses, documentNode)
-  return freshDocument
-}
-
-async function buildDocument(drive: ProtonDriveClient, addresses: Address[] | undefined, documentNode: NodeEntity) {
-  const { path, shareId, ancestorsNodeUids } = await getDocumentDetails(drive, documentNode.uid)
-  const isSharedWithMe = getIsSharedWithMe(documentNode, addresses)
-  const effectiveRole = await getNodeEffectiveRole(drive, documentNode)
-  return nodeToRecentItemValue(documentNode, isSharedWithMe, path, ancestorsNodeUids, effectiveRole, shareId)
-}
-
-async function getDocumentDetails(drive: ProtonDriveClient, nodeUid: string) {
-  const { path, ancestry } = await getFullPath(drive, nodeUid)
-  const shareId = ancestry[0].deprecatedShareId
-  const ancestorsNodeUids = ancestry.map(extractNodeUid)
-  return { shareId, path, ancestry, ancestorsNodeUids }
-}
-
-async function getAllDocumentsRecursively(drive: ProtonDriveClient, startFolderUid: string) {
-  const documents: NodeEntity[] = []
-
-  for await (const node of drive.iterateFolderChildren(startFolderUid)) {
-    if (mimeTypeToProtonDocumentType(node.mediaType)) {
-      documents.push(node)
-    } else if (node.type === NodeType.Folder) {
-      const children = await getAllDocumentsRecursively(drive, node.uid)
-      documents.push(...children)
-    }
+  const nodeUid = generateNodeUid(document.VolumeID, document.LinkID)
+  const node = nodesByUid.get(nodeUid)
+  if (!node) {
+    throw new Error(`Node ${nodeUid} not preset in fetched items`)
   }
 
-  return documents
+  // most immediate parent first, root last
+  const ancestorsNodeUids = document.AncestorIDs.map((ancestorLinkID) =>
+    generateNodeUid(document.VolumeID, ancestorLinkID),
+  )
+  const ancestors = ancestorsNodeUids.map((nodeUid) => {
+    const ancestor = nodesByUid.get(nodeUid)
+    if (!ancestor) {
+      throw new Error(`Ancestor ${nodeUid} not preset in fetched items`)
+    }
+    return ancestor
+  })
+  // root first, most immediate parent last
+  const ancestorsReversed = ancestors.toReversed()
+
+  const isSharedWithMe = addresses ? getIsSharedWithMe(node, addresses) : false
+
+  return [
+    node,
+    {
+      isSharedWithMe,
+      path: getFullPathFromAncestry(ancestorsReversed),
+      ancestorsNodeUids,
+      effectiveRole: getRoleFromHierarchy([node, ...ancestors]) ?? MemberRole.Viewer,
+      lastOpenTime: document.LastOpenTime,
+      deprecatedShareId: document.ContextShareID,
+    },
+  ] as const
+}
+
+async function loadDocument(
+  drive: ProtonDriveClient,
+  nodeUid: string,
+  addresses: Address[],
+  document?: RecentDocumentsItemValue,
+) {
+  const hierarchy = await drive.getNodeHierarchy(nodeUid)
+  // Always present - getNodeHierarchy includes self (so at least 1 item)
+  const node = hierarchy.at(-1) as NodeEntity
+
+  // CAREFUL the order here is different than in prepareDocumentData!
+  // root first, most immediate parent last
+  const ancestors = hierarchy.slice(0, -1)
+  // most immediate parent first, root last
+  const ancestorsNodeUids = ancestors.toReversed().map(({ uid }) => uid)
+
+  const isSharedWithMe = getIsSharedWithMe(node, addresses)
+
+  return createItemValue(node, {
+    isSharedWithMe,
+    path: getFullPathFromAncestry(ancestors),
+    ancestorsNodeUids,
+    effectiveRole: getRoleFromHierarchy(hierarchy.toReversed()) ?? MemberRole.Viewer,
+    lastOpenTime: document?.lastViewed.serverTimestamp ?? Date.now(),
+    deprecatedShareId: document?.shareId,
+  })
 }
