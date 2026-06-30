@@ -448,6 +448,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Pri spracovaní aktualizácií dokumentu došlo k chybe. Načítajte stránku znova a skúste to znova, prosím."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Táto tabuľka zistila lokálnu nezhodu pri synchronizácii. Úpravy boli deaktivované, aby sa predišlo strate údajov. Nahláste to, prosím, a ak súhlasíte so zdieľaním obsahu, stiahnite si a priložte ladiace informácie uvedené nižšie."
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Táto tabuľka nie je kompatibilná so súčasnou verziou klienta. Skúste klienta reštartovať, prosím. Ak chyba pretrváva, kontaktujte podporu, prosím."
       ],
@@ -1873,6 +1876,29 @@
         "výška riadka"
       ]
     },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Priemer"
+      ],
+      "Count": [
+        "Počet"
+      ],
+      "Customize Status Bar": [
+        "Prispôsobenie stavového riadku"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Číselný súčet"
+      ],
+      "Sum": [
+        "Súčet"
+      ]
+    },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
       "Alignment": [
         "Zarovnanie"
@@ -2299,6 +2325,9 @@
       ],
       "Language not supported": [
         "Jazyk nie je podporovaný"
+      ],
+      "Outline": [
+        "Okraje"
       ]
     },
     "Warning": {
