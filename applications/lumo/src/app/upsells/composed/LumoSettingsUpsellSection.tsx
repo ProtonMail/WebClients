@@ -103,11 +103,11 @@ export const LumoSettingsUpsellSection = () => {
     const isGuest = useIsGuest();
     const { hasLumoSeat, isVisionary, hasLumoB2B, userIsMember } = useLumoPlan();
 
-    if (hasLumoB2B || userIsMember) {
+    if (hasLumoB2B || isVisionary || userIsMember) {
         return null;
     }
 
-    if (hasLumoSeat || isVisionary) {
+    if (hasLumoSeat) {
         return <PlusTierUpsell />;
     }
 
