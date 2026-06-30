@@ -10,7 +10,7 @@ import GetLumoBusinessButton from '../primitives/GetLumoBusinessButton';
 import GetProtonWorkspaceButton from '../primitives/GetProtonWorkspaceButton';
 import type { PlanFeature } from '../primitives/PlanCard';
 import { PlanCard } from '../primitives/PlanCard';
-import { useLumoSubscriptionCheckout } from '../useLumoSubscriptionCheckout';
+import { openLumoUpsellModal } from '../providers/LumoUpsellModalProvider';
 
 import './LumoSettingsUpsellSection.scss';
 
@@ -54,22 +54,15 @@ const workspaceFeatures: PlanFeature[] = [
     { icon: 'Camera', getText: () => c('collider_2025: Characteristic').t`And much more` },
 ];
 
-const PlusCard = ({
-    isGuest,
-    onUpgrade,
-    loading,
-}: {
-    isGuest: boolean;
-    onUpgrade?: () => void;
-    loading?: boolean;
-}) => {
+const PlusCard = ({ isGuest }: { isGuest: boolean }) => {
+    const onUpgrade = isGuest ? undefined : () => openLumoUpsellModal(LUMO_UPSELL_PATHS.SETTINGS_MODAL_PLAN);
+
     return (
         <PlanCard planName={c('collider_2025: Plan Name').t`Plus`} features={plusFeatures}>
             <BasicUpgradeButton
                 path={isGuest ? LUMO_SIGNUP_PATH : undefined}
                 onClick={onUpgrade}
-                loading={loading}
-                buttonText={c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} AI Plus`}
+                buttonText={c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} Plus`}
                 className="w-full"
             />
         </PlanCard>
@@ -77,43 +70,27 @@ const PlusCard = ({
 };
 
 // View for guests and authenticated free users: Plus + Business (short)
-const FreeTierUpsell = ({
-    isGuest,
-    onPlusUpgrade,
-    onBusinessUpgrade,
-    loading,
-}: {
-    isGuest: boolean;
-    onPlusUpgrade?: () => void;
-    onBusinessUpgrade?: () => void;
-    loading?: boolean;
-}) => (
+const FreeTierUpsell = ({ isGuest }: { isGuest: boolean }) => (
     <div className={`lumo-settings-upsell-section ${LUMO_UPGRADE_TRIGGER_CLASS}`}>
         <h2 className="text-lg text-bold mb-4">{c('collider_2025: Upsell Title').t`Elevate your AI experience`}</h2>
         <div className="flex flex-row flex-nowrap gap-3">
-            <PlusCard isGuest={isGuest} onUpgrade={onPlusUpgrade} loading={loading} />
+            <PlusCard isGuest={isGuest} />
             <PlanCard planName={c('collider_2025: Plan Name').t`Business`} features={businessFeaturesFull}>
-                <GetLumoBusinessButton onClick={onBusinessUpgrade} loading={loading} />
+                <GetLumoBusinessButton />
             </PlanCard>
         </div>
     </div>
 );
 
 // View for Plus / Visionary users: Business (full) + Workspace
-const PlusTierUpsell = ({
-    onBusinessUpgrade,
-    loading,
-}: {
-    onBusinessUpgrade?: () => void;
-    loading?: boolean;
-}) => (
+const PlusTierUpsell = () => (
     <div className={`lumo-settings-upsell-section ${LUMO_UPGRADE_TRIGGER_CLASS}`}>
         <h2 className="text-lg text-bold mb-4">
             {c('collider_2025: Upsell Title').t`Elevate your business AI experience`}
         </h2>
         <div className="flex flex-row flex-nowrap gap-3">
             <PlanCard planName={c('collider_2025: Plan Name').t`Business`} features={businessFeaturesFull}>
-                <GetLumoBusinessButton onClick={onBusinessUpgrade} loading={loading} />
+                <GetLumoBusinessButton />
             </PlanCard>
             <PlanCard planName={c('collider_2025: Plan Name').t`${BRAND_NAME} Workspace`} features={workspaceFeatures}>
                 <GetProtonWorkspaceButton />
@@ -125,26 +102,16 @@ const PlusTierUpsell = ({
 export const LumoSettingsUpsellSection = () => {
     const isGuest = useIsGuest();
     const { hasLumoSeat, isVisionary, hasLumoB2B, userIsMember } = useLumoPlan();
-    const { openPlusCheckout, openBusinessCheckout, loading } = useLumoSubscriptionCheckout({
-        feature: LUMO_UPSELL_PATHS.SETTINGS_MODAL_PLAN,
-    });
 
     if (hasLumoB2B || userIsMember) {
         return null;
     }
 
     if (hasLumoSeat || isVisionary) {
-        return <PlusTierUpsell onBusinessUpgrade={openBusinessCheckout} loading={loading} />;
+        return <PlusTierUpsell />;
     }
 
-    return (
-        <FreeTierUpsell
-            isGuest={isGuest}
-            onPlusUpgrade={isGuest ? undefined : openPlusCheckout}
-            onBusinessUpgrade={isGuest ? undefined : openBusinessCheckout}
-            loading={loading}
-        />
-    );
+    return <FreeTierUpsell isGuest={isGuest} />;
 };
 
 LumoSettingsUpsellSection.displayName = 'LumoSettingsUpsellSection';
