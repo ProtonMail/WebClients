@@ -103,7 +103,7 @@ export const selectRecoveryState = createSelector(
         const recoveryItems: RecoveryItems = [
             {
                 id: 'passwordVerification',
-                isAvailable: passwordReminder.isAvailable,
+                isAvailable: passwordReminder.isAvailable && passwordReminder.isEnabled,
                 isEnabled: !passwordReminder.messageCadenceHasExpired,
             },
             {
