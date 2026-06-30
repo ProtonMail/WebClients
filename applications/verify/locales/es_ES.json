@@ -873,6 +873,9 @@
       "Incorrect username": [
         "El nombre de usuario no es correcto."
       ],
+      "Invalid verification code": [
+        "Código de verificación no válido"
+      ],
       "Not a valid number": [
         "No es un número válido."
       ],
@@ -921,9 +924,20 @@
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toca tu llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -1028,6 +1042,9 @@
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Nuestros ${ termsLink } no permiten crear varias cuentas gratuitas."
+      ],
+      "Each code can only be used once": [
+        "Cada código solo se puede usar una vez"
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -1529,6 +1546,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificación completada"
       ]
     },
     "Title": {
@@ -1540,6 +1560,9 @@
       ],
       "Enter your password": [
         "Introduce tu contraseña"
+      ],
+      "Human verification": [
+        "Verificación humana"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
