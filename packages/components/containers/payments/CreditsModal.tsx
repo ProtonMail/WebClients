@@ -41,7 +41,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
 import PaymentWrapper from './PaymentWrapper';
-import StyledPayPalButton from './StyledPayPalButton';
 
 const getCurrenciesI18N = (): Record<Currency, string> => ({
     EUR: c('Monetary unit').t`Euro`,
@@ -66,7 +65,6 @@ type Props = {
 export const DEFAULT_CREDITS_AMOUNT = 5000;
 
 const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
-    PAYMENT_METHOD_TYPES.BITCOIN,
     PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
     PAYMENT_METHOD_TYPES.CASH,
 ]);
@@ -136,23 +134,8 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const submit = (() => {
         const bitcoinAmountInRange =
             debouncedAmount >= getMinBitcoinAmount(currency) && debouncedAmount <= getMaxBitcoinAmount(currency);
-        if (
-            (methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
-            !bitcoinAmountInRange
-        ) {
+        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && !bitcoinAmountInRange) {
             return null;
-        }
-
-        if (paymentFacade.methods.isNewPaypal) {
-            return (
-                <StyledPayPalButton
-                    type="submit"
-                    paypal={paymentFacade.paypal}
-                    loading={loading}
-                    disabled={amountLoading}
-                    data-testid="paypal-button"
-                />
-            );
         }
 
         if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
@@ -175,18 +158,15 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
         }
 
         const topUpText = c('Action').t`Top up`;
-        if (methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
             return (
                 <Button
                     color="norm"
-                    loading={
-                        paymentFacade.bitcoinInhouse.bitcoinLoading || paymentFacade.bitcoinChargebee.bitcoinLoading
-                    }
+                    loading={paymentFacade.bitcoinChargebee.bitcoinLoading}
                     disabled={true}
                     data-testid="top-up-button"
                 >
-                    {paymentFacade.bitcoinInhouse.awaitingBitcoinPayment ||
-                    paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
+                    {paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
                         ? c('Info').t`Awaiting transaction`
                         : topUpText}
                 </Button>
@@ -197,9 +177,7 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
             <Button
                 color="norm"
                 loading={loading}
-                disabled={
-                    paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected || amountLoading || lowAmount
-                }
+                disabled={paymentFacade.methods.loading || amountLoading || lowAmount}
                 type="submit"
                 data-testid="top-up-button"
             >

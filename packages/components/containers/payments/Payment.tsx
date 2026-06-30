@@ -25,8 +25,6 @@ import {
     type PaymentProcessorHook,
     type PlainPaymentMethodType,
     type SavedPaymentMethod,
-    type SavedPaymentMethodExternal,
-    type SavedPaymentMethodInternal,
     type Subscription,
     savedMethodRequires3DS,
     type useSepaCurrencyOverride,
@@ -80,8 +78,7 @@ export interface Props {
     allMethods: ViewPaymentMethod[];
     isAuthenticated: boolean;
     loading: boolean;
-    savedMethodInternal?: SavedPaymentMethodInternal;
-    savedMethodExternal?: SavedPaymentMethodExternal;
+    savedMethod?: SavedPaymentMethod;
     currency: Currency;
     amount: number;
     paymentComponentLoaded: () => void;
@@ -114,8 +111,7 @@ export const PaymentsNoApi = ({
     allMethods,
     isAuthenticated,
     loading,
-    savedMethodInternal,
-    savedMethodExternal,
+    savedMethod,
     hideFirstLabel,
     hideSavedMethodsDetails,
     defaultMethod,
@@ -223,8 +219,6 @@ export const PaymentsNoApi = ({
         directDebit,
         onInitialized: onChargebeeInitialized,
     };
-
-    const savedMethod = savedMethodInternal ?? savedMethodExternal;
 
     const isPaypalMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     const showPaypalView = isPaypalMethod && !isSingleSignup;

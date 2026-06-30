@@ -106,7 +106,7 @@ export function mockPaymentMethods(methods = PAYMENT_METHODS_MOCK) {
         withCard: (card: SavedCardDetails, { ID, Order, autopayStatus }: CommonProps = {}) => {
             innerMethods.PaymentMethods.push({
                 ID: getNextId(ID),
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Order: getNextOrder(Order),
                 Autopay: autopayStatus ?? Autopay.ENABLE,
                 Details: card,
@@ -117,7 +117,7 @@ export function mockPaymentMethods(methods = PAYMENT_METHODS_MOCK) {
         withPaypal: (paypal: PayPalDetails, { ID, Order }: CommonProps = {}) => {
             innerMethods.PaymentMethods.push({
                 ID: getNextId(ID),
-                Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                 Order: getNextOrder(Order),
                 Details: paypal,
             });

@@ -2,7 +2,7 @@ import { apiMock } from '@proton/testing/lib/api';
 import { MOCK_TOKEN_RESPONSE, addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
 import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
-import type { AmountAndCurrency, SavedPaymentMethodInternal, V5PaymentToken } from '../interface';
+import type { AmountAndCurrency, SavedPaymentMethod, V5PaymentToken } from '../interface';
 import { SavedPaymentProcessor } from './savedPayment';
 
 describe('SavedPaymentProcessor', () => {
@@ -13,9 +13,9 @@ describe('SavedPaymentProcessor', () => {
         Currency: 'USD',
     };
     const onTokenIsChargeable = jest.fn().mockResolvedValue(null);
-    const savedMethod: SavedPaymentMethodInternal = {
+    const savedMethod: SavedPaymentMethod = {
         ID: '123',
-        Type: PAYMENT_METHOD_TYPES.CARD,
+        Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         Order: 500,
         Autopay: Autopay.ENABLE,
         Details: {
@@ -53,7 +53,7 @@ describe('SavedPaymentProcessor', () => {
             PaymentToken: 'token123',
             v: 5,
             chargeable: true,
-            type: 'card',
+            type: 'chargebee-card',
         });
     });
 
@@ -72,7 +72,7 @@ describe('SavedPaymentProcessor', () => {
         const result = await savedPaymentProcessor.verifyPaymentToken();
         expect(result).toEqual(
             expect.objectContaining({
-                type: PAYMENT_METHOD_TYPES.CARD,
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 chargeable: true,
                 ...savedPaymentProcessor.amountAndCurrency,
             })
@@ -85,7 +85,7 @@ describe('SavedPaymentProcessor', () => {
         const result = await savedPaymentProcessor.verifyPaymentToken();
         expect(result).toEqual(
             expect.objectContaining({
-                type: PAYMENT_METHOD_TYPES.CARD,
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 chargeable: true,
                 ...savedPaymentProcessor.amountAndCurrency,
                 PaymentToken: 'token123',
@@ -120,7 +120,7 @@ describe('SavedPaymentProcessor', () => {
 
         expect(result).toEqual(
             expect.objectContaining({
-                type: PAYMENT_METHOD_TYPES.CARD,
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 chargeable: true,
                 ...savedPaymentProcessor.amountAndCurrency,
                 PaymentToken: 'token123',
