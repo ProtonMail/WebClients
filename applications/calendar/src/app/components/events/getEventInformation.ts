@@ -15,7 +15,7 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
     const isEventReadLoading = !isTemporaryEvent && !eventReadResult;
 
     const calendarColor = tmpData?.calendar.color || calendarData.Color;
-    const eventColor = hasPaidMail ? tmpData?.color || eventData?.Color : undefined;
+    const eventColor = hasPaidMail ? tmpData?.color || model.color || eventData?.Color : undefined;
     const color = eventColor || calendarColor;
     const eventTitleSafe = getDisplayTitle(tmpData?.title || model.title);
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
