@@ -31,11 +31,6 @@
 	}
 }
 
-body:has(.modal-two--upsell-lumoplus) .modal-two-backdrop {
-	background: rgb(233 234 252 / 0.8);
-	backdrop-filter: blur(4.5px);
-}
-
 .lumo-upsell-modal {
 	position: relative;
 	display: flex;

@@ -2,16 +2,13 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import type { ModalStateProps } from '@proton/components';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS, getPlanByName } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { LUMO_BUSINESS_PATH } from '../constants';
-import { sendSubscriptionModalInitializedEvent, sendSubscriptionModalSubscribedEvent } from '../util/telemetry';
-import { getMarketingUrl } from '../util/marketingUrls';
 import LumoUpsellModal, { type UpsellAudience } from './LumoUpsellModal';
+import { useLumoSubscriptionCheckout } from './useLumoSubscriptionCheckout';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -19,39 +16,24 @@ interface Props {
 }
 
 const LumoPlusUpsellModal = ({ modalProps, upsellRef }: Props) => {
-    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [plansResult] = usePlans();
     const { plansMap, plansMapLoading, preferredCurrency } = usePreferredPlansMap(true);
-
-    const handleSubscriptionModalSubscribed = () => {
-        modalProps.onClose();
-        sendSubscriptionModalSubscribedEvent(upsellRef);
-    };
-
-    const openCheckout = (plan: PLANS) => {
-        modalProps.onClose();
-        sendSubscriptionModalInitializedEvent(upsellRef);
-
-        void openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-            maximumCycle: CYCLE.YEARLY,
-            plan,
-            onSubscribed: () => {
-                handleSubscriptionModalSubscribed();
-            },
-            upsellRef,
-        });
-    };
+    const { openCheckout, openBusinessCheckout, loading: loadingSubscriptionModal } = useLumoSubscriptionCheckout({
+        upsellRef,
+        onSubscribed: () => {
+            modalProps.onClose();
+        },
+    });
 
     const handleUpgrade = (audience: UpsellAudience) => {
-        if (audience === 'business' && !plansMap[PLANS.LUMO_BUSINESS]) {
-            modalProps.onClose();
-            window.location.assign(getMarketingUrl(LUMO_BUSINESS_PATH));
+        modalProps.onClose();
+
+        if (audience === 'business') {
+            openBusinessCheckout();
             return;
         }
 
-        openCheckout(audience === 'business' ? PLANS.LUMO_BUSINESS : PLANS.LUMO);
+        openCheckout(PLANS.LUMO);
     };
 
     if (plansMapLoading) {

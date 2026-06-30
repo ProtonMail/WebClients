@@ -12,8 +12,6 @@ im.$media-expressions: $media-expressions;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
     z-index: 10000;
     display: flex;
     align-items: flex-start;
@@ -320,17 +318,6 @@ im.$media-expressions: $media-expressions;
     font-size: 14px;
     margin: 0;
     flex: 1;
-}
-
-// Dark mode adjustments
-@media (prefers-color-scheme: dark) {
-    .search-modal-overlay {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .search-modal-spotlight {
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
-    }
 }
 
 // Responsive

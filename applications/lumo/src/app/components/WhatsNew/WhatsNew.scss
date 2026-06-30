@@ -1,10 +1,5 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
-body:has(.whats-new-modal) .modal-two-backdrop {
-	background: rgb(233 234 252 / 0.5);
-	backdrop-filter: blur(3.5px);
-}
-
 .modal-two.whats-new-modal-root {
 	overflow: visible;
 	padding-block-start: calc(3.5em + #{rem(44)});

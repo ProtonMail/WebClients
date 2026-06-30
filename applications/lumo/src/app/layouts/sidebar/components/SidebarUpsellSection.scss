@@ -16,11 +16,10 @@ im.$media-expressions: $media-expressions;
 
 .sidebar-upsell-section {
 	background: var(--lumo-secondary-upsell-background);
-	border: 1px solid rgb(197 183 255 / 0.15);
+	border: 1px solid var(--border-weak);
 	transition:
 		background 0.2s ease-in-out,
-		border-color 0.2s ease-in-out,
-		box-shadow 0.2s ease-in-out;
+		border-color 0.2s ease-in-out;
 
 	// Wait for the sidebar width transition to finish before appearing
 	animation: sidebar-upsell-fadein 0.15s ease-in 0.3s both;
@@ -30,8 +29,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:hover {
-		border-color: rgb(197 183 255 / 0.25);
-		box-shadow: 0 2px 8px rgb(109 74 255 / 0.1);
+		border-color: var(--border-norm);
 	}
 
 	.lumo-plus-upgrade-button {
