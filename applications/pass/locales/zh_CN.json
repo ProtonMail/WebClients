@@ -1551,7 +1551,7 @@
         "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个邮箱地址都将创建一个联系人。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "新版 ${ PASS_APP_NAME } 已发布。更新后即可享受最新功能和错误修复。"
+        "新版本 ${ PASS_APP_NAME } 可用，更新后即可享受最新功能和错误修复。"
       ],
       "Access successfully confirmed": [
         "访问已成功确认"
@@ -2062,9 +2062,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
