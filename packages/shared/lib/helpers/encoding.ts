@@ -18,22 +18,6 @@ export const validateBase64string = (str: string, useVariantAlphabet?: boolean) 
 };
 
 /**
- * Automatic password reset parameter encoder
- */
-export const encodeAutomaticResetParams = (json: any) => {
-    const jsonString = JSON.stringify(json);
-    return stringToUint8Array(jsonString).toBase64({ alphabet: 'base64url', omitPadding: true });
-};
-
-/**
- * Automatic password reset parameter decoder
- */
-export const decodeAutomaticResetParams = (base64String: string) => {
-    const decodedString = uint8ArrayToString(Uint8Array.fromBase64(base64String, { alphabet: 'base64url' }));
-    return JSON.parse(decodedString);
-};
-
-/**
  * Convert a Blob into a Uint8Array
  */
 export const blobToUint8Array = async (blob: Blob) => new Uint8Array(await blob.arrayBuffer());

@@ -2,7 +2,6 @@ import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
 import type { AuthFlows, AuthSession } from '@proton/components/containers/login/interface';
-import type { MnemonicData } from '@proton/components/containers/resetPassword/interface';
 import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency/shared';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
@@ -19,6 +18,7 @@ import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authenticati
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { getResetAddressesKeysV2 } from '@proton/shared/lib/keys/resetKeys';
@@ -30,6 +30,12 @@ import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHe
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+
+export interface MnemonicData {
+    api: Api;
+    decryptedUserKeys: DecryptedKey[];
+    authResponse: AuthResponse;
+}
 
 export class NoResetMethodsError extends Error {
     public reason?: string;
