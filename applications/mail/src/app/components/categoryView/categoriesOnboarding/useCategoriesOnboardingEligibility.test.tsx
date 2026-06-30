@@ -13,7 +13,7 @@ import { useGetStartedChecklist } from 'proton-mail/containers/onboardingCheckli
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import { AudienceType } from './onboardingInterface';
-import { useCategoriesOnboarding } from './useCategoriesOnboarding';
+import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.Mock;
@@ -61,7 +61,7 @@ const mockGetLocationCount = (total: number) => {
     });
 };
 
-describe('useCategoriesOnboarding', () => {
+describe('useCategoriesOnboardingEligibility', () => {
     beforeAll(() => {
         mockUseOrganization([
             { PlanName: PLANS.MAIL_PRO, Settings: { MailCategoryViewEnabled: true } as OrganizationSettings },
@@ -83,7 +83,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
@@ -103,7 +103,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
@@ -124,7 +124,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
@@ -144,7 +144,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
@@ -164,7 +164,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
@@ -193,7 +193,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2C,
@@ -213,7 +213,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
@@ -233,7 +233,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
@@ -253,7 +253,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
@@ -273,7 +273,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2C,
@@ -294,7 +294,7 @@ describe('useCategoriesOnboarding', () => {
                     });
                 });
 
-                const { result } = renderHook(() => useCategoriesOnboarding());
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
