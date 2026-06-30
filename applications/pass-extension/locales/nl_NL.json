@@ -2214,7 +2214,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2644,7 +2645,7 @@
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Het extra wachtwoord is nodig om ${ PASS_APP_NAME }te gebruiken. Het werkt als een extra wachtwoord bovenop uw ${ BRAND_NAME } wachtwoord."
+        "Het extra wachtwoord is nodig om ${ PASS_APP_NAME } te gebruiken. Het werkt als een extra wachtwoord bovenop uw ${ BRAND_NAME } wachtwoord."
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Het volgende ${ totalIgnored } item kon niet geïmporteerd worden:",
@@ -4149,7 +4150,7 @@
         "Uw domein"
       ],
       "ZIP": [
-        "Postcode"
+        "ZIP"
       ],
       "ZIP or Postal code": [
         "Postcode"
