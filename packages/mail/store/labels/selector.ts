@@ -45,8 +45,12 @@ export const selectCategoriesToMarkSeen = createSelector(
         const currentCategory = categories.find((category) => category.ID === labelID);
 
         if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            const disabled = categories.filter((category) => !category.Display && hasUnseenToReset(category));
-            return hasUnseenToReset(currentCategory) ? [currentCategory, ...disabled] : [...disabled];
+            const filteredCategories = categories.filter((category) => !category.Display && hasUnseenToReset(category));
+            if (hasUnseenToReset(currentCategory)) {
+                return [currentCategory, ...filteredCategories];
+            }
+
+            return filteredCategories;
         }
 
         return hasUnseenToReset(currentCategory) ? [currentCategory] : [];
