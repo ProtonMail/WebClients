@@ -144,21 +144,18 @@ export const Canvas = ({
                     </div>
                 </div>
             )}
-            <canvas
-                ref={canvasRef}
-                width={width}
-                height={height}
-                className={['canvas__element block', embedded ? 'canvas__element--embedded' : ''].join(' ')}
-                style={
-                    embedded
-                        ? {
-                              aspectRatio: `${width} / ${height}`,
-                              width: '100%',
-                              height: 'auto',
-                          }
-                        : undefined
-                }
-            />
+            {embedded ? (
+                <div className="image-preview-image-frame">
+                    <canvas
+                        ref={canvasRef}
+                        width={width}
+                        height={height}
+                        className="canvas__element canvas__element--embedded block"
+                    />
+                </div>
+            ) : (
+                <canvas ref={canvasRef} width={width} height={height} className="canvas__element block" />
+            )}
         </div>
     );
 };

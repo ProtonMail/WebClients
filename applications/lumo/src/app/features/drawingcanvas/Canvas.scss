@@ -1,21 +1,21 @@
 @use '~@proton/styles/scss/lib' as *;
 
 .canvas__loading-overlay {
-    background-color: rgb(0 0 0 / 0.5);
-    z-index: 10;
+	background-color: rgb(0 0 0 / 0.5);
+	z-index: 10;
 }
 
 @keyframes canvas-spin {
-    to {
-        transform: rotate(360deg);
-    }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .canvas__loading-spinner {
-    inline-size: rem(32);
-    block-size: rem(32);
-    border-block-end: 2px solid var(--primary);
-    animation: canvas-spin 1s linear infinite;
+	inline-size: rem(32);
+	block-size: rem(32);
+	border-block-end: 2px solid var(--primary);
+	animation: canvas-spin 1s linear infinite;
 }
 
 .canvas__element {
@@ -37,7 +37,7 @@
 	}
 }
 
-@media (max-width: rem(768)) {
+@media (width <= rem(768)) {
 	.canvas__element--embedded {
 		max-block-size: calc(100dvh - #{rem(320)});
 	}
