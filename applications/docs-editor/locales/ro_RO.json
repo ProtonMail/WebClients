@@ -448,8 +448,8 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "A apărut o eroare la procesarea actualizărilor documentului. Reîncărcați pagina și reîncercați."
       ],
-      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
-        "Această foaie de calcul a detectat o inconsecvență la sincronizarea locală. Reîncărcați documentul înainte de a continua."
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Această foaie de calcul a detectat o inconsecvență la sincronizarea locală. Editarea a fost dezactivată pentru a preveni pierderea datelor. Trimiteți un raport de eroare și, dacă sunteți de acord să partajați conținutul, să descărcați și să includeți informațiile de depanare de mai jos."
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Acest registru de lucru nu este compatibil cu versiunea curentă a clientului. Încercați să reîncărcați clientul. Dacă eroarea persistă, contactați asistența."
@@ -2320,6 +2320,9 @@
       ],
       "Language not supported": [
         "Limba nu este suportată"
+      ],
+      "Outline": [
+        "Schiță"
       ]
     },
     "Warning": {
