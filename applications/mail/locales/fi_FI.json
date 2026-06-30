@@ -1094,7 +1094,7 @@
         "Kaikki tähdettömät"
       ],
       "Archive": [
-        "Arkistoi"
+        "Pakattu"
       ],
       "As Scheduled": [
         "Kuten ajoitettu"
@@ -1157,7 +1157,7 @@
         "Piilota viestit"
       ],
       "Hide toolbar": [
-        "Piilota työkalupalkki"
+        "Piilota työkalurivi"
       ],
       "In the morning": [
         "Aamulla"
@@ -1247,10 +1247,10 @@
         "Näytä ${ title }"
       ],
       "Show toolbar": [
-        "Näytä työkalupalkki"
+        "Näytä työkalurivi"
       ],
       "Star": [
-        "Lisää tähti"
+        "Merkitse tähdellä"
       ],
       "This weekend": [
         "Tänä viikonloppuna"
@@ -1272,6 +1272,455 @@
       ],
       "Write for me": [
         "Kirjoita puolestani"
+      ],
+      "A to Z": [
+        "A - Ö"
+      ],
+      "Active": [
+        "Aktiiviset"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add Bcc recipients": [
+        "Lisää piilokopioiden vastaanottajat"
+      ],
+      "Add Cc recipients": [
+        "Lisää kopioiden vastaanottajat"
+      ],
+      "Add participant": [
+        "Lisää osallistuja"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Lisää ${ CALENDAR_APP_NAME }iin"
+      ],
+      "Adds it above your existing message": [
+        "Lisää sen olemassa olevan viestin yläpuolelle"
+      ],
+      "All Read": [
+        "Kaikki luetut"
+      ],
+      "Attachment": [
+        "Liitteet"
+      ],
+      "Blind Carbon Copy": [
+        "Piilokopio"
+      ],
+      "Block email tracking": [
+        "Estä sähköpostiseuranta"
+      ],
+      "Block messages from this sender": [
+        "Estä viestit tältä lähettäjältä"
+      ],
+      "Block senders": [
+        "Estä lähettäjät"
+      ],
+      "Carbon Copy": [
+        "Kopio"
+      ],
+      "Change sorting": [
+        "Muuta lajittelua"
+      ],
+      "Clear application data": [
+        "Tyhjennä sovelluksen tiedot"
+      ],
+      "clear it": [
+        "tyhjentää sen"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kopioi ${ defaultEmailAddress } leikepöydälle klikkaamalla"
+      ],
+      "Close composer": [
+        "Sulje viestin kirjoitus"
+      ],
+      "Continue with categories": [
+        "Jatka luokilla"
+      ],
+      "Continue without categories": [
+        "Jatka ilman luokkia"
+      ],
+      "Contract composer": [
+        "Supista viestin kirjoitus"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopioi ”${ code }” leikepöydälle"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopioi ”${ code }” leikepöydälle ja siirrä Roskakoriin"
+      ],
+      "Copy password to clipboard": [
+        "Kopioi salasana leikepöydälle"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Luo kansio ${ boldFolderName }"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Deselect all messages": [
+        "Poista kaikkien viestien valinta"
+      ],
+      "Download ${ attachmentName }": [
+        "Lataa ${ attachmentName }"
+      ],
+      "Download all attachments": [
+        "Lataa kaikki liitteet"
+      ],
+      "Download application logs": [
+        "Lataa sovelluslokit"
+      ],
+      "Edit draft": [
+        "Muokkaa luonnosta"
+      ],
+      "Encryption": [
+        "Salaus"
+      ],
+      "exclude message content": [
+        "jätä viestin sisältö pois"
+      ],
+      "Expand composer": [
+        "Laajenna viestin kirjoitus"
+      ],
+      "Expand navigation bar to see folders": [
+        "Laajenna navigointipalkki nähdäksesi kansiot"
+      ],
+      "Expand navigation bar to see labels": [
+        "Laajenna navigointipalkki nähdäksesi tunnisteet"
+      ],
+      "Expand URL": [
+        "Laajenna URL"
+      ],
+      "Expiration time": [
+        "Tuhoutumisaika"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Tutustu ${ VPN_APP_NAME }:ään"
+      ],
+      "Fewer search options": [
+        "Vähemmän hakuvalintoja"
+      ],
+      "Filter on...": [
+        "Suodata..."
+      ],
+      "Formalize": [
+        "Virallista"
+      ],
+      "Go to page ${ page }": [
+        "Siirry sivulle ${ page }"
+      ],
+      "Go to previous page": [
+        "Siirry edelliselle sivulle"
+      ],
+      "Hide ${ title }": [
+        "Piilota ${ title }"
+      ],
+      "Hide attachment details": [
+        "Piilota liitteiden tiedot"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "hide-my-email aliases": [
+        "ide-my-email aliaksilla"
+      ],
+      "I like this response": [
+        "Pidän tästä vastauksesta"
+      ],
+      "Images will be loaded without a proxy": [
+        "Kuvat ladataan ilman välityspalvelinta"
+      ],
+      "Inline": [
+        "Upotettuna"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Lisää ${ totalChecked } yhteystieto",
+        "Lisää ${ totalChecked } yhteystietoa"
+      ],
+      "Keep inbox as before": [
+        "Säilytä saapuneet ennallaan"
+      ],
+      "Label as": [
+        "Lisää tunniste"
+      ],
+      "Label as...": [
+        "Merkitse tunnisteella..."
+      ],
+      "Least read": [
+        "Vähiten luetut"
+      ],
+      "Load embedded images": [
+        "Lataa upotetut kuvat"
+      ],
+      "Loading${ ellipsis }": [
+        "Ladataan${ ellipsis }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksi"
+      ],
+      "Make it friendly": [
+        "Tee siitä ystävällisempi"
+      ],
+      "Manage Snooze": [
+        "Hallitse torkutusta"
+      ],
+      "Mark legitimate": [
+        "Merkitse kelvolliseksi"
+      ],
+      "Maximize composer": [
+        "Suurenna viestin kirjoitus"
+      ],
+      "Messages from this sender": [
+        "Viestit tältä lähettäjältä"
+      ],
+      "Messages to this recipient": [
+        "Viestit tälle vastaanottajalle"
+      ],
+      "Minimize composer": [
+        "Pienennä viestin kirjoitus"
+      ],
+      "Modify selection": [
+        "Muokkaa valintaa"
+      ],
+      "Monday": [
+        "maanantai"
+      ],
+      "More details about ${ ariaLabelTitle }": [
+        "Lisätietoja vastaanottajasta ${ ariaLabelTitle }"
+      ],
+      "More refine actions": [
+        "Lisää parannusehdotuksia"
+      ],
+      "More search options": [
+        "Lisää hakuvalintoja"
+      ],
+      "Most frequent": [
+        "Yleisimmät"
+      ],
+      "Most read": [
+        "Luetuimmat"
+      ],
+      "Move to": [
+        "Siirrä kohteeseen"
+      ],
+      "Move to category...": [
+        "Siirrä luokkaan..."
+      ],
+      "Move to inbox (not spam)": [
+        "Siirrä saapuneisiin (ei roskapostia)"
+      ],
+      "Move to spam and unsubscribe": [
+        "Sirrä roskapostiin ja lopeta tilaus"
+      ],
+      "Move to...": [
+        "Siirrä kohteeseen..."
+      ],
+      "Never show": [
+        "Älä näytä koskaan"
+      ],
+      "Next conversation": [
+        "Seuraava keskustelu"
+      ],
+      "Not saved": [
+        "Tallentamaton"
+      ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Avaa ${ CALENDAR_APP_NAME }"
+      ],
+      "Page ${ pageNumber }": [
+        "Sivu ${ pageNumber }"
+      ],
+      "Pause": [
+        "Pysäytä"
+      ],
+      "Preview ${ attachmentName }": [
+        "Esikatsele liitettä ${ attachmentName }"
+      ],
+      "Previous conversation": [
+        "Edellinen keskustelu"
+      ],
+      "Proofread": [
+        "Oikolue"
+      ],
+      "Read receipt sent": [
+        "Lukukuittaus lähetettiin"
+      ],
+      "Recently read": [
+        "Viimeksi luetut"
+      ],
+      "Recently received": [
+        "Äskettäin vastaanotetut"
+      ],
+      "Refine it": [
+        "Tarkenna sitä"
+      ],
+      "Remove ${ attachmentName }": [
+        "Poista ${ attachmentName }"
+      ],
+      "Remove encryption": [
+        "Poista salaus"
+      ],
+      "Remove expiration time": [
+        "Poista tuhoutumisaika"
+      ],
+      "Remove self-destruction": [
+        "Poista tuhoutuminen"
+      ],
+      "Replaces the selected text in your message": [
+        "Korvaa valitun tekstin viestissäsi"
+      ],
+      "Report phishing": [
+        "Ilmoita tietojenkalastelusta"
+      ],
+      "Revert to original display": [
+        "Palauta alkuperäinen näkymä"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME }in palvelimilla"
+      ],
+      "Search in ${ option.text }": [
+        "Etsi kohteesta ${ option.text }"
+      ],
+      "Search message content": [
+        "Etsi viestien sisällöstä"
+      ],
+      "Select all messages": [
+        "Valitse kaikki viestit"
+      ],
+      "Select date and time": [
+        "Valitse päivämäärä ja aika"
+      ],
+      "Self-destruct in 7 days": [
+        "Tuhoudu seitsemän päivän kuluttua"
+      ],
+      "Self-destruct message": [
+        "Viestin tuhoutuminen"
+      ],
+      "Self-destruct on ...": [
+        "Tuhoutumisaika"
+      ],
+      "Send anyway": [
+        "Lähetä silti"
+      ],
+      "Send read receipt": [
+        "Lähetä lukukuittaus"
+      ],
+      "Send unsubscribe email": [
+        "Lähetä peruutussähköposti"
+      ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksi"
+      ],
+      "Set encryption": [
+        "Lisää salaus"
+      ],
+      "Set expiration time": [
+        "Aseta tuhoutumisaika"
+      ],
+      "Shorten": [
+        "Lyhennä"
+      ],
+      "Show attachment details": [
+        "Näytä liitteiden tiedot"
+      ],
+      "Show details": [
+        "Näytä tiedot"
+      ],
+      "Show fewer search options": [
+        "Näytä vähemmän hakuvalintoja"
+      ],
+      "Show messages": [
+        "Näytä viestit"
+      ],
+      "Show more search options": [
+        "Näytä lisää hakuvalintoja"
+      ],
+      "Snooze": [
+        "Torkutus"
+      ],
+      "Start testing": [
+        "Aloita testaus"
+      ],
+      "Stop downloading assistant": [
+        "Pysäytä avustajan lataus"
+      ],
+      "Stop generating result": [
+        "Lopeta tuloksen luonti"
+      ],
+      "Stop marking as read": [
+        "Lopeta merkitsemästä luetuksi"
+      ],
+      "Stop moving to Archive": [
+        "Lopeta siirtäminen arkistoon"
+      ],
+      "Stop moving to Trash": [
+        "Lopeta siirtäminen roskakoriin"
+      ],
+      "This message contains embedded images.": [
+        "Viesti sisältää upotettuja kuvia."
+      ],
+      "This message contains remote content.": [
+        "Viesti sisältää ulkoista sisältöä."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Jotta viesteistäsi voidaan etsiä turvallisesti, on niistä ladattava paikalliset kopiot selaimesi välimuistiin. Ensimmäinen lataus voi kestää jonkin aikaa."
+      ],
+      "Toggle security center app": [
+        "Avaa/sulje suojauskeskus"
+      ],
+      "Toggle VPN dashboard": [
+        "Avaa/sulje VPN-hallintapaneeli"
+      ],
+      "Tomorrow": [
+        "Huomenna"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Seurantasuojaus esti joidenkin kuvien lataamisen. Lataa ne, jos luotat lähettäjään."
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
+      "Unblock": [
+        "Poista esto"
+      ],
+      "Unsnooze": [
+        "Peru torkutus"
+      ],
+      "Unstar": [
+        "Poista tähti"
+      ],
+      "Unsubscribed": [
+        "Tilaus on peruttu"
+      ],
+      "Unsubscribing": [
+        "Tilausta lopetetaan"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "Käytä ${ PASS_APP_NAME }ia"
+      ],
+      "Use this": [
+        "Käytä tätä"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Muuta näkymän kokoa hiirellä. Jos käytät näppäimistöä, voit muuttaa kokoa vasemmalla ja oikealla nuolipainikkeella."
+      ],
+      "Verify now": [
+        "Vahvista nyt"
+      ],
+      "View keys": [
+        "Näytä avaimet"
+      ],
+      "View message details": [
+        "Näytä viestin tiedot"
+      ],
+      "View rendered HTML": [
+        "Näytä käsitelty HTML"
+      ],
+      "Why not?": [
+        "Mistä syystä?"
+      ],
+      "Your email writing assistant": [
+        "Sähköpostin kirjoitusavustajasi"
       ]
     },
     "action": {
@@ -1352,6 +1801,19 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisenssi",
+        "${ seats } ${ MEET_APP_NAME } -lisenssiä"
+      ],
+      "Dedicated VPN servers": [
+        "Erilliset VPN-palvelimet"
+      ],
+      "Writing assistant seats": [
+        "Kirjoitusavustajan käyttöpaikat"
       ]
     },
     "Alert": {
@@ -1399,6 +1861,18 @@
       ],
       "Run on device": [
         "Suorita laitteella"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data säilytetään laitteella yksityisyytesi suojaamiseksi. Edellyttää latausta ja yhteensopivaa laitteistoa."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Lokitietoja ei säilytetä yksityisyytesi suojaamiseksi. Nopeampi käsittely."
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Suoritetaan turvallisesti ${ BRAND_NAME }in palvelimilla"
+      ],
+      "Securely run on device": [
+        "Suoritetaan turvallisesti laitteella"
       ]
     },
     "Assistant toggle": {
@@ -1531,6 +2005,9 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } ja ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -1587,6 +2064,27 @@
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+      ],
+      "Access advanced AI models": [
+        "Käytä kehittyneitä tekoälymalleja"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki palveluiden ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Koko keskusteluhistoria helpolla etsi-toiminnolla ja suosikeilla"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
       ]
     },
     "Billing cycle option": {
@@ -1621,6 +2119,9 @@
       ],
       "Yearly": [
         "Vuosittain"
+      ],
+      "Lifetime access": [
+        "Elinikäinen käyttöoikeus"
       ]
     },
     "BOSS": {
@@ -1665,6 +2166,9 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Ota yhteyttä ylläpitäjään migraation aloittamiseksi."
       ]
     },
     "Browser": {
@@ -1881,6 +2385,9 @@
       "Total for ${ n } month": [
         "Summa ${ n } kuukaudelle",
         "Summa ${ n } kuukaudelle"
+      ],
+      "Subtotal": [
+        "Välisumma"
       ]
     },
     "Collapsible tooltip": {
@@ -1933,6 +2440,12 @@
       ],
       "Zero-access encryption": [
         "Zero Access -salaus"
+      ],
+      "Compliance with data protection regulations": [
+        "Tietosuojasäädösten noudattaminen"
+      ],
+      "Data never used for AI training": [
+        "Tietoja ei koskaan käytetä tekoälyn kouluttamiseen"
       ]
     },
     "collider_2025: Info": {
@@ -1947,6 +2460,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Yksityiset videopuhelut tärkeisiin keskusteluihin."
       ]
     },
     "color": {
@@ -2154,6 +2670,12 @@
       ],
       "Quit import?": [
         "Lopetetaanko tuonti?"
+      ],
+      "Edit and reschedule": [
+        "Muokkaa ja ajoita uudelleen"
+      ],
+      "Message saved to Drafts": [
+        "Viesti tallennettiin luonnoksiin"
       ]
     },
     "Contact field label": {
@@ -3358,13 +3880,90 @@
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Saat rajoittamattoman pääsyn kirjoitusavustajaan ja muihin ominaisuuksiin päivittämällä ${ LUMO_SHORT_APP_NAME }:on."
+        "Päivitä ${ LUMO_SHORT_APP_NAME } -palveluun saadaksesi rajoittamattoman pääsyn kirjoitusavustajaan ja muihin ominaisuuksiin."
       ],
       "No labels": [
-        "Ei tunnisteita"
+        "Tunnisteita ei ole"
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
         "Tuomme vanhat sähköpostisi ja synkronoimme jatkossa uudet viestit Gmailista"
+      ],
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } asetuksista."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Etkö halua lähettää sähköpostia juuri nyt? Ajoita se juuri oikeaan aikaan."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Voitte käyttää sähköpostianne ja kalenterianne helposti tietokoneella ja mobiililaitteella."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Varmistakaa turvallinen pääsy organisaation tietoihin, vaikka tiiminne työskentelisi etänä tai käyttäisi julkista Wi-Fi-yhteyttä."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voit tuoda tietosi Googlesta, Outlookista ja muualta tiimisi saumattomaksi ${ BRAND_NAME } -palveluun siirtymiseksi."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Saat rajattoman pääsyn kirjoitusavustajaan ja muuhun, päivitä ${ BRAND_NAME } Duoon."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Jos viesti näkyy väärässä luokassa, siirtäkää se yksinkertaisesti oikeaan luokkaan. Valitkaa uusi luokka napsauttamalla viestiä hiiren kakkospainikkeella tai vetämällä ja pudottamalla se oikeaan paikkaan."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Osoitteesta ${ senderEmailAddress } ja ${ otherSendersCount } muusta saapuvia uusia viestejä ei toimiteta, vaan ne poistetaan pysyvästi.",
+        "Osoitteesta ${ senderEmailAddress } ja ${ otherSendersCount } muusta saapuvia uusia viestejä ei toimiteta, vaan ne poistetaan pysyvästi."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Lähettäjän ${ senderEmailAddress } uusia viestejä ei vastaanoteta, vaan ne poistetaan pysyvästi."
+      ],
+      "No folders": [
+        "Kansioita ei ole"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Lähetä ja vastaanota Gmail-viestejä suoraan palvelussa ${ MAIL_APP_NAME }. Yhdistä osoitteenne kohdassa ${ addressesSettingsLink }."
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Jatkaaksesi ${ LUMO_SHORT_APP_NAME } -palvelun käyttöä ${ MAIL_APP_NAME } -sovelluksessa, lisää se tilaukseesi."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pyydä ylläpitäjältä oikeutta käyttää ${ LUMO_SHORT_APP_NAME } -palvelua osana ${ MAIL_APP_NAME } -palvelua."
+      ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Jos haluat jatkaa kirjoitusavustajan käyttöä, lisää se tilaukseesi."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Jos haluat jatkaa kirjoitusavustajan käyttöä, pyydä käyttöoikeutta ylläpitäjältäsi."
+      ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Käytä ${ MAIL_APP_NAME }ia verkkopalveluihin kirjautumiseen, koska toisin kuin muut sähköpostipalveluntarjoajat, me emme koskaan seuraa tietojasi tai jaa niitä kolmansille osapuolille."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Käyttäkää tätä opasta, jotta organisaationne pääsee viipymättä hyötymään ${ BRAND_NAME }:n alan johtavasta salaus- ja yksityisyys-ekosysteemistä."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Emme löytäneet tästä sähköpostiviestistä mitään tunnettuja seurantoja tai seurantaan käytettäviä URL-osoitteita."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "On ikävä nähdä teidän lähtevän. Jos teillä on hetki aikaa, arvostaisimme kovasti, jos kertoisitte, miksi haluatte peruuttaa. Palautteenne auttaa meitä tekemään ${ BRAND_NAME } -palvelusta paremman kaikille."
+      ],
+      "When do you want your message to be sent?": [
+        "Milloin haluat viestin lähtevän?"
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Mukautetun torkutuksella voit piilottaa sähköposteja ja asettaa ne näkymään uudelleen sopivampaan aikaan."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Välität sähköposteja ${ forwardingCount } Gmail-osoitteesta. Kun yhdistät sen, voit sekä vastaanottaa että vastata viesteihin ${ MAIL_APP_NAME } -sovelluksessa",
+        "Välität sähköposteja ${ forwardingCount } Gmail-osoitteesta. Kun yhdistät sen, voit sekä vastaanottaa että vastata viesteihin ${ MAIL_APP_NAME } -sovelluksessa"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Olette ensimmäisten joukossa kokeilemassa uutta luokkanäkymäämme ennen sen julkaisua. Palautteenne auttaa parantamaan sitä, miten Proton Mail lajittelee sähköpostit kaikkien käyttäjien osalta."
       ]
     },
     "description": {
@@ -4116,6 +4715,181 @@
       ],
       "Enter a password": [
         "Syötä salasana"
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } osoitteelle <${ email }>. Voit ratkaista ongelman lisäämällä eri avaimen tai poistamalla salauksen käytöstä tältä yhteystiedolta."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Liitteet ovat enintään ${ readableAttachmentMaxSize }"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Erääntymistä ei voi asettaa pidemmäksi kuin säilytyskäytäntö sallii."
+      ],
+      "Choose a date in the future.": [
+        "Valitse päiväys tulevaisuudesta."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Valitse päiväys seuraavan ${ n } päivän sisältä.",
+        "Valitse päiväys seuraavan ${ n } päivän sisältä."
+      ],
+      "Contact your organization’s administrator to resolve this": [
+        "Ole yhteydessä organisaatiosi ylläpitoon ratkaistaksesi tämän"
+      ],
+      "Decryption error: decryption of this message's encrypted content failed.": [
+        "Salauksen purun virhe: viestin sisällön salauksen purku epäonnistui."
+      ],
+      "Draft could not be saved. Try again.": [
+        "Luonnosta ei voitu tallentaa. Yritä uudelleen."
+      ],
+      "Due to an error, text generation couldn't be canceled": [
+        "Tekstin luontia ei voitu virheen vuoksi perua"
+      ],
+      "Error while saving draft. Please try again.": [
+        "Virhe tallennettaessa luonnosta. Yritä uudelleen."
+      ],
+      "Error while sending the message. Message is not sent.": [
+        "Virhe lähetettäessä viestiä. Viestiä ei lähetetty."
+      ],
+      "Error while uploading attachments. Message is not sent.": [
+        "Virhe siirrettäessä liitteitä. Viestiä ei lähetetty."
+      ],
+      "Failed to encrypt attachment. Please try again.": [
+        "Liitteen salaus epäonnistui. Yritä uudelleen."
+      ],
+      "Invalid expiration time": [
+        "Virheellinen tuhoutumisaika"
+      ],
+      "Maximum expiration time reached.": [
+        "Pisin mahdollinen tuhoutumisaika on saavutettu."
+      ],
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Liitteiden enimmäismäärä (${ attachmentsCountLimit }) on ylitetty"
+      ],
+      "Message needs to be sent first": [
+        "Viesti on ensin lähetettävä"
+      ],
+      "Message processing error.": [
+        "Viestien käsittelyvirhe."
+      ],
+      "Network error: Please check your connection and try again.": [
+        "Verkkovirhe: tarkista yhteytesi ja yritä uudelleen."
+      ],
+      "No address with keys available to compose a message": [
+        "Viestin kirjoitukseen soveltuvaa, avaimellista osoitetta ei ole"
+      ],
+      "No address with sending permissions": [
+        "Ei osoitetta, jolla on lähetysoikeudet"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tarkistakaa, onko ABN-tunnuksenne rekisteröity valtioiden välistä ALV:ta varten"
+      ],
+      "Please select a category and what went wrong with the generated text": [
+        "Valitse luokka ja mikä luodussa tekstissä meni pieleen"
+      ],
+      "Please try again or refresh the page.": [
+        "Yritä uudelleen tai päivitä sivu."
+      ],
+      "Please try generating the text again": [
+        "Yritä luoda teksti uudelleen"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Ongelma ladattaessa kirjoitusavustajaa. Jos käytät yksityistä tilaa, kokeile normaalia selaustilaa tai suorita kirjoitusavustaja palvelimilla."
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Ongelma ladattaessa kirjoitusavustajaa. Yritä uudelleen."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Ongelma ladattaessa kirjoitusavustajaa laitteellesi. Yritä uudelleen."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Virhe tyhjennettäessä tietoja, jotka ovat tarpeettomia kun kirjoitusavustaja ei ole aktiivinen."
+      ],
+      "Public key could not be trusted": [
+        "Julkiseen avaimeen ei voitu luottaa"
+      ],
+      "re-activate the previous key": [
+        "aktivoimalla edellisen avaimen uudelleen"
+      ],
+      "re-importing": [
+        "uudelleentuodaan"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Vastaanottajan kaksoiskappale poistettiin: ${ recipents }",
+        "Vastaanottajien kaksoiskappaleet poistettiin: ${ recipents }"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Liitteiden lähettämistä rajoitetaan, kunnes alitat nykyisen tilauksesi rajoitukset tai päivität laajempaan tilaukseen."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Liitteiden lähettämistä rajoitetaan, koska olet ylittänyt nykyisen tilauksesi rajoitukset tai kunnes päivität laajempaan tilaukseen."
+      ],
+      "Signature verification error.": [
+        "Allekirjoitusvahvistuksen virhe."
+      ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Valitettavasti ${ BRAND_NAME } ei voi purkaa viestin salausta. Tarkista, että kaikki avaimesi ovat aktiivisia."
+      ],
+      "Text is too long to refine": [
+        "Teksti on liian pitkä parannettavaksi"
+      ],
+      "Thanks for the feedback!": [
+        "Kiitos palautteesta!"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Tätä toimintoa ei voi suorittaa tämän kansion sähköposteille."
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Liitteen salausta ei voitu purkaa. Jos sinulla on vastaava yksityinen avain, voit silti purkaa tiedoston salauksen GnuPG:n kaltaisella sovelluksella.",
+        "Joidenkin liitteiden salausta ei voitu purkaa. Jos sinulla on vastaava yksityinen avain, voit silti purkaa tiedoston salauksen GnuPG:n kaltaisella sovelluksella."
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Osoitteen ${ emailAddress } avaimen ominaisuuksia ei voitu purkaa"
+      ],
+      "The maximum expiration is 4 weeks": [
+        "Pisin mahdollinen tuhoutumisaika on neljä viikkoa"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Järjestelmä on tällä hetkellä varattu. Yritä uudelleen muutaman minuutin kuluttua."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Kirjoitusavustaja ei voi käsitellä pyyntöäsi. Kokeile toista kehotetta."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Sisältöhaussa ilmeni ongelma. Sen sijaan käytettiin oletushakua."
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Viestin salauksen purkamisessa ilmeni ongelma. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluumme."
+      ],
+      "This action cannot be performed": [
+        "Toimintoa ei voida suorittaa"
+      ],
+      "This message has already been sent": [
+        "Viesti on jo lähetetty"
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Viesti on jo lähetetty. Tallennettiin uusi luonnos."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "ALV-tunnuksen on alettava etuliitteillä ${ prefixes }"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Voit samanaikaisesti kirjoittaa enintään ${ maxActiveComposer } viestiä",
+        "Voit samanaikaisesti kirjoittaa enintään ${ maxActiveComposer } viestiä"
+      ],
+      "You did not provide a file.": [
+        "Et toimittanut tiedostoa."
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Viestiesi salausta ei voida purkaa taannoisen salasanan nollauksen vuoksi. Jos muistat edellisen salasanasi, voit avata viestisi ${ reActivateKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Viestin salausta ei voi purkaa. Jos poistitte jonkin osoiteavaimistanne, kokeilkaa ${ reimportKeyLink } niitä. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Viestin salauksen purku epäonnistui. Viestin salaamiseen käytetty avain ei vastaa mitään osoitteeseen liitettyä avainta. Jos poistitte jonkin osoiteavaimistanne, kokeilkaa ${ reimportKeyLink } sitä. ${ learnMoreLink }"
+      ],
+      "Your search matched too many results. Please limit your search and try again.": [
+        "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
       ]
     },
     "error": {
@@ -4279,6 +5053,21 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Lisäsalasanan ollessa käytössä, voidaan aliaksia hallita vain ${ PASS_APP_NAME }issa."
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliaksia ei voida käyttää, kun lisäsalasana on käytössä ${ PASS_APP_NAME }issa."
+      ],
+      "An error occurred with the categories": [
+        "Virhe luokissa"
+      ],
+      "No results found": [
+        "Tuloksia ei löytynyt"
+      ],
+      "No results found for \"${ query }\"": [
+        "Ei tuloksia haulla \"${ query }\""
+      ],
+      "You do not have any contact yet. Start by creating a new contact": [
+        "Sinulla ei vielä ole yhteystietoja. Aloita luomalla uusi yhteystieto"
       ]
     },
     "Error notification": {
@@ -4470,6 +5259,9 @@
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
+      ],
+      "Invite members and get everything up and running.": [
+        "Kutsu jäseniä ja aloita käyttö."
       ]
     },
     "familyOffer_2023:Title": {
@@ -4530,6 +5322,9 @@
       ],
       "Security key": [
         "Suojausavain"
+      ],
+      "Touch your security key.": [
+        "Koskettakaa suoja-avaintanne."
       ]
     },
     "fido2: Label": {
@@ -4623,6 +5418,18 @@
       ],
       "The subject": [
         "Aihe"
+      ],
+      "If the attachments": [
+        "Jos liitteet"
+      ],
+      "If the recipient": [
+        "Jos vastaanottaja"
+      ],
+      "If the sender": [
+        "Jos lähettäjä"
+      ],
+      "If the subject": [
+        "Jos aihe"
       ]
     },
     "Filter notification": {
@@ -4703,6 +5510,24 @@
       ],
       "Upgrade now": [
         "Päivitä nyt"
+      ],
+      "14-day desktop app trial.": [
+        "Työpöytäsovelluksen 14 päivän kokeilujakso."
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Nauti nopeasta, turvallisesta ja häiriötekijöistä vapaasta pääsystä postilaatikkoosi ja kalenteriisi."
+      ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Saat rajattoman pääsyn millä tahansa ${ MAIL_APP_NAME } -tilauksella."
+      ],
+      "No credit card required.": [
+        "Luottokorttia ei tarvita."
+      ],
+      "Start free trial": [
+        "Aloita ilmainen kokeilu"
+      ],
+      "Try the new desktop app": [
+        "Kokeile uutta työpäytäsovellusta"
       ]
     },
     "Gmail forwarding": {
@@ -4751,6 +5576,15 @@
       ],
       "Services": [
         "Palvelut"
+      ],
+      "Custom folders": [
+        "Omat kansiot"
+      ],
+      "Default folders": [
+        "Oletuskansiot"
+      ],
+      "Labels": [
+        "Tunnisteet"
       ]
     },
     "Header": {
@@ -4780,6 +5614,18 @@
       ],
       "Tell us more": [
         "Kerro meille lisää"
+      ],
+      "Hardware not compatible": [
+        "Laitteisto ei ole yhteensopiva"
+      ],
+      "Report an issue": [
+        "Ilmoita ongelmasta"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Määritä ${ LUMO_SHORT_APP_NAME } -kirjoitusavustaja"
+      ],
+      "Set up the writing assistant": [
+        "Kirjoitusavustajan määrittäminen"
       ]
     },
     "Hint": {
@@ -6502,20 +7348,20 @@
         "Lisää kuva"
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
-        "${ LUMO_SHORT_APP_NAME } paneeli"
+        "${ LUMO_SHORT_APP_NAME } -paneeli"
       ],
       "${ total } message": [
         "${ total } viesti",
         "${ total } viestiä"
       ],
       "(No Recipient)": [
-        "(Ei vastaanottajia)"
+        "(Ei vastaanottajaa)"
       ],
       "Attach public key": [
         "Liitä julkinen avain"
       ],
       "Clear browser data": [
-        "Tyhjennä selaimen tiedot"
+        "Tyhjennä selaimen välimuisti"
       ],
       "Clear selection": [
         "Tyhjennä valinta"
@@ -6563,7 +7409,7 @@
         "Viestinäkymä"
       ],
       "More info": [
-        "Lisätietoja"
+        "Lisätiedot"
       ],
       "No folder found": [
         "Kansiota ei löytynyt"
@@ -6578,7 +7424,7 @@
         "Salasana vahvistettu"
       ],
       "Print email": [
-        "Tulosta sähköposti"
+        "Tulosta viesti"
       ],
       "Proofread selection": [
         "Oikolue valinta"
@@ -6614,10 +7460,1060 @@
         "Lukemattomat viestit"
       ],
       "Unsubscribe": [
-        "Peruuta tilaus"
+        "Peru tilaus"
       ],
       "You have ${ unread } in ${ label }.": [
         "Sinulla on ${ unread } viestiä kategoriassa ${ label }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, arkistoi tai siirrä vanhat sähköpostit kansioon."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } tilaukset, jotka eivät ole enää ajankohtaisia."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } yhdellä klikkauksella."
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+      ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME } salasanojen hallintasovelluksella pystyt luomaan, säilyttämään ja automaattisesti täyttämään salasanoja, joten sinun ei tarvitse koskaan nollata niitä."
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } jäsen)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } jäsentä)"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } / ${ totalProgress }",
+        "${ currentProgress } / ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } keskustelulle lisätään tunniste:",
+        "${ elementsCount } keskustelulle lisätään tunniste:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } keskustelu merkitään luetuksi.",
+        "${ elementsCount } keskustelua merkitään luetuksi."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } keskustelu merkitään lukemattomaksi.",
+        "${ elementsCount } keskustelua merkitään lukemattomaksi."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } keskustelu siirretään",
+        "${ elementsCount } keskustelua siirretään"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } keskustelulta poistetaan tunniste:",
+        "${ elementsCount } keskustelulta poistetaan tunniste:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } viestille lisätään tunniste:",
+        "${ elementsCount } viestille lisätään tunniste:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } viesti merkitään luetuksi.",
+        "${ elementsCount } viestiä merkitään luetuksi."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } viesti merkitään lukemattomaksi.",
+        "${ elementsCount } viestiä merkitään lukemattomaksi."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } viesti siirretään",
+        "${ elementsCount } viestiä siirretään"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } viestiltä poistetaan tunniste:",
+        "${ elementsCount } viestiltä poistetaan tunniste:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } upotettu kuva",
+        "${ embeddedAttachmentsCount } upotettua kuvaa"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } auttaa teitä laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } voi suojata myös yritystoimintaasi."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } lajittelee nyt sähköpostinne automaattisesti luokkiin, kuten ensisijainen, sosiaalinen, tarjoukset ja muut, auttaen teitä löytämään ja hallitsemaan viestejä helpommin."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } on päästä päähän -salattu videoneuvotteluratkaisu. Lisää se tilaukseesi järjestääksesi suojattuja kokouksia."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ n } unread conversation": [
+        "${ n } lukematon keskustelu",
+        "${ n } lukematonta keskustelua"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } linkki puhdistettu",
+        "${ numberOfUTMTrackers } linkkiä puhdistettu"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } viesti keskustelussa",
+        "${ NumMessages } viestiä keskustelussa"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "Löytyi ${ numOccurrences } tapahtumakerta",
+        "Löytyi ${ numOccurrences } tapahtumakertaa"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakerta",
+        "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakertaa"
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } tarjoaa yksinkertaisen tavan kirjautumistietojen luontiin epäluotettavien kolmansien osapuolten sivustoilla, joille et halua paljastaa todellista sähköpostiosoitettasi."
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } liitetiedosto",
+        "${ pureAttachmentsCount } liitetiedostoa"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } sähköposti viime kuussa",
+        "${ receivedMessagesCount } sähköpostia viime kuussa"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } lukematonta",
+        "${ subscription.UnreadMessageCount } lukematonta"
+      ],
+      "${ total } conversation": [
+        "${ total } keskustelu",
+        "${ total } keskustelua"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } sähköpostiseuranta estetty",
+        "${ trackersCount } sähköpostiseurantaa estetty"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } seuranta estetty",
+        "${ trackersCount } seurantaa estetty"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } uutiskirje",
+        "${ unreadCount } uutiskirjettä"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } ajoitettu viesti",
+        "${ unreadCount } ajoitettua viestiä"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteenne. ${ PASS_SHORT_APP_NAME } piilottaa henkilöllisyytenne\n— rajoittamattomat **hide-my-email-aliakset** ja **pimeän verkon hälytykset**, jos tietonne vuotavat."
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** tulos kohteessa ${ labelName }",
+        "**${ total }** tulosta kohteessa ${ labelName }"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**He saavat ${ refereeRewardAmount }** krediittiä, mikäli he tilaavat."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Saat ${ referrerRewardAmount }** krediittiä jokaisesta tilaavasta ystävästä."
+      ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "Sähköpostitilauksen lopetuspyyntö lähetetään viestien lähettäjälle ja käsitellään automaattisesti."
+      ],
+      "Activation in progress": [
+        "Aktivointi on käynnissä"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Addresses settings": [
+        "Osoiteasetukset"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Kaikki tämän postituslistan viestit merkitään luetuiksi."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Kaikki tämän postituslistan viestit siirretään arkistoon."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Kaikki tämän postituslistan viestit siirretään roskakoriin."
+      ],
+      "All messages stored in this folder will be permanently deleted.": [
+        "Kaikki kansion sisältämät viestit poistetaan pysyvästi."
+      ],
+      "All messages stored with this label will be permanently deleted.": [
+        "Kaikki tunnisteella merkityt viestit poistetaan pysyvästi."
+      ],
+      "All your calendars are disabled.": [
+        "Kaikki kalenterisi on poistettu käytöstä."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Tilauksen peruutussähköposti lähetetään puolestanne."
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "Toinen vinkki näytetään seuraavalla kerralla, kun avaat Mailin"
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Kaikki viestien ajoitetut lähetykset tai torkutukset perutaan."
+      ],
+      "Apply to future messages": [
+        "Käytä tuleville viesteille"
+      ],
+      "Applying actions to conversations": [
+        "Käytetään toimintoa kaikille keskusteluille"
+      ],
+      "Applying actions to messages": [
+        "Käytetään toimintoa kaikille viesteille"
+      ],
+      "Archive existing messages": [
+        "Arkistoi olemassa olevat viestit"
+      ],
+      "Are you sure you want to delete all messages in this folder?": [
+        "Haluatko varmasti poistaa kaikki tämän kansion viestit?"
+      ],
+      "Are you sure you want to delete all messages with this label?": [
+        "Haluatko varmasti poistaa kaikki tällä tunnisteella merkityt viestit?"
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Haluatko varmasti siirtää sijainnin kaikki viestit arkistoon?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Haluatko varmasti siirtää sijainnin kaikki viestit roskakoriin?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Haluatko varmasti poistaa ${ count } keskustelun pysyvästi?",
+        "Haluatko varmasti poistaa ${ count } keskustelua pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Haluatko varmasti poistaa ${ count } luonnoksen pysyvästi?",
+        "Haluatko varmasti poistaa ${ count } luonnosta pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Haluatko varmasti poistaa ${ count } viestin pysyvästi?",
+        "Haluatko varmasti poistaa ${ count } viestiä pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Haluatko varmasti poistaa keskustelun pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete this draft?": [
+        "Haluatko varmasti poistaa luonnoksen pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Haluatko varmasti poistaa tämän viestin pysyvästi?"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Kokeilujaksonne päättyessä ${ boldCancelDate } tilauksenne alennetaan tasolle ${ boldProtonFree }. Kaikki käyttäjätilit poistetaan organisaatiostanne."
+      ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Poista roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Lajittele saapuvat sähköpostit automaattisesti luokkiin"
+      ],
+      "Block sender": [
+        "Estä lähettäjä"
+      ],
+      "Body: ": [
+        "Sisältö: "
+      ],
+      "Browse privately and access blocked content.": [
+        "Selaa yksityisesti ja käytä estettyä sisältöä."
+      ],
+      "Browser not supported": [
+        "Selainta ei tueta"
+      ],
+      "Bulk delete": [
+        "Massapoista"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Etkö löydä etsimääsi? ${ displayAllMailButton }"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategoriat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
+      ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Selaimen välimuistin tyhjennys poistaa myös viestien sisältöhaun käytöstä tältä laitteelta. Kaikki viestit on ladattava uudelleen, jotta niiden sisällöstä voidaan etsiä."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Poistaa selaimen tiedot (mukaan lukien ladatut viestit, …)"
+      ],
+      "Click to view group details": [
+        "Näytä ryhmän tiedot klikkaamalla"
+      ],
+      "Composer:": [
+        "Kirjoitus:"
+      ],
+      "Confirm phishing report": [
+        "Vahvista tietojenkalasteluilmoitus"
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Mieti, mihin aikaan vastaanottajasi on parasta vastaanottaa sähköpostisi, ja ajoita se lähetettäväksi silloin."
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Luo kansio, kuten ”${ suggestedFolderName }”, säilyttääksesi kaikki verkko-ostosten kuitit yhdessä paikassa."
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Tunnistus tapahtuu laitteellasi, joten sähköpostiesi tietoja ei lähetetä palvelimillemme."
+      ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Tiesitkö, että ${ BRAND_NAME }-tiliisi sisältyy salattu pilvitallennustila? Avaa ${ DRIVE_APP_NAME } ja ota kaikki irti ilmaisesta tallennustilastasi."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Tiesitkö, että olemme varanneet sinulle myös lyhyemmän sähköpostiosoitteen? Se muodostuu käyttäjätunnuksestasi, jota seuraa ”@${ PM_DOMAIN }”."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Muistatteko salasananne? ${ verifyButton }"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Haluatko silti ladata liitteen?",
+        "Haluatko silti ladata liitteet?"
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Haluatko allekirjoittaa yhteystiedon uudelleen ja samalla luottaa avaimiin seuraavilla sormenjäljillä?"
+      ],
+      "Do you want to re-sign the contact details?": [
+        "Haluatko allekirjoittaa yhteystiedon uudelleen?"
+      ],
+      "Don't forget to share the password with the recipient": [
+        "Älä unohda ilmoittaa salasanaa vastaanottajalle"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Eikö sinulla ole aikaa hoitaa tärkeää sähköpostia juuri nyt, mutta et kuitenkaan halua unohtaa sitä? Aseta parempi aika, jolloin se ilmestyy postilaatikkoosi."
+      ],
+      "Download application logs for troubleshooting": [
+        "Lataa sovelluslokit vianetsintään"
+      ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Ladataan avustajaa… ${ progressDisplay } Gt"
+      ],
+      "Downloading paused": [
+        "Lataus pysäytettiin"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Lataus pysäytetty: ${ progressDisplay } Gt"
+      ],
+      "Draft discarded": [
+        "Luonnos hylättiin"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Vastaanottajan asetuksista johtuen tätä viestiä ei voida lähettää erääntymisajalla vastaanottajalle ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Vastaanottajan asetuksista johtuen tätä viestiä ei voida lähettää erääntymisajalla"
+      ],
+      "Each code can only be used once": [
+        "Jokaista koodia voi käyttää vain kerran."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Hallitse ja peru uutiskirjeitä ja postituslistoja helposti."
+      ],
+      "Edit encryption": [
+        "Muokkaa salausta"
+      ],
+      "Edit expiration time": [
+        "Muokkaa tuhoutumisaikaa"
+      ],
+      "Email copied to clipboard": [
+        "Sähköpostiosoite kopioitiin leikepöydälle"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Sähköposti välitetään postilaatikkoosi ja sähköpostiosoitteesi pysyy piilossa."
+      ],
+      "Email tracker protection is disabled": [
+        "Sähköpostin seurantasuojaus ei ole käytössä"
+      ],
+      "embedded image": [
+        "upotettu kuva",
+        "upotettua kuvaa"
+      ],
+      "Encrypt message": [
+        "Salaa viesti"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Syöttäkää oma salasananne (luotettuna yhteystietona)."
+      ],
+      "Expiration time": [
+        "Tuhoutumisaika"
+      ],
+      "Expires in ${ formattedDate }": [
+        "Tuhoutuu ${ formattedDate } kuluttua"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Tuhoutuu ${ minutesDiff } minuutin kuluttua",
+        "Tuhoutuu ${ minutesDiff } minuutin kuluttua"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Tuhoutuu vajaan ${ hoursDiff } tunnin kuluttua",
+        "Tuhoutuu vajaan ${ hoursDiff } tunnin kuluttua"
+      ],
+      "file attached": [
+        "liitetiedosto",
+        "liitetiedostoa"
+      ],
+      "Folder": [
+        "Kansio"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Vain ${ bundlePlanPriceInline }"
+      ],
+      "For messages newer than ${ oldestDate }": [
+        "${ oldestDate } uudemmille viesteille"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Ilmainen kokeiltavaksi ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan",
+        "Vapaasti kokeiltavissa ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan"
+      ],
+      "From": [
+        "Osoitteesta"
+      ],
+      "Generate text": [
+        "Luo tekstiä"
+      ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Anna saapuville laskuille värikoodattu tunniste, esimerkiksi ”${ suggestedLabelName }”. Kun ne on maksettu, vaihda tunnisteeksi ”${ suggestedPaidLabelName }”."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Sisältää ${ numAttachments } liitteen (${ numAttachmentsSize })",
+        "Sisältää ${ numAttachments } liitettä (${ numAttachmentsSize })"
+      ],
+      "Hide original message": [
+        "Piilota alkuperäinen viesti"
+      ],
+      "How hide-my-email aliases works": [
+        "Miten Hide-my-email-aliakset toimivat"
+      ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Lähetän viestin ${ MAIL_APP_NAME }in ulkopuoliselle käyttäjälle."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Jos aliaksesi myydään, vuotaa tai sitä väärinkäytetään, voit estää roskapostin yksinkertaisesti poistamalla aliaksen käytöstä."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Jos salasanasi päätyy pimeään verkkoon, ${ BRAND_NAME } voi kertoa, mistä palvelusta tietosi ovat vuotaneet ja miten vahingot voidaan estää."
+      ],
+      "Include Spam/Trash.": [
+        "Sisällytä roskaposti ja roskakorin sisältö."
+      ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Liitä mukaan kehotuksesi ja saamasi vastaus, jotta voimme parantaa tarkkuutta."
+      ],
+      "Included for free with your plan": [
+        "Sisältyy ilmaiseksi tilaukseesi"
+      ],
+      "Initializing…": [
+        "Valmistellaan…"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Liity ${ PROTON_SENTINEL_NAME } -ohjelmaan saadaksesi korkeimman tason tiliturvan ja tuen."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Pidä kirjautumis- ja luottokorttitietosi turvassa ja aina käsilläsi lisäämällä ne ${ PASS_APP_NAME }iin. Se on ilmainen ja sisältyy ${ BRAND_NAME }-tiliisi."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Pidä postilaatikkosi siistinä poistamalla roskakorissa ja -postissa yli 30 päivää olleet sähköpostit automaattisesti."
+      ],
+      "Learn more about the writing assistant": [
+        "Lue lisää kirjoitusavustajasta"
+      ],
+      "Manage your folders": [
+        "Hallitse kansioitasi"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Liitteiden enimmäismäärä (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) on ylitetty."
+      ],
+      "Members": [
+        "Jäsentä"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "Viestitoiminnot käynnissä. Tämä voi kestää hetken."
+      ],
+      "Message download status:": [
+        "Viestin lataustila:"
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Viesti lähetetään aamulla klo ${ formattedTime }"
+      ],
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Viesti lähetetään ${ dateString } klo ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Viesti lähetetään tänään klo ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Viesti lähetetään huomenna klo ${ formattedTime }"
+      ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Roskakorissa ja roskapostissa yli 30 päivää olleet viestit poistetaan automaattisesti."
+      ],
+      "More refine actions": [
+        "Lisää parannusehdotuksia"
+      ],
+      "newsletter": [
+        "uutiskirje"
+      ],
+      "No change will be made to the selected emails": [
+        "Valittuihin sähköposteihin ei tehdä muutoksia."
+      ],
+      "No links cleaned": [
+        "Linkkejä ei puhdistettu"
+      ],
+      "No messages to show": [
+        "Ei viestejä näytettäväksi"
+      ],
+      "No more results found": [
+        "Ei enempää tuloksia"
+      ],
+      "No trackers found": [
+        "Seurantoja ei löytynyt"
+      ],
+      "non-${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }in ulkopuoliseen"
+      ],
+      "Normal": [
+        "Normaali"
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Järjestelmämme merkitsi viestin epäilyttäväksi. Mikäli se ei ole tietojenkalastelu- tai roskapostiviesti, merkitse se aidoksi."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Järjestelmämme merkitsi viestin tietojenkalasteluksi. Varmistathan sen aitouden."
+      ],
+      "Plain text": [
+        "Pelkkä teksti"
+      ],
+      "Please add at least one recipient.": [
+        "Lisää ainakin yksi vastaanottaja."
+      ],
+      "Please share what the issue is": [
+        "Kerro ongelmasta"
+      ],
+      "Please share what you expected": [
+        "Kerro, mitä odotit"
+      ],
+      "Please wait for the action to be completed": [
+        "Odota, kunnes toiminto on valmis"
+      ],
+      "Preferences updated": [
+        "Asetukset päivitettiin"
+      ],
+      "Private by design.": [
+        "Suunniteltu yksityiseksi."
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Suojele sähköpostiosoitteesi vuotamista postituslistoille tai roskapostittajille ${ hideMyEmailAliasesLink } avulla."
+      ],
+      "Quickly spot": [
+        "Löydä nopeasti"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Muista päivittää nämä tiedot salasanahallintaasi tai missä tahansa säilytätkin tili- ja kirjautumistietojasi."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Poistaa kaikki tähän sovellukseen liittyvät tiedot (mukaan lukien ladatut viestit, …)"
+      ],
+      "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
+        "Viestin raportointi tietokalasteluyritykseksi lähettää sen meille, jotta voimme analysoida sen ja parantaa suodattimiamme. Huomioi, että näemme lähettämäsi viestin sisällön."
+      ],
+      "Request read receipt": [
+        "Pyydä lukukuittaus"
+      ],
+      "Right-click for options": [
+        "Näytä valinnat hiiren kakkospainikkeella"
+      ],
+      "Sat, ${ formatTime }": [
+        "la, ${ formatTime }"
+      ],
+      "Saved at ${ dateString }": [
+        "Tallennettu ${ dateString }"
+      ],
+      "Saved: ${ dateString }": [
+        "Tallennettu: ${ dateString }"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Viestin ajoitettu lähetys perutaan."
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Hakuvaihtoehto, jonka avulla voit etsiä avainsanoja turvallisesti sähköpostiviestien rungosta."
+      ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Kestääkö haku liian kauan? ${ dropdownButton } tai ${ toggleOffButton } tästä hakutapahtumasta."
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Suojaa tiedostosi salatulla pilvitallennustilalla ilmaiseksi jo tänään."
+      ],
+      "Seems like you are all caught up for now": [
+        "Kaikki näyttää olevan tällä erää ajan tasalla"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Valitse kaikki ${ elementsCount } sijainnista ${ location }",
+        "Valitse kaikki ${ elementsCount } sijainnista ${ location }"
+      ],
+      "Selection pane": [
+        "Valintapaneeli"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Lähetä salattu, salasanasuojattu viesti ${ boldText } sähköpostiosoitteeseen."
+      ],
+      "Sender has been blocked.": [
+        "Lähettäjä on estetty."
+      ],
+      "Sending": [
+        "Lähetetään"
+      ],
+      "Sending message": [
+        "Lähetetään viestiä"
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Viestien lähetys @pm.me-osoitteesta on maksullinen ominaisuus. Viestisi lähetetään oletusosoitteestasi ${ email }"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Aseta ${ MAIL_APP_NAME } sähköpostin oletussovellukseksi tässä selaimessa, niin ${ MAIL_APP_NAME } avautuu sähköpostilinkeistä automaattisesti."
+      ],
+      "Shorten selection": [
+        "Lyhennä valinta"
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Torkutettu ${ dateString } klo ${ formattedTime } asti"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Torkutettu: tänään klo ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Torkutettu: huomenna klo ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Tämän keskustelun torkutus perutaan."
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Tämä selain ei tue tallennusominaisuuksia, joita tarvitaan viestin sisältöhaun suorittamiseen."
+      ],
+      "Subject": [
+        "Aihe"
+      ],
+      "Subject is end-to-end encrypted": [
+        "Aihe on päästä päähän -salattu"
+      ],
+      "Subject:": [
+        "Aihe:"
+      ],
+      "Subject: ": [
+        "Aihe: "
+      ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "Luonnostasi ei tallenneta, jos poistut sivulta."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Sähköpostiosoite ${ boldNoReplyEmail } ei näytä hyväksyvän vastauksia. Haluatko varmasti lähettää viestisi?"
+      ],
+      "The initial setup may take a few minutes.": [
+        "Käyttöönotto voi kestää muutaman minuutin."
+      ],
+      "The local database is being prepared": [
+        "Paikallista tietokantaa valmistellaan"
+      ],
+      "The message has expired": [
+        "Viesti on tuhoutunut"
+      ],
+      "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
+        "Alkuperäistä viestiä, jota olet välittämässä tai johon olet vastaamassa, lähetetään. Jos jatkat, et voi enää kumota alkuperäisen viestin lähetystä."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Viestin alkuperäinen lähettäjä ei enää kelpaa. Viesti lähetetään oletusosoitteesta ${ defaultEmail }."
+      ],
+      "The sender has requested a read receipt.": [
+        "Lähettäjä on pyytänyt lukukuittausta."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Yhteystiedon ${ contactNames } vahvistus epäonnistui, koska sitä ei ole allekirjoitettu oikein. Tämä voi johtua salasanan nollauksesta. Lähettääksesi viestin osoitteeseen ${ contactAddresses } sinun on on allekirjoitettava yhteystieto uudelleen tai muokattava sitä.",
+        "${ contactNames } vahvistus epäonnistui: yhteystietoja ei ole allekirjoitettu oikein.\nTämä voi johtua salasanan resetoinnista.\nSinun on allekirjoitettava yhteystiedot uudelleen tai muokattava niitä, jotta voit lähettää viestin osoitteeseen ${ contactAddresses } ."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Kirjoitusavustajan täytyy olla ladattu ennen kuin sitä voi käyttää."
+      ],
+      "Themes can give your inbox a new look.": [
+        "Teemoilla voit muuttaa postilaatikkosi ulkoasua."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Tältä lähettäjältä ei ole viestejä saapuneet-kansiossasi."
+      ],
+      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
+        "Yhteystiedon vahvistukseen käytetyssä allekirjoituksessa havaittiin virhe, joka saattaa johtua salasanan nollauksesta."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Nämä keskustelut säilytetään organisaatiosi tietojen säilytyskäytännön mukaisesti."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "He eivät voi lähettää sinulle roskapostia, jos he eivät tiedä sähköpostiosoitettasi. Suojaa postilaatikkoasi Hide-my-email-aliaksilla."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Keskustelu sisältää ajoitetun viestin. Viestin lähetys perutaan."
+      ],
+      "This conversation contains non-trashed messages.": [
+        "Keskustelu sisältää viestejä, jotka eivät ole roskakorissa."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Tämä keskustelu sisältää ainakin yhden tuhoutuvan viestin"
+      ],
+      "This conversation contains trashed messages.": [
+        "Keskustelu sisältää roskakorissa olevia viestejä."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Keskustelu merkitään roskapostiksi. Haluatko lopettaa myös tulevien viestien tilauksen?",
+        "Keskustelut merkitään roskapostiksi. Haluatko lopettaa myös tulevien viestien tilauksen?"
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Viesti ei täyttänyt sen verkkotunnuksen todennusvaatimuksia. Se voi olla väärennetty tai virheellisesti välitetty."
+      ],
+      "This invitation is saved in a disabled calendar.": [
+        "Kutsu on tallennettu käytöstä poistettuun kalenteriin."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Tämä on tarkoitettu kirjoittamisen helpottamiseksi. Tarkista ehdotetun tekstin tarkkuus. ${ learnMoreResult }"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Tähän viestiin on liitetty avain, jota ei ole vielä vahvistettu luotettavaksi."
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Viestin ulkoasua on muutettu tummalle taustalle sopivaksi."
+      ],
+      "This message is automatically generated as a response to a previous message.": [
+        "Tämä viesti on luotu automaattisesti edellisen viestin vastaukseksi."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Tämä viesti on ${ PASS_APP_NAME }-aliakselta."
+      ],
+      "This message is from a mailing list.": [
+        "Viesti on postituslistan lähettämä."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "Viesti on allekirjoitettu avaimella, johon ei ole vielä luotettu."
+      ],
+      "This message is signed by the key attached, that has not been trusted yet.": [
+        "Tämä viesti on allekirjoitettu liitetyllä avaimella, johon ei ole vielä luotettu."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Tämä tuhoutuu automaattisesti klo ${ value }"
+      ],
+      "This message will be automatically deleted on ${ value }": [
+        "Viesti tuhoutuu automaattisesti ${ value }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Viesti merkitään roskapostiksi. Haluatko lopettaa myös tulevien viestien tilauksen?",
+        "Viestit merkitään roskapostiksi. Haluatko lopettaa myös tulevien viestien tilauksen?"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Viesti siirretään luonnoksiin, jotta voit muokata sitä. Sinun on ajoitettava sen lähetys uudelleen."
+      ],
+      "This message will be purged on ${ value }": [
+        "Tämä viesti poistetaan ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Tämä viesti poistetaan tänään klo ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Tämä viesti poistetaan huomenna klo ${ value }."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Viesti lähetetään aamulla klo ${ formattedTime }"
+      ],
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Viesti lähetetään ${ dateString } klo ${ formattedTime }"
+      ],
+      "This message will be sent shortly": [
+        "Viesti lähetetään pian"
+      ],
+      "This message will be sent today at ${ formattedTime }": [
+        "Viesti lähetetään tänään klo ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Viesti lähetetään huomenna klo ${ formattedTime }"
+      ],
+      "This message will expire ${ formattedDate }": [
+        "Viesti tuhoutuu ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Viesti tuhoutuu ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Viesti tuhoutuu tänään klo ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Viesti tuhoutuu huomenna klo ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Tämä on tehtävä vain kerran."
+      ],
+      "This public key will be automatically used for encrypting email sent to this address.": [
+        "Tätä julkista avainta käytetään automaattisesti tähän osoitteeseen lähetettävien viestien salaukseen."
+      ],
+      "This sender's public key has not been trusted yet.": [
+        "Tämän lähettäjän julkiseen avaimeen ei ole vielä luotettu."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Tämä näytettiin sinulle koska sähköpostiviestisi aihe sisältää salasanan palauttamisen avainsanoja."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Tämä poistaa uutiskirjeen merkinnän tästä luettelosta. Tämä ei peru uutiskirjeen tilausta. Se ilmestyy takaisin, jos vastaanotat uusia viestejä."
+      ],
+      "to ${ destinationElement } folder.": [
+        "kohdekansioon ${ destinationElement }."
+      ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Selaimen avoimet välilehdet eivät häiritse sinua, kun käytät työpöytäsovellusta."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Auttaaksemme teitä muistamaan salasananne, pyydämme teitä syöttämään sen säännöllisin väliajoin. Pyyntöjen määrä vähenee ajan myötä."
+      ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "Sähköpostitilauksen lopettamiseksi lähetetään osoitteesta ${ boldFrom } viesti, joka sisältää seuraavat näiden viestien lähettäjän määrittämät tiedot:"
+      ],
+      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
+        "Sähköpostitilauksen lopettamiseksi sinut ohjataan seuraavaan URL-osoitteeseen, joka sisältää viestien lähettäjän ohjeet:"
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "huomenna, ${ formattedTime }"
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Lähetysjonossa on liikaa viestejä. Odota, kunnes seuraava viesti on lähetetty ajoittaaksesi tämän lähetyksen."
+      ],
+      "Trackers blocked:": [
+        "Seurantoja estetty:"
+      ],
+      "Trash existing messages": [
+        "Poista olemassa olevat viestit"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Luota \"${ activeSignerText }\" -avaimeen tämän yhteyshenkilön uusien viestien todentamiseksi."
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Poista käytöstä etsiäksesi vain päiväyksen, nimen, sähköpostiosoitteen tai aiheen perusteella. Poistaaksesi viestien sisältöhaun käytöstä (ja poistaaksesi sitä varten ladatut viestit), avaa asetukset."
+      ],
+      "Turn on to search the content of your messages": [
+        "Ota käyttöön etsiäksesi viestiesi sisällöstä"
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Selaimessa ei ole käytettävissä tallennusominaisuuksia, joita tarvitaan viestin sisältöhaun suorittamiseen."
+      ],
+      "Unread conversations": [
+        "Lukemattomat keskustelut"
+      ],
+      "Updating message content search...": [
+        "Päivitetään viestien sisältöhakua..."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Avaa päivittämällä ${ plan } -tilaukseen"
+      ],
+      "Upgrade to add more addresses to your account.": [
+        "Lisää tilillesi enemmän osoitteita päivittämällä tilauksesi."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Päivitä tilauksesi poistaaksesi roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti."
+      ],
+      "Upgrade to create more folders, filters, and addresses.": [
+        "Päivitä luodaksesi lisää kansioita, suodattimia ja osoitteita."
+      ],
+      "Upgrade to level up your privacy.": [
+        "Paranna yksityisyyttäsi päivittämälä tilauksesi."
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        "Päivitä tilauksesi lähettääksesi viestejä @pm.me-osoitteista."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Päivitä tilauksesi lähettääksesi viestejä omalla verkkotunnuksellasi."
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        "Päivitä tilauksesi lähettääksesi viestejä yhteystietoryhmille helposti."
+      ],
+      "Upgrade to support a privacy-first internet.": [
+        "Päivitä tilauksesi tukeaksesi Internetiä, jossa yksityisyys on etusijalla."
+      ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Päivitä tukeaksesi tehtäväämme yksityisyydestä kaikille."
+      ],
+      "Upgrade to support privacy and get more features.": [
+        "Tue yksityisyyttä ja hanki lisää ominaisuuksia päivittämällä tilauksesi."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Avaa premium-ominaisuudet päivittämällä tilauksesi."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Päivitä tilauksesi käyttääksesi ${ MAIL_APP_NAME }ia Apple Maililla, Outlookilla tai Thunderbirdillä."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Päivitä tilauksesi käyttääksesi automaattivastaustausta kun olet poissa."
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Käytä eri sähköpostiosoitteita eri tarkoituksiin, jotta voit helposti lajitella työ-, henkilökohtaiset ja muut sähköpostit."
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "Hallitse sähköpostiasi nopeammin pikanäppäimillä."
+      ],
+      "Version ${ appVersion }": [
+        "Versio ${ appVersion }"
+      ],
+      "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
+        "Pahoittelut. Tämä on saattanut olla virhe meidän puolellamme. Vahvistatko vielä haluavasi merkitä viestin kelvolliseksi?"
+      ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Estimme seuraavia mainostajia ja organisaatioita näkemästä, milloin avaat tämän sähköpostin, mitä laitetta käytät ja missä olet."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Emme voi ottaa käyttöön viestin sisältöhakua tässä selaimessa."
+      ],
+      "We could not verify the sender's trusted keys.": [
+        "Lähettäjän luotettuja avaimia ei voitu vahvistaa."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Poistimme seurantatiedot seuraavista linkeistä suojellaksemme sinua mainostajilta ja muilta tahoilta, jotka yrittävät valvoa verkkotoimintaasi."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Muistutamme teitä vahvistamaan salasananne uudelleen myöhemmin"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Milloin haluat viestisi tuhoutuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Milloin haluat viestisi tuhoutuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Kun jaat sähköpostiosoitteesi, käytä todellisen osoitteesi sijaan yksilöllistä, hävitettävää Hide-my-email-aliasta."
+      ],
+      "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
+        "Kun otit luotetut avaimet käyttöön lähettäjälle ${ senderName }, lisättiin julkiset avaimet yhteystiedon tietoihin."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Kun tilaat uutiskirjeen, käytä sähköpostiosoitteesi sijaan aliasta. Identiteettisi pysyy piilossa, ja voit poistaa aliaksen käytöstä milloin tahansa."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Kun matkustat tai käytät julkista Wi-Fiä, voit käyttää ilmaista ${ VPN_APP_NAME } -palvelua, jotta kukaan ei voi seurata verkkotoimintaasi tai varastaa tietojasi."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Uusilla sähköpostikategorioilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan kategorioihin."
+      ],
+      "writing assistant iframe": [
+        "kirjoitusavustaja-iframe"
+      ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Voit lisätä kuvan liitteenä tai viestin tekstin sekaan upotettuna."
+      ],
+      "You can either update your search query or ${ button }": [
+        "Voit joko muuttaa hakuasi tai ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Voit joko muuttaa hakuasi tai tyhjentää sen"
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Voit käyttää ${ VPN_APP_NAME }:ää ilmaiseksi jo tänään."
+      ],
+      "You cannot reply from the invited address.": [
+        "Et voi vastata kutsutusta osoitteesta."
+      ],
+      "You do not have any messages here": [
+        "Sinulla ei ole viestejä täällä"
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Kansio sisältää **${ count } keskustelun**",
+        "Kansio sisältää **${ count } keskustelua**"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Olet merkinnyt **${ count } keskustelun** tällä tunnisteella",
+        "Olet merkinnyt **${ count } keskustelua** tällä tunnisteella"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Kansio sisältää **${ count } viestin**",
+        "Kansio sisältää **${ count } viestiä**"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Sinulla on **${ count } viesti** tällä tunnisteella",
+        "Sinulla on **${ count } viestiä** tällä tunnisteella"
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Et ole täyttänyt viestin aihetta. Haluatko silti lähettää sen?"
+      ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "Tallennustilastasi on käytössä 100 %. Pyri vapauttamaan tilaa tai harkitse tilisi päivitystä kirjoittaaksesi uusia viestejä."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Olet saavuttanut 5 vastauksen enimmäismäärän."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Valitsit kansiosta **${ count } keskustelun**",
+        "Valitsit kansiosta **${ count } keskustelua**"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Valitsit **${ count } keskustelun** tällä tunnisteella",
+        "Valitsit **${ count } keskustelua** tällä tunnisteella"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Valitsit kansiosta **${ count } viestin**",
+        "Valitsit kansiosta **${ count } viestiä**"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Valitsit **${ count } viestin** tällä tunnisteella",
+        "Valitsit **${ count } viestiä** tällä tunnisteella"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Valitsit **${ elementsCount } keskustelun** sijainnista ${ location }",
+        "Valitsit **${ elementsCount } keskustelua** sijainnista ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Valitsit **${ elementsCount } keskustelun**.",
+        "Valitsit **${ elementsCount } keskustelua**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Valitsit **${ elementsCount } viestin** sijainnista ${ location }",
+        "Valitsit **${ elementsCount } viestiä** sijainnista ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Valitsit **${ elementsCount } viestin**.",
+        "Valitsit **${ elementsCount } viestiä**."
+      ],
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "Kirjoitit \"${ attachmentsFoundKeyword }\", mutta yhtään liitettä ei ole lisätty. Haluatko silti lähettää viestin?"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Saatte krediitit 1 kuukausi sen jälkeen, kun ystävänne tilaa vuositilauksen, ja 2 kuukautta sen jälkeen, kun he tilaavat kuukausitilauksen."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Selaimesi ei tue kirjoitusavustajaa. Kokeile sen suorittamista palvelimilla."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Laitteistosi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista palvelimilla."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Viestisi tuhoutuu ${ numberOfDays } päivän kuluttua.",
+        "Viestisi tuhoutuu ${ numberOfDays } päivän kuluttua."
+      ],
+      "Your message will expire today.": [
+        "Viestisi tuhoutuu tänään."
+      ],
+      "Your message will expire tomorrow.": [
+        "Viestisi tuhoutuu huomenna."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäivänne on ${ renewalTime }. Voitte peruuttaa tilauksen milloin tahansa. Ottakaa yhteyttä tukeen, jos haluatte muuttaa tilaustanne välittömästi."
+      ],
+      "Your private writing assistant": [
+        "Yksityinen kirjoitusavustajasi"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Menetätte myös ${ boldPlanTitle }-ominaisuuksien käyttöoikeuden:"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
       ]
     },
     "info": {
@@ -6684,6 +8580,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiivinen allekirjoittaja"
+      ],
+      "Fallback": [
+        "Varajärjestelmä"
       ]
     },
     "Keyboard shortcut name": {
@@ -6868,6 +8770,9 @@
       ],
       "Message shortcuts": [
         "Viestien pikanäppäimet"
+      ],
+      "Desktop app navigation": [
+        "Työpöytäsovelluksen navigointi"
       ]
     },
     "Label": {
@@ -7482,7 +9387,7 @@
         "Kaikki yhteystiedot"
       ],
       "Also archive": [
-        "Arkistoi samalla"
+        "Siirrä samalla arkistoon"
       ],
       "BCC": [
         "Piilokopio"
@@ -7509,7 +9414,7 @@
         "Älä näytä uudelleen"
       ],
       "Elements in store": [
-        "Elementit säiliössä"
+        "Elementit tallennustilassa"
       ],
       "Email categories": [
         "Sähköpostiluokat"
@@ -7569,13 +9474,162 @@
         "Järjestä"
       ],
       "Store state": [
-        "Säilö tila"
+        "Tallenna tila"
       ],
       "Tab age": [
         "Välilehden ikä"
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Merkitse kaikki viestit luetuiksi"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Siirrä kaikki veistit kansioon ${ boldFolderName }"
+      ],
+      "${ count } unread conversation": [
+        "${ count } lukematon keskustelu",
+        "${ count } lukematonta keskustelua"
+      ],
+      "${ count } unread message": [
+        "${ count } lukematon viesti",
+        "${ count } lukematonta viestiä"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } -kirjoitusavustaja"
+      ],
+      "/month": [
+        "/kuukausi"
+      ],
+      "Active filter:": [
+        "Aktiivinen suodatin:"
+      ],
+      "Additional comments": [
+        "Lisäkommentit"
+      ],
+      "Always label sender's emails": [
+        "Merkitse lähettäjän viestit aina tunnisteella"
+      ],
+      "Always move sender's emails": [
+        "Siirrä lähettäjän viestit aina"
+      ],
+      "Apply to future messages": [
+        "Käytä tuleville viesteille"
+      ],
+      "Blind Carbon Copy": [
+        "Piilokopio"
+      ],
+      "Carbon Copy": [
+        "Kopio"
+      ],
+      "Choose what to do instead": [
+        "Valitse sen sijaan, mitä tehdä"
+      ],
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Date:": [
+        "Päiväys:"
+      ],
+      "Did not follow instructions": [
+        "Ei seurannut ohjeitani"
+      ],
+      "Don't like the style": [
+        "En pidä tyylistä"
+      ],
+      "Don't show this suggestion": [
+        "Älä näytä tätä ehdotusta"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Kansion ${ newFolderName } luominen epäonnistui."
+      ],
+      "Frequency": [
+        "Toistuvuus"
+      ],
+      "From": [
+        "Lähettäjä"
+      ],
+      "From:": [
+        "Lähettäjä:"
+      ],
+      "Has attachments": [
+        "Sisältää liitteitä"
+      ],
+      "Include application logs in bug report": [
+        "Sisällytä sovelluslokit vikailmoitukseen"
+      ],
+      "Keyword": [
+        "Hakusana"
+      ],
+      "Layout": [
+        "Asettelu"
+      ],
+      "Main reason for cancelling": [
+        "Pääsyy peruutukselle"
+      ],
+      "Manage my addresses": [
+        "Hallitse osoitteitasi"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Siirrä ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Siirrä viestit kansioon"
+      ],
+      "Moved to ${ labelName }": [
+        "Sirretty sijaintiin ${ labelName }"
+      ],
+      "Moved to Trash": [
+        "Siirretty roskakoriin"
+      ],
+      "Newsletter entry deleted": [
+        "Uutiskirjeen tilaus poistettu"
+      ],
+      "Not factually correct": [
+        "Ei pidä paikkaansa"
+      ],
+      "Password hint": [
+        "Salasanavihje"
+      ],
+      "Recipient": [
+        "Vastaanottaja"
+      ],
+      "Search in": [
+        "Etsi kohteesta"
+      ],
+      "Sender": [
+        "Lähettäjä"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Jaa saatavuutesi varaussivuilla ${ CALENDAR_APP_NAME } -sovelluksessa ja isännöi turvallisia kokouksia ${ MEET_APP_NAME } -sovelluksella."
+      ],
+      "Skip feedback": [
+        "Ohita palaute"
+      ],
+      "Subject:": [
+        "Aihe:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Suodatin on poistettu käytöstä. ${ enableButton }"
+      ],
+      "Time": [
+        "Aika"
+      ],
+      "To:": [
+        "Vastaanottaja:"
+      ],
+      "Undisclosed Recipients": [
+        "Piilotetut vastaanottajat"
+      ],
+      "Unsafe or problematic": [
+        "Epäturvallinen tai ongelmallinen"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Tilaus ${ truncatedName } on peruttu."
+      ],
+      "Your password (trusted contact)": [
+        "Salasananne (luotettu yhteystieto)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7753,7 +9807,7 @@
         "Mikä tämä on?"
       ],
       "Archive": [
-        "Arkistoi"
+        "Pakattu"
       ],
       "Inbox": [
         "Saapuneet"
@@ -7768,7 +9822,121 @@
         "Rekisteröidy ilmaiseksi"
       ],
       "Spam": [
-        "Roskaposti"
+        "Roskapostia"
+      ],
+      "All mail": [
+        "Kaikki viestit"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Luo aktiiviseen sähköpostiosoitteeseen liitetty kalenteri."
+      ],
+      "Create a new calendar to add this event": [
+        "Lisää tapahtuma luomalla uusi kalenteri"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Vastaa kutsuun luomalla uusi kalenteri"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Hallitse kutsujasi luomalla uusi kalenteri"
+      ],
+      "Deleted": [
+        "Poistetut"
+      ],
+      "Drafts": [
+        "Luonnokset"
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Ota johonkin kalenteriisi liitetty sähköpostiosoite käyttöön."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Ota käytöstä poistettuun kalenteriin liitetty sähköpostiosoite käyttöön peruaksesi tapahtuman."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Ota käytöstä poistettuun kalenteriin liitetty sähköpostiosoite käyttöön muuttaaksesi vastaustasi."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Muokkaa vastaustasi aktivoimalla osoitteesi."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Vastaa kutsuun aktivoimalla osoitteesi."
+      ],
+      "Folders": [
+        "Kansiot"
+      ],
+      "Labels": [
+        "Tunnisteet"
+      ],
+      "Learn more.": [
+        "Lue lisää."
+      ],
+      "Manage blocked email addresses": [
+        "Hallitse estettyjä sähköpostiosoitteita"
+      ],
+      "Manage your folders": [
+        "Hallitse kansioitasi"
+      ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Avaa ${ CALENDAR_APP_NAME }issa"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Avaa päivitetty tapahtuma ${ CALENDAR_APP_NAME }issa"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Voit myös poistaa jonkin kalentereistasi ja luoda uuden, aktiiviseen sähköpostiosoitteeseen liitetyn kalenterin."
+      ],
+      "Outbox": [
+        "Lähtevät"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Hallitse kutsuasi palauttamalla kalenteriin liitetty osoite käyttöön."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Päivitä kutsusi palauttamalla kalenteriin liitetty osoite käyttöön."
+      ],
+      "Scheduled": [
+        "Ajoitetut"
+      ],
+      "Sent": [
+        "Lähetetyt"
+      ],
+      "Snooze": [
+        "Torkutus"
+      ],
+      "Snoozed": [
+        "Torkutetut"
+      ],
+      "Starred": [
+        "Tähdellä"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Tämä ICS-tiedosto sisältää enemmän kuin yhden tapahtuman. Lataa se ja tuo tapahtumat ${ CALENDAR_APP_NAME }issa"
+      ],
+      "Views": [
+        "Näkymät"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Sinun on aktivoitava kalenterisi avaimet lisätäksesi tapahtuman"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Sinun on aktivoitava kalenterisi avaimet vastataksesi kutsuun"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Sinun on aktivoitava kalenterisi avaimet hallitaksesi kutsua"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Sinun on aktivoitava kalenterisi avaimet nähdäksesi päivitetyn tapahtuman"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Sinun on aktivoitava kalenteriavaimesi nähdäksesi päivitetyn kutsun"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Sinun on aktivoitava avaimesi uudelleen hallitaksesi kutsua"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Sinun on aktivoitava kalenterisi avaimet uudelleen nähdäksesi päivitetyn tapahtuman"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Sinun on aktivoitava avaimesi uudelleen nähdäksesi päivitetyn kutsun"
       ]
     },
     "Loading info": {
@@ -7892,6 +10060,31 @@
       "Up to ${ n } participant": [
         "Enintää ${ n } osallistuja",
         "Enintää ${ n } osallistujaa"
+      ],
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Luottamuksellinen videoneuvottelu tärkeisiin keskusteluihin"
+      ],
+      "24 hours per meeting": [
+        "24 tuntia per kokous"
+      ],
+      "60 minutes per meeting": [
+        "60 minuuttia per kokous"
+      ],
+      "Built-in chat": [
+        "Sisäänrakennettu chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Päästä päähän -salattu näytön jako ja tilapäinen puhelun aikainen keskustelu"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Järjestäjät voivat tallentaa kokouksia paikallisesti tietokoneilleen"
+      ],
+      "One active meeting at a time": [
+        "Vain yksi aktiivinen kokous kerrallaan"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokokoukset, ${ n } osallistuja",
+        "Videokokoukset, ${ n } osallistujaa"
       ]
     },
     "Message": {
@@ -7906,6 +10099,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
+      ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date }, ${ senderString } kirjoitti:"
       ]
     },
     "Message display when a new app version is available": {
@@ -8588,6 +10784,22 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "${ options }-day file version history": [
+        "سجل إصدارات الملف لمدة يوم واحد (${ options })",
+        "سجل إصدارات الملف لمدة ${ options } يوم"
+      ],
+      "Access all countries": [
+        "Käytä kaikkia maita"
+      ],
+      "Data retention policies": [
+        "Tietojen säilytyskäytännöt"
+      ],
+      "No streaming support": [
+        "Ei suoratoiston tukea"
+      ],
+      "Unlock streaming": [
+        "Avaa suoratoiston lukitus"
       ]
     },
     "new_plans: feature highlight": {
@@ -9049,6 +11261,18 @@
       ],
       "Block removed": [
         "Esto poistettiin"
+      ],
+      "Password has been set successfully": [
+        "Salasanan asetus onnistui"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Lähettäjä ${ firstSenderAddress } estettiin"
+      ],
+      "Senders blocked": [
+        "Lähettäjät estettiin"
+      ],
+      "The writing assistant is ready to use": [
+        "Kirjoitusavustaja on valmis käytettäväksi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9218,6 +11442,87 @@
       ],
       "You are all set!": [
         "Kaikki on kunnossa!"
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } tarkoittaa, että et koskaan näe sponsoroituja mainoksia sovelluksissamme."
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } varmistaa, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } pitää huijausviestit poissa postilaatikostasi."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } App Storessa"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } Play Kaupassa"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } estää muista jäljittämästä sinua ympäri Internetiä."
+      ],
+      "Activate premium features": [
+        "Aktivoi premium-ominaisuudet"
+      ],
+      "Activate selected": [
+        "Aktivoi valitut"
+      ],
+      "Ad-free promise": [
+        "Mainokseton lupaus"
+      ],
+      "Anytime, anywhere access": [
+        "Käytettävissä milloin ja missä tahansa"
+      ],
+      "Auto-delete spam and trash": [
+        "Roskapostin ja roskakorin automaattinen tyhjennys"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti 30 päivän kuluttua."
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Tutustu ${ MAIL_APP_NAME }iin"
+      ],
+      "Distraction-free emailing": [
+        "Häiriötön sähköpostittelu"
+      ],
+      "Download the desktop app": [
+        "Lataa työpöytäsovellus"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Nauti nopeammasta ja kohdennetusta sähköpostikokemuksesta työpöytäsovelluksella."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Voit käyttää sähköpostia milloin tahansa ja saada optimoidun mobiilikäyttökokemuksen lataamalla ${ mobileAppAppStoreLink } tai ${ mobileAppGooglePlayLink } -sovelluksemme."
+      ],
+      "Get notified if your password is compromised.": [
+        "Saat ilmoituksen, jos salasanasi on vaarantunut."
+      ],
+      "Industry-leading spam protection": [
+        "Alan johtava roskapostisuojaus"
+      ],
+      "Make the most of your paid plan.": [
+        "Ota kaikki irti maksullisesta tilauksestasi."
+      ],
+      "Protection from trackers": [
+        "Seurantasuojaus"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Aloita ${ BRAND_NAME }in käyttö"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Aloita sähköpostiosoitteesi lyhyemmän ja tarttuvamman version käyttäminen."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Tervetuloa ${ MAIL_APP_NAME }iin"
+      ],
+      "Where privacy is default.": [
+        "Missä yksityisyys on olennaista."
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Verkkotunnuksesi ${ domain } ja ${ subscriptionName }-tilauksesi ovat valmiina käyttöön."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Verkkotunnuksesi ja tilauksesi ovat valmiina käyttöön."
       ]
     },
     "Onboarding Proton": {
@@ -9241,6 +11546,12 @@
       ],
       "Make it your own": [
         "Tee siitä omasi"
+      ],
+      "Choose your preferred look and feel.": [
+        "Valitse haluamasi ulkoasu ja tunnelma."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Yhdistä verkkotunnuksesi ja luo tilit kaikille organisaatiosi jäsenille."
       ]
     },
     "Onboarding Trial": {
@@ -9267,6 +11578,18 @@
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " vierailkaa ${ helpCenterLink }-tukikeskuksessamme tai ${ contactSupportLink }."
+      ],
+      "Once your full subscription starts...": [
+        "Kun varsinainen tilauksenne alkaa..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Voitte silti peruuttaa 30 päivän kuluessa ja saada suhteellisen hyvityksen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
       ]
     },
     "Option": {
@@ -9565,6 +11888,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "I'm purchasing as a business": [
+        "Ostan yrityksenä"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Tästä maksutavasta tulee uusi oletuksenne kaikissa tulevissa uusimisissa."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Valuuttanne on vaihdettu euroiksi (€), koska SEPA-pankkisiirrot tukevat vain euroissa tehtäviä maksuja."
       ]
     },
     "Payments.Error": {
@@ -9642,6 +11974,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Pankkisiirto - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9701,6 +12036,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Suosittelemme, että muutat avaimen \"epäluotettavaksi\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tämä yhteystieto allekirjoittaa viestit tällä hetkellä tällä avaimella"
+      ],
+      "This key is used for message verification": [
+        "Tätä avainta käytetään viestien todentamiseen"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tätä avainta käytetään viestien salaamiseen tälle yhteystiedolle vanhemmilla sovelluksilla"
       ]
     },
     "PGP key warning": {
@@ -9848,10 +12192,58 @@
         "Vihje"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Kerro ${ subject }, mitä kirjoittaa. Esimerkki: ”Ilmoita tulevista tapahtumista uutiskirjeessä”"
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: ”Ilmoita tulevista tapahtumista uutiskirjeessä”"
       ],
       "the writing assistant": [
         "kirjoitusavustaja"
+      ],
+      "Anything you'd like us to know": [
+        "Haluatteko kertoa meille jotain muuta"
+      ],
+      "Describe what to change": [
+        "Kuvaile, mitä tulisi muuttaa"
+      ],
+      "Filter folders": [
+        "Suodata kansioita"
+      ],
+      "Filter labels": [
+        "Suodata tunnisteita"
+      ],
+      "Generating": [
+        "Luodaan"
+      ],
+      "Please share what you expected": [
+        "Kerro, mitä odotit"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Etsi päiväystä, nimeä, sähköpostiosoitetta tai aiheriviä"
+      ],
+      "Search messages": [
+        "Etsi viestejä"
+      ],
+      "Search name, email or group": [
+        "Etsi nimeä, sähköpostiosoitetta tai ryhmän nimeä"
+      ],
+      "Subject": [
+        "Aihe"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Kerro kohteelle ${ subject } mitä kirjoittaa. Esimerkki: ”Peruuta kuntosalijäsenyyteni”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kutsu Jaana juhliini\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kiitä työkaveria projektin avustamisesta\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Kertokaa kohteelle ${ subject }, mitä kirjoittaa. Esimerkiksi: \"Kirjoita saatekirje työharjoittelua varten\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kirjoita asiakkaalle jatkosähköposti\""
+      ],
+      "To": [
+        "Osoitteeseen"
       ]
     },
     "Placeholder for contact group name": {
@@ -9871,6 +12263,12 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** -tilaajana voitte ottaa käyttöön palvelun **${ unlockPlanTitle }** ja muita ${ BRAND_NAME }-palveluita päivittämällä tilaukseen **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Pysykää ${ currentPlanTitle }-tilauksessa"
       ]
     },
     "Progress bar description": {
@@ -10685,6 +13083,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11364,12 +13765,229 @@
         "Viesti poistettiin"
       ],
       "Public key trusted": [
-        "Julkiseen avaimeen luotettiin"
+        "Julkiseen avaimeen luotettu"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } keskustelu poistettiin",
+        "${ count } keskustelua poistettiin"
+      ],
+      "${ count } draft deleted": [
+        "${ count } luonnos poistettiin",
+        "${ count } luonnosta poistettiin"
+      ],
+      "${ count } message deleted": [
+        "${ count } viesti poistettiin",
+        "${ count } viestiä poistettiin"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } keskustelu merkittiin tunnisteella ${ labelName }.",
+        "${ elementsCount } keskustelua merkittiin tunnisteella ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } keskustelu merkittiin luetuksi.",
+        "${ elementsCount } keskustelua merkittiin luetuksi."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } keskustelu merkittiin tähdellä.",
+        "${ elementsCount } keskustelua merkittiin tähdellä."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } keskustelu merkittiin lukemattomaksi.",
+        "${ elementsCount } keskustelua merkittiin lukemattomaksi."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } keskustelu siirrettiin kansioon ${ labelName } ja sen lähettäjä lisättiin ei roskapostia -listalle.",
+        "${ elementsCount } keskustelua siirrettiin kansioon ${ labelName } ja niiden lähettäjät lisättiin ei roskapostia -listalle."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } keskustelu siirrettiin kansioon ${ labelName }.",
+        "${ elementsCount } keskustelua siirrettiin kansioon ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } keskustelu siirrettiin roskapostiin ja sen lähettäjä lisättiin roskapostilistallesi.",
+        "${ elementsCount } keskustelua siirrettiin roskapostiin ja niiden lähettäjät lisättiin roskapostilistallesi."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }.",
+        "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } keskustelu poistettiin tähdellisistä.",
+        "${ elementsCount } keskustelua poistettiin tähdellisistä."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } keskustelu torkutettiin",
+        "${ elementsCount } keskustelua torkutettiin"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } keskustelun torkutus peruttiin",
+        "${ elementsCount } keskustelun torkutus peruttiin"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } viesti merkittiin tunnisteella ${ labelName }.",
+        "${ elementsCount } viestiä merkittiin tunnisteella ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } viesti merkittiin luetuksi.",
+        "${ elementsCount } viestiä merkittiin luetuksi."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } viesti merkittiin tähdellä.",
+        "${ elementsCount } viestiä merkittiin tähdellä."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } viesti merkittiin lukemattomaksi.",
+        "${ elementsCount } viestiä merkittiin lukemattomaksi."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } viesti siirrettiin kansioon ${ labelName } ja sen lähettäjä lisättiin ei roskapostia -listalle.",
+        "${ elementsCount } viestiä siirrettiin kansioon ${ labelName } ja niiden lähettäjät lisättiin ei roskapostia -listalle."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } viesti siirrettiin kansioon ${ labelName }.",
+        "${ elementsCount } viestiä siirrettiin kansioon ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } viesti siirrettiin roskapostiin ja sen lähettäjä lisättiin roskapostilistallesi.",
+        "${ elementsCount } viestiä siirrettiin roskapostiin ja niiden lähettäjät lisättiin roskapostilistallesi."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } viestiltä poistettiin tunniste ${ labelName }.",
+        "${ elementsCount } viestiltä poistettiin tunniste ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } viesti poistettiin tähdellisistä.",
+        "${ elementsCount } viestiä poistettiin tähdellisistä."
+      ],
+      "Address verification disabled": [
+        "Osoitevahvistus ei ole käytössä"
+      ],
+      "Content copied to clipboard": [
+        "Sisältö kopioitiin leikepöydälle"
+      ],
+      "Conversation added to ${ labelName }.": [
+        "Keskustelu merkittiin tunnisteella ${ labelName }."
+      ],
+      "Conversation marked as read.": [
+        "Keskustelu merkittiin luetuksi."
+      ],
+      "Conversation marked as Starred.": [
+        "Keskustelu merkittiin tähdellä."
+      ],
+      "Conversation marked as unread.": [
+        "Keskustelu merkittiin lukemattomaksi."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Keskustelu siirrettiin kansioon ${ labelName } ja lähettäjä lisättiin ei roskapostia -listalle."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Keskustelu siirrettiin kohteeseen ${ labelName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Keskustelu siirrettiin roskapostiin ja sen lähettäjä lisättiin roskapostilistallesi."
+      ],
+      "Conversation removed from ${ labelName }.": [
+        "Keskustelulta poistettiin tunniste ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Keskustelu poistettiin tähdellisistä."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Keskustelut lähettäjiltä ${ sendersList } merkitään tunnisteilla ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Keskustelut lähettäjiltä ${ sendersList } siirretään kansioon ${ folder }"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' kopioitu leikepöydälle"
+      ],
+      "Labels applied.": [
+        "Tunnisteet määritettiin."
+      ],
+      "Mail list unsubscribed": [
+        "Sähköpostitilaus on lopetettu"
+      ],
+      "Message added to ${ labelName }.": [
+        "Viesti merkittiin tunnisteella ${ labelName }."
+      ],
+      "Message content search enabled": [
+        "Viestien sisältöhaku otettiin käyttöön"
+      ],
+      "Message expiration canceled": [
+        "Viestin erääntyminen peruttiin"
+      ],
+      "Message marked as legitimate": [
+        "Viesti merkittiin kelvolliseksi"
+      ],
+      "Message marked as read.": [
+        "Viesti merkittiin luetuksi."
+      ],
+      "Message marked as Starred.": [
+        "Viesti merkittiin tähdellä."
+      ],
+      "Message marked as unread.": [
+        "Viesti merkittiin lukemattomaksi."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Viesti siirrettiin kansioon ${ labelName } ja lähettäjä lisättiin ei roskapostia -listalle."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Viesti siirrettiin kohteeseen ${ labelName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Viesti siirrettiin roskapostiin ja sen lähettäjä lisättiin roskapostilistallesi."
+      ],
+      "Message removed from ${ labelName }.": [
+        "Viestiltä poistettiin tunniste ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Viesti poistettiin tähdellisistä."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Viestit lähettäjiltä ${ sendersList } merkitään tunnisteilla ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Viestit lähettäjiltä ${ sendersList } siirretään kansioon ${ folder }"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Siirrä ${ selectionCount } keskustelu",
+        "Siirrä ${ selectionCount } keskustelua"
+      ],
+      "Move ${ selectionCount } message": [
+        "Siirrä ${ selectionCount } viesti",
+        "Siirrä ${ selectionCount } viestiä"
+      ],
+      "Phishing reported": [
+        "Tietojenkalastelu ilmoitettiin"
+      ],
+      "Read receipt sent": [
+        "Lukukuittaus lähetettiin"
+      ],
+      "Self-destruction removed": [
+        "Tuhoutuminen on peruttu"
+      ],
+      "Self-destruction set": [
+        "Tuhoutuminen on asetettu"
+      ],
+      "Thanks for the feedback!": [
+        "Kiitos palautteesta!"
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } poistettiin"
+      ],
+      " is now active": [
+        " on nyt käytössä"
+      ],
+      "The filter has been disabled": [
+        "Suodatin on poistettu käytöstä"
+      ],
+      "The filter has been enabled": [
+        "Suodatin on otettu käyttöön"
+      ],
+      "The filter is active again": [
+        "Suodatin on jälleen aktiivinen"
       ]
     },
     "Suffix": {
@@ -12206,7 +14824,7 @@
         "Luo parempia sähköposteja ${ LUMO_SHORT_APP_NAME }:n avulla"
       ],
       "Decryption error": [
-        "Salauksen purkuvirhe"
+        "Salauksen purun virhe"
       ],
       "Delete all messages": [
         "Poista kaikki viestit"
@@ -12227,7 +14845,7 @@
         "Välitä"
       ],
       "Image": [
-        "Kuva"
+        "Kuvatiedosto"
       ],
       "Insert contacts": [
         "Lisää yhteystietoja"
@@ -12281,7 +14899,7 @@
         "Poistetaanko listalta?"
       ],
       "Reply": [
-        "Vastaa"
+        "Vastaus"
       ],
       "Schedule send": [
         "Ajoita lähetys"
@@ -12290,7 +14908,7 @@
         "Valitse teema"
       ],
       "Send email": [
-        "Lähetä sähköposti"
+        "Lähetä viesti"
       ],
       "Sending error": [
         "Lähetysvirhe"
@@ -12303,13 +14921,290 @@
         "Luotetaanko kiinnitettyihin avaimiin?"
       ],
       "Unsubscribe": [
-        "Peruuta tilaus"
+        "Peru tilaus"
       ],
       "Verification error": [
         "Vahvistusvirhe"
       ],
       "Welcome": [
         "Tervetuloa"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } viesti",
+        "${ numMessages } viestiä"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } lukematon viesti",
+        "${ unreads } lukematonta viestiä"
+      ],
+      "Account temporarily locked": [
+        "Tili on väliaikaisesti lukittu"
+      ],
+      "Action all conversations": [
+        "Käytä kaikkiin keskusteluihin"
+      ],
+      "Action all messages": [
+        "Käytä kaikkiin viesteihin"
+      ],
+      "Archive all messages?": [
+        "Arkistoidaanko kaikki viestit?"
+      ],
+      "Bad time for this email?": [
+        "Huono aika tälle sähköpostille?"
+      ],
+      "Blind Carbon Copy": [
+        "Piilokopio"
+      ],
+      "Carbon Copy": [
+        "Kopio"
+      ],
+      "Confirm recipient address?": [
+        "Vahvistetaanko vastaanottajan osoite?"
+      ],
+      "Craft better emails": [
+        "Laatia parempia sähköposteja"
+      ],
+      "Create folder \"${ search }\"": [
+        "Luo kansio \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Luo tunniste \"${ search }\""
+      ],
+      "Delete ${ count } conversation": [
+        "Poista ${ count } keskustelu",
+        "Poista ${ count } keskustelua"
+      ],
+      "Delete ${ count } draft": [
+        "Poista ${ count } luonnos",
+        "Poista ${ count } luonnosta"
+      ],
+      "Delete ${ count } message": [
+        "Poista ${ count } viesti",
+        "Poista ${ count } viestiä"
+      ],
+      "Discover your subscription benefits": [
+        "Tutustu tilauksesi etuihin"
+      ],
+      "Don't give spam a chance": [
+        "Älä anna roskapostille mahdollisuutta"
+      ],
+      "Email content": [
+        "Viestin sisältö"
+      ],
+      "Enable message content search": [
+        "Käytä viestien sisältöhakua"
+      ],
+      "External encryption": [
+        "Ulkoinen salaus"
+      ],
+      "Filter on...": [
+        "Suodata..."
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Auttakaa muokkaamaan ${ MAIL_APP_NAME }-sovelluksen sähköpostiluokkien tulevaisuutta"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Piilota sähköpostisi ${ PASS_APP_NAME }illa"
+      ],
+      "How to update your email address": [
+        "Miten päivität sähköpostiosoitteesi"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Paranna turvallisuutta ${ VPN_APP_NAME }:llä"
+      ],
+      "Increase your privacy with more addresses": [
+        "Paranna yksityisyyttäsi lisäosoitteilla"
+      ],
+      "Label as": [
+        "Lisää tunniste"
+      ],
+      "Label options": [
+        "Tunnisteen valinnat"
+      ],
+      "Load embedded images": [
+        "Lataa upotetut kuvat"
+      ],
+      "Load remote content": [
+        "Lataa ulkoinen sisältö"
+      ],
+      "Loading...": [
+        "Ladataan..."
+      ],
+      "Mailing list": [
+        "Postituslista",
+        "Postituslistat"
+      ],
+      "Mark all messages as read": [
+        "Merkitse kaikki viestit luetuiksi"
+      ],
+      "Mark conversations as read": [
+        "Merkitse keskustelut luetuiksi"
+      ],
+      "Mark conversations as unread": [
+        "Merkitse keskustelut lukemattomiksi"
+      ],
+      "Mark email as legitimate": [
+        "Merkitse viesti kelvolliseksi"
+      ],
+      "Mark messages as read": [
+        "Merkitse viestit luetuiksi"
+      ],
+      "Mark messages as unread": [
+        "Merkitse viestit lukemattomiksi"
+      ],
+      "Message list": [
+        "Viestilista"
+      ],
+      "Message will expire": [
+        "Viesti tuhoutuu"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Siirtäkää organisaationne palveluun ${ BRAND_NAME }"
+      ],
+      "More selections": [
+        "Lisää valintoja"
+      ],
+      "Move all conversations": [
+        "Siirrä kaikki keskustelut"
+      ],
+      "Move all messages": [
+        "Siirrä kaikki viestit"
+      ],
+      "Move all messages to archive": [
+        "Siirrä kaikki viestit arkistoon"
+      ],
+      "Move all messages to trash": [
+        "Siirrä kaikki viestit roskakoriin"
+      ],
+      "Move to": [
+        "Siirrä kohteeseen"
+      ],
+      "Move to inbox": [
+        "Siirrä saapuneisiin"
+      ],
+      "Move to inbox (not spam)": [
+        "Siirrä saapuneisiin (ei roskapostia)"
+      ],
+      "Moving a scheduled message": [
+        "Siirretään ajoitettua viestiä"
+      ],
+      "Moving a snoozed message": [
+        "Siirretään torkutettua viestiä"
+      ],
+      "New message": [
+        "Uusi viesti"
+      ],
+      "No active newsletters": [
+        "Ei aktiivisia uutiskirjeitä"
+      ],
+      "No attachment found": [
+        "Liitettä ei löytynyt"
+      ],
+      "No newsletters found": [
+        "Uutiskirjeitä ei löytynyt"
+      ],
+      "No trackers found": [
+        "Seurantoja ei löytynyt"
+      ],
+      "No unsubscribed newsletters": [
+        "Ei peruutettuja uutiskirjeitä"
+      ],
+      "No-reply address detected": [
+        "No-reply-viesti havaittu"
+      ],
+      "On-device suggestions": [
+        "Laitepohjaiset ehdotukset"
+      ],
+      "Previous conversation": [
+        "Edellinen keskustelu"
+      ],
+      "Protect yourself from trackers": [
+        "Suojaa itsesi seurannoilta"
+      ],
+      "Recipient missing": [
+        "Vastaanottaja puuttuu"
+      ],
+      "Reply all": [
+        "Vastaa kaikille"
+      ],
+      "Schedule now, send later": [
+        "Ajoita nyt, lähetä myöhemmin"
+      ],
+      "Self-destruct message": [
+        "Viestin tuhoutuminen"
+      ],
+      "Send with changed preferences?": [
+        "Lähetetäänkö muuttuneilla asetuksilla?"
+      ],
+      "Send with encryption disabled?": [
+        "Lähetä ilman salausta?"
+      ],
+      "Send without expiration?": [
+        "Lähetetäänkö ilman tuhoutumista?"
+      ],
+      "Sender": [
+        "Lähettäjä"
+      ],
+      "Sender changed": [
+        "Lähetäjä on muuttunut"
+      ],
+      "Sending notice": [
+        "Lähetysilmoitus"
+      ],
+      "Sending original message": [
+        "Alkuperäinen viesti lähetetään"
+      ],
+      "Snooze": [
+        "Torkuta"
+      ],
+      "Snooze message": [
+        "Torkuta viesti"
+      ],
+      "Storage capacity warning": [
+        "Tallennuskapasiteetin varoitus"
+      ],
+      "Subject missing": [
+        "Aihe puuttuu"
+      ],
+      "To": [
+        "Vastaanottaja"
+      ],
+      "Trash all messages?": [
+        "Poistetaanko kaikki viestit?"
+      ],
+      "Trust public key?": [
+        "Luotetaanko julkiseen avaimeen?"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Perutaanko tilaus ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Tilauksen peruuttaminen ei ole mahdollista tälle lähettäjälle."
+      ],
+      "Unsubscribe request sent": [
+        "Tilauksen perumispyyntö lähetettiin"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Käytä Gmailia turvallisesti ${ MAIL_APP_NAME } -sovelluksessa"
+      ],
+      "Verify your password": [
+        "Vahvista salasananne"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Suojasimme sinua ${ trackersCount } seurannalta",
+        "Suojasimme sinua ${ trackersCount } seurannalta"
+      ],
+      "Welcome ${ userName }": [
+        "Tervetuloa ${ userName }"
+      ],
+      "Your free trial has ended": [
+        "Ilmainen kokeilujaksosi on päättynyt"
+      ],
+      "Your inbox, automatically organized": [
+        "Saapuneet-kansio, joka on järjestetty automaattisesti"
+      ],
+      "Your newsletters in one place": [
+        "Uutiskirjeesi yhdessä paikalla"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12404,6 +15299,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Tämä varmistaa, ettei kukaan näe sijaintia, laitetta tai muita tietoja, joilla sinua voitaisiin tunnistaa tai seurata."
       ]
     },
     "tooltip": {
@@ -12535,6 +15433,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Salattu ja turvallinen ${ MAIL_APP_NAME }-sähköpostiosoite. Voitte helposti lähettää Bitcoinia kenelle tahansa pelkällä ${ BRAND_NAME }-nimellä."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Voitte vaihtaa Bitcoinia turvallisesti sähköpostitse monimutkaisten ja virhealttiiden 26-merkkisten Bitcoin-osoitteiden sijaan."
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -12617,6 +15521,10 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Liitteen allekirjoituksen vahvistus epäonnistui.\nVoit silti ladata liitteen, mutta sitä on saatettu muuttaa lähetyksen jälkeen.",
+        "Liitteiden allekirjoitusten vahvistus epäonnistui.\nVoit silti ladata liitteet, mutta niitä on saatettu muuttaa lähetyksen jälkeen."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -12888,7 +15796,19 @@
         "Merkitse viesti tähdellä"
       ],
       "Unread email": [
-        "Lukematon sähköposti"
+        "Lukematon viesti"
+      ],
+      "Forwarded": [
+        "Välitetty"
+      ],
+      "Replied to": [
+        "Vastattiin"
+      ],
+      "Unstar conversation": [
+        "Poista keskustelun tähtimerkintä"
+      ],
+      "Unstar message": [
+        "Poista viestin tähtimerkintä"
       ]
     },
     "Alternative text for conversation image": {
@@ -12903,7 +15823,10 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "Peruuta"
+        "Keskeytä"
+      ],
+      "Cancel expiration": [
+        "Peru tuhoutuminen"
       ]
     },
     "Commander action": {
@@ -12914,7 +15837,7 @@
         "Luo uusi tunniste"
       ],
       "Go to Drafts": [
-        "Siirry luonnoksiin"
+        "Avaa luonnokset"
       ],
       "Go to Inbox": [
         "Siirry saapuneisiin"
@@ -12927,6 +15850,18 @@
       ],
       "New message": [
         "Uusi viesti"
+      ],
+      "Go to Archive": [
+        "Siirry arkistoon"
+      ],
+      "Go to Spam": [
+        "Siirry roskapostiin"
+      ],
+      "Go to Starred": [
+        "Siirry tähdellisiin"
+      ],
+      "Search": [
+        "Etsi"
       ]
     },
     "CustomFilter": {
@@ -12935,11 +15870,26 @@
       ],
       "Recipient": [
         "Vastaanottaja"
+      ],
+      "Attachment": [
+        "Liitteet"
+      ],
+      "Filter on": [
+        "Suodatus"
+      ],
+      "Sender": [
+        "Lähettäjä"
+      ],
+      "Subject": [
+        "Aihe"
       ]
     },
     "Date label": {
       "Today": [
         "Tänään"
+      ],
+      "Tomorrow": [
+        "Huomenna"
       ]
     },
     "Density mode": {
@@ -12953,11 +15903,24 @@
     "Email reminder banner": {
       "Event starting now": [
         "Tapahtuma alkaa nyt"
+      ],
+      "Event is tomorrow": [
+        "Tapahtuma on huomenna"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Tapahtuma alkaa ${ minutesUntilEvent } minuutin kuluttua",
+        "Tapahtuma alkaa ${ minutesUntilEvent } minuutin kuluttua"
+      ],
+      "Event starts tomorrow": [
+        "Tapahtuma alkaa huomenna"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
         "Tapahtuma peruttiin"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Tapahtumaa on muokattu ja tämä muistutus on vanhentunut."
       ]
     },
     "Filter": {
@@ -12966,16 +15929,118 @@
       ],
       "Reset": [
         "Nollaa"
+      ],
+      "Filter": [
+        "Suodatin"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Suodatin (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Suodata ja järjestä viestit"
+      ],
+      "Read": [
+        "Luettu"
+      ],
+      "Unread": [
+        "Lukematon"
       ]
     },
     "Get started checklist instructions": {
       "Finish setup": [
         "Viimeistele määritys"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } App Storessa"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } Play Kaupassa"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } päivä",
+        "${ remainingDaysCount } päivää"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } päivä jäljellä",
+        "${ remainingDaysCount } päivää jäljellä"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Estä huijareiden sähköpostiviestintä pysyvästi."
+      ],
+      "Block unsavory senders": [
+        "Estä epämiellyttävät lähettäjät"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Hienoa, että olet tehnyt sähköpostistasi entistä turvallisemman, kätevämmän ja merkityksellisemmän! Olemme kasvattaneet ilmaisen tallennustilasi yhteen gigatavuun."
+      ],
+      "Checklist complete": [
+        "Tarkistuslista on valmis"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Tuplaa tallennustilasi ilmaiseksi suorittamalla tämä tarkistuslista ${ daysCount } kuluessa."
+      ],
+      "Discover privacy features": [
+        "Tutustu tietosuojaominaisuuksiin"
+      ],
+      "Download apps": [
+        "Lataa sovellukset"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Niin vahva salaus, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi."
+      ],
+      "For your eyes only": [
+        "Vain sinun silmillesi"
+      ],
+      "Get storage bonus": [
+        "Hanki tallennustilan bonus"
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Hanki ${ MAIL_APP_NAME } -mobiilisovellus"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Jatka ${ MAIL_APP_NAME }in käyttämistä ja löydä lisää tapoja, joilla ${ BRAND_NAME } suojaa yksityisyyttäsi ja yksinkertaistaa sähköpostien lähettämistä."
+      ],
+      "Learn more": [
+        "Lue lisää"
+      ],
+      "Protection from trackers": [
+        "Seurantasuojaus"
+      ],
+      "Review import options": [
+        "Tarkista tuontiasetukset"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Suorita tämä vaihe kirjautumalla mobiilisovellukseen"
+      ],
+      "Storage unlocked": [
+        "Tallennustila avattu"
+      ],
+      "Tasks to complete count": [
+        "Suoritettavien tehtävien määrä"
+      ],
+      "This feature is currently unavailable": [
+        "Ominaisuus ei ole tällä hetkellä käytettävissä"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Skannaa tämä QR-koodi mobiililaitteellasi tai käy iOS- tai Android-kaupassa."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Estämme mainostajia ja tiedonkerääjiä profiloimasta sinua."
+      ],
+      "You've unlocked 1 GB": [
+        "Olet vapauttanut 1 Gt"
       ]
     },
     "ICS widget label for event details": {
       "Organizer:": [
         "Järjestäjä:"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } osallistuja",
+        "${ totalAttendees } osallistujaa"
       ]
     },
     "Label attach to date input to select a date": {
@@ -12991,11 +16056,14 @@
     "Layout mode": {
       "Row": [
         "Rivi"
+      ],
+      "Column": [
+        "Sarake"
       ]
     },
     "Link to settings": {
       "settings": [
-        "asetukset"
+        "asetuksissa"
       ]
     },
     "Mailbox": {
@@ -13003,12 +16071,27 @@
         "Saapuneet"
       ],
       "Spam": [
-        "Roskaposti"
+        "Roskapostia"
+      ],
+      "Archive": [
+        "Pakattu"
+      ],
+      "Trash": [
+        "Poista"
       ]
     },
     "Message notification": {
       "Undoing send...": [
         "Kumotaan lähetystä..."
+      ],
+      "Scheduled sending undone": [
+        "Ajoitettu lähetys on kumottiin"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Ajoitus peruttiin. Viesti siirrettiin luonnoksiin."
+      ],
+      "Sending undone": [
+        "Lähetys kumottiin"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13016,27 +16099,109 @@
         "Ehkä myöhemmin"
       ],
       "Skip for now": [
-        "Ohita tällä kertaa"
+        "Ohita toistaiseksi"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Tuo sähköpostisi sovellukseen ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Tuokaa nykyiset sähköpostinne palveluun ${ MAIL_APP_NAME }, jotta voitte hallita kaikkea yhdestä yksityisestä saapuneet-kansiosta."
+      ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
+      "Protect your accounts": [
+        "Turvaa tilisi"
+      ],
+      "Some popular services": [
+        "Jotkut suositut palvelut"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Vaihda päivittäin käyttämäsi palvelut ${ BRAND_NAME } -osoitteeseesi paremman turvallisuuden ja yksityisyyden saavuttamiseksi."
       ]
     },
     "Received email icon": {
       "PGP-signed message": [
         "PGP-allekirjoitettu viesti"
+      ],
+      "End-to-end encrypted and signed message": [
+        "Päästä päähän -salattu ja allekirjoitettu viesti"
+      ],
+      "End-to-end encrypted message": [
+        "Päästä päähän -salattu viesti"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "Päästä päähän -salattu viesti vahvistetulta lähettäjältä"
+      ],
+      "PGP-encrypted and signed message": [
+        "PGP-salattu ja allekirjoitettu viesti"
+      ],
+      "PGP-encrypted message": [
+        "PGP-salattu viesti"
+      ],
+      "PGP-encrypted message from verified sender": [
+        "PGP-salattu viesti vahvistetulta lähettäjältä"
+      ],
+      "PGP-signed message from verified sender": [
+        "PGP-allekirjoitettu viesti vahvistetulta lähettäjältä"
+      ],
+      "PGP-signed message. Sender verification failed": [
+        "PGP-allekirjoitettu viesti. Lähettäjän vahvistus epäonnistui"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Lähettänyt ${ MAIL_APP_NAME } Zero Access -salauksella"
+      ],
+      "Stored with zero-access encryption": [
+        "Tallennettu Zero Access -salauksella"
       ]
     },
     "Remaining days before the message expire": {
       "<1 d": [
         "< 1 pv"
+      ],
+      "${ remainingDays } d": [
+        "${ remainingDays } pv",
+        "${ remainingDays } pv"
       ]
     },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Vastaus lähetettiin"
+      ],
+      "Answering invitation failed": [
+        "Kutsuun vastaaminen epäonnistui"
+      ],
+      "Calendar event created": [
+        "Kalenteritapahtuma luotiin"
+      ],
+      "Calendar event updated": [
+        "Kalenteritapahtumaa muokattiin"
+      ],
+      "Cannot send to organizer address: ${ errorMessage }": [
+        "Lähetys järjestäjän osoitteeseen ei onnistu: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Kutsun uudelleensalaus epäonnistui. Yritä uudelleen."
       ]
     },
     "Search - no results": {
       "No messages found": [
         "Viestejä ei löytynyt"
+      ],
+      "An action is being processed": [
+        "Toimintoa käsitellään"
+      ],
+      "No messages scheduled": [
+        "Ajoitettuja viestejä ei ole"
+      ],
+      "No results found": [
+        "Tuloksia ei löytynyt"
+      ],
+      "No snoozed messages": [
+        "Torkutettuja viestejä ei ole"
+      ],
+      "No unread messages found": [
+        "Lukemattomia viestejä ei löytynyt"
       ]
     },
     "Sort option": {
@@ -13051,14 +16216,733 @@
       ],
       "Smallest first": [
         "Pienin ensin"
+      ],
+      "Sort by": [
+        "Järjestä"
       ]
     },
     "Tip Action": {
       "Open ": [
-        "Avaa "
+        "Avoin "
       ],
       "Show me how": [
         "Näytä miten"
+      ],
+      "Activate": [
+        "Ota käyttöön"
+      ],
+      "Create an alias": [
+        "Luo alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Luo tunniste “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Luo uusi sähköpostiosoite"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Luo kansio “${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Lataa ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Lataa työpöytäsovellus"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Hanki oma \"@${ PM_DOMAIN }\"-osoite"
+      ]
+    },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Osallistujan lisäys epäonnistui"
+      ],
+      "Invitation sent and participant added": [
+        "Kutsu lähetettiin ja osallistuja lisättiin"
+      ],
+      "Participant added": [
+        "Osallistuja lisättiin"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Tuhoutuva viesti"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Jos lähetät tämän palautteen, ${ BRAND_NAME } -moderointiryhmä näkee kehotuksen ja kommenttisi."
+      ]
+    },
+    "Attachment signature verification": {
+      "Sender verification failed": [
+        "Lähettäjän vahvistus epäonnistui"
+      ],
+      "Sender verification passed": [
+        "Lähettäjän vahvistus onnistui"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Sisältää kalenteritapahtuman"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hyväksyi kutsun ja ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } hyväksyi kutsun ja ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hyväksyi kutsun ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "${ participantName } hyväksyi kutsun tapahtumaan."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hyväksyi kutsusi ja ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } hyväksyi kutsusi ja ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hyväksyi kutsusi ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } accepted your invitation.": [
+        "${ participantName } hyväksyi kutsusi."
+      ],
+      "${ participantName } asked for the latest event updates.": [
+        "${ participantName } tiedusteli viimeisimpiä tapahtumamuutoksia."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
+        "${ participantName } tiedusteli viimeisimpiä muutoksia tapahtumaan, jota ei enää ole. Sinulle ei ole kalentereita."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } tiedusteli viimeisimpiä muutoksia tapahtumaan, jota ei enää ole kalenterissasi."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } tiedusteli viimeisimpiä muutoksia tapahtumaan, joka ei vastaa kutsusi tietoja. Vahvista kutsun tiedot kalenterissasi."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } kieltäytyi kutsusta ja ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } kieltäytyi kutsusta ja ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } kieltäytyi kutsusta ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } kieltäytyi kutsusta tapahtumaan."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } kieltäytyi kutsustasi ja ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for this event.": [
+        "${ participantName } kieltäytyi kutsustasi ja ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } declined your invitation to one occurrence of the event.": [
+        "${ participantName } kieltäytyi kutsustasi ketjun yhteen tapahtumaan."
+      ],
+      "${ participantName } declined your invitation.": [
+        "${ participantName } kieltäytyi kutsustasi."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } oli hyväksynyt kutsun ja ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } oli hyväksynyt kutsun ja ehdottanut tapahtumalle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hyväksyi kutsun ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } oli hyväksynyt kutsun tapahtumaan."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } oli hyväksynyt kutsusi ja ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } oli hyväksynyt kutsusi ja ehdottanut tapahtumalle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } oli kieltäytynyt kutsusta ja ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } oli kieltäytynyt kutsusta ja ehdottanut tapahtumalle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } oli kieltäytynyt kutsusta ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        "${ participantName } oli kieltäytynyt kutsusta tapahtumaan."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } oli kieltäytynyt kutsustasi ja ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } oli kieltäytynyt kutsustasi ja ehdottanut tapahtumalle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
+        "${ participantName } oli aiemmin hyväksynyt kutsusi ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } had previously accepted your invitation.": [
+        "${ participantName } oli aiemmin hyväksynyt kutsusi."
+      ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } oli aiemmin kieltäytynyt kutsustasi ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } had previously declined your invitation.": [
+        "${ participantName } oli aiemmin kieltäytynyt kutsustasi."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } oli aiemmin alustavasti hyväksynyt kutsusi ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation.": [
+        "${ participantName } oli aiemmin alustavasti hyväksynyt kutsusi."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
+        "${ participantName } oli ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Ehdotus on vanhentunut."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } oli ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Ehdotus on vanhentunut. Tapahtumaa ei enää ole kalenterissasi."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } oli ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Ehdotus on vanhentunut. Sinulla ei ole kalentereita."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } oli ehdottanut tapahtumalle uutta aikaa. Ehdotus on vanhentunut."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } oli ehdottanut tapahtumalle uutta aikaa. Ehdotus on vanhentunut. Tapahtumaa ei enää ole kalenterissasi."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } oli ehdottanut tapahtumalle uutta aikaa. Ehdotus on vanhentunut. Sinulla ei ole kalentereita."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } oli alustavasti hyväksynyt kutsun ja ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } oli alustavasti hyväksynyt kutsun ja ehdottanut tapahtumalle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } oli alustavasti hyväksynyt kutsun ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } oli alustavasti hyväksynyt kutsun tapahtumaan."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } oli alustavasti hyväksynyt kutsusi ja ehdottanut ketjun yhdelle tapahtumakerralle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } oli alustavasti hyväksynyt kutsusi ja ehdottanut tapahtumalle uutta aikaa. Vastaus ja ehdotus ovat vanhentuneet."
+      ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } ei ole osallistujaluettelossa."
+      ],
+      "${ participantName } proposed a new time for one occurrence of this event.": [
+        "${ participantName } ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } proposed a new time for this event.": [
+        "${ participantName } ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hyväksyi kutsun alustavasti ja ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } hyväksyi kutsun alustavasti ja ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hyväksyi alustavasti kutsun ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "${ participantName } hyväksyi alustavasti kutsun tapahtumaan."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hyväksyi kutsusi alustavasti ja ehdotti ketjun yhdelle tapahtumakerralle uutta aikaa."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } hyväksyi kutsusi alustavasti ja ehdotti tapahtumalle uutta aikaa."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hyväksyi alustavasti kutsusi ketjun yhteen tapahtumakertaan."
+      ],
+      "${ participantName } tentatively accepted your invitation.": [
+        "${ participantName } hyväksyi kutsusi alustavasti."
+      ],
+      "(Attendance optional)": [
+        "(osallistuminen on vapaaehtoista)"
+      ],
+      "Adding occurrences to an event is not supported for the moment": [
+        "Tapahtumakertojen lisäystä ei toistaiseksi tueta"
+      ],
+      "Event refreshing is not supported for the moment": [
+        "Tapahtumapäivityksiä ei toistaiseksi tueta"
+      ],
+      "Event rescheduling is not supported for the moment": [
+        "Tapahtumien uudelleenajoitusta ei toistaiseksi tueta"
+      ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Vastausta ei voida lisätä ${ CALENDAR_APP_NAME }iin, koska toistaiseksi tuetaan vastaamista vain ketjun kaikkiin tapahtumiin"
+      ],
+      "This event has been canceled.": [
+        "Tapahtuma on peruttu."
+      ],
+      "This event has been updated.": [
+        "Tapahtumaa muokattiin."
+      ],
+      "This invitation is out of date. The event has been canceled.": [
+        "Kutsu on vanhentunut. Tapahtuma on peruttu."
+      ],
+      "This invitation is out of date. The event has been deleted.": [
+        "Kutsu on vanhentunut. Tapahtuma on poistettu."
+      ],
+      "This invitation is out of date. The event has been updated.": [
+        "Kutsu on vanhentunut. Tapahtuma on päivitetty."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Uusi aikaehdotus ei vastaa kutsusi tietoja. Vahvista kutsun tiedot kalenteristasi."
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Vastaus ei vastaa kutsusi tietoja. Vahvista kutsun tiedot kalenteristasi."
+      ],
+      "This response is out of date.": [
+        "Tämä vastaus on vanhentunut."
+      ],
+      "This response is out of date. The event does not exist in your calendar anymore.": [
+        "Vastaus on vanhentunut. Tapahtumaa ei enää ole kalenterissasi."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Vastaus on vanhentunut. Sinulla ei ole kalentereita."
+      ],
+      "You already accepted this invitation.": [
+        "Olet jo hyväksynyt kutsun."
+      ],
+      "You already declined this invitation.": [
+        "Olet jo kieltäytynyt kutsusta."
+      ],
+      "You already tentatively accepted this invitation.": [
+        "Olet jo alustavasti hyväksynyt kutsun."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Et voi vastata ${ BRAND_NAME }in kutsuihin, jos et ole tällä hetkellä osallistujalistalla."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Sähköpostiosoitettasi ei ole alkuperäisellä osallistujalistalla."
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Tapahtuma on jo päättynyt"
+      ],
+      "Event in progress": [
+        "Tapahtuma on käynnissä"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Päästä päähän -salattu vahvistetulle vastaanottajalle"
+      ],
+      "End-to-end encrypted. ${ warningsText }": [
+        "Päästä päähän -salattu. ${ warningsText }"
+      ],
+      "PGP-encrypted": [
+        "PGP-salattu"
+      ],
+      "PGP-encrypted to verified recipient": [
+        "PGP-salattu vahvistetulle vastaanottajalle"
+      ],
+      "PGP-encrypted. ${ warningsText }": [
+        "PGP-salattu. ${ warningsText }"
+      ],
+      "PGP-signed": [
+        "PGP-allekirjoitettu"
+      ],
+      "The address might be misspelled": [
+        "Osoite on ehkä kirjoitettu väärin"
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "Suurennettu"
+      ],
+      "Normal": [
+        "Normaali"
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } uusi viesti",
+        "${ notificationsToShow.length } uutta viestiä"
+      ],
+      "From: ${ sender } - ${ Subject }": [
+        "Lähettäjä: ${ sender } - ${ Subject }"
+      ]
+    },
+    "Desktop notification title": {
+      "New email received": [
+        "Uutta sähköpostia"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstikentät ovat valinnaisia. Tässä lomakkeessa antamanne tiedot näkyvät vain tulevaisuudessa laadittavissa laskuissa eivätkä vaikuta jo olemassa oleviin laskuihin."
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Tapahtuman tiedot on salattu. Palauta Calendar ja pura tietojesi salaus kirjautumalla sisään uudelleen. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Tapahtuman tietojen salausta ei voida purkaa. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "Tapahtumaa ei enää ole kalenterissasi"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Zero Access -salattu. Vastaanottaja on poistanut päästä päähän -salauksen käytöstä tililtään."
+      ]
+    },
+    "Encrypted Headers": {
+      "Encrypted Headers filename": [
+        "Salattujen otsakkeiden tiedostonimi"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistuja",
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistujaa"
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Luonnoksia ei voida siirtää saapuneisiin"
+      ],
+      "Drafts cannot be moved to Spam": [
+        "Luonnoksia ei voida siirtää roskapostiin"
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        "Lähetettyjä viestejä ei voida siirtää saapuneisiin"
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Lähetettyjä viestejä ei voida siirtää roskapostiin"
+      ],
+      "This action cannot be performed": [
+        "Toimintoa ei voida suorittaa"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "Kutsua ei voida lähettää osoitteeseen ${ email }. ${ errorMessage }"
+      ]
+    },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Päiväys: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "Lähettäjä: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Aihe: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Vastaanottaja: ${ toString }"
+      ]
+    },
+    "Import ICS file from Mail": {
+      "Calendar event created": [
+        "Kalenteritapahtuma luotiin"
+      ],
+      "Creating calendar event failed": [
+        "Kalenteritapahtuman luonti epäonnistui"
+      ]
+    },
+    "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Klikkaamalla \"Luota avaimeen\" yhdistät tämän julkisen avaimen tähän lähettäjään ja tästä osoitteesta saapuvat sähköpostiviestit vahvistetaan automaattisesti kryptografisesti."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Klikkaamalla \"Luota avaimeen\" luot uuden yhteystiedon ja yhdistät tämän julkisen avaimen kyseiseen lähettäjään. Tästä osoitteesta tulevat sähköpostiviestit vahvistetaan automaattisesti kryptografisesti."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Haluatko luottaa ensisijaiseen julkiseen avaimeen seuraavalla sormenjäljellä?",
+        "Haluatko luottaa ensisijaisiin julkisiiin avaimiin seuraavilla sormenjälljillä?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Olet ottanut tälle sähköpostiosoitteelle käyttöön osoitteen vahvistuksen luotetuilla avaimilla, mutta yhteenkään aktiiviseen salausavaimeen ei ole luotettu. Sinun on luotettava lähetykseen soveltuvaan avaimeen, jotta voit lähettää viestin tähän osoitteeseen.",
+        "Olet ottanut näille sähköpostiosoitteille käyttöön osoitteen vahvistuksen luotetuilla avaimilla, mutta yhteenkään aktiiviseen salausavaimeen ei ole luotettu. Sinun on luotettava lähetykseen soveltuvaan avaimeen, jotta voit lähettää viestin tähän osoitteeseen."
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "Vastaanottajan avaimen vahvistus epäonnistui: ${ validationErrorsMessage }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Vaihda ${ CALENDAR_APP_NAME } -sovellukseen"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Vaihda kohteeseen ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Label Recipient": {
+      "From": [
+        "Osoitteesta"
+      ],
+      "To": [
+        "Vastaanottaja"
+      ]
+    },
+    "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Lataan uutiskirjeiden tilauksiasi..."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Uutiskirjeet tai postituslistat, joiden tilauksen peruutat, näkyvät täällä."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Sinulla ei ole aktiivisia uutiskirjeitä tai postituslistatilauksia."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Sinulla ei ole uutiskirjeitä tai postituslistatilauksia."
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Avaa ${ CALENDAR_APP_NAME }issa"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-lisenssi"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } -käyttöpaikkaa"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-käyttöpaikka",
+        "${ seats } ${ MEET_APP_NAME }-käyttöpaikkaa"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } käyttöpaikka sisältyy",
+        "${ seats } käyttöpaikkaa sisältyy"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada kokeilujakson aikana enintään ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-käyttöpaikkaa."
+      ]
+    },
+    "Message image": {
+      "Image could not be loaded.": [
+        "Kuvaa ei voitu ladata."
+      ],
+      "Image has not been loaded in order to protect your privacy.": [
+        "Kuvaa ei ladattu yksityisyytesi suojaamiseksi."
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Send email with changed preferences": {
+      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
+        "Seuraavien osoitteiden yhteystiedot on poistettu, joten niitä koskevat salausasetukset on päivitetty seuraavasti:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Seuraavien osoitteiden käyttäjät ovat poistaneet päästä päähän -salauksen käytöstä tileiltään, joten vastaavat salausasetukset on päivitetty sen mukaisesti:"
+      ]
+    },
+    "Send email with errors": {
+      "Do you want to send the email anyway?": [
+        "Haluatko silti lähettää viestin?"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Havaittiin joitakin varoituksia. Sähköpostiasi ei voida lähettää syöttettyyn sähköpostiosoitteeseen seuraavasta syystä:",
+        "Havaittiin joitakin varoituksia. Sähköpostiasi ei voida lähettää syötettyihin sähköpostiosoitteesiin seuraavista syistä:"
+      ],
+      "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
+        "Havaittiin muutamia virheitä, eikä viestiäsi voida seuraavista syistä lähettää yhteen tai useampaan syötettyyn sähköpostiosoitteeseen:"
+      ]
+    },
+    "Send email with warnings": {
+      "Do you want to send the email anyway?": [
+        "Haluatko silti lähettää viestin?"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Seuraava osoite on virheellinen: ${ invalidAddresses }",
+        "Seuraavat osoitteet ovat virheellisiä: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Havaittiin joitakin varoituksia. Seuraava osoite ei mahdollisesti voi vastaanottaa sähköpostia:",
+        "Havaittiin joitakin varoituksia. Seuraavat osoitteet eivät mahdollisesti voi vastaanottaa sähköposteja:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Lähettäjän vahvistus"
+      ]
+    },
+    "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }in salaama"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Salannut ${ MAIL_APP_NAME } PGP-vastaanottajalle"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Salannut ${ MAIL_APP_NAME } vahvistetulle PGP-vastaanottajalle"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Salannut ${ MAIL_APP_NAME } vahvistetulle vastaanottajalle"
+      ],
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
+      ],
+      "End-to-end encrypted to PGP recipient": [
+        "Päästä päähän -salattu PGP-vastaanottajalle"
+      ],
+      "End-to-end encrypted to verified PGP recipient": [
+        "Päästä päähän -salattu vahvistetulle PGP-vastaanottajalle"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Päästä päähän -salattu vahvistetulle vastaanottajalle"
+      ],
+      "PGP-signed": [
+        "PGP-allekirjoitettu"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Lähettänyt ${ MAIL_APP_NAME } Zero Access -salauksella"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Lähettänyt ${ MAIL_APP_NAME } Zero Access -salauksella vahvistetulle vastaanottajalle",
+        "Lähettänyt ${ MAIL_APP_NAME } Zero Access -salauksella vahvistetuille vastaanottajille"
+      ],
+      "Sent by you with end-to-end encryption": [
+        "Olet lähettänyt päästä päähän -salauksella"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Sinä olet lähettänyt päästä päähän -salauksella vahvistetulle vastaanottajalle",
+        "Sinä olet lähettänyt päästä päähän -salauksella vahvistetuille vastaanottajille"
+      ],
+      "Stored with zero-access encryption": [
+        "Tallennettu Zero Access -salauksella"
+      ]
+    },
+    "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-salattu viesti. Lähettäjän vahvistus epäonnistui: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-allekirjoitettu viesti. Lähettäjän vahvistus epäonnistui: ${ verificationErrorsMessage }"
+      ],
+      "Sender could not be verified: Message not signed": [
+        "Lähettäjää ei voitu vahvistaa: Viestiä ei ole allekirjoitettu"
+      ],
+      "Sender verification failed": [
+        "Lähettäjän vahvistus epäonnistui"
+      ],
+      "Sender verification failed: ${ verificationErrorsMessage }": [
+        "Lähettäjän vahvistus epäonnistui: ${ verificationErrorsMessage }"
+      ],
+      "Sender's trusted keys verification failed": [
+        "Lähettäjän luotettujen avainten vahvistus epäonnistui"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Torkuta viesti"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Milloin viestin tulee palautua saapuneisiin?"
+      ]
+    },
+    "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Tarkista mitä tilaukseesi sisältyy ja ala nauttimaan eduista."
+      ],
+      "Discover your subscription benefits": [
+        "Tutustu tilauksesi etuihin"
+      ],
+      "Email tracking protection": [
+        "Sähköpostin seurantasuojaus"
+      ],
+      "Schedule send": [
+        "Ajoita lähetys"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Tämä on nyt oletusosoitteesi. Avaa pudotusvalikko lähettääksesi toisesta osoitteesta. "
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön saadaksesi ilmoituksen, jos tietojasi havaitaan vuotaneen muista verkkopalveluista."
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Nyt kuvat ladataan oletusarvoisesti ja lähettäjiä estetään seuraamasta sinua. Tätä voidaan muuttaa ${ settingsLink }."
+      ],
+      "You can now schedule your messages to be sent later": [
+        "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"
+      ],
+      "Your pm.me email is active": [
+        "Sinun pm.me-osoitteesi on käytössä"
+      ]
+    },
+    "Status": {
+      "Alias disabled": [
+        "Alias pois käytöstä"
+      ],
+      "Unsubscribed": [
+        "Tilaus on peruttu"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Syötä ${ MAIL_APP_NAME } -osoitteesi uudeksi osoitteeksi ja tallenna muutos."
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Etsi tiliasetuksista valinta muokata tai muuttaa sähköpostiosoitettasi "
+      ],
+      "Select service to update": [
+        "Valitse muokattava palvelu"
+      ],
+      "Sign in to the service": [
+        "Kirjaudu palveluun"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "ma, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "la, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "su, ${ formatTime }"
       ]
     }
   }

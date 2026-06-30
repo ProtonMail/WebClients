@@ -1092,6 +1092,635 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "A to Z": [
+        "A bis Z"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Add Bcc recipients": [
+        "BCC-Empfänger hinzufügen"
+      ],
+      "Add Cc recipients": [
+        "CC-Empfänger hinzufügen"
+      ],
+      "Add participant": [
+        "Teilnehmer hinzufügen"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Hinzufügen zu ${ CALENDAR_APP_NAME }"
+      ],
+      "Adds it above your existing message": [
+        "Fügt es oberhalb deiner bestehenden Nachricht hinzu"
+      ],
+      "All Read": [
+        "Alle gelesenen"
+      ],
+      "All Starred": [
+        "Alle Markierten"
+      ],
+      "All Unread": [
+        "Alle ungelesenen"
+      ],
+      "All Unstarred": [
+        "Alle Unmarkierten"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
+      "As Scheduled": [
+        "Wie geplant"
+      ],
+      "Attachment": [
+        "Anhang"
+      ],
+      "Blind Carbon Copy": [
+        "Blindkopie"
+      ],
+      "Block email tracking": [
+        "E-Mail-Tracking blockieren"
+      ],
+      "Block messages from this sender": [
+        "Nachrichten von diesem Absender sperren"
+      ],
+      "Block sender": [
+        "Absender sperren"
+      ],
+      "Block senders": [
+        "Absender blockieren"
+      ],
+      "Carbon Copy": [
+        "Kopie"
+      ],
+      "Change sorting": [
+        "Reihenfolge ändern"
+      ],
+      "Clear application data": [
+        "Anwendungsdaten entfernen"
+      ],
+      "clear it": [
+        "löschen"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Anklicken, um ${ defaultEmailAddress } in die Zwischenablage zu kopieren"
+      ],
+      "Close composer": [
+        "Verfassen-Fenster schließen"
+      ],
+      "Collapse URL": [
+        "URL ausblenden"
+      ],
+      "Continue with categories": [
+        "Mit Kategorien fortfahren"
+      ],
+      "Continue without categories": [
+        "Ohne Kategorien fortfahren"
+      ],
+      "Contract composer": [
+        "Verfassen-Fenster verkleinern"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "'${ code }' in die Zwischenablage kopieren"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "'${ code }' in die Zwischenablage kopieren und in den Papierkorb verschieben"
+      ],
+      "Copy addresses": [
+        "E-Mail-Adressen kopieren"
+      ],
+      "Copy password to clipboard": [
+        "Passwort in die Zwischenablage kopieren"
+      ],
+      "Create a new folder": [
+        "Neuen Ordner erstellen"
+      ],
+      "Create a new label": [
+        "Neue Kategorie erstellen"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Ordner „${ boldFolderName }“ erstellen"
+      ],
+      "Create new message": [
+        "Neue Nachricht erstellen"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
+      "Delete draft": [
+        "Entwurf löschen"
+      ],
+      "Delete folder": [
+        "Ordner löschen"
+      ],
+      "Delete label": [
+        "Kategorie löschen"
+      ],
+      "Deselect all messages": [
+        "Alle Nachrichten abwählen"
+      ],
+      "Disabling alias": [
+        "Alias wird deaktiviert"
+      ],
+      "Download ${ attachmentName }": [
+        "${ attachmentName } herunterladen"
+      ],
+      "Download all attachments": [
+        "Alle Anhänge herunterladen"
+      ],
+      "Download application logs": [
+        "Anwendungsprotokolle herunterladen"
+      ],
+      "Downloading": [
+        "Wird heruntergeladen"
+      ],
+      "Edit address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
+      "Edit draft": [
+        "Entwurf bearbeiten"
+      ],
+      "Edit encryption": [
+        "Verschlüsselung bearbeiten"
+      ],
+      "Edit folder": [
+        "Ordner bearbeiten"
+      ],
+      "Encryption": [
+        "Verschlüsselung"
+      ],
+      "exclude message content": [
+        "schließe den Inhalt der Nachricht aus"
+      ],
+      "Expand composer": [
+        "Verfassen-Fenster vergrößern"
+      ],
+      "Expand navigation bar to see folders": [
+        "Erweitere die Navigationsleiste, um Ordner zu sehen"
+      ],
+      "Expand navigation bar to see labels": [
+        "Erweitere die Navigationsleiste, um Kategorien zu sehen"
+      ],
+      "Expand URL": [
+        "Vollständige URL anzeigen"
+      ],
+      "Expiration time": [
+        "Gültigkeitsdauer"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Entdecke ${ VPN_APP_NAME }"
+      ],
+      "External encryption": [
+        "Externe Verschlüsselung"
+      ],
+      "Fewer search options": [
+        "Weniger Suchoptionen"
+      ],
+      "Filter on...": [
+        "Filtern nach..."
+      ],
+      "Formalize": [
+        "Formalisieren"
+      ],
+      "Generate text": [
+        "Text generieren"
+      ],
+      "Go to next page": [
+        "Zur nächste Seite"
+      ],
+      "Go to page ${ page }": [
+        "Zu Seite ${ page }"
+      ],
+      "Go to previous page": [
+        "Zur vorherigen Seite"
+      ],
+      "Hide ${ title }": [
+        "${ title } ausblenden"
+      ],
+      "Hide attachment details": [
+        "Anhangdetails ausblenden"
+      ],
+      "Hide details": [
+        "Details ausblenden"
+      ],
+      "Hide messages": [
+        "Nachrichten ausblenden"
+      ],
+      "Hide toolbar": [
+        "Symbolleiste verstecken"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
+      "I like this response": [
+        "Mir gefällt diese Antwort"
+      ],
+      "Images will be loaded without a proxy": [
+        "Bilder werden ohne Proxy geladen"
+      ],
+      "In the morning": [
+        "Morgens"
+      ],
+      "Inline": [
+        "Eingebettet"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked } Kontakt einfügen",
+        "${ totalChecked } Kontakte einfügen"
+      ],
+      "Insert contact": [
+        "Kontakt einfügen"
+      ],
+      "Insert contacts": [
+        "Kontakte einfügen"
+      ],
+      "Keep inbox as before": [
+        "Posteingang wie zuvor beibehalten"
+      ],
+      "Label as": [
+        "Folgender Kategorie zuordnen"
+      ],
+      "Label as...": [
+        "Kategorisieren als …"
+      ],
+      "Later this week": [
+        "Später in dieser Woche"
+      ],
+      "Least read": [
+        "Am wenigsten gelesen"
+      ],
+      "Load embedded images": [
+        "Eingebettete Bilder laden"
+      ],
+      "Loading${ ellipsis }": [
+        "Wird geladen ${ ellipsis }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen"
+      ],
+      "Make it friendly": [
+        "Freundlicher machen"
+      ],
+      "Manage Snooze": [
+        "Zurüchgestellte verwalten"
+      ],
+      "Mark as read": [
+        "Als gelesen markieren"
+      ],
+      "Mark as unread": [
+        "Als ungelesen markieren"
+      ],
+      "Mark legitimate": [
+        "Als seriös kennzeichnen"
+      ],
+      "Maximize composer": [
+        "Verfassen-Fenster maximieren"
+      ],
+      "Messages from this sender": [
+        "Nachrichten von diesem Absender"
+      ],
+      "Messages to this recipient": [
+        "Nachrichten an diesen Empfänger"
+      ],
+      "Minimize composer": [
+        "Verfassen-Fenster minimieren"
+      ],
+      "Modify": [
+        "Bearbeiten"
+      ],
+      "Modify selection": [
+        "Auswahl bearbeiten"
+      ],
+      "Monday": [
+        "Montag"
+      ],
+      "More details about ${ ariaLabelTitle }": [
+        "Mehr Details zu ${ ariaLabelTitle }"
+      ],
+      "More refine actions": [
+        "Weitere Verbesserungsaktionen"
+      ],
+      "More search options": [
+        "Mehr Sucheinstellungen"
+      ],
+      "Most frequent": [
+        "Häufigste"
+      ],
+      "Most read": [
+        "Meistgelesen"
+      ],
+      "Move all to archive": [
+        "Alle ins Archiv verschieben"
+      ],
+      "Move all to trash": [
+        "Alle in den Papierkorb verschieben"
+      ],
+      "Move to": [
+        "Verschieben nach"
+      ],
+      "Move to archive": [
+        "Ins Archiv verschieben"
+      ],
+      "Move to Archive": [
+        "Ins Archiv verschieben"
+      ],
+      "Move to category...": [
+        "In Kategorie verschieben..."
+      ],
+      "Move to inbox": [
+        "In den Posteingang verschieben"
+      ],
+      "Move to inbox (not spam)": [
+        "In Posteingang verschieben (kein Spam)"
+      ],
+      "Move to spam": [
+        "In den Spam-Ordner verschieben"
+      ],
+      "Move to spam and unsubscribe": [
+        "In den Spam verschieben und abbestellen"
+      ],
+      "Move to...": [
+        "Verschieben nach…"
+      ],
+      "Never show": [
+        "Niemals anzeigen"
+      ],
+      "Next conversation": [
+        "Nächste Unterhaltung"
+      ],
+      "Next message": [
+        "Nächste Nachricht"
+      ],
+      "Not saved": [
+        "Nicht gespeichert"
+      ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } öffnen"
+      ],
+      "Page ${ pageNumber }": [
+        "Seite ${ pageNumber }"
+      ],
+      "Pause": [
+        "Pausieren"
+      ],
+      "Preview ${ attachmentName }": [
+        "Vorschau von ${ attachmentName } anzeigen"
+      ],
+      "Previous conversation": [
+        "Vorherige Unterhaltung"
+      ],
+      "Previous message": [
+        "Vorherige Nachricht"
+      ],
+      "Proofread": [
+        "Korrekturlesen"
+      ],
+      "Read message": [
+        "Nachricht lesen"
+      ],
+      "Read receipt sent": [
+        "Lesebestätigung gesendet"
+      ],
+      "Recently read": [
+        "Zuletzt gelesen"
+      ],
+      "Recently received": [
+        "Kürzlich erhalten"
+      ],
+      "Refine it": [
+        "Verfeinere sie"
+      ],
+      "Remove ${ attachmentName }": [
+        "${ attachmentName } entfernen"
+      ],
+      "Remove encryption": [
+        "Verschlüsselung entfernen"
+      ],
+      "Remove expiration time": [
+        "Ablaufdatum entfernen"
+      ],
+      "Remove from list": [
+        "Aus Liste entfernen"
+      ],
+      "Remove self-destruction": [
+        "Selbstzerstörung entfernen"
+      ],
+      "Replace": [
+        "Ersetzen"
+      ],
+      "Replaces the selected text in your message": [
+        "Ersetzt den ausgewählten Text in deiner Nachricht"
+      ],
+      "Reply securely": [
+        "Sicher antworten"
+      ],
+      "Report phishing": [
+        "Phishing melden"
+      ],
+      "Reset search form": [
+        "Suchformular zurücksetzen"
+      ],
+      "Resize panel": [
+        "Größe der Seitenleiste ändern"
+      ],
+      "Resume downloading": [
+        "Download fortsetzen"
+      ],
+      "Revert to original display": [
+        "Zurück zur ursprünglichen Darstellung"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Auf ${ BRAND_NAME }-Servern ausführen"
+      ],
+      "Saving${ ellipsis }": [
+        "Wird gespeichert${ ellipsis }"
+      ],
+      "Schedule message": [
+        "Nachricht planen"
+      ],
+      "Search in ${ option.text }": [
+        "Suchen in ${ option.text }"
+      ],
+      "Search message content": [
+        "Nachrichteninhalt durchsuchen"
+      ],
+      "See business plans": [
+        "Siehe Business Abonnements"
+      ],
+      "Select All": [
+        "Alles auswählen"
+      ],
+      "Select all messages": [
+        "Alle Nachrichten auswählen"
+      ],
+      "Select date and time": [
+        "Datum und Uhrzeit auswählen"
+      ],
+      "Self-destruct in 7 days": [
+        "Selbstzerstören in 7 Tagen"
+      ],
+      "Self-destruct message": [
+        "Selbstzerstörende Nachricht"
+      ],
+      "Self-destruct on ...": [
+        "Selbstzerstören am ..."
+      ],
+      "Send anyway": [
+        "Trotzdem senden"
+      ],
+      "Send read receipt": [
+        "Lesebestätigung senden"
+      ],
+      "Send unsubscribe email": [
+        "Eine Abmelde-E-Mail senden"
+      ],
+      "Set": [
+        "Festlegen"
+      ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen"
+      ],
+      "Set encryption": [
+        "Verschlüsselung festlegen"
+      ],
+      "Set expiration time": [
+        "Ablaufdatum festlegen"
+      ],
+      "Shorten": [
+        "Kürzen"
+      ],
+      "Show ${ title }": [
+        "${ title } Anzeigen"
+      ],
+      "Show attachment details": [
+        "Anhangdetails anzeigen"
+      ],
+      "Show details": [
+        "Details anzeigen"
+      ],
+      "Show fewer search options": [
+        "Weniger Suchoptionen anzeigen"
+      ],
+      "Show messages": [
+        "Nachrichten anzeigen"
+      ],
+      "Show more search options": [
+        "Mehr Suchoptionen anzeigen"
+      ],
+      "Show toolbar": [
+        "Symbolleiste anzeigen"
+      ],
+      "Snooze": [
+        "Zurückstellen"
+      ],
+      "Star": [
+        "Favorisieren"
+      ],
+      "Start testing": [
+        "Test starten"
+      ],
+      "Stop downloading assistant": [
+        "Herunterladen des Assistenten stoppen"
+      ],
+      "Stop generating result": [
+        "Aufhören das Ergebnis zu generieren"
+      ],
+      "Stop marking as read": [
+        "„Als gelesen kennzeichnen“ beenden"
+      ],
+      "Stop moving to Archive": [
+        "Stoppe, ins Archiv zu verschieben"
+      ],
+      "Stop moving to Trash": [
+        "Stoppe, in den Papierkorb zu verschieben"
+      ],
+      "This message contains embedded images.": [
+        "Diese Nachricht enthält eingebettete Grafiken."
+      ],
+      "This message contains remote content.": [
+        "Diese Nachricht enthält Inhalte aus externen Quellen."
+      ],
+      "This weekend": [
+        "Dieses Wochenende"
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Um deine E-Mails sicher durchsuchen zu können, müssen wir eine Kopie deiner Nachrichten in deinem Browser herunterladen. Der erste Download kann einen Moment dauern."
+      ],
+      "Toggle security center app": [
+        "Umschalten der Sicherheitszentrum-App"
+      ],
+      "Toggle VPN dashboard": [
+        "VPN-Dashboard einschalten"
+      ],
+      "Tomorrow": [
+        "Morgen"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Der Tracker-Schutz hat das Laden einiger Bilder verhindert. Lade sie, wenn du dem Absender vertraust."
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
+      ],
+      "Trust public key": [
+        "Öffentlichem Schlüssel vertrauen"
+      ],
+      "Try categories": [
+        "Kategorien ausprobieren"
+      ],
+      "Unblock": [
+        "Entblocken"
+      ],
+      "Unsnooze": [
+        "Nicht mehr zurückstellen"
+      ],
+      "Unstar": [
+        "Kein Favorit"
+      ],
+      "Unsubscribed": [
+        "Abbestellt"
+      ],
+      "Unsubscribing": [
+        "Abonnement wird gekündigt"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } verwenden"
+      ],
+      "Use this": [
+        "Dies verwenden"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Verwende deine Maus, um die Größe der Ansicht zu ändern. Wenn du deine Tastatur verwendest, kannst du die Größe mit den Pfeiltasten „Pfeil links“ und „Pfeil rechts“ ändern."
+      ],
+      "View headers": [
+        "Header anzeigen"
+      ],
+      "View HTML": [
+        "Als HTML anzeigen"
+      ],
+      "View keys": [
+        "Schlüssel anzeigen"
+      ],
+      "View message details": [
+        "Nachrichtendetails ansehen"
+      ],
+      "View recipients": [
+        "Empfänger anzeigen"
+      ],
+      "View rendered HTML": [
+        "Gerendertes HTML anzeigen"
+      ],
+      "Why not?": [
+        "Warum nicht?"
+      ],
+      "Write for me": [
+        "Schreibe für mich"
+      ],
+      "Your email writing assistant": [
+        "Dein E-Mail-Schreibassistent"
       ]
     },
     "action": {
@@ -1232,6 +1861,18 @@
       ],
       "Run on device": [
         "Auf dem Gerät ausführen"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Daten bleiben auf dem Gerät, um deine Privatsphäre zu schützen. Erfordert einen Download und kompatible Hardware."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Es werden keine Protokolle gespeichert, um deine Privatsphäre zu schützen. Schnellere Verarbeitung."
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Sicher auf ${ BRAND_NAME } Servern ausführen"
+      ],
+      "Securely run on device": [
+        "Sicher auf dem Gerät ausführen"
       ]
     },
     "Assistant toggle": {
@@ -1551,6 +2192,33 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fehler"
+      ],
+      "Migrated": [
+        "Migriert"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -2052,6 +2720,12 @@
       ],
       "Quit import?": [
         "Import abbrechen?"
+      ],
+      "Edit and reschedule": [
+        "Bearbeiten und neu planen"
+      ],
+      "Message saved to Drafts": [
+        "Nachricht in Entwürfen gespeichert"
       ]
     },
     "Contact field label": {
@@ -3272,6 +3946,74 @@
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
         "Wir werden deine alten E-Mails importieren und künftig neue Nachrichten aus Gmail synchronisieren."
+      ],
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } in den Einstellungen."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Du willst deine E-Mail nicht sofort verschicken? Plane sie genau für den richtigen Zeitpunkt."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Für unbegrenzten Zugang zum Schreibassistenten und mehr, upgrade auf ${ BRAND_NAME } Duo."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Für unbegrenzten Zugriff auf den Schreibassistenten und mehr, upgrade auf ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Wenn eine Nachricht in der falschen Kategorie angezeigt wird, verschiebe sie einfach in die richtige. Klicke mit der rechten Maustaste auf eine Nachricht, um eine neue Kategorie auszuwählen, oder ziehe sie per Drag-and-drop an die richtige Stelle."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weiterer werden nicht zugestellt und dauerhaft gelöscht.",
+        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weitere werden nicht zugestellt und dauerhaft gelöscht."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Neue E-Mails von „${ senderEmailAddress }“ werden nicht zugestellt und dauerhaft gelöscht."
+      ],
+      "No folders": [
+        "Keine Ordner"
+      ],
+      "No labels": [
+        "Keine Kategorien"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Gmail-Nachrichten direkt in ${ MAIL_APP_NAME } senden und empfangen. Deine E-Mail-Adresse unter ${ addressesSettingsLink } verbinden."
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Um ${ LUMO_SHORT_APP_NAME } weiterhin in ${ MAIL_APP_NAME } nutzen zu können, füge es deinem Abonnement hinzu."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Um ${ LUMO_SHORT_APP_NAME } weiterhin in ${ MAIL_APP_NAME } nutzen zu können, beantrage bitte die Zugriffsberechtigung bei deinem Administrator."
+      ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Wenn du den Schreibassistenten weiterhin nutzen möchtest, füge ihn zu deinem Abonnement hinzu."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Wenn du den Schreibassistenten weiterhin nutzen möchtest, beantrage den Zugang bei deinem Administrator."
+      ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Aktiviere den E-Mail-Tracker-Schutz, um zu verhindern, dass Werbetreibende und andere Personen deinen Standort und deine Online-Aktivitäten verfolgen."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Verwende ${ MAIL_APP_NAME }, um dich bei Online-Diensten anzumelden, denn im Gegensatz zu anderen E-Mail-Anbietern werden wir deine Daten niemals verfolgen und an Dritte weitergeben."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Wir haben in dieser E-Mail keine bekannten Tracker und Tracking-URLs gefunden."
+      ],
+      "When do you want your message to be sent?": [
+        "Wann soll diese Nachricht gesendet werden?"
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Mit der benutzerdefinierten Funktion „Zurückstellen“ können Sie E-Mails ausblenden und festlegen, dass sie zu einem günstigeren Zeitpunkt erneut angezeigt werden."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du leitest E-Mails von ${ forwardingCount } Gmail-Adresse weiter. Durch die Verbindung kannst du sowohl in ${ MAIL_APP_NAME } empfangen als auch antworten.",
+        "Du leitest E-Mails von ${ forwardingCount } Gmail-Adressen weiter. Durch die Verbindung kannst du sowohl in ${ MAIL_APP_NAME } empfangen als auch antworten."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Du gehörst zu den Ersten, die unsere neue Kategorieansicht vor dem offiziellen Start ausprobieren dürfen. Dein Feedback hilft uns dabei, E-Mails in Proton Mail für alle Nutzer besser zu ordnen."
       ]
     },
     "description": {
@@ -4043,6 +4785,178 @@
       ],
       "Unexpected error, we can't import the files": [
         "Unerwarteter Fehler, wir können die Dateien nicht importieren"
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } für <${ email }>. Du kannst einen anderen Schlüssel hinzufügen oder die Verschlüsselung für diesen Kontakt deaktivieren, um das Problem zu beheben."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Anhänge sind auf ${ readableAttachmentMaxSize } begrenzt."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Du kannst das Ablaufdatum nicht länger einstellen, als es die Aufbewahrungsrichtlinie erlaubt."
+      ],
+      "Choose a date in the future.": [
+        "Wähle ein Datum, das in der Zukunft liegt."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Wähle ein Datum innerhalb des nächsten ${ n } Tages.",
+        "Wähle ein Datum innerhalb der nächsten ${ n } Tage."
+      ],
+      "Contact your organization’s administrator to resolve this": [
+        "Wende dich an den Administrator deiner Organisation, um dies zu klären."
+      ],
+      "Decryption error: decryption of this message's encrypted content failed.": [
+        "Entschlüsselungsfehler: Das Entschlüsseln des verschlüsselten Inhalts dieser Nachricht ist fehlgeschlagen."
+      ],
+      "Draft could not be saved. Try again.": [
+        "Der Entwurf konnte nicht gespeichert werden. Bitte versuche es erneut."
+      ],
+      "Due to an error, text generation couldn't be canceled": [
+        "Aufgrund eines Fehlers konnte die Textgenerierung nicht abgebrochen werden"
+      ],
+      "Enter a password": [
+        "Passwort eingeben"
+      ],
+      "Error while saving draft. Please try again.": [
+        "Fehler beim Speichern des Entwurfs. Bitte versuche es erneut."
+      ],
+      "Error while sending the message. Message is not sent.": [
+        "Fehler beim Senden der Nachricht. Nachricht wurde nicht gesendet."
+      ],
+      "Error while uploading attachments. Message is not sent.": [
+        "Fehler beim Hochladen der Anhänge. Die Nachricht wurde nicht gesendet."
+      ],
+      "Failed to encrypt attachment. Please try again.": [
+        "Der Anhang konnte nicht verschlüsselt werden. Bitte versuche es erneut."
+      ],
+      "Invalid expiration time": [
+        "Ungültiges Ablaufdatum"
+      ],
+      "Maximum expiration time reached.": [
+        "Maximale Ablaufzeit erreicht."
+      ],
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Maximale Anzahl von Anhängen (${ attachmentsCountLimit }) überschritten"
+      ],
+      "Message needs to be sent first": [
+        "Die Nachricht muss zuerst gesendet werden"
+      ],
+      "Message processing error.": [
+        "Fehler beim Verarbeiten der Nachricht."
+      ],
+      "Network error: Please check your connection and try again.": [
+        "Netzwerkfehler: Bitte überprüfe deine Internetverbindung und versuche es erneut."
+      ],
+      "No address with keys available to compose a message": [
+        "Keine E-Mail-Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar."
+      ],
+      "No address with sending permissions": [
+        "Keine E-Mail-Adresse mit Sendeberechtigungen"
+      ],
+      "Please select a category and what went wrong with the generated text": [
+        "Bitte wähle eine Kategorie und was mit dem generierten Text falsch ist aus"
+      ],
+      "Please try again or refresh the page.": [
+        "Bitte versuche es erneut oder aktualisiere die Seite."
+      ],
+      "Please try generating the text again": [
+        "Bitte versuche den Text erneut zu generieren."
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Problem beim Herunterladen des Schreibassistenten. Wenn du den privaten Modus verwendest, versuche es mit dem normalen Browser-Modus oder führe den Schreibassistenten auf Servern aus."
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Fehler beim Herunterladen des Schreibassistenten. Bitte versuche es erneut."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Fehler beim Laden des Schreibassistenten auf dein Gerät. Bitte versuche es erneut."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Problem beim Bereinigen nicht benötigter Daten, wenn der Schreibassistent inaktiv ist."
+      ],
+      "Public key could not be trusted": [
+        "Öffentlichem Schlüssel konnte nicht vertraut werden"
+      ],
+      "re-activate the previous key": [
+        "Vorherigen Schlüssel erneut aktivieren"
+      ],
+      "re-importing": [
+        "erneut zu importieren"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Doppelter Empfänger wurde entfernt: ${ recipents }",
+        "Doppelte Empfänger wurden entfernt: ${ recipents }"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Abonnements erfüllst oder ein Upgrade durchführst."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Das Senden von Anhängen ist eingeschränkt, solange du die Grenzen deines Abonnements überschreitest oder bis du dein Abonnement aktualisierst."
+      ],
+      "Signature verification error.": [
+        "Fehler bei der Signaturprüfung."
+      ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Entschuldigung, ${ BRAND_NAME } kann deine Nachricht nicht entschlüsseln. Bitte prüfe, dass alle deine Schlüssel aktiv sind."
+      ],
+      "Text is too long to refine": [
+        "Der Text ist zu lang, um ihn zu verbessern"
+      ],
+      "Thanks for the feedback!": [
+        "Danke für die Rückmeldung."
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Diese Aktion kann nicht für E-Mails in diesem Ordner ausgeführt werden."
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Der Anhang konnte nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
+        "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Die Schlüsseleigenschaften für ${ emailAddress } konnten nicht extrahiert werden"
+      ],
+      "The maximum expiration is 4 weeks": [
+        "Der maximale Verfallszeitraum beträgt 4 Wochen"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Das System ist im Moment beschäftigt. Bitte versuche es in ein paar Minuten erneut."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Der Schreibassistent kann deine Anfrage nicht bearbeiten. Bitte versuche eine andere Eingabeaufforderung."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Es ist ein Problem mit der Inhaltssuche aufgetreten. Stattdessen wurde die Standardsuche verwendet."
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Beim Entschlüsseln deiner Nachricht ist ein Problem aufgetreten. Wenn das Problem weiterhin besteht, kontaktiere unseren Kundensupport."
+      ],
+      "This action cannot be performed": [
+        "Diese Aktion kann nicht ausgeführt werden."
+      ],
+      "This message has already been sent": [
+        "Diese Nachricht wurde bereits gesendet"
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Diese Nachricht wurde bereits gesendet. Es wurde ein neuer Entwurf gespeichert."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen.",
+        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen."
+      ],
+      "You did not provide a file.": [
+        "Es wurde keine Datei bereitgestellt."
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Deine E-Mails konnten nicht entschlüsselt werden, da dein Passwort kürzlich zurückgesetzt wurde. Falls du dich an dein früheres Passwort erinnerst, kannst du den ${ reActivateKeyLink }, um auf deine Nachrichten zuzugreifen. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Deine Nachricht konnte nicht entschlüsselt werden. Falls du einen deiner Adressschlüssel gelöscht hast, versuche ihn ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Deine Nachricht kann nicht entschlüsselt werden. Der Schlüssel, der zum Verschlüsseln dieser Nachricht verwendet wurde, stimmt mit keinem der Schlüssel überein, die mit deiner Adresse verknüpft sind. Wenn du eine deiner Adressschlüssel gelöscht hast, versuche sie ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your search matched too many results. Please limit your search and try again.": [
+        "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
       ]
     },
     "error": {
@@ -4206,6 +5120,21 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Wenn das zusätzliche Passwort aktiviert ist, kann die Alias-Verwaltung nur in ${ PASS_APP_NAME } erfolgen."
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasse können nicht verwendet werden, wenn ein zusätzliches Passwort in ${ PASS_APP_NAME } aktiviert ist."
+      ],
+      "An error occurred with the categories": [
+        "Bei den Kategorien ist ein Fehler aufgetreten."
+      ],
+      "No results found": [
+        "Keine Ergebnisse gefunden"
+      ],
+      "No results found for \"${ query }\"": [
+        "Keine Ergebnisse für „${ query }“"
+      ],
+      "You do not have any contact yet. Start by creating a new contact": [
+        "Noch keine Kontakte vorhanden. Lege jetzt einen neuen Kontakt an!"
       ]
     },
     "Error notification": {
@@ -4397,6 +5326,9 @@
       ],
       "Set up your family account": [
         "Richte dein Family-Konto ein"
+      ],
+      "Invite members and get everything up and running.": [
+        "Lade Mitglieder ein und bringe alles zum Laufen."
       ]
     },
     "familyOffer_2023:Title": {
@@ -4457,6 +5389,9 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -4550,6 +5485,18 @@
       ],
       "The subject": [
         "Der Betreff"
+      ],
+      "If the attachments": [
+        "Wenn die Anhänge"
+      ],
+      "If the recipient": [
+        "Wenn der Empfänger"
+      ],
+      "If the sender": [
+        "Wenn der Absender"
+      ],
+      "If the subject": [
+        "Wenn der Betreff"
       ]
     },
     "Filter notification": {
@@ -4627,6 +5574,27 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop-App"
+      ],
+      "14-day desktop app trial.": [
+        "Desktop-App 14 Tage ausprobieren."
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Genieße schnellen, sicheren und ablenkungsfreien Zugriff auf deinen Posteingang und Kalender."
+      ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Hol dir unbegrenzten Zugriff mit jedem ${ MAIL_APP_NAME }-Tarif."
+      ],
+      "No credit card required.": [
+        "Keine Kreditkarte erforderlich."
+      ],
+      "Start free trial": [
+        "Kostenlose Testversion starten"
+      ],
+      "Try the new desktop app": [
+        "Probiere die neue Desktop-App aus"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "Gmail forwarding": {
@@ -4675,6 +5643,15 @@
       ],
       "Services": [
         "Dienste"
+      ],
+      "Custom folders": [
+        "Benutzerdefinierte Ordner"
+      ],
+      "Default folders": [
+        "Standardordner"
+      ],
+      "Labels": [
+        "Kategorien"
       ]
     },
     "Header": {
@@ -4698,6 +5675,24 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "Hardware not compatible": [
+        "Hardware ist nicht kompatibel."
+      ],
+      "Report an issue": [
+        "Ein Problem melden"
+      ],
+      "Resume downloading": [
+        "Download fortsetzen"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent einrichten"
+      ],
+      "Set up the writing assistant": [
+        "Richte den Schreibassistenten ein"
+      ],
+      "Tell us more": [
+        "Erzähl uns mehr"
       ]
     },
     "Hint": {
@@ -5538,7 +6533,7 @@
         "Code eingeben"
       ],
       "Enter the code from your authenticator app": [
-        "Code aus deiner Authentifizierungs-App ein eingeben"
+        "Code aus deiner Authentifizierungs-App eingeben"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -6493,6 +7488,1105 @@
       ],
       "You have ${ unread } in ${ label }.": [
         "Du hast ${ unread } in ${ label }."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, alte E-Mails archivieren oder in einen Ordner verschieben."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot }, welche Abonnements nicht mehr relevant sind."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe }, um dich mit einem Klick abzumelden."
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe hilft dir, bessere E-Mails schnell und mühelos zu erstellen."
+      ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Mit dem Passwort-Manager von ${ BRAND_NAME } kannst du Passwörter erstellen, speichern und automatisch ausfüllen, sodass du sie nie zurücksetzen musst."
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } Mitglied)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } Mitglieder)"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } von ${ totalProgress }",
+        "${ currentProgress } von ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } Unterhaltung wird kategorisiert als:",
+        "${ elementsCount } Unterhaltungen werden kategorisiert als:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } Unterhaltung wird als „Gelesen“ gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen wird als „Gelesen“ gekennzeichnet."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } Unterhaltung wird als ungelesen markiert.",
+        "${ elementsCount } Unterhaltungen werden als ungelesen markiert."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } Unterhaltung wird verschoben",
+        "${ elementsCount } Unterhaltungen werden verschoben"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "Bei ${ elementsCount } Unterhaltung wird die Kategorie entfernt:",
+        "Bei ${ elementsCount } Unterhaltungen wird die Kategorie entfernt:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } Nachricht wird kategorisiert als:",
+        "${ elementsCount } Nachrichten werden kategorisiert als:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } Nachricht wird als gelesen markiert.",
+        "${ elementsCount } Nachrichten werden als gelesen markiert."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } Nachricht wird als ungelesen markiert.",
+        "${ elementsCount } Nachrichten werden als ungelesen markiert."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } Nachricht wird verschoben",
+        "${ elementsCount } Nachrichten werden verschoben"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "Bei ${ elementsCount } Nachricht wird die Kategorie entfernt:",
+        "Bei ${ elementsCount } Nachrichten wird die Kategorie entfernt:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } eingebettete Grafik",
+        "${ embeddedAttachmentsCount } eingebettete Grafiken"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } hilft dir, bessere E-Mails schnell und mühelos zu erstellen."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } Seitenleiste"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } sortiert deine E-Mails jetzt automatisch in Kategorien wie Haupt, Sozial, Werbeaktionen und mehr, damit du Nachrichten leichter finden und verwalten kannst."
+      ],
+      "${ n } unread conversation": [
+        "${ n } ungelesene Unterhaltung",
+        "${ n } ungelesene Unterhaltungen"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } Link bereinigt",
+        "${ numberOfUTMTrackers } Links bereinigt"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } Nachricht in der Unterhaltung",
+        "${ NumMessages } Nachrichten in der Unterhaltung"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } Ereignis gefunden",
+        "${ numOccurrences } Ereignisse gefunden"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } Ereignis im E-Mail-Inhalt gefunden",
+        "${ numOccurrences } Ereignisse im E-Mail-Inhalt gefunden"
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } Datei angehängt",
+        "${ pureAttachmentsCount } Dateien angehängt"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } E-Mail im letzten Monat",
+        "${ receivedMessagesCount } E-Mails im letzten Monat"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ungelesen",
+        "${ subscription.UnreadMessageCount } ungelesen"
+      ],
+      "${ total } conversation": [
+        "${ total } Unterhaltung",
+        "${ total } Unterhaltungen"
+      ],
+      "${ total } message": [
+        "${ total } Nachricht",
+        "${ total } Nachrichten"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } E-Mail-Tracker blockiert",
+        "${ trackersCount } E-Mail-Tracker blockiert"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } Tracker blockiert",
+        "${ trackersCount } Tracker blockiert"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } Newsletter",
+        "${ unreadCount } Newsletter"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } geplante Nachricht",
+        "${ unreadCount } geplante Nachrichten"
+      ],
+      "(No Recipient)": [
+        "(Kein Empfänger)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** Ergebnis in ${ labelName } gefunden",
+        "**${ total }** Ergebnisse in ${ labelName } gefunden"
+      ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "Eine Anfrage zum Abbestellen von dieser Mailingliste wird an den Absender des Newsletters gesendet und automatisch bearbeitet."
+      ],
+      "Activation in progress": [
+        "Aktivierung wird durchgeführt"
+      ],
+      "Addresses settings": [
+        "Adresseneinstellungen"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Alle Nachrichten von dieser Verteilerliste werden als gelesen markiert."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle Nachrichten von dieser Verteilerliste werden ins Archiv verschoben."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle Nachrichten von dieser Verteilerliste werden in den Papierkorb verschoben."
+      ],
+      "All messages stored in this folder will be permanently deleted.": [
+        "Alle in diesem Ordner gespeicherten Nachrichten werden dauerhaft gelöscht."
+      ],
+      "All messages stored with this label will be permanently deleted.": [
+        "Alle in dieser Kategorie gespeicherten Nachrichten werden dauerhaft gelöscht."
+      ],
+      "All your calendars are disabled.": [
+        "Alle deine Kalender sind deaktiviert."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Eine E-Mail zur Abmeldung wird in deinem Namen versendet."
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "Ein weiterer Tipp wird beim nächsten Öffnen von Mail angezeigt"
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Alle geplanten oder zurückgestellten Nachrichten werden verworfen."
+      ],
+      "Apply to future messages": [
+        "Auf zukünftige Nachrichten anwenden"
+      ],
+      "Applying actions to conversations": [
+        "Aktionen werden auf Unterhaltungen angewandt"
+      ],
+      "Applying actions to messages": [
+        "Aktionen werden auf Nachrichten angewandt"
+      ],
+      "Archive existing messages": [
+        "Bestehende Nachrichten archivieren"
+      ],
+      "Are you sure you want to delete all messages in this folder?": [
+        "Möchtest du wirklich alle Nachrichten in diesem Ordner löschen?"
+      ],
+      "Are you sure you want to delete all messages with this label?": [
+        "Möchtest du wirklich alle Nachrichten mit dieser Kategorie löschen?"
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Möchtest du wirklich alle hier vorliegenden Nachrichten ins Archiv verschieben?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Möchtest du wirklich alle hier vorliegenden Nachrichten in den Papierkorb verschieben?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Möchtest du wirklich ${ count } Unterhaltung dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Unterhaltungen dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Möchtest du wirklich ${ count } Entwurf dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Entwürfe dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Möchtest du wirklich ${ count } Nachricht dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Nachrichten dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Möchtest du diese Unterhaltung wirklich dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete this draft?": [
+        "Möchtest du diesen Entwurf wirklich dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Möchtest du diese Nachricht wirklich dauerhaft löschen?"
+      ],
+      "Attach public key": [
+        "Öffentlichen Schlüssel anhängen"
+      ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Nachrichten, die länger als 30 Tage im Papierkorb und Spam liegen, automatisch löschen."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Eingehende E-Mails automatisch in Kategorien sortieren"
+      ],
+      "Block sender": [
+        "Absender sperren"
+      ],
+      "Body: ": [
+        "Nachrichteninhalt: "
+      ],
+      "Browse privately and access blocked content.": [
+        "Privates Surfen und Zugriff auf gesperrte Inhalte."
+      ],
+      "Browser not supported": [
+        "Browser nicht unterstützt"
+      ],
+      "Bulk delete": [
+        "Massenlöschung"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Du findest nicht, wonach du suchst? ${ displayAllMailButton }"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategorien funktionieren genau wie Spamfilter. ${ MAIL_APP_NAME } liest niemals deine E-Mails oder teilt deine Daten."
+      ],
+      "Clear browser data": [
+        "Browserdaten löschen"
+      ],
+      "Clear selection": [
+        "Auswahl aufheben"
+      ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Durch das Löschen der Browserdaten wird auch das Suchen von Nachrichteninhalten auf diesem Gerät deaktiviert. Alle Nachrichten müssen dann erneut heruntergeladen werden, um sie durchsuchen zu können."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Löscht Browser-Daten (einschließlich heruntergeladener Nachrichten, …)"
+      ],
+      "Click to view group details": [
+        "Anklicken, um Gruppendetails anzuzeigen"
+      ],
+      "Composer:": [
+        "Verfasser:"
+      ],
+      "Confirm phishing report": [
+        "Phishing-Bericht bestätigen"
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Überlege, wann der Empfänger deine E-Mail am besten empfangen soll, und plane den Versand für diesen Zeitpunkt."
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Erstelle einen Ordner wie „${ suggestedFolderName }“, um alle deine Online-Quittungen an einem Ort zu speichern."
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Die Erkennung findet auf deinem Gerät statt, sodass keine Daten von deinen E-Mails an unsere Server gesendet werden."
+      ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Wusstest du, dass dein ${ BRAND_NAME }-Konto einen verschlüsselten Cloud-Speicher enthält? Gehe rüber zu ${ DRIVE_APP_NAME } und nutze deinen Speicherplatz optimal. Es ist kostenlos."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Wusstest du? Wir haben eine kürzere E-Mail-Adresse nur für dich reserviert. Sie besteht aus deinem Benutzernamen, gefolgt von „@${ PM_DOMAIN }“."
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Möchtest du diesen Anhang trotzdem herunterladen?",
+        "Möchtest du diese Anhänge trotzdem herunterladen?"
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Möchtest du die Kontaktdaten erneut signieren und dabei den Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
+      ],
+      "Do you want to re-sign the contact details?": [
+        "Möchtest du die Kontaktdaten neu signieren?"
+      ],
+      "Don't forget to share the password with the recipient": [
+        "Vergiss nicht, dem Empfänger das Passwort mitzuteilen"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Du hast jetzt keine Zeit, eine wichtige E-Mail zu bearbeiten, willst sie aber auch nicht vergessen? Lege eine bessere Zeit fest, zu der sie in deinem Posteingang erscheinen soll."
+      ],
+      "Download application logs for troubleshooting": [
+        "Anwendungsprotokolle zur Fehlerbehebung herunterladen"
+      ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Schreibassistent wird heruntergeladen: ${ progressDisplay } GB"
+      ],
+      "Downloading paused": [
+        "Download pausiert"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Herunterladen pausiert: ${ progressDisplay } GB"
+      ],
+      "Draft": [
+        "Entwurf"
+      ],
+      "Draft discarded": [
+        "Entwurf verworfen"
+      ],
+      "Draft saved.": [
+        "Entwurf gespeichert."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Aufgrund der Konfiguration des Empfängers kann diese Nachricht nicht mit einem Ablaufdatum an ${ firstRecipients } gesendet werden."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Aufgrund der Konfiguration des Empfängers kann diese Nachricht nicht mit einem Ablaufdatum versendet werden."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Verwalte Newsletter und Verteilerlisten und kündige Abonnements ganz einfach."
+      ],
+      "Edit encryption": [
+        "Verschlüsselung bearbeiten"
+      ],
+      "Edit expiration time": [
+        "Ablaufzeit bearbeiten"
+      ],
+      "Email copied to clipboard": [
+        "E-Mail-Adresse in Zwischenablage kopiert"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Die E-Mail wird an dein Postfach weitergeleitet; aber deine E-Mail-Adresse bleibt verborgen."
+      ],
+      "Email tracker protection is disabled": [
+        "E-Mail-Nachverfolgungsschutz ist deaktiviert"
+      ],
+      "embedded image": [
+        "Eingebettetes Bild",
+        "Eingebettete Bilder"
+      ],
+      "Encrypt message": [
+        "Nachricht verschlüsseln"
+      ],
+      "Expand selection": [
+        "Auswahl erweitern"
+      ],
+      "Expand text": [
+        "Text erweitern"
+      ],
+      "Expiration time": [
+        "Gültigkeitsdauer"
+      ],
+      "Expires in ${ formattedDate }": [
+        "Läuft in ${ formattedDate } ab"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Läuft in ${ minutesDiff } Minute ab",
+        "Läuft in ${ minutesDiff } Minuten ab"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Verfällt in weniger als ${ hoursDiff } Stunde",
+        "Verfällt in weniger als ${ hoursDiff } Stunden"
+      ],
+      "file attached": [
+        "Datei angehängt",
+        "Dateien angehängt"
+      ],
+      "Folder": [
+        "Ordner"
+      ],
+      "For messages newer than ${ oldestDate }": [
+        "Für Nachrichten, die neuer sind als ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tag ausprobieren",
+        "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tage ausprobieren"
+      ],
+      "From": [
+        "Von"
+      ],
+      "Generate text": [
+        "Text generieren"
+      ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Gib eingehenden Rechnungen eine farblich gekennzeichnete Kategorie, z. B. „${ suggestedLabelName }“. Sobald sie bezahlt sind, ändere die Kategorie zu „${ suggestedPaidLabelName }“."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Hat ${ numAttachments } Anhang (${ numAttachmentsSize })",
+        "Hat ${ numAttachments } Anhänge (${ numAttachmentsSize })"
+      ],
+      "Hide original message": [
+        "Originalnachricht ausblenden"
+      ],
+      "How hide-my-email aliases works": [
+        "Wie Hide-my-email-Aliasse funktionieren"
+      ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Ich sende diese Nachricht an einen Nicht-${ MAIL_APP_NAME }-Benutzer."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Wenn dein Alias verkauft, geleakt oder missbraucht wird, deaktiviere ihn einfach, um keinen Spam mehr zu erhalten."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Wenn dein Passwort im Dark Web auftaucht, kann ${ BRAND_NAME } dir sagen, von welchem Dienst deine Daten abgeflossen sind und wie du den Schaden aufhalten kannst."
+      ],
+      "Include Spam/Trash.": [
+        "Spam/Papierkorb einschließen."
+      ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Füge deine Eingabeaufforderung und die Antwort ein, um uns bei der Verbesserung der Genauigkeit zu unterstützen."
+      ],
+      "Included for free with your plan": [
+        "Kostenlos in deinem Abonnement inbegriffen"
+      ],
+      "Initializing…": [
+        "Wird initialisiert…"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Trete dem ${ PROTON_SENTINEL_NAME }-Programm bei, um das höchste Maß an Kontosicherheit und Unterstützung zu erhalten."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Bewahre deine Anmeldedaten und Kreditkartendaten sicher, aber immer griffbereit auf, indem du sie zu ${ PASS_APP_NAME } hinzufügst. Dies ist kostenlos und in deinem ${ BRAND_NAME }-Konto enthalten."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Halte dein Postfach sauber, indem du Müll und Spam, die länger als 30 Tage dort liegen, automatisch löschst."
+      ],
+      "Learn more about the writing assistant": [
+        "Mehr erfahren über den Schreibassistenten"
+      ],
+      "Links cleaned:": [
+        "Links bereinigt:"
+      ],
+      "Loading message": [
+        "Nachricht wird geladen"
+      ],
+      "Manage your folders": [
+        "Ordner verwalten"
+      ],
+      "Manage your labels": [
+        "Kategorien verwalten"
+      ],
+      "Mark all as read": [
+        "Alle als gelesen markieren"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Maximale Anzahl von Anhängen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) überschritten."
+      ],
+      "Members": [
+        "Mitglieder"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "Nachrichtenaktionen in Bearbeitung. Dies kann einen Moment dauern."
+      ],
+      "Message download status:": [
+        "Status der heruntergeladenen Nachricht:"
+      ],
+      "Message headers": [
+        "Nachrichtenheader"
+      ],
+      "Message list": [
+        "Nachrichtenliste"
+      ],
+      "Message sent": [
+        "Nachricht gesendet"
+      ],
+      "Message sent.": [
+        "Nachricht gesendet."
+      ],
+      "Message view": [
+        "Nachrichtenansicht"
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Die Nachricht wird am Vormittag um ${ formattedTime } gesendet."
+      ],
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Die Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Die Nachricht wird heute um ${ formattedTime } gesendet"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Die Nachricht wird morgen um ${ formattedTime } gesendet"
+      ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Nachrichten, die länger als 30 Tage im Papierkorb und Spam liegen, werden automatisch gelöscht."
+      ],
+      "More info": [
+        "Weitere Informationen"
+      ],
+      "More refine actions": [
+        "Weitere Verbesserungsaktionen"
+      ],
+      "newsletter": [
+        "Newsletter"
+      ],
+      "No change will be made to the selected emails": [
+        "Es werden keine Änderungen an den ausgewählten E-Mails durchgeführt."
+      ],
+      "No folder found": [
+        "Keine Ordner gefunden"
+      ],
+      "No label found": [
+        "Keine Kategorie gefunden"
+      ],
+      "No links cleaned": [
+        "Keine Links bereinigt"
+      ],
+      "No messages to show": [
+        "Keine Nachrichten zum Anzeigen"
+      ],
+      "No more results found": [
+        "Keine weiteren Ergebnisse gefunden"
+      ],
+      "No trackers found": [
+        "Keine E-Mail-Tracker gefunden"
+      ],
+      "non-${ MAIL_APP_NAME }": [
+        "Nicht-${ MAIL_APP_NAME }"
+      ],
+      "Normal": [
+        "Standard"
+      ],
+      "Optional": [
+        "Optional"
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Unser System hat diese E-Mail als verdächtig eingestuft. Wenn es sich nicht um eine Phishing- oder Betrugs-E-Mail handelt, markiere sie als seriös."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
+      ],
+      "Plain text": [
+        "Unformatierter Reintext"
+      ],
+      "Please add at least one recipient.": [
+        "Bitte füge mindestens einen Empfänger hinzu."
+      ],
+      "Please share what the issue is": [
+        "Bitte teile uns mit, was das Problem ist"
+      ],
+      "Please share what you expected": [
+        "Bitte teile deine Erwartungen"
+      ],
+      "Please wait for the action to be completed": [
+        "Bitte warte, bis die Aktion abgeschlossen ist"
+      ],
+      "Preferences updated": [
+        "Einstellungen aktualisiert"
+      ],
+      "Print email": [
+        "E-Mail drucken"
+      ],
+      "Private by design.": [
+        "Von Haus aus privat."
+      ],
+      "Proofread selection": [
+        "Auswahl gegenlesen"
+      ],
+      "Proofread text": [
+        "Text gegenlesen"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Schütze deine E-Mails mit ${ hideMyEmailAliasesLink } davor, an Mailinglisten oder Spammer weitergegeben zu werden."
+      ],
+      "Quickly spot": [
+        "Schnell erkennen"
+      ],
+      "Recipient: ": [
+        "Empfänger: "
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Denk daran, dies in deinem Passwort-Manager oder wo auch immer du deine Konto- und Anmeldeinformationen aufbewahrst, zu aktualisieren."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Entfernt alle Daten, die mit dieser App verbunden sind (einschließlich heruntergeladener Nachrichten, …)"
+      ],
+      "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
+        "Das Melden einer Nachricht als Phishing-Versuch wird die Nachricht an uns senden, damit wir diese analysieren und unsere Filter verbessern können. Das bedeutet, dass wir den Inhalt der Nachricht vollständig einsehen können."
+      ],
+      "Request read receipt": [
+        "Lesebestätigung anfordern"
+      ],
+      "Right-click for options": [
+        "Rechtsklick für Optionen"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sam., ${ formatTime }"
+      ],
+      "Saved at ${ dateString }": [
+        "Gespeichert um ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Gestern gespeichert"
+      ],
+      "Saved: ${ dateString }": [
+        "Gespeichert: ${ dateString }"
+      ],
+      "Saving draft": [
+        "Entwurf wird gespeichert"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Der geplante Versand dieser Nachricht wird abgebrochen."
+      ],
+      "Scheduling message": [
+        "Nachricht wird geplant"
+      ],
+      "Scribe panel": [
+        "Schreibpanel"
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Suchoption, mit der du sicher nach Schlüsselwörtern im Text von E-Mails suchen kannst."
+      ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Die Suche dauert zu lange? ${ dropdownButton } oder ${ toggleOffButton } diesem Suchlauf aus."
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Sichere noch heute deine Dateien kostenlos mit verschlüsseltem Cloud-Speicher."
+      ],
+      "Seems like you are all caught up for now": [
+        "Es scheint, als wären alle Aufgaben erledigt"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ elementsCount } in ${ location } auswählen",
+        "Alle ${ elementsCount } in ${ location } auswählen"
+      ],
+      "Selection pane": [
+        "Auswahlbereich"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Sende eine verschlüsselte, passwortgeschützte Nachricht an eine ${ boldText } E-Mail-Adresse."
+      ],
+      "Sender has been blocked.": [
+        "Der Absender wurde blockiert."
+      ],
+      "Sending": [
+        "Wird gesendet"
+      ],
+      "Sending message": [
+        "Nachricht wird gesendet"
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }“ gesendet."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Lege ${ MAIL_APP_NAME } als deine Standard-E-Mail-Anwendung für diesen Browser fest. ${ MAIL_APP_NAME } wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
+      ],
+      "Shorten selection": [
+        "Auswahl kürzen"
+      ],
+      "Shorten text": [
+        "Text kürzen"
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Zurückgestellt bis ${ dateString } um ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Bis heute um ${ formattedTime } zurückgestellt"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Bis morgen um ${ formattedTime } zurückgestellt"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Das Zurückstellen dieser Unterhaltung wird beendet."
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Speichermöglichkeiten werden von deinem Browser nicht unterstützt. Wir brauchen diese Unterstützung um die Suche nach Nachrichteninhalten zu aktivieren."
+      ],
+      "Subject": [
+        "Betreff"
+      ],
+      "Subject is end-to-end encrypted": [
+        "Betreff ist Ende-zu-Ende verschlüsselt"
+      ],
+      "Subject:": [
+        "Betreff:"
+      ],
+      "Subject: ": [
+        "Betreff: "
+      ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn du die Seite verlässt."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Die E-Mail-Adresse ${ boldNoReplyEmail } scheint keine Antworten zu akzeptieren. Bist du sicher, dass du deine Nachricht senden möchtest?"
+      ],
+      "The initial setup may take a few minutes.": [
+        "Die erste Einrichtung dauert möglicherweise einige Minuten."
+      ],
+      "The local database is being prepared": [
+        "Die lokale Datenbank wird vorbereitet."
+      ],
+      "The message has expired": [
+        "Die Nachricht ist abgelaufen."
+      ],
+      "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
+        "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchtest, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr rückgängig gemacht werden."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultEmail } gesendet."
+      ],
+      "The sender has requested a read receipt.": [
+        "Der Absender hat eine Lesebestätigung angefordert."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: Der Kontakt ist nicht korrekt signiert. Dies kann auf eine Passwortzurücksetzung zurückzuführen sein. Der Kontakt muss erneut signiert werden, um eine Nachricht an ${ contactAddresses } senden oder den Kontakt bearbeiten zu können.",
+        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: Die Kontakte sind nicht korrekt signiert. Dies kann auf eine Passwortzurücksetzung zurückzuführen sein. Die Kontakte müssen erneut signiert werden, um eine Nachricht an ${ contactAddresses } senden oder die Kontakte bearbeiten zu können."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Der Schreibassistent muss erst vollständig heruntergeladen werden, bevor er verwendet werden kann."
+      ],
+      "Themes can give your inbox a new look.": [
+        "Farbschemas können deinem Posteingang ein neues Aussehen verleihen."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Es befinden sich keine Nachrichten von diesem Absender in deinem Posteingang."
+      ],
+      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
+        "Bei der Signatur, die zur Überprüfung der Kontaktdaten verwendet wurde, ist ein Fehler aufgetreten, der möglicherweise das Ergebnis einer Passwortzurücksetzung ist."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Diese Unterhaltungen werden hier entsprechend der Datenaufbewahrungsrichtlinie deiner Organisation aufbewahrt."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Du erhältst keinen Spam, wenn deine E-Mail-Adresse nicht bekannt ist. Schütze deinen Posteingang mit Hide-my-email-Aliassen."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Diese Unterhaltung enthält eine geplante Nachricht. Das Versenden dieser Nachricht wurde abgebrochen."
+      ],
+      "This conversation contains non-trashed messages.": [
+        "Diese Unterhaltung enthält nicht-gelöschte Nachrichten."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Diese Unterhaltung enthält eine oder mehrere ablaufende Nachrichten."
+      ],
+      "This conversation contains trashed messages.": [
+        "Diese Unterhaltung enthält gelöschte Nachrichten."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Diese Unterhaltung wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
+        "Diese Unterhaltungen werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Diese E-Mail hat die Domain-Authentifizierungsanforderungen nicht bestanden. Sie könnte gefälscht oder unsachgemäß weitergeleitet worden sein."
+      ],
+      "This invitation is saved in a disabled calendar.": [
+        "Diese Einladung wurde in einem deaktivierten Kalender gespeichert."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Dies ist als Schreibhilfe gedacht. Überprüfe den vorgeschlagenen Text auf seine Richtigkeit. ${ learnMoreResult }"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Diese Nachricht hat einen angehängten Schlüssel, dem noch nicht vertraut wurde."
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Diese Nachricht wurde so angepasst, dass sie einem dunklen Hintergrund entspricht."
+      ],
+      "This message is automatically generated as a response to a previous message.": [
+        "Diese Nachricht wurde automatisch als Antwort auf eine vorherige Nachricht erstellt."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Diese Nachricht stammt von einem ${ PASS_APP_NAME }-Alias."
+      ],
+      "This message is from a mailing list.": [
+        "Diese Nachricht wurde von einer Verteilerliste gesendet."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "Diese Nachricht ist mit einem Schlüssel signiert, dem noch nicht vertraut wurde."
+      ],
+      "This message is signed by the key attached, that has not been trusted yet.": [
+        "Diese Nachricht ist mit dem beigefügten Schlüssel signiert, dem noch nicht vertraut wurde."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Diese Nachricht wird um ${ value } automatisch gelöscht."
+      ],
+      "This message will be automatically deleted on ${ value }": [
+        "Diese Nachricht wird am ${ value } automatisch gelöscht."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Diese Nachricht wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
+        "Diese Nachrichten werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Diese Nachricht wird in Entwürfen gespeichert, damit diese bearbeitet werden kann. Der Zeitpunkt für das Versenden der Nachricht muss neu angeben werden."
+      ],
+      "This message will be purged on ${ value }": [
+        "Diese Nachricht wird am ${ value } gelöscht."
+      ],
+      "This message will be purged today at ${ value }": [
+        "Diese Nachricht wird heute um ${ value } gelöscht."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Diese Nachricht wird morgen um ${ value } gelöscht."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Diese Nachricht wird morgens um ${ formattedTime } gesendet."
+      ],
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Diese Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
+      ],
+      "This message will be sent shortly": [
+        "Diese Nachricht wird in Kürze gesendet"
+      ],
+      "This message will be sent today at ${ formattedTime }": [
+        "Diese Nachricht wird heute um ${ formattedTime } gesendet"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Diese Nachricht wird morgen um ${ formattedTime } gesendet"
+      ],
+      "This message will expire ${ formattedDate }": [
+        "Diese Nachricht verfällt am ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Diese Nachricht verfällt am ${ value }."
+      ],
+      "This message will expire today at ${ value }": [
+        "Diese Nachricht verfällt heute um ${ value }."
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Diese Nachricht verfällt morgen um ${ value }."
+      ],
+      "This only needs to be done once.": [
+        "Dies muss nur einmal erledigt werden."
+      ],
+      "This public key will be automatically used for encrypting email sent to this address.": [
+        "Dieser öffentliche Schlüssel wird automatisch für die Verschlüsselung von E-Mails verwendet, die an diese Adresse gesendet werden."
+      ],
+      "This sender's public key has not been trusted yet.": [
+        "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Dies wurde dir angezeigt, weil die Betreffzeile deiner E-Mail Schlüsselwörter zum Zurücksetzen des Passworts enthält."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Dadurch wird der Newsletter-Eintrag aus dieser Liste entfernt. Dadurch wirst du nicht aus dem Newsletter abgemeldet. Er wird wieder angezeigt, wenn neue Mitteilungen eingehen."
+      ],
+      "to ${ destinationElement } folder.": [
+        "in den Ordner ${ destinationElement } verschoben."
+      ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Verwende die Desktopanwendung, um nicht von den offenen Tabs in deinem Browser abgelenkt zu werden."
+      ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "Für das Abmelden von dieser Verteilerliste wird eine E-Mail von ${ boldFrom } mit folgenden Angaben (wie vom Absender des Newsletters festgelegt) gesendet:"
+      ],
+      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
+        "Um dich von dieser Verteilerliste abzumelden, wirst du auf die folgende URL weitergeleitet, auf der du Anweisungen vom Absender des Newsletters erhältst:"
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Morgen, ${ formattedTime }"
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Es befinden sich zu viele Nachrichten für den Versand in der Warteschlange. Bitte warte, bis eine andere Nachricht gesendet wurde, um diese Nachricht planen zu können."
+      ],
+      "Trackers blocked:": [
+        "Tracker blockiert:"
+      ],
+      "Trash existing messages": [
+        "Bestehende Nachrichten in den Papierkorb verschieben"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Schalte diese Funktion aus, um nur nach Datum, Name, E-Mail-Adresse oder Betreffzeile zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren (und heruntergeladene Nachrichten zu löschen, um diese Funktion zu aktivieren), gehe zu Einstellungen."
+      ],
+      "Turn on to search the content of your messages": [
+        "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Wir können in diesem Browser nicht auf Speicherfunktionen zugreifen, benötigen diesen Zugriff aber, um die Suche nach Nachrichteninhalten zu ermöglichen."
+      ],
+      "Unlock message": [
+        "Nachricht entsperren"
+      ],
+      "Unread conversations": [
+        "Ungelesene Unterhaltungen"
+      ],
+      "Unread messages": [
+        "Ungelesene Nachrichten"
+      ],
+      "Unsubscribe": [
+        "Abbestellen"
+      ],
+      "Updating message content search...": [
+        "Suche nach Nachrichteninhalten wird aktualisiert..."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Upgraden auf ${ plan } um freizuschalten"
+      ],
+      "Upgrade to add more addresses to your account.": [
+        "Upgrade, um deinem Konto weitere E-Mail-Adressen hinzuzufügen."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Upgrade zum automatischen Löschen von Nachrichten, die sich seit mehr als 30 Tagen im Papierkorb oder Spam befinden."
+      ],
+      "Upgrade to create more folders, filters, and addresses.": [
+        "Upgrade, um mehr Ordner, Filter und E-Mail-Adressen erstellen zu können."
+      ],
+      "Upgrade to level up your privacy.": [
+        "Führe ein Upgrade durch, um deine Privatsphäre zu verbessern."
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        "Upgrade, um Nachrichten von @pm.me-Adressen senden zu können."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Führe ein Upgrade durch, um E-Mails von deiner persönlichen E-Mail-Domain zu versenden."
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        "Upgrade, um auf einfache Weise Nachrichten an Kontaktgruppen senden zu können."
+      ],
+      "Upgrade to support a privacy-first internet.": [
+        "Upgrade, um ein datenschutzfreundliches Internet zu unterstützen."
+      ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Umsteigen, um unsere Mission für Datenschutz für alle zu unterstützen."
+      ],
+      "Upgrade to support privacy and get more features.": [
+        "Führe ein Upgrade durch, um den Datenschutz zu unterstützen und zusätzliche Funktionen zu erhalten."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Upgrade zum Freischalten von Premium-Funktionen."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Führe ein Upgrade durch, um ${ MAIL_APP_NAME } mit Apple Mail, Outlook oder Thunderbird zu nutzen."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Führe ein Upgrade durch, um automatische Antworten zu nutzen, wenn du abwesend bist."
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Verwende verschiedene E-Mail-Adressen für unterschiedliche Zwecke, damit du deine E-Mails leicht nach Arbeit, Privatleben oder anderen Bereichen trennen kannst."
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "Nutze Tastaturkürzel, um E-Mails schneller zu verwalten."
+      ],
+      "Version ${ appVersion }": [
+        "Version ${ appVersion }"
+      ],
+      "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
+        "Tut uns leid, da haben wir möglicherweise einen Fehler gemacht. Bitte bestätige, dass du diese E-Mail als seriös kennzeichnen möchtest."
+      ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Wir haben die folgenden Werbetreibenden und Organisationen daran gehindert zu sehen, wann du diese E-Mail öffnest, welches Gerät du verwendest und wo du dich befindest."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Wir können die Suche nach Nachrichteninhalten in diesem Browser nicht aktivieren."
+      ],
+      "We could not verify the sender's trusted keys.": [
+        "Die vertrauenswürdigen Schlüssel des Absenders konnten nicht verifiziert werden."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Wir haben Tracking-Informationen von den folgenden Links entfernt, um dich vor Werbetreibenden und anderen zu schützen, die versuchen, deine Online-Aktivitäten zu verfolgen."
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Wann möchtest du, dass deine Nachricht automatisch aus dem Posteingang des Empfängers und aus deinem Gesendet-Ordner gelöscht wird?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Wann soll sich die Nachricht selbst zerstören?"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Wenn du deine E-Mail-Adresse weitergibst, verwende anstelle deiner echten E-Mail-Adresse einen eindeutigen und einmaligen Hide-my-email-Alias."
+      ],
+      "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
+        "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Wenn du dich für einen Newsletter anmeldest, verwende einen Alias anstelle deiner E-Mail-Adresse. Deine Identität bleibt verborgen, und du kannst den Alias jederzeit deaktivieren."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Wenn du auf Reisen bist oder ein öffentliches WLAN nutzt, verbinde dich mit ${ VPN_APP_NAME }, um zu verhindern, dass jemand deine Online-Aktivitäten verfolgt oder deine Daten stiehlt. Es ist kostenlos."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Mit neuen E-Mail-Kategorien landen nur wichtige Nachrichten in deinem Haupt-Posteingang. Alles andere wird in Kategorien organisiert."
+      ],
+      "writing assistant iframe": [
+        "Schreibassistent-iFrame"
+      ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Du kannst es als Anhang hinzufügen oder eingebettet in den Text deiner Nachricht anzeigen."
+      ],
+      "You can either update your search query or ${ button }": [
+        "Du kannst deine Suchanfrage entweder aktualisieren oder ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Du kannst deine Suchanfrage entweder aktualisieren oder löschen."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Du kannst ${ VPN_APP_NAME } heute kostenlos nutzen."
+      ],
+      "You cannot reply from the invited address.": [
+        "Du kannst nicht von der eingeladenen Adresse aus antworten."
+      ],
+      "You do not have any messages here": [
+        "Noch keine Nachrichten vorhanden"
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
+        "Du hast **${ count } Unterhaltungen** in diesem Ordner gespeichert"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Es wurde **${ count } Unterhaltung** zu dieser Kategorie hinzugefügt",
+        "Es wurde **${ count } Unterhaltungen** zu dieser Kategorie hinzugefügt"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Du hast **${ count } Nachricht** in diesem Ordner gespeichert",
+        "Du hast **${ count } Nachrichten** in diesem Ordner gespeichert"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Du hast **${ count } Nachricht** zu dieser Kategorie hinzugefügt",
+        "Du hast **${ count } Nachrichten** zu dieser Kategorie hinzugefügt"
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Du hast in deiner E-Mail keinen Betreff angegeben. Möchtest du die Nachricht trotzdem versenden?"
+      ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "Du hast deinen Speicherplatz zu 100 % aufgebraucht. Gib Speicherplatz frei oder füge deinem Konto zusätzlichen Speicherplatz hinzu, um neue Nachrichten verfassen zu können."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Du hast die maximale Anzahl von 5 Antworten erreicht."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Es wurde **${ count } Unterhaltung** in diesem Ordner ausgewählt",
+        "Es wurden **${ count } Unterhaltungen** in diesem Ordner ausgewählt"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Du hast **${ count } Unterhaltung** mit dieser Kategorie ausgewählt",
+        "Du hast **${ count } Unterhaltungen** mit dieser Kategorie ausgewählt"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Du hast **${ count } Nachricht** in diesem Ordner ausgewählt",
+        "Du hast **${ count } Nachrichten** in diesem Ordner ausgewählt"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Du hast **${ count } Nachricht** mit dieser Kategorie ausgewählt",
+        "Du hast **${ count } Nachrichten** mit dieser Kategorie ausgewählt"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du hast **${ elementsCount } Unterhaltung** in ${ location } ausgewählt.",
+        "Du hast **${ elementsCount } Unterhaltungen** in ${ location } ausgewählt."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du hast **${ elementsCount } Unterhaltung** ausgewählt.",
+        "Du hast **${ elementsCount } Unterhaltungen** ausgewählt."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du hast **${ elementsCount } Nachricht** in ${ location } ausgewählt.",
+        "Du hast **${ elementsCount } Nachrichten** in ${ location } ausgewählt."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du hast **${ elementsCount } Nachricht** ausgewählt.",
+        "Du hast **${ elementsCount } Nachrichten** ausgewählt."
+      ],
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Dein Browser unterstützt den Schreibassistenten nicht. Versuche ihn auf Servern auszuführen."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Deine Hardware unterstützt die lokale Ausführung des Schreibassistenten nicht. Versuche ihn auf Servern auszuführen."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Deine Nachricht wird in ${ numberOfDays } Tag ablaufen.",
+        "Deine Nachricht wird in ${ numberOfDays } Tagen ablaufen."
+      ],
+      "Your message will expire today.": [
+        "Deine Nachricht wird heute ablaufen."
+      ],
+      "Your message will expire tomorrow.": [
+        "Deine Nachricht wird morgen ablaufen."
+      ],
+      "Your private writing assistant": [
+        "Dein privater Schreibassistent"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
       ]
     },
     "info": {
@@ -7415,7 +9509,7 @@
         "Kategorien-ID"
       ],
       "Mail debugging information": [
-        "Fehlersuche-Informationen per E-Mail"
+        "Informationen zur Fehlersuche in Mail"
       ],
       "Mail logs": [
         "E-Mail-Protokolle"
@@ -7430,7 +9524,195 @@
         "Speicherstatus"
       ],
       "Tab age": [
-        "Registerkarte „Alter“"
+        "Tab-Alter"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Alle Nachrichten als gelesen markieren"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Alle Nachrichten nach ${ boldFolderName } verschieben"
+      ],
+      "${ count } unread conversation": [
+        "${ count } ungelesene Unterhaltung",
+        "${ count } ungelesene Unterhaltungen"
+      ],
+      "${ count } unread message": [
+        "${ count } ungelesene Nachricht",
+        "${ count } ungelesene Nachrichten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "/month": [
+        "/ Monat"
+      ],
+      "Active filter:": [
+        "Aktive Filter:"
+      ],
+      "All contacts": [
+        "Alle Kontakte"
+      ],
+      "Also archive": [
+        "Auch archivieren"
+      ],
+      "Always label sender's emails": [
+        "Nachrichten dieses Absenders immer kategorisieren"
+      ],
+      "Always move sender's emails": [
+        "Nachrichten dieses Absenders immer verschieben"
+      ],
+      "Apply to future messages": [
+        "Auf zukünftige Nachrichten anwenden"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "Blind Carbon Copy": [
+        "Blindkopie"
+      ],
+      "Carbon Copy": [
+        "Kopie"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "Choose what to do instead": [
+        "Wählen, was stattdessen zu tun ist"
+      ],
+      "Cleaned": [
+        "Bereinigt"
+      ],
+      "Date:": [
+        "Datum:"
+      ],
+      "Did not follow instructions": [
+        "Hat die Anweisungen nicht befolgt"
+      ],
+      "Don't like the style": [
+        "Mir gefällt der Stil nicht"
+      ],
+      "Don't show again": [
+        "Nicht wieder anzeigen"
+      ],
+      "Don't show this suggestion": [
+        "Diesen Vorschlag nicht anzeigen"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Email categories": [
+        "E-Mail-Kategorien"
+      ],
+      "Enable filter": [
+        "Filter aktivieren"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Ordner ${ newFolderName } konnte nicht erstellt werden"
+      ],
+      "Filters": [
+        "Filter"
+      ],
+      "Frequency": [
+        "Häufigkeit"
+      ],
+      "From": [
+        "Von"
+      ],
+      "From:": [
+        "Von:"
+      ],
+      "Has attachments": [
+        "Enthält Anhänge"
+      ],
+      "Keyword": [
+        "Schlüsselwort"
+      ],
+      "Layout": [
+        "Anordnung"
+      ],
+      "Manage my addresses": [
+        "E-Mail-Adressen verwalten"
+      ],
+      "Marked as read": [
+        "Als gelesen markiert"
+      ],
+      "Message:": [
+        "Nachricht:"
+      ],
+      "Move ${ sidebarElementName }": [
+        "${ sidebarElementName } verschieben"
+      ],
+      "Move messages to": [
+        "Nachrichten verschieben nach"
+      ],
+      "Moved to ${ labelName }": [
+        "Verschoben nach ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Ins Archiv verschoben"
+      ],
+      "Moved to Trash": [
+        "In den Papierkorb verschoben"
+      ],
+      "Newsletter entry deleted": [
+        "Newslettereintrag gelöscht"
+      ],
+      "Not factually correct": [
+        "Faktisch nicht korrekt"
+      ],
+      "Open in a new tab": [
+        "In einem neuen Tab öffnen"
+      ],
+      "Original link": [
+        "Original-Link"
+      ],
+      "Password hint": [
+        "Passworthinweis"
+      ],
+      "Recipient": [
+        "Empfänger"
+      ],
+      "Remember my choice": [
+        "Auswahl merken"
+      ],
+      "Remove metadata": [
+        "Metadaten entfernen"
+      ],
+      "Search in": [
+        "Suchen in"
+      ],
+      "Sender": [
+        "Absender"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Teile deine Verfügbarkeit mit Buchungsseiten in ${ CALENDAR_APP_NAME } und veranstalte sichere Meetings mit ${ MEET_APP_NAME }."
+      ],
+      "Size:": [
+        "Größe:"
+      ],
+      "Subject:": [
+        "Betreff:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Der Filter ist deaktiviert. ${ enableButton }"
+      ],
+      "Time": [
+        "Zeit"
+      ],
+      "To:": [
+        "An:"
+      ],
+      "Undisclosed Recipients": [
+        "Verborgene Empfänger"
+      ],
+      "Unsafe or problematic": [
+        "Unsicher oder problematisch"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Von ${ truncatedName } abgemeldet"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7440,7 +9722,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "An"
+        "Bis"
       ]
     },
     "Label for contact group color": {
@@ -7606,6 +9888,138 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "All mail": [
+        "Alle E-Mails"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Erstelle einen Kalender, der mit einer aktiven E-Mail-Adresse verknüpft ist."
+      ],
+      "Create a new calendar to add this event": [
+        "Erstelle einen neuen Kalender, um diesen Termin hinzufügen zu können"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Erstelle einen neuen Kalender, um diese Einladung beantworten zu können"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Erstelle einen neuen Kalender, um deine Einladungen verwalten zu können."
+      ],
+      "Deleted": [
+        "Gelöscht"
+      ],
+      "Drafts": [
+        "Entwürfe"
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Aktiviere eine E-Mail-Adresse, die mit einem deiner Kalender verknüpft ist."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Aktiviere die mit dem deaktivierten Kalender verknüpfte E-Mail-Adresse, um den Termin absagen zu können."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Aktiviere die mit dem deaktivierten Kalender verknüpfte E-Mail-Adresse, um deine Antwort ändern zu können."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Aktiviere deine Adresse erneut, um deine Antwort ändern zu können."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Aktiviere deine E-Mail-Adresse, um auf diese Einladung antworten zu können."
+      ],
+      "Folders": [
+        "Ordner"
+      ],
+      "Inbox": [
+        "Postfach"
+      ],
+      "Labels": [
+        "Kategorien"
+      ],
+      "Learn more.": [
+        "Mehr erfahren."
+      ],
+      "Less": [
+        "Weniger"
+      ],
+      "Manage blocked email addresses": [
+        "Blockierte E-Mail-Adressen verwalten"
+      ],
+      "Manage your folders": [
+        "Ordner verwalten"
+      ],
+      "More": [
+        "Mehr"
+      ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "In ${ CALENDAR_APP_NAME } öffnen"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Aktualisierten Termin in ${ CALENDAR_APP_NAME } öffnen"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Oder du löschst einen deiner Kalender und erstellst einen neuen Kalender, der mit einer aktiven E-Mail-Adresse verknüpft ist."
+      ],
+      "Outbox": [
+        "Postausgang"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Reaktiviere die mit diesem Kalender verknüpfte E-Mail-Adresse, um deine Einladung verwalten zu können."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Reaktiviere die mit diesem Kalender verknüpfte E-Mail-Adresse, um deine Einladung aktualisieren zu können."
+      ],
+      "Scheduled": [
+        "Geplant"
+      ],
+      "Sent": [
+        "Gesendet"
+      ],
+      "Sign up for free": [
+        "Kostenlos registrieren"
+      ],
+      "Snooze": [
+        "Zurückstellen"
+      ],
+      "Snoozed": [
+        "Zurückgestellt"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Markiert"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Diese ICS-Datei enthält mehr als einen Termin. Bitte lade sie herunter und importiere die Termine in ${ CALENDAR_APP_NAME }."
+      ],
+      "Views": [
+        "Ansichten"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Du musst deine Kalenderschlüssel aktivieren, um dieses Ereignis hinzufügen zu können"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Du musst deine Kalenderschlüssel aktivieren, um auf diese Einladung antworten zu können"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Die Kalenderschlüssel müssen aktiviert werden, um diese Einladung verwalten zu können."
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Du musst deine Kalenderschlüssel aktivieren, um den aktualisierten Termin anzeigen zu können."
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Du musst deine Kalenderschlüssel aktivieren, um die aktualisierte Einladung anzeigen zu können."
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Du musst deine Schlüssel erneut aktivieren, um diese Einladung verwalten zu können."
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Du musst deine Schlüssel erneut aktivieren, um den aktualisierten Termin anzeigen zu können."
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können."
       ]
     },
     "Loading info": {
@@ -7789,6 +10203,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
+      ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ senderString } schrieb am ${ date }:"
       ]
     },
     "Message display when a new app version is available": {
@@ -8945,6 +11362,21 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
+      ],
+      "Block removed": [
+        "Sperre entfernt"
+      ],
+      "Password has been set successfully": [
+        "Passwort wurde erfolgreich gesetzt"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Absender ${ firstSenderAddress } blockiert"
+      ],
+      "Senders blocked": [
+        "Absender blockiert"
+      ],
+      "The writing assistant is ready to use": [
+        "Der Schreibassistent ist einsatzbereit"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9099,6 +11531,117 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Wähle zunächst einen Anzeigenamen aus. Diesen werden deine Empfänger sehen, wenn du ihnen eine E-Mail sendest, sie zu einem Termin einlädst oder eine Datei mit ihnen teilst."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } bedeutet, dass du niemals gesponserte Anzeigen in unseren Apps sehen wirst."
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } stellt sicher, dass nur du und die vorgesehenen Empfänger auf deine E-Mails zugreifen können."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } verhindert, dass betrügerische E-Mails jemals deinen Posteingang erreichen."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } im App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } im Play Store"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } bedeutet, dass du nicht mehr über das Internet verfolgt wirst."
+      ],
+      "Activate premium features": [
+        "Premiumfunktionen"
+      ],
+      "Activate selected": [
+        "Ausgewählte aktivieren"
+      ],
+      "Ad-free promise": [
+        "Werbefreies Versprechen"
+      ],
+      "Advanced encryption": [
+        "Fortschrittliche Verschlüsselung"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "Anytime, anywhere access": [
+        "Jederzeit und überall Zugang"
+      ],
+      "Auto-delete spam and trash": [
+        "Spam und Papierkorb automatisch löschen"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Lösche gelöschte und Spam-E-Mails nach 30 Tagen."
+      ],
+      "Continue": [
+        "Weiter"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Entdecke ${ MAIL_APP_NAME }"
+      ],
+      "Distraction-free emailing": [
+        "Ablenkungsfreier E-Mail-Verkehr"
+      ],
+      "Download the desktop app": [
+        "Desktop-App herunterladen"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Lade unsere ${ mobileAppAppStoreLink } oder ${ mobileAppGooglePlayLink } App herunter, um jederzeit auf deine E-Mails zugreifen zu können und ein optimiertes mobiles Erlebnis zu haben."
+      ],
+      "Get notified if your password is compromised.": [
+        "Lass dich benachrichtigen, wenn dein Passwort kompromittiert wurde."
+      ],
+      "Industry-leading spam protection": [
+        "Branchenführender Spam-Schutz"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Let's get started": [
+        "Fangen wir an"
+      ],
+      "Make the most of your paid plan.": [
+        "Nutze dein kostenpflichtiges Angebot optimal aus."
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Protection from trackers": [
+        "Schutz vor Trackern"
+      ],
+      "Replay introduction": [
+        "Einführung erneut durchlaufen"
+      ],
+      "Set a display name": [
+        "Anzeigename festlegen"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Beginne mit ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Verwende die kürzere, eingängigere Version deiner E-Mail-Adresse."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Willkommen bei ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Wo Privatsphäre der Standard ist."
+      ],
+      "You are all set!": [
+        "Du bist startklar!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Deine Domain ${ domain } und dein ${ subscriptionName } Abonnement sind jetzt bereit."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Deine Domain und dein Abonnement sind jetzt bereit."
       ]
     },
     "Onboarding Proton": {
@@ -9119,6 +11662,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Du kannst dein Farbschema jederzeit in den Einstellungen ändern."
+      ],
+      "Choose your preferred look and feel.": [
+        "Wähle dein bevorzugtes Aussehen und deine bevorzugte Bedienung."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Verlinke deinen Domainnamen und erstelle Konten für alle Mitglieder deiner Organisation."
+      ],
+      "Make it your own": [
+        "Mach es zu deinem"
       ]
     },
     "Onboarding Trial": {
@@ -9189,6 +11741,9 @@
       ],
       "Yes, don't show again": [
         "Ja, nicht erneut anzeigen"
+      ],
+      "All": [
+        "Alle"
       ]
     },
     "Option group": {
@@ -9763,6 +12318,63 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Describe what to change": [
+        "Beschreibe, was geändert werden soll."
+      ],
+      "Filter folders": [
+        "Ordner filtern"
+      ],
+      "Filter labels": [
+        "Kategorien filtern"
+      ],
+      "Generating": [
+        "Wird generiert"
+      ],
+      "Hint": [
+        "Hinweis"
+      ],
+      "Please share what you expected": [
+        "Bitte teile deine Erwartungen"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Nach Datum, Name, E-Mail-Adresse oder Betreff suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
+      ],
+      "Search messages": [
+        "Nachrichten durchsuchen"
+      ],
+      "Search name, email or group": [
+        "Name, E-Mail oder Gruppe suchen"
+      ],
+      "Subject": [
+        "Betreff"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Sag ${ subject }, was geschrieben werden soll. Beispiel: „Kündige bevorstehende Termine in einem Newsletter an“"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Kündige meine Mitgliedschaft im Fitnessstudio“"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Lade Jane zu meiner Party ein“"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Danke meinem Kollegen für die Hilfe bei einem Projekt“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Schreibe ein Anschreiben für ein Praktikum“"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "${ subject } sagen, was geschrieben werden soll. Beispiel: „Verfasse eine Folge-E-Mail an einen Kunden“"
+      ],
+      "the writing assistant": [
+        "der Schreibassistent"
+      ],
+      "To": [
+        "An"
       ]
     },
     "Placeholder for contact group name": {
@@ -11311,11 +13923,237 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "${ count } conversation deleted": [
+        "${ count } Unterhaltung gelöscht",
+        "${ count } Unterhaltungen gelöscht"
+      ],
+      "${ count } draft deleted": [
+        "${ count } Entwurf gelöscht",
+        "${ count } Entwürfe gelöscht"
+      ],
+      "${ count } message deleted": [
+        "${ count } Nachricht gelöscht",
+        "${ count } Nachrichten gelöscht"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } Unterhaltung zu ${ labelName } hinzugefügt.",
+        "${ elementsCount } Unterhaltungen zu ${ labelName } hinzugefügt."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } Unterhaltung als „Gelesen“ gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen als „Gelesen“ gekennzeichnet."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } Unterhaltung gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen gekennzeichnet."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } Unterhaltung als ungelesen markieren.",
+        "${ elementsCount } Unterhaltungen als ungelesen markieren."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } Unterhaltung in „${ labelName }“ verschoben und der Absender zur Liste „Kein Spam“ hinzugefügt.",
+        "${ elementsCount } Unterhaltungen in „${ labelName }“ verschoben und die Absender zur Liste „Kein Spam“ hinzugefügt."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } Unterhaltung nach „${ labelName }“ verschoben.",
+        "${ elementsCount } Unterhaltungen nach „${ labelName }“ verschoben."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Unterhaltungen in Spam verschoben und Absender zur Spamliste hinzugefügt."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } Unterhaltung aus „${ labelName }“ entfernt.",
+        "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } Unterhaltung aus „Markiert“ entfernt.",
+        "${ elementsCount } Unterhaltungen aus „Markiert“ entfernt."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } Unterhaltung zurückgestellt",
+        "${ elementsCount } Unterhaltungen zurückgestellt"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } Unterhaltung nicht mehr zurückstellen",
+        "${ elementsCount } Unterhaltungen nicht mehr zurückstellen"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } Nachricht zu „${ labelName }“ hinzugefügt.",
+        "${ elementsCount } Nachrichten zu „${ labelName }“ hinzugefügt."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } Nachricht als gelesen markiert.",
+        "${ elementsCount } Nachrichten als gelesen markiert."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } Nachricht gekennzeichnet.",
+        "${ elementsCount } Nachrichten gekennzeichnet."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } Nachricht als ungelesen markiert.",
+        "${ elementsCount } Nachrichten als ungelesen markiert."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } Nachricht in „${ labelName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt.",
+        "${ elementsCount } Nachrichten in „${ labelName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } Nachricht nach „${ labelName }“ verschoben.",
+        "${ elementsCount } Nachrichten nach „${ labelName }“ verschoben."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Nachrichten in Spam verschoben und Absender zur Spamliste hinzugefügt."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } Nachricht aus „${ labelName }“ entfernt.",
+        "${ elementsCount } Nachrichten aus „${ labelName }“ entfernt."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } Nachricht aus \"Markiert\" entfernt.",
+        "${ elementsCount } Nachrichten aus „Markiert“ entfernt."
+      ],
+      "Address verification disabled": [
+        "Adressüberprüfung deaktiviert"
+      ],
+      "Content copied to clipboard": [
+        "Inhalt in die Zwischenablage kopiert"
+      ],
+      "Conversation added to ${ labelName }.": [
+        "Unterhaltung zu „${ labelName }“ hinzugefügt."
+      ],
+      "Conversation marked as read.": [
+        "Unterhaltung als gelesen markiert."
+      ],
+      "Conversation marked as Starred.": [
+        "Unterhaltung markiert."
+      ],
+      "Conversation marked as unread.": [
+        "Unterhaltung als ungelesen markiert."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Unterhaltung in „${ labelName }“ verschoben und Absender zur Liste \"Kein Spam\" hinzugefügt."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Unterhaltung in „${ labelName }“ verschoben."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt."
+      ],
+      "Conversation removed from ${ labelName }.": [
+        "Unterhaltung aus „${ labelName }“ entfernt."
+      ],
+      "Conversation removed from Starred.": [
+        "Unterhaltung aus „Markiert“ entfernt."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Unterhaltungen von ${ sendersList } werden als ${ labelsList } kategorisiert"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Unterhaltungen von ${ sendersList } werden in den Ordner ${ folder } verschoben"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "„${ code }“ in die Zwischenablage kopiert"
+      ],
+      "Draft deleted": [
+        "Entwurf gelöscht"
+      ],
+      "Labels applied.": [
+        "Kategorien angewendet."
+      ],
+      "Mail list unsubscribed": [
+        "Aus Verteilerliste ausgetragen"
+      ],
+      "Message added to ${ labelName }.": [
+        "Nachricht zu „${ labelName }“ hinzugefügt."
+      ],
+      "Message content search enabled": [
+        "Suche nach Nachrichteninhalten aktiviert"
+      ],
+      "Message deleted": [
+        "Nachricht gelöscht"
+      ],
+      "Message expiration canceled": [
+        "Gültigkeitsdauer der Nachricht aufgehoben."
+      ],
+      "Message marked as legitimate": [
+        "Nachricht als seriös markiert"
+      ],
+      "Message marked as read.": [
+        "Nachricht als gelesen markiert."
+      ],
+      "Message marked as Starred.": [
+        "Nachricht markiert."
+      ],
+      "Message marked as unread.": [
+        "Nachricht als ungelesen markiert."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Nachricht in „${ labelName }“ verschoben und Absender zur Liste \"Kein Spam\" hinzugefügt."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Nachricht in „${ labelName }“ verschoben."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt."
+      ],
+      "Message removed from ${ labelName }.": [
+        "Nachricht aus „${ labelName }“ entfernt."
+      ],
+      "Message removed from Starred.": [
+        "Nachricht aus \"Markiert\" entfernt."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Die Nachrichten von ${ sendersList } werden als ${ labelsList } gekennzeichnet"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Nachrichten von ${ sendersList } werden in den Ordner ${ folder } verschoben."
+      ],
+      "Move ${ selectionCount } conversation": [
+        "${ selectionCount } Unterhaltung verschieben",
+        "${ selectionCount } Unterhaltungen verschieben"
+      ],
+      "Move ${ selectionCount } message": [
+        "${ selectionCount } Nachricht verschieben",
+        "${ selectionCount } Nachrichten verschieben"
+      ],
+      "Phishing reported": [
+        "Phishing gemeldet"
+      ],
+      "Public key trusted": [
+        "Öffentlicher Schlüssel vertrauenswürdig"
+      ],
+      "Read receipt sent": [
+        "Lesebestätigung gesendet"
+      ],
+      "Self-destruction removed": [
+        "Selbstzerstörung entfernt"
+      ],
+      "Self-destruction set": [
+        "Selbstzerstörung gesetzt"
+      ],
+      "Thanks for the feedback!": [
+        "Danke für die Rückmeldung."
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } entfernt"
+      ],
+      " is now active": [
+        " ist jetzt aktiv"
+      ],
+      "The filter has been disabled": [
+        "Der Filter wurde deaktiviert"
+      ],
+      "The filter has been enabled": [
+        "Der Filter wurde aktiviert"
+      ],
+      "The filter is active again": [
+        "Der Filter ist wieder aktiv"
       ]
     },
     "Suffix": {
@@ -12153,6 +14991,398 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } Nachricht",
+        "${ numMessages } Nachrichten"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } ungelesene Nachricht",
+        "${ unreads } ungelesene Nachrichten"
+      ],
+      "Action all conversations": [
+        "Auf alle Unterhaltungen anwenden"
+      ],
+      "Action all messages": [
+        "Aktion für alle Nachrichten ausführen"
+      ],
+      "Archive all messages?": [
+        "Alle Nachrichten archivieren?"
+      ],
+      "Attachments": [
+        "Anhänge"
+      ],
+      "Bad time for this email?": [
+        "Schlechter Zeitpunkt für diese E-Mail?"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "Blind Carbon Copy": [
+        "Blindkopie"
+      ],
+      "Block sender": [
+        "Absender sperren"
+      ],
+      "Carbon Copy": [
+        "Kopie"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "Confirm recipient address?": [
+        "Empfängeradresse bestätigen?"
+      ],
+      "Conversation list": [
+        "Unterhaltungsliste"
+      ],
+      "Craft better emails": [
+        "Bessere E-Mails erstellen"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Erstelle bessere E-Mails mit ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Create folder \"${ search }\"": [
+        "Ordner „${ search }“ erstellen"
+      ],
+      "Create label \"${ search }\"": [
+        "Kategorie „${ search }“ erstellen"
+      ],
+      "Decryption error": [
+        "Entschlüsselungsfehler"
+      ],
+      "Delete ${ count } conversation": [
+        "${ count } Unterhaltung löschen",
+        "${ count } Unterhaltungen löschen"
+      ],
+      "Delete ${ count } draft": [
+        "${ count } Entwurf löschen",
+        "${ count } Entwürfe löschen"
+      ],
+      "Delete ${ count } message": [
+        "${ count } Nachricht löschen",
+        "${ count } Nachrichten löschen"
+      ],
+      "Delete all messages": [
+        "Alle Nachrichten löschen"
+      ],
+      "Delete conversation": [
+        "Unterhaltung löschen"
+      ],
+      "Delete draft": [
+        "Entwurf löschen"
+      ],
+      "Delete message": [
+        "Nachricht löschen"
+      ],
+      "Discover your subscription benefits": [
+        "Entdecke die Vorteile deines Abonnements"
+      ],
+      "Don't give spam a chance": [
+        "Gib Spam keine Chance"
+      ],
+      "Email content": [
+        "E-Mail-Inhalt"
+      ],
+      "Enable message content search": [
+        "Suche nach Nachrichteninhalten aktivieren"
+      ],
+      "External encryption": [
+        "Externe Verschlüsselung"
+      ],
+      "Filter on...": [
+        "Filtern nach..."
+      ],
+      "Folder options": [
+        "Ordneroptionen"
+      ],
+      "Forward": [
+        "Weiterleiten"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Gestalte die Zukunft von E-Mail-Kategorien in ${ MAIL_APP_NAME } mit"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Verstecke deine E-Mail-Adresse mit ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "So aktualisierst du deine E-Mail-Adresse"
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Erhöhte Sicherheit mit ${ VPN_APP_NAME }"
+      ],
+      "Increase your privacy with more addresses": [
+        "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
+      ],
+      "Insert contacts": [
+        "Kontakte einfügen"
+      ],
+      "Label as": [
+        "Folgender Kategorie zuordnen"
+      ],
+      "Label options": [
+        "Kategorieoptionen"
+      ],
+      "Load embedded images": [
+        "Eingebettete Bilder laden"
+      ],
+      "Load remote content": [
+        "Externe Inhalte laden"
+      ],
+      "Loading...": [
+        "Wird geladen…"
+      ],
+      "Mailing list": [
+        "Verteilerliste",
+        "Verteilerlisten"
+      ],
+      "Mark all messages as read": [
+        "Alle Nachrichten als gelesen markieren"
+      ],
+      "Mark as read": [
+        "Als gelesen markieren"
+      ],
+      "Mark as unread": [
+        "Als ungelesen markieren"
+      ],
+      "Mark conversations as read": [
+        "Unterhaltungen als gelesen markieren"
+      ],
+      "Mark conversations as unread": [
+        "Unterhaltungen als ungelesen markieren"
+      ],
+      "Mark email as legitimate": [
+        "E-Mail als seriös kennzeichnen"
+      ],
+      "Mark messages as read": [
+        "Nachrichten als gelesen markieren"
+      ],
+      "Mark messages as unread": [
+        "Nachrichten als ungelesen markieren"
+      ],
+      "Message details": [
+        "Nachrichtendetails"
+      ],
+      "Message list": [
+        "Nachrichtenliste"
+      ],
+      "Message will expire": [
+        "Nachricht wird ablaufen"
+      ],
+      "More": [
+        "Mehr"
+      ],
+      "More actions": [
+        "Weitere Aktionen"
+      ],
+      "More options": [
+        "Weitere Optionen"
+      ],
+      "More selections": [
+        "Weitere Auswahlmöglichkeiten"
+      ],
+      "Move all conversations": [
+        "Alle Unterhaltungen verschieben"
+      ],
+      "Move all messages": [
+        "Alle Nachrichten verschieben"
+      ],
+      "Move all messages to archive": [
+        "Alle Nachrichten ins Archiv verschieben"
+      ],
+      "Move all messages to trash": [
+        "Alle Nachrichten in den Papierkorb verschieben"
+      ],
+      "Move to": [
+        "Verschieben nach"
+      ],
+      "Move to inbox": [
+        "In den Posteingang verschieben"
+      ],
+      "Move to inbox (not spam)": [
+        "In Posteingang verschieben (kein Spam)"
+      ],
+      "Move to spam": [
+        "In den Spam-Ordner verschieben"
+      ],
+      "Move to trash": [
+        "In den Papierkorb verschieben"
+      ],
+      "Moving a scheduled message": [
+        "Eine zum Versenden geplante Nachricht wird verschoben"
+      ],
+      "Moving a snoozed message": [
+        "Zurückgestellte Nachricht wird verschoben"
+      ],
+      "New message": [
+        "Neue Nachricht"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Newsletters view": [
+        "Newsletter-Ansicht"
+      ],
+      "Next conversation": [
+        "Nächste Unterhaltung"
+      ],
+      "Next message": [
+        "Nächste Nachricht"
+      ],
+      "No active newsletters": [
+        "Keine aktiven Newsletter"
+      ],
+      "No attachment found": [
+        "Kein Anhang gefunden"
+      ],
+      "No newsletters found": [
+        "Keine Newsletter gefunden"
+      ],
+      "No trackers found": [
+        "Keine E-Mail-Tracker gefunden"
+      ],
+      "No unsubscribed newsletters": [
+        "Keine abgemeldeten Newsletter"
+      ],
+      "No-reply address detected": [
+        "No-Reply-Adresse erkannt"
+      ],
+      "On-device suggestions": [
+        "Vorschläge auf dem Gerät"
+      ],
+      "Previous conversation": [
+        "Vorherige Unterhaltung"
+      ],
+      "Previous message": [
+        "Vorherige Nachricht"
+      ],
+      "Protect yourself from trackers": [
+        "Schütze dich vor Trackern"
+      ],
+      "Re-sign contact": [
+        "Kontakt neu signieren"
+      ],
+      "Recipient missing": [
+        "Empfänger fehlt"
+      ],
+      "Recipients": [
+        "Empfänger"
+      ],
+      "Remove from list?": [
+        "Aus Liste entfernen?"
+      ],
+      "Reply": [
+        "Antworten"
+      ],
+      "Reply all": [
+        "Allen antworten"
+      ],
+      "Schedule now, send later": [
+        "Jetzt planen, später senden"
+      ],
+      "Schedule send": [
+        "Senden planen"
+      ],
+      "Select a theme": [
+        "Farbschema auswählen"
+      ],
+      "Self-destruct message": [
+        "Selbstzerstörende Nachricht"
+      ],
+      "Send email": [
+        "E-Mail senden"
+      ],
+      "Send with changed preferences?": [
+        "Mit geänderten Einstellungen senden?"
+      ],
+      "Send with encryption disabled?": [
+        "Mit deaktivierter Verschlüsselung senden?"
+      ],
+      "Send without expiration?": [
+        "Ohne Ablaufdatum versenden?"
+      ],
+      "Sender": [
+        "Absender"
+      ],
+      "Sender changed": [
+        "Absender geändert"
+      ],
+      "Sending error": [
+        "Sendefehler"
+      ],
+      "Sending notice": [
+        "Mitteilung wird gesendet"
+      ],
+      "Sending original message": [
+        "Originalnachricht wird gesendet"
+      ],
+      "Snooze": [
+        "Zurückstellen"
+      ],
+      "Snooze message": [
+        "Nachricht zurückstellen"
+      ],
+      "Storage capacity warning": [
+        "Speicherkapazitätswarnung"
+      ],
+      "Subject missing": [
+        "Betreff fehlt"
+      ],
+      "To": [
+        "An"
+      ],
+      "Trash all messages?": [
+        "Alle Nachrichten löschen?"
+      ],
+      "Trust new key?": [
+        "Neuem Schlüssel vertrauen?",
+        "Neuen Schlüsseln vertrauen?"
+      ],
+      "Trust pinned keys?": [
+        "Beigefügten Schlüsseln vertrauen?"
+      ],
+      "Trust public key?": [
+        "Öffentlichem Schlüssel vertrauen?"
+      ],
+      "Unsubscribe": [
+        "Abbestellen"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } abbestellen?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Abmeldung für diesen Absender nicht möglich"
+      ],
+      "Unsubscribe request sent": [
+        "Abmeldeanfrage gesendet"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gmail sicher in ${ MAIL_APP_NAME } nutzen"
+      ],
+      "Verification error": [
+        "Verifizierungsfehler"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Wir haben dich vor ${ trackersCount } Tracker geschützt",
+        "Wir haben dich vor ${ trackersCount } Trackern geschützt"
+      ],
+      "Welcome": [
+        "Willkommen"
+      ],
+      "Welcome ${ userName }": [
+        "Willkommen ${ userName }"
+      ],
+      "Your free trial has ended": [
+        "Deine kostenlose Testphase ist abgelaufen."
+      ],
+      "Your inbox, automatically organized": [
+        "Dein Posteingang, automatisch organisiert"
+      ],
+      "Your newsletters in one place": [
+        "Deine Newsletter an einem Ort"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12247,6 +15477,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dies stellt sicher, dass niemand deinen Standort, dein Gerät und andere Informationen sehen kann, die verwendet werden könnten, um dich zu identifizieren oder zu verfolgen."
       ]
     },
     "tooltip": {
@@ -12466,6 +15699,10 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Die Signatur des Anhangs konnte nicht überprüft werden. Dieser Anhang kann dennoch heruntergeladen werden, könnte jedoch manipuliert worden sein.",
+        "Die Signatur einiger Anhänge konnte nicht überprüft werden. Diese Anhänge können dennoch heruntergeladen werden, könnten jedoch manipuliert worden sein."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -12729,6 +15966,1112 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplikate aus früheren Importen werden übersprungen. In den Einstellungen von ${ PRODUCT_NAMES.EASY_SWITCH } kannst du den Vorgang rückgängig machen oder ältere Nachrichten importieren."
+      ]
+    },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Teilnehmer konnte nicht hinzugefügt werden"
+      ],
+      "Invitation sent and participant added": [
+        "Einladung gesendet und Teilnehmer hinzugefügt"
+      ],
+      "Participant added": [
+        "Teilnehmer hinzugefügt"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Verfallende Nachricht"
+      ]
+    },
+    "Alt": {
+      "Forwarded": [
+        "Weitergeleitet"
+      ],
+      "Replied to": [
+        "Geantwortet an"
+      ],
+      "Replied to all": [
+        "Allen geantwortet"
+      ],
+      "Star conversation": [
+        "Unterhaltung kennzeichnen"
+      ],
+      "Star message": [
+        "Nachricht markieren"
+      ],
+      "Unread email": [
+        "Ungelesene E-Mail"
+      ],
+      "Unstar conversation": [
+        "Markierung der Unterhaltung entfernen"
+      ],
+      "Unstar message": [
+        "Markierung der Nachricht entfernen"
+      ]
+    },
+    "Alternative text for conversation image": {
+      "Conversation": [
+        "Unterhaltung"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Durch das Absenden dieses Feedbacks sind die Eingabeaufforderung und deine Kommentare für das Moderationsteam von ${ BRAND_NAME } sichtbar."
+      ]
+    },
+    "Attachment signature verification": {
+      "Sender verification failed": [
+        "Absenderverifizierung fehlgeschlagen"
+      ],
+      "Sender verification passed": [
+        "Absenderverifizierung erfolgreich"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Enthält einen Kalendertermin"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine Einladung angenommen und eine neue Zeit für einen der Termine vorgeschlagen."
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } hat eine Einladung angenommen und eine neue Zeit für den Termin vorgeschlagen."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine angenommen."
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin angenommen."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat deine Einladung angenommen und einen neuen Termin für ein Ereignis vorgeschlagen."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } hat deine Einladung angenommen und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hat deine Einladung zu einem der Termine angenommen."
+      ],
+      "${ participantName } accepted your invitation.": [
+        "${ participantName } hat deine Einladung angenommen."
+      ],
+      "${ participantName } asked for the latest event updates.": [
+        "${ participantName } fragte nach den letzten Aktualisierungen des Termins."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
+        "${ participantName } fragte nach den letzten Aktualisierungen für einen Termin, der nicht mehr existiert. Du verfügst über keine Kalender."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } fragte nach den letzten Aktualisierungen für einen Termin, der nicht mehr in deinem Kalender existiert."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } fragte nach den letzten Updates für einen Termin, der nicht mit deinen Einladungsdetails übereinstimmt. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für einen der Termine vorgeschlagen."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine abgelehnt."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin abgelehnt."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat deine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for this event.": [
+        "${ participantName } hat deine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } declined your invitation to one occurrence of the event.": [
+        "${ participantName } hat deine Einladung zu einem der Termine abgelehnt."
+      ],
+      "${ participantName } declined your invitation.": [
+        "${ participantName } hat deine Einladung abgelehnt."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hat eine Einladung angenommen und einen neuen Termin für ein Ereignis vorgeschlagen. Die Antwort und der Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte eine Einladung angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hatte eine Einladung zu einem der Termine angenommen."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin angenommen."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte deine Einladung bestätigt und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte deine Einladung angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für einen der Termine vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte eine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } hatte eine Einladung zu einem der Termine abgelehnt."
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin abgelehnt."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte deine Einladung angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte deine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hatte bereits deine Einladung zu einem der Termine angenommen."
+      ],
+      "${ participantName } had previously accepted your invitation.": [
+        "${ participantName } hatte deine Einladung bereits angenommen."
+      ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } hatte deine Einladung zu einem der Termine bereits abgelehnt."
+      ],
+      "${ participantName } had previously declined your invitation.": [
+        "${ participantName } hatte deine Einladung bereits abgelehnt."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hatte bereits deine Einladung zu einem der Termine unter Vorbehalt angenommen."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation.": [
+        "${ participantName } hatte deine Einladung bereits unter Vorbehalt angenommen."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
+        "${ participantName } hatte eine neue Zeit für diesen Termin vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } hatte eine neue Zeit für diesen Termin vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Der Termin existiert nicht mehr in deinem Kalender."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } hat eine neue Zeit für diesen Termin vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Du verfügst über keine Kalender."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } hatte eine neue Zeit für diesen Termin vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } hatte eine neue Zeit für diesen Termin vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Der Termin existiert nicht mehr in deinem Kalender."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } hatte eine neue Zeit für diesen Termin vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Du verfügst über keine Kalender."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte eine Einladung unter Vorbehalt angenommen und eine neue Zeit für einen der Termine vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte eine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine unter Vorbehalt angenommen."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } hatte eine Einladung zu diesem Termin unter Vorbehalt angenommen."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte deine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte deine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } ist nicht in der Teilnehmerliste enthalten."
+      ],
+      "${ participantName } proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } proposed a new time for this event.": [
+        "${ participantName } schlug eine neue Zeit für diesen Termin vor."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine Einladung unter Vorbehalt angenommen und eine neue Zeit für einen der Termine vorgeschlagen."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } hat eine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine unter Vorbehalt angenommen."
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin unter Vorbehalt angenommen."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat deine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } hat deine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hat deine Einladung zu einem der Termine unter Vorbehalt angenommen."
+      ],
+      "${ participantName } tentatively accepted your invitation.": [
+        "${ participantName } hat deine Einladung unter Vorbehalt angenommen."
+      ],
+      "(Attendance optional)": [
+        "(Teilnahme freiwillig)"
+      ],
+      "Adding occurrences to an event is not supported for the moment": [
+        "Das Hinzufügen von Serienelementen zu einem Termin wird derzeit nicht unterstützt"
+      ],
+      "Event refreshing is not supported for the moment": [
+        "Das Aktualisieren von Terminen wird derzeit nicht unterstützt"
+      ],
+      "Event rescheduling is not supported for the moment": [
+        "Das Umplanen von Terminen wird derzeit nicht unterstützt"
+      ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Diese Antwort konnte nicht zu ${ CALENDAR_APP_NAME } hinzugefügt werden, da derzeit nur Antworten auf alle Termine einer Serie unterstützt werden."
+      ],
+      "This event has been canceled.": [
+        "Dieser Termin wurde abgesagt."
+      ],
+      "This event has been updated.": [
+        "Dieser Termin wurde aktualisiert."
+      ],
+      "This invitation is out of date. The event has been canceled.": [
+        "Diese Einladung ist nicht mehr gültig. Der Termin wurde abgesagt."
+      ],
+      "This invitation is out of date. The event has been deleted.": [
+        "Diese Einladung ist nicht mehr gültig. Der Termin wurde gelöscht."
+      ],
+      "This invitation is out of date. The event has been updated.": [
+        "Diese Einladung ist nicht mehr gültig. Der Termin wurde aktualisiert."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Dieser neue Terminvorschlag stimmt nicht mit deinen Angaben zur Einladung überein. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Diese Antwort stimmt nicht mit deinen Einladungsdetails überein. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+      ],
+      "This response is out of date.": [
+        "Diese Antwort ist veraltet."
+      ],
+      "This response is out of date. The event does not exist in your calendar anymore.": [
+        "Diese Antwort ist nicht mehr gültig. Der Termin existiert nicht mehr in deinem Kalender."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Diese Antwort ist veraltet. Du hast keine Kalender."
+      ],
+      "You already accepted this invitation.": [
+        "Du hast diese Einladung bereits angenommen."
+      ],
+      "You already declined this invitation.": [
+        "Du hast diese Einladung bereits abgelehnt."
+      ],
+      "You already tentatively accepted this invitation.": [
+        "Du hast diese Einladung unter Vorbehalt angenommen."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Du kannst nicht auf Einladungen von ${ BRAND_NAME } antworten, wenn du derzeit nicht auf der Teilnehmerliste stehst."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Deine E-Mail-Adresse ist nicht in der ursprünglichen Teilnehmerliste enthalten."
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Termin bereits zu Ende"
+      ],
+      "Event in progress": [
+        "Termin hat begonnen"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Cancel expiration": [
+        "Gültigkeitsdauer aufheben"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Neuen Ordner erstellen"
+      ],
+      "Create a new label": [
+        "Neue Kategorie erstellen"
+      ],
+      "Go to Archive": [
+        "Zum Archiv"
+      ],
+      "Go to Drafts": [
+        "Zu den Entwürfen"
+      ],
+      "Go to Inbox": [
+        "Zum Posteingang"
+      ],
+      "Go to Sent": [
+        "Zu den gesendeten E-Mails"
+      ],
+      "Go to Spam": [
+        "Zum Spam-Ordner"
+      ],
+      "Go to Starred": [
+        "Zu den markierten E-Mails"
+      ],
+      "Go to Trash": [
+        "Zum Papierkorb"
+      ],
+      "New message": [
+        "Neue Nachricht"
+      ],
+      "Search": [
+        "Suchen"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Ende-zu-Ende-verschlüsselt an verifizierten Empfänger"
+      ],
+      "End-to-end encrypted. ${ warningsText }": [
+        "Ende-zu-Ende verschlüsselt. ${ warningsText }"
+      ],
+      "PGP-encrypted": [
+        "PGP-verschlüsselt"
+      ],
+      "PGP-encrypted to verified recipient": [
+        "PGP-verschlüsselt an verifizierten Empfänger"
+      ],
+      "PGP-encrypted. ${ warningsText }": [
+        "PGP-verschlüsselt. ${ warningsText }"
+      ],
+      "PGP-signed": [
+        "PGP-signiert"
+      ],
+      "The address might be misspelled": [
+        "Die E-Mail-Adresse könnte falsch geschrieben sein."
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "Maximiert"
+      ],
+      "Normal": [
+        "Standard"
+      ]
+    },
+    "CustomFilter": {
+      "Attachment": [
+        "Anhang"
+      ],
+      "Filter on": [
+        "Filtern nach"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Recipient": [
+        "Empfänger"
+      ],
+      "Sender": [
+        "Absender"
+      ],
+      "Subject": [
+        "Betreff"
+      ]
+    },
+    "Date label": {
+      "Today": [
+        "Heute"
+      ],
+      "Tomorrow": [
+        "Morgen"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Gut lesbar"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } neue Nachricht",
+        "${ notificationsToShow.length } neue Nachrichten"
+      ],
+      "From: ${ sender } - ${ Subject }": [
+        "Von: ${ sender } – ${ Subject }"
+      ]
+    },
+    "Desktop notification title": {
+      "New email received": [
+        "Neue E-Mail empfangen"
+      ]
+    },
+    "Email reminder banner": {
+      "Event is tomorrow": [
+        "Termin ist morgen"
+      ],
+      "Event starting now": [
+        "Termin beginnt jetzt"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Termin beginnt in ${ minutesUntilEvent } Minute",
+        "Termin beginnt in ${ minutesUntilEvent } Minuten"
+      ],
+      "Event starts tomorrow": [
+        "Termin beginnt morgen"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Die Termindaten sind verschlüsselt. Melde dich erneut an, um den Kalender wiederherzustellen und deine Daten zu entschlüsseln. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Termindaten konnten nicht entschlüsselt werden. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "Termin ist nicht mehr in deinem Kalender vorhanden."
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "Termin wurde abgesagt"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Der Termin wurde aktualisiert. Diese Erinnerung ist daher nicht mehr aktuell."
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Zero-Access-verschlüsselt. Der Empfänger hat die Ende-zu-Ende-Verschlüsselung in seinem Konto deaktiviert."
+      ]
+    },
+    "Encrypted Headers": {
+      "Encrypted Headers filename": [
+        "Verschlüsselter Header-Dateiname"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Pro Einladung ist maximal ${ maxAttendees } Teilnehmer erlaubt.",
+        "Pro Einladung sind maximal ${ maxAttendees } Teilnehmer erlaubt."
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Entwürfe können nicht in den Posteingang verschoben werden."
+      ],
+      "Drafts cannot be moved to Spam": [
+        "Entwürfe können nicht in den Spam verschoben werden."
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        "Gesendete Nachrichten können nicht in den Posteingang verschoben werden."
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Gesendete Nachrichten können nicht in den Spam verschoben werden."
+      ],
+      "This action cannot be performed": [
+        "Diese Aktion kann nicht ausgeführt werden."
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "Einladung konnte nicht an ${ email } gesendet werden. ${ errorMessage }"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filter (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "E-Mails filtern und sortieren"
+      ],
+      "Has attachments": [
+        "Enthält Anhänge"
+      ],
+      "Read": [
+        "Gelesen"
+      ],
+      "Reset": [
+        "Zurücksetzen"
+      ],
+      "Unread": [
+        "Ungelesen"
+      ]
+    },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Datum: Am ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "Von: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Betreff: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "An: ${ toString }"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } im App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } im Play Store"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } Tag",
+        "${ remainingDaysCount } Tage"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } verbleibender Tag",
+        "${ remainingDaysCount } verbleibende Tage"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Blockiere E-Mail-Kommunikation von Betrügern dauerhaft."
+      ],
+      "Block unsavory senders": [
+        "Blockiere unerwünschte Absender"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Bravo, dass du deine E-Mails noch sicherer, bequemer und relevanter machst! Wir haben deinen kostenlosen Speicherplatz auf insgesamt 1 GB erhöht."
+      ],
+      "Checklist complete": [
+        "Checkliste vollständig"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-Adresse beanspruchen"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Schließe diese Checkliste innerhalb von ${ daysCount } ab, um deinen Speicherplatz kostenlos zu verdoppeln."
+      ],
+      "Discover privacy features": [
+        "Entdecke die Datenschutzfunktionen"
+      ],
+      "Download apps": [
+        "Apps herunterladen"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können."
+      ],
+      "Finish setup": [
+        "Einrichtung abschließen"
+      ],
+      "For your eyes only": [
+        "Nur für dich"
+      ],
+      "Get storage bonus": [
+        "Sichere dir deinen Speicherplatzbonus"
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Hol dir die Mobile-App von ${ MAIL_APP_NAME }"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Nutze weiterhin ${ MAIL_APP_NAME }, um weitere Möglichkeiten zu entdecken, wie ${ BRAND_NAME } deine Privatsphäre schützt und das E-Mailen vereinfacht."
+      ],
+      "Learn more": [
+        "Erfahre mehr"
+      ],
+      "Protection from trackers": [
+        "Schutz vor Trackern"
+      ],
+      "Review import options": [
+        "Importoptionen anpassen"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Melde dich bei der mobilen App an, um diesen Schritt abzuschließen."
+      ],
+      "Storage unlocked": [
+        "Speicherplatz freigeschaltet"
+      ],
+      "Tasks to complete count": [
+        "Zähler für zu erledigende Aufgaben"
+      ],
+      "This feature is currently unavailable": [
+        "Diese Funktion steht momentan nicht zur Verfügung."
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Scanne mit deinem Mobilgerät diesen QR-Code oder besuche den iOS- oder Android-Store."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Wir hindern Werbetreibende und Datensammler daran, ein Profil von dir zu erstellen."
+      ],
+      "You've unlocked 1 GB": [
+        "Du hast 1 GB freigeschaltet."
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } Teilnehmer",
+        "${ totalAttendees } Teilnehmer"
+      ],
+      "Organizer:": [
+        "Organisator:"
+      ]
+    },
+    "Import ICS file from Mail": {
+      "Calendar event created": [
+        "Termin erstellt"
+      ],
+      "Creating calendar event failed": [
+        "Erstellen des Kalendertermins fehlgeschlagen"
+      ]
+    },
+    "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Ein Klick auf „Vertrauenswürdiger Schlüssel” verknüpft diesen öffentlichen Schlüssel mit dem Absender und E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Durch Klicken auf „Schlüssel vertrauen“ wird ein neuer Kontakt erstellt und dieser öffentliche Schlüssel diesem Absender zugeordnet. E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Möchtest du dem primären öffentlichen Schlüssel mit dem folgenden Fingerabdruck vertrauen?",
+        "Möchtest du den primären öffentlichen Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adresse aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adresse senden zu können.",
+        "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adressen aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adressen senden zu können."
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "Schlüsselüberprüfung des Empfängers fehlgeschlagen: ${ validationErrorsMessage }"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Datum"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Zeit"
+      ]
+    },
+    "Label Recipient": {
+      "From": [
+        "Von"
+      ],
+      "To": [
+        "An"
+      ]
+    },
+    "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Deine Newsletter-Abonnemente werden geladen..."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Newsletter oder Verteilerlisten, von denen du abgemeldet bist, werden hier angezeigt."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du hast keine aktiven Newsletter oder Verteilerlisten-Abonnemente."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du hast keine Newsletter oder Verteilerlisten-Abonnemente."
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Spalte"
+      ],
+      "Row": [
+        "Zeile"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "In ${ CALENDAR_APP_NAME } öffnen"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "Einstellungen"
+      ]
+    },
+    "Mailbox": {
+      "Archive": [
+        "Archiv"
+      ],
+      "Inbox": [
+        "Posteingang"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "In Papierkorb verschieben"
+      ]
+    },
+    "Message image": {
+      "Image could not be loaded.": [
+        "Das Bild konnte nicht geladen werden"
+      ],
+      "Image has not been loaded in order to protect your privacy.": [
+        "Zum Schutz deiner Privatsphäre wurde das Bild nicht geladen."
+      ]
+    },
+    "Message notification": {
+      "Scheduled sending undone": [
+        "Geplantes Senden wurde rückgängig gemacht"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Geplantes Senden abgebrochen. Nachricht wurde in Entwürfe verschoben."
+      ],
+      "Sending undone": [
+        "Senden rückgängig gemacht"
+      ],
+      "Undoing send...": [
+        "Versand wird widerrufen..."
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Bringe deine E-Mails zu ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Bring deine bestehende E-Mails zu ${ MAIL_APP_NAME }, damit du alles von einem privaten Posteingang aus verwalten kannst."
+      ],
+      "Choose a provider": [
+        "Anbieter auswählen"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ],
+      "Protect your accounts": [
+        "Schütze deine Konten"
+      ],
+      "Skip for now": [
+        "Vorerst überspringen"
+      ],
+      "Some popular services": [
+        "Einige beliebte Dienste"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Wechsle die Dienste, die du täglich nutzt, zu deiner ${ BRAND_NAME }-E-Mail-Adresse für bessere Sicherheit und Privatsphäre."
+      ]
+    },
+    "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "Ende-zu-Ende verschlüsselte und signierte Nachricht"
+      ],
+      "End-to-end encrypted message": [
+        "Ende-zu-Ende verschlüsselte Nachricht"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "Ende-zu-Ende verschlüsselte Nachricht von verifiziertem Absender"
+      ],
+      "PGP-encrypted and signed message": [
+        "PGP-verschlüsselte und -signierte Nachricht"
+      ],
+      "PGP-encrypted message": [
+        "PGP-verschlüsselte Nachricht"
+      ],
+      "PGP-encrypted message from verified sender": [
+        "PGP-verschlüsselte Nachricht von verifiziertem Absender"
+      ],
+      "PGP-signed message": [
+        "PGP-signierte Nachricht"
+      ],
+      "PGP-signed message from verified sender": [
+        "PGP-signierte Nachricht von verifiziertem Absender"
+      ],
+      "PGP-signed message. Sender verification failed": [
+        "PGP-signierte Nachricht. Absenderverifizierung fehlgeschlagen"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung"
+      ],
+      "Stored with zero-access encryption": [
+        "Gespeichert mit Zero-Access-Verschlüsselung"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } Tag",
+        "${ remainingDays } Tage"
+      ],
+      "<1 d": [
+        "<1 Tag"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Answer sent": [
+        "Antwort gesendet"
+      ],
+      "Answering invitation failed": [
+        "Beantworten der Einladung fehlgeschlagen"
+      ],
+      "Calendar event created": [
+        "Termin erstellt"
+      ],
+      "Calendar event updated": [
+        "Termin aktualisiert"
+      ],
+      "Cannot send to organizer address: ${ errorMessage }": [
+        "An die E-Mail-Adresse des Organisators konnte nicht gesendet werden: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Das Neuverschlüsseln der Einladung ist fehlgeschlagen. Bitte versuche es erneut."
+      ]
+    },
+    "Search - no results": {
+      "An action is being processed": [
+        "Eine Aktion wird verarbeitet"
+      ],
+      "No messages found": [
+        "Keine Nachrichten gefunden"
+      ],
+      "No messages scheduled": [
+        "Keine geplanten Nachrichten"
+      ],
+      "No results found": [
+        "Keine Ergebnisse gefunden"
+      ],
+      "No snoozed messages": [
+        "Keine zurückgestellten Nachrichten"
+      ],
+      "No unread messages found": [
+        "Keine ungelesenen Nachrichten gefunden"
+      ]
+    },
+    "Send email with changed preferences": {
+      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
+        "Die Kontakte für die folgenden E-Mail-Adressen wurden gelöscht. Daher wurden die dazugehörigen Verschlüsselungseinstellungen entsprechend aktualisiert:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Die Inhaber der folgenden E-Mail-Adressen haben die Ende-zu-Ende-Verschlüsselung für Ihr Konto deaktiviert. Dementsprechend wurden die zugehörigen Verschlüsselungseinstellungen wie folgt aktualisiert:"
+      ]
+    },
+    "Send email with errors": {
+      "Do you want to send the email anyway?": [
+        "Möchtest du die E-Mail trotzdem versenden?"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Es wurden Fehler festgestellt. Deine E-Mail kann aus folgendem Grund nicht an die angegebene E-Mail-Adresse gesendet werden:",
+        "Es wurden Fehler festgestellt. Ihre E-Mail kann aus folgenden Gründen nicht an die angegebenen E-Mail-Adressen gesendet werden:"
+      ],
+      "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
+        "Es wurden einige Fehler festgestellt. Deine Nachricht kann aus den folgenden Gründen nicht an eine oder mehrere der angegebenen E-Mail-Adressen gesendet werden:"
+      ]
+    },
+    "Send email with warnings": {
+      "Do you want to send the email anyway?": [
+        "Möchtest du die E-Mail trotzdem versenden?"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Die folgende E-Mail-Adresse ist ungültig: ${ invalidAddresses }",
+        "Die folgenden E-Mail-Adressen sind ungültig: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Es wurden einige Warnungen festgestellt. Die folgende E-Mail-Adresse kann möglicherweise keine E-Mails empfangen:",
+        "Es wurden einige Warnungen festgestellt. Die folgende E-Mail-Adressen können möglicherweise keine E-Mails empfangen:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Absenderverifizierung"
+      ]
+    },
+    "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Verschlüsselt von ${ MAIL_APP_NAME }"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Verschlüsselt von ${ MAIL_APP_NAME } an PGP-Empfänger"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Verschlüsselt von ${ MAIL_APP_NAME } an verifizierten PGP-Empfänger"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Verschlüsselt von ${ MAIL_APP_NAME } an verifizierten Empfänger"
+      ],
+      "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
+      ],
+      "End-to-end encrypted to PGP recipient": [
+        "Ende-zu-Ende-verschlüsselt an PGP-Empfänger"
+      ],
+      "End-to-end encrypted to verified PGP recipient": [
+        "Ende-zu-Ende-verschlüsselt an verifizierten PGP-Empfänger"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Ende-zu-Ende-verschlüsselt an verifizierten Empfänger"
+      ],
+      "PGP-signed": [
+        "PGP-signiert"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung an verifizierten Empfänger",
+        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung an verifizierte Empfänger"
+      ],
+      "Sent by you with end-to-end encryption": [
+        "Von dir mit Ende-zu-Ende-Verschlüsselung gesendet"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Von dir mit Ende-zu-Ende-Verschlüsselung an verifizierten Empfänger gesendet",
+        "Von dir mit Ende-zu-Ende-Verschlüsselung an verifizierte Empfänger gesendet"
+      ],
+      "Stored with zero-access encryption": [
+        "Gespeichert mit Zero-Access-Verschlüsselung"
+      ]
+    },
+    "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-verschlüsselte Nachricht. Absenderverifizierung fehlgeschlagen: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-signierte Nachricht. Absenderverifizierung fehlgeschlagen: ${ verificationErrorsMessage }"
+      ],
+      "Sender could not be verified: Message not signed": [
+        "Der Absender konnte nicht verifiziert werden: Nachricht nicht signiert"
+      ],
+      "Sender verification failed": [
+        "Absenderverifizierung fehlgeschlagen"
+      ],
+      "Sender verification failed: ${ verificationErrorsMessage }": [
+        "Absenderverifizierung fehlgeschlagen: ${ verificationErrorsMessage }"
+      ],
+      "Sender's trusted keys verification failed": [
+        "Verifizierung der vertrauenswürdigen Schlüssel des Absenders fehlgeschlagen"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Nachricht zurückstellen"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Wann sollte die Nachricht erneut im Posteingang angezeigt werden?"
+      ]
+    },
+    "Sort option": {
+      "Largest first": [
+        "Nach Größe absteigend"
+      ],
+      "Newest first": [
+        "Neuste zuerst"
+      ],
+      "Oldest first": [
+        "Älteste zuerst"
+      ],
+      "Smallest first": [
+        "Nach Größe aufsteigend"
+      ],
+      "Sort by": [
+        "Sortieren nach"
+      ]
+    },
+    "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Sieh dir an, was in deinem Abonnement enthalten ist, und genieße die Vorteile."
+      ],
+      "Discover your subscription benefits": [
+        "Entdecke die Vorteile deines Abonnements"
+      ],
+      "Email tracking protection": [
+        "Schutz vor E-Mail-Trackern"
+      ],
+      "Schedule send": [
+        "Senden planen"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden."
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Aktiviere ${ DARK_WEB_MONITORING_NAME }, um benachrichtigt zu werden, wenn deine Daten von einem Service eines Drittanbieters entwendet wurden."
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Bilder werden jetzt standardmäßig geladen und deren Absender können dich nicht mehr zurückverfolgen.\nDies kann in den ${ settingsLink } geändert werden."
+      ],
+      "You can now schedule your messages to be sent later": [
+        "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
+      ],
+      "Your pm.me email is active": [
+        "Deine pm.me-E-Mail-Adresse ist aktiv"
+      ]
+    },
+    "Status": {
+      "Alias disabled": [
+        "Alias deaktiviert"
+      ],
+      "Unsubscribed": [
+        "Abbestellt"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Gib deine ${ MAIL_APP_NAME } Adresse als neue Adresse ein, und speichere, bestätige oder verifiziere die Änderung"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Suche in den Kontoeinstellungen nach der Option zum Bearbeiten oder Ändern deiner E-Mail-Adresse "
+      ],
+      "Select service to update": [
+        "Zu aktualisierenden Dienst auswählen"
+      ],
+      "Sign in to the service": [
+        "Beim Dienst anmelden"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktivieren"
+      ],
+      "Create an alias": [
+        "Erstelle einen Alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Erstelle die Kategorie \"${ suggestedLabelName }\""
+      ],
+      "Create new email address": [
+        "Neue E-Mail-Adresse anlegen"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Erstelle den Ordner \"${ suggestedFolderName }\""
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Lade ${ VPN_APP_NAME } herunter"
+      ],
+      "Download the desktop app": [
+        "Desktop-App herunterladen"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } aktivieren"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Hol dir eine \"@${ PM_DOMAIN }\"-Adresse"
+      ],
+      "Open ": [
+        "Öffne "
+      ],
+      "Show me how": [
+        "Zeig mir wie"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Mon, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sam., ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Son, ${ formatTime }"
       ]
     }
   }
