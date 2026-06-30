@@ -79,6 +79,37 @@ $tab-badge-ease: easing(ease-out-quint);
 			border-radius: rem(6);
 			margin-block: rem(-2);
 		}
+
+		.tab-icon {
+			position: relative;
+		}
+
+		.tab-new-dot {
+			position: absolute;
+			inset-block-start: rem(-2);
+			inset-inline-end: rem(-2);
+			inline-size: rem(8);
+			block-size: rem(8);
+			border-radius: 50%;
+			background-color: currentcolor;
+			box-shadow: 0 0 0 rem(1.5) var(--toolbar-background-color);
+			transform-origin: center;
+			pointer-events: none;
+			animation: tab-new-dot-appear 0.42s $tab-badge-ease;
+			transition:
+				opacity 0.28s $tab-badge-ease,
+				transform 0.32s $tab-badge-ease;
+		}
+
+		.tab-new-count {
+			display: none;
+			font-size: rem(11);
+			line-height: rem(16);
+			transition:
+				opacity 0.28s $tab-badge-ease,
+				block-size 0.32s $tab-badge-ease,
+				transform 0.32s $tab-badge-ease;
+		}
 	}
 
 	// Medium and above (≥ 820px): tabs grow to share the bar width, labels + counts shown
@@ -93,6 +124,28 @@ $tab-badge-ease: easing(ease-out-quint);
 			.tag-count {
 				display: block;
 			}
+
+			.tab-new-count {
+				display: block;
+				block-size: 0;
+				opacity: 0;
+				transform: translateY(rem(4));
+				overflow: hidden;
+			}
+
+			&:hover,
+			&:focus-visible {
+				.tab-new-dot {
+					opacity: 0;
+					transform: scale(0.4);
+				}
+
+				.tab-new-count {
+					block-size: rem(16);
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
 		}
 	}
 
@@ -101,5 +154,17 @@ $tab-badge-ease: easing(ease-out-quint);
 		.tab-container .tag-label {
 			font-size: rem(13);
 		}
+	}
+}
+
+@keyframes tab-new-dot-appear {
+	from {
+		opacity: 0;
+		transform: scale(0.4);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }

@@ -18,6 +18,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 
 import { TabBadge } from './TabBadge';
+import { TabNewCount } from './TabNewCount';
 import { TabState, categoryColorClassName } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
 
@@ -37,7 +38,7 @@ export const Tab = ({ category, tabState }: Props) => {
     const dispatch = useDispatch();
     const { call } = useEventManager();
 
-    const { shouldShowCounter } = useCategoriesBadge({ tabState, category });
+    const { shouldShowCounter, shouldShowNewBadge } = useCategoriesBadge({ tabState, category });
 
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
@@ -73,19 +74,25 @@ export const Tab = ({ category, tabState }: Props) => {
             onClick={handleClick}
             draggable={false}
         >
-            <CategoryIcon
-                categoryId={category.id}
-                variant="filled"
-                className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
-            />
-            <span
-                title={getLabelFromCategoryId(category.id)}
-                className={clsx(
-                    'tag-label text-sm truncate min-w-0',
-                    tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
-                )}
-            >
-                {getLabelFromCategoryId(category.id)}
+            <span className="tab-icon relative shrink-0 flex">
+                <CategoryIcon
+                    categoryId={category.id}
+                    variant="filled"
+                    className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
+                />
+                {shouldShowNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
+            </span>
+            <span className="tab-text flex flex-column justify-center min-w-0">
+                <span
+                    title={getLabelFromCategoryId(category.id)}
+                    className={clsx(
+                        'tag-label text-sm truncate min-w-0',
+                        tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
+                    )}
+                >
+                    {getLabelFromCategoryId(category.id)}
+                </span>
+                {shouldShowNewBadge && <TabNewCount category={category} />}
             </span>
 
             <TabBadge category={category} tabState={tabState} shouldShowCounter={shouldShowCounter} />
