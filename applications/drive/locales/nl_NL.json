@@ -7358,6 +7358,15 @@
       ],
       "Please select the labels you would like to import:": [
         "Selecteer de labels die u wilt importeren:"
+      ],
+      "Preparing download": [
+        "Download voorbereiden"
+      ],
+      "Preparing…": [
+        "Aan het voorbereiden..."
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "We konden niet verifiëren dat ${ nameAuthor }, ${ nodeName } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
       ]
     },
     "info": {
@@ -10138,6 +10147,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } foto is verwijderd uit \"${ albumName }\"",
         "${ removed } foto's zijn verwijderd uit \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Kan de details over het delen niet laden"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13833,6 +13845,36 @@
       ],
       "We'd love to hear from you!": [
         "We horen graag van jou!"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digitale handtekening geverifieerd. Dit bestand werd veilig aangemaakt door ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digitale handtekening geverifieerd. Deze map werd veilig aangemaakt door ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "We konden niet verifiëren dat ${ author } dit bestand heeft aangemaakt."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "We konden niet verifiëren dat ${ author } deze map heeft aangemaakt."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "We konden niet verifiëren dat ${ author } dit bestand heeft geüpload."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "We konden niet verifiëren dat ${ author } deze map heeft geüpload."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "We konden niet bevestigen dat de naam is aangemaakt of gewijzigd door ${ claimedNameAuthor }. De reden is: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "We konden niet bevestigen dat de node is aangemaakt door ${ claimedKeyAuthor }. De reden is: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
