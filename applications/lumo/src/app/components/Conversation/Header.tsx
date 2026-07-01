@@ -37,7 +37,7 @@ export const Header = ({
 }) => {
     const { toggle: toggleSideMenu, isVisible } = useSidebar();
     return (
-        <div className="lumo-layout-header flex flex-row flex-nowrap justify-space-between w-full p-2 pt-1">
+        <div className="lumo-layout-header flex flex-row flex-nowrap justify-space-between w-full p-2">
             <div className="flex flex-row flex-nowrap justify-start items-center mr-2 shrink-0 gap-1">
                 <Button onClick={toggleSideMenu} icon shape="ghost" color="weak" size="medium" className="shrink-0">
                     <span className="sr-only">

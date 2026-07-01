@@ -70,7 +70,7 @@ const ErrorCard = ({
                     className="error-card-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm group-hover:opacity-100"
                     onClick={handleDismiss}
                 >
-                    <LumoIcon name="X" color="danger" />
+                    <LumoIcon name="X" width={12} height={12} />
                 </Button>
             </div>
         </ChatContainerItem>
