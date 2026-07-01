@@ -958,6 +958,9 @@
       ],
       "Verify now": [
         "Preveri zdaj"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Raziščite ${ MEET_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2827,6 +2830,9 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ],
+      "Canary Islands": [
+        "Kanarski otoki"
       ]
     },
     "Country select label": {
@@ -3133,6 +3139,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ]
     },
     "description": {
@@ -6415,6 +6424,21 @@
       ],
       "RECOMMENDED": [
         "PRIPOROČENO"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Zaupaj ključu \"${ activeSignerText }\", da boš lahko preverjal nova sporočila od tega stika."
       ]
     },
     "info": {
@@ -7118,6 +7142,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Command line interface (CLI)": [
+        "Ukazna vrstica (CLI)"
       ]
     },
     "label": {
@@ -7444,6 +7471,9 @@
         "Video sestanki, ${ n } udeleženca",
         "Video sestanki, ${ n } udeleženci",
         "Video sestanki, ${ n } udeležencev"
+      ],
+      "Meeting recording": [
+        "Snemanje seje"
       ]
     },
     "Message": {
@@ -8228,6 +8258,15 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN z blokiranjem oglasov in zaščito pred zlonamerno programsko opremo"
+      ],
+      "Access all countries": [
+        "Dostop do vseh držav"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Namenski strežniki, optimizirani za hitrost"
+      ],
+      "Unlock streaming": [
+        "Odkleni pretakanje"
       ]
     },
     "new_plans: feature highlight": {
@@ -12088,6 +12127,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Verify your password": [
+        "Preverite geslo"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12767,6 +12809,11 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Venomer se trudimo izboljšati ${ config.appName }. Kako ste zadovoljni s svojo izkušnjo?"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Preklopi na ${ CALENDAR_APP_NAME }"
       ]
     }
   }

@@ -1042,6 +1042,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Verify now": [
+        "Ověřit nyní"
       ]
     },
     "action": {
@@ -3004,6 +3010,9 @@
       ],
       "Åland Islands": [
         "Ålandské ostrovy"
+      ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
       ]
     },
     "Country select label": {
@@ -3333,6 +3342,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémový přechod vašeho týmu na ${ BRAND_NAME } importujte svá data ze služeb Google, Outlook a dalších."
       ]
     },
     "description": {
@@ -4261,6 +4273,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Platnost vašeho připojení k Zoomu vypršela. Pro pokračování se prosím znovu připojte."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Zkontrolujte prosím, zda je vaše ABN registrováno pro přeshraniční DPH"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "DIČ musí začínat na ${ prefixes }"
       ]
     },
     "error": {
@@ -4751,6 +4769,9 @@
       ],
       "Security key": [
         "Bezpečnostní klíč"
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
@@ -6492,13 +6513,13 @@
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -6847,6 +6868,54 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosáhli jste limitu rezervačních termínů (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skrývá váš síťový provoz. ${ PASS_SHORT_APP_NAME } skrývá vaši identitu\n— neomezené **hide-my-email aliasy** a **upozornění na temný web** pro případ, že by vaše data někdy unikla."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvořte zabezpečený cloud pro ${ memberCount } člena",
+        "Vytvořte zabezpečený cloud pro ${ memberCount } členy",
+        "Vytvořte zabezpečený cloud pro ${ memberCount } členů",
+        "Vytvořte zabezpečený cloud pro ${ memberCount } členů"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamatujete si své heslo? ${ verifyButton }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Jen za ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, které chcete importovat:"
+      ],
+      "RECOMMENDED": [
+        "DOPORUČENO"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
       ]
     },
     "info": {
@@ -6978,6 +7047,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivní podpisový klíč"
+      ],
+      "Fallback": [
+        "Záložní"
       ]
     },
     "Keyboard shortcut name": {
@@ -7018,6 +7093,9 @@
       ],
       "View options": [
         "Zobrazit možnosti"
+      ],
+      "Desktop app navigation": [
+        "Navigace desktopové aplikace"
       ]
     },
     "Knowledge base link label": {
@@ -7601,6 +7679,12 @@
       ],
       "Zoom meeting": [
         "Schůzka na Zoomu"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
+      ],
+      "Drive": [
+        "Disk"
       ]
     },
     "label": {
@@ -8787,6 +8871,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
+      "Unlock streaming": [
+        "Odemknout streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -9213,6 +9306,12 @@
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
       ]
     },
     "Note": {
@@ -10170,6 +10269,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v současnosti podepisuje zprávy tímto klíčem"
+      ],
+      "This key is used for message verification": [
+        "Tento klíč se používá k ověření zpráv"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento klíč se používá k šifrování zpráv tomuto kontaktu ve starších aplikacích"
       ]
     },
     "PGP key warning": {
@@ -13080,6 +13188,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrujte svou organizaci do ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Ověření hesla"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13180,6 +13294,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ]
     },
     "tooltip": {
@@ -13750,6 +13867,16 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Přepnout na ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Přepnout na ${ MAIL_APP_NAME }"
       ]
     }
   }

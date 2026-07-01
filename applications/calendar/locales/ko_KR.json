@@ -1033,6 +1033,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ]
     },
     "action": {
@@ -3224,7 +3227,7 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 회원님의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -3248,16 +3251,19 @@
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ll get a secure email with the details shortly.": [
         "곧 세부사항이 담긴 보안 이메일이 발송됩니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "귀하의 팀이 ${ BRAND_NAME }(으)로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오세요."
       ]
     },
     "description": {
@@ -4153,6 +4159,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "귀하의 ABN이 국가 간 VAT에 등록되어 있는지 확인해 주세요."
       ]
     },
     "error": {
@@ -4417,7 +4429,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event popover close button": {
@@ -4631,6 +4643,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -5442,7 +5457,7 @@
         "복사한 링크 붙이기"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Country code": [
         "국가 코드"
@@ -6141,7 +6156,7 @@
         "다음 참가자들은 사용자의 변경을 알 수 없습니다:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "당신이 초대를 거부한 것이 주최자에게 알려지지 않습니다:"
+        "초대를 거부한 것이 주최자에게 알려지지 않습니다:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
         "대답 변경을 원한한 것을 주최자가 알 수 없습니다."
@@ -6607,6 +6622,30 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }는 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }는 귀하의 신원을 숨깁니다.\n— 데이터가 유출될 경우 무제한 **hide-my-email 별칭** 및 **다크웹 알림**을 제공합니다."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
+      "Enter code": [
+        "코드 입력"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "단 ${ bundlePlanPriceInline }의 가격으로"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
+      "Password verified": [
+        "비밀번호 확인 완료"
+      ],
+      "Please select the labels you would like to import:": [
+        "불러올 라벨을 선택해 주십시오:"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
       ]
     },
     "info": {
@@ -6726,6 +6765,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "활성 서명자"
+      ],
+      "Fallback": [
+        "대체용"
       ]
     },
     "Keyboard shortcut name": {
@@ -7354,6 +7399,9 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Drive": [
+        "드라이브"
       ]
     },
     "label": {
@@ -8423,6 +8471,18 @@
       ],
       "Dedicated servers optimized for speed": [
         "속도를 위해 최적화된 전용 서버"
+      ],
+      "Access all countries": [
+        "모든 국가 접근"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지가 포함된 약속 일정 예약"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 미지원"
+      ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
       ]
     },
     "new_plans: feature highlight": {
@@ -9701,6 +9761,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "이 키를 \"신뢰하지 않는 것을\" 권장합니다."
+      ],
+      "This contact currently signs messages with this key": [
+        "이 연락처는 현재 이 키로 메시지에 서명합니다"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "이 키는 이전 앱에서 이 연락처로 메시지를 암호화하는 데 사용됩니다"
       ]
     },
     "PGP key warning": {
@@ -11248,6 +11314,12 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
       ]
     },
     "subscription reminder": {
@@ -12440,6 +12512,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12540,6 +12615,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
       ]
     },
     "tooltip": {
@@ -12978,6 +13056,11 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }으로 전환"
       ]
     }
   }

@@ -3337,6 +3337,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
       ]
     },
     "description": {
@@ -4244,6 +4247,15 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar por ${ prefixes }"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se seu ABN está registrado para IVA transfronteiriço"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de autoliquidação não é suportado por este plano"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
       ]
     },
     "error": {
@@ -4726,6 +4738,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -6768,6 +6783,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confie na chave \"${ activeSignerText }\" para verificar novas mensagens deste contato."
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecione os marcadores que você deseja importar:"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Lembriremos você de verificar sua senha novamente mais tarde"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Atualmente, sua conta está configurada para aplicar o regime de autoliquidação. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
       ]
     },
     "info": {
@@ -6894,6 +6918,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signatário ativo"
       ]
     },
     "Keyboard shortcut name": {
@@ -9828,6 +9855,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Aplica-se o mecanismo de autoliquidação de IVA."
       ]
     },
     "Payments.Error": {
@@ -9973,6 +10003,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
+      ],
+      "This contact currently signs messages with this key": [
+        "Este contato assina atualmente as mensagens com esta chave"
       ]
     },
     "PGP key warning": {
@@ -12780,6 +12813,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

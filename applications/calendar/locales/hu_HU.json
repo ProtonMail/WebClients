@@ -950,6 +950,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Folytatás itt: ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1018,6 +1021,15 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikált VPN szerverek"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Alarm notification": {
@@ -1131,6 +1143,9 @@
       ],
       "You have reached the trial limit.": [
         "Elérte a próbaverzió korlátját."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ]
     },
     "b2b_trials_Action": {
@@ -1251,6 +1266,9 @@
       ],
       "Yearly": [
         "Évente"
+      ],
+      "Billed monthly": [
+        "Havonta számlázva"
       ]
     },
     "Browser": {
@@ -1665,6 +1683,9 @@
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ],
+      "Zero-access encryption": [
+        "Zéró hozzáférésű titkosítás"
       ]
     },
     "collider_2025: Info": {
@@ -2673,6 +2694,9 @@
       ],
       "Åland Islands": [
         "Aland-szigetek"
+      ],
+      "Canary Islands": [
+        "Kanári-szigetek"
       ]
     },
     "Country select label": {
@@ -3786,6 +3810,12 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Address could not be added.": [
+        "A cím hozzáadása nem sikerült."
+      ],
+      "Wrong billing address": [
+        "Hibás számlázási cím"
       ]
     },
     "error": {
@@ -4618,6 +4648,9 @@
       ],
       "Your password is correct.": [
         "A jelszava helyes."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ]
     },
     "Import instructions": {
@@ -6039,6 +6072,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak"
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
       ]
     },
     "info": {
@@ -6718,6 +6758,9 @@
       ],
       "Zoom meeting": [
         "Zoom találkozó"
+      ],
+      "Skip feedback": [
+        "Visszajelzés kihagyása"
       ]
     },
     "Label for contact group color": {
@@ -6874,6 +6917,9 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "Terms and conditions": [
+        "Felhasználási feltételek"
       ]
     },
     "Link label (optional)": {
@@ -7712,6 +7758,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
+      ],
+      "Access all countries": [
+        "Hozzáférés minden országhoz"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Időpontfoglalás ${ n } jelentkezési oldallal",
+        "Időpontfoglalás ${ n } jelentkezési oldallal"
       ]
     },
     "new_plans: feature highlight": {
@@ -8114,6 +8167,10 @@
       "Support for ${ n } custom email domain": [
         "${ n } saját e-mail domain név használata",
         "${ n } saját e-mail domain név használata"
+      ],
+      "${ n } country": [
+        "${ n } ország",
+        "${ n } ország"
       ]
     },
     "Note": {
@@ -8808,6 +8865,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ]
     },
     "Payments.Error": {
@@ -9051,6 +9111,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -10289,6 +10352,10 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videós megbeszélések, ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel",
+        "Videós megbeszélések, akár ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel"
       ]
     },
     "subscription reminder": {
@@ -11413,6 +11480,12 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "Select data to import": [
+        "Válassza ki az importálni kívánt adatokat"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "A ${ planTitle } előfizetése elindult."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11990,6 +12063,24 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "BF2025: Deal details": {
+      "3 TB data storage": [
+        "3 TB tárhely"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "15,000+ szerver elérése, 120+ országban"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } résztvevő",
+        "${ n } résztvevő"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } résztvevő",
+        "Akár ${ n } résztvevő"
       ]
     }
   }
