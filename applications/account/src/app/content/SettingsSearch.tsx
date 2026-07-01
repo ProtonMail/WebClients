@@ -51,8 +51,6 @@ const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
             return APPS.PROTONPASS;
         case 'wallet':
             return APPS.PROTONWALLET;
-        case 'meet':
-            return APPS.PROTONMEET;
         case 'authenticator':
             return APPS.PROTONAUTHENTICATOR;
     }
