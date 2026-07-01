@@ -708,6 +708,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Hide": [
+        "Скрыть"
       ]
     },
     "Browser": {
@@ -1233,6 +1239,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "Failed loading group members": [
+        "Ошибка при загрузке членов группы"
       ]
     },
     "Error message": {
@@ -2449,6 +2458,9 @@
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ]
     },
     "Label": {
@@ -3561,6 +3573,9 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "Expires in": [
+        "Истекает через"
       ]
     },
     "Link": {
@@ -3863,6 +3878,9 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
+      ],
+      "e.g. My automation script": [
+        "например, Мой скрипт автоматизации"
       ]
     },
     "Security Center - Info": {
@@ -4842,6 +4860,17 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Домен"
+      ],
+      "Password ends with": [
+        "Пароль заканчивается на"
+      ],
+      "Username": [
+        "Имя пользователя"
       ]
     }
   }
