@@ -39,7 +39,7 @@ const getParticipantStatusLabel = ({
     return label;
 };
 
-export const ParticipantListItemStatus = ({ participantIdentity }: { participantIdentity: string }) => {
+export const AllParticipantsItemStatus = ({ participantIdentity }: { participantIdentity: string }) => {
     const isRecording = useMeetSelector((state) => selectIsParticipantRecording(state, participantIdentity));
     const isHost = useMeetSelector((state) => selectParticipantIsHost(state, participantIdentity));
     const isScreenSharing = useMeetSelector((state) => selectIsParticipantScreenSharing(state, participantIdentity));
