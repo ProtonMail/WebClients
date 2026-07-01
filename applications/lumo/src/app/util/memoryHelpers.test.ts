@@ -27,6 +27,7 @@ describe('memoryHelpers', () => {
         const conversations: Record<string, Conversation> = {
             c1: { id: 'c1', spaceId: 'general' } as Conversation,
             c2: { id: 'c2', spaceId: 'project' } as Conversation,
+            c3: { id: 'c3', spaceId: 'general', ghost: true } as Conversation,
         };
         const messages: Record<string, Message> = {
             m1: makeMessage({
@@ -47,6 +48,12 @@ describe('memoryHelpers', () => {
                 content: 'I prefer concise answers and short summaries in all responses please',
                 createdAt: '2026-01-01T00:00:00.000Z',
             }),
+            m4: makeMessage({
+                id: 'm4',
+                conversationId: 'c3',
+                content: 'Ghost chat prompt should be excluded from memory generation sampling entirely',
+                createdAt: '2026-01-04T00:00:00.000Z',
+            }),
         };
 
         expect(sampleUserPromptsForMemoryGeneration(messages, conversations, spaces)).toEqual([
@@ -62,6 +69,12 @@ describe('memoryHelpers', () => {
     it('drops exact (case-insensitive) duplicates when parsing', () => {
         const raw = '["Likes bullet points", "likes BULLET points", "Works in product design"]';
         expect(parseMemoryStringsResponse(raw)).toEqual(['Likes bullet points', 'Works in product design']);
+    });
+
+    it('drops memories that exactly match existing saved memories when parsing', () => {
+        const raw = '["Prefers concise answers", "Works in product design"]';
+        const existing: Memory[] = [{ id: '1', content: 'Prefers concise answers', createdAt: 1, source: 'user' }];
+        expect(parseMemoryStringsResponse(raw, existing)).toEqual(['Works in product design']);
     });
 
     it('merges appended generated without duplicate text', () => {
@@ -90,7 +103,8 @@ describe('memoryHelpers', () => {
         const prompt = buildMemoryBootstrapPrompt(['Sample A'], existing);
         expect(prompt).toContain('Prefers concise answers');
         expect(prompt).toContain('Works in product design');
-        expect(prompt).toContain('do NOT repeat or paraphrase');
+        expect(prompt).toContain('hard blocklist');
+        expect(prompt).toContain('Duplicate avoidance');
         expect(prompt).toContain('incrementally update');
     });
 
