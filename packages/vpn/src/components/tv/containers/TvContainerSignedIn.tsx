@@ -4,6 +4,8 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import type { TelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useApi from '@proton/components/hooks/useApi';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -19,8 +21,6 @@ import { TvSignInFailed } from '../components/TvSignInFailed';
 import type { FetchErrors } from '../types';
 import { forkSession } from '../utils/forkSession';
 import { getChildClientId } from '../utils/getChildClientId';
-import { getUserTier } from '../utils/getUserTier';
-import type { UserTier } from '../utils/getUserTier';
 
 enum ForkSessionStep {
     CONFIRMATION,
@@ -38,14 +38,14 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const [subscription] = useSubscription();
-    const [tier, setTier] = useState(getUserTier(user));
+    const [tier, setTier] = useState(getTelemetryUserTier(user));
 
     const isBusiness = isB2BAdmin({ subscription, user, organization });
 
     useEffectOnce(() => {
         // If the tier is in the localStorage means it was sent already, but it is also need to
         // be sent in the payload when forking the session.
-        const localStorageTier: UserTier | undefined = getItem(VPN_TV_USER_TIER);
+        const localStorageTier: TelemetryUserTier | undefined = getItem(VPN_TV_USER_TIER);
         if (localStorageTier) {
             setTier(localStorageTier);
             removeItem(VPN_TV_USER_TIER);
