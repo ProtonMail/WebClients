@@ -46,8 +46,12 @@
 .model-mode-panel--dropdown {
 	position: relative;
 	z-index: 2;
-	margin-block-end: rem(-18);
 	background-color: var(--background-norm);
+
+	&.model-mode-panel--with-upgrade-footer {
+		margin-block-end: rem(-18);
+	}
+
 	border-radius: rem(24);
 	border: 1px solid var(--border-norm);
 
