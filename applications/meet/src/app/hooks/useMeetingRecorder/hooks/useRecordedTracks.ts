@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import type { Participant } from 'livekit-client';
 
 import { getTracksForRecording } from '../utils/getTracksForRecording';
 import type { RecordingTrackInfo } from '../videoMixer/types';
 
 interface UseRecordedTracksOptions {
-    pagedParticipants: (RemoteParticipant | LocalParticipant)[];
+    pagedParticipants: Participant[];
     cameraTracks: TrackReference[];
     screenShareTracks: TrackReference[];
 }
