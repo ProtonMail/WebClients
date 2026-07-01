@@ -25,7 +25,7 @@ export const SideBar = ({
     header,
     absoluteHeader = false,
     isScrolled = false,
-    paddingClassName = 'p-4',
+    paddingClassName = 'px-6 pt-6 pb-4',
     paddingHeaderClassName = '',
 }: SideBarProps) => {
     const asideRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export const SideBar = ({
             ref={asideRef}
             aria-label={ariaLabel}
             className={clsx(
-                'meet-side-bar border border-norm flex flex-nowrap flex-column h-full w-full meet-radius relative max-w-full z-1',
+                'meet-side-bar border border-norm flex flex-nowrap flex-column h-full w-full large-meet-radius relative max-w-full z-1',
                 paddingClassName
             )}
             {...focusTrapProps}
@@ -52,7 +52,7 @@ export const SideBar = ({
             <div
                 className={clsx(
                     'side-bar-header-wrapper flex items-center justify-space-between w-full flex-nowrap',
-                    absoluteHeader && 'absolute top-0 left-0 px-4 pt-4 side-bar-transparent-header',
+                    absoluteHeader && 'absolute top-0 left-0 px-6 pt-6 side-bar-transparent-header',
                     isScrolled && 'scrolled',
                     !!header && 'pb-4',
                     paddingHeaderClassName
