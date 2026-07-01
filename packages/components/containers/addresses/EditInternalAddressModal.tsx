@@ -58,6 +58,7 @@ const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
+    const isSelf = !member || Boolean(member.Self);
 
     return (
         <Modal
@@ -77,8 +78,10 @@ const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
         >
             <ModalHeader title={c('Title').t`Edit email address`} />
             <ModalContent>
-                <div className="color-weak mb-4">{c('loc_nightly_Info')
-                    .t`You can change capitalization or punctuation to edit your email address.`}</div>
+                <div className="color-weak mb-4">
+                    {c('Info')
+                        .t`Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.`}
+                </div>
                 <InputFieldTwo
                     type="email"
                     autoComplete="email"
@@ -99,7 +102,7 @@ const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
                                 canonicalizeEmail(newEmail, CANONICALIZE_SCHEME.PROTON) !==
                                 canonicalizeEmail(initialEmail, CANONICALIZE_SCHEME.PROTON)
                             ) {
-                                return c('loc_nightly_Error')
+                                return c('Error')
                                     .t`Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address`;
                             }
                             return '';
@@ -107,12 +110,14 @@ const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
                     ])}
                     label={c('Label').t`Address`}
                 />
-                <InputFieldTwo
-                    id="displayName"
-                    value={displayName}
-                    onValue={setDisplayName}
-                    label={c('Label').t`Display name`}
-                />
+                {isSelf /* API route to update display name only exists for self */ && (
+                    <InputFieldTwo
+                        id="displayName"
+                        value={displayName}
+                        onValue={setDisplayName}
+                        label={c('Label').t`Display name`}
+                    />
+                )}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={submitting}>{c('Action').t`Cancel`}</Button>
