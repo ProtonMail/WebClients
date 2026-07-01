@@ -251,7 +251,8 @@ export const ModelModePanel = ({
             <div
                 className={clsx(
                     'model-mode-panel flex flex-column flex-nowrap w-full overflow-hidden',
-                    isSheet ? 'model-mode-panel--sheet' : 'model-mode-panel--dropdown'
+                    isSheet ? 'model-mode-panel--sheet' : 'model-mode-panel--dropdown',
+                    !isSheet && showUpgradeFooter && 'model-mode-panel--with-upgrade-footer'
                 )}
             >
                 <div className="model-mode-panel-body flex flex-column flex-nowrap w-full">
