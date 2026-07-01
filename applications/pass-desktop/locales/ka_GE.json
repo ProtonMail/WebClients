@@ -2602,6 +2602,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "შეიყვანეთ დამოწმების კოდი. ციფრი ${ digit }."
       ]
     },
     "Keyboard key": {
@@ -3823,6 +3826,18 @@
       ],
       "Expires in": [
         "ვადა გასდის"
+      ],
+      "1 day": [
+        "1 დღე"
+      ],
+      "1 week": [
+        "1 კვირა"
+      ],
+      "1 year": [
+        "1 წელი"
+      ],
+      "Custom": [
+        "მომხმარებლის"
       ]
     },
     "Link": {
@@ -4150,6 +4165,9 @@
       ],
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
+      ],
+      "e.g. My automation script": [
+        "მაგ. ჩემი ავტომატიზაციის სკრიპტი"
       ]
     },
     "Security Center - Info": {
