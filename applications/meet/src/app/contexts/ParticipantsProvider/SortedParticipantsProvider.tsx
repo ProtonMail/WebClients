@@ -1,8 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 
 import { useParticipants, useRoomContext } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
-import { RoomEvent } from 'livekit-client';
+import { type Participant, RoomEvent } from 'livekit-client';
 
 import { useHandler } from '@proton/components/hooks/useHandler';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -24,7 +23,7 @@ const updateOnlyOn = [
     RoomEvent.Reconnected,
 ];
 
-const ParticipantsMapContext = createContext<Map<string, LocalParticipant | RemoteParticipant>>(new Map());
+const ParticipantsMapContext = createContext<Map<string, Participant>>(new Map());
 
 export const SortedParticipantsProvider = ({ children }: { children: React.ReactNode }) => {
     const dispatch = useMeetDispatch();
@@ -49,7 +48,7 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
     const throttledUpdateSortedParticipants = useHandler(handleUpdateSortedParticipants, { throttle: 200 });
 
     const handleParticipantDisconnected = useCallback(
-        (participant: LocalParticipant | RemoteParticipant) => {
+        (participant: Participant) => {
             dispatch(removeParticipant(participant.identity));
         },
         [dispatch]
@@ -104,9 +103,7 @@ export const useSortedParticipants = () => {
 
     return useMemo(
         () =>
-            sortedParticipantIdentities
-                .map((identity) => participantsMap.get(identity) as LocalParticipant | RemoteParticipant)
-                .filter(Boolean),
+            sortedParticipantIdentities.map((identity) => participantsMap.get(identity) as Participant).filter(Boolean),
         [sortedParticipantIdentities, participantsMap]
     );
 };
@@ -118,7 +115,7 @@ export const useSortedPagedParticipants = () => {
     return useMemo(
         () =>
             sortedPagedParticipantIdentities
-                .map((identity) => participantsMap.get(identity) as LocalParticipant | RemoteParticipant)
+                .map((identity) => participantsMap.get(identity) as Participant)
                 .filter(Boolean),
         [sortedPagedParticipantIdentities, participantsMap]
     );

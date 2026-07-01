@@ -1,6 +1,6 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import type { Participant } from 'livekit-client';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import shallowEqual from '@proton/utils/shallowEqual';
@@ -9,8 +9,8 @@ import { PAGE_SIZE } from '../../constants';
 import { getIdealSortedParticipants } from '../../utils/participants/getIdealSortedParticipants';
 import { getVisuallyStableSortedParticipants } from '../../utils/participants/getVisuallyStableSortedParticipants';
 import type { MeetState } from '../rootReducer';
-import { selectSelfView } from './settings';
 import { selectParticipantsMap } from './meetingInfo';
+import { selectSelfView } from './settings';
 
 export interface SortedParticipantsState {
     localParticipantIdentity: string;
@@ -112,9 +112,7 @@ export const removeParticipant =
     };
 
 export const updateSortedParticipants =
-    (
-        participants: (LocalParticipant | RemoteParticipant)[]
-    ): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (participants: Participant[]): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
     (dispatch, getState) => {
         const { raisedHands } = getState().meetingChatAndReactions;
         // Get raised hands and remove local participant and the ones are not in the participants list
@@ -198,13 +196,13 @@ export const selectLocalParticipantIdentity = (state: MeetState) => {
     return state.sortedParticipants.localParticipantIdentity;
 };
 
-export const selectIsLocalParticipantAdminOrHost = createSelector([
-    selectParticipantsMap,
-    selectLocalParticipantIdentity,
-], (participantsMap, localParticipantIdentity) => {
-    const participant = participantsMap[localParticipantIdentity];
-    return !!participant?.IsAdmin || !!participant?.IsHost;
-});
+export const selectIsLocalParticipantAdminOrHost = createSelector(
+    [selectParticipantsMap, selectLocalParticipantIdentity],
+    (participantsMap, localParticipantIdentity) => {
+        const participant = participantsMap[localParticipantIdentity];
+        return !!participant?.IsAdmin || !!participant?.IsHost;
+    }
+);
 
 export const {
     setSortedParticipantIdentities,
