@@ -235,7 +235,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.toggle-container-text .toggle-container-img {
-		opacity: 0;
+		display: none !important;
 	}
 
 	&--checked {

@@ -304,7 +304,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
 
     return (
         <div className="conversation-header flex flex-column flex-nowrap w-full">
-            <div className="flex flex-row justify-space-between items-center pt-3 pb-2 px-3 group-hover-opacity-container">
+            <div className="flex flex-row justify-space-between items-center pt-2 pb-2 px-3 group-hover-opacity-container">
                 <div className="inline-flex flex-row flex-nowrap items-center justify-start">
                     <RenderTitle isEditing={isEditing} />
                     {!isGuest && <ChatDropdownMenu conversation={conversation} />}
