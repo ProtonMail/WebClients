@@ -171,6 +171,12 @@ export const updateMailCategoryView = (MailCategoryView: boolean) => ({
     data: { MailCategoryView },
 });
 
+export const updateMailCategoryViewCountersEnabled = (MailCategoryViewCountersEnabled: boolean) => ({
+    url: 'mail/v4/settings/mail-category-view-counters-enabled',
+    method: 'put',
+    data: { MailCategoryViewCountersEnabled },
+});
+
 export const updateDelaySend = (DelaySendSeconds: number) => ({
     url: 'mail/v4/settings/delaysend',
     method: 'put',
