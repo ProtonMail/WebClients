@@ -325,6 +325,8 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         setUiState(GROUPS_STATE.EMPTY);
     };
 
+    const handleResumeRoleAssignments = () => {};
+
     const handleCreateGroup = () => {
         setUiState(GROUPS_STATE.NEW);
         resetForm({
@@ -390,6 +392,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
             onCreateGroup: handleCreateGroup,
             onAddGroupMembers: addGroupMembers,
             onUnselectGroup: handleUnselectGroup,
+            onResumeRoleAssignments: handleResumeRoleAssignments,
         },
     };
 };
