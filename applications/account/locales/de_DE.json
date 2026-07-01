@@ -3263,6 +3263,19 @@
       ],
       "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
         "Du bist fast fertig. Du musst deine Domain so konfigurieren, dass du deine E-Mails direkt in ${ BRAND_NAME } erhältst. Sobald dies bestätigt ist, wird dein Team keine neuen E-Mails mehr in Gmail erhalten und die Migration ist abgeschlossen."
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Uns ist aufgefallen, dass einige Nutzer ihre ${ BRAND_NAME }-Konten noch nicht beansprucht haben."
+      ],
+      "You're all set!": [
+        "Du kannst loslegen!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu migrieren, füge deinem Abonnement weitere Lizenzen hinzu.",
+        "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu migrieren, füge deinem Abonnement weitere Lizenzen hinzu."
       ]
     },
     "breadcrumb": {
@@ -5508,6 +5521,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adresse",
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adressen"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Bitte beachte, dass E-Mails an diese Adresse – selbst von anderen ${ BRAND_NAME }-Adressen – nicht mehr Ende-zu-Ende-verschlüsselt gesendet werden."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Sobald die Verbindung getrennt und deaktiviert ist, kannst du keine E-Mails mehr als ${ address.Email } in ${ BRAND_NAME } senden oder empfangen. E-Mails an diese Adresse kommen weiterhin in Gmail an, aber nicht in ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Sobald die Verbindung getrennt ist, kannst du keine E-Mails mehr als ${ address.Email } in ${ BRAND_NAME } senden oder empfangen. E-Mails an diese Adresse kommen weiterhin in Gmail an, aber nicht in ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Wir werden deine alten E-Mails importieren und künftig neue Nachrichten aus Gmail synchronisieren."
+      ],
+      "You can reconnect this address at any time.": [
+        "Du kannst diese Adresse jederzeit wieder verbinden."
       ]
     },
     "description": {
@@ -6967,6 +6995,16 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Deine Wiederherstellungskontakte sollten Personen sein, die du kennst und die du leicht erreichen kannst."
+      ],
+      "Add 1 more": [
+        "1 weiteren hinzufügen"
+      ],
+      "Explore plans": [
+        "Abonnements entdecken"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Die maximale Anzahl von ${ limit } Kontakt wurde erreicht. Um dies zu ändern, entferne einen Kontakt und füge einen neuen hinzu.",
+        "Die maximale Anzahl von ${ limit } Kontakten wurde erreicht. Um dies zu ändern, entferne einen Kontakt und füge einen neuen hinzu."
       ]
     },
     "Empty group name": {
@@ -13437,6 +13475,18 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Add an email address in case we need to contact you": [
+        "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Wenn du die Anmeldung per QR-Code aktivierst, kannst du dich durch Scannen eines QR-Codes anmelden, falls du dein Passwort vergessen hast. Dazu musst du lediglich auf einem anderen Gerät bei einem ${ BRAND_NAME }-Dienst angemeldet sein."
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Indem du Personen, denen du vertraust, als Wiederherstellungskontakte hinzufügst, können wir ihnen eine E-Mail senden, um dir zu helfen, falls du Probleme beim Wiederherstellen deiner Daten nach einem Passwort-Reset hast. Du kannst auch ein Wiederherstellungskontakt für andere sein."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
       ]
     },
     "info": {
@@ -20321,6 +20371,9 @@
       ],
       "Your recovery email has been successfully removed.": [
         "Deine Wiederherstellungs-E-Mail-Adresse wurde erfolgreich entfernt."
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "Diese Wiederherstellungs-E-Mail-Adresse jetzt verifizieren: ${ emailData.value }"
       ]
     },
     "Recovery method": {
@@ -20500,6 +20553,9 @@
       ],
       "Verify recovery phone": [
         "Wiederherstellungs-Telefonnummer verifizieren"
+      ],
+      "Enable email recovery": [
+        "E-Mail-Wiederherstellung aktivieren"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -21249,6 +21305,81 @@
       ],
       "Verify your password": [
         "Passwort bestätigen"
+      ],
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-Konto-E-Mail-Adresse"
+      ],
+      "Account protection": [
+        "Kontoschutz"
+      ],
+      "Add": [
+        "Hinzufügen"
+      ],
+      "Add options": [
+        "Optionen hinzufügen"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Füge Personen hinzu, denen du vertraust und die du leicht erreichen kannst. Diese können dir helfen, deine Daten wieder freizuschalten, nachdem du dein Passwort zurückgesetzt hast."
+      ],
+      "Add recovery contacts": [
+        "Wiederherstellungskontakte hinzufügen"
+      ],
+      "Added recovery contacts": [
+        "Wiederherstellungskontakte hinzugefügt"
+      ],
+      "Added recovery email": [
+        "Wiederherstellungs-E-Mail hinzugefügt"
+      ],
+      "Allow": [
+        "Zulassen"
+      ],
+      "Allow recovery by email": [
+        "Wiederherstellung per E-Mail zulassen"
+      ],
+      "Congratulations": [
+        "Glückwunsch"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Nichts erhalten? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Fertig"
+      ],
+      "Download": [
+        "Herunterladen"
+      ],
+      "Download recovery file": [
+        "Wiederherstellungsdatei herunterladen"
+      ],
+      "Emergency contacts enabled": [
+        "Notfallkontakte aktiviert"
+      ],
+      "Enable email recovery": [
+        "E-Mail-Wiederherstellung aktivieren"
+      ],
+      "Enable QR code sign-in": [
+        "QR-Code-Anmeldung aktivieren"
+      ],
+      "Got it": [
+        "Verstanden"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Um sicherzugehen, dass es sich um deine E-Mail-Adresse handelt, gib den an ${ boldEmail } gesendeten Verifizierungscode ein."
+      ],
+      "Verified password": [
+        "Passwort bestätigt"
+      ],
+      "Verify": [
+        "Bestätigen"
+      ],
+      "Verify password": [
+        "Passwort bestätigen"
+      ],
+      "Verify recovery email": [
+        "Wiederherstellungs-E-Mail-Adresse verifizieren"
+      ],
+      "Your security setup": [
+        "Deine Sicherheitseinstellungen"
       ]
     },
     "saml: Action": {
@@ -23110,6 +23241,12 @@
       ],
       "Verify ${ value }": [
         "${ value } verifizieren"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Disabled": [
+        "Deaktiviert"
       ]
     },
     "Step in filter modal": {
@@ -26328,6 +26465,15 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Möchtest du diese E-Mail-Adresse wirklich trennen und deaktivieren?"
+      ],
+      "Some of your encrypted data is locked": [
+        "Ein Teil deiner verschlüsselten Daten ist gesperrt."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27835,6 +27981,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikate aus früheren Importen werden übersprungen. In den Einstellungen von ${ PRODUCT_NAMES.EASY_SWITCH } kannst du den Vorgang rückgängig machen oder ältere Nachrichten importieren."
       ]
     }
   }

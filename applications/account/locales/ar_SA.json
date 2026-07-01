@@ -18299,6 +18299,9 @@
       ],
       "Your recovery phrase is set": [
         "تم تعيين عبارة الاسترداد الخاصة بك"
+      ],
+      "update it now": [
+        "قم بتحديثه الآن"
       ]
     },
     "saml: Action": {
@@ -24276,6 +24279,46 @@
       ],
       "Yearly, ${ untilString }": [
         "سنويًا، ${ untilString }"
+      ]
+    },
+    "safety_review": {
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "إذا تغيّر عنوان بريدك الإلكتروني المخصّص للاسترداد، ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "إذا تغيّر رقم هاتفك المخصّص للاسترداد، ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "أرسل رمز التحقق"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "للتأكد من أن هذا العنوان يخصك بالفعل، سنرسل إليك رسالة بريد إلكتروني تحتوي على رمز تحقق."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "للتأكد من أن هذا الرقم يخصك بالفعل، سنرسل إليك رسالة نصية (SMS) تحتوي على رمز تحقق."
+      ],
+      "Update": [
+        "تحديث"
+      ],
+      "Update recovery email": [
+        "تحديث البريد الإلكتروني للاسترداد"
+      ],
+      "Update recovery phone": [
+        "تحديث رقم هاتف الاسترداد"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "يؤدي التحقق من عنوان بريدك الإلكتروني إلى زيادة أمان حسابك، ويمنحك خيارات إضافية لاسترداد الحساب."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "يؤدي التحقق من رقم هاتفك إلى تعزيز أمان حسابك، ويمنحك خيارات إضافية لاسترداد الحساب."
+      ]
+    },
+    "Status": {
+      "Active": [
+        "نشط"
+      ],
+      "Disabled": [
+        "معطل"
       ]
     }
   }

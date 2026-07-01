@@ -1889,6 +1889,21 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Add company": [
+        "Lägg till företag"
+      ],
+      "Disable company": [
+        "Inaktivera företag"
+      ],
+      "Enable company": [
+        "Aktivera företag"
+      ],
+      "Export overview as CSV": [
+        "Exportera översikt som CSV"
+      ],
+      "Manage": [
+        "Hantera"
       ]
     },
     "action": {
@@ -8495,6 +8510,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din tvåfaktorsautentiseringsnyckel är redo att användas."
+      ],
+      "Insert your security key into your device.": [
+        "Infoga din säkerhetsnyckel i din enhet."
       ]
     },
     "fido2: Label": {
@@ -8897,6 +8915,9 @@
       ],
       "Roles and permissions": [
         "Roller och behörigheter"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ]
     },
     "Header": {
@@ -13240,6 +13261,36 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "All data och alla inställningar är bevarad"
+      ],
+      "Average": [
+        "Genomsnittlig"
+      ],
+      "Editing requires permission": [
+        "Redigering kräver behörighet"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Företaget och alla dess medlemmar kommer förlora åtkomst omedelbart."
+      ],
+      "What happens:": [
+        "Vad hände:"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Med hanterade företag kan du lägga till, redigera och ta bort åtkomst för organisationer du övervakar."
+      ],
+      "You can enable this company again at any time.": [
+        "Du kan aktivera detta företag igen när som helst."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Din totala månadskostnad för alla hanterade företag."
       ]
     },
     "info": {
@@ -15419,6 +15470,21 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Average": [
+        "Genomsnittlig"
+      ],
+      "Companies": [
+        "Företag"
+      ],
+      "Cost": [
+        "Kostar"
+      ],
+      "Password check-ins": [
+        "Lösenordsincheckningar"
+      ],
+      "Total cost": [
+        "Total kostnad"
       ]
     },
     "label": {
@@ -19078,6 +19144,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Se till att du memorerar eller förvarar ditt lösenord säkert eftersom det är nyckeln till att dekryptera dina data."
+      ],
+      "Turn off check-ins": [
+        "Stäng av incheckningar"
+      ],
+      "Turn off password check-ins?": [
+        "Stäng av lösenordsincheckningar?"
       ]
     },
     "passwordless": {
@@ -19710,6 +19782,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter company name": [
+        "Ange företagsnamn"
+      ],
+      "Search for a company": [
+        "Sök efter ett företag"
       ]
     },
     "placeholder": {
@@ -20141,6 +20219,15 @@
       ],
       "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
         "Ditt konto har inga inställda återställningsalternativ. Om du förlorar ditt lösenord kommer du förlora åtkomst till din e-post, dina filer och lösenord permanent."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Du är delvis där, men inte säker än. Ett glömt lösenord kan fortfarande innebära att du förlorar dina e-postmeddelanden, filer och lösenord."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Ditt konto är inte helt skyddat. Ett glömt lösenord kan fortfarande innebära att du förlorar åtkomsten till dina e-postmeddelanden, filer och lösenord."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Din återställningsinställning är ofullständig. Ett glömt lösenord kan fortfarande innebära att du förlorar åtkomsten till dina e-postmeddelanden, filer och lösenord."
       ]
     },
     "Recovery score item": {
@@ -20932,6 +21019,9 @@
       ],
       "Your recovery phrase is set": [
         "Din återställningsfras är inställd"
+      ],
+      "update it now": [
+        "uppdatera det nu"
       ]
     },
     "safety_review": {
@@ -21141,6 +21231,36 @@
       ],
       "Your security setup": [
         "Din säkerhetsinställning"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Om din e-post för återställning har ändrats, ${ updateEmailLink }"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Om din telefon för återställning har ändrats, ${ updatePhoneLink }"
+      ],
+      "Send verification code": [
+        "Skicka verifieringskod"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi regelbundet att be dig ange det."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "För att säkerställa att denna adress verkligen är din kommer vi skicka ett e-postmeddelande med en verifieringskod."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "För att säkerställa att detta nummer verkligen är ditt kommer vi skicka ett SMS med en verifieringskod."
+      ],
+      "Update": [
+        "Uppdatera"
+      ],
+      "Update recovery email": [
+        "Uppdatera e-post för återställning"
+      ],
+      "Update recovery phone": [
+        "Uppdatera telefon för återställning"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
       ]
     },
     "saml: Action": {
@@ -21238,6 +21358,9 @@
       ],
       "Updated": [
         "Uppdaterad"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } och ${ groupsText } synkroniserade."
       ]
     },
     "scim: Action": {
@@ -22978,6 +23101,12 @@
       ],
       "Verify ${ value }": [
         "Verifiera ${ value }"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Disabled": [
+        "Inaktiverad"
       ]
     },
     "Step in filter modal": {
@@ -23950,6 +24079,24 @@
       ],
       "Your address has been activated": [
         "Din adress har aktiverats"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } aktiverad"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } inaktiverad"
+      ],
+      "${ data.name } added": [
+        "${ data.name } tillagd"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } uppdaterad"
+      ],
+      "Password check-ins disabled": [
+        "Lösenordsincheckningar inaktiverad"
+      ],
+      "Password check-ins enabled": [
+        "Lösenordsincheckningar aktiverad"
       ]
     },
     "Success message": {
@@ -26178,6 +26325,18 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Add company": [
+        "Lägg till företag"
+      ],
+      "Disable company": [
+        "Inaktivera företag"
+      ],
+      "Edit company": [
+        "Redigera företag"
+      ],
+      "Previous billing periods": [
+        "Föregående faktureringsperioder"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26983,6 +27142,12 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ]
     },
     "Users table: badge": {
@@ -27400,6 +27565,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Är du säker på att du vill ta bort ditt telefonnummer för återställning?"
       ]
     },
     "Warning for domain modal": {
@@ -27655,6 +27823,23 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Faktureringsperiod"
+      ],
+      "Company": [
+        "Företag"
+      ],
+      "Managed companies": [
+        "Hanterade företag"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total cost": [
+        "Total kostnad"
       ]
     }
   }

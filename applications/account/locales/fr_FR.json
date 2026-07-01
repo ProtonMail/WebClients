@@ -1892,6 +1892,18 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add company": [
+        "Ajouter une entreprise"
+      ],
+      "Disable company": [
+        "Désactiver l'entreprise"
+      ],
+      "Enable company": [
+        "Activer l'entreprise"
+      ],
+      "Manage": [
+        "Gérer"
       ]
     },
     "action": {
@@ -5563,6 +5575,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Veuillez noter que les e-mails envoyés à cette adresse, même s'ils proviennent d'autres adresses ${ BRAND_NAME }, ne feront plus l'objet d'un chiffrement de bout en bout."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Une fois l'adresse déconnectée et désactivée, vous ne pourrez plus envoyer ni recevoir d'e-mails en tant que ${ address.Email } dans ${ BRAND_NAME }. Les e-mails envoyés à cette adresse continueront d'arriver dans Gmail, mais pas dans ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Une fois l'adresse déconnectée, vous ne pourrez plus envoyer ni recevoir d'e-mails en tant que ${ address.Email } dans ${ BRAND_NAME }. Les e-mails envoyés à cette adresse continueront d'arriver dans Gmail, mais pas dans ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Vous pouvez reconnecter cette adresse à tout moment."
       ]
     },
     "description": {
@@ -13545,6 +13569,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Average": [
+        "Moyenne"
+      ],
+      "Per seat/month": [
+        "par accès et par mois"
       ]
     },
     "info": {
@@ -15763,6 +15793,21 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Mises à jour – Confirmations, alertes et mises à jour de compte automatisées"
+      ],
+      "Average": [
+        "Moyenne"
+      ],
+      "Companies": [
+        "Entreprises"
+      ],
+      "Cost": [
+        "Coût"
+      ],
+      "Seats": [
+        "Accès"
+      ],
+      "Total cost": [
+        "Coût total"
       ]
     },
     "label": {
@@ -20109,6 +20154,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Enter company name": [
+        "Saisir un nom d'entreprise"
+      ],
+      "Search for a company": [
+        "Rechercher une entreprise"
       ]
     },
     "placeholder": {
@@ -21358,6 +21409,9 @@
       ],
       "Your recovery phrase is set": [
         "Votre phrase de récupération est configurée."
+      ],
+      "update it now": [
+        "mettre à jour maintenant"
       ]
     },
     "safety_review": {
@@ -21591,6 +21645,36 @@
       ],
       "Your security setup": [
         "Votre configuration de sécurité"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Si votre adresse e-mail de récupération a changé, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Si votre téléphone de récupération a changé, ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Envoyer un code de vérification"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Pour nous assurer que cette adresse vous appartient bien, nous vous enverrons un e-mail contenant un code de vérification."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Pour nous assurer que ce numéro vous appartient bien, nous vous enverrons un SMS contenant un code de vérification."
+      ],
+      "Update": [
+        "Mettre à jour"
+      ],
+      "Update recovery email": [
+        "Mettre à jour l'e-mail de récupération"
+      ],
+      "Update recovery phone": [
+        "Mettre à jour le téléphone de récupération"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "La vérification de votre adresse e-mail renforce la sécurité de votre compte et offre des options supplémentaires de récupération."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "La vérification de votre numéro de téléphone renforce la sécurité de votre compte et offre des options de récupération supplémentaires."
       ]
     },
     "saml: Action": {
@@ -23458,6 +23542,12 @@
       ],
       "Verify ${ value }": [
         "Vérifier ${ value }"
+      ],
+      "Active": [
+        "Actif"
+      ],
+      "Disabled": [
+        "Désactivé"
       ]
     },
     "Step in filter modal": {
@@ -24442,6 +24532,18 @@
       ],
       "Your address has been activated": [
         "Votre adresse a été activée"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } activé"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } désactivé"
+      ],
+      "${ data.name } added": [
+        "${ data.name } a été ajouté"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } a été mis à jour"
       ]
     },
     "Success message": {
@@ -26682,6 +26784,18 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Add company": [
+        "Ajouter une entreprise"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Voulez-vous vraiment déconnecter et désactiver cette adresse ?"
+      ],
+      "Disable company": [
+        "Désactiver l'entreprise"
+      ],
+      "Edit company": [
+        "Modifier l'entreprise"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28201,6 +28315,23 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Période de facturation"
+      ],
+      "Company": [
+        "Entreprise"
+      ],
+      "Managed companies": [
+        "Entreprises gérées"
+      ],
+      "Status": [
+        "État"
+      ],
+      "Total cost": [
+        "Coût total"
       ]
     }
   }

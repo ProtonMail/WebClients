@@ -1384,7 +1384,7 @@
         "İncele"
       ],
       "Review changes": [
-        "Değişiklikleri gözden geçir"
+        "Değişiklikleri inceleyin"
       ],
       "Review recovery options": [
         "Kurtarma seçeneklerini gözden geçir"
@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add company": [
+        "Kuruluş ekle"
+      ],
+      "Disable company": [
+        "Kuruluşu kullanımdan kaldır"
+      ],
+      "Enable company": [
+        "Kuruluşu kullanıma al"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Kuruluşa göre kırılımı ZIP olarak dışa aktar"
+      ],
+      "Export overview as CSV": [
+        "Özeti CSV olarak dışa aktar"
+      ],
+      "Manage": [
+        "Yönetim"
       ]
     },
     "action": {
@@ -3479,7 +3497,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Önceki içe aktarmalardan gelen yinelenen mesajlar atlanacaktır. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski mesajları içe aktarabilirsiniz."
+        "Önceki içe aktarmalardan gelen çift iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
       ]
     },
     "Calendar access select label": {
@@ -5515,7 +5533,7 @@
         "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Eski e-postalarınızı içe aktaracağız ve bundan sonra Gmail'den gelen yeni mesajları senkronize edeceğiz"
+        "Eski e-postalarınız içe aktarılacak ve bundan sonra Gmail üzerine gelen yeni iletiler eşitlenecek"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
@@ -5580,6 +5598,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Bu adrese gönderilen e-postaların, diğer ${ BRAND_NAME } adreslerinden gönderilseler bile, artık uçtan uca şifrelenmiş olmayacağını unutmayın."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Bağlantı kesilip hesap kullanımdan kaldırıldıktan sonra ${ BRAND_NAME } üzerinden ${ address.Email } adresiyle e-posta gönderip alamayacaksınız. Bu adrese gönderilen e-postalar Gmail üzerine ulaşacak ancak ${ MAIL_APP_NAME } üzerine ulaşmayacak."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Bağlantı kesildiğinde ${ BRAND_NAME } üzerinden ${ address.Email } adresiyle artık e-posta gönderip alamayacaksınız. Bu adrese gönderilen e-postalar Gmail üzerine ulaşacak ancak ${ MAIL_APP_NAME } üzerine ulaşmayacak."
+      ],
+      "You can reconnect this address at any time.": [
+        "Bu adresi istediğiniz zaman yeniden bağlayabilirsiniz."
       ]
     },
     "description": {
@@ -7388,7 +7418,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak sürücü bulunamadı"
+        "İçe aktarılacak bir sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -7409,7 +7439,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
+        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
@@ -7705,7 +7735,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -8649,7 +8679,7 @@
         "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Insert your security key into your device.": [
-        "Güvenlik anahtarınızı cihazınıza takın."
+        "Güvenlik anahtarınızı aygıtınıza takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -9079,10 +9109,10 @@
         "Genel"
       ],
       "Manage users and groups, assign roles, and allocate licenses to members.": [
-        "Kullanıcıları ve grupları yönetin, roller atayın ve üyelere lisans tahsis edin."
+        "Kullanıcıları ve grupları yönetin, roller atayın ve üye lisanslarını ayarlayın."
       ],
       "Manages security settings and can view all event logs and user details.": [
-        "Güvenlik ayarlarını yönetir ve tüm olay günlüklerini ve kullanıcı bilgilerini görüntüleyebilir."
+        "Güvenlik ayarlarını yönetir ve tüm olay günlükleri ile kullanıcı bilgilerini görüntüleyebilir."
       ],
       "Roles and permissions": [
         "Roller ve izinler"
@@ -9735,7 +9765,7 @@
         "${ boldName } varsayılan takvim olarak ayarlanacak."
       ],
       "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "${ BRAND_NAME } Business tarfiesi ekibinize işlerinde verimli ve düzenli olmaları için ihtiyaç duydukları tüm işbirliği araçlarını sunarken aynı zamanda işletmenizi de korur."
+        "${ BRAND_NAME } for Business tarifeleri ekibinize işlerinde verimli ve düzenli olmaları için gereken tüm iş birliği araçlarını sağlarken kuruluşunuzu da korur."
       ],
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
@@ -11072,7 +11102,7 @@
         "ZDNet değerlendirmesi"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
@@ -11920,7 +11950,7 @@
         "aylık"
       ],
       "per month, billed at ${ price }": [
-        "aylık, toplamda ${ price } olarak faturalanır"
+        "aylık, fatura toplam ${ price } olarak hesaplanır"
       ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Parolanızı unutmamanız için ${ BRAND_NAME } düzenli aralıklarla parolanızı doğrulamanızı ister. Zamanla bu isteklerin sıklığı azalır."
@@ -13582,6 +13612,48 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "Tüm veriler ve ayarlar korunacak"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Atanmış ama kullanımdan kaldırılmış koltuklar faturalanmaz"
+      ],
+      "Average": [
+        "Ortalama"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Üyelerin oturumları kapatıldı ve yeniden oturum açamayacaklar"
+      ],
+      "Per seat/month": [
+        "Koltuk / ay"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Geçmiş dönemleri gözden geçirin ve raporlama veya müşteri faturalaması için verileri dışa aktarın."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Adı, durumu ve atanmış koltukları ayarlayın"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Kuruluş ve tüm üyeleri erişimi hemen kaybedecek."
+      ],
+      "What happens:": [
+        "Ne oldu:"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Yönetilen kuruluşlar ile denetlediğiniz kuruluşlar için erişim ekleyebilir, düzenleyebilir ve kaldırabilirsiniz."
+      ],
+      "You can enable this company again at any time.": [
+        "Bu kuruluşu istediğiniz zaman yeniden kullanıma alabilirsiniz."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Faturanız atanmış ortalama koltuk sayısına göre aylık olarak hazırlanacak."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Yönetilen tüm kuruluşlar için toplam aylık maliyetiniz."
       ]
     },
     "info": {
@@ -14525,7 +14597,7 @@
         "Çocuğunuz için ayırtmak istediğiniz adresi seçin"
       ],
       "Choose your billing": [
-        "Faturanızı seçin"
+        "Fatura döneminizi seçin"
       ],
       "City": [
         "İl"
@@ -15171,7 +15243,7 @@
         "Duyurular"
       ],
       "Newsletters - News, editorial emails, and non-promotional content": [
-        "Haber Bültenleri - Haberler, editoryal e-postalar ve tanıtım amaçlı olmayan içerikler"
+        "Duyurular - Haberler, bilgilendirme e-postaları ve tanıtım amaçlı olmayan içerikler"
       ],
       "No": [
         "Hayır"
@@ -15339,7 +15411,7 @@
         "Kazançlar"
       ],
       "Promotions - Deals, offers, and marketing emails": [
-        "Promosyonlar - Fırsatlar, teklifler ve pazarlama e-postaları"
+        "Tanıtımlar - Fırsatlar, teklifler ve pazarlama e-postaları"
       ],
       "Prompt to trust keys": [
         "Anahtarlara güvenilmesi sorulsun"
@@ -15517,7 +15589,7 @@
         "Sosyal ağ"
       ],
       "Social - Social media updates, activity, and messages": [
-        "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve mesajlar"
+        "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve iletiler"
       ],
       "Social media updates and activity": [
         "Sosyal ağ güncellemeleri ve etkinlikleri"
@@ -15628,7 +15700,7 @@
         "Hesap işlemleri"
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
-        "İşlemler - Makbuzlar, kayıtlar, faturalar ve siparişler"
+        "İşlemler - Alındılar, kayıtlar, faturalar ve siparişler"
       ],
       "Two-password mode": [
         "İki parola kipi"
@@ -15803,6 +15875,33 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Assigned seats": [
+        "Atanmış koltuk sayısı"
+      ],
+      "Average": [
+        "Ortalama"
+      ],
+      "Billed average": [
+        "Faturalanan ortalama"
+      ],
+      "Billed seats": [
+        "Faturalanmış koltuk sayısı"
+      ],
+      "Companies": [
+        "Kuruluşlar"
+      ],
+      "Cost": [
+        "Maliyet"
+      ],
+      "Seats": [
+        "Koltuk sayısı"
+      ],
+      "Seats usage": [
+        "Koltuk kullanımı"
+      ],
+      "Total cost": [
+        "Toplam maliyet"
       ]
     },
     "label": {
@@ -17379,7 +17478,7 @@
         "Tek merkezden faturalama"
       ],
       "Centralized settings and billings": [
-        "Merkezde toplanmış ayarlar ve faturalama"
+        "Tek noktadan ayar ve fatura işlemleri"
       ],
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
@@ -18127,7 +18226,7 @@
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
       ]
     },
     "new_plans: upgrade": {
@@ -20149,6 +20248,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Enter company name": [
+        "Kuruluş adını yazın"
+      ],
+      "Search for a company": [
+        "Kuruluş ara"
       ]
     },
     "placeholder": {
@@ -21437,6 +21542,9 @@
       ],
       "Your recovery phrase is set": [
         "Kurtarma ifadeniz ayarlandı"
+      ],
+      "update it now": [
+        "şimdi güncelleyin"
       ]
     },
     "safety_review": {
@@ -21673,6 +21781,36 @@
       ],
       "Your security setup": [
         "Güvenlik kurulumunuz"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Kurtarma e-posta adresiniz değiştiyse, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Kurtarma telefon numaranız değiştiyse, ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Doğrulama kodunu gönder"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Bu adresin gerçekten size ait olduğundan emin olmak için size doğrulama kodu bulunan bir e-posta göndereceğiz."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Bu numaranın gerçekten size ait olduğundan emin olmak için size doğrulama kodu bulunan bir SMS göndereceğiz."
+      ],
+      "Update": [
+        "Güncelle"
+      ],
+      "Update recovery email": [
+        "Kurtarma e-posta adresini güncelle"
+      ],
+      "Update recovery phone": [
+        "Kurtarma telefon numarasını güncelle"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "E-posta adresinizi doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
     "saml: Action": {
@@ -21760,31 +21898,31 @@
         "${ usersText } ve ${ groupsText } eşitlendi."
       ],
       "Approve changes from your identity provider": [
-        "Kimlik sağlayıcınızdan gelen değişiklikleri onaylayın"
+        "Kimlik hizmeti sağlayıcınızdan gelen değişiklikleri onaylayın"
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
-        "Tüm ${ BRAND_NAME } hizmetlerine erişim izni vermek için nihai onay gereklidir."
+        "Tüm ${ BRAND_NAME } hizmetlerine erişme izni vermek için son onay gerekli."
       ],
       "From your identity provider": [
-        "Kimlik sağlayıcınızdan"
+        "Kimlik hizmeti sağlayıcınızdan"
       ],
       "New": [
         "Yeni"
       ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
-        "Onaylandıktan sonra tüm ${ BRAND_NAME } hizmetlerine erişebilir ve güvenli bir şekilde paylaşım yapabilirler."
+        "Onaylandıktan sonra tüm ${ BRAND_NAME } hizmetlerine erişebilir ve güvenli paylaşım yapabilirler."
       ],
       "Private user": [
-        "Gizli kullanıcı"
+        "Korunan kullanıcı"
       ],
       "Review users and groups before finishing setup": [
-        "Kurulumu tamamlamadan önce kullanıcıları ve grupları gözden geçirin"
+        "Kurulumu tamamlamadan önce kullanıcıları ve grupları inceleyin"
       ],
       "Updated": [
         "Güncellendi"
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Gizli olarak ayarladığınız kullanıcıların kurulumu tamamlamak için daveti kabul etmeleri gerekir. Onayladığınızda onlara bir davet göndereceğiz."
+        "Korunan olarak ayarladığınız kullanıcıların kurulumlarını tamamlamaları için daveti kabul etmeleri gerekir. Onayladığınızda onlara davet gönderilecek."
       ]
     },
     "scim: Action": {
@@ -21968,7 +22106,7 @@
     },
     "Service provider": {
       "Add to ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } uygulamasına ekle"
+        "${ CALENDAR_APP_NAME } üzerine ekle"
       ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Takvim etkinliklerinize Zoom görüntülü görüşmeleri eklemenizi sağlar"
@@ -23482,7 +23620,7 @@
         "${ count } kişi"
       ],
       "... waiting": [
-        "... bekleniyor"
+        "... bekliyor"
       ],
       "Add a phone number": [
         "Bir telefon numarası ekle"
@@ -23537,6 +23675,12 @@
       ],
       "Verify ${ value }": [
         "${ value } doğrula"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "Disabled": [
+        "Kapalı"
       ]
     },
     "Step in filter modal": {
@@ -24521,6 +24665,18 @@
       ],
       "Your address has been activated": [
         "Adresiniz etkinleştirildi"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } kullanıma alındı"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } kullanımdan kaldırıldı"
+      ],
+      "${ data.name } added": [
+        "${ data.name } eklendi"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } güncellendi"
       ]
     },
     "Success message": {
@@ -26764,6 +26920,21 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Add company": [
+        "Kuruluş ekle"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Bu adresin bağlantısını kesip kullanımdan kaldırmak istediğinize emin misiniz?"
+      ],
+      "Disable company": [
+        "Kuruluşu kullanımdan kaldır"
+      ],
+      "Edit company": [
+        "Kuruluşu düzenle"
+      ],
+      "Previous billing periods": [
+        "Önceki fatura dönemleri"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27565,13 +27736,13 @@
         "Davet e-postası"
       ],
       "Manage all users, groups, security, billing, and system configurations.": [
-        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturalandırmayı ve sistem yapılandırmalarını yönetin."
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
       ],
       "Manage users and groups, assign roles, and allocate licenses to members.": [
-        "Kullanıcıları ve grupları yönetin, roller atayın ve üyelere lisans tahsis edin."
+        "Kullanıcıları ve grupları yönetin, roller atayın ve üye lisanslarını ayarlayın."
       ],
       "Manages security settings and can view all event logs and user details.": [
-        "Güvenlik ayarlarını yönetir ve tüm olay günlüklerini ve kullanıcı bilgilerini görüntüleyebilir."
+        "Güvenlik ayarlarını yönetir ve tüm olay günlükleri ile kullanıcı bilgilerini görüntüleyebilir."
       ],
       "Name": [
         "Ad"
@@ -28283,6 +28454,29 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Fatura dönemi"
+      ],
+      "Company": [
+        "Kuruluş"
+      ],
+      "Managed companies": [
+        "Yönetilen kuruluşlar"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Total billed seats": [
+        "Faturada hesaplanacak toplam koltuk sayısı"
+      ],
+      "Total cost": [
+        "Toplam maliyet"
+      ],
+      "Used / assigned seats": [
+        "Kullanılan / atanmış koltuk"
       ]
     }
   }

@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add company": [
+        "Añadir empresa"
+      ],
+      "Disable company": [
+        "Desactivar empresa"
+      ],
+      "Enable company": [
+        "Activar empresa"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Exportar desglose por empresa como .zip"
+      ],
+      "Export overview as CSV": [
+        "Exportar resumen como CSV"
+      ],
+      "Manage": [
+        "Gestionar"
       ]
     },
     "action": {
@@ -5580,6 +5598,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Tenga en cuenta que los correos electrónicos enviados a esta dirección, incluso desde otras direcciones de ${ BRAND_NAME }, ya no están cifrados de extremo a extremo."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada y desactivada, ya no puede enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección siguen llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada, ya no puede enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección siguen llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Puede reconectar esta dirección en cualquier momento."
       ]
     },
     "description": {
@@ -13585,6 +13615,48 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "Se preservan todos los datos y ajustes"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Las licencias asignadas no se facturarán mientras estén desactivadas"
+      ],
+      "Average": [
+        "Promedio"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Los miembros cerraron la sesión y no pueden volver a iniciarla"
+      ],
+      "Per seat/month": [
+        "Por licencia/mes"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Revise los periodos anteriores y exporte los datos para generar informes o facturar a los clientes."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Establezca el nombre, estado y licencias asignadas"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "La empresa y todos sus miembros perderán acceso de inmediato."
+      ],
+      "What happens:": [
+        "Qué ocurre:"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Con empresas gestionadas, puede añadir, editar y borrar accesos en organizaciones que supervisa."
+      ],
+      "You can enable this company again at any time.": [
+        "Puede volver a activar esta empresa en cualquier momento."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Se le facturará mensualmente según el número promedio de licencias asignadas."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Su costo total mensual para todas las empresas gestionadas."
       ]
     },
     "info": {
@@ -15806,6 +15878,33 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Assigned seats": [
+        "Licencias asignadas"
+      ],
+      "Average": [
+        "Promedio"
+      ],
+      "Billed average": [
+        "Promedio facturado"
+      ],
+      "Billed seats": [
+        "Licencias facturadas"
+      ],
+      "Companies": [
+        "Empresas"
+      ],
+      "Cost": [
+        "Costo"
+      ],
+      "Seats": [
+        "Licencias"
+      ],
+      "Seats usage": [
+        "Uso de licencias"
+      ],
+      "Total cost": [
+        "Costo total"
       ]
     },
     "label": {
@@ -20152,6 +20251,12 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Enter company name": [
+        "Editar nombre de la empresa"
+      ],
+      "Search for a company": [
+        "Buscar una empresa"
       ]
     },
     "placeholder": {
@@ -21440,6 +21545,9 @@
       ],
       "Your recovery phrase is set": [
         "Se configuró la frase de recuperación"
+      ],
+      "update it now": [
+        "actualícelo ahora"
       ]
     },
     "safety_review": {
@@ -21676,6 +21784,36 @@
       ],
       "Your security setup": [
         "Su configuración de seguridad"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Si ha cambiado su correo de recuperación, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Si ha cambiado su número de recuperación, ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Enviar código de verificación"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Para asegurarnos de que esta dirección es realmente suya, le enviaremos un correo electrónico con un código de verificación."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Para asegurarnos de que este número es realmente suyo, le enviaremos un SMS con un código de verificación."
+      ],
+      "Update": [
+        "Actualizar"
+      ],
+      "Update recovery email": [
+        "Actualizar correo de recuperación"
+      ],
+      "Update recovery phone": [
+        "Actualizar teléfono de recuperación"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Al verificar la dirección de correo incrementa la seguridad de la cuenta y permite más opciones de recuperación."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificar el número de teléfono aumenta la seguridad de la cuenta y permite opciones de recuperación adicionales."
       ]
     },
     "saml: Action": {
@@ -23540,6 +23678,12 @@
       ],
       "Verify ${ value }": [
         "Verificar ${ value }"
+      ],
+      "Active": [
+        "Activo"
+      ],
+      "Disabled": [
+        "Desactivado"
       ]
     },
     "Step in filter modal": {
@@ -24524,6 +24668,18 @@
       ],
       "Your address has been activated": [
         "Su dirección se ha activado"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } activada"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } desactivado"
+      ],
+      "${ data.name } added": [
+        "${ data.name } añadida"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } actualizada"
       ]
     },
     "Success message": {
@@ -26767,6 +26923,21 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Add company": [
+        "Añadir empresa"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "¿En verdad desea desconectar y desactivar esta dirección?"
+      ],
+      "Disable company": [
+        "Desactivar empresa"
+      ],
+      "Edit company": [
+        "Editar empresa"
+      ],
+      "Previous billing periods": [
+        "Periodos de facturación anteriores"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28286,6 +28457,29 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Periodo de facturación"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "Managed companies": [
+        "Empresas gestionadas"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Total billed seats": [
+        "Licencias facturadas en total"
+      ],
+      "Total cost": [
+        "Costo total"
+      ],
+      "Used / assigned seats": [
+        "Licencias usadas / asignadas"
       ]
     }
   }

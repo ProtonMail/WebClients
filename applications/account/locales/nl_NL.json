@@ -1886,6 +1886,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Stop": [
+        "Stop"
       ]
     },
     "action": {
@@ -13500,6 +13503,17 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } gebruiker moet hun uitnodiging accepteren om groepsmails te kunnen ontvangen.",
+        "${ invitedMemberCount } gebruikers moeten hun uitnodigingen accepteren om groepsmails te kunnen ontvangen."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nieuw lid toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring.",
+        "${ pendingAdminMemberCount } nieuwe leden toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring."
+      ],
+      "Synced from identity provider": [
+        "Gesynct vanuit identiteitsprovider"
       ]
     },
     "info": {
@@ -22564,6 +22578,9 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "U bent uitgenodigd om u aan te sluiten bij meer dan 100 miljoen mensen die ervoor hebben gekozen de controle over hun gegevens te behouden met het versleutelde ecosysteem van ${ BRAND_NAME }."
+      ],
+      "Continue with ${ planName }": [
+        "Ga verder met ${ planName }"
       ]
     },
     "Signup label": {
@@ -23323,6 +23340,15 @@
       ],
       "Verify ${ value }": [
         "Verifieer ${ value }"
+      ],
+      "... waiting": [
+        "... wachten"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
       ]
     },
     "Step in filter modal": {
@@ -28033,6 +28059,36 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nieuw lid",
+        "${ memberCount } nieuwe leden"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } groep gesynct",
+        "${ numberOfPendingGroups } groepen gesynct"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } gebruiker gesynct",
+        "${ numberOfPendingUsers } gebruikers gesynct"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } groep",
+        "${ pendingGroupsCount } groepen"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } groep gesynct.",
+        "${ pendingGroupsCount } groepen gesynct."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } gebruiker",
+        "${ pendingUsersCount } gebruikers"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } gebruiker gesynct.",
+        "${ pendingUsersCount } gebruikers gesynct."
       ]
     }
   }

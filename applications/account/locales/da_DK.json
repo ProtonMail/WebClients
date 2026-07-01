@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add company": [
+        "Tilføj virksomhed"
+      ],
+      "Disable company": [
+        "Deaktiver virksomhed"
+      ],
+      "Enable company": [
+        "Aktivér virksomhed"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Eksportér opsummering efter virksomhed som ZIP"
+      ],
+      "Export overview as CSV": [
+        "Eksportér oversigt som CSV"
+      ],
+      "Manage": [
+        "Administrér"
       ]
     },
     "action": {
@@ -5572,6 +5590,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Bemærk at e-mails sendt til denne adresse, selv fra ${ BRAND_NAME }-adresser, ikke længere vil være end-to-end-krypterede."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Du vil ikke længere kunne sende eller modtage e-mails som ${ address.Email } i ${ BRAND_NAME } når den er afbrudt og deaktiveret. E-mails sendt til denne adresse vil stadig ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Du vil ikke længere kunne sende eller modtage e-mails som ${ address.Email } i ${ BRAND_NAME } når den er afbrudt. E-mails sendt til denne adresse vil stadig ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Du kan til enhver tid tilslutte denne adresse igen."
       ]
     },
     "description": {
@@ -13565,6 +13595,45 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "Alt data og alle indstillinger forbliver som de er"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Tildelte pladser bliver ikke faktureret når de er deaktiverede"
+      ],
+      "Average": [
+        "Gennemsnitlig"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Medlemmer bliver logget ud og kan ikke logge ind igen"
+      ],
+      "Per seat/month": [
+        "Per plads/måned"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Gennemgå tidligere perioder og eksportér dataen til rapportering eller fakturering."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Indstil navnet, dens status, og tildelte pladser"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Virksomheden og alle dens medlemmer mister øjeblikkeligt adgang."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Med administrerede virksomheder kan du tilføje, redigere og fjerne adgang for organisationer, du fører tilsyn med."
+      ],
+      "You can enable this company again at any time.": [
+        "Du kan aktivere denne virksomhed igen når som helst."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Du bliver faktureret månedligt baseret på det gennemsnitlige antal tildelte pladser."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Dine samlede månedlige omkostninger for alle administrerede virksomheder."
       ]
     },
     "info": {
@@ -15765,6 +15834,51 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Assigned seats": [
+        "Tildelte pladser"
+      ],
+      "Average": [
+        "Gennemsnitlig"
+      ],
+      "Billed average": [
+        "Faktureret gennemsnit"
+      ],
+      "Billed seats": [
+        "Faktuerede pladser"
+      ],
+      "Companies": [
+        "Virksomheder"
+      ],
+      "Cost": [
+        "Pris"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhedsbreve - Nyheder, redaktionelle e-mails og ikke-promoverende indhold"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primær - Personlige og arbejdsmæssige e-mails samt vigtige opdateringer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Kampagner - Deals, tilbud og marketing-e-mails"
+      ],
+      "Seats": [
+        "Pladser"
+      ],
+      "Seats usage": [
+        "Forbrug af pladser"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociale - Sociale medieopdateringer, aktivitet og beskeder"
+      ],
+      "Total cost": [
+        "Pris i alt"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitteringer, reservationer, regninger og ordrer"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Opdateringer - Automatiserede bekræftelser, advarsler og kontoopdateringer"
       ]
     },
     "label": {
@@ -20111,6 +20225,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter company name": [
+        "Indtast navnet på virksomheden"
+      ],
+      "Search for a company": [
+        "Søg efter en virksomhed"
       ]
     },
     "placeholder": {
@@ -21399,6 +21519,9 @@
       ],
       "Your recovery phrase is set": [
         "Din gendannelsessætning er indstillet"
+      ],
+      "update it now": [
+        "opdatér det nu"
       ]
     },
     "safety_review": {
@@ -21635,6 +21758,36 @@
       ],
       "Your security setup": [
         "Din sikkerhedskonfiguration"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Hvis din gendannelses e-mail er ændret, ${ updateEmailLink }"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Hvis dit gendannelsestelefonnummer er ændret, ${ updatePhoneLink }"
+      ],
+      "Send verification code": [
+        "Send bekræftelseskode"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Vi sender dig en e-mail med et bekræftelseslink for at bekræfte at denne adresse virkelig er din."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Vi sender dig en SMS med et bekræftelseslink for at få bekræftet at dette nummer virkelig er dit."
+      ],
+      "Update": [
+        "Opdatér"
+      ],
+      "Update recovery email": [
+        "Opdatér gendannelses-e-mail"
+      ],
+      "Update recovery phone": [
+        "Opdatér gendannelsestelefon"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Ved at bekræfte din e-mailadresse øger du din kontosikkerhed og giver dig flere muligheder for at gendanne din konto."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Ved at bekræfte dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
       ]
     },
     "saml: Action": {
@@ -23499,6 +23652,12 @@
       ],
       "Verify ${ value }": [
         "Bekræft ${ value }"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Disabled": [
+        "Deaktiveret"
       ]
     },
     "Step in filter modal": {
@@ -24483,6 +24642,18 @@
       ],
       "Your address has been activated": [
         "Din adresse er blevet aktiveret"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } aktiveret"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } deaktiveret"
+      ],
+      "${ data.name } added": [
+        "${ data.name } tilføjet"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } opdateret"
       ]
     },
     "Success message": {
@@ -26723,6 +26894,21 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Add company": [
+        "Tilføj virksomhed"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Er du sikker på du vil afbryde og deaktivere forbindelsen til denne adresse?"
+      ],
+      "Disable company": [
+        "Deaktiver virksomhed"
+      ],
+      "Edit company": [
+        "Rediger virksomhed"
+      ],
+      "Previous billing periods": [
+        "Forrige faktureringsperioder"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28242,6 +28428,29 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Faktureringsperiode"
+      ],
+      "Company": [
+        "Virksomhed"
+      ],
+      "Managed companies": [
+        "Administrerede virksomheder"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total billed seats": [
+        "Antal fakturerede pladser"
+      ],
+      "Total cost": [
+        "Pris i alt"
+      ],
+      "Used / assigned seats": [
+        "Anvendte / tildelte pladser"
       ]
     }
   }

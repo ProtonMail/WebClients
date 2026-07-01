@@ -1886,6 +1886,24 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Add company": [
+        "Дадаць кампанію"
+      ],
+      "Disable company": [
+        "Адключыць кампанію"
+      ],
+      "Enable company": [
+        "Уключыць кампанію"
+      ],
+      "Export overview as CSV": [
+        "Экспартаваць агляд як CSV"
+      ],
+      "Manage": [
+        "Кіраваць"
+      ],
+      "Stop": [
+        "Спыніць"
       ]
     },
     "action": {
@@ -2030,6 +2048,9 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "Add-on": [
+        "Дадатковы кампанент"
       ]
     },
     "Address action": {
@@ -3344,6 +3365,9 @@
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "У цяперашні час сістэма стварае вашы ўліковыя запісы і імпартуе вашы даныя. Такім чынам ва ўдзельнікаў вашай каманды будзе ўсё неабходнае, калі яны пачнуць выкарыстоўваць бяспечныя ўліковыя запісы ${ BRAND_NAME }."
       ]
     },
     "breadcrumb": {
@@ -5625,6 +5649,12 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "У вас больш не будзе магчымасці адпраўляць або атрымліваць лісты як ${ address.Email } у ${ BRAND_NAME } пасля яго адключэння. Лісты адпраўленыя на гэты адрас усё яшчэ будуць дастаўляцца ў Gmail, але не ў ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "У вас больш не будзе магчымасці адпраўляць або атрымліваць лісты як ${ address.Email } у ${ BRAND_NAME } пасля яго адключэння. Лісты адпраўленыя на гэты адрас усё яшчэ будуць дастаўляцца ў Gmail, але не ў ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -8753,6 +8783,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
+      ],
+      "Insert your security key into your device.": [
+        "Устаўце ключ бяспекі ў сваю прыладу."
       ]
     },
     "fido2: Label": {
@@ -9172,6 +9205,12 @@
       ],
       "Roles and permissions": [
         "Ролі і дазволы"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Кіраванне карыстальнікамі і групамі, прызначэнне роляў і размеркаванне ліцэнзій удзельнікам."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Кіраванне наладамі бяспекі і магчымасць прагляду ўсіх журналаў з падзеямі, а таксама падрабязнай інфармацыі аб карыстальніках."
       ]
     },
     "Header": {
@@ -13788,6 +13827,54 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Тарыфныя планы ${ BRAND_NAME } Business даюць вашай камандзе ўсе інструменты для ўзаемадзеяння, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } карыстальніку неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
+        "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
+        "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
+        "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } новы ўдзельнік дададзены праз вашага пастаўшчыка пасведчанняў і чакае разгляду.",
+        "${ pendingAdminMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingAdminMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingAdminMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду."
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Прызначаныя ліцэнзіі не буду аплачвацца, пакуль яны адключаныя"
+      ],
+      "Average": [
+        "Сярэдняе значэнне"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Удзельнікі выйшлі з сістэмы і не змогуць зноў увайсці"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Новая група створана праз вашага пастаўшчыка пасведчанняў і чакае разгляду."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Задайце імя, статус і прызначаныя ліцэнзіі"
+      ],
+      "Synced from identity provider": [
+        "Сінхранізавана з пастаўшчыком пасведчанняў"
+      ],
+      "Thinking…": [
+        "Думаю…"
+      ],
+      "What happens:": [
+        "Што здарылася:"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "З кіруемымі кампаніямі, вы можаце дадаваць, рэдагаваць і выдаляць доступ для арганізацый за якімі вы назіраеце."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "З вас будзе штомесяц спаганяцца плата на падставе сярэдняй колькасці прызначаных ліцэнзій."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Ваша поўная плата за месяц для ўсіх кіруемых кампаній."
       ]
     },
     "info": {
@@ -15997,6 +16084,39 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Average": [
+        "Сярэдняе значэнне"
+      ],
+      "Companies": [
+        "Кампаніі"
+      ],
+      "Import your emails": [
+        "Імпартаванне вашых лістоў"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Рассылкі: навіны, рэдакцыйныя лісты і нерэкламнае змесціва"
+      ],
+      "Password check-ins": [
+        "Спраўджанне з дапамогай пароля"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Асноўны: асабістыя і працоўныя лісты, а таксама важныя абнаўленні"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Рэклама: здзелкі, прапановы і маркетынгавыя лісты"
+      ],
+      "Seats": [
+        "Ліцэнзіі"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Сацыяльныя сеткі: абнаўленні сацыяльных медыя, актыўнасць і паведамленні"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Трансакцыі: квітанцыі, браніраванні, рахункі і іншыя заказы"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Абнаўленні: аўтаматычныя пацвярджэнні, апавяшчэнні і абнаўленні ўліковага запісу"
       ]
     },
     "label": {
@@ -16961,6 +17081,9 @@
       ],
       "Sign in": [
         "Увайсці"
+      ],
+      "Change backup password": [
+        "Змяніць рэзервовы пароль"
       ]
     },
     "Message": {
@@ -18552,6 +18675,9 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Удзельнічайце ў апытанні, каб удасканаліць сэрвісы ${ BRAND_NAME }"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "Ад 1 да 4 лістоў у год. Напаміны аб неабходнасці актуалізацыі спосабаў аднаўлення."
       ]
     },
     "Notification": {
@@ -18647,6 +18773,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Налады відэаканферэнцыі Zoom абноўлены"
+      ],
+      "Sieve script inserted": [
+        "Сцэнарый Sieve устаўлены"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -19811,6 +19940,9 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Абавязкова запомніце або надзейна захавайце свой пароль, бо гэта ключ да расшыфроўкі вашых даных."
+      ],
+      "Turn off password check-ins?": [
+        "Выключыць уваход з паролем?"
       ]
     },
     "passwordless": {
@@ -21401,6 +21533,9 @@
       ],
       "User Admin": [
         "Адміністратар карыстальніка"
+      ],
+      "Owner": [
+        "Уладальнік"
       ]
     },
     "Role description": {
@@ -21744,6 +21879,9 @@
       ],
       "Your recovery phrase is set": [
         "Ваш нумар фраза аднаўлення зададзена"
+      ],
+      "update it now": [
+        "абнавіць яго"
       ]
     },
     "safety_review": {
@@ -21974,6 +22112,12 @@
       ],
       "Your security setup": [
         "Ваша бяспечная наладка"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "${ updatePhoneLink }, калі ваш нумар тэлефона змяніўся."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Сістэма будзе перыядычна прасіць увесці ваш пароль, каб вы яго не забылі."
       ]
     },
     "saml: Action": {
@@ -23054,6 +23198,15 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Вас запрашаюць далучыцца да больш чым 100 мільёнаў чалавек, якія вырашылі пакінуць сабе кантроль над сваімі данымі з зашыфраванай экасістэмай ${ BRAND_NAME }."
+      ],
+      "Continue with ${ planName }": [
+        "Працягнуць з тарыфным планам ${ planName }"
+      ],
+      "From ${ priceElement }": [
+        "Ад ${ priceElement }"
+      ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Зарэгіструйцеся і атрымайце ${ referralInfo.uiData.refereeRewardAmount } у крэдытах"
       ]
     },
     "Signup label": {
@@ -23841,6 +23994,21 @@
       ],
       "Verify ${ value }": [
         "Спраўджанне ${ value }"
+      ],
+      "... waiting": [
+        "... чакайце"
+      ],
+      "Active": [
+        "Актыўны"
+      ],
+      "completed": [
+        "завершана"
+      ],
+      "Disabled": [
+        "Адключана"
+      ],
+      "finalizing": [
+        "завяршэнне"
       ]
     },
     "Step in filter modal": {
@@ -24137,6 +24305,9 @@
         "Падключэнне па VPN для ${ n } прылад на карыстальніка",
         "Падключэнне па VPN для ${ n } прылад на карыстальніка",
         "Падключэнне па VPN для ${ n } прылад на карыстальніка"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ]
     },
     "Subscription change warning": {
@@ -24864,6 +25035,15 @@
       ],
       "Your address has been activated": [
         "Ваш адрас быў актываваны"
+      ],
+      "${ data.name } added": [
+        "${ data.name } дададзены"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } абноўлена"
+      ],
+      "Password check-ins enabled": [
+        "Уваход з паролем уключаны"
       ]
     },
     "Success message": {
@@ -27128,6 +27308,12 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Edit company": [
+        "Рэдагаваць кампанію"
+      ],
+      "Previous billing periods": [
+        "Папярэднія разліковыя перыяды"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27964,6 +28150,18 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групамі, бяспекай, білінгам і сістэмнымі канфігурацыямі."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Кіраванне карыстальнікамі і групамі, прызначэнне роляў і размеркаванне ліцэнзій удзельнікам."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Кіраванне наладамі бяспекі і магчымасць прагляду ўсіх журналаў з падзеямі, а таксама падрабязнай інфармацыі аб карыстальніках."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     },
     "Users table: badge": {
@@ -28722,6 +28920,87 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "Column header": {
+      "Managed companies": [
+        "Кіруемыя кампаніі"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Total billed seats": [
+        "Усяго аплачана ліцэнзій"
+      ],
+      "Total cost": [
+        "Поўны кошт"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } новы ўдзельнік",
+        "${ memberCount } новыя ўдзельнікі",
+        "${ memberCount } новых удзельнікаў",
+        "${ memberCount } новых удзельнікаў"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } група сінхранізавана",
+        "${ numberOfPendingGroups } групы сінхранізаваны",
+        "${ numberOfPendingGroups } груп сінхранізаваны",
+        "${ numberOfPendingGroups } груп сінхранізаваны"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } карыстальнік сінхранізаваны",
+        "${ numberOfPendingUsers } карыстальнікі сінхранізаваны",
+        "${ numberOfPendingUsers } карыстальнікаў сінхранізаваны",
+        "${ numberOfPendingUsers } карыстальнікаў сінхранізаваны"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } група",
+        "${ pendingGroupsCount } групы",
+        "${ pendingGroupsCount } груп",
+        "${ pendingGroupsCount } груп"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } група сінхранізавана",
+        "${ pendingGroupsCount } групы сінхранізаваны",
+        "${ pendingGroupsCount } груп сінхранізаваны",
+        "${ pendingGroupsCount } груп сінхранізаваны"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } карыстальнік",
+        "${ pendingUsersCount } карыстальнікі",
+        "${ pendingUsersCount } карыстальнікаў",
+        "${ pendingUsersCount } карыстальнікаў"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } карыстальнік сінхранізаваны.",
+        "${ pendingUsersCount } карыстальнікі сінхранізаваны.",
+        "${ pendingUsersCount } карыстальнікаў сінхранізаваны.",
+        "${ pendingUsersCount } карыстальнікаў сінхранізаваны."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } і ${ groupsText } сінхранізаваны."
+      ],
+      "Approve changes from your identity provider": [
+        "Ухваліць змяненні ад вашага пастаўшчыка пасведчанняў"
+      ],
+      "From your identity provider": [
+        "Ад вашага пастаўшчыка пасведчанняў"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "У іх будзе магчымасць атрымаць доступ да ўсіх сэрвісаў ${ BRAND_NAME } і бяспечнага абагульвання пасля ўхвалення."
+      ],
+      "Review users and groups before finishing setup": [
+        "Агляд карыстальнікаў і груп перад завяршэннем наладжвання"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Карыстальнікі, якіх вы задалі ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
       ]
     }
   }

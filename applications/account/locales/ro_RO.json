@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Add company": [
+        "Adăugare companie"
+      ],
+      "Disable company": [
+        "Dezactivare companie"
+      ],
+      "Enable company": [
+        "Activare companie"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Exportare defalcată pe companii, ca ZIP"
+      ],
+      "Export overview as CSV": [
+        "Exportare prezentare generală în CSV"
+      ],
+      "Manage": [
+        "Gestionare"
       ]
     },
     "action": {
@@ -5620,6 +5638,18 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Rețineți că mesajele trimise la această adresă, chiar și de la alte adrese ${ BRAND_NAME }, nu vor mai fi criptate bilateral."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "După deconectare și dezactivare, nu veți mai putea trimite sau primi mesaje ca ${ address.Email } în ${ BRAND_NAME }. Mesajele trimise la această adresă vor ajunge în continuare în Gmail, dar nu și în ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "După deconectare, nu veți mai putea trimite sau primi mesaje ca ${ address.Email } în ${ BRAND_NAME }. Mesajele trimise la această adresă vor ajunge în continuare în Gmail, dar nu și în ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Puteți reconecta această adresă oricând."
       ]
     },
     "description": {
@@ -10731,10 +10761,10 @@
         "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Copy the link to clipboard": [
-        "Copiați legătura în memorie"
+        "Copiere legătură web în memorie"
       ],
       "Copy the suggested password to clipboard": [
-        "Copiați parola sugerată în memorie."
+        "Copiere parolă sugerată în memorie."
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
@@ -13728,6 +13758,48 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "Sunt păstrate toate datele și setările"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Licențele atribuite nu vor fi facturate cât timp sunt dezactivate."
+      ],
+      "Average": [
+        "Media"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Membrii sunt deconectați și nu se mai pot conecta"
+      ],
+      "Per seat/month": [
+        "Per licență/lună"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Revizuiți perioadele anterioare și exportați datele pentru raportare sau facturare către clienți."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Setați numele, starea și licențele atribuite"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Compania și toți membrii acesteia vor pierde imediat accesul."
+      ],
+      "What happens:": [
+        "Ce se întâmplă:"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Cu gestionarea companiilor, puteți adăuga, edita și elimina accesul pentru organizațiile pe care le supravegheați."
+      ],
+      "You can enable this company again at any time.": [
+        "Puteți reactiva oricând această companie."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Se va factura lunar în funcție de numărul mediu de licențe alocate."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Costul lunar total pentru toate companiile gestionate."
       ]
     },
     "info": {
@@ -15958,6 +16030,33 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Assigned seats": [
+        "Licențe atribuite"
+      ],
+      "Average": [
+        "În medie"
+      ],
+      "Billed average": [
+        "Media facturată"
+      ],
+      "Billed seats": [
+        "Licențe facturate"
+      ],
+      "Companies": [
+        "Companii"
+      ],
+      "Cost": [
+        "Cost"
+      ],
+      "Seats": [
+        "Număr licențe"
+      ],
+      "Seats usage": [
+        "Licențe folosite"
+      ],
+      "Total cost": [
+        "Cost total"
       ]
     },
     "label": {
@@ -20369,6 +20468,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter company name": [
+        "Introduceți numele companiei"
+      ],
+      "Search for a company": [
+        "Căutare companie"
       ]
     },
     "placeholder": {
@@ -21665,6 +21770,9 @@
       ],
       "Your recovery phrase is set": [
         "Fraza de recuperare este setată"
+      ],
+      "update it now": [
+        "actualizați acum"
       ]
     },
     "safety_review": {
@@ -21901,6 +22009,36 @@
       ],
       "Your security setup": [
         "Configurația de securitate"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Dacă adresa de e-mail de recuperare s-a schimbat, trebuie să o ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Dacă numărul de telefon de recuperare s-a schimbat, trebuie să-l ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Trimitere cod de verificare"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Pentru a ne asigura că această adresă vă aparține, vă vom trimite un e-mail cu un cod de verificare."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Pentru a ne asigura că acest număr vă aparține, vă vom trimite un SMS cu un cod de verificare."
+      ],
+      "Update": [
+        "Actualizare"
+      ],
+      "Update recovery email": [
+        "Actualizare e-mail de recuperare"
+      ],
+      "Update recovery phone": [
+        "Actualizare telefon de recuperare"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verificarea adresei de e-mail vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
       ]
     },
     "saml: Action": {
@@ -23814,6 +23952,12 @@
       ],
       "Verify ${ value }": [
         "Verificare ${ value }"
+      ],
+      "Active": [
+        "Activ"
+      ],
+      "Disabled": [
+        "Dezactivată"
       ]
     },
     "Step in filter modal": {
@@ -24822,6 +24966,18 @@
       ],
       "Your address has been activated": [
         "Adresa v-a fost activată."
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } s-a activat"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } s-a dezactivat"
+      ],
+      "${ data.name } added": [
+        "S-a adăugat ${ data.name }"
+      ],
+      "${ data.name } updated": [
+        "S-a actualizat ${ data.name }"
       ]
     },
     "Success message": {
@@ -27083,6 +27239,21 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Add company": [
+        "Adăugare companie"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Sigur doriți să vă deconectați și să dezactivați această adresă?"
+      ],
+      "Disable company": [
+        "Dezactivare companie"
+      ],
+      "Edit company": [
+        "Editare companie"
+      ],
+      "Previous billing periods": [
+        "Perioade de facturare anterioare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28647,6 +28818,29 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Perioadă de facturare"
+      ],
+      "Company": [
+        "Compania"
+      ],
+      "Managed companies": [
+        "Companii gestionate"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Total billed seats": [
+        "Total locuri facturate"
+      ],
+      "Total cost": [
+        "Cost total"
+      ],
+      "Used / assigned seats": [
+        "Licențe folosite/atribuite"
       ]
     }
   }

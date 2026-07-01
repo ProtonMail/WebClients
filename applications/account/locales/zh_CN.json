@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Add company": [
+        "添加公司"
+      ],
+      "Disable company": [
+        "禁用公司"
+      ],
+      "Enable company": [
+        "启用公司"
+      ],
+      "Export breakdown by company as ZIP": [
+        "按公司导出明细为 ZIP 文件"
+      ],
+      "Export overview as CSV": [
+        "导出概览为 CSV"
+      ],
+      "Manage": [
+        "管理"
       ]
     },
     "action": {
@@ -5540,6 +5558,18 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "请注意，发送到此地址的邮件（即使来自其他 ${ BRAND_NAME } 地址）将不再采用端到端加密。"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接并禁用后，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
+      "You can reconnect this address at any time.": [
+        "您可以随时重新连接此地址。"
       ]
     },
     "description": {
@@ -13436,6 +13466,48 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "所有数据和设置将予以保留"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "禁用期间已分配席位不计费"
+      ],
+      "Average": [
+        "均值"
+      ],
+      "Members are signed out and can't sign back in": [
+        "成员将被登出且无法重新登录"
+      ],
+      "Per seat/month": [
+        "每席位 / 每月"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "查看过往周期并导出数据以供报告或客户开票使用。"
+      ],
+      "Set the name, status, and assigned seats": [
+        "设置名称、状态和已分配席位"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "该公司及其所有成员将立即失去访问权限！"
+      ],
+      "What happens:": [
+        "结果："
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "通过托管公司，您可以添加、编辑和移除对所管理组织的访问权限。"
+      ],
+      "You can enable this company again at any time.": [
+        "您可以随时重新启用此公司。"
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "我们将根据已分配席位的平均数量按月向您收费。"
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "您所有托管公司的每月总费用。"
       ]
     },
     "info": {
@@ -15648,6 +15720,33 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Assigned seats": [
+        "已分配席位"
+      ],
+      "Average": [
+        "均值"
+      ],
+      "Billed average": [
+        "平均计费"
+      ],
+      "Billed seats": [
+        "计费席位"
+      ],
+      "Companies": [
+        "公司"
+      ],
+      "Cost": [
+        "费用"
+      ],
+      "Seats": [
+        "座位"
+      ],
+      "Seats usage": [
+        "席位使用情况"
+      ],
+      "Total cost": [
+        "费用总计"
       ]
     },
     "label": {
@@ -19929,6 +20028,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Enter company name": [
+        "输入公司名称"
+      ],
+      "Search for a company": [
+        "搜索公司"
       ]
     },
     "placeholder": {
@@ -21206,6 +21311,9 @@
       ],
       "Your recovery phrase is set": [
         "恢复短语已设置"
+      ],
+      "update it now": [
+        "立即更新"
       ]
     },
     "safety_review": {
@@ -21442,6 +21550,36 @@
       ],
       "Your security setup": [
         "您的安全设置"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "如果您的密保邮箱已更改，请 ${ updateEmailLink }。"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "如果您的密保手机号码已更改，请 ${ updatePhoneLink }。"
+      ],
+      "Send verification code": [
+        "发送验证码"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "为确保邮箱地址是您的，我们将发送一封带有验证码的邮件。"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "为确保手机号码是您的，我们将发送一条带有验证码的短信。"
+      ],
+      "Update": [
+        "更新"
+      ],
+      "Update recovery email": [
+        "更新密保邮箱"
+      ],
+      "Update recovery phone": [
+        "更新密保手机"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "验证邮箱地址可提高账户安全性，并提供更多的恢复选项。"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "验证手机号码可提高账户安全性，并提供更多的恢复选项。"
       ]
     },
     "saml: Action": {
@@ -23257,6 +23395,12 @@
       ],
       "Verify ${ value }": [
         "验证 ${ value }"
+      ],
+      "Active": [
+        "活动"
+      ],
+      "Disabled": [
+        "已禁用"
       ]
     },
     "Step in filter modal": {
@@ -24217,6 +24361,18 @@
       ],
       "Your address has been activated": [
         "您的地址已激活"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } 已启用"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } 已禁用"
+      ],
+      "${ data.name } added": [
+        "${ data.name } 已添加"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } 已更新"
       ]
     },
     "Success message": {
@@ -26442,6 +26598,21 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Add company": [
+        "添加公司"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "您确定要断开连接并禁用此地址吗？"
+      ],
+      "Disable company": [
+        "禁用公司"
+      ],
+      "Edit company": [
+        "编辑公司"
+      ],
+      "Previous billing periods": [
+        "历史账单周期"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27913,6 +28084,29 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "账单周期"
+      ],
+      "Company": [
+        "公司"
+      ],
+      "Managed companies": [
+        "托管公司"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Total billed seats": [
+        "计费席位总数"
+      ],
+      "Total cost": [
+        "费用总计"
+      ],
+      "Used / assigned seats": [
+        "已用 / 已分配席位"
       ]
     }
   }

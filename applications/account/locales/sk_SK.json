@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Add company": [
+        "Pridať spoločnosť"
+      ],
+      "Disable company": [
+        "Deaktivovať spoločnosť"
+      ],
+      "Enable company": [
+        "Povoliť spoločnosť"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Exportovať vyúčtovanie podľa spoločností vo formáte ZIP"
+      ],
+      "Export overview as CSV": [
+        "Exportovať prehľad ako CSV"
+      ],
+      "Manage": [
+        "Spravovať"
       ]
     },
     "action": {
@@ -5660,6 +5678,18 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Upozorňujeme, že emaily zaslané na túto adresu, a to aj z iných adries ${ BRAND_NAME }, už nebudú end-to-end šifrované."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení a deaktivácii už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Túto adresu môžete kedykoľvek opäť pripojiť."
       ]
     },
     "description": {
@@ -13874,6 +13904,48 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "Všetky údaje a nastavenia zostanú zachované"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Za pridelené licencie sa nebude účtovať poplatok, pokiaľ sú deaktivované"
+      ],
+      "Average": [
+        "Priemerne"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Členovia sú odhlásení a nemôžu sa znovu prihlásiť"
+      ],
+      "Per seat/month": [
+        "Za licenciu/mesiac"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Prezrite si predchádzajúce obdobia a exportujte údaje na účely vykazovania alebo fakturácie klientom."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Zadajte názov, stav a priradené licencie"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Spoločnosť a všetci jej členovia okamžite stratia prístup."
+      ],
+      "What happens:": [
+        "Čo sa stalo:"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "V prípade spravovaných spoločností môžete pridávať, upravovať a odoberať prístupové práva organizáciám, ktoré spravujete."
+      ],
+      "You can enable this company again at any time.": [
+        "Túto spoločnosť môžete kedykoľvek opäť povoliť."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Účtovanie bude prebiehať mesačne na základe priemerného počtu pridelených licencií."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Vaše celkové mesačné náklady na všetky spravované spoločnosti."
       ]
     },
     "info": {
@@ -16113,6 +16185,33 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Assigned seats": [
+        "Pridelené licencie"
+      ],
+      "Average": [
+        "Priemerne"
+      ],
+      "Billed average": [
+        "Priemerne fakturované"
+      ],
+      "Billed seats": [
+        "Účtované licencie"
+      ],
+      "Companies": [
+        "Spoločnosti"
+      ],
+      "Cost": [
+        "Náklady"
+      ],
+      "Seats": [
+        "Licencie"
+      ],
+      "Seats usage": [
+        "Využitie licencií"
+      ],
+      "Total cost": [
+        "Celkové náklady"
       ]
     },
     "label": {
@@ -20589,6 +20688,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter company name": [
+        "Zadajte názov spoločnosti"
+      ],
+      "Search for a company": [
+        "Hľadať spoločnosť"
       ]
     },
     "placeholder": {
@@ -21893,6 +21998,9 @@
       ],
       "Your recovery phrase is set": [
         "Váš fráza pre obnovenie je nastavená"
+      ],
+      "update it now": [
+        "aktualizujte údaje."
       ]
     },
     "safety_review": {
@@ -22129,6 +22237,36 @@
       ],
       "Your security setup": [
         "Vaše nastavenia zabezpečenia"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Ak sa zmenila vaša emailová adresa pre obnovenie hesla, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Ak sa zmenil váš telefón na obnovenie, ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Odoslať overovací kód"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Aby sme sa uistili, že táto adresa skutočne patrí vám, pošleme vám email s overovacím kódom."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Aby sme sa uistili, že toto číslo skutočne patrí vám, pošleme vám SMS s overovacím kódom."
+      ],
+      "Update": [
+        "Aktualizovať"
+      ],
+      "Update recovery email": [
+        "Aktualizovať záložný email"
+      ],
+      "Update recovery phone": [
+        "Aktualizovať telefón na obnovenie"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Overenie vašej emailovej adresy zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
       ]
     },
     "saml: Action": {
@@ -24091,6 +24229,12 @@
       ],
       "Verify ${ value }": [
         "Overte ${ value }"
+      ],
+      "Active": [
+        "Aktívny"
+      ],
+      "Disabled": [
+        "Deaktivované"
       ]
     },
     "Step in filter modal": {
@@ -25123,6 +25267,18 @@
       ],
       "Your address has been activated": [
         "Vaša adresa bola aktivovaná"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } povolená"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } deaktivované"
+      ],
+      "${ data.name } added": [
+        "${ data.name } pridaná"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } aktualizovaná"
       ]
     },
     "Success message": {
@@ -27402,6 +27558,21 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Add company": [
+        "Pridať spoločnosť"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Naozaj chcete odpojiť a deaktivovať túto adresu?"
+      ],
+      "Disable company": [
+        "Deaktivovať spoločnosť"
+      ],
+      "Edit company": [
+        "Upraviť spoločnosť"
+      ],
+      "Previous billing periods": [
+        "Predchádzajúce fakturačné obdobia"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29011,6 +29182,29 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Fakturačné obdobie"
+      ],
+      "Company": [
+        "Spoločnosť"
+      ],
+      "Managed companies": [
+        "Spravované spoločnosti"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Total billed seats": [
+        "Celkom účtovaných licencií"
+      ],
+      "Total cost": [
+        "Celkové náklady"
+      ],
+      "Used / assigned seats": [
+        "Využité / priradené licencie"
       ]
     }
   }

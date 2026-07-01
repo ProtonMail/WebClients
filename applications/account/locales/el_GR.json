@@ -1898,6 +1898,24 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Add company": [
+        "Προσθήκη εταιρείας"
+      ],
+      "Disable company": [
+        "Απενεργοποίηση εταιρείας"
+      ],
+      "Enable company": [
+        "Ενεργοποίηση Εταιρίας"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Ανάλυση εξαγωγών ανά εταιρεία ως ταχυδρομικός κώδικας (ZIP)"
+      ],
+      "Export overview as CSV": [
+        "Εξαγωγή επισκόπησης ως CSV"
+      ],
+      "Manage": [
+        "Διαχείριση"
       ]
     },
     "action": {
@@ -5580,6 +5598,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Σημειώστε ότι τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται σε αυτήν τη διεύθυνση, ακόμη και από άλλες διευθύνσεις ${ BRAND_NAME }, δε θα είναι πλέον διατερματικά κρυπτογραφημένα."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Μόλις αποσυνδεθείτε και απενεργοποιηθεί, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ address.Email } στο ${ BRAND_NAME }. Τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση θα εξακολουθούν να φτάνουν στο Gmail, αλλά όχι στο ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Μόλις αποσυνδεθείτε, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ address.Email } στο ${ BRAND_NAME }. Τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση θα εξακολουθούν να φτάνουν στο Gmail, αλλά όχι στο ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Μπορείτε να επανασυνδέσετε αυτήν τη διεύθυνση ανά πάσα στιγμή."
       ]
     },
     "description": {
@@ -13582,6 +13612,48 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "All data and settings are preserved": [
+        "Όλα τα δεδομένα και οι ρυθμίσεις διατηρούνται"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Οι θέσεις που έχουν εκχωρηθεί δε θα χρεώνονται ενώ είναι απενεργοποιημένες"
+      ],
+      "Average": [
+        "Μέσος όρος"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Τα μέλη έχουν αποσυνδεθεί και δεν μπορούν να συνδεθούν ξανά"
+      ],
+      "Per seat/month": [
+        "Ανά θέση/μήνα"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Εξετάστε προηγούμενες περιόδους και εξαγάγετε τα δεδομένα για αναφορά ή τιμολόγηση πελατών."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Ορίστε το όνομα, την κατάσταση και τις θέσεις που έχουν εκχωρηθεί"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Η εταιρεία και όλα τα μέλη της θα χάσουν αμέσως την πρόσβαση."
+      ],
+      "What happens:": [
+        "Τι συμβαίνει;"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Με τις διαχειριζόμενες εταιρείες, μπορείτε να προσθέσετε, να επεξεργαστείτε και να καταργήσετε την πρόσβαση για οργανισμούς που επιβλέπετε."
+      ],
+      "You can enable this company again at any time.": [
+        "Μπορείτε να ενεργοποιήσετε ξανά αυτήν την εταιρεία ανά πάσα στιγμή."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Θα χρεώνεστε μηνιαίως με βάση τον μέσο αριθμό των θέσεων που σας έχουν ανατεθεί."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Το συνολικό μηνιαίο κόστος για όλες τις διαχειριζόμενες εταιρείες."
       ]
     },
     "info": {
@@ -15785,6 +15857,51 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Assigned seats": [
+        "Εκχωρημένες θέσεις"
+      ],
+      "Average": [
+        "Μέσος όρος"
+      ],
+      "Billed average": [
+        "Χρεωμένος μέσος όρος"
+      ],
+      "Billed seats": [
+        "Χρεωμένες θέσεις"
+      ],
+      "Companies": [
+        "Εταιρείες"
+      ],
+      "Cost": [
+        "Κόστος"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Ενημερωτικά δελτία - Νέα, συντακτικά μηνύματα και μη διαφημιστικό περιεχόμενο"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Κύρια - Προσωπικά και επαγγελματικά μηνύματα, καθώς και σημαντικές ενημερώσεις"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Προσφορές - Προσφορές, προσφορές και μηνύματα μάρκετινγκ"
+      ],
+      "Seats": [
+        "Θέσεις"
+      ],
+      "Seats usage": [
+        "Χρήση θέσεων"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Κοινωνικά δίκτυα - Ενημερώσεις, δραστηριότητα και μηνύματα κοινωνικών δικτύων"
+      ],
+      "Total cost": [
+        "Συνολικό κόστος"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Συναλλαγές - Αποδείξεις, κρατήσεις, λογαριασμοί και παραγγελίες"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Ενημερώσεις - Αυτόματες επιβεβαιώσεις, ειδοποιήσεις και ενημερώσεις λογαριασμού"
       ]
     },
     "label": {
@@ -20131,6 +20248,12 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Enter company name": [
+        "Εισάγετε όνομα εταιρείας"
+      ],
+      "Search for a company": [
+        "Αναζήτηση εταιρείας"
       ]
     },
     "placeholder": {
@@ -21419,6 +21542,9 @@
       ],
       "Your recovery phrase is set": [
         "Η φράση ανάκτησής σας έχει οριστεί"
+      ],
+      "update it now": [
+        "ενημερώστε το τώρα"
       ]
     },
     "safety_review": {
@@ -21655,6 +21781,36 @@
       ],
       "Your security setup": [
         "Η ρύθμιση ασφαλείας σας"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Εάν η ηλεκτρονική διεύθυνση ανάκτησής σας έχει αλλάξει, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Εάν το τηλέφωνο ανάκτησής σας έχει αλλάξει, ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Αποστολή κωδικού επαλήθευσης"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Για να βεβαιωθούμε ότι αυτή η διεύθυνση είναι όντως δική σας, θα σας στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν κωδικό επαλήθευσης."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Για να βεβαιωθούμε ότι αυτός ο αριθμός είναι όντως δικός σας, θα σας στείλουμε ένα SMS με έναν κωδικό επαλήθευσης."
+      ],
+      "Update": [
+        "Ενημέρωση"
+      ],
+      "Update recovery email": [
+        "Ενημέρωση ηλεκτρονικής διεύθυνσης ανάκτησης"
+      ],
+      "Update recovery phone": [
+        "Ενημέρωση τηλεφώνου ανάκτησης"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Η επαλήθευση της ηλ. διεύθυνσής σας αυξάνει τη διασφάλιση του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
       ]
     },
     "saml: Action": {
@@ -23519,6 +23675,12 @@
       ],
       "Verify ${ value }": [
         "Επαλήθευση ${ value }"
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "Disabled": [
+        "Απενεργοποιημένο"
       ]
     },
     "Step in filter modal": {
@@ -24503,6 +24665,18 @@
       ],
       "Your address has been activated": [
         "Η διεύθυνσή σας έχει ενεργοποιηθεί"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } ενεργοποιημένη"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } απενεργοποιημένο"
+      ],
+      "${ data.name } added": [
+        "${ data.name } προστέθηκε"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } ενημερώθηκε"
       ]
     },
     "Success message": {
@@ -26746,6 +26920,21 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Add company": [
+        "Προσθήκη εταιρείας"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Είστε βέβαιοι ότι θέλετε να αποσυνδέσετε και να απενεργοποιήσετε αυτήν τη διεύθυνση;"
+      ],
+      "Disable company": [
+        "Απενεργοποίηση εταιρείας"
+      ],
+      "Edit company": [
+        "Επεξεργασία εταιρείας"
+      ],
+      "Previous billing periods": [
+        "Προηγούμενες περίοδοι χρέωσης"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28265,6 +28454,29 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Περίοδος χρέωσης"
+      ],
+      "Company": [
+        "Εταιρεία"
+      ],
+      "Managed companies": [
+        "Διαχειριζόμενες εταιρείες"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Total billed seats": [
+        "Σύνολο χρεωμένων θέσεων"
+      ],
+      "Total cost": [
+        "Συνολικό κόστος"
+      ],
+      "Used / assigned seats": [
+        "Χρησιμοποιημένες / εκχωρημένες θέσεις"
       ]
     }
   }
