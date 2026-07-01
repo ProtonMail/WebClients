@@ -34,6 +34,7 @@ interface ToggleButtonProps {
     secondaryAriaLabel?: string;
     hasWarning?: boolean;
     tooltipTitle?: string;
+    tooltipClassName?: string;
     loading?: boolean;
 }
 
@@ -50,6 +51,7 @@ export const ToggleButton = ({
     secondaryAriaLabel,
     hasWarning,
     tooltipTitle,
+    tooltipClassName,
     loading = false,
 }: ToggleButtonProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -83,7 +85,7 @@ export const ToggleButton = ({
             <Tooltip
                 title={tooltipTitle}
                 isOpen={!tooltipTitle ? false : undefined}
-                tooltipClassName="meet-tooltip bg-strong color-norm"
+                tooltipClassName={clsx('meet-tooltip bg-strong color-norm', tooltipClassName)}
                 tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
                 openDelay={750}
                 closeDelay={0}

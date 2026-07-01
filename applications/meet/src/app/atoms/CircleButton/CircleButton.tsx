@@ -3,6 +3,7 @@ import type { CSSProperties, ReactNode, RefObject } from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { IconProps } from '@proton/components/components/icon/Icon';
+import type { PopperPlacement } from '@proton/components/index';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -27,6 +28,8 @@ interface CircleButtonProps {
     ariaHasPopup?: React.AriaAttributes['aria-haspopup'];
     noBorder?: boolean;
     tooltipTitle?: string;
+    tooltipClassName?: string;
+    tooltipPlacement?: PopperPlacement;
     anchorRef?: RefObject<HTMLButtonElement>;
     size?: IconSize;
     buttonStyle?: CSSProperties;
@@ -48,6 +51,8 @@ export const CircleButton = ({
     ariaHasPopup,
     noBorder = true,
     tooltipTitle,
+    tooltipClassName,
+    tooltipPlacement,
     anchorRef,
     size = 6,
     buttonStyle,
@@ -70,7 +75,8 @@ export const CircleButton = ({
     return (
         <ConditionalTooltip
             title={tooltipTitle}
-            tooltipClassName="meet-tooltip bg-strong color-norm"
+            placement={tooltipPlacement}
+            tooltipClassName={clsx('meet-tooltip bg-strong color-norm', tooltipClassName)}
             tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
             isOpen={tooltipTitle ? undefined : false}
             openDelay={750}
