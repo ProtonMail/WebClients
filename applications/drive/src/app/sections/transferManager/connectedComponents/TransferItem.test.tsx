@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { AbuseCategoryType } from '../../../modals/ReportAbuseModal';
+import { AbuseCategory } from '../../../modals/ReportAbuseModal';
 import { DownloadManager } from '../../../modules/download/DownloadManager';
 import {
     type DownloadItem,
@@ -164,7 +164,7 @@ describe('TransferItem - malware report button', () => {
         fireEvent.click(screen.getByTestId(REPORT_BUTTON_TEST_ID));
 
         expect(onReportAbuse).toHaveBeenCalledWith(malwareInfo.uid, {
-            category: AbuseCategoryType.Malware,
+            category: AbuseCategory.Malware,
             comment: malwareInfo.message,
         });
     });

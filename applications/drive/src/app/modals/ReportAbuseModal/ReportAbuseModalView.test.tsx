@@ -3,11 +3,10 @@ import React from 'react';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { NodeType } from '@proton/drive';
+import { AbuseCategory, NodeType } from '@proton/drive';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { ReportAbuseModalView } from './ReportAbuseModalView';
-import { AbuseCategoryType } from './types';
 
 const baseLoadedProps = {
     loaded: true as const,
@@ -53,15 +52,14 @@ describe('ReportAbuseModalView', () => {
     });
 
     it('does not require email or comment for categories without email verification', async () => {
-        renderWithProviders(
-            <ReportAbuseModalView {...baseLoadedProps} prefilled={{ category: AbuseCategoryType.Spam }} />
-        );
+        renderWithProviders(<ReportAbuseModalView {...baseLoadedProps} prefilled={{ category: AbuseCategory.Spam }} />);
 
+        await userEvent.click(screen.getByTestId('report-abuse-bona-fide'));
         fireEvent.submit(getForm());
 
         await waitFor(() => {
             expect(baseLoadedProps.handleSubmit).toHaveBeenCalledWith({
-                category: AbuseCategoryType.Spam,
+                category: AbuseCategory.Spam,
                 email: undefined,
                 comment: undefined,
             });
@@ -70,7 +68,7 @@ describe('ReportAbuseModalView', () => {
 
     it('requires email and comment for Copyright category', async () => {
         renderWithProviders(
-            <ReportAbuseModalView {...baseLoadedProps} prefilled={{ category: AbuseCategoryType.Copyright }} />
+            <ReportAbuseModalView {...baseLoadedProps} prefilled={{ category: AbuseCategory.Copyright }} />
         );
 
         fireEvent.submit(getForm());
@@ -84,15 +82,16 @@ describe('ReportAbuseModalView', () => {
         renderWithProviders(
             <ReportAbuseModalView
                 {...baseLoadedProps}
-                prefilled={{ category: AbuseCategoryType.Copyright, email: 'a@b.com', comment: 'details' }}
+                prefilled={{ category: AbuseCategory.Copyright, email: 'a@b.com', comment: 'details' }}
             />
         );
 
+        await userEvent.click(screen.getByTestId('report-abuse-bona-fide'));
         fireEvent.submit(getForm());
 
         await waitFor(() => {
             expect(baseLoadedProps.handleSubmit).toHaveBeenCalledWith({
-                category: AbuseCategoryType.Copyright,
+                category: AbuseCategory.Copyright,
                 email: 'a@b.com',
                 comment: 'details',
             });

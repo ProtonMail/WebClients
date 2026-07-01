@@ -2,79 +2,79 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalStateProps, useApi, useNotifications } from '@proton/components';
-import type { NodeType, ProtonDrivePublicLinkClient } from '@proton/drive';
+import { type ModalStateProps, useNotifications } from '@proton/components';
+import {
+    AbuseCategory,
+    type NodeType,
+    type ProtonDriveClient,
+    type ProtonDrivePhotosClient,
+    type ProtonDrivePublicLinkClient,
+} from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
+import { getNodeName } from '../preview/nodeUtils';
 import type { ReportAbuseModalViewProps } from './ReportAbuseModalView';
-import { AbuseCategoryType, type AbuseReportPrefill } from './types';
+import type { AbuseReportPrefill } from './types';
 
 type Drive = {
-    getNode: ProtonDrivePublicLinkClient['getNode'];
-    experimental: {
-        getNodePassphrase: ProtonDrivePublicLinkClient['experimental']['getNodePassphrase'];
-    };
+    getNode: ProtonDrivePublicLinkClient['getNode'] | ProtonDriveClient['getNode'] | ProtonDrivePhotosClient['getNode'];
+    reportAbuse:
+        | ProtonDrivePublicLinkClient['reportAbuse']
+        | ProtonDriveClient['reportAbuse']
+        | ProtonDrivePhotosClient['reportAbuse'];
 };
 
 export type UseReportAbuseModalProps = ModalStateProps & {
     drive: Drive;
     nodeUid: string;
-    publicLinkUrl: string;
-    publicLinkPassword: string;
+    revisionUid?: string;
     prefilled?: AbuseReportPrefill;
 };
 
 export const ABUSE_CATEGORIES = [
     {
-        type: AbuseCategoryType.Spam,
+        type: AbuseCategory.Spam,
         getText: () => c('Label').t`Spam`,
     },
     {
-        type: AbuseCategoryType.Copyright,
+        type: AbuseCategory.Copyright,
         getText: () => c('Label').t`Copyright infringement`,
     },
     {
-        type: AbuseCategoryType.ChildAbuse,
+        type: AbuseCategory.ChildAbuse,
         getText: () => c('Label').t`Child sexual abuse material`,
     },
     {
-        type: AbuseCategoryType.NonConsensualIntimate,
+        type: AbuseCategory.NonConsensualIntimate,
         getText: () => c('Label').t`Non-consensual intimate imagery`,
     },
     {
-        type: AbuseCategoryType.StolenData,
+        type: AbuseCategory.StolenData,
         getText: () => c('Label').t`Stolen data`,
     },
     {
-        type: AbuseCategoryType.Malware,
+        type: AbuseCategory.Malware,
         getText: () => c('Label').t`Malware`,
     },
     {
-        type: AbuseCategoryType.Other,
+        type: AbuseCategory.Other,
         getText: () => c('Label').t`Other`,
     },
 ];
 
-export const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCategoryType[] = [
-    AbuseCategoryType.Copyright,
-    AbuseCategoryType.StolenData,
-];
+export const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCategory[] = [AbuseCategory.Copyright, AbuseCategory.StolenData];
 
 export const useReportAbuseModalState = ({
     nodeUid,
+    revisionUid,
     drive,
-    publicLinkPassword,
-    publicLinkUrl,
     prefilled,
     onClose,
     onExit,
     open,
 }: UseReportAbuseModalProps): ReportAbuseModalViewProps => {
     const { createNotification } = useNotifications();
-    const api = useApi();
     const [nodeData, setNodeData] = useState<
         | {
               name: string;
@@ -88,11 +88,10 @@ export const useReportAbuseModalState = ({
     useEffect(() => {
         const fetchNodeData = async () => {
             try {
-                const maybeNode = await drive.getNode(nodeUid);
-                const { node } = getNodeEntity(maybeNode);
+                const node = await drive.getNode(nodeUid);
                 setNodeData({
-                    name: node.name,
-                    size: getNodeDisplaySize(maybeNode),
+                    name: getNodeName(node),
+                    size: getNodeDisplaySize(node),
                     mediaType: node.mediaType,
                     type: node.type,
                 });
@@ -111,19 +110,16 @@ export const useReportAbuseModalState = ({
         };
     }
 
-    const handleSubmit = async (formData: { category: AbuseCategoryType; email?: string; comment?: string }) => {
-        const passphrase = await drive.experimental.getNodePassphrase(nodeUid);
+    const handleSubmit = async (formData: { category: AbuseCategory; email?: string; comment?: string }) => {
         try {
-            await api(
-                querySubmitAbuseReport({
-                    ShareURL: publicLinkUrl,
-                    Password: publicLinkPassword,
-                    AbuseCategory: formData.category,
-                    ReporterEmail: formData.email,
-                    ReporterMessage: formData.comment,
-                    ResourcePassphrase: passphrase,
-                })
-            );
+            await drive.reportAbuse({
+                abuseCategory: formData.category,
+                reporterEmail: formData.email,
+                reporterMessage: formData.comment,
+                nodeUid,
+                revisionUid,
+                bonaFide: true,
+            });
             createNotification({ text: c('Info').t`Report has been sent` });
             onClose();
         } catch (e) {

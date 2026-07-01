@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
@@ -17,6 +18,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { DownloadManager } from '../../modules/download/DownloadManager';
 import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useDetailsModal } from '../DetailsModal';
+import { useReportAbuseModal } from '../ReportAbuseModal';
 import { Preview } from '../preview';
 import type { CategorizedRevisions } from './revisions/getCategorizedRevisions';
 import { getCategorizedRevisions } from './revisions/getCategorizedRevisions';
@@ -29,11 +31,13 @@ export interface RevisionsProviderState {
     isOwner: boolean;
     currentRevision?: Revision;
     categorizedRevisions: CategorizedRevisions;
+    canReportAbuse: boolean;
     openRevisionPreview: (revision: Revision) => void;
     openRevisionDetails: (revision: Revision) => void;
     deleteRevision: (revision: Revision) => void;
     restoreRevision: (revision: Revision) => void;
     downloadRevision: (revision: Revision) => void;
+    reportRevisionAbuse: (revision: Revision) => void;
 }
 
 export type UseRevisionsModalStateProps = {
@@ -45,6 +49,7 @@ export type RevisionsModalContentViewProps = RevisionsProviderState & {
     portalPreview: ReactNode;
     confirmModal: ReactNode;
     detailsModal: ReactNode;
+    reportAbuseModal: ReactNode;
 } & ModalStateProps;
 
 export const useRevisionsModalState = ({
@@ -53,12 +58,14 @@ export const useRevisionsModalState = ({
     ...modalProps
 }: UseRevisionsModalStateProps): RevisionsModalContentViewProps => {
     const { createNotification } = useNotifications();
+    const [{ Email: userEmail }] = useUser();
 
     const [isLoading, withLoading] = useLoading(true);
     const [currentRevision, setCurrentRevision] = useState<Revision | undefined>(undefined);
     const [olderRevisions, setOlderRevisions] = useState<Revision[]>([]);
     const [node, setNode] = useState<NormalizedNode>();
     const [isOwner, setIsOwner] = useState<boolean>(false);
+    const [canReportAbuse, setCanReportAbuse] = useState<boolean>(false);
 
     const loadRevisions = async () => {
         let currentRevision;
@@ -90,6 +97,11 @@ export const useRevisionsModalState = ({
         const rootFolder = await drive.getMyFilesRootFolder();
         const { node: rootFolderNode } = getNodeEntity(rootFolder);
         setIsOwner(rootNode.uid === rootFolderNode.uid || isDeviceRoot);
+
+        const nodeCanReportAbuse =
+            Boolean(maybeNode.membership) ||
+            Boolean((await drive.getNodeHierarchy(nodeUid).then((nodes) => nodes[0])).membership);
+        setCanReportAbuse(nodeCanReportAbuse);
     };
 
     useEffect(() => {
@@ -108,6 +120,7 @@ export const useRevisionsModalState = ({
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
+    const { reportAbuseModal, showReportAbuseModal } = useReportAbuseModal();
     const hasPreviewAvailable =
         !!node?.mediaType && isPreviewAvailable(node.mediaType, node.activeRevision?.storageSize);
     const [selectedRevision, setSelectedRevision] = useState<Revision | null>(null);
@@ -202,6 +215,10 @@ export const useRevisionsModalState = ({
         setSelectedRevision(revision);
     };
 
+    const reportRevisionAbuse = (revision: Revision) => {
+        showReportAbuseModal({ nodeUid, drive, revisionUid: revision.uid, prefilled: { email: userEmail } });
+    };
+
     const portalPreview = selectedRevision ? (
         <Portal>
             <div className="revision-preview">
@@ -221,6 +238,7 @@ export const useRevisionsModalState = ({
         hasPreviewAvailable,
         isLoading,
         isOwner,
+        canReportAbuse,
         deleteRevision: handleRevisionDelete,
         restoreRevision: handleRevisionRestore,
         currentRevision,
@@ -228,8 +246,10 @@ export const useRevisionsModalState = ({
         openRevisionPreview,
         openRevisionDetails,
         downloadRevision,
+        reportRevisionAbuse,
         portalPreview,
         confirmModal,
         detailsModal,
+        reportAbuseModal,
     };
 };

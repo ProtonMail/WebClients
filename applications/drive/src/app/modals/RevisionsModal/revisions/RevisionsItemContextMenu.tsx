@@ -8,17 +8,20 @@ import { RevisionDeleteButton } from './ContextMenuButtons/RevisionDeleteButton'
 import { RevisionDetailsButton } from './ContextMenuButtons/RevisionDetailsButton';
 import { RevisionDownloadButton } from './ContextMenuButtons/RevisionDownloadButton';
 import { RevisionPreviewButton } from './ContextMenuButtons/RevisionPreviewButton';
+import { RevisionReportAbuseButton } from './ContextMenuButtons/RevisionReportAbuseButton';
 import { RevisionRestoreButton } from './ContextMenuButtons/RevisionRestoreButton';
 
 type RevisionActionProps = Pick<
     RevisionsProviderState,
     | 'hasPreviewAvailable'
     | 'isOwner'
+    | 'canReportAbuse'
     | 'openRevisionPreview'
     | 'openRevisionDetails'
     | 'deleteRevision'
     | 'restoreRevision'
     | 'downloadRevision'
+    | 'reportRevisionAbuse'
 >;
 
 export function RevisionsItemContextMenu({
@@ -31,11 +34,13 @@ export function RevisionsItemContextMenu({
     isCurrent,
     hasPreviewAvailable,
     isOwner,
+    canReportAbuse,
     openRevisionPreview,
     downloadRevision,
     openRevisionDetails,
     deleteRevision,
     restoreRevision,
+    reportRevisionAbuse,
 }: ContextMenuProps & {
     revision: Revision;
     isCurrent: boolean;
@@ -52,6 +57,16 @@ export function RevisionsItemContextMenu({
                 ) : null}
                 <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
                 <RevisionDetailsButton revision={revision} openRevisionDetails={openRevisionDetails} close={close} />
+                {canReportAbuse && (
+                    <>
+                        <ContextSeparator />
+                        <RevisionReportAbuseButton
+                            revision={revision}
+                            reportRevisionAbuse={reportRevisionAbuse}
+                            close={close}
+                        />
+                    </>
+                )}
             </ItemContextMenu>
         );
     }
@@ -71,7 +86,16 @@ export function RevisionsItemContextMenu({
             <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
             <ContextSeparator />
             <RevisionDetailsButton revision={revision} openRevisionDetails={openRevisionDetails} close={close} />
-
+            {canReportAbuse && (
+                <>
+                    <ContextSeparator />
+                    <RevisionReportAbuseButton
+                        revision={revision}
+                        reportRevisionAbuse={reportRevisionAbuse}
+                        close={close}
+                    />
+                </>
+            )}
             {isOwner && (
                 <>
                     <ContextSeparator />
