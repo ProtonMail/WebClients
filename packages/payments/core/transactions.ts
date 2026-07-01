@@ -11,6 +11,7 @@ export function displayTransactionType(type: TransactionType): boolean {
         TransactionType.CHARGEBACK,
         TransactionType.MIGRATION,
         TransactionType.ADJUSTMENT_CREDIT,
+        TransactionType.TEST_CREDIT,
     ]);
 
     return !hiddenTransactionTypes.has(type);
@@ -50,6 +51,10 @@ export function getTransactionTypeTitle(type: TransactionType, complete = false)
             return c('Transaction type display as badge').t`Migration`;
         case TransactionType.ADJUSTMENT_CREDIT:
             return c('Transaction type display as badge').t`Adjustment credit`;
+        case TransactionType.TEST_CREDIT:
+            return c('Transaction type display as badge').t`Test credit`;
+        case TransactionType.PREPAYMENT:
+            return c('Transaction type display as badge').t`Prepayment`;
         default:
             return '';
     }
