@@ -7606,6 +7606,12 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
+      "Preparing download": [
+        "Падрыхтоўка да спампоўвання"
+      ],
+      "Preparing…": [
+        "Падрыхтоўка…"
       ]
     },
     "info": {
@@ -10593,6 +10599,9 @@
         "${ removed } фатаграфіі было выдалена з \"${ albumName }\"",
         "${ removed } фатаграфій было выдалена з \"${ albumName }\"",
         "${ removed } фатаграфій было выдалена з \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Не ўдалося загрузіць абагуленыя падрабязнасці"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14326,6 +14335,33 @@
       ],
       "We'd love to hear from you!": [
         "Нам было б прыемна пачуць гэта!"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэты файл быў бяспечна створаны ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэты файл быў бяспечна запампаваны ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэта папка была бяспечна створана ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэта папка была бяспечна запампавана ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Немагчыма спраўдзіць, што ${ author } стварыў гэты файл."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Немагчыма спраўдзіць, што ${ author } стварыў гэту папку."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Немагчыма спраўдзіць, што ${ author } запампаваў гэты файл."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Немагчыма спраўдзіць, што ${ author } запампаваў гэту папку."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Не ўдалося пацвердзіць, што назва была створана або зменена ${ claimedNameAuthor }. Прычына: ${ node.nameAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
