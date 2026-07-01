@@ -58,6 +58,8 @@ const reportIPCHandlerFailureToSentry = (ipcChannel: string, messageType: string
 };
 
 export const handleIPCCalls = () => {
+    let appLocaleCache: string | undefined;
+
     ipcMain.on("hasFeature", (event: IpcMainEvent, message: keyof typeof DESKTOP_FEATURES) => {
         event.returnValue = !!DESKTOP_FEATURES[message];
     });
@@ -207,6 +209,11 @@ export const handleIPCCalls = () => {
                     showNotification(payload);
                     break;
                 case "updateLocale":
+                    if (payload === appLocaleCache) {
+                        return;
+                    }
+
+                    appLocaleCache = payload;
                     reloadHiddenViews();
                     break;
                 case "setTheme": {
