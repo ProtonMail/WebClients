@@ -1,11 +1,9 @@
 import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { NodeType } from '@proton/drive';
-import { apiMock } from '@proton/testing/lib/api';
+import { AbuseCategory, NodeType } from '@proton/drive';
 import { getStoreWrapper } from '@proton/testing/lib/context/renderWithProviders';
 
-import { AbuseCategoryType } from './types';
 import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useReportAbuseModalState';
 
 jest.mock('@proton/drive/legacy/errorHandling', () => ({
@@ -26,16 +24,12 @@ const mockMaybeNode = {
 
 const buildProps = (overrides?: Partial<UseReportAbuseModalProps>): UseReportAbuseModalProps => ({
     nodeUid: 'node-uid',
-    publicLinkUrl: 'https://link',
-    publicLinkPassword: 'pass',
     onClose: jest.fn(),
     onExit: jest.fn(),
     open: true,
     drive: {
         getNode: jest.fn().mockResolvedValue(mockMaybeNode),
-        experimental: {
-            getNodePassphrase: jest.fn().mockResolvedValue('passphrase'),
-        },
+        reportAbuse: jest.fn().mockResolvedValue(undefined),
     },
     ...overrides,
 });
@@ -69,7 +63,7 @@ describe('useReportAbuseModalState', () => {
             onExit,
             drive: {
                 getNode: jest.fn().mockRejectedValue(new Error('not found')),
-                experimental: { getNodePassphrase: jest.fn() },
+                reportAbuse: jest.fn(),
             },
         });
 
@@ -87,30 +81,26 @@ describe('useReportAbuseModalState', () => {
         await act(async () => {
             if (result.current.loaded) {
                 await result.current.handleSubmit({
-                    category: AbuseCategoryType.Spam,
+                    category: AbuseCategory.Spam,
                     email: 'r@b.com',
                     comment: 'bad',
                 });
             }
         });
 
-        expect(props.drive.experimental.getNodePassphrase).toHaveBeenCalledWith('node-uid');
-        expect(apiMock).toHaveBeenCalledWith(
+        expect(props.drive.reportAbuse).toHaveBeenCalledWith(
             expect.objectContaining({
-                method: 'post',
-                url: 'drive/report/url',
-                data: expect.objectContaining({
-                    AbuseCategory: AbuseCategoryType.Spam,
-                    ReporterEmail: 'r@b.com',
-                    ReporterMessage: 'bad',
-                    ResourcePassphrase: 'passphrase',
-                }),
+                abuseCategory: AbuseCategory.Spam,
+                reporterEmail: 'r@b.com',
+                reporterMessage: 'bad',
+                nodeUid: 'node-uid',
+                bonaFide: true,
             })
         );
     });
 
     it('passes prefilled values through to the view props', async () => {
-        const prefilled = { category: AbuseCategoryType.Copyright, email: 'a@b.com' };
+        const prefilled = { category: AbuseCategory.Copyright, email: 'a@b.com' };
         const { result } = renderHook(() => useReportAbuseModalState(buildProps({ prefilled })), { wrapper: Wrapper });
 
         await waitFor(() => expect(result.current.loaded).toBe(true));

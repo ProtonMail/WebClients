@@ -55,6 +55,7 @@ type FolderPermissions = {
     canCopy: boolean;
     canRename: boolean;
     canTrash: boolean;
+    canReportAbuse: boolean;
 };
 
 type FolderState = {
@@ -111,6 +112,7 @@ const initialState: FolderState = {
         canCopy: false,
         canRename: false,
         canTrash: false,
+        canReportAbuse: false,
     },
 };
 
