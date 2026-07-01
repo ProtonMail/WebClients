@@ -3839,6 +3839,18 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Upozorňujeme, že emaily zaslané na túto adresu, a to aj z iných adries ${ BRAND_NAME }, už nebudú end-to-end šifrované."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení a deaktivácii už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Túto adresu môžete kedykoľvek opäť pripojiť."
       ]
     },
     "description": {
@@ -18091,6 +18103,9 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Naozaj chcete odpojiť a deaktivovať túto adresu?"
       ]
     },
     "Title for payment methods table": {

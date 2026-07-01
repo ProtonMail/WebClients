@@ -5550,6 +5550,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din tvåfaktorsautentiseringsnyckel är redo att användas."
+      ],
+      "Insert your security key into your device.": [
+        "Infoga din säkerhetsnyckel i din enhet."
       ]
     },
     "fido2: Label": {
@@ -5753,6 +5756,9 @@
       ],
       "Roles and permissions": [
         "Roller och behörigheter"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ]
     },
     "Header": {
@@ -8951,6 +8957,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Editing requires permission": [
+        "Redigering kräver behörighet"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
       ]
     },
     "info": {
@@ -10059,6 +10071,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Password check-ins": [
+        "Lösenordsincheckningar"
       ]
     },
     "label": {
@@ -12613,6 +12628,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Se till att du memorerar eller förvarar ditt lösenord säkert eftersom det är nyckeln till att dekryptera dina data."
+      ],
+      "Turn off check-ins": [
+        "Stäng av incheckningar"
+      ],
+      "Turn off password check-ins?": [
+        "Stäng av lösenordsincheckningar?"
       ]
     },
     "passwordless": {
@@ -13903,6 +13924,9 @@
       ],
       "Updated": [
         "Uppdaterad"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } och ${ groupsText } synkroniserade."
       ]
     },
     "scim: Action": {
@@ -15784,6 +15808,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du kommer få ditt användarnamn via SMS inom en minut om du har angett ett giltigt telefonnummer för återställning."
+      ],
+      "Password check-ins disabled": [
+        "Lösenordsincheckningar inaktiverad"
+      ],
+      "Password check-ins enabled": [
+        "Lösenordsincheckningar aktiverad"
       ]
     },
     "Success message": {
@@ -17839,6 +17869,12 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ]
     },
     "Users table: badge": {
@@ -18165,6 +18201,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Är du säker på att du vill ta bort ditt telefonnummer för återställning?"
       ]
     },
     "Warning for domain modal": {

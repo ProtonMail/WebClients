@@ -3755,6 +3755,18 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "请注意，发送到此地址的邮件（即使来自其他 ${ BRAND_NAME } 地址）将不再采用端到端加密。"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接并禁用后，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
+      "You can reconnect this address at any time.": [
+        "您可以随时重新连接此地址。"
       ]
     },
     "description": {
@@ -17305,6 +17317,9 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "您确定要断开连接并禁用此地址吗？"
       ]
     },
     "Title for payment methods table": {

@@ -3775,6 +3775,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Bemærk at e-mails sendt til denne adresse, selv fra ${ BRAND_NAME }-adresser, ikke længere vil være end-to-end-krypterede."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Du vil ikke længere kunne sende eller modtage e-mails som ${ address.Email } i ${ BRAND_NAME } når den er afbrudt og deaktiveret. E-mails sendt til denne adresse vil stadig ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Du vil ikke længere kunne sende eller modtage e-mails som ${ address.Email } i ${ BRAND_NAME } når den er afbrudt. E-mails sendt til denne adresse vil stadig ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Du kan til enhver tid tilslutte denne adresse igen."
       ]
     },
     "description": {
@@ -17541,6 +17553,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Er du sikker på du vil afbryde og deaktivere forbindelsen til denne adresse?"
       ]
     },
     "Title for payment methods table": {
