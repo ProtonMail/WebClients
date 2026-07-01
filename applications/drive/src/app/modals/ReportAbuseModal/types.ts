@@ -1,17 +1,9 @@
-import type { NodeType } from '@proton/drive';
+import type { AbuseCategory, NodeType } from '@proton/drive';
 
-export enum AbuseCategoryType {
-    Spam = 'spam',
-    Copyright = 'copyright',
-    ChildAbuse = 'child-abuse',
-    NonConsensualIntimate = 'non-consensual-intimate',
-    StolenData = 'stolen-data',
-    Malware = 'malware',
-    Other = 'other',
-}
+export type { AbuseCategory };
 
 export type AbuseReportPrefill = {
-    category?: AbuseCategoryType;
+    category?: AbuseCategory;
     email?: string;
     comment?: string;
 };
@@ -25,7 +17,7 @@ export interface AbuseFormProps {
     open?: boolean;
 }
 
-export interface AbuseCategory {
-    type: AbuseCategoryType;
+export interface AbuseCategoryEntry {
+    type: AbuseCategory;
     getText: () => string;
 }

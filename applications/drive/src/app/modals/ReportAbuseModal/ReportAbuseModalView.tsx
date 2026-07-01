@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components';
 import {
+    Checkbox,
     Form,
     InputFieldTwo,
+    Label,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -16,13 +18,13 @@ import {
     TextAreaTwo,
     useFormErrors,
 } from '@proton/components';
-import type { NodeType } from '@proton/drive';
+import { AbuseCategory, type NodeType } from '@proton/drive';
 import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { FileCard } from './FileCard';
-import { AbuseCategoryType, type AbuseReportPrefill } from './types';
+import type { AbuseReportPrefill } from './types';
 import { ABUSE_CATEGORIES, CATEGORIES_WITH_EMAIL_VERIFICATION } from './useReportAbuseModalState';
 
 export type ReportAbuseModalViewProps =
@@ -30,7 +32,7 @@ export type ReportAbuseModalViewProps =
     | { loaded: false };
 
 type LoadedReportAbuseModalViewProps = {
-    handleSubmit: (formData: { category: AbuseCategoryType; email?: string; comment?: string }) => Promise<void>;
+    handleSubmit: (formData: { category: AbuseCategory; email?: string; comment?: string }) => Promise<void>;
     name: string;
     size: number | undefined;
     mediaType: string | undefined;
@@ -51,17 +53,19 @@ const ReportAbuseModalViewContent = ({
 }: LoadedReportAbuseModalViewProps & ModalStateProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-    const defaultCategory = AbuseCategoryType.Other;
+    const defaultCategory = AbuseCategory.Other;
 
     const [model, setModel] = useState<{
-        category: AbuseCategoryType | null;
+        category: AbuseCategory | null;
         email: string;
         comment: string;
+        bonaFide: boolean;
     }>(() => {
         return {
             category: prefilled?.category ?? null,
             email: prefilled?.email ?? '',
             comment: prefilled?.comment ?? '',
+            bonaFide: false,
         };
     });
 
@@ -72,7 +76,7 @@ const ReportAbuseModalViewContent = ({
 
     // SelectTwo's onValue expects (value: unknown) => void
     const handleCategoryChange = (value: unknown) => {
-        setModel({ ...model, category: value as AbuseCategoryType | null });
+        setModel({ ...model, category: value as AbuseCategory | null });
     };
 
     const handleEmailChange = (value: string) => {
@@ -100,6 +104,7 @@ const ReportAbuseModalViewContent = ({
         CATEGORIES_WITH_EMAIL_VERIFICATION.includes(model.category ?? defaultCategory) && model.category !== null;
     const emailValidation = requiresAdditionalValidation ? validator([emailValidator(model.email)]) : null;
     const commentValidation = requiresAdditionalValidation ? validator([requiredValidator(model.comment)]) : null;
+    const bonaFideValidation = validator([!model.bonaFide ? c('Error').t`This field is required` : '']);
 
     return (
         <ModalTwo
@@ -158,6 +163,24 @@ const ReportAbuseModalViewContent = ({
                         rows={2}
                         value={model.comment}
                     />
+                </div>
+                <div className="mb-2">
+                    <div className="flex flex-row items-start gap-2">
+                        <Checkbox
+                            id="bona-fide"
+                            className="pt-1"
+                            checked={model.bonaFide}
+                            disabled={submitting}
+                            onChange={(e) => setModel({ ...model, bonaFide: e.target.checked })}
+                            aria-describedby="bona-fide-description"
+                            data-testid="report-abuse-bona-fide"
+                        />
+                        <Label htmlFor="bona-fide" className="pt-0 flex-1 text-sm color-weak">
+                            {c('Info')
+                                .t`I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.`}
+                        </Label>
+                    </div>
+                    {bonaFideValidation && <p className="text-sm color-danger mt-1">{bonaFideValidation}</p>}
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>

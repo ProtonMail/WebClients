@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 
 import useShare from '../../../legacy/store/_shares/useShare';
@@ -7,6 +8,8 @@ import { ItemType } from '../types';
 import { DirectShareActions } from './DirectShareActions';
 
 const mockGetNode = jest.fn();
+
+jest.mock('@proton/account/user/hooks');
 
 jest.mock('@proton/drive', () => ({
     ...jest.requireActual('@proton/drive'),
@@ -30,6 +33,8 @@ jest.mock('../../../utils/docs/openInDocs', () => ({
     downloadDocument: jest.fn(),
     openDocsOrSheetsDocument: jest.fn(),
 }));
+
+jest.mocked(useUser).mockReturnValue([{ Email: 'test@proton.me' } as any, false]);
 
 jest.mocked(useShare).mockReturnValue({
     getSharePrivateKey: jest.fn(),
@@ -67,6 +72,7 @@ function renderDirectShareActions(role: string, buttonType: 'toolbar' | 'context
             showFilesDetailsModal={jest.fn()}
             showCopyModal={jest.fn()}
             showSharingModal={jest.fn()}
+            showReportAbuseModal={jest.fn()}
             buttonType={buttonType}
             close={buttonType === 'toolbar' ? undefined : jest.fn()}
         />

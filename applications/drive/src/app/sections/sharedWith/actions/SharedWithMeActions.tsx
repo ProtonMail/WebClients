@@ -3,6 +3,7 @@ import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
+import type { useReportAbuseModal } from '../../../modals/ReportAbuseModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import type { DirectShareItem, SharedWithMeItem } from '../useSharedWithMe.store';
 import { BookmarkActions } from './BookmarkActions';
@@ -19,6 +20,7 @@ interface BaseSharedWithMeActionsProps {
     showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>['showFilesDetailsModal'];
     showCopyModal: (items: DirectShareItem[]) => void;
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
+    showReportAbuseModal: ReturnType<typeof useReportAbuseModal>['showReportAbuseModal'];
 }
 
 interface ContextMenuSharedWithMeActionsProps extends BaseSharedWithMeActionsProps {
@@ -41,6 +43,7 @@ export const SharedWithMeActions = ({
     showFilesDetailsModal,
     showCopyModal,
     showSharingModal,
+    showReportAbuseModal,
     close,
     buttonType,
 }: SharedWithMeActionsProps) => {
@@ -84,6 +87,7 @@ export const SharedWithMeActions = ({
                 showFilesDetailsModal={showFilesDetailsModal}
                 showCopyModal={showCopyModal}
                 showSharingModal={showSharingModal}
+                showReportAbuseModal={showReportAbuseModal}
                 {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );

@@ -48,6 +48,7 @@ const RevisionsModalContent = ({
     isLoading,
     currentRevision,
     isOwner,
+    canReportAbuse,
     categorizedRevisions,
     hasPreviewAvailable,
     openRevisionPreview,
@@ -55,6 +56,7 @@ const RevisionsModalContent = ({
     deleteRevision,
     restoreRevision,
     downloadRevision,
+    reportRevisionAbuse,
 }: RevisionsProviderState) => {
     const [{ hasPaidDrive }] = useUser();
     const { revisionRetentionDays } = useUserSettings();
@@ -74,11 +76,13 @@ const RevisionsModalContent = ({
                     categorizedRevisions={categorizedRevisions}
                     hasPreviewAvailable={hasPreviewAvailable}
                     isOwner={isOwner}
+                    canReportAbuse={canReportAbuse}
                     openRevisionPreview={openRevisionPreview}
                     openRevisionDetails={openRevisionDetails}
                     deleteRevision={deleteRevision}
                     restoreRevision={restoreRevision}
                     downloadRevision={downloadRevision}
+                    reportRevisionAbuse={reportRevisionAbuse}
                 />
             ) : null}
         </>
@@ -89,6 +93,7 @@ export const RevisionsModalView = ({
     hasPreviewAvailable,
     isLoading,
     isOwner,
+    canReportAbuse,
     currentRevision,
     categorizedRevisions,
     openRevisionPreview,
@@ -96,9 +101,11 @@ export const RevisionsModalView = ({
     deleteRevision,
     restoreRevision,
     downloadRevision,
+    reportRevisionAbuse,
     portalPreview,
     confirmModal,
     detailsModal,
+    reportAbuseModal,
     ...modalProps
 }: RevisionsModalContentViewProps) => {
     return (
@@ -110,6 +117,7 @@ export const RevisionsModalView = ({
                         hasPreviewAvailable={hasPreviewAvailable}
                         isLoading={isLoading}
                         isOwner={isOwner}
+                        canReportAbuse={canReportAbuse}
                         currentRevision={currentRevision}
                         categorizedRevisions={categorizedRevisions}
                         openRevisionPreview={openRevisionPreview}
@@ -117,12 +125,14 @@ export const RevisionsModalView = ({
                         deleteRevision={deleteRevision}
                         restoreRevision={restoreRevision}
                         downloadRevision={downloadRevision}
+                        reportRevisionAbuse={reportRevisionAbuse}
                     />
                 </ModalTwoContent>
             </ModalTwo>
             {portalPreview}
             {confirmModal}
             {detailsModal}
+            {reportAbuseModal}
         </>
     );
 };

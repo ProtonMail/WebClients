@@ -354,6 +354,7 @@ export function FolderBrowser({
             {modals.revisionsModal}
             {modals.sharingModal}
             {modals.fileSharingModal}
+            {modals.reportAbuseModal}
         </>
     );
 }
