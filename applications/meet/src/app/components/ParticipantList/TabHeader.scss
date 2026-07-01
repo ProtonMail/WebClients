@@ -1,0 +1,19 @@
+.tab-header-count {
+	background-color: var(--background-tab);
+}
+
+.tab-header-title {
+	font-weight: 500;
+	font-size: 0.875rem;
+}
+
+.tabs-list-item--selected {
+	.tab-header-count {
+		color: var(--text-norm);
+	}
+
+	.tab-header-title {
+		color: var(--text-norm);
+		font-weight: 600;
+	}
+}

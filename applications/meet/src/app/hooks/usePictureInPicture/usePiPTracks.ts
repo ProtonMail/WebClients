@@ -1,6 +1,5 @@
 import { useTracks } from '@livekit/components-react';
-import { RoomEvent, Track } from 'livekit-client';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import { type Participant, RoomEvent, Track } from 'livekit-client';
 
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -17,7 +16,7 @@ const TRACK_UPDATE_EVENTS = [
     RoomEvent.TrackStreamStateChanged,
 ];
 
-export function usePiPTracks(sortedParticipants: (RemoteParticipant | LocalParticipant)[]) {
+export function usePiPTracks(sortedParticipants: Participant[]) {
     const currentScreenShareTrack = useTracks([Track.Source.ScreenShare], {
         updateOnlyOn: TRACK_UPDATE_EVENTS,
         onlySubscribed: false,
