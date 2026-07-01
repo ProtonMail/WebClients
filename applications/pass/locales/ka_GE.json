@@ -2524,6 +2524,9 @@
       "Moving an item to another vault will erase its secure links.": [
         "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
         "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "შეიყვანეთ დამოწმების კოდი. ციფრი ${ digit }."
       ]
     },
     "Keyboard key": {
@@ -3703,6 +3706,18 @@
       ],
       "Expires in": [
         "ვადა გასდის"
+      ],
+      "1 day": [
+        "1 დღე"
+      ],
+      "1 week": [
+        "1 კვირა"
+      ],
+      "1 year": [
+        "1 წელი"
+      ],
+      "Custom": [
+        "მომხმარებლის"
       ]
     },
     "Link": {
@@ -4016,6 +4031,9 @@
       ],
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
+      ],
+      "e.g. My automation script": [
+        "მაგ. ჩემი ავტომატიზაციის სკრიპტი"
       ]
     },
     "Security Center - Info": {
