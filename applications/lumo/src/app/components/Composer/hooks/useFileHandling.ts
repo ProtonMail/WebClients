@@ -64,7 +64,7 @@ export const useFileHandling = ({
 
     // Derived from available data — no isGuest context read needed.
     // Absence of uploadToDrive signals a guest session; linkedDriveFolder signals Drive-upload mode.
-    //eslint-disable-next-line no-nested-ternary
+
     const fileUploadMode: FileUploadMode = !uploadToDrive ? 'guest' : linkedDriveFolder ? 'linked-drive' : 'local';
 
     const validateFile = useCallback(
@@ -228,7 +228,7 @@ export const useFileHandling = ({
     );
 
     const processFileLocally = useCallback(
-        async (file: File, selectedExcelSheetNames?: string[], renameOnConflict: boolean = false): Promise<void> => {
+        async (file: File, selectedExcelSheetNames?: string[]): Promise<void> => {
             if (isLargeSpreadsheetFile(file)) {
                 console.log(`Processing large spreadsheet file — this may take a moment...`);
             }
@@ -249,24 +249,10 @@ export const useFileHandling = ({
                 }
 
                 const result = await dispatch(
-                    handleFileAsync(
-                        fileToProcess.file,
-                        messageChain,
-                        fileProcessingService,
-                        {
-                            selectedExcelSheetNames: fileToProcess.selectedExcelSheetNames,
-                        },
-                        renameOnConflict
-                    )
+                    handleFileAsync(fileToProcess.file, messageChain, fileProcessingService, {
+                        selectedExcelSheetNames: fileToProcess.selectedExcelSheetNames,
+                    })
                 );
-
-                if (result.isDuplicate) {
-                    createNotification({
-                        text: c('collider_2025: Error').t`File already added: ${result.fileName}`,
-                        type: 'warning',
-                    });
-                    continue;
-                }
 
                 if (result.isUnsupported) {
                     if (isPresentationFile(fileToProcess.file)) {
@@ -353,7 +339,7 @@ export const useFileHandling = ({
     );
 
     const handleFileProcessing = useCallback(
-        async (file: File, renameOnConflict: boolean = false): Promise<void> => {
+        async (file: File): Promise<void> => {
             try {
                 // The limit only applies to attachments staged in the composer; linked-drive
                 // uploads go straight to Drive and don't occupy a composer slot.
@@ -368,7 +354,7 @@ export const useFileHandling = ({
                 if (fileUploadMode === 'linked-drive') {
                     await uploadFileToDrive(file, selectedExcelSheetNames);
                 } else {
-                    await processFileLocally(file, selectedExcelSheetNames, renameOnConflict);
+                    await processFileLocally(file, selectedExcelSheetNames);
                 }
             } catch (error) {
                 console.error('Error processing file:', error);

@@ -1,24 +1,19 @@
 import { selectAttachments } from '../../redux/selectors';
 import { deleteAttachment, newAttachmentId } from '../../redux/slices/core/attachments';
 import type { LumoDispatch, LumoState } from '../../redux/store';
-import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
-import { type Attachment, LUMO_API_ERRORS, type Message } from '../../types';
+import type { Attachment, Message } from '../../types';
 import { calculateAttachmentTokenCount, storeAttachmentInRedux } from '../../util/attachmentHelpers';
 import { isImageFile } from '../../util/fileTypeHelpers';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
 import type { FileProcessingOptions, FileProcessingService } from '../fileProcessingService';
-import { findDuplicateAttachment, generateUniqueFilename } from './duplicateDetection';
+import { generateUniqueFilename } from './duplicateDetection';
 
 export const handleFileAsync =
     (
         file: File,
         messageChain: Message[] = [],
         fileProcessingService: FileProcessingService,
-        processingOptions?: FileProcessingOptions,
-        // When true, a filename collision is resolved by appending a counter
-        // suffix (e.g. image (2).png) instead of rejecting the file. Used for
-        // pasted clipboard images, which the browser always names image.png.
-        renameOnConflict: boolean = false
+        processingOptions?: FileProcessingOptions
     ) =>
     async (
         dispatch: LumoDispatch,
@@ -26,7 +21,6 @@ export const handleFileAsync =
     ): Promise<{
         success: boolean;
         isUnsupported?: boolean;
-        isDuplicate?: boolean;
         fileName: string;
         errorMessage?: string;
         attachmentId?: string;
@@ -35,29 +29,11 @@ export const handleFileAsync =
         // Record start time for performance tracking
         const startTime = performance.now();
 
-        // Handle filename collisions within the current conversation. By default
-        // a duplicate is rejected, but for pasted clipboard images (which the
-        // browser always names image.png) we instead append a counter suffix so
-        // the file is added as image (2).png.
+        // Resolve filename collisions within the current conversation by appending
+        // a counter suffix (e.g. report.pdf -> report (2).pdf).
         const currentState = getState();
         const allAttachments = selectAttachments(currentState);
-
-        if (!renameOnConflict) {
-            const duplicate = findDuplicateAttachment(file, messageChain, allAttachments);
-            if (duplicate) {
-                onComposerError(LUMO_API_ERRORS.DUPLICATE_FILE);
-                console.log(`Duplicate file detected in current conversation: ${file.name} (${file.size} bytes)`);
-                return {
-                    success: false,
-                    isDuplicate: true,
-                    fileName: file.name,
-                };
-            }
-        }
-
-        const uniqueFilename = renameOnConflict
-            ? generateUniqueFilename(file.name, messageChain, allAttachments)
-            : file.name;
+        const uniqueFilename = generateUniqueFilename(file.name, messageChain, allAttachments);
 
         const fileData = new Uint8Array(await file.arrayBuffer());
 
