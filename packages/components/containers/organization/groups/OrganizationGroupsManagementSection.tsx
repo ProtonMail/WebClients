@@ -17,6 +17,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import ScimSetupBannerAndModal from '../ScimSetupBannerAndModal';
+import GroupRoleAssignmentPausedBanner from './GroupRoleAssignmentPausedBanner';
 import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
@@ -80,10 +81,13 @@ const OrganizationGroupsManagementSection = () => {
                         .t`The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.`}
                 </Card>
             )}
-
             <ScimSetupBannerAndModal />
-
-            {(hasUsableDomain || invalidGroupSuggestion) && <GroupsMemberManagementPanel />}
+            {(hasUsableDomain || invalidGroupSuggestion) && (
+                <>
+                    {hasAdminRoles && <GroupRoleAssignmentPausedBanner />}
+                    <GroupsMemberManagementPanel />
+                </>
+            )}
             <AdminRolesOnboardingModal
                 variant="group"
                 open={canShowAdminRolesModal}
