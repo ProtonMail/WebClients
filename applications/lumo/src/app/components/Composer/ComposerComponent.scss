@@ -85,18 +85,15 @@ im.$media-expressions: $media-expressions;
 		--ghost-border: #343140;
 		--ghost-text: white;
 		--ghost-text-weak: #8a8896;
+		--button-default-text-color: white;
 
 		// Container styles
 		border-color: var(--ghost-border);
 		background-color: var(--ghost-bg-primary);
 		color: var(--ghost-text);
 
-		// Text content styling
-		.color-weak {
-			color: var(--ghost-text-weak) !important;
-		}
-
 		span,
+		button,
 		.text-sm,
 		.markdown-rendering {
 			color: var(--ghost-text);
