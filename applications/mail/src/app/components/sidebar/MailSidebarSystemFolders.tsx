@@ -7,6 +7,8 @@ import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -72,6 +74,8 @@ const MailSidebarSystemFolders = ({
     const { categoryViewAccess, activeCategoriesTabs } = useCategoriesView();
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
     const { getLocationCount } = useMailboxCounter();
+
+    const dispatch = useDispatch();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -225,6 +229,9 @@ const MailSidebarSystemFolders = ({
         if (isCategoryLabel(labelID)) {
             sendReportCategoriesNav('sidebar', labelID);
         }
+
+        // Mark the labelID as seen to remove unseen badge
+        void dispatch(updateLastSeenEventId({ labelID }));
     };
 
     sidebarElements.forEach((item) => {
@@ -283,6 +290,7 @@ const MailSidebarSystemFolders = ({
                             collapsed={collapsed}
                             moveToFolder={moveToFolder}
                             applyLabels={applyLabels}
+                            onClickCallback={() => dispatch(updateLastSeenEventId({ labelID }))}
                         />
                     </DnDElementWrapper>
                 );

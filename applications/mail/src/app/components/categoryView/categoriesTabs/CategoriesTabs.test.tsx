@@ -17,6 +17,13 @@ jest.mock('../useCategoriesView', () => ({
     })),
 }));
 
+jest.mock('./useCategoriesBadge', () => ({
+    useCategoriesBadge: jest.fn(() => ({
+        shouldShowCounter: false,
+        shouldShowNewBadge: false,
+    })),
+}));
+
 describe('CategoriesTabs', () => {
     describe('selected category test', () => {
         // TODO add a test to cover disabled categories
