@@ -296,7 +296,7 @@ const itemMatchers: ItemMatchMap = {
 
 const matchItem: ItemMatch = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);
 
-export const searchItems = <T extends ItemRevision>(items: T[], search?: string) => {
+export const searchItems = <T extends ItemRevision>(items: T[], search?: string, rankByRelevance = true) => {
     if (!search || search.trim() === '') return items;
 
     /** split the search term into multiple normalized needles, dropping empties
@@ -304,10 +304,12 @@ export const searchItems = <T extends ItemRevision>(items: T[], search?: string)
      * that would disqualify every item */
     const needles = Array.from(new Set(normalize(search, true).split(/\s+/).filter(Boolean)));
 
-    /** Score every item, keeping only matches (`score > 0`). Results are ranked
-     * by relevance (highest score first). Ties preserve the incoming order -
-     * which is already sorted by the active sort option (recent, title, ...) -
-     * via a stable index tie-breaker. */
+    /** Score every item, keeping only matches (`score > 0`). When
+     * `rankByRelevance` is set, results are ranked by relevance (highest score
+     * first) with ties preserving the incoming order via a stable index
+     * tie-breaker. Otherwise the match is used purely as a filter and the
+     * incoming order - already sorted by the active sort option (recent,
+     * title, ...) - is preserved, matching the mobile apps' behavior. */
     const matches: { item: T; score: number; index: number }[] = [];
 
     items.forEach((item, index) => {
@@ -315,7 +317,7 @@ export const searchItems = <T extends ItemRevision>(items: T[], search?: string)
         if (score > 0) matches.push({ item, score, index });
     });
 
-    matches.sort((a, b) => b.score - a.score || a.index - b.index);
+    if (rankByRelevance) matches.sort((a, b) => b.score - a.score || a.index - b.index);
 
     return matches.map(({ item }) => item);
 };

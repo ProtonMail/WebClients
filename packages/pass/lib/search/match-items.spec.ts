@@ -438,4 +438,21 @@ describe('searchItems ranking', () => {
         const noteExact = login('Account D', { note: 'home' });
         expect(names(searchItems([urlSubstring, noteExact], 'home'))).toEqual(['Account D', 'Account C']);
     });
+
+    test('preserves incoming order when ranking is disabled (filter only)', () => {
+        /* the same fixtures the "protonmail" ranking test uses, but with
+         * `rankByRelevance = false` the field-title match on `protonmail` must
+         * NOT float it up - only non-matches are dropped and the incoming order
+         * (already sorted by the active sort option) is preserved */
+        const protonmail = login('Protonmail', { email: 'me@protonmail.com' });
+        const spotify = login('Spotify', { email: 'user@protonmail.com' });
+        const netflix = login('Netflix', { email: 'hi@protonmail.com' });
+        const github = login('GitHub', { email: 'me@github.com' });
+
+        expect(names(searchItems([spotify, netflix, protonmail, github], 'protonmail', false))).toEqual([
+            'Spotify',
+            'Netflix',
+            'Protonmail',
+        ]);
+    });
 });

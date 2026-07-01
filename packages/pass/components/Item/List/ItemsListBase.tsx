@@ -55,8 +55,11 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort, filters.selectedShareId]);
 
     const { interpolation, interpolationIndexes } = useMemo(
-        () => interpolateRecentItems(items)(filters.sort === 'recent'),
-        [filters.type, filters.sort, items]
+        /* Date sections follow recency: shown for `recent`, and for `relevant`
+         * while browsing (no active search) since it falls back to recent order.
+         * A `relevant` search ranks by relevance, so date labels are hidden. */
+        () => interpolateRecentItems(items)(filters.sort === 'recent' || (filters.sort === 'relevant' && !filters.search)),
+        [filters.type, filters.sort, filters.search, items]
     );
 
     const handleContextMenu = useCallback(

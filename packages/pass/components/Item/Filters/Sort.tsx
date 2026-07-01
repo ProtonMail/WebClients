@@ -19,6 +19,13 @@ type Props = {
 
 const getSortOptionDetails = (option: ItemSortFilter) => {
     const options: Record<string, { label: string; shortLabel: string; icon: IconName }> = {
+        relevant: {
+            // translator: this is sorting filter label from drop down menu (Relevant means search results are ordered by how well they match the search term)
+            label: c('Label').t`Relevant`,
+            // translator: this is short filter label for "Relevant" (when filter is selected)
+            shortLabel: c('Label').t`Relevant`,
+            icon: 'magnifier',
+        },
         createTimeASC: {
             // translator: this is sorting filter label from drop down menu
             label: c('Label').t`Oldest to newest`,
@@ -53,7 +60,7 @@ const getSortOptionDetails = (option: ItemSortFilter) => {
 };
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
-const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
+const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['relevant', 'recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
 export const SortFilter = memo(({ value, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
