@@ -77,6 +77,10 @@ export interface LumoUserSettings {
     isMemoryAutoSaveEnabled?: boolean;
     /** General-chat user prompts since the last background memory update. */
     memoryPromptsSinceAutoSave?: number;
+    /** Preferred model tier for signed-in users (runtime may fall back when limits are hit). */
+    preferredModelTier?: 'lumo-lite' | 'lumo-max';
+    /** Preferred response mode for signed-in users. */
+    preferredResponseMode?: 'fast' | 'thinking';
 }
 
 /** Builds initial settings from `lumo-settings` in localStorage. */

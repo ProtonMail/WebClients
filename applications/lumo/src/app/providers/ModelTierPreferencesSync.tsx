@@ -1,0 +1,48 @@
+import { useLayoutEffect } from 'react';
+
+import { useLumoUserSettings } from '../hooks/useLumoUserSettings';
+import { resolveAvailableModelTier, useRemainingLimits } from '../services/usageLimitsStore';
+import { useIsGuest } from './IsGuestProvider';
+import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
+import { useModelTier } from './ModelTierProvider';
+
+/**
+ * Applies persisted model/response preferences from lumoUserSettings for signed-in users.
+ * Runtime selection may still fall back when the preferred tier has no quota.
+ */
+export const ModelTierPreferencesSync = () => {
+    const isGuest = useIsGuest();
+    const { lumoUserSettings } = useLumoUserSettings();
+    const { setModelTierWithoutPersist, setResponseModeWithoutPersist } = useModelTier();
+    const remainingLimits = useRemainingLimits();
+    const { isMaxAvailableByFlag } = useMaxModelAvailability();
+
+    useLayoutEffect(() => {
+        if (isGuest) {
+            return;
+        }
+
+        const { preferredModelTier, preferredResponseMode } = lumoUserSettings;
+
+        if (preferredResponseMode) {
+            setResponseModeWithoutPersist(preferredResponseMode);
+        }
+
+        if (preferredModelTier) {
+            const availableTier = resolveAvailableModelTier(preferredModelTier, remainingLimits, {
+                isMaxAvailable: isMaxAvailableByFlag,
+            });
+            setModelTierWithoutPersist(availableTier);
+        }
+    }, [
+        isGuest,
+        isMaxAvailableByFlag,
+        lumoUserSettings.preferredModelTier,
+        lumoUserSettings.preferredResponseMode,
+        remainingLimits,
+        setModelTierWithoutPersist,
+        setResponseModeWithoutPersist,
+    ]);
+
+    return null;
+};
