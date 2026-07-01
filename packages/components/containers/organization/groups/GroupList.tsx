@@ -9,7 +9,7 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import type { Group } from '@proton/shared/lib/interfaces';
+import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
 import { useGroupsManagement } from './context/GroupsManagementContext';
@@ -20,7 +20,7 @@ import { GROUPS_STATE } from './types';
 const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
 const compareGroupNames = (a: Group, b: Group) => collator.compare(a.Name, b.Name);
 
-const getSortedGroups = (input: string, groups: Group[]) => {
+const getSortedGroups = (input: string, groups: EnhancedGroup[]) => {
     return input
         ? groups
               .filter((group) => {
@@ -116,6 +116,7 @@ const GroupList = () => {
                         onClick={() => actions.onViewGroup(group)}
                         onDeleteGroup={actions.onDeleteGroup}
                         groupOrganizationRoles={groupRolesMap[group.ID]}
+                        hasPendingRoleAssignment={group.hasPendingOrgKeyAccess}
                     />
                 ))}
             </Scroll>

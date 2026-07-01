@@ -3,7 +3,9 @@ import { c } from 'ttag';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
@@ -23,6 +25,7 @@ interface Props {
     name?: string;
     serializedGroup?: ReturnType<GroupsManagementReturn['getSerializedGroup']>;
     groupOrganizationRoles?: RoleAssignment[];
+    hasPendingRoleAssignment?: boolean;
 }
 
 const GroupItem = ({
@@ -33,6 +36,7 @@ const GroupItem = ({
     isNew,
     onDeleteGroup,
     groupOrganizationRoles,
+    hasPendingRoleAssignment,
 }: Props) => {
     const api = useApi();
     const [organization] = useOrganization();
@@ -76,9 +80,21 @@ const GroupItem = ({
                         <GroupIcon className="m-auto color-primary shrink-0" size={4} />
                     </div>
                     <div className="text-left flex flex-column flex-1">
-                        <span className="block max-w-full text-bold text-ellipsis" title={name}>
-                            {name}
-                        </span>
+                        <div className="flex items-center flex-nowrap gap-1">
+                            <span className="text-bold text-ellipsis min-w-0" title={name}>
+                                {name}
+                            </span>
+                            {hasPendingRoleAssignment && (
+                                <Tooltip title={c('tooltip').t`Role assignment paused`}>
+                                    <span className="inline-flex shrink-0">
+                                        <IcExclamationCircle
+                                            className="color-warning"
+                                            alt={c('tooltip').t`Role assignment paused`}
+                                        />
+                                    </span>
+                                </Tooltip>
+                            )}
+                        </div>
                         {subtitle && (
                             <p className="m-0 text-sm color-weak text-ellipsis" title={subtitle}>
                                 {subtitle}
