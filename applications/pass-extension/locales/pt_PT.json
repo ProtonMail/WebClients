@@ -725,6 +725,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "O seu gestor de palavras-passe não está aqui? Solicite-o."
+      ],
+      "Copy": [
+        "Copiar"
+      ],
+      "Hide": [
+        "Ocultar"
       ]
     },
     "Browser": {
@@ -1347,6 +1353,9 @@
       ],
       "Password ends with": [
         "A palavra-passe termina com"
+      ],
+      "Username": [
+        "Nome de utilizador"
       ]
     },
     "Info": {
@@ -1931,7 +1940,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2547,6 +2557,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "A sua organização exige que proteja o seu acesso ao ${ PASS_APP_NAME }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduza o código de verificação. Dígito ${ digit }."
       ]
     },
     "Label": {
@@ -3673,6 +3686,9 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Expires in": [
+        "Expira em"
       ]
     },
     "Link": {
@@ -3976,6 +3992,9 @@
       ],
       "Used on ${ url }": [
         "Utilizado no ${ url }"
+      ],
+      "e.g. My automation script": [
+        "p. ex., O meu script de automatização"
       ]
     },
     "Security Center - Info": {
