@@ -15,7 +15,7 @@ export const TabNewCount = ({ category }: Props) => {
         return null;
     }
 
-    const displayCount = count > 99 ? '99+' : `${count}`;
+    const displayCount = count > 99 ? '99+' : count;
     return (
         <span className="tab-new-count text-semibold mail-category-color" aria-hidden="true">
             {
