@@ -1378,6 +1378,18 @@
       ],
       "Name must be 191 characters or fewer": [
         "이름은 191자 이하여야 합니다."
+      ],
+      "Failed to create access token": [
+        "액세스 토큰을 생성할 수 없음"
+      ],
+      "Failed to delete access token": [
+        "액세스 토큰을 삭제할 수 없음"
+      ],
+      "Failed to load token actions": [
+        "토큰 동작 불러오기 실패"
+      ],
+      "Failed to update vault access": [
+        "금고 접근 업데이트에 실패했습니다"
       ]
     },
     "Error message": {
@@ -4061,6 +4073,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason }이(가) 활성화 되었습니다."
+      ],
+      "Access token deleted": [
+        "엑세스 토큰 삭제됨"
       ]
     },
     "Option": {
