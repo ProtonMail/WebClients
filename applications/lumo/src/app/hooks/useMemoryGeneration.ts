@@ -48,7 +48,7 @@ export function useMemoryGeneration() {
                     signal: controller.signal,
                 });
                 console.log('response', response);
-                return memoriesFromContents(parseMemoryStringsResponse(response), 'generated');
+                return memoriesFromContents(parseMemoryStringsResponse(response, existingMemories), 'generated');
             } finally {
                 if (abortRef.current === controller) {
                     abortRef.current = null;

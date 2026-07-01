@@ -107,6 +107,9 @@ export const applyMemoryEdit = (memory: Memory, nextContent: string): Memory => 
 // ---------------------------------------------------------------------------
 
 const isGeneralConversation = (conversation: Conversation, spaces: Record<string, Space>) => {
+    if (conversation.ghost) {
+        return false;
+    }
     if (!conversation.spaceId) {
         return true;
     }
@@ -189,6 +192,12 @@ Examples of BAD memories (do NOT emit):
 - "User likes learning new things" (vague platitude)
 - "User's email is foo@example.com" (sensitive identifier)
 
+Duplicate avoidance (critical):
+- Never emit two memories that express the same fact in different words
+- Never restate, paraphrase, or lightly reword an existing saved memory (when listed below)
+- When unsure whether something is already covered, omit it rather than risk a duplicate
+- "Prefers concise answers" and "Likes short, to-the-point replies" are duplicates — keep at most one
+
 Output rules:
 - Each memory is a single, atomic fact, preference, or piece of context
 - Merge related observations into ONE memory; do not emit overlapping or paraphrased entries
@@ -210,14 +219,15 @@ Your job is to read the user's past chat prompts as a CORPUS and produce a conso
 Returning very few memories (or none) here would mean future replies are NOT personalized — that is the worst outcome. With more than a handful of prompts, there are almost always durable signals (preferred languages, tools, communication style, domains of work) that can be inferred from the AGGREGATE, even when each individual prompt is a one-off question. Look for those patterns and extract them. Aim for ~${MEMORY_GENERATION_TARGET_COUNT} memories where possible.`
         : `You incrementally update long-term memories for an AI assistant.
 
-The user already has these memories saved (do NOT repeat or paraphrase them — only return ADDITIONAL information not already covered):
+The user already has these memories saved. Treat them as a hard blocklist — do NOT repeat, paraphrase, narrow, broaden, or combine them into "new" wording. Only return genuinely NEW information not already implied by any item below:
 ${numberedList(existingMemories.map((m) => m.content))}
 
-From the user's chat prompts below, extract any additional durable facts, preferences, or context that are NOT already covered by the existing memories above. The list you return will be appended to the existing memories without further cleanup, so it must already be deduplicated and consolidated.`;
+From the user's chat prompts below, extract any additional durable facts, preferences, or context that are NOT already covered by the existing memories above. If a candidate memory would overlap with anything above — even with different phrasing — skip it. The list you return will be appended without further cleanup, so it must already be deduplicated, non-overlapping, and limited to net-new facts.`;
 
     const trailingRules = isFreshBootstrap
         ? '- Return [] ONLY if the samples truly contain no durable signal whatsoever (e.g. a single trivial prompt). With multiple prompts, prefer extracting at least a few inferred preferences over returning nothing.'
-        : `- Do not repeat or paraphrase any of the existing memories listed above
+        : `- Do not repeat or paraphrase any of the existing memories listed above — semantic overlap counts as a duplicate
+- Do not emit two new memories that express the same fact in different words
 - If nothing additional and durable stands out, return []`;
 
     return `${intro}
@@ -250,14 +260,14 @@ const extractJsonArray = (raw: string): unknown => {
     }
 };
 
-export const parseMemoryStringsResponse = (response: string): string[] => {
+export const parseMemoryStringsResponse = (response: string, existingMemories: Memory[] = []): string[] => {
     const parsed = extractJsonArray(response);
     if (!Array.isArray(parsed)) {
         return [];
     }
 
     const memories: string[] = [];
-    const seen = new Set<string>();
+    const seen = new Set(existingMemories.map((memory) => normalizeMemoryContent(memory.content).toLowerCase()));
 
     for (const item of parsed) {
         if (typeof item !== 'string') {
