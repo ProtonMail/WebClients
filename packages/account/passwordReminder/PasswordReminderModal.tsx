@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -23,6 +24,7 @@ import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import PasswordReminderInput from './PasswordReminderInput';
 import { dismissPasswordReminder, submitPasswordReminder } from './index';
@@ -131,7 +133,10 @@ const PasswordReminderModal = ({ onClose, source, disableDismiss, ...rest }: Pas
             <ModalContent>
                 <p className="m-0 mb-4">
                     {c('Info')
-                        .t`To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.`}
+                        .t`To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.`}{' '}
+                    <Href key="learn" href={getKnowledgeBaseUrl('/password-check-in')}>
+                        {c('Link').t`Learn more`}
+                    </Href>
                 </p>
                 <InputFieldTwo
                     autoFocus
