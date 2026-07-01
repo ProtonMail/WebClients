@@ -1728,8 +1728,7 @@
         "Mostrar assistente de escrita ${ BRAND_NAME } Scribe"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ]
     },
     "action": {
@@ -9275,6 +9274,31 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Você tem ${ totalLabel } na sua caixa de entrada."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Você tem **${ count } conversa** na categoria ${ categoryLabel }",
+        "Você tem **${ count } conversas** na categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Você tem **${ count } mensagem** na categoria ${ categoryLabel }",
+        "Você tem **${ count } mensagens** na categoria ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Você não tem nenhuma conversa nessa categoria"
+      ],
+      "You have no messages in this category": [
+        "Você não tem nenhuma mensagem nessa categoria"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Você selecionou **${ checked } conversa** na categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } conversas** na categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Você selecionou **${ checked } mensagem** na categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } mensagens** na categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10428,6 +10452,24 @@
       ],
       "Category:": [
         "Categoria:"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletins – Notícias, e-mails editoriais e conteúdo não promocional"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal - E-mails pessoais e profissionais, além de atualizações importantes"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoções - Ofertas, descontos e e-mails de propaganda"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Atualizações de mídia social, atividade e mensagens"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transações — Recibos, reservas, faturas e pedidos"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Atualizações — Confirmações automáticas, alertas e atualizações de conta"
       ]
     },
     "Label (begin date/advanced search)": {

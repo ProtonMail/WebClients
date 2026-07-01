@@ -4273,6 +4273,9 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "귀하께서는 새로운 카테고리 보기 기능이 출시되기 전에 가장 먼저 체험해보는 사용자 중 한 분입니다. 귀하의 의견은 모든 사용자를 위해 Proton Mail이 이메일을 분류하는 방식을 개선하는 데 큰 도움이 됩니다."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Gmail로부터 기존 이메일을 불러오고 새로운 메시지는 전달 받아 동기화할 수 있습니다."
       ]
     },
     "description": {
@@ -5223,6 +5226,9 @@
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ]
     },
     "error": {
@@ -10055,6 +10061,9 @@
       ],
       "Tab age": [
         "탭 수명"
+      ],
+      "Import your emails": [
+        "내 이메일 불러오기"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16263,7 +16272,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "기존에 불러온 항목 중 중복되는 것은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
+        "기존에 불러온 항목 중 중복되는 항목은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
       ]
     },
     "Reply to calendar invitation": {
