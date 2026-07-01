@@ -9,6 +9,8 @@ export interface MediaManagementContextType {
     isAudioEnabled: boolean;
     toggleVideo: ToggleVideoType;
     toggleAudio: ToggleAudioType;
+    handleMicrophoneToggle: () => void | Promise<unknown>;
+    handleCameraToggle: () => void | Promise<unknown>;
     backgroundBlur: boolean;
     toggleBackgroundBlur: ReturnType<typeof debounce>;
     isBackgroundBlurSupported: boolean;
@@ -33,6 +35,8 @@ const defaultValues: MediaManagementContextType = {
     isAudioEnabled: false,
     toggleVideo: () => Promise.resolve(undefined),
     toggleAudio: () => Promise.resolve(undefined),
+    handleMicrophoneToggle: () => {},
+    handleCameraToggle: () => {},
     backgroundBlur: false,
     toggleBackgroundBlur: debounce(() => Promise.resolve(), 500),
     isBackgroundBlurSupported: true,

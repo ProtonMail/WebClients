@@ -301,6 +301,11 @@ $profile-colors:
 	background-color: var(--meet-tooltip-bg);
 }
 
+.meet-tooltip--nowrap {
+	max-inline-size: none;
+	white-space: nowrap;
+}
+
 .tooltip--top.meet-tooltip,
 .tooltip--top-start.meet-tooltip,
 .tooltip--top-end.meet-tooltip {
