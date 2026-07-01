@@ -65,7 +65,7 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState }: Auto
                 enableWebSearch: false,
             });
 
-            const contents = parseMemoryStringsResponse(response);
+            const contents = parseMemoryStringsResponse(response, existingAtRequestTime);
             if (contents.length === 0) {
                 dispatch(updateLumoUserSettings({ memoryPromptsSinceAutoSave: 0 }));
                 return;

@@ -271,7 +271,9 @@ export function sendMessage({
         const generateTitle = c.messageChain.length === 0;
         const linearChain = newMessageChain;
 
-        if (!isProject && s.isMemoryFeatureEnabled) {
+        const isGhostConversation = state.conversations[conversationId]?.ghost === true;
+
+        if (!isProject && !isGhostConversation && s.isMemoryFeatureEnabled) {
             maybeAutoSaveMemoriesFromChats({ api: a.api, dispatch, getState });
         }
 
