@@ -374,7 +374,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                     <div
                         className={clsx(
                             'rounded-xl p-4 flex flex-column items-center justify-center text-center',
-                            error ? 'border border-danger' : 'border-dashed border-weak'
+                            error ? 'border border-danger' : 'border border-3 border-dashed border-weak'
                         )}
                     >
                         <DropzoneContent />
