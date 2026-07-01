@@ -33,7 +33,7 @@ export const getRoutes = (params: AllRouterParams) => {
         organization: getOrganizationAppRoutes(organizationParams),
         msp: getMspAppRoutes(sharedSettings),
         vpn: getVpnAppRoutes(sharedSettings),
-        wallet: getWalletAppRoutes(),
+        wallet: getWalletAppRoutes(sharedSettings),
         meet: getMeetAppRoutes(),
         authenticator: getAuthenticatorAppRoutes(sharedSettings),
     };

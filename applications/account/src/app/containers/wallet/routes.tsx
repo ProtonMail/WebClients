@@ -1,12 +1,15 @@
 import { c } from 'ttag';
 
 import type { SidebarConfig } from '@proton/components';
-import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { WALLET_SETTINGS_ROUTES } from '@proton/wallet/constants/settings';
 
-export const getWalletAppRoutes = (): SidebarConfig => {
+import type { GeneralRouterParams } from '../../content/router-params';
+
+export const getWalletAppRoutes = ({ app }: GeneralRouterParams): SidebarConfig => {
     return {
         header: WALLET_APP_NAME,
+        available: app === APPS.PROTONWALLET,
         routes: {
             authorization: {
                 id: 'authorization',
