@@ -8,14 +8,8 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
-import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
-    PermissionBlockedError,
-    requestPermission,
-    showPermissionsModal,
-} from '@proton/meet/store/slices/deviceManagementSlice';
-import {
-    selectActiveCameraId,
     selectCameraPermission,
     selectCameras,
     selectInitialCameraState,
@@ -25,7 +19,6 @@ import {
     selectSpeakerState,
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { filterDevices, isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -37,6 +30,7 @@ import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { supportsSetSinkId } from '../../utils/browser';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
+import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaShortcuts';
 import { getParticipantDisplayColorsByIndex } from '../../utils/participantDisplayColors/getParticipantDisplayColorsByIndex';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
@@ -50,8 +44,6 @@ import './DeviceSettings.scss';
 interface DeviceSettingsProps {
     isCameraEnabled: boolean;
     isMicrophoneEnabled: boolean;
-    onCameraToggle: () => void;
-    onMicrophoneToggle: () => void;
     selectedCameraId: string;
     selectedMicrophoneId: string;
     selectedAudioOutputDeviceId: string;
@@ -68,8 +60,6 @@ const circleButtonStyle = { '--circle-button-size': '3rem' };
 export const DeviceSettings = ({
     isCameraEnabled,
     isMicrophoneEnabled,
-    onCameraToggle,
-    onMicrophoneToggle,
     selectedCameraId,
     selectedMicrophoneId,
     selectedAudioOutputDeviceId,
@@ -80,8 +70,6 @@ export const DeviceSettings = ({
     colorIndex,
     isLoading,
 }: DeviceSettingsProps) => {
-    const dispatch = useMeetDispatch();
-
     const camera = useMeetSelector(selectCameraPermission);
     const microphone = useMeetSelector(selectMicrophonePermission);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
@@ -90,8 +78,7 @@ export const DeviceSettings = ({
     const cameras = useMeetSelector(selectCameras);
     const microphones = useMeetSelector(selectMicrophones);
     const speakers = useMeetSelector(selectSpeakers);
-    const activeCameraId = useMeetSelector(selectActiveCameraId);
-    const { handleRotateCamera, facingMode } = useMediaManagementContext();
+    const { handleRotateCamera, facingMode, handleMicrophoneToggle, handleCameraToggle } = useMediaManagementContext();
 
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';
@@ -113,6 +100,9 @@ export const DeviceSettings = ({
         noDeviceDetected: noCameraDetected,
         isEnabled: isCameraEnabled,
     });
+
+    const microphoneTooltipTitle = isMobile() ? undefined : `${microphoneButtonAriaLabel} (${microphoneShortcutLabel})`;
+    const cameraTooltipTitle = isMobile() ? undefined : `${cameraButtonAriaLabel} (${cameraShortcutLabel})`;
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -150,36 +140,6 @@ export const DeviceSettings = ({
         const camera = filteredCameras.find((c) => c.deviceId === deviceId);
         if (camera) {
             await onCameraChange(camera);
-        }
-    };
-
-    const handleMicrophoneToggle = async () => {
-        if (microphoneHasWarning) {
-            try {
-                await dispatch(requestPermission('microphone'));
-            } catch (error) {
-                if (error instanceof PermissionBlockedError) {
-                    dispatch(
-                        showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_MICROPHONE_MODAL })
-                    );
-                }
-            }
-        } else {
-            onMicrophoneToggle();
-        }
-    };
-
-    const handleCameraToggle = async () => {
-        if (cameraHasWarning) {
-            try {
-                await dispatch(requestPermission('camera', activeCameraId));
-            } catch (error) {
-                if (error instanceof PermissionBlockedError) {
-                    dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_CAMERA_MODAL }));
-                }
-            }
-        } else {
-            onCameraToggle();
         }
     };
 
@@ -299,6 +259,9 @@ export const DeviceSettings = ({
                         buttonStyle={circleButtonStyle}
                         ariaLabel={microphoneButtonAriaLabel}
                         ariaPressed={microphoneHasWarning ? undefined : isMicrophoneEnabled}
+                        tooltipTitle={microphoneTooltipTitle}
+                        tooltipClassName="meet-tooltip--nowrap"
+                        tooltipPlacement="top"
                     />
 
                     <CircleButton
@@ -312,6 +275,9 @@ export const DeviceSettings = ({
                         buttonStyle={circleButtonStyle}
                         ariaLabel={cameraButtonAriaLabel}
                         ariaPressed={cameraHasWarning ? undefined : isCameraEnabled}
+                        tooltipTitle={cameraTooltipTitle}
+                        tooltipClassName="meet-tooltip--nowrap"
+                        tooltipPlacement="top"
                     />
                 </div>
             </div>
