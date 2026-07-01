@@ -2680,6 +2680,9 @@
       ],
       "Expires on ${ formattedDate }": [
         "Erääntyy ${ formattedDate }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
       ]
     },
     "Keyboard key": {
@@ -3826,6 +3829,9 @@
       ],
       "Custom expiration (minutes)": [
         "Mukautettu erääntyminen (minuuttia)"
+      ],
+      "Expires in": [
+        "Erääntyy"
       ]
     },
     "Link": {
@@ -4129,6 +4135,9 @@
       ],
       "Used on ${ url }": [
         "Käytetään osoitteessa ${ url }"
+      ],
+      "e.g. My automation script": [
+        "esim. Oma automaatioskriptini"
       ]
     },
     "Security Center - Info": {

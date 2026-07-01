@@ -2660,6 +2660,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。${ digit }桁目。"
       ]
     },
     "Keyboard key": {
@@ -3795,6 +3798,9 @@
       ],
       "ZIP or Postal code": [
         "郵便番号"
+      ],
+      "Expires in": [
+        "有効期限"
       ]
     },
     "Link": {
@@ -4100,6 +4106,9 @@
       ],
       "Used on ${ url }": [
         "${ url } で使用されます"
+      ],
+      "e.g. My automation script": [
+        "例：マイ自動化スクリプト"
       ]
     },
     "Security Center - Info": {
