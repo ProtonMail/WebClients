@@ -10,10 +10,13 @@ import {
     create as createConfig,
     deleteLabel as deleteLabelConfig,
     updateLabel as updateLabelConfig,
+    updateLastSeenEventID,
 } from '@proton/shared/lib/api/labels';
 import type { Category, Label } from '@proton/shared/lib/interfaces';
 
+import type { CategoriesState } from './index';
 import { categoriesActions, getCategory } from './index';
+import { selectCategoriesToMarkSeen } from './selector';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 
@@ -72,5 +75,35 @@ export const deleteLabel = ({
     return async (dispatch, getState, extra) => {
         await extra.api(deleteLabelConfig(label.ID));
         dispatch(categoriesActions.deleteCategory(label));
+    };
+};
+
+export const updateLastSeenEventId = ({
+    labelID,
+}: {
+    labelID: string;
+}): ThunkAction<Promise<void>, RequiredState & CategoriesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        const lastEventID = extra.eventManager.getEventID();
+        const categoriesToUpdate = selectCategoriesToMarkSeen(getState(), labelID);
+
+        if (!lastEventID || categoriesToUpdate.length === 0) {
+            return;
+        }
+
+        categoriesToUpdate.forEach((category) => {
+            dispatch(categoriesActions.upsertCategory({ ...category, LastUnseenMessageEventID: null }));
+        });
+
+        try {
+            await Promise.all(
+                categoriesToUpdate.map((category) =>
+                    extra.api(updateLastSeenEventID(category.ID, { LastEventID: lastEventID }))
+                )
+            );
+        } catch (error) {
+            categoriesToUpdate.forEach((category) => dispatch(categoriesActions.upsertCategory(category)));
+            throw error;
+        }
     };
 };

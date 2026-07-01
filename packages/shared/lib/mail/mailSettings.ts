@@ -231,4 +231,5 @@ export const DEFAULT_MAIL_SETTINGS: MailSettings & { _isDefault: boolean } = {
     RemoveImageMetadata: false,
     KT: KEY_TRANSPARENCY_SETTING.DISABLED,
     MailCategoryView: false,
+    MailCategoryViewCountersEnabled: false,
 };
