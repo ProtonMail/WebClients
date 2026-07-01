@@ -13,7 +13,7 @@ import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
+import { AbuseCategory, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
 import { DownloadManager } from '../../../modules/download/DownloadManager';
 import {
     BaseTransferStatus,
@@ -125,7 +125,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
             return;
         }
         onReportAbuse(item.malwareInfo.uid, {
-            category: AbuseCategoryType.Malware,
+            category: AbuseCategory.Malware,
             comment: item.malwareInfo.message,
         });
     };

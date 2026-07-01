@@ -86,7 +86,7 @@ const PublicPageContent = () => {
                 deprecatedRootShareId={undefined}
                 className="public-page-transfer-manager"
                 onReportAbuse={(nodeUid, prefill) =>
-                    handleReportAbuse(nodeUid, customPassword, {
+                    handleReportAbuse(nodeUid, {
                         ...prefill,
                         email: usePublicAuthStore.getState().getUserMainAddress()?.email,
                     })
@@ -96,7 +96,7 @@ const PublicPageContent = () => {
                 <ReportAbuseButton
                     className="ml-0.5 mb-0.5 fixed left-0 bottom-0"
                     onClick={() =>
-                        handleReportAbuse(rootNode.uid, customPassword, {
+                        handleReportAbuse(rootNode.uid, {
                             email: usePublicAuthStore.getState().getUserMainAddress()?.email,
                         })
                     }

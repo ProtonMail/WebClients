@@ -5,10 +5,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useFlagsDriveSheet } from '@proton/drive/modules/flags';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
+import { getNodeEffectiveRole, getNodeName } from '@proton/drive/modules/nodes';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -62,21 +61,23 @@ export function useFolder() {
             setIsLoading(true);
 
             try {
-                const maybeNode = await drive.getNode(folderNodeUid);
-                const { node } = getNodeEntity(maybeNode);
-                const folderItem = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive);
+                const node = await drive.getNode(folderNodeUid);
+                const folderItem = await mapNodeToFolderViewItem(node, folderShareId, drive);
                 const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
                 const isDeviceFolder = isDeviceRoot || (folderItem.rootUid && !!getByRootFolderUid(folderItem.rootUid));
-                const role = await getNodeEffectiveRole(maybeNode, drive);
+                const role = await getNodeEffectiveRole(node, drive);
                 const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
                 const canTrash = role !== MemberRole.Viewer;
                 const isRoot = !node.parentUid;
                 const isAdmin = role === MemberRole.Admin;
+                const canReportAbuse =
+                    Boolean(node.membership) ||
+                    Boolean((await drive.getNodeHierarchy(node.uid).then((nodes) => nodes[0])).membership);
 
                 setFolder(
                     {
                         uid: node.uid,
-                        name: node.name,
+                        name: getNodeName(node),
                         parentUid: node.parentUid,
                         isRoot: !node.parentUid,
                         shareId: folderShareId,
@@ -96,6 +97,7 @@ export function useFolder() {
                     canCopy: true,
                     canRename: canEdit,
                     canTrash,
+                    canReportAbuse,
                 });
                 let showErrorNotification = false;
 
