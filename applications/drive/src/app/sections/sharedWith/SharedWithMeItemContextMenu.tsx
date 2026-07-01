@@ -6,6 +6,7 @@ import { ItemContextMenu } from '../../legacy/components/sections/ContextMenu/It
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useReportAbuseModal } from '../../modals/ReportAbuseModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 import type { DirectShareItem, SharedWithMeItem } from './useSharedWithMe.store';
@@ -26,6 +27,8 @@ export function SharedWithMeContextMenu({
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const { reportAbuseModal, showReportAbuseModal } = useReportAbuseModal();
+
     function convertDataShowModal(items: DirectShareItem[]) {
         showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name })));
     }
@@ -41,6 +44,7 @@ export function SharedWithMeContextMenu({
                     showFilesDetailsModal={showFilesDetailsModal}
                     showCopyModal={convertDataShowModal}
                     showSharingModal={showSharingModal}
+                    showReportAbuseModal={showReportAbuseModal}
                     close={close}
                     buttonType="contextMenu"
                 />
@@ -51,6 +55,7 @@ export function SharedWithMeContextMenu({
             {confirmModal}
             {copyModal}
             {sharingModal}
+            {reportAbuseModal}
         </>
     );
 }
