@@ -85,6 +85,7 @@ export { LatestEventIdProvider } from './internal/latestEventIdProvider';
 
 /* Other export */
 export {
+    AbuseCategory,
     AbortError,
     ConnectionError,
     DecryptionError,

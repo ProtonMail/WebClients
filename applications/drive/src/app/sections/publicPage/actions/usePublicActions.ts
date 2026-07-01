@@ -34,7 +34,7 @@ export const usePublicActions = () => {
     const { renameModal, showRenameModal } = useRenameModal();
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
+    const { reportAbuseModal, showReportAbuseModal } = useReportAbuseModal();
     const { createDeleteNotification } = usePublicPageNotifications();
     const { createNotification } = useNotifications();
 
@@ -208,11 +208,8 @@ export const usePublicActions = () => {
         }
     };
 
-    const handleReportAbuse = (nodeUid: string, customPassword: string = '', prefilled?: AbuseReportPrefill) => {
-        const { urlPassword } = getPublicTokenAndPassword(window.location.pathname);
+    const handleReportAbuse = (nodeUid: string, prefilled?: AbuseReportPrefill) => {
         showReportAbuseModal({
-            publicLinkPassword: urlPassword + customPassword,
-            publicLinkUrl: window.location.href,
             nodeUid,
             drive: getPublicLinkClient(),
             prefilled,

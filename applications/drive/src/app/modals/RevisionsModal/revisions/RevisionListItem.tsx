@@ -17,11 +17,13 @@ type RevisionActionProps = Pick<
     RevisionsProviderState,
     | 'hasPreviewAvailable'
     | 'isOwner'
+    | 'canReportAbuse'
     | 'openRevisionPreview'
     | 'openRevisionDetails'
     | 'deleteRevision'
     | 'restoreRevision'
     | 'downloadRevision'
+    | 'reportRevisionAbuse'
 >;
 
 export const RevisionListItem = ({
