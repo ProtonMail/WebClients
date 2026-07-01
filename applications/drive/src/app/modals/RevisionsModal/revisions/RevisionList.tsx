@@ -11,11 +11,13 @@ type RevisionActionProps = Pick<
     RevisionsProviderState,
     | 'hasPreviewAvailable'
     | 'isOwner'
+    | 'canReportAbuse'
     | 'openRevisionPreview'
     | 'openRevisionDetails'
     | 'deleteRevision'
     | 'restoreRevision'
     | 'downloadRevision'
+    | 'reportRevisionAbuse'
 >;
 
 interface Props extends RevisionActionProps {

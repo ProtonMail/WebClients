@@ -9,6 +9,7 @@ import { LayoutButton } from '../../legacy/components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useReportAbuseModal } from '../../modals/ReportAbuseModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
@@ -40,6 +41,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
+    const { reportAbuseModal, showReportAbuseModal } = useReportAbuseModal();
 
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
     function convertDataShowModal(items: DirectShareItem[]) {
@@ -59,6 +61,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
                             showFilesDetailsModal={showFilesDetailsModal}
                             showCopyModal={convertDataShowModal}
                             showSharingModal={showSharingModal}
+                            showReportAbuseModal={showReportAbuseModal}
                             buttonType="toolbar"
                         />
                     ) : null}
@@ -74,6 +77,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
             {filesDetailsModal}
             {copyModal}
             {sharingModal}
+            {reportAbuseModal}
         </>
     );
 };

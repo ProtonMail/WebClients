@@ -8,6 +8,7 @@ import { isMultiSelect, noSelection } from '../../../legacy/components/sections/
 import useIsEditEnabled from '../../../legacy/components/sections/useIsEditEnabled';
 import { useSelectionStore } from '../../../modules/selection';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
+import { ReportAbuseButton } from '../../commonButtons/ReportAbuseButton';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CopyButton } from '../buttons/CopyButton';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
@@ -74,6 +75,7 @@ export const FolderToolbar = ({
         showDetailsModal,
         showSharingModal,
         showFileSharingModal,
+        showReportAbuseModal,
     } = actions;
 
     const { downloadItems } = useDownloadActions({ selectedItems });
@@ -107,6 +109,12 @@ export const FolderToolbar = ({
                     ) : null}
                     {canShareCurrentFolder && isRoot && <ShareToolbarButton onClick={showFileSharingModal} />}
                     {canShareCurrentFolder && !isRoot && <ShareLinkButton type="toolbar" onClick={showSharingModal} />}
+                    {permissions.canReportAbuse && (
+                        <>
+                            {canShareCurrentFolder && <Vr />}
+                            <ReportAbuseButton buttonType="toolbar" onClick={showReportAbuseModal} />
+                        </>
+                    )}
                 </>
             );
         }
@@ -142,11 +150,10 @@ export const FolderToolbar = ({
                         )}
                         <DetailsButton type="toolbar" selectedItems={selectedItems} onClick={showDetailsModal} />
 
-                        {permissions.canTrash && (
-                            <>
-                                <Vr />
-                                <TrashButton type="toolbar" selectedItems={selectedItems} />
-                            </>
+                        {(permissions.canTrash || permissions.canReportAbuse) && <Vr />}
+                        {permissions.canTrash && <TrashButton type="toolbar" selectedItems={selectedItems} />}
+                        {permissions.canReportAbuse && (
+                            <ReportAbuseButton buttonType="toolbar" onClick={showReportAbuseModal} />
                         )}
                     </>
                 )}
