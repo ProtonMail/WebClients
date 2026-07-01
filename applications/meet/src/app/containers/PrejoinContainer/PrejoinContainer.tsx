@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { setInitialAudioState, setInitialCameraState } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     selectCameras,
     selectInitialAudioState,
@@ -164,8 +163,6 @@ export const PrejoinContainer = ({
                         <DeviceSettings
                             isCameraEnabled={initialCameraState}
                             isMicrophoneEnabled={initialAudioState}
-                            onCameraToggle={() => dispatch(setInitialCameraState(!initialCameraState))}
-                            onMicrophoneToggle={() => dispatch(setInitialAudioState(!initialAudioState))}
                             selectedCameraId={currentSelectedCamera}
                             selectedMicrophoneId={currentSelectedMicrophone}
                             selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice}

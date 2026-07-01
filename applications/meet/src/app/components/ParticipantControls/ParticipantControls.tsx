@@ -16,19 +16,14 @@ import {
     selectCameras,
     selectMicrophonePermission,
     selectMicrophones,
-    selectSelectedCameraId,
-    selectSelectedMicrophoneId,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,
-    PermissionPromptStatus,
     PopUpControls,
     selectPopupState,
     selectSideBarState,
-    setNoDeviceDetected,
-    setPermissionPromptStatus,
     togglePopupState,
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
@@ -44,6 +39,7 @@ import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdm
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
+import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaShortcuts';
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
@@ -90,13 +86,11 @@ export const ParticipantControls = () => {
     const microphonePermission = useMeetSelector(selectMicrophonePermission);
     const microphones = useMeetSelector(selectMicrophones);
     const cameras = useMeetSelector(selectCameras);
-    const audioDeviceId = useMeetSelector(selectSelectedMicrophoneId);
-    const videoDeviceId = useMeetSelector(selectSelectedCameraId);
 
     const hasCameraPermission = cameraPermission === 'granted';
     const hasMicrophonePermission = microphonePermission === 'granted';
 
-    const { toggleVideo, toggleAudio } = useMediaManagementContext();
+    const { handleMicrophoneToggle, handleCameraToggle } = useMediaManagementContext();
 
     const { toolbarProps } = useToolbarRovingFocus<HTMLDivElement>();
 
@@ -123,19 +117,23 @@ export const ParticipantControls = () => {
 
     const microphoneHasWarning = !hasMicrophonePermission || microphones.length === 0;
 
-    const microphoneTooltipTitle = getMicrophoneButtonAriaLabel({
+    const microphoneLabel = getMicrophoneButtonAriaLabel({
         hasPermission: hasMicrophonePermission,
         noDeviceDetected: microphones.length === 0,
         isEnabled: isMicrophoneEnabled,
     });
 
+    const microphoneTooltipTitle = `${microphoneLabel} (${microphoneShortcutLabel})`;
+
     const cameraHasWarning = !hasCameraPermission || cameras.length === 0;
 
-    const cameraTooltipTitle = getCameraButtonAriaLabel({
+    const cameraLabel = getCameraButtonAriaLabel({
         hasPermission: hasCameraPermission,
         noDeviceDetected: cameras.length === 0,
         isEnabled: isCameraEnabled,
     });
+
+    const cameraTooltipTitle = `${cameraLabel} (${cameraShortcutLabel})`;
 
     return (
         <div className="w-full flex flex-nowrap flex-column relative">
@@ -173,28 +171,16 @@ export const ParticipantControls = () => {
                                 OffIconComponent={IcMeetMicrophoneOff}
                                 isOn={microphones.length === 0 ? false : isMicrophoneEnabled}
                                 onClick={() => {
-                                    if (!hasMicrophonePermission) {
-                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE));
-                                        return;
-                                    }
-                                    if (microphones.length === 0) {
-                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.MICROPHONE));
-                                        return;
-                                    }
-
-                                    void toggleAudio({
-                                        isEnabled: !isMicrophoneEnabled,
-                                        audioDeviceId,
-                                        preserveCache: true,
-                                    });
+                                    void handleMicrophoneToggle();
                                 }}
                                 Content={AudioSettings}
                                 popUp={PopUpControls.Microphone}
-                                ariaLabel={microphoneTooltipTitle}
+                                ariaLabel={microphoneLabel}
                                 ariaPressed={microphoneHasWarning ? undefined : isMicrophoneEnabled}
                                 secondaryAriaLabel={c('Alt').t`Audio settings`}
                                 hasWarning={microphoneHasWarning}
                                 tooltipTitle={microphoneTooltipTitle}
+                                tooltipClassName="meet-tooltip--nowrap"
                                 isOpen={popupState[PopUpControls.Microphone]}
                                 onPopupButtonClick={() => {
                                     if (!hasMicrophonePermission) {
@@ -210,32 +196,19 @@ export const ParticipantControls = () => {
                                 isOn={cameras.length === 0 ? false : isCameraEnabled}
                                 loading={isCameraToggleLoading}
                                 onClick={() => {
-                                    if (!hasCameraPermission) {
-                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
-                                        return;
-                                    }
-                                    if (cameras.length === 0) {
-                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.CAMERA));
-                                        return;
-                                    }
-
-                                    if (videoDeviceId) {
-                                        void withCameraToggleLoading(
-                                            toggleVideo({
-                                                isEnabled: !isCameraEnabled,
-                                                videoDeviceId,
-                                                preserveCache: true,
-                                            })
-                                        );
+                                    const result = handleCameraToggle();
+                                    if (result) {
+                                        void withCameraToggleLoading(result);
                                     }
                                 }}
                                 Content={VideoSettings}
                                 popUp={PopUpControls.Camera}
-                                ariaLabel={cameraTooltipTitle}
+                                ariaLabel={cameraLabel}
                                 ariaPressed={cameraHasWarning ? undefined : isCameraEnabled}
                                 secondaryAriaLabel={c('Alt').t`Video settings`}
                                 hasWarning={cameraHasWarning}
                                 tooltipTitle={cameraTooltipTitle}
+                                tooltipClassName="meet-tooltip--nowrap"
                                 isOpen={popupState[PopUpControls.Camera]}
                                 onPopupButtonClick={() => {
                                     if (!hasCameraPermission) {
@@ -252,24 +225,11 @@ export const ParticipantControls = () => {
                                 IconComponent={isMicrophoneEnabled ? IcMeetMicrophone : IcMeetMicrophoneOff}
                                 variant={isMicrophoneEnabled ? 'default' : 'danger'}
                                 onClick={() => {
-                                    if (!hasMicrophonePermission) {
-                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE));
-                                        return;
-                                    }
-                                    if (microphones.length === 0) {
-                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.MICROPHONE));
-                                        return;
-                                    }
-
-                                    void toggleAudio({
-                                        isEnabled: !isMicrophoneEnabled,
-                                        audioDeviceId,
-                                        preserveCache: true,
-                                    });
+                                    void handleMicrophoneToggle();
                                 }}
                                 indicatorContent={microphoneHasWarning ? '!' : undefined}
                                 indicatorStatus={microphoneHasWarning ? 'warning' : 'success'}
-                                ariaLabel={microphoneTooltipTitle}
+                                ariaLabel={microphoneLabel}
                                 ariaPressed={microphoneHasWarning ? undefined : isMicrophoneEnabled}
                             />
                             <CircleButton
@@ -277,28 +237,14 @@ export const ParticipantControls = () => {
                                 variant={isCameraEnabled ? 'default' : 'danger'}
                                 loading={isCameraToggleLoading}
                                 onClick={() => {
-                                    if (!hasCameraPermission) {
-                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
-                                        return;
-                                    }
-                                    if (cameras.length === 0) {
-                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.CAMERA));
-                                        return;
-                                    }
-
-                                    if (videoDeviceId) {
-                                        void withCameraToggleLoading(
-                                            toggleVideo({
-                                                isEnabled: !isCameraEnabled,
-                                                videoDeviceId,
-                                                preserveCache: true,
-                                            })
-                                        );
+                                    const result = handleCameraToggle();
+                                    if (result) {
+                                        void withCameraToggleLoading(result);
                                     }
                                 }}
                                 indicatorContent={cameraHasWarning ? '!' : undefined}
                                 indicatorStatus={cameraHasWarning ? 'warning' : 'success'}
-                                ariaLabel={cameraTooltipTitle}
+                                ariaLabel={cameraLabel}
                                 ariaPressed={cameraHasWarning ? undefined : isCameraEnabled}
                             />
                         </>

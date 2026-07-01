@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalTrack } from 'livekit-client';
 import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -9,9 +9,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
+    PermissionBlockedError,
+    requestPermission,
     setInitialAudioState,
     setInitialCameraState,
     setPreferredDeviceAndPersist,
+    showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     selectActiveAudioOutputId,
@@ -34,6 +37,12 @@ import {
     selectSpeakerState,
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
+import {
+    PermissionPromptStatus,
+    setNoDeviceDetected,
+    setPermissionPromptStatus,
+} from '@proton/meet/store/slices/uiStateSlice';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -42,6 +51,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
 import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
+import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../../types';
@@ -199,6 +209,104 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const cameraPermission = useMeetSelector(selectCameraPermission);
     const microphonePermission = useMeetSelector(selectMicrophonePermission);
+
+    const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
+
+    const handleMicrophoneToggle = useCallback(() => {
+        if (room.state === ConnectionState.Connected) {
+            if (microphonePermission !== 'granted') {
+                dispatch(setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE));
+                return;
+            }
+            if (microphones.length === 0) {
+                dispatch(setNoDeviceDetected(PermissionPromptStatus.MICROPHONE));
+                return;
+            }
+
+            return toggleAudio({
+                isEnabled: !isMicrophoneEnabled,
+                audioDeviceId: selectedMicrophoneId,
+                preserveCache: true,
+            });
+        }
+
+        if (microphonePermission !== 'granted' || microphones.length === 0) {
+            return dispatch(requestPermission('microphone')).catch((error) => {
+                if (error instanceof PermissionBlockedError) {
+                    dispatch(
+                        showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_MICROPHONE_MODAL })
+                    );
+                }
+            });
+        }
+
+        dispatch(setInitialAudioState(!initialAudioState));
+    }, [
+        room,
+        microphonePermission,
+        microphones.length,
+        isMicrophoneEnabled,
+        selectedMicrophoneId,
+        initialAudioState,
+        toggleAudio,
+        dispatch,
+    ]);
+
+    // Single source of truth for toggling the camera, shared by the camera control button
+    // (in a meeting), the device-settings button (prejoin) and the keyboard shortcut.
+    // - In a meeting: replicates the ParticipantControls camera button.
+    // - On prejoin: replicates the DeviceSettings camera button.
+    const handleCameraToggle = useCallback(() => {
+        if (room.state === ConnectionState.Connected) {
+            if (cameraPermission !== 'granted') {
+                dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
+                return;
+            }
+            if (cameras.length === 0) {
+                dispatch(setNoDeviceDetected(PermissionPromptStatus.CAMERA));
+                return;
+            }
+            if (!selectedCameraId) {
+                return;
+            }
+
+            return toggleVideo({
+                isEnabled: !isCameraEnabled,
+                videoDeviceId: selectedCameraId,
+                preserveCache: true,
+            });
+        }
+
+        if (cameraPermission !== 'granted' || cameras.length === 0) {
+            return dispatch(requestPermission('camera', activeCameraDeviceId)).catch((error) => {
+                if (error instanceof PermissionBlockedError) {
+                    dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_CAMERA_MODAL }));
+                }
+            });
+        }
+
+        dispatch(setInitialCameraState(!initialCameraState));
+    }, [
+        room,
+        cameraPermission,
+        cameras.length,
+        isCameraEnabled,
+        selectedCameraId,
+        activeCameraDeviceId,
+        initialCameraState,
+        toggleVideo,
+        dispatch,
+    ]);
+
+    useMediaToggleShortcuts({
+        onToggleMicrophone: () => {
+            void handleMicrophoneToggle();
+        },
+        onToggleCamera: () => {
+            void handleCameraToggle();
+        },
+        dependencies: [handleMicrophoneToggle, handleCameraToggle],
+    });
 
     useEffect(() => {
         if (cameraPermission === 'denied') {
@@ -524,6 +632,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 facingMode,
                 toggleVideo,
                 toggleAudio,
+                handleMicrophoneToggle,
+                handleCameraToggle,
                 backgroundBlur,
                 toggleBackgroundBlur,
                 isBackgroundBlurSupported,
