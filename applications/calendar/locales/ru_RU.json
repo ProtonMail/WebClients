@@ -1192,6 +1192,9 @@
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "После окончания пробной версии ${ formattedDate1 } она превратится в платную подписку с ежемесячным автоматическим продлением. Плата не будет взиматься, если вы отмените её до ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "В течение пробного периода вы можете использовать до ${ TRIAL_MAX_LUMO_SEATS } {TRIAL_MAX_LUMO_SEATS, plural, one {# лицензия #} few {# лицензии #} many {# лицензий #} other {# лицензии #}} ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -12831,6 +12834,9 @@
       ],
       "Only": [
         "Только"
+      ],
+      "2 user accounts": [
+        "{count, plural, one {# аккаунт пользователя} few {# аккаунта пользователя} many {# аккаунтов пользователей} other {# аккаунта пользователя}}"
       ]
     },
     "Duo offer: Link": {
@@ -13094,6 +13100,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можете получить до **${ maxRewardAmount }** в качестве остатка на счете."
+      ],
+      "Friend subscribed": [
+        "{count, plural, one {Друг подписался} few {Друга подписалось} many {Друзей подписалось} other {Друг подписался}}",
+        "Друга подписались",
+        "Друзей подписалось",
+        "Друзей подписалось"
       ]
     }
   }
