@@ -85,7 +85,7 @@ export const Tab = ({ category, tabState }: Props) => {
             <span className="tab-text flex flex-column justify-center min-w-0">
                 <span
                     className={clsx(
-                        'tag-label text-sm truncate min-w-0',
+                        'tag-label text-sm text-ellipsis min-w-0',
                         tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
                     )}
                 >
