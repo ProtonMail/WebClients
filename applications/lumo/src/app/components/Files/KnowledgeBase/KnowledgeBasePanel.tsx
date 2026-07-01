@@ -212,7 +212,7 @@ const ManualAttachmentsSection = ({
                 <span className="color-weak text-normal">{totalManual}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
-                {c('collider_2025: Info').t`Files included in the next model request.`}
+                {c('collider_2025: Info').t`These files are referred to in the conversation.`}
             </p>
 
             {nonAutoRetrievedCurrentAttachments.map((attachment) => (
@@ -311,7 +311,7 @@ const ExcludedFilesSection = ({
                 {c('collider_2025: Info').t`Excluded`} <span className="color-weak text-normal">{totalExcluded}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
-                {c('collider_2025: Info').t`These files won't be used for future questions.`}
+                {c('collider_2025: Info').t`These files are no longer referred to in this conversation.`}
             </p>
             {excludedAutoRetrieved.map((attachment) => (
                 <KnowledgeBaseFileItem
