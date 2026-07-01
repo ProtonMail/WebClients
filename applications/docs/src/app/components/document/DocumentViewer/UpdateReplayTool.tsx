@@ -6,6 +6,7 @@ import type { EditorControllerInterface } from '@proton/docs-core/lib/EditorCont
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { useEffect, useRef, useState } from 'react'
 import { createStore, useStore } from 'zustand'
+import { mergeUpdates } from 'yjs'
 
 const createUpdateReplayToolStore = (editorController: EditorControllerInterface) => {
   return createStore<{
@@ -23,6 +24,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     loadZipFile: (file: File, broadcastToWS: boolean) => Promise<void>
     applyNextUpdate: () => Promise<void>
     applyMultipleUpdates: (count: number) => Promise<number>
+    mergeApplyMultipleUpdates: (count: number) => Promise<number>
     createNewConnection: () => void
     closeConnection: () => void
     handleStateChangeMessage: (state: any) => Promise<void>
@@ -105,6 +107,17 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
         const snapshot = await editorController.getLocalSpreadsheetStateJSON()
         set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
       }
+      const newAppliedUpdates = store.appliedUpdates + count
+      set({ appliedUpdates: newAppliedUpdates, timeTravelIndex: newAppliedUpdates })
+      return newAppliedUpdates
+    },
+    mergeApplyMultipleUpdates: async (count: number): Promise<number> => {
+      const store = get()
+      const updates = store.updatesToApply.slice(store.appliedUpdates, store.appliedUpdates + count)
+      const mergedUpdate = mergeUpdates(updates) as Uint8Array<ArrayBuffer>
+      await editorController.applyUpdate(mergedUpdate)
+      const snapshot = await editorController.getLocalSpreadsheetStateJSON()
+      set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
       const newAppliedUpdates = store.appliedUpdates + count
       set({ appliedUpdates: newAppliedUpdates, timeTravelIndex: newAppliedUpdates })
       return newAppliedUpdates
@@ -232,6 +245,7 @@ export default function UpdateReplayTool({
     loadZipFile,
     applyNextUpdate,
     applyMultipleUpdates,
+    mergeApplyMultipleUpdates,
     createNewConnection,
     closeConnection,
     sendStateChangeMessage,
@@ -325,6 +339,20 @@ export default function UpdateReplayTool({
           }
         >
           Apply {applyMultiple} updates
+        </Button>
+        <Button
+          size="small"
+          onClick={async () => {
+            await mergeApplyMultipleUpdates(applyMultiple)
+            sendStateChangeMessage()
+          }}
+          disabled={
+            updatesToApply.length === 0 ||
+            appliedUpdates + applyMultiple > updatesToApply.length ||
+            timeTravelIndex !== appliedUpdates
+          }
+        >
+          Merge apply {applyMultiple} updates
         </Button>
         <Button
           size="small"
