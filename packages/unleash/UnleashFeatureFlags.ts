@@ -186,6 +186,7 @@ enum DriveFeatureFlag {
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
     DriveWebSDKMismatchDetection = 'DriveWebSDKMismatchDetection',
     DriveWebEncryptedThumbnailCache = 'DriveWebEncryptedThumbnailCache',
+    DriveWebReportAbuseDirectShare = 'DriveWebReportAbuseDirectShare',
     // SDK rollouts — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
     DriveCryptoEncryptBlocksWithPgpAead = 'DriveCryptoEncryptBlocksWithPgpAead',
     DriveSmallFileUpload = 'DriveSmallFileUpload',

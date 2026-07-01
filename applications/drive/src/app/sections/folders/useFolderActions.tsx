@@ -1,3 +1,4 @@
+import { useUser } from '@proton/account/user/hooks';
 import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
@@ -10,6 +11,7 @@ import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
+import { useReportAbuseModal } from '../../modals/ReportAbuseModal';
 import { useRevisionsModal } from '../../modals/RevisionsModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
 import { useDrivePreviewModal } from '../../modals/preview';
@@ -62,6 +64,8 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const { renameModal, showRenameModal } = useRenameModal();
     const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
+    const { reportAbuseModal, showReportAbuseModal } = useReportAbuseModal();
+    const [user] = useUser();
 
     const getPreviewableNodeUids = () =>
         allSortedItems
@@ -160,6 +164,16 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         }
     };
 
+    const reportAbuseAction = () => {
+        const nodeUid = selectedItems[0]?.uid || uid;
+
+        showReportAbuseModal({
+            drive: getDrive(),
+            nodeUid: nodeUid,
+            prefilled: { email: user.Email },
+        });
+    };
+
     return {
         // Upload
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
@@ -177,6 +191,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             showFileSharingModal: createShare,
             showCreateFileModal,
             showRevisionsModal,
+            showReportAbuseModal: reportAbuseAction,
             createNewDocument,
             createNewSheet,
             getPublicLinkInfo,
@@ -191,6 +206,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             detailsModal,
             filesDetailsModal,
             revisionsModal,
+            reportAbuseModal,
             renameModal,
             moveItemsModal,
             copyModal,
