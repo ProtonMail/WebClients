@@ -717,6 +717,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Hide": [
+        "Скрыть"
       ]
     },
     "App menu": {
@@ -1265,6 +1271,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "Failed loading group members": [
+        "Ошибка при загрузке членов группы"
       ]
     },
     "Error message": {
@@ -2512,6 +2521,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ]
     },
     "Label": {
@@ -3663,6 +3675,9 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "Expires in": [
+        "Истекает через"
       ]
     },
     "Link": {
@@ -3979,6 +3994,9 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
+      ],
+      "e.g. My automation script": [
+        "например, Мой скрипт автоматизации"
       ]
     },
     "Security Center - Info": {
@@ -4958,6 +4976,17 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Домен"
+      ],
+      "Password ends with": [
+        "Пароль заканчивается на"
+      ],
+      "Username": [
+        "Имя пользователя"
       ]
     }
   }

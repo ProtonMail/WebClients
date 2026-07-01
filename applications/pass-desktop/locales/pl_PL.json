@@ -735,6 +735,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Hide": [
+        "Ukryj"
       ]
     },
     "App menu": {
@@ -1289,6 +1292,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
+      ],
+      "Failed loading group members": [
+        "Błąd podczas wczytywania członków grupy"
       ]
     },
     "Error message": {
@@ -1393,6 +1399,12 @@
     "Header": {
       "Domain": [
         "Domena"
+      ],
+      "Password ends with": [
+        "Hasło kończy się na"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ]
     },
     "Info": {
@@ -2538,6 +2550,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra ${ digit }."
       ]
     },
     "Keyboard key": {
@@ -3772,6 +3787,9 @@
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
+      ],
+      "Expires in": [
+        "Wygasa za"
       ]
     },
     "Link": {
@@ -4097,6 +4115,9 @@
       ],
       "Used on ${ url }": [
         "Użyty na ${ url }"
+      ],
+      "e.g. My automation script": [
+        "np. Mój skrypt automatyzacji"
       ]
     },
     "Security Center - Info": {
