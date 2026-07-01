@@ -233,6 +233,7 @@ export enum TelemetrySafetyReviewScoreDiffEvents {
 
 export enum TelemetryAccountDashboardEvents {
     pageLoad = 'page_load',
+    crossProductClick = 'cross_product_click',
 }
 
 export enum TelemetryUpgradePageEvents {
