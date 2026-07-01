@@ -63,6 +63,7 @@ const applyGroupUpdate = (state: ModelState<EnhancedGroup[]>, group: Group) => {
         ...group,
         roleState: previous.roleState,
         GroupOrganizationRoles: previous.GroupOrganizationRoles,
+        hasPendingOrgKeyAccess: previous.hasPendingOrgKeyAccess,
     };
 };
 
@@ -93,7 +94,14 @@ const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArgument
         return extraArgument
             .api(getGroups())
             .then(({ Groups }: { Groups: Group[] }) =>
-                Groups.map((group): EnhancedGroup => ({ ...group, roleState: 'initial', GroupOrganizationRoles: [] }))
+                Groups.map(
+                    (group): EnhancedGroup => ({
+                        ...group,
+                        roleState: 'initial',
+                        GroupOrganizationRoles: [],
+                        hasPendingOrgKeyAccess: false,
+                    })
+                )
             )
             .catch(() => []);
     },
@@ -125,7 +133,12 @@ const slice = createSlice({
                 return;
             }
 
-            state.value.push({ ...action.payload, roleState: 'initial', GroupOrganizationRoles: [] });
+            state.value.push({
+                ...action.payload,
+                roleState: 'initial',
+                GroupOrganizationRoles: [],
+                hasPendingOrgKeyAccess: false,
+            });
         },
         updateGroup: (state, action: PayloadAction<Group>) => {
             applyGroupUpdate(state, action.payload);
@@ -141,12 +154,17 @@ const slice = createSlice({
         },
         groupRoleFetchFulfilled: (
             state,
-            action: PayloadAction<{ group: Pick<Group, 'ID'>; organizationRoles: RoleAssignment[] }>
+            action: PayloadAction<{
+                group: Pick<Group, 'ID'>;
+                organizationRoles: RoleAssignment[];
+                hasPendingOrgKeyAccess: boolean;
+            }>
         ) => {
             const group = getGroupFromState(state, action.payload.group);
             if (group) {
                 group.roleState = 'full';
                 group.GroupOrganizationRoles = action.payload.organizationRoles;
+                group.hasPendingOrgKeyAccess = action.payload.hasPendingOrgKeyAccess;
             }
         },
         groupRoleFetchRejected: (state, action: PayloadAction<{ group: Pick<Group, 'ID'> }>) => {
@@ -218,6 +236,7 @@ const slice = createSlice({
                         ...group,
                         roleState: 'initial',
                         GroupOrganizationRoles: [],
+                        hasPendingOrgKeyAccess: false,
                     }),
                 });
             }
@@ -271,15 +290,22 @@ export const getGroupRoles = ({
         if (oldPromise) {
             return oldPromise;
         }
-        const promise = extra
-            .api<{ RoleAssignments: RoleAssignment[] }>(getGroupOrganizationRoles(group.ID))
-            .then(({ RoleAssignments }) => RoleAssignments);
+        const responsePromise = extra.api<{ RoleAssignments: RoleAssignment[]; HasPendingOrgKeyAccess: boolean }>(
+            getGroupOrganizationRoles(group.ID)
+        );
+        const promise = responsePromise.then(({ RoleAssignments }) => RoleAssignments);
         try {
             map.set(group.ID, promise);
             dispatch(slice.actions.groupRoleFetchPending({ group }));
-            const result = await promise;
-            dispatch(slice.actions.groupRoleFetchFulfilled({ group, organizationRoles: result }));
-            return result;
+            const { RoleAssignments, HasPendingOrgKeyAccess } = await responsePromise;
+            dispatch(
+                slice.actions.groupRoleFetchFulfilled({
+                    group,
+                    organizationRoles: RoleAssignments,
+                    hasPendingOrgKeyAccess: HasPendingOrgKeyAccess,
+                })
+            );
+            return RoleAssignments;
         } catch (e) {
             dispatch(slice.actions.groupRoleFetchRejected({ group }));
             throw e;
@@ -307,10 +333,17 @@ export const updateGroupRoles = ({
         }
         const add = [...desiredRoleIds].filter((id) => !currentRoleIds.has(id));
         const remove = [...currentRoleIds].filter((id) => !desiredRoleIds.has(id));
-        const { RoleAssignments } = await api<{ RoleAssignments: RoleAssignment[] }>(
-            updateGroupOrganizationRoles(group.ID, { add, remove })
+        const { RoleAssignments, HasPendingOrgKeyAccess } = await api<{
+            RoleAssignments: RoleAssignment[];
+            HasPendingOrgKeyAccess: boolean;
+        }>(updateGroupOrganizationRoles(group.ID, { add, remove }));
+        dispatch(
+            slice.actions.groupRoleFetchFulfilled({
+                group,
+                organizationRoles: RoleAssignments,
+                hasPendingOrgKeyAccess: HasPendingOrgKeyAccess,
+            })
         );
-        dispatch(slice.actions.groupRoleFetchFulfilled({ group, organizationRoles: RoleAssignments }));
         return RoleAssignments;
     };
 };
