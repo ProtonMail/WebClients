@@ -329,10 +329,10 @@
         "Oluşturucuyu küçült"
       ],
       "Copy '${ code }' to clipboard": [
-        "'${ code }' kodunu panoya kopyalayın"
+        "'${ code }' kodunu panoya kopyala"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "'${ code }' kodunu panoya kopyalayın ve Çöp kutusuna taşıyın"
+        "'${ code }' kodunu panoya kopyala ve çöpe at"
       ],
       "Copy address": [
         "Adresi kopyala"
@@ -4328,10 +4328,10 @@
         "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmaya devam etmek için aboneliğinize ekleyin."
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için aboneliğinize ekleyin."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmaya devam etmek için yöneticinizden erişim izni isteyin."
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için yöneticinizden erişme izni vermesini isteyin."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
@@ -4456,7 +4456,7 @@
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Eski e-postalarınızı içe aktaracağız ve bundan sonra Gmail'den gelen yeni mesajları senkronize edeceğiz"
+        "Eski e-postalarınız içe aktarılacak ve bundan sonra Gmail üzerine gelen yeni iletiler eşitlenecek"
       ]
     },
     "description": {
@@ -5453,13 +5453,13 @@
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
       ],
       "No drive found to import": [
-        "İçe aktarılacak sürücü bulunamadı"
+        "İçe aktarılacak bir sürücü bulunamadı"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
+        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ]
     },
     "error": {
@@ -6834,7 +6834,7 @@
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME }, hızlı ve zahmetsiz bir şekilde daha iyi e-postalar oluşturmanıza yardımcı olur."
+        "${ LUMO_SHORT_APP_NAME }, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } panosu"
@@ -9283,22 +9283,38 @@
         "${ label } etiketinde ${ unread } iletiniz var."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } artık e-postalarınızı Birincil, Sosyal, Tanıtımlar ve daha fazlası gibi kategorilere otomatik olarak sıralayarak iletileri daha kolay bulmanıza ve yönetmenize yardımcı oluyor."
+        "${ MAIL_APP_NAME } artık e-postalarınızı otomatik olarak Birincil, Sosyal, Tanıtımlar ve Diğer gibi kategorilere ayırarak daha kolay bulmanızı ve yönetmenizi sağlıyor."
       ],
       "Private by design.": [
-        "Tasarım gereği güvenli."
+        "Gizlilik odaklı tasarım."
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Gelen kutunuzda ${ totalLabel } adet mesaj var."
+        "Gelen kutunuzda ${ totalLabel } ileti var."
       ],
       "You have no conversations in this category": [
-        "Bu kategoride hiç sohbetiniz yok"
+        "Bu kategoride herhangi bir sohbetiniz yok"
       ],
       "You have no messages in this category": [
-        "Bu kategoride mesajınız yok"
+        "Bu kategoride bir iletiniz yok"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } yazışma** var",
+        "${ categoryLabel } kategorisinde **${ count } yazışma** var"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ count } ileti** var",
+        "${ categoryLabel } kategorisinde **${ count } ileti** var"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz",
+        "${ categoryLabel } kategorisinde **${ checked } yazışma** seçtiniz"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz",
+        "${ categoryLabel } kategorisinde **${ checked } ileti** seçtiniz"
       ]
     },
     "info": {
@@ -10064,10 +10080,10 @@
         "Konum"
       ],
       "Mail debugging information": [
-        "E-posta hata ayıklama bilgileri"
+        "Hata ayıklama bilgilerini e-posta ile gönder"
       ],
       "Mail logs": [
-        "E-posta günlükleri"
+        "Günlükleri e-posta ile gönder"
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
@@ -10340,7 +10356,7 @@
         "Sistem bilgileri"
       ],
       "Tab age": [
-        "Sekme yaşı"
+        "Sekme ömrü"
       ],
       "Tell us more about your experience": [
         "Bize deneyiminiz ile ilgili bilgi verin"
@@ -10454,19 +10470,19 @@
         "E-postalarınızı içe aktarın"
       ],
       "Newsletters - News, editorial emails, and non-promotional content": [
-        "Haber Bültenleri - Haberler, editoryal e-postalar ve tanıtım amaçlı olmayan içerikler"
+        "Duyurular - Haberler, bilgilendirme e-postaları ve tanıtım amaçlı olmayan içerikler"
       ],
       "Primary - Personal and work emails, plus important updates": [
         "Birincil - Kişisel ve iş e-postaları ile önemli güncellemeler"
       ],
       "Promotions - Deals, offers, and marketing emails": [
-        "Promosyonlar - Fırsatlar, teklifler ve pazarlama e-postaları"
+        "Tanıtımlar - Fırsatlar, teklifler ve pazarlama e-postaları"
       ],
       "Social - Social media updates, activity, and messages": [
-        "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve mesajlar"
+        "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve iletiler"
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
-        "İşlemler - Makbuzlar, kayıtlar, faturalar ve siparişler"
+        "İşlemler - Alındılar, kayıtlar, faturalar ve siparişler"
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Güncellemeler - Otomatik onaylar, uyarılar ve hesap güncellemeleri"
@@ -12113,7 +12129,7 @@
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -13207,22 +13223,22 @@
         "Konu"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "${ subject } kısmına ne yazılacağını belirtin. Örneğin: “Yaklaşan etkinlikleri bültende duyur”"
+        "${ subject } tarafından ne yazılacağını belirtin. Örneğin: “Yaklaşan etkinlikleri e-posta ile duyur”"
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "${ subject } kısmına ne yazılması gerektiğini belirtin. Örneğin: “Spor salonu üyeliğimi iptal et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Spor salonu üyeliğimi iptal et”"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "${ subject } kısmına ne yazılacağını belirtin. Örneğin: “Ayşe'yi partime davet et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Ayşe'yi partime davet et”"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "${ subject } kısmına ne yazılacağını belirtin. Örneğin: “Bir projede yardımı için iş arkadaşıma teşekkür et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir projede yardım ettiği için iş arkadaşıma teşekkür et”"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
-        "${ subject } kısmına ne yazılması gerektiğini belirtin. Örneğin: “Staj için bir giriş yazısı yaz”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Staj için bir giriş yazısı yaz”"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "${ subject } kısmına ne yazılacağını belirtin. Örneğin: “Bir müşteriye takip e-postası yaz”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir müşteriye yanıt e-postası yaz”"
       ],
       "Text": [
         "Yazı"
@@ -15276,6 +15292,10 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak.",
+        "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ]
     },
     "Success notification": {
@@ -17159,7 +17179,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Önceki içe aktarmalardan gelen yinelenen mesajlar atlanacaktır. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski mesajları içe aktarabilirsiniz."
+        "Önceki içe aktarmalardan gelen çift iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
       ]
     }
   }

@@ -4048,7 +4048,7 @@
         "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 회원님의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 회원님의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -4084,10 +4084,10 @@
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정의 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
@@ -4114,7 +4114,7 @@
         "이메일을 지금 전송하고 싶지 않으신가요? 알맞은 시간대로 예약하세요."
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "귀하의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
+        "회원님의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "글쓰기 도우미 및 기타 서비스에 대한 무제한 접근이 필요하다면 ${ BRAND_NAME } Duo로 업그레이드하세요."
@@ -4132,7 +4132,7 @@
         "폴더 없음"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "${ MAIL_APP_NAME }에서 Gmail 메시지를 직접 보내고 받으세요. ${ addressesSettingsLink }에서 귀하의 주소를 연결하세요."
+        "${ MAIL_APP_NAME }에서 Gmail 메시지를 직접 보내고 받아보세요. ${ addressesSettingsLink }에서 회원님의 주소를 연결하세요."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
@@ -4171,10 +4171,13 @@
         "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
-        "귀하의 요금제는 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
+        "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "귀하께서는 새로운 카테고리 보기 기능이 출시되기 전에 가장 먼저 체험해보는 사용자 중 한 분입니다. 귀하의 의견은 모든 사용자를 위해 Proton Mail이 이메일을 분류하는 방식을 개선하는 데 큰 도움이 됩니다."
+        "새로운 카테고리 보기 기능이 출시되기 전에 가장 먼저 체험해보는 회원님 중 한 분입니다. 회원님의 의견은 모든 사용자를 위해 Proton Mail이 이메일을 분류하는 방식을 개선하는 데 큰 도움이 됩니다."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Gmail로부터 기존 이메일을 불러오고 새로운 메시지는 전달 받아 동기화할 수 있습니다."
       ]
     },
     "description": {
@@ -5010,7 +5013,7 @@
         "발신 권한이 있는 주소가 없습니다."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
-        "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
+        "사용자의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주세요."
       ],
       "Please select a category and what went wrong with the generated text": [
         "카테고리와 만들어진 텍스트에 어떤 문제가 있었는지를 선택해 주세요"
@@ -5098,6 +5101,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ]
     },
     "error": {
@@ -7498,7 +7504,7 @@
         "처리가 완료되면 알려드리겠습니다."
       ],
       "We'll remind you to verify your password again later": [
-        "귀하의 비밀번호를 나중에 다시 확인하도록 알려드리겠습니다"
+        "회원님의 비밀번호를 나중에 다시 확인하도록 알려드립니다."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -7858,7 +7864,7 @@
         "예약된 메시지 ${ unreadCount }개"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME }은(는) 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }은(는) 귀하의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
+        "${ VPN_SHORT_APP_NAME }은 당신의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }는 당신의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
       ],
       "(No Recipient)": [
         "(수신자 없음)"
@@ -9846,6 +9852,9 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
+      ],
+      "Import your emails": [
+        "내 이메일 불러오기"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16649,6 +16658,11 @@
       ],
       "Sun, ${ formatTime }": [
         "일요일, ${ formatTime }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "기존에 불러온 항목 중 중복되는 항목은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
       ]
     }
   }

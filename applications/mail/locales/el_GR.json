@@ -9290,6 +9290,31 @@
       ],
       "Private by design.": [
         "Ιδιωτικό εξ αρχής."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Έχετε ${ totalLabel } στα εισερχόμενά σας."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Έχετε **${ count } συνομιλία** σε ${ categoryLabel } κατηγορία",
+        "Έχετε **${ count } συνομιλίες** σε ${ categoryLabel } κατηγορία"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Έχετε **${ count } μήνυμα** σε ${ categoryLabel } κατηγορία",
+        "Έχετε **${ count } μηνύματα** σε ${ categoryLabel } κατηγορία"
+      ],
+      "You have no conversations in this category": [
+        "Δεν έχετε συνομιλίες σε αυτήν την κατηγορία"
+      ],
+      "You have no messages in this category": [
+        "Δεν έχετε μηνύματα σε αυτήν την κατηγορία"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } συνομιλία** σε ${ categoryLabel } κατηγορία",
+        "Επιλέξατε **${ checked } συνομιλίες** σε ${ categoryLabel } κατηγορία"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } μήνυμα** σε ${ categoryLabel } κατηγορία",
+        "Επιλέξατε **${ checked } μηνύματα** σε ${ categoryLabel } κατηγορία"
       ]
     },
     "info": {
@@ -10443,6 +10468,24 @@
       ],
       "Import your emails": [
         "Εισαγωγή των ηλεκτρονικών μηνυμάτων σας"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Ενημερωτικά δελτία - Νέα, συντακτικά μηνύματα και μη διαφημιστικό περιεχόμενο"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Κύρια - Προσωπικά και επαγγελματικά μηνύματα, καθώς και σημαντικές ενημερώσεις"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Προσφορές - Προσφορές, προσφορές και μηνύματα μάρκετινγκ"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Κοινωνικά δίκτυα - Ενημερώσεις, δραστηριότητα και μηνύματα κοινωνικών δικτύων"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Συναλλαγές - Αποδείξεις, κρατήσεις, λογαριασμοί και παραγγελίες"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Ενημερώσεις - Αυτόματες επιβεβαιώσεις, ειδοποιήσεις και ενημερώσεις λογαριασμού"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15153,6 +15196,10 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Μετακινήθηκε στο ${ label }. Παρόμοιο μήνυμα θα κατηγοριοποιηθεί εδώ στο μέλλον.",
+        "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εδώ στο μέλλον."
       ]
     },
     "Success notification": {

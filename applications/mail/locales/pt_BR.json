@@ -8602,6 +8602,31 @@
       ],
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Você tem ${ totalLabel } na sua caixa de entrada."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Você tem **${ count } conversa** na categoria ${ categoryLabel }",
+        "Você tem **${ count } conversas** na categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Você tem **${ count } mensagem** na categoria ${ categoryLabel }",
+        "Você tem **${ count } mensagens** na categoria ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Você não tem nenhuma conversa nessa categoria"
+      ],
+      "You have no messages in this category": [
+        "Você não tem nenhuma mensagem nessa categoria"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Você selecionou **${ checked } conversa** na categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } conversas** na categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Você selecionou **${ checked } mensagem** na categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } mensagens** na categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9728,6 +9753,24 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletins – Notícias, e-mails editoriais e conteúdo não promocional"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal - E-mails pessoais e profissionais, além de atualizações importantes"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoções - Ofertas, descontos e e-mails de propaganda"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Atualizações de mídia social, atividade e mensagens"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transações — Recibos, reservas, faturas e pedidos"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Atualizações — Confirmações automáticas, alertas e atualizações de conta"
       ]
     },
     "Label (begin date/advanced search)": {

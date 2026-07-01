@@ -1537,6 +1537,12 @@
       ],
       "Use your own email domain": [
         "Koristite vlastitu domenu e-pošte"
+      ],
+      "1 user account": [
+        "{count, plural, one {1 korisnički račun} few {# korisnička računa} other {# korisničkih računa}}"
+      ],
+      "6 user accounts": [
+        "{count, plural, one {# korisnički račun} few {# korisnička računa} other {# korisničkih računa}}"
       ]
     },
     "Billing cycle option": {
