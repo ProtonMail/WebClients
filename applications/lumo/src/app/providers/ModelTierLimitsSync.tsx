@@ -9,7 +9,7 @@ import { resolveAvailableModelTier, useRemainingLimits } from '../services/usage
  * Keeps the selected model tier on a pool that still has quota when limits are known.
  */
 export const ModelTierLimitsSync = () => {
-    const { modelTier, setModelTier } = useModelTier();
+    const { modelTier, setModelTierWithoutPersist } = useModelTier();
     const remainingLimits = useRemainingLimits();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
@@ -24,9 +24,9 @@ export const ModelTierLimitsSync = () => {
         });
 
         if (availableTier !== getSelectedModelTier(modelTier)) {
-            setModelTier(availableTier);
+            setModelTierWithoutPersist(availableTier);
         }
-    }, [hasLumoPlus, isMaxAvailableByFlag, modelTier, remainingLimits, setModelTier]);
+    }, [hasLumoPlus, isMaxAvailableByFlag, modelTier, remainingLimits, setModelTierWithoutPersist]);
 
     return null;
 };
