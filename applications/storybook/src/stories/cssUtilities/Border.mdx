@@ -1,251 +1,29 @@
-import { Meta, Source } from '@storybook/addon-docs/blocks';
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
 
-import { Alert, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+import * as BorderStories from './Border.stories';
 
-<Meta title="CSS Utilities/Border" />
+<Meta of={BorderStories} />
 
 # Border
 
-## Applying a border
+Utility classes for controlling an element's borders. A border utility applies a `1px` border with the `--border-norm` color by default.
 
-Utilities for controlling an element's borders.
+## Placement
 
-<Alert type="info">
-    These utilities apply a border of <code>1px</code> size, and a <code>--border-norm</code> color as default.
-</Alert>
+`border` applies a border on every side. `border-top`, `border-right`, `border-bottom` and `border-left` apply a border on a single side. `border-none` removes all borders.
 
-<Table className="color-norm">
-    <TableHeader>
-        <TableRow>
-            <TableCell type="header">Class</TableCell>
-            <TableCell type="header" className="w-1/2">
-                Explanation
-            </TableCell>
-            <TableCell type="header" className="text-right">
-                Quick look
-            </TableCell>
-        </TableRow>
-    </TableHeader>
-    <TableBody>
-        <TableRow>
-            <TableCell>
-                <code>border</code>
-            </TableCell>
-            <TableCell>Applies a border all around an element.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-top</code>
-            </TableCell>
-            <TableCell>Applies a border on top of an element.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border-top px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-right</code>
-            </TableCell>
-            <TableCell>Applies a border on right of an element.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border-right px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-bottom</code>
-            </TableCell>
-            <TableCell>Applies a border on bottom of an element.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border-bottom px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-left</code>
-            </TableCell>
-            <TableCell>Applies a border on left of an element.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border-left px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-none</code>
-            </TableCell>
-            <TableCell>Cancel borders all arround an element.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border-none px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-    </TableBody>
-</Table>
+## Color
 
-## Border color
+`border-primary`, `border-norm`, `border-weak`, `border-danger`, `border-warning`, `border-success`, `border-info` and `border-currentColor` change the border color. Use them together with a placement class.
 
-Utilities for controlling the color of an element's borders.
+## Style
 
-<Alert type="info">
-    These classes need to be used in addition with one of <code>border</code>, <code>border-top</code>,{' '}
-    <code>border-right</code>, <code>border-bottom</code> or <code>border-left</code> classes.
-</Alert>
+`border-dashed` and `border-dotted` change the border style. The style applies only to the sides the placement class enables — e.g. `border-bottom border-dashed` dashes the bottom border only.
 
-<Table className="color-norm">
-    <TableHeader>
-        <TableRow>
-            <TableCell type="header">Class</TableCell>
-            <TableCell type="header" className="w-1/2">
-                Explanation
-            </TableCell>
-            <TableCell type="header" className="text-right">
-                Quick look
-            </TableCell>
-        </TableRow>
-    </TableHeader>
-    <TableBody>
-        <TableRow>
-            <TableCell>
-                <code>border-primary</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--primary</code>.
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-primary px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-norm</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--border-norm</code> (default).
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-norm px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-weak</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--border-weak</code>.
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-weak px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-danger</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--signal-danger</code>.
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-danger px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-warning</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--signal-warning</code>.
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-warning px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-success</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--signal-success</code>.
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-success px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-info</code>
-            </TableCell>
-            <TableCell>
-                Changes border color to <code>--signal-info</code>.
-            </TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-info px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-currentColor</code>
-            </TableCell>
-            <TableCell>Changes border color to the same color as surrounding text.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-currentColor px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-    </TableBody>
-</Table>
+## Playground
 
-## Border style
+Combine a placement, style and color to preview the result and the generated class list.
 
-Utilities for controlling the style of an element's borders.
+<Canvas of={BorderStories.Playground} />
 
-<Alert type="info">
-    These classes need to be used in addition with one of <code>border</code>, <code>border-top</code>,{' '}
-    <code>border-right</code>, <code>border-bottom</code> or <code>border-left</code> classes.
-</Alert>
-
-<Table className="color-norm">
-    <TableHeader>
-        <TableRow>
-            <TableCell type="header">Class</TableCell>
-            <TableCell type="header" className="w-1/2">
-                Explanation
-            </TableCell>
-            <TableCell type="header" className="text-right">
-                Quick look
-            </TableCell>
-        </TableRow>
-    </TableHeader>
-    <TableBody>
-        <TableRow>
-            <TableCell>
-                <code>border-dashed</code>
-            </TableCell>
-            <TableCell>Changes border style to dashed.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-dashed px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>
-                <code>border-dotted</code>
-            </TableCell>
-            <TableCell>Changes border style to dotted.</TableCell>
-            <TableCell className="text-right">
-                <span className="inline-block border border-dotted px-2 py-1">lorem</span>
-            </TableCell>
-        </TableRow>
-    </TableBody>
-</Table>
-
-## Example
-
-Apply a border all arround, then override the color to weak, then override the style to dashed.
-
-<Source
-    language="html"
-    format
-    code={`
-<div className="border border-weak border-dashed">Lorem ipsum dolor sit amet</div>
-`}
-/>
+<Controls of={BorderStories.Playground} />
