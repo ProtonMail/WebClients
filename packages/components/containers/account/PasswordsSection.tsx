@@ -231,6 +231,7 @@ const PasswordsSection = () => {
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight className="flex flex-row flex-wrap gap-2 items-center">
                                 <Button
+                                    id="passwordChange"
                                     className="inline-flex gap-2 items-center"
                                     onClick={() => handleChangePassword(changePasswordMode)}
                                 >
