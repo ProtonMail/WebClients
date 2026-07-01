@@ -4345,6 +4345,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ]
     },
     "error": {
@@ -4835,6 +4844,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -6979,6 +6991,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
       ]
     },
     "info": {
@@ -13174,6 +13189,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

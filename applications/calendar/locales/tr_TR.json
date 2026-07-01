@@ -3959,7 +3959,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak bir drive bulunamadı"
+        "İçe aktarılacak bir sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -3977,7 +3977,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
+        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "Number of occurrences cannot be empty": [
         "Yinelenme sayısı boş olamaz"
@@ -4756,6 +4756,9 @@
       ],
       "Security key": [
         "Güvenlik anahtarı"
+      ],
+      "Touch your security key.": [
+        "Güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -9059,7 +9062,7 @@
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11620,7 +11623,7 @@
         "Yanıt gönderildi ve etkinlik silindi"
       ],
       "Auto-add ${ MEET_APP_NAME } links disabled": [
-        "Otomatik olarak ${ MEET_APP_NAME } bağlantıları eklenmesi kapatıldı"
+        "${ MEET_APP_NAME } bağlantılarının otomatik olarak eklenmesi kapatıldı"
       ],
       "Billing details updated": [
         "Fatura bilgileri güncellendi"

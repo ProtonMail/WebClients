@@ -4271,6 +4271,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "No se han podido cargar los datos de la suscripción. Por favor, inténtalo de nuevo más tarde."
       ]
     },
     "error": {
@@ -4745,6 +4748,12 @@
     "fido2: Info": {
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Toca tu llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -6793,6 +6802,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Each code can only be used once": [
+        "Cada código solo se puede usar una vez"
       ]
     },
     "info": {
@@ -9846,6 +9858,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
       ]
     },
     "Payments.Error": {
@@ -13293,6 +13308,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ]
     }
   }

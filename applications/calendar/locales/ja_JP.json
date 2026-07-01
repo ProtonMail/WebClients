@@ -1030,6 +1030,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
+      ],
+      "Verify now": [
+        "今すぐ検証"
       ]
     },
     "action": {
@@ -2926,6 +2932,9 @@
       ],
       "Åland Islands": [
         "オーランド諸島"
+      ],
+      "Canary Islands": [
+        "カナリア諸島"
       ]
     },
     "Country select label": {
@@ -3240,6 +3249,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "お客様のチームが${ BRAND_NAME }にシームレスにオンボーディングできるよう、GoogleやOutlookなどからお客様のデータをインポートしてください。"
       ]
     },
     "description": {
@@ -4120,6 +4132,24 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoomの接続が期限切れになりました。続けるには再接続してください。"
+      ],
+      "Address could not be added.": [
+        "アドレスを追加できませんでした。"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "ドメイン（@example.com）を含めずにユーザー名を入力してください。"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "サブスクリプションデータの読み込みに失敗しました。後ほどもう一度お試しください。"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "お客様のABNが越境VATに登録されているかご確認ください"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "このプランでは、リバースチャージ制度はサポートされていません。"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "VAT番号は${ prefixes }で始まる必要があります"
       ]
     },
     "error": {
@@ -4595,6 +4625,12 @@
     "fido2: Info": {
       "Security key": [
         "セキュリティキー"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "お客様の ${ BRAND_NAME } アカウントにリンクされたセキュリティキーを挿入してください。"
+      ],
+      "Touch your security key.": [
+        "セキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -6538,6 +6574,60 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME }は、エンドツーエンド暗号化ビデオ会議ソリューションです。安全にミーティングを主催するには、お客様のプランに追加してください。"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }はお客様のトラフィックを隠します。${ PASS_SHORT_APP_NAME }はお客様のユーザー情報を隠します。\n— 万が一データが漏洩した場合に、無制限の**hide-my-emailエイリアス**と**ダークウェブアラート**をご利用いただけます。"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "紹介リンクを使って、**${ BRAND_NAME }に友達を招待しましょう**。"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "友達が登録すると、その友達は**${ refereeRewardAmount }**分のクレジットを獲得できます。"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "友達が登録するたびに、クレジットとして**${ referrerRewardAmount }**を獲得できます。"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "パスワードを覚えていますか？ ${ verifyButton }"
+      ],
+      "Enter code": [
+        "コードを入力してください"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。${ digit }桁目。"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "わずか${ bundlePlanPriceInline }で"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリへのアクセスを失った場合は、2要素認証のセットアップ時に提供された16個のバックアップ回復用コードの1つを使用できます。${ learnMoreLink }"
+      ],
+      "Password verified": [
+        "パスワードを確認しました"
+      ],
+      "Please select the labels you would like to import:": [
+        "インポートするラベルを選択してください："
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "パスワードを忘れないよう、定期的に入力をお願いしております。入力の頻度は徐々に少なくなります。"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "「${ activeSignerText }」キーを信頼して、この連絡先からの新規メッセージを検証します。"
+      ],
+      "We'll remind you to verify your password again later": [
+        "パスワードの確認は、後ほど改めてお願いすることになります"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "現在、お客様のアカウントはリバースチャージ制度を適用するように設定されています。これは選択されたプランではサポートされていません。続行するには、請求先アドレスからVAT番号を削除するか、別のプランを選択してください。"
       ]
     },
     "info": {
@@ -6657,6 +6747,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "アクティブな署名鍵"
+      ],
+      "Fallback": [
+        "フォールバック"
       ]
     },
     "Keyboard shortcut name": {
@@ -7279,6 +7375,12 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 文字"
+      ],
+      "Drive": [
+        "ドライブ"
       ]
     },
     "label": {
@@ -7619,6 +7721,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "ビデオ会議、${ n }名まで参加可能"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "主催者は、ミーティングをご自身のコンピューターにローカルで録画できます。"
       ]
     },
     "meet_2025: Info": {
@@ -8339,6 +8444,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "${ options }-day file version history": [
+        "${ options }日間のファイルバージョン履歴"
+      ],
+      "Access all countries": [
+        "すべての国にアクセス"
+      ],
+      "Appointment scheduling": [
+        "アポイントメントのスケジューリング"
+      ],
+      "Dedicated servers optimized for speed": [
+        "速度に最適化された専用サーバー"
+      ],
+      "No streaming support": [
+        "ストリーミングのサポートなし"
+      ],
+      "Unlock streaming": [
+        "ストリーミングのブロックを解除"
       ]
     },
     "new_plans: feature highlight": {
@@ -9469,6 +9592,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "Edit billing address": [
+        "請求先アドレスを編集"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "VATリバースチャージ制度が適用されます。"
       ]
     },
     "Payments.Error": {
@@ -9611,6 +9740,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
+      ],
+      "This contact currently signs messages with this key": [
+        "この連絡先は現在、この鍵でメッセージに署名しています"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "この鍵は、古いアプリでこの連絡先宛のメッセージを暗号化するために使用されます"
       ]
     },
     "PGP key warning": {
@@ -11062,6 +11197,12 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "プレミアム機能を備えた ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、および ${ LUMO_APP_NAME }"
       ]
     },
     "subscription reminder": {
@@ -12251,6 +12392,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "お客様の組織を${ BRAND_NAME }に移行する"
+      ],
+      "Verify your password": [
+        "パスワードの確認"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12351,6 +12498,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "即時AIアシスタンス、専門スタッフも待機しています！"
       ]
     },
     "tooltip": {
@@ -12789,6 +12939,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }に切り替える"
       ]
     }
   }
