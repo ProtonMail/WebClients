@@ -82,7 +82,7 @@ export const getOnboardingRoute = () => getLocalPath('onboarding');
 export const getSecureLinksRoute = () => getLocalPath('secure-links');
 export const getMonitorRoute = () => getLocalPath('monitor');
 
-export const getInitialFilters = (): ItemFilters => ({ search: '', sort: 'recent', type: '*', selectedShareId: null });
+export const getInitialFilters = (): ItemFilters => ({ search: '', sort: 'relevant', type: '*', selectedShareId: null });
 
 export const decodeFilters = (encodedFilters: MaybeNull<string>): ItemFilters =>
     partialMerge(

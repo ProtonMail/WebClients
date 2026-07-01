@@ -134,6 +134,9 @@ export const sortItems =
                 case 'createTimeDESC':
                     return b.createTime - a.createTime;
                 case 'recent':
+                /* `relevant` orders by relevance only while searching (see
+                 * `searchItems`); with no active search it falls back to recency */
+                case 'relevant':
                     return (
                         Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -
                         Math.max(a.lastUseTime ?? a.modifyTime, a.modifyTime)
