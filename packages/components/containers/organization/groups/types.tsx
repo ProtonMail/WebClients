@@ -48,7 +48,7 @@ export interface DomainSuggestion {
 }
 
 export interface GroupsManagementReturn {
-    groups: Group[];
+    groups: EnhancedGroup[];
     /** Groups exist but full management is revoked — either the plan no longer supports groups, or the no-custom-domain feature flag was disabled after groups were created. Users can only delete. */
     isFrozen: boolean;
     members: EnhancedMember[];
@@ -73,5 +73,6 @@ export interface GroupsManagementReturn {
         onCreateGroup: () => void;
         onAddGroupMembers: (group: Group, emails: string[]) => Promise<void>;
         onUnselectGroup: () => void;
+        onResumeRoleAssignments: () => void;
     };
 }
