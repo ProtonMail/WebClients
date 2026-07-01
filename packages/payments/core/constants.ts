@@ -88,6 +88,8 @@ export enum TransactionType {
     CREDIT_TRANSFER = 11,
     MIGRATION = 12,
     ADJUSTMENT_CREDIT = 13,
+    TEST_CREDIT = 14,
+    PREPAYMENT = 15,
 }
 
 export enum ADDON_PREFIXES {
