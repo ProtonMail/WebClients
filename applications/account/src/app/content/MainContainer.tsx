@@ -107,10 +107,6 @@ const WalletSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/WalletSettingsRouter" */ '../containers/wallet/WalletSettingsRouter')
 );
 
-const MeetSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/MeetSettingsRouter" */ '../containers/meet/MeetSettingsRouter')
-);
-
 const AuthenticatorSettingsRouter = lazy(
     () =>
         import(
@@ -125,7 +121,6 @@ const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
 const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
-const meetSlug = getSlugFromApp(APPS.PROTONMEET);
 const authenticatorSlug = getSlugFromApp(APPS.PROTONAUTHENTICATOR);
 
 const getDefaultPassRedirect = (
@@ -591,11 +586,6 @@ const MainContainer = () => {
                         <Route path={`/${passSlug}`}>
                             <Suspense fallback={<PrivateMainAreaLoading />}>
                                 <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${meetSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <MeetSettingsRouter meetAppRoutes={routes.meet} redirect={redirect} />
                             </Suspense>
                         </Route>
                         <Route path={`/${authenticatorSlug}`}>
