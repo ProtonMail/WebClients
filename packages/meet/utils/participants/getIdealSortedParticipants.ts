@@ -1,4 +1,4 @@
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-client';
 
 /**
  * We get ideal order of participants without taking into account the previous order
@@ -7,7 +7,7 @@ export const getIdealSortedParticipants = ({
     participants,
     raisedHandsSet,
 }: {
-    participants: (LocalParticipant | RemoteParticipant)[];
+    participants: Participant[];
     raisedHandsSet: Set<string>;
 }): string[] => {
     if (participants.length === 0) {

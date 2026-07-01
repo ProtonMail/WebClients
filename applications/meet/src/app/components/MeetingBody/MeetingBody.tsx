@@ -334,7 +334,10 @@ export const MeetingBody = ({
                     )}
 
                     {isSideBarOpen && (
-                        <div className="h-full shrink-0" style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0 }}>
+                        <div
+                            className="h-full shrink-0 min-w-custom"
+                            style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0, '--min-w-custom': '20rem' }}
+                        >
                             <ParticipantList />
                             <Settings />
                             <Chat />

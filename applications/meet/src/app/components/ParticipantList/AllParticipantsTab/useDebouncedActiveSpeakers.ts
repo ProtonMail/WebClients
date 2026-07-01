@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import { type Participant, RoomEvent } from 'livekit-client';
 
-import { useStableCallback } from './useStableCallback';
+import { useStableCallback } from '../../../hooks/useStableCallback';
 
 export function useDebouncedActiveSpeakers(delayMs = 1000) {
     const room = useRoomContext();
@@ -53,11 +53,12 @@ export function useDebouncedActiveSpeakers(delayMs = 1000) {
 
         room.on(RoomEvent.ActiveSpeakersChanged, handleActiveSpeakersChanged);
 
+        const timeouts = timeoutsRef.current;
         return () => {
             room.off(RoomEvent.ActiveSpeakersChanged, handleActiveSpeakersChanged);
 
-            timeoutsRef.current.forEach((timeout) => clearTimeout(timeout));
-            timeoutsRef.current.clear();
+            timeouts.forEach((timeout) => clearTimeout(timeout));
+            timeouts.clear();
         };
     }, [room, handleActiveSpeakersChanged]);
 

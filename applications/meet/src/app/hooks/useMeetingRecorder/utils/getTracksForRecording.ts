@@ -1,10 +1,10 @@
 import type { TrackReference } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant, Track } from 'livekit-client';
+import type { Participant, Track } from 'livekit-client';
 
 import type { RecordingTrackInfo } from '../videoMixer/types';
 
 export const getTracksForRecording = (
-    pagedParticipants: (RemoteParticipant | LocalParticipant)[],
+    pagedParticipants: Participant[],
     cameraTracks: TrackReference[],
     screenShareTracks: TrackReference[]
 ): RecordingTrackInfo[] => {
