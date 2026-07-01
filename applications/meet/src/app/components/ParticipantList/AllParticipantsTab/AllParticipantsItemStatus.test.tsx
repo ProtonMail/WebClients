@@ -16,7 +16,7 @@ import {
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
-import { ParticipantListItemStatus } from './ParticipantListItemStatus';
+import { AllParticipantsItemStatus } from './AllParticipantsItemStatus';
 
 const participantIdentity = 'participant-1';
 const otherParticipantIdentity = 'participant-2';
@@ -64,12 +64,12 @@ const renderWithStore = (options: MockStoreOptions = {}, identity: string = part
 
     return render(
         <Provider context={ProtonStoreContext} store={store}>
-            <ParticipantListItemStatus participantIdentity={identity} />
+            <AllParticipantsItemStatus participantIdentity={identity} />
         </Provider>
     );
 };
 
-describe('ParticipantListItemStatus', () => {
+describe('AllParticipantsItemStatus', () => {
     afterEach(() => {
         cleanup();
         vi.clearAllMocks();
