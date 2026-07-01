@@ -39,11 +39,16 @@ export const createMatchItemsSelector = () => {
             pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
     );
 
-    return createSelector([selectSortedItemsByShareId, selectSearchFilter, selectTypeFilter], (items, search, type): ItemsSearchResults => {
-        const searched = searchItems(items, search);
-        const filtered = filterItemsByType(type)(searched);
-        return { filtered, searched, totalCount: items.length };
-    });
+    return createSelector(
+        [selectSortedItemsByShareId, selectSearchFilter, selectTypeFilter, selectSortFilter],
+        (items, search, type, sort): ItemsSearchResults => {
+            /* Relevance ranking only applies to the `relevant` sort; every other
+             * sort filters in-place, preserving its order (mobile parity) */
+            const searched = searchItems(items, search, sort === 'relevant');
+            const filtered = filterItemsByType(type)(searched);
+            return { filtered, searched, totalCount: items.length };
+        }
+    );
 };
 
 export const createMatchSharedByMeSelector = () =>
