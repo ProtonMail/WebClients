@@ -77,9 +77,9 @@ const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
                             </h3>
                             <ul className="unstyled m-0">
                                 {checkedItems.map((item) => (
-                                    <li key={item.id} className="flex items-center gap-2 py-1">
+                                    <li key={item.id} className="flex items-top flex-nowrap gap-2 py-1">
                                         <IcCheckmarkCircleFilled size={4} className="shrink-0 color-success" />
-                                        <span className="text-sm">{item.label}</span>
+                                        <span className="text-sm flex-1">{item.label}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -95,9 +95,9 @@ const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
                             </p>
                             <ul className="unstyled m-0">
                                 {inactiveItems.map((item) => (
-                                    <li key={item.id} className="flex items-center gap-2 py-1">
+                                    <li key={item.id} className="flex items-top flex-nowrap gap-2 py-1">
                                         <IcCheckmarkCircle size={4} className="shrink-0 color-hint" />
-                                        <span className="text-sm">{item.label}</span>
+                                        <span className="text-sm flex-1">{item.label}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -110,14 +110,14 @@ const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
                             </h3>
                             <ul className="unstyled m-0">
                                 {uncheckedItems.map((item) => (
-                                    <li key={item.id} className="flex items-center gap-2 py-1">
+                                    <li key={item.id} className="flex items-top flex-nowrap gap-2 py-1">
                                         {inactiveItems.length > 0 &&
                                         (item.id === 'recoveryEmail' || item.id === 'recoveryPhone') ? (
                                             <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                         ) : (
                                             <IcCircleRadioEmpty className="shrink-0 color-hint" />
                                         )}
-                                        <span className="text-sm">{item.label}</span>
+                                        <span className="text-sm flex-1">{item.label}</span>
                                     </li>
                                 ))}
                             </ul>
