@@ -1,6 +1,5 @@
 import type { NodeType } from '@protontech/drive-sdk';
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import generateUID from '@proton/utils/generateUID';
 
@@ -108,80 +107,75 @@ type UploadQueueStore = {
     getHasPendingConflicts: () => boolean;
 };
 
-export const useUploadQueueStore = create<UploadQueueStore>()(
-    devtools(
-        (set, get) => ({
-            queue: new Map(),
+export const useUploadQueueStore = create<UploadQueueStore>()((set, get) => ({
+    queue: new Map(),
 
-            addItem: (item) => {
-                const uploadId = generateUID();
-                set((state) => ({
-                    queue: new Map(state.queue).set(uploadId, { ...item, uploadId, lastStatusUpdateTime: new Date() }),
-                }));
-                return uploadId;
-            },
+    addItem: (item) => {
+        const uploadId = generateUID();
+        set((state) => ({
+            queue: new Map(state.queue).set(uploadId, { ...item, uploadId, lastStatusUpdateTime: new Date() }),
+        }));
+        return uploadId;
+    },
 
-            addItems: (items) => {
-                const now = new Date();
-                const uploadIds = items.map(() => generateUID());
-                set((state) => {
-                    const queue = new Map(state.queue);
-                    for (let i = 0; i < items.length; i++) {
-                        queue.set(uploadIds[i], { ...items[i], uploadId: uploadIds[i], lastStatusUpdateTime: now });
-                    }
-                    return { queue };
-                });
-                return uploadIds;
-            },
+    addItems: (items) => {
+        const now = new Date();
+        const uploadIds = items.map(() => generateUID());
+        set((state) => {
+            const queue = new Map(state.queue);
+            for (let i = 0; i < items.length; i++) {
+                queue.set(uploadIds[i], { ...items[i], uploadId: uploadIds[i], lastStatusUpdateTime: now });
+            }
+            return { queue };
+        });
+        return uploadIds;
+    },
 
-            updateQueueItems: (uploadIds, update) => {
-                set((state) => {
-                    const queue = new Map(state.queue);
-                    const idsArray = Array.isArray(uploadIds) ? uploadIds : [uploadIds];
-                    for (const uploadId of idsArray) {
-                        const existing = state.queue.get(uploadId);
-                        if (!existing) {
-                            continue;
-                        }
-                        const shouldUpdateTimestamp = update.status !== undefined && update.status !== existing.status;
-                        const newQueueItem = {
-                            ...existing,
-                            ...update,
-                            lastStatusUpdateTime: shouldUpdateTimestamp ? new Date() : existing.lastStatusUpdateTime,
-                        };
-                        queue.set(uploadId, newQueueItem);
-                    }
-                    return { queue };
-                });
-            },
+    updateQueueItems: (uploadIds, update) => {
+        set((state) => {
+            const queue = new Map(state.queue);
+            const idsArray = Array.isArray(uploadIds) ? uploadIds : [uploadIds];
+            for (const uploadId of idsArray) {
+                const existing = state.queue.get(uploadId);
+                if (!existing) {
+                    continue;
+                }
+                const shouldUpdateTimestamp = update.status !== undefined && update.status !== existing.status;
+                const newQueueItem = {
+                    ...existing,
+                    ...update,
+                    lastStatusUpdateTime: shouldUpdateTimestamp ? new Date() : existing.lastStatusUpdateTime,
+                };
+                queue.set(uploadId, newQueueItem);
+            }
+            return { queue };
+        });
+    },
 
-            removeUploadItems: (uploadIds) => {
-                set((state) => {
-                    if (uploadIds.length === 0) {
-                        return {};
-                    }
-                    const queue = new Map(state.queue);
-                    uploadIds.forEach((id) => queue.delete(id));
-                    return { queue };
-                });
-            },
+    removeUploadItems: (uploadIds) => {
+        set((state) => {
+            if (uploadIds.length === 0) {
+                return {};
+            }
+            const queue = new Map(state.queue);
+            uploadIds.forEach((id) => queue.delete(id));
+            return { queue };
+        });
+    },
 
-            getQueue: () => {
-                return Array.from(get().queue.values());
-            },
+    getQueue: () => {
+        return Array.from(get().queue.values());
+    },
 
-            getItem: (uploadId) => get().queue.get(uploadId),
+    getItem: (uploadId) => get().queue.get(uploadId),
 
-            clearQueue: () => {
-                set({ queue: new Map() });
-            },
+    clearQueue: () => {
+        set({ queue: new Map() });
+    },
 
-            getHasPendingConflicts: () => {
-                return Array.from(get().queue.values()).some(
-                    (item) => item.status === UploadStatus.ConflictFound && !item.resolvedStrategy
-                );
-            },
-        }),
-        { name: 'UploadQueueStore' }
-    )
-);
+    getHasPendingConflicts: () => {
+        return Array.from(get().queue.values()).some(
+            (item) => item.status === UploadStatus.ConflictFound && !item.resolvedStrategy
+        );
+    },
+}));
