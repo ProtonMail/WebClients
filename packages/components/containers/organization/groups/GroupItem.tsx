@@ -6,12 +6,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { IcShareNode } from '@proton/icons/icons/IcShareNode';
-import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { Group, RoleAssignment } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import GroupIcon from './GroupIcon';
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
 import shouldShowMail from './shouldShowMail';
 import type { GroupsManagementReturn } from './types';
@@ -58,17 +57,15 @@ const GroupItem = ({
     const email = serializedGroup?.payload.email || group?.Address?.Email || '';
     const subtitle = roleNames || (showMailFeatures && email ? email : undefined);
 
-    const GroupIcon = getIsScimGroup(group) ? IcShareNode : IcUsers;
-
     return (
         <div className="relative">
             <Button
-                className={clsx(['group-button interactive-pseudo w-full p-4', active && 'is-active'])}
+                className={clsx(['group-button interactive-pseudo w-full p-4 rounded-xl', active && 'is-active'])}
                 color="weak"
                 shape="ghost"
                 onClick={onClick}
             >
-                <div className="text-left flex items-start flex-nowrap gap-2">
+                <div className="text-left flex items-center flex-nowrap gap-2">
                     <div
                         className="mr-1 rounded flex w-custom h-custom shrink-0"
                         style={{
@@ -77,7 +74,11 @@ const GroupItem = ({
                             backgroundColor: 'var(--interaction-norm-minor-1)',
                         }}
                     >
-                        <GroupIcon className="m-auto color-primary shrink-0" size={4} />
+                        <GroupIcon
+                            isScimGroup={getIsScimGroup(group)}
+                            className="m-auto color-primary shrink-0"
+                            size={4}
+                        />
                     </div>
                     <div className="text-left flex flex-column flex-1">
                         <div className="flex items-center flex-nowrap gap-1">
@@ -96,7 +97,7 @@ const GroupItem = ({
                             )}
                         </div>
                         {subtitle && (
-                            <p className="m-0 text-sm color-weak text-ellipsis" title={subtitle}>
+                            <p className="m-0 max-w-full text-sm color-weak text-ellipsis" title={subtitle}>
                                 {subtitle}
                             </p>
                         )}
