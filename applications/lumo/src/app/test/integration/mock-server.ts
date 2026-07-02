@@ -62,6 +62,13 @@ export type MockDbAsset = {
 
 export type MockResponseAsset = Omit<MockDbAsset, 'Encrypted'>;
 
+export type MockDbUserSettings = {
+    UserSettingsTag: string;
+    Encrypted: string;
+    CreateTime: string;
+    UpdateTime: string;
+};
+
 // Request body types
 type NewSpaceRequest = {
     SpaceKey: string;
@@ -88,6 +95,11 @@ type NewAssetRequest = {
     SpaceID: string;
     Encrypted: string;
     AssetTag: string;
+};
+
+type UserSettingsRequest = {
+    UserSettingsTag: string;
+    Encrypted: string;
 };
 
 class ResourceExistsError extends Error {
@@ -164,6 +176,7 @@ export class MockDatabase {
     private conversations: Map<string, MockDbConversation> = new Map();
     private messages: Map<string, MockDbMessage> = new Map();
     private assets: Map<string, MockDbAsset> = new Map();
+    private userSettings: MockDbUserSettings | null = null;
     private nextSpaceId = 1;
     private nextConversationId = 1;
     private nextMessageId = 1;
@@ -221,6 +234,14 @@ export class MockDatabase {
 
     recordLumoUserSettingsEvent(id: string, action: ActionEventV6): void {
         this.enqueueLumoEvent({ LumoUserSettings: [{ ID: id, Action: action }] });
+    }
+
+    getUserSettings(): MockDbUserSettings | null {
+        return this.userSettings;
+    }
+
+    setUserSettings(settings: MockDbUserSettings): void {
+        this.userSettings = settings;
     }
 
     private emptyLumoEventResponse(): LumoEventResponse {
@@ -1022,6 +1043,55 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 Code: 1000,
                 Message: message,
             });
+        }),
+
+        http.get('/api/lumo/v1/settings', () => {
+            const errorResponse = checkForError('/api/lumo/v1/settings', 'GET');
+            if (errorResponse) return errorResponse;
+
+            const settings = mockDb.getUserSettings();
+            console.log('mock server: http get /api/lumo/v1/settings ->', settings);
+            return HttpResponse.json({
+                Code: 1000,
+                ...(settings ? { UserSettings: settings } : {}),
+            });
+        }),
+
+        http.post('/api/lumo/v1/settings', async ({ request }) => {
+            const errorResponse = checkForError('/api/lumo/v1/settings', 'POST');
+            if (errorResponse) return errorResponse;
+
+            const body = (await request.json()) as UserSettingsRequest;
+            const now = new Date().toISOString();
+            const settings: MockDbUserSettings = {
+                UserSettingsTag: body.UserSettingsTag,
+                Encrypted: body.Encrypted,
+                CreateTime: now,
+                UpdateTime: now,
+            };
+            mockDb.setUserSettings(settings);
+            mockDb.recordLumoUserSettingsEvent(body.UserSettingsTag, ActionEventV6.Create);
+            console.log('mock server: http post /api/lumo/v1/settings ->', settings);
+            return HttpResponse.json({ Code: 1000 });
+        }),
+
+        http.put('/api/lumo/v1/settings', async ({ request }) => {
+            const errorResponse = checkForError('/api/lumo/v1/settings', 'PUT');
+            if (errorResponse) return errorResponse;
+
+            const body = (await request.json()) as UserSettingsRequest;
+            const existing = mockDb.getUserSettings();
+            const now = new Date().toISOString();
+            const settings: MockDbUserSettings = {
+                UserSettingsTag: body.UserSettingsTag,
+                Encrypted: body.Encrypted,
+                CreateTime: existing?.CreateTime ?? now,
+                UpdateTime: now,
+            };
+            mockDb.setUserSettings(settings);
+            mockDb.recordLumoUserSettingsEvent(body.UserSettingsTag, ActionEventV6.Update);
+            console.log('mock server: http put /api/lumo/v1/settings ->', settings);
+            return HttpResponse.json({ Code: 1000 });
         }),
     ];
 }
