@@ -18,7 +18,7 @@ import { selectParticipantName, selectParticipantsMap } from '@proton/meet/store
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import clsx from '@proton/utils/clsx';
 
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 
 import './ParticipantHostControls.scss';
 
@@ -46,7 +46,7 @@ export const ParticipantHostControls = ({
         useMeetSelector((state) => selectParticipantName(state, participant.identity)) ?? c('Info').t`Participant`;
     const participantsMap = useMeetSelector(selectParticipantsMap);
 
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const participantData = participantsMap[participant.identity];
 
@@ -93,7 +93,7 @@ export const ParticipantHostControls = ({
                         onClick={() =>
                             isVideoEnabled &&
                             withLoading(
-                                mls.updateParticipantTrackSettings(
+                                meetCoreClient.updateParticipantTrackSettings(
                                     participant.identity,
                                     null,
                                     ParticipantCapabilityPermission.NotAllowed
@@ -116,7 +116,7 @@ export const ParticipantHostControls = ({
                         onClick={() =>
                             isAudioEnabled &&
                             withLoading(
-                                mls.updateParticipantTrackSettings(
+                                meetCoreClient.updateParticipantTrackSettings(
                                     participant.identity,
                                     ParticipantCapabilityPermission.NotAllowed,
                                     null
@@ -137,7 +137,7 @@ export const ParticipantHostControls = ({
                         role="menuitem"
                         loading={loading}
                         disabled={loading}
-                        onClick={() => withLoading(mls.removeParticipant(participant.identity))}
+                        onClick={() => withLoading(meetCoreClient.removeParticipant(participant.identity))}
                     >
                         <IcCrossCircle size={5} className="shrink-0" />
                         <span className="flex-1 text-ellipsis" title={c('Action').t`Kick out`}>{c('Action')
