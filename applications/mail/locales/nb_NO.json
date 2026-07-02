@@ -8100,9 +8100,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Be eieren om å invitere deg direkte til dokumentet."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentiser kortet ditt i verifiseringsfanen."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentiser betalingen din i verifiseringsfanen."
       ],
@@ -8154,9 +8151,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
@@ -9037,6 +9031,10 @@
         "Du har **${ count } samtale** merket med denne etiketten",
         "Du har **${ count } samtaler** merket med denne etiketten"
       ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } melding** i kategorien ${ categoryLabel }.",
+        "Du har **${ count } meldinger** i kategorien ${ categoryLabel }."
+      ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } melding** lagret i denne mappen",
         "Du har **${ count } meldinger** lagret i denne mappen"
@@ -9065,6 +9063,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i kategorien ${ categoryLabel }.",
+        "Du valgte **${ checked } samtaler** i kategorien ${ categoryLabel }."
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } melding** i kategorien ${ categoryLabel }.",
+        "Du valgte **${ checked } meldinger** i kategorien ${ categoryLabel }."
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du valgte **${ count } samtale** fra denne mappen",
@@ -9100,9 +9106,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
@@ -10059,6 +10062,9 @@
       ],
       "Navigation": [
         "Navigasjon"
+      ],
+      "New": [
+        "Ny"
       ],
       "New password": [
         "Nytt passord"
@@ -15999,9 +16005,6 @@
       ],
       "Payment verification": [
         "Betalingsbekreftelse"
-      ],
-      "PayPal verification failed": [
-        "PayPal-bekreftelse mislyktes"
       ],
       "Phone numbers": [
         "Telefonnumre"

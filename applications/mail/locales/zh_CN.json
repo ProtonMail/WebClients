@@ -4301,6 +4301,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
       ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "要继续在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请将其添加到您的订阅中。"
+      ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "要继续在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请向管理员申请访问权限。"
       ],
@@ -6751,6 +6754,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } 现在会自动将您的邮件分类为主要、社交、促销等类别，帮助您更轻松地查找和管理邮件。"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } 是一款端到端加密的视频会议解决方案。将其添加到您的套餐中即可主持安全会议。"
       ],
@@ -7984,9 +7990,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "请让所有者直接邀请您加入文档。"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "请在验证页面完成银行卡核验。"
-      ],
       "Please authenticate your payment in the verification tab.": [
         "请在验证页面确认支付。"
       ],
@@ -8038,9 +8041,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
       ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "请用其他方式支付，或联系 PayPal 寻求帮助。"
-      ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
       ],
@@ -8082,6 +8082,9 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
+      ],
+      "Private by design.": [
+        "专为隐私打造"
       ],
       "Proofread selection": [
         "校对选项"
@@ -8902,6 +8905,9 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "您的收件箱中有 ${ totalLabel }。"
+      ],
       "You have **${ count } conversation** in ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中有 **${ count }** 项会话"
       ],
@@ -8979,9 +8985,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "您将在该日期失去对 ${ planTitle } 功能的访问权限。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "即将为您转至 PayPal 确认支付。"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
@@ -9419,6 +9422,9 @@
       ],
       "${ count } unread message": [
         "${ count } 条未读消息"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
       "${ n } month": [
         "${ n } 个月"
@@ -9927,6 +9933,9 @@
       "Navigation": [
         "导航栏"
       ],
+      "New": [
+        "新"
+      ],
       "New password": [
         "新密码"
       ],
@@ -10148,6 +10157,9 @@
       ],
       "System information": [
         "系统信息"
+      ],
+      "Tab age": [
+        "标签页停留时长"
       ],
       "Tell us more about your experience": [
         "请告诉我们更多关于您的体验"
@@ -12358,6 +12370,9 @@
       ],
       "Remind me later": [
         "稍后提醒"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -12955,6 +12970,9 @@
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
         "告诉 ${ subject } 要写什么，例如：“感谢同事在项目上的帮助”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "告诉 ${ subject } 要写什么，例如：“写一份实习求职信”"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
         "告诉 ${ subject } 要写什么，例如：“给客户写一封跟进邮件”"
@@ -14694,6 +14712,9 @@
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "来自 ${ sendersList } 的对话将移至 ${ folder }"
       ],
+      "Copied '${ code }' to clipboard": [
+        "已复制“${ code }”到剪贴板"
+      ],
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
@@ -15736,9 +15757,6 @@
       "Payment verification": [
         "支付验证"
       ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
-      ],
       "Phone numbers": [
         "电话号码"
       ],
@@ -16089,6 +16107,9 @@
       ],
       "Your free trial has ended": [
         "您的免费试用已结束"
+      ],
+      "Your inbox, automatically organized": [
+        "您的邮箱，自动分类"
       ],
       "Your newsletters in one place": [
         "您的通讯，一处尽览"
