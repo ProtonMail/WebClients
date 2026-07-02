@@ -3,10 +3,9 @@ import { useEffect, useRef } from 'react';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { MLSGroupState } from '@proton/meet/types/types';
 
-import type { MeetCoreClient } from '../wasm/MeetCoreClient';
+import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 
 interface UseConnectionHealthCheckParams {
-    wasmApp: MeetCoreClient | null;
     mlsGroupStateRef: React.MutableRefObject<MLSGroupState | null>;
     onMlsFailed: () => void;
 }
@@ -14,11 +13,9 @@ interface UseConnectionHealthCheckParams {
 /**
  * Hook to handle connection health check and user epoch health logging
  */
-export const useConnectionHealthCheck = ({
-    wasmApp,
-    mlsGroupStateRef,
-    onMlsFailed,
-}: UseConnectionHealthCheckParams) => {
+export const useConnectionHealthCheck = ({ mlsGroupStateRef, onMlsFailed }: UseConnectionHealthCheckParams) => {
+    const meetCoreClient = useMeetCoreClient();
+
     const healthCheckAllowedRef = useRef(false);
 
     const isConnectionCheckInProgressRef = useRef(false);
@@ -39,11 +36,11 @@ export const useConnectionHealthCheck = ({
         let healthCheckTimeout: NodeJS.Timeout | null = null;
 
         const checkConnection = async () => {
-            if (wasmApp !== null && healthCheckAllowedRef.current && !isConnectionCheckInProgressRef.current) {
+            if (healthCheckAllowedRef.current && !isConnectionCheckInProgressRef.current) {
                 try {
                     isConnectionCheckInProgressRef.current = true;
 
-                    const isMlsUpToDate = await wasmApp.isMlsUpToDate();
+                    const isMlsUpToDate = await meetCoreClient.isMlsUpToDate();
                     if (!isMlsUpToDate) {
                         onMlsFailed();
                     }
@@ -67,7 +64,7 @@ export const useConnectionHealthCheck = ({
             ) {
                 try {
                     isEpochHealthCheckInProgressRef.current = true;
-                    await wasmApp?.logUserEpochHealth(
+                    await meetCoreClient.logUserEpochHealth(
                         Number(mlsGroupStateRef.current.epoch),
                         mlsGroupStateRef.current.displayCode
                     );
@@ -91,6 +88,7 @@ export const useConnectionHealthCheck = ({
                 clearTimeout(healthCheckTimeout);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return { allowHealthCheck, disallowHealthCheck };

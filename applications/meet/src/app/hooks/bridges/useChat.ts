@@ -18,7 +18,7 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { isValidMessageString } from '../../utils/isValidMessageString';
 
 export const useChat = () => {
@@ -27,7 +27,7 @@ export const useChat = () => {
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
 
@@ -40,7 +40,7 @@ export const useChat = () => {
         // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
         async (payload: Uint8Array, participant: RemoteParticipant) => {
             try {
-                const event = await mls.decodeChat(payload);
+                const event = await meetCoreClient.decodeChat(payload);
 
                 if (event.kind !== ChatEventKind.Message && event.kind !== ChatEventKind.Reaction) {
                     return;
@@ -103,7 +103,7 @@ export const useChat = () => {
                 console.error('Error handling chat event:', error);
             }
         },
-        [dispatch, isChatOpen, mls, reportMeetError]
+        [dispatch, isChatOpen, meetCoreClient, reportMeetError]
     );
 
     const handleDataReceiveLegacy = useCallback(
@@ -142,7 +142,7 @@ export const useChat = () => {
                     }
 
                     try {
-                        const result = await mls?.decryptMessage(encryptedData);
+                        const result = await meetCoreClient.decryptMessage(encryptedData);
                         if (!result) {
                             return await tryDecrypt(attemptIndex + 1);
                         }
@@ -202,7 +202,7 @@ export const useChat = () => {
                 console.error('Error handling chat message:', error);
             }
         },
-        [dispatch, isChatOpen, mls, reportMeetError]
+        [dispatch, isChatOpen, meetCoreClient, reportMeetError]
     );
 
     const handleDataReceive = useCallback(

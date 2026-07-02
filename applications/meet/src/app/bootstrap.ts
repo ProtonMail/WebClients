@@ -247,12 +247,12 @@ const completeAppBootstrap = async ({
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
-    const wasmApp = await initializeMeetCoreClient({
+    const meetCoreClient = await initializeMeetCoreClient({
         authentication,
         appVersion,
         meetCoreWorkerEnabled,
     });
-    bootstrap.onAbort(signal, () => wasmApp.dispose());
+    bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
     if (!!userData.userSettings.Telemetry) {
         telemetry.init({
@@ -277,7 +277,7 @@ const completeAppBootstrap = async ({
         await purgeUserRecordings(userId);
     });
 
-    return { userData, wasmApp };
+    return { userData, meetCoreClient };
 };
 
 interface BootstrapParameters {
@@ -315,7 +315,7 @@ export const executeBootstrapSteps = async ({
         persist: true,
     });
 
-    const { userData, wasmApp } = await completeAppBootstrap({
+    const { userData, meetCoreClient } = await completeAppBootstrap({
         ...restServices,
         authentication,
         notificationsManager,
@@ -331,7 +331,7 @@ export const executeBootstrapSteps = async ({
         ...userData,
         store,
         authentication,
-        wasmApp,
+        meetCoreClient,
     };
 };
 
@@ -405,12 +405,12 @@ export const bootstrapGuestApp = async (
     await unleashClient.start();
 
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
-    const [wasmApp] = await Promise.all([
+    const [meetCoreClient] = await Promise.all([
         initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled }),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
     ]);
-    bootstrap.onAbort(signal, () => wasmApp.dispose());
+    bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
     const history = createBrowserHistory({ basename: '/guest' });
 
@@ -435,6 +435,6 @@ export const bootstrapGuestApp = async (
         unauthenticatedApi,
         history,
         unleashClient,
-        wasmApp,
+        meetCoreClient,
     };
 };

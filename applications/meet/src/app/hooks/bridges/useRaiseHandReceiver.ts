@@ -11,7 +11,7 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { RAISE_HAND_EMOJI } from '../../constants';
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';
 import { usePublishRaiseHand } from '../usePublishRaiseHand';
@@ -22,7 +22,7 @@ export const useRaiseHandReceiver = () => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
     const { publish } = usePublishRaiseHand();
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
     const { reportMeetError } = useMeetErrorReporting();
     const raisedHands = useMeetSelector(selectRaisedHands);
     const isHandRaised = room ? raisedHands.includes(room.localParticipant.identity) : false;
@@ -31,7 +31,7 @@ export const useRaiseHandReceiver = () => {
     participantsMapRef.current = participantsMap;
 
     useEffect(() => {
-        if (!room || !mls) {
+        if (!room) {
             return;
         }
 
@@ -75,7 +75,7 @@ export const useRaiseHandReceiver = () => {
 
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
-                const decrypted = await mls.decryptMessage(stringToUint8Array(decoded.message));
+                const decrypted = await meetCoreClient.decryptMessage(stringToUint8Array(decoded.message));
                 if (!decrypted) {
                     return;
                 }
@@ -164,5 +164,5 @@ export const useRaiseHandReceiver = () => {
             room.off('dataReceived', handleDataReceived);
             room.off('participantConnected', handleParticipantConnected);
         };
-    }, [room, mls, isHandRaised, dispatch, publish, reportMeetError, isAdminLowerHandEnabled]);
+    }, [room, meetCoreClient, isHandRaised, dispatch, publish, reportMeetError, isAdminLowerHandEnabled]);
 };

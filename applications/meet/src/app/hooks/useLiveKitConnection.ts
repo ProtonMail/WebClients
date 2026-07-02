@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { useRoomContext } from '@livekit/components-react';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -25,7 +26,6 @@ export const isConnectionTimeoutError = (error: any): boolean => {
 export type ConnectionInfo = { stunFailed: boolean; connectionAttempts: number };
 
 interface UseLiveKitConnectionParams {
-    room: Room;
     reportMeetError: (msg: string, options?: unknown) => void;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
 }
@@ -39,10 +39,11 @@ export interface UseLiveKitConnectionResult {
 }
 
 export const useLiveKitConnection = ({
-    room,
     reportMeetError,
     withMeetingLinkNameTag,
 }: UseLiveKitConnectionParams): UseLiveKitConnectionResult => {
+    const room = useRoomContext();
+
     const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
     const [joiningLoaderHeader, setJoiningLoaderHeader] = useState<string | undefined>(undefined);
     const [joiningLoaderSubtitle, setJoiningLoaderSubtitle] = useState<string | undefined>(undefined);

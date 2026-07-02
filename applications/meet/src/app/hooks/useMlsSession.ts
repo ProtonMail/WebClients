@@ -8,15 +8,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import type { MLSGroupState } from '@proton/meet/types/types';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../utils/wasmUtils';
-import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface UseMlsSessionParams {
-    wasmApp: MeetCoreClient | null;
-    isMeetNewJoinTypeEnabled: boolean;
-    isMeetNewSwitchJoinTypeEnabled: boolean;
-    isMeetSwitchJoinTypeEnabled: boolean;
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
     onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
     updateAdminParticipant: (roomId: string, participantUid: string, participantType: Number) => Promise<void>;
@@ -38,10 +35,6 @@ export interface UseMlsSessionResult {
 }
 
 export const useMlsSession = ({
-    wasmApp,
-    isMeetNewJoinTypeEnabled,
-    isMeetSwitchJoinTypeEnabled,
-    isMeetNewSwitchJoinTypeEnabled,
     getGroupKeyInfo,
     onNewGroupKeyInfo,
     updateAdminParticipant,
@@ -51,6 +44,12 @@ export const useMlsSession = ({
     currentKeyRef,
     mlsGroupStateRef,
 }: UseMlsSessionParams): UseMlsSessionResult => {
+    const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
+    const isMeetSwitchJoinTypeEnabled = useFlag('MeetSwitchJoinType');
+    const isMeetNewSwitchJoinTypeEnabled = useFlag('MeetNewSwitchJoinType');
+
+    const meetCoreClient = useMeetCoreClient();
+
     const authentication = useAuthentication();
     const dispatch = useMeetDispatch();
     const { createNotification } = useNotifications();
@@ -83,14 +82,10 @@ export const useMlsSession = ({
             setupLiveKitAdminChangeEvent({ onLiveKitAdminChanged: updateAdminParticipant });
         }
 
-        if (!wasmApp) {
-            return;
-        }
-
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
             if (isMeetNewSwitchJoinTypeEnabled) {
-                await wasmApp.joinMeetingWithAccessTokenWithSwitchJoinType(
+                await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
                     accessToken,
                     meetingLinkName,
                     meetingPassword,
@@ -98,7 +93,7 @@ export const useMlsSession = ({
                     isMeetSwitchJoinTypeEnabled
                 );
             } else {
-                const joinType = await wasmApp.getJoinType(
+                const joinType = await meetCoreClient.getJoinType(
                     isMeetNewJoinTypeEnabled,
                     isMeetSwitchJoinTypeEnabled,
                     participantsCountValue ?? 0
@@ -107,10 +102,15 @@ export const useMlsSession = ({
                     // eslint-disable-next-line no-console
                     console.log('Joining room with proposal');
                     try {
-                        await wasmApp.joinRoomWithProposal(accessToken, meetingLinkName, meetingPassword, sessionId);
+                        await meetCoreClient.joinRoomWithProposal(
+                            accessToken,
+                            meetingLinkName,
+                            meetingPassword,
+                            sessionId
+                        );
                     } catch (error) {
                         // fallback to join with external commit
-                        await wasmApp.joinMeetingWithAccessToken(
+                        await meetCoreClient.joinMeetingWithAccessToken(
                             accessToken,
                             meetingLinkName,
                             meetingPassword,
@@ -118,19 +118,24 @@ export const useMlsSession = ({
                         );
                     }
                 } else {
-                    await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, meetingPassword, sessionId);
+                    await meetCoreClient.joinMeetingWithAccessToken(
+                        accessToken,
+                        meetingLinkName,
+                        meetingPassword,
+                        sessionId
+                    );
                 }
             }
 
-            await wasmApp.setMlsGroupUpdateHandler();
-            await wasmApp.setLiveKitAdminChangeHandler();
-            await wasmApp.setMlsSyncStateUpdateHandler();
+            await meetCoreClient.setMlsGroupUpdateHandler();
+            await meetCoreClient.setLiveKitAdminChangeHandler();
+            await meetCoreClient.setMlsSyncStateUpdateHandler();
 
-            const groupKeyData = await wasmApp.getGroupKey();
+            const groupKeyData = await meetCoreClient.getGroupKey();
 
             currentKeyRef.current = groupKeyData.key;
 
-            const displayCode = await wasmApp?.getGroupDisplayCode();
+            const displayCode = await meetCoreClient.getGroupDisplayCode();
             const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
                 epoch: Number(groupKeyData.epoch),

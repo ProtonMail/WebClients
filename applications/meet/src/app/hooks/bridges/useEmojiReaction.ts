@@ -7,7 +7,7 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { clearActiveReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';
 
@@ -19,7 +19,7 @@ export const useEmojiReaction = () => {
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
     const notifications = useNotifications();
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const handleError = (errorCause: string) => {
         reportMeetError('Failed to send emoji reaction', {
@@ -36,7 +36,7 @@ export const useEmojiReaction = () => {
     };
 
     const sendEmojiReaction = async (emoji: EmojiReaction) => {
-        if (!room || !mls) {
+        if (!room) {
             return false;
         }
 
@@ -48,7 +48,7 @@ export const useEmojiReaction = () => {
         let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
 
         try {
-            encryptedMessage = (await mls.encryptMessage(emoji)) as Uint8Array<ArrayBuffer>;
+            encryptedMessage = await meetCoreClient.encryptMessage(emoji);
         } catch (error) {
             dispatch(clearActiveReaction({ identity, timestamp }));
             handleError('Failed to encrypt emoji reaction');
@@ -57,7 +57,7 @@ export const useEmojiReaction = () => {
 
         const message = {
             id: `${identity}-${Date.now()}`,
-            message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
+            message: uint8ArrayToString(encryptedMessage),
             timestamp: Date.now(),
             type: PublishableDataTypes.EmojiReaction,
             version: 1,

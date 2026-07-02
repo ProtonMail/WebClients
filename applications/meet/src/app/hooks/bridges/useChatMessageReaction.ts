@@ -13,7 +13,7 @@ import {
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 
 export const useChatMessageReaction = () => {
@@ -22,7 +22,7 @@ export const useChatMessageReaction = () => {
     const store = useMeetStore();
     const { reportMeetError } = useMeetErrorReporting();
     const notifications = useNotifications();
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const isNewChatHandling = useFlag('MeetNewChatHandling');
 
@@ -48,8 +48,8 @@ export const useChatMessageReaction = () => {
 
         try {
             const { payload, local_echo: localEcho } = isRemoving
-                ? await mls.composeChatUnreact(messageId, existingReactionId)
-                : await mls.composeChatReaction(messageId, emoji);
+                ? await meetCoreClient.composeChatUnreact(messageId, existingReactionId)
+                : await meetCoreClient.composeChatReaction(messageId, emoji);
 
             try {
                 await room.localParticipant.publishData(payload, { reliable: true });
@@ -83,7 +83,7 @@ export const useChatMessageReaction = () => {
 
         let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
         try {
-            encryptedMessage = (await mls.encryptMessage(payload)) as Uint8Array<ArrayBuffer>;
+            encryptedMessage = await meetCoreClient.encryptMessage(payload);
         } catch {
             // Roll back the optimistic update (toggle removes it)
             dispatch(toggleChatMessageReaction({ messageId, emoji, identity }));
@@ -93,7 +93,7 @@ export const useChatMessageReaction = () => {
 
         const envelope = {
             id: `${identity}-${Date.now()}`,
-            message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
+            message: uint8ArrayToString(encryptedMessage),
             timestamp: Date.now(),
             type: PublishableDataTypes.ChatMessageReaction,
             version: 1,
@@ -115,7 +115,7 @@ export const useChatMessageReaction = () => {
     };
 
     const sendReaction = async (messageId: string, emoji: string) => {
-        if (!room || !mls) {
+        if (!room) {
             return false;
         }
 
