@@ -28,7 +28,7 @@ import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
-import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
+import { HIGHLIGHTED_ITEM_INDEX, OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -211,6 +211,8 @@ const Item = ({
         />
     );
 
+    const isActiveStepCategorize = activeStep === OnboardingStep.CATEGORIZE;
+
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
@@ -229,8 +231,8 @@ const Item = ({
                     dragged && 'item-dragging',
                     useContentSearch && columnLayout && 'es-three-rows',
                     useContentSearch && !columnLayout && 'es-row-results',
-                    activeStep === OnboardingStep.CATEGORIZE && index !== 1 && 'opacity-30',
-                    activeStep !== OnboardingStep.CATEGORIZE && userIsInOnboarding && 'opacity-30',
+                    isActiveStepCategorize && index !== HIGHLIGHTED_ITEM_INDEX && 'opacity-30',
+                    !isActiveStepCategorize && userIsInOnboarding && 'opacity-30',
                 ])}
                 style={{ '--index': index }}
                 ref={elementRef}

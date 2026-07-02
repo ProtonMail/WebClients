@@ -87,9 +87,8 @@ export const CategoriesTabsList = () => {
 
                     if (category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL) {
                         return (
-                            <CategoriesOnboardingSpotlight step={OnboardingStep.MESSAGE}>
+                            <CategoriesOnboardingSpotlight step={OnboardingStep.MESSAGE} key={category.id}>
                                 <div
-                                    key={category.id}
                                     className="tab-wrapper shrink-0"
                                     onDragOver={handleDragOver(category.id)}
                                     onDrop={handleDrop(category.id)}
