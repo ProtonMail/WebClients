@@ -15,10 +15,9 @@ interface TabBadgeProps {
     category: CategoryTab;
     tabState: TabState;
     shouldShowCounter: boolean;
-    shouldShowNewBadge: boolean;
 }
 
-export const TabBadge = ({ category, tabState, shouldShowCounter, shouldShowNewBadge }: TabBadgeProps) => {
+export const TabBadge = ({ category, tabState, shouldShowCounter }: TabBadgeProps) => {
     const [mailSettings] = useMailSettings();
     const showBadge = useFlag('CategoriesUnseenBadge');
 
@@ -40,14 +39,6 @@ export const TabBadge = ({ category, tabState, shouldShowCounter, shouldShowNewB
                 )}
             >
                 {count > 999 ? '999+' : count}
-            </span>
-        );
-    }
-
-    if (shouldShowNewBadge) {
-        return (
-            <span className="tag-badge px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg">
-                {c('Label').t`New`}
             </span>
         );
     }
