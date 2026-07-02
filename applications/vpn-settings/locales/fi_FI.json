@@ -632,9 +632,6 @@
       "Load more": [
         "Lataa lisää"
       ],
-      "Loading verification": [
-        "Ladataan vahvistusta"
-      ],
       "Lost access to your 2FA device?": [
         "Menetitkö pääsyn 2FA-laitteeseesi?"
       ],
@@ -7342,9 +7339,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Vahvista korttisi vahvistusvälilehdellä."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Vahvista maksusi vahvistusvälilehdellä."
       ],
@@ -7374,9 +7368,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
       ],
       "Please use another browser or download the file.": [
         "Käytä eri selainta tai lataa tiedosto."
@@ -7724,6 +7715,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä.",
+        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Suosittelupalkkio voidaan myöntää enintään 2 kuukauden kuluessa ystäväsi kokeilujakson päättymisestä, mutta vain, jos ystäväsi on tilannut palvelun."
@@ -8327,9 +8322,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Saat takaisin täyden tai osittaisen pääsyn salattuihin tietoihisi."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
@@ -15624,6 +15616,9 @@
       "Gift code": [
         "Lahjakoodi"
       ],
+      "Group role assignment paused": [
+        "Ryhmän roolien määrittäminen keskeytetty"
+      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -15780,9 +15775,6 @@
       ],
       "Payment verification": [
         "Maksun vahvistus"
-      ],
-      "PayPal verification failed": [
-        "PayPal-vahvistus epäonnistui"
       ],
       "Phone": [
         "Puhelin"
@@ -16394,6 +16386,9 @@
       ],
       "Group membership paused": [
         "Ryhmän jäsenyys on pysäytetty"
+      ],
+      "Role assignment paused": [
+        "Roolien määrittäminen keskeytetty"
       ],
       "Sending member invitation": [
         "Jäsenkutsua lähetetään"
