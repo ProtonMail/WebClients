@@ -73,27 +73,26 @@ export const Tab = ({ category, tabState }: Props) => {
             onClick={handleClick}
             draggable={false}
         >
-            <CategoryIcon
-                categoryId={category.id}
-                variant="filled"
-                className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
-            />
-            <span
-                title={getLabelFromCategoryId(category.id)}
-                className={clsx(
-                    'tag-label text-sm truncate min-w-0',
-                    tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
-                )}
-            >
-                {getLabelFromCategoryId(category.id)}
+            <span className="tab-icon relative shrink-0 flex">
+                <CategoryIcon
+                    categoryId={category.id}
+                    variant="filled"
+                    className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
+                />
+                {shouldShowNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
+            </span>
+            <span className="tab-text flex flex-column justify-center min-w-0">
+                <span
+                    className={clsx(
+                        'tag-label text-sm text-ellipsis min-w-0',
+                        tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
+                    )}
+                >
+                    {getLabelFromCategoryId(category.id)}
+                </span>
             </span>
 
-            <TabBadge
-                category={category}
-                tabState={tabState}
-                shouldShowCounter={shouldShowCounter}
-                shouldShowNewBadge={shouldShowNewBadge}
-            />
+            <TabBadge category={category} tabState={tabState} shouldShowCounter={shouldShowCounter} />
         </NavLink>
     );
 };
