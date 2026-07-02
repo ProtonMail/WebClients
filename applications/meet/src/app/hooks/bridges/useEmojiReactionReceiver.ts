@@ -7,7 +7,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';
 import { EMOJI_REACTIONS } from './useEmojiReaction';
@@ -15,11 +15,11 @@ import { EMOJI_REACTIONS } from './useEmojiReaction';
 export const useEmojiReactionReceiver = () => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
     const { reportMeetError } = useMeetErrorReporting();
 
     useEffect(() => {
-        if (!room || !mls) {
+        if (!room) {
             return;
         }
 
@@ -35,7 +35,7 @@ export const useEmojiReactionReceiver = () => {
 
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
-                const decrypted = await mls.decryptMessage(stringToUint8Array(decoded.message));
+                const decrypted = await meetCoreClient.decryptMessage(stringToUint8Array(decoded.message));
                 if (!decrypted) {
                     return;
                 }
@@ -96,5 +96,5 @@ export const useEmojiReactionReceiver = () => {
         return () => {
             room.off('dataReceived', handleDataReceived);
         };
-    }, [room, mls, dispatch, reportMeetError]);
+    }, [room, meetCoreClient, dispatch, reportMeetError]);
 };

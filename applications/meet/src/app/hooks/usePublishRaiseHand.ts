@@ -5,22 +5,22 @@ import { useRoomContext } from '@livekit/components-react';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMLSContext } from '../contexts/MLSContext';
+import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../types';
 
 export const usePublishRaiseHand = () => {
     const isAdminLowerHandEnabled = useFlag('MeetAdminLowerHand');
 
     const room = useRoomContext();
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const publish = useCallback(
         async (raised: boolean, destinationIdentities?: string[]) => {
-            if (!room || !mls) {
+            if (!room) {
                 return;
             }
 
-            const encryptedMessage = (await mls.encryptMessage(JSON.stringify({ raised }))) as Uint8Array<ArrayBuffer>;
+            const encryptedMessage = await meetCoreClient.encryptMessage(JSON.stringify({ raised }));
 
             const envelope = {
                 id: `${room.localParticipant.identity}-${Date.now()}`,
@@ -36,18 +36,16 @@ export const usePublishRaiseHand = () => {
                 destinationIdentities,
             });
         },
-        [room, mls]
+        [room, meetCoreClient]
     );
 
     const adminPublishLowerHand = useCallback(
         async (identity: string, destinationIdentities?: string[]) => {
-            if (!room || !mls || !isAdminLowerHandEnabled) {
+            if (!room || !isAdminLowerHandEnabled) {
                 return;
             }
 
-            const encryptedMessage = (await mls.encryptMessage(
-                JSON.stringify({ identity })
-            )) as Uint8Array<ArrayBuffer>;
+            const encryptedMessage = await meetCoreClient.encryptMessage(JSON.stringify({ identity }));
 
             const envelope = {
                 id: `${identity}-${Date.now()}`,
@@ -63,7 +61,7 @@ export const usePublishRaiseHand = () => {
                 destinationIdentities,
             });
         },
-        [room, mls]
+        [isAdminLowerHandEnabled, room, meetCoreClient]
     );
 
     return { publish, adminPublishLowerHand };

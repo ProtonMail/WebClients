@@ -117,9 +117,9 @@ export const WrappedProtonMeetContainer = () => {
                     <MediaManagementProvider>
                         <SortedParticipantsProvider>
                             {isGuest ? (
-                                <ProtonMeetContainer room={room} keyProvider={keyProvider} />
+                                <ProtonMeetContainer keyProvider={keyProvider} />
                             ) : (
-                                <ProtonMeetContainerWithUser room={room} keyProvider={keyProvider} />
+                                <ProtonMeetContainerWithUser keyProvider={keyProvider} />
                             )}
                         </SortedParticipantsProvider>
                     </MediaManagementProvider>

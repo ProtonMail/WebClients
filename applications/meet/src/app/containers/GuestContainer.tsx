@@ -17,7 +17,7 @@ import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
-import { WasmContext } from '../contexts/WasmContext';
+import { MeetCoreClientContext } from '../contexts/MeetCoreClientContext';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager'> & {
@@ -37,12 +37,12 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
     const storeRef = useRef<MeetStore>();
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
-    const wasmAppRef = useRef<MeetCoreClient | null>(null);
+    const meetCoreClientRef = useRef<MeetCoreClient | null>(null);
 
     useEffect(() => {
         const initialiseServicesAndStore = async (signal: AbortSignal) => {
             try {
-                const { store, authentication, unleashClient, unauthenticatedApi, history, wasmApp } =
+                const { store, authentication, unleashClient, unauthenticatedApi, history, meetCoreClient } =
                     await bootstrapGuestApp(config, notificationsManager, signal);
 
                 if (signal.aborted) {
@@ -58,7 +58,7 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                     history,
                 };
 
-                wasmAppRef.current = wasmApp;
+                meetCoreClientRef.current = meetCoreClient;
 
                 setInitialised(true);
             } catch (error) {
@@ -94,12 +94,12 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                 <Router history={history}>
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
                         <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
-                            <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
+                            <MeetCoreClientContext.Provider value={meetCoreClientRef.current}>
                                 <ErrorBoundary big component={<StandardErrorPage big />}>
                                     <NotificationsChildren />
                                     {children}
                                 </ErrorBoundary>
-                            </WasmContext.Provider>
+                            </MeetCoreClientContext.Provider>
                         </ApiContext.Provider>
                     </FlagProvider>
                 </Router>

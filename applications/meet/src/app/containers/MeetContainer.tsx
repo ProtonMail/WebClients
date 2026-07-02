@@ -196,8 +196,13 @@ export const MeetContainer = ({
         ]
     );
 
+    const debugOverlayValue = useMemo(
+        () => ({ isEnabled: debugOverlay.isEnabled, open: debugOverlay.open }),
+        [debugOverlay.isEnabled, debugOverlay.open]
+    );
+
     return (
-        <DebugOverlayContext.Provider value={{ isEnabled: debugOverlay.isEnabled, open: debugOverlay.open }}>
+        <DebugOverlayContext.Provider value={debugOverlayValue}>
             <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
                 <MeetingAnnouncer
                     isReconnecting={isReconnecting}

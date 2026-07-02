@@ -9,13 +9,13 @@ import { ParticipantEvent } from '@proton/meet/types/types';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
-import { useWasmApp } from '../../contexts/WasmContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { useAudioPlayer } from '../useAudioPlayer';
 
 export const useParticipantEvents = () => {
     const room = useRoomContext();
     const areSoundNotificationsEnabled = useFlag('MeetSoundNotificationsEnabled');
-    const wasmApp = useWasmApp();
+    const meetCoreClient = useMeetCoreClient();
     const { playAudio } = useAudioPlayer('/assets/sounds/join_notification.wav');
 
     const dispatch = useMeetDispatch();
@@ -26,17 +26,13 @@ export const useParticipantEvents = () => {
         }
 
         const updateActiveUuids = async () => {
-            if (!wasmApp) {
-                return;
-            }
-
             try {
                 const remoteParticipants = Array.from(room.remoteParticipants.values());
                 const allUuids = [
                     room.localParticipant.identity,
                     ...remoteParticipants.map((participant) => participant.identity),
                 ];
-                await wasmApp.setLivekitActiveUuids(allUuids);
+                await meetCoreClient.setLivekitActiveUuids(allUuids);
             } catch (error) {
                 // Logging error
                 // eslint-disable-next-line no-console
@@ -90,5 +86,5 @@ export const useParticipantEvents = () => {
             room.off('participantDisconnected', handleParticipantDisconnected);
             clearInterval(intervalId);
         };
-    }, [room, playAudio]);
+    }, [room, playAudio, meetCoreClient, dispatch, areSoundNotificationsEnabled]);
 };
