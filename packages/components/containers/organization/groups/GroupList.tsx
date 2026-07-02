@@ -14,7 +14,7 @@ import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces';
 import GroupItem from './GroupItem';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
-import { GROUPS_STATE } from './types';
+import { GROUPS_STATE, PANEL_HEADER_HEIGHT } from './types';
 
 // Sort by natural order e.g. [1, 10, 11, 2] -> [1, 2, 10, 11]
 const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
@@ -57,7 +57,7 @@ const GroupList = () => {
         <>
             <div
                 className="flex items-center gap-2 border-bottom pb-4 mb-4 shrink-0 flex-nowrap px-3 pt-4 h-custom"
-                style={{ '--h-custom': '5em' }}
+                style={{ '--h-custom': PANEL_HEADER_HEIGHT }}
             >
                 {showSearchInput ? (
                     <>
