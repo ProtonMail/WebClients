@@ -656,9 +656,6 @@
       "Load more": [
         "Încărcare mai multe"
       ],
-      "Loading verification": [
-        "În curs de verificare"
-      ],
       "Lost access to your 2FA device?": [
         "Ați pierdut accesul la dispozitivul pentru A2F?"
       ],
@@ -3694,6 +3691,15 @@
       "No one in your organization can connect to shared servers.": [
         "Nu se poate conecta nimeni din organizație la serverele partajate."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Rețineți că mesajele trimise la această adresă, chiar și de la alte adrese ${ BRAND_NAME }, nu vor mai fi criptate bilateral."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "După deconectare și dezactivare, nu veți mai putea trimite sau primi mesaje ca ${ address.Email } în ${ BRAND_NAME }. Mesajele trimise la această adresă vor ajunge în continuare în Gmail, dar nu și în ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "După deconectare, nu veți mai putea trimite sau primi mesaje ca ${ address.Email } în ${ BRAND_NAME }. Mesajele trimise la această adresă vor ajunge în continuare în Gmail, dar nu și în ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
       ],
@@ -3777,11 +3783,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Încă vă puteți conecta cu această adresă și reconecta oricând."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Nu veți mai putea folosi ${ address.Email } pentru a primi și trimite mesaje în ${ BRAND_NAME }. În plus, mesajele trimise la această adresă din ${ BRAND_NAME } nu vor fi criptate bilateral."
+      "You can reconnect this address at any time.": [
+        "Puteți reconecta această adresă oricând."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
@@ -4576,6 +4579,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Pentru această adresă poate fi modificată doar scrierea cu majuscule și punctuația (puncte, cratime și caractere de subliniere)."
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
@@ -7016,7 +7022,7 @@
         "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Copy the suggested password to clipboard": [
-        "Copiați parola sugerată în memorie."
+        "Copiere parolă sugerată în memorie."
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
@@ -7880,6 +7886,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "După ce a fost acordat accesul la cont, aceștia vă pot accesa setările de **Recuperare** și vă **schimbe parola ${ ACCOUNT_APP_NAME }**."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Doar scrierea cu majuscule și semnele de punctuație (puncte, cratime și sublinieri) pot fi modificate aici. Pentru a utiliza o adresă diferită, adăugați una nouă."
+      ],
       "Open source": [
         "Cod sursă public"
       ],
@@ -7993,9 +8002,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Solicitați proprietarului să vă invite direct la document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentificați cardul în fila de verificare."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentificați plata în fila de verificare."
       ],
@@ -8028,9 +8034,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
@@ -8422,6 +8425,11 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Procesul a fost întrerupt pentru ${ pausedCount } grup. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor.",
+        "Procesul a fost întrerupt pentru ${ pausedCount } grupuri. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor.",
+        "Procesul a fost întrerupt pentru ${ pausedCount } de grupuri. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Creditul de recomandare poate fi acordat până la două luni după încheierea perioadei de evaluare pentru persoana recomandată și dacă aceasta s-a abonat la un plan."
@@ -9076,9 +9084,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Veți recăpăta acces complet sau parțial la datele personale criptate."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
@@ -16725,6 +16730,9 @@
       "Are you sure you want to close the preview?": [
         "Închideți examinarea?"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Sigur doriți să vă deconectați și să dezactivați această adresă?"
+      ],
       "Are you sure you want to disconnect this address?": [
         "Sigur doriți să deconectați această adresă?"
       ],
@@ -17169,6 +17177,9 @@
       "Gift code": [
         "Cod cadou"
       ],
+      "Group role assignment paused": [
+        "Atribuirea rolului de grup a fost întreruptă"
+      ],
       "Groups": [
         "Grupuri"
       ],
@@ -17365,9 +17376,6 @@
       ],
       "Payment verification": [
         "Verificare plată"
-      ],
-      "PayPal verification failed": [
-        "Verificarea PayPal a eșuat"
       ],
       "Phone": [
         "Telefon"
@@ -18068,6 +18076,9 @@
       "Group membership paused": [
         "Apartenența la grup a fost suspendată"
       ],
+      "Role assignment paused": [
+        "Atribuirea rolului a fost suspendată"
+      ],
       "Sending member invitation": [
         "Se trimite invitația membrului"
       ],
@@ -18155,8 +18166,14 @@
       "Payment reversal": [
         "Anulare plată"
       ],
+      "Prepayment": [
+        "Plată în avans"
+      ],
       "Refund": [
         "Restituire"
+      ],
+      "Test credit": [
+        "Credit de test"
       ]
     },
     "Unlimited offer": {

@@ -656,9 +656,6 @@
       "Load more": [
         "Carrega'n més"
       ],
-      "Loading verification": [
-        "Carregant verificació"
-      ],
       "Lost access to your 2FA device?": [
         "Heu perdut l'accés al vostre dispositiu de 2FA?"
       ],
@@ -3671,6 +3668,15 @@
       "No one in your organization can connect to shared servers.": [
         "Ningú de la vostra organització no es pot connectar a servidors compartits."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Tingueu en compte que els correus electrònics enviats a aquesta adreça, fins i tot des d'altres adreces de ${ BRAND_NAME }, ja no s'encriptaran d'extrem a extrem."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Un cop desconnectat i desactivat, ja no podreu enviar ni rebre correus com a ${ address.Email } a ${ BRAND_NAME }. Els correus enviats a aquesta adreça continuaran arribant a Gmail, però no a ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Un cop desconnectat, ja no podreu enviar ni rebre correus com a ${ address.Email } a ${ BRAND_NAME }. Els correus enviats a aquesta adreça continuaran arribant a Gmail, però no a ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Llegiu, responeu i estigueu al dia de Gmail des de ${ MAIL_APP_NAME }"
       ],
@@ -3753,11 +3759,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Encara podeu iniciar sessió amb aquesta adreça i tornar-vos a connectar en qualsevol moment."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
+      "You can reconnect this address at any time.": [
+        "Podreu tornar a connectar aquesta adreça en qualsevol moment."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
@@ -4544,6 +4547,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Només es poden canviar les majúscules i la puntuació (punts, guionets i guions baixos) per aquesta adreça"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -7775,6 +7781,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Un cop concedit l'accés al vostre compte, podran anar a la vostra configuració de **Recuperació** i canviar-vos la **contrasenya de ${ ACCOUNT_APP_NAME }**."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Només podeu canviar les majúscules i la puntuació (punts, guionets i guions baixos). Per utilitzar una adreça diferent, afegiu-ne una de nova."
+      ],
       "Open source": [
         "Codi obert"
       ],
@@ -7884,9 +7893,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Demaneu al propietari que us convidi directament al document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentiqueu la vostra targeta a la pestanya de verificació."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentiqueu el vostre pagament a la pestanya de verificació."
       ],
@@ -7919,9 +7925,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé contacteu per assistència de PayPal."
       ],
       "Please use another browser or download the file.": [
         "Utilitzeu un altre navegador o descarregueu el fitxer."
@@ -8308,6 +8311,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "El procés s'ha interromput per a ${ pausedCount } grup. Feu clic a Continuar per reprendre l'assignació de rols.",
+        "El procés s'ha interromput per a ${ pausedCount } grups. Feu clic a Continuar per reprendre l'assignació de rols."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "El crèdit per recomanació es pot concedir fins dos mesos després que hagi finalitzat la prova del vostre amic, i només si aquest s'ha subscrit a un pla."
@@ -8953,9 +8960,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Recuperareu l'accés complet o parcial a les vostres dades xifrades."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
@@ -16468,6 +16472,9 @@
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Segur que voleu desconnectar i desactivar aquesta adreça?"
+      ],
       "Are you sure you want to disconnect this address?": [
         "Esteu segurs que voleu desconnectar aquesta adreça?"
       ],
@@ -16909,6 +16916,9 @@
       "Gift code": [
         "Codi regal"
       ],
+      "Group role assignment paused": [
+        "S'ha pausat l'assignació de rols de grup"
+      ],
       "Groups": [
         "Grups"
       ],
@@ -17104,9 +17114,6 @@
       ],
       "Payment verification": [
         "Verificació de pagament"
-      ],
-      "PayPal verification failed": [
-        "La verificació de PayPal no s'ha pogut completar."
       ],
       "Phone": [
         "Telèfon"
@@ -17806,6 +17813,9 @@
       "Group membership paused": [
         "S'ha pausat la subscripció del grup."
       ],
+      "Role assignment paused": [
+        "S'ha pausat l'assignació de rols"
+      ],
       "Sending member invitation": [
         "S'està enviant la invitació al membre."
       ],
@@ -17893,8 +17903,14 @@
       "Payment reversal": [
         "Cancel·lació de pagament"
       ],
+      "Prepayment": [
+        "Prepagament"
+      ],
       "Refund": [
         "Reemborsament"
+      ],
+      "Test credit": [
+        "Crèdit de prova"
       ]
     },
     "Unlimited offer": {

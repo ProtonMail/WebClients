@@ -656,9 +656,6 @@
       "Load more": [
         "Cargar más"
       ],
-      "Loading verification": [
-        "Cargando verificación"
-      ],
       "Lost access to your 2FA device?": [
         "¿Perdió el acceso a su dispositivo de 2FA?"
       ],
@@ -3671,6 +3668,15 @@
       "No one in your organization can connect to shared servers.": [
         "Nadie en su organización puede conectarse a servidores compartidos."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Tenga en cuenta que los correos electrónicos enviados a esta dirección, incluso desde otras direcciones de ${ BRAND_NAME }, ya no están cifrados de extremo a extremo."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada y desactivada, ya no puede enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección siguen llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada, ya no puede enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección siguen llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lea, responda y manténgase al día con Gmail desde dentro de ${ MAIL_APP_NAME }"
       ],
@@ -3753,11 +3759,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Todavía puede iniciar sesión con esta dirección y volver a conectarse en cualquier momento."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
+      "You can reconnect this address at any time.": [
+        "Puede reconectar esta dirección en cualquier momento."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
@@ -7887,9 +7890,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Pregunte al propietario que le invite directamente al documento."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique la tarjeta en la pestaña de verificación."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique el pago en la pestaña de verificación."
       ],
@@ -7922,9 +7922,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Intente de nuevo, use un método de pago diferente o contacte con PayPal por asistencia."
       ],
       "Please use another browser or download the file.": [
         "Use otro navegador o descargue el archivo."
@@ -8956,9 +8953,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Recuperará el acceso completo o parcial a sus datos cifrados."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pronto será redirigido a PayPal para verificar el pago."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
@@ -16468,6 +16462,9 @@
       "Are you sure you want to close the preview?": [
         "¿Está seguro de que quiere cerrar la vista previa?"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "¿En verdad desea desconectar y desactivar esta dirección?"
+      ],
       "Are you sure you want to disconnect this address?": [
         "¿En verdad desea desconectar esta dirección?"
       ],
@@ -17104,9 +17101,6 @@
       ],
       "Payment verification": [
         "Verificación de pago"
-      ],
-      "PayPal verification failed": [
-        "Error con la verificación de PayPal"
       ],
       "Phone": [
         "Teléfono"

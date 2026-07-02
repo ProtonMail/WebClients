@@ -656,9 +656,6 @@
       "Load more": [
         "Laad meer"
       ],
-      "Loading verification": [
-        "Verificatie laden"
-      ],
       "Lost access to your 2FA device?": [
         "Geen toegang meer tot uw 2FA-apparaat?"
       ],
@@ -6320,6 +6317,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } gebruiker moet hun uitnodiging accepteren om groepsmails te kunnen ontvangen.",
+        "${ invitedMemberCount } gebruikers moeten hun uitnodigingen accepteren om groepsmails te kunnen ontvangen."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
@@ -6363,6 +6364,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nieuw lid toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring.",
+        "${ pendingAdminMemberCount } nieuwe leden toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -7829,9 +7834,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authenticeer uw kaart in het verificatietabblad."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
@@ -7864,9 +7866,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -8184,6 +8183,9 @@
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
+      ],
+      "Synced from identity provider": [
+        "Gesynct vanuit identiteitsprovider"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Aanbevolen door TechRadar Pro met een beoordeling van 4,2 van de 5 sterren."
@@ -8895,9 +8897,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "U krijgt weer volledige of gedeeltelijke toegang tot uw versleutelde gegevens."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
@@ -13997,6 +13996,36 @@
         "SAML-configuratie aan het testen"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nieuw lid",
+        "${ memberCount } nieuwe leden"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } groep gesynct",
+        "${ numberOfPendingGroups } groepen gesynct"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } gebruiker gesynct",
+        "${ numberOfPendingUsers } gebruikers gesynct"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } groep",
+        "${ pendingGroupsCount } groepen"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } groep gesynct.",
+        "${ pendingGroupsCount } groepen gesynct."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } gebruiker",
+        "${ pendingUsersCount } gebruikers"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } gebruiker gesynct.",
+        "${ pendingUsersCount } gebruikers gesynct."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "SCIM configureren"
@@ -15056,6 +15085,11 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... wachten"
       ]
     },
     "Storage": {
@@ -16924,9 +16958,6 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
-      ],
-      "PayPal verification failed": [
-        "PayPal verificatie mislukt"
       ],
       "Phone": [
         "Telefoon"

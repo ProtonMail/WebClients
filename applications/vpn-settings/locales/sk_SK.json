@@ -656,9 +656,6 @@
       "Load more": [
         "Načítať viac"
       ],
-      "Loading verification": [
-        "Načítavanie overenia"
-      ],
       "Lost access to your 2FA device?": [
         "Stratili ste prístup k 2FA zariadeniu ?"
       ],
@@ -3717,6 +3714,15 @@
       "No one in your organization can connect to shared servers.": [
         "Nikto vo vašej organizácie sa nemôže pripojiť k zdieľaným serverom."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Upozorňujeme, že emaily zaslané na túto adresu, a to aj z iných adries ${ BRAND_NAME }, už nebudú end-to-end šifrované."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení a deaktivácii už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
       ],
@@ -3801,11 +3807,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Stále sa môžete prihlásiť pomocou tejto adresy a kedykoľvek sa znova pripojiť."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Na prijímanie a odosielanie emailov v službe ${ BRAND_NAME } už nebudete môcť používať adresu ${ address.Email }. Upozorňujeme tiež, že správy odosielané na túto adresu zo služby ${ BRAND_NAME } už nebudú end-to-end šifrované."
+      "You can reconnect this address at any time.": [
+        "Túto adresu môžete kedykoľvek opäť pripojiť."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Preposielate ${ numAddressesOrSync } Gmailovú adresu do aplikácie ${ MAIL_APP_NAME }.",
@@ -4608,6 +4611,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Na tejto adrese možno meniť len veľké písmená a interpunkciu (bodky, pomlčky a podčiarkovníky)."
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
@@ -7982,6 +7988,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Akonáhle bude udelený prístup k vášmu účtu, budú môcť otvoriť vaše nastavenia **Obnovenia** a **zmeniť vaše heslo k aplikácii ${ ACCOUNT_APP_NAME }** za vás."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tu je možné zmeniť iba veľké písmená a interpunkčné znamienka (bodky, pomlčky a podčiarknutia). Ak chcete použiť inú adresu, pridajte novú."
+      ],
       "Open source": [
         "Open source"
       ],
@@ -8099,9 +8108,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Požiadajte vlastníka, aby vás do dokumentu priamo pozval."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Overte svoju kartu v okne overenia."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Overte svoju platbu v okne overenia."
       ],
@@ -8134,9 +8140,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -8533,6 +8536,12 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Meno bude viditeľné pre vašich používateľov, keď budú prihlásení."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Proces bol prerušený pre ${ pausedCount } skupinu. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupiny. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupín. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupín. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Odmena za odporúčanie môže byť pripísaná najneskôr do 2 mesiacov po skončení skúšobnej doby vášho priateľa, a to len v prípade, že si váš priateľ predplatil niektorý z plánov"
@@ -9196,9 +9205,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Získate späť úplný alebo čiastočný prístup k svojim zašifrovaným dátam."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
@@ -16982,6 +16988,9 @@
       "Are you sure you want to close the preview?": [
         "Naozaj chcete zatvoriť náhľad?"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Naozaj chcete odpojiť a deaktivovať túto adresu?"
+      ],
       "Are you sure you want to disconnect this address?": [
         "Naozaj chcete odpojiť túto adresu?"
       ],
@@ -17429,6 +17438,9 @@
       "Gift code": [
         "Darčekový kód"
       ],
+      "Group role assignment paused": [
+        "Priradenie pozícií v skupine je pozastavené"
+      ],
       "Groups": [
         "Skupiny"
       ],
@@ -17626,9 +17638,6 @@
       ],
       "Payment verification": [
         "Overenie platby"
-      ],
-      "PayPal verification failed": [
-        "Overenie platby PayPal zlyhalo"
       ],
       "Phone": [
         "Telefón"
@@ -18330,6 +18339,9 @@
       "Group membership paused": [
         "Členstvo v skupine pozastavené"
       ],
+      "Role assignment paused": [
+        "Priradenie pozícií je pozastavené"
+      ],
       "Sending member invitation": [
         "Odosielanie členskej pozvánky"
       ],
@@ -18417,8 +18429,14 @@
       "Payment reversal": [
         "Storno platby"
       ],
+      "Prepayment": [
+        "Platba vopred"
+      ],
       "Refund": [
         "Vrátenie peňazí"
+      ],
+      "Test credit": [
+        "Testovací kredit"
       ]
     },
     "Unlimited offer": {
