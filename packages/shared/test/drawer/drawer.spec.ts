@@ -148,7 +148,7 @@ describe('drawer helpers', () => {
         const location = getMockedWindowLocation({ hostname: windowHostname });
 
         it('should post a message from the iframe', () => {
-            const spy = spyOn(window.parent, 'postMessage');
+            const spy = vi.spyOn(window.parent, 'postMessage').mockImplementation(() => undefined);
 
             const message: DRAWER_ACTION = {
                 type: DRAWER_EVENTS.READY,
@@ -171,7 +171,7 @@ describe('drawer helpers', () => {
         });
 
         it('should not post a message from the iframe', () => {
-            const spy = spyOn(window.parent, 'postMessage');
+            const spy = vi.spyOn(window.parent, 'postMessage').mockImplementation(() => undefined);
 
             const message: DRAWER_ACTION = {
                 type: DRAWER_EVENTS.READY,

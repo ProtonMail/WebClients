@@ -189,7 +189,7 @@ describe('guessTimeZone', () => {
 
     describe('should guess right when the browser detects "Europe/Zurich"', () => {
         beforeEach(() => {
-            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+            vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
                 resolvedOptions: () => ({ timeZone: 'Europe/Zurich' }),
             });
         });
@@ -201,7 +201,7 @@ describe('guessTimeZone', () => {
 
     describe('should guess right when the browser detects "Europe/Kyiv"', () => {
         beforeEach(() => {
-            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+            vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
                 resolvedOptions: () => ({ timeZone: 'Europe/Kyiv' }),
             });
         });
@@ -213,7 +213,7 @@ describe('guessTimeZone', () => {
 
     describe('should guess right when the browser detects "Pacific/Kanton"', () => {
         beforeEach(() => {
-            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+            vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
                 resolvedOptions: () => ({ timeZone: 'Pacific/Kanton' }),
             });
         });
@@ -227,20 +227,20 @@ describe('guessTimeZone', () => {
         beforeEach(() => {
             const baseTime = Date.UTC(2023, 2, 7, 9);
 
-            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+            vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
                 resolvedOptions: () => ({ timeZone: 'unknown' }),
             });
-            spyOn<any>(window, 'Date').and.returnValue({
-                getTime: () => baseTime,
-                getTimezoneOffset: () => -60,
-                getUTCFullYear: () => 2023,
-                getUTCMonth: () => 2,
-                getUTCDate: () => 7,
-                getUTCDay: () => 2,
-                getUTCHours: () => 9,
-                getUTCMinutes: () => 0,
-                getUTCSeconds: () => 0,
-                getUTCMilliseconds: () => 0,
+            vi.spyOn<any, any>(window, 'Date').mockImplementation(function (this: any) {
+                this.getTime = () => baseTime;
+                this.getTimezoneOffset = () => -60;
+                this.getUTCFullYear = () => 2023;
+                this.getUTCMonth = () => 2;
+                this.getUTCDate = () => 7;
+                this.getUTCDay = () => 2;
+                this.getUTCHours = () => 9;
+                this.getUTCMinutes = () => 0;
+                this.getUTCSeconds = () => 0;
+                this.getUTCMilliseconds = () => 0;
             });
         });
 

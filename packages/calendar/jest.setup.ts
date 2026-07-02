@@ -9,11 +9,6 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
     disconnect: jest.fn(),
 }));
 
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-    enUSLocale: { code: 'en-US' },
-}));
-
 jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
     __esModule: true,
     getFlagSvg: () => null,

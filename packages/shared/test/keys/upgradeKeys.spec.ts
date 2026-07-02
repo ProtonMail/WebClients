@@ -51,7 +51,10 @@ describe('upgrade keys v2', () => {
                     Keys: [keys[2].Key],
                 },
             ] as tsAddress[];
-            const api = jasmine.createSpy('api').and.returnValues(Promise.resolve({ Modulus }), Promise.resolve());
+            const api = vi
+                .fn()
+                .mockReturnValueOnce(Promise.resolve({ Modulus }))
+                .mockReturnValueOnce(Promise.resolve());
             const newKeyPassword = await upgradeV2KeysHelper({
                 user: User,
                 addresses: Addresses,
@@ -66,8 +69,8 @@ describe('upgrade keys v2', () => {
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
             }
-            expect(api.calls.all().length).toBe(2);
-            const newKeysArgs = api.calls.all()[1].args[0];
+            expect(api.mock.calls.length).toBe(2);
+            const newKeysArgs = api.mock.calls[1][0];
             const decryptedUserKeys = await getDecryptedUserKeysHelper(
                 { ...User, Keys: newKeysArgs.data.UserKeys },
                 newKeyPassword
@@ -85,15 +88,15 @@ describe('upgrade keys v2', () => {
             expect(newKeysArgs).toEqual({
                 url: 'core/v4/keys/private/upgrade',
                 method: 'post',
-                data: jasmine.objectContaining({
-                    KeySalt: jasmine.any(String),
-                    Auth: jasmine.any(Object),
-                    UserKeys: jasmine.any(Array),
-                    AddressKeys: jasmine.any(Array),
-                    SignedKeyLists: jasmine.any(Object),
+                data: expect.objectContaining({
+                    KeySalt: expect.any(String),
+                    Auth: expect.any(Object),
+                    UserKeys: expect.any(Array),
+                    AddressKeys: expect.any(Array),
+                    SignedKeyLists: expect.any(Object),
                 }),
             });
-            expect(newKeyPassword).toEqual(jasmine.any(String));
+            expect(newKeyPassword).toEqual(expect.any(String));
         });
     });
 
@@ -148,7 +151,10 @@ describe('upgrade keys v2', () => {
                     ],
                 },
             ] as tsAddress[];
-            const api = jasmine.createSpy('api').and.returnValues(Promise.resolve({ Modulus }), Promise.resolve());
+            const api = vi
+                .fn()
+                .mockReturnValueOnce(Promise.resolve({ Modulus }))
+                .mockReturnValueOnce(Promise.resolve());
             const newKeyPassword = await upgradeV2KeysHelper({
                 user: User,
                 addresses: Addresses,
@@ -163,8 +169,8 @@ describe('upgrade keys v2', () => {
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
             }
-            expect(api.calls.all().length).toBe(2);
-            const newKeysArgs = api.calls.all()[1].args[0];
+            expect(api.mock.calls.length).toBe(2);
+            const newKeysArgs = api.mock.calls[1][0];
             const decryptedKeys: PrivateKeyReference[] = await Promise.all(
                 newKeysArgs.data.Keys.map(({ PrivateKey }: any) => {
                     return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: newKeyPassword });
@@ -176,13 +182,13 @@ describe('upgrade keys v2', () => {
             expect(newKeysArgs).toEqual({
                 url: 'core/v4/keys/private/upgrade',
                 method: 'post',
-                data: jasmine.objectContaining({
-                    KeySalt: jasmine.any(String),
-                    Auth: jasmine.any(Object),
-                    Keys: jasmine.any(Array),
+                data: expect.objectContaining({
+                    KeySalt: expect.any(String),
+                    Auth: expect.any(Object),
+                    Keys: expect.any(Array),
                 }),
             });
-            expect(newKeyPassword).toEqual(jasmine.any(String));
+            expect(newKeyPassword).toEqual(expect.any(String));
         });
 
         it('should upgrade v2 keys in two password mode', async () => {
@@ -224,7 +230,7 @@ describe('upgrade keys v2', () => {
                     ],
                 },
             ] as tsAddress[];
-            const api = jasmine.createSpy('api').and.returnValues(Promise.resolve());
+            const api = vi.fn().mockReturnValueOnce(Promise.resolve());
             const newKeyPassword = await upgradeV2KeysHelper({
                 user: User,
                 addresses: Addresses,
@@ -236,11 +242,11 @@ describe('upgrade keys v2', () => {
                 preAuthKTVerify: () => async () => {},
                 keyMigrationKTVerifier: async () => {},
             });
-            expect(api.calls.all().length).toBe(1);
+            expect(api.mock.calls.length).toBe(1);
             if (!newKeyPassword) {
                 throw new Error('Missing password');
             }
-            const newKeysArgs = api.calls.all()[0].args[0];
+            const newKeysArgs = api.mock.calls[0][0];
             const decryptedKeys: PrivateKeyReference[] = await Promise.all(
                 newKeysArgs.data.Keys.map(({ PrivateKey }: any) => {
                     return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: newKeyPassword });
@@ -252,12 +258,12 @@ describe('upgrade keys v2', () => {
             expect(newKeysArgs).toEqual({
                 url: 'core/v4/keys/private/upgrade',
                 method: 'post',
-                data: jasmine.objectContaining({
-                    KeySalt: jasmine.any(String),
-                    Keys: jasmine.any(Array),
+                data: expect.objectContaining({
+                    KeySalt: expect.any(String),
+                    Keys: expect.any(Array),
                 }),
             });
-            expect(newKeyPassword).toEqual(jasmine.any(String));
+            expect(newKeyPassword).toEqual(expect.any(String));
         });
 
         it('should upgrade v2 and v3 keys mixed', async () => {
@@ -299,7 +305,7 @@ describe('upgrade keys v2', () => {
                     ],
                 },
             ] as tsAddress[];
-            const api = jasmine.createSpy('api').and.returnValues(Promise.resolve());
+            const api = vi.fn().mockReturnValueOnce(Promise.resolve());
             const newKeyPassword = await upgradeV2KeysHelper({
                 user: User,
                 addresses: Addresses,
@@ -314,8 +320,8 @@ describe('upgrade keys v2', () => {
             if (!newKeyPassword) {
                 throw new Error('Missing password');
             }
-            expect(api.calls.all().length).toBe(1);
-            const newKeysArgs = api.calls.all()[0].args[0];
+            expect(api.mock.calls.length).toBe(1);
+            const newKeysArgs = api.mock.calls[0][0];
             const decryptedKeys: PrivateKeyReference[] = await Promise.all(
                 newKeysArgs.data.Keys.map(({ PrivateKey }: any) => {
                     return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: newKeyPassword });
@@ -327,12 +333,12 @@ describe('upgrade keys v2', () => {
             expect(newKeysArgs).toEqual({
                 url: 'core/v4/keys/private/upgrade',
                 method: 'post',
-                data: jasmine.objectContaining({
-                    KeySalt: jasmine.any(String),
-                    Keys: jasmine.any(Array),
+                data: expect.objectContaining({
+                    KeySalt: expect.any(String),
+                    Keys: expect.any(Array),
                 }),
             });
-            expect(newKeyPassword).toEqual(jasmine.any(String));
+            expect(newKeyPassword).toEqual(expect.any(String));
         });
     });
 
@@ -371,7 +377,7 @@ describe('upgrade keys v2', () => {
                     ],
                 },
             ] as tsAddress[];
-            const api = jasmine.createSpy('api').and.returnValues(Promise.resolve());
+            const api = vi.fn().mockReturnValueOnce(Promise.resolve());
             const newKeyPassword = await upgradeV2KeysHelper({
                 user: User,
                 addresses: Addresses,
@@ -383,7 +389,7 @@ describe('upgrade keys v2', () => {
                 preAuthKTVerify: () => async () => {},
                 keyMigrationKTVerifier: async () => {},
             });
-            expect(api.calls.all().length).toBe(0);
+            expect(api.mock.calls.length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
         });
 
@@ -417,7 +423,10 @@ describe('upgrade keys v2', () => {
                     ],
                 },
             ] as tsAddress[];
-            const api = jasmine.createSpy('api').and.returnValues(Promise.resolve({ Modulus }), Promise.resolve());
+            const api = vi
+                .fn()
+                .mockReturnValueOnce(Promise.resolve({ Modulus }))
+                .mockReturnValueOnce(Promise.resolve());
             const newKeyPassword = await upgradeV2KeysHelper({
                 user: User,
                 addresses: Addresses,
@@ -429,7 +438,7 @@ describe('upgrade keys v2', () => {
                 preAuthKTVerify: () => async () => {},
                 keyMigrationKTVerifier: async () => {},
             });
-            expect(api.calls.all().length).toBe(0);
+            expect(api.mock.calls.length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
         });
     });

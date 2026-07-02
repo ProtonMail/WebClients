@@ -40,16 +40,16 @@ describe('getNotSyncedInfo', () => {
 
 describe('getCalendarIsNotSyncedInfo', () => {
     beforeEach(() => {
-        jasmine.clock().install();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jasmine.clock().uninstall();
+        vi.useRealTimers();
     });
 
     it('returns the correct message based on the status', () => {
         const mockDate = new Date(2020, 11, 11, 0, 0, 0);
-        jasmine.clock().mockDate(mockDate);
+        vi.setSystemTime(mockDate);
 
         const calendarCommon: VisualCalendar = {
             ID: 'calendarID',

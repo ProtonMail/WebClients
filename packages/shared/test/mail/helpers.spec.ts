@@ -8,7 +8,7 @@ describe('hasFlag', () => {
             Flags: MESSAGE_FLAGS.FLAG_SENT,
         } as Partial<Message>;
 
-        expect(hasFlag(MESSAGE_FLAGS.FLAG_SENT)(message)).toBeTrue();
+        expect(hasFlag(MESSAGE_FLAGS.FLAG_SENT)(message)).toBe(true);
     });
 
     it('should detect correctly that the message has not a flag', () => {
