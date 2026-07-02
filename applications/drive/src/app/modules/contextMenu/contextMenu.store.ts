@@ -1,57 +1,49 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { ContextMenuStore } from './types';
 
 const DROPDOWN_ANIMATION_TIME = 200;
 
-export const useContextMenuStore = create<ContextMenuStore>()(
-    devtools(
-        (set, get) => ({
+export const useContextMenuStore = create<ContextMenuStore>()((set, get) => ({
+    isOpen: false,
+    position: undefined,
+    lastCloseTime: undefined,
+    type: 'item',
+
+    open: () => {
+        const state = get();
+        const delay = !state.lastCloseTime ? 0 : DROPDOWN_ANIMATION_TIME - (Date.now() - state.lastCloseTime);
+
+        setTimeout(
+            () => {
+                set({ isOpen: true });
+            },
+            Math.max(delay, 0)
+        );
+    },
+
+    close: () => {
+        set({
             isOpen: false,
             position: undefined,
-            lastCloseTime: undefined,
-            type: 'item',
+            lastCloseTime: Date.now(),
+        });
+    },
 
-            open: () => {
-                const state = get();
-                const delay = !state.lastCloseTime ? 0 : DROPDOWN_ANIMATION_TIME - (Date.now() - state.lastCloseTime);
+    handleContextMenu: (e, type = 'item') => {
+        e.stopPropagation();
+        e.preventDefault();
 
-                setTimeout(
-                    () => {
-                        set({ isOpen: true });
-                    },
-                    Math.max(delay, 0)
-                );
-            },
+        set({ position: { top: e.clientY, left: e.clientX }, type });
+        get().open();
+    },
 
-            close: () => {
-                set({
-                    isOpen: false,
-                    position: undefined,
-                    lastCloseTime: Date.now(),
-                });
-            },
+    handleContextMenuTouch: (e, type = 'item') => {
+        e.stopPropagation();
+        e.preventDefault();
 
-            handleContextMenu: (e, type = 'item') => {
-                e.stopPropagation();
-                e.preventDefault();
-
-                set({ position: { top: e.clientY, left: e.clientX }, type });
-                get().open();
-            },
-
-            handleContextMenuTouch: (e, type = 'item') => {
-                e.stopPropagation();
-                e.preventDefault();
-
-                const touchPosition = e.changedTouches[e.changedTouches.length - 1];
-                set({ position: { top: touchPosition.clientY, left: touchPosition.clientX }, type });
-                get().open();
-            },
-        }),
-        {
-            name: 'drive-context-menu',
-        }
-    )
-);
+        const touchPosition = e.changedTouches[e.changedTouches.length - 1];
+        set({ position: { top: touchPosition.clientY, left: touchPosition.clientX }, type });
+        get().open();
+    },
+}));
