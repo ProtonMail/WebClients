@@ -49,7 +49,9 @@ export function DriveEmptyViewFreeUpload() {
 
     return (
         <MobileWrapper>
-            <div className={clsx(viewportWidth['>=large'] && 'h-full', 'border-weak border-dashed rounded m-10')}>
+            <div
+                className={clsx(viewportWidth['>=large'] && 'h-full', 'border border-3 border-weak border-dashed rounded m-10')}
+            >
                 <input multiple type="file" ref={fileInput} className="hidden" onChange={fileChange} />
                 <input type="file" ref={folderInput} className="hidden" onChange={folderChange} />
 
