@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,6 +9,15 @@ import { useCategoriesOnboarding } from './CategoriesOnboardingContext';
 import { OnboardingStep } from './onboardingInterface';
 
 import './CategoriesOnboardingSpotlights.scss';
+
+const needsWrapper = (children: React.ReactNode): boolean => {
+    if (!children || Array.isArray(children)) {
+        return true;
+    }
+
+    const child = children as ReactElement;
+    return typeof child.type !== 'string';
+};
 
 interface SpotlightContentProps {
     title: string;
@@ -101,6 +110,8 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
         }
     };
 
+    const shouldWrap = needsWrapper(children);
+
     return (
         <Spotlight
             show={activeStep === step}
@@ -109,7 +120,7 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
             innerClassName="p-6"
             content={getContent()}
         >
-            <div>{children}</div>
+            {shouldWrap ? <div>{children}</div> : children}
         </Spotlight>
     );
 };
