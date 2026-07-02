@@ -656,9 +656,6 @@
       "Load more": [
         "Carregar mais"
       ],
-      "Loading verification": [
-        "Carregando verificação"
-      ],
       "Lost access to your 2FA device?": [
         "Perdeu o acesso ao seu dispositivo A2F?"
       ],
@@ -4489,6 +4486,9 @@
       "Not a valid number": [
         "Não é um número válido"
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Apenas as maiúsculas e pontuação (pontos, hífenes, e sublinhados) podem ser mudados para este endereço"
+      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
@@ -4744,6 +4744,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -7751,9 +7754,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Solicite ao proprietário para convidá-lo diretamente para o documento."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique seu cartão na guia de verificação."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
       ],
@@ -7786,9 +7786,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -8806,9 +8803,6 @@
       "You will regain complete or partial access to your encrypted data.": [
         "Você recuperará o acesso total ou parcial aos seus dados criptografados."
       ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
       ],
@@ -9597,6 +9591,9 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Import your emails": [
+        "Importe seus e-mails"
       ],
       "Include application logs in bug report": [
         "Incluir os registros do aplicativo no relatório de erro"
@@ -13958,6 +13955,9 @@
       "Private user": [
         "Usuário privado"
       ],
+      "Review users and groups before finishing setup": [
+        "Revise usuários e grupo antes de terminar a configuração"
+      ],
       "Updated": [
         "Atualizado"
       ]
@@ -16092,6 +16092,9 @@
         "${ friendsSubscribed } amigo(a) inscrito(a)",
         "${ friendsSubscribed } amigos(as) inscritos(as)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizações"
       ],
@@ -16895,9 +16898,6 @@
       "Payment verification": [
         "Verificação de pagamento"
       ],
-      "PayPal verification failed": [
-        "Ocorreu um erro na verificação do PayPal"
-      ],
       "Phone": [
         "Telefone"
       ],
@@ -17680,6 +17680,9 @@
       "Payment reversal": [
         "Cancelamento de pagamento"
       ],
+      "Prepayment": [
+        "Pré-pagamento"
+      ],
       "Refund": [
         "Reembolso"
       ]
@@ -17875,6 +17878,9 @@
       ],
       "Invitation email": [
         "E-mail de convite"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
       ],
       "Name": [
         "Nome"
