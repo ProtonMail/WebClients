@@ -66,11 +66,12 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
       return
     }
 
+    const rootParentRect = rootParent.getBoundingClientRect()
     const linkNodeRect = linkNodeDOM.getBoundingClientRect()
 
     setPosition({
-      top: linkNodeRect.bottom + rootParent.scrollTop - rootParent.getBoundingClientRect().top + 10,
-      left: linkNodeRect.left,
+      top: linkNodeRect.bottom + rootParent.scrollTop - rootParentRect.top + 10,
+      left: linkNodeRect.left + rootParent.scrollLeft - rootParentRect.left,
     })
   }, [editor, linkNodeDOM])
 
