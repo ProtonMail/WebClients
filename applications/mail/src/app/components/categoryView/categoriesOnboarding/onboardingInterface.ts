@@ -17,7 +17,8 @@ export enum CategoriesOnboardingFlags {
     SPOTLIGHT_FREE_USERS = 1 << 4,
 }
 
-export const FeatureValueDefault = -1 as const;
+// Default flag value for a user who has not started the onboarding yet: no bit set.
+export const FeatureValueDefault = 0 as const;
 
 export enum OnboardingStep {
     NONE,
