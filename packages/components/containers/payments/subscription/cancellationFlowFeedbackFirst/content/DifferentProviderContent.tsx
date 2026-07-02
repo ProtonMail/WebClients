@@ -42,6 +42,7 @@ const CompetitorHeader = ({ competitors, competitor, onSelect }: CompetitorHeade
             shape="ghost"
             size="small"
             className="p-0"
+            dropdownSize={{ width: '14em' }}
             content={
                 <span className="flex items-center justify-center gap-2 flex-wrap">
                     <img src={competitor.logo} alt="" width={20} height={20} />
@@ -56,7 +57,7 @@ const CompetitorHeader = ({ competitors, competitor, onSelect }: CompetitorHeade
                         return (
                             <DropdownMenuButton
                                 key={competitorOption.name}
-                                className="flex items-center gap-2"
+                                className="flex items-center justify-center gap-2"
                                 onClick={() => {
                                     onSelect(competitorOption);
                                 }}
