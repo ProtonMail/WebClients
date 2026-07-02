@@ -134,7 +134,9 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         return process(paymentFacade.selectedProcessor);
     };
 
-    const selectedMethodCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    const selectedMethodCard =
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD ||
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
 
     const showAlert3ds = selectedMethodCard;
 

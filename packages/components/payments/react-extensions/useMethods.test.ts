@@ -2,7 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
 import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
-import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
 
@@ -43,6 +43,7 @@ beforeEach(() => {
                 Last4: '1234',
                 Brand: 'Visa',
             },
+            External: MethodStorage.EXTERNAL,
             IsDefault: true,
         },
     ];
@@ -117,7 +118,7 @@ it('should initialize payment methods (with chargebee)', async () => {
         value: '1',
     });
 
-    expect(result.current.savedSelectedMethod).toEqual({
+    expect(result.current.savedExternalSelectedMethod).toEqual({
         ID: '1',
         Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         Order: 500,
@@ -131,10 +132,12 @@ it('should initialize payment methods (with chargebee)', async () => {
             Last4: '1234',
             Brand: 'Visa',
         },
+        External: MethodStorage.EXTERNAL,
         IsDefault: true,
     });
 
     expect(result.current.status).toEqual(paymentStatus);
+    expect(result.current.isNewPaypal).toBe(false);
     expect(result.current.usedMethods).toEqual([
         {
             isDefault: true,
@@ -178,6 +181,131 @@ it('should initialize payment methods (with chargebee)', async () => {
         paymentMethodId: '1',
         type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         value: '1',
+    });
+});
+
+it('should filter out internal payment methods', async () => {
+    paymentMethods = [
+        {
+            ID: '2',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Order: 499,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.EXTERNAL,
+            IsDefault: true,
+        },
+        {
+            ID: '1',
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Order: 500,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.INTERNAL,
+            IsDefault: false,
+        },
+    ];
+
+    const { result } = componentsHookRenderer(() =>
+        useMethods(
+            {
+                paymentStatus,
+                amount: 1000,
+                currency: 'USD',
+                flow: 'credit',
+                paymentsApi: {
+                    status: () => paymentStatus,
+                } as any as PaymentsApi,
+                selectedPlanName: undefined,
+                enablePaypalRegionalCurrenciesBatch3: false,
+                enablePaypalKrw: false,
+            },
+            {
+                api: apiMock,
+                isAuthenticated: true,
+            }
+        )
+    );
+
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
+    expect(result.current.savedMethods).toEqual([
+        {
+            ID: '2',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Order: 499,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.EXTERNAL,
+            IsDefault: true,
+        },
+        {
+            ID: '1',
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Order: 500,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.INTERNAL,
+            IsDefault: false,
+        },
+    ]);
+
+    result.current.selectMethod('2');
+    await waitFor(() => {
+        expect(result.current.savedExternalSelectedMethod).toEqual({
+            ID: '2',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Order: 499,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.EXTERNAL,
+            IsDefault: true,
+        });
+    });
+    result.current.selectMethod('1');
+    await waitFor(() => {
+        expect(result.current.savedExternalSelectedMethod).toEqual(undefined);
     });
 });
 
@@ -280,6 +408,7 @@ it('should get saved method by its ID', async () => {
                 Last4: '1234',
                 Brand: 'Visa',
             },
+            External: MethodStorage.EXTERNAL,
             IsDefault: true,
         });
     });
@@ -329,6 +458,10 @@ it('should set selected method', async () => {
         });
     });
 
+    expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+    expect(result.current.savedExternalSelectedMethod).toEqual(undefined);
+    expect(result.current.isNewPaypal).toBe(false);
+
     result.current.selectMethod('chargebee-paypal');
     await waitFor(() => {
         expect(result.current.selectedMethod).toEqual({
@@ -338,6 +471,10 @@ it('should set selected method', async () => {
             value: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
         });
     });
+
+    expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+    expect(result.current.savedExternalSelectedMethod).toEqual(undefined);
+    expect(result.current.isNewPaypal).toBe(false);
 });
 
 it('should update amount correctly even if the initialization is slow', async () => {

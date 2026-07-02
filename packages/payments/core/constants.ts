@@ -9,6 +9,21 @@ export enum PAYMENT_TOKEN_STATUS {
 }
 
 export enum PAYMENT_METHOD_TYPES {
+    /**
+     * @deprecated
+     * Use CHARGEBEE_CARD instead.
+     */
+    CARD = 'card',
+    /**
+     * @deprecated
+     * Use CHARGEBEE_PAYPAL instead.
+     */
+    PAYPAL = 'paypal',
+    /**
+     * @deprecated
+     * Use CHARGEBEE_BITCOIN instead.
+     */
+    BITCOIN = 'bitcoin',
     CHARGEBEE_BITCOIN = 'chargebee-bitcoin',
     CASH = 'cash',
     TOKEN = 'token',
@@ -31,6 +46,11 @@ export const signupFlows: readonly PaymentMethodFlow[] = Object.freeze([
 export enum Autopay {
     DISABLE = 0,
     ENABLE = 1,
+}
+
+export enum MethodStorage {
+    INTERNAL = 0,
+    EXTERNAL = 1,
 }
 
 export enum InvoiceType {

@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,11 +20,12 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import noop from '@proton/utils/noop';
 
-import { getPaymentsVersion, setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
+import { getPaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
 import type { CardModel } from '../../core/cardDetails';
 import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
+import { v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
 import { tracePaymentError } from '../../sentry/capture';
 import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
 import { usePaymentPollers } from '../hooks/usePaymentPollers';
@@ -76,7 +77,15 @@ const EditCardModal = ({
 
                 const pollPaymentMethods = createPaymentMethodsPoller();
 
-                if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+                if (sourceType === PAYMENT_METHOD_TYPES.CARD) {
+                    const legacyPaymentToken = v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters);
+                    await api(
+                        setPaymentMethodV4({
+                            ...legacyPaymentToken.Payment,
+                            Autopay: renewToggleProps.renewState,
+                        })
+                    );
+                } else if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
                     await api(
                         setPaymentMethodV5({
                             PaymentToken: chargeablePaymentParameters.PaymentToken,
@@ -124,6 +133,19 @@ const EditCardModal = ({
             });
         }
     };
+
+    const loading = paymentFacade.methods.loading;
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+
+        if (paymentFacade.methods.isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)) {
+            paymentFacade.methods.selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+        } else {
+            paymentFacade.methods.selectMethod(PAYMENT_METHOD_TYPES.CARD);
+        }
+    }, [loading]);
 
     const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const formFullyLoaded = isChargebeeCard && chargebeeFormInitialized;

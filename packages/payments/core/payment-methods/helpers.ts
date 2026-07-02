@@ -9,6 +9,9 @@ import type { SavedPaymentMethod } from '../interface';
  */
 export function isSavablePaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
     const config: Record<PAYMENT_METHOD_TYPES, boolean> = {
+        [PAYMENT_METHOD_TYPES.CARD]: true,
+        [PAYMENT_METHOD_TYPES.PAYPAL]: true,
+        [PAYMENT_METHOD_TYPES.BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CASH]: false,
         [PAYMENT_METHOD_TYPES.TOKEN]: false,

@@ -1,13 +1,17 @@
 import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { SavedCardDetails, SavedPaymentMethod } from '@proton/payments/core/interface';
+import type {
+    SavedCardDetails,
+    SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
+} from '@proton/payments/core/interface';
 import { getBankSvg } from '@proton/payments/ui';
 
 import type { SavedMethodCustomType } from './SavedPaymentMethodDetails';
 import sepaBankIcon from './payment-method-icons/bank-transfer.svg';
 
 interface Props {
-    savedMethod: SavedPaymentMethod | undefined;
+    savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | undefined;
 }
 
 const SavedPaymentMethodIcon = ({ savedMethod }: Props) => {

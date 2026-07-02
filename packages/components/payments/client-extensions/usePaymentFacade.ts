@@ -35,6 +35,7 @@ import { useCbIframe } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
@@ -44,6 +45,7 @@ import { wrapMethods } from './useMethods';
 import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     getDefaultVerifyPayment,
+    getDefaultVerifyPaypal,
     useApplePayDependencies,
     useChargebeeCardVerifyPayment,
     useChargebeePaypalHandles,
@@ -275,6 +277,7 @@ export const usePaymentFacade = ({
         {
             api,
             isAuthenticated,
+            verifyPaymentPaypal: getDefaultVerifyPaypal(createModal, api),
             verifyPayment: getDefaultVerifyPayment(createModal, api),
             verifyPaymentChargebeeCard,
             chargebeeHandles,
@@ -286,6 +289,50 @@ export const usePaymentFacade = ({
     );
 
     const methods = wrapMethods(hook.methods, flow);
+
+    // todo: remove it
+    const userCanTrigger = {
+        [PAYMENT_METHOD_TYPES.CARD]: true,
+        [PAYMENT_METHOD_TYPES.CASH]: false,
+        [PAYMENT_METHOD_TYPES.PAYPAL]: true,
+        [PAYMENT_METHOD_TYPES.TOKEN]: false,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: true,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
+        [PAYMENT_METHOD_TYPES.BITCOIN]: false,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: true,
+        [PAYMENT_METHOD_TYPES.APPLE_PAY]: true,
+        [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: true,
+    };
+
+    const userCanTriggerSelected = methods.selectedMethod?.type ? userCanTrigger[methods.selectedMethod.type] : false;
+
+    /**
+     * The longer I looked at this construction in its previous reincarnation, the more I was puzzled about it.
+     * Interestingly enough, it crystalized again during the refactoring of payments, so it might be the only
+     * way to make it work.
+     * This construction makes possible rendering PayPal and PayPal Credit buttons at the same time.
+     * - We must pre-fetch the payment token, otherwise we won't be able to open the payment verification tab
+     *     in Safari (as of 16.5, both Desktop and Mobile). The tab can be opened only as a result of
+     *     synchronous handler of the click.
+     * - We can't prefetch the tokens inside the Paypal and Paypal Credit buttons, because Captcha must go
+     *     one after another.
+     * - We can't put this overall logic into the lower levels (react-extensions or core), because it depends
+     *     on the view and app-specific assumptions.
+     */
+    useEffect(() => {
+        async function run() {
+            if (hook.methods.isNewPaypal) {
+                hook.paypal.reset();
+
+                try {
+                    await hook.paypal.fetchPaymentToken();
+                } catch {}
+            }
+        }
+
+        run().catch(noop);
+    }, [hook.methods.isNewPaypal, amount, currency]);
 
     const paypalAbortRef = useRef<AbortController | null>(null);
     useEffect(() => {
@@ -374,9 +421,31 @@ export const usePaymentFacade = ({
             return false;
         }
 
+        const methodsWithTaxCountry: (PaymentMethodType | undefined)[] = [
+            PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            PAYMENT_METHOD_TYPES.APPLE_PAY,
+            PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+        ];
+
+        const isNewMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);
+
+        const isSavedExternalMethod = methodsWithTaxCountry.includes(methods.savedExternalSelectedMethod?.Type);
+
+        const migratableMethods: (PaymentMethodType | undefined)[] = [
+            PAYMENT_METHOD_TYPES.CARD,
+            PAYMENT_METHOD_TYPES.PAYPAL,
+        ];
+
+        const isSavedInternalMethod = migratableMethods.includes(methods.savedInternalSelectedMethod?.Type);
+
+        const isMethodTaxCountry = isNewMethod || isSavedExternalMethod || isSavedInternalMethod;
+
         const flowsWithoutTaxCountry: PaymentMethodFlow[] = ['invoice', 'credit', 'add-card', 'add-paypal'];
 
-        const showTaxCountry = !flowsWithoutTaxCountry.includes(flow);
+        const showTaxCountry = isMethodTaxCountry && !flowsWithoutTaxCountry.includes(flow);
         return showTaxCountry;
     };
 
@@ -393,6 +462,8 @@ export const usePaymentFacade = ({
         ...helpers,
         methods,
         api,
+        userCanTrigger,
+        userCanTriggerSelected,
         iframeHandles,
         selectedPlanName,
         paymentComponentLoaded: reportPaymentLoad,

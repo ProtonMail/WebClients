@@ -1,5 +1,6 @@
-import { type ADDON_NAMES, CURRENCIES, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { type ADDON_NAMES, CURRENCIES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import type {
+    CardPayment,
     ChargeablePaymentParameters,
     CreateCardDetailsBackend,
     Currency,
@@ -11,9 +12,12 @@ import type {
     PaymentMethodGooglePay,
     PaymentMethodSepa,
     PaymentMethodType,
+    PaypalPayment,
     PlainPaymentMethodType,
     SavedCardDetails,
     SavedPaymentMethod,
+    SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
     SepaDetails,
     TokenPayment,
     TokenPaymentMethod,
@@ -24,6 +28,10 @@ import type {
 import type { MaybeFreeSubscription } from './subscription/helpers';
 import type { Subscription } from './subscription/interface';
 
+export function isCardPayment(payment: CardPayment | undefined): payment is CardPayment {
+    return payment?.Type === PAYMENT_METHOD_TYPES.CARD && !!payment?.Details;
+}
+
 export function isTokenPayment(
     payment:
         | Omit<
@@ -33,6 +41,10 @@ export function isTokenPayment(
         | undefined
 ): payment is TokenPayment {
     return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!payment?.Details?.Token;
+}
+
+export function isPaypalPayment(payment: any): payment is PaypalPayment {
+    return payment && payment.Type === PAYMENT_METHOD_TYPES.PAYPAL;
 }
 
 export function isTokenPaymentMethod(data: TokenPaymentMethod | undefined): data is TokenPaymentMethod {
@@ -72,6 +84,20 @@ export function isSavedPaymentMethodApplePay(obj: SavedPaymentMethod | undefined
 
 export function isSavedPaymentMethodGooglePay(obj: SavedPaymentMethod | undefined): obj is PaymentMethodGooglePay {
     return !!obj && obj.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY && !!obj.Details;
+}
+
+export function isSavedPaymentMethodInternal(
+    paymentMethod?: SavedPaymentMethod
+): paymentMethod is SavedPaymentMethodInternal {
+    return (
+        paymentMethod?.External === MethodStorage.INTERNAL || (!!paymentMethod && paymentMethod.External === undefined)
+    );
+}
+
+export function isSavedPaymentMethodExternal(
+    paymentMethod?: SavedPaymentMethod
+): paymentMethod is SavedPaymentMethodExternal {
+    return paymentMethod?.External === MethodStorage.EXTERNAL;
 }
 
 export function methodMatches(
