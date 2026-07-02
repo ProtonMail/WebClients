@@ -49,7 +49,7 @@ export const UploadStep = ({ onNext }: OnboardingProps) => {
                         'drag-drop-zone',
                         isDragged && 'bg-weak',
                         'relative ratio-square w-full p-4',
-                        'rounded-xl border border-dashed border-strong',
+                        'rounded-xl border border-3 border-dashed border-strong',
                         'flex flex-column gap-4 justify-center items-center',
                     ])}
                     onDragExit={handleDragLeave}

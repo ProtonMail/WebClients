@@ -16,7 +16,7 @@ interface PublicFolderEmptyViewProps {
 
 export const PublicFolderEmptyView = ({ onUploadFile, onUploadFolder, uploadEnabled }: PublicFolderEmptyViewProps) => {
     return (
-        <div className={clsx('mb-5 h-full', uploadEnabled && 'border-2 border-dashed rounded border-norm')}>
+        <div className={clsx('mb-5 h-full', uploadEnabled && 'border border-2 border-dashed rounded border-norm')}>
             <DriveEmptyView
                 image={emptySvg}
                 title={c('Info').t`This folder is empty`}
