@@ -71,7 +71,7 @@ export const useMicrophoneVolumeAnalysis = () => {
                     audioContext,
                     stream,
                     analyser,
-                    dataArray: dataArray as Uint8Array<ArrayBuffer>,
+                    dataArray,
                 };
             } catch (error) {
                 await cleanupMicrophoneVolumeAnalysis();

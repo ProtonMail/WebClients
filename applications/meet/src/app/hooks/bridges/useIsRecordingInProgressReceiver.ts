@@ -11,12 +11,13 @@ import { addParticipantRecording, removeParticipantRecording } from '@proton/mee
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes, RecordingStatus } from '../../types';
 import { isValidMessageString } from '../../utils/isValidMessageString';
-import type { MeetCoreClient } from '../../wasm/MeetCoreClient';
 
-export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => {
+export const useIsRecordingInProgressReceiver = () => {
     const { reportMeetError } = useMeetErrorReporting();
+    const meetCoreClient = useMeetCoreClient();
 
     const store = useMeetStore();
     const dispatch = useMeetDispatch();
@@ -65,10 +66,6 @@ export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => 
                 return;
             }
 
-            if (!mls) {
-                return;
-            }
-
             // Wait for the participant to be fetched
             const senderParticipant = await waitForParticipant(participant.identity);
 
@@ -79,7 +76,7 @@ export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => 
 
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
-                const decrypted = await mls.decryptMessage(stringToUint8Array(decoded.message));
+                const decrypted = await meetCoreClient.decryptMessage(stringToUint8Array(decoded.message));
                 if (!decrypted) {
                     return;
                 }
@@ -138,7 +135,7 @@ export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => 
                 console.error('Error handling recording status message', error);
             }
         },
-        [dispatch, mls, reportMeetError, waitForParticipant]
+        [dispatch, meetCoreClient, reportMeetError, waitForParticipant]
     );
 
     const handleParticipantDisconnected = useCallback(

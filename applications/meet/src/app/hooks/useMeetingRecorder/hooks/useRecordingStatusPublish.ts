@@ -5,21 +5,20 @@ import type { Participant } from 'livekit-client';
 
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
-import { useMLSContext } from '../../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes, RecordingStatus } from '../../../types';
 
 export const useRecordingStatusPublish = (status: RecordingStatus) => {
     const room = useRoomContext();
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const publishRecordingStatus = useCallback(
         async (status: RecordingStatus, targetParticipantIdentity?: string) => {
-            if (!mls || !room) {
+            if (!room) {
                 return;
             }
 
-            const encryptedMessage = (await mls.encryptMessage(JSON.stringify({ status }))) as Uint8Array<ArrayBuffer>;
-
+            const encryptedMessage = await meetCoreClient.encryptMessage(JSON.stringify({ status }));
             const envelope = {
                 id: `${room.localParticipant.identity}-${Date.now()}`,
                 message: uint8ArrayToString(encryptedMessage),
@@ -35,7 +34,7 @@ export const useRecordingStatusPublish = (status: RecordingStatus) => {
                 destinationIdentities: targetParticipantIdentity ? [targetParticipantIdentity] : undefined,
             });
         },
-        [mls, room]
+        [meetCoreClient, room]
     );
 
     useEffect(() => {
