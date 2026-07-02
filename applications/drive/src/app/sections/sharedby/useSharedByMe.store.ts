@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
@@ -61,167 +60,154 @@ interface SharedByMeStore {
     unsubscribeToEvents: (context: string) => Promise<void>;
 }
 
-export const useSharedByMeStore = create<SharedByMeStore>()(
-    devtools(
-        (set, get) => ({
+export const useSharedByMeStore = create<SharedByMeStore>()((set, get) => ({
+    sharedByMeItems: new Map(),
+    sortedItemUids: new Set(),
+
+    sortField: SortField.name,
+    direction: SORT_DIRECTION.ASC,
+    sortConfig: defaultSharedByMeSortConfig,
+
+    isLoading: false,
+    hasEverLoaded: false,
+
+    eventSubscription: null,
+    eventPhotosSubscription: null,
+    activeContexts: new Set<string>(),
+
+    setSharedByMeItem: (item: SharedByMeItem) => {
+        set((state) => {
+            const newSharedByMeItems = new Map(state.sharedByMeItems);
+            newSharedByMeItems.set(item.nodeUid, item);
+            const sortedUids = sortItems(
+                Array.from(newSharedByMeItems.values()),
+                state.sortConfig,
+                state.direction,
+                getSharedByMeSortValue,
+                (i) => i.nodeUid
+            );
+            return {
+                sharedByMeItems: newSharedByMeItems,
+                sortedItemUids: new Set(sortedUids),
+            };
+        });
+    },
+
+    updateSharedByMeItem: (uid: string, updates: Partial<SharedByMeItem>) => {
+        set((state) => {
+            const existingItem = state.sharedByMeItems.get(uid);
+            if (!existingItem) {
+                return state;
+            }
+
+            const updatedItem = { ...existingItem, ...updates };
+            const newSharedByMeItems = new Map(state.sharedByMeItems);
+            newSharedByMeItems.set(uid, updatedItem);
+
+            return {
+                ...state,
+                sharedByMeItems: newSharedByMeItems,
+            };
+        });
+    },
+
+    removeSharedByMeItem: (uid: string) => {
+        set((state) => {
+            const newSharedByMeItems = new Map(state.sharedByMeItems);
+            newSharedByMeItems.delete(uid);
+            const newSortedItemUids = new Set<string>();
+            for (const id of state.sortedItemUids) {
+                if (id !== uid) {
+                    newSortedItemUids.add(id);
+                }
+            }
+            return {
+                sharedByMeItems: newSharedByMeItems,
+                sortedItemUids: newSortedItemUids,
+            };
+        });
+    },
+
+    clearAll: () => {
+        set({
             sharedByMeItems: new Map(),
             sortedItemUids: new Set(),
-
-            sortField: SortField.name,
-            direction: SORT_DIRECTION.ASC,
             sortConfig: defaultSharedByMeSortConfig,
+        });
+    },
 
-            isLoading: false,
-            hasEverLoaded: false,
+    cleanupStaleItems: (loadedUids: Set<string>) => {
+        set((state) => {
+            const newSharedByMeItems = new Map(state.sharedByMeItems);
+            const newSortedItemUids = new Set<string>(state.sortedItemUids);
 
-            eventSubscription: null,
-            eventPhotosSubscription: null,
-            activeContexts: new Set<string>(),
-
-            setSharedByMeItem: (item: SharedByMeItem) => {
-                set((state) => {
-                    const newSharedByMeItems = new Map(state.sharedByMeItems);
-                    newSharedByMeItems.set(item.nodeUid, item);
-                    const sortedUids = sortItems(
-                        Array.from(newSharedByMeItems.values()),
-                        state.sortConfig,
-                        state.direction,
-                        getSharedByMeSortValue,
-                        (i) => i.nodeUid
-                    );
-                    return {
-                        sharedByMeItems: newSharedByMeItems,
-                        sortedItemUids: new Set(sortedUids),
-                    };
-                });
-            },
-
-            updateSharedByMeItem: (uid: string, updates: Partial<SharedByMeItem>) => {
-                set((state) => {
-                    const existingItem = state.sharedByMeItems.get(uid);
-                    if (!existingItem) {
-                        return state;
-                    }
-
-                    const updatedItem = { ...existingItem, ...updates };
-                    const newSharedByMeItems = new Map(state.sharedByMeItems);
-                    newSharedByMeItems.set(uid, updatedItem);
-
-                    return {
-                        ...state,
-                        sharedByMeItems: newSharedByMeItems,
-                    };
-                });
-            },
-
-            removeSharedByMeItem: (uid: string) => {
-                set((state) => {
-                    const newSharedByMeItems = new Map(state.sharedByMeItems);
+            for (const [uid, item] of state.sharedByMeItems) {
+                const shouldCleanup = !loadedUids.has(item.nodeUid);
+                if (shouldCleanup) {
                     newSharedByMeItems.delete(uid);
-                    const newSortedItemUids = new Set<string>();
-                    for (const id of state.sortedItemUids) {
-                        if (id !== uid) {
-                            newSortedItemUids.add(id);
-                        }
-                    }
-                    return {
-                        sharedByMeItems: newSharedByMeItems,
-                        sortedItemUids: newSortedItemUids,
-                    };
-                });
-            },
-
-            clearAll: () => {
-                set({
-                    sharedByMeItems: new Map(),
-                    sortedItemUids: new Set(),
-                    sortConfig: defaultSharedByMeSortConfig,
-                });
-            },
-
-            cleanupStaleItems: (loadedUids: Set<string>) => {
-                set((state) => {
-                    const newSharedByMeItems = new Map(state.sharedByMeItems);
-                    const newSortedItemUids = new Set<string>(state.sortedItemUids);
-
-                    for (const [uid, item] of state.sharedByMeItems) {
-                        const shouldCleanup = !loadedUids.has(item.nodeUid);
-                        if (shouldCleanup) {
-                            newSharedByMeItems.delete(uid);
-                            newSortedItemUids.delete(uid);
-                        }
-                    }
-
-                    return {
-                        sharedByMeItems: newSharedByMeItems,
-                        sortedItemUids: newSortedItemUids,
-                    };
-                });
-            },
-
-            getSharedByMeItem: (uid: string) => get().sharedByMeItems.get(uid),
-
-            setSorting: ({ sortField, direction, sortConfig }) => {
-                const allItems = Array.from(get().sharedByMeItems.values());
-                const sortedUids = sortItems(
-                    allItems,
-                    sortConfig,
-                    direction,
-                    getSharedByMeSortValue,
-                    (item) => item.nodeUid
-                );
-                set({ sortField, direction, sortConfig, sortedItemUids: new Set(sortedUids) });
-            },
-
-            setLoading: (loading: boolean) => {
-                set({ isLoading: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-
-            setHasEverLoaded: () => set({ hasEverLoaded: true }),
-            checkAndSetHasEverLoaded: () => {
-                const state = get();
-                if (!state.isLoading && !state.hasEverLoaded) {
-                    state.setHasEverLoaded();
+                    newSortedItemUids.delete(uid);
                 }
-            },
+            }
 
-            subscribeToEvents: async (context: string) => {
-                const { activeContexts } = get();
+            return {
+                sharedByMeItems: newSharedByMeItems,
+                sortedItemUids: newSortedItemUids,
+            };
+        });
+    },
 
-                const newActiveContexts = new Set(activeContexts);
-                newActiveContexts.add(context);
-                set({ activeContexts: newActiveContexts });
+    getSharedByMeItem: (uid: string) => get().sharedByMeItems.get(uid),
 
-                const eventManager = getBusDriver();
-                await Promise.all([
-                    eventManager.subscribeSdkEventsMyUpdates(context),
-                    eventManager.subscribePhotosEventsMyUpdates(context),
-                ]);
+    setSorting: ({ sortField, direction, sortConfig }) => {
+        const allItems = Array.from(get().sharedByMeItems.values());
+        const sortedUids = sortItems(allItems, sortConfig, direction, getSharedByMeSortValue, (item) => item.nodeUid);
+        set({ sortField, direction, sortConfig, sortedItemUids: new Set(sortedUids) });
+    },
 
-                const unsubscribeFromEvents = subscribeToSharedByMeEvents();
-                set({ eventSubscription: unsubscribeFromEvents });
-            },
-            unsubscribeToEvents: async (context: string) => {
-                const eventManager = getBusDriver();
-                await Promise.all([
-                    eventManager.unsubscribeSdkEventsMyUpdates(context),
-                    eventManager.unsubscribePhotosEventsMyUpdates(context),
-                ]);
+    setLoading: (loading: boolean) => {
+        set({ isLoading: loading });
+        get().checkAndSetHasEverLoaded();
+    },
 
-                const { activeContexts, eventSubscription } = get();
-                const newActiveContexts = new Set(activeContexts);
-                newActiveContexts.delete(context);
-                set({ activeContexts: newActiveContexts });
-
-                if (newActiveContexts.size === 0 && eventSubscription) {
-                    eventSubscription();
-                    set({ eventSubscription: null });
-                }
-            },
-        }),
-        {
-            name: 'shared-by-me-store',
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
+    checkAndSetHasEverLoaded: () => {
+        const state = get();
+        if (!state.isLoading && !state.hasEverLoaded) {
+            state.setHasEverLoaded();
         }
-    )
-);
+    },
+
+    subscribeToEvents: async (context: string) => {
+        const { activeContexts } = get();
+
+        const newActiveContexts = new Set(activeContexts);
+        newActiveContexts.add(context);
+        set({ activeContexts: newActiveContexts });
+
+        const eventManager = getBusDriver();
+        await Promise.all([
+            eventManager.subscribeSdkEventsMyUpdates(context),
+            eventManager.subscribePhotosEventsMyUpdates(context),
+        ]);
+
+        const unsubscribeFromEvents = subscribeToSharedByMeEvents();
+        set({ eventSubscription: unsubscribeFromEvents });
+    },
+    unsubscribeToEvents: async (context: string) => {
+        const eventManager = getBusDriver();
+        await Promise.all([
+            eventManager.unsubscribeSdkEventsMyUpdates(context),
+            eventManager.unsubscribePhotosEventsMyUpdates(context),
+        ]);
+
+        const { activeContexts, eventSubscription } = get();
+        const newActiveContexts = new Set(activeContexts);
+        newActiveContexts.delete(context);
+        set({ activeContexts: newActiveContexts });
+
+        if (newActiveContexts.size === 0 && eventSubscription) {
+            eventSubscription();
+            set({ eventSubscription: null });
+        }
+    },
+}));
