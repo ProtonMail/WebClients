@@ -60,6 +60,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     if (isElectronMail) {
         void import('@proton/shared/lib/desktop/bootstrapCalendarInboxDesktop').then((module) => {
+            // Also registers baseline IPC and redirect protocols for the inbox desktop app.
             module.bootstrapCalendarInboxDesktop({
                 config,
                 authentication,

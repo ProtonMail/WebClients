@@ -1,6 +1,10 @@
 jest.mock("electron", () => ({
-    app: { on: jest.fn() },
-    shell: { openExternal: jest.fn() },
+    app: {
+        on: jest.fn(),
+        isPackaged: false,
+        getAppPath: jest.fn(() => "/mock/app"),
+    },
+    shell: { openExternal: jest.fn().mockResolvedValue(undefined) },
 }));
 
 jest.mock(
@@ -16,6 +20,8 @@ jest.mock(
 jest.mock("../log", () => ({
     protocolLogger: { info: jest.fn(), error: jest.fn(), log: jest.fn(), debug: jest.fn(), warn: jest.fn() },
 }));
+
+jest.mock("../sentryReport");
 
 jest.mock("node:child_process", () => ({
     execSync: jest.fn(),
