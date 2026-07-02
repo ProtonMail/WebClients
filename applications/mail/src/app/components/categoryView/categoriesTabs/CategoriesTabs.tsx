@@ -11,6 +11,7 @@ import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/ele
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
+import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { OnboardingStep } from '../categoriesOnboarding/onboardingInterface';
 import { useCategoriesView } from '../useCategoriesView';
@@ -25,6 +26,7 @@ import './CategoriesTabs.scss';
 export const CategoriesTabsList = () => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
+    const { activeStep, categorizeStepLocation } = useCategoriesOnboarding();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const activeCategoryID = useMailSelector(selectActiveCategoryID);
@@ -85,9 +87,16 @@ export const CategoriesTabsList = () => {
                         selectAll,
                     });
 
-                    if (category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL) {
+                    const isCategorizeStep =
+                        activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'tab';
+                    const isMessageStep = activeStep === OnboardingStep.MESSAGE;
+                    const isSocialCategory = category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL;
+
+                    if (isSocialCategory && (isCategorizeStep || isMessageStep)) {
+                        const stepToWatch = isCategorizeStep ? OnboardingStep.CATEGORIZE : OnboardingStep.MESSAGE;
+
                         return (
-                            <CategoriesOnboardingSpotlight step={OnboardingStep.MESSAGE} key={category.id}>
+                            <CategoriesOnboardingSpotlight step={stepToWatch} key={category.id}>
                                 <div
                                     className="tab-wrapper shrink-0"
                                     onDragOver={handleDragOver(category.id)}
