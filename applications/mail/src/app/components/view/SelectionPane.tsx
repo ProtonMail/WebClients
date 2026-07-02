@@ -13,7 +13,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -22,7 +21,13 @@ import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { loadedEmpty, selectActiveCategoryID, taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import {
+    contextTotal,
+    loadedEmpty,
+    selectActiveCategoryID,
+    selectLabelID,
+    taskRunningInLabel,
+} from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 import { getCategoryText, getFolderText, getLabelText } from './SelectionPane.strings';
@@ -42,15 +47,16 @@ const SelectionPaneWrapper = ({ children }: PropsWithChildren) => {
 };
 
 interface Props {
-    labelID: string;
     checkedIDs?: string[];
     onCheckAll: (checked: boolean) => void;
 }
 
-const SelectionPane = ({ labelID, checkedIDs = [], onCheckAll }: Props) => {
+const SelectionPane = ({ checkedIDs = [], onCheckAll }: Props) => {
     const theme = useTheme();
     const location = useLocation();
     const [mailSettings] = useMailSettings();
+
+    const labelID = useMailSelector(selectLabelID);
 
     const appLocation = useLocation();
     const conversationMode = isConversationMode(labelID, mailSettings, location);
@@ -62,10 +68,9 @@ const SelectionPane = ({ labelID, checkedIDs = [], onCheckAll }: Props) => {
     const isLoadedEmpty = useMailSelector(loadedEmpty);
 
     const categoryID = useMailSelector(selectActiveCategoryID);
-    const { getCurrentLocationCount } = useMailboxCounter();
+    const total = useMailSelector(contextTotal) || 0;
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
-    const total = getCurrentLocationCount().Total;
     const checkeds = checkedIDs.length;
     const count = checkeds || total;
 
