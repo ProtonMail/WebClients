@@ -1056,9 +1056,6 @@
       "Load more": [
         "Last inn mer"
       ],
-      "Loading verification": [
-        "Laster verifisering"
-      ],
       "Lost access to your 2FA device?": [
         "Mistet tilgangen til 2FA-enheten din?"
       ],
@@ -11866,9 +11863,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Be eieren om å invitere deg direkte til dokumentet."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentiser kortet ditt i verifiseringsfanen."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentiser betalingen din i verifiseringsfanen."
       ],
@@ -11916,9 +11910,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
@@ -13305,9 +13296,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Du vil få tilbake full eller delvis tilgang til dine krypterte data."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
@@ -16681,14 +16669,8 @@
       "Create a new ${ appName } account": [
         "Opprett en ny ${ appName }-konto"
       ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Nyt to uker med ${ BRAND_NAME } gratis"
-      ],
       "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
         "Opplev ekte personvern på nett med sikker e-post, skylagring, passordbehandling og VPN. Bli med i ${ BRAND_NAME } i dag og få ${ refereeRewardAmount } i rabatt på ditt neste abonnement."
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Opplev ekte pålogget personvern. Beskytt dataene dine med ${ BRAND_NAME } gratis de neste 14 dagene."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Finn ditt ${ BRAND_NAME }-konto brukernavn"
@@ -23258,6 +23240,9 @@
         "${ count } person",
         "${ count } personer"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Add a phone number": [
         "Legg til et telefonnummer"
       ],
@@ -23272,6 +23257,9 @@
       ],
       "Disable recovery by phone": [
         "Deaktiver gjenoppretting via telefon"
+      ],
+      "Disabled": [
+        "Deaktivert"
       ],
       "Generate a recovery phrase": [
         "Generer en gjenopprettingsfrase"
@@ -24041,12 +24029,6 @@
       ],
       "View VPN session details for your organization.": [
         "Vis VPN-øktdetaljer for organisasjonen din."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Med administrerte selskaper kan du legge til, redigere og fjerne tilgang for organisasjoner du fører tilsyn med."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "Din totale månedlige kostnad for alle administrerte selskaper."
       ]
     },
     "Success": {
@@ -25847,9 +25829,6 @@
       ],
       "Payment verification": [
         "Betalingsbekreftelse"
-      ],
-      "PayPal verification failed": [
-        "PayPal-bekreftelse mislyktes"
       ],
       "Pending invitations": [
         "Ventende invitasjoner"

@@ -117,6 +117,9 @@
       "Add calendar from URL": [
         "Añadir el calendario desde una URL"
       ],
+      "Add company": [
+        "Añadir empresa"
+      ],
       "Add condition": [
         "Agregar una condición"
       ],
@@ -582,6 +585,9 @@
       "Disable category": [
         "Desactivar categoría"
       ],
+      "Disable company": [
+        "Desactivar empresa"
+      ],
       "Disable recovery phrase": [
         "Desactivar frase de recuperación"
       ],
@@ -738,6 +744,9 @@
       "Enable category": [
         "Activar categoría"
       ],
+      "Enable company": [
+        "Activar empresa"
+      ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
       ],
@@ -777,11 +786,17 @@
       "Export as CSV": [
         "Exportar como CSV"
       ],
+      "Export breakdown by company as ZIP": [
+        "Exportar desglose por empresa como .zip"
+      ],
       "Export key": [
         "Exportar la clave"
       ],
       "Export key before deleting": [
         "Exportar clave antes de eliminarla"
+      ],
+      "Export overview as CSV": [
+        "Exportar resumen como CSV"
       ],
       "Extend": [
         "Ampliar"
@@ -1059,9 +1074,6 @@
       "Load more": [
         "Cargar más"
       ],
-      "Loading verification": [
-        "Cargando verificación"
-      ],
       "Lost access to your 2FA device?": [
         "¿Perdió el acceso a su dispositivo de 2FA?"
       ],
@@ -1070,6 +1082,9 @@
       ],
       "Make key primary": [
         "Marcar clave como principal"
+      ],
+      "Manage": [
+        "Gestionar"
       ],
       "Manage addresses": [
         "Gestionar direcciones"
@@ -4035,6 +4050,29 @@
         "blanco"
       ]
     },
+    "Column header": {
+      "Billing period": [
+        "Periodo de facturación"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "Managed companies": [
+        "Empresas gestionadas"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Total billed seats": [
+        "Licencias facturadas en total"
+      ],
+      "Total cost": [
+        "Costo total"
+      ],
+      "Used / assigned seats": [
+        "Licencias usadas / asignadas"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "empieza con"
@@ -5444,6 +5482,15 @@
       "No one in your organization can connect to shared servers.": [
         "Nadie en su organización puede conectarse a servidores compartidos."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Tenga en cuenta que los correos electrónicos enviados a esta dirección, incluso desde otras direcciones de ${ BRAND_NAME }, ya no están cifrados de extremo a extremo."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada y desactivada, ya no puede enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección siguen llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Una vez desconectada, ya no puede enviar ni recibir correos electrónicos como ${ address.Email } en ${ BRAND_NAME }. Los correos electrónicos enviados a esta dirección siguen llegando a Gmail, pero no a ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lea, responda y manténgase al día con Gmail desde dentro de ${ MAIL_APP_NAME }"
       ],
@@ -5550,11 +5597,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Todavía puede iniciar sesión con esta dirección y volver a conectarse en cualquier momento."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
+      "You can reconnect this address at any time.": [
+        "Puede reconectar esta dirección en cualquier momento."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
@@ -9752,6 +9796,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nunca comparte su información con terceros. Los datos provienen de los propios análisis de ${ BRAND_NAME } y Constella Intelligence."
       ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
@@ -10221,6 +10268,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All data and settings are preserved": [
+        "Se preservan todos los datos y ajustes"
+      ],
       "All inactive members deleted": [
         "Se eliminaron todos los miembros inactivos"
       ],
@@ -10378,6 +10428,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Pregunte al administrador de la organización para configurar puertas de enlace."
       ],
+      "Assigned seats won't be billed while disabled": [
+        "Las licencias asignadas no se facturarán mientras estén desactivadas"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
       ],
@@ -10422,6 +10475,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
+      ],
+      "Average": [
+        "Promedio"
       ],
       "Awaiting transaction": [
         "Esperando la transacción"
@@ -11653,6 +11709,9 @@
       "Member": [
         "Miembro"
       ],
+      "Members are signed out and can't sign back in": [
+        "Los miembros cerraron la sesión y no pueden volver a iniciarla"
+      ],
       "Merged": [
         "Fusionado"
       ],
@@ -11925,6 +11984,9 @@
       "per month, billed at ${ price }": [
         "mensual, facturado a ${ price }"
       ],
+      "Per seat/month": [
+        "Por licencia/mes"
+      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Periódicamente, le solicita verificar su contraseña de ${ BRAND_NAME } para asegurar que no la olvide. Se reducirá la frecuencia conforme pasa el tiempo."
       ],
@@ -11947,9 +12009,6 @@
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Pregunte al propietario que le invite directamente al documento."
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique la tarjeta en la pestaña de verificación."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique el pago en la pestaña de verificación."
@@ -11998,9 +12057,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Intente de nuevo, use un método de pago diferente o contacte con PayPal por asistencia."
       ],
       "Please use another browser or download the file.": [
         "Use otro navegador o descargue el archivo."
@@ -12155,6 +12211,9 @@
       "Restore": [
         "Restaurar"
       ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Revise los periodos anteriores y exporte los datos para generar informes o facturar a los clientes."
+      ],
       "Right to Left": [
         "Derecha a izquierda"
       ],
@@ -12244,6 +12303,9 @@
       ],
       "Set password": [
         "Definir una contraseña"
+      ],
+      "Set the name, status, and assigned seats": [
+        "Establezca el nombre, estado y licencias asignadas"
       ],
       "Set up your organization": [
         "Configure la organización"
@@ -12481,6 +12543,9 @@
       ],
       "The calendar will be removed from your account.": [
         "El calendario se eliminará de la cuenta."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "La empresa y todos sus miembros perderán acceso de inmediato."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "La dark web es una parte de internet oculta donde información robada, como identidades, pueden ser compradas y vendidas."
@@ -13100,6 +13165,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Enviaremos un código de restablecimiento a ${ boldValue }."
       ],
+      "What happens:": [
+        "Qué ocurre:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Cuando está desactivado, esto evita que todos los archivos de imagen se carguen en el dispositivo sin su conocimiento.\t"
       ],
@@ -13159,6 +13227,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con los grupos podrá enviar correos a todos los miembros de un grupo específico de manera rápida y sencilla."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Con empresas gestionadas, puede añadir, editar y borrar accesos en organizaciones que supervisa."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con el plan actual, solo puede recibir mensajes con la dirección @pm.me. Mejore para enviar mensajes y crear direcciones adicionales usando @pm.me."
@@ -13241,6 +13312,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puede editar esto una vez para asegurarse de la dirección de correo correcta para verificar."
+      ],
+      "You can enable this company again at any time.": [
+        "Puede volver a activar esta empresa en cualquier momento."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Puede aplicar las reglas de contraseña que los miembros de su organización usarán cuando creen o restablezcan la contraseña de sus cuentas de ${ BRAND_NAME }."
@@ -13394,9 +13468,6 @@
       "You will regain complete or partial access to your encrypted data.": [
         "Recuperará el acceso completo o parcial a sus datos cifrados."
       ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pronto será redirigido a PayPal para verificar el pago."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
       ],
@@ -13408,6 +13479,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podrá recuperar datos bloqueados usando los archivos de recuperación descargados. Esto también desactivará la recuperación desde un dispositivo."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Se le facturará mensualmente según el número promedio de licencias asignadas."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
@@ -13555,6 +13629,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Su tiquete de soporte se ha cerrado. Gracias por contactar al soporte de ${ BRAND_NAME }."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Su costo total mensual para todas las empresas gestionadas."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Su prueba finalizará en ${ timeRemaining }"
@@ -14383,6 +14460,9 @@
       "Assertion Consumer Service URL": [
         "URL de ACS (Assertion Consumer Service)"
       ],
+      "Assigned seats": [
+        "Licencias asignadas"
+      ],
       "Attach public key": [
         "Adjuntar clave pública"
       ],
@@ -14437,6 +14517,9 @@
       "Autosuggest": [
         "Sugerencias automáticas"
       ],
+      "Average": [
+        "Promedio"
+      ],
       "Awarded": [
         "Otorgado"
       ],
@@ -14449,8 +14532,14 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Con un costo de ${ priceYearly } cada 12 meses."
       ],
+      "Billed average": [
+        "Promedio facturado"
+      ],
       "Billed monthly.": [
         "Facturado mensualmente."
+      ],
+      "Billed seats": [
+        "Licencias facturadas"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -14551,6 +14640,9 @@
       "Common passwords": [
         "Contraseñas comunes"
       ],
+      "Companies": [
+        "Empresas"
+      ],
       "Company": [
         "Compañía"
       ],
@@ -14619,6 +14711,9 @@
       ],
       "Copy IP address to clipboard": [
         "Copiar dirección IP al portapapeles"
+      ],
+      "Cost": [
+        "Costo"
       ],
       "Could you please let us know which provider?": [
         "¿Podría indicarnos cuál proveedor?"
@@ -15422,6 +15517,12 @@
       "Search for a name or email": [
         "Buscar por nombre o correo electrónico"
       ],
+      "Seats": [
+        "Licencias"
+      ],
+      "Seats usage": [
+        "Uso de licencias"
+      ],
       "Second password": [
         "Segunda contraseña"
       ],
@@ -15626,6 +15727,9 @@
       ],
       "Token name": [
         "Nombre de token"
+      ],
+      "Total cost": [
+        "Costo total"
       ],
       "Transactions": [
         "Transacciones"
@@ -16802,14 +16906,8 @@
       "Create a new ${ appName } account": [
         "Cree una cuenta de ${ appName }"
       ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Disfrute de dos semanas de ${ BRAND_NAME } gratis"
-      ],
       "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
         "Experimente la verdadera privacidad en línea con un correo electrónico seguro, almacenamiento en la nube, gestor de contraseñas y VPN. Únase a ${ BRAND_NAME } hoy y obtenga ${ refereeRewardAmount } de descuento en su próxima suscripción."
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Experimente la verdadera privacidad en línea. Proteja sus datos con ${ BRAND_NAME } gratis durante los próximos 14 días."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Encontrar el nombre de usuario de ${ BRAND_NAME }"
@@ -20039,6 +20137,9 @@
       "Enter a name": [
         "Ingrese un nombre"
       ],
+      "Enter company name": [
+        "Editar nombre de la empresa"
+      ],
       "example@domain.com": [
         "ejemplo@dominio.com"
       ],
@@ -20095,6 +20196,9 @@
       ],
       "Search": [
         "Buscar"
+      ],
+      "Search for a company": [
+        "Buscar una empresa"
       ],
       "Search for a user or address": [
         "Buscar un usuario o dirección"
@@ -21291,6 +21395,9 @@
       "to recover your account if you're ever locked out": [
         "para recuperar la cuenta si alguna vez se bloqueara"
       ],
+      "update it now": [
+        "actualícelo ahora"
+      ],
       "Update your recovery phrase": [
         "Actualice su frase de recuperación"
       ],
@@ -21581,6 +21688,12 @@
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "Si no pudiera acceder a su cuenta de ${ BRAND_NAME }, le permitirá iniciar sesión y recuperar sus datos. Es la única manera de restaurar todo, así que asegúrese de guardarlo en un lugar seguro."
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Si ha cambiado su correo de recuperación, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Si ha cambiado su número de recuperación, ${ updatePhoneLink }."
+      ],
       "Later": [
         "Después"
       ],
@@ -21592,6 +21705,9 @@
       ],
       "Saved recovery phrase": [
         "Frase de recuperación guardada"
+      ],
+      "Send verification code": [
+        "Enviar código de verificación"
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Ya debe tener una cuenta de ${ BRAND_NAME }."
@@ -21617,8 +21733,23 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Para asegurarnos que el número telefónico es suyo, ingrese el código de verificación enviado a ${ boldPhoneNumber }."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Para asegurarnos de que esta dirección es realmente suya, le enviaremos un correo electrónico con un código de verificación."
+      ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "Para asegurarnos de que esta dirección es realmente suya, le enviaremos un correo electrónico con un enlace de verificación."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Para asegurarnos de que este número es realmente suyo, le enviaremos un SMS con un código de verificación."
+      ],
+      "Update": [
+        "Actualizar"
+      ],
+      "Update recovery email": [
+        "Actualizar correo de recuperación"
+      ],
+      "Update recovery phone": [
+        "Actualizar teléfono de recuperación"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "Actualice su plan para activar el Acceso de Emergencia a su cuenta. Esto le permitirá designar de 1 a 5 personas que podrán restablecer su contraseña."
@@ -21652,6 +21783,12 @@
       ],
       "Verify your recovery phone": [
         "Verifique su teléfono de recuperación"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Al verificar la dirección de correo incrementa la seguridad de la cuenta y permite más opciones de recuperación."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificar el número de teléfono aumenta la seguridad de la cuenta y permite opciones de recuperación adicionales."
       ],
       "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
         "Puede guardar una copia de seguridad de datos en este dispositivo. Esto restaurará el acceso a correos electrónicos, contactos, archivos, contraseñas y cualquier otro dato cifrado en su cuenta después de restablecer la contraseña, simplemente iniciando sesión en este dispositivo."
@@ -23487,6 +23624,9 @@
       "... waiting": [
         "... esperando"
       ],
+      "Active": [
+        "Activo"
+      ],
       "Add a phone number": [
         "Añadir un número de teléfono"
       ],
@@ -23504,6 +23644,9 @@
       ],
       "Disable recovery by phone": [
         "Desactivar la recuperación por teléfono"
+      ],
+      "Disabled": [
+        "Desactivado"
       ],
       "finalizing": [
         "finalizando"
@@ -24279,15 +24422,21 @@
       ],
       "View VPN session details for your organization.": [
         "Ver los detalles de la sesión VPN de su organización"
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Con compañías gestionadas, puede agregar, editar y borrar accesos en organizaciones que supervisa."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "Su costo total mensual para todas las compañías gestionadas."
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } activada"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } desactivado"
+      ],
+      "${ data.name } added": [
+        "${ data.name } añadida"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } actualizada"
+      ],
       "Account deleted. Signing out...": [
         "Cuenta eliminada. Cerrando sesión..."
       ],
@@ -24972,6 +25121,9 @@
       "Add categories": [
         "Agregar categorías"
       ],
+      "Add company": [
+        "Añadir empresa"
+      ],
       "Add contact group name": [
         "Agregar nombre al grupo de contactos"
       ],
@@ -25085,6 +25237,9 @@
       ],
       "Are you sure you want to close?": [
         "¿En verdad desea cerrar?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "¿En verdad desea desconectar y desactivar esta dirección?"
       ],
       "Are you sure you want to disconnect this address?": [
         "¿En verdad desea desconectar esta dirección?"
@@ -25466,6 +25621,9 @@
       "Disable categories?": [
         "¿Desactivar categorías?"
       ],
+      "Disable company": [
+        "Desactivar empresa"
+      ],
       "Disable device data backup?": [
         "¿Desactivar la copia de seguridad de datos del dispositivo?"
       ],
@@ -25531,6 +25689,9 @@
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
+      ],
+      "Edit company": [
+        "Editar empresa"
       ],
       "Edit countries": [
         "Editar los países"
@@ -26104,9 +26265,6 @@
       "Payment verification": [
         "Verificación de pago"
       ],
-      "PayPal verification failed": [
-        "Error con la verificación de PayPal"
-      ],
       "Pending invitations": [
         "Invitaciones pendientes"
       ],
@@ -26130,6 +26288,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Previous billing periods": [
+        "Periodos de facturación anteriores"
       ],
       "Priority support:": [
         "Soporte prioritario:"

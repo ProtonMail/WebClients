@@ -942,9 +942,6 @@
       "Load more": [
         "Mag-load ng higit pa"
       ],
-      "Loading verification": [
-        "Naglo-load ang verification"
-      ],
       "Lost access to your 2FA device?": [
         "Nawalan ng access sa 2FA device?"
       ],
@@ -10446,9 +10443,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Pakiusapan ang may-ari na direktang imbitahan ka sa dokumento."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Mangyaring i-authenticate ang card sa verification tab."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Mangyaring i-authenticate ang pagbabayad sa verification tab."
       ],
@@ -10487,9 +10481,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Pakisubukang muli gamit ang ibang paraan ng pagbabayad o makipag-ugnayan sa bangko."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Pakisubukang muli, gumamit ng ibang paraan ng pagbabayad o makipag-ugnayan sa PayPal para sa tulong."
       ],
       "Please use another browser or download the file.": [
         "Mangyaring gumamit ng ibang browser o i-download ang file."
@@ -11677,9 +11668,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "HINDI mo na mai-decrypt ang anumang mensahe, file, at iba pang data na naka-encrypt gamit ang key na ito. Hindi naive-verify ng mga application ng ${ BRAND_NAME } ang lahat ng data na nilagdaan gamit ang key na ito."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Malapit ka nang i-redirect sa PayPal upang i-verify ang pagbabayad."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Hindi ka sisingilin kung kakanselahin mo bago ang ${ trialEndsOnFormatted }."
@@ -14668,12 +14656,6 @@
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Gumawa ng ${ BRAND_NAME } Account | Bawiin ang iyong privacy"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "I-enjoy ang dalawang linggo ng ${ BRAND_NAME } nang libre"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Maranasan ang totoong online privacy. Protektahan ang iyong data gamit ang ${ BRAND_NAME } nang libre sa susunod na 14 na araw."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Hanapin ang iyong username ng ${ BRAND_NAME } Account"
@@ -20429,6 +20411,11 @@
         "Kinakansela ang subscription, mangyaring maghintay"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Hindi pinagana"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Mga Aksyon"
@@ -22654,9 +22641,6 @@
       ],
       "Payment verification": [
         "Verification ng pagbabayad"
-      ],
-      "PayPal verification failed": [
-        "Nabigo ang verification ng PayPal"
       ],
       "Pending invitations": [
         "Mga pending na imbitasyon"

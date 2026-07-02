@@ -948,9 +948,6 @@
       "Load more": [
         "Muat lebih banyak"
       ],
-      "Loading verification": [
-        "Memuat verifikasi"
-      ],
       "Lost access to your 2FA device?": [
         "Kehilangan akses ke perangkat 2FA Anda?"
       ],
@@ -10439,9 +10436,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Silakan autentikasi kartu Anda pada tab verifikasi."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Silakan autentikasi pembayaran Anda pada tab verifikasi."
       ],
@@ -10480,9 +10474,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
       ],
       "Please use another browser or download the file.": [
         "Silakan gunakan peramban lain atau unduh file yang bersangkutan."
@@ -11680,9 +11671,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Anda TIDAK akan dapat mendekripsi pesan, file, dan data lain mana pun yang terenkripsi dengan kunci ini. Seluruh data yang ditandatangani dengan kunci ini tidak akan lagi diverifikasi oleh aplikasi ${ BRAND_NAME }."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
@@ -14672,12 +14660,6 @@
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Buat Akun ${ BRAND_NAME } | Raih kembali privasi Anda"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Nikmati dua minggu gratis ${ BRAND_NAME }"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Nikmati privasi daring yang sesungguhnya. Lindungi data Anda dengan ${ BRAND_NAME } gratis selama 14 hari."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Temukan nama pengguna Akun ${ BRAND_NAME } Anda"
@@ -20400,6 +20382,11 @@
         "Membatalkan langganan Anda, mohon menunggu"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Dinonaktifkan"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Tindakan"
@@ -22608,9 +22595,6 @@
       ],
       "Payment verification": [
         "Verifikasi pembayaran"
-      ],
-      "PayPal verification failed": [
-        "Verifikasi PayPal gagal"
       ],
       "Pending invitations": [
         "Undangan yang belum ditanggapi"
