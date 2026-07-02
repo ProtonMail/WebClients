@@ -74,8 +74,21 @@ export const useIsRecordingInProgressReceiver = () => {
                 return;
             }
 
+            let decoded;
+
             try {
-                const decoded = JSON.parse(new TextDecoder().decode(payload));
+                decoded = JSON.parse(new TextDecoder().decode(payload));
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error('Error decoding payload', error);
+                return;
+            }
+
+            if (decoded.type !== PublishableDataTypes.RecordingStatus) {
+                return;
+            }
+
+            try {
                 const decrypted = await meetCoreClient.decryptMessage(stringToUint8Array(decoded.message));
                 if (!decrypted) {
                     return;
@@ -118,10 +131,6 @@ export const useIsRecordingInProgressReceiver = () => {
                 }
 
                 const parsed = JSON.parse(decryptedMessage);
-
-                if (decoded.type !== PublishableDataTypes.RecordingStatus) {
-                    return;
-                }
 
                 if (parsed.status === RecordingStatus.Started) {
                     dispatch(addParticipantRecording(mlsSenderId));
