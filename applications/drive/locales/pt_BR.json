@@ -3967,6 +3967,9 @@
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
+      ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estratégia de conflito desconhecida: ${ strategy }"
       ],
@@ -6097,9 +6100,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Solicite ao proprietário para convidá-lo diretamente para o documento."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique seu cartão na guia de verificação."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
       ],
@@ -6142,9 +6142,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -6858,9 +6855,6 @@
       "You will need to save it again from the public link page.": [
         "Você precisará salvá-lo novamente na página do link público.",
         "Você precisará salvá-los novamente na página do link público."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
@@ -9578,9 +9572,6 @@
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente"
       ],
-      "Failed to open document": [
-        "Falha ao abrir o documento"
-      ],
       "Failed to reject share invitation": [
         "Falha ao rejeitar convite de compartilhamento"
       ],
@@ -12264,6 +12255,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de envios gratuitos."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -12867,9 +12861,6 @@
       ],
       "Payment verification": [
         "Verificação de pagamento"
-      ],
-      "PayPal verification failed": [
-        "Ocorreu um erro na verificação do PayPal"
       ],
       "Phone numbers": [
         "Números de telefone"

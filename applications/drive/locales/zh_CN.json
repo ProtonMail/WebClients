@@ -852,6 +852,9 @@
       "Report a problem": [
         "反馈问题"
       ],
+      "Report abuse": [
+        "举报滥用"
+      ],
       "Report an issue": [
         "报告问题"
       ],
@@ -5642,6 +5645,9 @@
       "How does encrypted search work?": [
         "加密搜索如何工作？"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "我在此确认，本人善意认为本报告中所含信息和陈述真实且完整。"
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "如果这些文件未在 ${ deviceName } 本地完全下载，您将无法访问它们。"
       ],
@@ -6050,9 +6056,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "请让所有者直接邀请您加入文档。"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "请在验证页面完成银行卡核验。"
-      ],
       "Please authenticate your payment in the verification tab.": [
         "请在验证页面确认支付。"
       ],
@@ -6094,9 +6097,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
@@ -6814,9 +6814,6 @@
       ],
       "You will need to save it again from the public link page.": [
         "您需要从公共链接页面重新保存它们。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "即将为您转至 PayPal 确认支付。"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
@@ -9418,9 +9415,6 @@
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
-      ],
-      "Failed to open document": [
-        "无法打开文档"
       ],
       "Failed to reject share invitation": [
         "拒绝分享邀请失败"
@@ -12652,9 +12646,6 @@
       ],
       "Payment verification": [
         "支付验证"
-      ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
       ],
       "Phone numbers": [
         "电话号码"

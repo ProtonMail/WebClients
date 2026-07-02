@@ -857,6 +857,9 @@
       "Report a problem": [
         "Ein Problem melden"
       ],
+      "Report abuse": [
+        "Missbrauch melden"
+      ],
       "Report an issue": [
         "Ein Problem melden"
       ],
@@ -1640,6 +1643,9 @@
       ],
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
       ],
       "Not activated": [
         "Nicht aktiviert"
@@ -5644,6 +5650,9 @@
       "Files and folders that others shared with you will appear here": [
         "Dateien und Ordner, die andere mit dir geteilt haben, werden hier angezeigt."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
       "finance": [
         "Finanzen"
       ],
@@ -5697,6 +5706,9 @@
       ],
       "How does encrypted search work?": [
         "Wie funktioniert die verschlüsselte Suche?"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Hiermit bestätige ich nach bestem Wissen und Gewissen, dass die im Bericht enthaltenen Angaben und Aussagen richtig und vollständig sind."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Wenn diese Dateien nicht vollständig lokal auf ${ deviceName } heruntergeladen sind, verlierst du den Zugang dazu."
@@ -6112,9 +6124,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Bitte den Eigentümer, dich direkt zu dem Dokument einzuladen."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Bitte authentifiziere deine Karte im Verifikationstab."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
@@ -6158,9 +6167,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
-      ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
       ],
@@ -6175,6 +6181,12 @@
       ],
       "Preparing": [
         "Vorbereitung"
+      ],
+      "Preparing download": [
+        "Download wird vorbereitet"
+      ],
+      "Preparing…": [
+        "Vorbereiten…"
       ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
@@ -6880,9 +6892,6 @@
       "You will need to save it again from the public link page.": [
         "Du musst es von der Seite mit den öffentlichen Links erneut speichern.",
         "Du musst sie von der Seite mit den öffentlichen Links erneut speichern."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
@@ -9613,9 +9622,6 @@
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuche es erneut"
       ],
-      "Failed to open document": [
-        "Dokument konnte nicht geöffnet werden"
-      ],
       "Failed to reject share invitation": [
         "Ablehnung der Einladung zur gemeinsamen Nutzung fehlgeschlagen"
       ],
@@ -12293,6 +12299,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } kostenlose Uploads."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Account recovery": [
         "Kontowiederherstellung"
       ],
@@ -12908,9 +12917,6 @@
       ],
       "Payment verification": [
         "Zahlungsbestätigung"
-      ],
-      "PayPal verification failed": [
-        "PayPal-Verifizierung fehlgeschlagen"
       ],
       "Phone numbers": [
         "Telefonnummern"

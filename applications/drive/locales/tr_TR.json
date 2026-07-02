@@ -857,6 +857,9 @@
       "Report a problem": [
         "Sorun bildirin"
       ],
+      "Report abuse": [
+        "Kötüye kullanımı bildir"
+      ],
       "Report an issue": [
         "Sorun bildireceğim"
       ],
@@ -3733,7 +3736,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak sürücü bulunamadı"
+        "İçe aktarılacak bir sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -3748,7 +3751,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
+        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -3989,7 +3992,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Çakışma yöntemi bilinmiyor: ${ strategy }"
@@ -5669,7 +5672,7 @@
         "Başkalarının sizinle paylaştığı dosyalar ve klasörler burada görüntülenir"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "finance": [
         "finans"
@@ -5724,6 +5727,9 @@
       ],
       "How does encrypted search work?": [
         "Şifrelenmiş arama nasıl çalışır?"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "İşbu belge ile raporda yer alan bilgi ve beyanların doğru ve eksiksiz olduğuna iyi niyetle inandığımı teyit ederim."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Bu dosyalar tam olarak ${ deviceName } üzerine yerel olarak indirilmemişse, onlara erişemeyeceksiniz."
@@ -6139,9 +6145,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Belge sahibinden size davet göndermesini isteyin."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
       ],
@@ -6184,9 +6187,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
@@ -6913,9 +6913,6 @@
       "You will need to save it again from the public link page.": [
         "Onu herkese açık bağlantı sayfasından yeniden kaydetmeniz gerekiyor.",
         "Onları herkese açık bağlantı sayfasından yeniden kaydetmeniz gerekiyor."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
@@ -9342,7 +9339,7 @@
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9588,9 +9585,6 @@
       ],
       "Failed to move, please try again": [
         "Taşınamadı. Lütfen yeniden deneyin"
-      ],
-      "Failed to open document": [
-        "Belge açılamadı"
       ],
       "Failed to reject share invitation": [
         "Paylaşma daveti reddedilemedi"
@@ -12887,9 +12881,6 @@
       ],
       "Payment verification": [
         "Ödeme doğrulama"
-      ],
-      "PayPal verification failed": [
-        "PayPal doğrulaması başarısız oldu"
       ],
       "Phone numbers": [
         "Telefon numaraları"
