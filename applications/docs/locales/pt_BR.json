@@ -3141,9 +3141,6 @@
       "Failed to load 'My files' folder": [
         "Falha ao carregar a pasta 'Meus arquivos'"
       ],
-      "Failed to load document details": [
-        "Falha ao carregar os detalhes de documento"
-      ],
       "Failed to load recent documents": [
         "Falha ao carregar os documentos recentes"
       ],
@@ -3478,6 +3475,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -9953,6 +9953,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperação de conta"

@@ -993,9 +993,6 @@
       "Load more": [
         "더 불러오기"
       ],
-      "Loading verification": [
-        "인증 정보 불러오는 중"
-      ],
       "Lost access to your 2FA device?": [
         "2단계 인증 장치에 대한 접근 권한을 분실하셨나요?"
       ],
@@ -3016,6 +3013,11 @@
         "둘러보기"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "기존에 불러온 항목 중 중복되는 항목은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
+      ]
+    },
     "Calendar access select label": {
       "Add people or groups": [
         "사람 또는 그룹 추가"
@@ -4854,7 +4856,7 @@
         "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "귀하의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
+        "회원님의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
@@ -4952,6 +4954,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Gmail로부터 기존 이메일을 불러오고 새로운 메시지는 전달 받아 동기화할 수 있습니다."
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail에서 사용자의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
@@ -4989,16 +4994,16 @@
         "${ MAIL_APP_NAME }에 외부 계정 주소가 연결되어 있습니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정의 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
-        "귀하의 요금제는 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
+        "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
       ]
     },
     "description": {
@@ -6777,6 +6782,9 @@
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
+      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -6814,7 +6822,7 @@
         "구독을 다시 활성화하기 전 결제 수단을 추가해 주세요."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
-        "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
+        "사용자의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주세요."
       ],
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
@@ -9160,7 +9168,7 @@
         "${ vaultLink } 업데이트됨"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME }은(는) 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }은(는) 귀하의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
+        "${ VPN_SHORT_APP_NAME }은 당신의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }는 당신의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "국가 수준의 접속에는 ${ vpnPlus }가 필요합니다."
@@ -10983,9 +10991,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "해당 문서에 초대하려면 소유자에게 연락하세요."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "인증 탭에서 카드를 인증해 주세요."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "인증 탭에서 결제 수단을 인증해 주세요."
       ],
@@ -11033,9 +11038,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "다시 시도하거나, 다른 결제 수단을 사용하거나 PayPal에 연락해 도움을 요청하세요."
       ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
@@ -12043,7 +12045,7 @@
         "처리가 완료되면 알려드리겠습니다."
       ],
       "We'll remind you to verify your password again later": [
-        "귀하의 비밀번호를 나중에 다시 확인하도록 알려드리겠습니다"
+        "회원님의 비밀번호를 나중에 다시 확인하도록 알려드립니다."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -12335,9 +12337,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "이 키로 암호화된 메시지, 파일 및 기타 데이터를 해독할 수 없습니다. 이 키로 서명된 모든 데이터는 더 이상 ${ BRAND_NAME } 애플리케이션에 의해 확인되지 않습니다."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
@@ -13830,6 +13829,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Import your emails": [
+        "내 이메일 불러오기"
       ],
       "Inbox": [
         "받은 메일함"
@@ -15476,12 +15478,6 @@
       ],
       "Create a new ${ appName } account": [
         "신규 ${ appName } 계정 생성"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME } 2주 무료 체험을 즐겨보세요."
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "진정한 온라인에서의 개인정보 보호를 경험하세요. ${ BRAND_NAME }으로 향후 14일간 무료로 데이터를 보호해 보세요."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } 사용자 이름 찾기"
@@ -21748,6 +21744,9 @@
       "${ count } person": [
         "${ count }명"
       ],
+      "Active": [
+        "활성화"
+      ],
       "Add a phone number": [
         "복구 휴대폰 추가"
       ],
@@ -21759,6 +21758,9 @@
       ],
       "Disable recovery by phone": [
         "휴대폰으로 복구 비활성화"
+      ],
+      "Disabled": [
+        "비활성화됨"
       ],
       "Generate a recovery phrase": [
         "새로운 복구 키 생성"
@@ -24136,9 +24138,6 @@
       ],
       "Payment verification": [
         "지불 방법 확인"
-      ],
-      "PayPal verification failed": [
-        "PayPal 인증 실패"
       ],
       "Pending invitations": [
         "초대 대기 중"

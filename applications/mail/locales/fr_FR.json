@@ -8100,9 +8100,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Veuillez demander au propriétaire de vous inviter directement au document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authentifiez votre carte dans l'onglet de vérification."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authentifiez votre paiement dans l'onglet de vérification."
       ],
@@ -8154,9 +8151,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -9029,6 +9023,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Vous avez ${ totalLabel } dans votre boîte de réception."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
+        "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez **${ count } conversation** stockée dans ce dossier.",
         "Vous avez **${ count } conversations** stockées dans ce dossier."
@@ -9036,6 +9037,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Vous avez **${ count } conversation** marqué avec ce label.",
         "Vous avez **${ count } conversations** marquées avec ce label."
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Vous avez **${ count } message** dans la catégorie ${ categoryLabel }",
+        "Vous avez **${ count } messages** dans la catégorie ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Vous avez **${ count } message** stocké dans ce dossier",
@@ -9051,6 +9056,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Vous disposez d'une période d'essai pour l'abonnement ${ planTitle }. Aucun paiement n'est requis pour le moment. Votre abonnement se renouvellera automatiquement à la fin de la période d'essai."
       ],
+      "You have no conversations in this category": [
+        "Vous n'avez aucune conversation dans cette catégorie"
+      ],
+      "You have no messages in this category": [
+        "Vous n'avez aucun message dans cette catégorie"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Votre message n'a pas d'objet. Voulez-vous quand même l'envoyer ?"
       ],
@@ -9065,6 +9076,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } conversation** dans la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** dans la catégorie ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Vous avez sélectionné **${ checked } message** dans la catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** dans la catégorie ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Vous avez sélectionné **${ count } conversation** de ce dossier.",
@@ -9100,9 +9119,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
@@ -10060,6 +10076,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "New": [
+        "Nouveau"
+      ],
       "New password": [
         "Nouveau mot de passe"
       ],
@@ -10068,6 +10087,9 @@
       ],
       "Newsletters": [
         "Newsletters"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletters - Actualités, e-mails éditoriaux et contenu non promotionnel"
       ],
       "No label found": [
         "Aucun label n'a été trouvé."
@@ -10159,8 +10181,14 @@
       "Primary": [
         "Principale"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal – E-mails personnels et professionnels, ainsi que mises à jour importantes"
+      ],
       "Promotions": [
         "Promotions"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promotions – Offres et e-mails marketing"
       ],
       "Proration": [
         "Au prorata"
@@ -10227,6 +10255,9 @@
       ],
       "Social": [
         "Réseaux sociaux"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Mises à jour, activités et messages sur les réseaux sociaux"
       ],
       "Social media updates and activity": [
         "Mises à jour et activité des réseaux sociaux"
@@ -10303,6 +10334,9 @@
       "Transactions": [
         "Transactions"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transactions - Reçus, réservations, factures et commandes"
+      ],
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
       ],
@@ -10314,6 +10348,9 @@
       ],
       "Updates": [
         "Mises à jour"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Mises à jour – Confirmations, alertes et mises à jour de compte automatisées"
       ],
       "Upload picture": [
         "Importer une image"
@@ -15024,6 +15061,10 @@
         "Déplacer ${ selectionCount } message.",
         "Déplacer ${ selectionCount } messages."
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Déplacé vers ${ label }. Un message similaire sera classé ici à l’avenir.",
+        "Déplacé vers ${ label }. Les messages similaires seront classés ici à l’avenir."
+      ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
       ],
@@ -15999,9 +16040,6 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
-      ],
-      "PayPal verification failed": [
-        "La vérification PayPal n'a pas abouti."
       ],
       "Phone numbers": [
         "Numéros de téléphone"

@@ -3162,9 +3162,6 @@
       "Failed to load 'My files' folder": [
         "Kunne ikke indlæse 'Mine filer'-mappen"
       ],
-      "Failed to load document details": [
-        "Kunne ikke indlæse dokument-detaljer"
-      ],
       "Failed to load recent documents": [
         "Kunne ikke indlæse de seneste dokumenter"
       ],
@@ -3274,6 +3271,9 @@
       "No contacts found to import": [
         "Ingen kontakter fundet til import"
       ],
+      "No drive found to import": [
+        "Der blev ikke fundet noget drev til import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
@@ -3282,6 +3282,9 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
@@ -3502,6 +3505,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl. Vi kan ikke importere filerne"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -4905,6 +4911,9 @@
       ],
       "File will not be updated": [
         "Filen vil ikke blive opdateret"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
       "finance": [
         "finans"
@@ -6367,6 +6376,9 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Unknown user": [
+        "Ukendt bruger"
       ],
       "Upload picture": [
         "Upload billede"
@@ -9941,6 +9953,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Account recovery": [
         "Kontogendannelse"

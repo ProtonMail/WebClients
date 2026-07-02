@@ -1522,6 +1522,9 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
+      ],
       "Not activated": [
         "Nicht aktiviert"
       ],
@@ -5783,6 +5786,9 @@
       "Failed to update meeting schedule": [
         "Fehler beim Aktualisieren des Meeting-Zeitplans"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
       "finance": [
         "Finanzen"
       ],
@@ -6114,9 +6120,6 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Bitte authentifiziere deine Karte im Verifikationstab."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
@@ -6156,9 +6159,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
@@ -6646,9 +6646,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Du bist dabei, alle Termine dieser Serie zu aktualisieren. Hinzugefügte und entfernte Teilnehmer werden darüber informiert."
@@ -11946,6 +11943,9 @@
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Account recovery": [
         "Kontowiederherstellung"
       ],
@@ -12402,9 +12402,6 @@
       ],
       "Payment verification": [
         "Zahlungsbestätigung"
-      ],
-      "PayPal verification failed": [
-        "PayPal-Verifizierung fehlgeschlagen"
       ],
       "Phone numbers": [
         "Telefonnummern"

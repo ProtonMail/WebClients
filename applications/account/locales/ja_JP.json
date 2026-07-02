@@ -951,9 +951,6 @@
       "Load more": [
         "さらに読み込む"
       ],
-      "Loading verification": [
-        "認証を読み込み中"
-      ],
       "Lost access to your 2FA device?": [
         "2要素認証デバイスへのアクセスができませんか？"
       ],
@@ -10552,9 +10549,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "文書に直接招待するように所有者に依頼してください。"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "認証タブでカード認証をしてください。"
-      ],
       "Please authenticate your payment in the verification tab.": [
         "認証タブで決済を認証してください。"
       ],
@@ -10596,9 +10590,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "再度試すか、別の支払い方法をお試しください。あるいは PayPal にお尋ねください。"
       ],
       "Please use another browser or download the file.": [
         "他のブラウザを使用するか、このファイルをダウンロードしてください。"
@@ -11814,9 +11805,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "このキーで暗号化されたメッセージ、ファイル、その他のデータを復号化することはできません。 このキーで署名されたすべてのデータは、${ BRAND_NAME } アプリケーションによって検証されなくなります。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted }より前にキャンセルした場合、請求はされません。"
@@ -14845,12 +14833,6 @@
       ],
       "Create a new ${ appName } account": [
         "新しい ${ appName } アカウントを作成する"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME }の 2 週間の無料期間をお試し下さい"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "真のオンラインプライバシーを体験してください。${ BRAND_NAME } を利用して、今後14日間無料でデータを保護してください。"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } アカウントのユーザー名を見つける"
@@ -20647,6 +20629,11 @@
         "サブスクリプションをキャンセルしています。お待ちください。"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "無効"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "行動"
@@ -22876,9 +22863,6 @@
       ],
       "Payment verification": [
         "支払いの検証"
-      ],
-      "PayPal verification failed": [
-        "PayPal 認証に失敗しました。"
       ],
       "Pending invitations": [
         "保留中の招待"

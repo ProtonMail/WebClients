@@ -862,9 +862,6 @@
       "Load more": [
         "حمّل المزيد"
       ],
-      "Loading verification": [
-        "التحقق من التحميل"
-      ],
       "Lost access to your 2FA device?": [
         "هل فقدت الوصول إلى جهاز المصادقة الثنائية (2FA)؟"
       ],
@@ -10184,9 +10181,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "يرجى الطلب من المالك دعوتك مباشرة إلى المستند."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "يرجى مصادقة بطاقتك في علامة تبويب التحقق."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "يرجى مصادقة دفعتك في علامة تبويب التحقق."
       ],
@@ -10219,9 +10213,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "يرجى المحاولة مرة أخرى باستخدام طريقة دفع مختلفة، أو الاتصال بالبنك الذي تتعامل معه."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "يرجى المحاولة مرة أخرى، أو استخدام طريقة دفع مختلفة، أو الاتصال بـ PayPal للحصول على المساعدة."
       ],
       "Please use another browser or download the file.": [
         "يرجى استخدام متصفح آخر أو تنزيل الملف."
@@ -11401,9 +11392,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "سوف تستعيد الوصول الكامل أو الجزئي إلى بياناتك المشفرة."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "سيتم توجيهك قريبًا إلى PayPal للتحقق من عملية الدفع."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "لن يتم محاسبتك إذا قمت بالإلغاء قبل ${ trialEndsOnFormatted }."
@@ -18150,6 +18138,9 @@
       "to recover your account if you're ever locked out": [
         "لاسترداد حسابك في حال تم إغلاقه"
       ],
+      "update it now": [
+        "قم بتحديثه الآن"
+      ],
       "Update your recovery phrase": [
         "قم بتحديث عبارة الاسترداد الخاصة بك"
       ],
@@ -18299,6 +18290,38 @@
       ],
       "Your recovery phrase is set": [
         "تم تعيين عبارة الاسترداد الخاصة بك"
+      ]
+    },
+    "safety_review": {
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "إذا تغيّر عنوان بريدك الإلكتروني المخصّص للاسترداد، ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "إذا تغيّر رقم هاتفك المخصّص للاسترداد، ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "أرسل رمز التحقق"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "للتأكد من أن هذا العنوان يخصك بالفعل، سنرسل إليك رسالة بريد إلكتروني تحتوي على رمز تحقق."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "للتأكد من أن هذا الرقم يخصك بالفعل، سنرسل إليك رسالة نصية (SMS) تحتوي على رمز تحقق."
+      ],
+      "Update": [
+        "تحديث"
+      ],
+      "Update recovery email": [
+        "تحديث البريد الإلكتروني للاسترداد"
+      ],
+      "Update recovery phone": [
+        "تحديث رقم هاتف الاسترداد"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "يؤدي التحقق من عنوان بريدك الإلكتروني إلى زيادة أمان حسابك، ويمنحك خيارات إضافية لاسترداد الحساب."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "يؤدي التحقق من رقم هاتفك إلى تعزيز أمان حسابك، ويمنحك خيارات إضافية لاسترداد الحساب."
       ]
     },
     "saml: Action": {
@@ -20025,6 +20048,14 @@
         "يجري إلغاء اشتراكك، يُرجى الانتظار"
       ]
     },
+    "Status": {
+      "Active": [
+        "نشط"
+      ],
+      "Disabled": [
+        "معطل"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "العمليات"
@@ -20768,12 +20799,6 @@
       ],
       "View VPN session details for your organization.": [
         "عرض تفاصيل جلسة VPN لمؤسستك."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "تتيح لك ميزة الشركات المُدارة إضافة المؤسسات التي تشرف عليها وإدارة صلاحيات الوصول إليها، بما في ذلك تعديلها أو إزالتها."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "إجمالي التكلفة الشهرية لكافة الشركات التي تديرها."
       ]
     },
     "Success": {
@@ -22339,9 +22364,6 @@
       ],
       "Payment verification": [
         "التحقق من الدفع"
-      ],
-      "PayPal verification failed": [
-        "فشل في التحقق من PayPal"
       ],
       "Phone": [
         "الهاتف"

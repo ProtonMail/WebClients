@@ -5363,6 +5363,9 @@
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -8088,9 +8091,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Solicite ao proprietário para convidá-lo diretamente para o documento."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique seu cartão na guia de verificação."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
       ],
@@ -8142,9 +8142,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -9017,6 +9014,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Você será notificado se sua senha ou outros dados vazarem de um serviço de terceiros."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Você tem ${ totalLabel } na sua caixa de entrada."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Você tem **${ count } conversa** na categoria ${ categoryLabel }",
+        "Você tem **${ count } conversas** na categoria ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Você tem **${ count } conversa** armazenada nesta pasta",
         "Você tem **${ count } conversas** armazenadas nesta pasta"
@@ -9024,6 +9028,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Você tem **${ count } conversa** com este marcador",
         "Você tem **${ count } conversas** com este marcador"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Você tem **${ count } mensagem** na categoria ${ categoryLabel }",
+        "Você tem **${ count } mensagens** na categoria ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Você tem **${ count } mensagem** armazenada nesta pasta",
@@ -9039,6 +9047,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Você tem uma assinatura de avaliação do ${ planTitle }. Nenhum pagamento é necessário no momento. Sua assinatura será renovada automaticamente ao final do período de avaliação."
       ],
+      "You have no conversations in this category": [
+        "Você não tem nenhuma conversa nessa categoria"
+      ],
+      "You have no messages in this category": [
+        "Você não tem nenhuma mensagem nessa categoria"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Você não informou o assunto do seu e-mail. Deseja enviar a mensagem mesmo assim?"
       ],
@@ -9053,6 +9067,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Você deve desativar ou remover quaisquer usuários adicionais, endereços e domínios personalizados do ${ MAIL_APP_NAME } antes de poder fazer o downgrade."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Você selecionou **${ checked } conversa** na categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } conversas** na categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Você selecionou **${ checked } mensagem** na categoria ${ categoryLabel }",
+        "Você selecionou **${ checked } mensagens** na categoria ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Você selecionou **${ count } conversa** desta pasta",
@@ -9088,9 +9110,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
@@ -9937,6 +9956,9 @@
       "Import to:": [
         "Importar para:"
       ],
+      "Import your emails": [
+        "Importe seus e-mails"
+      ],
       "Include application logs in bug report": [
         "Incluir os registros do aplicativo no relatório de erro"
       ],
@@ -10048,6 +10070,9 @@
       "Navigation": [
         "Navegação"
       ],
+      "New": [
+        "Novo"
+      ],
       "New password": [
         "Nova senha"
       ],
@@ -10056,6 +10081,9 @@
       ],
       "Newsletters": [
         "Boletins informativos"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletins – Notícias, e-mails editoriais e conteúdo não promocional"
       ],
       "No label found": [
         "Nenhum marcador encontrado"
@@ -10147,8 +10175,14 @@
       "Primary": [
         "Primário"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal - E-mails pessoais e profissionais, além de atualizações importantes"
+      ],
       "Promotions": [
         "Promoções"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoções - Ofertas, descontos e e-mails de propaganda"
       ],
       "Proration": [
         "Cálculo proporcional"
@@ -10215,6 +10249,9 @@
       ],
       "Social": [
         "Mídias sociais"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Atualizações de mídia social, atividade e mensagens"
       ],
       "Social media updates and activity": [
         "Atualizações e atividade de redes sociais"
@@ -10291,6 +10328,9 @@
       "Transactions": [
         "Transações"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transações — Recibos, reservas, faturas e pedidos"
+      ],
       "Undisclosed Recipients": [
         "Destinatários ocultos"
       ],
@@ -10302,6 +10342,9 @@
       ],
       "Updates": [
         "Atualizações"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Atualizações — Confirmações automáticas, alertas e atualizações de conta"
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -15303,6 +15346,9 @@
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ numMessages } message": [
         "${ numMessages } mensagem",
         "${ numMessages } mensagens"
@@ -15993,9 +16039,6 @@
       ],
       "Payment verification": [
         "Verificação de pagamento"
-      ],
-      "PayPal verification failed": [
-        "Ocorreu um erro na verificação do PayPal"
       ],
       "Phone numbers": [
         "Números de telefone"
