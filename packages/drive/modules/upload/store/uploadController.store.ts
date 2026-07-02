@@ -1,6 +1,5 @@
 import type { UploadController } from '@protontech/drive-sdk';
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 type UploadControllerStore = {
     controllers: Map<string, { uploadController: UploadController | null; abortController: AbortController }>;
@@ -18,51 +17,46 @@ type UploadControllerStore = {
     clearAllControllers: () => void;
 };
 
-export const useUploadControllerStore = create<UploadControllerStore>()(
-    devtools(
-        (set, get) => ({
-            controllers: new Map(),
+export const useUploadControllerStore = create<UploadControllerStore>()((set, get) => ({
+    controllers: new Map(),
 
-            setController: (uploadId, controller) =>
-                set((state) => ({
-                    controllers: new Map(state.controllers).set(uploadId, controller),
-                })),
+    setController: (uploadId, controller) =>
+        set((state) => ({
+            controllers: new Map(state.controllers).set(uploadId, controller),
+        })),
 
-            setAbortController: (uploadId, abortController) =>
-                set((state) => {
-                    const controllers = new Map(state.controllers);
-                    const existing = controllers.get(uploadId);
-                    controllers.set(uploadId, {
-                        uploadController: existing?.uploadController || null,
-                        abortController,
-                    });
-                    return { controllers };
-                }),
-
-            setUploadController: (uploadId, uploadController) =>
-                set((state) => {
-                    const controllers = new Map(state.controllers);
-                    const existing = controllers.get(uploadId);
-                    if (existing) {
-                        controllers.set(uploadId, {
-                            uploadController,
-                            abortController: existing.abortController,
-                        });
-                    }
-                    return { controllers };
-                }),
-
-            removeController: (uploadId) =>
-                set((state) => {
-                    const controllers = new Map(state.controllers);
-                    controllers.delete(uploadId);
-                    return { controllers };
-                }),
-
-            getController: (uploadId) => get().controllers.get(uploadId),
-
-            clearAllControllers: () => set({ controllers: new Map() }),
+    setAbortController: (uploadId, abortController) =>
+        set((state) => {
+            const controllers = new Map(state.controllers);
+            const existing = controllers.get(uploadId);
+            controllers.set(uploadId, {
+                uploadController: existing?.uploadController || null,
+                abortController,
+            });
+            return { controllers };
         }),
-        { name: 'UploadControllersStore' }
-    )
-);
+
+    setUploadController: (uploadId, uploadController) =>
+        set((state) => {
+            const controllers = new Map(state.controllers);
+            const existing = controllers.get(uploadId);
+            if (existing) {
+                controllers.set(uploadId, {
+                    uploadController,
+                    abortController: existing.abortController,
+                });
+            }
+            return { controllers };
+        }),
+
+    removeController: (uploadId) =>
+        set((state) => {
+            const controllers = new Map(state.controllers);
+            controllers.delete(uploadId);
+            return { controllers };
+        }),
+
+    getController: (uploadId) => get().controllers.get(uploadId),
+
+    clearAllControllers: () => set({ controllers: new Map() }),
+}));

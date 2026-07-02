@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { NodeType, ProtonDriveClient, ProtonDrivePhotosClient, ProtonDrivePublicLinkClient } from '@proton/drive';
 import generateUID from '@proton/utils/generateUID';
@@ -110,102 +109,97 @@ const initialState = {
 const isAborted = (state: Partial<DownloadItem>) =>
     state.status === DownloadStatus.Cancelled || state.status === DownloadStatus.Failed;
 
-export const useDownloadManagerStore = create<DownloadManagerStore>()(
-    devtools(
-        (set, get) => ({
-            ...initialState,
-            addDownloadItem: (item) => {
-                const downloadId = generateUID();
-                const downloadItem: DownloadItem = {
-                    ...item,
-                    malwareDetectionStatus: undefined,
-                    downloadId,
-                    lastStatusUpdateTime: new Date(),
-                };
+export const useDownloadManagerStore = create<DownloadManagerStore>()((set, get) => ({
+    ...initialState,
+    addDownloadItem: (item) => {
+        const downloadId = generateUID();
+        const downloadItem: DownloadItem = {
+            ...item,
+            malwareDetectionStatus: undefined,
+            downloadId,
+            lastStatusUpdateTime: new Date(),
+        };
 
-                set((state) => {
-                    const queue = new Map(state.queue);
-                    queue.set(downloadId, downloadItem);
-                    const queueIds = new Set(state.queueIds);
-                    queueIds.add(downloadId);
+        set((state) => {
+            const queue = new Map(state.queue);
+            queue.set(downloadId, downloadItem);
+            const queueIds = new Set(state.queueIds);
+            queueIds.add(downloadId);
 
-                    return { queue, queueIds };
-                });
+            return { queue, queueIds };
+        });
 
-                return downloadId;
-            },
-            updateDownloadItem: (downloadId, update) =>
-                set((state) => {
-                    const existing = state.queue.get(downloadId);
-                    if (!existing) {
-                        return {};
-                    }
-                    const shouldUpdateTimestamp = update.status !== existing.status;
-                    const queue = new Map(state.queue);
-                    if (isAborted(update)) {
-                        update.signatureIssueAllDecision = undefined;
-                        update.signatureIssues = undefined;
-                        update.unsupportedFileDetected = undefined;
-                    }
-                    queue.set(downloadId, {
-                        ...existing,
-                        ...update,
-                        lastStatusUpdateTime: shouldUpdateTimestamp ? new Date() : existing.lastStatusUpdateTime,
-                    });
-                    return { queue };
-                }),
-            removeDownloadItems: (downloadIds) =>
-                set((state) => {
-                    if (downloadIds.length === 0) {
-                        return {};
-                    }
-                    const queue = new Map(state.queue);
-                    downloadIds.forEach((id) => queue.delete(id));
-
-                    return {
-                        queue,
-                        queueIds: new Set(queue.keys()),
-                    };
-                }),
-            clearQueue: () => set(initialState),
-            getQueue: () => Array.from(get().queue.values()),
-            getQueueItem: (downloadId) => get().queue.get(downloadId),
-            addSignatureIssue: (downloadId, issue) =>
-                set((state) => {
-                    const existing = state.queue.get(downloadId);
-                    if (!existing) {
-                        return {};
-                    }
-                    const queue = new Map(state.queue);
-                    queue.set(downloadId, {
-                        ...existing,
-                        signatureIssues: {
-                            ...(existing.signatureIssues ?? {}),
-                            [issue.name]: issue,
-                        },
-                    });
-                    return { queue };
-                }),
-            updateSignatureIssueStatus: (downloadId, issueName, status) =>
-                set((state) => {
-                    const existing = state.queue.get(downloadId);
-                    const issues = existing?.signatureIssues;
-                    if (!existing || !issues) {
-                        return {};
-                    }
-                    const queue = new Map(state.queue);
-                    const issue = issues[issueName];
-                    issue.issueStatus = status;
-                    queue.set(downloadId, {
-                        ...existing,
-                        signatureIssues: {
-                            ...(existing.signatureIssues ?? {}),
-                            [issueName]: issue,
-                        },
-                    });
-                    return { queue };
-                }),
+        return downloadId;
+    },
+    updateDownloadItem: (downloadId, update) =>
+        set((state) => {
+            const existing = state.queue.get(downloadId);
+            if (!existing) {
+                return {};
+            }
+            const shouldUpdateTimestamp = update.status !== existing.status;
+            const queue = new Map(state.queue);
+            if (isAborted(update)) {
+                update.signatureIssueAllDecision = undefined;
+                update.signatureIssues = undefined;
+                update.unsupportedFileDetected = undefined;
+            }
+            queue.set(downloadId, {
+                ...existing,
+                ...update,
+                lastStatusUpdateTime: shouldUpdateTimestamp ? new Date() : existing.lastStatusUpdateTime,
+            });
+            return { queue };
         }),
-        { name: 'DownloadManagerStore' }
-    )
-);
+    removeDownloadItems: (downloadIds) =>
+        set((state) => {
+            if (downloadIds.length === 0) {
+                return {};
+            }
+            const queue = new Map(state.queue);
+            downloadIds.forEach((id) => queue.delete(id));
+
+            return {
+                queue,
+                queueIds: new Set(queue.keys()),
+            };
+        }),
+    clearQueue: () => set(initialState),
+    getQueue: () => Array.from(get().queue.values()),
+    getQueueItem: (downloadId) => get().queue.get(downloadId),
+    addSignatureIssue: (downloadId, issue) =>
+        set((state) => {
+            const existing = state.queue.get(downloadId);
+            if (!existing) {
+                return {};
+            }
+            const queue = new Map(state.queue);
+            queue.set(downloadId, {
+                ...existing,
+                signatureIssues: {
+                    ...(existing.signatureIssues ?? {}),
+                    [issue.name]: issue,
+                },
+            });
+            return { queue };
+        }),
+    updateSignatureIssueStatus: (downloadId, issueName, status) =>
+        set((state) => {
+            const existing = state.queue.get(downloadId);
+            const issues = existing?.signatureIssues;
+            if (!existing || !issues) {
+                return {};
+            }
+            const queue = new Map(state.queue);
+            const issue = issues[issueName];
+            issue.issueStatus = status;
+            queue.set(downloadId, {
+                ...existing,
+                signatureIssues: {
+                    ...(existing.signatureIssues ?? {}),
+                    [issueName]: issue,
+                },
+            });
+            return { queue };
+        }),
+}));

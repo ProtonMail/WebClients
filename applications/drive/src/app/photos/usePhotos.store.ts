@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import { getBusDriver } from '@proton/drive/modules/busDriver';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
@@ -58,175 +57,173 @@ interface PhotosStore {
     unsubscribeFromEvents: (context: string) => Promise<void>;
 }
 
-export const usePhotosStore = create<PhotosStore>()(
-    devtools((set, get) => ({
-        photoTimelineUids: new Set(),
-        photoItems: new Map(),
+export const usePhotosStore = create<PhotosStore>()((set, get) => ({
+    photoTimelineUids: new Set(),
+    photoItems: new Map(),
 
-        isLoading: false,
-        hasEverLoaded: false,
+    isLoading: false,
+    hasEverLoaded: false,
 
-        eventSubscription: null,
-        activeContexts: new Set<string>(),
-        pendingSubscribePromise: null,
+    eventSubscription: null,
+    activeContexts: new Set<string>(),
+    pendingSubscribePromise: null,
 
-        setPhotoItem: (photo: PhotoItem) => {
-            set((state) => {
-                const newPhotoTimelineUids = new Set(state.photoTimelineUids);
+    setPhotoItem: (photo: PhotoItem) => {
+        set((state) => {
+            const newPhotoTimelineUids = new Set(state.photoTimelineUids);
+            newPhotoTimelineUids.add(photo.nodeUid);
+
+            const newPhotoItems = new Map(state.photoItems);
+            newPhotoItems.set(photo.nodeUid, photo);
+            return {
+                photoItems: newPhotoItems,
+                photoTimelineUids: newPhotoTimelineUids,
+            };
+        });
+    },
+
+    setPhotoItems: (photos: PhotoItem[]) => {
+        set((state) => {
+            const newPhotoTimelineUids = new Set(state.photoTimelineUids);
+            const newPhotoItems = new Map(state.photoItems);
+            for (const photo of photos) {
                 newPhotoTimelineUids.add(photo.nodeUid);
+                const existing = newPhotoItems.get(photo.nodeUid);
+                newPhotoItems.set(photo.nodeUid, {
+                    ...photo,
+                    additionalInfo: photo.additionalInfo ?? existing?.additionalInfo,
+                });
+            }
+            return {
+                photoItems: newPhotoItems,
+                photoTimelineUids: newPhotoTimelineUids,
+            };
+        });
+    },
 
-                const newPhotoItems = new Map(state.photoItems);
-                newPhotoItems.set(photo.nodeUid, photo);
-                return {
-                    photoItems: newPhotoItems,
-                    photoTimelineUids: newPhotoTimelineUids,
-                };
-            });
-        },
+    getPhotoItem: (uid: string) => get().photoItems.get(uid),
 
-        setPhotoItems: (photos: PhotoItem[]) => {
-            set((state) => {
-                const newPhotoTimelineUids = new Set(state.photoTimelineUids);
-                const newPhotoItems = new Map(state.photoItems);
-                for (const photo of photos) {
-                    newPhotoTimelineUids.add(photo.nodeUid);
-                    const existing = newPhotoItems.get(photo.nodeUid);
-                    newPhotoItems.set(photo.nodeUid, {
-                        ...photo,
-                        additionalInfo: photo.additionalInfo ?? existing?.additionalInfo,
-                    });
-                }
-                return {
-                    photoItems: newPhotoItems,
-                    photoTimelineUids: newPhotoTimelineUids,
-                };
-            });
-        },
+    upsertPhotoAdditionalInfo: (photo: PhotoItem) => {
+        set((state) => {
+            const newPhotoItems = new Map(state.photoItems);
+            const existing = newPhotoItems.get(photo.nodeUid);
+            newPhotoItems.set(
+                photo.nodeUid,
+                existing ? { ...photo, additionalInfo: photo.additionalInfo ?? existing.additionalInfo } : photo
+            );
+            return { photoItems: newPhotoItems };
+        });
+    },
 
-        getPhotoItem: (uid: string) => get().photoItems.get(uid),
-
-        upsertPhotoAdditionalInfo: (photo: PhotoItem) => {
-            set((state) => {
-                const newPhotoItems = new Map(state.photoItems);
+    upsertPhotoAdditionalInfoBulk: (photos: PhotoItem[]) => {
+        set((state) => {
+            const newPhotoItems = new Map(state.photoItems);
+            for (const photo of photos) {
                 const existing = newPhotoItems.get(photo.nodeUid);
                 newPhotoItems.set(
                     photo.nodeUid,
                     existing ? { ...photo, additionalInfo: photo.additionalInfo ?? existing.additionalInfo } : photo
                 );
-                return { photoItems: newPhotoItems };
-            });
-        },
+            }
+            return { photoItems: newPhotoItems };
+        });
+    },
 
-        upsertPhotoAdditionalInfoBulk: (photos: PhotoItem[]) => {
-            set((state) => {
-                const newPhotoItems = new Map(state.photoItems);
-                for (const photo of photos) {
-                    const existing = newPhotoItems.get(photo.nodeUid);
-                    newPhotoItems.set(
-                        photo.nodeUid,
-                        existing ? { ...photo, additionalInfo: photo.additionalInfo ?? existing.additionalInfo } : photo
-                    );
-                }
-                return { photoItems: newPhotoItems };
-            });
-        },
+    removePhotoItem: (uid: string) => {
+        set((state) => {
+            const newPhotoItems = new Map(state.photoItems);
+            newPhotoItems.delete(uid);
 
-        removePhotoItem: (uid: string) => {
-            set((state) => {
-                const newPhotoItems = new Map(state.photoItems);
-                newPhotoItems.delete(uid);
+            const newPhotoTimelineUids = new Set(state.photoTimelineUids);
+            newPhotoTimelineUids.delete(uid);
 
-                const newPhotoTimelineUids = new Set(state.photoTimelineUids);
-                newPhotoTimelineUids.delete(uid);
+            return {
+                ...state,
+                photoItems: newPhotoItems,
+                photoTimelineUids: newPhotoTimelineUids,
+            };
+        });
+    },
 
-                return {
-                    ...state,
-                    photoItems: newPhotoItems,
-                    photoTimelineUids: newPhotoTimelineUids,
-                };
-            });
-        },
-
-        setPhotoItemsWithoutTimeline: (photos: PhotoItem[]) => {
-            set((state) => {
-                const newPhotoItems = new Map(state.photoItems);
-                for (const photo of photos) {
-                    const existing = newPhotoItems.get(photo.nodeUid);
-                    newPhotoItems.set(photo.nodeUid, {
-                        ...photo,
-                        additionalInfo: photo.additionalInfo ?? existing?.additionalInfo,
-                    });
-                }
-                return { photoItems: newPhotoItems };
-            });
-        },
-
-        addRelatedPhotoNodeUid: (mainPhotoNodeUid: string, relatedPhotoNodeUid: string) => {
-            set((state) => {
-                const existing = state.photoItems.get(mainPhotoNodeUid);
-                if (!existing || existing.relatedPhotoNodeUids.includes(relatedPhotoNodeUid)) {
-                    return state;
-                }
-                const newPhotoItems = new Map(state.photoItems);
-                newPhotoItems.set(mainPhotoNodeUid, {
-                    ...existing,
-                    relatedPhotoNodeUids: [...existing.relatedPhotoNodeUids, relatedPhotoNodeUid],
+    setPhotoItemsWithoutTimeline: (photos: PhotoItem[]) => {
+        set((state) => {
+            const newPhotoItems = new Map(state.photoItems);
+            for (const photo of photos) {
+                const existing = newPhotoItems.get(photo.nodeUid);
+                newPhotoItems.set(photo.nodeUid, {
+                    ...photo,
+                    additionalInfo: photo.additionalInfo ?? existing?.additionalInfo,
                 });
-                return { photoItems: newPhotoItems };
+            }
+            return { photoItems: newPhotoItems };
+        });
+    },
+
+    addRelatedPhotoNodeUid: (mainPhotoNodeUid: string, relatedPhotoNodeUid: string) => {
+        set((state) => {
+            const existing = state.photoItems.get(mainPhotoNodeUid);
+            if (!existing || existing.relatedPhotoNodeUids.includes(relatedPhotoNodeUid)) {
+                return state;
+            }
+            const newPhotoItems = new Map(state.photoItems);
+            newPhotoItems.set(mainPhotoNodeUid, {
+                ...existing,
+                relatedPhotoNodeUids: [...existing.relatedPhotoNodeUids, relatedPhotoNodeUid],
             });
-        },
+            return { photoItems: newPhotoItems };
+        });
+    },
 
-        setLoading: (loading: boolean) => {
-            set({ isLoading: loading });
-            get().checkAndSetHasEverLoaded();
-        },
+    setLoading: (loading: boolean) => {
+        set({ isLoading: loading });
+        get().checkAndSetHasEverLoaded();
+    },
 
-        setHasEverLoaded: () => set({ hasEverLoaded: true }),
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
 
-        checkAndSetHasEverLoaded: () => {
-            const state = get();
-            if (!state.isLoading && !state.hasEverLoaded) {
-                state.setHasEverLoaded();
-            }
-        },
+    checkAndSetHasEverLoaded: () => {
+        const state = get();
+        if (!state.isLoading && !state.hasEverLoaded) {
+            state.setHasEverLoaded();
+        }
+    },
 
-        subscribeToEvents: async (context: string) => {
-            const { activeContexts, eventSubscription } = get();
+    subscribeToEvents: async (context: string) => {
+        const { activeContexts, eventSubscription } = get();
 
-            const newActiveContexts = new Set(activeContexts);
-            newActiveContexts.add(context);
-            set({ activeContexts: newActiveContexts });
+        const newActiveContexts = new Set(activeContexts);
+        newActiveContexts.add(context);
+        set({ activeContexts: newActiveContexts });
 
-            const pending = getBusDriver()
-                .subscribePhotosEventsMyUpdates(context)
-                .then(async () => {
-                    if (eventSubscription) {
-                        eventSubscription();
-                    }
-                    const unsubscribeFromEvents = await subscribeToPhotosEvents();
-                    set({ eventSubscription: unsubscribeFromEvents, pendingSubscribePromise: null });
-                });
-            set({ pendingSubscribePromise: pending });
-            await pending;
-        },
+        const pending = getBusDriver()
+            .subscribePhotosEventsMyUpdates(context)
+            .then(async () => {
+                if (eventSubscription) {
+                    eventSubscription();
+                }
+                const unsubscribeFromEvents = await subscribeToPhotosEvents();
+                set({ eventSubscription: unsubscribeFromEvents, pendingSubscribePromise: null });
+            });
+        set({ pendingSubscribePromise: pending });
+        await pending;
+    },
 
-        unsubscribeFromEvents: async (context: string) => {
-            const { pendingSubscribePromise } = get();
-            if (pendingSubscribePromise) {
-                await pendingSubscribePromise;
-            }
+    unsubscribeFromEvents: async (context: string) => {
+        const { pendingSubscribePromise } = get();
+        if (pendingSubscribePromise) {
+            await pendingSubscribePromise;
+        }
 
-            await getBusDriver().unsubscribePhotosEventsMyUpdates(context);
+        await getBusDriver().unsubscribePhotosEventsMyUpdates(context);
 
-            const { activeContexts, eventSubscription } = get();
-            const newActiveContexts = new Set(activeContexts);
-            newActiveContexts.delete(context);
-            set({ activeContexts: newActiveContexts });
+        const { activeContexts, eventSubscription } = get();
+        const newActiveContexts = new Set(activeContexts);
+        newActiveContexts.delete(context);
+        set({ activeContexts: newActiveContexts });
 
-            if (newActiveContexts.size === 0 && eventSubscription) {
-                eventSubscription();
-                set({ eventSubscription: null });
-            }
-        },
-    }))
-);
+        if (newActiveContexts.size === 0 && eventSubscription) {
+            eventSubscription();
+            set({ eventSubscription: null });
+        }
+    },
+}));
