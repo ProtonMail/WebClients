@@ -1,4 +1,4 @@
-import { BrowserWindow, WebContents, WindowOpenHandlerResponse, shell } from "electron";
+import { BrowserWindow, WebContents, WindowOpenHandlerResponse } from "electron";
 import { basename } from "node:path";
 import {
     getLocalID,
@@ -41,6 +41,7 @@ import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthWindow } from "../oauthProcess";
 import { sentryReport } from "../sentryReport";
 import { enableAppSwitcherMenuItems } from "../menus/menuApplication";
+import { openExternalRedirect } from "../openExternal/openExternal";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
@@ -194,21 +195,21 @@ export function handleWebContents(contents: WebContents) {
             !global.subscriptionProcess
         ) {
             logger().info("opening external URL", details.url);
-            shell.openExternal(details.url);
+            void openExternalRedirect(details.url);
             return details.preventDefault();
         }
 
         // We want to open booking URLs in the browser to avoid blocking the user
         if (isBookingURL(details.url)) {
             logger().info("opening booking URL in browser", details.url);
-            shell.openExternal(details.url);
+            void openExternalRedirect(details.url);
             return details.preventDefault();
         }
 
         // Born private URLs open in the browser
         if (isBornPrivateURL(details.url)) {
             logger().info("opening born private URL in browser", details.url);
-            shell.openExternal(details.url);
+            void openExternalRedirect(details.url);
             return details.preventDefault();
         }
 
@@ -216,7 +217,7 @@ export function handleWebContents(contents: WebContents) {
         // so open them in the browser where the close tab button works correctly
         if (isCloseTicketURL(details.url)) {
             logger().info("opening close ticket URL in browser", details.url);
-            shell.openExternal(details.url);
+            void openExternalRedirect(details.url);
             return details.preventDefault();
         }
 
@@ -257,9 +258,9 @@ export function handleWebContents(contents: WebContents) {
             return { action: "deny" };
         };
 
-        const denyAndOpenExternal = (description: string): WindowOpenHandlerResponse => {
+        const denyAndOpenExternalRedirect = (description: string): WindowOpenHandlerResponse => {
             logWindowOpen("denied", description);
-            shell.openExternal(url);
+            void openExternalRedirect(url);
             return { action: "deny" };
         };
 
@@ -275,7 +276,7 @@ export function handleWebContents(contents: WebContents) {
             isMicrosoftAuthURL(url) ||
             isDynamicOAuthURL(url)
         ) {
-            if (!global.oauthProcess) return denyAndOpenExternal(`oauth disabled, link in view ${url}`);
+            if (!global.oauthProcess) return denyAndOpenExternalRedirect(`oauth disabled, link in view ${url}`);
             logWindowOpen("allowed", `oauth process enabled, opening in new electron window ${url}`);
             contents.once("did-create-window", (win: BrowserWindow) => {
                 registerOAuthWindow(win.webContents.id);
@@ -295,21 +296,21 @@ export function handleWebContents(contents: WebContents) {
         }
 
         // We want to open booking URLs in the browser to avoid blocking the user
-        if (isBookingURL(url)) return denyAndOpenExternal(`booking link in browser ${url}`);
+        if (isBookingURL(url)) return denyAndOpenExternalRedirect(`booking link in browser ${url}`);
 
         // Born private URLs open in the browser
-        if (isBornPrivateURL(url)) return denyAndOpenExternal(`born private link in browser ${url}`);
+        if (isBornPrivateURL(url)) return denyAndOpenExternalRedirect(`born private link in browser ${url}`);
 
         if (isCalendar(url)) return denyAndShowView(url, "calendar", `calendar link in calendar view ${url}`);
 
         if (isMail(url)) return denyAndShowView(url, "mail", `mail link in mail view ${url}`);
 
         if (isAccount(url)) {
-            if (isAccoutLite(url)) return denyAndOpenExternal(`account lite in browser ${url}`);
+            if (isAccoutLite(url)) return denyAndOpenExternalRedirect(`account lite in browser ${url}`);
 
-            if (isUpsellURL(url)) return denyAndOpenExternal(`upsell in browser ${url}`);
+            if (isUpsellURL(url)) return denyAndOpenExternalRedirect(`upsell in browser ${url}`);
 
-            if (isCloseTicketURL(url)) return denyAndOpenExternal(`close ticket in browser ${url}`);
+            if (isCloseTicketURL(url)) return denyAndOpenExternalRedirect(`close ticket in browser ${url}`);
 
             return denyAndShowView(url, "account", `account link in account view ${url}`);
         }
@@ -326,7 +327,7 @@ export function handleWebContents(contents: WebContents) {
             return allow(`subscription process enabled, opening in new electron window ${url}`);
         }
 
-        return denyAndOpenExternal(`unknown link open in browser ${url}`);
+        return denyAndOpenExternalRedirect(`unknown link open in browser ${url}`);
     });
 
     contents.on("console-message", (_event, level, message, line, sourceFile) => {
