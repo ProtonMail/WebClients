@@ -64,6 +64,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     if (isElectronMail) {
         void import('@proton/shared/lib/desktop/bootstrapMailInboxDesktop').then((module) => {
+            // Also registers baseline IPC and redirect protocols for the inbox desktop app.
             module.bootstrapMailInboxDesktop({
                 config,
                 authentication,

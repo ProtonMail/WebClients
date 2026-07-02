@@ -5,7 +5,7 @@ import { DefaultProtocolActual, UNCHECKED_PROTOCOL } from "@proton/shared/lib/de
 
 import { getRegExe } from "./setup_mailto_windows";
 import { protocolLogger } from "../log";
-import { shell } from "electron";
+import { openExternalWithoutSanitization } from "../openExternal/openExternal";
 import os from "node:os";
 
 export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
@@ -72,8 +72,10 @@ export const setDefaultMailtoWindows = () => {
 
     if (buildNumber >= 22621) {
         // Windows 11 22H2+; navigate directly to the Proton Mail defaults page (only mailto should be registered).
-        shell.openExternal(`ms-settings:defaultapps?registeredAppUser=${encodeURIComponent("ProtonMail")}`);
+        void openExternalWithoutSanitization(
+            `ms-settings:defaultapps?registeredAppUser=${encodeURIComponent("ProtonMail")}`,
+        );
     } else {
-        shell.openExternal("ms-settings:defaultapps");
+        void openExternalWithoutSanitization("ms-settings:defaultapps");
     }
 };
