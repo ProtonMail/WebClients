@@ -1,4 +1,4 @@
-import { IpcMainEvent, ipcMain, shell } from "electron";
+import { IpcMainEvent, ipcMain } from "electron";
 import { performance } from "node:perf_hooks";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update/update";
@@ -41,6 +41,8 @@ import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
 import { startOAuthSession, clearOAuthSession } from "../utils/oauthProcess";
 import { sentryReport } from "../utils/sentryReport";
+import { openExternalIPC } from "../utils/openExternal/openExternal";
+import { externalProtocolManager } from "../utils/openExternal/manager";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -196,7 +198,7 @@ export const handleIPCCalls = () => {
                     break;
                 }
                 case "openExternal":
-                    shell.openExternal(payload);
+                    void openExternalIPC(payload);
                     break;
                 case "trialEnd":
                     resetBadge();
@@ -283,6 +285,9 @@ export const handleIPCCalls = () => {
                     break;
                 case "toggleAppCache":
                     toggleAppCache({ enabled: payload });
+                    break;
+                case "setAllowedProtocols":
+                    externalProtocolManager.extendAllowedProtocols(payload.source ?? "ipc", payload.protocols);
                     break;
                 default:
                     ipcLogger.error(`unknown message type: ${type}`);
