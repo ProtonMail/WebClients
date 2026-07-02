@@ -110,6 +110,12 @@ const EditorWrapper = ({
         editorActionsRef.current = editorActions;
     }, []);
 
+    useEffect(() => {
+        return () => {
+            editorActionsRef.current = undefined;
+        };
+    }, []);
+
     const canRenderEditor = !!message.data?.MIMEType;
     const isPlainText = testIsPlainText(message.data);
     const rightToLeft = message.data?.RightToLeft ? DIRECTION.RIGHT_TO_LEFT : DIRECTION.LEFT_TO_RIGHT;
@@ -125,6 +131,9 @@ const EditorWrapper = ({
     }, [isPlainText, message.messageDocument?.plainText, message.messageDocument?.document?.innerHTML]);
 
     const handleGetContent = useHandler((format?: GetContentMode) => {
+        if (!editorActionsRef.current) {
+            return '';
+        }
         const editorContent = editorActionsRef.current?.getContent(format) || '';
 
         if (!editorMetadata.blockquoteExpanded && blockquoteSaved !== '') {
@@ -139,7 +148,7 @@ const EditorWrapper = ({
     const checkImageDeletion = useHandler(
         () => {
             // Debounce event can be triggered after composer is closed
-            if (!isMounted()) {
+            if (!isMounted() || !editorActionsRef.current) {
                 return;
             }
             const newCIDs = findCIDsInContent(handleGetContent());

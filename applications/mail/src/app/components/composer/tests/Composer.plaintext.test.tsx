@@ -49,6 +49,7 @@ jest.mock('@proton/components/components/editor/rooster/helpers/getRoosterEditor
                 mockSetContent(nextContent);
             },
             focus: () => {},
+            isDisposed: () => false,
         };
     };
 });
