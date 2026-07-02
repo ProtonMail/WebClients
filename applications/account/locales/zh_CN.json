@@ -117,6 +117,9 @@
       "Add calendar from URL": [
         "从链接添加日历"
       ],
+      "Add company": [
+        "添加公司"
+      ],
       "Add condition": [
         "添加条件"
       ],
@@ -582,6 +585,9 @@
       "Disable category": [
         "禁用分类"
       ],
+      "Disable company": [
+        "禁用公司"
+      ],
       "Disable recovery phrase": [
         "禁用恢复短语"
       ],
@@ -738,6 +744,9 @@
       "Enable category": [
         "启用分类"
       ],
+      "Enable company": [
+        "启用公司"
+      ],
       "enable desktop notifications": [
         "开启推送通知"
       ],
@@ -777,11 +786,17 @@
       "Export as CSV": [
         "导出为 CSV"
       ],
+      "Export breakdown by company as ZIP": [
+        "按公司导出明细为 ZIP 文件"
+      ],
       "Export key": [
         "导出密钥"
       ],
       "Export key before deleting": [
         "删除前导出密钥"
+      ],
+      "Export overview as CSV": [
+        "导出概览为 CSV"
       ],
       "Extend": [
         "续期"
@@ -1059,9 +1074,6 @@
       "Load more": [
         "加载更多"
       ],
-      "Loading verification": [
-        "正在载入验证"
-      ],
       "Lost access to your 2FA device?": [
         "无法访问您的 2FA 设备？"
       ],
@@ -1070,6 +1082,9 @@
       ],
       "Make key primary": [
         "设为主密钥"
+      ],
+      "Manage": [
+        "管理"
       ],
       "Manage addresses": [
         "管理邮箱地址"
@@ -4006,6 +4021,29 @@
         "白色"
       ]
     },
+    "Column header": {
+      "Billing period": [
+        "账单周期"
+      ],
+      "Company": [
+        "公司"
+      ],
+      "Managed companies": [
+        "托管公司"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Total billed seats": [
+        "计费席位总数"
+      ],
+      "Total cost": [
+        "费用总计"
+      ],
+      "Used / assigned seats": [
+        "已用 / 已分配席位"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "开头是"
@@ -5409,6 +5447,15 @@
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "请注意，发送到此地址的邮件（即使来自其他 ${ BRAND_NAME } 地址）将不再采用端到端加密。"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接并禁用后，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
@@ -5514,11 +5561,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "您仍可以使用此地址登录，并随时重新连接。"
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "您将无法再使用 ${ address.Email } 在 ${ BRAND_NAME } 中收发邮件。请注意，发送到此地址的 ${ BRAND_NAME } 邮件将不再采用端到端加密。"
+      "You can reconnect this address at any time.": [
+        "您可以随时重新连接此地址。"
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在将 ${ numAddressesOrSync } 个 Gmail 地址转发到 ${ MAIL_APP_NAME }。"
@@ -7359,6 +7403,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "您的 ${ DRIVE_APP_NAME } 存储空间不足"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "该地址只能更改大小写和标点符号（句号、连字符和下划线）"
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
@@ -9669,6 +9716,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } 绝不向第三方透露您的信息。数据均来源于 ${ BRAND_NAME } 的独立分析以及 Constella Intelligence。"
       ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "写作助理 ${ BRAND_NAME } Scribe"
       ],
@@ -10104,6 +10154,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
+      "All data and settings are preserved": [
+        "所有数据和设置将予以保留"
+      ],
       "All inactive members deleted": [
         "已删除所有非活跃成员"
       ],
@@ -10260,6 +10313,9 @@
       "Ask your organization admin to setup Gateways.": [
         "要求您的组织管理员设置网关。"
       ],
+      "Assigned seats won't be billed while disabled": [
+        "禁用期间已分配席位不计费"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
       ],
@@ -10304,6 +10360,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "适用于 macOS 、Windows 和 Linux"
+      ],
+      "Average": [
+        "均值"
       ],
       "Awaiting transaction": [
         "等待交易"
@@ -11526,6 +11585,9 @@
       "Member": [
         "成员"
       ],
+      "Members are signed out and can't sign back in": [
+        "成员将被登出且无法重新登录"
+      ],
       "Merged": [
         "已合并"
       ],
@@ -11676,6 +11738,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "该地址只能更改大小写和标点符号（句号、连字符和下划线）。如需使用其他地址，请添加新地址。"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才需要更改下列选项。"
       ],
@@ -11796,6 +11861,9 @@
       "per month, billed at ${ price }": [
         "每月支付为 ${ price }"
       ],
+      "Per seat/month": [
+        "每席位 / 每月"
+      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "定期提示您验证 ${ BRAND_NAME } 密码，以确保您不会忘记。后续提示频率会逐渐降低。"
       ],
@@ -11816,9 +11884,6 @@
       ],
       "Please ask the owner to directly invite you to the document.": [
         "请让所有者直接邀请您加入文档。"
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "请在验证页面完成银行卡核验。"
       ],
       "Please authenticate your payment in the verification tab.": [
         "请在验证页面确认支付。"
@@ -11867,9 +11932,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
@@ -12024,6 +12086,9 @@
       "Restore": [
         "还原"
       ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "查看过往周期并导出数据以供报告或客户开票使用。"
+      ],
       "Right to Left": [
         "从右到左"
       ],
@@ -12113,6 +12178,9 @@
       ],
       "Set password": [
         "设置密码"
+      ],
+      "Set the name, status, and assigned seats": [
+        "设置名称、状态和已分配席位"
       ],
       "Set up your organization": [
         "设置您的组织"
@@ -12348,6 +12416,9 @@
       "The calendar will be removed from your account.": [
         "该日历将从您的账户中移除"
       ],
+      "The company and all its members will lose access immediately.": [
+        "该公司及其所有成员将立即失去访问权限！"
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "暗网是互联网的一个隐藏部分，可以在那里购买和出售被盗的个人信息，例如身份证。"
       ],
@@ -12398,6 +12469,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "该流程在 ${ pausedCount } 个群组中被中断，点击“继续”以恢复分配角色。"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "推荐奖励可在您朋友的试用期结束后的 2 个月内发放，前提是您的朋友已订阅套餐。"
@@ -12963,6 +13037,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "验证码会发到 ${ boldValue }。"
       ],
+      "What happens:": [
+        "结果："
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
       ],
@@ -13022,6 +13099,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "通过群组，您可快速且便捷地向指定群组中的所有人发送电子邮件。"
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "通过托管公司，您可以添加、编辑和移除对所管理组织的访问权限。"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "根据您当前的套餐，您只能使用 @pm.me 地址接收邮件。升级后即可发送邮件并使用 @pm.me 创建更多地址。"
@@ -13100,6 +13180,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以修改一次地址，以确保使用正确的邮箱验证。"
+      ],
+      "You can enable this company again at any time.": [
+        "您可以随时重新启用此公司。"
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "您可以为贵组织成员设置密码规则，此规则将在他们创建或重置其 ${ BRAND_NAME } 账户密码时生效。"
@@ -13248,9 +13331,6 @@
       "You will regain complete or partial access to your encrypted data.": [
         "您将重新获得对加密数据的完全或部分访问权限。"
       ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "即将为您转至 PayPal 确认支付。"
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
@@ -13262,6 +13342,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您将无法使用下载的恢复文件恢复锁定的数据。这也会禁用基于设备的恢复。"
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "我们将根据已分配席位的平均数量按月向您收费。"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
@@ -13406,6 +13489,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "您所有托管公司的每月总费用。"
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
@@ -14227,6 +14313,9 @@
       "Assertion Consumer Service URL": [
         "断言消费者服务 URL"
       ],
+      "Assigned seats": [
+        "已分配席位"
+      ],
       "Attach public key": [
         "附上公钥"
       ],
@@ -14281,6 +14370,9 @@
       "Autosuggest": [
         "自动提示"
       ],
+      "Average": [
+        "均值"
+      ],
       "Awarded": [
         "已奖励"
       ],
@@ -14293,8 +14385,14 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "每 12 个月计费 ${ priceYearly }"
       ],
+      "Billed average": [
+        "平均计费"
+      ],
       "Billed monthly.": [
         "按月计费"
+      ],
+      "Billed seats": [
+        "计费席位"
       ],
       "Billing cycle": [
         "计费周期"
@@ -14395,6 +14493,9 @@
       "Common passwords": [
         "常见密码"
       ],
+      "Companies": [
+        "公司"
+      ],
       "Company": [
         "公司"
       ],
@@ -14463,6 +14564,9 @@
       ],
       "Copy IP address to clipboard": [
         "复制 IP 地址到剪贴板"
+      ],
+      "Cost": [
+        "费用"
       ],
       "Could you please let us know which provider?": [
         "您能告诉我们是哪一款邮箱吗？"
@@ -15265,6 +15369,12 @@
       "Search for a name or email": [
         "搜索名称或邮箱地址"
       ],
+      "Seats": [
+        "座位"
+      ],
+      "Seats usage": [
+        "席位使用情况"
+      ],
       "Second password": [
         "二级密码"
       ],
@@ -15324,6 +15434,9 @@
       ],
       "Show sender images": [
         "显示发件人头像"
+      ],
+      "Show unread count": [
+        "显示未读数量"
       ],
       "Show unread count in Favicon": [
         "在网页图标中显示未读邮件数量"
@@ -15468,6 +15581,9 @@
       ],
       "Token name": [
         "令牌名称"
+      ],
+      "Total cost": [
+        "费用总计"
       ],
       "Transactions": [
         "交易记录"
@@ -16628,14 +16744,8 @@
       "Create a new ${ appName } account": [
         "创建新的 ${ appName } 账户"
       ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "免费试用 ${ BRAND_NAME } 两周"
-      ],
       "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
         "通过安全邮箱、云存储、密码管理器和 VPN，体验真正的在线隐私。立即加入 ${ BRAND_NAME }，下次订阅立减 ${ refereeRewardAmount }。"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "体验真正的在线隐私。使用 ${ BRAND_NAME }免费保护您接下来14 天的数据。"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "查找您的 ${ BRAND_NAME } 账户用户名"
@@ -19816,6 +19926,9 @@
       "Enter a name": [
         "请输入名称"
       ],
+      "Enter company name": [
+        "输入公司名称"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -19872,6 +19985,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Search for a company": [
+        "搜索公司"
       ],
       "Search for a user or address": [
         "搜索用户或地址"
@@ -21060,6 +21176,9 @@
       "to recover your account if you're ever locked out": [
         "如果您被锁定，可恢复您的账户"
       ],
+      "update it now": [
+        "立即更新"
+      ],
       "Update your recovery phrase": [
         "更新您的恢复短语"
       ],
@@ -21347,6 +21466,12 @@
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "如果您无法登录 ${ BRAND_NAME } 账户，该短语将允许您登录并恢复数据。这是即时恢复所有内容的唯一方法，请务必将其保存在安全的地方！"
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "如果您的密保邮箱已更改，请 ${ updateEmailLink }。"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "如果您的密保手机号码已更改，请 ${ updatePhoneLink }。"
+      ],
       "Later": [
         "稍后"
       ],
@@ -21358,6 +21483,9 @@
       ],
       "Saved recovery phrase": [
         "已保存恢复短语"
+      ],
+      "Send verification code": [
+        "发送验证码"
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "他们必须已拥有 ${ BRAND_NAME } 账户！"
@@ -21383,8 +21511,23 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "为确保电话号码是您的，请输入发送至 ${ boldPhoneNumber } 的验证码。"
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "为确保邮箱地址是您的，我们将发送一封带有验证码的邮件。"
+      ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "为确保邮箱地址是您的，我们将发送一封带有验证链接的邮件。"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "为确保手机号码是您的，我们将发送一条带有验证码的短信。"
+      ],
+      "Update": [
+        "更新"
+      ],
+      "Update recovery email": [
+        "更新密保邮箱"
+      ],
+      "Update recovery phone": [
+        "更新密保手机"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "升级您的套餐以启用账户的紧急访问功能，这将允许您指定 1 到 5 位能够为您重置密码的朋友。"
@@ -21418,6 +21561,12 @@
       ],
       "Verify your recovery phone": [
         "验证密保手机"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "验证邮箱地址可提高账户安全性，并提供更多的恢复选项。"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "验证手机号码可提高账户安全性，并提供更多的恢复选项。"
       ],
       "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
         "您可以在此设备上保存数据备份。重置密码后，只需在此设备上登录，即可恢复您账户中的邮件、联系人、文件、密码以及任何其他加密数据。"
@@ -23204,6 +23353,9 @@
       "... waiting": [
         "... 等待中"
       ],
+      "Active": [
+        "活动"
+      ],
       "Add a phone number": [
         "添加手机号码"
       ],
@@ -23221,6 +23373,9 @@
       ],
       "Disable recovery by phone": [
         "禁用通过密保手机恢复"
+      ],
+      "Disabled": [
+        "已禁用"
       ],
       "finalizing": [
         "即将完成"
@@ -23972,15 +24127,21 @@
       ],
       "View VPN session details for your organization.": [
         "查看您组织的 VPN 会话详情。"
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "通过托管公司，您可以添加、编辑和移除对所管理组织的访问权限。"
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "您所有托管公司的每月总费用。"
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } 已启用"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } 已禁用"
+      ],
+      "${ data.name } added": [
+        "${ data.name } 已添加"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } 已更新"
+      ],
       "Account deleted. Signing out...": [
         "账户已删除，正在退出..."
       ],
@@ -24652,6 +24813,9 @@
       "Add categories": [
         "添加分类"
       ],
+      "Add company": [
+        "添加公司"
+      ],
       "Add contact group name": [
         "添加联系人群组名称"
       ],
@@ -24765,6 +24929,9 @@
       ],
       "Are you sure you want to close?": [
         "确定要关闭吗？"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "您确定要断开连接并禁用此地址吗？"
       ],
       "Are you sure you want to disconnect this address?": [
         "您确定要断开此地址的连接吗？"
@@ -25144,6 +25311,9 @@
       "Disable categories?": [
         "禁用分类？"
       ],
+      "Disable company": [
+        "禁用公司"
+      ],
       "Disable device data backup?": [
         "禁用设备数据备份？"
       ],
@@ -25209,6 +25379,9 @@
       ],
       "Edit billing address": [
         "编辑账单地址"
+      ],
+      "Edit company": [
+        "编辑公司"
       ],
       "Edit countries": [
         "编辑国家"
@@ -25467,6 +25640,9 @@
       ],
       "Group membership": [
         "群组会员资格"
+      ],
+      "Group role assignment paused": [
+        "群组角色分配已暂停"
       ],
       "Groups": [
         "群组"
@@ -25780,9 +25956,6 @@
       "Payment verification": [
         "支付验证"
       ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
-      ],
       "Pending invitations": [
         "待处理的邀请"
       ],
@@ -25806,6 +25979,9 @@
       ],
       "Previous": [
         "上一页"
+      ],
+      "Previous billing periods": [
+        "历史账单周期"
       ],
       "Priority support:": [
         "优先客户支持："
@@ -26865,6 +27041,9 @@
       "Group membership paused": [
         "群组成员资格暂停"
       ],
+      "Role assignment paused": [
+        "角色分配已暂停"
+      ],
       "Sending member invitation": [
         "正在发送成员邀请"
       ],
@@ -26985,8 +27164,14 @@
       "Payment reversal": [
         "撤销付款"
       ],
+      "Prepayment": [
+        "预付款"
+      ],
       "Refund": [
         "退款"
+      ],
+      "Test credit": [
+        "测试额度"
       ]
     },
     "Unlimited offer": {

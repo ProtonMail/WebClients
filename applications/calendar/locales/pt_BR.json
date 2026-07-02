@@ -4199,6 +4199,9 @@
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -6111,9 +6114,6 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticamente envia a mensagem usando o modo compositor atual."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique seu cartão na guia de verificação."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
       ],
@@ -6153,9 +6153,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
@@ -6643,9 +6640,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Você perderá todas as alterações não salvas."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Você vai atualizar todos os eventos desta série. Os participantes adicionados e removidos serão notificados."
@@ -11949,6 +11943,9 @@
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -12405,9 +12402,6 @@
       ],
       "Payment verification": [
         "Verificação de pagamento"
-      ],
-      "PayPal verification failed": [
-        "Ocorreu um erro na verificação do PayPal"
       ],
       "Phone numbers": [
         "Números de telefone"

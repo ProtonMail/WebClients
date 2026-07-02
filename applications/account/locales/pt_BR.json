@@ -117,6 +117,9 @@
       "Add calendar from URL": [
         "Adicionar calendário de uma URL"
       ],
+      "Add company": [
+        "Adicionar empresa"
+      ],
       "Add condition": [
         "Adicionar condição"
       ],
@@ -582,6 +585,9 @@
       "Disable category": [
         "Desativa categoria"
       ],
+      "Disable company": [
+        "Desativar empresa"
+      ],
       "Disable recovery phrase": [
         "Desativar a frase de recuperação"
       ],
@@ -738,6 +744,9 @@
       "Enable category": [
         "Ativar categoria"
       ],
+      "Enable company": [
+        "Ativar empresa"
+      ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
@@ -782,6 +791,9 @@
       ],
       "Export key before deleting": [
         "Exportar chave antes de excluir"
+      ],
+      "Export overview as CSV": [
+        "Exportar visão geral como CSV"
       ],
       "Extend": [
         "Estender"
@@ -1059,9 +1071,6 @@
       "Load more": [
         "Carregar mais"
       ],
-      "Loading verification": [
-        "Carregando verificação"
-      ],
       "Lost access to your 2FA device?": [
         "Perdeu o acesso ao seu dispositivo A2F?"
       ],
@@ -1070,6 +1079,9 @@
       ],
       "Make key primary": [
         "Tornar chave principal"
+      ],
+      "Manage": [
+        "Gerenciar"
       ],
       "Manage addresses": [
         "Gerenciar endereços"
@@ -3919,6 +3931,29 @@
       ],
       "white": [
         "branco"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Período de faturamento"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "Managed companies": [
+        "Empresas gerenciadas"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total billed seats": [
+        "Licenças faturadas totais"
+      ],
+      "Total cost": [
+        "Custo total"
+      ],
+      "Used / assigned seats": [
+        "Licenças usadas / atribuídas"
       ]
     },
     "Condition for custom filter": {
@@ -7248,6 +7283,9 @@
       "Not a valid number": [
         "Não é um número válido"
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Apenas as maiúsculas e pontuação (pontos, hífenes, e sublinhados) podem ser mudados para este endereço"
+      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
@@ -7540,6 +7578,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -9565,6 +9606,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nunca compartilha suas informações com terceiros. Os dados vêm das próprias análises da ${ BRAND_NAME } e da Constella Intelligence."
       ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -10215,6 +10259,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponível no macOS, Windows e Linux."
+      ],
+      "Average": [
+        "Média"
       ],
       "Awaiting transaction": [
         "Esperando transação"
@@ -11666,6 +11713,9 @@
       "per month, billed at ${ price }": [
         "por mês, faturado em ${ price }"
       ],
+      "Per seat/month": [
+        "Por licença/mês"
+      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "É mais provável que clientes PGP detectem automaticamente suas chaves PGP se as mensagens de saída forem assinadas."
       ],
@@ -11685,9 +11735,6 @@
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Solicite ao proprietário para convidá-lo diretamente para o documento."
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentique seu cartão na guia de verificação."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
@@ -11736,9 +11783,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -11976,6 +12020,9 @@
       ],
       "Set password": [
         "Defina uma senha"
+      ],
+      "Set the name, status, and assigned seats": [
+        "Defina o nome, status e atribuía licenças"
       ],
       "Set up your organization": [
         "Configure a sua organização"
@@ -12808,11 +12855,17 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Enviaremos um código de redefinição para ${ boldValue }."
       ],
+      "What happens:": [
+        "O que acontece:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, isso impede que arquivos de imagem sejam carregados no seu dispositivo sem seu conhecimento."
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Quando desativado, isso impede que imagens remoras sejam carregados sem seu conhecimento."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Quando ativado, verificaremos se o ${ MAIL_APP_NAME } é seu aplicativo de e-mail padrão e o notificaremo caso não seja."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
@@ -13098,9 +13151,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Você recuperará o acesso total ou parcial aos seus dados criptografados."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
@@ -14088,6 +14138,9 @@
       "Assertion Consumer Service URL": [
         "URL de asserção do serviço do consumidor (ACS)"
       ],
+      "Assigned seats": [
+        "Licenças atribuídas"
+      ],
       "Attach public key": [
         "Anexar chave pública"
       ],
@@ -14142,6 +14195,9 @@
       "Autosuggest": [
         "Sugestão automática"
       ],
+      "Average": [
+        "Média"
+      ],
       "Awarded": [
         "Premiado"
       ],
@@ -14154,8 +14210,14 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Com o preço de ${ priceYearly } a cada 12 meses."
       ],
+      "Billed average": [
+        "Média faturada"
+      ],
       "Billed monthly.": [
         "Cobrado mensalmente."
+      ],
+      "Billed seats": [
+        "Licenças faturáveis"
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
@@ -14256,6 +14318,9 @@
       "Common passwords": [
         "Senhas comuns"
       ],
+      "Companies": [
+        "Empresas"
+      ],
       "Company": [
         "Empresa"
       ],
@@ -14324,6 +14389,9 @@
       ],
       "Copy IP address to clipboard": [
         "Copiar o endereço de IP para área de transferência"
+      ],
+      "Cost": [
+        "Custo"
       ],
       "Could you please let us know which provider?": [
         "Você poderia nos informar qual provedor?"
@@ -14680,6 +14748,9 @@
       "Import to:": [
         "Importar para:"
       ],
+      "Import your emails": [
+        "Importe seus e-mails"
+      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -14875,6 +14946,9 @@
       "Newsletters": [
         "Boletins informativos"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletins – Notícias, e-mails editoriais e conteúdo não promocional"
+      ],
       "No": [
         "Não"
       ],
@@ -15031,11 +15105,17 @@
       "Primary": [
         "Primário"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal - E-mails pessoais e profissionais, além de atualizações importantes"
+      ],
       "Priority support": [
         "Suporte prioritário"
       ],
       "Promotions": [
         "Promoções"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoções - Ofertas, descontos e e-mails de propaganda"
       ],
       "Prompt to trust keys": [
         "Solicitar chaves de confiança"
@@ -15114,6 +15194,12 @@
       ],
       "Search for a name or email": [
         "Pesquisar por um nome ou e-mail"
+      ],
+      "Seats": [
+        "Licenças"
+      ],
+      "Seats usage": [
+        "Licenças usadas"
       ],
       "Second password": [
         "Segunda senha"
@@ -15211,6 +15297,9 @@
       ],
       "Social": [
         "Mídias sociais"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Atualizações de mídia social, atividade e mensagens"
       ],
       "Social media updates and activity": [
         "Atualizações e atividade de redes sociais"
@@ -15317,8 +15406,14 @@
       "Token name": [
         "Nome do token"
       ],
+      "Total cost": [
+        "Custo total"
+      ],
       "Transactions": [
         "Transações"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transações — Recibos, reservas, faturas e pedidos"
       ],
       "Two-password mode": [
         "Modo de duas senhas"
@@ -15340,6 +15435,9 @@
       ],
       "Updates": [
         "Atualizações"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Atualizações — Confirmações automáticas, alertas e atualizações de conta"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de criptografia"
@@ -16485,12 +16583,6 @@
       ],
       "Create a new ${ appName } account": [
         "Criar uma conta no ${ appName }"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Aproveite duas semanas de ${ BRAND_NAME } de graça"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Experimente a verdadeira privacidade on-line. Proteja seus dados com ${ BRAND_NAME } gratuitamente pelos próximos 14 dias."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Encontrar seu nome de usuário da ${ BRAND_NAME }."
@@ -19706,6 +19798,9 @@
       "Enter a name": [
         "Insira um nome"
       ],
+      "Enter company name": [
+        "Insira o nome da empresa"
+      ],
       "example@domain.com": [
         "exemplo@dominio.com"
       ],
@@ -19762,6 +19857,9 @@
       ],
       "Search": [
         "Pesquisar"
+      ],
+      "Search for a company": [
+        "Pesquisar por uma empresa"
       ],
       "Search for a user or address": [
         "Pesquisar por um usuário ou endereço"
@@ -21188,11 +21286,20 @@
       "Saved recovery phrase": [
         "Frase de recuperação salva"
       ],
+      "Send verification code": [
+        "Enviar código de verificação"
+      ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Você deve ter uma conta da ${ BRAND_NAME }"
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Isso permitirá que você acesse sua conta da ${ BRAND_NAME } de forma rápida para alterar sua senha."
+      ],
+      "Update": [
+        "Atualizar"
+      ],
+      "Update recovery email": [
+        "Atualizar e-mail de recuperação"
       ],
       "Verified password": [
         "Senha verificada"
@@ -21332,6 +21439,9 @@
       ],
       "Private user": [
         "Usuário privado"
+      ],
+      "Review users and groups before finishing setup": [
+        "Revise usuários e grupo antes de terminar a configuração"
       ],
       "Updated": [
         "Atualizado"
@@ -23010,6 +23120,9 @@
       "... waiting": [
         "... aguarde"
       ],
+      "Active": [
+        "Ativo"
+      ],
       "Add a phone number": [
         "Adicionar um número de telefone"
       ],
@@ -23027,6 +23140,9 @@
       ],
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
+      ],
+      "Disabled": [
+        "Desativado"
       ],
       "finalizing": [
         "finalizando"
@@ -23796,6 +23912,18 @@
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } ativado"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } desativado"
+      ],
+      "${ data.name } added": [
+        "${ data.name } adicionado"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } atualizado"
+      ],
       "Account deleted. Signing out...": [
         "Conta excluída. Encerando sessão..."
       ],
@@ -24356,6 +24484,9 @@
         "${ friendsSubscribed } amigo(a) inscrito(a)",
         "${ friendsSubscribed } amigos(as) inscritos(as)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -24479,6 +24610,9 @@
       ],
       "Add categories": [
         "Adicionar categorias"
+      ],
+      "Add company": [
+        "Adicionar empresa"
       ],
       "Add contact group name": [
         "Adicionar nome do grupo de contatos"
@@ -24974,6 +25108,9 @@
       "Disable categories?": [
         "Desativar categorias?"
       ],
+      "Disable company": [
+        "Desativar empresa"
+      ],
       "Disable device data backup?": [
         "Desativar o backup de dados do dispositivo?"
       ],
@@ -25039,6 +25176,9 @@
       ],
       "Edit billing address": [
         "Editar o endereço de cobrança"
+      ],
+      "Edit company": [
+        "Editar empresa"
       ],
       "Edit countries": [
         "Editar países"
@@ -25612,9 +25752,6 @@
       "Payment verification": [
         "Verificação de pagamento"
       ],
-      "PayPal verification failed": [
-        "Ocorreu um erro na verificação do PayPal"
-      ],
       "Pending invitations": [
         "Convites pendentes"
       ],
@@ -25638,6 +25775,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Previous billing periods": [
+        "Período de faturamento anteriores"
       ],
       "Priority support:": [
         "Suporte prioritário:"
@@ -26794,6 +26934,9 @@
       "Payment reversal": [
         "Cancelamento de pagamento"
       ],
+      "Prepayment": [
+        "Pré-pagamento"
+      ],
       "Refund": [
         "Reembolso"
       ]
@@ -27047,6 +27190,9 @@
       ],
       "Invitation email": [
         "E-mail de convite"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
       ],
       "Name": [
         "Nome"

@@ -981,9 +981,6 @@
       "Load more": [
         "Carica di più"
       ],
-      "Loading verification": [
-        "Caricamento della verifica in corso"
-      ],
       "Lost access to your 2FA device?": [
         "Hai perso l'accesso al tuo dispositivo A2F?"
       ],
@@ -10811,9 +10808,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Chiedi al proprietario di invitarti direttamente al documento."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Verifica la carta nella scheda di verifica."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Verifica il pagamento nella scheda di verifica."
       ],
@@ -10852,9 +10846,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Riprova utilizzando un altro metodo di pagamento oppure contatta PayPal per assistenza."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Riprova, usa un metodo di pagamento differente o contatta PayPal per assistenza."
       ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
@@ -12109,9 +12100,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Recupererai l’accesso completo o parziale ai tuoi dati crittografati."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
@@ -15182,12 +15170,6 @@
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Crea un account ${ BRAND_NAME } | Riprenditi la tua privacy"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Goditi due settimane di ${ BRAND_NAME } gratis"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Sperimenta la vera privacy online. Proteggi i tuoi dati con ${ BRAND_NAME } gratuitamente per i prossimi 14 giorni."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Trova il nome utente del tuo account ${ BRAND_NAME }"
@@ -21029,6 +21011,11 @@
         "Annullamento dell'abbonamento in corso, attendere prego"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Disabilitato"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Azioni"
@@ -23334,9 +23321,6 @@
       ],
       "Payment verification": [
         "Verifica pagamento"
-      ],
-      "PayPal verification failed": [
-        "Verifica PayPal non riuscita"
       ],
       "Pending invitations": [
         "Inviti in sospeso"
