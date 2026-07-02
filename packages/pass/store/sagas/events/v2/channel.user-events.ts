@@ -33,7 +33,7 @@ export function* userEventsChannel(_: Api, options: RootSagaOptions): Generator 
                 const processed: boolean = yield call(processUserEvents, events, options);
 
                 /** 4. Update state with new eventID only if all events were processed */
-                if (processed) yield put(setUserEventID(events.LastEventID));
+                if (processed && !events.FullRefresh) yield put(setUserEventID(events.LastEventID));
 
                 /** 5. If more events pending -> poll immediately */
                 if (processed && events.EventsPending) continue;
