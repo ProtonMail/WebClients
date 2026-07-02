@@ -4944,6 +4944,9 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Na tejto adrese možno meniť len veľké písmená a interpunkciu (bodky, pomlčky a podčiarkovníky)."
       ]
     },
     "error": {
@@ -9370,6 +9373,15 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tu je možné zmeniť iba veľké písmená a interpunkčné znamienka (bodky, pomlčky a podčiarknutia). Ak chcete použiť inú adresu, pridajte novú."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Proces bol prerušený pre ${ pausedCount } skupinu. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupiny. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupín. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupín. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií."
       ]
     },
     "info": {
@@ -18106,6 +18118,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Naozaj chcete odpojiť a deaktivovať túto adresu?"
+      ],
+      "Group role assignment paused": [
+        "Priradenie pozícií v skupine je pozastavené"
       ]
     },
     "Title for payment methods table": {
@@ -18359,6 +18374,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ],
+      "Role assignment paused": [
+        "Priradenie pozícií je pozastavené"
       ]
     },
     "Tor out of date": {
@@ -18434,6 +18452,12 @@
       ],
       "Refund": [
         "Vrátenie peňazí"
+      ],
+      "Prepayment": [
+        "Platba vopred"
+      ],
+      "Test credit": [
+        "Testovací kredit"
       ]
     },
     "Unlimited offer": {

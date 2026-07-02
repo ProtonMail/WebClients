@@ -4911,6 +4911,9 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Pentru această adresă poate fi modificată doar scrierea cu majuscule și punctuația (puncte, cratime și caractere de subliniere)."
       ]
     },
     "error": {
@@ -9247,6 +9250,14 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Doar scrierea cu majuscule și semnele de punctuație (puncte, cratime și sublinieri) pot fi modificate aici. Pentru a utiliza o adresă diferită, adăugați una nouă."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Procesul a fost întrerupt pentru ${ pausedCount } grup. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor.",
+        "Procesul a fost întrerupt pentru ${ pausedCount } grupuri. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor.",
+        "Procesul a fost întrerupt pentru ${ pausedCount } de grupuri. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor."
       ]
     },
     "info": {
@@ -17844,6 +17855,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Sigur doriți să vă deconectați și să dezactivați această adresă?"
+      ],
+      "Group role assignment paused": [
+        "Atribuirea rolului de grup a fost întreruptă"
       ]
     },
     "Title for payment methods table": {
@@ -18097,6 +18111,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
+      ],
+      "Role assignment paused": [
+        "Atribuirea rolului a fost suspendată"
       ]
     },
     "Tor out of date": {
@@ -18172,6 +18189,12 @@
       ],
       "Refund": [
         "Restituire"
+      ],
+      "Prepayment": [
+        "Plată în avans"
+      ],
+      "Test credit": [
+        "Credit de test"
       ]
     },
     "Unlimited offer": {

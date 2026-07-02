@@ -4878,6 +4878,9 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Només es poden canviar les majúscules i la puntuació (punts, guionets i guions baixos) per aquesta adreça"
       ]
     },
     "error": {
@@ -9121,6 +9124,13 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Només podeu canviar les majúscules i la puntuació (punts, guionets i guions baixos). Per utilitzar una adreça diferent, afegiu-ne una de nova."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "El procés s'ha interromput per a ${ pausedCount } grup. Feu clic a Continuar per reprendre l'assignació de rols.",
+        "El procés s'ha interromput per a ${ pausedCount } grups. Feu clic a Continuar per reprendre l'assignació de rols."
       ]
     },
     "info": {
@@ -17582,6 +17592,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Segur que voleu desconnectar i desactivar aquesta adreça?"
+      ],
+      "Group role assignment paused": [
+        "S'ha pausat l'assignació de rols de grup"
       ]
     },
     "Title for payment methods table": {
@@ -17835,6 +17848,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
+      ],
+      "Role assignment paused": [
+        "S'ha pausat l'assignació de rols"
       ]
     },
     "Tor out of date": {
@@ -17910,6 +17926,12 @@
       ],
       "Refund": [
         "Reemborsament"
+      ],
+      "Prepayment": [
+        "Prepagament"
+      ],
+      "Test credit": [
+        "Crèdit de prova"
       ]
     },
     "Unlimited offer": {

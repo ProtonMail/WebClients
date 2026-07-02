@@ -4878,6 +4878,9 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Μόνο τα κεφαλαία και τα σημεία στίξης (τελείες, παύλες και παύλες υπογράμμισης) μπορούν να αλλάξουν για αυτήν τη διεύθυνση"
       ]
     },
     "error": {
@@ -9124,6 +9127,13 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Μόνο η χρήση κεφαλαίων και η στίξη (τελικές στιγμές, παύλες και υπογράμμιση) μπορούν να αλλάξουν εδώ. Για να χρησιμοποιήσετε διαφορετική διεύθυνση, προσθέστε μια νέα."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Η διαδικασία διακόπηκε για ${ pausedCount } ομάδα. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων.",
+        "Η διαδικασία διακόπηκε για ${ pausedCount } ομάδες. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων."
       ]
     },
     "info": {
@@ -17582,6 +17592,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Είστε βέβαιοι ότι θέλετε να αποσυνδέσετε και να απενεργοποιήσετε αυτήν τη διεύθυνση;"
+      ],
+      "Group role assignment paused": [
+        "Η ανάθεση ρόλου ομάδας τέθηκε σε παύση"
       ]
     },
     "Title for payment methods table": {
@@ -17835,6 +17848,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
+      ],
+      "Role assignment paused": [
+        "Η ανάθεση ρόλου τέθηκε σε παύση"
       ]
     },
     "Tor out of date": {
@@ -17910,6 +17926,12 @@
       ],
       "Refund": [
         "Επιστροφή χρημάτων"
+      ],
+      "Prepayment": [
+        "Προπληρωμή"
+      ],
+      "Test credit": [
+        "Δοκιμαστική πίστωση"
       ]
     },
     "Unlimited offer": {

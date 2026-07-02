@@ -4861,6 +4861,9 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Seuls des changements de minuscules/majuscules et de ponctuation (points, traits d'union et underscores/tirets du bas) peuvent être effectués pour cette adresse."
       ]
     },
     "error": {
@@ -9093,6 +9096,13 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Seules les majuscules et la ponctuation (points, traits d'union et underscores/tirets du bas) peuvent être modifiées ici. Pour utiliser une adresse différente, ajoutez-en une nouvelle."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Le processus a été interrompu pour le groupe ${ pausedCount }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
+        "Le processus a été interrompu pour les groupes ${ pausedCount }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
       ]
     },
     "info": {
@@ -17548,6 +17558,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Voulez-vous vraiment déconnecter et désactiver cette adresse ?"
+      ],
+      "Group role assignment paused": [
+        "L'attribution de rôle de groupe a été suspendue"
       ]
     },
     "Title for payment methods table": {
@@ -17801,6 +17814,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"
+      ],
+      "Role assignment paused": [
+        "L'attribution de rôle a été suspendue"
       ]
     },
     "Tor out of date": {
@@ -17876,6 +17892,12 @@
       ],
       "Refund": [
         "Remboursement"
+      ],
+      "Prepayment": [
+        "Prépaiement"
+      ],
+      "Test credit": [
+        "Paiement test"
       ]
     },
     "Unlimited offer": {

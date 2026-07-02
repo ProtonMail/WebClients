@@ -4858,6 +4858,9 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Bei dieser E-Mail-Adresse können nur Groß- und Kleinschreibung sowie die Zeichensetzung (Punkte, Bindestriche und Unterstriche) geändert werden."
       ]
     },
     "error": {
@@ -9104,6 +9107,13 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Hier können nur Groß- und Kleinschreibung sowie Zeichensetzung (Punkte, Bindestriche und Unterstriche) geändert werden. Um eine andere E-Mail-Adresse zu verwenden, füge eine neue hinzu."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Die Verarbeitung wurde für ${ pausedCount } Gruppe unterbrochen. Klicke auf „Weiter“, um die Zuweisung von Rollen fortzusetzen.",
+        "Die Verarbeitung wurde für ${ pausedCount } Gruppen unterbrochen. Klicke auf „Weiter“, um die Zuweisung von Rollen fortzusetzen."
       ]
     },
     "info": {
@@ -17559,6 +17569,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Möchtest du diese E-Mail-Adresse wirklich trennen und deaktivieren?"
+      ],
+      "Group role assignment paused": [
+        "Zuweisung von Gruppenrollen pausiert"
       ]
     },
     "Title for payment methods table": {
@@ -17812,6 +17825,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
+      ],
+      "Role assignment paused": [
+        "Zuweisung von Rollen pausiert"
       ]
     },
     "Tor out of date": {
@@ -17887,6 +17903,12 @@
       ],
       "Refund": [
         "Erstattung"
+      ],
+      "Prepayment": [
+        "Vorauszahlung"
+      ],
+      "Test credit": [
+        "Guthaben testen"
       ]
     },
     "Unlimited offer": {

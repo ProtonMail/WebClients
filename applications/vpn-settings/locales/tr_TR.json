@@ -4878,6 +4878,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Bu adres için yalnızca büyük harf kullanımı ve noktalama işaretleri (nokta, kısa çizgi ve alt çizgi) değiştirilebilir."
       ]
     },
     "error": {
@@ -9124,6 +9127,13 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Burada yalnızca büyük harf kullanımı ve noktalama işaretleri (nokta, tire ve alt çizgi) değiştirilebilir. Farklı bir adres kullanmak istiyorsanız yeni bir adres ekleyin."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "${ pausedCount } grup için işlem kesintiye uğradı. Rol atamaya devam etmek için “Devam Et” düğmesine tıklayın.",
+        "${ pausedCount } grup için işlem kesintiye uğradı. Rol atamaya devam etmek için “Devam Et” düğmesine tıklayın."
       ]
     },
     "info": {
@@ -17582,6 +17592,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Bu adresin bağlantısını kesip kullanımdan kaldırmak istediğinize emin misiniz?"
+      ],
+      "Group role assignment paused": [
+        "Grup rol ataması askıya alındı"
       ]
     },
     "Title for payment methods table": {
@@ -17835,6 +17848,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
+      ],
+      "Role assignment paused": [
+        "Rol ataması askıya alındı"
       ]
     },
     "Tor out of date": {
@@ -17910,6 +17926,12 @@
       ],
       "Refund": [
         "Geri ödeme"
+      ],
+      "Prepayment": [
+        "Ön ödeme"
+      ],
+      "Test credit": [
+        "Deneme kredisi"
       ]
     },
     "Unlimited offer": {

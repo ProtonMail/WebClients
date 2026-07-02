@@ -8462,6 +8462,10 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä.",
+        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä."
       ]
     },
     "info": {
@@ -16174,6 +16178,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Group role assignment paused": [
+        "Ryhmän roolien määrittäminen keskeytetty"
       ]
     },
     "Title for payment methods table": {
@@ -16409,6 +16416,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
+      ],
+      "Role assignment paused": [
+        "Roolien määrittäminen keskeytetty"
       ]
     },
     "Tor out of date": {

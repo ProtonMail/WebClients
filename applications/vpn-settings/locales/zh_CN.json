@@ -4845,6 +4845,9 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "该地址只能更改大小写和标点符号（句号、连字符和下划线）"
       ]
     },
     "error": {
@@ -9001,6 +9004,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "该地址只能更改大小写和标点符号（句号、连字符和下划线）。如需使用其他地址，请添加新地址。"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "该流程在 ${ pausedCount } 个群组中被中断，点击“继续”以恢复分配角色。"
       ]
     },
     "info": {
@@ -17320,6 +17329,9 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "您确定要断开连接并禁用此地址吗？"
+      ],
+      "Group role assignment paused": [
+        "群组角色分配已暂停"
       ]
     },
     "Title for payment methods table": {
@@ -17573,6 +17585,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
+      ],
+      "Role assignment paused": [
+        "角色分配已暂停"
       ]
     },
     "Tor out of date": {
@@ -17648,6 +17663,12 @@
       ],
       "Refund": [
         "退款"
+      ],
+      "Prepayment": [
+        "预付款"
+      ],
+      "Test credit": [
+        "测试额度"
       ]
     },
     "Unlimited offer": {
