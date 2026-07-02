@@ -67,6 +67,7 @@ export const CategoriesTabsList = () => {
             <div
                 className="categories-tabs flex flex-nowrap px-2 h-fit-content border-bottom border-weak"
                 data-testid="categories-tabs"
+                data-category-count={activeCategoriesTabs.length}
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
@@ -84,7 +85,7 @@ export const CategoriesTabsList = () => {
                     return (
                         <div
                             key={category.id}
-                            className="tab-wrapper shrink-0"
+                            className="tab-wrapper flex-none min-w-0"
                             onDragOver={handleDragOver(category.id)}
                             onDrop={handleDrop(category.id)}
                         >
