@@ -30,6 +30,14 @@ jest.mock('../categoriesOnboarding/CategoriesOnboardingSpotlights', () => ({
     CategoriesOnboardingSpotlight: ({ children }: PropsWithChildren) => <>{children}</>,
 }));
 
+jest.mock('../categoriesOnboarding/CategoriesOnboardingContext', () => ({
+    useCategoriesOnboarding: jest.fn(() => ({
+        activeStep: 6, // OnboardingStep.DONE
+        userIsInOnboarding: false,
+        categorizeStepLocation: undefined as any,
+    })),
+}));
+
 describe('CategoriesTabs', () => {
     describe('selected category test', () => {
         // TODO add a test to cover disabled categories

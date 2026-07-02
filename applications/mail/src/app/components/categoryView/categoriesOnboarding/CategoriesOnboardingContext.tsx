@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -51,15 +51,27 @@ export const useCategoriesOnboarding = () => {
 export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) => {
     const { notify } = useMailGlobalModals();
     const onboarding = useCategoriesOnboardingEligibility();
+
     const hasTriggeredModalRef = useRef(false);
+    const [categorizeStepLocation, setCategorizeStepLocation] = useState<CategorizeStepLocation>(undefined);
 
     const b2cOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
+    const flagRef = useRef(b2cOnboardingViewFlag);
+    flagRef.current = b2cOnboardingViewFlag;
+
     const labelID = useMailSelector(selectLabelID);
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
 
     const primaryCount = useMailSelector((state) =>
         selectLabelIDUnreadCount(state, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
     );
+
+    useEffect(() => {
+        if (categorizeStepLocation !== undefined || primaryCount.loading) {
+            return;
+        }
+        setCategorizeStepLocation(primaryCount.count > 2 ? 'list' : 'tab');
+    }, [categorizeStepLocation, primaryCount.loading, primaryCount.count]);
 
     useEffect(() => {
         // Only trigger modal once per session and when the user is in the Inbox
@@ -92,15 +104,11 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     }, [onboarding, notify, isInbox]);
 
     const activeStep = useMemo(() => {
-        if (
-            b2cOnboardingViewFlag.loading ||
-            b2cOnboardingViewFlag.feature?.Value === undefined ||
-            onboarding.audienceType === AudienceType.B2B
-        ) {
+        const flagValue = b2cOnboardingViewFlag.feature?.Value;
+        if (b2cOnboardingViewFlag.loading || flagValue === undefined || onboarding.audienceType === AudienceType.B2B) {
             return OnboardingStep.NONE;
         }
 
-        const flagValue = b2cOnboardingViewFlag.feature?.Value;
         if (shouldSeeInitialModal(flagValue)) {
             return OnboardingStep.INITIAL_MODAL;
         }
@@ -118,22 +126,10 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         }
 
         return OnboardingStep.DONE;
-    }, [b2cOnboardingViewFlag, onboarding.audienceType]);
+    }, [b2cOnboardingViewFlag.feature?.Value, b2cOnboardingViewFlag.loading, onboarding.audienceType]);
 
-    const categorizeStepLocation: CategorizeStepLocation = useMemo(() => {
-        if (primaryCount.loading) {
-            return undefined;
-        }
-
-        if (primaryCount.count > 2) {
-            return 'list';
-        }
-
-        return 'tab';
-    }, [primaryCount]);
-
-    const handleSkip = () => {
-        const flagValue = b2cOnboardingViewFlag.feature?.Value;
+    const handleSkip = useCallback(() => {
+        const flagValue = flagRef.current.feature?.Value;
         if (!flagValue) {
             return;
         }
@@ -145,31 +141,31 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE |
             CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE;
 
-        void b2cOnboardingViewFlag.update(updatedFlag);
-    };
+        void flagRef.current.update(updatedFlag);
+    }, []);
 
-    const completeCurrentStep = () => {
+    const completeCurrentStep = useCallback(() => {
         const bit = STEP_TO_FLAG[activeStep];
-        const flagValue = b2cOnboardingViewFlag.feature?.Value;
+        const flagValue = flagRef.current.feature?.Value;
         if (!flagValue || bit === undefined) {
             return;
         }
 
-        void b2cOnboardingViewFlag.update(setBit(flagValue, bit));
-    };
+        void flagRef.current.update(setBit(flagValue, bit));
+    }, [activeStep]);
 
     const userIsInOnboarding = activeStep !== OnboardingStep.NONE && activeStep !== OnboardingStep.DONE;
-    return (
-        <CategoriesOnboardingContext.Provider
-            value={{
-                activeStep,
-                userIsInOnboarding,
-                handleSkip,
-                completeCurrentStep,
-                categorizeStepLocation,
-            }}
-        >
-            {children}
-        </CategoriesOnboardingContext.Provider>
+
+    const value = useMemo(
+        () => ({
+            activeStep,
+            userIsInOnboarding,
+            handleSkip,
+            completeCurrentStep,
+            categorizeStepLocation,
+        }),
+        [activeStep, userIsInOnboarding, handleSkip, completeCurrentStep, categorizeStepLocation]
     );
+
+    return <CategoriesOnboardingContext.Provider value={value}>{children}</CategoriesOnboardingContext.Provider>;
 };
