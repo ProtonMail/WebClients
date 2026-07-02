@@ -2,20 +2,11 @@ import { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card/Card';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
 import type { Member } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
-
-const Wrap = ({ children }: { children: ReactNode }) => {
-    return (
-        <Card rounded className="mb-4 p-2" padded={false}>
-            {children}
-        </Card>
-    );
-};
+import clsx from '@proton/utils/clsx';
 
 const AccordionButton = ({ onClick, children }: { onClick: () => void; children: ReactNode }) => {
     return (
@@ -38,10 +29,10 @@ const MembersListItem = ({ member }: { member: Member }) => {
     );
 };
 
-export const MembersList = ({ members }: { members: Member[] }) => {
+export const MembersList = ({ members, listClassName }: { members: Member[]; listClassName?: string }) => {
     const [toggled, setToggled] = useState(false);
 
-    const max = 10;
+    const max = 3;
     const total = members.length;
     const canHide = total > max;
 
@@ -50,10 +41,10 @@ export const MembersList = ({ members }: { members: Member[] }) => {
 
     return (
         <div>
-            <ul className="m-0 flex flex-column gap-1 pt-2 unstyled">
+            <ul className={clsx('m-0 flex flex-column gap-1 pt-2', listClassName)}>
                 {firstMembers.map((member) => {
                     return (
-                        <li key={member.ID} className="block w-full">
+                        <li key={member.ID} className="w-full">
                             <MembersListItem member={member} />
                         </li>
                     );
@@ -70,25 +61,22 @@ export const MembersList = ({ members }: { members: Member[] }) => {
 };
 
 export const MemberListBanner = ({
-    icon,
+    variant = BannerVariants.NORM,
     members,
     action,
 }: {
-    icon: IconName;
+    variant?: BannerVariants;
     members: ReactNode;
     action: ReactNode;
 }) => {
     return (
-        <Wrap>
-            <div className="flex flex-column md:flex-row flex-nowrap gap-4">
+        <Banner className="p-2 mb-5" contentWrapperClassName="flex-1 flex" noIcon variant={variant} largeRadius>
+            <div className="flex flex-row flex-1 gap-4">
                 <div className="md:flex-1 gap-2 flex flex-nowrap">
-                    <span className="shrink-0">
-                        <Icon name={icon} className="align-text-top" />
-                    </span>
                     <div>{members}</div>
                 </div>
                 <div className="md:shrink-0">{action}</div>
             </div>
-        </Wrap>
+        </Banner>
     );
 };

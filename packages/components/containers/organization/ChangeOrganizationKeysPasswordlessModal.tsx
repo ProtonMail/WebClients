@@ -26,7 +26,7 @@ interface ChangeProps extends Omit<ModalProps, 'children' | 'title' | 'buttons'>
     mode?: 'reset';
 }
 
-export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest }: ChangeProps) => {
+const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest }: ChangeProps) => {
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
