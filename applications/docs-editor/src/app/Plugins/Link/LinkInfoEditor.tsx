@@ -78,23 +78,26 @@ export function LinkInfoEditor({
       return
     }
 
+    const rootParentRect = rootParent.getBoundingClientRect()
+    const leftOffset = rootParent.scrollLeft - rootParentRect.left
+    const topOffset = rootParent.scrollTop - rootParentRect.top
+
     if (linkNodeDOM) {
       const linkNodeRect = linkNodeDOM.getBoundingClientRect()
 
       setPosition({
-        top: linkNodeRect.bottom + rootParent.scrollTop - rootParent.getBoundingClientRect().top + 10,
-        left: linkNodeRect.left,
+        top: linkNodeRect.bottom + topOffset + 10,
+        left: linkNodeRect.left + leftOffset,
       })
     } else {
       const nativeSelection = window.getSelection()
-      const rootElement = editor.getRootElement()
 
-      if (nativeSelection !== null && rootElement !== null && rootElement.contains(nativeSelection.anchorNode)) {
+      if (nativeSelection !== null && rootElement.contains(nativeSelection.anchorNode)) {
         const rangeRect = getDOMRangeRect(nativeSelection, rootElement)
 
         setPosition({
-          top: rangeRect.bottom + rootParent.scrollTop - rootParent.getBoundingClientRect().top + 10,
-          left: rangeRect.left,
+          top: rangeRect.bottom + topOffset + 10,
+          left: rangeRect.left + leftOffset,
         })
       }
     }
