@@ -1,6 +1,5 @@
 import { createStore, del, get as getStore, set as setStore } from 'idb-keyval';
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { isDevOrBlack } from '@proton/utils/env';
@@ -102,52 +101,47 @@ export const getCacheKey = (linkId: string, shareId: string, revisionId: string 
     return prefix + linkId + shareId + revisionId;
 };
 
-export const useThumbnailCacheStore = create<ThumbnailCacheState>()(
-    devtools(
-        (set) => ({
-            thumbnailIds: [],
+export const useThumbnailCacheStore = create<ThumbnailCacheState>()((set) => ({
+    thumbnailIds: [],
 
-            addThumbnail: async (id: string, data: Uint8Array<ArrayBuffer>) => {
-                try {
-                    const meta = await getMetadata();
+    addThumbnail: async (id: string, data: Uint8Array<ArrayBuffer>) => {
+        try {
+            const meta = await getMetadata();
 
-                    const existingIndex = meta.queue.indexOf(id);
-                    if (existingIndex !== -1) {
-                        const existingThumbnail = await getStore(id, thumbnailStore);
-                        if (existingThumbnail) {
-                            meta.totalSize -= existingThumbnail.byteLength;
-                        }
-
-                        meta.queue.splice(existingIndex, 1);
-                    }
-
-                    meta.queue.push(id);
-                    meta.totalSize += data.byteLength;
-
-                    await setStore(id, data, thumbnailStore);
-
-                    await enforceStorageLimits(meta);
-
-                    const updatedMeta = await getMetadata();
-
-                    set({ thumbnailIds: updatedMeta.queue });
-                } catch (e) {
-                    console.error(`Failed to add thumbnail '${id}':`, e);
-                    sendErrorReport(e);
+            const existingIndex = meta.queue.indexOf(id);
+            if (existingIndex !== -1) {
+                const existingThumbnail = await getStore(id, thumbnailStore);
+                if (existingThumbnail) {
+                    meta.totalSize -= existingThumbnail.byteLength;
                 }
-            },
 
-            getThumbnail: async (id: string): Promise<Uint8Array<ArrayBuffer> | undefined> => {
-                try {
-                    const result = await getStore<Uint8Array<ArrayBuffer>>(id, thumbnailStore);
-                    return result;
-                } catch (e) {
-                    console.error(`Failed to get thumbnail '${id}':`, e);
-                    sendErrorReport(e);
-                    return undefined;
-                }
-            },
-        }),
-        { name: 'ThumbnailCacheStore' }
-    )
-);
+                meta.queue.splice(existingIndex, 1);
+            }
+
+            meta.queue.push(id);
+            meta.totalSize += data.byteLength;
+
+            await setStore(id, data, thumbnailStore);
+
+            await enforceStorageLimits(meta);
+
+            const updatedMeta = await getMetadata();
+
+            set({ thumbnailIds: updatedMeta.queue });
+        } catch (e) {
+            console.error(`Failed to add thumbnail '${id}':`, e);
+            sendErrorReport(e);
+        }
+    },
+
+    getThumbnail: async (id: string): Promise<Uint8Array<ArrayBuffer> | undefined> => {
+        try {
+            const result = await getStore<Uint8Array<ArrayBuffer>>(id, thumbnailStore);
+            return result;
+        } catch (e) {
+            console.error(`Failed to get thumbnail '${id}':`, e);
+            sendErrorReport(e);
+            return undefined;
+        }
+    },
+}));

@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import { MemberRole } from '@proton/drive';
 
@@ -34,61 +33,56 @@ const hasExpired = (timestamp: number) => {
     return Date.now() - timestamp > NODE_EDIT_EXPIRACY;
 };
 
-export const usePublicAuthStore = create<PublicAuthStore>()(
-    devtools(
-        (set, get) => ({
-            addresses: [],
-            publicRole: MemberRole.Viewer,
-            isLoggedIn: false,
-            uploadedFiles: new Map<string, UploadedFileData>(),
+export const usePublicAuthStore = create<PublicAuthStore>()((set, get) => ({
+    addresses: [],
+    publicRole: MemberRole.Viewer,
+    isLoggedIn: false,
+    uploadedFiles: new Map<string, UploadedFileData>(),
 
-            getUserMainAddress: () => {
-                return get().addresses.at(0);
-            },
+    getUserMainAddress: () => {
+        return get().addresses.at(0);
+    },
 
-            setAddresses: (addresses: UserAddress[]) => {
-                set({ addresses });
-            },
+    setAddresses: (addresses: UserAddress[]) => {
+        set({ addresses });
+    },
 
-            setIsLoggedIn: (isLoggedIn: boolean) => {
-                set({ isLoggedIn });
-            },
+    setIsLoggedIn: (isLoggedIn: boolean) => {
+        set({ isLoggedIn });
+    },
 
-            setPublicRole: (publicRole: MemberRole) => {
-                set({ publicRole });
-            },
+    setPublicRole: (publicRole: MemberRole) => {
+        set({ publicRole });
+    },
 
-            hasUploadedFile: (uid: string): boolean => {
-                const state = get();
-                const data = state.uploadedFiles.get(uid);
-                if (data && hasExpired(data.timestamp)) {
-                    const newMap = new Map(state.uploadedFiles);
-                    newMap.delete(uid);
-                    set({ uploadedFiles: newMap });
-                    return false;
-                }
-                return !!data;
-            },
+    hasUploadedFile: (uid: string): boolean => {
+        const state = get();
+        const data = state.uploadedFiles.get(uid);
+        if (data && hasExpired(data.timestamp)) {
+            const newMap = new Map(state.uploadedFiles);
+            newMap.delete(uid);
+            set({ uploadedFiles: newMap });
+            return false;
+        }
+        return !!data;
+    },
 
-            addUploadedFile: (uid: string) => {
-                set((state) => ({
-                    uploadedFiles: new Map(state.uploadedFiles).set(uid, {
-                        timestamp: Date.now(),
-                    }),
-                }));
-            },
+    addUploadedFile: (uid: string) => {
+        set((state) => ({
+            uploadedFiles: new Map(state.uploadedFiles).set(uid, {
+                timestamp: Date.now(),
+            }),
+        }));
+    },
 
-            removeUploadedFiles: (uids: string | string[]) => {
-                set((state) => {
-                    const newMap = new Map(state.uploadedFiles);
-                    const ids = Array.isArray(uids) ? uids : [uids];
-                    ids.forEach((id) => newMap.delete(id));
-                    return {
-                        uploadedFiles: newMap,
-                    };
-                });
-            },
-        }),
-        { name: 'PublicAuthStore' }
-    )
-);
+    removeUploadedFiles: (uids: string | string[]) => {
+        set((state) => {
+            const newMap = new Map(state.uploadedFiles);
+            const ids = Array.isArray(uids) ? uids : [uids];
+            ids.forEach((id) => newMap.delete(id));
+            return {
+                uploadedFiles: newMap,
+            };
+        });
+    },
+}));
