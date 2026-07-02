@@ -8,8 +8,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { contextTotal, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
@@ -62,16 +61,15 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     const labelID = useMailSelector(selectLabelID);
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
 
-    const primaryCount = useMailSelector((state) =>
-        selectLabelIDUnreadCount(state, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
-    );
+    // The onboarding only happens in inbox, the context total will represent the number of emails in primary or the selected category
+    const total = useMailSelector(contextTotal);
 
     useEffect(() => {
-        if (categorizeStepLocation !== undefined || primaryCount.loading) {
+        if (categorizeStepLocation !== undefined || !total) {
             return;
         }
-        setCategorizeStepLocation(primaryCount.count > 2 ? 'list' : 'tab');
-    }, [categorizeStepLocation, primaryCount.loading, primaryCount.count]);
+        setCategorizeStepLocation(total > 2 ? 'list' : 'tab');
+    }, [categorizeStepLocation, total]);
 
     useEffect(() => {
         // Only trigger modal once per session and when the user is in the Inbox
@@ -105,7 +103,11 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
 
     const activeStep = useMemo(() => {
         const flagValue = b2cOnboardingViewFlag.feature?.Value;
-        if (b2cOnboardingViewFlag.loading || flagValue === undefined || onboarding.audienceType === AudienceType.B2B) {
+        if (b2cOnboardingViewFlag.loading || flagValue === undefined) {
+            return OnboardingStep.NONE;
+        }
+
+        if (onboarding.audienceType === AudienceType.B2B || !onboarding.isUserEligible || !isInbox) {
             return OnboardingStep.NONE;
         }
 
@@ -126,11 +128,17 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         }
 
         return OnboardingStep.DONE;
-    }, [b2cOnboardingViewFlag.feature?.Value, b2cOnboardingViewFlag.loading, onboarding.audienceType]);
+    }, [
+        isInbox,
+        b2cOnboardingViewFlag.feature?.Value,
+        b2cOnboardingViewFlag.loading,
+        onboarding.audienceType,
+        onboarding.isUserEligible,
+    ]);
 
     const handleSkip = useCallback(() => {
         const flagValue = flagRef.current.feature?.Value;
-        if (!flagValue) {
+        if (flagValue === undefined) {
             return;
         }
 
@@ -147,7 +155,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     const completeCurrentStep = useCallback(() => {
         const bit = STEP_TO_FLAG[activeStep];
         const flagValue = flagRef.current.feature?.Value;
-        if (!flagValue || bit === undefined) {
+        if (flagValue === undefined || bit === undefined) {
             return;
         }
 
