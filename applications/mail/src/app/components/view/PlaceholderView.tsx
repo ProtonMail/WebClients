@@ -1,19 +1,22 @@
+import { selectSearch } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import SelectionPane from './SelectionPane';
 import WelcomePane from './WelcomePane';
 
 interface Props {
     welcomeFlag: boolean;
-    labelID: string;
     checkedIDs?: string[];
     onCheckAll: (checked: boolean) => void;
 }
 
-const PlaceholderView = ({ welcomeFlag, labelID = '', checkedIDs = [], onCheckAll }: Props) => {
-    if (welcomeFlag) {
+const PlaceholderView = ({ welcomeFlag, checkedIDs = [], onCheckAll }: Props) => {
+    const search = useMailSelector(selectSearch);
+    if (welcomeFlag && !search) {
         return <WelcomePane />;
     }
 
-    return <SelectionPane labelID={labelID} checkedIDs={checkedIDs} onCheckAll={onCheckAll} />;
+    return <SelectionPane checkedIDs={checkedIDs} onCheckAll={onCheckAll} />;
 };
 
 export default PlaceholderView;
