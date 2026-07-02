@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import { getNodeUidFromTreeItemId } from '@proton/drive/modules/directoryTree';
 
@@ -14,26 +13,24 @@ type SidebarStore = {
 // Not reactive state — only sidebarLevel (the derived max) needs to trigger re-renders
 const levelMap = new Map<string, number>();
 
-export const useSidebarStore = create<SidebarStore>()(
-    devtools((set) => ({
-        isCollapsed: false,
-        sidebarLevel: 0,
+export const useSidebarStore = create<SidebarStore>()((set) => ({
+    isCollapsed: false,
+    sidebarLevel: 0,
 
-        setCollapsed: (isCollapsed: boolean) => set({ isCollapsed }),
+    setCollapsed: (isCollapsed: boolean) => set({ isCollapsed }),
 
-        expandLevel: (treeItemId: string, level: number) => {
-            levelMap.set(treeItemId, level);
-            set({ sidebarLevel: Math.max(...levelMap.values()) });
-        },
+    expandLevel: (treeItemId: string, level: number) => {
+        levelMap.set(treeItemId, level);
+        set({ sidebarLevel: Math.max(...levelMap.values()) });
+    },
 
-        collapseLevel: (treeItemId: string) => {
-            const nodeUid = getNodeUidFromTreeItemId(treeItemId);
-            for (const key of levelMap.keys()) {
-                if (key === treeItemId || key.startsWith(`${nodeUid}___`)) {
-                    levelMap.delete(key);
-                }
+    collapseLevel: (treeItemId: string) => {
+        const nodeUid = getNodeUidFromTreeItemId(treeItemId);
+        for (const key of levelMap.keys()) {
+            if (key === treeItemId || key.startsWith(`${nodeUid}___`)) {
+                levelMap.delete(key);
             }
-            set({ sidebarLevel: levelMap.size > 0 ? Math.max(...levelMap.values()) : 0 });
-        },
-    }))
-);
+        }
+        set({ sidebarLevel: levelMap.size > 0 ? Math.max(...levelMap.values()) : 0 });
+    },
+}));

@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive/index';
 import { MemberRole } from '@proton/drive/index';
@@ -120,83 +119,81 @@ function resort(state: FolderState): string[] {
     return sortFolderItems(Array.from(state.items.values()), state.sortField, state.sortDirection);
 }
 
-export const useFolderStore = create<FolderStore>()(
-    devtools((set, get) => ({
-        ...initialState,
-        setIsLoading: (isLoading) => {
-            set({ isLoading });
-            get().checkAndSetHasEverLoaded();
-        },
-        setItem: (item: FolderViewItem) =>
-            set((state) => {
-                const updatedItems = new Map(state.items);
+export const useFolderStore = create<FolderStore>()((set, get) => ({
+    ...initialState,
+    setIsLoading: (isLoading) => {
+        set({ isLoading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setItem: (item: FolderViewItem) =>
+        set((state) => {
+            const updatedItems = new Map(state.items);
+            updatedItems.set(item.uid, item);
+            const newState = { ...state, items: updatedItems };
+            return {
+                items: updatedItems,
+                sortedItemUids: resort(newState),
+            };
+        }),
+    setItems: (items: FolderViewItem[]) =>
+        set((state) => {
+            const updatedItems = new Map(state.items);
+            items.forEach((item) => {
                 updatedItems.set(item.uid, item);
-                const newState = { ...state, items: updatedItems };
-                return {
-                    items: updatedItems,
-                    sortedItemUids: resort(newState),
-                };
-            }),
-        setItems: (items: FolderViewItem[]) =>
-            set((state) => {
-                const updatedItems = new Map(state.items);
-                items.forEach((item) => {
-                    updatedItems.set(item.uid, item);
-                });
-                const newState = { ...state, items: updatedItems };
-                return {
-                    items: updatedItems,
-                    sortedItemUids: resort(newState),
-                };
-            }),
-        updateItem: (uid: string, item: Partial<FolderViewItem>) =>
-            set((state) => {
-                const existingItem = state.items.get(uid);
-                if (!existingItem) {
-                    return {};
-                }
-                const updatedItems = new Map(state.items);
-                updatedItems.set(uid, { ...existingItem, ...item });
-                const newState = { ...state, items: updatedItems };
-                return {
-                    items: updatedItems,
-                    sortedItemUids: resort(newState),
-                };
-            }),
-        removeItem: (uid: string) =>
-            set((state) => {
-                if (!state.items.has(uid)) {
-                    return {};
-                }
-                const updatedItems = new Map(state.items);
-                updatedItems.delete(uid);
-                return {
-                    items: updatedItems,
-                    sortedItemUids: state.sortedItemUids.filter((id) => id !== uid),
-                };
-            }),
-        setSorting: ({ sortField, direction }) => {
-            const state = get();
-            const allItems = Array.from(state.items.values());
-            const sortedItemUids = sortFolderItems(allItems, sortField, direction);
-            set({ sortField, sortDirection: direction, sortedItemUids });
-        },
-        setPermissions: (permissions) => set({ permissions }),
-        setFolder: (folder, treeEventScopeId) => set({ folder, treeEventScopeId }),
-        setError: (error) => set({ error }),
-        setRole: (role) => set({ role }),
-        reset: () =>
-            set((state) => ({
-                ...initialState,
-                sortField: state.sortField,
-                sortDirection: state.sortDirection,
-            })),
-        setHasEverLoaded: () => set({ hasEverLoaded: true }),
-        checkAndSetHasEverLoaded: () => {
-            const state = get();
-            if (!state.isLoading && !state.hasEverLoaded) {
-                state.setHasEverLoaded();
+            });
+            const newState = { ...state, items: updatedItems };
+            return {
+                items: updatedItems,
+                sortedItemUids: resort(newState),
+            };
+        }),
+    updateItem: (uid: string, item: Partial<FolderViewItem>) =>
+        set((state) => {
+            const existingItem = state.items.get(uid);
+            if (!existingItem) {
+                return {};
             }
-        },
-    }))
-);
+            const updatedItems = new Map(state.items);
+            updatedItems.set(uid, { ...existingItem, ...item });
+            const newState = { ...state, items: updatedItems };
+            return {
+                items: updatedItems,
+                sortedItemUids: resort(newState),
+            };
+        }),
+    removeItem: (uid: string) =>
+        set((state) => {
+            if (!state.items.has(uid)) {
+                return {};
+            }
+            const updatedItems = new Map(state.items);
+            updatedItems.delete(uid);
+            return {
+                items: updatedItems,
+                sortedItemUids: state.sortedItemUids.filter((id) => id !== uid),
+            };
+        }),
+    setSorting: ({ sortField, direction }) => {
+        const state = get();
+        const allItems = Array.from(state.items.values());
+        const sortedItemUids = sortFolderItems(allItems, sortField, direction);
+        set({ sortField, sortDirection: direction, sortedItemUids });
+    },
+    setPermissions: (permissions) => set({ permissions }),
+    setFolder: (folder, treeEventScopeId) => set({ folder, treeEventScopeId }),
+    setError: (error) => set({ error }),
+    setRole: (role) => set({ role }),
+    reset: () =>
+        set((state) => ({
+            ...initialState,
+            sortField: state.sortField,
+            sortDirection: state.sortDirection,
+        })),
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
+    checkAndSetHasEverLoaded: () => {
+        const state = get();
+        if (!state.isLoading && !state.hasEverLoaded) {
+            state.setHasEverLoaded();
+        }
+    },
+}));
