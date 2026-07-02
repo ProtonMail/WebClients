@@ -1,25 +1,12 @@
-import { defineConfig } from 'vitest/config';
+import { mergeConfig } from 'vitest/config';
 
-export default defineConfig({
+import { sharedVitestConfig } from '@proton/testing/configs/vitest.config';
+
+export default mergeConfig(sharedVitestConfig, {
     test: {
-        globals: true,
-        environment: 'happy-dom',
-        reporters: [
-            [
-                'default',
-                {
-                    summary: false,
-                },
-            ],
-        ],
         coverage: {
-            provider: 'v8',
-            reporter: ['text-summary', 'json', 'clover', 'html', 'cobertura'],
-            include: ['src/**/*.ts'],
+            include: ['src/**/*.{ts}'],
             exclude: ['**/*.d.ts', '**/*.test.ts'],
         },
-    },
-    resolve: {
-        conditions: ['browser'],
     },
 });
