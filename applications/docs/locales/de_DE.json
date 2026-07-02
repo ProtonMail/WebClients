@@ -336,6 +336,9 @@
       "Download anyway": [
         "Trotzdem herunterladen"
       ],
+      "Download debug information": [
+        "Debug-Informationen herunterladen"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
       ],
@@ -645,6 +648,9 @@
       "Reload": [
         "Neu laden"
       ],
+      "Reload spreadsheet": [
+        "Tabelle neu laden"
+      ],
       "Remove": [
         "Entfernen"
       ],
@@ -674,6 +680,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Report issue": [
+        "Problem melden"
       ],
       "Request a call": [
         "Einen Anruf anfordern"
@@ -1277,6 +1286,9 @@
       ],
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
       ],
       "Not activated": [
         "Nicht aktiviert"
@@ -3141,9 +3153,6 @@
       "Failed to load 'My files' folder": [
         "Ordner „Meine Dateien“ konnte nicht geladen werden"
       ],
-      "Failed to load document details": [
-        "Dokumentdetails konnten nicht geladen werden"
-      ],
       "Failed to load recent documents": [
         "Neuste Dokumente konnten nicht geladen werden"
       ],
@@ -4750,6 +4759,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ emailAddress } sicher hochgeladen."
       ],
+      "Disable table of contents": [
+        "Inhaltsverzeichnis deaktivieren"
+      ],
       "Display word count": [
         "Zeige Anzahl Wörter"
       ],
@@ -4803,6 +4815,9 @@
       ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
+      ],
+      "Enable table of contents": [
+        "Inhaltsverzeichnis aktivieren"
       ],
       "End-to-end encrypted": [
         "Ende-zu-Ende-verschlüsselt"
@@ -4878,6 +4893,9 @@
       ],
       "File will not be updated": [
         "Datei wird nicht aktualisiert."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
       ],
       "finance": [
         "Finanzen"
@@ -6337,6 +6355,9 @@
       ],
       "Trash": [
         "Papierkorb"
+      ],
+      "Unknown user": [
+        "Unbekannter Benutzer"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -9969,6 +9990,9 @@
         "${ emailsCount } E-Mail-Adresse",
         "${ emailsCount } E-Mail-Adressen"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Account recovery": [
         "Kontowiederherstellung"
       ],
@@ -10199,6 +10223,9 @@
       ],
       "Edit image": [
         "Bild bearbeiten"
+      ],
+      "Editing paused": [
+        "Bearbeitung pausiert"
       ],
       "Email addresses": [
         "E‐Mail‐Adressen"
