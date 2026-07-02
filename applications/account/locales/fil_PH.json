@@ -11821,6 +11821,9 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } {count, plural, one {# seat} other {# na seat}}"
       ]
     },
     "info": {
@@ -14468,6 +14471,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } na upuan",
         "${ seats } seat sa ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } {count, plural, one {# seat} other {# na seat}}"
       ]
     },
     "meet_2025: Feature": {
