@@ -4,6 +4,26 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(wird in einem neuen Tab geöffnet)"
+      ],
+      "camera off": [
+        "Kamera aus"
+      ],
+      "camera on": [
+        "Kamera an"
+      ],
+      "Meeting controls": [
+        "Meetingsteuerung"
+      ],
+      "microphone muted": [
+        "Mikrofon stumm geschaltet"
+      ],
+      "microphone on": [
+        "Mikrofon an"
+      ]
+    },
     "Accessibility announcement": {
       "${ name } joined the meeting": [
         "${ name } ist dem Meeting beigetreten"
@@ -50,14 +70,53 @@
       "Reconnected to the meeting": [
         "Wieder mit dem Meeting verbunden"
       ],
+      "Recording saved": [
+        "Aufzeichnung gespeichert"
+      ],
       "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Die Aufzeichnung hat begonnen. Indem du am Meeting teilnimmst, bestätigst du, dass du über die Aufzeichnung informiert bist, und erklärst dich damit einverstanden."
       ],
       "Recording stopped": [
         "Aufzeichnung beendet"
       ],
+      "Screen share started": [
+        "Bildschirmfreigabe gestartet"
+      ],
+      "Screen share started by ${ name }": [
+        "Bildschirmfreigabe von ${ name } gestartet"
+      ],
+      "Screen share stopped": [
+        "Bildschirmfreigabe angehalten"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Bildschirmfreigabe von ${ name } angehalten"
+      ],
+      "The meeting will close in 1 minute": [
+        "Das Meeting wird in 1 Minute geschlossen"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Das Meeting wird in 15 Sekunden geschlossen."
+      ],
+      "The meeting will close in 30 seconds": [
+        "Das Meeting wird in 30 Sekunden geschlossen."
+      ],
+      "The meeting will end in 1 minute": [
+        "Das Meeting wird in 1 Minute beendet"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Das Meeting wird in 10 Minuten beendet"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Das Meeting wird in 15 Sekunden beendet"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Das Meeting wird in 5 Minuten beendet"
+      ],
       "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
         "Das Meeting wird aufgezeichnet. Mit deiner Teilnahme erklärst du dich damit einverstanden, dass es aufgezeichnet wird."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Du bist der einzige Teilnehmer. Das Meeting wird in 2 Minuten beendet, sofern nicht noch jemand hinzukommt."
       ],
       "You have been disconnected from the meeting": [
         "Die Verbindung zum Meeting wurde unterbrochen"
@@ -78,6 +137,15 @@
       ],
       "Add another account": [
         "Weiteres Konto hinzufügen"
+      ],
+      "Admit": [
+        "Zulassen"
+      ],
+      "Admit ${ participantName }": [
+        "${ participantName } zulassen"
+      ],
+      "Admit all": [
+        "Alle zulassen"
       ],
       "Allow access": [
         "Zugriff erlauben"
@@ -115,6 +183,9 @@
       "Close": [
         "Schließen"
       ],
+      "Close preview": [
+        "Vorschau schließen"
+      ],
       "Close this banner": [
         "Dieses Banner schließen"
       ],
@@ -132,6 +203,9 @@
       ],
       "Copy address": [
         "Adresse kopieren"
+      ],
+      "Copy invitation link": [
+        "Einladungslink kopieren"
       ],
       "Copy link": [
         "Link kopieren"
@@ -159,6 +233,12 @@
       ],
       "Delete": [
         "Löschen"
+      ],
+      "Deny": [
+        "Ablehnen"
+      ],
+      "Deny ${ participantName }": [
+        "${ participantName } ablehnen"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName }s Kamera deaktivieren"
@@ -276,6 +356,9 @@
       ],
       "Lower hand": [
         "Hand senken"
+      ],
+      "Minimize preview": [
+        "Vorschau minimieren"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -541,6 +624,9 @@
       "Meeting details": [
         "Meeting-Details"
       ],
+      "More options": [
+        "Weitere Optionen"
+      ],
       "Noise cancellation": [
         "Geräuschunterdrückung"
       ],
@@ -608,6 +694,41 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Organisator zuweisen"
+      ],
+      "Audio settings": [
+        "Audioeinstellungen"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Chat messages": [
+        "Chatnachrichten"
+      ],
+      "Device settings": [
+        "Geräteeinstellungen"
+      ],
+      "Meeting details": [
+        "Meetingdetails"
+      ],
+      "Meeting rooms": [
+        "Meetingräume"
+      ],
+      "Participants": [
+        "Teilnehmer"
+      ],
+      "Participants list": [
+        "Teilnehmerliste"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Video settings": [
+        "Videoeinstellungen"
       ]
     },
     "Badge": {
@@ -1562,6 +1683,12 @@
       ],
       "Rotating group encryption key for best security": [
         "Rotierender Gruppen-Verschlüsselungsschlüssel für optimale Sicherheit"
+      ],
+      "Try a different name.": [
+        "Mit einem anderen Namen versuchen."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Du siehst die Teilnehmer hier, sobald sie der Besprechung beitreten."
       ]
     },
     "Display name": {
@@ -1620,6 +1747,9 @@
       "Failed to join meeting. Please try again later.": [
         "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es später erneut."
       ],
+      "Failed to join meeting. Please try again.": [
+        "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es erneut."
+      ],
       "Failed to lock meeting": [
         "Fehler beim Sperren des Meetings"
       ],
@@ -1634,6 +1764,9 @@
       ],
       "Failed to send reaction. Please try again.": [
         "Fehler beim Senden der Reaktion. Bitte versuche es erneut."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Starten des Meetings fehlgeschlagen. Bitte versuche es erneut."
       ],
       "Failed to start recording": [
         "Fehler beim Starten der Aufzeichnung"
@@ -2158,6 +2291,9 @@
       "Loading meetings...": [
         "Meetings werden geladen ..."
       ],
+      "Loading recordings…": [
+        "Aufzeichnungen werden geladen…"
+      ],
       "Loading...": [
         "Wird geladen..."
       ],
@@ -2202,6 +2338,9 @@
       ],
       "Member": [
         "Mitglied"
+      ],
+      "Message from ${ participantName }": [
+        "Nachricht von ${ participantName }"
       ],
       "microphone": [
         "Mikrofon"
@@ -2272,6 +2411,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Unsere Ende-zu-Ende-verschlüsselten Meetings schützen deine Privatsphäre und ermöglichen wirklich freie Meinungsäußerung."
       ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Seite ${ displayPage } von ${ totalPages }"
+      ],
       "Participant": [
         "Teilnehmer"
       ],
@@ -2301,6 +2443,12 @@
       ],
       "privacy": [
         "Privatsphäre"
+      ],
+      "Quick reactions": [
+        "Schnelle Reaktionen"
+      ],
+      "Reactions": [
+        "Reaktionen"
       ],
       "Reconnected successfully": [
         "Verbindung wiederhergestellt"
@@ -2623,6 +2771,12 @@
       "Email address": [
         "E-Mail-Adresse"
       ],
+      "Emoji picker": [
+        "Emoji-Auswahl"
+      ],
+      "Emoji reactions": [
+        "Emoji-Reaktionen"
+      ],
       "Enabled": [
         "Aktiviert"
       ],
@@ -2668,6 +2822,9 @@
       "Meeting ID": [
         "Meeting-ID"
       ],
+      "Meeting link": [
+        "Meeting-Link"
+      ],
       "Message": [
         "Nachricht"
       ],
@@ -2692,6 +2849,9 @@
       "Outlook Calendar": [
         "Outlook-Kalender"
       ],
+      "Participant controls": [
+        "Teilnehmersteuerung"
+      ],
       "Passphrase": [
         "Passphrase"
       ],
@@ -2715,6 +2875,9 @@
       ],
       "Schedule meeting": [
         "Meeting planen"
+      ],
+      "Screen share": [
+        "Bildschirmfreigabe"
       ],
       "Selected Camera": [
         "Ausgewählte Kamera"
@@ -3050,6 +3213,9 @@
       "Activity events": [
         "Aktivitäten"
       ],
+      "All participants": [
+        "Alle Teilnehmer"
+      ],
       "Allow camera ": [
         "Kamera zulassen "
       ],
@@ -3177,6 +3343,12 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "No one is waiting": [
+        "Niemand wartet"
+      ],
+      "No results found": [
+        "Keine Ergebnisse gefunden"
+      ],
       "Participants": [
         "Teilnehmer"
       ],
@@ -3257,6 +3429,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Waiting room": [
+        "Wartebereich"
       ],
       "What went wrong?": [
         "Was ist schiefgelaufen?"
