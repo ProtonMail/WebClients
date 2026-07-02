@@ -3,17 +3,23 @@ import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
+import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
     hasSeenOnboardingModal,
+    shouldSeeInitialModal,
     shouldSeeSpotlightCategorize,
     shouldSeeSpotlightCustomize,
     shouldSeeSpotlightMessage,
 } from './categoriesOnboarding.helpers';
+import type { CategorizeStepLocation } from './onboardingInterface';
 import { AudienceType, CategoriesOnboardingFlags, OnboardingStep } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
@@ -22,6 +28,7 @@ interface CategoriesOnboardingContextProps {
     activeStep: OnboardingStep;
     handleSkip: () => void;
     completeCurrentStep: () => void;
+    categorizeStepLocation: CategorizeStepLocation;
 }
 
 export const CategoriesOnboardingContext = createContext<CategoriesOnboardingContextProps | null>(null);
@@ -47,10 +54,16 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     const hasTriggeredModalRef = useRef(false);
 
     const b2cOnboardingViewFlag = useFeature<number>(FeatureCode.CategoryViewB2COnboardingViewFlags);
+    const labelID = useMailSelector(selectLabelID);
+    const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
+
+    const primaryCount = useMailSelector((state) =>
+        selectLabelIDUnreadCount(state, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+    );
 
     useEffect(() => {
-        // Only trigger modal once per session
-        if (hasTriggeredModalRef.current) {
+        // Only trigger modal once per session and when the user is in the Inbox
+        if (hasTriggeredModalRef.current || !isInbox) {
             return;
         }
 
@@ -76,18 +89,22 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
                 },
             });
         }
-    }, [onboarding, notify]);
+    }, [onboarding, notify, isInbox]);
 
     const activeStep = useMemo(() => {
         if (
             b2cOnboardingViewFlag.loading ||
-            !b2cOnboardingViewFlag.feature?.Value ||
+            b2cOnboardingViewFlag.feature?.Value === undefined ||
             onboarding.audienceType === AudienceType.B2B
         ) {
             return OnboardingStep.NONE;
         }
 
         const flagValue = b2cOnboardingViewFlag.feature?.Value;
+        if (shouldSeeInitialModal(flagValue)) {
+            return OnboardingStep.INITIAL_MODAL;
+        }
+
         if (shouldSeeSpotlightMessage(flagValue)) {
             return OnboardingStep.MESSAGE;
         }
@@ -102,6 +119,18 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
 
         return OnboardingStep.DONE;
     }, [b2cOnboardingViewFlag, onboarding.audienceType]);
+
+    const categorizeStepLocation: CategorizeStepLocation = useMemo(() => {
+        if (primaryCount.loading) {
+            return undefined;
+        }
+
+        if (primaryCount.count > 2) {
+            return 'list';
+        }
+
+        return 'tab';
+    }, [primaryCount]);
 
     const handleSkip = () => {
         const flagValue = b2cOnboardingViewFlag.feature?.Value;
@@ -132,7 +161,13 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     const userIsInOnboarding = activeStep !== OnboardingStep.NONE && activeStep !== OnboardingStep.DONE;
     return (
         <CategoriesOnboardingContext.Provider
-            value={{ activeStep, userIsInOnboarding, handleSkip, completeCurrentStep }}
+            value={{
+                activeStep,
+                userIsInOnboarding,
+                handleSkip,
+                completeCurrentStep,
+                categorizeStepLocation,
+            }}
         >
             {children}
         </CategoriesOnboardingContext.Provider>

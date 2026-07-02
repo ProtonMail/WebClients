@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { DENSITY } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -78,7 +78,7 @@ const MailboxListItems = ({
     const location = useLocation();
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
-    const { userIsInOnboarding } = useCategoriesOnboarding();
+    const { categorizeStepLocation, userIsInOnboarding } = useCategoriesOnboarding();
 
     useEffect(() => {
         // When we show more than 5 elements in the list, the onboarding should be collapsed.
@@ -148,8 +148,8 @@ const MailboxListItems = ({
                         />
                     );
 
-                    const highlightedItem = userIsInOnboarding && index === HIGHLIGHTED_ITEM_INDEX;
-                    if (!isPlaceholder && highlightedItem && labelID === MAILBOX_LABEL_IDS.INBOX) {
+                    const showSpotlight = categorizeStepLocation === 'list';
+                    if (!isPlaceholder && showSpotlight && userIsInOnboarding && index === HIGHLIGHTED_ITEM_INDEX) {
                         return (
                             <Fragment key={element.ID}>
                                 <CategoriesOnboardingSpotlight step={OnboardingStep.CATEGORIZE}>
