@@ -44,16 +44,21 @@ const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
     const handleError = useErrorHandler();
 
     const handleSubmit = async () => {
+        const hasEmailChanged = newEmail !== initialEmail;
+        const hasDisplayNameChanged = displayName !== initialDisplayName;
+
         await dispatch(
             renameInternalAddressThunk({
                 member,
                 address,
                 newEmail,
-                localEmail: localEmail !== initialLocalEmail ? localEmail : undefined,
-                displayName: displayName !== initialDisplayName ? displayName : undefined,
+                localEmail: hasEmailChanged ? localEmail : undefined,
+                displayName: hasDisplayNameChanged ? displayName : undefined,
             })
         );
-        createNotification({ text: c('Success').t`Email address updated` });
+        if (hasEmailChanged || hasDisplayNameChanged) {
+            createNotification({ text: c('Success').t`Email address updated` });
+        }
         rest.onClose?.();
     };
 
