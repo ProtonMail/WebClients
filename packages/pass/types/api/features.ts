@@ -19,6 +19,7 @@ export enum PassFeature {
     PassFileAttachmentsEssentialsUpsell = 'PassFileAttachmentsEssentialsUpsell',
     PassGroupInvitesV1 = 'PassGroupInvitesV1',
     PassHideShowVault = 'PassHideShowVault',
+    PassIFrameExtendedAutofill = 'PassIFrameExtendedAutofill',
     PassIFrameKillswitch = 'PassIFrameKillswitch',
     PassItemCloning = 'PassItemCloning',
     PassOnboardingUpgrade = 'PassOnboardingUpgrade',
