@@ -11,7 +11,7 @@ import { sanitizeMessage } from '@proton/sanitize/purify';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { trimMessage } from '../../utils/trim-message';
 
@@ -24,7 +24,7 @@ export const useChatMessage = () => {
 
     const notifications = useNotifications();
 
-    const mls = useMLSContext();
+    const meetCoreClient = useMeetCoreClient();
 
     const isNewChatHandling = useFlag('MeetNewChatHandling');
 
@@ -44,7 +44,7 @@ export const useChatMessage = () => {
 
     const sendMessageNew = async (sanitizedContent: string) => {
         try {
-            const { payload, local_echo: localEcho } = await mls.composeChatMessage(sanitizedContent);
+            const { payload, local_echo: localEcho } = await meetCoreClient.composeChatMessage(sanitizedContent);
 
             try {
                 await room.localParticipant.publishData(payload, { reliable: true });
@@ -79,7 +79,7 @@ export const useChatMessage = () => {
             let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
 
             try {
-                encryptedMessage = (await mls.encryptMessage(sanitizedContent)) as Uint8Array<ArrayBuffer>;
+                encryptedMessage = await meetCoreClient.encryptMessage(sanitizedContent);
             } catch (error) {
                 handleError('Failed to encrypt chat message');
                 return false;
@@ -87,7 +87,7 @@ export const useChatMessage = () => {
 
             const message: ChatMessage & { type: PublishableDataTypes.Message } = {
                 id: `${room.localParticipant.identity}-${Date.now()}`,
-                message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
+                message: uint8ArrayToString(encryptedMessage),
                 timestamp: Date.now(),
                 type: PublishableDataTypes.Message,
             };
@@ -134,7 +134,7 @@ export const useChatMessage = () => {
         const sanitizedEscapedContent = sanitizeMessage(escapedContent);
         const sanitizedContent = unescape(sanitizedEscapedContent);
 
-        if (!room || !mls || !sanitizedContent) {
+        if (!room || !sanitizedContent) {
             return false;
         }
 

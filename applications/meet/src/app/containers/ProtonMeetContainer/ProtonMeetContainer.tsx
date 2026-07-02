@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
-import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
+import { ConnectionState, DisconnectReason, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -47,10 +48,9 @@ import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
-import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
-import { useWasmApp } from '../../contexts/WasmContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
@@ -85,7 +85,6 @@ enum MeetingDecryptionReadinessStatus {
 }
 
 interface ProtonMeetContainerProps {
-    room: Room;
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
 }
@@ -102,7 +101,7 @@ const getNetworkHints = () => {
     };
 };
 
-export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMeetContainerProps) => {
+export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
     const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
@@ -155,7 +154,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         joiningLoaderHeader,
         joiningLoaderSubtitle,
         clearLoaderState,
-    } = useLiveKitConnection({ room, reportMeetError, withMeetingLinkNameTag });
+    } = useLiveKitConnection({ reportMeetError, withMeetingLinkNameTag });
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
@@ -231,7 +230,8 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     const joinedRoomLoggedRef = useRef(false);
     const loadingStartTimeRef = useRef(0);
 
-    const wasmApp = useWasmApp();
+    const meetCoreClient = useMeetCoreClient();
+    const room = useRoomContext();
 
     const meetingLinkRef = useRef<string | null>(null);
     const isExpiringRef = useRef(false);
@@ -250,12 +250,10 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         [getMeetingInfo]
     );
 
-    useIsRecordingInProgressReceiver(wasmApp);
+    useIsRecordingInProgressReceiver();
 
     const isGuestAdminRef = useRef(false);
 
-    const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
-    const isMeetSwitchJoinTypeEnabled = useFlag('MeetSwitchJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
     const isMeetNewSwitchJoinTypeEnabled = useFlag('MeetNewSwitchJoinType');
@@ -270,25 +268,15 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         reportMLSRelatedError,
     } = useKeyManagement({
         keyProvider,
-        isMeetSeamlessKeyRotationEnabled,
-        isMeetClientMetricsLogEnabled,
-        wasmApp,
-        dispatch,
-        reportMeetError,
         withMeetingLinkNameTag,
     });
 
     const { allowHealthCheck, disallowHealthCheck } = useConnectionHealthCheck({
-        wasmApp,
         mlsGroupStateRef,
         onMlsFailed: () => triggerFullReconnectionRef.current(RejoinReasonInfo.EpochMismatch),
     });
 
     const { mlsSetupDone, handleMlsSetup } = useMlsSession({
-        wasmApp,
-        isMeetNewJoinTypeEnabled,
-        isMeetNewSwitchJoinTypeEnabled,
-        isMeetSwitchJoinTypeEnabled,
         getGroupKeyInfo,
         onNewGroupKeyInfo,
         updateAdminParticipant,
@@ -311,7 +299,6 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider, lastEpochRef, mlsSetupDone]);
 
     useSafariWebsocketVisibilityHandler({
-        wasmApp,
         joinedRoom,
     });
 
@@ -343,8 +330,6 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     };
 
     const { isReconnectingRef, websocketUrlRef, performFullReconnection } = useReconnection({
-        wasmApp,
-        room,
         meetingLinkNameRef,
         meetingPassword: meetingDetails.meetingPassword as string,
         displayName,
@@ -353,8 +338,6 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         accessTokenRef,
         keyProvider,
         keyRotationScheduler,
-        isMeetSeamlessKeyRotationEnabled,
-        isMeetClientMetricsLogEnabled,
         getAccessDetails,
         handleMlsSetup,
         connectWithStunFallbackToTurnRelay,
@@ -544,7 +527,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
             } catch (livekitError: any) {
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
-                    await wasmApp?.leaveMeeting();
+                    await meetCoreClient.leaveMeeting();
                 } catch (leaveError) {
                     reportMeetError(
                         'Failed to leave MLS group after LiveKit connection failure',
@@ -652,7 +635,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
                 joinedRoomLoggedRef.current = false;
                 // Skip leaveMeeting when performFullReconnection is active, it will await it properly.
                 if (!isReconnectingRef.current) {
-                    void wasmApp?.leaveMeeting();
+                    void meetCoreClient.leaveMeeting();
                 }
                 void stopPiP();
 
@@ -687,10 +670,10 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
             }
 
             // Log successful room join (only once)
-            if (!joinedRoomLoggedRef.current && wasmApp && isMeetClientMetricsLogEnabled) {
+            if (!joinedRoomLoggedRef.current && meetCoreClient && isMeetClientMetricsLogEnabled) {
                 joinedRoomLoggedRef.current = true;
                 try {
-                    await wasmApp.logJoinedRoom();
+                    await meetCoreClient.logJoinedRoom();
                 } catch (error) {
                     reportMeetError('Failed to log joined room', withMeetingLinkNameTag(error));
                 }
@@ -724,7 +707,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
             // Log failed room join
             if (isMeetClientMetricsLogEnabled) {
                 try {
-                    await wasmApp?.logJoinedRoomFailed(code ? String(code) : undefined);
+                    await meetCoreClient.logJoinedRoomFailed(code ? String(code) : undefined);
                 } catch (logError) {
                     reportMeetError('Failed to log joined room failed', withMeetingLinkNameTag(logError));
                 }
@@ -760,7 +743,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         loadingStartTimeRef.current = Date.now();
 
         try {
-            await wasmApp?.logStartToJoinRoom();
+            await meetCoreClient.logStartToJoinRoom();
         } catch (error) {
             reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
         }
@@ -845,7 +828,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         loadingStartTimeRef.current = Date.now();
 
         try {
-            await wasmApp?.logStartToJoinRoom();
+            await meetCoreClient.logStartToJoinRoom();
         } catch (error) {
             reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
         }
@@ -987,7 +970,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         resetParticipantNameMap();
         meetingInfoRef.current = null;
         decryptionKeyRef.current = null;
-        void wasmApp?.leaveMeeting();
+        void meetCoreClient.leaveMeeting();
         void stopPiP();
         disallowHealthCheck();
         cleanupMlsState();
@@ -1008,7 +991,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         // Best effort because it is ungraceful
         try {
             void room.disconnect();
-            void wasmApp?.leaveMeeting();
+            void meetCoreClient.leaveMeeting();
             void stopPiP();
         } catch {
         } finally {
@@ -1023,12 +1006,8 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     };
 
     const handleEndMeeting = async () => {
-        if (!wasmApp) {
-            return;
-        }
-
         try {
-            await wasmApp.endMeeting();
+            await meetCoreClient.endMeeting();
         } catch (err) {
             reportMeetError('Unable to end meeting for all', withMeetingLinkNameTag(err));
         }
@@ -1094,7 +1073,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
             if (joinedRoom) {
                 try {
                     void room.disconnect();
-                    void wasmApp?.leaveMeeting();
+                    void meetCoreClient.leaveMeeting();
                 } catch (error) {
                     reportMeetError('Error leaving meeting', withMeetingLinkNameTag(error));
                 }
@@ -1105,7 +1084,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         return () => {
             window.removeEventListener('unload', handleUnload);
         };
-    }, [joinedRoom, room, wasmApp, reportMeetError, withMeetingLinkNameTag]);
+    }, [joinedRoom, room, meetCoreClient, reportMeetError, withMeetingLinkNameTag]);
 
     const handleInstantJoin = async () => {
         if (isInstantJoin) {
@@ -1177,110 +1156,108 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     }
 
     return (
-        <MLSContext.Provider value={{ mls: wasmApp }}>
-            <div className="h-full w-full">
-                {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
-                    <PasswordPrompt
-                        password={password}
-                        setPassword={setPassword}
-                        onPasswordSubmit={submitPassword}
-                        invalidPassphrase={invalidPassphrase}
-                    />
-                )}
-                {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
-                {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
-                    <MeetingRecorderProvider>
-                        <MeetContainer
-                            displayName={displayName}
-                            handleLeave={handleLeave}
-                            handleEndMeeting={handleEndMeeting}
-                            handleMeetingExpired={handleMeetingExpired}
-                            shareLink={shareLink}
-                            roomName={meetingDetails.meetingName as string}
-                            passphrase={password}
-                            handleMeetingLockToggle={handleMeetingLockToggle}
-                            isDisconnected={isReconnecting || reconnectionFailed}
-                            startPiP={startPiP}
-                            stopPiP={stopPiP}
-                            pictureInPictureWarmup={pictureInPictureWarmup}
-                            pipCleanup={pipCleanup}
-                            preparePictureInPicture={preparePictureInPicture}
-                            locked={meetingDetails.locked}
-                            maxDuration={meetingDetails.maxDuration}
-                            maxParticipants={meetingDetails.maxParticipants}
-                            instantMeeting={instantMeetingRef.current}
-                            assignHost={assignHost}
-                            getKeychainIndexInformation={getKeychainIndexInformation}
-                            expirationTime={meetingDetails.expirationTime}
-                            isGuestAdmin={isGuestAdminRef.current}
-                            isUsingTurnRelay={isUsingTurnRelay}
-                            liveKitConnectionState={liveKitConnectionState}
-                            showReconnectedMessage={showReconnectedMessage}
-                            setShowReconnectedMessage={setShowReconnectedMessage}
-                            setLiveKitConnectionState={setLiveKitConnectionState}
-                            isReconnecting={isReconnecting}
-                            mlsRetrying={mlsRetrying}
-                            onSimulateReconnection={() => setReconnectionFailed(true)}
-                        />
-                    </MeetingRecorderProvider>
-                ) : (
-                    <PrejoinContainer
-                        handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
-                        loadingState={LoadingState.JoiningInProgress}
-                        isLoading={joiningInProgress}
+        <div className="h-full w-full">
+            {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
+                <PasswordPrompt
+                    password={password}
+                    setPassword={setPassword}
+                    onPasswordSubmit={submitPassword}
+                    invalidPassphrase={invalidPassphrase}
+                />
+            )}
+            {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
+            {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
+                <MeetingRecorderProvider>
+                    <MeetContainer
+                        displayName={displayName}
+                        handleLeave={handleLeave}
+                        handleEndMeeting={handleEndMeeting}
+                        handleMeetingExpired={handleMeetingExpired}
                         shareLink={shareLink}
                         roomName={meetingDetails.meetingName as string}
-                        roomId={token}
+                        passphrase={password}
+                        handleMeetingLockToggle={handleMeetingLockToggle}
+                        isDisconnected={isReconnecting || reconnectionFailed}
+                        startPiP={startPiP}
+                        stopPiP={stopPiP}
+                        pictureInPictureWarmup={pictureInPictureWarmup}
+                        pipCleanup={pipCleanup}
+                        preparePictureInPicture={preparePictureInPicture}
+                        locked={meetingDetails.locked}
+                        maxDuration={meetingDetails.maxDuration}
+                        maxParticipants={meetingDetails.maxParticipants}
                         instantMeeting={instantMeetingRef.current}
-                        participantsCount={prejoinParticipantCount}
-                        displayName={displayName}
-                        setDisplayName={setDisplayName}
-                        isInstantJoin={isInstantJoin}
-                        isPersonalRoom={isPersonalRoom}
-                        isLoadingMeetings={isLoadingMeetings}
-                        joiningLoaderHeader={joiningLoaderHeader}
-                        joiningLoaderSubtitle={joiningLoaderSubtitle}
-                        userId={user?.ID}
+                        assignHost={assignHost}
+                        getKeychainIndexInformation={getKeychainIndexInformation}
+                        expirationTime={meetingDetails.expirationTime}
+                        isGuestAdmin={isGuestAdminRef.current}
+                        isUsingTurnRelay={isUsingTurnRelay}
+                        liveKitConnectionState={liveKitConnectionState}
+                        showReconnectedMessage={showReconnectedMessage}
+                        setShowReconnectedMessage={setShowReconnectedMessage}
+                        setLiveKitConnectionState={setLiveKitConnectionState}
+                        isReconnecting={isReconnecting}
+                        mlsRetrying={mlsRetrying}
+                        onSimulateReconnection={() => setReconnectionFailed(true)}
                     />
-                )}
-                {isWebRtcUnsupportedModalOpen && (
-                    <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
-                )}
-                {reconnectionFailed && (
-                    <ConnectionLostModal
-                        onRejoin={() => {
-                            setReconnectionFailed(false);
-                            void performFullReconnection(RejoinReasonInfo.Other);
-                        }}
-                        onLeave={() => {
-                            setReconnectionFailed(false);
-                            handleUngracefulLeave();
-                        }}
-                    />
-                )}
-                {isConnectionFailedModalOpen && (
-                    <ConnectionFailedModal
-                        onTryAgain={() => {
-                            setIsConnectionFailedModalOpen(false);
-                        }}
-                        onLeave={() => {
-                            setIsConnectionFailedModalOpen(false);
-                            history.push('/dashboard');
-                        }}
-                        showLeaveButton={!isGuest}
-                    />
-                )}
-                {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
-                    <PiPPreviewVideo
-                        canvas={canvas}
-                        onClose={() => {
-                            void stopPiP();
-                        }}
-                        tracksLength={tracksLength}
-                    />
-                ) : null}
-            </div>
-        </MLSContext.Provider>
+                </MeetingRecorderProvider>
+            ) : (
+                <PrejoinContainer
+                    handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
+                    loadingState={LoadingState.JoiningInProgress}
+                    isLoading={joiningInProgress}
+                    shareLink={shareLink}
+                    roomName={meetingDetails.meetingName as string}
+                    roomId={token}
+                    instantMeeting={instantMeetingRef.current}
+                    participantsCount={prejoinParticipantCount}
+                    displayName={displayName}
+                    setDisplayName={setDisplayName}
+                    isInstantJoin={isInstantJoin}
+                    isPersonalRoom={isPersonalRoom}
+                    isLoadingMeetings={isLoadingMeetings}
+                    joiningLoaderHeader={joiningLoaderHeader}
+                    joiningLoaderSubtitle={joiningLoaderSubtitle}
+                    userId={user?.ID}
+                />
+            )}
+            {isWebRtcUnsupportedModalOpen && (
+                <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
+            )}
+            {reconnectionFailed && (
+                <ConnectionLostModal
+                    onRejoin={() => {
+                        setReconnectionFailed(false);
+                        void performFullReconnection(RejoinReasonInfo.Other);
+                    }}
+                    onLeave={() => {
+                        setReconnectionFailed(false);
+                        handleUngracefulLeave();
+                    }}
+                />
+            )}
+            {isConnectionFailedModalOpen && (
+                <ConnectionFailedModal
+                    onTryAgain={() => {
+                        setIsConnectionFailedModalOpen(false);
+                    }}
+                    onLeave={() => {
+                        setIsConnectionFailedModalOpen(false);
+                        history.push('/dashboard');
+                    }}
+                    showLeaveButton={!isGuest}
+                />
+            )}
+            {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
+                <PiPPreviewVideo
+                    canvas={canvas}
+                    onClose={() => {
+                        void stopPiP();
+                    }}
+                    tracksLength={tracksLength}
+                />
+            ) : null}
+        </div>
     );
 };
 

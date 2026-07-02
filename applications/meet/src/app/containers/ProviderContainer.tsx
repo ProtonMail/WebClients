@@ -20,7 +20,7 @@ import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapApp } from '../bootstrap';
 import config from '../config';
-import { WasmContext } from '../contexts/WasmContext';
+import { MeetCoreClientContext } from '../contexts/MeetCoreClientContext';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 type ExtraThunkArguments = Omit<MeetExtraThunkArguments, 'config' | 'notificationsManager'>;
@@ -35,17 +35,25 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     const storeRef = useRef<MeetStore>();
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
-    const wasmAppRef = useRef<MeetCoreClient | null>(null);
+    const meetCoreClientRef = useRef<MeetCoreClient | null>(null);
 
     useEffect(() => {
         const initialiseServicesAndStore = async (signal: AbortSignal) => {
             try {
-                const { store, authentication, unleashClient, eventManager, api, history, wasmApp, meetEventManager } =
-                    await bootstrapApp({
-                        notificationsManager,
-                        config,
-                        signal,
-                    });
+                const {
+                    store,
+                    authentication,
+                    unleashClient,
+                    eventManager,
+                    api,
+                    history,
+                    meetCoreClient,
+                    meetEventManager,
+                } = await bootstrapApp({
+                    notificationsManager,
+                    config,
+                    signal,
+                });
 
                 if (signal.aborted) {
                     return;
@@ -62,7 +70,7 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                     meetEventManager,
                 };
 
-                wasmAppRef.current = wasmApp;
+                meetCoreClientRef.current = meetCoreClient;
 
                 setInitialised(true);
             } catch (error) {
@@ -101,11 +109,11 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                     <EventManagerProvider eventManager={eventManager}>
                         <Router history={history}>
                             <ApiProvider api={api}>
-                                <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
+                                <MeetCoreClientContext.Provider value={meetCoreClientRef.current}>
                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                         <StandardPrivateApp>{children}</StandardPrivateApp>
                                     </ErrorBoundary>
-                                </WasmContext.Provider>
+                                </MeetCoreClientContext.Provider>
                             </ApiProvider>
                         </Router>
                     </EventManagerProvider>
