@@ -8,6 +8,7 @@ import {
     unprivatizeMembersManual,
 } from '@proton/account/members/unprivatizeMembers';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
@@ -73,12 +74,18 @@ const useOrganizationUnprivatizationModals = () => {
         const n = membersToUnprivatize.length;
         return (
             <MemberListBanner
-                icon="info-circle"
                 members={
                     <>
-                        {c('sso').ngettext(
-                            msgid`${n} user has joined your organization through your Identity Provider. Review the account now:`,
-                            `${n} users have joined your organization through your Identity Provider. Review their accounts now:`,
+                        <p className="text-bold my-0">
+                            {c('sso').ngettext(
+                                msgid`${n} user has joined your organization through your identity provider`,
+                                `${n} users have joined your organization through your identity provider`,
+                                n
+                            )}
+                        </p>
+                        {c('unprivatization').ngettext(
+                            msgid`Review their account now.`,
+                            `Review their accounts now.`,
                             n
                         )}
                         <MembersList members={membersToUnprivatize} />
@@ -86,7 +93,7 @@ const useOrganizationUnprivatizationModals = () => {
                 }
                 action={
                     <Button
-                        size="small"
+                        shape="outline"
                         loading={joinedUnprivatizationState.loading.approval}
                         onClick={() => {
                             dispatch(unprivatizeMembersManual({ membersToUnprivatize })).catch(noop);
@@ -107,20 +114,23 @@ const useOrganizationUnprivatizationModals = () => {
         const n = membersToUnprivatize.length;
         return (
             <MemberListBanner
-                icon="exclamation-triangle-filled"
+                variant={BannerVariants.WARNING}
                 members={
                     <>
-                        {c('unprivatization').ngettext(
-                            msgid`Could not automatically enable administrator access for ${n} user, because their encryption keys have been updated in the meanwhile:`,
-                            `Could not automatically enable administrator access for ${n} users, because their encryption keys have been updated in the meanwhile:`,
-                            n
-                        )}
+                        <p className="text-bold my-0">
+                            {c('unprivatization').ngettext(
+                                msgid`Could not enable admin access for ${n} user`,
+                                `Could not enable admin access for ${n} users`,
+                                n
+                            )}
+                        </p>
+                        {c('unprivatization').t`Their encryption keys were updated while we were making changes.`}
                         <MembersList members={membersToUnprivatize} />
                     </>
                 }
                 action={
                     <Button
-                        size="small"
+                        shape="outline"
                         loading={joinedUnprivatizationState.loading.automatic}
                         onClick={() => {
                             dispatch(
@@ -152,20 +162,23 @@ const useOrganizationUnprivatizationModals = () => {
         const n = disabledMembers.length;
         return (
             <MemberListBanner
-                icon="info-circle"
                 members={
                     <>
-                        {c('sso').ngettext(
-                            msgid`${n} user is inactive. You can safely remove this user from your organization.`,
-                            `${n} users are inactive. You can safely remove them from your organization.`,
+                        <span className="block text-bold">
+                            {c('sso').ngettext(msgid`${n} user is inactive.`, `${n} users are inactive.`, n)}
+                        </span>
+                        {c('unprivatization').ngettext(
+                            msgid`You can safely remove this user from your organization.`,
+                            `You can safely remove these users from your organization.`,
                             n
                         )}
-                        <MembersList members={disabledMembers} />
+
+                        <MembersList members={disabledMembers} listClassName="color-weak" />
                     </>
                 }
                 action={
                     <Button
-                        size="small"
+                        shape="outline"
                         loading={loadingDelete}
                         onClick={() => {
                             setConfirmDelete(true);
