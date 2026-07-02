@@ -656,9 +656,6 @@
       "Load more": [
         "Charger plus"
       ],
-      "Loading verification": [
-        "Vérification du transfert"
-      ],
       "Lost access to your 2FA device?": [
         "Vous n'avez plus accès à votre appareil A2F ?"
       ],
@@ -3666,6 +3663,15 @@
       "No one in your organization can connect to shared servers.": [
         "Personne dans votre organisation ne peut se connecter aux serveurs partagés."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Veuillez noter que les e-mails envoyés à cette adresse, même s'ils proviennent d'autres adresses ${ BRAND_NAME }, ne feront plus l'objet d'un chiffrement de bout en bout."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Une fois l'adresse déconnectée et désactivée, vous ne pourrez plus envoyer ni recevoir d'e-mails en tant que ${ address.Email } dans ${ BRAND_NAME }. Les e-mails envoyés à cette adresse continueront d'arriver dans Gmail, mais pas dans ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Une fois l'adresse déconnectée, vous ne pourrez plus envoyer ni recevoir d'e-mails en tant que ${ address.Email } dans ${ BRAND_NAME }. Les e-mails envoyés à cette adresse continueront d'arriver dans Gmail, mais pas dans ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
       ],
@@ -3745,11 +3751,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Vous pouvez désormais envoyer des e-mails depuis ${ BRAND_NAME } en utilisant cette adresse."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Vous pouvez toujours vous connecter avec cette adresse et vous reconnecter à tout moment."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Vous ne pourrez plus utiliser ${ address.Email } pour recevoir et envoyer des e-mails dans ${ BRAND_NAME }. Notez également que les messages envoyés à cette adresse depuis ${ BRAND_NAME } ne seront plus chiffrés de bout en bout."
+      "You can reconnect this address at any time.": [
+        "Vous pouvez reconnecter cette adresse à tout moment."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Vous transférez ${ numAddressesOrSync } adresse Gmail vers ${ MAIL_APP_NAME }.",
@@ -4530,6 +4533,9 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Seuls des changements de minuscules/majuscules et de ponctuation (points, traits d'union et underscores/tirets du bas) peuvent être effectués pour cette adresse."
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
@@ -7747,6 +7753,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Une fois l'accès à votre compte accordé, ils peuvent accéder à vos paramètres de **Récupération** et **changer votre mot de passe ${ ACCOUNT_APP_NAME } ** pour vous."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Seules les majuscules et la ponctuation (points, traits d'union et underscores/tirets du bas) peuvent être modifiées ici. Pour utiliser une adresse différente, ajoutez-en une nouvelle."
+      ],
       "Open source": [
         "Open source"
       ],
@@ -7856,9 +7865,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Veuillez demander au propriétaire de vous inviter directement au document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authentifiez votre carte dans l'onglet de vérification."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authentifiez votre paiement dans l'onglet de vérification."
       ],
@@ -7891,9 +7897,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -8280,6 +8283,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Le processus a été interrompu pour le groupe ${ pausedCount }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
+        "Le processus a été interrompu pour les groupes ${ pausedCount }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Le crédit de parrainage peut être accordé jusqu'à 2 mois après la fin de la période d'essai de votre ami, seulement si votre ami a souscrit à un abonnement."
@@ -8925,9 +8932,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Vous retrouverez un accès complet ou partiel à vos données chiffrées."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
@@ -16434,6 +16438,9 @@
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Voulez-vous vraiment déconnecter et désactiver cette adresse ?"
+      ],
       "Are you sure you want to disconnect this address?": [
         "Voulez-vous vraiment déconnecter cette adresse ?"
       ],
@@ -16875,6 +16882,9 @@
       "Gift code": [
         "Code-cadeau"
       ],
+      "Group role assignment paused": [
+        "L'attribution de rôle de groupe a été suspendue"
+      ],
       "Groups": [
         "Groupes"
       ],
@@ -17070,9 +17080,6 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
-      ],
-      "PayPal verification failed": [
-        "La vérification PayPal n'a pas abouti."
       ],
       "Phone": [
         "Téléphone"
@@ -17772,6 +17779,9 @@
       "Group membership paused": [
         "L'adhésion au groupe a été suspendue."
       ],
+      "Role assignment paused": [
+        "L'attribution de rôle a été suspendue"
+      ],
       "Sending member invitation": [
         "Envoi de l'invitation au membre"
       ],
@@ -17859,8 +17869,14 @@
       "Payment reversal": [
         "Annulation de paiement"
       ],
+      "Prepayment": [
+        "Prépaiement"
+      ],
       "Refund": [
         "Remboursement"
+      ],
+      "Test credit": [
+        "Paiement test"
       ]
     },
     "Unlimited offer": {
