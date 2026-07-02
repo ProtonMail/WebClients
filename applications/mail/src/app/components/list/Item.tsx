@@ -91,7 +91,7 @@ const Item = ({
 
     const elementID = useMailSelector(selectElementID);
 
-    const { userIsInOnboarding, activeStep } = useCategoriesOnboarding();
+    const { activeStep, categorizeStepLocation, userIsInOnboarding } = useCategoriesOnboarding();
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
@@ -211,7 +211,8 @@ const Item = ({
         />
     );
 
-    const isActiveStepCategorize = activeStep === OnboardingStep.CATEGORIZE;
+    const isCategorize = activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'list';
+    const dimItems = isCategorize ? index !== HIGHLIGHTED_ITEM_INDEX : userIsInOnboarding;
 
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
@@ -231,8 +232,7 @@ const Item = ({
                     dragged && 'item-dragging',
                     useContentSearch && columnLayout && 'es-three-rows',
                     useContentSearch && !columnLayout && 'es-row-results',
-                    isActiveStepCategorize && index !== HIGHLIGHTED_ITEM_INDEX && 'opacity-30',
-                    !isActiveStepCategorize && userIsInOnboarding && 'opacity-30',
+                    dimItems && 'opacity-30',
                 ])}
                 style={{ '--index': index }}
                 ref={elementRef}

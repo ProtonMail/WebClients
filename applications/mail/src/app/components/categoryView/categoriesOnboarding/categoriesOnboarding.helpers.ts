@@ -22,6 +22,16 @@ export const hasSeenAllOnboarding = (audience: AudienceType, flagValue: number):
     return false;
 };
 
+export const shouldSeeInitialModal = (flagValue: number): boolean => {
+    return (
+        !hasBit(flagValue, CategoriesOnboardingFlags.INITIAL_MODAL) &&
+        !hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE) &&
+        !hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE) &&
+        !hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE) &&
+        !hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS)
+    );
+};
+
 export const shouldSeeSpotlightMessage = (flagValue: number): boolean => {
     return (
         hasBit(flagValue, CategoriesOnboardingFlags.INITIAL_MODAL) &&
