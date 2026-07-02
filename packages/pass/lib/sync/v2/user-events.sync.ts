@@ -52,7 +52,7 @@ export function* syncV2(state: State, { getCore }: RootSagaOptions): Generator<u
     /** 2a. Get user access state */
     const access: HydratedAccessState = yield call(getUserAccess);
     /** 2b. Get organization state (no-op for non-business plans) */
-    const organization: MaybeNull<OrganizationState> = yield call(getOrganizationForPlan, access.plan.Type);
+    const organization: MaybeNull<OrganizationState> = yield call(getOrganizationForPlan, access.plan);
     /** 3a. Get all shares */
     const encryptedShares: ShareGetResponse[] = yield call(requestShares);
     /** 3b. Open all shares (may fail on inactive keys) */
