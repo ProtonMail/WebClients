@@ -6,7 +6,7 @@ export function EmptyFileCard(_props: EmptyFileCardProps) {
     return (
         <div
             className={clsx(
-                'group/filecard relative min-w-1/4 max-w-1/4 border-dashed border rounded-lg p-4 bg-transparent text-[var(--text-weak)]"',
+                'group/filecard relative min-w-1/4 max-w-1/4 border border-3 border-dashed border rounded-lg p-4 bg-transparent text-[var(--text-weak)]"',
                 'select-none',
                 'hover:bg-primary hover:text-grey-100 hover:border-grey-100 hover:text-white'
             )}
