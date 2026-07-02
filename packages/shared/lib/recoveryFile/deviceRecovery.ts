@@ -1,5 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 import isTruthy from '@proton/utils/isTruthy';
@@ -218,8 +219,6 @@ export const storeDeviceRecovery = async ({
         recoverySecret: primaryRecoverySecret.RecoverySecret,
     });
 };
-
-export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
 
 export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings, authentication: AuthenticationStore) => {
     return userSettings.DeviceRecovery && authentication.getTrusted();

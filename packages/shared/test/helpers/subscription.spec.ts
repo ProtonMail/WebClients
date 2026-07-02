@@ -317,7 +317,7 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect(hasCancellablePlan(subscription)).withContext(`plan: ${plan}`).toEqual(true);
+            expect(hasCancellablePlan(subscription), `plan: ${plan}`).toEqual(true);
         });
     });
 
@@ -328,7 +328,7 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect(hasCancellablePlan(subscription)).withContext(`plan: ${plan}`).toEqual(false);
+            expect(hasCancellablePlan(subscription), `plan: ${plan}`).toEqual(false);
         });
     });
 
@@ -349,9 +349,7 @@ describe('hasCancellablePlan', () => {
         testCases.forEach((testCase) => {
             subscription.Plans[0].Name = testCase.plan;
             subscription.Plans.push({ Name: testCase.addon, Quantity: 1 } as Plan);
-            expect(hasCancellablePlan(subscription))
-                .withContext(`plan: ${testCase.plan}, addon: ${testCase.addon}`)
-                .toEqual(false);
+            expect(hasCancellablePlan(subscription), `plan: ${testCase.plan}, addon: ${testCase.addon}`).toEqual(false);
         });
     });
 });

@@ -116,14 +116,14 @@ describe('addresses helpers', () => {
 
     describe('getIsNonDefault', () => {
         it('should be a non default address', () => {
-            expect(getIsNonDefault(disabledAddress)).toBeTrue();
-            expect(getIsNonDefault(externalAddress)).toBeTrue();
-            expect(getIsNonDefault(noReceiveAddress)).toBeTrue();
-            expect(getIsNonDefault(noSendAddress)).toBeTrue();
+            expect(getIsNonDefault(disabledAddress)).toBe(true);
+            expect(getIsNonDefault(externalAddress)).toBe(true);
+            expect(getIsNonDefault(noReceiveAddress)).toBe(true);
+            expect(getIsNonDefault(noSendAddress)).toBe(true);
         });
 
         it('should be a default address', () => {
-            expect(getIsNonDefault(address1)).toBeFalse();
+            expect(getIsNonDefault(address1)).toBe(false);
         });
     });
 

@@ -13,7 +13,7 @@ describe('onboarding helpers', () => {
                 CreateTime: addDays(new Date(), -59).getTime() / 1000,
             } as Subscription;
 
-            expect(canShowB2BOnboardingButton(subscription)).toBeTrue();
+            expect(canShowB2BOnboardingButton(subscription)).toBe(true);
         });
 
         it('should not be possible to show the b2b onboarding button', () => {
@@ -22,8 +22,8 @@ describe('onboarding helpers', () => {
                 CreateTime: addDays(new Date(), -61).getTime() / 1000,
             } as Subscription;
 
-            expect(canShowB2BOnboardingButton(subscription)).toBeFalse();
-            expect(canShowB2BOnboardingButton(undefined)).toBeFalse();
+            expect(canShowB2BOnboardingButton(subscription)).toBe(false);
+            expect(canShowB2BOnboardingButton(undefined)).toBe(false);
         });
     });
 });

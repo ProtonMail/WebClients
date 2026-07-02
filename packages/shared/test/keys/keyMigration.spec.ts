@@ -130,16 +130,16 @@ describe('key migration', () => {
 
         expect(result.SignedKeyLists).toEqual({
             [Addresses[0].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
             [Addresses[1].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
             [Addresses[2].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
         });
 
@@ -173,12 +173,12 @@ describe('key migration', () => {
 
         expect(result.SignedKeyLists).toEqual({
             [Addresses[0].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
             [Addresses[1].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
         });
 
@@ -210,22 +210,22 @@ describe('key migration', () => {
 
         expect(result.SignedKeyLists).toEqual({
             [Addresses[0].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
             [Addresses[1].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
             [Addresses[2].ID]: {
-                Data: jasmine.any(String),
-                Signature: jasmine.any(String),
+                Data: expect.any(String),
+                Signature: expect.any(String),
             },
         });
 
         const { privateKeys } = splitKeys(userKeys);
 
-        expect(result.AddressKeys[0].OrgSignature).toEqual(jasmine.stringMatching(/^-----BEGIN PGP SIGNA/));
+        expect(result.AddressKeys[0].OrgSignature).toEqual(expect.stringMatching(/^-----BEGIN PGP SIGNA/));
 
         expect(
             await decryptAddressKeyToken({
@@ -234,6 +234,6 @@ describe('key migration', () => {
                 privateKeys,
                 publicKeys: [organizationKey.key.privateKey],
             })
-        ).toEqual(jasmine.stringMatching(/[a-z\d]+/));
+        ).toEqual(expect.stringMatching(/[a-z\d]+/));
     });
 });

@@ -12,7 +12,7 @@ const mockApi = (responses: any) => {
         }
         return response;
     };
-    return jasmine.createSpy('mockApi').and.callFake(cb);
+    return vi.fn(cb);
 };
 
 // Flush enough microtask queues to let all awaits inside call() resolve
@@ -27,7 +27,7 @@ const createMockVisibilityState = (initialVisible = true) => {
     const callbacks: ((visible: boolean) => void)[] = [];
     const state = {
         visible: initialVisible,
-        subscribe: jasmine.createSpy('subscribe').and.callFake((cb: (visible: boolean) => void) => {
+        subscribe: vi.fn((cb: (visible: boolean) => void) => {
             callbacks.push(cb);
             return () => {
                 const index = callbacks.indexOf(cb);
@@ -47,13 +47,11 @@ const createMockVisibilityState = (initialVisible = true) => {
 const createMockTimeoutIntervalsState = (initialIntervals: EventManagerIntervals) => {
     let intervals = { ...initialIntervals };
     const state = {
-        subscribe: jasmine.createSpy('subscribe').and.callFake(() => () => {}),
-        getInterval: jasmine.createSpy('getInterval').and.callFake((type: EventManagerIntervalTypes) => {
+        subscribe: vi.fn(() => () => {}),
+        getInterval: vi.fn((type: EventManagerIntervalTypes) => {
             return intervals[type];
         }),
-        isForegroundEqualToBackground: jasmine
-            .createSpy('isForegroundEqualToBackground')
-            .and.callFake(() => intervals.foreground === intervals.background),
+        isForegroundEqualToBackground: vi.fn(() => intervals.foreground === intervals.background),
         setIntervals: (newIntervals: EventManagerIntervals) => {
             intervals = { ...newIntervals };
         },
@@ -81,7 +79,7 @@ describe('event manager', () => {
             getEvents,
             timeoutIntervalsState: createMockTimeoutIntervalsState({ foreground: 1000, background: 1000 }),
         });
-        const onSuccess = jasmine.createSpy();
+        const onSuccess = vi.fn();
         const unsubscribe = eventManager.subscribe(onSuccess);
 
         eventManager.start();
@@ -105,14 +103,14 @@ describe('event manager', () => {
             { EventID: '2', More: 0 },
             { EventID: '3', More: 0 },
         ]);
-        const getLatestEventID = jasmine.createSpy('getLatestEventID').and.callFake(() => '1');
+        const getLatestEventID = vi.fn(async () => '1');
 
         const eventManager = createEventManager({
             getLatestEventID,
             getEvents,
             timeoutIntervalsState: createMockTimeoutIntervalsState({ foreground: 1000, background: 1000 }),
         });
-        const onSuccess = jasmine.createSpy();
+        const onSuccess = vi.fn();
         const unsubscribe = eventManager.subscribe(onSuccess);
 
         // Should make one call initially
@@ -137,12 +135,12 @@ describe('event manager', () => {
 
     describe('visibility state rescheduling', () => {
         beforeEach(() => {
-            jasmine.clock().install();
-            jasmine.clock().mockDate(new Date(0));
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date(0));
         });
 
         afterEach(() => {
-            jasmine.clock().uninstall();
+            vi.useRealTimers();
         });
 
         it('does not reschedule when the event loop is not started', async () => {
@@ -159,7 +157,7 @@ describe('event manager', () => {
             // Trigger visibility change without ever calling start()
             visibilityState.triggerChange(true);
 
-            jasmine.clock().tick(30_000);
+            vi.advanceTimersByTime(30_000);
             await flushPromises();
 
             expect(getEvents).not.toHaveBeenCalled();
@@ -185,11 +183,11 @@ describe('event manager', () => {
             // Hiding the page must not shift the already-scheduled timeout
             visibilityState.triggerChange(false);
 
-            jasmine.clock().tick(4_999); // t=4999, original schedule has not fired yet
+            vi.advanceTimersByTime(4_999); // t=4999, original schedule has not fired yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(1); // t=5000, fires on the original foreground schedule
+            vi.advanceTimersByTime(1); // t=5000, fires on the original foreground schedule
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
@@ -213,15 +211,15 @@ describe('event manager', () => {
             // start() inside schedules at t=10000 (background, equal to foreground)
             eventManager.start();
 
-            jasmine.clock().tick(5_000); // t=5000
+            vi.advanceTimersByTime(5_000); // t=5000
             visibilityState.triggerChange(true); // equal intervals → no reschedule
 
             // Must still fire at the original t=10000, not sooner
-            jasmine.clock().tick(4_999); // t=9999
+            vi.advanceTimersByTime(4_999); // t=9999
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(1); // t=10000
+            vi.advanceTimersByTime(1); // t=10000
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
@@ -246,17 +244,17 @@ describe('event manager', () => {
             // STATE: timeoutStartTime=0, timeoutStartDelay=30000
             eventManager.start();
 
-            jasmine.clock().tick(1_000); // t=1000
+            vi.advanceTimersByTime(1_000); // t=1000
             visibilityState.triggerChange(true);
             // nextCallTime=30000, nextForegroundCallTime=5000
             // diff = 25000 >= 50 → reschedule
             // delay = max(50, 5000 - 1000) = 4000ms → fires at t=5000
 
-            jasmine.clock().tick(3_999); // t=4999 — rescheduled call has not fired yet
+            vi.advanceTimersByTime(3_999); // t=4999 — rescheduled call has not fired yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(1); // t=5000 — fires on the rescheduled foreground time
+            vi.advanceTimersByTime(1); // t=5000 — fires on the rescheduled foreground time
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
@@ -281,25 +279,25 @@ describe('event manager', () => {
             // STATE: timeoutStartTime=0, timeoutStartDelay=30000
             eventManager.start();
 
-            jasmine.clock().tick(29_999); // t=29999 — scheduled call has not fired yet
+            vi.advanceTimersByTime(29_999); // t=29999 — scheduled call has not fired yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(1); // t=30000 — scheduled call has fired
+            vi.advanceTimersByTime(1); // t=30000 — scheduled call has fired
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
-            jasmine.clock().tick(1_000); // t=1000
+            vi.advanceTimersByTime(1_000); // t=1000
             visibilityState.triggerChange(true);
             // nextCallTime=30000, nextForegroundCallTime=5000
             // diff = 25000 >= 50 → reschedule
             // delay = max(50, 5000 - 1000) = 4000ms → fires at t=5000
 
-            jasmine.clock().tick(3_999); // t=4999 — rescheduled call has not fired yet
+            vi.advanceTimersByTime(3_999); // t=4999 — rescheduled call has not fired yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
-            jasmine.clock().tick(1); // t=5000 — fires on the rescheduled foreground time
+            vi.advanceTimersByTime(1); // t=5000 — fires on the rescheduled foreground time
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(2);
 
@@ -324,15 +322,15 @@ describe('event manager', () => {
             // Foreground would have been at t=5000
             eventManager.start();
 
-            jasmine.clock().tick(10_000); // t=10000, past the foreground call time of t=5000
+            vi.advanceTimersByTime(10_000); // t=10000, past the foreground call time of t=5000
             visibilityState.triggerChange(true);
             // diff = max(50, 5000 - 10000) = max(50, -5000) = 50ms → fires at t=10050
 
-            jasmine.clock().tick(49); // t=10049 — not yet
+            vi.advanceTimersByTime(49); // t=10049 — not yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(1); // t=10050 — fires after minDelay
+            vi.advanceTimersByTime(1); // t=10050 — fires after minDelay
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
@@ -357,16 +355,16 @@ describe('event manager', () => {
             // start() inside schedules at t=5049 (background)
             eventManager.start();
 
-            jasmine.clock().tick(1); // t=1
+            vi.advanceTimersByTime(1); // t=1
             visibilityState.triggerChange(true);
             // nextCallTime - nextForegroundCallTime = 5049 - 5000 = 49 < 50 → no reschedule
 
             // Must fire at the original t=5049, not at the foreground t=5000
-            jasmine.clock().tick(4_998); // t=4999
+            vi.advanceTimersByTime(4_998); // t=4999
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(50); // t=5049
+            vi.advanceTimersByTime(50); // t=5049
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
@@ -376,12 +374,12 @@ describe('event manager', () => {
 
     describe('timeout intervals state changes', () => {
         beforeEach(() => {
-            jasmine.clock().install();
-            jasmine.clock().mockDate(new Date(0));
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date(0));
         });
 
         afterEach(() => {
-            jasmine.clock().uninstall();
+            vi.useRealTimers();
         });
 
         it('uses the updated interval for the next scheduled call after intervals change', async () => {
@@ -403,21 +401,21 @@ describe('event manager', () => {
             // start() schedules the first call at t=30000 (foreground interval)
             eventManager.start();
 
-            jasmine.clock().tick(29_999); // t=29999 — not yet
+            vi.advanceTimersByTime(29_999); // t=29999 — not yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(0);
 
-            jasmine.clock().tick(1); // t=30000 — first call fires
+            vi.advanceTimersByTime(1); // t=30000 — first call fires
             // Simulate Unleash updating the interval before call() finishes re-scheduling
             timeoutIntervalsState.setIntervals({ foreground: 5_000, background: 5_000 });
             await flushPromises(); // call() completes → start() picks up new 5_000 interval → scheduleCall(30000, 5000)
             expect(getEvents).toHaveBeenCalledTimes(1);
 
-            jasmine.clock().tick(4_999); // t=34999 — not yet
+            vi.advanceTimersByTime(4_999); // t=34999 — not yet
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(1);
 
-            jasmine.clock().tick(1); // t=35000 — second call fires at new interval
+            vi.advanceTimersByTime(1); // t=35000 — second call fires at new interval
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(2);
 
