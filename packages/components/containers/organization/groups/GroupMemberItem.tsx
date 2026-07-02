@@ -1,31 +1,43 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components/components/badge/Badge';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { MemberStateInfo } from '../MemberStateInfo';
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 
 type InvitationBadgeMap = Partial<{
-    [key in GROUP_MEMBER_STATE]: { label: string; tooltip: string };
+    [key in GROUP_MEMBER_STATE]: { label: string; tooltip: string; color?: string; backgroundColor?: string };
 }>;
 
 const getInvitationBadgeMap = (): InvitationBadgeMap => ({
-    [GROUP_MEMBER_STATE.PENDING]: {
+    [GROUP_MEMBER_STATE.PENDING_ADMIN]: {
         label: c('invitation status').t`Pending`,
+        tooltip: c('tooltip').t`Waiting for admin approval`,
+        color: 'var(--signal-warning-major-3)',
+        backgroundColor: 'var(--signal-warning-minor-2)',
+    },
+    [GROUP_MEMBER_STATE.PENDING]: {
+        label: c('invitation status').t`Invited`,
         tooltip: c('tooltip').t`Waiting for user to accept the invitation`,
+        color: 'var(--text-norm)',
+        backgroundColor: 'var(--background-weak)',
     },
     [GROUP_MEMBER_STATE.REJECTED]: {
         label: c('invitation status').t`Declined`,
         tooltip: c('tooltip').t`User declined invitation`,
+        color: 'var(--text-norm)',
+        backgroundColor: 'var(--background-weak)',
     },
     [GROUP_MEMBER_STATE.PAUSED]: {
         label: c('invitation status').t`Paused`,
         tooltip: c('tooltip').t`Group membership paused`,
+        color: 'var(--text-norm)',
+        backgroundColor: 'var(--background-weak)',
     },
 });
 
@@ -58,23 +70,22 @@ export const GroupMemberItem = ({
                 memberName={memberName ?? Email}
                 groupMemberType={groupMember.Type}
                 showMailFeatures={showMailFeatures}
+                isMemberDisabled={groupMember.State === GROUP_MEMBER_STATE.PENDING_ADMIN}
             >
                 <div className="flex flex-row gap-2 flex-nowrap self-center">
                     {badge && (
-                        <span>
-                            <Badge type="origin" className="rounded-sm color-weak" tooltip={badge.tooltip}>
-                                {badge.label}
-                            </Badge>
-                        </span>
+                        <MemberStateInfo
+                            title={badge.tooltip}
+                            backgroundColor={badge.backgroundColor}
+                            color={badge.color}
+                        >
+                            {badge.label}
+                        </MemberStateInfo>
                     )}
                     {isGroupOwnerEnabled && isGroupOwner && (
-                        <Badge
-                            type="origin"
-                            className="rounded-sm color-weak"
-                            tooltip={c('tooltip').t`User is a group`}
-                        >
+                        <MemberStateInfo title={c('tooltip').t`User is a group owner`}>
                             {c('invitation status').t`Group Owner`}
-                        </Badge>
+                        </MemberStateInfo>
                     )}
                 </div>
                 <div>
