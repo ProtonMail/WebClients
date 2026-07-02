@@ -857,6 +857,9 @@
       "Report a problem": [
         "Signaler un bug"
       ],
+      "Report abuse": [
+        "Signaler un abus"
+      ],
       "Report an issue": [
         "Signaler un bug"
       ],
@@ -5713,6 +5716,9 @@
       "How does encrypted search work?": [
         "Comment fonctionne la recherche chiffrée ?"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Je confirme par la présente que je suis de bonne foi et que les informations et déclarations contenues dans le rapport sont exactes et complètes."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Si ces fichiers ne sont pas entièrement téléchargés localement sur ${ deviceName }, vous n'y aurez plus accès."
       ],
@@ -6127,9 +6133,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Veuillez demander au propriétaire de vous inviter directement au document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authentifiez votre carte dans l'onglet de vérification."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authentifiez votre paiement dans l'onglet de vérification."
       ],
@@ -6172,9 +6175,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -6901,9 +6901,6 @@
       "You will need to save it again from the public link page.": [
         "Vous devrez l'enregistrer à nouveau depuis la page du lien public.",
         "Vous devrez les enregistrer à nouveau depuis la page du lien public."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
@@ -9636,9 +9633,6 @@
       ],
       "Failed to move, please try again": [
         "Le déplacement n'a pas abouti, réessayez."
-      ],
-      "Failed to open document": [
-        "L'ouverture du document n'a pas abouti."
       ],
       "Failed to reject share invitation": [
         "L'invitation au partage n'a pas pu être refusée."
@@ -12932,9 +12926,6 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
-      ],
-      "PayPal verification failed": [
-        "La vérification PayPal n'a pas abouti."
       ],
       "Phone numbers": [
         "Numéros de téléphone"
