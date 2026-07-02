@@ -234,6 +234,7 @@ const PasswordsSection = () => {
                                     id="passwordChange"
                                     className="inline-flex gap-2 items-center"
                                     onClick={() => handleChangePassword(changePasswordMode)}
+                                    data-testid="change-password-button"
                                 >
                                     <IcPencil className="shrink-0" />
                                     {passwordButtonLabel}
@@ -259,6 +260,7 @@ const PasswordsSection = () => {
                                             loading={loadingUserSettings}
                                             checked={!isOnePasswordMode}
                                             id="passwordModeToggle"
+                                            data-testid="change-password-toggle"
                                             onChange={() =>
                                                 handleChangePassword(
                                                     isOnePasswordMode
@@ -272,13 +274,15 @@ const PasswordsSection = () => {
                                 {!isOnePasswordMode && (
                                     <SettingsLayout>
                                         <SettingsLayoutLeft>
-                                            <label htmlFor="passwordModeToggle" className="text-semibold">
+                                            <label htmlFor="changeSecondPassword" className="text-semibold">
                                                 <span className="mr-2">{c('Label').t`Second password`}</span>
                                                 <Info url={getKnowledgeBaseUrl('/single-password')} />
                                             </label>
                                         </SettingsLayoutLeft>
                                         <SettingsLayoutRight>
                                             <Button
+                                                id="changeSecondPassword"
+                                                data-testid="change-second-password-button"
                                                 onClick={() =>
                                                     handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)
                                                 }
