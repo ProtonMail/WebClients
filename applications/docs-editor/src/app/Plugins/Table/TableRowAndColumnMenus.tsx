@@ -157,8 +157,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
 
       const tableWrapperInlineMargin =
         parseFloat(getComputedStyle(tableWrapperElement).getPropertyValue('--margin-from-sides-in-rem')) * 16
+      const rootContainerRect = rootContainer.getBoundingClientRect()
+      const rootOffsetX = rootContainer.scrollLeft - rootContainerRect.left
+      const rootOffsetY = rootContainer.scrollTop - rootContainerRect.top
       const tableWrapperRect = tableWrapperElement.getBoundingClientRect()
-      const tableWrapperRight = tableWrapperRect.right
+      const tableWrapperRight = tableWrapperRect.right + rootOffsetX
       const tableWrapperMarginLeft = tableWrapperInlineMargin / 2
       const isTableWrapperOverflowing = tableWrapperElement.scrollWidth > tableWrapperElement.clientWidth
 
@@ -166,17 +169,16 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         setTableRowElement(row)
 
         const rowRect = row.getBoundingClientRect()
-        const rootOffset = rootContainer.scrollTop - rootContainer.getBoundingClientRect().top
 
         const rowMenuButton = rowMenuButtonRef.current
         const rowMenuButtonRect = rowMenuButton.getBoundingClientRect()
 
-        const left = isTableWrapperOverflowing ? tableWrapperMarginLeft : rowRect.left
+        const left = isTableWrapperOverflowing ? tableWrapperMarginLeft : rowRect.left + rootOffsetX
 
         rowMenuButton.style.setProperty('--x', `${left - rowMenuButtonRect.width / 2}px`)
         rowMenuButton.style.setProperty(
           '--y',
-          `${rowRect.top + rootOffset + rowRect.height / 2 - rowMenuButtonRect.height / 2}px`,
+          `${rowRect.top + rootOffsetY + rowRect.height / 2 - rowMenuButtonRect.height / 2}px`,
         )
         rowMenuButton.style.visibility = 'visible'
 
@@ -196,13 +198,12 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         setTableCellElement(cell)
 
         const cellRect = cell.getBoundingClientRect()
-        const rootOffset = rootContainer.scrollTop - rootContainer.getBoundingClientRect().top
 
         const columnMenuButton = columnMenuButtonRef.current
         const columnMenuButtonRect = columnMenuButton.getBoundingClientRect()
         const columnMenuButtonHalfWidth = columnMenuButtonRect.width / 2
 
-        const x = cellRect.left + cellRect.width / 2 - columnMenuButtonHalfWidth
+        const x = cellRect.left + rootOffsetX + cellRect.width / 2 - columnMenuButtonHalfWidth
 
         columnMenuButton.style.setProperty(
           '--x',
@@ -210,7 +211,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         )
         columnMenuButton.style.setProperty(
           '--y',
-          `${tableElement.getBoundingClientRect().top + rootOffset - columnMenuButtonRect.height / 2}px`,
+          `${tableElement.getBoundingClientRect().top + rootOffsetY - columnMenuButtonRect.height / 2}px`,
         )
 
         columnMenuButton.style.visibility = 'visible'
