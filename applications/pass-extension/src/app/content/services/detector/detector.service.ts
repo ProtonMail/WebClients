@@ -20,7 +20,7 @@ import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { notIn, truthy } from '@proton/pass/utils/fp/predicates';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
@@ -34,8 +34,6 @@ const DETECTION_TIE_TRESHOLD = 0.01;
 
 type DetectorConfig = {
     root: HTMLElement | Document;
-    excludedFieldTypes?: FieldType[];
-    excludedFormTypes?: FormType[];
     onBottleneck?: (data: { detectionTime: number; hostname: string }) => void;
 };
 
@@ -57,8 +55,10 @@ const getPredictionsFor = <T extends string>(
         selectBest: PredictionBestSelector<T>;
     }
 ): PredictionResult<T>[] => {
-    /* The following `get` call is necessary to trigger the
-     * `allThrough` effect which will flag the nodes */
+    /* This `get` call is necessary even when `subTypes` is empty : it
+     * matches the base `form`/`field` rules whose `through` effects flag
+     * candidates as processed, preventing `shouldRunClassifier` from
+     * re-triggering detection on every subsequent mutation */
     boundRuleset.get(options.type);
 
     const predictions = options.subTypes.reduce<Map<Fnode, PredictionResult<T>>>((results, subType) => {
@@ -161,11 +161,14 @@ export const createDetectorService = (config: DetectorConfig) => {
         'detector::fields'
     );
 
-    const predictAll = guard((options?: { excludedFieldTypes?: FieldType[] }) => {
-        const excludedFormTypes = config.excludedFormTypes ?? [];
-        const excludedFieldTypes = (options?.excludedFieldTypes ?? []).concat(config.excludedFieldTypes ?? []);
-        const tForms = formTypes.filter(notIn(excludedFormTypes));
-        const tFields = fieldTypes.filter(notIn(excludedFieldTypes));
+    const predictAll = guard((options?: { excludedFieldTypes?: Set<FieldType> }) => {
+        const excludedFieldTypes = options?.excludedFieldTypes;
+        const tFields = excludedFieldTypes ? fieldTypes.filter((type) => !excludedFieldTypes.has(type)) : fieldTypes;
+
+        /* Skip form-type scoring when no field types are predictable.
+         * Predictions still run against the bound ruleset in order to
+         * flag processed nodes (see `getPredictionsFor`) */
+        const tForms = tFields.length > 0 ? formTypes : [];
 
         const boundRuleset = ruleset.against(config.root);
         const formPredictions = predictForms(tForms, boundRuleset);
