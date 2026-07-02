@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import { IFRAME_EXTENDED_AUTOFILL_FIELDS } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type {
     FrameMessageBroker,
@@ -13,7 +14,7 @@ import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/fram
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clearDetectionCache } from '@proton/pass/fathom';
-import { FieldType } from '@proton/pass/fathom/labels';
+import { FieldType, fieldTypes } from '@proton/pass/fathom/labels';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
@@ -91,17 +92,33 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
     const runDetection = throttle(
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
             const settings = ctx?.getSettings();
+            const extendedIframeAutofill = Boolean(ctx?.getFeatureFlags().PassIFrameExtendedAutofill);
+            const subframe = !ctx?.mainFrame;
+
             const { Autofill, Autofill2FA, CreditCard } = ctx?.getFeatures() ?? {};
             const detectIdentity = Boolean(Autofill && settings?.autofill.identity);
-            const excludedFieldTypes: FieldType[] = [];
+            const excludedFieldTypes = new Set<FieldType>();
 
-            if (!detectIdentity) excludedFieldTypes.push(FieldType.IDENTITY);
-            if (!Autofill2FA) excludedFieldTypes.push(FieldType.OTP);
-            if (!CreditCard) excludedFieldTypes.push(FieldType.CREDIT_CARD);
+            /* OTP autofill is not supported in sub-frames */
+            if (!Autofill2FA || subframe) excludedFieldTypes.add(FieldType.OTP);
+            if (!detectIdentity) excludedFieldTypes.add(FieldType.IDENTITY);
+            if (!CreditCard) excludedFieldTypes.add(FieldType.CREDIT_CARD);
+
+            /* Sub-frames only support credit-card autofill when
+             * extended iframe autofill is disabled */
+            if (subframe && !extendedIframeAutofill) {
+                IFRAME_EXTENDED_AUTOFILL_FIELDS.forEach((type) => excludedFieldTypes.add(type));
+            }
 
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
+
+            /* When every field type is excluded, tracked forms cannot hold detectable
+             * fields anymore : detach them (eg: after a feature-flag or settings update) */
+            if (excludedFieldTypes.size === fieldTypes.length) {
+                state.trackedForms.forEach((form) => detachTrackedForm(form.element));
+            }
 
             if (await ctx?.service.detector.shouldPredict()) {
                 state.detectionRequest = requestIdleCallback(() => {
