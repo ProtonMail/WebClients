@@ -27,7 +27,7 @@ interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
     members: EnhancedMember[];
 }
 
-export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
+const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
