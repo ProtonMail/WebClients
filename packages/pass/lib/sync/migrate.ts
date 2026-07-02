@@ -116,7 +116,7 @@ export function* migrateV2(options: RootSagaOptions) {
     const userAccess: HydratedAccessState = yield call(getUserAccess);
     yield put(setUserAccess(userAccess));
     /** 2b. Revalidate organization state (plan may have changed while V1 was active) */
-    const organization: MaybeNull<OrganizationState> = yield call(getOrganizationForPlan, userAccess.plan.Type);
+    const organization: MaybeNull<OrganizationState> = yield call(getOrganizationForPlan, userAccess.plan);
     yield put(setOrganization(organization));
 
     /** 3a. Drain per-share events in parallel */
