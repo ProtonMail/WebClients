@@ -69,7 +69,7 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
                 <SpotlightContent
                     title={c('Title').t`New messages`}
                     description={c('Description')
-                        .t`A blue dot appears when a category has unread messages since your last visit. Hover to see the count.`}
+                        .t`A blue dot appears when a category has unread messages since your last visit.`}
                     step={0}
                     onSkip={handleSkip}
                     onNext={() => {
