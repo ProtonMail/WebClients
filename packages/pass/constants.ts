@@ -127,6 +127,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassExperimentalWebsiteRules]: false,
     [PassFeature.PassExtensionCustomTLDs]: false,
     [PassFeature.PassHideShowVault]: false,
+    [PassFeature.PassIFrameExtendedAutofill]: false,
     [PassFeature.PassIFrameKillswitch]: false,
     [PassFeature.PassItemCloning]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
