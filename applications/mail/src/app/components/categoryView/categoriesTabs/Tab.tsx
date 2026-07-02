@@ -13,10 +13,13 @@ import {
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 
+import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
+import { OnboardingStep } from '../categoriesOnboarding/onboardingInterface';
 import { TabBadge } from './TabBadge';
 import { TabState, categoryColorClassName } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
@@ -38,6 +41,13 @@ export const Tab = ({ category, tabState }: Props) => {
     const { call } = useEventManager();
 
     const { shouldShowCounter, shouldShowNewBadge, count } = useCategoriesBadge({ tabState, category });
+    const { activeStep } = useCategoriesOnboarding();
+
+    const onboardingOverride =
+        activeStep === OnboardingStep.MESSAGE && category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL;
+
+    // During the message onboarding step, the social tab must always show a "new" badge
+    const showNewBadge = onboardingOverride || shouldShowNewBadge;
 
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
@@ -79,7 +89,7 @@ export const Tab = ({ category, tabState }: Props) => {
                     variant="filled"
                     className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
                 />
-                {shouldShowNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
+                {showNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
             </span>
             <span className="flex flex-column justify-center min-w-0">
                 <span
