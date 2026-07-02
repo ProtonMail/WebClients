@@ -45,7 +45,6 @@ const UserNeedsToInvite = ({
     const n = otherAdminsWithMissingOrgKeys.length;
     return (
         <MemberListBanner
-            icon="info-circle"
             members={
                 <>
                     <div>
@@ -55,14 +54,14 @@ const UserNeedsToInvite = ({
                             n
                         )}
                     </div>
-                    <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
+                    <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block color-primary">
                         {c('Link').t`Learn more`}
                     </Href>
                     <MembersList members={otherAdminsWithMissingOrgKeys} />
                 </>
             }
             action={
-                <Button size="small" color="norm" onClick={onRestorePrivilegesClick}>
+                <Button shape="outline" onClick={onRestorePrivilegesClick}>
                     {c('Title').t`Restore administrator privileges`}
                 </Button>
             }
@@ -73,17 +72,16 @@ const UserNeedsToInvite = ({
 const UserNeedsToReactivatePasswordless = ({ onRestorePrivilegesClick }: { onRestorePrivilegesClick: () => void }) => {
     return (
         <MemberListBanner
-            icon="info-circle"
             members={
                 <>
                     <div>{getReactivationText()}</div>
-                    <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
+                    <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block color-primary">
                         {c('Link').t`Learn more`}
                     </Href>
                 </>
             }
             action={
-                <Button size="small" color="norm" onClick={onRestorePrivilegesClick}>
+                <Button shape="outline" onClick={onRestorePrivilegesClick}>
                     {c('Title').t`Restore administrator privileges`}
                 </Button>
             }
@@ -94,25 +92,27 @@ const UserNeedsToReactivatePasswordless = ({ onRestorePrivilegesClick }: { onRes
 const UserNeedsToReactivate = ({ onRestorePrivilegesClick }: { onRestorePrivilegesClick: () => void }) => {
     return (
         <MemberListBanner
-            icon="info-circle"
             members={
                 <>
                     <div>
                         {c('Restore administrator panel')
                             .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
                     </div>
-                    <ul className="mb-0">
+                    <ul className="m-0 flex flex-column gap-1 pt-2">
                         <li>{c('Restore administrator panel').t`Creating or accessing non-private user accounts`}</li>
                         <li>{c('Restore administrator panel').t`Changing organization password`}</li>
                         <li>{c('Restore administrator panel').t`Changing organization keys`}</li>
                     </ul>
-                    <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
+                    <Href
+                        href={getKnowledgeBaseUrl('/restore-administrator')}
+                        className="inline-block color-primary mt-2"
+                    >
                         {c('Link').t`Learn more`}
                     </Href>
                 </>
             }
             action={
-                <Button size="small" color="norm" onClick={onRestorePrivilegesClick}>
+                <Button shape="outline" onClick={onRestorePrivilegesClick}>
                     {c('Title').t`Restore administrator privileges`}
                 </Button>
             }
@@ -123,10 +123,9 @@ const UserNeedsToReactivate = ({ onRestorePrivilegesClick }: { onRestorePrivileg
 const UserNeedsToActivate = ({ onActiveOrganizationKeyClick }: { onActiveOrganizationKeyClick: () => void }) => {
     return (
         <MemberListBanner
-            icon="info-circle"
             members={getActivationText()}
             action={
-                <Button size="small" color="norm" onClick={onActiveOrganizationKeyClick}>
+                <Button shape="outline" onClick={onActiveOrganizationKeyClick}>
                     {c('Action').t`Activate organization key`}
                 </Button>
             }
