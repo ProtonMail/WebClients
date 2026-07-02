@@ -4,10 +4,9 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
-import type { MeetCoreClient } from '../wasm/MeetCoreClient';
+import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 
 interface UseSafariWebsocketVisibilityHandlerParams {
-    wasmApp: MeetCoreClient | null;
     joinedRoom: boolean;
 }
 
@@ -21,10 +20,9 @@ interface UseSafariWebsocketVisibilityHandlerParams {
  *   - Resumes paused audio and video elements that were created while in background
  *   - Resubscribes all video tracks (with debounce)
  */
-export const useSafariWebsocketVisibilityHandler = ({
-    wasmApp,
-    joinedRoom,
-}: UseSafariWebsocketVisibilityHandlerParams) => {
+export const useSafariWebsocketVisibilityHandler = ({ joinedRoom }: UseSafariWebsocketVisibilityHandlerParams) => {
+    const meetCoreClient = useMeetCoreClient();
+
     const { reportMeetError } = useMeetErrorReporting();
     const { unsubscribeAllVideos, resubscribeAllVideos } = useCameraTrackSubscriptionManager();
     const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -32,15 +30,11 @@ export const useSafariWebsocketVisibilityHandler = ({
     const DEBOUNCE_DELAY = 500; // 500ms debounce to avoid rapid toggle
 
     useEffect(() => {
-        if (!wasmApp || !joinedRoom || !isSafari()) {
+        if (!joinedRoom || !isSafari()) {
             return;
         }
 
         const handleVisibilityChange = async () => {
-            if (!wasmApp) {
-                return;
-            }
-
             // Clear any pending debounce timeout
             if (debounceTimeoutRef.current) {
                 clearTimeout(debounceTimeoutRef.current);
@@ -52,9 +46,9 @@ export const useSafariWebsocketVisibilityHandler = ({
                 // Page is in background, set websocket parameters to 60 and max ping failures to 3
                 // This is to prevent the websocket from being closed due to inactivity
                 try {
-                    await wasmApp.setWebsocketPingInterval(60n);
-                    await wasmApp.setWebsocketPongTimeout(60n);
-                    await wasmApp.setWebsocketMaxPingFailures(3);
+                    await meetCoreClient.setWebsocketPingInterval(60n);
+                    await meetCoreClient.setWebsocketPongTimeout(60n);
+                    await meetCoreClient.setWebsocketMaxPingFailures(3);
                 } catch (error) {
                     reportMeetError('Failed to set websocket parameters for background', error);
                 }
@@ -71,9 +65,9 @@ export const useSafariWebsocketVisibilityHandler = ({
             } else if (document.visibilityState === 'visible') {
                 // Page is in foreground, reset websocket parameters to null to use the default values
                 try {
-                    await wasmApp.setWebsocketPingInterval(null);
-                    await wasmApp.setWebsocketPongTimeout(null);
-                    await wasmApp.setWebsocketMaxPingFailures(null);
+                    await meetCoreClient.setWebsocketPingInterval(null);
+                    await meetCoreClient.setWebsocketPongTimeout(null);
+                    await meetCoreClient.setWebsocketMaxPingFailures(null);
                 } catch (error) {
                     reportMeetError('Failed to reset websocket parameters for foreground', error);
                 }
@@ -129,5 +123,5 @@ export const useSafariWebsocketVisibilityHandler = ({
                 debounceTimeoutRef.current = null;
             }
         };
-    }, [wasmApp, joinedRoom, reportMeetError, unsubscribeAllVideos, resubscribeAllVideos]);
+    }, [meetCoreClient, joinedRoom, reportMeetError, unsubscribeAllVideos, resubscribeAllVideos]);
 };
