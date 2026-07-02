@@ -45,6 +45,7 @@ import {
     pullSpacesSuccess,
     pushSpaceRequest,
 } from '../../redux/slices/core/spaces';
+import { updateLumoUserSettings } from '../../redux/slices/lumoUserSettings';
 import { LumoApi } from '../../remote/api';
 import { RoleInt, StatusInt } from '../../remote/types';
 import {
@@ -52,6 +53,7 @@ import {
     deserializeConversation,
     deserializeMessage,
     deserializeSpace,
+    deserializeUserSettings,
     serializeConversation,
     serializeMessage,
     serializeSpace,
@@ -1871,7 +1873,7 @@ describe('Lumo Persistence Integration Tests', () => {
         }, 30000);
 
         it('should delete all spaces and cascade to all related data', async () => {
-            const { store, dispatch, dbApi, lumoApi, actionHistory } = await setupTestEnvironment();
+            const { store, dispatch, dbApi, lumoApi, masterKey, actionHistory } = await setupTestEnvironment();
 
             try {
                 // Create multiple spaces with conversations, messages, and attachments
@@ -1881,6 +1883,13 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Add test data to store and wait for persistence
                 console.log('Adding test data to store');
                 await dispatch(addTestDataToStore(testData));
+
+                dispatch(
+                    updateLumoUserSettings({
+                        memories: [{ id: 'mem-1', content: 'Prefers concise answers', createdAt: 1, source: 'user' }],
+                        memoryPromptsSinceAutoSave: 3,
+                    })
+                );
 
                 // Verify initial state in Redux
                 console.log('Verifying initial state in Redux');
@@ -1969,6 +1978,22 @@ describe('Lumo Persistence Integration Tests', () => {
                 expect(Object.keys(finalState.conversations)).toHaveLength(0);
                 expect(Object.keys(finalState.messages)).toHaveLength(0);
                 expect(Object.keys(finalState.attachments)).toHaveLength(0);
+                expect(finalState.lumoUserSettings.memories).toEqual([]);
+                expect(finalState.lumoUserSettings.memoryPromptsSinceAutoSave).toBe(0);
+
+                // Wait for debounced user-settings auto-save triggered by memory wipe
+                console.log('Waiting for cleared memories to be saved to remote user settings');
+                await waitForCondition(async () => mockDb.getUserSettings() !== null, {
+                    message: 'Waiting for user settings to be saved remotely',
+                    timeout: 5000,
+                    pollInterval: 200,
+                });
+
+                const serializedUserSettings = await lumoApi.getUserSettings();
+                expect(serializedUserSettings).not.toBeNull();
+                const remoteUserSettings = await deserializeUserSettings(serializedUserSettings!, masterKey);
+                expect(remoteUserSettings?.memories).toEqual([]);
+                expect(remoteUserSettings?.memoryPromptsSinceAutoSave).toBe(0);
 
                 // Verify spaces are soft deleted in IndexedDB
                 console.log('Verifying spaces are soft deleted in IndexedDB');
