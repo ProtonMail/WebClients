@@ -3101,16 +3101,16 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 회원님의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정의 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "귀하의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
+        "회원님의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
       ]
     },
     "description": {
@@ -4071,7 +4071,7 @@
         "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
-        "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
+        "사용자의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주세요."
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
@@ -7107,13 +7107,13 @@
         "이 연락처로부터 오는 새 메시지를 인증하려면 \"${ activeSignerText }\" 키를 신뢰하세요."
       ],
       "We'll remind you to verify your password again later": [
-        "귀하의 비밀번호를 나중에 다시 확인하도록 알려드리겠습니다"
+        "회원님의 비밀번호를 나중에 다시 확인하도록 알려드립니다."
       ],
       "Could not scan file for malware": [
         "파일의 멀웨어 여부를 검사할 수 없음"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME }은(는) 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }은(는) 귀하의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
+        "${ VPN_SHORT_APP_NAME }은 당신의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }는 당신의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
