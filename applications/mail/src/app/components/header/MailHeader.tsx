@@ -52,21 +52,22 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }:
 
     const { userIsInOnboarding } = useCategoriesOnboarding();
 
-    const hideMenuButton = !userIsInOnboarding && breakpoints.viewportWidth['<=small'] && !!elementID;
+    const isSmallViewport = breakpoints.viewportWidth['<=small'];
+    const hideMenuButton = isSmallViewport && !!elementID;
     const hideUpsellButton =
-        (breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium) &&
-        (!!elementID || actions.selectedIDs.length !== 0);
+        (isSmallViewport || breakpoints.viewportWidth.medium) && (!!elementID || actions.selectedIDs.length !== 0);
     const labelName = getLabelName(labelID, labels, folders);
 
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
     const shouldDragInElectronMailClassName = hasComposerInFocus && isElectronMail ? 'ignore-drag' : '';
 
     // We override the hamburger menu for small viewports during category onboarding to show the last feature tour step.
-    const customMenuButton = userIsInOnboarding ? (
-        <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
-            <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-        </CategoriesOnboardingSpotlight>
-    ) : undefined;
+    const customMenuButton =
+        userIsInOnboarding && isSmallViewport ? (
+            <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
+                <Hamburger expanded={expanded} onToggle={onToggleExpand} />
+            </CategoriesOnboardingSpotlight>
+        ) : undefined;
 
     return (
         <>
