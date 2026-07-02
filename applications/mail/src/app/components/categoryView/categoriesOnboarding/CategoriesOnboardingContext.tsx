@@ -11,13 +11,7 @@ import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { contextTotal, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import {
-    hasSeenOnboardingModal,
-    shouldSeeInitialModal,
-    shouldSeeSpotlightCategorize,
-    shouldSeeSpotlightCustomize,
-    shouldSeeSpotlightMessage,
-} from './categoriesOnboarding.helpers';
+import { getB2COnboardingStep, hasSeenOnboardingModal } from './categoriesOnboarding.helpers';
 import type { CategorizeStepLocation } from './onboardingInterface';
 import { AudienceType, CategoriesOnboardingFlags, OnboardingStep } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
@@ -111,23 +105,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             return OnboardingStep.NONE;
         }
 
-        if (shouldSeeInitialModal(flagValue)) {
-            return OnboardingStep.INITIAL_MODAL;
-        }
-
-        if (shouldSeeSpotlightMessage(flagValue)) {
-            return OnboardingStep.MESSAGE;
-        }
-
-        if (shouldSeeSpotlightCategorize(flagValue)) {
-            return OnboardingStep.CATEGORIZE;
-        }
-
-        if (shouldSeeSpotlightCustomize(flagValue)) {
-            return OnboardingStep.CUSTOMIZE;
-        }
-
-        return OnboardingStep.DONE;
+        return getB2COnboardingStep(flagValue);
     }, [
         isInbox,
         b2cOnboardingViewFlag.feature?.Value,
