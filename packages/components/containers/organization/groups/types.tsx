@@ -10,6 +10,8 @@ import type {
     RoleAssignment,
 } from '@proton/shared/lib/interfaces';
 
+export const PANEL_HEADER_HEIGHT = '5rem';
+
 export enum GROUPS_STATE {
     EMPTY = 'empty',
     VIEW = 'view',
