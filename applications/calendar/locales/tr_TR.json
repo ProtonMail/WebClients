@@ -3959,7 +3959,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak sürücü bulunamadı"
+        "İçe aktarılacak bir sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -3977,7 +3977,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
+        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "Number of occurrences cannot be empty": [
         "Yinelenme sayısı boş olamaz"
@@ -4218,7 +4218,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -5802,7 +5802,7 @@
         "Görüşme zamanlaması güncellenemedi"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "finance": [
         "finans"
@@ -6135,9 +6135,6 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
       ],
@@ -6177,9 +6174,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
@@ -6667,9 +6661,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler eklenen ve kaldırılan katılımcılara bildirilecek."
@@ -9062,7 +9053,7 @@
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11623,7 +11614,7 @@
         "Yanıt gönderildi ve etkinlik silindi"
       ],
       "Auto-add ${ MEET_APP_NAME } links disabled": [
-        "Otomatik olarak ${ MEET_APP_NAME } bağlantıları eklenmesi kapatıldı"
+        "${ MEET_APP_NAME } bağlantılarının otomatik olarak eklenmesi kapatıldı"
       ],
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
@@ -12426,9 +12417,6 @@
       ],
       "Payment verification": [
         "Ödeme doğrulama"
-      ],
-      "PayPal verification failed": [
-        "PayPal doğrulaması başarısız oldu"
       ],
       "Phone numbers": [
         "Telefon numaraları"

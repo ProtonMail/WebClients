@@ -1200,41 +1200,17 @@
       "1 TB cloud storage": [
         "1 TB cloudového úložiště"
       ],
-      "Advanced AI models": [
-        "Pokročilé modely AI"
-      ],
       "And much more": [
         "A mnohem více"
       ],
       "Everything in Business": [
         "Vše z tarifu Business"
       ],
-      "Everything in Plus": [
-        "Vše v Plus"
-      ],
-      "Extended chat history": [
-        "Rozšířená historie konverzací"
-      ],
-      "Multiple large uploads": [
-        "Vícenásobné nahrávání velkých dat"
-      ],
       "Password manager": [
         "Správce hesel"
       ],
-      "Priority access": [
-        "Prioritní přístup"
-      ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Díky šifrování s nulovým přístupem lze vaše uložené konverzace dešifrovat a číst pouze na vašem zařízení. Ani ${ BRAND_NAME }, ani nikdo jiný je nemůže vidět."
-      ],
-      "Unlimited daily chats": [
-        "Neomezený denní limit konverzací"
-      ],
-      "Unlimited projects": [
-        "Neomezené projekty"
-      ],
-      "User management": [
-        "Správa uživatelů"
       ],
       "Video meetings": [
         "Video schůzky"
@@ -1506,9 +1482,6 @@
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Soubor \"${ file.name }\" je příliš velký (${ fileSizeFormatted }). Maximální povolená velikost je ${ maxSizeFormatted }."
       ],
-      "File already added: ${ result.fileName }": [
-        "Soubor již byl přidán: ${ result.fileName }"
-      ],
       "File uploaded but failed to add to knowledge base": [
         "Soubor byl nahrán, ale nepodařilo se jej přidat do databáze znalostí"
       ],
@@ -1686,9 +1659,6 @@
       ]
     },
     "collider_2025: Feature": {
-      "New": [
-        "Nové"
-      ],
       "What's new": [
         "Co je nového"
       ]
@@ -1951,9 +1921,6 @@
       "Files automatically retrieved based on your questions.": [
         "Soubory automaticky načtené na základě vašich dotazů."
       ],
-      "Files included in the next model request.": [
-        "Soubory zahrnuté v dalším požadavku na model."
-      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pro každý den průměrný počet tokenů na jedno volání API (počet tokenů dělený počtem volání, případně 0, pokud nedošlo k žádnému volání)."
       ],
@@ -2157,9 +2124,6 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Tyto soubory patřily ke shrnutým zprávám a již se neodesílají modelu."
-      ],
-      "These files won't be used for future questions.": [
-        "Tyto soubory nebudou použity pro budoucí otázky."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Tento chat bude za 2 dny odebrán. Chcete-li si jej ponechat, upgradujte na ${ LUMO_SHORT_APP_NAME } Plus."
@@ -3014,9 +2978,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Získejte ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Upgradujte na ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Warning": {
@@ -6602,9 +6563,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Na kartě ověření ověřte pravost své karty."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Na kartě ověření ověřte svou platbu."
       ],
@@ -6613,9 +6571,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Zkuste prosím použít jinou platební metodu a nebo kontaktujte svou banku."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Zkuste to prosím znovu, použijte jinou platební metodu, nebo požádejte PayPal o pomoc."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
@@ -6817,9 +6772,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "K tomuto datu ztratíte přístup k funkcím ${ planTitle }."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Za účelem ověření platby budete přesměrováni na PayPal."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
@@ -9885,9 +9837,6 @@
       ],
       "Payment verification": [
         "Ověřování platby"
-      ],
-      "PayPal verification failed": [
-        "Ověření platby PayPal se nezdařilo"
       ],
       "Processing...": [
         "Zpracovávání..."

@@ -1162,41 +1162,29 @@
       "1 TB cloud storage": [
         "1 TB Cloud-Speicher"
       ],
-      "Advanced AI models": [
-        "Fortgeschrittene KI-Modelle"
-      ],
       "And much more": [
         "Und vieles mehr"
       ],
       "Everything in Business": [
         "Alles aus Business"
       ],
-      "Everything in Plus": [
-        "Alles in Plus"
+      "More image generations": [
+        "Mehr Bildgenerierungen"
       ],
-      "Extended chat history": [
-        "Erweiterter Chatverlauf"
+      "More Max model usage": [
+        "Höheres Modell-Nutzungslimit"
       ],
-      "Multiple large uploads": [
-        "Mehrere große Uploads"
+      "More messages & chat history": [
+        "Mehr Nachrichten & Chatverläufe"
       ],
       "Password manager": [
         "Passwort-Manager"
       ],
-      "Priority access": [
-        "Priorisierter Zugang"
-      ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Dank der Null-Zugriff-Verschlüsselung können deine gespeicherten Unterhaltungen nur auf deinem Gerät entschlüsselt und gelesen werden. Weder ${ BRAND_NAME } noch Dritte können sie einsehen."
       ],
-      "Unlimited daily chats": [
-        "Unbegrenzte tägliche Chats"
-      ],
-      "Unlimited projects": [
+      "Unlimited Projects": [
         "Unbegrenzte Projekte"
-      ],
-      "User management": [
-        "Benutzerverwaltung"
       ],
       "Video meetings": [
         "Videomeetings"
@@ -1466,9 +1454,6 @@
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Datei „${ file.name }“ ist zu groß (${ fileSizeFormatted }). Die maximal zulässige Größe beträgt ${ maxSizeFormatted }."
       ],
-      "File already added: ${ result.fileName }": [
-        "Datei bereits hinzugefügt: ${ result.fileName }"
-      ],
       "File uploaded but failed to add to knowledge base": [
         "Datei hochgeladen, konnte aber nicht zur Wissensdatenbank hinzugefügt werden."
       ],
@@ -1646,9 +1631,6 @@
       ]
     },
     "collider_2025: Feature": {
-      "New": [
-        "Neu"
-      ],
       "What's new": [
         "Neue Funktionen"
       ]
@@ -1903,9 +1885,6 @@
       "Files automatically retrieved based on your questions.": [
         "Dateien, die basierend auf deinen Fragen automatisch abgerufen wurden."
       ],
-      "Files included in the next model request.": [
-        "Dateien, die in der nächsten Modellanfrage enthalten sind."
-      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pro Tag werden die durchschnittlichen Token pro API-Aufruf berechnet (Token ÷ Aufrufe, oder 0, wenn keine Aufrufe)."
       ],
@@ -2107,11 +2086,14 @@
       "There was an error processing this file.": [
         "Beim Verarbeiten dieser Datei ist ein Fehler aufgetreten."
       ],
+      "These files are no longer referred to in this conversation.": [
+        "In dieser Unterhaltung wird nicht mehr auf diese Dateien Bezug genommen."
+      ],
+      "These files are referred to in the conversation.": [
+        "In dieser Unterhaltung wird auf diese Dateien Bezug genommen."
+      ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Diese Dateien gehörten zu zusammengefassten Nachrichten und werden nicht mehr an das Modell gesendet."
-      ],
-      "These files won't be used for future questions.": [
-        "Diese Dateien werden für zukünftige Fragen nicht verwendet."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Dieser Chat wird in 2 Tagen entfernt. Führe ein Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus durch, um ihn zu behalten."
@@ -2541,6 +2523,12 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
       ],
@@ -2963,8 +2951,14 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Hol dir ${ LUMO_SHORT_APP_NAME } Plus"
       ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro holen"
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
         "Auf ${ LUMO_SHORT_APP_NAME } Plus upgraden"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Auf ${ LUMO_SHORT_APP_NAME } Pro upgraden"
       ]
     },
     "collider_2025: Warning": {
@@ -6530,9 +6524,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Bitte authentifiziere deine Karte im Verifikationstab."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
@@ -6541,9 +6532,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
@@ -6739,9 +6727,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
@@ -9552,6 +9537,9 @@
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
       "Account restricted": [
         "Konto eingeschränkt"
       ],
@@ -9684,8 +9672,8 @@
       "Payment verification": [
         "Zahlungsbestätigung"
       ],
-      "PayPal verification failed": [
-        "PayPal-Verifizierung fehlgeschlagen"
+      "Plan type": [
+        "Abonnementyp"
       ],
       "Processing...": [
         "Wird verarbeitet..."

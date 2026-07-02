@@ -6305,9 +6305,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы спраўджання."
       ],
@@ -6353,9 +6350,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
       ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
-      ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
       ],
@@ -6370,6 +6364,12 @@
       ],
       "Preparing": [
         "Падрыхтоўка"
+      ],
+      "Preparing download": [
+        "Падрыхтоўка да спампоўвання"
+      ],
+      "Preparing…": [
+        "Падрыхтоўка…"
       ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
@@ -7093,9 +7093,6 @@
         "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку.",
         "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку.",
         "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -9950,11 +9947,11 @@
       "Failed to accept share invitation": [
         "Не ўдалося прыняць абагуленае запрашэнне"
       ],
+      "Failed to load sharing details": [
+        "Не ўдалося загрузіць абагуленыя падрабязнасці"
+      ],
       "Failed to move, please try again": [
         "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
-      ],
-      "Failed to open document": [
-        "Не ўдалося адкрыць дакумент"
       ],
       "Failed to reject share invitation": [
         "Не ўдалося адхіліць абагуленае запрашэнне"
@@ -13019,6 +13016,18 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Лічбавы подпіс часткова спраўджаны. Гэта папка была запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма спраўдзіць яго ідэнтычнасць."
       ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэты файл быў бяспечна створаны ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэты файл быў бяспечна запампаваны ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэта папка была бяспечна створана ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Лічбавы подпіс спраўджаны. Гэта папка была бяспечна запампавана ${ author }."
+      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -13367,9 +13376,6 @@
       "Payment verification": [
         "Праверка плацяжу"
       ],
-      "PayPal verification failed": [
-        "Не ўдалося ажыццявіць праверку PayPal"
-      ],
       "Phone numbers": [
         "Нумары тэлефонаў"
       ],
@@ -13661,6 +13667,18 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Немагчыма спраўдзіць, што ${ author } стварыў гэты файл."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Немагчыма спраўдзіць, што ${ author } стварыў гэту папку."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Немагчыма спраўдзіць, што ${ author } запампаваў гэты файл."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Немагчыма спраўдзіць, што ${ author } запампаваў гэту папку."
+      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Немагчыма спраўдзіць, што ананімны карыстальнік стварыў гэты файл."
       ],
@@ -13675,6 +13693,9 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Не ўдалося пацвердзіць, што змесціва файла было запампавана ${ claimedContentAuthor }. Прычына: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Не ўдалося пацвердзіць, што назва была створана або зменена ${ claimedNameAuthor }. Прычына: ${ node.nameAuthor.error.error }"
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Не ўдалося пацвердзіць, што вузел быў створаны ${ claimedKeyAuthor }. Прычына: ${ node.keyAuthor.error.error }"

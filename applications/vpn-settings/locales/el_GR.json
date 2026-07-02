@@ -656,9 +656,6 @@
       "Load more": [
         "Φόρτωση περισσοτέρων"
       ],
-      "Loading verification": [
-        "Αναμονή για επαλήθευση"
-      ],
       "Lost access to your 2FA device?": [
         "Χάσατε την πρόσβαση στη συσκευή 2FA;"
       ],
@@ -3671,6 +3668,15 @@
       "No one in your organization can connect to shared servers.": [
         "Κανείς στον οργανισμό σας δεν μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Σημειώστε ότι τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται σε αυτήν τη διεύθυνση, ακόμη και από άλλες διευθύνσεις ${ BRAND_NAME }, δε θα είναι πλέον διατερματικά κρυπτογραφημένα."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Μόλις αποσυνδεθείτε και απενεργοποιηθεί, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ address.Email } στο ${ BRAND_NAME }. Τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση θα εξακολουθούν να φτάνουν στο Gmail, αλλά όχι στο ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Μόλις αποσυνδεθείτε, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ address.Email } στο ${ BRAND_NAME }. Τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση θα εξακολουθούν να φτάνουν στο Gmail, αλλά όχι στο ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
       ],
@@ -3753,11 +3759,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Μπορείτε ακόμα να συνδεθείτε με αυτήν τη διεύθυνση και να επανασυνδεθείτε οποιαδήποτε στιγμή."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Δε θα μπορείτε πλέον να χρησιμοποιείτε το ${ address.Email } για να λαμβάνετε και να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου στο ${ BRAND_NAME }. Σημειώστε επίσης ότι τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση από το ${ BRAND_NAME } δε θα είναι πλέον κρυπτογραφημένα διατερματικά."
+      "You can reconnect this address at any time.": [
+        "Μπορείτε να επανασυνδέσετε αυτήν τη διεύθυνση ανά πάσα στιγμή."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Προωθείτε ${ numAddressesOrSync } διεύθυνση Gmail προς ${ MAIL_APP_NAME }.",
@@ -4544,6 +4547,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Μόνο τα κεφαλαία και τα σημεία στίξης (τελείες, παύλες και παύλες υπογράμμισης) μπορούν να αλλάξουν για αυτήν τη διεύθυνση"
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
@@ -7778,6 +7784,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Μόλις τους παραχωρηθεί πρόσβαση στον λογαριασμό σας, μπορούν να έχουν πρόσβαση στις ρυθμίσεις **Ανάκτησης** και **να αλλάξουν τον κωδικό πρόσβασής σας ${ ACCOUNT_APP_NAME }** για εσάς."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Μόνο η χρήση κεφαλαίων και η στίξη (τελικές στιγμές, παύλες και υπογράμμιση) μπορούν να αλλάξουν εδώ. Για να χρησιμοποιήσετε διαφορετική διεύθυνση, προσθέστε μια νέα."
+      ],
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
@@ -7887,9 +7896,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Επαληθεύστε την πληρωμή σας στην καρτέλα επαλήθευσης."
       ],
@@ -7922,9 +7928,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
@@ -8311,6 +8314,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Η διαδικασία διακόπηκε για ${ pausedCount } ομάδα. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων.",
+        "Η διαδικασία διακόπηκε για ${ pausedCount } ομάδες. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Η πίστωσή παραπομπής μπορεί να δοθεί μέχρι 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας, μόνο αν ο φίλος σας εγγράφηκε σε ένα πλάνο."
@@ -8956,9 +8963,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Θα ανακτήσετε πλήρη ή μερική πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
@@ -16468,6 +16472,9 @@
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Είστε βέβαιοι ότι θέλετε να αποσυνδέσετε και να απενεργοποιήσετε αυτήν τη διεύθυνση;"
+      ],
       "Are you sure you want to disconnect this address?": [
         "Θέλετε σίγουρα να αποσυνδέσετε αυτή τη διεύθυνση;"
       ],
@@ -16909,6 +16916,9 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
+      "Group role assignment paused": [
+        "Η ανάθεση ρόλου ομάδας τέθηκε σε παύση"
+      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -17104,9 +17114,6 @@
       ],
       "Payment verification": [
         "Επαλήθευση Πληρωμής"
-      ],
-      "PayPal verification failed": [
-        "Η επαλήθευση PayPal απέτυχε"
       ],
       "Phone": [
         "Τηλέφωνο"
@@ -17806,6 +17813,9 @@
       "Group membership paused": [
         "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
       ],
+      "Role assignment paused": [
+        "Η ανάθεση ρόλου τέθηκε σε παύση"
+      ],
       "Sending member invitation": [
         "Αποστολή πρόσκλησης μέλους"
       ],
@@ -17893,8 +17903,14 @@
       "Payment reversal": [
         "Αντιστροφή πληρωμής"
       ],
+      "Prepayment": [
+        "Προπληρωμή"
+      ],
       "Refund": [
         "Επιστροφή χρημάτων"
+      ],
+      "Test credit": [
+        "Δοκιμαστική πίστωση"
       ]
     },
     "Unlimited offer": {

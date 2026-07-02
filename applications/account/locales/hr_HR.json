@@ -632,9 +632,6 @@
       "Load more": [
         "Učitaj više"
       ],
-      "Loading verification": [
-        "Učitavanje potvrde"
-      ],
       "Manage addresses": [
         "Upravljanje adresama"
       ],
@@ -6385,9 +6382,6 @@
       "Phone number": [
         "Broj telefona"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Molimo vas da autentificirate svoju karticu na kartici za provjeru."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Molimo potvrdite svoje plaćanje u kartici za provjeru."
       ],
@@ -6411,9 +6405,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Pokušajte ponovo koristeći drugi način plaćanja ili kontaktirajte svoju banku."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
       ],
       "Please use another browser or download the file.": [
         "Koristite drugi preglednik ili preuzmite datoteku."
@@ -7041,9 +7032,6 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Trebat će Vam ${ BRAND_NAME } adresa za korištenje ${ MAIL_APP_NAME }a i ${ CALENDAR_APP_NAME }a"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nećete moći oporaviti zaključane podatke koristeći svoje preuzete datoteke za oporavak."
@@ -12602,6 +12590,11 @@
         "Poništavanje pretplate, molimo pričekajte"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Onemogućeno"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Radnje"
@@ -14015,9 +14008,6 @@
       ],
       "Payment verification": [
         "Potvrda plaćanja"
-      ],
-      "PayPal verification failed": [
-        "Neuspjela PayPal potvrda"
       ],
       "Phone": [
         "Telefon"

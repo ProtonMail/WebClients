@@ -656,9 +656,6 @@
       "Load more": [
         "加载更多"
       ],
-      "Loading verification": [
-        "正在载入验证"
-      ],
       "Lost access to your 2FA device?": [
         "无法访问您的 2FA 设备？"
       ],
@@ -3648,6 +3645,15 @@
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "请注意，发送到此地址的邮件（即使来自其他 ${ BRAND_NAME } 地址）将不再采用端到端加密。"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接并禁用后，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接，您将无法再以 ${ address.Email } 的身份在 ${ BRAND_NAME } 中发送或接收邮件。发送到此地址的邮件仍将送达 Gmail，但不会进入 ${ MAIL_APP_NAME }。"
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
@@ -3729,11 +3735,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "您仍可以使用此地址登录，并随时重新连接。"
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "您将无法再使用 ${ address.Email } 在 ${ BRAND_NAME } 中收发邮件。请注意，发送到此地址的 ${ BRAND_NAME } 邮件将不再采用端到端加密。"
+      "You can reconnect this address at any time.": [
+        "您可以随时重新连接此地址。"
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在将 ${ numAddressesOrSync } 个 Gmail 地址转发到 ${ MAIL_APP_NAME }。"
@@ -4512,6 +4515,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "您的 ${ DRIVE_APP_NAME } 存储空间不足"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "该地址只能更改大小写和标点符号（句号、连字符和下划线）"
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
@@ -7676,6 +7682,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "该地址只能更改大小写和标点符号（句号、连字符和下划线）。如需使用其他地址，请添加新地址。"
+      ],
       "Open source": [
         "开放源代码"
       ],
@@ -7781,9 +7790,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "请让所有者直接邀请您加入文档。"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "请在验证页面完成银行卡核验。"
-      ],
       "Please authenticate your payment in the verification tab.": [
         "请在验证页面确认支付。"
       ],
@@ -7816,9 +7822,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
@@ -8200,6 +8203,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "该流程在 ${ pausedCount } 个群组中被中断，点击“继续”以恢复分配角色。"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "推荐奖励可在您朋友的试用期结束后的 2 个月内发放，前提是您的朋友已订阅套餐。"
@@ -8836,9 +8842,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "您将重新获得对加密数据的完全或部分访问权限。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "即将为您转至 PayPal 确认支付。"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
@@ -16211,6 +16214,9 @@
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "您确定要断开连接并禁用此地址吗？"
+      ],
       "Are you sure you want to disconnect this address?": [
         "您确定要断开此地址的连接吗？"
       ],
@@ -16649,6 +16655,9 @@
       "Gift code": [
         "礼品码"
       ],
+      "Group role assignment paused": [
+        "群组角色分配已暂停"
+      ],
       "Groups": [
         "群组"
       ],
@@ -16843,9 +16852,6 @@
       ],
       "Payment verification": [
         "支付验证"
-      ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
       ],
       "Phone": [
         "电话"
@@ -17544,6 +17550,9 @@
       "Group membership paused": [
         "群组成员资格暂停"
       ],
+      "Role assignment paused": [
+        "角色分配已暂停"
+      ],
       "Sending member invitation": [
         "正在发送成员邀请"
       ],
@@ -17631,8 +17640,14 @@
       "Payment reversal": [
         "撤销付款"
       ],
+      "Prepayment": [
+        "预付款"
+      ],
       "Refund": [
         "退款"
+      ],
+      "Test credit": [
+        "测试额度"
       ]
     },
     "Unlimited offer": {

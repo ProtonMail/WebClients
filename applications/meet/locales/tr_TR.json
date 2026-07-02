@@ -5,8 +5,23 @@
   },
   "contexts": {
     "Accessibility": {
+      "(opens in new tab)": [
+        "(yeni sekmede açılır)"
+      ],
+      "camera off": [
+        "Kamera kapalı"
+      ],
       "camera on": [
-        "kamera açık"
+        "Kamera açık"
+      ],
+      "Meeting controls": [
+        "Görüşme denetimleri"
+      ],
+      "microphone muted": [
+        "Mikrofon kapalı"
+      ],
+      "microphone on": [
+        "Mikrofon açık"
       ]
     },
     "Accessibility announcement": {
@@ -44,7 +59,7 @@
         "Bir katılımcı ${ emoji } tepkisi verdi"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "Ağ kısıtlamaları nedeniyle TURN röle modu üzerinden bağlanılmıştır. Bu durum gecikmeyi artırabilir ve görüşme kalitesini etkileyebilir."
+        "Bağlantı, ağ kısıtlamaları nedeniyle TURN aktarım kipi ile kuruldu. Gecikme ve arama kalitesi sorunları yaşanabilir."
       ],
       "Connection lost. Reconnecting…": [
         "Bağlantı kesildi. Yeniden bağlanıyor…"
@@ -58,23 +73,53 @@
       "Reconnected to the meeting": [
         "Görüşme ile yeniden bağlantı kuruldu"
       ],
+      "Recording saved": [
+        "Görüşme kaydı kaydedildi"
+      ],
       "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Kayıt başladı. Görüşmede kalarak kayıt yapılacağını kabul etmiş ve buna rıza vermiş olursunuz."
       ],
       "Recording stopped": [
         "Kayıt durduruldu"
       ],
+      "Screen share started": [
+        "Ekran paylaşımı başlatıldı"
+      ],
+      "Screen share started by ${ name }": [
+        "${ name } ekranını paylaşmaya başladı"
+      ],
       "Screen share stopped": [
         "Ekran paylaşımı durduruldu"
       ],
+      "Screen share stopped by ${ name }": [
+        "${ name } ekranını paylaşmayı durdurdu"
+      ],
+      "The meeting will close in 1 minute": [
+        "Görüşme 1 dakika içinde kapatılacak"
+      ],
       "The meeting will close in 15 seconds": [
-        "Toplantı 15 saniye sonra sona erecek"
+        "Görüşme 15 saniye içinde sona erecek"
       ],
       "The meeting will close in 30 seconds": [
-        "Toplantı 30 saniye sonra sona erecek"
+        "Görüşme 30 saniye içinde sona erecek"
+      ],
+      "The meeting will end in 1 minute": [
+        "Görüşme 1 dakika içinde sona erecek"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Görüşme 10 dakika içinde sona erecek"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Görüşme 15 saniye içinde sona erecek"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Görüşme 5 dakika içinde sona erecek"
       ],
       "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
         "Bu görüşme kaydediliyor. Görüşmeye katılarak kayıt yapılacağını kabul etmiş ve buna rıza vermiş olursunuz."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Tek katılımcı sizsiniz. Biri katılmadığı sürece toplantı 2 dakika içinde kapanacak."
       ],
       "You have been disconnected from the meeting": [
         "Görüşme bağlantınız kesildi"
@@ -95,6 +140,15 @@
       ],
       "Add another account": [
         "Başka bir hesap ekle"
+      ],
+      "Admit": [
+        "Kabul et"
+      ],
+      "Admit ${ participantName }": [
+        "${ participantName } katılımcısını kabul et"
+      ],
+      "Admit all": [
+        "Hepsini kabul et"
       ],
       "Allow access": [
         "Erişime izin ver"
@@ -132,6 +186,9 @@
       "Close": [
         "Kapat"
       ],
+      "Close preview": [
+        "Ön izlemeyi kapat"
+      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -149,6 +206,9 @@
       ],
       "Copy address": [
         "Adresi kopyala"
+      ],
+      "Copy invitation link": [
+        "Davet bağlantısını kopyala"
       ],
       "Copy link": [
         "Bağlantıyı kopyala"
@@ -176,6 +236,12 @@
       ],
       "Delete": [
         "Sil"
+      ],
+      "Deny": [
+        "Reddet"
+      ],
+      "Deny ${ participantName }": [
+        "${ participantName } katılımcısını reddet"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName } katılımcısının görüntüsünü kapat"
@@ -294,6 +360,9 @@
       "Lower hand": [
         "Eli indir"
       ],
+      "Minimize preview": [
+        "Ön izlemeyi küçült"
+      ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
@@ -354,6 +423,10 @@
       ],
       "Rejoin meeting": [
         "Görüşmeye yeniden katıl"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "${ emoji } tepkisini kaldır, ${ identities.length } tepki",
+        "${ emoji } tepkisini kaldır, ${ identities.length } tepki"
       ],
       "Report a problem": [
         "Sorun bildirin"
@@ -426,6 +499,9 @@
       ],
       "Skip": [
         "Atla"
+      ],
+      "Skip to main content": [
+        "Ana içeriğe git"
       ],
       "Start an instant meeting": [
         "Anında görüşme başlat"
@@ -558,6 +634,9 @@
       "Meeting details": [
         "Görüşme ayrıntıları"
       ],
+      "More options": [
+        "Diğer seçenekler"
+      ],
       "Noise cancellation": [
         "Gürültü engelleme"
       ],
@@ -628,8 +707,41 @@
       ]
     },
     "Aria": {
+      "Assign host": [
+        "Görüşme sahibi ata"
+      ],
+      "Audio settings": [
+        "Ses ayarları"
+      ],
+      "Chat": [
+        "Sohbet"
+      ],
+      "Chat messages": [
+        "Sohbet iletileri"
+      ],
       "Device settings": [
-        "Cihaz ayarları"
+        "Aygıt ayarları"
+      ],
+      "Meeting details": [
+        "Görüşme ayrıntıları"
+      ],
+      "Meeting rooms": [
+        "Görüşme odaları"
+      ],
+      "Participants": [
+        "Katılımcılar"
+      ],
+      "Participants list": [
+        "Katılımcı listesi"
+      ],
+      "Primary navigation": [
+        "Birincil gezinme"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Video settings": [
+        "Görüntü ayarları"
       ]
     },
     "Badge": {
@@ -1584,6 +1696,12 @@
       ],
       "Rotating group encryption key for best security": [
         "En iyi güvenliği sağlamak için grup şifreleme anahtarı değiştiriliyor"
+      ],
+      "Try a different name.": [
+        "Başka bir isim deneyin."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Toplantıya katıldıklarında buradaki kişileri göreceksiniz."
       ]
     },
     "Display name": {
@@ -1642,6 +1760,9 @@
       "Failed to join meeting. Please try again later.": [
         "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Failed to join meeting. Please try again.": [
+        "Görüşmeye katılınamadı. Lütfen yeniden deneyin."
+      ],
       "Failed to lock meeting": [
         "Görüşme kilitlenemedi"
       ],
@@ -1656,6 +1777,9 @@
       ],
       "Failed to send reaction. Please try again.": [
         "Tepki gönderilemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Görüşme başlatılamadı. Lütfen yeniden deneyin."
       ],
       "Failed to start recording": [
         "Görüşme kaydı başlatılamadı"
@@ -2180,6 +2304,9 @@
       "Loading meetings...": [
         "Görüşmeler yükleniyor..."
       ],
+      "Loading recordings…": [
+        "Görüşme kayıtları yükleniyor…"
+      ],
       "Loading...": [
         "Yükleniyor..."
       ],
@@ -2224,6 +2351,9 @@
       ],
       "Member": [
         "Üye"
+      ],
+      "Message from ${ participantName }": [
+        "${ participantName } kişisinden ileti"
       ],
       "microphone": [
         "mikrofon"
@@ -2294,6 +2424,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Uçtan uca şifrelenmiş görüşmelerimiz gizliliği korur ve gerçek anlamda ifade özgürlüğü sağlar."
       ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Sayfa ${ displayPage } / ${ totalPages }"
+      ],
       "Participant": [
         "Katılımcı"
       ],
@@ -2323,6 +2456,12 @@
       ],
       "privacy": [
         "gizlilik"
+      ],
+      "Quick reactions": [
+        "Hızlı tepkiler"
+      ],
+      "Reactions": [
+        "Tepkiler"
       ],
       "Reconnected successfully": [
         "Yeniden bağlandı"
@@ -2627,6 +2766,9 @@
       "Copy invite link": [
         "Davet bağlantısını kopyala"
       ],
+      "Create meeting options": [
+        "Görüşme seçenekleri oluştur"
+      ],
       "Created": [
         "Oluşturulma"
       ],
@@ -2644,6 +2786,12 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Emoji picker": [
+        "Emoji seçici"
+      ],
+      "Emoji reactions": [
+        "Emoji tepkileri"
       ],
       "Enabled": [
         "Kullanılıyor"
@@ -2684,11 +2832,17 @@
       "Last used": [
         "Son kullanılan"
       ],
+      "Leave meeting options": [
+        "Görüşmeden ayrılma seçenekleri"
+      ],
       "Manage recordings": [
         "Kayıt yönetimi"
       ],
       "Meeting ID": [
         "Görüşme kimliği"
+      ],
+      "Meeting link": [
+        "Görüşme bağlantısı"
       ],
       "Message": [
         "İleti"
@@ -2714,6 +2868,9 @@
       "Outlook Calendar": [
         "Outlook Takvim"
       ],
+      "Participant controls": [
+        "Katılımcı denetimleri"
+      ],
       "Passphrase": [
         "Parola ifadesi"
       ],
@@ -2737,6 +2894,9 @@
       ],
       "Schedule meeting": [
         "Görüşme zamanla"
+      ],
+      "Screen share": [
+        "Ekran paylaşımı"
       ],
       "Selected Camera": [
         "Seçilmiş kamera"
@@ -3072,6 +3232,9 @@
       "Activity events": [
         "Etkinlik olayları"
       ],
+      "All participants": [
+        "Tüm katılımcılar"
+      ],
       "Allow camera ": [
         "Kameraya erişme izni ver "
       ],
@@ -3199,6 +3362,12 @@
       "Minicalendar": [
         "Mini takvim"
       ],
+      "No one is waiting": [
+        "Kimse beklemiyor"
+      ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Participants": [
         "Katılımcılar"
       ],
@@ -3279,6 +3448,9 @@
       ],
       "Video": [
         "Görüntü"
+      ],
+      "Waiting room": [
+        "Bekleme odası"
       ],
       "What went wrong?": [
         "Sorun neydi?"

@@ -653,9 +653,6 @@
       "Load more": [
         "Ladda mer"
       ],
-      "Loading verification": [
-        "Laddar verifiering"
-      ],
       "Lost access to your 2FA device?": [
         "Förlorat åtkomst till din 2FA-enhet?"
       ],
@@ -3709,6 +3706,9 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
       ],
+      "You can reconnect this address at any time.": [
+        "Du kan återansluta denna adress när som helst."
+      ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
@@ -5526,6 +5526,9 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
+      "Insert your security key into your device.": [
+        "Infoga din säkerhetsnyckel i din enhet."
+      ],
       "Security key": [
         "Säkerhetsnyckel"
       ],
@@ -5750,6 +5753,9 @@
     "group_modal": {
       "General": [
         "Allmänt"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ],
       "Roles and permissions": [
         "Roller och behörigheter"
@@ -7010,6 +7016,9 @@
       "Edit email address": [
         "Redigera e-postadress"
       ],
+      "Editing requires permission": [
+        "Redigering kräver behörighet"
+      ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfiguration sparad"
       ],
@@ -7582,6 +7591,9 @@
       "New activity data will stop being collected and shown.": [
         "Ny aktivitetsdata kommer att sluta samlas in och visas."
       ],
+      "New group created via your identity provider and pending review.": [
+        "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
+      ],
       "New sidebar": [
         "Ny sidopanel"
       ],
@@ -7748,9 +7760,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Be ägaren att direkt bjuda in dig till dokumentet."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentisera ditt kort på verifieringsfliken."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentisera din betalning på verifieringsfliken."
       ],
@@ -7783,9 +7792,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Försök igen med en annan betalningsmetod eller kontakta din bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -8803,9 +8809,6 @@
       "You will regain complete or partial access to your encrypted data.": [
         "Du kommer återfå fullständig eller delvis åtkomst till dina krypterade data."
       ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
@@ -9758,6 +9761,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password check-ins": [
+        "Lösenordsincheckningar"
       ],
       "Password strength": [
         "Lösenordsstyrka"
@@ -12613,6 +12619,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Se till att du memorerar eller förvarar ditt lösenord säkert eftersom det är nyckeln till att dekryptera dina data."
+      ],
+      "Turn off check-ins": [
+        "Stäng av incheckningar"
+      ],
+      "Turn off password check-ins?": [
+        "Stäng av lösenordsincheckningar?"
       ]
     },
     "passwordless": {
@@ -13888,6 +13900,9 @@
       "${ pendingUsersCount } user synced.": [
         "${ pendingUsersCount } användare synkroniserad.",
         "${ pendingUsersCount } användare synkroniserade."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } och ${ groupsText } synkroniserade."
       ],
       "Approve changes from your identity provider": [
         "Godkänn ändringar från din identitetsleverantör"
@@ -15716,6 +15731,12 @@
       "Organization name updated": [
         "Organisationsnamn uppdaterad"
       ],
+      "Password check-ins disabled": [
+        "Lösenordsincheckningar inaktiverad"
+      ],
+      "Password check-ins enabled": [
+        "Lösenordsincheckningar aktiverad"
+      ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
@@ -16841,9 +16862,6 @@
       "Payment verification": [
         "Betalningsverifiering"
       ],
-      "PayPal verification failed": [
-        "Verifiering av PayPal misslyckades"
-      ],
       "Phone": [
         "Telefon"
       ],
@@ -17524,6 +17542,9 @@
       "Group membership paused": [
         "Gruppmedlemskap pausad"
       ],
+      "Role assignment paused": [
+        "Rolltilldelning pausad"
+      ],
       "Sending member invitation": [
         "Skickar medlemsinbjudan"
       ],
@@ -17610,6 +17631,9 @@
       ],
       "Payment reversal": [
         "Betalning återkallad"
+      ],
+      "Prepayment": [
+        "Förskottsbetalning"
       ],
       "Refund": [
         "Återbetalning"
@@ -17806,6 +17830,12 @@
       ],
       "Invitation email": [
         "E-postinbjudan"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ],
       "Name": [
         "Namn"
@@ -18108,6 +18138,9 @@
       ],
       "Are you sure you want to remove your recovery email?": [
         "Är du säker på att du vill ta bort din e-post för återställning?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Är du säker på att du vill ta bort ditt telefonnummer för återställning?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."

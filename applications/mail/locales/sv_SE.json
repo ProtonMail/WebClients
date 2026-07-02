@@ -8097,9 +8097,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Be ägaren att direkt bjuda in dig till dokumentet."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentisera ditt kort på verifieringsfliken."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentisera din betalning på verifieringsfliken."
       ],
@@ -8151,9 +8148,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Försök igen med en annan betalningsmetod eller kontakta din bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -9026,6 +9020,9 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du har ${ totalLabel } i din inkorg."
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } konversation** lagrad i denna mapp",
         "Du har **${ count } konversationer** lagrade i denna mapp"
@@ -9047,6 +9044,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
+      ],
+      "You have no conversations in this category": [
+        "Du har inga konversationer i denna kategori"
+      ],
+      "You have no messages in this category": [
+        "Du har inga meddelanden i denna kategori"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har inte gett ditt meddelande något ämne. Vill du skicka meddelandet ändå?"
@@ -9097,9 +9100,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
@@ -10055,6 +10055,9 @@
       ],
       "Navigation": [
         "Navigering"
+      ],
+      "New": [
+        "Nytt"
       ],
       "New password": [
         "Nytt lösenord"
@@ -15998,9 +16001,6 @@
       ],
       "Payment verification": [
         "Betalningsverifiering"
-      ],
-      "PayPal verification failed": [
-        "Verifiering av PayPal misslyckades"
       ],
       "Phone numbers": [
         "Telefonnummer"

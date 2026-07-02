@@ -857,6 +857,9 @@
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
+      "Report abuse": [
+        "Αναφορά κατάχρησης"
+      ],
       "Report an issue": [
         "Αναφορά προβλήματος"
       ],
@@ -5725,6 +5728,9 @@
       "How does encrypted search work?": [
         "Πώς δουλεύει η κρυπτογραφημένη αναζήτηση;"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Με την παρούσα βεβαιώνω ότι είμαι καλόπιστος/η ότι οι πληροφορίες και οι δηλώσεις που περιέχονται στην έκθεση είναι ορθές και πλήρεις."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Εάν αυτά τα αρχεία δεν έχουν ληφθεί πλήρως τοπικά στη συσκευή ${ deviceName }, θα χάσετε πρόσβαση σε αυτά."
       ],
@@ -6139,9 +6145,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Επαληθεύστε την πληρωμή σας στην καρτέλα επαλήθευσης."
       ],
@@ -6184,9 +6187,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
@@ -6913,9 +6913,6 @@
       "You will need to save it again from the public link page.": [
         "Θα χρειαστεί να το αποθηκεύσετε ξανά από τη σελίδα δημόσιου συνδέσμου.",
         "Θα χρειαστεί να τα αποθηκεύσετε ξανά από τη σελίδα δημόσιου συνδέσμου."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
@@ -9588,9 +9585,6 @@
       ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
-      ],
-      "Failed to open document": [
-        "Αποτυχία ανοίγματος εγγράφου"
       ],
       "Failed to reject share invitation": [
         "Αποτυχία απόρριψης πρόσκλησης κοινής χρήσης"
@@ -12887,9 +12881,6 @@
       ],
       "Payment verification": [
         "Επαλήθευση Πληρωμής"
-      ],
-      "PayPal verification failed": [
-        "Η επαλήθευση PayPal απέτυχε"
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"

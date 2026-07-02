@@ -1056,9 +1056,6 @@
       "Load more": [
         "Laad meer"
       ],
-      "Loading verification": [
-        "Verificatie laden"
-      ],
       "Lost access to your 2FA device?": [
         "Geen toegang meer tot uw 2FA-apparaat?"
       ],
@@ -1649,6 +1646,9 @@
       ],
       "Stay": [
         "Blijf"
+      ],
+      "Stop": [
+        "Stop"
       ],
       "Stop using single sign-on": [
         "Stop met single sign-on"
@@ -9747,6 +9747,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } gebruiker moet hun uitnodiging accepteren om groepsmails te kunnen ontvangen.",
+        "${ invitedMemberCount } gebruikers moeten hun uitnodigingen accepteren om groepsmails te kunnen ontvangen."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } wil data met u delen in ${ PASS_APP_NAME }"
       ],
@@ -9820,6 +9824,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nieuw lid toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring.",
+        "${ pendingAdminMemberCount } nieuwe leden toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -11869,9 +11877,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authenticeer uw kaart in het verificatietabblad."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
@@ -11919,9 +11924,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -12348,6 +12350,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchroniseer en beheer bestanden met de ${ DRIVE_APP_NAME } app. Maak en deel documenten in ${ DOCS_APP_NAME } en sla ze veilig op. Alles op ${ ios }, ${ android } en ${ desktop }."
+      ],
+      "Synced from identity provider": [
+        "Gesynct vanuit identiteitsprovider"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Aanbevolen door TechRadar Pro met een beoordeling van 4,2 van de 5 sterren."
@@ -13308,9 +13313,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "U krijgt weer volledige of gedeeltelijke toegang tot uw versleutelde gegevens."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
@@ -15079,6 +15081,9 @@
       "Newsletters": [
         "Nieuwsbrieven"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nieuwsbrieven - Nieuws, redactionele e-mails en niet-promotionele inhoud"
+      ],
       "No": [
         "Nee"
       ],
@@ -15232,11 +15237,17 @@
       "Primary": [
         "Primair"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primaire - Persoonlijke en zakelijke e-mails, plus belangrijke updates"
+      ],
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
       "Promotions": [
         "Promoties"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoties - Aanbiedingen, kortingen en marketingmails"
       ],
       "Prompt to trust keys": [
         "Vraag naar het vertrouwen van sleutels"
@@ -15413,6 +15424,9 @@
       "Social": [
         "Sociaal"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociaal - Updates, activiteit en berichten op sociale media"
+      ],
       "Social media updates and activity": [
         "Updates en activiteit op sociale media"
       ],
@@ -15521,6 +15535,9 @@
       "Transactions": [
         "Transacties"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transacties - Bonnen, boekingen, facturen en bestellingen"
+      ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
       ],
@@ -15541,6 +15558,9 @@
       ],
       "Updates": [
         "Updates"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Updates - Geautomatiseerde bevestigingen, meldingen en account updates"
       ],
       "Upload 1 or more encryption keys": [
         "Upload 1 of meer encryptiesleutels"
@@ -16684,14 +16704,8 @@
       "Create a new ${ appName } account": [
         "Maak een nieuw ${ appName } account aan"
       ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Geniet gratis van twee weken ${ BRAND_NAME }"
-      ],
       "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
         "Ervaar echte online privacy met een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN. Sluit u vandaag nog aan bij ${ BRAND_NAME } en ontvang ${ refereeRewardAmount } korting op uw volgende abonnement."
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Ervaar echte on-line privacy. Bescherm gratis uw gegevens met ${ BRAND_NAME } voor de komende 14 dagen."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Vind uw ${ BRAND_NAME }-account gebruikersnaam"
@@ -21576,6 +21590,36 @@
         "SAML-configuratie aan het testen"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nieuw lid",
+        "${ memberCount } nieuwe leden"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } groep gesynct",
+        "${ numberOfPendingGroups } groepen gesynct"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } gebruiker gesynct",
+        "${ numberOfPendingUsers } gebruikers gesynct"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } groep",
+        "${ pendingGroupsCount } groepen"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } groep gesynct.",
+        "${ pendingGroupsCount } groepen gesynct."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } gebruiker",
+        "${ pendingUsersCount } gebruikers"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } gebruiker gesynct.",
+        "${ pendingUsersCount } gebruikers gesynct."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "SCIM configureren"
@@ -22313,6 +22357,9 @@
       ],
       "Connect all your devices": [
         "Al uw apparaten verbinden"
+      ],
+      "Continue with ${ planName }": [
+        "Ga verder met ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
@@ -23258,6 +23305,12 @@
         "${ count } persoon",
         "${ count } personen"
       ],
+      "... waiting": [
+        "... wachten"
+      ],
+      "Active": [
+        "Actief"
+      ],
       "Add a phone number": [
         "Voeg een telefoonnummer toe"
       ],
@@ -23272,6 +23325,9 @@
       ],
       "Disable recovery by phone": [
         "Herstellen via telefoon uitschakelen"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
       ],
       "Generate a recovery phrase": [
         "Genereer herstelzin"
@@ -24041,12 +24097,6 @@
       ],
       "View VPN session details for your organization.": [
         "Bekijk VPN-sessiedetails voor uw organisatie."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Bij beheerde bedrijven kunt u toegang toevoegen, bewerken en verwijderen voor organisaties waarop u toezicht houdt."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "Uw totale maandelijkse kosten voor alle beheerde bedrijven."
       ]
     },
     "Success": {
@@ -25847,9 +25897,6 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
-      ],
-      "PayPal verification failed": [
-        "PayPal verificatie mislukt"
       ],
       "Pending invitations": [
         "Uitnodigingen in behandeling"

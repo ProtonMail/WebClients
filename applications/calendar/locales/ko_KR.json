@@ -3230,7 +3230,7 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 회원님의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -3874,6 +3874,9 @@
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ],
       "Number of occurrences cannot be empty": [
         "발생 횟수는 비워 둘 수 없습니다."
@@ -5975,9 +5978,6 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "인증 탭에서 카드를 인증해 주세요."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "인증 탭에서 결제 수단을 인증해 주세요."
       ],
@@ -6016,9 +6016,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "다시 시도하거나, 다른 결제 수단을 사용하거나 PayPal에 연락해 도움을 요청하세요."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "기본 암호화 키로 다시 서명할 수 있는 연락처를 찾는 동안 기다려 주세요."
@@ -6502,9 +6499,6 @@
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "이 시리즈의 모든 이벤트가 업데이트됩니다. 추가 및 삭제된 참가자들에게 알림이 보내집니다."
@@ -12115,9 +12109,6 @@
       ],
       "Payment verification": [
         "지불 방법 확인"
-      ],
-      "PayPal verification failed": [
-        "PayPal 인증 실패"
       ],
       "Phone numbers": [
         "전화번호"

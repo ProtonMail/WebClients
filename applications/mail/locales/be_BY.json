@@ -2458,6 +2458,11 @@
         "Пачаць знаёмства"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Мае падзею ў календары"
@@ -8360,9 +8365,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы спраўджання."
       ],
@@ -8416,9 +8418,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -9305,6 +9304,9 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "У вашай паштовай скрыні ${ totalLabel }."
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } размова**",
         "У гэтай папцы ў вас захоўваецца **${ count } размовы**",
@@ -9334,6 +9336,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
+      ],
+      "You have no conversations in this category": [
+        "У вас няма размоў у гэтай катэгорыі"
+      ],
+      "You have no messages in this category": [
+        "У гэтай катэгорыі ў вас няма паведамленняў"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Вы не пазначылі тэму ліста. Вы ўсё роўна хочаце адправіць паведамленне?"
@@ -9400,9 +9408,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -10273,6 +10278,9 @@
       "Import to:": [
         "Імпартаваць у:"
       ],
+      "Import your emails": [
+        "Імпартаванне вашых лістоў"
+      ],
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
@@ -10384,6 +10392,9 @@
       "Navigation": [
         "Навігацыя"
       ],
+      "New": [
+        "Новае"
+      ],
       "New password": [
         "Новы пароль"
       ],
@@ -10392,6 +10403,9 @@
       ],
       "Newsletters": [
         "Рассылкі"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Рассылкі: навіны, рэдакцыйныя лісты і нерэкламнае змесціва"
       ],
       "No label found": [
         "Метка не знойдзена"
@@ -10483,8 +10497,14 @@
       "Primary": [
         "Асноўны"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Асноўны: асабістыя і працоўныя лісты, а таксама важныя абнаўленні"
+      ],
       "Promotions": [
         "Рэклама"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Рэклама: здзелкі, прапановы і маркетынгавыя лісты"
       ],
       "Proration": [
         "Прапарцыянальнае размеркаванне"
@@ -10551,6 +10571,9 @@
       ],
       "Social": [
         "Сацыяльныя сеткі"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Сацыяльныя сеткі: абнаўленні сацыяльных медыя, актыўнасць і паведамленні"
       ],
       "Social media updates and activity": [
         "Абнаўленні і актыўнасць у сацыяльных сетках"
@@ -10627,6 +10650,9 @@
       "Transactions": [
         "Трансакцыі"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Трансакцыі: квітанцыі, браніраванні, рахункі і іншыя заказы"
+      ],
       "Undisclosed Recipients": [
         "Схаваныя атрымальнікі"
       ],
@@ -10638,6 +10664,9 @@
       ],
       "Updates": [
         "Абнаўленні"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Абнаўленні: аўтаматычныя пацвярджэнні, апавяшчэнні і абнаўленні ўліковага запісу"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -16609,9 +16638,6 @@
       ],
       "Payment verification": [
         "Праверка плацяжу"
-      ],
-      "PayPal verification failed": [
-        "Не ўдалося ажыццявіць праверку PayPal"
       ],
       "Phone numbers": [
         "Нумары тэлефонаў"

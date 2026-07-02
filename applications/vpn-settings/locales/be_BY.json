@@ -656,9 +656,6 @@
       "Load more": [
         "Загрузіць больш"
       ],
-      "Loading verification": [
-        "Загружаецца праверка"
-      ],
       "Lost access to your 2FA device?": [
         "Згубілі доступ да сваёй прылады 2ФА?"
       ],
@@ -1381,6 +1378,9 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "Add-on": [
+        "Дадатковы кампанент"
       ],
       "Dedicated VPN servers": [
         "Вылучаныя серверы VPN"
@@ -2250,6 +2250,11 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3702,6 +3707,12 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "Ніводны ўдзельнік вашай арганізацыі не можа падключацца да абагуленых сервераў."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "У вас больш не будзе магчымасці адпраўляць або атрымліваць лісты як ${ address.Email } у ${ BRAND_NAME } пасля яго адключэння. Лісты адпраўленыя на гэты адрас усё яшчэ будуць дастаўляцца ў Gmail, але не ў ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "У вас больш не будзе магчымасці адпраўляць або атрымліваць лісты як ${ address.Email } у ${ BRAND_NAME } пасля яго адключэння. Лісты адпраўленыя на гэты адрас усё яшчэ будуць дастаўляцца ў Gmail, але не ў ${ MAIL_APP_NAME }."
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
@@ -5634,6 +5645,9 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
       ],
+      "Insert your security key into your device.": [
+        "Устаўце ключ бяспекі ў сваю прыладу."
+      ],
       "Security key": [
         "Ключ бяспекі"
       ],
@@ -5877,6 +5891,12 @@
       ],
       "General": [
         "Агульныя"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Кіраванне карыстальнікамі і групамі, прызначэнне роляў і размеркаванне ліцэнзій удзельнікам."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Кіраванне наладамі бяспекі і магчымасць прагляду ўсіх журналаў з падзеямі, а таксама падрабязнай інфармацыі аб карыстальніках."
       ],
       "Roles and permissions": [
         "Ролі і дазволы"
@@ -6378,6 +6398,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Тарыфныя планы ${ BRAND_NAME } Business даюць вашай камандзе ўсе інструменты для ўзаемадзеяння, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } атрымлівае незлаежнае фінанстванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
       ],
@@ -6450,6 +6473,12 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } карыстальніку неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
+        "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
+        "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
+        "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
@@ -6503,6 +6532,12 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } новы ўдзельнік дададзены праз вашага пастаўшчыка пасведчанняў і чакае разгляду.",
+        "${ pendingAdminMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingAdminMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingAdminMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -7857,6 +7892,9 @@
       "New activity data will stop being collected and shown.": [
         "Новыя даныя актыўнасці больш не будуць збірацца і паказвацца."
       ],
+      "New group created via your identity provider and pending review.": [
+        "Новая група створана праз вашага пастаўшчыка пасведчанняў і чакае разгляду."
+      ],
       "New sidebar": [
         "Новая бакавая панэль"
       ],
@@ -8037,9 +8075,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы спраўджання."
       ],
@@ -8072,9 +8107,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -8396,6 +8428,9 @@
       ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
+      ],
+      "Synced from identity provider": [
+        "Сінхранізавана з пастаўшчыком пасведчанняў"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
@@ -9131,9 +9166,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Вы адновіце поўны або частковы доступ да вашых зашыфраваных даных."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -9941,6 +9973,9 @@
       "Import to:": [
         "Імпартаваць у:"
       ],
+      "Import your emails": [
+        "Імпартаванне вашых лістоў"
+      ],
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
@@ -10120,6 +10155,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password check-ins": [
+        "Спраўджанне з дапамогай пароля"
       ],
       "Password strength": [
         "Надзейнасць пароля"
@@ -11098,6 +11136,9 @@
       ],
       "Add address": [
         "Дадаць адрас"
+      ],
+      "Change backup password": [
+        "Змяніць рэзервовы пароль"
       ],
       "Change password": [
         "Змяніць пароль"
@@ -12428,6 +12469,9 @@
       "1-2 emails per month": [
         "1-2 лісты ў месяц"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "Ад 1 да 4 лістоў у год. Напаміны аб неабходнасці актуалізацыі спосабаў аднаўлення."
+      ],
       "2-4 emails per year": [
         "2-4 лісты ў год"
       ],
@@ -13098,6 +13142,9 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Абавязкова запомніце або надзейна захавайце свой пароль, бо гэта ключ да расшыфроўкі вашых даных."
+      ],
+      "Turn off password check-ins?": [
+        "Выключыць уваход з паролем?"
       ]
     },
     "passwordless": {
@@ -14265,6 +14312,9 @@
       ]
     },
     "Role": {
+      "Owner": [
+        "Уладальнік"
+      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
@@ -14377,6 +14427,68 @@
       ],
       "Testing SAML configuration": [
         "Тэсціраванне канфігурацыі SAML"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } новы ўдзельнік",
+        "${ memberCount } новыя ўдзельнікі",
+        "${ memberCount } новых удзельнікаў",
+        "${ memberCount } новых удзельнікаў"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } група сінхранізавана",
+        "${ numberOfPendingGroups } групы сінхранізаваны",
+        "${ numberOfPendingGroups } груп сінхранізаваны",
+        "${ numberOfPendingGroups } груп сінхранізаваны"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } карыстальнік сінхранізаваны",
+        "${ numberOfPendingUsers } карыстальнікі сінхранізаваны",
+        "${ numberOfPendingUsers } карыстальнікаў сінхранізаваны",
+        "${ numberOfPendingUsers } карыстальнікаў сінхранізаваны"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } група",
+        "${ pendingGroupsCount } групы",
+        "${ pendingGroupsCount } груп",
+        "${ pendingGroupsCount } груп"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } група сінхранізавана",
+        "${ pendingGroupsCount } групы сінхранізаваны",
+        "${ pendingGroupsCount } груп сінхранізаваны",
+        "${ pendingGroupsCount } груп сінхранізаваны"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } карыстальнік",
+        "${ pendingUsersCount } карыстальнікі",
+        "${ pendingUsersCount } карыстальнікаў",
+        "${ pendingUsersCount } карыстальнікаў"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } карыстальнік сінхранізаваны.",
+        "${ pendingUsersCount } карыстальнікі сінхранізаваны.",
+        "${ pendingUsersCount } карыстальнікаў сінхранізаваны.",
+        "${ pendingUsersCount } карыстальнікаў сінхранізаваны."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } і ${ groupsText } сінхранізаваны."
+      ],
+      "Approve changes from your identity provider": [
+        "Ухваліць змяненні ад вашага пастаўшчыка пасведчанняў"
+      ],
+      "From your identity provider": [
+        "Ад вашага пастаўшчыка пасведчанняў"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "У іх будзе магчымасць атрымаць доступ да ўсіх сэрвісаў ${ BRAND_NAME } і бяспечнага абагульвання пасля ўхвалення."
+      ],
+      "Review users and groups before finishing setup": [
+        "Агляд карыстальнікаў і груп перад завяршэннем наладжвання"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Карыстальнікі, якіх вы задалі ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
       ]
     },
     "scim: Action": {
@@ -15492,6 +15604,17 @@
         "Скасаванне вашай падпіскі. Пачакайце..."
       ]
     },
+    "Status": {
+      "... waiting": [
+        "... чакайце"
+      ],
+      "completed": [
+        "завершана"
+      ],
+      "finalizing": [
+        "завяршэнне"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Павялічыць сховішча"
@@ -15594,6 +15717,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe для ${ maxAi } карыстальніка",
         "Памочнік у напісанні ${ BRAND_NAME } Scribe для ${ maxAi } карыстальнікаў",
@@ -16284,6 +16410,9 @@
       ],
       "Organization name updated": [
         "Назва арганізацыі абноўлена"
+      ],
+      "Password check-ins enabled": [
+        "Уваход з паролем уключаны"
       ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
@@ -17429,9 +17558,6 @@
       "Payment verification": [
         "Праверка плацяжу"
       ],
-      "PayPal verification failed": [
-        "Не ўдалося ажыццявіць праверку PayPal"
-      ],
       "Phone": [
         "Тэлефон"
       ],
@@ -18420,6 +18546,15 @@
       "Invitation email": [
         "Электронны ліст з запрашэннем"
       ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групамі, бяспекай, білінгам і сістэмнымі канфігурацыямі."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Кіраванне карыстальнікамі і групамі, прызначэнне роляў і размеркаванне ліцэнзій удзельнікам."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Кіраванне наладамі бяспекі і магчымасць прагляду ўсіх журналаў з падзеямі, а таксама падрабязнай інфармацыі аб карыстальніках."
+      ],
       "Name": [
         "Імя"
       ],
@@ -18452,6 +18587,9 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     },
     "Users table: badge": {

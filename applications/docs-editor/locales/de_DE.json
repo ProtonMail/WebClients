@@ -448,6 +448,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Es gab einen Fehler beim Aktualisierungen des Dokuments. Bitte lade die Seite neu und versuche es erneut."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "In dieser Tabelle wurde eine lokale Synchronisierungsinkonsistenz festgestellt. Die Bearbeitung wurde deaktiviert, um Datenverluste zu vermeiden. Bitte erstelle einen Bericht und lade die unten stehenden Debug-Informationen herunter und füge diese bei, sofern du mit der Weitergabe des Inhalts einverstanden bist."
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Diese Tabelle ist mit der aktuellen Client-Version inkompatibel. Bitte versuche, den Client neu zu laden. Wenn der Fehler weiterhin besteht, wende dich bitte an den Support."
       ],
@@ -1018,6 +1021,55 @@
         "Rechts"
       ]
     },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Anwenden"
+      ],
+      "Format": [
+        "Format"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Day as abbreviation": [
+        "Tag als Abkürzung"
+      ],
+      "Day as full name": [
+        "Tag als vollständiger Name"
+      ],
+      "Duration": [
+        "Dauer"
+      ],
+      "Elapsed minutes": [
+        "Vergangene Minuten"
+      ],
+      "Elapsed seconds": [
+        "Vergangene Sekunden"
+      ],
+      "First letter of the month": [
+        "Erster Buchstabe des Monats"
+      ],
+      "Full": [
+        "Vollständig"
+      ],
+      "Hour": [
+        "Stunde"
+      ],
+      "Millisecond": [
+        "Millisekunde"
+      ],
+      "Minute": [
+        "Minute"
+      ],
+      "Month": [
+        "Monat"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Möchtest du „${ sheetName }“ wirklich löschen?"
@@ -1423,6 +1475,9 @@
       ],
       "Custom currency": [
         "Benutzerdefinierte Währung"
+      ],
+      "Custom number": [
+        "Benutzerdefinierte Nummer"
       ],
       "Date": [
         "Datum"
