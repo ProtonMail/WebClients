@@ -142,7 +142,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                         <Bordered
                             className={clsx([
                                 'flex flex-columns justify-center items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
-                                form.values.file ? 'pass-import-upload--has-file' : 'border-dashed',
+                                form.values.file ? 'pass-import-upload--has-file' : 'border border-3 border-dashed',
                                 form.errors.file && 'border-danger',
                             ])}
                         >
