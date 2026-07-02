@@ -942,9 +942,6 @@
       "Load more": [
         "โหลดเพิ่มเติม"
       ],
-      "Loading verification": [
-        "กำลังโหลดการยืนยันการชำระเงิน"
-      ],
       "Lost access to your 2FA device?": [
         "สูญเสียการเข้าถึงอุปกรณ์ 2FA ของคุณใช่หรือไม่?"
       ],
@@ -10350,9 +10347,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "โปรดขอให้เจ้าของเชิญคุณมายังเอกสารโดยตรง"
       ],
-      "Please authenticate your card in the verification tab.": [
-        "โปรดตรวจสอบสิทธิ์บัตรในแท็บการยืนยัน"
-      ],
       "Please authenticate your payment in the verification tab.": [
         "โปรดตรวจสอบสิทธิ์การชำระเงินในแท็บการยืนยัน"
       ],
@@ -10391,9 +10385,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "โปรดลองอีกครั้งโดยใช้วิธีการชำระเงินอื่น หรือติดต่อธนาคาร"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "กรูณาลองใหม่อีกครั้ง คุณอาจจะสามารถใช้วิธีการชำระเงินอีกแบบรูปแบบหนึ่งหรือติดต่อ Paypal เพื่อขอคำแนะนำ"
       ],
       "Please use another browser or download the file.": [
         "โปรดใช้เบราว์เซอร์อื่นหรือดาวน์โหลดไฟล์"
@@ -11570,9 +11561,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "คุณจะไม่สามารถถอดรหัสข้อความ ไฟล์ และข้อมูลอื่นๆ ที่เข้ารหัสด้วยคีย์นี้ได้อีก ข้อมูลทั้งหมดที่ลงชื่อด้วยคีย์นี้จะไม่ได้รับการตรวจสอบโดยแอปพลิเคชัน ${ BRAND_NAME } อีกต่อไป"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "อีกสักครู่คุณจะเข้าสู่หน้าเว็ปไซต์ของ PayPal เพื่อตรวจสอบการชำระเงินของคุณ"
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "คุณจะไม่ถูกเรียกเก็บเงินหากยกเลิกก่อน ${ trialEndsOnFormatted }"
@@ -14550,12 +14538,6 @@
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "สร้างบัญชี ${ BRAND_NAME } | ทวงคืนความเป็นส่วนตัวของคุณ"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "เพลิดเพลินกับ ${ BRAND_NAME } ฟรีเป็นเวลาสองสัปดาห์"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "สัมผัสความเป็นส่วนตัวออนไลน์ที่แท้จริง ปกป้องข้อมูลของคุณด้วย ${ BRAND_NAME } ฟรีเป็นเวลา 14 วันถัดไป"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "ค้นหาชื่อผู้ใช้บัญชี ${ BRAND_NAME } ของคุณ"
@@ -20275,6 +20257,11 @@
         "กำลังยกเลิกการสมัครสมาชิก โปรดรอสักครู่"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "ปิดใช้งาน"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "การดำเนินการ"
@@ -22460,9 +22447,6 @@
       ],
       "Payment verification": [
         "การยืนยันการชำระเงิน"
-      ],
-      "PayPal verification failed": [
-        "การตรวจสอบ PayPal ไม่สำเร็จ"
       ],
       "Pending invitations": [
         "คำเชิญที่รอดำเนินการ"
