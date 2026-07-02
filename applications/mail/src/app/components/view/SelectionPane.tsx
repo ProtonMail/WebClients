@@ -25,6 +25,7 @@ import {
     contextTotal,
     loadedEmpty,
     selectActiveCategoryID,
+    selectLabelID,
     taskRunningInLabel,
 } from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
@@ -46,15 +47,16 @@ const SelectionPaneWrapper = ({ children }: PropsWithChildren) => {
 };
 
 interface Props {
-    labelID: string;
     checkedIDs?: string[];
     onCheckAll: (checked: boolean) => void;
 }
 
-const SelectionPane = ({ labelID, checkedIDs = [], onCheckAll }: Props) => {
+const SelectionPane = ({ checkedIDs = [], onCheckAll }: Props) => {
     const theme = useTheme();
     const location = useLocation();
     const [mailSettings] = useMailSettings();
+
+    const labelID = useMailSelector(selectLabelID);
 
     const appLocation = useLocation();
     const conversationMode = isConversationMode(labelID, mailSettings, location);
