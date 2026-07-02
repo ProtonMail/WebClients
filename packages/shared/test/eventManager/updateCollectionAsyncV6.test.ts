@@ -8,9 +8,9 @@ describe('updateCollectionAsyncV6', () => {
 
     describe('updateCollectionAsyncV6', () => {
         it('should call update when result type is update', async () => {
-            const getMock = jasmine.createSpy('getMock').and.returnValue(Promise.resolve(mockItem1));
-            const updateMock = jasmine.createSpy('updateMock');
-            const refetchMock = jasmine.createSpy('refetchMock');
+            const getMock = vi.fn().mockReturnValue(Promise.resolve(mockItem1));
+            const updateMock = vi.fn();
+            const refetchMock = vi.fn();
 
             const events = [{ ID: '1', Action: ActionEventV6.Update }] as EventV6Response;
 
@@ -29,9 +29,9 @@ describe('updateCollectionAsyncV6', () => {
         });
 
         it('should call refetch when result type is refetch', async () => {
-            const getMock = jasmine.createSpy('getMock');
-            const updateMock = jasmine.createSpy('updateMock');
-            const refetchMock = jasmine.createSpy('refetchMock').and.returnValue(Promise.resolve());
+            const getMock = vi.fn();
+            const updateMock = vi.fn();
+            const refetchMock = vi.fn().mockReturnValue(Promise.resolve());
 
             // Create many events to trigger refetch
             const events = Array(10)
@@ -53,9 +53,9 @@ describe('updateCollectionAsyncV6', () => {
         });
 
         it('should do nothing when result type is ignore', async () => {
-            const getMock = jasmine.createSpy('getMock');
-            const updateMock = jasmine.createSpy('updateMock');
-            const refetchMock = jasmine.createSpy('refetchMock');
+            const getMock = vi.fn();
+            const updateMock = vi.fn();
+            const refetchMock = vi.fn();
 
             await updateCollectionAsyncV6({
                 get: getMock,

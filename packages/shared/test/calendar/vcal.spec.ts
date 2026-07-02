@@ -1043,9 +1043,10 @@ END:VCALENDAR`;
         const result = parseVcalendarWithRecoveryAndMaybeErrors(ics, {
             retryDateTimes: false,
         }) as VcalVcalendarWithMaybeErrors;
+        const { message } = (result.components as VcalErrorComponent[])[0].error;
 
         expect(result.component).toEqual('vcalendar');
-        expect((result.components as VcalErrorComponent[])[0].error).toMatch('invalid date-time value');
+        expect(message).toMatch('invalid date-time value');
     });
 
     it('should catch errors from badly formatted date-times (with recovery for those off)', () => {
@@ -1067,9 +1068,10 @@ END:VCALENDAR`;
         const result = parseVcalendarWithRecoveryAndMaybeErrors(ics, {
             retryDateTimes: false,
         }) as VcalVcalendarWithMaybeErrors;
+        const { message } = (result.components as VcalErrorComponent[])[0].error;
 
         expect(result.component).toEqual('vcalendar');
-        expect((result.components as VcalErrorComponent[])[0].error).toMatch('invalid date-time value');
+        expect(message).toMatch('invalid date-time value');
     });
 
     it('should catch errors from badly formatted dates (with recovery for those off)', () => {
@@ -1091,8 +1093,9 @@ END:VCALENDAR`;
         const result = parseVcalendarWithRecoveryAndMaybeErrors(ics, {
             retryDateTimes: false,
         }) as VcalVcalendarWithMaybeErrors;
+        const { message } = (result.components as VcalErrorComponent[])[0].error;
 
         expect(result.component).toEqual('vcalendar');
-        expect((result.components as VcalErrorComponent[])[0].error).toMatch('could not extract integer');
+        expect(message).toMatch('could not extract integer');
     });
 });

@@ -1,16 +1,18 @@
+import type { Mock } from 'vitest';
+
 import metrics from '@proton/metrics/index';
 
 import { eventLoopTimingTracker } from '../../lib/metrics/eventLoopMetrics';
 
 describe('EventLoopTimingTracker', () => {
-    let mockHistogramObserve: jasmine.Spy;
+    let mockHistogramObserve: Mock;
     let mockTime = 0;
 
     beforeEach(() => {
         // Mock the histogram observe method
-        mockHistogramObserve = jasmine.createSpy('observe');
-        metrics.core_event_loop_five_processing_time_histogram.observe = mockHistogramObserve;
-        metrics.core_event_loop_six_processing_time_histogram.observe = mockHistogramObserve;
+        mockHistogramObserve = vi.fn();
+        metrics.core_event_loop_five_processing_time_histogram.observe = mockHistogramObserve as any;
+        metrics.core_event_loop_six_processing_time_histogram.observe = mockHistogramObserve as any;
 
         eventLoopTimingTracker.reset();
         mockTime = 0;
@@ -83,7 +85,7 @@ describe('EventLoopTimingTracker', () => {
             });
 
             // Reset spy to check only the second call
-            mockHistogramObserve.calls.reset();
+            mockHistogramObserve.mockClear();
 
             // Second request after 30 seconds (typical interval)
             tickTime(30000);
@@ -159,7 +161,7 @@ describe('EventLoopTimingTracker', () => {
             });
 
             // Reset spy to check only the second call
-            mockHistogramObserve.calls.reset();
+            mockHistogramObserve.mockClear();
 
             // Second core request after 30 seconds
             tickTime(30000);

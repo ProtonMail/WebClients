@@ -12,7 +12,7 @@ const getApiError = ({ message, response = { headers: { get: () => '' } }, data,
 
 const getMockedApi = (mockApiResponse: any, isError = false) => {
     const response = isError ? Promise.reject(mockApiResponse) : Promise.resolve(mockApiResponse);
-    return jasmine.createSpy('api').and.returnValue(response);
+    return vi.fn().mockReturnValue(response);
 };
 
 // `internalKeysOnly` is not being tested atm as it only affects the API returned data
@@ -71,7 +71,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'internal@proton.me' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_INTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
-            expect(result.publicKeys).toHaveSize(1);
+            expect(result.publicKeys).toHaveLength(1);
             expect(result.publicKeys[0].publicKey.getUserIDs()[0]).toMatch(/aaa@test.com/);
         });
 
@@ -94,7 +94,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'internal@proton.me' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(true);
-            expect(result.publicKeys).toHaveSize(0);
+            expect(result.publicKeys).toHaveLength(0);
         });
 
         it('external account with internal address keys and wkd keys', async () => {
@@ -124,7 +124,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'external@example.com' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
-            expect(result.publicKeys).toHaveSize(1);
+            expect(result.publicKeys).toHaveLength(1);
             expect(result.publicKeys[0].publicKey.getUserIDs()[0]).toMatch(/bbb@test.com/);
         });
 
@@ -147,7 +147,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'external@example.com' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
-            expect(result.publicKeys).toHaveSize(1);
+            expect(result.publicKeys).toHaveLength(1);
         });
     });
 
@@ -173,7 +173,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_INTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
-            expect(result.publicKeys).toHaveSize(1);
+            expect(result.publicKeys).toHaveLength(1);
         });
 
         it('internal recipient with mail-capable address keys and bad MX settings', async () => {
@@ -205,7 +205,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_INTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
-            expect(result.publicKeys).toHaveSize(2);
+            expect(result.publicKeys).toHaveLength(2);
         });
 
         it('internal recipient with no mail-capable address keys', async () => {
@@ -232,7 +232,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_INTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(true);
-            expect(result.publicKeys).toHaveSize(1);
+            expect(result.publicKeys).toHaveLength(1);
         });
 
         it('external account with internal address keys and wkd keys', async () => {
@@ -268,7 +268,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
             // the internal address keys is always ignored for external accounts
-            expect(result.publicKeys).toHaveSize(1);
+            expect(result.publicKeys).toHaveLength(1);
             expect(result.publicKeys[0].publicKey.getUserIDs()[0]).toMatch(/bbb@test.com/);
         });
 
@@ -293,7 +293,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
-            expect(result.publicKeys).toHaveSize(0);
+            expect(result.publicKeys).toHaveLength(0);
         });
     });
 });

@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
-import { vi } from 'vitest';
 
 import '@proton/polyfill';
 import '@proton/testing/lib/vitest/mockMatchMedia';
@@ -10,8 +9,3 @@ afterEach(cleanup); // TODO double check if needed; see https://github.com/vites
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 // console.error = () => {};
 // console.warn = () => {};
-
-vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-    enUSLocale: undefined,
-}));

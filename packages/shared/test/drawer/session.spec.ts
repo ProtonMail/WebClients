@@ -26,19 +26,20 @@ const dispatchSessionEvent = () => {
 
 describe('resumeSessionDrawerApp', () => {
     beforeEach(() => {
-        jasmine.clock().install();
-        spyOn(window.parent, 'postMessage');
+        vi.useFakeTimers();
+        vi.spyOn(window.parent, 'postMessage').mockImplementation(() => undefined);
     });
 
     afterEach(() => {
-        jasmine.clock().uninstall();
+        vi.useRealTimers();
+        vi.restoreAllMocks();
     });
 
     it('sends READY immediately on start', () => {
         void resumeSessionDrawerApp({ parentApp: APPS.PROTONMAIL, localID: 0 });
 
         expect(window.parent.postMessage).toHaveBeenCalledTimes(1);
-        expect(window.parent.postMessage).toHaveBeenCalledWith({ type: DRAWER_EVENTS.READY }, jasmine.any(String));
+        expect(window.parent.postMessage).toHaveBeenCalledWith({ type: DRAWER_EVENTS.READY }, expect.any(String));
     });
 
     it('resolves with session data when SESSION is received on first READY', async () => {
@@ -55,7 +56,7 @@ describe('resumeSessionDrawerApp', () => {
 
         expect(window.parent.postMessage).toHaveBeenCalledTimes(1);
 
-        jasmine.clock().tick(3000);
+        vi.advanceTimersByTime(3000);
 
         expect(window.parent.postMessage).toHaveBeenCalledTimes(2);
     });
@@ -63,7 +64,7 @@ describe('resumeSessionDrawerApp', () => {
     it('resolves when SESSION arrives after a retry', async () => {
         const promise = resumeSessionDrawerApp({ parentApp: APPS.PROTONMAIL, localID: 0 });
 
-        jasmine.clock().tick(3000);
+        vi.advanceTimersByTime(3000);
         dispatchSessionEvent();
 
         const result = await promise;
@@ -73,7 +74,7 @@ describe('resumeSessionDrawerApp', () => {
     it('rejects after all retries are exhausted', async () => {
         const promise = resumeSessionDrawerApp({ parentApp: APPS.PROTONMAIL, localID: 0 });
 
-        jasmine.clock().tick(9000);
+        vi.advanceTimersByTime(9000);
 
         expect(window.parent.postMessage).toHaveBeenCalledTimes(3);
 
@@ -87,27 +88,27 @@ describe('resumeSessionDrawerApp', () => {
     });
 
     it('removes the message listener and cancels pending retries on resolve', async () => {
-        const removeListenerSpy = spyOn(window, 'removeEventListener').and.callThrough();
+        const removeListenerSpy = vi.spyOn(window, 'removeEventListener');
 
         const promise = resumeSessionDrawerApp({ parentApp: APPS.PROTONMAIL, localID: 0 });
         dispatchSessionEvent();
         await promise;
 
-        expect(removeListenerSpy).toHaveBeenCalledWith('message', jasmine.any(Function));
+        expect(removeListenerSpy).toHaveBeenCalledWith('message', expect.any(Function));
 
         // No further READY messages after resolution
-        jasmine.clock().tick(9000);
+        vi.advanceTimersByTime(9000);
         expect(window.parent.postMessage).toHaveBeenCalledTimes(1);
     });
 
     it('removes the message listener on reject', async () => {
-        const removeListenerSpy = spyOn(window, 'removeEventListener').and.callThrough();
+        const removeListenerSpy = vi.spyOn(window, 'removeEventListener');
 
         const promise = resumeSessionDrawerApp({ parentApp: APPS.PROTONMAIL, localID: 0 });
-        jasmine.clock().tick(9000);
+        vi.advanceTimersByTime(9000);
         await promise.catch(() => {});
 
-        expect(removeListenerSpy).toHaveBeenCalledWith('message', jasmine.any(Function));
+        expect(removeListenerSpy).toHaveBeenCalledWith('message', expect.any(Function));
     });
 
     it('ignores messages from unauthorized origins', async () => {
@@ -121,7 +122,7 @@ describe('resumeSessionDrawerApp', () => {
             })
         );
 
-        jasmine.clock().tick(9000);
+        vi.advanceTimersByTime(9000);
 
         let error: unknown;
         try {

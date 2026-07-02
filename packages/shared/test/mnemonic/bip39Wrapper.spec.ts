@@ -49,7 +49,7 @@ describe('validateMnemonic', () => {
 
         const result = await validateMnemonic(invaldMnemonic);
 
-        expect(result).toBeFalse();
+        expect(result).toBe(false);
     });
 
     it('should return true for a valid mnemonic', async () => {
@@ -57,6 +57,6 @@ describe('validateMnemonic', () => {
 
         const result = await validateMnemonic(validMnemonic);
 
-        expect(result).toBeTrue();
+        expect(result).toBe(true);
     });
 });

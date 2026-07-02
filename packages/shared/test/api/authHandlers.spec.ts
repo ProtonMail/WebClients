@@ -1,4 +1,3 @@
-import { InactiveSessionError } from '../../lib/api/helpers/errors';
 import { withApiHandlers } from '../../lib/api/helpers/withApiHandlers';
 import { ApiError } from '../../lib/fetch/ApiError';
 import { withUIDHeaders } from '../../lib/fetch/headers';
@@ -32,17 +31,18 @@ const getApiResult = (result: any) => {
 
 describe('auth handlers', () => {
     const withApiHandlersDefaultParams = {
-        call: jasmine.createSpy('call'),
-        onMissingScopes: jasmine.createSpy('onMissingScopes'),
-        onVerification: jasmine.createSpy('onVerification'),
-        onUserRestricted: jasmine.createSpy('onUserRestricted'),
+        call: vi.fn(),
+        onMissingScopes: vi.fn(),
+        onVerification: vi.fn(),
+        onUserRestricted: vi.fn(),
     };
 
     it('should unlock', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(Promise.reject(getApiError({ status: 403 })), Promise.resolve(getApiResult('123')));
-        const handleMissingScopes = jasmine.createSpy('unlock').and.callFake(({ options }) => {
+        const call = vi
+            .fn()
+            .mockReturnValueOnce(Promise.reject(getApiError({ status: 403 })))
+            .mockReturnValueOnce(Promise.resolve(getApiResult('123')));
+        const handleMissingScopes = vi.fn(({ options }) => {
             return call(options);
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call, onMissingScopes: handleMissingScopes });
@@ -54,9 +54,9 @@ describe('auth handlers', () => {
 
     it('should unlock and be cancellable', async () => {
         const unlockError = getApiError({ status: 403 });
-        const call = jasmine.createSpy('call').and.returnValues(Promise.reject(unlockError));
-        const handleUnlock = jasmine.createSpy('unlock').and.returnValues(Promise.reject(unlockError));
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi.fn().mockReturnValueOnce(Promise.reject(unlockError));
+        const handleUnlock = vi.fn().mockReturnValueOnce(Promise.reject(unlockError));
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call, onMissingScopes: handleUnlock });
@@ -68,10 +68,11 @@ describe('auth handlers', () => {
     });
 
     it('should retry 429 status', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(Promise.reject(getApiError({ status: 429 })), Promise.resolve(getApiResult('123')));
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi
+            .fn()
+            .mockReturnValueOnce(Promise.reject(getApiError({ status: 429 })))
+            .mockReturnValueOnce(Promise.resolve(getApiResult('123')));
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -84,10 +85,11 @@ describe('auth handlers', () => {
     });
 
     it('should not retry 429 status if disabled', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(Promise.reject(getApiError({ status: 429 })), Promise.resolve(getApiResult('123')));
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi
+            .fn()
+            .mockReturnValueOnce(Promise.reject(getApiError({ status: 429 })))
+            .mockReturnValueOnce(Promise.resolve(getApiResult('123')));
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -106,8 +108,8 @@ describe('auth handlers', () => {
             () => Promise.reject(getApiError({ status: 429 })),
         ];
         let i = 0;
-        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi.fn(() => returns[i++]());
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -119,8 +121,8 @@ describe('auth handlers', () => {
 
     it('should not handle retry when its greater than 10', async () => {
         const response = { headers: { get: () => '10' } } as unknown as Response;
-        const call = jasmine.createSpy('call').and.returnValues(Promise.reject(getApiError({ status: 429, response })));
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi.fn().mockReturnValueOnce(Promise.reject(getApiError({ status: 429, response })));
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -131,8 +133,8 @@ describe('auth handlers', () => {
     });
 
     it('should not refresh if has no session', async () => {
-        const call = jasmine.createSpy('call').and.returnValues(Promise.reject(getApiError({ status: 401 })));
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi.fn().mockReturnValueOnce(Promise.reject(getApiError({ status: 401 })));
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -145,7 +147,7 @@ describe('auth handlers', () => {
     it('should refresh once (if has session)', async () => {
         let refreshed = false;
         let refreshCalls = 0;
-        const call = jasmine.createSpy('call').and.callFake(async (args) => {
+        const call = vi.fn(async (args) => {
             if (args.url === 'auth/refresh') {
                 refreshed = true;
                 refreshCalls++;
@@ -158,7 +160,7 @@ describe('auth handlers', () => {
             }
             return args;
         });
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const handleError = vi.fn((e) => {
             return e;
         });
         const apiWithHandlers = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -172,22 +174,22 @@ describe('auth handlers', () => {
     });
 
     it('should refresh once and fail all active calls (if has session)', async () => {
-        const call = jasmine.createSpy('call').and.callFake(async (args) => {
+        const call = vi.fn(async (args) => {
             if (args.url === 'auth/refresh') {
                 throw getApiError({ status: 422, data: args });
             }
             throw getApiError({ status: 401, data: args });
         });
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const handleError = vi.fn((e) => {
             throw e;
         });
         const apiWithHandlers = withApiHandlers({ ...withApiHandlersDefaultParams, call });
         (apiWithHandlers as any).UID = '123';
         const api = (a: any) => apiWithHandlers(a).catch(handleError);
         const [p1, p2, p3] = [api(123), api(231), api(321)];
-        await expectAsync(p1).toBeRejectedWith(InactiveSessionError());
-        await expectAsync(p2).toBeRejectedWith(InactiveSessionError());
-        await expectAsync(p3).toBeRejectedWith(InactiveSessionError());
+        await expect(p1).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
+        await expect(p2).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
+        await expect(p3).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
         expect(call).toHaveBeenCalledTimes(4);
         expect(handleError).toHaveBeenCalledTimes(3);
     });
@@ -200,9 +202,9 @@ describe('auth handlers', () => {
             () => Promise.reject(getApiError({ status: 422 })),
         ];
         let i = 0;
-        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
+        const call = vi.fn(() => returns[i++]());
 
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -214,7 +216,7 @@ describe('auth handlers', () => {
         expect(handleError).toHaveBeenCalledTimes(1);
 
         const r2 = api(123);
-        await expectAsync(r2).toBeRejectedWith(InactiveSessionError());
+        await expect(r2).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
         expect(call).toHaveBeenCalledTimes(4);
     });
 
@@ -226,8 +228,8 @@ describe('auth handlers', () => {
             () => Promise.reject(getApiError({ status: 400 })),
         ];
         let i = 0;
-        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+        const call = vi.fn(() => returns[i++]());
+        const handleError = vi.fn((e) => {
             return e;
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
@@ -255,11 +257,11 @@ describe('auth handlers', () => {
             () => Promise.reject(getApiError({ status: 429 })),
         ];
         let i = 0;
-        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
+        const call = vi.fn(() => returns[i++]());
 
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
         (api as any).UID = '126';
-        await expectAsync(api(123)).toBeRejectedWith(InactiveSessionError());
+        await expect(api(123)).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
         expect(call).toHaveBeenCalledTimes(6);
     });
 
@@ -272,7 +274,7 @@ describe('auth handlers', () => {
             () => Promise.resolve(getApiResult('123')), // actual result
         ];
         let i = 0;
-        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
+        const call = vi.fn(() => returns[i++]());
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
         (api as any).UID = 'abc';
         const result = await api(123).then((result: any) => result.json());
@@ -281,14 +283,14 @@ describe('auth handlers', () => {
     });
 
     it('should fail all calls after it has logged out', async () => {
-        const call = jasmine.createSpy('call').and.callFake(async (args) => {
+        const call = vi.fn(async (args) => {
             throw getApiError({ status: 401, data: args });
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
         (api as any).UID = '128';
-        await expectAsync(api({})).toBeRejectedWith(InactiveSessionError());
+        await expect(api({})).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
         expect(call).toHaveBeenCalledTimes(2);
-        await expectAsync(api({})).toBeRejectedWith(InactiveSessionError());
+        await expect(api({})).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
         expect(call).toHaveBeenCalledTimes(2);
     });
 });

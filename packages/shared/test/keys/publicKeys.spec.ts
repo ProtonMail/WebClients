@@ -26,7 +26,7 @@ describe('get contact public key model', () => {
             },
         });
         const fingerprint = publicKey.getFingerprint();
-        expect(contactModel.encryptionCapableFingerprints.has(fingerprint)).toBeTrue();
+        expect(contactModel.encryptionCapableFingerprints.has(fingerprint)).toBe(true);
     });
 
     it('should mark expired key as incapable of encryption', async () => {
@@ -39,7 +39,7 @@ describe('get contact public key model', () => {
             },
         });
         const fingerprint = publicKey.getFingerprint();
-        expect(contactModel.encryptionCapableFingerprints.has(fingerprint)).toBeFalse();
+        expect(contactModel.encryptionCapableFingerprints.has(fingerprint)).toBe(false);
     });
 
     it('should mark sign-only as incapable of encryption', async () => {
@@ -52,7 +52,7 @@ describe('get contact public key model', () => {
             },
         });
         const fingerprint = publicKey.getFingerprint();
-        expect(contactModel.encryptionCapableFingerprints.has(fingerprint)).toBeFalse();
+        expect(contactModel.encryptionCapableFingerprints.has(fingerprint)).toBe(false);
     });
 
     it('should determine encryption flag based on `encryptToPinned` when pinned keys are present', async () => {
@@ -69,7 +69,7 @@ describe('get contact public key model', () => {
                 isContact: true,
             },
         });
-        expect(contactModel.encrypt).toBeFalse();
+        expect(contactModel.encrypt).toBe(false);
     });
 
     it('should determine encryption flag based on `encryptToUntrusted` when only API keys are present', async () => {
@@ -86,7 +86,7 @@ describe('get contact public key model', () => {
                 isContact: true,
             },
         });
-        expect(contactModel.encrypt).toBeTrue();
+        expect(contactModel.encrypt).toBe(true);
     });
 
     it('should set the encryption flag when pinned keys are present and `encryptToPinned` is missing', async () => {
@@ -103,7 +103,7 @@ describe('get contact public key model', () => {
                 isContact: true,
             },
         });
-        expect(contactModel.encrypt).toBeTrue();
+        expect(contactModel.encrypt).toBe(true);
     });
 
     it('should not determine encryption flag based on `encryptToUntrusted` if API keys are missing', async () => {
@@ -138,7 +138,7 @@ describe('get contact public key model', () => {
                 isContact: true,
             },
         });
-        expect(contactModel.encrypt).toBeTrue();
+        expect(contactModel.encrypt).toBe(true);
     });
 });
 

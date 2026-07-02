@@ -3,11 +3,8 @@ import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { Address, Api, PreAuthKTVerifier, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-import {
-    attemptDeviceRecovery,
-    getIsDeviceRecoveryAvailable,
-    storeDeviceRecovery,
-} from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { attemptDeviceRecovery, storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import noop from '@proton/utils/noop';
 
@@ -58,7 +55,7 @@ export const deviceRecovery = async ({
     // Store device recovery information
     if (persistent) {
         const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
-        const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
+        const isDeviceRecoveryAvailable = getIsRecoveryFileAvailable({
             user,
             addresses,
             userKeys,

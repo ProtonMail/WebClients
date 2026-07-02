@@ -4,7 +4,12 @@ import { parseInstallArguments } from '@proton/shared/lib/squirrel/squirrel';
 
 describe('squirrel', () => {
     beforeEach(() => {
-        spyOnAllFunctions(electronModule);
+        for (const key of Object.keys(electronModule)) {
+            const value = (electronModule as any)[key];
+            if (typeof value === 'function') {
+                vi.spyOn(electronModule as any, key).mockImplementation(() => undefined);
+            }
+        }
     });
 
     describe('install arguments', () => {
