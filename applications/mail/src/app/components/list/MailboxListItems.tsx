@@ -17,8 +17,9 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
+import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
-import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
+import { HIGHLIGHTED_ITEM_INDEX, OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
@@ -77,6 +78,7 @@ const MailboxListItems = ({
     const location = useLocation();
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
+    const { userIsInOnboarding } = useCategoriesOnboarding();
 
     useEffect(() => {
         // When we show more than 5 elements in the list, the onboarding should be collapsed.
@@ -122,31 +124,36 @@ const MailboxListItems = ({
                 {elements.map((element, index) => {
                     const isPlaceholder = element.ID.startsWith(PLACEHOLDER_ID_PREFIX);
 
-                    if (!isPlaceholder && index === 1 && labelID === MAILBOX_LABEL_IDS.INBOX) {
+                    const item = (
+                        <Item
+                            conversationMode={conversationMode}
+                            isCompactView={isCompactView}
+                            labelID={labelID}
+                            loading={mailboxListLoading}
+                            columnLayout={columnLayout}
+                            element={element}
+                            checked={!!checkedIDsMap[element.ID || '']}
+                            onCheck={onCheckOne}
+                            onClick={onClick}
+                            onContextMenu={onContextMenu}
+                            onDragStart={handleDragStart}
+                            onDragEnd={handleDragEnd}
+                            dragged={!!draggedIDsMap[element.ID || '']}
+                            index={index}
+                            onFocus={onFocus}
+                            userSettings={userSettings}
+                            mailSettings={mailSettings}
+                            onBack={onBack}
+                            labels={labels}
+                        />
+                    );
+
+                    const highlightedItem = userIsInOnboarding && index === HIGHLIGHTED_ITEM_INDEX;
+                    if (!isPlaceholder && highlightedItem && labelID === MAILBOX_LABEL_IDS.INBOX) {
                         return (
                             <Fragment key={element.ID}>
                                 <CategoriesOnboardingSpotlight step={OnboardingStep.CATEGORIZE}>
-                                    <Item
-                                        conversationMode={conversationMode}
-                                        isCompactView={isCompactView}
-                                        labelID={labelID}
-                                        loading={mailboxListLoading}
-                                        columnLayout={columnLayout}
-                                        element={element}
-                                        checked={!!checkedIDsMap[element.ID || '']}
-                                        onCheck={onCheckOne}
-                                        onClick={onClick}
-                                        onContextMenu={onContextMenu}
-                                        onDragStart={handleDragStart}
-                                        onDragEnd={handleDragEnd}
-                                        dragged={!!draggedIDsMap[element.ID || '']}
-                                        index={index}
-                                        onFocus={onFocus}
-                                        userSettings={userSettings}
-                                        mailSettings={mailSettings}
-                                        onBack={onBack}
-                                        labels={labels}
-                                    />
+                                    {item}
                                 </CategoriesOnboardingSpotlight>
                             </Fragment>
                         );
@@ -165,27 +172,7 @@ const MailboxListItems = ({
                                     index={index}
                                 />
                             ) : (
-                                <Item
-                                    conversationMode={conversationMode}
-                                    isCompactView={isCompactView}
-                                    labelID={labelID}
-                                    loading={mailboxListLoading}
-                                    columnLayout={columnLayout}
-                                    element={element}
-                                    checked={!!checkedIDsMap[element.ID || '']}
-                                    onCheck={onCheckOne}
-                                    onClick={onClick}
-                                    onContextMenu={onContextMenu}
-                                    onDragStart={handleDragStart}
-                                    onDragEnd={handleDragEnd}
-                                    dragged={!!draggedIDsMap[element.ID || '']}
-                                    index={index}
-                                    onFocus={onFocus}
-                                    userSettings={userSettings}
-                                    mailSettings={mailSettings}
-                                    onBack={onBack}
-                                    labels={labels}
-                                />
+                                item
                             )}
                         </Fragment>
                     );
