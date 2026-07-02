@@ -24,11 +24,8 @@ const E2EEDisabledWarning = ({
         : c('Info').t`End-to-end email encryption is disabled for this group. It can be enabled.`;
 
     return (
-        <Banner
-            icon={<IcExclamationTriangleFilled size={4.5} className="color-weak" />}
-            contentWrapperClassName="flex items-center"
-        >
-            <span className="color-weak">{message}</span>
+        <Banner icon={<IcExclamationTriangleFilled size={4.5} />} contentWrapperClassName="flex items-center">
+            <span>{message}</span>
         </Banner>
     );
 };
