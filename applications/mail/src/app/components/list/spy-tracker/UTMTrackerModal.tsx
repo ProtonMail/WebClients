@@ -1,16 +1,13 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import CopyButton from '@proton/components/components/button/Copy';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import cleanLinkImg from '@proton/styles/assets/img/illustrations/clean-utm-trackers.svg';
 
 import { emailTrackerProtectionURL } from '../../../constants';
@@ -22,10 +19,6 @@ interface Props extends ModalProps {
 
 const UTMTrackerModal = ({ message, ...rest }: Props) => {
     const { utmTrackerText, utmTrackers } = useMessageTrackers(message);
-
-    const handleOpenLink = (link: string) => {
-        openNewTab(link);
-    };
 
     const learnMoreLink = (
         <Href href={emailTrackerProtectionURL} data-testid="trackersModal:learn-more">{c('Info').t`Learn more`}</Href>
@@ -58,17 +51,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                         {tracker.originalURL}
                                     </div>
                                     <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0 ml-0.5">
-                                        <Tooltip title={c('Label').t`Open in a new tab`}>
-                                            <Button
-                                                icon
-                                                color="weak"
-                                                shape="outline"
-                                                size="small"
-                                                onClick={() => handleOpenLink(tracker.originalURL)}
-                                            >
-                                                <IcArrowWithinSquare alt={c('Label').t`Open in a new tab`} />
-                                            </Button>
-                                        </Tooltip>
+                                        <CopyButton shape="outline" size="small" value={tracker.originalURL} />
                                     </div>
                                 </div>
                             </div>
@@ -82,17 +65,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                         {tracker.cleanedURL}
                                     </div>
                                     <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0 ml-0.5">
-                                        <Tooltip title={c('Label').t`Open in a new tab`}>
-                                            <Button
-                                                icon
-                                                color="weak"
-                                                shape="outline"
-                                                size="small"
-                                                onClick={() => handleOpenLink(tracker.cleanedURL)}
-                                            >
-                                                <IcArrowWithinSquare alt={c('Label').t`Open in a new tab`} />
-                                            </Button>
-                                        </Tooltip>
+                                        <CopyButton shape="outline" size="small" value={tracker.cleanedURL} />
                                     </div>
                                 </div>
                             </div>
