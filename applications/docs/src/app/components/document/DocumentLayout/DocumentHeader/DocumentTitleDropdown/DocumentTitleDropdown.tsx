@@ -774,7 +774,7 @@ export function DocumentTitleDropdown({
           {!isSpreadsheet && isTableOfContentsFeatureEnabled && (
             <DropdownMenuButton className="flex items-center text-left" onClick={handleTableOfContentsToggle}>
               <IcListBullets className="color-weak mr-2" />
-              {tableOfContentsVisible ? c('Info').t`Disable table of contents` : c('Info').t`Enable table of contents`}
+              {tableOfContentsVisible ? c('Info').t`Hide table of contents` : c('Info').t`Show table of contents`}
             </DropdownMenuButton>
           )}
 
