@@ -1162,41 +1162,17 @@
       "1 TB cloud storage": [
         "1 TB de almacenamiento en la nube"
       ],
-      "Advanced AI models": [
-        "Modelos de IA avanzados"
-      ],
       "And much more": [
         "Y mucho más"
       ],
       "Everything in Business": [
         "Todo lo incluido en Business"
       ],
-      "Everything in Plus": [
-        "Todo lo de Plus"
-      ],
-      "Extended chat history": [
-        "Historial de chat extendido"
-      ],
-      "Multiple large uploads": [
-        "Múltiples cargas grandes"
-      ],
       "Password manager": [
         "Gestor de contraseñas"
       ],
-      "Priority access": [
-        "Acceso prioritario"
-      ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Gracias al cifrado de acceso cero, tus conversaciones guardadas solo se pueden descifrar y leer en tu dispositivo. Ni ${ BRAND_NAME } ni nadie más puede verlas."
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ],
-      "Unlimited projects": [
-        "Proyectos ilimitados"
-      ],
-      "User management": [
-        "Administración de usuarios"
       ],
       "Video meetings": [
         "Reuniones por vídeo"
@@ -1466,9 +1442,6 @@
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "El archivo \"${ file.name }\" es demasiado grande (${ fileSizeFormatted }). El tamaño máximo permitido es ${ maxSizeFormatted }."
       ],
-      "File already added: ${ result.fileName }": [
-        "Archivo ya añadido: ${ result.fileName }"
-      ],
       "File uploaded but failed to add to knowledge base": [
         "Archivo cargado pero no se pudo añadir a conocimiento base"
       ],
@@ -1646,9 +1619,6 @@
       ]
     },
     "collider_2025: Feature": {
-      "New": [
-        "Nuevo"
-      ],
       "What's new": [
         "Novedades"
       ]
@@ -1903,9 +1873,6 @@
       "Files automatically retrieved based on your questions.": [
         "Archivos recuperados automáticamente según tus preguntas."
       ],
-      "Files included in the next model request.": [
-        "Archivos incluidos en la siguiente petición al modelo."
-      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Para cada día, promedio de tokens por llamada a la API (tokens ÷ llamadas, o 0 si no hay llamadas)."
       ],
@@ -2109,9 +2076,6 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Estos archivos pertenecían a mensajes resumidos y ya no se envían al modelo."
-      ],
-      "These files won't be used for future questions.": [
-        "Estos archivos no se usarán para futuras preguntas."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Este chat se eliminará en 2 días. Mejora a ${ LUMO_SHORT_APP_NAME } Plus para conservarlo."
@@ -2962,9 +2926,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Consigue ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Warning": {
@@ -6530,9 +6491,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentica tu tarjeta en la pestaña de verificación."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentica tu pago en la pestaña de verificación."
       ],
@@ -6541,9 +6499,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
@@ -6739,9 +6694,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderás el acceso a las funciones de ${ planTitle } en esta fecha."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } mes. Puedes cancelar en cualquier momento.",
@@ -9679,9 +9631,6 @@
       ],
       "Payment verification": [
         "Verificación del pago"
-      ],
-      "PayPal verification failed": [
-        "Error con la verificación de PayPal"
       ],
       "Processing...": [
         "Procesando..."

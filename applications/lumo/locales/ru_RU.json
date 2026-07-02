@@ -1188,41 +1188,17 @@
       "1 TB cloud storage": [
         "1 ТБ в облачном хранилище"
       ],
-      "Advanced AI models": [
-        "Продвинутые модели ИИ"
-      ],
       "And much more": [
         "И многое другое"
       ],
       "Everything in Business": [
         "Всё из тарифа Business"
       ],
-      "Everything in Plus": [
-        "Всё, что входит в Plus"
-      ],
-      "Extended chat history": [
-        "Расширенная история чата"
-      ],
-      "Multiple large uploads": [
-        "Множественные большие загрузки"
-      ],
       "Password manager": [
         "Менеджер паролей"
       ],
-      "Priority access": [
-        "Приоритетный доступ"
-      ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Благодаря шифрованию с нулевым доступом, ваши сохраненные беседы могут быть расшифрованы и прочитаны только на вашем устройстве. Ни ${ BRAND_NAME }, ни кто-либо другой не может их видеть."
-      ],
-      "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
-      ],
-      "Unlimited projects": [
-        "Безлимитные проекты"
-      ],
-      "User management": [
-        "Управление пользователями"
       ],
       "Video meetings": [
         "Видеовстречи"
@@ -1494,9 +1470,6 @@
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Файл \"${ file.name }\" слишком велик (${ fileSizeFormatted }). Максимально допустимый размер: ${ maxSizeFormatted }."
       ],
-      "File already added: ${ result.fileName }": [
-        "Файл уже добавлен: ${ result.fileName }"
-      ],
       "File uploaded but failed to add to knowledge base": [
         "Файл загружен, но его не удалось добавить в базу знаний"
       ],
@@ -1674,9 +1647,6 @@
       ]
     },
     "collider_2025: Feature": {
-      "New": [
-        "Новинка"
-      ],
       "What's new": [
         "Что нового"
       ]
@@ -1939,9 +1909,6 @@
       "Files automatically retrieved based on your questions.": [
         "Файлы автоматически подобраны на основе ваших вопросов."
       ],
-      "Files included in the next model request.": [
-        "Файлы, включенные в следующий запрос к модели."
-      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Для каждого дня: среднее количество токенов на вызов API (токены ÷ вызовы, или 0, если вызовов нет)."
       ],
@@ -2145,9 +2112,6 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Эти файлы относились к обобщенным сообщениям и больше не отправляются в модель."
-      ],
-      "These files won't be used for future questions.": [
-        "Эти файлы не будут использоваться в будущих вопросах."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Этот чат будет удален через 2 дня. Улучшите тариф до ${ LUMO_SHORT_APP_NAME } Plus, чтобы сохранить его."
@@ -3002,9 +2966,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Получить ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Перейдите на ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Warning": {
@@ -6584,9 +6545,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Пожалуйста, подтвердите данные карты во вкладке проверки."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Пожалуйста, подтвердите платёж во вкладке проверки."
       ],
@@ -6595,9 +6553,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
@@ -6799,9 +6754,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "В этот день вы потеряете доступ к возможностям ${ planTitle }."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
@@ -9850,9 +9802,6 @@
       ],
       "Payment verification": [
         "Проверка платежа"
-      ],
-      "PayPal verification failed": [
-        "Сбой проверки PayPal"
       ],
       "Processing...": [
         "Обработка…"
