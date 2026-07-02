@@ -857,6 +857,9 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
+      "Report abuse": [
+        "Anmeld misbrug"
+      ],
       "Report an issue": [
         "Anmeld en fejl"
       ],
@@ -3732,6 +3735,9 @@
       "No contacts found to import": [
         "Ingen kontakter fundet til import"
       ],
+      "No drive found to import": [
+        "Der blev ikke fundet noget drev til import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
@@ -3743,6 +3749,9 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
@@ -3981,6 +3990,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl. Vi kan ikke importere filerne"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Ukendt konfliktstrategi: ${ strategy }"
@@ -5659,6 +5671,9 @@
       "Files and folders that others shared with you will appear here": [
         "Filer og mapper, som andre har delt med dig, vises her."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
+      ],
       "finance": [
         "finans"
       ],
@@ -5712,6 +5727,9 @@
       ],
       "How does encrypted search work?": [
         "Hvordan fungerer krypteret søgning?"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Jeg bekræfter hermed, at jeg handler i god tro og informationerne og udtalelserne i rapporten er korrekte og fuldstændige."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Hvis disse filer ikke er fuldt downloadet lokalt på ${ deviceName }, vil du miste adgangen til dem."
@@ -6127,9 +6145,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Bed ejeren om at invitere dig direkte til dokumentet."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Bekræft dit kort i verifikationsfanen."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Bekræft din betaling i verifikationsfanen."
       ],
@@ -6172,9 +6187,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
       ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
@@ -6901,9 +6913,6 @@
       "You will need to save it again from the public link page.": [
         "Du skal gemme det igen fra den offentlige linkside.",
         "Du skal gemme dem igen fra den offentlige linkside."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
@@ -9576,9 +9585,6 @@
       ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg igen"
-      ],
-      "Failed to open document": [
-        "Dokument kunne ikke åbnes"
       ],
       "Failed to reject share invitation": [
         "Kunne ikke afvise invitation til at dele"
@@ -12257,6 +12263,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } af gratis uploads."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -12872,9 +12881,6 @@
       ],
       "Payment verification": [
         "Betalingsbekræftelse"
-      ],
-      "PayPal verification failed": [
-        "PayPal-bekræftelse fejlede"
       ],
       "Phone numbers": [
         "Telefonnumre"
