@@ -978,9 +978,6 @@
       "Load more": [
         "მეტის ჩატვირთვა"
       ],
-      "Loading verification": [
-        "შემოწმების ჩატვირთვა"
-      ],
       "Lost access to your 2FA device?": [
         "დაკარგეთ წვდომა თქვენს 2FA მოწყობილობასთან?"
       ],
@@ -10722,9 +10719,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "სთხოვეთ მფლობელს, პირდაპირ მოგიწვიოთ დოკუმენტზე."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "გთხოვთ დაადასტუროთ თქვენი გადახდა გადამოწმების ჩანართში."
       ],
@@ -10763,9 +10757,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
       ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
@@ -11954,9 +11945,6 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის გამოსაყენებლად ${ BRAND_NAME }-ის მისამართი დაგჭირდებათ"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
@@ -15014,12 +15002,6 @@
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში | დაიბრუნეთ კონფიდენციალობა"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "ისიამოვნეთ ${ BRAND_NAME }-ით ორი კვირის განმავლობაში უფასოდ"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "განიცადეთ ჭეშმარიტი ონლაინ კონფიდენციალობა. დაიცავით თქვენი მონაცემები ${ BRAND_NAME }-ით უფასოდ მომდევნო 14 დღის განმავლობაში."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
@@ -20847,6 +20829,12 @@
       ]
     },
     "Status": {
+      "Active": [
+        "აქტიური"
+      ],
+      "Disabled": [
+        "გათიშული"
+      ],
       "Not saved": [
         "შენახული არაა"
       ],
@@ -23191,9 +23179,6 @@
       ],
       "Payment verification": [
         "გადახდის შემოწმება"
-      ],
-      "PayPal verification failed": [
-        "PayPal-ით გადახდის შეცდომა"
       ],
       "Pending invitations": [
         "მომლოდინე მოსაწვევები"

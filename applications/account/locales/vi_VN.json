@@ -942,9 +942,6 @@
       "Load more": [
         "Tải thêm"
       ],
-      "Loading verification": [
-        "Đang tải xác thực"
-      ],
       "Lost access to your 2FA device?": [
         "Mất quyền truy cập vào thiết bị 2FA rồi?"
       ],
@@ -10528,9 +10525,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Vui lòng yêu cầu chủ sở hữu trực tiếp mời bạn đến xem tài liệu."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Vui lòng xác thực thẻ trong tab xác minh."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Vui lòng xác thực thanh toán trong tab xác minh."
       ],
@@ -10569,9 +10563,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Vui lòng thử lại bằng phương thức thanh toán khác hoặc liên hệ với ngân hàng."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Vui lòng thử lại, dùng một phương thức thanh toán khác, hoặc liên hệ PayPal để được hướng dẫn."
       ],
       "Please use another browser or download the file.": [
         "Vui lòng sử dụng trình duyệt khác hoặc tải xuống tệp."
@@ -11763,9 +11754,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Sẽ KHÔNG thể giải mã bất kỳ thư, tệp và dữ liệu nào khác đã mã hóa bằng khóa này. Tất cả dữ liệu được ký bằng khóa này sẽ không còn được ứng dụng ${ BRAND_NAME } xác minh."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Sẽ sớm được chuyển hướng đến PayPal để xác thực thanh toán của mình."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sẽ không bị tính phí nếu hủy trước ${ trialEndsOnFormatted }."
@@ -14782,12 +14770,6 @@
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Tạo Tài khoản ${ BRAND_NAME } | Lấy lại quyền riêng tư"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Tận hưởng hai tuần sử dụng ${ BRAND_NAME } miễn phí"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Trải nghiệm quyền riêng tư trực tuyến thực sự. Bảo vệ dữ liệu với ${ BRAND_NAME } miễn phí trong 14 ngày tới."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Tìm tên người dùng Tài khoản ${ BRAND_NAME } của bạn"
@@ -20507,6 +20489,11 @@
         "Đang hủy đăng ký, vui lòng đợi"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Đã vô hiệu hóa"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Thao tác"
@@ -22733,9 +22720,6 @@
       ],
       "Payment verification": [
         "Xác minh thanh toán"
-      ],
-      "PayPal verification failed": [
-        "Xác thực PayPal thất bại"
       ],
       "Pending invitations": [
         "Lời mời đang chờ"
