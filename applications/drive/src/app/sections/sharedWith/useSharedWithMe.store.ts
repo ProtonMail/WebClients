@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
@@ -98,494 +97,481 @@ const computeSortedItemUids = (
     return [...invitationUids, ...state.sortedRegularItemUids];
 };
 
-export const useSharedWithMeStore = create<SharedWithMeStore>()(
-    devtools(
-        (set, get) => ({
+export const useSharedWithMeStore = create<SharedWithMeStore>()((set, get) => ({
+    sharedWithMeItems: new Map(),
+    itemUids: new Set(),
+    itemsWithInvitationPosition: new Set(),
+    hasEverLoaded: false,
+    sortedItemUids: [],
+
+    sortField: SortField.sharedOn,
+    direction: SORT_DIRECTION.DESC,
+    sortConfig: defaultSharedWithMeSortConfig,
+    sortedRegularItemUids: [],
+
+    isLoadingNodes: false,
+    isLoadingInvitations: false,
+    isLoadingBookmarks: false,
+    isLoadingLegacyNodes: false,
+    isLoadingLegacyInvitations: false,
+    isPopulatingLegacyNodes: false,
+    isPopulatingLegacyInvitations: false,
+
+    eventSubscriptions: null,
+    activeContexts: new Set<string>(),
+    refreshCallbacks: new Map<string, () => Promise<void>>(),
+
+    setSharedWithMeItem: (item: SharedWithMeItem) => {
+        set((state) => {
+            const keyUid = getKeyUid(item);
+            const isExistingItem = state.sharedWithMeItems.has(keyUid);
+            const wasInInvitationPosition = state.itemsWithInvitationPosition.has(keyUid);
+            const newItemUids = new Set(state.itemUids);
+            const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+            newItemUids.add(keyUid);
+
+            if (isExistingItem) {
+                const existingItem = state.sharedWithMeItems.get(keyUid);
+                const wasOriginallyInvitation = existingItem?.itemType === ItemType.INVITATION;
+
+                // In case we accept the item while loading the section,
+                // we should prevent future updates otherwise the item will disappear and appear again
+                if (existingItem?.itemType === ItemType.DIRECT_SHARE && item.itemType === ItemType.INVITATION) {
+                    return state;
+                }
+
+                const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+                newSharedWithMeItems.set(keyUid, item);
+
+                if (wasInInvitationPosition || wasOriginallyInvitation) {
+                    newItemsWithInvitationPosition.add(keyUid);
+                }
+
+                const nextState = {
+                    sharedWithMeItems: newSharedWithMeItems,
+                    itemUids: newItemUids,
+                    itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                };
+                return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+            }
+
+            if (item.itemType === ItemType.INVITATION) {
+                const newSharedWithMeItems = new Map();
+                newSharedWithMeItems.set(keyUid, item);
+                for (const [uid, existingItem] of state.sharedWithMeItems) {
+                    newSharedWithMeItems.set(uid, existingItem);
+                }
+                newItemsWithInvitationPosition.add(keyUid);
+
+                const nextState = {
+                    sharedWithMeItems: newSharedWithMeItems,
+                    itemUids: newItemUids,
+                    itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                };
+                return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+            }
+
+            const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+            newSharedWithMeItems.set(keyUid, item);
+            const regularItems = Array.from(newSharedWithMeItems.values()).filter((i) => {
+                const uid = getKeyUid(i);
+                return i.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(uid);
+            });
+            const newSortedRegularItemUids = sortItems(
+                regularItems,
+                state.sortConfig,
+                state.direction,
+                getSharedWithMeSortValue,
+                getKeyUid
+            );
+            const nextState = {
+                sharedWithMeItems: newSharedWithMeItems,
+                itemUids: newItemUids,
+                itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                sortedRegularItemUids: newSortedRegularItemUids,
+            };
+            return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+        });
+    },
+
+    setInvitationAccepting: (uid: string, isBeingAccepted: boolean) => {
+        set((state) => {
+            const item = state.sharedWithMeItems.get(uid);
+            if (!item || item.itemType !== ItemType.INVITATION) {
+                return state;
+            }
+            const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+            newSharedWithMeItems.set(uid, { ...item, isBeingAccepted });
+            return { sharedWithMeItems: newSharedWithMeItems };
+        });
+    },
+
+    removeSharedWithMeItem: (uid: string) => {
+        set((state) => {
+            const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+            newSharedWithMeItems.delete(uid);
+            const newItemUids = new Set(state.itemUids);
+            newItemUids.delete(uid);
+            const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+            newItemsWithInvitationPosition.delete(uid);
+            const newSortedRegularItemUids = state.sortedRegularItemUids?.filter((id) => id !== uid) ?? null;
+            const nextState = {
+                sharedWithMeItems: newSharedWithMeItems,
+                itemUids: newItemUids,
+                itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                sortedRegularItemUids: newSortedRegularItemUids,
+            };
+
+            const invitationCount = Array.from(newSharedWithMeItems.values()).filter(
+                (item) => item.itemType === ItemType.INVITATION
+            ).length;
+            useInvitationCountStore.getState().setInvitationCount(invitationCount);
+
+            return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+        });
+    },
+
+    clearAll: () => {
+        set((state) => ({
             sharedWithMeItems: new Map(),
             itemUids: new Set(),
             itemsWithInvitationPosition: new Set(),
-            hasEverLoaded: false,
-            sortedItemUids: [],
+            sortConfig: undefined,
+            sortedItemUids: computeSortedItemUids({
+                ...state,
+                sharedWithMeItems: new Map(),
+                itemsWithInvitationPosition: new Set(),
+            }),
+        }));
+    },
 
-            sortField: SortField.sharedOn,
-            direction: SORT_DIRECTION.DESC,
-            sortConfig: defaultSharedWithMeSortConfig,
-            sortedRegularItemUids: [],
+    cleanupStaleItems: (itemType: ItemType, loadedUids: Set<string>) => {
+        set((state) => {
+            const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+            const newItemUids = new Set(state.itemUids);
+            const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+            const uidsToRemove: string[] = [];
 
-            isLoadingNodes: false,
-            isLoadingInvitations: false,
-            isLoadingBookmarks: false,
-            isLoadingLegacyNodes: false,
-            isLoadingLegacyInvitations: false,
-            isPopulatingLegacyNodes: false,
-            isPopulatingLegacyInvitations: false,
-
-            eventSubscriptions: null,
-            activeContexts: new Set<string>(),
-            refreshCallbacks: new Map<string, () => Promise<void>>(),
-
-            setSharedWithMeItem: (item: SharedWithMeItem) => {
-                set((state) => {
-                    const keyUid = getKeyUid(item);
-                    const isExistingItem = state.sharedWithMeItems.has(keyUid);
-                    const wasInInvitationPosition = state.itemsWithInvitationPosition.has(keyUid);
-                    const newItemUids = new Set(state.itemUids);
-                    const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
-                    newItemUids.add(keyUid);
-
-                    if (isExistingItem) {
-                        const existingItem = state.sharedWithMeItems.get(keyUid);
-                        const wasOriginallyInvitation = existingItem?.itemType === ItemType.INVITATION;
-
-                        // In case we accept the item while loading the section,
-                        // we should prevent future updates otherwise the item will disappear and appear again
-                        if (existingItem?.itemType === ItemType.DIRECT_SHARE && item.itemType === ItemType.INVITATION) {
-                            return state;
-                        }
-
-                        const newSharedWithMeItems = new Map(state.sharedWithMeItems);
-                        newSharedWithMeItems.set(keyUid, item);
-
-                        if (wasInInvitationPosition || wasOriginallyInvitation) {
-                            newItemsWithInvitationPosition.add(keyUid);
-                        }
-
-                        const nextState = {
-                            sharedWithMeItems: newSharedWithMeItems,
-                            itemUids: newItemUids,
-                            itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                        };
-                        return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
-                    }
-
-                    if (item.itemType === ItemType.INVITATION) {
-                        const newSharedWithMeItems = new Map();
-                        newSharedWithMeItems.set(keyUid, item);
-                        for (const [uid, existingItem] of state.sharedWithMeItems) {
-                            newSharedWithMeItems.set(uid, existingItem);
-                        }
-                        newItemsWithInvitationPosition.add(keyUid);
-
-                        const nextState = {
-                            sharedWithMeItems: newSharedWithMeItems,
-                            itemUids: newItemUids,
-                            itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                        };
-                        return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
-                    }
-
-                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
-                    newSharedWithMeItems.set(keyUid, item);
-                    const regularItems = Array.from(newSharedWithMeItems.values()).filter((i) => {
-                        const uid = getKeyUid(i);
-                        return i.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(uid);
-                    });
-                    const newSortedRegularItemUids = sortItems(
-                        regularItems,
-                        state.sortConfig,
-                        state.direction,
-                        getSharedWithMeSortValue,
-                        getKeyUid
-                    );
-                    const nextState = {
-                        sharedWithMeItems: newSharedWithMeItems,
-                        itemUids: newItemUids,
-                        itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                        sortedRegularItemUids: newSortedRegularItemUids,
-                    };
-                    return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
-                });
-            },
-
-            setInvitationAccepting: (uid: string, isBeingAccepted: boolean) => {
-                set((state) => {
-                    const item = state.sharedWithMeItems.get(uid);
-                    if (!item || item.itemType !== ItemType.INVITATION) {
-                        return state;
-                    }
-                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
-                    newSharedWithMeItems.set(uid, { ...item, isBeingAccepted });
-                    return { sharedWithMeItems: newSharedWithMeItems };
-                });
-            },
-
-            removeSharedWithMeItem: (uid: string) => {
-                set((state) => {
-                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+            for (const [uid, item] of state.sharedWithMeItems) {
+                const shouldCleanup = item.itemType === itemType && !loadedUids.has(getKeyUid(item));
+                if (shouldCleanup) {
                     newSharedWithMeItems.delete(uid);
-                    const newItemUids = new Set(state.itemUids);
                     newItemUids.delete(uid);
-                    const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
                     newItemsWithInvitationPosition.delete(uid);
-                    const newSortedRegularItemUids = state.sortedRegularItemUids?.filter((id) => id !== uid) ?? null;
-                    const nextState = {
-                        sharedWithMeItems: newSharedWithMeItems,
-                        itemUids: newItemUids,
-                        itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                        sortedRegularItemUids: newSortedRegularItemUids,
-                    };
-
-                    const invitationCount = Array.from(newSharedWithMeItems.values()).filter(
-                        (item) => item.itemType === ItemType.INVITATION
-                    ).length;
-                    useInvitationCountStore.getState().setInvitationCount(invitationCount);
-
-                    return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
-                });
-            },
-
-            clearAll: () => {
-                set((state) => ({
-                    sharedWithMeItems: new Map(),
-                    itemUids: new Set(),
-                    itemsWithInvitationPosition: new Set(),
-                    sortConfig: undefined,
-                    sortedItemUids: computeSortedItemUids({
-                        ...state,
-                        sharedWithMeItems: new Map(),
-                        itemsWithInvitationPosition: new Set(),
-                    }),
-                }));
-            },
-
-            cleanupStaleItems: (itemType: ItemType, loadedUids: Set<string>) => {
-                set((state) => {
-                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
-                    const newItemUids = new Set(state.itemUids);
-                    const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
-                    const uidsToRemove: string[] = [];
-
-                    for (const [uid, item] of state.sharedWithMeItems) {
-                        const shouldCleanup = item.itemType === itemType && !loadedUids.has(getKeyUid(item));
-                        if (shouldCleanup) {
-                            newSharedWithMeItems.delete(uid);
-                            newItemUids.delete(uid);
-                            newItemsWithInvitationPosition.delete(uid);
-                            uidsToRemove.push(uid);
-                        }
-                    }
-
-                    const newSortedRegularItemUids =
-                        state.sortedRegularItemUids?.filter((id) => !uidsToRemove.includes(id)) ?? null;
-
-                    const nextState = {
-                        sharedWithMeItems: newSharedWithMeItems,
-                        itemUids: newItemUids,
-                        itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                        sortedRegularItemUids: newSortedRegularItemUids,
-                    };
-
-                    if (itemType === ItemType.INVITATION) {
-                        const invitationCount = Array.from(newSharedWithMeItems.values()).filter(
-                            (item) => item.itemType === ItemType.INVITATION
-                        ).length;
-                        useInvitationCountStore.getState().setInvitationCount(invitationCount);
-                    }
-
-                    return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
-                });
-            },
-
-            hasSharedWithMeItem: (uid: string) => get().sharedWithMeItems.has(uid),
-            getSharedWithMeItem: (uid: string) => get().sharedWithMeItems.get(uid),
-            getInvitations: () => {
-                const items = Array.from(get().sharedWithMeItems.values());
-                return items.filter((item) => item.itemType === ItemType.INVITATION);
-            },
-            getNonInvitationItems: () => {
-                const items = Array.from(get().sharedWithMeItems.values());
-                return items.filter((item) => item.itemType !== ItemType.INVITATION);
-            },
-            getInvitationPositionedItems: () => {
-                const state = get();
-                const items = Array.from(state.sharedWithMeItems.values());
-                return items.filter((item) => {
-                    const keyUid = getKeyUid(item);
-                    return item.itemType === ItemType.INVITATION || state.itemsWithInvitationPosition.has(keyUid);
-                });
-            },
-            getRegularItems: () => {
-                const state = get();
-                const items = Array.from(state.sharedWithMeItems.values());
-                return items.filter((item) => {
-                    const keyUid = getKeyUid(item);
-                    return item.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(keyUid);
-                });
-            },
-            clearItemsWithInvitationPosition: () => {
-                set((state) => {
-                    // Re-sort all non-invitation items so previously invitation-positioned items
-                    // (e.g. accepted invitations now stored as DIRECT_SHARE) are included in the
-                    // regular sorted list instead of being dropped from sortedItemUids.
-                    const regularItems = Array.from(state.sharedWithMeItems.values()).filter(
-                        (item) => item.itemType !== ItemType.INVITATION
-                    );
-                    const newSortedRegularItemUids = sortItems(
-                        regularItems,
-                        state.sortConfig,
-                        state.direction,
-                        getSharedWithMeSortValue,
-                        getKeyUid
-                    );
-                    const nextState = {
-                        itemsWithInvitationPosition: new Set<string>(),
-                        sortedRegularItemUids: newSortedRegularItemUids,
-                    };
-                    return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
-                });
-            },
-            setSorting: ({ sortField, direction, sortConfig }) => {
-                set((state) => {
-                    const newItemsWithInvitationPosition = new Set<string>();
-                    const regularItems = Array.from(state.sharedWithMeItems.values()).filter((item) => {
-                        const keyUid = getKeyUid(item);
-                        return item.itemType !== ItemType.INVITATION && !newItemsWithInvitationPosition.has(keyUid);
-                    });
-
-                    const sortedUids = sortItems(
-                        regularItems,
-                        sortConfig,
-                        direction,
-                        getSharedWithMeSortValue,
-                        getKeyUid
-                    );
-
-                    const nextState = {
-                        itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                        sortField,
-                        direction,
-                        sortConfig,
-                        sortedRegularItemUids: sortedUids,
-                    };
-                    return {
-                        ...nextState,
-                        sortedItemUids: computeSortedItemUids({ ...state, ...nextState }),
-                    };
-                });
-            },
-
-            setLoadingNodes: (loading: boolean) => {
-                set({ isLoadingNodes: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-            setLoadingInvitations: (loading: boolean) => {
-                set({ isLoadingInvitations: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-            setLoadingBookmarks: (loading: boolean) => {
-                set({ isLoadingBookmarks: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-            setLoadingLegacyNodes: (loading: boolean) => {
-                set({ isLoadingLegacyNodes: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-            setLoadingLegacyInvitations: (loading: boolean) => {
-                set({ isLoadingLegacyInvitations: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-            setPopulatingLegacyNodes: (loading: boolean) => {
-                set({ isPopulatingLegacyNodes: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-            setPopulatingLegacyInvitations: (loading: boolean) => {
-                set({ isPopulatingLegacyInvitations: loading });
-                get().checkAndSetHasEverLoaded();
-            },
-
-            setHasEverLoaded: () => set({ hasEverLoaded: true }),
-
-            checkAndSetHasEverLoaded: () => {
-                const state = get();
-                if (!state.isLoading() && !state.hasEverLoaded) {
-                    state.setHasEverLoaded();
+                    uidsToRemove.push(uid);
                 }
-            },
+            }
 
-            isLoading: () => {
-                const state = get();
-                return (
-                    state.isLoadingNodes ||
-                    state.isLoadingInvitations ||
-                    state.isLoadingBookmarks ||
-                    state.isLoadingLegacyNodes ||
-                    state.isLoadingLegacyInvitations ||
-                    state.isPopulatingLegacyNodes ||
-                    state.isPopulatingLegacyInvitations
-                );
-            },
+            const newSortedRegularItemUids =
+                state.sortedRegularItemUids?.filter((id) => !uidsToRemove.includes(id)) ?? null;
 
-            subscribeToEvents: async (context: string, options?: { onRefreshSharedWithMe?: () => Promise<void> }) => {
-                const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
+            const nextState = {
+                sharedWithMeItems: newSharedWithMeItems,
+                itemUids: newItemUids,
+                itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                sortedRegularItemUids: newSortedRegularItemUids,
+            };
 
-                const newActiveContexts = new Set(activeContexts);
-                newActiveContexts.add(context);
+            if (itemType === ItemType.INVITATION) {
+                const invitationCount = Array.from(newSharedWithMeItems.values()).filter(
+                    (item) => item.itemType === ItemType.INVITATION
+                ).length;
+                useInvitationCountStore.getState().setInvitationCount(invitationCount);
+            }
 
-                const newRefreshCallbacks = new Map(refreshCallbacks);
-                if (options?.onRefreshSharedWithMe) {
-                    newRefreshCallbacks.set(context, options.onRefreshSharedWithMe);
-                }
+            return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+        });
+    },
 
-                set({
-                    activeContexts: newActiveContexts,
-                    refreshCallbacks: newRefreshCallbacks,
-                });
+    hasSharedWithMeItem: (uid: string) => get().sharedWithMeItems.has(uid),
+    getSharedWithMeItem: (uid: string) => get().sharedWithMeItems.get(uid),
+    getInvitations: () => {
+        const items = Array.from(get().sharedWithMeItems.values());
+        return items.filter((item) => item.itemType === ItemType.INVITATION);
+    },
+    getNonInvitationItems: () => {
+        const items = Array.from(get().sharedWithMeItems.values());
+        return items.filter((item) => item.itemType !== ItemType.INVITATION);
+    },
+    getInvitationPositionedItems: () => {
+        const state = get();
+        const items = Array.from(state.sharedWithMeItems.values());
+        return items.filter((item) => {
+            const keyUid = getKeyUid(item);
+            return item.itemType === ItemType.INVITATION || state.itemsWithInvitationPosition.has(keyUid);
+        });
+    },
+    getRegularItems: () => {
+        const state = get();
+        const items = Array.from(state.sharedWithMeItems.values());
+        return items.filter((item) => {
+            const keyUid = getKeyUid(item);
+            return item.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(keyUid);
+        });
+    },
+    clearItemsWithInvitationPosition: () => {
+        set((state) => {
+            // Re-sort all non-invitation items so previously invitation-positioned items
+            // (e.g. accepted invitations now stored as DIRECT_SHARE) are included in the
+            // regular sorted list instead of being dropped from sortedItemUids.
+            const regularItems = Array.from(state.sharedWithMeItems.values()).filter(
+                (item) => item.itemType !== ItemType.INVITATION
+            );
+            const newSortedRegularItemUids = sortItems(
+                regularItems,
+                state.sortConfig,
+                state.direction,
+                getSharedWithMeSortValue,
+                getKeyUid
+            );
+            const nextState = {
+                itemsWithInvitationPosition: new Set<string>(),
+                sortedRegularItemUids: newSortedRegularItemUids,
+            };
+            return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+        });
+    },
+    setSorting: ({ sortField, direction, sortConfig }) => {
+        set((state) => {
+            const newItemsWithInvitationPosition = new Set<string>();
+            const regularItems = Array.from(state.sharedWithMeItems.values()).filter((item) => {
+                const keyUid = getKeyUid(item);
+                return item.itemType !== ItemType.INVITATION && !newItemsWithInvitationPosition.has(keyUid);
+            });
 
-                if (eventSubscriptions) {
-                    return;
-                }
+            const sortedUids = sortItems(regularItems, sortConfig, direction, getSharedWithMeSortValue, getKeyUid);
 
-                const eventManager = getBusDriver();
+            const nextState = {
+                itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                sortField,
+                direction,
+                sortConfig,
+                sortedRegularItemUids: sortedUids,
+            };
+            return {
+                ...nextState,
+                sortedItemUids: computeSortedItemUids({ ...state, ...nextState }),
+            };
+        });
+    },
 
-                const deleteBookmarksSubscription = eventManager.subscribe(
-                    BusDriverEventName.DELETE_BOOKMARKS,
-                    async (event) => {
-                        const store = get();
-                        for (const uid of event.uids) {
-                            store.removeSharedWithMeItem(uid);
-                        }
-                    }
-                );
+    setLoadingNodes: (loading: boolean) => {
+        set({ isLoadingNodes: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setLoadingInvitations: (loading: boolean) => {
+        set({ isLoadingInvitations: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setLoadingBookmarks: (loading: boolean) => {
+        set({ isLoadingBookmarks: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setLoadingLegacyNodes: (loading: boolean) => {
+        set({ isLoadingLegacyNodes: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setLoadingLegacyInvitations: (loading: boolean) => {
+        set({ isLoadingLegacyInvitations: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setPopulatingLegacyNodes: (loading: boolean) => {
+        set({ isPopulatingLegacyNodes: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setPopulatingLegacyInvitations: (loading: boolean) => {
+        set({ isPopulatingLegacyInvitations: loading });
+        get().checkAndSetHasEverLoaded();
+    },
 
-                const rejectInvitationsSubscription = eventManager.subscribe(
-                    BusDriverEventName.REJECT_INVITATIONS,
-                    async (event) => {
-                        const store = get();
-                        for (const uid of event.uids) {
-                            store.removeSharedWithMeItem(uid);
-                        }
-                        const invitationCount = store.getInvitations().length;
-                        useInvitationCountStore.getState().setInvitationCount(invitationCount);
-                    }
-                );
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
 
-                const removeMeSubscription = eventManager.subscribe(BusDriverEventName.REMOVE_ME, async (event) => {
-                    const store = get();
-                    for (const uid of event.uids) {
-                        store.removeSharedWithMeItem(uid);
-                    }
-                });
-
-                const acceptInvitationsSubscription = eventManager.subscribe(
-                    BusDriverEventName.ACCEPT_INVITATIONS,
-                    async (event, drive) => {
-                        const store = get();
-                        for (const uid of event.uids) {
-                            const maybeNode = await drive.getNode(uid);
-                            const { node } = getNodeEntity(maybeNode);
-                            const signatureResult = getSignatureIssues(maybeNode);
-                            // User can open via public link, then be invited directly, and that direct share
-                            // might be removed again before user clicks accept. User then still has access to
-                            // the node via the public session, but without any memberhsip.
-                            // Simply ignoring such an event is ok as if user is removed after accepting, it
-                            // would also just disappear from the list.
-                            if (!node.membership) {
-                                continue;
-                            }
-                            if (!node.deprecatedShareId) {
-                                handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
-                                    showNotification: false,
-                                    extra: { nodeUid: node.uid },
-                                });
-                                continue;
-                            }
-                            store.setSharedWithMeItem({
-                                nodeUid: node.uid,
-                                shareId: node.deprecatedShareId,
-                                name: node.name,
-                                type: node.type,
-                                mediaType: node.mediaType,
-                                itemType: ItemType.DIRECT_SHARE,
-                                activeRevisionUid: node.activeRevision?.uid,
-                                size: node.totalStorageSize,
-                                directShare: {
-                                    sharedOn: node.membership.inviteTime,
-                                    sharedBy:
-                                        (node.membership.sharedBy.ok
-                                            ? node.membership.sharedBy.value
-                                            : node.membership.sharedBy.error.claimedAuthor) || '',
-                                },
-                                role: node.directRole,
-                                haveSignatureIssues: !signatureResult.ok,
-                            });
-                        }
-                        const invitationCount = store.getInvitations().length;
-                        useInvitationCountStore.getState().setInvitationCount(invitationCount);
-                    }
-                );
-
-                const refreshSharedWithMeSubscription = eventManager.subscribe(
-                    BusDriverEventName.REFRESH_SHARED_WITH_ME,
-                    async () => {
-                        const { refreshCallbacks } = get();
-                        const callbacks = Array.from(refreshCallbacks.values());
-                        await Promise.all(callbacks.map((callback) => callback()));
-                    }
-                );
-
-                const updatedNodesSubscription = eventManager.subscribe(
-                    BusDriverEventName.UPDATED_NODES,
-                    async (event, drive) => {
-                        const store = get();
-                        for (const item of event.items) {
-                            const storeItem = store.getSharedWithMeItem(item.uid);
-                            if (!storeItem || storeItem.itemType !== ItemType.DIRECT_SHARE) {
-                                continue;
-                            }
-                            if (item.isTrashed) {
-                                store.removeSharedWithMeItem(item.uid);
-                                continue;
-                            }
-                            const maybeNode = await drive.getNode(item.uid);
-                            const { node } = getNodeEntity(maybeNode);
-                            const signatureResult = getSignatureIssues(maybeNode);
-                            store.setSharedWithMeItem({
-                                ...storeItem,
-                                name: node.name,
-                                type: node.type,
-                                mediaType: node.mediaType,
-                                activeRevisionUid: node.activeRevision?.uid,
-                                size: node.totalStorageSize,
-                                role: node.directRole,
-                                haveSignatureIssues: !signatureResult.ok,
-                            });
-                        }
-                    }
-                );
-
-                set({
-                    eventSubscriptions: [
-                        deleteBookmarksSubscription,
-                        rejectInvitationsSubscription,
-                        acceptInvitationsSubscription,
-                        refreshSharedWithMeSubscription,
-                        removeMeSubscription,
-                        updatedNodesSubscription,
-                    ],
-                });
-            },
-
-            unsubscribeToEvents: async (context: string) => {
-                const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
-                const newActiveContexts = new Set(activeContexts);
-                newActiveContexts.delete(context);
-
-                const newRefreshCallbacks = new Map(refreshCallbacks);
-                newRefreshCallbacks.delete(context);
-
-                set({
-                    activeContexts: newActiveContexts,
-                    refreshCallbacks: newRefreshCallbacks,
-                });
-
-                if (newActiveContexts.size === 0 && eventSubscriptions) {
-                    eventSubscriptions.forEach((unsubscribe) => unsubscribe());
-                    set({ eventSubscriptions: null });
-                }
-            },
-        }),
-        {
-            name: 'shared-with-me-store',
+    checkAndSetHasEverLoaded: () => {
+        const state = get();
+        if (!state.isLoading() && !state.hasEverLoaded) {
+            state.setHasEverLoaded();
         }
-    )
-);
+    },
+
+    isLoading: () => {
+        const state = get();
+        return (
+            state.isLoadingNodes ||
+            state.isLoadingInvitations ||
+            state.isLoadingBookmarks ||
+            state.isLoadingLegacyNodes ||
+            state.isLoadingLegacyInvitations ||
+            state.isPopulatingLegacyNodes ||
+            state.isPopulatingLegacyInvitations
+        );
+    },
+
+    subscribeToEvents: async (context: string, options?: { onRefreshSharedWithMe?: () => Promise<void> }) => {
+        const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
+
+        const newActiveContexts = new Set(activeContexts);
+        newActiveContexts.add(context);
+
+        const newRefreshCallbacks = new Map(refreshCallbacks);
+        if (options?.onRefreshSharedWithMe) {
+            newRefreshCallbacks.set(context, options.onRefreshSharedWithMe);
+        }
+
+        set({
+            activeContexts: newActiveContexts,
+            refreshCallbacks: newRefreshCallbacks,
+        });
+
+        if (eventSubscriptions) {
+            return;
+        }
+
+        const eventManager = getBusDriver();
+
+        const deleteBookmarksSubscription = eventManager.subscribe(
+            BusDriverEventName.DELETE_BOOKMARKS,
+            async (event) => {
+                const store = get();
+                for (const uid of event.uids) {
+                    store.removeSharedWithMeItem(uid);
+                }
+            }
+        );
+
+        const rejectInvitationsSubscription = eventManager.subscribe(
+            BusDriverEventName.REJECT_INVITATIONS,
+            async (event) => {
+                const store = get();
+                for (const uid of event.uids) {
+                    store.removeSharedWithMeItem(uid);
+                }
+                const invitationCount = store.getInvitations().length;
+                useInvitationCountStore.getState().setInvitationCount(invitationCount);
+            }
+        );
+
+        const removeMeSubscription = eventManager.subscribe(BusDriverEventName.REMOVE_ME, async (event) => {
+            const store = get();
+            for (const uid of event.uids) {
+                store.removeSharedWithMeItem(uid);
+            }
+        });
+
+        const acceptInvitationsSubscription = eventManager.subscribe(
+            BusDriverEventName.ACCEPT_INVITATIONS,
+            async (event, drive) => {
+                const store = get();
+                for (const uid of event.uids) {
+                    const maybeNode = await drive.getNode(uid);
+                    const { node } = getNodeEntity(maybeNode);
+                    const signatureResult = getSignatureIssues(maybeNode);
+                    // User can open via public link, then be invited directly, and that direct share
+                    // might be removed again before user clicks accept. User then still has access to
+                    // the node via the public session, but without any memberhsip.
+                    // Simply ignoring such an event is ok as if user is removed after accepting, it
+                    // would also just disappear from the list.
+                    if (!node.membership) {
+                        continue;
+                    }
+                    if (!node.deprecatedShareId) {
+                        handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
+                            showNotification: false,
+                            extra: { nodeUid: node.uid },
+                        });
+                        continue;
+                    }
+                    store.setSharedWithMeItem({
+                        nodeUid: node.uid,
+                        shareId: node.deprecatedShareId,
+                        name: node.name,
+                        type: node.type,
+                        mediaType: node.mediaType,
+                        itemType: ItemType.DIRECT_SHARE,
+                        activeRevisionUid: node.activeRevision?.uid,
+                        size: node.totalStorageSize,
+                        directShare: {
+                            sharedOn: node.membership.inviteTime,
+                            sharedBy:
+                                (node.membership.sharedBy.ok
+                                    ? node.membership.sharedBy.value
+                                    : node.membership.sharedBy.error.claimedAuthor) || '',
+                        },
+                        role: node.directRole,
+                        haveSignatureIssues: !signatureResult.ok,
+                    });
+                }
+                const invitationCount = store.getInvitations().length;
+                useInvitationCountStore.getState().setInvitationCount(invitationCount);
+            }
+        );
+
+        const refreshSharedWithMeSubscription = eventManager.subscribe(
+            BusDriverEventName.REFRESH_SHARED_WITH_ME,
+            async () => {
+                const { refreshCallbacks } = get();
+                const callbacks = Array.from(refreshCallbacks.values());
+                await Promise.all(callbacks.map((callback) => callback()));
+            }
+        );
+
+        const updatedNodesSubscription = eventManager.subscribe(
+            BusDriverEventName.UPDATED_NODES,
+            async (event, drive) => {
+                const store = get();
+                for (const item of event.items) {
+                    const storeItem = store.getSharedWithMeItem(item.uid);
+                    if (!storeItem || storeItem.itemType !== ItemType.DIRECT_SHARE) {
+                        continue;
+                    }
+                    if (item.isTrashed) {
+                        store.removeSharedWithMeItem(item.uid);
+                        continue;
+                    }
+                    const maybeNode = await drive.getNode(item.uid);
+                    const { node } = getNodeEntity(maybeNode);
+                    const signatureResult = getSignatureIssues(maybeNode);
+                    store.setSharedWithMeItem({
+                        ...storeItem,
+                        name: node.name,
+                        type: node.type,
+                        mediaType: node.mediaType,
+                        activeRevisionUid: node.activeRevision?.uid,
+                        size: node.totalStorageSize,
+                        role: node.directRole,
+                        haveSignatureIssues: !signatureResult.ok,
+                    });
+                }
+            }
+        );
+
+        set({
+            eventSubscriptions: [
+                deleteBookmarksSubscription,
+                rejectInvitationsSubscription,
+                acceptInvitationsSubscription,
+                refreshSharedWithMeSubscription,
+                removeMeSubscription,
+                updatedNodesSubscription,
+            ],
+        });
+    },
+
+    unsubscribeToEvents: async (context: string) => {
+        const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
+        const newActiveContexts = new Set(activeContexts);
+        newActiveContexts.delete(context);
+
+        const newRefreshCallbacks = new Map(refreshCallbacks);
+        newRefreshCallbacks.delete(context);
+
+        set({
+            activeContexts: newActiveContexts,
+            refreshCallbacks: newRefreshCallbacks,
+        });
+
+        if (newActiveContexts.size === 0 && eventSubscriptions) {
+            eventSubscriptions.forEach((unsubscribe) => unsubscribe());
+            set({ eventSubscriptions: null });
+        }
+    },
+}));
