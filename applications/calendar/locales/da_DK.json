@@ -3958,6 +3958,9 @@
       "No contacts found to import": [
         "Ingen kontakter fundet til import"
       ],
+      "No drive found to import": [
+        "Der blev ikke fundet noget drev til import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
@@ -3972,6 +3975,9 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "Number of occurrences cannot be empty": [
         "Antallet af forekomster kan ikke være tom"
@@ -4210,6 +4216,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl. Vi kan ikke importere filerne"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -5792,6 +5801,9 @@
       "Failed to update meeting schedule": [
         "Kunne ikke opdatere mødeplanen"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
+      ],
       "finance": [
         "finans"
       ],
@@ -6123,9 +6135,6 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk beskeden ved hjælp af den aktuelle komponisttilstand."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Bekræft dit kort i verifikationsfanen."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Bekræft din betaling i verifikationsfanen."
       ],
@@ -6165,9 +6174,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -6655,9 +6661,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Du vil opdatere alle begivenheder i denne serie. Tilføjede og fjernede deltagere vil blive underrettet."
@@ -11955,6 +11958,9 @@
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -12411,9 +12417,6 @@
       ],
       "Payment verification": [
         "Betalingsbekræftelse"
-      ],
-      "PayPal verification failed": [
-        "PayPal-bekræftelse fejlede"
       ],
       "Phone numbers": [
         "Telefonnumre"
