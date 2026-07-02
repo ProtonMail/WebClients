@@ -1162,41 +1162,17 @@
       "1 TB cloud storage": [
         "1 TB cloudopslag"
       ],
-      "Advanced AI models": [
-        "Geavanceerde AI-modellen"
-      ],
       "And much more": [
         "En nog veel meer"
       ],
       "Everything in Business": [
         "Alles in Business"
       ],
-      "Everything in Plus": [
-        "Alles in Plus"
-      ],
-      "Extended chat history": [
-        "Uitgebreide gespreksgeschiedenis"
-      ],
-      "Multiple large uploads": [
-        "Meerdere grote uploads"
-      ],
       "Password manager": [
         "Wachtwoordbeheerder"
       ],
-      "Priority access": [
-        "Prioritaire toegang"
-      ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Dankzij zero-access-versleuteling kunnen uw opgeslagen gesprekken alleen op uw apparaat worden gedecodeerd en gelezen. Noch ${ BRAND_NAME }, noch iemand anders kan ze zien."
-      ],
-      "Unlimited daily chats": [
-        "Onbeperkt aantal dagelijkse gesprekken"
-      ],
-      "Unlimited projects": [
-        "Onbeperkte projecten"
-      ],
-      "User management": [
-        "Gebruikersbeheer"
       ],
       "Video meetings": [
         "Videovergaderingen"
@@ -1466,9 +1442,6 @@
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Bestand \"${ file.name }\" is te groot (${ fileSizeFormatted }). Maximale toegestane grootte is ${ maxSizeFormatted }."
       ],
-      "File already added: ${ result.fileName }": [
-        "Bestand reeds toegevoegd: ${ result.fileName }"
-      ],
       "File uploaded but failed to add to knowledge base": [
         "Bestand geüpload, maar kon niet aan de kennisbank worden toegevoegd."
       ],
@@ -1646,9 +1619,6 @@
       ]
     },
     "collider_2025: Feature": {
-      "New": [
-        "Nieuw"
-      ],
       "What's new": [
         "Wat is er nieuw"
       ]
@@ -1903,9 +1873,6 @@
       "Files automatically retrieved based on your questions.": [
         "Bestanden automatisch opgehaald op basis van uw vragen."
       ],
-      "Files included in the next model request.": [
-        "Bestanden opgenomen in de volgende modelaanvraag."
-      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Gemiddeld aantal tokens per API-aanroep per dag (tokens ÷ aanroepen, of 0 indien geen aanroepen)."
       ],
@@ -2109,9 +2076,6 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Deze bestanden hoorden bij samengevatte berichten en worden niet langer naar het model verzonden."
-      ],
-      "These files won't be used for future questions.": [
-        "Deze bestanden worden niet gebruikt voor toekomstige vragen."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Deze chat wordt over 2 dagen verwijderd. Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om deze te behouden."
@@ -2962,9 +2926,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Neem ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Upgraden naar ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Warning": {
@@ -6530,9 +6491,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authenticeer uw kaart in het verificatietabblad."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
@@ -6541,9 +6499,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
@@ -6739,9 +6694,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "U verliest toegang tot ${ planTitle } functies op deze datum."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
@@ -9683,9 +9635,6 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
-      ],
-      "PayPal verification failed": [
-        "PayPal verificatie mislukt"
       ],
       "Processing...": [
         "Wordt verwerkt..."
