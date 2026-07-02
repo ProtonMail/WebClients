@@ -8100,9 +8100,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authenticeer uw kaart in het verificatietabblad."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
@@ -8154,9 +8151,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -9029,6 +9023,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "U heeft ${ totalLabel } in uw inbox."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "U heeft **${ count } gesprek** in ${ categoryLabel } categorie",
+        "U heeft **${ count } gesprekken** in ${ categoryLabel } categorie"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "U heeft **${ count } gesprek** uit deze map opgeslagen",
         "U heeft **${ count } gesprekken** uit deze map opgeslagen"
@@ -9036,6 +9037,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "U heeft **${ count } gesprek** gemarkeerd met dit label",
         "U heeft **${ count } gesprekken** gemarkeerd met dit label"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "U heeft **${ count } bericht** in ${ categoryLabel } categorie",
+        "U heeft **${ count } berichten** in ${ categoryLabel } category"
       ],
       "You have **${ count } message** stored in this folder": [
         "U heeft **${ count } bericht** uit deze map opgeslagen",
@@ -9051,6 +9056,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
       ],
+      "You have no conversations in this category": [
+        "U heeft geen gesprekken in deze categorie"
+      ],
+      "You have no messages in this category": [
+        "U heeft geen berichten in deze categorie"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "U heef uw e-mail geen onderwerp gegeven. Wilt u het bericht toch versturen?"
       ],
@@ -9065,6 +9076,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "U selecteerde **${ checked } gesprek** in ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } gesprekken** in ${ categoryLabel } categorie"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "U selecteerde **${ checked } bericht** in ${ categoryLabel } categorie",
+        "U selecteerde **${ checked } berichten** in ${ categoryLabel } categorie"
       ],
       "You selected **${ count } conversation** from this folder": [
         "U heeft **${ count } gesprek** uit deze map geselecteerd",
@@ -9100,9 +9119,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "U verliest toegang tot ${ planTitle } functies op deze datum."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
@@ -10060,6 +10076,9 @@
       "Navigation": [
         "Navigatie"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "New password": [
         "Nieuw wachtwoord"
       ],
@@ -10068,6 +10087,9 @@
       ],
       "Newsletters": [
         "Nieuwsbrieven"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nieuwsbrieven - Nieuws, redactionele e-mails en niet-promotionele inhoud"
       ],
       "No label found": [
         "Geen label gevonden"
@@ -10159,8 +10181,14 @@
       "Primary": [
         "Primair"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primaire - Persoonlijke en zakelijke e-mails, plus belangrijke updates"
+      ],
       "Promotions": [
         "Promoties"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoties - Aanbiedingen, kortingen en marketingmails"
       ],
       "Proration": [
         "Verrekening"
@@ -10227,6 +10255,9 @@
       ],
       "Social": [
         "Sociaal"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociaal - Updates, activiteit en berichten op sociale media"
       ],
       "Social media updates and activity": [
         "Updates en activiteit op sociale media"
@@ -10303,6 +10334,9 @@
       "Transactions": [
         "Transacties"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transacties - Bonnen, boekingen, facturen en bestellingen"
+      ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
       ],
@@ -10314,6 +10348,9 @@
       ],
       "Updates": [
         "Updates"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Updates - Geautomatiseerde bevestigingen, meldingen en account updates"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -15024,6 +15061,10 @@
         "Verplaats ${ selectionCount } bericht",
         "Verplaats ${ selectionCount } berichten"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Verplaatst naar ${ label }. Vergelijkbaar bericht wordt in de toekomst hier ondergebracht.",
+        "Verplaatst naar ${ label }. Vergelijkbare berichten worden in de toekomst hier ondergebracht."
+      ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
@@ -15999,9 +16040,6 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
-      ],
-      "PayPal verification failed": [
-        "PayPal verificatie mislukt"
       ],
       "Phone numbers": [
         "Telefoonnummers"

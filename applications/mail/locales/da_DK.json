@@ -2422,6 +2422,11 @@
         "Tag en tour"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importer ældre beskeder i indstillingerne for ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Har en begivenhed i kalenderen"
@@ -4325,10 +4330,10 @@
         "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "Tilføj det til Deres abonnement for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+        "Tilføj det til dit abonnement for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "Anmod om adgang fra Deres admin for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+        "Anmod om adgang fra din administrator for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Du kan fortsætte med at bruge skriveassistenten ved at tilføje den til dit abonnement."
@@ -4377,6 +4382,9 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer dine gamle e-mails og synkroniserer fremover nye beskeder fra Gmail"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
@@ -5049,6 +5057,9 @@
       "No contacts found to import": [
         "Ingen kontakter fundet til import"
       ],
+      "No drive found to import": [
+        "Der blev ikke fundet noget drev til import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
@@ -5060,6 +5071,9 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
@@ -5374,6 +5388,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl. Vi kan ikke importere filerne"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -6816,7 +6833,7 @@
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } hjælper Dem med at skrive bedre e-mails hurtigt og nemt."
+        "${ LUMO_SHORT_APP_NAME } hjælper dig med at skrive bedre e-mails hurtigt og nemt."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME }-panel"
@@ -6825,7 +6842,7 @@
         "${ MAIL_APP_NAME } kan også beskytte dit firma."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } sorterer nu automatisk Deres e-mails i kategorier som Primær, Social, Reklamer og mere, hvilket gør det lettere for Dem at finde og administrere beskeder."
+        "${ MAIL_APP_NAME } sorterer nu automatisk dine e-mails i kategorier som Primær, Social, Reklamer og mere, hvilket gør det lettere for dig at finde og administrere beskeder."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } er et end-to-end krypteret system til videomøder. Tilføj det til dit abonnement for at afholde sikre møder."
@@ -7608,6 +7625,9 @@
         "fil vedhæftet",
         "filer vedhæftet"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
       ],
@@ -8100,9 +8120,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Bed ejeren om at invitere dig direkte til dokumentet."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Bekræft dit kort i verifikationsfanen."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Bekræft din betaling i verifikationsfanen."
       ],
@@ -8155,9 +8172,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
       ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
-      ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
       ],
@@ -8201,7 +8215,7 @@
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
       ],
       "Private by design.": [
-        "Privat af design."
+        "Designet til at være privat."
       ],
       "Proofread selection": [
         "Korrekturlæs det valgte"
@@ -9029,6 +9043,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du har ${ totalLabel } i din indbakke."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i ${ categoryLabel } kategori",
+        "Du har **${ count } samtaler** i ${ categoryLabel } kategori"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } samtale** gemt i denne mappe",
         "Du har **${ count } samtaler** gemt i denne mappe"
@@ -9036,6 +9057,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Du har **${ count } samtale** mærket med denne etikette",
         "Du har **${ count } samtaler** mærket med denne etikette"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } besked** i ${ categoryLabel } kategori",
+        "Du har **${ count } beskeder** i ${ categoryLabel } kategori"
       ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } besked** gemt i denne mappe",
@@ -9051,6 +9076,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
+      "You have no conversations in this category": [
+        "Du har ingen samtaler i denne kategori"
+      ],
+      "You have no messages in this category": [
+        "Du har ingen beskeder i denne kategori"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har ikke givet din e-mail noget emne. Vil du sende beskeden alligevel?"
       ],
@@ -9065,6 +9096,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } samtale** i ${ categoryLabel } kategori",
+        "Du valgte **${ checked } samtaler** i ${ categoryLabel } kategori"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valgte **${ checked } besked** i ${ categoryLabel } kategori",
+        "Du valgte **${ checked } beskeder** i ${ categoryLabel } kategori"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du valgte **${ count } samtale** fra denne mappe",
@@ -9100,9 +9139,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste adgang til ${ planTitle }-funktioner på denne dato."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
@@ -9815,7 +9851,7 @@
         "fx på Amazon, eBay osv."
       ],
       "Elements in store": [
-        "Elementer i lager"
+        "Elementer i store"
       ],
       "Email": [
         "E-mail"
@@ -9949,6 +9985,9 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Import your emails": [
+        "Importer dine e-mails"
+      ],
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
       ],
@@ -10060,6 +10099,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "New": [
+        "Ny"
+      ],
       "New password": [
         "Ny adgangskode"
       ],
@@ -10068,6 +10110,9 @@
       ],
       "Newsletters": [
         "Nyhedsbreve"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhedsbreve - Nyheder, redaktionelle e-mails og ikke-promoverende indhold"
       ],
       "No label found": [
         "Ingen etikette fundet"
@@ -10159,8 +10204,14 @@
       "Primary": [
         "Primær"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primær - Personlige og arbejdsmæssige e-mails samt vigtige opdateringer"
+      ],
       "Promotions": [
         "Kampagner"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Kampagner - Deals, tilbud og marketing-e-mails"
       ],
       "Proration": [
         "Proration"
@@ -10228,6 +10279,9 @@
       "Social": [
         "Social"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociale - Sociale medieopdateringer, aktivitet og beskeder"
+      ],
       "Social media updates and activity": [
         "Opdateringer og aktivitet på sociale medier"
       ],
@@ -10247,7 +10301,7 @@
         "Udsagn"
       ],
       "Store state": [
-        "Lagerstatus"
+        "Store state"
       ],
       "Street address": [
         "Adresse"
@@ -10271,7 +10325,7 @@
         "Systemoplysninger"
       ],
       "Tab age": [
-        "Fanealder"
+        "Tab alder"
       ],
       "Tell us more about your experience": [
         "Fortæl os mere om din oplevelse"
@@ -10303,6 +10357,9 @@
       "Transactions": [
         "Transaktioner"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitteringer, reservationer, regninger og ordrer"
+      ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
       ],
@@ -10314,6 +10371,9 @@
       ],
       "Updates": [
         "Opdateringer"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Opdateringer - Automatiserede bekræftelser, advarsler og kontoopdateringer"
       ],
       "Upload picture": [
         "Upload billede"
@@ -13117,16 +13177,16 @@
         "Emne"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Fortæl ${ subject }, hvad der skal skrives. Eksempel: \"Annoncér kommende begivenheder i et nyhedsbrev\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Annoncér kommende begivenheder i et nyhedsbrev\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Annuller mit medlemskab i fitnesscentret\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Opsig mit medlemskab i fitnesscentret\""
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Inviter Jane til min fest\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Inviter Julie til min fest\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Tak min kollega for hjælpen med et projekt\""
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Tak min kollega for hjælpe til med et projekt\""
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
         "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Skriv en ansøgning til en praktikplads\""
@@ -15024,6 +15084,10 @@
         "Flyt ${ selectionCount } besked",
         "Flyt ${ selectionCount } beskeder"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttet til ${ label }. En lignende besked vil blive kategoriseret her i fremtiden",
+        "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her i fremtiden"
+      ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
@@ -15308,6 +15372,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ numMessages } message": [
         "${ numMessages } besked",
@@ -16000,9 +16067,6 @@
       "Payment verification": [
         "Betalingsbekræftelse"
       ],
-      "PayPal verification failed": [
-        "PayPal-bekræftelse fejlede"
-      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -16357,7 +16421,7 @@
         "Din gratis prøveperiode er slut"
       ],
       "Your inbox, automatically organized": [
-        "Deres indbakke, automatisk organiseret"
+        "Din indbakke, automatisk organiseret"
       ],
       "Your newsletters in one place": [
         "Dine nyhedsbreve på ét sted"
