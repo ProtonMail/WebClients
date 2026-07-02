@@ -649,7 +649,7 @@
         "Yenile"
       ],
       "Reload spreadsheet": [
-        "Hesap tablosunu yeniden yükle"
+        "Elektonik tabloyu yeniden yükle"
       ],
       "Remove": [
         "Kaldır"
@@ -682,7 +682,7 @@
         "Sorun bildirin"
       ],
       "Report issue": [
-        "Sorunu bildir"
+        "Sorun bildireceğim"
       ],
       "Request a call": [
         "Arama isteği gönder"
@@ -3159,9 +3159,6 @@
       "Failed to load 'My files' folder": [
         "'Dosyalarım' klasörü yüklenemedi"
       ],
-      "Failed to load document details": [
-        "Belge ayrıntıları yüklenemedi"
-      ],
       "Failed to load recent documents": [
         "Son çalışılan belgeler yüklenemedi"
       ],
@@ -3272,7 +3269,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak sürücü bulunamadı"
+        "İçe aktarılacak bir sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -3284,7 +3281,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
+        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -3507,7 +3504,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -4778,7 +4775,7 @@
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
       "Disable table of contents": [
-        "İçindekiler bölümünü devre dışı bırak"
+        "İçindekiler tablosunu kapat"
       ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
@@ -4835,7 +4832,7 @@
         "E-postalar otomatik olarak imzalanıyor"
       ],
       "Enable table of contents": [
-        "İçindekiler bölümünü etkinleştir"
+        "İçindekiler tablosunu aç"
       ],
       "End-to-end encrypted": [
         "Uçtan uca şifrelenmiş"
@@ -4913,7 +4910,7 @@
         "Dosya güncellenmeyecek"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "finance": [
         "finans"
@@ -5182,7 +5179,7 @@
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Eyvah! Bu hesap tablosu en son düzenlemelerinizi kaydedemiyor; bu nedenle, çalışmalarınızı kaybetmenizi önlemek amacıyla düzenleme işlemini duraklattık. Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Hesap tablosunun içeriğini paylaşmakta sakınca görmüyorsanız, raporunuza aşağıdaki hata ayıklama bilgilerini ekleyin."
+        "Bu elektronik tablodaki son düzenlemeleriniz kaydedilemedi. Çalışmalarınızın kaybolmaması için düzenleme özelliği kapatıldı. Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablonun içeriğini paylaşmakta sakınca görmüyorsanız, bildiriminize aşağıdaki hata ayıklama bilgilerini ekleyin."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
@@ -6376,6 +6373,9 @@
       ],
       "Trash": [
         "Çöp kutusu"
+      ],
+      "Unknown user": [
+        "Kullanıcı bilinmiyor"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -7823,7 +7823,7 @@
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
       ]
     },
     "new_plans: Upsell attribute": {
