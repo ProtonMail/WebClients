@@ -139,10 +139,11 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
       rowAddButton.style.width = `${Math.min(containerRect.width - containerPadding, tableRect.width)}px`
       columnAddButton.style.height = `${tableRect.height}px`
 
-      const containerOffset = rootParent.scrollTop - containerRect.top
+      const containerOffsetY = rootParent.scrollTop - containerRect.top
+      const containerOffsetX = rootParent.scrollLeft - containerRect.left
 
-      rowAddButton.style.transform = `translate(${Math.max(containerPaddingLeft, tableRect.left)}px, ${tableWrapperRect.bottom + containerOffset}px)`
-      columnAddButton.style.transform = `translate(${tableRect.width > containerRect.width ? tableWrapperRect.right - columnAddButtonRect.width / 2 : tableRect.right + 1}px, ${tableRect.top + containerOffset}px)`
+      rowAddButton.style.transform = `translate(${Math.max(containerPaddingLeft, tableRect.left + containerOffsetX)}px, ${tableWrapperRect.bottom + containerOffsetY}px)`
+      columnAddButton.style.transform = `translate(${tableRect.width > containerRect.width ? tableWrapperRect.right + containerOffsetX - columnAddButtonRect.width / 2 : tableRect.right + containerOffsetX + 1}px, ${tableRect.top + containerOffsetY}px)`
     }, 10)
 
     setSizeAndPosition()
