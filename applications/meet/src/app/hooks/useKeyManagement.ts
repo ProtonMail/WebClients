@@ -1,20 +1,17 @@
 import { type MutableRefObject, useRef, useState } from 'react';
 
-import type { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
-import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface UseKeyManagementParams {
     keyProvider: ProtonMeetKeyProvider;
-    isMeetSeamlessKeyRotationEnabled: boolean;
-    isMeetClientMetricsLogEnabled: boolean;
-    wasmApp: MeetCoreClient | null;
-    dispatch: ReturnType<typeof useMeetDispatch>;
-    reportMeetError: (msg: string, options?: unknown) => void;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
 }
 
@@ -31,13 +28,16 @@ export interface UseKeyManagementResult {
 
 export const useKeyManagement = ({
     keyProvider,
-    isMeetSeamlessKeyRotationEnabled,
-    isMeetClientMetricsLogEnabled,
-    wasmApp,
-    dispatch,
-    reportMeetError,
     withMeetingLinkNameTag,
 }: UseKeyManagementParams): UseKeyManagementResult => {
+    const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
+    const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
+
+    const dispatch = useMeetDispatch();
+    const { reportMeetError } = useMeetErrorReporting();
+
+    const meetCoreClient = useMeetCoreClient();
+
     const [keyRotationScheduler] = useState(() => new KeyRotationScheduler(keyProvider));
     const currentKeyRef = useRef<string | null>(null);
     const lastEpochRef = useRef<bigint | null>(null);
@@ -70,12 +70,12 @@ export const useKeyManagement = ({
 
     const getGroupKeyInfo = async (): Promise<{ key: string; epoch: bigint }> => {
         try {
-            const newGroupKeyInfo = await wasmApp?.getGroupKey();
+            const newGroupKeyInfo = await meetCoreClient.getGroupKey();
             if (!newGroupKeyInfo) {
                 throw new Error('Group key info is unavailable');
             }
             currentKeyRef.current = newGroupKeyInfo.key;
-            const displayCode = await wasmApp?.getGroupDisplayCode();
+            const displayCode = await meetCoreClient.getGroupDisplayCode();
             const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
                 epoch: Number(newGroupKeyInfo.epoch),
@@ -98,7 +98,7 @@ export const useKeyManagement = ({
                 await keyProvider.setKeyWithEpoch(key, epoch);
             }
 
-            const displayCode = await wasmApp?.getGroupDisplayCode();
+            const displayCode = await meetCoreClient.getGroupDisplayCode();
             const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
                 epoch: Number(epoch),
@@ -108,7 +108,7 @@ export const useKeyManagement = ({
 
             if (isMeetClientMetricsLogEnabled) {
                 try {
-                    await wasmApp?.tryLogDesignatedCommitter(Number(epoch));
+                    await meetCoreClient.tryLogDesignatedCommitter(Number(epoch));
                 } catch (error) {
                     reportMeetError('Failed to log designated committer rank', withMeetingLinkNameTag(error));
                 }
