@@ -19,6 +19,8 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
@@ -36,6 +38,7 @@ import {
     getSubscriptionPlanTitle,
     isManagedExternally,
 } from '@proton/payments';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -47,6 +50,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
@@ -169,6 +173,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
 };
 
 export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
+    const api = useApi();
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const [subscription, loadingSubscription] = useSubscription();
@@ -237,6 +242,20 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
         });
     };
 
+    const onCardClick = (product: APP_NAMES) => {
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryAccountDashboardEvents.crossProductClick,
+            measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+            dimensions: {
+                app,
+                product,
+                user_tier: getTelemetryUserTier(user),
+            },
+        });
+    };
+
     return (
         <>
             <DashboardGrid columns={filteredCards.length}>
@@ -266,6 +285,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
                                 )}
                                 <footer className="mt-auto pt-2">
                                     <ButtonLike
+                                        onAppClick={() => onCardClick(card.app)}
                                         as={ProductLink}
                                         ownerApp={APP_NAME}
                                         appToLinkTo={card.app}
