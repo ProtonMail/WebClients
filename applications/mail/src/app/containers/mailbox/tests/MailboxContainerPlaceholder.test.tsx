@@ -38,7 +38,6 @@ describe('MailboxContainerPlaceholder', () => {
                 <MailboxContainerPlaceholder
                     showPlaceholder={true}
                     welcomeFlag={false}
-                    labelID="labelID"
                     checkedIDs={[]}
                     handleCheckAll={jest.fn()}
                 />
@@ -59,7 +58,6 @@ describe('MailboxContainerPlaceholder', () => {
             <MailboxContainerPlaceholder
                 showPlaceholder={true}
                 welcomeFlag={false}
-                labelID="labelID"
                 checkedIDs={[]}
                 handleCheckAll={jest.fn()}
             />
@@ -79,7 +77,6 @@ describe('MailboxContainerPlaceholder', () => {
             <MailboxContainerPlaceholder
                 showPlaceholder={true}
                 welcomeFlag={false}
-                labelID="labelID"
                 checkedIDs={[]}
                 handleCheckAll={jest.fn()}
             />
