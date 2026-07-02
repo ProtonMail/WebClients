@@ -165,7 +165,6 @@ const AppearanceSettingsPanel = () => {
                     </Tooltip>
                 }
             />
-
         </div>
     );
 };
@@ -326,7 +325,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 icon="MessageSquare"
                 text={c('collider_2025: Title').t`Delete everything`}
                 subtext={c('collider_2025: Description')
-                    .t`Permanently delete your project and chats. This is irreversible.`}
+                    .t`Permanently delete your projects, chats, and saved memories. This is irreversible.`}
                 button={<DeleteAllButton onClose={onClose} />}
             />
         </div>
