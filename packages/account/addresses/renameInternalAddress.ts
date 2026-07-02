@@ -71,16 +71,18 @@ export const renameInternalAddressThunk = ({
             ).catch(noop);
         }
 
-        if (!member || member.Self) {
-            await Promise.all([
-                dispatch(addressThunk({ address, cache: CacheType.None })),
-                dispatch(userThunk({ cache: CacheType.None })),
-            ]);
-        } else {
-            await Promise.all([
-                dispatch(memberThunk({ cache: CacheType.None })),
-                dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true })),
-            ]);
+        if (localEmail || displayName) {
+            if (!member || member.Self) {
+                await Promise.all([
+                    dispatch(addressThunk({ address, cache: CacheType.None })),
+                    dispatch(userThunk({ cache: CacheType.None })),
+                ]);
+            } else {
+                await Promise.all([
+                    dispatch(memberThunk({ cache: CacheType.None })),
+                    dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true })),
+                ]);
+            }
         }
     };
 };
