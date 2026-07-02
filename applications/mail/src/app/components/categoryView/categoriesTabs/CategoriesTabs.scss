@@ -1,15 +1,56 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
+$tab-badge-ease: easing(ease-out-quint);
+
+@mixin reveal-tab-labels {
+	.tab-wrapper {
+		flex: 1 1 0; // grow evenly, capped at the spec's 200px
+		max-inline-size: rem(200);
+	}
+
+	.tab-container {
+		.tag-label,
+		.tag-count {
+			display: block;
+		}
+
+		.tab-new-count {
+			display: block;
+			block-size: 0;
+			opacity: 0;
+			transform: translateY(rem(4));
+			overflow: hidden;
+		}
+
+		&:hover,
+		&:focus-visible {
+			.tab-new-dot {
+				opacity: 0;
+				transform: scale(0.4);
+			}
+
+			.tab-new-count {
+				block-size: rem(16);
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}
 
 .categories-tabs {
 	background-color: var(--toolbar-background-color);
-	container-type: inline-size;
 
 	.tab-container {
+		block-size: rem(44);
 		border-width: rem(3) 0;
-		padding-block: rem(10);
-		padding-inline: rem(14);
-		padding-inline-start: rem(16);
+		padding-block: 0;
+		padding-inline: rem(16) rem(14);
+		transition: color 0.2s ease;
 
 		&:focus-visible {
 			outline: $focus-ring-size solid var(--cat-border);
@@ -41,13 +82,13 @@
 			}
 		}
 
-		// Default (< 820px): icon-only — label and count hidden
+		// Default (< 820px): icon-only — label and count hidden. Shown again at ≥ 820px
+		// and, for the label, on the active tab or when dragging over it.
 		.tag-label,
 		.tag-count {
 			display: none;
 		}
 
-		// Show label for active tab or when dragging over it
 		&[aria-selected='true'],
 		&.hovered {
 			.tag-label,
@@ -56,46 +97,94 @@
 			}
 		}
 
-		// Reserves width to avoid layout shift when label gets semibold weight
-		.tag-label::before {
-			display: block;
-			content: attr(title);
-			font-weight: 600;
-			block-size: 0;
-			overflow: hidden;
-			visibility: hidden;
+		.tag-label {
+			// Pin to the parent width so text-ellipsis clips the label instead of
+			// letting its min-content width overflow into the counter badge
+			inline-size: 100%;
+			transition: color 0.2s ease;
+
+			// Reserves width to avoid layout shift when label gets semibold weight
+			&::before {
+				display: block;
+				content: attr(title);
+				font-weight: 600;
+				block-size: 0;
+				overflow: hidden;
+				visibility: hidden;
+			}
 		}
 
 		.tag-count {
 			border-radius: rem(6);
 			margin-block: rem(-2);
 		}
+
+		.tab-new-dot {
+			position: absolute;
+			inset-block-start: rem(-2);
+			inset-inline-end: rem(-2);
+			inline-size: rem(8);
+			block-size: rem(8);
+			border-radius: 50%;
+			background-color: currentcolor;
+			box-shadow: 0 0 0 rem(1.5) var(--toolbar-background-color);
+			transform-origin: center;
+			pointer-events: none;
+			animation: tab-new-dot-appear 0.42s $tab-badge-ease;
+			transition:
+				opacity 0.28s $tab-badge-ease,
+				transform 0.32s $tab-badge-ease;
+		}
+
+		.tab-new-count {
+			display: none;
+			font-size: rem(11);
+			line-height: rem(16);
+			transition:
+				opacity 0.28s $tab-badge-ease,
+				block-size 0.32s $tab-badge-ease,
+				transform 0.32s $tab-badge-ease;
+		}
 	}
 
-	// Medium and above (≥ 820px): expand tabs, show labels and counts
-	@container (min-width: #{rem(820)}) {
-		.tab-wrapper {
-			max-inline-size: rem(136);
-		}
-
-		.tab-container {
-			.tag-label,
-			.tag-count {
-				display: block;
-			}
+	// Responsive behavior depends on the number of active categories tabs.
+	// When enough space is available for the number of active tabs, we reveal their labels.
+	&[data-category-count='2'],
+	&[data-category-count='3'] {
+		@include media('>=#{em(820, 16)}') {
+			@include reveal-tab-labels;
 		}
 	}
 
-	// Large (≥ 1024px): wider tabs, larger font
-	@container (min-width: #{rem(1024)}) {
-		.tab-wrapper {
-			max-inline-size: rem(200);
+	&[data-category-count='4'] {
+		@include media('>=#{em(950, 16)}') {
+			@include reveal-tab-labels;
 		}
+	}
 
-		.tab-container {
-			.tag-label {
-				font-size: rem(13);
-			}
+	&[data-category-count='5'],
+	&[data-category-count='6'] {
+		@include media('>=#{em(1100, 16)}') {
+			@include reveal-tab-labels;
 		}
+	}
+
+	// Large (≥ 1024px): larger label font
+	@include media('>=#{em(1024, 16)}') {
+		.tab-container .tag-label {
+			font-size: rem(13);
+		}
+	}
+}
+
+@keyframes tab-new-dot-appear {
+	from {
+		opacity: 0;
+		transform: scale(0.4);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
