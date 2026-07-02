@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import UserIsExternalIcon from '../../UserIsExternalIcon';
 
@@ -12,6 +13,7 @@ interface Props {
     groupMemberType: GROUP_MEMBER_TYPE;
     showMailFeatures: boolean;
     children?: ReactNode;
+    isMemberDisabled?: boolean;
 }
 
 export const GroupMemberItemWrapper = ({
@@ -20,6 +22,7 @@ export const GroupMemberItemWrapper = ({
     groupMemberType,
     showMailFeatures,
     children,
+    isMemberDisabled,
 }: Props) => {
     const mailE2EEDisabled = groupMemberType !== GROUP_MEMBER_TYPE.INTERNAL;
     return (
@@ -30,11 +33,20 @@ export const GroupMemberItemWrapper = ({
                 </Avatar>
                 <span className="flex flex-1 items-center">
                     <span className="flex flex-column justify-center mr-1">
-                        <span className="block text-ellipsis" title={memberName || ''}>
+                        <span
+                            className={clsx('block text-ellipsis', isMemberDisabled && 'color-disabled')}
+                            title={memberName || ''}
+                        >
                             {memberName}
                         </span>
                         {memberName !== memberEmail && (
-                            <span className="color-weak text-sm block text-ellipsis" title={memberEmail || ''}>
+                            <span
+                                className={clsx(
+                                    'text-sm block text-ellipsis',
+                                    isMemberDisabled ? 'color-disabled' : 'color-weak'
+                                )}
+                                title={memberEmail || ''}
+                            >
                                 {memberEmail}
                             </span>
                         )}

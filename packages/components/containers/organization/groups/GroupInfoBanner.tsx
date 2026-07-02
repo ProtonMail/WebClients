@@ -11,10 +11,10 @@ interface Props {
 const GroupInfoBanner = ({ icon, children }: Props) => {
     return (
         <Banner icon={icon} contentWrapperClassName="flex items-center">
-            <span className="color-weak">
+            <span className="flex gap-1">
                 {children}
                 {/* TODO: link should be updated once we have knowledge page for scim */}
-                <Href href="https://proton.me/support/groups" className="ml-1 color-primary inline-block">
+                <Href href="https://proton.me/support/groups" className="color-primary inline-block">
                     PLEASE UPDATE ME
                 </Href>
             </span>

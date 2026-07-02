@@ -17,7 +17,6 @@ import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -28,10 +27,12 @@ import { useFlag } from '@proton/unleash/useFlag';
 import AddUsersToGroupModal from './AddUsersToGroupModal';
 import DeleteGroupPrompt from './DeleteGroupPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';
+import GroupIcon from './GroupIcon';
 import GroupInfoBanner from './GroupInfoBanner';
 import GroupMemberList from './GroupMemberList';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import shouldShowMail from './shouldShowMail';
+import { PANEL_HEADER_HEIGHT } from './types';
 
 const ViewGroup = () => {
     const { createNotification } = useNotifications();
@@ -86,13 +87,13 @@ const ViewGroup = () => {
     return (
         <>
             <section className="flex flex-column flex-nowrap">
-                <div className="shrink-0 pl-6 py-3">
+                <div className="shrink-0 pl-6" style={{ '--h-custom': PANEL_HEADER_HEIGHT }}>
                     <PanelHeader
-                        className="border-bottom pb-4 pt-5 lg:pt-1"
+                        className="border-bottom h-custom"
                         title={
                             <div className="flex flex-column gap-1">
                                 <h2
-                                    className="text-bold text-4xl text-ellipsis"
+                                    className="text-bold text-2xl text-ellipsis"
                                     style={{ lineHeight: '2rem' }}
                                     title={Name}
                                 >
@@ -100,7 +101,7 @@ const ViewGroup = () => {
                                 </h2>
                                 {isScimGroup && (
                                     <span className="flex items-center flex-nowrap gap-1 color-weak text-sm">
-                                        <IcShareNode className="shrink-0" size={3} />
+                                        <GroupIcon className="shrink-0" size={3} isScimGroup />
                                         {c('Info').t`Synced from identity provider`}
                                     </span>
                                 )}
@@ -157,13 +158,13 @@ const ViewGroup = () => {
                 </div>
                 <div className="flex flex-column text-left pl-6 py-3 gap-4">
                     {isScimGroupPendingKeys && (
-                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0 color-weak" />}>
+                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
                             {c('Info').t`New group created via your identity provider and pending review.`}
                         </GroupInfoBanner>
                     )}
 
                     {pendingAdminMemberCount > 0 && (
-                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0 color-weak" />}>
+                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
                             {c('Info').ngettext(
                                 msgid`${pendingAdminMemberCount} new member added via your identity provider and pending review.`,
                                 `${pendingAdminMemberCount} new members added via your identity provider and pending review.`,
@@ -173,7 +174,7 @@ const ViewGroup = () => {
                     )}
 
                     {invitedMemberCount > 0 && (
-                        <GroupInfoBanner icon={<IcEnvelopeDot size={4.5} className="shrink-0 color-weak" />}>
+                        <GroupInfoBanner icon={<IcEnvelopeDot size={4.5} className="shrink-0" />}>
                             {c('Info').ngettext(
                                 msgid`${invitedMemberCount} user needs to accept their invite to start receiving group emails.`,
                                 `${invitedMemberCount} users need to accept their invite to start receiving group emails.`,
@@ -197,8 +198,8 @@ const ViewGroup = () => {
 
                     {showMailFeatures && Address.Email && (
                         <div className="flex items-center">
-                            <span className="text-bold mr-1">{c('Group detail label').t`Group address:`}</span>
-                            <span className="mr-2">{Address.Email}</span>
+                            <span className="text-bold mr-1 shrink-0">{c('Group detail label').t`Group address:`}</span>
+                            <span className="mr-2 text-break">{Address.Email}</span>
                             <Copy
                                 size="small"
                                 shape="ghost"
