@@ -219,7 +219,6 @@ export const RouterLabelContainer = ({
                     <MailboxContainerPlaceholder
                         showPlaceholder={showContentPanel}
                         welcomeFlag={welcomeFlag}
-                        labelID={labelID}
                         checkedIDs={checkedIDs}
                         handleCheckAll={handleCheckAll}
                     />

@@ -34,7 +34,7 @@ describe('SelectionPane', () => {
         const labelID = MAILBOX_LABEL_IDS.INBOX;
         const contextKey = getContextKey(labelID);
 
-        await mailTestRender(<SelectionPane labelID={labelID} onCheckAll={onCheckAll} />, {
+        await mailTestRender(<SelectionPane onCheckAll={onCheckAll} />, {
             preloadedState: {
                 elements: {
                     ...newElementsState({ params: { labelID }, beforeFirstLoad: false }),
@@ -52,7 +52,7 @@ describe('SelectionPane', () => {
         const search: SearchParameters = { keyword: 'single' };
         const contextKey = getContextKey(labelID, search);
 
-        await mailTestRender(<SelectionPane labelID={labelID} onCheckAll={onCheckAll} />, {
+        await mailTestRender(<SelectionPane onCheckAll={onCheckAll} />, {
             initialPath: '/inbox#keyword=single',
             preloadedState: {
                 // The location holds 2 conversations. Before the fix, the pane read this count.
@@ -72,7 +72,7 @@ describe('SelectionPane', () => {
     it('should show label name while loading instead of "No messages found"', async () => {
         const labelID = MAILBOX_LABEL_IDS.INBOX;
 
-        await mailTestRender(<SelectionPane labelID={labelID} onCheckAll={onCheckAll} />, {
+        await mailTestRender(<SelectionPane onCheckAll={onCheckAll} />, {
             preloadedState: {
                 elements: {
                     ...newElementsState({ params: { labelID } }),
@@ -84,13 +84,11 @@ describe('SelectionPane', () => {
     });
 
     it('should show the empty category copy when an active category has no messages', async () => {
-        const labelID = MAILBOX_LABEL_IDS.INBOX;
-
-        await mailTestRender(<SelectionPane labelID={labelID} onCheckAll={onCheckAll} />, {
+        await mailTestRender(<SelectionPane onCheckAll={onCheckAll} />, {
             preloadedState: {
                 elements: {
                     ...newElementsState({
-                        params: { labelID, categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL] },
+                        params: { labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL] },
                         beforeFirstLoad: false,
                     }),
                     pendingRequest: false,
@@ -103,12 +101,10 @@ describe('SelectionPane', () => {
     });
 
     it('should always render the description paragraph to prevent layout shift', async () => {
-        const labelID = MAILBOX_LABEL_IDS.INBOX;
-
-        await mailTestRender(<SelectionPane labelID={labelID} onCheckAll={onCheckAll} />, {
+        await mailTestRender(<SelectionPane onCheckAll={onCheckAll} />, {
             preloadedState: {
                 elements: {
-                    ...newElementsState({ params: { labelID } }),
+                    ...newElementsState({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }),
                 },
             },
         });
