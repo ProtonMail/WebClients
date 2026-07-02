@@ -1,5 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
+import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type {
     MaybeNull,
@@ -7,8 +8,8 @@ import type {
     OrganizationGetResponse,
     OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
+    PassPlanResponse,
 } from '@proton/pass/types';
-import { PlanType } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { logger } from '@proton/pass/utils/logger';
 import { getOrganization as coreGetOrganization, getOrganizationKeys } from '@proton/shared/lib/api/organization';
@@ -49,8 +50,8 @@ export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> =
     return { settings: Settings, canUpdate: CanUpdate, organization };
 };
 
-export const getOrganizationForPlan = async (plan: PlanType): Promise<MaybeNull<OrganizationState>> =>
-    plan === PlanType.BUSINESS ? getOrganization() : null;
+export const getOrganizationForPlan = async (plan: PassPlanResponse): Promise<MaybeNull<OrganizationState>> =>
+    isPassB2BPlan(plan) ? getOrganization() : null;
 
 export const setPasswordGeneratorPolicySettings = async (
     settings: OrganizationUpdatePasswordPolicyInput
