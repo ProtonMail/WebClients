@@ -18,7 +18,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 
 import { TabBadge } from './TabBadge';
-import { TabNewCount } from './TabNewCount';
 import { TabState, categoryColorClassName } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
 
@@ -91,7 +90,6 @@ export const Tab = ({ category, tabState }: Props) => {
                 >
                     {getLabelFromCategoryId(category.id)}
                 </span>
-                {shouldShowNewBadge && <TabNewCount category={category} />}
             </span>
 
             <TabBadge category={category} tabState={tabState} shouldShowCounter={shouldShowCounter} />
