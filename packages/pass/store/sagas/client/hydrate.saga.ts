@@ -1,5 +1,6 @@
 import { call, put, select } from 'redux-saga/effects';
 
+import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -18,11 +19,10 @@ import type { OrganizationState } from '@proton/pass/store/reducers/organization
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import { type Maybe, type MaybeNull, PlanType } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
-import { PLANS } from '@proton/payments/index';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
@@ -72,10 +72,8 @@ export function* hydrate(
         const addresses = Object.values(userState.addresses);
 
         /** Request #2: Fetch organization data for B2B users if not cached.
-         * Pass Essentials is currently considered as Plus and not B2B.
          * Graceful fallback to null on network failure to avoid blocking hydration. */
-        const isB2BPlan = userState.plan.Type === PlanType.BUSINESS || userState.plan.InternalName === PLANS.PASS_PRO;
-        const organization: MaybeNull<OrganizationState> = yield isB2BPlan
+        const organization: MaybeNull<OrganizationState> = yield isPassB2BPlan(userState.plan)
             ? (cachedState?.organization ?? getOrganization().catch(() => null))
             : null;
 
