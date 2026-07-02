@@ -81,8 +81,9 @@ export function TableMenu() {
           const editorContainerRect = editorContainer.getBoundingClientRect()
 
           const tableTop = tableElementRect.top + editorContainer.scrollTop - editorContainerRect.top
+          const tableLeft = tableElementRect.left + editorContainer.scrollLeft - editorContainerRect.left
 
-          const x = Math.round(tableElementRect.left + tableElementRect.width - menuElementRect.width)
+          const x = Math.round(tableLeft + tableElementRect.width - menuElementRect.width)
           const y = Math.round(tableTop - menuElementRect.height - 8)
           position = { x, y }
         }
