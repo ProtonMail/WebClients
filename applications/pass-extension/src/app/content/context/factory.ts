@@ -11,7 +11,6 @@ import { createPasskeyService } from 'proton-pass-extension/app/content/services
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { computeFeatures } from 'proton-pass-extension/lib/utils/features';
 
-import { FieldType } from '@proton/pass/fathom/labels';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -63,7 +62,6 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
             autosave: options.mainFrame ? createAutosaveService() : createAutosaveRelay(),
 
             detector: createDetectorService({
-                ...(options.mainFrame ? {} : { excludedFieldTypes: [FieldType.OTP] }),
                 root: document,
                 onBottleneck: ({ detectionTime }) => {
                     logger.info(`[Detector] Prediction bottleneck detected [${detectionTime}ms]`);
