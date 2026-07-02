@@ -365,7 +365,7 @@ const ConfigureSamlModal = ({ ssoAppInfo, domain, onClose, issuerID, callbackURL
                                         }
                                     >
                                         <div
-                                            className="rounded-xl border-dashed border-weak p-4 flex flex-column items-center justify-center min-h-custom"
+                                            className="rounded-xl border border-3 border-dashed border-weak p-4 flex flex-column items-center justify-center min-h-custom"
                                             style={{ '--min-h-custom': '10.5rem' }}
                                         >
                                             {metadata[METADATA_METHOD.XML].file === null ? (
