@@ -117,6 +117,9 @@
       "Add calendar from URL": [
         "Lägg till kalender från URL"
       ],
+      "Add company": [
+        "Lägg till företag"
+      ],
       "Add condition": [
         "Lägg till villkor"
       ],
@@ -579,6 +582,9 @@
       "Disable category": [
         "Inaktivera kategori"
       ],
+      "Disable company": [
+        "Inaktivera företag"
+      ],
       "Disable recovery phrase": [
         "Inaktivera återställningsfras"
       ],
@@ -735,6 +741,9 @@
       "Enable category": [
         "Aktivera kategori"
       ],
+      "Enable company": [
+        "Aktivera företag"
+      ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
@@ -779,6 +788,9 @@
       ],
       "Export key before deleting": [
         "Exportera nyckel innan borttagning"
+      ],
+      "Export overview as CSV": [
+        "Exportera översikt som CSV"
       ],
       "Extend": [
         "Utöka"
@@ -1056,9 +1068,6 @@
       "Load more": [
         "Ladda mer"
       ],
-      "Loading verification": [
-        "Laddar verifiering"
-      ],
       "Lost access to your 2FA device?": [
         "Förlorat åtkomst till din 2FA-enhet?"
       ],
@@ -1067,6 +1076,9 @@
       ],
       "Make key primary": [
         "Gör nyckel primär"
+      ],
+      "Manage": [
+        "Hantera"
       ],
       "Manage addresses": [
         "Hantera adresser"
@@ -3911,6 +3923,29 @@
         "vit"
       ]
     },
+    "Column header": {
+      "Billing period": [
+        "Faktureringsperiod"
+      ],
+      "Company": [
+        "Företag"
+      ],
+      "Managed companies": [
+        "Hanterade företag"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total billed seats": [
+        "Totalt fakturerade användarplatser"
+      ],
+      "Total cost": [
+        "Total kostnad"
+      ],
+      "Used / assigned seats": [
+        "Använda/tilldelade användarplatser"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "börjar med"
@@ -5398,6 +5433,9 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
+      ],
+      "You can reconnect this address at any time.": [
+        "Du kan återansluta denna adress när som helst."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
@@ -8471,6 +8509,9 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
+      "Insert your security key into your device.": [
+        "Infoga din säkerhetsnyckel i din enhet."
+      ],
       "Security key": [
         "Säkerhetsnyckel"
       ],
@@ -8894,6 +8935,9 @@
     "group_modal": {
       "General": [
         "Allmänt"
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ],
       "Roles and permissions": [
         "Roller och behörigheter"
@@ -9551,6 +9595,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } delar aldrig din information med tredje part. Data kommer från ${ BRAND_NAME }s egna analyser och Constella Intelligence."
       ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
@@ -9997,6 +10044,9 @@
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
       ],
+      "All data and settings are preserved": [
+        "All data och alla inställningar är bevarad"
+      ],
       "All inactive members deleted": [
         "Alla inaktiva medlemmar borttagna"
       ],
@@ -10186,6 +10236,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Tillgänglig på macOS, Windows och Linux."
+      ],
+      "Average": [
+        "Genomsnittlig"
       ],
       "Awaiting transaction": [
         "Väntar på transaktion"
@@ -10618,6 +10671,9 @@
       ],
       "Edit link": [
         "Redigera länk"
+      ],
+      "Editing requires permission": [
+        "Redigering kräver behörighet"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfiguration sparad"
@@ -11414,6 +11470,9 @@
       "New activity data will stop being collected and shown.": [
         "Ny aktivitetsdata kommer att sluta samlas in och visas."
       ],
+      "New group created via your identity provider and pending review.": [
+        "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
+      ],
       "New sidebar": [
         "Ny sidopanel"
       ],
@@ -11626,6 +11685,9 @@
       "per month, billed at ${ price }": [
         "per månad, faktureras med ${ price }"
       ],
+      "Per seat/month": [
+        "Per användarplats/månad"
+      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Uppmanar dig regelbundet att verifiera ditt lösenord för ${ BRAND_NAME } för att säkerställa att du inte glömmer det. Du kommer att bli tillfrågad mer sällan med tiden."
       ],
@@ -11648,9 +11710,6 @@
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Be ägaren att direkt bjuda in dig till dokumentet."
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentisera ditt kort på verifieringsfliken."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentisera din betalning på verifieringsfliken."
@@ -11696,9 +11755,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Försök igen med en annan betalningsmetod eller kontakta din bank."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -11940,6 +11996,9 @@
       "Set password": [
         "Ställ in lösenord"
       ],
+      "Set the name, status, and assigned seats": [
+        "Ställ in namnet, status och tilldelade användarplatser"
+      ],
       "Set up your organization": [
         "Ställ in din organisation"
       ],
@@ -12170,6 +12229,9 @@
       ],
       "The calendar will be removed from your account.": [
         "Kalendern kommer att tas bort från ditt konto."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Företaget och alla dess medlemmar kommer förlora åtkomst omedelbart."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Mörka webben är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
@@ -12774,6 +12836,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Vi skickar en återställningskod till ${ boldValue }."
       ],
+      "What happens:": [
+        "Vad hände:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
       ],
@@ -12833,6 +12898,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du snabbt och enkelt skicka e-post till alla personer i en specificerad grupp."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Med hanterade företag kan du lägga till, redigera och ta bort åtkomst för organisationer du övervakar."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med ditt nuvarande paket kan du endast ta emot meddelanden med din adress @pm.me. Uppgradera för att skicka meddelanden och skapa ytterligare adresser med @pm.me."
@@ -12912,6 +12980,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
+      ],
+      "You can enable this company again at any time.": [
+        "Du kan aktivera detta företag igen när som helst."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan tillämpa lösenordsreglerna som medlemmar i din organisation använder när de skapar eller återställer lösenordet till sitt ${ BRAND_NAME }-konto."
@@ -13058,9 +13129,6 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Du kommer återfå fullständig eller delvis åtkomst till dina krypterade data."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
@@ -13210,6 +13278,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ditt supportärende har stängts. Tack för att du kontaktade supporten för ${ BRAND_NAME }."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Din totala månadskostnad för alla hanterade företag."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
@@ -14026,6 +14097,9 @@
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service-URL"
       ],
+      "Assigned seats": [
+        "Tilldelade användarplatser"
+      ],
       "Attach public key": [
         "Bifoga offentlig nyckel"
       ],
@@ -14080,6 +14154,9 @@
       "Autosuggest": [
         "Föreslå automatiskt"
       ],
+      "Average": [
+        "Genomsnittlig"
+      ],
       "Awarded": [
         "Belönades"
       ],
@@ -14094,6 +14171,9 @@
       ],
       "Billed monthly.": [
         "Faktureras månadsvis."
+      ],
+      "Billed seats": [
+        "Fakturerade användarplatser"
       ],
       "Billing cycle": [
         "Faktureringsperiod"
@@ -14191,6 +14271,9 @@
       "Common passwords": [
         "Vanliga lösenord"
       ],
+      "Companies": [
+        "Företag"
+      ],
       "Company": [
         "Företag"
       ],
@@ -14259,6 +14342,9 @@
       ],
       "Copy IP address to clipboard": [
         "Kopiera IP-adress till urklipp"
+      ],
+      "Cost": [
+        "Kostar"
       ],
       "Could you please let us know which provider?": [
         "Kan du berätta vilken leverantör?"
@@ -14897,6 +14983,9 @@
       "Password": [
         "Lösenord"
       ],
+      "Password check-ins": [
+        "Lösenordsincheckningar"
+      ],
       "Password strength": [
         "Lösenordsstyrka"
       ],
@@ -15043,6 +15132,9 @@
       ],
       "Search for a name or email": [
         "Sök efter ett namn eller e-post"
+      ],
+      "Seats": [
+        "Användarplatser"
       ],
       "Second password": [
         "Andra lösenord"
@@ -15245,6 +15337,9 @@
       ],
       "Token name": [
         "Tokennamn"
+      ],
+      "Total cost": [
+        "Total kostnad"
       ],
       "Transactions": [
         "Transaktioner"
@@ -16394,12 +16489,6 @@
       ],
       "Create a new ${ appName } account": [
         "Skapa ett nytt ${ appName }-konto"
-      ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Njut av två veckor med ${ BRAND_NAME } gratis"
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Upplev äkta integritet online. Skydda dina data med ${ BRAND_NAME } gratis under de kommande 14 dagarna."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Hitta användarnamnet för ditt ${ BRAND_NAME }-konto"
@@ -19078,6 +19167,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Se till att du memorerar eller förvarar ditt lösenord säkert eftersom det är nyckeln till att dekryptera dina data."
+      ],
+      "Turn off check-ins": [
+        "Stäng av incheckningar"
+      ],
+      "Turn off password check-ins?": [
+        "Stäng av lösenordsincheckningar?"
       ]
     },
     "passwordless": {
@@ -19597,6 +19692,9 @@
       "Enter a name": [
         "Ange ett namn"
       ],
+      "Enter company name": [
+        "Ange företagsnamn"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -19653,6 +19751,9 @@
       ],
       "Search": [
         "Sök"
+      ],
+      "Search for a company": [
+        "Sök efter ett företag"
       ],
       "Search for a user or address": [
         "Sök efter en användare eller adress"
@@ -20133,6 +20234,9 @@
       "Weak": [
         "Svag"
       ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Du är delvis där, men inte säker än. Ett glömt lösenord kan fortfarande innebära att du förlorar dina e-postmeddelanden, filer och lösenord."
+      ],
       "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
         "Du löper fortfarande hög risk. Om du glömmer ditt lösenord kan du förlora din e-post, dina filer och lösenord permanent."
       ],
@@ -20141,6 +20245,12 @@
       ],
       "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
         "Ditt konto har inga inställda återställningsalternativ. Om du förlorar ditt lösenord kommer du förlora åtkomst till din e-post, dina filer och lösenord permanent."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Ditt konto är inte helt skyddat. Ett glömt lösenord kan fortfarande innebära att du förlorar åtkomsten till dina e-postmeddelanden, filer och lösenord."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Din återställningsinställning är ofullständig. Ett glömt lösenord kan fortfarande innebära att du förlorar åtkomsten till dina e-postmeddelanden, filer och lösenord."
       ]
     },
     "Recovery score item": {
@@ -20783,6 +20893,9 @@
       "to recover your account if you're ever locked out": [
         "för att återställa ditt konto om du någon gång blir utelåst"
       ],
+      "update it now": [
+        "uppdatera det nu"
+      ],
       "Update your recovery phrase": [
         "Öppna din återställningsfras"
       ],
@@ -21064,6 +21177,12 @@
       "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Om du glömmer ditt lösenord kan du logga in med en QR-kod. Allt du behöver göra är att vara inloggad på en ${ BRAND_NAME }-tjänst på annan enhet."
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Om din e-post för återställning har ändrats, ${ updateEmailLink }"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Om din telefon för återställning har ändrats, ${ updatePhoneLink }"
+      ],
       "Later": [
         "Senare"
       ],
@@ -21075,6 +21194,9 @@
       ],
       "Saved recovery phrase": [
         "Sparade återställningsfras"
+      ],
+      "Send verification code": [
+        "Skicka verifieringskod"
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Du måste redan ha ett ${ BRAND_NAME }-konto."
@@ -21088,14 +21210,32 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Detta kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi regelbundet att be dig ange det."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "För att vara säker på att e-postadressen är din, ange verifieringskoden skickad till ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "För att vara säker på att telefonnumret är ditt, ange verifieringskoden skickad till ${ boldPhoneNumber }."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "För att säkerställa att denna adress verkligen är din kommer vi skicka ett e-postmeddelande med en verifieringskod."
+      ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "För att säkerställa att denna adress verkligen är din skickar vi ett e-postmeddelande med en verifieringslänk."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "För att säkerställa att detta nummer verkligen är ditt kommer vi skicka ett SMS med en verifieringskod."
+      ],
+      "Update": [
+        "Uppdatera"
+      ],
+      "Update recovery email": [
+        "Uppdatera e-post för återställning"
+      ],
+      "Update recovery phone": [
+        "Uppdatera telefon för återställning"
       ],
       "Verified password": [
         "Verifierat lösenord"
@@ -21126,6 +21266,9 @@
       ],
       "Verify your recovery phone": [
         "Verifiera din telefon för återställning"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
       ],
       "You can use email verification to regain access to your account if you forget your password.": [
         "Du kan använda e-postverifiering för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
@@ -21223,6 +21366,9 @@
       "${ pendingUsersCount } user synced.": [
         "${ pendingUsersCount } användare synkroniserad.",
         "${ pendingUsersCount } användare synkroniserade."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } och ${ groupsText } synkroniserade."
       ],
       "Approve changes from your identity provider": [
         "Godkänn ändringar från din identitetsleverantör"
@@ -22928,6 +23074,9 @@
       "... waiting": [
         "… väntar"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Add a phone number": [
         "Lägg till ett telefonnummer"
       ],
@@ -22945,6 +23094,9 @@
       ],
       "Disable recovery by phone": [
         "Inaktivera återställning med telefon"
+      ],
+      "Disabled": [
+        "Inaktiverad"
       ],
       "Generate a recovery phrase": [
         "Generera en återställningsfras"
@@ -23711,15 +23863,21 @@
       ],
       "View VPN session details for your organization.": [
         "Visa VPN-sessionsdetaljer för din organisation."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Med hanterade företag kan du lägga till, redigera och ta bort åtkomst för organisationer du övervakar."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "Din totala månadskostnad för alla hanterade företag."
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } aktiverad"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } inaktiverad"
+      ],
+      "${ data.name } added": [
+        "${ data.name } tillagd"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } uppdaterad"
+      ],
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
       ],
@@ -23848,6 +24006,12 @@
       ],
       "Organization name updated": [
         "Organisationsnamn uppdaterad"
+      ],
+      "Password check-ins disabled": [
+        "Lösenordsincheckningar inaktiverad"
+      ],
+      "Password check-ins enabled": [
+        "Lösenordsincheckningar aktiverad"
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
@@ -24398,6 +24562,9 @@
       "Add categories": [
         "Lägg till kategorier"
       ],
+      "Add company": [
+        "Lägg till företag"
+      ],
       "Add contact group name": [
         "Lägg till kontaktgruppens namn"
       ],
@@ -24886,6 +25053,9 @@
       "Disable categories?": [
         "Inaktivera kategorier?"
       ],
+      "Disable company": [
+        "Inaktivera företag"
+      ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
       ],
@@ -24948,6 +25118,9 @@
       ],
       "Edit billing address": [
         "Redigera faktureringsadress"
+      ],
+      "Edit company": [
+        "Redigera företag"
       ],
       "Edit countries": [
         "Redigera länder"
@@ -25524,9 +25697,6 @@
       "Payment verification": [
         "Betalningsverifiering"
       ],
-      "PayPal verification failed": [
-        "Verifiering av PayPal misslyckades"
-      ],
       "Pending invitations": [
         "Väntande inbjudningar"
       ],
@@ -25550,6 +25720,9 @@
       ],
       "Previous": [
         "Föregående"
+      ],
+      "Previous billing periods": [
+        "Föregående faktureringsperioder"
       ],
       "Priority support:": [
         "Prioriterad support:"
@@ -26577,6 +26750,9 @@
       "Group membership paused": [
         "Gruppmedlemskap pausad"
       ],
+      "Role assignment paused": [
+        "Rolltilldelning pausad"
+      ],
       "Sending member invitation": [
         "Skickar medlemsinbjudan"
       ],
@@ -26696,6 +26872,9 @@
       ],
       "Payment reversal": [
         "Betalning återkallad"
+      ],
+      "Prepayment": [
+        "Förskottsbetalning"
       ],
       "Refund": [
         "Återbetalning"
@@ -26950,6 +27129,12 @@
       ],
       "Invitation email": [
         "E-postinbjudan"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ],
       "Name": [
         "Namn"
@@ -27307,6 +27492,9 @@
       ],
       "Are you sure you want to remove your recovery email?": [
         "Är du säker på att du vill ta bort din e-post för återställning?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Är du säker på att du vill ta bort ditt telefonnummer för återställning?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."
