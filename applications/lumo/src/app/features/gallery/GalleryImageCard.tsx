@@ -10,6 +10,7 @@ import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
 import { useLazyAttachment } from '../../hooks/useLazyAttachment';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
+import { downloadImage } from '../../remote/lumoImageDownload';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
 
@@ -45,15 +46,10 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
     }, []);
 
     const handleDownload = useCallback(
-        (e?: React.MouseEvent) => {
+        async (e?: React.MouseEvent) => {
             e?.stopPropagation();
             if (!imageDataUrl) return;
-            const link = document.createElement('a');
-            link.href = imageDataUrl;
-            link.download = attachment?.filename || `generated-image-${attachmentId}.png`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            await downloadImage(imageDataUrl, attachment?.filename || `generated-image-${attachmentId}.png`);
         },
         [imageDataUrl, attachment, attachmentId]
     );
