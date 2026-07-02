@@ -4,10 +4,12 @@ import { all, cancel, fork, select, take } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
-import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
+import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
+import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { groupInvitesChannel } from '@proton/pass/store/sagas/events/channel.group-invites';
-import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectLockSetupRequired, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
@@ -34,12 +36,36 @@ function* eventsWorker(options: RootSagaOptions): Generator {
     );
 }
 
-export default function* watcher(options: RootSagaOptions): Generator {
-    while (yield take(startEventPolling.match)) {
-        logger.info(`[ServerEvents] start polling all event channels`);
-        const events = (yield fork(eventsWorker, options)) as Task;
-        const action = (yield take(stopEventPolling.match)) as Action;
-        logger.info(`[ServerEvents] cancelling all event channels [${action.type}]`);
-        yield cancel(events);
+const EVENT_POLLING_TRIGGERS = [
+    startEventPolling.match,
+    stopEventPolling.match,
+    lockCreateSuccess.match,
+    getOrganizationSettings.success.match,
+];
+
+/** Gate polling on lock setup: while it's required the user never reaches the
+ * lobby, so channels stay paused despite `startEventPolling`. `requested` tracks
+ * intent separately from the gate so polling auto-resumes once setup completes. */
+export default function* watcher(options: RootSagaOptions, worker = eventsWorker): Generator {
+    let requested = false;
+    let task: MaybeNull<Task> = null;
+
+    while (true) {
+        const action = (yield take(EVENT_POLLING_TRIGGERS)) as Action;
+
+        if (startEventPolling.match(action)) requested = true;
+        else if (stopEventPolling.match(action)) requested = false;
+
+        const lockSetupRequired = (yield select(selectLockSetupRequired)) as boolean;
+        const shouldPoll = requested && !lockSetupRequired;
+
+        if (shouldPoll && !task) {
+            logger.info(`[ServerEvents] start polling all event channels`);
+            task = (yield fork(worker, options)) as Task;
+        } else if (!shouldPoll && task) {
+            logger.info(`[ServerEvents] cancelling all event channels [${action.type}]`);
+            yield cancel(task);
+            task = null;
+        }
     }
 }
