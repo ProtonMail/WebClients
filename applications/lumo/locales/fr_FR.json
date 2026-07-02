@@ -1160,10 +1160,10 @@
         "Le code de ${ LUMO_SHORT_APP_NAME } est entièrement open source, ce qui permet à quiconque de vérifier de manière indépendante qu'il est privé et sécurisé — et que nous n'utilisons jamais vos données pour entraîner le modèle."
       ],
       "1 TB cloud storage": [
-        "1 To de stockage cloud"
+        "1 To d'espace de stockage cloud"
       ],
-      "Advanced AI models": [
-        "Modèles d'IA avancés"
+      "Administrative tools": [
+        "Outils d'administration"
       ],
       "And much more": [
         "Et bien plus encore"
@@ -1171,32 +1171,26 @@
       "Everything in Business": [
         "Tout ce qu'il y a dans Business"
       ],
-      "Everything in Plus": [
-        "Tout ce qui est inclus dans Plus"
+      "More image generations": [
+        "Plus de générations d'images"
       ],
-      "Extended chat history": [
-        "Historique de chat étendu"
+      "More Max model usage": [
+        "Plus d'utilisation du modèle Max"
       ],
-      "Multiple large uploads": [
-        "Plusieurs fichiers volumineux à charger"
+      "More messages & chat history": [
+        "Plus de messages et historique des discussions"
       ],
       "Password manager": [
         "Gestionnaire de mots de passe"
       ],
-      "Priority access": [
-        "Accès prioritaire"
-      ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Grâce au chiffrement zéro accès, vos conversations sauvegardées ne peuvent être déchiffrées et lues que sur votre appareil. Ni ${ BRAND_NAME }, ni personne d’autre ne peut y accéder."
       ],
-      "Unlimited daily chats": [
-        "Chats quotidiens illimités"
+      "Unlimited Custom Lumos": [
+        "Lumos personnalisés illimités"
       ],
-      "Unlimited projects": [
+      "Unlimited Projects": [
         "Projets illimités"
-      ],
-      "User management": [
-        "Gestion des utilisateurs"
       ],
       "Video meetings": [
         "Réunions vidéo"
@@ -1466,9 +1460,6 @@
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Le fichier \"${ file.name }\" est trop volumineux (${ fileSizeFormatted }). La taille maximale autorisée est de ${ maxSizeFormatted }."
       ],
-      "File already added: ${ result.fileName }": [
-        "Fichier déjà ajouté : ${ result.fileName }"
-      ],
       "File uploaded but failed to add to knowledge base": [
         "Le fichier a été importé mais n'a pas pu être ajouté à la base de connaissances"
       ],
@@ -1646,9 +1637,6 @@
       ]
     },
     "collider_2025: Feature": {
-      "New": [
-        "Nouveau"
-      ],
       "What's new": [
         "Nouveautés"
       ]
@@ -1903,9 +1891,6 @@
       "Files automatically retrieved based on your questions.": [
         "Les fichiers ont été automatiquement récupérés en fonction de vos questions."
       ],
-      "Files included in the next model request.": [
-        "Fichiers inclus dans la prochaine requête au modèle."
-      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pour chaque jour, jetons moyens par appel API (jetons ÷ appels, ou 0 si aucun appel)."
       ],
@@ -2107,11 +2092,14 @@
       "There was an error processing this file.": [
         "Une erreur s'est produite lors du traitement de ce fichier."
       ],
+      "These files are no longer referred to in this conversation.": [
+        "Ces fichiers ne sont plus mentionnés dans cette conversation."
+      ],
+      "These files are referred to in the conversation.": [
+        "Ces fichiers sont mentionnés dans la conversation."
+      ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Ces fichiers correspondaient à des messages résumés et ne sont plus envoyés au modèle."
-      ],
-      "These files won't be used for future questions.": [
-        "Ces fichiers ne seront pas utilisés pour les questions futures."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Cette conversation sera supprimée dans 2 jours. Passez à ${ LUMO_SHORT_APP_NAME } Plus pour la conserver."
@@ -2541,8 +2529,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
-        "Professionnel"
+        "Business"
+      ],
+      "Personal": [
+        "Personnel"
       ],
       "Plus": [
         "Plus"
@@ -2951,6 +2948,9 @@
       "Elevate your business AI experience": [
         "Améliorez votre expérience d'IA en entreprise"
       ],
+      "From only": [
+        "À partir de seulement"
+      ],
       "Get": [
         "Obtenir"
       ],
@@ -2963,8 +2963,17 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Obtenez ${ LUMO_SHORT_APP_NAME } Plus"
       ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Obtenir ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Passez à ${ LUMO_SHORT_APP_NAME } Plus"
+        "Passer à ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Passer à ${ LUMO_SHORT_APP_NAME } Pro"
       ]
     },
     "collider_2025: Warning": {
@@ -3244,7 +3253,7 @@
         "Dissocier le dossier"
       ],
       "Upgrade for more custom ${ LUMO_SHORT_APP_NAME }s": [
-        "Passez à la version supérieure pour plus de personnalisation ${ LUMO_SHORT_APP_NAME }s"
+        "Changer d'abonnement pour plus de personnalisation ${ LUMO_SHORT_APP_NAME }s"
       ],
       "Upgrade to Plus": [
         "Passer à Plus"
@@ -3511,7 +3520,7 @@
         "valeur publicitaire"
       ],
       "Advanced models, a new look, new features, and the same privacy you trust. Click through to see what’s new.": [
-        "Des modèles avancés, une nouvelle interface, de nouvelles fonctionnalités et le même respect de la vie privée en lequel vous avez confiance. Cliquez ici pour découvrir les nouveautés."
+        "Des modèles avancés, une nouvelle interface, de nouvelles fonctionnalités et le même respect de la vie privée en lequel vous avez confiance. Cliquez sur continuer pour découvrir les nouveautés."
       ],
       "Agents turn a chat into a focused assistant with its own instructions.": [
         "Les agents transforment les discussions en assistants spécialisés avec leurs propres instructions."
@@ -3538,7 +3547,7 @@
         "Posez une question pour commencer. Votre conversation est privée."
       ],
       "Assembling your profile…": [
-        "Création de votre profil…"
+        "Création de votre profil en cours…"
       ],
       "Auto-retrieved": [
         "Récupéré automatiquement"
@@ -3577,7 +3586,7 @@
         "Créez des assistants spécialisés avec leurs propres instructions. Configurez-les une seule fois et ils respecteront vos préférences à chaque fois."
       ],
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
-        "Créez des visuels à partir d'une invite, modifier des photos, analysez des graphiques ou transformez des croquis rudimentaires en graphismes aboutis."
+        "Créez des visuels à partir d'un prompt, modifier des photos, analysez des graphiques ou transformez des croquis rudimentaires en graphismes aboutis."
       ],
       "Current chat:": [
         "Chat en cours :"
@@ -3598,7 +3607,7 @@
         "Les fichiers Drive ne sont pas disponibles pour les utilisateurs invités."
       ],
       "Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.": [
-        "Chaque conversation avec une IA laisse des traces. Votre emploi. Votre santé. Vos relations. Même votre adresse. Téléchargez vos données d'IA et découvrez ce que les géants du numérique pourraient déduire de vos seuls mots. Mais contrairement à eux, nous, nous ne pouvons pas y accéder."
+        "Chaque conversation avec une IA laisse des traces. Votre emploi. Votre santé. Vos relations. Même votre adresse. Téléchargez vos données IA et découvrez ce que les géants du numérique pourraient déduire de vos seuls mots. Mais contrairement à eux, nous, nous ne pouvons pas y accéder."
       ],
       "Example prompts shown when a conversation begins.": [
         "Exemples de prompts affichés lorsqu'une conversation commence."
@@ -3640,7 +3649,7 @@
         "Initialisation de Drive en cours..."
       ],
       "Keep names, addresses, health details, and financial specifics out of your prompts.": [
-        "N'incluez pas les noms, adresses, informations médicales et données financières dans vos messages."
+        "N'incluez pas les noms, les adresses, informations médicales et données financières dans vos messages."
       ],
       "Learn more about how project knowledge works": [
         "En savoir plus sur le fonctionnement des connaissances du projet"
@@ -3673,7 +3682,7 @@
         "Examinez, téléchargez et supprimez périodiquement les données que les services d'IA détiennent sur vous."
       ],
       "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
-        "Choisissez des services qui ne s'appuient pas sur vos conversations ou ne les vendent pas — comme ${ LUMO_SHORT_APP_NAME }, qui ne peut pas lire vos discussions."
+        "Choisissez des services qui ne s'appuient pas sur vos conversations ou ne les vendent pas, comme ${ LUMO_SHORT_APP_NAME }, qui ne peut pas lire vos discussions."
       ],
       "Processing file...": [
         "Traitement du fichier..."
@@ -3700,7 +3709,7 @@
         "drapeaux rouges"
       ],
       "Scoring how much you revealed…": [
-        "Évaluation de ce que vous avez révélé…"
+        "Évaluation de ce que vous avez révélé en cours…"
       ],
       "See the profile an AI company can piece together from your conversations alone.": [
         "Découvrez le profil qu'une entreprise spécialisée en IA peut reconstituer à partir de vos seules conversations."
@@ -3712,7 +3721,7 @@
         "Une erreur est survenue lors de l'analyse de cette exportation. Veuillez réessayer."
       ],
       "Spotting the patterns in what you typed…": [
-        "Détection des schémas dans ce que vous avez écrit…"
+        "Détection des schémas dans ce que vous avez écrit en cours…"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
         "Plus la barre est remplie, plus les géants de la tech peuvent reconstituer d'informations sur ce domaine à partir de vos discussions. Plus elle est basse, mieux c'est. Survolez une ligne pour voir ce qui vous a trahi."
@@ -3766,7 +3775,7 @@
         "L'utilisation de ${ DRIVE_APP_NAME } permet à ${ LUMO_SHORT_APP_NAME } de travailler avec des fichiers plus volumineux."
       ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
-        "Nous enregistrerons votre carte afin que vous puissiez la joindre à la publication — les réseaux sociaux ne peuvent pas ajouter l'image pour vous."
+        "Nous enregistrerons votre carte afin que vous puissiez la joindre à la publication, les réseaux sociaux ne peuvent pas ajouter l'image pour vous."
       ],
       "Working out what Big Tech AI could infer…": [
         "Déterminer ce que l'IA des géants de la tech pourrait déduire…"
@@ -3893,7 +3902,7 @@
         "Créée le"
       ],
       "Data brokers": [
-        "courtiers en données"
+        "Courtiers en données"
       ],
       "Describe what to change": [
         "Décrivez ce qui doit être changé"
@@ -3953,7 +3962,7 @@
         "Tarification personnalisée"
       ],
       "Politics": [
-        "Politique"
+        "Politiques"
       ],
       "Project Instructions (optional)": [
         "Instructions du projet (facultatif)"
@@ -3968,7 +3977,7 @@
         "Partager avec"
       ],
       "Thick": [
-        "Gras"
+        "Épais"
       ],
       "Tip": [
         "Astuce"
@@ -4201,7 +4210,7 @@
         "Lecture des connaissances de ${ BRAND_NAME } en cours"
       ],
       "Checking prices": [
-        "Vérifier les prix"
+        "Vérification des prix en cours"
       ],
       "Checking the weather": [
         "Consulter la météo"
@@ -4222,7 +4231,7 @@
         "L'image a été modifiée."
       ],
       "Editing image": [
-        "Retouche d'image"
+        "Retouche d'image en cours"
       ],
       "Editing image...": [
         "Modification de l'image en cours..."
@@ -4267,7 +4276,7 @@
         "J'ai consulté les prévisions météo."
       ],
       "Looking at your image": [
-        "En regardant votre image"
+        "Analyse de votre image en cours"
       ],
       "Looking at your image...": [
         "Analyse de votre image en cours..."
@@ -4279,7 +4288,7 @@
         "Recherche en ligne"
       ],
       "Looking up market data": [
-        "Recherche de données de marché"
+        "Recherche de données de marché en cours"
       ],
       "Looking up the forecast": [
         "Je consulte les prévisions"
@@ -4324,7 +4333,7 @@
         "Réflexion..."
       ],
       "Thought this through": [
-        "J'y ai bien réfléchi."
+        "J'y ai bien réfléchi"
       ],
       "Updated your image": [
         "Votre image a été mise à jour."
@@ -4336,7 +4345,7 @@
         "J'ai utilisé un outil"
       ],
       "Using a tool": [
-        "Utiliser un outil"
+        "Utilisations d'un outil en cours"
       ],
       "Worked on an image": [
         "J'ai travaillé sur une image"
@@ -4424,7 +4433,7 @@
         "L'IA en sait plus sur vous que vous ne le pensez."
       ],
       "AI Paper Trail": [
-        "Traces d'IA"
+        "Traçabilité de l'IA"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Un assistant IA devrait vous donner les moyens d'agir, et non vous exploiter pour vos données."
@@ -4433,7 +4442,7 @@
         "Meilleure recherche web"
       ],
       "Building your paper trail": [
-        "Constituer votre dossier de documentation"
+        "Constituer votre dossier documentaire"
       ],
       "Built by the team that knows privacy": [
         "Créé par l'équipe experte en confidentialité"
@@ -6530,9 +6539,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Authentifiez votre carte dans l'onglet de vérification."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Authentifiez votre paiement dans l'onglet de vérification."
       ],
@@ -6541,9 +6547,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
@@ -6739,9 +6742,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
@@ -7199,7 +7199,7 @@
         "Ceci force la bannière du compositeur en ligne à passer à l'état « en approche » ou « à la limite » afin que vous puissiez la prévisualiser dans n'importe quel contexte."
       ],
       "FPS": [
-        "FPS"
+        "IPS"
       ],
       "Generation errors": [
         "Erreurs de génération"
@@ -9447,6 +9447,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "par mois (facturation annuelle)"
+      ],
+      "per user/month, billed annually": [
+        "par utilisateur/mois, facturé annuellement"
       ]
     },
     "Success": {
@@ -9684,8 +9687,8 @@
       "Payment verification": [
         "Vérification du paiement"
       ],
-      "PayPal verification failed": [
-        "La vérification PayPal n'a pas abouti."
+      "Plan type": [
+        "Type de plan"
       ],
       "Processing...": [
         "Traitement en cours…"

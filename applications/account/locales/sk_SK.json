@@ -117,6 +117,9 @@
       "Add calendar from URL": [
         "Pridať kalendár z URL"
       ],
+      "Add company": [
+        "Pridať spoločnosť"
+      ],
       "Add condition": [
         "Pridať podmienku"
       ],
@@ -582,6 +585,9 @@
       "Disable category": [
         "Deaktivovať kategóriu"
       ],
+      "Disable company": [
+        "Deaktivovať spoločnosť"
+      ],
       "Disable recovery phrase": [
         "Zakázať obnovovaciu frázu"
       ],
@@ -738,6 +744,9 @@
       "Enable category": [
         "Povoliť kategóriu"
       ],
+      "Enable company": [
+        "Povoliť spoločnosť"
+      ],
       "enable desktop notifications": [
         "povoliť notifikácie na pracovnej ploche"
       ],
@@ -777,11 +786,17 @@
       "Export as CSV": [
         "Exportovať ako CSV"
       ],
+      "Export breakdown by company as ZIP": [
+        "Exportovať vyúčtovanie podľa spoločností vo formáte ZIP"
+      ],
       "Export key": [
         "Export kľúča"
       ],
       "Export key before deleting": [
         "Pred zmazaním exportovať kľúč"
+      ],
+      "Export overview as CSV": [
+        "Exportovať prehľad ako CSV"
       ],
       "Extend": [
         "Rozšíriť"
@@ -1059,9 +1074,6 @@
       "Load more": [
         "Načítať viac"
       ],
-      "Loading verification": [
-        "Načítavanie overenia"
-      ],
       "Lost access to your 2FA device?": [
         "Stratili ste prístup k 2FA zariadeniu ?"
       ],
@@ -1070,6 +1082,9 @@
       ],
       "Make key primary": [
         "Nastaviť kľúč ako primárny"
+      ],
+      "Manage": [
+        "Spravovať"
       ],
       "Manage addresses": [
         "Spravovať adresy"
@@ -4093,6 +4108,29 @@
         "biela"
       ]
     },
+    "Column header": {
+      "Billing period": [
+        "Fakturačné obdobie"
+      ],
+      "Company": [
+        "Spoločnosť"
+      ],
+      "Managed companies": [
+        "Spravované spoločnosti"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Total billed seats": [
+        "Celkom účtovaných licencií"
+      ],
+      "Total cost": [
+        "Celkové náklady"
+      ],
+      "Used / assigned seats": [
+        "Využité / priradené licencie"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "začína s"
@@ -5514,6 +5552,15 @@
       "No one in your organization can connect to shared servers.": [
         "Nikto vo vašej organizácie sa nemôže pripojiť k zdieľaným serverom."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Upozorňujeme, že emaily zaslané na túto adresu, a to aj z iných adries ${ BRAND_NAME }, už nebudú end-to-end šifrované."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení a deaktivácii už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Po odpojení už nebudete môcť ako ${ address.Email } v službe ${ BRAND_NAME } odosielať ani prijímať emaily. Emaily odoslané na túto adresu budú naďalej prichádzať do Gmailu, nie však do aplikácie ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
       ],
@@ -5622,11 +5669,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Stále sa môžete prihlásiť pomocou tejto adresy a kedykoľvek sa znova pripojiť."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Na prijímanie a odosielanie emailov v službe ${ BRAND_NAME } už nebudete môcť používať adresu ${ address.Email }. Upozorňujeme tiež, že správy odosielané na túto adresu zo služby ${ BRAND_NAME } už nebudú end-to-end šifrované."
+      "You can reconnect this address at any time.": [
+        "Túto adresu môžete kedykoľvek opäť pripojiť."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Preposielate ${ numAddressesOrSync } Gmailovú adresu do aplikácie ${ MAIL_APP_NAME }.",
@@ -7512,6 +7556,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Na tejto adrese možno meniť len veľké písmená a interpunkciu (bodky, pomlčky a podčiarkovníky)."
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
@@ -9909,6 +9956,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nikdy nezdieľa vaše informácie s tretími stranami. Údaje pochádzajú z vlastných analýz spoločnosti ${ BRAND_NAME } a spoločnosti Constella Intelligence."
       ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
       ],
@@ -10446,6 +10496,9 @@
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
+      "All data and settings are preserved": [
+        "Všetky údaje a nastavenia zostanú zachované"
+      ],
       "All inactive members deleted": [
         "Všetci neaktívni používatelia boli vymazaní"
       ],
@@ -10605,6 +10658,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Požiadajte správcu organizácie o nastavenie brány."
       ],
+      "Assigned seats won't be billed while disabled": [
+        "Za pridelené licencie sa nebude účtovať poplatok, pokiaľ sú deaktivované"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
@@ -10649,6 +10705,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Dostupné pre macOS, Windows a Linux."
+      ],
+      "Average": [
+        "Priemerne"
       ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
@@ -11898,6 +11957,9 @@
       "Member": [
         "Člen"
       ],
+      "Members are signed out and can't sign back in": [
+        "Členovia sú odhlásení a nemôžu sa znovu prihlásiť"
+      ],
       "Merged": [
         "Zlúčený"
       ],
@@ -12048,6 +12110,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Akonáhle bude udelený prístup k vášmu účtu, budú môcť otvoriť vaše nastavenia **Obnovenia** a **zmeniť vaše heslo k aplikácii ${ ACCOUNT_APP_NAME }** za vás."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tu je možné zmeniť iba veľké písmená a interpunkčné znamienka (bodky, pomlčky a podčiarknutia). Ak chcete použiť inú adresu, pridajte novú."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tieto nastavenia zmeňte len vtedy, ak používate PGP s príjemcami, ktorí nepoužívajú ${ BRAND_NAME }."
       ],
@@ -12174,6 +12239,9 @@
       "per month, billed at ${ price }": [
         "mesačne, účtované ${ price }"
       ],
+      "Per seat/month": [
+        "Za licenciu/mesiac"
+      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Systém vás bude pravidelne vyzývať, aby ste si overili heslo k službe ${ BRAND_NAME }, aby ste ho nezabudli. Časom sa táto výzva bude zobrazovať čoraz menej často."
       ],
@@ -12200,9 +12268,6 @@
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Požiadajte vlastníka, aby vás do dokumentu priamo pozval."
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "Overte svoju kartu v okne overenia."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Overte svoju platbu v okne overenia."
@@ -12251,9 +12316,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -12408,6 +12470,9 @@
       "Restore": [
         "Obnoviť"
       ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Prezrite si predchádzajúce obdobia a exportujte údaje na účely vykazovania alebo fakturácie klientom."
+      ],
       "Right to Left": [
         "Sprava doľava"
       ],
@@ -12497,6 +12562,9 @@
       ],
       "Set password": [
         "Nastaviť heslo"
+      ],
+      "Set the name, status, and assigned seats": [
+        "Zadajte názov, stav a priradené licencie"
       ],
       "Set up your organization": [
         "Nastavte svoju organizáciu"
@@ -12741,6 +12809,9 @@
       "The calendar will be removed from your account.": [
         "Kalendár bude odstránený z vášho účtu."
       ],
+      "The company and all its members will lose access immediately.": [
+        "Spoločnosť a všetci jej členovia okamžite stratia prístup."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web je skrytá časť internetu, kde sa dajú kúpiť a predať ukradnuté osobné údaje, ako napríklad identita."
       ],
@@ -12800,6 +12871,12 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Meno bude viditeľné pre vašich používateľov, keď budú prihlásení."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Proces bol prerušený pre ${ pausedCount } skupinu. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupiny. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupín. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií.",
+        "Proces bol prerušený pre ${ pausedCount } skupín. Kliknutím na tlačidlo Pokračovať môžete pokračovať v prideľovaní pozícií."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Odmena za odporúčanie môže byť pripísaná najneskôr do 2 mesiacov po skončení skúšobnej doby vášho priateľa, a to len v prípade, že si váš priateľ predplatil niektorý z plánov"
@@ -13365,6 +13442,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Odošleme resetovací kód na adresu ${ boldValue }."
       ],
+      "What happens:": [
+        "Čo sa stalo:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokiaľ je vypnuté, zabraňuje sa načítaniu obrázkov na tomto zariadení bez vašeho vedomia."
       ],
@@ -13424,6 +13504,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocou skupín môžete rýchlo a jednoducho posielať emaily všetkým ľuďom v určitej skupine."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "V prípade spravovaných spoločností môžete pridávať, upravovať a odoberať prístupové práva organizáciám, ktoré spravujete."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "S vašim súčasným plánom môžete dostávať správy iba s vašou @pm.me adresou. Upgradujte ho, aby ste mohli správy odosielať a vytvárať ďalšie adresy použitím @pm.me."
@@ -13514,6 +13597,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
+      ],
+      "You can enable this company again at any time.": [
+        "Túto spoločnosť môžete kedykoľvek opäť povoliť."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Môžete vynútiť pravidlá pre heslá, ktoré budú členovia vašej organizácie používať, keď si vytvoria alebo resetujú heslo pre svoj ${ BRAND_NAME } účet."
@@ -13677,9 +13763,6 @@
       "You will regain complete or partial access to your encrypted data.": [
         "Získate späť úplný alebo čiastočný prístup k svojim zašifrovaným dátam."
       ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Za účelom overenia platby budete presmerovaný na PayPal."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
@@ -13691,6 +13774,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Účtovanie bude prebiehať mesačne na základe priemerného počtu pridelených licencií."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
@@ -13844,6 +13930,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaša požiadavka na podporu bola uzavretá. Ďakujeme, že ste kontaktovali ${ BRAND_NAME } podporu."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Vaše celkové mesačné náklady na všetky spravované spoločnosti."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
@@ -14686,6 +14775,9 @@
       "Assertion Consumer Service URL": [
         "URL adresa zákazníckej služby"
       ],
+      "Assigned seats": [
+        "Pridelené licencie"
+      ],
       "Attach public key": [
         "Pripojiť verejný kľúč"
       ],
@@ -14740,6 +14832,9 @@
       "Autosuggest": [
         "Automatické navrhovanie"
       ],
+      "Average": [
+        "Priemerne"
+      ],
       "Awarded": [
         "Ocenený"
       ],
@@ -14752,8 +14847,14 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Účtované ${ priceYearly } každých 12 mesiacov."
       ],
+      "Billed average": [
+        "Priemerne fakturované"
+      ],
       "Billed monthly.": [
         "Účtované mesačne."
+      ],
+      "Billed seats": [
+        "Účtované licencie"
       ],
       "Billing cycle": [
         "Fakturačné obdobie"
@@ -14854,6 +14955,9 @@
       "Common passwords": [
         "Bežné heslá"
       ],
+      "Companies": [
+        "Spoločnosti"
+      ],
       "Company": [
         "Spoločnosť"
       ],
@@ -14922,6 +15026,9 @@
       ],
       "Copy IP address to clipboard": [
         "Skopírovať IP adresu do schránky"
+      ],
+      "Cost": [
+        "Náklady"
       ],
       "Could you please let us know which provider?": [
         "Mohli by ste nás informovať, o ktorého poskytovateľa ide?"
@@ -15727,6 +15834,12 @@
       "Search for a name or email": [
         "Vyhľadať meno alebo emailovú adresu"
       ],
+      "Seats": [
+        "Licencie"
+      ],
+      "Seats usage": [
+        "Využitie licencií"
+      ],
       "Second password": [
         "Druhé heslo"
       ],
@@ -15933,6 +16046,9 @@
       ],
       "Token name": [
         "Názov tokenu"
+      ],
+      "Total cost": [
+        "Celkové náklady"
       ],
       "Transactions": [
         "Transakcie"
@@ -17141,14 +17257,8 @@
       "Create a new ${ appName } account": [
         "Vytvoriť nový ${ appName } účet"
       ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Užite si dva týždne ${ BRAND_NAME } zadarmo"
-      ],
       "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
         "Zažite skutočné súkromie na internete vďaka zabezpečenej emailovej schránke, úložisku v cloude, správcovi hesiel a VPN. Zaregistrujte sa ešte dnes na ${ BRAND_NAME } a získajte zľavu ${ refereeRewardAmount } na svoje ďalšie predplatné."
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Zažite skutočné online súkromie. Chráňte si svoje údaje s ${ BRAND_NAME } zadarmo na ďalších 14 dní."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Zistite vaše používateľské meno v ${ BRAND_NAME }"
@@ -20476,6 +20586,9 @@
       "Enter a name": [
         "Zadajte meno"
       ],
+      "Enter company name": [
+        "Zadajte názov spoločnosti"
+      ],
       "example@domain.com": [
         "priklad@domena.sk"
       ],
@@ -20532,6 +20645,9 @@
       ],
       "Search": [
         "Hľadať"
+      ],
+      "Search for a company": [
+        "Hľadať spoločnosť"
       ],
       "Search for a user or address": [
         "Vyhľadať adresu alebo používateľa"
@@ -21744,6 +21860,9 @@
       "to recover your account if you're ever locked out": [
         "aby ste mohli obnoviť svoj účet, ak by ste ho niekedy zablokovali."
       ],
+      "update it now": [
+        "aktualizujte údaje."
+      ],
       "Update your recovery phrase": [
         "Aktualizovať vašu obnovovaciu frázu"
       ],
@@ -22034,6 +22153,12 @@
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "Ak sa vám stane, že sa nebudete môcť prihlásiť do svojho ${ BRAND_NAME } účtu, tento kód vám umožní prihlásiť sa a obnoviť vaše údaje. Je to jediný spôsob, ako okamžite obnoviť všetko, čo ste mali uložené, preto si ho určite uložte na bezpečné miesto."
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Ak sa zmenila vaša emailová adresa pre obnovenie hesla, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Ak sa zmenil váš telefón na obnovenie, ${ updatePhoneLink }."
+      ],
       "Later": [
         "Neskôr"
       ],
@@ -22045,6 +22170,9 @@
       ],
       "Saved recovery phrase": [
         "Uložená obnovovacia fráza"
+      ],
+      "Send verification code": [
+        "Odoslať overovací kód"
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Musia už mať ${ BRAND_NAME } účet."
@@ -22070,8 +22198,23 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Ak chcete mať istotu, že telefónne číslo je vaše, zadajte overovací kód zaslaný na ${ boldPhoneNumber }."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Aby sme sa uistili, že táto adresa skutočne patrí vám, pošleme vám email s overovacím kódom."
+      ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "Aby sme sa uistili, že táto adresa skutočne patrí vám, pošleme vám email s overovacím odkazom."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Aby sme sa uistili, že toto číslo skutočne patrí vám, pošleme vám SMS s overovacím kódom."
+      ],
+      "Update": [
+        "Aktualizovať"
+      ],
+      "Update recovery email": [
+        "Aktualizovať záložný email"
+      ],
+      "Update recovery phone": [
+        "Aktualizovať telefón na obnovenie"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "Navýšte úroveň svojho plán, aby ste si aktivovali funkciu núdzového prístupu k vášmu účtu. Týmto spôsobom budete môcť určiť 1 až 5 osôb, ktoré vám budú môcť obnoviť heslo."
@@ -22105,6 +22248,12 @@
       ],
       "Verify your recovery phone": [
         "Overte váš telefón na obnovenie"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Overenie vašej emailovej adresy zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
       ],
       "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
         "Na tomto zariadení si môžete uložiť zálohu údajov. Vďaka tomu si po obnovení hesla obnovíte prístup k emailom, kontaktom, súborom, heslám a všetkým ostatným šifrovaným údajom vo vašom účte jednoduchým prihlásením sa na tomto zariadení."
@@ -24038,6 +24187,9 @@
       "... waiting": [
         "... čaká sa"
       ],
+      "Active": [
+        "Aktívny"
+      ],
       "Add a phone number": [
         "Pridať telefónne číslo"
       ],
@@ -24055,6 +24207,9 @@
       ],
       "Disable recovery by phone": [
         "Zakázať obnovenie telefónom"
+      ],
+      "Disabled": [
+        "Deaktivované"
       ],
       "finalizing": [
         "dokončovanie"
@@ -24878,15 +25033,21 @@
       ],
       "View VPN session details for your organization.": [
         "Zobraziť podrobnosti o VPN relácii pre vašu organizáciu."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "V prípade spravovaných spoločností môžete pridávať, upravovať a odoberať prístupové práva organizáciám, ktoré spravujete."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "Vaše celkové mesačné náklady na všetky spravované spoločnosti."
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } povolená"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } deaktivované"
+      ],
+      "${ data.name } added": [
+        "${ data.name } pridaná"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } aktualizovaná"
+      ],
       "Account deleted. Signing out...": [
         "Účet vymazaný. Odhlasovanie..."
       ],
@@ -25597,6 +25758,9 @@
       "Add categories": [
         "Pridať kategórie"
       ],
+      "Add company": [
+        "Pridať spoločnosť"
+      ],
       "Add contact group name": [
         "Pridať názov skupiny kontaktov"
       ],
@@ -25710,6 +25874,9 @@
       ],
       "Are you sure you want to close?": [
         "Naozaj chcete zatvoriť?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Naozaj chcete odpojiť a deaktivovať túto adresu?"
       ],
       "Are you sure you want to disconnect this address?": [
         "Naozaj chcete odpojiť túto adresu?"
@@ -26095,6 +26262,9 @@
       "Disable categories?": [
         "Deaktivovať kategórie?"
       ],
+      "Disable company": [
+        "Deaktivovať spoločnosť"
+      ],
       "Disable device data backup?": [
         "Deaktivovať zálohovanie údajov zariadenia?"
       ],
@@ -26160,6 +26330,9 @@
       ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
+      ],
+      "Edit company": [
+        "Upraviť spoločnosť"
       ],
       "Edit countries": [
         "Upraviť krajiny"
@@ -26421,6 +26594,9 @@
       ],
       "Group membership": [
         "Členstvo v skupine"
+      ],
+      "Group role assignment paused": [
+        "Priradenie pozícií v skupine je pozastavené"
       ],
       "Groups": [
         "Skupiny"
@@ -26737,9 +26913,6 @@
       "Payment verification": [
         "Overenie platby"
       ],
-      "PayPal verification failed": [
-        "Overenie platby PayPal zlyhalo"
-      ],
       "Pending invitations": [
         "Čakajúce pozvánky"
       ],
@@ -26763,6 +26936,9 @@
       ],
       "Previous": [
         "Predchádzajúci"
+      ],
+      "Previous billing periods": [
+        "Predchádzajúce fakturačné obdobia"
       ],
       "Priority support:": [
         "Prioritná podpora:"
@@ -27825,6 +28001,9 @@
       "Group membership paused": [
         "Členstvo v skupine pozastavené"
       ],
+      "Role assignment paused": [
+        "Priradenie pozícií je pozastavené"
+      ],
       "Sending member invitation": [
         "Odosielanie členskej pozvánky"
       ],
@@ -27945,8 +28124,14 @@
       "Payment reversal": [
         "Storno platby"
       ],
+      "Prepayment": [
+        "Platba vopred"
+      ],
       "Refund": [
         "Vrátenie peňazí"
+      ],
+      "Test credit": [
+        "Testovací kredit"
       ]
     },
     "Unlimited offer": {

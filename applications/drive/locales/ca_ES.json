@@ -857,6 +857,9 @@
       "Report a problem": [
         "Notifica un problema"
       ],
+      "Report abuse": [
+        "Denunciar un abús"
+      ],
       "Report an issue": [
         "Informeu d'un problema"
       ],
@@ -5725,6 +5728,9 @@
       "How does encrypted search work?": [
         "Com funciona la cerca xifrada?"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Per la present confirmo que, de bona fe, la informació i les declaracions contingudes en l'informe són correctes i completes."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Si aquests fitxers no estan completament descarregats a ${ deviceName }, hi perdreu l'accés."
       ],
@@ -6139,9 +6145,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Demaneu al propietari que us convidi directament al document."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentiqueu la vostra targeta a la pestanya de verificació."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Autentiqueu el vostre pagament a la pestanya de verificació."
       ],
@@ -6184,9 +6187,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé contacteu per assistència de PayPal."
       ],
       "Please use another browser or download the file.": [
         "Utilitzeu un altre navegador o descarregueu el fitxer."
@@ -6913,9 +6913,6 @@
       "You will need to save it again from the public link page.": [
         "Haureu de tornar a desar-lo des de la pàgina d'enllaços públics.",
         "Haureu de tornar a desar-los des de la pàgina d'enllaços públics."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
@@ -9648,9 +9645,6 @@
       ],
       "Failed to move, please try again": [
         "No s'ha pogut moure, torneu-ho a provar"
-      ],
-      "Failed to open document": [
-        "No s'ha pogut obrir el document."
       ],
       "Failed to reject share invitation": [
         "No s'ha pogut rebutjar la invitació per a compartir."
@@ -12947,9 +12941,6 @@
       ],
       "Payment verification": [
         "Verificació de pagament"
-      ],
-      "PayPal verification failed": [
-        "La verificació de PayPal no s'ha pogut completar."
       ],
       "Phone numbers": [
         "Números de telèfon"

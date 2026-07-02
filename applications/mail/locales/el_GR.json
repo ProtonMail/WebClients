@@ -8120,9 +8120,6 @@
       "Please ask the owner to directly invite you to the document.": [
         "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
       ],
-      "Please authenticate your card in the verification tab.": [
-        "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
-      ],
       "Please authenticate your payment in the verification tab.": [
         "Επαληθεύστε την πληρωμή σας στην καρτέλα επαλήθευσης."
       ],
@@ -8174,9 +8171,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
@@ -9049,6 +9043,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Έχετε ${ totalLabel } στα εισερχόμενά σας."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Έχετε **${ count } συνομιλία** σε ${ categoryLabel } κατηγορία",
+        "Έχετε **${ count } συνομιλίες** σε ${ categoryLabel } κατηγορία"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Έχετε **${ count } συνομιλία** αποθηκευμένη σε αυτόν το φάκελο",
         "Έχετε **${ count } συνομιλίες** αποθηκευμένες σε αυτόν το φάκελο"
@@ -9056,6 +9057,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Έχετε **${ count } συνομιλία** με ετικέτα με αυτή την ετικέτα",
         "Έχετε **${ count } συνομιλίες** με ετικέτα με αυτή την ετικέτα"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Έχετε **${ count } μήνυμα** σε ${ categoryLabel } κατηγορία",
+        "Έχετε **${ count } μηνύματα** σε ${ categoryLabel } κατηγορία"
       ],
       "You have **${ count } message** stored in this folder": [
         "Έχετε **${ count } μήνυμα** αποθηκευμένο σε αυτόν το φάκελο",
@@ -9071,6 +9076,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
+      "You have no conversations in this category": [
+        "Δεν έχετε συνομιλίες σε αυτήν την κατηγορία"
+      ],
+      "You have no messages in this category": [
+        "Δεν έχετε μηνύματα σε αυτήν την κατηγορία"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Δεν έχετε ορίσει το θέμα του μηνύματός σας. Θέλετε να το αποστείλετε ως έχει;"
       ],
@@ -9085,6 +9096,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Για να κάνετε εφικτή την υποβάθμιση, πρέπει να απενεργοποιήσετε ή αφαιρέσετε τυχόν πλεονάζοντες χρήστες, διευθύνσεις και τομείς του ${ MAIL_APP_NAME }."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } συνομιλία** σε ${ categoryLabel } κατηγορία",
+        "Επιλέξατε **${ checked } συνομιλίες** σε ${ categoryLabel } κατηγορία"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Επιλέξατε **${ checked } μήνυμα** σε ${ categoryLabel } κατηγορία",
+        "Επιλέξατε **${ checked } μηνύματα** σε ${ categoryLabel } κατηγορία"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Επιλέξατε **${ count } συνομιλία** από αυτόν το φάκελο",
@@ -9120,9 +9139,6 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Θα χάσετε την πρόσβαση στις δυνατότητες του ${ planTitle } αυτήν την ημέρα."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
@@ -10083,6 +10099,9 @@
       "Navigation": [
         "Πλοήγηση"
       ],
+      "New": [
+        "Νέο"
+      ],
       "New password": [
         "Νέος κωδικός"
       ],
@@ -10091,6 +10110,9 @@
       ],
       "Newsletters": [
         "Ενημερωτικά δελτία"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Ενημερωτικά δελτία - Νέα, συντακτικά μηνύματα και μη διαφημιστικό περιεχόμενο"
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
@@ -10182,8 +10204,14 @@
       "Primary": [
         "Κύριο"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Κύρια - Προσωπικά και επαγγελματικά μηνύματα, καθώς και σημαντικές ενημερώσεις"
+      ],
       "Promotions": [
         "Προωθήσεις"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Προσφορές - Προσφορές, προσφορές και μηνύματα μάρκετινγκ"
       ],
       "Proration": [
         "Προμήθεια"
@@ -10250,6 +10278,9 @@
       ],
       "Social": [
         "Κοινωνικά"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Κοινωνικά δίκτυα - Ενημερώσεις, δραστηριότητα και μηνύματα κοινωνικών δικτύων"
       ],
       "Social media updates and activity": [
         "Ενημερώσεις και δραστηριότητες στα μέσα κοινωνικής δικτύωσης"
@@ -10326,6 +10357,9 @@
       "Transactions": [
         "Συναλλαγές"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Συναλλαγές - Αποδείξεις, κρατήσεις, λογαριασμοί και παραγγελίες"
+      ],
       "Undisclosed Recipients": [
         "Άγνωστοι παραλήπτες"
       ],
@@ -10337,6 +10371,9 @@
       ],
       "Updates": [
         "Ενημερώσεις"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Ενημερώσεις - Αυτόματες επιβεβαιώσεις, ειδοποιήσεις και ενημερώσεις λογαριασμού"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -15047,6 +15084,10 @@
         "Μετακίνηση μηνύματος ${ selectionCount }",
         "Μετακίνηση ${ selectionCount } μηνυμάτων"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Μετακινήθηκε στο ${ label }. Παρόμοιο μήνυμα θα κατηγοριοποιηθεί εδώ στο μέλλον.",
+        "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εδώ στο μέλλον."
+      ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
@@ -16025,9 +16066,6 @@
       ],
       "Payment verification": [
         "Επαλήθευση Πληρωμής"
-      ],
-      "PayPal verification failed": [
-        "Η επαλήθευση PayPal απέτυχε"
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"

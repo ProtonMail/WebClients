@@ -117,6 +117,9 @@
       "Add calendar from URL": [
         "Adăugare calendar din URL"
       ],
+      "Add company": [
+        "Adăugare companie"
+      ],
       "Add condition": [
         "Adăugare condiție"
       ],
@@ -582,6 +585,9 @@
       "Disable category": [
         "Dezactivare categorie"
       ],
+      "Disable company": [
+        "Dezactivare companie"
+      ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
       ],
@@ -738,6 +744,9 @@
       "Enable category": [
         "Activare categorie"
       ],
+      "Enable company": [
+        "Activare companie"
+      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
@@ -777,11 +786,17 @@
       "Export as CSV": [
         "Exportare în CSV"
       ],
+      "Export breakdown by company as ZIP": [
+        "Exportare defalcată pe companii, ca ZIP"
+      ],
       "Export key": [
         "Exportare cheie"
       ],
       "Export key before deleting": [
         "Exportare cheie înainte de ștergere"
+      ],
+      "Export overview as CSV": [
+        "Exportare prezentare generală în CSV"
       ],
       "Extend": [
         "Extindere"
@@ -1059,9 +1074,6 @@
       "Load more": [
         "Încărcare mai multe"
       ],
-      "Loading verification": [
-        "În curs de verificare"
-      ],
       "Lost access to your 2FA device?": [
         "Ați pierdut accesul la dispozitivul pentru A2F?"
       ],
@@ -1070,6 +1082,9 @@
       ],
       "Make key primary": [
         "Setare cheie ca principală"
+      ],
+      "Manage": [
+        "Gestionare"
       ],
       "Manage addresses": [
         "Gestionare adrese"
@@ -4064,6 +4079,29 @@
         "alb"
       ]
     },
+    "Column header": {
+      "Billing period": [
+        "Perioadă de facturare"
+      ],
+      "Company": [
+        "Compania"
+      ],
+      "Managed companies": [
+        "Companii gestionate"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Total billed seats": [
+        "Total locuri facturate"
+      ],
+      "Total cost": [
+        "Cost total"
+      ],
+      "Used / assigned seats": [
+        "Licențe folosite/atribuite"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "începe cu"
@@ -5479,6 +5517,15 @@
       "No one in your organization can connect to shared servers.": [
         "Nu se poate conecta nimeni din organizație la serverele partajate."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Rețineți că mesajele trimise la această adresă, chiar și de la alte adrese ${ BRAND_NAME }, nu vor mai fi criptate bilateral."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "După deconectare și dezactivare, nu veți mai putea trimite sau primi mesaje ca ${ address.Email } în ${ BRAND_NAME }. Mesajele trimise la această adresă vor ajunge în continuare în Gmail, dar nu și în ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "După deconectare, nu veți mai putea trimite sau primi mesaje ca ${ address.Email } în ${ BRAND_NAME }. Mesajele trimise la această adresă vor ajunge în continuare în Gmail, dar nu și în ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
       ],
@@ -5586,11 +5633,8 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Încă vă puteți conecta cu această adresă și reconecta oricând."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Nu veți mai putea folosi ${ address.Email } pentru a primi și trimite mesaje în ${ BRAND_NAME }. În plus, mesajele trimise la această adresă din ${ BRAND_NAME } nu vor fi criptate bilateral."
+      "You can reconnect this address at any time.": [
+        "Puteți reconecta această adresă oricând."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
@@ -7461,6 +7505,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Pentru această adresă poate fi modificată doar scrierea cu majuscule și punctuația (puncte, cratime și caractere de subliniere)."
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
@@ -9829,6 +9876,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nu vă partajează niciodată informațiile cu terțe părți. Datele provin din propriile analize ale ${ BRAND_NAME } și din Constella Intelligence."
       ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -10332,6 +10382,9 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
+      "All data and settings are preserved": [
+        "Sunt păstrate toate datele și setările"
+      ],
       "All inactive members deleted": [
         "Toți membrii inactivi au fost șterși."
       ],
@@ -10490,6 +10543,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
       ],
+      "Assigned seats won't be billed while disabled": [
+        "Licențele atribuite nu vor fi facturate cât timp sunt dezactivate."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
@@ -10534,6 +10590,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponibil pentru macOS, Windows și Linux."
+      ],
+      "Average": [
+        "Media"
       ],
       "Awaiting transaction": [
         "Se așteaptă tranzacția"
@@ -10731,10 +10790,10 @@
         "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Copy the link to clipboard": [
-        "Copiați legătura în memorie"
+        "Copiere legătură web în memorie"
       ],
       "Copy the suggested password to clipboard": [
-        "Copiați parola sugerată în memorie."
+        "Copiere parolă sugerată în memorie."
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
@@ -11774,6 +11833,9 @@
       "Member": [
         "Membru"
       ],
+      "Members are signed out and can't sign back in": [
+        "Membrii sunt deconectați și nu se mai pot conecta"
+      ],
       "Merged": [
         "Îmbinat"
       ],
@@ -11924,6 +11986,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "După ce a fost acordat accesul la cont, aceștia vă pot accesa setările de **Recuperare** și vă **schimbe parola ${ ACCOUNT_APP_NAME }**."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Doar scrierea cu majuscule și semnele de punctuație (puncte, cratime și sublinieri) pot fi modificate aici. Pentru a utiliza o adresă diferită, adăugați una nouă."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
       ],
@@ -12048,6 +12113,9 @@
       "per month, billed at ${ price }": [
         "pe lună, facturat cu ${ price }"
       ],
+      "Per seat/month": [
+        "Per licență/lună"
+      ],
       "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
         "Vă solicită periodic să verificați parola din ${ BRAND_NAME } pentru a vă asigura că nu o uitați. Vi se va solicita mai rar în timp."
       ],
@@ -12072,9 +12140,6 @@
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Solicitați proprietarului să vă invite direct la document."
-      ],
-      "Please authenticate your card in the verification tab.": [
-        "Autentificați cardul în fila de verificare."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentificați plata în fila de verificare."
@@ -12123,9 +12188,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
@@ -12280,6 +12342,9 @@
       "Restore": [
         "Restaurare"
       ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Revizuiți perioadele anterioare și exportați datele pentru raportare sau facturare către clienți."
+      ],
       "Right to Left": [
         "De la dreapta la stânga"
       ],
@@ -12369,6 +12434,9 @@
       ],
       "Set password": [
         "Setare parolă"
+      ],
+      "Set the name, status, and assigned seats": [
+        "Setați numele, starea și licențele atribuite"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -12610,6 +12678,9 @@
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
       ],
+      "The company and all its members will lose access immediately.": [
+        "Compania și toți membrii acesteia vor pierde imediat accesul."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Internetul ascuns este o parte ascunsă a internetului unde informațiile personale furate, cum ar fi identitățile, pot fi cumpărate și vândute."
       ],
@@ -12666,6 +12737,11 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Procesul a fost întrerupt pentru ${ pausedCount } grup. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor.",
+        "Procesul a fost întrerupt pentru ${ pausedCount } grupuri. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor.",
+        "Procesul a fost întrerupt pentru ${ pausedCount } de grupuri. Faceți clic pe „Continuare” pentru a relua atribuirea rolurilor."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Creditul de recomandare poate fi acordat până la două luni după încheierea perioadei de evaluare pentru persoana recomandată și dacă aceasta s-a abonat la un plan."
@@ -13231,6 +13307,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Veți primi un cod de resetare la ${ boldValue }."
       ],
+      "What happens:": [
+        "Ce se întâmplă:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
       ],
@@ -13290,6 +13369,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Cu gestionarea companiilor, puteți adăuga, edita și elimina accesul pentru organizațiile pe care le supravegheați."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Cu planul actual, puteți primi doar mesaje cu adresa @pm.me. Modificați tipul de abonament pentru a putea și trimite mesaje și a crea adrese suplimentare folosind @pm.me."
@@ -13376,6 +13458,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
+      ],
+      "You can enable this company again at any time.": [
+        "Puteți reactiva oricând această companie."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Puteți impune reguli pentru parolele membrilor organizației atunci când aceștia își creează sau resetează parolele contului ${ BRAND_NAME }."
@@ -13534,9 +13619,6 @@
       "You will regain complete or partial access to your encrypted data.": [
         "Veți recăpăta acces complet sau parțial la datele personale criptate."
       ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pentru verificarea plății se va deschide o filă către PayPal."
-      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
       ],
@@ -13548,6 +13630,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și recuperarea pe bază de dispozitiv."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Se va factura lunar în funcție de numărul mediu de licențe alocate."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
@@ -13698,6 +13783,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tichetul de asistență a fost închis. Vă mulțumim că ați contactat asistența de la ${ BRAND_NAME }."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Costul lunar total pentru toate companiile gestionate."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Perioada de evaluare se termină ${ timeRemaining }."
@@ -14533,6 +14621,9 @@
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
       ],
+      "Assigned seats": [
+        "Licențe atribuite"
+      ],
       "Attach public key": [
         "Atașare cheie publică"
       ],
@@ -14587,6 +14678,9 @@
       "Autosuggest": [
         "Sugestie automată"
       ],
+      "Average": [
+        "În medie"
+      ],
       "Awarded": [
         "Acreditat"
       ],
@@ -14599,8 +14693,14 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Facturat cu ${ priceYearly } la fiecare 12 luni."
       ],
+      "Billed average": [
+        "Media facturată"
+      ],
       "Billed monthly.": [
         "Facturat lunar."
+      ],
+      "Billed seats": [
+        "Licențe facturate"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -14701,6 +14801,9 @@
       "Common passwords": [
         "Parole comune"
       ],
+      "Companies": [
+        "Companii"
+      ],
       "Company": [
         "Compania"
       ],
@@ -14769,6 +14872,9 @@
       ],
       "Copy IP address to clipboard": [
         "Copiere adresă IP în memorie"
+      ],
+      "Cost": [
+        "Cost"
       ],
       "Could you please let us know which provider?": [
         "Ați putea să ne spuneți care furnizor?"
@@ -15573,6 +15679,12 @@
       "Search for a name or email": [
         "Căutare după nume sau e-mail"
       ],
+      "Seats": [
+        "Număr licențe"
+      ],
+      "Seats usage": [
+        "Licențe folosite"
+      ],
       "Second password": [
         "Parola secundară"
       ],
@@ -15634,6 +15746,9 @@
       ],
       "Show sender images": [
         "Afișare imagini expeditori"
+      ],
+      "Show unread count": [
+        "Afișare număr de necitite"
       ],
       "Show unread count in Favicon": [
         "Afișare contor mesaje necitite pe pictograma web"
@@ -15778,6 +15893,9 @@
       ],
       "Token name": [
         "Nume cod de acces"
+      ],
+      "Total cost": [
+        "Cost total"
       ],
       "Transactions": [
         "Tranzacții"
@@ -16970,14 +17088,8 @@
       "Create a new ${ appName } account": [
         "Creare cont ${ appName }"
       ],
-      "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "Bucurați-vă de două săptămâni de ${ BRAND_NAME } gratuit"
-      ],
       "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
         "Experimentași confidențialitatea online autentică folosind un e-mail securizat, spațiu de stocare în cloud, manager de parole și VPN. Alăturați-vă astăzi la ${ BRAND_NAME } și primiți o reducere de ${ refereeRewardAmount } la următorul abonament."
-      ],
-      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Experimentați confidențialitatea online cu adevărat. Protejați-vă datele cu ${ BRAND_NAME } gratuit pentru următoarele 14 zile."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Găsiți-vă numele de utilizator al contului ${ BRAND_NAME }"
@@ -20256,6 +20368,9 @@
       "Enter a name": [
         "Introduceți un nume"
       ],
+      "Enter company name": [
+        "Introduceți numele companiei"
+      ],
       "example@domain.com": [
         "exemplu@domeniu.com"
       ],
@@ -20312,6 +20427,9 @@
       ],
       "Search": [
         "Căutare"
+      ],
+      "Search for a company": [
+        "Căutare companie"
       ],
       "Search for a user or address": [
         "Căutați utilizator sau adresă"
@@ -21516,6 +21634,9 @@
       "to recover your account if you're ever locked out": [
         "pentru a vă recupera contul dacă nu îl mai puteți accesa"
       ],
+      "update it now": [
+        "actualizați acum"
+      ],
       "Update your recovery phrase": [
         "Actualizați-vă fraza de recuperare"
       ],
@@ -21806,6 +21927,12 @@
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "Dacă accesul la contul ${ BRAND_NAME } vi se blochează, aceasta vă va permite să vă conectați și să vă recuperați datele. Este singura modalitate de a restaura instantaneu totul, așa că asigurați-vă că o păstrați într-un loc sigur."
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Dacă adresa de e-mail de recuperare s-a schimbat, trebuie să o ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Dacă numărul de telefon de recuperare s-a schimbat, trebuie să-l ${ updatePhoneLink }."
+      ],
       "Later": [
         "Mai târziu"
       ],
@@ -21817,6 +21944,9 @@
       ],
       "Saved recovery phrase": [
         "Frază de recuperare salvată."
+      ],
+      "Send verification code": [
+        "Trimitere cod de verificare"
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Trebuie să aibă deja un cont ${ BRAND_NAME }."
@@ -21842,8 +21972,23 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Pentru a ne asigura că numărul de telefon vă aparține, introduceți codul de verificare trimis la ${ boldPhoneNumber }."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Pentru a ne asigura că această adresă vă aparține, vă vom trimite un e-mail cu un cod de verificare."
+      ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "Pentru a ne asigura că această adresă vă aparține, vă vom trimite un e-mail cu o legătură web de verificare."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Pentru a ne asigura că acest număr vă aparține, vă vom trimite un SMS cu un cod de verificare."
+      ],
+      "Update": [
+        "Actualizare"
+      ],
+      "Update recovery email": [
+        "Actualizare e-mail de recuperare"
+      ],
+      "Update recovery phone": [
+        "Actualizare telefon de recuperare"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "Modificați-vă abonamentul pentru a activa accesul de urgență la cont. Acest lucru vă va permite să desemnați între 1 și 5 persoane care vor putea să vă reseteze parola."
@@ -21877,6 +22022,12 @@
       ],
       "Verify your recovery phone": [
         "Verificați numărul de telefon de recuperare"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verificarea adresei de e-mail vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
       ],
       "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
         "Poți salva o copie de rezervă a datelor pe acest dispozitiv. Aceasta va restabili accesul la e-mailuri, contacte, fișiere, parole și orice alte date criptate din cont după resetarea parolei, pur și simplu conectându-vă pe acest dispozitiv."
@@ -23761,6 +23912,9 @@
       "... waiting": [
         "...în așteptare"
       ],
+      "Active": [
+        "Activ"
+      ],
       "Add a phone number": [
         "Adăugați un număr de telefon"
       ],
@@ -23778,6 +23932,9 @@
       ],
       "Disable recovery by phone": [
         "Dezactivare recuperare cu număr de telefon"
+      ],
+      "Disabled": [
+        "Dezactivată"
       ],
       "finalizing": [
         "se finalizează"
@@ -24577,15 +24734,21 @@
       ],
       "View VPN session details for your organization.": [
         "Vizualizați detaliile sesiunii VPN pentru organizație."
-      ],
-      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Cu gestionarea companiilor, puteți adăuga, edita și elimina accesul pentru organizațiile pe care le supravegheați."
-      ],
-      "Your total monthly cost for all managed companies.": [
-        "Costul lunar total pentru toate companiile gestionate."
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } s-a activat"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } s-a dezactivat"
+      ],
+      "${ data.name } added": [
+        "S-a adăugat ${ data.name }"
+      ],
+      "${ data.name } updated": [
+        "S-a actualizat ${ data.name }"
+      ],
       "Account deleted. Signing out...": [
         "Cont șters. Se deconectează..."
       ],
@@ -25283,6 +25446,9 @@
       "Add categories": [
         "Adăugare categorii"
       ],
+      "Add company": [
+        "Adăugare companie"
+      ],
       "Add contact group name": [
         "Adăugare nume grup contacte"
       ],
@@ -25396,6 +25562,9 @@
       ],
       "Are you sure you want to close?": [
         "Închideți?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Sigur doriți să vă deconectați și să dezactivați această adresă?"
       ],
       "Are you sure you want to disconnect this address?": [
         "Sigur doriți să deconectați această adresă?"
@@ -25779,6 +25948,9 @@
       "Disable categories?": [
         "Dezactivați categoriile?"
       ],
+      "Disable company": [
+        "Dezactivare companie"
+      ],
       "Disable device data backup?": [
         "Dezactivați conservarea datelor pe dispozitiv?"
       ],
@@ -25844,6 +26016,9 @@
       ],
       "Edit billing address": [
         "Editare adresă de facturare"
+      ],
+      "Edit company": [
+        "Editare companie"
       ],
       "Edit countries": [
         "Editare țări"
@@ -26104,6 +26279,9 @@
       ],
       "Group membership": [
         "Membru al grupului"
+      ],
+      "Group role assignment paused": [
+        "Atribuirea rolului de grup a fost întreruptă"
       ],
       "Groups": [
         "Grupuri"
@@ -26419,9 +26597,6 @@
       "Payment verification": [
         "Verificare plată"
       ],
-      "PayPal verification failed": [
-        "Verificarea PayPal a eșuat"
-      ],
       "Pending invitations": [
         "Invitații în așteptare"
       ],
@@ -26445,6 +26620,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Previous billing periods": [
+        "Perioade de facturare anterioare"
       ],
       "Priority support:": [
         "Asistență prioritară:"
@@ -27506,6 +27684,9 @@
       "Group membership paused": [
         "Apartenența la grup a fost suspendată"
       ],
+      "Role assignment paused": [
+        "Atribuirea rolului a fost suspendată"
+      ],
       "Sending member invitation": [
         "Se trimite invitația membrului"
       ],
@@ -27626,8 +27807,14 @@
       "Payment reversal": [
         "Anulare plată"
       ],
+      "Prepayment": [
+        "Plată în avans"
+      ],
       "Refund": [
         "Restituire"
+      ],
+      "Test credit": [
+        "Credit de test"
       ]
     },
     "Unlimited offer": {
