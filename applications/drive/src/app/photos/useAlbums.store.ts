@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { Member, MemberRole } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
@@ -65,196 +64,194 @@ const sortAlbumUidsByLastActivity = (uids: string[], albums: Map<string, AlbumIt
         return timeB - timeA;
     });
 
-export const useAlbumsStore = create<AlbumsStore>()(
-    devtools((set, get) => ({
-        albums: new Map(),
-        albumsUids: [],
-        isLoadingList: false,
-        hasEverLoadedList: false,
+export const useAlbumsStore = create<AlbumsStore>()((set, get) => ({
+    albums: new Map(),
+    albumsUids: [],
+    isLoadingList: false,
+    hasEverLoadedList: false,
 
-        currentAlbumNodeUid: undefined,
-        getCurrentAlbum: () => {
-            const state = get();
-            return state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined;
-        },
-        isLoading: false,
-        hasEverLoaded: false,
+    currentAlbumNodeUid: undefined,
+    getCurrentAlbum: () => {
+        const state = get();
+        return state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined;
+    },
+    isLoading: false,
+    hasEverLoaded: false,
 
-        setAlbums: (albums) => {
-            const map = new Map(albums.map((a) => [a.nodeUid, a]));
-            const albumsUids = sortAlbumUidsByLastActivity(
-                albums.map((a) => a.nodeUid),
-                map
-            );
-            set({ albums: map, albumsUids, isLoadingList: false, hasEverLoadedList: true });
-        },
+    setAlbums: (albums) => {
+        const map = new Map(albums.map((a) => [a.nodeUid, a]));
+        const albumsUids = sortAlbumUidsByLastActivity(
+            albums.map((a) => a.nodeUid),
+            map
+        );
+        set({ albums: map, albumsUids, isLoadingList: false, hasEverLoadedList: true });
+    },
 
-        upsertAlbums: (albums) => {
-            set((state) => {
-                const newAlbums = new Map(state.albums);
-                const newUids = [...state.albumsUids];
-                for (const album of albums) {
-                    if (!newAlbums.has(album.nodeUid)) {
-                        newUids.push(album.nodeUid);
-                    }
-                    const existing = newAlbums.get(album.nodeUid);
-                    newAlbums.set(album.nodeUid, {
-                        photoNodeUids: existing?.photoNodeUids,
-                        members: existing?.members,
-                        ...album,
-                    });
+    upsertAlbums: (albums) => {
+        set((state) => {
+            const newAlbums = new Map(state.albums);
+            const newUids = [...state.albumsUids];
+            for (const album of albums) {
+                if (!newAlbums.has(album.nodeUid)) {
+                    newUids.push(album.nodeUid);
                 }
-                return { albums: newAlbums, albumsUids: sortAlbumUidsByLastActivity(newUids, newAlbums) };
-            });
-        },
-
-        upsertAlbum: (album) => {
-            get().upsertAlbums([album]);
-        },
-
-        removeAlbum: (nodeUid) => {
-            set((state) => {
-                const albums = new Map(state.albums);
-                albums.delete(nodeUid);
-                return { albums, albumsUids: state.albumsUids.filter((uid) => uid !== nodeUid) };
-            });
-        },
-
-        cleanupStaleAlbums: (fetchedUids, isOwner) => {
-            set((state) => {
-                const albums = new Map(state.albums);
-                for (const [uid, album] of albums) {
-                    if (fetchedUids.has(uid)) {
-                        continue;
-                    }
-                    if (isOwner === undefined || album.isOwner === isOwner) {
-                        albums.delete(uid);
-                    }
-                }
-                return { albums, albumsUids: state.albumsUids.filter((uid) => albums.has(uid)) };
-            });
-        },
-
-        setLoadingList: (loading) => {
-            set({ isLoadingList: loading });
-        },
-
-        setCurrentAlbumNodeUid: (nodeUid) => {
-            set((state) => {
-                if (state.currentAlbumNodeUid === nodeUid) {
-                    return state;
-                }
-                return { currentAlbumNodeUid: nodeUid, isLoading: false, hasEverLoaded: false };
-            });
-        },
-
-        setCoverNodeUid: (coverNodeUid: string) => {
-            set((state) => {
-                if (!state.currentAlbumNodeUid) {
-                    return state;
-                }
-                const albums = new Map(state.albums);
-                const existing = albums.get(state.currentAlbumNodeUid);
-                if (existing) {
-                    albums.set(state.currentAlbumNodeUid, { ...existing, coverNodeUid });
-                }
-                return { albums };
-            });
-        },
-
-        clearCurrentAlbum: () => {
-            set({ currentAlbumNodeUid: undefined, isLoading: false, hasEverLoaded: false });
-        },
-
-        setPhotoNodeUids: (uids: string[]) => {
-            set((state) => {
-                if (!state.currentAlbumNodeUid) {
-                    return state;
-                }
-                const albums = new Map(state.albums);
-                const existing = albums.get(state.currentAlbumNodeUid);
-                if (!existing) {
-                    return state;
-                }
-                const existingUids = existing.photoNodeUids;
-                const isSameSet =
-                    existingUids !== undefined &&
-                    existingUids.size === uids.length &&
-                    uids.every((uid) => existingUids.has(uid));
-                if (isSameSet) {
-                    return state;
-                }
-                albums.set(state.currentAlbumNodeUid, {
-                    ...existing,
-                    photoNodeUids: new Set(uids),
+                const existing = newAlbums.get(album.nodeUid);
+                newAlbums.set(album.nodeUid, {
+                    photoNodeUids: existing?.photoNodeUids,
+                    members: existing?.members,
+                    ...album,
                 });
-                return { albums };
-            });
-        },
-
-        addPhotoNodeUids: (albumUid: string, uids: string[]) => {
-            set((state) => {
-                if (!albumUid) {
-                    return state;
-                }
-                const albums = new Map(state.albums);
-                const existing = albums.get(albumUid);
-                if (!existing) {
-                    return state;
-                }
-                const newPhotoNodeUids = new Set(existing.photoNodeUids);
-                const newUids = uids.filter((uid) => !newPhotoNodeUids.has(uid));
-                for (const uid of newUids) {
-                    newPhotoNodeUids.add(uid);
-                }
-                albums.set(albumUid, {
-                    ...existing,
-                    photoNodeUids: newPhotoNodeUids,
-                });
-                return { albums };
-            });
-        },
-
-        addPhotoNodeUid: (albumUid: string, uid: string) => {
-            get().addPhotoNodeUids(albumUid, [uid]);
-        },
-
-        removePhotoNodeUids: (albumUid: string, uids: string[]) => {
-            set((state) => {
-                const albums = new Map(state.albums);
-                const existing = albums.get(albumUid);
-                if (!existing) {
-                    return state;
-                }
-                const newPhotoNodeUids = new Set(existing.photoNodeUids);
-                for (const uid of uids) {
-                    newPhotoNodeUids.delete(uid);
-                }
-                albums.set(albumUid, {
-                    ...existing,
-                    photoNodeUids: newPhotoNodeUids,
-                });
-                return { albums };
-            });
-        },
-
-        setLoading: (loading: boolean) => {
-            set({ isLoading: loading });
-            get().checkAndSetHasEverLoaded();
-        },
-
-        setHasEverLoaded: () => set({ hasEverLoaded: true }),
-
-        checkAndSetHasEverLoaded: () => {
-            const state = get();
-            if (!state.isLoading && !state.hasEverLoaded) {
-                state.setHasEverLoaded();
             }
-        },
+            return { albums: newAlbums, albumsUids: sortAlbumUidsByLastActivity(newUids, newAlbums) };
+        });
+    },
 
-        subscribeToAlbumEvents: async (treeEventScopeId: string, context: string) => {
-            getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
-            return () => getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
-        },
-    }))
-);
+    upsertAlbum: (album) => {
+        get().upsertAlbums([album]);
+    },
+
+    removeAlbum: (nodeUid) => {
+        set((state) => {
+            const albums = new Map(state.albums);
+            albums.delete(nodeUid);
+            return { albums, albumsUids: state.albumsUids.filter((uid) => uid !== nodeUid) };
+        });
+    },
+
+    cleanupStaleAlbums: (fetchedUids, isOwner) => {
+        set((state) => {
+            const albums = new Map(state.albums);
+            for (const [uid, album] of albums) {
+                if (fetchedUids.has(uid)) {
+                    continue;
+                }
+                if (isOwner === undefined || album.isOwner === isOwner) {
+                    albums.delete(uid);
+                }
+            }
+            return { albums, albumsUids: state.albumsUids.filter((uid) => albums.has(uid)) };
+        });
+    },
+
+    setLoadingList: (loading) => {
+        set({ isLoadingList: loading });
+    },
+
+    setCurrentAlbumNodeUid: (nodeUid) => {
+        set((state) => {
+            if (state.currentAlbumNodeUid === nodeUid) {
+                return state;
+            }
+            return { currentAlbumNodeUid: nodeUid, isLoading: false, hasEverLoaded: false };
+        });
+    },
+
+    setCoverNodeUid: (coverNodeUid: string) => {
+        set((state) => {
+            if (!state.currentAlbumNodeUid) {
+                return state;
+            }
+            const albums = new Map(state.albums);
+            const existing = albums.get(state.currentAlbumNodeUid);
+            if (existing) {
+                albums.set(state.currentAlbumNodeUid, { ...existing, coverNodeUid });
+            }
+            return { albums };
+        });
+    },
+
+    clearCurrentAlbum: () => {
+        set({ currentAlbumNodeUid: undefined, isLoading: false, hasEverLoaded: false });
+    },
+
+    setPhotoNodeUids: (uids: string[]) => {
+        set((state) => {
+            if (!state.currentAlbumNodeUid) {
+                return state;
+            }
+            const albums = new Map(state.albums);
+            const existing = albums.get(state.currentAlbumNodeUid);
+            if (!existing) {
+                return state;
+            }
+            const existingUids = existing.photoNodeUids;
+            const isSameSet =
+                existingUids !== undefined &&
+                existingUids.size === uids.length &&
+                uids.every((uid) => existingUids.has(uid));
+            if (isSameSet) {
+                return state;
+            }
+            albums.set(state.currentAlbumNodeUid, {
+                ...existing,
+                photoNodeUids: new Set(uids),
+            });
+            return { albums };
+        });
+    },
+
+    addPhotoNodeUids: (albumUid: string, uids: string[]) => {
+        set((state) => {
+            if (!albumUid) {
+                return state;
+            }
+            const albums = new Map(state.albums);
+            const existing = albums.get(albumUid);
+            if (!existing) {
+                return state;
+            }
+            const newPhotoNodeUids = new Set(existing.photoNodeUids);
+            const newUids = uids.filter((uid) => !newPhotoNodeUids.has(uid));
+            for (const uid of newUids) {
+                newPhotoNodeUids.add(uid);
+            }
+            albums.set(albumUid, {
+                ...existing,
+                photoNodeUids: newPhotoNodeUids,
+            });
+            return { albums };
+        });
+    },
+
+    addPhotoNodeUid: (albumUid: string, uid: string) => {
+        get().addPhotoNodeUids(albumUid, [uid]);
+    },
+
+    removePhotoNodeUids: (albumUid: string, uids: string[]) => {
+        set((state) => {
+            const albums = new Map(state.albums);
+            const existing = albums.get(albumUid);
+            if (!existing) {
+                return state;
+            }
+            const newPhotoNodeUids = new Set(existing.photoNodeUids);
+            for (const uid of uids) {
+                newPhotoNodeUids.delete(uid);
+            }
+            albums.set(albumUid, {
+                ...existing,
+                photoNodeUids: newPhotoNodeUids,
+            });
+            return { albums };
+        });
+    },
+
+    setLoading: (loading: boolean) => {
+        set({ isLoading: loading });
+        get().checkAndSetHasEverLoaded();
+    },
+
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
+
+    checkAndSetHasEverLoaded: () => {
+        const state = get();
+        if (!state.isLoading && !state.hasEverLoaded) {
+            state.setHasEverLoaded();
+        }
+    },
+
+    subscribeToAlbumEvents: async (treeEventScopeId: string, context: string) => {
+        getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
+        return () => getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
+    },
+}));

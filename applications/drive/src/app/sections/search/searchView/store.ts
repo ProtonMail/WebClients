@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
 import type { EffectiveRole } from '@proton/drive/modules/nodes';
@@ -58,100 +57,93 @@ export type SearchViewStore = {
 export const getKeyUid = (item: SearchResultItemUI) => item.nodeUid;
 
 // A store for the whole search result view.
-export const useSearchViewStore = create<SearchViewStore>()(
-    devtools(
-        (set, get) => ({
-            searchResultItems: new Map(),
-            hasEverLoaded: false,
-            dirty: false,
+export const useSearchViewStore = create<SearchViewStore>()((set, get) => ({
+    searchResultItems: new Map(),
+    hasEverLoaded: false,
+    dirty: false,
 
-            sortField: defaultSort.sortField,
-            direction: defaultSort.direction,
-            sortConfig: defaultSort.sortConfig || [],
+    sortField: defaultSort.sortField,
+    direction: defaultSort.direction,
+    sortConfig: defaultSort.sortConfig || [],
+    sortedItemUids: [],
+    loading: false,
+
+    markStoreAsDirty: (dirty) => {
+        set(() => {
+            return {
+                dirty,
+            };
+        });
+    },
+
+    clearAll: () => {
+        set({
+            searchResultItems: new Map(),
             sortedItemUids: [],
             loading: false,
+            hasEverLoaded: false,
+            dirty: false,
+        });
+    },
 
-            markStoreAsDirty: (dirty) => {
-                set(() => {
-                    return {
-                        dirty,
-                    };
-                });
-            },
+    addSearchResultItem: (item: SearchResultItemUI) => {
+        set((state) => {
+            const newSearchResultItems = new Map(state.searchResultItems);
+            newSearchResultItems.set(getKeyUid(item), item);
 
-            clearAll: () => {
-                set({
-                    searchResultItems: new Map(),
-                    sortedItemUids: [],
-                    loading: false,
-                    hasEverLoaded: false,
-                    dirty: false,
-                });
-            },
+            const allItems = Array.from(newSearchResultItems.values());
+            const sortedItemUids = sortItems(
+                allItems,
+                state.sortConfig,
+                state.direction,
+                getSearchResultItemSortValue,
+                getKeyUid
+            );
 
-            addSearchResultItem: (item: SearchResultItemUI) => {
-                set((state) => {
-                    const newSearchResultItems = new Map(state.searchResultItems);
-                    newSearchResultItems.set(getKeyUid(item), item);
+            return {
+                searchResultItems: newSearchResultItems,
+                sortedItemUids,
+            };
+        });
+    },
 
-                    const allItems = Array.from(newSearchResultItems.values());
-                    const sortedItemUids = sortItems(
-                        allItems,
-                        state.sortConfig,
-                        state.direction,
-                        getSearchResultItemSortValue,
-                        getKeyUid
-                    );
-
-                    return {
-                        searchResultItems: newSearchResultItems,
-                        sortedItemUids,
-                    };
-                });
-            },
-
-            addSearchResultItems: (items: SearchResultItemUI[]) => {
-                if (items.length === 0) {
-                    return;
-                }
-                set((state) => {
-                    const newSearchResultItems = new Map(state.searchResultItems);
-                    for (const item of items) {
-                        newSearchResultItems.set(getKeyUid(item), item);
-                    }
-                    const allItems = Array.from(newSearchResultItems.values());
-                    const sortedItemUids = sortItems(
-                        allItems,
-                        state.sortConfig,
-                        state.direction,
-                        getSearchResultItemSortValue,
-                        getKeyUid
-                    );
-                    return { searchResultItems: newSearchResultItems, sortedItemUids };
-                });
-            },
-
-            getSearchResultItem: (uid: string) => get().searchResultItems.get(uid),
-            getAllSearchResultItems: () => {
-                const v = get().searchResultItems.values();
-                return Array.from(v);
-            },
-
-            setSorting: ({ sortField, direction, sortConfig }) => {
-                const state = get();
-                const items = state.getAllSearchResultItems();
-                const sortedItemUids = sortItems(items, sortConfig, direction, getSearchResultItemSortValue, getKeyUid);
-
-                set({ sortField, direction, sortedItemUids });
-            },
-
-            setLoading: (loading: boolean) => {
-                const state = get();
-                set({ loading, hasEverLoaded: state.hasEverLoaded || loading });
-            },
-        }),
-        {
-            name: 'search-view-store',
+    addSearchResultItems: (items: SearchResultItemUI[]) => {
+        if (items.length === 0) {
+            return;
         }
-    )
-);
+        set((state) => {
+            const newSearchResultItems = new Map(state.searchResultItems);
+            for (const item of items) {
+                newSearchResultItems.set(getKeyUid(item), item);
+            }
+            const allItems = Array.from(newSearchResultItems.values());
+            const sortedItemUids = sortItems(
+                allItems,
+                state.sortConfig,
+                state.direction,
+                getSearchResultItemSortValue,
+                getKeyUid
+            );
+            return { searchResultItems: newSearchResultItems, sortedItemUids };
+        });
+    },
+
+    getSearchResultItem: (uid: string) => get().searchResultItems.get(uid),
+    getAllSearchResultItems: () => {
+        const v = get().searchResultItems.values();
+        return Array.from(v);
+    },
+
+    setSorting: ({ sortField, direction, sortConfig }) => {
+        const state = get();
+        const items = state.getAllSearchResultItems();
+        const sortedItemUids = sortItems(items, sortConfig, direction, getSearchResultItemSortValue, getKeyUid);
+
+        set({ sortField, direction, sortedItemUids });
+    },
+
+    setLoading: (loading: boolean) => {
+        const state = get();
+        set({ loading, hasEverLoaded: state.hasEverLoaded || loading });
+    },
+}));

@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -67,133 +66,126 @@ const defaultSortConfig: SortConfig = [
     { field: SortField.name, comparator: stringComparator },
 ];
 
-export const usePublicFolderStore = create<PublicFolderStore>()(
-    devtools(
-        (set, get) => ({
-            folderItems: new Map(),
-            itemUids: new Set(),
-            folder: undefined,
-            isLoading: false,
-            hasEverLoaded: false,
+export const usePublicFolderStore = create<PublicFolderStore>()((set, get) => ({
+    folderItems: new Map(),
+    itemUids: new Set(),
+    folder: undefined,
+    isLoading: false,
+    hasEverLoaded: false,
 
-            sortField: SortField.name,
-            direction: SORT_DIRECTION.ASC,
-            sortConfig: defaultSortConfig,
+    sortField: SortField.name,
+    direction: SORT_DIRECTION.ASC,
+    sortConfig: defaultSortConfig,
 
-            layout: LayoutSetting.List,
+    layout: LayoutSetting.List,
 
-            setSorting: ({ sortField, direction, sortConfig }) => {
-                const state = get();
+    setSorting: ({ sortField, direction, sortConfig }) => {
+        const state = get();
+        const sortedUids = sortItems(
+            state.getAllFolderItems(),
+            sortConfig,
+            direction,
+            getPublicFolderSortValue,
+            (item) => item.uid
+        );
+
+        set({ sortField, direction, sortConfig, itemUids: new Set(sortedUids) });
+    },
+
+    setItem: (item: PublicFolderItem) => {
+        set((state) => {
+            const newFolderItems = new Map(state.folderItems);
+            newFolderItems.set(item.uid, item);
+
+            if (state.sortConfig) {
+                const allItems = Array.from(newFolderItems.values());
                 const sortedUids = sortItems(
-                    state.getAllFolderItems(),
-                    sortConfig,
-                    direction,
+                    allItems,
+                    state.sortConfig,
+                    state.direction,
                     getPublicFolderSortValue,
                     (item) => item.uid
                 );
 
-                set({ sortField, direction, sortConfig, itemUids: new Set(sortedUids) });
-            },
+                const currentUids = Array.from(state.itemUids);
+                const orderChanged =
+                    sortedUids.length !== currentUids.length ||
+                    sortedUids.some((uid, index) => {
+                        return uid !== currentUids[index];
+                    });
 
-            setItem: (item: PublicFolderItem) => {
-                set((state) => {
-                    const newFolderItems = new Map(state.folderItems);
-                    newFolderItems.set(item.uid, item);
-
-                    if (state.sortConfig) {
-                        const allItems = Array.from(newFolderItems.values());
-                        const sortedUids = sortItems(
-                            allItems,
-                            state.sortConfig,
-                            state.direction,
-                            getPublicFolderSortValue,
-                            (item) => item.uid
-                        );
-
-                        const currentUids = Array.from(state.itemUids);
-                        const orderChanged =
-                            sortedUids.length !== currentUids.length ||
-                            sortedUids.some((uid, index) => {
-                                return uid !== currentUids[index];
-                            });
-
-                        if (orderChanged) {
-                            return {
-                                folderItems: newFolderItems,
-                                itemUids: new Set(sortedUids),
-                            };
-                        }
-
-                        return {
-                            folderItems: newFolderItems,
-                        };
-                    }
-
-                    const newItemUids = new Set(state.itemUids);
-                    newItemUids.add(item.uid);
+                if (orderChanged) {
                     return {
                         folderItems: newFolderItems,
-                        itemUids: newItemUids,
+                        itemUids: new Set(sortedUids),
                     };
-                });
-            },
-
-            updateItem: (uid: string, updates: Partial<PublicFolderItem>) => {
-                set((state) => {
-                    const existingItem = state.folderItems.get(uid);
-                    if (!existingItem) {
-                        return state;
-                    }
-
-                    const updatedItem = { ...existingItem, ...updates };
-                    const newFolderItems = new Map(state.folderItems);
-                    newFolderItems.set(uid, updatedItem);
-
-                    return {
-                        ...state,
-                        folderItems: newFolderItems,
-                    };
-                });
-            },
-
-            removeItem: (uid: string) => {
-                set((state) => {
-                    const newFolderItems = new Map(state.folderItems);
-                    newFolderItems.delete(uid);
-                    const newItemUids = new Set(state.itemUids);
-                    newItemUids.delete(uid);
-                    return {
-                        folderItems: newFolderItems,
-                        itemUids: newItemUids,
-                    };
-                });
-            },
-
-            clearAll: () => {
-                set({
-                    folderItems: new Map(),
-                    itemUids: new Set(),
-                });
-            },
-
-            getItemUids: () => Array.from(get().itemUids),
-
-            getFolderItem: (uid: string) => get().folderItems.get(uid),
-            getAllFolderItems: () => Array.from(get().folderItems.values()),
-
-            setLoading: (loading: boolean) => {
-                set({ isLoading: loading });
-                if (!loading && !get().hasEverLoaded) {
-                    get().setHasEverLoaded();
                 }
-            },
 
-            setHasEverLoaded: () => set({ hasEverLoaded: true }),
-            setFolder: (folder) => set({ folder }),
-            setLayout: (layout: LayoutSetting) => set({ layout }),
-        }),
-        {
-            name: 'public-folder-store',
+                return {
+                    folderItems: newFolderItems,
+                };
+            }
+
+            const newItemUids = new Set(state.itemUids);
+            newItemUids.add(item.uid);
+            return {
+                folderItems: newFolderItems,
+                itemUids: newItemUids,
+            };
+        });
+    },
+
+    updateItem: (uid: string, updates: Partial<PublicFolderItem>) => {
+        set((state) => {
+            const existingItem = state.folderItems.get(uid);
+            if (!existingItem) {
+                return state;
+            }
+
+            const updatedItem = { ...existingItem, ...updates };
+            const newFolderItems = new Map(state.folderItems);
+            newFolderItems.set(uid, updatedItem);
+
+            return {
+                ...state,
+                folderItems: newFolderItems,
+            };
+        });
+    },
+
+    removeItem: (uid: string) => {
+        set((state) => {
+            const newFolderItems = new Map(state.folderItems);
+            newFolderItems.delete(uid);
+            const newItemUids = new Set(state.itemUids);
+            newItemUids.delete(uid);
+            return {
+                folderItems: newFolderItems,
+                itemUids: newItemUids,
+            };
+        });
+    },
+
+    clearAll: () => {
+        set({
+            folderItems: new Map(),
+            itemUids: new Set(),
+        });
+    },
+
+    getItemUids: () => Array.from(get().itemUids),
+
+    getFolderItem: (uid: string) => get().folderItems.get(uid),
+    getAllFolderItems: () => Array.from(get().folderItems.values()),
+
+    setLoading: (loading: boolean) => {
+        set({ isLoading: loading });
+        if (!loading && !get().hasEverLoaded) {
+            get().setHasEverLoaded();
         }
-    )
-);
+    },
+
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
+    setFolder: (folder) => set({ folder }),
+    setLayout: (layout: LayoutSetting) => set({ layout }),
+}));
