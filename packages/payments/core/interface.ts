@@ -30,6 +30,7 @@ import type {
     FREE_SUBSCRIPTION,
     InvoiceState,
     InvoiceType,
+    MethodStorage,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
     PLANS,
@@ -48,6 +49,11 @@ export interface CreateCardDetailsBackend {
     CVC: string;
     ZIP: string;
     Country: string;
+}
+
+export interface CardPayment {
+    Type: PAYMENT_METHOD_TYPES.CARD;
+    Details: CreateCardDetailsBackend;
 }
 
 export interface TokenPayment {
@@ -69,8 +75,20 @@ export type WrappedProcessorType = {
 
 export type ExtendedTokenPayment = Partial<TokenPayment> & WrappedProcessorType & WrappedPaymentsVersion;
 
+export interface PaypalPayment {
+    Type: PAYMENT_METHOD_TYPES.PAYPAL;
+}
+
+export interface WrappedPaypalPayment {
+    Payment: PaypalPayment;
+}
+
 export interface ExistingPayment {
     PaymentMethodID: string;
+}
+
+export interface WrappedCardPayment {
+    Payment: CardPayment;
 }
 
 export interface TokenPaymentMethod {
@@ -96,8 +114,11 @@ export type PlainPaymentMethodType = `${PAYMENT_METHOD_TYPES}`;
 export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
     AmountAndCurrency & {
         type:
+            | PAYMENT_METHOD_TYPES.PAYPAL
+            | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            | PAYMENT_METHOD_TYPES.BITCOIN
             | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             | PAYMENT_METHOD_TYPES.APPLE_PAY
@@ -108,6 +129,8 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
 export type ChargeablePaymentToken = V5PaymentToken &
     AmountAndCurrency & {
         type:
+            | PAYMENT_METHOD_TYPES.PAYPAL
+            | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
@@ -159,19 +182,41 @@ export interface SavedCardDetails {
 export type PaymentMethodCardDetails = {
     Order: number;
     ID: string;
-    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    Type: PAYMENT_METHOD_TYPES.CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     Details: SavedCardDetails;
     Autopay: Autopay;
+    External?: MethodStorage;
     IsDefault?: boolean;
 };
+
+export type PaymentMethodCardDetailsInternal = {
+    Type: PAYMENT_METHOD_TYPES.CARD;
+    External?: MethodStorage.INTERNAL;
+} & PaymentMethodCardDetails;
+
+export type PaymentMethodCardDetailsExternal = {
+    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    External: MethodStorage.EXTERNAL;
+} & PaymentMethodCardDetails;
 
 export type PaymentMethodPaypal = {
     Order: number;
     ID: string;
-    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     Details: PayPalDetails;
+    External?: MethodStorage;
     IsDefault?: boolean;
 };
+
+export type PaymentMethodPaypalInternal = {
+    Type: PAYMENT_METHOD_TYPES.PAYPAL;
+    External?: MethodStorage.INTERNAL;
+} & PaymentMethodPaypal;
+
+export type PaymentMethodPaypalExternal = {
+    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    External: MethodStorage.EXTERNAL;
+} & PaymentMethodPaypal;
 
 export type SepaDetails = {
     AccountName: string;
@@ -184,6 +229,7 @@ export type PaymentMethodSepa = {
     Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
     Order: number;
     Autopay: Autopay;
+    External?: MethodStorage;
     Details: SepaDetails;
     IsDefault?: boolean;
 };
@@ -193,6 +239,7 @@ export type PaymentMethodApplePay = {
     Type: PAYMENT_METHOD_TYPES.APPLE_PAY;
     Order: number;
     Autopay: Autopay;
+    External?: MethodStorage;
     Details: SavedCardDetails;
     IsDefault?: boolean;
 };
@@ -202,6 +249,7 @@ export type PaymentMethodGooglePay = {
     Type: PAYMENT_METHOD_TYPES.GOOGLE_PAY;
     Order: number;
     Autopay: Autopay;
+    External?: MethodStorage.EXTERNAL;
     Details: SavedCardDetails;
     IsDefault?: boolean;
 };
@@ -212,6 +260,12 @@ export type SavedPaymentMethod =
     | PaymentMethodSepa
     | PaymentMethodApplePay
     | PaymentMethodGooglePay;
+export type SavedPaymentMethodInternal = PaymentMethodPaypalInternal | PaymentMethodCardDetailsInternal;
+export type SavedPaymentMethodExternal =
+    | PaymentMethodPaypalExternal
+    | PaymentMethodCardDetailsExternal
+    | PaymentMethodGooglePay;
+
 export interface PreviousSubscription {
     cycle: Cycle;
     currency: Currency;

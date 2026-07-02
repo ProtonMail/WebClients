@@ -10,7 +10,11 @@ import type { ClientMethodsHook, ViewPaymentMethod } from '@proton/components/pa
 import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { PaymentMethodType, SavedPaymentMethod } from '@proton/payments/core/interface';
+import type {
+    PaymentMethodType,
+    SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
+} from '@proton/payments/core/interface';
 
 import PaymentMethodIcon from './PaymentMethodIcon';
 import SavedPaymentMethodDetails from './SavedPaymentMethodDetails';
@@ -20,7 +24,7 @@ interface AvailablePaymentMethodProps {
     methods: ViewPaymentMethod[];
     selectedMethod: PaymentMethodType | undefined;
     onChange: (value: PaymentMethodType) => void;
-    savedMethod: SavedPaymentMethod | undefined;
+    savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | undefined;
     disablePaymentMethodChange: boolean;
 }
 
@@ -71,7 +75,7 @@ const PaymentMethodSelector = ({
     disablePaymentMethodChange,
 }: Props) => {
     const [showAllMethods, setShowAllMethods] = useState(false);
-    const { allMethods, savedSelectedMethod: savedMethod } = methods;
+    const { allMethods, savedInternalSelectedMethod, savedExternalSelectedMethod } = methods;
     // Filter Cash and SEPA as they are not required for Lite app
     const availableMethods = allMethods.filter(
         (method) =>
@@ -81,6 +85,7 @@ const PaymentMethodSelector = ({
 
     // Show top 2 PM by default and show all methods if user expands the view
     const visibleMethods = showAllMethods ? availableMethods : availableMethods.slice(0, 2);
+    const savedMethod = savedInternalSelectedMethod ?? savedExternalSelectedMethod;
 
     const showSavedPaymentMethods = savedMethod && !showAllMethods;
 

@@ -27,6 +27,7 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import useApiResult from '../../hooks/useApiResult';
 import PaymentWrapper from '../payments/PaymentWrapper';
+import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { getInvoicePaymentsVersion } from './helpers';
 
 interface CheckInvoiceResponse {
@@ -106,7 +107,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                 }
 
                 // The case of selecting the "neutral" payment processor.
-                selectedProcessor = paymentFacade.chargebeeCard;
+                selectedProcessor = paymentFacade.card;
             }
 
             try {
@@ -130,6 +131,17 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
         });
 
     const submitButton = (() => {
+        if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
+            return (
+                <StyledPayPalButton
+                    type="submit"
+                    paypal={paymentFacade.paypal}
+                    loading={loading}
+                    data-testid="paypal-button"
+                />
+            );
+        }
+
         if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
             return (
                 <ChargebeePaypalButton
@@ -139,11 +151,19 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
             );
         }
 
+        // userCanTriggerSelected can be false when no payment method selected. It can happen when splitted user
+        // tries to pay for the inhouse invoice. In this case they won't have any new payment methods available by
+        // design. And if it happens that they also don't have any old payment methods, then userCanTriggerSelected
+        // will remain false. However it might happen that they do have enough credits to pay for the invoice. In this
+        // case we should not disable the pay button.
+        const disablePayButton =
+            paymentFacade.methods.loading || (!paymentFacade.userCanTriggerSelected && amountDue > 0);
+
         return (
             <Button
                 color="norm"
                 loading={loading}
-                disabled={paymentFacade.methods.loading}
+                disabled={disablePayButton}
                 type="submit"
                 data-testid="pay-invoice-button"
             >

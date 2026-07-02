@@ -124,16 +124,17 @@ const PaymentMethodDetailsSepa = ({ details }: { details: SavedCardDetails | Pay
 
 interface Props {
     type:
+        | PAYMENT_METHOD_TYPES.CARD
+        | PAYMENT_METHOD_TYPES.PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-        | PAYMENT_METHOD_TYPES.APPLE_PAY;
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
     details: SavedCardDetails | PayPalDetails | SepaDetails;
 }
 
 const PaymentMethodDetails = ({ type, details }: Props) => {
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+    if (type === PAYMENT_METHOD_TYPES.CARD || type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         if (!isSavedCardDetails(details)) {
             return null;
         }
@@ -141,7 +142,7 @@ const PaymentMethodDetails = ({ type, details }: Props) => {
         return <PaymentMethodDetailsCard details={details} />;
     }
 
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+    if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         if (!isPaypalDetails(details)) {
             return null;
         }

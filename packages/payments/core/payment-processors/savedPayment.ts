@@ -8,6 +8,8 @@ import type {
     ChargeablePaymentToken,
     NonChargeablePaymentToken,
     SavedPaymentMethod,
+    SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
     V5PaymentToken,
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
@@ -16,12 +18,41 @@ interface SavedPaymentState {
     method: {
         paymentMethodId: string;
         type:
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            | PAYMENT_METHOD_TYPES.CARD
+            | PAYMENT_METHOD_TYPES.PAYPAL
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             | PAYMENT_METHOD_TYPES.APPLE_PAY
             | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
     };
+}
+
+function convertType(
+    type:
+        | PAYMENT_METHOD_TYPES.CARD
+        | PAYMENT_METHOD_TYPES.PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+        | PAYMENT_METHOD_TYPES.APPLE_PAY
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY
+):
+    | PAYMENT_METHOD_TYPES.CARD
+    | PAYMENT_METHOD_TYPES.PAYPAL
+    | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+    | PAYMENT_METHOD_TYPES.APPLE_PAY
+    | PAYMENT_METHOD_TYPES.GOOGLE_PAY {
+    switch (type) {
+        case PAYMENT_METHOD_TYPES.CARD:
+        case PAYMENT_METHOD_TYPES.PAYPAL:
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+        case PAYMENT_METHOD_TYPES.APPLE_PAY:
+        case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+            return type;
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+            return PAYMENT_METHOD_TYPES.CARD;
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+            return PAYMENT_METHOD_TYPES.PAYPAL;
+    }
 }
 
 export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
@@ -31,14 +62,14 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         public verifyPayment: PaymentVerificator,
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
-        savedMethod: SavedPaymentMethod,
+        savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod,
         public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
                 method: {
                     paymentMethodId: savedMethod.ID,
-                    type: savedMethod.Type,
+                    type: convertType(savedMethod.Type),
                 },
             },
             amountAndCurrency
@@ -82,10 +113,10 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         return this.tokenCreated(token);
     }
 
-    updateSavedMethod(savedMethod: SavedPaymentMethod) {
+    updateSavedMethod(savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod) {
         this.state.method = {
             paymentMethodId: savedMethod.ID,
-            type: savedMethod.Type,
+            type: convertType(savedMethod.Type),
         };
     }
 
@@ -95,7 +126,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
 
     private tokenCreated(token?: V5PaymentToken): ChargeablePaymentParameters {
         const result: ChargeablePaymentParameters = {
-            type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            type: PAYMENT_METHOD_TYPES.CARD,
             chargeable: true,
             ...this.amountAndCurrency,
             ...token,

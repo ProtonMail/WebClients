@@ -226,7 +226,12 @@ const SubscriptionCheckoutPaymentSection = ({
                         currency={currency}
                         app={appName}
                         withLoading={withLoading}
-                        loading={loading || subscribing || paymentFacade.bitcoinChargebee.bitcoinLoading}
+                        loading={
+                            loading ||
+                            subscribing ||
+                            paymentFacade.bitcoinInhouse.bitcoinLoading ||
+                            paymentFacade.bitcoinChargebee.bitcoinLoading
+                        }
                         checkResult={checkResult}
                         className="w-full"
                         disabled={isFreeUserWithFreePlanSelected}

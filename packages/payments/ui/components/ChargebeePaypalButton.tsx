@@ -9,7 +9,7 @@ import { ChargebeeIframe, getPaypalButtonWidth } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';
 
-import './ChargebeePaypalButton.scss';
+import '@proton/components/containers/payments/StyledPayPalButton.scss';
 
 const FakeChargebeeButton = ({
     className,

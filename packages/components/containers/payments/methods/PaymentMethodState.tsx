@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PaymentMethodState = ({ method }: Props) => {
-    if (method.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && isExpired(method.Details)) {
+    if (method.Type === PAYMENT_METHOD_TYPES.CARD && isExpired(method.Details)) {
         return (
             <Badge type="error" data-testid="expired">{`${c('Label on payment method').t`Expired`} ${
                 method.Details.ExpMonth

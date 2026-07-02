@@ -1508,7 +1508,7 @@ const SingleSignupContainerV2 = ({
                                     setModelDiff({
                                         session: {
                                             ...getSessionDataFromSignup(setupCache),
-                                            defaultPaymentMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                                            defaultPaymentMethod: PAYMENT_METHOD_TYPES.BITCOIN,
                                         },
                                         // Set back original subscription data
                                         subscriptionData: cacheWithOriginalSubscription.subscriptionData,

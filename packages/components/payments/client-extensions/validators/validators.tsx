@@ -10,10 +10,12 @@ import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     type ApplePayModalHandles,
+    type CardPayment,
     type ChargebeeIframeHandles,
     type ChargebeePaypalModalHandles,
     type FreeSubscription,
     type GooglePayModalHandles,
+    PAYMENT_METHOD_TYPES,
     type PaymentVerificator,
     type PaymentVerificatorV5,
     type PaymentVerificatorV5Params,
@@ -56,6 +58,7 @@ import PaymentVerificationModal from './PaymentVerificationModal';
 export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): PaymentVerificator =>
     async function verify({
         addCardMode,
+        Payment,
         Token,
         ApprovalURL,
         ReturnHost,
@@ -64,6 +67,7 @@ export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => voi
             createModal(
                 <PaymentVerificationModal
                     isAddCard={addCardMode}
+                    payment={Payment as CardPayment}
                     onSubmit={() => resolve(toV5PaymentToken(Token))}
                     onClose={reject}
                     onProcess={() => {
@@ -83,6 +87,42 @@ export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => voi
             );
         });
     };
+
+/**
+ * This function is very similar to {@link getDefaultVerifyPayment}, but it's used for PayPal.
+ * There are differences in the configuration, but the overall idea and behavior is the same.
+ * @returns
+ */
+export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void, api: Api): PaymentVerificator => {
+    return async function verify({ Token, ApprovalURL, ReturnHost }) {
+        const paymentToken = await new Promise<V5PaymentToken>((resolve, reject) => {
+            const onProcess = () => {
+                const abort = new AbortController();
+                return {
+                    promise: ensureTokenChargeable({
+                        Token,
+                        api,
+                        ReturnHost,
+                        ApprovalURL,
+                        signal: abort.signal,
+                    }),
+                    abort,
+                };
+            };
+            createModal(
+                <PaymentVerificationModal
+                    onSubmit={() => resolve(toV5PaymentToken(Token))}
+                    onClose={reject}
+                    type={PAYMENT_METHOD_TYPES.PAYPAL}
+                    onProcess={onProcess}
+                    initialProcess={onProcess()}
+                />
+            );
+        });
+
+        return paymentToken;
+    };
+};
 
 type Dependencies = {
     user?: User;

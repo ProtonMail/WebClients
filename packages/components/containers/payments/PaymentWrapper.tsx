@@ -79,7 +79,8 @@ const PaymentWrapper = ({
             }}
             lastUsedMethod={methods.lastUsedMethod}
             loading={methods.loading}
-            savedMethod={methods.savedSelectedMethod}
+            savedMethodInternal={methods.savedInternalSelectedMethod}
+            savedMethodExternal={methods.savedExternalSelectedMethod}
             allMethods={methods.allMethods}
             isAuthenticated={isAuthenticated}
             savedPaymentMethods={methods.savedMethods ?? []}
