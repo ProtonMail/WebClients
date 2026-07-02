@@ -1,14 +1,15 @@
 import { type Dispatch, type MutableRefObject, type SetStateAction, useCallback, useEffect, useRef } from 'react';
 
+import { useRoomContext } from '@livekit/components-react';
 import type { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
-import type { Room } from 'livekit-client';
 
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
-import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { UseLiveKitConnectionResult } from './useLiveKitConnection';
 import type { UseMlsSessionResult } from './useMlsSession';
 
@@ -19,8 +20,6 @@ interface GetAccessDetailsParams {
 }
 
 interface UseReconnectionParams {
-    wasmApp: MeetCoreClient | null;
-    room: Room;
     meetingLinkNameRef: MutableRefObject<string>;
     meetingPassword: string;
     displayName: string;
@@ -29,8 +28,6 @@ interface UseReconnectionParams {
     accessTokenRef: MutableRefObject<string | null>;
     keyProvider: ProtonMeetKeyProvider;
     keyRotationScheduler: KeyRotationScheduler;
-    isMeetSeamlessKeyRotationEnabled: boolean;
-    isMeetClientMetricsLogEnabled: boolean;
     getAccessDetails: (params: GetAccessDetailsParams) => Promise<{ accessToken: string; websocketUrl: string }>;
     handleMlsSetup: UseMlsSessionResult['handleMlsSetup'];
     connectWithStunFallbackToTurnRelay: UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay'];
@@ -55,8 +52,6 @@ export interface UseReconnectionResult {
 }
 
 export const useReconnection = ({
-    wasmApp,
-    room,
     meetingLinkNameRef,
     meetingPassword,
     displayName,
@@ -65,8 +60,6 @@ export const useReconnection = ({
     accessTokenRef,
     keyProvider,
     keyRotationScheduler,
-    isMeetSeamlessKeyRotationEnabled,
-    isMeetClientMetricsLogEnabled,
     getAccessDetails,
     handleMlsSetup,
     connectWithStunFallbackToTurnRelay,
@@ -83,12 +76,18 @@ export const useReconnection = ({
     setReconnectionFailed,
     triggerFullReconnectionRef,
 }: UseReconnectionParams): UseReconnectionResult => {
+    const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
+    const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
+
+    const meetCoreClient = useMeetCoreClient();
+    const room = useRoomContext();
+
     const isReconnectingRef = useRef(false);
     const websocketUrlRef = useRef<string | null>(null);
 
     const performFullReconnection = useCallback(
         async (reason: RejoinReasonInfo) => {
-            if (isReconnectingRef.current || !wasmApp || !meetingLinkNameRef.current) {
+            if (isReconnectingRef.current || !meetingLinkNameRef.current) {
                 return;
             }
             isReconnectingRef.current = true;
@@ -115,7 +114,7 @@ export const useReconnection = ({
                 // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
                 if (wasMlsActive) {
                     try {
-                        await wasmApp.leaveMeeting();
+                        await meetCoreClient.leaveMeeting();
                     } catch {
                         // best effort
                     }
@@ -170,7 +169,7 @@ export const useReconnection = ({
 
                 if (isMeetClientMetricsLogEnabled) {
                     const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-                    await wasmApp
+                    await meetCoreClient
                         .logUserRejoin(rejoinTimeMs, 1, reason, true)
                         .catch((err: unknown) =>
                             reportMeetError('Failed to log reconnection success', withMeetingLinkNameTag(err))
@@ -182,7 +181,7 @@ export const useReconnection = ({
                 // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
                 if (mlsSetupDone.current) {
                     try {
-                        await wasmApp?.leaveMeeting();
+                        await meetCoreClient.leaveMeeting();
                     } catch {
                         // best effort
                     }
@@ -198,7 +197,7 @@ export const useReconnection = ({
 
                 if (isMeetClientMetricsLogEnabled) {
                     const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-                    await wasmApp
+                    await meetCoreClient
                         ?.logUserRejoin(rejoinTimeMs, 1, reason, false)
                         .catch((err: unknown) =>
                             reportMeetError('Failed to log reconnection failure', withMeetingLinkNameTag(err))
@@ -206,8 +205,9 @@ export const useReconnection = ({
                 }
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [
-            wasmApp,
+            meetCoreClient,
             room,
             meetingPassword,
             displayName,
@@ -236,6 +236,7 @@ export const useReconnection = ({
     // (e.g. useConnectionHealthCheck's onMlsFailed) always call the latest version.
     useEffect(() => {
         triggerFullReconnectionRef.current = performFullReconnection;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [performFullReconnection]);
 
     return {

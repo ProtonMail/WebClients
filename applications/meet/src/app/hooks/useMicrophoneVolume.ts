@@ -59,8 +59,8 @@ export const useMicrophoneVolumeDirect = (isMicOn: boolean, throttleMs: number =
                 return;
             }
 
-            analyser.getByteTimeDomainData(dataArray as Uint8Array<ArrayBuffer>);
-            const rms = calculateRms(dataArray as Uint8Array<ArrayBuffer>);
+            analyser.getByteTimeDomainData(dataArray);
+            const rms = calculateRms(dataArray);
 
             const now = Date.now();
             if (now - lastUpdateRef.current >= throttleMs) {
