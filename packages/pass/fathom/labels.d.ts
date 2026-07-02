@@ -13,7 +13,7 @@ declare enum FieldType {
     PASSWORD_NEW = 'new-password',
     USERNAME = 'username',
     USERNAME_HIDDEN = 'username-hidden',
-    CREDIT_CARD = 'cc',
+    CREDIT_CARD = 'credit-card',
 }
 declare enum IdentityFieldType {
     FULLNAME = 'id:fullname',
