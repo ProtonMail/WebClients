@@ -1,12 +1,13 @@
-import type {SagaIterator} from 'redux-saga';
-import {call, delay, getContext, put, select, take} from 'redux-saga/effects';
+import type { SagaIterator } from 'redux-saga';
+import { call, delay, getContext, put, select, take } from 'redux-saga/effects';
 
-import {base64ToMasterKey} from '../../crypto';
-import type {AesKwCryptoKey} from '../../crypto/types';
-import type {DbApi} from '../../indexedDb/db';
-import type {LumoApi, RemoteStatus} from '../../remote/api';
-import {convertNewSpaceToApi, convertSpaceToApi} from '../../remote/conversion';
-import type {Priority} from '../../remote/scheduler';
+import { MAX_SPACES_PER_USER } from '../../constants/limits';
+import { base64ToMasterKey } from '../../crypto';
+import type { AesKwCryptoKey } from '../../crypto/types';
+import type { DbApi } from '../../indexedDb/db';
+import type { LumoApi, RemoteStatus } from '../../remote/api';
+import { convertNewSpaceToApi, convertSpaceToApi } from '../../remote/conversion';
+import type { Priority } from '../../remote/scheduler';
 import type {
     GetSpaceRemote,
     IdMapEntry,
@@ -18,11 +19,11 @@ import type {
     RemoteSpace,
     ResourceType,
 } from '../../remote/types';
-import {deserializeSpace, serializeSpace} from '../../serialization';
-import {SearchService} from '../../services/search/searchService';
-import {cleanSerializedSpace, cleanSpace, type SerializedSpace, type Space, type SpaceId} from '../../types';
-import {listify, mapIds, mapify} from '../../util/collections';
-import {isoToUnixTimestamp} from '../../util/date';
+import { deserializeSpace, serializeSpace } from '../../serialization';
+import { SearchService } from '../../services/search/searchService';
+import { type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
+import { listify, mapIds, mapify } from '../../util/collections';
+import { isoToUnixTimestamp } from '../../util/date';
 import {
     selectAttachmentsBySpaceId,
     selectConversationsBySpaceId,
@@ -45,9 +46,12 @@ import {
     locallyDeleteConversationFromRemoteRequest,
     locallyRefreshConversationFromRemoteRequest,
 } from '../slices/core/conversations';
-import {addIdMapEntry, deleteAllIdMaps} from '../slices/core/idmap';
-import {deleteAllMessages, deleteMessage, type MessageMap} from '../slices/core/messages';
+import { addIdMapEntry, deleteAllIdMaps } from '../slices/core/idmap';
+import { type MessageMap, deleteAllMessages, deleteMessage } from '../slices/core/messages';
 import {
+    type PullSpaceRequest,
+    type PushSpaceRequest,
+    type PushSpaceSuccess,
     addSpace,
     deleteAllSpaces,
     deleteAllSpacesFailure,
@@ -56,24 +60,21 @@ import {
     locallyDeleteSpaceFromRemoteRequest,
     locallyRefreshSpaceFromRemoteRequest,
     pullSpaceFailure,
-    type PullSpaceRequest,
+    pullSpaceSuccess,
     pullSpacesFailure,
     pullSpacesPageResponse,
     pullSpacesRequest,
     pullSpacesSuccess,
-    pullSpaceSuccess,
     pushSpaceFailure,
     pushSpaceNeedsRetry,
     pushSpaceNoop,
-    type PushSpaceRequest,
     pushSpaceRequest,
-    type PushSpaceSuccess,
     pushSpaceSuccess,
 } from '../slices/core/spaces';
-import type {LumoState} from '../store';
-import {MAX_SPACES_PER_USER} from '../../constants/limits';
-import {addResourceLimitError} from '../slices/meta/errors';
-import {callWithRetry, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
+import { updateLumoUserSettingsWithAutoSave } from '../slices/lumoUserSettings';
+import { addResourceLimitError } from '../slices/meta/errors';
+import type { LumoState } from '../store';
+import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './index';
 
 /*** helpers ***/
 export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {
@@ -241,6 +242,12 @@ export function* handleDeleteAllSpaces(): SagaIterator<any> {
         yield put(deleteAllMessages());
         yield put(deleteAllAttachments());
         yield put(deleteAllIdMaps());
+        yield put(
+            updateLumoUserSettingsWithAutoSave({
+                memories: [],
+                memoryPromptsSinceAutoSave: 0,
+            })
+        );
 
         yield put(deleteAllSpacesSuccess());
     } catch (e) {
