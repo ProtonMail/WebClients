@@ -19,7 +19,9 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { PublishableDataTypes } from '../../types';
 import { isValidMessageString } from '../../utils/isValidMessageString';
+import type { ChatIncomingEventInfoData } from '../../wasm/MeetCoreClient';
 
 export const useChat = () => {
     const dispatch = useMeetDispatch();
@@ -40,7 +42,23 @@ export const useChat = () => {
         // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
         async (payload: Uint8Array, participant: RemoteParticipant) => {
             try {
-                const event = await meetCoreClient.decodeChat(payload);
+                const decodedPayload = new TextDecoder().decode(payload);
+
+                // Parsing the type from the string decoded payload as new data format breaks JSON.parse
+                const type = decodedPayload.match(/"type"\s*:\s*"([^"]+)"/)?.[1];
+
+                if (type && type !== PublishableDataTypes.Message) {
+                    return;
+                }
+
+                const event = (await meetCoreClient.decodeChat(payload)) as ChatIncomingEventInfoData & {
+                    type: string;
+                };
+
+                // new version of decodeChat will preserve the type property for backwards compatibility
+                if (event.type && event.type !== PublishableDataTypes.Message) {
+                    return;
+                }
 
                 if (event.kind !== ChatEventKind.Message && event.kind !== ChatEventKind.Reaction) {
                     return;
