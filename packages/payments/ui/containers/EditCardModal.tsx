@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -68,7 +68,7 @@ const EditCardModal = ({
         amount: 0,
         currency: user.Currency,
         flow: 'add-card',
-        onChargeable: async (_, { chargeablePaymentParameters, sourceType }) => {
+        onChargeable: async (_, { chargeablePaymentParameters }) => {
             withProcessing(async () => {
                 if (!isV5PaymentToken(chargeablePaymentParameters)) {
                     return;
@@ -76,15 +76,13 @@ const EditCardModal = ({
 
                 const pollPaymentMethods = createPaymentMethodsPoller();
 
-                if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-                    await api(
-                        setPaymentMethodV5({
-                            PaymentToken: chargeablePaymentParameters.PaymentToken,
-                            v: 5,
-                            Autopay: renewToggleProps.renewState,
-                        })
-                    );
-                }
+                await api(
+                    setPaymentMethodV5({
+                        PaymentToken: chargeablePaymentParameters.PaymentToken,
+                        v: 5,
+                        Autopay: renewToggleProps.renewState,
+                    })
+                );
 
                 if (existingCard) {
                     await getPaymentMethods({ cache: CacheType.None });
@@ -125,22 +123,28 @@ const EditCardModal = ({
         }
     };
 
-    const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
-    const formFullyLoaded = isChargebeeCard && chargebeeFormInitialized;
+    const loading = paymentFacade.methods.loading;
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+
+        if (paymentFacade.methods.isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)) {
+            paymentFacade.methods.selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+        }
+    }, [loading]);
 
     const content = (
         <>
-            {isChargebeeCard && (
-                <ChargebeeCreditCardWrapper
-                    onInitialized={() => setChargebeeFormInitialized(true)}
-                    iframeHandles={paymentFacade.iframeHandles}
-                    chargebeeCard={paymentFacade.chargebeeCard}
-                    themeCode={paymentFacade.themeCode}
-                    initialCountryCode={paymentFacade.methods.status?.CountryCode}
-                    showCountry={true}
-                />
-            )}
-            {enableRenewToggle && formFullyLoaded && (
+            <ChargebeeCreditCardWrapper
+                onInitialized={() => setChargebeeFormInitialized(true)}
+                iframeHandles={paymentFacade.iframeHandles}
+                chargebeeCard={paymentFacade.chargebeeCard}
+                themeCode={paymentFacade.themeCode}
+                initialCountryCode={paymentFacade.methods.status?.CountryCode}
+                showCountry={true}
+            />
+            {enableRenewToggle && chargebeeFormInitialized && (
                 <RenewToggle
                     loading={processing}
                     onChange={async () => {
@@ -204,28 +208,8 @@ const EditCardModal = ({
             {...rest}
         >
             <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                {/* In the future, this spinner can be passed inside of chargebee card component to
-                replace its internal spinner and make to loading animation continious
-                currently there are two stages: first wait till the facade is fully loaded,
-                then wait till the chargebee form is initialized. We need to find a way to use one loading spinner
-                for both stages
-                */}
-                {/* {loading ? (
-                    <div
-                        className="flex justify-center items-center h-custom"
-                        style={{
-                            '--h-custom': '27rem',
-                        }}
-                    >
-                        <CircleLoader size="large" />
-                    </div>
-                ) : (
-                    content
-                )} */}
-                {content}
-            </ModalTwoContent>
-            {formFullyLoaded && (
+            <ModalTwoContent>{content}</ModalTwoContent>
+            {chargebeeFormInitialized && (
                 <ModalTwoFooter>
                     <Button disabled={processing} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                     <Button loading={processing} color="norm" type="submit" data-testid="edit-card-action-save">{c(
