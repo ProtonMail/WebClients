@@ -288,6 +288,33 @@ describe('SearchDB', () => {
             await db.setOptedIn();
             expect(await db.isOptedIn()).toBe(true);
         });
+
+        describe('isSearchable', () => {
+            it('returns false by default', async () => {
+                expect(await db.isSearchable()).toBe(false);
+            });
+
+            it('returns true after markSearchableIndex', async () => {
+                await db.markSearchableIndex();
+                expect(await db.isSearchable()).toBe(true);
+            });
+        });
+    });
+
+    describe('clearIndex', () => {
+        it('clears isSearchable', async () => {
+            await db.markSearchableIndex();
+            await db.clearIndex();
+            expect(await db.isSearchable()).toBe(false);
+        });
+
+        it('preserves optIn and crypto key', async () => {
+            await db.setOptedIn();
+            await db.putSearchCryptoKey('secret', identity);
+            await db.clearIndex();
+            expect(await db.isOptedIn()).toBe(true);
+            expect(await db.getSearchCryptoKey(identity)).toBe('secret');
+        });
     });
 
     describe('isolation by userId', () => {

@@ -17,7 +17,7 @@ interface Props {
     onClose: () => void;
     onClosed: () => void;
     isSearchable: boolean;
-    isInitialIndexing: boolean;
+    isIndexing: boolean;
     isRunningOutdatedAppVersion: boolean;
     indexingProgress: IndexingProgress;
     permanentError: PermanentErrorKind | null;
@@ -30,14 +30,15 @@ export function SearchDropdown({
     onClose,
     onClosed,
     isSearchable,
-    isInitialIndexing,
+    isIndexing,
     isRunningOutdatedAppVersion,
     indexingProgress,
     permanentError,
     rebuild,
 }: Props) {
-    const showProgress = isInitialIndexing;
-    const isSearchReady = isSearchable && !isInitialIndexing;
+    const isReindexing = isIndexing && isSearchable;
+    const showProgress = isIndexing && !isSearchable;
+    const isSearchReady = isSearchable;
 
     const renderContent = () => {
         /** TODO: Add tracking for these states */
@@ -54,6 +55,11 @@ export function SearchDropdown({
         }
         if (isRunningOutdatedAppVersion) {
             return <OutdatedAppVersionContent />;
+        }
+        // A usable index already exists but a re-index is running in the background.
+        // Search stays available; tell the user results may be incomplete until it finishes.
+        if (isReindexing) {
+            return <ReindexingContent indexingProgress={indexingProgress} onClose={onClose} />;
         }
         return (
             <Content
@@ -113,6 +119,26 @@ function Content({ isSearchReady, showProgress, indexingProgress, onClose }: Con
             </div>
             {showProgress && <IndexingProgressInfo progress={indexingProgress} isComplete={false} />}
             {isSearchReady && <IndexingProgressInfo progress={indexingProgress} isComplete={true} />}
+            <div className="flex justify-end mt-4">
+                <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
+            </div>
+        </div>
+    );
+}
+
+function ReindexingContent({ indexingProgress, onClose }: { indexingProgress: IndexingProgress; onClose: () => void }) {
+    return (
+        <div className="px-5 pt-5 pb-4">
+            <div>
+                <div className="flex">
+                    <span className="inline-flex text-bold text-lg">{c('Info').t`Re-indexing in progress`}</span>
+                </div>
+                <p className="mb-0">
+                    {c('Info')
+                        .t`Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.`}
+                </p>
+            </div>
+            <IndexingProgressInfo progress={indexingProgress} isComplete={false} />
             <div className="flex justify-end mt-4">
                 <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
             </div>

@@ -160,7 +160,7 @@ function SearchGlobal() {
         <>
             <InfoRow label={c('Label').t`User opted in`} value={searchModule.isUserOptIn ? 'Yes' : 'No'} />
             <InfoRow label={c('Label').t`Searchable`} value={searchModule.isSearchable ? 'Yes' : 'No'} />
-            <InfoRow label={c('Label').t`Initial indexing`} value={searchModule.isInitialIndexing ? 'Yes' : 'No'} />
+            <InfoRow label={c('Label').t`Indexing`} value={searchModule.isIndexing ? 'Yes' : 'No'} />
             <InfoRow
                 label={c('Label').t`Outdated version`}
                 value={searchModule.isRunningOutdatedVersion ? 'Yes' : 'No'}

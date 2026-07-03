@@ -30,7 +30,6 @@ export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
         signal: new AbortController().signal,
         searchMetrics: noopSearchMetrics,
         markIndexing: jest.fn(),
-        markInitialIndexing: jest.fn(),
         enqueueOnce: jest.fn(),
         enqueueDelayed: jest.fn(),
         notifyIndexingProgress: jest.fn(),
