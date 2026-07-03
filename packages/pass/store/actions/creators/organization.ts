@@ -1,9 +1,12 @@
+import { createAction } from '@reduxjs/toolkit';
+
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
+import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import { cachedRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { OrganizationGetResponse } from '@proton/pass/types';
+import type { MaybeNull, OrganizationGetResponse } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
@@ -14,3 +17,5 @@ export const getOrganizationSettings = requestActionsFactory<void, OrganizationG
 export const getOrganizationPauseList = requestActionsFactory<void, DomainCriterias, void>('organization::pause-list::get')({
     success: { ...cachedRequest(15 * UNIX_MINUTE), prepare: (payload) => pipe(withSettings, withCache)({ payload }) },
 });
+export const setOrganization = createAction<MaybeNull<OrganizationState>>('organization::set');
+export const setOrganizationSettings = createAction<OrganizationGetResponse>('organization::settings::set');

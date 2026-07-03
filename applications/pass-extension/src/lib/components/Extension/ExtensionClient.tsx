@@ -19,7 +19,6 @@ import { clientErrored } from '@proton/pass/lib/client';
 import { telemetryBool } from '@proton/pass/lib/telemetry/utils';
 import { lock, signoutIntent } from '@proton/pass/store/actions/creators/auth';
 import { syncIntent } from '@proton/pass/store/actions/creators/client';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -114,7 +113,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
                 AppStateManager.reset();
                 dispatch(signoutIntent({ soft }));
             },
-            sync: () => dispatch(syncIntent(SyncType.FULL)),
+            sync: () => dispatch(syncIntent()),
         }),
         []
     );

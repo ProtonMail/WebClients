@@ -2,13 +2,12 @@ import { runSaga } from 'redux-saga';
 
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { syncIntent } from '@proton/pass/store/actions';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { PassCryptoWorker } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
-import { onUserRefreshed } from './channel.user';
+import { onUserRefreshed } from './channel.core';
 
 describe('`onUserRefreshed`', () => {
     const UserKeys = [
@@ -45,7 +44,7 @@ describe('`onUserRefreshed`', () => {
         await task.toPromise();
 
         expect(PassCrypto.hydrate).toHaveBeenCalledWith({ user, keyPassword, addresses, clear: false });
-        expect(saga.dispatched).toContainEqual(syncIntent(SyncType.FULL));
+        expect(saga.dispatched).toContainEqual(syncIntent());
     });
 
     test('should not trigger full sync when keys are unchanged', async () => {
@@ -57,7 +56,7 @@ describe('`onUserRefreshed`', () => {
         await task.toPromise();
 
         expect(PassCrypto.hydrate).toHaveBeenCalledWith({ user, keyPassword, addresses, clear: false });
-        expect(saga.dispatched).not.toContainEqual(syncIntent(SyncType.FULL));
+        expect(saga.dispatched).not.toContainEqual(syncIntent());
     });
 
     test('should handle crypto hydration errors gracefully', async () => {

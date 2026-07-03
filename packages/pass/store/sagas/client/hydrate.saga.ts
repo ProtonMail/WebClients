@@ -1,5 +1,6 @@
-import { put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 
+import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -7,6 +8,8 @@ import { PassCryptoHydrationError } from '@proton/pass/lib/crypto/utils/errors';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
+import { DEFAULT_SYNC_STRATEGY, setSyncStrategy } from '@proton/pass/lib/sync/global';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import { stateHydrate } from '@proton/pass/store/actions';
@@ -16,11 +19,10 @@ import type { OrganizationState } from '@proton/pass/store/reducers/organization
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import { type Maybe, type MaybeNull, PlanType } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
-import { PLANS } from '@proton/payments/index';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
@@ -34,7 +36,7 @@ type HydrateCacheOptions = {
     onError?: (err: unknown) => Generator;
 };
 
-export type HydrationResult = { fromCache: boolean; version?: string };
+export type HydrationResult = { fromCache: boolean; version?: string; state: MaybeNull<State> };
 
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
@@ -70,10 +72,8 @@ export function* hydrate(
         const addresses = Object.values(userState.addresses);
 
         /** Request #2: Fetch organization data for B2B users if not cached.
-         * Pass Essentials is currently considered as Plus and not B2B.
          * Graceful fallback to null on network failure to avoid blocking hydration. */
-        const isB2BPlan = userState.plan.Type === PlanType.BUSINESS || userState.plan.InternalName === PLANS.PASS_PRO;
-        const organization: MaybeNull<OrganizationState> = yield isB2BPlan
+        const organization: MaybeNull<OrganizationState> = yield isPassB2BPlan(userState.plan)
             ? (cachedState?.organization ?? getOrganization().catch(() => null))
             : null;
 
@@ -97,6 +97,18 @@ export function* hydrate(
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
         settings.extraPassword = authStore.getExtraPassword();
+
+        /** Resolve the sync strategy for this session:
+         * - From cache: use the persisted value. If missing (pre-migration
+         *   cache), default to LEGACY — migration check in boot.saga.ts
+         *   will handle the transition if the feature flag differs.
+         * - Fresh login (no cache): derive directly from the feature flag
+         *   so the first sync routes to the correct strategy. */
+        const syncV2 = userState.features.PassUserEventsV1 ?? false;
+        settings.syncStrategy = cachedState
+            ? (settings.syncStrategy ?? DEFAULT_SYNC_STRATEGY)
+            : SyncStrategy[syncV2 ? 'USER_EVENTS' : 'LEGACY'];
+
         const autofill = settings.autofill;
 
         if (EXTENSION_BUILD && autofill) {
@@ -129,10 +141,12 @@ export function* hydrate(
         if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, groups, clear: true });
 
         yield put(stateHydrate(next));
+        yield call(setSyncStrategy, next.settings.syncStrategy);
 
         return {
             fromCache,
             version: encryptedCache?.version,
+            state: next,
         };
     } catch (err) {
         logger.warn(`[Hydration] Error occured`, err);
@@ -140,6 +154,7 @@ export function* hydrate(
         if (config.onError) yield config.onError?.(err);
         else throw err;
 
-        return { fromCache: false };
+        yield call(setSyncStrategy);
+        return { fromCache: false, state: null };
     }
 }

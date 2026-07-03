@@ -132,7 +132,9 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassItemCloning]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.PassRenameAdminToManager]: false,
+    [PassFeature.PassUserEventsV1]: false,
     [PassFeature.PassWebInternalAlpha]: false,
+    [PassFeature.PassWebPrfUnlock]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
