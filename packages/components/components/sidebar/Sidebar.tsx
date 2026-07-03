@@ -13,7 +13,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
     isElectronMail,
     isElectronMeet,
@@ -124,6 +124,8 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     /**
      * Extra content that will be rendered below the storage meter and version.
      */
+    hideStorage?: boolean;
+    footerVariant?: 'full' | 'minimal' | 'hidden';
     preFooter?: ReactNode;
     postFooter?: ReactNode;
     /**
@@ -136,7 +138,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
      * @default true
      */
     growContent?: boolean;
-    showStorage?: boolean;
     /**
      * Only when collapse button is present
      */
@@ -161,7 +162,8 @@ const Sidebar = ({
     preFooter,
     postFooter,
     growContent = true,
-    showStorage = true,
+    hideStorage = false,
+    footerVariant = 'full',
     collapsed = false,
     wide = false,
     className,
@@ -269,23 +271,23 @@ const Sidebar = ({
                 >
                     {children}
                 </div>
-                {showStorage &&
-                app !== APPS.PROTONVPN_SETTINGS &&
-                APP_NAME !== APPS.PROTONVPN_SETTINGS &&
-                appSpace.maxSpace > 0 ? (
+                {footerVariant === 'full' && appSpace.maxSpace > 0 && (
                     <div className="shrink-0 app-infos px-3 mt-2">
                         {preFooter}
-                        <Storage
-                            appSpace={appSpace}
-                            app={app}
-                            user={user}
-                            subscription={subscription}
-                            version={version}
-                            wavyMeter={wavyMeter}
-                        />
+                        {!hideStorage && (
+                            <Storage
+                                appSpace={appSpace}
+                                app={app}
+                                user={user}
+                                subscription={subscription}
+                                version={version}
+                                wavyMeter={wavyMeter}
+                            />
+                        )}
                         {postFooter}
                     </div>
-                ) : (
+                )}
+                {footerVariant === 'minimal' && (
                     <div className={clsx('border-top', collapsed && 'hidden')}>
                         <div className="text-center py-2 px-3">{version}</div>
                     </div>

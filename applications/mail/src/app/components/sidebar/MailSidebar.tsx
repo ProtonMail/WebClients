@@ -113,7 +113,7 @@ const MailSidebar = () => {
             version={<AppVersion />}
             preFooter={<SidebarStorageUpsell app={APPS.PROTONMAIL} />}
             collapsed={collapsed}
-            showStorage={showSideBar}
+            footerVariant={showSideBar ? 'full' : 'hidden'}
             navigationRef={navigationRef}
             hasComposerInFocus={hasComposerInFocus}
         >
