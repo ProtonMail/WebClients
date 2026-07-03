@@ -33,14 +33,12 @@ export type IndexPopulatorStatus = {
 export type SearchModuleState = {
     // Whether the user has opted in to the search experience.
     isUserOptIn: boolean;
-    // Whether the initial scan is in progress (building index from scratch).
-    isInitialIndexing: boolean;
-    // Whether any indexing is in progress (initial or incremental).
+    // Whether a full index scan is in progress (bootstrap or reindex).
     isIndexing: boolean;
-    // Whether the search module is ready to receive any search queries.
-    isSearchable: boolean;
     // Whether this tab is running an outdated app version compared to another tab.
     isRunningOutdatedVersion: boolean;
+    // Whether a usable index exists in client DB.
+    isSearchable: boolean;
     // If non-null, a permanent error has stopped the processor.
     permanentError: PermanentErrorKind | null;
     // Per-populator status (progress, done, version) for UI and maintenance.

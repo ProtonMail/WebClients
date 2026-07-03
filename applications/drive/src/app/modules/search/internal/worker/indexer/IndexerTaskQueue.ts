@@ -30,7 +30,6 @@ import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 import { PersistDataTask } from './tasks/CoreTasks/PersistDataTask';
 
 export type IndexerState = {
-    isInitialIndexing: boolean;
     isIndexing: boolean;
     isSearchable: boolean;
     permanentError: PermanentErrorKind | null;
@@ -38,7 +37,6 @@ export type IndexerState = {
 };
 
 export const DEFAULT_INDEXER_STATE: IndexerState = {
-    isInitialIndexing: false,
     isIndexing: false,
     isSearchable: false,
     permanentError: null,
@@ -75,7 +73,6 @@ export class IndexerTaskQueue {
     private readonly onlineMonitor = new OnlineMonitor();
 
     private state: IndexerState = {
-        isInitialIndexing: false,
         isIndexing: false,
         isSearchable: false,
         permanentError: null,
@@ -102,6 +99,9 @@ export class IndexerTaskQueue {
         Logger.info('IndexerTaskQueue: starting');
         this.stopped = false;
         this.abortController = new AbortController();
+
+        const isSearchable = await this.db.isSearchable();
+        await this.updateState({ isSearchable });
 
         const { bootstrapTasks, postBootstrapTasks } = await this.createTasks();
         this.postBootstrapTasks = postBootstrapTasks;
@@ -184,7 +184,7 @@ export class IndexerTaskQueue {
         }
         Logger.info(`IndexerTaskQueue: manually triggering re-index for ${uid}`);
         await populator.markAsNotDone(this.db);
-        this.enqueueOnce(new IndexPopulatorTask(populator, false));
+        this.enqueueOnce(new IndexPopulatorTask(populator));
     }
 
     private async processLoop(): Promise<void> {
@@ -201,16 +201,25 @@ export class IndexerTaskQueue {
             const task = this.queue.shift();
             if (!task) {
                 // Queue is draining — cancel any pending throttled progress refresh so it
-                // doesn't fire a late, redundant broadcast after `isSearchable: true`. The
+                // doesn't fire a late, redundant broadcast after the terminal snapshot. The
                 // snapshot we're about to emit already carries the terminal status.
                 if (this.progressNotifyTimeout) {
                     clearTimeout(this.progressNotifyTimeout);
                     this.progressNotifyTimeout = null;
                 }
-                // All boostrap tasks are done, initial indexing/indexing is done.
-                await this.updateState({ isInitialIndexing: false, isIndexing: false, isSearchable: true });
+                // All boostrap tasks are done, indexing is done.
+                // On the first drain, the index becomes usable — persist and broadcast
+                // isSearchable atomically with isIndexing: false.
+                const isFirstDrain = !this.bootstrapDone;
+                if (isFirstDrain) {
+                    await this.db.markSearchableIndex();
+                }
+                await this.updateState({
+                    isIndexing: false,
+                    ...(isFirstDrain ? { isSearchable: true } : {}),
+                });
 
-                if (!this.bootstrapDone) {
+                if (isFirstDrain) {
                     this.bootstrapDone = true;
                     this.observeStartupIndexStats();
                     for (const task of this.postBootstrapTasks) {
@@ -281,11 +290,6 @@ export class IndexerTaskQueue {
                 }, delayMs);
                 this.pendingTimeouts.add(timeout);
             },
-            markInitialIndexing: () => {
-                this.updateState({ isInitialIndexing: true }).catch((err) =>
-                    Logger.error('IndexerTaskQueue: markInitialIndexing updateState failed', err)
-                );
-            },
             notifyIndexingProgress: () => this.notifyIndexingProgress(),
             activeIndexPopulators: [...this.populators.values()],
         };
@@ -348,7 +352,7 @@ export class IndexerTaskQueue {
         this.populators.set(myFilesPopulator.getUid(), myFilesPopulator);
 
         return {
-            bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator, true /* isBootstrap */)],
+            bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator)],
             postBootstrapTasks: [new CleanUpStaleIndexEntryTask(), new CleanUpStaleBlobsTask()],
         };
     }
@@ -363,7 +367,7 @@ export class IndexerTaskQueue {
     }
 
     private async updateState(patch: Partial<IndexerState>): Promise<void> {
-        // Sync change detection before any DB work so redundant markIndexing/markInitialIndexing
+        // Sync change detection before any DB work so redundant markIndexing
         // calls don't each trigger a populator read.
         const changed = Object.keys(patch).some(
             (k) => patch[k as keyof IndexerState] !== this.state[k as keyof IndexerState]

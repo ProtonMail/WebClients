@@ -102,7 +102,7 @@ class IndexerStateStream {
     }
 
     waitForSearchable() {
-        return this.waitUntil((s) => s.isSearchable);
+        return this.waitUntil((s) => !s.isIndexing && s.isSearchable);
     }
 
     waitForPermanentError() {
@@ -195,12 +195,11 @@ describe('IndexerTaskQueue', () => {
         const searchable = await state.waitForSearchable();
         queue.stop();
 
-        // Initial indexing must have occurred at some point
-        expect(state.history.some((s) => s.isInitialIndexing && s.isIndexing)).toBe(true);
+        // Initial indexing must have occurred at some point: indexing while no usable index yet.
+        expect(state.history.some((s) => s.isIndexing && !s.isSearchable)).toBe(true);
 
-        // Final state: searchable, no longer indexing
+        // Final state: searchable, no longer indexing, usable index persisted
         expect(searchable.isSearchable).toBe(true);
-        expect(searchable.isInitialIndexing).toBe(false);
         expect(searchable.isIndexing).toBe(false);
         expect(searchable.permanentError).toBeNull();
     });
@@ -352,7 +351,7 @@ describe('IndexerTaskQueue', () => {
             protected override async createTasks() {
                 const populator = new VersionedPopulator(SCOPE_ID);
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    bootstrapTasks: [new IndexPopulatorTask(populator)],
                     postBootstrapTasks: [],
                 };
             }
@@ -447,7 +446,7 @@ describe('IndexerTaskQueue', () => {
             protected override async createTasks() {
                 const populator = new VersionedPopulator(SCOPE_ID);
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    bootstrapTasks: [new IndexPopulatorTask(populator)],
                     postBootstrapTasks: [],
                 };
             }
@@ -554,7 +553,7 @@ describe('IndexerTaskQueue', () => {
                 bridge.setIterateFolderChildrenError(new DOMException('', 'QuotaExceededError'));
                 const populator = new DummyTestIndexPopulator(SCOPE_ID);
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    bootstrapTasks: [new IndexPopulatorTask(populator)],
                     postBootstrapTasks: [new PostBootstrapTask() as unknown as BaseTask],
                 };
             }
@@ -599,7 +598,7 @@ describe('IndexerTaskQueue', () => {
             protected override async createTasks() {
                 const populator = new FlakyPopulator(SCOPE_ID);
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    bootstrapTasks: [new IndexPopulatorTask(populator)],
                     postBootstrapTasks: [],
                 };
             }
@@ -647,7 +646,7 @@ describe('IndexerTaskQueue', () => {
             protected override async createTasks() {
                 const populator = new AbortingPopulator(SCOPE_ID);
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    bootstrapTasks: [new IndexPopulatorTask(populator)],
                     postBootstrapTasks: [],
                 };
             }
@@ -693,7 +692,7 @@ describe('IndexerTaskQueue', () => {
             protected override async createTasks() {
                 const populator = new AlwaysFailingPopulator(SCOPE_ID);
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    bootstrapTasks: [new IndexPopulatorTask(populator)],
                     postBootstrapTasks: [],
                 };
             }
@@ -734,7 +733,7 @@ describe('IndexerTaskQueue', () => {
         class TestableQueue extends IndexerTaskQueue {
             protected override async createTasks() {
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(new FailingPopulator(), true)],
+                    bootstrapTasks: [new IndexPopulatorTask(new FailingPopulator())],
                     postBootstrapTasks: [],
                 };
             }
@@ -795,7 +794,7 @@ describe('IndexerTaskQueue', () => {
         class TestableQueue extends IndexerTaskQueue {
             protected override async createTasks() {
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(new RateLimitedPopulator(), true)],
+                    bootstrapTasks: [new IndexPopulatorTask(new RateLimitedPopulator())],
                     postBootstrapTasks: [],
                 };
             }
@@ -851,7 +850,7 @@ describe('IndexerTaskQueue', () => {
         class TestableQueue extends IndexerTaskQueue {
             protected override async createTasks() {
                 return {
-                    bootstrapTasks: [new IndexPopulatorTask(new AlwaysFailingPopulator(), true)],
+                    bootstrapTasks: [new IndexPopulatorTask(new AlwaysFailingPopulator())],
                     postBootstrapTasks: [],
                 };
             }

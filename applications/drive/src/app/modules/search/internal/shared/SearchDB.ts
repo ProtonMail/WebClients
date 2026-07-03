@@ -184,12 +184,23 @@ export class SearchDB {
         return this.db.put('userSettings', true, 'optIn');
     }
 
+    // Set once when bootstrap completes the first time.
+    // Used to keep the search field interactive during re-indexing (old blobs still queryable).
+    async isSearchable(): Promise<boolean> {
+        return (await this.db.get('userSettings', 'hasSearchableIndex')) === true;
+    }
+
+    markSearchableIndex(): Promise<string> {
+        return this.db.put('userSettings', true, 'hasSearchableIndex');
+    }
+
     // Clear index blobs, subscriptions and populator states so the indexer rebuilds from scratch.
     // Used when the encryption key is regenerated (e.g. after key rotation).
     async clearIndex(): Promise<void> {
         await this.db.clear('indexBlobs');
         await this.db.clear('treeEventScopeSubscriptions');
         await this.db.clear('indexPopulatorStates');
+        await this.db.delete('userSettings', 'hasSearchableIndex');
     }
 
     /**

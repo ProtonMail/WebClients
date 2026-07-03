@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
 import { usePopperAnchor } from '@proton/components';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
@@ -39,6 +40,16 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
         }
     }, [searchModule.permanentError]);
 
+    // Open the re-indexing dropdown on focus only once per re-index episode. Reset when the
+    // episode ends so a later re-index can show it once again; the spinner button reopens it.
+    const isReindexing = searchModule.isIndexing && searchModule.isSearchable;
+    const reindexShownRef = useRef(false);
+    useEffect(() => {
+        if (!isReindexing) {
+            reindexShownRef.current = false;
+        }
+    }, [isReindexing]);
+
     const handleSearch = useCallback((keyword = '') => {
         const encodedKeyword = encodeURIComponent(keyword);
         if (keyword.length !== 0) {
@@ -49,6 +60,17 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
     }, []);
 
     const handleFieldFocus = () => {
+        // Re-indexing in the background: open the info dropdown on the first focus of this
+        // episode (the field stays searchable). The spinner button reopens it afterwards.
+        if (isReindexing) {
+            if (!reindexShownRef.current) {
+                reindexShownRef.current = true;
+                indexingDropdownControl.open();
+            }
+            return;
+        }
+
+        // A usable index exists and nothing is re-indexing - let the user search, no dropdown.
         if (searchModule.isSearchable) {
             return;
         }
@@ -77,7 +99,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
     const placeholderText = hasPermanentError ? c('Action').t`Search is unavailable` : c('Action').t`Search drive`;
     const isReadonly = !(searchModule.isSearchable && !searchModule.isRunningOutdatedVersion);
 
-    const suffix = searchParams ? (
+    const clearButton = searchParams ? (
         <Button
             type="button"
             shape="ghost"
@@ -93,6 +115,30 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
             {c('Action').t`Clear`}
         </Button>
     ) : null;
+
+    // Shown only while re-indexing: a spinner that reopens the re-indexing info dropdown.
+    const reindexButton = isReindexing ? (
+        <Button
+            icon
+            type="button"
+            shape="ghost"
+            color="weak"
+            size="small"
+            className="rounded-sm"
+            title={c('Action').t`Re-indexing in progress`}
+            onClick={() => indexingDropdownControl.open()}
+        >
+            <CircleLoader size="small" />
+        </Button>
+    ) : null;
+
+    const suffix =
+        reindexButton || clearButton ? (
+            <>
+                {reindexButton}
+                {clearButton}
+            </>
+        ) : null;
 
     return (
         <div ref={indexingDropdownAnchorRef} className="searchfield-container searchbox">
@@ -136,7 +182,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                     onClose={handleClosedDropdown}
                     onClosed={handleClosedDropdown}
                     isSearchable={searchModule.isSearchable}
-                    isInitialIndexing={searchModule.isInitialIndexing}
+                    isIndexing={searchModule.isIndexing}
                     isRunningOutdatedAppVersion={searchModule.isRunningOutdatedVersion}
                     indexingProgress={searchModule.indexingProgress}
                     permanentError={searchModule.permanentError}
