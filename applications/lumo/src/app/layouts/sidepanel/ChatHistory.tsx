@@ -1,71 +1,107 @@
-import { useMemo } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import { shallowEqual } from 'react-redux';
 
+import { startOfDay, subDays } from 'date-fns';
 import { c } from 'ttag';
 
-import ChatHistorySkeleton from '../../components/ChatHistorySkeleton';
+import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import { useLumoUserSettings } from '../../hooks';
+import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
-import { selectHistoryConversationsSorted } from '../../redux/selectors';
+import { historyRowsEqual, selectConversationById, selectHistoryConversationRows } from '../../redux/selectors';
 import { selectSpaceMap } from '../../redux/slices/core/spaces';
-import RecentChatsList from './RecentChatsList';
-import { applyRetentionPolicy, groupConversationsByDate, searchConversations } from './helpers';
+import { ConversationListItem } from './RecentChatsList';
+import { CONVERSATION_DATE_GROUP_ORDER, getConversationDateGroupTitle } from './helpers';
 
 import './ChatHistory.scss';
 
-interface Props {
-    refInputSearch: React.RefObject<HTMLInputElement>;
+interface ConnectedItemProps {
+    id: string;
+    isSelected: boolean;
+    isTouchDevice: boolean;
     onItemClick?: () => void;
-    searchInput?: string;
 }
 
-export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
-    const sortedConversations = useLumoSelector(selectHistoryConversationsSorted, shallowEqual);
+const ConnectedConversationListItem = memo(({ id, isSelected, isTouchDevice, onItemClick }: ConnectedItemProps) => {
+    const conversation = useLumoSelector(selectConversationById(id));
+
+    if (!conversation) {
+        return null;
+    }
+
+    return (
+        <ConversationListItem
+            conversation={conversation}
+            isSelected={isSelected}
+            showDropdown
+            isTouchDevice={isTouchDevice}
+            onItemClick={onItemClick}
+        />
+    );
+});
+
+ConnectedConversationListItem.displayName = 'ConnectedConversationListItem';
+
+interface Props {
+    onItemClick?: () => void;
+}
+
+export const ChatHistory = ({ onItemClick }: Props) => {
+    const conversationRows = useLumoSelector(selectHistoryConversationRows, historyRowsEqual);
     const spaceMap = useLumoSelector(selectSpaceMap, shallowEqual);
     const { conversationId } = useConversation();
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
-    const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+    const isTouchDevice = useIsTouchDevice();
 
-    const isLoading = false;
+    useEffect(() => {
+        console.log('[ChatHistory] mounted with', conversationRows.length, 'conversations');
+    }, []);
 
-    const { conversationGroups, noConversationAtAll, noSearchMatch } = useMemo(() => {
-        const empty = {
-            conversationGroups: [],
-            noConversationAtAll: true,
-            noSearchMatch: false,
-        };
-
+    const { conversationGroups, noConversationAtAll } = useMemo(() => {
         if (isGuest) {
-            return empty;
+            return { conversationGroups: [], noConversationAtAll: true };
         }
 
-        const conversations = showProjectConversationsInHistory
-            ? sortedConversations
-            : sortedConversations.filter((conversation) => {
-                  const space = conversation.spaceId ? spaceMap[conversation.spaceId] : undefined;
+        const filteredRows = showProjectConversationsInHistory
+            ? conversationRows
+            : conversationRows.filter((row) => {
+                  const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
                   return space?.isProject !== true;
               });
 
-        const retainedConversations = applyRetentionPolicy(conversations, hasLumoPlus);
-        const filteredConversations = searchConversations(retainedConversations, searchInput);
-        const conversationGroups = groupConversationsByDate(filteredConversations, { sortBy: dateField });
+        let retainedRows = filteredRows;
+        if (!hasLumoPlus) {
+            const cutoff = subDays(startOfDay(new Date()), FREE_USER_CHAT_RETENTION_DAYS);
+            retainedRows = filteredRows.filter((row) => startOfDay(new Date(row.createdAt)) >= cutoff);
+        }
+
+        const groupMap = new Map<string, string[]>();
+        for (const row of retainedRows) {
+            const existing = groupMap.get(row.groupKey);
+            if (existing) {
+                existing.push(row.id);
+            } else {
+                groupMap.set(row.groupKey, [row.id]);
+            }
+        }
+
+        const conversationGroups = CONVERSATION_DATE_GROUP_ORDER.filter((key) => groupMap.has(key)).map((key) => ({
+            key,
+            title: getConversationDateGroupTitle(key),
+            ids: groupMap.get(key)!,
+        }));
 
         return {
             conversationGroups,
-            noConversationAtAll: conversations.length === 0,
-            noSearchMatch: filteredConversations.length === 0 && conversations.length > 0,
+            noConversationAtAll: filteredRows.length === 0,
         };
-    }, [sortedConversations, spaceMap, searchInput, isGuest, showProjectConversationsInHistory, dateField, hasLumoPlus]);
-
-    if (isLoading) {
-        return <ChatHistorySkeleton />;
-    }
+    }, [conversationRows, spaceMap, isGuest, showProjectConversationsInHistory, hasLumoPlus]);
 
     if (isGuest) {
         return null;
@@ -73,14 +109,10 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
 
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2 min-w-0 overflow-hidden">
-            {!isGuest && noConversationAtAll && (
+            {noConversationAtAll && (
                 <div className="color-weak text-sm my-2 px-1.5">
                     {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
                 </div>
-            )}
-            {noSearchMatch && !noConversationAtAll && (
-                <p className="color-weak text-sm mt-3 mb-2 mx-4 hidden md:block">{c('collider_2025:Title')
-                    .t`No result.`}</p>
             )}
             <div className="chat-history-list">
                 {conversationGroups.map((group, index) => (
@@ -88,12 +120,17 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                         <h4 className={`block color-weak text-sm px-1.5 ${index === 0 ? 'my-2' : 'mt-3 mb-2'}`}>
                             {group.title}
                         </h4>
-                        <RecentChatsList
-                            conversations={group.conversations}
-                            selectedConversationId={conversationId}
-                            disabled={isGuest}
-                            onItemClick={onItemClick}
-                        />
+                        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
+                            {group.ids.map((id) => (
+                                <ConnectedConversationListItem
+                                    key={id}
+                                    id={id}
+                                    isSelected={id === conversationId}
+                                    isTouchDevice={isTouchDevice}
+                                    onItemClick={onItemClick}
+                                />
+                            ))}
+                        </ul>
                     </div>
                 ))}
             </div>

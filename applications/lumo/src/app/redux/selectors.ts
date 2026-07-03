@@ -1,9 +1,12 @@
 import type { Selector } from 'react-redux';
 
 import { createSelector } from '@reduxjs/toolkit';
+import { differenceInCalendarDays, startOfDay } from 'date-fns';
 
 import type { UserState } from '@proton/account';
 
+import type { ConversationDateGroupKey } from '../layouts/sidepanel/helpers';
+import { getConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { Attachment, AttachmentId, Conversation, Message, Space } from '../types';
@@ -180,6 +183,58 @@ export const selectHistoryConversationsSorted = createSelector([selectConversati
         .filter((c: Conversation) => !c.ghost && !c.starred)
         .sort(sortByDate<Conversation>('desc', 'updatedAt'))
 );
+
+// Minimal per-conversation row for the chat history list — contains only stable
+// fields (id, groupKey, spaceId, createdAt). title and status are intentionally
+// excluded so this selector's output does NOT change during LLM streaming.
+// Pair with historyRowsEqual so ChatHistory skips re-renders while tokens stream.
+export interface ConversationHistoryRow {
+    id: string;
+    groupKey: ConversationDateGroupKey;
+    spaceId?: string;
+    createdAt: string;
+}
+
+const selectChatHistoryDateField = (state: LumoState) => state.lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+
+export const selectHistoryConversationRows = createSelector(
+    [selectConversations, selectChatHistoryDateField],
+    (conversations, dateField): ConversationHistoryRow[] => {
+        const now = startOfDay(new Date());
+        return Object.values(conversations)
+            .filter((c: Conversation) => !c.ghost && !c.starred)
+            .sort(sortByDate<Conversation>('desc', 'updatedAt'))
+            .map((c: Conversation) => {
+                const dateValue = (c[dateField as keyof Conversation] as string | undefined) ?? c.updatedAt;
+                const dayDiff = differenceInCalendarDays(now, startOfDay(new Date(dateValue)));
+                return {
+                    id: c.id,
+                    groupKey: getConversationDateGroupKey(dayDiff),
+                    spaceId: c.spaceId,
+                    createdAt: c.createdAt,
+                };
+            });
+    }
+);
+
+// Element-wise equality for ConversationHistoryRow[]. Stable during streaming
+// because title and status are excluded from rows — only structural fields compared.
+export const historyRowsEqual = (a: ConversationHistoryRow[], b: ConversationHistoryRow[]): boolean => {
+    if (a.length !== b.length) {
+        return false;
+    }
+    for (let i = 0; i < a.length; i++) {
+        if (
+            a[i].id !== b[i].id ||
+            a[i].groupKey !== b[i].groupKey ||
+            a[i].spaceId !== b[i].spaceId ||
+            a[i].createdAt !== b[i].createdAt
+        ) {
+            return false;
+        }
+    }
+    return true;
+};
 
 function messageHasGeneratedImages(message: Message, attachments: AttachmentMap): boolean {
     return (message.attachments ?? []).some((shallow) => {

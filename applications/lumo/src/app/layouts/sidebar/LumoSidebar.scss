@@ -26,8 +26,6 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-
-
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 		gap: #{rem(4)};
@@ -54,6 +52,10 @@ im.$media-expressions: $media-expressions;
 		.navigation-link {
 			min-block-size: #{rem(32)};
 			max-inline-size: 100%;
+
+			// Skip layout and paint for off-screen items without JS overhead.
+			content-visibility: auto;
+			contain-intrinsic-block-size: #{rem(32)};
 
 			> a {
 				min-inline-size: 0;
@@ -134,7 +136,7 @@ im.$media-expressions: $media-expressions;
 // Favorites content
 .favorites-content {
 	max-block-size: 30vh;
-	overflow: hidden hidden;
+	overflow: hidden auto;
 	animation: sidebar-fade-in 0.25s ease-in-out;
 
 	@include im.media('<=small') {
