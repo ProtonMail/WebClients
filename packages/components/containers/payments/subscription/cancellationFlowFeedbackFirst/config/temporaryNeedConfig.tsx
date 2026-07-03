@@ -686,6 +686,10 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         planDisplayName = DRIVE_PLUS_NAME;
     }
 
+    if (plan.Name === PLANS.BUNDLE_PRO) {
+        planDisplayName = planTitle;
+    }
+
     const values: PlanValues = {
         planMaxSpaceBytes: plan.MaxSpace,
         freeMaxBaseSpaceBytes: freePlan.MaxBaseSpace,
