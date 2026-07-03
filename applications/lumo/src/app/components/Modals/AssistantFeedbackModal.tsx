@@ -26,6 +26,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { stripUnshareableAttachmentContent } from '../../lib/imageAttachment';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectMessageById } from '../../redux/selectors';
+import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import type { Message } from '../../types';
 import {
     hasSeenNegativeFeedbackIntro,
@@ -74,11 +75,15 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     }, []);
 
     const feedbackModal = useModalStateObject({
-        onClose: resetFeedbackForm,
+        onClose: () => {
+            setNativeComposerVisibility(true);
+            resetFeedbackForm();
+        },
     });
 
     const introModal = useModalStateObject({
         onClose: () => {
+            setNativeComposerVisibility(true);
             setIntroType(undefined);
         },
     });
@@ -98,6 +103,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
 
             createNotification({ text: c('collider_2025: Success').t`Thanks for the feedback!` });
             setFeedbackSubmitted(true);
+            setNativeComposerVisibility(true);
         } catch {
             createNotification({
                 type: 'error',
@@ -115,16 +121,19 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
 
         setIntroType('positive');
         introModal.openModal(true);
+        setNativeComposerVisibility(false);
     }, [handlePositiveSubmit, introModal, withLoading]);
 
     const handleThumbDownClick = useCallback(() => {
         if (hasSeenNegativeFeedbackIntro()) {
             feedbackModal.openModal(true);
+            setNativeComposerVisibility(false);
             return;
         }
 
         setIntroType('negative');
         introModal.openModal(true);
+        setNativeComposerVisibility(false);
     }, [feedbackModal, introModal]);
 
     const handleIntroContinue = useCallback(() => {
@@ -148,12 +157,14 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 setFeedbackSubmitted(true);
                 resetFeedbackForm();
                 feedbackModal.openModal(false);
+                setNativeComposerVisibility(true);
             } catch (e) {
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Failure').t`There was an issue saving your feedback. Try again later.`,
                 });
                 setFeedbackSubmitted(false);
+                setNativeComposerVisibility(true);
 
                 handleError(e);
             }
@@ -400,7 +411,10 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                                 type="button"
                                 className="mr-1"
                                 disabled={loading}
-                                onClick={() => feedbackModal.openModal(false)}
+                                onClick={() => {
+                                    feedbackModal.openModal(false);
+                                    setNativeComposerVisibility(true);
+                                }}
                             >{c('collider_2025: Action').t`Cancel`}</Button>
                             <Button
                                 type="submit"
