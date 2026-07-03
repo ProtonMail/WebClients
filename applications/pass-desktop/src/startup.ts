@@ -31,7 +31,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
     theming();
     autotype(() => ctx.window);
     contextMenu(() => ctx.window);
-    sshAgent();
+    sshAgent(() => ctx.window);
     update(
         () => ctx.window,
         () => ctx.session
