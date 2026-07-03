@@ -50,100 +50,17 @@
 		display: none;
 	}
 
-	// NEW RESPONSIVE TABLES
-	&--responsive {
-		@container (max-width: 35rem) {
-			td {
-				display: block;
-				margin: 0;
-				padding: 0;
-				border: none;
-			}
-
-			thead {
-				display: none;
-			}
-
-			tr {
-				display: block;
-			}
-		}
-	}
-
-	&--responsive-stacked {
-		@container (max-width: 35rem) {
-			tr {
-				margin-block-end: var(--table-padding);
-				border-block-end: 1px solid var(--table-border-color);
-			}
-
-			td {
-				padding-block-end: var(--table-padding);
-			}
-
-			td.text-left-when-stacked {
-				text-align: start;
-			}
-
-			.show-when-stacked {
-				display: block;
-			}
-
-			.hide-when-stacked {
-				display: none;
-			}
-
-			.justify-start-when-stacked {
-				justify-content: flex-start;
-			}
-		}
-	}
-
-	&--last-row-no-border {
-		tr:last-child {
-			margin-block-end: 0 !important;
-			border-block-end: none !important;
-
-			td {
-				border-block-end: none !important;
-			}
-		}
-	}
-
-	&--responsive-cards {
-		@container (max-width: 35rem) {
-			tr {
-				padding: var(--space-3);
-				border: 1px solid var(--table-border-color);
-				border-radius: var(--border-radius-lg);
-
-				&:not(:last-child) {
-					margin-block-end: var(--space-3);
-				}
-			}
-
-			td {
-				&:not(:last-child) {
-					padding-block-end: var(--table-padding);
+	&--has-actions {
+		&#{&} {
+			// Specificity -_-v
+			td,
+			th {
+				&:last-child {
+					text-align: end;
 				}
 			}
 		}
 	}
-
-	&--responsive &__th-small {
-		display: none;
-
-		@container (max-width: 35rem) {
-			display: flex;
-			align-content: center;
-			font-weight: var(--font-weight-medium);
-			color: var(--text-weak);
-			font-size: 0.86em;
-			margin: 0;
-		}
-	}
-
-	// END
 
 	th:not(#{&}-row-th) {
 		text-align: start;
@@ -269,45 +186,127 @@
 				border-end-end-radius: var(--table-border-radius);
 			}
 		}
+	}
 
-		&.simple-table--responsive-cards {
-			@container (max-width: 35rem) {
-				tr td {
-					border: 0;
-					padding-block: 0 var(--table-padding);
-					padding-inline: 0;
-				}
+	// NEW RESPONSIVE TABLES
+	&--responsive {
+		.simple-table__th-small {
+			display: none;
+		}
 
-				tr:last-child td {
-					padding-block: 0;
+		$breakpoints: (
+			'normal': 35rem,
+			'wide': 50rem,
+		);
+		@each $breakpoint-name, $breakpoint-value in $breakpoints {
+			@container (max-width: #{$breakpoint-value}) {
+				&-#{$breakpoint-name} {
+					td {
+						display: block;
+						margin: 0;
+						padding: 0;
+						border: none;
+					}
+
+					thead {
+						display: none;
+					}
+
+					tr {
+						display: block;
+					}
+
+					&.simple-table--responsive-stacked {
+						tr {
+							margin-block-end: var(--table-padding);
+							border-block-end: 1px solid var(--table-border-color);
+						}
+
+						td {
+							padding-block-end: var(--table-padding);
+						}
+
+						td.text-left-when-stacked {
+							text-align: start;
+						}
+
+						.show-when-stacked {
+							display: block;
+						}
+
+						.hide-when-stacked {
+							display: none;
+						}
+
+						.justify-start-when-stacked {
+							justify-content: flex-start;
+						}
+					}
+
+					&.simple-table--last-row-no-border {
+						tr:last-child {
+							margin-block-end: 0 !important;
+							border-block-end: none !important;
+
+							td {
+								border-block-end: none !important;
+							}
+						}
+					}
+
+					&.simple-table--responsive-cards {
+						tr {
+							padding: var(--space-3);
+							border: 1px solid var(--table-border-color);
+							border-radius: var(--border-radius-lg);
+
+							&:not(:last-child) {
+								margin-block-end: var(--space-3);
+							}
+						}
+
+						td {
+							&:not(:last-child) {
+								padding-block-end: var(--table-padding);
+							}
+						}
+					}
+
+					.simple-table__th-small {
+						display: flex;
+						align-content: center;
+						font-weight: var(--font-weight-medium);
+						color: var(--text-weak);
+						font-size: 0.86em;
+						margin: 0;
+					}
+
+					&.simple-table--has-actions {
+						td,
+						th {
+							&:last-child {
+								text-align: start;
+							}
+						}
+					}
+
+					&.simple-table--border-lines-rounded {
+						tr td {
+							border: 0;
+							padding-block: 0 var(--table-padding);
+							padding-inline: 0;
+						}
+
+						tr:last-child td {
+							padding-block: 0;
+						}
+					}
 				}
 			}
 		}
 	}
 
-	&--has-actions {
-		&#{&} {
-			// Specificity -_-v
-			td,
-			th {
-				&:last-child {
-					text-align: end;
-				}
-			}
-		}
-	}
-
-	// TODO: refactor this
-	@container (max-width: 35rem) {
-		&--responsive#{&}--has-actions {
-			td,
-			th {
-				&:last-child {
-					text-align: start;
-				}
-			}
-		}
-	}
+	// END
 }
 
 .alternate-table-bg-row-rounded {
