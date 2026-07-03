@@ -28,10 +28,12 @@ $tab-badge-ease: easing(ease-out-quint);
 
 		&:hover,
 		&:focus-visible {
-			.tab-new-dot {
+			// Removed the animation and transition for now
+
+			/* .tab-new-dot {
 				opacity: 0;
 				transform: scale(0.4);
-			}
+			} */
 
 			.tab-new-count {
 				block-size: rem(16);
