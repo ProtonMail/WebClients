@@ -85,7 +85,7 @@ const WalletSidebar = ({
                 </AppLink>
             }
             version={<AppVersion />}
-            showStorage={false}
+            footerVariant={'minimal'}
             className="wallet-sidebar-overide bg-weak"
         >
             <div className="flex flex-column flex-1 flex-nowrap outline-none">
