@@ -1,7 +1,10 @@
-import { isBtnCandidate, kButtonSubmitSelector } from '@protontech/autofill';
 import { FieldType } from '@protontech/autofill/types';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
+import {
+    isBtnCandidate,
+    kButtonSubmitSelector,
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
