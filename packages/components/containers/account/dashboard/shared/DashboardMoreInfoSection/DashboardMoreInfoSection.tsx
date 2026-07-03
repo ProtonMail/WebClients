@@ -1,14 +1,37 @@
 import type { ReactElement, ReactNode } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import useApi from '@proton/components/hooks/useApi';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import clsx from '@proton/utils/clsx';
 
+/**
+ * CardAction values:
+ * - internal_nav: card navigates within the account web app itself (SPA at
+ *   account.proton.me / account.protonvpn.com), e.g. to another settings
+ *   page. Handled via SPA routing, same tab, no full page load.
+ *
+ * - external_link: card navigates to any URL outside the account app,
+ *   even if it's still a Proton domain (e.g. protonvpn.com/support or a
+ *   proton.me marketing page). If it leaves the application, it's external.
+ *
+ * - upsell_modal: card is gated behind a paid feature; clicking it opens
+ *   the upsell modal instead of navigating anywhere.
+ */
+type CardAction = 'upsell_modal' | 'internal_nav' | 'external_link';
+
 export interface DashboardMoreInfoSection {
-    title: () => string;
-    tag?: ReactElement;
-    description: () => string | ReactElement;
+    id: string;
+    cardAction: CardAction | undefined;
     image: string;
+    title: () => string;
+    description: () => string | ReactElement;
+    tag?: ReactElement;
     link?: string;
     onClick?: () => void;
 }
@@ -28,7 +51,34 @@ function isClickableSection(section: DashboardMoreInfoSection) {
     return section.link || section.onClick;
 }
 
-export const DashboardMoreInfoSections = ({ sections }: { sections: DashboardMoreInfoSection[] }) => {
+export const DashboardMoreInfoSections = ({
+    sections,
+    app,
+}: {
+    sections: DashboardMoreInfoSection[];
+    app: APP_NAMES;
+}) => {
+    const [user] = useUser();
+    const api = useApi();
+
+    const handleOnClick = (id: string, cardAction: CardAction | undefined, onClickAction?: () => void) => {
+        if (cardAction) {
+            void sendTelemetryReport({
+                api,
+                delay: false,
+                event: TelemetryAccountDashboardEvents.featureCardClick,
+                measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                dimensions: {
+                    app,
+                    feature: id,
+                    card_action: cardAction,
+                    user_tier: getTelemetryUserTier(user),
+                },
+            });
+        }
+        onClickAction?.();
+    };
+
     return (
         <DashboardCard>
             <DashboardCardContent className="lg:h-full" paddingClass="p-3">
@@ -51,7 +101,7 @@ export const DashboardMoreInfoSections = ({ sections }: { sections: DashboardMor
                                     isClickableSection(section) && 'interactive-pseudo-protrude'
                                 )}
                                 aria-label={section.title()}
-                                onClick={section.onClick}
+                                onClick={() => handleOnClick(section.id, section.cardAction, section.onClick)}
                             >
                                 <figure
                                     className="w-custom rounded overflow-hidden ratio-square"
