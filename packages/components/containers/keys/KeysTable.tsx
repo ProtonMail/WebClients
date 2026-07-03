@@ -6,6 +6,7 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import KeyVersionBadge from '@proton/components/containers/keys/KeyVersionBadge';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -33,7 +34,7 @@ const KeysTable = ({
     const { createNotification } = useNotifications();
     const headerCells = [
         { node: c('Title header for keys table').t`Creation date`, className: 'w-1/6' },
-        { node: c('Title header for keys table').t`Type`, className: 'w-3/10' },
+        { node: c('Title header for keys table').t`Type`, className: 'w-custom', style: { '--w-custom': '16.5em' } },
         { node: c('Title header for keys table').t`Fingerprint`, className: 'w-1/5 text-ellipsis' },
         { node: c('Title header for keys table').t`Function`, className: 'w-1/4' },
         { node: c('Title header for keys table').t`Status`, className: 'w-custom', style: { '--w-custom': '8.5em' } },
@@ -51,13 +52,23 @@ const KeysTable = ({
     const sortedKeys = keys[0]?.status.isPrimaryFallback ? [keys[1], keys[0], ...keys.slice(2)] : keys;
 
     return (
-        <Table hasActions responsive="cards">
+        <Table hasActions responsive="cards" responsiveBreakpoint="wide">
             <thead>
                 <tr>{headerCells}</tr>
             </thead>
             <TableBody colSpan={5}>
                 {sortedKeys.map(
-                    ({ ID, creationDate, type, fingerprint, algorithm, status, permissions, invalidKeyError }) => {
+                    ({
+                        ID,
+                        creationDate,
+                        version,
+                        type,
+                        fingerprint,
+                        algorithm,
+                        status,
+                        permissions,
+                        invalidKeyError,
+                    }) => {
                         const isInactiveKey = !status.isDecrypted;
                         const keyFunction = getKeyFunction(status);
                         return (
@@ -74,11 +85,10 @@ const KeysTable = ({
                                 ]}
                                 cells={[
                                     format(creationDate, 'PP', { locale: dateLocale }),
-                                    <div key={1} className="flex flex-row flex-nowrap items-center">
+                                    <div key={1} className="flex flex-row flex-nowrap items-start">
                                         {algorithm}
-                                        {status.isWeak && (
-                                            <PersonalKeyWarningIcon className="ml-2 hidden md:flex shrink-0" />
-                                        )}
+                                        {status.isWeak && <PersonalKeyWarningIcon className="ml-2 inline shrink-0" />}
+                                        <KeyVersionBadge version={version} />
                                     </div>,
                                     <div key={2} className="flex flex-row flex-nowrap items-center">
                                         <code
