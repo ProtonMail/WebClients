@@ -7,6 +7,7 @@ import { startSharedListening } from '@proton/redux-shared-store/sharedListeners
 
 import { startElementsListener } from 'proton-mail/store/elements/elementsListener';
 
+import { startCategoriesUnseenListener } from './categories/categoriesUnseenListener';
 import { startIncomingDefaultListener } from './incomingDefaults/incomingDefaultListener';
 import { getMailPersistedState } from './persistReducer';
 import type { AppStartListening } from './store';
@@ -22,4 +23,5 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startAccountSessionsListener(startListening);
     startIncomingDefaultListener(startListening);
     startElementsListener(startListening);
+    startCategoriesUnseenListener(startListening);
 };
