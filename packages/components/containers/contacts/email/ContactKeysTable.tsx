@@ -12,6 +12,7 @@ import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKey
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
+import KeyVersionBadge from '@proton/components/containers/keys/KeyVersionBadge';
 import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -22,8 +23,6 @@ import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 import uniqueBy from '@proton/utils/uniqueBy';
-
-import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 
 interface Props {
     model: ContactPublicKeyModelWithApiKeySource;
@@ -37,6 +36,7 @@ type LocalKeyModel = {
     armoredPublicKey: string;
     fingerprint: string;
     algo: string;
+    version: number;
     creationTime: Date;
     expirationTime: any;
     isUsedForSending?: boolean;
@@ -106,7 +106,6 @@ export const activeSignerText = c('Key badge').t`Active Signer`;
 
 const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerNotPinned }: Props) => {
     const [keys, setKeys] = useState<LocalKeyModel[]>([]);
-    const { viewportWidth } = useActiveBreakpoint();
 
     const { emailAddress } = model;
     const totalApiKeys = model.publicKeys.apiKeys.length;
@@ -165,7 +164,8 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerN
                     publicKey.getAlgorithmInfo(),
                     ...publicKey.subkeys.map((subkey) => subkey.getAlgorithmInfo()),
                 ];
-                const algo = getFormattedAlgorithmNames(algoInfos, publicKey.getVersion());
+                const algo = getFormattedAlgorithmNames(algoInfos);
+                const version = publicKey.getVersion();
                 const isExpired = await CryptoProxy.isExpiredKey({ key: publicKey });
                 const isRevoked = await CryptoProxy.isRevokedKey({ key: publicKey });
                 const isTrusted = model.trustedFingerprints.has(fingerprint);
@@ -202,6 +202,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerN
                     armoredPublicKey,
                     fingerprint,
                     algo,
+                    version,
                     creationTime,
                     expirationTime,
                     isUsedForSending,
@@ -231,27 +232,24 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerN
     }, [model.publicKeys, model.trustedFingerprints, model.encrypt]);
 
     return (
-        <Table hasActions>
+        <Table hasActions responsive="cards" responsiveBreakpoint="wide">
             <thead>
                 <tr>
                     <th scope="col" className="text-ellipsis w-1/5" title={c('Table header').t`Fingerprint`}>{c(
                         'Table header'
                     ).t`Fingerprint`}</th>
-                    {!viewportWidth['<=small'] && (
-                        <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Created`}>{c(
-                            'Table header'
-                        ).t`Created`}</th>
-                    )}
-                    {!viewportWidth.xsmall && (
-                        <th scope="col" className="text-ellipsis w-1/10" title={c('Table header').t`Expires`}>{c(
-                            'Table header'
-                        ).t`Expires`}</th>
-                    )}
-                    {!viewportWidth['<=small'] && (
-                        <th scope="col" className="text-ellipsis w-3/10" title={c('Table header').t`Type`}>{c(
-                            'Table header'
-                        ).t`Type`}</th>
-                    )}
+                    <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Created`}>{c(
+                        'Table header'
+                    ).t`Created`}</th>
+                    <th scope="col" className="text-ellipsis w-1/10" title={c('Table header').t`Expires`}>{c(
+                        'Table header'
+                    ).t`Expires`}</th>
+                    <th
+                        scope="col"
+                        className="text-ellipsis w-custom"
+                        style={{ '--w-custom': '16.5em' }}
+                        title={c('Table header').t`Type`}
+                    >{c('Table header').t`Type`}</th>
                     <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Status`}>{c(
                         'Table header'
                     ).t`Status`}</th>
@@ -268,6 +266,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerN
                     ({
                         fingerprint,
                         algo,
+                        version,
                         creationTime,
                         expirationTime,
                         isUsedForSending,
@@ -433,89 +432,110 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerN
                             });
                         }
 
-                        const cells = [
-                            <div key={0} title={fingerprint} className="flex flex-nowrap">
-                                <ContactKeyWarningIcon
-                                    className="mr-2 shrink-0 self-center my-auto"
-                                    publicKey={publicKey}
-                                    emailAddress={model.emailAddress}
-                                    isInternal={model.isPGPInternal}
-                                    supportsEncryption={supportsEncryption}
-                                />
-                                <span className="flex-1 text-ellipsis">{fingerprint}</span>
-                            </div>,
-                            !viewportWidth['<=small'] &&
-                                (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '—'),
-                            !viewportWidth.xsmall &&
-                                (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '—'),
-                            !viewportWidth['<=small'] && algo,
-                            <div key={1} className="flex gap-1">
-                                {isUsedForSending ? (
-                                    <Badge
-                                        type="primary"
-                                        data-testid="primary-key-label"
-                                        tooltip={primaryKeyTooltipText}
-                                    >
-                                        {primaryText}
-                                    </Badge>
-                                ) : null}
-                                {isUsedForSendingFallback ? (
-                                    <Badge
-                                        type="success"
-                                        data-testid="fallback-key-label"
-                                        tooltip={fallbackKeyTooltipText}
-                                    >
-                                        {fallbackText}
-                                    </Badge>
-                                ) : null}
-                                {isActiveSigner ? (
-                                    <Badge
-                                        type="info"
-                                        tooltip={activeSignerTooltipText}
-                                        data-testid="active-signer-key-label"
-                                    >
-                                        {activeSignerText}
-                                    </Badge>
-                                ) : null}
-                                {isObsolete && !isCompromised ? (
-                                    <Badge
-                                        type="warning"
-                                        url={getKnowledgeBaseUrl('/download-public-private-key')}
-                                        tooltip={obsoleteTooltipText}
-                                    >
-                                        {obsoleteText}
-                                    </Badge>
-                                ) : null}
-                                {isCompromised ? (
-                                    <Badge
-                                        type="error"
-                                        url={getKnowledgeBaseUrl('/download-public-private-key')}
-                                        tooltip={compromisedTooltipText}
-                                    >
-                                        {compromisedText}
-                                    </Badge>
-                                ) : null}
-                                {isWKD ? (
-                                    <Badge type="origin" tooltip={wkdKeyTooltipText} data-testid="wkd-origin-label">
-                                        {wkdText}
-                                    </Badge>
-                                ) : null}
-                                {isKOO ? (
-                                    <Badge type="origin" tooltip={kooKeyTooltipText} data-testid="koo-origin-label">
-                                        {kooText}
-                                    </Badge>
-                                ) : null}
-                                {isTrusted ? (
-                                    <Badge type="success" tooltip={trustedTooltipText}>
-                                        {trustedText}
-                                    </Badge>
-                                ) : null}
-                                {isRevoked ? <Badge type="error">{revokedText}</Badge> : null}
-                                {isExpired ? <Badge type="error">{expiredText}</Badge> : null}
-                            </div>,
-                            <DropdownActions key={fingerprint} size="small" list={list} />,
-                        ].filter(Boolean);
-                        return <TableRow key={fingerprint} cells={cells} />;
+                        return (
+                            <TableRow
+                                key={fingerprint}
+                                labels={[
+                                    c('Title header for keys table').t`Fingerprint`,
+                                    c('Title header for keys table').t`Created`,
+                                    c('Title header for keys table').t`Expires`,
+                                    c('Title header for keys table').t`Type`,
+                                    c('Title header for keys table').t`Status`,
+                                    c('Title header for keys table').t`Actions`,
+                                ]}
+                                cells={[
+                                    <div key={0} title={fingerprint} className="flex flex-nowrap">
+                                        <ContactKeyWarningIcon
+                                            className="mr-2 shrink-0 self-center my-auto"
+                                            publicKey={publicKey}
+                                            emailAddress={model.emailAddress}
+                                            isInternal={model.isPGPInternal}
+                                            supportsEncryption={supportsEncryption}
+                                        />
+                                        <span className="flex-1 text-ellipsis">{fingerprint}</span>
+                                    </div>,
+                                    isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '—',
+                                    isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '—',
+                                    <div key={1} className="flex flex-row flex-nowrap items-center">
+                                        {algo}
+                                        <KeyVersionBadge version={version} />
+                                    </div>,
+                                    <div key={2} className="flex gap-1">
+                                        {isUsedForSending ? (
+                                            <Badge
+                                                type="primary"
+                                                data-testid="primary-key-label"
+                                                tooltip={primaryKeyTooltipText}
+                                            >
+                                                {primaryText}
+                                            </Badge>
+                                        ) : null}
+                                        {isUsedForSendingFallback ? (
+                                            <Badge
+                                                type="success"
+                                                data-testid="fallback-key-label"
+                                                tooltip={fallbackKeyTooltipText}
+                                            >
+                                                {fallbackText}
+                                            </Badge>
+                                        ) : null}
+                                        {isActiveSigner ? (
+                                            <Badge
+                                                type="info"
+                                                tooltip={activeSignerTooltipText}
+                                                data-testid="active-signer-key-label"
+                                            >
+                                                {activeSignerText}
+                                            </Badge>
+                                        ) : null}
+                                        {isObsolete && !isCompromised ? (
+                                            <Badge
+                                                type="warning"
+                                                url={getKnowledgeBaseUrl('/download-public-private-key')}
+                                                tooltip={obsoleteTooltipText}
+                                            >
+                                                {obsoleteText}
+                                            </Badge>
+                                        ) : null}
+                                        {isCompromised ? (
+                                            <Badge
+                                                type="error"
+                                                url={getKnowledgeBaseUrl('/download-public-private-key')}
+                                                tooltip={compromisedTooltipText}
+                                            >
+                                                {compromisedText}
+                                            </Badge>
+                                        ) : null}
+                                        {isWKD ? (
+                                            <Badge
+                                                type="origin"
+                                                tooltip={wkdKeyTooltipText}
+                                                data-testid="wkd-origin-label"
+                                            >
+                                                {wkdText}
+                                            </Badge>
+                                        ) : null}
+                                        {isKOO ? (
+                                            <Badge
+                                                type="origin"
+                                                tooltip={kooKeyTooltipText}
+                                                data-testid="koo-origin-label"
+                                            >
+                                                {kooText}
+                                            </Badge>
+                                        ) : null}
+                                        {isTrusted ? (
+                                            <Badge type="success" tooltip={trustedTooltipText}>
+                                                {trustedText}
+                                            </Badge>
+                                        ) : null}
+                                        {isRevoked ? <Badge type="error">{revokedText}</Badge> : null}
+                                        {isExpired ? <Badge type="error">{expiredText}</Badge> : null}
+                                    </div>,
+                                    <DropdownActions key={fingerprint} size="small" list={list} />,
+                                ]}
+                            />
+                        );
                     }
                 )}
             </TableBody>

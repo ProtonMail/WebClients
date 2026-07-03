@@ -7,6 +7,7 @@ interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>,
     className?: string;
     caption?: string;
     responsive?: 'cards' | 'stacked';
+    responsiveBreakpoint?: 'normal' | 'wide';
     hasActions?: boolean;
     borderWeak?: boolean;
     lastRowNoBorder?: boolean;
@@ -16,6 +17,7 @@ interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>,
 const Table = ({
     children,
     responsive,
+    responsiveBreakpoint = 'normal',
     className,
     hasActions,
     caption,
@@ -31,6 +33,7 @@ const Table = ({
                     'simple-table',
                     responsive === 'cards' && 'simple-table--responsive simple-table--responsive-cards',
                     responsive === 'stacked' && 'simple-table--responsive simple-table--responsive-stacked',
+                    responsive && 'simple-table--responsive-' + responsiveBreakpoint,
                     hasActions && 'simple-table--has-actions',
                     borderWeak && 'simple-table--border-weak',
                     lastRowNoBorder && 'simple-table--last-row-no-border',
