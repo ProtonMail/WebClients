@@ -2,9 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { Href } from '@proton/atoms/Href/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
@@ -68,10 +66,6 @@ const ScimSetupBanner = ({ pendingUsersCount, pendingGroupsCount, onReviewChange
             <div className="flex-1">
                 <p className="m-0 text-bold">{c('scim').t`Approve changes from your identity provider`}</p>
                 <p className="m-0">{getSyncedText(pendingUsersCount, pendingGroupsCount)}</p>
-                {/* TODO: link should be updated once we have knowledge page for scim */}
-                <Href href={getKnowledgeBaseUrl('/groups')} className="color-primary">
-                    PLEASE UPDATE ME
-                </Href>
             </div>
             <div>
                 <Button shape="outline" onClick={onReviewChanges}>
