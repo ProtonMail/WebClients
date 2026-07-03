@@ -1,6 +1,5 @@
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces';
-import { UserType } from '@proton/shared/lib/interfaces';
 
 export const enum TelemetryUserTier {
     internal = 'internal',
@@ -16,7 +15,7 @@ export const enum TelemetryUserTier {
  * @returns TelemetryUserTier
  */
 export const getTelemetryUserTier = (user: User): TelemetryUserTier => {
-    if (user.Type === UserType.PROTON) {
+    if (user.Email?.endsWith('@proton.ch')) {
         return TelemetryUserTier.internal;
     }
 
