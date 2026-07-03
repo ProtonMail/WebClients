@@ -7,6 +7,7 @@ import { useLumoUserSettings } from '../hooks';
 import { useFileProcessing } from '../hooks/useFileProcessing';
 import { type DriveEvent, type DriveNode, type EventSubscription, useDriveSDK } from '../hooks/useDriveSDK';
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
+import { registerDriveIndexingCancelHandler } from '../services/driveFolderIndexingState';
 import { SearchService } from '../services/search/searchService';
 import type { DriveDocument } from '../types/documents';
 import { getMimeTypeFromExtension } from '../util/filetypes';
@@ -107,6 +108,26 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         indexedFoldersRef.current = indexedFolders;
     }, [indexedFolders]);
 
+    const clearPendingTreeEvents = useCallback(() => {
+        pendingEventsRef.current.clear();
+        if (debounceTimerRef.current) {
+            clearTimeout(debounceTimerRef.current);
+            debounceTimerRef.current = null;
+        }
+    }, []);
+
+    const disposeAllSubscriptions = useCallback(() => {
+        for (const [scopeId, subscription] of subscriptionsRef.current.entries()) {
+            console.log('[DriveIndexingProvider] Disposing subscription for scope:', scopeId);
+            subscription.dispose();
+        }
+        subscriptionsRef.current.clear();
+        setSubscribedScopes([]);
+        setIsSubscribed(false);
+    }, []);
+
+    useEffect(() => registerDriveIndexingCancelHandler(clearPendingTreeEvents), [clearPendingTreeEvents]);
+
     // Auto-rehydrate folders on startup if folders exist in settings but manifest is empty
     // This handles the case when opening the app in a new browser where IndexedDB is empty
     useEffect(() => {
@@ -139,6 +160,9 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                 // Rehydrate each folder
                 for (const folder of indexedFolders) {
                     if (folder.isActive === false) continue;
+                    if (!indexedFoldersRef.current.some((indexedFolder) => indexedFolder.nodeUid === folder.nodeUid)) {
+                        continue;
+                    }
 
                     try {
                         console.log('[DriveIndexingProvider] Rehydrating folder:', folder.name);
@@ -330,6 +354,14 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
     // Index a single file (handles both new files and updates)
     const indexSingleFile = useCallback(
         async (folder: IndexedDriveFolder, fileNodeUid: string, fileName: string, isUpdate: boolean = false) => {
+            const stillIndexed = indexedFoldersRef.current.some(
+                (indexedFolder) => indexedFolder.isActive !== false && indexedFolder.nodeUid === folder.nodeUid
+            );
+            if (!stillIndexed) {
+                console.log('[DriveIndexingProvider] Skipping file index — folder no longer linked:', folder.name);
+                return;
+            }
+
             const searchService = SearchService.get(userId);
 
             // For new files (not updates), check if already indexed (e.g., indexed immediately after upload)
@@ -637,7 +669,9 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         const activeFolders = indexedFolders.filter((f) => f.isActive !== false && f.treeEventScopeId);
 
         if (activeFolders.length === 0) {
-            console.log('[DriveIndexingProvider] No indexed folders with treeEventScopeId, skipping subscription');
+            console.log('[DriveIndexingProvider] No indexed folders with treeEventScopeId, tearing down subscriptions');
+            disposeAllSubscriptions();
+            clearPendingTreeEvents();
             return;
         }
 
@@ -693,21 +727,17 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         void subscribeToNewScopes();
 
         return () => {
-            // Clean up all subscriptions on unmount
-            for (const [scopeId, subscription] of subscriptionsRef.current.entries()) {
-                console.log('[DriveIndexingProvider] Disposing subscription for scope:', scopeId);
-                subscription.dispose();
-            }
-            subscriptionsRef.current.clear();
-            setSubscribedScopes([]);
-            setIsSubscribed(false);
-
-            if (debounceTimerRef.current) {
-                clearTimeout(debounceTimerRef.current);
-                debounceTimerRef.current = null;
-            }
+            disposeAllSubscriptions();
+            clearPendingTreeEvents();
         };
-    }, [isDriveInitialized, indexedFolders, subscribeToTreeEvents, handleTreeEvent]);
+    }, [
+        isDriveInitialized,
+        indexedFolders,
+        subscribeToTreeEvents,
+        handleTreeEvent,
+        disposeAllSubscriptions,
+        clearPendingTreeEvents,
+    ]);
 
     // Allow external components to signal indexing status (e.g., immediate indexing after upload)
     const setIndexingFile = useCallback((fileName: string | null) => {

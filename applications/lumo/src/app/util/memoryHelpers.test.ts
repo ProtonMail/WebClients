@@ -1,3 +1,6 @@
+import { subDays } from 'date-fns';
+
+import { FREE_USER_CHAT_RETENTION_DAYS } from '../constants/limits';
 import type { Memory } from '../redux/slices/lumoUserSettings';
 import type { Conversation, Message, Space } from '../types';
 import { Role } from '../types';
@@ -20,14 +23,31 @@ const makeMessage = (overrides: Partial<Message> & Pick<Message, 'id' | 'convers
 
 describe('memoryHelpers', () => {
     it('samples only general-chat user prompts, newest first, deduped', () => {
+        const recentDate = subDays(new Date(), 1).toISOString();
         const spaces: Record<string, Space> = {
             project: { id: 'project', isProject: true } as Space,
             general: { id: 'general', isProject: false } as Space,
         };
         const conversations: Record<string, Conversation> = {
-            c1: { id: 'c1', spaceId: 'general' } as Conversation,
-            c2: { id: 'c2', spaceId: 'project' } as Conversation,
-            c3: { id: 'c3', spaceId: 'general', ghost: true } as Conversation,
+            c1: {
+                id: 'c1',
+                spaceId: 'general',
+                createdAt: recentDate,
+                updatedAt: recentDate,
+            } as Conversation,
+            c2: {
+                id: 'c2',
+                spaceId: 'project',
+                createdAt: recentDate,
+                updatedAt: recentDate,
+            } as Conversation,
+            c3: {
+                id: 'c3',
+                spaceId: 'general',
+                ghost: true,
+                createdAt: recentDate,
+                updatedAt: recentDate,
+            } as Conversation,
         };
         const messages: Record<string, Message> = {
             m1: makeMessage({
@@ -58,6 +78,115 @@ describe('memoryHelpers', () => {
 
         expect(sampleUserPromptsForMemoryGeneration(messages, conversations, spaces)).toEqual([
             'I prefer concise answers and short summaries in all responses please',
+        ]);
+    });
+
+    it('excludes deleted conversations, deleted messages, and expired free-user chats', () => {
+        const recentDate = subDays(new Date(), 1).toISOString();
+        const expiredDate = subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString();
+        const spaces: Record<string, Space> = {
+            general: { id: 'general', isProject: false } as Space,
+            deletedSpace: { id: 'deletedSpace', isProject: false, deleted: true } as unknown as Space,
+        };
+        const conversations: Record<string, Conversation> = {
+            active: {
+                id: 'active',
+                spaceId: 'general',
+                createdAt: recentDate,
+                updatedAt: recentDate,
+                title: 'Active',
+            } as Conversation,
+            deleted: {
+                id: 'deleted',
+                spaceId: 'general',
+                createdAt: recentDate,
+                updatedAt: recentDate,
+                title: 'Deleted',
+                deleted: true,
+            } as unknown as Conversation,
+            expired: {
+                id: 'expired',
+                spaceId: 'general',
+                createdAt: expiredDate,
+                updatedAt: expiredDate,
+                title: 'Expired',
+            } as Conversation,
+            deletedSpace: {
+                id: 'deletedSpace',
+                spaceId: 'deletedSpace',
+                createdAt: recentDate,
+                updatedAt: recentDate,
+                title: 'Deleted space',
+            } as Conversation,
+        };
+        const longPrompt = 'Active chat prompt that is long enough to be included in memory sampling corpus';
+        const messages: Record<string, Message> = {
+            active: makeMessage({
+                id: 'active',
+                conversationId: 'active',
+                content: longPrompt,
+                createdAt: recentDate,
+            }),
+            deletedConversation: makeMessage({
+                id: 'deletedConversation',
+                conversationId: 'deleted',
+                content: 'Deleted conversation prompt should never be used for memory generation',
+                createdAt: recentDate,
+            }),
+            expiredConversation: makeMessage({
+                id: 'expiredConversation',
+                conversationId: 'expired',
+                content: 'Expired conversation prompt should be excluded for free users',
+                createdAt: expiredDate,
+            }),
+            deletedSpaceConversation: makeMessage({
+                id: 'deletedSpaceConversation',
+                conversationId: 'deletedSpace',
+                content: 'Deleted space conversation prompt should never be used for memory generation',
+                createdAt: recentDate,
+            }),
+            deletedMessage: {
+                ...makeMessage({
+                    id: 'deletedMessage',
+                    conversationId: 'active',
+                    content: 'Deleted message prompt should never be used for memory generation',
+                    createdAt: recentDate,
+                }),
+                deleted: true,
+            } as Message & { deleted: true },
+        };
+
+        expect(sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, { hasLumoPlus: false })).toEqual([
+            longPrompt,
+        ]);
+    });
+
+    it('includes expired conversations for Lumo Plus users', () => {
+        const expiredDate = subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString();
+        const spaces: Record<string, Space> = {
+            general: { id: 'general', isProject: false } as Space,
+        };
+        const conversations: Record<string, Conversation> = {
+            expired: {
+                id: 'expired',
+                spaceId: 'general',
+                createdAt: expiredDate,
+                updatedAt: expiredDate,
+                title: 'Expired',
+            } as Conversation,
+        };
+        const expiredPrompt = 'Expired but still accessible prompt for Lumo Plus memory sampling corpus';
+        const messages: Record<string, Message> = {
+            expired: makeMessage({
+                id: 'expired',
+                conversationId: 'expired',
+                content: expiredPrompt,
+                createdAt: expiredDate,
+            }),
+        };
+
+        expect(sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, { hasLumoPlus: true })).toEqual([
+            expiredPrompt,
         ]);
     });
 

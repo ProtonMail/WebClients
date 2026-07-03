@@ -95,6 +95,7 @@ export type UiContext = {
 export type SettingsContext = {
     personalization?: PersonalizationSettings;
     isMemoryFeatureEnabled?: boolean;
+    hasLumoPlus?: boolean;
 };
 
 const DEFAULT_PERSONALIZATION: PersonalizationSettings = {
@@ -274,7 +275,12 @@ export function sendMessage({
         const isGhostConversation = state.conversations[conversationId]?.ghost === true;
 
         if (!isProject && !isGhostConversation && s.isMemoryFeatureEnabled) {
-            maybeAutoSaveMemoriesFromChats({ api: a.api, dispatch, getState });
+            maybeAutoSaveMemoriesFromChats({
+                api: a.api,
+                dispatch,
+                getState,
+                hasLumoPlus: s.hasLumoPlus,
+            });
         }
 
         // Call the LLM.
