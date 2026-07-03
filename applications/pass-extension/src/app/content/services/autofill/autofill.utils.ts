@@ -1,5 +1,5 @@
-import type { HTMLFieldElement } from '@protontech/autofill';
 import type { FieldType } from '@protontech/autofill/types';
+import type { HTMLFieldElement } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import type { FieldElement } from 'proton-pass-extension/app/content/services/form/field';
 
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
