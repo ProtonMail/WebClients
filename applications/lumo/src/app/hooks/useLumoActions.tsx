@@ -15,6 +15,7 @@ import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from 
 import { getApproximateTokenCount } from '../llm/tokenizer';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
+import { useLumoPlan } from '../hooks/useLumoPlan';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
@@ -99,6 +100,7 @@ export const useLumoActions = ({
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
+    const { hasLumoPlus } = useLumoPlan();
     const { isThinkingEnabled, modelTier } = useModelTier();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
@@ -273,6 +275,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isMemoryFeatureEnabled: ffMemory,
+                    hasLumoPlus,
                 },
             })
         );
