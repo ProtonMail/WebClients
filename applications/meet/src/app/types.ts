@@ -64,4 +64,10 @@ export type AudioToggleParams = {
 
 export type ToggleAudioType = (params: AudioToggleParams) => Promise<boolean | undefined>;
 
+export type InitializeDevices = (params: {
+    timeoutMs?: number;
+    desiredCameraState?: boolean;
+    desiredMicrophoneState?: boolean;
+}) => Promise<void>;
+
 export type MeetButtonClass = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'danger-secondary';
