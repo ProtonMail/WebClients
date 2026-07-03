@@ -8,6 +8,7 @@ import { sanitizeMessage } from '@proton/sanitize/purify';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
+import type { InitializeDevices } from '../types';
 import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
 import type { UseLiveKitConnectionResult } from './useLiveKitConnection';
@@ -34,7 +35,7 @@ interface UseReconnectionParams {
     cleanupMlsState: () => void;
     allowHealthCheck: () => void;
     disallowHealthCheck: () => void;
-    initializeDevices: (timeout?: number) => Promise<void>;
+    initializeDevices: InitializeDevices;
     getParticipants: (token: string) => Promise<void>;
     reportMeetError: (msg: string, options?: unknown) => void;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
@@ -104,6 +105,11 @@ export const useReconnection = ({
                 // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
                 const wasMlsActive = mlsSetupDone.current;
 
+                // Snapshot the live camera/mic state so it survives the rejoin; otherwise
+                // initializeDevices falls back to the prejoin defaults and silently turns them off.
+                const wasCameraEnabled = room.localParticipant.isCameraEnabled;
+                const wasMicrophoneEnabled = room.localParticipant.isMicrophoneEnabled;
+
                 try {
                     await room.disconnect();
                 } catch {
@@ -160,7 +166,11 @@ export const useReconnection = ({
                 // Restore meeting state
                 meetingLinkNameRef.current = meetingToken;
                 setJoinedRoom(true);
-                await initializeDevices(5_000);
+                await initializeDevices({
+                    timeoutMs: 5_000,
+                    desiredCameraState: wasCameraEnabled,
+                    desiredMicrophoneState: wasMicrophoneEnabled,
+                });
                 await getParticipants(meetingToken);
 
                 setIsReconnecting(false);

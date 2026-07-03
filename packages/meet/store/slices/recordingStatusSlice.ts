@@ -25,6 +25,10 @@ const slice = createSlice({
     reducers: {
         // Participants recording
         addParticipantRecording: (state, action: PayloadAction<string>) => {
+            if (state.participantsRecording.includes(action.payload)) {
+                return;
+            }
+
             state.participantsRecording = [...state.participantsRecording, action.payload];
         },
         removeParticipantRecording: (state, action: PayloadAction<string>) => {

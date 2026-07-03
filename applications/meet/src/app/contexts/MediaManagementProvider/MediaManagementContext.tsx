@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../types';
+import type { InitializeDevices, SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../types';
 
 export interface MediaManagementContextType {
     isVideoEnabled: boolean;
@@ -19,7 +19,7 @@ export interface MediaManagementContextType {
     handleRotateCamera: () => void;
     facingMode: 'environment' | 'user';
     switchActiveDevice: SwitchActiveDevice;
-    initializeDevices: (timeoutMs?: number) => Promise<void>;
+    initializeDevices: InitializeDevices;
     getMicrophoneVolumeAnalysis: () => {
         analyser: AnalyserNode | null;
         dataArray: Uint8Array<ArrayBuffer> | null;
