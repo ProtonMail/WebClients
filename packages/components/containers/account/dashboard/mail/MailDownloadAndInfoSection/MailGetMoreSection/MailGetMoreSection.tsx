@@ -4,7 +4,7 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES, hasFree } from '@proton/payments';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
 import {
@@ -26,12 +26,15 @@ export const MailGetMoreSection = ({ subscription }: Props) => {
     const mailPlusPlanName = PLAN_NAMES[PLANS.MAIL];
     const sections: DashboardMoreInfoSection[] = [
         {
+            id: 'see-manage-email-subscriptions',
             title: () => c('Blog').t`See and manage all your email subscriptions`,
             description: () => getBoldFormattedText(c('Blog').t`Try out **Newsletters view** to declutter your inbox.`),
             image: manageSubscription,
             link: 'https://mail.proton.me/views/newsletters',
+            cardAction: 'internal_nav',
         },
         {
+            id: 'easily-manage-inbox',
             title: () =>
                 isFreeSubscription
                     ? c('Blog').t`Easily manage your inbox with ${mailPlusPlanName}`
@@ -53,8 +56,10 @@ export const MailGetMoreSection = ({ subscription }: Props) => {
                       ),
             image: manageInbox,
             link: getBlogURL('/email-management'),
+            cardAction: 'external_link',
         },
         {
+            id: 'protect-business-communications',
             title: () => c('Blog').t`Protect your business communications`,
             tag: (
                 <DashboardMoreInfoSectionTag
@@ -68,17 +73,20 @@ export const MailGetMoreSection = ({ subscription }: Props) => {
                     .t`Working with sensitive data? Use ${MAIL_APP_NAME} to protect your communications and build trust with clients.`,
             image: businessCommunication,
             link: 'https://proton.me/business/mail',
+            cardAction: 'external_link',
         },
         {
+            id: 'clean-inbox-with-filters',
             title: () => c('Blog').t`Get a clean inbox with filters`,
             tag: <DashboardMoreInfoSectionTag key="advanced-label" text={c('Label').t`Advanced`} />,
             description: () => c('Blog').t`Automate recurring actions to sort and organize incoming emails.`,
             image: filters,
             link: 'https://proton.me/support/email-inbox-filters',
+            cardAction: 'external_link',
         },
     ];
 
-    return <DashboardMoreInfoSections sections={sections} />;
+    return <DashboardMoreInfoSections sections={sections} app={APPS.PROTONMAIL} />;
 };
 
 export default MailGetMoreSection;
