@@ -23,6 +23,7 @@ type AutoSaveContext = {
     api: Api;
     dispatch: LumoDispatch;
     getState: () => LumoState;
+    hasLumoPlus?: boolean;
 };
 
 /**
@@ -31,7 +32,7 @@ type AutoSaveContext = {
  * *latest* state via {@link appendGeneratedMemoriesThunk}, so memories the user adds or edits
  * during the long-running LLM call are not clobbered.
  */
-export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState }: AutoSaveContext) => {
+export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState, hasLumoPlus = false }: AutoSaveContext) => {
     const state = getState();
     const settings = state.lumoUserSettings;
 
@@ -54,7 +55,12 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState }: Auto
 
     void (async () => {
         try {
-            const samples = sampleUserPromptsForMemoryGeneration(state.messages, state.conversations, state.spaces);
+            const samples = sampleUserPromptsForMemoryGeneration(
+                state.messages,
+                state.conversations,
+                state.spaces,
+                { hasLumoPlus }
+            );
             if (!canGenerateMemoriesFromChats(samples.length)) {
                 dispatch(updateLumoUserSettings({ memoryPromptsSinceAutoSave: 0 }));
                 return;
