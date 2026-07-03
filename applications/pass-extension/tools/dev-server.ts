@@ -27,6 +27,7 @@ const {
 const EXCLUDED_WEBPACK_ENTRIES = [
     'background',
     'client',
+    'client-legacy',
     'dropdown',
     'external',
     'fork',
