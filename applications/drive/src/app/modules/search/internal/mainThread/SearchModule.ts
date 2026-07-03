@@ -56,10 +56,9 @@ export class SearchModule {
     private static creating: Promise<SearchModule> | null = null;
     private state: SearchModuleState = {
         isUserOptIn: false,
-        isInitialIndexing: false,
         isIndexing: false,
-        isSearchable: false,
         isRunningOutdatedVersion: false,
+        isSearchable: false,
         permanentError: null,
         indexPopulatorStatuses: [],
     };
@@ -192,7 +191,6 @@ export class SearchModule {
         this.optInManager.dispose();
         this.setState({
             isRunningOutdatedVersion: true,
-            isInitialIndexing: false,
             isIndexing: false,
             isSearchable: false,
             permanentError: null,

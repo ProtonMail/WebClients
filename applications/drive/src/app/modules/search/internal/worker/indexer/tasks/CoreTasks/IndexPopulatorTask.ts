@@ -8,13 +8,7 @@ import { BaseTask } from '../BaseTask';
  * Task wrapper around an IndexPopulator.
  */
 export class IndexPopulatorTask extends BaseTask {
-    constructor(
-        readonly populator: IndexPopulator,
-
-        // True when running during the initial bootstrap sequence, false for
-        // subsequent re-indexes triggered by live events.
-        private readonly isBootstrap: boolean
-    ) {
+    constructor(readonly populator: IndexPopulator) {
         super();
     }
 
@@ -51,9 +45,6 @@ export class IndexPopulatorTask extends BaseTask {
 
         // Signal that indexing is happening.
         ctx.markIndexing();
-        if (this.isBootstrap) {
-            ctx.markInitialIndexing();
-        }
 
         const stopTimer = startSearchTimer();
 

@@ -86,7 +86,6 @@ export class SharedWorkerAPI {
         // Notify all tabs that search has been deactivated.
         this.stateChannel?.postMessage({
             isUserOptIn: false,
-            isInitialIndexing: false,
             isIndexing: false,
             isSearchable: false,
             permanentError: null,
@@ -114,7 +113,6 @@ export class SharedWorkerAPI {
         }
 
         this.stateChannel?.postMessage({
-            isInitialIndexing: false,
             isIndexing: false,
             isSearchable: false,
             permanentError: null,
@@ -257,7 +255,6 @@ export class SharedWorkerAPI {
             this.stateChannel.postMessage(this.indexer.getState());
             this.indexer.onStateChange((state) => {
                 this.stateChannel?.postMessage({
-                    isInitialIndexing: state.isInitialIndexing,
                     isIndexing: state.isIndexing,
                     isSearchable: state.isSearchable,
                     permanentError: state.permanentError,

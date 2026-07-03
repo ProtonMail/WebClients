@@ -70,7 +70,7 @@ describe('IndexPopulatorTask', () => {
     it('registers tree subscription and indexes files', async () => {
         const populator = new TestPopulator();
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, true).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         // Verify subscription registered
         const reg = ctx.treeSubscriptionRegistry.getRegistration(populator);
@@ -97,28 +97,18 @@ describe('IndexPopulatorTask', () => {
         });
 
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, true).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         // Should NOT have indexed anything
         const keys = await db.getAllIndexBlobKeys();
         expect(keys).toHaveLength(0);
     });
 
-    it('marks initial indexing when isBootstrap=true', async () => {
+    it('marks indexing', async () => {
         const populator = new TestPopulator();
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, true /* isBootstrap */).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
-        expect(ctx.markInitialIndexing).toHaveBeenCalled();
-        expect(ctx.markIndexing).toHaveBeenCalled();
-    });
-
-    it('does not mark initial indexing when isBootstrap=false', async () => {
-        const populator = new TestPopulator();
-        const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, false /* isBootstrap */).execute(ctx);
-
-        expect(ctx.markInitialIndexing).not.toHaveBeenCalled();
         expect(ctx.markIndexing).toHaveBeenCalled();
     });
 
@@ -128,7 +118,7 @@ describe('IndexPopulatorTask', () => {
 
         const populator = new TestPopulator();
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, true /* isBootstrap */).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         expect(bridge.fetchedEventIdScopes).toHaveLength(0);
 
@@ -139,7 +129,7 @@ describe('IndexPopulatorTask', () => {
     it('resolves lastEventId from API when no subscription exists', async () => {
         const populator = new TestPopulator();
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, true /* isBootstrap */).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         expect(bridge.fetchedEventIdScopes).toContain(SCOPE_ID);
 
@@ -164,7 +154,7 @@ describe('IndexPopulatorTask', () => {
         });
 
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, false).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         // Should have indexed despite done=true, because version mismatched.
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
@@ -191,7 +181,7 @@ describe('IndexPopulatorTask', () => {
 
         const populator = new TestPopulator();
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, false).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         // Should have re-indexed because undefined !== 1.
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
@@ -202,7 +192,7 @@ describe('IndexPopulatorTask', () => {
     it('persists populator state as done after success', async () => {
         const populator = new TestPopulator();
         const ctx = await buildCtx();
-        await new IndexPopulatorTask(populator, true /* isBootstrap */).execute(ctx);
+        await new IndexPopulatorTask(populator).execute(ctx);
 
         const state = await db.getPopulatorState(populator.getUid());
         expect(state).toEqual({
