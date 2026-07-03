@@ -1,18 +1,17 @@
+import type { FieldType } from '@protontech/autofill/types';
+import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
+import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
+import type { Fnode } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import {
     clearDetectionCache,
-    createRulesetRegistry,
     flagOverride,
     flagSubtreeAsIgnored,
     getTypeScore,
     prepass,
+    rulesetMaker,
     shadowPiercingContains,
     shouldRunClassifier,
-} from '@protontech/autofill';
-import { perceptronModelProvider } from '@protontech/autofill/models/perceptron';
-import type { FieldType } from '@protontech/autofill/types';
-import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
-import type { Fnode } from '@protontech/fathom';
-import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
 import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -29,8 +28,7 @@ import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-const registry = createRulesetRegistry({ perceptron: perceptronModelProvider });
-const ruleset = registry.make('perceptron');
+const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
@@ -248,8 +246,6 @@ export const createDetectorService = (config: DetectorConfig) => {
             }),
 
         predictAll,
-        predictFields,
-        predictForms,
     };
 
     return detector;
