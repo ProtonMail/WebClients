@@ -316,7 +316,7 @@ export const ModelModePanel = ({
                             .t`Upgrade for unlimited chats, projects, larger file uploads, and more.`}
                     </p>
                     <BasicUpgradeButton
-                        className="model-mode-upgrade-button shrink-0 text-sm"
+                        className="model-mode-upgrade-button shrink-0 text-sm flex-1"
                         size="small"
                         path={upsellPath}
                         onClick={handleUpgradeClick}
