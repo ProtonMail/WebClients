@@ -35,7 +35,7 @@ const ProjectsSidebarSection = lazy(() =>
 );
 
 const LumoSidebarContent = () => {
-    const { isVisible, isSmallScreen, toggle, closeOnItemClick } = useSidebar();
+    const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
     const history = useHistory();
     const { showMobileHeader, showSearch, showGallery } = useSidebarVisibility();
     const isGuest = useIsGuest();
@@ -50,10 +50,6 @@ const LumoSidebarContent = () => {
     }, [searchModal, registerOpenFunction]);
 
     useNativeComposerAccountApi();
-
-    if (!isVisible) {
-        return null;
-    }
 
     return (
         <>
