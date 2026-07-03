@@ -1311,6 +1311,9 @@
       ],
       "Send Feedback": [
         "Send tilbakemelding"
+      ],
+      "Report abuse": [
+        "Rapporter misbruk"
       ]
     },
     "Action: Docs": {
@@ -7357,6 +7360,18 @@
       ],
       "Upgrade to get more storage space": [
         "Oppgrader for å få mer lagringsplass"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Jeg bekrefter herved at jeg i god tro har bekreftet at informasjonen og uttalelsene i rapporten er korrekte og fullstendige."
+      ],
+      "Preparing download": [
+        "Forbereder nedlasting"
+      ],
+      "Preparing…": [
+        "Forbereder…"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ nodeName }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
       ]
     },
     "info": {
@@ -10194,6 +10209,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } bilde er fjernet fra ${ albumName }\"",
         "${ removed } bilder er fjernet fra ${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13889,6 +13907,36 @@
       ],
       "We'd love to hear from you!": [
         "Vi vil gjerne høre fra deg!"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digital signatur verifisert. Denne filen ble opprettet på en sikker måte av ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digital signatur verifisert. Denne filen ble lastet opp på en sikker måte av ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digital signatur verifisert. Denne mappen ble opprettet på en sikker måte av ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digital signatur verifisert. Denne mappen ble lastet opp på en sikker måte av ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Vi kunne ikke bekrefte at ${ author } opprettet denne filen."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Vi kunne ikke bekrefte at ${ author } opprettet denne mappen."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Vi kunne ikke bekrefte at ${ author } lastet opp denne filen."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Vi kunne ikke bekrefte at ${ author } lastet opp denne mappen."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Vi klarte ikke å bekrefte at navnet ble opprettet eller endret av ${ claimedNameAuthor }. Årsaken er: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Vi klarte ikke å bekrefte at noden ble opprettet av ${ claimedKeyAuthor }. Årsaken er: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
