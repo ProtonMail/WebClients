@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import {
     getIgnoredParent,
     getParentFormPrediction,
@@ -5,8 +6,7 @@ import {
     isPrediction,
     removeClassifierFlags,
     removeProcessedFlag,
-} from '@protontech/autofill';
-import debounce from 'lodash/debounce';
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
 import {
     hasProcessableFields,
     hasProcessableNodes,

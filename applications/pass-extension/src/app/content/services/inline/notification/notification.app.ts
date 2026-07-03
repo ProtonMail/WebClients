@@ -1,8 +1,8 @@
-import { flagAsIgnored, removeClassifierFlags } from '@protontech/autofill';
 import { FieldType } from '@protontech/autofill/types';
 import { NOTIFICATION_IFRAME_SRC, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { flagAsIgnored, removeClassifierFlags } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import type { InlineAppHandler, InlineEvent } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';

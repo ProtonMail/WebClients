@@ -1,3 +1,9 @@
+import type { FormType } from '@protontech/autofill/types';
+import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
+import debounce from 'lodash/debounce';
+import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
 import {
     getCCFieldType,
     getIdentityFieldType,
@@ -7,13 +13,7 @@ import {
     kButtonSelector,
     removeClassifierFlags,
     shadowPiercingContains,
-} from '@protontech/autofill';
-import type { FormType } from '@protontech/autofill/types';
-import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
-import debounce from 'lodash/debounce';
-import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 import { getFrameAttributesFromElement, isNegligableFrameRect } from 'proton-pass-extension/app/content/utils/frame';
