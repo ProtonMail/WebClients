@@ -64,10 +64,10 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
   }
 
-  showYjsDriftDetectedErrorModal(): void {
+  showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): void {
     this.eventBus.publish({
       type: ApplicationEvent.SheetsYjsDriftDetected,
-      payload: undefined,
+      payload: driftLogDetails,
     })
     this.documentState.setProperty('editorHasRenderingIssue', true)
   }

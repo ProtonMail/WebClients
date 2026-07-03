@@ -57,8 +57,10 @@ export interface EditorControllerInterface {
   downloadSpreadsheetPatches(): Promise<void>
   removeSpreadsheetPatches(): Promise<void>
   generateSpreadsheetPatches(): Promise<unknown>
+  getSpreadsheetPatchesAsJsonFile(): Promise<Blob>
   applyPatches(patches: unknown): Promise<void>
   setTableOfContentsVisible(visible: boolean): Promise<void>
+  getBaseCommitAsZip(): Promise<Blob>
   downloadBaseCommit(): Promise<void>
 }
 
@@ -551,10 +553,7 @@ export class EditorController implements EditorControllerInterface {
     return result.getValue()
   }
 
-  async downloadSpreadsheetPatches(): Promise<void> {
-    if (!this.editorInvoker) {
-      throw new Error('Attempting to download spreadsheet patches before editor invoker is initialized')
-    }
+  async getSpreadsheetPatchesAsJsonFile(): Promise<Blob> {
     if (!this.sheetsStorageService) {
       throw new Error('Sheets storage service not initialized')
     }
@@ -568,6 +567,11 @@ export class EditorController implements EditorControllerInterface {
 
     const stringifiedPatches = JSON.stringify(patches.getValue())
     const blob = new Blob([stringifiedPatches], { type: 'application/json' })
+    return blob
+  }
+
+  async downloadSpreadsheetPatches(): Promise<void> {
+    const blob = await this.getSpreadsheetPatchesAsJsonFile()
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -614,13 +618,13 @@ export class EditorController implements EditorControllerInterface {
     await this.editorInvoker.setTableOfContentsVisible(visible)
   }
 
-  async downloadBaseCommit(): Promise<void> {
-    const baseCommit = this.documentState.getProperty('baseCommit')
-    if (!baseCommit) {
-      return
-    }
+  async getBaseCommitAsZip(): Promise<Blob> {
     const JSZip = (await import('jszip')).default
     const zip = new JSZip()
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (!baseCommit) {
+      return zip.generateAsync({ type: 'blob' })
+    }
     for (const message of baseCommit.messages) {
       const content = message.content
       if (isCompressedDocumentUpdate(content)) {
@@ -630,7 +634,15 @@ export class EditorController implements EditorControllerInterface {
         zip.file(`${message.timestamp}.bin`, content)
       }
     }
-    const zipBlob = await zip.generateAsync({ type: 'blob' })
+    return zip.generateAsync({ type: 'blob' })
+  }
+
+  async downloadBaseCommit(): Promise<void> {
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (!baseCommit) {
+      return
+    }
+    const zipBlob = await this.getBaseCommitAsZip()
     const zipUrl = URL.createObjectURL(zipBlob)
     const zipLink = document.createElement('a')
     zipLink.href = zipUrl
