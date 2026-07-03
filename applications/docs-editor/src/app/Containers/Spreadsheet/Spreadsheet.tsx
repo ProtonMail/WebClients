@@ -95,7 +95,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
 
   const handleYjsDriftDetected = useCallback(
-    (result: SpreadsheetLocalYjsUpdateAuditResult) => {
+    (result: SpreadsheetLocalYjsUpdateAuditResult, driftLogDetails: Record<string, unknown>) => {
       for (const difference of result.differences) {
         void clientInvoker.reportSheetsYjsDriftDetected(difference.reason)
       }
@@ -109,7 +109,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           observedYjsKeys: result.observedYjsKeys,
         },
       })
-      void clientInvoker.showYjsDriftDetectedErrorModal()
+      void clientInvoker.showYjsDriftDetectedErrorModal(driftLogDetails)
     },
     [clientInvoker],
   )
