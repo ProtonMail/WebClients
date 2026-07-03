@@ -59,5 +59,5 @@ export interface EditorOrchestratorInterface {
   hasBasePatches(): Promise<boolean>
 
   reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
-  showYjsDriftDetectedErrorModal(): void
+  showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): void
 }
