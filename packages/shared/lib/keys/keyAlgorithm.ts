@@ -1,4 +1,5 @@
 import type { AlgorithmInfo } from '@protontech/crypto';
+
 import unique from '@proton/utils/unique';
 
 import type { KeyGenConfig, KeyGenConfigV6 } from '../interfaces';
@@ -21,30 +22,30 @@ const formatCurveName = (curve: AlgorithmInfo['curve']) => {
     }
 };
 
-export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo, keyVersion: number) => {
-    const versionSuffix = keyVersion === 6 ? '_V6' : '';
+export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo) => {
     switch (algorithm) {
         case 'elgamal':
-            return `ElGamal${versionSuffix} (${bits})`;
+            return `ElGamal (${bits})`;
         case 'dsa':
-            return `DSA${versionSuffix} (${bits})`;
+            return `DSA (${bits})`;
         case 'rsaEncrypt':
         case 'rsaEncryptSign':
         case 'rsaSign':
-            return `RSA${versionSuffix} (${bits})`;
+            return `RSA (${bits})`;
         case 'eddsaLegacy':
         case 'ecdsa':
         case 'ecdh':
-            return `ECC${versionSuffix} (${formatCurveName(curve)})`;
+            return `ECC (${formatCurveName(curve)})`;
         case 'ed25519':
         case 'x25519':
-            return `ECC${versionSuffix} (Curve25519, new format)`;
+            return `ECC (Curve25519, new format)`;
         case 'ed448':
         case 'x448':
-            return `ECC${versionSuffix} (Curve448, new format)`;
+            return `ECC (Curve448, new format)`;
         case 'pqc_mldsa_ed25519':
+            return `PQC (ML-DSA) + ECC (Curve25519) hybrid`;
         case 'pqc_mlkem_x25519':
-            return `PQC${versionSuffix} (${algorithm.substring(4).toUpperCase()})`;
+            return `PQC (ML-KEM) + ECC (Curve25519) hybrid`;
         default:
             return algorithm.toUpperCase(); // should never get here
     }
@@ -56,9 +57,15 @@ export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmI
  * @returns {String} formatted unique algorithm names. Different curves or key sizes result in separate entries, e.g.
  *      [{ name: 'rsa', bits: 2048 }, { name: 'rsa', bits: 4096 }] returns `RSA (2048), RSA (4096)`.
  */
-export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = [], keyVersion: number) => {
-    const formattedAlgos = algorithmInfos.map((info) => getFormattedAlgorithmName(info, keyVersion));
-    return unique(formattedAlgos).join(', ');
+export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = []) => {
+    const formattedAlgos = algorithmInfos.map((info) => getFormattedAlgorithmName(info));
+    let uniqueAlgorithms = unique(formattedAlgos).join(', ');
+    // Special case: unify PQC algorithms
+    uniqueAlgorithms = uniqueAlgorithms.replace(
+        'PQC (ML-DSA) + ECC (Curve25519) hybrid, PQC (ML-KEM) + ECC (Curve25519) hybrid',
+        'PQC (ML-DSA, ML-KEM) + ECC (Curve25519) hybrid'
+    );
+    return uniqueAlgorithms;
 };
 
 export const isKeyGenConfigV6 = (keyConfig: KeyGenConfig | KeyGenConfigV6): keyConfig is KeyGenConfigV6 =>

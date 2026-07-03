@@ -11,6 +11,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import KeyVersionBadge from '@proton/components/containers/keys/KeyVersionBadge';
 import { useLoading } from '@proton/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
@@ -27,7 +28,8 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     const publicKey = contact.bePinnedPublicKey;
     const fingerprint = publicKey.getFingerprint();
     const creationDate = new Date(publicKey.getCreationTime());
-    const algorithmType = getFormattedAlgorithmName(publicKey.getAlgorithmInfo(), publicKey.getVersion());
+    const algorithmType = getFormattedAlgorithmName(publicKey.getAlgorithmInfo());
+    const version = publicKey.getVersion();
 
     useEffect(() => {
         const getExpirationTime = async () => {
@@ -65,7 +67,9 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
                     <TableHeaderCell>{c('Table header').t`Fingerprint`}</TableHeaderCell>
                     <TableHeaderCell className="w-1/5">{c('Table header').t`Created`}</TableHeaderCell>
                     <TableHeaderCell className="w-1/6">{c('Table header').t`Expires`}</TableHeaderCell>
-                    <TableHeaderCell className="w-1/6">{c('Table header').t`Type`}</TableHeaderCell>
+                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '16.5em' }}>
+                        {c('Table header').t`Type`}
+                    </TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -73,7 +77,12 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
                     <TableCell label={c('Table header').t`Fingerprint`}>{fingerprintCell}</TableCell>
                     <TableCell label={c('Table header').t`Created`}>{creationCell}</TableCell>
                     <TableCell label={c('Table header').t`Expires`}>{expirationCell}</TableCell>
-                    <TableCell label={c('Table header').t`Type`}>{algorithmType}</TableCell>
+                    <TableCell label={c('Table header').t`Type`}>
+                        <div className="flex flex-row flex-nowrap items-center">
+                            {algorithmType}
+                            <KeyVersionBadge version={version} />
+                        </div>
+                    </TableCell>
                 </TableRow>
             </TableBody>
         </Table>
