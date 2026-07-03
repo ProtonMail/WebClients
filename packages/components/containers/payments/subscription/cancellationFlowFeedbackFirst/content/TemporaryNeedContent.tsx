@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PLAN_NAMES } from '@proton/payments/core/constants';
+import { PLAN_NAMES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -36,7 +36,7 @@ export const TemporaryNeedContent = ({ onKeepPlan, onContinueCancelling }: Props
         return null;
     }
 
-    const planDisplayName = PLAN_NAMES[planName];
+    const planDisplayName = planName === PLANS.BUNDLE_PRO ? currentPlan.Title : PLAN_NAMES[planName];
     const config = getTemporaryNeedConfig(currentPlan, freePlan);
 
     if (!config) {
