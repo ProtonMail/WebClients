@@ -14,7 +14,7 @@ import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces';
 import GroupItem from './GroupItem';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
-import { GROUPS_STATE, PANEL_HEADER_HEIGHT } from './types';
+import { GROUPS_RESTRICTION_REASON, GROUPS_STATE, PANEL_HEADER_HEIGHT } from './types';
 
 // Sort by natural order e.g. [1, 10, 11, 2] -> [1, 2, 10, 11]
 const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
@@ -31,11 +31,16 @@ const getSortedGroups = (input: string, groups: EnhancedGroup[]) => {
 };
 
 const GroupList = () => {
-    const { isFrozen, uiState, groups, selectedGroup, actions, getSerializedGroup, groupRolesMap } =
-        useGroupsManagement();
+    const { restrictedBy, uiState, groups, selectedGroup, actions, getSerializedGroup } = useGroupsManagement();
     const { hasUsableDomain } = useGroupAvailableAddressDomains();
     const [permissions] = useOrgPermissions();
-    const canCreateGroup = !!permissions?.['account.group.create'] && hasUsableDomain && !isFrozen;
+    const canCreateGroup =
+        !!permissions?.['account.group.create'] &&
+        hasUsableDomain &&
+        [GROUPS_RESTRICTION_REASON.NONE, GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT].includes(
+            restrictedBy.reason
+        );
+
     const [searchInput, setSearchInput] = useState<string>('');
     const [showSearchInput, setShowSearchInput] = useState(!canCreateGroup);
 
@@ -115,8 +120,6 @@ const GroupList = () => {
                         serializedGroup={serializedGroup?.payload.id === group.ID ? serializedGroup : undefined}
                         onClick={() => actions.onViewGroup(group)}
                         onDeleteGroup={actions.onDeleteGroup}
-                        groupOrganizationRoles={groupRolesMap[group.ID]}
-                        hasPendingRoleAssignment={group.hasPendingOrgKeyAccess}
                     />
                 ))}
             </Scroll>

@@ -4,9 +4,11 @@ import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 
 import { useGroupsManagement } from './context/GroupsManagementContext';
+import { GROUPS_RESTRICTION_REASON } from './types';
 
 const GroupRoleAssignmentPausedBanner = () => {
-    const { groups, actions } = useGroupsManagement();
+    const { groups, actions, restrictedBy } = useGroupsManagement();
+    const isResumingRoleAssignments = restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT;
     const pausedCount = groups.filter((group) => group.hasPendingOrgKeyAccess).length;
 
     if (pausedCount === 0) {
@@ -31,8 +33,8 @@ const GroupRoleAssignmentPausedBanner = () => {
                     )}
                 </span>
             </span>
-            <Button shape="outline" onClick={() => actions.onResumeRoleAssignments()}>
-                {c('Action').t`Continue`}
+            <Button shape="outline" onClick={() => actions.onToggleRoleAssignments()}>
+                {isResumingRoleAssignments ? c('Action').t`Pause` : c('Action').t`Continue`}
             </Button>
         </Banner>
     );
