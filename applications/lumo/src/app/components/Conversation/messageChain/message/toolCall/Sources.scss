@@ -9,8 +9,10 @@ im.$media-expressions: $media-expressions;
 
 .source-favicon {
 	margin-inline-end: -4px;
-	inline-size: 20px;
-	block-size: 20px;
+
+	// inline-size: 20px;
+	// block-size: 20px;
+	// box-sizing: content-box;
 }
 
 .sources-panel {

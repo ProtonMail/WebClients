@@ -97,11 +97,14 @@
 }
 
 .model-mode-upgrade-button {
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .model-mode-option {
 	background: transparent;
+	color: var(--text-norm);
 
 	&.is-selected {
 		background-color: var(--model-mode-selected-background);
