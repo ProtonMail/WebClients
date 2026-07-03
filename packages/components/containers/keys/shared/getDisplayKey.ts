@@ -85,7 +85,7 @@ export const getDisplayKey = ({
         flags,
         primary,
         version,
-        algorithm: getFormattedAlgorithmNames(algorithmInfos, version),
+        algorithm: getFormattedAlgorithmNames(algorithmInfos),
         status,
         invalidKeyError,
         permissions: getPermissions({
