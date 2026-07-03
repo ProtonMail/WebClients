@@ -3,6 +3,7 @@ import { runSaga } from 'redux-saga';
 import * as API from '@proton/pass/lib/api/api';
 import { offlineResume } from '@proton/pass/store/actions';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
+import type { State } from '@proton/pass/store/types';
 
 import * as hydrateSaga from './hydrate.saga';
 import watcher from './offline-resume.saga';
@@ -11,7 +12,7 @@ const setResumeLock = jest.fn();
 (API as any).api = { setResumeLock };
 
 jest.spyOn(hydrateSaga, 'hydrate').mockImplementation(function* () {
-    return { fromCache: false, version: '0' };
+    return { fromCache: false, version: '0', state: {} as State };
 });
 
 describe('offline-resume saga', () => {

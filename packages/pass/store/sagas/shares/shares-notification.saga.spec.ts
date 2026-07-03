@@ -2,7 +2,7 @@ import type { Task } from 'redux-saga';
 import { runSaga } from 'redux-saga';
 
 import type { Group } from '@proton/pass/lib/groups/groups.types';
-import { shareEventDelete, sharesEventNew } from '@proton/pass/store/actions';
+import { shareDeleted, sharesEventNew } from '@proton/pass/store/actions';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { ItemRevision, Share } from '@proton/pass/types';
@@ -56,17 +56,17 @@ describe('notif-shares saga', () => {
 
     describe('new shares', () => {
         it('should not show notification when no new shares', () => {
-            dispatch(sharesEventNew({ shares: {}, items: {} }));
+            dispatch(sharesEventNew({ shares: {}, items: {}, v: 1 }));
             expect(onNotification).not.toHaveBeenCalled();
         });
 
         it('should not show notification for non group shares', () => {
-            dispatch(sharesEventNew({ shares: { [vault.shareId]: { ...vault, groupId: null } }, items: {} }));
+            dispatch(sharesEventNew({ shares: { [vault.shareId]: { ...vault, groupId: null } }, items: {}, v: 1 }));
             expect(onNotification).not.toHaveBeenCalled();
         });
 
         it('should show notification for a single group vault sharing', () => {
-            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault }, items: {} }));
+            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault }, items: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
                 `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`
@@ -74,7 +74,7 @@ describe('notif-shares saga', () => {
         });
 
         it('should show notification for a single group item sharing', () => {
-            dispatch(sharesEventNew({ shares: { [item.shareId]: item }, items: {} }));
+            dispatch(sharesEventNew({ shares: { [item.shareId]: item }, items: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
                 `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.name} has been granted access.`
@@ -82,7 +82,7 @@ describe('notif-shares saga', () => {
         });
 
         it('should show multiple notifications for a multiple sharings', () => {
-            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault, [item.shareId]: item }, items: {} }));
+            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault, [item.shareId]: item }, items: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalledTimes(2);
             expect(onNotification.mock.calls[0][0].text).toBe(
                 `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`
@@ -97,7 +97,7 @@ describe('notif-shares saga', () => {
         it('should show notification when non group vault share deleted', () => {
             const { groupId } = (saga.options.getState() as State).shares[vault.shareId];
             (saga.options.getState() as State).shares[vault.shareId].groupId = null;
-            dispatch(shareEventDelete(vault));
+            dispatch(shareDeleted(vault));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(`Vault \"${vault.content.name}\" was removed.`);
             (saga.options.getState() as State).shares[vault.shareId].groupId = groupId;
@@ -106,14 +106,14 @@ describe('notif-shares saga', () => {
         it('should show notification when non group item share deleted', () => {
             const { groupId } = (saga.options.getState() as State).shares[item.shareId];
             (saga.options.getState() as State).shares[item.shareId].groupId = null;
-            dispatch(shareEventDelete(item));
+            dispatch(shareDeleted(item));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(`An item previously shared with you was removed.`);
             (saga.options.getState() as State).shares[item.shareId].groupId = groupId;
         });
 
         it('should show notification when a group vault share deleted', () => {
-            dispatch(shareEventDelete(vault));
+            dispatch(shareDeleted(vault));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
                 `You no longer have access to some vaults or items because your group ${group.name}'s access was removed.`
@@ -121,7 +121,7 @@ describe('notif-shares saga', () => {
         });
 
         it('should show notification when a group item share deleted', () => {
-            dispatch(shareEventDelete(item));
+            dispatch(shareDeleted(item));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
                 `You no longer have access to some vaults or items because your group ${group.name}'s access was removed.`

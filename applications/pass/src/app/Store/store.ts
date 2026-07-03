@@ -4,7 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
 
-import { cacheMiddleware } from './cache.middleware';
+import { broadcastMiddleware } from './broadcast';
 
 export const sagaMiddleware = createSagaMiddleware();
 
@@ -15,6 +15,6 @@ export const store = configureStore({
             serializableCheck: false,
             thunk: false,
             immutableCheck: false,
-        }).concat(cacheMiddleware, requestMiddleware, sagaMiddleware),
+        }).concat(broadcastMiddleware, requestMiddleware, sagaMiddleware),
     devTools: ENV !== 'production',
 });

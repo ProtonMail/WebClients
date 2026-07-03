@@ -51,13 +51,14 @@ export const getUserAccess = async (): Promise<HydratedAccessState> => {
     const { Access } = await api({ url: 'pass/v1/user/access', method: 'get' });
 
     return {
-        plan: Access!.Plan,
-        waitingNewUserInvites: Access!.WaitingNewUserInvites,
-        monitor: Access!.Monitor ?? null,
+        plan: Access.Plan,
+        pendingInvites: Access.PendingInvites,
+        waitingNewUserInvites: Access.WaitingNewUserInvites,
+        monitor: Access.Monitor ?? null,
         userData: {
-            defaultShareId: Access!.UserData.DefaultShareID ?? null,
-            aliasSyncEnabled: Access!.UserData.AliasSyncEnabled,
-            pendingAliasToSync: Access!.UserData.PendingAliasToSync,
+            defaultShareId: Access.UserData.DefaultShareID ?? null,
+            aliasSyncEnabled: Access.UserData.AliasSyncEnabled,
+            pendingAliasToSync: Access.UserData.PendingAliasToSync,
         },
     };
 };
@@ -97,6 +98,9 @@ export const getUserData = async (webExtensionId: Maybe<string>): Promise<Hydrat
         ...access,
         addresses,
         devices: [],
+        /** Initialized as null since `getUserData` always precedes
+         * the synchronization step. */
+        userEventId: null,
         eventId,
         features: featureFlagsData.features,
         featureVariants: featureFlagsData.variants,

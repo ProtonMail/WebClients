@@ -34,6 +34,7 @@ export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSetti
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
 export const selectUserType = ({ user }: State) => user.user?.Type;
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
+export const selectLatestUserEventId = ({ user: { userEventId } }: State) => userEventId;
 export const selectFeatureFlags = ({ user: { features } }: State) => features;
 export const selectAddresses = ({ user }: State) => user.addresses;
 export const selectAuthDevices = (state: State) => state.user.devices;

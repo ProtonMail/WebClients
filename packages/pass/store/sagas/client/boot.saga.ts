@@ -5,11 +5,15 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { migrate } from '@proton/pass/lib/sync/migrate';
+import { sync } from '@proton/pass/lib/sync/sync';
+import { type SyncResult, SyncStrategy } from '@proton/pass/lib/sync/types';
 import {
     aliasSyncStatus,
     bootFailure,
     bootIntent,
     bootSuccess,
+    cacheConflict,
     cacheRequest,
     draftsGarbageCollect,
     getBreaches,
@@ -27,15 +31,13 @@ import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
-import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
-import { selectProxiedSettings } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
@@ -58,8 +60,9 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield loadCryptoWorker();
 
         /* merge the existing cache to preserve any state that may have been
-         * mutated before the boot sequence (session lock data) */
-        const { fromCache, version }: HydrationResult = yield hydrate(
+         * mutated before the boot sequence (session lock data). Hydration will
+         * set the sync-strategy under the hood based on the current user state. */
+        const { fromCache, version, state }: HydrationResult = yield hydrate(
             { online, merge: (existing, incoming) => merge(existing, incoming, { excludeEmpty: true }) },
             options
         );
@@ -68,7 +71,19 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
-        const result = (fromCache ? undefined : yield synchronize(SyncType.FULL, options)) as Maybe<SynchronizationResult>;
+        /** By this time: hydration of an existing cache will have hydrated the sync strategy. */
+        let syncResult: Maybe<SyncResult> = fromCache ? undefined : yield call(sync, state, options);
+
+        if (fromCache && state && online) {
+            /** If the feature flag has changed since this cache was created,
+             * migrate the sync strategy before polling starts. On failure,
+             * the old strategy remains and migration retries on next boot.
+             * A V2→V1 rollback returns its V1 sync result to apply via `bootSuccess`. */
+            const syncV2 = selectFeatureFlag(PassFeature.PassUserEventsV1)(state);
+            const currStrategy = selectSyncStrategy(state);
+            const nextStrategy = SyncStrategy[syncV2 ? 'USER_EVENTS' : 'LEGACY'];
+            if (currStrategy !== nextStrategy) syncResult = yield call(migrate, nextStrategy, options);
+        }
 
         /** Sync settings after successful hydration and synchronization.
          * This prevents offline mode from being enabled if the boot
@@ -76,14 +91,26 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         const hydratedSettings = (yield select(selectProxiedSettings)) as ProxiedSettings;
         yield options.onSettingsUpdated?.(hydratedSettings);
 
-        yield put(bootSuccess(result));
+        yield put(bootSuccess(syncResult));
         yield put(draftsGarbageCollect());
         yield put(passwordHistoryGarbageCollect());
 
         if (online) {
+            const syncStrategy: SyncStrategy = yield select(selectSyncStrategy);
+            const legacySync = syncStrategy === SyncStrategy.LEGACY;
+
+            /** NOTE: critical we start polling after the `bootSuccess` is dispatched in case
+             * of a first V2 sync: this ensures the `userEventID` is hydrated in state. */
             yield put(startEventPolling());
-            yield put(withRevalidate(getBreaches.intent()));
-            yield put(withRevalidate(aliasSyncStatus.intent()));
+
+            if (legacySync) {
+                /** In V2 mode these are covered by user events:
+                 *  - breaches: `BreachUpdate`
+                 *  - alias sync: `UserRefreshed` */
+                yield put(withRevalidate(getBreaches.intent()));
+                yield put(withRevalidate(aliasSyncStatus.intent()));
+            }
+
             yield put(withRevalidate(secureLinksGet.intent()));
             yield put(withRevalidate(getInAppNotifications.intent()));
             yield put(getAuthDevices.intent());
@@ -100,9 +127,16 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                  * cache is corrupted, these will have been revalidated
                  * by the `hydrate` call above inside `getUserData` */
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
-                yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
-                yield put(withRevalidate(getOrganizationSettings.intent()));
+                if (EXTENSION_BUILD) yield put(withRevalidate(getOrganizationPauseList.intent()));
+
+                if (legacySync) {
+                    /** In V2 mode these are covered by user events:
+                     *  - user access: `UserRefreshed`
+                     *  - org settings: `OrganizationInfoChanged` */
+                    yield put(withRevalidate(getUserAccessIntent(userID)));
+                    yield put(withRevalidate(getOrganizationSettings.intent()));
+                }
             }
         }
 
@@ -117,10 +151,10 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
     }
 }
 
-/** If during the boot sequence we detect a state destruction or a caching
- * request, cancel the booting task. The `bootWorker` may have already
- * dispatched `bootSuccess` before being cancelled, so we must explicitly set
- * the app status to ERROR to avoid leaving the app stuck in a BOOTING state. */
+/** Cancel the booting task if we detect a state destruction or another tab
+ * persisting a newer cache that staled this tab's hydration. The `bootWorker`
+ * may have already dispatched `bootSuccess` before being cancelled, so we must
+ * set the app status to `ERROR` to avoid stucking the app in a `BOOTING` state. */
 export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(bootIntent.match, function* (action) {
         /** Gate the API to session-resume routes for the duration of an
@@ -128,14 +162,14 @@ export default function* watcher(options: RootSagaOptions) {
          * boot in the same lifecycle clears the gate. */
         api.setResumeLock(Boolean(action.payload?.offline));
 
-        const { caching, destroyed } = (yield race({
+        const { conflict, destroyed } = (yield race({
             booted: call(bootWorker, action, options),
-            caching: take(isCachingAction),
+            conflict: take(cacheConflict.match),
             destroyed: take(stateDestroy.match),
-        })) as { caching?: Action; destroyed?: Action };
+        })) as { conflict?: Action; destroyed?: Action };
 
-        if (caching || destroyed) {
-            logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
+        if (conflict || destroyed) {
+            logger.warn(`[Saga::Boot] boot cancelled [conflict=${Boolean(conflict)}, destroyed=${Boolean(destroyed)}]`);
             yield put(bootFailure(new Error(c('Action').t`Please retry`)));
             options.setAppStatus(AppStatus.ERROR);
             options.onBoot?.({ ok: false, clearCache: false, offline: action.payload?.offline ?? false });

@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import type { SyncMigration, SyncResult } from '@proton/pass/lib/sync/types';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -9,9 +10,9 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
 import { withRequest } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { or } from '@proton/pass/utils/fp/predicates';
 import type { Chunk } from '@proton/pass/utils/object/chunk';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
@@ -21,12 +22,7 @@ export const stopEventPolling = createAction('events::polling::stop');
 
 export const stateDestroy = createAction('state::destroy');
 export const stateHydrate = createAction('state::hydrate', (state: any, options?: EndpointOptions) =>
-    pipe(
-        withStreamableAction,
-        options ? withReceiver(options) : identity
-    )({
-        payload: { state },
-    })
+    pipe(withStreamableAction, options ? withReceiver(options) : identity)({ payload: { state } })
 );
 
 export const cacheRequest = createAction('cache::request', (options: Omit<CacheMeta, 'cache'>) =>
@@ -34,6 +30,7 @@ export const cacheRequest = createAction('cache::request', (options: Omit<CacheM
 );
 
 export const cacheCancel = createAction('cache::cancel');
+export const cacheConflict = createAction('cache::conflict');
 
 export const clientInit = requestActionsFactory<{ status: AppStatus } & EndpointOptions, EndpointOptions>('client::init')({
     key: ({ tabId, endpoint }: EndpointOptions) => `${endpoint}::${tabId}`,
@@ -59,15 +56,11 @@ export const bootFailure = createAction('boot::failure', (error?: unknown) =>
     )({ payload: {}, error })
 );
 
-/** ⚠️ This action must not trigger any saga workers that dispatch `withCache` tagged
- * actions. `bootSuccess` is dispatched mid-flight inside `bootWorker`: any `isCachingAction`
- * match would win the boot race and cancel the worker, leaving the app in an inconsistent state.
- * The `dedupe` result is embedded directly in the payload for this reason. */
-export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
+export const bootSuccess = createAction('boot::success', (payload?: SyncResult) =>
     pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
 
-export const syncIntent = createAction('sync::intent', (type: SyncType) =>
+export const syncIntent = createAction('sync::intent', () =>
     pipe(
         withRequest({ id: syncRequest(), status: 'start' }),
         withNotification({
@@ -77,10 +70,10 @@ export const syncIntent = createAction('sync::intent', (type: SyncType) =>
             showCloseButton: false,
             loading: true,
         })
-    )({ payload: { type } })
+    )({ payload: null })
 );
 
-export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
+export const syncSuccess = createAction('sync::success', (payload: SyncResult) =>
     pipe(
         withCache,
         withStreamableAction,
@@ -100,9 +93,17 @@ export const offlineResume = requestActionsFactory<{ localID?: number; retryable
     'offline::resume'
 )();
 
+export const syncResult = createAction('sync::result', (payload: SyncResult) => pipe(withCache, withStreamableAction)({ payload }));
+
+/** Commits a sync strategy migration. Dispatched during boot. The strategy and
+ * cursor persist via the post-boot cache flush (writes are gated until `booted`). */
+export const syncMigration = createAction<SyncMigration>('sync::migration');
+
 /** Represents an action object streamed through chunks.
  * This is only to be used in the extension when action
  * payloads may be too large for port/sendMessage messages */
 export const actionStream = createAction('action::stream', (chunk: Chunk, options?: EndpointOptions) =>
     withReceiver(options ?? {})({ payload: { chunk } })
 );
+
+export const matchSyncAction = or(bootSuccess.match, syncSuccess.match, syncResult.match);

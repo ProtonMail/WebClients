@@ -31,7 +31,7 @@ export enum EventActions {
     UPDATE,
 }
 
-export type UserEvent = {
+export type CoreEvent = {
     Addresses?: AddressEvent[];
     AuthDevices?: EventItemUpdate<AuthDeviceOutput, 'AuthDevice'>[];
     EventID: string;
