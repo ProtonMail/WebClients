@@ -55,19 +55,19 @@ export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Pr
         );
     };
 
-    const yearlyDiscountedPrice = priceElement(checkout.withDiscountPerCycle, perYear);
+    const yearlyDiscountedPriceElement = priceElement(checkout.withDiscountPerCycle, perYear);
     const yearlyRenewalPriceElement = priceElement(yearlyRenewalPrice, perYear);
-    const monthlyDiscountedPrice = priceElement(discountedMonthly, perMonth);
-    const monthlyRenewalPrice = priceElement(normalMonthly, perMonth);
+    const monthlyDiscountedPriceElement = priceElement(discountedMonthly, perMonth);
+    const monthlyRenewalPriceElement = priceElement(normalMonthly, perMonth);
 
     const getBillingFootnote = () => {
         if (isYearly) {
             return c('Info')
-                .jt`Billed at ${yearlyDiscountedPrice} for the first 12 months, renews at ${yearlyRenewalPriceElement}.`;
+                .jt`Billed at ${yearlyDiscountedPriceElement} for the first 12 months, renews at ${yearlyRenewalPriceElement}.`;
         }
 
         return c('Info')
-            .jt`Billed at ${monthlyDiscountedPrice} for the first 6 months, renews at ${monthlyRenewalPrice}.`;
+            .jt`Billed at ${monthlyDiscountedPriceElement} for the first 6 months, renews at ${monthlyRenewalPriceElement}.`;
     };
 
     const subtitle = isYearly
