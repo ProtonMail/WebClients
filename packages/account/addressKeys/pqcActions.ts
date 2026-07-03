@@ -7,12 +7,15 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateFlags } from '@proton/shared/lib/api/settings';
 import { KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { addAddressKeysProcess, addUserKeysProcess, getPrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 import { getIsDeviceRecoveryEnabled } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressesThunk } from '../addresses';
+import type { DelegatedAccessState } from '../delegatedAccess';
+import { listOutgoingDelegatedAccess, updateDelegatedAccess } from '../delegatedAccess/outgoingActions';
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
@@ -79,7 +82,7 @@ export const generatePqcAddressKeys = (): ThunkAction<
 
 export const generatePqcUserKey = (): ThunkAction<
     Promise<void>,
-    AddressKeysState & UserSettingsState & OrganizationKeyState & KtState,
+    AddressKeysState & UserSettingsState & OrganizationKeyState & KtState & DelegatedAccessState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -98,6 +101,9 @@ export const generatePqcUserKey = (): ThunkAction<
             userKeys,
         });
         const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings, extra.authentication);
+        const previouslyEnabledDelegatedAccesses = (await dispatch(listOutgoingDelegatedAccess())).filter(
+            (delegatedAccess) => delegatedAccess.State === DelegatedAccessStateEnum.Enabled
+        );
 
         await addUserKeysProcess({
             api: getSilentApi(extra.api),
@@ -111,6 +117,18 @@ export const generatePqcUserKey = (): ThunkAction<
             passphrase: extra.authentication.getPassword(),
         });
         await dispatch(userThunk({ cache: CacheType.None })); // Ensures user keys is up to date.
+
+        // re-enable delegated access recovery
+        await Promise.all(
+            previouslyEnabledDelegatedAccesses.map((delegatedAccess) => {
+                return dispatch(
+                    updateDelegatedAccess({
+                        delegatedAccess,
+                        api: getSilentApi(extra.api),
+                    })
+                );
+            })
+        );
     };
 };
 
