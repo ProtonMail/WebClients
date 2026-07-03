@@ -99,7 +99,7 @@ const LumoSidebarContent = () => {
 
                 <div className="sidebar-section sidebar-bottom flex flex-column gap-1">
                     <SidebarItem
-                        icon="Cog"
+                        icon="Settings"
                         label={c('collider_2025:Button').t`Settings`}
                         onClick={() => settingsModal.openModal(true)}
                     />
