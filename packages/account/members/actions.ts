@@ -408,6 +408,7 @@ export const promoteMemberToOrgAdmin = ({
         });
         const payload = await dispatch(getMemberEditPayload({ member, classification, api: getSilentApi(api) }));
         await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
+        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
     };
 };
 

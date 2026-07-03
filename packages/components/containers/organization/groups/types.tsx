@@ -19,6 +19,17 @@ export enum GROUPS_STATE {
     EDIT = 'edit',
 }
 
+export enum GROUPS_RESTRICTION_REASON {
+    NONE = 'none',
+    PLAN_UNSUPPORTED = 'plan_unsupported',
+    RESUMING_ROLE_ASSIGNMENT = 'resuming_role_assignment',
+}
+
+export type GroupsRestriction =
+    | { reason: GROUPS_RESTRICTION_REASON.NONE }
+    | { reason: GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED }
+    | { reason: GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT; groupId: string };
+
 interface DomainData {
     selectedDomain: string;
     loading: boolean;
@@ -51,8 +62,7 @@ export interface DomainSuggestion {
 
 export interface GroupsManagementReturn {
     groups: EnhancedGroup[];
-    /** Groups exist but full management is revoked — either the plan no longer supports groups, or the no-custom-domain feature flag was disabled after groups were created. Users can only delete. */
-    isFrozen: boolean;
+    restrictedBy: GroupsRestriction;
     members: EnhancedMember[];
     selectedGroup: EnhancedGroup | undefined;
     uiState: GROUPS_STATE;
@@ -75,6 +85,6 @@ export interface GroupsManagementReturn {
         onCreateGroup: () => void;
         onAddGroupMembers: (group: Group, emails: string[]) => Promise<void>;
         onUnselectGroup: () => void;
-        onResumeRoleAssignments: () => void;
+        onToggleRoleAssignments: () => void;
     };
 }
