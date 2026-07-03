@@ -8,19 +8,29 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import type { Group } from '@proton/shared/lib/interfaces';
 
 import DeleteGroupPrompt from './DeleteGroupPrompt';
 import GroupItemActionPrompt from './GroupItemActionPrompt';
 import { useGroupsManagement } from './context/GroupsManagementContext';
+import { GROUPS_RESTRICTION_REASON } from './types';
 
 interface Props {
+    group: Group;
     showMailFeatures: boolean;
     handleDeleteGroup: () => Promise<void>;
     handleDeleteAllGroupMembers: () => Promise<void>;
 }
 
-const GroupItemMoreOptionsDropdown = ({ showMailFeatures, handleDeleteGroup, handleDeleteAllGroupMembers }: Props) => {
-    const { isFrozen, selectedGroup } = useGroupsManagement();
+const GroupItemMoreOptionsDropdown = ({
+    group,
+    showMailFeatures,
+    handleDeleteGroup,
+    handleDeleteAllGroupMembers,
+}: Props) => {
+    const { restrictedBy, selectedGroup } = useGroupsManagement();
+    const isResumingRoleAssignment =
+        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
     const removeAllMembersPrompt = useModalStateObject();
@@ -44,7 +54,17 @@ const GroupItemMoreOptionsDropdown = ({ showMailFeatures, handleDeleteGroup, han
                     modalProps={deleteGroupPrompt.modalProps}
                 />
             )}
-            {!isFrozen && (
+            {restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED ? (
+                <Button
+                    shape="ghost"
+                    size="small"
+                    icon
+                    onClick={() => deleteGroupPrompt.openModal(true)}
+                    title={c('Action').t`Delete group`}
+                >
+                    <IcTrash alt={c('Action').t`Delete group`} />
+                </Button>
+            ) : (
                 <Button
                     shape="ghost"
                     size="small"
@@ -57,20 +77,11 @@ const GroupItemMoreOptionsDropdown = ({ showMailFeatures, handleDeleteGroup, han
                     <IcThreeDotsVertical alt={c('Action').t`More options`} />
                 </Button>
             )}
-            {isFrozen && (
-                <Button
-                    shape="ghost"
-                    size="small"
-                    icon
-                    onClick={() => deleteGroupPrompt.openModal(true)}
-                    title={c('Action').t`Delete group`}
-                >
-                    <IcTrash alt={c('Action').t`Delete group`} />
-                </Button>
-            )}
+
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
                 <DropdownMenu>
                     <DropdownMenuButton
+                        disabled={isResumingRoleAssignment}
                         className="text-left color-danger"
                         onClick={() => {
                             deleteGroupPrompt.openModal(true);

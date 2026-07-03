@@ -22,12 +22,13 @@ import GroupsMemberManagementPanel from './components/GroupsMemberManagementPane
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import shouldShowMail from './shouldShowMail';
+import { GROUPS_RESTRICTION_REASON } from './types';
 
 import './OrganizationGroupsManagementSection.scss';
 
 const OrganizationGroupsManagementSection = () => {
     const [organization] = useOrganization();
-    const { isFrozen } = useGroupsManagement();
+    const { restrictedBy } = useGroupsManagement();
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
     const hasAdminRoles = useFlag('AdminRoleMVP');
@@ -69,7 +70,7 @@ const OrganizationGroupsManagementSection = () => {
                         .jt`A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${linkToDomainPage}.`}
                 </SettingsParagraph>
             )}
-            {isFrozen && (
+            {restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED && (
                 <Card
                     rounded
                     background
