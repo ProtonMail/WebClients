@@ -19,7 +19,18 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
+    // Keep latest values in refs so doSearch stays stable and the search effect only re-runs on
+    // real triggers (query change, manual refresh, becoming ready) - not on every indexer state
+    // broadcast during re-indexing, which would clear + refetch results and make them blink.
+    const searchModuleRef = useRef(searchModule);
+    searchModuleRef.current = searchModule;
+    const searchParamsRef = useRef(searchParams);
+    searchParamsRef.current = searchParams;
+
     const doSearch = useCallback(async () => {
+        const searchModule = searchModuleRef.current;
+        const searchParams = searchParamsRef.current;
+
         abortControllerRef.current?.abort();
         const abortController = new AbortController();
         abortControllerRef.current = abortController;
@@ -76,19 +87,20 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
                 useSearchViewStore.getState().setLoading(false);
             }
         }
-    }, [searchModule, searchParams]);
+    }, []);
+
+    const isReady = searchModule.isAvailable && searchModule.isSearchable;
 
     useEffect(() => {
-        if (!searchModule.isAvailable || !searchModule.isSearchable) {
+        if (!isReady) {
             return;
         }
         void doSearch();
 
-        // - Use refreshMarker as a dep to refresh the search when required.
-        // - searchModule is not included in deps: we don't want to refetch search results
-        //   when the search DB state changes.
-        // TODO: Revisit this search triggering logic inherited from legacy search.
-    }, [doSearch, refreshMarker]);
+        // Triggers: query change, manual refresh, or the index becoming ready. We depend on the
+        // `isReady` boolean (not the searchModule object) so progress broadcasts during
+        // re-indexing don't refetch and blink the results.
+    }, [searchParams, refreshMarker, isReady, doSearch]);
 
     const refresh = useCallback(() => {
         setRefreshMarker((prev) => prev + 1);

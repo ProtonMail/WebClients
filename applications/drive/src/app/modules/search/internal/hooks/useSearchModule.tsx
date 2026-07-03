@@ -43,8 +43,10 @@ export type UseSearchModuleReturn =
     | { isAvailable: false }
     | {
           isAvailable: true;
-          isInitialIndexing: boolean;
+          // True when a usable index exists: search is possible (including during re-indexing).
           isSearchable: boolean;
+          // True while indexing is running (initial build or background re-index).
+          isIndexing: boolean;
           isRunningOutdatedVersion: boolean;
           // Aggregated indexing progress across all populators.
           indexingProgress: IndexingProgress;
@@ -132,11 +134,13 @@ export const useSearchModule = (): UseSearchModuleReturn => {
         };
     }, []);
 
+    const isIndexing = searchModuleState?.isIndexing ?? false;
+    const isSearchable = searchModuleState?.isSearchable ?? false;
+    const isInitialIndexing = isIndexing && !isSearchable;
+
     const wasInitialIndexingRef = useRef(false);
     useEffect(
         function notifyInitialIndexingComplete() {
-            const isInitialIndexing = searchModuleState?.isInitialIndexing ?? false;
-            const isSearchable = searchModuleState?.isSearchable ?? false;
             const justFinished = wasInitialIndexingRef.current && !isInitialIndexing && isSearchable;
             wasInitialIndexingRef.current = isInitialIndexing;
             if (!justFinished) {
@@ -148,7 +152,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
                 text: c('Info').t`Search is ready. Your files have been indexed.`,
             });
         },
-        [searchModuleState?.isInitialIndexing, searchModuleState?.isSearchable]
+        [isInitialIndexing, isSearchable]
     );
 
     useEffect(
@@ -178,8 +182,8 @@ export const useSearchModule = (): UseSearchModuleReturn => {
         }
         return {
             isAvailable: true,
-            isInitialIndexing: searchModuleState.isInitialIndexing,
-            isSearchable: searchModuleState.isSearchable,
+            isSearchable,
+            isIndexing,
             isRunningOutdatedVersion: searchModuleState.isRunningOutdatedVersion,
             indexingProgress: aggregateIndexingProgress(searchModuleState.indexPopulatorStatuses),
             permanentError: searchModuleState.permanentError,
@@ -201,7 +205,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             getIndexByteSize: async (kind: IndexKind) => searchModule.getIndexByteSize(kind),
             removeIndexEntry: async (kind: IndexKind, nodeUid: string) => searchModule.removeIndexEntry(kind, nodeUid),
         };
-    }, [searchModule, searchModuleState]);
+    }, [searchModule, searchModuleState, isIndexing, isSearchable]);
 
     return returnValue;
 };

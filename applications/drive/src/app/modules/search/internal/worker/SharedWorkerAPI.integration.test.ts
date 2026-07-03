@@ -52,6 +52,13 @@ const trashedFile = (uid: string, name: string) =>
 
 type StateMessage = Partial<SearchModuleState>;
 
+// The index is ready to search once a full scan is no longer running and a usable index exists.
+const isIndexReady = (s: StateMessage) => s.isIndexing === false && s.isSearchable === true;
+// First-time build: a scan is running and no usable index exists yet.
+const isBuildingFromScratch = (s: StateMessage) => s.isIndexing === true && s.isSearchable !== true;
+// Background re-index: a scan is running while a usable index already exists (search stays available).
+const isReindexing = (s: StateMessage) => s.isIndexing === true && s.isSearchable === true;
+
 /**
  * Listens on the search state BroadcastChannel and turns updates into an awaitable stream.
  * Call `next()` to wait for the next update, or `until(predicate)` to skip ahead.
@@ -62,16 +69,21 @@ class SearchModuleStateStream {
     private pending: ((msg: StateMessage) => void)[] = [];
     private buffer: StateMessage[] = [];
     private lastCheckpoint = 0;
+    // Broadcasts are partial patches; we merge them into the full state so every stored
+    // entry is the real cumulative state (no synthetic fields).
+    private merged: StateMessage = {};
 
     constructor() {
         this.channel = new FakeBroadcastChannel(STATE_CHANNEL);
         this.channel.onmessage = (ev: MessageEvent<StateMessage>) => {
-            this.history.push(ev.data);
+            this.merged = { ...this.merged, ...ev.data };
+            const msg: StateMessage = { ...this.merged };
+            this.history.push(msg);
             const waiter = this.pending.shift();
             if (waiter) {
-                waiter(ev.data);
+                waiter(msg);
             } else {
-                this.buffer.push(ev.data);
+                this.buffer.push(msg);
             }
         };
     }
@@ -84,6 +96,12 @@ class SearchModuleStateStream {
     /** History since the last checkpoint. */
     private sinceLastCheckpoint(): StateMessage[] {
         return this.history.slice(this.lastCheckpoint);
+    }
+
+    /** Most recent state observed since the last checkpoint (undefined if none yet). */
+    private latestSinceCheckpoint(): StateMessage | undefined {
+        const recent = this.sinceLastCheckpoint();
+        return recent[recent.length - 1];
     }
 
     private lastValueOf(key: keyof StateMessage): boolean | undefined {
@@ -145,13 +163,19 @@ class SearchModuleStateStream {
     }
 
     async waitForInitialIndexingStart() {
-        expect(this.lastValueOf('isInitialIndexing')).not.toBe(true);
-        return this.waitUntil((msg) => msg.isInitialIndexing === true);
+        const latest = this.latestSinceCheckpoint();
+        expect(latest ? isBuildingFromScratch(latest) : false).toBe(false);
+        return this.waitUntil(isBuildingFromScratch);
     }
 
     async waitForSearchable() {
-        expect(this.lastValueOf('isSearchable')).not.toBe(true);
-        return this.waitUntil((msg) => msg.isSearchable === true);
+        const latest = this.latestSinceCheckpoint();
+        expect(latest ? isIndexReady(latest) : false).toBe(false);
+        return this.waitUntil(isIndexReady);
+    }
+
+    async waitForReindexing() {
+        return this.waitUntil(isReindexing);
     }
 
     async waitForPermanentError() {
@@ -164,14 +188,19 @@ class SearchModuleStateStream {
         expect(this.buffer).toHaveLength(0);
     }
 
-    /** Assert isSearchable was never true since the last checkpoint. */
+    /** Assert the index never became ready to search since the last checkpoint. */
     expectNeverSearchableSinceCheckpoint() {
-        expect(this.sinceLastCheckpoint().every((s) => s.isSearchable !== true)).toBe(true);
+        expect(this.sinceLastCheckpoint().every((s) => !isIndexReady(s))).toBe(true);
     }
 
-    /** Assert isInitialIndexing was never true since the last checkpoint. */
+    /** Assert a from-scratch build never started since the last checkpoint. */
     expectNeverInitialIndexingSinceCheckpoint() {
-        expect(this.sinceLastCheckpoint().every((s) => s.isInitialIndexing !== true)).toBe(true);
+        expect(this.sinceLastCheckpoint().every((s) => !isBuildingFromScratch(s))).toBe(true);
+    }
+
+    /** Assert a usable index stayed present (search remained possible) since the last checkpoint. */
+    expectKeptSearchableIndexSinceCheckpoint() {
+        expect(this.sinceLastCheckpoint().every((s) => s.isSearchable === true)).toBe(true);
     }
 
     close() {
@@ -369,7 +398,7 @@ describe('SharedWorkerAPI integration', () => {
 
             // Bootstrap completes: searchable, no longer indexing
             const searchable = await state.waitForSearchable();
-            expectState(searchable, { isIndexing: false, isInitialIndexing: false });
+            expectState(searchable, { isIndexing: false, isSearchable: true });
 
             // Verify documents are searchable after bootstrap
             await verifyThatUserCanSearchIndexProperly(api);
@@ -395,6 +424,67 @@ describe('SharedWorkerAPI integration', () => {
 
             const indexedResultsAfterRefresh = await getAllIndexedItemsForGeneration(api, 2);
             expect(indexedResultsAfterRefresh).toHaveLength(9);
+        }, 15_000);
+    });
+
+    describe('Scenario: re-index keeps the existing index searchable', () => {
+        it('re-indexes in the background without dropping searchability or showing a first-time build', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // Observe only the re-index episode from here on.
+            state.checkpoint();
+
+            // Trigger a full re-index of the tree.
+            bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-refresh' } as any);
+
+            // We enter a re-indexing state: scanning while a usable index already exists.
+            const reindexing = await state.waitForReindexing();
+            expectState(reindexing, { isIndexing: true, isSearchable: true });
+
+            // Search is available *during* the re-index — the previous index is still queryable.
+            const duringReindex = (await search(api, 'report')).map((r) => r.nodeUid);
+            expect(duringReindex.length).toBeGreaterThan(0);
+
+            // Re-index completes and we're back to ready.
+            await state.waitForIndexingEnd();
+
+            // Throughout the episode it was a re-index (never a first-time build) and the index
+            // stayed usable the entire time, so search was never blocked.
+            state.expectNeverInitialIndexingSinceCheckpoint();
+            state.expectKeptSearchableIndexSinceCheckpoint();
+
+            // Results are still correct after the re-index.
+            await verifyThatUserCanSearchIndexProperly(api);
+        }, 15_000);
+    });
+
+    describe('Scenario: explicit reindexPopulator re-index', () => {
+        it('re-indexes the named populator while keeping search available', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Resolve the populator uid the way diagnostics would: read it from the DB.
+            const db = await SearchDB.open(USER_ID);
+            const [populator] = await db.getAllPopulatorStates();
+            db.close();
+            expect(populator).toBeDefined();
+
+            state.checkpoint();
+
+            await api.reindexPopulator(populator.uid);
+
+            // Enters the re-indexing state, then completes back to ready.
+            const reindexing = await state.waitForReindexing();
+            expectState(reindexing, { isIndexing: true, isSearchable: true });
+            await state.waitForIndexingEnd();
+
+            // It was a re-index (never a first-time build) and stayed searchable throughout.
+            state.expectNeverInitialIndexingSinceCheckpoint();
+            state.expectKeptSearchableIndexSinceCheckpoint();
+
+            await verifyThatUserCanSearchIndexProperly(api);
         }, 15_000);
     });
 
@@ -544,7 +634,6 @@ describe('SharedWorkerAPI integration', () => {
         it('returns default state before any client registers', async () => {
             const result = await api.queryIndexerState();
             expect(result).toEqual({
-                isInitialIndexing: false,
                 isIndexing: false,
                 isSearchable: false,
                 permanentError: null,
