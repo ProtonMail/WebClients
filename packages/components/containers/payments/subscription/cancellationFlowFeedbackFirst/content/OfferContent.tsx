@@ -24,7 +24,7 @@ interface Props {
 
 export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Props) => {
     const [openSubscriptionModal, isLoading] = useSubscriptionModal();
-    const { checkout, planName, cycle, currency, coupon } = offerData;
+    const { checkout, yearlyRenewalPrice, planName, cycle, currency, coupon } = offerData;
     const { update } = useFeature(FeatureCode.CanUseFeedbackFirstCancellationOffer);
 
     if (!planName) {
@@ -33,7 +33,7 @@ export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Pr
 
     const config = getOfferConfig(planName);
 
-    if (!config || !checkout) {
+    if (!config || !checkout || yearlyRenewalPrice === undefined) {
         return null;
     }
 
@@ -56,14 +56,14 @@ export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Pr
     };
 
     const yearlyDiscountedPrice = priceElement(checkout.withDiscountPerCycle, perYear);
-    const yearlyRenewalPrice = priceElement(checkout.withoutDiscountPerCycle, perYear);
+    const yearlyRenewalPriceElement = priceElement(yearlyRenewalPrice, perYear);
     const monthlyDiscountedPrice = priceElement(discountedMonthly, perMonth);
     const monthlyRenewalPrice = priceElement(normalMonthly, perMonth);
 
     const getBillingFootnote = () => {
         if (isYearly) {
             return c('Info')
-                .jt`Billed at ${yearlyDiscountedPrice} for the first 12 months, renews at ${yearlyRenewalPrice}.`;
+                .jt`Billed at ${yearlyDiscountedPrice} for the first 12 months, renews at ${yearlyRenewalPriceElement}.`;
         }
 
         return c('Info')
