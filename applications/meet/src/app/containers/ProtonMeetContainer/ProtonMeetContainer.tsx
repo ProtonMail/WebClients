@@ -519,7 +519,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                 // On Safari with H264, renegotiation can cause the simulcast encoder to fail silently.
                 // E2EE is already enabled above so the queued publish will be encrypted.
                 const t2 = performance.now();
-                const initDevices = initializeDevices(5_000);
+                const initDevices = initializeDevices({ timeoutMs: 5_000 });
                 lastConnectionInfo = await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
                 livekitConnectMs = Math.round(performance.now() - t2);
                 await initDevices;

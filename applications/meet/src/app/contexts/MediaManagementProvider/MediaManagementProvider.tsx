@@ -54,7 +54,7 @@ import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
 import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
-import type { SwitchActiveDevice } from '../../types';
+import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
@@ -417,7 +417,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         }
     };
 
-    const initializeDevices = async (timeoutMs?: number) => {
+    const initializeDevices: InitializeDevices = async ({ timeoutMs, desiredCameraState, desiredMicrophoneState }) => {
+        const cameraState = desiredCameraState ?? initialCameraState;
+        const microphoneState = desiredMicrophoneState ?? initialAudioState;
+
         const initializeDevicesInternal = async () => {
             await cleanupCameraPreview();
 
@@ -427,9 +430,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
             const results = await Promise.allSettled([
                 // Do not initialize camera if permission is not granted
-                cameraPermission === 'granted' ? initializeCamera(initialCameraState) : Promise.resolve(),
+                cameraPermission === 'granted' ? initializeCamera(cameraState) : Promise.resolve(),
                 // Do not initialize microphone if permission is not granted
-                microphonePermission === 'granted' ? initializeMicrophone(initialAudioState) : Promise.resolve(),
+                microphonePermission === 'granted' ? initializeMicrophone(microphoneState) : Promise.resolve(),
                 initializeAudioOutput(true),
             ]);
 
