@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron';
+import type { BrowserWindow } from 'electron';
 import { isClientBooted } from 'proton-pass-desktop/lib/client';
 import type { SshKeyData } from 'proton-pass-desktop/native';
 import { ssh_agent_napi } from 'proton-pass-desktop/native';
@@ -39,7 +39,7 @@ const isReady = () => sshSynced && isClientBooted();
 /** Create a callback that will be called from Rust when SSH
  * operations occur. Returns true if app is unlocked, false if
  * locked/timeout. Concurrent callers share a single 60s poll. */
-const onStart = (event: Electron.IpcMainInvokeEvent) =>
+const onStart = (getWindow: () => MaybeNull<BrowserWindow>) => () =>
     ssh_agent_napi.startAgent(
         async (
             error,
@@ -50,7 +50,7 @@ const onStart = (event: Electron.IpcMainInvokeEvent) =>
             try {
                 if (error) throw new Error('Lock check error', { cause: error });
 
-                const window = BrowserWindow.fromWebContents(event.sender);
+                const window = getWindow();
                 if (!window) throw new Error('Could not find window for lock check');
 
                 if (isReady()) return true;
@@ -74,17 +74,17 @@ const onDestroy = async () => {
     await ssh_agent_napi.destroyAgent();
 };
 
-const onSync = async (_: Electron.IpcMainInvokeEvent, items: SSHKeyItem[]) => {
+const onSync = async (items: SSHKeyItem[]) => {
     await ssh_agent_napi.setKeys(items.map(intoNativeSshKey));
     sshSynced = true;
 };
 
-export const setupIpcHandlers = () => {
+export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
     setupIpcHandler('sshAgent:getSettingEnabled', () => store.get('sshAgentSettingEnabled') ?? false);
     setupIpcHandler('sshAgent:getStatus', () => ssh_agent_napi.getStatus());
-    setupIpcHandler('sshAgent:setSettingEnabled', (_, enabled) => store.set('sshAgentSettingEnabled', enabled));
+    setupIpcHandler('sshAgent:setSettingEnabled', (enabled) => store.set('sshAgentSettingEnabled', enabled));
     setupIpcHandler('sshAgent:setSshKeyItems', onSync);
-    setupIpcHandler('sshAgent:start', onStart);
+    setupIpcHandler('sshAgent:start', onStart(getWindow));
     setupIpcHandler('sshAgent:clear', onClear);
     setupIpcHandler('sshAgent:destroy', onDestroy);
 };
