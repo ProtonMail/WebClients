@@ -3,6 +3,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 
 import { quickChat } from '../lib/lumo-api-client';
+import { useLumoPlan } from '../hooks/useLumoPlan';
 import { useLumoSelector } from '../redux/hooks';
 import type { Memory } from '../redux/slices/lumoUserSettings';
 import {
@@ -18,6 +19,7 @@ const MIN_SAMPLES_REQUIRED = 2;
 
 export function useMemoryGeneration() {
     const api = useApi();
+    const { hasLumoPlus } = useLumoPlan();
     const messages = useLumoSelector((state) => state.messages);
     const conversations = useLumoSelector((state) => state.conversations);
     const spaces = useLumoSelector((state) => state.spaces);
@@ -25,8 +27,8 @@ export function useMemoryGeneration() {
     const abortRef = useRef<AbortController | null>(null);
 
     const promptSamples = useMemo(
-        () => sampleUserPromptsForMemoryGeneration(messages, conversations, spaces),
-        [messages, conversations, spaces]
+        () => sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, { hasLumoPlus }),
+        [messages, conversations, spaces, hasLumoPlus]
     );
 
     const canGenerateFromChats = canGenerateMemoriesFromChats(promptSamples.length);

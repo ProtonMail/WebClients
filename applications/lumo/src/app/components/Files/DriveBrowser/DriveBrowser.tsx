@@ -18,6 +18,7 @@ import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { useFileProcessing } from '../../../hooks';
 import { useDriveIndexing } from '../../../providers/DriveIndexingProvider';
 import { SearchService } from '../../../services/search/searchService';
+import { isFolderIndexingCancelled } from '../../../services/driveFolderIndexingState';
 import type { DriveDocument } from '../../../types/documents';
 import { getAcceptAttributeString, getMimeTypeFromExtension } from '../../../util/filetypes';
 import type { BreadcrumbItem } from './DriveBreadcrumbs';
@@ -443,6 +444,18 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                     const indexedFolder = indexedFolders.find(
                                         (f) => f.nodeUid === currentFolder.nodeUid || f.nodeUid === initialFolderId
                                     );
+
+                                    if (!indexedFolder || isFolderIndexingCancelled(indexedFolder.nodeUid)) {
+                                        console.log(
+                                            '[DriveBrowser] Skipping post-upload indexing — folder no longer linked'
+                                        );
+                                        createNotification({
+                                            text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                            type: 'success',
+                                        });
+                                        setIndexingFile(null);
+                                        continue;
+                                    }
 
                                     const document: DriveDocument = {
                                         id: nodeUid,
