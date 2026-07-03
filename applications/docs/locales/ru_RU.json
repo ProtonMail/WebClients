@@ -954,6 +954,9 @@
       ],
       "Writing assistant seats": [
         "Лицензии помощника по написанию"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "{count, plural, one {# лицензия} few {# лицензии} many {# лицензий} other {# лицензии}} ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2718,6 +2721,9 @@
       ],
       "Only": [
         "Только"
+      ],
+      "2 user accounts": [
+        "{count, plural, one {# аккаунт пользователя} few {# аккаунта пользователя} many {# аккаунтов пользователей} other {# аккаунта пользователя}}"
       ]
     },
     "Duo offer: Link": {
@@ -6098,6 +6104,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (доверенный контакт)"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } {maxLength, plural, one {символ} few {символа} many {символов} other {символа}}"
       ]
     },
     "Label for contact group color": {
@@ -7607,6 +7616,12 @@
         "Поддержка ${ n } пользовательских доменов электронной почты",
         "Поддержка ${ n } пользовательских доменов электронной почты",
         "Поддержка ${ n } пользовательских доменов электронной почты"
+      ],
+      "${ n } country": [
+        "${ n } страна",
+        "${ n } {n, plural, one {страна} few {страны} many {стран} other {страны}}",
+        "${ n } {n, plural, one {страна} few {страны} many {стран} other {страны}}",
+        "${ n } стран"
       ]
     },
     "Notification": {
@@ -8570,6 +8585,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можете получить до **${ maxRewardAmount }** в качестве остатка на счете."
+      ],
+      "Friend subscribed": [
+        "{count, plural, one {Друг подписался} few {Друга подписалось} many {Друзей подписалось} other {Друг подписался}}",
+        "Друга подписались",
+        "Друзей подписалось",
+        "Друзей подписалось"
       ]
     },
     "Safety review": {

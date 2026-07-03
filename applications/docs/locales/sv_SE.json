@@ -5807,6 +5807,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Hide table of contents": [
+        "Dölj innehållsförteckning"
+      ],
+      "Show table of contents": [
+        "Visa innehållsförteckning"
       ]
     },
     "info": {
@@ -6617,6 +6623,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
