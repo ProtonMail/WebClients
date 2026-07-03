@@ -66,7 +66,7 @@ async function getUpdateInfo(content: Uint8Array<ArrayBuffer>) {
   }
 }
 
-export async function downloadUpdateTimeline(updates: Update[], ydoc?: any) {
+export async function getUpdateTimeline(updates: Update[], ydoc?: any) {
   const entries: UpdateTimelineEntry[] = []
   for (const update of updates) {
     const entry = await createUpdateTimelineEntry(update)
@@ -95,6 +95,11 @@ export async function downloadUpdateTimeline(updates: Update[], ydoc?: any) {
   }
   const stringified = JSON.stringify(json, null, 2)
   const blob = new Blob([stringified], { type: 'application/json' })
+  return blob
+}
+
+export async function downloadUpdateTimeline(updates: Update[], ydoc?: any) {
+  const blob = await getUpdateTimeline(updates, ydoc)
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
