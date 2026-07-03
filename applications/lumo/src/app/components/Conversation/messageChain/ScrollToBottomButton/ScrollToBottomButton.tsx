@@ -66,7 +66,7 @@ export const ScrollToBottomButton = ({
                     className="scroll-to-bottom-button shadow-lifted hover:shadow-norm flex items-center justify-center cursor-pointer rounded-50 border border-weak bg-norm color-norm"
                     aria-label={c('Action').t`Scroll to bottom`}
                     style={{
-                        pointerEvents: 'auto',
+                        pointerEvents: show ? 'auto' : 'none',
                     }}
                 >
                     <LumoIcon name="ChevronDown" />
