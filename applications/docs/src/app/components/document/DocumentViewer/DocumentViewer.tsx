@@ -69,6 +69,8 @@ import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@pr
 import { logger } from '@proton/pass/utils/logger'
 import { getNodeName } from '../../../utils/drive-sdk'
 import { getDocsReportContextLines } from '~/utils/report-context'
+import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
+import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 
 const subscribeToEvents = manageEventsSubscription()
 
@@ -114,6 +116,7 @@ export function DocumentViewer({
   const [publicSplashModal, openPublicSplashModal] = useWelcomeSplashModal()
   const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
   const [genericInfoModal, showGenericInfoModal] = useGenericAlertModal()
+  const [driftDetectionErrorModal, openDriftDetectionErrorModal] = useDriftDetectionErrorModal()
 
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
   const [docOrchestrator, setDocOrchestrator] = useState<EditorOrchestratorInterface | null>(null)
@@ -271,20 +274,73 @@ export function DocumentViewer({
     }, ApplicationEvent.GenericInfo)
   }, [application.eventBus, showGenericInfoModal])
 
-  const downloadDebugInfo = useCallback(async () => {
-    if (docController) {
-      void docController.downloadAllUpdatesAsZip()
-      if (editorController) {
-        const yDocJSON = await editorController.getYDocAsJSON()
-        void docController.downloadUpdatesInformation(yDocJSON)
+  const downloadDebugInfo = useCallback(
+    async (driftLogDetails?: Record<string, unknown>) => {
+      if (!editorController) {
+        return
       }
-    } else {
-      void editorController?.downloadBaseCommit()
-    }
-    if (tmpConvertNewDocTypeToOld(documentType) === 'sheet') {
-      void editorController?.downloadSpreadsheetPatches()
-    }
-  }, [docController, documentType, editorController])
+      let JSZip
+      try {
+        JSZip = (await import('jszip')).default
+      } catch (error) {
+        console.error('Could not import jszip', error)
+        return
+      }
+      const zip = new JSZip()
+
+      if (driftLogDetails) {
+        try {
+          zip.file('drift-log-details.json', JSON.stringify(driftLogDetails))
+        } catch (error) {
+          console.error('Could not include drift log details in debug info', error)
+        }
+      }
+
+      try {
+        if (tmpConvertNewDocTypeToOld(documentType) === 'sheet') {
+          const spreadsheetPatches = await editorController.getSpreadsheetPatchesAsJsonFile()
+          zip.file('spreadsheet-patches.json', spreadsheetPatches)
+        }
+      } catch (error) {
+        console.error('Could not include spreadsheet patches in debug info', error)
+      }
+
+      if (docController) {
+        try {
+          const updatesZip = await docController.getAllUpdatesAsZip()
+          zip.file('all-updates.zip', updatesZip)
+        } catch (error) {
+          console.error('Could not include updates file in debug info', error)
+        }
+      } else {
+        try {
+          const baseCommit = await editorController.getBaseCommitAsZip()
+          zip.file('base-commit-updates.zip', baseCommit)
+        } catch (error) {
+          console.error('Could not include base commit in debug info', error)
+        }
+      }
+
+      if (docController) {
+        try {
+          const yDocJSON = await editorController.getYDocAsJSON()
+          const updatesTimeline = await docController.getUpdatesInformationAsJsonFile(yDocJSON)
+          zip.file('updates-timeline.json', updatesTimeline)
+        } catch (error) {
+          console.error('Could not include updates timeline in debug info', error)
+        }
+      }
+
+      try {
+        const zipBlob = await zip.generateAsync({ type: 'blob' })
+        const filename = `debug-info-${Date.now()}.zip`
+        downloadFile(zipBlob, filename)
+      } catch (error) {
+        console.error('Could not generate zip file', error)
+      }
+    },
+    [docController, documentType, editorController],
+  )
 
   useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>(
@@ -313,22 +369,13 @@ export function DocumentViewer({
   const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState()
   useEffect(
     () =>
-      application.eventBus.addEventCallback(() => {
-        showGenericAlertModal({
-          title: c('Title').t`Editing paused`,
-          translatedMessage: c('Info')
-            .t`Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.
-Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.`,
-          renderCustomFooter: () => (
-            <div className="flex items-center gap-2.5">
-              <Button color="norm" onClick={() => setBugReportModal(true)}>{c('Action').t`Report issue`}</Button>
-              <Button color="weak" onClick={downloadDebugInfo}>{c('Action').t`Download debug information`}</Button>
-              <Button color="weak" onClick={() => window.location.reload()}>{c('Action').t`Reload spreadsheet`}</Button>
-            </div>
-          ),
+      application.eventBus.addEventCallback((driftLogDetails: Record<string, unknown>) => {
+        openDriftDetectionErrorModal({
+          openBugReportModal: () => setBugReportModal(true),
+          downloadDebugInfo: () => downloadDebugInfo(driftLogDetails),
         })
       }, ApplicationEvent.SheetsYjsDriftDetected),
-    [application.eventBus, downloadDebugInfo, showGenericAlertModal, setBugReportModal],
+    [application.eventBus, downloadDebugInfo, setBugReportModal, openDriftDetectionErrorModal],
   )
 
   useEffect(() => {
@@ -638,6 +685,7 @@ Help us improve this experience by reporting the issue. If you’re comfortable 
       {signatureFailedModal}
       {genericAlertModal}
       {genericInfoModal}
+      {driftDetectionErrorModal}
       {renderBugReportModal && (
         <AuthenticatedBugModal
           {...bugReportModal}
