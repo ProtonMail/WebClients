@@ -139,7 +139,7 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
             postFooter={showStorage ? <SidebarStorageUpsell storageRef={storageRef} app={APPS.PROTONDRIVE} /> : null}
             navigationRef={navigationRef}
             collapsed={collapsed}
-            showStorage={showSideBar}
+            footerVariant={showSideBar ? 'full' : 'hidden'}
             wavyMeter={isFreeUploadInProgress}
         >
             <SidebarNav className="flex *:min-size-auto">

@@ -77,6 +77,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
 
     const { pathname } = useLocation();
 
+    const sidebarFooterVariant = app === APPS.PROTONVPN_SETTINGS ? 'minimal' : 'full';
     return (
         <Sidebar
             app={app}
@@ -106,6 +107,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             wide={isAdminSidebarEnabled}
             data-testid="account:sidebar"
             navigationRef={isAdminSidebarEnabled ? navigationRef : null}
+            footerVariant={sidebarFooterVariant}
         >
             {adminSidebar?.loading ? (
                 <Loader />

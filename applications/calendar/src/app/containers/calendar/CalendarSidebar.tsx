@@ -121,7 +121,7 @@ const CalendarSidebar = ({
                 </ProtonMeetSpotlightWrapper>
             }
             version={<AppVersion />}
-            showStorage={showSideBar}
+            footerVariant={showSideBar ? 'full' : 'hidden'}
             collapsed={collapsed}
             navigationRef={navigationRef}
         >
