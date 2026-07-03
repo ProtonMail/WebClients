@@ -11,7 +11,7 @@ import {
     secureLinkRemove,
     secureLinksGet,
     secureLinksRemoveInactive,
-    shareEventDelete,
+    shareDeleted,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
@@ -84,7 +84,7 @@ export const secureLinksReducer: Reducer<SecureLinkState> = (state = {}, action)
         return removeSecureLinksForItems(state, shareId, itemIds);
     }
 
-    if (or(shareEventDelete.match, vaultDeleteSuccess.match)(action)) {
+    if (or(shareDeleted.match, vaultDeleteSuccess.match)(action)) {
         return removeSecureLinksForShare(state, action.payload.shareId);
     }
 

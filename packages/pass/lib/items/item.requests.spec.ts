@@ -1,8 +1,35 @@
+import * as API from '@proton/pass/lib/api/api';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
+import { createShareRemovedError } from '@proton/pass/lib/shares/share.test.utils';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import { batchByShareId, intoRevisionID } from './item.requests';
+import { batchByShareId, intoRevisionID, requestItem } from './item.requests';
+
+const api = jest.fn();
+(API as any).api = api;
 
 describe('Item requests', () => {
+    describe('requestItem', () => {
+        afterEach(() => jest.clearAllMocks());
+
+        test('resolves `undefined` when the share has been removed', async () => {
+            api.mockRejectedValue(createShareRemovedError(PassErrorCode.NOT_EXIST_SHARE));
+            await expect(requestItem('s1', 'i1')).resolves.toBeUndefined();
+        });
+
+        test('resolves `undefined` when the share has been disabled', async () => {
+            api.mockRejectedValue(createShareRemovedError(PassErrorCode.DISABLED_SHARE));
+            await expect(requestItem('s1', 'i1')).resolves.toBeUndefined();
+        });
+
+        test('rethrows on any other fetch error', async () => {
+            const err = new ApiError('', 500, 'TestError');
+            api.mockRejectedValue(err);
+            await expect(requestItem('s1', 'i1')).rejects.toBe(err);
+        });
+    });
+
     describe('batchByShareId', () => {
         const items = [
             createTestItem('login', { shareId: 'share1', itemId: 'item1', revision: 1 }),

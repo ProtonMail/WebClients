@@ -30,7 +30,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientBooted, clientReady } from '@proton/pass/lib/client';
+import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
@@ -53,6 +53,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
+import { resolveBroadcast } from './broadcast';
 import { sagaMiddleware, store } from './store';
 
 const SAGAS = DESKTOP_BUILD ? [...WEB_SAGAS, ...DESKTOP_SAGAS] : WEB_SAGAS;
@@ -201,9 +202,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         );
 
         const handleAction: ServiceWorkerClientMessageHandler<'action'> = ({ action, localID }) => {
-            if (clientBooted(AppStateManager.getState().status) && authStore.hasSession(localID)) {
-                store.dispatch(action);
-            }
+            if (!authStore.hasSession(localID)) return;
+            const resolved = resolveBroadcast(AppStateManager.getState().status, action);
+            if (resolved) store.dispatch(resolved);
         };
 
         sw?.on('action', handleAction);

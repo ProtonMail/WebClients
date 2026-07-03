@@ -6,7 +6,7 @@ import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { loadInvites } from '@proton/pass/lib/invites/invite.requests';
 import { isItemInviteForItem } from '@proton/pass/lib/invites/invite.utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { loadShareItemMembers, loadShareMembers } from '@proton/pass/lib/shares/share.requests';
+import { loadItemMembers, loadVaultMembers } from '@proton/pass/lib/shares/share.requests';
 import { getShareAccessOptions } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
@@ -28,7 +28,7 @@ const shareAccessOptions = createRequestSaga({
         const { invites = [], newUserInvites = [] } = allInvites;
 
         if (itemId !== undefined) {
-            const members: ShareMember[] = yield loadShareItemMembers(shareId, itemId!);
+            const members: ShareMember[] = yield loadItemMembers(shareId, itemId!);
             const itemAccessKey = toShareAccessKey({ shareId, itemId });
 
             return {
@@ -40,7 +40,7 @@ const shareAccessOptions = createRequestSaga({
             };
         }
 
-        const members: ShareMember[] = yield loadShareMembers(shareId);
+        const members: ShareMember[] = yield loadVaultMembers(shareId);
         const vaultAccessKey = toShareAccessKey({ shareId });
         const vaultInvites = invites.filter(isVaultTarget);
         const vaultnewUserInvites = newUserInvites.filter(isVaultTarget);

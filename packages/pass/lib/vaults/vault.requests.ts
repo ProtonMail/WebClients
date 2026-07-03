@@ -31,7 +31,7 @@ export const createVault = async (data: {
 export const editVault = async (
     shareId: string,
     content: ShareContent<ShareType.Vault>,
-    eventId: string
+    eventId?: string
 ): Promise<Share<ShareType.Vault>> => {
     const encoded = encodeVaultContent(content);
     const encryptedVaultUpdate = await PassCrypto.updateVault({ shareId, content: encoded });

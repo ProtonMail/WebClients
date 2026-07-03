@@ -15,7 +15,7 @@ export const NOOP_EVENT = '*';
 export type EventManagerConfig<T extends {}> = {
     api: Api /* Function to call the API */;
     interval?: number /* Maximum interval time to wait between each call */;
-    initialEventID: string;
+    initialEventID?: string;
     query: (eventID: string) => {} /* Event polling endpoint override */;
     getCursor: (event: T) => EventCursor;
     getLatestEventID?: () => Promise<string> | string;

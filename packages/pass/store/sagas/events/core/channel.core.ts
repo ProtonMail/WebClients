@@ -2,23 +2,30 @@ import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
+    coreEvent,
     getInAppNotifications,
     getUserAccessIntent,
     getUserFeaturesIntent,
     syncIntent,
-    userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
 import { getGroup } from '@proton/pass/store/actions/creators/groups';
 import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
-import { selectAllAddresses, selectLatestEventId, selectUser, selectUserPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import {
+    selectAllAddresses,
+    selectLatestEventId,
+    selectSyncStrategy,
+    selectUser,
+    selectUserPlan,
+    selectUserSettings,
+} from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
+import type { Api, CoreEvent, MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
@@ -27,9 +34,9 @@ import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
 
-import { eventChannelFactory } from './channel.factory';
-import { channelEvents, channelInitalize } from './channel.worker';
-import type { EventChannel } from './types';
+import { eventChannelFactory } from '../v1/channel.factory';
+import { channelEvents, channelInitalize } from '../v1/channel.worker';
+import type { EventChannel } from '../v1/types';
 
 /** Hydrates crypto context whenever user or address keys may have changed.
  * Reads user and addresses from Redux (always up-to-date after userEvent dispatch).
@@ -52,21 +59,24 @@ export function* onUserRefreshed(eventUser?: User, keyPassword?: string) {
         if (keysUpdated) {
             /** Full sync removes shares we can no longer decrypt
              * and/or recovers newly accessible ones */
-            logger.info(`[ServerEvents::User] Detected user keys update`);
-            yield put(syncIntent(SyncType.FULL));
+            logger.info(`[Polling::Core] Detected user keys update`);
+            yield put(syncIntent());
         }
     } catch (err) {
-        logger.warn(`[ServerEvents::User] user refresh failed`, err);
+        logger.warn(`[Polling::Core] User refresh failed`, err);
     }
 }
 
-function* onUserEvent(
-    event: EventManagerEvent<UserEvent>,
-    _: EventChannel<UserEvent>,
+function* onCoreEvent(
+    event: EventManagerEvent<CoreEvent>,
+    _: EventChannel<CoreEvent>,
     { getAuthStore, getTelemetry, onLocaleUpdated, extensionId }: RootSagaOptions
 ) {
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
+
+    const strategy: SyncStrategy = yield select(selectSyncStrategy);
+    const legacySync = strategy === SyncStrategy.LEGACY;
 
     const currentEventId = (yield select(selectLatestEventId)) as MaybeNull<string>;
     const userId = getAuthStore().getUserID()!;
@@ -76,8 +86,8 @@ function* onUserEvent(
 
     /* dispatch only if there was a change */
     if (currentEventId !== event.EventID) {
-        yield put(userEvent(event));
-        logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
+        yield put(coreEvent(event));
+        logger.info(`[Polling::Core] event ${logId(event.EventID!)}`);
     }
 
     const keyPassword = getAuthStore().getPassword();
@@ -116,39 +126,42 @@ function* onUserEvent(
         (event.User && event.User.Subscribed !== cachedUser?.Subscribed) ||
         (event.Organization && event.Organization.PlanName !== cachedPlan?.InternalName);
 
-    /* Synchronize whenever polling for core user events:
-     * · User access (revalidate on plan change)
-     * · In-app Notification (revalidate on plan change)
+    /* Synchronize whenever polling for core user events.
+     * These actions are throttled via `maxAge` metadata:
      * · Feature flags
-     * · Organization
-     * These actions are throttled via `maxAge` metadata */
-    yield put((planChanged ? withRevalidate : identity)(getUserAccessIntent(userId)));
-    yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
+     * · In-app notifications (revalidate on plan change)
+     * · Organization pause-list [EXTENSION ONLY]
+     * · User access (revalidate on plan change) [LEGACY ONLY]
+     * · Organization settings [LEGACY ONLY] */
     yield put(getUserFeaturesIntent(userId));
-    yield put(getOrganizationSettings.intent());
-    yield put(getInAppNotifications.intent());
+    yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
     if (EXTENSION_BUILD) yield put(getOrganizationPauseList.intent());
+
+    if (legacySync) {
+        yield put((planChanged ? withRevalidate : identity)(getUserAccessIntent(userId)));
+        yield put(getOrganizationSettings.intent());
+    }
 }
 
-export const createUserChannel = (api: Api, eventID: string) =>
-    eventChannelFactory<UserEvent>({
+export const createCoreChannel = (api: Api, eventID: string) =>
+    eventChannelFactory<CoreEvent>({
         api,
         channelId: 'user',
         initialEventID: eventID,
         query: getEvents,
         getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
         getLatestEventID: () => api<EventCursor>(getLatestID()).then(({ EventID }) => EventID),
-        onEvent: onUserEvent,
-        onClose: () => logger.info(`[ServerEvents::User] closing channel`),
+        onEvent: onCoreEvent,
+        onClose: () => logger.info(`[Polling::Core] closing channel`),
     });
 
-export function* userChannel(api: Api, options: RootSagaOptions) {
-    logger.info(`[ServerEvents::User] start polling for user events`);
+export function* coreChannel(api: Api, options: RootSagaOptions) {
+    logger.info(`[Polling::Core] start polling for user events`);
 
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
-    const eventsChannel = createUserChannel(api, eventID);
-    const events = fork(channelEvents<UserEvent>, eventsChannel, options);
-    const wakeup = fork(channelInitalize<UserEvent>, eventsChannel, options);
+    const channel = createCoreChannel(api, eventID);
+    const events = fork(channelEvents<CoreEvent>, channel, options);
+    const wakeup = fork(channelInitalize<CoreEvent>, channel, options);
 
     yield all([events, wakeup]);
 }

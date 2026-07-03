@@ -1,7 +1,8 @@
 import type { Reducer } from 'redux';
 
-import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
+import { coreEvent, getUserAccessSuccess, matchSyncAction } from '@proton/pass/store/actions';
+import { getOrganizationSettings, setOrganization, setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
     OrganizationAliasCreateMode,
@@ -10,10 +11,9 @@ import {
     OrganizationPublicLinkMode,
     OrganizationShareMode,
     OrganizationVaultCreateMode,
-    PlanType,
 } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import { PLANS } from '@proton/payments/index';
+import { or } from '@proton/pass/utils/fp/predicates';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
@@ -35,22 +35,22 @@ export type OrganizationState = {
 };
 
 const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null, action) => {
+    /* Remove all organization state if the user plan changes */
+    if (matchSyncAction(action) && action.payload?.v === 2) return action.payload.organization;
+    if (setOrganization.match(action)) return action.payload;
+
     /* Remove all organization state if the user plan is no longer B2B.
      * Pass Essentials is currently considered Plus and not Business */
-    if (getUserAccessSuccess.match(action)) {
-        const { plan } = action.payload;
-        const isB2BPlan = plan.Type === PlanType.BUSINESS || plan.InternalName === PLANS.PASS_PRO;
-        return isB2BPlan ? state : null;
-    }
+    if (getUserAccessSuccess.match(action)) return isPassB2BPlan(action.payload.plan) ? state : null;
 
     if (state !== null) {
         /* Actions applied to the organization state should only be processed
          * if we actually have an organization state in the first place. */
-        if (userEvent.match(action) && action.payload.Organization) {
+        if (coreEvent.match(action) && action.payload.Organization) {
             return { ...state, organization: action.payload.Organization };
         }
 
-        if (getOrganizationSettings.success.match(action)) {
+        if (or(setOrganizationSettings.match, getOrganizationSettings.success.match)(action)) {
             return { ...state, settings: action.payload.Settings, canUpdate: action.payload.CanUpdate };
         }
     }

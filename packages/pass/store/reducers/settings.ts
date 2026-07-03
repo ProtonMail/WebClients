@@ -7,15 +7,17 @@ import type { ClipboardSettings } from '@proton/pass/lib/clipboard/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import {
+    coreEvent,
     extraPasswordToggle,
     itemCreate,
     lockCreateSuccess,
     lockSync,
     offlineSetup,
     settingsEditSuccess,
+    syncMigration,
     updatePauseListItem,
-    userEvent,
 } from '@proton/pass/store/actions';
 import { getOrganizationPauseList } from '@proton/pass/store/actions/creators/organization';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
@@ -51,6 +53,7 @@ export type SettingsState = {
      * This flag is used during the reload after getting the permission to trigger browser
      * privacy. We store a timestamp here to validate the pending request. */
     pendingBrowserAutofill?: number;
+    syncStrategy: SyncStrategy;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
@@ -71,6 +74,7 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passwordOptions: null,
     showUsernameField: false,
     theme: EXTENSION_BUILD ? undefined : PASS_DEFAULT_THEME,
+    syncStrategy: SyncStrategy.LEGACY,
 });
 
 const getInitialState = (): SettingsState => ({
@@ -81,21 +85,22 @@ const getInitialState = (): SettingsState => ({
 });
 
 const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
-    if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
+    if (settingsEditSuccess.match(action)) return { ...state, ...action.payload };
+    if (passwordOptionsEdit.match(action)) return partialMerge(state, { passwordOptions: action.payload });
+    if (itemCreate.success.match(action)) return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+    if (extraPasswordToggle.success.match(action)) return partialMerge(state, { extraPassword: action.payload });
+    if (syncMigration.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
 
-    if (itemCreate.success.match(action)) {
-        return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+    if (coreEvent.match(action)) {
+        const locale = action.payload.UserSettings?.Locale;
+        return locale ? partialMerge(state, { locale }) : state;
     }
 
     if (or(lockCreateSuccess.match, lockSync.match)(action)) {
-        return partialMerge(state, { lockMode: action.payload.lock.mode, lockTTL: action.payload.lock.ttl });
-    }
-
-    if (settingsEditSuccess.match(action)) return { ...state, ...action.payload };
-
-    if (userEvent.match(action)) {
-        const locale = action.payload.UserSettings?.Locale;
-        return locale ? partialMerge(state, { locale }) : state;
+        return partialMerge(state, {
+            lockMode: action.payload.lock.mode,
+            lockTTL: action.payload.lock.ttl,
+        });
     }
 
     if (updatePauseListItem.match(action)) {

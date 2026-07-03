@@ -1,6 +1,7 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { sync } from '@proton/pass/lib/sync/sync';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import {
     getInAppNotifications,
     getUserAccessIntent,
@@ -18,24 +19,33 @@ import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/priva
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { synchronize } from '@proton/pass/store/sagas/client/sync';
-import { selectAllAddresses, selectUser } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { selectSyncStrategy, selectUser } from '@proton/pass/store/selectors';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 
-function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSagaOptions) {
+function* syncWorker(options: RootSagaOptions) {
     yield put(stopEventPolling());
 
-    const user: User = yield select(selectUser);
+    const user: MaybeNull<User> = yield select(selectUser);
     if (!user) return;
+
+    const syncStrategy: SyncStrategy = yield select(selectSyncStrategy);
+    const legacySync = syncStrategy === SyncStrategy.LEGACY;
 
     try {
         yield wait(1_500);
 
-        yield put(withRevalidate(getUserAccessIntent(user.ID)));
+        if (legacySync) {
+            /** In V2 mode these are covered by user events:
+             *  - user access: `UserRefreshed`
+             *  - org settings: `OrganizationInfoChanged` */
+            yield put(withRevalidate(getUserAccessIntent(user.ID)));
+            yield put(withRevalidate(getOrganizationSettings.intent()));
+        }
+
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
-        yield put(withRevalidate(getOrganizationSettings.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
         yield put(withRevalidate(getInAppNotifications.intent()));
         yield put(getAuthDevices.intent());
@@ -46,14 +56,8 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
             yield put(withRevalidate(getOrganizationPauseList.intent()));
         }
 
-        /* Re-hydrate the crypto context with current Redux addresses */
-        const keyPassword = options.getAuthStore().getPassword();
-        if (keyPassword) {
-            const addresses: Address[] = yield select(selectAllAddresses);
-            yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
-        }
-
-        yield put(syncSuccess(yield call(synchronize, payload.type, options)));
+        const state = (yield select()) as State;
+        yield put(syncSuccess(yield call(sync, state, options)));
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {
@@ -66,9 +70,9 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
 export default function* watcher(options: RootSagaOptions): Generator {
     while (true) {
         yield call(function* () {
-            const action: ReturnType<typeof syncIntent> = yield take(syncIntent.match);
+            yield take(syncIntent.match);
             yield race({
-                sync: syncWorker(action, options),
+                sync: call(syncWorker, options),
                 cancel: take(stateDestroy.match),
             });
         });

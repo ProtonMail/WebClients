@@ -1,16 +1,17 @@
 import type { Action, Reducer } from 'redux';
 
 import {
-    bootSuccess,
     inviteAccept,
+    matchSyncAction,
+    shareCreated,
+    shareDeleted,
     shareEvent,
-    shareEventDelete,
     shareEventUpdate,
     shareLeaveSuccess,
+    shareUpdated,
     sharesEventNew,
     sharesEventSync,
     sharesVisibilityEdit,
-    syncSuccess,
     vaultCreationSuccess,
     vaultDeleteSuccess,
     vaultEditSuccess,
@@ -27,8 +28,7 @@ export type VaultShareItem = ShareItem<ShareType.Vault>;
 export type SharesState = Record<ShareId, ShareItem>;
 
 export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
-    if (bootSuccess.match(action) && action.payload?.shares !== undefined) return action.payload.shares;
-    if (syncSuccess.match(action)) return action.payload.shares;
+    if (matchSyncAction(action) && action.payload?.shares) return action.payload.shares;
     if (sharesEventNew.match(action)) return fullMerge(state, action.payload.shares);
 
     if (shareEvent.match(action) && state !== null) {
@@ -40,6 +40,21 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
             ? state
             : partialMerge(state, { [action.payload.shareId]: { eventId: Events.LatestEventID } });
     }
+
+    if (shareCreated.match(action)) {
+        const { share } = action.payload;
+        /** Wipe any existing entry before merging to avoid stale
+         * properties surviving a recursive `fullMerge` (e.g. when
+         * CS restores a previously deleted share). */
+        return fullMerge(objectDelete(state, share.shareId), { [share.shareId]: share });
+    }
+
+    if (shareUpdated.match(action)) {
+        const share = action.payload;
+        return fullMerge(state, { [share.shareId]: share });
+    }
+
+    if (shareDeleted.match(action)) return objectDelete(state, action.payload.shareId);
 
     if (vaultCreationSuccess.match(action)) {
         const { share } = action.payload;
@@ -60,7 +75,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return fullMerge(state, { [share.shareId]: share });
     }
 
-    if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
+    if (or(vaultDeleteSuccess.match, shareLeaveSuccess.match)(action)) {
         return objectDelete(state, action.payload.shareId);
     }
 
