@@ -41,6 +41,7 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
                 onToggleExpand={onSidebarToggle}
                 version={<VpnSidebarVersion />}
                 hasAppLinks={false}
+                footerVariant={'minimal'}
             >
                 <Loader size="medium" />
             </Sidebar>
@@ -58,6 +59,7 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
             version={<VpnSidebarVersion />}
             hasAppLinks={false}
             navigationRef={adminSidebarFeature.enabled ? navigationRef : null}
+            footerVariant={'minimal'}
         >
             <SidebarNav className="overflow-auto">
                 {isSidebarActive ? (
