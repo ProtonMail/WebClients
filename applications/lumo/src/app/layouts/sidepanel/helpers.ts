@@ -9,7 +9,7 @@ import type { Conversation } from '../../types';
 
 export type ConversationSortField = ChatHistoryDateField;
 
-const CONVERSATION_DATE_GROUP_ORDER = ['today', 'yesterday', 'last-week', 'older'] as const;
+export const CONVERSATION_DATE_GROUP_ORDER = ['today', 'yesterday', 'last-week', 'older'] as const;
 
 export type ConversationDateGroupKey = (typeof CONVERSATION_DATE_GROUP_ORDER)[number];
 
@@ -22,8 +22,7 @@ export interface ConversationDateGroup {
 export const sortConversationsByField = (
     conversations: Conversation[],
     sortBy: ConversationSortField = 'updatedAt'
-): Conversation[] =>
-    [...conversations].sort((a, b) => new Date(b[sortBy]).getTime() - new Date(a[sortBy]).getTime());
+): Conversation[] => [...conversations].sort((a, b) => new Date(b[sortBy]).getTime() - new Date(a[sortBy]).getTime());
 
 export const getConversationDateGroupKey = (dayDiff: number): ConversationDateGroupKey => {
     if (dayDiff <= 0) {

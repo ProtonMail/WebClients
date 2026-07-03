@@ -9,7 +9,7 @@ import type { Conversation, ConversationId } from '../../types';
 import ChatDropdownMenu from './ChatDropdownMenu';
 import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
 
-interface ConversationListItemProps {
+export interface ConversationListItemProps {
     conversation: Conversation;
     isSelected: boolean;
     showDropdown: boolean;
@@ -17,7 +17,7 @@ interface ConversationListItemProps {
     onItemClick?: () => void;
 }
 
-const ConversationListItem = memo(
+export const ConversationListItem = memo(
     ({ conversation, isSelected, showDropdown, isTouchDevice, onItemClick }: ConversationListItemProps) => {
         const [isHovered, setIsHovered] = useState(false);
         const [isDropdownOpen, setIsDropdownOpen] = useState(false);

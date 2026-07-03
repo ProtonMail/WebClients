@@ -13,12 +13,11 @@ interface FavoritesSidebarSectionProps {
     onItemClick?: () => void;
 }
 
-export const FavoritesSidebarSection = ({ onItemClick }: FavoritesSidebarSectionProps) => {
+const FavoritesSidebarSectionInner = ({ onItemClick }: FavoritesSidebarSectionProps) => {
     const favorites = useLumoSelector(selectStarredConversationsSorted, shallowEqual);
     const { conversationId } = useConversation();
-    const isGuest = useIsGuest();
 
-    if (favorites.length === 0 || isGuest) {
+    if (favorites.length === 0) {
         return null;
     }
 
@@ -33,4 +32,15 @@ export const FavoritesSidebarSection = ({ onItemClick }: FavoritesSidebarSection
             </div>
         </CollapsibleSidebarSection>
     );
+};
+
+export const FavoritesSidebarSection = ({ onItemClick }: FavoritesSidebarSectionProps) => {
+    const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
+    const isGuest = useIsGuest();
+
+    if (!reduxLoadedFromIdb || isGuest) {
+        return null;
+    }
+
+    return <FavoritesSidebarSectionInner onItemClick={onItemClick} />;
 };
