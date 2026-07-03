@@ -21,7 +21,7 @@ const CLIENT_STATE: { app: AppState } = {
 export const isClientBooted = () => clientBooted(CLIENT_STATE.app.status);
 
 export const setupIpcHandlers = () => {
-    setupIpcHandler('client:setAppState', (_, state) => {
+    setupIpcHandler('client:setAppState', (state) => {
         CLIENT_STATE.app = { ...state };
     });
 };
