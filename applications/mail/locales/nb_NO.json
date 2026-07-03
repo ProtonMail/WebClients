@@ -1523,8 +1523,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4448,6 +4447,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer de gamle e-postene dine og synkroniserer nye meldinger fra Gmail fremover."
       ]
     },
     "description": {
@@ -7774,7 +7776,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9239,6 +9242,19 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Du har ${ totalLabel } i innboksen din."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } samtale** i kategorien ${ categoryLabel }.",
+        "Du har **${ count } samtaler** i kategorien ${ categoryLabel }."
+      ],
+      "You have no conversations in this category": [
+        "Du har ingen samtaler i denne kategorien"
+      ],
+      "You have no messages in this category": [
+        "Du har ingen meldinger i denne kategorien"
       ]
     },
     "info": {
@@ -10386,6 +10402,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhetsbrev – Nyheter, redaksjonelle e-poster og ikke-reklameinnhold"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primær – Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Kampanjer – Tilbud, kampanjer og markedsførings-e-poster"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosialt – Oppdateringer, aktivitet og meldinger på sosiale medier"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaksjoner – Kvitteringer, bestillinger, regninger og bestillinger"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Oppdateringer – Automatiserte bekreftelser, varsler og kontooppdateringer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15092,6 +15126,10 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttet til ${ label }. Lignende melding vil bli kategorisert her i fremtiden.",
+        "Flyttet til ${ label }. Lignende meldinger vil bli kategorisert her i fremtiden."
       ]
     },
     "Success notification": {
@@ -16959,6 +16997,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
       ]
     }
   }

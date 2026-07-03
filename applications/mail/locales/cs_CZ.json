@@ -1531,10 +1531,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4243,7 +4240,7 @@
         "Pro neomezený přístup k asistentovi psaní a dalším možnostem přejděte na ${ BRAND_NAME } Duo."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Pro neomezený přístup k asistentovi psaní a dalším možnostem upgradujte na ${ LUMO_SHORT_APP_NAME }."
+        "Pro neomezený přístup k asistentovi psaní a dalším možnostem přejděte na ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -7149,7 +7146,7 @@
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
@@ -7833,7 +7830,7 @@
         "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "${ ASSISTANT_TRIAL_TIME_DAYS } den na vyzkoušení zdarma",
@@ -7974,7 +7971,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8976,7 +8976,7 @@
         "Aktualizuji vyhledávání ve zprávách..."
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
@@ -9965,7 +9965,7 @@
         "Vyčištěno"
       ],
       "Clear logs": [
-        "Zrušit logy"
+        "Vyčistit logy"
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
@@ -10064,7 +10064,7 @@
         "Stáhnout logy"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
@@ -10490,7 +10490,7 @@
         "Aktualizace a aktivita na sociálních médiích"
       ],
       "Sort": [
-        "Seřadit"
+        "Řazení"
       ],
       "Starred": [
         "S hvězdičkou"
@@ -13474,13 +13474,13 @@
         "Předmět"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Sdělte ${ subject }, co má napsat. Příklad: „Oznamte nadcházející události ve zpravodaji“"
+        "Sdělte ${ subject }, co má napsat. Příklad: \"Oznamte nadcházející události v e-mailovém zpravodaji\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
         "Sdělte subjektu ${ subject }, co má napsat. Příklad: „Zrušit moje členství v posilovně“"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Sdělte ${ subject }, co má napsat. Příklad: „Pozvi Janu na večírek“"
+        "Sdělte ${ subject }, co má napsat. Příklad: \"Pozvi Janu na večírek\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
         "Sdělte ${ subject }, co má napsat. Příklad: „Poděkuj mému kolegovi za pomoc s projektem“"
@@ -13495,7 +13495,7 @@
         "Text"
       ],
       "the writing assistant": [
-        "asistent psaní"
+        "asistentovi psaní"
       ],
       "Thomas": [
         "Jméno"
@@ -16903,6 +16903,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Mailing list": [
+        "E-mailový seznam",
+        "E-mailové seznamy",
+        "E-mailové seznamy",
+        "E-mailové seznamy"
       ]
     },
     "Today icon tooltip in mini calendar": {

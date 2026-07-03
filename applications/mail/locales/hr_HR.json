@@ -1366,6 +1366,9 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Trust key": [
+        "Ključ povjerenja"
       ]
     },
     "action": {
@@ -1604,6 +1607,12 @@
       ],
       "Use your own email domain": [
         "Koristite vlastitu domenu e-pošte"
+      ],
+      "1 user account": [
+        "{count, plural, one {1 korisnički račun} few {# korisnička računa} other {# korisničkih računa}}"
+      ],
+      "6 user accounts": [
+        "{count, plural, one {# korisnički račun} few {# korisnička računa} other {# korisničkih računa}}"
       ]
     },
     "BF2024: Offers": {
@@ -5580,7 +5589,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"

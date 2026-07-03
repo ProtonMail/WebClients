@@ -1520,8 +1520,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -7662,7 +7661,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -13276,6 +13276,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Tem **${ daysRemaining } dia restante** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer.",
         "Tem **${ daysRemaining } dias restantes** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer."
+      ],
+      "Invited friends": [
+        "{count, plural, one {Amigo convidado} other {Amigos convidados}}"
       ]
     },
     "Remaining days before the message expire": {

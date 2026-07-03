@@ -1523,8 +1523,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7771,7 +7770,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9229,6 +9229,25 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } konversation** i kategori ${ categoryLabel }",
+        "Du har **${ count } konversationer** i kategori ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } meddelande** i kategori ${ categoryLabel }",
+        "Du har **${ count } meddelanden** i kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valde **${ checked } konversation** i kategori ${ categoryLabel }",
+        "Du valde **${ checked } konversationer** i kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valde **${ checked } meddelande** i kategori ${ categoryLabel }",
+        "Du valde **${ checked } meddelanden** i kategori ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10849,6 +10868,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
