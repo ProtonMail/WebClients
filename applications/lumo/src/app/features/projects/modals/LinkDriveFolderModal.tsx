@@ -37,7 +37,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     );
     const hasExistingFiles = files.length > 0;
     const { isInitialized } = useDriveSDK();
-    const { indexFolder, removeIndexedFolder } = useDriveFolderIndexing();
+    const { indexFolder, removeIndexedFoldersBySpace } = useDriveFolderIndexing();
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
 
     // Project variables
@@ -111,7 +111,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
         }
     }, [currentFolder, space, folderPath, dispatch, projectId, createNotification, modalProps, isAtRoot, indexFolder]);
 
-    const handleUnlinkFolder = useCallback(() => {
+    const handleUnlinkFolder = useCallback(async () => {
         if (!space) {
             return;
         }
@@ -125,10 +125,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             dispatch(addSpace(updatedSpace));
             dispatch(pushSpaceRequest({ id: projectId }));
 
-            const folderId = linkedDriveFolder?.folderId;
-            if (folderId) {
-                void removeIndexedFolder(folderId);
-            }
+            await removeIndexedFoldersBySpace(projectId);
 
             // Clean up auto-retrieved attachments from this space
             // These are Drive files that were indexed but shouldn't be persisted
@@ -158,7 +155,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 type: 'error',
             });
         }
-    }, [space, dispatch, projectId, createNotification, modalProps, removeIndexedFolder, spaceAttachments]);
+    }, [space, dispatch, projectId, createNotification, modalProps, removeIndexedFoldersBySpace, spaceAttachments]);
 
     return (
         <ModalTwo {...modalProps} size="large" className="link-drive-folder-modal">

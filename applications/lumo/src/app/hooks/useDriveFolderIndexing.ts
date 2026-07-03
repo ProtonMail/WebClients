@@ -4,6 +4,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { NodeType } from '@proton/drive';
 
 import { useDriveIndexing } from '../providers/DriveIndexingProvider';
+import {
+    cancelFolderIndexing,
+    cancelFolderIndexingForSpace,
+    clearFolderIndexingCancellation,
+    isFolderIndexingCancelled,
+} from '../services/driveFolderIndexingState';
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { SearchService } from '../services/search/searchService';
 import type { SpaceId } from '../types';
@@ -12,6 +18,7 @@ import { getMimeTypeFromExtension, isFileTypeSupported } from '../util/filetypes
 import { type DriveNode, useDriveSDK } from './useDriveSDK';
 import { useFileProcessing } from './useFileProcessing';
 import { useLumoUserSettings } from './useLumoUserSettings';
+import { useLumoStore } from '../redux/hooks';
 
 interface IndexFolderOptions {
     spaceId?: string;
@@ -52,6 +59,7 @@ interface UseDriveFolderIndexingReturn {
 
 export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const [user] = useUser();
+    const store = useLumoStore();
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { setIndexingFile, setIndexingProgress, resetIndexingStatus, eventIndexingStatus } = useDriveIndexing();
@@ -83,7 +91,11 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const removeIndexedFolder = useCallback(
         async (folderUid: string) => {
             try {
-                const updatedFolders = indexedFolders.filter((f) => f.nodeUid !== folderUid);
+                cancelFolderIndexing(folderUid);
+                resetIndexingStatus();
+
+                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
+                const updatedFolders = latestFolders.filter((f) => f.nodeUid !== folderUid);
                 updateSettings({
                     indexedDriveFolders: updatedFolders,
                     _autoSave: true,
@@ -96,20 +108,24 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 console.error('Failed to remove indexed folder:', error);
             }
         },
-        [indexedFolders, updateSettings, user?.ID]
+        [resetIndexingStatus, store, updateSettings, user?.ID]
     );
 
     const removeIndexedFoldersBySpace = useCallback(
         async (spaceId: SpaceId) => {
             try {
                 console.log('[DriveIndexing] Removing indexed folders for space:', spaceId);
-                const foldersToRemove = indexedFolders.filter((f) => f.spaceId === spaceId);
+                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
+                const foldersToRemove = latestFolders.filter((f) => f.spaceId === spaceId);
                 if (foldersToRemove.length === 0) {
                     console.log('[DriveIndexing] No indexed folders found for space:', spaceId);
                     return;
                 }
 
-                const updatedFolders = indexedFolders.filter((f) => f.spaceId !== spaceId);
+                cancelFolderIndexingForSpace(foldersToRemove.map((folder) => folder.nodeUid));
+                resetIndexingStatus();
+
+                const updatedFolders = latestFolders.filter((f) => f.spaceId !== spaceId);
                 updateSettings({
                     indexedDriveFolders: updatedFolders,
                     _autoSave: true,
@@ -117,7 +133,6 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                 if (user?.ID) {
                     const searchService = SearchService.get(user.ID);
-                    // Remove documents from the search index for this space
                     searchService.removeDocumentsBySpace(spaceId);
                 }
 
@@ -126,7 +141,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 console.error('Failed to remove indexed folders for space:', error);
             }
         },
-        [indexedFolders, updateSettings, user?.ID]
+        [resetIndexingStatus, store, updateSettings, user?.ID]
     );
 
     // Recursively collect all files from a folder and its subfolders
@@ -178,6 +193,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
             const { spaceId } = options || {};
 
+            clearFolderIndexingCancellation(folderUid);
             setIndexingFile(folderName); // Signal to context that indexing started
             setIndexingProgress(0, 0, 'Preparing...');
 
@@ -266,6 +282,17 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                 // Process in batches of PARALLEL_DOWNLOAD_LIMIT
                 for (let i = 0; i < filesToProcess.length; i += PARALLEL_DOWNLOAD_LIMIT) {
+                    if (isFolderIndexingCancelled(folderUid)) {
+                        console.log('[DriveIndexing] Indexing cancelled for folder:', folderName);
+                        return {
+                            success: false,
+                            totalFiles: totalIndexableFiles,
+                            indexedFiles: 0,
+                            skippedFiles,
+                            limitExceeded,
+                        };
+                    }
+
                     const batch = filesToProcess.slice(i, i + PARALLEL_DOWNLOAD_LIMIT);
                     const batchNum = Math.floor(i / PARALLEL_DOWNLOAD_LIMIT) + 1;
                     const totalBatches = Math.ceil(filesToProcess.length / PARALLEL_DOWNLOAD_LIMIT);
@@ -310,6 +337,20 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     }
                 }
 
+                if (isFolderIndexingCancelled(folderUid)) {
+                    console.log('[DriveIndexing] Indexing cancelled before persisting folder metadata:', folderName);
+                    if (documentsWithContent.length > 0 && user.ID) {
+                        SearchService.get(user.ID).removeDocumentsByFolder(folderUid);
+                    }
+                    return {
+                        success: false,
+                        totalFiles: totalIndexableFiles,
+                        indexedFiles: 0,
+                        skippedFiles,
+                        limitExceeded,
+                    };
+                }
+
                 const indexedFolder: IndexedDriveFolder = {
                     id: folderUid,
                     nodeUid: folderUid,
@@ -322,7 +363,8 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     treeEventScopeId,
                 };
 
-                const updatedFolders = indexedFolders.filter((f) => f.nodeUid !== folderUid);
+                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
+                const updatedFolders = latestFolders.filter((f) => f.nodeUid !== folderUid);
                 updatedFolders.push(indexedFolder);
 
                 updateSettings({
@@ -355,6 +397,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     limitExceeded: false,
                 };
             } finally {
+                clearFolderIndexingCancellation(folderUid);
                 // Always reset the indexing status to idle state
                 resetIndexingStatus();
             }
@@ -363,7 +406,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
             user?.ID,
             collectAllFiles,
             downloadFile,
-            indexedFolders,
+            store,
             updateSettings,
             removeIndexedFolder,
             setIndexingFile,
