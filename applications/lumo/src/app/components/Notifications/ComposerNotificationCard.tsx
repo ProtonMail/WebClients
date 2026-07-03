@@ -120,11 +120,11 @@ export const ComposerNotificationCard = ({
                     icon
                     shape="ghost"
                     size="small"
-                    className="composer-notification-card-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm group-hover:opacity-100"
+                    className="composer-notification-card-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm z-up"
                     onClick={onDismiss}
                     title={c('Action').t`Dismiss`}
                 >
-                    <LumoIcon name="X" width={12} height={12} color="danger" aria-label={c('Action').t`Dismiss`} />
+                    <LumoIcon name="X" width={12} height={12} className='color-weak' aria-label={c('Action').t`Dismiss`} />
                 </Button>
             )}
         </div>
