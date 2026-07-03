@@ -1,11 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import type { ComponentType } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
-import { useGroupMembers } from '@proton/account/groupMembers/hooks';
+import { useGetGroupMembers, useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, deleteGroup, editGroup } from '@proton/account/groups/actions';
 import { addGroupMembersThunk } from '@proton/account/groups/addGroupMember';
@@ -14,7 +14,7 @@ import { useGroups } from '@proton/account/groups/hooks';
 import { getGroupRoles, updateGroupRoles } from '@proton/account/groups/index';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
 import { promoteMemberToOrgAdmin } from '@proton/account/members/actions';
-import { useMembers } from '@proton/account/members/hooks';
+import { useGetMembers, useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { isOrgKeyRequired, isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
@@ -25,6 +25,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
@@ -36,8 +37,8 @@ import setsContainSameElements from '@proton/utils/setsContainSameElements';
 import canUseGroups from '../canUseGroups';
 import useGroupAvailableAddressDomains from '../hooks/useGroupAvailableAddressDomains';
 import shouldShowMail from '../shouldShowMail';
-import { GROUPS_STATE } from '../types';
-import type { GroupFormData, GroupsManagementReturn } from '../types';
+import { GROUPS_RESTRICTION_REASON, GROUPS_STATE } from '../types';
+import type { GroupFormData, GroupsManagementReturn, GroupsRestriction } from '../types';
 import useGroupsProtonMeDomain from '../useGroupsProtonMeDomain';
 
 const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({
@@ -70,6 +71,10 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
     const selectedGroup = groups?.find((group) => group.ID === selectedGroupId);
     const [uiState, setUiState] = useState<GROUPS_STATE>(GROUPS_STATE.EMPTY);
+    const [resumingGroupId, setResumingGroupId] = useState<string | undefined>(undefined);
+    const cancelRoleAssignmentRequestedRef = useRef(false);
+    const getGroupMembers = useGetGroupMembers();
+    const getLatestMembers = useGetMembers();
     const { getMemberPublicKeys } = useGroupKeys();
 
     const addGroupMembers = async (group: Group, emails: string[]) => {
@@ -206,6 +211,30 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         }
     };
 
+    const promoteGroupMembersToOrgAdmin = async (
+        groupMembers: GroupMember[],
+        onCancel?: () => boolean
+    ): Promise<{ cancelled: boolean; errors: unknown[] }> => {
+        const errors: unknown[] = [];
+        const latestMembers = await getLatestMembers();
+        for (const groupMember of groupMembers) {
+            if (onCancel?.()) {
+                return { cancelled: true, errors };
+            }
+            const member = groupMember.Email ? addressEmailToMemberMap[groupMember.Email] : undefined;
+            if (!member) {
+                continue;
+            }
+            const latestMember = latestMembers.find(({ ID }) => ID === member.ID) ?? member;
+            try {
+                await dispatch(promoteMemberToOrgAdmin({ member: latestMember, api }));
+            } catch (error) {
+                errors.push(error);
+            }
+        }
+        return { cancelled: false, errors };
+    };
+
     const syncGroupAdminRoles = async (group: Pick<Group, 'ID'>) => {
         if (!isAdminRolesEnabled) {
             return;
@@ -235,19 +264,17 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
 
         // Members inherit the group's roles. When a newly added role needs the organization key,
         // each non-admin member must be promoted so they receive it. Role removals are demoted by the BE.
-        for (const groupMember of transformedGroupMembers) {
-            const member = groupMember.Email ? addressEmailToMemberMap[groupMember.Email] : undefined;
-            if (!member) {
-                continue;
-            }
-
-            try {
-                await dispatch(promoteMemberToOrgAdmin({ member, api }));
-            } catch (error) {
-                // TODO(partial-failure): the group roles are saved but promoting this member failed.
-                // Reconcile / surface a recovery path in a follow-up MR.
-                handleError(error);
-            }
+        const { errors } = await promoteGroupMembersToOrgAdmin(transformedGroupMembers);
+        errors.forEach((error) => handleError(error, { notify: false }));
+        if (errors.length > 0) {
+            createNotification({
+                type: 'error',
+                text: c('Error').ngettext(
+                    msgid`Role assignment could not be completed for ${errors.length} member`,
+                    `Role assignment could not be completed for ${errors.length} members`,
+                    errors.length
+                ),
+            });
         }
     };
 
@@ -325,8 +352,6 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         setUiState(GROUPS_STATE.EMPTY);
     };
 
-    const handleResumeRoleAssignments = () => {};
-
     const handleCreateGroup = () => {
         setUiState(GROUPS_STATE.NEW);
         resetForm({
@@ -362,16 +387,89 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         );
     });
 
-    const isFrozen =
-        !canUseGroups(organization.PlanName, {
-            isUserGroupsNoCustomDomainEnabled,
-            isUserGroupsPassBusinessEnabled,
-        }) ||
-        (invalidGroupSuggestion && filteredGroups.length > 0);
+    const handleToggleRoleAssignments = async () => {
+        if (resumingGroupId !== undefined) {
+            cancelRoleAssignmentRequestedRef.current = true;
+            return;
+        }
+
+        const pausedGroups = filteredGroups.filter((group) => group.hasPendingOrgKeyAccess);
+        if (pausedGroups.length === 0) {
+            return;
+        }
+
+        cancelRoleAssignmentRequestedRef.current = false;
+        let failedGroupCount = 0;
+        for (const group of pausedGroups) {
+            if (cancelRoleAssignmentRequestedRef.current) {
+                break;
+            }
+            setResumingGroupId(group.ID);
+            try {
+                const groupMembersById = await getGroupMembers(group.ID);
+                const groupMembersList = groupMembersById ? Object.values(groupMembersById) : [];
+                const { cancelled, errors } = await promoteGroupMembersToOrgAdmin(
+                    groupMembersList,
+                    () => cancelRoleAssignmentRequestedRef.current
+                );
+                if (errors.length > 0) {
+                    errors.forEach((error) => handleError(error, { notify: false }));
+                    failedGroupCount += 1;
+                }
+                if (cancelled) {
+                    break;
+                }
+
+                await dispatch(getGroupRoles({ group, cache: CacheType.None }));
+            } catch (error) {
+                failedGroupCount += 1;
+                handleError(error);
+            }
+        }
+        setResumingGroupId(undefined);
+
+        if (cancelRoleAssignmentRequestedRef.current) {
+            cancelRoleAssignmentRequestedRef.current = false;
+            return;
+        }
+
+        if (failedGroupCount === 0) {
+            createNotification({ type: 'success', text: c('Info').t`Group roles assigned` });
+            return;
+        }
+
+        createNotification({
+            type: 'error',
+            text: c('Error').ngettext(
+                msgid`Role assignment could not be completed for ${failedGroupCount} group`,
+                `Role assignment could not be completed for ${failedGroupCount} groups`,
+                failedGroupCount
+            ),
+        });
+    };
+
+    const getRestrictedBy = (): GroupsRestriction => {
+        const isPlanUnsupported =
+            (invalidGroupSuggestion && filteredGroups.length > 0) ||
+            !canUseGroups(organization.PlanName, {
+                isUserGroupsNoCustomDomainEnabled,
+                isUserGroupsPassBusinessEnabled,
+            });
+
+        if (isPlanUnsupported) {
+            return { reason: GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED };
+        }
+        if (resumingGroupId !== undefined) {
+            return { reason: GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT, groupId: resumingGroupId };
+        }
+        return { reason: GROUPS_RESTRICTION_REASON.NONE };
+    };
+
+    const restrictedBy = getRestrictedBy();
 
     return {
         groups: filteredGroups,
-        isFrozen,
+        restrictedBy,
         members,
         selectedGroup,
         uiState,
@@ -392,7 +490,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
             onCreateGroup: handleCreateGroup,
             onAddGroupMembers: addGroupMembers,
             onUnselectGroup: handleUnselectGroup,
-            onResumeRoleAssignments: handleResumeRoleAssignments,
+            onToggleRoleAssignments: handleToggleRoleAssignments,
         },
     };
 };
