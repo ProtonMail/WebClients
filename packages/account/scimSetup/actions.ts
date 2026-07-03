@@ -3,7 +3,6 @@ import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { Api, Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 
 import { type GroupMembersState, groupMembersThunk } from '../groupMembers';
@@ -51,7 +50,7 @@ interface ScimApprovalDeps {
 
 async function* processScimGroup(
     group: Group,
-    { api, getMemberPublicKeys, dispatch }: ScimApprovalDeps
+    { pendingMembersByGroup, api, getMemberPublicKeys, dispatch }: ScimApprovalDeps
 ): AsyncGenerator<ScimProgress> {
     yield { type: 'groupStatus', groupID: group.ID, status: ItemStatus.Finalizing };
 
@@ -61,8 +60,7 @@ async function* processScimGroup(
         dispatch(updateGroup(resolvedGroup));
     }
 
-    const members = await dispatch(groupMembersThunk({ groupId: resolvedGroup.ID, cache: CacheType.None }));
-    const pendingAdmins = Object.values(members).filter((m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN);
+    const pendingAdmins = pendingMembersByGroup[group.ID] ?? [];
 
     let allCompleted = true;
     if (pendingAdmins.length) {
