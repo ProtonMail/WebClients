@@ -1901,6 +1901,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Approve": [
+        "Approuver"
       ]
     },
     "action": {
@@ -13704,6 +13707,9 @@
       ],
       "Sending invite...": [
         "Envoi de l'invitation..."
+      ],
+      "Invited": [
+        "Invité"
       ]
     },
     "Invoice state display as badge": {
@@ -21793,6 +21799,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Les utilisateurs que vous avez définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Les utilisateurs définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
       ]
     },
     "scim: Action": {
@@ -23457,6 +23466,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "La configuration de votre authentification unique (SSO) sera supprimée."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité",
+        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } utilisateur est inactif.",
+        "${ n } utilisateur sont inactifs."
       ]
     },
     "sso: auth device state": {
@@ -27236,6 +27253,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"
+      ],
+      "User is a group owner": [
+        "L'utilisateur est propriétaire d'un groupe"
+      ],
+      "Waiting for admin approval": [
+        "En attente de validation par l'administrateur"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27466,6 +27489,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Vous pouvez ${ reject } cette demande si vous ne souhaitez pas y donner suite."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Impossible d'activer l'accès administrateur pour ${ n } utilisateur",
+        "Impossible d'activer l'accès administrateur pour ${ n } utilisateurs"
+      ],
+      "Review their account now.": [
+        "Vérifiez leur compte dès maintenant.",
+        "Vérifiez leurs comptes dès maintenant."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Leurs clés de chiffrement ont été mises à jour pendant que nous procédions à des modifications."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Vous pouvez supprimer cet utilisateur de votre organisation en toute sécurité.",
+        "Vous pouvez supprimer ces utilisateurs de votre organisation en toute sécurité."
       ]
     },
     "Update font modal": {

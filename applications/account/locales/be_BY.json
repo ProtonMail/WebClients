@@ -1901,6 +1901,15 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Approve": [
+        "Ухваліць"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Размеркаванне экспарту па кампаніях у выглядзе паштовага індэкса"
+      ],
+      "Verify password": [
+        "Спраўдзіць пароль"
       ]
     },
     "action": {
@@ -4105,6 +4114,9 @@
       ],
       "Total cost": [
         "Поўны кошт"
+      ],
+      "Used / assigned seats": [
+        "Выкарыстаныя або прызначаныя ліцэнзіі"
       ]
     },
     "Condition for custom filter": {
@@ -5671,6 +5683,12 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Заўважце, што ў лістоў адпраўленых на гэты адрас (нават з іншых адрасоў ${ BRAND_NAME }), больш не будзе скразнога шыфравання."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Адбудзецца імпартаванне вашых старых лістоў і сінхранізацыя новых паведамленняў з Gmail у будучыні"
       ]
     },
     "description": {
@@ -7156,6 +7174,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Абараніце сваю ўласнасць.** Палепшыце свой тарыфны план, каб дадаць экстранныя кантакты."
       ]
     },
     "Empty group name": {
@@ -7889,6 +7910,9 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Толькі вялікія літары і знакі пунктуацыі (інтэрвалы, злучкі і падкрэсліванні) могуць быць зменены ў гэтым адрасе"
       ]
     },
     "error": {
@@ -13882,6 +13906,21 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Per seat/month": [
+        "За ліцэнзію/месяц"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Паглядзець папярэднія перыяды і экспартаваць даныя для справаздачы або выстаўлення рахунка кліенту."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Кампанія і ўсе яе ўдзельнікі неадкладна згубяць доступ."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Працэс быў перарваны для ${ pausedCount } групы. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў."
       ]
     },
     "info": {
@@ -14003,6 +14042,9 @@
       ],
       "Sending invite...": [
         "Адпраўка запрашэння..."
+      ],
+      "Group Owner": [
+        "Уладальнік групы"
       ]
     },
     "Invoice state display as badge": {
@@ -16124,6 +16166,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Billed seats": [
+        "Аплачаныя ліцэнзіі"
+      ],
+      "Enter current password": [
+        "Увядзіце бягучы пароль"
+      ],
+      "Seats usage": [
+        "Выкарыстана ліцэнзій"
       ]
     },
     "label": {
@@ -18679,6 +18730,12 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Удзельнічайце ў апытанні, каб удасканаліць сэрвісы ${ BRAND_NAME }"
+      ],
+      "Product email updates": [
+        "Абнаўленні электроннай пошты прадукту"
+      ],
+      "Recovery checklist": [
+        "Кантрольны спіс аднаўлення"
       ]
     },
     "Notification": {
@@ -20579,6 +20636,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Describe the filter you want…": [
+        "Апішыце патрэбны вам фільтр…"
+      ],
+      "Enter company name": [
+        "Увядзіце назву кампаніі"
       ]
     },
     "placeholder": {
@@ -21883,6 +21946,9 @@
       ],
       "Your recovery phrase is set": [
         "Ваш нумар фраза аднаўлення зададзена"
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Вы можаце скарыстацца фразай аднаўлення ў гэтым наборы для поўнага аднаўлення вашага ўліковага запісу, калі вы скінулі свой пароль. Пераканайцеся, што гэта інфармацыя захоўваецца ў надзейным месцы."
       ]
     },
     "safety_review": {
@@ -22025,7 +22091,7 @@
         "Гэта дазволіць вам увайсці і аднавіць свае даныя, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Гэта адзіны спосаб імгненна аднавіць усе вашы даныя ў сэрвісе. Захавайце яе ў надзейным месцы і каб яна была даступна толькі вам."
       ],
       "If your recovery phone has changed, ${ updatePhoneLink }.": [
-        "${ updatePhoneLink }, калі ваш нумар тэлефона змяніўся."
+        "${ updatePhoneLink }, калі ваш нумар тэлефона для аднаўлення доступу змяніўся."
       ],
       "Later": [
         "Пазней"
@@ -22119,6 +22185,21 @@
       ],
       "Your security setup": [
         "Ваша бяспечная наладка"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "${ updateEmailLink }, калі ваша электронная пошта для аднаўлення доступу змянілася."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Сістэма адправіць вам ліст з кодам спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш адрас."
+      ],
+      "Update recovery phone": [
+        "Абнавіць нумар тэлефона для аднаўлення доступу"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Спраўджанне вашага адрасу электроннай пошты павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Спраўджанне вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
       ]
     },
     "saml: Action": {
@@ -22233,6 +22314,15 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Карыстальнікі, якіх вы задалі ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Неабходна канчатковае ўхваленне, каб даць доступ паміж усімі сэрвісамі ${ BRAND_NAME }."
+      ],
+      "Private user": [
+        "Прыватны карыстальнік"
+      ],
+      "Updated": [
+        "Абноўлена"
       ]
     },
     "scim: Action": {
@@ -22417,6 +22507,9 @@
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Дазваляе дадаваць відэаканферэнцыю Zoom у любыя падзеі вашага календара"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Дадаць у ${ CALENDAR_APP_NAME }"
       ]
     },
     "session_recovery:available:action": {
@@ -23973,6 +24066,18 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў",
+        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } карыстальнік неактыўны.",
+        "${ n } карыстальнікі неактыўныя.",
+        "${ n } карыстальнікаў неактыўныя.",
+        "${ n } карыстальнікаў неактыўныя."
       ]
     },
     "sso: auth device state": {
@@ -25101,6 +25206,12 @@
       ],
       "Your address has been activated": [
         "Ваш адрас быў актываваны"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } адключаны"
+      ],
+      "Password check-ins disabled": [
+        "Уваход з паролем адключаны"
       ]
     },
     "Success message": {
@@ -27368,6 +27479,21 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Add company": [
+        "Дадаць кампанію"
+      ],
+      "Approve changes": [
+        "Ухваліць змены"
+      ],
+      "Data collection": [
+        "Збор даных"
+      ],
+      "Disable company": [
+        "Адключыць кампанію"
+      ],
+      "Group role assignment paused": [
+        "Прызначэнне групавой ролі прыпынена"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28031,6 +28157,27 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Вы зможаце ${ reject } запыт, калі не захочаце працягваць."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальніка",
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў",
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў",
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў"
+      ],
+      "Review their account now.": [
+        "Паглядзець яго ўліковы запіс.",
+        "Паглядзець іх уліковыя запісы.",
+        "Паглядзець іх уліковыя запісы.",
+        "Паглядзець іх уліковыя запісы."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Іх ключы шыфравання былі абноўлены, пакуль уносіліся змены."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Вы можаце бяспечна выдаліць гэтага карыстальніка з вашай арганізацыі.",
+        "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
+        "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
+        "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі."
       ]
     },
     "Update font modal": {

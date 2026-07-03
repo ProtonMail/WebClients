@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Approve": [
+        "Aprobare"
       ]
     },
     "action": {
@@ -13938,6 +13941,9 @@
       ],
       "Sending invite...": [
         "Se trimite invitația..."
+      ],
+      "Invited": [
+        "Invitat"
       ]
     },
     "Invoice state display as badge": {
@@ -22171,6 +22177,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Utilizatorii pe care i-ați setat ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Utilizatorii setați ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
       ]
     },
     "scim: Action": {
@@ -23873,6 +23882,16 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }"
+      ],
+      "${ n } user is inactive.": [
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }"
       ]
     },
     "sso: auth device state": {
@@ -27701,6 +27720,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
+      ],
+      "User is a group owner": [
+        "Utilizatorul este proprietar de grup"
+      ],
+      "Waiting for admin approval": [
+        "Așteptare aprobare de la administrator"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27932,6 +27957,24 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Puteți să ${ reject } această solicitare dacă nu doriți să continuați."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }"
+      ],
+      "Review their account now.": [
+        "Revizuiți-i contul acum.",
+        "Revizuiți-le contul acum.",
+        "Revizuiți-le contul acum."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Cheile lor de criptare au fost actualizate în timp ce s-au efectuat modificări."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Puteți elimina în siguranță acest utilizator din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație."
       ]
     },
     "Update font modal": {

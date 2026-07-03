@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Approve": [
+        "Godkend"
       ]
     },
     "action": {
@@ -13792,6 +13795,9 @@
       ],
       "Sending invite...": [
         "Sender invitation..."
+      ],
+      "Invited": [
+        "Inviteret"
       ]
     },
     "Invoice state display as badge": {
@@ -21938,6 +21944,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Brugere, du har angivet som private, skal acceptere invitationen for at færdiggøre konfigurationen. Vi sender dem en invitation når du har godkendt."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brugere, definerede som private, skal acceptere invitationen for at færdiggøre opsætningen. Vi sender dem en invitation når du har godkendt."
       ]
     },
     "scim: Action": {
@@ -23599,6 +23608,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration vil blive slettet."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder",
+        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } bruger er inaktiv.",
+        "${ n } brugere er inaktive."
       ]
     },
     "sso: auth device state": {
@@ -27384,6 +27401,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
+      ],
+      "User is a group owner": [
+        "Brugeren er ejer af en gruppe"
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkendelse fra administrator"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27614,6 +27637,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denne anmodning, hvis du ikke vil fortsætte."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kunne ikke tildele administratoradgang til ${ n } bruger",
+        "Kunne ikke tildele administratoradgang til ${ n } brugere"
+      ],
+      "Review their account now.": [
+        "Gennemse deres konto nu",
+        "Gennemse deres konti nu"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deres krypteringsnøgler blev opdateret, mens vi gennemførte ændringer."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan trygt fjerne denne bruger fra din organisation.",
+        "Du kan trygt fjerne disse brugere fra din organisation."
       ]
     },
     "Update font modal": {

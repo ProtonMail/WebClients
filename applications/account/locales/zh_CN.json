@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Approve": [
+        "批准"
       ]
     },
     "action": {
@@ -13640,6 +13643,9 @@
       ],
       "Sending invite...": [
         "发送邀请中..."
+      ],
+      "Invited": [
+        "已邀请"
       ]
     },
     "Invoice state display as badge": {
@@ -21696,6 +21702,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "您设为私有的用户需要接受邀请以完成设置。您批准后，我们会向他们发送邀请。"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "设为私有的用户需要接受邀请以完成设置。您批准后，我们会向他们发送邀请。"
       ]
     },
     "scim: Action": {
@@ -23316,6 +23325,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } 位用户已通过您的身份提供商加入组织"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } 位用户处于非活跃状态。"
       ]
     },
     "sso: auth device state": {
@@ -27058,6 +27073,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
+      ],
+      "User is a group owner": [
+        "用户是群组所有者"
+      ],
+      "Waiting for admin approval": [
+        "等待管理员审批"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27287,6 +27308,18 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "如果您不想继续，您可以申请 ${ reject } 。"
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "无法为 ${ n } 位用户启用管理员权限"
+      ],
+      "Review their account now.": [
+        "请立即查看他们的账户。"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "在我们进行更改时，他们的加密密钥已更新。"
+      ],
+      "You can safely remove this user from your organization.": [
+        "您可以将这些用户从组织中安全移除。"
       ]
     },
     "Update font modal": {

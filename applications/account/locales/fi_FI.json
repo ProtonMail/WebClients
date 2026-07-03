@@ -1746,6 +1746,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Set as default mail application": [
+        "Aseta oletussähköpostisovellukseksi"
       ]
     },
     "action": {
@@ -4692,6 +4695,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
+      ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } ei ole oletussähköpostisovelluksesi."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } on oletussähköpostisovelluksesi."
       ]
     },
     "description": {
@@ -11523,6 +11532,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Kun tämä on sallittu, tarkistamme onko ${ MAIL_APP_NAME } oletus sähköpostisovellus ja ilmoitamme, jos ei ole."
       ]
     },
     "info": {
@@ -22684,6 +22696,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Check your default mail application": [
+        "Tarkista oletussähköpostisovelluksesi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

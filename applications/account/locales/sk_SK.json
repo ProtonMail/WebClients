@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Approve": [
+        "Schváliť"
       ]
     },
     "action": {
@@ -14087,6 +14090,9 @@
       ],
       "Sending invite...": [
         "Odosielanie pozvánky..."
+      ],
+      "Invited": [
+        "Pozvaný/á"
       ]
     },
     "Invoice state display as badge": {
@@ -22407,6 +22413,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Používatelia, ktorých ste nastavili ako súkromných, musia prijať pozvánku, aby mohli dokončiť nastavenie. Akonáhle ich schválite, pošleme im pozvánku."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Používatelia s nastavením „súkromné“ musia prijať pozvánku, aby dokončili nastavenie. Pozvánku im zašleme hneď, ako ju schválite."
       ]
     },
     "scim: Action": {
@@ -24150,6 +24159,18 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } používateľ je neaktívny",
+        "${ n } používatelia sú neaktívni",
+        "${ n } používateľov je neaktívnych",
+        "${ n } používateľov je neaktívnych"
       ]
     },
     "sso: auth device state": {
@@ -28021,6 +28042,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ],
+      "User is a group owner": [
+        "Používateľ je vlastníkom skupiny"
+      ],
+      "Waiting for admin approval": [
+        "Čaká na schválenie správcom"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -28253,6 +28280,27 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Ak si neželáte pokračovať, môžete túto žiadosť ${ reject }."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľa",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov"
+      ],
+      "Review their account now.": [
+        "Skontrolujte jeho účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Počas toho, ako sme vykonávali zmeny, došlo k aktualizácii šifrovacích kľúčov."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Tohto používateľa môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie."
       ]
     },
     "Update font modal": {

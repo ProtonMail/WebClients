@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Approve": [
+        "Onayla"
       ]
     },
     "action": {
@@ -13789,6 +13792,9 @@
       ],
       "Sending invite...": [
         "Davet gönderiliyor..."
+      ],
+      "Invited": [
+        "Davet edildi"
       ]
     },
     "Invoice state display as badge": {
@@ -21935,6 +21941,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Korunan olarak ayarladığınız kullanıcıların kurulumlarını tamamlamaları için daveti kabul etmeleri gerekir. Onayladığınızda onlara davet gönderilecek."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Gizli olarak ayarlanan kullanıcıların kurulumu tamamlamaları için daveti kabul etmeleri gerekir. Onay verdiğinizde onlara bir davet göndereceğiz."
       ]
     },
     "scim: Action": {
@@ -23596,6 +23605,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } kullanıcı kimlik sağlayıcınız aracılığıyla kuruluşunuza katıldı",
+        "${ n } kullanıcı kimlik sağlayıcınız aracılığıyla kuruluşunuza katıldı"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } kullanıcı aktif değil.",
+        "${ n } kullanıcı aktif değil."
       ]
     },
     "sso: auth device state": {
@@ -27381,6 +27398,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
+      ],
+      "User is a group owner": [
+        "Kullanıcı grubun sahibidir"
+      ],
+      "Waiting for admin approval": [
+        "Yönetici onayı bekleniyor"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27611,6 +27634,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Bunu istemiyorsanız ${ reject } üzerine tıklayarak bu isteği reddedin."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n } kullanıcı için yönetici erişimi etkinleştirilemedi",
+        "${ n } kullanıcı için yönetici erişimi etkinleştirilemedi"
+      ],
+      "Review their account now.": [
+        "Hesaplarını şimdi inceleyin.",
+        "Hesaplarını şimdi inceleyin."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Değişiklikleri yaparken şifreleme anahtarları güncellendi."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Bu kullanıcıyı kuruluşunuzdan güvenle kaldırabilirsiniz.",
+        "Bu kullanıcıları kuruluşunuzdan güvenle kaldırabilirsiniz."
       ]
     },
     "Update font modal": {

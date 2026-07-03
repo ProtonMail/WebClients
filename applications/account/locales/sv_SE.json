@@ -3214,6 +3214,12 @@
       ],
       "You're all set!": [
         "Du är klar!"
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alla migrerade användarkonton är redo att bjudas in till din ${ BRAND_NAME }-organisation."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi skapar dina konton och importerar din data nu så att ditt team har allt de behöver när de börjar använda sitt säkra ${ BRAND_NAME }-konto."
       ]
     },
     "breadcrumb": {
@@ -13314,6 +13320,15 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Tilldelade användarplatser debiteras inte när de är inaktiverade"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Medlemmar är utloggade och kan inte logga in igen"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Granska tidigare perioder och exportera data för rapportering eller klientfakturering."
       ]
     },
     "info": {
@@ -13434,6 +13449,9 @@
       ],
       "Sending invite...": [
         "Skickar inbjudan …"
+      ],
+      "Invited": [
+        "Inbjuden"
       ]
     },
     "Invoice state display as badge": {
@@ -19165,6 +19183,9 @@
     "Password reminder": {
       "Do you remember your ${ BRAND_NAME } password?": [
         "Kommer du ihåg ditt lösenord för ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Det bästa sättet att undvika att förlora åtkomst till ditt konto och dina data är att komma ihåg dina inloggningsuppgifter."
       ]
     },
     "password_reminder": {
@@ -21290,6 +21311,9 @@
       ],
       "Your security setup": [
         "Din säkerhetsinställning"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verifiering av din e-postadress ökar din kontosäkerhet och tillåter ytterligare alternativ för återställning."
       ]
     },
     "saml: Action": {
@@ -21571,6 +21595,9 @@
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Låter dig lägga till en Zoom-videokonferens till alla dina kalenderhändelser"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Lägg till i ${ CALENDAR_APP_NAME }"
       ]
     },
     "session_recovery:available:action": {
@@ -23042,6 +23069,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } användare är inaktiv.",
+        "${ n } användare är inaktiva."
       ]
     },
     "sso: auth device state": {
@@ -26357,6 +26392,9 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Data recovery contacts": [
+        "Kontakter för dataåterställning"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26738,6 +26776,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare på äldre appar för att kryptera data de skickar till dig."
       ]
     },
     "tooltip": {
@@ -27003,6 +27044,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denna begäran om du inte vill fortsätta."
+      ],
+      "Review their account now.": [
+        "Granska deras konto nu.",
+        "Granska deras konton nu."
       ]
     },
     "Update font modal": {
@@ -27177,6 +27222,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Users table: badge": {

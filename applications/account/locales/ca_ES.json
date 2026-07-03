@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Approve": [
+        "Aprovar"
       ]
     },
     "action": {
@@ -13786,6 +13789,9 @@
       ],
       "Sending invite...": [
         "S'està enviant la invitació..."
+      ],
+      "Invited": [
+        "Convidat"
       ]
     },
     "Invoice state display as badge": {
@@ -21932,6 +21938,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Els usuaris que hàgiu configurat com a privats han d'acceptar la invitació per completar la configuració. Els enviarem una invitació un cop els aproveu."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Els usuaris configurats com a privats han d'acceptar la invitació per acabar la configuració. Els enviarem una invitació un cop ho aproveu."
       ]
     },
     "scim: Action": {
@@ -23596,6 +23605,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } usuari s'ha unit a la vostra organització a través del vostre proveïdor d'identitat.",
+        "${ n } usuaris s'han unit a la vostra organització a través del vostre proveïdor d'identitat."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } usuari està inactiu.",
+        "${ n } usuaris estan inactius."
       ]
     },
     "sso: auth device state": {
@@ -27381,6 +27398,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
+      ],
+      "User is a group owner": [
+        "L'usuari és propietari d'un grup"
+      ],
+      "Waiting for admin approval": [
+        "S'està esperant l'aprovació de l'administrador"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27611,6 +27634,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Podeu ${ reject } aquesta sol·licitud si no voleu continuar."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuari",
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuaris"
+      ],
+      "Review their account now.": [
+        "Reviseu el seu compte ara.",
+        "Reviseu els seus comptes ara."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Les seves claus d'encriptació s'han actualitzat mentre estàvem fent canvis."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
+        "Podeu eliminar aquests usuaris de la vostra organització de manera segura."
       ]
     },
     "Update font modal": {

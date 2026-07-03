@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Approve": [
+        "Aprobar"
       ]
     },
     "action": {
@@ -7828,6 +7831,9 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Solo se pueden cambiar las mayúsculas y la puntuación (puntos, guiones y guiones bajos) para esta dirección"
       ]
     },
     "error": {
@@ -13662,6 +13668,13 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Solo se pueden cambiar las mayúsculas y la puntuación (puntos, guiones y guiones bajos) aquí. Para usar direcciones diferentes, añada una."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "El proceso fue interrumpido para ${ pausedCount } grupo. Pulse en Continuar para reanudar la asignación de roles.",
+        "El proceso fue interrumpido para ${ pausedCount } grupos. Pulse en Continuar para reanudar la asignación de roles."
       ]
     },
     "info": {
@@ -13782,6 +13795,9 @@
       ],
       "Sending invite...": [
         "Enviando la invitación..."
+      ],
+      "Invited": [
+        "Invitado"
       ]
     },
     "Invoice state display as badge": {
@@ -15910,6 +15926,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Show unread count": [
+        "Mostrar recuento sin leer"
       ]
     },
     "label": {
@@ -21925,6 +21944,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Usuarios que ha establecido como privados necesitan aceptar la invitación para finalizar la configuración. Les enviaremos una invitación una vez que los apruebe."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Los usuarios configurados como privados necesitan aceptar la invitación para finalizar la configuración. Les enviaremos una invitación una vez que las apruebe."
       ]
     },
     "scim: Action": {
@@ -23586,6 +23608,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } usuario se unió a su organización a través de su proveedor de identidad",
+        "${ n } usuarios se unieron a su organización a través de su proveedor de identidad"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } usuario está inactivo.",
+        "${ n } usuarios están inactivos."
       ]
     },
     "sso: auth device state": {
@@ -26928,6 +26958,9 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Group role assignment paused": [
+        "Asignación de roles de grupo pausada"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27365,6 +27398,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."
+      ],
+      "Role assignment paused": [
+        "Asignación de rol pausada"
+      ],
+      "User is a group owner": [
+        "El usuario es un dueño de grupo"
+      ],
+      "Waiting for admin approval": [
+        "Esperando aprobación de administrador"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27473,6 +27515,12 @@
       ],
       "Refund": [
         "Reembolso"
+      ],
+      "Prepayment": [
+        "Prepago"
+      ],
+      "Test credit": [
+        "Crédito de prueba"
       ]
     },
     "Unlimited offer": {
@@ -27589,6 +27637,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Puede ${ reject } esta solicitud si no desea continuar."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "No se pudo activar el acceso de admin para ${ n } usuario",
+        "No se pudo activar el acceso de admin para ${ n } usuarios"
+      ],
+      "Review their account now.": [
+        "Revisar su cuenta ahora.",
+        "Revisar sus cuentas ahora."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Sus claves de cifrado fueron actualizadas mientras estábamos realizando cambios."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Puede eliminar este usuario de su organización con seguridad.",
+        "Puede eliminar estos usuarios de su organización con seguridad."
       ]
     },
     "Update font modal": {

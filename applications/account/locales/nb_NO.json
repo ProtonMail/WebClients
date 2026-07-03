@@ -1883,6 +1883,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Disable company": [
+        "Deaktiver bedrift"
+      ],
+      "Stop": [
+        "Stopp"
       ]
     },
     "action": {
@@ -2007,6 +2013,9 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentlisenser"
+      ],
+      "Add-on": [
+        "Tillegg"
       ]
     },
     "Address action": {
@@ -13485,6 +13494,27 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } bruker må godta invitasjonen for å begynne å motta gruppe-e-poster.",
+        "${ invitedMemberCount } brukere må godta invitasjonen for å begynne å motta gruppe-e-poster."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nytt medlem lagt til via identitetsleverandøren din og venter på vurdering.",
+        "${ pendingAdminMemberCount } nye medlemer lagt til via identitetsleverandøren din og venter på vurdering."
+      ],
+      "Synced from identity provider": [
+        "Synkronisert fra identitetsleverandør"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Prosessen ble avbrutt for ${ pausedCount } gruppe. Klikk på Fortsett for å fortsette tildelingen av roller.",
+        "Prosessen ble avbrutt for ${ pausedCount } grupper. Klikk på Fortsett for å fortsette tildelingen av roller."
+      ],
+      "Thinking…": [
+        "Tenker…"
+      ],
+      "What happens:": [
+        "Hva skjer:"
       ]
     },
     "info": {
@@ -15676,6 +15706,30 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter current password": [
+        "Skriv inn gjeldende passord"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhetsbrev – Nyheter, redaksjonelle e-poster og ikke-reklameinnhold"
+      ],
+      "Password check-ins": [
+        "Passordverifisering"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primær – Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Kampanjer – Tilbud, kampanjer og markedsførings-e-poster"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosialt – Oppdateringer, aktivitet og meldinger på sosiale medier"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaksjoner – Kvitteringer, bestillinger, regninger og bestillinger"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Oppdateringer – Automatiserte bekreftelser, varsler og kontooppdateringer"
       ]
     },
     "label": {
@@ -21504,6 +21558,12 @@
       ],
       "Your security setup": [
         "Sikkerhetsoppsettet ditt"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "For å hjelpe deg med å huske passordet ditt, vil vi med jevne mellomrom be deg om å oppgi det."
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Bekreftelse av e-postadressen din øker kontosikkerheten og gir flere alternativer for gjenoppretting."
       ]
     },
     "saml: Action": {
@@ -22528,6 +22588,9 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Du er invitert til å bli med over 100 millioner mennesker som valgte å beholde kontrollen over dataene sine med ${ BRAND_NAME }s krypterte økosystem."
+      ],
+      "Continue with ${ planName }": [
+        "Fortsett med ${ planName }"
       ]
     },
     "Signup label": {
@@ -23205,6 +23268,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } bruker har blitt med i organisasjonen gjennom identitetsleverandøren din",
+        "${ n } brukere har blitt med i organisasjonen gjennom identitetsleverandøren din"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } bruker er inaktiv.",
+        "${ n } brukere er inaktive."
       ]
     },
     "sso: auth device state": {
@@ -23293,6 +23364,9 @@
       ],
       "Verify ${ value }": [
         "Verifiser ${ value }"
+      ],
+      "... waiting": [
+        "...venter"
       ]
     },
     "Step in filter modal": {
@@ -26487,6 +26561,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Edit company": [
+        "Rediger bedrift"
+      ],
+      "Group role assignment paused": [
+        "Tildeling av grupperoller satt på pause"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27148,6 +27228,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denne forespørselen hvis du ikke ønsker å fortsette."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kunne ikke aktivere administratortilgang for ${ n } bruker",
+        "Kunne ikke aktivere administratortilgang for ${ n } brukere"
+      ],
+      "Review their account now.": [
+        "Gjennomgå kontoen deres nå",
+        "Gjennomgå kontoene deres nå."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Krypteringsnøklene deres ble oppdatert mens vi gjorde endringer."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan trygt fjerne denne brukeren fra organisasjonen din.",
+        "Du kan trygt fjerne disse brukerene fra organisasjonen din."
       ]
     },
     "Update font modal": {
@@ -27319,6 +27414,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brukere og grupper, tildel roller og tildel lisenser til medlemmer."
       ]
     },
     "Users table: badge": {
@@ -27994,6 +28092,49 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
+      ]
+    },
+    "Column header": {
+      "Managed companies": [
+        "Administrerte bedrifter"
+      ],
+      "Total billed seats": [
+        "Totalt antall fakturerte lisenser"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nytt medlem",
+        "${ memberCount } nye medlemmer"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } gruppe synkronisert",
+        "${ numberOfPendingGroups } grupper synkronisert"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } bruker synkronisert",
+        "${ numberOfPendingUsers } brukere synkronisert"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } gruppe",
+        "${ pendingGroupsCount } grupper"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } gruppe synkronisert",
+        "${ pendingGroupsCount } grupper synkronisert"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } bruker",
+        "${ pendingUsersCount } brukere"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } bruker synkronisert.",
+        "${ pendingUsersCount } brukere synkronisert."
       ]
     }
   }
