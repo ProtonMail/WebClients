@@ -52,13 +52,12 @@ const onShareEvent = (shareId: string) =>
     };
 
 const onShareEventError = (shareId: string, tasks: () => Task) =>
-    function* (error: unknown, { channel }: EventChannel<ShareEventResponse>, { onItemsUpdated }: RootSagaOptions) {
+    function* (error: unknown, { channel }: EventChannel<ShareEventResponse>) {
         if (isShareRemovedError(error)) {
             logger.info(`[Polling::Share::${logId(shareId)}] share disabled`);
             channel.close();
             yield call(processSharePollingError, shareId);
             yield cancel(tasks());
-            onItemsUpdated?.();
         }
     };
 
