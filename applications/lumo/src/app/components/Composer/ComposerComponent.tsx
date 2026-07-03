@@ -355,10 +355,6 @@ const ComposerComponentInner = ({
 
     return (
         <>
-            {isGuest && canShowGuestNotificationCard && (
-                <GuestNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
-            )}
-            <ModelSwitchNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
             <div
                 style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
                 className="w-full"
@@ -377,6 +373,11 @@ const ComposerComponentInner = ({
                     <h2 className="sr-only">{c('collider_2025: Info').t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
 
                     {showLegalDisclaimer && <GuestDisclaimer />}
+
+                    {isGuest && canShowGuestNotificationCard && (
+                        <GuestNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
+                    )}
+                    <ModelSwitchNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
 
                     <ComposerLimitBanner
                         conversationId={messageChain?.[0]?.conversationId}
