@@ -9,6 +9,7 @@ import { MemberStateInfo } from '../MemberStateInfo';
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 import { useGroupsManagement } from './context/GroupsManagementContext';
+import { GROUPS_RESTRICTION_REASON } from './types';
 
 type InvitationBadgeMap = Partial<{
     [key in GROUP_MEMBER_STATE]: { label: string; tooltip: string; color?: string; backgroundColor?: string };
@@ -57,7 +58,11 @@ export const GroupMemberItem = ({
     canChangeVisibility,
     showMailFeatures,
 }: Props) => {
-    const { isFrozen } = useGroupsManagement();
+    const { restrictedBy } = useGroupsManagement();
+    const isFrozen =
+        restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED ||
+        (restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT &&
+            restrictedBy.groupId === group.ID);
     const badge = getInvitationBadgeMap()[State];
     const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
     const isGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');

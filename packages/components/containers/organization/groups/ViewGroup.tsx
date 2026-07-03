@@ -32,12 +32,12 @@ import GroupInfoBanner from './GroupInfoBanner';
 import GroupMemberList from './GroupMemberList';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import shouldShowMail from './shouldShowMail';
-import { PANEL_HEADER_HEIGHT } from './types';
+import { GROUPS_RESTRICTION_REASON, PANEL_HEADER_HEIGHT } from './types';
 
 const ViewGroup = () => {
     const { createNotification } = useNotifications();
     const {
-        isFrozen,
+        restrictedBy,
         actions,
         selectedGroup,
         groupMembers,
@@ -72,6 +72,10 @@ const ViewGroup = () => {
 
     const group = selectedGroup!;
     const { Name, Description, Address } = group;
+
+    const isResumingRoleAssignment =
+        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
+    const isFrozen = restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED || isResumingRoleAssignment;
 
     const showMailFeatures = shouldShowMail(organization?.PlanName);
     const primaryGroupAddressKey = Address.Keys[0];
@@ -146,6 +150,7 @@ const ViewGroup = () => {
                                 shape="outline"
                                 icon
                                 key="button-delete"
+                                disabled={isResumingRoleAssignment}
                                 onClick={() => {
                                     deleteGroupPrompt.openModal(true);
                                 }}
