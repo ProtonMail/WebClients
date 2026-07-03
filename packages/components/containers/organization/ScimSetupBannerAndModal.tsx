@@ -68,6 +68,7 @@ const ScimSetupBannerAndModal = () => {
                     {...modalProps}
                     users={modalUsers}
                     groups={modalGroups}
+                    pendingMembers={pendingMembersByGroup}
                     phase={phase}
                     onFinish={() => approvePendingChanges(frozenData.users, frozenData.groups)}
                 />

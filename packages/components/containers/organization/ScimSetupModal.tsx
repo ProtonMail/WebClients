@@ -57,6 +57,7 @@ interface PendingGroupItem {
 interface Props extends ModalProps {
     users: PendingUserItem[];
     groups: PendingGroupItem[];
+    pendingMembers: Record<string, GroupMember[]>;
     phase: Phase;
     onFinish: () => void;
 }
@@ -239,7 +240,7 @@ const getSectionStatus = (statuses: ItemStatus[]): ItemStatus => {
     return ItemStatus.Unknown;
 };
 
-const ScimSetupModal = ({ users, groups, phase, onFinish, onClose, ...rest }: Props) => {
+const ScimSetupModal = ({ users, groups, pendingMembers, phase, onFinish, onClose, ...rest }: Props) => {
     const isUserGroupsScimGroupsEnabled = useFlag('UserGroupsScimGroups');
 
     const [usersExpanded, setUsersExpanded] = useState(false);
@@ -248,6 +249,15 @@ const ScimSetupModal = ({ users, groups, phase, onFinish, onClose, ...rest }: Pr
 
     const numberOfPendingUsers = users.length;
     const numberOfPendingGroups = groups.length;
+
+    const getGroupMemberItems = ({ group, members }: PendingGroupItem): PendingGroupMemberItem[] => {
+        const statusByMemberId = new Map(members.map(({ member, status }) => [member.ID, status]));
+
+        return (pendingMembers[group.ID] ?? []).map((member) => ({
+            member,
+            status: statusByMemberId.get(member.ID) ?? ItemStatus.Waiting,
+        }));
+    };
 
     if (!isUserGroupsScimGroupsEnabled || (!numberOfPendingUsers && !numberOfPendingGroups)) {
         return null;
@@ -305,6 +315,7 @@ const ScimSetupModal = ({ users, groups, phase, onFinish, onClose, ...rest }: Pr
                                 <GroupInfoRow
                                     key={groupItem.group.ID}
                                     {...groupItem}
+                                    members={getGroupMemberItems(groupItem)}
                                     expanded={!!expandedGroups[groupItem.group.ID]}
                                     onToggle={() =>
                                         setExpandedGroups((prev) => ({
