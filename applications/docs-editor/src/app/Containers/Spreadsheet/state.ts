@@ -384,7 +384,10 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
     // Gates the Yjs drift detection (SheetsDriftDetectionEnabled feature flag). When false,
     // local updates propagate without the dry-run audit/guard (original behavior).
     isDriftDetectionEnabled: boolean
-    onYjsDriftDetected?: (result: SpreadsheetLocalYjsUpdateAuditResult) => void
+    onYjsDriftDetected?: (
+      result: SpreadsheetLocalYjsUpdateAuditResult,
+      driftLogDetails: Record<string, unknown>,
+    ) => void
   }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
@@ -525,12 +528,11 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
           ...driftLogDetails,
         },
       )
-      console.error('[sheets-yjs-drift] local Yjs drift details', JSON.stringify(driftLogDetails, null, 2))
       hasBlockedYjsDrift.current = true
       application.logger.error(
         '[sheets-yjs-drift] blocked outgoing Yjs update because local state and the broadcast Yjs doc drifted',
       )
-      deps.onYjsDriftDetected?.(driftResult)
+      deps.onYjsDriftDetected?.(driftResult, driftLogDetails)
       pushLatestPatches(undefined, SheetsPatchesType.Drifted).catch(console.error)
       return false
     }

@@ -230,7 +230,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('reportSheetsYjsDriftDetected', [reason])
   }
 
-  async showYjsDriftDetectedErrorModal(): Promise<void> {
-    return this.invokeClientMethod('showYjsDriftDetectedErrorModal', [])
+  async showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): Promise<void> {
+    return this.invokeClientMethod('showYjsDriftDetectedErrorModal', [driftLogDetails])
   }
 }

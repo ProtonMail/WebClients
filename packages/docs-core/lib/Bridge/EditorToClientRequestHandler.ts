@@ -216,7 +216,7 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     this.docOrchestrator.reportSheetsYjsDriftDetected(reason)
   }
 
-  showYjsDriftDetectedErrorModal(): void {
-    this.docOrchestrator.showYjsDriftDetectedErrorModal()
+  showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): void {
+    this.docOrchestrator.showYjsDriftDetectedErrorModal(driftLogDetails)
   }
 }
