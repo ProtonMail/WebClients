@@ -69,7 +69,7 @@ export const Tab = ({ category, tabState }: Props) => {
             title={getTitleFromCategoryId(category.id)}
             aria-label={getLabelFromCategoryId(category.id)}
             data-testid={`category-tab-${category.id}`}
-            data-color={category.colorShade}
+            data-color={tabState === TabState.ACTIVE ? category.colorShade : undefined}
             onClick={handleClick}
             draggable={false}
         >
@@ -81,10 +81,10 @@ export const Tab = ({ category, tabState }: Props) => {
                 />
                 {shouldShowNewBadge && <span className="tab-new-dot color-blue-500" aria-hidden="true" />}
             </span>
-            <span className="tab-text flex flex-column justify-center min-w-0">
+            <span className="flex flex-column justify-center min-w-0">
                 <span
                     className={clsx(
-                        'tag-label text-sm text-ellipsis min-w-0',
+                        'tab-label text-sm text-ellipsis min-w-0',
                         tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
                     )}
                 >
