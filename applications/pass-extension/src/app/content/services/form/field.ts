@@ -1,9 +1,9 @@
-import { isVisible } from '@protontech/autofill';
 import type { FieldType, FormType } from '@protontech/autofill/types';
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
 import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
+import { isVisible } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import type { InteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
 import { createInteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';

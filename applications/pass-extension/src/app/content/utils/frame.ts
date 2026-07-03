@@ -1,5 +1,5 @@
-import { isEditorFrame, isVisible } from '@protontech/autofill';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { isEditorFrame, isVisible } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getFrameScore } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes } from 'proton-pass-extension/types/frames';
