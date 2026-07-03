@@ -1,8 +1,10 @@
 import { api } from '@proton/pass/lib/api/api';
+import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import type { SharesState } from '@proton/pass/store/reducers';
 import type {
     ActiveShareGetResponse,
+    PassEventListResponse,
     Share,
     ShareGetResponse,
     ShareHideUnhideBatchRequest,
@@ -27,14 +29,30 @@ export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse
     return response.ShareKeys?.Keys ?? [];
 };
 
+export const getSharesQuery = () => ({ url: 'pass/v1/share', method: 'get' }) as const;
+export const getShares = async () => {
+    const res = await api(getSharesQuery());
+    return res.Shares;
+};
+
+export const getShareEventsQuery = (shareId: ShareId, eventId: string) =>
+    ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }) as const;
+export const getShareEvents = async (shareId: ShareId, eventId: string): Promise<PassEventListResponse> => {
+    const res = await api(getShareEventsQuery(shareId, eventId));
+    return res.Events;
+};
+
 export const getShareLatestEventId = async (shareId: string): Promise<string> =>
     api({
         url: `pass/v1/share/${shareId}/event`,
         method: 'get',
     })
-        .then(({ EventID }) => EventID!)
-        .catch(() => {
+        .then(({ EventID }) => EventID)
+        .catch((err) => {
             logger.info(`[Share] Failed getting latest eventID for share ${logId(shareId)}`);
+            /** Propagate share-removal so callers can clean up the share.
+             * Tolerate transient errors with an empty cursor. */
+            if (isShareRemovedError(err)) throw err;
             return '';
         });
 
@@ -65,10 +83,10 @@ const mapShareMembers = (response: ActiveShareGetResponse[]) =>
         isGroupShare: member.IsGroupShare,
     }));
 
-export const loadShareItemMembers = async (shareId: string, itemId: string): Promise<ShareMember[]> =>
+export const loadItemMembers = async (shareId: string, itemId: string): Promise<ShareMember[]> =>
     api({ url: `pass/v1/share/${shareId}/user/item/${itemId}`, method: 'get' }).then((r) => mapShareMembers(r.Shares));
 
-export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> =>
+export const loadVaultMembers = async (shareId: string): Promise<ShareMember[]> =>
     api({ url: `pass/v1/share/${shareId}/user`, method: 'get' }).then((r) => mapShareMembers(r.Shares));
 
 export const removeUserAccess = async ({ shareId, userShareId }: ShareRemoveMemberAccessIntent) =>

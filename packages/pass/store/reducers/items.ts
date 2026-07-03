@@ -3,9 +3,9 @@ import type { Action, Reducer } from 'redux';
 import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
-    aliasSyncPending,
+    aliasPendingCreate,
+    aliasPendingCreated,
     aliasSyncStatusToggle,
-    bootSuccess,
     emptyTrashProgress,
     fileLinkPending,
     importItemsProgress,
@@ -27,15 +27,16 @@ import {
     itemTrash,
     itemUnpinSuccess,
     itemsDeleteEvent,
-    itemsEditEvent,
+    itemsUpdated,
     itemsUsedEvent,
+    matchSyncAction,
     resolveAddressMonitor,
     restoreTrashProgress,
     setItemFlags,
-    shareEventDelete,
+    shareCreated,
+    shareDeleted,
     shareLeaveSuccess,
     sharesEventNew,
-    syncSuccess,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
@@ -111,9 +112,17 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         },
     ],
     (state = {}, action: Action) => {
-        if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
-        if (syncSuccess.match(action)) return action.payload.items;
+        if (matchSyncAction(action) && action.payload?.items) return action.payload.items;
         if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
+
+        if (shareCreated.match(action)) {
+            const { share, items } = action.payload;
+            /** Wipe existing items for this share before merging so stale
+             * entries don't survive (mirrors the objectDelete in the shares reducer). */
+            return fullMerge(objectDelete(state, share.shareId), { [share.shareId]: toMap(items, 'itemId') });
+        }
+
+        if (shareDeleted.match(action)) return objectDelete(state, action.payload.shareId);
 
         if (itemCreate.intent.match(action)) {
             const { shareId, optimisticId, optimisticTime, files, ...item } = action.payload;
@@ -203,7 +212,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (fileLinkPending.success.match(action)) return updateItem(action.payload.item)(state);
 
-        if (itemsEditEvent.match(action)) {
+        if (itemsUpdated.match(action)) {
             const { items } = action.payload;
             return addItems(items)(state);
         }
@@ -221,6 +230,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (itemsDeleteEvent.match(action)) {
             const { shareId } = action.payload;
             const itemIds = new Set(action.payload.itemIds);
+            if (!state[shareId]) return state;
 
             return { ...state, [shareId]: objectFilter(state[shareId], (itemId) => !itemIds.has(itemId)) };
         }
@@ -268,7 +278,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, lastUseTime: getEpoch() })(state);
         }
 
-        if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
+        if (or(vaultDeleteSuccess.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
         }
 
@@ -312,10 +322,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             }
         }
 
-        if (aliasSyncPending.success.match(action)) {
-            const { items, shareId } = action.payload;
-            return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
-        }
+        if (aliasPendingCreate.success.match(action)) return addItems(action.payload)(state);
+        if (aliasPendingCreated.match(action)) return addItems(action.payload)(state);
 
         return state;
     }

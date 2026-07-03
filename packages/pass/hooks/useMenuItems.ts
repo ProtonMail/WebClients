@@ -7,7 +7,6 @@ import type { IconName } from '@proton/icons/types';
 import { syncIntent } from '@proton/pass//store/actions';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/pass/constants';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
@@ -80,7 +79,7 @@ export const useMenuItems = ({ onAction = noop, extra = {} }: MenuItemsOptions =
                 {
                     icon: 'arrow-rotate-right',
                     label: c('Action').t`Manually sync your data`,
-                    onClick: withAction(() => dispatch(syncIntent(SyncType.FULL))),
+                    onClick: withAction(() => dispatch(syncIntent())),
                 },
                 ...(extra.advanced ?? []),
             ],

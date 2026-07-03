@@ -1,21 +1,20 @@
 import type { Reducer } from 'redux';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import {
-    intoCustomMonitorAddress,
-    intoMonitorDomain,
-    intoProtonMonitorAddress,
-} from '@proton/pass/lib/monitor/monitor.utils';
+import { intoCustomMonitorAddress, intoMonitorDomain, intoProtonMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress, type MonitorDomain } from '@proton/pass/lib/monitor/types';
 import {
     addCustomAddress,
     deleteCustomAddress,
     getBreaches,
+    matchSyncAction,
     resolveAddressMonitor,
+    setBreaches,
     toggleAddressMonitor,
     verifyCustomAddress,
 } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
+import type { BreachesGetResponse, MaybeNull } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import lastItem from '@proton/utils/lastItem';
 
@@ -27,16 +26,17 @@ export type MonitorState = MaybeNull<{
     total: number;
 }>;
 
+const intoMonitorState = (breaches: BreachesGetResponse): MonitorState => ({
+    custom: breaches.CustomEmails?.map(intoCustomMonitorAddress) ?? [],
+    preview: breaches.DomainsPeek?.map(intoMonitorDomain) ?? [],
+    proton: breaches.Addresses?.map(intoProtonMonitorAddress) ?? [],
+    customDomains: breaches.HasCustomDomains,
+    total: breaches.EmailsCount,
+});
+
 const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
-    if (getBreaches.success.match(action)) {
-        return {
-            custom: action.payload.CustomEmails?.map(intoCustomMonitorAddress) ?? [],
-            preview: action.payload.DomainsPeek?.map(intoMonitorDomain) ?? [],
-            proton: action.payload.Addresses?.map(intoProtonMonitorAddress) ?? [],
-            customDomains: action.payload.HasCustomDomains,
-            total: action.payload.EmailsCount,
-        };
-    }
+    if (matchSyncAction(action) && action.payload?.v === 2) return intoMonitorState(action.payload.breaches);
+    if (or(getBreaches.success.match, setBreaches.match)(action)) return intoMonitorState(action.payload);
 
     if (state) {
         if (addCustomAddress.success.match(action)) {
@@ -120,9 +120,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
             return partialMerge(state, {
                 [type]: state[type].map((breach) =>
-                    action.payload.type === AddressType.ALIAS || breach.addressId !== action.payload.addressId
-                        ? breach
-                        : action.payload
+                    action.payload.type === AddressType.ALIAS || breach.addressId !== action.payload.addressId ? breach : action.payload
                 ),
             });
         }

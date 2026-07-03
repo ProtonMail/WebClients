@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
@@ -71,6 +72,7 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
     },
 });
 
+export const setBreaches = createAction<BreachesGetResponse>('monitor::breaches::set');
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
     success: dataRequest(UNIX_MINUTE),
 });

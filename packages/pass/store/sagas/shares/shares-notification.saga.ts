@@ -2,7 +2,7 @@ import { select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { isGroupShare, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { shareEventDelete, sharesEventNew } from '@proton/pass/store/actions';
+import { shareDeleted, sharesEventNew } from '@proton/pass/store/actions';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { GroupsState } from '@proton/pass/store/reducers/groups';
 import { selectItem, selectShare } from '@proton/pass/store/selectors';
@@ -70,12 +70,12 @@ function* notificationForNewSharesWorker({ onNotification }: RootSagaOptions, { 
 
 function* notificationForDeletedSharesWorker(
     { onNotification }: RootSagaOptions,
-    { payload: { shareId } }: ReturnType<typeof shareEventDelete>
+    { payload: { shareId } }: ReturnType<typeof shareDeleted>
 ) {
     yield notificationForDeletedShare(shareId, onNotification);
 }
 
 export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(sharesEventNew.match, notificationForNewSharesWorker, options);
-    yield takeEvery(shareEventDelete.match, notificationForDeletedSharesWorker, options);
+    yield takeEvery(shareDeleted.match, notificationForDeletedSharesWorker, options);
 }
