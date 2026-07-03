@@ -1,9 +1,15 @@
+import { applyRetentionPolicy } from '../layouts/sidepanel/helpers';
 import { getMessageContent } from '../messageHelpers';
 import type { Memory, MemorySource } from '../redux/slices/lumoUserSettings';
-import type { Conversation, Message, Space } from '../types';
+import type { Conversation, LocalFlags, Message, Space } from '../types';
 import { Role } from '../types';
 import { listify } from './collections';
 import { sortByDate } from './date';
+
+export type MemorySamplingOptions = {
+    /** When false (default), chats outside the free retention window are excluded. */
+    hasLumoPlus?: boolean;
+};
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -106,8 +112,17 @@ export const applyMemoryEdit = (memory: Memory, nextContent: string): Memory => 
 // Chat sampling
 // ---------------------------------------------------------------------------
 
+const isMarkedDeleted = (value: LocalFlags | undefined) => value?.deleted === true;
+
+const isDeletedSpace = (spaceId: string | undefined, spaces: Record<string, Space>) =>
+    Boolean(spaceId && isMarkedDeleted(spaces[spaceId] as LocalFlags | undefined));
+
 const isGeneralConversation = (conversation: Conversation, spaces: Record<string, Space>) => {
-    if (conversation.ghost) {
+    if (
+        conversation.ghost ||
+        isMarkedDeleted(conversation as Conversation & LocalFlags) ||
+        isDeletedSpace(conversation.spaceId, spaces)
+    ) {
         return false;
     }
     if (!conversation.spaceId) {
@@ -116,23 +131,34 @@ const isGeneralConversation = (conversation: Conversation, spaces: Record<string
     return spaces[conversation.spaceId]?.isProject !== true;
 };
 
+const getEligibleConversationIdsForMemorySampling = (
+    conversations: Record<string, Conversation>,
+    spaces: Record<string, Space>,
+    hasLumoPlus: boolean
+): Set<string> => {
+    const eligible = listify(conversations).filter((conversation) => isGeneralConversation(conversation, spaces));
+    return new Set(applyRetentionPolicy(eligible, hasLumoPlus).map((conversation) => conversation.id));
+};
+
 /** Collects a small, privacy-conscious sample of recent user prompts from general (non-project) chats. */
 export const sampleUserPromptsForMemoryGeneration = (
     messages: Record<string, Message>,
     conversations: Record<string, Conversation>,
-    spaces: Record<string, Space>
+    spaces: Record<string, Space>,
+    { hasLumoPlus = false }: MemorySamplingOptions = {}
 ): string[] => {
-    const generalConversationIds = new Set(
-        listify(conversations)
-            .filter((conversation) => isGeneralConversation(conversation, spaces))
-            .map((conversation) => conversation.id)
+    const eligibleConversationIds = getEligibleConversationIdsForMemorySampling(
+        conversations,
+        spaces,
+        hasLumoPlus
     );
 
     const candidates = listify(messages)
         .filter(
             (message) =>
                 message.role === Role.User &&
-                generalConversationIds.has(message.conversationId) &&
+                !isMarkedDeleted(message as Message & LocalFlags) &&
+                eligibleConversationIds.has(message.conversationId) &&
                 message.status !== 'failed'
         )
         .toSorted(sortByDate('desc'))
