@@ -182,7 +182,7 @@ export abstract class IndexPopulator {
                         `${this.getUid()}: TreeRefresh, marking index populator as not done to request new indexing.`
                     );
                     await this.markAsNotDone(ctx.db);
-                    ctx.enqueueOnce(new IndexPopulatorTask(this, false /* isBootstrap */));
+                    ctx.enqueueOnce(new IndexPopulatorTask(this));
                     // Re-index will bump the generation; entries from the previous
                     // generation that aren't revisited become stale.
                     ctx.enqueueOnce(new CleanUpStaleIndexEntryTask());

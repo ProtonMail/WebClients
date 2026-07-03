@@ -23,8 +23,6 @@ export interface TaskContext {
     readonly searchMetrics: SearchMetrics;
     /** Set isIndexing to true (sticky — stays true until queue empties). */
     readonly markIndexing: () => void;
-    /** Set isInitialIndexing to true (sticky — stays true until queue empties). */
-    readonly markInitialIndexing: () => void;
     /** Enqueue a task if one with the same UID isn't already queued. */
     readonly enqueueOnce: (task: BaseTask) => void;
     /** Enqueue a task after a delay. The task is deduplicated by UID. */
