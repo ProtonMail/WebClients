@@ -120,6 +120,13 @@ export const createContentScriptService = () => {
         withSender(async ({ payload }, tabId, frameId) => registerElements(payload.hash, tabId, frameId))
     );
 
+    /** Resolves which client bundle to inject: `client.js` ships the
+     * `@protontech/autofill` ML detectors, `client-legacy.js` the legacy ones */
+    const getClientJS = withContext<() => Promise<string>>(async (ctx) => {
+        const { features } = await ctx.service.featureFlags.resolve();
+        return features.PassMLAutofill ? 'client.js' : 'client-legacy.js';
+    });
+
     const loadContentScript: MessageHandlerCallback<WorkerMessageType.LOAD_CONTENT_SCRIPT> = withContext(
         async (ctx, _, sender) => {
             try {
@@ -133,7 +140,7 @@ export const createContentScriptService = () => {
                 const features = computeFeatures(settings, frameUrl, tabUrl);
                 if (!shouldInjectContentScript(features)) return true;
 
-                await inject({ tabId, frameId, js: ['client.js'] });
+                await inject({ tabId, frameId, js: [await getClientJS()] });
                 return true;
             } catch {
                 return true;
