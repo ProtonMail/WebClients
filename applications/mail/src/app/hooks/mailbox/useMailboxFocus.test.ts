@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { useMailboxFocus } from './useMailboxFocus';
@@ -11,6 +12,7 @@ const mockStoreState = {
     filter: {} as Filter,
     sort: {} as Sort,
     labelID: 'label1',
+    categoryIDs: [] as CategoryLabelID[],
 };
 
 jest.mock('proton-mail/store/hooks', () => ({
@@ -23,6 +25,7 @@ jest.mock('proton-mail/store/elements/elementsSelectors', () => ({
     selectFilter: (state: any) => state.filter,
     selectSort: (state: any) => state.sort,
     selectLabelID: (state: any) => state.labelID,
+    selectCategoryIDs: (state: any) => state.categoryIDs,
 }));
 
 describe('useMailboxFocus', () => {
@@ -39,6 +42,7 @@ describe('useMailboxFocus', () => {
         mockStoreState.filter = {} as Filter;
         mockStoreState.sort = {} as Sort;
         mockStoreState.labelID = 'label1';
+        mockStoreState.categoryIDs = [] as CategoryLabelID[];
     });
 
     const setup = (overrides: Partial<MailboxFocusProps> = {}) => {
@@ -179,6 +183,19 @@ describe('useMailboxFocus', () => {
         });
 
         mockStoreState.filter = { a: 1 } as Filter;
+        rerender(defaultProps);
+
+        expect(result.current.focusID).toBeUndefined();
+    });
+
+    it('should reset focus when category changes', () => {
+        const { result, rerender } = setup();
+
+        act(() => {
+            result.current.focusFirstID();
+        });
+
+        mockStoreState.categoryIDs = ['20'] as CategoryLabelID[];
         rerender(defaultProps);
 
         expect(result.current.focusID).toBeUndefined();

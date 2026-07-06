@@ -21,9 +21,12 @@ export const useScrollListToTopOnViewChange = () => {
     const sort = useMailSelector(selectSort);
     const page = useMailSelector(selectPage);
 
+    // Some reducers break the referential equality check, so we stringify the params object instead.
+    const viewKey = JSON.stringify({ labelID, categoryID, sort, filter, search, page });
+
     useEffect(() => {
         if (scrollContainerRef.current && scrollContainerRef.current.scrollTop !== 0) {
             scrollContainerRef.current.scrollTop = 0;
         }
-    }, [scrollContainerRef, labelID, categoryID, sort, filter, search, page]);
+    }, [scrollContainerRef, viewKey]);
 };
