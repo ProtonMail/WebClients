@@ -16,7 +16,7 @@ type InvitationBadgeMap = Partial<{
 }>;
 
 const getInvitationBadgeMap = (): InvitationBadgeMap => ({
-    [GROUP_MEMBER_STATE.PENDING_ADMIN]: {
+    [GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL]: {
         label: c('invitation status').t`Pending`,
         tooltip: c('tooltip').t`Waiting for admin approval`,
         color: 'var(--signal-warning-major-3)',
@@ -75,7 +75,7 @@ export const GroupMemberItem = ({
                 memberName={memberName ?? Email}
                 groupMemberType={groupMember.Type}
                 showMailFeatures={showMailFeatures}
-                isMemberDisabled={groupMember.State === GROUP_MEMBER_STATE.PENDING_ADMIN}
+                isMemberDisabled={groupMember.State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL}
             >
                 <div className="flex flex-row gap-2 flex-nowrap self-center">
                     {badge && (
