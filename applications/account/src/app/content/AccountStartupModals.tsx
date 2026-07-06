@@ -12,8 +12,8 @@ import {
     useTrialEndedModal,
 } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 

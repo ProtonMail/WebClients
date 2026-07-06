@@ -41,7 +41,8 @@ import {
     getVPNWithNetShieldFeature,
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { CYCLE, type FreePlanDefault, PLANS, type Plan, type PlansMap } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,

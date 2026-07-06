@@ -3,9 +3,9 @@ import { fromUnixTime, isFuture, subDays } from 'date-fns';
 import useShowDashboard, { getDashboardFeatureFlag } from '@proton/components/hooks/accounts/useShowDashboard';
 import useConfig from '@proton/components/hooks/useConfig';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import type { ADDON_NAMES, SubscriptionPlan } from '@proton/payments';
-import { PLANS, isTrial } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { type ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
+import type { SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { type MaybeFreeSubscription, isTrial } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 

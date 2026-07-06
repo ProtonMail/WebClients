@@ -3,8 +3,11 @@ import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
 import { organization } from '@proton/components/containers/payments/subscription/__mocks__/data';
-import { FREE_PLAN, FREE_SUBSCRIPTION, PLANS, Renew, type Subscription } from '@proton/payments';
 import { changeRenewState, deleteSubscription } from '@proton/payments/core/api/api';
+import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { UserModel } from '@proton/shared/lib/interfaces';

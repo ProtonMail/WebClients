@@ -1,4 +1,5 @@
-import type { Invoice, Subscription } from '@proton/payments';
+import type { Invoice } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 /* TODO: add all server events
  * in this type definition - it only
  * specifies the keys we're consuming

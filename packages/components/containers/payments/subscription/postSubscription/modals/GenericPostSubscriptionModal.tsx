@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getSubscriptionPlanTitle } from '@proton/payments';
+import { getSubscriptionPlanTitle } from '@proton/payments/core/subscription/helpers';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';

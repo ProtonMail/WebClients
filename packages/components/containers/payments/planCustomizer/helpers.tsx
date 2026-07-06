@@ -1,16 +1,11 @@
-import type { FreeSubscription } from '@proton/payments';
-import {
-    AddonFeatureLimitKeyMapping,
-    CYCLE,
-    type Currency,
-    type PlanIDs,
-    type PlansMap,
-    SelectedPlan,
-    type Subscription,
-    getPlanNameFromIDs,
-    getPlansWithAddons,
-    setQuantity,
-} from '@proton/payments';
+import { AddonFeatureLimitKeyMapping, CYCLE } from '@proton/payments/core/constants';
+import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { getPlansWithAddons } from '@proton/payments/core/plan/addons';
+import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
+import { setQuantity } from '@proton/payments/core/planIDs';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 
 import { getForcedFeatureLimitations } from './forced-addon-limits';
 

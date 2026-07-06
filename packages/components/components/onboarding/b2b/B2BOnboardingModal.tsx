@@ -10,7 +10,7 @@ import OnboardingSetupOrgStep from '@proton/components/components/onboarding/b2b
 import OnboardingTrialStep from '@proton/components/components/onboarding/b2b/steps/OnboardingTrialStep';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';

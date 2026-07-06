@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 

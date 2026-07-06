@@ -1,4 +1,4 @@
-import type { PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
 import type { Product } from '@proton/shared/lib/ProductEnum';
 import type {
     ORGANIZATION_POLICY_ENFORCED,

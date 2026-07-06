@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { UserType } from '@proton/shared/lib/interfaces';

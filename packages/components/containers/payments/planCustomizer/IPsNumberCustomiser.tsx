@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { type SelectedPlan, getIsVpnPlan } from '@proton/payments';
+import { getIsVpnPlan } from '@proton/payments/core/plan/helpers';
+import type { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';

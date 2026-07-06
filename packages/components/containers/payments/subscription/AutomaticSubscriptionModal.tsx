@@ -18,20 +18,14 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import type { FreeSubscription, PLANS } from '@proton/payments';
-import {
-    CURRENCIES,
-    type Currency,
-    DEFAULT_CYCLE,
-    type PaymentStatus,
-    type Plan,
-    SelectedPlan,
-    type Subscription,
-    fixPlanName,
-    getPlanName,
-    getPlansMap,
-    getValidCycle,
-} from '@proton/payments';
+import { CURRENCIES, DEFAULT_CYCLE, type PLANS } from '@proton/payments/core/constants';
+import { fixPlanName } from '@proton/payments/core/helpers';
+import type { Currency, FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { getPlanName, getValidCycle } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

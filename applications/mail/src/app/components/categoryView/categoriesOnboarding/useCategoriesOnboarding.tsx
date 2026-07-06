@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 

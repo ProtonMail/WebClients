@@ -1,4 +1,5 @@
-import { PLAN_TYPES, Renew } from '@proton/payments';
+import { PLAN_TYPES } from '@proton/payments/core/constants';
+import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 

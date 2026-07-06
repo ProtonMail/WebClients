@@ -5,7 +5,8 @@ import type {
     OutgoingDelegatedAccessOutput,
 } from '@proton/account/delegatedAccess/interface';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
-import type { Invoice, SavedPaymentMethod, Subscription } from '@proton/payments';
+import type { Invoice, SavedPaymentMethod } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type {

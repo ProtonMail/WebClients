@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import Time from '@proton/components/components/time/Time';
-import { PLANS, PLAN_NAMES, hasBundle } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import { hasBundle, isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

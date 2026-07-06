@@ -9,7 +9,7 @@ import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, Price } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoUpsellModalPlus from '@proton/styles/assets/img/lumo/lumo-upsell-modal-plus.svg';
 import lumoUpsellModalBusiness from '@proton/styles/assets/img/lumo/lumo-upsell-modal-pro.svg';

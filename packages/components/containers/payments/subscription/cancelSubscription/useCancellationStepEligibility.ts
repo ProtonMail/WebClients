@@ -4,7 +4,11 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { getAvailableSubscriptionActions, hasMigrationDiscount, hasPassLaunchOffer } from '@proton/payments';
+import {
+    getAvailableSubscriptionActions,
+    hasMigrationDiscount,
+    hasPassLaunchOffer,
+} from '@proton/payments/core/subscription/helpers';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';

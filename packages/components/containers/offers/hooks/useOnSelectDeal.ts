@@ -1,6 +1,7 @@
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
-import { type Currency, getPlanNameFromIDs } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
+import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';

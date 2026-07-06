@@ -11,10 +11,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
 import useConfig from '@proton/components/hooks/useConfig';
-import { Renew, isTrial } from '@proton/payments';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import { isReferralTrial, isTrial } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 

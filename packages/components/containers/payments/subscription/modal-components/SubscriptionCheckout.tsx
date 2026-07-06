@@ -11,21 +11,18 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import type { FreeSubscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
-import {
-    type Currency,
-    type Cycle,
-    type FreePlanDefault,
-    type FullPlansMap,
-    type Plan,
-    type PlanIDs,
-    SelectedPlan,
-    type Subscription,
-    getPlanFromPlanIDs,
-} from '@proton/payments';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import type { TaxCountryHook } from '@proton/payments/ui';
+import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import type {
+    FullPlansMap,
+    Subscription,
+    SubscriptionCheckForbiddenReason,
+    SubscriptionEstimation,
+} from '@proton/payments/core/subscription/interface';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import type { TaxCountryHook } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';

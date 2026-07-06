@@ -24,21 +24,18 @@ import SubscriptionContainer from '@proton/components/containers/payments/subscr
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
+import { fixPlanName } from '@proton/payments/core/helpers';
+import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
-    CURRENCIES,
-    type Currency,
-    FREE_PLAN,
-    PLANS,
-    PLAN_TYPES,
-    type PaymentStatus,
-    fixPlanName,
     getAvailableSubscriptionActions,
     getHas2025OfferCoupon,
     getPlan,
     getUpgradedPlan,
     getValidCycle,
-} from '@proton/payments';
-import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+} from '@proton/payments/core/subscription/helpers';
 import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';

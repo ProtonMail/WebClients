@@ -7,7 +7,7 @@ import Price from '@proton/components/components/price/Price';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import type { IconName } from '@proton/icons/types';
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
 type ConditionalProps =

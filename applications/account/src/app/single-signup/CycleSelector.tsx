@@ -6,8 +6,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { PassLogo, Radio, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { CYCLE, type Currency, type CycleMapping, PLANS, type PlanIDs } from '@proton/payments';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, CycleMapping, PlanIDs } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
 import SaveLabel2 from './SaveLabel2';

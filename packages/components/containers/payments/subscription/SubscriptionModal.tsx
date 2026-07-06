@@ -8,18 +8,12 @@ import { usePaidUsersNudgeTelemetry } from '@proton/components/components/topnav
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import useConfig from '@proton/components/hooks/useConfig';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
-import {
-    COUPON_CODES,
-    type FreePlanDefault,
-    type FreeSubscription,
-    PLANS,
-    type PaymentStatus,
-    type Plan,
-    type Subscription,
-    getAvailableSubscriptionActions,
-    getHas2025OfferCoupon,
-} from '@proton/payments';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
+import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import { getAvailableSubscriptionActions, getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';

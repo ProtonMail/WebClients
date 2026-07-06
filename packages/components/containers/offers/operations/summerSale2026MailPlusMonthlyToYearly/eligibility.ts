@@ -1,5 +1,6 @@
-import type { Currency, Subscription } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 import { hasIntentionalScheduledModification } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';

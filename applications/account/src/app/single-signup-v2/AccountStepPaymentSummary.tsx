@@ -5,17 +5,13 @@ import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import {
-    COUPON_CODES,
-    type Plan,
-    SubscriptionMode,
-    TRIAL_DURATION_DAYS,
-    TaxInclusive,
-    getHas2025OfferCoupon,
-    getIsB2BAudienceFromPlan,
-} from '@proton/payments';
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
-import { InclusiveVatText } from '@proton/payments/ui';
+import { COUPON_CODES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { SubscriptionMode, TaxInclusive } from '@proton/payments/core/subscription/constants';
+import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
+import { InclusiveVatText } from '@proton/payments/ui/billing-address/components/VatText';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import {

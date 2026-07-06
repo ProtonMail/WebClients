@@ -9,7 +9,7 @@ import {
     getStorageFeature,
     getVersionHistory,
 } from '@proton/components/containers/payments/features/drive';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';

@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Price from '@proton/components/components/price/Price';
-import { type Currency, PAYMENT_METHOD_TYPES, type PlainPaymentMethodType } from '@proton/payments';
 import {
     getMaxCreditAmount,
     getMinPaypalAmountChargebee,
     getMinPaypalAmountInhouse,
 } from '@proton/payments/core/amount-limits';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { Currency, PlainPaymentMethodType } from '@proton/payments/core/interface';
 
 interface Props {
     amount: number;

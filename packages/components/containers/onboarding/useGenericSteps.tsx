@@ -4,7 +4,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
-import { hasVisionary } from '@proton/payments';
+import { hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
@@ -16,7 +16,8 @@ import type { OnboardingStepRenderCallback } from './interface';
 type OnboardingModalProps = React.ComponentProps<typeof OnboardingModal>;
 
 interface UseGenericStepsProps
-    extends OnboardingStepRenderCallback,
+    extends
+        OnboardingStepRenderCallback,
         Pick<OnboardingModalProps, 'hideDiscoverApps' | 'hideOrganizationSetup' | 'genericSteps'> {}
 
 const useGenericSteps = ({

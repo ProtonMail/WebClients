@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, type PlansMap } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME, CALENDAR_APP_NAME, DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

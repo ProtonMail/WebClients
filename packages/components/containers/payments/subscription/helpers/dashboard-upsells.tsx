@@ -5,21 +5,14 @@ import { c } from 'ttag';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
+import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import { getIsB2BAudienceFromPlan, isForbiddenModification, isPlan } from '@proton/payments/core/plan/helpers';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
+import { getPrice } from '@proton/payments/core/price-helpers';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
-    ADDON_PREFIXES,
-    CYCLE,
-    type Currency,
-    type Cycle,
-    type FreePlanDefault,
-    type FullPlansMap,
-    PLANS,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
-    SelectedPlan,
     getHasConsumerVpnPlan,
-    getIsB2BAudienceFromPlan,
-    getPrice,
     hasBundle,
     hasBundlePro,
     hasBundlePro2024,
@@ -33,6 +26,7 @@ import {
     hasMail,
     hasMailBusiness,
     hasMailPro,
+    hasMeetBusiness,
     hasPass,
     hasPassFamily,
     hasVPN2024,
@@ -40,14 +34,15 @@ import {
     hasVPNPassProfessional,
     hasVpnBusiness,
     hasVpnPro,
-    isForbiddenModification,
-    isPlan,
     isTrial,
-} from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
-import { type PreloadedPaymentsContextType, isPaymentsPreloaded } from '@proton/payments/ui';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+} from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import {
+    type PreloadedPaymentsContextType,
+    isPaymentsPreloaded,
+    usePayments,
+} from '@proton/payments/ui/context/PaymentContext';
 import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

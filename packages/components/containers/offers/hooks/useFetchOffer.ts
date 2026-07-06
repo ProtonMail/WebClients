@@ -5,7 +5,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { type Currency, getPlansMap } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 
 import { fetchDealPrices } from '../helpers/dealPrices';

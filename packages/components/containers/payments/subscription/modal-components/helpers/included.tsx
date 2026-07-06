@@ -1,13 +1,9 @@
 import { c } from 'ttag';
 
-import {
-    type FreePlanDefault,
-    PLANS,
-    type PlanIDs,
-    type PlansMap,
-    hasLumoAddonFromPlanIDs,
-    hasMeetAddonFromPlanIDs,
-} from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

@@ -1,5 +1,6 @@
 import type { AppIntent } from '@proton/components/containers/login/interface';
-import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
 import { APPS } from '@proton/shared/lib/constants';
 
 import getAvailablePlansWithCycles from '../../../helpers/getAvailablePlansWithCycles';

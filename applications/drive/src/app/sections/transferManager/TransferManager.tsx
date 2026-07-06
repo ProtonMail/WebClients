@@ -5,7 +5,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
 import { uploadManager } from '@proton/drive/modules/upload';
-import type { FreeSubscription, Subscription } from '@proton/payments';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import clsx from '@proton/utils/clsx';
 
 import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';

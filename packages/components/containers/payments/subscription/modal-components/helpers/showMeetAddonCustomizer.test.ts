@@ -1,4 +1,4 @@
-import { ADDON_NAMES, PLANS } from '@proton/payments/index';
+import { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 
 import { showMeetAddonCustomizer } from './showMeetAddonCustomizer';
 

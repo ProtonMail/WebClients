@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { Price, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { PLANS } from '@proton/payments';
-import { usePaymentOptimistic } from '@proton/payments/ui';
+import { PLANS } from '@proton/payments/core/constants';
+import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 
 import { getDriveMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
 import { SaveBadge } from '../SaveBadge/SaveBadge';

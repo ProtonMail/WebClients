@@ -1,5 +1,6 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { CYCLE, type SelectedPlan } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
+import type { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({

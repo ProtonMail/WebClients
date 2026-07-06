@@ -1,15 +1,16 @@
-import type { PlanIDs } from '@proton/payments';
 import {
     ADDON_NAMES,
     CYCLE,
     FREE_SUBSCRIPTION,
     PLANS,
-    Renew,
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
     TRIAL_MAX_SCRIBE_SEATS,
     TRIAL_MAX_USERS,
-} from '@proton/payments';
+} from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
@@ -25,7 +26,6 @@ beforeEach(() => {
 
 describe('computeAddonCustomizerItems', () => {
     const buildNormalizedPlan = (planIDs: PlanIDs) => {
-        const { SelectedPlan } = jest.requireActual('@proton/payments');
         return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
     };
 
@@ -153,7 +153,6 @@ describe('computeAddonCustomizerItems', () => {
 
 describe('getAddonCustomizerProperties', () => {
     const buildSelectedPlan = (planIDs: PlanIDs) => {
-        const { SelectedPlan } = jest.requireActual('@proton/payments');
         return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
     };
 
@@ -396,7 +395,6 @@ describe('getAddonCustomizerProperties', () => {
 
 describe('getAddonCustomizerProperties – non-trial mode', () => {
     const buildSelectedPlan = (planIDs: PlanIDs) => {
-        const { SelectedPlan } = jest.requireActual('@proton/payments');
         return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
     };
 
@@ -425,7 +423,6 @@ describe('getAddonCustomizerProperties – non-trial mode', () => {
 
 describe('getAddonCustomizerProperties – trial mode', () => {
     const buildSelectedPlan = (planIDs: PlanIDs) => {
-        const { SelectedPlan } = jest.requireActual('@proton/payments');
         return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
     };
 

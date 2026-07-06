@@ -20,7 +20,7 @@ import {
     useModalState,
     useToggle,
 } from '@proton/components';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
 

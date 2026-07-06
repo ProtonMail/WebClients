@@ -4,7 +4,7 @@ import { organizationThunk } from '@proton/account/organization';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { PASS_ANDROID_URL, PASS_DOWNLOAD_URL, PASS_IOS_URL, PASS_WEB_APP_URL } from '@proton/pass/constants';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 import logoPass from '@proton/styles/assets/img/onboarding/feature_tour-logo-pass.svg';

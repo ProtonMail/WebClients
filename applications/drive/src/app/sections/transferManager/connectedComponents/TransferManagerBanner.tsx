@@ -7,8 +7,9 @@ import { SUBSCRIPTION_STEPS } from '@proton/components';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
-import { hasDuo, hasFamily, hasVisionary } from '@proton/payments';
-import type { FreeSubscription, Subscription } from '@proton/payments';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import { hasDuo, hasFamily, hasVisionary } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

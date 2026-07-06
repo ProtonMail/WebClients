@@ -2,7 +2,8 @@ import { act, screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getModelState } from '@proton/account/test';
-import { PLANS, SubscriptionPlatform } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';

@@ -3,8 +3,14 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { IconName } from '@proton/icons/types';
-import type { AvailablePaymentMethod, PaymentMethodFlow, SavedPaymentMethod, SepaDetails } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { isSignupFlow } from '@proton/payments/core/helpers';
+import type {
+    AvailablePaymentMethod,
+    PaymentMethodFlow,
+    SavedPaymentMethod,
+    SepaDetails,
+} from '@proton/payments/core/interface';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 

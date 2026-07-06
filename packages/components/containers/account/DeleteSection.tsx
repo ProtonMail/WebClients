@@ -9,7 +9,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useConfig from '@proton/components/hooks/useConfig';
-import { hasMigrationDiscount, hasVisionary } from '@proton/payments';
+import { hasMigrationDiscount, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';

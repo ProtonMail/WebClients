@@ -9,7 +9,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode, useFeature } from '@proton/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 

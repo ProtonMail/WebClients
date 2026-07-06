@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import type { Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';

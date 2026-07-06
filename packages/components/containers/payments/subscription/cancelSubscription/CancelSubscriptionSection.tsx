@@ -11,7 +11,7 @@ import useCancellationFlow from '@proton/components/containers/payments/subscrip
 import credits from '@proton/components/containers/referral/components/TrialInfo/credits.svg';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 

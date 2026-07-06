@@ -7,15 +7,10 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { SUBSCRIPTION_STEPS } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import {
-    CYCLE,
-    PLANS,
-    PLAN_NAMES,
-    type Subscription,
-    getAddonsFromIDs,
-    getHasConsumerVpnPlan,
-    getPlanIDs,
-} from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getAddonsFromIDs } from '@proton/payments/core/planIDs';
+import { getHasConsumerVpnPlan, getPlanIDs } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';

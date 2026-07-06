@@ -18,7 +18,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { IcPlusCircleFilled } from '@proton/icons/icons/IcPlusCircleFilled';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { MAX_IPS_ADDON } from '@proton/payments';
+import { MAX_IPS_ADDON } from '@proton/payments/core/constants';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import range from '@proton/utils/range';
 

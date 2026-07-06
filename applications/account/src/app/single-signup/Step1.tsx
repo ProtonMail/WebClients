@@ -29,35 +29,27 @@ import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import type {
-    ExtendedTokenPayment,
-    PaymentProcessorHook,
-    SubscriptionEstimation,
-    TokenPayment,
-} from '@proton/payments';
-import {
-    COUPON_CODES,
-    CYCLE,
-    type Currency,
-    type Cycle,
-    type CycleMapping,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    type Plan,
-    type PlanIDs,
-    type StrictPlan,
-    SubscriptionMode,
-    TRIAL_DURATION_DAYS,
-    getHas2025OfferCoupon,
-    getPlanFromPlanIDs,
-    getPlanNameFromIDs,
-    isV5PaymentToken,
-    v5PaymentTokenToLegacyPaymentToken,
-} from '@proton/payments';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { COUPON_CODES, CYCLE, PAYMENT_METHOD_TYPES, PLANS, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import type {
+    Currency,
+    Cycle,
+    CycleMapping,
+    ExtendedTokenPayment,
+    PlanIDs,
+    TokenPayment,
+} from '@proton/payments/core/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { isV5PaymentToken } from '@proton/payments/core/type-guards';
+import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
@@ -65,8 +57,8 @@ import type {
     EstimationChangePayload,
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { PayButton } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { PayButton } from '@proton/payments/ui/components/PayButton';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {

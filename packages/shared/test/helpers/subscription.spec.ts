@@ -1,14 +1,9 @@
 import { addWeeks, subDays } from 'date-fns';
 
+import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Plan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import {
-    ADDON_NAMES,
-    COUPON_CODES,
-    CYCLE,
-    PLANS,
-    type Plan,
-    type Subscription,
-    type SubscriptionPlan,
-    SubscriptionPlatform,
     allCycles,
     customCycles,
     getNormalCycleFromCustomCycle,
@@ -22,7 +17,8 @@ import {
     isTrialExpired,
     regularCycles,
     willTrialExpireInLessThan1Week,
-} from '@proton/payments';
+} from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
 let subscription: Subscription;

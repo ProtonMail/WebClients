@@ -14,7 +14,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
-import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments';
+import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments/core/subscription/helpers';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';

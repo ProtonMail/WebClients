@@ -10,7 +10,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
