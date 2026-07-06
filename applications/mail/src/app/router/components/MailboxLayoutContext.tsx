@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type RefObject, createContext, useContext, useRef } from 'react';
+import { type PropsWithChildren, type RefObject, createContext, useContext, useMemo, useRef } from 'react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -53,22 +53,24 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
     const isInDeletedFolder = currentLabelID === MAILBOX_LABEL_IDS.SOFT_DELETED;
     const isConversationGroupingEnabled = isInDeletedFolder ? false : mailSettings.ViewMode === VIEW_MODE.GROUP;
 
-    return (
-        <MailboxLayoutContext.Provider
-            value={{
-                labelDropdownToggleRef,
-                moveDropdownToggleRef,
-                messageContainerRef,
-                mainAreaRef,
-                resizeAreaRef,
-                listContainerRef,
-                scrollContainerRef,
-                isColumnModeActive: isColumnMode(mailSettings) && !forceRowMode,
-                isColumnLayoutPreferred: isColumnMode(mailSettings) || forceRowMode,
-                isConversationGroupingEnabled,
-            }}
-        >
-            {children}
-        </MailboxLayoutContext.Provider>
+    const isColumnModeActive = isColumnMode(mailSettings) && !forceRowMode;
+    const isColumnLayoutPreferred = isColumnMode(mailSettings) || forceRowMode;
+
+    const value = useMemo<MailboxProviderProps>(
+        () => ({
+            labelDropdownToggleRef,
+            moveDropdownToggleRef,
+            messageContainerRef,
+            mainAreaRef,
+            resizeAreaRef,
+            listContainerRef,
+            scrollContainerRef,
+            isColumnModeActive,
+            isColumnLayoutPreferred,
+            isConversationGroupingEnabled,
+        }),
+        [isColumnModeActive, isColumnLayoutPreferred, isConversationGroupingEnabled]
     );
+
+    return <MailboxLayoutContext.Provider value={value}>{children}</MailboxLayoutContext.Provider>;
 };
