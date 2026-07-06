@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import { ssfFormat, ssfFormatColor } from '@rowsncolumns/utils'
 import { createStringifier } from '../../../stringifier'
 import { useUI } from '../../../ui-store'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import * as Ariakit from '@ariakit/react'
 import { Button, FormGroup, FormLabel, Input } from '../../Sidebar/shared'
 import {
