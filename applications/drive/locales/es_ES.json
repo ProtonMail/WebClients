@@ -1305,6 +1305,12 @@
       ],
       "Send Feedback": [
         "Enviar comentarios"
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
+      ],
+      "Report abuse": [
+        "Denunciar abuso"
       ]
     },
     "Action: Docs": {
@@ -7333,6 +7339,49 @@
       ],
       "Each code can only be used once": [
         "Cada código solo se puede usar una vez"
+      ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbumes"
+      ],
+      "${ files } file": [
+        "${ files } archivo",
+        "${ files } archivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetas"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Por la presente confirmo que, de buena fe, la información y las declaraciones contenidas en el informe son correctas y completas."
+      ],
+      "Indexed ${ first }": [
+        "Indexado ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexados ${ first } y ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexados ${ first }, ${ second } y ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexados ${ first }, ${ second }, ${ third } y ${ fourth }"
+      ],
+      "Preparing download": [
+        "Preparando la descarga"
+      ],
+      "Preparing…": [
+        "Preparando…"
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Tus archivos se están reindexando. Puedes seguir buscando; los resultados pueden estar incompletos hasta que termine. Te avisaremos cuando haya terminado."
       ]
     },
     "info": {
@@ -14450,6 +14499,17 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creado"
+      ],
+      "Type": [
+        "Tipo"
       ]
     }
   }

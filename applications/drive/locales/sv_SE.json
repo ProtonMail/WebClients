@@ -7335,7 +7335,13 @@
         "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ],
       "${ MEET_APP_NAME } seats": [
-        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
+      ],
+      "Re-indexing in progress": [
+        "Omindexering pågår"
       ]
     },
     "info": {
@@ -8201,6 +8207,9 @@
       ],
       "Main reason for cancelling": [
         "Huvudsaklig anledning till att avbryta"
+      ],
+      "Indexing": [
+        "Indexerar"
       ]
     },
     "Label for contact group color": {
@@ -13986,6 +13995,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Omedelbar AI-assistans, mänsklig expert nära till hands!"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -14423,6 +14435,26 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-användarplatser under provperioden."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }
