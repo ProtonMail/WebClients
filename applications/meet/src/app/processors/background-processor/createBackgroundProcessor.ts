@@ -4,15 +4,37 @@ import type { LocalVideoTrack } from 'livekit-client';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { isLowEndDevice } from '../../utils/isLowEndDevice';
-import {
-    BackgroundBlur,
-    type BackgroundBlurProcessor,
-    type BackgroundProcessorOptions,
-    preloadBackgroundBlurAssets,
+import type {
+    BackgroundBlur as BackgroundBlurImpl,
+    preloadBackgroundBlurAssets as preloadBackgroundBlurAssetsImpl,
 } from './MulticlassBackgroundProcessor';
+import { getConfidenceBoostConfig } from './getConfidenceBoostConfig';
+import type { TunableConstantsOverrides } from './tunableConstants';
+import type { BackgroundBlurProcessor, BackgroundProcessorOptions, BackgroundProcessorVersion } from './types';
 
 const SIMPLE_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_segmenter.tflite';
 const MULTICLASS_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_multiclass_256x256.tflite';
+
+const DEFAULT_BACKGROUND_PROCESSOR_VERSION: BackgroundProcessorVersion = 'next';
+
+type BackgroundProcessorModule = {
+    BackgroundBlur: typeof BackgroundBlurImpl;
+    preloadBackgroundBlurAssets: typeof preloadBackgroundBlurAssetsImpl;
+};
+
+const loadBackgroundProcessorImplementation = async (
+    version: BackgroundProcessorVersion
+): Promise<BackgroundProcessorModule> => {
+    if (version === 'current') {
+        try {
+            return await import('./current/MulticlassBackgroundProcessor');
+        } catch {
+            return import('./MulticlassBackgroundProcessor');
+        }
+    }
+
+    return import('./MulticlassBackgroundProcessor');
+};
 
 const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): BackgroundProcessorOptions => ({
     assetPaths: {
@@ -21,35 +43,46 @@ const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): Backgrou
     },
 });
 
-export const createBackgroundProcessor = (isUseSimpleSegmentationEnabled: boolean): BackgroundBlurProcessor | null => {
+export const createBackgroundProcessor = async (
+    forceSimpleSegmentation = false,
+    version: BackgroundProcessorVersion = DEFAULT_BACKGROUND_PROCESSOR_VERSION,
+    constantOverrides?: TunableConstantsOverrides
+): Promise<BackgroundBlurProcessor | null> => {
     if (!supportsBackgroundProcessors() || isMobile()) {
         return null;
     }
 
     try {
+        const { BackgroundBlur } = await loadBackgroundProcessorImplementation(version);
         const lowEndDevice = isLowEndDevice();
-        const useSimpleSegmentation = lowEndDevice || isUseSimpleSegmentationEnabled;
+        const useSimpleSegmentation = lowEndDevice || forceSimpleSegmentation;
 
         const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
         const modernProcessorsSupported = supportsModernBackgroundProcessors();
         const dynamicProcessorOptions = { maxFps: modernProcessorsSupported ? 30 : 20 };
-        return BackgroundBlur(60, undefined, {
+        const blurRadius = typeof constantOverrides?.blurRadius === 'number' ? constantOverrides.blurRadius : 60;
+        return BackgroundBlur(blurRadius, undefined, {
             ...backgroundProcessorOptions,
             ...dynamicProcessorOptions,
+            ...getConfidenceBoostConfig(),
             isLowEndDevice: lowEndDevice,
+            constantOverrides,
         });
     } catch {
         return null;
     }
 };
 
-export const preloadBackgroundProcessorAssets = async (isUseSimpleSegmentationEnabled: boolean) => {
+export const preloadBackgroundProcessorAssets = async (
+    version: BackgroundProcessorVersion = DEFAULT_BACKGROUND_PROCESSOR_VERSION
+) => {
     if (!supportsBackgroundProcessors() || isMobile()) {
         return;
     }
 
     try {
-        const useSimpleSegmentation = isLowEndDevice() || isUseSimpleSegmentationEnabled;
+        const { preloadBackgroundBlurAssets } = await loadBackgroundProcessorImplementation(version);
+        const useSimpleSegmentation = isLowEndDevice();
         const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
         await preloadBackgroundBlurAssets(backgroundProcessorOptions.assetPaths);
     } catch (error) {

@@ -6,18 +6,18 @@ import { createLocalVideoTrack } from 'livekit-client';
 import { isChrome, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import type { BackgroundBlurProcessor } from '../../processors/background-processor/MulticlassBackgroundProcessor';
 import {
     createBackgroundProcessor,
     ensureBackgroundBlurProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
+import type { BackgroundBlurProcessor, BackgroundProcessorVersion } from '../../processors/background-processor/types';
 
 interface UseCameraPreviewParams {
     selectedCameraId: string;
     facingMode: 'environment' | 'user';
     isBackgroundBlurSupported: boolean;
     backgroundBlur: boolean;
-    isUseSimpleSegmentationEnabled: boolean;
+    backgroundProcessorVersion: BackgroundProcessorVersion;
     room: Room;
 }
 
@@ -26,13 +26,14 @@ export const useCameraPreview = ({
     facingMode,
     isBackgroundBlurSupported,
     backgroundBlur,
-    isUseSimpleSegmentationEnabled,
+    backgroundProcessorVersion,
     room,
 }: UseCameraPreviewParams) => {
     const previewTrackRef = useRef<LocalVideoTrack | null>(null);
     const processorAttachInProgress = useRef(false);
 
     const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
+    const backgroundProcessorCreationRequestIdRef = useRef(0);
 
     const cleanupPreviewTrack = async () => {
         const track = previewTrackRef.current;
@@ -59,7 +60,16 @@ export const useCameraPreview = ({
             const videoTrack = previewTrackRef.current;
 
             if (!backgroundBlurProcessorInstanceRef.current) {
-                backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor(isUseSimpleSegmentationEnabled);
+                const requestId = ++backgroundProcessorCreationRequestIdRef.current;
+                const processor = await createBackgroundProcessor(false, backgroundProcessorVersion);
+
+                if (requestId !== backgroundProcessorCreationRequestIdRef.current) {
+                    // Deps changed while awaiting: discard this now-stale processor.
+                    void processor?.destroy?.();
+                    return;
+                }
+
+                backgroundBlurProcessorInstanceRef.current = processor;
             }
 
             if (!backgroundBlurProcessorInstanceRef.current || !videoTrack || !enable) {
@@ -82,7 +92,7 @@ export const useCameraPreview = ({
                 processorAttachInProgress.current = false;
             }
         },
-        [isUseSimpleSegmentationEnabled]
+        [backgroundProcessorVersion]
     );
 
     const handlePreviewCameraToggle = async (videoElement: HTMLVideoElement) => {
