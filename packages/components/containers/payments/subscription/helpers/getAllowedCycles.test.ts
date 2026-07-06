@@ -1,15 +1,8 @@
-import {
-    ADDON_NAMES,
-    CYCLE,
-    type Currency,
-    FREE_SUBSCRIPTION,
-    PLANS,
-    type Plan,
-    type PlanIDs,
-    getDefaultMainCurrency,
-    getPlansMap,
-    isRegionalCurrency,
-} from '@proton/payments';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { getDefaultMainCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/testing/data/payments/data-plans';

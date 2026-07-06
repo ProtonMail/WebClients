@@ -1,5 +1,6 @@
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, SelectedPlan } from '@proton/payments';
-import type { SubscriptionCheckForbiddenReason } from '@proton/payments/index';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import type { SubscriptionCheckForbiddenReason } from '@proton/payments/core/subscription/interface';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 

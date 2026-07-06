@@ -8,17 +8,15 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
-    CYCLE,
-    PLANS,
-    PLAN_NAMES,
     getPlanIDs,
     getPlanTitle,
-    isFreeSubscription,
     isTrial,
     isTrialExpired,
     willTrialExpireInLessThan1Week,
-} from '@proton/payments';
+} from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,

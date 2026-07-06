@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import type { SavedPaymentMethod } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { applyHOCs } from '@proton/testing/lib/context/hocs';
 import {
     withApi,

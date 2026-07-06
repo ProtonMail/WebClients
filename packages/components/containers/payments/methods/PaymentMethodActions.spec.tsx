@@ -5,9 +5,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { SavedPaymentMethod } from '@proton/payments';
-import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/payments/core/api/api';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { mockUseSubscription } from '@proton/testing/lib/mockUseSubscription';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
@@ -38,9 +38,9 @@ jest.mock('@proton/components/hooks/useApi', () => jest.fn().mockReturnValue(jes
 // Mocking Portal to render its children inline lets us exercise the real component.
 jest.mock('@proton/components/components/portal/Portal');
 
-jest.mock('@proton/payments/ui', () => ({
+jest.mock('@proton/payments/ui/containers/EditCardModal', () => ({
     __esModule: true,
-    EditCardModal: jest.fn().mockImplementation(() => <span>Edit Card Modal</span>),
+    default: jest.fn().mockImplementation(() => <span>Edit Card Modal</span>),
 }));
 
 beforeEach(() => {

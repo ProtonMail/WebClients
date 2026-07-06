@@ -5,7 +5,7 @@ import type { MockedFunction } from 'vitest';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNow } from '@proton/components/hooks/useNow';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 
 import { getInitialModel } from '../../functions/gatewayHelpers';
 import type { DeletedDedicatedIp, GatewayLocation } from '../../types/Gateway';
@@ -14,7 +14,7 @@ import { GatewayCountrySelection } from './GatewayCountrySelection';
 vi.mock('@proton/account/organization/hooks');
 vi.mock('@proton/account/subscription/hooks');
 vi.mock('@proton/components/hooks/useNow');
-vi.mock('@proton/payments/ui');
+vi.mock('@proton/payments/ui/hooks/useIsB2BTrial');
 vi.mock('ttag', () => ({
     c: () => ({
         t: (str: string) => str,

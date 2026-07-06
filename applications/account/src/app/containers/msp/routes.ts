@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { SectionConfig, SidebarConfig } from '@proton/components';
-import { hasMspEligiblePlan } from '@proton/payments';
+import { hasMspEligiblePlan } from '@proton/payments/core/subscription/helpers';
 
 import type { GeneralRouterParams } from '../../content/router-params';
 

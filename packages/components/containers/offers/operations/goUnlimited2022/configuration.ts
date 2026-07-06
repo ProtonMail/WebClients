@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 
 import { getUnlimitedDealFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';

@@ -1,4 +1,5 @@
-import { CYCLE, PLANS, type Plan } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getTestPlans } from '@proton/testing/data/payments/data-plans';
 

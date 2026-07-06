@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 
 const groupsCompatiblePlans = new Set([
     PLANS.MAIL_BUSINESS,

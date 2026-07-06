@@ -21,8 +21,8 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { SettingsLink, useConfig } from '@proton/components/index';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import { PLANS, PLAN_NAMES, getPlanTitle, isAutoRenewTrial } from '@proton/payments';
-import { isTrialRenewing } from '@proton/payments/core/subscription/helpers';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getPlanTitle, isAutoRenewTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

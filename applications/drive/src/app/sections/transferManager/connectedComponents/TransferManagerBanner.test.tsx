@@ -5,7 +5,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
-import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
+import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders/subscription';

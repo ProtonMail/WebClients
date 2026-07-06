@@ -1,12 +1,8 @@
-import {
-    CYCLE,
-    FREE_PLAN,
-    PLANS,
-    PLAN_TYPES,
-    type Subscription,
-    SubscriptionPlatform,
-    getPlansMap,
-} from '@proton/payments';
+import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';

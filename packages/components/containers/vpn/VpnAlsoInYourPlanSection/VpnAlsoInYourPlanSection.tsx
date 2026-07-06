@@ -25,19 +25,12 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import {
-    CYCLE,
-    FREE_PLAN,
-    type FreePlanDefault,
-    PLANS,
-    PLAN_NAMES,
-    type Plan,
-    getPlanByName,
-    getPlansMap,
-    getPricePerCycle,
-    getSubscriptionPlanTitle,
-    isManagedExternally,
-} from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import { getPricePerCycle } from '@proton/payments/core/price-helpers';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getSubscriptionPlanTitle, isManagedExternally } from '@proton/payments/core/subscription/helpers';
+import { getPlanByName, getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

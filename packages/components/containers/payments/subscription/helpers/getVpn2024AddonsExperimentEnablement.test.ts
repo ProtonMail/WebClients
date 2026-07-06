@@ -1,4 +1,5 @@
-import { ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
+import { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
 import type { FeatureFlagVariant, FeatureFlagsWithVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import {

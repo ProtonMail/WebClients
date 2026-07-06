@@ -13,7 +13,8 @@ import useApi from '@proton/components/hooks/useApi';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import { PLANS, type Plan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { FeatureItem } from '../components/FeatureItem';

@@ -1,12 +1,9 @@
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { hasLumoAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { getAddonNameByPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { hasNoExternallyManagedLumoSubscription } from '@proton/payments/core/subscription/helpers';
-import {
-    ADDON_PREFIXES,
-    type FreeSubscription,
-    type PlanIDs,
-    type Subscription,
-    hasLumoAddonFromPlanIDs,
-} from '@proton/payments/index';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 

@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 
-import type { Invoice, InvoiceOwner, InvoiceResponse } from '@proton/payments';
 import { type InvoiceDocument, queryInvoices } from '@proton/payments/core/api/api';
+import type { InvoiceOwner } from '@proton/payments/core/constants';
+import type { Invoice, InvoiceResponse } from '@proton/payments/core/interface';
 
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';

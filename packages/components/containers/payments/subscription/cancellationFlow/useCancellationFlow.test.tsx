@@ -1,6 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import { PLANS, PLAN_TYPES } from '@proton/payments';
+import { PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useCancellationFlow from './useCancellationFlow';

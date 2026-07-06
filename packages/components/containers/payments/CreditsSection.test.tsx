@@ -1,6 +1,7 @@
 import { getModelState } from '@proton/account/test';
 import { userDefault } from '@proton/components/hooks/helpers/test';
-import { CYCLE, PLANS, type Subscription } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { applyHOCs } from '@proton/testing/lib/context/hocs';

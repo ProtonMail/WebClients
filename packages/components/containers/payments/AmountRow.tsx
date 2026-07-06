@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import Field from '@proton/components/components/container/Field';
 import Label from '@proton/components/components/label/Label';
-import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments/core/interface';
 
 import PaymentSelector from './PaymentSelector';
 

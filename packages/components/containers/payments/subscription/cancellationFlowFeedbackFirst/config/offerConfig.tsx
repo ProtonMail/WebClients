@@ -12,7 +12,7 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTag } from '@proton/icons/icons/IcTag';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,

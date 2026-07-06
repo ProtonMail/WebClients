@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import type { ADDON_NAMES, CYCLE } from '@proton/payments';
-import { PLANS, PLAN_NAMES, isDomainAddon, isLumoAddon, isMeetAddon, isScribeAddon } from '@proton/payments';
+import { type ADDON_NAMES, type CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { isDomainAddon, isLumoAddon, isMeetAddon, isScribeAddon } from '@proton/payments/core/plan/addons';
 import { BRAND_NAME, LUMO_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';

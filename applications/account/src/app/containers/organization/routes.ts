@@ -3,21 +3,20 @@ import { c } from 'ttag';
 import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
+import { PLANS } from '@proton/payments/core/constants';
+import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
 import {
-    PLANS,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    getIsB2BAudienceFromPlan,
     hasAnyB2bBundle,
     hasBundleBiz2025,
+    hasMeet,
+    hasMeetBusiness,
     hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
-    planSupportsSSO,
-    upsellPlanSSO,
-} from '@proton/payments';
-import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,

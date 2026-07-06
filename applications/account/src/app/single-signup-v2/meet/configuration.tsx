@@ -27,8 +27,8 @@ import {
 import { getVPNWithNetShieldFeature } from '@proton/components/containers/payments/features/vpn';
 import { VISIONARY_WALLETS, getWallets } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import type { Plan } from '@proton/payments';
-import { CYCLE, PLANS, type PlansMap } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,

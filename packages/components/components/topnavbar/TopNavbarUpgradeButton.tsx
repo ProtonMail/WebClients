@@ -15,9 +15,8 @@ import { useRedirectToAccountApp } from '@proton/components/containers/desktop/u
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
-import { isTrial } from '@proton/payments';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import { isReferralTrial, isTrial } from '@proton/payments/core/subscription/helpers';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

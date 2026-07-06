@@ -12,7 +12,7 @@ import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/C
 import { useNow } from '@proton/components/hooks/useNow';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { CountryOptions } from '@proton/payments/core/countries';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { getLocationDisplayName, getLocationFromId, getLocationId } from '../../functions/gatewayHelpers';
