@@ -33,7 +33,7 @@ export const selectPendingScimMembersByGroup = createSelector(
             const groupMembers = groupMembersState[group.ID]?.value;
             if (groupMembers) {
                 pendingMembersByGroup[group.ID] = Object.values(groupMembers).filter((m) => {
-                    if (m.State !== GROUP_MEMBER_STATE.PENDING_ADMIN) {
+                    if (m.State !== GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL) {
                         return false;
                     }
 
