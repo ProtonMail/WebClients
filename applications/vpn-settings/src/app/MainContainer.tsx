@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route } from 'react-router';
-import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, Switch, useLocation } from 'react-router-dom';
 
 import OrganizationSettingsRouter from 'proton-account/src/app/containers/organization/OrganizationSettingsRouter';
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
@@ -35,7 +35,6 @@ import {
     DeleteSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
-    FreeUserLiveChatModal,
     GiftCodeSection,
     InviteSection,
     InvoicesSection,
@@ -87,10 +86,9 @@ import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscriptio
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
-import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
+import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
-import { useCanEnableChat } from '@proton/components/containers/zendesk/useCanEnableChat';
+import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useIsB2BTrial } from '@proton/payments/ui';
@@ -125,12 +123,9 @@ const MainContainer: FunctionComponent = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [permissions, loadingOrgPermissions] = useOrgPermissions();
     const [userSettings] = useUserSettings();
-    const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
-    const zendeskRef = useRef<ZendeskRef>();
-    const [showChat, setShowChat] = useState({ autoLaunch: false, render: false });
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
@@ -152,6 +147,9 @@ const MainContainer: FunctionComponent = () => {
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
+
+    // Zendesk Chat Integration
+    const { handleOpenZendeskChat, showZendeskChat, zendeskRef } = useZendeskChat(user);
 
     const vpnRoutes = getRoutes({
         user,
@@ -195,10 +193,8 @@ const MainContainer: FunctionComponent = () => {
         flags,
     });
 
-    const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
-    const [freeUserLiveChatModal, setFreeUserLiveChatModal, renderFreeUserLiveChatModal] = useModalState();
     const [{ ignoreOnboarding }] = useState(() => {
         return {
             ignoreOnboarding: location.pathname !== '/downloads',
@@ -212,24 +208,6 @@ const MainContainer: FunctionComponent = () => {
     };
 
     useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const hasChatRequest = !!searchParams.get('chat');
-        const isSelfChat = getIsSelfChat();
-
-        searchParams.delete('chat');
-        history.replace({
-            search: searchParams.toString(),
-        });
-        if (hasChatRequest || isSelfChat) {
-            if (canEnableChat) {
-                setShowChat({ autoLaunch: hasChatRequest, render: true });
-            } else {
-                setFreeUserLiveChatModal(true);
-            }
-        }
-    }, []);
-
-    useEffect(() => {
         setExpand(false);
     }, [location.pathname, location.hash]);
 
@@ -240,17 +218,10 @@ const MainContainer: FunctionComponent = () => {
         </TopBanners>
     );
 
-    const openChat = canEnableChat
-        ? () => {
-              setShowChat({ autoLaunch: true, render: true });
-              zendeskRef.current?.open();
-          }
-        : undefined;
-
     const header = (
         <PrivateHeader
             app={app}
-            userDropdown={<UserDropdown app={app} onOpenChat={openChat} />}
+            userDropdown={<UserDropdown app={app} onOpenChat={handleOpenZendeskChat} />}
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
@@ -306,7 +277,6 @@ const MainContainer: FunctionComponent = () => {
     return (
         <SubscriptionModalProvider app={app}>
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
-            {renderFreeUserLiveChatModal && <FreeUserLiveChatModal {...freeUserLiveChatModal} />}
             <Switch>
                 <Route path={VPN_TV_PATHS}>
                     <UnAuthenticated>
@@ -461,7 +431,7 @@ const MainContainer: FunctionComponent = () => {
                                         path=""
                                         organizationAppRoutes={organizationAppRoutes}
                                         redirect={redirect}
-                                        onOpenChat={openChat}
+                                        onOpenChat={handleOpenZendeskChat}
                                         user={user}
                                         organization={organization}
                                         subscription={subscription}
@@ -472,14 +442,14 @@ const MainContainer: FunctionComponent = () => {
                                 </Route>
                                 {redirect}
                             </Switch>
-                            {showChat.render && canEnableChat ? (
+                            {showZendeskChat.render && (
                                 <LiveChatZendesk
                                     tags={getZendeskTags(user, organization)}
                                     zendeskRef={zendeskRef}
                                     name={name || ''}
                                     email={email || ''}
                                     onLoaded={() => {
-                                        if (showChat.autoLaunch) {
+                                        if (showZendeskChat.autoLaunch) {
                                             zendeskRef.current?.open();
                                         }
                                     }}
@@ -488,7 +458,7 @@ const MainContainer: FunctionComponent = () => {
                                     }}
                                     locale={localeCode.replace('_', '-')}
                                 />
-                            ) : null}
+                            )}
                         </PrivateAppContainer>
                     </NavigationProvider>
                 </Route>
