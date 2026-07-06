@@ -8,7 +8,7 @@ export const CategoryTabError = () => {
     return (
         <div className="tab-container flex flex-nowrap items-center text-no-decoration color-hint border border-transparent">
             <IcCircleSlash className="shrink-0" />
-            <span className="tag-label tag-label-text">{c('Error message').t`Something went wrong`}</span>
+            <span className="tab-label">{c('Error message').t`Something went wrong`}</span>
         </div>
     );
 };
