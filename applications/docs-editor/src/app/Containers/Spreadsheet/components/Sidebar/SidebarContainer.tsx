@@ -1,5 +1,5 @@
 import React, { useMemo, useState, type PropsWithChildren } from 'react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { produce } from 'immer'
 import { useEvent } from '../utils'
 import { SidebarContext, type SidebarContextValue, type SidebarDialogStore } from './shared'

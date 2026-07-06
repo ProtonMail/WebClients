@@ -1,4 +1,4 @@
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import * as Ariakit from '@ariakit/react'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
