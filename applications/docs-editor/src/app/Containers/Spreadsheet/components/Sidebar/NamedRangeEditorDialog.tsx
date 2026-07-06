@@ -12,6 +12,7 @@ import {
   useSpreadsheetApi,
 } from '@rowsncolumns/spreadsheet'
 import { uuid } from '@rowsncolumns/utils'
+import { v4 as uuidv4 } from 'uuid'
 import * as Ariakit from '@ariakit/react'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
 import { Button, FormGroup, FormLabel, FormRadio, Input } from './shared'
@@ -20,7 +21,6 @@ import { Fragment, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { createStringifier } from '../../stringifier'
-import { GenerateUUID } from '@proton/docs-shared'
 import { useUI } from '../../ui-store'
 import { useEvent } from '../utils'
 
@@ -280,12 +280,12 @@ function NamedRanges() {
   const namedRange = useEditingNamedRange()
   const [previousNamedRange, setPreviousNamedRange] = useState(namedRange)
   const [state, setState] = useState<NamedRangesState>(() =>
-    namedRange ? { type: 'editNamedRange', namedRange, key: GenerateUUID() } : { type: 'list' },
+    namedRange ? { type: 'editNamedRange', namedRange, key: uuidv4() } : { type: 'list' },
   )
 
   /* Reset NamedRangeEditor when namedRange value changes */
   if (namedRange && namedRange !== previousNamedRange) {
-    setState({ type: 'editNamedRange', namedRange, key: GenerateUUID() })
+    setState({ type: 'editNamedRange', namedRange, key: uuidv4() })
     setPreviousNamedRange(namedRange)
   }
 
@@ -298,7 +298,7 @@ function NamedRanges() {
   })
   const setTypeToList = useEvent(() => setState({ type: 'list' }))
   const onSelectNamedRange = useEvent((namedRange: NamedRange) =>
-    setState({ type: 'editNamedRange', namedRange, key: GenerateUUID() }),
+    setState({ type: 'editNamedRange', namedRange, key: uuidv4() }),
   )
 
   return (
