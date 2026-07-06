@@ -1,9 +1,11 @@
 import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 import type { Folder, MailSettings } from '@proton/shared/lib/interfaces';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 
+import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from 'proton-mail/components/list/snooze/constant';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
@@ -83,7 +85,11 @@ export const shouldOpenConfirmationModalForConverversation = ({
         }
     }
 
-    if (isCustomFolder(destinationLabelID, folders || []) || isSystemFolder(destinationLabelID)) {
+    const hideSnoozeConfirmation = getItem(HIDE_SNOOZE_CONFIRMATION_LS_KEY) === 'true';
+    if (
+        !hideSnoozeConfirmation &&
+        (isCustomFolder(destinationLabelID, folders || []) || isSystemFolder(destinationLabelID))
+    ) {
         const hasSomeElementsInSnooze = elements.some(
             (element) => getContextNumMessages(element, MAILBOX_LABEL_IDS.SNOOZED) > 0
         );
