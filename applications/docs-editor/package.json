@@ -11,6 +11,7 @@
     "i18n:validate:context:web": "proton-i18n validate",
     "lint": "eslint --quiet",
     "lint:warning": "eslint",
+    "sheets:scan-imports": "node scripts/scan-spreadsheet-imports.mjs",
     "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --babelLoader --noLogicalScss",
     "test": "jest",
     "test:ci": "jest --runInBand --ci --coverage",
