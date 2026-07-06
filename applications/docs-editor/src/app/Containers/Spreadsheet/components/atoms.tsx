@@ -1,5 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { type ReactNode, forwardRef } from 'react'
 import { Icon } from './ui'
 
