@@ -332,12 +332,14 @@ enum MeetFeatureFlag {
     MeetDynacast = 'MeetDynacast',
     MeetSimulcast = 'MeetSimulcast',
     MeetMeetingTimeout = 'MeetMeetingTimeout',
-    MeetUseSimpleSegmentation = 'MeetUseSimpleSegmentation',
     MeetCoreWorker = 'MeetCoreWorker',
     MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
     EnableAccessibilityAnnouncements = 'EnableAccessibilityAnnouncements',
     MeetWaitingRoom = 'MeetWaitingRoom',
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
+    MeetBlurPersonConfidenceBoost = 'MeetBlurPersonConfidenceBoost',
+    MeetBlurMulticlassPersonConfidenceBoost = 'MeetBlurMulticlassPersonConfidenceBoost',
+    MeetUseNewBackgroundBlurVersion = 'MeetUseNewBackgroundBlurVersion',
 }
 
 enum LumoFeatureFlag {

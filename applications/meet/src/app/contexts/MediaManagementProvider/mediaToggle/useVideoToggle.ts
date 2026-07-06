@@ -17,11 +17,14 @@ import {
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
-import type { BackgroundBlurProcessor } from '../../../processors/background-processor/MulticlassBackgroundProcessor';
 import {
     createBackgroundProcessor,
     ensureBackgroundBlurProcessor,
 } from '../../../processors/background-processor/createBackgroundProcessor';
+import type {
+    BackgroundBlurProcessor,
+    BackgroundProcessorVersion,
+} from '../../../processors/background-processor/types';
 import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../../utils/backgroundBlurPersistance';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
@@ -34,10 +37,10 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
 
 interface UseVideoToggleParams {
     switchActiveDevice: SwitchActiveDevice;
-    isUseSimpleSegmentationEnabled: boolean;
+    backgroundProcessorVersion: BackgroundProcessorVersion;
 }
 
-export const useVideoToggle = ({ switchActiveDevice, isUseSimpleSegmentationEnabled }: UseVideoToggleParams) => {
+export const useVideoToggle = ({ switchActiveDevice, backgroundProcessorVersion }: UseVideoToggleParams) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const dispatch = useMeetDispatch();
@@ -288,12 +291,28 @@ export const useVideoToggle = ({ switchActiveDevice, isUseSimpleSegmentationEnab
     }, [localParticipant, backgroundBlur]);
 
     useEffect(() => {
-        backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor(isUseSimpleSegmentationEnabled);
+        let cancelled = false;
+
+        void (async () => {
+            const processor = await createBackgroundProcessor(false, backgroundProcessorVersion);
+
+            // The effect was cleaned up before the implementation finished loading,
+            // so tear down the freshly created processor instead of keeping it.
+            if (cancelled) {
+                processor?.disable?.();
+                void processor?.destroy?.();
+                return;
+            }
+
+            backgroundBlurProcessorInstanceRef.current = processor;
+        })();
+
         return () => {
+            cancelled = true;
             backgroundBlurProcessorInstanceRef.current?.disable?.();
             void backgroundBlurProcessorInstanceRef.current?.destroy?.();
         };
-    }, [isUseSimpleSegmentationEnabled]);
+    }, [backgroundProcessorVersion]);
 
     // Too frequent toggling can freeze the page completely
     const debouncedToggleBackgroundBlur = useMemo(

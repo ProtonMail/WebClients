@@ -8,26 +8,20 @@ import {
 
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 
+import type { BackgroundBlurProcessor, BackgroundProcessorOptions } from '../types';
 import {
     DEFAULT_ASSET_PATH,
     DEFAULT_MODEL_PATH,
-    MASK_CLOSING_MAX_RADIUS,
-    MASK_CLOSING_RADIUS,
-    MASK_CLOSING_RADIUS_LOW_END,
-    MASK_PASS_COPY,
-    MASK_PASS_DILATE,
-    MASK_PASS_ERODE,
-    MULTICLASS_PERSON_CONFIDENCE_BOOST,
-    PERSON_CONFIDENCE_BOOST,
+    DEFAULT_PERSON_MASK_THRESHOLD,
+    FRAGMENT_SHADER_SOURCE,
+    LOW_END_PERSON_MASK_THRESHOLD,
+    MASK_EDGE_BLUR_TEXEL_RADIUS,
     SEGMENTATION_INPUT_MAX_EDGE,
-    SEGMENTATION_INPUT_MAX_EDGE_HIGH_END,
+    TEXTURE_UNIT_MASK,
     TEXTURE_UNIT_OUTPUT,
     VERTEX_SHADER_SOURCE,
     VERTICES,
-    buildFragmentShaderSource,
 } from './constants';
-import { type TunableConstantsOverrides, pickWorkerOverrides } from './tunableConstants';
-import type { BackgroundBlurProcessor, BackgroundProcessorOptions } from './types';
 
 const CACHE_NAME = 'proton-meet-background-blur-v1';
 
@@ -125,38 +119,34 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
     isFirstFrame = true;
 
+    // Person/background decision threshold fed to the mask shader. Raised on
+    // low-end devices to erode the person region and hide the silhouette gap.
+    private readonly personMaskThreshold: number;
+
+    private maskTexture?: WebGLTexture | null;
     private maskGl?: WebGL2RenderingContext | null;
+    private maskTextureWidth = 0;
+    private maskTextureHeight = 0;
     private maskShaderProgram?: WebGLProgram | null;
     private maskVertexBuffer?: WebGLBuffer | null;
     private maskFramebuffer?: WebGLFramebuffer | null;
     private maskOutputTexture?: WebGLTexture | null;
-    // Ping-pong pair for the four morphological-close passes; only allocated
-    // when the closing radius is > 0.
-    private maskMorphTextureA?: WebGLTexture | null;
-    private maskMorphTextureB?: WebGLTexture | null;
-    // Morphological-close radius in mask texels, sized by device tier; 0 disables.
-    private readonly maskClosingRadius: number;
-    // Longest edge (px) the frame is downscaled to before segmentation.
-    private readonly segmentationInputMaxEdge: number;
+    private maskOutputTextureWidth = 0;
+    private maskOutputTextureHeight = 0;
     private lastCanvasWidth = 0;
     private lastCanvasHeight = 0;
     activeDelegate: 'GPU' | 'CPU' | undefined;
     private maskInputTexture?: WebGLTexture | null;
     private maskInputPbo?: WebGLBuffer | null;
-    // Dimensions of the currently allocated mask textures (input R32F and output
-    // RGBA8). Both are sized to the incoming mask and resized together, so a
-    // single pair gates every (re)allocation.
-    private maskWidth = 0;
-    private maskHeight = 0;
+    private pixelBufferWidth = 0;
+    private pixelBufferHeight = 0;
 
     // Cached GLSL locations. getUniformLocation/getAttribLocation are resolved
     // once after the program links instead of on every composited frame.
     private maskUniformLocations: {
+        texelSize: WebGLUniformLocation | null;
+        personThreshold: WebGLUniformLocation | null;
         mask: WebGLUniformLocation | null;
-        blurStep: WebGLUniformLocation | null;
-        invert: WebGLUniformLocation | null;
-        mode: WebGLUniformLocation | null;
-        radius: WebGLUniformLocation | null;
     } | null = null;
 
     private maskAttribLocations: {
@@ -189,50 +179,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     constructor(opts: BackgroundProcessorOptions) {
         super();
         this.options = opts;
-
-        const overrides = opts.constantOverrides;
-        const defaultClosingRadius = opts.isLowEndDevice ? MASK_CLOSING_RADIUS_LOW_END : MASK_CLOSING_RADIUS;
-        const defaultInputMaxEdge = opts.isLowEndDevice
-            ? SEGMENTATION_INPUT_MAX_EDGE
-            : SEGMENTATION_INPUT_MAX_EDGE_HIGH_END;
-
-        this.maskClosingRadius = MulticlassBackgroundProcessor.resolveInt(
-            overrides?.maskClosingRadius,
-            defaultClosingRadius,
-            0
-        );
-        this.segmentationInputMaxEdge = MulticlassBackgroundProcessor.resolveInt(
-            overrides?.segmentationInputMaxEdge,
-            defaultInputMaxEdge,
-            1
-        );
-        if (typeof overrides?.blurRadius === 'number' && Number.isFinite(overrides.blurRadius)) {
-            this.options.blurRadius = Math.max(0, Math.round(overrides.blurRadius));
-        }
-    }
-
-    private static resolveInt(override: number | undefined, fallback: number, min: number): number {
-        return typeof override === 'number' && Number.isFinite(override)
-            ? Math.max(min, Math.round(override))
-            : fallback;
-    }
-
-    // Compile-time morphology loop ceiling for the shader. Must be >= the active
-    // closing radius; keeps the production default as a floor.
-    private getShaderMaxRadius() {
-        return Math.max(MASK_CLOSING_MAX_RADIUS, this.maskClosingRadius);
-    }
-
-    // Worker-bound overrides for the init message. Person-confidence boosts keep
-    // their existing Unleash-sourced defaults (options.*), and any debug-tuner
-    // override wins over them.
-    private getWorkerConstantOverrides(): TunableConstantsOverrides {
-        return {
-            personConfidenceBoost: this.options.personConfidenceBoost ?? PERSON_CONFIDENCE_BOOST,
-            multiclassPersonConfidenceBoost:
-                this.options.multiclassPersonConfidenceBoost ?? MULTICLASS_PERSON_CONFIDENCE_BOOST,
-            ...pickWorkerOverrides(this.options.constantOverrides ?? {}),
-        };
+        this.personMaskThreshold = opts.isLowEndDevice ? LOW_END_PERSON_MASK_THRESHOLD : DEFAULT_PERSON_MASK_THRESHOLD;
     }
 
     enable() {
@@ -251,8 +198,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         await super.init({ outputCanvas, inputElement: inputVideo });
 
         await this.initializeWorker();
-        // Check against undefined (not truthiness) so the tuner can set blur to 0.
-        if (typeof this.options.blurRadius === 'number') {
+        if (this.options.blurRadius) {
             this.gl?.setBlurRadius(this.options.blurRadius);
         }
     }
@@ -288,7 +234,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             configuredDelegate === 'GPU' || configuredDelegate === 'CPU' ? configuredDelegate : 'GPU';
 
         const worker = new Worker(
-            /* webpackChunkName: "background-segmenter-worker-next" */
+            /* webpackChunkName: "background-segmenter-worker-current" */
             new URL('./segmenter.worker.ts', import.meta.url),
             { type: 'module' }
         );
@@ -326,7 +272,6 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                             wasmBinaryUrl,
                             modelBuffer,
                             delegate: desiredDelegate,
-                            constantOverrides: this.getWorkerConstantOverrides(),
                         },
                         [modelBuffer]
                     );
@@ -399,17 +344,12 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return;
         }
 
+        this.maskGl.deleteTexture(this.maskTexture as WebGLTexture);
         this.maskGl.deleteProgram(this.maskShaderProgram as WebGLProgram);
         this.maskGl.deleteBuffer(this.maskVertexBuffer as WebGLBuffer);
         this.maskGl.deleteFramebuffer(this.maskFramebuffer as WebGLFramebuffer);
         this.maskGl.deleteTexture(this.maskOutputTexture as WebGLTexture);
 
-        if (this.maskMorphTextureA) {
-            this.maskGl.deleteTexture(this.maskMorphTextureA);
-        }
-        if (this.maskMorphTextureB) {
-            this.maskGl.deleteTexture(this.maskMorphTextureB);
-        }
         if (this.maskInputTexture) {
             this.maskGl.deleteTexture(this.maskInputTexture);
         }
@@ -417,24 +357,25 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             this.maskGl.deleteBuffer(this.maskInputPbo);
         }
 
+        this.maskTexture = null;
         this.maskShaderProgram = null;
         this.maskVertexBuffer = null;
         this.maskFramebuffer = null;
         this.maskOutputTexture = null;
-        this.maskMorphTextureA = null;
-        this.maskMorphTextureB = null;
         this.maskInputTexture = null;
         this.maskInputPbo = null;
         this.maskUniformLocations = null;
         this.maskAttribLocations = null;
-        this.maskWidth = 0;
-        this.maskHeight = 0;
+        this.pixelBufferWidth = 0;
+        this.pixelBufferHeight = 0;
         this.maskGl = null;
     }
 
     private resetMaskState() {
-        this.maskWidth = 0;
-        this.maskHeight = 0;
+        this.maskTextureWidth = 0;
+        this.maskTextureHeight = 0;
+        this.maskOutputTextureWidth = 0;
+        this.maskOutputTextureHeight = 0;
         this.lastCanvasWidth = 0;
         this.lastCanvasHeight = 0;
     }
@@ -544,22 +485,22 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 
     private getResizeOptions(frame: VideoFrame): ImageBitmapOptions | undefined {
-        // Downscale before handing the frame to the worker: MediaPipe upsamples
-        // the masks back to the input resolution, so capping the longest edge bounds
-        // transfer/upload cost. Capable devices get a higher cap to keep
-        // thin features. Aspect ratio is preserved.
-        const maxEdge = this.segmentationInputMaxEdge;
+        // Downscale before handing the frame to the worker. The model runs at a
+        // fixed 256x256 tensor regardless of input size, and MediaPipe upsamples
+        // the confidence masks back to the *input* resolution — so a full-res
+        // frame produces full-res masks that are expensive to transfer, upload
+        // and combine. Capping the longest edge keeps inference quality identical
+        // while shrinking all of that downstream work. Aspect ratio is preserved
+        // so the model's internal square-resize behaves as before.
         const longestEdge = Math.max(frame.displayWidth, frame.displayHeight);
-        const scale = longestEdge > maxEdge ? maxEdge / longestEdge : 1;
+        const scale = longestEdge > SEGMENTATION_INPUT_MAX_EDGE ? SEGMENTATION_INPUT_MAX_EDGE / longestEdge : 1;
         if (scale >= 1) {
             return undefined;
         }
         return {
             resizeWidth: Math.max(1, Math.round(frame.displayWidth * scale)),
             resizeHeight: Math.max(1, Math.round(frame.displayHeight * scale)),
-            // 'high' preserves fine detail (hair, fingers, edges) when downscaling;
-            // low-end stays on 'medium' to bound cost.
-            resizeQuality: this.options.isLowEndDevice ? 'medium' : 'high',
+            resizeQuality: 'low',
         };
     }
 
@@ -656,11 +597,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return null;
         }
 
-        // The morphology radius ceiling is compiled in as a loop bound; build the
-        // fragment source from the current (possibly overridden) value so the
-        // debug tuner can change it live.
-        const shaderMaxRadius = this.getShaderMaxRadius();
-        const fragmentShader = this.compileShader(gl, gl.FRAGMENT_SHADER, buildFragmentShaderSource(shaderMaxRadius));
+        const fragmentShader = this.compileShader(gl, gl.FRAGMENT_SHADER, FRAGMENT_SHADER_SOURCE);
         if (!fragmentShader) {
             gl.deleteShader(vertexShader);
             return null;
@@ -690,9 +627,8 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 
     private saveWebGLState(gl: WebGL2RenderingContext) {
-        // Units this pass mutates: 0 (mask input / morphology) and
-        // TEXTURE_UNIT_OUTPUT.
-        const textureUnits = [0, TEXTURE_UNIT_OUTPUT];
+        // Units this pass mutates: 0 (mask input), TEXTURE_UNIT_MASK, TEXTURE_UNIT_OUTPUT.
+        const textureUnits = [0, TEXTURE_UNIT_MASK, TEXTURE_UNIT_OUTPUT];
         const textures = textureUnits.map((unit) => {
             gl.activeTexture(gl.TEXTURE0 + unit);
             return gl.getParameter(gl.TEXTURE_BINDING_2D) as WebGLTexture | null;
@@ -742,17 +678,14 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         // sampler binding is set here and never changes.
         gl.useProgram(this.maskShaderProgram);
         this.maskUniformLocations = {
+            texelSize: gl.getUniformLocation(this.maskShaderProgram, 'u_texelSize'),
+            personThreshold: gl.getUniformLocation(this.maskShaderProgram, 'u_personThreshold'),
             mask: gl.getUniformLocation(this.maskShaderProgram, 'u_mask'),
-            blurStep: gl.getUniformLocation(this.maskShaderProgram, 'u_blurStep'),
-            invert: gl.getUniformLocation(this.maskShaderProgram, 'u_invert'),
-            mode: gl.getUniformLocation(this.maskShaderProgram, 'u_mode'),
-            radius: gl.getUniformLocation(this.maskShaderProgram, 'u_radius'),
         };
         this.maskAttribLocations = {
             position: gl.getAttribLocation(this.maskShaderProgram, 'a_position'),
             texCoord: gl.getAttribLocation(this.maskShaderProgram, 'a_texCoord'),
         };
-
         gl.uniform1i(this.maskUniformLocations.mask, 0);
 
         // Create vertex buffer for quad
@@ -770,9 +703,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         gl: WebGL2RenderingContext,
         mask: Float32Array,
         width: number,
-        height: number,
-        sizeChanged: boolean
+        height: number
     ): boolean {
+        const sizeChanged = this.pixelBufferWidth !== width || this.pixelBufferHeight !== height;
+
         if (!this.maskInputTexture) {
             this.maskInputTexture = gl.createTexture();
         }
@@ -806,81 +740,58 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
         gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, null);
 
+        if (sizeChanged) {
+            this.pixelBufferWidth = width;
+            this.pixelBufferHeight = height;
+        }
+
         return true;
     }
 
-    private ensureOutputTexture(
-        gl: WebGL2RenderingContext,
-        width: number,
-        height: number,
-        sizeChanged: boolean
-    ): boolean {
-        gl.activeTexture(gl.TEXTURE0 + TEXTURE_UNIT_OUTPUT);
+    private initializeMaskTexture(gl: WebGL2RenderingContext, width: number, height: number) {
+        gl.activeTexture(gl.TEXTURE0 + TEXTURE_UNIT_MASK);
 
-        if (!this.maskOutputTexture) {
-            this.maskOutputTexture = gl.createTexture();
-            if (!this.maskOutputTexture) {
+        if (!this.maskTexture) {
+            this.maskTexture = gl.createTexture();
+            if (!this.maskTexture) {
                 return false;
             }
-            gl.bindTexture(gl.TEXTURE_2D, this.maskOutputTexture);
+            gl.bindTexture(gl.TEXTURE_2D, this.maskTexture);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            this.maskTextureWidth = 0;
+            this.maskTextureHeight = 0;
         } else {
-            gl.bindTexture(gl.TEXTURE_2D, this.maskOutputTexture);
+            gl.bindTexture(gl.TEXTURE_2D, this.maskTexture);
         }
 
-        if (sizeChanged) {
+        if (this.maskTextureWidth !== width || this.maskTextureHeight !== height) {
             gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+            this.maskTextureWidth = width;
+            this.maskTextureHeight = height;
         }
 
         return true;
     }
 
-    // Lazily create the morphology ping-pong pair. NEAREST (min/max read exact
-    // texels) and RGBA8 (min/max don't accumulate error). Bound on unit 0, which
-    // saveWebGLState snapshots.
-    private ensureMorphTextures(
-        gl: WebGL2RenderingContext,
-        width: number,
-        height: number,
-        sizeChanged: boolean
-    ): boolean {
-        gl.activeTexture(gl.TEXTURE0);
-
-        for (const which of ['A', 'B'] as const) {
-            const key = which === 'A' ? 'maskMorphTextureA' : 'maskMorphTextureB';
-            let texture = this[key];
-            if (!texture) {
-                texture = gl.createTexture();
-                if (!texture) {
-                    return false;
-                }
-                this[key] = texture;
-                gl.bindTexture(gl.TEXTURE_2D, texture);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-            } else {
-                gl.bindTexture(gl.TEXTURE_2D, texture);
-            }
-
-            if (sizeChanged) {
-                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
-            }
-        }
-
-        return true;
-    }
-
-    private configureShaderProgram(gl: WebGL2RenderingContext) {
+    private configureShaderProgram(gl: WebGL2RenderingContext, width: number, height: number) {
         if (!this.maskShaderProgram || !this.maskUniformLocations || !this.maskAttribLocations) {
             return false;
         }
 
         gl.useProgram(this.maskShaderProgram);
+
+        // u_texelSize is the per-Gaussian-tap offset in UV space. We fold the
+        // edge-smoothing radius (in mask texels) into it so the shader can step
+        // by a single u_texelSize unit.
+        gl.uniform2f(
+            this.maskUniformLocations.texelSize,
+            MASK_EDGE_BLUR_TEXEL_RADIUS / width,
+            MASK_EDGE_BLUR_TEXEL_RADIUS / height
+        );
+        gl.uniform1f(this.maskUniformLocations.personThreshold, this.personMaskThreshold);
 
         if (this.maskVertexBuffer) {
             gl.bindBuffer(gl.ARRAY_BUFFER, this.maskVertexBuffer);
@@ -893,103 +804,73 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         return true;
     }
 
-    // One full-screen mask pass: render `source` (unit 0) into `target` with the
-    // given uniforms. Framebuffer and viewport must be set by the caller.
-    private drawMaskPass(
-        gl: WebGL2RenderingContext,
-        target: WebGLTexture,
-        source: WebGLTexture,
-        stepX: number,
-        stepY: number,
-        mode: number,
-        invert: boolean,
-        radius: number
-    ): boolean {
-        if (!this.maskUniformLocations) {
-            return false;
-        }
-        gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, target, 0);
-        if (gl.checkFramebufferStatus(gl.FRAMEBUFFER) !== gl.FRAMEBUFFER_COMPLETE) {
-            return false;
-        }
-        gl.activeTexture(gl.TEXTURE0);
-        gl.bindTexture(gl.TEXTURE_2D, source);
-        gl.uniform2f(this.maskUniformLocations.blurStep, stepX, stepY);
-        gl.uniform1i(this.maskUniformLocations.invert, invert ? 1 : 0);
-        gl.uniform1i(this.maskUniformLocations.mode, mode);
-        gl.uniform1i(this.maskUniformLocations.radius, radius);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-        return true;
-    }
-
-    // Optional morphological close (dilate then erode, leaving the result in
-    // maskMorphTextureB) to fill transient interior holes, then a single
-    // copy pass that inverts the person mask into the output texture LiveKit
-    // composites with. Every pass samples unit 0.
-    private renderMask(gl: WebGL2RenderingContext, width: number, height: number): boolean {
+    private renderMaskToFramebuffer(gl: WebGL2RenderingContext, width: number, height: number): boolean {
         if (!this.maskFramebuffer) {
             this.maskFramebuffer = gl.createFramebuffer();
         }
 
-        if (
-            !this.maskFramebuffer ||
-            !this.maskOutputTexture ||
-            !this.maskInputTexture ||
-            !this.maskUniformLocations ||
-            !this.gl
-        ) {
+        if (!this.maskFramebuffer || !this.maskTexture) {
             return false;
         }
 
         gl.bindFramebuffer(gl.FRAMEBUFFER, this.maskFramebuffer);
-        gl.viewport(0, 0, width, height);
+        gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, this.maskTexture, 0);
 
-        // The copy reads the raw upload unless closing produces a filled mask.
-        let maskSource: WebGLTexture = this.maskInputTexture;
-
-        const closingEnabled = this.maskClosingRadius > 0 && !!this.maskMorphTextureA && !!this.maskMorphTextureB;
-        if (closingEnabled) {
-            const a = this.maskMorphTextureA!;
-            const b = this.maskMorphTextureB!;
-            const radius = this.maskClosingRadius;
-            // One-texel step; the shader applies the radius per-tap via u_radius.
-            const texelX = width > 0 ? 1 / width : 0;
-            const texelY = height > 0 ? 1 / height : 0;
-
-            // Dilate (max): input -H-> A -V-> B.
-            if (!this.drawMaskPass(gl, a, this.maskInputTexture, texelX, 0, MASK_PASS_DILATE, false, radius)) {
-                return false;
-            }
-            if (!this.drawMaskPass(gl, b, a, 0, texelY, MASK_PASS_DILATE, false, radius)) {
-                return false;
-            }
-            // Erode (min): B -H-> A -V-> B, leaving the closed mask in B.
-            if (!this.drawMaskPass(gl, a, b, texelX, 0, MASK_PASS_ERODE, false, radius)) {
-                return false;
-            }
-            if (!this.drawMaskPass(gl, b, a, 0, texelY, MASK_PASS_ERODE, false, radius)) {
-                return false;
-            }
-            maskSource = b;
-        }
-
-        if (!this.drawMaskPass(gl, this.maskOutputTexture, maskSource, 0, 0, MASK_PASS_COPY, true, 0)) {
+        const fbStatus = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
+        if (fbStatus !== gl.FRAMEBUFFER_COMPLETE) {
+            gl.bindFramebuffer(gl.FRAMEBUFFER, null);
             return false;
         }
 
-        this.gl.updateMask(this.maskOutputTexture);
+        gl.viewport(0, 0, width, height);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
         return true;
     }
 
+    private copyMaskToOutputTexture(gl: WebGL2RenderingContext, width: number, height: number) {
+        gl.activeTexture(gl.TEXTURE0 + TEXTURE_UNIT_OUTPUT);
+
+        if (!this.maskOutputTexture) {
+            this.maskOutputTexture = gl.createTexture();
+            if (this.maskOutputTexture) {
+                gl.bindTexture(gl.TEXTURE_2D, this.maskOutputTexture);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            }
+        }
+
+        if (!this.maskTexture || !this.maskOutputTexture || !this.maskFramebuffer || !this.gl) {
+            return;
+        }
+
+        gl.bindFramebuffer(gl.FRAMEBUFFER, this.maskFramebuffer);
+        gl.bindTexture(gl.TEXTURE_2D, this.maskOutputTexture);
+
+        const outputNeedsInit = this.maskOutputTextureWidth !== width || this.maskOutputTextureHeight !== height;
+        if (outputNeedsInit) {
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+            this.maskOutputTextureWidth = width;
+            this.maskOutputTextureHeight = height;
+        }
+
+        gl.copyTexSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 0, 0, width, height);
+
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+        gl.bindTexture(gl.TEXTURE_2D, null);
+
+        this.gl.updateMask(this.maskOutputTexture);
+    }
+
     /**
      * Upload the pre-combined person-confidence mask produced by the segmenter
-     * worker, optionally close it to fill interior holes, and invert it into the
-     * texture LiveKit composites with.
+     * worker and feather/invert it into the texture LiveKit composites with.
      *
-     * The class combine (multiclass person = 1 - background, where background is
-     * class 0 of the softmax over hair/body/face/clothes/accessories) now happens
-     * on the worker thread, so a single R32F mask arrives here instead of up to six.
+     * The per-class max() combine (multiclass classes 1-5 = hair/body/face/
+     * clothes/accessories) and the hair-detail confidence boost now happen on the
+     * worker thread, so a single R32F mask arrives here instead of up to six.
      *
      * Reference: https://ai.google.dev/edge/mediapipe/solutions/vision/image_segmenter
      */
@@ -1009,43 +890,33 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return;
         }
 
-        const sizeChanged = this.maskWidth !== width || this.maskHeight !== height;
         const savedState = this.saveWebGLState(gl);
 
-        // Restore LiveKit's GL state on every exit path so a mid-pipeline bail-out
-        // can't leave the shared context mutated.
-        try {
-            if (!this.initializeShaderResources(gl)) {
-                return;
-            }
-
-            if (!this.uploadCombinedMaskTexture(gl, mask, width, height, sizeChanged)) {
-                return;
-            }
-
-            if (this.maskClosingRadius > 0 && !this.ensureMorphTextures(gl, width, height, sizeChanged)) {
-                return;
-            }
-
-            if (!this.ensureOutputTexture(gl, width, height, sizeChanged)) {
-                return;
-            }
-
-            if (!this.configureShaderProgram(gl)) {
-                return;
-            }
-
-            if (!this.renderMask(gl, width, height)) {
-                return;
-            }
-
-            this.maskWidth = width;
-            this.maskHeight = height;
-
-            gl.flush();
-        } finally {
-            this.restoreWebGLState(gl, savedState);
+        if (!this.initializeShaderResources(gl)) {
+            return;
         }
+
+        if (!this.uploadCombinedMaskTexture(gl, mask, width, height)) {
+            return;
+        }
+
+        if (!this.initializeMaskTexture(gl, width, height)) {
+            return;
+        }
+
+        if (!this.configureShaderProgram(gl, width, height)) {
+            return;
+        }
+
+        if (!this.renderMaskToFramebuffer(gl, width, height)) {
+            return;
+        }
+
+        this.copyMaskToOutputTexture(gl, width, height);
+
+        this.restoreWebGLState(gl, savedState);
+
+        gl.flush();
     }
 }
 
