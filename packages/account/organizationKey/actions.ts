@@ -82,6 +82,10 @@ export const getPublicAdminError = () => {
     return c('passwordless').t`Non-private users can be promoted to admin when they have setup keys`;
 };
 
+export const getAssignRolesInvitationText = () => {
+    return c('user_modal').t`You'll be able to assign roles once the user has accepted the invitation.`;
+};
+
 export const getPrivatizeError = () => {
     return c('passwordless').t`You must privatize all users before generating a new organization key`;
 };
