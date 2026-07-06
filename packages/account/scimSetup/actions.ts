@@ -60,11 +60,11 @@ async function* processScimGroup(
         dispatch(updateGroup(resolvedGroup));
     }
 
-    const pendingAdmins = pendingMembersByGroup[group.ID] ?? [];
+    const pendingAdminApprovals = pendingMembersByGroup[group.ID] ?? [];
 
     let allCompleted = true;
-    if (pendingAdmins.length) {
-        for (const groupMember of pendingAdmins) {
+    if (pendingAdminApprovals.length) {
+        for (const groupMember of pendingAdminApprovals) {
             yield { type: 'groupMemberStatus', memberID: groupMember.ID, status: ItemStatus.Finalizing };
             try {
                 await dispatch(
