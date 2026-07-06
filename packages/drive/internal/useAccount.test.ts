@@ -95,23 +95,50 @@ describe('useAccount.getPublicKeys', () => {
         expect(mockApi).not.toHaveBeenCalled();
     });
 
-    it('should dedupe concurrent calls for the same email', async () => {
+    it('should fetch own address keys fresh on every call, never caching them', async () => {
         const account = useAccount();
 
-        const [a, b] = await Promise.all([account.getPublicKeys(ownEmail), account.getPublicKeys(ownEmail)]);
+        await account.getPublicKeys(ownEmail);
+        await account.getPublicKeys(ownEmail);
 
-        expect(a).toBe(b);
-        expect(mockGetAddresses).toHaveBeenCalledTimes(1);
+        // Own keys must be re-read each time so a stale account-layer key
+        // cache can never leave us holding a dead key reference.
+        expect(mockGetAddressKeys).toHaveBeenCalledTimes(2);
+        expect(mockApi).not.toHaveBeenCalled();
     });
 
-    it('should reuse the cached promise across sequential calls', async () => {
+    it('should cache the API public keys for an external email across sequential calls', async () => {
+        mockApi.mockResolvedValue({ Address: { Keys: [{ PublicKey: 'ext-armored' }] } });
         const account = useAccount();
 
-        await account.getPublicKeys(ownEmail);
-        await account.getPublicKeys(ownEmail);
+        await account.getPublicKeys(otherEmail);
+        await account.getPublicKeys(otherEmail);
 
-        expect(mockGetAddresses).toHaveBeenCalledTimes(1);
-        expect(mockApi).not.toHaveBeenCalled();
+        expect(mockApi).toHaveBeenCalledTimes(1);
+    });
+
+    it('should dedupe concurrent API calls for an external email', async () => {
+        mockApi.mockResolvedValue({ Address: { Keys: [{ PublicKey: 'ext-armored' }] } });
+        const account = useAccount();
+
+        const [a, b] = await Promise.all([account.getPublicKeys(otherEmail), account.getPublicKeys(otherEmail)]);
+
+        expect(a).toEqual(b);
+        expect(mockApi).toHaveBeenCalledTimes(1);
+    });
+
+    it('should combine fresh own keys with cached public keys for a disabled address, own keys last', async () => {
+        mockApi.mockResolvedValue({ Address: { Keys: [{ PublicKey: 'ext-armored' }] } });
+        const account = useAccount();
+
+        const keys = await account.getPublicKeys(disabledOwnAddress.Email);
+        expect(keys).toEqual([{ _ref: 'imported:ext-armored' }, disabledOwnAddressKey.privateKey]);
+
+        // The API public keys are cached, but the disabled own keys are still
+        // fetched fresh on the second call.
+        await account.getPublicKeys(disabledOwnAddress.Email);
+        expect(mockGetAddressKeys).toHaveBeenCalledTimes(2);
+        expect(mockApi).toHaveBeenCalledTimes(1);
     });
 
     it('should not reuse the cached promise across different emails', async () => {
