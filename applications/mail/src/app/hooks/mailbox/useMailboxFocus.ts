@@ -3,9 +3,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import isEqual from 'lodash/isEqual';
 
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import {
+    selectCategoryIDs,
     selectElementIDs,
     selectFilter,
     selectLabelID,
@@ -27,6 +29,7 @@ interface MailboxFocusContext {
     filter: Filter;
     sort: Sort;
     labelID: string;
+    categoryIDs: CategoryLabelID[];
 }
 
 const areArraysEqual = (arr1: any[], arr2: any[]): boolean => {
@@ -47,8 +50,9 @@ export const useMailboxFocus = ({ showList, listRef, isComposerOpened, loading }
     const filter = useMailSelector(selectFilter);
     const sort = useMailSelector(selectSort);
     const labelID = useMailSelector(selectLabelID);
+    const categoryIDs = useMailSelector(selectCategoryIDs);
 
-    const previousState = useRef<MailboxFocusContext>({ elementIDs, page, filter, sort, labelID });
+    const previousState = useRef<MailboxFocusContext>({ elementIDs, page, filter, sort, labelID, categoryIDs });
     const [focusID, setFocusID] = useState<string | undefined>();
 
     const focusLastID = useCallback(() => {
@@ -108,23 +112,24 @@ export const useMailboxFocus = ({ showList, listRef, isComposerOpened, loading }
             return;
         }
 
-        // Reset focus when changing filter, sort, label or page (using deep equality for objects)
+        // Reset focus when changing filter, sort, label, category or page (using deep equality for objects)
         const contextChanged =
             !isEqual(previousState.current.filter, filter) ||
             !isEqual(previousState.current.sort, sort) ||
             previousState.current.labelID !== labelID ||
+            !isEqual(previousState.current.categoryIDs, categoryIDs) ||
             previousState.current.page !== page;
 
         if (contextChanged) {
             setFocusID(undefined);
-            previousState.current = { elementIDs, page, filter, sort, labelID };
+            previousState.current = { elementIDs, page, filter, sort, labelID, categoryIDs };
             return;
         }
 
         // Reset focus when the list is empty
         if (elementIDs.length === 0) {
             setFocusID(undefined);
-            previousState.current = { elementIDs, page, filter, sort, labelID };
+            previousState.current = { elementIDs, page, filter, sort, labelID, categoryIDs };
             return;
         }
 
@@ -145,9 +150,9 @@ export const useMailboxFocus = ({ showList, listRef, isComposerOpened, loading }
                     setFocusID(undefined);
                 }
             }
-            previousState.current = { elementIDs, page, filter, sort, labelID };
+            previousState.current = { elementIDs, page, filter, sort, labelID, categoryIDs };
         }
-    }, [elementIDs, page, filter, sort, showList, labelID, isComposerOpened, loading, focusID]);
+    }, [elementIDs, page, filter, sort, showList, labelID, categoryIDs, isComposerOpened, loading, focusID]);
 
     useEffect(() => {
         if (typeof focusID === 'undefined') {
