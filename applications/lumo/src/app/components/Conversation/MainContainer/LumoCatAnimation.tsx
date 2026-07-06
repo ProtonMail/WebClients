@@ -1,15 +1,40 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import clsx from '@proton/utils/clsx';
+import { c } from 'ttag';
+
 import { LazyLottie } from '../../LazyLottie';
+import { getPersistedLumoCatHomeStage, persistLumoCatHomeStage } from '../../../util/lumoCatHomeStageStorage';
 
+import LumoCatHoverHintArrow from './LumoCatHoverHintArrow';
 import './LumoCatAnimation.scss';
+import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants";
 
-const GHOST_ANIMATION_LAST_FRAME = 94;
+const LOTTIE_CLASS = 'lumo-cat-animation__lottie';
+const GHOST_ANIMATION_LAST_FRAME = 119;
 
-const getLumoCatHomeAnimation = () =>
+const getLumoHomeStage1Animation = () =>
     import(
-        /* webpackChunkName: "lumo-cat-home-animation" */
-        '../../../features/themes/assets/default/newCat.json'
+        /* webpackChunkName: "lumo-home-stage-1-animation" */
+        '../../Animations/Home/lumo-home-stage-1.json'
+    );
+
+const getLumoHomeStage2Animation = () =>
+    import(
+        /* webpackChunkName: "lumo-home-stage-2-animation" */
+        '../../Animations/Home/lumo-home-stage-2.json'
+    );
+
+const getLumoHomeStage3Animation = () =>
+    import(
+        /* webpackChunkName: "lumo-home-stage-3-animation" */
+        '../../Animations/Home/lumo-home-stage-3.json'
+    );
+
+const getLumoHomeStage4Animation = () =>
+    import(
+        /* webpackChunkName: "lumo-home-stage-4-animation" */
+        '../../Animations/Home/lumo-home-stage-4.json'
     );
 
 const getLumoGhostActivatedAnimation = () =>
@@ -24,18 +49,33 @@ const getLumoGhostDeactivatedAnimation = () =>
         '../../Animations/lumo-ghost-deactivated.json'
     );
 
-type AnimationKind = 'normal' | 'ghost-activated' | 'ghost-deactivated';
+type HomeStage = 'inside-stable' | 'get-out' | 'outside-stable' | 'back-in';
+type GhostAnimationKind = 'ghost-activated' | 'ghost-deactivated';
 
 interface LumoCatAnimationProps {
     isGhostMode: boolean;
 }
 
 const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
-    const [animationKind, setAnimationKind] = useState<AnimationKind>(() =>
-        isGhostMode ? 'ghost-activated' : 'normal'
+    const [homeStage, setHomeStage] = useState<HomeStage>(() => getPersistedLumoCatHomeStage());
+    const [ghostAnimationKind, setGhostAnimationKind] = useState<GhostAnimationKind | null>(() =>
+        isGhostMode ? 'ghost-activated' : null
     );
     const [playGhostActivated, setPlayGhostActivated] = useState(false);
     const isInitialMount = useRef(true);
+
+    const isShowingGhostAnimation = isGhostMode || ghostAnimationKind !== null;
+    const isTransitioning = homeStage === 'get-out' || homeStage === 'back-in';
+    const isClickable = !isShowingGhostAnimation && !isTransitioning;
+    const isOutsideStable = homeStage === 'outside-stable';
+
+    const hoverHintText = isOutsideStable
+        ? c('collider_2025: Action').t`click to hide me`
+        : c('collider_2025: Action').t`click to let me out`;
+
+    const ariaLabel = isOutsideStable
+        ? c('collider_2025: Action').t`Collapse ${LUMO_SHORT_APP_NAME}`
+        : c('collider_2025: Action').t`Let ${LUMO_SHORT_APP_NAME} out`;
 
     useEffect(() => {
         if (isInitialMount.current) {
@@ -43,62 +83,164 @@ const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
             return;
         }
 
-        if (isGhostMode && animationKind === 'normal') {
-            setAnimationKind('ghost-activated');
+        if (isGhostMode && ghostAnimationKind === null) {
+            setGhostAnimationKind('ghost-activated');
             setPlayGhostActivated(true);
-        } else if (isGhostMode && animationKind === 'ghost-deactivated') {
-            setAnimationKind('ghost-activated');
+            if (isTransitioning) {
+                setHomeStage('inside-stable');
+                persistLumoCatHomeStage('inside-stable');
+            }
+        } else if (isGhostMode && ghostAnimationKind === 'ghost-deactivated') {
+            setGhostAnimationKind('ghost-activated');
             setPlayGhostActivated(true);
-        } else if (!isGhostMode && animationKind === 'ghost-activated') {
-            setAnimationKind('ghost-deactivated');
+        } else if (!isGhostMode && ghostAnimationKind === 'ghost-activated') {
+            setGhostAnimationKind('ghost-deactivated');
+            setPlayGhostActivated(false);
         }
-    }, [isGhostMode, animationKind]);
+    }, [isGhostMode, ghostAnimationKind, isTransitioning]);
 
     const handleGhostDeactivatedComplete = useCallback(() => {
-        setAnimationKind('normal');
+        setGhostAnimationKind(null);
+        setHomeStage('inside-stable');
+        persistLumoCatHomeStage('inside-stable');
     }, []);
 
-    const renderLottie = () => {
-        if (animationKind === 'normal') {
+    const handleGetOutComplete = useCallback(() => {
+        setHomeStage('outside-stable');
+        persistLumoCatHomeStage('outside-stable');
+    }, []);
+
+    const handleBackInComplete = useCallback(() => {
+        setHomeStage('inside-stable');
+        persistLumoCatHomeStage('inside-stable');
+    }, []);
+
+    const handleClick = useCallback(() => {
+        if (!isClickable) {
+            return;
+        }
+
+        if (homeStage === 'inside-stable') {
+            setHomeStage('get-out');
+        } else if (homeStage === 'outside-stable') {
+            setHomeStage('back-in');
+        }
+    }, [homeStage, isClickable]);
+
+    const renderAnimation = () => {
+        if (isShowingGhostAnimation) {
+            if (ghostAnimationKind === 'ghost-activated') {
+                return (
+                    <LazyLottie
+                        key="ghost-activated"
+                        alt=""
+                        getAnimationData={getLumoGhostActivatedAnimation}
+                        loop={false}
+                        autoplay={playGhostActivated}
+                        initialSegment={
+                            playGhostActivated
+                                ? undefined
+                                : [GHOST_ANIMATION_LAST_FRAME, GHOST_ANIMATION_LAST_FRAME]
+                        }
+                        className={LOTTIE_CLASS}
+                    />
+                );
+            }
+
             return (
                 <LazyLottie
-                    alt="Lumo"
-                    getAnimationData={getLumoCatHomeAnimation}
-                    loop
-                    className="lumo-cat-animation__lottie"
+                    key="ghost-deactivated"
+                    alt=""
+                    getAnimationData={getLumoGhostDeactivatedAnimation}
+                    loop={false}
+                    onComplete={handleGhostDeactivatedComplete}
+                    className={LOTTIE_CLASS}
                 />
             );
         }
 
-        if (animationKind === 'ghost-activated') {
+        if (homeStage === 'inside-stable') {
             return (
                 <LazyLottie
-                    key="ghost-activated"
+                    key="home-stage-1"
+                    alt="Lumo"
+                    getAnimationData={getLumoHomeStage1Animation}
+                    loop
+                    className={LOTTIE_CLASS}
+                />
+            );
+        }
+
+        if (homeStage === 'get-out') {
+            return (
+                <LazyLottie
+                    key="home-stage-2"
                     alt=""
-                    getAnimationData={getLumoGhostActivatedAnimation}
+                    getAnimationData={getLumoHomeStage2Animation}
                     loop={false}
-                    autoplay={playGhostActivated}
-                    initialSegment={
-                        playGhostActivated ? undefined : [GHOST_ANIMATION_LAST_FRAME, GHOST_ANIMATION_LAST_FRAME]
-                    }
-                    className="lumo-cat-animation__lottie"
+                    onComplete={handleGetOutComplete}
+                    className={LOTTIE_CLASS}
+                />
+            );
+        }
+
+        if (homeStage === 'outside-stable') {
+            return (
+                <LazyLottie
+                    key="home-stage-3"
+                    alt="Lumo"
+                    getAnimationData={getLumoHomeStage3Animation}
+                    loop
+                    className={LOTTIE_CLASS}
                 />
             );
         }
 
         return (
             <LazyLottie
-                key="ghost-deactivated"
+                key="home-stage-4"
                 alt=""
-                getAnimationData={getLumoGhostDeactivatedAnimation}
+                getAnimationData={getLumoHomeStage4Animation}
                 loop={false}
-                onComplete={handleGhostDeactivatedComplete}
-                className="lumo-cat-animation__lottie"
+                onComplete={handleBackInComplete}
+                className={LOTTIE_CLASS}
             />
         );
     };
 
-    return <div className="lumo-cat-animation shrink-0 text-center">{renderLottie()}</div>;
+    return (
+        <div
+            className={clsx('lumo-cat-animation text-center', isClickable && 'lumo-cat-animation--clickable')}
+            role={isClickable ? 'button' : undefined}
+            tabIndex={isClickable ? 0 : undefined}
+            aria-label={isClickable ? ariaLabel : undefined}
+            onClick={isClickable ? handleClick : undefined}
+            onKeyDown={
+                isClickable
+                    ? (event) => {
+                          if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              handleClick();
+                          }
+                      }
+                    : undefined
+            }
+        >
+            {renderAnimation()}
+            {isClickable ? (
+                <div
+                    className={clsx(
+                        'lumo-cat-animation__hint',
+                        isOutsideStable && 'lumo-cat-animation__hint--outside'
+                    )}
+                    aria-hidden="true"
+                >
+                    <p className="lumo-cat-animation__hint-text">{hoverHintText}</p>
+                    <LumoCatHoverHintArrow className="lumo-cat-animation__hint-arrow" />
+                </div>
+            ) : null}
+        </div>
+    );
 };
 
 export default LumoCatAnimation;
