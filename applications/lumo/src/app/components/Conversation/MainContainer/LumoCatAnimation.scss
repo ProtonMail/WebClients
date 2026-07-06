@@ -1,14 +1,93 @@
+@use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lumo-cat-animation {
-	display: flex;
-	justify-content: center;
-	inline-size: rem(72);
-	block-size: rem(74);
+	position: relative;
+	overflow: visible;
+	inline-size: rem(200);
+	block-size: rem(159);
+	margin-block-start: rem(-59);
 	margin-block-end: rem(24);
+	flex-shrink: 0;
+	--lumo-cat-hint-arrow-color: #6D4AFF;
+
+	&--clickable {
+		cursor: pointer;
+
+		&:hover .lumo-cat-animation__hint,
+		&:focus-visible .lumo-cat-animation__hint {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 
 	&__lottie {
-		inline-size: rem(72);
-		block-size: rem(74);
+		position: absolute;
+		inset: 0;
+		inline-size: 100%;
+		block-size: 100%;
 	}
+
+	&__hint {
+		position: absolute;
+		inset-block-start: 3rem;
+		inset-inline-start: 10.375rem;
+		inline-size: rem(150);
+		opacity: 0;
+		visibility: hidden;
+		transition:
+			opacity 0.15s ease,
+			visibility 0.15s ease;
+		pointer-events: none;
+		z-index: 1;
+
+	}
+
+	&__hint-text {
+		margin: rem(-10) rem(-10) rem(-10) rem(-30);
+		font-family: 'Segoe Script', 'Bradley Hand', 'Apple Chancery', cursive;
+		font-size: rem(18);
+		line-height: 1.15;
+		color: var(--lumo-welcome-text, var(--text-norm));
+		text-align: start;
+		white-space: nowrap;
+		transform: rotate(25deg);
+		transform-origin: 0% 100%;
+
+	}
+
+	&__hint-arrow {
+		position: absolute;
+		inset-block-start: rem(26);
+		inset-inline-start: rem(-20);
+		inline-size: rem(21);
+		block-size: rem(20);
+		color: var(--lumo-cat-hint-arrow-color);
+
+	}
+
+	&__hint--outside {
+
+		inset-block-start: rem(-20);
+		inset-inline-start: 90%;
+
+
+		.lumo-cat-animation__hint-text {
+			transform: rotate(-5deg);
+			transform-origin: center center;
+		}
+
+		.lumo-cat-animation__hint-arrow {
+			inset-block-start: rem(26);
+			inset-inline-start: rem(-22);
+		}
+	}
+}
+
+body:has(#lumo-light-theme) .lumo-cat-animation {
+	--lumo-cat-hint-arrow-color: var(-#6D4AFF);
 }
