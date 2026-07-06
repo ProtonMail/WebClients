@@ -139,6 +139,8 @@ export interface ApiImporterActive {
     NumContacts?: number;
     FilterStartDate?: string;
     FilterEndDate?: string;
+    /** Only for Drive importer: bytes imported so far. */
+    ImportedBytes?: number;
 }
 
 export interface ApiImporter {

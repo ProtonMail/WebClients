@@ -25,6 +25,7 @@ export const normalizeImporter = (apiImporter: ApiImporter) => {
                     errorCode: value.ErrorCode,
                     mapping: value.Mapping,
                     total: value.Total,
+                    importedBytes: value.ImportedBytes,
                 };
 
                 activeImporters.push(formattedReport);
