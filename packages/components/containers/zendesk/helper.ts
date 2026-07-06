@@ -1,4 +1,6 @@
 import type { PLANS } from '@proton/payments/core/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -11,10 +13,19 @@ export interface ZendeskRef {
 
 const vpnZendeskV1Key = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 const vpnZendeskV2Key = '52184d31-aa98-430f-a86c-b5a93235027a';
+const accountZendeskV2Key = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 
-export const getZendeskIframeUrl = (isZendeskV2Enabled: boolean) => {
+export const getZendeskIframeUrl = (appName: APP_NAMES, isZendeskV2Enabled: boolean) => {
     const zendeskVersion = isZendeskV2Enabled ? '2' : '1';
-    const apiKey = isZendeskV2Enabled ? vpnZendeskV2Key : vpnZendeskV1Key;
+    let apiKey = vpnZendeskV1Key;
+
+    if (isZendeskV2Enabled) {
+        if (appName === APPS.PROTONVPN_SETTINGS) {
+            apiKey = vpnZendeskV2Key;
+        } else {
+            apiKey = accountZendeskV2Key;
+        }
+    }
 
     const url = getApiSubdomainUrl('/core/v4/resources/zendesk', window.location.origin);
     url.searchParams.set('Key', apiKey);
