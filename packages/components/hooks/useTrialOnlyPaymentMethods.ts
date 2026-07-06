@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import type { SavedPaymentMethod } from '@proton/payments';
-import { isTrial } from '@proton/payments';
+import type { SavedPaymentMethod } from '@proton/payments/core/interface';
+import { isTrial } from '@proton/payments/core/subscription/helpers';
 
 /**
  * Hook that fetches payment methods only when the user is in a trial.

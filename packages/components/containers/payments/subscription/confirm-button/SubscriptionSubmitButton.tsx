@@ -4,20 +4,19 @@ import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import {
-    type Currency,
-    type FreeSubscription,
-    PAYMENT_METHOD_TYPES,
-    type Subscription,
-    type SubscriptionCheckForbiddenReason,
-    type SubscriptionEstimation,
-    SubscriptionMode,
-    SubscriptionPlatform,
-    hasMigrationDiscount,
-    isFreeSubscription,
-    isTrial,
-} from '@proton/payments';
-import { PayButton, type TaxCountryHook, type VatNumberHook } from '@proton/payments/ui';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
+import { SubscriptionMode, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';
+import type {
+    Subscription,
+    SubscriptionCheckForbiddenReason,
+    SubscriptionEstimation,
+} from '@proton/payments/core/subscription/interface';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import type { TaxCountryHook } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
+import type { VatNumberHook } from '@proton/payments/ui/billing-address/hooks/useVatNumber';
+import { PayButton } from '@proton/payments/ui/components/PayButton';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 

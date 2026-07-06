@@ -12,14 +12,13 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLock } from '@proton/icons/icons/IcLock';
-import type { PaymentMethodType, PaymentProcessorHook } from '@proton/payments';
-import {
-    DisplayablePaymentError,
-    SubscriptionMode,
-    hasPlanIDs,
-    isSubscriptionCheckForbiddenWithReason,
-} from '@proton/payments';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { DisplayablePaymentError } from '@proton/payments/core/errors';
+import type { PaymentMethodType } from '@proton/payments/core/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';

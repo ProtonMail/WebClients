@@ -1,4 +1,4 @@
-import type { PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
 
 export interface PendingInvitation {
     ID: string;

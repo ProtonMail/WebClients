@@ -1,12 +1,9 @@
-import {
-    type CYCLE,
-    type Currency,
-    type Cycle,
-    type Plan,
-    type Subscription,
-    getPlan,
-    getPlansMap,
-} from '@proton/payments';
+import type { CYCLE } from '@proton/payments/core/constants';
+import type { Currency, Cycle } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 import { getAllowedCycles } from '../helpers/getAllowedCycles';
 

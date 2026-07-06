@@ -4,7 +4,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import { PLANS, getPlanName } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getPlanName } from '@proton/payments/core/subscription/helpers';
 
 import { useCancelRenewal } from '../cancelSubscription/useCancelRenewal';
 import FeedbackDowngradeContent, {

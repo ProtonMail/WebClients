@@ -12,7 +12,7 @@ import {
     hasMailBusiness,
     hasMailPro,
     hasVisionary,
-} from '@proton/payments';
+} from '@proton/payments/core/subscription/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';

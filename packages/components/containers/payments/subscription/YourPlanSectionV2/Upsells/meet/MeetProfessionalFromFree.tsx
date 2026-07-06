@@ -34,9 +34,9 @@ import {
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import type { Subscription } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { DASHBOARD_UPSELL_PATHS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

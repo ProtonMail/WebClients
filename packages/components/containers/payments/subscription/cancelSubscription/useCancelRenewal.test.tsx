@@ -4,9 +4,9 @@ import { componentsHookRenderer } from '@proton/components/containers/contacts/t
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { Renew } from '@proton/payments';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import type { FeedbackDowngradeFormData } from '../content/interface';
@@ -17,7 +17,7 @@ jest.mock('@proton/components/hooks/useEventManager');
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/payments/ui');
+jest.mock('@proton/payments/ui/hooks/useIsB2BTrial');
 
 const mockApi = jest.fn().mockResolvedValue({});
 const mockEventManagerCall = jest.fn().mockResolvedValue(undefined);

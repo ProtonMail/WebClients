@@ -14,15 +14,10 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
-import {
-    type FreePlanDefault,
-    type FreeSubscription,
-    type PaymentStatus,
-    type Plan,
-    type Subscription,
-    fixPlanIDs,
-    fixPlanName,
-} from '@proton/payments/index';
+import { fixPlanIDs, fixPlanName } from '@proton/payments/core/helpers';
+import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { UpsellTelemetryContext } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';

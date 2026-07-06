@@ -1,5 +1,5 @@
 import { Badge } from '@proton/components/components/badge/Badge';
-import { TransactionState } from '@proton/payments';
+import { TransactionState } from '@proton/payments/core/constants';
 import { getTransactionStateTitle } from '@proton/payments/core/transactions';
 
 const TYPES = {

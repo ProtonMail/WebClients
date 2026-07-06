@@ -24,7 +24,7 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(),
 }));
 
-jest.mock('@proton/payments', () => ({
+jest.mock('@proton/payments/core/plan/helpers', () => ({
     getIsB2BAudienceFromPlan: jest.fn(),
 }));
 
@@ -41,7 +41,8 @@ describe('useVPNDrawer', () => {
             .default as jest.Mock;
         mockUseConfig = require('@proton/components/hooks/useConfig').default as jest.Mock;
         mockUseFlag = require('@proton/unleash/useFlag').useFlag as jest.Mock;
-        mockGetIsB2BAudienceFromPlan = require('@proton/payments').getIsB2BAudienceFromPlan as jest.Mock;
+        mockGetIsB2BAudienceFromPlan = require('@proton/payments/core/plan/helpers')
+            .getIsB2BAudienceFromPlan as jest.Mock;
     });
 
     beforeEach(() => {

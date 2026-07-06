@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 
 import OfferTitle from '../shared/OfferTitle';
 

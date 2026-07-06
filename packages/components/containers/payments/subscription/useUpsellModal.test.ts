@@ -1,5 +1,5 @@
-import { CYCLE, PLANS } from '@proton/payments';
-import type { Currency } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getTestPlans } from '@proton/testing/data/payments/data-plans';

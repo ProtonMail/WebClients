@@ -4,8 +4,9 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
-import { COUPON_CODES, CYCLE, type PLANS, getPlansMap } from '@proton/payments';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
+import { COUPON_CODES, CYCLE, type PLANS } from '@proton/payments/core/constants';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 import type { PriceData } from '../helpers/interface';
 import { roundToUpper } from '../helpers/paidUserNudgeHelper';

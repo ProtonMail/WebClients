@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,

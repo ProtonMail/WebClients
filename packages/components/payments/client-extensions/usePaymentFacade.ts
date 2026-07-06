@@ -5,33 +5,30 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
 import useLoading from '@proton/hooks/useLoading';
-import {
-    type ADDON_NAMES,
-    type AvailablePaymentMethod,
-    type ChargeablePaymentParameters,
-    type ChargebeeIframeEvents,
-    type ChargebeeIframeHandles,
-    type Currency,
-    type FreeSubscription,
-    PAYMENT_METHOD_TYPES,
-    type PLANS,
-    type PaymentMethodFlow,
-    type PaymentMethodType,
-    type PaymentProcessorType,
-    type PaymentStatus,
-    type PlainPaymentMethodType,
-    type PlanIDs,
-    type SavedPaymentMethod,
-    type Subscription,
-    type SubscriptionEstimation,
-    SubscriptionMode,
-} from '@proton/payments';
 import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
+import type {
+    AvailablePaymentMethod,
+    ChargeablePaymentParameters,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
+    Currency,
+    FreeSubscription,
+    PaymentMethodFlow,
+    PaymentMethodType,
+    PaymentStatus,
+    PlainPaymentMethodType,
+    PlanIDs,
+    SavedPaymentMethod,
+} from '@proton/payments/core/interface';
+import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { useCbIframe } from '@proton/payments/ui';
+import { useCbIframe } from '@proton/payments/ui/components/ChargebeeIframe';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { type Invoice, InvoiceState, InvoiceType } from '@proton/payments';
+import { InvoiceState, InvoiceType } from '@proton/payments/core/constants';
+import type { Invoice } from '@proton/payments/core/interface';
 
 import InvoiceTypeTitle from './InvoiceTypeTitle';
 

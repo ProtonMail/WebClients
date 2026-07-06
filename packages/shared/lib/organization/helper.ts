@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';

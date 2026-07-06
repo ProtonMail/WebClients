@@ -1,6 +1,8 @@
-import type { PaymentStatus } from '@proton/payments';
-import { CYCLE, type Cycle, FREE_PLAN, PLANS, getDefaultMainCurrency, getFreeCheckResult } from '@proton/payments';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import type { Cycle, PaymentStatus } from '@proton/payments/core/interface';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { SubscriptionData } from '../signup/interfaces';

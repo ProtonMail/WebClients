@@ -10,8 +10,7 @@ import type {
 } from '@proton/components/components/onboarding/b2b/interface';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { getPlan } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     type APP_NAMES,

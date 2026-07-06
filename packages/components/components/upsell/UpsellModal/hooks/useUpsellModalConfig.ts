@@ -9,7 +9,7 @@ import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/
 import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';

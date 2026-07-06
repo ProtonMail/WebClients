@@ -1,4 +1,4 @@
-import type { TransactionType } from '@proton/payments';
+import type { TransactionType } from '@proton/payments/core/constants';
 import { getTransactionTypeTitle } from '@proton/payments/core/transactions';
 
 interface Props {

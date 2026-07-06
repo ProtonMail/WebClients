@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments';
+import { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { MAX_BOOKING_PAGES } from '../interface';

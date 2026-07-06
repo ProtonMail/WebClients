@@ -1,8 +1,10 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import type { FreeSubscription } from '@proton/payments';
-import { type Subscription, SubscriptionPlatform, isManagedExternally } from '@proton/payments';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { isManagedExternally } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
 /**

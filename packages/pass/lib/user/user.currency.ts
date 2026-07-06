@@ -1,5 +1,6 @@
 import type { Maybe } from '@proton/pass/types';
-import { type Currency, getDefaultMainCurrency } from '@proton/payments';
+import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
 
 export const supportedCurrencies = ['USD', 'EUR', 'CHF'];
 

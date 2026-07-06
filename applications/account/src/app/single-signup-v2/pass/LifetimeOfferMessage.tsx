@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import type { Currency } from '@proton/payments';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 type Props = {

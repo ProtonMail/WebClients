@@ -1,26 +1,21 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
+import { getFreePlan, queryPlans } from '@proton/payments/core/api/api';
+import { CURRENCIES } from '@proton/payments/core/constants';
 import {
-    CURRENCIES,
-    type Currency,
-    type FreePlanDefault,
-    type Plan,
+    NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     getAvailableCurrencies,
     getDefaultMainCurrency,
     isRegionalCurrency,
-} from '@proton/payments';
-import { getFreePlan, queryPlans } from '@proton/payments/core/api/api';
-import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments/core/currencies';
+} from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseStore,
-    getIsStaleRefetch,
-} from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import { CacheType } from '@proton/redux-utilities/interface';
+import { cacheHelper, createPromiseStore, getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 

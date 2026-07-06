@@ -12,18 +12,17 @@ import {
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
 import useLoad from '@proton/components/hooks/useLoad';
+import { PLANS } from '@proton/payments/core/constants';
+import { getHasPlusPlan } from '@proton/payments/core/plan/helpers';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
-    FREE_PLAN,
-    type FreePlanDefault,
-    PLANS,
-    type Plan,
-    getHasPlusPlan,
-    getPlansMap,
     getSubscriptionPlanTitle,
     hasAllProductsB2CPlan,
     hasFreeOrPlus,
     hasVPN2024,
-} from '@proton/payments';
+} from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';

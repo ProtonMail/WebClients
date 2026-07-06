@@ -3,7 +3,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import useApi from '@proton/components/hooks/useApi';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 

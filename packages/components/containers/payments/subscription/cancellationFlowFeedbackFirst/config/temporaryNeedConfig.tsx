@@ -26,8 +26,8 @@ import { IcSignature } from '@proton/icons/icons/IcSignature';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import type { FreePlanDefault, Plan } from '@proton/payments';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,
