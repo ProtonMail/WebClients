@@ -6,8 +6,10 @@ import { selectPreviousSubscription } from '@proton/account/previousSubscription
 import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { PLANS, type PlanIDs, getPlanName, getPlanNameFromIDs } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { PLANS } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';

@@ -4,7 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { getOwnDomainText } from '@proton/components/containers/payments/features/mail';
 import type { IconName } from '@proton/icons/types';
-import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs, getRenewCycle } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import { getRenewCycle } from '@proton/payments/core/renewals';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,

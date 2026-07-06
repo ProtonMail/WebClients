@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import useConfig from '@proton/components/hooks/useConfig';
-import type { Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';

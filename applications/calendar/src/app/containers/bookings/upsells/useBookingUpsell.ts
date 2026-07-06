@@ -1,7 +1,9 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getAddons, isFreeSubscription, isMeetAddon } from '@proton/payments';
+import { isMeetAddon } from '@proton/payments/core/plan/addons';
+import { getAddons } from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { hasOrgMemberReachedBookingLimit, hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelpers';

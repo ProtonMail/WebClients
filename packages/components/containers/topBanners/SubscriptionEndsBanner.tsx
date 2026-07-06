@@ -6,8 +6,8 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Time from '@proton/components/components/time/Time';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
-import { SubscriptionPlatform, subscriptionExpires } from '@proton/payments';
-import { isFreeSubscriptionResult } from '@proton/payments/core/subscription/helpers';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { isFreeSubscriptionResult, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';

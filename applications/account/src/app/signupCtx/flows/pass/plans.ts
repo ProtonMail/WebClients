@@ -1,5 +1,5 @@
-import type { Currency, PlanIDs } from '@proton/payments';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 
 export const passPlus: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.PASS]: 1 },

@@ -10,7 +10,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useFeature } from '@proton/features';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 import { applyHOCs } from '@proton/testing/lib/context/hocs';

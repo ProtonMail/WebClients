@@ -5,13 +5,13 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
-import type { SavedPaymentMethod } from '@proton/payments';
+import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import {
     isPaypalDetails,
     isSavedPaymentMethodApplePay,
     isSavedPaymentMethodGooglePay,
     isSavedPaymentMethodSepa,
-} from '@proton/payments';
+} from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import PaymentMethodActions from './PaymentMethodActions';

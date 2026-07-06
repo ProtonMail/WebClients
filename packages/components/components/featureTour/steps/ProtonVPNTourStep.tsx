@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { organizationThunk } from '@proton/account/organization';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isLinux, isMac, isMobile } from '@proton/shared/lib/helpers/browser';
 import {

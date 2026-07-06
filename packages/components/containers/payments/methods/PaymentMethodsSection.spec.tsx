@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
-import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { applyHOCs } from '@proton/testing/lib/context/hocs';
 import {

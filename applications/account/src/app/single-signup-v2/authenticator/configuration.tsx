@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { AppsLogos, Logo } from '@proton/components';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import {
     APPS,
     AUTHENTICATOR_APP_NAME,

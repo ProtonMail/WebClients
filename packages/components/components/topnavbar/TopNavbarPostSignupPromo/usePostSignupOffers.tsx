@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { AlwaysOnUpsell } from './AlwaysOnUpsell/AlwaysOnUpsell';

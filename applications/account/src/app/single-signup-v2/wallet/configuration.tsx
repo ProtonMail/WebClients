@@ -21,7 +21,8 @@ import {
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { IcLock } from '@proton/icons/icons/IcLock';
-import { CYCLE, PLANS, type Plan, type PlansMap } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,

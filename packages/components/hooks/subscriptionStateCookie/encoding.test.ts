@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';

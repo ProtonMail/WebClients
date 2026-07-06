@@ -3,7 +3,10 @@ import { c } from 'ttag';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import Time from '@proton/components/components/time/Time';
-import { type FreeSubscription, PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import { hasBundle } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

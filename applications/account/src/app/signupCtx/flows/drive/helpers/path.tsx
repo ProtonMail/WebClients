@@ -1,5 +1,7 @@
-import type { ADDON_NAMES, PlanIDs, PlansMap } from '@proton/payments';
-import { type Currency, type Cycle, PLANS, getPlanFromIDs } from '@proton/payments';
+import { type ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
+import { getPlanFromIDs } from '@proton/payments/core/planIDs';
 
 export const getSignupHref = ({
     plan,

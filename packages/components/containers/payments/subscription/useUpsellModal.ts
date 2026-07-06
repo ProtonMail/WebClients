@@ -1,4 +1,4 @@
-import { getPlanByName } from '@proton/payments';
+import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 import type { PlanProps } from './UpsellModal';
 import { getPlanFeatures } from './helpers/getPlanFeatures';

@@ -12,9 +12,16 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
-import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, hasLumo, isAutoRenewTrial, isTrial } from '@proton/payments';
-import { getHasVpnOnlyB2BPlan, isReferralTrial } from '@proton/payments/core/subscription/helpers';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import {
+    getCanSubscriptionAccessDuoPlan,
+    getHasVpnOnlyB2BPlan,
+    hasLumo,
+    isAutoRenewTrial,
+    isReferralTrial,
+    isTrial,
+} from '@proton/payments/core/subscription/helpers';
+import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';

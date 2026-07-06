@@ -1,5 +1,8 @@
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { getHasVpnB2BPlan, hasAnyB2bBundle } from '@proton/payments/index';
+import {
+    type MaybeFreeSubscription,
+    getHasVpnB2BPlan,
+    hasAnyB2bBundle,
+} from '@proton/payments/core/subscription/helpers';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 export const isB2BAdmin = ({

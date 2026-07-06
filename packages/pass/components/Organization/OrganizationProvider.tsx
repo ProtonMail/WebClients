@@ -8,7 +8,7 @@ import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectOrganizationState, selectPassPlan, selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments/core/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 

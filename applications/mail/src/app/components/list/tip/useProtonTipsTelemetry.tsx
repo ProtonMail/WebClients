@@ -1,6 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS, getPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

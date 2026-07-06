@@ -10,7 +10,7 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APP_UPSELL_REF_PATH, DRIVE_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';

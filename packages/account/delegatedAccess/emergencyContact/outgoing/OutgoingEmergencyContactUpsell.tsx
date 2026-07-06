@@ -4,7 +4,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type Upsell, isUpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import {
     type APP_NAMES,
     APP_UPSELL_REF_PATH,

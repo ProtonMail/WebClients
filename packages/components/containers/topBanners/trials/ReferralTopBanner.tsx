@@ -16,10 +16,9 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
-    CYCLE,
-    FREE_PLAN,
-    PLANS,
     getPlan,
     getPlanIDs,
     getPlanName,
@@ -28,7 +27,7 @@ import {
     isAutoRenewTrial,
     isTrialExpired,
     willTrialExpireInLessThan1Week,
-} from '@proton/payments';
+} from '@proton/payments/core/subscription/helpers';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

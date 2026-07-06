@@ -1,5 +1,5 @@
-import type { SubscriptionPlan } from '@proton/payments';
-import { ADDON_NAMES, PLANS } from '@proton/payments';
+import { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
+import type { SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { InternalBookingPage } from '../../../store/internalBooking/interface';

@@ -8,18 +8,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import {
-    type MultiCheckOptions,
-    type PaymentStatus,
-    type PaymentsApi,
-    type SubscriptionEstimation,
-    SubscriptionMode,
-    captureWrongPlanIDs,
-    getPlanName,
-    getPlansMap,
-    isLifetimePlanSelected,
-    isSubscriptionCheckForbidden,
-} from '@proton/payments';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
 import {
     type CheckSubscriptionData,
@@ -45,7 +33,19 @@ import {
     VatReverseChargeNotSupportedError,
     WrongBillingAddressError,
 } from '@proton/payments/core/errors';
-import type { CheckSubscriptionRequestOptions, GetFullBillingAddressOptions } from '@proton/payments/core/interface';
+import { captureWrongPlanIDs } from '@proton/payments/core/helpers';
+import type {
+    CheckSubscriptionRequestOptions,
+    GetFullBillingAddressOptions,
+    MultiCheckOptions,
+    PaymentStatus,
+    PaymentsApi,
+} from '@proton/payments/core/interface';
+import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { getPlanName, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { enrichMockCouponDiscountBreakdown } from '@proton/payments/ui/coupon-config/mock-coupon-discount-breakdown';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';

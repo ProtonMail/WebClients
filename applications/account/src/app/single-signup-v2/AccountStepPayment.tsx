@@ -10,28 +10,26 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { WithLoading } from '@proton/hooks/useLoading';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     AvailablePaymentMethod,
     ExtendedTokenPayment,
     PaymentMethodFlow,
-    PaymentProcessorHook,
     PaymentsApi,
     TokenPayment,
-} from '@proton/payments';
-import {
-    PAYMENT_METHOD_TYPES,
-    type Plan,
-    SubscriptionMode,
-    getIsB2BAudienceFromPlan,
-    isV5PaymentToken,
-    v5PaymentTokenToLegacyPaymentToken,
-} from '@proton/payments';
-import { getPaymentsVersion } from '@proton/payments/core/api/api';
-import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
+} from '@proton/payments/core/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { isV5PaymentToken } from '@proton/payments/core/type-guards';
+import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import { PayButton } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { PayButton } from '@proton/payments/ui/components/PayButton';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

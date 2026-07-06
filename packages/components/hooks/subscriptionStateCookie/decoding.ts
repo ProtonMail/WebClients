@@ -1,4 +1,5 @@
-import { CYCLE, type Cycle, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Cycle } from '@proton/payments/core/interface';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import type {

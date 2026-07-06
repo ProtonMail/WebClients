@@ -19,7 +19,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useSortedList from '@proton/components/hooks/useSortedList';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';

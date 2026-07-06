@@ -16,13 +16,9 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import {
-    PLANS,
-    getIsB2BAudienceFromPlan,
-    getIsB2BAudienceFromSubscription,
-    hasVisionary,
-    isTrial,
-} from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import { getIsB2BAudienceFromSubscription, hasVisionary, isTrial } from '@proton/payments/core/subscription/helpers';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';

@@ -1,6 +1,8 @@
-import type { Currency } from '@proton/payments';
-import { CYCLE, type PaymentsApi, type Plan, getPlanByName, getPlansMap, hasCycle } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { CYCLE } from '@proton/payments/core/constants';
+import type { Currency, PaymentsApi } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { getPlanByName, getPlansMap, hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 import type { DealWithPrices, OfferConfig } from '../interface';
 

@@ -1,4 +1,4 @@
-import type { CYCLE, PLANS } from '@proton/payments';
+import type { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
