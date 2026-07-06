@@ -1523,7 +1523,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7770,8 +7771,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9231,7 +9231,7 @@
         "Du är bara några klick bort från en skräpfri inkorg"
       ],
       "${ MEET_APP_NAME } seats": [
-        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+        "Användarplatserför ${ MEET_APP_NAME }"
       ],
       "You have **${ count } conversation** in ${ categoryLabel } category": [
         "Du har **${ count } konversation** i kategori ${ categoryLabel }",
@@ -10398,6 +10398,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitton, bokningar, fakturor och beställningar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15110,6 +15113,10 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttad till ${ label }. Liknande meddelande kommer att kategoriseras här i framtiden.",
+        "Flyttad till ${ label }. Liknande meddelanden kommer att kategoriseras här i framtiden."
       ]
     },
     "Success notification": {
@@ -16485,6 +16492,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -16977,6 +16987,31 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     }
   }

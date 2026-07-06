@@ -329,10 +329,10 @@
         "Krymp skrivevinduet"
       ],
       "Copy '${ code }' to clipboard": [
-        "Kopier «${ code }» til utklippstavlen"
+        "Kopier '${ code }' til utklippstavlen"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "Kopier «${ code }» til utklippstavlen og flytt til Papirkurv"
+        "Kopier '${ code }' til utklippstavlen og flytt til papirkurv"
       ],
       "Copy address": [
         "Kopier adresse"
@@ -1523,7 +1523,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1778,7 +1779,7 @@
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME }-lisenser"
+        "${ LUMO_APP_NAME } seter"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1787,7 +1788,7 @@
         "${ price } per domene"
       ],
       "${ price } per seat": [
-        "${ price } per lisens"
+        "${ price } per sete"
       ],
       "${ price } per user": [
         "${ price } per bruker"
@@ -1797,16 +1798,16 @@
         "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
+        "${ seats } ${ LUMO_APP_NAME } sete",
+        "${ seats } ${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME }-lisens",
-        "${ seats } ${ MEET_APP_NAME }-lisenser"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
+        "${ seats } skriveassistentsete",
+        "${ seats } skriveassistentseter"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1828,7 +1829,7 @@
         "Skriveassistent"
       ],
       "Writing assistant seats": [
-        "Skriveassistentlisenser"
+        "Skriveassistentseter"
       ]
     },
     "Alert": {
@@ -1976,10 +1977,10 @@
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
@@ -2256,7 +2257,7 @@
         "Ikke aktivert"
       ],
       "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige lisenser"
+        "Organisasjonen har ikke nok ledige seter"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
@@ -5444,6 +5445,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "No drive found to import": [
+        "Ingen disker å importere funnet"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Ikke nok lagringsplass i din ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet feil, vi kan ikke importere filene"
       ]
     },
     "error": {
@@ -6833,7 +6843,7 @@
         "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ n } unread conversation": [
         "${ n } ulest samtale",
@@ -7776,8 +7786,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9255,6 +9264,9 @@
       ],
       "You have no messages in this category": [
         "Du har ingen meldinger i denne kategorien"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
       ]
     },
     "info": {
@@ -9828,13 +9840,13 @@
         "Last ned logger"
       ],
       "Drive": [
-        "Stasjon"
+        "Drive"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "f.eks. Amazon, eBay, Etsy"
       ],
       "Elements in store": [
-        "Elementer i lager"
+        "Elementer i store"
       ],
       "Email": [
         "E-post"
@@ -10269,7 +10281,7 @@
         "Uttalelse"
       ],
       "Store state": [
-        "Lagerstatus"
+        "Store-tilstand"
       ],
       "Street address": [
         "Gateadresse"
@@ -10420,6 +10432,9 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Oppdateringer – Automatiserte bekreftelser, varsler og kontooppdateringer"
+      ],
+      "Import your emails": [
+        "Importer e-postene dine"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10646,7 +10661,7 @@
         "Lær mer"
       ],
       "Learn more.": [
-        "Finn ut mer."
+        "Lær mer."
       ],
       "Less": [
         "Mindre"
@@ -10888,11 +10903,11 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME }-tilgang",
-        "${ seats } ${ MEET_APP_NAME }-tilganger"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ]
     },
     "meet_2025: Feature": {
@@ -10955,11 +10970,11 @@
     },
     "meet_2025: Info": {
       "${ seats } seat included": [
-        "${ seats } tilgang inkludert",
-        "${ seats } tilganger inkludert"
+        "${ seats } sete inkludert",
+        "${ seats } seter inkludert"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seter i prøveperioden."
       ]
     },
     "Message": {
@@ -13157,22 +13172,22 @@
         "Emne"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Fortell ${ subject } hva du vil at skal skrives. Eksempel: «Kunngjør kommende hendelser i et nyhetsbrev»"
+        "Fortell ${ subject } hva som skal skrives. Eksempel: \"Kunngjør kommende hendelser i et nyhetsbrev\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Fortell ${ subject } hva du vil skrive. Eksempel: «Avbryt treningsmedlemskapet mitt»"
+        "Fortell ${ subject } hva du vil skrive. Eksempel: \"Avbryt treningsmedlemskapet mitt\""
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Fortell ${ subject } hva du vil skrive. Eksempel: «Inviter Jane til festen min»"
+        "Fortell ${ subject } hva du vil skrive. Eksempel: \"Inviter Jane til festen min\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "Fortell ${ subject } hva du vil skrive. Eksempel: «Takk kollegaen min for hjelpen på et prosjekt»"
+        "Fortell ${ subject } hva du vil skrive. Eksempel: \"Takk kollegaen min for hjelpen på et prosjekt\""
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
         "Fortell ${ subject } hva som skal skrives. Eksempel: «Skriv et følgebrev for en praksisplass»"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "Fortell ${ subject } hva du vil skrive. Eksempel: «Skriv en oppfølgings-e-post til en klient»"
+        "Fortell ${ subject } hva du vil skrive. Eksempel: \"Skriv en oppfølgings-e-post til en klient\""
       ],
       "Text": [
         "Tekst"
@@ -16408,6 +16423,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16505,6 +16523,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
+      ],
+      "Version 6 OpenPGP key": [
+        "Versjon 6 OpenPGP-nøkkel"
       ]
     },
     "tooltip": {
@@ -17002,6 +17023,31 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Expires": [
+        "Utløper"
+      ],
+      "Fingerprint": [
+        "Fingeravtrykk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
     }
   }

@@ -1523,7 +1523,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -4447,6 +4448,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importaremos tus correos electrónicos antiguos y sincronizaremos los mensajes nuevos de Gmail a partir de ahora"
       ]
     },
     "description": {
@@ -7773,8 +7777,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9227,6 +9230,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Tienes ${ totalLabel } en tu bandeja de entrada."
+      ],
+      "You have no conversations in this category": [
+        "No tienes conversaciones en esta categoría"
+      ],
+      "You have no messages in this category": [
+        "No tienes mensajes en esta categoría"
       ]
     },
     "info": {
@@ -10374,6 +10386,24 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Boletines - Noticias, correos electrónicos editoriales y contenido no promocional"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal: correos electrónicos personales y de trabajo, además de actualizaciones importantes"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promociones - Ofertas, promociones y correos electrónicos de marketing"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Actualizaciones, actividad y mensajes en las redes sociales"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transacciones - Recibos, reservas, facturas y pedidos"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Actualizaciones - Confirmaciones automatizadas, alertas y actualizaciones de la cuenta"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16943,6 +16973,22 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     }
   }

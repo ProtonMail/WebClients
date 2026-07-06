@@ -1523,7 +1523,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -5441,6 +5442,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "No drive found to import": [
+        "Aucun disque à importer détecté"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Espace insuffisant dans votre ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ]
     },
     "error": {
@@ -7773,8 +7783,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7870,7 +7879,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
+        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -9252,6 +9261,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ]
     },
     "info": {
@@ -16405,6 +16417,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16502,6 +16517,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
       ]
     },
     "tooltip": {
@@ -16994,6 +17012,31 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     }
   }

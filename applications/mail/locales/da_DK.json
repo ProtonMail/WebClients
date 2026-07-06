@@ -1523,7 +1523,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -3032,7 +3033,7 @@
         "Gå til arkiv"
       ],
       "Go to Drafts": [
-        "Gå til kladder"
+        "Gå til udkast"
       ],
       "Go to Inbox": [
         "Gå til indbakke"
@@ -3127,7 +3128,7 @@
         "Rediger og planlæg igen"
       ],
       "Message saved to Drafts": [
-        "Besked gemt i kladder"
+        "Besked gemt i udkast."
       ],
       "Quit import customization?": [
         "Afslut importtilpasning?"
@@ -5479,7 +5480,7 @@
         "Udkast kan ikke flyttes til indbakke"
       ],
       "Drafts cannot be moved to Spam": [
-        "Kladder kan ikke flyttes til spam"
+        "Udkast kan ikke flyttes til spam"
       ],
       "Sent messages cannot be moved to Inbox": [
         "Sendte beskeder kan ikke flyttes til indbakke"
@@ -7793,8 +7794,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7890,7 +7890,7 @@
         "Lav prioritet"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail applikation."
+        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -10585,7 +10585,7 @@
         "Slettet"
       ],
       "Drafts": [
-        "Kladder"
+        "Udkast"
       ],
       "Enable an email address linked to one of your calendars.": [
         "Aktiver en e-mailadresse knyttet til en af dine kalendere."
@@ -16528,6 +16528,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
       ]
     },
     "tooltip": {
@@ -17020,6 +17023,31 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]
     }
   }

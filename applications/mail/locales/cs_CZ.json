@@ -1531,7 +1531,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -6936,7 +6939,7 @@
         "${ MAIL_APP_NAME } může chránit i vaši firmu."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } nyní automaticky třídí vaše e-maily do kategorií, jako jsou Primární, Sociální sítě, Propagace a další, což vám pomáhá snadněji vyhledávat a spravovat vaše zprávy."
+        "${ MAIL_APP_NAME } nyní automaticky třídí vaše e-maily do kategorií, jako jsou Primární, Sociální sítě, Propagační akce a další, což vám pomáhá snadněji vyhledávat a spravovat vaše zprávy."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } je řešení pro videokonference s koncovým šifrováním. Přidejte si jej do svého tarifu a pořádejte bezpečné schůzky."
@@ -7146,10 +7149,10 @@
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -7959,7 +7962,7 @@
         "Uveďte vámi použitý požadavek a odpověď, abyste nám pomohli vylepšit přesnost."
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Included for free with your plan": [
         "Bezplatně v rámci vašeho tarifu"
@@ -7971,10 +7974,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8397,7 +8397,7 @@
         "Soukromé prohlížení (nebo režim \"inkognito\") je užitečné pouze pro skrytí vaší aktivity v zařízení. Zabrání prohlížeči ukládat historii a soubory cookies, ale nezpůsobí, že budete neviditelní. Váš ISP, správce sítě a webové stránky, které navštěvujete, mohou stále vidět, co děláte online."
       ],
       "Private by design.": [
-        "Soukromé už ze své podstaty."
+        "Navrženo s ohledem na soukromí"
       ],
       "Proofread selection": [
         "Korektury výběru"
@@ -8982,7 +8982,7 @@
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Pro odemknutí navyšte tarif na ${ plan }"
@@ -9117,7 +9117,7 @@
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -9525,7 +9525,7 @@
     },
     "Key badge": {
       "Active Signer": [
-        "Aktivní podpisový klíč"
+        "Aktivní podepisovatel"
       ],
       "Compromised": [
         "Kompromitovaný"
@@ -11942,7 +11942,7 @@
         "Neomezený objem/šířka pásma"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",
@@ -13477,7 +13477,7 @@
         "Sdělte ${ subject }, co má napsat. Příklad: \"Oznamte nadcházející události v e-mailovém zpravodaji\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Sdělte subjektu ${ subject }, co má napsat. Příklad: „Zrušit moje členství v posilovně“"
+        "Sdělte ${ subject }, co má napsat. Příklad: „Zruš moje členství v posilovně“"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
         "Sdělte ${ subject }, co má napsat. Příklad: \"Pozvi Janu na večírek\""
@@ -16824,7 +16824,7 @@
         "Ověření selhalo"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."
@@ -17588,6 +17588,20 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }

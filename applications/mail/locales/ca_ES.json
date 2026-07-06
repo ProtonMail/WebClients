@@ -1523,7 +1523,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7793,8 +7794,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7890,7 +7890,7 @@
         "Prioritat baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Feu de ${ MAIL_APP_NAME } la vostra aplicació de correu electrònic per defecte."
+        "Establiu ${ MAIL_APP_NAME } com l'aplicació de correu per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -12582,7 +12582,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no ho torneu a mostrar"
+        "Sí, no m'ho torneu a mostrar"
       ]
     },
     "Option group": {
@@ -16528,6 +16528,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
       ]
     },
     "tooltip": {
@@ -17020,6 +17023,31 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     }
   }
