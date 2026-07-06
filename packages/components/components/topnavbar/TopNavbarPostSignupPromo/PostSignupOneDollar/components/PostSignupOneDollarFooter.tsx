@@ -1,6 +1,6 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import clsx from '@proton/utils/clsx';
 

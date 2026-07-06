@@ -25,25 +25,23 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { changeRenewState } from '@proton/payments/core/api/api';
+import { Renew } from '@proton/payments/core/subscription/constants';
 import {
-    Renew,
-    type Subscription,
     getRenewalTime,
     getSubscriptionPlanTitle,
     hasLifetimeCoupon,
-    isManagedExternally,
-    isUpcomingSubscriptionUnpaid,
-    subscriptionExpires,
-} from '@proton/payments';
-import { changeRenewState } from '@proton/payments/core/api/api';
-import {
     isAddonDowngrade,
+    isManagedExternally,
     isReferralTrial,
     isSameCycle,
+    isUpcomingSubscriptionUnpaid,
     shouldHaveUpcomingSubscription,
+    subscriptionExpires,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

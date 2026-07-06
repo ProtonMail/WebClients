@@ -2,9 +2,9 @@ import type { Ref } from 'react';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
-import type { Invoice, Transaction } from '@proton/payments';
-import { isTransaction } from '@proton/payments';
 import { getInvoicePDF, getTransactionPDF } from '@proton/payments/core/api/api';
+import type { Invoice, Transaction } from '@proton/payments/core/interface';
+import { isTransaction } from '@proton/payments/core/type-guards';
 
 import FilePreview from '../filePreview/FilePreview';
 import NavigationControl from '../filePreview/NavigationControl';

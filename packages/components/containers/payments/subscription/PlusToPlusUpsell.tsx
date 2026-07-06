@@ -8,7 +8,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS, type Plan, type PlansMap, getPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { getNormalizedPlanTitles } from './plusToPlusHelper';

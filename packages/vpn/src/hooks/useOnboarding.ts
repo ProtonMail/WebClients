@@ -5,7 +5,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useDeclarativeLocalState } from '@proton/components/hooks/useDeclarativeLocalState.ts';
-import { getIsVpnB2BPlan } from '@proton/payments';
+import { getIsVpnB2BPlan } from '@proton/payments/core/plan/helpers';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';

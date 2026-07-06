@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { CYCLE } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SignupHumanVerification, SignupType } from '../../../signup/interfaces';

@@ -17,7 +17,7 @@ import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useLoading from '@proton/hooks/useLoading';
 import type { IconName } from '@proton/icons/types';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import aztecoLogo from '@proton/styles/assets/img/brand/azteco.svg';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';

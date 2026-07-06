@@ -9,34 +9,32 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { hasLumoAddonFromPlanIDs, hasMeetAddonFromPlanIDs, hasScribeAddon } from '@proton/payments/core/plan/addons';
+import { getIsPassB2BPlan, getIsSentinelPlan } from '@proton/payments/core/plan/helpers';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
-    Renew,
     getHasVpnB2BPlan,
+    getHasVpnOnlyB2BPlan,
     getIsB2BAudienceFromSubscription,
-    getIsPassB2BPlan,
-    getIsSentinelPlan,
     getPlanIDs,
     getSubscriptionPlanTitle,
     hasDeprecatedVPN,
     hasDriveBusiness,
     hasLumo,
-    hasLumoAddonFromPlanIDs,
     hasLumoBusiness,
-    hasMeetAddonFromPlanIDs,
+    hasMeetBusiness,
     hasPass,
     hasPassFamily,
-    hasScribeAddon,
     hasVPN2024,
     hasVPNPassBundle,
     hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
     isTrial,
-} from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { getHasVpnOnlyB2BPlan, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

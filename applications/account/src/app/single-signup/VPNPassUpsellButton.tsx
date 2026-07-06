@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { PassLogo, Toggle } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
-import { type CYCLE, type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
+import { type CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 
 import SaveLabel2 from './SaveLabel2';
 

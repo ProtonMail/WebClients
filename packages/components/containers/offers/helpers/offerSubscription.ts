@@ -1,6 +1,5 @@
-import type { Subscription } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
 import {
-    CYCLE,
     getIsVariableCycleOffer,
     hasBundle,
     hasDeprecatedVPN,
@@ -17,7 +16,8 @@ import {
     hasVPNPassBundle,
     hasVisionary,
     isManagedExternally,
-} from '@proton/payments';
+} from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 class OfferSubscription {
     subscription: Subscription;

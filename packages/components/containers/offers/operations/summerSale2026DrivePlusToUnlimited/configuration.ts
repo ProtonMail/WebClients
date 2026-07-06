@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 
 import { SummerSale2026Layout } from '../../components/summerSale2026/SummerSale2026Layout';
 import type { OfferConfig } from '../../interface';

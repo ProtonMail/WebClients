@@ -3,8 +3,9 @@ import type {
     OpenSubscriptionModalCallback,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import type { COUPON_CODES, Plan, PlanIDs } from '@proton/payments';
-import { CYCLE } from '@proton/payments';
+import { type COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';

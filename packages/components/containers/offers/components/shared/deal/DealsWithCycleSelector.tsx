@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
-import { CYCLE, type Cycle } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
+import type { Cycle } from '@proton/payments/core/interface';
 
 import type { OfferProps } from '../../../interface';
 import Deal from './Deal';

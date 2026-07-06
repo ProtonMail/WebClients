@@ -6,8 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import type { MaybeNull } from '@proton/pass/types';
-import { CYCLE, PLANS } from '@proton/payments/index';
-import { usePaymentOptimistic } from '@proton/payments/ui';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

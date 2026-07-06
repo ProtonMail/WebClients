@@ -11,29 +11,19 @@ import { getPlanTitleWithAddons } from '@proton/components/containers/payments/s
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import {
-    CYCLE,
-    type Currency,
-    ENTERPRISE_PLAN_TITLE,
-    FREE_PLAN,
-    type FreePlanDefault,
-    PLANS,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
-    type Subscription,
-    type SubscriptionPlan,
-    TRIAL_DURATION_DAYS,
-    getHasPlusPlan,
-    getPlanFromPlanIDs,
-    getPlanIDs,
-    getRenewCycle,
-} from '@proton/payments';
-import {
     type PaymentsCheckoutUI,
     getCheckResultFromSubscription,
     getCheckoutUi,
     getOptimisticCheckout,
 } from '@proton/payments/core/checkout';
+import { CYCLE, ENTERPRISE_PLAN_TITLE, PLANS, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
+import { getHasPlusPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import type { FreePlanDefault, Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { getRenewCycle } from '@proton/payments/core/renewals';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getPlanIDs } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

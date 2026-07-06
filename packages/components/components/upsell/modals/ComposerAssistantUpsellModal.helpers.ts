@@ -1,13 +1,9 @@
 import { B2C_PLANS_SUPPORTING_SCRIBE } from '@proton/components/helpers/assistant';
-import {
-    type ADDON_NAMES,
-    type AmountAndCurrency,
-    CYCLE,
-    type FullPlansMap,
-    getPlanName,
-    isFreeSubscription,
-} from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { type ADDON_NAMES, CYCLE } from '@proton/payments/core/constants';
+import type { AmountAndCurrency } from '@proton/payments/core/interface';
+import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 

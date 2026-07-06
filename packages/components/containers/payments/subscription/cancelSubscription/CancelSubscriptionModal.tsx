@@ -4,8 +4,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Time from '@proton/components/components/time/Time';
-import type { Subscription } from '@proton/payments';
-import { getPlanTitle, getRenewalTime } from '@proton/payments';
+import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
 import type { CancelSubscriptionResult } from './types';

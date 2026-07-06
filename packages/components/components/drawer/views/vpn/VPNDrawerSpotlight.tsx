@@ -15,7 +15,8 @@ import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
-import { PLANS, getPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
 import {
     type ConnectionInformationResult,
     getConnectionInformation,

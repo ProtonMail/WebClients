@@ -19,49 +19,47 @@ import useCancellationFlow from '@proton/components/containers/payments/subscrip
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
+import type {
+    Currency,
+    Cycle,
+    FreeSubscription,
+    PaymentStatus,
+    PaymentsApi,
+    PlanIDs,
+} from '@proton/payments/core/interface';
+import { getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
+import { getIsB2BAudienceFromPlan, isPlan } from '@proton/payments/core/plan/helpers';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
+import { switchPlan } from '@proton/payments/core/planIDs';
+import { getIpPricePerMonth } from '@proton/payments/core/price-helpers';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
-    CYCLE,
-    type Currency,
-    type Cycle,
-    FREE_PLAN,
-    type FreePlanDefault,
-    type FreeSubscription,
-    PLANS,
-    type PaymentStatus,
-    type PaymentsApi,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
-    Renew,
-    type Subscription,
+    getAutoCoupon,
     getBundleProPlanToUse,
     getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
-    getFallbackCurrency,
-    getIpPricePerMonth,
-    getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
-    isFreeSubscription as getIsFreeSubscription,
     getMaximumCycleForApp,
     getPlan,
-    getPlanFeatureLimit,
-    getPlansMap,
     hasLumoAddon,
+    hasMeet,
+    hasMeetBusiness,
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
     hasVisionary,
     isAnyManagedExternally,
-    isFreeSubscription,
-    isPlan,
-    isRegionalCurrency,
     isSubscriptionCheckForbidden,
     isTrial,
     notHigherThanAvailableOnBackend,
-    switchPlan,
-} from '@proton/payments';
-import { getAutoCoupon, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
-import { OfferPrice } from '@proton/payments/ui';
+} from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
+import { OfferPrice } from '@proton/payments/ui/components/OfferPrice';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';

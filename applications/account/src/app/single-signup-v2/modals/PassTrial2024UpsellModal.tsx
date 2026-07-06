@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { ModalProps } from '@proton/components';
 import { getTryPassPlus2024Features } from '@proton/components/containers/offers/helpers/offerCopies';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 
 import Trial2024UpsellModal, { type Props as Trial2024UpsellModalProps } from './Trial2024UpsellModal';
 

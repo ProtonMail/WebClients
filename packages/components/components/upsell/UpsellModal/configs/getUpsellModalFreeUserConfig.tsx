@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, getPlanNameFromIDs, isMainCurrency } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { isMainCurrency } from '@proton/payments/core/currencies';
+import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 
 import { getUpsellPlanMonthlyPrice } from '../helpers/getUpsellPlanMonthlyPrice';
 import type { UpsellModalConfigCase } from '../interface';

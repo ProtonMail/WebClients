@@ -5,8 +5,9 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
-import type { FreePlanDefault, Plan, Subscription } from '@proton/payments';
-import type { PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import { UpsellModalPanel } from './panels/UpsellModalPanel';

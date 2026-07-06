@@ -7,8 +7,10 @@ import { Badge } from '@proton/components/components/badge/Badge';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import Price from '@proton/components/components/price/Price';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import type { Cycle, FullPlansMap } from '@proton/payments';
-import { type Currency, PLANS, PLAN_NAMES, type PlanIDs, getPrice } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import { getPrice } from '@proton/payments/core/price-helpers';
+import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { BRAND_NAME, PASS_SHORT_APP_NAME, VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

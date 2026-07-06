@@ -9,8 +9,9 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
-import { COUPON_CODES, CYCLE, PLANS, type SubscriptionEstimation } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { useFlag } from '@proton/unleash/useFlag';
 

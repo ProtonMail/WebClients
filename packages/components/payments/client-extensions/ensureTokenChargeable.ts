@@ -4,7 +4,7 @@ import {
     type EnsureTokenChargeableInputs,
     type EnsureTokenChargeableTranslations,
     ensureTokenChargeable as innerEnsureTokenChargeable,
-} from '@proton/payments';
+} from '@proton/payments/core/ensureTokenChargeable';
 
 export const defaultTranslations: EnsureTokenChargeableTranslations = {
     processAbortedError: c('Error').t`Process aborted`,

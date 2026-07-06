@@ -6,7 +6,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { PLANS, getRenewalTime, isFreeSubscription } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getRenewalTime } from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import useEventManager from '../../../../hooks/useEventManager';

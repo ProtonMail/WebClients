@@ -14,7 +14,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
-import { CYCLE, type Currency, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 
 import './DriveUpsellModal.scss';
 

@@ -29,7 +29,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { planSupportsSSO } from '@proton/payments';
+import { planSupportsSSO } from '@proton/payments/core/plan/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import { IDP_TYPE } from '@proton/shared/lib/interfaces';

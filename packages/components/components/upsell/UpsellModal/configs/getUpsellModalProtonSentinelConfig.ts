@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 
 import { getUpsellModalFooterText } from '../helpers/getUpsellModalFooterText';
 import { getUpsellModalSubmitText } from '../helpers/getUpsellModalSubmitText';

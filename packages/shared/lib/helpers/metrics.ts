@@ -1,5 +1,9 @@
-import { getIsB2BAudienceFromSubscription, getPlanName, isFreeSubscription } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import {
+    type MaybeFreeSubscription,
+    getIsB2BAudienceFromSubscription,
+    getPlanName,
+} from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 

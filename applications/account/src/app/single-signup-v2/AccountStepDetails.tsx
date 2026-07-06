@@ -16,8 +16,8 @@ import {
 } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
-import type { StrictPlan } from '@proton/payments';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { StrictPlan } from '@proton/payments/core/plan/interface';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';

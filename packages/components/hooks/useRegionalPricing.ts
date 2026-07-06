@@ -1,7 +1,8 @@
-import { type Currency, type SubscriptionEstimation, isMainCurrency } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
+import { isMainCurrency } from '@proton/payments/core/currencies';
+import type { CheckSubscriptionRequestOptions, Currency } from '@proton/payments/core/interface';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 
 import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
 import { usePreferredPlansMap } from './usePreferredPlansMap';

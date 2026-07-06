@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { SettingsLink, SettingsSectionWide } from '@proton/components';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { canPay, isPaid } from '@proton/shared/lib/user/helpers';
 

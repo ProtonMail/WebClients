@@ -5,20 +5,18 @@ import { c } from 'ttag';
 import { Info } from '@proton/components';
 import { getForcedFeatureLimitations } from '@proton/components/containers/payments/planCustomizer/forced-addon-limits';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import type { PLANS, StrictPlan } from '@proton/payments';
 import {
     ADDON_NAMES,
     ADDON_PREFIXES,
     AddonFeatureLimitKeyMapping,
-    type Currency,
-    type Cycle,
-    type Plan,
-    type PlanIDs,
+    type PLANS,
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_USERS,
-    getAddonType,
-    setQuantity,
-} from '@proton/payments';
+} from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import { getAddonType } from '@proton/payments/core/plan/addons';
+import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
+import { setQuantity } from '@proton/payments/core/planIDs';
 import clsx from '@proton/utils/clsx';
 
 import ButtonNumberInput, { type ButtonNumberInputProps } from './ButtonNumberInput';

@@ -10,17 +10,9 @@ import { useLoading } from '@proton/hooks';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { IconName } from '@proton/icons/types';
-import {
-    COUPON_CODES,
-    CYCLE,
-    type Currency,
-    type Cycle,
-    PLANS,
-    PLAN_NAMES,
-    type PaymentsApi,
-    type PlanIDs,
-    type PlansMap,
-} from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 

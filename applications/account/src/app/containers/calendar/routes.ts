@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { SectionConfig, SidebarConfig } from '@proton/components';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

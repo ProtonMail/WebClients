@@ -12,7 +12,9 @@ import {
     useConfig,
     useModalTwoPromise,
 } from '@proton/components/index';
-import { type FreeSubscription, type Subscription, getPlanTitle } from '@proton/payments';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 
 const getVisionaryWarningTitle = () => {

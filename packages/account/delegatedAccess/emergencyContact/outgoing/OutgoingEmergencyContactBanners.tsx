@@ -10,7 +10,8 @@ import {
     getSubscriptionExpiresDaysLeft,
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
-import { isFreeSubscription, subscriptionExpires } from '@proton/payments';
+import { subscriptionExpires } from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { SECOND } from '@proton/shared/lib/constants';
 import isBetween from '@proton/utils/isBetween';
 

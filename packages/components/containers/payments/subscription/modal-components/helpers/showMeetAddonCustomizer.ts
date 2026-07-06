@@ -1,5 +1,7 @@
-import { getAddonNameByPlan } from '@proton/payments/core/plan/helpers';
-import { ADDON_PREFIXES, type PlanIDs, getPlanNameFromIDs, hasMeetAddonFromPlanIDs } from '@proton/payments/index';
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import { hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { getAddonNameByPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 

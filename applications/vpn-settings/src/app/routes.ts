@@ -4,13 +4,13 @@ import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import {
+    type MaybeFreeSubscription,
     getHasVpnB2BPlan,
     hasCancellablePlan,
     hasLumo,
     isCancellableOnlyViaSupport,
     isManagedExternally,
-} from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';

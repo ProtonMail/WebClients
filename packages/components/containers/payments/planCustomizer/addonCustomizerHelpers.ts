@@ -1,36 +1,35 @@
 import { c } from 'ttag';
 
-import type { ADDON_NAMES } from '@proton/payments';
 import {
+    type ADDON_NAMES,
     ADDON_PREFIXES,
     AddonFeatureLimitKeyMapping,
-    type AddonGuard,
     AddonLimit,
-    type Cycle,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
-    Renew,
-    SelectedPlan,
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
     TRIAL_MAX_LUMO_SEATS,
     TRIAL_MAX_MEET_SEATS,
     TRIAL_MAX_SCRIBE_SEATS,
     TRIAL_MAX_USERS,
-    getAddonMultiplier,
+} from '@proton/payments/core/constants';
+import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
+import {
+    type AddonGuard,
     getAddonType,
     isDomainAddon,
-    isFreeSubscription,
     isIpAddon,
     isLumoAddon,
     isMeetAddon,
     isMemberAddon,
     isScribeAddon,
-    setQuantity,
-} from '@proton/payments';
+} from '@proton/payments/core/plan/addons';
+import { getAddonMultiplier } from '@proton/payments/core/plan/feature-limits';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
+import { setQuantity } from '@proton/payments/core/planIDs';
+import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import type { AddonBalanceKey } from '@proton/payments/core/subscription/selected-plan';
+import { type AddonBalanceKey, SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { LUMO_SHORT_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { NumberCustomiserProps } from './NumberCustomiser';

@@ -6,11 +6,12 @@ import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/rea
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
-import { COUPON_CODES, CYCLE, PLANS, getPlanName, getPlansMap } from '@proton/payments';
-import type { Currency } from '@proton/payments';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
+import { getPlanName, isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 const SUPPORTED_PLANS = new Set([PLANS.MAIL, PLANS.BUNDLE]);
 

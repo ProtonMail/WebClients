@@ -5,7 +5,7 @@ import { addDays } from 'date-fns';
 import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getSubscriptionPlanTitle } from '@proton/payments';
+import { getSubscriptionPlanTitle } from '@proton/payments/core/subscription/helpers';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 

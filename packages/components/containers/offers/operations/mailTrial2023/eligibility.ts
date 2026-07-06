@@ -1,5 +1,5 @@
-import { PLANS, isTrial } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { PLANS } from '@proton/payments/core/constants';
+import { type MaybeFreeSubscription, isTrial } from '@proton/payments/core/subscription/helpers';
 
 interface Props {
     subscription: MaybeFreeSubscription;

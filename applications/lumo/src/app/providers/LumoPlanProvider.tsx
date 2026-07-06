@@ -5,7 +5,8 @@ import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { PLANS, hasBundleBiz2025, hasVisionary } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { hasBundleBiz2025, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { isOrganization, isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { canPay, isDelinquent, isFree, isMember, isPaid } from '@proton/shared/lib/user/helpers';
 

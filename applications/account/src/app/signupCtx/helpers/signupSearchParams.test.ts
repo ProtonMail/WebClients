@@ -1,4 +1,4 @@
-import { CYCLE } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
 
 import { getCycle, getReferrerName } from './signupSearchParams';
 

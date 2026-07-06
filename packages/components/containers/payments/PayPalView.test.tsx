@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
 import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
-import { type Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 
 import PayPalView from './PayPalView';
 

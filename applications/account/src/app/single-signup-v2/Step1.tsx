@@ -25,32 +25,26 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import {
-    type AvailablePaymentMethod,
-    COUPON_CODES,
-    CYCLE,
-    type Currency,
-    type Cycle,
-    FREE_PLAN,
-    type FreeSubscription,
-    type FullPlansMap,
-    PLANS,
-    type PlanIDs,
-    type Subscription,
-    type SubscriptionEstimation,
-    SubscriptionMode,
-    type SubscriptionPlan,
-    getFallbackCurrency,
-    getPlanFromPlanIDs,
-    getPlanNameFromIDs,
-    getPlansMap,
-    isRegionalCurrency,
-    isSubscriptionCheckForbidden,
-    switchPlan,
-} from '@proton/payments';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
+import type {
+    AvailablePaymentMethod,
+    Currency,
+    Cycle,
+    FreeSubscription,
+    PlanIDs,
+} from '@proton/payments/core/interface';
+import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import type { SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { switchPlan } from '@proton/payments/core/planIDs';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
     EstimationChangeAction,

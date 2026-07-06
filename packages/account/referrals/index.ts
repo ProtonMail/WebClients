@@ -1,6 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { type Currency, getDefaultMainCurrency } from '@proton/payments';
+import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getReferralsStatus } from '@proton/shared/lib/api/core/referrals';

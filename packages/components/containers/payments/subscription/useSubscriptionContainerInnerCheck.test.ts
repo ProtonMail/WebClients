@@ -1,15 +1,11 @@
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import {
-    CYCLE,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    SubscriptionMode,
-    getIsPlanTransitionForbidden,
-    isSubscriptionCheckForbiddenWithReason,
-} from '@proton/payments';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
+import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
+import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
@@ -27,9 +23,13 @@ jest.mock('../../../hooks/useNotifications', () => ({
     default: () => ({ createNotification: mockCreateNotification }),
 }));
 
-jest.mock('@proton/payments', () => ({
-    ...jest.requireActual('@proton/payments'),
+jest.mock('@proton/payments/core/subscription/forbidden-plan-transition', () => ({
+    ...jest.requireActual('@proton/payments/core/subscription/forbidden-plan-transition'),
     getIsPlanTransitionForbidden: jest.fn(),
+}));
+
+jest.mock('@proton/payments/core/subscription/helpers', () => ({
+    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
     isSubscriptionCheckForbiddenWithReason: jest.fn(),
 }));
 

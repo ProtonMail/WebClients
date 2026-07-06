@@ -10,8 +10,8 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
-import type { Transaction } from '@proton/payments';
 import { getTransactionPDF } from '@proton/payments/core/api/api';
+import type { Transaction } from '@proton/payments/core/interface';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 

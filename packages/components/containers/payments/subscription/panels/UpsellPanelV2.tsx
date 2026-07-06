@@ -12,8 +12,7 @@ import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/d
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
-import type { PLANS } from '@proton/payments';
-import { CYCLE } from '@proton/payments';
+import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 

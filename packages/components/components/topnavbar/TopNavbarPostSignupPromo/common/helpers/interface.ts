@@ -1,7 +1,7 @@
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { Feature } from '@proton/components/containers/offers/interface';
 import type { IconName, IconSize } from '@proton/icons/types';
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 
 export interface OfferHookReturnValue {
     isLoading: boolean;

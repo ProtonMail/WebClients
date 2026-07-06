@@ -1,8 +1,8 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
-import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
-import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
 

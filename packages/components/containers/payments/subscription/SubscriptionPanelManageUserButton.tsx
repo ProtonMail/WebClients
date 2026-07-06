@@ -8,7 +8,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
-import { getHasVpnB2BPlan } from '@proton/payments';
+import { getHasVpnB2BPlan } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { UserType } from '@proton/shared/lib/interfaces';

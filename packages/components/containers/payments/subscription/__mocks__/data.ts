@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, PendingInvitation, User, UserSettings } from '@proton/shared/lib/interfaces';

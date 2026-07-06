@@ -9,9 +9,9 @@ import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlans
 import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import type { AmountAndCurrency, Currency } from '@proton/payments';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
+import type { AmountAndCurrency, Currency } from '@proton/payments/core/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';

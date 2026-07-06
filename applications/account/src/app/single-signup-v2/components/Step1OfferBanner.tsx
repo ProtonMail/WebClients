@@ -8,8 +8,12 @@ import { Icon, SkeletonLoader } from '@proton/components/index';
 import type { IconName } from '@proton/icons/types';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import type { PlanIDs, StrictPlan, SubscriptionEstimation } from '@proton/payments/index';
-import { Audience, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, getHas2025OfferCoupon } from '@proton/payments/index';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import type { StrictPlan } from '@proton/payments/core/plan/interface';
+import { Audience } from '@proton/payments/core/subscription/constants';
+import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 

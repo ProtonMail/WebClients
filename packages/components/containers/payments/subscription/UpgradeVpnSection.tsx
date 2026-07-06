@@ -6,8 +6,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { FREE_PLAN } from '@proton/payments';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 

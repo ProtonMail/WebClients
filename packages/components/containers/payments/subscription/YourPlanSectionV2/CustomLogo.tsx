@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import bundle from './logo/plan-bundle.svg';

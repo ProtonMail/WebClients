@@ -1,55 +1,54 @@
 import isDeepEqual from 'lodash/isEqual';
 
 import { canBuyPassLifetime } from '@proton/components/containers/payments/subscription/subscriptionEligbility';
+import { getPaymentMethods, getSubscription } from '@proton/payments/core/api/api';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
     type ADDON_NAMES,
     COUPON_CODES,
     CYCLE,
-    type Currency,
-    type Cycle,
-    type CycleMapping,
-    FREE_PLAN,
     FREE_SUBSCRIPTION,
-    type FreeSubscription,
-    type FullPlansMap,
     type PAYMENT_METHOD_TYPES,
     PLANS,
-    type PaymentsApi,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
-    type SavedPaymentMethod,
-    SelectedPlan,
-    type StrictPlan,
-    type Subscription,
-    type SubscriptionPlan,
-    getAddonsFromIDs,
-    getDefaultMainCurrency,
-    getFreeCheckResult,
-    getHas2025OfferCoupon,
+} from '@proton/payments/core/constants';
+import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
+import type {
+    Currency,
+    Cycle,
+    CycleMapping,
+    FreeSubscription,
+    PaymentsApi,
+    PlanIDs,
+    SavedPaymentMethod,
+} from '@proton/payments/core/interface';
+import {
     getHasPlusPlan,
     getIsB2BAudienceFromPlan,
-    getIsPlanTransitionForbidden,
-    getNormalCycleFromCustomCycle,
-    getPlan,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
-    getPrice,
-    hasPlanIDs,
-    isForbiddenLumoPlus,
     isForbiddenModification,
-    isFreeSubscription,
     isLifetimePlanSelected,
+} from '@proton/payments/core/plan/helpers';
+import type { Plan, PlansMap, StrictPlan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { getAddonsFromIDs, hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
+import { getPrice } from '@proton/payments/core/price-helpers';
+import {
+    getIsPlanTransitionForbidden,
+    isForbiddenLumoPlus,
+} from '@proton/payments/core/subscription/forbidden-plan-transition';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
+import {
+    getAutoCoupon,
+    getHas2025OfferCoupon,
+    getNormalCycleFromCustomCycle,
+    getPlan,
     isSubscriptionCheckForbidden,
-    isValidPlanName,
-    switchPlan,
-} from '@proton/payments';
-import { getPaymentMethods, getSubscription } from '@proton/payments/core/api/api';
-import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
-import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+} from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

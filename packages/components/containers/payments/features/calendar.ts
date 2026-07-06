@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, PLAN_SERVICES, type PlansMap } from '@proton/payments';
+import { PLANS, PLAN_SERVICES } from '@proton/payments/core/constants';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
 import {
     MAX_CALENDARS_DUO,
     MAX_CALENDARS_FAMILY,
