@@ -43,6 +43,9 @@ build
 test-results
 tests/**/*.png
 !tests/**/*-linux.png
+# Google Drive perf auth state — generated at setup, holds live session tokens, never committed.
+tests/drive/performance/.auth/google-profile
+tests/drive/performance/.auth/google-drive-user.json
 !tests/mail/**/*.png
 tests/mail/old/binaries/credentials.json
 tests/mail/old/binaries/tokens.json
