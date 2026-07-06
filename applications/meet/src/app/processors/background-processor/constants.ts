@@ -1,29 +1,53 @@
-// WebGL texture units
-export const TEXTURE_UNIT_MASK = 6;
+// Texture unit for the mask LiveKit composites with.
 export const TEXTURE_UNIT_OUTPUT = 7;
 
-// Confidence threshold values for hair detail preservation. These are applied
-// in the segmenter worker while it combines the per-class confidence masks into
-// a single person-confidence mask (see segmenter.worker.ts).
-export const CONFIDENCE_BOOST_THRESHOLD_LOW = 0.1;
-export const CONFIDENCE_BOOST_THRESHOLD_HIGH = 0.5;
-export const CONFIDENCE_BOOST_MULTIPLIER = 1.3;
+// Mild gain on the simple model's person mask (clamped to 1.0) so marginal
+// pixels clear LiveKit's 0.5 cut. Overridable via MeetBlurPersonConfidenceBoost.
+export const PERSON_CONFIDENCE_BOOST = 1.1;
 
-// Mask edge smoothing: Gaussian blur radius applied to the segmentation mask,
-// in mask texels. Higher = softer/feathered silhouette; 0 = no edge smoothing.
-export const MASK_EDGE_BLUR_TEXEL_RADIUS = 1.0;
+// Stronger gain for the multiclass model, whose softmax leaves interior person
+// regions below 1.0. Overridable via MeetBlurMulticlassPersonConfidenceBoost.
+export const MULTICLASS_PERSON_CONFIDENCE_BOOST = 1.25;
 
-// With the simple selfie segmentation model we are more likely to have gaps between the person
-// and the blurred area. This threshold is used to adjust the person/background decision point.
-export const DEFAULT_PERSON_MASK_THRESHOLD = 0.5;
-export const LOW_END_PERSON_MASK_THRESHOLD = 0.65;
+// Longest edge (px) of the frame sent to the segmenter; sets silhouette
+// crispness. Low-end cap.
+export const SEGMENTATION_INPUT_MAX_EDGE = 512;
 
-// Longest edge (in px) of the frame sent to the segmenter. The model runs at a
-// fixed 256x256 tensor internally, so feeding it anything larger only inflates
-// the size of the returned confidence masks (and the per-frame postMessage +
-// GPU upload + mask-combine cost) without improving inference quality. We cap
-// the input here and let the mask be upsampled during compositing.
-export const SEGMENTATION_INPUT_MAX_EDGE = 256;
+// Higher cap for capable devices; keeps thin features (fingers, hair).
+export const SEGMENTATION_INPUT_MAX_EDGE_HIGH_END = 768;
+
+// --- Temporal smoothing of the person-confidence mask ---------------------
+// Per-pixel EMA against the previous mask, damping the frame-to-frame jitter
+// that flickers pixels across the 0.5 cut. Asymmetric: confidence that rises is
+// followed quickly, confidence that falls eases down slowly (the slow release
+// is what kills the flicker).
+export const MASK_TEMPORAL_APPEAR_RATE = 0.75;
+export const MASK_TEMPORAL_DISAPPEAR_RATE = 0.35;
+
+// Motion escape hatch: a large per-pixel change is real motion, not jitter, so
+// lift both rates toward "follow the model" to avoid holding a stale silhouette.
+// smoothstep(LOW, HIGH) over |delta| blends between the slow and fast rates.
+export const MASK_TEMPORAL_APPEAR_RATE_FAST = 0.98;
+export const MASK_TEMPORAL_DISAPPEAR_RATE_FAST = 0.95;
+export const MASK_TEMPORAL_MOTION_LOW = 0.15;
+export const MASK_TEMPORAL_MOTION_HIGH = 0.45;
+
+// --- Morphological closing of the person-confidence mask ------------------
+// GPU close (dilate then erode) that fills the transient interior holes the
+// model punches during fast motion, spatially and without ghosting. Radius in
+// mask texels; a couple of texels closes dropouts without bridging real gaps.
+export const MASK_CLOSING_RADIUS = 2;
+
+// Smaller structuring element for low-end devices.
+export const MASK_CLOSING_RADIUS_LOW_END = 1;
+
+// Compile-time loop bound for the shader morphology; must be >= the max radius.
+export const MASK_CLOSING_MAX_RADIUS = 4;
+
+// u_mode selector for the shared mask shader.
+export const MASK_PASS_COPY = 0;
+export const MASK_PASS_DILATE = 1;
+export const MASK_PASS_ERODE = 2;
 
 // Asset paths
 export const DEFAULT_ASSET_PATH = '/assets/background-blur';
@@ -41,119 +65,59 @@ export const VERTEX_SHADER_SOURCE = `#version 300 es
     }
 `;
 
-export const FRAGMENT_SHADER_SOURCE = `#version 300 es
+export const buildFragmentShaderSource = (maxRadius: number): string => `#version 300 es
     precision highp float;
 
-    // Single-channel person-confidence mask. The per-class max() combine and the
-    // hair-detail confidence boost now happen on the worker thread, so this shader
-    // only has to feather the silhouette and invert it for LiveKit.
+    // Spatial mask passes, selected per draw by u_mode; u_blurStep is the pass
+    // direction (one axis non-zero) for the morphology passes. COPY passes the
+    // mask through (the final pass also inverts for LiveKit); DILATE/ERODE are
+    // separable grayscale morphology (max/min over +/- u_radius texels)
+    // composing a close.
     uniform sampler2D u_mask;
-    uniform vec2 u_texelSize;
-    uniform float u_personThreshold; // person/background decision point (0.5 = none)
+    uniform vec2 u_blurStep;
+    uniform bool u_invert;
+    uniform int u_mode;
+    uniform int u_radius;
 
     in vec2 v_texCoord;
     out vec4 outColor;
 
-    float samplePersonConfidence(vec2 uv) {
-        return texture(u_mask, uv).r;
-    }
+    const int MAX_RADIUS = ${Math.max(1, Math.round(maxRadius))};
 
     void main() {
-        // 3x3 Gaussian blur of the person-confidence mask. Softens the silhouette
-        // so the transition between subject and blurred background is feathered
-        // rather than a hard line. Kernel weights: [1,2,1; 2,4,2; 1,2,1] / 16.
-        // u_texelSize already includes the blur radius (set on the JS side).
-        vec2 dx = vec2(u_texelSize.x, 0.0);
-        vec2 dy = vec2(0.0, u_texelSize.y);
+        float value;
 
-        float personConfidence =
-            (1.0 / 16.0) * samplePersonConfidence(v_texCoord - dx - dy) +
-            (2.0 / 16.0) * samplePersonConfidence(v_texCoord      - dy) +
-            (1.0 / 16.0) * samplePersonConfidence(v_texCoord + dx - dy) +
-            (2.0 / 16.0) * samplePersonConfidence(v_texCoord - dx     ) +
-            (4.0 / 16.0) * samplePersonConfidence(v_texCoord          ) +
-            (2.0 / 16.0) * samplePersonConfidence(v_texCoord + dx     ) +
-            (1.0 / 16.0) * samplePersonConfidence(v_texCoord - dx + dy) +
-            (2.0 / 16.0) * samplePersonConfidence(v_texCoord      + dy) +
-            (1.0 / 16.0) * samplePersonConfidence(v_texCoord + dx + dy);
-
-        // Shift the person/background decision point. Raising u_personThreshold
-        // above 0.5 erodes the person region inward, moving the composited edge
-        // into the subject so the blur covers the misaligned silhouette ring. The
-        // small ramp keeps the remap gradual rather than a hard cut. At the
-        // default 0.5 (high-end devices) the remap is skipped entirely so the raw
-        // blurred confidence is passed through unchanged.
-        if (u_personThreshold > 0.5) {
-            personConfidence = smoothstep(u_personThreshold - 0.15, u_personThreshold + 0.15, personConfidence);
-        }
-
-        // Invert the mask: LiveKit's shader expects high values for background (to blur)
-        // and low values for person (to keep sharp)
-        // Output normalized float (personConfidence is already 0.0-1.0)
-        float maskValue = 1.0 - personConfidence;
-
-        outColor = vec4(maskValue, maskValue, maskValue, 1.0);
-    }
-`;
-
-// Runs inside the segmenter worker, in MediaPipe's own WebGL2 context, to fold
-// the per-class confidence textures into a single person-confidence mask on the
-// GPU. This lets us read back one mask instead of calling getAsFloat32Array()
-// (a GPU->CPU stall) once per class. The feathering/inversion still happens in
-// FRAGMENT_SHADER_SOURCE on the main thread.
-export const MASK_COMBINE_FRAGMENT_SHADER_SOURCE = `#version 300 es
-    precision highp float;
-
-    uniform sampler2D u_texture0;
-    uniform sampler2D u_texture1;
-    uniform sampler2D u_texture2;
-    uniform sampler2D u_texture3;
-    uniform sampler2D u_texture4;
-    uniform sampler2D u_texture5;
-    uniform int u_numTextures;
-    uniform bool u_isSimpleModel;
-
-    in vec2 v_texCoord;
-    out vec4 outColor;
-
-    void main() {
-        float personConfidence = 0.0;
-
-        if (u_isSimpleModel) {
-            if (u_numTextures == 1) {
-                // Simple model variant that only returns a person mask
-                personConfidence = texture(u_texture0, v_texCoord).r;
-            } else {
-                // Simple model: use class 1 (person)
-                personConfidence = texture(u_texture1, v_texCoord).r;
-            }
+        if (u_mode == ${MASK_PASS_COPY}) {
+            value = texture(u_mask, v_texCoord).r;
         } else {
-            // Multiclass model: take maximum confidence across person classes (1-5)
-            // Start from class 1 (skip background class 0)
-            personConfidence = texture(u_texture1, v_texCoord).r;
-
-            if (u_numTextures > 2) {
-                personConfidence = max(personConfidence, texture(u_texture2, v_texCoord).r);
+            // max (dilate) or min (erode) over +/- u_radius; loop is bounded by
+            // the compile-time MAX_RADIUS and broken early at u_radius.
+            float acc = texture(u_mask, v_texCoord).r;
+            for (int i = 1; i <= MAX_RADIUS; i++) {
+                if (i > u_radius) {
+                    break;
+                }
+                float offset = float(i);
+                float a = texture(u_mask, v_texCoord + u_blurStep * offset).r;
+                float b = texture(u_mask, v_texCoord - u_blurStep * offset).r;
+                if (u_mode == ${MASK_PASS_DILATE}) {
+                    acc = max(acc, max(a, b));
+                } else {
+                    acc = min(acc, min(a, b));
+                }
             }
-            if (u_numTextures > 3) {
-                personConfidence = max(personConfidence, texture(u_texture3, v_texCoord).r);
-            }
-            if (u_numTextures > 4) {
-                personConfidence = max(personConfidence, texture(u_texture4, v_texCoord).r);
-            }
-            if (u_numTextures > 5) {
-                personConfidence = max(personConfidence, texture(u_texture5, v_texCoord).r);
-            }
-
-            // Boost low confidence values slightly to preserve fine hair details
-            if (personConfidence > ${CONFIDENCE_BOOST_THRESHOLD_LOW} && personConfidence < ${CONFIDENCE_BOOST_THRESHOLD_HIGH}) {
-                personConfidence = min(1.0, personConfidence * ${CONFIDENCE_BOOST_MULTIPLIER});
-            }
+            value = acc;
         }
 
-        outColor = vec4(personConfidence, personConfidence, personConfidence, 1.0);
+        if (u_invert) {
+            value = 1.0 - value;
+        }
+
+        outColor = vec4(value, value, value, 1.0);
     }
 `;
+
+export const FRAGMENT_SHADER_SOURCE = buildFragmentShaderSource(MASK_CLOSING_MAX_RADIUS);
 
 export const VERTICES = [
     -1,
