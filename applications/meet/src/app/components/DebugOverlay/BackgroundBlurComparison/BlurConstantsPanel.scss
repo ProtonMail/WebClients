@@ -1,0 +1,81 @@
+.debug-blur-constants {
+	border-radius: 6px;
+}
+
+.debug-blur-constants-hint {
+	font-size: 0.813rem;
+	color: var(--signal-warning, var(--text-weak));
+}
+
+.debug-blur-constants-group-title {
+	font-size: 0.813rem;
+	letter-spacing: 0.03em;
+}
+
+.debug-blur-constants-row {
+	grid-template-columns: 1fr;
+}
+
+.debug-blur-constants-label {
+	font-size: 0.813rem;
+}
+
+.debug-blur-constants-label--modified {
+	color: var(--signal-warning, var(--text-norm));
+}
+
+.debug-blur-constants-info {
+	inline-size: 0.875rem;
+	block-size: 0.875rem;
+}
+
+// The overlay theme resets native range styling, hiding the track; draw an
+// explicit rail + thumb so the slider is visible and usable.
+.debug-blur-constants-slider {
+	appearance: none;
+	block-size: 1rem;
+	margin: 0;
+	background: transparent;
+	cursor: pointer;
+
+	&::-webkit-slider-runnable-track {
+		block-size: 4px;
+		border-radius: 2px;
+		background: var(--border-norm);
+	}
+
+	&::-moz-range-track {
+		block-size: 4px;
+		border-radius: 2px;
+		background: var(--border-norm);
+	}
+
+	&::-webkit-slider-thumb {
+		appearance: none;
+		inline-size: 14px;
+		block-size: 14px;
+		margin-block-start: -5px;
+		border: none;
+		border-radius: 50%;
+		background: var(--primary);
+	}
+
+	&::-moz-range-thumb {
+		inline-size: 14px;
+		block-size: 14px;
+		border: none;
+		border-radius: 50%;
+		background: var(--primary);
+	}
+}
+
+.debug-blur-constants-number {
+	inline-size: 4.5rem;
+	background: var(--field-background-color, var(--background-norm));
+	color: var(--text-norm);
+	border: 1px solid var(--border-norm);
+	border-radius: 4px;
+	padding-block: 0.15rem;
+	padding-inline: 0.35rem;
+	font-size: 0.813rem;
+}
