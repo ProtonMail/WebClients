@@ -13,7 +13,7 @@ $tab-badge-ease: easing(ease-out-quint);
 	}
 
 	.tab-container {
-		.tag-label,
+		.tab-label,
 		.tag-count {
 			display: block;
 		}
@@ -86,20 +86,20 @@ $tab-badge-ease: easing(ease-out-quint);
 
 		// Default (< 820px): icon-only — label and count hidden. Shown again at ≥ 820px
 		// and, for the label, on the active tab or when dragging over it.
-		.tag-label,
+		.tab-label,
 		.tag-count {
 			display: none;
 		}
 
 		&[aria-selected='true'],
 		&.hovered {
-			.tag-label,
+			.tab-label,
 			.tag-count {
 				display: block;
 			}
 		}
 
-		.tag-label {
+		.tab-label {
 			// Pin to the parent width so text-ellipsis clips the label instead of
 			// letting its min-content width overflow into the counter badge
 			inline-size: 100%;
@@ -147,6 +147,14 @@ $tab-badge-ease: easing(ease-out-quint);
 				block-size 0.32s $tab-badge-ease,
 				transform 0.32s $tab-badge-ease;
 		}
+
+		&:hover,
+		&:focus {
+			.tab-icon,
+			.tab-label {
+				color: var(--text-norm);
+			}
+		}
 	}
 
 	// Responsive behavior depends on the number of active categories tabs.
@@ -173,7 +181,7 @@ $tab-badge-ease: easing(ease-out-quint);
 
 	// Large (≥ 1024px): larger label font
 	@include media('>=#{em(1024, 16)}') {
-		.tab-container .tag-label {
+		.tab-container .tab-label {
 			font-size: rem(13);
 		}
 	}
