@@ -19,8 +19,11 @@ import { getShortPlan } from '@proton/components/containers/payments/features/pl
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import type { FreePlanDefault, PLANS, Plan } from '@proton/payments';
-import { FREE_PLAN, getPlanName, getPlanTitle, getPlansMap } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const FeatureList = () => {

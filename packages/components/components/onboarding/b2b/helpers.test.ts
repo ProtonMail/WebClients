@@ -1,6 +1,7 @@
 import { getFeatures, getSections } from '@proton/components/components/onboarding/b2b/helpers';
 import type { B2BFeaturesSection } from '@proton/components/components/onboarding/b2b/interface';
-import { PLANS, getPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     CALENDAR_APP_NAME,
@@ -11,9 +12,9 @@ import {
 } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
-jest.mock('@proton/payments', () => ({
+jest.mock('@proton/payments/core/subscription/helpers', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/payments'),
+    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
     getPlan: jest.fn(),
 }));
 

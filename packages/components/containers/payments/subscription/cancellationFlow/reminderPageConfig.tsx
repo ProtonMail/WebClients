@@ -1,5 +1,5 @@
-import { PLANS, getPlan } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { PLANS } from '@proton/payments/core/constants';
+import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { getBundleConfig } from './config/bundle';

@@ -11,7 +11,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { getHasMemberCapablePlan, hasDuo, hasPassFamily } from '@proton/payments';
+import { getHasMemberCapablePlan, hasDuo, hasPassFamily } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

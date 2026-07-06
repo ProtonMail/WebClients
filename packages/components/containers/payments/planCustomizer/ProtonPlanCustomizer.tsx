@@ -3,15 +3,10 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
+import { type ADDON_NAMES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import {
-    type ADDON_NAMES,
     type AddonGuard,
-    type Currency,
-    type Cycle,
-    FREE_SUBSCRIPTION,
-    type PlanIDs,
-    type PlansMap,
-    SelectedPlan,
     isDomainAddon,
     isDriveOrgSizeAddon,
     isIpAddon,
@@ -20,9 +15,11 @@ import {
     isMemberAddon,
     isOrgSizeAddon,
     isScribeAddon,
-    setQuantity,
-} from '@proton/payments';
+} from '@proton/payments/core/plan/addons';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
+import { setQuantity } from '@proton/payments/core/planIDs';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';

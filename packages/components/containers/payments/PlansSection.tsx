@@ -17,24 +17,16 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import {
-    type Currency,
-    type Cycle,
-    DEFAULT_CYCLE,
-    FREE_PLAN,
-    FREE_SUBSCRIPTION,
-    type PlanIDs,
-    getIsB2BAudienceFromPlan,
-    getPlanFromPlanIDs,
-    getPlanIDs,
-    getPlansMap,
-    getValidAudience,
-    getValidCycle,
-    hasPlanIDs,
-    isValidPlanName,
-} from '@proton/payments';
+import { DEFAULT_CYCLE, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

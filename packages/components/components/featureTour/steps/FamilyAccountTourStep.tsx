@@ -4,7 +4,7 @@ import { organizationThunk } from '@proton/account/organization';
 import { userThunk } from '@proton/account/user';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import familyPlanBackground from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';

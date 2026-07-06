@@ -41,7 +41,8 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import type { IconSize } from '@proton/icons/types';
-import { type FreePlanDefault, PLANS, type Plan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { APPS, type APP_NAMES, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 

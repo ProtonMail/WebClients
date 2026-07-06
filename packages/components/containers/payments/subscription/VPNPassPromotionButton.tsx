@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Logo from '@proton/components/components/logo/Logo';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { CYCLE, type Currency } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getSimplePriceString } from '../../../components/price/helper';

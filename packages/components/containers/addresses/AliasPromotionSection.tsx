@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 

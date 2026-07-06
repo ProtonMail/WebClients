@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { CYCLE, PLANS, SubscriptionPlatform } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';

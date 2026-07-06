@@ -1,6 +1,6 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 
 /**
  * This hook centralized logic for Drive subscriptions.

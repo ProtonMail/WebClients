@@ -7,8 +7,10 @@ import {
     original,
 } from '@reduxjs/toolkit';
 
-import { FREE_SUBSCRIPTION, type FreeSubscription, type Subscription } from '@proton/payments';
 import { getSubscription } from '@proton/payments/core/api/api';
+import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';

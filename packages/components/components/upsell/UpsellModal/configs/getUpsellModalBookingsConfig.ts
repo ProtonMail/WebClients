@@ -1,4 +1,5 @@
-import { CYCLE, PLANS, getFallbackCurrency } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getFallbackCurrency } from '@proton/payments/core/currencies';
 
 import { getUpsellModalFooterText } from '../helpers/getUpsellModalFooterText';
 import { getUpsellModalSubmitText } from '../helpers/getUpsellModalSubmitText';

@@ -1,12 +1,13 @@
-import { PLANS, getPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { subscriptionBundlePro } from '../__mocks__/data';
 import { getReminderPageConfig } from './reminderPageConfig';
 
-jest.mock('@proton/payments', () => ({
+jest.mock('@proton/payments/core/subscription/helpers', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/payments'),
+    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
     getPlan: jest.fn(),
 }));
 

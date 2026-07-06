@@ -19,7 +19,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

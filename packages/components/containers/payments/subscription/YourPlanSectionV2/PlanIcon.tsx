@@ -1,16 +1,17 @@
 import type { ReactNode } from 'react';
 
+import { PLANS } from '@proton/payments/core/constants';
+import type { FreeSubscription } from '@proton/payments/core/interface';
 import {
-    type FreeSubscription,
-    PLANS,
-    type Subscription,
     getHasConsumerVpnPlan,
     hasBundle,
     hasBundleBiz2025,
+    hasBundlePro,
     hasBundlePro2024,
     hasDrive,
     hasDrive1TB,
     hasDriveBusiness,
+    hasDriveLite,
     hasDrivePro,
     hasDuo,
     hasFamily,
@@ -20,6 +21,8 @@ import {
     hasMail,
     hasMailBusiness,
     hasMailPro,
+    hasMeet,
+    hasMeetBusiness,
     hasPass,
     hasPassBusiness,
     hasPassFamily,
@@ -29,8 +32,8 @@ import {
     hasVisionary,
     hasVpnBusiness,
     hasVpnPro,
-} from '@proton/payments';
-import { hasBundlePro, hasDriveLite, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';

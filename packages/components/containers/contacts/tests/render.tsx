@@ -1,15 +1,15 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Router } from 'react-router';
 
+import type { CryptoApiInterface } from '@protontech/crypto';
+import { VERIFICATION_STATUS } from '@protontech/crypto';
 import type { RenderOptions } from '@testing-library/react';
 import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import type { CryptoApiInterface } from '@protontech/crypto';
-import { VERIFICATION_STATUS } from '@protontech/crypto';
-import { FREE_PLAN } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';

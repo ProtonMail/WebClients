@@ -1,6 +1,6 @@
 import { act, fireEvent, render } from '@testing-library/react';
 
-import { SubscriptionPlatform } from '@proton/payments';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 
 import InAppPurchaseModal from './InAppPurchaseModal';
 

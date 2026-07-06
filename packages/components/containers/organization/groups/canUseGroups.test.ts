@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 
 import canUseGroups from './canUseGroups';
 

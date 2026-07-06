@@ -1,5 +1,7 @@
-import { CYCLE, type Currency, PLANS, PLAN_TYPES, type PaymentsApi, type Plan } from '@proton/payments';
 import * as checkoutModule from '@proton/payments/core/checkout';
+import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
+import type { Currency, PaymentsApi } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
 
 import type { UpsellModalConfigParams } from '../interface';
 import { getUpsellModalDefaultConfig } from './getUpsellModalDefaultConfig';

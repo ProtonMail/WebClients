@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import { CYCLE, type Cycle, DEFAULT_CYCLE } from '@proton/payments';
+import { CYCLE, DEFAULT_CYCLE } from '@proton/payments/core/constants';
+import type { Cycle } from '@proton/payments/core/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 

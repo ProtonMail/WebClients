@@ -13,11 +13,12 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
-import type { Invoice, PaymentProcessorHook } from '@proton/payments';
-import { type Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { checkInvoice, getPaymentsVersion } from '@proton/payments/core/api/api';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { Currency, Invoice } from '@proton/payments/core/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { ChargebeePaypalButton } from '@proton/payments/ui';
+import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Form from '../../components/form/Form';

@@ -7,7 +7,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
-import { ChargebeePaypalButton } from '@proton/payments/ui';
+import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

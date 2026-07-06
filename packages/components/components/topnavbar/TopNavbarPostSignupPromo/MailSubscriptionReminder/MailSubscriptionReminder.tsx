@@ -8,7 +8,7 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import {
     APPS,
     type APP_NAMES,

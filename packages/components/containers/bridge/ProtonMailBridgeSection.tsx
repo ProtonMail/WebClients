@@ -13,7 +13,7 @@ import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import type { IconName } from '@proton/icons/types';
 import metrics from '@proton/metrics';
 import { semver } from '@proton/pass/utils/string/semver';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
 import {
     APP_UPSELL_REF_PATH,

@@ -1,10 +1,10 @@
 import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import type { AmountAndCurrency } from '@proton/payments';
-import { PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import { getMaxBitcoinAmount } from '@proton/payments/core/amount-limits';
 import { type PaymentsVersion, createTokenV4, getTokenStatusV4 } from '@proton/payments/core/api/api';
+import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
+import type { AmountAndCurrency } from '@proton/payments/core/interface';
 import { addApiMock, addApiResolver, apiMock } from '@proton/testing/lib/api';
 import { flushPromises } from '@proton/testing/lib/flush-promises';
 

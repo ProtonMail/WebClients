@@ -1,5 +1,5 @@
 import Info from '@proton/components/components/link/Info';
-import type { Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments/core/plan/interface';
 
 import { ButtonNumberInput } from './ButtonNumberInput';
 import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';

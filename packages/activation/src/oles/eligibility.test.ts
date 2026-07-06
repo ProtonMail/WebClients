@@ -1,4 +1,4 @@
-import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
+import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';

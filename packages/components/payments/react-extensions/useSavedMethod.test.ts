@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { type AmountAndCurrency, Autopay, PAYMENT_METHOD_TYPES, type SavedPaymentMethod } from '@proton/payments';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { AmountAndCurrency, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { apiMock } from '@proton/testing/lib/api';
 import { addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 

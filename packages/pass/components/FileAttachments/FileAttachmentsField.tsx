@@ -39,7 +39,7 @@ import { seq } from '@proton/pass/utils/fp/promises';
 import { updateMap } from '@proton/pass/utils/fp/state';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

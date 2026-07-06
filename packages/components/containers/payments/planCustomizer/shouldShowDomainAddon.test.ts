@@ -1,4 +1,5 @@
-import { ADDON_NAMES, CYCLE, PLANS, SelectedPlan } from '@proton/payments/index';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { shouldShowDomainAddon } from './shouldShowDomainAddon';

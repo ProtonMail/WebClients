@@ -1,5 +1,6 @@
-import type { Subscription } from '@proton/payments';
-import { Renew, hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 import { buildUser } from '@proton/testing/builders/user';
@@ -7,15 +8,14 @@ import { buildUser } from '@proton/testing/builders/user';
 import type { AccountRouterParams, Flags } from '../../content/router-params';
 import { getAccountAppRoutes } from './routes';
 
-jest.mock('@proton/payments', () => ({
-    ...jest.requireActual('@proton/payments'),
+jest.mock('@proton/payments/core/subscription/helpers', () => ({
+    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
     hasCancellablePlan: jest.fn(),
     isCancellableOnlyViaSupport: jest.fn(),
     getHasExternalMemberCapableB2BPlan: jest.fn().mockReturnValue(false),
     getHasVpnB2BPlan: jest.fn().mockReturnValue(false),
     isManagedExternally: jest.fn().mockReturnValue(false),
     hasLumo: jest.fn().mockReturnValue(false),
-    getIsConsumerPassPlan: jest.fn().mockReturnValue(false),
 }));
 
 const mockedHasCancellablePlan = jest.mocked(hasCancellablePlan);

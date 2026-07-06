@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { CYCLE, Currency, PLANS } from '@proton/payments';
+import type { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 

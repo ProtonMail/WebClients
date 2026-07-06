@@ -4,8 +4,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { TRIAL_DURATION_DAYS } from '@proton/payments';
-import { usePaymentOptimistic } from '@proton/payments/ui';
+import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 

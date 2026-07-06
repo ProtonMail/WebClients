@@ -17,28 +17,23 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import {
-    ADDON_NAMES,
-    CYCLE,
-    type Currency,
-    FREE_PLAN,
-    PLANS,
-    type PaymentProcessorType,
-    type Plan,
-    type PlanIDs,
-    SubscriptionMode,
-    getHas2025OfferCoupon,
-    getIsB2BAudienceFromPlan,
-    getIsVPNPassPromotion,
-    getIsVpnB2BPlan,
-    getPlanFromPlanIDs,
-    getPlanIDs,
-    getPlanNameFromIDs,
-    getPlansMap,
-    hasPlanIDs,
-} from '@proton/payments';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
+import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import {
+    getIsB2BAudienceFromPlan,
+    getIsVpnB2BPlan,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+} from '@proton/payments/core/plan/helpers';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getHas2025OfferCoupon, getIsVPNPassPromotion, getPlanIDs } from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

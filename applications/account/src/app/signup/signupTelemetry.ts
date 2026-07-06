@@ -1,4 +1,6 @@
-import { type CYCLE, type Currency, PLANS, type PlanIDs, getPlanNameFromIDs } from '@proton/payments';
+import { type CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
+import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { HOUR, SECOND } from '@proton/shared/lib/constants';
 import { telemetry } from '@proton/shared/lib/telemetry';

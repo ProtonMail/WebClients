@@ -1,4 +1,5 @@
-import type { Currency, Cycle, FreeSubscription, FullPlansMap, PlanIDs, Subscription } from '@proton/payments/index';
+import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 
 import { getAllowedCycles } from './getAllowedCycles';
 

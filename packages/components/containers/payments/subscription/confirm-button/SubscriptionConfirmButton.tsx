@@ -1,7 +1,8 @@
 import useApi from '@proton/components/hooks/useApi';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { Renew, SubscriptionMode, isTrial } from '@proton/payments';
 import { changeRenewState } from '@proton/payments/core/api/api';
+import { Renew, SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { isTrial } from '@proton/payments/core/subscription/helpers';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import noop from '@proton/utils/noop';
 

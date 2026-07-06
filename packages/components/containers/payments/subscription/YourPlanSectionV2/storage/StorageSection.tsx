@@ -9,8 +9,15 @@ import type { ThemeColor } from '@proton/colors/types';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import Info from '@proton/components/components/link/Info';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import type { FreeSubscription } from '@proton/payments';
-import { type Subscription, hasAllProductsB2CPlan, hasDrive, hasDrive1TB, hasFree, hasMail } from '@proton/payments';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import {
+    hasAllProductsB2CPlan,
+    hasDrive,
+    hasDrive1TB,
+    hasFree,
+    hasMail,
+} from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import {
     APPS,
     type APP_NAMES,

@@ -12,7 +12,7 @@ import {
     useSubscriptionModal,
 } from '@proton/components';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 

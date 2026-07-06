@@ -33,7 +33,7 @@ import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user
 import { getUserFeaturesIntent } from '@proton/pass/store/actions';
 import { selectUser } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

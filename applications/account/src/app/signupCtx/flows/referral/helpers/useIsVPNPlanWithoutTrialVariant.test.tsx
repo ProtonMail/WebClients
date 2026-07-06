@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useIsVPNPlanWithoutTrialVariant } from './useIsVPNPlanWithoutTrialVariant';

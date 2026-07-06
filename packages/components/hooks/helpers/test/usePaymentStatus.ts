@@ -1,4 +1,4 @@
-import type { PaymentStatus } from '@proton/payments';
+import type { PaymentStatus } from '@proton/payments/core/interface';
 import { addApiMock } from '@proton/testing/lib/api';
 
 export const statusDefaultResponse: PaymentStatus = {

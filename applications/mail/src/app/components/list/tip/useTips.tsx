@@ -15,7 +15,7 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import {
     ADDRESS_TYPE,
     BRAND_NAME,

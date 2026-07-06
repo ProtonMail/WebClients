@@ -1,5 +1,4 @@
-import { isSubscriptionCheckForbidden } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { type MaybeFreeSubscription, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 
 import type { OfferConfig } from '../interface';
 

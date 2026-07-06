@@ -1,13 +1,10 @@
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import {
-    type PaymentMethodType,
-    type SavedPaymentMethod,
-    isExistingPaymentMethod,
-    isSavablePaymentMethod,
-} from '@proton/payments';
 import { markPaymentMethodAsDefault } from '@proton/payments/core/api/api';
+import type { PaymentMethodType, SavedPaymentMethod } from '@proton/payments/core/interface';
+import { isSavablePaymentMethod } from '@proton/payments/core/payment-methods/helpers';
+import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 export function backendWillChangeDefaultPaymentMethod(selectedPaymentMethod: PaymentMethodType): boolean {

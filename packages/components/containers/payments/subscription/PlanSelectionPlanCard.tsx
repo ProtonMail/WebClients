@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { StyleProps as PriceStyleProps } from '@proton/components/components/price/Price';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
-import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import clsx from '@proton/utils/clsx';
 
 export type HocPrice = (props: PriceStyleProps) => ReactElement | string | string[];

@@ -8,7 +8,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { SkeletonLoader } from '@proton/components';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui';
+import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

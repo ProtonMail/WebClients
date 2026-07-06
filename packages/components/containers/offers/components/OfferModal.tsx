@@ -1,7 +1,7 @@
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

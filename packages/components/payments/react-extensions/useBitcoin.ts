@@ -1,15 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import {
-    type AmountAndCurrency,
-    type ChargeablePaymentParameters,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
-    type TokenPaymentMethod,
-    isTokenPaymentMethod,
-} from '@proton/payments';
-import type { Currency, PaymentProcessorHook } from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
 import {
     type CreateBitcoinTokenData,
@@ -18,6 +9,15 @@ import {
     getTokenStatus,
 } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
+import type {
+    AmountAndCurrency,
+    ChargeablePaymentParameters,
+    Currency,
+    TokenPaymentMethod,
+} from '@proton/payments/core/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { isTokenPaymentMethod } from '@proton/payments/core/type-guards';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces';

@@ -19,8 +19,13 @@ import { disableStorageSelection } from '@proton/components/containers/members/h
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import {
+    type MaybeFreeSubscription,
+    hasDuo,
+    hasFamily,
+    hasPassFamily,
+    hasVisionary,
+} from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';

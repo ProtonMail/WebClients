@@ -12,16 +12,14 @@ import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlans
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
-import type { FreeSubscription, FullPlansMap } from '@proton/payments';
+import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import type { FreePlanDefault } from '@proton/payments/core/plan/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
-    CYCLE,
-    DEFAULT_CYCLE,
-    FREE_PLAN,
-    type FreePlanDefault,
-    PLANS,
-    type Subscription,
     getCanAccessFamilyPlans,
     getHasConsumerVpnPlan,
+    getPlanIDs,
     hasAllProductsB2CPlan,
     hasBundle,
     hasDeprecatedVPN,
@@ -37,11 +35,11 @@ import {
     hasVPN2024,
     hasVPNPassBundle,
     hasVisionary,
-} from '@proton/payments';
-import { getPlanIDs, isExFamilyTrial } from '@proton/payments/core/subscription/helpers';
+    isExFamilyTrial,
+} from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { PaymentsContextProvider, isPaymentsPreloaded } from '@proton/payments/ui';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel } from '@proton/shared/lib/interfaces';

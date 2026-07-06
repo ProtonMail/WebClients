@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 
 import CurrencySelector from './CurrencySelector';
 

@@ -16,7 +16,7 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 import { IcGift } from '@proton/icons/icons/IcGift';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

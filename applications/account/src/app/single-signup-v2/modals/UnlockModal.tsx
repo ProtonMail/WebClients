@@ -8,8 +8,8 @@ import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
 import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import type { Plan, PlansMap, SubscriptionPlan } from '@proton/payments';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
+import type { Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 

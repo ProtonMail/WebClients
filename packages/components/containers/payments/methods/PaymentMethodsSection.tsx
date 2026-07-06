@@ -11,8 +11,9 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
-import { PAYMENT_METHOD_TYPES, getAvailableSubscriptionActions } from '@proton/payments';
-import { EditCardModal } from '@proton/payments/ui';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
+import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

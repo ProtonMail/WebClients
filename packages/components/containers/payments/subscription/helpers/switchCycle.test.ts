@@ -1,12 +1,8 @@
-import {
-    CYCLE,
-    FREE_SUBSCRIPTION,
-    type FullPlansMap,
-    PLANS,
-    type PlanIDs,
-    getDefaultMainCurrency,
-    getPlansMap,
-} from '@proton/payments';
+import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 

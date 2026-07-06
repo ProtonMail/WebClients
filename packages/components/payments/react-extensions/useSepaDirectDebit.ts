@@ -5,31 +5,28 @@ import { c } from 'ttag';
 
 import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
 import { useLoading } from '@proton/hooks';
-import type {
-    PaymentMethodType,
-    PaymentProcessorHook,
-    PaymentProcessorType,
-    PlainPaymentMethodType,
-} from '@proton/payments';
+import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/payments/core/api/api';
 import {
     type ADDON_NAMES,
-    type AmountAndCurrency,
-    type ChargeableV5PaymentParameters,
-    type ChargebeeFetchedPaymentToken,
-    type ChargebeeIframeEvents,
-    type ChargebeeIframeHandles,
-    DisplayablePaymentError,
-    type ExtendedExtractIBANResult,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
     type PLANS,
-    type PaymentVerificatorV5,
-    type V5PaymentToken,
-    convertPaymentIntentData,
-    extractIBAN,
-    getIsB2BAudienceFromPlan,
-} from '@proton/payments';
-import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/payments/core/api/api';
+} from '@proton/payments/core/constants';
+import { type PaymentVerificatorV5, convertPaymentIntentData } from '@proton/payments/core/createPaymentToken';
+import { DisplayablePaymentError } from '@proton/payments/core/errors';
+import type {
+    AmountAndCurrency,
+    ChargeableV5PaymentParameters,
+    ChargebeeFetchedPaymentToken,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
+    PaymentMethodType,
+    PlainPaymentMethodType,
+    V5PaymentToken,
+} from '@proton/payments/core/interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import { type ExtendedExtractIBANResult, extractIBAN } from '@proton/payments/core/sepa';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

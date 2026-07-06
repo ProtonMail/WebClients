@@ -5,9 +5,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { Renew } from '@proton/payments';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import type { FeedbackDowngradeFormData } from '../content/interface';

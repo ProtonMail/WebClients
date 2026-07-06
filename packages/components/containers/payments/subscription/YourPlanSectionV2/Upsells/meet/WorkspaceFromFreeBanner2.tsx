@@ -11,7 +11,8 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import { PLANS, PLAN_NAMES, hasFreeOrPlus, isManagedExternally } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscription/helpers';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import {
     type APP_NAMES,

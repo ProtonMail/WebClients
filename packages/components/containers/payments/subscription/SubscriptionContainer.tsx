@@ -21,60 +21,61 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
-import {
-    type AddonGuard,
-    Audience,
-    type Currency,
-    type Cycle,
-    DisplayablePaymentError,
-    type FreePlanDefault,
-    type FreeSubscription,
-    type FullPlansMap,
-    PLANS,
-    type PaymentMethodType,
-    type PaymentProcessorHook,
-    type PaymentProcessorType,
-    type PaymentStatus,
-    type PlainPaymentMethodType,
-    type Plan,
-    type PlanIDs,
-    SelectedPlan,
-    type Subscription,
-    type SubscriptionCheckForbiddenReason,
-    type SubscriptionEstimation,
-    SubscriptionMode,
-    captureWrongPlanIDs,
-    captureWrongPlanName,
-    getFreeCheckResult,
-    getHas2025OfferCoupon,
-    getIsB2BAudienceFromPlan,
-    getIsB2BAudienceFromSubscription,
-    getMaximumCycleForApp,
-    getPlanCurrencyFromPlanIDs,
-    getPlanFromPlanIDs,
-    getPlanIDs,
-    getPlanNameFromIDs,
-    getPlansMap,
-    hasDeprecatedVPN,
-    hasPlanIDs,
-    isSubscriptionCheckForbidden,
-    shouldPassIsTrial as shouldPassIsTrialPayments,
-    switchPlan,
-} from '@proton/payments';
 import { type CheckSubscriptionData, ProrationMode, getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress, BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
+import { PLANS } from '@proton/payments/core/constants';
+import { DisplayablePaymentError } from '@proton/payments/core/errors';
+import { captureWrongPlanIDs, captureWrongPlanName } from '@proton/payments/core/helpers';
+import type {
+    Currency,
+    Cycle,
+    FreeSubscription,
+    PaymentMethodType,
+    PaymentStatus,
+    PlainPaymentMethodType,
+    PlanIDs,
+} from '@proton/payments/core/interface';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import type { AddonGuard } from '@proton/payments/core/plan/addons';
+import {
+    getIsB2BAudienceFromPlan,
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+    shouldPassIsTrial as shouldPassIsTrialPayments,
+} from '@proton/payments/core/plan/helpers';
+import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import { hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
+import { Audience, SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
+import {
+    getAutoCoupon,
+    getHas2025OfferCoupon,
+    getIsB2BAudienceFromSubscription,
+    getMaximumCycleForApp,
+    getPlanIDs,
+    hasDeprecatedVPN,
+    isSubscriptionCheckForbidden,
+} from '@proton/payments/core/subscription/helpers';
+import type {
+    FullPlansMap,
+    Subscription,
+    SubscriptionCheckForbiddenReason,
+    SubscriptionEstimation,
+} from '@proton/payments/core/subscription/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments/telemetry/useSubscriptionModificationChangeStepTelemetry';
-import { PaymentsContextProvider } from '@proton/payments/ui';
 import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import { getStaticCouponConfig } from '@proton/payments/ui/coupon-config/get-static-coupon-config';
 import { isCSCoupon } from '@proton/payments/ui/coupon-config/helpers';
 import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';

@@ -3,7 +3,6 @@
     "description": "",
     "license": "GPL-3.0",
     "sideEffects": false,
-    "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",

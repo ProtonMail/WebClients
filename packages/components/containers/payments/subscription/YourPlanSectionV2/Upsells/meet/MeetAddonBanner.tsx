@@ -8,17 +8,12 @@ import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import {
-    PLANS,
-    PLAN_NAMES,
-    SelectedPlan,
-    getMeetAddonNameByPlan,
-    getPlanIDs,
-    getPlanName,
-    getPlansMap,
-    hasMeetAddonFromPlanIDs,
-} from '@proton/payments';
-import { getHasMeetIncludedInPlan } from '@proton/payments/core/subscription/helpers';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { hasMeetAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { getMeetAddonNameByPlan } from '@proton/payments/core/plan/helpers';
+import { getHasMeetIncludedInPlan, getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';

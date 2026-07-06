@@ -1,4 +1,6 @@
-import { type FreeSubscription, type SavedPaymentMethod, type Subscription, isTrial } from '@proton/payments/index';
+import type { FreeSubscription, SavedPaymentMethod } from '@proton/payments/core/interface';
+import { isTrial } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 export function getPaymentMethodRequired({
     amount,

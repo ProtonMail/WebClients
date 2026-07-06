@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import upsellIconSvg from '@proton/styles/assets/img/illustrations/upsell-icon.svg';
 
 const UpsellIcon = forwardRef<HTMLImageElement, React.HTMLProps<HTMLImageElement>>(({ ...imageElementProps }, ref) => {

@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { isSamePlan } from '@proton/shared/lib/helpers/plan';
 
 describe('isSamePlan', () => {

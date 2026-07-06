@@ -1,5 +1,6 @@
-import type { Currency, Subscription } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 import { hasIntentionalScheduledModification } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';

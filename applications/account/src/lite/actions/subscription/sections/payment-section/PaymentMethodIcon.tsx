@@ -1,7 +1,7 @@
 import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
-import type { PlainPaymentMethodType } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { getBankSvg } from '@proton/payments/ui';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { PlainPaymentMethodType } from '@proton/payments/core/interface';
+import { getBankSvg } from '@proton/payments/ui/helpers/credit-card-icons';
 
 import additionalCardsIcon from './payment-method-icons/additional-cards.svg';
 import applePayIcon from './payment-method-icons/apple-pay.svg';

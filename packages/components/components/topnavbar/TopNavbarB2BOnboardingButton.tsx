@@ -20,7 +20,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { useFeature } from '@proton/features/index';
 import { FeatureCode } from '@proton/features/interface';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

@@ -5,7 +5,7 @@ import { formattedShortSavedSepaDetails } from '@proton/components/payments/clie
 import { IcBank } from '@proton/icons/icons/IcBank';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments/core/interface';
-import { getBankSvg } from '@proton/payments/ui';
+import { getBankSvg } from '@proton/payments/ui/helpers/credit-card-icons';
 
 export type SavedMethodCustomType =
     | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD

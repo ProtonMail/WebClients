@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 
 import BundleIcon from '../components/PlanSelector/icons/bundle.svg';
 import DriveIcon from '../components/PlanSelector/icons/drive.svg';

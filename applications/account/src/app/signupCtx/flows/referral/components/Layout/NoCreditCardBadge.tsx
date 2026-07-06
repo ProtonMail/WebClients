@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { IcCreditCardSlashed } from '@proton/icons/icons/IcCreditCardSlashed';
-import type { PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
 
 export const NoCreditCardBadge = ({ plan }: { plan: PLANS }) => {
     const { eligibleTrials } = useEligibleTrials();

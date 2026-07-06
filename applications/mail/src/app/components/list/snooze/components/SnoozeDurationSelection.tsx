@@ -17,7 +17,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';

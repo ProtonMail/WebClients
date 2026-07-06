@@ -1,8 +1,11 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import OfferSubscription from '@proton/components/containers/offers/helpers/offerSubscription';
-import type { Cycle, FreeSubscription, PLANS } from '@proton/payments';
-import { type Subscription, isFreeSubscription, isManagedExternally, isValidPlanName } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
+import type { Cycle, FreeSubscription } from '@proton/payments/core/interface';
+import { isManagedExternally } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';

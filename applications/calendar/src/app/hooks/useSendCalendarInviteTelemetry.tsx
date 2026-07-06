@@ -1,6 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS, getPlan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import { getPlan } from '@proton/payments/core/subscription/helpers';
 import type { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
