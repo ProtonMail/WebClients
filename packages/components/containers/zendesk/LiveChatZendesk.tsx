@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
 import { getZendeskIframeUrl } from '@proton/components/containers/zendesk/helper';
+import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -47,14 +48,14 @@ const CLOSED_SIZE = {
 const SINGLE_CHAT_KEY = 'zk_state';
 const SINGLE_CHAT_TIMEOUT = 10000;
 
-export const getIsSelfChat = () => {
+export const hasActiveZendeskChat = () => {
     return sessionStorageWrapper.getItem(SINGLE_CHAT_KEY);
 };
 const removeSelfActiveMarker = () => {
     return sessionStorageWrapper.removeItem(SINGLE_CHAT_KEY);
 };
 const getIsActiveInAnotherWindow = () => {
-    return !getIsSelfChat() && +(localStorageWrapper.getItem(SINGLE_CHAT_KEY) || 0) > Date.now();
+    return !hasActiveZendeskChat() && +(localStorageWrapper.getItem(SINGLE_CHAT_KEY) || 0) > Date.now();
 };
 const setActiveMarker = () => {
     localStorageWrapper.setItem(SINGLE_CHAT_KEY, `${+Date.now() + SINGLE_CHAT_TIMEOUT}`);
@@ -87,8 +88,8 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const pendingLoadingRef = useRef<{ open?: boolean; locale?: string }>({});
     const [isZendeskV2Enabled] = useState(useFlag('UseZendeskV2'));
-
-    const iframeUrl = getZendeskIframeUrl(isZendeskV2Enabled);
+    const { APP_NAME } = useConfig();
+    const iframeUrl = getZendeskIframeUrl(APP_NAME, isZendeskV2Enabled);
 
     const src = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
