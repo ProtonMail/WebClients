@@ -1,8 +1,10 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Folder, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
+import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from 'proton-mail/components/list/snooze/constant';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import type { Element } from 'proton-mail/models/element';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
@@ -264,6 +266,50 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
             });
 
             expect(result).toBeNull();
+        });
+
+        describe('when "Don\'t ask again" has been selected', () => {
+            beforeEach(() => {
+                setItem(HIDE_SNOOZE_CONFIRMATION_LS_KEY, 'true');
+            });
+
+            afterEach(() => {
+                removeItem(HIDE_SNOOZE_CONFIRMATION_LS_KEY);
+            });
+
+            it('should return null even if the element is snoozed', () => {
+                const result = shouldOpenConfirmationModalForConverversation({
+                    elements: [
+                        {
+                            ConversationID: '123',
+                            Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextNumMessages: 1 }],
+                        } as unknown as Element,
+                    ],
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    mailSettings: {} as MailSettings,
+                    folders: [],
+                    conversationsFromState: [undefined],
+                });
+
+                expect(result).toBeNull();
+            });
+
+            it('should still return the schedule modal, which is unaffected by the snooze preference', () => {
+                const result = shouldOpenConfirmationModalForConverversation({
+                    elements: [
+                        {
+                            ConversationID: '123',
+                            Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 }],
+                        } as unknown as Element,
+                    ],
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    mailSettings: {} as MailSettings,
+                    folders: [],
+                    conversationsFromState: [undefined],
+                });
+
+                expect(result).toBe(ModalType.Schedule);
+            });
         });
     });
 
