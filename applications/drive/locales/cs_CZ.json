@@ -7432,13 +7432,13 @@
         "Nalezeno ${ total } uživatelů"
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Upgrade anytime to bring over the rest": [
         "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skrývá váš síťový provoz. ${ PASS_SHORT_APP_NAME } skrývá vaši identitu\n— neomezené **hide-my-email aliasy** a **upozornění na úniky na dark webu**, pokud by došlo k úniku vašich dat."
@@ -7447,10 +7447,10 @@
         "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -7486,7 +7486,7 @@
         "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ]
     },
     "info": {
@@ -7581,7 +7581,7 @@
         "WKD"
       ],
       "Active Signer": [
-        "Aktivní podpisový klíč"
+        "Aktivní podepisovatel"
       ],
       "Fallback": [
         "Záložní"
@@ -9468,7 +9468,7 @@
         "Bez podpory streamování"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -14173,7 +14173,7 @@
         "Migrujte svou organizaci do ${ BRAND_NAME }"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14699,6 +14699,20 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Neustále se snažíme vylepšovat ${ config.appName }. Nakolik uspokojivá je vaše zkušenost?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }

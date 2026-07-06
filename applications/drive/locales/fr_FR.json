@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Signaler un abus"
+      ],
+      "Re-indexing in progress": [
+        "Ré-indexation en cours"
       ]
     },
     "Action: Docs": {
@@ -4145,13 +4148,13 @@
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ],
       "No drive found to import": [
-        "Aucun lecteur détecté pour l'importation"
+        "Aucun disque à importer détecté"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
+        "Espace insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ]
     },
     "error": {
@@ -7381,7 +7384,7 @@
         "Nous n'avons pas pu vérifier que ${ nameAuthor } a importé ${ nodeName }. Les éléments suivants pourraient avoir été falsifiés : ordre des données du fichier. Ouvrez uniquement si vous faites confiance à ce fichier."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
       "Preparing download": [
         "Préparation du téléchargement"
@@ -7391,6 +7394,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Je confirme par la présente que je suis de bonne foi et que les informations et déclarations contenues dans le rapport sont exactes et complètes."
+      ],
+      "Re-indexing in progress": [
+        "Ré-indexation en cours"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Vos fichiers sont en cours de ré-indexation. Vous pouvez continuer à chercher ; les résultats peuvent être incomplets jusqu'à la fin du processus. Nous vous préviendrons quand il sera terminé."
       ]
     },
     "info": {
@@ -8265,6 +8274,9 @@
       ],
       "Very Dissatisfied": [
         "Très insatisfaisant"
+      ],
+      "Indexing": [
+        "Indexation en cours"
       ]
     },
     "Label for contact group color": {
@@ -13928,7 +13940,7 @@
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Nous n'avons pas pu confirmer que le nom a été créé ou modifié par ${ claimedNameAuthor }. La raison est la suivante : ${ node.nameAuthor.error.error }"
@@ -14068,6 +14080,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Assistance immédiate grâce à l'IA et à des experts humains."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
       ]
     },
     "tooltip": {
@@ -14516,6 +14531,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Nous nous efforçons toujours d'améliorer ${ config.appName }. Dans quelle mesure êtes-vous satisfait de votre expérience ?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
       ]
     }
   }

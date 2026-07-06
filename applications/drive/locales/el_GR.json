@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Αναφορά κατάχρησης"
+      ],
+      "Re-indexing in progress": [
+        "Επαναδημιουργία ευρετηρίου σε εξέλιξη"
       ]
     },
     "Action: Docs": {
@@ -7399,6 +7402,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Με την παρούσα βεβαιώνω ότι είμαι καλόπιστος/η ότι οι πληροφορίες και οι δηλώσεις που περιέχονται στην έκθεση είναι ορθές και πλήρεις."
+      ],
+      "Re-indexing in progress": [
+        "Επαναδημιουργία ευρετηρίου σε εξέλιξη"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Τα αρχεία σας καταχωρούνται εκ νέου στο ευρετήριο. Μπορείτε να συνεχίσετε την αναζήτηση - τα αποτελέσματα ενδέχεται να μην είναι ολοκληρωμένα μέχρι να ολοκληρωθεί. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ]
     },
     "info": {
@@ -8270,6 +8279,9 @@
       ],
       "Very Dissatisfied": [
         "Πολύ Δυσαρεστημένος"
+      ],
+      "Indexing": [
+        "Δημιουργία ευρετηρίου"
       ]
     },
     "Label for contact group color": {
@@ -13920,6 +13932,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
+      ],
+      "Version 6 OpenPGP key": [
+        "Κλειδί OpenPGP έκδοσης 6"
       ]
     },
     "tooltip": {
@@ -14363,6 +14378,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Fingerprint": [
+        "Δακτυλικό αποτύπωμα"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Type": [
+        "Τύπος"
       ]
     }
   }

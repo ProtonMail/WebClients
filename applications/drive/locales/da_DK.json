@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Anmeld misbrug"
+      ],
+      "Re-indexing in progress": [
+        "Gen-indeksering i gang"
       ]
     },
     "Action: Docs": {
@@ -7386,6 +7389,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Jeg bekræfter hermed, at jeg handler i god tro og informationerne og udtalelserne i rapporten er korrekte og fuldstændige."
+      ],
+      "Re-indexing in progress": [
+        "Gen-indeksering i gang"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Dine filer bliver gen-indekseret. Du kan blive ved med at søge - resultaterne kan være ufuldstændige, indtil de er færdige. Vi giver dig besked, når det er færdigt."
       ]
     },
     "info": {
@@ -8257,6 +8266,9 @@
       ],
       "Very Dissatisfied": [
         "Meget utilfreds"
+      ],
+      "Indexing": [
+        "Indekserer"
       ]
     },
     "Label for contact group color": {
@@ -14000,6 +14012,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
       ]
     },
     "tooltip": {
@@ -14456,6 +14471,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Vi stræber altid efter at forbedre ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
       ]
     }
   }

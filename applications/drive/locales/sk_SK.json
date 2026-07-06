@@ -1328,6 +1328,9 @@
       ],
       "Report abuse": [
         "Nahlásiť zneužitie"
+      ],
+      "Re-indexing in progress": [
+        "Prebieha opätovná indexácia"
       ]
     },
     "Action: Docs": {
@@ -7621,6 +7624,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Týmto potvrdzujem, že som v dobrej viere presvedčený, že informácie a tvrdenia uvedené v správe sú správne a úplné."
+      ],
+      "Re-indexing in progress": [
+        "Prebieha opätovná indexácia"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Vaše súbory sa práve znovu indexujú. Môžete pokračovať vo vyhľadávaní – výsledky môžu byť neúplné, kým sa proces nedokončí. Dáme vám vedieť, keď bude hotový."
       ]
     },
     "info": {
@@ -8504,6 +8513,9 @@
       ],
       "Very Dissatisfied": [
         "Veľká nespokojnosť"
+      ],
+      "Indexing": [
+        "Indexovanie"
       ]
     },
     "Label for contact group color": {
@@ -14423,6 +14435,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
       ]
     },
     "tooltip": {
@@ -14900,6 +14915,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcie"
+      ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Odtlačok prsta"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }

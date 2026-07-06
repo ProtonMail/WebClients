@@ -82,7 +82,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць карыстальнікаў або групы для абагулення"
+        "Дадаць карыстальнікаў або групы для абагульвання"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -1328,6 +1328,9 @@
       ],
       "Report abuse": [
         "Паведаміць пра парушэнне"
+      ],
+      "Re-indexing in progress": [
+        "Адбываецца паўторнае індэксаванне"
       ]
     },
     "Action: Docs": {
@@ -4210,6 +4213,12 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "Недастаткова прасторы ў сховішчы ${ DRIVE_APP_NAME }"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ]
     },
     "error": {
@@ -7618,6 +7627,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Я пацвярджаю і ўсведамляю, што інфармацыя і заявы, якія змяшчаюцца ў справаздачы, з'яўляюцца правільнымі і поўнымі."
+      ],
+      "Re-indexing in progress": [
+        "Адбываецца паўторнае індэксаванне"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Вашы файлы будуць паўторна індэксаваныя. Вы можаце працягваць пошук, але вынікі могуць быць няпоўнымі, пакуль пошук не завершыцца. Сістэма паведаміць вам, калі працэс будзе завершаны."
       ]
     },
     "info": {
@@ -8501,6 +8516,9 @@
       ],
       "Drive": [
         "Дыск"
+      ],
+      "Indexing": [
+        "Індэксаванне"
       ]
     },
     "Label for contact group color": {
@@ -14471,6 +14489,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -14948,6 +14969,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Мы заўсёды імкнёмся зрабіць ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
       ]
     }
   }

@@ -1299,6 +1299,12 @@
       ],
       "Verify now": [
         "Vahvista nyt"
+      ],
+      "Re-indexing in progress": [
+        "Uudelleenindeksointi käynnissä"
+      ],
+      "Report abuse": [
+        "Ilmoita väärinkäytöstä"
       ]
     },
     "Action: Docs": {
@@ -7176,6 +7182,15 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Menetätte myös ${ boldPlanTitle }-ominaisuuksien käyttöoikeuden:"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Vahvistan täten vilpittömästi, että raportissa annetut tiedot ja lausunnot ovat oikeita ja täydellisiä."
+      ],
+      "Re-indexing in progress": [
+        "Uudelleenindeksointi käynnissä"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Tiedostojasi indeksoidaan parhaillaan uudelleen. Voit jatkaa hakua – tulokset saattavat olla puutteellisia, kunnes indeksointi on valmis. Ilmoitamme sinulle, kun se on valmis."
       ]
     },
     "info": {
@@ -7999,6 +8014,9 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
+      ],
+      "Indexing": [
+        "Indeksoidaan"
       ]
     },
     "Label for contact group color": {
@@ -13606,6 +13624,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
       ]
     },
     "tooltip": {
@@ -13912,6 +13933,9 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "Size": [
+        "Koko"
       ]
     },
     "q2campaign2026: Action": {
@@ -14028,6 +14052,26 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
       ]
     }
   }

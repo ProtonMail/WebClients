@@ -1321,6 +1321,9 @@
       ],
       "Report abuse": [
         "Raportare abuz"
+      ],
+      "Re-indexing in progress": [
+        "Reindexare în derulare"
       ]
     },
     "Action: Docs": {
@@ -1622,7 +1625,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -7513,6 +7516,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Prin prezenta confirm că sunt de bună-credință că informațiile și declarațiile conținute în raport sunt corecte și complete."
+      ],
+      "Re-indexing in progress": [
+        "Reindexare în derulare"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Fișierele sunt reindexate. Puteți căuta, dar rezultatele s-ar putea să fie incomplete până la finalizarea indexării. Vă vom anunța când s-a finalizat."
       ]
     },
     "info": {
@@ -8390,6 +8399,9 @@
       ],
       "Very Dissatisfied": [
         "Foarte nemulțumit(ă)"
+      ],
+      "Indexing": [
+        "Se indexează"
       ]
     },
     "Label for contact group color": {
@@ -14272,6 +14284,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Asistență instantă cu IA și experți umani."
+      ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
       ]
     },
     "tooltip": {
@@ -14732,6 +14747,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Ne străduim mereu să îmbunătățim ${ config.appName }. Cum evaluați experiența avută?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Expiră"
+      ],
+      "Fingerprint": [
+        "Amprenta"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Type": [
+        "Tip"
       ]
     }
   }

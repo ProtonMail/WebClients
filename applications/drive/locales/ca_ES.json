@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Denunciar un abús"
+      ],
+      "Re-indexing in progress": [
+        "La reindexació està en curs"
       ]
     },
     "Action: Docs": {
@@ -7399,6 +7402,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Per la present confirmo que, de bona fe, la informació i les declaracions contingudes en l'informe són correctes i completes."
+      ],
+      "Re-indexing in progress": [
+        "La reindexació està en curs"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Els vostres fitxers s'estan reindexant. Podeu continuar cercant però els resultats podrien ser incomplets mentre no acabi. Us farem saber quan hagi finalitzat."
       ]
     },
     "info": {
@@ -8273,6 +8282,9 @@
       ],
       "Very Dissatisfied": [
         "Molt insatisfet"
+      ],
+      "Indexing": [
+        "S'està indexant"
       ]
     },
     "Label for contact group color": {
@@ -13980,6 +13992,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Assistència instantània amb IA i persones expertes."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
       ]
     },
     "tooltip": {
@@ -14423,6 +14438,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Treballem constantment per millorar ${ config.appName }. Quin grau de satisfacció teniu amb la vostra experiència?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
       ]
     }
   }

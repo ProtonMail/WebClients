@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Kötüye kullanımı bildir"
+      ],
+      "Re-indexing in progress": [
+        "Dizini yeniden oluşturma işlemi sürüyor"
       ]
     },
     "Action: Docs": {
@@ -7398,7 +7401,13 @@
         "Hazırlanıyor…"
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "İşbu belge ile raporda yer alan bilgi ve beyanların doğru ve eksiksiz olduğuna iyi niyetle inandığımı teyit ederim."
+        "Bu belge ile bildirimde yer alan bilgi ve beyanların doğru ve eksiksiz olduğuna iyi niyetle inandığımı teyit ederim."
+      ],
+      "Re-indexing in progress": [
+        "Dizini yeniden oluşturma işlemi sürüyor"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Dosyalarınızın dizini yeniden oluşturuluyor. Arama yapmaya sürdürebilirsiniz. İşlem tamamlanana kadar sonuçlar eksik olabilir. İşlem tamamlandığında size haber vereceğiz."
       ]
     },
     "info": {
@@ -8270,6 +8279,9 @@
       ],
       "Very Dissatisfied": [
         "Hiç memnun değilim"
+      ],
+      "Indexing": [
+        "Dizin oluşturma"
       ]
     },
     "Label for contact group color": {
@@ -14016,6 +14028,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Yapay zeka ve insan uzmanlar ile anında yardım."
+      ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
       ]
     },
     "tooltip": {
@@ -14459,6 +14474,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "${ config.appName } uygulamasını geliştirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Type": [
+        "Tür"
       ]
     }
   }

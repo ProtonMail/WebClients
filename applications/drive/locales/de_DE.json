@@ -1308,6 +1308,9 @@
       ],
       "Report abuse": [
         "Missbrauch melden"
+      ],
+      "Re-indexing in progress": [
+        "Neuindizierung läuft"
       ]
     },
     "Action: Docs": {
@@ -7390,6 +7393,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Hiermit bestätige ich nach bestem Wissen und Gewissen, dass die im Bericht enthaltenen Angaben und Aussagen richtig und vollständig sind."
+      ],
+      "Re-indexing in progress": [
+        "Neuindizierung läuft"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Deine Dateien werden gerade neu indiziert. Du kannst weiterhin suchen – die Ergebnisse sind möglicherweise unvollständig, bis der Vorgang abgeschlossen ist. Wir informieren dich, sobald der Vorgang abgeschlossen ist."
       ]
     },
     "info": {
@@ -8261,6 +8270,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Indexing": [
+        "Indizierung"
       ]
     },
     "Label for contact group color": {
@@ -14061,6 +14073,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP Schlüssel"
       ]
     },
     "tooltip": {
@@ -14498,6 +14513,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Wir sind stets bemüht, ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
+      "Expires": [
+        "Läuft ab"
+      ],
+      "Fingerprint": [
+        "Fingerabdruck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }

@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Rapporter misbruk"
+      ],
+      "Re-indexing in progress": [
+        "Gjenindeksering pågår"
       ]
     },
     "Action: Docs": {
@@ -1361,7 +1364,7 @@
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME }-lisenser"
+        "${ LUMO_APP_NAME } seter"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1370,7 +1373,7 @@
         "${ price } per domene"
       ],
       "${ price } per seat": [
-        "${ price } per lisens"
+        "${ price } per sete"
       ],
       "${ price } per user": [
         "${ price } per bruker"
@@ -1380,12 +1383,12 @@
         "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
+        "${ seats } ${ LUMO_APP_NAME } sete",
+        "${ seats } ${ LUMO_APP_NAME } seter"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
+        "${ seats } skriveassistentsete",
+        "${ seats } skriveassistentseter"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1407,11 +1410,11 @@
         "Skriveassistent"
       ],
       "Writing assistant seats": [
-        "Skriveassistentlisenser"
+        "Skriveassistentseter"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME }-lisens",
-        "${ seats } ${ MEET_APP_NAME }-lisenser"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ]
     },
     "Alert": {
@@ -1469,10 +1472,10 @@
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
@@ -4137,6 +4140,15 @@
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Sjekk om ABN-nummeret ditt er registrert for grenseoverskridende merverdiavgift"
+      ],
+      "No drive found to import": [
+        "Ingen disker å importere funnet"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Ikke nok lagringsplass i din ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet feil, vi kan ikke importere filene"
       ]
     },
     "error": {
@@ -7164,7 +7176,7 @@
         "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7372,6 +7384,15 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ nodeName }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
+      ],
+      "Re-indexing in progress": [
+        "Gjenindeksering pågår"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Filene dine blir indeksert på nytt. Du kan fortsette å søke – resultatene kan være ufullstendige før det er ferdig. Vi gir deg beskjed når det er ferdig."
       ]
     },
     "info": {
@@ -8243,6 +8264,9 @@
       ],
       "Drive": [
         "Stasjon"
+      ],
+      "Indexing": [
+        "Indekserer"
       ]
     },
     "Label for contact group color": {
@@ -13937,6 +13961,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Vi klarte ikke å bekrefte at noden ble opprettet av ${ claimedKeyAuthor }. Årsaken er: ${ node.keyAuthor.error.error }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14040,6 +14067,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versjon 6 OpenPGP-nøkkel"
       ]
     },
     "tooltip": {
@@ -14289,20 +14319,20 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME }-tilgang",
-        "${ seats } ${ MEET_APP_NAME }-tilganger"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ]
     },
     "meet_2025: Info": {
       "${ seats } seat included": [
-        "${ seats } tilgang inkludert",
-        "${ seats } tilganger inkludert"
+        "${ seats } sete inkludert",
+        "${ seats } seter inkludert"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seter i prøveperioden."
       ]
     },
     "Notitication": {
@@ -14366,7 +14396,7 @@
         "Ikke aktivert"
       ],
       "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige lisenser"
+        "Organisasjonen har ikke nok ledige seter"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
@@ -14483,6 +14513,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Vi streber alltid etter å gjøre ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Expires": [
+        "Utløper"
+      ],
+      "Fingerprint": [
+        "Fingeravtrykk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
       ]
     }
   }

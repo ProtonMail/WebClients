@@ -1314,6 +1314,9 @@
       ],
       "Report abuse": [
         "Reportar abuso"
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
       ]
     },
     "Action: Docs": {
@@ -7396,6 +7399,12 @@
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
         "Por la presente confirmo que actúo de buena fe y que la información y las declaraciones contenidas en el informe son correctas y completas."
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Sus archivos se están reindexando. Puede seguir buscando; los resultados pueden estar incompletos hasta que termine. Le avisaremos cuando haya terminado."
       ]
     },
     "info": {
@@ -8270,6 +8279,9 @@
       ],
       "Very Dissatisfied": [
         "Poco satisfactoria"
+      ],
+      "Indexing": [
+        "Indexando"
       ]
     },
     "Label for contact group color": {
@@ -14070,6 +14082,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "¡Asistencia IA inmediata, experto humano a su disposición!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -14513,6 +14528,26 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
       ]
     }
   }
