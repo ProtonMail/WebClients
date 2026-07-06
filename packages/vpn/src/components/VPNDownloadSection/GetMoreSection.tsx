@@ -12,7 +12,7 @@ import { useSubscriptionModalRaw } from '@proton/components/containers/payments/
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN } from '@proton/payments/core/subscription/helpers';
 import { APPS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';

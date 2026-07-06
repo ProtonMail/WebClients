@@ -1,4 +1,6 @@
-import { PLANS, PLAN_SERVICES, PLAN_TYPES, type Plan, type PlanIDs } from '@proton/payments';
+import { PLANS, PLAN_SERVICES, PLAN_TYPES } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import noop from '@proton/utils/noop';
 
 import { hasBit } from '../helpers/bitset';

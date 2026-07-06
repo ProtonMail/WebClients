@@ -3,14 +3,11 @@ import {
     ADDON_PREFIXES,
     AddonFeatureLimitKeyMapping,
     AddonLimit,
-    type Cycle,
-    type Plan,
-    type PlanIDs,
-    getAddonMultiplier,
-    getPlanFeatureLimit,
-    getSupportedAddons,
-    isAddonType,
-} from '@proton/payments';
+} from '@proton/payments/core/constants';
+import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
+import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
+import { getAddonMultiplier, getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 export default function getAddonsPricing({

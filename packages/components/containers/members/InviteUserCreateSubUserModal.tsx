@@ -7,7 +7,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
-import { PLAN_NAMES } from '@proton/payments';
+import { PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';

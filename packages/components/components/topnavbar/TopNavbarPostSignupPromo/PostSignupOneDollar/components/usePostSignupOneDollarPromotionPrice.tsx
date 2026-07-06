@@ -5,7 +5,9 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { COUPON_CODES, CYCLE, type Currency, PLANS, isMainCurrency } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { isMainCurrency } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
 import type { SUPPORTED_PRODUCTS } from '../interface';

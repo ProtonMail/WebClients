@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
-import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments';
+import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     CALENDAR_SHORT_APP_NAME,
     DRIVE_SHORT_APP_NAME,

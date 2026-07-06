@@ -9,7 +9,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { CYCLE, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLAN_NAMES } from '@proton/payments/core/constants';
 
 import FreePlanCard from '../components/FreePlanCard';
 import OfferPlanCard from '../components/OfferPlanCard';

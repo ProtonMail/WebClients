@@ -9,7 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
-import { CYCLE } from '@proton/payments';
+import { CYCLE } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

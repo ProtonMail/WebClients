@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS, PLAN_NAMES, hasFree } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { type MaybeFreeSubscription, hasFree } from '@proton/payments/core/subscription/helpers';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 

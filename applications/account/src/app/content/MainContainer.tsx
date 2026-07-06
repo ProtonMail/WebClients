@@ -56,8 +56,8 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';

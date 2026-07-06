@@ -7,8 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/index';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { getPlan } from '@proton/payments/index';
+import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { getFeedbackSurveyOptions } from '../../../constants/feedbackSurveyOptions';

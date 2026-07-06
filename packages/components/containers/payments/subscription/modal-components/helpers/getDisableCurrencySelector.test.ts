@@ -1,5 +1,6 @@
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import { PAYMENT_METHOD_TYPES, PLANS, type PlanIDs } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import type { PlanIDs } from '@proton/payments/core/interface';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 

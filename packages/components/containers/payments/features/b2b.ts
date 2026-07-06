@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 

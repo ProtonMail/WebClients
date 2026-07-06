@@ -1,4 +1,5 @@
-import type { Cycle, PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
+import type { Cycle } from '@proton/payments/core/interface';
 
 export type EncodedPaidCookieData = {
     /**

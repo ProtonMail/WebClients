@@ -13,7 +13,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { PLAN_NAMES } from '@proton/payments/index';
+import { PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

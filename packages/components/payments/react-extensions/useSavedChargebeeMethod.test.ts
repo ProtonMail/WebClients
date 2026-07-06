@@ -1,6 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { Autopay, type ChargebeeIframeEvents, PAYMENT_METHOD_TYPES, type SavedPaymentMethod } from '@proton/payments';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { ChargebeeIframeEvents, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { apiMock } from '@proton/testing/lib/api';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';

@@ -15,7 +15,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
 import { IcBrandTor } from '@proton/icons/icons/IcBrandTor';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

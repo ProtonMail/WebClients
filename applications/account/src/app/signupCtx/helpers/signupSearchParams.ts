@@ -1,4 +1,5 @@
-import { CURRENCIES, CYCLE, type Currency, type Cycle, PLANS } from '@proton/payments';
+import { CURRENCIES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, Cycle } from '@proton/payments/core/interface';
 import isEnumValue from '@proton/utils/isEnumValue';
 
 /**

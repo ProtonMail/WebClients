@@ -1,4 +1,4 @@
-import type { Cycle, PlanIDs } from '@proton/payments';
+import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 
 import type { AvailablePlan } from '../context/SignupContext';
 

@@ -27,7 +27,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
-import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments';
+import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';

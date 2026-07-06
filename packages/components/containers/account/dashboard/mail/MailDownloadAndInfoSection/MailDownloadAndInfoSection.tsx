@@ -8,7 +8,7 @@ import {
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 

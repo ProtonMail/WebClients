@@ -4,7 +4,7 @@ import { render, screen, within } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import type { IconName } from '@proton/icons/types';
-import type { Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     ADDRESS_RECEIVE,

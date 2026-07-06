@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
 import type { Breakpoints } from '@proton/components';
-import { getHas2025OfferCoupon } from '@proton/payments';
+import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';

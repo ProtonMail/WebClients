@@ -12,7 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Time from '@proton/components/components/time/Time';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
-import { useIsB2BTrial } from '@proton/payments/ui';
+import useIsB2BTrial from '@proton/payments/ui/hooks/useIsB2BTrial';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';

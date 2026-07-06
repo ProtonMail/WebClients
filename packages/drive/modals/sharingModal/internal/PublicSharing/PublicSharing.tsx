@@ -9,7 +9,7 @@ import { SUBSCRIPTION_STEPS, Toggle, useConfig, useSettingsLink, useUpsellConfig
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFormTextboxPassword } from '@proton/icons/icons/IcFormTextboxPassword';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

@@ -41,7 +41,8 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import type { IconName } from '@proton/icons/types';
-import { CYCLE, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,

@@ -1,4 +1,5 @@
-import type { Currency, PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments/core/constants';
+import type { Currency } from '@proton/payments/core/interface';
 
 export type SupportedPlans = PLANS.MAIL | PLANS.DRIVE | PLANS.BUNDLE;
 

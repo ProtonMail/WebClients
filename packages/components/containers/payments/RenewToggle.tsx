@@ -8,7 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { Autopay, getHasConsumerVpnPlan } from '@proton/payments';
+import { Autopay } from '@proton/payments/core/constants';
+import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
 
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
 

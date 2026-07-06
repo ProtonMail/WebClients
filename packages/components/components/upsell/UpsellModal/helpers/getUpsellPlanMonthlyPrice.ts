@@ -1,16 +1,10 @@
-import {
-    type COUPON_CODES,
-    CYCLE,
-    type Currency,
-    type PaymentsApi,
-    type Plan,
-    type PlanIDs,
-    getPlanByName,
-    getPlansMap,
-    getPricePerCycle,
-    isMainCurrency,
-} from '@proton/payments';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
+import { type COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import { isMainCurrency } from '@proton/payments/core/currencies';
+import type { Currency, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { getPricePerCycle } from '@proton/payments/core/price-helpers';
+import { getPlanByName, getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 interface UpsellPlanMonthlyPriceParams {
     currency: Currency;

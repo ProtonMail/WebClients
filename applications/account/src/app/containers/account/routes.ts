@@ -7,16 +7,16 @@ import {
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig, SubrouteGroup } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import { getIsConsumerPassPlan } from '@proton/payments/core/plan/helpers';
 import {
+    type MaybeFreeSubscription,
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
-    getIsConsumerPassPlan,
     hasCancellablePlan,
     hasLumo,
     isCancellableOnlyViaSupport,
     isManagedExternally,
-} from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     BRAND_NAME,
@@ -87,7 +87,7 @@ function getV1DashboardSections(
     cancellablePlan: boolean,
     subscription: MaybeFreeSubscription,
     cancellableOnlyViaSupport: boolean,
-    hasExternalMemberCapableB2BPlan: boolean,
+    hasExternalMemberCapableB2BPlan: boolean
 ) {
     return [
         // do not show Your Plan section for Pass users

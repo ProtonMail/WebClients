@@ -1,6 +1,6 @@
 import { organizationThunk } from '@proton/account/organization';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { type TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';

@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import {
-    getIsB2BAudienceFromPlan,
+    type MaybeFreeSubscription,
     hasAnyB2bBundle,
     hasPassBusiness,
     hasVPNPassProfessional,
     hasVpnBusiness,
-} from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';

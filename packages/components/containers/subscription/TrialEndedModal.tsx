@@ -9,8 +9,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
-import { CYCLE, getRenewalTime, isFreeSubscription } from '@proton/payments';
-import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
+import { CYCLE } from '@proton/payments/core/constants';
+import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/b2b-trial-end.svg';
 

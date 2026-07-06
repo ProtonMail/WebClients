@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getReferralInfo as getReferralInfoApi } from '@proton/shared/lib/api/core/referrals';

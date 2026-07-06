@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,

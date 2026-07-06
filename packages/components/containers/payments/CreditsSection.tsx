@@ -13,7 +13,7 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Price from '@proton/components/components/price/Price';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { getAvailableSubscriptionActions } from '@proton/payments';
+import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

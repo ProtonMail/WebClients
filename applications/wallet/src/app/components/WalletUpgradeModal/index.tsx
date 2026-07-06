@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
-import { hasVisionary } from '@proton/payments';
+import { hasVisionary } from '@proton/payments/core/subscription/helpers';
 import walletAtSignDark from '@proton/styles/assets/img/wallet/wallet-at-sign-dark.png';
 import walletAtSign from '@proton/styles/assets/img/wallet/wallet-at-sign.png';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';

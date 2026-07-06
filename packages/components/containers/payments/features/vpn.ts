@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

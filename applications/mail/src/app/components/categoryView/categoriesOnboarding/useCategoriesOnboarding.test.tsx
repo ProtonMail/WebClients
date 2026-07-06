@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';

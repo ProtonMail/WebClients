@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';

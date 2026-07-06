@@ -8,7 +8,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

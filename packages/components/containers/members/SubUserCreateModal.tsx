@@ -42,7 +42,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
-import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
+import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     type APP_NAMES,

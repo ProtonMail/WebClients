@@ -1,15 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import {
-    ADDON_NAMES,
-    CYCLE,
-    FREE_SUBSCRIPTION,
-    type FreeSubscription,
-    PLANS,
-    type PlanIDs,
-    Renew,
-    type Subscription,
-} from '@proton/payments';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { Renew } from '@proton/payments/core/subscription/constants';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 

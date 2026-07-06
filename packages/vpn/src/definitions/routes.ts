@@ -4,23 +4,19 @@ import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineNavigation } from '@proton/nav/api/defineNavigation';
 import type { NavContext } from '@proton/nav/types/models';
 import type { NavDefinition, NavItemDefinition } from '@proton/nav/types/nav';
+import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    hasAnyB2bBundle,
     hasCancellablePlan,
+    hasVPNPassProfessional,
+    hasVpnBusiness,
     isB2BTrial,
     isCancellableOnlyViaSupport,
 } from '@proton/payments/core/subscription/helpers';
-import {
-    getIsB2BAudienceFromPlan,
-    hasAnyB2bBundle,
-    hasVPNPassProfessional,
-    hasVpnBusiness,
-    planSupportsSSO,
-    upsellPlanSSO,
-} from '@proton/payments/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,

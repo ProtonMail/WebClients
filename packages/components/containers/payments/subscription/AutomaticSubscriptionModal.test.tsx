@@ -3,16 +3,12 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import type { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import type { PaymentStatus, Subscription } from '@proton/payments';
-import {
-    CURRENCIES,
-    CYCLE,
-    DEFAULT_CYCLE,
-    FREE_PLAN,
-    PLANS,
-    getPlanName,
-    getPreferredCurrency,
-} from '@proton/payments';
+import { CURRENCIES, CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
+import type { PaymentStatus } from '@proton/payments/core/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getPlanName } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';

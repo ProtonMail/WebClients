@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import MailLogo from '@proton/components/components/logo/MailLogo';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import gmail from '@proton/styles/assets/img/illustrations/gmail-logo.svg';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';

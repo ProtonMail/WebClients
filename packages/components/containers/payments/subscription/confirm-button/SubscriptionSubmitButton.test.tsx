@@ -1,12 +1,13 @@
 import { render, screen } from '@testing-library/react';
 
-import type { SubscriptionEstimation } from '@proton/payments';
-import { CYCLE, PAYMENT_METHOD_TYPES, SubscriptionMode } from '@proton/payments';
+import { CYCLE, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { type Props, SubscriptionSubmitButton } from './SubscriptionSubmitButton';
 
-jest.mock('@proton/payments/ui', () => ({
+jest.mock('@proton/payments/ui/components/PayButton', () => ({
     PayButton: ({
         children,
         taxCountry: _taxCountry,

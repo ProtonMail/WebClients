@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { PaymentVerificatorV5 } from '@proton/payments/core/createPaymentToken';
+import type {
+    AmountAndCurrency,
+    ChargeableV5PaymentParameters,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
+    PaymentMethodType,
+    PaymentStatus,
+    PlainPaymentMethodType,
+} from '@proton/payments/core/interface';
 import {
-    type AmountAndCurrency,
-    type ChargeableV5PaymentParameters,
     ChargebeeCardPaymentProcessor,
     type ChargebeeCardPaymentProcessorState,
-    type ChargebeeIframeEvents,
-    type ChargebeeIframeHandles,
-    PAYMENT_METHOD_TYPES,
-    type PaymentMethodType,
-    type PaymentProcessorHook,
-    type PaymentStatus,
-    type PaymentVerificatorV5,
-    type PlainPaymentMethodType,
-} from '@proton/payments';
+} from '@proton/payments/core/payment-processors/chargebeeCardPayment';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 

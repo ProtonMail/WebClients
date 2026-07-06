@@ -10,17 +10,15 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import {
-    PAYMENT_METHOD_TYPES,
-    type PaymentProcessorHook,
-    getIsB2BAudienceFromPlan,
-    getPlanFromPlanIDs,
-} from '@proton/payments';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { PayButton } from '@proton/payments/ui/components/PayButton';
+import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

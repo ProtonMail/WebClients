@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { type FreeSubscription, type Subscription, getPlanTitle, isTrial } from '@proton/payments';
+import type { FreeSubscription } from '@proton/payments/core/interface';
+import { getPlanTitle, isTrial } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 interface Props {
     subscription: Subscription | FreeSubscription | undefined;

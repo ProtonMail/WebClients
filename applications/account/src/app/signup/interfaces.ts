@@ -1,18 +1,17 @@
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import type { ChallengeResult, VerificationModel } from '@proton/components';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     Currency,
     Cycle,
     ExtendedTokenPayment,
     FreeSubscription,
-    PAYMENT_METHOD_TYPES,
     PlanIDs,
     SavedPaymentMethod,
-    Subscription,
-    SubscriptionEstimation,
-} from '@proton/payments';
-import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+} from '@proton/payments/core/interface';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';

@@ -19,7 +19,7 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcFire } from '@proton/icons/icons/IcFire';
 import type { IconSize } from '@proton/icons/types';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';

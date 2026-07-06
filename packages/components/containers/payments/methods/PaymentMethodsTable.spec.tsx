@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
 
 import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
-import type { PayPalDetails, PaymentMethodSepa, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
-import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type {
+    PayPalDetails,
+    PaymentMethodSepa,
+    SavedCardDetails,
+    SavedPaymentMethod,
+} from '@proton/payments/core/interface';
 import { APPS } from '@proton/shared/lib/constants';
 
 import TableBody from '../../../components/table/TableBody';

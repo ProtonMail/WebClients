@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import MembersStep from './MembersStep';

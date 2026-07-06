@@ -1,26 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
-import {
-    type ADDON_NAMES,
-    type AvailablePaymentMethod,
-    type Currency,
-    type FreeSubscription,
-    PAYMENT_METHOD_TYPES,
-    type PLANS,
-    type PaymentMethodFlow,
-    type PaymentMethodType,
-    type PaymentMethods,
-    type PaymentStatus,
-    type PaymentsApi,
-    type PlainPaymentMethodType,
-    type PlanIDs,
-    type SavedPaymentMethod,
-    type Subscription,
-    initializePaymentMethods,
-    isExistingPaymentMethod,
-} from '@proton/payments';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
+import type {
+    AvailablePaymentMethod,
+    Currency,
+    FreeSubscription,
+    PaymentMethodFlow,
+    PaymentMethodType,
+    PaymentStatus,
+    PaymentsApi,
+    PlainPaymentMethodType,
+    PlanIDs,
+    SavedPaymentMethod,
+} from '@proton/payments/core/interface';
+import { type PaymentMethods, initializePaymentMethods } from '@proton/payments/core/methods';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;

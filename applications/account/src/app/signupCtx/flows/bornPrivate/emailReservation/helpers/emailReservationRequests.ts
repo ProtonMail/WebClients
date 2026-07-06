@@ -1,7 +1,7 @@
-import type { Currency } from '@proton/payments';
 import { getBuyProductConfig } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
 import { auth } from '@proton/shared/lib/api/auth';
 import { bornPrivate } from '@proton/shared/lib/api/born-private';
 import { queryCreateUser } from '@proton/shared/lib/api/user';

@@ -21,18 +21,14 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
-import {
-    type Currency,
-    PAYMENT_METHOD_TYPES,
-    type PaymentProcessorHook,
-    type PaymentStatus,
-    type PlainPaymentMethodType,
-    isFreeSubscription,
-} from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { ChargebeePaypalButton } from '@proton/payments/ui';
+import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';

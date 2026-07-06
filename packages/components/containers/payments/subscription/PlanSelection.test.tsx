@@ -1,14 +1,10 @@
 import { renderHook } from '@testing-library/react';
 
-import {
-    CYCLE,
-    type Currency,
-    FREE_SUBSCRIPTION,
-    PLANS,
-    type Subscription,
-    getDefaultMainCurrency,
-    getPlanByName,
-} from '@proton/payments';
+import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders/subscription';

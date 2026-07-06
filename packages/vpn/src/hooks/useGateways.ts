@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
-import { PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { queryVPNGateways } from '../apis/gateway';

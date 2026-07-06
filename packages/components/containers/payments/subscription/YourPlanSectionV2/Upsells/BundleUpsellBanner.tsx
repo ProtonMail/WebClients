@@ -13,15 +13,10 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import {
-    CYCLE,
-    PLANS,
-    PLAN_NAMES,
-    getPlanByName,
-    getPricePerCycle,
-    hasFreeOrPlus,
-    isManagedExternally,
-} from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getPricePerCycle } from '@proton/payments/core/price-helpers';
+import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscription/helpers';
+import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 

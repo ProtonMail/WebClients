@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { type FreePlanDefault, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

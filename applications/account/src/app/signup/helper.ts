@@ -1,18 +1,13 @@
 import type { Location } from 'history';
 
-import {
-    type Currency,
-    type Cycle,
-    PLANS,
-    type PaymentsApi,
-    type PlanIDs,
-    type SubscriptionEstimation,
-    getFreeCheckResult,
-    hasPlanIDs,
-} from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import { PLANS } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCroHeaders, getOwnershipVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';

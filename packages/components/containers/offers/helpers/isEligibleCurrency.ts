@@ -1,4 +1,4 @@
-import type { Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments/core/interface';
 
 const eligibleCurrencies = new Set<Currency>([
     'USD',

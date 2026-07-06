@@ -1,5 +1,5 @@
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
-import type { PLANS } from '@proton/payments/index';
+import type { PLANS } from '@proton/payments/core/constants';
 
 import { useIsVPNPlanWithoutTrialVariant } from './useIsVPNPlanWithoutTrialVariant';
 

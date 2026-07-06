@@ -5,7 +5,9 @@ import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { type Invoice, InvoiceState, isRegularInvoice } from '@proton/payments';
+import { InvoiceState } from '@proton/payments/core/constants';
+import { isRegularInvoice } from '@proton/payments/core/helpers';
+import type { Invoice } from '@proton/payments/core/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

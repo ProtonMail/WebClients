@@ -3,7 +3,8 @@ import type { ComponentType, JSXElementConstructor, ReactNode } from 'react';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { FeatureCode } from '@proton/features';
 import type { IconName, IconSize } from '@proton/icons/types';
-import type { COUPON_CODES, CYCLE, Currency, PlanIDs } from '@proton/payments';
+import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 import type { SummerSale2026OfferId } from './operations/summerSale2026offers';

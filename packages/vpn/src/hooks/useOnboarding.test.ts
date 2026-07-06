@@ -6,7 +6,7 @@ import type { MockedFunction } from 'vitest';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { getIsVpnB2BPlan } from '@proton/payments';
+import { getIsVpnB2BPlan } from '@proton/payments/core/plan/helpers';
 
 import { Onboarding } from '../../constants/onboarding';
 import { getIsBusinessOnboarded, setBusinessOnboarded } from '../apis/onboarding';
@@ -16,7 +16,7 @@ import { useOnboarding } from './useOnboarding';
 vi.mock('@proton/account/organization/hooks', () => ({ useOrganization: vi.fn() }));
 vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn() }));
 vi.mock('@proton/components/hooks/useApi', () => ({ default: vi.fn() }));
-vi.mock('@proton/payments', () => ({ getIsVpnB2BPlan: vi.fn() }));
+vi.mock('@proton/payments/core/plan/helpers', () => ({ getIsVpnB2BPlan: vi.fn() }));
 vi.mock('react-router-dom', () => ({ useLocation: vi.fn() }));
 vi.mock('../apis/onboarding', () => ({
     getIsBusinessOnboarded: vi.fn(),

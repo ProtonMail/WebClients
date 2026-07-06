@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import { PLANS, getHasMailB2BPlan, hasVisionary } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { PLANS } from '@proton/payments/core/constants';
+import {
+    type MaybeFreeSubscription,
+    getHasMailB2BPlan,
+    hasVisionary,
+} from '@proton/payments/core/subscription/helpers';
 
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
