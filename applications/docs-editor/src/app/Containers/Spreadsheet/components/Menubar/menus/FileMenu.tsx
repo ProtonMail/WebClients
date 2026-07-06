@@ -1,18 +1,79 @@
 import * as Ariakit from '@ariakit/react'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { useCallback, useEffect, useState, type ReactElement } from 'react'
+import { useCallback, useEffect, useRef, useState, type ReactElement } from 'react'
 import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import type { EditorRequiresClientMethods, FileMenuAction } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
-import useLoading from '@proton/hooks/useLoading'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { useApplication } from '../../../../ApplicationProvider'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 
 const { s } = createStringifier(strings)
+
+type WithLoading = <T>(promise: undefined | Promise<T | void> | (() => Promise<T | void>)) => Promise<T | void>
+
+function unwrapPromise<T>(maybeWrappedPromise: Promise<T | void> | (() => Promise<T | void>)): Promise<T | void> {
+  if (typeof maybeWrappedPromise === 'function') {
+    return maybeWrappedPromise()
+  }
+
+  return maybeWrappedPromise
+}
+
+function useMenuActionLoading(): [boolean, WithLoading] {
+  const [loading, setLoading] = useState(false)
+  const unmountedRef = useRef(false)
+  const counterRef = useRef(0)
+
+  const withLoading = useCallback<WithLoading>((maybeWrappedPromise) => {
+    if (!maybeWrappedPromise) {
+      setLoading(false)
+      return Promise.resolve()
+    }
+
+    const promise = unwrapPromise(maybeWrappedPromise)
+    const counterNext = counterRef.current + 1
+    counterRef.current = counterNext
+
+    setLoading(true)
+
+    return promise
+      .then((result) => {
+        if (counterRef.current !== counterNext) {
+          return
+        }
+
+        if (!unmountedRef.current) {
+          setLoading(false)
+        }
+
+        return result
+      })
+      .catch((error) => {
+        if (counterRef.current !== counterNext) {
+          return
+        }
+
+        if (!unmountedRef.current) {
+          setLoading(false)
+        }
+
+        throw error
+      })
+  }, [])
+
+  useEffect(() => {
+    unmountedRef.current = false
+    return () => {
+      unmountedRef.current = true
+    }
+  }, [])
+
+  return [loading, withLoading]
+}
 
 export interface FileMenuProps extends Ariakit.MenuProviderProps {
   renderMenuButton: ReactElement
@@ -187,7 +248,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
 }
 
 function NewSpreadsheetOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useLoading()
+  const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}
@@ -209,7 +270,7 @@ function NewSpreadsheetOption({ triggerMenuAction }: { triggerMenuAction: (actio
 }
 
 function NewDocumentOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useLoading()
+  const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="brand-proton-docs" />}
@@ -231,7 +292,7 @@ function NewDocumentOption({ triggerMenuAction }: { triggerMenuAction: (action: 
 }
 
 function MakeACopyOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useLoading()
+  const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="squares" />}
@@ -253,7 +314,7 @@ function MakeACopyOption({ triggerMenuAction }: { triggerMenuAction: (action: Fi
 }
 
 function MoveToTrashOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useLoading()
+  const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="trash" />}
