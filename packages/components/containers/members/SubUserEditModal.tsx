@@ -9,6 +9,7 @@ import {
     assignMemberRoles,
     classifyRoleChange,
     editMember,
+    getAssignRolesInvitationText,
     getMemberAddresses,
     getMemberEditPayload,
     getPrivateAdminError,
@@ -192,6 +193,7 @@ const SubUserEditModal = ({
 
     const hasVPN = Boolean(organization?.MaxVPN);
     const unprivatization = getMemberUnprivatizationMode(member);
+    const isPendingMagicLinkInvite = unprivatization.mode === MemberUnprivatizationMode.MagicLinkInvite;
 
     const isSelf = Boolean(member.Self);
 
@@ -666,6 +668,10 @@ const SubUserEditModal = ({
                                               organizationRoles={organizationRoles}
                                               loadingRoles={loadingRoles}
                                               userRoles={member.UserOrganizationRoles}
+                                              disabled={isPendingMagicLinkInvite}
+                                              banner={
+                                                  isPendingMagicLinkInvite ? getAssignRolesInvitationText() : undefined
+                                              }
                                           />
                                       ),
                                   },
