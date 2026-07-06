@@ -48,6 +48,9 @@ import { getIsSectionAvailable, getRoutePaths } from '@proton/components/contain
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
+import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
+import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
+import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
 import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
@@ -63,10 +66,12 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
+import { localeCode } from '@proton/shared/lib/i18n';
 import type { Permission, UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
@@ -346,6 +351,9 @@ const MainContainer = () => {
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
+    // Zendesk Chat Integration
+    const { handleOpenZendeskChat, showZendeskChat, zendeskRef } = useZendeskChat(user);
+
     const getLogo = () => {
         if (organizationTheme.logoURL) {
             return (
@@ -390,7 +398,9 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
-            userDropdown={<UserDropdown app={app} sessionOptions={{ path: pathPrefix }} />}
+            userDropdown={
+                <UserDropdown app={app} sessionOptions={{ path: pathPrefix }} onOpenChat={handleOpenZendeskChat} />
+            }
             // No onboarding in account
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />}
             title={c('Title').t`Settings`}
@@ -538,6 +548,7 @@ const MainContainer = () => {
                                 user={user}
                                 organization={organization}
                                 subscription={subscription}
+                                onOpenChat={handleOpenZendeskChat}
                             />
                         </Route>
                         <Route path={anyMspAppRoute}>
@@ -598,6 +609,19 @@ const MainContainer = () => {
                         </Route>
                         {redirect}
                     </Switch>
+                    {showZendeskChat.render && (
+                        <LiveChatZendesk
+                            tags={getZendeskTags(user, organization)}
+                            zendeskRef={zendeskRef}
+                            onLoaded={() => {
+                                if (showZendeskChat.autoLaunch) {
+                                    zendeskRef.current?.open();
+                                }
+                            }}
+                            onUnavailable={noop}
+                            locale={localeCode.replace('_', '-')}
+                        />
+                    )}
                 </PrivateAppContainer>
             </NavigationProvider>
         </SubscriptionModalProvider>

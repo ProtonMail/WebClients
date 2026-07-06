@@ -728,7 +728,6 @@ export { default as SMTPSubmissionSection } from './containers/smtp/SMTPSubmissi
 export { default as TrialEndedModal } from './containers/subscription/TrialEndedModal';
 export { default as AuthenticatedBugModal } from './containers/support/AuthenticatedBugModal';
 export { default as BugModal, type BugModalMode } from './containers/support/BugModal';
-export { default as FreeUserLiveChatModal } from './containers/support/FreeUserLiveChatModal';
 export { default as ThemeCard } from './containers/themes/ThemeCard';
 export { default as ThemeCards } from './containers/themes/ThemeCards';
 export { DrawerThemeInjector } from './containers/themes/ThemeInjector';
