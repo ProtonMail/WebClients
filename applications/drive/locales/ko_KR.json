@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -1274,6 +1274,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "앨범 \"${ ellipsedAlbumName }\"(으)로 돌아가기"
       ]
     },
     "Action: Docs": {
@@ -12285,7 +12288,7 @@
         "${ feature }이(가) 이제 활성 상태입니다"
       ],
       "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength }개의 무료 업로드."
+        "${ freeUploadLength }간의 무료 업로드 시간."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 개의 파일 다운로드에 실패함"
@@ -13600,7 +13603,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
@@ -13821,6 +13824,20 @@
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
         "${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
       ]
     }
   }
