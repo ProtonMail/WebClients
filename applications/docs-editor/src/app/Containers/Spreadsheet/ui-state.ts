@@ -29,12 +29,15 @@ import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
 import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
 import { useApplication } from '../ApplicationProvider'
-import type { LoggerInterface } from '@proton/utils/logs'
 import * as Ariakit from '@ariakit/react'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
   pattern: string
+}
+
+type SpreadsheetLogger = {
+  info(...args: unknown[]): void
 }
 
 function focusGridWarningFallback() {
@@ -690,7 +693,11 @@ export function useProtonSheetsUIState(
 
 export type ProtonSheetsUIState = ReturnType<typeof useProtonSheetsUIState>
 
-function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, PatternSpec>, logger: LoggerInterface) {
+function useFormatUtils(
+  state: ProtonSheetsState,
+  patternSpecs: Record<string, PatternSpec>,
+  logger: SpreadsheetLogger,
+) {
   function setFormat<K extends keyof CellFormat>(key: K, value: CellFormat[K]) {
     logger.info('action: set format', state.activeSheetId, state.activeCell, key)
     state.onChangeFormatting(state.activeSheetId, state.activeCell, state.selections, key, value)
