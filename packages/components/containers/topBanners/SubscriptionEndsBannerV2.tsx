@@ -12,7 +12,8 @@ import {
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import useConfig from '@proton/components/hooks/useConfig';
-import { hasDeprecatedVPN, hasVPN2024, isFreeSubscription, subscriptionExpires } from '@proton/payments';
+import { hasDeprecatedVPN, hasVPN2024, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

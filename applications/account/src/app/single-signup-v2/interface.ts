@@ -4,19 +4,11 @@ import type { LocationDescriptor } from 'history';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type {
-    CYCLE,
-    Currency,
-    FreePlanDefault,
-    PLANS,
-    PaymentStatus,
-    Plan,
-    PlanIDs,
-    PlansMap,
-    SubscriptionEstimation,
-    SubscriptionPlan,
-} from '@proton/payments';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import type { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { Currency, PaymentStatus, PlanIDs } from '@proton/payments/core/interface';
+import type { FreePlanDefault, Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Audience, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';

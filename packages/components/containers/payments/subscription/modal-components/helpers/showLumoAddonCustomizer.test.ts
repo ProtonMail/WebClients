@@ -1,4 +1,5 @@
-import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS, SubscriptionPlatform } from '@proton/payments/index';
+import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { showLumoAddonCustomizer } from './showLumoAddonCustomizer';

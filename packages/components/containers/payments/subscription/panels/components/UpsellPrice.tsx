@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
-import { OfferPrice } from '@proton/payments/ui';
+import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import { OfferPrice } from '@proton/payments/ui/components/OfferPrice';
 
 import type { UpsellWithPlan } from '../../helpers';
 

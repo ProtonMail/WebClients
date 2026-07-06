@@ -1,13 +1,10 @@
+import { COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { Renew } from '@proton/payments/core/subscription/constants';
 import {
-    COUPON_CODES,
-    CYCLE,
-    FREE_SUBSCRIPTION,
-    PLANS,
-    Renew,
+    getAutoCoupon,
     notHigherThanAvailableOnBackend,
     subscriptionExpires,
-} from '@proton/payments';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+} from '@proton/payments/core/subscription/helpers';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 

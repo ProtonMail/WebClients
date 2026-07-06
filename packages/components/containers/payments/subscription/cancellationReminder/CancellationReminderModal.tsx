@@ -14,7 +14,7 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
-import { isFreeSubscription } from '@proton/payments/index';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 

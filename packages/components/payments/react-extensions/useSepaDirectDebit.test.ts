@@ -1,13 +1,8 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 
-import {
-    type AmountAndCurrency,
-    type ChargebeeIframeEvents,
-    type ChargebeeIframeHandles,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import type { AmountAndCurrency, ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';
 import { apiMock } from '@proton/testing/lib/api';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';

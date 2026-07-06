@@ -1,18 +1,11 @@
 import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
-import {
-    type Currency,
-    type Cycle,
-    type ExtendedTokenPayment,
-    type FreeSubscription,
-    type PlanIDs,
-    type Subscription,
-    type SubscriptionEstimation,
-    hasFreePlanIDs,
-} from '@proton/payments';
 import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import type { Currency, Cycle, ExtendedTokenPayment, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { hasFreePlanIDs } from '@proton/payments/core/planIDs';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';

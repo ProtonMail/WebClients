@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { type Invoice, InvoiceType, isCreditNoteInvoice } from '@proton/payments';
+import { InvoiceType } from '@proton/payments/core/constants';
+import { isCreditNoteInvoice } from '@proton/payments/core/helpers';
+import type { Invoice } from '@proton/payments/core/interface';
 
 const getType = (invoice: Invoice) => {
     const type: InvoiceType = invoice.Type;

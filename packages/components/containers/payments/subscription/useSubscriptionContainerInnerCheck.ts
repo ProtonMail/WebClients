@@ -4,26 +4,22 @@ import { c } from 'ttag';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
-import {
-    type FreeSubscription,
-    type FullPlansMap,
-    PAYMENT_METHOD_TYPES,
-    type PaymentsApi,
-    type PlainPaymentMethodType,
-    type Plan,
-    type Subscription,
-    type SubscriptionEstimation,
-    getFreeCheckResult,
-    getIsPlanTransitionForbidden,
-    getPlanIDs,
-    hasPlanIDs,
-    isSubscriptionCheckForbiddenWithReason,
-} from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import type { FreeSubscription, PaymentsApi, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
+import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
+import {
+    getAutoCoupon,
+    getPlanIDs,
+    isSubscriptionCheckForbiddenWithReason,
+} from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

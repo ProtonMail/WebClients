@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import type { Plan } from '@proton/payments';
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, SelectedPlan } from '@proton/payments';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getTestPlans } from '@proton/testing/data/payments/data-plans';

@@ -3,24 +3,19 @@ import {
     type ADDON_NAMES,
     AddonLimit,
     CURRENCIES,
-    type Currency,
-    FREE_PLAN,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     PLANS,
-    type Plan,
-    type PlansMap,
-    fixPlanName,
-    getPlanByName,
-    getPlanMaxIPs,
-    getSupportedAddons,
-    getValidCycle,
-    isDomainAddon,
-    isIpAddon,
-    isMemberAddon,
-    planToPlanIDs,
-} from '@proton/payments';
+} from '@proton/payments/core/constants';
+import { fixPlanName } from '@proton/payments/core/helpers';
+import type { Currency } from '@proton/payments/core/interface';
+import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/payments/core/plan/addons';
+import { getPlanMaxIPs } from '@proton/payments/core/plan/feature-limits';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getValidCycle } from '@proton/payments/core/subscription/helpers';
+import { getPlanByName, planToPlanIDs } from '@proton/payments/core/subscription/plans-map-wrapper';
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

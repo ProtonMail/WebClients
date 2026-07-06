@@ -7,7 +7,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';

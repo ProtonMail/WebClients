@@ -5,7 +5,8 @@ import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
 import { useLoading } from '@proton/hooks';
-import { type Plan, type PlansMap, type SubscriptionPlan, getFreeTitle } from '@proton/payments';
+import type { Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { getFreeTitle } from '@proton/payments/core/subscription/freePlans';
 
 interface Props extends ModalProps {
     appName: string;

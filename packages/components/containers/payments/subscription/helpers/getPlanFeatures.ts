@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { PLANS, type Plan } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,

@@ -1,6 +1,8 @@
 import { subDays } from 'date-fns';
 
-import { CYCLE, PLANS, type Subscription, SubscriptionPlatform } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
