@@ -27,6 +27,7 @@ export type ActiveImporter = {
     mapping?: ApiImporterFolder[];
     startDate: ApiImporterActive['CreateTime'];
     total?: ApiImporterActive['Total'];
+    importedBytes?: ApiImporterActive['ImportedBytes'];
 };
 
 export type ImportersMap = Record<string, Importer>;
