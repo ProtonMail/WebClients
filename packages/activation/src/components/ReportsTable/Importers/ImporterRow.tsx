@@ -9,6 +9,7 @@ import {
 } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { TableCell, TableRow } from '@proton/components';
+import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import ReportsTableCell from '../ReportsTableCell';
 import ImporterRowActions from './ImporterRowActions';
@@ -22,14 +23,14 @@ const ImporterRow = ({ activeImporterId }: Props) => {
     const activeImporter = useEasySwitchSelector((state) => selectActiveImporterById(state, activeImporterId));
     const importer = useEasySwitchSelector((state) => selectImporterById(state, activeImporter.importerID));
 
-    const { product, importState, startDate, errorCode } = activeImporter;
+    const { product, importState, startDate, errorCode, importedBytes } = activeImporter;
     const { account, provider } = importer;
 
     return (
         <TableRow>
             <ReportsTableCell provider={provider} product={product} title={account} importerDate={startDate} />
             <TableCell className="easy-switch-table-size" label={c('Title header').t`Size`}>
-                {'-'}
+                {importedBytes !== undefined ? shortHumanSize(importedBytes) : '-'}
             </TableCell>
             <TableCell className="easy-switch-table-status">
                 <div>
