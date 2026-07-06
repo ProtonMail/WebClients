@@ -9,6 +9,7 @@ import {
     UnavailableAddressesError,
     assignMemberRoles,
     createMember,
+    getAssignRolesInvitationText,
     getPrivateAdminError,
     getPrivateText,
 } from '@proton/account';
@@ -630,8 +631,7 @@ const SubUserCreateModal = ({
                                           disabled={model.mode !== CreateMemberMode.Password}
                                           banner={
                                               model.mode !== CreateMemberMode.Password
-                                                  ? c('user_modal')
-                                                        .t`You'll be able to assign roles once the user has accepted the invitation.`
+                                                  ? getAssignRolesInvitationText()
                                                   : undefined
                                           }
                                       />
