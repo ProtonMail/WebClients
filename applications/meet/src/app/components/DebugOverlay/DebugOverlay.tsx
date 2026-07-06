@@ -29,6 +29,8 @@ import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { BackgroundBlurComparison } from './BackgroundBlurComparison/BackgroundBlurComparison';
+
 import './DebugOverlay.scss';
 
 const downloadJson = (data: object, filename: string) => {
@@ -798,7 +800,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                 <div className="debug-overlay-body">
                     <div className="debug-section">
                         <label className="setting-label color-norm" htmlFor="krisp-debug">
-                            Krsip debug
+                            Krisp debug
                         </label>
                         <Toggle
                             id="krisp-debug"
@@ -807,6 +809,8 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                             className={clsx('settings-toggle', isKrispDebugEnabled ? '' : 'settings-toggle-inactive')}
                         />
                     </div>
+
+                    <BackgroundBlurComparison />
 
                     {/* Reconnection Testing Section */}
                     <div className="debug-section">

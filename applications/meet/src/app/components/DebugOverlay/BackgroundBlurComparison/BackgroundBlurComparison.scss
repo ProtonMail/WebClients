@@ -1,0 +1,9 @@
+.debug-blur-comparison {
+	grid-template-columns: 1fr 1fr;
+}
+
+@media (width <= 768px) {
+	.debug-blur-comparison {
+		grid-template-columns: 1fr;
+	}
+}

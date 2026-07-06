@@ -1,0 +1,24 @@
+.debug-blur-preview {
+	border-radius: 6px;
+}
+
+.debug-blur-preview-label {
+	font-size: 0.938rem;
+}
+
+.debug-blur-preview-video {
+	background: black;
+	border-radius: 4px;
+
+	video {
+		inline-size: 100%;
+		block-size: 100%;
+		object-fit: contain;
+	}
+}
+
+.debug-blur-preview-status {
+	color: white;
+	font-size: 0.875rem;
+	text-align: center;
+}
