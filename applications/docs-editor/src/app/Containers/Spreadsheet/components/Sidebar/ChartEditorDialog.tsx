@@ -23,7 +23,7 @@ import {
   getChartTypeBySpec,
   isBasicChartSpec,
 } from './chartData'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { useUI } from '../../ui-store'
 import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'

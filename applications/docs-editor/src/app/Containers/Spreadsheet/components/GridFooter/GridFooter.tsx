@@ -1,4 +1,4 @@
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 
 interface GridFooterProps {
   sheetId: number

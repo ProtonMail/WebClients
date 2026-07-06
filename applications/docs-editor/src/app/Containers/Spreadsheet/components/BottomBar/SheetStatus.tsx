@@ -1,4 +1,4 @@
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import type { PropsWithChildren } from 'react'
 import { useEffect, useState } from 'react'
 import * as Ariakit from '@ariakit/react'
