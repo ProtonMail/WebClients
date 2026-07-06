@@ -26,7 +26,7 @@ import { IcSignature } from '@proton/icons/icons/IcSignature';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import {
     APPS,
@@ -46,6 +46,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
 import { CustomLogoHeader } from '../components/CustomLogoHeader';
+import { getPlanDisplayName } from '../helpers/getPlanDisplayName';
 
 const DRIVE_PLUS_NAME = `${DRIVE_SHORT_APP_NAME} Plus`;
 
@@ -680,14 +681,10 @@ const FreePlanHeader = ({ app }: { app?: APP_NAMES }) => {
 
 export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): TemporaryNeedPlanConfig | undefined => {
     const planTitle = plan.Title;
-    let planDisplayName = PLAN_NAMES[plan.Name as PLANS] ?? planTitle;
+    let planDisplayName = getPlanDisplayName(plan.Name as PLANS, planTitle);
 
     if (plan.Name === PLANS.DRIVE || plan.Name === PLANS.DRIVE_1TB) {
         planDisplayName = DRIVE_PLUS_NAME;
-    }
-
-    if (plan.Name === PLANS.BUNDLE_PRO) {
-        planDisplayName = planTitle;
     }
 
     const values: PlanValues = {
@@ -767,7 +764,7 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         [PLANS.VISIONARY]: {
             currentPlanHeader: makePlanHeader(PLANS.VISIONARY),
             freePlanHeader: bundleFreePlanHeader,
-            subtitle: getVisionarySubtitle(planTitle),
+            subtitle: getVisionarySubtitle(planDisplayName),
             features: getVisionaryFeatures(values),
         },
         [PLANS.MAIL_PRO]: {
