@@ -85,7 +85,9 @@ const ViewGroup = () => {
 
     const isScimGroup = getIsScimGroup(group);
     const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
-    const pendingAdminMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN).length;
+    const pendingAdminApprovalCount = groupMembers.filter(
+        (m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL
+    ).length;
     const invitedMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING).length;
 
     return (
@@ -168,12 +170,12 @@ const ViewGroup = () => {
                         </GroupInfoBanner>
                     )}
 
-                    {pendingAdminMemberCount > 0 && (
+                    {pendingAdminApprovalCount > 0 && (
                         <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
                             {c('Info').ngettext(
-                                msgid`${pendingAdminMemberCount} new member added via your identity provider and pending review.`,
-                                `${pendingAdminMemberCount} new members added via your identity provider and pending review.`,
-                                pendingAdminMemberCount
+                                msgid`${pendingAdminApprovalCount} new member added via your identity provider and pending review.`,
+                                `${pendingAdminApprovalCount} new members added via your identity provider and pending review.`,
+                                pendingAdminApprovalCount
                             )}
                         </GroupInfoBanner>
                     )}
