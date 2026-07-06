@@ -84,36 +84,36 @@ export function useAccount(): ProtonDriveAccount {
             return [];
         }
 
+        // If the address is disabled we still need both its keys and the
+        // API public keys:
+        // 1. To verify signatures from files uploaded before the address was
+        //    disabled.
+        // 2. To encrypt invitations to a new user who claimed the same domain
+        //    address. Disabled keys go last to give them lower priority.
+        let disabledOwnKeys: PublicKey[] = [];
+        try {
+            // Own address keys are always fetched fresh - never cached here.
+            // The account layer caches getAddressKeys internally, so this is
+            // not expensive. Caching them here caused stale-reference bugs when
+            // the account layer invalidated its key cache while the page was open.
+            const address = await getOwnAddress(email);
+            const keys = address.keys.map(({ key }) => key);
+            if (!address.isDisabled) {
+                return keys;
+            }
+            disabledOwnKeys = keys;
+        } catch {}
+
+        // For external addresses and disabled own addresses, cache only the
+        // API-fetched public keys. Those are imported into CryptoProxy and
+        // are never removed from there, so the cached references stay valid.
         const existing = getPublicKeysPromises.current.get(email);
         if (!forceRefresh && existing) {
-            return existing;
+            const publicKeys = await existing;
+            return [...publicKeys, ...disabledOwnKeys];
         }
 
-        // If the address is own address, use the keys from that directly
-        // as that is already imported in the cache.
-        // Except if the address is disabled, in which case we need to provide
-        // both the disabled keys and request the public keys. It is crucial
-        // for the following two use cases:
-        // 1. If user uploaded the file previously and now the address is
-        //    disabled, we still need to provide the disabled keys to verify
-        //    the signature.
-        // 2. If user disabled custom domain address and recreated it for
-        //    different user, we still need to provide the public keys of the
-        //    other user to encrypt invitation to the original user.
-        // Thus we need to provide both. The disabled address keys are ordered
-        // at the end of the array to have lower priority (so the second case
-        // works), but still present (so the first case works).
         const promise = (async (): Promise<PublicKey[]> => {
-            let disabledKeys: PublicKey[] = [];
-            try {
-                const address = await getOwnAddress(email);
-                const keys = address.keys.map(({ key }) => key);
-                if (!address.isDisabled) {
-                    return keys;
-                }
-                disabledKeys = keys;
-            } catch {}
-
             const response = await api<{
                 Address: { Keys: { PublicKey: string }[] };
                 Unverified?: { Keys: { PublicKey: string }[] };
@@ -141,17 +141,14 @@ export function useAccount(): ProtonDriveAccount {
                 response.Address.Keys.length === 0 && response.Unverified
                     ? response.Unverified.Keys
                     : response.Address.Keys;
-            const publicKeys = await Promise.all(
-                keys.map((key) => CryptoProxy.importPublicKey({ armoredKey: key.PublicKey }))
-            );
-
-            return [...publicKeys, ...disabledKeys];
+            return Promise.all(keys.map((key) => CryptoProxy.importPublicKey({ armoredKey: key.PublicKey })));
         })();
 
         getPublicKeysPromises.current.set(email, promise);
         promise.catch(() => getPublicKeysPromises.current.delete(email));
 
-        return promise;
+        const publicKeys = await promise;
+        return [...publicKeys, ...disabledOwnKeys];
     };
 
     const hasProtonAccount = async (email: string): Promise<boolean> => {
