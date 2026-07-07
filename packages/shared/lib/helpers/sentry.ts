@@ -17,7 +17,6 @@ import { Availability, AvailabilityTypes } from '@proton/utils/availability';
 
 import { getApiError, getIsConnectionIssue } from '../api/helpers/apiErrorHelper';
 import { VPN_HOSTNAME } from '../constants';
-import { SHARE_GENERATED_PASSWORD_LENGTH } from '../drive/constants';
 import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import type { ProtonConfig } from '../interfaces';
@@ -250,7 +249,7 @@ function main({
             // Remove the hash from the request URL and navigation breadcrumbs to avoid
             // leaking the search parameters of encrypted searches
             if (event.request && event.request.url) {
-                [event.request.url] = event.request.url.split('#');
+                [event.request.url] = event.request.url.split(/#|%23/i);
             }
             // keys/all endpoint accepts Email as parameter which is PII.
             if (event.request && event.request.url) {
@@ -259,8 +258,8 @@ function main({
             if (event.breadcrumbs) {
                 event.breadcrumbs = event.breadcrumbs.map((breadcrumb) => {
                     if (breadcrumb.category === 'navigation' && breadcrumb.data) {
-                        [breadcrumb.data.from] = breadcrumb.data.from.split('#');
-                        [breadcrumb.data.to] = breadcrumb.data.to.split('#');
+                        [breadcrumb.data.from] = breadcrumb.data.from.split(/#|%23/i);
+                        [breadcrumb.data.to] = breadcrumb.data.to.split(/#|%23/i);
                     }
 
                     if (breadcrumb.category === 'fetch' && breadcrumb.data) {
@@ -281,19 +280,12 @@ function main({
                 });
             }
 
-            // This will prevent from sending the password in the public url. Ex: https://drive.proton.dev/urls/TBYS1295RG#[password]
+            // Anything after a hash may be sensitive (e.g. a public share password, Ex:
+            // https://drive.proton.dev/urls/TBYS1295RG#[password]), so always redact it.
             if (event.exception && event.exception.values) {
                 event.exception.values = event.exception.values.map((error) => {
-                    if (
-                        error.value &&
-                        error.value.includes('/urls/') &&
-                        error.value.match(new RegExp(`#[a-zA-Z0-9]{${SHARE_GENERATED_PASSWORD_LENGTH}}\\b`))
-                    ) {
-                        // Redact sensitive information in the error message
-                        error.value = error.value.replace(
-                            new RegExp(`#[a-zA-Z0-9]{${SHARE_GENERATED_PASSWORD_LENGTH}}\\b.*$`),
-                            '#[Filtered]'
-                        );
+                    if (error.value) {
+                        error.value = error.value.replace(/(?:#|%23).*$/is, '#[Filtered]');
                     }
 
                     return error;
