@@ -22,6 +22,7 @@ export default {
     plugins,
     resolve: {
         alias: {
+            'proton-pass-desktop/native': path.resolve(__dirname, 'native'),
             'proton-pass-desktop': path.resolve(__dirname, 'src/'),
         },
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],

@@ -16,7 +16,7 @@ import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
-import type { ClientEndpoint, Maybe, MaybeNull, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, ContextBridgeApi, Maybe, MaybeNull, TabId } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { OnTelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
@@ -104,13 +104,13 @@ export type PassCoreContextValue = {
     getDesktopUnlockSecret?: () => Promise<string>;
 };
 
-export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean };
+export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean; bridge?: ContextBridgeApi };
 export const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 
 /** The `PassCoreProvider` must be made available on all pass
  * clients : it provides implementations for processes that are
  * dependent on the platform. */
-export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, wasm, ...core }) => {
+export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, wasm, bridge, ...core }) => {
     const [initialized, setInitialized] = useState(!wasm);
     const context = useInstance<PassCoreContextValue>(() => core);
 
@@ -129,7 +129,7 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
         <ConfigProvider config={core.config}>
             <PassCoreContext.Provider value={context}>
                 <PassThemeProvider>
-                    <AppStateProvider>{initialized && children}</AppStateProvider>
+                    <AppStateProvider bridge={bridge}>{initialized && children}</AppStateProvider>
                 </PassThemeProvider>
             </PassCoreContext.Provider>
         </ConfigProvider>

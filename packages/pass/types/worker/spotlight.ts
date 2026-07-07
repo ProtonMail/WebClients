@@ -64,6 +64,8 @@ export enum SpotlightMessage {
     OFFLINE_SETUP = 30,
     /** Access tokens settings discovery */
     ACCESS_TOKENS_DISCOVERY = 31,
+    /** SSH Agent instructions modal */
+    SSH_AGENT_INSTRUCTIONS = 32,
 }
 
 export type SpotlightAcknowledgment = {

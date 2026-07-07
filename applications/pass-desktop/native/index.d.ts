@@ -5,6 +5,13 @@ export declare class Autotype {
     performAutotype(fields: Array<string>, enterAtTheEnd?: boolean | undefined | null): void;
 }
 
+export interface SshKeyData {
+    id: string;
+    name: string;
+    publicKey: string;
+    privateKey: string;
+}
+
 export declare namespace biometric {
     export function canCheckPresence(): Promise<boolean>;
     export function checkPresence(handle: Buffer, reason: string): Promise<void>;
@@ -27,4 +34,17 @@ export declare namespace msix_updater {
 
 export declare namespace napi_native_messaging {
     export function install(binaryPath: string): Promise<void>;
+}
+
+export declare namespace ssh_agent_napi {
+    export function destroyAgent(): Promise<void>;
+    export function getStatus(): Promise<SshAgentStatus>;
+    export function removeAllKeys(): Promise<void>;
+    export function setKeys(keys: Array<SshKeyData>): Promise<void>;
+    export interface SshAgentStatus {
+        socketPath?: string;
+    }
+    export function startAgent(
+        isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => Promise<boolean>
+    ): Promise<void>;
 }

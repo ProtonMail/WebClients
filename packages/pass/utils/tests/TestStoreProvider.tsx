@@ -41,19 +41,20 @@ export const TestStoreProvider: FC<PropsWithChildren> = ({ children }) => {
         const runner = sagaMiddleware.run(
             rootSagaFactory(WEB_SAGAS).bind(null, {
                 endpoint: 'web',
-                publish: sagaEvents.publish,
-                getConfig: () => config,
-                getCore: () => core.core,
                 getAppState: () => AppStateManager.getState(),
-                setAppStatus: AppStateManager.setStatus,
                 getAuthService: () => ({}) as AuthService,
                 getAuthStore: () => authStore,
                 getCache: async () => ({}),
+                getConfig: () => config,
+                getCore: () => core.core,
                 getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getSettings: () => ({}) as ProxiedSettings,
                 getTelemetry: () => null,
-                setCache: async () => undefined,
+                onItemsUpdated: () => {},
                 onNotification: () => {},
+                publish: sagaEvents.publish,
+                setAppStatus: AppStateManager.setStatus,
+                setCache: async () => undefined,
             })
         );
 

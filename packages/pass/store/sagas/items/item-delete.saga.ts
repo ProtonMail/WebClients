@@ -1,4 +1,4 @@
-import { put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 
 import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { deleteItemRevisions, deleteItems } from '@proton/pass/lib/items/item.requests';
@@ -13,14 +13,14 @@ import { or } from '@proton/pass/utils/fp/predicates';
 
 const removeItems = createRequestSaga({
     actions: itemDelete,
-    call: function* (selectedItem, { onItemsUpdated, getTelemetry }) {
+    call: function* (selectedItem, { getTelemetry }) {
         const { shareId, itemId } = selectedItem;
         const telemetry = getTelemetry();
 
         const item: Maybe<ItemRevision> = yield select(selectItem(shareId, itemId));
         if (!item) throw new Error('Invalid delete action');
 
-        yield deleteItems([item]);
+        yield call(deleteItems, [item]);
 
         void telemetry?.push(
             createTelemetryEvent(
@@ -32,7 +32,6 @@ const removeItems = createRequestSaga({
             )
         );
 
-        onItemsUpdated?.();
         return { ...selectedItem, hadFiles: or(hasAttachments, hasHadAttachments)(item) };
     },
 });
