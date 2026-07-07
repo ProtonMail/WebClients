@@ -1221,6 +1221,7 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                     userId={user?.ID}
                 />
             )}
+
             {isWebRtcUnsupportedModalOpen && (
                 <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
             )}
