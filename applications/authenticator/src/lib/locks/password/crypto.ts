@@ -1,9 +1,9 @@
+import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
+import { decryptData, encryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
 import logger from 'proton-authenticator/lib/logger';
 
-import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
-import { decryptData, encryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 type Argon2Options = Parameters<typeof CryptoProxy.computeArgon2>[0];
@@ -36,10 +36,10 @@ const generateOfflineKD = async ({ password, salt, params }: Argon2Options): Pro
 const createOfflineVerifier = async (offlineKD: Uint8Array<ArrayBuffer>): Promise<string> => {
     const offlineKey = await importKey(offlineKD);
     const verifier = generateKey();
-    const tag = stringToUint8Array(AuthenticatorEncryptionTag.OfflineVerifier);
+    const tag = binaryStringToUint8Array(AuthenticatorEncryptionTag.OfflineVerifier);
     const offlineVerifier = await encryptData(offlineKey, verifier, tag);
 
-    return uint8ArrayToString(offlineVerifier);
+    return uint8ArrayToBinaryString(offlineVerifier);
 };
 
 export const getOfflineComponents = async (password: string): Promise<OfflineComponents> => {
@@ -53,7 +53,7 @@ export const getOfflineComponents = async (password: string): Promise<OfflineCom
 
     return {
         offlineKD,
-        offlineConfig: { salt: uint8ArrayToString(salt), params, version: 2 },
+        offlineConfig: { salt: uint8ArrayToBinaryString(salt), params, version: 2 },
         offlineVerifier: await createOfflineVerifier(offlineKD),
     };
 };
@@ -65,10 +65,10 @@ export const verifyOfflinePassword = async (
     password: string,
     { offlineVerifier, offlineConfig: { salt, params, version = 1 } }: Omit<OfflineComponents, 'offlineKD'>
 ): Promise<OfflineComponents['offlineKD']> => {
-    const offlineKD = await generateOfflineKD({ password, salt: stringToUint8Array(salt), params });
+    const offlineKD = await generateOfflineKD({ password, salt: binaryStringToUint8Array(salt), params });
     const offlineKey = await importKey(offlineKD);
-    const tag = version > 1 ? stringToUint8Array(AuthenticatorEncryptionTag.OfflineVerifier) : undefined;
+    const tag = version > 1 ? binaryStringToUint8Array(AuthenticatorEncryptionTag.OfflineVerifier) : undefined;
 
-    await decryptData(offlineKey, stringToUint8Array(offlineVerifier), tag);
+    await decryptData(offlineKey, binaryStringToUint8Array(offlineVerifier), tag);
     return offlineKD;
 };

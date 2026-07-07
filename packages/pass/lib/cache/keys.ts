@@ -4,7 +4,7 @@ import { PassEncryptionTag } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { getCacheEncryptionKey } from './crypto';
 
@@ -22,10 +22,10 @@ export const getCacheKey = async (
         const offlineKD = authStore.getOfflineKD();
 
         if (offlineKD && encryptedCacheKey) {
-            const offlineKey = await importSymmetricKey(stringToUint8Array(offlineKD));
+            const offlineKey = await importSymmetricKey(binaryStringToUint8Array(offlineKD));
             const rawCacheKey = await decryptData(
                 offlineKey,
-                stringToUint8Array(encryptedCacheKey),
+                binaryStringToUint8Array(encryptedCacheKey),
                 PassEncryptionTag.Offline
             );
 
@@ -33,7 +33,7 @@ export const getCacheKey = async (
         }
 
         if (keyPassword && salt) {
-            return await getCacheEncryptionKey(keyPassword, stringToUint8Array(salt), sessionLockToken);
+            return await getCacheEncryptionKey(keyPassword, binaryStringToUint8Array(salt), sessionLockToken);
         }
     } catch (err) {
         logger.warn(`[Cache] cache key could not be resolved`);

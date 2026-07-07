@@ -1,10 +1,4 @@
-import {
-    readFileAsBinaryString,
-    readFileAsBuffer,
-    readFileAsString,
-    splitExtension,
-    toBase64,
-} from '../../lib/helpers/file';
+import { readFileAsBuffer, readFileAsString, splitExtension, toBase64 } from '../../lib/helpers/file';
 import { toFile } from '../../lib/helpers/image';
 import { emojis, img } from './file.data';
 
@@ -60,20 +54,6 @@ describe('readFile', () => {
         expect(output instanceof ArrayBuffer).toBeTruthy();
     });
 
-    it('should be a string !base 64', async () => {
-        const output = await readFileAsBinaryString(file);
-        expect(typeof output).toBe('string');
-        expect(output.startsWith('data:')).toBe(false);
-    });
-
-    it('should throw an error if the file is not defined', async () => {
-        try {
-            await readFileAsBinaryString(null);
-        } catch (e) {
-            expect(typeof e.stack).toBe('string');
-        }
-    });
-
     const toTextFile = (text, filename, mime = 'text/plain') => {
         return new File([new Blob([text])], filename, { type: mime });
     };
@@ -82,12 +62,6 @@ describe('readFile', () => {
         const output = await readFileAsString(toTextFile(emojis, 'emojis.txt'));
         expect(typeof output).toBe('string');
         expect(output).toBe('abc🧠👀🎂🎲🕌📣☣️');
-    });
-
-    it('should read a utf-8 encoded file as a binary string', async () => {
-        const output = await readFileAsBinaryString(toTextFile(emojis, 'emojis.txt'));
-        expect(typeof output).toBe('string');
-        expect(output).toBe('abcð§ ððð²ðð£â£ï¸');
     });
 });
 

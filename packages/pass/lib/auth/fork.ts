@@ -1,7 +1,7 @@
-import { c } from 'ttag';
-
 import { ARGON2_PARAMS } from '@protontech/crypto';
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { c } from 'ttag';
+
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { encodeUserData } from '@proton/pass/lib/auth/store.utils';
 import type { OfflineComponents } from '@proton/pass/lib/cache/crypto';
@@ -30,7 +30,7 @@ import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -226,7 +226,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
                     try {
                         const { password, salt } = payload.offlineKey;
                         const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
-                        const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                        const offlineVerifier = await getOfflineVerifier(binaryStringToUint8Array(offlineKD));
                         data.offlineKD = offlineKD;
                         data.offlineConfig = offlineConfig;
                         data.offlineVerifier = offlineVerifier;
@@ -251,7 +251,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
                         try {
                             const { offlineKeyPassword: password, offlineKeySalt: salt } = decryptedBlob;
                             const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
-                            const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                            const offlineVerifier = await getOfflineVerifier(binaryStringToUint8Array(offlineKD));
                             data.offlineKD = offlineKD;
                             data.offlineConfig = offlineConfig;
                             data.offlineVerifier = offlineVerifier;
