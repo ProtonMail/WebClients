@@ -8,9 +8,11 @@ use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
 #[cfg(unix)]
 use std::os::unix::fs::{DirBuilderExt, PermissionsExt};
 use std::path::PathBuf;
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc, OnceLock};
+use std::time::Duration;
 #[cfg(unix)]
 use tokio::net::UnixListener;
+use tokio::sync::{mpsc, oneshot};
 #[cfg(windows)]
 use tokio_util::sync::CancellationToken;
 
@@ -36,10 +38,9 @@ struct TrackedKey {
     // if we want to display key usage confirmation UI in Electron
 }
 
-static SSH_AGENT_INSTANCE: Mutex<Option<SshAgentInstance>> = Mutex::new(None);
-static SSH_TRACKED_KEYS: Mutex<Vec<TrackedKey>> = Mutex::new(Vec::new());
-
 type IsUnlockedCallback = ThreadsafeFunction<Option<String>, Promise<bool>>;
+
+const CONNECT_TIMEOUT: Duration = Duration::from_secs(5);
 
 struct SshAgentInstance {
     socket_path: PathBuf,
@@ -47,10 +48,6 @@ struct SshAgentInstance {
     #[cfg(windows)]
     named_pipe_cancel_token: CancellationToken,
 }
-
-/// Mutating methods are not concurrency-safe individually — they're
-/// serialized at the napi boundary via `SSH_AGENT_OPS` in `lib.rs`.
-pub struct SshAgentManager;
 
 #[derive(Clone)]
 struct PassSshAgent {
@@ -103,15 +100,64 @@ impl agent::server::Agent for PassSshAgent {
     }
 }
 
-impl SshAgentManager {
-    pub fn start_agent(is_unlocked_callback: IsUnlockedCallback) -> Result<()> {
-        let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
+enum SshAgentCommand {
+    Start {
+        is_unlocked_callback: IsUnlockedCallback,
+        reply: oneshot::Sender<Result<()>>,
+    },
+    SetKeys {
+        keys: Vec<SshKeyData>,
+        reply: oneshot::Sender<Result<()>>,
+    },
+    RemoveAllKeys {
+        reply: oneshot::Sender<Result<()>>,
+    },
+    Destroy {
+        reply: oneshot::Sender<Result<()>>,
+    },
+    GetStatus {
+        reply: oneshot::Sender<AgentStatus>,
+    },
+}
 
-        if instance_guard.is_some() {
+struct SshAgentActor {
+    rx: mpsc::Receiver<SshAgentCommand>,
+    instance: Option<SshAgentInstance>,
+    tracked_keys: Vec<TrackedKey>,
+}
+
+impl SshAgentActor {
+    async fn run(mut self) {
+        while let Some(cmd) = self.rx.recv().await {
+            match cmd {
+                SshAgentCommand::Start {
+                    is_unlocked_callback,
+                    reply,
+                } => {
+                    let _ = reply.send(self.handle_start(is_unlocked_callback));
+                }
+                SshAgentCommand::SetKeys { keys, reply } => {
+                    let _ = reply.send(self.handle_set_keys(keys).await);
+                }
+                SshAgentCommand::RemoveAllKeys { reply } => {
+                    let _ = reply.send(self.handle_remove_all_keys().await);
+                }
+                SshAgentCommand::Destroy { reply } => {
+                    let _ = reply.send(self.handle_destroy().await);
+                }
+                SshAgentCommand::GetStatus { reply } => {
+                    let _ = reply.send(self.status());
+                }
+            }
+        }
+    }
+
+    fn handle_start(&mut self, is_unlocked_callback: IsUnlockedCallback) -> Result<()> {
+        if self.instance.is_some() {
             return Ok(());
         }
 
-        let socket_path = Self::get_socket_path()?;
+        let socket_path = get_socket_path()?;
 
         #[cfg(unix)]
         let task_handle = {
@@ -160,29 +206,23 @@ impl SshAgentManager {
             (handle, cancel_token)
         };
 
-        let instance = SshAgentInstance {
-            socket_path: socket_path.clone(),
+        self.instance = Some(SshAgentInstance {
+            socket_path,
             task_handle,
             #[cfg(windows)]
             named_pipe_cancel_token,
-        };
-        *instance_guard = Some(instance);
+        });
 
         Ok(())
     }
 
     /// Safe to call regardless of agent state. No-op when not running.
-    pub async fn destroy_agent() -> Result<()> {
-        if let Err(e) = Self::remove_all_keys().await {
+    async fn handle_destroy(&mut self) -> Result<()> {
+        if let Err(e) = self.handle_remove_all_keys().await {
             eprintln!("Failed to clear SSH keys: {}", e);
         }
 
-        let instance = {
-            let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
-            instance_guard.take()
-        };
-
-        if let Some(instance) = instance {
+        if let Some(instance) = self.instance.take() {
             #[cfg(windows)]
             {
                 instance.named_pipe_cancel_token.cancel();
@@ -196,21 +236,15 @@ impl SshAgentManager {
                     println!("Failed to remove SSH socket: {}", e);
                 }
             }
-
-            Ok(())
-        } else {
-            Ok(())
         }
+
+        Ok(())
     }
 
-    async fn connect_agent_client() -> Result<AgentClient<impl AgentStream>> {
-        let socket_path = {
-            let instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
-            if let Some(instance) = instance_guard.as_ref() {
-                instance.socket_path.clone()
-            } else {
-                return Err(anyhow::anyhow!("SSH agent is not running"));
-            }
+    async fn connect_agent_client(&self) -> Result<AgentClient<impl AgentStream>> {
+        let socket_path = match self.instance.as_ref() {
+            Some(instance) => instance.socket_path.clone(),
+            None => return Err(anyhow::anyhow!("SSH agent is not running")),
         };
 
         #[cfg(unix)]
@@ -219,31 +253,33 @@ impl SshAgentManager {
                 return Err(anyhow::anyhow!("Socket file does not exist: {}", socket_path.display()));
             }
 
-            AgentClient::connect_uds(socket_path)
+            tokio::time::timeout(CONNECT_TIMEOUT, AgentClient::connect_uds(socket_path))
                 .await
+                .map_err(|_| anyhow::anyhow!("Timed out connecting to SSH agent"))?
                 .map_err(|e| anyhow::anyhow!("Failed to connect to SSH agent: {}", e))
         }
 
         #[cfg(windows)]
         {
             let pipe_path = socket_path.to_string_lossy().to_string();
-            AgentClient::connect_named_pipe(pipe_path)
+            tokio::time::timeout(CONNECT_TIMEOUT, AgentClient::connect_named_pipe(pipe_path))
                 .await
+                .map_err(|_| anyhow::anyhow!("Timed out connecting to SSH agent"))?
                 .map_err(|e| anyhow::anyhow!("Failed to connect to SSH agent: {}", e))
         }
     }
 
     /// Safe to call regardless of agent state. When no agent is running,
-    /// clears `SSH_TRACKED_KEYS` and returns `Ok(())` so stale entries
-    /// don't survive into a later `start_agent` call.
-    pub async fn remove_all_keys() -> Result<()> {
-        if SSH_AGENT_INSTANCE.lock().unwrap().is_none() {
-            SSH_TRACKED_KEYS.lock().unwrap().clear();
+    /// clears `tracked_keys` and returns `Ok(())` so stale entries don't
+    /// survive into a later `start_agent` call.
+    async fn handle_remove_all_keys(&mut self) -> Result<()> {
+        if self.instance.is_none() {
+            self.tracked_keys.clear();
             return Ok(());
         }
 
-        let mut client = Self::connect_agent_client().await?;
-        let keys = SSH_TRACKED_KEYS.lock().unwrap().clone();
+        let mut client = self.connect_agent_client().await?;
+        let keys = self.tracked_keys.clone();
 
         if keys.is_empty() {
             return Ok(());
@@ -258,33 +294,30 @@ impl SshAgentManager {
             if let Err(e) = client.remove_identity(&key.public_key).await {
                 eprintln!("Failed to remove a key: {}", e);
             } else {
-                removed.push(&key.public_key);
+                removed.push(key.public_key.clone());
             }
         }
 
         // Edge-case: only clear keys that were successfully removed. Failed
         // ones stay tracked for future cleanup if agent is still running.
-        SSH_TRACKED_KEYS
-            .lock()
-            .unwrap()
-            .retain(|k| !removed.contains(&&k.public_key));
+        self.tracked_keys.retain(|k| !removed.contains(&k.public_key));
 
         Ok(())
     }
 
-    /// Errors when no agent is running (via `connect_agent_client`
-    /// inside `add_keys_to_agent`). The JS layer should flag keys as
-    /// synced only on success.
-    pub async fn set_keys(keys: Vec<SshKeyData>) -> Result<()> {
-        Self::remove_all_keys().await?;
-        Self::add_keys_to_agent(keys).await
+    /// Errors when no agent is running (via `connect_agent_client` inside
+    /// `handle_add_keys`). The JS layer should flag keys as synced only on
+    /// success.
+    async fn handle_set_keys(&mut self, keys: Vec<SshKeyData>) -> Result<()> {
+        self.handle_remove_all_keys().await?;
+        self.handle_add_keys(keys).await
     }
 
-    async fn add_keys_to_agent(keys: Vec<SshKeyData>) -> Result<()> {
-        let mut client = Self::connect_agent_client().await?;
+    async fn handle_add_keys(&mut self, keys: Vec<SshKeyData>) -> Result<()> {
+        let mut client = self.connect_agent_client().await?;
 
         for key in keys {
-            if let Err(e) = Self::add_identity_to_agent(&mut client, &key).await {
+            if let Err(e) = self.add_identity_to_agent(&mut client, &key).await {
                 eprintln!("Failed to add a key: {}", e);
             }
         }
@@ -292,44 +325,124 @@ impl SshAgentManager {
         Ok(())
     }
 
-    async fn add_identity_to_agent<S>(client: &mut AgentClient<S>, key: &SshKeyData) -> Result<(), Error>
+    async fn add_identity_to_agent<S>(&mut self, client: &mut AgentClient<S>, key: &SshKeyData) -> Result<(), Error>
     where
         S: AgentStream + Unpin,
     {
-        let private_key = Self::parse_private_key(&key.private_key)?;
+        let private_key = parse_private_key(&key.private_key)?;
 
         client.add_identity(&private_key, &[Constraint::Confirm]).await?;
 
         let public_key = private_key.public_key().clone();
-        SSH_TRACKED_KEYS.lock().unwrap().push(TrackedKey { public_key });
+        self.tracked_keys.push(TrackedKey { public_key });
 
         Ok(())
     }
 
-    fn parse_private_key(key_data: &str) -> Result<PrivateKey> {
-        russh_keys::decode_secret_key(key_data, None).map_err(|e| anyhow::anyhow!("Failed to parse private key: {}", e))
-    }
-
-    pub async fn get_status() -> Result<AgentStatus> {
-        let instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
-
-        let socket_path = instance_guard
+    fn status(&self) -> AgentStatus {
+        let socket_path = self
+            .instance
             .as_ref()
             .map(|instance| instance.socket_path.to_string_lossy().to_string());
 
-        Ok(AgentStatus { socket_path })
+        AgentStatus { socket_path }
+    }
+}
+
+#[derive(Clone)]
+struct SshAgentHandle {
+    tx: mpsc::Sender<SshAgentCommand>,
+}
+
+impl SshAgentHandle {
+    async fn send<T>(&self, make: impl FnOnce(oneshot::Sender<T>) -> SshAgentCommand) -> Result<T> {
+        let (reply, rx) = oneshot::channel();
+        self.tx
+            .send(make(reply))
+            .await
+            .map_err(|_| anyhow::anyhow!("SSH agent actor is gone"))?;
+        rx.await.map_err(|_| anyhow::anyhow!("SSH agent actor dropped reply"))
     }
 
-    fn get_socket_path() -> Result<PathBuf> {
-        #[cfg(unix)]
-        {
-            let home = std::env::home_dir().ok_or_else(|| anyhow::anyhow!("Could not get home directory"))?;
-            Ok(home.join(".ssh").join("proton-pass-ssh-agent.sock"))
-        }
+    async fn start(&self, is_unlocked_callback: IsUnlockedCallback) -> Result<()> {
+        self.send(|reply| SshAgentCommand::Start {
+            is_unlocked_callback,
+            reply,
+        })
+        .await?
+    }
 
-        #[cfg(windows)]
-        {
-            Ok(PathBuf::from("\\\\.\\pipe\\openssh-ssh-agent"))
-        }
+    async fn set_keys(&self, keys: Vec<SshKeyData>) -> Result<()> {
+        self.send(|reply| SshAgentCommand::SetKeys { keys, reply }).await?
+    }
+
+    async fn remove_all_keys(&self) -> Result<()> {
+        self.send(|reply| SshAgentCommand::RemoveAllKeys { reply }).await?
+    }
+
+    async fn destroy(&self) -> Result<()> {
+        self.send(|reply| SshAgentCommand::Destroy { reply }).await?
+    }
+
+    async fn get_status(&self) -> Result<AgentStatus> {
+        self.send(|reply| SshAgentCommand::GetStatus { reply }).await
+    }
+}
+
+static SSH_AGENT_HANDLE: OnceLock<SshAgentHandle> = OnceLock::new();
+
+pub struct SshAgentManager;
+
+impl SshAgentManager {
+    fn handle() -> SshAgentHandle {
+        SSH_AGENT_HANDLE
+            .get_or_init(|| {
+                let (tx, rx) = mpsc::channel(32);
+                let actor = SshAgentActor {
+                    rx,
+                    instance: None,
+                    tracked_keys: Vec::new(),
+                };
+                tokio::spawn(actor.run());
+                SshAgentHandle { tx }
+            })
+            .clone()
+    }
+
+    pub async fn start_agent(is_unlocked_callback: IsUnlockedCallback) -> Result<()> {
+        Self::handle().start(is_unlocked_callback).await
+    }
+
+    pub async fn destroy_agent() -> Result<()> {
+        Self::handle().destroy().await
+    }
+
+    pub async fn remove_all_keys() -> Result<()> {
+        Self::handle().remove_all_keys().await
+    }
+
+    pub async fn set_keys(keys: Vec<SshKeyData>) -> Result<()> {
+        Self::handle().set_keys(keys).await
+    }
+
+    pub async fn get_status() -> Result<AgentStatus> {
+        Self::handle().get_status().await
+    }
+}
+
+fn parse_private_key(key_data: &str) -> Result<PrivateKey> {
+    russh_keys::decode_secret_key(key_data, None).map_err(|e| anyhow::anyhow!("Failed to parse private key: {}", e))
+}
+
+fn get_socket_path() -> Result<PathBuf> {
+    #[cfg(unix)]
+    {
+        let home = std::env::home_dir().ok_or_else(|| anyhow::anyhow!("Could not get home directory"))?;
+        Ok(home.join(".ssh").join("proton-pass-ssh-agent.sock"))
+    }
+
+    #[cfg(windows)]
+    {
+        Ok(PathBuf::from("\\\\.\\pipe\\openssh-ssh-agent"))
     }
 }
