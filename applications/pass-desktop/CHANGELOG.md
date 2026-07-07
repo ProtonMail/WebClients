@@ -1,3 +1,10 @@
+### Version 1.38.0
+
+- Add "Check for update" button in Settings on macOS/Windows
+- Switch installer to .msix, enabling deployment via Intune for organizations on Windows
+- Pass Monitor: removed the back button
+- Pass Monitor: fixed sharing display for vaults with 100+ members
+
 ### Version 1.37.0
 
 - Support unlocking chromium extension with biometrics using Mac desktop app

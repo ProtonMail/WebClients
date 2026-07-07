@@ -1,3 +1,8 @@
+### Version 1.38.0
+
+- Pass Monitor: removed the back button
+- Pass Monitor: fixed sharing display for vaults with 100+ members
+
 ### Version 1.37.0
 
 - Strengthened safeguards against memory dump attacks
