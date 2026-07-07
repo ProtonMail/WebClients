@@ -10,6 +10,7 @@ import PrivateMainArea from '@proton/components/containers/layout/PrivateMainAre
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
@@ -94,6 +95,19 @@ export const RouterMailboxContainer = () => {
     }, [labelID, dispatch]);
 
     if (!labelID) {
+        // Temporary tracking
+        captureInitiativeMessage(
+            SentryMailInitiatives.MAILBOX_REDIRECT,
+            'Redirecting to inbox: labelID is undefined/null',
+            {
+                extra: {
+                    currentUrl: window.location.href,
+                    pathname: window.location.pathname,
+                    hash: window.location.hash,
+                },
+            }
+        );
+
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
