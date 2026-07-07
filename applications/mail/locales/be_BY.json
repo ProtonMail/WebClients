@@ -1153,10 +1153,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
@@ -4460,6 +4457,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
         "Каб працягнуць карыстацца ${ LUMO_SHORT_APP_NAME } у ${ MAIL_APP_NAME }, дадайце яе ў сваю падпіску."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Адбудзецца імпартаванне вашых старых лістоў і сінхранізацыя новых паведамленняў з Gmail у будучыні"
       ]
     },
     "description": {
@@ -5452,6 +5452,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ]
     },
     "error": {
@@ -7742,7 +7748,10 @@
         "Унаследавана ад бацькоўскай папкі"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9477,6 +9486,30 @@
       ],
       "You have no messages in this category": [
         "У гэтай катэгорыі ў вас няма паведамленняў"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "У вас ёсць **${ count } размова** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размовы** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "У вас ёсць **${ count } паведамленне** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленні** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } размову** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размовы** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } паведамленне** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленні** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }"
       ]
     },
     "info": {
@@ -15589,6 +15622,12 @@
       ],
       "Thanks for the feedback!": [
         "Дзякуй за водгук!"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Перамешчана ў ${ label }. Аналагічнае паведамленне будзе катэгарызавана тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні."
       ]
     },
     "Success notification": {
@@ -17022,6 +17061,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -17782,6 +17824,31 @@
       ],
       "Unsubscribed": [
         "Падпіска скасавана"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     }
   }

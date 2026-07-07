@@ -1656,8 +1656,7 @@
         "Der Tracker-Schutz hat das Laden einiger Bilder verhindert. Lade sie, wenn du dem Absender vertraust."
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -6705,7 +6704,8 @@
         "Von übergeordnetem Ordner übernommen"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8640,6 +8640,9 @@
       ],
       "You have no messages in this category": [
         "Du hast keine Nachrichten in dieser Kategorie."
+      ],
+      "You have no conversations in this category": [
+        "Du hast keine Unterhaltungen in dieser Kategorie"
       ]
     },
     "info": {
@@ -15474,6 +15477,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Dies stellt sicher, dass niemand deinen Standort, dein Gerät und andere Informationen sehen kann, die verwendet werden könnten, um dich zu identifizieren oder zu verfolgen."
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP Schlüssel"
       ]
     },
     "tooltip": {
@@ -17061,6 +17067,31 @@
       ],
       "Sun, ${ formatTime }": [
         "Son, ${ formatTime }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
+      "Expires": [
+        "Läuft ab"
+      ],
+      "Fingerprint": [
+        "Fingerabdruck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]
     }
   }

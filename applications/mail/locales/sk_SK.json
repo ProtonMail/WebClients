@@ -961,10 +961,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Try again": [
         "Skús znova"
@@ -7044,7 +7041,10 @@
         "Zdedené z nadradeného priečinka"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -16265,6 +16265,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Týmto sa zabezpečí, že nikto neuvidí údaje o polohe, zariadení a ďalšie informácie, ktoré by sa dali použiť na vašu identifikáciu alebo sledovanie."
+      ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
       ]
     },
     "tooltip": {
@@ -17821,6 +17824,31 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcie"
+      ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Odtlačok prsta"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]
     }
   }

@@ -1051,8 +1051,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Try again": [
         "Réessayer"
@@ -4891,7 +4890,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun lecteur détecté pour l'importation"
+        "Aucun disque à importer détecté"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -5140,7 +5139,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -7241,7 +7240,7 @@
         "fichiers joints"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les messages entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
@@ -7369,7 +7368,8 @@
         "Similaire au dossier principal"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7447,7 +7447,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
+        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -15136,7 +15136,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ numMessages } message": [
         "${ numMessages } message",
@@ -16302,6 +16302,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Cela garantit que personne ne peut voir votre emplacement, votre appareil et d'autres informations qui pourraient être utilisées pour vous identifier ou vous suivre."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
       ]
     },
     "tooltip": {
@@ -17114,6 +17117,31 @@
       ],
       "Sun, ${ formatTime }": [
         "Dimanche, ${ formatTime }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     }
   }

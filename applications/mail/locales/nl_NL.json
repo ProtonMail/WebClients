@@ -955,8 +955,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Try again": [
         "Opnieuw proberen"
@@ -6836,7 +6835,8 @@
         "Overgenomen van bovenliggende map"
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -17079,6 +17079,20 @@
       ],
       "Sun, ${ formatTime }": [
         "Zon., ${ formatTime }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acties"
+      ],
+      "Fingerprint": [
+        "Vingerafdruk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Soort"
       ]
     }
   }

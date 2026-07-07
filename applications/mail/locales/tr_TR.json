@@ -1526,8 +1526,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7827,7 +7826,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -12639,10 +12639,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -15939,7 +15939,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu duyuru gizlensin mi?"
+        "Bu başlığı gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -16622,6 +16622,9 @@
       ],
       "Instant assistance with AI and human experts.": [
         "Yapay zeka ve insan uzmanlar ile anında yardım."
+      ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
       ]
     },
     "tooltip": {
@@ -17114,6 +17117,31 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Type": [
+        "Tür"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     }
   }

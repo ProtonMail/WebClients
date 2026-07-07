@@ -1725,8 +1725,7 @@
         "Inizia a testare"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Verify now": [
         "Verifica ora"
@@ -5191,7 +5190,7 @@
         "Controlla se il tuo ABN è registrato per l'IVA transfrontaliera"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "The minimum donation amount is ${ price }": [
         "L'importo minimo della donazione è ${ price }"
@@ -7060,7 +7059,8 @@
         "Preso dalla cartella principale"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8865,7 +8865,7 @@
         "${ LUMO_SHORT_APP_NAME } ti aiuta a creare email migliori in modo rapido e senza sforzo."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
-        "Pannello ${ LUMO_SHORT_APP_NAME }"
+        "Pannello di ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
         "${ MAIL_APP_NAME } ora ordina automaticamente le tue email in categorie come Principale, Social, Promozioni e altro, aiutandoti a trovare e gestire i messaggi più facilmente."
@@ -8937,7 +8937,7 @@
         "Ti ricorderemo di verificare di nuovo la tua password più tardi"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Il tuo account è attualmente configurato per applicare il regime di reverse charge. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
+        "Il tuo account è attualmente configurato per applicare il regime di inversione contabile. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
       ]
     },
     "info": {
@@ -16941,6 +16941,20 @@
     "Keyboard shortcut name, switch to Mail": {
       "Switch to ${ MAIL_APP_NAME }": [
         "Passa a ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Fingerprint": [
+        "Impronta digitale"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Type": [
+        "Tipo"
       ]
     }
   }

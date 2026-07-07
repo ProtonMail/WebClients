@@ -1487,8 +1487,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4457,6 +4456,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "För att fortsätta använda ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, begär åtkomst från din admin."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi kommer importera din gamla e-post och synkronisera nya meddelanden från Gmail framöver."
       ]
     },
     "description": {
@@ -7728,7 +7730,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9275,7 +9278,23 @@
         "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ],
       "${ MEET_APP_NAME } seats": [
-        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } konversation** i kategori ${ categoryLabel }",
+        "Du har **${ count } konversationer** i kategori ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } meddelande** i kategori ${ categoryLabel }",
+        "Du har **${ count } meddelanden** i kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valde **${ checked } konversation** i kategori ${ categoryLabel }",
+        "Du valde **${ checked } konversationer** i kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valde **${ checked } meddelande** i kategori ${ categoryLabel }",
+        "Du valde **${ checked } meddelanden** i kategori ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10429,6 +10448,9 @@
       ],
       "Tab age": [
         "Flikens ålder"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitton, bokningar, fakturor och beställningar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15144,6 +15166,10 @@
       ],
       "Message expiration canceled": [
         "Meddelandets utgångstid avbröts"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttad till ${ label }. Liknande meddelande kommer att kategoriseras här i framtiden.",
+        "Flyttad till ${ label }. Liknande meddelanden kommer att kategoriseras här i framtiden."
       ]
     },
     "Success notification": {
@@ -16431,6 +16457,9 @@
       ],
       "Your inbox, automatically organized": [
         "Din inkorg, organiserad automatiskt"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16528,6 +16557,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Omedelbar AI-assistans, mänsklig expert nära till hands!"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -17052,6 +17084,31 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-användarplatser under provperioden."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     }
   }

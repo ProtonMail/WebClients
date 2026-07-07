@@ -1657,10 +1657,7 @@
         "Ochrana před sledováním zabránila načtení některých obrázků. Pokud odesílateli důvěřujete, načtěte je."
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4025,7 +4022,7 @@
         "Pro bezproblémové zahájení používání ${ BRAND_NAME } vaším týmem importujte data ze služeb Google, Outlook a dalších."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Pro neomezený přístup k asistentovi psaní a dalším možnostem upgradujte na ${ LUMO_SHORT_APP_NAME }."
+        "Pro neomezený přístup k asistentovi psaní a dalším možnostem přejděte na ${ LUMO_SHORT_APP_NAME }."
       ],
       "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
         "Pokud se zpráva zobrazí ve špatné kategorii, jednoduše ji přesuňte do té správné. Klikněte pravým tlačítkem na zprávu a zvolte novou kategorii, nebo ji táhněte a pusťte tam, kam patří."
@@ -6767,13 +6764,16 @@
         "V dalším kroku budete moci odeslat vklad pomocí bitcoinové adresy."
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7283,13 +7283,13 @@
         "Nepodporovaný soubor"
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -8795,7 +8795,7 @@
         "Panel ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } nyní automaticky třídí vaše e-maily do kategorií, jako jsou Primární, Sociální sítě, Propagace a další, což vám pomáhá snadněji vyhledávat a spravovat vaše zprávy."
+        "${ MAIL_APP_NAME } nyní automaticky třídí vaše e-maily do kategorií, jako jsou Primární, Sociální sítě, Propagační akce a další, což vám pomáhá snadněji vyhledávat a spravovat vaše zprávy."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skrývá váš síťový provoz. ${ PASS_SHORT_APP_NAME } skrývá vaši identitu\n— neomezené **hide-my-email aliasy** a **upozornění na úniky na dark webu**, pokud by došlo k úniku vašich dat."
@@ -8804,10 +8804,10 @@
         "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -8828,7 +8828,7 @@
         "Za pouhých ${ bundlePlanPriceInline }"
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Password verified": [
         "Heslo ověřeno"
@@ -8837,7 +8837,7 @@
         "Vyberte štítky, které chcete importovat:"
       ],
       "Private by design.": [
-        "Soukromé už ze své podstaty."
+        "Navrženo s ohledem na soukromí"
       ],
       "RECOMMENDED": [
         "DOPORUČENO"
@@ -8852,7 +8852,7 @@
         "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ]
     },
     "info": {
@@ -8927,7 +8927,7 @@
         "WKD"
       ],
       "Active Signer": [
-        "Aktivní podpisový klíč"
+        "Aktivní podepisovatel"
       ],
       "Fallback": [
         "Záložní"
@@ -9938,7 +9938,7 @@
         "${ value.length }/${ maxLength } znaků"
       ],
       "Clear logs": [
-        "Zrušit logy"
+        "Vyčistit logy"
       ],
       "Context page": [
         "Stránka kontextu"
@@ -9950,7 +9950,7 @@
         "Aktuální kontext"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ],
       "Elements in store": [
         "Prvky v úložišti"
@@ -9977,7 +9977,7 @@
         "Obnovit logy"
       ],
       "Sort": [
-        "Seřadit"
+        "Řazení"
       ],
       "Store state": [
         "Stav úložiště"
@@ -11250,7 +11250,7 @@
         "Bez podpory streamování"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -12744,13 +12744,13 @@
         "Komu"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Sdělte ${ subject }, co má napsat. Příklad: „Oznamte nadcházející události ve zpravodaji“"
+        "Sdělte ${ subject }, co má napsat. Příklad: \"Oznamte nadcházející události v e-mailovém zpravodaji\""
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "Sdělte subjektu ${ subject }, co má napsat. Příklad: „Zrušit moje členství v posilovně“"
+        "Sdělte ${ subject }, co má napsat. Příklad: „Zruš moje členství v posilovně“"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "Sdělte ${ subject }, co má napsat. Příklad: „Pozvi Janu na večírek“"
+        "Sdělte ${ subject }, co má napsat. Příklad: \"Pozvi Janu na večírek\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
         "Sdělte ${ subject }, co má napsat. Příklad: „Poděkuj mému kolegovi za pomoc s projektem“"
@@ -12762,7 +12762,7 @@
         "Sdělte ${ subject }, co má napsat. Příklad: „Napiš následný e-mail zákazníkovi“"
       ],
       "the writing assistant": [
-        "asistent psaní"
+        "asistentovi psaní"
       ]
     },
     "Placeholder for contact group name": {
@@ -15853,16 +15853,16 @@
         "Načítání..."
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ],
       "Your inbox, automatically organized": [
         "Vaše doručená pošta, automaticky uspořádaná"
       ],
       "Mailing list": [
-        "{count, plural, one {E-mailový seznam} few {E-mailové seznamy} many {E-mailových seznamů} other {E-mailové seznamy}}",
-        "{count, plural, one {e-mailový seznam} few {e-mailové seznamy} many {e-mailových seznamů} other {e-mailových seznamů}}",
-        "{count, plural, one {e-mailový seznam} few {e-mailové seznamy} many {e-mailových seznamů} other {e-mailových seznamů}}",
-        "{count, plural, one {e-mailový seznam} few {e-mailové seznamy} many {e-mailových seznamů} other {e-mailových seznamů}}"
+        "E-mailový seznam",
+        "E-mailové seznamy",
+        "E-mailové seznamy",
+        "E-mailové seznamy"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17675,6 +17675,20 @@
     "Keyboard shortcut name, switch to Mail": {
       "Switch to ${ MAIL_APP_NAME }": [
         "Přepnout na ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }

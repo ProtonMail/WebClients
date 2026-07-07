@@ -1722,8 +1722,7 @@
         "Siirrä luokkaan..."
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Verify now": [
         "Vahvista nyt"
@@ -2206,6 +2205,9 @@
       ],
       "Contact your administrator to start a migration.": [
         "Ota yhteyttä ylläpitäjään migraation aloittamiseksi."
+      ],
+      "Size": [
+        "Koko"
       ]
     },
     "Browser": {
@@ -6874,7 +6876,8 @@
         "Peritty yläkansiosta"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -15750,6 +15753,9 @@
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "Tämä varmistaa, ettei kukaan näe sijaintia, laitetta tai muita tietoja, joilla sinua voitaisiin tunnistaa tai seurata."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
       ]
     },
     "tooltip": {
@@ -16920,6 +16926,31 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Voitte saada kokeilujakson aikana enintään ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-käyttöpaikkaa."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     }
   }

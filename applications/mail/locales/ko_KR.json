@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -5683,7 +5683,7 @@
         "보안 키"
       ],
       "Touch your security key.": [
-        "귀하의 보안 키를 터치해 주세요."
+        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -8283,7 +8283,7 @@
         "${ MAIL_APP_NAME }을 사용하고 있지 않는 유저에게 이 메시지를 보내고 있습니다."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "별칭이 판매되었거나, 유출되었거나, 약동되었다면 스팸을 받지 않기 위해 간단히 비활성화 하세요."
@@ -15545,7 +15545,7 @@
         "메시지가 다음 날짜에 만료됩니다."
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ],
       "More": [
         "더 보기"
@@ -15973,7 +15973,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
@@ -16633,6 +16633,20 @@
     "Keyboard shortcut name, switch to Mail": {
       "Switch to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }으로 전환"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
       ]
     }
   }
