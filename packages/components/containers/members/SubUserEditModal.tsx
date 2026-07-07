@@ -508,6 +508,8 @@ const SubUserEditModal = ({
         </>
     );
 
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
+
     return (
         <>
             {renderConfirmUnprivatization && (
@@ -614,6 +616,7 @@ const SubUserEditModal = ({
                     event.stopPropagation();
 
                     if (!onFormSubmit(event.currentTarget)) {
+                        setActiveTabIndex(0);
                         return;
                     }
 
@@ -640,8 +643,13 @@ const SubUserEditModal = ({
             >
                 <ModalHeaderWithTabs
                     title={c('Title').t`Edit user`}
+                    tabIndex={activeTabIndex}
+                    onChangeTabIndex={setActiveTabIndex}
                     tabs={[
-                        { title: c('user_modal').t`General`, content: generalTabContent },
+                        {
+                            title: c('user_modal').t`General`,
+                            content: generalTabContent,
+                        },
                         ...(showRolesTab
                             ? [
                                   {

@@ -1,8 +1,7 @@
 import type { KeyboardEvent } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
-import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -21,7 +20,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import ModalHeaderWithTabs from '@proton/components/containers/members/rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from '@proton/components/containers/members/rolesAndPermissions/RolesAndPermissionsTab';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { stripWhitespace } from '@proton/shared/lib/helpers/string';
@@ -51,7 +50,6 @@ const EditGroupModal = () => {
     } = useGroupsManagement();
 
     const { dirty, values: formValues, setFieldValue, isValid, errors } = form;
-    const hasErrors = !isEmpty(errors);
     const { primarySuggestion } = useGroupAvailableAddressDomains();
 
     const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
@@ -70,9 +68,14 @@ const EditGroupModal = () => {
             actions.onDiscardChanges();
         }
     };
+
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
+
     const onSave = () => {
         if (isValid) {
             void withLoading(actions.onSaveGroup());
+        } else {
+            setActiveTabIndex(0);
         }
     };
 
@@ -222,8 +225,13 @@ const EditGroupModal = () => {
             <ModalTwo size="large" open onClose={onCancel}>
                 <ModalHeaderWithTabs
                     title={modalTitle}
+                    tabIndex={activeTabIndex}
+                    onChangeTabIndex={setActiveTabIndex}
                     tabs={[
-                        { title: c('group_modal').t`General`, content: formContent },
+                        {
+                            title: c('group_modal').t`General`,
+                            content: formContent,
+                        },
                         ...(showRolesTab
                             ? [
                                   {
@@ -246,7 +254,7 @@ const EditGroupModal = () => {
                     <Button color="weak" onClick={onCancel}>
                         {c('Action').t`Cancel`}
                     </Button>
-                    <Button color="norm" disabled={!dirty || hasErrors} loading={loading} onClick={onSave}>
+                    <Button color="norm" disabled={!dirty} loading={loading} onClick={onSave}>
                         {c('Action').t`Save`}
                     </Button>
                 </ModalTwoFooter>
