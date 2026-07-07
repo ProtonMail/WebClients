@@ -538,6 +538,7 @@ export function DocumentTitleDropdown({
         {historyModal}
         {pdfModal}
         {sheetImportModal}
+        {moveItemsModal}
         {authenticatedController && isDocumentState(documentState) && (
           <TrashedDocumentModal
             documentTitle={title || ''}
