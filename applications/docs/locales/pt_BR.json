@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Reload spreadsheet": [
+        "Recarregar planilha"
+      ],
+      "Report issue": [
+        "Reportar problema"
       ]
     },
     "Actions message": {
@@ -5795,6 +5801,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Hide table of contents": [
+        "Ocultar tabela de conteúdos"
+      ],
+      "Show table of contents": [
+        "Mostrar tabela de conteúdos"
       ]
     },
     "info": {
@@ -6376,6 +6388,9 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "Unknown user": [
+        "Usuário desconhecido"
       ]
     },
     "Label for contact group color": {
@@ -10575,6 +10590,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Editing paused": [
+        "Edição pausada"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10663,6 +10681,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ]
     },
     "tooltip": {
@@ -10878,6 +10899,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Ações"
+      ],
+      "Created": [
+        "Criada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Impressão digital"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Tipo"
       ]
     }
   }

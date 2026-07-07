@@ -91,7 +91,7 @@
         "Aplicar"
       ],
       "Ask me next time": [
-        "Preguntarme después"
+        "Preguntarme la próxima vez"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
@@ -727,7 +727,7 @@
         "Guardar los cambios"
       ],
       "Save preferences": [
-        "Guardar preferencias"
+        "Guardar las preferencias"
       ],
       "Search": [
         "Buscar"
@@ -4708,7 +4708,7 @@
         "Continuar"
       ],
       "Converting document...": [
-        "Convirtiendo documento..."
+        "Convirtiendo el documento..."
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4760,7 +4760,7 @@
         "Creando enlace a la carpeta"
       ],
       "Creating new document...": [
-        "Creando nuevo documento..."
+        "Creando el documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4871,10 +4871,10 @@
         "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Error al convertir documento: ${ errorMessage }"
+        "Error al convertir el documento: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "Error al cargar documento: ${ errorDetail }"
+        "Error al cargar el documento: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error al sincronizar"
@@ -4946,7 +4946,7 @@
         "Obtenga un correo electrónico profesional @su-negocio.com, 1TB de almacenamiento seguro por usuario, videollamadas más largas, y más con ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios agregados a sus documentos."
+        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios añadidos a sus documentos."
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones de los comentarios"
@@ -5843,6 +5843,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ayúdenos a mejorar esta experiencia informando del problema. Si está de acuerdo en compartir el contenido de la hoja de cálculo, adjunte la información de depuración que aparece a continuación a su informe."
+      ],
+      "Hide table of contents": [
+        "Ocultar tabla de contenidos"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "¡Ups! Esta hoja de cálculo no puede guardar sus últimas ediciones así que hemos pausado la edición para evitar que pierda su trabajo."
+      ],
+      "Show table of contents": [
+        "Mostrar tabla de contenidos"
       ]
     },
     "info": {
@@ -6183,7 +6195,7 @@
         "Incluir registros de la aplicación en el informe de errores"
       ],
       "Include document name in notification": [
-        "Incluir nombre de documento en notificaciones"
+        "Incluir el nombre del documento en las notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -9252,7 +9264,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Creando nueva hoja de cálculo..."
+        "Creando una hoja de cálculo..."
       ],
       "Detect automatically": [
         "Detectar automáticamente"
@@ -10723,6 +10735,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -10938,6 +10953,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     }
   }
