@@ -39,6 +39,7 @@ import {
 import type { GenerationResponseMessage, WireImage } from '../types-api';
 import { separateAttachmentsByType } from './attachments';
 import { collapseCompactedChain } from './compaction';
+import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
 
 export type ContextFilter = {
     messageId: string;
@@ -94,7 +95,8 @@ export function prepareTurns(
     projectInstructions?: string,
     c?: ConversationContext,
     memories?: string,
-    agentInstructions?: string
+    agentInstructions?: string,
+    includeVisualizationInstructions = false
 ): Turn[] {
     // Step 0: Apply any context-compaction boundary. Summarized messages are
     // replaced by a single summary turn and dropped from the chain, so the model
@@ -164,31 +166,29 @@ export function prepareTurns(
     // Step 4: Add personalization, memories and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
-    if (personalizationPrompt || projectInstructions || memories || agentInstructions) {
-        const instructionParts: string[] = [];
-        // Agent persona comes first so it frames the assistant's role above other context.
-        if (agentInstructions) {
-            instructionParts.push(`[Agent instructions: ${agentInstructions}]`);
-        }
-        if (personalizationPrompt) {
-            instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
-        }
-        if (projectInstructions) {
-            instructionParts.push(`[Project instructions: ${projectInstructions}]`);
-        } else if (memories) {
-            instructionParts.push(`[Memories:\n${memories}]`);
-        }
-        // Prepend instructions to the turns as a system message
+    const instructionParts: string[] = [];
+    if (includeVisualizationInstructions) {
+        instructionParts.push(VISUALIZATION_INSTRUCTIONS);
+    }
+    if (agentInstructions) {
+        instructionParts.push(`[Agent instructions: ${agentInstructions}]`);
+    }
+    if (personalizationPrompt) {
+        instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
+    }
+    if (projectInstructions) {
+        instructionParts.push(`[Project instructions: ${projectInstructions}]`);
+    } else if (memories) {
+        instructionParts.push(`[Memories:\n${memories}]`);
+    }
+
+    if (instructionParts.length > 0) {
         const instructionText = instructionParts.join('\n\n');
         const instructionTurn: TurnInProgress = {
             role: Role.System,
             content: instructionText,
         };
         turns = [instructionTurn, ...turns];
-        console.log('Added system message with instructions:', {
-            personalizationPrompt: !!personalizationPrompt,
-            projectInstructions: !!projectInstructions,
-        });
     }
 
     // Step 4: Remove empty assistant turns

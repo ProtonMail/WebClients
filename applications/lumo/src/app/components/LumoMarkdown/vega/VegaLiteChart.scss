@@ -1,0 +1,256 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.vega-lite-chart {
+    background: var(--background-norm, #ffffff);
+    border: 1px solid #dad3ef;
+    border-radius: rem(12);
+    box-shadow: 0 rem(1) rem(3) rgb(109 74 255 / 0.05);
+    margin-block: rem(8);
+    overflow: hidden;
+    padding: rem(16) rem(18);
+    position: relative;
+    width: 100%;
+    min-width: 0;
+
+    &:has(.vega-lite-chart__loading) {
+        border: none;
+        box-shadow: none;
+        min-height: rem(220);
+    }
+
+    &--loading-only {
+        align-items: center;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__viewport {
+        width: 100%;
+
+        &--hidden {
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            visibility: hidden;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: rem(4);
+        position: absolute;
+        right: rem(8);
+        top: rem(8);
+        z-index: 2;
+    }
+
+    &__action-button,
+    &__download-button {
+        background: rgb(255 255 255 / 0.92);
+        box-shadow: 0 rem(1) rem(2) rgb(109 74 255 / 0.08);
+    }
+
+    &__source-panel {
+        border-top: 1px solid #dad3ef;
+        margin-top: rem(12);
+        padding-top: rem(12);
+    }
+
+    &__source-label {
+        color: #6a6580;
+        font-size: rem(11);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        margin: 0 0 rem(8);
+        text-transform: uppercase;
+    }
+
+    &__source-error {
+        color: var(--signal-danger, #dc3257);
+        font-size: rem(12);
+        line-height: 1.4;
+        margin: 0 0 rem(8);
+    }
+
+    &__source-switch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(6);
+        margin-bottom: rem(8);
+    }
+
+    &__source-switch-button {
+        background: transparent;
+        border: 1px solid #dad3ef;
+        border-radius: rem(999);
+        color: #6a6580;
+        cursor: pointer;
+        font-size: rem(11);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        padding: rem(4) rem(10);
+
+        &--active {
+            background: rgb(109 74 255 / 0.08);
+            border-color: #6d4aff;
+            color: #43239b;
+        }
+    }
+
+    &--failed {
+        min-height: auto;
+    }
+
+    &__viewport .vega-embed {
+        display: block;
+        width: 100%;
+
+        summary {
+            display: none;
+        }
+    }
+
+    &__viewport .vega-embed.has-actions {
+        padding-right: 0;
+    }
+
+    &__viewport .vega-embed .chart-wrapper.fit-x,
+    &__viewport .vega-embed.fit-x {
+        width: 100%;
+    }
+
+    &__loading {
+        align-items: center;
+        display: flex;
+        inset: 0;
+        justify-content: center;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__loading-content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        position: relative;
+    }
+
+    &__loading-icon {
+        animation: vega-lite-chart-icon-shimmer 2.2s ease-in-out infinite;
+        color: #6d4aff;
+    }
+
+    &__loading-text {
+        animation: vega-lite-chart-text-shimmer 2.2s ease-in-out infinite;
+        background: linear-gradient(
+            90deg,
+            rgb(164 157 192 / 0.55) 0%,
+            rgb(164 157 192 / 0.55) 35%,
+            rgb(109 74 255 / 1) 50%,
+            rgb(164 157 192 / 0.55) 65%,
+            rgb(164 157 192 / 0.55) 100%
+        );
+        background-clip: text;
+        background-size: 200% 100%;
+        color: transparent;
+        font-size: rem(13);
+        letter-spacing: 0.02em;
+        min-height: rem(18);
+        text-align: center;
+        -webkit-background-clip: text;
+    }
+}
+
+@keyframes vega-lite-chart-text-shimmer {
+    0% {
+        background-position: 150% 0;
+    }
+
+    100% {
+        background-position: -250% 0;
+    }
+}
+
+@keyframes vega-lite-chart-icon-shimmer {
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// Vega tooltip is appended to document.body — compact rows, Lumo chrome.
+#vg-tooltip-element {
+    background-color: var(--background-norm, #ffffff);
+    border: 1px solid #dad3ef;
+    border-radius: rem(6);
+    box-shadow: 0 rem(1) rem(3) rgb(109 74 255 / 0.08);
+    color: #1c1340;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: rem(11);
+    line-height: 1.15;
+    max-width: rem(260);
+    min-width: rem(120);
+    padding: rem(5) rem(8);
+
+    h2 {
+        font-size: rem(12);
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 0 0 rem(4);
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    table tr td {
+        display: table-cell !important;
+        line-height: 1.15;
+        padding: 0;
+        vertical-align: baseline;
+    }
+
+    table tr + tr td {
+        padding-top: rem(1);
+    }
+
+    table tr td.key {
+        color: #6a6580;
+        max-width: rem(120);
+        padding-right: rem(6);
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    table tr td.value {
+        font-weight: 600;
+        max-height: none;
+        max-width: rem(140);
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    &.dark-theme {
+        background-color: var(--background-norm, #1b1b1f);
+        border-color: var(--border-norm, #4a4658);
+        color: var(--text-norm, #ffffff);
+
+        td.key {
+            color: var(--text-weak, #adaba9);
+        }
+    }
+}

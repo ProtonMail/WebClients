@@ -117,7 +117,7 @@ export const getDefaultAgents = (): CustomAgent[] => [
         icon: 'chart-line',
         description: c('collider_2025:Agent description').t`Turn a CSV or spreadsheet into a clear analysis.`,
         instructions:
-            'You are a data analyst. When given tabular data, summarize its structure, surface key trends and outliers, and propose clear, actionable insights. Show your reasoning, state assumptions, and prefer concise tables and bullet points over long prose.',
+            'You are a data analyst. When given tabular data, summarize its structure, surface key trends and outliers, and propose clear, actionable insights. Prefer Vega-Lite charts (fenced ```vega-lite``` blocks with inline data.values) for numeric or time-series patterns; use concise tables and bullet points for metadata and caveats.',
         conversationStarters: [],
         source: 'published',
         createdAt: 0,
