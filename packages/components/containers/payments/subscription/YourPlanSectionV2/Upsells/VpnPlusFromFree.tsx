@@ -3,12 +3,17 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import useApi from '@proton/components/hooks/useApi';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
@@ -75,8 +80,16 @@ export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
     ];
 };
 
-const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getVPNUpsell = ({
+    app,
+    plansMap,
+    openSubscriptionModal,
+    api,
+    user,
+    ...rest
+}: GetPlanUpsellArgs & { api: Api; user: User }): MaybeUpsell => {
     const plan = PLANS.VPN2024;
+    const cycle = rest.customCycle || defaultUpsellCycleB2C;
 
     return getUpsell({
         plan,
@@ -85,15 +98,28 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
         app,
         upsellPath: DASHBOARD_UPSELL_PATHS.VPN,
         title: rest.title,
-        customCycle: rest.customCycle || defaultUpsellCycleB2C,
+        customCycle: cycle,
         description: '',
         onUpgrade: () => {
             return openSubscriptionModal({
-                cycle: rest.customCycle || defaultUpsellCycleB2C,
+                cycle,
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 telemetryFlow: rest.telemetryFlow,
+                onMount: () => {
+                    void sendTelemetryReport({
+                        api,
+                        delay: false,
+                        event: TelemetryAccountDashboardEvents.upgradeButtonClick,
+                        measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                        dimensions: {
+                            app,
+                            billing_cycle: cycle.toString(),
+                            user_tier: getTelemetryUserTier(user),
+                        },
+                    });
+                },
             });
         },
         ...rest,
@@ -110,32 +136,52 @@ export const useVpnPlusFromFreeUpsells = ({
 }: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
+    const api = useApi();
 
-    const upsellsPayload: GetPlanUpsellArgs = {
+    const upsellsPayload: GetPlanUpsellArgs & { api: Api; user: User } = {
         app,
         plansMap,
         hasVPN: getHasConsumerVpnPlan(subscription),
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
+        api,
+        user,
     };
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             telemetryFlow,
+            onMount: () => {
+                void sendTelemetryReport({
+                    api,
+                    delay: false,
+                    event: TelemetryAccountDashboardEvents.upsellCtaClick,
+                    measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                    dimensions: {
+                        app,
+                        cta: 'compare_plans',
+                        user_tier: getTelemetryUserTier(user),
+                    },
+                });
+            },
         });
     };
 
     const upsells = [
         getVPNUpsell({
             ...upsellsPayload,
+            api,
+            user,
             customCycle: CYCLE.MONTHLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.MONTHLY),
         }),
         getVPNUpsell({
             ...upsellsPayload,
+            api,
+            user,
             customCycle: CYCLE.YEARLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.YEARLY),
@@ -144,6 +190,8 @@ export const useVpnPlusFromFreeUpsells = ({
         show24MonthPlan &&
             getVPNUpsell({
                 ...upsellsPayload,
+                api,
+                user,
                 customCycle: CYCLE.TWO_YEARS,
                 highlightPrice: true,
                 title: getDashboardUpsellTitle(CYCLE.TWO_YEARS),
