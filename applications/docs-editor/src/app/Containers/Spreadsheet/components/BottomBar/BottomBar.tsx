@@ -22,6 +22,7 @@ import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
 import { SheetStatus } from './SheetStatus'
 import { useIsSheetsStatusBarEnabled } from '../../feature-flags'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 const { s } = createStringifier(strings)
 
@@ -342,10 +343,12 @@ const NewSheetButton = memo(function NewSheetButton() {
   )
 })
 
-export interface BottomBarProps extends ComponentPropsWithoutRef<'div'> {}
+export interface BottomBarProps extends ComponentPropsWithoutRef<'div'> {
+  clientInvoker: EditorRequiresClientMethods
+}
 
-export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
-  const isSheetsStatusBarEnabled = useIsSheetsStatusBarEnabled()
+export const BottomBar = memo(function BottomBar({ clientInvoker, ...props }: BottomBarProps) {
+  const isSheetsStatusBarEnabled = useIsSheetsStatusBarEnabled(clientInvoker)
 
   return (
     <div
