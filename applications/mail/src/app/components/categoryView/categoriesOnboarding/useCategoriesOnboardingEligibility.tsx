@@ -12,6 +12,7 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
+import { useCategoriesView } from '../useCategoriesView';
 import { hasSeenAllOnboarding } from './categoriesOnboarding.helpers';
 import { AudienceType, FeatureValueDefault, type OnboardingInfo } from './onboardingInterface';
 
@@ -30,6 +31,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     const accountDateThreshold = useFeature<number>(FeatureCode.CategoryViewOnboardingAccountDateThreshold);
 
     const { getLocationCount, loading: loadingMailboxCount } = useMailboxCounter();
+    const { categoryViewAccess, hasAccessToCategoryView } = useCategoriesView();
 
     const loading =
         loadingOrganization ||
@@ -58,7 +60,8 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     // B2B users conditions
     if (isUserB2B) {
         const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
-        const hasCategoryAccess = !!organization?.Settings.MailCategoryViewEnabled;
+        // B2B users must opt-in, we start the onboarding if the flag is ON and their organisation allows it
+        const hasCategoryAccess = hasAccessToCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
 
         // The following condition apply for existing and new b2b users
         const basicEligibility = hasCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow;
@@ -87,6 +90,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     // Existing B2C users see the card if they have a given number of emails and the checklist is no longer present on the list of email
     return {
         isUserEligible:
+            categoryViewAccess &&
             isExistingUser &&
             !allOnboardingSeen &&
             allMailsElementsCount.Total > B2C_REQUIRED_NUMBER_OF_MAILS &&
