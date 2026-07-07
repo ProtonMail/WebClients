@@ -1,5 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import type {} from 'react'
 import { type ComponentPropsWithoutRef, forwardRef, useEffect, useRef } from 'react'
 import { c } from 'ttag'

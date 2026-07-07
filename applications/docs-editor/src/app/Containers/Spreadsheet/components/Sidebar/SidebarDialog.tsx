@@ -1,7 +1,7 @@
 import type React from 'react'
 import { forwardRef, memo, useEffect, useId, useLayoutEffect, useMemo } from 'react'
 import * as Ariakit from '@ariakit/react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { c } from 'ttag'
 import { useEvent } from '../utils'
 import {

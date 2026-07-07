@@ -1,7 +1,7 @@
 import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Icon } from '../ui'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { createComponent } from '../utils'
 import { twMerge } from 'tailwind-merge'
 

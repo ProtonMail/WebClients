@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import * as Ariakit from '@ariakit/react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 
 export type MenubarItemProps = Ariakit.MenuItemProps
 
