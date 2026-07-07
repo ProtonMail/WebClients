@@ -35,4 +35,10 @@ im.$media-expressions: $media-expressions;
 	.lumo-plus-upgrade-button {
 		inline-size: 100%;
 	}
+
+	&-dismiss-button {
+		&#{&} {
+			transform: translate(35%, -35%);
+		}
+	}
 }
