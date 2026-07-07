@@ -1,5 +1,13 @@
 import debounce from 'lodash/debounce';
 import {
+    getIgnoredParent,
+    getParentFormPrediction,
+    isCustomElementWithShadowRoot,
+    isPrediction,
+    removeClassifierFlags,
+    removeProcessedFlag,
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
+import {
     hasProcessableFields,
     hasProcessableNodes,
     isAddedNodeOfInterest,
@@ -9,14 +17,6 @@ import {
     isRemovedNodeOfInterest,
 } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 
-import {
-    getIgnoredParent,
-    getParentFormPrediction,
-    isCustomElementWithShadowRoot,
-    isPrediction,
-    removeClassifierFlags,
-    removeProcessedFlag,
-} from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { getActiveElement } from '@proton/pass/utils/dom/active-element';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';

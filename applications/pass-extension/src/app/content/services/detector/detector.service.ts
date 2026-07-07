@@ -1,8 +1,7 @@
+import type { FieldType } from '@protontech/autofill/types';
+import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
-import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
+import type { Fnode } from 'proton-pass-extension/app/content/services/detector/detector.api';
 import {
     clearDetectionCache,
     flagOverride,
@@ -12,10 +11,11 @@ import {
     rulesetMaker,
     shadowPiercingContains,
     shouldRunClassifier,
-} from '@proton/pass/fathom';
-import type { Fnode } from '@proton/pass/fathom/fathom';
-import type { FieldType } from '@proton/pass/fathom/labels';
-import { FormType, fieldTypes, formTypes } from '@proton/pass/fathom/labels';
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
+import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
@@ -33,7 +33,7 @@ const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
 type DetectorConfig = {
-    root: HTMLElement | Document;
+    root: Document;
     onBottleneck?: (data: { detectionTime: number; hostname: string }) => void;
 };
 
@@ -246,8 +246,6 @@ export const createDetectorService = (config: DetectorConfig) => {
             }),
 
         predictAll,
-        predictFields,
-        predictForms,
     };
 
     return detector;

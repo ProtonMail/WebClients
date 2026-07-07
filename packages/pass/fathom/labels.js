@@ -18,7 +18,7 @@ var FieldType;
     FieldType['PASSWORD_NEW'] = 'new-password';
     FieldType['USERNAME'] = 'username';
     FieldType['USERNAME_HIDDEN'] = 'username-hidden';
-    FieldType['CREDIT_CARD'] = 'cc';
+    FieldType['CREDIT_CARD'] = 'credit-card';
 })(FieldType || (FieldType = {}));
 
 var IdentityFieldType;

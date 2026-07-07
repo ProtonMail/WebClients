@@ -1,7 +1,5 @@
+import { CCFieldType, FieldType } from '@protontech/autofill/types';
 import { splitFullName } from 'proton-pass-extension/app/content/services/autofill/autofill.identity';
-import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { AutofillRequest } from 'proton-pass-extension/types/autofill';
-
 import {
     formatExpirationDate,
     getExpirationFormat,
@@ -9,8 +7,10 @@ import {
     getInputExpirationYearFormat,
     getSelectExpirationMonthFormat,
     getSelectExpirationYearFormat,
-} from '@proton/pass/fathom';
-import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
+import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { AutofillRequest } from 'proton-pass-extension/types/autofill';
+
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { CCItemData } from '@proton/pass/types/worker/data';
