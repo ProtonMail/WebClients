@@ -96,7 +96,18 @@ export type SettingsContext = {
     personalization?: PersonalizationSettings;
     isMemoryFeatureEnabled?: boolean;
     hasLumoPlus?: boolean;
+    isVisualizationInstructionsFeatureEnabled?: boolean;
 };
+
+function shouldIncludeVisualizationInstructions(
+    settingsContext: SettingsContext,
+    lumoUserSettings?: { isVisualizationInstructionsEnabled?: boolean }
+): boolean {
+    return (
+        !!settingsContext.isVisualizationInstructionsFeatureEnabled &&
+        (lumoUserSettings?.isVisualizationInstructionsEnabled ?? true)
+    );
+}
 
 const DEFAULT_PERSONALIZATION: PersonalizationSettings = {
     nickname: '',
@@ -388,7 +399,8 @@ export function sendMessage({
                     projectInstructions,
                     updatedC,
                     memories,
-                    agentInstructions
+                    agentInstructions,
+                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
                 );
 
             await dispatch(
@@ -574,7 +586,8 @@ export function regenerateMessage({
                     projectInstructions,
                     c,
                     memories,
-                    agentInstructions
+                    agentInstructions,
+                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
                 );
 
                 // Add retry instructions if provided
@@ -789,7 +802,8 @@ export function retrySendMessage({
                 p.projectInstructions,
                 c2,
                 memories,
-                agentInstructions
+                agentInstructions,
+                shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
             );
 
         // Call the LLM

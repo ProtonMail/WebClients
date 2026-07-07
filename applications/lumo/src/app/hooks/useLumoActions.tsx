@@ -90,6 +90,7 @@ export const useLumoActions = ({
         externalTools: ffExternalTools,
         imageTools: ffImageTools,
         memory: ffMemory,
+        visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
@@ -276,6 +277,7 @@ export const useLumoActions = ({
                     personalization,
                     isMemoryFeatureEnabled: ffMemory,
                     hasLumoPlus,
+                    isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
             })
         );
@@ -363,6 +365,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
                 retryData: {
                     lastUserMessage,
@@ -427,6 +430,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
             })
         );
@@ -526,6 +530,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
                 regenerateData: {
                     assistantMessageId,
