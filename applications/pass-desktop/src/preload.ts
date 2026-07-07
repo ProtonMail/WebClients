@@ -28,6 +28,9 @@ const contextBridgeApi: ContextBridgeApi = {
     windowShow: () => invoke('window:show'),
     onWindowHide: (callback) => handler('window:hide', callback),
 
+    /** client */
+    setAppState: (state) => invoke('client:setAppState', state),
+
     /* system */
     onSystemWake: (callback) => handler('system:wake', callback),
 
@@ -72,6 +75,17 @@ const contextBridgeApi: ContextBridgeApi = {
     /* native messaging */
     onNmRequest: (callback) => handler('nm:request', callback),
     nmResponse: (props) => invoke('nm:response', props),
+
+    /* ssh agent */
+    sshAgent: {
+        clear: () => invoke('sshAgent:clear'),
+        destroy: () => invoke('sshAgent:destroy'),
+        getEnabled: () => invoke('sshAgent:getSettingEnabled'),
+        getStatus: () => invoke('sshAgent:getStatus'),
+        setEnabled: (enabled) => invoke('sshAgent:setSettingEnabled', enabled),
+        setKeys: (items) => invoke('sshAgent:setSshKeyItems', items),
+        start: () => invoke('sshAgent:start'),
+    },
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

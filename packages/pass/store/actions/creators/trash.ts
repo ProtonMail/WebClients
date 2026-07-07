@@ -2,14 +2,10 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withItems, withItemsBatch } from '@proton/pass/store/actions/enhancers/items';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
-import {
-    withRequest,
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/request/enhancers';
+import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { BatchItemRevisionIDs } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -38,13 +34,14 @@ export const emptyTrashFailure = createAction(
 
 export const emptyTrashProgress = createAction(
     'trash::empty::progress',
-    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisionIDs) => pipe(withItemsBatch, withCache)({ payload }))
 );
 
 export const emptyTrashSuccess = createAction(
     'trash::empty::success',
     withRequestSuccess(() =>
         pipe(
+            withItems,
             withNotification({
                 type: 'success',
                 text: c('Info').t`All trashed items permanently deleted`,
@@ -78,15 +75,18 @@ export const restoreTrashFailure = createAction(
 
 export const restoreTrashProgress = createAction(
     'trash::restore::progress',
-    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisionIDs) => pipe(withItemsBatch, withCache)({ payload }))
 );
 
 export const restoreTrashSuccess = createAction(
     'trash::restore::success',
     withRequestSuccess(() =>
-        withNotification({
-            type: 'success',
-            text: c('Info').t`All trashed items successfully restored`,
-        })({ payload: {} })
+        pipe(
+            withItems,
+            withNotification({
+                type: 'success',
+                text: c('Info').t`All trashed items successfully restored`,
+            })
+        )({ payload: {} })
     )
 );

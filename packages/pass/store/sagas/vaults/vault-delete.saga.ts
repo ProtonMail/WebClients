@@ -16,7 +16,7 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 
 function* deleteVaultWorker(
-    { onItemsUpdated, getAuthStore }: RootSagaOptions,
+    { getAuthStore }: RootSagaOptions,
     { payload: { shareId, content }, meta }: ReturnType<typeof vaultDeleteIntent>
 ) {
     try {
@@ -34,7 +34,6 @@ function* deleteVaultWorker(
         if (shareId === aliasSyncShareId) yield put(withRevalidate(getUserAccessIntent(userID!)));
 
         yield put(vaultDeleteSuccess(meta.request.id, { shareId, content }));
-        onItemsUpdated?.();
     } catch (e) {
         yield put(vaultDeleteFailure(meta.request.id, { shareId, content }, e));
     } finally {

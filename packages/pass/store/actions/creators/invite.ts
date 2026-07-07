@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
+import { withItems } from '@proton/pass/store/actions/enhancers/items';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     inviteAddressesValidateRequest,
@@ -114,9 +115,7 @@ export const inviteAccept = requestActionsFactory<InviteAcceptIntent, InviteAcce
                 error,
             })({ payload }),
     },
-    success: {
-        prepare: (payload) => pipe(withCache, withShareDedupe)({ payload }),
-    },
+    success: { prepare: (payload) => pipe(withItems, withCache, withShareDedupe)({ payload }) },
 });
 
 export const groupInviteAccept = requestActionsFactory<InviteAcceptIntent, GroupInviteAcceptSuccess, void>('invite::group::accept')({

@@ -49,9 +49,7 @@ type ImportWorkerState = {
 };
 
 const unsupported = ['custom', 'sshKey', 'wifi'] as const;
-const isSupportedItemType = (
-    item: ItemImportIntent
-): item is Exclude<ItemImportIntent, ItemImportIntent<(typeof unsupported)[number]>> =>
+const isSupportedItemType = (item: ItemImportIntent): item is Exclude<ItemImportIntent, ItemImportIntent<(typeof unsupported)[number]>> =>
     !(unsupported as readonly ItemType[]).includes(item.type);
 
 /** Creates a dedicated vault for imported items by directly invoking
@@ -83,7 +81,7 @@ const assertNotAborted = (state: ImportWorkerState) => {
 
 function* importWorker(
     state: ImportWorkerState,
-    { onItemsUpdated, getTelemetry }: RootSagaOptions,
+    { getTelemetry }: RootSagaOptions,
     { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItems.intent>>
 ): Generator {
     const telemetry = getTelemetry();
@@ -223,8 +221,6 @@ function* importWorker(
                 endpoint,
             })
         );
-
-        onItemsUpdated?.();
     } catch (error) {
         yield put(importItems.failure(requestID, error, { endpoint, report: getImportReport(error) }));
     } finally {

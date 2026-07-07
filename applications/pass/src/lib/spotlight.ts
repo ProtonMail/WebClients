@@ -16,6 +16,7 @@ import {
     createProtonAnniversary2025Rule,
     createSSOChangeLockRule,
     createSecurityRule,
+    createSshAgentInstructionsRules,
     createTrialRule,
     createUserRenewalRule,
     createWelcomeRule,
@@ -65,6 +66,7 @@ export const spotlight = createSpotlightService({
         createProtonAnniversary2025Rule(),
         createAccessTokensDiscoveryRule(),
         ...(DESKTOP_BUILD ? createAutotypeRules() : []),
+        ...(DESKTOP_BUILD ? [createSshAgentInstructionsRules()] : []),
     ],
 });
 
