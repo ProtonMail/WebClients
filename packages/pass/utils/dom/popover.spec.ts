@@ -37,6 +37,32 @@ describe('TopLayerManager', () => {
         expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
     });
 
+    test('rejects a top-most guard visually suppressed by page CSS', async () => {
+        const guard = createPopoverEl();
+        await toggleEl(guard, true);
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(true);
+
+        /** Guard is top-most, but page CSS has made it near-invisible */
+        guard.style.opacity = '0.004';
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
+
+        guard.style.opacity = '1';
+        guard.style.visibility = 'hidden';
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
+
+        guard.style.visibility = 'visible';
+        guard.style.mixBlendMode = 'difference';
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
+
+        guard.style.mixBlendMode = 'normal';
+        guard.style.filter = 'opacity(0)';
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
+
+        /** Restored to fully visible → trusted again */
+        guard.style.filter = 'none';
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(true);
+    });
+
     test('foreign element cycling above guard poisons within the window', async () => {
         const now = jest.spyOn(performance, 'now');
         let time = 1000;
