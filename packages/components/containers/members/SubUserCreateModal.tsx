@@ -179,6 +179,7 @@ const SubUserCreateModal = ({
             (hasVpnB2bPlan ? true : organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
         storage: clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
     });
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
 
     const [submitting, withLoading] = useLoading();
 
@@ -594,15 +595,21 @@ const SubUserCreateModal = ({
                 event.preventDefault();
                 event.stopPropagation();
                 if (!onFormSubmit(event.currentTarget) || passwordPolicyError) {
+                    setActiveTabIndex(0);
                     return;
                 }
                 void withLoading(handleSubmit());
             }}
         >
             <ModalHeaderWithTabs
+                tabIndex={activeTabIndex}
+                onChangeTabIndex={setActiveTabIndex}
                 title={c('user_modal').t`Add new user`}
                 tabs={[
-                    { title: c('user_modal').t`General`, content: generalTabContent },
+                    {
+                        title: c('user_modal').t`General`,
+                        content: generalTabContent,
+                    },
                     ...(showRolesTab
                         ? [
                               {
