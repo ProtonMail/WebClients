@@ -1,3 +1,16 @@
+### Version 1.38.0
+
+- Add setting to automatically copy the 2FA code from your last-used login after autofill
+- Autofill now works inside iframe-embedded login forms (banks, OAuth, payment pages)
+- Admin panel now accessible from the extension sidebar
+- Improved passkey support for sites using cross-origin authentication
+- Pass Monitor: removed the back button, added "Exclude from monitoring" to the item menu
+- Fixed password preference (random vs. passphrase) not being remembered
+- Fixed identity email field being skipped during autofill
+- Fixed Pass icon misalignment when Bitwarden is also installed
+- Improved clickjacking protection for autofill
+- Fixed autofill icon not responding after changing page zoom on Safari
+
 ### Version 1.37.2
 
 - Fix B2B initial onboarding lock setup blocking activity probe
