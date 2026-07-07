@@ -286,7 +286,7 @@
         "认领优惠"
       ],
       "Claim this address": [
-        "认领此地址"
+        "认领地址"
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "认领您的免费 ${ BRAND_NAME } 地址"
@@ -1261,7 +1261,7 @@
         "重新连接"
       ],
       "Reconnect to Gmail": [
-        "重新连接 Gmail"
+        "重新关联 Gmail"
       ],
       "Recover account": [
         "恢复账户"
@@ -1546,7 +1546,7 @@
         "设为默认"
       ],
       "Set as default mail application": [
-        "设置为默认邮箱应用"
+        "设为默认邮箱应用"
       ],
       "Set catch-all": [
         "设置通配邮箱"
@@ -1913,6 +1913,12 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Approve": [
+        "批准"
+      ],
+      "Pause": [
+        "暂停"
       ]
     },
     "action": {
@@ -2370,22 +2376,22 @@
         "取消后，您的免费试用将不会转换为付费订阅，但您在试用期结束前仍可享受套餐权益。之后，您的服务将降级为 ${ BRAND_NAME } 免费套餐。"
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "您在试用期内最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 个专用服务器。"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 台专用服务器"
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "您在试用期内最多可拥有 ${ TRIAL_MAX_USERS } 位用户"
+        "试用期间，您最多可以拥有 ${ TRIAL_MAX_USERS } 位用户。"
       ],
       "You cannot add custom domains during the trial period.": [
         "您在试用期内无法添加自定义域名"
       ],
       "You have reached the trial limit.": [
-        "您已达到试用上限。"
+        "您已达到试用限制！"
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2604,7 +2610,7 @@
         "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Block ads, trackers, and malware": [
-        "拦截广告、跟踪器和恶意软件"
+        "屏蔽广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
@@ -2625,7 +2631,7 @@
         "针对网络威胁提供更强有力的保护"
       ],
       "Unlimited daily chats": [
-        "每日无限制聊天"
+        "无限聊天次数"
       ]
     },
     "BF2025: Tooltip": {
@@ -3378,7 +3384,7 @@
         "手动设置问题"
       ],
       "Meet problem": [
-        "遇到问题"
+        "Meet 问题"
       ],
       "Other": [
         "其他"
@@ -3809,7 +3815,7 @@
         "上传并查询小型文件"
       ],
       "Web search access": [
-        "网页搜索访问权限"
+        "网页搜索访问"
       ],
       "Zero-access encryption": [
         "零访问加密"
@@ -3822,7 +3828,7 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } 是一款隐私优先的 AI，帮助您提高效率，同时保障数据安全。解锁其全部潜能，并享受新功能的早期访问权限。"
+        "${ LUMO_APP_NAME } 是一款以隐私为先的 AI，帮助您在保障数据安全的同时提高工作效率。解锁其全部潜力，并在新功能推出时抢先体验。"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "添加 ${ LUMO_APP_NAME }"
@@ -3843,7 +3849,7 @@
         "开源"
       ],
       "Private video calls for the conversations that matter.": [
-        "私密视频通话，用于重要的对话。"
+        "私密视频通话，用于重要会话。"
       ]
     },
     "collider_2025: Navigation": {
@@ -5379,7 +5385,7 @@
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
       "Enough room for years of emails, attachments and more.": [
-        "拥有足够空间存储多年的邮件、附件等"
+        "充足空间，可容纳多年邮件、附件等内容。"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "确保对组织数据的安全访问，即使您的团队在远程或使用公共 WiFi 时也是如此。"
@@ -5493,7 +5499,7 @@
         "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "如需通过 CSV 和 VCF 文件导入，请确保文件不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 或 ${ maxContactString } 位联系人。如果文件较大，请将其拆分成更小的文件。${ learnMoreLink }."
+        "如需通过 CSV 和 VCF 文件导入，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 或联系人数量不超过 ${ maxContactString }。若文件过大，请将其拆分为多个较小的文件。${ learnMoreLink }。"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
@@ -5982,10 +5988,10 @@
         "2 TB 共享存储空间"
       ],
       "2 user accounts": [
-        "2 个用户账户"
+        "2 个账户"
       ],
       "All premium features from your current plan": [
-        "您当前套餐的所有付费版服务器功能"
+        "您当前套餐的所有高级功能"
       ],
       "Only": [
         "仅"
@@ -6148,7 +6154,7 @@
         "此系列中的所有事件都已更新。"
       ],
       "DESCRIPTION:": [
-        "说明："
+        "描述："
       ],
       "Here's what changed:": [
         "新变化："
@@ -7297,7 +7303,7 @@
         "无效代码"
       ],
       "Invalid coupon": [
-        "优惠券无效"
+        "无效优惠券"
       ],
       "Invalid domain": [
         "域名无效"
@@ -7447,7 +7453,7 @@
         "请检查您的 ABN 是否已注册跨境增值税"
       ],
       "Please complete the billing details": [
-        "请填写账单信息"
+        "请完善账单信息"
       ],
       "Please configure a custom domain before adding addresses.": [
         "添加地址前请先配置自有域名。"
@@ -7778,6 +7784,12 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "无法为 ${ errors.length } 位成员完成角色分配"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "无法为 ${ failedGroupCount } 个群组完成角色分配"
       ]
     },
     "error": {
@@ -8203,7 +8215,7 @@
         "客户支持"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "家庭计划目前不支持外部账户，请先创建 ${ BRAND_NAME } 地址后再加入。${ link }"
+        "家庭套餐目前不支持外部账户，加入前请先创建 ${ BRAND_NAME } 地址。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
@@ -9996,7 +10008,7 @@
         "**此操作将禁用端到端加密的邮件转发：** 您之后可以重新设置。"
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "每推荐一位朋友订阅，您将获得 **${ referrerRewardAmount }** 积分"
+        "每位好友订阅后，您可获得 **${ referrerRewardAmount }** 积分！"
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**重置密码后，仅凭密保邮箱将无法恢复加密数据！**"
@@ -10176,7 +10188,7 @@
         "您的所有改动都将丢失。"
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
+        "将导入您所有的联系人，上限为 ${ maxContact } 人"
       ],
       "Allocated": [
         "分配量"
@@ -10587,7 +10599,7 @@
         "请在电视上创建一个新代码并重试。"
       ],
       "Create a secure cloud for ${ memberCount } member": [
-        "为 ${ memberCount } 位成员创建安全云空间"
+        "为 ${ memberCount } 位成员创建安全云端"
       ],
       "Create an account": [
         "创建账户"
@@ -10893,7 +10905,7 @@
         "使用桌面应用程序，享受更快、更集中的电子邮件发送体验。"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
+        "确保通信完全私密且加密，立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "输入密码完成您的 ${ BRAND_NAME } 账户设置，即可在所有设备上使用 ${ VPN_APP_NAME } 服务！"
@@ -12174,7 +12186,7 @@
         "会话超时"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "将 ${ MAIL_APP_NAME } 设置为默认电子邮件应用程序，点击电子邮件链接时，${ MAIL_APP_NAME } 将自动打开。"
+        "将 ${ MAIL_APP_NAME } 设置为默认邮箱应用。当您点击邮件链接时，${ MAIL_APP_NAME } 将自动打开。"
       ],
       "Set password": [
         "设置密码"
@@ -13347,7 +13359,7 @@
         "我们将根据已分配席位的平均数量按月向您收费。"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
+        "您将在好友订阅年度套餐 1 个月后获得积分奖励，订阅月度套餐则在 2 个月后获得。"
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "您将在好友试用结束 1 个月后获得积分奖励。"
@@ -13356,7 +13368,7 @@
         "您将在好友试用结束 2 个月后获得积分奖励。"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
-        "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
+        "之后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费，您可以随时取消。"
       ],
       "You're now signed in on your TV.": [
         "您已在电视上登录。"
@@ -13522,6 +13534,15 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } 位通过身份提供商添加的新成员待审核"
+      ],
+      "Group roles assigned": [
+        "群组角色已分配"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "您一次只能打开一个在线聊天实例，请在开始新对话前关闭之前的对话。"
       ]
     },
     "info": {
@@ -13640,6 +13661,9 @@
       ],
       "Sending invite...": [
         "发送邀请中..."
+      ],
+      "Invited": [
+        "已邀请"
       ]
     },
     "Invoice state display as badge": {
@@ -14683,7 +14707,7 @@
         "不保留版本"
       ],
       "Don't show this again": [
-        "不再显示此内容"
+        "不再显示"
       ],
       "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
         "向 ${ BRAND_NAME } 基金会捐赠 ${ minimumDonation } 或更多"
@@ -16146,7 +16170,7 @@
         "立即重新激活"
       ],
       "Reactivate subscription": [
-        "重新激活订阅"
+        "恢复订阅"
       ],
       "Request an invite": [
         "申请注册"
@@ -16495,15 +16519,15 @@
         "${ MEET_APP_NAME } 席位"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME } 席位"
+        "${ seats } 个 ${ MEET_APP_NAME } 席位"
       ]
     },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
-        "${ MEET_APP_NAME }：用于重要对话的保密视频会议"
+        "${ MEET_APP_NAME }：为重要会话打造的保密视频会议"
       ],
       "${ n } active meeting at a time": [
-        "同时进行 ${ n } 场活跃会议"
+        "同时进行 ${ n } 场会议"
       ],
       "${ n } participant": [
         "${ n } 位参与者"
@@ -17268,7 +17292,7 @@
         "预约安排"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "使用 ${ n } 个预约页面进行日程安排"
+        "通过 ${ n } 个预约页面安排日程"
       ],
       "Apps for": [
         "应用程序用于"
@@ -17610,10 +17634,10 @@
         "密码分享（最多 ${ n } 个人）"
       ],
       "Vault sharing with up to ${ n } person": [
-        "与多至 ${ n } 个人分享保险库"
+        "与最多 ${ n } 人共享保险库"
       ],
       "VPN with ad-blocker and malware protection": [
-        "具备广告拦截器和恶意软件防护功能的 VPN"
+        "具备广告拦截与恶意软件防护功能的 VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
@@ -19549,7 +19573,7 @@
         "${ rate }% 税费：${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "试用期结束后 ${ formattedDate } 的应付金额"
+        "试用期结束后于 ${ formattedDate } 应付金额"
       ],
       "Billing Country": [
         "计费国家/地区"
@@ -19630,19 +19654,19 @@
         "服务条款"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
-        "此折扣适用于 ${ renewalsWithCoupon } 次续订。"
+        "该折扣适用于 ${ renewalsWithCoupon } 次续订"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "此特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
+        "特惠价格在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+        "特惠价格仅在前 ${ subscriptionLength } 个月内有效"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "${ priceWithDiscount } 的特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
+        "特惠价格 ${ priceWithDiscount } 在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
@@ -19696,7 +19720,7 @@
         "您的付款正在处理中"
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
-        "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+        "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
       ]
     },
     "Payments.Error": {
@@ -19747,10 +19771,10 @@
     },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
-        "您确定要继续操作吗？"
+        "您确定要继续吗？"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "如果您选择修改您的 ${ planTitle } 套餐，可能会失去某些功能的访问权限。"
+        "如果您选择修改 ${ planTitle } 套餐，可能会无法使用部分功能。"
       ],
       "Keep ${ planTitle }": [
         "保留 ${ planTitle }"
@@ -19769,13 +19793,13 @@
     },
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
-        "续订价格取决于账单地区和 ABN。"
+        "续订价格取决于账单地区和 ABN！"
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "续订价格取决于账单地区和商业编号。"
+        "续订价格取决于账单地区和商业编号！"
       ],
       "Renewal price is dependent on the billing region and EIN.": [
-        "续订价格取决于账单地区和 EIN。"
+        "续订价格取决于账单地区和 EIN！"
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "续订价格取决于账单地区和增值税号。"
@@ -20648,7 +20672,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "每成功推荐 ${ referrerRewardAmount }"
+        "每次推荐可获得 ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**如果您在此日期之前取消，** 试用期结束后您将被 **降级** 至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 套餐。"
@@ -20693,10 +20717,10 @@
         "探索 **${ planTitle }** 套餐所有强大功能的最后机会。"
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
-        "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
+        "完整订阅生效后，您仍可在 30 天内取消并获得按比例退款。"
       ],
       "Refer friends": [
-        "推荐朋友"
+        "邀请好友"
       ],
       "Share using ${ name }": [
         "通过 ${ name } 共享"
@@ -21696,6 +21720,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "您设为私有的用户需要接受邀请以完成设置。您批准后，我们会向他们发送邀请。"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "设为私有的用户需要接受邀请以完成设置。您批准后，我们会向他们发送邀请。"
       ]
     },
     "scim: Action": {
@@ -22281,7 +22308,7 @@
         "在 ${ appName } 中打开"
       ],
       "Open in ${ appName } (Beta)": [
-        "在 ${ appName }（测试版）中打开"
+        "在 ${ appName } (Beta) 中打开"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -23316,6 +23343,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } 位用户已通过您的身份提供商加入组织"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } 位用户处于非活跃状态。"
       ]
     },
     "sso: auth device state": {
@@ -23481,7 +23514,7 @@
         "获得更多存储空间"
       ],
       "Storage used": [
-        "已用存储空间"
+        "存储空间已使用"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ upgrade }"
@@ -23960,7 +23993,7 @@
         "版本历史"
       ],
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
-        "高清视频会议，最多支持 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 人参与"
+        "视频会议，最多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位参与者"
       ],
       "Watch the interview": [
         "观看访谈"
@@ -25024,7 +25057,7 @@
         "检查默认邮箱应用"
       ],
       "Choose a provider": [
-        "请选择提供商"
+        "选择提供商"
       ],
       "Choose an account": [
         "选择账户"
@@ -25330,7 +25363,7 @@
         "放弃更改？"
       ],
       "Disconnected from Gmail": [
-        "已断开与 Gmail 的连接"
+        "取消关联 Gmail"
       ],
       "Display name and signature": [
         "称呼与落款"
@@ -26431,7 +26464,7 @@
         "升级至 ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "升级以保留您的高级权益。"
+        "升级以保留您的高级权益！"
       ],
       "Upgrade your network protection with dedicated servers": [
         "通过专属服务器升级您的网络防护"
@@ -27023,6 +27056,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
+      ],
+      "Version 6 OpenPGP key": [
+        "第 6 版 OpenPGP 密钥"
       ]
     },
     "tooltip": {
@@ -27058,6 +27094,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
+      ],
+      "Resuming role assignment": [
+        "正在恢复角色分配"
+      ],
+      "User is a group owner": [
+        "用户是群组所有者"
+      ],
+      "Waiting for admin approval": [
+        "等待管理员审批"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27287,6 +27332,18 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "如果您不想继续，您可以申请 ${ reject } 。"
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "无法为 ${ n } 位用户启用管理员权限"
+      ],
+      "Review their account now.": [
+        "请立即查看他们的账户。"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "在我们进行更改时，他们的加密密钥已更新。"
+      ],
+      "You can safely remove this user from your organization.": [
+        "您可以将这些用户从组织中安全移除。"
       ]
     },
     "Update font modal": {
@@ -27872,7 +27929,7 @@
         "您的恢复短语已过期。如果您再次重置密码，它将无法恢复新数据。"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
+        "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
       ]
     },
     "Warning for domain modal": {

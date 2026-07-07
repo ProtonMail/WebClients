@@ -1913,6 +1913,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Approve": [
+        "Schváliť"
+      ],
+      "Pause": [
+        "Pozastaviť"
       ]
     },
     "action": {
@@ -7937,6 +7943,18 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } člena",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } členov",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } členov",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } členov"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupinu",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupiny",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupín",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupín"
       ]
     },
     "error": {
@@ -13963,6 +13981,12 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Group roles assigned": [
+        "Pozície skupiny priradené"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Môžete mať otvorený iba jeden chat. Prosím, zatvorte predošlé konverzácie pred začatím novej."
       ]
     },
     "info": {
@@ -14087,6 +14111,9 @@
       ],
       "Sending invite...": [
         "Odosielanie pozvánky..."
+      ],
+      "Invited": [
+        "Pozvaný/á"
       ]
     },
     "Invoice state display as badge": {
@@ -16229,6 +16256,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Show unread count": [
+        "Zobraziť počet neprečítaných"
       ]
     },
     "label": {
@@ -22404,6 +22434,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Používatelia, ktorých ste nastavili ako súkromných, musia prijať pozvánku, aby mohli dokončiť nastavenie. Akonáhle ich schválite, pošleme im pozvánku."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Používatelia s nastavením „súkromné“ musia prijať pozvánku, aby dokončili nastavenie. Pozvánku im zašleme hneď, ako ju schválite."
       ]
     },
     "scim: Action": {
@@ -24147,6 +24180,18 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } používateľ je neaktívny",
+        "${ n } používatelia sú neaktívni",
+        "${ n } používateľov je neaktívnych",
+        "${ n } používateľov je neaktívnych"
       ]
     },
     "sso: auth device state": {
@@ -27983,6 +28028,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Váš externý účet mohol dosiahnuť 24-hodinový limit prenosovej kapacity. ${ BRAND_NAME } sa pokúsi obnoviť import hneď, ako to bude možné"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
       ]
     },
     "tooltip": {
@@ -28018,6 +28066,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ],
+      "Resuming role assignment": [
+        "Obnovenie priradenia pozícií"
+      ],
+      "User is a group owner": [
+        "Používateľ je vlastníkom skupiny"
+      ],
+      "Waiting for admin approval": [
+        "Čaká na schválenie správcom"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -28250,6 +28307,27 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Ak si neželáte pokračovať, môžete túto žiadosť ${ reject }."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľa",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov"
+      ],
+      "Review their account now.": [
+        "Skontrolujte jeho účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Počas toho, ako sme vykonávali zmeny, došlo k aktualizácii šifrovacích kľúčov."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Tohto používateľa môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie."
       ]
     },
     "Update font modal": {

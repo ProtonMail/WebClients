@@ -1913,6 +1913,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Approve": [
+        "Aprobare"
+      ],
+      "Pause": [
+        "Suspendare"
       ]
     },
     "action": {
@@ -2617,7 +2623,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -7884,6 +7890,16 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }",
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }",
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }",
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }",
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }"
       ]
     },
     "error": {
@@ -13816,6 +13832,17 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }"
+      ],
+      "Group roles assigned": [
+        "Roluri de grup atribuite"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta."
       ]
     },
     "info": {
@@ -13938,6 +13965,9 @@
       ],
       "Sending invite...": [
         "Se trimite invitația..."
+      ],
+      "Invited": [
+        "Invitat"
       ]
     },
     "Invoice state display as badge": {
@@ -22171,6 +22201,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Utilizatorii pe care i-ați setat ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Utilizatorii setați ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
       ]
     },
     "scim: Action": {
@@ -23873,6 +23906,16 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }"
+      ],
+      "${ n } user is inactive.": [
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }"
       ]
     },
     "sso: auth device state": {
@@ -27666,6 +27709,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
+      ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
       ]
     },
     "tooltip": {
@@ -27701,6 +27747,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
+      ],
+      "Resuming role assignment": [
+        "Reluare atribuire rol"
+      ],
+      "User is a group owner": [
+        "Utilizatorul este proprietar de grup"
+      ],
+      "Waiting for admin approval": [
+        "Așteptare aprobare de la administrator"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27932,6 +27987,24 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Puteți să ${ reject } această solicitare dacă nu doriți să continuați."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }"
+      ],
+      "Review their account now.": [
+        "Revizuiți-i contul acum.",
+        "Revizuiți-le contul acum.",
+        "Revizuiți-le contul acum."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Cheile lor de criptare au fost actualizate în timp ce s-au efectuat modificări."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Puteți elimina în siguranță acest utilizator din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație."
       ]
     },
     "Update font modal": {

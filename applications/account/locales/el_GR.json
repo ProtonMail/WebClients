@@ -1913,6 +1913,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Approve": [
+        "Έγκριση"
+      ],
+      "Pause": [
+        "Παύση"
       ]
     },
     "action": {
@@ -7831,6 +7837,14 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλος",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλη"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδα",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδες"
       ]
     },
     "error": {
@@ -13669,6 +13683,16 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
+        "${ pendingAdminApprovalCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
+      ],
+      "Group roles assigned": [
+        "Ρόλοι ομάδας που έχουν ανατεθεί"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Παρακαλούμε κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
       ]
     },
     "info": {
@@ -13789,6 +13813,9 @@
       ],
       "Sending invite...": [
         "Αποστολή πρόσκλησης μέλους..."
+      ],
+      "Invited": [
+        "Προσκεκλημένοι"
       ]
     },
     "Invoice state display as badge": {
@@ -21935,6 +21962,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Οι χρήστες που έχετε ορίσει ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Οι χρήστες που έχουν οριστεί ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
       ]
     },
     "scim: Action": {
@@ -23596,6 +23626,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω του παρόχου ταυτότητας σας",
+        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω του παρόχου ταυτότητας σας"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } χρήστης είναι ανενεργός.",
+        "${ n } χρήστες είναι ανενεργοί."
       ]
     },
     "sso: auth device state": {
@@ -27346,6 +27384,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ίσως ο εξωτερικός λογαριασμός σας έχει εξαντλήσει το όριό του στη μετάδοση ανά 24ωρο. Το ${ BRAND_NAME } θα δοκιμάσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
+      ],
+      "Version 6 OpenPGP key": [
+        "Κλειδί OpenPGP έκδοσης 6"
       ]
     },
     "tooltip": {
@@ -27381,6 +27422,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
+      ],
+      "Resuming role assignment": [
+        "Συνέχιση ανάθεσης ρόλου"
+      ],
+      "User is a group owner": [
+        "Ο χρήστης είναι κάτοχος ομάδας"
+      ],
+      "Waiting for admin approval": [
+        "Αναμονή για έγκριση από τον διαχειριστή"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27611,6 +27661,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Μπορείτε να ${ reject } αυτό το αίτημα εάν δεν επιθυμείτε να προχωρήσετε."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή για ${ n } χρήστη",
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή για ${ n } χρήστες"
+      ],
+      "Review their account now.": [
+        "Ελέγξτε τον λογαριασμό τους τώρα.",
+        "Ελέγξτε τους λογαριασμούς τους τώρα."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Τα κλειδιά κρυπτογράφησης ενημερώθηκαν ενώ κάναμε αλλαγές."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Μπορείτε να καταργήσετε με ασφάλεια αυτόν τον χρήστη από τον οργανισμό σας.",
+        "Μπορείτε να καταργήσετε με ασφάλεια αυτούς τους χρήστες από τον οργανισμό σας."
       ]
     },
     "Update font modal": {

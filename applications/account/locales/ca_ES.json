@@ -1546,7 +1546,7 @@
         "Estableix com a predeterminat"
       ],
       "Set as default mail application": [
-        "Establiu com aplicació de correu per defecte"
+        "Establiu com l'aplicació de correu per defecte"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -1913,6 +1913,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Approve": [
+        "Aprovar"
+      ],
+      "Pause": [
+        "Pausa"
       ]
     },
     "action": {
@@ -5330,7 +5336,7 @@
         "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } és la vostra aplicació de correu electrònic per defecte."
+        "${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } manté segures les dades del vostre negoci i us permet enviar correus electrònics xifrats a qualsevol persona."
@@ -7831,6 +7837,14 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membre",
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membres"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grup",
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grups"
       ]
     },
     "error": {
@@ -13179,7 +13193,7 @@
         "Si s'inhabilita, s'evita que imatges remotes es carreguin sense el vostre coneixement.\t"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us ho notificarem si no ho fos."
+        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us ho notificaríem si no ho fos."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
@@ -13666,6 +13680,16 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingAdminApprovalCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingAdminApprovalCount } membres nous mitjançant el vostre proveïdor d'identitat i estan pendents de revisió."
+      ],
+      "Group roles assigned": [
+        "S'han assignat els rols del grup"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Només podeu tenir una instància de xat oberta alhora. Tanqueu les converses anteriors abans de començar-ne una de nova."
       ]
     },
     "info": {
@@ -13786,6 +13810,9 @@
       ],
       "Sending invite...": [
         "S'està enviant la invitació..."
+      ],
+      "Invited": [
+        "Convidat"
       ]
     },
     "Invoice state display as badge": {
@@ -21932,6 +21959,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Els usuaris que hàgiu configurat com a privats han d'acceptar la invitació per completar la configuració. Els enviarem una invitació un cop els aproveu."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Els usuaris configurats com a privats han d'acceptar la invitació per acabar la configuració. Els enviarem una invitació un cop ho aproveu."
       ]
     },
     "scim: Action": {
@@ -23596,6 +23626,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } usuari s'ha unit a la vostra organització a través del vostre proveïdor d'identitat.",
+        "${ n } usuaris s'han unit a la vostra organització a través del vostre proveïdor d'identitat."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } usuari està inactiu.",
+        "${ n } usuaris estan inactius."
       ]
     },
     "sso: auth device state": {
@@ -27346,6 +27384,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "És possible que el vostre compte extern hagi assolit el límit d'amplada de banda de 24 hores. ${ BRAND_NAME } intentarà reprendre la importació al més aviat possible."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
       ]
     },
     "tooltip": {
@@ -27381,6 +27422,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
+      ],
+      "Resuming role assignment": [
+        "S'està reprenent l'assignació de rols"
+      ],
+      "User is a group owner": [
+        "L'usuari és propietari d'un grup"
+      ],
+      "Waiting for admin approval": [
+        "S'està esperant l'aprovació de l'administrador"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27611,6 +27661,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Podeu ${ reject } aquesta sol·licitud si no voleu continuar."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuari",
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuaris"
+      ],
+      "Review their account now.": [
+        "Reviseu el seu compte ara.",
+        "Reviseu els seus comptes ara."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Les seves claus d'encriptació s'han actualitzat mentre estàvem fent canvis."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
+        "Podeu eliminar aquests usuaris de la vostra organització de manera segura."
       ]
     },
     "Update font modal": {
