@@ -1273,6 +1273,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Approve": [
+        "Approuver"
+      ],
+      "Pause": [
+        "Suspendre"
       ]
     },
     "action": {
@@ -4855,6 +4861,20 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "No drive found to import": [
+        "Aucun disque à importer détecté"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre",
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membres"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ failedGroupCount } membre",
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ failedGroupCount } membres"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ]
     },
     "error": {
@@ -9085,6 +9105,16 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nouveau membre ajouté via votre fournisseur d'identité et en attente d'examen.",
+        "${ pendingAdminApprovalCount } nouveaux membres ajoutés via votre fournisseur d'identité et en attente d'examen."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
+      "Group roles assigned": [
+        "Rôles de groupe attribués"
       ]
     },
     "info": {
@@ -9185,6 +9215,9 @@
       ],
       "Sending invite...": [
         "Envoi de l'invitation..."
+      ],
+      "Invited": [
+        "Invité"
       ]
     },
     "Invoice state display as badge": {
@@ -14119,6 +14152,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Les utilisateurs que vous avez définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Les utilisateurs définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
       ]
     },
     "scim: Action": {
@@ -15155,6 +15191,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "La configuration de votre authentification unique (SSO) sera supprimée."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité",
+        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } utilisateur est inactif.",
+        "${ n } utilisateur sont inactifs."
       ]
     },
     "sso: auth device state": {
@@ -17540,6 +17584,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title for payment methods table": {
@@ -17796,6 +17843,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"
+      ],
+      "Resuming role assignment": [
+        "Reprise de l'attribution de rôle"
+      ],
+      "User is a group owner": [
+        "L'utilisateur est propriétaire d'un groupe"
+      ],
+      "Waiting for admin approval": [
+        "En attente de validation par l'administrateur"
       ]
     },
     "Tor out of date": {
@@ -17960,6 +18016,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Pour continuer, vous devez demander à l'utilisateur l'autorisation d'accéder à ses données ou de réinitialiser son mot de passe."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Impossible d'activer l'accès administrateur pour ${ n } utilisateur",
+        "Impossible d'activer l'accès administrateur pour ${ n } utilisateurs"
+      ],
+      "Review their account now.": [
+        "Vérifiez leur compte dès maintenant.",
+        "Vérifiez leurs comptes dès maintenant."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Leurs clés de chiffrement ont été mises à jour pendant que nous procédions à des modifications."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Vous pouvez supprimer cet utilisateur de votre organisation en toute sécurité.",
+        "Vous pouvez supprimer ces utilisateurs de votre organisation en toute sécurité."
       ]
     },
     "Upsell": {

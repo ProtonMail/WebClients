@@ -1213,6 +1213,9 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Pause": [
+        "Metti in pausa"
       ]
     },
     "action": {
@@ -4373,7 +4376,7 @@
         "Timeout della richiesta"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "Server not found": [
         "Server non trovato"
@@ -8439,7 +8442,7 @@
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Il tuo account è attualmente configurato per applicare il regime di reverse charge. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
+        "Il tuo account è attualmente configurato per applicare il regime di inversione contabile. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
       ],
       "Your account was successfully updated with this promotion": [
         "Il tuo account è stato aggiornato con questa promozione"

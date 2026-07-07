@@ -1267,6 +1267,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Approve": [
+        "Godkänn"
+      ],
+      "Pause": [
+        "Pausa"
       ]
     },
     "action": {
@@ -3733,6 +3739,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Observera att e-post som skickas till denna adress, även från andra ${ BRAND_NAME }-adresser, inte längre kommer vara end-to-end-krypterade."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi kommer importera din gamla e-post och synkronisera nya meddelanden från Gmail framöver."
       ]
     },
     "description": {
@@ -4813,6 +4825,14 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlem",
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlemmar"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupp",
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupper"
       ]
     },
     "error": {
@@ -8954,6 +8974,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
+      "Group roles assigned": [
+        "Grupproller tilldelade"
       ]
     },
     "info": {
@@ -9054,6 +9080,9 @@
       ],
       "Sending invite...": [
         "Skickar inbjudan …"
+      ],
+      "Invited": [
+        "Inbjuden"
       ]
     },
     "Invoice state display as badge": {
@@ -10065,6 +10094,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Data harvesting": [
+        "Datainsamling"
       ]
     },
     "label": {
@@ -13918,6 +13950,12 @@
       ],
       "Updated": [
         "Uppdaterad"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Slutgiltigt godkännande behövs för att bevilja åtkomst till alla ${ BRAND_NAME }-tjänster."
+      ],
+      "Review users and groups before finishing setup": [
+        "Granska användare och grupper innan du slutför installation"
       ]
     },
     "scim: Action": {
@@ -14951,6 +14989,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } användare är inaktiv.",
+        "${ n } användare är inaktiva."
       ]
     },
     "sso: auth device state": {
@@ -17315,6 +17361,12 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Är du säker på att du vill koppla från och inaktivera denna adress?"
       ]
     },
     "Title for payment methods table": {
@@ -17559,6 +17611,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
+      ],
+      "Resuming role assignment": [
+        "Återuppta rolltilldelning"
+      ],
+      "User is a group owner": [
+        "Användare är en gruppägare"
       ]
     },
     "Tor out of date": {
@@ -17637,6 +17695,9 @@
       ],
       "Refund": [
         "Återbetalning"
+      ],
+      "Test credit": [
+        "Testkredit"
       ]
     },
     "Unlimited offer": {
@@ -17720,6 +17781,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "För att fortsätta måste du begära användarens tillåtelse att komma åt deras data eller återställa deras lösenord."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare",
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare"
+      ],
+      "Review their account now.": [
+        "Granska deras konto nu.",
+        "Granska deras konton nu."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deras krypteringsnycklar uppdaterades medan vi gjorde ändringar."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan säkert ta bort denna användare från din organisation.",
+        "Du kan säkert ta bort dessa användare från din organisation."
       ]
     },
     "Upsell": {
@@ -17869,6 +17945,12 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hantera användare och grupper, tilldela roller och allokera licenser till medlemmar."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Users table: badge": {

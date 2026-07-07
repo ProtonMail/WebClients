@@ -1273,6 +1273,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Approve": [
+        "Aprovar"
+      ],
+      "Pause": [
+        "Pausa"
       ]
     },
     "action": {
@@ -4872,6 +4878,14 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membre",
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membres"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grup",
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grups"
       ]
     },
     "error": {
@@ -9113,6 +9127,13 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingAdminApprovalCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingAdminApprovalCount } membres nous mitjançant el vostre proveïdor d'identitat i estan pendents de revisió."
+      ],
+      "Group roles assigned": [
+        "S'han assignat els rols del grup"
       ]
     },
     "info": {
@@ -9213,6 +9234,9 @@
       ],
       "Sending invite...": [
         "S'està enviant la invitació..."
+      ],
+      "Invited": [
+        "Convidat"
       ]
     },
     "Invoice state display as badge": {
@@ -14150,6 +14174,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Els usuaris que hàgiu configurat com a privats han d'acceptar la invitació per completar la configuració. Els enviarem una invitació un cop els aproveu."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Els usuaris configurats com a privats han d'acceptar la invitació per acabar la configuració. Els enviarem una invitació un cop ho aproveu."
       ]
     },
     "scim: Action": {
@@ -15186,6 +15213,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } usuari s'ha unit a la vostra organització a través del vostre proveïdor d'identitat.",
+        "${ n } usuaris s'han unit a la vostra organització a través del vostre proveïdor d'identitat."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } usuari està inactiu.",
+        "${ n } usuaris estan inactius."
       ]
     },
     "sso: auth device state": {
@@ -17830,6 +17865,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
+      ],
+      "Resuming role assignment": [
+        "S'està reprenent l'assignació de rols"
+      ],
+      "User is a group owner": [
+        "L'usuari és propietari d'un grup"
+      ],
+      "Waiting for admin approval": [
+        "S'està esperant l'aprovació de l'administrador"
       ]
     },
     "Tor out of date": {
@@ -17994,6 +18038,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuari",
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuaris"
+      ],
+      "Review their account now.": [
+        "Reviseu el seu compte ara.",
+        "Reviseu els seus comptes ara."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Les seves claus d'encriptació s'han actualitzat mentre estàvem fent canvis."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
+        "Podeu eliminar aquests usuaris de la vostra organització de manera segura."
       ]
     },
     "Upsell": {

@@ -1273,6 +1273,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Approve": [
+        "Genehmigen"
+      ],
+      "Pause": [
+        "Pausieren"
       ]
     },
     "action": {
@@ -4857,6 +4863,14 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rollenzuweisung konnte für ${ errors.length } Mitglied nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ errors.length } Mitglieder nicht abgeschlossen werden"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppe nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppen nicht abgeschlossen werden"
       ]
     },
     "error": {
@@ -9101,6 +9115,13 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf Überprüfung.",
+        "${ pendingAdminApprovalCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf Überprüfung."
+      ],
+      "Group roles assigned": [
+        "Gruppenrollen zugewiesen"
       ]
     },
     "info": {
@@ -9201,6 +9222,9 @@
       ],
       "Sending invite...": [
         "Einladung wird versendet..."
+      ],
+      "Invited": [
+        "Eingeladen"
       ]
     },
     "Invoice state display as badge": {
@@ -14135,6 +14159,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
       ]
     },
     "scim: Action": {
@@ -15168,6 +15195,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Deine SSO-Konfiguration wird gelöscht."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen",
+        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } Benutzer ist inaktiv.",
+        "${ n } Benutzer sind inaktiv."
       ]
     },
     "sso: auth device state": {
@@ -17812,6 +17847,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
+      ],
+      "Resuming role assignment": [
+        "Fortsetzung der Rollenzuweisung"
+      ],
+      "User is a group owner": [
+        "Benutzer ist Eigentümer einer Gruppe"
+      ],
+      "Waiting for admin approval": [
+        "Auf die Administratoren-Genehmigung warten"
       ]
     },
     "Tor out of date": {
@@ -17976,6 +18020,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Um fortzufahren, musst du die Erlaubnis des Benutzers anfordern, um auf seine Daten zuzugreifen oder sein Passwort zurückzusetzen."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden",
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden"
+      ],
+      "Review their account now.": [
+        "Überprüfe sein Konto jetzt.",
+        "Überprüfe deren Konten jetzt."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deren Verschlüsselungsschlüssel wurden aktualisiert, während wir Änderungen vorgenommen haben."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
+        "Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
       ]
     },
     "Upsell": {

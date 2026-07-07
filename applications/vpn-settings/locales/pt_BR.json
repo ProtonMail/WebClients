@@ -1273,6 +1273,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Approve": [
+        "Aprovar"
+      ],
+      "Pause": [
+        "Pausar"
       ]
     },
     "action": {
@@ -9055,6 +9061,9 @@
       ],
       "Sending invite...": [
         "Enviando convite..."
+      ],
+      "Invited": [
+        "Convidado"
       ]
     },
     "Invoice state display as badge": {
@@ -13960,6 +13969,9 @@
       ],
       "Updated": [
         "Atualizado"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } e ${ groupsText } sincronizado."
       ]
     },
     "scim: Action": {
@@ -14984,6 +14996,10 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } usuário está inativo",
+        "${ n } usuários estão inativos"
       ]
     },
     "sso: auth device state": {
@@ -17607,6 +17623,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
+      ],
+      "Waiting for admin approval": [
+        "Esperando por aprovação de administrador"
       ]
     },
     "Tor out of date": {
@@ -17768,6 +17787,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Para continuar, você precisará solicitar a permissão do usuário para acessar os dados ou redefinir a senha dele."
+      ],
+      "Review their account now.": [
+        "Revisar sua conta agora",
+        "Revisar suas contas agora"
       ]
     },
     "Upsell": {
