@@ -2,7 +2,8 @@
 
 - Add "Check for update" button in Settings on macOS/Windows
 - Switch installer to .msix, enabling deployment via Intune for organizations on Windows
-- Pass Monitor: removed the back button, fixed sharing display for vaults with 100+ members
+- Pass Monitor: removed the back button
+- Pass Monitor: fixed sharing display for vaults with 100+ members
 
 ### Version 1.37.0
 
