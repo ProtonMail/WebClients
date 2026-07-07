@@ -11,10 +11,7 @@ export const LumoSidebarUpsell = ({ feature = LUMO_UPSELL_PATHS.SIDEBAR_BUTTON }
     const lumoPlusConfig = useLumoPlusUpsellButtonConfig(feature);
     const { canShowTalkToAdminLumoUpsell, hasLumoPlus } = useLumoPlan();
 
-    if (
-        hasLumoPlus ||
-        (!canShowTalkToAdminLumoUpsell && (!lumoPlusConfig || !lumoPlusConfig.showInSidebar))
-    ) {
+    if (hasLumoPlus || (!canShowTalkToAdminLumoUpsell && (!lumoPlusConfig || !lumoPlusConfig.showInSidebar))) {
         return null;
     }
 
@@ -25,7 +22,11 @@ export const LumoSidebarUpsell = ({ feature = LUMO_UPSELL_PATHS.SIDEBAR_BUTTON }
               .t`Your chat history is limited to 7 days. Upgrade to ${LUMO_SHORT_APP_NAME} Plus for unlimited history and other premium features.`;
 
     return (
-        <SidebarUpsellSection title={c('collider_2025: Upsell').t`Keep your chat history`} description={description}>
+        <SidebarUpsellSection
+            upsellId="chat-history"
+            title={c('collider_2025: Upsell').t`Keep your chat history`}
+            description={description}
+        >
             {!canShowTalkToAdminLumoUpsell && lumoPlusConfig && (
                 <GetLumoPlusButton
                     path={lumoPlusConfig.path}

@@ -380,7 +380,10 @@ const AccountSettingsPanel = () => {
 const AccountSettingsPanelGuest = () => {
     const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
-        <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
+        <div
+            className="flex flex-column flex-nowrap gap-4 w-full min-w-0 min-h-custom"
+            style={{ '--min-h-custom': 'auto' }}
+        >
             <SettingsSectionItem
                 icon="User"
                 text={c('collider_2025: Title').t`Guest`}
