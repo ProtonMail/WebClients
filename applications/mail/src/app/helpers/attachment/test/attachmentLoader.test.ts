@@ -1,6 +1,5 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock, api } from '../../test/api';
@@ -21,7 +20,7 @@ const attachmentMimeType = 'application/pdf';
 const attachment1 = {
     ID: attachmentID,
     Name: attachmentName,
-    Preview: stringToUint8Array('message preview'),
+    Preview: utf8StringToUint8Array('message preview'),
     KeyPackets: utf8StringToUint8Array('keypackets').toBase64(),
     MIMEType: attachmentMimeType,
 } as Attachment;
