@@ -31,8 +31,19 @@ const slice = createSlice({
 export const selectIsGuest = (state: MeetState) => state.meetUser.isGuest;
 
 type SubscriptionStatus = {
+    /**
+     * Whether the user is a meet paid user.
+     */
     isPaidUser: boolean;
+    /**
+     * Whether the user is a sub user of an organization,
+     * meaning they cannot upgrade to a paid plan for themselves
+     * and need to ask the organization owner to upgrade.
+     */
     isSubUser: boolean;
+    /**
+     * Whether the user has a subscription without the Meet feature.
+     */
     hasSubscriptionWithoutMeet: boolean;
 };
 
