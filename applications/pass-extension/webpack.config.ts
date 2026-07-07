@@ -118,7 +118,13 @@ appJSLoader.use.options.env.include = [
     'esnext.uint8-array.to-hex',
 ];
 
-const layeredJSLoaders = { oneOf: [{ issuerLayer: 'injection', ...scriptJSLoader }, appJSLoader] };
+/** The `client` and `client-legacy` entries build the same source graph
+ * against isolated detection stacks via layer-based module replacement */
+const LEGACY_CS_LAYER = 'injection-client-legacy';
+const CS_LAYER = 'injection-client';
+const INJECTION_LAYERS = ['injection', LEGACY_CS_LAYER, CS_LAYER];
+
+const layeredJSLoaders = { oneOf: [{ issuerLayer: INJECTION_LAYERS, ...scriptJSLoader }, appJSLoader] };
 
 const nonAccessibleWebResource = (entry: string) => [entry, './src/lib/utils/web-accessible-resource.ts'];
 const disableBrowserTrap = (entry: string) => [entry, './src/lib/utils/disable-browser-trap.ts'];
@@ -143,7 +149,11 @@ const config: Configuration = {
         },
         client: {
             import: './src/app/content/client.ts',
-            layer: 'injection',
+            layer: CS_LAYER,
+        },
+        'client-legacy': {
+            import: './src/app/content/client.ts',
+            layer: LEGACY_CS_LAYER,
         },
         dropdown: nonAccessibleWebResource('./src/app/content/services/inline/dropdown/app/index.tsx'),
         elements: {
@@ -188,6 +198,14 @@ const config: Configuration = {
     module: {
         strictExportPresence: true,
         rules: [
+            {
+                /** @protontech ML packages ship unbundled but are declared as ESM modules
+                 * in their package.json. Set `fullySpecified: false` so webpack allows
+                 * extensionless imports without throwing ESM resolution errors. */
+                test: /\.m?js$/,
+                include: /node_modules\/@protontech\/(autofill|ml-inference|fathom)/,
+                resolve: { fullySpecified: false },
+            },
             sideEffectsRule,
             zipJSRule,
             layeredJSLoaders,
@@ -276,6 +294,13 @@ const config: Configuration = {
         publicPath: '/',
     },
     plugins: [
+        /** Resolves `detector.api` to `detector.api-legacy` in the legacy
+         * content-script layer. Matches both aliased and relative specifiers */
+        new webpack.NormalModuleReplacementPlugin(/detector\.api$/, (resolveData) => {
+            if (resolveData.contextInfo.issuerLayer === LEGACY_CS_LAYER) {
+                resolveData.request = resolveData.request.replace(/detector\.api$/, 'detector.api-legacy');
+            }
+        }),
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
             /** ProtonConfigV2 (see `packages/pack/webpack/plugins.js`) */

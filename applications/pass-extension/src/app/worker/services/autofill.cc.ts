@@ -1,3 +1,4 @@
+import type { CCFieldType, FieldType } from '@protontech/autofill/types';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import { isCCField } from 'proton-pass-extension/lib/utils/field';
 import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
@@ -7,7 +8,6 @@ import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { FrameAttributes, FrameField } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import noop from '@proton/utils/noop';

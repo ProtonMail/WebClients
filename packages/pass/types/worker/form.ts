@@ -1,4 +1,5 @@
-import type { FormType } from '@proton/pass/fathom/labels';
+import type { FormType } from '@protontech/autofill/types';
+
 import type { MaybeNull, RequiredNonNull } from '@proton/pass/types/utils';
 import type { URLComponents } from '@proton/pass/utils/url/types';
 

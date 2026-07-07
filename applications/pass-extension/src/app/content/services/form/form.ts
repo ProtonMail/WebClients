@@ -1,14 +1,9 @@
+import type { FormType } from '@protontech/autofill/types';
+import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
 import debounce from 'lodash/debounce';
 import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
-import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
-import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
-import { getFrameAttributesFromElement, isNegligableFrameRect } from 'proton-pass-extension/app/content/utils/frame';
-import type { ClusterFrameFormItem } from 'proton-pass-extension/app/worker/services/autofill.cc';
-import { isCCField } from 'proton-pass-extension/lib/utils/field';
-import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
-
 import {
     getCCFieldType,
     getIdentityFieldType,
@@ -18,9 +13,14 @@ import {
     kButtonSelector,
     removeClassifierFlags,
     shadowPiercingContains,
-} from '@proton/pass/fathom';
-import type { FormType } from '@proton/pass/fathom/labels';
-import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
+} from 'proton-pass-extension/app/content/services/detector/detector.api';
+import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
+import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
+import { getFrameAttributesFromElement, isNegligableFrameRect } from 'proton-pass-extension/app/content/utils/frame';
+import type { ClusterFrameFormItem } from 'proton-pass-extension/app/worker/services/autofill.cc';
+import { isCCField } from 'proton-pass-extension/lib/utils/field';
+import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
+
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
