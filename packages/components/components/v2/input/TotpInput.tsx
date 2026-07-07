@@ -109,24 +109,25 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
     const centerIndex = centerDivider ? Math.round(list.length / 2) : -1;
     const focusIndex = Math.min(value.trim().length, length - 1);
 
-    const maxInputWidth = Math.floor(Math.max((rect?.width || 0) / length, size.minWidth));
-    const marginWidth = Math.floor(maxInputWidth * ratios.elementMargin);
-    const dividerWidth = Math.floor(maxInputWidth * ratios.dividerMargin);
-
     const marginCount = Math.max(centerDivider ? length - 2 : length - 1, 0);
-    const totalMarginWidth = marginCount * marginWidth;
-    const totalDividerWidth = centerDivider ? dividerWidth : 0;
-
     const available = Math.max(rect?.width || 0, 0);
-    const inputWidth = Math.max(Math.floor((available - totalMarginWidth - totalDividerWidth) / length), size.minWidth);
+
+    // Solve for inputWidth so inputs + proportional margins + divider fill `available` without overflow:
+    // available = length*w + marginCount*(w*ratios.elementMargin) + (centerDivider ? w*ratios.dividerMargin : 0)
+    const divisor = length + marginCount * ratios.elementMargin + (centerDivider ? ratios.dividerMargin : 0);
+    const inputWidth = available > 0 ? Math.floor(available / divisor) : size.minWidth;
+    const marginWidth = Math.floor(inputWidth * ratios.elementMargin);
+    const dividerWidth = Math.floor(inputWidth * ratios.dividerMargin);
     const inputHeight = Math.floor(inputWidth * ratios.height);
     const fontSize = Math.floor(inputWidth * ratios.fontSize);
 
+    // Distribute sub-pixel remainder evenly across gaps so total fills available exactly.
+    const totalRendered = length * inputWidth + marginCount * marginWidth + (centerDivider ? dividerWidth : 0);
     const gapCount = Math.max(length - 1, 0);
-    const remainder = Math.max(0, available - (length * inputWidth + totalMarginWidth + totalDividerWidth));
+    const remainder = Math.max(0, available - totalRendered);
     const gapBonus = gapCount > 0 ? remainder / gapCount : 0;
     const roundedMarginWidth = marginWidth + gapBonus;
-    const roundedDividerWidth = totalDividerWidth + (centerDivider ? gapBonus : 0);
+    const roundedDividerWidth = dividerWidth + (centerDivider ? gapBonus : 0);
 
     // Force LTR because it's recommended to enter digits in this order
     return (
