@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { useState } from 'react';
 
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -14,11 +13,11 @@ interface Tab {
 interface Props {
     title: string;
     tabs: Tab[];
+    tabIndex: number;
+    onChangeTabIndex: (index: number) => void;
 }
 
-const ModalHeaderWithTabs = ({ title, tabs }: Props) => {
-    const [activeTab, setActiveTab] = useState(0);
-
+const ModalHeaderWithTabs = ({ title, tabs, tabIndex, onChangeTabIndex }: Props) => {
     if (tabs.length <= 1) {
         return (
             <>
@@ -37,13 +36,13 @@ const ModalHeaderWithTabs = ({ title, tabs }: Props) => {
                         <Tabs
                             className="mb-2"
                             tabs={tabs.map(({ title, titleNode }) => ({ title, titleNode }))}
-                            value={activeTab}
-                            onChange={setActiveTab}
+                            value={tabIndex}
+                            onChange={onChangeTabIndex}
                         />
                     </div>
                 }
             />
-            <ModalContent>{tabs[activeTab]?.content}</ModalContent>
+            <ModalContent>{tabs[tabIndex]?.content}</ModalContent>
         </>
     );
 };
