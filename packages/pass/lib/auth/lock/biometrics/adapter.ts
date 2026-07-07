@@ -18,14 +18,14 @@ import { SilentError } from '@proton/pass/utils/errors/errors';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 export const generateBiometricsKey = async (core: PassCoreContextValue, offlineKD: string): Promise<string> => {
     const key = await core.generateBiometricsKey!();
-    const rawOfflineKD = stringToUint8Array(offlineKD);
+    const rawOfflineKD = binaryStringToUint8Array(offlineKD);
     const rawEncryptedOfflineKD = await encryptData(key, rawOfflineKD, PassEncryptionTag.BiometricOfflineKD);
-    return intoBiometricsEncryptedOfflineKD(uint8ArrayToString(rawEncryptedOfflineKD));
+    return intoBiometricsEncryptedOfflineKD(uint8ArrayToBinaryString(rawEncryptedOfflineKD));
 };
 
 /** Password locking involves the offline configuration. As such,
@@ -151,19 +151,19 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
                     throw new PassCryptoError('Invalid biometric lock');
                 }
 
-                const biometricsCryptoKey = await importSymmetricKey(stringToUint8Array(biometricsSecret));
+                const biometricsCryptoKey = await importSymmetricKey(binaryStringToUint8Array(biometricsSecret));
 
                 const offlineKD = await decryptData(
                     biometricsCryptoKey,
-                    stringToUint8Array(fromBiometricsEncryptedOfflineKD(offlineEncryptedKD).key),
+                    binaryStringToUint8Array(fromBiometricsEncryptedOfflineKD(offlineEncryptedKD).key),
                     PassEncryptionTag.BiometricOfflineKD
                 );
 
                 const offlineKey = await importSymmetricKey(offlineKD);
 
                 /** this will throw if the derived offlineKD is incorrect */
-                await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
-                const hash = uint8ArrayToString(offlineKD);
+                await decryptData(offlineKey, binaryStringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
+                const hash = uint8ArrayToBinaryString(offlineKD);
 
                 authStore.setOfflineKD(hash);
                 authStore.setLocked(false);

@@ -1,4 +1,4 @@
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { MAX_CHARS_API } from '../../lib/calendar/constants';
 import {
@@ -25,7 +25,7 @@ describe('getSupportedUID', () => {
 });
 
 describe('getVeventHashUID', () => {
-    const bytes = stringToUint8Array('some random words for the test');
+    const bytes = binaryStringToUint8Array('some random words for the test');
     const shortUid = 'stmyce9lb3ef@domain.com';
     const longUid =
         'Cm5XpErjCp4syBD1zI0whscVHuQklN3tvXxxXpaewdBGEpOFTcMCqM8WDLLYDM6kuXAqdTqL1y98SRrf5thkyceT01boWtEeCkrep75kRiKnHE5YnBKYvEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com';
@@ -68,7 +68,7 @@ describe('getVeventHashUID', () => {
 });
 
 describe('getOriginalUID', () => {
-    const bytes = stringToUint8Array('some random words for the test');
+    const bytes = binaryStringToUint8Array('some random words for the test');
     const shortUid = 'stmyce9lb3ef@domain.com';
     const longUid =
         'Cm5XpErjCp4syBD1zI0whscVHuQklN3tvXxxXpaewdBGEpOFTcMCqM8WDLLYDM6kuXAqdTqL1y98SRrf5thkyceT01boWtEeCkrep75kRiKnHE5YnBKYvEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com';
@@ -102,7 +102,7 @@ describe('getOriginalUID', () => {
 });
 
 describe('getHasLegacyHashUID', () => {
-    const bytes = stringToUint8Array('some random words for the test');
+    const bytes = binaryStringToUint8Array('some random words for the test');
     const shortUid = 'stmyce9lb3ef@domain.com';
     const longUid =
         'Cm5XpErjCp4syBD1zI0whscVHuQklN3tvXxxXpaewdBGEpOFTcMCqM8WDLLYDM6kuXAqdTqL1y98SRrf5thkyceT01boWtEeCkrep75kRiKnHE5YnBKYvEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com';

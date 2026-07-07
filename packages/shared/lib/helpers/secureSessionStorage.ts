@@ -1,5 +1,5 @@
 // Not using openpgp to allow using this without having to depend on openpgp being loaded
-import { stringToUint8Array, uint8ArrayToString } from './encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from './encoding';
 import { hasStorage as hasSessionStorage } from './sessionStorage';
 
 /**
@@ -50,14 +50,14 @@ const deserializeItem = (value: string | undefined) => {
         return;
     }
     try {
-        return stringToUint8Array(atob(value));
+        return binaryStringToUint8Array(atob(value));
     } catch (e: any) {
         return undefined;
     }
 };
 
 const serializeItem = (value: Uint8Array<ArrayBuffer>) => {
-    return btoa(uint8ArrayToString(value));
+    return btoa(uint8ArrayToBinaryString(value));
 };
 
 const mergePart = (serializedA: string | undefined, serializedB: string | undefined) => {
@@ -77,7 +77,7 @@ const mergePart = (serializedA: string | undefined, serializedB: string | undefi
         unpaddedLength--;
     }
 
-    return uint8ArrayToString(xored.slice(0, unpaddedLength));
+    return uint8ArrayToBinaryString(xored.slice(0, unpaddedLength));
 };
 
 export const mergeParts = (share1: any, share2: any) =>
@@ -91,7 +91,7 @@ export const mergeParts = (share1: any, share2: any) =>
     }, {});
 
 const separatePart = (value: string) => {
-    const item = stringToUint8Array(value);
+    const item = binaryStringToUint8Array(value);
     const paddedLength = Math.ceil(item.length / 256) * 256;
 
     const share1 = crypto.getRandomValues(new Uint8Array(paddedLength));
