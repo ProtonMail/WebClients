@@ -1,7 +1,7 @@
 import * as Ariakit from '@ariakit/react'
 import { useNotifications } from '@proton/components'
 import type { IconName } from '@proton/icons/types'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import type { CellInterface } from '@rowsncolumns/grid'
 import type { CellTooltipProps } from '@rowsncolumns/spreadsheet'
 import type { ComponentPropsWithoutRef } from 'react'

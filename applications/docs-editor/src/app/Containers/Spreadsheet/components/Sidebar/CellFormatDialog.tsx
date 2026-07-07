@@ -14,7 +14,7 @@ import { type BorderLocation, ColorSelector, getStringifiedColor, type VerticalA
 import { getDefaultDateFormat, ssfFormat, ssfFormatColor, supplant } from '@rowsncolumns/utils'
 import { forwardRef, Fragment, useMemo, useState } from 'react'
 import * as Icons from '../icons'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import {
   FormCheckbox,
