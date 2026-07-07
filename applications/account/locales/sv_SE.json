@@ -1901,6 +1901,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Approve": [
+        "Godkänn"
+      ],
+      "Pause": [
+        "Pausa"
       ]
     },
     "action": {
@@ -3214,6 +3220,18 @@
       ],
       "You're all set!": [
         "Du är klar!"
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alla migrerade användarkonton är redo att bjudas in till din ${ BRAND_NAME }-organisation."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Välj de konton du vill flytta till ${ BRAND_NAME }. Du kan migrera hela organisationen idag eller börja i liten skala och flytta över resten när du är redo."
+      ],
+      "Update records for receiving": [
+        "Uppdatera poster för mottagning"
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi skapar dina konton och importerar din data nu så att ditt team har allt de behöver när de börjar använda sitt säkra ${ BRAND_NAME }-konto."
       ]
     },
     "breadcrumb": {
@@ -5461,6 +5479,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Observera att e-post som skickas till denna adress, även från andra ${ BRAND_NAME }-adresser, inte längre kommer vara end-to-end-krypterade."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi kommer importera din gamla e-post och synkronisera nya meddelanden från Gmail framöver."
       ]
     },
     "description": {
@@ -6916,6 +6940,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dina återställningskontakter bör vara personer du känner och lätt kan kontakta."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Skydda ditt arv.** Uppgradera ditt paket för att lägga till nödkontakter."
       ]
     },
     "Empty group name": {
@@ -7645,6 +7672,14 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlem",
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlemmar"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupp",
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupper"
       ]
     },
     "error": {
@@ -13311,6 +13346,24 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Tilldelade användarplatser debiteras inte när de är inaktiverade"
+      ],
+      "Group roles assigned": [
+        "Grupproller tilldelade"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Medlemmar är utloggade och kan inte logga in igen"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Granska tidigare perioder och exportera data för rapportering eller klientfakturering."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Du kan bara ha en chattinstans öppen åt gången. Stäng tidigare konversationer innan du startar en ny."
       ]
     },
     "info": {
@@ -13431,6 +13484,9 @@
       ],
       "Sending invite...": [
         "Skickar inbjudan …"
+      ],
+      "Invited": [
+        "Inbjuden"
       ]
     },
     "Invoice state display as badge": {
@@ -15514,6 +15570,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Billed average": [
+        "Fakturerat genomsnitt"
+      ],
+      "Data harvesting": [
+        "Datainsamling"
+      ],
+      "Show unread count": [
+        "Visa antal olästa"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitton, bokningar, fakturor och beställningar"
       ]
     },
     "label": {
@@ -19159,6 +19227,9 @@
     "Password reminder": {
       "Do you remember your ${ BRAND_NAME } password?": [
         "Kommer du ihåg ditt lösenord för ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Det bästa sättet att undvika att förlora åtkomst till ditt konto och dina data är att komma ihåg dina inloggningsuppgifter."
       ]
     },
     "password_reminder": {
@@ -20251,6 +20322,9 @@
       ],
       "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
         "Din återställningsinställning är ofullständig. Ett glömt lösenord kan fortfarande innebära att du förlorar åtkomsten till dina e-postmeddelanden, filer och lösenord."
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Kräver verifierat alternativ för lösenordsåterställning (e-post eller SMS)"
       ]
     },
     "Recovery score item": {
@@ -21284,6 +21358,18 @@
       ],
       "Your security setup": [
         "Din säkerhetsinställning"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Lägg till personer du litar på och enkelt kan kontakta. Din nödkontakt kommer att kunna komma åt ditt konto och återställa ditt lösenord åt dig om det behövs."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kan du logga in och återställa dina data. Det är det enda sättet att återställa allt direkt, så se till att du förvarar det någonstans säkert."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Detta låter dig återställa ditt lösenord om du tappat bort det men fortfarande är inloggad på ${ BRAND_NAME }. Det är ofta det enklaste sättet att återställa ditt konto om du är inloggad."
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verifiering av din e-postadress ökar din kontosäkerhet och tillåter ytterligare alternativ för återställning."
       ]
     },
     "saml: Action": {
@@ -21384,6 +21470,12 @@
       ],
       "Updated": [
         "Uppdaterad"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Slutgiltigt godkännande behövs för att bevilja åtkomst till alla ${ BRAND_NAME }-tjänster."
+      ],
+      "Review users and groups before finishing setup": [
+        "Granska användare och grupper innan du slutför installation"
       ]
     },
     "scim: Action": {
@@ -21543,6 +21635,9 @@
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har rekommenderade åtgärder från ${ PROTON_SENTINEL_NAME }"
+      ],
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera återställning via e-post och SMS."
       ]
     },
     "Server-Info": {
@@ -21565,6 +21660,9 @@
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Låter dig lägga till en Zoom-videokonferens till alla dina kalenderhändelser"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Lägg till i ${ CALENDAR_APP_NAME }"
       ]
     },
     "session_recovery:available:action": {
@@ -23036,6 +23134,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } användare är inaktiv.",
+        "${ n } användare är inaktiva."
       ]
     },
     "sso: auth device state": {
@@ -26351,6 +26457,15 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Är du säker på att du vill koppla från och inaktivera denna adress?"
+      ],
+      "Data recovery contacts": [
+        "Kontakter för dataåterställning"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26732,6 +26847,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare på äldre appar för att kryptera data de skickar till dig."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -26767,6 +26888,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
+      ],
+      "Resuming role assignment": [
+        "Återuppta rolltilldelning"
+      ],
+      "User is a group owner": [
+        "Användare är en gruppägare"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -26878,6 +27005,9 @@
       ],
       "Refund": [
         "Återbetalning"
+      ],
+      "Test credit": [
+        "Testkredit"
       ]
     },
     "Unlimited offer": {
@@ -26994,6 +27124,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denna begäran om du inte vill fortsätta."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare",
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare"
+      ],
+      "Review their account now.": [
+        "Granska deras konto nu.",
+        "Granska deras konton nu."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deras krypteringsnycklar uppdaterades medan vi gjorde ändringar."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan säkert ta bort denna användare från din organisation.",
+        "Du kan säkert ta bort dessa användare från din organisation."
       ]
     },
     "Update font modal": {
@@ -27168,6 +27313,12 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hantera användare och grupper, tilldela roller och allokera licenser till medlemmar."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Users table: badge": {

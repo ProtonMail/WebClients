@@ -1913,6 +1913,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Approve": [
+        "Godkend"
+      ],
+      "Pause": [
+        "Pause"
       ]
     },
     "action": {
@@ -7831,6 +7837,14 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlem",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlemmer"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedGroupCount } gruppe",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedGroupCount } grupper"
       ]
     },
     "error": {
@@ -13185,7 +13199,7 @@
         "Når deaktiveret, forhindrer dette eksterne billeder i at blive indlæst uden din viden."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Hvis aktiveret, tjekker vi at ${ MAIL_APP_NAME } er din standard mailapplikation, og giver dig besked, hvis det ikke er tilfældet."
+        "Hvis aktiveret, vil vi kontrollere, om ${ MAIL_APP_NAME } er din standard mailapplikation, og give dig besked, hvis det ikke er tilfældet."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
@@ -13672,6 +13686,16 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingAdminApprovalCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
+      ],
+      "Group roles assigned": [
+        "Grupperoller tildelt"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Du kan kun have én chatinstans åben ad gangen. Luk tidligere samtaler før du starter en ny."
       ]
     },
     "info": {
@@ -13792,6 +13816,9 @@
       ],
       "Sending invite...": [
         "Sender invitation..."
+      ],
+      "Invited": [
+        "Inviteret"
       ]
     },
     "Invoice state display as badge": {
@@ -21938,6 +21965,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Brugere, du har angivet som private, skal acceptere invitationen for at færdiggøre konfigurationen. Vi sender dem en invitation når du har godkendt."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brugere, definerede som private, skal acceptere invitationen for at færdiggøre opsætningen. Vi sender dem en invitation når du har godkendt."
       ]
     },
     "scim: Action": {
@@ -23599,6 +23629,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration vil blive slettet."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder",
+        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } bruger er inaktiv.",
+        "${ n } brugere er inaktive."
       ]
     },
     "sso: auth device state": {
@@ -27349,6 +27387,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
       ]
     },
     "tooltip": {
@@ -27384,6 +27425,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
+      ],
+      "Resuming role assignment": [
+        "Genoptager rolletildeling"
+      ],
+      "User is a group owner": [
+        "Brugeren er ejer af en gruppe"
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkendelse fra administrator"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27614,6 +27664,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denne anmodning, hvis du ikke vil fortsætte."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kunne ikke tildele administratoradgang til ${ n } bruger",
+        "Kunne ikke tildele administratoradgang til ${ n } brugere"
+      ],
+      "Review their account now.": [
+        "Gennemgå deres konto nu.",
+        "Gennemgå deres konti nu."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deres krypteringsnøgler blev opdateret, mens vi lavede ændringer."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan trygt fjerne denne bruger fra din organisation.",
+        "Du kan trygt fjerne disse brugere fra din organisation."
       ]
     },
     "Update font modal": {

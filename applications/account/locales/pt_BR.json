@@ -1910,6 +1910,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Approve": [
+        "Aprovar"
+      ],
+      "Pause": [
+        "Pausar"
       ]
     },
     "action": {
@@ -13340,6 +13346,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ]
     },
     "info": {
@@ -13460,6 +13469,9 @@
       ],
       "Sending invite...": [
         "Enviando convite..."
+      ],
+      "Invited": [
+        "Convidado"
       ]
     },
     "Invoice state display as badge": {
@@ -21351,6 +21363,9 @@
       ],
       "Your security setup": [
         "Sua configuração de segurança"
+      ],
+      "Update recovery phone": [
+        "Atualizar telefone de recuperação"
       ]
     },
     "saml: Action": {
@@ -21445,6 +21460,9 @@
       ],
       "Updated": [
         "Atualizado"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } e ${ groupsText } sincronizado."
       ]
     },
     "scim: Action": {
@@ -23082,6 +23100,10 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
+      ],
+      "${ n } user is inactive.": [
+        "${ n } usuário está inativo",
+        "${ n } usuários estão inativos"
       ]
     },
     "sso: auth device state": {
@@ -26796,6 +26818,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Sua conta externa pode ter atingido o seu limite de largura de banda de 24 horas. O ${ BRAND_NAME } tentará retomar a importação o mais rápido possível."
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ]
     },
     "tooltip": {
@@ -26828,6 +26853,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
+      ],
+      "Waiting for admin approval": [
+        "Esperando por aprovação de administrador"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27055,6 +27083,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Você pode ${ reject } essa requisição, se você preferir não prosseguir."
+      ],
+      "Review their account now.": [
+        "Revisar sua conta agora",
+        "Revisar suas contas agora"
       ]
     },
     "Update font modal": {

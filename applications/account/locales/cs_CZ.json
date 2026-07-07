@@ -1841,6 +1841,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Pause": [
+        "Pozastavit"
       ]
     },
     "action": {
@@ -9739,7 +9742,7 @@
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Tímto dojde k deaktivaci dvoufázové ověřování.**"
@@ -9748,7 +9751,7 @@
         "**Toto deaktivuje koncově šifrovaná přeposílání e-mailů:** můžete je znovu nastavit později."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Samotný e-mail pro obnovení vám neumožňuje obnovit zašifrovaná data** po resetování vašeho hesla."
@@ -10801,7 +10804,7 @@
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Free forever": [
         "Navždy zdarma"
@@ -11068,7 +11071,7 @@
         "Zahrnout detaily zařízení, polohu a IP"
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
@@ -11662,7 +11665,7 @@
         "Dbejte na její bezpečnost. Budete jí potřebovat pro přístup ke svému účtu a dešifrování dat v případě nutnosti resetovat heslo."
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Vezměte prosím na vědomí, že pokud smažete filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
+        "Vezměte prosím na vědomí, že pokud smažete filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které vyvolá."
       ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
@@ -12355,7 +12358,7 @@
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s tímto uživatelem."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet nebude možné znovu aktivovat."
+        "Tímto trvale smažete svůj účet a všechna jeho data. Tento účet nebude možné znovu aktivovat."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
@@ -12538,13 +12541,13 @@
         "Neověřená e-mailová adresa."
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. Její význam je \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
@@ -12751,7 +12754,7 @@
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -13274,6 +13277,9 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Můžete mít otevřen pouze jeden chat. Před zahájením nové konverzace prosím zavřete ty předchozí."
       ]
     },
     "info": {
@@ -14444,7 +14450,7 @@
         "Částka daru"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ],
       "Duration": [
         "Doba trvání"
@@ -17327,7 +17333,7 @@
         "Neomezený objem/šířka pásma"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",
@@ -25934,7 +25940,7 @@
         "Ověřte svůj e-mail"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."

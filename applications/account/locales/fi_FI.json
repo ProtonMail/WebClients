@@ -1746,6 +1746,36 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Add company": [
+        "Lisää yritys"
+      ],
+      "Approve": [
+        "Hyväksy"
+      ],
+      "Check now": [
+        "Tarkasta nyt"
+      ],
+      "Disable company": [
+        "Poista yritys käytöstä"
+      ],
+      "Enable company": [
+        "Ota yritys käytttöön"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Vie erittely yrityksen mukaan ZIP-tiedostona"
+      ],
+      "Export overview as CSV": [
+        "Vie yleiskatsaus CSV-tiedostona"
+      ],
+      "Manage": [
+        "Hallinnoi"
+      ],
+      "Pause": [
+        "Pysäytä"
+      ],
+      "Set as default mail application": [
+        "Aseta oletussähköpostisovellukseksi"
       ]
     },
     "action": {
@@ -2627,6 +2657,15 @@
       ],
       "You're all set!": [
         "Kaikki on kunnossa!"
+      ],
+      "Size": [
+        "Koko"
+      ],
+      "Skip": [
+        "Ohita"
+      ],
+      "Verified": [
+        "Vahvistettu"
       ]
     },
     "breadcrumb": {
@@ -4692,6 +4731,24 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
+      ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } ei ole oletussähköpostisovelluksesi."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } on oletussähköpostisovelluksesi."
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Huomaa, että tähän osoitteeseen lähetettyjä sähköposteja, edes muista ${ BRAND_NAME } -osoitteista, ei enää salata päästä päähän."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu ja tili poistettu käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Voit yhdistää tämän osoitteen uudelleen milloin tahansa."
       ]
     },
     "description": {
@@ -6438,6 +6495,17 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Tälle osoitteelle voidaan muuttaa ainoastaan kirjainten kokoa ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja)"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta",
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta",
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta"
       ]
     },
     "error": {
@@ -7242,6 +7310,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Suojausavaimesi on valmis käyttöön."
+      ],
+      "Insert your security key into your device.": [
+        "Aseta turva-avain laitteeseesi."
       ]
     },
     "fido2: Label": {
@@ -7632,6 +7703,12 @@
       ],
       "Roles and permissions": [
         "Roolit ja oikeudet"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ]
     },
     "Header": {
@@ -8194,6 +8271,9 @@
       ],
       "Undo in progress": [
         "Kumoaminen käynnissä"
+      ],
+      "Migrated": [
+        "Siirretty"
       ]
     },
     "Import type": {
@@ -11523,6 +11603,67 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME }:n Business paketit tarjoavat tiimillesi kaikki yhteistyötyökalut, joita se tarvitsee voidakseen työskennellä tuottavasti ja järjestelmällisesti, samalla kun ne turvaavat yrityksesi."
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } uusi jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
+        "${ pendingAdminApprovalCount } uutta jäsenta on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
+      ],
+      "All data and settings are preserved": [
+        "Kaikki tiedot ja asetukset säilytetään"
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Varattuja paikkoja ei laskuteta, kun ne ovat poistettu käytöstä"
+      ],
+      "Average": [
+        "Keskiarvo"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Group roles assigned": [
+        "Ryhmäroolit määritetty"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Jäsenet on kirjattu ulos, eivätkä he voi kirjautua takaisin sisään"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tässä voidaan muuttaa vain isojen kirjainten käyttöä ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja). Jos haluat käyttää eri osoitetta, lisää uusi osoite."
+      ],
+      "Per seat/month": [
+        "Per paikka/kuukausi"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Tarkastele aiempia kausia ja vie tiedot raportointia tai asiakaskirjanpitoa varten."
+      ],
+      "Set the name, status, and assigned seats": [
+        "Määritä nimi, tila ja osoitetut paikat"
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Yritys ja kaikki sen jäsenet menettävät käyttöoikeutensa välittömästi."
+      ],
+      "What happens:": [
+        "Mitä tapahtuu:"
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Kun tämä on sallittu, tarkistamme onko ${ MAIL_APP_NAME } oletus sähköpostisovellus ja ilmoitamme, jos ei ole."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Hallinnoitujen yritysten avulla voit lisätä, muokata ja poistaa käyttöoikeuksia organisaatioille, joita valvot."
+      ],
+      "You can enable this company again at any time.": [
+        "Voit ottaa tämän yrityksen uudelleen käyttöön milloin tahansa."
+      ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Laskutus tapahtuu kuukausittain, ja sen perustana on osoitettujen käyttöoikeuksien keskimääräinen lukumäärä."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Kaikkien hallinnoitavien yritysten kuukausittaiset kokonaiskustannukset."
       ]
     },
     "info": {
@@ -11638,6 +11779,9 @@
       ],
       "Sending invite...": [
         "Lähetetään kutsua..."
+      ],
+      "Invited": [
+        "Kutsuttu"
       ]
     },
     "Invoice state display as badge": {
@@ -13439,6 +13583,39 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Assigned seats": [
+        "Määrätyt paikat"
+      ],
+      "Average": [
+        "Keskimäärin"
+      ],
+      "Billed average": [
+        "Laskutettu keskiarvo"
+      ],
+      "Billed seats": [
+        "Laskutetut paikat"
+      ],
+      "Companies": [
+        "Yritykset"
+      ],
+      "Cost": [
+        "Hinta"
+      ],
+      "Password check-ins": [
+        "Salasanalla kirjautumiset"
+      ],
+      "Seats": [
+        "Paikat"
+      ],
+      "Seats usage": [
+        "Paikkojen käyttö"
+      ],
+      "Show unread count": [
+        "Näytä lukemattomien viestien määrä"
+      ],
+      "Total cost": [
+        "Kokonaishinta"
       ]
     },
     "label": {
@@ -13494,6 +13671,12 @@
     "Label for domain setup": {
       "Status": [
         "Tila"
+      ],
+      "Host name": [
+        "Isäntänimi"
+      ],
+      "Type": [
+        "Tyyppi"
       ]
     },
     "Label for new member": {
@@ -17447,6 +17630,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter company name": [
+        "Anna yrityksen nimi"
+      ],
+      "Search for a company": [
+        "Hae yritystä"
       ]
     },
     "placeholder": {
@@ -17792,6 +17981,12 @@
     "Recovery score": {
       "Inactive recovery options": [
         "Käyttämättömät palautusvaihtoehdot"
+      ],
+      "Critical": [
+        "Kriittinen"
+      ],
+      "Weak": [
+        "Heikko"
       ]
     },
     "Recovery score item": {
@@ -18363,6 +18558,9 @@
       ],
       "Verify your password": [
         "Vahvista salasanasi"
+      ],
+      "Download": [
+        "Lataa"
       ]
     },
     "saml: Action": {
@@ -19872,6 +20070,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajasi kautta",
+        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajasi kautta"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } käyttäjä on passiivinen.",
+        "${ n } käyttäjää on passiivisia."
       ]
     },
     "sso: auth device state": {
@@ -19912,6 +20118,9 @@
       ],
       "Verify ${ value }": [
         "Vahvista ${ value }"
+      ],
+      "Outdated": [
+        "Vanhentunut"
       ]
     },
     "Step in filter modal": {
@@ -20804,6 +21013,24 @@
       ],
       "Your address has been activated": [
         "Osoitteesi on aktivoitu"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } otettu käyttöön"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } poistettu käytöstä"
+      ],
+      "${ data.name } added": [
+        "${ data.name } lisättiin"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } päivitettiin"
+      ],
+      "Password check-ins disabled": [
+        "Salasanalla tehdyt kirjautumiset poistettu käytöstä"
+      ],
+      "Password check-ins enabled": [
+        "Salasanalla kirjautuminen on käytössä"
       ]
     },
     "Success message": {
@@ -22684,6 +22911,24 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Add company": [
+        "Lisää yritys"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Haluatko varmasti katkaista yhteyden ja poistaa tämän osoitteen käytöstä?"
+      ],
+      "Check your default mail application": [
+        "Tarkista oletussähköpostisovelluksesi"
+      ],
+      "Disable company": [
+        "Poista yritys käytöstä"
+      ],
+      "Edit company": [
+        "Muokkaa yritystä"
+      ],
+      "Previous billing periods": [
+        "Edelliset laskutuskaudet"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22713,6 +22958,9 @@
     "Title header": {
       "Size": [
         "Koko"
+      ],
+      "Date": [
+        "Päivämäärä"
       ]
     },
     "Title header for addresses domain table": {
@@ -22966,6 +23214,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ulkoinen tililisi on saattanut saavuttaa sille asetetun 24-tunnin tiedonsiirtorajoituksen. ${ BRAND_NAME } pyrkii jatkamaan tuontia mahdollisimman pian."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
       ]
     },
     "tooltip": {
@@ -23001,6 +23252,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
+      ],
+      "Resuming role assignment": [
+        "Roolin määrityksen jatkaminen"
+      ],
+      "User is a group owner": [
+        "Käyttäjä on ryhmän omistaja"
+      ],
+      "Waiting for admin approval": [
+        "Odotetaan järjestelmänvalvojan hyväksyntää"
       ]
     },
     "Tooltip: PM signature locked": {
@@ -23089,6 +23349,12 @@
       ],
       "Refund": [
         "Hyvitys"
+      ],
+      "Prepayment": [
+        "Ennakkomaksu"
+      ],
+      "Test credit": [
+        "Testikrediitti"
       ]
     },
     "Unlimited offer": {
@@ -23205,6 +23471,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Voit ${ reject } pyynnön, jos et halua jatkaa."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia",
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia"
+      ],
+      "Review their account now.": [
+        "Tarkista heidän tilinsä nyt.",
+        "Tarkista heidän tilinsä nyt."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Heidän salausavaimet päivitettiin samalla, kun teimme muutoksia."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Voit poistaa tämän käyttäjän turvallisesti organisaatiostasi.",
+        "Voit poistaa nämä käyttäjät turvallisesti organisaatiostasi."
       ]
     },
     "Update font modal": {
@@ -23341,6 +23622,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkia käyttäjiä, ryhmiä, suojausasetuksia, laskutusasetuksia ja järjestelmän määrityksiä."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ]
     },
     "Users table: badge": {
@@ -23975,6 +24265,45 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Laskutuskausi"
+      ],
+      "Company": [
+        "Yritys"
+      ],
+      "Managed companies": [
+        "Hallinnoitavat yhtiöt"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Total billed seats": [
+        "Laskutettujen paikkojen kokonaismäärä"
+      ],
+      "Total cost": [
+        "Kokonaishinta"
+      ],
+      "Used / assigned seats": [
+        "Käytetyt / varatut paikat"
+      ]
+    },
+    "password_reminder": {
+      "Turn off check-ins": [
+        "Poista sisäänkirjautumiset käytöstä"
+      ],
+      "Turn off password check-ins?": [
+        "Poistetaanko salasanan syöttövaatimus käytöstä?"
+      ]
+    },
+    "scim": {
+      "New": [
+        "Uusi"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Yksityiseksi asetetut käyttäjät joutuvat hyväksymään kutsun, jotta asetusten määrittäminen voidaan saattaa loppuun. Lähetämme heille kutsun, kun olet hyväksynyt sen."
       ]
     }
   }

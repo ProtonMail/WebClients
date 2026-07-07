@@ -1901,6 +1901,24 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Approve": [
+        "Ухваліць"
+      ],
+      "Export breakdown by company as ZIP": [
+        "Размеркаванне экспарту па кампаніях у выглядзе паштовага індэкса"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Схаваць ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Pause": [
+        "Прыпыніць"
+      ],
+      "Review changes": [
+        "Разгледзець змены"
+      ],
+      "Verify password": [
+        "Спраўдзіць пароль"
       ]
     },
     "action": {
@@ -3365,6 +3383,9 @@
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
+      ],
+      "Creating accounts": [
+        "Стварэнне ўліковых запісаў"
       ]
     },
     "breadcrumb": {
@@ -4105,6 +4126,15 @@
       ],
       "Total cost": [
         "Поўны кошт"
+      ],
+      "Billing period": [
+        "Разліковы перыяд"
+      ],
+      "Company": [
+        "Кампанія"
+      ],
+      "Used / assigned seats": [
+        "Выкарыстаныя або прызначаныя ліцэнзіі"
       ]
     },
     "Condition for custom filter": {
@@ -5671,6 +5701,15 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Заўважце, што ў лістоў адпраўленых на гэты адрас (нават з іншых адрасоў ${ BRAND_NAME }), больш не будзе скразнога шыфравання."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Адбудзецца імпартаванне вашых старых лістоў і сінхранізацыя новых паведамленняў з Gmail у будучыні"
+      ],
+      "You can reconnect this address at any time.": [
+        "Вы можаце перападключыць гэты адрас у любы момант."
       ]
     },
     "description": {
@@ -7156,6 +7195,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Абараніце сваю ўласнасць.** Палепшыце свой тарыфны план, каб дадаць экстранныя кантакты."
       ]
     },
     "Empty group name": {
@@ -7399,7 +7441,7 @@
         "Няправільнае імя карыстальніка"
       ],
       "Intended recipient does not support calendar sharing": [
-        "У прызначанага атрымальніка функцыя абагулення календара не падтрымліваецца"
+        "У прызначанага атрымальніка функцыя абагульвання календара не падтрымліваецца"
       ],
       "Invalid ${ name } code": [
         "Памылковы код ${ name }"
@@ -7889,6 +7931,27 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Толькі вялікія літары і знакі пунктуацыі (інтэрвалы, злучкі і падкрэсліванні) могуць быць зменены ў гэтым адрасе"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельніка",
+        "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
+        "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
+        "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } групы",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ]
     },
     "error": {
@@ -13882,6 +13945,51 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } новы ўдзельнік дададзены праз вашага пастаўшчыка пасведчанняў і чакае разгляду.",
+        "${ pendingAdminApprovalCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingAdminApprovalCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingAdminApprovalCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду."
+      ],
+      "All data and settings are preserved": [
+        "Усе даныя і налады будуць захаваны."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
+      "Group roles assigned": [
+        "Групавыя ролі прызначаны"
+      ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Вітаю! Апішы фільтр, якія хочаш атрымаць і я напішу сцэнарый на мове Sieve. Я таксама магу падправіць тое, што ўжо ёсць у рэдактары."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Толькі вялікія літары і знакі пунктуацыі (інтэрвалы, злучкі і падкрэсліванні) могуць быць зменены ў гэтым адрасе. Дадайце новы адрас, каб скарыстацца ім."
+      ],
+      "Per seat/month": [
+        "За ліцэнзію/месяц"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Паглядзець папярэднія перыяды і экспартаваць даныя для справаздачы або выстаўлення рахунка кліенту."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Кампанія і ўсе яе ўдзельнікі неадкладна згубяць доступ."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Працэс быў перарваны для ${ pausedCount } групы. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў."
+      ],
+      "You can enable this company again at any time.": [
+        "Вы можаце ўключыць гэту кампанію зноў у любы момант."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
       ]
     },
     "info": {
@@ -14003,6 +14111,12 @@
       ],
       "Sending invite...": [
         "Адпраўка запрашэння..."
+      ],
+      "Group Owner": [
+        "Уладальнік групы"
+      ],
+      "Invited": [
+        "Запрошаны"
       ]
     },
     "Invoice state display as badge": {
@@ -15580,7 +15694,7 @@
         "Пароль"
       ],
       "Password check-ins": [
-        "Спраўджанне з дапамогай пароля"
+        "Уваход з паролем"
       ],
       "Password strength": [
         "Надзейнасць пароля"
@@ -16124,6 +16238,30 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Assigned seats": [
+        "Прызначаныя ліцэнзіі"
+      ],
+      "Billed average": [
+        "Сярэдняя аплата"
+      ],
+      "Billed seats": [
+        "Аплачаныя ліцэнзіі"
+      ],
+      "Cost": [
+        "Кошт"
+      ],
+      "Enter current password": [
+        "Увядзіце бягучы пароль"
+      ],
+      "Seats usage": [
+        "Выкарыстана ліцэнзій"
+      ],
+      "Show unread count": [
+        "Паказаць колькасць непрачытаных"
+      ],
+      "Total cost": [
+        "Поўны кошт"
       ]
     },
     "label": {
@@ -16920,7 +17058,7 @@
         "Убудаваны чат"
       ],
       "Cloud storage and file sharing": [
-        "Воблачнае сховішча і абагуленне файлаў"
+        "Воблачнае сховішча і абагульванне файлаў"
       ],
       "Data retention policies": [
         "Палітыка захоўвання даных"
@@ -16994,7 +17132,7 @@
         "100 адрасоў электроннай пошты ${ BRAND_NAME }"
       ],
       "Cloud storage and file sharing": [
-        "Воблачнае сховішча і абагуленне файлаў"
+        "Воблачнае сховішча і абагульванне файлаў"
       ],
       "Data never used for AI training": [
         "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
@@ -18679,6 +18817,15 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Удзельнічайце ў апытанні, каб удасканаліць сэрвісы ${ BRAND_NAME }"
+      ],
+      "Account email updates": [
+        "Абнаўленні ўліковага запісу па электроннай пошце"
+      ],
+      "Product email updates": [
+        "Абнаўленні электроннай пошты прадукту"
+      ],
+      "Recovery checklist": [
+        "Кантрольны спіс аднаўлення"
       ]
     },
     "Notification": {
@@ -19505,7 +19652,7 @@
     },
     "Paragraph": {
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } атрымлівае незлаежнае фінанстванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
+        "${ BRAND_NAME } атрымлівае незалежнае фінансаванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
       ]
     },
     "Participant name": {
@@ -19944,6 +20091,9 @@
       ],
       "Turn off password check-ins?": [
         "Выключыць уваход з паролем?"
+      ],
+      "Turn off check-ins": [
+        "Выключыць уваход з паролем"
       ]
     },
     "passwordless": {
@@ -20579,6 +20729,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Describe the filter you want…": [
+        "Апішыце патрэбны вам фільтр…"
+      ],
+      "Enter company name": [
+        "Увядзіце назву кампаніі"
+      ],
+      "Search for a company": [
+        "Пошук кампаніі"
       ]
     },
     "placeholder": {
@@ -21883,6 +22042,9 @@
       ],
       "Your recovery phrase is set": [
         "Ваш нумар фраза аднаўлення зададзена"
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Вы можаце скарыстацца фразай аднаўлення ў гэтым наборы для поўнага аднаўлення вашага ўліковага запісу, калі вы скінулі свой пароль. Пераканайцеся, што гэта інфармацыя захоўваецца ў надзейным месцы."
       ]
     },
     "safety_review": {
@@ -21992,7 +22154,7 @@
         "Уключыць скідання пароля з налад"
       ],
       "Enable phone recovery": [
-        "Уключыць электронную пошту для аднаўлення"
+        "Уключыць аднаўленне па тэлефону"
       ],
       "Enable QR code sign-in": [
         "Уключыць уваход па QR-кодзе"
@@ -22025,7 +22187,7 @@
         "Гэта дазволіць вам увайсці і аднавіць свае даныя, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Гэта адзіны спосаб імгненна аднавіць усе вашы даныя ў сэрвісе. Захавайце яе ў надзейным месцы і каб яна была даступна толькі вам."
       ],
       "If your recovery phone has changed, ${ updatePhoneLink }.": [
-        "${ updatePhoneLink }, калі ваш нумар тэлефона змяніўся."
+        "${ updatePhoneLink }, калі ваш нумар тэлефона для аднаўлення доступу змяніўся."
       ],
       "Later": [
         "Пазней"
@@ -22119,6 +22281,36 @@
       ],
       "Your security setup": [
         "Ваша бяспечная наладка"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "${ updateEmailLink }, калі ваша электронная пошта для аднаўлення доступу змянілася."
+      ],
+      "Send verification code": [
+        "Адправіць код спраўджання"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Сістэма адправіць вам ліст з кодам спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш адрас."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Сістэма адправіць вам SMS з кодам спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш нумар."
+      ],
+      "Update": [
+        "Абнавіць"
+      ],
+      "Update recovery email": [
+        "Абнавіць электронную пошту для аднаўлення доступу"
+      ],
+      "Update recovery phone": [
+        "Абнавіць нумар тэлефона для аднаўлення доступу"
+      ],
+      "Verify your password": [
+        "Спраўджанне вашага пароля"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Спраўджанне вашага адрасу электроннай пошты павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Спраўджанне вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
       ]
     },
     "saml: Action": {
@@ -22233,6 +22425,21 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Карыстальнікі, якіх вы задалі ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Неабходна канчатковае ўхваленне, каб даць доступ паміж усімі сэрвісамі ${ BRAND_NAME }."
+      ],
+      "New": [
+        "Новы"
+      ],
+      "Private user": [
+        "Прыватны карыстальнік"
+      ],
+      "Updated": [
+        "Абноўлена"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Карыстальнікі зададзеныя ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
       ]
     },
     "scim: Action": {
@@ -22417,6 +22624,9 @@
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Дазваляе дадаваць відэаканферэнцыю Zoom у любыя падзеі вашага календара"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Дадаць у ${ CALENDAR_APP_NAME }"
       ]
     },
     "session_recovery:available:action": {
@@ -23973,6 +24183,18 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў",
+        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } карыстальнік неактыўны.",
+        "${ n } карыстальнікі неактыўныя.",
+        "${ n } карыстальнікаў неактыўныя.",
+        "${ n } карыстальнікаў неактыўныя."
       ]
     },
     "sso: auth device state": {
@@ -25101,6 +25323,15 @@
       ],
       "Your address has been activated": [
         "Ваш адрас быў актываваны"
+      ],
+      "${ company.name } enabled": [
+        "${ company.name } уключана"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } адключаны"
+      ],
+      "Password check-ins disabled": [
+        "Уваход з паролем адключаны"
       ]
     },
     "Success message": {
@@ -27368,6 +27599,33 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add company": [
+        "Дадаць кампанію"
+      ],
+      "Approve changes": [
+        "Ухваліць змены"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Вы сапраўды хочаце адключыць гэты адрас?"
+      ],
+      "Data collection": [
+        "Збор даных"
+      ],
+      "Disable company": [
+        "Адключыць кампанію"
+      ],
+      "Group role assignment paused": [
+        "Прызначэнне групавой ролі прыпынена"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Дапамога ад ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Privacy": [
+        "Прыватнасць"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27773,6 +28031,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на суткі. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -27805,6 +28066,18 @@
       ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
+      ],
+      "Resuming role assignment": [
+        "Узнаўленне прызначэння ролі"
+      ],
+      "Role assignment paused": [
+        "Прызначэнне ролі прыпынена"
+      ],
+      "User is a group owner": [
+        "Карыстальнік з'яўляецца ўладальнікам групы"
+      ],
+      "Waiting for admin approval": [
+        "Чакаецца ўхваленне адміністратара"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27913,6 +28186,12 @@
       ],
       "Refund": [
         "Вяртанне"
+      ],
+      "Prepayment": [
+        "Перадаплата"
+      ],
+      "Test credit": [
+        "Пратэсціраваць крэдыт"
       ]
     },
     "Unlimited offer": {
@@ -28031,6 +28310,27 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Вы зможаце ${ reject } запыт, калі не захочаце працягваць."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальніка",
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў",
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў",
+        "Немагчыма ўключыць доступ адміністратара для ${ n } карыстальнікаў"
+      ],
+      "Review their account now.": [
+        "Паглядзець яго ўліковы запіс.",
+        "Паглядзець іх уліковыя запісы.",
+        "Паглядзець іх уліковыя запісы.",
+        "Паглядзець іх уліковыя запісы."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Іх ключы шыфравання былі абноўлены, пакуль уносіліся змены."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Вы можаце бяспечна выдаліць гэтага карыстальніка з вашай арганізацыі.",
+        "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
+        "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
+        "Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі."
       ]
     },
     "Update font modal": {

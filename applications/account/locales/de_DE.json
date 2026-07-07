@@ -1895,6 +1895,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Approve": [
+        "Genehmigen"
+      ],
+      "Pause": [
+        "Pausieren"
       ]
     },
     "action": {
@@ -7727,6 +7733,14 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rollenzuweisung konnte für ${ errors.length } Mitglied nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ errors.length } Mitglieder nicht abgeschlossen werden"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppe nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppen nicht abgeschlossen werden"
       ]
     },
     "error": {
@@ -13484,6 +13498,16 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf Überprüfung.",
+        "${ pendingAdminApprovalCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf Überprüfung."
+      ],
+      "Group roles assigned": [
+        "Gruppenrollen zugewiesen"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Du kannst jeweils nur eine Chat-Instanz offen haben. Bitte schließe vorherige Unterhaltungen, bevor du eine neue beginnst."
       ]
     },
     "info": {
@@ -13604,6 +13628,9 @@
       ],
       "Sending invite...": [
         "Einladung wird versendet..."
+      ],
+      "Invited": [
+        "Eingeladen"
       ]
     },
     "Invoice state display as badge": {
@@ -21282,6 +21309,9 @@
       ],
       "Your recovery phrase is set": [
         "Deine Wiederherstellungsphrase ist eingerichtet"
+      ],
+      "update it now": [
+        "jetzt aktualisieren"
       ]
     },
     "safety_review": {
@@ -21374,6 +21404,36 @@
       ],
       "Your security setup": [
         "Deine Sicherheitseinstellungen"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Falls sich deine E-Mail-Adresse für die Passwortwiederherstellung geändert hat, klicke auf ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Falls deine Wiederherstellungstelefonnummer geändert hat, klicke auf ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Bestätigungscode senden"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Um sicherzustellen, dass diese E-Mail-Adresse tatsächlich dir gehört, senden wir dir eine E-Mail mit einem Bestätigungscode."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Um sicherzustellen, dass diese Telefonnummer tatsächlich dir gehört, senden wir dir eine SMS mit einem Bestätigungscode."
+      ],
+      "Update": [
+        "Aktualisieren"
+      ],
+      "Update recovery email": [
+        "Wiederherstellungs-E-Mail aktualisieren"
+      ],
+      "Update recovery phone": [
+        "Wiederherstellungstelefonnummer aktualisieren"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Das Verifizieren deiner E-Mail-Adresse erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
     "saml: Action": {
@@ -21485,6 +21545,9 @@
         "Aktualisiert"
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
       ]
     },
@@ -23144,6 +23207,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Deine SSO-Konfiguration wird gelöscht."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen",
+        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } Benutzer ist inaktiv.",
+        "${ n } Benutzer sind inaktiv."
       ]
     },
     "sso: auth device state": {
@@ -24872,7 +24943,7 @@
         "Zusätzliches Passwort ändern"
       ],
       "Check your default mail application": [
-        "Überprüfe deine Standard-E-Mail-Anwendung"
+        "Deine Standard-E-Mail-Anwendung überprüfen"
       ],
       "Choose a provider": [
         "Anbieter wählen"
@@ -26855,6 +26926,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dein externes Konto könnte sein 24-Stunden-Bandbreitenlimit erreicht haben. ${ BRAND_NAME } wird versuchen, den Import so bald wie möglich fortzusetzen."
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP Schlüssel"
       ]
     },
     "tooltip": {
@@ -26890,6 +26964,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
+      ],
+      "Resuming role assignment": [
+        "Fortsetzung der Rollenzuweisung"
+      ],
+      "User is a group owner": [
+        "Benutzer ist Eigentümer einer Gruppe"
+      ],
+      "Waiting for admin approval": [
+        "Auf die Administratoren-Genehmigung warten"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27120,6 +27203,21 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kannst diese Anfrage ${ reject }, wenn du nicht fortfahren möchtest."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden",
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden"
+      ],
+      "Review their account now.": [
+        "Überprüfe sein Konto jetzt.",
+        "Überprüfe deren Konten jetzt."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deren Verschlüsselungsschlüssel wurden aktualisiert, während wir Änderungen vorgenommen haben."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
+        "Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
       ]
     },
     "Update font modal": {
