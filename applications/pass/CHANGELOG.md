@@ -3,6 +3,8 @@
 - Strengthened safeguards against memory dump attacks
 - Support access tokens (in settings page)
 - Update how public keys are retrieved for group vault access
+- Pass Monitor: removed the back button
+- Pass Monitor: fixed sharing display for vaults with 100+ members
 
 ### Version 1.36.1
 
