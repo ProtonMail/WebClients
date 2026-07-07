@@ -1,8 +1,8 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decodeSubscriptionCookieData } from './decoding';
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 describe('decodeSubscriptionCookieData', () => {
     describe('valid paid subscription data', () => {
@@ -34,7 +34,7 @@ describe('decodeSubscriptionCookieData', () => {
                 p: PLANS.MAIL,
                 c: CYCLE.YEARLY,
             };
-            const encoded = stringToUint8Array(JSON.stringify(rawData)).toBase64({
+            const encoded = utf8StringToUint8Array(JSON.stringify(rawData)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -86,7 +86,7 @@ describe('decodeSubscriptionCookieData', () => {
         });
 
         it('should return null for non-JSON data', () => {
-            const nonJson = stringToUint8Array('not-valid-json').toBase64({ alphabet: 'base64url', omitPadding: true });
+            const nonJson = utf8StringToUint8Array('not-valid-json').toBase64({ alphabet: 'base64url', omitPadding: true });
             const result = decodeSubscriptionCookieData(nonJson);
             expect(result).toBeNull();
         });
@@ -108,7 +108,7 @@ describe('decodeSubscriptionCookieData', () => {
     describe('invalid data structure', () => {
         it('should return null for missing type field', () => {
             const invalidData = { p: PLANS.MAIL, c: CYCLE.MONTHLY };
-            const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+            const encoded = utf8StringToUint8Array(JSON.stringify(invalidData)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -118,7 +118,7 @@ describe('decodeSubscriptionCookieData', () => {
 
         it('should return null for unknown type', () => {
             const invalidData = { t: 'unknown', p: PLANS.MAIL, c: CYCLE.MONTHLY };
-            const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+            const encoded = utf8StringToUint8Array(JSON.stringify(invalidData)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -129,7 +129,7 @@ describe('decodeSubscriptionCookieData', () => {
         it('should return null for paid data with missing fields', () => {
             // Missing plan
             const missingPlan = { t: 'p', c: CYCLE.MONTHLY };
-            const encodedMissingPlan = stringToUint8Array(JSON.stringify(missingPlan)).toBase64({
+            const encodedMissingPlan = utf8StringToUint8Array(JSON.stringify(missingPlan)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -137,7 +137,7 @@ describe('decodeSubscriptionCookieData', () => {
 
             // Missing cycle
             const missingCycle = { t: 'p', p: PLANS.MAIL };
-            const encodedMissingCycle = stringToUint8Array(JSON.stringify(missingCycle)).toBase64({
+            const encodedMissingCycle = utf8StringToUint8Array(JSON.stringify(missingCycle)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -146,7 +146,7 @@ describe('decodeSubscriptionCookieData', () => {
 
         it('should return null for free data with missing fields', () => {
             const missingHistory = { t: 'f' };
-            const encoded = stringToUint8Array(JSON.stringify(missingHistory)).toBase64({
+            const encoded = utf8StringToUint8Array(JSON.stringify(missingHistory)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -156,7 +156,7 @@ describe('decodeSubscriptionCookieData', () => {
 
         it('should return null for invalid plan names', () => {
             const invalidPlan = { t: 'p', p: 'invalid-plan', c: CYCLE.MONTHLY };
-            const encoded = stringToUint8Array(JSON.stringify(invalidPlan)).toBase64({
+            const encoded = utf8StringToUint8Array(JSON.stringify(invalidPlan)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -174,7 +174,7 @@ describe('decodeSubscriptionCookieData', () => {
             ];
 
             testCases.forEach((invalidData) => {
-                const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                const encoded = utf8StringToUint8Array(JSON.stringify(invalidData)).toBase64({
                     alphabet: 'base64url',
                     omitPadding: true,
                 });
@@ -194,7 +194,7 @@ describe('decodeSubscriptionCookieData', () => {
             ];
 
             testCases.forEach((invalidData) => {
-                const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                const encoded = utf8StringToUint8Array(JSON.stringify(invalidData)).toBase64({
                     alphabet: 'base64url',
                     omitPadding: true,
                 });
@@ -207,7 +207,7 @@ describe('decodeSubscriptionCookieData', () => {
             const testCases = ['string', 123, true, [], null];
 
             testCases.forEach((invalidData) => {
-                const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                const encoded = utf8StringToUint8Array(JSON.stringify(invalidData)).toBase64({
                     alphabet: 'base64url',
                     omitPadding: true,
                 });
@@ -226,7 +226,7 @@ describe('decodeSubscriptionCookieData', () => {
                 c: CYCLE.MONTHLY,
                 extraProp: 'should-be-ignored',
             };
-            const encodedPaid = stringToUint8Array(JSON.stringify(paidWithExtra)).toBase64({
+            const encodedPaid = utf8StringToUint8Array(JSON.stringify(paidWithExtra)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -244,7 +244,7 @@ describe('decodeSubscriptionCookieData', () => {
                 h: '1' as const,
                 extraProp: 'should-be-ignored',
             };
-            const encodedFree = stringToUint8Array(JSON.stringify(freeWithExtra)).toBase64({
+            const encodedFree = utf8StringToUint8Array(JSON.stringify(freeWithExtra)).toBase64({
                 alphabet: 'base64url',
                 omitPadding: true,
             });
@@ -261,7 +261,7 @@ describe('decodeSubscriptionCookieData', () => {
 
             validCycles.forEach((cycle) => {
                 const data = { t: 'p' as const, p: PLANS.MAIL, c: cycle };
-                const encoded = stringToUint8Array(JSON.stringify(data)).toBase64({
+                const encoded = utf8StringToUint8Array(JSON.stringify(data)).toBase64({
                     alphabet: 'base64url',
                     omitPadding: true,
                 });
@@ -280,7 +280,7 @@ describe('decodeSubscriptionCookieData', () => {
 
             validPlans.forEach((planName) => {
                 const data = { t: 'p' as const, p: planName, c: CYCLE.MONTHLY };
-                const encoded = stringToUint8Array(JSON.stringify(data)).toBase64({
+                const encoded = utf8StringToUint8Array(JSON.stringify(data)).toBase64({
                     alphabet: 'base64url',
                     omitPadding: true,
                 });

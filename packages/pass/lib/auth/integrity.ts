@@ -1,5 +1,6 @@
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { computeSHA256 } from '@protontech/crypto/subtle/hash.ts';
+
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { AuthSession, EncryptedSessionKeys } from './session';
 

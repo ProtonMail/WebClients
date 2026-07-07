@@ -1,4 +1,3 @@
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type {
     DecodedFreeCookieData,
@@ -6,6 +5,7 @@ import type {
     EncodedFreeCookieData,
     EncodedPaidCookieData,
 } from './types';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 export const encodePaidSubscriptionData = ({ planName, cycle }: Omit<DecodedPaidCookieData, 'type'>): string => {
     const data: EncodedPaidCookieData = {
@@ -14,7 +14,7 @@ export const encodePaidSubscriptionData = ({ planName, cycle }: Omit<DecodedPaid
         c: cycle,
     };
 
-    return stringToUint8Array(JSON.stringify(data)).toBase64({ alphabet: 'base64url', omitPadding: true });
+    return utf8StringToUint8Array(JSON.stringify(data)).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 export const encodeFreeSubscriptionData = ({ hasHadSubscription }: Omit<DecodedFreeCookieData, 'type'>): string => {
@@ -23,5 +23,5 @@ export const encodeFreeSubscriptionData = ({ hasHadSubscription }: Omit<DecodedF
         h: hasHadSubscription ? '1' : '0',
     };
 
-    return stringToUint8Array(JSON.stringify(data)).toBase64({ alphabet: 'base64url', omitPadding: true });
+    return utf8StringToUint8Array(JSON.stringify(data)).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
