@@ -1,8 +1,9 @@
 ### Version 1.38.0
 
-- Add "Check for update" button with update progress and restart prompt [macOS/Windows]
-- Support MSIX installer for Intune-based enterprise deployment [Windows]
-- Fix app icon on Wayland window manager [Linux]
+- Add "Check for update" button in Settings on macOS/Windows
+- Switch installer to .msix, enabling deployment via Intune for organizations on Windows
+- Pass Monitor: removed the back button
+- Pass Monitor: fixed sharing display for vaults with 100+ members
 
 ### Version 1.37.0
 
