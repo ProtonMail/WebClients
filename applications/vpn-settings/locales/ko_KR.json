@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -1207,6 +1207,24 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME }에게 도움 받기"
+      ],
+      "I don’t have my backup codes": [
+        "백업 코드를 가지고 있지 않아요."
+      ],
+      "Pause": [
+        "일시 중지"
+      ],
+      "Read the story": [
+        "이야기 읽어보기"
+      ],
+      "Switch to free plan": [
+        "무료 플랜으로 전환"
+      ],
+      "Verify password": [
+        "비밀번호 확인"
       ]
     },
     "action": {
@@ -3498,6 +3516,30 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME }이 비즈니스 데이터를 안전하게 보호하고 모두가 암호화된 이메일을 전송하도록 해드립니다."
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "자신의 도메인에서 전문 이메일 주소로 신뢰와 브랜드 인지도를 구축하세요."
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "저희의 고객지원 팀이 사람들에게 VPN 앱을 어떻게 직접 전달했는지."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 맞선 방법."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "저희가 프라이버시와 표현의 자유가 위협받을 때 현지 활동가들을 어떻게 지원했는지."
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "웹, iOS, 안드로이드, Windows, Mac 및 Linux 전용 앱으로 회원님의 팀을 언제 어디서나 안전하게 유지하세요."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "전환 없이 하나의 계정에서 여러 ${ BRAND_NAME } 주소를 관리할 수 있습니다. 별칭 및 주소 관리 도구로 모든 것을 하나의 받은 편지함에서 관리할 수 있습니다."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "지원 가이드를 이용해 여려 주소를 하나의 주 ${ BRAND_NAME } 계정으로 병합할 수 있습니다."
       ]
     },
     "description": {
@@ -5131,6 +5173,15 @@
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "500 MB Mail storage": [
+        "500 MB 저장공간"
+      ],
+      "500 MB storage": [
+        "500 MB 저장공간"
       ]
     },
     "Features": {
@@ -5242,7 +5293,7 @@
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
       ],
       "Touch your security key.": [
-        "귀하의 보안 키를 터치해 주세요."
+        "보안 키를 터치해 주세요."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"
@@ -6868,7 +6919,7 @@
         "2단계 인증 기기를 분실한 경우, 6자리 인증코드 대신 이 코드들을 사용하여 계정에 로그인 할 수 있습니다. 각 코드는 한번씩만 사용이 가능합니다."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -8477,6 +8528,15 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "비상 연락처로 등록된 사람들에게 사용자의 계정에 도움을 줄 수 있는지 확인하기 위해 연락하세요. 사용자의 계정에 대한 비상 졉근 요청 이후, **접근 대기 시간이 끝난 뒤에** 지정된 비상 연락처의 사람들이 사용자 계정의 비밀번호를 재설정할 수 있습니다."
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "${ BRAND_NAME } 비밀번호를 앚어버리지 않도록 주기적으로 현재 비밀번호 확인을 요청합니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
+      ],
+      "You do not have permission to create users.": [
+        "사용자를 생성할 권한이 없습니다"
       ]
     },
     "info": {
@@ -9475,6 +9535,24 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } 계정 보호"
+      ],
+      "Custom domain": [
+        "커스텀 도메인"
+      ],
+      "End-to-end encryption": [
+        "종단간 암호화"
+      ],
+      "Password check-ins": [
+        "비밀번호 확인 요청"
+      ],
+      "Version history": [
+        "버전 기록"
+      ],
+      "Yearly free storage bonus": [
+        "연간 무료 저장공간 보너스"
       ]
     },
     "label": {
@@ -14716,6 +14794,21 @@
     "Subtitle": {
       "View VPN session details for your organization.": [
         "내 조직의 VPN 세션 상세 사항을 확인하세요."
+      ],
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME }는 회원님의 파일과 사진을 위한 저장공간 200 GB를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
+      ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planTitle }로 모든 앱과 프리미엄 기능에 접근할 수 있습니다. 프라이버시는 기본이므로 당신의 데이터와 신원이 안전하다는 것을 인지하고 계속할 수 있습니다."
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "${ planTitle }는 모든 ${ BRAND_NAME } 앱과 프리미엄 기능에 액세스하여 작업에서 더 생산적이고 체계적인 작업에 필요한 것을 제공합니다."
+      ],
+      "${ planTitle } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planTitle }는 당신이 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ]
     },
     "Success": {
@@ -14883,6 +14976,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "정상적인 확인 전화번호를 입력했다면 수 분내로 아이디가 적혀있는 문자 메시지를 받으실 수 있습니다."
+      ],
+      "Password check-ins disabled": [
+        "비밀번호 확인 요청 비활성화됨"
+      ],
+      "Password check-ins enabled": [
+        "비밀번호 확인 요청 활성화됨"
       ]
     },
     "Success message": {
@@ -15758,7 +15857,7 @@
         "기본 비밀번호"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -16266,6 +16365,27 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Get help with an issue": [
+        "문제에 대한 도움 받기"
+      ],
+      "Helping activists in Hong Kong": [
+        "홍콩의 활동가 지원"
+      ],
+      "Make your business stand out": [
+        "내 비즈니스가 두드러지게 하세요"
+      ],
+      "Our fight against censorship in Russia": [
+        "러시아의 검열에 맞선 저희의 싸움"
+      ],
+      "Stay secure and connected anywhere": [
+        "언제 어디서나 안전하게 연결하세요"
+      ],
+      "Support your compliance objectives": [
+        "회원님의 비즈니스의 규정 목표 달성을 도와드립니다"
+      ],
+      "Use backup recovery code": [
+        "백업 복구 코드 사용"
       ]
     },
     "Title for payment methods table": {
@@ -16453,7 +16573,7 @@
         "이 이메일 주소는 사용자의 ${ BRAND_NAME } 계정에 로그인하는 데에만 사용할 수 있습니다."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
-        "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
+        "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여집니다."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
@@ -16478,6 +16598,9 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM 로그인이 작동합니다."
+      ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "${ MAIL_APP_NAME }에서의 커스텀 이메일 도메인 및 무제한 hide-my-email 포함, ${ VPN_SHORT_APP_NAME }에서의 120여개국 내에 있는 서버에 접근, ${ PASS_SHORT_APP_NAME }애서의 내장형 2단계 인증기 및 안전한 공유, 그 외에도 수많은 혜택까지."
       ]
     },
     "tooltip": {
@@ -17041,7 +17164,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to remove your notification email?": [
         "알림 이메일을 정말 삭제하시겠어요?"
@@ -17113,6 +17236,45 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "인증을 성공하면, TXT 레코드를 삭제하지 마십시오. 등록된 도메인을 계속 소유하고 있는지에 대한 확인이 필요합니다."
+      ]
+    },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "사용량이 한도 내로 복귀하면 접근 권한은 복구됩니다."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "무료 플랜 제한을 초과하면, 다음이 제한됩니다:"
+      ],
+      "Upload any new files": [
+        "새로운 파일 업로드"
+      ],
+      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
+        "구독이 ${ endDate }에 종료되면 무료 플랜으로 자동으로 전환됩니다. 만약 무료 플랜의 한도량을 초과하여 사용하는 경우, 일부 기능의 사용이 제한될 수 있습니다."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "계속 취소하기"
+      ],
+      "Keep current plan": [
+        "현재 플랜 유지"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "대다수 문제는 지원 가이드를 통해 빠르게 해결할 수 있습니다. 추가적인 지원이 필요한 경우, 지원 팀에 언제든 문의해 주세요."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "비밀번호 분실시, 엄호화된 데이터에 대한 접근 권한을 상실할 수 있습니다."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "데이터 복호화의 열쇠가 되는 비밀번호이므로, 반드시 기억하고 있거나 안전한 곳에 보관해야 합니다."
+      ],
+      "Turn off check-ins": [
+        "비밀번호 확인 요청 끄기"
+      ],
+      "Turn off password check-ins?": [
+        "비밀번호 확인 요청을 비활성화하시겠습니까?"
       ]
     }
   }

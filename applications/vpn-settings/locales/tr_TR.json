@@ -1273,6 +1273,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Approve": [
+        "Onayla"
+      ],
+      "Pause": [
+        "Duraklat"
       ]
     },
     "action": {
@@ -4549,7 +4555,7 @@
         "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
-        "Bu adres için yalnızca büyük harf kullanımı ve noktalama işaretleri (nokta, kısa çizgi ve alt çizgi) değiştirilebilir."
+        "Bu adres için yalnızca büyük harf ve noktalama işaretleri (nokta, tire ve alt çizgi) değişimi yapılabilir."
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
@@ -4872,6 +4878,14 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "${ errors.length } üyenin rol ataması tamamlanamadı",
+        "${ errors.length } üyenin rol ataması tamamlanamadı"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "${ failedGroupCount } grubun rol ataması tamamlanamadı",
+        "${ failedGroupCount } grubun rol ataması tamamlanamadı"
       ]
     },
     "error": {
@@ -7785,7 +7799,7 @@
         "Hesabınıza erişme izni verildiğinde **Kurtarma** ayarlarınıza erişebilir ve sizin adınıza **${ ACCOUNT_APP_NAME } parolanızı değiştirebilir.**"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
-        "Burada yalnızca büyük harf kullanımı ve noktalama işaretleri (nokta, tire ve alt çizgi) değiştirilebilir. Farklı bir adres kullanmak istiyorsanız yeni bir adres ekleyin."
+        "Burada yalnızca büyük harf ve noktalama işaretleri (nokta, tire ve alt çizgi) değişimi yapılabilir. Farklı bir adres kullanmak istiyorsanız yeni bir adres ekleyin."
       ],
       "Open source": [
         "Açık kaynaklı"
@@ -8316,8 +8330,8 @@
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
       "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "${ pausedCount } grup için işlem kesintiye uğradı. Rol atamaya devam etmek için “Devam Et” düğmesine tıklayın.",
-        "${ pausedCount } grup için işlem kesintiye uğradı. Rol atamaya devam etmek için “Devam Et” düğmesine tıklayın."
+        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın.",
+        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Referans kredisi, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa verilebilir."
@@ -9116,6 +9130,13 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } yeni üye kimlik sağlayıcınız aracılığıyla eklendi ve incelenmeyi bekliyor.",
+        "${ pendingAdminApprovalCount } yeni üye kimlik sağlayıcınız aracılığıyla eklendi ve incelenmeyi bekliyor."
+      ],
+      "Group roles assigned": [
+        "Grup rolleri atandı"
       ]
     },
     "info": {
@@ -9216,6 +9237,9 @@
       ],
       "Sending invite...": [
         "Davet gönderiliyor..."
+      ],
+      "Invited": [
+        "Davet edildi"
       ]
     },
     "Invoice state display as badge": {
@@ -14153,6 +14177,9 @@
       ],
       "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Korunan olarak ayarladığınız kullanıcıların kurulumlarını tamamlamaları için daveti kabul etmeleri gerekir. Onayladığınızda onlara davet gönderilecek."
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Korunan olarak ayarlanan kullanıcıların kurulumlarını tamamlamaları için daveti kabul etmeleri gerekir. Onayladığınızda onlara davet gönderilecek."
       ]
     },
     "scim: Action": {
@@ -15186,6 +15213,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } kullanıcı kimlik hizmeti sağlayıcınız üzerinden kuruluşunuza katıldı",
+        "${ n } kullanıcı kimlik hizmeti sağlayıcınız üzerinden kuruluşunuza katıldı"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } kullanıcı etkisizleştirilmiş.",
+        "${ n } kullanıcı etkisizleştirilmiş."
       ]
     },
     "sso: auth device state": {
@@ -16917,7 +16952,7 @@
         "Hediye kodu"
       ],
       "Group role assignment paused": [
-        "Grup rol ataması askıya alındı"
+        "Grup rol ataması duraklatıldı"
       ],
       "Groups": [
         "Gruplar"
@@ -17814,7 +17849,7 @@
         "Grup üyeliği duraklatılmış"
       ],
       "Role assignment paused": [
-        "Rol ataması askıya alındı"
+        "Rol ataması duraklatıldı"
       ],
       "Sending member invitation": [
         "Üye daveti gönderiliyor"
@@ -17830,6 +17865,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
+      ],
+      "Resuming role assignment": [
+        "Rol ataması sürdürülüyor"
+      ],
+      "User is a group owner": [
+        "Kullanıcı grubun sahibi"
+      ],
+      "Waiting for admin approval": [
+        "Yönetici onayı bekleniyor"
       ]
     },
     "Tor out of date": {
@@ -17994,6 +18038,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "İlerlemek için, kullanıcının verilerine erişme izni isteğinde bulunmalı ya da parolasını sıfırlamalısınız."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n } kullanıcıya yönetici izni verilemedi",
+        "${ n } kullanıcıya yönetici izni verilemedi"
+      ],
+      "Review their account now.": [
+        "Hesabını inceleyin.",
+        "Hesaplarını inceleyin."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Değişiklikler yapılırken şifreleme anahtarı güncellendi."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Bu kullanıcıyı kuruluşunuzdan güvenle kaldırabilirsiniz.",
+        "Bu kullanıcıları kuruluşunuzdan güvenle kaldırabilirsiniz."
       ]
     },
     "Upsell": {

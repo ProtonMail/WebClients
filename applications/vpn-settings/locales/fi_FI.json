@@ -1234,6 +1234,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Approve": [
+        "Hyväksy"
+      ],
+      "Pause": [
+        "Pysäytä"
       ]
     },
     "action": {
@@ -1889,6 +1895,9 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "Size": [
+        "Koko"
       ]
     },
     "Browser": {
@@ -3494,6 +3503,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Huomaa, että tähän osoitteeseen lähetettyjä sähköposteja, edes muista ${ BRAND_NAME } -osoitteista, ei enää salata päästä päähän."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu ja tili poistettu käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "You can reconnect this address at any time.": [
+        "Voit yhdistää tämän osoitteen uudelleen milloin tahansa."
       ]
     },
     "description": {
@@ -4517,6 +4538,17 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Tälle osoitteelle voidaan muuttaa ainoastaan kirjainten kokoa ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja)"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta",
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta",
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta"
       ]
     },
     "error": {
@@ -5212,6 +5244,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Suojausavaimesi on valmis käyttöön."
+      ],
+      "Insert your security key into your device.": [
+        "Aseta turva-avain laitteeseesi."
       ]
     },
     "fido2: Label": {
@@ -5409,6 +5444,12 @@
       ],
       "Roles and permissions": [
         "Roolit ja oikeudet"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ]
     },
     "Header": {
@@ -8454,6 +8495,22 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME }:n Business paketit tarjoavat tiimillesi kaikki yhteistyötyökalut, joita se tarvitsee voidakseen työskennellä tuottavasti ja järjestelmällisesti, samalla kun ne turvaavat yrityksesi."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } uusi jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
+        "${ pendingAdminApprovalCount } uutta jäsenta on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Group roles assigned": [
+        "Ryhmäroolit määritetty"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tässä voidaan muuttaa vain isojen kirjainten käyttöä ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja). Jos haluat käyttää eri osoitetta, lisää uusi osoite."
       ]
     },
     "info": {
@@ -8549,6 +8606,9 @@
       ],
       "Sending invite...": [
         "Lähetetään kutsua..."
+      ],
+      "Invited": [
+        "Kutsuttu"
       ]
     },
     "Invoice state display as badge": {
@@ -9457,6 +9517,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Password check-ins": [
+        "Salasanalla kirjautumiset"
       ]
     },
     "label": {
@@ -14029,6 +14092,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajasi kautta",
+        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajasi kautta"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } käyttäjä on passiivinen.",
+        "${ n } käyttäjää on passiivisia."
       ]
     },
     "sso: auth device state": {
@@ -14818,6 +14889,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Saat käyttäjätunnuksesi tekstiviestitse minuutin kuluessa, jos syötit kelvollisen palautuspuhelinnumeron."
+      ],
+      "Password check-ins disabled": [
+        "Salasanalla tehdyt kirjautumiset poistettu käytöstä"
+      ],
+      "Password check-ins enabled": [
+        "Salasanalla kirjautuminen on käytössä"
       ]
     },
     "Success message": {
@@ -16166,6 +16243,12 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Haluatko varmasti katkaista yhteyden ja poistaa tämän osoitteen käytöstä?"
+      ],
+      "Plans": [
+        "Tilaukset"
       ]
     },
     "Title for payment methods table": {
@@ -16404,6 +16487,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
+      ],
+      "Resuming role assignment": [
+        "Roolin määrityksen jatkaminen"
+      ],
+      "User is a group owner": [
+        "Käyttäjä on ryhmän omistaja"
+      ],
+      "Waiting for admin approval": [
+        "Odotetaan järjestelmänvalvojan hyväksyntää"
       ]
     },
     "Tor out of date": {
@@ -16479,6 +16571,12 @@
       ],
       "Refund": [
         "Hyvitys"
+      ],
+      "Prepayment": [
+        "Ennakkomaksu"
+      ],
+      "Test credit": [
+        "Testikrediitti"
       ]
     },
     "Unlimited offer": {
@@ -16562,6 +16660,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Jatkaaksesi sinun on pyydettävä käyttäjältä lupa käyttää heidän tietojaan tai nollata heidän salasanansa."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia",
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia"
+      ],
+      "Review their account now.": [
+        "Tarkista heidän tilinsä nyt.",
+        "Tarkista heidän tilinsä nyt."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Heidän salausavaimet päivitettiin samalla, kun teimme muutoksia."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Voit poistaa tämän käyttäjän turvallisesti organisaatiostasi.",
+        "Voit poistaa nämä käyttäjät turvallisesti organisaatiostasi."
       ]
     },
     "Upsell": {
@@ -16681,6 +16794,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkia käyttäjiä, ryhmiä, suojausasetuksia, laskutusasetuksia ja järjestelmän määrityksiä."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ]
     },
     "Users table: badge": {
@@ -16991,6 +17113,22 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Älä poista tätä TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sen avulla varmistetaan verkkotunnuksen kuuluvan sinulle myös jatkossa."
+      ]
+    },
+    "password_reminder": {
+      "Turn off check-ins": [
+        "Poista sisäänkirjautumiset käytöstä"
+      ],
+      "Turn off password check-ins?": [
+        "Poistetaanko salasanan syöttövaatimus käytöstä?"
+      ]
+    },
+    "scim": {
+      "New": [
+        "Uusi"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Yksityiseksi asetetut käyttäjät joutuvat hyväksymään kutsun, jotta asetusten määrittäminen voidaan saattaa loppuun. Lähetämme heille kutsun, kun olet hyväksynyt sen."
       ]
     }
   }

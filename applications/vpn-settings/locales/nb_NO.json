@@ -1267,6 +1267,18 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Approve": [
+        "Godkjenn"
+      ],
+      "Pause": [
+        "Pause"
+      ],
+      "Review changes": [
+        "Se over endringer"
+      ],
+      "Verify password": [
+        "Bekreft passord"
       ]
     },
     "action": {
@@ -1276,7 +1288,7 @@
     },
     "Action (Scribe)": {
       "add more seats": [
-        "legg til flere lisenser"
+        "legg til flere seter"
       ]
     },
     "Action for user session": {
@@ -1321,7 +1333,7 @@
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME }-lisenser"
+        "${ LUMO_APP_NAME } seter"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1330,7 +1342,7 @@
         "${ price } per domene"
       ],
       "${ price } per seat": [
-        "${ price } per lisens"
+        "${ price } per sete"
       ],
       "${ price } per user": [
         "${ price } per bruker"
@@ -1344,16 +1356,16 @@
         "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
+        "${ seats } ${ LUMO_APP_NAME } sete",
+        "${ seats } ${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME }-lisens",
-        "${ seats } ${ MEET_APP_NAME }-lisenser"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
+        "${ seats } skriveassistentsete",
+        "${ seats } skriveassistentseter"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1375,7 +1387,10 @@
         "Skriveassistent"
       ],
       "Writing assistant seats": [
-        "Skriveassistentlisenser"
+        "Skriveassistentseter"
+      ],
+      "Add-on": [
+        "Tillegg"
       ]
     },
     "Address action": {
@@ -1631,10 +1646,10 @@
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-seter i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
@@ -2050,7 +2065,7 @@
         "Ikke aktivert"
       ],
       "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige lisenser"
+        "Organisasjonen har ikke nok ledige seter"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
@@ -3757,6 +3772,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Merk at e-poster sendt til denne adressen, selv fra andre ${ BRAND_NAME }-adresser, ikke lenger vil bli ende-til-ende-kryptert."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Når du er frakoblet og deaktivert, vil du ikke lenger kunne sende eller motta e-post som ${ address.Email } i ${ BRAND_NAME }. E-poster som sendes til denne adressen vil fortsatt ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Når du er frakoblet, vil du ikke lenger kunne sende eller motta e-post som ${ address.Email } i ${ BRAND_NAME }. E-poster som sendes til denne adressen vil fortsatt ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer de gamle e-postene dine og synkroniserer nye meldinger fra Gmail fremover."
+      ],
+      "You can reconnect this address at any time.": [
+        "Du kan når som helst koble til denne adressen på nytt."
       ]
     },
     "description": {
@@ -4831,6 +4861,23 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "No drive found to import": [
+        "Ingen disker å importere funnet"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Kun store bokstaver og tegnsetting (punktum, bindestreker og understrekingstegn) kan endres for denne adressen."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlem",
+        "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlemmer"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rolletildelingen kunne ikke fullføres for ${ failedGroupCount } gruppe",
+        "Rolletildelingen kunne ikke fullføres for ${ failedGroupCount } grupper"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet feil, vi kan ikke importere filene"
       ]
     },
     "error": {
@@ -5571,6 +5618,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Tofaktorautentiseringsnøkkelen er klar til bruk."
+      ],
+      "Insert your security key into your device.": [
+        "Sett inn sikkerhetsnøkkelen i enheten."
       ]
     },
     "fido2: Label": {
@@ -5777,6 +5827,12 @@
       ],
       "Roles and permissions": [
         "Roller og rettigheter"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brukere og grupper, tildel roller og tildel lisenser til medlemmer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Administrerer sikkerhetsinnstillinger og kan se alle hendelseslogger og brukerdetaljer."
       ]
     },
     "Header": {
@@ -6330,7 +6386,7 @@
         "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -9039,6 +9095,32 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business gir teamet ditt alle samarbeidsverktøyene de trenger for å være produktive og organiserte i arbeidet sitt, samtidig som det beskytter virksomheten din."
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } bruker må godta invitasjonen for å begynne å motta gruppe-e-poster.",
+        "${ invitedMemberCount } brukere må godta invitasjonen for å begynne å motta gruppe-e-poster."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
+      ],
+      "Group roles assigned": [
+        "Grupperoller tildelt"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Ny gruppe opprettet via identitetsleverandøren din og venter på vurdering."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Bare store bokstaver og tegnsetting (punktum, bindestreker og understrek) kan endres her. Hvis du vil bruke en annen adresse, må du legge til en ny."
+      ],
+      "Synced from identity provider": [
+        "Synkronisert fra identitetsleverandør"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "Prosessen ble avbrutt for ${ pausedCount } gruppe. Klikk på Fortsett for å fortsette tildelingen av roller.",
+        "Prosessen ble avbrutt for ${ pausedCount } grupper. Klikk på Fortsett for å fortsette tildelingen av roller."
       ]
     },
     "info": {
@@ -9136,6 +9218,12 @@
       ],
       "Sending invite...": [
         "Sender invitasjon..."
+      ],
+      "Group Owner": [
+        "Gruppeeier"
+      ],
+      "Invited": [
+        "Invitert"
       ]
     },
     "Invoice state display as badge": {
@@ -9524,7 +9612,7 @@
         "Ikke vis dette igjen"
       ],
       "Drive": [
-        "Stasjon"
+        "Drive"
       ],
       "e.g. example.com": [
         "f.eks. eksempel.com"
@@ -10153,6 +10241,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Import your emails": [
+        "Importer e-postene dine"
+      ],
+      "Password check-ins": [
+        "Passordverifisering"
       ]
     },
     "label": {
@@ -10682,11 +10776,11 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME }-tilgang",
-        "${ seats } ${ MEET_APP_NAME }-tilganger"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ]
     },
     "meet_2025: Feature": {
@@ -10776,11 +10870,11 @@
     },
     "meet_2025: Info": {
       "${ seats } seat included": [
-        "${ seats } tilgang inkludert",
-        "${ seats } tilganger inkludert"
+        "${ seats } sete inkludert",
+        "${ seats } seter inkludert"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seter i prøveperioden."
       ]
     },
     "Meet_launch": {
@@ -10836,6 +10930,9 @@
       ],
       "Sign in": [
         "Logg på"
+      ],
+      "Change backup password": [
+        "Endre reservepassordet"
       ]
     },
     "Message": {
@@ -12099,6 +12196,18 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Delta i undersøkelser for å forbedre ${ BRAND_NAME }-tjenester"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1–4 e-poster per år. Påminnelser om å holde gjenopprettingsmetodene dine oppdatert."
+      ],
+      "Account email updates": [
+        "Oppdateringer om kontoens e-post"
+      ],
+      "Product email updates": [
+        "Produktoppdateringer på e-post"
+      ],
+      "Recovery checklist": [
+        "Sjekkliste for gjenoppretting"
       ]
     },
     "Notification": {
@@ -12732,6 +12841,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
+      ],
+      "Turn off check-ins": [
+        "Deaktiver sjekker"
+      ],
+      "Turn off password check-ins?": [
+        "Slå av passordbekreftelser?"
       ]
     },
     "passwordless": {
@@ -13876,6 +13991,9 @@
       ],
       "User Admin": [
         "Brukeradministrator"
+      ],
+      "Owner": [
+        "Eier"
       ]
     },
     "Role description": {
@@ -15016,6 +15134,14 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
+      ],
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } bruker har blitt med i organisasjonen gjennom identitetsleverandøren din",
+        "${ n } brukere har blitt med i organisasjonen gjennom identitetsleverandøren din"
+      ],
+      "${ n } user is inactive.": [
+        "${ n } bruker er inaktiv.",
+        "${ n } brukere er inaktive."
       ]
     },
     "sso: auth device state": {
@@ -15224,6 +15350,9 @@
       "VPN connection for ${ n } device per user": [
         "VPN-tilkobling for ${ n } enhet per bruker",
         "VPN-tilkobling for ${ n } enheter per bruker"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
       ]
     },
     "Subscription change warning": {
@@ -15859,6 +15988,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
+      ],
+      "Password check-ins disabled": [
+        "Passordbekreftelse deaktivert"
+      ],
+      "Password check-ins enabled": [
+        "Passordbekreftelse aktivert"
       ]
     },
     "Success message": {
@@ -17372,6 +17507,18 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Approve changes": [
+        "Godta endringer"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Er du sikker på at du vil koble fra og deaktivere denne adressen?"
+      ],
+      "Group role assignment paused": [
+        "Tildeling av grupperoller satt på pause"
       ]
     },
     "Title for payment methods table": {
@@ -17625,6 +17772,18 @@
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"
+      ],
+      "Resuming role assignment": [
+        "Gjenopptar rolletildeling"
+      ],
+      "Role assignment paused": [
+        "Rolletildeling satt på pause"
+      ],
+      "User is a group owner": [
+        "Brukeren er gruppeeier"
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkjenning fra administratoren"
       ]
     },
     "Tor out of date": {
@@ -17700,6 +17859,12 @@
       ],
       "Refund": [
         "Refusjon"
+      ],
+      "Prepayment": [
+        "Forskuddsbetaling"
+      ],
+      "Test credit": [
+        "Testkreditt"
       ]
     },
     "Unlimited offer": {
@@ -17783,6 +17948,21 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "For å fortsette må du be om brukerens tillatelse til å få tilgang til dataene deres eller tilbakestille passordet."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "Kunne ikke aktivere administratortilgang for ${ n } bruker",
+        "Kunne ikke aktivere administratortilgang for ${ n } brukere"
+      ],
+      "Review their account now.": [
+        "Gjennomgå kontoen deres nå",
+        "Gjennomgå kontoene deres nå."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Krypteringsnøklene deres ble oppdatert mens vi gjorde endringer."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan trygt fjerne denne brukeren fra organisasjonen din.",
+        "Du kan trygt fjerne disse brukerene fra organisasjonen din."
       ]
     },
     "Upsell": {
@@ -17929,6 +18109,18 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brukere og grupper, tildel roller og tildel lisenser til medlemmer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Administrerer sikkerhetsinnstillinger og kan se alle hendelseslogger og brukerdetaljer."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
     },
     "Users table: badge": {
@@ -18263,6 +18455,82 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Etter vellykket verifisering, ikke fjern denne TXT-posten da den trengs for å bekrefte at du fortsetter å eie domenet."
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nytt medlem",
+        "${ memberCount } nye medlemmer"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } gruppe synkronisert",
+        "${ numberOfPendingGroups } grupper synkronisert"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } bruker synkronisert",
+        "${ numberOfPendingUsers } brukere synkronisert"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } gruppe",
+        "${ pendingGroupsCount } grupper"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } gruppe synkronisert",
+        "${ pendingGroupsCount } grupper synkronisert"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } bruker",
+        "${ pendingUsersCount } brukere"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } bruker synkronisert.",
+        "${ pendingUsersCount } brukere synkronisert."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } og ${ groupsText } synkronisert."
+      ],
+      "Approve changes from your identity provider": [
+        "Godkjenn endringer fra identitetsleverandøren din"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Endelig godkjenning kreves for å gi tilgang til alle ${ BRAND_NAME }-tjenestene."
+      ],
+      "From your identity provider": [
+        "Fra identitetsleverandøren din"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Når de er godkjent, kan de få tilgang til alle ${ BRAND_NAME }-tjenestene og dele sikkert."
+      ],
+      "Private user": [
+        "Privat bruker"
+      ],
+      "Review users and groups before finishing setup": [
+        "Se gjennom brukere og grupper før du fullfører oppsettet"
+      ],
+      "Updated": [
+        "Oppdatert"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brukere som er satt til privat må godta invitasjonen for å fullføre oppsettet. Vi sender dem en invitasjon når du har godkjent."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "...venter"
+      ],
+      "completed": [
+        "fullført"
+      ],
+      "finalizing": [
+        "fullfører"
       ]
     }
   }

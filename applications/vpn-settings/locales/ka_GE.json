@@ -1192,6 +1192,12 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Approve": [
+        "დადასტურება"
+      ],
+      "Pause": [
+        "შეჩერება"
       ]
     },
     "action": {
@@ -8465,6 +8471,9 @@
       ],
       "Sending invite...": [
         "მოსაწვევის გაგზავნა..."
+      ],
+      "Invited": [
+        "მოწვეულია"
       ]
     },
     "Invoice state display as badge": {
@@ -12997,6 +13006,9 @@
     "scim": {
       "New": [
         "ახალი"
+      ],
+      "Updated": [
+        "განახლებულია"
       ]
     },
     "scim: Action": {
@@ -16460,6 +16472,9 @@
       ],
       "Refund": [
         "ანაზღაურება"
+      ],
+      "Prepayment": [
+        "წინასწარი გადახდა"
       ]
     },
     "Unlimited offer": {
@@ -16975,6 +16990,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
+      ]
+    },
+    "Status": {
+      "completed": [
+        "დასრულებულია"
+      ],
+      "finalizing": [
+        "დასრულება"
       ]
     }
   }
