@@ -11,7 +11,6 @@ import type {
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
@@ -196,13 +195,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     }
     if (format === 'csv') {
       const csv = createCSVFromSheetData(state.sheetData[state.activeSheetId], state.sharedStrings)
-      return stringToUint8Array(csv)
+      return new TextEncoder().encode(csv)
     }
     if (format === 'tsv') {
       const tsv = createCSVFromSheetData(state.sheetData[state.activeSheetId], state.sharedStrings, {
         delimiter: '\t',
       })
-      return stringToUint8Array(tsv)
+      return new TextEncoder().encode(tsv)
     }
     throw new Error(`Spreadsheet cannot be exported to format ${format}`)
   }
