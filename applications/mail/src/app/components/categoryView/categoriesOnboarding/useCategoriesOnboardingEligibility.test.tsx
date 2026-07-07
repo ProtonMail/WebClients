@@ -12,6 +12,7 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
+import { useCategoriesView } from '../useCategoriesView';
 import { AudienceType } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
@@ -26,6 +27,9 @@ const mockUseWelcomeFlags = useWelcomeFlags as jest.Mock;
 
 jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
 const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
+
+jest.mock('../useCategoriesView');
+const mockUseCategoriesView = useCategoriesView as jest.Mock;
 
 const janFirst = 1735693200;
 const febFirstMS = 1738371600;
@@ -67,6 +71,15 @@ describe('useCategoriesOnboardingEligibility', () => {
             { PlanName: PLANS.MAIL_PRO, Settings: { MailCategoryViewEnabled: true } as OrganizationSettings },
         ]);
         mockUseWelcomeFlags.mockReturnValue({ welcomeFlags: { isWelcomeFlow: false } });
+
+        mockUseCategoriesView.mockReturnValue({
+            categoryViewAccess: true,
+            hasAccessToCategoryView: true,
+        });
+    });
+
+    afterAll(() => {
+        jest.clearAllMocks();
     });
 
     describe('b2b users', () => {
@@ -88,6 +101,36 @@ describe('useCategoriesOnboardingEligibility', () => {
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
                     flagValue: 0,
+                });
+            });
+
+            it('users whose organization enabled categories but without flag access are not eligible', () => {
+                mockUseUser([{ CreateTime: janFirst }]);
+                mockGetLocationCount(10);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseCategoriesView.mockReturnValue({
+                    categoryViewAccess: false,
+                    hasAccessToCategoryView: false,
+                });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: 0,
+                        b2bOnboardingFlag: 0,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: false,
+                    audienceType: AudienceType.B2B,
+                    flagValue: 0,
+                });
+
+                // Restore flag access for the remaining tests
+                mockUseCategoriesView.mockReturnValue({
+                    categoryViewAccess: true,
+                    hasAccessToCategoryView: true,
                 });
             });
 
@@ -276,6 +319,29 @@ describe('useCategoriesOnboardingEligibility', () => {
                 const { result } = renderHook(() => useCategoriesOnboardingEligibility());
                 expect(result.current).toStrictEqual({
                     isUserEligible: true,
+                    audienceType: AudienceType.B2C,
+                    flagValue: parseInt('11110', 2),
+                });
+            });
+
+            it("users who didn't see whole onboarding but with flag off should not be eligible", () => {
+                mockUseUser([{ CreateTime: janFirst }]);
+                mockUseCategoriesView.mockReturnValue({
+                    categoryViewAccess: false,
+                });
+                mockGetLocationCount(10);
+                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
+                mockUseFeature.mockImplementation((code) => {
+                    return getFeatureValues(code, {
+                        b2cOnboardingFlag: parseInt('11110', 2),
+                        b2bOnboardingFlag: 0,
+                        accountDateThreshold: febFirstMS,
+                    });
+                });
+
+                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
+                expect(result.current).toStrictEqual({
+                    isUserEligible: false,
                     audienceType: AudienceType.B2C,
                     flagValue: parseInt('11110', 2),
                 });
