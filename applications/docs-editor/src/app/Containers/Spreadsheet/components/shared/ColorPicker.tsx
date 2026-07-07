@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms/Button/Button'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
 import type { Color, ColorIndex } from '@rowsncolumns/spreadsheet'
