@@ -1,7 +1,9 @@
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import * as browser from '@proton/shared/lib/helpers/browser';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { PassCryptoError } from './errors';
 import {
@@ -11,7 +13,6 @@ import {
     extractPRFBuffer,
     isPRFSupported,
 } from './prf';
-import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 jest.mock('@proton/shared/lib/helpers/browser');
 const isChromiumBased = browser.isChromiumBased as jest.Mock;
@@ -100,7 +101,7 @@ describe('PRF utilities', () => {
         test('should derive key via HKDF pass', async () => {
             const credential = createMockCredential({ results: { first: TEST_PRF_BYTES } });
             const result = await deriveKeyFromPRFCredential(credential, true);
-            expect(pipe(stringToUint8Array, bytes => bytes.toBase64())(result)).toEqual(TEST_HKDF_B64);
+            expect(pipe(binaryStringToUint8Array, (bytes) => bytes.toBase64())(result)).toEqual(TEST_HKDF_B64);
         });
 
         test('should return valid crypto key derived from HKDF pass', async () => {

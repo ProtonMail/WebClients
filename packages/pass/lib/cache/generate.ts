@@ -5,7 +5,7 @@ import type { State } from '@proton/pass/store/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { serialize } from '@proton/pass/utils/object/serialize';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { CACHE_SALT_LENGTH, encryptOfflineCacheKey, getCacheEncryptionKey } from './crypto';
 
@@ -25,7 +25,7 @@ export const generateCache =
         const cacheKey = await getCacheEncryptionKey(keyPassword, cacheSalt, sessionLockToken);
 
         const encryptedCacheKey = offlineKD
-            ? await encryptOfflineCacheKey(cacheKey, stringToUint8Array(offlineKD))
+            ? await encryptOfflineCacheKey(cacheKey, binaryStringToUint8Array(offlineKD))
             : undefined;
 
         const encoder = new TextEncoder();
@@ -35,12 +35,16 @@ export const generateCache =
             encoder.encode(cache),
             PassEncryptionTag.Cache
         );
-        const encryptedSnapshot = await encryptData(cacheKey, stringToUint8Array(snapshot), PassEncryptionTag.Cache);
+        const encryptedSnapshot = await encryptData(
+            cacheKey,
+            binaryStringToUint8Array(snapshot),
+            PassEncryptionTag.Cache
+        );
 
         return {
-            salt: uint8ArrayToString(cacheSalt),
-            state: uint8ArrayToString(encryptedState),
-            snapshot: uint8ArrayToString(encryptedSnapshot),
-            encryptedCacheKey: encryptedCacheKey ? uint8ArrayToString(encryptedCacheKey) : undefined,
+            salt: uint8ArrayToBinaryString(cacheSalt),
+            state: uint8ArrayToBinaryString(encryptedState),
+            snapshot: uint8ArrayToBinaryString(encryptedSnapshot),
+            encryptedCacheKey: encryptedCacheKey ? uint8ArrayToBinaryString(encryptedCacheKey) : undefined,
         };
     };

@@ -1,7 +1,7 @@
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { systemPreferences } from 'electron';
 
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as macBiometrics } from '../../../native';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
@@ -27,7 +27,7 @@ const factory: BiometricsFactory = () => {
 
             /* Version 2+: Secrets are stored as raw byte arrays without
              * any conversions to and from strings */
-            return uint8ArrayToString(secretBytes);
+            return uint8ArrayToBinaryString(secretBytes);
         },
         setSecret: (key, secret) => macBiometrics.setSecret(key, secret),
         deleteSecret: (key) => macBiometrics.deleteSecret(key),

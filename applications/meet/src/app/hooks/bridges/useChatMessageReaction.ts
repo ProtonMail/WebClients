@@ -10,7 +10,7 @@ import {
     selectChatReactionId,
     toggleChatMessageReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -93,7 +93,7 @@ export const useChatMessageReaction = () => {
 
         const envelope = {
             id: `${identity}-${Date.now()}`,
-            message: uint8ArrayToString(encryptedMessage),
+            message: uint8ArrayToBinaryString(encryptedMessage),
             timestamp: Date.now(),
             type: PublishableDataTypes.ChatMessageReaction,
             version: 1,
