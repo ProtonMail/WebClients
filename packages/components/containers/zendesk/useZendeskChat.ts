@@ -18,10 +18,12 @@ export const useZendeskChat = (user: UserModel) => {
         const hasChatQueryParamFromSupport = !!searchParams.get('chat');
         const activeZendeskChat = hasActiveZendeskChat();
 
-        searchParams.delete('chat');
-        history.replace({
-            search: searchParams.toString(),
-        });
+        if (hasChatQueryParamFromSupport) {
+            searchParams.delete('chat');
+            history.replace({
+                search: searchParams.toString(),
+            });
+        }
         if (canAccessZendeskChat && (hasChatQueryParamFromSupport || activeZendeskChat)) {
             setShowZendeskChat({ autoLaunch: hasChatQueryParamFromSupport, render: true });
         }
