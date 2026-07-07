@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PLAN_NAMES } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -15,6 +14,7 @@ import { B2BStoryCards } from '../components/B2BStoryCards';
 import { B2CStoryCards } from '../components/B2CStoryCards';
 import { ComparisonTable } from '../components/ComparisonTable';
 import { getTemporaryNeedConfig } from '../config/temporaryNeedConfig';
+import { getPlanDisplayName } from '../helpers/getPlanDisplayName';
 import { useFeedbackFirstEligibility } from '../hooks/useFeedbackFirstEligibility';
 
 interface Props {
@@ -36,7 +36,7 @@ export const TemporaryNeedContent = ({ onKeepPlan, onContinueCancelling }: Props
         return null;
     }
 
-    const planDisplayName = PLAN_NAMES[planName];
+    const planDisplayName = getPlanDisplayName(planName, currentPlan.Title);
     const config = getTemporaryNeedConfig(currentPlan, freePlan);
 
     if (!config) {
