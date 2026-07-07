@@ -1,4 +1,4 @@
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export const getPlanDisplayName = (planName: PLANS, fallbackTitle?: string): string => {
@@ -10,5 +10,5 @@ export const getPlanDisplayName = (planName: PLANS, fallbackTitle?: string): str
         return `${BRAND_NAME} ${PLAN_NAMES[planName]}`;
     }
 
-    return PLAN_NAMES[planName] ?? fallbackTitle ?? '';
+    return PLAN_NAMES[planName] ?? fallbackTitle;
 };
