@@ -14,16 +14,21 @@ import Loader from '@proton/components/components/loader/Loader';
 import { getDownloadAppText } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/helpers';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import { useApi } from '@proton/components/index';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN, hasFree } from '@proton/payments/core/subscription/helpers';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import { DownloadSection } from './DownloadSection';
 import { GetMoreSection } from './GetMoreSection';
 
 export const VPNDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+    const api = useApi();
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
@@ -35,6 +40,19 @@ export const VPNDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             telemetryFlow,
+            onMount: () => {
+                void sendTelemetryReport({
+                    api,
+                    delay: false,
+                    event: TelemetryAccountDashboardEvents.upgradeButtonClick,
+                    measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                    dimensions: {
+                        app,
+                        billing_cycle: subscription?.Cycle?.toString() ?? undefined,
+                        user_tier: getTelemetryUserTier(user),
+                    },
+                });
+            },
         });
     };
 
