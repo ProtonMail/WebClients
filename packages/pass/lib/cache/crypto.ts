@@ -5,6 +5,7 @@ import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 
@@ -23,7 +24,7 @@ export type OfflineComponents = {
 };
 
 export const CACHE_SALT_LENGTH = 32;
-const HKDF_INFO = stringToUint8Array('pass-extension-cache-key'); // context identifier for domain separation
+const HKDF_INFO = utf8StringToUint8Array('pass-extension-cache-key'); // context identifier for domain separation
 
 /**
  * Get the key to use for local cache encryption. We use a HKDF derivation
