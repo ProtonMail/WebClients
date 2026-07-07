@@ -20,6 +20,19 @@ export const safeQuery = (selector: string): HTMLElement[] =>
  * `ensureTopLevel` would otherwise pass (e.g. via a 1ms setInterval). */
 const POISON_WINDOW_MS = 150;
 
+const MIN_VISIBLE_OPACITY = 0.9;
+
+/** Prevents transparency popover clickjacking */
+const isVisibleToUser = (element: HTMLElement): boolean => {
+    const { opacity, visibility, filter, mixBlendMode } = getComputedStyle(element);
+    if (visibility === 'hidden' || visibility === 'collapse') return false;
+    const resolvedOpacity = parseFloat(opacity);
+    if (Number.isFinite(resolvedOpacity) && resolvedOpacity < MIN_VISIBLE_OPACITY) return false;
+    if (filter && filter !== 'none') return false;
+    if (mixBlendMode && mixBlendMode !== 'normal') return false;
+    return true;
+};
+
 type TopLayerManagerState = {
     /** The popover element currently being protected against overlay intrusions. */
     guard: MaybeNull<HTMLElement>;
@@ -101,6 +114,10 @@ export const TopLayerManager = (() => {
                 const rootIdx = popovers.findIndex(eq<HTMLElement>(element));
                 if (rootIdx !== popovers.length - 1) return false;
             }
+
+            /** Reject if the page CSS has visually suppressed the popover
+             * while keeping it top-most and clickable */
+            if (!isVisibleToUser(element)) return false;
 
             return true;
         },
