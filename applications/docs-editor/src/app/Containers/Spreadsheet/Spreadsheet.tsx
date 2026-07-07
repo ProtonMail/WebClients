@@ -435,7 +435,7 @@ function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
             {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />}
             <LegacyGrid />
-            <BottomBar />
+            <BottomBar clientInvoker={clientInvoker} />
             <Dialogs />
             <EditingDisabledDialog clientInvoker={clientInvoker} />
           </div>

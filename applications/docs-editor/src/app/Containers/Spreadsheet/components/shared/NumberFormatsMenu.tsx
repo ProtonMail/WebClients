@@ -6,6 +6,7 @@ import { createStringifier } from '../../stringifier'
 import * as UI from '../ui'
 import { useUI } from '../../ui-store'
 import { useIsSheetsCustomDateTimeFormatEnabled, useIsSheetsCustomNumberFormatEnabled } from '../../feature-flags'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 const { s } = createStringifier(strings)
 
@@ -17,9 +18,16 @@ export interface NumberFormatsMenuProps extends Ariakit.MenuProviderProps {
   /** @default false */
   asSubmenu?: boolean
   renderMenuButton?: ReactElement
+  clientInvoker: EditorRequiresClientMethods
 }
 
-export function NumberFormatsMenu({ asSubmenu = false, renderMenuButton, children, ...props }: NumberFormatsMenuProps) {
+export function NumberFormatsMenu({
+  asSubmenu = false,
+  renderMenuButton,
+  children,
+  clientInvoker,
+  ...props
+}: NumberFormatsMenuProps) {
   const currentPattern = useUI((ui) => ui.format.pattern.current)
   const values = { pattern: currentPattern ? [currentPattern] : [] }
   const menu = Ariakit.useMenuStore({ values, focusLoop: true })
@@ -28,7 +36,7 @@ export function NumberFormatsMenu({ asSubmenu = false, renderMenuButton, childre
   return (
     <Ariakit.MenuProvider store={menu} {...props}>
       {asSubmenu ? children : <Ariakit.MenuButton render={renderMenuButton} disabled={disabled} />}
-      {mounted && <NumberFormatsMenuPopover asSubmenu={asSubmenu} />}
+      {mounted && <NumberFormatsMenuPopover asSubmenu={asSubmenu} clientInvoker={clientInvoker} />}
     </Ariakit.MenuProvider>
   )
 }
@@ -36,13 +44,14 @@ export function NumberFormatsMenu({ asSubmenu = false, renderMenuButton, childre
 export type NumberFormatsMenuPopoverProps = {
   /** @default false */
   asSubmenu?: boolean
+  clientInvoker: EditorRequiresClientMethods
 }
 
-function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopoverProps) {
+function NumberFormatsMenuPopover({ asSubmenu = false, clientInvoker }: NumberFormatsMenuPopoverProps) {
   const menu = Ariakit.useMenuContext()
   const values = Ariakit.useStoreState(menu, 'values')
-  const isSheetsCustomNumberFormatEnabled = useIsSheetsCustomNumberFormatEnabled()
-  const isSheetsCustomDateTimeFormatEnabled = useIsSheetsCustomDateTimeFormatEnabled()
+  const isSheetsCustomNumberFormatEnabled = useIsSheetsCustomNumberFormatEnabled(clientInvoker)
+  const isSheetsCustomDateTimeFormatEnabled = useIsSheetsCustomDateTimeFormatEnabled(clientInvoker)
   const currencySubMenu = Ariakit.useMenuStore({ values, focusLoop: true })
   const currencyMounted = Ariakit.useStoreState(currencySubMenu, 'mounted')
   const Menu = asSubmenu ? UI.SubMenu : UI.Menu
