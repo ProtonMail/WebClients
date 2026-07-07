@@ -1,6 +1,9 @@
-import { lazy, Suspense, useRef } from 'react';
+import { Suspense, lazy, useRef } from 'react';
+
+import { clsx } from 'clsx';
 
 import { useCopyNotification } from '../../hooks/useCopyNotification';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoTheme } from '../../providers';
 import LumoCopyButton from '../Conversation/messageChain/message/actionToolbar/LumoCopyButton';
 
@@ -17,33 +20,39 @@ export interface LumoMarkdownCodeBlockProps {
  * Code block matching chat / markdown rendering: Prism highlighting + copy control.
  * Inner highlighter is lazy-loaded so the syntax-highlighter vendor chunk loads on first code block.
  *
- * Copy uses plain text (appropriate for code) and a solid label button so the control stays visible on
- * all Prism themes — icon-only ghost controls were easy to lose on dark syntax backgrounds / overlays.
+ * Copy overlays the top-right corner (no extra right padding) and sticks while the block scrolls.
  */
 export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockProps) => {
     const { theme } = useLumoTheme();
+    const { isSmallScreen } = useIsLumoSmallScreen();
     const codeBlockRef = useRef<HTMLDivElement>(null);
     const { showCopyNotification } = useCopyNotification();
 
+    const copyButtonClassName = clsx(
+        'lumo-code-block-copy lumo-no-copy shadow-lifted',
+        !isSmallScreen && 'group-hover:opacity-100'
+    );
+
     return (
         <div ref={codeBlockRef} className="message-container code-container w-full min-w-0">
-            {/* `relative` establishes the panel box; copy is absolutely top-right inside it (not grid — overlapping grid items can auto-flow to the next row in some cases). */}
-            <div className="relative w-full min-w-0 overflow-visible">
-                <div className="min-w-0 pr-12 pt-1">
-                    <Suspense
-                        fallback={
-                            <pre className="text-monospace text-sm m-0 p-4 rounded-lg bg-weak overflow-auto">
+            <div className="group-hover-opacity-container lumo-code-block">
+                <Suspense
+                    fallback={
+                        <>
+                            <pre className="lumo-code-block-fallback text-monospace text-sm m-0 p-4 rounded-lg bg-weak">
                                 {code}
                             </pre>
-                        }
-                    >
-                        <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem' }} className="lumo-no-copy pointer-events-auto relative z-50 p-0.5">
-                            <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
-                        </div>
-                        <LumoMarkdownCodeBlockHighlighter code={code} language={language} theme={theme} />
-                    </Suspense>
-                </div>
-
+                            <div className={copyButtonClassName}>
+                                <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
+                            </div>
+                        </>
+                    }
+                >
+                    <LumoMarkdownCodeBlockHighlighter code={code} language={language} theme={theme} />
+                    <div className={copyButtonClassName}>
+                        <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
+                    </div>
+                </Suspense>
             </div>
         </div>
     );

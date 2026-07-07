@@ -26,8 +26,6 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-
-
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 		gap: #{rem(4)};
@@ -223,7 +221,7 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.sidebar button:hover,
+.sidebar button:not(.sidebar-upsell-section-dismiss-button):hover,
 .sidebar .navigation-link:hover {
 	border-radius: #{rem(8)};
 }

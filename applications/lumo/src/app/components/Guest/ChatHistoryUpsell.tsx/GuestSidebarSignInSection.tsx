@@ -8,6 +8,7 @@ import { SignInButton } from '../SignInLink';
 export const GuestSidebarSignInSection = () => {
     return (
         <SidebarUpsellSection
+            upsellId="guest-sign-in"
             title={c('collider_2025: Guest Signin').t`Save your chat history`}
             description={c('collider_2025: Guest Signin')
                 .t`Create a free account to keep your chats, organize them in projects, and get higher usage limits.`}
