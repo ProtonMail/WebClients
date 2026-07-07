@@ -33,12 +33,14 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { TimeInputBlock } from '../TimeInputBlock';
+import { ScheduleMeetingOptions } from './ScheduleMeetingOptions';
 import { ScheduleMeetingSvgIcon } from './ScheduleMeetingSvgIcon';
 import type { OnDateTimeChange } from './types';
 import { combineDateAndTime, getInitialValues, validate } from './utils';
@@ -91,6 +93,8 @@ export const ScheduleMeetingForm = ({
     onClose,
     onMeetingCreated,
 }: ScheduleMeetingFormProps) => {
+    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const timeFormat = userSettings.TimeFormat;
@@ -542,6 +546,8 @@ export const ScheduleMeetingForm = ({
                             ))}
                         </SelectTwo>
                     </div>
+                    {isMeetWaitingRoomEnabled && <ScheduleMeetingOptions />}
+
                     <div className="w-full flex flex-nowrap justify-center flex-row mt-10 gap-4">
                         <Button
                             type="button"
