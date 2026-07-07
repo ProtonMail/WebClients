@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
+import { withItems, withItemsBatch } from '@proton/pass/store/actions/enhancers/items';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     shareLockRequest,
@@ -108,6 +109,7 @@ export const vaultDeleteSuccess = createAction(
     withRequestSuccess((payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
         pipe(
             withCache,
+            withItems,
             withShareDedupe,
             withNotification({
                 type: 'info',
@@ -133,16 +135,21 @@ export const vaultMoveAllItemsIntent = createAction(
 
 export const vaultMoveAllItemsProgress = createAction(
     'vault::move::items::progress',
-    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) =>
+        pipe(withItemsBatch, withCache)({ payload })
+    )
 );
 
 export const vaultMoveAllItemsSuccess = createAction(
     'vault::move::items::success',
     withRequestSuccess((payload: { content: ShareContent<ShareType.Vault> }) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`All items from "${payload.content.name}" successfully moved`,
-        })({ payload })
+        pipe(
+            withItems,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`All items from "${payload.content.name}" successfully moved`,
+            })
+        )({ payload })
     )
 );
 

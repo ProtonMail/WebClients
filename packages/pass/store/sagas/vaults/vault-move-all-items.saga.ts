@@ -10,10 +10,9 @@ import {
 } from '@proton/pass/store/actions';
 import { type BulkMoveItemsChannel, bulkMoveChannel } from '@proton/pass/store/sagas/items/item-bulk-move.saga';
 import { isShareLocked, selectItemsByShareId } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 
-function* moveAllItemsWorker({ onItemsUpdated }: RootSagaOptions, { payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {
+function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {
     const { shareId, content, targetShareId } = payload;
 
     try {
@@ -29,15 +28,10 @@ function* moveAllItemsWorker({ onItemsUpdated }: RootSagaOptions, { payload, met
 
         while (true) {
             const action: BulkMoveItemsChannel = yield take(channel);
-            onItemsUpdated?.({ report: action.type === 'done' });
 
             if (action.type === 'progress') {
-                yield put(
-                    vaultMoveAllItemsProgress(meta.request.id, action.progress, {
-                        ...action.data,
-                        targetShareId,
-                    })
-                );
+                const { progress, data } = action;
+                yield put(vaultMoveAllItemsProgress(meta.request.id, progress, { ...data, targetShareId }));
             }
 
             if (action.type === 'done') yield put(vaultMoveAllItemsSuccess(meta.request.id, { content }));
@@ -51,6 +45,6 @@ function* moveAllItemsWorker({ onItemsUpdated }: RootSagaOptions, { payload, met
     }
 }
 
-export default function* watcher(options: RootSagaOptions) {
-    yield takeEvery(vaultMoveAllItemsIntent.match, moveAllItemsWorker, options);
+export default function* watcher() {
+    yield takeEvery(vaultMoveAllItemsIntent.match, moveAllItemsWorker);
 }

@@ -3,6 +3,7 @@ extern crate napi_derive;
 
 mod autotypes;
 mod clipboards;
+mod ssh_agent;
 
 #[cfg(windows)]
 mod updater;
@@ -134,5 +135,48 @@ pub mod msix_updater {
             let _ = on_progress; // Avoid unused variable warning
             Err(napi::Error::from_reason("MSIX updates are only supported on Windows"))
         }
+    }
+}
+
+#[napi]
+pub mod ssh_agent_napi {
+    use napi::bindgen_prelude::Promise;
+    use napi::threadsafe_function::ThreadsafeFunction;
+
+    use super::ssh_agent::*;
+
+    #[napi(object)]
+    pub struct SshAgentStatus {
+        pub socket_path: Option<String>,
+    }
+
+    #[napi]
+    pub async fn start_agent(
+        is_unlocked_callback: ThreadsafeFunction<Option<String>, Promise<bool>>,
+    ) -> napi::Result<()> {
+        napi_res!(SshAgentManager::start_agent(is_unlocked_callback).await)
+    }
+
+    #[napi]
+    pub async fn destroy_agent() -> napi::Result<()> {
+        napi_res!(SshAgentManager::destroy_agent().await)
+    }
+
+    #[napi]
+    pub async fn set_keys(keys: Vec<SshKeyData>) -> napi::Result<()> {
+        napi_res!(SshAgentManager::set_keys(keys).await)
+    }
+
+    #[napi]
+    pub async fn remove_all_keys() -> napi::Result<()> {
+        napi_res!(SshAgentManager::remove_all_keys().await)
+    }
+
+    #[napi]
+    pub async fn get_status() -> napi::Result<SshAgentStatus> {
+        let status = napi_res!(SshAgentManager::get_status().await)?;
+        Ok(SshAgentStatus {
+            socket_path: status.socket_path,
+        })
     }
 }

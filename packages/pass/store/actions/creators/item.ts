@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { getItemEntityID, getItemKey } from '@proton/pass/lib/items/item.utils';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
+import { withItems, withItemsBatch } from '@proton/pass/store/actions/enhancers/items';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     itemPinRequest,
@@ -57,6 +58,7 @@ export const itemCreate = requestActionsFactory<ItemCreateIntent, ItemCreateSucc
     success: {
         prepare: (payload) =>
             pipe(
+                withItems,
                 withCache,
                 withNotification({
                     type: 'success',
@@ -90,6 +92,7 @@ export const itemEdit = requestActionsFactory<ItemEditIntent, { item: ItemRevisi
     success: {
         prepare: (payload) =>
             pipe(
+                withItems,
                 withCache,
                 withNotification({
                     type: 'success',
@@ -117,7 +120,9 @@ export const itemEditDismiss = createOptimisticAction(
     ({ payload }) => getItemEntityID(payload)
 );
 
-export const itemsUpdated = createAction('items::updated', (items: ItemRevision[]) => withCache({ payload: { items } }));
+export const itemsUpdated = createAction('items::updated', (items: ItemRevision[]) =>
+    pipe(withItems, withCache)({ payload: { items } })
+);
 
 export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item::move')({
     key: getItemKey<UniqueItem>,
@@ -132,6 +137,7 @@ export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item
     success: {
         prepare: (payload) =>
             pipe(
+                withItems,
                 withCache,
                 withNotification({
                     type: 'success',
@@ -166,16 +172,21 @@ export const itemBulkMoveFailure = createAction(
 
 export const itemBulkMoveProgress = createAction(
     'item::bulk::move::progress',
-    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) =>
+        pipe(withItemsBatch, withCache)({ payload })
+    )
 );
 
 export const itemBulkMoveSuccess = createAction(
     'item::bulk::move::success',
     withRequestSuccess((payload: {}) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`All items successfully moved`,
-        })({ payload })
+        pipe(
+            withItems,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`All items successfully moved`,
+            })
+        )({ payload })
     )
 );
 
@@ -184,6 +195,7 @@ export const itemTrash = requestActionsFactory<SelectedRevision, SelectedRevisio
     success: {
         prepare: (payload) =>
             pipe(
+                withItems,
                 withCache,
                 withNotification({
                     type: 'success',
@@ -226,16 +238,19 @@ export const itemBulkTrashFailure = createAction(
 
 export const itemBulkTrashProgress = createAction(
     'item::bulk::trash::progress',
-    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisionIDs) => pipe(withItemsBatch, withCache)({ payload }))
 );
 
 export const itemBulkTrashSuccess = createAction(
     'item::bulk::trash::success',
     withRequestSuccess((payload: {}) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`Selected items successfully moved to trash`,
-        })({ payload })
+        pipe(
+            withItems,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Selected items successfully moved to trash`,
+            })
+        )({ payload })
     )
 );
 
@@ -252,6 +267,7 @@ export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem & { h
     success: {
         prepare: (payload) =>
             pipe(
+                withItems,
                 withCache,
                 withNotification({
                     type: 'success',
@@ -308,21 +324,24 @@ export const itemBulkDeleteFailure = createAction(
 
 export const itemBulkDeleteProgress = createAction(
     'item::bulk::delete::progress',
-    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisionIDs) => pipe(withItemsBatch, withCache)({ payload }))
 );
 
 export const itemBulkDeleteSuccess = createAction(
     'item::bulk::delete::success',
     withRequestSuccess((payload: {}) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`Selected items permanently deleted`,
-        })({ payload })
+        pipe(
+            withItems,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Selected items permanently deleted`,
+            })
+        )({ payload })
     )
 );
 
 export const itemsDeleteEvent = createAction('items::delete::event', (shareId: string, itemIds: string[]) =>
-    withCache({ payload: { shareId, itemIds } })
+    pipe(withItems, withCache)({ payload: { shareId, itemIds } })
 );
 
 export const itemRestore = requestActionsFactory<SelectedItem, SelectedItem>('item::restore')({
@@ -338,6 +357,7 @@ export const itemRestore = requestActionsFactory<SelectedItem, SelectedItem>('it
     success: {
         prepare: (payload) =>
             pipe(
+                withItems,
                 withCache,
                 withNotification({
                     type: 'success',
@@ -372,16 +392,19 @@ export const itemBulkRestoreFailure = createAction(
 
 export const itemBulkRestoreProgress = createAction(
     'item::bulk::restore::progress',
-    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisionIDs) => pipe(withItemsBatch, withCache)({ payload }))
 );
 
 export const itemBulkRestoreSuccess = createAction(
     'item::bulk::restore::success',
     withRequestSuccess((payload: {}) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`Selected items successfully restored from trash`,
-        })({ payload })
+        pipe(
+            withItems,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Selected items successfully restored from trash`,
+            })
+        )({ payload })
     )
 );
 
