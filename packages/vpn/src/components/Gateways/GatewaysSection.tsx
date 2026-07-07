@@ -688,8 +688,9 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                                 <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>
                                 {isAdmin && (
                                     <>
-                                        <TableCell key="members" type="header" className="w-1/5">{c('Header')
-                                            .t`Members`}</TableCell>
+                                        <TableCell key="members" type="header" className="w-1/5">
+                                            {c('Header').t`Members`}
+                                        </TableCell>
                                         <TableCell key="manage" type="header" className="w-1/10">
                                             &nbsp;
                                         </TableCell>
