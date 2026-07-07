@@ -16,7 +16,6 @@ import { is4xx, is5xx, sendErrorReport } from '@proton/drive/legacy/errorHandlin
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { uploadManager } from '@proton/drive/modules/upload';
 import metrics from '@proton/metrics';
-import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
@@ -34,10 +33,10 @@ import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';
 import { shouldRedirectToPrivateApp } from './utils/shouldRedirectToPrivateApp';
 
 export const getErrorMetricTypeForSdkError = (error: unknown) => {
+    if (error instanceof ValidationError && error.code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+        return 'does_not_exist_or_expired';
+    }
     if (error instanceof ServerError) {
-        if (error.statusCode === HTTP_STATUS_CODE.NOT_FOUND) {
-            return 'does_not_exist_or_expired';
-        }
         if (error.statusCode && is4xx(error.statusCode)) {
             return '4xx';
         }
