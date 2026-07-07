@@ -1,5 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { FormGroup, Input } from '../Sidebar/shared'
 import { Button } from '@proton/atoms/Button/Button'
 import { createStringifier } from '../../stringifier'

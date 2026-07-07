@@ -2,7 +2,7 @@ import * as Ariakit from '@ariakit/react'
 import { createComponent } from '../utils'
 import * as UI from '../ui'
 import * as Atoms from '../atoms'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { BORDER_LINE_STYLES, BORDER_LOCATIONS, type BorderLocation } from '../Sidebar/borderData'
 import {
   getStringifiedColor,
