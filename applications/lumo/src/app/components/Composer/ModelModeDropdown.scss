@@ -98,8 +98,9 @@
 
 .model-mode-upgrade-button {
 	white-space: normal;
-	overflow-wrap: anywhere;
-	word-break: break-word;
+	word-break: normal;
+	min-inline-size: auto !important;
+	flex-shrink: 1 !important;
 }
 
 .model-mode-option {

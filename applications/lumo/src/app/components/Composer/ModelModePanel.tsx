@@ -310,13 +310,13 @@ export const ModelModePanel = ({
             </div>
 
             {showUpgradeFooter && (
-                <div className="model-mode-upgrade flex flex-nowrap items-center gap-2 min-w-0">
-                    <p className="model-mode-upgrade-text flex-1 min-w-0 m-0 color-norm">
+                <div className="model-mode-upgrade flex items-center gap-2 min-w-0 flex-nowrap">
+                    <p className="model-mode-upgrade-text min-w-0 m-0 color-norm">
                         {c('collider_2025: Info')
                             .t`Upgrade for unlimited chats, projects, larger file uploads, and more.`}
                     </p>
                     <BasicUpgradeButton
-                        className="model-mode-upgrade-button shrink-0 text-sm flex-1"
+                        className="model-mode-upgrade-button text-sm"
                         size="small"
                         path={upsellPath}
                         onClick={handleUpgradeClick}
