@@ -14,18 +14,68 @@
 		content-visibility: unset;
 		contain-intrinsic-size: unset;
 	}
+
+	// Sticky copy buttons need a non-contained ancestor so they can track message-chain scroll.
+	.content-visibility-auto:has(.code-container) {
+		content-visibility: visible;
+		contain: none;
+		contain-intrinsic-size: unset;
+	}
 }
 
 // Syntax highlighter output (PreTag="div") — not matched by `pre` rules below.
 .code-container {
 	contain: none;
 
+	// Grid overlay: copy renders last (on top for clicks), sticky keeps it pinned while scrolling.
+	.lumo-code-block {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		isolation: isolate;
+	}
+
+	.lumo-code-block-copy {
+		grid-column: 1;
+		grid-row: 1;
+		place-self: start end;
+		position: sticky;
+		inset-block-start: 0.5rem;
+		z-index: 10;
+		margin: 0.5rem;
+		inline-size: max-content;
+		block-size: max-content;
+		background: rgb(0 0 0 / 0);
+		backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+
+		// pointer-events: none;
+
+		.group-hover-opacity-container:hover &,
+		.group-hover-opacity-container:focus-within &,
+		&:hover,
+		&:focus-within {
+			pointer-events: auto;
+		}
+	}
+
+	.lumo-code-block-fallback {
+		grid-column: 1;
+		grid-row: 1;
+		min-inline-size: 0;
+		overflow-x: auto;
+	}
+
 	.lumo-syntax-highlighter {
+		grid-column: 1;
+		grid-row: 1;
+		position: relative;
+		z-index: 0;
+		min-inline-size: 0;
 		background: var(--markdown-pre-background) !important;
 		border-radius: 0.5rem;
 		overflow-x: auto;
 		margin-block: 0.75rem;
-		padding: 1rem 3rem 1rem 1rem !important;
+		padding: 0 !important;
 		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 		font-size: 0.8125rem;
 		line-height: 1.6;
@@ -36,6 +86,7 @@
 		// token spans don't each paint their own box (visible as white patches).
 		background: none !important;
 		background-color: transparent !important;
+
 		// Global reset sets `code { line-height: 1 }`, which collapses multi-line blocks.
 		white-space: pre-wrap !important;
 		line-height: 1.6 !important;
@@ -224,7 +275,6 @@
 	}
 
 	td {
-
 		padding-block: 1rem;
 		padding-inline: 1.25rem;
 		color: var(--text-norm);
@@ -282,7 +332,7 @@
 		margin-block: 0.75rem;
 		border-radius: 0.5rem;
 		padding-block: 1.25rem;
-		padding-inline: 1rem;
+		padding-inline: 1.25rem;
 		inline-size: 100%;
 		background-color: var(--markdown-pre-background);
 		position: relative;
@@ -315,16 +365,18 @@
 	border: 1px solid var(--border-weak);
 	scroll-behavior: smooth;
 	box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
-	background: linear-gradient(90deg, var(--background-norm) 30%, rgb(255 255 255 / 0)),
-	linear-gradient(90deg, rgb(255 255 255 / 0), var(--background-norm) 70%) 0 100%,
-	radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0)),
-	radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0)) 0 100%;
+	background:
+		linear-gradient(90deg, var(--background-norm) 30%, rgb(255 255 255 / 0)),
+		linear-gradient(90deg, rgb(255 255 255 / 0), var(--background-norm) 70%) 0 100%,
+		radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0)),
+		radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0)) 0 100%;
 	background-repeat: no-repeat;
 	background-color: var(--background-norm);
-	background-size: 40px 100%,
-	40px 100%,
-	14px 100%,
-	14px 100%;
+	background-size:
+		40px 100%,
+		40px 100%,
+		14px 100%,
+		14px 100%;
 	background-attachment: local, local, scroll, scroll;
 }
 
