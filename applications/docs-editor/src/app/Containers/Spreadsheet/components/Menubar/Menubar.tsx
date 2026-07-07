@@ -30,7 +30,7 @@ export const Menubar = createComponent(function Menubar({ clientInvoker, isPubli
       <EditMenu renderMenuButton={<MenubarItem>{s('Edit')}</MenubarItem>} />
       <ViewMenu renderMenuButton={<MenubarItem>{s('View')}</MenubarItem>} />
       <InsertMenu renderMenuButton={<MenubarItem>{s('Insert')}</MenubarItem>} />
-      <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} />
+      <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} clientInvoker={clientInvoker} />
       <DataMenu renderMenuButton={<MenubarItem>{s('Data')}</MenubarItem>} />
     </Ariakit.Menubar>
   )
