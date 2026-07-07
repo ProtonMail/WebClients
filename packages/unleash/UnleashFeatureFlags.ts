@@ -139,7 +139,6 @@ enum AccountFlag {
 enum PaymentsFlag {
     SepaPayments = 'SepaPayments',
     SepaPaymentsB2C = 'SepaPaymentsB2C',
-    TransactionsView = 'TransactionsView',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     GooglePay = 'GooglePay',
     RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
