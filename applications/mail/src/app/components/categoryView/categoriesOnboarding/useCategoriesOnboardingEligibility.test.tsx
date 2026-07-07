@@ -3,6 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import type { FeatureContextValue } from '@proton/features/useFeatures';
 import { PLANS } from '@proton/payments/core/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -13,69 +14,134 @@ import { useGetStartedChecklist } from 'proton-mail/containers/onboardingCheckli
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import { useCategoriesView } from '../useCategoriesView';
-import { AudienceType } from './onboardingInterface';
+import { AudienceType, CategoriesOnboardingFlags, FeatureValueDefault } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
-jest.mock('@proton/features/useFeature');
-const mockUseFeature = useFeature as jest.Mock;
-
 jest.mock('proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider');
-const mockUseGetStartedChecklist = useGetStartedChecklist as jest.Mock;
-
-jest.mock('@proton/account/welcomeFlags');
-const mockUseWelcomeFlags = useWelcomeFlags as jest.Mock;
-
 jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
-const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
-
+jest.mock('@proton/account/welcomeFlags');
+jest.mock('@proton/features/useFeature');
 jest.mock('../useCategoriesView');
-const mockUseCategoriesView = useCategoriesView as jest.Mock;
 
-const janFirst = 1735693200;
-const febFirstMS = 1738371600;
-const marchFirst = 1740790800;
+const ONBOARDING_ACCOUNT_THRESHOLD = 1738371600; // 2025-02-01
+const EXISTING_ACCOUNT_CREATE_TIME = 1735693200; // 2025-01-01, before the threshold
+const NEW_ACCOUNT_CREATE_TIME = 1740790800; // 2025-03-01, after the threshold
 
-const getFeatureValues = (
-    code: FeatureCode,
-    {
-        b2cOnboardingFlag,
-        b2bOnboardingFlag,
-        accountDateThreshold,
-    }: { b2cOnboardingFlag: number; b2bOnboardingFlag: number; accountDateThreshold: number }
-) => {
-    if (code === FeatureCode.CategoryViewB2COnboardingViewFlags) {
-        return { feature: { Value: b2cOnboardingFlag }, loading: false };
-    }
+// A B2B user is considered done once they have dismissed the initial modal.
+const B2B_ONBOARDING_SEEN = CategoriesOnboardingFlags.INITIAL_MODAL;
 
-    if (code === FeatureCode.CategoryViewB2BOnboardingViewFlags) {
-        return { feature: { Value: b2bOnboardingFlag }, loading: false };
-    }
+// A B2C user is considered done once every step of the linear sequence has been seen.
+const B2C_ONBOARDING_SEEN =
+    CategoriesOnboardingFlags.INITIAL_MODAL |
+    CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE |
+    CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE |
+    CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE;
 
-    if (code === FeatureCode.CategoryViewOnboardingAccountDateThreshold) {
-        return { feature: { Value: accountDateThreshold }, loading: false };
-    }
+// Every step seen except the initial modal, so the user still has onboarding left to go through.
+const B2C_ONBOARDING_IN_PROGRESS = B2C_ONBOARDING_SEEN & ~CategoriesOnboardingFlags.INITIAL_MODAL;
+
+const defaultCategoriesView: ReturnType<typeof useCategoriesView> = {
+    categoryViewAccess: true,
+    hasAccessToCategoryView: true,
+    shouldShowTabs: true,
+    categoriesStore: [],
+    activeCategoriesTabs: [],
+    shouldSeeWideToolbars: true,
 };
 
-const mockGetLocationCount = (total: number) => {
-    mockUseMailboxCounter.mockReturnValue({
+const defaultWelcomeFlags: ReturnType<typeof useWelcomeFlags> = {
+    endReplay: jest.fn(),
+    setDone: jest.fn(),
+    startReplay: jest.fn(),
+    welcomeFlags: { isWelcomeFlow: false, hasGenericWelcomeStep: false, isDone: false, isReplay: false },
+};
+
+const defaultGetStartedChecklist: ReturnType<typeof useGetStartedChecklist> = {
+    canDisplayChecklist: false,
+    changeChecklistDisplay: jest.fn(),
+    createdAt: new Date(),
+    displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
+    expiresAt: undefined,
+    isChecklistFinished: false,
+    isUserPaid: false,
+    items: new Set([]),
+    loading: false,
+    markItemsAsDone: jest.fn(),
+    userWasRewarded: false,
+    itemsToComplete: [],
+    byoeFlowInProgress: false,
+    setByoeFlowInProgress: jest.fn(),
+};
+
+const buildFeature = (code: FeatureCode, value: number): FeatureContextValue => ({
+    feature: {
+        Code: code,
+        Type: 'integer',
+        DefaultValue: 0,
+        Value: value,
+        Minimum: 0,
+        Maximum: 0,
+        Global: false,
+        Writable: true,
+        ExpirationTime: 0,
+        UpdateTime: 0,
+    },
+    loading: false,
+    get: jest.fn(),
+    update: jest.fn(),
+    code,
+});
+
+interface FeatureOverrides {
+    b2cOnboardingFlag?: number;
+    b2bOnboardingFlag?: number;
+    accountThreshold?: number;
+}
+
+const mockFeatures = ({
+    b2cOnboardingFlag = FeatureValueDefault,
+    b2bOnboardingFlag = FeatureValueDefault,
+    accountThreshold = ONBOARDING_ACCOUNT_THRESHOLD,
+}: FeatureOverrides = {}) => {
+    const valueByCode: Partial<Record<FeatureCode, number>> = {
+        [FeatureCode.CategoryViewB2COnboardingViewFlags]: b2cOnboardingFlag,
+        [FeatureCode.CategoryViewB2BOnboardingViewFlags]: b2bOnboardingFlag,
+        [FeatureCode.CategoryViewOnboardingAccountDateThreshold]: accountThreshold,
+    };
+
+    jest.mocked(useFeature).mockImplementation((code) => buildFeature(code, valueByCode[code] ?? 0));
+};
+
+const mockAccountCreatedAt = (createTime: number) => mockUseUser([{ CreateTime: createTime }]);
+
+const mockAllMailCount = (total: number) => {
+    jest.mocked(useMailboxCounter).mockReturnValue({
         loading: false,
-        counterMap: {},
         getLocationCount: jest.fn().mockReturnValue({ Total: total, Unread: 0 }),
         getCurrentLocationCount: jest.fn(),
     });
 };
 
+const mockCategoriesView = (overrides: Partial<ReturnType<typeof useCategoriesView>> = {}) => {
+    jest.mocked(useCategoriesView).mockReturnValue({ ...defaultCategoriesView, ...overrides });
+};
+
+const mockChecklistDisplay = (displayState: CHECKLIST_DISPLAY_TYPE) => {
+    jest.mocked(useGetStartedChecklist).mockReturnValue({ ...defaultGetStartedChecklist, displayState });
+};
+
+const renderEligibility = () => renderHook(() => useCategoriesOnboardingEligibility()).result.current;
+
 describe('useCategoriesOnboardingEligibility', () => {
     beforeAll(() => {
-        mockUseOrganization([
-            { PlanName: PLANS.MAIL_PRO, Settings: { MailCategoryViewEnabled: true } as OrganizationSettings },
-        ]);
-        mockUseWelcomeFlags.mockReturnValue({ welcomeFlags: { isWelcomeFlow: false } });
+        jest.mocked(useWelcomeFlags).mockReturnValue(defaultWelcomeFlags);
+    });
 
-        mockUseCategoriesView.mockReturnValue({
-            categoryViewAccess: true,
-            hasAccessToCategoryView: true,
-        });
+    // Reset every per-test mock to its default so a test cannot leak state into the next one.
+    beforeEach(() => {
+        mockFeatures();
+        mockCategoriesView();
+        mockChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
     });
 
     afterAll(() => {
@@ -83,135 +149,81 @@ describe('useCategoriesOnboardingEligibility', () => {
     });
 
     describe('b2b users', () => {
-        describe('existing users', () => {
-            it("users who didn't saw the onboarding are eligible", () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+        beforeAll(() => {
+            mockUseOrganization([
+                { PlanName: PLANS.MAIL_PRO, Settings: { MailCategoryViewEnabled: true } as OrganizationSettings },
+            ]);
+        });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+        describe('existing users', () => {
+            it('are eligible when they have not seen the onboarding yet', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
 
-            it('users whose organization enabled categories but without flag access are not eligible', () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseCategoriesView.mockReturnValue({
-                    categoryViewAccess: false,
-                    hasAccessToCategoryView: false,
-                });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible when the organization enabled categories but they lack flag access', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockCategoriesView({ categoryViewAccess: false, hasAccessToCategoryView: false });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: 0,
-                });
-
-                // Restore flag access for the remaining tests
-                mockUseCategoriesView.mockReturnValue({
-                    categoryViewAccess: true,
-                    hasAccessToCategoryView: true,
+                    flagValue: FeatureValueDefault,
                 });
             });
 
-            it('users who saw the onboarding are not eligible', () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: parseInt('0110001', 2),
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible when they have already seen the onboarding', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockFeatures({ b2bOnboardingFlag: B2B_ONBOARDING_SEEN });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: parseInt('0110001', 2),
+                    flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
         });
-        describe('new users', () => {
-            it("users with more than 20 mails and who didn't saw the onboarding are eligible", () => {
-                mockUseUser([{ CreateTime: marchFirst }]);
-                mockGetLocationCount(20);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+        describe('new users', () => {
+            it('are eligible with 20+ mails and an unseen onboarding', () => {
+                mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(20);
+
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2B,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
 
-            it('users with more than 20 mails with seen onboarding are not eligible', () => {
-                mockUseUser([{ CreateTime: marchFirst }]);
-                mockGetLocationCount(20);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: parseInt('0110001', 2),
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible with 20+ mails once the onboarding has been seen', () => {
+                mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(20);
+                mockFeatures({ b2bOnboardingFlag: B2B_ONBOARDING_SEEN });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: parseInt('0110001', 2),
+                    flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
 
-            it('users with less than 20 mails are not eligible', () => {
-                mockUseUser([{ CreateTime: marchFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible with fewer than 20 mails', () => {
+                mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2B,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
         });
@@ -220,151 +232,90 @@ describe('useCategoriesOnboardingEligibility', () => {
     describe('b2c users', () => {
         beforeAll(() => {
             mockUseOrganization();
-            mockUseWelcomeFlags.mockReturnValue({ welcomeFlags: { isWelcomeFlow: false } });
         });
 
         describe('existing users', () => {
-            it('users with closed checklist and 10 emails received should be eligible', () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are eligible with a closed checklist and enough mails', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2C,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
 
-            it('users with full checklist should not be eligible', () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.FULL });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible while the checklist is still shown in full', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockChecklistDisplay(CHECKLIST_DISPLAY_TYPE.FULL);
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
 
-            it('users with not enough emails should not be eligible', () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(5);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible without enough mails', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(5);
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
 
-            it('users who saw whole onboarding should not be eligible', () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: parseInt('11111', 2),
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible once the whole onboarding has been seen', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_SEEN });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
-                    flagValue: parseInt('11111', 2),
+                    flagValue: B2C_ONBOARDING_SEEN,
                 });
             });
 
-            it("users who didn't see whole onboarding should be eligible", () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: parseInt('11110', 2),
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are eligible when the onboarding is still in progress', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_IN_PROGRESS });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
                     audienceType: AudienceType.B2C,
-                    flagValue: parseInt('11110', 2),
+                    flagValue: B2C_ONBOARDING_IN_PROGRESS,
                 });
             });
 
-            it("users who didn't see whole onboarding but with flag off should not be eligible", () => {
-                mockUseUser([{ CreateTime: janFirst }]);
-                mockUseCategoriesView.mockReturnValue({
-                    categoryViewAccess: false,
-                });
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: parseInt('11110', 2),
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
+            it('are not eligible without flag access, even mid-onboarding', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockCategoriesView({ categoryViewAccess: false });
+                mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_IN_PROGRESS });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
-                    flagValue: parseInt('11110', 2),
+                    flagValue: B2C_ONBOARDING_IN_PROGRESS,
                 });
             });
         });
-        describe('new users', () => {
-            it('users with closed checklist and 10 emails received should not be eligible', () => {
-                mockUseUser([{ CreateTime: marchFirst }]);
-                mockGetLocationCount(10);
-                mockUseGetStartedChecklist.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.REDUCED });
-                mockUseFeature.mockImplementation((code) => {
-                    return getFeatureValues(code, {
-                        b2cOnboardingFlag: 0,
-                        b2bOnboardingFlag: 0,
-                        accountDateThreshold: febFirstMS,
-                    });
-                });
 
-                const { result } = renderHook(() => useCategoriesOnboardingEligibility());
-                expect(result.current).toStrictEqual({
+        describe('new users', () => {
+            it('are not eligible even with a closed checklist and enough mails', () => {
+                mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+
+                expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
                     audienceType: AudienceType.B2C,
-                    flagValue: 0,
+                    flagValue: FeatureValueDefault,
                 });
             });
         });
