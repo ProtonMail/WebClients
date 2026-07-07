@@ -1,7 +1,7 @@
 ### Version 1.38.0
 
-- Sort Pass Monitor item lists alphabetically
-- Fix password generator preference not being saved from autosuggest prompt
+- Pass Monitor: removed the back button
+- Pass Monitor: fixed sharing display for vaults with 100+ members
 
 ### Version 1.37.0
 
