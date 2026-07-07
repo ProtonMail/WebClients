@@ -9,7 +9,7 @@ import {
     moveAllBatch,
     queryMessageMetadata,
 } from '@proton/shared/lib/api/messages';
-import { DEFAULT_MAIL_PAGE_SIZE, SECOND } from '@proton/shared/lib/constants';
+import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -223,10 +223,16 @@ export const moveAll = createAsyncThunk<
         const state = (getState() as MailState).elements;
         dispatch(reset({ params: state.params }));
 
+        const categoryIDs = state.params.categoryIDs;
+        const labels =
+            SourceLabelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0
+                ? [SourceLabelID, ...categoryIDs]
+                : [SourceLabelID];
+
         await extra.api(
             moveAllBatch({
                 SearchContext: {
-                    LabelID: SourceLabelID,
+                    LabelIDs: labels,
                 },
                 DestinationLabelID,
             })
@@ -276,10 +282,16 @@ export const markAll = createAsyncThunk<
         const state = (getState() as MailState).elements;
         dispatch(reset({ params: state.params }));
 
+        const categoryIDs = state.params.categoryIDs;
+        const labels =
+            SourceLabelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0
+                ? [SourceLabelID, ...categoryIDs]
+                : [SourceLabelID];
+
         await extra.api(
             action({
                 SearchContext: {
-                    LabelID: SourceLabelID,
+                    LabelIDs: labels,
                 },
             })
         );
@@ -326,10 +338,16 @@ export const labelAll = createAsyncThunk<
         const state = (getState() as MailState).elements;
         dispatch(reset({ params: state.params }));
 
+        const categoryIDs = state.params.categoryIDs;
+        const labels =
+            SourceLabelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0
+                ? [SourceLabelID, ...categoryIDs]
+                : [SourceLabelID];
+
         await extra.api(
             labelAllRequest({
                 SearchContext: {
-                    LabelID: SourceLabelID,
+                    LabelIDs: labels,
                 },
                 AddLabelIDs: toLabel,
                 RemoveLabelIDs: toUnlabel,

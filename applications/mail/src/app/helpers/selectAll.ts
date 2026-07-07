@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -67,20 +68,28 @@ export const getSelectAllButtonText = ({
     selectAll,
     elementsCount,
     currentLabel,
+    categoryIDs,
     customLabels,
     customFolders,
 }: {
     selectAll: boolean;
     elementsCount: number;
     currentLabel: string;
+    categoryIDs: CategoryLabelID[];
     customLabels: Label[];
     customFolders: Folder[];
 }) => {
     if (selectAll) {
         return c('Info').t`Clear selection`;
     }
-    const location = isCategoryLabel(currentLabel)
-        ? getLabelFromCategoryId(currentLabel)
+    const hasCategory = categoryIDs.length > 0;
+    const categoryID =
+        hasCategory && categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+            : categoryIDs[0];
+
+    const location = hasCategory
+        ? getLabelFromCategoryId(categoryID)
         : getLabelName(currentLabel, customLabels, customFolders);
 
     /* translator:
