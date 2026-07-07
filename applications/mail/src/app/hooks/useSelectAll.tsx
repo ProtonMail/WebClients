@@ -28,8 +28,8 @@ export const useSelectAll = ({ labelID }: Props) => {
     const [folders = []] = useFolders();
     const dispatch = useMailDispatch();
     const selectAll = useMailSelector(selectSelectAll);
-
     const categoryIDs = useMailSelector(selectCategoryIDs);
+
     // The label must be the category when in inbox and with categories
     const currentLabel = labelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0 ? categoryIDs[0] : labelID;
 
@@ -57,6 +57,7 @@ export const useSelectAll = ({ labelID }: Props) => {
             selectAll,
             elementsCount: locationCount.Total,
             currentLabel,
+            categoryIDs,
             customLabels: labels,
             customFolders: folders,
         });
