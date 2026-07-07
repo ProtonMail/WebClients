@@ -9,6 +9,8 @@ import {
     registerInboxDesktopIpcProtocols,
     registerInboxDesktopRedirectProtocols,
 } from './registerInboxDesktopProtocols';
+import { registerInboxDesktopUrlRules } from './registerInboxDesktopUrlRules';
+import { URL_RULES } from './urls/rules';
 
 export function bootstrapCalendarInboxDesktop({
     config,
@@ -24,4 +26,6 @@ export function bootstrapCalendarInboxDesktop({
 
     registerInboxDesktopIpcProtocols(BASELINE_ALLOWED_PROTOCOLS);
     registerInboxDesktopRedirectProtocols(BASELINE_ALLOWED_CONTENT_PROTOCOLS);
+
+    registerInboxDesktopUrlRules(URL_RULES);
 }

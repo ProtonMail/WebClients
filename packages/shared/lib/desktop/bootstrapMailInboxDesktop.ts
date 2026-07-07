@@ -11,6 +11,8 @@ import {
     registerInboxDesktopIpcProtocols,
     registerInboxDesktopRedirectProtocols,
 } from './registerInboxDesktopProtocols';
+import { registerInboxDesktopUrlRules } from './registerInboxDesktopUrlRules';
+import { URL_RULES } from './urls/rules';
 
 export function bootstrapMailInboxDesktop({
     config,
@@ -30,5 +32,6 @@ export function bootstrapMailInboxDesktop({
 
         registerInboxDesktopIpcProtocols(BASELINE_ALLOWED_PROTOCOLS);
         registerInboxDesktopRedirectProtocols(BASELINE_ALLOWED_CONTENT_PROTOCOLS);
+        registerInboxDesktopUrlRules(URL_RULES);
     }
 }
