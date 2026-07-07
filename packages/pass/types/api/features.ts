@@ -23,6 +23,7 @@ export enum PassFeature {
     PassIFrameExtendedAutofill = 'PassIFrameExtendedAutofill',
     PassIFrameKillswitch = 'PassIFrameKillswitch',
     PassItemCloning = 'PassItemCloning',
+    PassMLAutofill = 'PassMLAutofill',
     PassOnboardingUpgrade = 'PassOnboardingUpgrade',
     PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
     PassRenameAdminToManager = 'PassRenameAdminToManager',

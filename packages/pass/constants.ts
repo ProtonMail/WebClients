@@ -131,6 +131,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassIFrameExtendedAutofill]: false,
     [PassFeature.PassIFrameKillswitch]: false,
     [PassFeature.PassItemCloning]: false,
+    [PassFeature.PassMLAutofill]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.PassRenameAdminToManager]: false,
     [PassFeature.PassUserEventsV1]: false,
