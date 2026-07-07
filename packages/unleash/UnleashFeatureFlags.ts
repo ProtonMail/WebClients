@@ -347,6 +347,7 @@ enum LumoFeatureFlag {
     LumoSurveys = 'LumoSurveys',
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
     LumoMeowmory = 'LumoMeowmory',
+    LumoVisualizationInstructions = 'LumoVisualizationInstructions',
     LumoNativeAuth = 'LumoNativeAuth',
     LumoCustomAgents = 'LumoCustomAgents',
     LumoAiPaperTrail = 'LumoAiPaperTrail',
