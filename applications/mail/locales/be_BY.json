@@ -1531,10 +1531,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -8051,7 +8048,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9564,6 +9564,30 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "У вас ёсць **${ count } размова** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размовы** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "У вас ёсць **${ count } паведамленне** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленні** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } размову** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размовы** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } паведамленне** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленні** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }"
       ]
     },
     "info": {
@@ -15698,6 +15722,12 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Перамешчана ў ${ label }. Аналагічнае паведамленне будзе катэгарызавана тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні."
       ]
     },
     "Success notification": {
