@@ -53,8 +53,8 @@ export const Toolbar = createComponent(function Toolbar({ clientInvoker, ...prop
   return (
     <T.Container
       {...props}
-      mainToolbarSlot={<ToolbarGroups />}
-      overflowToolbarSlot={<ToolbarGroups />}
+      mainToolbarSlot={<ToolbarGroups clientInvoker={clientInvoker} />}
+      overflowToolbarSlot={<ToolbarGroups clientInvoker={clientInvoker} />}
       // trailingSlot={<InsertChart />} // TODO: temporarily disabled
       formulaBarSlot={<FormulaBar />}
       renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
@@ -71,7 +71,7 @@ function ViewOnlyModeToolbarGroups() {
   )
 }
 
-function ToolbarGroups() {
+function ToolbarGroups({ clientInvoker }: { clientInvoker: EditorRequiresClientMethods }) {
   return (
     <>
       <T.Group groupId="main">
@@ -87,7 +87,10 @@ function ToolbarGroups() {
         <FormatAsPercent />
         <DecreaseDecimalPlaces />
         <IncreaseDecimalPlaces />
-        <NumberFormatsMenu renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
+        <NumberFormatsMenu
+          renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>}
+          clientInvoker={clientInvoker}
+        />
       </T.Group>
       <T.Group groupId="font">
         <FontSelect
