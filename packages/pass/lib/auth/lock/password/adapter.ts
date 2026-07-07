@@ -13,7 +13,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { zeroize } from '@proton/pass/utils/object/zero';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 /** Password locking involves the offline configuration. As such,
@@ -113,12 +113,12 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPasswo
 
                 const secret = deobfuscate(password);
                 zeroize(password);
-                const offlineKD = await getOfflineKeyDerivation(secret, stringToUint8Array(salt), params);
+                const offlineKD = await getOfflineKeyDerivation(secret, binaryStringToUint8Array(salt), params);
                 const offlineKey = await importSymmetricKey(offlineKD);
 
                 /** this will throw if the derived offlineKD is incorrect */
-                await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
-                const hash = uint8ArrayToString(offlineKD);
+                await decryptData(offlineKey, binaryStringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
+                const hash = uint8ArrayToBinaryString(offlineKD);
 
                 authStore.setOfflineKD(hash);
                 authStore.setLocked(false);

@@ -1,5 +1,3 @@
-import { uint8ArrayToString } from './encoding';
-
 /**
  * Convert file to encoded base 64 string
  */
@@ -55,16 +53,6 @@ export const readFileAsString = (file: File, encoding?: string) => {
         reader.onabort = reject;
         reader.readAsText(file, encoding);
     });
-};
-
-/**
- * Read the content of a blob and returns its value as a binary string.
- * Not using readAsBinaryString because it's deprecated.
- */
-export const readFileAsBinaryString = async (file: File) => {
-    const arrayBuffer = await readFileAsBuffer(file);
-    // eslint-disable-next-line new-cap
-    return uint8ArrayToString(new Uint8Array(arrayBuffer));
 };
 
 /**

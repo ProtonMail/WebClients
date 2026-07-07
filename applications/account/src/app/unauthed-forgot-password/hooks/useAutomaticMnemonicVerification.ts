@@ -5,7 +5,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { defaultPersistentKey } from '../../public/helper';
 import { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';
@@ -14,7 +14,7 @@ import type { UnauthedForgotPasswordStateMachine } from '../state-machine/Unauth
 import { useMachineWizard } from '../wizard/MachineWizardProvider';
 
 const decodeAutomaticResetParams = (base64String: string) => {
-    const decodedString = uint8ArrayToString(Uint8Array.fromBase64(base64String, { alphabet: 'base64url' }));
+    const decodedString = uint8ArrayToBinaryString(Uint8Array.fromBase64(base64String, { alphabet: 'base64url' }));
     return JSON.parse(decodedString);
 };
 

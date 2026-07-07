@@ -1,8 +1,9 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
+
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { generateOfflineComponents } from './crypto';
 
@@ -15,7 +16,7 @@ describe('cache crypto operations', () => {
             /** mock argon2 to avoid jest keeping a dangling worker alive */
             const argon2 = jest.spyOn(CryptoProxy, 'computeArgon2').mockImplementation(async () => generateKey());
 
-            const randomPassword = uint8ArrayToString(generateKey());
+            const randomPassword = uint8ArrayToBinaryString(generateKey());
             const components = await generateOfflineComponents(randomPassword);
 
             expect(components.offlineConfig.salt).toBeDefined();
@@ -23,8 +24,8 @@ describe('cache crypto operations', () => {
             expect(components.offlineKD).toBeDefined();
             expect(components.offlineVerifier).toBeDefined();
 
-            const offlineKey = await importSymmetricKey(stringToUint8Array(components.offlineKD));
-            const verifier = stringToUint8Array(components.offlineVerifier);
+            const offlineKey = await importSymmetricKey(binaryStringToUint8Array(components.offlineKD));
+            const verifier = binaryStringToUint8Array(components.offlineVerifier);
             await expect((() => decryptData(offlineKey, verifier, PassEncryptionTag.Offline))()).resolves.toBeDefined();
 
             argon2.mockRestore();
