@@ -1,4 +1,4 @@
-import type { AsyncCallback, MaybePromise } from '@proton/pass/types';
+import type { AsyncCallback, MaybeNull, MaybePromise } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export type UnwrapPromise<T> = T extends any[]
@@ -65,6 +65,26 @@ export const asyncLock = <F extends (...args: any[]) => Promise<any>>(fn: F, opt
 
         return pending;
     };
+};
+
+/** Wraps an async function so that calling it again cancels any in-flight invocation.
+ * The wrapped function receives an AbortSignal as its first argument: check it between
+ * awaits to short-circuit early. Returns { run, cancel } so callers can also abort. */
+export const asyncLatest = <A extends any[], T = void>(fn: (signal: AbortSignal, ...args: A) => Promise<T>) => {
+    let ctrl: MaybeNull<AbortController> = null;
+
+    const run = (...args: A): Promise<T> => {
+        ctrl?.abort();
+        ctrl = new AbortController();
+        return fn(ctrl.signal, ...args);
+    };
+
+    const cancel = () => {
+        ctrl?.abort();
+        ctrl = null;
+    };
+
+    return { run, cancel };
 };
 
 type AsyncQueueOptions<F extends (...args: any[]) => Promise<any>> = AsyncLockOptions<F>;

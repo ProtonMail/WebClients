@@ -25,8 +25,7 @@ const withAliasItemCreation = (action: Action): action is ItemWithAliasCreationA
     itemCreate.intent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
 
 function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreationAction) {
-    const { onItemsUpdated, getTelemetry } = options;
-    const telemetry = getTelemetry();
+    const telemetry = options.getTelemetry();
 
     const { payload: createIntent, meta } = action;
     const { shareId, optimisticId, files } = createIntent;
@@ -35,8 +34,7 @@ function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreatio
     const itemName = action.payload.metadata.name;
 
     try {
-        /** assert share exists */
-        yield select(selectShareOrThrow(shareId));
+        yield select(selectShareOrThrow(shareId)); /** assert share exists */
 
         let item: ItemRevision = yield isAlias ? createAlias(createIntent) : createItem(createIntent);
         if (shouldLink) item = yield itemLinkPendingFiles(item, files, options);
@@ -44,26 +42,17 @@ function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreatio
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item }));
         if (hasAttachments(item)) yield put(withRevalidate(filesResolve.intent(item)));
 
-        void telemetry?.push(
-            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
-        );
-
-        if (item.data.type === 'login' && deobfuscate(item.data.content.totpUri)) {
-            void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
-        }
-
-        onItemsUpdated?.();
+        const hasTotp = item.data.type === 'login' && deobfuscate(item.data.content.totpUri);
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] }));
+        if (hasTotp) void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
     } catch (error) {
         if (error instanceof SelectorError) yield put(itemCreateDismiss({ optimisticId, shareId, itemName }));
         yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
     }
 }
 
-function* withAliasCreationWorker(
-    options: RootSagaOptions,
-    { payload: createIntent, meta }: ItemWithAliasCreationAction
-) {
-    const { onItemsUpdated, getTelemetry } = options;
+function* withAliasCreationWorker(options: RootSagaOptions, { payload: createIntent, meta }: ItemWithAliasCreationAction) {
+    const { getTelemetry } = options;
     const telemetry = getTelemetry();
 
     const { shareId, optimisticId, files } = createIntent;
@@ -72,23 +61,14 @@ function* withAliasCreationWorker(
     try {
         let [loginItem, aliasItem]: ItemRevisionWithAlias = yield createItemWithAlias(createIntent);
         if (shouldLink) loginItem = yield itemLinkPendingFiles(loginItem, files, options);
+        const { content } = loginItem.data;
 
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item: loginItem, alias: aliasItem }));
         if (hasAttachments(loginItem)) yield put(withRevalidate(filesResolve.intent(loginItem)));
 
-        void telemetry?.push(
-            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })
-        );
-
-        void telemetry?.push(
-            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] })
-        );
-
-        if (deobfuscate(loginItem.data.content.totpUri)) {
-            void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
-        }
-
-        onItemsUpdated?.();
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] }));
+        if (deobfuscate(content.totpUri)) void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
     } catch (error) {
         yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
     }

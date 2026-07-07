@@ -5,8 +5,11 @@ import reducer from '@proton/pass/store/reducers';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
 
 import { broadcastMiddleware } from './broadcast';
+import { sshAgentMiddleware } from './ssh-agent.middleware';
 
 export const sagaMiddleware = createSagaMiddleware();
+
+const desktopMiddleware = DESKTOP_BUILD ? [sshAgentMiddleware] : [];
 
 export const store = configureStore({
     reducer,
@@ -15,6 +18,6 @@ export const store = configureStore({
             serializableCheck: false,
             thunk: false,
             immutableCheck: false,
-        }).concat(broadcastMiddleware, requestMiddleware, sagaMiddleware),
+        }).concat(broadcastMiddleware, ...desktopMiddleware, requestMiddleware, sagaMiddleware),
     devTools: ENV !== 'production',
 });

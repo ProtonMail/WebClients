@@ -1,4 +1,4 @@
-import { select } from 'redux-saga/effects';
+import { call, select } from 'redux-saga/effects';
 
 import { moveItems } from '@proton/pass/lib/items/item.requests';
 import { itemMove } from '@proton/pass/store/actions';
@@ -9,14 +9,14 @@ import { first } from '@proton/pass/utils/array/first';
 
 export default createRequestSaga({
     actions: itemMove,
-    call: function* ({ itemId, shareId, targetShareId }, { onItemsUpdated }) {
+    call: function* ({ itemId, shareId, targetShareId }) {
         const before: Maybe<ItemRevision> = yield select(selectItem(shareId, itemId));
         if (!before) throw new Error('Invalid move action');
 
-        const after = first((yield moveItems([before], targetShareId)) as ItemRevision[]);
+        const moved: ItemRevision[] = yield call(moveItems, [before], targetShareId);
+        const after = first(moved);
         if (!after) throw new Error('Moving item failed');
 
-        onItemsUpdated?.();
         return { before, after };
     },
 });

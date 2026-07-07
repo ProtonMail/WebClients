@@ -10,6 +10,7 @@ import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/data
 import { getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
+import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -173,7 +174,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 onNotification: pipe(enhance, createNotification),
 
-                onItemsUpdated: (options) => {
+                onItemsUpdated: async (options) => {
                     if (options?.report ?? true) {
                         void createMonitorReport({
                             state: store.getState(),
@@ -181,6 +182,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                             dispatch: core.onB2BEvent,
                         });
                     }
+
+                    await sshAgent?.sync();
                 },
                 onSettingsUpdated: async (update) => {
                     await settings.sync(update, authStore.getLocalID());

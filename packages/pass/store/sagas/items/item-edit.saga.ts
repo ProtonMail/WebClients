@@ -37,9 +37,7 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     const aliasDetails: Maybe<AliasDetailsState> = yield select(selectAliasDetails(item.aliasEmail));
 
     const currentMailboxIds = new Set(
-        mailboxesForAlias
-            .map((mailbox) => aliasOptions?.mailboxes.find(({ email }) => email === mailbox)?.id)
-            .filter(truthy)
+        mailboxesForAlias.map((mailbox) => aliasOptions?.mailboxes.find(({ email }) => email === mailbox)?.id).filter(truthy)
     );
 
     const nextSlNote = aliasEditIntent.extraData.slNote;
@@ -70,7 +68,7 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
 
 function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }: ReturnType<typeof itemEdit.intent>) {
     const { itemId, shareId, lastRevision, files } = editIntent;
-    const { onItemsUpdated, getTelemetry } = options;
+    const { getTelemetry } = options;
     const telemetry = getTelemetry();
     const itemName = editIntent.metadata.name;
 
@@ -85,12 +83,9 @@ function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }
         if (shouldLink) item = yield itemLinkPendingFiles(item, files, options);
 
         yield put(itemEdit.success(meta.request.id, { item, itemId, shareId }));
-
         if (or(hasAttachments, hasHadAttachments)(item)) yield put(withRevalidate(filesResolve.intent(item)));
 
-        void telemetry?.push(
-            createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] })
-        );
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] }));
 
         if (item.data.type === 'login' && editIntent.type === 'login') {
             const prevTotp = deobfuscate(editIntent.content.totpUri);
@@ -100,8 +95,6 @@ function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }
                 void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFAUpdate, {}, {}));
             }
         }
-
-        onItemsUpdated?.();
     } catch (error) {
         if (error instanceof SelectorError) yield put(itemEditDismiss({ itemId, shareId, itemName }));
         yield put(itemEdit.failure(meta.request.id, error, { itemId, shareId }));

@@ -11,6 +11,7 @@ export enum PassFeature {
     PassCustomTypeV1 = 'PassCustomTypeV1',
     PassDesktopAutotype = 'PassDesktopAutotype',
     PassDesktopBeta = 'PassDesktopBeta',
+    PassDesktopSSHAgent = 'PassDesktopSSHAgent',
     PassDesktopUnlock = 'PassDesktopUnlock',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassExperimentalWebsiteRules = 'PassExperimentalWebsiteRules',
