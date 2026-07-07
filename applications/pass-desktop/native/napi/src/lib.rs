@@ -142,13 +142,8 @@ pub mod msix_updater {
 pub mod ssh_agent_napi {
     use napi::bindgen_prelude::Promise;
     use napi::threadsafe_function::ThreadsafeFunction;
-    use tokio::sync::Mutex as AsyncMutex;
 
     use super::ssh_agent::*;
-
-    // Serializes JS-initiated mutating ops so `set_keys` (remove+add)
-    // can't interleave with a concurrent `set_keys` or `remove_all_keys`.
-    static SSH_AGENT_OPS: AsyncMutex<()> = AsyncMutex::const_new(());
 
     #[napi(object)]
     pub struct SshAgentStatus {
@@ -159,24 +154,21 @@ pub mod ssh_agent_napi {
     pub async fn start_agent(
         is_unlocked_callback: ThreadsafeFunction<Option<String>, Promise<bool>>,
     ) -> napi::Result<()> {
-        napi_res!(SshAgentManager::start_agent(is_unlocked_callback))
+        napi_res!(SshAgentManager::start_agent(is_unlocked_callback).await)
     }
 
     #[napi]
     pub async fn destroy_agent() -> napi::Result<()> {
-        let _guard = SSH_AGENT_OPS.lock().await;
         napi_res!(SshAgentManager::destroy_agent().await)
     }
 
     #[napi]
     pub async fn set_keys(keys: Vec<SshKeyData>) -> napi::Result<()> {
-        let _guard = SSH_AGENT_OPS.lock().await;
         napi_res!(SshAgentManager::set_keys(keys).await)
     }
 
     #[napi]
     pub async fn remove_all_keys() -> napi::Result<()> {
-        let _guard = SSH_AGENT_OPS.lock().await;
         napi_res!(SshAgentManager::remove_all_keys().await)
     }
 
