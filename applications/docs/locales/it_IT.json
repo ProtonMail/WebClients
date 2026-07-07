@@ -3234,7 +3234,7 @@
         "Timeout della richiesta"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "Search failed": [
         "Ricerca non riuscita"
@@ -10583,6 +10583,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Fingerprint": [
+        "Impronta digitale"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Type": [
+        "Tipo"
       ]
     }
   }

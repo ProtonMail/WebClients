@@ -5840,6 +5840,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Βοηθήστε μας να βελτιώσουμε αυτήν την εμπειρία αναφέροντας το πρόβλημα. Εάν αισθάνεστε άνετα να κοινοποιείτε περιεχόμενο υπολογιστικού φύλλου, επισυνάψτε τις παρακάτω πληροφορίες εντοπισμού σφαλμάτων στην αναφορά σας."
+      ],
+      "Hide table of contents": [
+        "Απόκρυψη πίνακα περιεχομένων"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ωχ! Αυτό το υπολογιστικό φύλλο δεν μπορεί να αποθηκεύσει τις πιο πρόσφατες επεξεργασίες σας, επομένως έχουμε διακόψει την επεξεργασία για να αποτρέψουμε την απώλεια της εργασίας σας."
+      ],
+      "Show table of contents": [
+        "Εμφάνιση πίνακα περιεχομένων"
       ]
     },
     "info": {
@@ -10663,6 +10675,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
+      ],
+      "Version 6 OpenPGP key": [
+        "Κλειδί OpenPGP έκδοσης 6"
       ]
     },
     "tooltip": {
@@ -10878,6 +10893,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Fingerprint": [
+        "Δακτυλικό αποτύπωμα"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Type": [
+        "Τύπος"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
       ]
     }
   }

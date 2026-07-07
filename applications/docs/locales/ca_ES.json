@@ -727,7 +727,7 @@
         "Desa els canvis"
       ],
       "Save preferences": [
-        "Deseu les preferències"
+        "Desar les preferències"
       ],
       "Search": [
         "Cerca"
@@ -4708,7 +4708,7 @@
         "Continueu"
       ],
       "Converting document...": [
-        "S'està convertint el document..."
+        "S’està convertint el document..."
       ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
@@ -4760,7 +4760,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant el document..."
+        "S'està creant el nou document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4946,7 +4946,7 @@
         "Obtingueu una adreça de correu electrònic professional @lavostra-empresa.com, 1 TB d'emmagatzematge segur per usuari, trucades de vídeo més llargues i molt més amb el Workspace de ${ BRAND_NAME }."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
         "Rebeu notificacions sobre els comentaris"
@@ -5103,7 +5103,7 @@
         "Prioritat baixa"
       ],
       "Making a copy...": [
-        "S'està fent una còpia..."
+        "S’està fent una còpia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
@@ -5137,7 +5137,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne algun."
+        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne un."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -5436,7 +5436,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "L'URL que heu introduït sembla que s'ha copiat d'Slack incorrectament. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i a continuació trieu \"Copiar l'enllaç\" en comptes de copiar directament el tros de text de l'URL."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de l'Slack. Quan copieu enllaços llargs de l'Slack, heu de tocar amb el botó dret a l'enllaç i, a continuació, heu de triar «Copiar l'enllaç» en lloc de copiar directament el segment de text de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5843,6 +5843,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent al vostre informe."
+      ],
+      "Hide table of contents": [
+        "Amagar la taula de continguts"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Vaja! Aquest full de càlcul no pot desar les darreres modificacions, així que hem aturat l'edició per evitar que perdeu la feina."
+      ],
+      "Show table of contents": [
+        "Mostra la taula de continguts"
       ]
     },
     "info": {
@@ -6126,7 +6138,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Habiliteu les notificacions per correu electrònic"
+        "Habilitar les notificacions per correu electrònic"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -6183,7 +6195,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
-        "Incloeu el nom del document a la notificació"
+        "Inclou el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -9252,7 +9264,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "S'està creant el full de càlcul..."
+        "S'està creant el full de càlcul nou..."
       ],
       "Detect automatically": [
         "Ho detecta automàticament"
@@ -10723,6 +10735,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
       ]
     },
     "tooltip": {
@@ -10938,6 +10953,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     }
   }
