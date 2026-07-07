@@ -1,0 +1,20 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im with (
+	$breakpoints: $breakpoints-product,
+	$media-expressions: $media-expressions
+);
+
+.schedule-meeting-options {
+	background-color: var(--background-card);
+	border-width: rem(1);
+	border-style: solid;
+	border-color: var(--border-weak);
+}
+
+.upgrade-now {
+	background: var(--Linear, linear-gradient(72deg, #ffb477 6.88%, #ff8cfc 50.55%, #afafff 105.07%));
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: none;
+}
