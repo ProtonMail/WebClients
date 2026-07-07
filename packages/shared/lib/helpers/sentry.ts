@@ -376,6 +376,7 @@ export enum SentryMailInitiatives {
     LUMO_IN_MAIL = 'lumo-in-mail',
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
     UPSELL_MODALS = 'upsell-modals',
+    MAILBOX_REDIRECT = 'mailbox-redirect',
 }
 
 export enum SentryMailPerformanceInitiatives {
