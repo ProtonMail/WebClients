@@ -749,62 +749,20 @@ export function isSubscriptionCheckForbiddenWithReason(
     subscription: Subscription | FreeSubscription | null | undefined,
     estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): SubscriptionCheckForbiddenReason {
-    const { planIDs, cycle } = estimationParameters;
-
-    if (hasFreePlanIDs(planIDs)) {
-        return {
-            forbidden: true,
-            reason: 'paid-plan-required',
-        };
-    }
-
-    const codes: string[] = (() => {
-        if (estimationParameters.Codes) {
-            return estimationParameters.Codes;
-        }
-
-        if (estimationParameters.coupon) {
-            return [estimationParameters.coupon];
-        }
-
-        return [];
-    })();
-
-    if (!subscription) {
-        return { forbidden: false };
-    }
-
-    const selectedSameAsCurrent =
-        !!subscription && !isFreeSubscription(subscription)
-            ? isSubscriptionUnchanged(subscription, planIDs, cycle)
-            : false;
-
-    const upcoming = subscription.UpcomingSubscription;
-    const hasUpcomingSubscription = !!upcoming;
-    const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIDs, cycle) : false;
-
-    const variableCycleOffer = getIsVariableCycleOffer(subscription);
-
-    const hasScheduledUnpaidModification =
-        hasUpcomingSubscription && !variableCycleOffer && isUpcomingSubscriptionUnpaid(subscription);
-
-    const selectedSameAsCurrentIgnorringCycle =
-        !!subscription && !isFreeSubscription(subscription) ? isSubscriptionUnchanged(subscription, planIDs) : false;
-
-    const managedExternally = isManagedExternally(subscription);
-
     /**
      * Consider the table with possible cases:
      *
      * | Scenario                       | selectedSameAsCurrent | selectedSameAsUpcoming |
      * |--------------------------------|-----------------------|------------------------|
-     * | hasVariableCycleOffer          | check forbidden*      | check forbidden        |
-     * | hasUpcomingPrepaidSubscription | check forbidden*      | check forbidden        |
-     * | hasNoUpcomingSubscription      | check forbidden*      | n/a                    |
+     * | hasVariableCycleOffer          | check forbidden (1*)  | check forbidden        |
+     * | hasUpcomingPrepaidSubscription | check forbidden (1*)  | check forbidden        |
+     * | hasNoUpcomingSubscription      | check forbidden (1*)  | n/a                    |
      * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden        |
      *
-     * *unless a coupon/code is provided — in that case the check is allowed so the backend
-     *  can validate the coupon and return the discounted price. See P2-1927.
+     * (1*) - unless a NEW coupon/code is provided — one that differs from the coupon already applied to the active
+     *  subscription (or more than one code). In that case the check is allowed so the backend can validate the coupon
+     *  and return the discounted price. Re-supplying the coupon the subscription already has does not count as new and
+     *  stays "check forbidden". See P2-1927 and P2-2106.
      *
      * Please do not join this multi-line comment with others, I keep it separated to prevent some auto-formatting
      * tools from breaking this table.
@@ -812,6 +770,11 @@ export function isSubscriptionCheckForbiddenWithReason(
     /**
      * "check forbidden" means that the /check endpoint will return an error. "check allowed" means that the /check
      * endpoint will work as expected.
+     *
+     * Two branches short-circuit before the table above is reached:
+     *   - A free plan selection (`hasFreePlanIDs`) is always forbidden with reason 'paid-plan-required'. The /check
+     *     endpoint only estimates paid plans, so there's nothing to estimate for a free plan.
+     *   - No subscription at all (a new or free user) is always allowed.
      *
      * hasVariableCycleOffer - when user has an automatic scheduled unpaid subscription. For example, when user
      * subscribes to vpn2024 24m then the backend will create a scheduled 12m subscription.
@@ -827,43 +790,94 @@ export function isSubscriptionCheckForbiddenWithReason(
      * number of scribes.
      *
      * The four cases described above are handled by:
-     * `(selectedSameAsCurrent && !hasScheduledUnpaidModification && !codes.length) || selectedSameAsUpcoming`
+     * `(forbiddenWithoutNewCoupon && !hasNewCoupon) || selectedSameAsUpcoming`, where
+     * `forbiddenWithoutNewCoupon = selectedSameAsCurrent && !hasScheduledUnpaidModification`. When it matches, the
+     * function returns reason 'already-subscribed'.
      *
-     * The `!codes.length` part allows the /check call when a coupon or promo code is present, even if the plan and
+     * The `!hasNewCoupon` part allows the /check call when a NEW coupon or promo code is present, even if the plan and
      * cycle are the same as the current subscription. This is needed so the backend can validate the coupon and return
-     * the discounted price. The coupon exception intentionally does not apply to `selectedSameAsUpcoming`.
+     * the discounted price. In that case the function returns `{ forbidden: false, reason: 'possibly-invalid-coupon' }`
+     * (see {@link isDangerouslyAllowedSubscriptionEstimation}). A coupon counts as new only when it differs from the
+     * coupon already applied to the subscription (or when more than one code is supplied) — re-supplying the existing
+     * coupon stays 'already-subscribed', see P2-2106. The coupon exception intentionally does not apply to
+     * `selectedSameAsUpcoming`.
      *
      * The condition `selectedSameAsCurrentIgnorringCycle && managedExternally` is a special case for multi-subs. If
      * user has a mobile subscription (for example, Lumo) and selects the same plan on web (any cycle) then the check is
-     * forbidden. Users must not be able to modify the subscription that's managed externally. In some cases, they
-     * should be allowed to create a new one, and we call it multi-subs.
+     * forbidden (reason 'already-subscribed-externally'). Users must not be able to modify the subscription that's
+     * managed externally. In some cases, they should be allowed to create a new one, and we call it multi-subs.
      *
      * P2-634 is the relevant ticket.
      *
-     * Additionally, some modification can be forbidden according to the `isForbiddenModification` function. At the time
-     * of writing this comment, it was forbidden to buy multi-user personal plans (Duo, Family, etc) while having an
-     * externally managed Lumo subscription.
+     * Additionally, some modification can be forbidden according to the `isForbiddenModification` function (reason
+     * 'offer-not-available'). At the time of writing this comment, it was forbidden to buy multi-user personal plans
+     * (Duo, Family, etc) while having an externally managed Lumo subscription.
      *
      */
-    const forbiddenWithoutCoupon = selectedSameAsCurrent && !hasScheduledUnpaidModification;
-    if ((forbiddenWithoutCoupon && !codes.length) || selectedSameAsUpcoming) {
-        return { forbidden: true, reason: 'already-subscribed' };
+
+    const { planIDs, cycle } = estimationParameters;
+
+    if (hasFreePlanIDs(planIDs)) {
+        return {
+            forbidden: true,
+            reason: 'paid-plan-required',
+        };
     }
+
+    if (!subscription) {
+        return { forbidden: false };
+    }
+
+    const forbiddenModificationAttempt = isForbiddenModification(subscription, planIDs);
+    if (forbiddenModificationAttempt) {
+        return { forbidden: true, reason: 'offer-not-available' };
+    }
+
+    const selectedSameAsCurrentIgnorringCycle =
+        !!subscription && !isFreeSubscription(subscription) ? isSubscriptionUnchanged(subscription, planIDs) : false;
+
+    const managedExternally = isManagedExternally(subscription);
 
     if (selectedSameAsCurrentIgnorringCycle && managedExternally) {
         return { forbidden: true, reason: 'already-subscribed-externally' };
     }
 
-    const forbiddenModificationAttempt = isForbiddenModification(subscription, planIDs);
+    const codes: string[] = (() => {
+        if (estimationParameters.Codes) {
+            return estimationParameters.Codes;
+        }
 
-    if (forbiddenModificationAttempt) {
-        return { forbidden: true, reason: 'offer-not-available' };
+        if (estimationParameters.coupon) {
+            return [estimationParameters.coupon];
+        }
+
+        return [];
+    })();
+
+    const upcoming = subscription.UpcomingSubscription;
+    const hasUpcomingSubscription = !!upcoming;
+    const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIDs, cycle) : false;
+
+    const selectedSameAsCurrent =
+        !!subscription && !isFreeSubscription(subscription)
+            ? isSubscriptionUnchanged(subscription, planIDs, cycle)
+            : false;
+
+    const variableCycleOffer = getIsVariableCycleOffer(subscription);
+
+    const hasScheduledUnpaidModification =
+        hasUpcomingSubscription && !variableCycleOffer && isUpcomingSubscriptionUnpaid(subscription);
+
+    const forbiddenWithoutNewCoupon = selectedSameAsCurrent && !hasScheduledUnpaidModification;
+    const hasNewCoupon = !!codes.length && (codes.length >= 2 || codes[0] !== subscription.CouponCode);
+    if ((forbiddenWithoutNewCoupon && !hasNewCoupon) || selectedSameAsUpcoming) {
+        return { forbidden: true, reason: 'already-subscribed' };
     }
 
     /**
      * See comments for {@link isDangerouslyAllowedSubscriptionEstimation} for more details.
      */
-    if (forbiddenWithoutCoupon && codes.length) {
+    if (forbiddenWithoutNewCoupon && hasNewCoupon) {
         return { forbidden: false, reason: 'possibly-invalid-coupon' };
     }
 
