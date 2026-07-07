@@ -13,7 +13,7 @@ type BaseMessage = Pick<
 >;
 
 export interface MailSearchContext {
-    LabelID: string;
+    LabelIDs: string[];
 }
 
 export const queryMessageMetadata = ({

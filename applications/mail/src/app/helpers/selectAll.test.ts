@@ -147,6 +147,7 @@ describe('selectAll', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
                     currentLabel: MAILBOX_LABEL_IDS.INBOX,
+                    categoryIDs: [],
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -158,7 +159,8 @@ describe('selectAll', () => {
             it('should return newsletters button text', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
-                    currentLabel: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -167,10 +169,24 @@ describe('selectAll', () => {
                 expect(res).toEqual(`Select all ${elementsCount} in Newsletters`);
             });
 
+            it('should prefer CATEGORY_DEFAULT when multiple categories are active', () => {
+                const res = getSelectAllButtonText({
+                    selectAll: false,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
+                    elementsCount,
+                    customLabels,
+                    customFolders,
+                });
+
+                expect(res).toEqual(`Select all ${elementsCount} in Primary`);
+            });
+
             it('should return custom label button text', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
                     currentLabel: customLabelID,
+                    categoryIDs: [],
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -183,6 +199,7 @@ describe('selectAll', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
                     currentLabel: customFolderID,
+                    categoryIDs: [],
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -197,6 +214,7 @@ describe('selectAll', () => {
                 const res = getSelectAllButtonText({
                     selectAll: true,
                     currentLabel: customLabelID,
+                    categoryIDs: [],
                     elementsCount,
                     customLabels,
                     customFolders,
