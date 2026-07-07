@@ -11,13 +11,14 @@ import {
     extractPRFBuffer,
     isPRFSupported,
 } from './prf';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 jest.mock('@proton/shared/lib/helpers/browser');
 const isChromiumBased = browser.isChromiumBased as jest.Mock;
 const isMinimumSafariVersion = browser.isMinimumSafariVersion as jest.Mock;
 const isUserVerifyingPlatformAuthenticatorAvailable = jest.fn();
 
-const TEST_PRF_BYTES = stringToUint8Array('test.webauthn.prf.salt');
+const TEST_PRF_BYTES = utf8StringToUint8Array('test.webauthn.prf.salt');
 const TEST_HKDF_B64 = 'xW/XzmkKNMbwoBJ6UuFR1rdOAd5Fbp2QO9OPp6QYt6s=';
 
 global.PublicKeyCredential = function PublicKeyCredential() {} as any;
@@ -106,7 +107,7 @@ describe('PRF utilities', () => {
             const credential = createMockCredential({ results: { first: TEST_PRF_BYTES } });
             const result = await deriveKeyFromPRFCredential(credential);
 
-            const message = stringToUint8Array('test.message');
+            const message = utf8StringToUint8Array('test.message');
             const expectedKey = await importKey(Uint8Array.fromBase64(TEST_HKDF_B64));
             const encryptedMessage = await encryptData(expectedKey, message);
 

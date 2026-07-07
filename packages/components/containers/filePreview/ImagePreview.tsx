@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
@@ -7,9 +8,9 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useDragToScroll } from '@proton/components/hooks/useDragToScroll';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import UnsupportedPreview from './UnsupportedPreview';
 import ZoomControl from './ZoomControl';
@@ -58,11 +59,16 @@ function getImageDimensions(imageElement: HTMLImageElement | null): ElementDimen
  * milliseconds, bigger ones (MBs) under second. Only super huge ones takes even
  * 10 seconds on slow computer as is mine, but we talk about huge SVGs as 30 MB.
  * Because such SVG is more edge case, we can live with that.
+ *
+ * @throws if the input svg has latin1 encoding and includes non-ascii chars,
+ * since decoding the bytes will fail.
+ * This is intentionally not supported since non-utf8 svgs are not the norm, and most browsers
+ * would fail to load them anyway via img/blob.
  */
 function sanitizeSVG(contents: Uint8Array<ArrayBuffer>[]): Uint8Array<ArrayBuffer>[] {
-    const contentsString = contents.map(uint8ArrayToString).join('');
+    const contentsString = new TextDecoder('utf-8', { fatal: true }).decode(mergeUint8Arrays(contents));
     const sanitizedSVG = DOMPurify.sanitize(contentsString);
-    return [stringToUint8Array(sanitizedSVG)];
+    return [utf8StringToUint8Array(sanitizedSVG)];
 }
 
 function calcImageScaleToFitContainer(imageDimensions: ElementDimensions, containerDimensions: DOMRect) {
@@ -200,7 +206,13 @@ const ImagePreview = ({
             return;
         }
 
-        const data = isSVG(mimeType) ? sanitizeSVG(contents) : contents;
+        let data;
+        try {
+            data = isSVG(mimeType) ? sanitizeSVG(contents) : contents;
+        } catch {
+            setError(true);
+            return;
+        }
         const blob = new Blob(data, { type: mimeType });
         const srcUrl = URL.createObjectURL(blob);
 

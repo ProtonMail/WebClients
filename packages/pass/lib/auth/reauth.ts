@@ -4,7 +4,7 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { decryptData, encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ExportRequestOptions } from '@proton/pass/lib/export/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 export enum ReauthAction {
     BIOMETRICS_SETUP = 'BIOMETRICS_SETUP',
@@ -56,8 +56,8 @@ export const resolveReauthKey = async (
     const sessionLockToken = authStore.getLockToken();
     if (!sessionLockToken) throw new Error('Reauth key resolution failure');
 
-    const secret = stringToUint8Array(sessionLockToken);
-    const info = stringToUint8Array(PassEncryptionTag.ReauthPayload);
+    const secret = utf8StringToUint8Array(sessionLockToken);
+    const info = utf8StringToUint8Array(PassEncryptionTag.ReauthPayload);
     return deriveKey(secret, salt, info);
 };
 
@@ -66,7 +66,7 @@ export const encryptReauthLock = async (payload: ReauthLockChange, authStore: Au
 
     const salt = crypto.getRandomValues(new Uint8Array(32));
     const key = await resolveReauthKey(authStore, salt);
-    const encrypted = await encryptData(key, stringToUint8Array(payload.pin), PassEncryptionTag.ReauthPayload);
+    const encrypted = await encryptData(key, utf8StringToUint8Array(payload.pin), PassEncryptionTag.ReauthPayload);
     const data = { encrypted: encrypted.toBase64(), salt: salt.toBase64() } satisfies EncryptedReauthPayload;
     const pin = JSON.stringify(data);
 
@@ -82,5 +82,5 @@ export const decryptReauthLock = async (payload: ReauthLockChange, authStore: Au
     const key = await resolveReauthKey(authStore, salt);
     const pin = await decryptData(key, encrypted, PassEncryptionTag.ReauthPayload);
 
-    return { pin: uint8ArrayToString(pin), ttl: payload.ttl };
+    return { pin: uint8ArrayToUtf8String(pin), ttl: payload.ttl };
 };
