@@ -7,7 +7,7 @@ import type { GeneralRouterParams } from '../../content/router-params';
 
 export const getVpnAppRoutes = ({ app }: GeneralRouterParams) => {
     return <const>{
-        available: app === APPS.PROTONVPN_SETTINGS,
+        available: app === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONACCOUNT,
         header: VPN_APP_NAME,
         routes: {
             downloads: {

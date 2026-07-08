@@ -22,6 +22,7 @@ import { useB2BAdminNavigation, useNavigationRef } from '@proton/vpn/contexts/na
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
+import SidebarAppsList from './SidebarAppsList';
 import type { Routes } from './routes';
 
 interface AccountSidebarProps {
@@ -60,7 +61,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
     const backButtonTitle = backButtonCopyTitle[app as keyof typeof backButtonCopyTitle];
-    const prefix = `/${appSlug}`;
+    const prefix = appSlug ? `/${appSlug}` : '';
 
     const {
         passOnboardingSpotlights: { startUsingPassSpotlight },
@@ -103,6 +104,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
+            preFooter={app === APPS.PROTONACCOUNT ? <SidebarAppsList /> : undefined}
             version={<AppVersion />}
             wide={isAdminSidebarEnabled}
             data-testid="account:sidebar"

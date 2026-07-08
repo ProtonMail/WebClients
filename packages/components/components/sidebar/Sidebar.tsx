@@ -124,7 +124,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     /**
      * Extra content that will be rendered below the storage meter and version.
      */
-    hideStorage?: boolean;
     footerVariant?: 'full' | 'minimal' | 'hidden';
     preFooter?: ReactNode;
     postFooter?: ReactNode;
@@ -162,7 +161,6 @@ const Sidebar = ({
     preFooter,
     postFooter,
     growContent = true,
-    hideStorage = false,
     footerVariant = 'full',
     collapsed = false,
     wide = false,
@@ -274,16 +272,14 @@ const Sidebar = ({
                 {footerVariant === 'full' && appSpace.maxSpace > 0 && (
                     <div className="shrink-0 app-infos px-3 mt-2">
                         {preFooter}
-                        {!hideStorage && (
-                            <Storage
-                                appSpace={appSpace}
-                                app={app}
-                                user={user}
-                                subscription={subscription}
-                                version={version}
-                                wavyMeter={wavyMeter}
-                            />
-                        )}
+                        <Storage
+                            appSpace={appSpace}
+                            app={app}
+                            user={user}
+                            subscription={subscription}
+                            version={version}
+                            wavyMeter={wavyMeter}
+                        />
                         {postFooter}
                     </div>
                 )}
