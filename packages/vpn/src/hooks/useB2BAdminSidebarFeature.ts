@@ -81,7 +81,6 @@ export const useB2BAdminSidebarFeature = ({
 
     const { sidebar, spotlight } = useSidebarFeature();
 
-    const B2BLogsVPN = useFlag('B2BLogsVPN');
     const SsoForPbs = useFlag('SsoForPbs');
 
     const ZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
@@ -118,7 +117,6 @@ export const useB2BAdminSidebarFeature = ({
         organization,
         notifications: { recovery: recoveryNotification?.color },
         flags: {
-            B2BLogsVPN,
             SsoForPbs,
             ZoomIntegrationDisabled,
             NewScheduleOption,

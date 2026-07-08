@@ -14,7 +14,6 @@ import {
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
@@ -42,9 +41,8 @@ const useCanViewB2BOrganization = (user: UserModel, organization?: OrganizationE
     const isAdmin = user.isAdmin && user.isSelf;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
-    const canDisplayB2BOrganizationEvents = useFlag('B2BOrganizationMonitor');
 
-    return canDisplayB2BOrganizationEvents && (hasOrganizationKey || hasOrganization) && isAdmin;
+    return (hasOrganizationKey || hasOrganization) && isAdmin;
 };
 
 const useCanViewGatewayMonitor = (
@@ -58,14 +56,8 @@ const useCanViewGatewayMonitor = (
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasPlanWithEventLogging =
         hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
-    const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
 
-    return (
-        canDisplayB2BLogsVPN &&
-        hasPlanWithEventLogging &&
-        canHaveOrganization &&
-        (hasOrganizationKey || hasOrganization)
-    );
+    return hasPlanWithEventLogging && canHaveOrganization && (hasOrganizationKey || hasOrganization);
 };
 
 const useCanViewPassMonitor = (
@@ -78,11 +70,8 @@ const useCanViewPassMonitor = (
     const hasOrganization = hasOrganizationSetup(organization);
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasPassOrBundleB2B = hasPassBusiness(subscription) || hasAnyB2bBundle(subscription);
-    const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
 
-    return (
-        canDisplayB2BLogsPass && hasPassOrBundleB2B && canHaveOrganization && (hasOrganizationKey || hasOrganization)
-    );
+    return hasPassOrBundleB2B && canHaveOrganization && (hasOrganizationKey || hasOrganization);
 };
 
 const ActivityMonitorDashboard = ({ user, organization, subscription }: Props) => {

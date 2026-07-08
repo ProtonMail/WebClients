@@ -127,7 +127,6 @@ const MainContainer: FunctionComponent = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
-    const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const isZoomIntegrationEnabled = !isZoomIntegrationDisabled;
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
@@ -168,7 +167,6 @@ const MainContainer: FunctionComponent = () => {
     });
 
     const flags: Flags = {
-        canDisplayB2BLogsVPN,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
         isUserGroupsPassBusinessEnabled,
