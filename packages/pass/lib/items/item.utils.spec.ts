@@ -5,7 +5,7 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -390,7 +390,10 @@ describe('Item utils', () => {
 
     describe('intoLoginItemPreview', () => {
         const login = itemBuilder('login');
-        login.get('content').set('urls', ['https://example.com']).set('itemUsername', 'username');
+        login
+            .get('content')
+            .set('autofillUrls', [{ url: 'https://example.com', mode: AutofillMode.Default }])
+            .set('itemUsername', 'username');
         login.get('metadata').set('name', 'My Login');
 
         const item = createTestItem('login', {
@@ -407,6 +410,43 @@ describe('Item utils', () => {
                 userIdentifier: 'username',
                 url: 'https://example.com',
             });
+        });
+
+        test('should not surface a `Never`-mode url as the preview url', () => {
+            const loginWithBlocker = itemBuilder('login');
+            loginWithBlocker
+                .get('content')
+                .set('autofillUrls', [
+                    { url: 'https://blocked.example.com', mode: AutofillMode.Never },
+                    { url: 'https://real.example.com', mode: AutofillMode.Exact },
+                ])
+                .set('itemUsername', 'username');
+            loginWithBlocker.get('metadata').set('name', 'My Login');
+
+            const itemWithBlocker = createTestItem('login', {
+                shareId: 'share1',
+                itemId: 'item1',
+                data: loginWithBlocker.data,
+            }) as LoginItem;
+
+            expect(intoLoginItemPreview(itemWithBlocker).url).toEqual('https://real.example.com');
+        });
+
+        test('should return undefined url if only a `Never` entry is present', () => {
+            const loginOnlyBlocked = itemBuilder('login');
+            loginOnlyBlocked
+                .get('content')
+                .set('autofillUrls', [{ url: 'https://blocked.example.com', mode: AutofillMode.Never }])
+                .set('itemUsername', 'username');
+            loginOnlyBlocked.get('metadata').set('name', 'My Login');
+
+            const itemOnlyBlocked = createTestItem('login', {
+                shareId: 'share1',
+                itemId: 'item1',
+                data: loginOnlyBlocked.data,
+            }) as LoginItem;
+
+            expect(intoLoginItemPreview(itemOnlyBlocked).url).toBeUndefined();
         });
     });
 

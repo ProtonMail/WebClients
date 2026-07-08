@@ -1,4 +1,5 @@
 import type { ItemDiff } from '@proton/pass/lib/items/item.diff';
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import type {
     ItemCreateIntent,
@@ -8,7 +9,6 @@ import type {
     ItemType,
     MaybeNull,
 } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 export type ItemViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevisionWithOptimistic<T>;

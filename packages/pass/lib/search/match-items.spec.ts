@@ -1,5 +1,5 @@
 import type { ItemRevision } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { searchItems } from './match-items';
@@ -27,7 +27,7 @@ describe('searchItems', () => {
                 content: {
                     itemEmail: obfuscate('user1@example.com'),
                     itemUsername: obfuscate('user1'),
-                    urls: ['https://example.com'],
+                    autofillUrls: [{ url: 'https://example.com', mode: AutofillMode.Default }],
                     password: obfuscate(''),
                     totpUri: obfuscate('otpauth://totp/label?secret=secret&issuer=issuer'),
                 },

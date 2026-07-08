@@ -1,4 +1,5 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { ItemUrlMatch } from '@proton/pass/lib/urls/search/match-url';
+import type { ItemRevision, MaybeNull } from '@proton/pass/types';
 
 export type ParsedUrl = {
     /* domain without suffix */
@@ -19,6 +20,10 @@ export type ParsedUrl = {
     isPrivate: boolean;
     /* matches `https:` protocol */
     isSecure: boolean;
+    /* full original url */
+    url: MaybeNull<string>;
+    /* clean url without search params and hash */
+    cleanUrl: MaybeNull<string>;
 };
 
 export type URLComponents = Pick<ParsedUrl, 'domain' | 'port' | 'protocol'>;
@@ -29,4 +34,20 @@ export type SanitizedUrl = {
     protocol: MaybeNull<string>;
     port: MaybeNull<string>;
     url: string;
+    cleanUrl: MaybeNull<string>;
+};
+
+export type ItemWithPriority = {
+    item: ItemRevision<'login'>;
+    priority: ItemUrlMatch;
+};
+
+export type SortOnItems = 'priority' | 'lastUseTime';
+
+export type SearchItemsByDomainOptions = {
+    shareIds?: string[];
+    sortOn?: SortOnItems;
+    strict?: boolean;
+    regexEnabled?: boolean;
+    privateDomains?: Set<string>;
 };
