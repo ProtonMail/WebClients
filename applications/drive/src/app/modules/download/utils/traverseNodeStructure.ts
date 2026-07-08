@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive';
+import type { NodeEntity, PhotoNode } from '@proton/drive';
 import { NodeType } from '@proton/drive';
 import { getNodeName, isMissingNode } from '@proton/drive/modules/nodes';
 
@@ -46,7 +46,7 @@ type DriveClient = ReturnType<typeof DownloadDriveClientRegistry.getDriveClient>
  *   {uids:['c']}      ──►  resolve([])        // 'c' was missing
  *   {uids:['d','e']}  ──►  resolve([d, e])
  */
-function createBatchedNodeLoader(driveClient: DriveClient, signal: AbortSignal) {
+function createBatchedNodeLoader(driveClient: Pick<DriveClient, 'iterateNodes'>, signal: AbortSignal) {
     type PendingRequest = {
         uids: string[];
         resolve: (nodes: NodeEntity[]) => void;
@@ -178,6 +178,75 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
             nodesQueue.error(error);
             throw error;
         });
+
+    return { nodesQueue, traversalCompletedPromise, parentPathByUid };
+}
+
+/**
+ * Traverse a whole album, sourcing its top-level items from `iterateAlbum` instead of folder
+ * children. The album itself is never pushed to the queue (the resulting archive is flat), and
+ * albums have no folders to recurse into, so this doesn't share the folder-walking code above.
+ * Like folder children, a missing item is skipped rather than failing the whole album.
+ */
+export function traverseAlbum(albumNodeUid: string, signal: AbortSignal): ArchiveTraversalResult {
+    const nodesQueue = createAsyncQueue<NodeEntity>();
+    const parentPathByUid = new Map<string, string[]>();
+    const drivePhotosClient = DownloadDriveClientRegistry.getDrivePhotosClient();
+    const traversalStart = performance.now();
+
+    let totalEncryptedSize = 0;
+    let containsUnsupportedFile = false;
+
+    const loadNodes = createBatchedNodeLoader(drivePhotosClient, signal);
+
+    const walk = async (node: NodeEntity, parentPath: string[]): Promise<void> => {
+        parentPathByUid.set(node.uid, parentPath);
+
+        if (checkUnsupportedNode(node)) {
+            containsUnsupportedFile = true;
+            return;
+        }
+
+        nodesQueue.push(node);
+        totalEncryptedSize += getNodeStorageSize(node);
+
+        // Live photos pair a photo with a related video node that also needs to be archived.
+        const relatedUids = (node as PhotoNode).photo?.relatedPhotoNodeUids;
+        if (relatedUids?.length) {
+            const relatedNodes = await loadNodes(relatedUids);
+            await Promise.all(relatedNodes.map((related) => walk(related, parentPath)));
+        }
+    };
+
+    const traversalCompletedPromise = (async () => {
+        // Each item is loaded (and walked, i.e. pushed to nodesQueue) as soon as it's yielded,
+        // instead of collecting the whole album's uids before doing a single bulk load: the archive
+        // generator can start consuming nodesQueue while iterateAlbum is still paginating.
+        const itemWalks: Promise<void>[] = [];
+        for await (const item of drivePhotosClient.iterateAlbum(albumNodeUid, signal)) {
+            itemWalks.push(
+                loadNodes([item.nodeUid]).then(([node]) => {
+                    // Item missing (removed elsewhere): skip it and keep archiving the rest.
+                    if (!node) {
+                        return;
+                    }
+                    return walk(node, []);
+                })
+            );
+        }
+
+        await Promise.all(itemWalks);
+
+        nodesQueue.close();
+        downloadLogDebug('Traversal complete', {
+            totalMs: Math.round(performance.now() - traversalStart),
+            totalEncryptedSize,
+        });
+        return { totalEncryptedSize, containsUnsupportedFile };
+    })().catch((error) => {
+        nodesQueue.error(error);
+        throw error;
+    });
 
     return { nodesQueue, traversalCompletedPromise, parentPathByUid };
 }

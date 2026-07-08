@@ -169,3 +169,31 @@ describe('TransferItem - malware report button', () => {
         });
     });
 });
+
+describe('TransferItem - preparing state', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        act(() => {
+            useDownloadManagerStore.getState().clearQueue();
+        });
+    });
+
+    it('shows transferred bytes while preparing, same as a normal download', () => {
+        seedDownloadItem({ status: DownloadStatus.Preparing, storageSize: undefined });
+
+        render(
+            <TransferItem
+                entry={createEntry({
+                    status: DownloadStatus.Preparing,
+                    storageSize: undefined,
+                    transferredBytes: 2048,
+                })}
+                cancelTransfer={jest.fn()}
+                retryTransfer={jest.fn()}
+            />
+        );
+
+        expect(screen.getByTestId('transfer-row:transferred-data').textContent).toContain('2 KB');
+    });
+});
