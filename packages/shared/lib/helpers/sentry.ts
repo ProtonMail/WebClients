@@ -394,10 +394,15 @@ export enum SentryCalendarInitiatives {
     BOOKINGS = 'bookings',
 }
 
+export enum SentryRealtimeInitiatives {
+    SDK_SWITCH = 'sdk-switch',
+}
+
 export type SentryInitiative =
     | `${SentryMailInitiatives}`
     | `${SentryCommonInitiatives}`
     | `${SentryCalendarInitiatives}`
+    | `${SentryRealtimeInitiatives}`
     | `${SentryMailPerformanceInitiatives}`;
 
 type CaptureExceptionArgs = Parameters<typeof captureException>;
