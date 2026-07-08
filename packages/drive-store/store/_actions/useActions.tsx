@@ -227,7 +227,7 @@ export default function useActions() {
 
     /**
      * @param [notify] - whether notification popover should be displayed upon
-     * successful trash. Disabled on Docs
+     * successful trash.
      */
     const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
         if (!linksToTrash.length) {
@@ -264,7 +264,7 @@ export default function useActions() {
 
     /**
      * @param [notify] - whether notification popover should be displayed upon
-     * successful trash. Disabled on Docs
+     * successful trash.
      */
     const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[], notify = true) => {
         if (!linksToRestore.length) {

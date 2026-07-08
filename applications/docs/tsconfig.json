@@ -45,6 +45,8 @@
       "proton-pass-web/*": ["../../applications/pass/src/*"],
       // Support import aliases.
       "~/components/*": ["./src/app/components/*"],
+      "~/drive-sdk": ["./src/app/drive-sdk"],
+      "~/drive-sdk/*": ["./src/app/drive-sdk/*"],
       "~/utils/*": ["./src/app/utils/*"],
       "~/redux-store/*": ["./src/app/redux-store/*"],
       "~/config": ["./src/app/config"]

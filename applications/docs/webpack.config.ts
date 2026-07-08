@@ -52,6 +52,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
       ...config.resolve?.alias,
       // Support import aliases.
       '~/components': path.resolve(__dirname, 'src/app/components'),
+      '~/drive-sdk': path.resolve(__dirname, 'src/app/drive-sdk'),
       '~/utils': path.resolve(__dirname, 'src/app/utils'),
       '~/redux-store': path.resolve(__dirname, 'src/app/redux-store'),
       '~/config': path.resolve(__dirname, 'src/app/config'),
