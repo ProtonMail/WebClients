@@ -1,17 +1,26 @@
+import type { SessionKey } from '@protontech/crypto';
+
 export enum StorageMessageType {
     INIT = 'init',
     ADD_CHUNK = 'addChunk',
     FINALIZE = 'finalize',
     CLEAR = 'clear',
-    CLOSE = 'close',
 }
 
 export type StorageWorkerMessage =
-    | { type: StorageMessageType.INIT; id: string; data: { fileExtension: string; userId: string } }
+    | {
+          type: StorageMessageType.INIT;
+          id: string;
+          data: {
+              fileExtension: string;
+              userId: string;
+              encryptedSessionKey: Uint8Array<ArrayBuffer>;
+              sessionKey: SessionKey;
+          };
+      }
     | { type: StorageMessageType.ADD_CHUNK; id: string; data: { chunkBuffer: ArrayBuffer } }
     | { type: StorageMessageType.FINALIZE; id: string }
-    | { type: StorageMessageType.CLEAR; id: string }
-    | { type: StorageMessageType.CLOSE; id: string };
+    | { type: StorageMessageType.CLEAR; id: string };
 
 export enum StorageWorkerResponseType {
     SUCCESS = 'success',

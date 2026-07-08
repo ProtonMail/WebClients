@@ -64,6 +64,7 @@ export class RecordingSession {
         initialScene,
         initialAudioTracks,
         initialRecordedTracks,
+        encryptionKey,
     }: RecordingSessionStartOptions): Promise<void> {
         // eslint-disable-next-line no-console
         console.log('[MeetingRecorder] starting recording', {
@@ -71,7 +72,12 @@ export class RecordingSession {
             backend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
         });
 
-        this.storage = await createRecordingStorageClient(this.codec.extension, this.userId, this.handleStorageFull);
+        this.storage = await createRecordingStorageClient(
+            this.codec.extension,
+            this.userId,
+            encryptionKey,
+            this.handleStorageFull
+        );
 
         this.videoMixer = new VideoMixerClient({
             initialScene,

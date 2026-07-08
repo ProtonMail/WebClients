@@ -1,3 +1,6 @@
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
@@ -32,14 +35,16 @@ export class RecordingStorageClient {
     private fileExtension: string;
     private userId: string;
     private onStorageFull?: () => void;
+    private storageFull = false;
 
     constructor(fileExtension: string, userId: string, onStorageFull?: () => void) {
         this.fileExtension = fileExtension;
         this.userId = userId;
         this.onStorageFull = onStorageFull;
+        this.storageFull = false;
     }
 
-    async init(): Promise<void> {
+    async init(encryptionKey: PublicKeyReference): Promise<void> {
         this.worker = new Worker(new URL('./worker/worker.ts', import.meta.url), {
             type: 'module',
         });
@@ -51,7 +56,8 @@ export class RecordingStorageClient {
 
             const response = event.data;
 
-            if (response.type === StorageWorkerResponseType.STORAGE_FULL) {
+            if (response.type === StorageWorkerResponseType.STORAGE_FULL && !this.storageFull) {
+                this.storageFull = true;
                 this.onStorageFull?.();
                 return;
             }
@@ -89,9 +95,30 @@ export class RecordingStorageClient {
             this.pendingMessages.clear();
         };
 
+        const aeadSessionKey = await CryptoProxy.generateSessionKey({
+            config: {
+                /**
+                 * An AEAD session key needs to be generated here, to make it possible to safely release
+                 * partially decrypted data, if the encrypted file is truncated (e.g. on max storage quota reached).
+                 * @dev this setting is not backwards compatible across clients, do not blindly use it elsewhere
+                 */
+                aeadProtect: true,
+            },
+        });
+        const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+            ...aeadSessionKey,
+            encryptionKeys: encryptionKey,
+            format: 'binary',
+        });
+
         await this.send({
             type: StorageMessageType.INIT,
-            data: { fileExtension: this.fileExtension, userId: this.userId },
+            data: {
+                fileExtension: this.fileExtension,
+                userId: this.userId,
+                sessionKey: aeadSessionKey,
+                encryptedSessionKey,
+            },
         });
     }
 
@@ -153,23 +180,6 @@ export class RecordingStorageClient {
         await this.send({ type: StorageMessageType.CLEAR });
     }
 
-    close(): void {
-        if (!this.worker) {
-            return;
-        }
-
-        try {
-            const message: StorageWorkerMessage = {
-                type: StorageMessageType.CLOSE,
-                id: this.generateMessageId(),
-            };
-            this.worker.postMessage(message);
-        } catch (err) {
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder/recordingWorker] Error sending close message:', err);
-        }
-    }
-
     terminate(): void {
         if (this.worker) {
             this.worker.terminate();
@@ -215,9 +225,10 @@ export class RecordingStorageClient {
 export const createRecordingStorageClient = async (
     fileExtension: string,
     userId: string,
+    encryptionKey: PublicKeyReference,
     onStorageFull?: () => void
 ): Promise<RecordingStorageClient> => {
     const client = new RecordingStorageClient(fileExtension, userId, onStorageFull);
-    await client.init();
+    await client.init(encryptionKey);
     return client;
 };
