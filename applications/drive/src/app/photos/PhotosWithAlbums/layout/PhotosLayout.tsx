@@ -47,6 +47,7 @@ export const PhotosLayout = () => {
         albumPhotoTimelineUids,
         photoTimelineUids,
         requestDownload,
+        requestAlbumDownload,
         isAlbumsLoading,
         isPhotosLoading,
         handleSelectTag,
@@ -350,6 +351,7 @@ export const PhotosLayout = () => {
                         selectedItems={selectedItems}
                         createAlbumModal={modals.createAlbumModal}
                         requestDownload={requestDownload}
+                        requestAlbumDownload={requestAlbumDownload}
                         onAddAlbumPhotos={onAddAlbumPhotosToolbar}
                         onUploadStart={handleRedirectToAlbum}
                         openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}

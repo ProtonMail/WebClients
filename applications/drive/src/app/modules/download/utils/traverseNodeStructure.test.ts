@@ -2,11 +2,12 @@ import { NodeType } from '@proton/drive/index';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
-import { MAX_CONCURRENT_FOLDER_TRAVERSALS, traverseNodeStructure } from './traverseNodeStructure';
+import { MAX_CONCURRENT_FOLDER_TRAVERSALS, traverseAlbum, traverseNodeStructure } from './traverseNodeStructure';
 
 jest.mock('../DownloadDriveClientRegistry', () => ({
     DownloadDriveClientRegistry: {
         getDriveClient: jest.fn(),
+        getDrivePhotosClient: jest.fn(),
     },
 }));
 
@@ -34,11 +35,25 @@ type MockDriveClient = {
     iterateNodes: jest.Mock;
 };
 
+type MockPhotosClient = {
+    iterateNodes: jest.Mock;
+    iterateAlbum: jest.Mock;
+};
+
 const makeNode = (uid: string, type: NodeType, mediaType = 'text/plain') =>
     ({ uid, type, name: { ok: true as const, value: uid }, mediaType, errors: [] }) as any;
 
 const makeFile = (uid: string) => makeNode(uid, NodeType.File);
 const makeFolder = (uid: string) => makeNode(uid, NodeType.Folder);
+const makePhoto = (uid: string, relatedPhotoNodeUids: string[] = []) =>
+    ({
+        uid,
+        type: NodeType.Photo,
+        name: { ok: true as const, value: uid },
+        mediaType: 'image/jpeg',
+        errors: [],
+        photo: { relatedPhotoNodeUids },
+    }) as any;
 
 describe('traverseNodeStructure', () => {
     let mockClient: MockDriveClient;
@@ -329,5 +344,154 @@ describe('traverseNodeStructure', () => {
         const { traversalCompletedPromise } = traverseNodeStructure([root], new AbortController().signal);
 
         await expect(traversalCompletedPromise).rejects.toThrow('batch failed');
+    });
+
+    it('skips a missing descendant deep inside a folder and archives the rest', async () => {
+        const root = makeFolder('root');
+        const child = makeFolder('child');
+
+        mockClient.iterateFolderChildrenNodeUids.mockImplementation(async function* (uid: string) {
+            if (uid === 'root') {
+                yield 'child';
+            } else if (uid === 'child') {
+                yield 'missing-grandchild';
+            }
+        });
+        mockClient.iterateNodes.mockImplementation(async function* (uids: string[]) {
+            for (const uid of uids) {
+                if (uid === 'child') {
+                    yield child;
+                }
+                // 'missing-grandchild' is silently dropped by the SDK, simulating a missing node.
+            }
+        });
+
+        const { nodesQueue, traversalCompletedPromise } = traverseNodeStructure([root], new AbortController().signal);
+
+        const consumedUids: string[] = [];
+        const consumeQueue = (async () => {
+            for await (const node of nodesQueue.iterator()) {
+                consumedUids.push(node.uid);
+            }
+        })();
+
+        await traversalCompletedPromise;
+        await consumeQueue;
+
+        expect(consumedUids).toEqual(['root', 'child']);
+    });
+});
+
+describe('traverseAlbum', () => {
+    let mockPhotosClient: MockPhotosClient;
+
+    beforeEach(() => {
+        mockPhotosClient = {
+            iterateNodes: jest.fn(),
+            iterateAlbum: jest.fn(),
+        };
+        (DownloadDriveClientRegistry.getDrivePhotosClient as jest.Mock).mockReturnValue(mockPhotosClient);
+    });
+
+    it('traverses every album item and never pushes the album node itself', async () => {
+        const photo1 = makePhoto('photo1');
+        const photo2 = makePhoto('photo2');
+        const nodeMap: Record<string, any> = { photo1, photo2 };
+
+        mockPhotosClient.iterateAlbum.mockImplementation(async function* () {
+            yield { nodeUid: 'photo1', captureTime: new Date() };
+            yield { nodeUid: 'photo2', captureTime: new Date() };
+        });
+        mockPhotosClient.iterateNodes.mockImplementation(async function* (uids: string[]) {
+            for (const uid of uids) {
+                yield nodeMap[uid];
+            }
+        });
+
+        const { nodesQueue, traversalCompletedPromise, parentPathByUid } = traverseAlbum(
+            'album-1',
+            new AbortController().signal
+        );
+
+        const consumedUids: string[] = [];
+        const consumeQueue = (async () => {
+            for await (const node of nodesQueue.iterator()) {
+                consumedUids.push(node.uid);
+            }
+        })();
+
+        await traversalCompletedPromise;
+        await consumeQueue;
+
+        expect(consumedUids.sort()).toEqual(['photo1', 'photo2']);
+        expect(consumedUids).not.toContain('album-1');
+        expect(parentPathByUid.get('photo1')).toEqual([]);
+    });
+
+    it('skips a missing album item and archives the rest', async () => {
+        const photo1 = makePhoto('photo1');
+        const nodeMap: Record<string, any> = { photo1 };
+
+        mockPhotosClient.iterateAlbum.mockImplementation(async function* () {
+            yield { nodeUid: 'photo1', captureTime: new Date() };
+            yield { nodeUid: 'missing-photo', captureTime: new Date() };
+        });
+        mockPhotosClient.iterateNodes.mockImplementation(async function* (uids: string[]) {
+            for (const uid of uids) {
+                if (nodeMap[uid]) {
+                    yield nodeMap[uid];
+                }
+            }
+        });
+
+        const { nodesQueue, traversalCompletedPromise } = traverseAlbum('album-1', new AbortController().signal);
+
+        const consumedUids: string[] = [];
+        const consumeQueue = (async () => {
+            for await (const node of nodesQueue.iterator()) {
+                consumedUids.push(node.uid);
+            }
+        })();
+
+        await traversalCompletedPromise;
+        await consumeQueue;
+
+        expect(consumedUids).toEqual(['photo1']);
+    });
+
+    it('pushes each album item to the queue as it is resolved, without waiting for the full album listing', async () => {
+        const photo1 = makePhoto('photo1');
+        const photo2 = makePhoto('photo2');
+        const nodeMap: Record<string, any> = { photo1, photo2 };
+
+        mockPhotosClient.iterateAlbum.mockImplementation(async function* () {
+            yield { nodeUid: 'photo1', captureTime: new Date() };
+            await delay(CHILDREN_DELAY_MS);
+            yield { nodeUid: 'photo2', captureTime: new Date() };
+        });
+        mockPhotosClient.iterateNodes.mockImplementation(async function* (uids: string[]) {
+            for (const uid of uids) {
+                yield nodeMap[uid];
+            }
+        });
+
+        const { nodesQueue, traversalCompletedPromise } = traverseAlbum('album-1', new AbortController().signal);
+
+        const iterator = nodesQueue.iterator();
+        const firstNode = await iterator.next();
+
+        expect(firstNode.value?.uid).toBe('photo1');
+
+        const consumedUids = [firstNode.value?.uid as string];
+        const consumeRest = (async () => {
+            for await (const node of iterator) {
+                consumedUids.push(node.uid);
+            }
+        })();
+
+        await traversalCompletedPromise;
+        await consumeRest;
+
+        expect(consumedUids.sort()).toEqual(['photo1', 'photo2']);
     });
 });
