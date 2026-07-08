@@ -1138,6 +1138,46 @@ export function normalizeStoredPercentFormats(spec: Record<string, unknown>): vo
     });
 }
 
+/** Excel-style formats like `:0` are invalid in d3-format and crash Vega at runtime. */
+function rewriteInvalidD3Format(format: unknown): unknown {
+    if (typeof format !== 'string' || !format.startsWith(':')) {
+        return format;
+    }
+
+    if (/^:\d+$/.test(format)) {
+        return 'd';
+    }
+
+    const decimalMatch = format.match(/^:0\.(\d+)$/);
+    if (decimalMatch) {
+        return `.${decimalMatch[1]!.length}f`;
+    }
+
+    return '.0f';
+}
+
+function normalizeFormatProperty(container: Record<string, unknown>): void {
+    if (!('format' in container)) {
+        return;
+    }
+
+    container.format = rewriteInvalidD3Format(container.format);
+}
+
+/** Rewrite LLM/Excel axis and tooltip formats (e.g. `:0`) into valid d3 format strings. */
+export function normalizeInvalidD3Formats(spec: Record<string, unknown>): void {
+    visitChartNodesForNormalize(spec, (node) => {
+        visitEncodingFormatChannels(node, (channel) => {
+            normalizeFormatProperty(channel);
+
+            const axis = channel.axis;
+            if (axis && typeof axis === 'object' && !Array.isArray(axis)) {
+                normalizeFormatProperty(axis as Record<string, unknown>);
+            }
+        });
+    });
+}
+
 function visitChartNodesForNormalize(
     spec: Record<string, unknown>,
     visit: (node: Record<string, unknown>) => void
