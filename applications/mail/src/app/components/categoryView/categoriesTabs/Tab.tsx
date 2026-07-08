@@ -37,7 +37,7 @@ export const Tab = ({ category, tabState }: Props) => {
     const dispatch = useDispatch();
     const { call } = useEventManager();
 
-    const { shouldShowCounter, shouldShowNewBadge } = useCategoriesBadge({ tabState, category });
+    const { shouldShowCounter, shouldShowNewBadge, count } = useCategoriesBadge({ tabState, category });
 
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
@@ -92,7 +92,7 @@ export const Tab = ({ category, tabState }: Props) => {
                 </span>
             </span>
 
-            <TabBadge category={category} tabState={tabState} shouldShowCounter={shouldShowCounter} />
+            <TabBadge count={count} tabState={tabState} shouldShowCounter={shouldShowCounter} />
         </NavLink>
     );
 };
