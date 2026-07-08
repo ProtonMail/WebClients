@@ -304,7 +304,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     icon="ChartLine"
                     text={c('collider_2025: Title').t`Charts and KPI cards`}
                     subtext={c('collider_2025: Description')
-                        .t`Let Lumo format data with Vega-Lite charts and KPI card rows`}
+                        .t`Let ${LUMO_SHORT_APP_NAME} format data with Vega-Lite charts and KPI card rows`}
                     button={
                         <Toggle
                             id="visualization-instructions-toggle"
