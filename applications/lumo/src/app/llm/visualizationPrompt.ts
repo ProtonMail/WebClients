@@ -39,6 +39,7 @@ Number formatting (critical):
 - d3 \`format: "%"\` expects **unit fractions** (0.29 → 29%). Never use it when values are already
   percent points (29, 41, 0.4 meaning 0.4%).
 - For values already in percent points, use \`".1f"\` / \`".0f"\` and put \`(%)\` in the axis or tooltip title.
+- Use valid d3 format strings only — never Excel-style \`:0\`, \`:0.0\`, etc. For integers use \`"d"\`.
 - Pie/donut slice labels: use \`format: ".0f"\` with a \`(%)\` title, or \`format: "%d%%"\` — not \`"%"\`.
 
 Color encoding (critical):
