@@ -191,8 +191,6 @@ const MainContainer = () => {
     const { viewportWidth } = useActiveBreakpoint();
 
     const showThemeSelection = useShowThemeSelection();
-    const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
-    const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
@@ -302,8 +300,6 @@ const MainContainer = () => {
     };
 
     const flags: Flags = {
-        canDisplayB2BLogsPass,
-        canDisplayB2BLogsVPN,
         canDisplayPassReports,
         canDisplayNonPrivateEmailPhone,
         isUserGroupsFeatureEnabled,
