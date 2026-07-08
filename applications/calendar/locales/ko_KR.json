@@ -14,7 +14,7 @@
     },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -5253,10 +5253,10 @@
         "취소 이메일이 삭제된 참가자들에게 전송됩니다."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "이벤트 참가자들에게 취소 이메일이 보내질 것입니다. 이 시리즈의 모든 이벤트를 삭제하시겠습니까?"
+        "이벤트 참가자들에게 취소 이메일이 발송됩니다. 이 시리즈의 모든 이벤트를 삭제하시겠습니까?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "이벤트 참가자들에게 취소 이메일이 발송될 것입니다. 이 이벤트를 삭제하시겠습니까?"
+        "이벤트 참가자들에게 취소 이메일이 발송됩니다. 이 이벤트를 삭제하시겠습니까?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
@@ -12515,6 +12515,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ]
     },
     "tooltip": {
@@ -12653,7 +12656,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
@@ -12953,6 +12956,26 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
       ]
     }
   }

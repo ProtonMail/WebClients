@@ -1799,10 +1799,10 @@
         "Немагчыма абагуліць гэты каляндар з большай колькасцю карыстальнікаў ${ BRAND_NAME }"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельніка для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў."
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельніка для гэтага календара.\nДля абагульвання календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагульвання календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагульвання календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагульвання календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Вы дасягнулі максімальнай колькасці з ${ MAX_LINKS_PER_CALENDAR } спасылкі для гэтага календара.\nДля стварэння новай спасылкі да гэтага календара, выдаліце адну з існуючых.",
@@ -3933,7 +3933,7 @@
         "Няправільнае імя карыстальніка"
       ],
       "Intended recipient does not support calendar sharing": [
-        "У прызначанага атрымальніка функцыя абагулення календара не падтрымліваецца"
+        "У прызначанага атрымальніка функцыя абагульвання календара не падтрымліваецца"
       ],
       "Interval cannot be empty": [
         "Інтэрвал не можа быць пустым"
@@ -4345,6 +4345,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Ваша падключэнне па Zoom пратэрмінавана. Перападключыцеся, каб працягнуць."
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ]
     },
     "error": {
@@ -6973,6 +6979,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
       ]
     },
     "info": {
@@ -13165,6 +13174,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13268,6 +13280,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -13838,6 +13853,31 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     }
   }
