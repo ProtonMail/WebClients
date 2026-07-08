@@ -804,6 +804,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Do not show this again": [
+        "Nabudúce nezobrazovať"
+      ],
+      "Done": [
+        "Hotovo"
       ]
     },
     "Activity": {
@@ -1461,6 +1467,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Exspirácia musí byť medzi 1 hodinou a 1 rokom"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa spustiť SSH agenta: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa zastaviť SSH agenta: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2938,6 +2950,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "Vyprší o ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } použije SSH kľúče uložené vo vašich trezoroch."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Nájdite položku „OpenSSH Authentication Agent“ a kliknite na ňu pravým tlačidlom myši a vyberte možnosť „Vlastnosti“."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Ak nemáte v pláne používať SSH agenta v inom platenom účte, nezabudnite toto nastavenie deaktivovať pred prechodom na tento účet."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Uistite sa, že ${ PASS_APP_NAME } beží (môže byť minimalizovaná), aby agent SSH zostal aktívny. SSH kľúče s prístupovou frázou momentálne nie sú podporované."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "V ${ PASS_SHORT_APP_NAME } neboli nájdené žiadne SSH kľúče. Vytvorte položky SSH kľúčov na použitie s agentom."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Otvorte okno „Služby“ (môžete použiť vyhľadávacie pole systému Windows alebo stlačiť klávesovú skratku Win+R a zadať services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Vložte do terminálu nasledujúci príkaz:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Nastavte „Typ spustenia“ na „Vypnuté“ a kliknite na OK."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tip: pridajte to do súboru .bashrc alebo .zshrc, aby sa to spustilo automaticky pri otvorení terminálu."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Aby bolo možné používať ${ PASS_APP_NAME } SSH agenta v systéme Windows, je potrebné deaktivovať službu OpenSSH."
       ]
     },
     "Keyboard key": {
@@ -4235,6 +4277,9 @@
       ],
       "Expires in": [
         "Vyprší o"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Použiť ${ PASS_APP_NAME } ako SSH agenta"
       ]
     },
     "Link": {
@@ -4743,6 +4788,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Overovací email bol odoslaný. Skontrolujte si, prosím, doručenú poštu a overte svoju poštovú schránku"
+      ],
+      "SSH agent successfully started": [
+        "SSH agent bol úspešne spustený"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent bol úspešne zastavený"
       ]
     },
     "Theme": {
@@ -5281,6 +5332,15 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Snímka obrazovky služby OpenSSH v systéme Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Nastaviť SSH agenta pre ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "SSH Agent"
       ]
     },
     "Title_cloned_item": {
@@ -5640,6 +5700,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent vyžaduje použitie SSH kľúčov, čo vo vašom pláne nie je k dispozícii."
       ]
     }
   }

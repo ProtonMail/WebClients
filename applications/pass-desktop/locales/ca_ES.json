@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Do not show this again": [
+        "No m'ho torneu a mostrar"
+      ],
+      "Done": [
+        "Fet"
       ]
     },
     "Activity": {
@@ -1451,6 +1457,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "La caducitat ha d'estar entre 1 hora i 1 any"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "No s'ha pogut iniciar l'agent SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "No s'ha pogut aturar l'agent SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2173,8 +2185,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2868,6 +2879,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "Caduca el ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } utilitzarà les claus SSH desades a les vostres caixes fortes."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Cerqueu \"Agent d'Autenticació d'OpenSSH\", feu clic amb el botó dret a Propietats."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Si no teniu previst utilitzar l'agent SSH en un altre compte de pagament, recordeu desactivar aquest paràmetre abans de canviar de compte."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Assegureu-vos de mantenir ${ PASS_APP_NAME } en execució (es pot minimitzar) perquè l'agent SSH es mantingui actiu. Actualment no s'admeten les claus SSH amb frase de contrasenya."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No s'ha trobat cap clau SSH a ${ PASS_SHORT_APP_NAME }. Creeu elements de clau SSH per utilitzar-los amb l'agent."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Obriu \"Serveis\" (podeu utilitzar la barra de cerca de Windows o prémer Win+R i introduir services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Enganxeu la instrucció següent al vostre terminal:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Establiu \"Tipus d'inici\" a Desactivat, feu clic a OK."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Consell: afegiu-ho al vostre fitxer .bashrc o .zshrc perquè s'executi automàticament quan obriu el terminal."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Per utilitzar l'agent SSH de ${ PASS_APP_NAME } a Windows, cal desactivar el servei OpenSSH."
       ]
     },
     "Keyboard key": {
@@ -4137,6 +4178,9 @@
       ],
       "Expires in": [
         "Caducarà d'aquí a"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Utilitzeu ${ PASS_APP_NAME } com a agent SSH"
       ]
     },
     "Link": {
@@ -4635,6 +4679,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "S'ha enviat un correu electrònic de verificació. Comproveu la vostra safata d'entrada per verificar la vostra bústia de correu"
+      ],
+      "SSH agent successfully started": [
+        "S'ha iniciat correctament l'agent SSH"
+      ],
+      "SSH agent successfully stopped": [
+        "S'ha aturat correctament l'agent SSH"
       ]
     },
     "Theme": {
@@ -5161,6 +5211,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captura de pantalla del servei OpenSSH a Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configureu l'agent SSH de ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5512,6 +5571,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "L'agent SSH requereix l'ús de claus SSH que no estan incloses en el vostre pla."
       ]
     }
   }

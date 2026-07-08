@@ -802,6 +802,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Do not show this again": [
+        "Nu mai afișa acest mesaj"
+      ],
+      "Done": [
+        "Gata"
       ]
     },
     "Activity": {
@@ -1456,6 +1462,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Timpul de expirare trebuie să fie cuprins între o oră și un an."
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Pornirea agentului SSH a eșuat: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Oprirea agentului SSH a eșuat: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2903,6 +2915,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "Expiră la data de ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } va folosi cheile SSH salvate în seifurile tale."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Găsiți „Agent de autentificare OpenSSH”, clic-dreapta pe „Proprietăți”."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Dacă nu intenționați să utilizați agentul SSH pe un alt cont plătit, nu uitați să dezactivați această setare înainte de a trece la contul respectiv."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Asigurați-vă că ${ PASS_APP_NAME } rulează în continuare (poate fi minimizat) pentru ca agentul SSH să rămână activ. Cheile SSH cu parolă nu sunt acceptate în prezent."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nu s-au găsit chei SSH în ${ PASS_SHORT_APP_NAME }. Creați articole cu chei SSH pentru a le utiliza cu agentul."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Deschideți „Servicii” (puteți folosi bara de căutare Windows sau puteți apăsa Win+R și introduce services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Inserați comanda următoare în terminal:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Setați „Tip de pornire” la dezactivat, faceți clic pe OK."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Sfat: adăugați-l în fișierul .bashrc sau .zshrc, astfel încât să ruleze automat când deschideți terminalul."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Pentru a utiliza agentul SSH ${ PASS_APP_NAME } pe Windows, serviciul OpenSSH trebuie dezactivat."
       ]
     },
     "Keyboard key": {
@@ -4186,6 +4228,9 @@
       ],
       "Expires in": [
         "Expiră în"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Folosire ${ PASS_APP_NAME } ca agest SSH"
       ]
     },
     "Link": {
@@ -4689,6 +4734,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Mesajul de verificare a fost trimis. Accesați-vă contul de e-mail pentru a citi mesajul primit și confirma verificarea."
+      ],
+      "SSH agent successfully started": [
+        "Agentul SSH a fost pornit"
+      ],
+      "SSH agent successfully stopped": [
+        "Agentul SSH a fost oprit"
       ]
     },
     "Theme": {
@@ -5221,6 +5272,15 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captură de ecran a serviciului OpenSSH pe Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Setare agent SSH ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5576,6 +5636,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Agentul SSH necesită utilizarea cheilor SSH, care nu sunt disponibile în planul actual."
       ]
     }
   }
