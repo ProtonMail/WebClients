@@ -1414,6 +1414,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Exspirácia musí byť medzi 1 hodinou a 1 rokom"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa spustiť SSH agenta: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa zastaviť SSH agenta: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2863,6 +2869,12 @@
         "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
         "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
         "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } použije SSH kľúče uložené vo vašich trezoroch."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "V ${ PASS_SHORT_APP_NAME } neboli nájdené žiadne SSH kľúče. Vytvorte položky SSH kľúčov na použitie s agentom."
       ]
     },
     "Keyboard key": {
@@ -4100,6 +4112,9 @@
       ],
       "Expires in": [
         "Vyprší o"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Použiť ${ PASS_APP_NAME } ako SSH agenta"
       ]
     },
     "Link": {
@@ -4594,6 +4609,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Overovací email bol odoslaný. Skontrolujte si, prosím, doručenú poštu a overte svoju poštovú schránku"
+      ],
+      "SSH agent successfully started": [
+        "SSH agent bol úspešne spustený"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent bol úspešne zastavený"
       ]
     },
     "Theme": {
@@ -5132,6 +5153,9 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "SSH Agent": [
+        "SSH Agent"
       ]
     },
     "Title_cloned_item": {
@@ -5488,6 +5512,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent vyžaduje použitie SSH kľúčov, čo vo vašom pláne nie je k dispozícii."
       ]
     }
   }

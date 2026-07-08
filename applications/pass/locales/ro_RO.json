@@ -1409,6 +1409,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Timpul de expirare trebuie să fie cuprins între o oră și un an."
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Pornirea agentului SSH a eșuat: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Oprirea agentului SSH a eșuat: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2828,6 +2834,12 @@
         "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
         "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
         "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } va folosi cheile SSH salvate în seifurile tale."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nu s-au găsit chei SSH în ${ PASS_SHORT_APP_NAME }. Creați articole cu chei SSH pentru a le utiliza cu agentul."
       ]
     },
     "Keyboard key": {
@@ -4051,6 +4063,9 @@
       ],
       "Expires in": [
         "Expiră în"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Folosire ${ PASS_APP_NAME } ca agest SSH"
       ]
     },
     "Link": {
@@ -4540,6 +4555,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Mesajul de verificare a fost trimis. Accesați-vă contul de e-mail pentru a citi mesajul primit și confirma verificarea."
+      ],
+      "SSH agent successfully started": [
+        "Agentul SSH a fost pornit"
+      ],
+      "SSH agent successfully stopped": [
+        "Agentul SSH a fost oprit"
       ]
     },
     "Theme": {
@@ -5072,6 +5093,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5424,6 +5448,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Agentul SSH necesită utilizarea cheilor SSH, care nu sunt disponibile în planul actual."
       ]
     }
   }

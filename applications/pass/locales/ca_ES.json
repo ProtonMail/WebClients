@@ -1404,6 +1404,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "La caducitat ha d'estar entre 1 hora i 1 any"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "No s'ha pogut iniciar l'agent SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "No s'ha pogut aturar l'agent SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2098,8 +2104,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2793,6 +2798,12 @@
       ],
       "Expires on ${ formattedDate }": [
         "Caduca el ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } utilitzarà les claus SSH desades a les vostres caixes fortes."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No s'ha trobat cap clau SSH a ${ PASS_SHORT_APP_NAME }. Creeu elements de clau SSH per utilitzar-los amb l'agent."
       ]
     },
     "Keyboard key": {
@@ -4002,6 +4013,9 @@
       ],
       "Expires in": [
         "Caducarà d'aquí a"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Utilitzeu ${ PASS_APP_NAME } com a agent SSH"
       ]
     },
     "Link": {
@@ -4486,6 +4500,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "S'ha enviat un correu electrònic de verificació. Comproveu la vostra safata d'entrada per verificar la vostra bústia de correu"
+      ],
+      "SSH agent successfully started": [
+        "S'ha iniciat correctament l'agent SSH"
+      ],
+      "SSH agent successfully stopped": [
+        "S'ha aturat correctament l'agent SSH"
       ]
     },
     "Theme": {
@@ -5012,6 +5032,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5360,6 +5383,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "L'agent SSH requereix l'ús de claus SSH que no estan incloses en el vostre pla."
       ]
     }
   }

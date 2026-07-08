@@ -1381,6 +1381,12 @@
       ],
       "Name must be 191 characters or fewer": [
         "Name darf maximal 191 Zeichen lang sein"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht gestartet werden: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht beendet werden: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2759,6 +2765,12 @@
       "Moving an item to another vault will erase its secure links.": [
         "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
         "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } verwendet die in deinen Tresoren gespeicherten SSH-Schlüssel."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "In ${ PASS_SHORT_APP_NAME } wurden keine SSH-Schlüssel gefunden. Erstelle einen SSH-Schlüssel-Eintrag für die Verwendung mit dem Agenten."
       ]
     },
     "Keyboard key": {
@@ -3965,6 +3977,9 @@
       ],
       "Vault access": [
         "Tresor-Zugriff"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME } als SSH-Agent verwenden"
       ]
     },
     "Link": {
@@ -4435,6 +4450,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Verifizierungs-E-Mail versendet. Bitte überprüfe deinen Posteingang, um dein Postfach zu verifizieren."
+      ],
+      "SSH agent successfully started": [
+        "SSH-Agent erfolgreich gestartet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-Agent erfolgreich gestoppt"
       ]
     },
     "Theme": {
@@ -4961,6 +4982,9 @@
       ],
       "Your new access token": [
         "Deine neuer Zugangstoken"
+      ],
+      "SSH Agent": [
+        "SSH-Agent"
       ]
     },
     "Title_cloned_item": {
@@ -5309,6 +5333,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Für den SSH-Agenten ist die Verwendung von SSH-Schlüsseln erforderlich, was in deinem Abonnement nicht verfügbar ist."
       ]
     },
     "Activity": {
