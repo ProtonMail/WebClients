@@ -17,7 +17,7 @@ import type { SupportedPlans } from './helpers/interface';
 export interface PaidUserConfig {
     currentPlan: SupportedPlans;
     allowedApps: Set<string>;
-    offerFlag: FeatureFlag;
+    offerDisabledFlag: FeatureFlag;
     offerTimestampFlag: FeatureCode;
     spotlightImage: string;
     upsellRef: string;
@@ -26,7 +26,7 @@ export interface PaidUserConfig {
 export const paidConfig: Record<SupportedPlans, PaidUserConfig> = {
     [PLANS.MAIL]: {
         currentPlan: PLANS.MAIL,
-        offerFlag: 'SubscriberNudgeMailMonthly',
+        offerDisabledFlag: 'SubscriberNudgeMailMonthlyDisabled',
         allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
         offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
         spotlightImage: mailOfferSpotlight,
@@ -38,7 +38,7 @@ export const paidConfig: Record<SupportedPlans, PaidUserConfig> = {
     },
     [PLANS.DRIVE]: {
         currentPlan: PLANS.DRIVE,
-        offerFlag: 'SubscriberNudgeDriveMonthly',
+        offerDisabledFlag: 'SubscriberNudgeDriveMonthlyDisabled',
         allowedApps: new Set<string>([APPS.PROTONDRIVE]),
         offerTimestampFlag: FeatureCode.DrivePaidUserNudgeTimestamp,
         spotlightImage: driveOfferSpotlight,
@@ -50,7 +50,7 @@ export const paidConfig: Record<SupportedPlans, PaidUserConfig> = {
     },
     [PLANS.BUNDLE]: {
         currentPlan: PLANS.BUNDLE,
-        offerFlag: 'SubscriberNudgeBundleMonthly',
+        offerDisabledFlag: 'SubscriberNudgeBundleMonthlyDisabled',
         allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE]),
         offerTimestampFlag: FeatureCode.BundlePaidUserNudgeTimestamp,
         spotlightImage: mailOfferSpotlight,
