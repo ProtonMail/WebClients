@@ -243,7 +243,6 @@ const routesDefinition = {
 
                                 return (
                                     context.canHaveOrganization &&
-                                    !!context.flags.B2BLogsVPN &&
                                     hasPlanWithEventLogging &&
                                     context.hasOrganizationAccess
                                 );
