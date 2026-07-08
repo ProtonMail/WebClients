@@ -1,10 +1,10 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
+import type { ToolCallData } from '../../../../../../lib/toolCall/types';
+import { tryParseToolCall } from '../../../../../../lib/toolCall/types';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
-import type { ToolCallData } from '../../../../../../lib/toolCall/types';
-import { tryParseToolCall } from '../../../../../../lib/toolCall/types';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
@@ -83,23 +83,44 @@ function createInProgressToolCallStep(content: string): ThinkingStep {
     };
 }
 
+const IMAGE_ATTACHMENT_MARKDOWN = /^!\[[^\]]*\]\(attachment:[^)]+\)$/;
+
+function isImageAttachmentTextBlock(block: ContentBlock): boolean {
+    return block.type === 'text' && IMAGE_ATTACHMENT_MARKDOWN.test(block.content.trim());
+}
+
+/**
+ * Prose has started only when the model is streaming its answer at the tail of
+ * the block list. Preamble text or image markdown that appears before tool
+ * calls must not end the thinking phase early.
+ */
+function hasStartedProseResponse(blocks: ContentBlock[]): boolean {
+    for (let i = blocks.length - 1; i >= 0; i--) {
+        const block = blocks[i];
+        if (block.type === 'tool_call' || block.type === 'tool_result') {
+            return false;
+        }
+        if (block.type === 'text' && block.content.trim().length > 0 && !isImageAttachmentTextBlock(block)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 export function isThinkingInProgress(
-    steps: ThinkingStep[],
     blocks: ContentBlock[],
-    isGenerating: boolean,
+    message: Message,
+    conversationIsGenerating: boolean,
     isLastMessage: boolean
 ): boolean {
-    if (steps.some((step) => (step.type === 'reasoning' || step.type === 'tool_call') && step.isActive)) {
-        return true;
-    }
-
-    if (!isGenerating || !isLastMessage) {
+    if (!isLastMessage) {
         return false;
     }
 
-    return blocks
-        .filter(isToolCallBlock)
-        .some((block) => isToolCallInProgress(block, blocks, isGenerating, isLastMessage));
+    // Conversation- and message-level signals; usually in sync, but we OR them to
+    // cover brief gaps between stream segments.
+    const messageIsGenerating = message.status === undefined;
+    return (messageIsGenerating || conversationIsGenerating) && !hasStartedProseResponse(blocks);
 }
 
 /**
@@ -126,18 +147,6 @@ function toToolCallStep(
 }
 
 type InterleavedItem = { type: 'steps'; steps: ThinkingStep[] } | { type: 'text'; block: ContentBlock };
-
-const IMAGE_ATTACHMENT_MARKDOWN = /^!\[[^\]]*\]\(attachment:[^)]+\)$/;
-
-function isImageAttachmentTextBlock(block: ContentBlock): boolean {
-    return block.type === 'text' && IMAGE_ATTACHMENT_MARKDOWN.test(block.content.trim());
-}
-
-function hasStartedProseResponse(blocks: ContentBlock[]): boolean {
-    return blocks.some(
-        (block) => block.type === 'text' && block.content.trim().length > 0 && !isImageAttachmentTextBlock(block)
-    );
-}
 
 /**
  * Build render items with all thinking steps grouped at the top and response
@@ -360,7 +369,7 @@ export const RenderBlocks = ({
                             <ThinkingPath
                                 steps={item.steps}
                                 message={message}
-                                isThinking={isThinkingInProgress(item.steps, blocks, isGenerating, isLastMessage)}
+                                isThinking={isThinkingInProgress(blocks, message, isGenerating, isLastMessage)}
                                 showThinkingTrace={inThinkingPhase}
                                 handleLinkClick={handleLinkClick}
                             />
