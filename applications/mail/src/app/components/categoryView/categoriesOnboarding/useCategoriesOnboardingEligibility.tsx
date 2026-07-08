@@ -15,7 +15,7 @@ import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCo
 
 import { useCategoriesView } from '../useCategoriesView';
 import { hasSeenAllOnboarding } from './categoriesOnboarding.helpers';
-import { AudienceType, FeatureValueDefault, type OnboardingInfo } from './onboardingInterface';
+import { FeatureValueDefault, OnboardingFlow, type OnboardingInfo } from './onboardingInterface';
 
 const B2B_REQUIRED_NUMBER_OF_MAILS = 20;
 const B2C_REQUIRED_NUMBER_OF_MAILS = 5;
@@ -47,8 +47,8 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     if (loading || !accountDateThreshold.feature?.Value) {
         return {
             isUserEligible: false,
-            audienceType: undefined,
             flagValue: FeatureValueDefault,
+            onboardingFlow: OnboardingFlow.NONE,
         };
     }
 
@@ -62,7 +62,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
 
     // B2B users conditions
     if (isUserB2B) {
-        const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
+        const allOnboardingSeen = hasSeenAllOnboarding(OnboardingFlow.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
         // B2B users must opt-in, we start the onboarding if the flag is ON and their organisation allows it
         const hasB2BCategoryAccess = canUseCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
 
@@ -77,22 +77,22 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
             // Existing users see the spotlight right away
             return {
                 isUserEligible: basicEligibility,
-                audienceType: AudienceType.B2B,
                 flagValue: b2bOnboardingViewFlag.feature?.Value ?? 0,
+                onboardingFlow: OnboardingFlow.B2B,
             };
         } else {
             // New B2B users see the spotlight once they have a given amount of email
             return {
                 isUserEligible: basicEligibility && allMailsElementsCount.Total >= B2B_REQUIRED_NUMBER_OF_MAILS,
-                audienceType: AudienceType.B2B,
                 flagValue: b2bOnboardingViewFlag.feature?.Value ?? 0,
+                onboardingFlow: OnboardingFlow.B2B,
             };
         }
     }
 
     // B2C users conditions
     const isChecklistFull = mailChecklist.displayState === CHECKLIST_DISPLAY_TYPE.FULL;
-    const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2C, b2cOnboardingViewFlag.feature?.Value ?? 0);
+    const allOnboardingSeen = hasSeenAllOnboarding(OnboardingFlow.B2C, b2cOnboardingViewFlag.feature?.Value ?? 0);
 
     // Existing B2C users see the card if they have a given number of emails and the checklist is no longer present on the list of email
     return {
@@ -102,7 +102,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
             !allOnboardingSeen &&
             allMailsElementsCount.Total > B2C_REQUIRED_NUMBER_OF_MAILS &&
             !isChecklistFull,
-        audienceType: AudienceType.B2C,
         flagValue: b2cOnboardingViewFlag.feature?.Value ?? 0,
+        onboardingFlow: OnboardingFlow.B2C,
     };
 };
