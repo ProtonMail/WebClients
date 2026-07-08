@@ -96,7 +96,7 @@ export const DragAreaProvider = ({ children }: DragAreaProviderProps) => {
             value={{ isDragging, onDragEnter, onDragLeave, onDragOver, onDrop, registerFileDropHandler }}
         >
             <div
-                className="drag-area-provider h-full w-full min-h-0 min-w-0"
+                className="drag-area-provider h-full w-full min-h-0 min-w-0 flex flex-column"
                 onDragEnter={onDragEnter}
                 onDragLeave={onDragLeave}
                 onDragOver={onDragOver}
