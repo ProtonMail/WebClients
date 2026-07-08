@@ -52,6 +52,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [UploadStatus.Skipped]: c('Info').t`Canceled`,
         [UploadStatus.PhotosDuplicate]: c('Info').t`Already in your library`,
         [UploadStatus.NotSupportedForPhotos]: c('Info').t`Unsupported file type for Photos`,
+        [UploadStatus.EmptyFile]: c('Info').t`Uploaded - file is empty`,
     };
     return labels[entry.status];
 };
@@ -74,6 +75,9 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     }
     if (entry.status === UploadStatus.ParentCancelled) {
         return <IcCrossCircle size={5} className="color-weak" />;
+    }
+    if (entry.status === UploadStatus.EmptyFile) {
+        return <IcExclamationCircle size={5} className="color-warning" />;
     }
     if (
         entry.status === BaseTransferStatus.Failed ||
@@ -108,6 +112,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
         UploadStatus.Skipped,
         UploadStatus.PhotosDuplicate,
         UploadStatus.NotSupportedForPhotos,
+        UploadStatus.EmptyFile,
     ].includes(entry.status as BaseTransferStatus);
     const dm = DownloadManager.getInstance();
     const { item } = useDownloadManagerStore(
@@ -149,7 +154,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
                     {entry.name}
                 </span>
                 <div className="gap-1 flex items-center">
-                    <span className="text-sm color-weak" data-testid="transfer-row:status">
+                    <span className="flex items-center gap-1 text-sm color-weak" data-testid="transfer-row:status">
                         {getStatusLabel(entry)}
                     </span>
                     {/* TODO: Uncomment once Show location is able to highlight and scroll to the item */}

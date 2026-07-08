@@ -369,6 +369,38 @@ describe('FileUploadExecutor', () => {
             });
         });
 
+        it('should emit file:empty event for a 0-byte file without attempting upload', async () => {
+            const task = createFileTask({ file: new File([], 'empty.txt', { type: 'text/plain' }) });
+
+            await executor.execute(task);
+
+            expect(mockEventCallback).toHaveBeenCalledWith({
+                type: 'file:empty',
+                uploadId: 'task123',
+                isForPhotos: false,
+            });
+            expect(generateThumbnail).not.toHaveBeenCalled();
+            expect(mockUploadFromStream).not.toHaveBeenCalled();
+        });
+
+        it('should emit file:complete with isEmpty:true for a 0-byte file when allowEmptyFile is true', async () => {
+            const task = createFileTask({
+                file: new File([], 'empty.txt', { type: 'text/plain' }),
+                allowEmptyFile: true,
+            });
+
+            await executor.execute(task);
+
+            expect(mockUploadFromStream).toHaveBeenCalled();
+            expect(mockEventCallback).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    type: 'file:complete',
+                    uploadId: 'task123',
+                    isEmpty: true,
+                })
+            );
+        });
+
         it('should emit error event when upload fails', async () => {
             const task = createFileTask();
             const uploadError = new Error('Upload failed');

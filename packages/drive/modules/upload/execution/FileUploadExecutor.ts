@@ -36,6 +36,15 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
             return;
         }
 
+        if (task.file.size === 0 && !task.allowEmptyFile) {
+            void this.eventCallback?.({
+                type: 'file:empty',
+                uploadId: task.uploadId,
+                isForPhotos: false,
+            });
+            return;
+        }
+
         try {
             uploadLogDebug('generateThumbnails start', { uploadId: task.uploadId });
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
@@ -99,6 +108,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 parentUid: task.parentUid,
                 isUpdatedNode: Boolean(task.existingNodeUid),
                 isForPhotos: false,
+                isEmpty: task.allowEmptyFile,
             });
         } catch (error) {
             if (abortController.signal.aborted) {
