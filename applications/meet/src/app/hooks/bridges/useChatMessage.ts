@@ -8,7 +8,7 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { escape, unescape } from '@proton/sanitize/escape';
 import { sanitizeMessage } from '@proton/sanitize/purify';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -87,7 +87,7 @@ export const useChatMessage = () => {
 
             const message: ChatMessage & { type: PublishableDataTypes.Message } = {
                 id: `${room.localParticipant.identity}-${Date.now()}`,
-                message: uint8ArrayToString(encryptedMessage),
+                message: uint8ArrayToBinaryString(encryptedMessage),
                 timestamp: Date.now(),
                 type: PublishableDataTypes.Message,
             };

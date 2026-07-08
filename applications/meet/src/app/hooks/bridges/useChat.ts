@@ -14,7 +14,7 @@ import {
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { sanitizeMessage } from '@proton/sanitize/purify';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -145,7 +145,7 @@ export const useChat = () => {
                     return;
                 }
 
-                const encryptedData = stringToUint8Array(decodedMessage.message);
+                const encryptedData = binaryStringToUint8Array(decodedMessage.message);
 
                 // Trying the decryption 3 times with increasing delays, to work around temporary issues with the MLS
                 const tryDecrypt = async (attemptIndex: number) => {

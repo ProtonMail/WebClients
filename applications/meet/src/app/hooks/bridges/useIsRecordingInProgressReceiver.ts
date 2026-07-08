@@ -9,7 +9,7 @@ import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/sto
 import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes, RecordingStatus } from '../../types';
@@ -89,7 +89,7 @@ export const useIsRecordingInProgressReceiver = () => {
             }
 
             try {
-                const decrypted = await meetCoreClient.decryptMessage(stringToUint8Array(decoded.message));
+                const decrypted = await meetCoreClient.decryptMessage(binaryStringToUint8Array(decoded.message));
                 if (!decrypted) {
                     return;
                 }

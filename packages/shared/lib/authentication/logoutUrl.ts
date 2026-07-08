@@ -3,7 +3,6 @@ import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import isEnumValue from '@proton/utils/isEnumValue';
 
 import { ForkSearchParameters } from './fork';
@@ -15,6 +14,7 @@ import type {
     SignoutUserData,
 } from './logoutInterface';
 import { stripLocalBasenameFromPathname } from './pathnameHelper';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 const clearRecoveryParam = 'clear-recovery';
 
@@ -32,7 +32,7 @@ const getAccessType = (session: SerializedSignoutUserData | LegacySerializedSign
 
 const parseSessions = (sessions: string | null) => {
     try {
-        const result = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(sessions || '', { alphabet: 'base64url' })));
+        const result = JSON.parse(uint8ArrayToUtf8String(Uint8Array.fromBase64(sessions || '', { alphabet: 'base64url' })));
         if (Array.isArray(result)) {
             // Can't sign out from more than this
             if (result.length > 50) {
@@ -54,7 +54,7 @@ const parseSessions = (sessions: string | null) => {
 };
 
 const serializeSessions = (sessions: SignoutUserData[]): string => {
-    return stringToUint8Array(
+    return utf8StringToUint8Array(
         JSON.stringify(
             sessions.map(
                 (session): Omit<SerializedSignoutUserData, 's'> => ({

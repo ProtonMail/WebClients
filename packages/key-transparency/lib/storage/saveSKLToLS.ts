@@ -1,5 +1,6 @@
 import { CryptoProxy, serverTime } from '@protontech/crypto';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { SaveSKLToLS } from '@proton/shared/lib/interfaces';
 
 import type { KTBlobContent } from '../interfaces';
@@ -12,7 +13,7 @@ import { commitSKLToLS } from './storageHelpers';
 const generateID = async (userID: string, email: string) => {
     const digest = await CryptoProxy.computeHash({
         algorithm: 'SHA256',
-        data: stringToUint8Array(`${userID}${email}`),
+        data: binaryStringToUint8Array(`${userID}${email}`),
     });
     return digest.slice(0, 64).toBase64({ alphabet: 'base64url', omitPadding: true });
 };

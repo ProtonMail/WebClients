@@ -1,6 +1,5 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Cycle } from '@proton/payments/core/interface';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import type {
     DecodedFreeCookieData,
@@ -10,6 +9,7 @@ import type {
     EncodedPaidCookieData,
     EncodedSubscriptionCookieData,
 } from './types';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
 /**
  * Validates if a value is a valid Cycle
@@ -115,7 +115,7 @@ const isFreeCookieData = (data: EncodedSubscriptionCookieData): data is EncodedF
  */
 export const decodeSubscriptionCookieData = (encodedData: string): DecodedSubscriptionCookieData | null => {
     try {
-        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(encodedData, { alphabet: 'base64url' })));
+        const decoded = JSON.parse(uint8ArrayToUtf8String(Uint8Array.fromBase64(encodedData, { alphabet: 'base64url' })));
 
         if (isPaidCookieData(decoded)) {
             return parsePaidSubscriptionData(decoded);

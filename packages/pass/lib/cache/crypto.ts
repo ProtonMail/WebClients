@@ -1,10 +1,12 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
 import { type AesGcmCryptoKey, deriveKey, exportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 
@@ -23,7 +25,7 @@ export type OfflineComponents = {
 };
 
 export const CACHE_SALT_LENGTH = 32;
-const HKDF_INFO = stringToUint8Array('pass-extension-cache-key'); // context identifier for domain separation
+const HKDF_INFO = utf8StringToUint8Array('pass-extension-cache-key'); // context identifier for domain separation
 
 /**
  * Get the key to use for local cache encryption. We use a HKDF derivation
@@ -43,7 +45,7 @@ export const getCacheEncryptionKey = async (
     // Since the password is already salted using bcrypt, we consider it entropic enough for HKDF: see
     // discussion on key-stretching step in https://eprint.iacr.org/2010/264.pdf (Section 9).
     const saltedUserPassword = `${keyPassword}${sessionLockToken ?? ''}`;
-    const passwordBytes = stringToUint8Array(saltedUserPassword);
+    const passwordBytes = binaryStringToUint8Array(saltedUserPassword);
 
     const cacheEncryptionKey = await deriveKey(
         passwordBytes,
@@ -83,7 +85,7 @@ export const getOfflineVerifier = async (offlineKD: Uint8Array<ArrayBuffer>): Pr
     const verifier = generateKey();
     const offlineVerifier = await encryptData(offlineKey, verifier, PassEncryptionTag.Offline);
 
-    return uint8ArrayToString(offlineVerifier);
+    return uint8ArrayToBinaryString(offlineVerifier);
 };
 
 export const generateOfflineComponents = async (loginPassword: string): Promise<OfflineComponents> => {
@@ -95,8 +97,8 @@ export const generateOfflineComponents = async (loginPassword: string): Promise<
     });
 
     return {
-        offlineConfig: { salt: uint8ArrayToString(offlineSalt), params: OFFLINE_ARGON2_PARAMS },
-        offlineKD: uint8ArrayToString(offlineKD),
+        offlineConfig: { salt: uint8ArrayToBinaryString(offlineSalt), params: OFFLINE_ARGON2_PARAMS },
+        offlineKD: uint8ArrayToBinaryString(offlineKD),
         offlineVerifier: await getOfflineVerifier(offlineKD),
     };
 };
