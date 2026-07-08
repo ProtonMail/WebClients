@@ -67,8 +67,7 @@ const PrivateHeader = ({
 
     return (
         <Header className={clsx(isProminent && 'ui-prominent', isCalendarOnElectron && 'pl-16 md:pl-2', className)}>
-            {!overrideMenuButton && !hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
-            {overrideMenuButton && <>{overrideMenuButton}</>}
+            {!hideMenuButton && (overrideMenuButton ?? <Hamburger expanded={expanded} onToggle={onToggleExpand} />)}
             {/* Handle actionArea in components itself rather than here */}
             <div className="flex-1 flex items-center">{actionArea}</div>
 

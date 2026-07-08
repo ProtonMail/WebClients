@@ -3,6 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 
@@ -67,7 +68,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
 
     useEffect(() => {
         // Only trigger modal once per session and when the user is in the Inbox
-        if (hasTriggeredModalRef.current || !isInbox) {
+        if (hasTriggeredModalRef.current || !isInbox || domIsBusy()) {
             return;
         }
 
