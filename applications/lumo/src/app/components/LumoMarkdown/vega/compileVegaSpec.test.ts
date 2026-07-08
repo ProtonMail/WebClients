@@ -1,4 +1,4 @@
-import { compile } from 'vega-lite';
+import { compile, type TopLevelSpec } from 'vega-lite';
 
 import { sanitizeVegaSpec } from './sanitizeVegaSpec';
 
@@ -43,7 +43,7 @@ describe('compileVegaSpec', () => {
         expect(layers[0]?.width).toBeUndefined();
         expect(layers[0]?.height).toBeUndefined();
         expect((spec as Record<string, unknown>).autosize).toEqual({ type: 'fit-x', contains: 'padding' });
-        expect(() => compile(spec)).not.toThrow();
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('compiles inferred charts from tier/latency inline data', () => {
@@ -54,7 +54,7 @@ describe('compileVegaSpec', () => {
         });
 
         const spec = sanitizeVegaSpec(raw);
-        expect(() => compile(spec)).not.toThrow();
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('compiles linked brush selection specs after sanitization', () => {
@@ -99,7 +99,7 @@ describe('compileVegaSpec', () => {
             ],
         });
 
-        const spec = sanitizeVegaSpec(raw);
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
         expect(spec.params).toEqual([{ name: 'brush', select: { type: 'interval', encodings: ['x'] } }]);
         const colorEncoding = (
             (spec as Record<string, unknown>).vconcat as Record<string, unknown>[]
@@ -112,7 +112,7 @@ describe('compileVegaSpec', () => {
             (spec as Record<string, unknown>).vconcat as Record<string, unknown>[]
         )[1]?.transform as Record<string, unknown>[];
         expect(bottomTransform[0]?.filter).toMatchObject({ param: 'brush', empty: true });
-        expect(() => compile(spec)).not.toThrow();
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('compiles a dual-series climate layer chart after sanitization', () => {
@@ -140,7 +140,7 @@ describe('compileVegaSpec', () => {
 
         const spec = sanitizeVegaSpec(raw);
         expect((spec as Record<string, unknown>).autosize).toEqual({ type: 'fit-x', contains: 'padding' });
-        expect(() => compile(spec)).not.toThrow();
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('does not add a stray top-level mark to vconcat climate dashboards', () => {
@@ -192,7 +192,7 @@ describe('compileVegaSpec', () => {
         expect(spec.mark).toBeUndefined();
         expect(spec.encoding).toBeUndefined();
         expect(spec.vconcat).toHaveLength(3);
-        expect(() => compile(spec)).not.toThrow();
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('preserves shared encoding on layered panels inside vconcat', () => {
@@ -231,7 +231,7 @@ describe('compileVegaSpec', () => {
         expect(panels[1]?.encoding).toMatchObject({
             y: { field: 'sun', type: 'quantitative' },
         });
-        expect(() => compile(spec)).not.toThrow();
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('compiles donut charts when arc mark and label layer were emitted at the same level', () => {
@@ -262,7 +262,7 @@ describe('compileVegaSpec', () => {
         });
 
         const spec = sanitizeVegaSpec(raw);
-        const compiled = compile(spec);
+        const compiled = compile(spec as unknown as TopLevelSpec);
         const markTypes = (compiled.spec as { marks?: { type?: string }[] }).marks?.map((mark) => mark.type);
 
         expect(markTypes).toContain('arc');
@@ -293,6 +293,6 @@ describe('compileVegaSpec', () => {
 
         expect(color.field).toBe('__lumoColorBand');
         expect(color.condition).toBeUndefined();
-        expect(() => compile({ ...spec, width: 480 })).not.toThrow();
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
     });
 });
