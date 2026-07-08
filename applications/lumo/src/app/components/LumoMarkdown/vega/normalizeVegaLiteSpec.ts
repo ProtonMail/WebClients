@@ -7,6 +7,7 @@ import {
 const VEGA_LITE_V5_SCHEMA = 'https://vega.github.io/schema/vega-lite/v5.json';
 
 const DATUM_TEST_PATTERN = /datum\.(\w+)\s*(>=|>|<=|<|==)\s*(-?\d+(?:\.\d+)?)/;
+const METRIC_FILTER_PATTERN = /datum\.metric\s*(===|!==)\s*['"]([^'"]+)['"]/;
 
 const X_FIELD_CANDIDATES = ['month', 'date', 'day', 'time', 'week', 'year', 'category', 'name', 'label', 'x'];
 
@@ -199,6 +200,168 @@ export function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void 
     delete spec.encoding;
 }
 
+function looksLikeCalendarYear(value: unknown): boolean {
+    return typeof value === 'number' && Number.isInteger(value) && value >= 1000 && value <= 3000;
+}
+
+function layerHasFieldBinding(layer: Record<string, unknown>): boolean {
+    const encoding = layer.encoding as Record<string, unknown> | undefined;
+    if (!encoding) {
+        return false;
+    }
+
+    return Object.values(encoding).some(
+        (channel) => channel && typeof channel === 'object' && !Array.isArray(channel) && 'field' in (channel as object)
+    );
+}
+
+function isDecorativeLayer(layer: Record<string, unknown>): boolean {
+    return getMarkTypeFromNode(layer) === 'rule' && !layerHasFieldBinding(layer);
+}
+
+function layerExpectsMeltedData(layer: Record<string, unknown>): boolean {
+    const encoding = layer.encoding as Record<string, unknown> | undefined;
+    const y = encoding?.y as Record<string, unknown> | undefined;
+    if (y?.field === 'value') {
+        return true;
+    }
+
+    const transforms = layer.transform;
+    if (!Array.isArray(transforms)) {
+        return false;
+    }
+
+    return transforms.some(
+        (transform) =>
+            !!transform &&
+            typeof transform === 'object' &&
+            !Array.isArray(transform) &&
+            typeof (transform as Record<string, unknown>).filter === 'string' &&
+            ((transform as Record<string, unknown>).filter as string).includes('datum.metric')
+    );
+}
+
+function seriesFromMetricFilter(filter: string, seriesKeys: string[]): string | null {
+    const match = filter.match(METRIC_FILTER_PATTERN);
+    if (!match) {
+        return null;
+    }
+
+    const [, operator, metricName] = match;
+    if (operator === '===') {
+        return seriesKeys.includes(metricName!) ? metricName! : null;
+    }
+
+    return seriesKeys.find((key) => key !== metricName) ?? null;
+}
+
+/**
+ * LLMs often emit dual-axis layer specs that filter on `datum.metric` and plot `value`
+ * without folding wide data first. Map each layer to the matching numeric column instead.
+ */
+export function normalizeWideDataLayerCharts(spec: Record<string, unknown>): void {
+    const layers = spec.layer;
+    if (!Array.isArray(layers)) {
+        return;
+    }
+
+    const values = extractInlineValues(spec);
+    if (!values) {
+        return;
+    }
+
+    const sample = values[0]!;
+    const keys = Object.keys(sample);
+    const xField = inferXField(keys, sample);
+    const seriesKeys = keys.filter((key) => key !== xField && typeof sample[key] === 'number');
+    if (seriesKeys.length < 1 || 'value' in sample || 'metric' in sample) {
+        return;
+    }
+
+    const dataLayers = layers.filter(
+        (layer): layer is Record<string, unknown> =>
+            !!layer && typeof layer === 'object' && !Array.isArray(layer) && !isDecorativeLayer(layer)
+    );
+    if (!dataLayers.some(layerExpectsMeltedData)) {
+        return;
+    }
+
+    let dataLayerIndex = 0;
+    spec.layer = layers.map((layer) => {
+        if (!layer || typeof layer !== 'object' || Array.isArray(layer) || isDecorativeLayer(layer)) {
+            return layer;
+        }
+
+        const layerObj = { ...(layer as Record<string, unknown>) };
+        if (!layerExpectsMeltedData(layerObj)) {
+            return layerObj;
+        }
+
+        let seriesField: string | null = null;
+        const transforms = layerObj.transform;
+        if (Array.isArray(transforms)) {
+            for (const transform of transforms) {
+                if (!transform || typeof transform !== 'object' || Array.isArray(transform)) {
+                    continue;
+                }
+
+                const filter = (transform as Record<string, unknown>).filter;
+                if (typeof filter === 'string') {
+                    seriesField = seriesFromMetricFilter(filter, seriesKeys);
+                    if (seriesField) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!seriesField) {
+            seriesField = seriesKeys[dataLayerIndex] ?? null;
+        }
+        dataLayerIndex += 1;
+
+        if (!seriesField) {
+            return layerObj;
+        }
+
+        delete layerObj.transform;
+
+        const encoding = { ...(layerObj.encoding as Record<string, unknown>) };
+        const y = { ...(encoding.y as Record<string, unknown>) };
+        y.field = seriesField;
+        encoding.y = y;
+        layerObj.encoding = encoding;
+
+        return layerObj;
+    });
+}
+
+/** Numeric calendar years encoded as temporal collapse to a single x tick — use ordinal instead. */
+export function normalizeYearAxisEncoding(spec: Record<string, unknown>): void {
+    const rootValues = extractInlineValues(spec);
+
+    visitChartNodesForNormalize(spec, (node) => {
+        const values = extractInlineValues(node) ?? rootValues;
+        const encoding = node.encoding as Record<string, unknown> | undefined;
+        const x = encoding?.x as Record<string, unknown> | undefined;
+        if (!values || !x || typeof x.field !== 'string' || x.type !== 'temporal') {
+            return;
+        }
+
+        const field = x.field;
+        if (!values.every((row) => looksLikeCalendarYear(row[field]))) {
+            return;
+        }
+
+        x.type = 'ordinal';
+        if (x.axis && typeof x.axis === 'object' && !Array.isArray(x.axis)) {
+            const axis = { ...(x.axis as Record<string, unknown>) };
+            delete axis.format;
+            x.axis = axis;
+        }
+    });
+}
+
 function flattenYAxis(layer: Record<string, unknown>): void {
     const encoding = layer.encoding as Record<string, unknown> | undefined;
     const y = encoding?.y as Record<string, unknown> | undefined;
@@ -254,12 +417,20 @@ export function splitDualAxisCharts(spec: Record<string, unknown>): Record<strin
         return spec;
     }
 
+    const dataLayers = layers.filter(
+        (layer): layer is Record<string, unknown> =>
+            !!layer && typeof layer === 'object' && !Array.isArray(layer) && !isDecorativeLayer(layer)
+    );
+    if (dataLayers.length < 2) {
+        return spec;
+    }
+
     const resolve = spec.resolve as Record<string, unknown> | undefined;
     const scaleResolve = resolve?.scale as Record<string, unknown> | undefined;
     const independentY = scaleResolve?.y === 'independent';
 
-    const hasSecondaryAxis = layers.some((layer) => {
-        const y = (layer as Record<string, unknown>).encoding as Record<string, unknown> | undefined;
+    const hasSecondaryAxis = dataLayers.some((layer) => {
+        const y = layer.encoding as Record<string, unknown> | undefined;
         const yEnc = y?.y as Record<string, unknown> | undefined;
         const axis = yEnc?.axis as Record<string, unknown> | undefined;
         return axis?.orient === 'right';
@@ -270,7 +441,7 @@ export function splitDualAxisCharts(spec: Record<string, unknown>): Record<strin
     }
 
     const data = spec.data;
-    const firstLayer = layers[0] as Record<string, unknown>;
+    const firstLayer = dataLayers[0]!;
     const xEncoding = (firstLayer.encoding as Record<string, unknown> | undefined)?.x as
         | Record<string, unknown>
         | undefined;
@@ -279,8 +450,8 @@ export function splitDualAxisCharts(spec: Record<string, unknown>): Record<strin
         return spec;
     }
 
-    const subcharts = layers.map((layer, index) =>
-        buildSubchart(layer as Record<string, unknown>, data, index, layers.length, xEncoding)
+    const subcharts = dataLayers.map((layer, index) =>
+        buildSubchart(layer, data, index, dataLayers.length, xEncoding)
     );
 
     return {
@@ -405,6 +576,7 @@ export function normalizeVegaLiteSpec(spec: Record<string, unknown>): Record<str
     normalizeTitle(normalized);
     stripFullVegaKeys(normalized);
     normalizeRootUnitWithLayer(normalized);
+    normalizeWideDataLayerCharts(normalized);
 
     const result = splitDualAxisCharts(
         isVegaLiteChartDefinition(normalized)
@@ -427,6 +599,7 @@ export function normalizeVegaLiteSpec(spec: Record<string, unknown>): Record<str
 
     normalizeSelectionFilters(result);
     normalizeMisusedHeatmaps(result);
+    normalizeYearAxisEncoding(result);
     repairInteractiveSpec(result);
     return result;
 }
