@@ -1,5 +1,4 @@
 import type { FC, ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -31,7 +30,6 @@ import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import { ShareButton } from '../../../sections/commonButtons/ShareButton';
 import { AlbumsPageTypes } from '../../layout.store';
@@ -245,7 +243,7 @@ interface ToolbarRightActionsGalleryProps {
 }
 
 interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGalleryProps {
-    requestDownload: (photosUids: string[]) => Promise<void>;
+    requestAlbumDownload: (albumUid: string, albumName: string) => Promise<void>;
     uids: string[];
     onDeleteAlbum: () => void;
     onLeaveAlbum: () => void;
@@ -260,7 +258,7 @@ const ToolbarRightActionsGallery = ({ uploadDisabled, albumNodeUid }: ToolbarRig
 
 const ToolbarRightActionsAlbumGallery = ({
     uploadDisabled,
-    requestDownload,
+    requestAlbumDownload,
     albumNodeUid,
     uids,
     onDeleteAlbum,
@@ -276,29 +274,13 @@ const ToolbarRightActionsAlbumGallery = ({
     const showUploadButton = album?.directRole !== MemberRole.Viewer && !uploadDisabled;
     const showAddAlbumsButton = album?.directRole !== MemberRole.Viewer;
     const [isDownloading, withDownloading] = useLoading();
-    const [pendingDownload, setPendingDownload] = useState(false);
-    const wasLoadingRef = useRef(isAlbumPhotosLoading);
 
-    // Track when pagination finishes and trigger pending download with latest data
-    // This prevent request download before all photos ids have been fetched.
-    useEffect(() => {
-        if (wasLoadingRef.current && !isAlbumPhotosLoading && pendingDownload) {
-            setPendingDownload(false);
-            void withDownloading(requestDownload(uids)).catch(noop);
-        }
-        wasLoadingRef.current = isAlbumPhotosLoading;
-    }, [isAlbumPhotosLoading, pendingDownload, uids, requestDownload, withDownloading]);
-
-    // If the isAlbumPhotosLoading is false, we can requestDownload right away
     const handleDownloadClick = () => {
-        if (isAlbumPhotosLoading) {
-            setPendingDownload(true);
-        } else {
-            void withDownloading(requestDownload(uids)).catch(noop);
+        if (!album) {
+            return;
         }
+        void withDownloading(requestAlbumDownload(album.nodeUid, album.name));
     };
-
-    const showLoading = pendingDownload || isDownloading;
 
     return (
         <>
@@ -310,7 +292,7 @@ const ToolbarRightActionsAlbumGallery = ({
             )}
             {!isAlbumPhotosLoading && uids.length === 0 ? null : (
                 <ToolbarButton
-                    loading={showLoading}
+                    loading={isDownloading}
                     onClick={handleDownloadClick}
                     data-testid="toolbar-download-album"
                     title={c('Action').t`Download`}
@@ -377,6 +359,7 @@ interface PhotosWithAlbumToolbarProps {
     uids: string[];
     onPreview?: () => void;
     requestDownload: (photosUids: string[]) => Promise<void>;
+    requestAlbumDownload?: (albumUid: string, albumName: string) => Promise<void>;
     uploadDisabled: boolean;
     tabSelection: AlbumsPageTypes;
     createAlbumModal: ModalStateReturnObj;
@@ -399,6 +382,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     selectedItems,
     uids,
     requestDownload,
+    requestAlbumDownload,
     uploadDisabled,
     tabSelection,
     createAlbumModal,
@@ -460,13 +444,14 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 {tabSelection === AlbumsPageTypes.ALBUMSGALLERY &&
                     !hasSelection &&
                     albumNodeUid &&
+                    requestAlbumDownload &&
                     onDeleteAlbum &&
                     onLeaveAlbum &&
                     onShowDetails &&
                     onAddAlbumPhotos && (
                         <ToolbarRightActionsAlbumGallery
                             uploadDisabled={uploadDisabled}
-                            requestDownload={requestDownload}
+                            requestAlbumDownload={requestAlbumDownload}
                             uids={uids}
                             albumNodeUid={albumNodeUid}
                             onDeleteAlbum={onDeleteAlbum}

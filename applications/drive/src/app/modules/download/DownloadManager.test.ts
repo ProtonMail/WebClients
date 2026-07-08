@@ -45,6 +45,7 @@ const archiveGeneratorTracker = trackInstances(() => ({
 const fileSaverSaveAsFileMock = jest.fn();
 const loadCreateReadableStreamWrapperMock = jest.fn();
 const traverseNodeStructureMock = jest.fn();
+const traverseAlbumMock = jest.fn();
 const hydrateAndCheckNodesMock = jest.fn();
 const hydrateAndCheckPhotosMock = jest.fn();
 const getDownloadSdkMock = jest.fn();
@@ -96,6 +97,7 @@ jest.mock('./ArchiveGenerator', () => ({
 
 jest.mock('./utils/traverseNodeStructure', () => ({
     traverseNodeStructure: traverseNodeStructureMock,
+    traverseAlbum: traverseAlbumMock,
 }));
 
 jest.mock('./utils/hydrateAndCheckNodes', () => ({
@@ -255,6 +257,7 @@ beforeEach(() => {
     }));
     fileSaverSaveAsFileMock.mockReset();
     traverseNodeStructureMock.mockReset();
+    traverseAlbumMock.mockReset();
     hydrateAndCheckNodesMock.mockReset();
     hydrateAndCheckPhotosMock.mockReset();
     getDownloadSdkMock.mockReset();
@@ -1359,5 +1362,83 @@ describe('DownloadManager', () => {
                 id === 'download-pending-cancel' && update.status === DownloadStatus.Failed
         );
         expect(failedCalls).toHaveLength(0);
+    });
+
+    describe('downloadAlbum', () => {
+        it('creates the item as Preparing immediately and schedules the album traversal', async () => {
+            const manager = DownloadManager.getInstance();
+
+            storeMockState.addDownloadItem.mockReturnValue('album-download-1');
+            storeMockState.getQueueItem.mockReturnValue(undefined);
+
+            const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
+            traverseAlbumMock.mockReturnValue({
+                nodesQueue: { iterator: iteratorMock },
+                traversalCompletedPromise: Promise.resolve({
+                    totalEncryptedSize: 0,
+                    containsUnsupportedFile: false,
+                }),
+                parentPathByUid: new Map(),
+            });
+
+            await manager.downloadAlbum('album-1', 'Summer trip');
+            await flushAsync();
+
+            expect(storeMockState.addDownloadItem).toHaveBeenCalledWith(
+                expect.objectContaining({ status: DownloadStatus.Preparing, name: 'Summer trip.zip' })
+            );
+            expect(traverseAlbumMock).toHaveBeenCalledTimes(1);
+            expect(traverseAlbumMock.mock.calls[0][0]).toBe('album-1');
+            expect(traverseAlbumMock.mock.calls[0][1]).toHaveProperty('aborted', false);
+        });
+
+        it('fails the whole album download when an album item is missing', async () => {
+            const manager = DownloadManager.getInstance();
+
+            storeMockState.addDownloadItem.mockReturnValue('album-download-2');
+            storeMockState.getQueueItem.mockReturnValue(undefined);
+
+            const failure = new Error("Requested item doesn't exist anymore");
+            traverseAlbumMock.mockImplementation(() => {
+                throw failure;
+            });
+
+            await manager.downloadAlbum('album-2', '');
+            await flushAsync(3);
+
+            expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('album-download-2', {
+                status: DownloadStatus.Failed,
+                error: failure,
+            });
+        });
+    });
+
+    describe('retry with the new requestedDownloads shapes', () => {
+        it('retries an album download via scheduleArchiveDownloadForAlbum', async () => {
+            const manager = DownloadManager.getInstance();
+
+            storeMockState.addDownloadItem.mockReturnValue('retry-album');
+            storeMockState.getQueueItem.mockReturnValue(undefined);
+
+            traverseAlbumMock.mockReturnValue({
+                nodesQueue: { iterator: jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
+                traversalCompletedPromise: Promise.resolve({
+                    totalEncryptedSize: 0,
+                    containsUnsupportedFile: false,
+                }),
+                parentPathByUid: new Map(),
+            });
+
+            await manager.downloadAlbum('album-retry', 'Retry album');
+            await flushAsync();
+            traverseAlbumMock.mockClear();
+
+            storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed });
+            manager.retry(['retry-album']);
+            await flushAsync();
+
+            expect(traverseAlbumMock).toHaveBeenCalledTimes(1);
+            expect(traverseAlbumMock.mock.calls[0][0]).toBe('album-retry');
+        });
     });
 });

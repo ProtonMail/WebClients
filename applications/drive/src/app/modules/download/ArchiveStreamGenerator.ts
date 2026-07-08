@@ -328,6 +328,11 @@ export class ArchiveStreamGenerator {
 
     private maybeCloseQueue() {
         if (this.schedulingCompleted && this.pendingArchiveTasks === 0 && this.scheduledTasksAwaitingStart === 0) {
+            // No entry was ever produced (e.g. an empty album/folder): nothing will call
+            // notifyItemReady(), so unblock waitForFirstItem() here or it hangs forever.
+            if (!this.hasProducedItem) {
+                this.tracker.notifyItemReady();
+            }
             this.archiveItemsQueue.close();
         }
     }
