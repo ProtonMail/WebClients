@@ -130,6 +130,7 @@
 
 .lumo-metric-card-row {
     display: grid;
+    align-items: stretch;
     gap: rem(12);
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-block: rem(8);
@@ -152,7 +153,29 @@
     }
 
     .lumo-insight-card-block {
+        display: flex;
         margin-block: 0;
+        min-width: 0;
+    }
+
+    .lumo-insight-card--metric {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 100%;
+        width: 100%;
+    }
+
+    .lumo-insight-card--metric .lumo-insight-card__delta {
+        margin-top: auto;
+    }
+
+    .lumo-insight-card--skeleton {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 100%;
+        width: 100%;
     }
 
     @media (max-width: 900px) {
