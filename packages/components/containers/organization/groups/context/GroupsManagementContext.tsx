@@ -80,6 +80,14 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const addGroupMembers = async (group: Group, emails: string[]) => {
         try {
             await dispatch(addGroupMembersThunk({ group, emails, getMemberPublicKeys }));
+            createNotification({
+                type: 'success',
+                text: c('Info').ngettext(
+                    msgid`${emails.length} member added to the group`,
+                    `${emails.length} members added to the group`,
+                    emails.length
+                ),
+            });
         } catch (e: unknown) {
             handleError(e);
         }
@@ -304,6 +312,10 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
 
         const thunkAction = isNewGroup ? createGroup : editGroup;
         const Group = await dispatch(thunkAction({ api: api, group: payload }));
+
+        if (isNewGroup) {
+            createNotification({ type: 'success', text: c('Info').t`Group created` });
+        }
 
         await syncGroupAdminRoles(Group);
 

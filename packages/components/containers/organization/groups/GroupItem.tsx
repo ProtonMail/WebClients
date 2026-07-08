@@ -80,7 +80,7 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     };
 
     return (
-        <div className="relative">
+        <div className="relative mb-1">
             <Button
                 className={clsx(['group-button interactive-pseudo w-full p-4 rounded-xl', active && 'is-active'])}
                 color="weak"
