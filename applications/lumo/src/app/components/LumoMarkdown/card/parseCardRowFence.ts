@@ -103,7 +103,7 @@ function parseInternalCardRowBatch(code: string): MetricCardFence[] | null {
                     typeof (item as Record<string, unknown>).code === 'string'
             )
         ) {
-            return (parsed as Array<{ code: string; language?: string }>).map((item) => ({
+            return (parsed as { code: string; language?: string }[]).map((item) => ({
                 language: item.language || 'card',
                 code: item.code,
             }));
