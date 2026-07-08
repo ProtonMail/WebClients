@@ -18,7 +18,7 @@ import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onb
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 interface CategoriesOnboardingContextProps {
-    userIsInOnboarding: boolean;
+    userIsInB2COnboardingFlow: boolean;
     activeStep: OnboardingStep;
     handleSkip: () => void;
     completeCurrentStep: () => void;
@@ -32,6 +32,12 @@ const STEP_TO_FLAG: Partial<Record<OnboardingStep, CategoriesOnboardingFlags>> =
     [OnboardingStep.CATEGORIZE]: CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE,
     [OnboardingStep.CUSTOMIZE]: CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE,
 };
+
+const B2C_ONBOARDING_STEPS = new Set<OnboardingStep>([
+    OnboardingStep.MESSAGE,
+    OnboardingStep.CATEGORIZE,
+    OnboardingStep.CUSTOMIZE,
+]);
 
 export const useCategoriesOnboarding = () => {
     const context = useContext(CategoriesOnboardingContext);
@@ -141,17 +147,17 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         void flagRef.current.update(setBit(flagValue, bit));
     }, [activeStep]);
 
-    const userIsInOnboarding = activeStep !== OnboardingStep.NONE && activeStep !== OnboardingStep.DONE;
+    const userIsInB2COnboardingFlow = B2C_ONBOARDING_STEPS.has(activeStep);
 
     const value = useMemo(
         () => ({
             activeStep,
-            userIsInOnboarding,
+            userIsInB2COnboardingFlow,
             handleSkip,
             completeCurrentStep,
             categorizeStepLocation,
         }),
-        [activeStep, userIsInOnboarding, handleSkip, completeCurrentStep, categorizeStepLocation]
+        [activeStep, userIsInB2COnboardingFlow, handleSkip, completeCurrentStep, categorizeStepLocation]
     );
 
     return <CategoriesOnboardingContext.Provider value={value}>{children}</CategoriesOnboardingContext.Provider>;
