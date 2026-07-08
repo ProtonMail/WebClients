@@ -262,6 +262,32 @@ describe('ArchiveStreamGenerator', () => {
         await expect(waitPromise).resolves.toBeUndefined();
     });
 
+    it('should resolve waitForFirstItem and close the generator when entries are empty', async () => {
+        const abortController = new AbortController();
+        const schedulerInstance = schedulerTracker.Mock();
+
+        async function* entries() {
+            // no yields: e.g. an empty album/folder
+        }
+
+        const generatorInstance = new ArchiveStreamGenerator({
+            entries: entries(),
+            onProgress: jest.fn(),
+            scheduler: schedulerInstance,
+            abortController,
+            parentPathByUid: new Map<string, string[]>(),
+            downloadId: 'download-id',
+            malwareDetection: createMalwareDetectionMock(),
+        });
+
+        await flushAsync();
+
+        await expect(generatorInstance.waitForFirstItem()).resolves.toBeUndefined();
+
+        const finalIteration = await generatorInstance.generator.next();
+        expect(finalIteration.done).toBe(true);
+    });
+
     it.skip('should propagate downloader errors to consumers', async () => {
         const abortController = new AbortController();
         const schedulerInstance = schedulerTracker.Mock();

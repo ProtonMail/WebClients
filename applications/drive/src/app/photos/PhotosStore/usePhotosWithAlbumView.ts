@@ -76,6 +76,10 @@ export const usePhotosWithAlbumsView = () => {
         await DownloadManager.getInstance().downloadPhotos(photosUids);
     }, []);
 
+    const requestAlbumDownload = useCallback(async (albumUid: string, albumName: string) => {
+        await DownloadManager.getInstance().downloadAlbum(albumUid, albumName);
+    }, []);
+
     const handleSelectTag = useCallback(async (tags: PhotoTag[]) => {
         setSelectedTags(tags);
     }, []);
@@ -87,6 +91,7 @@ export const usePhotosWithAlbumsView = () => {
         albumPhotoTimelineUids,
         photoTimelineUids,
         requestDownload,
+        requestAlbumDownload,
         isPhotosLoading,
         isAlbumsLoading,
         isAlbumLoading,
