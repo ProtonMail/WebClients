@@ -1,4 +1,3 @@
-import { Button } from '@proton/atoms/Button/Button'
 import clsx from 'clsx'
 import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
@@ -16,6 +15,7 @@ import { useUI } from '../../ui-store'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
 import { normalizeCustomHexColor } from './normalizeCustomHexColor'
+import { Button } from './Button'
 
 const { s } = createStringifier(strings)
 
