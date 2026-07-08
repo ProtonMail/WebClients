@@ -1404,6 +1404,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "La expiración debe estar entre 1 hora y 1 año"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Error al iniciar el agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Error al detener el agente SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2793,6 +2799,12 @@
       "Moving an item to another vault will erase its secure links.": [
         "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
         "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } usará las claves SSH guardadas en sus bóvedas."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No se encontraron claves SSH en ${ PASS_SHORT_APP_NAME }. Cree claves SSH para usar con este agente."
       ]
     },
     "Keyboard key": {
@@ -4002,6 +4014,9 @@
       ],
       "Custom expiration (minutes)": [
         "Expiración personalizada (minutos)"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usar ${ PASS_APP_NAME } como agente SSH"
       ]
     },
     "Link": {
@@ -4486,6 +4501,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Se envió un correo electrónico de verificación. Revise su bandeja de entrada para verificar su buzón de correo."
+      ],
+      "SSH agent successfully started": [
+        "Agente SSH iniciado con éxito"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH detenido con éxito"
       ]
     },
     "Theme": {
@@ -5012,6 +5033,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "SSH Agent": [
+        "Agente SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5360,6 +5384,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "El agente SSH requiere usar claves SSH, las cuales no están disponibles en su plan."
       ]
     }
   }
