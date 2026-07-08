@@ -288,6 +288,14 @@ export const RenderBlocks = ({
         isLastMessage,
         message.createdAt
     );
+
+    // Nothing has streamed yet but we're still thinking: show an empty thinking
+    // path so the user gets immediate feedback. The map below renders it (and its
+    // waiting animation) like any other steps group.
+    if (interleavedItems.length === 0 && isThinkingInProgress(blocks, message, isGenerating, isLastMessage)) {
+        interleavedItems.push({ type: 'steps', steps: [] });
+    }
+
     const textBlocks = interleavedItems.filter((i) => i.type === 'text');
 
     // Gather all rich-card-eligible steps globally so finance comparison always works

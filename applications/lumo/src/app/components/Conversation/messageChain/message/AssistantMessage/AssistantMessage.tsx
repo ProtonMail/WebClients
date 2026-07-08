@@ -242,8 +242,10 @@ const AssistantMessage = ({
         [handleRegenerateMessage, message, isWebSearchButtonToggled]
     );
 
-    // Hide message if it's loading and truly empty (no content, no tool calls)
-    const shouldShow = !isLoading || hasContent || hasToolCall;
+    // Hide message if it's loading and truly empty, except the last message while
+    // generating — show the bubble immediately so the user gets feedback before
+    // the first streamed token arrives.
+    const shouldShow = !isLoading || hasContent || hasToolCall || (isGenerating && isLastMessage);
 
     const shouldShowNextPromptSuggestions =
         showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
@@ -265,7 +267,7 @@ const AssistantMessage = ({
                                 blocks={blocks}
                                 searchResults={searchResults ?? []}
                             />
-                            {isLoading && !hasToolCall ? (
+                            {isLoading && !hasToolCall && !isGenerating ? (
                                 <div className="w-full pt-1" style={{ minHeight: '2em' }}>
                                     <div className="rectangle-skeleton keep-motion"></div>
                                 </div>
