@@ -1,5 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import type { ReactElement } from 'react'
+import { type ReactElement, useState } from 'react'
 import { c } from 'ttag'
 import { CURRENCY } from '../../constants'
 import { createStringifier } from '../../stringifier'
@@ -9,6 +9,9 @@ import { useIsSheetsCustomDateTimeFormatEnabled, useIsSheetsCustomNumberFormatEn
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 const { s } = createStringifier(strings)
+const NUMBER_FORMAT_NEW_BADGE_STORAGE_KEY_PREFIX = 'sheets:number-format-new-badge-dismissed:'
+
+type NumberFormatNewBadgeItem = 'custom-currency' | 'custom-number' | 'custom-date-and-time'
 
 /**
  * If `asSubmenu` is `false` (default), use `renderMenuButton`. If `true`, pass
@@ -58,6 +61,9 @@ function NumberFormatsMenuPopover({ asSubmenu = false, clientInvoker }: NumberFo
   const customCurrencyFormatDialogStore = useUI((ui) => ui.view.customCurrencyFormatDialog.store)
   const customNumberFormatDialogStore = useUI((ui) => ui.view.customNumberFormatDialog.store)
   const customDateAndTimeFormatDialogStore = useUI((ui) => ui.view.customDateAndTimeFormatDialog.store)
+  const customCurrencyNewBadge = useNumberFormatNewBadge('custom-currency')
+  const customNumberNewBadge = useNumberFormatNewBadge('custom-number')
+  const customDateAndTimeNewBadge = useNumberFormatNewBadge('custom-date-and-time')
 
   return (
     <Menu>
@@ -179,16 +185,37 @@ function NumberFormatsMenuPopover({ asSubmenu = false, clientInvoker }: NumberFo
         {s('Duration')}
       </UI.MenuItemCheckbox>
       <UI.MenuSeparator />
-      <UI.MenuItem leadingIndent onClick={customCurrencyFormatDialogStore.show}>
+      <UI.MenuItem
+        leadingIndent
+        onClick={() => {
+          customCurrencyNewBadge.dismiss()
+          customCurrencyFormatDialogStore.show()
+        }}
+        hintSlot={customCurrencyNewBadge.hintSlot}
+      >
         {s('Custom currency')}
       </UI.MenuItem>
       {isSheetsCustomNumberFormatEnabled && (
-        <UI.MenuItem leadingIndent onClick={customNumberFormatDialogStore.show}>
+        <UI.MenuItem
+          leadingIndent
+          onClick={() => {
+            customNumberNewBadge.dismiss()
+            customNumberFormatDialogStore.show()
+          }}
+          hintSlot={customNumberNewBadge.hintSlot}
+        >
           {s('Custom number')}
         </UI.MenuItem>
       )}
       {isSheetsCustomDateTimeFormatEnabled && (
-        <UI.MenuItem leadingIndent onClick={customDateAndTimeFormatDialogStore.show}>
+        <UI.MenuItem
+          leadingIndent
+          onClick={() => {
+            customDateAndTimeNewBadge.dismiss()
+            customDateAndTimeFormatDialogStore.show()
+          }}
+          hintSlot={customDateAndTimeNewBadge.hintSlot}
+        >
           {s('Custom date and time')}
         </UI.MenuItem>
       )}
@@ -243,6 +270,51 @@ function CurrencySubMenuPopover() {
       </UI.MenuItemCheckbox>
     </UI.SubMenu>
   )
+}
+
+function NewBadge() {
+  return (
+    <span className="flex shrink-0 items-center self-center rounded bg-[#F4F1FF] px-1 text-xs font-semibold leading-4 text-[#6D4AFF]">
+      {c('Info').t`New`}
+    </span>
+  )
+}
+
+function useNumberFormatNewBadge(item: NumberFormatNewBadgeItem) {
+  const storageKey = `${NUMBER_FORMAT_NEW_BADGE_STORAGE_KEY_PREFIX}${item}`
+  const [isDismissed, setIsDismissed] = useState(() => getNumberFormatNewBadgeDismissed(storageKey))
+
+  return {
+    hintSlot: isDismissed ? undefined : <NewBadge />,
+    dismiss: () => {
+      setIsDismissed(true)
+      setNumberFormatNewBadgeDismissed(storageKey)
+    },
+  }
+}
+
+function getNumberFormatNewBadgeDismissed(storageKey: string) {
+  if (typeof window === 'undefined') {
+    return false
+  }
+
+  try {
+    return window.localStorage.getItem(storageKey) === 'true'
+  } catch {
+    return false
+  }
+}
+
+function setNumberFormatNewBadgeDismissed(storageKey: string) {
+  if (typeof window === 'undefined') {
+    return undefined
+  }
+
+  try {
+    window.localStorage.setItem(storageKey, 'true')
+  } catch {
+    return undefined
+  }
 }
 
 function getCurrencyItemValue(name: string) {
