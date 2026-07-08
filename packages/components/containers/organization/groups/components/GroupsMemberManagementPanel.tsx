@@ -34,7 +34,7 @@ const FormContainer = ({ children }: { children: React.ReactNode }) => {
     }, []);
 
     if (breakpoints.viewportWidth['>=large']) {
-        return <div className="bg-norm border-left border-norm grow-2 shrink-0">{children}</div>;
+        return <div className="bg-norm border-left border-norm grow-2 min-w-0">{children}</div>;
     }
 
     const handleBack = () => {
