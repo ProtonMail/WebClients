@@ -36,7 +36,7 @@ import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { useActiveBreakpoint } from '@proton/components'
 import { EditingDisabledDialog } from './components/misc/EditingDisabledDialog'
 import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constants'
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
+import { CircleLoader } from './components/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
