@@ -6,7 +6,7 @@ import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/c
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { srpAuth, srpGetVerify } from '@proton/shared/lib/srp';
 
 import type { AuthStore } from './store';
@@ -50,9 +50,9 @@ export const verifyOfflinePassword = async (
     password: string,
     { offlineVerifier, offlineConfig: { salt, params } }: Omit<OfflineComponents, 'offlineKD'>
 ): Promise<boolean> => {
-    const offlineKD = await getOfflineKeyDerivation(password, stringToUint8Array(salt), params);
+    const offlineKD = await getOfflineKeyDerivation(password, binaryStringToUint8Array(salt), params);
     const offlineKey = await importSymmetricKey(offlineKD);
-    await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
+    await decryptData(offlineKey, binaryStringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
 
     return true;
 };

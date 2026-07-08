@@ -1,7 +1,9 @@
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import * as browser from '@proton/shared/lib/helpers/browser';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { PassCryptoError } from './errors';
 import {
@@ -17,7 +19,7 @@ const isChromiumBased = browser.isChromiumBased as jest.Mock;
 const isMinimumSafariVersion = browser.isMinimumSafariVersion as jest.Mock;
 const isUserVerifyingPlatformAuthenticatorAvailable = jest.fn();
 
-const TEST_PRF_BYTES = stringToUint8Array('test.webauthn.prf.salt');
+const TEST_PRF_BYTES = utf8StringToUint8Array('test.webauthn.prf.salt');
 const TEST_HKDF_B64 = 'xW/XzmkKNMbwoBJ6UuFR1rdOAd5Fbp2QO9OPp6QYt6s=';
 
 global.PublicKeyCredential = function PublicKeyCredential() {} as any;
@@ -99,14 +101,14 @@ describe('PRF utilities', () => {
         test('should derive key via HKDF pass', async () => {
             const credential = createMockCredential({ results: { first: TEST_PRF_BYTES } });
             const result = await deriveKeyFromPRFCredential(credential, true);
-            expect(pipe(stringToUint8Array, bytes => bytes.toBase64())(result)).toEqual(TEST_HKDF_B64);
+            expect(pipe(binaryStringToUint8Array, (bytes) => bytes.toBase64())(result)).toEqual(TEST_HKDF_B64);
         });
 
         test('should return valid crypto key derived from HKDF pass', async () => {
             const credential = createMockCredential({ results: { first: TEST_PRF_BYTES } });
             const result = await deriveKeyFromPRFCredential(credential);
 
-            const message = stringToUint8Array('test.message');
+            const message = utf8StringToUint8Array('test.message');
             const expectedKey = await importKey(Uint8Array.fromBase64(TEST_HKDF_B64));
             const encryptedMessage = await encryptData(expectedKey, message);
 

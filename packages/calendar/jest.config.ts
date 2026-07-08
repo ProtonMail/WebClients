@@ -31,7 +31,7 @@ const jestConfig: JestConfigWithTsJest = {
         ],
     },
     setupFilesAfterEnv: ['./jest.setup.ts'],
-    testEnvironment: 'jsdom',
+    testEnvironment: '@proton/jest-env',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',

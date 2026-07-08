@@ -1,17 +1,16 @@
 import { type AesGcmCryptoKey, deriveKey, exportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
+import { uint8ArrayToBinaryString, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import { isChromiumBased, isMinimumSafariVersion, isWindows } from '@proton/shared/lib/helpers/browser';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { PassCryptoError } from './errors';
 
 /** Dummy challenge as no server interaction here.
  * Credential used to encrypt a payload */
 const CHALLENGE = new Uint8Array([1]);
-const FIRST_SALT = stringToUint8Array('proton.pass.webauthn.prf.firstSalt').buffer;
-const HKDF_INFO = stringToUint8Array('proton.pass.webauthn.prf');
+const FIRST_SALT = utf8StringToUint8Array('proton.pass.webauthn.prf.firstSalt').buffer;
+const HKDF_INFO = utf8StringToUint8Array('proton.pass.webauthn.prf');
 
 /** Until PRF is more widely adopted, we additionaly restrict this
  *  to exclude Windows, Safari < 18, and non-Chromium-based browsers */
@@ -97,7 +96,7 @@ export async function generateCredential(authStore: AuthStore): Promise<PublicKe
         /** Using UID for the credential ID as it's unique per session. As the webauthn
          * credentials are tied to a specific user session, avoid using userID or localID
          * which could cause clashes when re-registering a credential for the same ID */
-        id: stringToUint8Array(UID),
+        id: utf8StringToUint8Array(UID),
     };
 
     const publicKey: PublicKeyCredentialCreationOptions = {
