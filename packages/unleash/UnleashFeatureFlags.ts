@@ -124,7 +124,6 @@ enum AccountFlag {
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
     RecoverySettingsRedesign = 'RecoverySettingsRedesign',
     SystemGroupFlag = 'SystemGroupFlag',
-    UnauthLost2FA = 'UnauthLost2FA',
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
