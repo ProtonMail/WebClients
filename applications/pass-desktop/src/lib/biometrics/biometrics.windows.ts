@@ -1,6 +1,6 @@
 import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
 
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as winBiometrics } from '../../../native';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
@@ -32,12 +32,12 @@ const factory: BiometricsFactory = (getWindow) => {
                     return bytes.slice(0, KEY_LENGTH_BYTES);
                 })();
 
-                return uint8ArrayToString(secretBytesUint8);
+                return uint8ArrayToBinaryString(secretBytesUint8);
             }
 
             /* Version 2+: Secrets are stored as raw byte arrays without
              * any conversions to and from strings */
-            return uint8ArrayToString(secretBytes);
+            return uint8ArrayToBinaryString(secretBytes);
         },
         setSecret: (key, secret) => winBiometrics.setSecret(key, secret),
         deleteSecret: (key) => winBiometrics.deleteSecret(key),

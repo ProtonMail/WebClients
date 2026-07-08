@@ -68,7 +68,7 @@ import {
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
@@ -389,7 +389,7 @@ export const createAuthService = ({
                         if (blob?.type === 'offline') {
                             const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
                             const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
-                            const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                            const offlineVerifier = await getOfflineVerifier(binaryStringToUint8Array(offlineKD));
                             authStore.setOfflineComponents({ offlineKD, offlineConfig, offlineVerifier });
 
                             switch (fork.reauth.type) {

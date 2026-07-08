@@ -3,7 +3,7 @@ import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 export const encryptTemporaryPassword = async (password: string, publicKey: PublicKeyReference) => {
     const { message } = await CryptoProxy.encryptMessage({
@@ -44,7 +44,7 @@ export const getJoiningLinkHref = (config: {
     ][];
 
     const params = new URLSearchParams(filtered).toString();
-    const hashPart = stringToUint8Array(params).toBase64({ alphabet: 'base64url', omitPadding: true });
+    const hashPart = binaryStringToUint8Array(params).toBase64({ alphabet: 'base64url', omitPadding: true });
     return `${accountPath}#${hashPart}`;
 };
 
@@ -52,7 +52,7 @@ export const parseJoiningLinkConfig = ({ hash }: { hash: string }) => {
     const encodedHash = hash.slice(1);
     let decodedHash = '';
     try {
-        decodedHash = uint8ArrayToString(Uint8Array.fromBase64(encodedHash, { alphabet: 'base64url' }));
+        decodedHash = uint8ArrayToBinaryString(Uint8Array.fromBase64(encodedHash, { alphabet: 'base64url' }));
     } catch {}
     const hashParams = new URLSearchParams(decodedHash);
     const config = {

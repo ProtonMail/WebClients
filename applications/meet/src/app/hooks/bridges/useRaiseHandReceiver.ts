@@ -7,7 +7,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { RAISE_HAND_EMOJI } from '../../constants';
@@ -75,7 +75,7 @@ export const useRaiseHandReceiver = () => {
 
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
-                const decrypted = await meetCoreClient.decryptMessage(stringToUint8Array(decoded.message));
+                const decrypted = await meetCoreClient.decryptMessage(binaryStringToUint8Array(decoded.message));
                 if (!decrypted) {
                     return;
                 }

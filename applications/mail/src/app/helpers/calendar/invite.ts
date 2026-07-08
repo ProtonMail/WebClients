@@ -1,6 +1,6 @@
+import { serverTime } from '@protontech/crypto';
 import { getUnixTime } from 'date-fns';
 
-import { serverTime } from '@protontech/crypto';
 import type { MessageStateWithData, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
@@ -55,7 +55,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -725,7 +725,7 @@ export const getSupportedEventInvitation = async ({
     const prodId = prodIdProperty.value;
     const supportedMethod = getIcalMethod(method);
     const supportedCalscale = getSupportedCalscale(calscale);
-    let originalUniqueIdentifier = await generateVeventHashUID(stringToUint8Array(serialize(vcalComponent)));
+    let originalUniqueIdentifier = await generateVeventHashUID(binaryStringToUint8Array(serialize(vcalComponent)));
     const vevent = extractVevent(vcalComponent);
     const vtimezone = extractUniqueVTimezone(vcalComponent);
     const uid = vevent?.uid?.value || '';

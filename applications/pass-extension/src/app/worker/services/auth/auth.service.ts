@@ -57,7 +57,7 @@ import { deserialize } from '@proton/pass/utils/object/serialize';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -187,7 +187,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     if (blob?.type === 'offline') {
                         const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
                         const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
-                        const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                        const offlineVerifier = await getOfflineVerifier(binaryStringToUint8Array(offlineKD));
                         authStore.setOfflineComponents({ offlineKD, offlineConfig, offlineVerifier });
                         await authService.persistSession();
                         ctx.service.store.dispatch(settingsEditIntent('offline', { offlineEnabled: true }, true));

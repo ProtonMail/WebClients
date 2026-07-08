@@ -1,5 +1,6 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
-import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+import { binaryStringToUint8Array, utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -11,7 +12,6 @@ import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse, LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -247,7 +247,7 @@ export const migrateSession = async (authStore: AuthStore): Promise<boolean> => 
 
     /** Create the `offlineVerifier` if it hasn't been generated (<1.18.0) */
     if (offlineKD && offlineConfig && !offlineVerifier) {
-        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+        authStore.setOfflineVerifier(await getOfflineVerifier(binaryStringToUint8Array(offlineKD)));
         migrated = true;
     }
 

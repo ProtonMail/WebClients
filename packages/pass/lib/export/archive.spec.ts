@@ -8,7 +8,7 @@ import { ContentFormatVersion, ItemState } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
 const getMockExport = (): ExportData => ({
     version: '5.0.0.99',
@@ -120,7 +120,7 @@ describe('Archive generation', () => {
 
             const armored = await data!.text();
             const decrypted = await decryptPassExport(armored, 'p4ssphr3se');
-            const json = JSON.parse(uint8ArrayToString(decrypted));
+            const json = JSON.parse(uint8ArrayToUtf8String(decrypted));
 
             expect(json).toEqual(exportData);
         });

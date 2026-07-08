@@ -1,5 +1,6 @@
 import type { MIMEAttachment } from '@protontech/crypto';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -27,7 +28,7 @@ const mimeAttachment = {
     contentType: '',
     headers: originalHeaders,
     size: attachmentSize,
-    content: stringToUint8Array('content'),
+    content: utf8StringToUint8Array('content'),
 } as MIMEAttachment;
 
 describe('getId', () => {
@@ -90,7 +91,7 @@ describe('convert', () => {
             contentType: '',
             headers: originalHeaders,
             size: attachmentSize,
-            content: stringToUint8Array('content-2'),
+            content: utf8StringToUint8Array('content-2'),
         } as MIMEAttachment;
 
         const attachments = convert(message, [mimeAttachment, mimeAttachment2], spy);
@@ -137,8 +138,8 @@ describe('convertToFile', () => {
             return {
                 filename: 'attachment-2',
                 verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
-                data: stringToUint8Array(`content-${ID}`),
-                signatures: [stringToUint8Array(`content-${ID}`)],
+                data: utf8StringToUint8Array(`content-${ID}`),
+                signatures: [utf8StringToUint8Array(`content-${ID}`)],
             } as DecryptedAttachment;
         });
         const attachments = [

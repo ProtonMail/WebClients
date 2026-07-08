@@ -4,7 +4,6 @@ import type {
     MessageImage,
     PartialMessageState,
 } from '@proton/mail/store/messages/messagesTypes';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import {
@@ -26,6 +25,7 @@ import {
     setEmbeddedAttr,
     trimQuotes,
 } from './messageEmbeddeds';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 const contentID = 'my-content-id';
 const contentLocation = 'my-content-location';
@@ -173,7 +173,7 @@ describe('messageEmbeddeds', () => {
         const getBlobType = (callIndex = 0) => (createObjectURL.mock.calls[callIndex][0] as Blob).type;
 
         it('should create a blob', () => {
-            const data = stringToUint8Array('data');
+            const data = utf8StringToUint8Array('data');
             const attachment = { MIMEType: 'image/png' } as Attachment;
 
             const blob = createBlob(attachment, data);
@@ -182,7 +182,7 @@ describe('messageEmbeddeds', () => {
         });
 
         it('should keep the attachment mime type for non-SVG attachments', () => {
-            createBlob({ MIMEType: 'image/png' } as Attachment, stringToUint8Array('data'));
+            createBlob({ MIMEType: 'image/png' } as Attachment, utf8StringToUint8Array('data'));
 
             expect(getBlobType()).toEqual('image/png');
         });
@@ -199,7 +199,7 @@ describe('messageEmbeddeds', () => {
             ];
 
             svgMimeTypes.forEach((MIMEType, index) => {
-                createBlob({ MIMEType } as Attachment, stringToUint8Array('data'));
+                createBlob({ MIMEType } as Attachment, utf8StringToUint8Array('data'));
 
                 expect(getBlobType(index)).toEqual('application/octet-stream');
             });
