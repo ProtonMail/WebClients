@@ -14,17 +14,6 @@ export interface GroupKeyInfoData {
     epoch: bigint;
 }
 
-export interface WaitingRoomJoinRequest {
-    requestId: string;
-    participantUid: string;
-    expiresAt: number;
-    receivedAt: number;
-}
-
-export interface CreateJoinRequestResult {
-    request_id: string;
-}
-
 export interface ChatIncomingEventInfoData {
     emoji?: string;
     id: string;
@@ -119,23 +108,6 @@ export interface MeetCoreClient {
     composeChatReaction(...args: Parameters<App['composeChatReaction']>): Promise<ChatComposeResultData>;
     composeChatUnreact(...args: Parameters<App['composeChatUnreact']>): Promise<ChatComposeResultData>;
     decodeChat(...args: Parameters<App['decodeChat']>): Promise<ChatIncomingEventInfoData>;
-
-    // Waiting room — guest methods
-    hasMlsGroupInfo(): Promise<boolean>;
-    prepareMlsSessionForWaitingRoom(...args: Parameters<App['prepareMlsSessionForWaitingRoom']>): Promise<void>;
-    createJoinRequest(meetLinkName: string, meetingSessionKey: string): Promise<CreateJoinRequestResult>;
-    waitForWaitingRoomWelcome(meetLinkName: string): Promise<void>;
-    cancelWaitingRoomJoinRequest(meetLinkName: string): Promise<void>;
-    clearWaitingRoomJoinRequest(): Promise<void>;
-    setJoinDecisionHandler(): Promise<void>;
-    clearJoinDecisionHandler(): Promise<void>;
-
-    // Waiting room — host methods
-    setJoinRequestHandler(): Promise<void>;
-    clearJoinRequestHandler(): Promise<void>;
-    admitWaitingRoomJoinRequest(meetLinkName: string, requestId: string, sessionKeyBase64: string): Promise<void>;
-    admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<void>;
-    rejectWaitingRoomJoinRequest(meetLinkName: string, requestId: string, participantUid: string): Promise<void>;
 }
 
 export type MeetCoreRejoinReason = RejoinReasonInfo;
