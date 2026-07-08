@@ -1,6 +1,6 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
-import { AudienceType, CategoriesOnboardingFlags, OnboardingStep } from './onboardingInterface';
+import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onboardingInterface';
 
 /**
  * The B2C onboarding is a linear sequence: each step is unlocked only once the
@@ -24,12 +24,12 @@ export const getB2COnboardingStep = (flagValue: number): OnboardingStep => {
     return nextStep?.step ?? OnboardingStep.DONE;
 };
 
-export const hasSeenAllOnboarding = (audience: AudienceType, flagValue: number): boolean => {
-    if (audience === AudienceType.B2C) {
+export const hasSeenAllOnboarding = (onboardingFlow: OnboardingFlow, flagValue: number): boolean => {
+    if (onboardingFlow === OnboardingFlow.B2C) {
         return B2C_ONBOARDING_SEQUENCE.every(({ flag }) => hasBit(flagValue, flag));
     }
 
-    if (audience === AudienceType.B2B) {
+    if (onboardingFlow === OnboardingFlow.B2B) {
         return hasSeenOnboardingModal(flagValue);
     }
 

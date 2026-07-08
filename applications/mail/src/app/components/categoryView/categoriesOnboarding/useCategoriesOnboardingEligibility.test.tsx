@@ -15,7 +15,7 @@ import { useGetStartedChecklist } from 'proton-mail/containers/onboardingCheckli
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import { useCategoriesView } from '../useCategoriesView';
-import { AudienceType, CategoriesOnboardingFlags, FeatureValueDefault } from './onboardingInterface';
+import { CategoriesOnboardingFlags, FeatureValueDefault, OnboardingFlow } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 jest.mock('proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider');
@@ -168,7 +168,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -180,7 +180,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -192,7 +192,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
@@ -204,7 +204,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -217,7 +217,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -229,7 +229,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
@@ -240,7 +240,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -252,7 +252,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -271,7 +271,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -283,7 +283,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -294,7 +294,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -306,7 +306,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_SEEN,
                 });
             });
@@ -318,7 +318,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_IN_PROGRESS,
                 });
             });
@@ -331,7 +331,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_IN_PROGRESS,
                 });
             });
@@ -344,7 +344,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });

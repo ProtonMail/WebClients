@@ -14,7 +14,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getB2COnboardingStep, hasSeenOnboardingModal } from './categoriesOnboarding.helpers';
 import type { CategorizeStepLocation } from './onboardingInterface';
-import { AudienceType, CategoriesOnboardingFlags, OnboardingStep } from './onboardingInterface';
+import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 interface CategoriesOnboardingContextProps {
@@ -77,7 +77,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             return;
         }
 
-        if (onboarding.audienceType === AudienceType.B2C) {
+        if (onboarding.onboardingFlow === OnboardingFlow.B2C) {
             hasTriggeredModalRef.current = true;
             notify({
                 type: ModalType.CategoriesViewB2COnboarding,
@@ -85,7 +85,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
                     flagValue: onboarding.flagValue,
                 },
             });
-        } else if (onboarding.audienceType === AudienceType.B2B) {
+        } else if (onboarding.onboardingFlow === OnboardingFlow.B2B) {
             hasTriggeredModalRef.current = true;
             notify({
                 type: ModalType.CategoriesViewB2BOnboarding,
@@ -102,7 +102,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             return OnboardingStep.NONE;
         }
 
-        if (onboarding.audienceType === AudienceType.B2B || !onboarding.isUserEligible || !isInbox) {
+        if (onboarding.onboardingFlow === OnboardingFlow.B2B || !onboarding.isUserEligible || !isInbox) {
             return OnboardingStep.NONE;
         }
 
@@ -111,7 +111,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         isInbox,
         b2cOnboardingViewFlag.feature?.Value,
         b2cOnboardingViewFlag.loading,
-        onboarding.audienceType,
+        onboarding.onboardingFlow,
         onboarding.isUserEligible,
     ]);
 
