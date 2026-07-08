@@ -13,40 +13,32 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { FILE_ENCRYPTION_VERSION, UpsellRef } from '@proton/pass/constants';
+import { FILE_ENCRYPTION_VERSION } from '@proton/pass/constants';
 import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import {
-    selectUser,
-    selectUserPlan,
     selectUserStorageAllowed,
     selectUserStorageMaxFileSize,
     selectUserStorageQuota,
     selectUserStorageUsed,
 } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { updateMap } from '@proton/pass/utils/fp/state';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { PLANS } from '@proton/payments/core/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { FileAttachment } from './FileAttachment';
 import { FileAttachmentsSummary } from './FileAttachmentsSummary';
+import { FileAttachmentsUpsell } from './FileAttachmentsUpsell';
+import { useFileAttachmentsUpsell } from './useFileAttachmentsUpsell';
 
 type Props = FieldProps<{}, FileAttachmentValues> &
     PropsWithChildren<{
@@ -68,20 +60,9 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
     const canUseStorage = useSelector(selectUserStorageAllowed);
     const { createNotification } = useNotifications();
     const online = useOnline();
-    const upsell = useUpselling();
     const { pathname } = useLocation();
 
-    // Upselling Pass Ess works differently to upselling B2C. It also works differently for admin and members.
-    const essentialsUpsellEnabled = useFeatureFlag(PassFeature.PassFileAttachmentsEssentialsUpsell);
-    const isPassEssentials = useMatchUser({ planInternalName: [PLANS.PASS_PRO] });
-    const user = useSelector(selectUser);
-    const userIsAdmin = user ? isAdmin(user) : false;
-    const userPlan = useSelector(selectUserPlan);
-    const navigateToUpgrade = useNavigateToUpgrade({
-        upsellRef: UpsellRef.FILE_ATTACHMENTS,
-        targetPage: 'compare',
-        plan: userPlan?.InternalName,
-    });
+    const { hidden, isPassEssentials, promptUpsell } = useFileAttachmentsUpsell();
 
     const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
     const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
@@ -207,28 +188,11 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
 
     useEffect(() => form.setStatus({ isBusy: fileUpload.loading }), [fileUpload.loading]);
 
-    // Flag off → preserve original `WithPaidUser` behavior (hide the field entirely for Essentials users).
-    if (isPassEssentials && !essentialsUpsellEnabled) return null;
-
-    /** Essentials upselling differs from B2C: admins get an inline upgrade link while members
-     * are pointed to their admin. Both still render existing files (e.g. attachments uploaded
-     * on a previous paid plan), so the upsell lives in the `!canUseStorage` block below. */
-    const upgradeLink = (
-        <button
-            key="upgrade-link"
-            type="button"
-            className="link link-focus align-baseline text-left p-0"
-            onClick={() => navigateToUpgrade()}
-        >
-            {c('Action').t`Upgrade`}
-        </button>
-    );
+    if (hidden) return null;
 
     return (
         <Dropzone
-            onDrop={(files) =>
-                canUseStorage ? onAddFiles(files) : upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })
-            }
+            onDrop={(files) => (canUseStorage ? onAddFiles(files) : promptUpsell())}
             // Essentials users upgrade via the inline link/admin, not the B2C upsell modal
             disabled={!online || isPassEssentials}
             border={false}
@@ -293,28 +257,9 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
                             </FileInput>
                         ))}
 
-                    {!canUseStorage &&
-                        (isPassEssentials ? (
-                            <Card className="mx-4 mb-4" type="primary">
-                                {userIsAdmin
-                                    ? c('Pass_file_attachments')
-                                          .jt`This feature is not supported in your plan. ${upgradeLink}`
-                                    : c('Pass_file_attachments')
-                                          .t`This feature is not supported in your plan. Contact your admin to gain access.`}
-                            </Card>
-                        ) : (
-                            <div className="m-4">
-                                <Button
-                                    className="button-fluid rounded-full inline-block"
-                                    shape="solid"
-                                    color="weak"
-                                    onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
-                                    fullWidth
-                                >
-                                    {c('Pass_file_attachments').t`Choose a file or drag it here`}
-                                </Button>
-                            </div>
-                        ))}
+                    {!canUseStorage && (
+                        <FileAttachmentsUpsell isPassEssentials={isPassEssentials} onUpsell={promptUpsell} />
+                    )}
                 </FileAttachmentsSummary>
             </div>
         </Dropzone>
