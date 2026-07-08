@@ -49,7 +49,6 @@ export const getOrganizationAppRoutes = ({
     permissions,
 }: OrganizationRouterParams): SidebarConfig => {
     const {
-        canDisplayB2BLogsVPN = false,
         isUserGroupsFeatureEnabled = false,
         isUserGroupsNoCustomDomainEnabled = false,
         isUserGroupsPassBusinessEnabled = false,
@@ -88,11 +87,7 @@ export const getOrganizationAppRoutes = ({
     const hasPlanWithEventLogging =
         hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
     const canShowB2BConnectionEvents =
-        canDisplayB2BLogsVPN &&
-        hasPlanWithEventLogging &&
-        app === APPS.PROTONVPN_SETTINGS &&
-        canHaveOrganization &&
-        isOrgConfigured;
+        hasPlanWithEventLogging && app === APPS.PROTONVPN_SETTINGS && canHaveOrganization && isOrgConfigured;
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
