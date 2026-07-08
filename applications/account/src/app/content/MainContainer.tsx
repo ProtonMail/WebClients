@@ -540,7 +540,6 @@ const MainContainer = () => {
                                 path={pathPrefix}
                                 organizationAppRoutes={routes.organization}
                                 redirect={redirect}
-                                user={user}
                                 organization={organization}
                                 subscription={subscription}
                                 onOpenChat={handleOpenZendeskChat}
