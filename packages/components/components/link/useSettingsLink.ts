@@ -20,9 +20,11 @@ const useSettingsLink = () => {
             }
 
             const settingsApp = APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) : undefined;
-            const slug = getSlugFromApp(settingsApp || app || APP_NAME);
+            const resolvedApp = settingsApp || app || (APP_NAME !== APPS.PROTONACCOUNT ? APP_NAME : undefined);
+            const resolvedSlug = resolvedApp ? getSlugFromApp(resolvedApp) : '';
+            const slug = resolvedSlug ? `/${resolvedSlug}` : '';
 
-            return goToApp(`/${slug}${path}`, APPS.PROTONACCOUNT, newTab);
+            return goToApp(`${slug}${path}`, APPS.PROTONACCOUNT, newTab);
         },
         [location, goToApp]
     );

@@ -70,6 +70,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         showDriveDashboardVariant: 'disabled',
         showMeetDashboard: false,
         showMeetDashboardVariant: 'disabled',
+        showGenericDashboard: false,
         hasPendingInvitations: false,
         permissions: Object.fromEntries(PERMISSIONS.map((p) => [p, false])) as Record<
             (typeof PERMISSIONS)[number],
