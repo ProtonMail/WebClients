@@ -91,7 +91,7 @@ const Item = ({
 
     const elementID = useMailSelector(selectElementID);
 
-    const { activeStep, categorizeStepLocation, userIsInOnboarding } = useCategoriesOnboarding();
+    const { activeStep, categorizeStepLocation, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
@@ -212,7 +212,7 @@ const Item = ({
     );
 
     const isCategorize = activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'list';
-    const dimItems = isCategorize ? index !== HIGHLIGHTED_ITEM_INDEX : userIsInOnboarding;
+    const dimItems = isCategorize ? index !== HIGHLIGHTED_ITEM_INDEX : userIsInB2COnboardingFlow;
 
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
