@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Do not show this again": [
+        "Bunu bir daha gösterme"
+      ],
+      "Done": [
+        "Tamam"
       ]
     },
     "Activity": {
@@ -1451,6 +1457,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Geçerlilik süresi 1 saat ile 1 yıl arasında olmalıdır"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH agent başlatılamadı: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH agent durdurulamadı: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2173,8 +2185,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2868,6 +2879,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "${ formattedDate } zamanında geçerlilik süresi dolacak"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } kasalarınızda kaydedilmiş SSH anahtarlarını kullanacaktır."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "\"OpenSSH Authentication Agent\" hizmetini bulun ve üzerine sağ tıklayıp Özellikleri seçin."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "SSH agent'ı başka bir ücretli hesapta kullanmayı planlamıyorsanız o hesaba geçmeden önce bu ayarı devre dışı bırakmayı unutmayın."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "SSH agent'ın aktif kalması için ${ PASS_APP_NAME } uygulamasının çalışır durumda olduğundan emin olun (pencere küçültülmüş olabilir). Parola gerektiren SSH anahtarları şu anda desteklenmemektedir."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME } içinde SSH anahtarı bulunamadı. Aracı ile birlikte kullanmak üzere SSH anahtarı öğeleri oluşturun."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "\"Hizmetler\"i açın (Windows arama çubuğunu kullanabilir veya Win+R tuşlarına basıp services.msc yazabilirsiniz)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Aşağıdaki komutu terminalinize yapıştırın:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "\"Başlangıç türünü\" \"Devre Dışı\" olarak ayarlayın ve TAMAM'a tıklayın."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "İpucu: Terminali açtığınızda otomatik olarak çalışması için bunu .bashrc veya .zshrc dosyanıza ekleyin."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Windows'ta ${ PASS_APP_NAME } SSH agent kullanmak için OpenSSH hizmetinin devre dışı bırakılması gerekir."
       ]
     },
     "Keyboard key": {
@@ -4137,6 +4178,9 @@
       ],
       "Expires in": [
         "Geçerlilik sonu"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "SSH agent olarak ${ PASS_APP_NAME } kullanın"
       ]
     },
     "Link": {
@@ -4635,6 +4679,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Doğrulama e-postası gönderildi. Lütfen e-posta kutusunu doğrulamak için gelen kutunuza bakın"
+      ],
+      "SSH agent successfully started": [
+        "SSH agent başarıyla başlatıldı"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent başarıyla durduruldu"
       ]
     },
     "Theme": {
@@ -5161,6 +5211,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Windows'ta OpenSSH hizmetinin ekran görüntüsü"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "${ PASS_APP_NAME } SSH Agent'ı Kur"
+      ],
+      "SSH Agent": [
+        "SSH Agent"
       ]
     },
     "Title_cloned_item": {
@@ -5512,6 +5571,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent tarifenizde bulunmayan SSH anahtarlarının kullanılmasını gerektirir."
       ]
     }
   }

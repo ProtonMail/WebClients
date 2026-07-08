@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Do not show this again": [
+        "Να μην εμφανιστεί ξανά αυτό"
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
       ]
     },
     "Activity": {
@@ -1451,6 +1457,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Η λήξη πρέπει να είναι μεταξύ 1 ώρας και 1 έτους"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Αποτυχία εκκίνησης του παράγοντα SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Αποτυχία διακοπής του παράγοντα SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2868,6 +2880,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "Λήγει στις ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "Το ${ PASS_APP_NAME } θα χρησιμοποιήσει τα κλειδιά SSH που είναι αποθηκευμένα στις κρύπτες σας."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Βρείτε το \"OpenSSH Authentication Agent\", κάντε δεξί κλικ στις Ιδιότητες."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Εάν δε σκοπεύετε να χρησιμοποιήσετε τον παράγοντα SSH σε άλλον λογαριασμό επί πληρωμή, θυμηθείτε να απενεργοποιήσετε αυτήν τη ρύθμιση πριν μεταβείτε σε αυτόν τον λογαριασμό."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Βεβαιωθείτε ότι το ${ PASS_APP_NAME } λειτουργεί (μπορεί να ελαχιστοποιηθεί) για να παραμείνει ενεργός ο παράγοντας SSH. Τα κλειδιά SSH με φράση πρόσβασης δεν υποστηρίζονται προς το παρόν."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Δε βρέθηκαν κλειδιά SSH στο ${ PASS_SHORT_APP_NAME }. Δημιουργήστε στοιχεία κλειδιού SSH για χρήση με τον παράγοντα."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Ανοίξτε τις \"Υπηρεσίες\" (μπορείτε να χρησιμοποιήσετε τη γραμμή αναζήτησης των Windows ή να πατήσετε Win+R και να εισαγάγετε services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Επικολλήστε την ακόλουθη εντολή στο τερματικό σας:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Ορίστε τον \"Τύπο εκκίνησης\" σε Απενεργοποιημένο, κάντε κλικ στο OK."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Συμβουλή: προσθέστε το στο αρχείο .bashrc ή .zshrc, ώστε να εκτελείται αυτόματα όταν ανοίγετε το τερματικό."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Για να χρησιμοποιήσετε τον παράγοντα SSH ${ PASS_APP_NAME } στα Windows, η υπηρεσία OpenSSH πρέπει να είναι απενεργοποιημένη."
       ]
     },
     "Keyboard key": {
@@ -4137,6 +4179,9 @@
       ],
       "Expires in": [
         "Λήγει σε"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Χρήση ${ PASS_APP_NAME } ως παράγοντα SSH"
       ]
     },
     "Link": {
@@ -4635,6 +4680,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Στάλθηκε μήνυμα επαλήθευσης. Παρακαλούμε ελέγξτε τα εισερχόμενά σας για να επαληθεύσετε το γραμματοκιβώτιό σας"
+      ],
+      "SSH agent successfully started": [
+        "Ο παράγοντας SSH ξεκίνησε με επιτυχία."
+      ],
+      "SSH agent successfully stopped": [
+        "Ο παράγοντας SSH διακόπηκε με επιτυχία."
       ]
     },
     "Theme": {
@@ -5161,6 +5212,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Στιγμιότυπο οθόνης της υπηρεσίας OpenSSH στα Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Ρύθμιση του ${ PASS_APP_NAME } Παράγοντα SSH"
+      ],
+      "SSH Agent": [
+        "Παράγοντας SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5512,6 +5572,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Ο παράγοντας SSH απαιτεί τη χρήση κλειδιών SSH, κάτι που δεν είναι διαθέσιμο στο πρόγραμμά σας."
       ]
     }
   }

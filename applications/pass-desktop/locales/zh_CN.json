@@ -798,6 +798,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Do not show this again": [
+        "不再显示"
+      ],
+      "Done": [
+        "完成"
       ]
     },
     "Activity": {
@@ -1382,7 +1388,7 @@
         "未知错误"
       ],
       "Unknown error.": [
-        "未知错误。"
+        "未知错误"
       ],
       "Unknown invite": [
         "无效的邀请"
@@ -1446,6 +1452,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "过期时间必须在 1 小时至 1 年之间"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "启动 SSH 代理失败：${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "停止 SSH 代理失败：${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2145,7 +2157,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -2833,6 +2845,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "过期于 ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } 将使用保存在您保险库中的 SSH 密钥。"
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "找到“OpenSSH 身份验证代理”，右键点击选择“属性”。"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "如果您不打算在其他付费账户上使用 SSH 代理，请在切换至该账户前记得禁用此设置。"
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "请确保 ${ PASS_APP_NAME } 保持运行（可最小化），以便 SSH 代理持续生效。当前不支持带有密码短语的 SSH 密钥。"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "在 ${ PASS_SHORT_APP_NAME } 中未找到 SSH 密钥，请创建 SSH 密钥项以供代理使用。"
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "打开“服务”（可使用 Windows 搜索栏，或按 Win+R 并输入 services.msc）。"
+      ],
+      "Paste the following command in your terminal:": [
+        "在终端中粘贴以下命令："
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "将“启动类型”设为“禁用”，然后点击“确定”。"
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "提示：将其添加到 .bashrc 或 .zshrc 文件中，以便在打开终端时自动运行。"
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "要在 Windows 上使用 ${ PASS_APP_NAME } SSH 代理，必须禁用 OpenSSH 服务。"
       ]
     },
     "Keyboard key": {
@@ -4085,6 +4127,9 @@
       ],
       "Expires in": [
         "有效期至"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "将 ${ PASS_APP_NAME } 用作 SSH 代理"
       ]
     },
     "Link": {
@@ -4578,6 +4623,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "已发送验证邮件，请检查您的收件箱以验证您的邮箱"
+      ],
+      "SSH agent successfully started": [
+        "SSH 代理已成功启动"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH 代理已成功停止"
       ]
     },
     "Theme": {
@@ -5098,6 +5149,15 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Windows 上 OpenSSH 服务的屏幕截图"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "设置 ${ PASS_APP_NAME } SSH 代理"
+      ],
+      "SSH Agent": [
+        "SSH 代理"
       ]
     },
     "Title_cloned_item": {
@@ -5445,6 +5505,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH 代理需要使用 SSH 密钥，而您的套餐不支持此功能。"
       ]
     }
   }

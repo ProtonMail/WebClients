@@ -800,6 +800,12 @@
       ],
       "View agent activity": [
         "Agentenaktivität anzeigen"
+      ],
+      "Do not show this again": [
+        "Nicht mehr anzeigen"
+      ],
+      "Done": [
+        "Fertig"
       ]
     },
     "App menu": {
@@ -1428,6 +1434,12 @@
       ],
       "Name must be 191 characters or fewer": [
         "Name darf maximal 191 Zeichen lang sein"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht gestartet werden: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht beendet werden: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2834,6 +2846,36 @@
       ],
       "Vault access granted": [
         "Zugriff auf den Tresor gewährt"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } verwendet die in deinen Tresoren gespeicherten SSH-Schlüssel."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Suchen „OpenSSH Authentication Agent“ und klicke mit der rechten Maustaste darauf, um die Eigenschaften aufzurufen."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Falls du den SSH-Agenten nicht auf einem anderen kostenpflichtigen Konto verwenden möchtest, denk bitte daran, diese Einstellung zu deaktivieren, bevor du zu diesem Konto wechselst."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Stelle sicher, dass ${ PASS_APP_NAME } ausgeführt wird (kann minimiert sein), damit der SSH-Agent aktiv bleibt. SSH-Schlüssel mit Passphrase werden derzeit nicht unterstützt."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "In ${ PASS_SHORT_APP_NAME } wurden keine SSH-Schlüssel gefunden. Erstelle einen SSH-Schlüssel-Eintrag für die Verwendung mit dem Agenten."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Öffne „Dienste“ (du kannst dazu die Windows-Suchleiste verwenden oder die Tastenkombination Win+R drücken und „services.msc“ eingeben)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Füge den folgenden Befehl in deinen Terminal ein:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "„Start-up-Typ“ auf deaktiviert einstellen und auf OK klicken."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tipp: Füge den Befehl in deine .bashrc- oder .zshrc-Datei ein, damit er automatisch ausgeführt wird, wenn du das Terminal öffnest."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Um den ${ PASS_APP_NAME }-SSH-Agenten unter Windows nutzen zu können, muss der OpenSSH-Dienst deaktiviert sein."
       ]
     },
     "Keyboard key": {
@@ -4100,6 +4142,9 @@
       ],
       "Vault access": [
         "Tresor-Zugriff"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME } als SSH-Agent verwenden"
       ]
     },
     "Link": {
@@ -4584,6 +4629,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Verifizierungs-E-Mail versendet. Bitte überprüfe deinen Posteingang, um dein Postfach zu verifizieren."
+      ],
+      "SSH agent successfully started": [
+        "SSH-Agent erfolgreich gestartet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-Agent erfolgreich gestoppt"
       ]
     },
     "Theme": {
@@ -5110,6 +5161,15 @@
       ],
       "Your new access token": [
         "Deine neuer Zugangstoken"
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Screenshot des OpenSSH-Dienstes unter Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "${ PASS_APP_NAME } SSH-Agent einrichten"
+      ],
+      "SSH Agent": [
+        "SSH-Agent"
       ]
     },
     "Title_cloned_item": {
@@ -5461,6 +5521,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Für den SSH-Agenten ist die Verwendung von SSH-Schlüsseln erforderlich, was in deinem Abonnement nicht verfügbar ist."
       ]
     },
     "Activity": {

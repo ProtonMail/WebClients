@@ -804,6 +804,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Do not show this again": [
+        "Больш не паказваць"
+      ],
+      "Done": [
+        "Гатова"
       ]
     },
     "Activity": {
@@ -1461,6 +1467,9 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Тэрмін дзеянне павінен быць паміж 1 гадзінай і 1 годам"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Не ўдалося спыніць агент SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -1482,7 +1491,7 @@
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Абагуленне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
+        "Абагульванне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
       ]
     },
     "file size format": {
@@ -2523,7 +2532,7 @@
         "Выберыце сховішчы, якія можа прачытаць \"${ token.Name }\"."
       ],
       "Select vault to share": [
-        "Выберыце сховішча для абагулення"
+        "Выберыце сховішча для абагульвання"
       ],
       "Select where you want your imported vaults to be saved.": [
         "Выберыце куды вы хочаце захаваць свае імпартаваныя сховішчы."
@@ -2938,6 +2947,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "Тэрмін дзеяння міне ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } будзе выкарыстоўваць ключы SSH захаваныя ў вашым сховішчы."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Знайдзіце поле \"Агент аўтэнтыфікацыі OpenSSH\" і націсніце правай кнопкай мышы, каб выбраць \"Уласцівасці\"."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Не забудзьце адключыць гэтую наладу перад пераключэннем на гэты ўліковы запіс, калі вы не плануеце выкарыстоўваць агент SSH на іншым платным уліковым запісе."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Пераканайцеся, што ${ PASS_APP_NAME } застаўся запушчаным (можа быць згорнуты ў сістэмны латок) для таго, каб агент SSH заставаўся актыўным. Ключы SSH з парольнай фразай у цяперашні момант не падтрымліваюцца."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ключы SSH не знойдзены ў ${ PASS_SHORT_APP_NAME }. Стварыце элементы ключа SSH, каб выкарыстоўваць з агентам."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Адкрыйце \"Сэрвісы\" (вы можаце скарыстацца панэллю пошуку ў Windows або націснуць камбінацыю клавіш Win+R і ўвесці каманду services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Устаўце наступную каманду ў свой тэрмінал:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Задаць \"Тып запуску\" для \"Адключана\", націсніце OK."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Парада: дадайце яго ў свой файл .bashrc або .zshrc. Гэта дазволіць аўтаматычна запускаць яго пры адкрыцці тэрмінала."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Вам неабходна адключыць сэрвіс OpenSSH, каб выкарыстоўваць ${ PASS_APP_NAME } SSH у Windows."
       ]
     },
     "Keyboard key": {
@@ -4743,6 +4782,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Ліст са спраўджаннем адпраўлены. Праверце папку з уваходнымі лістамі, каб спраўдзіць сваю паштовую скрыню."
+      ],
+      "SSH agent successfully started": [
+        "Агент SSH паспяхова запушчаны"
+      ],
+      "SSH agent successfully stopped": [
+        "Агент SSH паспяхова спынены"
       ]
     },
     "Theme": {
@@ -5281,6 +5326,12 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Здымак экрана сэрвісу OpenSSH у Windows"
+      ],
+      "SSH Agent": [
+        "Агент SSH"
       ]
     },
     "Title_cloned_item": {

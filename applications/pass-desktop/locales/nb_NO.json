@@ -800,6 +800,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
+      ],
+      "Done": [
+        "Utført"
       ]
     },
     "Activity": {
@@ -1448,6 +1451,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Utløpstiden må være mellom 1 time og 1 år"
       ]
     },
     "Error message": {
@@ -2859,6 +2865,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Utløpte ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Utløper ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4110,6 +4122,24 @@
       ],
       "Expires in": [
         "Utløper om"
+      ],
+      "1 day": [
+        "1 dag"
+      ],
+      "1 month": [
+        "1 måned"
+      ],
+      "1 week": [
+        "1 uke"
+      ],
+      "1 year": [
+        "1 år"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Custom expiration (minutes)": [
+        "Tilpasset utløpstid (minutter)"
       ]
     },
     "Link": {
