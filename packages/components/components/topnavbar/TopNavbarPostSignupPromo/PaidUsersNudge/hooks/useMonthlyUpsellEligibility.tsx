@@ -18,23 +18,23 @@ import { isInWindow } from '../helpers/paidUserNudgeHelper';
 interface Props {
     eligiblePlan: PLANS;
     allowedApps: Set<string>;
-    offerFlag: FeatureFlag;
+    offerDisabledFlag: FeatureFlag;
     offerTimestampFlag: FeatureCode;
 }
 
 export const useMonthlyUpsellEligibility = ({
     eligiblePlan,
     allowedApps,
-    offerFlag,
+    offerDisabledFlag,
     offerTimestampFlag,
 }: Props): boolean => {
     const config = useConfig();
     const [subscription] = useSubscription();
-    const flag = useFlag(offerFlag);
+    const isNudgeDisabled = useFlag(offerDisabledFlag);
 
     const { feature } = useFeature<number>(offerTimestampFlag);
 
-    if (feature?.Value === HIDE_OFFER || !flag || !subscription) {
+    if (feature?.Value === HIDE_OFFER || isNudgeDisabled || !subscription) {
         return false;
     }
 
