@@ -17,6 +17,7 @@ import {
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     BRAND_NAME,
@@ -39,7 +40,12 @@ import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 import type { AccountRouterParams } from '../../content/router-params';
 import { recoveryIds } from './recoveryIds';
 
-function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolean, hasPendingInvitations: boolean) {
+function getV2DashboardSections(
+    app: APP_NAMES,
+    canPay: boolean,
+    planIsManagedExternally: boolean,
+    hasPendingInvitations: boolean
+) {
     return [
         {
             text: c('Title').t`Pending invitations`,
@@ -61,6 +67,7 @@ function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolea
         {
             text: c('Title').t`Downloads`,
             invisibleTitle: true,
+            available: app !== APPS.PROTONACCOUNT,
             id: 'DownloadAndInfo',
         },
         {
@@ -72,6 +79,7 @@ function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolea
             text: c('Title').t`Deep dive into email blog posts`,
             invisibleTitle: true,
             id: 'Blog',
+            available: app !== APPS.PROTONACCOUNT && app !== APPS.PROTONMEET,
         },
     ];
 }
@@ -344,6 +352,7 @@ export const getAccountAppRoutes = ({
     showPassDashboard,
     showDriveDashboard,
     showMeetDashboard,
+    showGenericDashboard,
     hasPendingInvitations,
     flags,
 }: AccountRouterParams) => {
@@ -392,7 +401,13 @@ export const getAccountAppRoutes = ({
 
     const showEasySwitchSection =
         (!isExternalUser || isBYOEUser) &&
-        !(app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR || app === APPS.PROTONMEET) &&
+        !(
+            app === APPS.PROTONPASS ||
+            app === APPS.PROTONAUTHENTICATOR ||
+            app === APPS.PROTONMEET ||
+            app === APPS.PROTONACCOUNT ||
+            app === APPS.PROTONLUMO
+        ) &&
         !isSSOUser;
 
     const showVideoConferenceSection =
@@ -423,7 +438,12 @@ export const getAccountAppRoutes = ({
     const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
     const shouldShowV2Dashboard =
-        showVPNDashboard || showMailDashboard || showPassDashboard || showDriveDashboard || showMeetDashboard;
+        showGenericDashboard ||
+        showVPNDashboard ||
+        showMailDashboard ||
+        showPassDashboard ||
+        showDriveDashboard ||
+        showMeetDashboard;
 
     // As VPN dashboard has its own route for v2 dashboard, we need to check for APP and Feature flag to decide between v1 vs v2 dashboard
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;
@@ -477,7 +497,7 @@ export const getAccountAppRoutes = ({
                 id: shouldShowV2Dashboard ? 'dashboardV2' : 'dashboard',
                 to: '/dashboard',
                 subsections: shouldShowV2Dashboard
-                    ? getV2DashboardSections(canPay, planIsManagedExternally, hasPendingInvitations)
+                    ? getV2DashboardSections(app, canPay, planIsManagedExternally, hasPendingInvitations)
                     : getV1DashboardSections(
                           hasSplitStorage,
                           showStorageSection,

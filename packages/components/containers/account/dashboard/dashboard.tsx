@@ -1,11 +1,13 @@
 import type { PropsWithChildren } from 'react';
 
+import { c } from 'ttag';
+
 import PendingInvitations from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PendingInvitations';
 import BundleUpsellBanner from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/BundleUpsellBanner';
 import WorkspaceFromFreeBanner2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/meet/WorkspaceFromFreeBanner2';
 import { PrivateMainSettingsArea, type SettingsAreaConfig } from '@proton/components/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsCardMaxWidth } from '../../layout/interface';
 import { UpsellModalTelemetryProvider } from '../../payments/subscription/SubscriptionModalProvider';
@@ -105,6 +107,30 @@ const AccountMeetDashboard = ({ app, config }: Props) => {
                 <AlsoInYourPlanProtonPass />
                 <AlsoInYourPlanProtonMail />
             </AlsoInYourPlanSection>
+            <div>{/* Hidden blog section */}</div>
+        </DashboardWrapper>
+    );
+};
+
+const AccountGenericDashboard = ({ app, config }: Props) => {
+    return (
+        <DashboardWrapper config={config} app={app}>
+            <PendingInvitations />
+            <YourPlanSectionV2 app={app} />
+            <YourPlanUpsellsSectionV2 app={app} />
+            <div>{/* Hidden download section */}</div>
+            <AlsoInYourPlanSection
+                app={app}
+                title={c('Title').t`Get more from your privacy suite`}
+                subtitle={c('Title').t`With your ${BRAND_NAME} Account, you get access to all ${BRAND_NAME} apps`}
+                upsellBanner={<BundleUpsellBanner app={app} />}
+            >
+                <AlsoInYourPlanProtonMail />
+                <AlsoInYourPlanProtonPass />
+                <AlsoInYourPlanProtonDrive />
+                <AlsoInYourPlanProtonVPN />
+            </AlsoInYourPlanSection>
+            <div>{/* Hidden blog section */}</div>
         </DashboardWrapper>
     );
 };
@@ -120,6 +146,8 @@ const getProductDashboard = ({ app, config }: Props) => {
             return <AccountDriveDashboard app={app} config={config} />;
         case APPS.PROTONMEET:
             return <AccountMeetDashboard app={app} config={config} />;
+        case APPS.PROTONACCOUNT:
+            return <AccountGenericDashboard app={app} config={config} />;
     }
 };
 

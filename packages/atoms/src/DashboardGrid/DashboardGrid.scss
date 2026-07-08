@@ -40,6 +40,16 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
+	&-columns-4 {
+		@include im.media('>large') {
+			grid-template: auto auto / 1fr 1fr 1fr 1fr;
+			grid-template-areas:
+				'header-left header-center header-center header-right'
+				'content-left content-center content-center content-right'
+				'footer-left footer-center footer-center footer-right';
+		}
+	}
+
 	// Span-all classes
 	$sections: (header, content, footer);
 	@each $section in $sections {

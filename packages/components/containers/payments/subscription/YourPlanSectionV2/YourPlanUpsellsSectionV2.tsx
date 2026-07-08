@@ -688,6 +688,24 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                 </>
             ),
         },
+        // Upsell for generic free user
+        {
+            enabled: isFree && app === APPS.PROTONACCOUNT,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        showDiscoverButton={true}
+                        showUpsellHeader={true}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                </>
+            ),
+        },
         // This has to remain the last option as users with plan could also have pass lifetime
         // Moving it above will result in incorrect upsell shown to the user.
         {

@@ -32,7 +32,8 @@ export interface SafetyReviewBackLink {
 export const getSafetyReviewBackLink = (backHref: string): SafetyReviewBackLink => {
     const defaultUrl = new URL('/mail/recovery', window.location.origin);
     const backUrl = getUrl(backHref, defaultUrl);
-    const appName = getAppFromPathnameSafe(backUrl.pathname) || getAppFromHostname(backUrl.hostname) || APPS.PROTONMAIL;
+    const appName =
+        getAppFromPathnameSafe(backUrl.pathname) || getAppFromHostname(backUrl.hostname) || APPS.PROTONACCOUNT;
     return {
         context: backUrl.origin === defaultUrl.origin ? 'settings' : 'app',
         appName,

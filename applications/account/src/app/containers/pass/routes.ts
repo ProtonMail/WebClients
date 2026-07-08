@@ -18,7 +18,7 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, flags 
         hasPassBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
 
     return <const>{
-        available: app === APPS.PROTONPASS,
+        available: app === APPS.PROTONPASS || app === APPS.PROTONACCOUNT,
         header: PASS_APP_NAME,
         routes: {
             downloads: {

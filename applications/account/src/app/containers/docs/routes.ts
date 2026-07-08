@@ -7,7 +7,7 @@ import type { GeneralRouterParams } from '../../content/router-params';
 
 export const getDocsAppRoutes = ({ app }: GeneralRouterParams) => {
     return <const>{
-        available: app === APPS.PROTONDOCS,
+        available: app === APPS.PROTONDOCS || app === APPS.PROTONACCOUNT,
         header: DOCS_APP_NAME,
         routes: {
             comments: {

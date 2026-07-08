@@ -39,6 +39,7 @@ export type AccountSettings = {
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
     showMeetDashboard: boolean;
     showMeetDashboardVariant: MeetDashboardVariant | 'disabled' | undefined;
+    showGenericDashboard: boolean;
     hasPendingInvitations: boolean;
 };
 
