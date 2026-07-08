@@ -254,6 +254,8 @@ export enum MailFeatureFlag {
     LumoSieveHelper = 'LumoSieveHelper',
     ScribeToLumo = 'ScribeToLumo',
     OneTimePasscode = 'OneTimePasscode',
+    // reworked local search using foundation search
+    ContentSearch = 'ContentSearch',
 }
 
 enum MailKillSwitchFlag {
