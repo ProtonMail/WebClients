@@ -94,17 +94,18 @@ describe('useVatNumber integration', () => {
             expect(result.current.vatFormValid).toBe(true);
         });
 
-        it('runs real validation once the form is expanded (a bare prefix is not yet valid)', () => {
+        it('treats a bare prefix as empty once the form is expanded (does not block the form)', () => {
             const { result } = renderUseVatNumber({ countryCode: 'DE', selectedPlanName: PLANS.MAIL_PRO });
 
             act(() => {
                 result.current.setUnauthenticatedCollapsed(false);
             });
 
-            // Expanding seeds the country prefix; a bare prefix is an incomplete VAT number, so
-            // validation now correctly flags it until the user finishes typing.
+            // Expanding seeds the country prefix. A bare prefix is treated as an empty VAT number,
+            // so the form stays valid and nothing incomplete is submitted until the user types the rest.
             expect(result.current.vatNumber).toBe('DE');
-            expect(result.current.vatFormValid).toBe(false);
+            expect(result.current.vatNumberToSubmit).toBe('');
+            expect(result.current.vatFormValid).toBe(true);
         });
     });
 });

@@ -24,6 +24,7 @@ import type { Invoice } from '@proton/payments/core/interface';
 import { getVatNumberName } from '@proton/payments/ui/billing-address/components/VatNumberInput';
 import { getVatFormErrors } from '@proton/payments/ui/billing-address/hooks/useVatFormValidation';
 import { useVatPrefixSync } from '@proton/payments/ui/billing-address/hooks/useVatPrefixSync';
+import { cleanBillingAddressVat } from '@proton/payments/ui/billing-address/hooks/vatPrefixHelper';
 import { useFlag } from '@proton/unleash/useFlag';
 
 export type EditInvoiceModalInputs = {
@@ -78,9 +79,11 @@ export const EditInvoiceModal = (props: Props) => {
 
         setBackendErrors(null);
 
+        const submittedBillingAddress = cleanBillingAddressVat(invoiceBillingAddress);
+
         void withLoading(async () => {
             try {
-                await paymentsApi.updateInvoiceBillingAddress(props.invoice.ID, invoiceBillingAddress);
+                await paymentsApi.updateInvoiceBillingAddress(props.invoice.ID, submittedBillingAddress);
                 onResolve?.();
                 createNotification({ text: c('Success').t`Billing details updated` });
             } catch (error: any) {

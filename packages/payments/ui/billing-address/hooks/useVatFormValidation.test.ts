@@ -70,6 +70,32 @@ describe('getVatFormErrors', () => {
         });
     });
 
+    describe('bare prefix is treated as empty', () => {
+        it.each([
+            ['DE', 'DE'],
+            ['CH', 'CHE'],
+            ['GR', 'EL'],
+        ])('returns no errors for the bare prefix of %s', (CountryCode, VatId) => {
+            const errors = getVatFormErrors({ ...emptyFields, CountryCode, VatId }, true);
+
+            expect(errors.hasErrors).toBe(false);
+        });
+
+        it('does not require the extended billing-address fields for a bare prefix', () => {
+            const errors = getVatFormErrors({ ...emptyFields, CountryCode: 'DE', VatId: 'DE' }, true);
+
+            expect(errors.errorMessages.Company).toBe('');
+            expect(errors.errorMessages.Address).toBe('');
+            expect(errors.errorMessages.City).toBe('');
+        });
+
+        it('still validates a prefix followed by digits', () => {
+            const errors = getVatFormErrors({ ...emptyFields, CountryCode: 'DE', VatId: 'DE1' }, false);
+
+            expect(errors.errorMessages.VatId).not.toBe('');
+        });
+    });
+
     describe('showExtendedBillingAddressForm = false', () => {
         it('should return no errors besides vatNumber when VAT is provided', () => {
             const errors = getVatFormErrors(withVat(), false);
@@ -575,14 +601,12 @@ describe('getVatFormErrors — prefix validation', () => {
         expect(errors.errorMessages.VatId).toContain('FR');
     });
 
-    it('returns format error (not prefix error) when value equals exactly the prefix', () => {
-        // A prefix-only value passes the prefix check but fails format/checksum validation.
-        // Errors are suppressed by the blur-gate in real usage, but the underlying state is invalid.
+    it('treats a value equal to exactly the prefix as empty (no error)', () => {
+        // A bare prefix is the prefilled placeholder, not a VAT number the user supplied.
         const errors = getVatFormErrors({ CountryCode: 'DE', VatId: 'DE' }, false);
 
-        expect(errors.errorMessages.VatId).toBe('Invalid VAT number');
-        expect(errors.errorMessages.VatId).not.toMatch(/must start with/);
-        expect(errors.hasErrors).toBe(true);
+        expect(errors.errorMessages.VatId).toBe('');
+        expect(errors.hasErrors).toBe(false);
     });
 
     it('requires SG prefix for SG', () => {
