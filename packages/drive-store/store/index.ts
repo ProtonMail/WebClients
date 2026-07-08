@@ -26,5 +26,4 @@ export * from './_actions/interface';
 export * from './_invitations/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
-export { useBookmarksActions } from './_bookmarks';
 export { useDocumentActions } from './_documents';

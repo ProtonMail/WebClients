@@ -4,12 +4,44 @@ import useLoading from '@proton/hooks/useLoading';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveEventManager } from '../_events';
+import type { ExtendedInvitationDetails } from '../_invitations/interface';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';
+import type { AlbumProperties, EncryptedLink, PhotoProperties, SignatureIssues } from '../_links';
 import { useMemoArrayNoMatterTheOrder } from './utils';
 
+interface FileBrowserBaseItem {
+    id: string;
+    linkId: string;
+    isLocked?: boolean;
+    isInvitation?: boolean;
+    isBookmark?: boolean;
+    itemRowStyle?: React.CSSProperties;
+    isAnonymous?: boolean;
+    albumProperties?: AlbumProperties;
+    photoProperties?: PhotoProperties;
+}
+
+interface SharedWithMeItem extends FileBrowserBaseItem {
+    activeRevision?: EncryptedLink['activeRevision'];
+    cachedThumbnailUrl?: string;
+    hasThumbnail?: boolean;
+    isFile: boolean;
+    mimeType: string;
+    name: string;
+    signatureIssues?: SignatureIssues;
+    signatureEmail?: string;
+    size: number;
+    trashed: number | null;
+    rootShareId: string;
+    volumeId: string;
+    sharedOn?: number;
+    sharedBy?: string;
+    parentLinkId: string;
+    invitationDetails?: ExtendedInvitationDetails;
+    bookmarkDetails?: { token: string; createTime: number; urlPassword: string };
+}
 export const useInvitationsView = () => {
     const [isLoading, withLoading] = useLoading(true);
     const { getCachedInvitations, loadInvitations } = useInvitationsListing();
