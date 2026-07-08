@@ -134,7 +134,7 @@ const AgentPageInner = () => {
             messageChain={messageChain}
             messageChainRef={messageChainRef}
         >
-            <div className="relative flex-1 min-h-0 flex flex-column flex-nowrap reset4print overflow-auto">
+            <div className="relative flex-1 min-h-0 flex flex-column flex-nowrap reset4print overflow-auto w-full">
                 {!curConversationId ? (
                     <div
                         className="flex flex-column flex-nowrap flex-1 mx-auto justify-center w-full max-w-custom px-4 py-8"
