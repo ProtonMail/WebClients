@@ -197,6 +197,7 @@ const EditGroupModal = () => {
                                     as={SelectTwo}
                                     unstyled
                                     className="rounded-none"
+                                    caretClassName="mr-5"
                                     name="permissions"
                                     placeholder={c('placeholder').t`Members`}
                                     value={formValues.permissions}
