@@ -105,7 +105,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
 
         return {
             isUserEligible:
-                categoryViewAccess &&
+                isCategoryViewEnabled &&
                 isUserFree &&
                 hasRequiredMails &&
                 hasDefaultB2CCategoryConfiguration &&
