@@ -61,7 +61,10 @@ export const TransferManagerHeader = ({
     const retryAllText = c('Action').t`Retry failed items`;
     const pbStatus = getProgressBarStatus(status);
     const completedItems = items.filter(
-        (item) => item.status === BaseTransferStatus.Finished || item.status === UploadStatus.PhotosDuplicate
+        (item) =>
+            item.status === BaseTransferStatus.Finished ||
+            item.status === UploadStatus.PhotosDuplicate ||
+            item.status === UploadStatus.EmptyFile
     );
     const completedText = c('Info').t`${completedItems.length} of ${items.length} transfers completed`;
     const { viewportWidth } = useActiveBreakpoint();

@@ -25,6 +25,7 @@ export type FileUploadEvent =
           parentUid: string | undefined;
           isUpdatedNode: boolean | undefined;
           isForPhotos: boolean;
+          isEmpty?: boolean;
       }
     | { type: 'file:error'; uploadId: string; error: Error; isForPhotos: boolean }
     | {
@@ -33,7 +34,8 @@ export type FileUploadEvent =
           error: NodeWithSameNameExistsValidationError;
           isForPhotos: boolean;
       }
-    | { type: 'file:cancelled'; uploadId: string; isForPhotos: boolean };
+    | { type: 'file:cancelled'; uploadId: string; isForPhotos: boolean }
+    | { type: 'file:empty'; uploadId: string; isForPhotos: boolean };
 
 export type FolderCreationEvent =
     | { type: 'folder:complete'; uploadId: string; nodeUid: string; parentUid: string | undefined }
@@ -56,6 +58,7 @@ type BaseFileUploadTask = {
     sizeEstimate: number;
     existingNodeUid?: string;
     isUnfinishedUpload?: boolean;
+    allowEmptyFile?: boolean;
 };
 
 export type FileUploadTask = BaseFileUploadTask & {
@@ -120,6 +123,12 @@ export enum UploadConflictType {
     Normal = 'normal',
 }
 
+export enum EmptyFileDecision {
+    Allow = 'allow',
+    Skip = 'skip',
+    Cancel = 'cancel',
+}
+
 export enum UploadStatus {
     Pending = BaseTransferStatus.Pending,
     Preparing = 'preparing',
@@ -134,6 +143,7 @@ export enum UploadStatus {
     PausedServer = BaseTransferStatus.PausedServer,
     PhotosDuplicate = 'photosDuplicate',
     NotSupportedForPhotos = 'notSupportedForPhotos',
+    EmptyFile = 'emptyFile',
 }
 
 export type BaseUploadItem = {
@@ -157,6 +167,7 @@ type BaseFileUploadItem = BaseUploadItem & {
     speedBytesPerSecond?: number;
     existingNodeUid?: string;
     isUnfinishedUpload?: boolean;
+    allowEmptyFile?: boolean;
 };
 
 export type FileUploadItem = BaseFileUploadItem & {

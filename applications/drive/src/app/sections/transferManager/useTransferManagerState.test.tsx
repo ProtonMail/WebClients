@@ -397,6 +397,61 @@ describe('useTransferManagerState', () => {
         ]);
     });
 
+    describe('EmptyFile status', () => {
+        it('should exclude EmptyFile uploads from the progress bytes sum', () => {
+            addUploadItems(
+                createUploadItem({
+                    uploadId: 'empty-file',
+                    name: 'empty.txt',
+                    uploadedBytes: 0,
+                    clearTextExpectedSize: 0,
+                    status: UploadStatus.EmptyFile,
+                    type: NodeType.File,
+                }),
+                createUploadItem({
+                    uploadId: 'normal-file',
+                    name: 'normal.txt',
+                    uploadedBytes: 50,
+                    clearTextExpectedSize: 100,
+                    status: UploadStatus.InProgress,
+                    type: NodeType.File,
+                })
+            );
+
+            const { result } = renderHook(() => useTransferManagerState());
+
+            // EmptyFile is excluded from sum - only normal-file (50/100 = 50%)
+            expect(result.current.progressPercentage).toBe(50);
+            expect(result.current.status).toBe(TransferManagerStatus.InProgress);
+        });
+
+        it('should sort EmptyFile items above Finished items', () => {
+            addUploadItems(
+                createUploadItem({
+                    uploadId: 'finished-upload',
+                    name: 'finished.txt',
+                    uploadedBytes: 100,
+                    clearTextExpectedSize: 100,
+                    status: UploadStatus.Finished,
+                    type: NodeType.File,
+                }),
+                createUploadItem({
+                    uploadId: 'empty-upload',
+                    name: 'empty.txt',
+                    uploadedBytes: 0,
+                    clearTextExpectedSize: 0,
+                    status: UploadStatus.EmptyFile,
+                    type: NodeType.File,
+                })
+            );
+
+            const { result } = renderHook(() => useTransferManagerState());
+            const idsInOrder = result.current.items.map(({ id }) => id);
+
+            expect(idsInOrder).toEqual(['empty-upload', 'finished-upload']);
+        });
+    });
+
     describe('isVisible', () => {
         it('returns false when queues are empty', () => {
             const { result } = renderHook(() => useTransferManagerState());

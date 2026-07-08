@@ -12,6 +12,7 @@ import clsx from '@proton/utils/clsx';
 import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { DownloadIssueWatcher } from './connectedComponents/DownloadIssueWatcher';
+import { EmptyFileConfirmModal } from './connectedComponents/EmptyFileConfirmModal';
 import { TransferManagerBanner } from './connectedComponents/TransferManagerBanner';
 import { TransferManagerHeader } from './connectedComponents/TransferManagerHeader';
 import { TransferManagerList } from './connectedComponents/TransferManagerList';
@@ -115,66 +116,67 @@ export const TransferManager = ({
         }
     };
 
-    if (!isVisible) {
-        return null;
-    }
-
     return (
-        <div
-            id="transfer-manager"
-            className={clsx('transfer-manager-fixed-position right-custom border border-weak', className)}
-            style={{
-                '--right-custom': `${(drawerWidth + 32) / 16}rem`, // 32 == 2rem
-            }}
-        >
-            <section aria-label={c('Label').t`File transfer overview`}>
-                <TransferManagerHeader
-                    toggleMinimize={toggleMinimize}
-                    isMinimized={isMinimized}
-                    onClose={onClose}
-                    cancelAll={cancelAll}
-                    retryFailedTransfers={retryFailedTransfers}
-                />
-
-                {items
-                    .filter((entry) => entry.type === 'download')
-                    .map((entry) => (
-                        <DownloadIssueWatcher
-                            key={entry.id}
-                            entry={entry}
-                            cancelTransfer={cancelTransfer}
-                            showDocumentsModal={showDocumentsModal}
-                            showSignatureIssueModal={showSignatureIssueModal}
+        <>
+            <EmptyFileConfirmModal />
+            {isVisible && (
+                <div
+                    id="transfer-manager"
+                    className={clsx('transfer-manager-fixed-position right-custom border border-weak', className)}
+                    style={{
+                        '--right-custom': `${(drawerWidth + 32) / 16}rem`, // 32 == 2rem
+                    }}
+                >
+                    <section aria-label={c('Label').t`File transfer overview`}>
+                        <TransferManagerHeader
+                            toggleMinimize={toggleMinimize}
+                            isMinimized={isMinimized}
+                            onClose={onClose}
+                            cancelAll={cancelAll}
+                            retryFailedTransfers={retryFailedTransfers}
                         />
-                    ))}
-                {!isMinimized && (
-                    <div className="mt-3 pb-4" data-testid="drive-transfers-manager:list">
-                        <TransferManagerList
-                            items={items}
-                            deprecatedRootShareId={deprecatedRootShareId}
-                            share={share}
-                            cancelTransfer={cancelTransfer}
-                            retryTransfer={retryTransfer}
-                            onReportAbuse={onReportAbuse}
-                        />
-                        {bannerType ? (
-                            <TransferManagerBanner
-                                className="mx-3 mt-3"
-                                type={bannerType}
-                                subscription={subscription}
-                                onAction={() => useTransferManagerStore.getState().setBannerType(undefined)}
-                            />
-                        ) : null}
-                    </div>
-                )}
 
-                {uploadConflictModal}
-                {confirmModal}
-                {actionsConfirmModal}
-                {sharingModal}
-                {containsDocumentModal}
-                {signatureIssueModal}
-            </section>
-        </div>
+                        {items
+                            .filter((entry) => entry.type === 'download')
+                            .map((entry) => (
+                                <DownloadIssueWatcher
+                                    key={entry.id}
+                                    entry={entry}
+                                    cancelTransfer={cancelTransfer}
+                                    showDocumentsModal={showDocumentsModal}
+                                    showSignatureIssueModal={showSignatureIssueModal}
+                                />
+                            ))}
+                        {!isMinimized && (
+                            <div className="mt-3 pb-4" data-testid="drive-transfers-manager:list">
+                                <TransferManagerList
+                                    items={items}
+                                    deprecatedRootShareId={deprecatedRootShareId}
+                                    share={share}
+                                    cancelTransfer={cancelTransfer}
+                                    retryTransfer={retryTransfer}
+                                    onReportAbuse={onReportAbuse}
+                                />
+                                {bannerType ? (
+                                    <TransferManagerBanner
+                                        className="mx-3 mt-3"
+                                        type={bannerType}
+                                        subscription={subscription}
+                                        onAction={() => useTransferManagerStore.getState().setBannerType(undefined)}
+                                    />
+                                ) : null}
+                            </div>
+                        )}
+
+                        {uploadConflictModal}
+                        {confirmModal}
+                        {actionsConfirmModal}
+                        {sharingModal}
+                        {containsDocumentModal}
+                        {signatureIssueModal}
+                    </section>
+                </div>
+            )}
+        </>
     );
 };
