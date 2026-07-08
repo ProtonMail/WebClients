@@ -113,9 +113,9 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       {leadingIconSlot && <span className="flex shrink-0 items-center">{leadingIconSlot}</span>}
       <span className="grow leading-none">
         {hintSlot ? (
-          <span className="flex grow justify-between gap-4">
+          <span className="flex grow items-center justify-between gap-4">
             <span className="grow truncate">{props.children}</span>
-            <span className="truncate text-[#8F8D8A]">{hintSlot}</span>
+            <span className="flex shrink-0 items-center truncate text-[#8F8D8A]">{hintSlot}</span>
           </span>
         ) : (
           props.children
