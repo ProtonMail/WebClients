@@ -5843,6 +5843,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjælp os med at forbedre denne situation ved at rapportere problemet. Hvis du er tryg med at dele regnearksindhold skal du vedhæfte nedenstående fejlfindingsoplysninger til din rapport."
+      ],
+      "Hide table of contents": [
+        "Skjul indholdsfortegnelsen"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Dette regneark kan ikke gemme dine seneste redigeringer, så vi har sat redigeringen på pause for at forhindre dig i at miste dit arbejde."
+      ],
+      "Show table of contents": [
+        "Vis indholdsfortegnelsen"
       ]
     },
     "info": {
@@ -10666,6 +10678,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
       ]
     },
     "tooltip": {
@@ -10881,6 +10896,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]
     }
   }

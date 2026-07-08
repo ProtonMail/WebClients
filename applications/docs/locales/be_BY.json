@@ -79,7 +79,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць карыстальнікаў або групы для абагулення"
+        "Дадаць карыстальнікаў або групы для абагульвання"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -950,6 +950,24 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Download debug information": [
+        "Спампаваць адладачную інфармацыю"
+      ],
+      "Export editor state for version": [
+        "Экспартаваць стан рэдактара для версіі"
+      ],
+      "Export this version (as docx)": [
+        "Экспартаваць гэту версію (у фармаце docx)"
+      ],
+      "Export YJS state for version": [
+        "Экспартаваць стан YJS для версіі"
+      ],
+      "Reload spreadsheet": [
+        "Перазагрузіць электронную табліцу"
+      ],
+      "Report issue": [
+        "Паведаміць аб праблеме"
       ]
     },
     "Actions message": {
@@ -3595,6 +3613,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Failed to rename document": [
+        "Не ўдалося перайменаваць дакумент"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ]
     },
     "error": {
@@ -5451,7 +5478,7 @@
         "Налады абноўлены"
       ],
       "Share via link settings": [
-        "Налады для абагулення праз спасылку"
+        "Налады для абагульвання праз спасылку"
       ],
       "Shared by": [
         "Абагулена"
@@ -5953,6 +5980,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
+      ],
+      "Hide table of contents": [
+        "Схаваць змест"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Вой! Не ўдалося захаваць апошнія змены ў гэтай электроннай табліцы. Рэдагаванне часова прыпынена, каб не дапусціць страты вашай працы."
+      ],
+      "Show table of contents": [
+        "Адлюстраваць змест"
       ]
     },
     "info": {
@@ -6540,6 +6582,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "Unknown user": [
+        "Невядомы карыстальнік"
       ]
     },
     "Label for contact group color": {
@@ -10960,6 +11005,12 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Editing paused": [
+        "Рэдагаванне прыпынена"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11048,6 +11099,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -11293,6 +11347,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     }
   }

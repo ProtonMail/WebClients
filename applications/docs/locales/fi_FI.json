@@ -1244,6 +1244,9 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "Size": [
+        "Koko"
       ]
     },
     "Browser": {
@@ -5654,6 +5657,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Auta meitä parantamaan käyttökokemusta ilmoittamalla ongelmasta. Jos voit jakaa taulukon sisällön, liitä ilmoitukseesi alla olevat vianmääritystiedot."
+      ],
+      "Hide table of contents": [
+        "Piilota sisällysluettelo"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Hups! Tätä taulukkoa ei voi tallentaa viimeisimpien muutosten kanssa, joten olemme keskeyttäneet muokkauksen, jotta työsi ei menisi hukkaan."
+      ],
+      "Show table of contents": [
+        "Näytä sisällysluettelo"
       ]
     },
     "info": {
@@ -10355,6 +10370,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
       ]
     },
     "tooltip": {
@@ -10570,6 +10588,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     }
   }

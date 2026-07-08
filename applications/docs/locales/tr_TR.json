@@ -5840,6 +5840,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablo içeriğini paylaşmakta bir sakınca görmüyorsanız, aşağıdaki hata ayıklama bilgilerini bildiriminize ekleyin."
+      ],
+      "Hide table of contents": [
+        "İçindekiler tablosunu gizle"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ne yazık ki bu elektronik tablodaki son düzenlemeleriniz kaydedilemedi. Bu nedenle çalışmalarınızı kaybetmemeniz için düzenleme özelliği duraklatıldı."
+      ],
+      "Show table of contents": [
+        "İçindekiler tablosunu görüntüle"
       ]
     },
     "info": {
@@ -10663,6 +10675,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
+      ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
       ]
     },
     "tooltip": {
@@ -10878,6 +10893,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Type": [
+        "Tür"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     }
   }

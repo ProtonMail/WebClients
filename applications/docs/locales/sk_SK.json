@@ -5992,6 +5992,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Pomôžte nám vylepšiť túto funkciu tým, že nahlásite tento problém. Ak vám nevadí zdieľať obsah tabuľky, priložte k hláseniu nižšie uvedené informácie na účely ladenia."
+      ],
+      "Hide table of contents": [
+        "Skryť obsah"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Táto tabuľka nedokáže uložiť vaše posledné úpravy, preto sme pozastavili úpravy, aby ste o svoju prácu neprišli."
+      ],
+      "Show table of contents": [
+        "Zobraziť obsah"
       ]
     },
     "info": {
@@ -11045,6 +11057,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
       ]
     },
     "tooltip": {
@@ -11290,6 +11305,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcie"
+      ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Odtlačok prsta"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]
     }
   }

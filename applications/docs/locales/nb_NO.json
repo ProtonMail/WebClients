@@ -937,6 +937,24 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Download debug information": [
+        "Last ned feilsøkingsinformasjon"
+      ],
+      "Export editor state for version": [
+        "Eksporter redigeringsstatus for versjon"
+      ],
+      "Export this version (as docx)": [
+        "Eksporter denne versjonen (som docx)"
+      ],
+      "Export YJS state for version": [
+        "Eksporter YJS-status for versjon"
+      ],
+      "Reload spreadsheet": [
+        "Last inn regneark på nytt"
+      ],
+      "Report issue": [
+        "Rapporter problem"
       ]
     },
     "Actions message": {
@@ -969,23 +987,23 @@
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME }-lisenser"
+        "${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-lisens",
         "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
+        "${ seats } ${ LUMO_APP_NAME } sete",
+        "${ seats } ${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME }-lisens",
-        "${ seats } ${ MEET_APP_NAME }-lisenser"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
+        "${ seats } skriveassistentsete",
+        "${ seats } skriveassistentseter"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1007,7 +1025,7 @@
         "Skriveassistent"
       ],
       "Writing assistant seats": [
-        "Skriveassistentlisenser"
+        "Skriveassistentseter"
       ]
     },
     "Alert": {
@@ -1282,7 +1300,7 @@
         "Ikke aktivert"
       ],
       "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige lisenser"
+        "Organisasjonen har ikke nok ledige seter"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
@@ -3536,6 +3554,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Failed to rename document": [
+        "Kunne ikke endre navn på dokumentet"
+      ],
+      "No drive found to import": [
+        "Ingen disker å importere funnet"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet feil, vi kan ikke importere filene"
       ]
     },
     "error": {
@@ -5798,6 +5825,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
+      ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Hvis du føler deg komfortabel med å dele regnearkinnhold, kan du legge ved feilsøkingsinformasjonen nedenfor i rapporten din."
+      ],
+      "Hide table of contents": [
+        "Skjul innholdsfortegnelse"
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Beklager! Dette regnearket kan ikke lagre de nyeste redigeringene dine, så vi har satt redigeringen på pause for å hindre at du mister arbeidet ditt."
+      ],
+      "Show table of contents": [
+        "Vis innholdsfortegnelse"
       ]
     },
     "info": {
@@ -6042,7 +6084,7 @@
         "Last ned uansett"
       ],
       "Drive": [
-        "Stasjon"
+        "Drive"
       ],
       "Duplicate found": [
         "Duplikat funnet"
@@ -6379,6 +6421,9 @@
       ],
       "Your password (trusted contact)": [
         "Passordet ditt (betrodd kontakt)"
+      ],
+      "Unknown user": [
+        "Ukjent bruker"
       ]
     },
     "Label for contact group color": {
@@ -6603,11 +6648,11 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME }-tilgang",
-        "${ seats } ${ MEET_APP_NAME }-tilganger"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ]
     },
     "meet_2025: Feature": {
@@ -8141,6 +8186,9 @@
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
+      ],
+      "Failed to load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10578,6 +10626,12 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Editing paused": [
+        "Redigering satt på pause"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10666,6 +10720,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitasjon til å få tilgang til elementet."
+      ],
+      "Version 6 OpenPGP key": [
+        "Versjon 6 OpenPGP-nøkkel"
       ]
     },
     "tooltip": {
@@ -10881,6 +10938,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Expires": [
+        "Utløper"
+      ],
+      "Fingerprint": [
+        "Fingeravtrykk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
     }
   }
