@@ -27,7 +27,7 @@ describe('protonVegaTheme', () => {
     it('builds a config with Proton purple marks and clean axes', () => {
         const config = getProtonVegaConfig();
 
-        expect(config.range?.category?.[0]).toBe(PROTON_PURPLE);
+        expect((config.range?.category as string[] | undefined)?.[0]).toBe(PROTON_PURPLE);
         expect(config.background).toBe('transparent');
         expect(config.line?.color).toBe(PROTON_LINE_COLOR);
         expect(config.line?.strokeWidth).toBe(2.25);
