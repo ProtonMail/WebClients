@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import {
     DropdownMenu,
     DropdownMenuButton,
@@ -12,12 +13,14 @@ import {
 import Logo from '@proton/components/components/logo/Logo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getForbiddenApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -125,6 +128,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
     const subscribed = User.Subscribed;
 
     const forbiddenApps = getForbiddenApps(User);
@@ -161,6 +165,9 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     </DropdownMenu>
                 </SimpleDropdown>
             }
+            mainClassName="flex flex-column flex-nowrap h-full"
+            layoutClassName="h-full"
+            containerClassName="h-full"
         >
             <div>
                 <header className="mt-6 mb-8 md:mb-10 lg:mb-20 text-center fade-in">
@@ -193,6 +200,31 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     />
                 </div>
             </div>
+            {isGenericUserSettingsEnabled && (
+                <div className="w-full text-center mt-auto fade-in py-4">
+                    <Button
+                        pill
+                        shape="outline"
+                        className="inline-flex items-center gap-2"
+                        style={{
+                            '--button-default-border-color': 'color-mix(in srgb, var(--primary) 28%, transparent)',
+                            '--button-default-background-color': 'transparent',
+                        }}
+                        onClick={async () => {
+                            await onLogin({
+                                ...session,
+                                appIntent: {
+                                    app: APPS.PROTONACCOUNT,
+                                    ref: 'product-switch',
+                                },
+                            });
+                        }}
+                    >
+                        <IcCogWheel className="shrink-0" />
+                        {c('Action').t`Settings`}
+                    </Button>
+                </div>
+            )}
         </Layout>
     );
 };

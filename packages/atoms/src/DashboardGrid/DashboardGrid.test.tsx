@@ -24,9 +24,9 @@ describe('<DashboardGrid />', () => {
         expect(container.firstChild).toHaveClass('custom-grid');
     });
 
-    it('limits the number of columns to a maximum of 3', () => {
+    it('limits the number of columns to a maximum of 4', () => {
         const { container } = render(<DashboardGrid columns={5} />);
-        expect(container.firstChild).toHaveClass('DashboardGrid-columns-3'); // Ensures max is 3
+        expect(container.firstChild).toHaveClass('DashboardGrid-columns-4'); // Ensures max is 4
     });
 
     it('applies the correct column class when valid values are passed', () => {

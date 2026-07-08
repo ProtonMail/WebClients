@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import {
     getIsCalendarApp,
     getIsDocsApp,
@@ -15,7 +17,7 @@ import {
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME, SSO_PATHS, VPN_TV_SIGNUP_REDIRECT } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, SSO_PATHS, VPN_TV_SIGNUP_REDIRECT } from '@proton/shared/lib/constants';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 
@@ -212,4 +214,15 @@ export const getSMSVerificationCodeText = (phoneNumber: ReactNode) => {
 export const getResendSMSVerificationCodeText = (phoneNumber: ReactNode) => {
     return c('Info')
         .jt`${BRAND_NAME} will send a verification code to ${phoneNumber}. Standard message rates may apply.`;
+};
+
+/**
+ * Get the correct settings href for each app
+ * Pass has its own settings page, other apps use the account settings
+ */
+export const getSettingsHref = (appName: APP_NAMES, localID?: number): string => {
+    if (appName === APPS.PROTONPASS) {
+        return getAppHref('/settings', APPS.PROTONPASS, localID);
+    }
+    return getAppHref(`/${getSlugFromApp(appName)}`, APPS.PROTONACCOUNT, localID);
 };

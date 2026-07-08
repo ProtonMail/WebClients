@@ -51,7 +51,7 @@ import { useReferralUserEligible } from '@proton/components/containers/referral/
 import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
-import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard';
+import useShowDashboard, { useShowGenericDashboard } from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
@@ -211,6 +211,7 @@ const MainContainer = () => {
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const isMspEnabled = useFlag('MspEnabled');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
+    const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
 
     const { hasAccessToCategoryView } = useCategoriesData();
 
@@ -222,8 +223,9 @@ const MainContainer = () => {
     const recoveryNotification = useRecoveryNotification(false, false);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
-    const app = appFromPathname || getToApp(undefined, user);
-    const appSlug = getSlugFromApp(app);
+    const isGenericSettings = isGenericUserSettingsEnabled && !appFromPathname;
+    const app = appFromPathname ?? (isGenericSettings ? APPS.PROTONACCOUNT : getToApp(undefined, user));
+    const appSlug = isGenericSettings ? '' : getSlugFromApp(app);
 
     // We hide the assistant upsell for users on Mail and Calendar app without the assistant when the kill switch is enabled
     const hasAssistant = hasAIAssistant(subscription);
@@ -256,6 +258,8 @@ const MainContainer = () => {
         'MeetDashboard'
     );
 
+    const canShowGenericDashboard = useShowGenericDashboard(app);
+
     const { isB2B: isB2BDrive } = useDrivePlan();
 
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -280,6 +284,7 @@ const MainContainer = () => {
         referralInfo: referralInfo.uiData,
         showMailDashboard,
         showMailDashboardVariant: showMailDashboardVariant.name,
+        showGenericDashboard: canShowGenericDashboard,
         showPassDashboard,
         showPassDashboardVariant: showPassDashboardVariant.name,
         showDriveDashboard,
@@ -343,7 +348,7 @@ const MainContainer = () => {
     const isLocal = [APPS.PROTONVPN_SETTINGS].includes(app as any);
     const toApp = isLocal ? APPS.PROTONACCOUNT : app;
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
-    const pathPrefix = `/${appSlug}`;
+    const pathPrefix = isGenericSettings ? '' : `/${appSlug}`;
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
@@ -448,9 +453,8 @@ const MainContainer = () => {
             return <PrivateMainAreaLoading />;
         }
 
-        const pathFromLocation = getPathFromLocation(location);
-
-        if (!appFromPathname) {
+        if (!isGenericSettings && !appFromPathname) {
+            const pathFromLocation = getPathFromLocation(location);
             return <Redirect to={`/${appSlug}${pathFromLocation}`} />;
         }
 
@@ -464,7 +468,7 @@ const MainContainer = () => {
             return getDefaultRedirect(routes.account);
         })();
 
-        return <Redirect to={`/${appSlug}${path}`} />;
+        return <Redirect to={`${pathPrefix}${path}`} />;
     })();
 
     if (
@@ -550,7 +554,7 @@ const MainContainer = () => {
                         <Route path={anyMspAppRoute}>
                             <MspSettingsRouter path={pathPrefix} mspAppRoutes={routes.msp} redirect={redirect} />
                         </Route>
-                        <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
+                        <Route path={[`/${appSlug}${CANCEL_ROUTE}`, CANCEL_ROUTE]}>
                             <CancellationReminderSection app={app} />
                         </Route>
                         <Route path={`/${mailSlug}`}>

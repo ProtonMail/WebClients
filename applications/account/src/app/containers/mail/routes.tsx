@@ -43,7 +43,7 @@ export const getMailAppRoutes = ({
     const mailRouteTitles = getMailRouteTitles();
 
     return {
-        available: app === APPS.PROTONMAIL,
+        available: app === APPS.PROTONMAIL || app === APPS.PROTONACCOUNT,
         header: MAIL_APP_NAME,
         routes: {
             desktop: {

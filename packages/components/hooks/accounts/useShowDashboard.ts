@@ -74,4 +74,12 @@ const useShowDashboard = <FlagName extends FeatureFlagsWithVariant>(appName: APP
     return { showDashboard, variant, canShowDashboard };
 };
 
+export const useShowGenericDashboard = (appName: APP_NAMES) => {
+    const [organization] = useOrganization();
+    const [subscription] = useSubscription();
+    const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
+    const isB2B = getIsB2BAudienceFromSubscription(subscription) || isOrganizationB2B(organization);
+    return appName === APPS.PROTONACCOUNT && !isB2B && isGenericUserSettingsEnabled;
+};
+
 export default useShowDashboard;
