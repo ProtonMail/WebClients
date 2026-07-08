@@ -9,7 +9,7 @@ import type { GeneralRouterParams } from '../../content/router-params';
 export const getWalletAppRoutes = ({ app }: GeneralRouterParams): SidebarConfig => {
     return {
         header: WALLET_APP_NAME,
-        available: app === APPS.PROTONWALLET,
+        available: app === APPS.PROTONWALLET || app === APPS.PROTONACCOUNT,
         routes: {
             authorization: {
                 id: 'authorization',

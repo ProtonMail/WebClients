@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import useConfig from '@proton/components/hooks/useConfig';
-import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
@@ -40,15 +40,15 @@ const SettingsLink = ({ path, app, children, ...rest }: Props, ref: Ref<HTMLAnch
         );
     }
 
-    const settingsApp =
-        APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) || DEFAULT_APP : undefined;
+    const settingsApp = APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) : undefined;
     // Don't allow to go for settings to proton account
     const toSettingsForApp = (app !== APPS.PROTONACCOUNT ? app : undefined) || settingsApp || APP_NAME;
-    const slug = getSlugFromApp(toSettingsForApp);
+    const resolvedSlug = getSlugFromApp(toSettingsForApp);
+    const slug = toSettingsForApp === APPS.PROTONACCOUNT || !resolvedSlug ? '' : `/${resolvedSlug}`;
 
     return (
         <AppLink
-            to={`/${slug}${path}`}
+            to={`${slug}${path}`}
             ref={ref}
             toApp={APPS.PROTONACCOUNT}
             // If going to settings for the same app

@@ -231,7 +231,8 @@ export function getDashboardStorageSections(
                 text: mailText,
                 label: getAppStorageUsed(MAIL_SHORT_APP_NAME),
                 graphColor: SpaceStateThemeColorMap[spaceDetails.base.type],
-                shouldRender: (app) => app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR,
+                shouldRender: (app) =>
+                    app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONACCOUNT,
             },
             {
                 usedSpace: spaceDetails.drive.percentage,
@@ -245,7 +246,7 @@ export function getDashboardStorageSections(
                 text: driveText,
                 label: getAppStorageUsed(DRIVE_SHORT_APP_NAME),
                 graphColor: SpaceStateThemeColorMap[spaceDetails.drive.type],
-                shouldRender: (app) => app === APPS.PROTONDRIVE,
+                shouldRender: (app) => app === APPS.PROTONDRIVE || app === APPS.PROTONACCOUNT,
             },
         ];
     } else {

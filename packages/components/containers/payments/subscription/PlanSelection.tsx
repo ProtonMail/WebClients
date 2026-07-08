@@ -232,6 +232,7 @@ export function useAccessiblePlans({
     const isWalletSettingsApp = app === APPS.PROTONWALLET;
     const isLumoSettingsApp = app === APPS.PROTONLUMO;
     const isMeetSettingsApp = app === APPS.PROTONMEET;
+    const isGenericSettingsApp = app === APPS.PROTONACCOUNT;
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const isPassSimpleLoginLifetimeEnabled = useFlag('PassSimpleLoginLifetimeOffer');
 
@@ -240,13 +241,11 @@ export function useAccessiblePlans({
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { getAvailableCurrencies } = useCurrencies();
 
-    const enabledProductB2CPlanNames = [
-        PLANS.MAIL,
-        PLANS.VPN2024,
-        PLANS.DRIVE,
-        !user.hasPassLifetime && PLANS.PASS,
-        PLANS.LUMO,
-    ]
+    const enabledProductB2CPlanNames = (
+        isGenericSettingsApp
+            ? []
+            : [PLANS.MAIL, PLANS.VPN2024, PLANS.DRIVE, !user.hasPassLifetime && PLANS.PASS, PLANS.LUMO]
+    )
         .filter(isTruthy)
         .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
 
@@ -268,7 +267,13 @@ export function useAccessiblePlans({
     const walletIndividualPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.VISIONARY]]);
     const isWalletIndividualPlans = isWalletSettingsApp && walletIndividualPlans.length !== 0;
 
-    if (isWalletIndividualPlans) {
+    if (isGenericSettingsApp) {
+        IndividualPlans = filterPlans([
+            plansMap[PLANS.BUNDLE],
+            canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+            plansMap[PLANS.FAMILY],
+        ]);
+    } else if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
     } else if (isMeetSettingsApp) {
         IndividualPlans = filterPlans([
@@ -298,7 +303,7 @@ export function useAccessiblePlans({
         hasPassFamily(subscription);
 
     let FamilyPlans: Plan[] = [];
-    if (getCanAccessFamilyPlans(subscription) && !isMeetSettingsApp) {
+    if (getCanAccessFamilyPlans(subscription) && !isMeetSettingsApp && !isGenericSettingsApp) {
         FamilyPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
             canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
@@ -340,6 +345,9 @@ export function useAccessiblePlans({
         isNewB2BPlanEnabled ? plansMap[PLANS.BUNDLE_BIZ_2025] : null,
     ]);
 
+    // Workspace Standard and Workspace Premium
+    const genericB2BPlans = filterPlans([plansMap[PLANS.BUNDLE_PRO_2024], plansMap[PLANS.BUNDLE_BIZ_2025]]);
+
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      *
@@ -352,6 +360,7 @@ export function useAccessiblePlans({
     const isWalletB2BPlans = isWalletSettingsApp && walletB2BPlans.length !== 0;
     const isLumoB2BPlans = isLumoSettingsApp && lumoB2BPlans.length !== 0;
     const isMeetB2BPlans = isMeetSettingsApp && meetB2BPlans.length !== 0;
+    const isGenericB2BPlans = isGenericSettingsApp && genericB2BPlans.length !== 0;
 
     const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
         // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
@@ -378,6 +387,8 @@ export function useAccessiblePlans({
             return lumoB2BPlans;
         } else if (isMeetB2BPlans) {
             return meetB2BPlans;
+        } else if (isGenericB2BPlans) {
+            return genericB2BPlans;
         }
 
         const plans = isNewB2BPlanEnabled

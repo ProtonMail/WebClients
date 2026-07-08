@@ -40,7 +40,9 @@ const AlsoInYourPlanSection = ({
     app,
     children,
     upsellBanner,
-}: PropsWithChildren<{ app: APP_NAMES; upsellBanner?: ReactNode }>) => {
+    title = c('Title').t`Also in your plan`,
+    subtitle,
+}: PropsWithChildren<{ app: APP_NAMES; upsellBanner?: ReactNode; title?: ReactNode; subtitle?: ReactNode }>) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
 
@@ -64,6 +66,10 @@ const AlsoInYourPlanSection = ({
 
     const sectionSubtitleCopy = () => {
         const planTitlePlusMaybeBrand = planName === PLANS.FREE ? `${BRAND_NAME} ${planTitle}` : planTitle;
+
+        if (subtitle) {
+            return subtitle;
+        }
 
         if (getHasPlusPlan(planName) && !hasVPN2024(subscription)) {
             return c('Dashboard')
@@ -92,10 +98,7 @@ const AlsoInYourPlanSection = ({
         >
             <DashboardGrid columns={Children.count(children)}>
                 <DashboardGridSection spanAll="header">
-                    <DashboardGridSectionHeader
-                        title={c('Title').t`Also in your plan`}
-                        subtitle={sectionSubtitleCopy()}
-                    />
+                    <DashboardGridSectionHeader title={title} subtitle={sectionSubtitleCopy()} />
                 </DashboardGridSection>
                 {children}
                 {upsellBanner}

@@ -7,7 +7,7 @@ import type { OrganizationRouterParams } from '../../content/router-params';
 
 export const getDriveAppRoutes = ({ app }: OrganizationRouterParams) => {
     return <const>{
-        available: app === APPS.PROTONDRIVE,
+        available: app === APPS.PROTONDRIVE || app === APPS.PROTONACCOUNT,
         header: DRIVE_APP_NAME,
         routes: {
             revisions: {
