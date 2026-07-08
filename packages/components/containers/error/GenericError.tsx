@@ -11,7 +11,6 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import networkErrorImg from '@proton/styles/assets/img/errors/error-network.svg';
 import { FlagContext } from '@proton/unleash/proxy';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
@@ -73,8 +72,6 @@ export const GenericErrorDisplay = ({
 };
 
 const GenericErrorWithReload = ({ children, className, big, isNetworkError }: GenericErrorProps) => {
-    const isAutoReloadDisabled = useFlag('AutoReloadPageDisabled');
-
     const reloadPageOnError = () => {
         const now = new Date();
         const saveAndReloadPage = () => {
@@ -103,7 +100,7 @@ const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Ge
     };
 
     useEffect(() => {
-        if (!isAutoReloadDisabled && big) {
+        if (big) {
             reloadPageOnError();
         }
     }, []);
