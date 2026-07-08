@@ -6876,10 +6876,10 @@
         "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -6897,7 +6897,7 @@
         "Jen za ${ bundlePlanPriceInline }"
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Password verified": [
         "Heslo ověřeno"
@@ -6915,7 +6915,7 @@
         "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ]
     },
     "info": {
@@ -7049,7 +7049,7 @@
         "WKD"
       ],
       "Active Signer": [
-        "Aktivní podpisový klíč"
+        "Aktivní podepisovatel"
       ],
       "Fallback": [
         "Záložní"
@@ -7684,7 +7684,7 @@
         "${ value.length }/${ maxLength } znaků"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ]
     },
     "label": {
@@ -13097,7 +13097,7 @@
         "Migrujte svou organizaci do ${ BRAND_NAME }"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13781,6 +13781,20 @@
     "Keyboard shortcut name, switch to Mail": {
       "Switch to ${ MAIL_APP_NAME }": [
         "Přepnout na ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     }
   }

@@ -13065,6 +13065,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
+      ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
       ]
     },
     "tooltip": {
@@ -13591,6 +13594,31 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Expiră"
+      ],
+      "Fingerprint": [
+        "Amprenta"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Type": [
+        "Tip"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]
     }
   }
