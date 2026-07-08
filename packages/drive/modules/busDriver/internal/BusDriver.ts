@@ -152,7 +152,7 @@ class BusDriver {
                 try {
                     await listener(event, driveClient);
                 } catch (error) {
-                    sendErrorReport(new Error('Error in action event listener'));
+                    sendErrorReport(error);
                 }
             })
         );
@@ -591,7 +591,7 @@ class BusDriver {
                     break;
             }
         } catch (error) {
-            sendErrorReport(new Error('Error handling SDK event'));
+            sendErrorReport(error);
         }
     }
 }
