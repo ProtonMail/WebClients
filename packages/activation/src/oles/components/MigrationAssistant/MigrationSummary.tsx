@@ -4,9 +4,14 @@ import { c } from 'ttag';
 
 import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api.interface';
 import { ApiImporterOrganizationState, type ApiImporterProduct } from '@proton/activation/src/api/api.interface';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { MX_STATE } from '@proton/shared/lib/interfaces';
 
 import type { MigrationModel } from '../../types';
 import { useProviderUsers } from '../../useProviderUsers';
@@ -40,6 +45,8 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
 
     const relevantCount = users.filter((u) => u.ImporterOrganizationUser?.HasTemporaryPassword === false).length;
     const totalCount = users.length;
+    const domainState = model.domain?.MxState ?? MX_STATE.MX_STATE_DEFAULT;
+    const thirdPartyMxDetected = [MX_STATE.MX_STATE_NO_US, MX_STATE.MX_STATE_INC_US].includes(domainState);
 
     const handleViewReport = (user: ApiImporterOrganizationUser) => {
         const transferErrors = model.transferErrors.filter(transferErrorUserFilter(user));
@@ -73,6 +80,32 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
                             </Button>
                         )}
                     </div>
+
+                    {thirdPartyMxDetected && (
+                        <Banner
+                            key="remove-mx-records"
+                            className="p-2 rounded-xl mb-8"
+                            variant="warning"
+                            icon={<IcExclamationCircleFilled />}
+                            opaqueVariant
+                            borderless
+                            contentWrapperClassName="flex w-full"
+                        >
+                            <span className="flex items-start w-full gap-4">
+                                <span className="flex-1 text-left">
+                                    {c('BOSS').t`Your domain configuration still includes another provider's MX codes.`}{' '}
+                                    {c('BOSS')
+                                        .t`To complete the migration, make sure you keep only ${BRAND_NAME} MX codes.`}
+                                </span>
+                                <InlineLinkButton
+                                    className="inline-flex items-center gap-2 color-current text-no-decoration text-semibold hover:color-weak mr-2"
+                                    onClick={() => setFinishModalOpen(true)}
+                                >
+                                    {c('BOSS').t`More details`}
+                                </InlineLinkButton>
+                            </span>
+                        </Banner>
+                    )}
 
                     <Card
                         padded={false}
