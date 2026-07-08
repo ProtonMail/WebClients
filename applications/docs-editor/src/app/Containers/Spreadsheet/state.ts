@@ -39,7 +39,6 @@ import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentCol
 import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
-import { minutes_to_ms, seconds_to_ms } from '@proton/docs-core/lib/Util/time-utils'
 import { useEditorState } from '../EditorStateProvider'
 import { useApplication } from '../ApplicationProvider'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
@@ -48,6 +47,7 @@ import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
 import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
+import { minutesToMs, secondsToMs } from './time-utils'
 
 // local state
 // -----------
@@ -904,8 +904,8 @@ export function sortSheetsByIndex<S extends BaseSheet>(sheets: S[], includeHidde
 // versioning
 // ----------
 
-const LOCK_START_THRESHOLD = seconds_to_ms(2.5)
-const MAX_LOCK_DURATION = minutes_to_ms(5)
+const LOCK_START_THRESHOLD = secondsToMs(2.5)
+const MAX_LOCK_DURATION = minutesToMs(5)
 const CLIENT_VERSION = 2
 
 const versionToMigrationMap: Record<number, (state: ProtonSheetsState) => void> = {
