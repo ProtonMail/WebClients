@@ -36,7 +36,7 @@ const FakeApplePayButton = ({
     );
 };
 
-export interface ApplePayButtonProps extends ChargebeeWrapperProps {
+interface ApplePayButtonProps extends ChargebeeWrapperProps {
     applePay: ApplePayProcessorHook;
     disabled?: boolean;
     className?: string;

@@ -107,7 +107,7 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
 /**
  * Transform the payment method object from the react-extensions package to a view model that can be used in the UI.
  */
-export function convertMethod(
+function convertMethod(
     method: AvailablePaymentMethod,
     getSavedMethodById: MethodsHook['getSavedMethodByID'],
     flow: PaymentMethodFlow

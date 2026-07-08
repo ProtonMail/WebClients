@@ -101,14 +101,14 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefin
     return b2bPlans.has(planName);
 };
 
-const getIsVpnB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+const vpnB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_PRO,
     PLANS.VPN_BUSINESS,
     PLANS.VPN_PASS_BUNDLE_BUSINESS,
 ]);
-export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => getIsVpnB2BPlanCondition.has(planName);
+export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => vpnB2BPlans.has(planName);
 
-const getIsVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+const vpnPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN,
     PLANS.VPN2024,
     PLANS.VPN_PASS_BUNDLE,
@@ -120,52 +120,55 @@ export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
         return false;
     }
-    return getIsVpnPlanCondition.has(planName);
+    return vpnPlans.has(planName);
 };
 
-const getIsConsumerVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.VPN_PASS_BUNDLE,
-]);
+const consumerVpnPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE]);
+/**
+ * @public - do not remove in the dead code cleanups
+ */
 export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
         return false;
     }
-    return getIsConsumerVpnPlanCondition.has(planName);
+    return consumerVpnPlans.has(planName);
 };
 
-const getIsPassB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_PRO, PLANS.PASS_BUSINESS]);
-export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
-    if (!planName) {
-        return false;
-    }
-    return getIsPassB2BPlanCondition.has(planName);
-};
-
-const getIsPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+const passPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.PASS,
     PLANS.PASS_FAMILY,
     PLANS.VPN_PASS_BUNDLE,
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
 ]);
+
+/**
+ * @public - do not remove in the dead code cleanups
+ */
 export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
         return false;
     }
-    return getIsPassPlanCondition.has(planName);
+    return passPlans.has(planName);
 };
 
-const consumerPassPlanSet: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS, PLANS.PASS_FAMILY, PLANS.VPN_PASS_BUNDLE]);
+const passB2bPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_PRO, PLANS.PASS_BUSINESS]);
+export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
+    if (!planName) {
+        return false;
+    }
+    return passB2bPlans.has(planName);
+};
+
+const consumerPassPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS, PLANS.PASS_FAMILY, PLANS.VPN_PASS_BUNDLE]);
 export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
         return false;
     }
-    return consumerPassPlanSet.has(planName);
+    return consumerPassPlans.has(planName);
 };
 
-const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+const sentinelPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VISIONARY,
     PLANS.BUNDLE,
     PLANS.FAMILY,
@@ -183,7 +186,7 @@ export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => 
     if (!planName) {
         return false;
     }
-    return getIsSentinelPlanCondition.has(planName);
+    return sentinelPlans.has(planName);
 };
 
 export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled: boolean) => {

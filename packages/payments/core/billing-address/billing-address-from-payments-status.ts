@@ -1,8 +1,7 @@
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { getStateCodeByPostalCode, isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
-import type { PaymentStatus } from '../interface';
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, type FullBillingAddress } from './billing-address';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 
 function restoreDefaultsIfCountryIsMissing(normalized: BillingAddress): void {
     if (!normalized.CountryCode) {
@@ -75,32 +74,4 @@ export function getBillingAddressFromPaymentStatus(
         restorePartialCanadianPostalCode(normalized);
     }
     return normalized;
-}
-
-export function getFullBillingAddressFromPaymentStatus(
-    paymentStatus: PaymentStatus,
-    { shouldRestoreZipCode }: { shouldRestoreZipCode: boolean }
-): FullBillingAddress {
-    const CountryCode = paymentStatus.CountryCode;
-    const State = paymentStatus.State;
-    const ZipCode = paymentStatus.ZipCode;
-
-    const BillingAddress: BillingAddress = {
-        CountryCode,
-        State,
-        ZipCode,
-    };
-
-    restoreDefaultsIfCountryIsMissing(BillingAddress);
-    restoreState(BillingAddress);
-    if (shouldRestoreZipCode) {
-        restoreZipCode(BillingAddress);
-        restorePartialCanadianPostalCode(BillingAddress);
-    }
-
-    const fullBillingAddress: FullBillingAddress = {
-        BillingAddress,
-    };
-
-    return fullBillingAddress;
 }

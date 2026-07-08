@@ -90,7 +90,7 @@ export function reportAddLumo({ context }: { context: PaymentTelemetryContext })
 // ============================================================================
 
 /** Event name mapping for Add Meet events */
-export const ADD_MEET_CONTEXT_MAPPING = getMapping('add_meet');
+const ADD_MEET_CONTEXT_MAPPING = getMapping('add_meet');
 
 /**
  * Reports when user interacts with the "Add Meet" button for the first time.
@@ -115,7 +115,7 @@ export function reportAddMeet({ context }: { context: PaymentTelemetryContext })
 // ============================================================================
 
 /** Event name mapping for Add Pass events */
-export const ADD_PASS_CONTEXT_MAPPING = getMapping('add_pass');
+const ADD_PASS_CONTEXT_MAPPING = getMapping('add_pass');
 
 /**
  * Reports when user interacts with the "Add Pass" button for the first time.
@@ -261,7 +261,7 @@ export function reportPayment({
 /**
  * Payload for billing country/state change events.
  */
-export type ChangeBillingCountryTelemetryPayload = {
+type ChangeBillingCountryTelemetryPayload = {
     /** Checkout context for event naming */
     context: PaymentTelemetryContext;
     /** Country code before change (ISO 3166-1 alpha-2) */

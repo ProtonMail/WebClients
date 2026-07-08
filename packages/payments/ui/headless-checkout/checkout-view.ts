@@ -31,11 +31,11 @@ export type CheckoutView = ReturnType<typeof createCheckoutView>;
  *
  * Consumers who intentionally skip certain item types should return `null`.
  */
-export type CheckoutItemRendererMap = {
+type CheckoutItemRendererMap = {
     [K in CheckoutLineItem['type']]: (item: Extract<CheckoutLineItem, { type: K }>) => ReactNode;
 };
 
-export const defaultCheckoutItemOrder: readonly CheckoutLineItem['type'][] = [
+const defaultCheckoutItemOrder: readonly CheckoutLineItem['type'][] = [
     BILLING_CYCLE_LINE_ITEM_TYPE,
     MEMBERS_LINE_ITEM_TYPE,
     ADDONS_LINE_ITEM_TYPE,
@@ -54,7 +54,7 @@ export const defaultCheckoutItemOrder: readonly CheckoutLineItem['type'][] = [
     RENEWAL_NOTICE_LINE_ITEM_TYPE,
 ];
 
-export function createCheckoutViewFromHeadlessCheckout(
+function createCheckoutViewFromHeadlessCheckout(
     checkoutData: HeadlessCheckout,
     renderers: CheckoutItemRendererMap | ((headless: HeadlessCheckout) => CheckoutItemRendererMap)
 ) {

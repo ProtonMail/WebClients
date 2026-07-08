@@ -50,10 +50,6 @@ export function getStrictPlanByName(
     return getPlanByName(plans, planName, currency, cycle, currencyFallback, true) as StrictPlan;
 }
 
-export function planExists(plans: Plan[], planName: string, currency: Currency, cycle: Cycle | undefined): boolean {
-    return !!getPlanByName(plans, planName, currency, cycle, false);
-}
-
 export function getPlansMap(plans: Plan[], preferredCurrency: Currency, currencyFallback = true): FullPlansMap {
     const planNames = [...new Set(plans.map(({ Name }) => Name))];
 

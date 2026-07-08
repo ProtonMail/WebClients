@@ -63,7 +63,7 @@ export function isForbiddenLumoPlus({
     return false;
 }
 
-export function isForbiddenMeetPlus({
+function isForbiddenMeetPlus({
     subscription,
     newPlanName,
     newPlanIDs,
@@ -147,7 +147,7 @@ export function isForbiddenMeetPlus({
     return false;
 }
 
-export function isForbiddenPlusToPlus({
+function isForbiddenPlusToPlus({
     subscription,
     newPlanIDs,
 }: {
