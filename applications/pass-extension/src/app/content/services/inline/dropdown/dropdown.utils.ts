@@ -9,6 +9,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { clientStatusResolved } from '@proton/pass/lib/client';
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
+import { resolveDomain, resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import type { Rect } from '@proton/pass/types/utils/dom';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -17,8 +19,6 @@ import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
-import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import type { DropdownHandler } from './dropdown.abstract';

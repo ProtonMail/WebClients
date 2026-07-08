@@ -3,6 +3,7 @@ import fs from 'fs';
 import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readKeePassData } from './keepass.reader';
@@ -46,7 +47,9 @@ describe('Import KeePass xml', () => {
         expect(loginItem.content.itemEmail).toEqual('nobodyA@proton.me');
         expect(loginItem.content.itemUsername).toEqual('');
         expect(loginItem.content.password).toEqual('proton123');
-        expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
+        expect(loginItem.content.autofillUrls).toEqual([
+            { url: 'https://account.proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(loginItem.content.totpUri).toEqual(
             'otpauth://totp/Entry%20A:nobodyA%40proton.me?issuer=Entry%20A&secret=VZKDI2A4UP2NG5BB&algorithm=SHA1&digits=6&period=30'
         );
@@ -89,7 +92,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.content.itemEmail).toEqual('');
         expect(loginItem.content.itemUsername).toEqual('');
         expect(loginItem.content.password).toEqual('');
-        expect(loginItem.content.urls).toEqual([]);
+        expect(loginItem.content.autofillUrls).toEqual([]);
         expect(loginItem.content.totpUri).toEqual('');
         expect(loginItem.extraFields).toEqual([]);
         expect(loginItem.platformSpecific).toBeUndefined();
@@ -108,7 +111,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.content.itemEmail).toEqual('nobody@proton.me');
         expect(loginItem.content.itemUsername).toEqual('');
         expect(loginItem.content.password).toEqual('a bbbb c ');
-        expect(loginItem.content.urls).toEqual([]);
+        expect(loginItem.content.autofillUrls).toEqual([]);
         expect(loginItem.content.totpUri).toEqual('');
         expect(loginItem.extraFields).toEqual([]);
         expect(loginItem.platformSpecific).toBeUndefined();
@@ -127,7 +130,9 @@ describe('Import KeePass xml', () => {
         expect(loginItem1.content.itemEmail).toEqual('nobody@proton.me');
         expect(loginItem1.content.itemUsername).toEqual('');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls).toEqual(['https://account.proton.me/']);
+        expect(loginItem1.content.autofillUrls).toEqual([
+            { url: 'https://account.proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(loginItem1.content.totpUri).toEqual('');
         expect(loginItem1.extraFields).toEqual([]);
         expect(loginItem1.platformSpecific).toBeUndefined();
@@ -141,7 +146,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem2.content.itemEmail).toEqual('nobody@proton.me');
         expect(loginItem2.content.itemUsername).toEqual('');
         expect(loginItem2.content.password).toEqual('proton123');
-        expect(loginItem2.content.urls).toEqual([]);
+        expect(loginItem2.content.autofillUrls).toEqual([]);
         expect(loginItem2.content.totpUri).toEqual('');
         expect(loginItem2.extraFields).toEqual([
             {

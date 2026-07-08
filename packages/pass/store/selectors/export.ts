@@ -4,17 +4,34 @@ import { getExportFileName } from '@proton/pass/lib/file-attachments/helpers';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { getDefaultModeUrls } from '@proton/pass/lib/urls/utils/autofill';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { selectShare } from '@proton/pass/store/selectors/shares';
 import { selectPassPlan, selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
-import type { FileDescriptor, IndexedByShareIdAndItemId } from '@proton/pass/types';
+import type { DeobfuscatedItem, FileDescriptor, IndexedByShareIdAndItemId } from '@proton/pass/types';
 import { OrganizationExportMode } from '@proton/pass/types';
 
 import { SelectorError } from './errors';
 import { selectOrganizationSettings } from './organization';
 
 export type ExportThunk = (files: IndexedByShareIdAndItemId<FileDescriptor[]>) => ExportData;
+
+/** Mirrors loginContentToProtobuf: `autofillUrls` holds the full set of modes while the
+ * legacy `urls` field duplicates only the `Default`-mode urls so old importers can still
+ * read them without misinterpreting another mode as `Default`. */
+const toExportItem = (data: DeobfuscatedItem): DeobfuscatedItem => {
+    if (data.type !== 'login') return data;
+    const { autofillUrls } = data.content;
+    return {
+        ...data,
+        content: {
+            ...data.content,
+            urls: getDefaultModeUrls(autofillUrls),
+            autofillUrls,
+        },
+    } as unknown as DeobfuscatedItem;
+};
 
 export const selectExportData =
     (config: PassConfig) =>
@@ -44,7 +61,7 @@ export const selectExportData =
                                 items: Object.values(itemsById).map((item) => ({
                                     itemId: item.itemId,
                                     shareId: item.shareId,
-                                    data: deobfuscateItem(item.data),
+                                    data: toExportItem(deobfuscateItem(item.data)),
                                     state: item.state,
                                     aliasEmail: item.aliasEmail,
                                     contentFormatVersion: item.contentFormatVersion,

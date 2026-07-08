@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent, ItemType } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, WifiSecurity } from '@proton/pass/types/protobuf';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readKeeperData } from './keeper.reader';
@@ -76,7 +76,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: '',
             totpUri: '',
-            urls: [],
+            autofillUrls: [],
             itemEmail: '',
             itemUsername: 'john',
         });
@@ -94,7 +94,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: '',
             totpUri: '',
-            urls: [],
+            autofillUrls: [],
             itemEmail: '',
             itemUsername: 'john',
         });
@@ -195,7 +195,7 @@ describe('Import Keeper JSON', () => {
             password: 'pass',
             totpUri:
                 'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30',
-            urls: ['https://example.com/'],
+            autofillUrls: [{ url: 'https://example.com/', mode: AutofillMode.Default }],
             itemEmail: '2fa@example.com',
             itemUsername: '',
         });
@@ -213,7 +213,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: 'pass',
             totpUri: '',
-            urls: [],
+            autofillUrls: [],
             itemEmail: '',
             itemUsername: 'john',
         });
@@ -231,7 +231,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: 'password with comma, quotes "',
             totpUri: '',
-            urls: ['https://example.com/'],
+            autofillUrls: [{ url: 'https://example.com/', mode: AutofillMode.Default }],
             itemEmail: '',
             itemUsername: 'username with comma, quotes "',
         });
@@ -248,7 +248,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: 'pass',
             totpUri: '',
-            urls: ['https://example.com/'],
+            autofillUrls: [{ url: 'https://example.com/', mode: AutofillMode.Default }],
             itemEmail: '',
             itemUsername: 'john',
         });
@@ -319,7 +319,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: 'pass',
             totpUri: '',
-            urls: ['https://example.com/'],
+            autofillUrls: [{ url: 'https://example.com/', mode: AutofillMode.Default }],
             itemEmail: '',
             itemUsername: 'john',
         });
@@ -336,7 +336,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: '',
             totpUri: '',
-            urls: ['https://example.com/'],
+            autofillUrls: [{ url: 'https://example.com/', mode: AutofillMode.Default }],
             itemEmail: '',
             itemUsername: '',
         });
@@ -392,7 +392,7 @@ describe('Import Keeper JSON', () => {
             passkeys: [],
             password: 'password',
             totpUri: '',
-            urls: [],
+            autofillUrls: [],
             itemEmail: '',
             itemUsername: 'john',
         });

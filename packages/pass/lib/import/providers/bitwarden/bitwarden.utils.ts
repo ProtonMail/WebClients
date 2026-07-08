@@ -2,10 +2,12 @@ import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, MaybeNull } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
+import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import type { BitwardenCCItem, BitwardenCustomField, BitwardenLoginItem, BitwardenSshKeyItem } from './bitwarden.types';
-import { BitwardenCustomFieldType, type BitwardenIdentityItem } from './bitwarden.types';
+import { BitwardenCustomFieldType, type BitwardenIdentityItem, BitwardenUriMatchType } from './bitwarden.types';
 
 /** Bitwarden stores android linked apps as :
  * `androidapp://ch.protonmail.android` */
@@ -41,16 +43,33 @@ export const isBitwardenLinkedAndroidAppUrl = (url: string) => {
     }
 };
 
+const bitwardenMatchToAutofillMode = (match?: BitwardenUriMatchType): AutofillMode => {
+    switch (match) {
+        case BitwardenUriMatchType.Host:
+            return AutofillMode.Exact;
+        case BitwardenUriMatchType.StartsWith:
+            return AutofillMode.StartWith;
+        case BitwardenUriMatchType.Exact:
+            return AutofillMode.ExactPath;
+        case BitwardenUriMatchType.RegularExpression:
+            return AutofillMode.RegularExpression;
+        case BitwardenUriMatchType.Never:
+            return AutofillMode.Never;
+        case BitwardenUriMatchType.BaseDomain:
+        default:
+            return AutofillMode.Default;
+    }
+};
+
 export const extractBitwardenUrls = (item: BitwardenLoginItem) =>
-    (item.login.uris ?? []).reduce<{ web: string[]; android: string[] }>(
-        (acc, { uri }) => {
+    (item.login.uris ?? []).reduce<{ web: AutofillUrl[]; android: string[] }>(
+        (acc, { uri, match }) => {
             if (isBitwardenLinkedAndroidAppUrl(uri)) {
                 acc.android.push(uri.replace(BITWARDEN_ANDROID_APP_FLAG, ''));
                 return acc;
-            } else {
-                acc.web.push(uri);
             }
 
+            acc.web.push({ url: uri, mode: bitwardenMatchToAutofillMode(match) });
             return acc;
         },
         { web: [], android: [] }

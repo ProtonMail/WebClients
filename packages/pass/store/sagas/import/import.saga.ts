@@ -7,6 +7,7 @@ import { type ImportReport, formatIgnoredItem } from '@proton/pass/lib/import/he
 import type { ImportVault } from '@proton/pass/lib/import/types';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
+import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     importItems,
@@ -21,25 +22,17 @@ import { matchCancel } from '@proton/pass/store/request/actions';
 import { createVaultWorker } from '@proton/pass/store/sagas/vaults/vault-creation.saga';
 import { selectFeatureFlag, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type {
-    IndexedByShareIdAndItemId,
-    ItemImportIntent,
-    ItemRevision,
-    ItemType,
-    Maybe,
-    MaybeNull,
-    PassPlanResponse,
-} from '@proton/pass/types';
+import type { IndexedByShareIdAndItemId, ItemImportIntent, ItemRevision, Maybe, MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
-import partition from '@proton/utils/partition';
 
 type ImportWorkerState = {
     /** `true` when the import request has been cancelled via
@@ -47,10 +40,6 @@ type ImportWorkerState = {
      * operation to complete before terminating */
     aborted: boolean;
 };
-
-const unsupported = ['custom', 'sshKey', 'wifi'] as const;
-const isSupportedItemType = (item: ItemImportIntent): item is Exclude<ItemImportIntent, ItemImportIntent<(typeof unsupported)[number]>> =>
-    !(unsupported as readonly ItemType[]).includes(item.type);
 
 /** Creates a dedicated vault for imported items by directly invoking
  * the vault creation worker saga. This bypasses the standard action
@@ -102,17 +91,28 @@ function* importWorker(
     const passPlan: UserPassPlan = yield select(selectPassPlan);
     const userPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
     const canImportFiles = isPaidPlan(passPlan) && userPlan?.DisplayName !== 'Pass Essentials';
-    const canImportCustomItems: boolean = yield select(selectFeatureFlag(PassFeature.PassCustomTypeV1));
+    const URLAdvancedModesEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassAutofillUrlAdvancedModes));
 
-    const sanitized = (() => {
-        if (canImportCustomItems) return data.vaults;
-
-        return data.vaults.map((vault) => {
-            const [items, ignore] = partition(vault.items, isSupportedItemType);
-            ignored.push(...ignore.map(({ metadata, type }) => `[${type}] ${metadata.name}`));
-            return { ...vault, items };
-        });
-    })();
+    const sanitized = URLAdvancedModesEnabled
+        ? data.vaults
+        : data.vaults.map((vault) => ({
+              ...vault,
+              items: vault.items.map((item) =>
+                  item.type === 'login'
+                      ? {
+                            ...item,
+                            content: {
+                                ...item.content,
+                                autofillUrls: uniqueAutofillUrls(
+                                    item.content.autofillUrls.flatMap(({ url, mode }) =>
+                                        isAutofillModeDataOfTypeUrl(mode) ? [{ url, mode: AutofillMode.Default }] : []
+                                    )
+                                ),
+                            },
+                        }
+                      : item
+              ),
+          }));
 
     Object.values(sanitized).forEach(({ items }) =>
         items.forEach((item) => {

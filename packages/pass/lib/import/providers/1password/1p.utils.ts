@@ -9,7 +9,8 @@ import type {
     Maybe,
     MaybeNull,
 } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, WifiSecurity } from '@proton/pass/types/protobuf';
+import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
@@ -142,12 +143,26 @@ const extractURLsFromItem = <T>(options: {
     return [primary, ...secondary].filter(truthy);
 };
 
-export const extract1PasswordURLs = (item: OnePassItem): string[] =>
-    extractURLsFromItem({
-        item,
-        getPrimaryUrl: (item) => item.overview.url,
-        getSecondaryUrls: (item) => (item.overview.urls ?? []).map(({ url }) => url),
-    });
+const onePassModeToAutofillMode = (mode?: 'default' | 'host' | 'never'): AutofillMode => {
+    switch (mode) {
+        case 'host':
+            return AutofillMode.Exact;
+        case 'never':
+            return AutofillMode.Never;
+        default:
+            return AutofillMode.Default;
+    }
+};
+
+export const extract1PasswordURLs = (item: OnePassItem): AutofillUrl[] => {
+    const primary = item.overview.url;
+    const secondary = item.overview.urls ?? [];
+    const urls: AutofillUrl[] = secondary.map(({ url, mode }) => ({ url, mode: onePassModeToAutofillMode(mode) }));
+    if (primary && !secondary.some(({ url }) => url === primary)) {
+        urls.unshift({ url: primary, mode: AutofillMode.Default });
+    }
+    return urls;
+};
 
 export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
     extractURLsFromItem({

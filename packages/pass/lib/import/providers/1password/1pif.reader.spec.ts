@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent, ItemType } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
 
 import { read1Password1PifData } from './1pif.reader';
 
@@ -47,7 +47,7 @@ describe('Import 1password 1pif', () => {
         expect(item.content.itemUsername).toEqual('');
         expect(item.content.password).toEqual('f@LGRHG7BEcByVy--xTV8X4U');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
     });
@@ -64,7 +64,7 @@ describe('Import 1password 1pif', () => {
         expect(item.content.itemUsername).toEqual('somewhere');
         expect(item.content.password).toEqual('somepassword with " in it');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual(['https://slashdot.org/']);
+        expect(item.content.autofillUrls).toEqual([{ url: 'https://slashdot.org/', mode: AutofillMode.Default }]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([
             {
@@ -102,7 +102,7 @@ describe('Import 1password 1pif', () => {
         expect(item.content.itemUsername).toEqual('username test');
         expect(item.content.password).toEqual('password test');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
     });
@@ -131,7 +131,9 @@ describe('Import 1password 1pif', () => {
         expect(item.content.totpUri).toEqual(
             'otpauth://totp/Login%20with%20TOTP?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30'
         );
-        expect(item.content.urls).toEqual(['http://localhost:7777/dashboard/']);
+        expect(item.content.autofillUrls).toEqual([
+            { url: 'http://localhost:7777/dashboard/', mode: AutofillMode.Default },
+        ]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([
             {
