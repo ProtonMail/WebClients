@@ -29,6 +29,7 @@ import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
 import { getVatFormErrors } from '../hooks/useVatFormValidation';
 import { useVatPrefixSync } from '../hooks/useVatPrefixSync';
+import { cleanBillingAddressVat } from '../hooks/vatPrefixHelper';
 
 export interface EditBillingAdressModalInputs {
     initialFullBillingAddress: FullBillingAddress;
@@ -112,9 +113,11 @@ export const EditBillingAddressModal = (props: Props) => {
 
         setBackendErrors(null);
 
+        const submittedBillingAddress = cleanBillingAddressVat(fullBillingAddress);
+
         void withLoading(async () => {
             try {
-                await paymentsApi.updateFullBillingAddress(fullBillingAddress);
+                await paymentsApi.updateFullBillingAddress(submittedBillingAddress);
                 dispatch(
                     changeBillingAddress({
                         CountryCode: fullBillingAddress.BillingAddress.CountryCode,
@@ -123,7 +126,7 @@ export const EditBillingAddressModal = (props: Props) => {
                     })
                 );
 
-                onResolve?.(fullBillingAddress);
+                onResolve?.(submittedBillingAddress);
                 createNotification({ text: c('Success').t`Billing details updated` });
             } catch (error: any) {
                 if (error instanceof WrongBillingAddressError) {
