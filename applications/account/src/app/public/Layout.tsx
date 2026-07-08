@@ -35,6 +35,8 @@ export interface Props {
     stepper?: ReactNode;
     centeredContent?: boolean;
     layoutClassName?: string;
+    mainClassName?: string;
+    containerClassName?: string;
     toApp: APP_NAMES | undefined;
 }
 
@@ -80,6 +82,8 @@ const Layout = ({
     headerClassName,
     centeredContent,
     layoutClassName,
+    mainClassName,
+    containerClassName,
     topRight,
     hasFooter = true,
     hasAppLogos = true,
@@ -168,10 +172,11 @@ const Layout = ({
             <div
                 className={clsx(
                     'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column justify-space-between',
-                    centeredContent && 'absolute h-full w-full'
+                    centeredContent && 'absolute h-full w-full',
+                    containerClassName
                 )}
             >
-                <main className={clsx(centeredContent && 'flex self-center my-auto')}>
+                <main className={clsx(centeredContent && 'flex self-center my-auto', mainClassName)}>
                     {children}
                     {hasDecoration && hasAppLogos && (
                         <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">

@@ -6,7 +6,7 @@ import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import AppLink from '@proton/components/components/link/AppLink';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useRecoverySettingsTelemetry } from '../recoverySettingsTelemetry';
@@ -18,7 +18,7 @@ interface Props extends Omit<ButtonLikeProps<typeof AppLink>, 'as' | 'to'> {
 }
 
 const SecureAccountButton = ({ scoreTone, label, className, ...restButtonProps }: Props) => {
-    const app = getAppFromPathnameSafe(window.location.pathname);
+    const app = getAppFromPathnameSafe(window.location.pathname) ?? APPS.PROTONACCOUNT;
     const { sendAccountSafetyReviewClick } = useRecoverySettingsTelemetry();
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),

@@ -131,6 +131,7 @@ enum AccountFlag {
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     PasswordReminderASR = 'PasswordReminderASR',
     RecoveryFileShareEnabled = 'RecoveryFileShareEnabled',
+    GenericUserSettings = 'GenericUserSettings',
 }
 
 enum PaymentsFlag {
