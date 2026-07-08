@@ -55,6 +55,7 @@ function getReadyFileTasks(queueItems: QueueEntry[], maxCount: number): UploadTa
                 existingNodeUid: entry.existingNodeUid,
                 isUnfinishedUpload: entry.isUnfinishedUpload,
                 isForPhotos: true,
+                allowEmptyFile: entry.allowEmptyFile,
             };
         }
 
@@ -68,6 +69,7 @@ function getReadyFileTasks(queueItems: QueueEntry[], maxCount: number): UploadTa
             sizeEstimate: entry.clearTextExpectedSize,
             existingNodeUid: entry.existingNodeUid,
             isUnfinishedUpload: entry.isUnfinishedUpload,
+            allowEmptyFile: entry.allowEmptyFile,
         };
     });
 }
