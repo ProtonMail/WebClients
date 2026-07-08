@@ -6,9 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { useAuthentication } from '@proton/components/index';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
 
 import { useCategoriesOnboarding } from './CategoriesOnboardingContext';
 import { OnboardingStep } from './onboardingInterface';
@@ -151,10 +152,16 @@ export const CategoriesOnboardingSpotlight = ({ step, children }: OnboardingSpot
 
     const shouldWrap = needsWrapper(children);
 
+    const isActive = activeStep === step;
+    const isFreeUserSpotlight = step === OnboardingStep.FREE_USERS_SPOTLIGHT;
+    // We want to delay the display of the free-user spotlight to make it less intrusive
+    const delayedFreeUserShow = useSpotlightShow(isActive && isFreeUserSpotlight, 3 * SECOND);
+    const show = isFreeUserSpotlight ? delayedFreeUserShow : isActive;
+
     return (
         <Spotlight
-            show={activeStep === step}
-            size={step === OnboardingStep.FREE_USERS_SPOTLIGHT ? 'large' : undefined}
+            show={show}
+            size={isFreeUserSpotlight ? 'large' : undefined}
             borderRadius="xl"
             hasClose={false}
             innerClassName="p-6"

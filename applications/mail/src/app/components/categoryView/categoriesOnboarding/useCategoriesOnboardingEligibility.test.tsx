@@ -394,7 +394,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
                 jest.mocked(useMailSelector).mockReturnValue(true);
                 mockAllMailCount(100);
-                mockCategoriesView({ categoryViewAccess: false });
+                mockCategoriesView({ isCategoryViewEnabled: false });
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
