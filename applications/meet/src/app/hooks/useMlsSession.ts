@@ -60,8 +60,7 @@ export const useMlsSession = ({
         meetingLinkName: string,
         accessToken: string,
         meetingPassword: string,
-        participantsCountValue?: number | null,
-        isWaitingRoom = false
+        participantsCountValue?: number | null
     ): Promise<{ key: string; epoch: bigint } | undefined> => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
@@ -91,8 +90,7 @@ export const useMlsSession = ({
                     meetingLinkName,
                     meetingPassword,
                     sessionId,
-                    isMeetSwitchJoinTypeEnabled,
-                    isWaitingRoom
+                    isMeetSwitchJoinTypeEnabled
                 );
             } else {
                 const joinType = await meetCoreClient.getJoinType(
