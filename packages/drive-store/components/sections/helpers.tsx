@@ -4,9 +4,46 @@ import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { DecryptedLink } from '../../store';
-import type { SharedWithMeItem } from './SharedWithMe/SharedWithMe';
+import type {
+    AlbumProperties,
+    DecryptedLink,
+    EncryptedLink,
+    ExtendedInvitationDetails,
+    PhotoProperties,
+    SignatureIssues,
+} from '../../store';
 
+interface FileBrowserBaseItem {
+    id: string;
+    linkId: string;
+    isLocked?: boolean;
+    isInvitation?: boolean;
+    isBookmark?: boolean;
+    itemRowStyle?: React.CSSProperties;
+    isAnonymous?: boolean;
+    albumProperties?: AlbumProperties;
+    photoProperties?: PhotoProperties;
+}
+
+interface SharedWithMeItem extends FileBrowserBaseItem {
+    activeRevision?: EncryptedLink['activeRevision'];
+    cachedThumbnailUrl?: string;
+    hasThumbnail?: boolean;
+    isFile: boolean;
+    mimeType: string;
+    name: string;
+    signatureIssues?: SignatureIssues;
+    signatureEmail?: string;
+    size: number;
+    trashed: number | null;
+    rootShareId: string;
+    volumeId: string;
+    sharedOn?: number;
+    sharedBy?: string;
+    parentLinkId: string;
+    invitationDetails?: ExtendedInvitationDetails;
+    bookmarkDetails?: { token: string; createTime: number; urlPassword: string };
+}
 export const selectMessageForItemList = (
     isFiles: boolean[],
     messages: {
