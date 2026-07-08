@@ -28,7 +28,7 @@ import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
-import { HIGHLIGHTED_ITEM_INDEX, OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
+import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -91,7 +91,7 @@ const Item = ({
 
     const elementID = useMailSelector(selectElementID);
 
-    const { activeStep, categorizeStepLocation, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
+    const { listSpotlightStep, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
@@ -211,8 +211,7 @@ const Item = ({
         />
     );
 
-    const isCategorize = activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'list';
-    const dimItems = isCategorize ? index !== HIGHLIGHTED_ITEM_INDEX : userIsInB2COnboardingFlow;
+    const dimItems = listSpotlightStep !== undefined ? index !== HIGHLIGHTED_ITEM_INDEX : userIsInB2COnboardingFlow;
 
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">

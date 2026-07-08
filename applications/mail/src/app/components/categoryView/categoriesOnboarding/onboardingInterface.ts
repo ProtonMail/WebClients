@@ -28,6 +28,7 @@ export enum OnboardingStep {
     MESSAGE,
     CATEGORIZE,
     CUSTOMIZE,
+    FREE_USERS_SPOTLIGHT,
     DONE,
 }
 

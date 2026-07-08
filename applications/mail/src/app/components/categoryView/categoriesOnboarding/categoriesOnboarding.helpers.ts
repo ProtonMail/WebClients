@@ -1,5 +1,6 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
+import type { CategorizeStepLocation } from './onboardingInterface';
 import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onboardingInterface';
 
 /**
@@ -38,4 +39,28 @@ export const hasSeenAllOnboarding = (onboardingFlow: OnboardingFlow, flagValue: 
 
 export const hasSeenFreeUserSpotlight = (flagValue: number): boolean => {
     return hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS);
+};
+
+export const getSocialTabSpotlightStep = (
+    activeStep: OnboardingStep,
+    categorizeStepLocation: CategorizeStepLocation
+): OnboardingStep | undefined => {
+    if (activeStep === OnboardingStep.MESSAGE || activeStep === OnboardingStep.FREE_USERS_SPOTLIGHT) {
+        return activeStep;
+    }
+
+    if (activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'tab') {
+        return OnboardingStep.CATEGORIZE;
+    }
+
+    return undefined;
+};
+
+export const getListSpotlightStep = (
+    activeStep: OnboardingStep,
+    categorizeStepLocation: CategorizeStepLocation
+): OnboardingStep | undefined => {
+    return activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'list'
+        ? OnboardingStep.CATEGORIZE
+        : undefined;
 };
