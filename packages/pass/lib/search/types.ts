@@ -1,5 +1,7 @@
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
+
+export type PrivateDomains = MaybeNull<Set<string>>;
 
 export type FieldMatch<T extends ItemType = ItemType> = (item: ItemRevision<T>) => (needle: string) => boolean;
 export type ItemMatch<T extends ItemType = ItemType> = (item: ItemRevision<T>) => (needles: string[]) => boolean;

@@ -3,6 +3,10 @@ import { c } from 'ttag';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { obfuscateExtraFields, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
+import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
+import { safeRegExpFromPattern } from '@proton/pass/lib/urls/utils/utils';
 import type {
     CustomSectionValue,
     DeobfuscatedItemExtraField,
@@ -12,14 +16,13 @@ import type {
     Maybe,
     MaybeNull,
 } from '@proton/pass/types';
-import { CardType, WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
-import { prop } from '@proton/pass/utils/fp/lens';
+import { AutofillMode, CardType, WifiSecurity } from '@proton/pass/types/protobuf';
+import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { epochToDate } from '@proton/pass/utils/time/format';
-import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 
 export const getImportedVaultName = (vaultName?: string) => {
     if (!vaultName) {
@@ -44,11 +47,29 @@ export const getEmailOrUsername = async (
     }
 };
 
+/** Dedupes and sanitizes autofill entries: rejects entries with an unrecognized
+ * `mode` (e.g. from corrupted or hand-edited import data), malformed urls,
+ * unsupported schemes and oversized hostnames for URL-type modes, and
+ * invalid/unsafe patterns for `RegularExpression` via the same `safe-regex2`
+ * check the matching engine itself applies at match time. Every import provider
+ * must route `AutofillUrl[]` through this before persisting it. */
+export const sanitizeAutofillUrls = (urls: AutofillUrl[]): AutofillUrl[] =>
+    uniqueAutofillUrls(urls).flatMap(({ url, mode }): AutofillUrl[] => {
+        if (AutofillMode[mode] === undefined) return [];
+        if (mode === AutofillMode.RegularExpression) {
+            return safeRegExpFromPattern(url) !== null ? [{ url, mode }] : [];
+        }
+        if (!isAutofillModeDataOfTypeUrl(mode)) return [{ url, mode }];
+        const { valid, url: sanitized } = sanitizeURL(url);
+        return valid && sanitized ? [{ url: sanitized, mode }] : [];
+    });
+
 export const importLoginItem = (options: {
     name?: MaybeNull<string>;
     note?: MaybeNull<string>;
     password?: MaybeNull<string>;
     urls?: Maybe<string>[];
+    autofillUrls?: AutofillUrl[];
     totp?: MaybeNull<string>;
     extraFields?: DeobfuscatedItemExtraField[];
     trashed?: boolean;
@@ -58,17 +79,15 @@ export const importLoginItem = (options: {
     email?: MaybeNull<string>;
     username?: MaybeNull<string>;
 }): ItemImportIntent<'login'> => {
-    const urls = [...new Set((options.urls ?? []).filter(truthy))]
-        .map((uri) => {
-            const { valid, url } = sanitizeURL(uri);
-            return valid ? new URL(url) : undefined;
-        })
-        .filter(truthy);
+    const legacyUrls = (options.urls ?? []).filter(truthy).map((url) => ({ url, mode: AutofillMode.Default }));
+    const autofillUrls = sanitizeAutofillUrls([...legacyUrls, ...(options.autofillUrls ?? [])]);
 
-    const name = options.name || urls[0]?.hostname || c('Label').t`Unnamed item`;
+    const firstUrl = autofillUrls.find(({ mode }) => isAutofillModeDataOfTypeUrl(mode))?.url;
+    const firstHostname = parseUrl(firstUrl).hostname;
+    const name = options.name || firstHostname || c('Label').t`Unnamed item`;
 
     const getTOTPvalue = (totp?: MaybeNull<string>) => {
-        return totp ? parseOTPValue(totp, { label: options.name || urls[0]?.hostname }) : '';
+        return totp ? parseOTPValue(totp, { label: options.name || firstHostname }) : '';
     };
 
     return {
@@ -79,7 +98,7 @@ export const importLoginItem = (options: {
                 itemEmail: options.email || '',
                 itemUsername: options.username || '',
                 password: options.password || '',
-                urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
+                autofillUrls,
                 totpUri: getTOTPvalue(options.totp),
                 passkeys: [] /** FIXME: support importing passkeys in the future */,
             },

@@ -3,9 +3,10 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent, ItemType } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
 
 import { read1Password1PuxData } from './1pux.reader';
+import { OnePassCategory, OnePassState, OnePassVaultType } from './1pux.types';
 
 const sourceFiles = { '1password.1pux': `${__dirname}/mocks/1password.1pux` };
 
@@ -50,7 +51,9 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemEmail).toEqual('john@wick.com');
         expect(item.content.itemUsername).toEqual('');
         expect(item.content.password).toEqual('password');
-        expect(item.content.urls).toEqual(['http://localhost:7777/dashboard/']);
+        expect(item.content.autofillUrls).toEqual([
+            { url: 'http://localhost:7777/dashboard/', mode: AutofillMode.Default },
+        ]);
         expect(item.trashed).toEqual(false);
         expect(item.content.totpUri).toEqual(
             'otpauth://totp/Login%20item%20with%20two%20TOTP%20and%20one%20text%20extra%20fields?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30'
@@ -92,7 +95,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemUsername).toEqual('');
         expect(item.content.password).toEqual('');
         expect(item.content.totpUri).toEqual('otpauth://totp/az?secret=QS&algorithm=SHA1&digits=6&period=30');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
     });
@@ -110,7 +113,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemUsername).toEqual('somewhere');
         expect(item.content.password).toEqual('somepassword with " in it');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual(['https://slashdot.org/']);
+        expect(item.content.autofillUrls).toEqual([{ url: 'https://slashdot.org/', mode: AutofillMode.Default }]);
     });
 
     test('should support password only items [vault 1]', () => {
@@ -124,7 +127,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemUsername).toEqual('');
         expect(item.content.password).toEqual('f@LGRHG7BEcByVy--xTV8X4U');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
     });
@@ -140,7 +143,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemUsername).toEqual('Username test');
         expect(item.content.password).toEqual('password test');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
     });
@@ -181,7 +184,7 @@ describe('Import 1password 1pux', () => {
         expect(item.metadata.note).toEqual('');
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
     });
 
     test('should support generic login items [vault 2]', () => {
@@ -195,7 +198,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemUsername).toEqual('username');
         expect(item.content.password).toEqual('password');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(false);
         expect(item.extraFields).toEqual([]);
     });
@@ -211,7 +214,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.itemUsername).toEqual('archived');
         expect(item.content.password).toEqual('password');
         expect(item.content.totpUri).toEqual('');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.trashed).toEqual(true);
         expect(item.extraFields).toEqual([]);
     });
@@ -313,5 +316,83 @@ describe('Import 1password 1pux', () => {
     test('should handle all 1Password item types', () => {
         const { ignored } = get1PasswordData('1password.1pux');
         expect(ignored).toEqual([]);
+    });
+
+    describe('URL autofill mode mapping', () => {
+        const makeOnePuxFile = async (
+            urls: { label: string; url: string; mode?: 'default' | 'host' | 'never' }[]
+        ): Promise<File> => {
+            const exportData = {
+                accounts: [
+                    {
+                        attrs: { accountName: 'test', name: 'Test', email: 'test@test.com', domain: 'test.com' },
+                        vaults: [
+                            {
+                                attrs: {
+                                    uuid: 'vault1',
+                                    desc: '',
+                                    name: 'Test Vault',
+                                    avatar: '',
+                                    type: OnePassVaultType.PRIVATE,
+                                },
+                                items: [
+                                    {
+                                        uuid: 'item1',
+                                        favIndex: 0,
+                                        createdAt: 1700000000,
+                                        updatedAt: 1700000001,
+                                        state: OnePassState.ACTIVE,
+                                        categoryUuid: OnePassCategory.LOGIN,
+                                        overview: { title: 'Test Login', subtitle: '', url: '', urls, tags: [] },
+                                        details: { loginFields: [], notesPlain: null, sections: [] },
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            };
+
+            const zip = await import('@zip.js/zip.js');
+            zip.configure({ useWebWorkers: false, useCompressionStream: false });
+            const blobWriter = new zip.BlobWriter('application/zip');
+            const writer = new zip.ZipWriter(blobWriter);
+            await writer.add('export.data', new zip.TextReader(JSON.stringify(exportData)));
+            await writer.close();
+            return new File([await blobWriter.getData()], 'test.1pux');
+        };
+
+        test.each([
+            ['default', AutofillMode.Default],
+            ['host', AutofillMode.Exact],
+            ['never', AutofillMode.Never],
+        ] as const)('maps 1Password mode "%s" to the correct AutofillMode', async (mode, expectedMode) => {
+            const file = await makeOnePuxFile([{ label: 'website', url: 'https://example.com', mode }]);
+            const result = await read1Password1PuxData(file);
+            const item = result.vaults[0].items[0] as ItemImportIntent<'login'>;
+            expect(item.content.autofillUrls[0].mode).toBe(expectedMode);
+        });
+
+        test('defaults to AutofillMode.Default when mode is absent', async () => {
+            const file = await makeOnePuxFile([{ label: 'website', url: 'https://example.com' }]);
+            const result = await read1Password1PuxData(file);
+            const item = result.vaults[0].items[0] as ItemImportIntent<'login'>;
+            expect(item.content.autofillUrls[0].mode).toBe(AutofillMode.Default);
+        });
+
+        test('maps multiple URLs with different modes', async () => {
+            const file = await makeOnePuxFile([
+                { label: 'fill anywhere', url: 'https://example.com', mode: 'default' },
+                { label: 'exact host', url: 'https://exact.example.com', mode: 'host' },
+                { label: 'never', url: 'https://never.example.com', mode: 'never' },
+            ]);
+            const result = await read1Password1PuxData(file);
+            const item = result.vaults[0].items[0] as ItemImportIntent<'login'>;
+            expect(item.content.autofillUrls).toEqual([
+                { url: 'https://example.com/', mode: AutofillMode.Default },
+                { url: 'https://exact.example.com/', mode: AutofillMode.Exact },
+                { url: 'https://never.example.com/', mode: AutofillMode.Never },
+            ]);
+        });
     });
 });

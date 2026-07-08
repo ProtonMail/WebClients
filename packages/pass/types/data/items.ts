@@ -36,7 +36,11 @@ type MapExtraFields<T> = TypeMapper<T, [[ExtraField, DeobfuscatedItemExtraField]
 export type ItemContent<T extends ItemType> = {
     alias: ProtobufItemAlias;
     note: ProtobufItemNote;
-    login: Obfuscate<SanitizedBuffers<ProtobufItemLogin, string>, 'itemEmail' | 'itemUsername' | 'totpUri', 'password'>;
+    login: Obfuscate<
+        SanitizedBuffers<Omit<ProtobufItemLogin, 'urls'>, string>,
+        'itemEmail' | 'itemUsername' | 'totpUri',
+        'password'
+    >;
     creditCard: Obfuscate<ProtobufItemCreditCard, never, 'number' | 'verificationNumber' | 'pin'>;
     identity: MapExtraFields<ProtobufItemIdentity>;
     sshKey: Obfuscate<MapExtraFields<ProtobufItemSSHKey>, never, 'privateKey'>;

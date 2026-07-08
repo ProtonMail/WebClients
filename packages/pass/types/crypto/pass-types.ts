@@ -27,7 +27,7 @@ export enum PassSignatureContext {
 
 export enum ContentFormatVersion {
     Share = 1,
-    Item = 7,
+    Item = 8,
 }
 
 /* type aliases */

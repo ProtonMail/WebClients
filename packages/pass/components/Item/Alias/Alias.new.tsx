@@ -30,6 +30,7 @@ import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
+import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import { reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
@@ -38,7 +39,6 @@ import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-alias';
 
