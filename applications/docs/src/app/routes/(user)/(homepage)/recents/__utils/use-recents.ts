@@ -12,7 +12,7 @@ import {
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { getFullPathFromAncestry, getIsSharedWithMe } from '~/utils/drive-sdk'
+import { getFullPathFromAncestry, getIsSharedWithMe } from '~/drive-sdk'
 import { createItemValue } from './create-document-items'
 import { useRecentsStore } from './use-recents-store'
 import { getRoleFromHierarchy } from '~/utils/get-role-from-ancestors'
