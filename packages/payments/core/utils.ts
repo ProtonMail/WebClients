@@ -8,15 +8,6 @@ export const toV5PaymentToken = (PaymentToken: string): V5PaymentToken => {
     };
 };
 
-export function sanitizeV5PaymentToken(data: V5PaymentToken): V5PaymentToken {
-    const sanitizedData: V5PaymentToken = {
-        v: 5,
-        PaymentToken: data.PaymentToken,
-    };
-
-    return sanitizedData;
-}
-
 export function v5PaymentTokenToLegacyPaymentToken(data: V5PaymentToken): TokenPaymentMethod {
     return {
         Payment: {

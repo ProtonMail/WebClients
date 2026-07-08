@@ -145,7 +145,7 @@ export interface PaymentsContextType {
     couponConfig: CouponConfigRendered | undefined;
 }
 
-export const PaymentsContext = createContext<PaymentsContextType | null>(null);
+const PaymentsContext = createContext<PaymentsContextType | null>(null);
 
 interface PaymentsContextProviderProps {
     children: ReactNode;

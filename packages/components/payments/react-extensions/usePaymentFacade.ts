@@ -54,7 +54,7 @@ export interface OperationsSubscriptionData {
     vatNumber?: string;
 }
 
-export interface OperationsInvoiceData {
+interface OperationsInvoiceData {
     invoiceId: string;
 }
 

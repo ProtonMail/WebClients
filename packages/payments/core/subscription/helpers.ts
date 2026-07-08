@@ -131,8 +131,6 @@ export type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
 export const getAddons = (subscription: Subscription | undefined) =>
     (subscription?.Plans || []).filter(({ Type }) => Type === PLAN_TYPES.ADDON);
-export const hasAddons = (subscription: Subscription | undefined) =>
-    (subscription?.Plans || []).some(({ Type }) => Type === PLAN_TYPES.ADDON);
 
 export const getPlanName = (subscription: MaybeFreeSubscription, service?: PLAN_SERVICES) => {
     const plan = getPlan(subscription, service);
@@ -144,7 +142,7 @@ export const getPlanTitle = (subscription: MaybeFreeSubscription) => {
     return hasLifetimeCoupon(subscription) ? LIFETIME_PLAN_TITLE : plan?.Title;
 };
 
-export const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS) => {
+const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS) => {
     if (isFreeSubscription(subscription)) {
         return false;
     }
@@ -271,7 +269,7 @@ const hasAIAssistantCondition = [
 export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
     hasSomeAddonOrPlan(subscription, hasAIAssistantCondition);
 
-export const PLANS_WITH_AI_INCLUDED = [PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];
+const PLANS_WITH_AI_INCLUDED = [PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];
 export const hasPlanWithAIAssistantIncluded = (subscription: MaybeFreeSubscription) =>
     hasSomeAddonOrPlan(subscription, PLANS_WITH_AI_INCLUDED);
 
@@ -345,18 +343,11 @@ export const getCanSubscriptionAccessDuoPlan = (subscription: MaybeFreeSubscript
     return hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessDuoPlanCondition.has(Name));
 };
 
-const getCanAccessPassFamilyPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS]);
-export const getCanSubscriptionAccessPassFamilyPlan = (subscription: MaybeFreeSubscription) => {
-    return (
-        hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessPassFamilyPlanCondition.has(Name))
-    );
-};
-
 export const getIsB2BAudienceFromSubscription = (subscription: MaybeFreeSubscription) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
 
-export const getIsFamilyAudienceFromSubscription = (subscription: MaybeFreeSubscription) => {
+const getIsFamilyAudienceFromSubscription = (subscription: MaybeFreeSubscription) => {
     return hasDuo(subscription) || hasFamily(subscription) || hasPassFamily(subscription);
 };
 
@@ -376,16 +367,6 @@ export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
 
 export const getHasVpnOnlyB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
-};
-
-export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
-    return (
-        hasDeprecatedVPN(subscription) ||
-        hasVPN2024(subscription) ||
-        hasVPNPassBundle(subscription) ||
-        hasVpnPro(subscription) ||
-        hasVpnBusiness(subscription)
-    );
 };
 
 export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
@@ -562,29 +543,6 @@ export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE |
     return CYCLE.MONTHLY;
 }
 
-export function getLongerCycle(cycle: CYCLE): CYCLE;
-export function getLongerCycle(cycle: CYCLE | undefined): CYCLE | undefined {
-    if (!cycle) {
-        return undefined;
-    }
-    if (cycle === CYCLE.MONTHLY) {
-        return CYCLE.YEARLY;
-    }
-    if (cycle === CYCLE.YEARLY) {
-        return CYCLE.TWO_YEARS;
-    }
-
-    if (cycle === CYCLE.FIFTEEN || cycle === CYCLE.THIRTY) {
-        return CYCLE.TWO_YEARS;
-    }
-
-    return cycle;
-}
-
-export const getHasCoupon = (subscription: Subscription | undefined, coupon: string) => {
-    return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
-};
-
 export function isCancellableOnlyViaSupport(subscription: MaybeFreeSubscription) {
     if (isTrial(subscription)) {
         // Always allow canceling trials without contacting support
@@ -664,10 +622,6 @@ export const isAddonDowngrade = (current: Subscription, upcoming: Subscription |
     return currentAddons.some(
         ({ Name, Quantity }) => (upcomingAddons.find((a) => a.Name === Name)?.Quantity ?? 0) < Quantity
     );
-};
-
-export const isAddonDowngradeOnSameCycle = (current: Subscription, upcoming: Subscription) => {
-    return isSameCycle(current, upcoming) && isAddonDowngrade(current, upcoming);
 };
 
 export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {

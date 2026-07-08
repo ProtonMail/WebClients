@@ -119,7 +119,7 @@ type NonSavablePaymentMethods = 'bitcoin' | 'cash' | 'token';
  *
  * @see confluence.md for full documentation of payment methods
  */
-export type TelemetryPaymentMethod = SavablePaymentMethods | SavedPaymentMethods | NonSavablePaymentMethods;
+type TelemetryPaymentMethod = SavablePaymentMethods | SavedPaymentMethods | NonSavablePaymentMethods;
 
 /**
  * Maps internal payment method types to telemetry-friendly strings.

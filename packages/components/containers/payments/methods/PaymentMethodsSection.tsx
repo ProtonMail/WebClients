@@ -97,7 +97,7 @@ const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
                 )}
             </div>
             <PaymentMethodsTable methods={paymentMethods} app={app} />
-            {renderCreditCardModal && <EditCardModal app={app} {...creditCardModalProps} />}
+            {renderCreditCardModal && <EditCardModal editExistingCard={false} app={app} {...creditCardModalProps} />}
             {renderPaypalV5Modal && <PayPalModal app={app} {...paypalV5ModalProps} />}
             {renderInAppPurchaseModal && subscription && (
                 <InAppPurchaseModal {...inAppPurchaseModalProps} subscription={subscription} />
