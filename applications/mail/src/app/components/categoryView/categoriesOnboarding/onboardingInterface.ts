@@ -1,10 +1,12 @@
-export enum AudienceType {
-    B2B = 'b2b',
-    B2C = 'b2c',
+export enum OnboardingFlow {
+    NONE,
+    B2B,
+    B2C,
+    FREE_PROMPT,
 }
 
 export interface OnboardingInfo {
-    audienceType?: AudienceType;
+    onboardingFlow: OnboardingFlow;
     isUserEligible: boolean;
     flagValue: number;
 }
