@@ -1,4 +1,4 @@
-import { normalizeVegaLiteSpec, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
+import { normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
 
 describe('normalizeVegaLiteSpec', () => {
     it('combines same-unit series on one chart when inferring from values', () => {
@@ -402,6 +402,25 @@ describe('normalizeVegaLiteSpec', () => {
 
         const tooltip = (spec.encoding as Record<string, unknown>).tooltip as Record<string, unknown>[];
         expect(tooltip[0]?.format).toBe('%');
+    });
+
+    it('rewrites Excel-style axis formats like :0 into valid d3 formats', () => {
+        const spec: Record<string, unknown> = {
+            mark: 'line',
+            encoding: {
+                x: { field: 'hour', type: 'quantitative', axis: { format: ':0' } },
+                y: { field: 'error_rate', type: 'quantitative', axis: { format: '.1f' } },
+                tooltip: [
+                    { field: 'hour', type: 'quantitative', format: ':0' },
+                    { field: 'error_rate', type: 'quantitative', format: '.1f' },
+                ],
+            },
+        };
+
+        normalizeInvalidD3Formats(spec);
+        const encoding = spec.encoding as Record<string, unknown>;
+        expect((encoding.x as Record<string, unknown>).axis).toMatchObject({ format: 'd' });
+        expect((encoding.tooltip as Record<string, unknown>[])[0]).toMatchObject({ format: 'd' });
     });
 });
 

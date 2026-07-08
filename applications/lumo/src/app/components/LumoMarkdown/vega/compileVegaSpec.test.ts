@@ -295,4 +295,40 @@ describe('compileVegaSpec', () => {
         expect(color.condition).toBeUndefined();
         expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
     });
+
+    it('compiles hourly line chart with Excel-style :0 formats after sanitization', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: { text: 'API Error Rate by Hour UTC', subtitle: 'Error spikes to 1.3% at 3:00 UTC' },
+            data: {
+                values: Array.from({ length: 24 }, (_, hour) => ({
+                    hour,
+                    error_rate: hour === 3 ? 1.3 : 0.4,
+                })),
+            },
+            mark: { type: 'line', point: true, interpolate: 'monotone' },
+            encoding: {
+                x: { field: 'hour', type: 'quantitative', title: 'Hour UTC', axis: { format: ':0' } },
+                y: { field: 'error_rate', type: 'quantitative', title: 'Error Rate (%)', axis: { format: '.1f' } },
+                color: {
+                    condition: { test: 'datum.error_rate > 0.8', value: '#ff6b6b' },
+                    value: '#6d4aff',
+                },
+                tooltip: [
+                    { field: 'hour', type: 'quantitative', title: 'Hour (UTC)', format: ':0' },
+                    { field: 'error_rate', type: 'quantitative', title: 'Error Rate (%)', format: '.1f' },
+                ],
+            },
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const encoding = spec.encoding as Record<string, unknown>;
+        const xAxis = (encoding.x as Record<string, unknown>).axis as Record<string, unknown>;
+        const tooltip = encoding.tooltip as Record<string, unknown>[];
+
+        expect(xAxis.format).toBe('d');
+        expect(tooltip[0]?.format).toBe('d');
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
+    });
 });
