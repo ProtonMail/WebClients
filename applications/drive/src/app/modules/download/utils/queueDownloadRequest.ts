@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { type NodeEntity, NodeType } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
 
@@ -5,11 +7,13 @@ import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import type { DownloadOptions } from '../downloadTypes';
 
+export type RequestedDownload = NodeEntity[] | { albumUid: string; albumName: string };
+
 type QueueDownloadRequestParams = DownloadOptions & {
     nodes: NodeEntity[];
     isPhoto: boolean;
     containsUnsupportedFile?: boolean;
-    requestedDownloads: Map<string, NodeEntity[]>;
+    requestedDownloads: Map<string, RequestedDownload>;
     scheduleSingleFile: (downloadId: string, node: NodeEntity) => void;
     scheduleArchive: (downloadId: string, nodes: NodeEntity[]) => void;
     getArchiveName: (nodes: NodeEntity[]) => string;
@@ -20,7 +24,7 @@ export function queueFailedDownloadRequest({
     requestedDownloads,
 }: {
     nodes: NodeEntity[];
-    requestedDownloads: Map<string, NodeEntity[]>;
+    requestedDownloads: Map<string, RequestedDownload>;
 }): string | undefined {
     if (!nodes.length) {
         return undefined;
@@ -100,5 +104,34 @@ export function queueDownloadRequest({
     });
     requestedDownloads.set(downloadId, nodes);
     void scheduleArchive(downloadId, nodes);
+    return downloadId;
+}
+
+type QueueAlbumDownloadRequestParams = {
+    albumUid: string;
+    albumName: string;
+    requestedDownloads: Map<string, RequestedDownload>;
+    scheduleArchive: (downloadId: string) => void;
+};
+
+export function queueAlbumDownloadRequest({
+    albumUid,
+    albumName,
+    requestedDownloads,
+    scheduleArchive,
+}: QueueAlbumDownloadRequestParams): string {
+    const { addDownloadItem } = useDownloadManagerStore.getState();
+    const archiveName = `${albumName.trim() || c('Info').t`Album`}.zip`;
+
+    const downloadId = addDownloadItem({
+        name: archiveName,
+        storageSize: undefined,
+        downloadedBytes: 0,
+        status: DownloadStatus.Preparing,
+        nodeUids: [albumUid],
+        isPhoto: true,
+    });
+    requestedDownloads.set(downloadId, { albumUid, albumName });
+    void scheduleArchive(downloadId);
     return downloadId;
 }
