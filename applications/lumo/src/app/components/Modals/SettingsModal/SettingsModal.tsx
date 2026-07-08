@@ -302,9 +302,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {isVisualizationInstructionsEnabled && (
                 <SettingsSectionItem
                     icon="ChartLine"
-                    text={c('collider_2025: Title').t`Charts and KPI cards`}
+                    text={c('collider_2025: Title').t`Visualization mode`}
                     subtext={c('collider_2025: Description')
-                        .t`Let ${LUMO_SHORT_APP_NAME} format data with Vega-Lite charts and KPI card rows`}
+                        .t`Let ${LUMO_SHORT_APP_NAME} visualize data with charts`}
                     button={
                         <Toggle
                             id="visualization-instructions-toggle"
