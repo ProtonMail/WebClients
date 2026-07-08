@@ -11,7 +11,6 @@ import type {
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
-import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -50,6 +49,14 @@ export type SpreadsheetRef = {
   focusSheet: (() => void) | undefined
   generatePatches: () => Promise<unknown>
   applyPatches: (patches: unknown) => void
+}
+
+const splitExtension = (filename = '') => {
+  const endIdx = filename.lastIndexOf('.')
+  if (endIdx === -1) {
+    return [filename, '']
+  }
+  return [filename.slice(0, endIdx), filename.slice(endIdx + 1)]
 }
 
 export type SpreadsheetProps = {
