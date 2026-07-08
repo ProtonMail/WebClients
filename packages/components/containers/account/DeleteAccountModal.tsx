@@ -35,7 +35,6 @@ import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constan
 import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -54,7 +53,6 @@ enum STEP {
 }
 
 const DeleteAccountModal = (props: Props) => {
-    const deleteAccountMergeReasonEnabled = useFlag('DeleteAccountMergeReason');
     const [step, setStep] = useState<STEP>(STEP.REASON_SELECTION);
 
     const reasonsWhichIgnoreFeedback: ACCOUNT_DELETION_REASONS[] = [MERGE_ACCOUNT];
@@ -102,13 +100,11 @@ const DeleteAccountModal = (props: Props) => {
             value={USE_OTHER_SERVICE}
             key={USE_OTHER_SERVICE}
         />,
-        deleteAccountMergeReasonEnabled && (
-            <Option
-                title={c('Option').t`I'd like to merge this account into another one`}
-                value={MERGE_ACCOUNT}
-                key={MERGE_ACCOUNT}
-            />
-        ),
+        <Option
+            title={c('Option').t`I'd like to merge this account into another one`}
+            value={MERGE_ACCOUNT}
+            key={MERGE_ACCOUNT}
+        />,
         <Option title={c('Option').t`My reason isn't listed`} value={OTHER} key={OTHER} />,
     ].filter(isTruthy);
 
