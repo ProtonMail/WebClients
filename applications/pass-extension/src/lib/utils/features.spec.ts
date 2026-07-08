@@ -1,7 +1,7 @@
 import { CRITERIA_MASKS, toggleCriteria } from '@proton/pass/lib/settings/pause-list';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { RecursivePartial } from '@proton/pass/types';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { computeFeatures, shouldEnableDetector, shouldInjectContentScript } from './features';
 

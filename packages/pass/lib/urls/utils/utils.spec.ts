@@ -6,7 +6,9 @@ import {
     intoDomainWithPort,
     isTotpUri,
     isValidURLScheme,
+    safeRegExpFromPattern,
     urlEq,
+    urlGlobToRegExp,
 } from './utils';
 
 describe('URL utils', () => {
@@ -156,5 +158,58 @@ describe('URL utils', () => {
             ['example.com', 'example.org'],
             ['foo*.bar', 'fo.bar'],
         ])('"%s" does not match "%s"', (pattern, value) => expect(globToRegExp(pattern).test(value)).toBe(false));
+
+        test.each([
+            'example.co?',
+            'foo+bar.com',
+            '(foo|bar).com',
+            '[abc].example.com',
+            'a{2,3}.com',
+            'price$9.com',
+            'path\\to.com',
+        ])('"%s" does not throw and does not match unrelated domain', (pattern) => {
+            expect(() => globToRegExp(pattern)).not.toThrow();
+            expect(globToRegExp(pattern).test('example.com')).toBe(false);
+        });
+    });
+
+    describe('`urlGlobToRegExp`', () => {
+        test.each([
+            ['*.example.com', 'sub.example.com'],
+            ['subdomain*.acme.com', 'subdomain42.acme.com'],
+            ['example.com', 'example.com'],
+            ['**.example.com', 'sub.sub.example.com'],
+            ['https://**.example.com/*/page', 'https://a.b.example.com/foo/page'],
+            ['https://example.com/**/page', 'https://example.com/foo/bar/page'],
+        ])('"%s" matches "%s"', (pattern, value) => expect(urlGlobToRegExp(pattern).test(value)).toBe(true));
+
+        test.each([
+            ['*.example.com', 'example.com'],
+            ['*.example.com', 'sub.sub.example.com'],
+            ['*.config.js', 'webpack.production.config.js'],
+            ['https://**.example.com/*/page', 'https://a.b.example.com/foo/bar/page'],
+        ])('"%s" does not match "%s"', (pattern, value) => expect(urlGlobToRegExp(pattern).test(value)).toBe(false));
+    });
+
+    describe('`safeRegExpFromPattern`', () => {
+        test('returns a RegExp for valid safe patterns', () => {
+            expect(safeRegExpFromPattern('example\\.com')).toBeInstanceOf(RegExp);
+            expect(safeRegExpFromPattern('.*\\.example\\.com')).toBeInstanceOf(RegExp);
+        });
+
+        test('compiled regex matches correctly', () => {
+            expect(safeRegExpFromPattern('example\\.com')?.test('example.com')).toBe(true);
+            expect(safeRegExpFromPattern('example\\.com')?.test('example.org')).toBe(false);
+        });
+
+        test('returns null for invalid regex syntax', () => {
+            expect(safeRegExpFromPattern('[')).toBeNull();
+            expect(safeRegExpFromPattern('(unclosed')).toBeNull();
+        });
+
+        test('returns null for ReDoS-prone patterns', () => {
+            expect(safeRegExpFromPattern('(a+)+')).toBeNull();
+            expect(safeRegExpFromPattern('(x+x+)+')).toBeNull();
+        });
     });
 });

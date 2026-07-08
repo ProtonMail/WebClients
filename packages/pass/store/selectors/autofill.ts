@@ -1,18 +1,19 @@
-import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem } from '@proton/pass/lib/items/item.predicates';
 import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { SelectAutofillCandidatesOptions, SelectOTPAutofillCandidateOptions } from '@proton/pass/lib/search/types';
 import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
+import { searchItemsByDomain } from '@proton/pass/lib/urls/search/match';
+import type { SearchItemsByDomainOptions } from '@proton/pass/lib/urls/types';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { selectItemsFactory, selectVisibleItems } from '@proton/pass/store/selectors/items';
-import { createMatchDomainItemsSelector } from '@proton/pass/store/selectors/match';
 import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
-import { NOOP_LIST_SELECTOR, createUncachedSelector } from '@proton/pass/store/selectors/utils';
+import { selectFeatureFlag } from '@proton/pass/store/selectors/user';
+import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, ItemRevisionWithOptimistic, ShareId } from '@proton/pass/types';
-import { deduplicate } from '@proton/pass/utils/array/duplicate';
+import type { FormSubmission, ItemRevision, Maybe, ShareId } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export const selectAutofillableShareIDs = createUncachedSelector(
     [selectVisibleShares, (_: State, writableOnly?: boolean) => writableOnly],
@@ -34,44 +35,14 @@ export const selectAutofillCCCandidates = (shareIds?: string[]) =>
  * the other subdomain matches excluding any previously matched direct subdomain matches.
  * If we have no subdomain : return all matches (top level and other possible subdomain
  * matches) with top-level domain matches first. Pushes subdomain matches on top */
-export const selectAutofillLoginCandidates = ({
-    domain,
-    subdomain,
-    port,
-    isPrivate,
-    isSecure,
-    protocol,
-    shareIds,
-    strict,
-}: SelectAutofillCandidatesOptions) =>
-    domain === null
-        ? NOOP_LIST_SELECTOR<ItemRevisionWithOptimistic<'login'>>
-        : createUncachedSelector(
-              [
-                  createMatchDomainItemsSelector(domain, {
-                      isPrivate,
-                      port,
-                      protocol: !isSecure && protocol ? protocol : null,
-                      shareIds,
-                      sortOn: 'priority',
-                      strict,
-                      visible: true,
-                  }),
-                  createMatchDomainItemsSelector(subdomain ?? '', {
-                      isPrivate,
-                      port,
-                      protocol: !isSecure && protocol ? protocol : null,
-                      shareIds,
-                      sortOn: 'lastUseTime',
-                      strict,
-                      visible: true,
-                  }),
-              ],
-              (domainMatches, subdomainMatches) => deduplicate(subdomainMatches.concat(domainMatches), itemEq)
-          );
+export const selectAutofillLoginCandidates = (url: Maybe<string>, options: SearchItemsByDomainOptions) =>
+    createUncachedSelector(
+        [() => url, selectVisibleItems, () => options, selectFeatureFlag(PassFeature.PassAutofillUrlRegex)],
+        (url, items, options, regexEnabled) => searchItemsByDomain(url, items, { ...options, regexEnabled })
+    );
 
-export const selectOTPCandidate = ({ submission, ...options }: SelectOTPAutofillCandidateOptions) =>
-    createUncachedSelector(selectAutofillLoginCandidates({ ...options, strict: true }), (candidates) => {
+export const selectOTPCandidate = (url: Maybe<string>, submission?: FormSubmission, options?: SearchItemsByDomainOptions) =>
+    createUncachedSelector(selectAutofillLoginCandidates(url, { ...options, strict: true }), (candidates) => {
         const otpItems = candidates.filter(hasOTP);
         const userIdentifier = submission?.data.userIdentifier;
 

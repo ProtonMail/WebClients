@@ -13,6 +13,7 @@ import {
     createCoreTelemetryService,
 } from '@proton/pass/lib/telemetry/service';
 import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import {
     selectAutofillSettings,
     selectDisallowedDomains,
@@ -22,7 +23,6 @@ import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@pro
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 
@@ -63,7 +63,7 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                     const validTab = tabId && isSupportedSenderUrl(tabUrl);
 
                     const { itemUrls, extensionField } = extra;
-                    const matchedLoginCount = ctx.service.autofill.getLoginCandidates({ url }).length;
+                    const matchedLoginCount = ctx.service.autofill.getLoginCandidates(url).length;
                     const loginAutofillSettingsEnabled = selectAutofillSettings(state).login ?? false;
                     const disallowedDomains = selectDisallowedDomains(state);
                     const orgDomains = selectOrgDomains(state);

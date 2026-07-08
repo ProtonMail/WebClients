@@ -4,6 +4,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
+import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { type CustomElementRef, createCustomElement } from '@proton/pass/utils/dom/create-element';
@@ -11,7 +12,6 @@ import { POPOVER_SUPPORTED, getActiveModal, getClosestModal } from '@proton/pass
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 import { PASS_ELEMENT_THEME } from './custom-elements/ProtonPassElement';
 import type { ProtonPassRoot } from './custom-elements/ProtonPassRoot';

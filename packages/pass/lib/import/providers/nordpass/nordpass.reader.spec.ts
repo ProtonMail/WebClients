@@ -3,6 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemType } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readNordPassData } from './nordpass.reader';
@@ -53,7 +54,7 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.itemEmail).toEqual('');
             expect(item.content.itemUsername).toEqual('admin');
             expect(item.content.password).toEqual('proton123');
-            expect(item.content.urls[0]).toEqual('https://proton.me/');
+            expect(item.content.autofillUrls[0]).toEqual({ url: 'https://proton.me/', mode: AutofillMode.Default });
         });
 
         test('should support login items with notes [vault 1]', () => {
@@ -64,7 +65,10 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.itemEmail).toEqual('');
             expect(item.content.itemUsername).toEqual('@nobody');
             expect(item.content.password).toEqual('proton123');
-            expect(item.content.urls[0]).toEqual('https://twitter.com/login');
+            expect(item.content.autofillUrls[0]).toEqual({
+                url: 'https://twitter.com/login',
+                mode: AutofillMode.Default,
+            });
             expect(item.content.totpUri).toEqual('');
         });
 
@@ -76,7 +80,7 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.itemEmail).toEqual('');
             expect(item.content.itemUsername).toEqual('@nobody');
             expect(item.content.password).toEqual('proton123');
-            expect(item.content.urls[0]).toEqual('https://fb.com/login');
+            expect(item.content.autofillUrls[0]).toEqual({ url: 'https://fb.com/login', mode: AutofillMode.Default });
             expect(item.content.totpUri).toEqual('');
         });
 
@@ -88,7 +92,7 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.itemEmail).toEqual('');
             expect(item.content.itemUsername).toEqual('');
             expect(item.content.password).toEqual('');
-            expect(item.content.urls).toEqual([]);
+            expect(item.content.autofillUrls).toEqual([]);
         });
 
         test('should support login items [vault 2]', () => {
@@ -99,7 +103,10 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.itemEmail).toEqual('nobody@proton.me');
             expect(item.content.itemUsername).toEqual('');
             expect(item.content.password).toEqual('proton123');
-            expect(item.content.urls[0]).toEqual('https://account.proton.me/');
+            expect(item.content.autofillUrls[0]).toEqual({
+                url: 'https://account.proton.me/',
+                mode: AutofillMode.Default,
+            });
         });
 
         test('should support note items [vault 2]', () => {
@@ -169,7 +176,11 @@ describe('NordPass CSV Importer', () => {
             expect(item.content.itemEmail).toEqual('');
             expect(item.content.itemUsername).toEqual('CustomFields');
             expect(item.content.password).toEqual('CustomFields');
-            expect(item.content.urls).toEqual(['https://hello.com/', 'https://test.me/lol', 'https://test.net/']);
+            expect(item.content.autofillUrls).toEqual([
+                { url: 'https://hello.com/', mode: AutofillMode.Default },
+                { url: 'https://test.me/lol', mode: AutofillMode.Default },
+                { url: 'https://test.net/', mode: AutofillMode.Default },
+            ]);
             expect(item.extraFields).toEqual([
                 { type: 'text', data: { content: 'VALUE' }, fieldName: '[TEXT]' },
                 { type: 'hidden', data: { content: 'VALUE' }, fieldName: '[HIDDEN]' },

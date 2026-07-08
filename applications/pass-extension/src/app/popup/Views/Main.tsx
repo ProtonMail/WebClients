@@ -29,10 +29,10 @@ import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightPr
 import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 import { selectIsSSO } from '@proton/pass/store/selectors/user';
 import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
-import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
 import { Sidebar } from './Sidebar';
 

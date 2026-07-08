@@ -54,7 +54,7 @@ export const createOTPService = () => {
             const { url, tabId } = await parseSender(sender);
             const submission = ctx.service.formTracker.get(tabId, url);
             const state = ctx.service.store.getState();
-            const match = selectOTPCandidate({ ...url, submission })(state);
+            const match = selectOTPCandidate(url.url ?? undefined, submission)(state);
 
             if (match) {
                 const { autofill } = await ctx.service.settings.resolve();

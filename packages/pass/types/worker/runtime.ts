@@ -1,10 +1,10 @@
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { FeatureFlagState } from '@proton/pass/store/reducers/user';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { AppState } from '@proton/pass/types/worker/state';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 export type ClientEndpoint =
     | 'popup'

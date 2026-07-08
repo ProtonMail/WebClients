@@ -17,5 +17,5 @@ module.exports = require('babel-jest').default.createTransformer({
         ['@babel/preset-react', { runtime: 'automatic' }],
         '@babel/preset-typescript',
     ],
-    plugins: ['@babel/plugin-transform-runtime', 'transform-require-context'],
+    plugins: ['@babel/plugin-transform-runtime', 'transform-require-context', 'babel-plugin-transform-import-meta'],
 });

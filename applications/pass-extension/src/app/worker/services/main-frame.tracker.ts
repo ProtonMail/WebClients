@@ -1,10 +1,10 @@
 import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import type { TabId } from '@proton/pass/types/worker/runtime';
 import { isFailedRequest } from '@proton/pass/utils/requests';
-import { parseUrl } from '@proton/pass/utils/url/parser';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 /**
  * There is currently no way to retrieve the status
