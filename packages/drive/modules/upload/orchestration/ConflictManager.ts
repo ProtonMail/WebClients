@@ -6,6 +6,7 @@ import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
 import { UploadConflictStrategy, UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { uploadLogError } from '../utils/uploadLogger';
 
 type ResolutionResult =
     | { action: UploadConflictStrategy.Skip }
@@ -212,6 +213,7 @@ export class ConflictManager {
                     break;
             }
         } catch (err) {
+            uploadLogError('Conflict resolution failed', err, { uploadId });
             queueStore.updateQueueItems(uploadId, {
                 status: UploadStatus.Failed,
                 error: err instanceof Error ? err : new Error('Conflict resolution failed'),
