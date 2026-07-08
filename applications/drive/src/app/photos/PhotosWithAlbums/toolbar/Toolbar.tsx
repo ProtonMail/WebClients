@@ -19,6 +19,7 @@ interface ToolbarProps {
 
     createAlbumModal: ModalStateReturnObj;
     requestDownload: (photosUids: string[]) => Promise<void>;
+    requestAlbumDownload: (albumUid: string, albumName: string) => Promise<void>;
     onAddAlbumPhotos: () => Promise<void>;
     onUploadStart?: () => void;
     openAddPhotosToAlbumModal: () => void;
@@ -46,6 +47,7 @@ export const Toolbar = ({
     selectedItems,
     createAlbumModal,
     requestDownload,
+    requestAlbumDownload,
     onAddAlbumPhotos,
     onUploadStart,
     openAddPhotosToAlbumModal,
@@ -89,6 +91,7 @@ export const Toolbar = ({
                     selectedItems={selectedItems}
                     onPreview={onPreview}
                     requestDownload={requestDownload}
+                    requestAlbumDownload={requestAlbumDownload}
                     uids={uids}
                     uploadDisabled={uploadDisabled}
                     tabSelection={currentPageType}

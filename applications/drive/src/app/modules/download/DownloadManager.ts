@@ -26,8 +26,14 @@ import { downloadLogDebug } from './utils/downloadLogger';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
-import { queueDownloadRequest, queueFailedDownloadRequest } from './utils/queueDownloadRequest';
-import { traverseNodeStructure } from './utils/traverseNodeStructure';
+import type { RequestedDownload } from './utils/queueDownloadRequest';
+import {
+    queueAlbumDownloadRequest,
+    queueDownloadRequest,
+    queueFailedDownloadRequest,
+} from './utils/queueDownloadRequest';
+import type { ArchiveTraversalResult } from './utils/traverseNodeStructure';
+import { traverseAlbum, traverseNodeStructure } from './utils/traverseNodeStructure';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
 /**
@@ -53,7 +59,7 @@ export class DownloadManager {
     private scheduler: DownloadScheduler;
     private readonly activeDownloads = new Map<string, ActiveDownload>();
     private readonly pendingAbortControllers = new Map<string, AbortController>();
-    private requestedDownloads = new Map<string, NodeEntity[]>();
+    private requestedDownloads = new Map<string, RequestedDownload>();
     private readonly malwareDetection: MalwareDetection;
 
     private readonly downloadSpeedMetrics = new TransferSpeedMetrics((values) => {
@@ -174,6 +180,17 @@ export class DownloadManager {
 
     async downloadPhotos(nodeUids: string[], albumName?: string) {
         return this.processDownload(nodeUids, { isPhoto: true, albumName });
+    }
+
+    async downloadAlbum(albumUid: string, albumName: string) {
+        // Since album download doesn't use processDownload we need to subscribe to sdk events here
+        this.addPhotosListeners();
+        queueAlbumDownloadRequest({
+            albumUid,
+            albumName,
+            requestedDownloads: this.requestedDownloads,
+            scheduleArchive: (downloadId) => this.scheduleArchiveDownloadForAlbum(downloadId, albumUid),
+        });
     }
 
     // TODO: Add possibility to just pass the uid instead of whole node
@@ -395,7 +412,11 @@ export class DownloadManager {
         return completionPromise;
     }
 
-    private async scheduleArchiveDownload(downloadId: string, nodes: NodeEntity[]): Promise<void> {
+    private async runArchiveDownload(
+        downloadId: string,
+        getTraversal: (signal: AbortSignal) => ArchiveTraversalResult,
+        nodes: NodeEntity[]
+    ): Promise<void> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const queueItem = getQueueItem(downloadId);
         const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
@@ -406,10 +427,7 @@ export class DownloadManager {
 
         try {
             const traversalStart = Date.now();
-            const { nodesQueue, traversalCompletedPromise, parentPathByUid } = traverseNodeStructure(
-                nodes,
-                abortController.signal
-            );
+            const { nodesQueue, traversalCompletedPromise, parentPathByUid } = getTraversal(abortController.signal);
             this.downloadSpeedMetrics.onFileStarted(downloadId);
             updateDownloadItem(downloadId, { status: DownloadStatus.Preparing });
 
@@ -530,6 +548,14 @@ export class DownloadManager {
         }
     }
 
+    private async scheduleArchiveDownload(downloadId: string, nodes: NodeEntity[]): Promise<void> {
+        return this.runArchiveDownload(downloadId, (signal) => traverseNodeStructure(nodes, signal), nodes);
+    }
+
+    private async scheduleArchiveDownloadForAlbum(downloadId: string, albumUid: string): Promise<void> {
+        return this.runArchiveDownload(downloadId, (signal) => traverseAlbum(albumUid, signal), []);
+    }
+
     private attachActiveDownload({
         downloadId,
         controller,
@@ -636,10 +662,14 @@ export class DownloadManager {
             if (storeItem && requestedDownload) {
                 downloadLogDebug('Retry download', { downloadId: id });
                 updateDownloadItem(id, { isRetried: true, downloadedBytes: 0, status: DownloadStatus.Pending });
-                if (requestedDownload.length === 1 && requestedDownload[0].type !== NodeType.Folder) {
-                    void this.scheduleSingleFileDownload(id, requestedDownload[0]);
+                if (Array.isArray(requestedDownload)) {
+                    if (requestedDownload.length === 1 && requestedDownload[0].type !== NodeType.Folder) {
+                        void this.scheduleSingleFileDownload(id, requestedDownload[0]);
+                    } else {
+                        void this.scheduleArchiveDownload(id, requestedDownload);
+                    }
                 } else {
-                    void this.scheduleArchiveDownload(id, requestedDownload);
+                    void this.scheduleArchiveDownloadForAlbum(id, requestedDownload.albumUid);
                 }
             }
         });
