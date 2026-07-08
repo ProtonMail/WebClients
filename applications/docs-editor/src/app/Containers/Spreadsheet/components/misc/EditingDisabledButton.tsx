@@ -2,9 +2,9 @@ import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../../ApplicationProvider'
-import { useActiveBreakpoint } from '@proton/components'
 import { Icon } from '../ui'
 import { useAppPlatform } from '../../../../Hooks/useAppPlatform'
+import { useActiveBreakpoint } from '../../useActiveBreakpoint'
 
 const { s } = createStringifier(strings)
 
