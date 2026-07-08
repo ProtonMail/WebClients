@@ -1,5 +1,5 @@
 import type { DeobfuscatedItemContent, UniqueItem } from '@proton/pass/types/data';
-import type { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import type { CardType } from '@proton/pass/types/protobuf';
 
 export type ItemPreview = UniqueItem & { name: string };
 export type LoginItemPreview = ItemPreview & { userIdentifier: string; url?: string };

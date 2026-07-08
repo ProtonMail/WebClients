@@ -131,7 +131,7 @@ export type OnePassBaseItem = {
         title: string;
         subtitle: string;
         url: string;
-        urls: Maybe<{ label: string; url: string }[]>;
+        urls: Maybe<{ label: string; url: string; mode?: 'default' | 'host' | 'never' }[]>;
         tags: string[];
     };
 };

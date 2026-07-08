@@ -5,10 +5,9 @@ import type {
     FileAttachmentValues,
     ItemContent,
 } from '@proton/pass/types/data';
+import type { ItemCustomType, WifiSecurity } from '@proton/pass/types/protobuf';
 import type { ExtractKeysOfType } from '@proton/pass/types/utils';
 
-import type { ItemCustomType } from '@proton/pass/types/protobuf';
-import type { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
 export type BaseItemValues = {

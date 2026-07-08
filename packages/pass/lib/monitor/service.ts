@@ -4,6 +4,7 @@ import { WASM_PROCEDURE_BATCH_SIZE } from '@proton/pass/lib/core/constants';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { hasDomain, hasOTP, hasPasskeys } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
+import { getAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
 import { selectMonitoredLogins } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ShareId, UniqueItem } from '@proton/pass/types';
@@ -29,14 +30,16 @@ export const createMonitorService = (core: PassCoreProxy, store: Store<State>): 
             /** Valid 2FAs : OTPs or Passkeys */
             const candidates = logins.filter(and(hasDomain, not(or(hasOTP, hasPasskeys))));
 
-            const domains = new Set(candidates.flatMap((item) => item.data.content.urls));
+            const domains = new Set(candidates.flatMap((item) => getAutofillUrls(item.data.content.autofillUrls)));
             const chunks = chunk(Array.from(domains), WASM_PROCEDURE_BATCH_SIZE);
             const results = await seq(chunks, core.twofa_domains_eligible);
 
             const eligible = new Map(results.flatMap((dic) => Array.from(dic.entries())));
             const eligibleDomain = (url: string) => eligible.get(url) === true;
 
-            return candidates.filter((item) => item.data.content.urls.some(eligibleDomain)).map(intoSelectedItem);
+            return candidates
+                .filter((item) => getAutofillUrls(item.data.content.autofillUrls).some(eligibleDomain))
+                .map(intoSelectedItem);
         },
 
         checkWeakPasswords: async (options) => {

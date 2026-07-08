@@ -1,4 +1,5 @@
-import { sanitizeURL } from './sanitize';
+import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
+
 import { MAX_HOSTNAME_LENGTH, UNSUPPORTED_SCHEMES, intoCleanHostname, intoDomainImageHostname } from './utils';
 
 const VALID_SCHEMES = ['http:', 'https:', 'ftp:', 'ssh:', 'telnet:', 'irc:', 'magnet:'];

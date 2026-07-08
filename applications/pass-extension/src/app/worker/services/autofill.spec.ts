@@ -14,6 +14,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { State } from '@proton/pass/store/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import type { AutofillQueryFilter } from '@proton/pass/types/worker/autofill';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -34,7 +35,13 @@ describe('AutofillService', () => {
             itemId: mockItemId,
             shareId: mockShareId,
             data: itemBuilder('login')
-                .set('content', (content) => content.merge({ urls, itemUsername: username, password: password }))
+                .set('content', (content) =>
+                    content.merge({
+                        autofillUrls: urls.map((url) => ({ url, mode: AutofillMode.Default })),
+                        itemUsername: username,
+                        password: password,
+                    })
+                )
                 .set('metadata', (metadata) => metadata.set('name', 'Bank login')).data,
         });
     };

@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemType } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
+import { AutofillMode, WifiSecurity } from '@proton/pass/types/protobuf';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readLastPassData } from './lastpass.reader';
@@ -91,7 +91,7 @@ describe('LastPass CSV importer', () => {
         expect(item.metadata.note).toBe('');
         expect(item.content.itemUsername).toBe('admin');
         expect(item.content.password).toBe('proton123');
-        expect(item.content.urls).toEqual(['https://proton.me/']);
+        expect(item.content.autofillUrls).toEqual([{ url: 'https://proton.me/', mode: AutofillMode.Default }]);
     });
 
     test('should support login with TOTP [vault 1]', () => {
@@ -101,21 +101,21 @@ describe('LastPass CSV importer', () => {
         expect(item.metadata.note).toBe('This is a twitter note');
         expect(item.content.itemUsername).toBe('@nobody');
         expect(item.content.password).toBe('proton123');
-        expect(item.content.urls).toEqual(['https://twitter.com/login']);
+        expect(item.content.autofillUrls).toEqual([{ url: 'https://twitter.com/login', mode: AutofillMode.Default }]);
         expect(item.content.totpUri).toContain('otpauth://totp/Twitter');
     });
 
     test('should support OTP items [vault 1]', () => {
         const item = getLastPassItem<'login'>('lastpass.csv', 0, 2);
         expect(item.metadata.name).toBe('fb.com');
-        expect(item.content.urls).toEqual(['https://fb.com/login']);
+        expect(item.content.autofillUrls).toEqual([{ url: 'https://fb.com/login', mode: AutofillMode.Default }]);
         expect(item.content.totpUri).toContain('otpauth://totp/fb.com');
     });
 
     test('should support malformed URLs [vault 1]', () => {
         const item = getLastPassItem<'login'>('lastpass.csv', 0, 3);
         expect(item.metadata.name).toBe('Unnamed item');
-        expect(item.content.urls).toEqual([]);
+        expect(item.content.autofillUrls).toEqual([]);
         expect(item.content.password).toBe('');
     });
 
@@ -125,7 +125,7 @@ describe('LastPass CSV importer', () => {
         expect(item.metadata.note).toBe('Secure note');
         expect(item.content.itemEmail).toBe('nobody@proton.me');
         expect(item.content.password).toBe('proton123');
-        expect(item.content.urls).toEqual(['https://account.proton.me/']);
+        expect(item.content.autofillUrls).toEqual([{ url: 'https://account.proton.me/', mode: AutofillMode.Default }]);
     });
 
     test('should support note item [vault 2]', () => {

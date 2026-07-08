@@ -22,6 +22,9 @@ export type ExportCSVItem = {
     totp: string;
     type: ItemType;
     url: string;
+    /** JSON-encoded full autofill URL list with per-URL modes. Populated whenever a login
+     * has at least one url; `url` keeps the human-readable Default-only list. */
+    autofillUrls: string;
     email: string;
     username: string;
     vault: string;

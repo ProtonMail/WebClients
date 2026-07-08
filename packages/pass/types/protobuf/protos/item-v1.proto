@@ -32,6 +32,20 @@ message Passkey {
 	PasskeyCreationData creation_data = 13;
 }
 
+message AutofillUrl {
+	enum Mode {
+		Default = 0;
+		Exact = 1;
+		Never = 2;
+		StartWith = 3;
+		Pattern = 4;
+		RegularExpression = 5;
+		ExactPath = 6;
+	}
+	string url = 1;
+	Mode mode = 2;
+}
+
 message ItemLogin {
 	string item_email = 1;
 	string password = 2;
@@ -39,6 +53,7 @@ message ItemLogin {
 	string totp_uri = 4;
 	repeated Passkey passkeys = 5;
 	string item_username = 6;
+	repeated AutofillUrl autofill_urls = 7;
 }
 
 message ItemAlias {

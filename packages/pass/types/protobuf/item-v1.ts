@@ -13,7 +13,7 @@ import { reflectionMergePartial } from '@protobuf-ts/runtime';
 import { MessageType } from '@protobuf-ts/runtime';
 
 import { Timestamp } from './google/protobuf/timestamp';
-import { CardType, WifiSecurity } from './item-v1.static';
+import { AutofillUrl_Mode, CardType, WifiSecurity } from './item-v1.static';
 
 // Item types
 
@@ -100,6 +100,22 @@ export interface Passkey {
     creationData?: PasskeyCreationData;
 }
 /**
+ * @generated from protobuf message proton_pass_item_v1.AutofillUrl
+ */
+export interface AutofillUrl {
+    /**
+     * @generated from protobuf field: string url = 1
+     */
+    url: string;
+    /**
+     * @generated from protobuf field: proton_pass_item_v1.AutofillUrl.Mode mode = 2
+     */
+    mode: AutofillUrl_Mode;
+}
+/**
+ * @generated from protobuf enum proton_pass_item_v1.AutofillUrl.Mode
+ */
+/**
  * @generated from protobuf message proton_pass_item_v1.ItemLogin
  */
 export interface ItemLogin {
@@ -127,6 +143,10 @@ export interface ItemLogin {
      * @generated from protobuf field: string item_username = 6
      */
     itemUsername: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.AutofillUrl autofill_urls = 7
+     */
+    autofillUrls: AutofillUrl[];
 }
 /**
  * @generated from protobuf message proton_pass_item_v1.ItemAlias
@@ -890,6 +910,65 @@ class Passkey$Type extends MessageType<Passkey> {
  */
 export const Passkey = new Passkey$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class AutofillUrl$Type extends MessageType<AutofillUrl> {
+    constructor() {
+        super('proton_pass_item_v1.AutofillUrl', [
+            { no: 1, name: 'url', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'mode', kind: 'enum', T: () => ['proton_pass_item_v1.AutofillUrl.Mode', AutofillUrl_Mode] },
+        ]);
+    }
+    create(value?: PartialMessage<AutofillUrl>): AutofillUrl {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.url = '';
+        message.mode = 0;
+        if (value !== undefined) reflectionMergePartial<AutofillUrl>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: AutofillUrl
+    ): AutofillUrl {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string url */ 1:
+                    message.url = reader.string();
+                    break;
+                case /* proton_pass_item_v1.AutofillUrl.Mode mode */ 2:
+                    message.mode = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: AutofillUrl, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string url = 1; */
+        if (message.url !== '') writer.tag(1, WireType.LengthDelimited).string(message.url);
+        /* proton_pass_item_v1.AutofillUrl.Mode mode = 2; */
+        if (message.mode !== 0) writer.tag(2, WireType.Varint).int32(message.mode);
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.AutofillUrl
+ */
+export const AutofillUrl = new AutofillUrl$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class ItemLogin$Type extends MessageType<ItemLogin> {
     constructor() {
         super('proton_pass_item_v1.ItemLogin', [
@@ -899,6 +978,7 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
             { no: 4, name: 'totp_uri', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 5, name: 'passkeys', kind: 'message', repeat: 2 /*RepeatType.UNPACKED*/, T: () => Passkey },
             { no: 6, name: 'item_username', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: 'autofill_urls', kind: 'message', repeat: 2 /*RepeatType.UNPACKED*/, T: () => AutofillUrl },
         ]);
     }
     create(value?: PartialMessage<ItemLogin>): ItemLogin {
@@ -909,6 +989,7 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
         message.totpUri = '';
         message.passkeys = [];
         message.itemUsername = '';
+        message.autofillUrls = [];
         if (value !== undefined) reflectionMergePartial<ItemLogin>(this, message, value);
         return message;
     }
@@ -941,6 +1022,9 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
                 case /* string item_username */ 6:
                     message.itemUsername = reader.string();
                     break;
+                case /* repeated proton_pass_item_v1.AutofillUrl autofill_urls */ 7:
+                    message.autofillUrls.push(AutofillUrl.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -972,6 +1056,13 @@ class ItemLogin$Type extends MessageType<ItemLogin> {
             ).join();
         /* string item_username = 6; */
         if (message.itemUsername !== '') writer.tag(6, WireType.LengthDelimited).string(message.itemUsername);
+        /* repeated proton_pass_item_v1.AutofillUrl autofill_urls = 7; */
+        for (let i = 0; i < message.autofillUrls.length; i++)
+            AutofillUrl.internalBinaryWrite(
+                message.autofillUrls[i],
+                writer.tag(7, WireType.LengthDelimited).fork(),
+                options
+            ).join();
         let u = options.writeUnknownFields;
         if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
         return writer;

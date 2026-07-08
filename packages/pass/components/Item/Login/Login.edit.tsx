@@ -15,7 +15,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { UrlGroupField, createNewUrl } from '@proton/pass/components/Form/Field/UrlGroupField';
+import { UrlGroupField } from '@proton/pass/components/Form/Field/UrlGroup/UrlGroupField';
 import { LoginEditCredentials } from '@proton/pass/components/Item/Login/Login.edit.credentials';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
@@ -28,6 +28,8 @@ import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers'
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
+import { createNewUrlItem, fromItems } from '@proton/pass/lib/urls/utils/autofill';
+import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -41,7 +43,6 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 const FORM_ID = 'edit-login';
@@ -76,7 +77,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             shareId,
             totpUri: getSecretOrUri(content.totpUri),
             url: '',
-            urls: content.urls.map(createNewUrl),
+            urls: content.autofillUrls.map(createNewUrlItem),
+            editingUrlIndex: null,
             withAlias: false,
             withUsername: showUsernameField,
         }),
@@ -143,7 +145,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     passkeys,
                     password: obfuscate(password),
                     totpUri: pipe(sanitizeOTP, obfuscate)(totpUri),
-                    urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
+                    autofillUrls: fromItems(urls, url),
                     itemEmail: obfuscate(email),
                     itemUsername: obfuscate(username),
                 },
@@ -273,7 +275,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
 
                             <FieldsetCluster>
                                 <UrlGroupField
-                                    form={form}
+                                    initialTestUrl={url?.url ?? undefined}
                                     renderExtraActions={
                                         showQuickAddUrl
                                             ? ({ handleAdd }) => (

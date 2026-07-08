@@ -9,8 +9,8 @@ import {
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ProtonPassCSVItem } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.types';
 import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { AutofillUrl, ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -18,6 +18,18 @@ import { logger } from '@proton/pass/utils/logger';
 type CreditCardCsvItem = ItemCreditCard & { note: string };
 
 const PASS_EXPECTED_HEADERS: (keyof ProtonPassCSVItem)[] = ['name', 'url', 'username', 'password', 'note', 'totp'];
+
+/** When present, the `autofillUrls` column holds the authoritative full set of modes (JSON).
+ * Falls back to `undefined` so the reader can use the legacy Default-only `url` column. */
+const parseAutofillUrls = (raw?: string): Maybe<AutofillUrl[]> => {
+    if (!raw) return undefined;
+    try {
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) && parsed.length ? (parsed as AutofillUrl[]) : undefined;
+    } catch {
+        return undefined;
+    }
+};
 
 const processCreditCardItem = (item: ProtonPassCSVItem): ItemImportIntent<'creditCard'> => {
     const creditCardItem: CreditCardCsvItem = JSON.parse(item.note as string);
@@ -69,6 +81,7 @@ export const readProtonPassCSV = async (file: File, isGenericCSV: boolean = fals
                             // If the type is undefined, it's not a Proton Pass CSV export but a Generic CSV template
                             case undefined:
                             case 'login':
+                                const autofillUrls = parseAutofillUrls(item.autofillUrls);
                                 return importLoginItem({
                                     name: item.name,
                                     note: item.note,
@@ -76,7 +89,10 @@ export const readProtonPassCSV = async (file: File, isGenericCSV: boolean = fals
                                     email: hasNoEmailColumn ? item.username : item.email,
                                     username: hasNoEmailColumn ? undefined : item.username,
                                     password: item.password,
-                                    urls: item.url?.split(', '),
+                                    // Prefer the structured column when present; otherwise the
+                                    // legacy `url` column maps to Default-mode entries.
+                                    urls: autofillUrls ? undefined : item.url?.split(', '),
+                                    autofillUrls,
                                     totp: item.totp,
                                     createTime: item.createTime ? Number(item.createTime) : undefined,
                                     modifyTime: item.modifyTime ? Number(item.modifyTime) : undefined,

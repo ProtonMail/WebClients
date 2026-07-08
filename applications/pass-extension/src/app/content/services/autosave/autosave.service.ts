@@ -11,10 +11,10 @@ import {
 } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import { urlEq } from '@proton/pass/lib/urls/utils/utils';
 import type { AutosaveFormEntry } from '@proton/pass/types/worker/form';
 import { FormEntryStatus } from '@proton/pass/types/worker/form';
 import { logger } from '@proton/pass/utils/logger';
-import { urlEq } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 export const createAutosaveService = (): AutosaveService => {

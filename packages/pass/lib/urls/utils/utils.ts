@@ -1,7 +1,10 @@
-import type { MaybeNull } from '@proton/pass/types';
+import safeRegex from 'safe-regex2';
 
+import type { MaybeNull } from '@proton/pass/types';
+import { dynMemo } from '@proton/pass/utils/fp/memo';
+
+import type { ParsedUrl, URLComponents } from '../types';
 import { sanitizeURL } from './sanitize';
-import type { ParsedUrl, URLComponents } from './types';
 
 export const MAX_HOSTNAME_LENGTH = 253;
 export const URL_COMPONENTS = ['domain', 'port', 'protocol'] as const;
@@ -74,12 +77,46 @@ export const intoDomainWithPort = ({
     }
 };
 
-export const globToRegExp = (globPattern: string) => {
-    const regexString = globPattern.replace(/\//g, '\\/').replace(/\./g, '\\.').replace(/\*/g, '.*');
+/** Memoized converter from glob patterns to compiled regex */
+export const globToRegExp = dynMemo((globPattern: string) => {
+    const regexString = globPattern
+        // Escape all regex special chars
+        .replace(/[.+^${}()|[\]\\?]/g, '\\$&')
+        // Replace wildcards with regex equivalent
+        .replace(/\*/g, '.*');
     return new RegExp(`^${regexString}$`);
-};
+});
+
+/** Memoized converter from URL glob patterns to compiled regex.
+ * * matches within a segment (does not cross . or /), ** matches across separators. */
+export const urlGlobToRegExp = dynMemo((globPattern: string) => {
+    const regexString = globPattern
+        // Escape all regex special chars
+        .replace(/[.+^${}()|[\]\\?]/g, '\\$&')
+        // Stash ** before touching single * to avoid conflict
+        .replace(/\*\*/g, '\x00')
+        // Single * does not cross separators
+        .replace(/\*/g, '[^.\\/]*')
+        // ** crosses any separator
+        .replace(/\x00/g, '.*');
+    return new RegExp(`^${regexString}$`);
+});
+
+/** Memoized compiler for user-supplied regex patterns.
+ * Returns null if the pattern is unsafe (ReDoS-prone) or invalid. */
+export const safeRegExpFromPattern = dynMemo((pattern: string): MaybeNull<RegExp> => {
+    if (!safeRegex(pattern)) return null;
+    try {
+        return new RegExp(pattern, 'i');
+    } catch {
+        return null;
+    }
+});
 
 export const resolveSubdomain = ({ domain, subdomain, hostname }: ParsedUrl): MaybeNull<string> =>
     subdomain ?? domain ?? hostname;
 
 export const resolveDomain = ({ domain, hostname }: ParsedUrl): MaybeNull<string> => domain ?? hostname;
+
+export const domainEndsWith = (domain: string, part: string) =>
+    domain.endsWith(part) && (domain.length === part.length || domain.charAt(domain.length - part.length - 1) === '.');

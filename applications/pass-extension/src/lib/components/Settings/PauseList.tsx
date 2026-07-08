@@ -25,6 +25,7 @@ import {
     hasCriteria,
     toggleCriteria,
 } from '@proton/pass/lib/settings/pause-list';
+import { intoCleanHostname } from '@proton/pass/lib/urls/utils/utils';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import {
     selectDisallowedDomains,
@@ -32,7 +33,6 @@ import {
     selectPauseListEntries,
 } from '@proton/pass/store/selectors/settings';
 import { merge } from '@proton/pass/utils/object/merge';
-import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './PauseList.scss';

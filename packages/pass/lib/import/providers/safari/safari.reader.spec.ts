@@ -2,6 +2,7 @@ import fs from 'fs';
 
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { readSafariData } from './safari.reader';
@@ -39,7 +40,7 @@ describe('Import Safari CSV', () => {
         expect(deobfuscate(loginItemBrokenUrl.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemBrokenUrl.content.password)).toEqual('pass');
         expect(deobfuscate(loginItemBrokenUrl.content.totpUri)).toEqual('');
-        expect(loginItemBrokenUrl.content.urls).toEqual([]);
+        expect(loginItemBrokenUrl.content.autofillUrls).toEqual([]);
         expect(loginItemBrokenUrl.trashed).toEqual(false);
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
 
@@ -57,7 +58,9 @@ describe('Import Safari CSV', () => {
         expect(deobfuscate(loginItem2faScanned.content.totpUri)).toEqual(
             'otpauth://totp/db%40example.com?issuer=Proton&secret=OTDED5QZA64L6YRUWJLD65QQ3Z6PZ3A3&algorithm=SHA1&digits=6&period=30'
         );
-        expect(loginItem2faScanned.content.urls).toEqual(['https://2fa.example.com/']);
+        expect(loginItem2faScanned.content.autofillUrls).toEqual([
+            { url: 'https://2fa.example.com/', mode: AutofillMode.Default },
+        ]);
         expect(loginItem2faScanned.trashed).toEqual(false);
         expect(loginItem2faScanned.extraFields).toEqual([]);
 
@@ -73,7 +76,9 @@ describe('Import Safari CSV', () => {
         expect(deobfuscate(loginItemCommaQuote.content.itemUsername)).toEqual('username with comma, quotes "');
         expect(deobfuscate(loginItemCommaQuote.content.password)).toEqual('password with comma, quotes "');
         expect(deobfuscate(loginItemCommaQuote.content.totpUri)).toEqual('');
-        expect(loginItemCommaQuote.content.urls).toEqual(['https://account.example.com/']);
+        expect(loginItemCommaQuote.content.autofillUrls).toEqual([
+            { url: 'https://account.example.com/', mode: AutofillMode.Default },
+        ]);
         expect(loginItemCommaQuote.trashed).toEqual(false);
         expect(loginItemCommaQuote.extraFields).toEqual([]);
 
@@ -89,7 +94,9 @@ describe('Import Safari CSV', () => {
         expect(deobfuscate(loginItemMultipleLines.content.itemUsername)).toEqual('login-with-multiple-lines');
         expect(deobfuscate(loginItemMultipleLines.content.password)).toEqual('pass');
         expect(deobfuscate(loginItemMultipleLines.content.totpUri)).toEqual('');
-        expect(loginItemMultipleLines.content.urls).toEqual(['http://localhost:7777/']);
+        expect(loginItemMultipleLines.content.autofillUrls).toEqual([
+            { url: 'http://localhost:7777/', mode: AutofillMode.Default },
+        ]);
         expect(loginItemMultipleLines.trashed).toEqual(false);
         expect(loginItemMultipleLines.extraFields).toEqual([]);
 
@@ -111,7 +118,9 @@ describe('Import Safari CSV', () => {
         expect(deobfuscate(loginItem2faManuallyEntered.content.totpUri)).toEqual(
             'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30'
         );
-        expect(loginItem2faManuallyEntered.content.urls).toEqual(['https://account.proton.me/']);
+        expect(loginItem2faManuallyEntered.content.autofillUrls).toEqual([
+            { url: 'https://account.proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(loginItem2faManuallyEntered.trashed).toEqual(false);
         expect(loginItem2faManuallyEntered.extraFields).toEqual([]);
 

@@ -4,10 +4,10 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { WebNavigation } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
+import { resolveDomain } from '@proton/pass/lib/urls/utils/utils';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
-import { parseUrl } from '@proton/pass/utils/url/parser';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 export type FrameData = {
     parent: MaybeNull<FrameId>;

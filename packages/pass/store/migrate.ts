@@ -1,6 +1,7 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import type { FiltersState } from '@proton/pass/store/reducers';
 import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -75,6 +76,15 @@ export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryp
             item.itemEmail = item.username as XorObfuscation;
             item.itemUsername = obfuscate('');
             delete item.username;
+        }
+
+        /** v1.39.0 migration */
+        if ('urls' in item) {
+            const legacyUrls = Array.isArray(item.urls) ? (item.urls as string[]) : [];
+            item.autofillUrls = item.autofillUrls?.length
+                ? item.autofillUrls
+                : legacyUrls.map((url) => ({ url, mode: AutofillMode.Default }));
+            delete item.urls;
         }
     });
 

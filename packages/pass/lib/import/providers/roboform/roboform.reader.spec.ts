@@ -3,6 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readRoboformData } from './roboform.reader';
@@ -41,7 +42,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem2.content.itemEmail).toEqual('');
         expect(loginItem2.content.itemUsername).toEqual('admin');
         expect(loginItem2.content.password).toEqual("'@proton123");
-        expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
+        expect(loginItem2.content.autofillUrls[0]).toEqual({ url: 'https://proton.me/', mode: AutofillMode.Default });
 
         /* Bookmark - broken url */
         const loginItem3 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
@@ -51,7 +52,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem3.content.itemEmail).toEqual('');
         expect(loginItem3.content.itemUsername).toEqual('');
         expect(loginItem3.content.password).toEqual('');
-        expect(loginItem3.content.urls).toEqual([]);
+        expect(loginItem3.content.autofillUrls).toEqual([]);
 
         /* Bookmark - valid */
         const loginItem4 = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'login'>;
@@ -61,7 +62,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem4.content.itemEmail).toEqual('');
         expect(loginItem4.content.itemUsername).toEqual('');
         expect(loginItem4.content.password).toEqual('');
-        expect(loginItem4.content.urls).toEqual(['https://example.com/']);
+        expect(loginItem4.content.autofillUrls).toEqual([{ url: 'https://example.com/', mode: AutofillMode.Default }]);
 
         /* Login broken URL */
         const loginItem5 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'login'>;
@@ -71,7 +72,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem5.content.itemEmail).toEqual('');
         expect(loginItem5.content.itemUsername).toEqual('nobody');
         expect(loginItem5.content.password).toEqual('@proton123');
-        expect(loginItem5.content.urls).toEqual(['https://fb.com/login']);
+        expect(loginItem5.content.autofillUrls).toEqual([{ url: 'https://fb.com/login', mode: AutofillMode.Default }]);
     });
 
     it('parses secondary vault items correctly', () => {
@@ -86,7 +87,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem1.content.itemEmail).toEqual('');
         expect(loginItem1.content.itemUsername).toEqual('example');
         expect(loginItem1.content.password).toEqual('some@password');
-        expect(loginItem1.content.urls[0]).toEqual('http://example.com/');
+        expect(loginItem1.content.autofillUrls[0]).toEqual({ url: 'http://example.com/', mode: AutofillMode.Default });
         expect(loginItem1.content.totpUri).toEqual(
             'otpauth://totp/Example:none?issuer=Example&secret=FDKJJKDSF&algorithm=SHA1&digits=6&period=30'
         );

@@ -2,6 +2,7 @@ import fs from 'fs';
 
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { readKasperskyData } from './kaspersky.reader';
@@ -30,7 +31,7 @@ describe('Import Kaspersky TXT', () => {
         expect(websiteItem.type).toEqual('login');
         expect(websiteItem.metadata.name).toEqual('Account title');
         expect(deobfuscate(websiteItem.metadata.note)).toEqual('my notes');
-        expect(websiteItem.content.urls).toEqual(['https://example.com/']);
+        expect(websiteItem.content.autofillUrls).toEqual([{ url: 'https://example.com/', mode: AutofillMode.Default }]);
         expect(deobfuscate(websiteItem.content.itemEmail)).toEqual('');
         expect(deobfuscate(websiteItem.content.itemUsername)).toEqual('john');
         expect(deobfuscate(websiteItem.content.password)).toEqual('pass');
@@ -40,7 +41,9 @@ describe('Import Kaspersky TXT', () => {
         expect(websiteItemEmail.type).toEqual('login');
         expect(websiteItemEmail.metadata.name).toEqual('Account title 2');
         expect(deobfuscate(websiteItemEmail.metadata.note)).toEqual('');
-        expect(websiteItemEmail.content.urls).toEqual(['https://example.com/']);
+        expect(websiteItemEmail.content.autofillUrls).toEqual([
+            { url: 'https://example.com/', mode: AutofillMode.Default },
+        ]);
         expect(deobfuscate(websiteItemEmail.content.itemEmail)).toEqual('john2@example.com');
         expect(deobfuscate(websiteItemEmail.content.itemUsername)).toEqual('');
         expect(deobfuscate(websiteItemEmail.content.password)).toEqual('pass');
