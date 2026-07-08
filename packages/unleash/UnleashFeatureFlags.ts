@@ -231,6 +231,7 @@ enum DocsFeatureFlag {
     DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
     DocsDocumentViewerEventsSDK = 'DocsDocumentViewerEventsSDK',
     DocsRenameWithDriveSDK = 'DocsRenameWithDriveSDK',
+    DocsTrashWithDriveSDK = 'DocsTrashWithDriveSDK',
     DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
 }
 

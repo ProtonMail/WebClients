@@ -67,6 +67,7 @@ import {
   useMoveModalDriveSdkEnabled,
   useRenameWithSDK,
   useIsTableOfContentsEnabled,
+  useTrashWithSDK,
 } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
@@ -78,6 +79,7 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
+import { trashAndNotify } from '~/drive-sdk/trash'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -111,6 +113,7 @@ export function DocumentTitleDropdown({
   const { createNotification } = useNotifications()
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
+  const trashWithSDK = useTrashWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isTableOfContentsFeatureEnabled = useIsTableOfContentsEnabled()
 
@@ -355,12 +358,22 @@ export function DocumentTitleDropdown({
     if (!authenticatedController) {
       throw new Error('Attempting to trash document in a public context')
     }
+
     try {
-      await authenticatedController.trashDocument()
+      if (trashWithSDK) {
+        const drive = getDrive()
+        const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
+        await trashAndNotify(drive, createNotification, generateNodeUid(volumeId, linkId), () =>
+          authenticatedController.markAsRestored(),
+        )
+        authenticatedController.markAsTrashed()
+      } else {
+        await authenticatedController.trashDocument()
+      }
     } finally {
       close()
     }
-  }, [authenticatedController, close])
+  }, [authenticatedController, close, createNotification, documentState, trashWithSDK])
 
   const showVersionHistory = useCallback(() => {
     if (!authenticatedController) {

@@ -1,15 +1,22 @@
-import { useAuthentication } from '@proton/components'
+import { useAuthentication, useNotifications } from '@proton/components'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import { useMoveModalDriveSdkEnabled, useRenameWithSDK, useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import {
+  useMoveModalDriveSdkEnabled,
+  useRenameWithSDK,
+  useSharingModalDriveSdkEnabled,
+  useTrashWithSDK,
+} from '~/utils/flags'
 import { useEvent } from '~/utils/misc'
 import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
+import { c } from 'ttag'
+import { reportTrashError, trashAndNotify } from '~/drive-sdk/trash'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -44,6 +51,7 @@ const RESTORED_LISTENERS = new Set<(id: string) => void>()
 
 export function DocumentActionsProvider({ children }: DocumentActionsProviderProps) {
   const application = useApplication()
+  const { createNotification } = useNotifications()
   const driveCompat = application.compatWrapper.getUserCompat()
   const [renamingDocument, setRenamingDocument] = useState<RecentDocumentsItem>()
   const [isRenameSaving, setRenameSaving] = useState(false)
@@ -55,6 +63,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
+  const trashWithSDK = useTrashWithSDK()
 
   const { showSharingModal, sharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
@@ -138,7 +147,24 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const trash = useEvent(async (document: RecentDocumentsItem) => {
     setCurrentlyTrashingId(document.uniqueId())
-    await application.recentDocumentsService.trashDocument(document)
+
+    if (trashWithSDK) {
+      try {
+        const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+        await trashAndNotify(drive, createNotification, nodeUid)
+      } catch (error) {
+        reportTrashError(error)
+        createNotification({
+          type: 'error',
+          text: c('Error').t`Failed to trash document.`,
+        })
+        setCurrentlyTrashingId(undefined)
+        return
+      }
+    } else {
+      await application.recentDocumentsService.trashDocument(document)
+    }
+
     setCurrentlyTrashingId(undefined)
     TRASHED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_trashed)
