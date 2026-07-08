@@ -6,7 +6,7 @@ import { getAddonNameByPlan, getPlanNameFromIDs } from './plan/helpers';
 import type { PlansMap } from './plan/interface';
 import type { SubscriptionEstimation } from './subscription/interface';
 
-export interface RunSecondarySubscriptionEstimationParams {
+interface RunSecondarySubscriptionEstimationParams {
     /** The primary check payload (the plan the user is currently looking at). */
     checkPayload: CheckSubscriptionData;
     plansMap: PlansMap;
@@ -30,6 +30,8 @@ export interface RunSecondarySubscriptionEstimationParams {
  *
  * Returns the estimation, or `null` if the addon doesn't apply to the selected plan or the check fails. When the
  * payload carries no coupon codes, an optimistic (discount-free) estimation is returned without hitting the API.
+ *
+ * @public - do not remove in the dead code cleanups
  */
 export async function runSecondarySubscriptionEstimation({
     checkPayload,

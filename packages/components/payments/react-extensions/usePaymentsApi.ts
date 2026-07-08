@@ -88,7 +88,7 @@ const checkProduct = (data: CheckSubscriptionData) => {
     };
 };
 
-export const useMultiCheckCache = () => {
+const useMultiCheckCache = () => {
     const cacheRef = useRef<Record<string, SubscriptionEstimation>>({});
     const cacheByPlanRef = useRef<Record<string, Set<string> | undefined>>({});
 

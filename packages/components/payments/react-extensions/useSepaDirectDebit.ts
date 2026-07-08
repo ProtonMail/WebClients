@@ -38,7 +38,7 @@ export class SepaEmailNotProvidedError extends DisplayablePaymentError {
     }
 }
 
-export class SepaFormInvalidError extends DisplayablePaymentError {
+class SepaFormInvalidError extends DisplayablePaymentError {
     constructor() {
         super(c('Info').t`Please fill in all required fields.`);
         this.name = 'SepaFormInvalidError';
