@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcHamburger } from '@proton/icons/icons/IcHamburger';
 import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
@@ -29,7 +30,7 @@ export const AppMenuButton = memo(
                     size="small"
                     title={isOpen ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
                 >
-                    <VaultIcon className="shrink-0" size={4} icon="hamburger" />
+                    <IcHamburger className="shrink-0" size={4} />
                 </Button>
             </div>
         );
