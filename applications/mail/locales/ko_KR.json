@@ -8929,6 +8929,24 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 대화는 **${ count }건**입니다"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 메시지는 **${ count }건**입니다"
+      ],
+      "You have no conversations in this category": [
+        "이 카테고리에는 대화가 없습니다"
+      ],
+      "You have no messages in this category": [
+        "이 카테고리에는 메시지가 없습니다"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 대화 **${ checked }개**를 선택했습니다"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 메시지 **${ checked }개**를 선택했습니다"
       ]
     },
     "info": {
@@ -10064,6 +10082,24 @@
       ],
       "Import your emails": [
         "내 이메일 불러오기"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "뉴스레터: 뉴스, 사설 이메일 및 비 프로모션 콘텐츠"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "주요: 개인 및 업무 이메일과 중요한 업데이트"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "프로모션: 할인, 행사 및 마케팅 이메일"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "소셜: 소셜 미디어 업데이트, 활동, 메시지"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "거래: 영수증, 예약, 청구서 및 주문서"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "업데이트: 자동 전송된 확인, 알림, 계정 업데이트 이메일"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14506,6 +14542,9 @@
       ],
       "Copied '${ code }' to clipboard": [
         "'${ code }'을(를) 클립보드에 복사했습니다"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "${ label }(으)로 이동 완료. 추후 비슷한 메시지는 이곳으로 분류됩니다."
       ]
     },
     "Success notification": {
@@ -15832,6 +15871,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "즉각적인 AI 지원, 상시 대기 중인 전문가!"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ]
     },
     "tooltip": {
@@ -16647,6 +16689,12 @@
       ],
       "Type": [
         "종류"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
       ]
     }
   }
