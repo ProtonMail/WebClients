@@ -78,7 +78,7 @@ const MailboxListItems = ({
     const location = useLocation();
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
-    const { categorizeStepLocation, userIsInOnboarding } = useCategoriesOnboarding();
+    const { categorizeStepLocation, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
     useEffect(() => {
         // When we show more than 5 elements in the list, the onboarding should be collapsed.
@@ -149,7 +149,12 @@ const MailboxListItems = ({
                     );
 
                     const showSpotlight = categorizeStepLocation === 'list';
-                    if (!isPlaceholder && showSpotlight && userIsInOnboarding && index === HIGHLIGHTED_ITEM_INDEX) {
+                    if (
+                        !isPlaceholder &&
+                        showSpotlight &&
+                        userIsInB2COnboardingFlow &&
+                        index === HIGHLIGHTED_ITEM_INDEX
+                    ) {
                         return (
                             <Fragment key={element.ID}>
                                 <CategoriesOnboardingSpotlight step={OnboardingStep.CATEGORIZE}>

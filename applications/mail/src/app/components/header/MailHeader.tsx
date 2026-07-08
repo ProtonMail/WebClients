@@ -50,7 +50,7 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }:
 
     const onCompose = useOnCompose();
 
-    const { userIsInOnboarding } = useCategoriesOnboarding();
+    const { userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
     const isSmallViewport = breakpoints.viewportWidth['<=small'];
     const hideMenuButton = isSmallViewport && !!elementID;
@@ -63,7 +63,7 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }:
 
     // We override the hamburger menu for small viewports during category onboarding to show the last feature tour step.
     const customMenuButton =
-        userIsInOnboarding && isSmallViewport ? (
+        userIsInB2COnboardingFlow && isSmallViewport ? (
             <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
                 <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             </CategoriesOnboardingSpotlight>
