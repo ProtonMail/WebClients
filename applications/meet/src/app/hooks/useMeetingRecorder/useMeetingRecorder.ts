@@ -4,6 +4,7 @@ import { useRoomContext, useTracks } from '@livekit/components-react';
 import { RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -51,6 +52,7 @@ export const useMeetingRecorder = () => {
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
     const { createNotification } = useNotifications();
+    const [userKeys = []] = useUserKeys();
 
     const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
     const userId = useMeetSelector(selectUserId);
@@ -235,6 +237,13 @@ export const useMeetingRecorder = () => {
     });
 
     const startRecording = useCallback(async () => {
+        if (!userKeys.length) {
+            // eslint-disable-next-line no-console
+            console.error('[MeetingRecorder] Error: no userKeys available yet');
+            reportMeetError('MeetingRecording Error: no userKeys available yet');
+            return;
+        }
+
         if (!recordingCodec) {
             // eslint-disable-next-line no-console
             console.error('[MeetingRecorder] codec detection has not resolved yet.');
@@ -259,6 +268,7 @@ export const useMeetingRecorder = () => {
                 initialScene: scene,
                 initialAudioTracks: audioTracks,
                 initialRecordedTracks: recordedTracks,
+                encryptionKey: userKeys[0].publicKey,
             });
 
             localRecordingIdentityRef.current = room.localParticipant.identity;
@@ -293,6 +303,7 @@ export const useMeetingRecorder = () => {
         room,
         publishRecordingStatus,
         handleStorageFull,
+        userKeys,
     ]);
 
     // Finalize the recording so the download modal can pick it up, even if the

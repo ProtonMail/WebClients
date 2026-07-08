@@ -1,4 +1,5 @@
 import type { TrackReference } from '@livekit/components-react';
+import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 
@@ -19,4 +20,5 @@ export interface RecordingSessionStartOptions {
     initialScene: SceneState;
     initialAudioTracks: TrackReference[];
     initialRecordedTracks: RecordingTrackInfo[];
+    encryptionKey: PublicKeyReference;
 }

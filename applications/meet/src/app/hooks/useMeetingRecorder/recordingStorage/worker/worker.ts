@@ -1,3 +1,5 @@
+import { CryptoProxy, type SessionKey } from '@protontech/crypto';
+
 import { createWorkerLogger } from '../../workerLogger';
 import {
     StorageMessageType,
@@ -20,10 +22,24 @@ class OPFSWorkerStorage {
     private fileExtension: string = 'webm';
     private fileName: string = '';
     private full = false;
+    private writerForDataStreamToEncrypt: WritableStreamDefaultWriter<Uint8Array<ArrayBuffer>> | null = null;
+    private readerForEncryptionStreamToStore: ReadableStreamDefaultReader<Uint8Array<ArrayBuffer>> | null = null;
+    private encryptionStreamReaderPromise: Promise<void> | null = null;
 
-    async init(fileExtension: string, userId: string): Promise<void> {
+    async init(
+        fileExtension: string,
+        userId: string,
+        sessionKey: SessionKey,
+        encryptedSessionKey: Uint8Array<ArrayBuffer>
+    ): Promise<void> {
         this.fileExtension = fileExtension;
         this.fileName = `recording-${Date.now()}.${this.fileExtension}`;
+
+        // import CryptoApi dynamically on init to make sure the code does not spill outside of the worker;
+        // and so it's easier to catch any loading errors
+        const { Api: CryptoApi } = await import('@protontech/crypto/proxy/endpoint/api.ts');
+        CryptoApi.init({});
+        CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
         const root = await navigator.storage.getDirectory();
         // Namespace recordings under a per-user subdirectory.
@@ -39,39 +55,85 @@ class OPFSWorkerStorage {
 
         this.syncAccessHandle = await this.fileHandle.createSyncAccessHandle();
         this.filePosition = 0;
+
+        // TransformStreams are supported wherever createSyncAccessHandle, so polyfilling not needed
+        const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>, Uint8Array<ArrayBuffer>>();
+        this.writerForDataStreamToEncrypt = writable.getWriter();
+        const { messageStream: encryptedStreamToStore } = await CryptoProxy.encryptMessageStream({
+            binaryDataStream: readable,
+            sessionKey,
+            format: 'binary',
+        });
+
+        this.readerForEncryptionStreamToStore = encryptedStreamToStore.getReader();
+        this.encryptionStreamReaderPromise = (async () => {
+            try {
+                while (true) {
+                    if (!this.readerForEncryptionStreamToStore) {
+                        throw new Error('Reader is undefined');
+                    }
+                    const { done, value: encryptedChunk } = await this.readerForEncryptionStreamToStore.read();
+                    if (done) {
+                        // closing ops done in `finally`
+                        break;
+                    }
+
+                    if (this.syncAccessHandle) {
+                        if (this.filePosition === 0) {
+                            // prepend the session key
+                            this.filePosition += this.syncAccessHandle.write(encryptedSessionKey, {
+                                at: this.filePosition,
+                            });
+                        }
+                        const bytesWritten = this.syncAccessHandle.write(encryptedChunk, { at: this.filePosition });
+                        this.filePosition += bytesWritten;
+                        this.syncAccessHandle.flush();
+                    } else {
+                        throw new Error('No sync handle available');
+                    }
+                }
+            } catch (error) {
+                await this.readerForEncryptionStreamToStore?.cancel().catch(() => {});
+                if (isQuotaExceededError(error)) {
+                    this.full = true; // notify the main thread, then expect it to call `finalize()`
+                } else {
+                    throw error;
+                }
+            } finally {
+                this.readerForEncryptionStreamToStore?.releaseLock();
+                this.readerForEncryptionStreamToStore = null;
+                this.syncAccessHandle?.close();
+                this.syncAccessHandle = null;
+            }
+        })();
     }
 
     async addChunk(chunkBuffer: ArrayBuffer): Promise<boolean> {
-        if (this.full || !this.syncAccessHandle) {
-            return false;
+        if (this.full) {
+            return true;
         }
 
-        try {
-            const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at: this.filePosition });
-            this.filePosition += bytesWritten;
-            this.syncAccessHandle.flush();
-            return false;
-        } catch (error) {
-            if (isQuotaExceededError(error)) {
-                this.full = true;
-                return true;
-            }
-            throw error;
-        }
+        await this.writerForDataStreamToEncrypt?.write(new Uint8Array(chunkBuffer));
+        return false;
     }
 
-    // Closes the write handle so the consumer can read the file back.
+    // Closes any pending write handles so the consumer can read them back.
     async finalize(): Promise<{ fileName: string }> {
-        if (this.syncAccessHandle) {
-            this.syncAccessHandle.flush();
-            this.syncAccessHandle.close();
-            this.syncAccessHandle = null;
-        }
+        // `close` will reject if readerForEncryptionStreamToStore was cancelled
+        await this.writerForDataStreamToEncrypt?.close().catch(() => {});
+        this.writerForDataStreamToEncrypt = null;
+        await this.encryptionStreamReaderPromise;
 
         return { fileName: this.fileName };
     }
 
     async clear(): Promise<void> {
+        await this.writerForDataStreamToEncrypt?.abort();
+        this.writerForDataStreamToEncrypt = null;
+        await this.readerForEncryptionStreamToStore?.cancel().catch(() => {});
+        this.readerForEncryptionStreamToStore = null;
+        await this.encryptionStreamReaderPromise?.catch(() => {});
+
         if (this.syncAccessHandle) {
             this.syncAccessHandle.close();
             this.syncAccessHandle = null;
@@ -80,17 +142,6 @@ class OPFSWorkerStorage {
         if (this.root && this.fileHandle) {
             await this.root.removeEntry(this.fileName);
             this.fileHandle = null;
-        }
-    }
-
-    close(): void {
-        try {
-            if (this.syncAccessHandle) {
-                this.syncAccessHandle.close();
-                this.syncAccessHandle = null;
-            }
-        } catch (err) {
-            logger.error('Error closing sync handle:', err);
         }
     }
 }
@@ -104,7 +155,12 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
     try {
         switch (message.type) {
             case StorageMessageType.INIT: {
-                await storage.init(message.data.fileExtension, message.data.userId);
+                await storage.init(
+                    message.data.fileExtension,
+                    message.data.userId,
+                    message.data.sessionKey,
+                    message.data.encryptedSessionKey
+                );
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
@@ -134,13 +190,6 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
 
             case StorageMessageType.CLEAR: {
                 await storage.clear();
-                const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
-                self.postMessage(response);
-                break;
-            }
-
-            case StorageMessageType.CLOSE: {
-                storage.close();
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
