@@ -1414,6 +1414,9 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Тэрмін дзеянне павінен быць паміж 1 гадзінай і 1 годам"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Не ўдалося спыніць агент SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -1435,7 +1438,7 @@
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Абагуленне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
+        "Абагульванне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
       ]
     },
     "file size format": {
@@ -2439,7 +2442,7 @@
         "Выберыце сховішчы, якія можа прачытаць \"${ token.Name }\"."
       ],
       "Select vault to share": [
-        "Выберыце сховішча для абагулення"
+        "Выберыце сховішча для абагульвання"
       ],
       "Select where you want your imported vaults to be saved.": [
         "Выберыце куды вы хочаце захаваць свае імпартаваныя сховішчы."
@@ -2863,6 +2866,12 @@
         "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
         "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
         "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } будзе выкарыстоўваць ключы SSH захаваныя ў вашым сховішчы."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ключы SSH не знойдзены ў ${ PASS_SHORT_APP_NAME }. Стварыце элементы ключа SSH, каб выкарыстоўваць з агентам."
       ]
     },
     "Keyboard key": {
@@ -4594,6 +4603,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Ліст са спраўджаннем адпраўлены. Праверце папку з уваходнымі лістамі, каб спраўдзіць сваю паштовую скрыню."
+      ],
+      "SSH agent successfully started": [
+        "Агент SSH паспяхова запушчаны"
+      ],
+      "SSH agent successfully stopped": [
+        "Агент SSH паспяхова спынены"
       ]
     },
     "Theme": {
@@ -5132,6 +5147,9 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "SSH Agent": [
+        "Агент SSH"
       ]
     },
     "Title_cloned_item": {

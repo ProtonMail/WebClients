@@ -1404,6 +1404,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "La durée de validité doit être comprise entre 1 heure et 1 an."
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Le démarrage de l'agent SSH n'a pas abouti : ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Impossible d'arrêter l'agent SSH : ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2098,8 +2104,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2793,6 +2798,12 @@
       ],
       "Expires on ${ formattedDate }": [
         "Expire le ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } utilisera les clés SSH enregistrées dans vos coffres-forts."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Aucune clé SSH n'a été trouvée dans ${ PASS_SHORT_APP_NAME }. Créez des clés SSH à utiliser avec l'agent."
       ]
     },
     "Keyboard key": {
@@ -4002,6 +4013,9 @@
       ],
       "Expires in": [
         "Expire dans"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Utilisez ${ PASS_APP_NAME } comme agent SSH"
       ]
     },
     "Link": {
@@ -4486,6 +4500,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "L'e-mail de vérification a été envoyé. Veuillez vérifier votre boite de réception pour confirmer votre messagerie."
+      ],
+      "SSH agent successfully started": [
+        "L'agent SSH a démarré avec succès"
+      ],
+      "SSH agent successfully stopped": [
+        "L'agent SSH a été arrêté avec succès"
       ]
     },
     "Theme": {
@@ -5012,6 +5032,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5360,6 +5383,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "L'agent SSH nécessite l'utilisation de clés SSH, cette fonctionnalité n'est pas incluse dans votre abonnement."
       ]
     }
   }
