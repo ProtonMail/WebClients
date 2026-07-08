@@ -319,6 +319,45 @@ describe('useVatNumber', () => {
             expect(onVatChange).toHaveBeenCalledWith('NEW-VAT');
         });
 
+        it('reports an empty VAT to onVatChange when only the bare prefix is entered', () => {
+            const onVatChange = jest.fn();
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        onVatChange,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            act(() => {
+                result.current.setVatNumber('DE');
+            });
+
+            // The input keeps showing the prefix, but nothing incomplete is reported for submission.
+            expect(result.current.vatNumber).toBe('DE');
+            expect(result.current.vatNumberToSubmit).toBe('');
+            expect(onVatChange).toHaveBeenCalledWith('');
+        });
+
+        it('exposes the full VAT number for submission once it is complete', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            act(() => {
+                result.current.setVatNumber('DE123456788');
+            });
+
+            expect(result.current.vatNumberToSubmit).toBe('DE123456788');
+        });
+
         it('should work when onChange is not provided', () => {
             const { result } = renderHook(() =>
                 useVatNumber(defaultProps({ isAuthenticated: false, onChange: undefined }))
@@ -331,6 +370,28 @@ describe('useVatNumber', () => {
             }).not.toThrow();
 
             expect(result.current.vatNumber).toBe('NEW-VAT');
+        });
+
+        it('does not leak a bare prefix through onBillingAddressChange', () => {
+            const onBillingAddressChange = jest.fn();
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        onBillingAddressChange,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            act(() => {
+                result.current.setVatNumber('DE');
+            });
+            act(() => {
+                result.current.setCompany('Acme');
+            });
+
+            expect(onBillingAddressChange).toHaveBeenLastCalledWith(expect.objectContaining({ VatId: '' }));
         });
     });
 
