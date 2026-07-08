@@ -54,7 +54,7 @@ jest.mock('@proton/account/retentionPolicies/hooks', () => ({
 
 jest.mock('../categoryView/categoriesOnboarding/CategoriesOnboardingContext', () => ({
     useCategoriesOnboarding: jest.fn(() => ({
-        userIsInOnboarding: false,
+        userIsInB2COnboardingFlow: false,
     })),
 }));
 

@@ -12,7 +12,12 @@ import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { contextTotal, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { getB2COnboardingStep, hasSeenOnboardingModal } from './categoriesOnboarding.helpers';
+import {
+    getB2COnboardingStep,
+    getListSpotlightStep,
+    getSocialTabSpotlightStep,
+    hasSeenOnboardingModal,
+} from './categoriesOnboarding.helpers';
 import type { CategorizeStepLocation } from './onboardingInterface';
 import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
@@ -20,9 +25,10 @@ import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEli
 interface CategoriesOnboardingContextProps {
     userIsInB2COnboardingFlow: boolean;
     activeStep: OnboardingStep;
+    socialTabSpotlightStep: OnboardingStep | undefined;
+    listSpotlightStep: OnboardingStep | undefined;
     handleSkip: () => void;
     completeCurrentStep: () => void;
-    categorizeStepLocation: CategorizeStepLocation;
 }
 
 export const CategoriesOnboardingContext = createContext<CategoriesOnboardingContextProps | null>(null);
@@ -31,6 +37,7 @@ const STEP_TO_FLAG: Partial<Record<OnboardingStep, CategoriesOnboardingFlags>> =
     [OnboardingStep.MESSAGE]: CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE,
     [OnboardingStep.CATEGORIZE]: CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE,
     [OnboardingStep.CUSTOMIZE]: CategoriesOnboardingFlags.SPOTLIGHT_CUSTOMIZE,
+    [OnboardingStep.FREE_USERS_SPOTLIGHT]: CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS,
 };
 
 const B2C_ONBOARDING_STEPS = new Set<OnboardingStep>([
@@ -112,6 +119,10 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             return OnboardingStep.NONE;
         }
 
+        if (onboarding.onboardingFlow === OnboardingFlow.FREE_PROMPT) {
+            return OnboardingStep.FREE_USERS_SPOTLIGHT;
+        }
+
         return getB2COnboardingStep(flagValue);
     }, [
         isInbox,
@@ -147,17 +158,35 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         void flagRef.current.update(setBit(flagValue, bit));
     }, [activeStep]);
 
+    const socialTabSpotlightStep = useMemo(
+        () => getSocialTabSpotlightStep(activeStep, categorizeStepLocation),
+        [activeStep, categorizeStepLocation]
+    );
+
+    const listSpotlightStep = useMemo(
+        () => getListSpotlightStep(activeStep, categorizeStepLocation),
+        [activeStep, categorizeStepLocation]
+    );
+
     const userIsInB2COnboardingFlow = B2C_ONBOARDING_STEPS.has(activeStep);
 
-    const value = useMemo(
+    const value: CategoriesOnboardingContextProps = useMemo(
         () => ({
             activeStep,
+            socialTabSpotlightStep,
+            listSpotlightStep,
             userIsInB2COnboardingFlow,
             handleSkip,
             completeCurrentStep,
-            categorizeStepLocation,
         }),
-        [activeStep, userIsInB2COnboardingFlow, handleSkip, completeCurrentStep, categorizeStepLocation]
+        [
+            activeStep,
+            socialTabSpotlightStep,
+            listSpotlightStep,
+            userIsInB2COnboardingFlow,
+            handleSkip,
+            completeCurrentStep,
+        ]
     );
 
     return <CategoriesOnboardingContext.Provider value={value}>{children}</CategoriesOnboardingContext.Provider>;
