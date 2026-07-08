@@ -3,7 +3,6 @@ import type { App, ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import type {
     ChatComposeResultData,
     ChatIncomingEventInfoData,
-    CreateJoinRequestResult,
     DecryptedMessageInfoData,
     GroupDisplayCodeData,
     GroupKeyInfoData,
@@ -176,66 +175,6 @@ export class DirectMeetCoreClient implements MeetCoreClient {
 
     public endMeeting(): Promise<void> {
         return this.app.endMeeting();
-    }
-
-    public hasMlsGroupInfo(): Promise<boolean> {
-        return this.app.hasMlsGroupInfo();
-    }
-
-    public prepareMlsSessionForWaitingRoom(...args: Parameters<App['prepareMlsSessionForWaitingRoom']>): Promise<void> {
-        return this.app.prepareMlsSessionForWaitingRoom(...args);
-    }
-
-    public createJoinRequest(meetLinkName: string, meetingSessionKey: string): Promise<CreateJoinRequestResult> {
-        return this.app.createJoinRequest(meetLinkName, meetingSessionKey);
-    }
-
-    public waitForWaitingRoomWelcome(meetLinkName: string): Promise<void> {
-        return this.app.waitForWaitingRoomWelcome(meetLinkName);
-    }
-
-    public cancelWaitingRoomJoinRequest(meetLinkName: string): Promise<void> {
-        return this.app.cancelWaitingRoomJoinRequest(meetLinkName);
-    }
-
-    public clearWaitingRoomJoinRequest(): Promise<void> {
-        return this.app.clearWaitingRoomJoinRequest();
-    }
-
-    public setJoinDecisionHandler(): Promise<void> {
-        return this.app.setJoinDecisionHandler();
-    }
-
-    public clearJoinDecisionHandler(): Promise<void> {
-        return this.app.clearJoinDecisionHandler();
-    }
-
-    public setJoinRequestHandler(): Promise<void> {
-        return this.app.setJoinRequestHandler();
-    }
-
-    public clearJoinRequestHandler(): Promise<void> {
-        return this.app.clearJoinRequestHandler();
-    }
-
-    public admitWaitingRoomJoinRequest(
-        meetLinkName: string,
-        requestId: string,
-        sessionKeyBase64: string
-    ): Promise<void> {
-        return this.app.admitWaitingRoomJoinRequest(meetLinkName, requestId, sessionKeyBase64);
-    }
-
-    public admitAllWaitingRoomJoinRequests(meetLinkName: string, sessionKeyBase64: string): Promise<void> {
-        return this.app.admitAllWaitingRoomJoinRequests(meetLinkName, sessionKeyBase64);
-    }
-
-    public rejectWaitingRoomJoinRequest(
-        meetLinkName: string,
-        requestId: string,
-        participantUid: string
-    ): Promise<void> {
-        return this.app.rejectWaitingRoomJoinRequest(meetLinkName, requestId, participantUid);
     }
 
     private disposed = false;
