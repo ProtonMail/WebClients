@@ -1,7 +1,7 @@
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ItemKey, ShareKey, VaultShareKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { CreateSecureLinkData } from './create-secure-link';
 import { createSecureLink } from './create-secure-link';
@@ -37,7 +37,7 @@ describe('`openSecureLink` crypto process', () => {
     test('should support legacy secure-links encrypted with `shareKey`', async () => {
         const rawItemKey = generateKey();
         const rawShareKey = generateKey();
-        const testContent = stringToUint8Array('Test secure link content data');
+        const testContent = binaryStringToUint8Array('Test secure link content data');
 
         const itemKey: ItemKey = {
             key: await importSymmetricKey(rawItemKey),
@@ -69,7 +69,7 @@ describe('`openSecureLink` crypto process', () => {
 
     test('should support secure-links encrypted with `itemKey`', async () => {
         const rawItemKey = generateKey();
-        const testContent = stringToUint8Array('Test secure link content data');
+        const testContent = binaryStringToUint8Array('Test secure link content data');
 
         const itemKey: ItemKey = {
             key: await importSymmetricKey(rawItemKey),

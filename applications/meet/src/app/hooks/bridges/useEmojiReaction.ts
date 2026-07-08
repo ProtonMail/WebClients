@@ -5,7 +5,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { clearActiveReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
@@ -57,7 +57,7 @@ export const useEmojiReaction = () => {
 
         const message = {
             id: `${identity}-${Date.now()}`,
-            message: uint8ArrayToString(encryptedMessage),
+            message: uint8ArrayToBinaryString(encryptedMessage),
             timestamp: Date.now(),
             type: PublishableDataTypes.EmojiReaction,
             version: 1,

@@ -1,5 +1,6 @@
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { computeSHA256 } from '@protontech/crypto/subtle/hash.ts';
+
+import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { AuthSession, EncryptedSessionKeys } from './session';
 
@@ -56,7 +57,8 @@ export const digestSession = async (
 ): Promise<string> => {
     const integrityKeys = getSessionIntegrityKeys(version);
     const sessionDigest = integrityKeys.reduce<string>((digest, key) => `${digest}::${session[key] || '-'}`, '');
-    const sessionBuffer = stringToUint8Array(sessionDigest);
+    // binary string encoding needed as the offlineVerifier also gets decoded here
+    const sessionBuffer = binaryStringToUint8Array(sessionDigest);
     const digest = await computeSHA256(sessionBuffer);
 
     return `${version}${VERSION_SEPARATOR}${digest.toBase64()}`;

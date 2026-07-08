@@ -1,7 +1,7 @@
-import { c } from 'ttag';
-
 import { CryptoProxy, serverTime } from '@protontech/crypto';
 import { binaryStringToUint8Array } from '@protontech/crypto/utils';
+import { c } from 'ttag';
+
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendMultipleTelemetryReports, sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -14,7 +14,6 @@ import { getEventByUID } from '../../api/calendars';
 import type { Options as FormatOptions } from '../../date-fns-utc/format';
 import formatUTC from '../../date-fns-utc/format';
 import { getSupportedTimezone, toUTCDate } from '../../date/timezone';
-import { stringToUint8Array } from '../../helpers/encoding';
 import { readFileAsString } from '../../helpers/file';
 import { dateLocale } from '../../i18n';
 import type { Api, SimpleMap } from '../../interfaces';
@@ -289,7 +288,10 @@ export const extractSupportedEvent = async ({
 
     if (generateHashUid) {
         validVevent.uid = {
-            value: await generateVeventHashUID(stringToUint8Array(serialize(vcalComponent)), vcalComponent?.uid?.value),
+            value: await generateVeventHashUID(
+                binaryStringToUint8Array(serialize(vcalComponent)),
+                vcalComponent?.uid?.value
+            ),
         };
     }
 

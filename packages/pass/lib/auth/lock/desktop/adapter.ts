@@ -13,18 +13,18 @@ import { SilentError } from '@proton/pass/utils/errors/errors';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 const encryptVerifier = async (lockSecret: Uint8Array<ArrayBuffer>) => {
     const key = await importSymmetricKey(lockSecret);
     const encryptedVerifier = await encryptData(key, generateKey(), PassEncryptionTag.DesktopUnlockVerifier);
-    return uint8ArrayToString(encryptedVerifier);
+    return uint8ArrayToBinaryString(encryptedVerifier);
 };
 
 const checkVerifier = async (lockSecret: string, desktopLockVerifier: string) => {
     const key = await importSymmetricKey(Uint8Array.fromBase64(lockSecret));
-    await decryptData(key, stringToUint8Array(desktopLockVerifier), PassEncryptionTag.DesktopUnlockVerifier);
+    await decryptData(key, binaryStringToUint8Array(desktopLockVerifier), PassEncryptionTag.DesktopUnlockVerifier);
     return true;
 };
 

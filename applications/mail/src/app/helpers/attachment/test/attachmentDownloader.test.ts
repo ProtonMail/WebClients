@@ -2,7 +2,6 @@ import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -32,7 +31,7 @@ const attachmentName = 'Attachment Name';
 const attachment1 = {
     ID: '1',
     Name: attachmentName,
-    Preview: stringToUint8Array('message preview'),
+    Preview: utf8StringToUint8Array('message preview'),
     KeyPackets: utf8StringToUint8Array('keypackets').toBase64(),
 } as Attachment;
 const verification = {} as MessageVerification;
@@ -107,7 +106,7 @@ describe('generateDownload', () => {
             attachment: {
                 Name: 'attachment1',
             },
-            data: stringToUint8Array('download 1 data'),
+            data: utf8StringToUint8Array('download 1 data'),
             verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
         } as Download;
 
@@ -127,7 +126,7 @@ describe('generateDownload', () => {
             attachment: {
                 Name: 'attachment1',
             },
-            data: stringToUint8Array('download 1 data'),
+            data: utf8StringToUint8Array('download 1 data'),
             verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
         } as Download;
 
@@ -192,14 +191,14 @@ describe('generateDownloadAll', () => {
                 attachment: {
                     Name: 'attachment1',
                 },
-                data: stringToUint8Array('download 1 data'),
+                data: utf8StringToUint8Array('download 1 data'),
                 verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
             } as Download,
             {
                 attachment: {
                     Name: 'attachment2',
                 },
-                data: stringToUint8Array('download 2 data'),
+                data: utf8StringToUint8Array('download 2 data'),
                 verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
             } as Download,
         ];
