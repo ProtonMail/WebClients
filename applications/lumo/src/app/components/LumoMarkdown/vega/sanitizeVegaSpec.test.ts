@@ -83,6 +83,7 @@ describe('sanitizeVegaSpec', () => {
 
     it('rejects invalid JSON', () => {
         expect(() => sanitizeVegaSpec('{ not json')).toThrow(VegaSpecParseError);
+        expect(() => sanitizeVegaSpec('{ not json')).toThrow(/not valid JSON/);
     });
 
     it('accepts trailing commas from LLM output', () => {

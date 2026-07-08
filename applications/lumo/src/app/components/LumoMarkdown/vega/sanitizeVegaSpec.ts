@@ -66,18 +66,41 @@ function assertNoExternalDataSources(value: unknown, path: string[]): void {
     }
 }
 
+function stripMarkdownCodeFence(raw: string): string {
+    const trimmed = raw.trim();
+    const fenceMatch = trimmed.match(/^```(?:[\w-]+)?[ \t]*\n([\s\S]*?)\n```$/);
+    return fenceMatch ? fenceMatch[1]!.trim() : trimmed;
+}
+
+function normalizeJsonText(raw: string): string {
+    return raw
+        .replace(/^\uFEFF/, '')
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/[\u2018\u2019]/g, "'");
+}
+
 function parseJsonLenient(raw: string): unknown {
-    try {
-        return JSON.parse(raw);
-    } catch {
-        // LLM output often includes trailing commas before closing braces.
-        const withoutTrailingCommas = raw.replace(/,\s*([}\]])/g, '$1');
-        return JSON.parse(withoutTrailingCommas);
+    const candidates = [
+        raw,
+        normalizeJsonText(raw),
+        raw.replace(/,\s*([}\]])/g, '$1'),
+        normalizeJsonText(raw).replace(/,\s*([}\]])/g, '$1'),
+    ];
+
+    let lastError: Error | undefined;
+    for (const candidate of candidates) {
+        try {
+            return JSON.parse(candidate);
+        } catch (error) {
+            lastError = error instanceof Error ? error : new Error(String(error));
+        }
     }
+
+    throw lastError ?? new Error('Invalid JSON');
 }
 
 export function parseVegaSpecJson(raw: string): Record<string, unknown> {
-    const trimmed = raw.trim();
+    const trimmed = stripMarkdownCodeFence(raw.trim());
     if (!trimmed) {
         throw new VegaSpecParseError('Vega spec is empty');
     }
@@ -92,7 +115,9 @@ export function parseVegaSpecJson(raw: string): Record<string, unknown> {
         if (error instanceof VegaSpecParseError) {
             throw error;
         }
-        throw new VegaSpecParseError('Vega spec is not valid JSON');
+
+        const detail = error instanceof Error ? error.message : String(error);
+        throw new VegaSpecParseError(`Vega spec is not valid JSON (${detail})`);
     }
 }
 
