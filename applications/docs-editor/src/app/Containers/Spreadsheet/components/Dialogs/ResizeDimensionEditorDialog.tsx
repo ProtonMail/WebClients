@@ -1,7 +1,6 @@
 import * as Ariakit from '@ariakit/react'
 import clsx from 'clsx'
 import { FormGroup, Input } from '../Sidebar/shared'
-import { Button } from '@proton/atoms/Button/Button'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
 import {
@@ -11,6 +10,7 @@ import {
 } from '@rowsncolumns/spreadsheet-state'
 import { generateMultiDimTitle, useSpreadsheetApi } from '@rowsncolumns/spreadsheet'
 import { useUI } from '../../ui-store'
+import { Button } from '../shared/Button'
 
 const { s } = createStringifier(strings)
 
@@ -72,8 +72,10 @@ function ResizeDimensionEditor({ resizeDimension }: ResizeDimensionEditorProps) 
           </FormGroup>
 
           <div className="mt-4 flex items-center justify-end gap-2 text-sm">
-            <Ariakit.DialogDismiss render={<Button type="button" />}>{s('Cancel')}</Ariakit.DialogDismiss>
-            <Button type="submit" color="norm">
+            <Ariakit.DialogDismiss render={<Button type="button" className="!px-[.9375rem] !py-[.4375rem]" />}>
+              {s('Cancel')}
+            </Ariakit.DialogDismiss>
+            <Button type="submit" color="norm" className="!px-[.9375rem] !py-[.4375rem]">
               {s('OK')}
             </Button>
           </div>

@@ -1,5 +1,4 @@
 import { InputFieldTwo } from '@proton/components'
-import { Button } from '@proton/atoms/Button/Button'
 import { IcLink } from '@proton/icons/icons/IcLink'
 import { useUI } from '../../ui-store'
 import * as Ariakit from '@ariakit/react'
@@ -7,6 +6,7 @@ import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import clsx from 'clsx'
+import { Button } from '../shared/Button'
 
 const { s } = createStringifier(strings)
 
@@ -105,10 +105,10 @@ function InsertLinkPopover() {
         }}
       />
       <div className="flex items-center gap-2 text-sm">
-        <Button type="button" onClick={insertLink} color="norm">
+        <Button type="button" className="!px-[.9375rem] !py-[.4375rem]" onClick={insertLink} color="norm">
           {s('Apply')}
         </Button>
-        <Button type="button" onClick={useUI.$.view.insertLinkDialog.close}>
+        <Button type="button" className="!px-[.9375rem] !py-[.4375rem]" onClick={useUI.$.view.insertLinkDialog.close}>
           {s('Cancel')}
         </Button>
       </div>
