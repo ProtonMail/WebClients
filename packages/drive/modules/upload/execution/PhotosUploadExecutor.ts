@@ -35,6 +35,15 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
             return;
         }
 
+        if (task.file.size === 0 && !task.allowEmptyFile) {
+            void this.eventCallback?.({
+                type: 'file:empty',
+                uploadId: task.uploadId,
+                isForPhotos: true,
+            });
+            return;
+        }
+
         try {
             const drivePhotos = UploadDriveClientRegistry.getDrivePhotosClient();
 
@@ -143,6 +152,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 parentUid: photosRoot.uid,
                 isUpdatedNode: false,
                 isForPhotos: true,
+                isEmpty: task.allowEmptyFile,
             });
         } catch (error) {
             if (abortController.signal.aborted) {

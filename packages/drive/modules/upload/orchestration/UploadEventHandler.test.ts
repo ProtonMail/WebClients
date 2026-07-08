@@ -196,6 +196,56 @@ describe('UploadEventHandler', () => {
             expect(mockRemoveController).toHaveBeenCalledWith('task123');
             expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
         });
+
+        it('should mark file as EmptyFile when isEmpty is true', async () => {
+            const event = {
+                type: 'file:complete' as const,
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+                isUpdatedNode: false,
+                isForPhotos: false,
+                isEmpty: true,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.EmptyFile,
+                nodeUid: 'node456',
+            });
+        });
+    });
+
+    describe('handleEvent - file:empty', () => {
+        it('should mark file as EmptyFile and remove controller', async () => {
+            const event = {
+                type: 'file:empty' as const,
+                uploadId: 'task123',
+                isForPhotos: false,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.EmptyFile,
+            });
+            expect(mockRemoveController).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+
+        it('should call photos checkAndUnsubscribe when isForPhotos is true', async () => {
+            const event = {
+                type: 'file:empty' as const,
+                uploadId: 'task123',
+                isForPhotos: true,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockPhotosCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).not.toHaveBeenCalled();
+        });
     });
 
     describe('handleEvent - file:error', () => {

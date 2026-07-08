@@ -57,6 +57,7 @@ export class UploadEventHandler {
                 this.handlePhotoUnsupported(event),
             'file:conflict': (event: Extract<UploadEvent, { type: 'file:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
+            'file:empty': (event: Extract<UploadEvent, { type: 'file:empty' }>) => this.handleFileEmpty(event),
             'file:cancelled': (event: Extract<UploadEvent, { type: 'file:cancelled' }>) =>
                 this.handleFileCancelled(event),
             'folder:conflict': (event: Extract<UploadEvent, { type: 'folder:conflict' }>) =>
@@ -154,7 +155,7 @@ export class UploadEventHandler {
 
         this.uploadSpeedMetrics.onFileEnded(event.uploadId);
         queueStore.updateQueueItems(event.uploadId, {
-            status: UploadStatus.Finished,
+            status: event.isEmpty ? UploadStatus.EmptyFile : UploadStatus.Finished,
             nodeUid: event.nodeUid,
         });
         controllerStore.removeController(event.uploadId);
@@ -240,6 +241,21 @@ export class UploadEventHandler {
             status: UploadStatus.PhotosDuplicate,
             nodeUid: event.duplicateUids[0],
         });
+    }
+
+    private handleFileEmpty(event: FileUploadEvent & { type: 'file:empty' }): void {
+        const queueStore = useUploadQueueStore.getState();
+        const controllerStore = useUploadControllerStore.getState();
+
+        queueStore.updateQueueItems(event.uploadId, {
+            status: UploadStatus.EmptyFile,
+        });
+        controllerStore.removeController(event.uploadId);
+        if (event.isForPhotos) {
+            this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        } else {
+            this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        }
     }
 
     private async handleFileCancelled(event: FileUploadEvent & { type: 'file:cancelled' }): Promise<void> {

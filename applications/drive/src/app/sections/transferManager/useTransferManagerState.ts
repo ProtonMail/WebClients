@@ -87,7 +87,8 @@ const getShouldIgnoreTransferProgress = (
         isMalwareIssue(status) ||
         status === UploadStatus.Skipped ||
         status === UploadStatus.PhotosDuplicate ||
-        status === UploadStatus.NotSupportedForPhotos
+        status === UploadStatus.NotSupportedForPhotos ||
+        status === UploadStatus.EmptyFile
     );
 };
 
@@ -192,6 +193,7 @@ export const useTransferManagerState = () => {
                 case BaseTransferStatus.MalwareScanUnavailable:
                     return 5;
                 case UploadStatus.NotSupportedForPhotos:
+                case UploadStatus.EmptyFile:
                     return 4;
                 case BaseTransferStatus.Pending:
                 case UploadStatus.Waiting:
