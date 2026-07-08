@@ -147,8 +147,7 @@ function buildThinkingTraceLines(steps: ThinkingStep[]): string[] {
     const activeToolStep = [...steps]
         .reverse()
         .find(
-            (step): step is Extract<ThinkingStep, { type: 'tool_call' }> =>
-                step.type === 'tool_call' && step.isActive
+            (step): step is Extract<ThinkingStep, { type: 'tool_call' }> => step.type === 'tool_call' && step.isActive
         );
 
     if (activeToolStep) {
@@ -405,7 +404,7 @@ const ToolCallStep = ({
             </ThinkingStepTrack>
 
             <div className="thinking-step-content min-w-0 text-rg lh130">
-                {/* eslint-disable-next-line no-nested-ternary */}
+                {}
                 {hasInlineCard && !isActive ? (
                     <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
                         <span className="color-weak">{label}</span>
@@ -416,8 +415,7 @@ const ToolCallStep = ({
                             className="thinking-step-complete-check shrink-0"
                         />
                     </div>
-                ) : // eslint-disable-next-line no-nested-ternary
-                hasInlineImageStatus ? (
+                ) : hasInlineImageStatus ? (
                     <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
                         <span className={hasError ? 'color-danger' : 'color-weak'}>{label}</span>
                         <div className="flex items-center gap-2 shrink-0">
@@ -446,12 +444,7 @@ const ToolCallStep = ({
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            <span
-                                className={
-                                    // eslint-disable-next-line no-nested-ternary
-                                    isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak'
-                                }
-                            >
+                            <span className={isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak'}>
                                 {label}
                             </span>
                             <div className="flex items-center gap-2 shrink-0">
@@ -494,7 +487,7 @@ const ToolCallStep = ({
 
                         {isExpanded && (
                             <div className="thinking-step-details mt-2 text-rg lh130">
-                                {/* eslint-disable-next-line no-nested-ternary */}
+                                {}
                                 {webExtractResult ? (
                                     <div className="flex flex-column gap-2">
                                         {webExtractResult.results.map((item, idx) => (
@@ -541,8 +534,7 @@ const ToolCallStep = ({
                                             </div>
                                         ))}
                                     </div>
-                                ) : // eslint-disable-next-line no-nested-ternary
-                                webSearchResults ? (
+                                ) : webSearchResults ? (
                                     <div className="flex flex-column gap-2">
                                         {webSearchResults.results.map((searchResult, idx) => (
                                             <div
@@ -607,20 +599,22 @@ const ToolCallStep = ({
     );
 };
 
-export const ThinkingPath = ({
-    steps,
-    message,
-    isThinking,
-    showThinkingTrace,
-    handleLinkClick,
-}: ThinkingPathProps) => {
+export const ThinkingPath = ({ steps, message, isThinking, showThinkingTrace, handleLinkClick }: ThinkingPathProps) => {
     const displaySteps = mergeConsecutiveReasoningSteps(steps);
     const [isExpanded, setIsExpanded] = useState(false);
+    const isWaitingForSteps = displaySteps.length === 0 && isThinking;
+
     const activeHeader = getThinkingPathHeader(displaySteps, message.id, true);
     const completeHeader = getThinkingPathHeader(displaySteps, message.id, false);
-    const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id, activeHeader);
+    const animatedHeader = useThinkingHeaderAnimation(
+        isThinking,
+        message.id,
+        isWaitingForSteps ? undefined : activeHeader
+    );
 
-    if (displaySteps.length === 0) return null;
+    if (displaySteps.length === 0 && !isThinking) {
+        return null;
+    }
 
     const showDone = !isThinking;
     const headerLabel = isThinking ? animatedHeader || activeHeader : completeHeader;
@@ -649,14 +643,15 @@ export const ThinkingPath = ({
                     height={12}
                     className={clsx(
                         'thinking-path-header-chevron shrink-0 color-weak',
-                        isExpanded && 'thinking-path-header-chevron--expanded'
+                        isExpanded && 'thinking-path-header-chevron--expanded',
+                        isWaitingForSteps && 'visibility-hidden'
                     )}
                 />
             </button>
 
             {showTrace && <ThinkingPathTrace lines={traceLines} />}
 
-            {isExpanded && (
+            {isExpanded && !isWaitingForSteps && (
                 <div className="thinking-path-steps flex flex-nowrap flex-column gap-4 mt-2">
                     {displaySteps.map((step, idx) => {
                         if (step.type === 'reasoning') {
