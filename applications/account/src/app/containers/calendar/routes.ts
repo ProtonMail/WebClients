@@ -29,7 +29,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
         : baseAccess;
 
     return {
-        available: app === APPS.PROTONCALENDAR,
+        available: app === APPS.PROTONCALENDAR || app === APPS.PROTONACCOUNT,
         header: CALENDAR_APP_NAME,
         routes: {
             desktop: {

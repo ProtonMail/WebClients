@@ -26,6 +26,7 @@ import passFree from './logo/plan-pass-free-light.svg';
 import passLifetime from './logo/plan-pass-lifetime.svg';
 import passPro from './logo/plan-pass-pro.svg';
 import pass from './logo/plan-pass.svg';
+import genericFree from './logo/plan-proton-free.svg';
 import visionary from './logo/plan-visionary.svg';
 import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
@@ -175,6 +176,11 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (app === APPS.PROTONLUMO) {
         return <img {...rest} src={lumoFree} width={size} alt="" className="w-full" />;
     }
+
+    if (!planName) {
+        return <img {...rest} src={genericFree} width={size} alt="" className="w-full" />;
+    }
+
     return null;
 };
 
