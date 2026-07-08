@@ -15,6 +15,7 @@ import { useConversationCounts } from '@proton/mail/store/counts/conversationCou
 // eslint-disable-next-line no-restricted-imports
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     contextPages,
@@ -29,6 +30,7 @@ import {
 } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
+import { DebugContentSearchView } from './DebugContentSearchView';
 import { DebugModalLogs } from './DebugModalLogs';
 
 interface Props extends ModalProps {}
@@ -60,6 +62,8 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
     const [messageCounts] = useMessageCounts();
 
     const { createNotification } = useNotifications();
+
+    const isContentSearchEnabled = useFlag('ContentSearch');
 
     const [index, setIndex] = useState(0);
 
@@ -113,11 +117,25 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
         },
     ];
 
+    if (isContentSearchEnabled) {
+        tabs.push({
+            title: 'Content search',
+            content: <DebugContentSearchView />,
+        });
+    }
+
     return (
         <ModalTwo {...rest} onClose={rest.onClose} size="large">
             <ModalTwoHeader title={c('Label').t`Mail debugging information`} />
-            <ModalTwoContent className="h-custom" style={{ '--h-custom': '30rem' }}>
-                <Tabs tabs={tabs} variant="modern" value={index} onChange={setIndex} />
+            <ModalTwoContent className="h-custom flex flex-column flex-nowrap" style={{ '--h-custom': '30rem' }}>
+                <Tabs
+                    tabs={tabs}
+                    variant="modern"
+                    value={index}
+                    onChange={setIndex}
+                    className="flex flex-column flex-nowrap flex-1 min-h-0"
+                    contentClassName="flex-1 min-h-0 overflow-auto"
+                />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>Close</Button>
