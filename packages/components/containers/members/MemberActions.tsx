@@ -39,14 +39,17 @@ export const MagicLinkMemberActions = ({
         <DropdownActions
             list={[
                 onEdit && {
+                    key: 'edit',
                     text: c('Member action').t`Edit`,
                     onClick: () => onEdit(),
                 },
                 onResend && {
+                    key: 'resendInviteLink',
                     text: c('Member action').t`Resend invite link`,
                     onClick: () => onResend(),
                 },
                 onDelete && {
+                    key: 'delete',
                     actionType: 'delete' as const,
                     text:
                         state === MemberUnprivatizationState.Pending
@@ -215,6 +218,7 @@ const MemberActions = ({
 
     const list = [
         canEdit && {
+            key: 'edit',
             text: c('Member action').t`Edit`,
             disabled: isOrganizationDelinquent || disableEdit,
             onClick: () => {
@@ -222,6 +226,7 @@ const MemberActions = ({
             },
         },
         canLogin && {
+            key: 'login',
             text: c('Member action').t`Sign in`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -229,6 +234,7 @@ const MemberActions = ({
             },
         },
         canAddAddress && {
+            key: 'addAddress',
             text: c('Member action').t`Add address`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -237,6 +243,7 @@ const MemberActions = ({
         },
         isAccountSettingsUserDisableEnabled &&
             canUpdateMemberState && {
+                key: 'updateMemberState',
                 text: isUserDisabled ? c('Member action').t`Enable user` : c('Member action').t`Disable user`,
                 disabled: isOrganizationDelinquent,
                 onClick: () => {
@@ -249,6 +256,7 @@ const MemberActions = ({
                 },
             },
         canSetupMember && {
+            key: 'setupMember',
             text: c('Member action').t`Activate user`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -256,6 +264,7 @@ const MemberActions = ({
             },
         },
         canChangePassword && {
+            key: 'changePassword',
             text: member.SSO ? c('Member action').t`Change backup password` : c('Member action').t`Change password`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -263,6 +272,7 @@ const MemberActions = ({
             },
         },
         canRevokeSessions && {
+            key: 'revokeSessions',
             text: c('Member action').t`Revoke sessions`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -270,6 +280,7 @@ const MemberActions = ({
             },
         },
         canAttachSSO && {
+            key: 'attachSSO',
             text: c('Member action').t`Convert to SSO`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -277,6 +288,7 @@ const MemberActions = ({
             },
         },
         canDetachSSO && {
+            key: 'detachSSO',
             text: c('Member action').t`Detach from SSO`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
@@ -285,6 +297,7 @@ const MemberActions = ({
         },
         canDelete &&
             ({
+                key: 'delete',
                 text:
                     member.Type === MEMBER_TYPE.PROTON && !member.Self // Intended for users who are invited, e.g. in visionary or family plans
                         ? c('Member action').t`Remove`
