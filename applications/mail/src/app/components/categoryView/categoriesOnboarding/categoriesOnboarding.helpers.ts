@@ -35,3 +35,7 @@ export const hasSeenAllOnboarding = (onboardingFlow: OnboardingFlow, flagValue: 
 
     return false;
 };
+
+export const hasSeenFreeUserSpotlight = (flagValue: number): boolean => {
+    return hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS);
+};
