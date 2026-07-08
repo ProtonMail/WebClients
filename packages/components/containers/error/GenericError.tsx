@@ -73,7 +73,7 @@ export const GenericErrorDisplay = ({
 };
 
 const GenericErrorWithReload = ({ children, className, big, isNetworkError }: GenericErrorProps) => {
-    const autoReloadEnabled = useFlag('AutoReloadPage');
+    const isAutoReloadDisabled = useFlag('AutoReloadPageDisabled');
 
     const reloadPageOnError = () => {
         const now = new Date();
@@ -103,7 +103,7 @@ const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Ge
     };
 
     useEffect(() => {
-        if (autoReloadEnabled && big) {
+        if (!isAutoReloadDisabled && big) {
             reloadPageOnError();
         }
     }, []);
