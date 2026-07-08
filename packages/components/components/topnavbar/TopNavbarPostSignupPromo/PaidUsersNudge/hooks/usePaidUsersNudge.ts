@@ -21,7 +21,7 @@ export const usePaidUsersNudge = ({ plan }: Props): OfferHookReturnValue => {
     const isEligible = useMonthlyUpsellEligibility({
         eligiblePlan: paidConfig[plan].currentPlan,
         allowedApps: paidConfig[plan].allowedApps,
-        offerFlag: paidConfig[plan].offerFlag,
+        offerDisabledFlag: paidConfig[plan].offerDisabledFlag,
         offerTimestampFlag: paidConfig[plan].offerTimestampFlag,
     });
 
