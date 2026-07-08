@@ -263,7 +263,7 @@ export function isCountryWithStates(countryCode: string): countryCode is Country
     return countriesWithStates.includes(countryCode as CountryWithStates);
 }
 
-export const countriesWithRequiredPostalCode = Object.freeze(['US', 'CA'] as const);
+const countriesWithRequiredPostalCode = Object.freeze(['US', 'CA'] as const);
 export type CountryWithRequiredPostalCode = (typeof countriesWithRequiredPostalCode)[number];
 export function isCountryWithRequiredPostalCode(countryCode: string): countryCode is CountryWithRequiredPostalCode {
     return countriesWithRequiredPostalCode.includes(countryCode as CountryWithRequiredPostalCode);

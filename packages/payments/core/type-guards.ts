@@ -1,8 +1,7 @@
-import { type ADDON_NAMES, CURRENCIES, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import type {
     ChargeablePaymentParameters,
     CreateCardDetailsBackend,
-    Currency,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
     FreeSubscription,
@@ -93,7 +92,7 @@ export function isExistingPaymentMethod(paymentMethod?: PaymentMethodType): paym
     );
 }
 
-export function isV5Payments(data: { v?: number } | undefined): data is V5Payments {
+function isV5Payments(data: { v?: number } | undefined): data is V5Payments {
     return !!data && data.v === 5;
 }
 
@@ -132,8 +131,4 @@ export function isSavedPaymentMethod(paymentMethodType: PaymentMethodType): bool
     // then its type/value becomes a string (ID). So if the paymentMethodType isn't in the list of plain methods, then
     // it must be an ID and then it means that the method is saved.
     return !(Object.values(PAYMENT_METHOD_TYPES) as PaymentMethodType[]).includes(paymentMethodType);
-}
-
-export function isCurrency(currency: string): currency is Currency {
-    return (CURRENCIES as string[]).includes(currency);
 }

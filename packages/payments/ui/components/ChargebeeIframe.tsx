@@ -104,15 +104,11 @@ export const parseEvent = (data: any) => {
     return props;
 };
 
-export function sendMessageToIframe(
-    iframeRef: RefObject<HTMLIFrameElement | null>,
-    targetOrigin: string,
-    message: any
-) {
+function sendMessageToIframe(iframeRef: RefObject<HTMLIFrameElement | null>, targetOrigin: string, message: any) {
     iframeRef.current?.contentWindow?.postMessage(JSON.stringify(message), targetOrigin);
 }
 
-export function listenToIframeEvents(
+function listenToIframeEvents(
     iframeRef: RefObject<HTMLIFrameElement | null>,
     callback: (e: MessageEvent<any>) => void
 ): RemoveEventListener {
@@ -135,9 +131,9 @@ type IframeActionOptions = {
     timeout?: number;
 };
 
-export const TIMEOUT_EXCEEDED_ERROR_TEXT = c('Payments').t`Timeout exceeded`;
+const TIMEOUT_EXCEEDED_ERROR_TEXT = c('Payments').t`Timeout exceeded`;
 
-export function iframeAction<T>(
+function iframeAction<T>(
     type: string,
     payload: object,
     iframeRef: RefObject<HTMLIFrameElement | null>,
@@ -292,7 +288,7 @@ interface ChargebeeConfiguration {
     domain: string;
 }
 
-export function useChargebeeHandles(
+function useChargebeeHandles(
     iframeRef: RefObject<HTMLIFrameElement | null>,
     targetOrigin: string
 ): ChargebeeIframeHandles & {
@@ -831,8 +827,8 @@ const useThreeDsChallenge = (iframe = false) => {
     };
 };
 
-export const IFRAME_PADDING = 8;
-export const MIN_PAYPAL_BUTTON_WIDTH = 150;
+const IFRAME_PADDING = 8;
+const MIN_PAYPAL_BUTTON_WIDTH = 150;
 
 export function getPaypalButtonWidth(width: string): string;
 export function getPaypalButtonWidth(width?: number): number;

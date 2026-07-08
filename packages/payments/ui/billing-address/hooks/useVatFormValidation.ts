@@ -22,7 +22,7 @@ export interface VatFormFields {
     City?: string | null;
 }
 
-export interface VatFormErrors {
+interface VatFormErrors {
     hasErrors: boolean;
     errorMessages: {
         VatId: string;
@@ -137,7 +137,7 @@ export function getVatFormErrors(fields: VatFormFields, showExtendedBillingAddre
     };
 }
 
-export interface VatFormValidationResult {
+interface VatFormValidationResult {
     errors: VatFormErrors;
     containerRef: React.RefObject<HTMLDivElement>;
     handleFormBlur: (e: React.FocusEvent) => void;

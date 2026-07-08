@@ -69,7 +69,7 @@ export type CheckoutLineItem =
  * corresponding concrete item. Every key is always present, so lookups
  * never return `undefined`.
  */
-export type CheckoutLineItems = {
+type CheckoutLineItems = {
     [K in CheckoutLineItem['type']]: Extract<CheckoutLineItem, { type: K }>;
 };
 

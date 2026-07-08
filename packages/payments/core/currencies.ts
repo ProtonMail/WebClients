@@ -125,7 +125,7 @@ export function isRegionalCurrency(currency: Currency): boolean {
 
 export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = 'RegionalCurrenciesBatch3';
 
-export function isNewBatchRegionalCurrency(currency: Currency | undefined): boolean {
+function isNewBatchRegionalCurrency(currency: Currency | undefined): boolean {
     if (!currency) {
         return false;
     }
@@ -223,7 +223,6 @@ export function getSupportedRegionalCurrencies({
     return Array.from(new Set(currencies));
 }
 
-export type GetPreferredCurrencyParams = Parameters<typeof getPreferredCurrency>[0];
 export function getPreferredCurrency({
     paymentStatus,
     plans,

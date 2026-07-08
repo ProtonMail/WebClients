@@ -6,8 +6,6 @@ import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 import { TaxInclusive } from '../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../core/subscription/interface';
 
-export type TaxInfo = ReturnType<typeof formatTax>;
-
 export const formatTax = (checkResult: SubscriptionEstimation) => {
     const taxesQuantity = checkResult.Taxes?.length ?? 0;
     if (!checkResult.Taxes || !taxesQuantity) {
