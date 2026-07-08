@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
+import AccountLogo from './AccountLogo';
 import AuthenticatorLogo from './AuthenticatorLogo';
 import CalendarLogo from './CalendarLogo';
 import DocsLogo from './DocsLogo';
@@ -16,6 +17,7 @@ import VpnLogo from './VpnLogo';
 import WalletLogo from './WalletLogo';
 
 const {
+    PROTONACCOUNT,
     PROTONCALENDAR,
     PROTONDRIVE,
     PROTONMAIL,
@@ -37,6 +39,10 @@ export interface LogoProps extends LogoBaseProps {
 }
 
 const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
+    if (appName === PROTONACCOUNT) {
+        return <AccountLogo {...rest} />;
+    }
+
     if (appName === PROTONMAIL) {
         return <MailLogo {...rest} />;
     }

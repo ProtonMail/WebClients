@@ -58,7 +58,7 @@ export const DashboardGridSectionTitle = ({
     className?: string;
 }) => {
     return (
-        <div className={clsx("DashboardGrid-SectionTitle flex gap-2 lg:flex-nowrap justify-space-between", className)}>
+        <div className={clsx('DashboardGrid-SectionTitle flex gap-2 lg:flex-nowrap justify-space-between', className)}>
             <h2 className="m-0 text-2xl text-semibold">{children}</h2>
             {center && <div>{center}</div>}
             {cta && <DashboardGridSectionCta>{cta}</DashboardGridSectionCta>}
@@ -102,7 +102,7 @@ export const DashboardGrid = <E extends ElementType = typeof defaultElement>({
     columns,
 }: DashboardGridProps<E>) => {
     const Element: ElementType = as || defaultElement;
-    const validatedColumns = columns && columns > 3 ? 3 : columns;
+    const validatedColumns = columns && columns > 4 ? 4 : columns;
 
     return (
         <Element
