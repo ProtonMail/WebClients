@@ -19,7 +19,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
-import { HIGHLIGHTED_ITEM_INDEX, OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
+import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
@@ -78,7 +78,7 @@ const MailboxListItems = ({
     const location = useLocation();
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
-    const { categorizeStepLocation, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
+    const { listSpotlightStep } = useCategoriesOnboarding();
 
     useEffect(() => {
         // When we show more than 5 elements in the list, the onboarding should be collapsed.
@@ -148,16 +148,10 @@ const MailboxListItems = ({
                         />
                     );
 
-                    const showSpotlight = categorizeStepLocation === 'list';
-                    if (
-                        !isPlaceholder &&
-                        showSpotlight &&
-                        userIsInB2COnboardingFlow &&
-                        index === HIGHLIGHTED_ITEM_INDEX
-                    ) {
+                    if (!isPlaceholder && listSpotlightStep !== undefined && index === HIGHLIGHTED_ITEM_INDEX) {
                         return (
                             <Fragment key={element.ID}>
-                                <CategoriesOnboardingSpotlight step={OnboardingStep.CATEGORIZE}>
+                                <CategoriesOnboardingSpotlight step={listSpotlightStep}>
                                     {item}
                                 </CategoriesOnboardingSpotlight>
                             </Fragment>
