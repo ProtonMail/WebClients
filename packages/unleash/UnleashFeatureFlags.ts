@@ -38,10 +38,10 @@ export enum CommonFeatureFlag {
     InboxDesktopAppSessionCacheDisabled = 'InboxDesktopAppSessionCacheDisabled',
     InboxDesktopBugReportLogAttachmentDisabled = 'InboxDesktopBugReportLogAttachmentDisabled',
     InboxDesktopSaveAsPdfPrintDialogDisabled = 'InboxDesktopSaveAsPdfPrintDialogDisabled',
-    // Monthly subscriber nudge feature flags
-    SubscriberNudgeBundleMonthly = 'SubscriberNudgeBundleMonthly',
-    SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
-    SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
+    // Monthly subscriber nudge kill switches (default off; enable to hide the nudge)
+    SubscriberNudgeBundleMonthlyDisabled = 'SubscriberNudgeBundleMonthlyDisabled',
+    SubscriberNudgeMailMonthlyDisabled = 'SubscriberNudgeMailMonthlyDisabled',
+    SubscriberNudgeDriveMonthlyDisabled = 'SubscriberNudgeDriveMonthlyDisabled',
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
@@ -241,7 +241,6 @@ export enum MailFeatureFlag {
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
-    SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     RemoveReplyStyles = 'RemoveReplyStyles',
     // Category view flags, used to control the whole category view
     CategoryView = 'CategoryView',
