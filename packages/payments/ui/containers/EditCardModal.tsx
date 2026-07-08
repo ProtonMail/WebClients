@@ -21,7 +21,6 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import noop from '@proton/utils/noop';
 
 import { getPaymentsVersion, setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
-import type { CardModel } from '../../core/cardDetails';
 import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
@@ -30,7 +29,7 @@ import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
 import { usePaymentPollers } from '../hooks/usePaymentPollers';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
-    card?: CardModel;
+    editExistingCard: boolean;
     renewState?: Autopay;
     paymentMethod?: PaymentMethodCardDetails;
     onMethodAdded?: () => void;
@@ -39,7 +38,7 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
 }
 
 const EditCardModal = ({
-    card: existingCard,
+    editExistingCard,
     renewState,
     paymentMethod,
     onMethodAdded,
@@ -54,7 +53,7 @@ const EditCardModal = ({
 
     const [processing, withProcessing] = useLoading();
     const { createNotification } = useNotifications();
-    const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
+    const title = editExistingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
 
     const [chargebeeFormInitialized, setChargebeeFormInitialized] = useState(false);
 
@@ -84,7 +83,7 @@ const EditCardModal = ({
                     })
                 );
 
-                if (existingCard) {
+                if (editExistingCard) {
                     await getPaymentMethods({ cache: CacheType.None });
                     createNotification({ text: c('Success').t`Payment method updated` });
                 } else {
@@ -113,7 +112,7 @@ const EditCardModal = ({
                     component: 'edit-card-modal',
                 },
                 extra: {
-                    hasExistingCard: !!existingCard,
+                    hasExistingCard: editExistingCard,
                     renewState,
                     paymentMethodId,
                     processorType: paymentFacade.selectedProcessor?.meta.type,

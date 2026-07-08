@@ -12,13 +12,13 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { getInvoicesPathname } from '@proton/components/containers/invoices/helpers';
 
-export interface VatReverseChargeErrorModalInputs {
+interface VatReverseChargeErrorModalInputs {
     onCancel?: () => void;
     onEditAddress?: () => void;
     disableSpaNavigation?: boolean;
 }
 
-export type VatReverseChargeErrorModalProps = ModalProps & VatReverseChargeErrorModalInputs;
+type VatReverseChargeErrorModalProps = ModalProps & VatReverseChargeErrorModalInputs;
 
 export const VatReverseChargeErrorModal = (props: VatReverseChargeErrorModalProps) => {
     const { onCancel, onEditAddress, disableSpaNavigation, ...rest } = props;

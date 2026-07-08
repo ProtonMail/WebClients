@@ -1,4 +1,3 @@
-import { type CardModel, getDefaultCard } from '../cardDetails';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
@@ -7,7 +6,11 @@ import type {
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
 
-class PaymentProcessorTest extends PaymentProcessor<{ card: CardModel }> {
+interface TestPaymentProcessorState {
+    value: string;
+}
+
+class PaymentProcessorTest extends PaymentProcessor<TestPaymentProcessorState> {
     fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> {
         throw new Error('Method not implemented.');
     }
@@ -18,15 +21,18 @@ class PaymentProcessorTest extends PaymentProcessor<{ card: CardModel }> {
 }
 
 describe('PaymentProcessor', () => {
-    let paymentProcessor: PaymentProcessor<{ card: CardModel }>;
+    let paymentProcessor: PaymentProcessor<TestPaymentProcessorState>;
     const amountAndCurrency: AmountAndCurrency = {
         Amount: 1000,
         Currency: 'USD',
     };
+    const initialState: TestPaymentProcessorState = {
+        value: 'initial',
+    };
     const mockHandler = jest.fn();
 
     beforeEach(() => {
-        paymentProcessor = new PaymentProcessorTest({ card: getDefaultCard() }, amountAndCurrency);
+        paymentProcessor = new PaymentProcessorTest(initialState, amountAndCurrency);
     });
 
     afterEach(() => {
@@ -35,7 +41,7 @@ describe('PaymentProcessor', () => {
 
     it('should call the handler when the state is updated', () => {
         paymentProcessor.onStateUpdated(mockHandler);
-        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
+        const newState = { value: 'updated' };
         paymentProcessor.updateState(newState);
         expect(mockHandler).toHaveBeenCalledWith(newState);
     });
@@ -48,7 +54,7 @@ describe('PaymentProcessor', () => {
     it('should not call the handler when the state is updated after the processor was destroyed', () => {
         paymentProcessor.onStateUpdated(mockHandler);
         paymentProcessor.destroy();
-        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
+        const newState = { value: 'updated' };
         paymentProcessor.updateState(newState);
         expect(mockHandler).not.toHaveBeenCalled();
     });
@@ -56,7 +62,7 @@ describe('PaymentProcessor', () => {
     it('should not call the handler when the state is updated after the handler was removed', () => {
         const id = paymentProcessor.onStateUpdated(mockHandler);
         paymentProcessor.removeHandler(id);
-        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
+        const newState = { value: 'updated' };
         paymentProcessor.updateState(newState);
         expect(mockHandler).not.toHaveBeenCalled();
     });
@@ -64,7 +70,7 @@ describe('PaymentProcessor', () => {
     it('should not call the handler when the state is updated after the handler was removed by handler instance', () => {
         paymentProcessor.onStateUpdated(mockHandler);
         paymentProcessor.removeHandler(mockHandler);
-        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
+        const newState = { value: 'updated' };
         paymentProcessor.updateState(newState);
         expect(mockHandler).not.toHaveBeenCalled();
     });

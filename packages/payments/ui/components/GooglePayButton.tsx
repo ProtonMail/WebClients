@@ -39,7 +39,7 @@ const FakeGooglePayButton = ({
     );
 };
 
-export interface GooglePayButtonProps extends ChargebeeWrapperProps {
+interface GooglePayButtonProps extends ChargebeeWrapperProps {
     googlePay: GooglePayProcessorHook;
     disabled?: boolean;
     className?: string;

@@ -8,7 +8,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { deletePaymentMethod, markPaymentMethodAsDefault } from '@proton/payments/core/api/api';
-import { type CardModel, isExpired } from '@proton/payments/core/cardDetails';
+import { isCardExpired } from '@proton/payments/core/cardDetails';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodCardDetails, SavedPaymentMethod } from '@proton/payments/core/interface';
 import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
@@ -17,17 +17,6 @@ import noop from '@proton/utils/noop';
 
 import useModalState, { useModalStateWithData } from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
-
-const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
-    return {
-        month: `${Details.ExpMonth}`, // ExpMonth is a number
-        number: '',
-        year: `${Details.ExpYear}`.slice(-2), // ExpYear is a number
-        cvc: '',
-        zip: Details.ZIP,
-        country: Details.Country,
-    };
-};
 
 export interface Props {
     method: SavedPaymentMethod;
@@ -40,7 +29,6 @@ const PaymentMethodActions = ({ method, methods, app }: Props) => {
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [confirmDeleteProps, setConfirmDeleteModal, renderConfirmDeleteModal] = useModalState();
     const [{ data: editModalPropsData, ...editModalProps }, setEditModal, renderEditModal] = useModalStateWithData<{
-        card: CardModel;
         method: PaymentMethodCardDetails;
     }>();
     const api = useApi();
@@ -61,17 +49,15 @@ const PaymentMethodActions = ({ method, methods, app }: Props) => {
     const dropdownActions: DropdownActionProps[] = [];
 
     if (method.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        const card: CardModel = toCardModel(method);
-
         dropdownActions.push({
             key: 'edit',
             text: c('Action').t`Edit`,
-            onClick: () => setEditModal({ card, method }),
+            onClick: () => setEditModal({ method }),
             'data-testid': 'Edit',
         });
     }
 
-    if (!method.IsDefault && !isExpired(method.Details)) {
+    if (!method.IsDefault && !isCardExpired(method.Details)) {
         dropdownActions.push({
             key: 'mark-default',
             text: c('Action').t`Mark as default`,
@@ -94,7 +80,7 @@ const PaymentMethodActions = ({ method, methods, app }: Props) => {
             {renderEditModal && editModalPropsData && (
                 <EditCardModal
                     {...editModalProps}
-                    card={editModalPropsData.card}
+                    editExistingCard={true}
                     renewState={editModalPropsData.method.Autopay}
                     paymentMethod={editModalPropsData.method}
                     app={app}

@@ -19,7 +19,7 @@ export const defaultTranslations: EnsureTokenChargeableTranslations = {
 /**
  * Partially preconfigured ensureTokenChargeable function.
  */
-export const getEnsureTokenChargeable =
+const getEnsureTokenChargeable =
     (translations: EnsureTokenChargeableTranslations = defaultTranslations) =>
     (inputs: EnsureTokenChargeableInputs, delay?: number) =>
         innerEnsureTokenChargeable(inputs, translations, delay);

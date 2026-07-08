@@ -197,7 +197,7 @@ export const useChargebeeCardVerifyPayment = (
     return verifyChargebee;
 };
 
-export const PendingValidationModal = ({
+const PendingValidationModal = ({
     type,
     ...props
 }: Omit<ModalOwnProps, 'children'> & {

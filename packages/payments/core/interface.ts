@@ -57,11 +57,11 @@ export interface TokenPayment {
     };
 }
 
-export type WrappedPaymentsVersion = {
+type WrappedPaymentsVersion = {
     paymentsVersion: PaymentsVersion;
 };
 
-export type WrappedProcessorType = {
+type WrappedProcessorType = {
     paymentProcessorType: PaymentProcessorType;
     paymentMethodType: PlainPaymentMethodType;
     paymentMethodValue: PaymentMethodType;
@@ -327,10 +327,6 @@ export type MultiCheckOptions = {
     plansMap: PlansMap;
 } & Omit<CheckSubscriptionRequestOptions, 'previousEstimation'>;
 
-export type GetPlansData = {
-    currency?: Currency;
-};
-
 export type GetFullBillingAddressOptions = {
     withFallback: boolean;
 };
@@ -413,9 +409,9 @@ export type ChargebeeIframeEvents = {
     onGooglePayCancelled: (callback: () => any) => RemoveEventListener;
 };
 
-export type CryptocurrencyType = 'bitcoin';
+type CryptocurrencyType = 'bitcoin';
 
-export interface CryptoPayment {
+interface CryptoPayment {
     Type: 'cryptocurrency';
     Details: {
         Coin: CryptocurrencyType;

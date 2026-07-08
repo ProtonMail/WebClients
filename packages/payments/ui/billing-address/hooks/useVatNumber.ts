@@ -27,7 +27,7 @@ import type { TaxCountryHook } from './useTaxCountry';
 import { getVatFormErrors } from './useVatFormValidation';
 import { cleanVatNumber, getVatPrefix } from './vatPrefixHelper';
 
-export type FullBillingAddressWithoutCountry = Omit<FullBillingAddressFlat, 'CountryCode' | 'State' | 'ZipCode'>;
+type FullBillingAddressWithoutCountry = Omit<FullBillingAddressFlat, 'CountryCode' | 'State' | 'ZipCode'>;
 
 interface VatNumberHookProps {
     selectedPlanName: PLANS | ADDON_NAMES | undefined;

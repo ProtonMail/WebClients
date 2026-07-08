@@ -82,7 +82,7 @@ export function calculateRenewalTimeDuringCheckout(
     return getReadableTime({ value: unixRenewalTime, format: 'PPP' });
 }
 
-export function formatPriceWithTaxes(currency: Currency, amount: number, checkout: PaymentsCheckoutUI) {
+function formatPriceWithTaxes(currency: Currency, amount: number, checkout: PaymentsCheckoutUI) {
     const formattedPrice = getSimplePriceString(currency, amount);
 
     if (checkout.checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE) {

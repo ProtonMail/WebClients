@@ -40,7 +40,7 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     options: OptimisticOptions;
 };
 
-export const PaymentsContextOptimistic = createContext<PaymentsContextOptimisticType | null>(null);
+const PaymentsContextOptimistic = createContext<PaymentsContextOptimisticType | null>(null);
 
 interface PaymentsContextOptimisticProviderProps {
     children: ReactNode;
@@ -49,7 +49,7 @@ interface PaymentsContextOptimisticProviderProps {
     cachedPlans?: Plan[];
 }
 
-export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOptimisticProviderProps) => {
+const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOptimisticProviderProps) => {
     const paymentsContext = usePayments();
 
     const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>();

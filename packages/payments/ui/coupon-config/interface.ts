@@ -13,7 +13,7 @@ export type CouponConfigProps = {
     plansMap: PlansMap;
 };
 
-export type CouponConfigRequiredProps = StrictRequired<CouponConfigProps>;
+type CouponConfigRequiredProps = StrictRequired<CouponConfigProps>;
 
 export function isCouponConfigRequiredProps(props: CouponConfigProps): props is CouponConfigRequiredProps {
     return props.checkResult !== undefined;
