@@ -1,11 +1,9 @@
+import { isAutofillTargetMode } from '@proton/pass/lib/urls/utils/autofill';
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers/drafts';
 import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemFlag, ItemState } from '@proton/pass/types';
 import { and, not, oneOf, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { parseUrl } from '@proton/pass/utils/url/parser';
-import type { URLComponents } from '@proton/pass/utils/url/types';
-import { urlEq } from '@proton/pass/utils/url/utils';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
 export const isCCItem = (item: Item): item is Item<'creditCard'> => item.type === 'creditCard';
@@ -56,11 +54,6 @@ export const matchesLoginPassword =
     (item: ItemRevision<'login'>): boolean =>
         deobfuscate(item.data.content.password) === password;
 
-export const matchesLoginURL = (url: URLComponents) => (item: ItemRevision<'login'>) => {
-    if (item.data.content.urls.length === 0) return false;
-    return item.data.content.urls.some((itemURL) => urlEq(url, parseUrl(itemURL)));
-};
-
 export const isTrashed = ({ state }: ItemRevision) => state === ItemState.Trashed;
 export const isActive = not(isTrashed);
 
@@ -96,7 +89,8 @@ export const hasUsername = (username: string) => (item: LoginItem) =>
 export const hasUserIdentifier = (userIdentifier: string) => (item: LoginItem) =>
     or(hasEmail(userIdentifier), hasUsername(userIdentifier))(item);
 
-export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
+export const hasDomain = (item: LoginItem) =>
+    item.data.content.autofillUrls.some(({ mode }) => isAutofillTargetMode(mode));
 
 export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
     Boolean(

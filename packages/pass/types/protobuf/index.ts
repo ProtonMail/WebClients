@@ -1,9 +1,3 @@
-/*
- * We use a slightly altered data model than what protobuf would produce
- * internally, because the generics and polymorphism are easier to work with
- * this way, or better said, protobuf doesn't produce very easy-to-consume
- * types.
- */
 import type { FileMetadata } from './file-v1';
 import type { CustomSection, ExtraField, PlatformSpecific } from './item-v1';
 import {
@@ -20,6 +14,18 @@ import {
     ItemWifi as ProtobufItemWifi,
 } from './item-v1';
 import { Vault } from './vault-v1';
+
+/*
+ * We use a slightly altered data model than what protobuf would produce
+ * internally, because the generics and polymorphism are easier to work with
+ * this way, or better said, protobuf doesn't produce very easy-to-consume
+ * types.
+ */
+
+/** Stable re-exports of generated enums. AutofillUrl_Mode is aliased as
+ * AutofillMode to keep existing imports from breaking after the enum was
+ * moved inside the AutofillUrl message in the protobuf definition. */
+export { AutofillUrl_Mode as AutofillMode, CardType, WifiSecurity } from './item-v1.static';
 
 export {
     Content,

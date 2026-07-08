@@ -2,6 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MODEL_VERSION } from '@proton/pass/constants';
+import { isAutofillTargetMode } from '@proton/pass/lib/urls/utils/autofill';
 import type { Item } from '@proton/pass/types';
 import type {
     ExtensionCopiedFromLoginDimensions,
@@ -48,7 +49,9 @@ const getExtensionCopiedFromLoginBaseDimensions = (
 export const useLoginClipboardTelemetry = EXTENSION_BUILD
     ? (item: Item<'login'>) => {
           const { onTelemetry } = usePassCore();
-          const { urls: itemUrls } = item.content;
+          const itemUrls = item.content.autofillUrls
+              .filter(({ mode }) => isAutofillTargetMode(mode))
+              .map(({ url }) => url);
 
           return useCallback(
               (extensionField: TelemetryFieldType) => {

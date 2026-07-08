@@ -1,6 +1,6 @@
 import { createNetworkError, getUID } from '@proton/pass/lib/api/fetch-controller';
+import { globToRegExp } from '@proton/pass/lib/urls/utils/utils';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
-import { globToRegExp } from '@proton/pass/utils/url/utils';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { fetchController } from './fetch-controller';
