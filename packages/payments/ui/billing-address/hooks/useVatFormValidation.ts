@@ -8,7 +8,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
-import { getValidVatPrefixes, vatNumberMissingPrefix } from './vatPrefixHelper';
+import { getValidVatPrefixes, isBareVatPrefix, vatNumberMissingPrefix } from './vatPrefixHelper';
 
 export interface VatFormFields {
     CountryCode: string;
@@ -79,7 +79,9 @@ function getVatFormErrorMessages(
     showExtendedBillingAddressForm: boolean
 ): VatFormErrors['errorMessages'] {
     const errors: VatFormErrors['errorMessages'] = emptyErrors().errorMessages;
-    if (!fields.VatId) {
+    // A bare prefix (e.g. the prefilled "DE") is treated as an empty VAT number: no error,
+    // and the extended billing-address fields below stay optional.
+    if (!fields.VatId || isBareVatPrefix(fields.VatId, fields.CountryCode)) {
         return errors;
     }
 

@@ -1,4 +1,10 @@
-import { getVatPrefix, vatNumberMissingPrefix } from './vatPrefixHelper';
+import {
+    cleanBillingAddressVat,
+    cleanVatNumber,
+    getVatPrefix,
+    isBareVatPrefix,
+    vatNumberMissingPrefix,
+} from './vatPrefixHelper';
 
 describe('getVatPrefix', () => {
     it.each([
@@ -110,5 +116,91 @@ describe('vatNumberMissingPrefix', () => {
         expect(vatNumberMissingPrefix('EL', 'GR')).toBe(false);
         expect(vatNumberMissingPrefix('AU', 'AU')).toBe(false);
         expect(vatNumberMissingPrefix('GB', 'GB')).toBe(false);
+    });
+});
+
+describe('isBareVatPrefix', () => {
+    it.each([
+        ['DE', 'DE'],
+        ['de', 'DE'],
+        [' DE ', 'DE'],
+        ['EL', 'GR'],
+        ['CHE', 'CH'],
+        ['GB', 'GB'],
+        ['XI', 'GB'],
+        ['AU', 'AU'],
+    ])('returns true for a bare prefix %s / %s', (vatNumber, countryCode) => {
+        expect(isBareVatPrefix(vatNumber, countryCode)).toBe(true);
+    });
+
+    it.each([
+        ['DE123456789', 'DE', 'prefix plus digits'],
+        ['CHE100416306MWST', 'CH', 'full Swiss number'],
+        ['CH', 'CH', 'wrong prefix — CH is not CHE'],
+        ['GR', 'GR', 'wrong prefix — GR is not EL'],
+    ])('returns false for %s / %s (%s)', (vatNumber, countryCode) => {
+        expect(isBareVatPrefix(vatNumber, countryCode)).toBe(false);
+    });
+
+    it.each(['', null, undefined])('returns false for empty input (%s)', (vatNumber) => {
+        expect(isBareVatPrefix(vatNumber, 'DE')).toBe(false);
+    });
+
+    it.each([
+        ['IS', 'collected but no prefix'],
+        ['LI', 'collected but no prefix'],
+        ['US', 'no prefix'],
+        ['JP', 'not a VAT country'],
+    ])('returns false for no-prefix countries even when value looks like a code (%s — %s)', (countryCode) => {
+        expect(isBareVatPrefix(countryCode, countryCode)).toBe(false);
+    });
+});
+
+describe('cleanVatNumber', () => {
+    it.each([
+        ['DE', 'DE'],
+        ['CHE', 'CH'],
+        ['EL', 'GR'],
+        ['', 'DE'],
+        [null, 'DE'],
+        [undefined, 'DE'],
+    ])('returns empty for a bare prefix or empty value (%s / %s)', (vatNumber, countryCode) => {
+        expect(cleanVatNumber(vatNumber, countryCode)).toBe('');
+    });
+
+    it.each([
+        ['DE123456789', 'DE'],
+        ['IS', 'IS'],
+    ])('returns the value when it is a real VAT number (%s / %s)', (vatNumber, countryCode) => {
+        expect(cleanVatNumber(vatNumber, countryCode)).toBe(vatNumber);
+    });
+});
+
+describe('cleanBillingAddressVat', () => {
+    it('clears a bare prefix from both the top-level and nested VatId', () => {
+        const result = cleanBillingAddressVat({
+            VatId: 'DE',
+            BillingAddress: { CountryCode: 'DE', VatId: 'DE' } as any,
+        });
+
+        expect(result.VatId).toBe('');
+        expect((result.BillingAddress as any).VatId).toBe('');
+    });
+
+    it('keeps a complete VAT number in both places', () => {
+        const result = cleanBillingAddressVat({
+            VatId: 'DE123456789',
+            BillingAddress: { CountryCode: 'DE', VatId: 'DE123456789' } as any,
+        });
+
+        expect(result.VatId).toBe('DE123456789');
+        expect((result.BillingAddress as any).VatId).toBe('DE123456789');
+    });
+
+    it('does not mutate the input', () => {
+        const input = { VatId: 'DE', BillingAddress: { CountryCode: 'DE', VatId: 'DE' } as any };
+        cleanBillingAddressVat(input);
+
+        expect(input.VatId).toBe('DE');
     });
 });
