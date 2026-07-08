@@ -1,0 +1,33 @@
+.content-search-issue {
+	// Each severity only sets the base signal color and how strongly it tints the row.
+	// The row background and the divider are both derived from these two variables.
+	&--warning {
+		--severity-color: var(--signal-warning);
+		--severity-strength: 15%;
+	}
+
+	&--error {
+		--severity-color: var(--signal-danger);
+		--severity-strength: 15%;
+	}
+
+	&--fatal {
+		--severity-color: var(--signal-danger);
+		--severity-strength: 30%;
+	}
+
+	// Soft tint over the theme background: pale on light themes, a subtle dark tint on
+	// dark themes. Text is left to inherit `--text-norm`, so it stays legible in both.
+	background-color: color-mix(in srgb, var(--severity-color) var(--severity-strength), var(--background-norm));
+
+	// Divider between rows: a darker/stronger version of the same tint, top border only
+	// (so there's no line above the first row or below the last).
+	& + & {
+		border-block-start: 1px solid
+			color-mix(in srgb, var(--severity-color) calc(var(--severity-strength) + 25%), var(--background-norm));
+	}
+
+	&-id {
+		inline-size: 6.25rem; // ~100px
+	}
+}
