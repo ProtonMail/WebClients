@@ -42,7 +42,7 @@ export function getPrice(planIDs: PlanIDs, cycle: CYCLE, plansMap: PlansMap): nu
     }, 0);
 }
 
-export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
+function getPricePerMember(plan: Plan, cycle: CYCLE): number {
     const totalPrice = getPricePerCycle(plan, cycle) || 0;
 
     if (plan.Name === PLANS.VPN_BUSINESS) {
@@ -97,19 +97,6 @@ export function getPriceStartsFrom(plan: Plan, cycle: Cycle, plansMap: PlansMap)
     }
 
     return price;
-}
-
-export function getPriceStartsFromPerMonth(plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null {
-    const price = getPriceStartsFrom(plan, cycle, plansMap);
-    if (price === null) {
-        return null;
-    }
-
-    if (isLifetimePlan(plan.Name)) {
-        return price;
-    }
-
-    return price / cycle;
 }
 
 export function getPricingPerMember(plan: Plan): Pricing {

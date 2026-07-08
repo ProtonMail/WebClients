@@ -236,6 +236,8 @@ const getUserTitle = (users: number) => {
  * To show the discount for an addon that isn't in the current check (base plan vs. same plan *with* the addon), a
  * secondary check including the addon must be run — see {@link runSecondarySubscriptionEstimation}
  * (core/secondary-estimation.ts). Without it, that not-yet-selected addon line falls back to undiscounted pricing.
+ *
+ * @public - do not remove in the dead code cleanups
  */
 export type CheckoutCouponDiscountBreakdown = ReturnType<typeof getCouponDiscountBreakdownInfo>;
 
