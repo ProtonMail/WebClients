@@ -1,3 +1,4 @@
+import type { FullBillingAddress } from '../../../core/billing-address/billing-address';
 import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
 
 // Countries where the VAT prefix differs from the ISO-3166 code.
@@ -45,4 +46,38 @@ export function vatNumberMissingPrefix(vatNumber: string, countryCode: string): 
         return false;
     }
     return !validPrefixes.some((p) => vatNumber.toUpperCase().startsWith(p.toUpperCase()));
+}
+
+/**
+ * Returns true when the VAT number is nothing more than a country's prefilled prefix
+ * (e.g. "DE", "CHE", "EL"). A bare prefix is treated as an empty VAT number, both for
+ * validation and for the backend payload. Always false for countries without a prefix.
+ */
+export function isBareVatPrefix(vatNumber: string | null | undefined, countryCode: string): boolean {
+    const validPrefixes = getValidVatPrefixes(countryCode);
+    if (validPrefixes === null || !vatNumber) {
+        return false;
+    }
+    const normalized = vatNumber.trim().toUpperCase();
+    return validPrefixes.some((p) => p.toUpperCase() === normalized);
+}
+
+/**
+ * The VAT number to send to the backend: empty when the field holds only a bare prefix
+ * (the prefilled placeholder), so the API never receives an incomplete VAT number.
+ */
+export function cleanVatNumber(vatNumber: string | null | undefined, countryCode: string): string {
+    return !vatNumber || isBareVatPrefix(vatNumber, countryCode) ? '' : vatNumber;
+}
+
+/**
+ * Cleans the VAT number on a FullBillingAddress. Use before sending to the backend.
+ */
+export function cleanBillingAddressVat(fullBillingAddress: FullBillingAddress): FullBillingAddress {
+    const VatId = cleanVatNumber(fullBillingAddress.VatId, fullBillingAddress.BillingAddress.CountryCode);
+    return {
+        ...fullBillingAddress,
+        VatId,
+        BillingAddress: { ...fullBillingAddress.BillingAddress, VatId } as FullBillingAddress['BillingAddress'],
+    };
 }

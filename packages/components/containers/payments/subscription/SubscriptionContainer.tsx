@@ -533,7 +533,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                    vatNumber: billingAddressHook.vatNumber?.vatNumber,
+                    vatNumber: billingAddressHook.vatNumber?.vatNumberToSubmit,
                 });
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -611,7 +611,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                    vatNumber: billingAddressHook.vatNumber?.vatNumber,
+                    vatNumber: billingAddressHook.vatNumber?.vatNumberToSubmit,
                 },
                 paymentProcessorType,
                 paymentMethodValue: source,
@@ -896,7 +896,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                    vatNumber: billingAddressHook.vatNumber?.vatNumber,
+                    vatNumber: billingAddressHook.vatNumber?.vatNumberToSubmit,
                 });
                 await processor.processPaymentToken();
             } catch (e) {
