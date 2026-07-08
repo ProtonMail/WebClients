@@ -9,6 +9,8 @@ import { SettingsLink } from '@proton/components';
 import { useGuestMigration } from '../../hooks/useGuestMigration';
 import { useLumoAuthAction } from '../../hooks/useLumoAuthAction';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
+import { getAuthActionAccountPath } from '../../util/authActionPath';
+import { isNativeMobileApp } from '../../util/userAgent';
 
 export interface BaseAuthProps {
     className?: string;
@@ -75,7 +77,9 @@ export const AuthActionButton = ({
     );
 
     const text = config.getButtonText();
-    const path = isNativeAuthEnabled ? '' : config.path;
+    const path = isNativeAuthEnabled
+        ? ''
+        : getAuthActionAccountPath({ action, basePath: config.path, isMobileApp: isNativeMobileApp() });
 
     if (variant === 'link') {
         return (
