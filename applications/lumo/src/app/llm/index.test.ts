@@ -37,7 +37,7 @@ describe('prepareTurns — attachment content blocks', () => {
         } as unknown as Message;
 
         const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, false);
-        expect(turns.some((turn) => turn.content.includes('[Visualization]'))).toBe(false);
+        expect(turns.some((turn) => turn.content?.includes('[Visualization]'))).toBe(false);
     });
 
     const makeUserMessage = (attachmentIds: string[]): Message =>
