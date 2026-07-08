@@ -8,7 +8,6 @@ import {
 } from '@proton/chargebee/lib';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { isPostalCode } from '../cardDetails';
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import { isAllowedCountry, isCountryWithRequiredPostalCode } from '../countries';
 import {
@@ -27,13 +26,15 @@ import type {
 } from '../interface';
 import { InvalidDataError, PaymentProcessor } from './paymentProcessor';
 
+export const isPostalCode = (value: string | undefined) => Boolean(value && value.length >= 3);
+
 export interface ChargebeeCardPaymentProcessorState {
     countryCode: string;
     postalCode: string;
     submitted: boolean;
 }
 
-export class InvalidAddressDataError extends InvalidDataError {
+class InvalidAddressDataError extends InvalidDataError {
     constructor(message?: string) {
         super(message);
         this.name = 'InvalidAddressDataError';

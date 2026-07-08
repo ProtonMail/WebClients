@@ -13,7 +13,7 @@ export function isCreditNoteInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
 }
 
 const CURRENCY_CONVERSION_PREFIX = 'CC';
-export function isCurrencyConversionInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
+function isCurrencyConversionInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
     return invoice.ID.startsWith(CURRENCY_CONVERSION_PREFIX);
 }
 

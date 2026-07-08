@@ -13,7 +13,7 @@ import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { useVatFormValidation } from '../hooks/useVatFormValidation';
 import type { VatNumberHook } from '../hooks/useVatNumber';
 
-export function getVatPlaceholder(countryCode: string) {
+function getVatPlaceholder(countryCode: string) {
     const placeholders: Record<string, string> = {
         AT: 'ATU12345678',
         AU: 'AU51824753556',
@@ -70,7 +70,7 @@ export function getVatNumberName(countryCode: string): string {
     return stringNames[countryCode] ?? c('Payments.VAT number name').t`VAT number`;
 }
 
-export function getAddVatNumberText(countryCode: string): string {
+function getAddVatNumberText(countryCode: string): string {
     const names: Record<CountriesWithCustomVatName, string> = {
         US: c('Payments.VAT number name').t`Add EIN`,
         CA: c('Payments.VAT number name').t`Add Business Number`,

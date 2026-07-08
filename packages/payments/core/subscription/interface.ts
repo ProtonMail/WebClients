@@ -83,13 +83,13 @@ type CouponBase = {
 
 export type Coupon = Nullable<CouponBase>;
 
-export type EnrichedCoupon = Nullable<
+type EnrichedCoupon = Nullable<
     CouponBase & {
         CouponDiscountBreakdown?: CouponDiscountBreakdownBE | null;
     }
 >;
 
-export type CouponDiscountBreakdownElementBE = {
+type CouponDiscountBreakdownElementBE = {
     Name: PLANS | ADDON_NAMES;
     Amount: number;
 };

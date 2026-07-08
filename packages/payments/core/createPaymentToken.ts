@@ -13,7 +13,6 @@ import {
     type BackendPaymentIntent,
     type CreatePaymentIntentData,
     type CreateTokenData,
-    type FetchPaymentIntentV5Response,
     createTokenV4,
     fetchPaymentIntentForExistingV5,
     fetchPaymentIntentV5,
@@ -60,7 +59,7 @@ const fetchPaymentToken = async (
     });
 };
 
-export const formatToken = (
+const formatToken = (
     { Token, Status, ApprovalURL, ReturnHost }: PaymentTokenResult,
     type: PlainPaymentMethodType,
     amountAndCurrency?: AmountAndCurrency
@@ -409,24 +408,6 @@ export async function createPaymentTokenV5Paypal(
         paymentIntent,
     };
 }
-
-export const formatTokenV5 = (
-    { Token, Status }: FetchPaymentIntentV5Response,
-    type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
-    amountAndCurrency: AmountAndCurrency
-): ChargeableV5PaymentToken | NonChargeableV5PaymentToken => {
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
-    const paymentToken = toV5PaymentToken(Token);
-
-    const base: ChargeableV5PaymentToken | NonChargeableV5PaymentToken = {
-        ...paymentToken,
-        ...amountAndCurrency,
-        chargeable,
-        type,
-    };
-
-    return base;
-};
 
 export function savedMethodRequires3DS(type: PAYMENT_METHOD_TYPES): boolean {
     return (

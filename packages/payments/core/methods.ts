@@ -10,7 +10,7 @@ import {
 } from './amount-limits';
 import { getPaymentMethods } from './api/api';
 import type { BillingAddress } from './billing-address/billing-address';
-import { isExpired as getIsExpired } from './cardDetails';
+import { isCardExpired as getIsExpired } from './cardDetails';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import { isSignupFlow } from './helpers';
 import type {
@@ -99,7 +99,7 @@ export function formatPaymentMethod(method: SavedPaymentMethod): SavedPaymentMet
     return method;
 }
 
-export function markDefaultPaymentMethod(paymentMethods: SavedPaymentMethod[]): SavedPaymentMethod[] {
+function markDefaultPaymentMethod(paymentMethods: SavedPaymentMethod[]): SavedPaymentMethod[] {
     if (!paymentMethods || paymentMethods.length === 0) {
         return paymentMethods;
     }
@@ -119,7 +119,7 @@ export function formatPaymentMethods(paymentMethods: SavedPaymentMethod[]): Save
     return markDefaultPaymentMethod(paymentMethods.map(formatPaymentMethod));
 }
 
-export interface PaymentMethodsParameters {
+interface PaymentMethodsParameters {
     paymentStatus: PaymentStatus;
     paymentMethods: SavedPaymentMethod[];
     amount: number;

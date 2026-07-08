@@ -452,15 +452,6 @@ export const getChargebeeConfiguration = () => ({
     method: 'get',
 });
 
-export type GetSubscriptionResponse = {
-    Subscription: Subscription;
-    UpcomingSubscription?: Subscription;
-};
-
-export type GetPaymentMethodsResponse = {
-    PaymentMethods: SavedPaymentMethod[];
-};
-
 export interface QueryTransactionsParams {
     Page: number;
     PageSize: number;
@@ -524,7 +515,7 @@ const addSubscriptionPlan = (subscription: Subscription): Subscription => {
     };
 };
 
-export const querySubscriptionV5DynamicPlans = () => ({
+const querySubscriptionV5DynamicPlans = () => ({
     url: `payments/v5/subscription?no-redirect=1`,
     method: 'get',
 });

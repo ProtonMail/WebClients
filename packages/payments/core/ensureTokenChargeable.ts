@@ -157,7 +157,7 @@ export const ensureTokenChargeable = (
     });
 };
 
-export function waitFor3ds(events: ChargebeeIframeEvents, tab: Window | null) {
+function waitFor3ds(events: ChargebeeIframeEvents, tab: Window | null) {
     const removeEventListeners: RemoveEventListener[] = [];
     const threeDsChallengePromise = new Promise((resolve, reject) => {
         const listenerSuccess = events.onThreeDsSuccess((data) => {

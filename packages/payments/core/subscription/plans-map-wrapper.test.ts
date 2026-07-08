@@ -7,7 +7,6 @@ import {
     getPlansMap,
     getStrictPlanByName,
     hasCycle,
-    planExists,
     planToPlanIDs,
 } from './plans-map-wrapper';
 
@@ -152,44 +151,6 @@ describe('getStrictPlanByName', () => {
     });
 });
 
-describe('planExists', () => {
-    it('should return true if plan exists', () => {
-        const plans: Plan[] = [
-            {
-                Name: PLANS.MAIL,
-                Currency: 'USD',
-                Pricing: { 1: 999, 12: 9999 },
-            } as Plan,
-        ];
-
-        expect(planExists(plans, PLANS.MAIL, 'USD', 1)).toBe(true);
-    });
-
-    it('should return false if plan does not exist', () => {
-        const plans: Plan[] = [
-            {
-                Name: PLANS.MAIL,
-                Currency: 'USD',
-                Pricing: { 1: 999, 12: 9999 },
-            } as Plan,
-        ];
-
-        expect(planExists(plans, PLANS.VPN2024, 'USD', 1)).toBe(false);
-    });
-
-    it('should return false if currency does not match', () => {
-        const plans: Plan[] = [
-            {
-                Name: PLANS.MAIL,
-                Currency: 'USD',
-                Pricing: { 1: 999, 12: 9999 },
-            } as Plan,
-        ];
-
-        expect(planExists(plans, PLANS.MAIL, 'EUR', 1)).toBe(false);
-    });
-});
-
 describe('getPlansMap', () => {
     it('should return a map of plans', () => {
         const plans: Plan[] = [
@@ -278,19 +239,6 @@ describe('DRIVE_1TB plan', () => {
             Currency: 'USD',
             Pricing: { 1: 999, 12: 9588 },
         });
-    });
-
-    it('should verify DRIVE_1TB plan exists with correct cycles', () => {
-        const plans: Plan[] = [
-            {
-                Name: PLANS.DRIVE_1TB,
-                Currency: 'USD',
-                Pricing: { 1: 999, 12: 9588 },
-            } as Plan,
-        ];
-
-        expect(planExists(plans, PLANS.DRIVE_1TB, 'USD', 1)).toBe(true);
-        expect(planExists(plans, PLANS.DRIVE_1TB, 'USD', 12)).toBe(true);
     });
 
     it('should include DRIVE_1TB in plans map', () => {

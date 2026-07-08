@@ -24,7 +24,7 @@ export interface Dependencies {
     api: Api;
 }
 
-export interface SavedMethodProcessorHook extends PaymentProcessorHook {
+interface SavedMethodProcessorHook extends PaymentProcessorHook {
     paymentProcessor?: SavedPaymentProcessor;
 }
 

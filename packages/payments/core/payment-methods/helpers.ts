@@ -1,7 +1,4 @@
-import orderBy from '@proton/utils/orderBy';
-
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import type { SavedPaymentMethod } from '../interface';
 
 /**
  * Some payment methods can be saved by the system to be used later in the subsequent payments.
@@ -20,13 +17,4 @@ export function isSavablePaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
     };
 
     return config[type] ?? false;
-}
-
-export function getDefaultPaymentMethod(methods: SavedPaymentMethod[]): SavedPaymentMethod | null {
-    if (!methods || methods.length === 0) {
-        return null;
-    }
-
-    const sortedPaymentMethods = orderBy(methods, 'Order');
-    return sortedPaymentMethods[0] ?? null;
 }

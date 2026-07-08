@@ -15,7 +15,7 @@ import type {
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
 
-export interface ChargebeePaypalPaymentProcessorState {
+interface ChargebeePaypalPaymentProcessorState {
     submitted: boolean;
 }
 

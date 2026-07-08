@@ -11,8 +11,6 @@ import type { ChargebeeCardProcessorHook } from '@proton/components/payments/rea
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import type { PAYMENT_METHOD_TYPES } from '../../core/constants';
-import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken } from '../../core/interface';
 import { CountriesDropdown } from '../billing-address/components/CountriesDropdown';
 import type { CbIframeHandles } from './ChargebeeIframe';
 import { ChargebeeIframe } from './ChargebeeIframe';
@@ -25,24 +23,6 @@ export type ChargebeeWrapperProps = {
     iframeHandles: CbIframeHandles;
     onInitialized?: () => void;
     width?: number | string;
-};
-
-export type PaymentIntentHookProps = {
-    PaymentMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-    loadAutomatically?: boolean;
-};
-
-export type PaymentIntentHookResult = (
-    | {
-          loading: true;
-          token: null;
-      }
-    | {
-          loading: false;
-          token: ChargeableV5PaymentToken | NonChargeableV5PaymentToken;
-      }
-) & {
-    loadPaymentIntent: () => Promise<ChargeableV5PaymentToken | NonChargeableV5PaymentToken>;
 };
 
 export interface ChargebeeCardWrapperProps extends ChargebeeWrapperProps {
