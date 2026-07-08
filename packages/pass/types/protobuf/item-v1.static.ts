@@ -1,3 +1,35 @@
+/* eslint-disable */
+export enum AutofillUrl_Mode {
+    /**
+     * @generated from protobuf enum value: Default = 0;
+     */
+    Default = 0,
+    /**
+     * @generated from protobuf enum value: Exact = 1;
+     */
+    Exact = 1,
+    /**
+     * @generated from protobuf enum value: Never = 2;
+     */
+    Never = 2,
+    /**
+     * @generated from protobuf enum value: StartWith = 3;
+     */
+    StartWith = 3,
+    /**
+     * @generated from protobuf enum value: Pattern = 4;
+     */
+    Pattern = 4,
+    /**
+     * @generated from protobuf enum value: RegularExpression = 5;
+     */
+    RegularExpression = 5,
+    /**
+     * @generated from protobuf enum value: ExactPath = 6;
+     */
+    ExactPath = 6,
+}
+
 export enum WifiSecurity {
     /**
      * @generated from protobuf enum value: UnspecifiedWifiSecurity = 0;

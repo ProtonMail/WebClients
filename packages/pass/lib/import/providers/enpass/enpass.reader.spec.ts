@@ -3,6 +3,7 @@ import fs from 'fs';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 
 import { readEnpassData } from './enpass.reader';
 
@@ -37,7 +38,10 @@ describe('Import Enpass json', () => {
         expect(loginItem1.content.itemEmail).toEqual('emily@enpass.io');
         expect(loginItem1.content.itemUsername).toEqual('');
         expect(loginItem1.content.password).toEqual('herbert nadia banal slag broken violin somber modern cdc posing');
-        expect(loginItem1.content.urls[0]).toEqual('https://www.twitter.com/');
+        expect(loginItem1.content.autofillUrls[0]).toEqual({
+            url: 'https://www.twitter.com/',
+            mode: AutofillMode.Default,
+        });
         expect(loginItem1.content.totpUri).toEqual(
             'otpauth://totp/Twitter?secret=QG4RPWYF4T23V62G4TA3NE4374&algorithm=SHA1&digits=6&period=30'
         );
@@ -57,7 +61,10 @@ describe('Import Enpass json', () => {
         expect(loginItem5.content.itemEmail).toEqual('emily@enpass.io');
         expect(loginItem5.content.itemUsername).toEqual('Emily');
         expect(loginItem5.content.password).toEqual('herbert nadia banal slag broken violin somber modern cdc posing');
-        expect(loginItem5.content.urls[0]).toEqual('https://www.twitter.com/');
+        expect(loginItem5.content.autofillUrls[0]).toEqual({
+            url: 'https://www.twitter.com/',
+            mode: AutofillMode.Default,
+        });
         expect(loginItem5.content.totpUri).toEqual(
             'otpauth://totp/Twitter?secret=QG4RPWYF4T23V62G4TA3NE4374&algorithm=SHA1&digits=6&period=30'
         );

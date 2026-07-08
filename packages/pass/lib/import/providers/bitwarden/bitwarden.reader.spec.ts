@@ -2,7 +2,8 @@ import fs from 'fs';
 
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemType } from '@proton/pass/types';
+import type { ItemImportIntent, ItemType } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 
 import { readBitwardenData } from './bitwarden.reader';
 
@@ -58,8 +59,8 @@ describe('Import bitwarden json', () => {
             expect(item.content.itemEmail).toBe('');
             expect(item.content.itemUsername).toBe('username');
             expect(item.content.password).toBe('password');
-            expect(item.content.urls[0]).toBe('https://test.url1/');
-            expect(item.content.urls[1]).toBe('https://test.url2/');
+            expect(item.content.autofillUrls[0]).toEqual({ url: 'https://test.url1/', mode: AutofillMode.Default });
+            expect(item.content.autofillUrls[1]).toEqual({ url: 'https://test.url2/', mode: AutofillMode.Default });
 
             const totp = 'otpauth://totp/test?issuer=proton&secret=PROTON333&algorithm=SHA1&digits=6&period=30';
             expect(item.content.totpUri).toBe(totp);
@@ -134,7 +135,7 @@ describe('Import bitwarden json', () => {
             expect(item.content.itemEmail).toStrictEqual('');
             expect(item.content.itemUsername).toStrictEqual('');
             expect(item.content.password).toStrictEqual('');
-            expect(item.content.urls).toStrictEqual([]);
+            expect(item.content.autofillUrls).toStrictEqual([]);
             expect(item.content.totpUri).toStrictEqual('');
         });
 
@@ -146,7 +147,7 @@ describe('Import bitwarden json', () => {
             expect(item.content.itemEmail).toStrictEqual('');
             expect(item.content.itemUsername).toStrictEqual('');
             expect(item.content.password).toStrictEqual('');
-            expect(item.content.urls).toStrictEqual([]);
+            expect(item.content.autofillUrls).toStrictEqual([]);
             expect(item.content.totpUri).toStrictEqual('');
         });
 
@@ -212,6 +213,49 @@ describe('Import bitwarden json', () => {
         test('correctly parses b2b exports', () => {
             const { vaults } = getBitwardenData('bitwarden-empty.json');
             expect(vaults.length).toBe(0);
+        });
+    });
+
+    describe('Bitwarden URI match type mapping', () => {
+        const makeBitwardenLoginFile = (match?: number) =>
+            new File(
+                [
+                    JSON.stringify({
+                        encrypted: false,
+                        folders: [],
+                        items: [
+                            {
+                                id: 'test-id',
+                                folderId: null,
+                                type: 1,
+                                name: 'Test',
+                                notes: null,
+                                fields: null,
+                                login: {
+                                    username: null,
+                                    password: null,
+                                    totp: null,
+                                    uris: [{ uri: 'https://example.com', match }],
+                                },
+                            },
+                        ],
+                    }),
+                ],
+                'bitwarden.json'
+            );
+
+        test.each([
+            [undefined, AutofillMode.Default],
+            [0 /* BaseDomain */, AutofillMode.Default],
+            [1 /* Host */, AutofillMode.Exact],
+            [2 /* StartsWith */, AutofillMode.StartWith],
+            [3 /* Exact */, AutofillMode.ExactPath],
+            [4 /* RegularExpression */, AutofillMode.RegularExpression],
+            [5 /* Never */, AutofillMode.Never],
+        ])('maps Bitwarden match type %s to the correct AutofillMode', async (match, expectedMode) => {
+            const result = await readBitwardenData(makeBitwardenLoginFile(match));
+            const item = result.vaults[0].items[0] as ItemImportIntent<'login'>;
+            expect(item.content.autofillUrls[0].mode).toBe(expectedMode);
         });
     });
 });

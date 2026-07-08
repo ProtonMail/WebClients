@@ -19,10 +19,10 @@ import { usePasswordHistoryActions } from '@proton/pass/components/Password/Pass
 import type { AliasForLoginProps } from '@proton/pass/hooks/useAliasForLogin';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { intoCleanHostname } from '@proton/pass/lib/urls/utils/utils';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 
 import './Login.edit.credentials.scss';
 

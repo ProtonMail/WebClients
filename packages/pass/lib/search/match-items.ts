@@ -134,7 +134,7 @@ const matchesLoginItem: ItemMatch<'login'> = combineMatchers<'login'>(
     matchField((item) => memoDeobfuscate(item.data.content.itemEmail)),
     matchField((item) => memoDeobfuscate(item.data.content.itemUsername)),
     matchField((item) => memoDeobfuscate(item.data.metadata.note)),
-    matchFields((item) => item.data.content.urls),
+    matchFields((item) => item.data.content.autofillUrls.map(({ url }) => url)),
     matchExtraFields((item) => ({ obfuscated: item.data.extraFields }))
 );
 

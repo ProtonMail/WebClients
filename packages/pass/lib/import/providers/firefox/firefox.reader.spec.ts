@@ -2,6 +2,7 @@ import fs from 'fs';
 
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { readFirefoxData } from './firefox.reader';
@@ -39,7 +40,9 @@ describe('Import Firefox CSV', () => {
         expect(deobfuscate(loginItem.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem.content.password)).toEqual('proton123');
         expect(deobfuscate(loginItem.content.totpUri)).toEqual('');
-        expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
+        expect(loginItem.content.autofillUrls).toEqual([
+            { url: 'https://account.proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(loginItem.trashed).toEqual(false);
         expect(loginItem.extraFields).toEqual([]);
 
@@ -55,7 +58,7 @@ describe('Import Firefox CSV', () => {
         expect(deobfuscate(loginItemMissingUrl.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemMissingUrl.content.password)).toEqual('proton123');
         expect(deobfuscate(loginItemMissingUrl.content.totpUri)).toEqual('');
-        expect(loginItemMissingUrl.content.urls).toEqual([]);
+        expect(loginItemMissingUrl.content.autofillUrls).toEqual([]);
         expect(loginItemMissingUrl.trashed).toEqual(false);
         expect(loginItemMissingUrl.extraFields).toEqual([]);
 
@@ -71,7 +74,9 @@ describe('Import Firefox CSV', () => {
         expect(deobfuscate(loginItemMissingPassword.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemMissingPassword.content.password)).toEqual('');
         expect(deobfuscate(loginItemMissingPassword.content.totpUri)).toEqual('');
-        expect(loginItemMissingPassword.content.urls).toEqual(['https://account.proton.me/']);
+        expect(loginItemMissingPassword.content.autofillUrls).toEqual([
+            { url: 'https://account.proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(loginItemMissingPassword.trashed).toEqual(false);
         expect(loginItemMissingPassword.extraFields).toEqual([]);
 
@@ -87,7 +92,7 @@ describe('Import Firefox CSV', () => {
         expect(deobfuscate(loginItemBrokedUrl.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemBrokedUrl.content.password)).toEqual('');
         expect(deobfuscate(loginItemBrokedUrl.content.totpUri)).toEqual('');
-        expect(loginItemBrokedUrl.content.urls).toEqual([]);
+        expect(loginItemBrokedUrl.content.autofillUrls).toEqual([]);
         expect(loginItemBrokedUrl.trashed).toEqual(false);
         expect(loginItemBrokedUrl.extraFields).toEqual([]);
 
@@ -103,7 +108,9 @@ describe('Import Firefox CSV', () => {
         expect(deobfuscate(loginItemLocalhost.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItemLocalhost.content.password)).toEqual('password');
         expect(deobfuscate(loginItemLocalhost.content.totpUri)).toEqual('');
-        expect(loginItemLocalhost.content.urls).toEqual(['http://localhost:1234/']);
+        expect(loginItemLocalhost.content.autofillUrls).toEqual([
+            { url: 'http://localhost:1234/', mode: AutofillMode.Default },
+        ]);
         expect(loginItemLocalhost.trashed).toEqual(false);
         expect(loginItemLocalhost.extraFields).toEqual([]);
 
@@ -119,7 +126,9 @@ describe('Import Firefox CSV', () => {
         expect(deobfuscate(loginItemCommaQuote.content.itemUsername)).toEqual('username with comma, quotes "');
         expect(deobfuscate(loginItemCommaQuote.content.password)).toEqual('password with comma, quotes "');
         expect(deobfuscate(loginItemCommaQuote.content.totpUri)).toEqual('');
-        expect(loginItemCommaQuote.content.urls).toEqual(['https://account.example.com/']);
+        expect(loginItemCommaQuote.content.autofillUrls).toEqual([
+            { url: 'https://account.example.com/', mode: AutofillMode.Default },
+        ]);
         expect(loginItemCommaQuote.trashed).toEqual(false);
         expect(loginItemCommaQuote.extraFields).toEqual([]);
 

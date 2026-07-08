@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { getFirstUrl } from '@proton/pass/lib/urls/utils/autofill';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type {
     BulkSelectionDTO,
@@ -163,7 +164,7 @@ export const intoLoginItemPreview = (item: ItemRevision<'login'>): LoginItemPrev
     shareId: item.shareId,
     name: item.data.metadata.name,
     userIdentifier: intoUserIdentifier(item),
-    url: item.data.content.urls?.[0],
+    url: getFirstUrl(item.data.content.autofillUrls) ?? undefined,
 });
 
 export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): IdentityItemPreview => ({

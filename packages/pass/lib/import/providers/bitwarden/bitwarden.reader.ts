@@ -64,7 +64,7 @@ export const readBitwardenData = async (
                                     name: item.name,
                                     note: item.notes,
                                     password: item.login.password,
-                                    urls: urls.web,
+                                    autofillUrls: urls.web,
                                     totp: item.login.totp,
                                     appIds: urls.android,
                                     extraFields: extractBitwardenExtraFields(item.fields),

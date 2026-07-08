@@ -7,8 +7,8 @@ import type {
     MaybeNull,
     Metadata,
 } from '@proton/pass/types';
+import { CardType, WifiSecurity } from '@proton/pass/types/protobuf';
 import type { PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
-import { CardType, WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { type ObjectHandler, objectHandler } from '@proton/pass/utils/object/handler';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -34,7 +34,7 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<Deobfus
         }
         case 'login': {
             return objectHandler<DeobfuscatedItemContent<'login'>>({
-                urls: [],
+                autofillUrls: [],
                 passkeys: [],
                 itemEmail: '',
                 itemUsername: '',

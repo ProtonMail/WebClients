@@ -7,6 +7,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName, IconSize } from '@proton/icons/types';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
+import { getFirstUrl } from '@proton/pass/lib/urls/utils/autofill';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { ItemMap, ItemRevision, Maybe, MaybeNull } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
@@ -138,8 +139,7 @@ export const getCreditCardIcon = (cardType: CardType): Maybe<ReactNode> => {
 export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item, pill, size, renderIndicators }) => {
     const { data } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
-    const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
-
+    const domainURL = data.type === 'login' ? getFirstUrl(data.content.autofillUrls) : null;
     const customIcon = data.type === 'creditCard' ? getCreditCardIcon(data.content.cardType) : undefined;
 
     return (

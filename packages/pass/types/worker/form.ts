@@ -1,7 +1,7 @@
 import type { FormType } from '@protontech/autofill/types';
 
+import type { URLComponents } from '@proton/pass/lib/urls/types';
 import type { MaybeNull, RequiredNonNull } from '@proton/pass/types/utils';
-import type { URLComponents } from '@proton/pass/utils/url/types';
 
 import type { WithAutosavePrompt } from './autosave';
 import type { FrameId, TabId } from './runtime';

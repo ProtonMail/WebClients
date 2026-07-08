@@ -25,7 +25,8 @@ import {
     intoUserIdentifier,
 } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
-import type { GetLoginCandidatesOptions } from '@proton/pass/lib/search/types';
+import type { PrivateDomains } from '@proton/pass/lib/search/types';
+import type { SearchItemsByDomainOptions } from '@proton/pass/lib/urls/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemAutofilled } from '@proton/pass/store/actions/creators/item';
 import { sagaEvents } from '@proton/pass/store/events';
@@ -52,13 +53,12 @@ import type { FormCredentials } from '@proton/pass/types/worker/form';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 import { resolveCCFormFields } from './autofill.cc';
 
 type AutofillServiceState = {
-    privateDomains: MaybeNull<Set<string>>;
+    privateDomains: PrivateDomains;
     rules: MaybeNull<CompiledRules>;
 };
 
@@ -86,15 +86,13 @@ export const createAutoFillService = () => {
         if (state.privateDomains) logger.info(`[AutofillService] Hydrated private domains`);
     });
 
-    const getLoginCandidates = withContext<(options: GetLoginCandidatesOptions) => ItemRevision<'login'>[]>(
-        (ctx, options) => {
-            const parsedUrl = parseUrl(options.url, state.privateDomains);
-            return selectAutofillLoginCandidates({
-                ...parsedUrl,
-                shareIds: options.shareIds,
-                strict: options.strict,
-            })(ctx.service.store.getState());
-        }
+    const getLoginCandidates = withContext<
+        (url: Maybe<string>, options?: SearchItemsByDomainOptions) => ItemRevision<'login'>[]
+    >((ctx, url, options = {}) =>
+        selectAutofillLoginCandidates(url, {
+            privateDomains: state.privateDomains ?? undefined,
+            ...options,
+        })(ctx.service.store.getState())
     );
 
     const getCredentials = withContext<(item: SelectedItem) => Maybe<FormCredentials>>((ctx, { shareId, itemId }) => {
@@ -153,7 +151,7 @@ export const createAutoFillService = () => {
                 Promise.all(
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
-                            const items = getLoginCandidates({ url });
+                            const items = getLoginCandidates(url);
                             setPopupIconBadge(tabId, items.length);
 
                             WorkerMessageBroker.ports.broadcast({ type: WorkerMessageType.AUTOFILL_SYNC }, (name) =>
@@ -363,7 +361,8 @@ export const createAutoFillService = () => {
                 })().catch(noop));
 
             const { shareIds, needsUpgrade } = getAutofillOptions(payload.writable);
-            const items = getLoginCandidates({ url: host, shareIds }).map(intoLoginItemPreview);
+
+            const items = getLoginCandidates(host, { shareIds }).map(intoLoginItemPreview);
 
             /** Only top-frame queries reflect the tab-level badge count */
             const shouldUpdateBadge = !payload.domain && frameId === 0;
@@ -448,7 +447,7 @@ export const createAutoFillService = () => {
             try {
                 await ctx.ensureReady();
                 if (tabId) {
-                    const items = getLoginCandidates({ url: tab.url });
+                    const items = getLoginCandidates(tab.url);
                     setPopupIconBadge(tabId, items.length);
                 }
             } catch {}

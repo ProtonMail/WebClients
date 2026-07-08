@@ -1,9 +1,11 @@
 import { archivePath } from '@proton/pass/lib/export/archive';
 import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import { sanitizeAutofillUrls } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { type ItemImportIntent, ItemState } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
@@ -63,6 +65,20 @@ export const readProtonPassJSON = (
                                     item.data.content.itemUsername = '';
                                     delete item.data.content.username;
                                 }
+                            }
+
+                            // Migrate urls -> autofillUrls. When `autofillUrls` is present it is
+                            // authoritative (full set of modes); the legacy `urls` is only a
+                            // duplicate of the Default entries. Fall back to it for old exports.
+                            if (item.data.type === 'login') {
+                                const { autofillUrls, urls } = item.data.content as {
+                                    autofillUrls?: { url: string; mode: AutofillMode }[];
+                                    urls?: string[];
+                                };
+                                const rawAutofillUrls = autofillUrls?.length
+                                    ? autofillUrls
+                                    : (urls ?? []).map((url) => ({ url, mode: AutofillMode.Default }));
+                                item.data.content.autofillUrls = sanitizeAutofillUrls(rawAutofillUrls);
                             }
 
                             acc.push({

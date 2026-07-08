@@ -35,12 +35,26 @@ type BitwardenBaseItem = {
 
 type BitwardenFolder = { id: string; name: string };
 
+export enum BitwardenUriMatchType {
+    BaseDomain = 0,
+    Host = 1,
+    StartsWith = 2,
+    Exact = 3,
+    RegularExpression = 4,
+    Never = 5,
+}
+
+export type BitwardenUri = {
+    uri: string;
+    match?: BitwardenUriMatchType;
+};
+
 export type BitwardenLoginItem = BitwardenBaseItem & {
     type: BitwardenType.LOGIN;
     login: {
         username: MaybeNull<string>;
         password: MaybeNull<string>;
-        uris: MaybeNull<{ uri: string }[]>;
+        uris: MaybeNull<BitwardenUri[]>;
         totp: MaybeNull<string>;
     };
 };

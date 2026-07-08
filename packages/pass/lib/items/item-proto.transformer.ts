@@ -1,4 +1,5 @@
 import { parsePasskey } from '@proton/pass/lib/passkeys/utils';
+import { getDefaultModeUrls } from '@proton/pass/lib/urls/utils/autofill';
 import type {
     DeobfuscatedItem,
     DeobfuscatedItemExtraField,
@@ -10,12 +11,14 @@ import type {
     SafeProtobufItem,
 } from '@proton/pass/types';
 import { ProtobufItem } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { Timestamp } from '@proton/pass/types/protobuf/google/protobuf/timestamp';
 import type {
     CustomSection,
     ItemCreditCard,
     ItemCustom,
     ItemIdentity,
+    ItemLogin,
     ItemSSHKey,
     ItemWifi,
 } from '@proton/pass/types/protobuf/item-v1';
@@ -59,6 +62,17 @@ const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraFiel
             throw new Error('Unsupported extra field type');
     }
 };
+
+const protobufToLoginContent = (login: ItemLogin): DeobfuscatedItem<'login'>['content'] => ({
+    ...omit(login, ['urls']),
+    /** New clients write the full set of modes into `autofillUrls`. When present it is
+     * authoritative and the deprecated `urls` field (a lossy copy) is ignored. Only fall
+     * back to mapping `urls` for legacy items written before the autofill modes existed. */
+    autofillUrls: login.autofillUrls.length
+        ? login.autofillUrls
+        : login.urls.map((url) => ({ url, mode: AutofillMode.Default })),
+    passkeys: (login.passkeys ?? []).map(sanitizeBuffersB64),
+});
 
 const protobufToCreditCardContent = (creditCard: ItemCreditCard): DeobfuscatedItem<'creditCard'>['content'] => ({
     ...creditCard,
@@ -117,11 +131,7 @@ export const protobufToItem = (item: SafeProtobufItem): DeobfuscatedItem => {
 
     switch (data.oneofKind) {
         case 'login':
-            return {
-                ...base,
-                type: 'login',
-                content: { ...data.login, passkeys: (data.login.passkeys ?? []).map(sanitizeBuffersB64) },
-            };
+            return { ...base, type: 'login', content: protobufToLoginContent(data.login) };
         case 'note':
             return { ...base, type: 'note', content: data.note };
         case 'alias':
@@ -187,6 +197,20 @@ const extraFieldToProtobuf = ({ fieldName, ...extraField }: DeobfuscatedItemExtr
     }
 };
 
+const loginContentToProtobuf = (login: DeobfuscatedItem<'login'>['content']): ItemLogin => ({
+    ...login,
+    /** `autofillUrls` carries the full source of truth (every mode). For retro-compat the
+     * deprecated `urls` field duplicates only the `Default`-mode urls: an old client reads
+     * `urls` as `Default`, so surfacing any other mode there would autofill more broadly than
+     * intended. Once all clients are updated we can drop `urls` and keep everything here. */
+    urls: getDefaultModeUrls(login.autofillUrls),
+    autofillUrls: login.autofillUrls,
+    /** Make sure the `passkeys` property exists. It can
+     * happen that we try to generate a protobuf for a cached
+     * item that was generated before ContentFormat v2 */
+    passkeys: (login.passkeys ?? []).map(parsePasskey),
+});
+
 const creditCardContentToProtobuf = (creditCard: DeobfuscatedItem<'creditCard'>['content']): ItemCreditCard => ({
     ...creditCard,
     expirationDate: formatExpirationDateYYYYMM(creditCard.expirationDate),
@@ -246,18 +270,7 @@ const itemToProtobuf = (item: DeobfuscatedItem): SafeProtobufItem => {
         case 'login': {
             return {
                 ...base,
-                content: {
-                    content: {
-                        oneofKind: 'login',
-                        login: {
-                            ...item.content,
-                            /** Make sure the `passkeys` property exists. It can
-                             * happen that we try to generate a protobuf for a cached
-                             * item that was generated before ContentFormat v2 */
-                            passkeys: (item.content.passkeys ?? []).map(parsePasskey),
-                        },
-                    },
-                },
+                content: { content: { oneofKind: 'login', login: loginContentToProtobuf(item.content) } },
             };
         }
         case 'note':

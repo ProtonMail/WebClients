@@ -2,6 +2,7 @@ import fs from 'fs';
 
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { readProtonPassCSV } from './protonpass.csv.reader';
@@ -61,7 +62,10 @@ describe('Import Proton Pass CSV', () => {
         expect(deobfuscate(loginItem.content.itemEmail)).toEqual('example@example.com');
         expect(deobfuscate(loginItem.content.itemUsername)).toEqual('john');
         expect(deobfuscate(loginItem.content.password)).toEqual('password123');
-        expect(loginItem.content.urls).toEqual(['https://example.com/', 'https://proton.me/']);
+        expect(loginItem.content.autofillUrls).toEqual([
+            { url: 'https://example.com/', mode: AutofillMode.Default },
+            { url: 'https://proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(deobfuscate(loginItem.content.totpUri)).toEqual(
             'otpauth://totp/login%20title:example%40example.com?issuer=login%20title&secret=ABCDEF&algorithm=SHA1&digits=6&period=30'
         );
@@ -147,7 +151,10 @@ describe('Import Proton Pass CSV', () => {
         expect(deobfuscate(loginItem.content.itemEmail)).toEqual('example@example.com');
         expect(deobfuscate(loginItem.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem.content.password)).toEqual('password123');
-        expect(loginItem.content.urls).toEqual(['https://example.com/', 'https://proton.me/']);
+        expect(loginItem.content.autofillUrls).toEqual([
+            { url: 'https://example.com/', mode: AutofillMode.Default },
+            { url: 'https://proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(deobfuscate(loginItem.content.totpUri)).toEqual(
             'otpauth://totp/login%20title:example%40example.com?issuer=login%20title&secret=ABCDEF&algorithm=SHA1&digits=6&period=30'
         );
@@ -196,7 +203,10 @@ describe('Import Proton Pass CSV', () => {
         expect(deobfuscate(loginItem.content.itemEmail)).toEqual('example@example.com');
         expect(deobfuscate(loginItem.content.itemUsername)).toEqual('');
         expect(deobfuscate(loginItem.content.password)).toEqual('password123');
-        expect(loginItem.content.urls).toEqual(['https://example.com/', 'https://proton.me/']);
+        expect(loginItem.content.autofillUrls).toEqual([
+            { url: 'https://example.com/', mode: AutofillMode.Default },
+            { url: 'https://proton.me/', mode: AutofillMode.Default },
+        ]);
         expect(deobfuscate(loginItem.content.totpUri)).toEqual(
             'otpauth://totp/login%20title:example%40example.com?issuer=login%20title&secret=ABCDEF&algorithm=SHA1&digits=6&period=30'
         );

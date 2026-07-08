@@ -1,9 +1,9 @@
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { EndpointContext, FrameId } from '@proton/pass/types/worker/runtime';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export const resolveEndpointContext = async (tab: Maybe<Tabs.Tab>, frameId: FrameId): Promise<EndpointContext> => {
     if (tab?.id === undefined) throw new Error('Invalid sender tab');
