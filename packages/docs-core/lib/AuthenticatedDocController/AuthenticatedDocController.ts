@@ -448,6 +448,15 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
+  public markAsTrashed() {
+    this.documentState.setProperty('documentTrashState', 'trashed')
+    this.didTrashDocInCurrentSession = true
+  }
+
+  public markAsRestored() {
+    this.documentState.setProperty('documentTrashState', 'not_trashed')
+  }
+
   public async restoreDocument(): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'restoring')
 

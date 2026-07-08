@@ -53,6 +53,8 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     if (currentDocument?.uniqueId() === id) {
       close()
     }
+    // TODO (after SDK is fully rolled-out): use optimistic update, do not reload everything
+    void updateRecentDocuments()
   })
   useEffect(() => {
     documentActions.onTrashed(onTrashed)
@@ -62,6 +64,7 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     if (currentDocument?.uniqueId() === id) {
       close()
     }
+    // TODO (after SDK is fully rolled-out): use optimistic update, do not reload everything
     void updateRecentDocuments()
   })
   useEffect(() => {

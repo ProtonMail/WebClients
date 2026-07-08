@@ -67,7 +67,7 @@ import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubli
 import { manageEventsSubscription } from '../../../utils/drive-events'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
 import { logger } from '@proton/pass/utils/logger'
-import { getNodeName } from '../../../utils/drive-sdk'
+import { getNodeName } from '~/drive-sdk'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
