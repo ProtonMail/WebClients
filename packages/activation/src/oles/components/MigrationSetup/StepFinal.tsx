@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ApiImporterOrganizationState } from '@proton/activation/src/api/api.interface';
 import { Banner } from '@proton/atoms/Banner/Banner';
@@ -9,6 +9,11 @@ import {
     BorderedContainer,
     BorderedContainerItem,
 } from '@proton/components/components/BorderedStackedGroup/BorderedContainer';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -31,6 +36,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
     const [providerUsers] = useProviderUsers(model.domainName);
     const [loading, withLoading] = useLoading();
     const [confirmed, setConfirmed] = useState(false);
+    const [warningModalProps, setWarningModalOpen, renderWarningModal] = useModalState();
 
     const handleFinalize = async () => {
         if (model.state >= ApiImporterOrganizationState.COMPLETED) {
@@ -50,8 +56,6 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
             handleError(err);
         }
     };
-
-    const handleSaveAndExit = () => withLoading(handleFinalize());
 
     const group: DNSGroup = {
         name: 'MX',
@@ -91,6 +95,35 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
     const hasInactiveUsers =
         providerUsers?.some((u) => u.ImporterOrganizationUser?.HasTemporaryPassword === true) ?? false;
 
+    const notMigratedUsers = providerUsers?.filter((u) => !u.ImporterOrganizationUser) ?? [];
+    const notMigratedCount = notMigratedUsers.length;
+    const notMigratedOthers = notMigratedCount - 1;
+
+    const handleSaveAndExit = () => {
+        if (notMigratedUsers.length > 0) {
+            setWarningModalOpen(true);
+            return;
+        }
+
+        void withLoading(handleFinalize());
+    };
+
+    const handleWarningConfirmation = async () => {
+        setWarningModalOpen(false);
+        void withLoading(handleFinalize());
+    };
+
+    const withoutString = notMigratedUsers.at(0)?.AdminSetName ?? '';
+
+    const warningSpecifics =
+        notMigratedCount > 2
+            ? c('BOSS').ngettext(
+                  msgid`Are you sure you want to continue without ${withoutString} and ${notMigratedOthers} other?`,
+                  `Are you sure you want to continue without ${withoutString} and ${notMigratedOthers} others?`,
+                  notMigratedOthers
+              )
+            : c('BOSS').t`Are you sure you want to continue without ${withoutString}?`;
+
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
             <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
@@ -128,8 +161,10 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                 {c('BOSS')
                     .t`You're almost done, you need to configure your domain to receive your emails directly on ${BRAND_NAME}. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.`}
             </p>
-            <p className="color-weak">{c('BOSS')
-                .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
+            <p className="color-weak">
+                {c('BOSS')
+                    .t`Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.`}
+            </p>
             <DNSGroupRecords group={group} />
             <BorderedContainer className="mb-4 mt-2">
                 <BorderedContainerItem
@@ -137,7 +172,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                     paddingClassName="py-2 px-5"
                 >
                     <div>
-                        <p className="m-0 text-semibold">{c('Label').t`Confirm MX records added`}</p>
+                        <p className="m-0 text-semibold">{c('Label').t`Confirm MX records updated`}</p>
                         <span className="color-weak text-sm">{c('Info').t`Required to complete the migration`}</span>
                     </div>
 
@@ -152,6 +187,24 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
             </BorderedContainer>
 
             {loading && <MigratingModal variant="completing" />}
+
+            {renderWarningModal && (
+                <ModalTwo {...warningModalProps} size="small" className="rounded-xxl">
+                    <ModalTwoHeader title={c('BOSS').t`Some members weren't migrated`} hasClose={false} />
+                    <ModalTwoContent>
+                        <div className="color-weak">
+                            <p className="mt-0 mb-2">{c('BOSS')
+                                .t`You will not be able to copy these users' data later.`}</p>
+                            <p className="m-0">{warningSpecifics}</p>
+                        </div>
+                    </ModalTwoContent>
+                    <ModalTwoFooter>
+                        <Button disabled={loading} onClick={warningModalProps.onClose}>{c('Action').t`Cancel`}</Button>
+                        <Button color="norm" loading={loading} onClick={handleWarningConfirmation}>{c('Action')
+                            .t`Confirm`}</Button>
+                    </ModalTwoFooter>
+                </ModalTwo>
+            )}
         </div>
     );
 };
