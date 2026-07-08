@@ -61,10 +61,10 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     if (isUserB2B) {
         const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
         // B2B users must opt-in, we start the onboarding if the flag is ON and their organisation allows it
-        const hasCategoryAccess = hasAccessToCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
+        const hasB2BCategoryAccess = hasAccessToCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
 
         // The following condition apply for existing and new b2b users
-        const basicEligibility = hasCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow;
+        const basicEligibility = hasB2BCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow;
 
         if (isExistingUser) {
             // Existing users see the spotlight right away
