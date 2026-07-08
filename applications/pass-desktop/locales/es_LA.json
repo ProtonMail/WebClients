@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Do not show this again": [
+        "No mostrar esto de nuevo"
+      ],
+      "Done": [
+        "Hecho"
       ]
     },
     "Activity": {
@@ -1451,6 +1457,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "La expiración debe estar entre 1 hora y 1 año"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Error al iniciar el agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Error al detener el agente SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2868,6 +2880,36 @@
       ],
       "Expires on ${ formattedDate }": [
         "Expira el ${ formattedDate }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } usará las claves SSH guardadas en sus bóvedas."
+      ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Encuentre «OpenSSH Authentication Agent», haga clic derecho y luego Propiedades."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Si no planea usar el agente SSH en otra cuenta de pago, recuerde desactivar este ajuste antes de cambiar de cuenta."
+      ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Asegúrese de que ${ PASS_APP_NAME } siga ejecutándose (puede estar minimizado) para que el agente SSH se mantenga activo. Las claves SSH con frase de contraseña no se admiten por ahora."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No se encontraron claves SSH en ${ PASS_SHORT_APP_NAME }. Cree claves SSH para usar con este agente."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Abra «Servicios» (puede usar la barra de búsqueda de Windows o presione Win+R e ingrese services.msc)."
+      ],
+      "Paste the following command in your terminal:": [
+        "Pegue el siguiente comando en su terminal:"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Establezca «Tipo de inicio» en Deshabilitado y haga clic en Aceptar."
+      ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Consejo: añádala a su archivo .bashrc o .zshrc para que se ejecute automáticamente cuando abra el terminal."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Para usar agentes SSH de ${ PASS_APP_NAME } en Windows, el servicio OpenSSH debe estar desactivado."
       ]
     },
     "Keyboard key": {
@@ -4137,6 +4179,9 @@
       ],
       "Custom expiration (minutes)": [
         "Expiración personalizada (minutos)"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usar ${ PASS_APP_NAME } como agente SSH"
       ]
     },
     "Link": {
@@ -4635,6 +4680,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Se envió un correo electrónico de verificación. Revise su bandeja de entrada para verificar su buzón de correo."
+      ],
+      "SSH agent successfully started": [
+        "Agente SSH iniciado con éxito"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH detenido con éxito"
       ]
     },
     "Theme": {
@@ -5161,6 +5212,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captura de pantalla del servicio OpenSSH en Windows"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configurar Agente SSH de ${ PASS_APP_NAME }"
+      ],
+      "SSH Agent": [
+        "Agente SSH"
       ]
     },
     "Title_cloned_item": {
@@ -5512,6 +5572,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "El agente SSH requiere usar claves SSH, las cuales no están disponibles en su plan."
       ]
     }
   }
