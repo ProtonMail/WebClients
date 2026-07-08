@@ -39,7 +39,7 @@ export interface Dependencies {
     events: ChargebeeIframeEvents;
 }
 
-export interface SavedChargebeeMethodProcessorHook extends PaymentProcessorHook {
+interface SavedChargebeeMethodProcessorHook extends PaymentProcessorHook {
     paymentProcessor?: SavedChargebeePaymentProcessor;
 }
 

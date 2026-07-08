@@ -45,11 +45,11 @@ export const getPlanMaxIPs = (plan: Plan) => {
     return 0;
 };
 
-export const getPlanMaxLumo = (plan: Plan) => {
+const getPlanMaxLumo = (plan: Plan) => {
     return isLumoAddon(plan.Name) ? 1 : 0;
 };
 
-export const getPlanMaxMeet = (plan: Plan) => {
+const getPlanMaxMeet = (plan: Plan) => {
     return isMeetAddon(plan.Name) ? 1 : 0;
 };
 
@@ -114,7 +114,7 @@ export function getAddonMultiplier(addonMaxKey: FeatureLimitKey, addon: Plan): n
     return Math.max(1, getPlanFeatureLimit(addon, addonMaxKey));
 }
 
-export function getPlanMembers(plan: Plan, quantity: number, view = true): number {
+function getPlanMembers(plan: Plan, quantity: number, view = true): number {
     const hasMembers = plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && isMemberAddon(plan.Name));
 
     let membersNumberInPlan = 0;

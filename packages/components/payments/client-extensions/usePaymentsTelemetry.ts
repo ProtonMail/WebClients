@@ -14,7 +14,7 @@ interface Overrides {
     cycle?: Cycle;
 }
 
-export interface PaymentsTelemetry {
+interface PaymentsTelemetry {
     reportPaymentLoad: () => void;
     reportPaymentAttempt: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
     reportPaymentSuccess: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;

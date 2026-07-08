@@ -46,19 +46,6 @@ type Props = {
     isAuthenticated?: boolean;
 } & ButtonProps;
 
-export type OfferUnavailableErrorMessage =
-    | {
-          paymentDisabled: true;
-          message: string;
-          hideBillingCountry: boolean;
-      }
-    | {
-          paymentDisabled: false;
-          message: never;
-          hideBillingCountry: never;
-      }
-    | undefined;
-
 export const PayButton = ({
     taxCountry,
     vatNumber,

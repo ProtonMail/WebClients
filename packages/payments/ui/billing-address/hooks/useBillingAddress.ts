@@ -2,7 +2,7 @@ import type { FullBillingAddressFlat } from '../../../core/billing-address/billi
 import { useTaxCountry } from './useTaxCountry';
 import { useVatNumber } from './useVatNumber';
 
-export type BillingAddressProps = Omit<Parameters<typeof useTaxCountry>[0], 'onBillingAddressChange'> &
+type BillingAddressProps = Omit<Parameters<typeof useTaxCountry>[0], 'onBillingAddressChange'> &
     Omit<Parameters<typeof useVatNumber>[0], 'taxCountry' | 'onBillingAddressChange'> & {
         onBillingAddressChange?: (billingAddress: FullBillingAddressFlat) => void;
         disableVat?: boolean;
