@@ -488,8 +488,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {/* Panel content — rendered exactly once */}
                             <div
                                 className={clsx(
-                                    'flex flex-column gap-4 flex-1 mb-10 w-full min-w-0',
-                                    activePanel === 'memory' ? 'overflow-hidden min-h-0' : 'overflow-y-auto'
+                                    'flex flex-column gap-4 flex-1 w-full min-w-0',
+                                    activePanel === 'memory' ? 'overflow-hidden min-h-0 mb-0' : 'overflow-y-auto mb-10'
                                 )}
                                 style={{ minHeight: 0 }}
                             >

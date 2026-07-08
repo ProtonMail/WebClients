@@ -69,6 +69,14 @@ im.$media-expressions: $media-expressions;
 		display: flex;
 		flex-direction: column;
 
+		// Memory panel is list-heavy — give it more vertical room (desktop only)
+		@include im.media('>small') {
+			&:has(.memory-panel) {
+				block-size: 70vh;
+				min-block-size: 70vh;
+			}
+		}
+
 		// Mobile specific adjustments
 		@include im.media('<=small') {
 			padding: 1rem;
@@ -90,6 +98,10 @@ im.$media-expressions: $media-expressions;
 		// Make sidebar match the height of its parent container on desktop only
 		@include im.media('>small') {
 			min-block-size: calc(60vh + 4rem);
+
+			.modal-main-container:has(.memory-panel) & {
+				min-block-size: calc(70vh + 4rem);
+			}
 		}
 	}
 
