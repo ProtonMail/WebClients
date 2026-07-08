@@ -16,11 +16,11 @@ import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import type { ClientEndpoint, ContextBridgeApi, Maybe, MaybeNull, TabId } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { OnTelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import noop from '@proton/utils/noop';
 
 import { AppStateProvider } from './AppStateProvider';

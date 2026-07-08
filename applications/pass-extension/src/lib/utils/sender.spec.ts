@@ -1,4 +1,4 @@
-import { parseUrl } from '@proton/pass/utils/url/parser';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 
 import { isSupportedSenderUrl } from './sender';
 

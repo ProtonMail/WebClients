@@ -3,6 +3,8 @@ import type { MaybeNull } from '@proton/pass/types/utils';
 export enum PassFeature {
     LoginAutofillTelemetry = 'LoginAutofillTelemetry',
     PassAccessTokens = 'PassAccessTokens',
+    PassAutofillUrlAdvancedModes = 'PassAutofillUrlAdvancedModes',
+    PassAutofillUrlRegex = 'PassAutofillUrlRegex',
     PassAllowCreditCardFreeUsers = 'PassAllowCreditCardFreeUsers',
     PassBasicAuthAutofill = 'PassBasicAuthAutofill',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',

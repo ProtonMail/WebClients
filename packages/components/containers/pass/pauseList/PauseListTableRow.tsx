@@ -10,8 +10,8 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PauseListEntryDeleteDTO } from '@proton/pass/lib/organization/types';
+import { intoCleanHostname } from '@proton/pass/lib/urls/utils/utils';
 import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '@proton/pass/types';
-import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import isTruthy from '@proton/utils/isTruthy';
 
 type NewEntry = Pick<OrganizationUrlPauseEntryDto, 'Url' | 'Values'>;

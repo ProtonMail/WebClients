@@ -1,19 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActive, isItemType, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isActive, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { filterItemsByShareId, filterItemsByType, sortItems } from '@proton/pass/lib/items/item.utils';
 import { searchItems } from '@proton/pass/lib/search/match-items';
-import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/search/match-url';
-import type { SelectItemsByDomainOptions, SelectItemsOptions } from '@proton/pass/lib/search/types';
+import type { SelectItemsOptions } from '@proton/pass/lib/search/types';
 import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from '@proton/pass/store/selectors/items';
 import { selectVisibleSecureLinkedItems, selectVisibleSecureLinksCount } from '@proton/pass/store/selectors/secure-links';
 import { selectSharedByMe, selectSharedWithMe } from '@proton/pass/store/selectors/shared';
-import { NOOP_LIST_SELECTOR, createUncachedSelector, selectState } from '@proton/pass/store/selectors/utils';
+import { selectState } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, MaybeNull } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
+import type { ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 export type ItemsSearchResults = {
     filtered: ItemRevision[];
@@ -76,64 +73,3 @@ export const createMatchSecureLinksSelector = () => {
         return { searched, filtered: searched, totalCount };
     });
 };
-
-export const createMatchDomainItemsSelector = (domain: MaybeNull<string>, options: SelectItemsByDomainOptions) =>
-    typeof domain !== 'string' || isEmptyString(domain)
-        ? NOOP_LIST_SELECTOR<ItemRevision<'login'>>
-        : createUncachedSelector(
-              [
-                  options.visible ? selectVisibleItems : selectAllItems,
-                  () => domain,
-                  () => options.protocol,
-                  () => options.port,
-                  () => options.isPrivate,
-                  () => options.shareIds,
-                  () => options.sortOn ?? 'lastUseTime',
-                  () => options.strict,
-              ],
-              (items, domain, protocol, port, isPrivate, shareIds, sortOn, strict) =>
-                  items
-                      .reduce<{ item: ItemRevision<'login'>; priority: ItemUrlMatch }[]>((matches, item) => {
-                          if (isItemType('login')(item) && isActive(item)) {
-                              const validShareIds = !shareIds || shareIds.includes(item.shareId);
-                              const validUrls = item.data.content.urls.some((url) => url.includes(domain));
-
-                              /* If the item does not pass this initial "fuzzy" test, then we
-                               * should not even consider it as an autofill candidate.
-                               * This avoids unnecessarily parsing items' URLs with 'tldts' */
-                              if (!(validShareIds && validUrls)) return matches;
-
-                              /* `getItemPriorityForUrl` will apply strict domain matching */
-                              const { data } = item;
-                              const priority = getItemPriorityForUrl(data)(domain, {
-                                  isPrivate,
-                                  protocol,
-                                  strict,
-                                  port,
-                              });
-
-                              /* if negative priority : this item does not match the criteria */
-                              if (priority === ItemUrlMatch.NO_MATCH) return matches;
-
-                              matches.push({ item, priority });
-                          }
-                          return matches;
-                      }, [])
-                      .sort((a, b) => {
-                          const aPrio = a.priority;
-                          const bPrio = b.priority;
-
-                          const aTime = a.item.lastUseTime ?? a.item.revisionTime;
-                          const bTime = b.item.lastUseTime ?? b.item.revisionTime;
-
-                          /* if we have a priority tie
-                           * fallback to time comparison */
-                          switch (sortOn) {
-                              case 'priority':
-                                  return aPrio > 0 && aPrio === bPrio ? bTime - aTime : bPrio - aPrio;
-                              case 'lastUseTime':
-                                  return bTime - aTime;
-                          }
-                      })
-                      .map(prop('item'))
-          );

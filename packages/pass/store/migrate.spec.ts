@@ -1,4 +1,5 @@
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -65,6 +66,36 @@ describe('`migrate`', () => {
         const migration = migrate(state, snapshotWithShare, { from: '1.0.0', to: '2.0.0' });
 
         expect(migration.shares[shareId].addressId).toBe(addressId);
+    });
+
+    test('should auto update autofill urls with autofill mode', () => {
+        const state = rootReducer(undefined, { type: '__TEST__' });
+        const login = createTestItem('login');
+        const content = login.data.content as any;
+        content.urls = ['https://example.com'];
+        delete content.autofillUrls;
+        state.items.byShareId[login.shareId] = { [login.itemId]: login };
+
+        const migration = migrate(state, snapshot, { from: '1.0.0', to: '2.0.0' });
+        const newContent = migration.items.byShareId[login.shareId][login.itemId].data.content as any;
+        expect(newContent.urls).not.toBeDefined();
+        expect(newContent.autofillUrls).toEqual([{ url: 'https://example.com', mode: AutofillMode.Default }]);
+    });
+
+    test('should not throw and drop urls if legacy `urls` is not an array', () => {
+        const state = rootReducer(undefined, { type: '__TEST__' });
+        const login = createTestItem('login');
+        const content = login.data.content as any;
+        content.urls = 'https://example.com';
+        delete content.autofillUrls;
+        state.items.byShareId[login.shareId] = { [login.itemId]: login };
+
+        expect(() => migrate(state, snapshot, { from: '1.0.0', to: '2.0.0' })).not.toThrow();
+
+        const migration = migrate(state, snapshot, { from: '1.0.0', to: '2.0.0' });
+        const newContent = migration.items.byShareId[login.shareId][login.itemId].data.content as any;
+        expect(newContent.urls).not.toBeDefined();
+        expect(newContent.autofillUrls).toEqual([]);
     });
 });
 

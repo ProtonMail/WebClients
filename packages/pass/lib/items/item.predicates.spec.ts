@@ -1,8 +1,27 @@
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision, LoginItem } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 
-import { isBreached, isDisabledAlias, isHealthCheckSkipped, isMonitored } from './item.predicates';
+import { hasDomain, isBreached, isDisabledAlias, isHealthCheckSkipped, isMonitored } from './item.predicates';
 
 describe('item predicates', () => {
+    test('`hasDomain`', () => {
+        const withUrls = (autofillUrls: { url: string; mode: AutofillMode }[]) =>
+            ({ data: { content: { autofillUrls } } }) as LoginItem;
+
+        expect(hasDomain(withUrls([]))).toBe(false);
+        expect(hasDomain(withUrls([{ url: 'https://example.com', mode: AutofillMode.Default }]))).toBe(true);
+        /* a `Never` entry is a block rule, not a real autofill target */
+        expect(hasDomain(withUrls([{ url: 'https://example.com', mode: AutofillMode.Never }]))).toBe(false);
+        expect(
+            hasDomain(
+                withUrls([
+                    { url: 'https://example.com', mode: AutofillMode.Never },
+                    { url: 'https://example.com', mode: AutofillMode.Exact },
+                ])
+            )
+        ).toBe(true);
+    });
+
     test('`isMonitored`', () => {
         expect(isMonitored({ flags: parseInt('000', 2) } as ItemRevision)).toBe(true);
         expect(isMonitored({ flags: parseInt('010', 2) } as ItemRevision)).toBe(true);

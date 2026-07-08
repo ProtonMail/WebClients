@@ -3,8 +3,8 @@ import { type CSSProperties, type FC, useEffect, useState } from 'react';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+import { intoDomainImageHostname } from '@proton/pass/lib/urls/utils/utils';
 import type { Maybe } from '@proton/pass/types';
-import { intoDomainImageHostname } from '@proton/pass/utils/url/utils';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -32,6 +32,7 @@ export const DomainIcon: FC<Props> = ({ className, status, style = {}, url, onSt
     useEffect(() => {
         const controller = new AbortController();
         const domain = intoDomainImageHostname(url);
+        setSrc(undefined);
         if (!domain) return statusChange.current(ImageStatus.ERROR);
 
         (async () => {

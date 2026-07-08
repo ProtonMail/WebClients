@@ -2,8 +2,8 @@ import { parse } from 'tldts';
 
 import type { MaybeNull } from '@proton/pass/types';
 
+import type { ParsedUrl } from '../types';
 import { sanitizeURL } from './sanitize';
-import type { ParsedUrl } from './types';
 
 export const generateDomainCombinations = function* (domain: string, subdomain?: MaybeNull<string>) {
     if (!subdomain) {
@@ -34,6 +34,8 @@ export const parseUrl = (url?: string, customPrivateDomains?: MaybeNull<Set<stri
             isTopLevelDomain: false,
             isPrivate: false,
             isSecure: false,
+            url: null,
+            cleanUrl: null,
         };
     }
 
@@ -68,6 +70,8 @@ export const parseUrl = (url?: string, customPrivateDomains?: MaybeNull<Set<stri
         hostname,
         isTopLevelDomain: !subdomain || subdomain === 'www',
         isPrivate: isPrivate ?? subdomain !== null,
-        isSecure: check.url.startsWith('https://'),
+        isSecure: check.url?.startsWith('https://') || false,
+        url: url ?? null,
+        cleanUrl: check.cleanUrl,
     };
 };

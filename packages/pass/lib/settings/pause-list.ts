@@ -1,6 +1,6 @@
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
+import { intoCleanHostname } from '@proton/pass/lib/urls/utils/utils';
 import type { Maybe, MaybeNull, OrganizationUrlPauseEntryDto } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
-import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 
 export type PauseListEntry = { hostname: string; criteria: CriteriaMasks };
 export type CriteriaMask = number;

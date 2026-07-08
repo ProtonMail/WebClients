@@ -13,9 +13,11 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
 import type { FormEntry } from '@proton/pass/types';
 import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
+import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -51,13 +53,15 @@ describe('AutosaveService [worker]', () => {
             frameId: 0,
         };
 
+        const url = parseUrl('https://domain.com');
+
         test('should prompt for new item if no match', () => {
-            const result = autosave.resolve(submission);
+            const result = autosave.resolve(submission, url);
             expect(result).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
         });
 
         test('should not prompt if form credentials are invalid', () => {
-            const result = autosave.resolve({ ...submission, data: { userIdentifier: '', password: '' } });
+            const result = autosave.resolve({ ...submission, data: { userIdentifier: '', password: '' } }, url);
             expect(result).toEqual({ shouldPrompt: false });
         });
 
@@ -68,14 +72,14 @@ describe('AutosaveService [worker]', () => {
                 .set('itemEmail', submission.data.userIdentifier)
                 .set('itemUsername', '')
                 .set('password', '') /* different password */
-                .set('urls', ['https://domain.com/']);
+                .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission)).toEqual({
+            expect(autosave.resolve(submission, url)).toEqual({
                 shouldPrompt: true,
                 data: {
                     type: AutosaveMode.UPDATE,
@@ -99,14 +103,14 @@ describe('AutosaveService [worker]', () => {
                 .set('itemEmail', '')
                 .set('itemUsername', submission.data.userIdentifier)
                 .set('password', '') /* different password */
-                .set('urls', ['https://domain.com/']);
+                .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission)).toEqual({
+            expect(autosave.resolve(submission, url)).toEqual({
                 shouldPrompt: true,
                 data: {
                     type: AutosaveMode.UPDATE,
@@ -129,14 +133,14 @@ describe('AutosaveService [worker]', () => {
             item.get('content')
                 .set('itemEmail', submission.data.userIdentifier)
                 .set('password', submission.data.password) /* same password */
-                .set('urls', ['https://domain.com/']);
+                .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
+            expect(autosave.resolve(submission, url)).toEqual({ shouldPrompt: false });
         });
 
         test('should not prompt for item update if matching username and no password change', () => {
@@ -145,47 +149,33 @@ describe('AutosaveService [worker]', () => {
             item.get('content')
                 .set('itemUsername', submission.data.userIdentifier)
                 .set('password', submission.data.password) /* same password */
-                .set('urls', ['https://domain.com/']);
+                .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
+            expect(autosave.resolve(submission, url)).toEqual({ shouldPrompt: false });
         });
 
         test.each([
-            { label: 'same url different port', value: 'https://domain.com:3000/' },
-            { label: 'same url different protocol', value: 'http://domain.com/' },
-        ])('should prompt if credentials match on $label', (testCase) => {
+            { label: 'no port specified while browsing', value: 'https://domain.com:3000/' },
+            { label: 'browsing with an upgraded https protocol', value: 'http://domain.com/' },
+        ])("should not prompt on $label (matches the engine's own port/protocol leniency)", (testCase) => {
             const item = itemBuilder('login');
             item.get('metadata').set('name', 'Domain.com');
             item.get('content')
                 .set('itemEmail', submission.data.userIdentifier)
                 .set('password', submission.data.password) /* same password */
-                .set('urls', [testCase.value]);
+                .set('autofillUrls', [{ url: testCase.value, mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission)).toEqual({
-                shouldPrompt: true,
-                data: {
-                    type: AutosaveMode.UPDATE,
-                    candidates: [
-                        {
-                            itemId: revision.itemId,
-                            shareId: mockShareId,
-                            name: 'Domain.com',
-                            url: testCase.value,
-                            userIdentifier: 'test@proton.me',
-                        },
-                    ],
-                },
-            });
+            expect(autosave.resolve(submission, url)).toEqual({ shouldPrompt: false });
         });
     });
 
@@ -219,7 +209,7 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
-            expect(created.content.urls).toEqual(['https://proton.me/']);
+            expect(created.content.autofillUrls).toEqual([{ url: 'https://proton.me/', mode: AutofillMode.Default }]);
             expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
         });
@@ -246,7 +236,7 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
-            expect(created.content.urls).toEqual(['https://proton.me/']);
+            expect(created.content.autofillUrls).toEqual([{ url: 'https://proton.me/', mode: AutofillMode.Default }]);
             expect(deobfuscate(created.content.itemUsername)).toEqual('john');
             expect(deobfuscate(created.content.password)).toEqual('123');
         });
@@ -275,7 +265,7 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test passkey');
-            expect(created.content.urls).toEqual(['https://proton.me/']);
+            expect(created.content.autofillUrls).toEqual([{ url: 'https://proton.me/', mode: AutofillMode.Default }]);
             expect(deobfuscate(created.content.itemEmail)).toEqual(passkey.userName);
             expect(deobfuscate(created.content.password)).toEqual('');
             expect(created.content.passkeys).toEqual([passkey]);
@@ -320,7 +310,7 @@ describe('AutosaveService [worker]', () => {
             item.get('content')
                 .set('itemEmail', 'test@proton.me')
                 .set('passkeys', [passkey])
-                .set('urls', ['https://domain.com/']);
+                .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
@@ -348,7 +338,10 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
             expect(updated.metadata.name).toEqual('Domain.com#Update');
-            expect(updated.content.urls).toEqual(['https://domain.com/', 'https://sub.domain.com/']);
+            expect(updated.content.autofillUrls).toEqual([
+                { url: 'https://domain.com/', mode: AutofillMode.Default },
+                { url: 'https://sub.domain.com/', mode: AutofillMode.Default },
+            ]);
             expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(updated.content.password)).toEqual('new-password');
             expect(updated.content.passkeys).toEqual([passkey]);
@@ -366,7 +359,7 @@ describe('AutosaveService [worker]', () => {
                 .set('itemEmail', 'test@proton.me')
                 .set('password', 'existing-password')
                 .set('passkeys', [passkey])
-                .set('urls', ['https://domain.com/']);
+                .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
 
             const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
@@ -395,7 +388,7 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
             expect(updated.metadata.name).toEqual('Domain.com#Update');
-            expect(updated.content.urls).toEqual(['https://domain.com/']);
+            expect(updated.content.autofillUrls).toEqual([{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
             expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(updated.content.password)).toEqual('existing-password');
             expect(updated.content.passkeys).toEqual([passkey, newPasskey]);
@@ -424,7 +417,9 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
-            expect(created.content.urls).toEqual(['https://localhost:3000/']);
+            expect(created.content.autofillUrls).toEqual([
+                { url: 'https://localhost:3000/', mode: AutofillMode.Default },
+            ]);
             expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
         });
