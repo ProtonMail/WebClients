@@ -7,7 +7,6 @@ export enum CommonFeatureFlag {
     ForceReload = 'ForceReload',
     ColorPerEventWeb = 'ColorPerEventWeb',
     CollectLogs = 'CollectLogs',
-    AutoReloadPage = 'AutoReloadPage',
     DisableElectronMail = 'DisableElectronMail',
     // Whether to show Docs in the app switcher. NOT whether the docs homepage is enabled (that's `DocsHomepageEnabled` instead).
     // We'll clean up the naming of this flag in the future, if we don't remove it before then.
