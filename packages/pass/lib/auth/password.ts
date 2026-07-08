@@ -20,6 +20,7 @@ export enum PasswordVerification {
 export type UnsafePasswordCredentials = { password: string };
 export type PasswordCredentials = { password: XorObfuscation };
 export type PasswordConfirmDTO = PasswordCredentials & { mode?: PasswordVerification };
+export type PasswordLaunchLockDTO = PasswordCredentials & { enabled: boolean };
 export type ExtraPasswordDTO = PasswordCredentials & { enabled: boolean };
 
 export const getPasswordVerification = (authStore: AuthStore) => {

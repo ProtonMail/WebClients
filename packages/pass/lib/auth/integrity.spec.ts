@@ -1,6 +1,7 @@
 import {
     SESSION_DIGEST_VERSION,
     SESSION_INTEGRITY_KEYS_V1,
+    SESSION_INTEGRITY_KEYS_V2,
     digestSession,
     getSessionDigestVersion,
     getSessionIntegrityKeys,
@@ -26,6 +27,11 @@ describe('Session integrity', () => {
     describe('`getSessionIntegrityKeys`', () => {
         it('should return correct keys for version 1', () => {
             expect(getSessionIntegrityKeys(1)).toEqual(SESSION_INTEGRITY_KEYS_V1);
+        });
+
+        it('should return correct keys for version 2', () => {
+            expect(getSessionIntegrityKeys(2)).toEqual(SESSION_INTEGRITY_KEYS_V2);
+            expect(getSessionIntegrityKeys(2)).toContain('lockPasswordOnLaunch');
         });
 
         it('should return an empty array for unknown versions', () => {
@@ -60,6 +66,13 @@ describe('Session integrity', () => {
 
             const sessionB = { ...MOCK_SESSION, LocalID: 42 };
             const digestB = await digestSession(sessionB, 1);
+
+            expect(digestA).not.toBe(digestB);
+        });
+
+        it('should protect lockPasswordOnLaunch in version 2', async () => {
+            const digestA = await digestSession({ ...MOCK_SESSION, lockPasswordOnLaunch: true }, 2);
+            const digestB = await digestSession({ ...MOCK_SESSION, lockPasswordOnLaunch: false }, 2);
 
             expect(digestA).not.toBe(digestB);
         });

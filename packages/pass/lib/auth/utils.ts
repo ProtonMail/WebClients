@@ -38,17 +38,18 @@ export const getInvalidPasswordString = (authStore: AuthStore) => {
  *  - Offline + offline-mode disabled → cannot unlock locally
  *  - BIOMETRICS: prefers `BIOMETRICS_LOCKED` when `encryptedOfflineKD` exists,
  *    otherwise falls back to `PASSWORD_LOCKED` as recovery path
- *  - PASSWORD: `PASSWORD_LOCKED`.
+ *  - PASSWORD / password-on-launch: `PASSWORD_LOCKED`.
  *  - SESSION / NONE (default): only locks when offline via `PASSWORD_LOCKED` */
 export const getInitialLockedAppStatus = (
     authStore: AuthStore,
-    params: { offlineEnabled: boolean; offline: boolean }
+    params: { offlineEnabled: boolean; offline: boolean; passwordOnLaunch?: boolean }
 ): Maybe<AppStatus> => {
     const lockMode = authStore.getLockMode();
     const encryptedOfflineKD = authStore.getEncryptedOfflineKD();
 
     if (!authStore.hasOfflineComponents()) return;
     if (params.offline && !params.offlineEnabled) return;
+    if (params.passwordOnLaunch) return AppStatus.PASSWORD_LOCKED;
 
     switch (lockMode) {
         case LockMode.BIOMETRICS:

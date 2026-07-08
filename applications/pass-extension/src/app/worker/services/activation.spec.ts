@@ -34,6 +34,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
 
         authStore = createAuthStore(createMemoryStore());
         authStore.setLocalID(123);
+        authStore.setLockPasswordOnLaunch(false);
         exposeAuthStore(authStore);
 
         connectivity = {
@@ -153,10 +154,12 @@ describe('Activation service - `CLIENT_INIT`', () => {
         test('should pass `retryable: false`: CLIENT_INIT must never bootstrap the alarm chain', async () => {
             ctx.status = AppStatus.IDLE;
             await handler(initMessage('popup'), {});
-            expect(ctx.service.auth.init).toHaveBeenCalledWith({
-                forceLock: expect.any(Boolean),
-                retryable: false,
-            });
+            expect(ctx.service.auth.init).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    forceLock: expect.any(Boolean),
+                    retryable: false,
+                })
+            );
         });
     });
 

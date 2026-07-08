@@ -1,11 +1,12 @@
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { computeSHA256 } from '@protontech/crypto/subtle/hash.ts';
+
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { AuthSession, EncryptedSessionKeys } from './session';
 
 type IntegrityKey = keyof Omit<AuthSession, EncryptedSessionKeys>;
 
-export const SESSION_DIGEST_VERSION = 1;
+export const SESSION_DIGEST_VERSION = 2;
 const VERSION_SEPARATOR = '.';
 
 /** `AuthSession` keys used to verify the integrity of the session
@@ -26,10 +27,14 @@ export const SESSION_INTEGRITY_KEYS_V1: IntegrityKey[] = [
     'UserID',
 ];
 
+export const SESSION_INTEGRITY_KEYS_V2: IntegrityKey[] = [...SESSION_INTEGRITY_KEYS_V1, 'lockPasswordOnLaunch'];
+
 export const getSessionIntegrityKeys = (version: number): IntegrityKey[] => {
     switch (version) {
         case 1:
             return SESSION_INTEGRITY_KEYS_V1;
+        case 2:
+            return SESSION_INTEGRITY_KEYS_V2;
         default:
             return [];
     }
@@ -55,7 +60,8 @@ export const digestSession = async (
     version: number
 ): Promise<string> => {
     const integrityKeys = getSessionIntegrityKeys(version);
-    const sessionDigest = integrityKeys.reduce<string>((digest, key) => `${digest}::${session[key] || '-'}`, '');
+    const serialize = (value: unknown) => (version === 1 ? value || '-' : (value ?? '-'));
+    const sessionDigest = integrityKeys.reduce<string>((digest, key) => `${digest}::${serialize(session[key])}`, '');
     const sessionBuffer = stringToUint8Array(sessionDigest);
     const digest = await computeSHA256(sessionBuffer);
 

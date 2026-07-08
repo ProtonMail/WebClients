@@ -210,7 +210,14 @@ export const createAuthService = ({
 
                 const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
                 const offline = !connectivity.online;
-                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline });
+                const initialLockedStatus = getInitialLockedAppStatus(authStore, {
+                    offlineEnabled,
+                    offline,
+                    passwordOnLaunch:
+                        DESKTOP_BUILD &&
+                        (Boolean(persistedSession?.launchPasswordBlob) ||
+                            authStore.getLockPasswordOnLaunch() !== false),
+                });
 
                 if (initialLockedStatus) {
                     authStore.setPassword(undefined);

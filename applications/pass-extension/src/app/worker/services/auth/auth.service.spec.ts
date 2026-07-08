@@ -40,6 +40,7 @@ describe('Extension AuthService', () => {
         api.subscribe = jest.fn();
         api.idle = jest.fn().mockResolvedValue(undefined);
         authStore = createAuthStore(createMemoryStore());
+        authStore.setLockPasswordOnLaunch(false);
 
         connectivity = {
             online: true,
@@ -736,6 +737,7 @@ describe('Extension AuthService', () => {
                 });
                 jest.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
                 auth.init = jest.fn().mockResolvedValue(true);
+                ctx.service.auth = auth;
                 authStore.setLocalID(123);
                 auth.listen();
                 WorkerMessageBroker.ports.query.mockReturnValue([]);
@@ -786,11 +788,13 @@ describe('Extension AuthService', () => {
                 await alarmListener();
 
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
-                expect(auth.init).toHaveBeenCalledWith({
-                    forceLock: expect.any(Boolean),
-                    retryable: true,
-                    silence: true,
-                });
+                expect(auth.init).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        forceLock: expect.any(Boolean),
+                        retryable: true,
+                        silence: true,
+                    })
+                );
             });
 
             test('should call `auth.init` when client is ERRORED', async () => {
@@ -842,11 +846,13 @@ describe('Extension AuthService', () => {
                     connectivity.status = ConnectivityStatus.ONLINE;
                 });
                 await alarmListener();
-                expect(auth.init).toHaveBeenCalledWith({
-                    forceLock: expect.any(Boolean),
-                    retryable: true,
-                    silence: true,
-                });
+                expect(auth.init).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        forceLock: expect.any(Boolean),
+                        retryable: true,
+                        silence: true,
+                    })
+                );
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
             });
         });

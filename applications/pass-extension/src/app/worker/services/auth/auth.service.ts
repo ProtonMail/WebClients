@@ -64,7 +64,7 @@ import noop from '@proton/utils/noop';
 
 import type { AuthAlarms } from './auth.alarms';
 import { createAuthAlarms } from './auth.alarms';
-import { isOfflineModeEnabled, shouldForceLock, validateExtensionForkPayload } from './auth.utils';
+import { getForceLockOptions, isOfflineModeEnabled, shouldForceLock, validateExtensionForkPayload } from './auth.utils';
 
 export interface ExtensionAuthService extends AuthService {
     /** Starts extension specific listeners. Moved outside
@@ -385,7 +385,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     }) as ExtensionAuthService;
 
     const handleInit = withContext<MessageHandlerCallback<WorkerMessageType.AUTH_INIT>>(async (ctx, { options }) => {
-        options.forceLock = await shouldForceLock();
+        Object.assign(options, await getForceLockOptions());
         await ctx.service.auth.init(options);
         return ctx.getState();
     });
@@ -565,8 +565,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             }
 
             if (forceResume) {
-                const forceLock = await shouldForceLock();
-                return authService.init({ forceLock, retryable: true, silence: true });
+                return authService.init({ ...(await getForceLockOptions()), retryable: true, silence: true });
             }
 
             logger.debug(`[AuthService] dropped auto resume [${status}]`);

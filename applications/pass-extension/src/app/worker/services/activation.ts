@@ -38,7 +38,7 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { shouldForceLock } from './auth/auth.utils';
+import { getForceLockOptions } from './auth/auth.utils';
 
 type ActivationServiceState = {
     updateAvailable: MaybeNull<string>;
@@ -92,7 +92,8 @@ export const createActivationService = () => {
         /* set `forceLock` flag for subsequent authentication inits to
          * account for startup artifically force locking the session */
         await ctx.service.storage.local.setItem('forceLock', true);
-        const loggedIn = await ctx.service.auth.init({ forceLock: true, retryable: true });
+
+        const loggedIn = await ctx.service.auth.init({ ...(await getForceLockOptions()), retryable: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
             if (!loggedIn) {
@@ -123,7 +124,7 @@ export const createActivationService = () => {
             void ctx.service.injection.updateScripts();
             ctx.service.spotlight.onUpdate();
 
-            return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
+            return ctx.service.auth.init({ ...(await getForceLockOptions()), retryable: true });
         }
 
         /** NOTE: Safari might trigger the `install` event when clearing the
@@ -225,7 +226,7 @@ export const createActivationService = () => {
             })();
 
             /** NOTE: `retryable: false` -> don't start resume chain from client inits */
-            if (shouldResume) void ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: false });
+            if (shouldResume) void ctx.service.auth.init({ ...(await getForceLockOptions()), retryable: false });
 
             /** Dispatch a wakeup action for client app receivers. Tracking the wakeup's request metadata
              * can be consumed in the UI to infer wakeup result - see `wakeup.saga.ts` no need for any redux

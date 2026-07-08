@@ -18,6 +18,7 @@ import lockCreate from './auth/lock-create.saga';
 import lock from './auth/lock.saga';
 import passwordConfirm from './auth/password-confirm.saga';
 import passwordExtra from './auth/password-extra.saga';
+import passwordOnLaunch from './auth/password-on-launch.saga';
 import ssoSagas from './auth/sso.sagas';
 import unlock from './auth/unlock.saga';
 import boot from './client/boot.saga';
@@ -164,6 +165,7 @@ const COMMON_SAGAS = [
     offlineResume,
     offlineSetup,
     passwordConfirm,
+    passwordOnLaunch,
     passwordExtra,
     reportProblem,
     sentinelToggle,

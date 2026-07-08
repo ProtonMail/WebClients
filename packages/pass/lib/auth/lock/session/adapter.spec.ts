@@ -12,6 +12,7 @@ jest.mock('./lock.requests');
 jest.mock('@proton/pass/utils/time/epoch');
 jest.mock('@proton/pass/lib/auth/session', () => ({
     ...jest.requireActual('@proton/pass/lib/auth/session'),
+    decryptLaunchPasswordSessionBlob: jest.fn(),
     decryptSessionBlob: jest.fn(),
     getPersistedSessionKey: jest.fn(),
 }));
@@ -19,6 +20,7 @@ jest.mock('@proton/pass/lib/auth/session', () => ({
 const unlockSessionMock = lockRequests.unlockSession as jest.Mock;
 const checkSessionLockMock = lockRequests.checkSessionLock as jest.Mock;
 const getEpochMock = getEpoch as jest.Mock;
+const decryptLaunchPasswordSessionBlobMock = authSession.decryptLaunchPasswordSessionBlob as jest.Mock;
 const decryptSessionBlobMock = authSession.decryptSessionBlob as jest.Mock;
 const getPersistedSessionKeyMock = authSession.getPersistedSessionKey as jest.Mock;
 
@@ -45,6 +47,7 @@ describe('SessionLock adapter', () => {
     beforeEach(() => {
         getEpochMock.mockReturnValue(1000);
         getPersistedSessionKeyMock.mockResolvedValue('client-key');
+        decryptLaunchPasswordSessionBlobMock.mockResolvedValue({ sessionLockToken: TOKEN });
         decryptSessionBlobMock.mockResolvedValue({ sessionLockToken: TOKEN });
     });
 
@@ -145,6 +148,20 @@ describe('SessionLock adapter', () => {
 
             await expect(adapter.unlock('123456')).rejects.toThrow('Invalid session unlock response');
             expect(auth.logout).toHaveBeenCalledWith({ soft: false, broadcast: true });
+        });
+
+        test('should read the persisted token from launch password blob when present', async () => {
+            const { adapter, authStore, config } = setupAdapter();
+            config.getPersistedSession.mockResolvedValue({ blob: 'blob', launchPasswordBlob: 'password-blob' });
+            unlockSessionMock.mockResolvedValue(TOKEN);
+            authStore.setOfflineKD('offline-kd');
+            authStore.setLockMode(LockMode.SESSION);
+
+            await adapter.unlock('123456');
+
+            expect(decryptLaunchPasswordSessionBlobMock).toHaveBeenCalledWith('offline-kd', 'password-blob');
+            expect(getPersistedSessionKeyMock).not.toHaveBeenCalled();
+            expect(decryptSessionBlobMock).not.toHaveBeenCalled();
         });
 
         test('should notify and reset lock state when API returns 400 + SESSION_LOCKED', async () => {

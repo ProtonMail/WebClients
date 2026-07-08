@@ -61,6 +61,7 @@ import {
     encryptPersistedSessionWithKey,
     getPersistedSessionKey,
     migrateSession,
+    requiresLaunchPasswordUnlock,
     resumeSession,
     syncAuthSession,
 } from './session';
@@ -69,6 +70,8 @@ import type { AuthStore } from './store';
 export type AuthOptions = {
     /** `forceLock` will locally lock the session upon resuming */
     forceLock?: boolean;
+    /** Forces password lock when `forceLock` is set and offline components exist. */
+    forcePasswordLock?: boolean;
     /** If `true`, will re-persist session on login */
     forcePersist?: boolean;
     /** If `true`, session resuming should be retried */
@@ -233,8 +236,11 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 const lockMode = authStore.getLockMode();
 
-                if (options?.forceLock && lockMode !== LockMode.NONE) {
-                    await authService.lock(lockMode, { soft: true, broadcast: false });
+                const targetLockMode =
+                    options.forcePasswordLock && authStore.hasOfflineComponents() ? LockMode.PASSWORD : lockMode;
+
+                if (options?.forceLock && targetLockMode !== LockMode.NONE) {
+                    await authService.lock(targetLockMode, { soft: true, broadcast: false });
                     return false;
                 }
 
@@ -536,7 +542,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
         /** Passing the `regenerateClientKey` option will generate
          * a new local key and update it back-end side. Ideally, this
          * should only happen after consuming a fork. */
-        persistSession: async (options?: { regenerateClientKey: boolean }) => {
+        persistSession: async (options?: { regenerateClientKey?: boolean; throwOnFailure?: boolean }) => {
             try {
                 const session = authStore.getSession();
                 if (!authStore.validSession(session)) throw new Error('Trying to persist invalid session');
@@ -567,6 +573,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 await config.onSessionPersist?.(encryptedSession);
             } catch (error) {
                 logger.warn(`[AuthService] Persisting session failure`, error);
+                if (options?.throwOnFailure) throw error;
             }
         },
 
@@ -623,6 +630,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
                  * and `sessionLockToken` may be still encrypted at this point */
                 authStore.setSession(persistedSession);
                 await api.reset();
+
+                if (!options.unlocked && requiresLaunchPasswordUnlock(persistedSession)) {
+                    logger.info(`[AuthService] Launch password lock required`);
+                    await authService.lock(LockMode.PASSWORD, { soft: true, broadcast: false });
+                    return false;
+                }
 
                 const result = await resumeSession(persistedSession, localID, config, options);
 

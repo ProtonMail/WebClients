@@ -4,7 +4,12 @@ import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { LockAdapterSession } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
-import { SESSION_VERSION, decryptSessionBlob, getPersistedSessionKey } from '@proton/pass/lib/auth/session';
+import {
+    SESSION_VERSION,
+    decryptLaunchPasswordSessionBlob,
+    decryptSessionBlob,
+    getPersistedSessionKey,
+} from '@proton/pass/lib/auth/session';
 import type { Maybe } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
@@ -26,11 +31,22 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapterSession
 
     const getPersistedToken = async (localID: Maybe<number>): Promise<Maybe<string>> => {
         const session = await auth.config.getPersistedSession(localID);
-        const clientKey = await getPersistedSessionKey(auth.config.api, authStore);
         const payloadVersion = session?.payloadVersion ?? SESSION_VERSION;
 
-        if (!(session?.blob && clientKey)) throw new Error('Could not verify unlock request against persisted session');
-        const decryptedSession = await decryptSessionBlob(clientKey, session?.blob, payloadVersion);
+        if (!session?.blob) throw new Error('Could not verify unlock request against persisted session');
+
+        if (session.launchPasswordBlob) {
+            const decryptedSession = await decryptLaunchPasswordSessionBlob(
+                authStore.getOfflineKD(),
+                session.launchPasswordBlob
+            );
+            return decryptedSession.sessionLockToken;
+        }
+
+        const clientKey = await getPersistedSessionKey(auth.config.api, authStore);
+        if (!clientKey) throw new Error('Could not verify unlock request against persisted session');
+
+        const decryptedSession = await decryptSessionBlob(clientKey, session.blob, payloadVersion);
         return decryptedSession.sessionLockToken;
     };
 

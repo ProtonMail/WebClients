@@ -18,6 +18,7 @@ const PASS_CLIENT_KEY = 'pass:client_key';
 const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
 const PASS_TWO_PWD_MODE = 'pass:two_password_mode';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
+const PASS_LOCK_PASSWORD_ON_LAUNCH_KEY = 'pass:lock_password_on_launch';
 const PASS_LOCK_EXTEND_TIME_KEY = 'pass:lock_extend_time';
 const PASS_LOCK_MODE_KEY = 'pass:lock_mode';
 const PASS_LOCK_STATE_KEY = 'pass:lock_state';
@@ -74,6 +75,7 @@ export const createAuthStore = (store: Store) => {
             extraPassword: authStore.getExtraPassword(),
             keyPassword: authStore.getPassword() ?? '',
             lastUsedAt: authStore.getLastUsedAt(),
+            lockPasswordOnLaunch: authStore.getLockPasswordOnLaunch(),
             LocalID: authStore.getLocalID(),
             lockLastExtendTime: authStore.getLockLastExtendTime(),
             lockMode: authStore.getLockMode(),
@@ -130,6 +132,9 @@ export const createAuthStore = (store: Store) => {
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
             if (session.lastUsedAt !== undefined) authStore.setLastUsedAt(session.lastUsedAt);
+            if (session.lockPasswordOnLaunch !== undefined) {
+                authStore.setLockPasswordOnLaunch(session.lockPasswordOnLaunch);
+            }
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
             if (session.lockMode) authStore.setLockMode(session.lockMode);
             if (session.lockTTL) authStore.setLockTTL(session.lockTTL);
@@ -193,6 +198,9 @@ export const createAuthStore = (store: Store) => {
 
         setLockMode: (mode: LockMode): void => store.set(PASS_LOCK_MODE_KEY, mode),
         getLockMode: (): LockMode => store.get(PASS_LOCK_MODE_KEY) ?? LockMode.NONE,
+        setLockPasswordOnLaunch: (enabled: Maybe<boolean>): void =>
+            store.set(PASS_LOCK_PASSWORD_ON_LAUNCH_KEY, enabled),
+        getLockPasswordOnLaunch: (): Maybe<boolean> => store.get(PASS_LOCK_PASSWORD_ON_LAUNCH_KEY),
         setLocked: (status: boolean): void => store.set(PASS_LOCK_STATE_KEY, status),
         getLocked: (): Maybe<boolean> => store.get(PASS_LOCK_STATE_KEY),
         setLockToken: encodedSetter(store)(PASS_LOCK_TOKEN_KEY),
