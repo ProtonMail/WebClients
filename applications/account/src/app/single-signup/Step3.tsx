@@ -56,7 +56,6 @@ const CopyPasswordModal = ({
     isB2bPlan: boolean;
 }) => {
     useEffect(() => {
-        telemetry.sendCustomEvent('password_selection_step');
         metrics.core_vpn_single_signup_passwordSelection_step_2_total.increment({
             step: 'copy_password_modal',
             flow: isB2bPlan ? 'b2b' : 'b2c',
@@ -162,6 +161,7 @@ const Step3 = ({
     }, []);
 
     useEffect(() => {
+        telemetry.sendCustomEvent('password_picking_step');
         metrics.core_vpn_single_signup_pageLoad_2_total.increment({
             step: 'password_selection',
             flow: isB2bPlan ? 'b2b' : 'b2c',
