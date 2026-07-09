@@ -46,7 +46,7 @@ export const accessMemberThunk = ({
 
         const { UID, LocalID } = await silentApi<{ UID: string; LocalID: number }>(authMember(member.ID));
 
-        if (!UID || !LocalID) {
+        if (!UID || LocalID === undefined) {
             throw new Error('Failed to get auth data');
         }
 

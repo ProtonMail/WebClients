@@ -117,6 +117,7 @@ enum AccountFlag {
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
     AdminRoleMVP = 'AdminRoleMVP',
     MspEnabled = 'MspEnabled',
+    MspCostsTableEnabled = 'MspCostsTableEnabled',
     UseZendeskV2 = 'UseZendeskV2',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
