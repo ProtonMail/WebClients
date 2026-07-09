@@ -25,14 +25,62 @@
       ]
     },
     "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } a rejoint la réunion"
+      ],
+      "${ name } left the meeting": [
+        "${ name } a quitté la réunion"
+      ],
       "${ name } lowered their hand": [
         "${ name } a baissé la main."
+      ],
+      "${ name } raised their hand": [
+        "${ name } a levé la main"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } a réagi avec ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } a dit : ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Un participant a rejoint la réunion"
+      ],
+      "A participant left the meeting": [
+        "Un participant a quitté la réunion"
+      ],
+      "A participant lowered their hand": [
+        "Un participant a baissé la main"
+      ],
+      "A participant raised their hand": [
+        "Un participant a levé la main"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Un participant a réagi avec ${ emoji }"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Connexion via relais TURN en raison de restrictions réseau. Cela peut augmenter la latence et affecter la qualité des appels."
       ],
+      "Connection lost. Reconnecting…": [
+        "La connexion a été perdue. Reconnexion en cours…"
+      ],
+      "New chat message: ${ message }": [
+        "Nouveau message de chat : ${ message }"
+      ],
+      "Now starting recording": [
+        "L'enregistrement commence maintenant"
+      ],
+      "Reconnected to the meeting": [
+        "Reconnecté à la réunion"
+      ],
       "Recording saved": [
         "L'enregistrement a été enregistré."
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "L'enregistrement a démarré. En poursuivant dans la réunion, vous reconnaissez et consentez à être enregistré."
+      ],
+      "Recording stopped": [
+        "L'enregistrement s'est arrêté."
       ],
       "Screen share started": [
         "Partage d'écran démarré"
@@ -67,8 +115,17 @@
       "The meeting will end in 5 minutes": [
         "La réunion se terminera dans 5 minutes"
       ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Cette réunion est enregistrée. En y participant, vous en prenez acte et acceptez d'en faire partie."
+      ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Vous êtes le seul participant. La réunion se fermera dans 2 minutes si personne ne la rejoint."
+      ],
+      "You have been disconnected from the meeting": [
+        "Vous avez été déconnecté de la réunion."
+      ],
+      "You have been muted by the host": [
+        "L'organisateur vous a rendu muet."
       ],
       "Your camera has been turned off by the host": [
         "Votre caméra a été désactivée par l'hôte."
@@ -95,6 +152,15 @@
       ],
       "Allow access": [
         "Autoriser l'accès"
+      ],
+      "Anyone with the link can join immediately": [
+        "Toute personne disposant du lien peut rejoindre immédiatement le groupe"
+      ],
+      "Applied": [
+        "Appliqué"
+      ],
+      "Apply changes": [
+        "Appliquer les modifications"
       ],
       "Approve participants before they can join": [
         "Approuver les participants avant qu'ils puissent joindre"
@@ -249,6 +315,9 @@
       "Forgot password?": [
         "Mot de passe oublié ?"
       ],
+      "Full size": [
+        "Taille complète"
+      ],
       "Generate a new meeting link.": [
         "Générer un nouveau lien de réunion."
       ],
@@ -263,6 +332,9 @@
       ],
       "Help and resources": [
         "Aide et ressources"
+      ],
+      "Hide options": [
+        "Masquer les options"
       ],
       "Hide participants": [
         "Masquer les participants"
@@ -330,8 +402,14 @@
       "Open link": [
         "Ouvrir le lien"
       ],
+      "Participants join after you approve them": [
+        "Les participants rejoindront le groupe une fois que vous les aurez validés"
+      ],
       "Participants join the call directly": [
         "Les participants se joignent directement à l'appel"
+      ],
+      "Pause": [
+        "Suspendre"
       ],
       "Previous month": [
         "Mois précédent"
@@ -352,6 +430,9 @@
       "Receive video": [
         "Recevoir la vidéo"
       ],
+      "Record": [
+        "Enregistrer"
+      ],
       "Refer a friend": [
         "Parrainer un ami"
       ],
@@ -367,6 +448,10 @@
       "Rejoin meeting": [
         "Rejoindre la réunion"
       ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Retirer la réaction ${ emoji }, ${ identities.length } réaction",
+        "Retirer la réaction ${ emoji }, ${ identities.length } réactions"
+      ],
       "Report a problem": [
         "Signaler un bug"
       ],
@@ -381,6 +466,12 @@
       ],
       "Resend code": [
         "Renvoyer le code"
+      ],
+      "Reset to defaults": [
+        "Revenir aux paramètres par défaut"
+      ],
+      "Resume": [
+        "Reprendre"
       ],
       "Return to dashboard": [
         "Revenir au tableau de bord"
@@ -417,6 +508,9 @@
       ],
       "Show floating thumbnail during screensharing": [
         "Afficher une vignette flottante pendant le partage d'écran"
+      ],
+      "Show options": [
+        "Afficher les options"
       ],
       "Show participants": [
         "Voir les participants"
@@ -460,6 +554,9 @@
       "Start your own meeting": [
         "Lancez votre propre réunion"
       ],
+      "Starting…": [
+        "Lancement en cours…"
+      ],
       "Stay in meeting": [
         "Rester dans la réunion"
       ],
@@ -502,8 +599,17 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Mettre à niveau votre abonnement pour utiliser la salle d’attente lors de votre prochaine réunion."
+      ],
+      "Upload another video": [
+        "Importer une autre vidéo"
+      ],
+      "Upload video": [
+        "Importer une vidéo"
       ],
       "Use authentication code": [
         "Utiliser le code d'authentification"
@@ -516,6 +622,9 @@
       ],
       "Use recovery code": [
         "Utiliser un code de récupération"
+      ],
+      "Use waiting room with a paid plan": [
+        "Utiliser la salle d'attente avec un abonnement payant"
       ],
       "Verify": [
         "Vérifier"
@@ -2027,6 +2136,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Mode avancé : réglez chaque constante de flou pour la version suivante, puis cliquez sur « Appliquer » pour actualiser l'aperçu. Les modifications manuelles ont priorité sur les valeurs définies dans le fichier et dans Unleash."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } anonyme : ${ participantNumber }"
       ],
@@ -2053,6 +2165,9 @@
       ],
       "Camera permission denied": [
         "L'autorisation d'accéder à la caméra a été refusée."
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Les modifications sont mises en attente. Appliquez-les pour actualiser l'aperçu avec les nouvelles constantes."
       ],
       "Chat with everyone": [
         "Discuter avec tout le monde"
@@ -2083,6 +2198,12 @@
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
+      ],
+      "Could not access the camera.": [
+        "Impossible d'accéder à la caméra."
+      ],
+      "Could not start recording.": [
+        "L'enregistrement n'a pas pu démarrer."
       ],
       "Country code": [
         "Indicatif du pays"
@@ -2161,6 +2282,9 @@
       ],
       "Everyone has been disconnected from the call.": [
         "Tout le monde a été déconnecté de l'appel."
+      ],
+      "Failed to apply background blur": [
+        "Impossible d'appliquer le flou d'arrière-plan"
       ],
       "Failed to update meeting name": [
         "La mise à jour du nom de la réunion n'a pas abouti."
@@ -2251,6 +2375,9 @@
       ],
       "Loading…": [
         "Chargement en cours…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Affichez en boucle une vidéo téléchargée ou le flux de votre caméra en direct sur les deux versions avec flou d'arrière-plan, côte à côte."
       ],
       "Lower participant's hand": [
         "Baisser la main du participant"
@@ -2411,6 +2538,9 @@
       "Record your meetings": [
         "Enregistrez vos réunions"
       ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Enregistrez côte à côte le flux brut de la caméra et l'arrière-plan flou de la production. L'arrêt des téléchargements concerne les deux clips."
+      ],
       "Recording": [
         "Enregistrement en cours"
       ],
@@ -2479,6 +2609,9 @@
       ],
       "Start recording": [
         "Démarrer l'enregistrement"
+      ],
+      "Starting camera…": [
+        "Démarrage de la caméra..."
       ],
       "Stop sharing your screen": [
         "Mettre fin au partage d'écran"
@@ -2672,6 +2805,9 @@
       "Add to calendar": [
         "Ajouter au calendrier"
       ],
+      "Advanced mode": [
+        "Mode avancé"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -2680,6 +2816,9 @@
       ],
       "Authenticator app": [
         "Application d'authentification"
+      ],
+      "Blurred (next)": [
+        "Flou (suivant)"
       ],
       "Browser": [
         "Navigateur"
@@ -2710,6 +2849,9 @@
       ],
       "Created": [
         "Créé"
+      ],
+      "Current": [
+        "Actuel"
       ],
       "Delete": [
         "Supprimer"
@@ -2798,6 +2940,9 @@
       "Name": [
         "Nom"
       ],
+      "Next": [
+        "Suivant"
+      ],
       "Operating system": [
         "Système d'exploitation"
       ],
@@ -2818,6 +2963,9 @@
       ],
       "Phone number": [
         "Numéro de téléphone"
+      ],
+      "Raw": [
+        "Brut"
       ],
       "Remember my name on this device": [
         "Se souvenir de mon nom sur cet appareil"
@@ -2854,6 +3002,12 @@
       ],
       "Track SID": [
         "Suivre le SID"
+      ],
+      "Use live camera feed": [
+        "Utiliser le flux vidéo en direct"
+      ],
+      "Use simple selfie segmentation": [
+        "Utiliser une segmentation simple des selfies"
       ],
       "Verification code": [
         "Code de vérification"
@@ -3201,6 +3355,9 @@
       "Available Speakers": [
         "Haut-parleurs disponibles"
       ],
+      "Background blur comparison": [
+        "Comparaison du flou d'arrière-plan"
+      ],
       "Camera and microphone are blocked": [
         "La caméra et le microphone sont bloqués."
       ],
@@ -3209,6 +3366,9 @@
       ],
       "Chat": [
         "Discussion"
+      ],
+      "Constants": [
+        "Constantes"
       ],
       "Couldn't prepare the recording": [
         "L'enregistrement n'a pas pu être préparé."
@@ -3327,6 +3487,9 @@
       ],
       "Reconnection Testing": [
         "Test de la reconnexion"
+      ],
+      "Record raw vs blurred camera": [
+        "Enregistrement en mode brut vs en mode flou"
       ],
       "Record this meeting": [
         "Enregistrer cette réunion"
