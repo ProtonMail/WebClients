@@ -204,6 +204,9 @@
       "Apply to existing messages": [
         "Aplicare la mesajele existente"
       ],
+      "Approve": [
+        "Aprobare"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -1220,6 +1223,9 @@
       ],
       "Organization": [
         "Organizația"
+      ],
+      "Pause": [
+        "Suspendare"
       ],
       "Pay": [
         "Plătire"
@@ -2617,7 +2623,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -3010,6 +3016,14 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "A apărut o eroare necunoscută. Actualizați pagina și reîncercați."
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Sigur continuați fără ${ withoutString } și încă ${ notMigratedOthers }?",
+        "Sigur continuați fără ${ withoutString } și încă ${ notMigratedOthers }?",
+        "Sigur continuați fără ${ withoutString } și încă ${ notMigratedOthers }?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Sigur continuați fără ${ withoutString }?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Sigur doriți să continuați? Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor ${ BRAND_NAME }."
       ],
@@ -3057,6 +3071,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Ștergeți orice coduri MX preexistente, apoi copiați codurile de mai jos și inserați-le în secțiunea DNS a gazdei domeniului personal."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM adaugă o semnătură digitală fiecărui e-mail, astfel încât destinatarii să poată verifica dacă mesajul provine într-adevăr de pe domeniul dvs. și nu a fost modificat în timpul tranzitului. Fără această semnătură, mesajele pot fi tratate ca fiind mai puțin demne de încredere."
@@ -3192,6 +3209,9 @@
       "Missing organization public key": [
         "Cheia publică a organizației lipsește."
       ],
+      "More details": [
+        "Mai multe detalii"
+      ],
       "Need help?": [
         "Doriți ajutor?"
       ],
@@ -3288,11 +3308,17 @@
       "Some accounts are not claimed": [
         "Unele conturi nu sunt revendicate."
       ],
+      "Some members weren't migrated": [
+        "Unii membri nu au fost migrați."
+      ],
       "Status": [
         "Stare"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Pentru a transfera datele organizației la ${ BRAND_NAME }, instalați ${ BRAND_NAME } Easy Switch din Google Workspace Marketplace. După instalare, reveniți aici pentru a continua."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Pentru a finaliza migrarea, asigurați-vă că păstrați doar codurile ${ BRAND_NAME } MX."
       ],
       "Update records for receiving": [
         "Actualizare înregistrări pentru primire"
@@ -3348,6 +3374,9 @@
       "You": [
         "Eu"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Nu veți putea copia datele acestor utilizatori ulterior."
+      ],
       "You're all set!": [
         "Totul e în regulă!"
       ],
@@ -3358,6 +3387,9 @@
         "Planul actual permite maxim ${ maxMembers } utilizator. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
         "Planul actual permite maxim ${ maxMembers } utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
         "Planul actual permite maxim ${ maxMembers } de utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Configurația domeniului încă include codurile MX ale unui alt furnizor."
       ]
     },
     "breadcrumb": {
@@ -7387,12 +7419,6 @@
       "Intended recipient does not support calendar sharing": [
         "Destinatarul vizat nu are suport pentru partajare de calendare."
       ],
-      "Invalid ${ name } code": [
-        "Cod ${ name } nevalid."
-      ],
-      "Invalid card number": [
-        "Număr de card nevalid."
-      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -7404,9 +7430,6 @@
       ],
       "Invalid email address": [
         "Adresă de e-mail nevalidă."
-      ],
-      "Invalid expiration date": [
-        "Data expirării nu este validă."
       ],
       "Invalid IBAN": [
         "Acest IBAN nu este valid."
@@ -7502,9 +7525,6 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Pentru această adresă poate fi modificată doar scrierea cu majuscule și punctuația (puncte, cratime și caractere de subliniere)."
@@ -7653,6 +7673,16 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }",
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }",
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }",
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }",
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }"
       ],
       "Server not found": [
         "Server negăsit"
@@ -9921,6 +9951,11 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
       ],
+      "${ emails.length } member added to the group": [
+        "Membri adăugați la grup: ${ emails.length }",
+        "Membri adăugați la grup: ${ emails.length }",
+        "Membri adăugați la grup: ${ emails.length }"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagine completă"
       ],
@@ -10026,10 +10061,10 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }",
-        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }",
-        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }"
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
@@ -10639,11 +10674,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Facturat cu ${ monthlyDiscountedPrice } pentru primele 6 luni, se reînnoiește cu ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Facturat cu ${ monthlyDiscountedPriceElement } pentru primele 6 luni, se reînnoiește cu ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Facturat cu ${ yearlyDiscountedPrice } pentru primele 12 luni, se reînnoiește cu ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Facturat cu ${ yearlyDiscountedPriceElement } pentru primele 12 luni, se reînnoiește cu ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
@@ -11365,11 +11400,17 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Group created": [
+        "Grup creat"
+      ],
       "Group deleted": [
         "Grupul s-a șters."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupare mesaje primite din aceeași conversație sau afișarea lor separată."
+      ],
+      "Group roles assigned": [
+        "Roluri de grup atribuite"
       ],
       "Groups": [
         "Grupuri"
@@ -13496,6 +13537,9 @@
       "You can now sign in to your account again.": [
         "Acum vă puteți conecta din nou în cont."
       ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -13929,6 +13973,9 @@
       ],
       "Group Owner": [
         "Proprietar grup"
+      ],
+      "Invited": [
+        "Invitat"
       ],
       "Paused": [
         "Suspendată"
@@ -14609,6 +14656,9 @@
       "App password": [
         "Parola aplicației"
       ],
+      "App Settings": [
+        "Setări aplicație"
+      ],
       "Apply filter to existing emails": [
         "Aplicare filtru la mesajele existente"
       ],
@@ -14837,8 +14887,8 @@
       "Confirm login password": [
         "Confirmare parolă conectare"
       ],
-      "Confirm MX records added": [
-        "Confirmare înregistrări MX adăugate"
+      "Confirm MX records updated": [
+        "Confirmare înregistrări MX actualizate"
       ],
       "Confirm new password": [
         "Confirmare parola nouă"
@@ -15111,6 +15161,12 @@
       ],
       "Event notifications": [
         "Notificări eveniment"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
       ],
       "Exclude Spam/Trash from All mail": [
         "Excludere mesaje nedorite/gunoi din toate mesajele"
@@ -15409,6 +15465,9 @@
       "Navigation": [
         "Navigare"
       ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
       "New display name": [
         "Nume nou afișat"
       ],
@@ -15516,6 +15575,9 @@
       ],
       "Other amount": [
         "Altă sumă"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Passkeys": [
         "Chei de acces"
@@ -15636,6 +15698,9 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
       ],
       "Remove": [
         "Eliminare"
@@ -15816,6 +15881,9 @@
       "Start weekday": [
         "Prima zi a săptămânii"
       ],
+      "Starts with": [
+        "Începe cu"
+      ],
       "State": [
         "Județ/Stat"
       ],
@@ -15941,6 +16009,9 @@
       ],
       "URL": [
         "Adresa URL"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ],
       "Use another payment method": [
         "Folosire altă metodă de plată"
@@ -17030,6 +17101,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Toate acțiunile filtrului vor fi aplicate tuturor mesajelor din contul ${ MAIL_APP_NAME }. Nu se vor trimite răspunsuri automate la mesaje."
       ],
@@ -17039,6 +17113,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
       ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Vizualizați activitatea ${ PASS_APP_NAME } în cadrul organizației proprii."
       ],
@@ -17047,6 +17133,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Vizualizați evenimentele de conectare, recuperare și securitate ale utilizatorului."
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
@@ -22169,8 +22258,8 @@
       "Updated": [
         "Actualizat"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Utilizatorii pe care i-ați setat ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Utilizatorii setați ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
       ]
     },
     "scim: Action": {
@@ -23627,15 +23716,15 @@
         "Utilizatori detașați de la autentificarea unică (SSO): ${ n }",
         "Utilizatori detașați de la autentificarea unică (SSO): ${ n }"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "S-a alăturat organizației ${ n } utilizator prin furnizorul de identitate. Revizuiți-i contul acum:",
-        "S-au alăturat organizației ${ n } utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:",
-        "S-au alăturat organizației ${ n } de utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:"
+      "${ n } user has joined your organization through your identity provider": [
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } utilizator nu este activ. Puteți să-l ștergeți în siguranță din organizație.",
-        "${ n } utilizatori nu sunt activi. Puteți să-i ștergeți în siguranță din organizație.",
-        "${ n } de utilizatori nu sunt activi. Puteți să-i ștergeți în siguranță din organizație."
+      "${ n } user is inactive.": [
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }"
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utilizator vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO).",
@@ -26253,6 +26342,9 @@
       "Get more from your password manager": [
         "Obțineți mai mult de la managerul de parole"
       ],
+      "Get more from your privacy suite": [
+        "Obțineți mai mult de la suita de confidențialitate"
+      ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
       ],
@@ -27196,6 +27288,9 @@
       "WireGuard configuration": [
         "Configurare WireGuard"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Cu contul ${ BRAND_NAME } obțineți acces la toate aplicațiile ${ BRAND_NAME }"
+      ],
       "You are all set": [
         "Totul este pregătit"
       ],
@@ -27640,6 +27735,9 @@
       "Verified email address": [
         "Adresă de e-mail verificată."
       ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
       ],
@@ -27684,6 +27782,9 @@
       "Group membership paused": [
         "Apartenența la grup a fost suspendată"
       ],
+      "Resuming role assignment": [
+        "Reluare atribuire rol"
+      ],
       "Role assignment paused": [
         "Atribuirea rolului a fost suspendată"
       ],
@@ -27693,11 +27794,14 @@
       "User declined invitation": [
         "Utilizatorul a refuzat invitația"
       ],
-      "User is a group": [
-        "Utilizatorul este un grup"
+      "User is a group owner": [
+        "Utilizatorul este proprietar de grup"
       ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Așteptare aprobare de la administrator"
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
@@ -27859,10 +27963,10 @@
       "Confirm all": [
         "Confirmare toate"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizator, deoarece cheile sale de criptare au fost actualizate între timp:",
-        "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:",
-        "Nu s-a putut activa automat accesul de administrator pentru ${ n } de utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:"
+      "Could not enable admin access for ${ n } user": [
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nu s-a putut activa accesul de administrator: ${ error }"
@@ -27903,6 +28007,11 @@
       "Request user permission for data access": [
         "Solicitare permisiune de la utilizator de a-i accesa datele"
       ],
+      "Review their account now.": [
+        "Revizuiți-i contul acum.",
+        "Revizuiți-le contul acum.",
+        "Revizuiți-le contul acum."
+      ],
       "Revoke access": [
         "Revocare acces"
       ],
@@ -27914,6 +28023,9 @@
       ],
       "The user must have an address to request data access": [
         "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Cheile lor de criptare au fost actualizate în timp ce s-au efectuat modificări."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Aceasta va anula solicitarea în așteptare pentru accesul de administrare a datelor utilizatorului sau de resetare a parolei."
@@ -27932,6 +28044,11 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Puteți să ${ reject } această solicitare dacă nu doriți să continuați."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Puteți elimina în siguranță acest utilizator din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație."
       ]
     },
     "Update font modal": {
@@ -28447,6 +28564,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "Are you sure you want to remove your notification email?": [
         "Sigur doriți să eliminați mesajele de notificare?"

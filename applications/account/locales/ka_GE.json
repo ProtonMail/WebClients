@@ -114,6 +114,9 @@
       "Add calendar from URL": [
         "კალენდრის დამატება URL-დან"
       ],
+      "Add company": [
+        "კომპანიის დამატება"
+      ],
       "Add condition": [
         "პირობის დამატება"
       ],
@@ -191,6 +194,9 @@
       ],
       "Apply to existing messages": [
         "არსებულ შეტყობინებებზე გადატარება"
+      ],
+      "Approve": [
+        "დადასტურება"
       ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
@@ -987,6 +993,9 @@
       "Make key primary": [
         "გასაღების ძირითადად დაყენება"
       ],
+      "Manage": [
+        "მართვა"
+      ],
       "Manage addresses": [
         "მისამართების მართვა"
       ],
@@ -1118,6 +1127,9 @@
       ],
       "Organization": [
         "ორგანიზაცია"
+      ],
+      "Pause": [
+        "შეჩერება"
       ],
       "Pay": [
         "გადახდა"
@@ -3528,6 +3540,14 @@
       ],
       "white": [
         "თეთრი"
+      ]
+    },
+    "Column header": {
+      "Company": [
+        "კომპანია"
+      ],
+      "Status": [
+        "სტატუსი"
       ]
     },
     "Condition for custom filter": {
@@ -6527,12 +6547,6 @@
       "Intended recipient does not support calendar sharing": [
         "სამიზნე მიმღებს კალენდრის გაზიარების მხარდაჭერა არ გააჩნია"
       ],
-      "Invalid ${ name } code": [
-        "არასწორი კოდი ${ name }"
-      ],
-      "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
-      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -6544,9 +6558,6 @@
       ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
-      ],
-      "Invalid expiration date": [
-        "არასწორი ვადა"
       ],
       "Invalid IBAN": [
         "არასწორი IBAN"
@@ -9418,6 +9429,9 @@
       "Available on macOS, Windows, and Linux.": [
         "ხელმისაწვდომია macOS-ზე, Windows-ზე და Linux-ზე."
       ],
+      "Average": [
+        "საშუალო"
+      ],
       "Awaiting transaction": [
         "ტრანზაქციის მოლოდინი"
       ],
@@ -11253,6 +11267,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "ეს ავტორიზაციის დეტალები არ შეიძლება, გამოყენებული იქნეს ჩვენს ოფიციალურ ${ VPN_APP_NAME }-ის აპებზე შესასვლელად. ${ learnMore }"
       ],
+      "Thinking…": [
+        "ვფიქრობ…"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
       ],
@@ -12190,6 +12207,9 @@
       "Declined": [
         "უარყოფილია"
       ],
+      "Invited": [
+        "მოწვეულია"
+      ],
       "Paused": [
         "შეჩერებულია"
       ],
@@ -12894,6 +12914,9 @@
       "Autosuggest": [
         "ავტომატური რჩევა"
       ],
+      "Average": [
+        "საშუალო"
+      ],
       "Awarded": [
         "მინიჭებულია"
       ],
@@ -12999,6 +13022,9 @@
       "Common passwords": [
         "საერთო პაროლები"
       ],
+      "Companies": [
+        "კომპანიები"
+      ],
       "Company": [
         "კომპანია"
       ],
@@ -13064,6 +13090,9 @@
       ],
       "Copy IP address to clipboard": [
         "IP მისამართის კოპირება ბუფერში"
+      ],
+      "Cost": [
+        "ღირებულება"
       ],
       "Could you please let us know which provider?": [
         "შეგიძლიათ, გვითხრათ, რომელი მომწოდებელი?"
@@ -13785,6 +13814,12 @@
       "Search for a name or email": [
         "სახელის ან ელფოსტის ძებნა"
       ],
+      "Seats": [
+        "ადგილები"
+      ],
+      "Seats usage": [
+        "გამოყენებული ადგილები"
+      ],
       "Second password": [
         "მეორე პაროლი"
       ],
@@ -13965,6 +14000,9 @@
       ],
       "Token name": [
         "კოდის სახელი"
+      ],
+      "Total cost": [
+        "ჯამური ღირებულება"
       ],
       "Transactions": [
         "ტრანზაქციები"
@@ -19240,6 +19278,9 @@
       "Later": [
         "მოგვიანებით"
       ],
+      "Update": [
+        "განახლება"
+      ],
       "Verify": [
         "გადამოწმება"
       ]
@@ -19299,6 +19340,9 @@
     "scim": {
       "New": [
         "ახალი"
+      ],
+      "Updated": [
+        "განახლებულია"
       ]
     },
     "scim: Action": {
@@ -20569,14 +20613,6 @@
         "${ n } მომხმარებელი მოხსნილია SSO-დან",
         "${ n } მომხმარებელი მოხსნილია SSO-დან"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } მომხმარებელი შეუერთდა თქვენს ორგანიზაციას იდენტიფიკატორის მომწოდებლით. გადახედეთ ანგარიშს ახლა:",
-        "${ n } მომხმარებელი შეუერთდა თქვენს ორგანიზაციას იდენტიფიკატორის მომწოდებლით. გადახედეთ ანგარიშს ახლა:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ.",
-        "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
@@ -20832,8 +20868,14 @@
       "Active": [
         "აქტიური"
       ],
+      "completed": [
+        "დასრულებულია"
+      ],
       "Disabled": [
         "გათიშული"
+      ],
+      "finalizing": [
+        "დასრულება"
       ],
       "Not saved": [
         "შენახული არაა"
@@ -22171,6 +22213,9 @@
       "Add another notification to remind you of this event": [
         "ამ მოვლენის გასახსენებლად სხვა გაფრთხილების დამატება"
       ],
+      "Add company": [
+        "კომპანიის დამატება"
+      ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
       ],
@@ -23207,6 +23252,9 @@
       "Priority support:": [
         "პრიორიტეტული მხარდაჭერა:"
       ],
+      "Privacy": [
+        "კონფიდენციალობა"
+      ],
       "Privacy and data collection": [
         "კონფიდენციალურობა და მონაცემების შეგროვება"
       ],
@@ -24107,9 +24155,6 @@
       "User declined invitation": [
         "მომხმარებელმა უარჰყო მოსაწვევი"
       ],
-      "User is a group": [
-        "მომხმარებელი ჯგუფია"
-      ],
       "Waiting for user to accept the invitation": [
         "მომხმარებლის დადასტურების მოლოდინი"
       ]
@@ -24198,6 +24243,9 @@
       "Payment reversal": [
         "გადახდის დაბრუნება"
       ],
+      "Prepayment": [
+        "წინასწარი გადახდა"
+      ],
       "Refund": [
         "ანაზღაურება"
       ]
@@ -24243,10 +24291,6 @@
       ],
       "Confirm all": [
         "ყველას დადასტურება"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:",
-        "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:"
       ],
       "Could not enable administrator access: ${ error }": [
         "ვერ ჩავრთე ადმინისტრატორის წვდომა: ${ error }"
