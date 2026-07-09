@@ -3280,9 +3280,6 @@
       "Not a valid number": [
         "Numara geçerli değil"
       ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
-      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
         "Kişilerden bazılarının e-posta adresi yok: ${ noEmailsContactNamesList } "
@@ -4502,10 +4499,6 @@
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } seçilmiş",
-        "${ selectedCount } seçilmiş"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } klasör seçildi",
         "${ selectedFoldersCountLocalized } klasör seçildi"
@@ -4774,9 +4767,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
-      "Disable table of contents": [
-        "İçindekiler tablosunu kapat"
-      ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
       ],
@@ -4830,9 +4820,6 @@
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
-      ],
-      "Enable table of contents": [
-        "İçindekiler tablosunu aç"
       ],
       "End-to-end encrypted": [
         "Uçtan uca şifrelenmiş"
@@ -4951,8 +4938,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablo içeriğini paylaşmakta bir sakınca görmüyorsanız, aşağıdaki hata ayıklama bilgilerini bildiriminize ekleyin."
+      ],
       "here": [
         "buraya"
+      ],
+      "Hide table of contents": [
+        "İçindekiler tablosunu gizle"
       ],
       "High Priority": [
         "Yüksek öncelik"
@@ -5178,8 +5171,8 @@
       "Only the people with the link and the password can access this folder.": [
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
-      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Bu elektronik tablodaki son düzenlemeleriniz kaydedilemedi. Çalışmalarınızın kaybolmaması için düzenleme özelliği kapatıldı. Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablonun içeriğini paylaşmakta sakınca görmüyorsanız, bildiriminize aşağıdaki hata ayıklama bilgilerini ekleyin."
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ne yazık ki bu elektronik tablodaki son düzenlemeleriniz kaydedilemedi. Bu nedenle çalışmalarınızı kaybetmemeniz için düzenleme özelliği duraklatıldı."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
@@ -5355,6 +5348,9 @@
       ],
       "Shared on": [
         "Paylaşılma zamanı"
+      ],
+      "Show table of contents": [
+        "İçindekiler tablosunu görüntüle"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -10577,6 +10573,26 @@
         "Sızdırılmış bilgileriniz"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Type": [
+        "Tür"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
@@ -10661,6 +10677,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
+      ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
       ]
@@ -10693,6 +10712,11 @@
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     },
     "Validation": {
