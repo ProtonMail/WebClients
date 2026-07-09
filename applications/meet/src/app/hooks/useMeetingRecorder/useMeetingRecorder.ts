@@ -32,6 +32,7 @@ import { useRecordedTracks } from './hooks/useRecordedTracks';
 import { useRecordingCodec } from './hooks/useRecordingCodec';
 import { useRecordingScene } from './hooks/useRecordingScene';
 import { useRecordingStatusPublish } from './hooks/useRecordingStatusPublish';
+import { useRecordingTelemetry } from './hooks/useRecordingTelemetry';
 import { useTrackPublishedSubscriber } from './hooks/useTrackPublishedSubscriber';
 import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
 import { RecordingSession } from './recordingSession/recordingSession';
@@ -71,6 +72,8 @@ export const useMeetingRecorder = () => {
         isLargerThanMd,
         isNarrowHeight,
     });
+
+    const { sendTelemetryRecordingStats } = useRecordingTelemetry(recordingCodec);
 
     const publishRecordingStatus = useRecordingStatusPublish(
         isLocalRecording ? RecordingStatus.Started : RecordingStatus.Stopped
@@ -163,8 +166,13 @@ export const useMeetingRecorder = () => {
 
         try {
             const recording = await session.stop();
+
+            // Sending telemetry before resetting recording duration counter.
+            sendTelemetryRecordingStats(recording?.size);
+
             void publishRecordingStatus(RecordingStatus.Stopped);
             markRecordingStopped();
+
             return recording;
         } catch (error) {
             reportMeetError('MeetingRecording Error: Failed to stop recording', {
@@ -177,7 +185,7 @@ export const useMeetingRecorder = () => {
             console.error('Failed to stop recording:', error);
             throw error;
         }
-    }, [publishRecordingStatus, reportMeetError, markRecordingStopped]);
+    }, [sendTelemetryRecordingStats, publishRecordingStatus, markRecordingStopped, reportMeetError]);
 
     const finishRecording = useCallback(async () => {
         if (!sessionRef.current?.isActive()) {
