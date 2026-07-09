@@ -19,7 +19,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { CategoriesOnboardingFlags } from 'proton-mail/components/categoryView/categoriesOnboarding/onboardingInterface';
 
-import onboardingImage from '../../components/categoryView/categoriesOnboarding/b2cOnboardingCategories.svg';
+import onboardingImage from '../../components/categoryView/categoriesOnboarding/onboardingCategories.svg';
 import { useMailGlobalModals } from './GlobalModalProvider';
 import { type CategoriesViewB2COnboardingModalPayload, ModalType } from './inteface';
 

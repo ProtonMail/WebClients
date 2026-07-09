@@ -18,7 +18,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { CategoriesOnboardingFlags } from 'proton-mail/components/categoryView/categoriesOnboarding/onboardingInterface';
 
-import onboardingImage from '../../components/categoryView/categoriesOnboarding/b2bOnboardingCategories.svg';
+import onboardingImage from '../../components/categoryView/categoriesOnboarding/onboardingCategories.svg';
 import { useMailGlobalModals } from './GlobalModalProvider';
 import { type CategoriesViewB2BOnboardingModalPayload, ModalType } from './inteface';
 
@@ -69,6 +69,7 @@ export const GlobalCategoriesB2BOnboarding = () => {
                 <ModalTwo {...modalProps} size="small" disableCloseOnEscape>
                     <ModalTwoHeader
                         className="mt-2 mx-2"
+                        titleClassName="text-center"
                         hasClose={false}
                         title={c('Title').t`Fewer distractions, more focus`}
                     />
