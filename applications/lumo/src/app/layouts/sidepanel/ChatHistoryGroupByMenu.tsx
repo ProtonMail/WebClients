@@ -82,8 +82,8 @@ export const ChatHistoryGroupByMenu = ({ showSortedByLabel = false }: ChatHistor
                 }}
             >
                 {showSortedByLabel ? (
-                    <span className="flex items-center gap-1">
-                        <span className="text-sm">{sortedByLabel}</span>
+                    <span className="flex items-center gap-1 text-semibold">
+                        <span>{sortedByLabel}</span>
                         <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak shrink-0" />
                     </span>
                 ) : (
