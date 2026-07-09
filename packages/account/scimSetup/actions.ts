@@ -2,6 +2,7 @@ import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import type { Api, Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 
@@ -56,7 +57,14 @@ async function* processScimGroup(
 
     let resolvedGroup = group;
     if (!group.Address.HasKeys) {
-        resolvedGroup = await dispatch(createKeysForGroup({ group, api }));
+        const e2eeDisabledGroup: Group = {
+            ...group,
+            Address: {
+                ...group.Address,
+                Flags: (group.Address?.Flags ?? 0) | ADDRESS_FLAGS.FLAG_DISABLE_E2EE,
+            },
+        };
+        resolvedGroup = await dispatch(createKeysForGroup({ group: e2eeDisabledGroup, api }));
         dispatch(updateGroup(resolvedGroup));
     }
 
