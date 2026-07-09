@@ -147,6 +147,12 @@
       "Allow access": [
         "Permitir acesso"
       ],
+      "Applied": [
+        "Aplicado"
+      ],
+      "Apply changes": [
+        "Aplicar alterações"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "Atribuir ${ selectedParticipantName } como anfitrião"
       ],
@@ -297,6 +303,9 @@
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
+      "Full size": [
+        "Tamanho completo"
+      ],
       "Generate a new meeting link.": [
         "Gerar um novo link de reunião."
       ],
@@ -311,6 +320,9 @@
       ],
       "Help and resources": [
         "Ajuda e recursos"
+      ],
+      "Hide options": [
+        "Ocultar opções"
       ],
       "Hide participants": [
         "Ocultar participantes"
@@ -378,6 +390,15 @@
       "Open link": [
         "Abrir link"
       ],
+      "Participants join after you approve them": [
+        "Os participantes ponderam participar depois da aprovação"
+      ],
+      "Participants join the call directly": [
+        "Os participantes participaram diretamente da chamada"
+      ],
+      "Pause": [
+        "Pausar"
+      ],
       "Previous month": [
         "Mês anterior"
       ],
@@ -390,8 +411,15 @@
       "React with ${ emoji }": [
         "Reagir com ${ emoji }"
       ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reagir com ${ emoji }, ${ identities.length } reação",
+        "Reagir com ${ emoji }, ${ identities.length } reações"
+      ],
       "Receive video": [
         "Receber vídeo"
+      ],
+      "Record": [
+        "Gravar vídeo"
       ],
       "Refer a friend": [
         "Indicar um amigo"
@@ -408,6 +436,10 @@
       "Rejoin meeting": [
         "Entrar novamente na reunião"
       ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Remover reação ${ emoji }, ${ identities.length } reação",
+        "Remover reação ${ emoji }, ${ identities.length } reações"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -422,6 +454,12 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Reset to defaults": [
+        "Redefinir padrões"
+      ],
+      "Resume": [
+        "Retomar"
       ],
       "Return to dashboard": [
         "Voltar para o painel"
@@ -458,6 +496,9 @@
       ],
       "Show floating thumbnail during screensharing": [
         "Mostrar miniatura flutuante durante o compartilhamento de tela"
+      ],
+      "Show options": [
+        "Mostrar opções"
       ],
       "Show participants": [
         "Mostrar participantes"
@@ -501,6 +542,9 @@
       "Start your own meeting": [
         "Iniciar sua própria reunião"
       ],
+      "Starting…": [
+        "Iniciando…"
+      ],
       "Stay in meeting": [
         "Ficar na reunião"
       ],
@@ -543,8 +587,17 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Faça upgrade no seu plano para usar a sala de espera na sua próxima reunião."
+      ],
+      "Upload another video": [
+        "Enviar outro vídeo"
+      ],
+      "Upload video": [
+        "Enviar vídeo"
       ],
       "Use authentication code": [
         "Usar um código de autenticação"
@@ -557,6 +610,9 @@
       ],
       "Use recovery code": [
         "Usar um código de recuperação"
+      ],
+      "Use waiting room with a paid plan": [
+        "Use a sala de espera com um plano pago"
       ],
       "Verify": [
         "Verificar"
@@ -2119,6 +2175,12 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Could not access the camera.": [
+        "Não foi possível acessar a câmera."
+      ],
+      "Could not start recording.": [
+        "Não foi possível iniciar a gravação."
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -2512,6 +2574,9 @@
       "Start recording": [
         "Iniciar gravação"
       ],
+      "Starting camera…": [
+        "Iniciando a câmera…"
+      ],
       "Stop sharing your screen": [
         "Interromper compartilhamento de tela"
       ],
@@ -2698,6 +2763,9 @@
       "Add to calendar": [
         "Adicionar ao calendário"
       ],
+      "Advanced mode": [
+        "Modo avançado"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -2736,6 +2804,9 @@
       ],
       "Created": [
         "Criado"
+      ],
+      "Current": [
+        "Atual"
       ],
       "Delete": [
         "Excluir"
@@ -2824,6 +2895,9 @@
       "Name": [
         "Nome"
       ],
+      "Next": [
+        "Próximo"
+      ],
       "Operating system": [
         "Sistema operacional"
       ],
@@ -2844,6 +2918,9 @@
       ],
       "Phone number": [
         "Número do telefone"
+      ],
+      "Raw": [
+        "Em bruto"
       ],
       "Remember my name on this device": [
         "Lembrar meu nome neste dispositivo"
@@ -2880,6 +2957,12 @@
       ],
       "Track SID": [
         "Rastrear SID"
+      ],
+      "Use live camera feed": [
+        "Usar feed de câmara ao vivo"
+      ],
+      "Use simple selfie segmentation": [
+        "Usar segmentação simples para selfie"
       ],
       "Verification code": [
         "Código de verificação"
@@ -3326,6 +3409,9 @@
       ],
       "Minicalendar": [
         "Mini calendário"
+      ],
+      "No one is waiting": [
+        "Nada está esperado"
       ],
       "No results found": [
         "Nenhum resultado encontrado"

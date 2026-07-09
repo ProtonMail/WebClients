@@ -58,6 +58,9 @@
       "A participant reacted with ${ emoji }": [
         "Ein Teilnehmer hat mit ${ emoji } reagiert"
       ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Wegen Netzwerkeinschränkungen erfolgt die Verbindung über den TURN-Relay-Modus. Dies kann zu einer erhöhten Latenz führen und die Gesprächsqualität beeinträchtigen."
+      ],
       "Connection lost. Reconnecting…": [
         "Verbindung verloren. Wiederverbinden…"
       ],
@@ -149,6 +152,9 @@
       ],
       "Allow access": [
         "Zugriff erlauben"
+      ],
+      "Anyone with the link can join immediately": [
+        "Jeder mit dem Link, kann sofort beitreten"
       ],
       "Approve participants before they can join": [
         "Teilnehmer genehmigen, bevor sie beitreten können"
@@ -318,6 +324,9 @@
       "Help and resources": [
         "Hilfe und Ressourcen"
       ],
+      "Hide options": [
+        "Optionen ausblenden"
+      ],
       "Hide participants": [
         "Teilnehmer ausblenden"
       ],
@@ -384,8 +393,14 @@
       "Open link": [
         "Link öffnen"
       ],
+      "Participants join after you approve them": [
+        "Teilnehmer werden zugelassen, nachdem du sie genehmigt hast"
+      ],
       "Participants join the call directly": [
         "Teilnehmer treten dem Anruf direkt bei"
+      ],
+      "Pause": [
+        "Pausieren"
       ],
       "Previous month": [
         "Vorheriger Monat"
@@ -421,6 +436,10 @@
       "Rejoin meeting": [
         "Meeting wieder beitreten"
       ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Reaktion ${ emoji } entfernen, ${ identities.length } Reaktion",
+        "Reaktion ${ emoji } entfernen, ${ identities.length } Reaktionen"
+      ],
       "Report a problem": [
         "Ein Problem melden"
       ],
@@ -435,6 +454,9 @@
       ],
       "Resend code": [
         "Code erneut senden"
+      ],
+      "Resume": [
+        "Fortsetzen"
       ],
       "Return to dashboard": [
         "Zurück zum Dashboard"
@@ -472,6 +494,9 @@
       "Show floating thumbnail during screensharing": [
         "Schwebende Miniaturansicht während der Bildschirmfreigabe anzeigen"
       ],
+      "Show options": [
+        "Optionen anzeigen"
+      ],
       "Show participants": [
         "Teilnehmer anzeigen"
       ],
@@ -492,6 +517,9 @@
       ],
       "Skip": [
         "Überspringen"
+      ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
       ],
       "Start an instant meeting": [
         "Sofortiges Meeting beginnen"
@@ -553,6 +581,9 @@
       "Upgrade": [
         "Wechseln"
       ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Dein Abonnement upgraden, um bei deinem nächsten Meeting den Wartebereich nutzen zu können."
       ],
@@ -567,6 +598,9 @@
       ],
       "Use recovery code": [
         "Wiederherstellungsschlüssel verwenden"
+      ],
+      "Use waiting room with a paid plan": [
+        "Wartebereich mit einem kostenpflichtigen Abonnement nutzen"
       ],
       "Verify": [
         "Verifizieren"
@@ -723,6 +757,9 @@
       ],
       "Participants list": [
         "Teilnehmerliste"
+      ],
+      "Primary navigation": [
+        "Hauptnavigation"
       ],
       "Settings": [
         "Einstellungen"
@@ -2753,6 +2790,9 @@
       "Copy invite link": [
         "Einladungslink kopieren"
       ],
+      "Create meeting options": [
+        "Besprechungsoptionen erstellen"
+      ],
       "Created": [
         "Erstellt"
       ],
@@ -2816,6 +2856,9 @@
       "Last used": [
         "Zuletzt genutzt"
       ],
+      "Leave meeting options": [
+        "Besprechungsoptionen verlassen"
+      ],
       "Manage recordings": [
         "Aufnahmen verwalten"
       ],
@@ -2839,6 +2882,9 @@
       ],
       "Name": [
         "Name"
+      ],
+      "Next": [
+        "Weiter"
       ],
       "Operating system": [
         "Betriebssystem"
