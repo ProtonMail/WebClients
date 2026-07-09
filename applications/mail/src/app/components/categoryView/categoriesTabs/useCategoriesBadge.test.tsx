@@ -3,6 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { useSystemFolders } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
@@ -36,6 +37,19 @@ const folderWithUnseen: Label = {
     LastUnseenMessageEventID: 42,
 };
 
+interface MockSelectorParams {
+    unreadCount?: number;
+    disabledCategories?: string[];
+}
+
+const mockSelector = (selector: any, options?: MockSelectorParams) => {
+    if (selector === selectDisabledCategoriesIDs) {
+        return options?.disabledCategories || [];
+    }
+
+    return options?.unreadCount || 0;
+};
+
 describe('useCategoriesBadge', () => {
     beforeEach(() => {
         jest.mocked(useFlag).mockReturnValue(true);
@@ -45,7 +59,7 @@ describe('useCategoriesBadge', () => {
         ]);
         jest.mocked(useSystemFolders).mockReturnValue([[], false]);
         // selectDisabledCategoriesIDs — no disabled categories by default
-        jest.mocked(useMailSelector).mockReturnValue([]);
+        jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector));
     });
 
     afterEach(() => {
@@ -72,18 +86,8 @@ describe('useCategoriesBadge', () => {
     });
 
     describe('shouldShowCounter', () => {
-        it('is true when the active tab is selected, even if the setting is off', () => {
-            jest.mocked(useMailSettings).mockReturnValue([
-                { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: false },
-                false,
-            ]);
-
-            const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.ACTIVE }));
-
-            expect(result.current.shouldShowCounter).toBe(true);
-        });
-
-        it('is true on an inactive tab when the setting is enabled', () => {
+        it('is true when counters are enabled and there are unread messages', () => {
+            jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector, { unreadCount: 10 }));
             jest.mocked(useMailSettings).mockReturnValue([
                 { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: true },
                 false,
@@ -92,9 +96,11 @@ describe('useCategoriesBadge', () => {
             const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
 
             expect(result.current.shouldShowCounter).toBe(true);
+            expect(result.current.count).toBe(10);
         });
 
-        it('is false on an inactive tab when the setting is disabled', () => {
+        it('is false when counters are off and there are unread messages', () => {
+            jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector, { unreadCount: 10 }));
             jest.mocked(useMailSettings).mockReturnValue([
                 { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: false },
                 false,
@@ -103,6 +109,20 @@ describe('useCategoriesBadge', () => {
             const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
 
             expect(result.current.shouldShowCounter).toBe(false);
+            expect(result.current.count).toBe(10);
+        });
+
+        it('is false where counters are on and there are no unread messages', () => {
+            jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector, { unreadCount: 0 }));
+            jest.mocked(useMailSettings).mockReturnValue([
+                { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: true },
+                false,
+            ]);
+
+            const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
+
+            expect(result.current.shouldShowCounter).toBe(false);
+            expect(result.current.count).toBe(0);
         });
     });
 
@@ -174,7 +194,9 @@ describe('useCategoriesBadge', () => {
         };
 
         it('is true when a disabled category folded into the primary tab has an unseen event', () => {
-            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
+            jest.mocked(useMailSelector).mockImplementation((selector) =>
+                mockSelector(selector, { disabledCategories: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL] })
+            );
             jest.mocked(useSystemFolders).mockReturnValue([[defaultFolderWithoutUnseen, folderWithUnseen], false]);
 
             const { result } = renderHook(() =>
@@ -185,7 +207,7 @@ describe('useCategoriesBadge', () => {
         });
 
         it('is true when the default folder itself has an unseen event', () => {
-            jest.mocked(useMailSelector).mockReturnValue([]);
+            jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector));
             jest.mocked(useSystemFolders).mockReturnValue([
                 [{ ...defaultFolderWithoutUnseen, LastUnseenMessageEventID: 42 }],
                 false,
@@ -199,7 +221,9 @@ describe('useCategoriesBadge', () => {
         });
 
         it('is false when neither the default nor the disabled categories have an unseen event', () => {
-            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
+            jest.mocked(useMailSelector).mockImplementation((selector) =>
+                mockSelector(selector, { disabledCategories: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL] })
+            );
             jest.mocked(useSystemFolders).mockReturnValue([
                 [defaultFolderWithoutUnseen, { ...folderWithUnseen, LastUnseenMessageEventID: null }],
                 false,
@@ -213,7 +237,7 @@ describe('useCategoriesBadge', () => {
         });
 
         it('ignores the unseen event of a category that is not folded into the primary tab', () => {
-            jest.mocked(useMailSelector).mockReturnValue([]);
+            jest.mocked(useMailSelector).mockImplementation((selector) => mockSelector(selector));
             jest.mocked(useSystemFolders).mockReturnValue([[defaultFolderWithoutUnseen, folderWithUnseen], false]);
 
             const { result } = renderHook(() =>
