@@ -147,7 +147,7 @@
         "选择文件或将文件拖至此处"
       ],
       "Claim this address": [
-        "认领此地址"
+        "认领地址"
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "认领您的免费 ${ BRAND_NAME } 地址"
@@ -1238,22 +1238,22 @@
         "试用期于 ${ formattedDate1 } 结束后，将转为每月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "您在试用期内最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 个专用服务器。"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 台专用服务器"
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "您在试用期内最多可拥有 ${ TRIAL_MAX_USERS } 位用户"
+        "试用期间，您最多可以拥有 ${ TRIAL_MAX_USERS } 位用户。"
       ],
       "You cannot add custom domains during the trial period.": [
         "您在试用期内无法添加自定义域名"
       ],
       "You have reached the trial limit.": [
-        "您已达到试用上限。"
+        "您已达到试用限制！"
       ]
     },
     "b2b_trials_Action": {
@@ -1604,7 +1604,7 @@
         "手动设置问题"
       ],
       "Meet problem": [
-        "遇到问题"
+        "Meet 问题"
       ],
       "Other": [
         "其他"
@@ -1983,7 +1983,7 @@
         "上传并查询小型文件"
       ],
       "Web search access": [
-        "网页搜索访问权限"
+        "网页搜索访问"
       ],
       "Zero-access encryption": [
         "零访问加密"
@@ -1991,7 +1991,7 @@
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } 是一款隐私优先的 AI，帮助您提高效率，同时保障数据安全。解锁其全部潜能，并享受新功能的早期访问权限。"
+        "${ LUMO_APP_NAME } 是一款以隐私为先的 AI，帮助您在保障数据安全的同时提高工作效率。解锁其全部潜力，并在新功能推出时抢先体验。"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "添加 ${ LUMO_APP_NAME }"
@@ -3305,7 +3305,7 @@
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
-        "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
+        "您现在可以使用此地址从 ${ BRAND_NAME } 发送邮件。"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的账户和数据恢复方法均已设置，并且已启用 2FA。"
@@ -3451,10 +3451,10 @@
         "2 TB 共享存储空间"
       ],
       "2 user accounts": [
-        "2 个用户账户"
+        "2 个账户"
       ],
       "All premium features from your current plan": [
-        "您当前套餐的所有付费版服务器功能"
+        "您当前套餐的所有高级功能"
       ],
       "Only": [
         "仅"
@@ -3528,7 +3528,7 @@
         "此系列中的所有事件都已更新。"
       ],
       "DESCRIPTION:": [
-        "说明："
+        "描述："
       ],
       "Here's what changed:": [
         "新变化："
@@ -3657,7 +3657,7 @@
         "无法解决别名选项问题"
       ],
       "Aliases could not be loaded": [
-        "无法加载别名"
+        "别名无法加载"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "已分配所有存储空间。请减少分配给其他用户的存储空间。"
@@ -3804,7 +3804,7 @@
         "加载订阅数据失败，请稍后重试。"
       ],
       "Failed to open to contact": [
-        "无法打开以联系"
+        "无法打开联系人"
       ],
       "Failed to update secret passphrase": [
         "更新密码短语失败"
@@ -3836,12 +3836,6 @@
       "Interval cannot be empty": [
         "重复周期不能为空"
       ],
-      "Invalid ${ name } code": [
-        "${ name } 码不正确"
-      ],
-      "Invalid card number": [
-        "卡号无效"
-      ],
       "Invalid code": [
         "无效代码"
       ],
@@ -3850,9 +3844,6 @@
       ],
       "Invalid email address": [
         "邮箱地址无效"
-      ],
-      "Invalid expiration date": [
-        "有效期不正确"
       ],
       "Invalid IBAN": [
         "无效IBAN"
@@ -3940,9 +3931,6 @@
       ],
       "Not a valid number": [
         "无效号码"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "您的 ${ DRIVE_APP_NAME } 存储空间不足"
       ],
       "Number of occurrences cannot be empty": [
         "重复次数不能为空"
@@ -4570,7 +4558,7 @@
         "客户支持"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "家庭计划目前不支持外部账户，请先创建 ${ BRAND_NAME } 地址后再加入。${ link }"
+        "家庭套餐目前不支持外部账户，加入前请先创建 ${ BRAND_NAME } 地址。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
@@ -5658,7 +5646,7 @@
         "正在启用自动删除…"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
+        "确保通信完全私密且加密，立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
       "Enter code": [
         "输入代码"
@@ -5727,7 +5715,7 @@
         "仅需 ${ price }"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
-        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
+        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记得单独分享给您的宾客。"
       ],
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
@@ -7070,7 +7058,7 @@
         "不再询问"
       ],
       "Don't show this again": [
-        "不再显示此内容"
+        "不再显示"
       ],
       "Drive": [
         "云盘"
@@ -7274,7 +7262,7 @@
         "参与者"
       ],
       "Passphrase:": [
-        "密码短语:"
+        "密码短语："
       ],
       "Password": [
         "密码"
@@ -7630,7 +7618,7 @@
         "立即重新激活"
       ],
       "Reactivate subscription": [
-        "重新激活订阅"
+        "恢复订阅"
       ],
       "Request an invite": [
         "申请注册"
@@ -8544,7 +8532,7 @@
         "密码分享（最多 ${ n } 个人）"
       ],
       "Vault sharing with up to ${ n } person": [
-        "与多至 ${ n } 个人分享保险库"
+        "与最多 ${ n } 人共享保险库"
       ],
       "VPN with ad-blocker and malware protection": [
         "具备广告拦截器和恶意软件防护功能的 VPN"
@@ -8998,7 +8986,7 @@
         "将密码复制到剪贴板"
       ],
       "Passphrase copied to clipboard": [
-        "将密码短语复制到剪贴板"
+        "密码短语已复制到剪贴板"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "您的 ${ BRAND_NAME } 地址已准备就绪"
@@ -9560,7 +9548,7 @@
         "${ rate }% 税费：${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "试用期结束后 ${ formattedDate } 的应付金额"
+        "试用期结束后于 ${ formattedDate } 应付金额"
       ],
       "Billing Country": [
         "计费国家/地区"
@@ -9632,7 +9620,7 @@
         "此特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+        "特惠价格仅在前 ${ subscriptionLength } 个月内有效"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
@@ -9686,7 +9674,7 @@
         "您的付款正在处理中"
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
-        "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+        "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
       ]
     },
     "Payments.Error": {
@@ -9724,10 +9712,10 @@
     },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
-        "您确定要继续操作吗？"
+        "您确定要继续吗？"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "如果您选择修改您的 ${ planTitle } 套餐，可能会失去某些功能的访问权限。"
+        "如果您选择修改 ${ planTitle } 套餐，可能会无法使用部分功能。"
       ],
       "Keep ${ planTitle }": [
         "保留 ${ planTitle }"
@@ -10191,7 +10179,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "每成功推荐 ${ referrerRewardAmount }"
+        "每次推荐可获得 ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**如果您在此日期之前取消，** 试用期结束后您将被 **降级** 至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 套餐。"
@@ -10218,7 +10206,7 @@
         "好友已加入"
       ],
       "Friend subscribed": [
-        "已订阅的好友"
+        "好友已订阅"
       ],
       "Invite friends. Get credits.": [
         "邀请朋友，获取积分。"
@@ -10233,10 +10221,10 @@
         "更多分享方式"
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
-        "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
+        "完整订阅生效后，您仍可在 30 天内取消并获得按比例退款。"
       ],
       "Refer friends": [
-        "推荐朋友"
+        "邀请好友"
       ],
       "Start earning credits": [
         "开始赚取积分"
@@ -10909,7 +10897,7 @@
         "用于所有 ${ BRAND_NAME } 服务"
       ],
       "Storage used": [
-        "已用存储空间"
+        "存储空间已使用"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ upgrade }"
@@ -12393,7 +12381,7 @@
         "升级至 ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "升级以保留您的高级权益。"
+        "升级以保留您的高级权益！"
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "升级您的生产力，仅需 ${ formattedPrice } 即可获得 ${ planName } 计划"
@@ -12497,6 +12485,26 @@
         "选择一个数字"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "操作"
+      ],
+      "Created": [
+        "创建时间"
+      ],
+      "Expires": [
+        "过期时间"
+      ],
+      "Fingerprint": [
+        "指纹"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Type": [
+        "类型"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "创建日历"
@@ -12593,6 +12601,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
+      ],
+      "Version 6 OpenPGP key": [
+        "第 6 版 OpenPGP 密钥"
       ]
     },
     "tooltip": {
@@ -12631,6 +12642,11 @@
       ],
       "The user must have an address to request data access": [
         "用户必须有地址才能申请访问数据"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "用户接受邀请后，您即可为其分配角色。"
       ]
     },
     "Validation": {
@@ -12794,7 +12810,7 @@
         "您的免费体验期将于 ${ textDate } 结束。${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
+        "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

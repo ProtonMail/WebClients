@@ -3834,12 +3834,6 @@
       "Interval cannot be empty": [
         "სახელი ცარიელი ვერ იქნება"
       ],
-      "Invalid ${ name } code": [
-        "არასწორი კოდი ${ name }"
-      ],
-      "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
-      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -3848,9 +3842,6 @@
       ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
-      ],
-      "Invalid expiration date": [
-        "არასწორი ვადა"
       ],
       "Invalid IBAN": [
         "არასწორი IBAN"
@@ -12582,6 +12573,20 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "აირჩიეთ რიცხვი"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "ქმედებები"
+      ],
+      "Fingerprint": [
+        "ანაბეჭდი"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "Type": [
+        "ტიპი"
       ]
     },
     "Title; create calendar modal": {

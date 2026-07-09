@@ -3761,12 +3761,6 @@
       "Interval cannot be empty": [
         "間隔は空白にできません"
       ],
-      "Invalid ${ name } code": [
-        "無効な ${ name } コードです"
-      ],
-      "Invalid card number": [
-        "無効なカード番号です"
-      ],
       "Invalid code": [
         "無効なコードです"
       ],
@@ -3775,9 +3769,6 @@
       ],
       "Invalid email address": [
         "メールアドレスが正しくありません"
-      ],
-      "Invalid expiration date": [
-        "無効な有効期限"
       ],
       "Invalid IBAN": [
         "IBANが無効"
@@ -12396,6 +12387,20 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "番号を選択"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "操作"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "状態"
+      ],
+      "Type": [
+        "種類"
       ]
     },
     "Title; create calendar modal": {
