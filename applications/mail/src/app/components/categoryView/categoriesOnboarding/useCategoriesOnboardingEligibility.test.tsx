@@ -7,6 +7,7 @@ import type { FeatureContextValue } from '@proton/features/useFeatures';
 import { PLANS } from '@proton/payments/core/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
@@ -114,6 +115,9 @@ const mockFeatures = ({
 
 const mockAccountCreatedAt = (createTime: number) => mockUseUser([{ CreateTime: createTime }]);
 
+const mockMailCategoryView = (mailCategoryView: boolean) =>
+    mockUseMailSettings([{ MailCategoryView: mailCategoryView }]);
+
 const mockAllMailCount = (total: number) => {
     jest.mocked(useMailboxCounter).mockReturnValue({
         loading: false,
@@ -142,6 +146,7 @@ describe('useCategoriesOnboardingEligibility', () => {
         mockFeatures();
         mockCategoriesView();
         mockChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
+        mockMailCategoryView(false);
     });
 
     afterAll(() => {
@@ -190,6 +195,18 @@ describe('useCategoriesOnboardingEligibility', () => {
                     flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
+
+            it('are not eligible when the category view is already enabled in their mail settings', () => {
+                mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(10);
+                mockMailCategoryView(true);
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: false,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
         });
 
         describe('new users', () => {
@@ -219,6 +236,18 @@ describe('useCategoriesOnboardingEligibility', () => {
             it('are not eligible with fewer than 20 mails', () => {
                 mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
                 mockAllMailCount(10);
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: false,
+                    audienceType: AudienceType.B2B,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('are not eligible when the category view is already enabled in their mail settings', () => {
+                mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
+                mockAllMailCount(20);
+                mockMailCategoryView(true);
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
