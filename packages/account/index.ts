@@ -66,6 +66,7 @@ export * from './passwordReminder/listener';
 export * from './retentionPolicies';
 export * from './previousSubscription';
 export * from './delegatedAccess';
+export * from './mspSubsidiaries';
 export * from './referralInfo';
 export * from './referrals';
 

@@ -64,6 +64,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
             sso: false,
             'has-a-byoe-address': false,
             'delegated-access': false,
+            'org-access': false,
         },
         isAdmin: true,
         isMember: false,

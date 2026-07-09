@@ -5,6 +5,7 @@ export enum SessionSource {
     Proton,
     Saml,
     Oauth,
+    Msp,
 }
 
 export type PersistedSessionBlob =
