@@ -4966,12 +4966,6 @@
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
-      "Invalid ${ name } code": [
-        "Codi ${ name } no vàlid"
-      ],
-      "Invalid card number": [
-        "Número de targeta no vàlid"
-      ],
       "Invalid code": [
         "Codi invàlid"
       ],
@@ -4980,9 +4974,6 @@
       ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
-      ],
-      "Invalid expiration date": [
-        "Data de caducitat invàlida"
       ],
       "Invalid expiration time": [
         "Aquesta data de caducitat no és vàlida"
@@ -5071,9 +5062,6 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -7890,7 +7878,7 @@
         "Prioritat baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Feu de ${ MAIL_APP_NAME } la vostra aplicació de correu electrònic per defecte."
+        "Establiu ${ MAIL_APP_NAME } com l'aplicació de correu per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -9892,6 +9880,12 @@
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
+      ],
       "Expires": [
         "Expira"
       ],
@@ -10099,8 +10093,8 @@
       "Navigation": [
         "Navegació"
       ],
-      "New": [
-        "Nou"
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
       ],
       "New password": [
         "Contrasenya nova"
@@ -10132,9 +10126,6 @@
       "Notifications are disabled, to enable them change the browser settings.": [
         "Les notificacions estan desactivades. Per activar-les, canvieu les preferències del navegador."
       ],
-      "Open in a new tab": [
-        "Obre en una pestanya nova"
-      ],
       "Operating system": [
         "Sistema operatiu"
       ],
@@ -10155,6 +10146,9 @@
       ],
       "Original link": [
         "Enllaç original"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
       ],
       "Participants": [
         "Participants"
@@ -10234,6 +10228,9 @@
       "Region": [
         "Regió"
       ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
       "Remember my choice": [
         "Recordar la meva selecció"
       ],
@@ -10293,6 +10290,9 @@
       ],
       "Start date": [
         "Data d'inici"
+      ],
+      "Starts with": [
+        "Comença amb"
       ],
       "State": [
         "Estat"
@@ -10380,6 +10380,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ],
       "Username": [
         "Nom d'usuari"
@@ -10983,14 +10986,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
       "Fw:": [
         "RV:"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "El ${ date }, ${ senderString } va escriure:"
       ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
@@ -12582,7 +12603,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no ho torneu a mostrar"
+        "Sí, no m'ho torneu a mostrar"
       ]
     },
     "Option group": {
@@ -16433,6 +16454,26 @@
         "La vostra adreça més curta ja està a punt."
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
@@ -16528,6 +16569,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
       ]
     },
     "tooltip": {
@@ -16577,6 +16621,11 @@
       ],
       "Your default font will look like following:": [
         "La font predeterminada es mostrarà així:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     },
     "Validation": {
@@ -16683,6 +16732,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
