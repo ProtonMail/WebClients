@@ -18,7 +18,7 @@ import { handleDisplayName, handleDone, handleSaveRecovery, handleSetupOrg } fro
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
-import type { SignupCustomStepProps } from '../interface';
+import type { SignupCustomStepProps, SignupModelV2 } from '../interface';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
 import OrgSetupStep from './OrgSetupStep';
@@ -32,6 +32,21 @@ enum Step {
     OrgSetup,
     Explore,
     RedirectAdmin,
+}
+
+function getLocalIdAndPathInfo(model: SignupModelV2) {
+    if (model.cache?.type === 'user') {
+        return {
+            pathname: '/multi-user-support',
+            localID: model.cache.session.resumedSessionResult.localID,
+        };
+    } else if (model.cache?.type === 'signup') {
+        return {
+            pathname: '/users-addresses',
+            localID: model.cache.setupData?.authResponse.LocalID,
+        };
+    }
+    throw new Error('Unknown cache');
 }
 
 const CustomStep = ({
@@ -233,20 +248,7 @@ const CustomStep = ({
                     product={productAppName}
                     logo={logo}
                     onSetup={async () => {
-                        const { localID, pathname } = (() => {
-                            if (model.cache?.type === 'user') {
-                                return {
-                                    pathname: '/multi-user-support',
-                                    localID: model.cache.session.resumedSessionResult.localID,
-                                };
-                            } else if (model.cache?.type === 'signup') {
-                                return {
-                                    pathname: '/users-addresses',
-                                    localID: model.cache.setupData?.authResponse.LocalID,
-                                };
-                            }
-                            throw new Error('Unknown cache');
-                        })();
+                        const { localID, pathname } = getLocalIdAndPathInfo(model);
 
                         await measure({
                             event: TelemetryAccountSignupEvents.onboardFinish,
@@ -275,6 +277,7 @@ const CustomStep = ({
             {step === Step.Explore && (
                 <ExploreStep
                     user={cache.setupData?.user}
+                    localID={getLocalIdAndPathInfo(model).localID}
                     plan={plan?.Name}
                     onExplore={async (app) => {
                         try {
