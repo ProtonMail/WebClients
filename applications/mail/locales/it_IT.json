@@ -4889,12 +4889,6 @@
       "Incorrect username": [
         "Username non corretto"
       ],
-      "Invalid ${ name } code": [
-        "Codice ${ name } non valido"
-      ],
-      "Invalid card number": [
-        "Numero della carta non valido"
-      ],
       "Invalid code": [
         "Codice non valido"
       ],
@@ -4903,9 +4897,6 @@
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
-      ],
-      "Invalid expiration date": [
-        "Data di scadenza non valida"
       ],
       "Invalid expiration time": [
         "Data di scadenza non valida"
@@ -5141,7 +5132,7 @@
         "Timeout della richiesta"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "L'invio di allegati è limitato fino al raggiungimento dei limiti del piano o fino a quando effettuerai l'upgrade."
@@ -6747,7 +6738,7 @@
         "${ LUMO_SHORT_APP_NAME } ti aiuta a creare email migliori in modo rapido e senza sforzo."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
-        "Pannello ${ LUMO_SHORT_APP_NAME }"
+        "Pannello di ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } può proteggere anche la tua azienda."
@@ -7796,9 +7787,6 @@
       ],
       "Low Priority": [
         "Priorità bassa"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita."
       ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
@@ -9056,7 +9044,7 @@
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Il tuo account è attualmente configurato per applicare il regime di reverse charge. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
+        "Il tuo account è attualmente configurato per applicare il regime di inversione contabile. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Il tuo browser non supporta l'esecuzione locale dell'assistente alla scrittura. Prova a eseguirlo sui server."
@@ -9979,9 +9967,6 @@
       "Navigation": [
         "Navigazione"
       ],
-      "New": [
-        "Nuovo"
-      ],
       "New password": [
         "Nuova password"
       ],
@@ -10008,9 +9993,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Le notifiche sono disabilitate, per abilitarle modificare le impostazioni del browser."
-      ],
-      "Open in a new tab": [
-        "Apri in una nuova scheda"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -12435,12 +12417,6 @@
       ],
       "No parent folder": [
         "Nessuna cartella principale"
-      ],
-      "Remind me later": [
-        "Ricordamelo più tardi"
-      ],
-      "Yes, don't show again": [
-        "Sì, non mostrare più"
       ]
     },
     "Option group": {
@@ -15686,9 +15662,6 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
-      "Keep this banner hidden?": [
-        "Tenere nascosto questo banner?"
-      ],
       "Label as": [
         "Etichetta come..."
       ],
@@ -16267,6 +16240,20 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Fingerprint": [
+        "Impronta digitale"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -4966,12 +4966,6 @@
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
-      "Invalid ${ name } code": [
-        "Μη έγκυρο ${ name } κωδικός"
-      ],
-      "Invalid card number": [
-        "Μη έγκυρος αριθμός κάρτας"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -4980,9 +4974,6 @@
       ],
       "Invalid email address": [
         "Μη έγκυρη διεύθυνση email"
-      ],
-      "Invalid expiration date": [
-        "Μη έγκυρη ημερομηνία λήξης"
       ],
       "Invalid expiration time": [
         "Μη έγκυρος χρόνος λήξης"
@@ -5071,9 +5062,6 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
@@ -9892,6 +9880,12 @@
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
+      ],
       "Expires": [
         "Λήγει"
       ],
@@ -10099,8 +10093,8 @@
       "Navigation": [
         "Πλοήγηση"
       ],
-      "New": [
-        "Νέο"
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
       ],
       "New password": [
         "Νέος κωδικός"
@@ -10132,9 +10126,6 @@
       "Notifications are disabled, to enable them change the browser settings.": [
         "Οι ειδοποιήσεις είναι απενεργοποιημένες, για να τις ενεργοποιήσετε αλλάξτε τις ρυθμίσεις του προγράμματος περιήγησης."
       ],
-      "Open in a new tab": [
-        "Άνοιγμα σε νέα καρτέλα"
-      ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
       ],
@@ -10155,6 +10146,9 @@
       ],
       "Original link": [
         "Αρχικός σύνδεσμος"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
       ],
       "Participants": [
         "Συμμετέχοντες"
@@ -10234,6 +10228,9 @@
       "Region": [
         "Περιοχή"
       ],
+      "Regular expression": [
+        "Κανονική έκφραση"
+      ],
       "Remember my choice": [
         "Απομνημόνευση της επιλογής μου"
       ],
@@ -10293,6 +10290,9 @@
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
+      ],
+      "Starts with": [
+        "Ξεκινάει με"
       ],
       "State": [
         "Πολιτεία"
@@ -10380,6 +10380,9 @@
       ],
       "URL": [
         "Διεύθυνση URL"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
       ],
       "Username": [
         "Όνομα Χρήστη"
@@ -10983,14 +10986,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
       "Fw:": [
         "Προώθ:"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Την ${ date }, ο/η ${ senderString } έγραψε:"
       ],
       "Re:": [
         "Απ:"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Η δωρεάν δοκιμή σας έχει λήξει. ${ nonAutoRenewalAction }"
@@ -16433,6 +16454,26 @@
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Fingerprint": [
+        "Δακτυλικό αποτύπωμα"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Type": [
+        "Τύπος"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Σήμερα"
@@ -16528,6 +16569,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
+      ],
+      "Version 6 OpenPGP key": [
+        "Κλειδί OpenPGP έκδοσης 6"
       ]
     },
     "tooltip": {
@@ -16577,6 +16621,11 @@
       ],
       "Your default font will look like following:": [
         "Η προεπιλεγμένη γραμματοσειρά θα μοιάζει ως εξής:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
       ]
     },
     "Validation": {
@@ -16683,6 +16732,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",

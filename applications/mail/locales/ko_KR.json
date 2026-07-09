@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -4871,12 +4871,6 @@
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
-      "Invalid ${ name } code": [
-        "유효하지 않은 ${ name } 코드"
-      ],
-      "Invalid card number": [
-        "유효하지 않은 카드 번호"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -4885,9 +4879,6 @@
       ],
       "Invalid email address": [
         "유효하지 않은 이메일 주소"
-      ],
-      "Invalid expiration date": [
-        "올바르지 않은 만료 기한"
       ],
       "Invalid expiration time": [
         "유효하지 않은 만료 시간"
@@ -4972,9 +4963,6 @@
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
@@ -5809,7 +5797,7 @@
         "보안 키"
       ],
       "Touch your security key.": [
-        "귀하의 보안 키를 터치해 주세요."
+        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -7529,7 +7517,7 @@
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -8839,11 +8827,20 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "받은 편지함에 ${ totalLabel }가 있습니다."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 대화는 **${ count }건**입니다"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "이 폴더에 **대화 ${ count }**개를 저장했습니다"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "이 라벨로 태그된 **대화 ${ count }개**가 있습니다"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 메시지는 **${ count }건**입니다"
       ],
       "You have **${ count } message** stored in this folder": [
         "이 폴더에 **메시지 ${ count }**개를 저장했습니다"
@@ -8856,6 +8853,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "${ planTitle } 체험판 구독이 있습니다. 현재는 결제 수단이 필요 없습니다. 사용자의 구독이 무료 체험 종료일에 자동 갱신됩니다."
+      ],
+      "You have no conversations in this category": [
+        "이 카테고리에는 대화가 없습니다"
+      ],
+      "You have no messages in this category": [
+        "이 카테고리에는 메시지가 없습니다"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "사용자의 이메일에 제목이 있지 않습니다. 이 메시지를 계속 보내시겠어요?"
@@ -8871,6 +8874,12 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "다운그레이드하기 전에 모든 ${ MAIL_APP_NAME } 사용자와 주소, 그리고 사용자 지정 도메인을 비활성화해야 합니다."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 대화 **${ checked }개**를 선택했습니다"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } 카테고리의 메시지 **${ checked }개**를 선택했습니다"
       ],
       "You selected **${ count } conversation** from this folder": [
         "이 폴더에 있는 **대화 ${ count }개**를 선택했습니다"
@@ -9846,9 +9855,6 @@
       "Navigation": [
         "내비게이션"
       ],
-      "New": [
-        "신규"
-      ],
       "New password": [
         "새 비밀번호"
       ],
@@ -9857,6 +9863,9 @@
       ],
       "Newsletters": [
         "뉴스레터"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "뉴스레터: 뉴스, 사설 이메일 및 비 프로모션 콘텐츠"
       ],
       "No label found": [
         "라벨 발견되지 않음"
@@ -9875,9 +9884,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "알림이 비활성화되었습니다. 활성화하려면 브라우저 설정을 변경하십시오."
-      ],
-      "Open in a new tab": [
-        "새 탭에서 열기"
       ],
       "Operating system": [
         "운영체제"
@@ -9948,8 +9954,14 @@
       "Primary": [
         "우선 순위"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "주요: 개인 및 업무 이메일과 중요한 업데이트"
+      ],
       "Promotions": [
         "프로모션"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "프로모션: 할인, 행사 및 마케팅 이메일"
       ],
       "Proration": [
         "할당"
@@ -10016,6 +10028,9 @@
       ],
       "Social": [
         "소셜"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "소셜: 소셜 미디어 업데이트, 활동, 메시지"
       ],
       "Social media updates and activity": [
         "소셜 미디어 업데이트 및 활동"
@@ -10092,6 +10107,9 @@
       "Transactions": [
         "거래 내역"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "거래: 영수증, 예약, 청구서 및 주문서"
+      ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
       ],
@@ -10103,6 +10121,9 @@
       ],
       "Updates": [
         "업데이트"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "업데이트: 자동 전송된 확인, 알림, 계정 업데이트 이메일"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -14688,6 +14709,9 @@
       "Move ${ selectionCount } message": [
         "메시지 ${ selectionCount }개 이동"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "${ label }(으)로 이동 완료. 추후 비슷한 메시지는 이곳으로 분류됩니다."
+      ],
       "Password copied to clipboard": [
         "비밀번호를 클립보드에 복사했습니다"
       ],
@@ -15497,7 +15521,7 @@
         "메시지가 다음 날짜에 만료됩니다."
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -16007,6 +16031,26 @@
         "짧은 주소가 준비되었습니다"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
@@ -16102,6 +16146,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ]
     },
     "tooltip": {
@@ -16243,7 +16290,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

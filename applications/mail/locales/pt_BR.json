@@ -4946,12 +4946,6 @@
       "Incorrect username": [
         "Nome de usuário incorreto"
       ],
-      "Invalid ${ name } code": [
-        "O código ${ name } não é válido."
-      ],
-      "Invalid card number": [
-        "O número do cartão não é válido."
-      ],
       "Invalid code": [
         "O código não é válido."
       ],
@@ -4960,9 +4954,6 @@
       ],
       "Invalid email address": [
         "O endereço de e-mail não é válido."
-      ],
-      "Invalid expiration date": [
-        "A data de validade não é válida."
       ],
       "Invalid expiration time": [
         "O tempo de expiração é inválido."
@@ -5036,6 +5027,9 @@
       ],
       "No contacts found to import": [
         "Nenhum contato encontrado para importação"
+      ],
+      "No drive found to import": [
+        "Não encontrou nenhuma unidade para importar"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
@@ -10070,9 +10064,6 @@
       "Navigation": [
         "Navegação"
       ],
-      "New": [
-        "Novo"
-      ],
       "New password": [
         "Nova senha"
       ],
@@ -10102,9 +10093,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "As notificações estão desativadas. Para ativá-las, altere as configurações do navegador."
-      ],
-      "Open in a new tab": [
-        "Abrir em uma nova guia"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -16406,6 +16394,26 @@
         "Seu endereço mais curto já está pronto"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Ações"
+      ],
+      "Created": [
+        "Criada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Impressão digital"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -16501,6 +16509,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ]
     },
     "tooltip": {
