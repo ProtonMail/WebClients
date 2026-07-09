@@ -1,7 +1,8 @@
+import { CategoriesOnboardingFlags } from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import type { CategorizeStepLocation } from './onboardingInterface';
-import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onboardingInterface';
+import { OnboardingFlow, OnboardingStep } from './onboardingInterface';
 
 /**
  * The B2C onboarding is a linear sequence: each step is unlocked only once the
