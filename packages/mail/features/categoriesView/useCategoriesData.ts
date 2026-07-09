@@ -4,6 +4,7 @@ import useFeature from '@proton/features/useFeature';
 import { selectActiveCategoriesTabs, selectCategoriesLabel } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 
 export const useCategoriesData = () => {
@@ -11,6 +12,7 @@ export const useCategoriesData = () => {
     const [organization, organizationLoading] = useOrganization();
 
     const categoryViewFlag = useFlag('CategoryView');
+    const { flagsReady } = useFlagsStatus();
     const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
     const hasBetaAccess = betaFlag.feature?.Value ?? false;
 
@@ -25,7 +27,8 @@ export const useCategoriesData = () => {
     const shouldSeeWideToolbars = !isRefreshedToolbarUIDisabled || hasBetaAccess;
 
     // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
-    const isCategoryViewEnabledSettled = !mailSettingsLoading && !organizationLoading && !betaFlag.loading;
+    const isCategoryViewEnabledSettled =
+        !mailSettingsLoading && !organizationLoading && !betaFlag.loading && flagsReady;
 
     return {
         canUseCategoryView,
