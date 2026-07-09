@@ -71,7 +71,7 @@ const MailSidebarSystemFolders = ({
         showSoftDeletedFolder,
     });
 
-    const { categoryViewAccess, activeCategoriesTabs } = useCategoriesView();
+    const { isCategoryViewEnabled, activeCategoriesTabs } = useCategoriesView();
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
     const { getLocationCount } = useMailboxCounter();
 
@@ -259,7 +259,7 @@ const MailSidebarSystemFolders = ({
             {mainElements.map((element) => {
                 // When categories are enabled we show the unread count of the default category not the whole inbox
                 const labelID =
-                    categoryViewAccess && element.labelID === MAILBOX_LABEL_IDS.INBOX
+                    isCategoryViewEnabled && element.labelID === MAILBOX_LABEL_IDS.INBOX
                         ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
                         : element.labelID;
 

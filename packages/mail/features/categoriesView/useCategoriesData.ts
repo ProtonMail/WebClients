@@ -17,18 +17,18 @@ export const useCategoriesData = () => {
     const categoriesStore = useSelector(selectCategoriesLabel);
     const activeCategoriesTabs = useSelector(selectActiveCategoriesTabs);
 
-    const hasAccessToCategoryView = categoryViewFlag || hasBetaAccess;
+    const canUseCategoryView = categoryViewFlag || hasBetaAccess;
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
-    const categoryViewAccess = hasAccessToCategoryView && settingAccess;
+    const isCategoryViewEnabled = canUseCategoryView && settingAccess;
 
     const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
     const shouldSeeWideToolbars = !isRefreshedToolbarUIDisabled || hasBetaAccess;
 
     return {
-        hasAccessToCategoryView,
+        canUseCategoryView,
         categoriesStore,
-        activeCategoriesTabs: categoryViewAccess ? activeCategoriesTabs : [],
-        categoryViewAccess,
+        activeCategoriesTabs: isCategoryViewEnabled ? activeCategoriesTabs : [],
+        isCategoryViewEnabled,
         shouldSeeWideToolbars,
     };
 };
