@@ -1,5 +1,5 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { NodeEntity } from '@protontech/drive-sdk';
+import type { NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
@@ -14,6 +14,7 @@ import { setupRealSearchLibraryWasm } from '../../../../testing/setupRealSearchL
 import { IndexKind, IndexRegistry } from '../../../index/IndexRegistry';
 import { TreeSubscriptionRegistry } from '../../TreeSubscriptionRegistry';
 import { NodeTreeIndexPopulator } from '../../indexPopulators/NodeTreeIndexPopulator';
+import { CHECKPOINT_EVERY_N_FOLDERS } from '../../utils/resumableTreeVisitor/drainResumableTreeVisitorEvents';
 import type { TaskContext } from '../BaseTask';
 import { IndexPopulatorTask } from './IndexPopulatorTask';
 
@@ -205,5 +206,94 @@ describe('IndexPopulatorTask', () => {
             version: 1,
             progress: { files: 2, folders: 0, albums: 0, photos: 0 },
         });
+    });
+
+    it('resumes from a persisted BFS visitor state instead of re-walking from the root', async () => {
+        const populator = new TestPopulator();
+        await db.putPopulatorState({
+            uid: populator.getUid(),
+            indexKind: populator.indexKind,
+            indexPopulatorKind: populator.indexPopulatorKind,
+            treeEventScopeId: populator.treeEventScopeId,
+            done: false,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
+        await db.putBFSVisitorState({
+            id: NodeTreeIndexPopulator.initialVisitorId(populator.getUid()),
+            queue: [{ folderUid: 'folder-b', parentPath: '/folder-b' }],
+            generation: 1,
+            updatedAt: Date.now(),
+        });
+        bridge.setChildren('folder-b', [makeMaybeNode({ uid: 'b-file', name: 'b.pdf', type: 'file' as any })]);
+
+        const ctx = await buildCtx();
+        await new IndexPopulatorTask(populator).execute(ctx);
+
+        // Only folder-b's children are walked; the root's file-1/file-2 are skipped on resume.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorKind', 'test-pop');
+        expect(results.map((r) => r.identifier).sort()).toEqual(['b-file']);
+
+        // The BFS visitor state is cleared on completion.
+        const state = await db.getPopulatorState(populator.getUid());
+        expect(state?.done).toBe(true);
+        expect(
+            await db.getBFSVisitorState(NodeTreeIndexPopulator.initialVisitorId(populator.getUid()))
+        ).toBeUndefined();
+    });
+
+    it('resumes initial indexing after an interruption and produces a complete, duplicate-free index', async () => {
+        // Enough folders to cross CHECKPOINT_EVERY_N_FOLDERS so the drain persists a resume
+        // checkpoint mid-walk (expanding the root counts as the first folder boundary).
+        const folderCount = CHECKPOINT_EVERY_N_FOLDERS + 1;
+        const folders = Array.from({ length: folderCount }, (_, i) => `f${String(i).padStart(2, '0')}`);
+        bridge.setChildren(
+            'root',
+            folders.map((uid) => makeMaybeNode({ uid, name: uid, type: 'folder' as NodeType }))
+        );
+        for (const f of folders) {
+            bridge.setChildren(f, [makeMaybeNode({ uid: `file-${f}`, name: `${f}.txt`, type: 'file' as NodeType })]);
+        }
+
+        // First run: the SDK fails once while iterating a folder reached AFTER the first checkpoint,
+        // simulating a crash mid initial-indexing. The checkpoint for the folders walked so far is
+        // durable, so the next run can resume. (The failure is one-shot, so it's gone by the retry.)
+        const failFolder = folders[CHECKPOINT_EVERY_N_FOLDERS - 1];
+        bridge.failNextIterateForFolder(failFolder, new Error('simulated transient SDK failure'));
+
+        const populator1 = new TestPopulator();
+        await expect(new IndexPopulatorTask(populator1).execute(await buildCtx())).rejects.toThrow();
+
+        // A checkpoint was persisted, the walk stopped partway, and the populator is not done.
+        const visitorId = NodeTreeIndexPopulator.initialVisitorId(populator1.getUid());
+        const checkpoint = await db.getBFSVisitorState(visitorId);
+        expect(checkpoint?.queue.length).toBeGreaterThan(0);
+        expect((await db.getPopulatorState(populator1.getUid()))?.done).toBeFalsy();
+
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const afterRun1 = await findDocumentsByTag(instance.indexReader, 'indexPopulatorKind', 'test-pop');
+        expect(afterRun1.length).toBeLessThan(folderCount * 2); // partial index only
+
+        // Emptying the root proves the second run resumes from the persisted queue: a
+        // restart-from-root would now find nothing and leave the still-queued folders unindexed.
+        bridge.setChildren('root', []);
+
+        // Second run: fresh populator + signal, resumes from the checkpoint to completion.
+        const populator2 = new TestPopulator();
+        await new IndexPopulatorTask(populator2).execute(await buildCtx());
+
+        const afterRun2 = await findDocumentsByTag(instance.indexReader, 'indexPopulatorKind', 'test-pop');
+        const ids = afterRun2.map((r) => r.identifier).sort();
+
+        // Every folder and file is present exactly once - resume completed the walk with no
+        // duplicates from the re-committed prefix.
+        const expected = [...folders, ...folders.map((f) => `file-${f}`)].sort();
+        expect(ids).toEqual(expected);
+
+        // The checkpoint was cleared and the populator marked done.
+        expect(await db.getBFSVisitorState(visitorId)).toBeUndefined();
+        expect((await db.getPopulatorState(populator2.getUid()))?.done).toBe(true);
     });
 });
