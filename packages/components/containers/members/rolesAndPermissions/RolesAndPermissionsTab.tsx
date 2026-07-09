@@ -2,10 +2,13 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
+import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
-import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
+import { PREDEFINED_ROLE_NAME, ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import type { RoleRow } from './RoleCheckList';
 import RoleCheckList from './RoleCheckList';
@@ -13,7 +16,8 @@ import RoleCheckList from './RoleCheckList';
 const buildRows = (
     organizationRoles: OrganizationRole[] = [],
     userRoles: RoleAssignment[] = [],
-    selectedRoles: Set<string>
+    selectedRoles: Set<string>,
+    lockOwnerRow: boolean
 ): RoleRow[] => {
     const groupByRoleId = new Map(
         userRoles
@@ -27,16 +31,16 @@ const buildRows = (
         isGroupSourced: groupByRoleId.has(OrganizationRoleID),
         groupName: groupByRoleId.get(OrganizationRoleID) ?? null,
         isChecked: groupByRoleId.has(OrganizationRoleID) || selectedRoles.has(OrganizationRoleID),
+        isLocked: Name === PREDEFINED_ROLE_NAME.OWNER && lockOwnerRow,
     }));
 };
 
 interface Props {
     selectedRoles: Set<string>;
     onChange: (selectedRoles: Set<string>) => void;
-    organizationRoles: OrganizationRole[] | undefined;
     userRoles?: RoleAssignment[];
-    loadingRoles: boolean;
     isGroupContext?: boolean;
+    isEditingSelf?: boolean;
     disabled?: boolean;
     banner?: ReactNode;
 }
@@ -44,14 +48,18 @@ interface Props {
 const RolesAndPermissionsTab = ({
     selectedRoles,
     onChange,
-    organizationRoles,
     userRoles,
-    loadingRoles,
     isGroupContext = false,
+    isEditingSelf = false,
     disabled = false,
     banner,
 }: Props) => {
-    const rows = buildRows(organizationRoles, userRoles, selectedRoles);
+    const [organizationRoles, loadingRoles] = useOrganizationRoles();
+    const [userPermissions] = useUserPermissions();
+    const isCurrentUserOwner = userPermissions?.Roles?.some(isOwnerRole) ?? false;
+    const lockOwnerRow = !isCurrentUserOwner || isEditingSelf;
+    const availableRoles = isGroupContext ? organizationRoles?.filter((role) => !isOwnerRole(role)) : organizationRoles;
+    const rows = buildRows(availableRoles, userRoles, selectedRoles, lockOwnerRow);
 
     const handleToggle = (roleId: string) => {
         const next = new Set(selectedRoles);
