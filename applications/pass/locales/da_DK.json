@@ -1165,6 +1165,12 @@
       "Failed to set default mailbox": [
         "Kunne ikke indstille standardpostkasse"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Kunne ikke starte SSH-agenten: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Kunne ikke stoppe SSH-agenten: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Kunne ikke synkronisere aliasser"
       ],
@@ -1534,6 +1540,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil kun importere indlogninger, noter, betalingskort og identiteter."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } bruger SSH-nøglerne, der er opbevaret i dine bokse."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tilstand er aktiveret."
@@ -2089,6 +2098,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2118,6 +2131,9 @@
       ],
       "No network connection": [
         "Ingen internetforbindelse"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ingen SSH-nøgler fundet i ${ PASS_SHORT_APP_NAME }. Opret SSH-nøgleelementer til at bruge med agenten."
       ],
       "No vaults available.": [
         "Ingen tilgængelige bokse."
@@ -2937,6 +2953,9 @@
       ],
       "Address details": [
         "Adresseoplysninger"
+      ],
+      "Advanced": [
+        "Avanceret"
       ],
       "Alias": [
         "Alias"
@@ -3889,6 +3908,9 @@
       "Update": [
         "Opdatér"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Brug ${ PASS_APP_NAME } som SSH-agent"
+      ],
       "Use for AI agent": [
         "Brug til en AI-agent"
       ],
@@ -4459,6 +4481,12 @@
       "Random prefix generation successfully enabled": [
         "Tilfældig præfiksgenerering aktiveret"
       ],
+      "SSH agent successfully started": [
+        "SSH-agent startet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agent stoppet"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Bokse kan ikke indeholder mere end ${ targetMaxMembers } bruger.",
         "Bokse kan ikke indeholder mere end ${ targetMaxMembers } brugere."
@@ -4904,6 +4932,9 @@
       "SPF (Optional)": [
         "SPF (Valgfri)"
       ],
+      "SSH Agent": [
+        "SSH-agent"
+      ],
       "Status": [
         "Status"
       ],
@@ -5249,6 +5280,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Noget gik galt under opstarten af ${ PASS_APP_NAME }. Prøv at genopfriske eller genindlæse udvidelsen"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agenten kræver at man bruger SSH-nøgler, hvilket ikke er tilgængeligt i dit nuværende abonnement."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-præfikset må højest være 40 tegn langt."
