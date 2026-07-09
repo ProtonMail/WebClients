@@ -16,24 +16,43 @@ const getUnreadForLabel = (counts: LabelCount[] | undefined, labelID: string): n
     return counts?.find((count) => count.LabelID === labelID)?.Unread || 0;
 };
 
+interface SelectLabelIDUnreadCountResult {
+    count: number;
+    loading: boolean;
+}
+
 /**
- * Return the unread count for any label ID
+ * Return the unread count for any label ID along with loading state
  */
 export const selectLabelIDUnreadCount = createSelector(
     [selectConversationCounts, selectMessageCounts, selectDisabledCategoriesIDs, selectMailSettings, labelID],
-    (conversationCounts, messageCounts, disabledCategoriesIDs, mailSettings, labelID) => {
+    (
+        conversationCounts,
+        messageCounts,
+        disabledCategoriesIDs,
+        mailSettings,
+        labelID
+    ): SelectLabelIDUnreadCountResult => {
         const counter = isConversationMode(labelID, mailSettings.value)
             ? conversationCounts.value
             : messageCounts.value;
 
+        const loading = !counter;
+
         // The primary category contains the unread of every disabled category
         if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT && disabledCategoriesIDs.length > 0) {
-            return [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ...disabledCategoriesIDs].reduce(
-                (total, id) => total + getUnreadForLabel(counter, id),
-                0
-            );
+            return {
+                count: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ...disabledCategoriesIDs].reduce(
+                    (total, id) => total + getUnreadForLabel(counter, id),
+                    0
+                ),
+                loading,
+            };
         }
 
-        return getUnreadForLabel(counter, labelID);
+        return {
+            count: getUnreadForLabel(counter, labelID),
+            loading,
+        };
     }
 );

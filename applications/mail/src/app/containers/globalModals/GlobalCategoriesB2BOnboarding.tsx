@@ -66,7 +66,7 @@ export const GlobalCategoriesB2BOnboarding = () => {
     return (
         <>
             {shouldRender && b2bModalProps && (
-                <ModalTwo {...modalProps} size="small">
+                <ModalTwo {...modalProps} size="small" disableCloseOnEscape>
                     <ModalTwoHeader
                         className="mt-2 mx-2"
                         hasClose={false}

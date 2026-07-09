@@ -52,6 +52,12 @@ jest.mock('@proton/account/retentionPolicies/hooks', () => ({
     useRetentionPolicies: jest.fn(() => [[], false]),
 }));
 
+jest.mock('../categoryView/categoriesOnboarding/CategoriesOnboardingContext', () => ({
+    useCategoriesOnboarding: jest.fn(() => ({
+        userIsInOnboarding: false,
+    })),
+}));
+
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;
 

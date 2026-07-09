@@ -21,7 +21,7 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     const [systemFolders] = useSystemFolders();
 
     const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
-    const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id));
+    const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id)).count;
 
     const showBadge = useFlag('CategoriesUnseenBadge');
 
