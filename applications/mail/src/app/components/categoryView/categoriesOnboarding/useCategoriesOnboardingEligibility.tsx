@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -21,6 +22,7 @@ const B2C_REQUIRED_NUMBER_OF_MAILS = 5;
 
 export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     const [user, loadingUser] = useUser();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
     const [organization, loadingOrganization] = useOrganization();
 
     const mailChecklist = useGetStartedChecklist();
@@ -37,6 +39,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
         loadingOrganization ||
         loadingUser ||
         loadingMailboxCount ||
+        loadingMailSettings ||
         b2cOnboardingViewFlag.loading ||
         b2bOnboardingViewFlag.loading ||
         accountDateThreshold.loading;
@@ -63,8 +66,12 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
         // B2B users must opt-in, we start the onboarding if the flag is ON and their organisation allows it
         const hasB2BCategoryAccess = hasAccessToCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
 
+        // The onboarding is opt-in, we only show to users who don't already have it on
+        const hasEnabledCategoryView = mailSettings.MailCategoryView;
+
         // The following condition apply for existing and new b2b users
-        const basicEligibility = hasB2BCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow;
+        const basicEligibility =
+            hasB2BCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow && !hasEnabledCategoryView;
 
         if (isExistingUser) {
             // Existing users see the spotlight right away
