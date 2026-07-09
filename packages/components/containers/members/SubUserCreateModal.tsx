@@ -15,7 +15,6 @@ import {
 } from '@proton/account';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -141,7 +140,6 @@ const SubUserCreateModal = ({
 
     const [step, setStep] = useState<Step>(Step.SINGLE);
     const [selectedRoles, setSelectedRoles] = useState<Set<string>>(new Set());
-    const [organizationRoles, loadingRoles] = useOrganizationRoles();
 
     const hasVPN = Boolean(organization?.MaxVPN);
 
@@ -633,8 +631,6 @@ const SubUserCreateModal = ({
                                       <RolesAndPermissionsTab
                                           selectedRoles={selectedRoles}
                                           onChange={setSelectedRoles}
-                                          organizationRoles={organizationRoles}
-                                          loadingRoles={loadingRoles}
                                           disabled={model.mode !== CreateMemberMode.Password}
                                           banner={
                                               model.mode !== CreateMemberMode.Password
