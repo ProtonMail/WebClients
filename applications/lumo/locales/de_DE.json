@@ -946,6 +946,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Datei zu ${ DRIVE_APP_NAME } hinzufügen"
       ],
+      "Add memory": [
+        "Erinnerung hinzufügen"
+      ],
       "Add to active": [
         "Zu Aktiven hinzufügen"
       ],
@@ -970,8 +973,17 @@
       "Clear auto-generated": [
         "Automatisch Erstelltes entfernen"
       ],
+      "click to hide me": [
+        "Klicken, um mich auszublenden"
+      ],
+      "click to let me out": [
+        "Klicke, um mich herauszulassen"
+      ],
       "Close": [
         "Schließen"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } einklappen"
       ],
       "Continue": [
         "Fortfahren"
@@ -1012,11 +1024,17 @@
       "I like this response": [
         "Mir gefällt diese Antwort"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Aus ${ LUMO_SHORT_APP_NAME } herauslassen"
+      ],
       "Light": [
         "Hell"
       ],
       "Manage files": [
         "Dateien verwalten"
+      ],
+      "More options": [
+        "Weitere Optionen"
       ],
       "New chat": [
         "Neuer Chat"
@@ -1072,11 +1090,11 @@
       "Try again": [
         "Erneut versuchen"
       ],
-      "Turn off": [
-        "Ausschalten"
-      ],
       "Turn off and delete": [
         "Ausschalten und löschen"
+      ],
+      "Turn off memory": [
+        "Erinnerungen ausschalten"
       ],
       "Turn on memory": [
         "Speicherfunktion einschalten"
@@ -1368,8 +1386,8 @@
       "More thorough answers, but can take longer": [
         "Gründlichere Antworten, kann aber länger dauern"
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Lösche dein Projekt und deine Chats dauerhaft. Das ist unwiderruflich."
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Deine Projekte, Chats und gespeicherten Erinnerungen dauerhaft löschen. Dies ist unwiderruflich."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Projekt-Chats sind vollständig isoliert. Sie greifen auf ihre eigenen Anweisungen und Dateien zurück und ignorieren deine globalen Erinnerungen vollständig."
@@ -1403,8 +1421,8 @@
       ]
     },
     "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "${ LUMO_SHORT_APP_NAME } Speicherfunktion jederzeit ausschalten"
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Löscht alle gespeicherten Erinnerungen und deaktiviert die Erinnerungsfunktion."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1658,9 +1676,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "Der Speicher wird nur in allgemeinen Chats verwendet, niemals in Projekten. Gespeichert mit Zero-Access-Verschlüsselung."
-      ],
       "You can turn it off again at any time.": [
         "Du kannst es jederzeit wieder ausschalten."
       ]
@@ -1903,8 +1918,8 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Generiere eine Workflow-Grafik und Implementierungscode für das folgende Ziel. Zielsprache für den Code:"
       ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Erstelle diese anhand deiner letzten Chats oder füge unten eigene hinzu."
+      "Generate them from your recent chats, or add one with + above.": [
+        "Erstelle diese anhand deiner letzten Chats oder füge mit + oben eine neuen hinzu."
       ],
       "Generating…": [
         "Wird erstellt…"
@@ -2953,6 +2968,9 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Pro": [
         "${ LUMO_SHORT_APP_NAME } Pro holen"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
         "Auf ${ LUMO_SHORT_APP_NAME } Plus upgraden"
@@ -5814,20 +5832,11 @@
       "Incorrect username": [
         "Falscher Benutzername"
       ],
-      "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
-      ],
-      "Invalid card number": [
-        "Kartennummer ungültig"
-      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
       "Invalid coupon": [
         "Ungültiger Gutschein"
-      ],
-      "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
@@ -9797,6 +9806,11 @@
       ],
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]
     },
     "Validation": {
