@@ -110,6 +110,9 @@
       "Apply": [
         "Tillämpa"
       ],
+      "Approve": [
+        "Godkänn"
+      ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
@@ -491,9 +494,6 @@
       "Extend": [
         "Utöka"
       ],
-      "Finish": [
-        "Slutför"
-      ],
       "Fit to window": [
         "Passa till fönster"
       ],
@@ -748,6 +748,9 @@
       ],
       "Organization": [
         "Organisation"
+      ],
+      "Pause": [
+        "Pausa"
       ],
       "Pay": [
         "Betala"
@@ -3627,6 +3630,9 @@
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan ansluta till delade servrar."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Observera att e-post som skickas till denna adress, även från andra ${ BRAND_NAME }-adresser, inte längre kommer vara end-to-end-krypterade."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
       ],
@@ -3681,6 +3687,9 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi kommer importera din gamla e-post och synkronisera nya meddelanden från Gmail framöver."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
@@ -4407,12 +4416,6 @@
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
-      "Invalid ${ name } code": [
-        "Ogiltig ${ name }-kod"
-      ],
-      "Invalid card number": [
-        "Ogiltigt kortnummer"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -4424,9 +4427,6 @@
       ],
       "Invalid email address": [
         "Ogiltig e-postadress"
-      ],
-      "Invalid expiration date": [
-        "Ogiltigt förfallodatum"
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
@@ -4488,9 +4488,6 @@
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -4621,6 +4618,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "System för omvänd skattskyldighet stöds inte för detta paket"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlem",
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlemmar"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupp",
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupper"
       ],
       "Server not found": [
         "Server hittades inte"
@@ -6299,6 +6304,9 @@
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } är en end-to-end-krypterad lösning för videokonferenser. Lägg till den i ditt paket för att hålla säkra möten."
       ],
+      "${ MEET_APP_NAME } seats": [
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } adress",
         "${ n } adresser"
@@ -7226,8 +7234,14 @@
       "Got it": [
         "Jag förstår"
       ],
+      "Group created": [
+        "Grupp skapad"
+      ],
       "Group deleted": [
         "Grupp borttagen"
+      ],
+      "Group roles assigned": [
+        "Grupproller tilldelade"
       ],
       "Groups": [
         "Grupper"
@@ -9046,6 +9060,9 @@
       "Group Owner": [
         "Gruppägare"
       ],
+      "Invited": [
+        "Inbjuden"
+      ],
       "Paused": [
         "Pausad"
       ],
@@ -9395,6 +9412,9 @@
       "Custom email domain": [
         "Anpassad e-postdomän",
         "Anpassade e-postdomäner"
+      ],
+      "Data harvesting": [
+        "Datainsamling"
       ],
       "Date": [
         "Datum"
@@ -10383,20 +10403,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Användare och adresser"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Livechatt är tillgängligt med ${ planName }"
-      ],
-      "Open support form": [
-        "Öppna supportformulär"
-      ],
-      "Upgrade subscription": [
-        "Uppgradera prenumeration"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Uppgradera för att låsa upp chattsupport och andra premiumfunktioner, eller använd vårt gratis supportformulär för att rapportera ditt problem."
       ]
     },
     "Loading info": {
@@ -13907,6 +13913,9 @@
       "Approve changes from your identity provider": [
         "Godkänn ändringar från din identitetsleverantör"
       ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Slutgiltigt godkännande behövs för att bevilja åtkomst till alla ${ BRAND_NAME }-tjänster."
+      ],
       "From your identity provider": [
         "Från din identitetsleverantör"
       ],
@@ -13915,6 +13924,9 @@
       ],
       "Private user": [
         "Privat användare"
+      ],
+      "Review users and groups before finishing setup": [
+        "Granska användare och grupper innan du slutför installation"
       ],
       "Updated": [
         "Uppdaterad"
@@ -14713,13 +14725,13 @@
         "${ n } användare frånkopplad från SSO",
         "${ n } användare frånkopplad från SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } användare är inaktiv. Du kan säkert ta bort denna användare från din organisation.",
-        "${ n } användare är inaktiva. Du kan säkert ta bort dem från din organisation."
+      "${ n } user is inactive.": [
+        "${ n } användare är inaktiv.",
+        "${ n } användare är inaktiva."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } användare ber om din hjälp för att logga in på deras ${ BRAND_NAME }-konto med enkel inloggning.",
@@ -16059,6 +16071,9 @@
         "${ friendsSubscribed } vän prenumererar",
         "${ friendsSubscribed } vänner prenumererar"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } för organisationer"
       ],
@@ -16224,6 +16239,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Är du säker på att du vill koppla från och inaktivera denna adress?"
       ],
       "Are you sure you want to disconnect this address?": [
         "Är du säker på att du vill koppla från denna adress?"
@@ -17542,6 +17560,9 @@
       "Group membership paused": [
         "Gruppmedlemskap pausad"
       ],
+      "Resuming role assignment": [
+        "Återuppta rolltilldelning"
+      ],
       "Role assignment paused": [
         "Rolltilldelning pausad"
       ],
@@ -17551,8 +17572,8 @@
       "User declined invitation": [
         "Användare avböjde inbjudan"
       ],
-      "User is a group": [
-        "Användare är en grupp"
+      "User is a group owner": [
+        "Användare är en gruppägare"
       ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
@@ -17637,6 +17658,9 @@
       ],
       "Refund": [
         "Återbetalning"
+      ],
+      "Test credit": [
+        "Testkredit"
       ]
     },
     "Unlimited offer": {
@@ -17666,9 +17690,9 @@
       "Confirm all": [
         "Bekräfta alla"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:",
-        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:"
+      "Could not enable admin access for ${ n } user": [
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare",
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunde inte aktivera administratörsåtkomst: ${ error }"
@@ -17697,6 +17721,10 @@
       "Request user permission for data access": [
         "Begär användarbehörighet för dataåtkomst"
       ],
+      "Review their account now.": [
+        "Granska deras konto nu.",
+        "Granska deras konton nu."
+      ],
       "Revoke access": [
         "Återkalla åtkomst"
       ],
@@ -17709,6 +17737,9 @@
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deras krypteringsnycklar uppdaterades medan vi gjorde ändringar."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Detta kommer avbryta den väntande begäran om administratörsåtkomst till användarens data eller lösenordsåterställning."
       ],
@@ -17720,6 +17751,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "För att fortsätta måste du begära användarens tillåtelse att komma åt deras data eller återställa deras lösenord."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan säkert ta bort denna användare från din organisation.",
+        "Du kan säkert ta bort dessa användare från din organisation."
       ]
     },
     "Upsell": {
@@ -17834,6 +17869,9 @@
       "Manage all users, groups, security, billing, and system configurations.": [
         "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
       ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hantera användare och grupper, tilldela roller och allokera licenser till medlemmar."
+      ],
       "Manages security settings and can view all event logs and user details.": [
         "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ],
@@ -17869,6 +17907,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Users table: badge": {

@@ -689,6 +689,9 @@
       "Organization": [
         "องค์กร"
       ],
+      "Pause": [
+        "หยุด"
+      ],
       "Pay": [
         "ชำระเงิน"
       ],
@@ -4038,12 +4041,6 @@
       "Incorrect username": [
         "ชื่อผู้ใช้ไม่ถูกต้อง"
       ],
-      "Invalid ${ name } code": [
-        "รหัส ${ name } ไม่ถูกต้อง"
-      ],
-      "Invalid card number": [
-        "หมายเลขบัตรไม่ถูกต้อง"
-      ],
       "Invalid code": [
         "รหัสไม่ถูกต้อง"
       ],
@@ -4055,9 +4052,6 @@
       ],
       "Invalid email address": [
         "อีเมลไม่ถูกต้อง"
-      ],
-      "Invalid expiration date": [
-        "วันหมดอายุบัตรไม่ถูกต้อง"
       ],
       "Invalid IBAN": [
         "IBAN ไม่ถูกต้อง"
@@ -13426,12 +13420,6 @@
       "${ n } user detached from SSO": [
         "เลิกเชื่อมต่อผู้ใช้ ${ n } รายจาก SSO แล้ว"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "ผู้ใช้ ${ n } รายเข้าร่วมองค์กรผ่านผู้ให้บริการข้อมูลระบุตัวตน ตรวจสอบบัญชีของพวกเขาตอนนี้:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "ผู้ใช้ ${ n } รายไม่ได้ใช้งาน คุณสามารถลบพวกเขาออกจากองค์กรได้อย่างปลอดภัย"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "ผู้ใช้ ${ n } รายกำลังขอความช่วยเหลือเพื่อลงชื่อเข้าใช้บัญชี ${ BRAND_NAME } ด้วยการลงชื่อเข้าใช้แบบครั้งเดียว (SSO)"
       ],
@@ -16059,9 +16047,6 @@
       ],
       "Confirm all": [
         "ยืนยันทั้งหมด"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "ไม่สามารถเปิดใช้งานการเข้าถึงของผู้ดูแลระบบโดยอัตโนมัติสำหรับผู้ใช้ ${ n } ราย เนื่องจากคีย์การเข้ารหัสลับได้รับการอัปเดตในระหว่างนี้:"
       ],
       "Could not enable administrator access: ${ error }": [
         "ไม่สามารถเปิดใช้งานการเข้าถึงของผู้ดูแลระบบ: ${ error }"

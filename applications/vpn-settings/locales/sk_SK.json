@@ -110,6 +110,9 @@
       "Apply": [
         "Použiť"
       ],
+      "Approve": [
+        "Schváliť"
+      ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Rozšíriť"
       ],
-      "Finish": [
-        "Dokončiť"
-      ],
       "Fit to window": [
         "Prispôsobiť oknu"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Organizácia"
+      ],
+      "Pause": [
+        "Pozastaviť"
       ],
       "Pay": [
         "Zaplatiť"
@@ -4522,12 +4525,6 @@
       "Incorrect username": [
         "Nesprávne používateľské meno"
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -4539,9 +4536,6 @@
       ],
       "Invalid email address": [
         "Neplatná emailová adresa"
-      ],
-      "Invalid expiration date": [
-        "Neplatný koniec platnosti"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -4608,9 +4602,6 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Na tejto adrese možno meniť len veľké písmená a interpunkciu (bodky, pomlčky a podčiarkovníky)."
@@ -4746,6 +4737,18 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } člena",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } členov",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } členov",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ errors.length } členov"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupinu",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupiny",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupín",
+        "Priradenie pozícií sa nepodarilo dokončiť pre ${ failedGroupCount } skupín"
       ],
       "Server not found": [
         "Server nebol nájdený"
@@ -6560,11 +6563,11 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "Na schválenie čaká ${ pendingAdminMemberCount } nový člen pridaný prostredníctvom vášho poskytovateľa identít.",
-        "Na schválenie čakajú ${ pendingAdminMemberCount } noví členovia pridaní prostredníctvom vášho poskytovateľa identít.",
-        "Na schválenie čaká ${ pendingAdminMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít.",
-        "Na schválenie čaká ${ pendingAdminMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "Na schválenie čaká ${ pendingAdminApprovalCount } nový člen pridaný prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čakajú ${ pendingAdminApprovalCount } noví členovia pridaní prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingAdminApprovalCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingAdminApprovalCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -7016,11 +7019,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Cena za prvých 6 mesiacov je ${ monthlyDiscountedPrice }, pri predĺžení zmluvy sa cena mení na ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Cena za prvých 6 mesiacov je ${ monthlyDiscountedPriceElement }, pri predĺžení zmluvy sa cena mení na ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Cena za prvých 12 mesiacov je ${ yearlyDiscountedPrice }, pri predĺžení zmluvy sa cena mení na ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Cena za prvých 12 mesiacov je ${ yearlyDiscountedPriceElement }, pri predĺžení zmluvy sa cena mení na ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
@@ -7543,6 +7546,9 @@
       ],
       "Group deleted": [
         "Skupina bola vymazaná"
+      ],
+      "Group roles assigned": [
+        "Pozície skupiny priradené"
       ],
       "Groups": [
         "Skupiny"
@@ -9460,6 +9466,9 @@
       "Group Owner": [
         "Vlastník skupiny"
       ],
+      "Invited": [
+        "Pozvaný/á"
+      ],
       "Paused": [
         "Pozastavené"
       ],
@@ -10826,20 +10835,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Používatelia a adresy"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Live chat je dostupný v pláne ${ planName }"
-      ],
-      "Open support form": [
-        "Otvoriť formulár podpory"
-      ],
-      "Upgrade subscription": [
-        "Navýšiť predplatné"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Inovujte a odomknite chatovú podporu a ďalšie prémiové funkcie, alebo využite náš formulár bezplatnej podpory a nahláste váš problém."
       ]
     },
     "Loading info": {
@@ -14553,8 +14548,8 @@
       "Updated": [
         "Aktualizované"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Používatelia, ktorých ste nastavili ako súkromných, musia prijať pozvánku, aby mohli dokončiť nastavenie. Akonáhle ich schválite, pošleme im pozvánku."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Používatelia s nastavením „súkromné“ musia prijať pozvánku, aby dokončili nastavenie. Pozvánku im zašleme hneď, ako ju schválite."
       ]
     },
     "scim: Action": {
@@ -15392,17 +15387,17 @@
         "${ n } používateľov odpojených od SSO",
         "${ n } používateľov odpojených od SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účet:",
-        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
-        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
-        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity.",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity."
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } používateľ je neaktívny. Tohto používateľa môžete bezpečne odstrániť z organizácie.",
-        "${ n } používatelia sú neaktívni. Týchto používateľov môžete bezpečne odstrániť z organizácie.",
-        "${ n } používatelia sú neaktívni. Týchto používateľov môžete bezpečne odstrániť z organizácie.",
-        "${ n } používatelia sú neaktívni. Týchto používateľov môžete bezpečne odstrániť z organizácie."
+      "${ n } user is inactive.": [
+        "${ n } používateľ je neaktívny",
+        "${ n } používatelia sú neaktívni",
+        "${ n } používateľov je neaktívnych",
+        "${ n } používateľov je neaktívnych"
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } používateľ vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením.",
@@ -18339,6 +18334,9 @@
       "Group membership paused": [
         "Členstvo v skupine pozastavené"
       ],
+      "Resuming role assignment": [
+        "Obnovenie priradenia pozícií"
+      ],
       "Role assignment paused": [
         "Priradenie pozícií je pozastavené"
       ],
@@ -18348,11 +18346,14 @@
       "User declined invitation": [
         "Používateľ odmietol pozvánku"
       ],
-      "User is a group": [
-        "Používateľ je skupina"
+      "User is a group owner": [
+        "Používateľ je vlastníkom skupiny"
       ],
       "via ${ groupNames }": [
         "cez ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Čaká na schválenie správcom"
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
@@ -18466,11 +18467,11 @@
       "Confirm all": [
         "Potvrdiť všetko"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľa, pretože jeho šifrovacie kľúče boli medzitým aktualizované:",
-        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:",
-        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:",
-        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:"
+      "Could not enable admin access for ${ n } user": [
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľa",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov",
+        "Nepodarilo sa povoliť správcovský prístup pre ${ n } používateľov"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nepodarilo sa povoliť prístup správcu: ${ error }"
@@ -18499,6 +18500,12 @@
       "Request user permission for data access": [
         "Požiadať používateľa o povolenie na prístup k údajom"
       ],
+      "Review their account now.": [
+        "Skontrolujte jeho účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz.",
+        "Skontrolujte ich účet hneď teraz."
+      ],
       "Revoke access": [
         "Zrušiť prístup"
       ],
@@ -18511,6 +18518,9 @@
       "The user must have an address to request data access": [
         "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Počas toho, ako sme vykonávali zmeny, došlo k aktualizácii šifrovacích kľúčov."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Tento krok zruší čakajúcu požiadavku na prístup správcu k údajom používateľa alebo na resetovanie hesla."
       ],
@@ -18522,6 +18532,12 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Ak chcete pokračovať, musíte používateľov požiadať o povolenie na prístup k ich dátam alebo resetovať ich heslo."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Tohto používateľa môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "Týchto používateľov môžete bezpečne odstrániť z organizácie."
       ]
     },
     "Upsell": {
