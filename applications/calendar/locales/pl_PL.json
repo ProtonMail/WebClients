@@ -3723,12 +3723,6 @@
       "Interval cannot be empty": [
         "Przedział czasowy nie może być pusty"
       ],
-      "Invalid ${ name } code": [
-        "Kod ${ name } jest nieprawidłowy"
-      ],
-      "Invalid card number": [
-        "Numer karty jest nieprawidłowy"
-      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -3737,9 +3731,6 @@
       ],
       "Invalid email address": [
         "Adres e-mail jest nieprawidłowy"
-      ],
-      "Invalid expiration date": [
-        "Termin ważności jest nieprawidłowy"
       ],
       "Invalid IBAN": [
         "Numer IBAN jest nieprawidłowy"
@@ -12595,6 +12586,17 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Wybierz numer"
+      ]
+    },
+    "Title header for keys table": {
+      "Fingerprint": [
+        "Odcisk klucza"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Rodzaj"
       ]
     },
     "Title; create calendar modal": {

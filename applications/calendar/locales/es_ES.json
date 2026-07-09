@@ -3870,12 +3870,6 @@
       "Interval cannot be empty": [
         "El intervalo no puede estar vacío."
       ],
-      "Invalid ${ name } code": [
-        "Código de ${ name } no válido"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta no válido"
-      ],
       "Invalid code": [
         "Código no válido"
       ],
@@ -3884,9 +3878,6 @@
       ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
-      ],
-      "Invalid expiration date": [
-        "Fecha de expiración no válida"
       ],
       "Invalid IBAN": [
         "El IBAN no es válido."
@@ -12708,6 +12699,17 @@
         "Elige un número"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Crear calendario"
@@ -12842,6 +12844,11 @@
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Validation": {
