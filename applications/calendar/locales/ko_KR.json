@@ -14,7 +14,7 @@
     },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -3773,12 +3773,6 @@
       "Interval cannot be empty": [
         "간격은 비어 있을 수 없습니다."
       ],
-      "Invalid ${ name } code": [
-        "유효하지 않은 ${ name } 코드"
-      ],
-      "Invalid card number": [
-        "유효하지 않은 카드 번호"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -3787,9 +3781,6 @@
       ],
       "Invalid email address": [
         "유효하지 않은 이메일 주소"
-      ],
-      "Invalid expiration date": [
-        "올바르지 않은 만료 기한"
       ],
       "Invalid IBAN": [
         "유효하지 않은 IBAN"
@@ -3874,9 +3865,6 @@
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ],
       "Number of occurrences cannot be empty": [
         "발생 횟수는 비워 둘 수 없습니다."
@@ -4645,7 +4633,7 @@
         "보안 키"
       ],
       "Touch your security key.": [
-        "귀하의 보안 키를 터치해 주세요."
+        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -5253,10 +5241,10 @@
         "취소 이메일이 삭제된 참가자들에게 전송됩니다."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "이벤트 참가자들에게 취소 이메일이 보내질 것입니다. 이 시리즈의 모든 이벤트를 삭제하시겠습니까?"
+        "이벤트 참가자들에게 취소 이메일이 발송됩니다. 이 시리즈의 모든 이벤트를 삭제하시겠습니까?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "이벤트 참가자들에게 취소 이메일이 발송될 것입니다. 이 이벤트를 삭제하시겠습니까?"
+        "이벤트 참가자들에게 취소 이메일이 발송됩니다. 이 이벤트를 삭제하시겠습니까?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
@@ -5706,7 +5694,7 @@
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -12051,7 +12039,7 @@
         "연락처 병합"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -12419,6 +12407,26 @@
         "수를 선택하세요"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "캘린더 생성"
@@ -12515,6 +12523,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ]
     },
     "tooltip": {
@@ -12653,7 +12664,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
