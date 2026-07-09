@@ -792,6 +792,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
       ]
     },
     "Activity": {
@@ -4106,6 +4112,33 @@
       ],
       "ZIP or Postal code": [
         "邮政编码"
+      ],
+      "Basic": [
+        "基本"
+      ],
+      "Check": [
+        "检查"
+      ],
+      "Exact host matching": [
+        "精确主机匹配"
+      ],
+      "Exact URL matching": [
+        "精确 URL 匹配"
+      ],
+      "Never fill on this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Parent domain and subdomains (default)": [
+        "父域名及子域名（默认）"
+      ],
+      "Regular expression": [
+        "正则表达式"
+      ],
+      "Starts with": [
+        "开头为"
+      ],
+      "URL wildcard pattern": [
+        "URL 通配符模式"
       ]
     },
     "Link": {
@@ -4133,6 +4166,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "您在此保险库中选择了 ${ semiboldText }。"
+      ],
+      "'Starts with' matching rule": [
+        "“开头为”匹配规则"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精确（子）域名匹配规则"
+      ],
+      "Exact URL matching rule": [
+        "精确 URL 匹配规则"
+      ],
+      "Never fill with this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Regular expression rule": [
+        "正则表达式规则"
+      ],
+      "Wildcard pattern matching rule": [
+        "通配符模式匹配规则"
       ]
     },
     "new_plans: feature": {
@@ -5130,6 +5181,18 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "调整自动填充行为以更改登录信息的建议位置。"
+      ],
+      "Learn more": [
+        "了解详情"
+      ],
+      "Test a URL against this rule": [
+        "针对此规则测试 URL"
+      ],
+      "URL matching": [
+        "URL 匹配"
       ]
     },
     "Title_cloned_item": {
@@ -5475,6 +5538,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "由于“${ neverModeDescriptionStrong }”，此项目无法被建议用于自动填充。如果您希望此项目自动填充，请添加其他 URL。"
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "输入要检查的 URL，查看当前规则是否匹配该 URL"
+      ],
+      "The rule is matching this URL": [
+        "该规则匹配此 URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "该规则不匹配此 URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "此 URL 将被阻止自动填充"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "此 URL 不会被阻止自动填充"
       ]
     }
   }
