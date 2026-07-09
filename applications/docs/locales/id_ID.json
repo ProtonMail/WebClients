@@ -4310,9 +4310,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } dipilih"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
@@ -10097,6 +10094,20 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Fingerprint": [
+        "Sidik jari"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Tipe"
       ]
     },
     "Today icon tooltip in mini calendar": {
