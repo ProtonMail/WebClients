@@ -1,4 +1,4 @@
-import type { DriveEvent, NodeEntity, NodeType } from '@protontech/drive-sdk';
+import type { DriveEvent, MaybeMissingNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
 
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -19,8 +19,8 @@ export type FetchLastEventIdForTreeScopeId = (
 export interface SdkDriveClient {
     getMyFilesRootFolder(): Promise<NodeEntity>;
     getNode(nodeUid: string): Promise<NodeEntity>;
-    iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<NodeEntity>;
-    iterateTrashedNodes(): AsyncIterable<NodeEntity>;
+    iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<string>;
+    iterateNodes(uids: string[]): AsyncIterable<MaybeMissingNode>;
 }
 
 /** Subset of ProtonDriveClient used by DriveSdkForSearchBridge. */
@@ -39,8 +39,8 @@ export interface EventIdStorage {
 export interface DriveSdkBridgeInterface {
     getMyFilesRootFolder(): Promise<NodeEntity>;
     getNode(nodeUid: string): Promise<NodeEntity>;
-    iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<NodeEntity[]>;
-    iterateTrashedNodes(): Promise<NodeEntity[]>;
+    iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<string[]>;
+    iterateNodes(uids: string[]): Promise<NodeEntity[]>;
 }
 
 // Bridge for operations that require main-thread APIs (e.g. ProtonDriveClient).
@@ -102,19 +102,23 @@ export class DriveSdkBridge {
         return this.driveClient.getNode(nodeUid);
     }
 
-    async iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }) {
-        Logger.info('MainThreadBridge: iterateFolderChildren');
-        const nodes: NodeEntity[] = [];
-        for await (const node of this.driveClient.iterateFolderChildren(parentNodeUid, filterOptions)) {
-            nodes.push(node);
+    async iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }) {
+        Logger.info('MainThreadBridge: iterateFolderChildrenNodeUids');
+        const uids: string[] = [];
+        for await (const uid of this.driveClient.iterateFolderChildrenNodeUids(parentNodeUid, filterOptions)) {
+            uids.push(uid);
         }
-        return nodes;
+        return uids;
     }
 
-    async iterateTrashedNodes() {
-        Logger.info('MainThreadBridge: iterateTrashedNodes');
+    async iterateNodes(uids: string[]) {
+        Logger.info('MainThreadBridge: iterateNodes');
         const nodes: NodeEntity[] = [];
-        for await (const node of this.driveClient.iterateTrashedNodes()) {
+        for await (const node of this.driveClient.iterateNodes(uids)) {
+            if ('missingUid' in node) {
+                Logger.warn(`MainThreadBridge: iterateNodes — node ${node.missingUid} not found, skipping`);
+                continue;
+            }
             nodes.push(node);
         }
         return nodes;

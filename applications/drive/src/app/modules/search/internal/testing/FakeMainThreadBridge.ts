@@ -64,14 +64,14 @@ export class FakeMainThreadBridge {
         this.fakeDriveClient.setChildren(parentUid, children);
     }
 
-    /** Set the list of trashed nodes returned by iterateTrashedNodes. */
-    setTrashedNodes(nodes: NodeEntity[]): void {
-        this.fakeDriveClient.setTrashedNodes(nodes);
+    /** Make iterateFolderChildrenNodeUids and iterateNodes throw the given error. */
+    setIterateError(error: Error): void {
+        this.fakeDriveClient.setIterateError(error);
     }
 
-    /** Make iterateFolderChildren throw the given error. */
-    setIterateFolderChildrenError(error: Error): void {
-        this.fakeDriveClient.setIterateFolderChildrenError(error);
+    /** Make the next children-iteration for a folder throw once, then succeed (transient failure). */
+    failNextIterateForFolder(folderUid: string, error: Error): void {
+        this.fakeDriveClient.failNextIterateForFolder(folderUid, error);
     }
 
     /** Push a tree event to a subscribed scope. */
