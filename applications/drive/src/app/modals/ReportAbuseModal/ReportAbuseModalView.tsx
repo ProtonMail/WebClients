@@ -177,7 +177,7 @@ const ReportAbuseModalViewContent = ({
                         />
                         <Label htmlFor="bona-fide" className="pt-0 flex-1 text-sm color-weak">
                             {c('Info')
-                                .t`I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.`}
+                                .t`I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.`}
                         </Label>
                     </div>
                     {bonaFideValidation && <p className="text-sm color-danger mt-1">{bonaFideValidation}</p>}
