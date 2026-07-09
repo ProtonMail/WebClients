@@ -19,9 +19,6 @@
     "devDependencies": {
         "@napi-rs/cli": "^3.4.0"
     },
-    "engines": {
-        "node": ">= 10"
-    },
     "napi": {
         "binaryName": "native",
         "targets": [
