@@ -1233,6 +1233,9 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
+      "Size": [
+        "Koko"
+      ],
       "Status": [
         "Tila"
       ],
@@ -4382,10 +4385,6 @@
         "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
         "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } valittu",
-        "${ selectedCount } valittu"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } kansio valittu",
         "${ selectedFoldersCountLocalized } kansiota valittu"
@@ -4798,8 +4797,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Auta meitä parantamaan käyttökokemusta ilmoittamalla ongelmasta. Jos voit jakaa taulukon sisällön, liitä ilmoitukseesi alla olevat vianmääritystiedot."
+      ],
       "here": [
         "tässä"
+      ],
+      "Hide table of contents": [
+        "Piilota sisällysluettelo"
       ],
       "High Priority": [
         "Korkea tärkeys"
@@ -5019,6 +5024,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Kansiota voivat käyttää vain ne, joilla on sen linkki ja salasana."
       ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Hups! Tätä taulukkoa ei voi tallentaa viimeisimpien muutosten kanssa, joten olemme keskeyttäneet muokkauksen, jotta työsi ei menisi hukkaan."
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Avaa opas ja tutustu suositeltuihin toimenpiteisiin ja hyödyllisiin linkkeihin."
       ],
@@ -5187,6 +5195,9 @@
       ],
       "Shared on": [
         "Jaettu"
+      ],
+      "Show table of contents": [
+        "Näytä sisällysluettelo"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
@@ -10269,6 +10280,26 @@
         "Paljastuneet tietosi"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Tänään"
@@ -10353,6 +10384,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
       ]
@@ -10385,6 +10419,11 @@
       ],
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     },
     "Validation": {

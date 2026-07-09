@@ -4202,9 +4202,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
-      "${ selectedCount } selected": [
-        "已選取 ${ selectedCount } 個"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
@@ -9766,6 +9763,14 @@
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
+      ]
+    },
+    "Title header for keys table": {
+      "Created": [
+        "已創建"
+      ],
+      "Expires": [
+        "到期日"
       ]
     },
     "Today icon tooltip in mini calendar": {

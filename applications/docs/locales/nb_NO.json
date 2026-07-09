@@ -90,9 +90,6 @@
       "Apply": [
         "Anvend"
       ],
-      "Ask me next time": [
-        "Spør meg neste gang"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
         "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
@@ -336,6 +333,9 @@
       "Download anyway": [
         "Last ned uansett"
       ],
+      "Download debug information": [
+        "Last ned feilsøkingsinformasjon"
+      ],
       "Download logs": [
         "Last ned logger"
       ],
@@ -378,11 +378,20 @@
       "Export contact group": [
         "Eksporter kontaktgruppe"
       ],
+      "Export editor state for version": [
+        "Eksporter redigeringsstatus for versjon"
+      ],
       "Export selection as .vcf": [
         "Eksporter utvalg som .vcf"
       ],
+      "Export this version (as docx)": [
+        "Eksporter denne versjonen (som docx)"
+      ],
       "Export this version (as xlsx)": [
         "Eksporter denne versjonen (som xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Eksporter YJS-status for versjon"
       ],
       "Forgot password?": [
         "Glemt passord?"
@@ -636,6 +645,9 @@
       "Reload": [
         "Last inn på nytt"
       ],
+      "Reload spreadsheet": [
+        "Last inn regneark på nytt"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -665,6 +677,9 @@
       ],
       "Report a problem": [
         "Rapporter et problem"
+      ],
+      "Report issue": [
+        "Rapporter problem"
       ],
       "Request a call": [
         "Be om en samtale"
@@ -704,9 +719,6 @@
       ],
       "Save changes": [
         "Lagre endringer"
-      ],
-      "Save preferences": [
-        "Lagre preferanser"
       ],
       "Search": [
         "Søk"
@@ -969,23 +981,23 @@
         "${ LUMO_APP_NAME } KI-lisens"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME }-lisenser"
+        "${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } KI-lisens",
         "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
+        "${ seats } ${ LUMO_APP_NAME } sete",
+        "${ seats } ${ LUMO_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME }-lisens",
-        "${ seats } ${ MEET_APP_NAME }-lisenser"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
+        "${ seats } skriveassistentsete",
+        "${ seats } skriveassistentseter"
       ],
       "${ users } user": [
         "${ users } bruker",
@@ -1007,7 +1019,7 @@
         "Skriveassistent"
       ],
       "Writing assistant seats": [
-        "Skriveassistentlisenser"
+        "Skriveassistentseter"
       ]
     },
     "Alert": {
@@ -1282,7 +1294,7 @@
         "Ikke aktivert"
       ],
       "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige lisenser"
+        "Organisasjonen har ikke nok ledige seter"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
@@ -3153,6 +3165,9 @@
       "Failed to remove older revisions": [
         "Fjerning av eldre revisjoner mislyktes"
       ],
+      "Failed to rename document": [
+        "Kunne ikke endre navn på dokumentet"
+      ],
       "Failed to rename document. Please try again later.": [
         "Kunne ikke endre navn på dokumentet. Prøv igjen senere."
       ],
@@ -3246,6 +3261,9 @@
       ],
       "No contacts found to import": [
         "Fant ingen kontakter å importere"
+      ],
+      "No drive found to import": [
+        "Ingen disker å importere funnet"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Fant ingen e-poster å importere - kontoen har ikke en innboks"
@@ -3475,6 +3493,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet feil, vi kan ikke importere kontaktene"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet feil, vi kan ikke importere filene"
       ],
       "Unknown error": [
         "Ukjent feil"
@@ -4472,10 +4493,6 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
         "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } valgt",
-        "${ selectedCount } valgt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappe valgt",
         "${ selectedFoldersCountLocalized } mapper valgt"
@@ -4674,9 +4691,6 @@
       "Continue": [
         "Fortsett"
       ],
-      "Converting document...": [
-        "Konverterer dokument..."
-      ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
@@ -4725,9 +4739,6 @@
       ],
       "Creating link to folder": [
         "Oppretter kobling til mappe"
-      ],
-      "Creating new document...": [
-        "Oppretter nytt dokument..."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -4831,12 +4842,6 @@
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Feil ved konvertering av dokument: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Feil ved lasting av dokument: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -4873,6 +4878,9 @@
       "File will not be updated": [
         "Filen blir ikke oppdatert"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
+      ],
       "finance": [
         "finans"
       ],
@@ -4903,17 +4911,17 @@
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Skaff deg en profesjonell e-post med @din-bedrift.com-adresse, 1 TB sikker lagringsplass per bruker, lengre videosamtaler og mer med ${ BRAND_NAME } Workspace."
       ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
-      ],
-      "Get Notified About Comments": [
-        "Bli varslet om kommentarer"
-      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Hvis du føler deg komfortabel med å dele regnearkinnhold, kan du legge ved feilsøkingsinformasjonen nedenfor i rapporten din."
+      ],
       "here": [
         "her"
+      ],
+      "Hide table of contents": [
+        "Skjul innholdsfortegnelse"
       ],
       "High Priority": [
         "Høy prioritet"
@@ -5060,9 +5068,6 @@
       "Low Priority": [
         "Lav prioritet"
       ],
-      "Making a copy...": [
-        "Lager en kopi…"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
@@ -5093,9 +5098,6 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Ingen dokument oppgitt i URL-en. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5138,6 +5140,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med koblingen og passordet har tilgang til denne mappen."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Beklager! Dette regnearket kan ikke lagre de nyeste redigeringene dine, så vi har satt redigeringen på pause for å hindre at du mister arbeidet ditt."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
@@ -5314,6 +5319,9 @@
       "Shared on": [
         "Delt den"
       ],
+      "Show table of contents": [
+        "Vis innholdsfortegnelse"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres på grunn av nettverksfeil, prøv igjen senere."
       ],
@@ -5389,9 +5397,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
       ],
       "There are no documents in the trash.": [
         "Det er ingen dokumenter i papirkurven."
@@ -6042,7 +6047,7 @@
         "Last ned uansett"
       ],
       "Drive": [
-        "Stasjon"
+        "Drive"
       ],
       "Duplicate found": [
         "Duplikat funnet"
@@ -6079,9 +6084,6 @@
       ],
       "Emails (last month)": [
         "E-poster (siste måned)"
-      ],
-      "Enable email notifications": [
-        "Aktiver e-postvarsler"
       ],
       "Encrypt emails": [
         "Krypter e-poster"
@@ -6136,9 +6138,6 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
-      ],
-      "Include document name in notification": [
-        "Inkluder dokumentnavn i varsel"
       ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
@@ -6331,6 +6330,9 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Unknown user": [
+        "Ukjent bruker"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -6603,11 +6605,11 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME }-tilganger"
+        "${ MEET_APP_NAME } seter"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME }-tilgang",
-        "${ seats } ${ MEET_APP_NAME }-tilganger"
+        "${ seats } ${ MEET_APP_NAME } sete",
+        "${ seats } ${ MEET_APP_NAME } seter"
       ]
     },
     "meet_2025: Feature": {
@@ -8044,6 +8046,9 @@
       "Failed to load invitation details": [
         "Kunne ikke laste inn invitasjonsdetaljer"
       ],
+      "Failed to load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
+      ],
       "Failed to reject share invitation": [
         "Kunne ikke avvise delingsinvitasjon"
       ],
@@ -9200,9 +9205,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Oppretter nytt regneark..."
-      ],
       "Detect automatically": [
         "Oppdag automatisk"
       ],
@@ -9960,6 +9962,9 @@
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Account recovery": [
         "Kontogjenoppretting"
       ],
@@ -10190,6 +10195,9 @@
       ],
       "Edit image": [
         "Rediger bilde"
+      ],
+      "Editing paused": [
+        "Redigering satt på pause"
       ],
       "Email addresses": [
         "E-postadresser"
@@ -10580,6 +10588,26 @@
         "Din eksponerte informasjon"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Expires": [
+        "Utløper"
+      ],
+      "Fingerprint": [
+        "Fingeravtrykk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
@@ -10664,6 +10692,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
       ],
+      "Version 6 OpenPGP key": [
+        "Versjon 6 OpenPGP-nøkkel"
+      ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitasjon til å få tilgang til elementet."
       ]
@@ -10696,6 +10727,11 @@
       ],
       "The user must have an address to request data access": [
         "Brukeren må ha en adresse for å be om datatilgang"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
       ]
     },
     "Validation": {
