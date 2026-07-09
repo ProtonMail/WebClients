@@ -247,10 +247,9 @@ describe('searchItems', () => {
 
     it.each([
         { key: 'no search', search: [''], expected: items },
-        /* All 5 items match on their note ("This is item N"), but `items[1]`
-         * ("Item 3") additionally matches "item" as a title prefix, so it
-         * ranks first; the rest tie and keep their original order. */
-        { key: 'note', search: ['this is item'], expected: [items[1], items[0], items[2], items[3], items[4]] },
+        /* All 5 items match on their note ("This is item N") and keep their
+         * incoming order since ranking is off by default (filter only) */
+        { key: 'note', search: ['this is item'], expected: [items[0], items[1], items[2], items[3], items[4]] },
         {
             key: 'login item',
             search: ['Login item', 'user1@example.com', 'user1', 'example.com', 'text label', 'text value'],
@@ -349,7 +348,7 @@ describe('searchItems ranking', () => {
                 },
                 extraFields: [],
             },
-        }) as ItemRevision;
+        }) as unknown as ItemRevision;
 
     const names = (items: ItemRevision[]) => items.map((item) => item.data.metadata.name);
 
@@ -360,7 +359,7 @@ describe('searchItems ranking', () => {
 
         /* feed them in the "wrong" order to prove ranking, not input order, decides.
          * `Protonmail` wins on its title; the two address matches tie and keep input order. */
-        const result = searchItems([spotify, netflix, protonmail], 'protonmail');
+        const result = searchItems([spotify, netflix, protonmail], 'protonmail', true);
         expect(names(result)).toEqual(['Protonmail', 'Spotify', 'Netflix']);
     });
 
@@ -370,7 +369,7 @@ describe('searchItems ranking', () => {
         const word = login('My Bank');
         const substring = login('Filbankt');
 
-        const result = searchItems([substring, word, prefix, exact], 'bank');
+        const result = searchItems([substring, word, prefix, exact], 'bank', true);
         expect(names(result)).toEqual(['Bank', 'Bank of America', 'My Bank', 'Filbankt']);
     });
 
@@ -378,8 +377,8 @@ describe('searchItems ranking', () => {
         const a = login('GitHub', { email: 'a@dev.com' });
         const b = login('GitLab', { email: 'b@dev.com' });
 
-        expect(names(searchItems([a, b], 'git'))).toEqual(['GitHub', 'GitLab']);
-        expect(names(searchItems([b, a], 'git'))).toEqual(['GitLab', 'GitHub']);
+        expect(names(searchItems([a, b], 'git', true))).toEqual(['GitHub', 'GitLab']);
+        expect(names(searchItems([b, a], 'git', true))).toEqual(['GitLab', 'GitHub']);
     });
 
     test('preserves incoming order for exact-title ties (active sort wins)', () => {
@@ -388,15 +387,15 @@ describe('searchItems ranking', () => {
 
         /* both are exact title matches (same score), so nothing reorders them:
          * they keep the incoming order, which is the user's active sort */
-        expect(searchItems([a, b], 'protonmail')).toEqual([a, b]);
-        expect(searchItems([b, a], 'protonmail')).toEqual([b, a]);
+        expect(searchItems([a, b], 'protonmail', true)).toEqual([a, b]);
+        expect(searchItems([b, a], 'protonmail', true)).toEqual([b, a]);
     });
 
     test('ranks login/username matches above url matches', () => {
         const username = login('Account A', { username: 'proton-user' });
         const url = login('Account B', { urls: ['https://proton.me'] });
 
-        expect(names(searchItems([url, username], 'proton'))).toEqual(['Account A', 'Account B']);
+        expect(names(searchItems([url, username], 'proton', true))).toEqual(['Account A', 'Account B']);
     });
 
     test('scores a word-boundary occurrence even when an earlier occurrence is mid-word', () => {
@@ -405,7 +404,7 @@ describe('searchItems ranking', () => {
         const substring = login('cartographer');
         const wordBoundary = login('smart art');
 
-        expect(names(searchItems([substring, wordBoundary], 'art'))).toEqual(['smart art', 'cartographer']);
+        expect(names(searchItems([substring, wordBoundary], 'art', true))).toEqual(['smart art', 'cartographer']);
     });
 
     test('ignores empty needles produced by repeated whitespace', () => {
@@ -421,7 +420,7 @@ describe('searchItems ranking', () => {
         const titleSubstring = login('Firstbank');
         const emailExact = login('Other', { email: 'bank' });
 
-        expect(names(searchItems([emailExact, titleSubstring], 'bank'))).toEqual(['Firstbank', 'Other']);
+        expect(names(searchItems([emailExact, titleSubstring], 'bank', true))).toEqual(['Firstbank', 'Other']);
     });
 
     test('match quality can break ties across the non-title tiers', () => {
@@ -431,12 +430,12 @@ describe('searchItems ranking', () => {
         // exact URL match (50*8) beats an email substring (100*1)
         const emailSubstring = login('Account A', { email: 'myproton@example.com' });
         const urlExact = login('Account B', { urls: ['proton'] });
-        expect(names(searchItems([emailSubstring, urlExact], 'proton'))).toEqual(['Account B', 'Account A']);
+        expect(names(searchItems([emailSubstring, urlExact], 'proton', true))).toEqual(['Account B', 'Account A']);
 
         // exact note (10*8) beats a URL substring (50*1)
         const urlSubstring = login('Account C', { urls: ['https://example.com/myhome'] });
         const noteExact = login('Account D', { note: 'home' });
-        expect(names(searchItems([urlSubstring, noteExact], 'home'))).toEqual(['Account D', 'Account C']);
+        expect(names(searchItems([urlSubstring, noteExact], 'home', true))).toEqual(['Account D', 'Account C']);
     });
 
     test('preserves incoming order when ranking is disabled (filter only)', () => {
