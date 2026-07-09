@@ -36,6 +36,7 @@
         "merge": "^2.1.1",
         "node-gyp": "^11.5.0",
         "playwright@npm:1.58.2": "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch",
+        "playwright@npm:1.61.1": "patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
         "terser": "^5.47.1",
