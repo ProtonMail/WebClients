@@ -110,6 +110,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Approve": [
+        "Genehmigen"
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Erweitern"
       ],
-      "Finish": [
-        "Beenden"
-      ],
       "Fit to window": [
         "An das Fenster anpassen"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Organisation"
+      ],
+      "Pause": [
+        "Pausieren"
       ],
       "Pay": [
         "Zahlen"
@@ -4454,12 +4457,6 @@
       "Incorrect username": [
         "Falscher Benutzername"
       ],
-      "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
-      ],
-      "Invalid card number": [
-        "Kartennummer ungültig"
-      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -4471,9 +4468,6 @@
       ],
       "Invalid email address": [
         "Ungültige E-Mail-Adresse"
-      ],
-      "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
@@ -4668,6 +4662,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rollenzuweisung konnte für ${ errors.length } Mitglied nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ errors.length } Mitglieder nicht abgeschlossen werden"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppe nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppen nicht abgeschlossen werden"
       ],
       "Server not found": [
         "Server nicht gefunden"
@@ -6337,6 +6339,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } Mitglied zur Gruppe hinzugefügt",
+        "${ emails.length } Mitglieder zur Gruppe hinzugefügt"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: Bild in voller Größe"
       ],
@@ -6403,9 +6409,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Das ${ PASS_SHORT_APP_NAME } Lifetime-Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung.",
-        "${ pendingAdminMemberCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf die Überprüfung."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf Überprüfung.",
+        "${ pendingAdminApprovalCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf Überprüfung."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -6813,11 +6819,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "In den ersten 6 Monaten kostet das Abonnement ${ monthlyDiscountedPrice }, danach ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "In den ersten 6 Monaten werden ${ monthlyDiscountedPriceElement } berechnet, danach verlängert es sich für ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "In den ersten 12 Monaten kostet das Abonnement ${ yearlyDiscountedPrice }, danach ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "In den ersten 12 Monaten werden ${ yearlyDiscountedPriceElement } berechnet, danach verlängert es sich für ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
@@ -7326,8 +7332,14 @@
       "Got it": [
         "Verstanden"
       ],
+      "Group created": [
+        "Gruppe erstellt"
+      ],
       "Group deleted": [
         "Gruppe gelöscht"
+      ],
+      "Group roles assigned": [
+        "Gruppenrollen zugewiesen"
       ],
       "Groups": [
         "Gruppen"
@@ -9193,6 +9205,9 @@
       "Group Owner": [
         "Gruppenbesitzer"
       ],
+      "Invited": [
+        "Eingeladen"
+      ],
       "Paused": [
         "Angehalten"
       ],
@@ -10542,20 +10557,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Live-Chat ist mit ${ planName } verfügbar"
-      ],
-      "Open support form": [
-        "Support-Formular öffnen"
-      ],
-      "Upgrade subscription": [
-        "Abonnement upgraden"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Upgraden, um Chat-Support und andere Premium-Funktionen freizuschalten, oder nutze unser kostenloses Support-Formular, um dein Problem zu melden."
       ]
     },
     "Loading info": {
@@ -14133,7 +14134,7 @@
       "Updated": [
         "Aktualisiert"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
       ]
     },
@@ -14930,13 +14931,13 @@
         "${ n } Benutzer von SSO entfernt.",
         "${ n } Benutzer von SSO entfernt."
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen. Überprüfe das Konto jetzt:",
-        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen. Überprüfe die Konten jetzt:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen",
+        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } Benutzer ist inaktiv. Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
-        "${ n } Benutzer sind inaktiv. Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
+      "${ n } user is inactive.": [
+        "${ n } Benutzer ist inaktiv.",
+        "${ n } Benutzer sind inaktiv."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
@@ -17795,6 +17796,9 @@
       "Group membership paused": [
         "Gruppenmitgliedschaft pausiert"
       ],
+      "Resuming role assignment": [
+        "Fortsetzung der Rollenzuweisung"
+      ],
       "Role assignment paused": [
         "Zuweisung von Rollen pausiert"
       ],
@@ -17804,11 +17808,14 @@
       "User declined invitation": [
         "Der Benutzer hat die Einladung abgelehnt"
       ],
-      "User is a group": [
-        "Benutzer ist eine Gruppe"
+      "User is a group owner": [
+        "Benutzer ist Eigentümer einer Gruppe"
       ],
       "via ${ groupNames }": [
         "über ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Auf die Administratoren-Genehmigung warten"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
@@ -17922,9 +17929,9 @@
       "Confirm all": [
         "Alle bestätigen"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, ,da seiner Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert wurde:",
-        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, da ihre Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert worden sind:"
+      "Could not enable admin access for ${ n } user": [
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden",
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden"
       ],
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
@@ -17953,6 +17960,10 @@
       "Request user permission for data access": [
         "Fordere die Benutzererlaubnis für den Datenzugriff an."
       ],
+      "Review their account now.": [
+        "Überprüfe sein Konto jetzt.",
+        "Überprüfe deren Konten jetzt."
+      ],
       "Revoke access": [
         "Zugriff entfernen"
       ],
@@ -17965,6 +17976,9 @@
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deren Verschlüsselungsschlüssel wurden aktualisiert, während wir Änderungen vorgenommen haben."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts abgebrochen."
       ],
@@ -17976,6 +17990,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Um fortzufahren, musst du die Erlaubnis des Benutzers anfordern, um auf seine Daten zuzugreifen oder sein Passwort zurückzusetzen."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
+        "Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
       ]
     },
     "Upsell": {
