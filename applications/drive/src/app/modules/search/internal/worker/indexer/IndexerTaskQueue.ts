@@ -46,6 +46,13 @@ export const DEFAULT_INDEXER_STATE: IndexerState = {
 // How often the indexer task queue reports indexing progress to the main thread.
 const PROGRESS_NOTIFY_THROTTLE_MS = 300;
 
+// Age after which a resumable BFS visitor checkpoint is considered abandoned and reaped at startup.
+// An actively-resuming walk refreshes its checkpoint's updatedAt on every commit, so it never ages
+// out; only markers whose triggering work will never resume (e.g. a folder deleted after a crash
+// mid-reindex) get this old. Generous by design, the visitor stale should be
+// managed by the task loop lifecycle, this is only a safeguard for DB leaks.
+const STALE_BFS_VISITOR_STATE_MS = 7 * 24 * 60 * 60 * 1000;
+
 export type IndexerStateListener = (state: IndexerState) => void;
 
 /**
@@ -103,6 +110,12 @@ export class IndexerTaskQueue {
         const isSearchable = await this.db.isSearchable();
         await this.updateState({ isSearchable });
 
+        // Reap abandoned resumable-walk checkpoints (never active ones - those keep their
+        // updatedAt fresh). Fire-and-forget: it must not block indexing startup.
+        this.db.deleteStaleBFSVisitorStates(STALE_BFS_VISITOR_STATE_MS).catch((error: unknown) => {
+            Logger.error('IndexerTaskQueue: failed to reap stale BFS visitor states', error);
+        });
+
         const { bootstrapTasks, postBootstrapTasks } = await this.createTasks();
         this.postBootstrapTasks = postBootstrapTasks;
         for (const task of bootstrapTasks) {
@@ -152,6 +165,11 @@ export class IndexerTaskQueue {
 
     private buildIndexPopulatorStatuses(): Promise<IndexPopulatorStatus[]> {
         return Promise.all([...this.populators.values()].map((p) => p.getStatus(this.db)));
+    }
+
+    private async areBootstrapPopulatorsDone(): Promise<boolean> {
+        const done = await Promise.all([...this.populators.values()].map((p) => p.isDone(this.db)));
+        return done.every(Boolean);
     }
 
     enqueue(task: BaseTask): void {
@@ -207,17 +225,18 @@ export class IndexerTaskQueue {
                     clearTimeout(this.progressNotifyTimeout);
                     this.progressNotifyTimeout = null;
                 }
-                // All boostrap tasks are done, indexing is done.
-                // On the first drain, the index becomes usable — persist and broadcast
-                // isSearchable atomically with isIndexing: false.
+                // Only announce searchable once the bootstrap populators are actually done:
+                // chunked commits mean a transient-retry gap can drain the queue with a partially
+                // committed index. After bootstrap, re-indexes keep the last complete index visible
+                // (entries upsert in place under a new generation), so we don't hide search during
+                // a re-index. Persist it so search stays interactive on the next reload before
+                // indexing runs again.
                 const isFirstDrain = !this.bootstrapDone;
-                if (isFirstDrain) {
+                const isSearchable = this.bootstrapDone || (await this.areBootstrapPopulatorsDone());
+                if (isSearchable) {
                     await this.db.markSearchableIndex();
                 }
-                await this.updateState({
-                    isIndexing: false,
-                    ...(isFirstDrain ? { isSearchable: true } : {}),
-                });
+                await this.updateState({ isIndexing: false, isSearchable });
 
                 if (isFirstDrain) {
                     this.bootstrapDone = true;

@@ -124,16 +124,17 @@ describe('NodeTreeIndexPopulator integration', () => {
 
         const pathOf = (entry: IndexEntry) => entry.attributes.find((a) => a.name === 'path')?.value;
 
-        // BFS order: root children first, then folder-a children, folder-b children, then deeper levels
+        // BFS order: root children first (sorted by UID), then folder-a children, etc.
+        // UIDs within each level are sorted alphabetically (deterministic for crash-resume).
         const ids = entries.map((e) => e.documentId);
         expect(ids).toEqual([
+            'file-root1',
             'folder-a',
             'folder-b',
-            'file-root1',
             'folder-empty',
             'file-a1',
-            'folder-a-nested',
             'file-a2',
+            'folder-a-nested',
             'file-b1',
             'file-a-deep',
             'folder-a-deep-nested',
@@ -222,7 +223,8 @@ describe('NodeTreeIndexPopulator integration', () => {
         const entries = await collectEntries(populator.visitAndProduceIndexEntries(ctx));
 
         expect(entries).toHaveLength(2);
-        expect(entries[0].documentId).toBe('file-ok');
-        expect(entries[1].documentId).toBe('bad-node');
+        // UIDs sorted alphabetically: bad-node < file-ok
+        expect(entries[0].documentId).toBe('bad-node');
+        expect(entries[1].documentId).toBe('file-ok');
     });
 });
