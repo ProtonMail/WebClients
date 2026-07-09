@@ -35,7 +35,6 @@ import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from 'lodash/debounce'
-import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
@@ -48,6 +47,7 @@ import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult 
 import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
 import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
 import { minutesToMs, secondsToMs } from './time-utils'
+import { getAccentColorForUsername } from './getAccentColorForUsername'
 
 // local state
 // -----------
@@ -298,15 +298,13 @@ function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastP
   })
 
   const usersWithCorrectColor = useMemo(() => {
-    return yjsState.users.map(
-      (user): Collaborator => ({
-        ...user,
-        style: {
-          strokeWidth: 2,
-          stroke: getAccentColorForUsername(user.title),
-        },
-      }),
-    )
+    return yjsState.users.map((user): Collaborator => ({
+      ...user,
+      style: {
+        strokeWidth: 2,
+        stroke: getAccentColorForUsername(user.title),
+      },
+    }))
   }, [yjsState.users])
 
   const kv = useMemo(() => yDoc.getMap<KVStateValue>('kv'), [yDoc])
@@ -456,8 +454,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
           }
           if ((key === 'cellXfs' || key === 'sharedStrings') && baseState[key]) {
             ;(baseState as any)[key] = Object.fromEntries(baseState[key].entries()) as unknown as
-              | CellXfs
-              | SharedStrings
+              CellXfs | SharedStrings
           }
         }
         pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
