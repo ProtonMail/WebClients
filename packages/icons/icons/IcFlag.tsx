@@ -18,7 +18,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcFlagFilled = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
+export const IcFlag = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
     return (
         <>
             <svg
@@ -32,6 +32,7 @@ export const IcFlagFilled = ({ alt, title, size = 4, className = '', viewBox = '
                 {title ? <title>{title}</title> : null}
 
                 <path
+                    fill="none"
                     fillRule="evenodd"
                     stroke="currentColor"
                     strokeLinecap="round"
