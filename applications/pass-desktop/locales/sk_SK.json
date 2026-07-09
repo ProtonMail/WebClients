@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Nezobrazovať znova po stlačení"
       ],
+      "Do not show this again": [
+        "Nabudúce nezobrazovať"
+      ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
+      ],
+      "Done": [
+        "Hotovo"
       ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
@@ -1222,6 +1228,12 @@
       "Failed to set default mailbox": [
         "Nastavenie predvolenej poštovej schránky zlyhalo"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa spustiť SSH agenta: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa zastaviť SSH agenta: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Nepodarilo sa synchronizovať aliasy"
       ],
@@ -1643,6 +1655,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky, platobné karty a identity."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } použije SSH kľúče uložené vo vašich trezoroch."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je povolený."
       ],
@@ -2030,6 +2045,9 @@
       "finance": [
         "financie"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Nájdite položku „OpenSSH Authentication Agent“ a kliknite na ňu pravým tlačidlom myši a vyberte možnosť „Vlastnosti“."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
       ],
@@ -2074,6 +2092,9 @@
       ],
       "Identity confirmed": [
         "Identita potvrdená"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Ak nemáte v pláne používať SSH agenta v inom platenom účte, nezabudnite toto nastavenie deaktivovať pred prechodom na tento účet."
       ],
       "Import the CSV file below.": [
         "Importovať CSV súbor nižšie."
@@ -2186,6 +2207,9 @@
       "Low Priority": [
         "Nízka priorita"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Uistite sa, že ${ PASS_APP_NAME } beží (môže byť minimalizovaná), aby agent SSH zostal aktívny. SSH kľúče s prístupovou frázou momentálne nie sú podporované."
+      ],
       "Manager": [
         "Správca"
       ],
@@ -2249,6 +2273,9 @@
       "No network connection": [
         "Žiadne sieťové pripojenie"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "V ${ PASS_SHORT_APP_NAME } neboli nájdené žiadne SSH kľúče. Vytvorte položky SSH kľúčov na použitie s agentom."
+      ],
       "No vaults available.": [
         "Nie sú k dispozícii žiadne trezory."
       ],
@@ -2272,6 +2299,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Zobrazujú sa len tokeny, ktorých platnosť uplynula v posledných 30 dňoch. Staršie tokeny sa automaticky mažú."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Otvorte okno „Služby“ (môžete použiť vyhľadávacie pole systému Windows alebo stlačiť klávesovú skratku Win+R a zadať services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Otvorte nastavenia rozšírenia v prehliadači Safari a skontrolujte, či sú povolenia pre domény ${ BRAND_NAME } povolené."
@@ -2299,6 +2329,9 @@
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždne sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie."
+      ],
+      "Paste the following command in your terminal:": [
+        "Vložte do terminálu nasledujúci príkaz:"
       ],
       "Paused": [
         "Pozastavené"
@@ -2528,6 +2561,9 @@
       "Session timed out": [
         "Relácia vypršala"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Nastavte „Typ spustenia“ na „Vypnuté“ a kliknite na OK."
+      ],
       "Set by your organization": [
         "Nastavené vašou organizáciou"
       ],
@@ -2672,6 +2708,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu ${ BRAND_NAME } účtu."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tip: pridajte to do súboru .bashrc alebo .zshrc, aby sa to spustilo automaticky pri otvorení terminálu."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Ak chcete aj naďalej dostávať emaily, presuňte tieto aliasy do inej poštovej schránky:"
       ],
@@ -2686,6 +2725,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Na nastavenie odomykania pomocou biometrických údajov vyžaduje ${ PASS_APP_NAME } nové povolenie prehliadača. Po ich udelení sa rozšírenie znovu načíta. Následne znovu otvorte túto stránku, prosím."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Aby bolo možné používať ${ PASS_APP_NAME } SSH agenta v systéme Windows, je potrebné deaktivovať službu OpenSSH."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Má dôveru viac ako 50 000 firemných používateľov a 100 miliónov účtov na celom svete."
@@ -3113,6 +3155,9 @@
       ],
       "Address details": [
         "Detaily adresy"
+      ],
+      "Advanced": [
+        "Pokročilé"
       ],
       "Alias": [
         "Alias"
@@ -4113,6 +4158,9 @@
       "Update": [
         "Aktualizovať"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Použiť ${ PASS_APP_NAME } ako SSH agenta"
+      ],
       "Use for AI agent": [
         "Použiť pre AI agenta"
       ],
@@ -4708,6 +4756,12 @@
       "Random prefix generation successfully enabled": [
         "Generovanie náhodnej predpony bolo úspešne povolené"
       ],
+      "SSH agent successfully started": [
+        "SSH agent bol úspešne spustený"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent bol úspešne zastavený"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľa.",
         "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
@@ -5126,6 +5180,9 @@
       "Review and share": [
         "Skontrolovať a zdieľať"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Snímka obrazovky služby OpenSSH v systéme Windows"
+      ],
       "Secure your data": [
         "Zabezpečte svoje údaje"
       ],
@@ -5147,6 +5204,9 @@
       "Settings": [
         "Nastavenia"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Nastaviť SSH agenta pre ${ PASS_APP_NAME }"
+      ],
       "Setup offline mode": [
         "Nastavenie offline režimu"
       ],
@@ -5164,6 +5224,9 @@
       ],
       "SPF (Optional)": [
         "SPF (nepovinné)"
+      ],
+      "SSH Agent": [
+        "SSH Agent"
       ],
       "Status": [
         "Stav"
@@ -5523,6 +5586,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Pri spúšťaní ${ PASS_APP_NAME } sa niečo pokazilo. Skúste, prosím, obnoviť alebo znova načítať rozšírenie."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent vyžaduje použitie SSH kľúčov, čo vo vašom pláne nie je k dispozícii."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Predpona aliasu nemôže byť dlhšia ako 40 znakov"

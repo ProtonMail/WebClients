@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Vis ikke igen, når jeg trykker"
       ],
+      "Do not show this again": [
+        "Vis ikke dette igen"
+      ],
       "Don't show this again": [
         "Vis ikke igen"
+      ],
+      "Done": [
+        "Udført"
       ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
@@ -1212,6 +1218,12 @@
       "Failed to set default mailbox": [
         "Kunne ikke indstille standardpostkasse"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Kunne ikke starte SSH-agenten: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Kunne ikke stoppe SSH-agenten: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Kunne ikke synkronisere aliasser"
       ],
@@ -1607,6 +1619,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil kun importere indlogninger, noter, betalingskort og identiteter."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } bruger SSH-nøglerne, der er opbevaret i dine bokse."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tilstand er aktiveret."
       ],
@@ -1986,6 +2001,9 @@
       "finance": [
         "finans"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Find \"OpenSSH Authentication Agent\", og højre-klik Egenskaber."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Følg de trin for at importere dine data med en generisk CSV:"
       ],
@@ -2026,6 +2044,9 @@
       ],
       "Identity confirmed": [
         "Identitet bekræftet"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Hvis du ikke har planer om at bruge SSH-agenten på en anden betalt konto, så husk at deaktivere denne indstilling før du skifter til den konto."
       ],
       "Import the CSV file below.": [
         "Importér CSV-filen nedenfor."
@@ -2136,6 +2157,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Sørg for at holde ${ PASS_APP_NAME } kørende (den kan minimeres) så at SSH-agenten kan forblive aktiv. SSH-nøgler med adgangssætning understøttes i øjeblikket ikke."
+      ],
       "Manager": [
         "Leder"
       ],
@@ -2197,6 +2221,9 @@
       "No network connection": [
         "Ingen internetforbindelse"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ingen SSH-nøgler fundet i ${ PASS_SHORT_APP_NAME }. Opret SSH-nøgleelementer til at bruge med agenten."
+      ],
       "No vaults available.": [
         "Ingen tilgængelige bokse."
       ],
@@ -2220,6 +2247,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Kun tokens som udløb i de seneste 30 dage er vist. Ældre tokens slettes automatisk."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Åbn \"Tjenester\" (du kan bruge søgelinjen i Windows eller trykke Win+R og indtaste services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Åbn dine Safari-indstillinger for udvidelsen, og bekræft, at webstedstilladelser er aktiveret for ${ BRAND_NAME }-domæner"
@@ -2245,6 +2275,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge slettes automatisk fra historikken.",
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger slettes automatisk fra historikken."
+      ],
+      "Paste the following command in your terminal:": [
+        "Indsæt den følgende kommando i din terminal:"
       ],
       "Paused": [
         "Sat på pause"
@@ -2474,6 +2507,9 @@
       "Session timed out": [
         "Session er udløbet"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Sæt \"Startup type\" til Disabled, og klik OK."
+      ],
       "Set by your organization": [
         "Indstillet af din organisation"
       ],
@@ -2616,6 +2652,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil afvise enheden **${ name }**, der forsøgte at logge ind på din ${ BRAND_NAME }-konto den **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tip: tilføj det til din .bashrc eller .zshrc fil, så den kører automatisk når du åbner terminalen."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
       ],
@@ -2630,6 +2669,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "${ PASS_APP_NAME } kræver en ny browsertilladelse for at aktivere adgang med biometri. Efter du har accepteret den genindlæser browserudvidelsen. Åbn denne side igen bagefter."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "For at bruge ${ PASS_APP_NAME } SSH-agenten på Windows skal OpenSSH-tjenesten deaktiveres."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betroet af over 50.000 erhvervsbrugere og 100 millioner konti over hele verden."
@@ -3021,6 +3063,9 @@
       ],
       "Address details": [
         "Adresseoplysninger"
+      ],
+      "Advanced": [
+        "Avanceret"
       ],
       "Alias": [
         "Alias"
@@ -4021,6 +4066,9 @@
       "Update": [
         "Opdatér"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Brug ${ PASS_APP_NAME } som SSH-agent"
+      ],
       "Use for AI agent": [
         "Brug til en AI-agent"
       ],
@@ -4608,6 +4656,12 @@
       "Random prefix generation successfully enabled": [
         "Tilfældig præfiksgenerering aktiveret"
       ],
+      "SSH agent successfully started": [
+        "SSH-agent startet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agent stoppet"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Bokse kan ikke indeholder mere end ${ targetMaxMembers } bruger.",
         "Bokse kan ikke indeholder mere end ${ targetMaxMembers } brugere."
@@ -5014,6 +5068,9 @@
       "Review and share": [
         "Gennemgå og del"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Skærmbillede af OpenSSH-tjenesten på Windows"
+      ],
       "Secure your data": [
         "Beskyt dine data"
       ],
@@ -5035,6 +5092,9 @@
       "Settings": [
         "Indstillinger"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Konfigurer ${ PASS_APP_NAME } SSH-agent"
+      ],
       "Setup offline mode": [
         "Konfigurer offline-tilstand"
       ],
@@ -5052,6 +5112,9 @@
       ],
       "SPF (Optional)": [
         "SPF (Valgfri)"
+      ],
+      "SSH Agent": [
+        "SSH-agent"
       ],
       "Status": [
         "Status"
@@ -5401,6 +5464,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Noget gik galt under opstarten af ${ PASS_APP_NAME }. Prøv at genopfriske eller genindlæse udvidelsen"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agenten kræver at man bruger SSH-nøgler, hvilket ikke er tilgængeligt i dit nuværende abonnement."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-præfikset må højest være 40 tegn langt."
