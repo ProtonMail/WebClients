@@ -1324,6 +1324,9 @@
       ],
       "Re-indexing in progress": [
         "Reindexare în derulare"
+      ],
+      "Skip": [
+        "Omitere"
       ]
     },
     "Action: Docs": {
@@ -7522,6 +7525,22 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Fișierele sunt reindexate. Puteți căuta, dar rezultatele s-ar putea să fie incomplete până la finalizarea indexării. Vă vom anunța când s-a finalizat."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Do you still want to upload it?": [
+        "Încă doriți să-l încărcați?",
+        "Încă doriți să le încărcați?",
+        "Încă doriți să le încărcați?"
+      ],
+      "This file appears to be empty:": [
+        "Acest fișier pare să fie gol:",
+        "Aceste fișiere par să fie goale:",
+        "Aceste fișiere par să fie goale:"
+      ],
+      "Uploaded - file is empty": [
+        "S-a încărcat - fișierul este gol"
       ]
     },
     "info": {
@@ -8402,6 +8421,27 @@
       ],
       "Indexing": [
         "Se indexează"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
+      ],
+      "Starts with": [
+        "Începe cu"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ]
     },
     "Label for contact group color": {
@@ -8741,6 +8781,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ]
     },
     "Message display when a new app version is available": {
@@ -14178,6 +14236,9 @@
       ],
       "We'd love to hear from you!": [
         "Ne-ar plăcea să avem vești de la tine!"
+      ],
+      "Upload empty file?": [
+        "Încărcați fișier gol?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14524,6 +14585,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ]
     },
     "Provider option": {
