@@ -21,6 +21,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -28,6 +29,7 @@ import ExploreAppsListV2, {
     getExploreApps,
     getForbiddenAppConfigs,
 } from '../components/ExploreAppsListV2/ExploreAppsListV2';
+import { useExploreAppsListTelemetry } from '../components/ExploreAppsListV2/exploreAppsListTelemetry';
 import Layout from './Layout';
 import PublicUserItem from './PublicUserItem';
 
@@ -130,6 +132,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
     const subscribed = User.Subscribed;
+    const { sendAppClick } = useExploreAppsListTelemetry();
 
     const forbiddenApps = getForbiddenApps(User);
 
@@ -142,6 +145,22 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
         isMeetAvailable,
         isAuthenticatorAvailable,
     }).concat(getForbiddenAppConfigs({ user: User, forbiddenApps }));
+
+    const goToAccountSettings = (source: 'settings' | 'settings-menu') => async () => {
+        sendAppClick({
+            appName: APPS.PROTONACCOUNT,
+            openMethod: source,
+        });
+        await wait(50); // This ensures the telemetry event has time to be initiated and sent before the page redirects
+
+        await onLogin({
+            ...session,
+            appIntent: {
+                app: APPS.PROTONACCOUNT,
+                ref: 'product-switch',
+            },
+        });
+    };
 
     return (
         <Layout
@@ -161,6 +180,13 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                         >
                             <IcPlus />
                             {c('Action').t`Switch or add account`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            className="flex flex-nowrap items-center gap-2 text-left"
+                            onClick={goToAccountSettings('settings-menu')}
+                        >
+                            <IcCogWheel className="shrink-0" />
+                            {c('Action').t`Account settings`}
                         </DropdownMenuButton>
                     </DropdownMenu>
                 </SimpleDropdown>
@@ -210,15 +236,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             '--button-default-border-color': 'color-mix(in srgb, var(--primary) 28%, transparent)',
                             '--button-default-background-color': 'transparent',
                         }}
-                        onClick={async () => {
-                            await onLogin({
-                                ...session,
-                                appIntent: {
-                                    app: APPS.PROTONACCOUNT,
-                                    ref: 'product-switch',
-                                },
-                            });
-                        }}
+                        onClick={goToAccountSettings('settings')}
                     >
                         <IcCogWheel className="shrink-0" />
                         {c('Action').t`Settings`}
