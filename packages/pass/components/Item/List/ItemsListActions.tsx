@@ -45,7 +45,7 @@ export const ItemsListActions = () => {
                 {!bulkEnabled && (
                     <>
                         <TypeFilter items={items.searched} value={filters.type} onChange={onChangeTypeFilter} />
-                        <SortFilter value={filters.sort} onChange={onChangeSortFilter} />
+                        <SortFilter value={filters.sort} onChange={onChangeSortFilter} hasSearch={Boolean(filters.search)} />
                     </>
                 )}
                 {bulkEnabled && <BulkActions disabled={disabled} />}
