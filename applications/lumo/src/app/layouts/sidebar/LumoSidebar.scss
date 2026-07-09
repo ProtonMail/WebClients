@@ -99,24 +99,52 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-// Scrollable main content area — fills all space between the fixed top/bottom sections.
-.sidebar-main-content {
+// Scrollable main content — uses @proton/atoms Scroll for overflow edge borders.
+.sidebar-main-scroll {
 	flex: 1 1 0;
 	min-block-size: 0;
 	min-inline-size: 0;
-	overflow: hidden auto;
-	-webkit-overflow-scrolling: touch;
-	overscroll-behavior: contain;
-	touch-action: pan-y;
-	gap: 8px;
 
-	// Prevent flex children from shrinking — they should overflow and scroll the parent.
-	> * {
-		flex-shrink: 0;
+	&.scroll-outer-vertical {
+		block-size: auto;
+	}
+
+	.scroll-inner {
+		-webkit-overflow-scrolling: touch;
+		touch-action: pan-y;
+	}
+
+	.scroll-child {
+		display: flex;
+		flex-direction: column;
+		gap: #{rem(8)};
+
+		> * {
+			flex-shrink: 0;
+		}
+	}
+
+	// Replace default gradient shadows with Figma-style divider lines.
+	.scroll-start-shadow,
+	.scroll-end-shadow {
+		z-index: 2;
+		block-size: #{rem(1)};
+		background: var(--border-weak);
+		transition: opacity 0.15s ease;
+	}
+
+	.scroll-start-shadow {
+		background: var(--border-weak);
+	}
+
+	.scroll-end-shadow {
+		background: var(--border-weak);
 	}
 
 	@include im.media('<=small') {
-		gap: 0;
+		.scroll-child {
+			gap: 0;
+		}
 	}
 }
 
@@ -126,7 +154,6 @@ im.$media-expressions: $media-expressions;
 
 	&.sidebar-bottom {
 		flex-shrink: 0;
-		padding-block-start: #{rem(12)};
 	}
 }
 
