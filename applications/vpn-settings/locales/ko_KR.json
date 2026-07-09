@@ -1324,6 +1324,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "Add-on": [
+        "애드온"
       ]
     },
     "Address action": {
@@ -4605,6 +4608,12 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "${ errors.length }명 구성원에 대한 규칙 할당을 완료할 수 없습니다."
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "${ failedGroupCount }개 그룹에 대한 규칙 할당을 완료할 수 없습니다."
       ]
     },
     "error": {
@@ -5184,6 +5193,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
+      ],
+      "3 email domains": [
+        "3개 이메일 도메인"
       ]
     },
     "Features": {
@@ -8550,6 +8562,18 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length }명 구성원이 그룹에 추가되었습니다."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount }명의 새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
+      ],
+      "Synced from identity provider": [
+        "신원 제공자로부터 동기화됨"
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "${ pausedCount }개 그룹에 대한 작업이 중단되었습니다. 규칙 할당을 다시 시작하려면 클릭하여 계속합니다."
       ]
     },
     "info": {
@@ -14200,6 +14224,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO 구성 또한 삭제됩니다."
+      ],
+      "${ n } user is inactive.": [
+        "${ n }명의 사용자가 비활성 상태입니다."
       ]
     },
     "sso: auth device state": {
@@ -16643,6 +16670,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "사용자의 초대 수락 대기 중"
+      ],
+      "Resuming role assignment": [
+        "규칙 할당 다시 시작"
       ]
     },
     "Tor out of date": {
@@ -16797,6 +16827,15 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "계속하려면 데이터 접근을 하거나 비밀번호 재설정을 위해 사용자 권한 요청이 필요합니다."
+      ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n }명 사용자에 대한 관리자 접근 권한 활성화를 할 수 없음"
+      ],
+      "Review their account now.": [
+        "해당 계정들의 검토를 진행하세요."
+      ],
+      "You can safely remove this user from your organization.": [
+        "사용자의 조직에서 해당 사용자를 안전하게 제거할 수 있습니다."
       ]
     },
     "Upsell": {
@@ -17246,6 +17285,16 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "인증을 성공하면, TXT 레코드를 삭제하지 마십시오. 등록된 도메인을 계속 소유하고 있는지에 대한 확인이 필요합니다."
+      ]
+    },
+    "Admin roles onboarding": {
+      "New: Control admin access for individual users": [
+        "신규: 개별 사용자에 대한 관리자 접근 권한 제어하기"
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... 대기 중"
       ]
     }
   }
