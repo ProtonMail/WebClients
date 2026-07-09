@@ -78,3 +78,12 @@ export interface JoinStats extends Record<string, unknown> {
     networkRtt?: number;
     networkDownlink?: number;
 }
+
+export interface RecordingStats extends Record<string, unknown> {
+    roomId: string;
+    identity: string;
+    recordingDuration: number;
+    recordingSize: number;
+    recordingExtension: string;
+    recordingMimeType: string;
+}
