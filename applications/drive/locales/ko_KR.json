@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -89,6 +89,9 @@
       ],
       "Add photos": [
         "사진 추가"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "\"${ name }\"에 추가 (${ photoCount }개 사진)"
       ],
       "Add to album": [
         "앨범에 추가하기"
@@ -519,6 +522,9 @@
       "Go back": [
         "뒤로 가기"
       ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "앨범 \"${ ellipsedAlbumName }\"(으)로 돌아가기"
+      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 이동"
       ],
@@ -834,6 +840,9 @@
       "Report a problem": [
         "문제 신고"
       ],
+      "Report abuse": [
+        "악용 사례 신고"
+      ],
       "Report an issue": [
         "문제 보고하기"
       ],
@@ -1014,6 +1023,9 @@
       "Sign up": [
         "회원가입"
       ],
+      "Skip": [
+        "건너뛰기"
+      ],
       "Skip verification": [
         "인증 건너뛰기"
       ],
@@ -1109,6 +1121,9 @@
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
+      ],
+      "Upload anyway": [
+        "무시하고 업로드"
       ],
       "Upload file": [
         "파일 업로드"
@@ -3313,6 +3328,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length }개 항목 이동 실패"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
@@ -3547,12 +3565,6 @@
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
-      "Invalid ${ name } code": [
-        "유효하지 않은 ${ name } 코드"
-      ],
-      "Invalid card number": [
-        "유효하지 않은 카드 번호"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -3561,9 +3573,6 @@
       ],
       "Invalid email address": [
         "유효하지 않은 이메일 주소"
-      ],
-      "Invalid expiration date": [
-        "올바르지 않은 만료 기한"
       ],
       "Invalid IBAN": [
         "유효하지 않은 IBAN"
@@ -3627,9 +3636,6 @@
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
@@ -4380,7 +4386,7 @@
         "보안 키"
       ],
       "Touch your security key.": [
-        "귀하의 보안 키를 터치해 주세요."
+        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -4844,6 +4850,9 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName }이(가) 성공적으로 삭제되었습니다"
       ],
+      "${ albums } album": [
+        "${ albums }개 앨범"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
@@ -4901,6 +4910,12 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
       ],
+      "${ files } file": [
+        "${ files }개 파일"
+      ],
+      "${ folders } folder": [
+        "${ folders }개 폴더"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
@@ -4927,6 +4942,9 @@
       ],
       "${ photoCount } item": [
         "${ photoCount }개 항목"
+      ],
+      "${ photos } photo": [
+        "${ photos }개 사진"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
@@ -5538,7 +5556,7 @@
         "만약 이들 중 하나를 가지고 있다면, ${ BRAND_NAME } 계정 설정에서 차단 해제 절차를 계속하세요."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -5956,6 +5974,9 @@
       ],
       "Preparing": [
         "준비 중"
+      ],
+      "Preparing…": [
+        "준비 중…"
       ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
@@ -6461,6 +6482,9 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "다수의 사진을 드라이브에 저장하지 못했습니다"
+      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -6472,6 +6496,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
+      ],
+      "We were not able to add this photo to your album": [
+        "이 사진을 앨범에 추가하지 못했습니다"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
@@ -7176,9 +7203,6 @@
       ],
       "Index kinds": [
         "색인 종류"
-      ],
-      "Initial indexing": [
-        "색인 구성 중"
       ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
@@ -9020,17 +9044,26 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\"의 이름을 성공적으로 변경하였습니다"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length }개 사진이 \"${ albumName }\"에 추가되었습니다."
+      ],
       "${ count } item failed to be decrypted": [
         "${ count }개 암호화 해독 실패"
       ],
       "${ errors.length } item failed to be copied": [
         "${ errors.length }개 항목을 복사할 수 없습니다"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length }개 항목 삭제 실패"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length }개 항목을 휴지통으로 이동할 수 없습니다"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems }개의 복사된 항목이 휴지통으로 이동되었습니다"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems }개 항목 복사됨"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }개 항목 삭제됨"
@@ -9053,6 +9086,9 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems }개를 휴지통에서 복구하는 데 실패했습니다"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems }개 항목 이동"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems }개가 휴지통으로 이동되었습니다"
       ],
@@ -9067,6 +9103,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason }이(가) 활성화 되었습니다."
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed }개 사진이 \"${ albumName }\" 앨범에서 제거되었습니다."
       ],
       "Access for the member removed": [
         "이 구성원의 접근이 삭제되었습니다."
@@ -11725,7 +11764,7 @@
         "${ feature }이(가) 이제 활성 상태입니다"
       ],
       "${ freeUploadLength } of free uploads.": [
-        "${ freeUploadLength }개의 무료 업로드."
+        "${ freeUploadLength }간의 무료 업로드 시간."
       ],
       "Account recovery": [
         "계정 복구"
@@ -12202,7 +12241,7 @@
         "메시지"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -12685,6 +12724,26 @@
         "5GB의 저장공간을 얻으셨습니다"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
@@ -12780,6 +12839,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
@@ -12926,7 +12988,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

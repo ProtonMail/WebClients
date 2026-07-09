@@ -779,6 +779,9 @@
       "Re-index": [
         "Reindexar"
       ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
+      ],
       "Re-sign": [
         "Volver a firmar"
       ],
@@ -853,6 +856,9 @@
       ],
       "Report a problem": [
         "Notificar un problema"
+      ],
+      "Report abuse": [
+        "Denunciar abuso"
       ],
       "Report an issue": [
         "Notificar un problema"
@@ -1040,6 +1046,9 @@
       "Sign up": [
         "Registrarte"
       ],
+      "Skip": [
+        "Omitir"
+      ],
       "Skip verification": [
         "Omitir verificación"
       ],
@@ -1138,6 +1147,9 @@
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"
+      ],
+      "Upload anyway": [
+        "Cargar de todos modos"
       ],
       "Upload file": [
         "Cargar archivo"
@@ -3659,12 +3671,6 @@
       "Incorrect username": [
         "El nombre de usuario no es correcto."
       ],
-      "Invalid ${ name } code": [
-        "Código de ${ name } no válido"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta no válido"
-      ],
       "Invalid code": [
         "Código no válido"
       ],
@@ -3673,9 +3679,6 @@
       ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
-      ],
-      "Invalid expiration date": [
-        "Fecha de expiración no válida"
       ],
       "Invalid IBAN": [
         "El IBAN no es válido."
@@ -4979,6 +4982,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } se ha eliminado."
       ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbumes"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
@@ -5048,6 +5055,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista previa de baja resolución"
       ],
+      "${ files } file": [
+        "${ files } archivo",
+        "${ files } archivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetas"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
@@ -5077,6 +5092,10 @@
       "${ photoCount } item": [
         "${ photoCount } elemento",
         "${ photoCount } elementos"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -5694,6 +5713,9 @@
       "How does encrypted search work?": [
         "¿Cómo funciona la búsqueda cifrada?"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Por la presente confirmo que, de buena fe, la información y las declaraciones contenidas en el informe son correctas y completas."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Si esos archivos no están completamente descargados localmente en ${ deviceName }, no podrás acceder a ellos."
       ],
@@ -5760,6 +5782,18 @@
       ],
       "Index is empty.": [
         "El índice está vacío."
+      ],
+      "Indexed ${ first }": [
+        "Indexado ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexados ${ first } y ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexados ${ first }, ${ second } y ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexados ${ first }, ${ second }, ${ third } y ${ fourth }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
         "La indexación ha entrado en un estado inesperado y no puede continuar. Reconstruye el índice para solucionarlo."
@@ -6154,6 +6188,12 @@
       "Preparing": [
         "Preparando"
       ],
+      "Preparing download": [
+        "Preparando la descarga"
+      ],
+      "Preparing…": [
+        "Preparando…"
+      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -6189,6 +6229,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "La compartición pública de documentos aún no está disponible."
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
       ],
       "Ready to add some photos?": [
         "¿Listo para añadir algunas imágenes?"
@@ -6914,6 +6957,9 @@
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Tus archivos se están reindexando. Puedes seguir buscando; los resultados pueden estar incompletos hasta que termine. Te avisaremos cuando haya terminado."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Tus archivos ya no son accesibles debido a un restablecimiento de la contraseña. Vuelve a cargar la antigua clave de cifrado para recuperar el acceso. ${ KeyReactivationButton }"
       ],
@@ -7450,9 +7496,6 @@
       ],
       "Index kinds": [
         "Tipos de índice"
-      ],
-      "Initial indexing": [
-        "Indexación inicial"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -13262,6 +13305,17 @@
         "Has obtenido 5 GB de almacenamiento."
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
@@ -13400,6 +13454,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Obtén Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Validation": {

@@ -782,6 +782,9 @@
       "Re-index": [
         "Tornar a indexar"
       ],
+      "Re-indexing in progress": [
+        "La reindexació està en curs"
+      ],
       "Re-sign": [
         "Tornar a signar"
       ],
@@ -1046,6 +1049,9 @@
       "Sign up": [
         "Crea un compte"
       ],
+      "Skip": [
+        "Omet"
+      ],
       "Skip verification": [
         "Omet la verificació"
       ],
@@ -1144,6 +1150,9 @@
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
+      ],
+      "Upload anyway": [
+        "Carrega de totes maneres"
       ],
       "Upload file": [
         "Puja un fitxer"
@@ -3665,12 +3674,6 @@
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
-      "Invalid ${ name } code": [
-        "Codi ${ name } no vàlid"
-      ],
-      "Invalid card number": [
-        "Número de targeta no vàlid"
-      ],
       "Invalid code": [
         "Codi invàlid"
       ],
@@ -3679,9 +3682,6 @@
       ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
-      ],
-      "Invalid expiration date": [
-        "Data de caducitat invàlida"
       ],
       "Invalid IBAN": [
         "L'IBAN no és vàlid."
@@ -3749,9 +3749,6 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -5256,6 +5253,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
+      "Album": [
+        "Àlbum"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
         "Tot (${ totalFoldersCount } carpetes)"
@@ -5525,6 +5525,10 @@
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Recordeu la vostra contrasenya? ${ verifyButton }"
+      ],
+      "Do you still want to upload it?": [
+        "Encara voleu carregar-lo?",
+        "Encara voleu carregar-los?"
       ],
       "Done": [
         "Fet"
@@ -6245,6 +6249,9 @@
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
+      "Re-indexing in progress": [
+        "La reindexació està en curs"
+      ],
       "Ready to add some photos?": [
         "Preparat per a afegir algunes fotos?"
       ],
@@ -6498,6 +6505,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Això no es pot desfer. Introduïu el nom del dispositiu per confirmar l'eliminació."
       ],
+      "This file appears to be empty:": [
+        "Sembla que aquest fitxer és buit:",
+        "Sembla que aquests fitxers són buits:"
+      ],
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
@@ -6684,6 +6695,9 @@
       ],
       "Uploaded": [
         "Carregat"
+      ],
+      "Uploaded - file is empty": [
+        "S'ha carregat - el fitxer és buit"
       ],
       "Uploading": [
         "S'està pujant"
@@ -6968,6 +6982,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Els vostres fitxers s'estan reindexant. Podeu continuar cercant però els resultats podrien ser incomplets mentre no acabi. Us farem saber quan hagi finalitzat."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Els vostres arxius ja no són accessibles a causa d'un restabliment de contrasenya. Torneu a carregar la clau de xifratge antiga per recuperar-ne l'accés. ${ KeyReactivationButton }"
@@ -7425,6 +7442,12 @@
       "Environment compatible": [
         "Compatible amb l'entorn"
       ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
+      ],
       "Expired": [
         "Caducat"
       ],
@@ -7506,8 +7529,8 @@
       "Index kinds": [
         "Tipus d'índex"
       ],
-      "Initial indexing": [
-        "Indexació inicial"
+      "Indexing": [
+        "S'està indexant"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
@@ -7590,6 +7613,9 @@
       "Never expires": [
         "No caduca mai"
       ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
       "New password": [
         "Contrasenya nova"
       ],
@@ -7622,6 +7648,9 @@
       ],
       "Outdated version": [
         "Versió obsoleta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
       ],
       "Password": [
         "Contrasenya"
@@ -7676,6 +7705,9 @@
       ],
       "Region": [
         "Regió"
+      ],
+      "Regular expression": [
+        "Expressió regular"
       ],
       "Replace existing folder or file": [
         "Substituïu la carpeta o el fitxer existent"
@@ -7752,6 +7784,9 @@
       "Start date": [
         "Data d'inici"
       ],
+      "Starts with": [
+        "Comença amb"
+      ],
       "State": [
         "Estat"
       ],
@@ -7817,6 +7852,9 @@
       ],
       "Uploaded by": [
         "Carregat per"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ],
       "User opted in": [
         "L'usuari ha acceptat"
@@ -8219,6 +8257,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
       ],
@@ -13201,6 +13257,9 @@
       "Upload and share files": [
         "Carregueu i compartiu fitxers"
       ],
+      "Upload empty file?": [
+        "Voleu carregar un fitxer buit?"
+      ],
       "Uploaded": [
         "Carregat"
       ],
@@ -13328,6 +13387,26 @@
         "Teniu 5 GB d'emmagatzematge"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
@@ -13424,6 +13503,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
       ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
       ]
@@ -13466,6 +13548,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Obtingueu el Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     },
     "Validation": {
@@ -13584,6 +13671,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",

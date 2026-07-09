@@ -1046,6 +1046,9 @@
       "Sign up": [
         "Registrera"
       ],
+      "Skip": [
+        "Hoppa över"
+      ],
       "Skip verification": [
         "Hoppa över verifiering"
       ],
@@ -1144,6 +1147,9 @@
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
+      ],
+      "Upload anyway": [
+        "Ladda upp ändå"
       ],
       "Upload file": [
         "Ladda upp fil"
@@ -3659,12 +3665,6 @@
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
-      "Invalid ${ name } code": [
-        "Ogiltig ${ name }-kod"
-      ],
-      "Invalid card number": [
-        "Ogiltigt kortnummer"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -3673,9 +3673,6 @@
       ],
       "Invalid email address": [
         "Ogiltig e-postadress"
-      ],
-      "Invalid expiration date": [
-        "Ogiltigt förfallodatum"
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
@@ -3740,9 +3737,6 @@
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
@@ -5068,6 +5062,9 @@
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } är en end-to-end-krypterad lösning för videokonferenser. Lägg till den i ditt paket för att hålla säkra möten."
       ],
+      "${ MEET_APP_NAME } seats": [
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress } % slutfört"
       ],
@@ -5228,6 +5225,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
+      ],
+      "Album": [
+        "Album"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
@@ -5728,6 +5728,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalendrar"
@@ -6199,6 +6202,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
+      ],
+      "Re-indexing in progress": [
+        "Omindexering pågår"
       ],
       "Ready to add some photos?": [
         "Redo att lägga till några foton?"
@@ -7359,6 +7365,9 @@
       "Environment compatible": [
         "Miljökompatibel"
       ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
       "Expired": [
         "Löpt ut"
       ],
@@ -7440,8 +7449,8 @@
       "Index kinds": [
         "Indextyper"
       ],
-      "Initial indexing": [
-        "Initial indexering"
+      "Indexing": [
+        "Indexerar"
       ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
@@ -7608,6 +7617,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
       "Replace existing folder or file": [
         "Ersätt befintlig mapp eller fil"
       ],
@@ -7682,6 +7694,9 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "Starts with": [
+        "Börjar med"
       ],
       "State": [
         "Delstat"
@@ -12251,6 +12266,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } av gratis uppladdningar."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "Account recovery": [
         "Kontoåterställning"
       ],
@@ -13247,6 +13265,26 @@
         "Du har fått 5 GB lagringsutrymme"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
@@ -13340,6 +13378,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
       ]
@@ -13382,6 +13423,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Skaffa Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Validation": {
