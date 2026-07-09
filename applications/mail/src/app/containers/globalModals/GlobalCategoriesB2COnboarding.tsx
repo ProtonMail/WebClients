@@ -11,13 +11,12 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
+import { CategoriesOnboardingFlags } from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import { CategoriesOnboardingFlags } from 'proton-mail/components/categoryView/categoriesOnboarding/onboardingInterface';
 
 import onboardingImage from '../../components/categoryView/categoriesOnboarding/onboardingCategories.svg';
 import { useMailGlobalModals } from './GlobalModalProvider';

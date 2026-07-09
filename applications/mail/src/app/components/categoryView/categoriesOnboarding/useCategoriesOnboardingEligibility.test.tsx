@@ -4,6 +4,10 @@ import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import type { FeatureContextValue } from '@proton/features/useFeatures';
+import {
+    CategoriesOnboardingFlags,
+    FeatureValueDefault,
+} from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { PLANS } from '@proton/payments/core/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -16,7 +20,7 @@ import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCo
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
-import { CategoriesOnboardingFlags, FeatureValueDefault, OnboardingFlow } from './onboardingInterface';
+import { OnboardingFlow } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 jest.mock('proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider');
