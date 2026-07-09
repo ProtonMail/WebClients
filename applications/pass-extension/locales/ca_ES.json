@@ -553,6 +553,12 @@
       "Regenerate": [
         "Regenera"
       ],
+      "Regex invalid": [
+        "Expressió regular no vàlida"
+      ],
+      "Regex unsafe": [
+        "Expressió regular no segura"
+      ],
       "Reject": [
         "Rebutja"
       ],
@@ -2214,8 +2220,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3138,6 +3143,9 @@
       "Address details": [
         "Detalls de l'adreça"
       ],
+      "Advanced": [
+        "Avançat"
+      ],
       "Alias": [
         "Àlies"
       ],
@@ -3201,6 +3209,9 @@
       "Bank Name": [
         "Nom del banc"
       ],
+      "Basic": [
+        "Bàsic"
+      ],
       "Basic Auth autofill": [
         "Emplenament automàtic bàsic d'identificadors"
       ],
@@ -3230,6 +3241,9 @@
       ],
       "Catch-All": [
         "Capturar-ho tot"
+      ],
+      "Check": [
+        "Comprova"
       ],
       "Checkbox": [
         "Casella de selecció"
@@ -3389,6 +3403,12 @@
       ],
       "Enter email or username": [
         "Introduïu el correu electrònic o el nom d’usuari"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
       ],
       "Expiration date": [
         "Data de caducitat"
@@ -3681,6 +3701,9 @@
       "Never": [
         "Mai"
       ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
       "New email": [
         "Nou correu electrònic"
       ],
@@ -3737,6 +3760,9 @@
       ],
       "Owner": [
         "Propietari"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
       ],
       "Passkey": [
         "Clau d'accés"
@@ -3849,6 +3875,9 @@
       "Reddit handle": [
         "Nom d'usuari del Reddit"
       ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
       "Remove link": [
         "Esborra l'enllaç"
       ],
@@ -3956,6 +3985,9 @@
       ],
       "SSN": [
         "Número de la seguretat social"
+      ],
+      "Starts with": [
+        "Comença amb"
       ],
       "State or province": [
         "Estat o província"
@@ -4071,6 +4103,9 @@
       "Update": [
         "Actualitza"
       ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Utilitzeu ${ PASS_APP_NAME } com a gestor de contrasenyes predeterminat del vostre navegador"
       ],
@@ -4176,6 +4211,24 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ],
       "You can drag and drop the selected item to another vault": [
         "Podeu arrossegar i deixar anar l'element seleccionat a una altra caixa forta.",
@@ -4479,6 +4532,23 @@
         "Utilitzada a ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduïu un URL per comprovar si la vostra regla actual coincideix amb l'URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincideix amb aquest URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincideix amb aquest URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Aquest URL es bloquejarà per l'emplenament automàtic"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Aquest URL NO es bloquejarà per l'emplenament automàtic"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
@@ -4682,6 +4752,9 @@
       ],
       "Add mailbox": [
         "Afegeix una bústia de correu"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta els comportaments de l'emplenament automàtic per canviar on se suggereixen els inicis de sessió."
       ],
       "Agent setup instructions": [
         "Instruccions de configuració de l'agent"
@@ -4897,6 +4970,9 @@
       "Last modified": [
         "Última modificació"
       ],
+      "Learn more": [
+        "Saber-ne més"
+      ],
       "Leave this item?": [
         "Voleu deixar aquest element?"
       ],
@@ -5111,6 +5187,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronitzeu els vostres àlies de SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Comproveu un URL amb aquesta regla"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Gràcies per instal·lar ${ PASS_APP_NAME }"
       ],
@@ -5131,6 +5210,9 @@
       ],
       "Update available": [
         "Hi ha una actualització disponible"
+      ],
+      "URL matching": [
+        "Coincidència d'URL"
       ],
       "Use my email": [
         "Utilitza el meu correu electrònic"
@@ -5244,6 +5326,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "S'ha deshabilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
@@ -5448,6 +5533,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Aquesta adreça de correu electrònic ja no es controlarà per detectar infraccions de dades."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Aquest element no es pot suggerir per a l'emplenament automàtic a causa de «${ neverModeDescriptionStrong }». Afegiu un altre URL si voleu que aquest element s'empleni automàticament."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Aquest element està compartit actualment. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."

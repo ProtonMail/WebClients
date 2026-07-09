@@ -553,6 +553,12 @@
       "Regenerate": [
         "Générer à nouveau"
       ],
+      "Regex invalid": [
+        "Expression régulière non valide"
+      ],
+      "Regex unsafe": [
+        "Expression régulière non sécurisée"
+      ],
       "Reject": [
         "Refuser"
       ],
@@ -2214,8 +2220,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3138,6 +3143,9 @@
       "Address details": [
         "Informations sur l'adresse"
       ],
+      "Advanced": [
+        "Paramètres avancés"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -3201,6 +3209,9 @@
       "Bank Name": [
         "Nom de la banque"
       ],
+      "Basic": [
+        "Paramètres de base"
+      ],
       "Basic Auth autofill": [
         "Saisie automatique basique des identifiants"
       ],
@@ -3230,6 +3241,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Vérifier"
       ],
       "Checkbox": [
         "Case à cocher"
@@ -3389,6 +3403,12 @@
       ],
       "Enter email or username": [
         "Saisissez un e-mail ou un nom d’utilisateur."
+      ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
       ],
       "Expiration date": [
         "Date d’expiration"
@@ -3681,6 +3701,9 @@
       "Never": [
         "Jamais"
       ],
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
       "New email": [
         "Nouvelle adresse e-mail"
       ],
@@ -3737,6 +3760,9 @@
       ],
       "Owner": [
         "Propriétaire"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
       ],
       "Passkey": [
         "Clé d'accès"
@@ -3849,6 +3875,9 @@
       "Reddit handle": [
         "Compte Reddit"
       ],
+      "Regular expression": [
+        "Expression régulière"
+      ],
       "Remove link": [
         "Retirer le lien"
       ],
@@ -3956,6 +3985,9 @@
       ],
       "SSN": [
         "Numéro de sécurité sociale"
+      ],
+      "Starts with": [
+        "Commence par"
       ],
       "State or province": [
         "État ou province"
@@ -4071,6 +4103,9 @@
       "Update": [
         "Mettre à jour"
       ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Utilisez ${ PASS_APP_NAME } comme le gestionnaire de mots de passe par défaut de votre navigateur."
       ],
@@ -4176,6 +4211,24 @@
       "${ count } item": [
         "${ count } élément",
         "${ count } éléments"
+      ],
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
       ],
       "You can drag and drop the selected item to another vault": [
         "Vous pouvez glisser et déposer l'élément sélectionné dans un autre coffre-fort.",
@@ -4479,6 +4532,23 @@
         "Utilisé sur ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Saisissez une URL pour vérifier si votre règle actuelle correspond à cette URL"
+      ],
+      "The rule is matching this URL": [
+        "La règle correspond à cette URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La règle ne correspond PAS à cette URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Cette URL ne sera pas prise en compte par la fonction de remplissage automatique"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Cette URL ne sera PAS exclue de la fonction de remplissage automatique"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
@@ -4682,6 +4752,9 @@
       ],
       "Add mailbox": [
         "Ajouter une messagerie"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Modifiez les paramètres de remplissage automatique pour déterminer les emplacements où les identifiants de connexion sont suggérés."
       ],
       "Agent setup instructions": [
         "Instructions de configuration de l'agent"
@@ -4897,6 +4970,9 @@
       "Last modified": [
         "Dernière modification"
       ],
+      "Learn more": [
+        "En savoir plus"
+      ],
       "Leave this item?": [
         "Voulez-vous quitter cet élément ?"
       ],
@@ -5111,6 +5187,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synchronisez vos alias depuis SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Vérifier si une URL respecte cette règle"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Merci d'avoir installé ${ PASS_APP_NAME }."
       ],
@@ -5131,6 +5210,9 @@
       ],
       "Update available": [
         "Mise à jour disponible"
+      ],
+      "URL matching": [
+        "Correspondance d'URL"
       ],
       "Use my email": [
         "Utiliser mon e-mail"
@@ -5244,6 +5326,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Le mot de passe de ${ BRAND_NAME } est nécessaire."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Le mode hors ligne de ${ PASS_SHORT_APP_NAME } a été désactivé."
@@ -5448,6 +5533,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Cette adresse e-mail ne sera plus surveillée en cas de fuites de données."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Cet élément ne peut pas être proposé pour le remplissage automatique en raison de « ${ neverModeDescriptionStrong } ». Ajoutez une autre URL si vous souhaitez que cet élément soit rempli automatiquement."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Cet élément est actuellement partagé. Sa suppression retirera également son accès aux autres utilisateurs."
