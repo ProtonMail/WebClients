@@ -2343,20 +2343,11 @@
       "Input isn't a valid email or bitcoin address": [
         "Intrarea nu este o adresă de e-mail sau bitcoin validă."
       ],
-      "Invalid ${ name } code": [
-        "Cod ${ name } nevalid."
-      ],
-      "Invalid card number": [
-        "Număr de card nevalid."
-      ],
       "Invalid code": [
         "Cod nevalid"
       ],
       "Invalid coupon": [
         "Cupon nevalid"
-      ],
-      "Invalid expiration date": [
-        "Data expirării nu este validă."
       ],
       "Invalid IBAN": [
         "Acest IBAN nu este valid."
@@ -5957,6 +5948,11 @@
       ],
       "The user must have an address to request data access": [
         "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]
     },
     "Validation": {

@@ -2330,20 +2330,11 @@
       "Input isn't a valid email or bitcoin address": [
         "Giriş geçerli bir e-posta veya Bitcoin adresi değil"
       ],
-      "Invalid ${ name } code": [
-        "${ name } kodu geçersiz"
-      ],
-      "Invalid card number": [
-        "Kart numarası geçersiz"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
       "Invalid coupon": [
         "Kupon geçersiz"
-      ],
-      "Invalid expiration date": [
-        "Son kullanma tarihi geçersiz"
       ],
       "Invalid IBAN": [
         "IBAN geçersiz"
@@ -5875,6 +5866,11 @@
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     },
     "Validation": {

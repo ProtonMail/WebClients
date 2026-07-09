@@ -2330,20 +2330,11 @@
       "Input isn't a valid email or bitcoin address": [
         "L'entrée n'est pas une adresse e-mail ou Bitcoin valide."
       ],
-      "Invalid ${ name } code": [
-        "Le code ${ name } n'est pas valide."
-      ],
-      "Invalid card number": [
-        "Le numéro de carte n’est pas valide."
-      ],
       "Invalid code": [
         "Le code n'est pas valide."
       ],
       "Invalid coupon": [
         "Le code cadeau n'est pas valide."
-      ],
-      "Invalid expiration date": [
-        "La date d'expiration n’est pas valide."
       ],
       "Invalid IBAN": [
         "Cet IBAN n'est pas valide."
@@ -5587,6 +5578,9 @@
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Compte restreint"
       ],
@@ -5872,6 +5866,11 @@
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     },
     "Validation": {
