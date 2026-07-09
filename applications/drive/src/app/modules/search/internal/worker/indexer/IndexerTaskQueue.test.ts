@@ -517,7 +517,7 @@ describe('IndexerTaskQueue', () => {
     });
 
     it('permanent error: sets permanentError on quota exceeded', async () => {
-        bridge.setIterateFolderChildrenError(new DOMException('', 'QuotaExceededError'));
+        bridge.setIterateError(new DOMException('', 'QuotaExceededError'));
 
         const queue = createQueue();
         const state = new IndexerStateStream(queue);
@@ -550,7 +550,7 @@ describe('IndexerTaskQueue', () => {
 
         class TestableQueue extends IndexerTaskQueue {
             protected override async createTasks() {
-                bridge.setIterateFolderChildrenError(new DOMException('', 'QuotaExceededError'));
+                bridge.setIterateError(new DOMException('', 'QuotaExceededError'));
                 const populator = new DummyTestIndexPopulator(SCOPE_ID);
                 return {
                     bootstrapTasks: [new IndexPopulatorTask(populator)],
