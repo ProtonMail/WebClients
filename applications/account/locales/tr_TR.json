@@ -204,6 +204,9 @@
       "Apply to existing messages": [
         "Var olan iletilere uygula"
       ],
+      "Approve": [
+        "Onayla"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -1220,6 +1223,9 @@
       ],
       "Organization": [
         "Kuruluş"
+      ],
+      "Pause": [
+        "Duraklat"
       ],
       "Pay": [
         "Öde"
@@ -7337,12 +7343,6 @@
       "Intended recipient does not support calendar sharing": [
         "İstenilen alıcı takvim paylaşımını desteklemiyor"
       ],
-      "Invalid ${ name } code": [
-        "${ name } kodu geçersiz"
-      ],
-      "Invalid card number": [
-        "Kart numarası geçersiz"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -7354,9 +7354,6 @@
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
-      ],
-      "Invalid expiration date": [
-        "Son kullanma tarihi geçersiz"
       ],
       "Invalid IBAN": [
         "IBAN geçersiz"
@@ -7452,11 +7449,8 @@
       "Not a valid number": [
         "Numara geçerli değil"
       ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
-      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
-        "Bu adres için yalnızca büyük harf kullanımı ve noktalama işaretleri (nokta, kısa çizgi ve alt çizgi) değiştirilebilir."
+        "Bu adres için yalnızca büyük harf ve noktalama işaretleri (nokta, tire ve alt çizgi) değişimi yapılabilir."
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
@@ -7600,6 +7594,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Bu tarifede tersine KDV uygulaması desteklenmiyor"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "${ errors.length } üyenin rol ataması tamamlanamadı",
+        "${ errors.length } üyenin rol ataması tamamlanamadı"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "${ failedGroupCount } grubun rol ataması tamamlanamadı",
+        "${ failedGroupCount } grubun rol ataması tamamlanamadı"
       ],
       "Server not found": [
         "Sunucu bulunamadı"
@@ -9934,9 +9936,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır. ${ planTitle } aboneliğinizin yenileme ücreti ve tarihi değişmeden kalır."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor.",
-        "${ pendingAdminMemberCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor.",
+        "${ pendingAdminApprovalCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -10524,11 +10526,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "İlk 6 ay için ${ monthlyDiscountedPrice } olarak faturalanır, ${ monthlyRenewalPrice } ile yenilenir."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "İlk 6 ay boyunca ${ monthlyDiscountedPriceElement } olarak faturalandırılır, ${ monthlyRenewalPriceElement } olarak yenilenir."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "İlk 12 ay için ${ yearlyDiscountedPrice } olarak faturalanır, ${ yearlyRenewalPrice } ile yenilenir."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "İlk 12 ay boyunca ${ yearlyDiscountedPriceElement } olarak faturalandırılır, ${ yearlyRenewalPriceElement } olarak yenilenir."
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
@@ -11250,6 +11252,9 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gelen kutunuzda aynı yazışmanın e-postalarının gruplanmış ya da ayrı ayrı görüntülenmesini ayarlayın."
       ],
+      "Group roles assigned": [
+        "Grup rolleri atandı"
+      ],
       "Groups": [
         "Gruplar"
       ],
@@ -11863,7 +11868,7 @@
         "Hesabınıza erişme izni verildiğinde **Kurtarma** ayarlarınıza erişebilir ve sizin adınıza **${ ACCOUNT_APP_NAME } parolanızı değiştirebilir.**"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
-        "Burada yalnızca büyük harf kullanımı ve noktalama işaretleri (nokta, tire ve alt çizgi) değiştirilebilir. Farklı bir adres kullanmak istiyorsanız yeni bir adres ekleyin."
+        "Burada yalnızca büyük harf ve noktalama işaretleri (nokta, tire ve alt çizgi) değişimi yapılabilir. Farklı bir adres kullanmak istiyorsanız yeni bir adres ekleyin."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
@@ -12605,8 +12610,8 @@
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
       "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "${ pausedCount } grup için işlem kesintiye uğradı. Rol atamaya devam etmek için “Devam Et” düğmesine tıklayın.",
-        "${ pausedCount } grup için işlem kesintiye uğradı. Rol atamaya devam etmek için “Devam Et” düğmesine tıklayın."
+        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın.",
+        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Referans kredisi, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa verilebilir."
@@ -13355,6 +13360,9 @@
       "You can now sign in to your account again.": [
         "Artık hesabınızda yeniden oturum açabilirsiniz."
       ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
@@ -13780,6 +13788,9 @@
       ],
       "Group Owner": [
         "Grup sahibi"
+      ],
+      "Invited": [
+        "Davet edildi"
       ],
       "Paused": [
         "Duraklatılmış"
@@ -14682,9 +14693,6 @@
       ],
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
-      ],
-      "Confirm MX records added": [
-        "Eklenen MX kayıtlarını onayla"
       ],
       "Confirm new password": [
         "Yeni parola onayı"
@@ -15592,7 +15600,7 @@
         "Gönderici görselleri görüntülensin"
       ],
       "Show unread count": [
-        "Okunmamış sayısını göster"
+        "Okunmamış sayısı görüntülensin"
       ],
       "Show unread count in Favicon": [
         "Okunmamış sayısı site simgesinde görüntülensin"
@@ -21933,8 +21941,8 @@
       "Updated": [
         "Güncellendi"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Korunan olarak ayarladığınız kullanıcıların kurulumlarını tamamlamaları için daveti kabul etmeleri gerekir. Onayladığınızda onlara davet gönderilecek."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Korunan olarak ayarlanan kullanıcıların kurulumlarını tamamlamaları için daveti kabul etmeleri gerekir. Onayladığınızda onlara davet gönderilecek."
       ]
     },
     "scim: Action": {
@@ -23355,13 +23363,13 @@
         "${ n } kullanıcı tek oturum açmadan çıkarıldı",
         "${ n } kullanıcı tek oturum açmadan çıkarıldı"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesabı gözden geçirin:",
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları gözden geçirin:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } kullanıcı kimlik hizmeti sağlayıcınız üzerinden kuruluşunuza katıldı",
+        "${ n } kullanıcı kimlik hizmeti sağlayıcınız üzerinden kuruluşunuza katıldı"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıyı kuruluşunuzdan kaldırabilirsiniz.",
-        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıları kuruluşunuzdan kaldırabilirsiniz."
+      "${ n } user is inactive.": [
+        "${ n } kullanıcı etkisizleştirilmiş.",
+        "${ n } kullanıcı etkisizleştirilmiş."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
@@ -25963,7 +25971,7 @@
         "Grup üyeliği"
       ],
       "Group role assignment paused": [
-        "Grup rol ataması askıya alındı"
+        "Grup rol ataması duraklatıldı"
       ],
       "Groups": [
         "Gruplar"
@@ -27320,6 +27328,9 @@
       "Verified email address": [
         "E-posta adresi doğrulanmış"
       ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
       ],
@@ -27364,8 +27375,11 @@
       "Group membership paused": [
         "Grup üyeliği duraklatılmış"
       ],
+      "Resuming role assignment": [
+        "Rol ataması sürdürülüyor"
+      ],
       "Role assignment paused": [
-        "Rol ataması askıya alındı"
+        "Rol ataması duraklatıldı"
       ],
       "Sending member invitation": [
         "Üye daveti gönderiliyor"
@@ -27373,11 +27387,14 @@
       "User declined invitation": [
         "Kullanıcı daveti reddetti"
       ],
-      "User is a group": [
-        "Kullanıcı bir grup"
+      "User is a group owner": [
+        "Kullanıcı grubun sahibi"
       ],
       "via ${ groupNames }": [
         "${ groupNames } ile"
+      ],
+      "Waiting for admin approval": [
+        "Yönetici onayı bekleniyor"
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
@@ -27539,9 +27556,9 @@
       "Confirm all": [
         "Tümünü onayla"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",
-        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:"
+      "Could not enable admin access for ${ n } user": [
+        "${ n } kullanıcıya yönetici izni verilemedi",
+        "${ n } kullanıcıya yönetici izni verilemedi"
       ],
       "Could not enable administrator access: ${ error }": [
         "Yönetici yetkisi verilemedi: ${ error }"
@@ -27582,6 +27599,10 @@
       "Request user permission for data access": [
         "Verilere erişmek için kullanıcı izni verilmesi isteğinde bulunun"
       ],
+      "Review their account now.": [
+        "Hesabını inceleyin.",
+        "Hesaplarını inceleyin."
+      ],
       "Revoke access": [
         "Erişimi kaldır"
       ],
@@ -27593,6 +27614,9 @@
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Değişiklikler yapılırken şifreleme anahtarı güncellendi."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Bu işlem kullanıcı verilerine yönetici tarafından erişilmesi ya da kullanıcı parolasını sıfırlama isteğini iptal edecek"
@@ -27611,6 +27635,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Bunu istemiyorsanız ${ reject } üzerine tıklayarak bu isteği reddedin."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Bu kullanıcıyı kuruluşunuzdan güvenle kaldırabilirsiniz.",
+        "Bu kullanıcıları kuruluşunuzdan güvenle kaldırabilirsiniz."
       ]
     },
     "Update font modal": {

@@ -201,6 +201,9 @@
       "Apply to existing messages": [
         "Auf vorhandene Nachrichten anwenden"
       ],
+      "Approve": [
+        "Genehmigen"
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -1202,6 +1205,9 @@
       ],
       "Organization": [
         "Organisation"
+      ],
+      "Pause": [
+        "Pausieren"
       ],
       "Pay": [
         "Zahlen"
@@ -7242,12 +7248,6 @@
       "Intended recipient does not support calendar sharing": [
         "Der vorgesehene Empfänger unterstützt freigegebene Kalendern nicht."
       ],
-      "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
-      ],
-      "Invalid card number": [
-        "Kartennummer ungültig"
-      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -7259,9 +7259,6 @@
       ],
       "Invalid email address": [
         "Ungültige E-Mail-Adresse"
-      ],
-      "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
@@ -7499,6 +7496,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rollenzuweisung konnte für ${ errors.length } Mitglied nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ errors.length } Mitglieder nicht abgeschlossen werden"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppe nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppen nicht abgeschlossen werden"
       ],
       "Server not found": [
         "Server nicht gefunden"
@@ -9731,6 +9736,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } Mitglied zur Gruppe hinzugefügt",
+        "${ emails.length } Mitglieder zur Gruppe hinzugefügt"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: Bild in voller Größe"
       ],
@@ -9827,9 +9836,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Das ${ PASS_SHORT_APP_NAME } Lifetime-Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung.",
-        "${ pendingAdminMemberCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf die Überprüfung."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf Überprüfung.",
+        "${ pendingAdminApprovalCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf Überprüfung."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -10402,11 +10411,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "In den ersten 6 Monaten kostet das Abonnement ${ monthlyDiscountedPrice }, danach ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "In den ersten 6 Monaten werden ${ monthlyDiscountedPriceElement } berechnet, danach verlängert es sich für ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "In den ersten 12 Monaten kostet das Abonnement ${ yearlyDiscountedPrice }, danach ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "In den ersten 12 Monaten werden ${ yearlyDiscountedPriceElement } berechnet, danach verlängert es sich für ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
@@ -11116,11 +11125,17 @@
       "Got it": [
         "Verstanden"
       ],
+      "Group created": [
+        "Gruppe erstellt"
+      ],
       "Group deleted": [
         "Gruppe gelöscht"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppiere E-Mails in derselben Konversation in deinem Posteingang oder zeige diese getrennt an."
+      ],
+      "Group roles assigned": [
+        "Gruppenrollen zugewiesen"
       ],
       "Groups": [
         "Gruppen"
@@ -13179,6 +13194,9 @@
       "You can now sign in to your account again.": [
         "Du kannst dich jetzt wieder bei deinem Konto anmelden."
       ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Du kannst jeweils nur eine Chat-Instanz offen haben. Bitte schließe vorherige Unterhaltungen, bevor du eine neue beginnst."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -13595,6 +13613,9 @@
       ],
       "Group Owner": [
         "Gruppenbesitzer"
+      ],
+      "Invited": [
+        "Eingeladen"
       ],
       "Paused": [
         "Angehalten"
@@ -14269,6 +14290,9 @@
       ],
       "App password": [
         "App-Passwort"
+      ],
+      "App Settings": [
+        "App-Einstellungen"
       ],
       "Apply filter to existing emails": [
         "Filter auf vorhandene E-Mails anwenden"
@@ -21133,6 +21157,9 @@
       "to recover your account if you're ever locked out": [
         ", um dein Konto wiederherzustellen, falls du jemals ausgesperrt wirst."
       ],
+      "update it now": [
+        "jetzt aktualisieren"
+      ],
       "Update your recovery phrase": [
         "Deine Wiederherstellungsphrase aktualisieren"
       ],
@@ -21348,6 +21375,15 @@
       "Got it": [
         "Verstanden"
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Falls sich deine E-Mail-Adresse für die Passwortwiederherstellung geändert hat, klicke auf ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Falls deine Wiederherstellungstelefonnummer geändert hat, klicke auf ${ updatePhoneLink }."
+      ],
+      "Send verification code": [
+        "Bestätigungscode senden"
+      ],
       "They will not be able to see or access your data.": [
         "Sie können deine Daten weder einsehen noch darauf zugreifen."
       ],
@@ -21356,6 +21392,21 @@
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Um sicherzugehen, dass es sich um deine E-Mail-Adresse handelt, gib den an ${ boldEmail } gesendeten Verifizierungscode ein."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Um sicherzustellen, dass diese E-Mail-Adresse tatsächlich dir gehört, senden wir dir eine E-Mail mit einem Bestätigungscode."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Um sicherzustellen, dass diese Telefonnummer tatsächlich dir gehört, senden wir dir eine SMS mit einem Bestätigungscode."
+      ],
+      "Update": [
+        "Aktualisieren"
+      ],
+      "Update recovery email": [
+        "Wiederherstellungs-E-Mail aktualisieren"
+      ],
+      "Update recovery phone": [
+        "Wiederherstellungstelefonnummer aktualisieren"
       ],
       "Verified password": [
         "Passwort bestätigt"
@@ -21371,6 +21422,12 @@
       ],
       "Verify your password": [
         "Passwort bestätigen"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Das Verifizieren deiner E-Mail-Adresse erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ],
       "Your security setup": [
         "Deine Sicherheitseinstellungen"
@@ -21484,7 +21541,7 @@
       "Updated": [
         "Aktualisiert"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
       ]
     },
@@ -22903,13 +22960,13 @@
         "${ n } Benutzer von SSO entfernt.",
         "${ n } Benutzer von SSO entfernt."
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen. Überprüfe das Konto jetzt:",
-        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen. Überprüfe die Konten jetzt:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen",
+        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } Benutzer ist inaktiv. Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
-        "${ n } Benutzer sind inaktiv. Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
+      "${ n } user is inactive.": [
+        "${ n } Benutzer ist inaktiv.",
+        "${ n } Benutzer sind inaktiv."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
@@ -24872,7 +24929,7 @@
         "Zusätzliches Passwort ändern"
       ],
       "Check your default mail application": [
-        "Überprüfe deine Standard-E-Mail-Anwendung"
+        "Deine Standard-E-Mail-Anwendung überprüfen"
       ],
       "Choose a provider": [
         "Anbieter wählen"
@@ -25461,6 +25518,9 @@
       ],
       "Get more from your password manager": [
         "Hol mehr aus deinem Passwort-Manager raus."
+      ],
+      "Get more from your privacy suite": [
+        "Mehr aus deiner Privatsphären-Suite herausholen"
       ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
@@ -26397,6 +26457,9 @@
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Mit deinem ${ BRAND_NAME }-Konto erhältst du Zugriff auf alle ${ BRAND_NAME }-Apps"
+      ],
       "You are all set": [
         "Du bist startklar"
       ],
@@ -26829,6 +26892,9 @@
       "Verified email address": [
         "E-Mail-Adresse bestätigt"
       ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP Schlüssel"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
       ],
@@ -26873,6 +26939,9 @@
       "Group membership paused": [
         "Gruppenmitgliedschaft pausiert"
       ],
+      "Resuming role assignment": [
+        "Fortsetzung der Rollenzuweisung"
+      ],
       "Role assignment paused": [
         "Zuweisung von Rollen pausiert"
       ],
@@ -26882,11 +26951,14 @@
       "User declined invitation": [
         "Der Benutzer hat die Einladung abgelehnt"
       ],
-      "User is a group": [
-        "Benutzer ist eine Gruppe"
+      "User is a group owner": [
+        "Benutzer ist Eigentümer einer Gruppe"
       ],
       "via ${ groupNames }": [
         "über ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Auf die Administratoren-Genehmigung warten"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
@@ -27048,9 +27120,9 @@
       "Confirm all": [
         "Alle bestätigen"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, ,da seiner Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert wurde:",
-        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, da ihre Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert worden sind:"
+      "Could not enable admin access for ${ n } user": [
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden",
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht aktiviert werden"
       ],
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
@@ -27091,6 +27163,10 @@
       "Request user permission for data access": [
         "Fordere die Benutzererlaubnis für den Datenzugriff an."
       ],
+      "Review their account now.": [
+        "Überprüfe sein Konto jetzt.",
+        "Überprüfe deren Konten jetzt."
+      ],
       "Revoke access": [
         "Zugriff entfernen"
       ],
@@ -27102,6 +27178,9 @@
       ],
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deren Verschlüsselungsschlüssel wurden aktualisiert, während wir Änderungen vorgenommen haben."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts abgebrochen."
@@ -27120,6 +27199,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kannst diese Anfrage ${ reject }, wenn du nicht fortfahren möchtest."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
+        "Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
       ]
     },
     "Update font modal": {
