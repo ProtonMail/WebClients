@@ -884,9 +884,7 @@ export const createPasswordlessOrganizationKeys = ({
         // This refetches all groups when that happens so that the client becomes aware of them.
         // NOTE: It's better that this happens _after_ the parallel calls above have finished since
         // the client attempts to generate keys for those groups in the background using the organization key.
-        if (extra.unleashClient.isEnabled('SystemGroupFlag')) {
-            dispatch(groupThunk({ cache: CacheType.None })).catch(noop);
-        }
+        dispatch(groupThunk({ cache: CacheType.None })).catch(noop);
         return result;
     };
 };
