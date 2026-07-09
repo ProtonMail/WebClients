@@ -2124,7 +2124,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -5004,12 +5004,6 @@
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
-      "Invalid ${ name } code": [
-        "Cod ${ name } nevalid."
-      ],
-      "Invalid card number": [
-        "Număr de card nevalid."
-      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -5018,9 +5012,6 @@
       ],
       "Invalid email address": [
         "Adresă de e-mail nevalidă."
-      ],
-      "Invalid expiration date": [
-        "Data expirării nu este validă."
       ],
       "Invalid expiration time": [
         "Data expirării nu este validă."
@@ -5110,9 +5101,6 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
@@ -10058,6 +10046,12 @@
       "Encrypt emails": [
         "Criptare mesaje"
       ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
       "Expires": [
         "Expirare"
       ],
@@ -10265,8 +10259,8 @@
       "Navigation": [
         "Navigare"
       ],
-      "New": [
-        "Nou"
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
       ],
       "New password": [
         "Parola nouă"
@@ -10298,9 +10292,6 @@
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notificările sunt dezactivate. Pentru a le activa modificați setările navigatorului web."
       ],
-      "Open in a new tab": [
-        "Deschidere într-o filă nouă"
-      ],
       "Operating system": [
         "Sistem de operare"
       ],
@@ -10321,6 +10312,9 @@
       ],
       "Original link": [
         "Legătura web originală"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Participants": [
         "Participanți"
@@ -10400,6 +10394,9 @@
       "Region": [
         "Județ"
       ],
+      "Regular expression": [
+        "Expresie regulată"
+      ],
       "Remember my choice": [
         "Memorează alegerea mea"
       ],
@@ -10459,6 +10456,9 @@
       ],
       "Start date": [
         "Dată început"
+      ],
+      "Starts with": [
+        "Începe cu"
       ],
       "State": [
         "Județ/Stat"
@@ -10546,6 +10546,9 @@
       ],
       "URL": [
         "Adresa URL"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ],
       "Username": [
         "Nume utilizator"
@@ -11161,14 +11164,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
       "Fw:": [
         "Rd:"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } a scris:"
       ],
       "Re:": [
         "Rs:"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
@@ -16745,6 +16766,26 @@
         "Adresa scurtă este pregătită acum"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Expiră"
+      ],
+      "Fingerprint": [
+        "Amprenta"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Type": [
+        "Tip"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
@@ -16840,6 +16881,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
+      ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
       ]
     },
     "tooltip": {
@@ -16889,6 +16933,11 @@
       ],
       "Your default font will look like following:": [
         "Fontul implicit va arăta ca următorul:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]
     },
     "Validation": {
@@ -17008,6 +17057,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",

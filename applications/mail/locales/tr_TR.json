@@ -4966,12 +4966,6 @@
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
-      "Invalid ${ name } code": [
-        "${ name } kodu geçersiz"
-      ],
-      "Invalid card number": [
-        "Kart numarası geçersiz"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -4980,9 +4974,6 @@
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
-      ],
-      "Invalid expiration date": [
-        "Son kullanma tarihi geçersiz"
       ],
       "Invalid expiration time": [
         "Geçerlilik süresi geçersiz"
@@ -5071,9 +5062,6 @@
       ],
       "Not a valid number": [
         "Numara geçerli değil"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -10099,9 +10087,6 @@
       "Navigation": [
         "Gezinme"
       ],
-      "New": [
-        "Yeni"
-      ],
       "New password": [
         "Yeni parola"
       ],
@@ -10131,9 +10116,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Bildirimler kapatılmış. Bunları açmak için tarayıcı ayarlarını değiştirin."
-      ],
-      "Open in a new tab": [
-        "Yeni sekmede aç"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -12579,10 +12561,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -15851,7 +15833,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu duyuru gizlensin mi?"
+        "Bu başlığı gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -16433,6 +16415,26 @@
         "Daha kısa adresiniz hazır"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Type": [
+        "Tür"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
@@ -16528,6 +16530,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
       ]
     },
     "tooltip": {
@@ -16577,6 +16582,11 @@
       ],
       "Your default font will look like following:": [
         "Varsayılan yazı tipi şu şekilde görünecek:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     },
     "Validation": {
