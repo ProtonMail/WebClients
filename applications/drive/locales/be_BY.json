@@ -85,7 +85,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць карыстальнікаў або групы для абагулення"
+        "Дадаць карыстальнікаў або групы для абагульвання"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -792,6 +792,9 @@
       "Re-index": [
         "Пераіндэксаваць"
       ],
+      "Re-indexing in progress": [
+        "Адбываецца паўторнае індэксаванне"
+      ],
       "Re-sign": [
         "Паўторна падпісаць"
       ],
@@ -866,6 +869,9 @@
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
+      ],
+      "Report abuse": [
+        "Паведаміць пра парушэнне"
       ],
       "Report an issue": [
         "Паведаміць аб праблеме"
@@ -1053,6 +1059,9 @@
       "Sign up": [
         "Зарэгістравацца"
       ],
+      "Skip": [
+        "Прапусціць"
+      ],
       "Skip verification": [
         "Прапусціць спраўджанне"
       ],
@@ -1151,6 +1160,9 @@
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
+      ],
+      "Upload anyway": [
+        "Запампаваць усё роўна"
       ],
       "Upload file": [
         "Запампаваць файл"
@@ -3712,12 +3724,6 @@
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
       ],
-      "Invalid ${ name } code": [
-        "Памылковы код ${ name }"
-      ],
-      "Invalid card number": [
-        "Памылковы нумар карткі"
-      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -3726,9 +3732,6 @@
       ],
       "Invalid email address": [
         "Памылковы адрас электроннай пошты"
-      ],
-      "Invalid expiration date": [
-        "Памылковая дата завяршэння тэрміну дзеяння"
       ],
       "Invalid IBAN": [
         "Памылковы IBAN"
@@ -3783,6 +3786,9 @@
       ],
       "No contacts found to import": [
         "Не знойдзены кантакты для імпартавання"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
@@ -4041,6 +4047,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Невядомая стратэгія канфлікту: ${ strategy }"
@@ -5825,6 +5834,9 @@
       "Files and folders that others shared with you will appear here": [
         "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
       "finance": [
         "фінансы"
       ],
@@ -5878,6 +5890,9 @@
       ],
       "How does encrypted search work?": [
         "Як працуе зашыфраваны пошук?"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Я пацвярджаю і ўсведамляю, што інфармацыя і заявы, якія змяшчаюцца ў справаздачы, з'яўляюцца правільнымі і поўнымі."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Вы страціце доступ да файлаў, калі яны не будуць цалкам спампаваны на прыладу ${ deviceName }."
@@ -6406,6 +6421,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
+      ],
+      "Re-indexing in progress": [
+        "Адбываецца паўторнае індэксаванне"
       ],
       "Ready to add some photos?": [
         "Гатовыя дадаць некаторыя фатаграфіі?"
@@ -7151,6 +7169,9 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Вашы файлы будуць паўторна індэксаваныя. Вы можаце працягваць пошук, але вынікі могуць быць няпоўнымі, пакуль пошук не завершыцца. Сістэма паведаміць вам, калі працэс будзе завершаны."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Вашы файлы больш недаступны з прычыны скідання пароля. Для аднаўлення доступу, паўторна запампуйце стары ключ шыфравання. ${ KeyReactivationButton }"
       ],
@@ -7699,8 +7720,8 @@
       "Index kinds": [
         "Тыпы індэксаў"
       ],
-      "Initial indexing": [
-        "Першапачатковая індэксацыя"
+      "Indexing": [
+        "Індэксаванне"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -12746,6 +12767,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } бясплатных запамповак."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -13764,6 +13788,26 @@
         "Вы атрымалі 5 ГБ сховішча"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сёння"
@@ -13860,6 +13904,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
       ]
@@ -13902,6 +13949,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Атрымаць Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     },
     "Validation": {
