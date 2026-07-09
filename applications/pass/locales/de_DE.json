@@ -1165,6 +1165,12 @@
       "Failed to set default mailbox": [
         "Fehler beim Festlegen des Standardpostfachs."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht gestartet werden: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht beendet werden: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Fehler beim Synchronisieren der Aliasse."
       ],
@@ -1534,6 +1540,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen, Kreditkarten und Identitäten."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } verwendet die in deinen Tresoren gespeicherten SSH-Schlüssel."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } Offline-Modus aktiviert."
@@ -2089,6 +2098,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2118,6 +2131,9 @@
       ],
       "No network connection": [
         "Keine Netzwerkverbindung"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "In ${ PASS_SHORT_APP_NAME } wurden keine SSH-Schlüssel gefunden. Erstelle einen SSH-Schlüssel-Eintrag für die Verwendung mit dem Agenten."
       ],
       "No vaults available.": [
         "Keine Tresore verfügbar."
@@ -2937,6 +2953,9 @@
       ],
       "Address details": [
         "Adressdetails"
+      ],
+      "Advanced": [
+        "Fortgeschritten"
       ],
       "Alias": [
         "Alias"
@@ -3889,6 +3908,9 @@
       "Update": [
         "Aktualisieren"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME } als SSH-Agent verwenden"
+      ],
       "Use for AI agent": [
         "Für KI-Agenten verwenden"
       ],
@@ -4459,6 +4481,12 @@
       "Random prefix generation successfully enabled": [
         "Die zufällige Präfixgenerierung wurde aktiviert."
       ],
+      "SSH agent successfully started": [
+        "SSH-Agent erfolgreich gestartet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-Agent erfolgreich gestoppt"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten.",
         "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten."
@@ -4904,6 +4932,9 @@
       "SPF (Optional)": [
         "SPF (optional)"
       ],
+      "SSH Agent": [
+        "SSH-Agent"
+      ],
       "Status": [
         "Status"
       ],
@@ -5249,6 +5280,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Beim Starten von ${ PASS_APP_NAME } ist ein Fehler aufgetreten. Bitte versuche, die Erweiterung zu aktualisieren oder neu zu laden."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Für den SSH-Agenten ist die Verwendung von SSH-Schlüsseln erforderlich, was in deinem Abonnement nicht verfügbar ist."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Der Alias-Präfix darf nicht länger als 40 Zeichen sein."

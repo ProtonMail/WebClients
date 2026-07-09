@@ -1160,6 +1160,12 @@
       "Failed to set default mailbox": [
         "设置默认邮箱失败"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "启动 SSH 代理失败：${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "停止 SSH 代理失败：${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "同步别名失败"
       ],
@@ -1516,6 +1522,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } 将使用保存在您保险库中的 SSH 密钥。"
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } 离线模式已启用"
@@ -2064,7 +2073,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2095,6 +2104,9 @@
       ],
       "No network connection": [
         "无网络连接"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "在 ${ PASS_SHORT_APP_NAME } 中未找到 SSH 密钥，请创建 SSH 密钥项以供代理使用。"
       ],
       "No vaults available.": [
         "没有可用的保险库"
@@ -2894,6 +2906,9 @@
       ],
       "Address details": [
         "地址详情"
+      ],
+      "Advanced": [
+        "高级"
       ],
       "Alias": [
         "别名"
@@ -3843,6 +3858,9 @@
       "Update": [
         "更新"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "将 ${ PASS_APP_NAME } 用作 SSH 代理"
+      ],
       "Use for AI agent": [
         "用于 AI 代理"
       ],
@@ -4409,6 +4427,12 @@
       "Random prefix generation successfully enabled": [
         "成功启用随机前缀生成功能"
       ],
+      "SSH agent successfully started": [
+        "SSH 代理已成功启动"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH 代理已成功停止"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "保险库包含的用户数不能超过 ${ targetMaxMembers } 位。"
       ],
@@ -4848,6 +4872,9 @@
       "SPF (Optional)": [
         "SPF (可选)"
       ],
+      "SSH Agent": [
+        "SSH 代理"
+      ],
       "Status": [
         "状态"
       ],
@@ -5188,6 +5215,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "启用${ PASS_APP_NAME }时发生了错误。请尝试刷新或重载该插件。"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH 代理需要使用 SSH 密钥，而您的套餐不支持此功能。"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "别名前缀不可超过40个字符"
