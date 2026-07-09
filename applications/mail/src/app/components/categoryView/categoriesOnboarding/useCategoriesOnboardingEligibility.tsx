@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { FeatureValueDefault } from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { selectHasDefaultB2CCategoryConfiguration } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
@@ -17,7 +18,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
 import { hasSeenAllOnboarding, hasSeenFreeUserSpotlight } from './categoriesOnboarding.helpers';
-import { FeatureValueDefault, OnboardingFlow, type OnboardingInfo } from './onboardingInterface';
+import { OnboardingFlow, type OnboardingInfo } from './onboardingInterface';
 
 const B2B_REQUIRED_NUMBER_OF_MAILS = 20;
 const B2C_REQUIRED_NUMBER_OF_MAILS = 5;

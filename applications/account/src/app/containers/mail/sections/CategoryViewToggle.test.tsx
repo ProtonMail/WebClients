@@ -32,6 +32,10 @@ jest.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => (
     }),
 }));
 
+jest.mock('@proton/mail/features/categoriesView/useMarkOnboardingComplete', () => ({
+    useMarkOnboardingComplete: () => jest.fn(),
+}));
+
 describe('CategoryViewSection', () => {
     describe('setting is visible', () => {
         it('should have visible switch and checked if the setting is on', () => {

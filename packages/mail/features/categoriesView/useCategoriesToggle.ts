@@ -5,6 +5,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { useMarkOnboardingComplete } from '@proton/mail/features/categoriesView/useMarkOnboardingComplete';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -22,12 +23,19 @@ export const useCategoriesToggle = () => {
     const { state, toggle } = useToggle(mailSettings.MailCategoryView);
 
     const { sendReportChangeCategorySettings } = useCategoriesTelemetry();
+    const markOnboardingComplete = useMarkOnboardingComplete();
 
     const handleChange = ({ checked, notification }: { checked: boolean; notification: boolean }) => {
         const run = async () => {
             const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(checked));
             dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
             toggle();
+
+            // Disabling categories opts the user out of the onboarding for good.
+            // This prevents the onboarding flow from reappearing if the user re-enables categories and is eligible.
+            if (!checked) {
+                markOnboardingComplete();
+            }
 
             if (notification) {
                 createNotification({ text: c('Success').t`Preference saved` });
