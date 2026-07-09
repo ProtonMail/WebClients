@@ -12,9 +12,10 @@ interface Props {
     user?: User;
     organization?: OrganizationExtended;
     plan?: PLANS;
+    localID?: number;
 }
 
-const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
+const ExploreStep = ({ onExplore, user, organization, plan, localID }: Props) => {
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
@@ -31,6 +32,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
             <div>
                 <ExploreAppsListV2
                     subscription={{ subscribed, plan }}
+                    localID={localID}
                     apps={getExploreApps({
                         user,
                         organization,
