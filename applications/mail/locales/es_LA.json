@@ -4966,12 +4966,6 @@
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
-      "Invalid ${ name } code": [
-        "Código ${ name } inválido"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta inválido"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -4980,9 +4974,6 @@
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
-      ],
-      "Invalid expiration date": [
-        "Fecha de expiración inválida"
       ],
       "Invalid expiration time": [
         "Fecha de expiración inválida"
@@ -5071,9 +5062,6 @@
       ],
       "Not a valid number": [
         "Número no válido"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
@@ -10099,9 +10087,6 @@
       "Navigation": [
         "Navegación"
       ],
-      "New": [
-        "Nuevo"
-      ],
       "New password": [
         "Contraseña nueva"
       ],
@@ -10131,9 +10116,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Las notificaciones están desactivadas. Para activarlas cambie los ajustes del navegador."
-      ],
-      "Open in a new tab": [
-        "Abrir en una pestaña nueva"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -15851,7 +15833,7 @@
         "Código de verificación inválido"
       ],
       "Keep this banner hidden?": [
-        "¿Mantener oculta esta barra?"
+        "¿Mantener este banner oculto?"
       ],
       "Label as": [
         "Etiquetar como"
@@ -16433,6 +16415,26 @@
         "Su dirección en formato más corto ya está lista."
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
@@ -16528,6 +16530,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -16577,6 +16582,11 @@
       ],
       "Your default font will look like following:": [
         "La fuente predeterminada tendrá el siguiente aspecto:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Validation": {
