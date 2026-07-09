@@ -4,12 +4,16 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
+import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
+import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { OnboardingStep } from '../categoriesOnboarding/onboardingInterface';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
@@ -22,6 +26,7 @@ import './CategoriesTabs.scss';
 export const CategoriesTabsList = () => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
+    const { activeStep, categorizeStepLocation } = useCategoriesOnboarding();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const activeCategoryID = useMailSelector(selectActiveCategoryID);
@@ -81,6 +86,29 @@ export const CategoriesTabsList = () => {
                         categoryIDs,
                         selectAll,
                     });
+
+                    const isCategorizeStep =
+                        activeStep === OnboardingStep.CATEGORIZE && categorizeStepLocation === 'tab';
+                    const isMessageStep = activeStep === OnboardingStep.MESSAGE;
+                    const isSocialCategory = category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL;
+
+                    if (isSocialCategory && (isCategorizeStep || isMessageStep)) {
+                        const stepToWatch = isCategorizeStep ? OnboardingStep.CATEGORIZE : OnboardingStep.MESSAGE;
+
+                        return (
+                            <CategoriesOnboardingSpotlight step={stepToWatch} key={category.id}>
+                                <div
+                                    className="tab-wrapper shrink-0"
+                                    onDragOver={handleDragOver(category.id)}
+                                    onDrop={handleDrop(category.id)}
+                                >
+                                    <ErrorBoundary component={<CategoryTabError />}>
+                                        <Tab category={category} tabState={tabState} />
+                                    </ErrorBoundary>
+                                </div>
+                            </CategoriesOnboardingSpotlight>
+                        );
+                    }
 
                     return (
                         <div

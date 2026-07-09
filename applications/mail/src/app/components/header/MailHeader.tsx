@@ -5,6 +5,7 @@ import FloatingButton from '@proton/components/components/button/FloatingButton'
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { Hamburger } from '@proton/components/index';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -22,6 +23,9 @@ import { getLabelName } from '../../helpers/labels';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
+import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
+import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import { MailHeaderActionArea } from './MailHeaderActionArea';
 
 interface Props {
@@ -46,14 +50,24 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }:
 
     const onCompose = useOnCompose();
 
-    const hideMenuButton = breakpoints.viewportWidth['<=small'] && !!elementID;
+    const { userIsInOnboarding } = useCategoriesOnboarding();
+
+    const isSmallViewport = breakpoints.viewportWidth['<=small'];
+    const hideMenuButton = isSmallViewport && !!elementID;
     const hideUpsellButton =
-        (breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium) &&
-        (!!elementID || actions.selectedIDs.length !== 0);
+        (isSmallViewport || breakpoints.viewportWidth.medium) && (!!elementID || actions.selectedIDs.length !== 0);
     const labelName = getLabelName(labelID, labels, folders);
 
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
     const shouldDragInElectronMailClassName = hasComposerInFocus && isElectronMail ? 'ignore-drag' : '';
+
+    // We override the hamburger menu for small viewports during category onboarding to show the last feature tour step.
+    const customMenuButton =
+        userIsInOnboarding && isSmallViewport ? (
+            <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
+                <Hamburger expanded={expanded} onToggle={onToggleExpand} />
+            </CategoriesOnboardingSpotlight>
+        ) : undefined;
 
     return (
         <>
@@ -62,6 +76,7 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }:
                 className={shouldDragInElectronMailClassName}
                 userDropdown={<UserDropdown app={APPS.PROTONMAIL} />}
                 hideMenuButton={hideMenuButton}
+                overrideMenuButton={customMenuButton}
                 hideUpsellButton={hideUpsellButton}
                 title={labelName}
                 actionArea={<MailHeaderActionArea toolbar={toolbar} actions={actions} elementsData={elementsData} />}
