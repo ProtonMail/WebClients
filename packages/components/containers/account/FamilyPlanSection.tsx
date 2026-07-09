@@ -68,7 +68,7 @@ const FamilyPlanSection = () => {
                     </Button>
                 </UsagePanel>
             </div>
-            {renderLeaveFamilyModal && <LeaveFamilyModal organisationName={organization.Name} {...leaveFamilyModal} />}
+            {renderLeaveFamilyModal && <LeaveFamilyModal {...leaveFamilyModal} />}
         </>
     );
 };
