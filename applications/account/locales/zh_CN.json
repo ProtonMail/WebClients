@@ -3320,6 +3320,30 @@
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "您当前的套餐最多允许 ${ maxMembers } 位用户。如需迁移更多用户，请为您的订阅增加席位。"
+      ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "确定要在没有 ${ withoutString } 和其他 ${ notMigratedOthers } 人的情况下继续吗？"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "确定要在没有 ${ withoutString } 的情况下继续吗？"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "删除任何已有的 MX 记录，然后复制以下记录并粘贴到您域名托管商的 DNS 设置中。"
+      ],
+      "More details": [
+        "更多详情"
+      ],
+      "Some members weren't migrated": [
+        "部分成员未迁移"
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "要完成迁移，请确保仅保留 ${ BRAND_NAME } MX 记录。"
+      ],
+      "You will not be able to copy these users' data later.": [
+        "您之后将无法复制这些用户的数据！"
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "您的域名配置仍包含其他提供商的 MX 记录！"
       ]
     },
     "breadcrumb": {
@@ -13528,6 +13552,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } 位成员已添加到群组"
+      ],
+      "Group created": [
+        "群组已创建"
       ]
     },
     "info": {
@@ -15770,6 +15800,33 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "App Settings": [
+        "应用设置"
+      ],
+      "Confirm MX records updated": [
+        "确认已更新 MX 记录"
+      ],
+      "Exact host matching": [
+        "精确主机匹配"
+      ],
+      "Exact URL matching": [
+        "精确 URL 匹配"
+      ],
+      "Never fill on this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Parent domain and subdomains (default)": [
+        "父域名及子域名（默认）"
+      ],
+      "Regular expression": [
+        "正则表达式"
+      ],
+      "Starts with": [
+        "开头为"
+      ],
+      "URL wildcard pattern": [
+        "URL 通配符模式"
       ]
     },
     "label": {
@@ -16715,6 +16772,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "“开头为”匹配规则"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精确（子）域名匹配规则"
+      ],
+      "Exact URL matching rule": [
+        "精确 URL 匹配规则"
+      ],
+      "Never fill with this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Regular expression rule": [
+        "正则表达式规则"
+      ],
+      "Wildcard pattern matching rule": [
+        "通配符模式匹配规则"
       ]
     },
     "Message display when a new app version is available": {
@@ -26624,6 +26699,12 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Get more from your privacy suite": [
+        "从您的隐私套件中获得更多"
+      ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "使用您的 ${ BRAND_NAME } 账户，您可以访问所有 ${ BRAND_NAME } 应用"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27897,6 +27978,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
       ]
     },
     "Warning for domain modal": {
