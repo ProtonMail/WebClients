@@ -1,6 +1,7 @@
 import type { Engine, Query, QueryEvent } from '@proton/proton-foundation-search';
 import { QueryEventKind } from '@proton/proton-foundation-search';
 
+import { Logger } from '../../shared/Logger';
 import type { IndexBlobStore } from './IndexBlobStore';
 
 export type ReadResult = {
@@ -26,12 +27,16 @@ export class IndexReader {
     async *execute(configureQuery: (query: Query) => Query): AsyncGenerator<ReadResult> {
         const search = configureQuery(this.engine.query()).search();
 
+        const startMs = performance.now();
+        let blobsLoaded = 0;
+        let resultsFound = 0;
         try {
             let event: QueryEvent | undefined;
             while ((event = search.next()) !== undefined) {
                 switch (event.kind()) {
                     case QueryEventKind.Load:
                         await this.blobStore.loadEvent(event);
+                        blobsLoaded++;
                         break;
                     case QueryEventKind.Found: {
                         const found = event.found();
@@ -40,6 +45,7 @@ export class IndexReader {
                             // TODO: Add matches to the yield ReadResult when available from foundation team.
                             // https://gitlab.protontech.ch/backend-team/foundation-team/search/-/merge_requests/364
                             yield { identifier: found.identifier(), score: score.value() };
+                            resultsFound++;
                             score.free();
                             found.free();
                         }
@@ -52,6 +58,9 @@ export class IndexReader {
                 }
             }
         } finally {
+            Logger.info(
+                `IndexReader: query done — ${resultsFound} UIDs found across ${blobsLoaded} blobs in ${Math.round(performance.now() - startMs)}ms`
+            );
             search.free();
         }
     }

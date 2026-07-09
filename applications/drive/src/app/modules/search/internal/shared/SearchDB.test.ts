@@ -2,8 +2,8 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import { SearchDB } from './SearchDB';
-import { IndexKind } from './types';
 import type { TreeEventScopeId } from './types';
+import { IndexKind } from './types';
 
 const identity = async <T>(d: T) => d;
 

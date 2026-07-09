@@ -54,6 +54,7 @@ export const CORE_ATTRIBUTE_NAMES = [
     'indexPopulatorKind',
     'indexPopulatorVersion',
     'indexPopulatorGeneration',
+    'reindexEpoch',
     'creationTime',
     'modificationTime',
     'nodeType',
@@ -85,6 +86,9 @@ export interface CreateIndexEntryParams<N extends string = string> {
     indexPopulatorKind: string;
     indexPopulatorVersion: number;
     indexPopulatorGeneration: number;
+    // Marks which subtree re-index run last wrote this entry (default 0). Used by the
+    // deferred sweep to identify descendants a re-walk did not re-stamp (i.e. obsolete).
+    reindexEpoch?: number;
     additionalAttributes?: { name: N extends CoreAttributeName ? never : N; value: AttributeValue }[];
 }
 
@@ -156,6 +160,7 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         indexPopulatorKind,
         indexPopulatorVersion,
         indexPopulatorGeneration,
+        reindexEpoch,
         additionalAttributes,
     } = params;
 
@@ -184,6 +189,7 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
             { name: 'indexPopulatorKind', value: { kind: 'tag', value: indexPopulatorKind } },
             { name: 'indexPopulatorVersion', value: { kind: 'integer', value: BigInt(indexPopulatorVersion) } },
             { name: 'indexPopulatorGeneration', value: { kind: 'integer', value: BigInt(indexPopulatorGeneration) } },
+            { name: 'reindexEpoch', value: { kind: 'integer', value: BigInt(reindexEpoch ?? 0) } },
             { name: 'creationTime', value: { kind: 'integer', value: BigInt(node.creationTime.getTime()) } },
             { name: 'modificationTime', value: { kind: 'integer', value: BigInt(node.modificationTime.getTime()) } },
             { name: 'mediaType', value: { kind: 'tag', value: node.mediaType || '' } },
