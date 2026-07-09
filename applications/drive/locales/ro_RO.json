@@ -787,6 +787,9 @@
       "Re-index": [
         "Reindexare"
       ],
+      "Re-indexing in progress": [
+        "Reindexare în derulare"
+      ],
       "Re-sign": [
         "Reînregistrare"
       ],
@@ -1051,6 +1054,9 @@
       "Sign up": [
         "Înregistrare"
       ],
+      "Skip": [
+        "Omitere"
+      ],
       "Skip verification": [
         "Ignorare verificare"
       ],
@@ -1149,6 +1155,9 @@
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
+      ],
+      "Upload anyway": [
+        "Încărcare așa"
       ],
       "Upload file": [
         "Încărcare fișier"
@@ -1533,7 +1542,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -3690,12 +3699,6 @@
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
-      "Invalid ${ name } code": [
-        "Cod ${ name } nevalid."
-      ],
-      "Invalid card number": [
-        "Număr de card nevalid."
-      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -3704,9 +3707,6 @@
       ],
       "Invalid email address": [
         "Adresă de e-mail nevalidă."
-      ],
-      "Invalid expiration date": [
-        "Data expirării nu este validă."
       ],
       "Invalid IBAN": [
         "Acest IBAN nu este valid."
@@ -3775,9 +3775,6 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
@@ -5332,6 +5329,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -6335,6 +6335,9 @@
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
       ],
+      "Re-indexing in progress": [
+        "Reindexare în derulare"
+      ],
       "Ready to add some photos?": [
         "Sunteți gata să adăugați fotografii?"
       ],
@@ -7069,6 +7072,9 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Fișierele sunt reindexate. Puteți căuta, dar rezultatele s-ar putea să fie incomplete până la finalizarea indexării. Vă vom anunța când s-a finalizat."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Fișierele nu mai sunt accesibile datorită resetării parolei. Reîncărcați vechea cheie de criptare pentru a redobândi accesul. ${ KeyReactivationButton }"
       ],
@@ -7529,6 +7535,12 @@
       "Environment compatible": [
         "Mediu compatibil"
       ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
       "Expired": [
         "Expirat"
       ],
@@ -7610,8 +7622,8 @@
       "Index kinds": [
         "Tipuri de indexare"
       ],
-      "Initial indexing": [
-        "Indexare inițială"
+      "Indexing": [
+        "Se indexează"
       ],
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
@@ -7694,6 +7706,9 @@
       "Never expires": [
         "Nu expiră"
       ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
       "New password": [
         "Parola nouă"
       ],
@@ -7726,6 +7741,9 @@
       ],
       "Outdated version": [
         "Versiune învechită"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Password": [
         "Parola"
@@ -7780,6 +7798,9 @@
       ],
       "Region": [
         "Județ"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
       ],
       "Replace existing folder or file": [
         "Înlocuire folder sau fișier existent"
@@ -7856,6 +7877,9 @@
       "Start date": [
         "Dată început"
       ],
+      "Starts with": [
+        "Începe cu"
+      ],
       "State": [
         "Județ/Stat"
       ],
@@ -7921,6 +7945,9 @@
       ],
       "Uploaded by": [
         "Încărcat de"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ],
       "User opted in": [
         "Utilizatorul a optat pentru"
@@ -8335,6 +8362,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
@@ -13501,6 +13546,26 @@
         "Ați primit 5 GiB spațiu de stocare"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Expiră"
+      ],
+      "Fingerprint": [
+        "Amprenta"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Type": [
+        "Tip"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
@@ -13597,6 +13662,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
       ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
       ]
@@ -13639,6 +13707,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Luați Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]
     },
     "Validation": {
@@ -13771,6 +13844,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",

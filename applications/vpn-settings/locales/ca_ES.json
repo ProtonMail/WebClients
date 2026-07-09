@@ -110,6 +110,9 @@
       "Apply": [
         "Aplica"
       ],
+      "Approve": [
+        "Aprovar"
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Amplia"
       ],
-      "Finish": [
-        "Finalitzar"
-      ],
       "Fit to window": [
         "Ajusta a la finestra"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Organització"
+      ],
+      "Pause": [
+        "Pausa"
       ],
       "Pay": [
         "Pagar"
@@ -4460,12 +4463,6 @@
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
-      "Invalid ${ name } code": [
-        "Codi ${ name } no vàlid"
-      ],
-      "Invalid card number": [
-        "Número de targeta no vàlid"
-      ],
       "Invalid code": [
         "Codi invàlid"
       ],
@@ -4477,9 +4474,6 @@
       ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
-      ],
-      "Invalid expiration date": [
-        "Data de caducitat invàlida"
       ],
       "Invalid IBAN": [
         "L'IBAN no és vàlid."
@@ -4544,9 +4538,6 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Només es poden canviar les majúscules i la puntuació (punts, guionets i guions baixos) per aquesta adreça"
@@ -4680,6 +4671,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membre",
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membres"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grup",
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grups"
       ],
       "Server not found": [
         "No s'ha trobat el servidor"
@@ -6352,6 +6351,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
       ],
+      "${ emails.length } member added to the group": [
+        "S'ha afegit ${ emails.length }membre al grup",
+        "S'han afegit ${ emails.length }membres al grup"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
       ],
@@ -6418,9 +6421,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "S'ha afegit ${ pendingAdminMemberCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
-        "S'han afegit ${ pendingAdminMemberCount } membres nous a través del vostre proveïdor d'identitat i estan pendents de revisió."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingAdminApprovalCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingAdminApprovalCount } membres nous mitjançant el vostre proveïdor d'identitat i estan pendents de revisió."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -6828,11 +6831,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Es facturarà a ${ monthlyDiscountedPrice } els primers sis mesos i es renovarà a ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Es facturarà a ${ monthlyDiscountedPriceElement } els primers sis mesos i es renovarà a ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Es facturarà a ${ yearlyDiscountedPrice } els primers dotze mesos i es renovarà a ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Es facturarà a ${ yearlyDiscountedPriceElement } els primers dotze mesos i es renovarà a ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
@@ -7338,8 +7341,14 @@
       "Got it": [
         "D'acord"
       ],
+      "Group created": [
+        "S'ha creat el grup"
+      ],
       "Group deleted": [
         "S'ha eliminat el grup."
+      ],
+      "Group roles assigned": [
+        "S'han assignat els rols del grup"
       ],
       "Groups": [
         "Grups"
@@ -9205,6 +9214,9 @@
       "Group Owner": [
         "Propietari del grup"
       ],
+      "Invited": [
+        "Convidat"
+      ],
       "Paused": [
         "En pausa"
       ],
@@ -10557,20 +10569,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Usuaris i adreces"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "El xat en viu està disponible amb ${ planName }"
-      ],
-      "Open support form": [
-        "Obriu el formulari de suport"
-      ],
-      "Upgrade subscription": [
-        "Milloreu la subscripció"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Milloreu el pla per desbloquejar el suport per a xats i altres característiques prèmium, o utilitzeu el nostre formulari de suport gratuït per informar del vostre problema."
       ]
     },
     "Loading info": {
@@ -14148,8 +14146,8 @@
       "Updated": [
         "Actualitzat"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Els usuaris que hàgiu configurat com a privats han d'acceptar la invitació per completar la configuració. Els enviarem una invitació un cop els aproveu."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Els usuaris configurats com a privats han d'acceptar la invitació per acabar la configuració. Els enviarem una invitació un cop ho aproveu."
       ]
     },
     "scim: Action": {
@@ -14948,13 +14946,13 @@
         "S'ha desconnectat ${ n } usuari de l'inici de sessió únic (SSO).",
         "S'han desconnectat ${ n } usuaris de l'inici de sessió únic (SSO)."
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } usuari s'ha unit a la vostra organització mitjançant el vostre proveïdor d'identitat. Reviseu el compte ara:",
-        "${ n } usuaris s'han unit a la vostra organització mitjançant el vostre proveïdor d'identitat. Reviseu els seus comptes ara:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } usuari s'ha unit a la vostra organització a través del vostre proveïdor d'identitat.",
+        "${ n } usuaris s'han unit a la vostra organització a través del vostre proveïdor d'identitat."
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } usuari està inactiu. Podeu suprimir aquest usuari de la vostra organització amb seguretat.",
-        "${ n } usuaris estan inactius. Podeu eliminar-los de la vostra organització amb seguretat."
+      "${ n } user is inactive.": [
+        "${ n } usuari està inactiu.",
+        "${ n } usuaris estan inactius."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuari demana la vostra ajuda per a iniciar la sessió al seu compte de ${ BRAND_NAME } amb un inici de sessió únic.",
@@ -17813,6 +17811,9 @@
       "Group membership paused": [
         "S'ha pausat la subscripció del grup."
       ],
+      "Resuming role assignment": [
+        "S'està reprenent l'assignació de rols"
+      ],
       "Role assignment paused": [
         "S'ha pausat l'assignació de rols"
       ],
@@ -17822,11 +17823,14 @@
       "User declined invitation": [
         "L'usuari ha rebutjat la invitació."
       ],
-      "User is a group": [
-        "L'usuari és un grup"
+      "User is a group owner": [
+        "L'usuari és propietari d'un grup"
       ],
       "via ${ groupNames }": [
         "mitjançant ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "S'està esperant l'aprovació de l'administrador"
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
@@ -17940,9 +17944,9 @@
       "Confirm all": [
         "Confirma-ho tot"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "No s'ha pogut activar automàticament l'accés d'administrador per a ${ n } usuari perquè les seves claus de xifratge s'han actualitzat recentment:",
-        "No s'ha pogut activar automàticament l'accés d'administrador per a ${ n } usuaris perquè les seves claus de xifratge s'han actualitzat recentment:"
+      "Could not enable admin access for ${ n } user": [
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuari",
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuaris"
       ],
       "Could not enable administrator access: ${ error }": [
         "No s'ha pogut activar l'accés de l'administrador: ${ error }"
@@ -17971,6 +17975,10 @@
       "Request user permission for data access": [
         "Sol·licita permís a l'usuari per accedir a les dades"
       ],
+      "Review their account now.": [
+        "Reviseu el seu compte ara.",
+        "Reviseu els seus comptes ara."
+      ],
       "Revoke access": [
         "Revoca l'accés"
       ],
@@ -17983,6 +17991,9 @@
       "The user must have an address to request data access": [
         "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Les seves claus d'encriptació s'han actualitzat mentre estàvem fent canvis."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Això cancel·larà la sol·licitud pendent d'accés de l'administrador a les dades de l'usuari o al restabliment de la contrasenya."
       ],
@@ -17994,6 +18005,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
+        "Podeu eliminar aquests usuaris de la vostra organització de manera segura."
       ]
     },
     "Upsell": {

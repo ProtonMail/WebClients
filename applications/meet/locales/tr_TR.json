@@ -148,10 +148,19 @@
         "${ participantName } katılımcısını kabul et"
       ],
       "Admit all": [
-        "Hepsini kabul et"
+        "Tümünü kabul et"
       ],
       "Allow access": [
         "Erişime izin ver"
+      ],
+      "Anyone with the link can join immediately": [
+        "Bağlantıya sahip olan herkes hemen katılabilir"
+      ],
+      "Applied": [
+        "Uygulandı"
+      ],
+      "Apply changes": [
+        "Değişiklikleri uygula"
       ],
       "Approve participants before they can join": [
         "Katılımcıların katılmadan önce onaylanmaları gerekir"
@@ -306,6 +315,9 @@
       "Forgot password?": [
         "Parolamı unuttum"
       ],
+      "Full size": [
+        "Tam boyut"
+      ],
       "Generate a new meeting link.": [
         "Yeni görüşme bağlantısı oluştur."
       ],
@@ -320,6 +332,9 @@
       ],
       "Help and resources": [
         "Yardım ve kaynaklar"
+      ],
+      "Hide options": [
+        "Seçenekleri gizle"
       ],
       "Hide participants": [
         "Katılımcıları gizle"
@@ -387,8 +402,14 @@
       "Open link": [
         "Bağlantıyı aç"
       ],
+      "Participants join after you approve them": [
+        "Katılımcılar sizin onayınızı aldıktan sonra gruba katılırlar"
+      ],
       "Participants join the call directly": [
         "Katılımcılar görüşmeye doğrudan katılır"
+      ],
+      "Pause": [
+        "Duraklat"
       ],
       "Previous month": [
         "Önceki ay"
@@ -408,6 +429,9 @@
       ],
       "Receive video": [
         "Görüntüyü al"
+      ],
+      "Record": [
+        "Kayıt"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -442,6 +466,12 @@
       ],
       "Resend code": [
         "Kodu yeniden gönder"
+      ],
+      "Reset to defaults": [
+        "Varsayılanlara sıfırla"
+      ],
+      "Resume": [
+        "Sürdür"
       ],
       "Return to dashboard": [
         "Panoya dön"
@@ -478,6 +508,9 @@
       ],
       "Show floating thumbnail during screensharing": [
         "Ekran paylaşımı yaparken kayan küçük görsel görüntülensin"
+      ],
+      "Show options": [
+        "Seçenekleri görüntüle"
       ],
       "Show participants": [
         "Katılımcıları görüntüle"
@@ -521,6 +554,9 @@
       "Start your own meeting": [
         "Kendi toplantınızı başlatın"
       ],
+      "Starting…": [
+        "Başlatılıyor…"
+      ],
       "Stay in meeting": [
         "Görüşmede kal"
       ],
@@ -563,8 +599,17 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
       "Upgrade your plan to use waiting room in your next meeting.": [
         "Bir sonraki toplantınızda bekleme odasını kullanabilmek için tarifenizi yükseltin."
+      ],
+      "Upload another video": [
+        "Başka bir görüntü yükle"
+      ],
+      "Upload video": [
+        "Görüntü yükle"
       ],
       "Use authentication code": [
         "Kimlik doğrulama kodunu kullanın"
@@ -577,6 +622,9 @@
       ],
       "Use recovery code": [
         "Kurtarma kodunu kullanın"
+      ],
+      "Use waiting room with a paid plan": [
+        "Ücretli tarifeyle bekleme odasını kullanın"
       ],
       "Verify": [
         "Doğrula"
@@ -1698,10 +1746,10 @@
         "En iyi güvenliği sağlamak için grup şifreleme anahtarı değiştiriliyor"
       ],
       "Try a different name.": [
-        "Başka bir isim deneyin."
+        "Başka bir ad deneyin."
       ],
       "You'll see people here when they join the meeting.": [
-        "Toplantıya katıldıklarında buradaki kişileri göreceksiniz."
+        "Toplantıya katılan kişileri burada göreceksiniz."
       ]
     },
     "Display name": {
@@ -2088,6 +2136,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Gelişmiş kip: Sonraki sürümün bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } ${ participantNumber } anonim"
       ],
@@ -2114,6 +2165,9 @@
       ],
       "Camera permission denied": [
         "Kameraya erişme izni verilmedi"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Değişiklikler aşamalı olarak uygulanır. Ön izlemeyi yeni sabitlerle oluşturmak için uygulayın."
       ],
       "Chat with everyone": [
         "Herkesle sohbet edin"
@@ -2144,6 +2198,12 @@
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
+      ],
+      "Could not access the camera.": [
+        "Kameraya erişilemedi."
+      ],
+      "Could not start recording.": [
+        "Kayıt başlatılamadı."
       ],
       "Country code": [
         "Ülke kodu"
@@ -2222,6 +2282,9 @@
       ],
       "Everyone has been disconnected from the call.": [
         "Çağrı herkes için sonlandırıldı."
+      ],
+      "Failed to apply background blur": [
+        "Arka plan bulanıklığı uygulanamadı"
       ],
       "Failed to update meeting name": [
         "Görüşme adı güncellenemedi"
@@ -2312,6 +2375,9 @@
       ],
       "Loading…": [
         "Yükleniyor…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Yüklediğiniz veya canlı kamera görüntüsünü iki arka plan bulanıklaştırma sürümünde yan yana sürekli oynatın."
       ],
       "Lower participant's hand": [
         "Katılımcının elini indir"
@@ -2472,6 +2538,9 @@
       "Record your meetings": [
         "Görüşmelerinizi kaydedin"
       ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Kamera görüntüsünü ve üretim arka planındaki bulanıklığı yan yana kaydedin. İndirme işlemi her iki parçayı da durdurur."
+      ],
       "Recording": [
         "Kaydediliyor"
       ],
@@ -2540,6 +2609,9 @@
       ],
       "Start recording": [
         "Kaydı başlat"
+      ],
+      "Starting camera…": [
+        "Kamera başlatılıyor…"
       ],
       "Stop sharing your screen": [
         "Ekran paylaşımını durdur"
@@ -2733,6 +2805,9 @@
       "Add to calendar": [
         "Takvime ekle"
       ],
+      "Advanced mode": [
+        "Gelişmiş kip"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -2741,6 +2816,9 @@
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
+      ],
+      "Blurred (next)": [
+        "Bulanık (sonraki)"
       ],
       "Browser": [
         "Tarayıcı"
@@ -2771,6 +2849,9 @@
       ],
       "Created": [
         "Oluşturulma"
+      ],
+      "Current": [
+        "Geçerli"
       ],
       "Delete": [
         "Sil"
@@ -2859,6 +2940,9 @@
       "Name": [
         "Ad"
       ],
+      "Next": [
+        "İlerle"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -2879,6 +2963,9 @@
       ],
       "Phone number": [
         "Telefon numarası"
+      ],
+      "Raw": [
+        "Ham"
       ],
       "Remember my name on this device": [
         "Bu aygıtta adım anımsansın"
@@ -2915,6 +3002,12 @@
       ],
       "Track SID": [
         "SID izlensin"
+      ],
+      "Use live camera feed": [
+        "Canlı kamera görüntüsü kullanılsın"
+      ],
+      "Use simple selfie segmentation": [
+        "Basit özçekim parçalaması kullanılsın"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -3262,6 +3355,9 @@
       "Available Speakers": [
         "Uygun konuşmacılar"
       ],
+      "Background blur comparison": [
+        "Arka plan bulanıklığı karşılaştırması"
+      ],
       "Camera and microphone are blocked": [
         "Kamera ve mikrofon engellendi"
       ],
@@ -3270,6 +3366,9 @@
       ],
       "Chat": [
         "Sohbet"
+      ],
+      "Constants": [
+        "Sabitler"
       ],
       "Couldn't prepare the recording": [
         "Kayıt hazırlanamadı"
@@ -3363,7 +3462,7 @@
         "Mini takvim"
       ],
       "No one is waiting": [
-        "Kimse beklemiyor"
+        "Bekleyen kimse yok"
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -3388,6 +3487,9 @@
       ],
       "Reconnection Testing": [
         "Yeniden bağlanma sınaması"
+      ],
+      "Record raw vs blurred camera": [
+        "Ham görüntü ile bulanık görüntünün kaydı"
       ],
       "Record this meeting": [
         "Bu görüşmeyi kaydet"

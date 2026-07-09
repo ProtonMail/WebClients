@@ -968,6 +968,9 @@
       "Organization": [
         "Organizacja"
       ],
+      "Pause": [
+        "Wstrzymaj"
+      ],
       "Pay": [
         "Zapłać"
       ],
@@ -5393,12 +5396,6 @@
       "Intended recipient does not support calendar sharing": [
         "Odbiorca nie obsługuje udostępniania kalendarza"
       ],
-      "Invalid ${ name } code": [
-        "Kod ${ name } jest nieprawidłowy"
-      ],
-      "Invalid card number": [
-        "Numer karty jest nieprawidłowy"
-      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -5410,9 +5407,6 @@
       ],
       "Invalid email address": [
         "Adres e-mail jest nieprawidłowy"
-      ],
-      "Invalid expiration date": [
-        "Termin ważności jest nieprawidłowy"
       ],
       "Invalid IBAN": [
         "Numer IBAN jest nieprawidłowy"
@@ -18259,18 +18253,6 @@
         "Odłączono ${ n } użytkowników z logowania SSO",
         "Odłączono ${ n } użytkowników z logowania SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Sprawdź konto:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } użytkownik jest nieaktywny. Możesz bezpiecznie usunąć tego użytkownika z organizacji.",
-        "${ n } użytkowników jest nieaktywnych. Możesz bezpiecznie usunąć tych użytkowników z organizacji.",
-        "${ n } użytkowników jest nieaktywnych. Możesz bezpiecznie usunąć tych użytkowników z organizacji.",
-        "${ n } użytkowników jest nieaktywnych. Możesz bezpiecznie usunąć tych użytkowników z organizacji."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } użytkownik poprosił o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
@@ -21630,12 +21612,6 @@
       ],
       "Confirm all": [
         "Potwierdź wszystko"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkownika, ponieważ jego klucze szyfrowania zostały w międzyczasie zaktualizowane:",
-        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:",
-        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:",
-        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nie można włączyć dostępu administratora: ${ error }"

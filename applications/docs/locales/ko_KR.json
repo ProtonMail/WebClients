@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
+        "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타납니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
@@ -2900,6 +2900,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length }개 항목 이동 실패"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
@@ -3157,9 +3160,6 @@
       ],
       "Not a valid number": [
         "유효하지 않은 번호"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
@@ -3836,7 +3836,7 @@
         "보안 키"
       ],
       "Touch your security key.": [
-        "귀하의 보안 키를 터치해 주세요."
+        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -4340,9 +4340,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount }개 선택됨"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized }개 폴더 선택함"
       ],
@@ -4767,7 +4764,7 @@
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -7671,6 +7668,9 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems }개를 휴지통에서 복구하는 데 실패했습니다"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems }개 항목 이동"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems }개가 휴지통으로 이동되었습니다"
       ],
@@ -9927,7 +9927,7 @@
         "연락처 병합"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+        "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -10203,6 +10203,26 @@
         "사용자의 노출된 정보"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
+      ],
+      "Fingerprint": [
+        "지문"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Type": [
+        "종류"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
@@ -10286,6 +10306,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
@@ -10422,7 +10445,7 @@
         "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+        "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

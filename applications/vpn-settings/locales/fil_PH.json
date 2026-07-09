@@ -689,6 +689,9 @@
       "Organization": [
         "Organisasyon"
       ],
+      "Pause": [
+        "I-pause"
+      ],
       "Pay": [
         "Magbayad"
       ],
@@ -4069,12 +4072,6 @@
       "Incorrect username": [
         "Maling username"
       ],
-      "Invalid ${ name } code": [
-        "Hindi valid na ${ name } code"
-      ],
-      "Invalid card number": [
-        "Hindi valid na numero ng card"
-      ],
       "Invalid code": [
         "Hindi valid na code"
       ],
@@ -4086,9 +4083,6 @@
       ],
       "Invalid email address": [
         "Hindi valid na email address"
-      ],
-      "Invalid expiration date": [
-        "Hindi valid na petsa ng pag-expire"
       ],
       "Invalid IBAN": [
         "Hindi valid na IBAN"
@@ -13563,14 +13557,6 @@
         "Na-detach mula sa SSO ang ${ n } user",
         "Na-detach mula sa SSO ang ${ n } na user"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } user ang sumali sa iyong organisasyon sa pamamagitan ng Identity Provider. Suriin ang account ngayon:",
-        "${ n } na user ang sumali sa iyong organisasyon sa pamamagitan ng Identity Provider. Suriin ang kanilang mga account ngayon:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "Hindi aktibo ang ${ n } user. Maaari mong ligtas na alisin ang user na ito sa iyong organisasyon.",
-        "Hindi aktibo ang ${ n } na user. Maaari mong ligtas na alisin ang mga ito sa iyong organisasyon."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "Humihiling ng tulong ang ${ n } user na mag-sign in sa kanilang ${ BRAND_NAME } Account gamit ang single sign-on.",
         "Humihiling ng tulong ang ${ n } na user na mag-sign in sa kanilang ${ BRAND_NAME } Account gamit ang single sign-on."
@@ -16236,10 +16222,6 @@
       ],
       "Confirm all": [
         "Kumpirmahin lahat"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Hindi awtomatikong mapagana ang access ng administrator para sa ${ n } user, dahil na-update ang kanilang mga encryption key sa pansamantala:",
-        "Hindi awtomatikong mapagana ang access ng administrator para sa ${ n } na user, dahil na-update ang kanilang mga encryption key sa pansamantala:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Hindi mapagana ang access ng administrator: ${ error }"

@@ -110,6 +110,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Approve": [
+        "Hyväksy"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -727,6 +730,9 @@
       ],
       "Organization": [
         "Organisaatio"
+      ],
+      "Pause": [
+        "Pysäytä"
       ],
       "Pay": [
         "Maksa"
@@ -1877,6 +1883,9 @@
       ],
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
+      ],
+      "Size": [
+        "Koko"
       ],
       "Status": [
         "Tila"
@@ -3400,6 +3409,15 @@
       "No one in your organization can connect to shared servers.": [
         "Kukaan organisaatiossasi ei voi yhdistää jaettuihin palvelimiin."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Huomaa, että tähän osoitteeseen lähetettyjä sähköposteja, edes muista ${ BRAND_NAME } -osoitteista, ei enää salata päästä päähän."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu ja tili poistettu käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
       ],
@@ -3469,6 +3487,9 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Voit nyt lähettää sähköposteja ${ BRAND_NAME }:sta tällä osoitteella."
+      ],
+      "You can reconnect this address at any time.": [
+        "Voit yhdistää tämän osoitteen uudelleen milloin tahansa."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Välität ${ numAddressesOrSync } Gmail-osoitteen sovellukseen ${ MAIL_APP_NAME }.",
@@ -4126,12 +4147,6 @@
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
       ],
-      "Invalid ${ name } code": [
-        "Virheellinen ${ name }-koodi"
-      ],
-      "Invalid card number": [
-        "Virheellinen kortin numero"
-      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -4143,9 +4158,6 @@
       ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
-      ],
-      "Invalid expiration date": [
-        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid IBAN": [
         "Virheellinen IBAN"
@@ -4204,6 +4216,9 @@
       ],
       "Not a valid number": [
         "Virheellinen numero"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Tälle osoitteelle voidaan muuttaa ainoastaan kirjainten kokoa ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja)"
       ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
@@ -4328,6 +4343,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta",
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta",
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta"
       ],
       "Server not found": [
         "Palvelinta ei löytynyt"
@@ -5188,6 +5211,9 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
+      "Insert your security key into your device.": [
+        "Aseta turva-avain laitteeseesi."
+      ],
       "Security key": [
         "Suojausavain"
       ],
@@ -5406,6 +5432,12 @@
     "group_modal": {
       "General": [
         "Yleinen"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ],
       "Roles and permissions": [
         "Roolit ja oikeudet"
@@ -5883,6 +5915,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME }:n Business paketit tarjoavat tiimillesi kaikki yhteistyötyökalut, joita se tarvitsee voidakseen työskennellä tuottavasti ja järjestelmällisesti, samalla kun ne turvaavat yrityksesi."
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } on itsenäisesti rahoitettu ja toimii ilman mainontaa. Alla on esimerkkejä siitä, miten tätä itsenäisyyttä on hyödynnetty käytännössä."
       ],
@@ -5924,6 +5959,10 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } on virheellinen"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } jäsen lisätty ryhmää",
+        "${ emails.length } jäsentä lisätty ryhmään"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
@@ -5991,9 +6030,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } uutta jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
-        "${ pendingAdminMemberCount } uutta jäsentä on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } uusi jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
+        "${ pendingAdminApprovalCount } uutta jäsenta on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -6754,6 +6793,9 @@
       "expires ${ expirationDate }": [
         "erääntyy ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
       ],
@@ -6817,8 +6859,14 @@
       "Got it": [
         "Selvä"
       ],
+      "Group created": [
+        "Ryhmä luotu"
+      ],
       "Group deleted": [
         "Ryhmä poistettiin"
+      ],
+      "Group roles assigned": [
+        "Ryhmäroolit määritetty"
       ],
       "Groups": [
         "Ryhmät"
@@ -7238,6 +7286,9 @@
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Kun tilillesi on myönnetty käyttöoikeus, he voivat avata **Palautus**-asetuksesi ja **vaihtaa ${ ACCOUNT_APP_NAME } -salasanasi** puolestasi."
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tässä voidaan muuttaa vain isojen kirjainten käyttöä ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja). Jos haluat käyttää eri osoitetta, lisää uusi osoite."
       ],
       "Open source": [
         "Avoin lähdekoodi"
@@ -8541,6 +8592,9 @@
       "Group Owner": [
         "Ryhmän omistaja"
       ],
+      "Invited": [
+        "Kutsuttu"
+      ],
       "Paused": [
         "Pysäytetty"
       ],
@@ -9187,6 +9241,9 @@
       "Password": [
         "Salasana"
       ],
+      "Password check-ins": [
+        "Salasanalla kirjautumiset"
+      ],
       "Password strength": [
         "Salasanan vahvuus"
       ],
@@ -9769,11 +9826,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Käyttäjät ja osoitteet"
-      ]
-    },
-    "Live Chat Modal": {
-      "Open support form": [
-        "Avaa tukilomake"
       ]
     },
     "Loading info": {
@@ -11905,6 +11957,14 @@
         "Rajoitetun ajan tarjous."
       ]
     },
+    "password_reminder": {
+      "Turn off check-ins": [
+        "Poista sisäänkirjautumiset käytöstä"
+      ],
+      "Turn off password check-ins?": [
+        "Poistetaanko salasanan syöttövaatimus käytöstä?"
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Kaikki ylläpitäjät saavat avaimen käyttöoikeuden."
@@ -13039,6 +13099,14 @@
         "SAML-määritystä testataan"
       ]
     },
+    "scim": {
+      "New": [
+        "Uusi"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Yksityiseksi asetetut käyttäjät joutuvat hyväksymään kutsun, jotta asetusten määrittäminen voidaan saattaa loppuun. Lähetämme heille kutsun, kun olet hyväksynyt sen."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Määritä SCIM"
@@ -13794,13 +13862,13 @@
         "${ n } käyttäjä erotettu SSO:sta",
         "${ n } käyttäjää erotettu SSO:sta"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajasi kautta. Tarkista tili nyt:",
-        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajasi kautta. Tarkista tilit nyt:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajasi kautta",
+        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajasi kautta"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } käyttäjä ei ole aktiivinen. Voit turvallisesti poistaa tämän käyttäjän organisaatiostasi.",
-        "${ n } käyttäjää ei ole aktiivisena. Voit turvallisesti poistaa heidät organisaatiostasi."
+      "${ n } user is inactive.": [
+        "${ n } käyttäjä on passiivinen.",
+        "${ n } käyttäjää on passiivisia."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } käyttäjä pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tilillensä kertakirjautumisella.",
@@ -14756,6 +14824,12 @@
       "Organization name updated": [
         "Organisaation nimi päivitettiin"
       ],
+      "Password check-ins disabled": [
+        "Salasanalla tehdyt kirjautumiset poistettu käytöstä"
+      ],
+      "Password check-ins enabled": [
+        "Salasanalla kirjautuminen on käytössä"
+      ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
       ],
@@ -15207,6 +15281,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Haluatko varmasti katkaista yhteyden ja poistaa tämän osoitteen käytöstä?"
       ],
       "Are you sure you want to disconnect this address?": [
         "Haluatko varmasti katkaista tämän osoitteen yhteyden?"
@@ -15778,6 +15855,9 @@
       ],
       "Phone": [
         "Puhelin"
+      ],
+      "Plans": [
+        "Tilaukset"
       ],
       "Preview": [
         "Esikatselu"
@@ -16387,6 +16467,9 @@
       "Group membership paused": [
         "Ryhmän jäsenyys on pysäytetty"
       ],
+      "Resuming role assignment": [
+        "Roolin määrityksen jatkaminen"
+      ],
       "Role assignment paused": [
         "Roolien määrittäminen keskeytetty"
       ],
@@ -16396,11 +16479,14 @@
       "User declined invitation": [
         "Käyttäjä hylkäsi kutsun"
       ],
-      "User is a group": [
-        "Käyttäjä on ryhmä"
+      "User is a group owner": [
+        "Käyttäjä on ryhmän omistaja"
       ],
       "via ${ groupNames }": [
         "${ groupNames } kautta"
+      ],
+      "Waiting for admin approval": [
+        "Odotetaan järjestelmänvalvojan hyväksyntää"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
@@ -16477,8 +16563,14 @@
       "Payment reversal": [
         "Maksun peruutus"
       ],
+      "Prepayment": [
+        "Ennakkomaksu"
+      ],
       "Refund": [
         "Hyvitys"
+      ],
+      "Test credit": [
+        "Testikrediitti"
       ]
     },
     "Unlimited offer": {
@@ -16508,9 +16600,9 @@
       "Confirm all": [
         "Vahvista kaikki"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa ovat välillä muuttuneet:",
-        "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa on välillä muuttunut:"
+      "Could not enable admin access for ${ n } user": [
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia",
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia"
       ],
       "Could not enable administrator access: ${ error }": [
         "Hallintaoikeutta ei voitu myöntää: ${ error }"
@@ -16539,6 +16631,10 @@
       "Request user permission for data access": [
         "Pyydä käyttäjältä tietojen käsittelyoikeutta"
       ],
+      "Review their account now.": [
+        "Tarkista heidän tilinsä nyt.",
+        "Tarkista heidän tilinsä nyt."
+      ],
       "Revoke access": [
         "Mitätöi käyttöoikeus"
       ],
@@ -16551,6 +16647,9 @@
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Heidän salausavaimet päivitettiin samalla, kun teimme muutoksia."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Tämä peruu odottavan käyttäjän tietojen tai salasanan nollauksen hallintapyynnön."
       ],
@@ -16562,6 +16661,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Jatkaaksesi sinun on pyydettävä käyttäjältä lupa käyttää heidän tietojaan tai nollata heidän salasanansa."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Voit poistaa tämän käyttäjän turvallisesti organisaatiostasi.",
+        "Voit poistaa nämä käyttäjät turvallisesti organisaatiostasi."
       ]
     },
     "Upsell": {
@@ -16645,6 +16748,15 @@
       ],
       "Invitation email": [
         "Kutsusähköposti"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkia käyttäjiä, ryhmiä, suojausasetuksia, laskutusasetuksia ja järjestelmän määrityksiä."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ],
       "Name": [
         "Nimi"

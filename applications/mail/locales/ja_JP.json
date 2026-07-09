@@ -4851,12 +4851,6 @@
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
       ],
-      "Invalid ${ name } code": [
-        "無効な ${ name } コードです"
-      ],
-      "Invalid card number": [
-        "無効なカード番号です"
-      ],
       "Invalid code": [
         "無効なコードです"
       ],
@@ -4865,9 +4859,6 @@
       ],
       "Invalid email address": [
         "メールアドレスが正しくありません"
-      ],
-      "Invalid expiration date": [
-        "無効な有効期限"
       ],
       "Invalid expiration time": [
         "無効な有効期限です"
@@ -7670,9 +7661,6 @@
       "Low Priority": [
         "優先度：低"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }を規定のメールアプリにしましょう。"
-      ],
       "Manage your folders": [
         "フォルダを管理"
       ],
@@ -9820,9 +9808,6 @@
       "Navigation": [
         "ナビゲーション"
       ],
-      "New": [
-        "新しい"
-      ],
       "New password": [
         "新しいパスワード"
       ],
@@ -9849,9 +9834,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "通知が無効になっています。有効にするには、ブラウザの設定を変更してください。"
-      ],
-      "Open in a new tab": [
-        "新しいタブで開く"
       ],
       "Operating system": [
         "OS"
@@ -12236,12 +12218,6 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
-      ],
-      "Remind me later": [
-        "後で通知する"
-      ],
-      "Yes, don't show again": [
-        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -15401,9 +15377,6 @@
       "Invalid verification code": [
         "無効な検証コードです"
       ],
-      "Keep this banner hidden?": [
-        "このバーナーを隠したままにしますか？"
-      ],
       "Label as": [
         "ラベル付け"
       ],
@@ -15979,6 +15952,20 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "操作"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "状態"
+      ],
+      "Type": [
+        "種類"
       ]
     },
     "Today icon tooltip in mini calendar": {

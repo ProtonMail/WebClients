@@ -3767,12 +3767,6 @@
       "Interval cannot be empty": [
         "Interval tidak boleh kosong"
       ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
       "Invalid code": [
         "Kode tidak valid"
       ],
@@ -3781,9 +3775,6 @@
       ],
       "Invalid email address": [
         "Alamat email tidak valid"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
       ],
       "Invalid IBAN": [
         "IBAN tidak valid"
@@ -12387,6 +12378,20 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Pilih angka"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Fingerprint": [
+        "Sidik jari"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Tipe"
       ]
     },
     "Title; create calendar modal": {

@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Να μην εμφανιστεί ξανά όταν πατήσω"
       ],
+      "Do not show this again": [
+        "Να μην εμφανιστεί ξανά αυτό"
+      ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
       ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
@@ -570,6 +576,12 @@
       ],
       "Regenerate": [
         "Αναπαραγωγή"
+      ],
+      "Regex invalid": [
+        "Μη έγκυρο Regex"
+      ],
+      "Regex unsafe": [
+        "Μη ασφαλές Regex"
       ],
       "Reject": [
         "Απόρριψη"
@@ -1212,6 +1224,12 @@
       "Failed to set default mailbox": [
         "Απέτυχε ο ορισμός προεπιλεγμένου γραμματοκιβωτίου"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Αποτυχία εκκίνησης του παράγοντα SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Αποτυχία διακοπής του παράγοντα SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Αποτυχία συγχρονισμού ψευδώνυμων"
       ],
@@ -1607,6 +1625,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "Το ${ PASS_APP_NAME } θα χρησιμοποιήσει τα κλειδιά SSH που είναι αποθηκευμένα στις κρύπτες σας."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης ενεργοποιημένη."
       ],
@@ -1986,6 +2007,9 @@
       "finance": [
         "οικονομικά"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Βρείτε το \"OpenSSH Authentication Agent\", κάντε δεξί κλικ στις Ιδιότητες."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
       ],
@@ -2026,6 +2050,9 @@
       ],
       "Identity confirmed": [
         "Η ταυτότητα επιβεβαιώθηκε"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Εάν δε σκοπεύετε να χρησιμοποιήσετε τον παράγοντα SSH σε άλλον λογαριασμό επί πληρωμή, θυμηθείτε να απενεργοποιήσετε αυτήν τη ρύθμιση πριν μεταβείτε σε αυτόν τον λογαριασμό."
       ],
       "Import the CSV file below.": [
         "Εισαγάγετε το παρακάτω αρχείο CSV."
@@ -2136,6 +2163,9 @@
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Βεβαιωθείτε ότι το ${ PASS_APP_NAME } λειτουργεί (μπορεί να ελαχιστοποιηθεί) για να παραμείνει ενεργός ο παράγοντας SSH. Τα κλειδιά SSH με φράση πρόσβασης δεν υποστηρίζονται προς το παρόν."
+      ],
       "Manager": [
         "Διαχειριστης"
       ],
@@ -2197,6 +2227,9 @@
       "No network connection": [
         "Δεν υπάρχει σύνδεση δικτύου"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Δε βρέθηκαν κλειδιά SSH στο ${ PASS_SHORT_APP_NAME }. Δημιουργήστε στοιχεία κλειδιού SSH για χρήση με τον παράγοντα."
+      ],
       "No vaults available.": [
         "Δεν υπάρχουν διαθέσιμες κρύπτες."
       ],
@@ -2220,6 +2253,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Εμφανίζονται μόνο τα διακριτικά που έληξαν τις τελευταίες 30 ημέρες. Τα παλαιότερα διακριτικά διαγράφονται αυτόματα."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Ανοίξτε τις \"Υπηρεσίες\" (μπορείτε να χρησιμοποιήσετε τη γραμμή αναζήτησης των Windows ή να πατήσετε Win+R και να εισαγάγετε services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Ανοίξτε τις ρυθμίσεις του Safari για την προέκταση και βεβαιωθείτε ότι τα δικαιώματα πρόσβασης στον ιστότοπο είναι ενεργοποιημένα για τους τομείς ${ BRAND_NAME }."
@@ -2245,6 +2281,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων διαγράφονται αυτόματα από το ιστορικό."
+      ],
+      "Paste the following command in your terminal:": [
+        "Επικολλήστε την ακόλουθη εντολή στο τερματικό σας:"
       ],
       "Paused": [
         "Σε παύση"
@@ -2474,6 +2513,9 @@
       "Session timed out": [
         "Η συνεδρία έληξε"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Ορίστε τον \"Τύπο εκκίνησης\" σε Απενεργοποιημένο, κάντε κλικ στο OK."
+      ],
       "Set by your organization": [
         "Ορισμένο από τον οργανισμό σας"
       ],
@@ -2616,6 +2658,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Αυτό θα απορρίψει τη συσκευή **${ name }** που προσπάθησε να συνδεθεί στον λογαριασμό σας ${ BRAND_NAME } στις **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Συμβουλή: προσθέστε το στο αρχείο .bashrc ή .zshrc, ώστε να εκτελείται αυτόματα όταν ανοίγετε το τερματικό."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Για να συνεχίσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου, μεταφέρετε αυτά τα ψευδώνυμα σε διαφορετικό γραμματοκιβώτιο:"
       ],
@@ -2630,6 +2675,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Για να ρυθμίσετε το ξεκλείδωμα με βιομετρικά στοιχεία, το ${ PASS_APP_NAME } απαιτεί νέο δικαίωμα περιήγησης. Αφού το αποδεχτείτε, η επέκταση θα φορτώσει ξανά. Ανοίξτε ξανά αυτήν τη σελίδα στη συνέχεια."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Για να χρησιμοποιήσετε τον παράγοντα SSH ${ PASS_APP_NAME } στα Windows, η υπηρεσία OpenSSH πρέπει να είναι απενεργοποιημένη."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Εμπιστευόμενο από πάνω από 50.000 επαγγελματίες χρήστες και 100 εκατομμύρια λογαριασμούς παγκοσμίως."
@@ -3022,6 +3070,9 @@
       "Address details": [
         "Λεπτομέρειες διεύθυνσης"
       ],
+      "Advanced": [
+        "Για προχωρημένους"
+      ],
       "Alias": [
         "Ψευδώνυμο"
       ],
@@ -3067,6 +3118,9 @@
       "Bank Name": [
         "Όνομα Τράπεζας"
       ],
+      "Basic": [
+        "Βασικό"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Εκτός από την αποθήκευση των συνδέσεών σας, το ${ PASS_APP_NAME } προστατεύει την ταυτότητά σας με μια ενσωματωμένη δυνατότητα ψευδωνύμου διεύθυνσης ηλεκτρονικού ταχυδρομείου. Κάθε φορά που εγγράφεστε για έναν νέο ηλεκτρονικό λογαριασμό, το ${ PASS_APP_NAME } μπορεί να δημιουργήσει αυτόματα ένα ψευδώνυμο για να διατηρήσει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας προστατευμένη. "
       ],
@@ -3099,6 +3153,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Check": [
+        "Έλεγχος"
       ],
       "Checkbox": [
         "Checkbox"
@@ -3264,6 +3321,12 @@
       ],
       "Enter email or username": [
         "Εισαγάγετε email ή όνομα χρήστη"
+      ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
       ],
       "Experimental": [
         "Πειραματικό"
@@ -3592,6 +3655,9 @@
       "Never": [
         "Ποτέ"
       ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
       "New": [
         "Νέο"
       ],
@@ -3654,6 +3720,9 @@
       ],
       "Owner": [
         "Ιδιοκτήτης"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
       ],
       "Passkey": [
         "Κλειδί πρόσβασης"
@@ -3765,6 +3834,9 @@
       ],
       "Reddit handle": [
         "Reddit όνομα"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
       ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
@@ -3891,6 +3963,9 @@
       ],
       "SSN": [
         "Α.Μ.Κ.Α."
+      ],
+      "Starts with": [
+        "Ξεκινάει με"
       ],
       "State or province": [
         "Νομός ή επαρχία"
@@ -4020,6 +4095,12 @@
       ],
       "Update": [
         "Αναβάθμιση"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Χρήση ${ PASS_APP_NAME } ως παράγοντα SSH"
       ],
       "Use for AI agent": [
         "Χρήση για πράκτορα ΤΝ"
@@ -4157,6 +4238,24 @@
       "${ count } item": [
         "${ count } στοιχείο",
         "${ count } στοιχεία"
+      ],
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ],
       "You can drag and drop the selected item to another vault": [
         "Μπορείτε να σύρετε και αποθέσετε το επιλεγμένο στοιχείο σε άλλη κρύπτη",
@@ -4457,6 +4556,23 @@
         "Χρησιμοποιείται στο ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Εισαγάγετε μια διεύθυνση URL για να ελέγξετε αν ο τρέχων κανόνας σας ταιριάζει με τη διεύθυνση URL"
+      ],
+      "The rule is matching this URL": [
+        "Ο κανόνας ταιριάζει με αυτήν τη διεύθυνση URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Ο κανόνας ΔΕΝ ταιριάζει με αυτήν τη διεύθυνση URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Αυτή η διεύθυνση URL θα αποκλειστεί από την αυτόματη συμπλήρωση"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Αυτή η διεύθυνση URL ΔΕ θα αποκλειστεί από την αυτόματη συμπλήρωση"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } και ${ remainingCount } εντοπίστηκαν άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
@@ -4608,6 +4724,12 @@
       "Random prefix generation successfully enabled": [
         "Η δημιουργία τυχαίων προθεμάτων ενεργοποιήθηκε με επιτυχία"
       ],
+      "SSH agent successfully started": [
+        "Ο παράγοντας SSH ξεκίνησε με επιτυχία."
+      ],
+      "SSH agent successfully stopped": [
+        "Ο παράγοντας SSH διακόπηκε με επιτυχία."
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστη.",
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστες."
@@ -4654,6 +4776,9 @@
       ],
       "Add mailbox": [
         "Προσθήκη γραμματοκιβωτίου"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Προσαρμόστε τις συμπεριφορές αυτόματης συμπλήρωσης για να αλλάξετε πού προτείνονται οι συνδέσεις."
       ],
       "Agent setup instructions": [
         "Οδηγίες ρύθμισης πράκτορα"
@@ -4854,6 +4979,9 @@
       "Last modified": [
         "Τελευταία τροποποίηση"
       ],
+      "Learn more": [
+        "Μάθε περισσότερα"
+      ],
       "Leave this item?": [
         "Αποχώρηση από αυτό το στοιχείο;"
       ],
@@ -5014,6 +5142,9 @@
       "Review and share": [
         "Επανεξέταση και κοινή χρήση"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Στιγμιότυπο οθόνης της υπηρεσίας OpenSSH στα Windows"
+      ],
       "Secure your data": [
         "Ασφαλίστε τα δεδομένα σας"
       ],
@@ -5035,6 +5166,9 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Ρύθμιση του ${ PASS_APP_NAME } Παράγοντα SSH"
+      ],
       "Setup offline mode": [
         "Ρύθμιση λειτουργίας εκτός σύνδεσης"
       ],
@@ -5052,6 +5186,9 @@
       ],
       "SPF (Optional)": [
         "SPF (Προαιρετικό)"
+      ],
+      "SSH Agent": [
+        "Παράγοντας SSH"
       ],
       "Status": [
         "Κατάσταση"
@@ -5071,6 +5208,9 @@
       "Sync your aliases from SimpleLogin": [
         "Συγχρονίστε τα ψευδώνυμά σας από το SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Δοκιμή μιας διεύθυνσης URL με βάση αυτόν τον κανόνα"
+      ],
       "Transfer ownership": [
         "Μεταβίβαση κυριότητας"
       ],
@@ -5085,6 +5225,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "URL matching": [
+        "Αντιστοίχιση URL"
       ],
       "Vault": [
         "Κρύπτη"
@@ -5200,6 +5343,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης απενεργοποιημένη."
@@ -5402,6 +5548,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά την εκκίνηση του ${ PASS_APP_NAME }. Δοκιμάστε να ανανεώσετε ή να φορτώσετε ξανά την προέκταση"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Ο παράγοντας SSH απαιτεί τη χρήση κλειδιών SSH, κάτι που δεν είναι διαθέσιμο στο πρόγραμμά σας."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Το πρόθεμα ψευδωνύμου δεν μπορεί να υπερβαίνει τους 40 χαρακτήρες"
       ],
@@ -5410,6 +5559,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου δε θα παρακολουθείται πλέον για παραβιάσεις δεδομένων."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Αυτό το στοιχείο δεν μπορεί να προταθεί για αυτόματη συμπλήρωση λόγω του \"${ neverModeDescriptionStrong }\". Προσθέστε μια άλλη διεύθυνση URL εάν θέλετε να γίνεται αυτόματη συμπλήρωση αυτού του στοιχείου."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Αυτό το στοιχείο είναι κοινόχρηστο. Αν διαγραφεί, όλοι οι υπόλοιποι χρήστες θα χάσουν την πρόσβασή τους σε αυτό."

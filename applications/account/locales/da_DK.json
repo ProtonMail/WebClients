@@ -204,6 +204,9 @@
       "Apply to existing messages": [
         "Anvend på eksisterende beskeder"
       ],
+      "Approve": [
+        "Godkend"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -1220,6 +1223,9 @@
       ],
       "Organization": [
         "Organisation"
+      ],
+      "Pause": [
+        "Pause"
       ],
       "Pay": [
         "Betal"
@@ -7337,12 +7343,6 @@
       "Intended recipient does not support calendar sharing": [
         "Den tiltænkte modtager understøtter ikke kalenderdeling"
       ],
-      "Invalid ${ name } code": [
-        "Ugyldig ${ name }-kode"
-      ],
-      "Invalid card number": [
-        "Ugyldigt kortnummer"
-      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -7354,9 +7354,6 @@
       ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
-      ],
-      "Invalid expiration date": [
-        "Ugyldig udløbsdato"
       ],
       "Invalid IBAN": [
         "Ugyldig IBAN"
@@ -7451,9 +7448,6 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Kun store bogstaver og tegnsætning (punktummer, bindestreger og understregninger) kan ændres for denne adresse"
@@ -7600,6 +7594,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlem",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlemmer"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedGroupCount } gruppe",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedGroupCount } grupper"
       ],
       "Server not found": [
         "Server ikke fundet"
@@ -9841,6 +9843,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } medlem tilføjet til gruppen",
+        "${ emails.length } medlemmer tilføjet til gruppen"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
       ],
@@ -9937,9 +9943,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
-        "${ pendingAdminMemberCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingAdminApprovalCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -10527,11 +10533,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Faktureret med ${ monthlyDiscountedPrice } i de første 6 måneder, og fornyes til ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Faktureret med ${ monthlyDiscountedPriceElement } i de første 6 måneder, og fornyes til ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Faktureret med ${ yearlyDiscountedPrice } i de første 12 måneder, og fornyes til ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Faktureret med ${ yearlyDiscountedPriceElement } i de første 12 måneder, og fornyes til ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
@@ -11247,11 +11253,17 @@
       "Got it": [
         "Forstået"
       ],
+      "Group created": [
+        "Gruppe oprettet"
+      ],
       "Group deleted": [
         "Gruppe slettet"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale i din indbakke, eller vis dem separat."
+      ],
+      "Group roles assigned": [
+        "Grupperoller tildelt"
       ],
       "Groups": [
         "Grupper"
@@ -13185,7 +13197,7 @@
         "Når deaktiveret, forhindrer dette eksterne billeder i at blive indlæst uden din viden."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Hvis aktiveret, tjekker vi at ${ MAIL_APP_NAME } er din standard mailapplikation, og giver dig besked, hvis det ikke er tilfældet."
+        "Hvis aktiveret, vil vi kontrollere, om ${ MAIL_APP_NAME } er din standard mailapplikation, og give dig besked, hvis det ikke er tilfældet."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
@@ -13357,6 +13369,9 @@
       ],
       "You can now sign in to your account again.": [
         "Du kan nu logge ind på din konto igen."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Du kan kun have én chatinstans åben ad gangen. Luk tidligere samtaler før du starter en ny."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
@@ -13783,6 +13798,9 @@
       ],
       "Group Owner": [
         "Gruppeejer"
+      ],
+      "Invited": [
+        "Inviteret"
       ],
       "Paused": [
         "Sat på pause"
@@ -14458,6 +14476,9 @@
       "App password": [
         "App-adgangskode"
       ],
+      "App Settings": [
+        "Appindstillinger"
+      ],
       "Apply filter to existing emails": [
         "Anvend filter på eksisterende e-mails"
       ],
@@ -14685,9 +14706,6 @@
       ],
       "Confirm login password": [
         "Bekræft adgangskode til login"
-      ],
-      "Confirm MX records added": [
-        "Bekræft tilføjede MX-records"
       ],
       "Confirm new password": [
         "Bekræft ny adgangskode"
@@ -21936,8 +21954,8 @@
       "Updated": [
         "Opdateret"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Brugere, du har angivet som private, skal acceptere invitationen for at færdiggøre konfigurationen. Vi sender dem en invitation når du har godkendt."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brugere, definerede som private, skal acceptere invitationen for at færdiggøre opsætningen. Vi sender dem en invitation når du har godkendt."
       ]
     },
     "scim: Action": {
@@ -23358,13 +23376,13 @@
         "${ n } bruger frakoblet SSO",
         "${ n } brugere frakoblet SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå kontoen nu:",
-        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå deres konti nu:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder",
+        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } bruger er inaktiv. Du kan trygt fjerne denne bruger fra din organisation.",
-        "${ n } brugere er inaktive. Du kan trygt fjerne disse brugere fra din organisation."
+      "${ n } user is inactive.": [
+        "${ n } bruger er inaktiv.",
+        "${ n } brugere er inaktive."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } bruger beder om din hjælp til at logge ind på sin ${ BRAND_NAME }-konto med single sign-on.",
@@ -25938,6 +25956,9 @@
       "Get more from your password manager": [
         "Få mere ud af din adgangskodeadministrator"
       ],
+      "Get more from your privacy suite": [
+        "Få mere ud af din privatlivspakke"
+      ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
       ],
@@ -26879,6 +26900,9 @@
       "WireGuard configuration": [
         "Konfiguration af WireGuard"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Du får adgang til alle ${ BRAND_NAME } apps med din ${ BRAND_NAME }-konto"
+      ],
       "You are all set": [
         "Så er du klar"
       ],
@@ -27323,6 +27347,9 @@
       "Verified email address": [
         "Bekræftet e-mailadresse"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
       ],
@@ -27367,6 +27394,9 @@
       "Group membership paused": [
         "Gruppemedlemskab sat på pause"
       ],
+      "Resuming role assignment": [
+        "Genoptager rolletildeling"
+      ],
       "Role assignment paused": [
         "Rolletildeling sat på pause"
       ],
@@ -27376,11 +27406,14 @@
       "User declined invitation": [
         "Brugeren afviste invitationen"
       ],
-      "User is a group": [
-        "Brugeren er en gruppe"
+      "User is a group owner": [
+        "Brugeren er ejer af en gruppe"
       ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkendelse fra administrator"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
@@ -27542,9 +27575,9 @@
       "Confirm all": [
         "Bekræft alle"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi dennes krypteringsnøgler er blevet opdaterer i mellemtiden:",
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdateret i mellemtiden:"
+      "Could not enable admin access for ${ n } user": [
+        "Kunne ikke tildele administratoradgang til ${ n } bruger",
+        "Kunne ikke tildele administratoradgang til ${ n } brugere"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunne ikke aktivere administratoradgang: ${ error }"
@@ -27585,6 +27618,10 @@
       "Request user permission for data access": [
         "Anmod om brugertilladelse til dataadgang"
       ],
+      "Review their account now.": [
+        "Gennemgå deres konto nu.",
+        "Gennemgå deres konti nu."
+      ],
       "Revoke access": [
         "Tilbagekald adgang"
       ],
@@ -27596,6 +27633,9 @@
       ],
       "The user must have an address to request data access": [
         "Brugeren skal have en adresse for at anmode om dataadgang"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deres krypteringsnøgler blev opdateret, mens vi lavede ændringer."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Dette vil annuller afventende anmodning om administratoradgang til brugerens data eller nulstilling af adgangskode."
@@ -27614,6 +27654,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denne anmodning, hvis du ikke vil fortsætte."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan trygt fjerne denne bruger fra din organisation.",
+        "Du kan trygt fjerne disse brugere fra din organisation."
       ]
     },
     "Update font modal": {

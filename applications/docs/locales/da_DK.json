@@ -3283,9 +3283,6 @@
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
-      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
         "Nogle kontakter har ingen e-mailadresse: ${ noEmailsContactNamesList } "
@@ -4505,10 +4502,6 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
         "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } valgt",
-        "${ selectedCount } valgte"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappe valgt",
         "${ selectedFoldersCountLocalized } mapper valgt"
@@ -4777,9 +4770,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
-      "Disable table of contents": [
-        "Deaktivér indholdsfortegnelse"
-      ],
       "Display word count": [
         "Vis antal ord"
       ],
@@ -4833,9 +4823,6 @@
       ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
-      ],
-      "Enable table of contents": [
-        "Aktivér indholdsfortegnelse"
       ],
       "End-to-end encrypted": [
         "End-to-end krypteret"
@@ -4946,7 +4933,7 @@
         "Få en professionel @din-virksomhed.com e-mail, 1 TB sikker lagerplads per bruger, længere videoopkald, og mere med ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-mailopdateringer for kommentarer og forslag, der er tilføjet til dine dokumenter."
+        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
       ],
       "Get Notified About Comments": [
         "Få besked om kommentarer"
@@ -4954,8 +4941,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Hjælp os med at forbedre denne situation ved at rapportere problemet. Hvis du er tryg med at dele regnearksindhold skal du vedhæfte nedenstående fejlfindingsoplysninger til din rapport."
+      ],
       "here": [
         "her"
+      ],
+      "Hide table of contents": [
+        "Skjul indholdsfortegnelsen"
       ],
       "High Priority": [
         "Høj prioritet"
@@ -5181,8 +5174,8 @@
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
       ],
-      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Ups! Dette regneark kan ikke gemme dine seneste redigeringer, så vi har sat redigeringen på pause for at forhindre dig i at miste dit arbejde.\nHjælp os med at forbedre denne situation ved at rapportere problemet. Hvis du er tryg ved at dele regnearksindhold, skal du vedhæfte fejlfindingsoplysningerne nedenfor til din rapport."
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Dette regneark kan ikke gemme dine seneste redigeringer, så vi har sat redigeringen på pause for at forhindre dig i at miste dit arbejde."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
@@ -5358,6 +5351,9 @@
       ],
       "Shared on": [
         "Delt"
+      ],
+      "Show table of contents": [
+        "Vis indholdsfortegnelsen"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
@@ -6126,7 +6122,7 @@
         "E-mails (seneste måned)"
       ],
       "Enable email notifications": [
-        "Slå e-mailnotifikationer til"
+        "Aktivér e-mailnotifikationer"
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -10580,6 +10576,26 @@
         "Dine blotlagte oplysninger"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
@@ -10664,6 +10680,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
       ]
@@ -10696,6 +10715,11 @@
       ],
       "The user must have an address to request data access": [
         "Brugeren skal have en adresse for at anmode om dataadgang"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]
     },
     "Validation": {
