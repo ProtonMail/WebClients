@@ -41,6 +41,7 @@ export interface RoleRow {
     description: string | null;
     isChecked: boolean;
     isGroupSourced: boolean;
+    isLocked: boolean;
     groupName: string | null;
 }
 
@@ -54,8 +55,8 @@ interface Props {
 const RoleCheckList = ({ rows, onToggle, disabled = false, isGroupContext = false }: Props) => {
     return (
         <div className="flex flex-column gap-3">
-            {rows.map(({ id, name, description, isChecked, isGroupSourced, groupName }) => {
-                const isDisabled = disabled || isGroupSourced;
+            {rows.map(({ id, name, description, isChecked, isGroupSourced, isLocked, groupName }) => {
+                const isDisabled = disabled || isGroupSourced || isLocked;
                 const resolvedDescription = description || getFallbackDescription(name, isGroupContext);
                 return (
                     <div key={id} className="flex flex-nowrap items-start gap-2 py-2">
