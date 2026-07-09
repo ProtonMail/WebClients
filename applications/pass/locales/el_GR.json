@@ -547,6 +547,12 @@
       "Regenerate": [
         "Αναπαραγωγή"
       ],
+      "Regex invalid": [
+        "Μη έγκυρο Regex"
+      ],
+      "Regex unsafe": [
+        "Μη ασφαλές Regex"
+      ],
       "Reject": [
         "Απόρριψη"
       ],
@@ -1165,6 +1171,12 @@
       "Failed to set default mailbox": [
         "Απέτυχε ο ορισμός προεπιλεγμένου γραμματοκιβωτίου"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Αποτυχία εκκίνησης του παράγοντα SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Αποτυχία διακοπής του παράγοντα SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Αποτυχία συγχρονισμού ψευδώνυμων"
       ],
@@ -1534,6 +1546,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "Το ${ PASS_APP_NAME } θα χρησιμοποιήσει τα κλειδιά SSH που είναι αποθηκευμένα στις κρύπτες σας."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης ενεργοποιημένη."
@@ -2089,6 +2104,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2118,6 +2137,9 @@
       ],
       "No network connection": [
         "Δεν υπάρχει σύνδεση δικτύου"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Δε βρέθηκαν κλειδιά SSH στο ${ PASS_SHORT_APP_NAME }. Δημιουργήστε στοιχεία κλειδιού SSH για χρήση με τον παράγοντα."
       ],
       "No vaults available.": [
         "Δεν υπάρχουν διαθέσιμες κρύπτες."
@@ -2938,6 +2960,9 @@
       "Address details": [
         "Λεπτομέρειες διεύθυνσης"
       ],
+      "Advanced": [
+        "Για προχωρημένους"
+      ],
       "Alias": [
         "Ψευδώνυμο"
       ],
@@ -2983,6 +3008,9 @@
       "Bank Name": [
         "Όνομα Τράπεζας"
       ],
+      "Basic": [
+        "Βασικό"
+      ],
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
@@ -3015,6 +3043,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Check": [
+        "Έλεγχος"
       ],
       "Checkbox": [
         "Checkbox"
@@ -3171,6 +3202,12 @@
       ],
       "Enter email or username": [
         "Εισαγάγετε email ή όνομα χρήστη"
+      ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
       ],
       "Expiration date": [
         "Ημερομηνία λήξης"
@@ -3487,6 +3524,9 @@
       "Never": [
         "Ποτέ"
       ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
       "New email": [
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -3546,6 +3586,9 @@
       ],
       "Owner": [
         "Ιδιοκτήτης"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
       ],
       "Passkey": [
         "Κλειδί πρόσβασης"
@@ -3648,6 +3691,9 @@
       ],
       "Reddit handle": [
         "Reddit όνομα"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
       ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
@@ -3762,6 +3808,9 @@
       ],
       "SSN": [
         "Α.Μ.Κ.Α."
+      ],
+      "Starts with": [
+        "Ξεκινάει με"
       ],
       "State or province": [
         "Νομός ή επαρχία"
@@ -3889,6 +3938,12 @@
       "Update": [
         "Αναβάθμιση"
       ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Χρήση ${ PASS_APP_NAME } ως παράγοντα SSH"
+      ],
       "Use for AI agent": [
         "Χρήση για πράκτορα ΤΝ"
       ],
@@ -4008,6 +4063,24 @@
       "${ count } item": [
         "${ count } στοιχείο",
         "${ count } στοιχεία"
+      ],
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ],
       "You can drag and drop the selected item to another vault": [
         "Μπορείτε να σύρετε και αποθέσετε το επιλεγμένο στοιχείο σε άλλη κρύπτη",
@@ -4308,6 +4381,23 @@
         "Χρησιμοποιείται στο ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Εισαγάγετε μια διεύθυνση URL για να ελέγξετε αν ο τρέχων κανόνας σας ταιριάζει με τη διεύθυνση URL"
+      ],
+      "The rule is matching this URL": [
+        "Ο κανόνας ταιριάζει με αυτήν τη διεύθυνση URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Ο κανόνας ΔΕΝ ταιριάζει με αυτήν τη διεύθυνση URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Αυτή η διεύθυνση URL θα αποκλειστεί από την αυτόματη συμπλήρωση"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Αυτή η διεύθυνση URL ΔΕ θα αποκλειστεί από την αυτόματη συμπλήρωση"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } και ${ remainingCount } εντοπίστηκαν άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
@@ -4459,6 +4549,12 @@
       "Random prefix generation successfully enabled": [
         "Η δημιουργία τυχαίων προθεμάτων ενεργοποιήθηκε με επιτυχία"
       ],
+      "SSH agent successfully started": [
+        "Ο παράγοντας SSH ξεκίνησε με επιτυχία."
+      ],
+      "SSH agent successfully stopped": [
+        "Ο παράγοντας SSH διακόπηκε με επιτυχία."
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστη.",
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστες."
@@ -4505,6 +4601,9 @@
       ],
       "Add mailbox": [
         "Προσθήκη γραμματοκιβωτίου"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Προσαρμόστε τις συμπεριφορές αυτόματης συμπλήρωσης για να αλλάξετε πού προτείνονται οι συνδέσεις."
       ],
       "Agent setup instructions": [
         "Οδηγίες ρύθμισης πράκτορα"
@@ -4705,6 +4804,9 @@
       "Last modified": [
         "Τελευταία τροποποίηση"
       ],
+      "Learn more": [
+        "Μάθε περισσότερα"
+      ],
       "Leave this item?": [
         "Αποχώρηση από αυτό το στοιχείο;"
       ],
@@ -4904,6 +5006,9 @@
       "SPF (Optional)": [
         "SPF (Προαιρετικό)"
       ],
+      "SSH Agent": [
+        "Παράγοντας SSH"
+      ],
       "Status": [
         "Κατάσταση"
       ],
@@ -4922,6 +5027,9 @@
       "Sync your aliases from SimpleLogin": [
         "Συγχρονίστε τα ψευδώνυμά σας από το SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Δοκιμή μιας διεύθυνσης URL με βάση αυτόν τον κανόνα"
+      ],
       "Transfer ownership": [
         "Μεταβίβαση κυριότητας"
       ],
@@ -4936,6 +5044,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "URL matching": [
+        "Αντιστοίχιση URL"
       ],
       "Vault": [
         "Κρύπτη"
@@ -5051,6 +5162,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης απενεργοποιημένη."
@@ -5250,6 +5364,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά την εκκίνηση του ${ PASS_APP_NAME }. Δοκιμάστε να ανανεώσετε ή να φορτώσετε ξανά την προέκταση"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Ο παράγοντας SSH απαιτεί τη χρήση κλειδιών SSH, κάτι που δεν είναι διαθέσιμο στο πρόγραμμά σας."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Το πρόθεμα ψευδωνύμου δεν μπορεί να υπερβαίνει τους 40 χαρακτήρες"
       ],
@@ -5258,6 +5375,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου δε θα παρακολουθείται πλέον για παραβιάσεις δεδομένων."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Αυτό το στοιχείο δεν μπορεί να προταθεί για αυτόματη συμπλήρωση λόγω του \"${ neverModeDescriptionStrong }\". Προσθέστε μια άλλη διεύθυνση URL εάν θέλετε να γίνεται αυτόματη συμπλήρωση αυτού του στοιχείου."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Αυτό το στοιχείο είναι κοινόχρηστο. Αν διαγραφεί, όλοι οι υπόλοιποι χρήστες θα χάσουν την πρόσβασή τους σε αυτό."
