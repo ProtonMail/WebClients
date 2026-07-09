@@ -10,17 +10,8 @@ import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
-interface Props extends ModalStateProps {
-    organisationName: string;
-}
-
-const family = PLAN_NAMES[PLANS.FAMILY];
-const passFamily = PLAN_NAMES[PLANS.PASS_FAMILY];
-const duo = PLAN_NAMES[PLANS.DUO];
-
-const LeaveFamilyModal = ({ organisationName, ...rest }: Props) => {
+const LeaveFamilyModal = (props: ModalStateProps) => {
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
     const { createNotification } = useNotifications();
@@ -29,34 +20,30 @@ const LeaveFamilyModal = ({ organisationName, ...rest }: Props) => {
     const handleLeave = async () => {
         await withLoading(dispatch(leaveOrganization()));
         createNotification({ text: c('familyOffer_2023:Info').t`You left this plan` });
-        rest.onClose();
+        props.onClose();
     };
 
     const handleClose = () => {
         if (loading) {
             return;
         }
-        rest.onClose();
+        props.onClose();
     };
 
-    let plan;
-    if (isOrganizationFamily(organization)) {
-        plan = family;
-    } else if (isOrganizationPassFamily(organization)) {
-        plan = passFamily;
-    } else {
-        plan = duo;
+    if (!organization) {
+        return null;
     }
 
-    const withTrial = organization?.PlanName === PLANS.DUO || organization?.PlanName === PLANS.FAMILY;
+    const withTrial = [PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY].includes(organization.PlanName);
 
+    const planName = PLAN_NAMES[organization.PlanName];
     const message = c('familyOffer_2023:Family plan')
-        .t`You will lose access to all premium features included with ${plan}.`;
+        .t`You will lose access to all premium features included with ${planName}.`;
 
     return (
         <Prompt
-            {...rest}
-            title={c('Title').t`Leave ${organisationName}?`}
+            {...props}
+            title={c('Title').t`Leave ${organization.Name}?`}
             footnote={
                 withTrial
                     ? c('familyOffer_2023:Family plan')
