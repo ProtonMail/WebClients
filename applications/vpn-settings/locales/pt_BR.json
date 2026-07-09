@@ -110,6 +110,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Approve": [
+        "Aprovar"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Estender"
       ],
-      "Finish": [
-        "Finalizar"
-      ],
       "Fit to window": [
         "Ajustar na janela"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Organização"
+      ],
+      "Pause": [
+        "Pausar"
       ],
       "Pay": [
         "Pagar"
@@ -4407,12 +4410,6 @@
       "Incorrect username": [
         "Nome de usuário incorreto"
       ],
-      "Invalid ${ name } code": [
-        "O código ${ name } não é válido."
-      ],
-      "Invalid card number": [
-        "O número do cartão não é válido."
-      ],
       "Invalid code": [
         "O código não é válido."
       ],
@@ -4424,9 +4421,6 @@
       ],
       "Invalid email address": [
         "O endereço de e-mail não é válido."
-      ],
-      "Invalid expiration date": [
-        "A data de validade não é válida."
       ],
       "Invalid IBAN": [
         "IBAN inválido"
@@ -4473,6 +4467,9 @@
       ],
       "No contacts found to import": [
         "Nenhum contato encontrado para importação"
+      ],
+      "No drive found to import": [
+        "Não encontrou nenhuma unidade para importar"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
@@ -6724,12 +6721,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Faturado por ${ monthlyDiscountedPrice } nos primeiros 6 meses, se renova por ${ monthlyRenewalPrice }."
-      ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Faturado por ${ yearlyDiscountedPrice } nos primeiros 12 meses, se renova por ${ yearlyRenewalPrice }."
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
@@ -9047,6 +9038,9 @@
       "Group Owner": [
         "Proprietário do grupo"
       ],
+      "Invited": [
+        "Convidado"
+      ],
       "Paused": [
         "Pausado"
       ],
@@ -10399,20 +10393,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Usuários e endereços"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Chat ao vivo disponível com ${ planName }"
-      ],
-      "Open support form": [
-        "Abrir formulário de suporte"
-      ],
-      "Upgrade subscription": [
-        "Fazer upgrade da assinatura"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Faça o upgrade para desbloquear o suporte de chat e outros recursos premium, ou use o suporte grátis para reportar o seu problema."
       ]
     },
     "Loading info": {
@@ -13949,6 +13929,9 @@
         "${ pendingUsersCount } usuário sincronizado.",
         "${ pendingUsersCount } usuários sincronizados."
       ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } e ${ groupsText } sincronizado."
+      ],
       "New": [
         "Novo"
       ],
@@ -14746,13 +14729,9 @@
         "${ n } usuário removido do SSO",
         "${ n } usuários removidos do SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } usuário entrou em sua organização através do seu Provedor de Identidade. Revise a conta dele agora:",
-        "${ n } usuários entraram em sua organização através do seu Provedor de Identidade. Revise as contas deles agora:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } usuário está inativo. Você pode remover este usuário com segurança da sua organização.",
-        "${ n } usuários estão inativos. Você pode remover estes usuários com segurança da sua organização."
+      "${ n } user is inactive.": [
+        "${ n } usuário está inativo",
+        "${ n } usuários estão inativos"
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuário está solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } dele com login único (SSO).",
@@ -17599,11 +17578,11 @@
       "User declined invitation": [
         "O usuário rejeitou o convite"
       ],
-      "User is a group": [
-        "Usuário é um grupo"
-      ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Esperando por aprovação de administrador"
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
@@ -17714,10 +17693,6 @@
       "Confirm all": [
         "Confirmar todos"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuário, porque as chaves de criptografia dele foram atualizadas nesse meio tempo:",
-        "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuários, porque as chaves de criptografia deles foram atualizadas nesse meio tempo:"
-      ],
       "Could not enable administrator access: ${ error }": [
         "Não foi possível habilitar o acesso de administrador: ${ error }"
       ],
@@ -17744,6 +17719,10 @@
       ],
       "Request user permission for data access": [
         "Solicitar permissão do usuário para acesso aos dados"
+      ],
+      "Review their account now.": [
+        "Revisar sua conta agora",
+        "Revisar suas contas agora"
       ],
       "Revoke access": [
         "Revogar acesso"

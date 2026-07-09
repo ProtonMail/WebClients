@@ -110,6 +110,9 @@
       "Apply": [
         "Εφαρμογή"
       ],
+      "Approve": [
+        "Έγκριση"
+      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Επέκταση"
       ],
-      "Finish": [
-        "Ολοκλήρωση"
-      ],
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Οργανισμός"
+      ],
+      "Pause": [
+        "Παύση"
       ],
       "Pay": [
         "Πληρωμή"
@@ -4460,12 +4463,6 @@
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
-      "Invalid ${ name } code": [
-        "Μη έγκυρο ${ name } κωδικός"
-      ],
-      "Invalid card number": [
-        "Μη έγκυρος αριθμός κάρτας"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -4477,9 +4474,6 @@
       ],
       "Invalid email address": [
         "Μη έγκυρη διεύθυνση email"
-      ],
-      "Invalid expiration date": [
-        "Μη έγκυρη ημερομηνία λήξης"
       ],
       "Invalid IBAN": [
         "Μη έγκυρο IBAN"
@@ -4544,9 +4538,6 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Μόνο τα κεφαλαία και τα σημεία στίξης (τελείες, παύλες και παύλες υπογράμμισης) μπορούν να αλλάξουν για αυτήν τη διεύθυνση"
@@ -4680,6 +4671,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλος",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλη"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδα",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδες"
       ],
       "Server not found": [
         "Δε βρέθηκε ο διακομιστής"
@@ -6352,6 +6351,10 @@
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } μέλος προστέθηκε στην ομάδα",
+        "${ emails.length } μέλη προστέθηκαν στην ομάδα"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: εικόνα πλήρους μεγέθους"
       ],
@@ -6418,9 +6421,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
-        "${ pendingAdminMemberCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
+        "${ pendingAdminApprovalCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -6828,11 +6831,11 @@
       "Beta": [
         "Beta (Δοκιμαστική)"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Χρεώνεται ${ monthlyDiscountedPrice } για τους πρώτους 6 μήνες, ανανεώνεται στα ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Χρεώνεται ${ monthlyDiscountedPriceElement } για τους πρώτους 6 μήνες, ανανεώνεται στα ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Χρεώνεται ${ yearlyDiscountedPrice } για τους πρώτους 12 μήνες, ανανεώνεται στα ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Χρεώνεται ${ yearlyDiscountedPriceElement } για τους πρώτους 12 μήνες, ανανεώνεται στα ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
@@ -7341,8 +7344,14 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "Group created": [
+        "Η ομάδα δημιουργήθηκε"
+      ],
       "Group deleted": [
         "Η ομάδα διαγράφηκε"
+      ],
+      "Group roles assigned": [
+        "Ρόλοι ομάδας που έχουν ανατεθεί"
       ],
       "Groups": [
         "Ομάδες"
@@ -9208,6 +9217,9 @@
       "Group Owner": [
         "Κάτοχος Ομάδας"
       ],
+      "Invited": [
+        "Προσκεκλημένοι"
+      ],
       "Paused": [
         "Σε παύση"
       ],
@@ -10560,20 +10572,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Χρήστες και διευθύνσεις"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Η ζωντανή συνομιλία είναι διαθέσιμη στο ${ planName }"
-      ],
-      "Open support form": [
-        "Ανοίξτε τη φόρμα υποστήριξης"
-      ],
-      "Upgrade subscription": [
-        "Αναβάθμιση συνδρομής"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Αναβαθμίστε για να ξεκλειδώσετε την υποστήριξη συνομιλίας και άλλες πριμοδοτημένες δυνατότητες ή χρησιμοποιήστε τη δωρεάν φόρμα υποστήριξης για να αναφέρετε το πρόβλημά σας."
       ]
     },
     "Loading info": {
@@ -14151,8 +14149,8 @@
       "Updated": [
         "Ενημερώθηκε"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Οι χρήστες που έχετε ορίσει ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Οι χρήστες που έχουν οριστεί ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
       ]
     },
     "scim: Action": {
@@ -14948,13 +14946,13 @@
         "${ n } χρήστης αποσυνδέθηκε από SSO",
         "${ n } χρήστες αποσυνδέθηκαν από SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τον λογαριασμό του τώρα:",
-        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τους λογαριασμούς τους τώρα:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω του παρόχου ταυτότητας σας",
+        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω του παρόχου ταυτότητας σας"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } χρήστης είναι ανενεργός. Μπορείτε να καταργήσετε με ασφάλεια αυτόν τον χρήστη από τον οργανισμό σας.",
-        "${ n } χρήστες είναι ανενεργοί. Μπορείτε να καταργήσετε με ασφάλεια αυτούς τους χρήστες από τον οργανισμό σας."
+      "${ n } user is inactive.": [
+        "${ n } χρήστης είναι ανενεργός.",
+        "${ n } χρήστες είναι ανενεργοί."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } χρήστης ζητά τη βοήθειά σας για να συνδεθεί στον λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση.",
@@ -17813,6 +17811,9 @@
       "Group membership paused": [
         "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
       ],
+      "Resuming role assignment": [
+        "Συνέχιση ανάθεσης ρόλου"
+      ],
       "Role assignment paused": [
         "Η ανάθεση ρόλου τέθηκε σε παύση"
       ],
@@ -17822,11 +17823,14 @@
       "User declined invitation": [
         "Ο χρήστης απέρριψε την πρόσκληση"
       ],
-      "User is a group": [
-        "Ο χρήστης είναι μια ομάδα"
+      "User is a group owner": [
+        "Ο χρήστης είναι κάτοχος ομάδας"
       ],
       "via ${ groupNames }": [
         "μέσω ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Αναμονή για έγκριση από τον διαχειριστή"
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
@@ -17940,9 +17944,9 @@
       "Confirm all": [
         "Επιβεβαίωση όλων"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τον ${ n } χρήστη, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:",
-        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τους ${ n } χρήστες, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:"
+      "Could not enable admin access for ${ n } user": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή για ${ n } χρήστη",
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή για ${ n } χρήστες"
       ],
       "Could not enable administrator access: ${ error }": [
         "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή: ${ error }"
@@ -17971,6 +17975,10 @@
       "Request user permission for data access": [
         "Αίτηση άδειας χρήστη για πρόσβαση σε δεδομένα"
       ],
+      "Review their account now.": [
+        "Ελέγξτε τον λογαριασμό τους τώρα.",
+        "Ελέγξτε τους λογαριασμούς τους τώρα."
+      ],
       "Revoke access": [
         "Ανάκληση πρόσβασης"
       ],
@@ -17983,6 +17991,9 @@
       "The user must have an address to request data access": [
         "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Τα κλειδιά κρυπτογράφησης ενημερώθηκαν ενώ κάναμε αλλαγές."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Αυτό θα ακυρώσει το εκκρεμές αίτημα για πρόσβαση διαχειριστή στα δεδομένα του χρήστη ή επαναφορά κωδικού πρόσβασης."
       ],
@@ -17994,6 +18005,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Για να συνεχίσετε, θα πρέπει να ζητήσετε την άδεια του χρήστη για πρόσβαση στα δεδομένα του ή επαναφορά του κωδικού πρόσβασής του."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Μπορείτε να καταργήσετε με ασφάλεια αυτόν τον χρήστη από τον οργανισμό σας.",
+        "Μπορείτε να καταργήσετε με ασφάλεια αυτούς τους χρήστες από τον οργανισμό σας."
       ]
     },
     "Upsell": {

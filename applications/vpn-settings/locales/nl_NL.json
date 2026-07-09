@@ -494,9 +494,6 @@
       "Extend": [
         "Verlengen"
       ],
-      "Finish": [
-        "Voltooien"
-      ],
       "Fit to window": [
         "Passend in venster"
       ],
@@ -751,6 +748,9 @@
       ],
       "Organization": [
         "Organisatie"
+      ],
+      "Pause": [
+        "Onderbreken"
       ],
       "Pay": [
         "Betalen"
@@ -4431,12 +4431,6 @@
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
-      "Invalid ${ name } code": [
-        "Ongeldig ${ name } code"
-      ],
-      "Invalid card number": [
-        "Ongeldig creditcardnummer"
-      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -4448,9 +4442,6 @@
       ],
       "Invalid email address": [
         "Ongeldig e-mailadres"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
       ],
       "Invalid IBAN": [
         "Ongeldige IBAN"
@@ -6365,10 +6356,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } nieuw lid toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring.",
-        "${ pendingAdminMemberCount } nieuwe leden toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
@@ -6774,12 +6761,6 @@
       ],
       "Beta": [
         "Bèta"
-      ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "De eerste 6 maanden wordt het abonnement gefactureerd tegen ${ monthlyDiscountedPrice }, waarna het wordt verlengd tegen ${ monthlyRenewalPrice }."
-      ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "De eerste 12 maanden wordt het abonnement gefactureerd tegen ${ yearlyDiscountedPrice }, waarna het wordt verlengd tegen ${ yearlyRenewalPrice }."
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
@@ -10485,20 +10466,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Gebruikers en adressen"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Live chat is beschikbaar met ${ planName }"
-      ],
-      "Open support form": [
-        "Ondersteuningsformulier openen"
-      ],
-      "Upgrade subscription": [
-        "Abonnement upgraden"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Upgrade om chatondersteuning en andere premiumfuncties te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
       ]
     },
     "Loading info": {
@@ -14819,14 +14786,6 @@
         "${ n } gebruiker losgekoppeld van SSO",
         "${ n } gebruikers losgekoppeld van SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } gebruiker heeft zich aangesloten bij uw organisatie via uw Identity Provider. Controleer het account nu:",
-        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } gebruiker is inactief. U kunt deze gebruiker veilig verwijderen uit uw organisatie.",
-        "${ n } gebruikers zijn inactief. U kunt ze veilig verwijderen uit uw organisatie."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
         "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
@@ -17663,9 +17622,6 @@
       "User declined invitation": [
         "Gebruiker weigerde uitnodiging"
       ],
-      "User is a group": [
-        "Gebruiker is een groep"
-      ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
       ],
@@ -17774,10 +17730,6 @@
       ],
       "Confirm all": [
         "Alles bevestigen"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
-        "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kan beheerderstoegang niet inschakelen: ${ error }"
