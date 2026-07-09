@@ -118,6 +118,7 @@ export interface User {
         sso: boolean;
         'has-a-byoe-address': boolean;
         'delegated-access': boolean;
+        'org-access': boolean;
     };
     AccountRecovery: {
         State: SessionRecoveryState;
