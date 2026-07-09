@@ -1,0 +1,3626 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "be_BY"
+  },
+  "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(адкрыць у новай укладцы)"
+      ],
+      "camera off": [
+        "камера выключана"
+      ],
+      "camera on": [
+        "камера ўключана"
+      ],
+      "Meeting controls": [
+        "Элементы кіравання сустрэчай"
+      ],
+      "microphone muted": [
+        "мікрафон адключаны"
+      ],
+      "microphone on": [
+        "мікрафон уключаны"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } далучыўся да сустрэчы"
+      ],
+      "${ name } left the meeting": [
+        "${ name } выйшаў з сустрэчы"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } апусціў руку"
+      ],
+      "${ name } raised their hand": [
+        "${ name } падняў руку"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } адрэагаваў з ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } кажа: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Удзельнік далучыўся да сустрэчы"
+      ],
+      "A participant left the meeting": [
+        "Удзельнік выйшаў з сустрэчы"
+      ],
+      "A participant lowered their hand": [
+        "Удзельнік апусціў руку"
+      ],
+      "A participant raised their hand": [
+        "Удзельнік падняў руку"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Удзельнік адрэагаваў са ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Падключана праз рэжым рэтрансляцыі TURN з прычыны абмежаванняў сеткі. Гэта можа павялічыць затрымку і паўплываць на якасць сувязі."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Падключэнне страчана. Адбываецца перападключэнне..."
+      ],
+      "New chat message: ${ message }": [
+        "Новае паведамленне чата: ${ message }"
+      ],
+      "Now starting recording": [
+        "Пачынаецца запіс"
+      ],
+      "Reconnected to the meeting": [
+        "Перападключана да сустрэчы"
+      ],
+      "Recording saved": [
+        "Запіс захаваны"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Пачаўся запіс. Вы пацвярджаеце і згаджаецеся на запіс сустрэчы, калі працягніце ўдзел у ёй."
+      ],
+      "Recording stopped": [
+        "Запіс спынены"
+      ],
+      "Screen share started": [
+        "Пачата абагульванне экрана"
+      ],
+      "Screen share started by ${ name }": [
+        "Абагульванне экрана пачата ${ name }"
+      ],
+      "Screen share stopped": [
+        "Абагульванне экрана спынена"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Абагульванне экрана спынена ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "Сустрэча будзе закрыта праз 1 хвіліну"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Сустрэча завершыцца праз 15 секунд"
+      ],
+      "The meeting will close in 30 seconds": [
+        "Сустрэча завершыцца праз 30 секунд"
+      ],
+      "The meeting will end in 1 minute": [
+        "Сустрэча скончыцца праз 1 хвіліну"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Сустрэча скончыцца праз 10 хвілін"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Сустрэча скончыцца праз 15 секунд"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Сустрэча скончыцца праз 5 хвілін"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Адбываецца запіс сустрэчы. Далучаючыся да яе, вы пацвярджаеце сваю згоду на запіс."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Вы адзіны ўдзельнік. Сустрэча завершыцца праз 2 хвіліны, калі ніхто не далучыцца."
+      ],
+      "You have been disconnected from the meeting": [
+        "Вас адключылі ад сустрэчы"
+      ],
+      "You have been muted by the host": [
+        "Арганізатар сустрэчы адключыў вам гук"
+      ],
+      "Your camera has been turned off by the host": [
+        "Ваша камера была выключана арганізатарам сустрэчы"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Крама ${ BRAND_NAME }"
+      ],
+      "Add account": [
+        "Дадаць уліковы запіс"
+      ],
+      "Add another account": [
+        "Дадаць іншы ўліковы запіс"
+      ],
+      "Admit": [
+        "Прыняць"
+      ],
+      "Admit ${ participantName }": [
+        "Прыняць ${ participantName }"
+      ],
+      "Admit all": [
+        "Прыняць усіх"
+      ],
+      "Allow access": [
+        "Дазволіць доступ"
+      ],
+      "Applied": [
+        "Прыменена"
+      ],
+      "Approve participants before they can join": [
+        "Ухваліце ўдзельнікаў, перад іх далучэннем"
+      ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Прызначыць ${ selectedParticipantName } у якасці арганізатара"
+      ],
+      "Assign new host": [
+        "Прызначыць новага арганізатара"
+      ],
+      "Attach screenshot(s)": [
+        "Далучыць здымак(-і) экрана"
+      ],
+      "Authenticate": [
+        "Аўтэнтыфікацыя"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Background blur": [
+        "Размыць фон"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Change password": [
+        "Змяніць пароль"
+      ],
+      "Chat with us": [
+        "Чат з намі"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Close preview": [
+        "Закрыць папярэдні прагляд"
+      ],
+      "Close this banner": [
+        "Закрыць гэты банер"
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
+      "Continue without camera": [
+        "Працягнуць без камеры"
+      ],
+      "Continue without mic and camera": [
+        "Працягнуць без мікрафона і камеры"
+      ],
+      "Continue without microphone": [
+        "Працягнуць без мікрафона"
+      ],
+      "Copy address": [
+        "Скапіяваць адрас"
+      ],
+      "Copy invitation link": [
+        "Капіяваць спасылку на запрашэнне"
+      ],
+      "Copy link": [
+        "Скапіяваць спасылку"
+      ],
+      "Copy link and close": [
+        "Скапіяваць спасылку і закрыць"
+      ],
+      "Copy meeting link": [
+        "Скапіяваць спасылку на сустрэчу"
+      ],
+      "Copy room link": [
+        "Скапіяваць спасылку на пакой"
+      ],
+      "Create a free account": [
+        "Стварыць бясплатны ўліковы запіс"
+      ],
+      "Create a room": [
+        "Стварыць пакой"
+      ],
+      "Create an account": [
+        "Стварыць уліковы запіс"
+      ],
+      "Create meeting": [
+        "Стварыць сустрэчу"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Deny": [
+        "Адхіліць"
+      ],
+      "Deny ${ participantName }": [
+        "Адхіліць ${ participantName }"
+      ],
+      "Disable ${ participantName }'s video": [
+        "Адключыць відэа ${ participantName }"
+      ],
+      "Disable camera": [
+        "Выключыць камеру"
+      ],
+      "Disable waiting room": [
+        "Адключыць пакой чакання"
+      ],
+      "Dismiss": [
+        "Адхіліць"
+      ],
+      "Done": [
+        "Гатова"
+      ],
+      "Download": [
+        "Спампаваць"
+      ],
+      "Download app": [
+        "Спампаваць праграму"
+      ],
+      "Download local participant report": [
+        "Спампаваць справаздачу лакальнага ўдзельніка"
+      ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
+      "Download participant report": [
+        "Спампаваць справаздачу ўдзельніка"
+      ],
+      "Download recording": [
+        "Спампаваць запіс"
+      ],
+      "Download room level report": [
+        "Спампаваць справаздачу на ўзроўні пакоя"
+      ],
+      "Edit": [
+        "Рэдагаваць"
+      ],
+      "Edit email address": [
+        "Рэдагаваць адрас электроннай пошты"
+      ],
+      "Edit phone number": [
+        "Рэдагаваць нумар тэлефона"
+      ],
+      "Edit sign-in details": [
+        "Рэдагаваць падрабязнасці ўваходу"
+      ],
+      "Enable camera": [
+        "Уключыць камеру"
+      ],
+      "Enable waiting room": [
+        "Уключыць пакой чакання"
+      ],
+      "End meeting": [
+        "Завяршыць сустрэчу"
+      ],
+      "End meeting for all": [
+        "Завяршыць сустрэчу для ўсіх"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
+      "Full size": [
+        "Поўны памер"
+      ],
+      "Generate a new meeting link.": [
+        "Згенерыраваць новую спасылку для сустрэчы."
+      ],
+      "Get Meet Professional": [
+        "Атрымаць Meet Professional"
+      ],
+      "Get verification code": [
+        "Атрымаць код спраўджання"
+      ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
+      ],
+      "Help and resources": [
+        "Даведка і рэсурсы"
+      ],
+      "Hide options": [
+        "Схаваць параметры"
+      ],
+      "Hide participants": [
+        "Схаваць удзельнікаў"
+      ],
+      "Hide self view": [
+        "Схаваць свой выгляд"
+      ],
+      "Hide timezones": [
+        "Схаваць часавыя паясы"
+      ],
+      "Insert emoji": [
+        "Уставіць эмодзі"
+      ],
+      "Join": [
+        "Далучыцца"
+      ],
+      "Join meeting": [
+        "Далучыцца да сустрэчы"
+      ],
+      "Join with a link": [
+        "Далучыцца пры дапамозе спасылкі"
+      ],
+      "Kick out": [
+        "Выгнаць"
+      ],
+      "Kick out ${ participantName }": [
+        "Выгнаць ${ participantName }"
+      ],
+      "Leave": [
+        "Выйсці"
+      ],
+      "Leave meeting": [
+        "Выйсці з сустрэчы"
+      ],
+      "Lock meeting": [
+        "Заблакіраваць сустрэчу"
+      ],
+      "Lower hand": [
+        "Апусціць руку"
+      ],
+      "Minimize preview": [
+        "Згарнуць папярэдні прагляд"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Больш параметраў для ўліковых запісаў"
+      ],
+      "Mute ${ participantName }": [
+        "Адключыць гук ${ participantName }"
+      ],
+      "Next month": [
+        "Наступны месяц"
+      ],
+      "Next page": [
+        "Наступная старонка"
+      ],
+      "Noise cancellation": [
+        "Падаўленне шуму"
+      ],
+      "Open app": [
+        "Адкрыць праграму"
+      ],
+      "Open link": [
+        "Адкрыць спасылку"
+      ],
+      "Participants join the call directly": [
+        "Удзельнікі далучаюцца да званка наўпрост"
+      ],
+      "Pause": [
+        "Прыпыніць"
+      ],
+      "Previous month": [
+        "Папярэдні месяц"
+      ],
+      "Previous page": [
+        "Папярэдняя старонка"
+      ],
+      "Raise hand": [
+        "Падняць руку"
+      ],
+      "React with ${ emoji }": [
+        "Рэагаваць з дапамогай ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Адрэагаваць з ${ emoji }, ${ identities.length } рэакцыя",
+        "Адрэагаваць з ${ emoji }, ${ identities.length } рэакцыі",
+        "Адрэагаваць з ${ emoji }, ${ identities.length } рэакцый",
+        "Адрэагаваць з ${ emoji }, ${ identities.length } рэакцый"
+      ],
+      "Receive video": [
+        "Атрымаць відэа"
+      ],
+      "Record": [
+        "Запісаць"
+      ],
+      "Refer a friend": [
+        "Запрасіць сябра"
+      ],
+      "Refresh audio and video tracks": [
+        "Абнавіць аўдыя і відэа трэкі"
+      ],
+      "Refresh screen share track": [
+        "Абнавіць прагляд абагуленага экрана"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
+      ],
+      "Rejoin meeting": [
+        "Паўторна далучыцца да сустрэчы"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцыя",
+        "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцыі",
+        "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцый",
+        "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцый"
+      ],
+      "Report a problem": [
+        "Паведаміць аб праблеме"
+      ],
+      "Request a call": [
+        "Запытаць званок"
+      ],
+      "Request a feature": [
+        "Запытаць функцыю"
+      ],
+      "Request new code": [
+        "Запытаць новы код"
+      ],
+      "Resend code": [
+        "Адправіць код яшчэ раз"
+      ],
+      "Reset to defaults": [
+        "Скінуць да прадвызначаных"
+      ],
+      "Resume": [
+        "Узнавіць"
+      ],
+      "Return to dashboard": [
+        "Вярнуцца ў панэль кіравання"
+      ],
+      "Room": [
+        "Пакой"
+      ],
+      "Rotate personal meeting link": [
+        "Ратацыя асабістай спасылкі на сустрэчу"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Schedule": [
+        "Запланаваць"
+      ],
+      "Schedule a meeting": [
+        "Запланаваць сустрэчу"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Запланаваць у ${ CALENDAR_APP_NAME }"
+      ],
+      "Search countries": [
+        "Пошук краін"
+      ],
+      "Send an encrypted message": [
+        "Адправіць зашыфраванае паведамленне"
+      ],
+      "Settings": [
+        "Налады"
+      ],
+      "Show duration": [
+        "Працягласць"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Паказваць мініяцюру падчас дэманстрацыі экрана"
+      ],
+      "Show options": [
+        "Паказаць параметры"
+      ],
+      "Show participants": [
+        "Паказаць удзельнікаў"
+      ],
+      "Show timezones": [
+        "Паказаць часавыя паясы"
+      ],
+      "Sign in": [
+        "Увайсці"
+      ],
+      "Sign out": [
+        "Выйсці з уліковага запісу"
+      ],
+      "Sign out of all accounts": [
+        "Выйсці з усіх уліковых запісаў"
+      ],
+      "Simulate reconnection": [
+        "Імітацыя перападключэння"
+      ],
+      "Skip": [
+        "Прапусціць"
+      ],
+      "Skip to main content": [
+        "Перайсці да асноўнага змесціва"
+      ],
+      "Start an instant meeting": [
+        "Пачаць імгненную сустрэчу"
+      ],
+      "Start meeting": [
+        "Пачаць сустрэчу"
+      ],
+      "Start new meeting": [
+        "Пачаць новую сустрэчу"
+      ],
+      "Start recording": [
+        "Пачаць запіс"
+      ],
+      "Start Recording Track Stats": [
+        "Пачаць запіс статыстыкі сачэння"
+      ],
+      "Start your own meeting": [
+        "Пачаць сваю ўласную сустрэчу"
+      ],
+      "Stay in meeting": [
+        "Застацца на сустрэчы"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Спыніць адкрыццё сустрэч у праграме для камп'ютара"
+      ],
+      "Stop receiving video": [
+        "Спыніць прыём відэа"
+      ],
+      "Stop recording": [
+        "Спыніць запіс"
+      ],
+      "Stop recording and download video": [
+        "Спыніць запіс і спампаваць відэа"
+      ],
+      "Stop Recording Track Stats": [
+        "Спыніць запіс статыстыкі сачэння"
+      ],
+      "Submit": [
+        "Адправіць"
+      ],
+      "Switch or add account": [
+        "Змяніць або дадаць уліковы запіс"
+      ],
+      "Tap to unblock audio playback": [
+        "Націсніце, каб разблакіраваць прайграванне аўдыя"
+      ],
+      "The current link will stop working.": [
+        "Бягучая спасылка перастане працаваць."
+      ],
+      "Try again": [
+        "Паспрабуйце яшчэ раз"
+      ],
+      "Try another method": [
+        "Паспрабуйце іншы спосаб"
+      ],
+      "Turn off incoming video": [
+        "Выключыць уваходнае відэа"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Палепшыць свой тарыфны план, каб выкарыстоўваць пакой чакання ў наступнай сустрэчы."
+      ],
+      "Upload another video": [
+        "Запампаваць іншае відэа"
+      ],
+      "Upload video": [
+        "Запампаваць відэа"
+      ],
+      "Use authentication code": [
+        "Выкарыстаць код аўтэнтыфікацыі"
+      ],
+      "Use camera": [
+        "Выкарыстоўваць камеру"
+      ],
+      "Use microphone": [
+        "Выкарыстоўваць мікрафон"
+      ],
+      "Use recovery code": [
+        "Выкарыстаць код аднаўлення"
+      ],
+      "Use waiting room with a paid plan": [
+        "Выкарыстаць пакой чакання з платным тарыфным планам"
+      ],
+      "Verify": [
+        "Спраўдзіць"
+      ],
+      "Verify account": [
+        "Спраўдзіць уліковы запіс"
+      ],
+      "View invoice": [
+        "Паглядзець рахунак"
+      ],
+      "Waiting room": [
+        "Пакой чакання"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Налады аўдыя"
+      ],
+      "Blur background": [
+        "Размыць фон"
+      ],
+      "Chat": [
+        "Чат"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Close search": [
+        "Закрыць пошук"
+      ],
+      "Copy link": [
+        "Скапіяваць спасылку"
+      ],
+      "Copy meeting link": [
+        "Скапіяваць спасылку на сустрэчу"
+      ],
+      "Debug overlay": [
+        "Адладка накладання"
+      ],
+      "Go to dashboard": [
+        "Перайсці ў панэль кіравання"
+      ],
+      "Hide self view": [
+        "Схаваць свой выгляд"
+      ],
+      "Leave Meeting": [
+        "Выйсці з сустрэчы"
+      ],
+      "Lock meeting": [
+        "Заблакіраваць сустрэчу"
+      ],
+      "Lower hand": [
+        "Апусціць руку"
+      ],
+      "Meeting details": [
+        "Падрабязнасці сустрэчы"
+      ],
+      "More options": [
+        "Больш параметраў"
+      ],
+      "Noise cancellation": [
+        "Падаўленне шуму"
+      ],
+      "Open chat message search": [
+        "Адкрыць пошук паведамленняў чата"
+      ],
+      "Open participants search": [
+        "Адкрыць пошук удзельнікаў"
+      ],
+      "Participant host control options": [
+        "Параметры кіравання для ўдзельнікаў"
+      ],
+      "Participants": [
+        "Удзельнікі"
+      ],
+      "Raise hand": [
+        "Падняць руку"
+      ],
+      "Rotate camera": [
+        "Павярнуць камеру"
+      ],
+      "Screen share": [
+        "Абагулены экран"
+      ],
+      "Settings": [
+        "Налады"
+      ],
+      "Show duration": [
+        "Працягласць"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Паказваць плаваючую мініяцюру падчас абагульвання экрана"
+      ],
+      "Show passphrase": [
+        "Паказаць парольную фразу"
+      ],
+      "Stop recording and download.": [
+        "Спыніць запіс і спампаваць."
+      ],
+      "Toggle chat": [
+        "Пераключыць чат"
+      ],
+      "Toggle emoji reactions": [
+        "Пераключыць рэакцыі эмодзі"
+      ],
+      "Toggle meeting details": [
+        "Пераключыць падрабязнасці сустрэчы"
+      ],
+      "Toggle participants": [
+        "Пераключыць удзельнікаў"
+      ],
+      "Toggle screen share": [
+        "Пераключыць абагульванне экрана"
+      ],
+      "Toggle settings": [
+        "Пераключэнне налад"
+      ],
+      "Turn off incoming video": [
+        "Выключыць уваходнае відэа"
+      ],
+      "Video settings": [
+        "Налады відэа"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Праграмы ${ BRAND_NAME }"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Прызначыць арганізатара"
+      ],
+      "Audio settings": [
+        "Налады аўдыя"
+      ],
+      "Chat": [
+        "Чат"
+      ],
+      "Chat messages": [
+        "Паведамленні чата"
+      ],
+      "Device settings": [
+        "Налады прылады"
+      ],
+      "Meeting details": [
+        "Падрабязнасці сустрэчы"
+      ],
+      "Meeting rooms": [
+        "Пакоі чакання"
+      ],
+      "Participants": [
+        "Удзельнікі"
+      ],
+      "Participants list": [
+        "Спіс удзельнікаў"
+      ],
+      "Primary navigation": [
+        "Асноўная навігацыя"
+      ],
+      "Settings": [
+        "Налады"
+      ],
+      "Video settings": [
+        "Налады відэа"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Актыўны"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Падключана праз рэжым рэтрансляцыі TURN з прычыны абмежаванняў вашай сеткі. Гэта можа павялічыць затрымку і паўплываць на якасць сувязі."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Праблема ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Application problem": [
+        "Праблема з праграмай"
+      ],
+      "Authenticator problem": [
+        "Праблема з аўтэнтыфікатарам"
+      ],
+      "Bridge problem": [
+        "Праблема з Bridge"
+      ],
+      "Calendar problem": [
+        "Праблема з календаром"
+      ],
+      "Connection problem": [
+        "Праблема з падключэннем"
+      ],
+      "Contacts problem": [
+        "Праблема з кантактамі"
+      ],
+      "Custom domain problem": [
+        "Праблема з карыстальніцкім даменам"
+      ],
+      "Docs problem": [
+        "Праблема з Docs"
+      ],
+      "Drive problem": [
+        "Праблема з Drive"
+      ],
+      "Feature request": [
+        "Запытаць функцыю"
+      ],
+      "Import / export problem": [
+        "Праблема з імпартаваннем/экспартаваннем"
+      ],
+      "Installation problem": [
+        "Праблема з усталяваннем"
+      ],
+      "Mail problem": [
+        "Праблема з поштай"
+      ],
+      "Manual setup problem": [
+        "Праблема падчас наладжвання ўручную"
+      ],
+      "Meet problem": [
+        "Праблема з Meet"
+      ],
+      "Other": [
+        "Іншае"
+      ],
+      "Pass problem": [
+        "Праблема з Proton Pass"
+      ],
+      "Payments problem": [
+        "Праблема з плацяжамі"
+      ],
+      "Sheets problem": [
+        "Праблема з электроннай табліцай"
+      ],
+      "Sign in problem": [
+        "Праблема з уваходам"
+      ],
+      "Sign up problem": [
+        "Праблема з рэгістрацыяй"
+      ],
+      "Signup problem": [
+        "Праблема з рэгістрацыяй"
+      ],
+      "Slow speed problem": [
+        "Праблема павольнай хуткасці"
+      ],
+      "Speed problem": [
+        "Праблема з хуткасцю"
+      ],
+      "Streaming problem": [
+        "Праблема з трансляцыяй"
+      ],
+      "Update problem": [
+        "Праблема з абнаўленнем"
+      ],
+      "VPN problem": [
+        "Праблема з VPN"
+      ],
+      "Website access problem": [
+        "Праблема з доступам да вэб-сайта"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Згарнуць"
+      ],
+      "Expand": [
+        "Разгарнуць"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "маркоўны"
+      ],
+      "cerise": [
+        "вішнёвы"
+      ],
+      "cobalt": [
+        "кобальтавы"
+      ],
+      "copper": [
+        "медны"
+      ],
+      "enzian": [
+        "чарнільны"
+      ],
+      "fern": [
+        "папаратнікавы"
+      ],
+      "forest": [
+        "лясны"
+      ],
+      "ocean": [
+        "акіянічны"
+      ],
+      "olive": [
+        "аліўкавы"
+      ],
+      "pacific": [
+        "ціхаакіянскі"
+      ],
+      "pickle": [
+        "агурочны"
+      ],
+      "pine": [
+        "сасновы"
+      ],
+      "pink": [
+        "ружовы"
+      ],
+      "plum": [
+        "слівавы"
+      ],
+      "purple": [
+        "фіялетавы"
+      ],
+      "reef": [
+        "рыфавы"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сланцава-блакітны"
+      ],
+      "soil": [
+        "зямлісты"
+      ],
+      "strawberry": [
+        "клубнічны"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазія"
+      ],
+      "Afghanistan": [
+        "Афганістан"
+      ],
+      "Albania": [
+        "Албанія"
+      ],
+      "Algeria": [
+        "Алжыр"
+      ],
+      "American Samoa": [
+        "Амерыканскае Самоа"
+      ],
+      "Andorra": [
+        "Андора"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангілья"
+      ],
+      "Antarctica": [
+        "Антарктыда"
+      ],
+      "Antigua and Barbuda": [
+        "Антыгуа і Барбуда"
+      ],
+      "Argentina": [
+        "Аргенціна"
+      ],
+      "Armenia": [
+        "Арменія"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Востраў Узнясення"
+      ],
+      "Australia": [
+        "Аўстралія"
+      ],
+      "Austria": [
+        "Аўстрыя"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамскія астравы"
+      ],
+      "Bahrain": [
+        "Бахрэйн"
+      ],
+      "Bangladesh": [
+        "Бангладэш"
+      ],
+      "Barbados": [
+        "Барбадас"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгія"
+      ],
+      "Belize": [
+        "Беліз"
+      ],
+      "Benin": [
+        "Бенін"
+      ],
+      "Bermuda": [
+        "Бермудскія астравы"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Балівія"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Банайрэ, Сінт-Эстатыус і Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Боснія і Герцагавіна"
+      ],
+      "Botswana": [
+        "Батсвана"
+      ],
+      "Bouvet Island": [
+        "Востраў Буве"
+      ],
+      "Brazil": [
+        "Бразілія"
+      ],
+      "British Indian Ocean Territory": [
+        "Брытанская тэрыторыя ў Індыйскім акіяне"
+      ],
+      "Brunei Darussalam": [
+        "Брунэй-Дарусалам"
+      ],
+      "Bulgaria": [
+        "Балгарыя"
+      ],
+      "Burkina Faso": [
+        "Буркіна-Фасо"
+      ],
+      "Burundi": [
+        "Бурундзі"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Каба-Вердэ"
+      ],
+      "Cayman Islands": [
+        "Кайманавы астравы"
+      ],
+      "Central African Republic": [
+        "Цэнтральна-Афрыканская Рэспубліка"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чылі"
+      ],
+      "China": [
+        "Кітай"
+      ],
+      "Christmas Island": [
+        "Востраў Каляд"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Какосавыя астравы (Кілінг)"
+      ],
+      "Colombia": [
+        "Калумбія"
+      ],
+      "Comoros": [
+        "Каморскія астравы"
+      ],
+      "Congo": [
+        "Конга"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Дэмакратычная Рэспубліка Конга"
+      ],
+      "Cook Islands": [
+        "Астравы Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рыка"
+      ],
+      "Croatia": [
+        "Харватыя"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасаа"
+      ],
+      "Cyprus": [
+        "Кіпр"
+      ],
+      "Czech Republic": [
+        "Рэспубліка Чэхія"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д’Івуар"
+      ],
+      "Denmark": [
+        "Данія"
+      ],
+      "Djibouti": [
+        "Джыбуці"
+      ],
+      "Dominica": [
+        "Дамініка"
+      ],
+      "Dominican Republic": [
+        "Дамініканская Рэспубліка"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Егіпет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экватарыяльная Гвінея"
+      ],
+      "Eritrea": [
+        "Эрытрэя"
+      ],
+      "Estonia": [
+        "Эстонія"
+      ],
+      "Eswatini": [
+        "Эсваціні"
+      ],
+      "Ethiopia": [
+        "Эфіопія"
+      ],
+      "Falkland Islands": [
+        "Фалклендскія астравы"
+      ],
+      "Faroe Islands": [
+        "Фарэрскія астравы"
+      ],
+      "Federated States of Micronesia": [
+        "Федэратыўныя Штаты Мікранезіі"
+      ],
+      "Fiji": [
+        "Фіджы"
+      ],
+      "Finland": [
+        "Фінляндыя"
+      ],
+      "France": [
+        "Францыя"
+      ],
+      "French Guiana": [
+        "Французская Гвіяна"
+      ],
+      "French Polynesia": [
+        "Французская Палінезія"
+      ],
+      "French Southern Territories": [
+        "Французскія Паўднёвыя тэрыторыі"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбія"
+      ],
+      "Georgia": [
+        "Грузія"
+      ],
+      "Germany": [
+        "Германія"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гібралтар"
+      ],
+      "Greece": [
+        "Грэцыя"
+      ],
+      "Greenland": [
+        "Грэнландыя"
+      ],
+      "Grenada": [
+        "Грэнада"
+      ],
+      "Guadeloupe": [
+        "Гвадэлупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватэмала"
+      ],
+      "Guernsey": [
+        "Гернсі"
+      ],
+      "Guinea": [
+        "Гвінея"
+      ],
+      "Guinea-Bissau": [
+        "Гвінея-Бісау"
+      ],
+      "Guyana": [
+        "Гаяна"
+      ],
+      "Haiti": [
+        "Гаіці"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Востраў Херд і Астравы Мак-Доналд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святы Прастол (Горад-дзяржава Ватыкан)"
+      ],
+      "Honduras": [
+        "Гандурас"
+      ],
+      "Hong Kong": [
+        "Ганконг"
+      ],
+      "Hungary": [
+        "Венгрыя"
+      ],
+      "Iceland": [
+        "Ісландыя"
+      ],
+      "India": [
+        "Індыя"
+      ],
+      "Indonesia": [
+        "Інданезія"
+      ],
+      "International": [
+        "Міжнародны"
+      ],
+      "Iran": [
+        "Іран"
+      ],
+      "Iraq": [
+        "Ірак"
+      ],
+      "Ireland": [
+        "Ірландыя"
+      ],
+      "Isle of Man": [
+        "Востраў Мэн"
+      ],
+      "Israel": [
+        "Ізраіль"
+      ],
+      "Italy": [
+        "Італія"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Японія"
+      ],
+      "Jersey": [
+        "Джэрсі"
+      ],
+      "Jordan": [
+        "Іарданія"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кенія"
+      ],
+      "Kiribati": [
+        "Кірыбаці"
+      ],
+      "Kosovo": [
+        "Косава"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвія"
+      ],
+      "Lebanon": [
+        "Ліван"
+      ],
+      "Lesotho": [
+        "Лесота"
+      ],
+      "Liberia": [
+        "Ліберыя"
+      ],
+      "Libya": [
+        "Лівія"
+      ],
+      "Liechtenstein": [
+        "Ліхтэнштэйн"
+      ],
+      "Lithuania": [
+        "Літва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макаа"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малаві"
+      ],
+      "Malaysia": [
+        "Малайзія"
+      ],
+      "Maldives": [
+        "Мальдывы"
+      ],
+      "Mali": [
+        "Малі"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалавы астравы"
+      ],
+      "Martinique": [
+        "Марцініка"
+      ],
+      "Mauritania": [
+        "Маўрытанія"
+      ],
+      "Mauritius": [
+        "Маўрыкій"
+      ],
+      "Mayotte": [
+        "Маёта"
+      ],
+      "Mexico": [
+        "Мексіка"
+      ],
+      "Moldova": [
+        "Малдова"
+      ],
+      "Monaco": [
+        "Манака"
+      ],
+      "Mongolia": [
+        "Манголія"
+      ],
+      "Montenegro": [
+        "Чарнагорыя"
+      ],
+      "Montserrat": [
+        "Мантсерат"
+      ],
+      "Morocco": [
+        "Марока"
+      ],
+      "Mozambique": [
+        "Мазамбік"
+      ],
+      "Myanmar": [
+        "М’янма"
+      ],
+      "Namibia": [
+        "Намібія"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нідэрланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледонія"
+      ],
+      "New Zealand": [
+        "Новая Зеландыя"
+      ],
+      "Nicaragua": [
+        "Нікарагуа"
+      ],
+      "Niger": [
+        "Нігер"
+      ],
+      "Nigeria": [
+        "Нігерыя"
+      ],
+      "Niue": [
+        "Ніуэ"
+      ],
+      "Norfolk Island": [
+        "Востраў Норфалк"
+      ],
+      "North Korea": [
+        "Паўночная Карэя"
+      ],
+      "North Macedonia": [
+        "Паўночная Македонія"
+      ],
+      "Northern Mariana Islands": [
+        "Паўночныя Марыянскія астравы"
+      ],
+      "Norway": [
+        "Нарвегія"
+      ],
+      "Oman": [
+        "Аман"
+      ],
+      "Pakistan": [
+        "Пакістан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палесціна"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвінея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Філіпіны"
+      ],
+      "Pitcairn": [
+        "Астравы Піткэрн"
+      ],
+      "Poland": [
+        "Польшча"
+      ],
+      "Portugal": [
+        "Партугалія"
+      ],
+      "Puerto Rico": [
+        "Пуэрта-Рыка"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Рэюньён"
+      ],
+      "Romania": [
+        "Румынія"
+      ],
+      "Russia": [
+        "Расія"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартэльмі"
+      ],
+      "Saint Helena": [
+        "Востраў Святой Алены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сэнт-Кітс і Нэвіс"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсія"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартэн (французская частка)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-П’ер і Мікелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Вінсент і Грэнадзіны"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марына"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Тамэ і Прынсіпі"
+      ],
+      "Saudi Arabia": [
+        "Саудаўская Аравія"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербія"
+      ],
+      "Seychelles": [
+        "Сейшэльскія астравы"
+      ],
+      "Sierra Leone": [
+        "Сьера-Леонэ"
+      ],
+      "Singapore": [
+        "Сінгапур"
+      ],
+      "Sint Maarten": [
+        "Сінт-Мартэн"
+      ],
+      "Slovakia": [
+        "Славакія"
+      ],
+      "Slovenia": [
+        "Славенія"
+      ],
+      "Solomon Islands": [
+        "Саламонавы астравы"
+      ],
+      "Somalia": [
+        "Самалі"
+      ],
+      "South Africa": [
+        "Паўднёва-Афрыканская Рэспубліка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Паўднёвая Джорджыя і Паўднёвыя Сандвічавы астравы"
+      ],
+      "South Korea": [
+        "Паўднёвая Карэя"
+      ],
+      "South Ossetia": [
+        "Паўднёвая Асеція"
+      ],
+      "South Sudan": [
+        "Паўднёвы Судан"
+      ],
+      "Spain": [
+        "Іспанія"
+      ],
+      "Sri Lanka": [
+        "Шры-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Сурынам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпіцберген і Ян-Маен"
+      ],
+      "Sweden": [
+        "Швецыя"
+      ],
+      "Switzerland": [
+        "Швейцарыя"
+      ],
+      "Syria": [
+        "Сірыя"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджыкістан"
+      ],
+      "Tanzania": [
+        "Танзанія"
+      ],
+      "Thailand": [
+        "Тайланд"
+      ],
+      "Timor-Leste": [
+        "Тымор-Лешці"
+      ],
+      "Togo": [
+        "Тога"
+      ],
+      "Tokelau": [
+        "Такелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Трынідад і Табага"
+      ],
+      "Tristan da Cunha": [
+        "Трыстан-да-Кунья"
+      ],
+      "Tunisia": [
+        "Туніс"
+      ],
+      "Turkey": [
+        "Турцыя"
+      ],
+      "Turkmenistan": [
+        "Туркменістан"
+      ],
+      "Turks and Caicos Islands": [
+        "Астравы Цёркс і Кайкас"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украіна"
+      ],
+      "United Arab Emirates": [
+        "Аб’яднаныя Арабскія Эміраты"
+      ],
+      "United Kingdom": [
+        "Вялікабрытанія"
+      ],
+      "United States": [
+        "ЗША"
+      ],
+      "United States Minor Outlying Islands": [
+        "Знешнія малыя астравы ЗША"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекістан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "В’етнам"
+      ],
+      "Virgin Islands, British": [
+        "Брытанскія Віргінскія астравы"
+      ],
+      "Virgin Islands, U.S.": [
+        "Амерыканскія Віргінскія астравы"
+      ],
+      "Wallis and Futuna": [
+        "Уоліс і Футуна"
+      ],
+      "Western Sahara": [
+        "Заходняя Сахара"
+      ],
+      "Yemen": [
+        "Емен"
+      ],
+      "Zambia": [
+        "Замбія"
+      ],
+      "Zimbabwe": [
+        "Зімбабвэ"
+      ],
+      "Åland Islands": [
+        "Аландскія астравы"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Пратэрмінаваны рахунак"
+      ]
+    },
+    "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Шыфраванне з дапамогай Messaging Layer Security (MLS)"
+      ],
+      "Rotating group encryption key for best security": [
+        "Ратацыя ключа шыфравання групы для найлепшай бяспекі."
+      ],
+      "Try a different name.": [
+        "Паспрабуйце іншую назву."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Тут вы ўбачыце ўдзельнікаў, калі яны далучацца да сустрэчы."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "Загрузка..."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Давераны кантакт"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Дамен недаступны. Паспрабуйце яшчэ раз"
+      ],
+      "Email is not valid": [
+        "Несапраўдная электронная пошта"
+      ],
+      "Enter 6 digits": [
+        "Увядзіце 6 лічбаў"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
+      ],
+      "Event deleted": [
+        "Падзея выдалена"
+      ],
+      "Failed to assign host": [
+        "Не ўдалося прызначыць арганізатара"
+      ],
+      "Failed to create meeting": [
+        "Не ўдалося стварыць сустрэчу"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Не ўдалося стварыць асабістую сустрэчу. Абнавіце старонку"
+      ],
+      "Failed to decrypt session key": [
+        "Не ўдалося расшыфраваць ключ сеанса"
+      ],
+      "Failed to delete event": [
+        "Не ўдалося выдаліць падзею"
+      ],
+      "Failed to delete recording": [
+        "Не ўдалося выдаліць запіс."
+      ],
+      "Failed to delete room": [
+        "Не ўдалося выдаліць пакой"
+      ],
+      "Failed to download recording": [
+        "Не ўдалося спампаваць запіс."
+      ],
+      "Failed to edit room name": [
+        "Не ўдалося адрэдагаваць назву пакоя"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Не ўдалося далучыцца да сустрэчы. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "Не ўдалося далучыцца да сустрэчы. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to lock meeting": [
+        "Не ўдалося заблакіраваць сустрэчу"
+      ],
+      "Failed to rotate personal meeting link": [
+        "Не ўдалося зрабіць ратацыю асабістай спасылкі на сустрэчу"
+      ],
+      "Failed to send chat message. Please try again.": [
+        "Не ўдалося адправіць паведамленне ў чаце. Паўтарыце спробу."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "Не ўдалося адправіць рэакцыю эмодзі. Паспрабуйце яшчэ раз."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "Не ўдалося адправіць рэакцыю. Паспрабуйце яшчэ раз."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Не ўдалося пачаць сустрэчу. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to start recording": [
+        "Не ўдалося пачаць запіс."
+      ],
+      "Failed to start screen share": [
+        "Не ўдалося пачаць абагульванне экрана"
+      ],
+      "Failed to unlock meeting": [
+        "Не ўдалося разблакіраваць сустрэчу"
+      ],
+      "Incorrect username": [
+        "Няправільнае імя карыстальніка"
+      ],
+      "Invalid meeting link": [
+        "Памылковая спасылка на сустрэчу"
+      ],
+      "Invalid passphrase": [
+        "Памылковая парольная фраза"
+      ],
+      "Invalid verification code": [
+        "Памылковы код спраўджання"
+      ],
+      "Not a valid number": [
+        "Несапраўдны нумар"
+      ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
+      ],
+      "Please allow screen sharing in your system permissions, then try again": [
+        "Дазвольце абагульванне экрана ў сістэмных дазволах, а потым паспрабуйце яшчэ раз"
+      ],
+      "Request timed out": [
+        "Перавышаны тэрмін чакання запыту"
+      ],
+      "Room deleted": [
+        "Пакой выдалены"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "Абагульванне экрана не падтрымліваецца ў мабільных браўзерах"
+      ],
+      "Signature verification failed": [
+        "Не ўдалося спраўдзіць подпіс"
+      ],
+      "The email addresses do not match": [
+        "Адрасы электроннай пошты не супадаюць"
+      ],
+      "The meeting password is incorrect": [
+        "Няправільны пароль сустрэчы"
+      ],
+      "The meeting password is invalid": [
+        "Памылковы пароль сустрэчы"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
+      ],
+      "This field is required": [
+        "Абавязковае поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Гэта сустрэча працуе на старой версіі. Арганізатар павінен завяршыць сустрэчу і абнавіць праграму Meet да апошняй версіі."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Unknown error": [
+        "Невядомая памылка"
+      ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "У вашым браўзеры скончылася месца для захоўвання. Запіс захаваны да гэтага моманту."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Здаецца, што гадзіннік вашай прылады не сінхранізаваны. Праверце сістэмны час і паспрабуйце яшчэ раз."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Праграма часова недаступна"
+      ],
+      "Error: ${ errorMessage }": [
+        "Памылка: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Вой, нешта пайшло не так"
+      ],
+      "Open in browser": [
+        "Адкрыць у браўзеры"
+      ],
+      "Please refresh the page or try again later.": [
+        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Пераключыцеся на вэб-версію, каб выкарыстоўваць ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Відарыс не выбраны"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ бяспекі"
+      ],
+      "Touch your security key.": [
+        "Дакраніцеся да свайго ключа бяспекі."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ бяспекі"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байтаў"
+      ],
+      "GB": [
+        "ГБ"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "TB": [
+        "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байтаў"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайтаў"
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайтаў"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайтаў"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Прадвызначана сістэмай"
+      ],
+      "Theme font": [
+        "Шрыфт тэмы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Ужо ёсць уліковы запіс? ${ signIn }"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Уліковы запіс"
+      ],
+      "Apps": [
+        "Праграмы"
+      ],
+      "Network": [
+        "Сетка"
+      ],
+      "Other category": [
+        "Іншая катэгорыя"
+      ],
+      "Services": [
+        "Сэрвісы"
+      ]
+    },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Абараніце свае размовы скразным шыфраваннем"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } або ${ signInAction }, каб атрымаць доступ да вашага асабістага пакоя і ствараць новыя пакоі"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } або ${ signInAction }, каб запланаваць сустрэчы"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Размовы ў поўнай ${ privacyWord }"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Manual": [
+        "Уручную"
+      ],
+      "No verification method available": [
+        "Няма даступных спосабаў праверкі"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " і "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "Дасягнута абмежаванне па колькасці ўдзельнікаў (максімум: ${ maxParticipants })"
+      ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } неабходныя дазволы, каб іншыя маглі баць і чуць вас падчас званка. Вы можаце выключыць свае камеру або мікрафон у любы час."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } неабходны дазвол на выкарыстанне камеры, каб іншыя маглі ўбачыць вас падчас званка. Выключыць яго можна ў любы час."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } неабходны дазвол на выкарыстанне мікрафона, каб іншыя маглі пачуць вас падчас званка. Выключыць яго можна ў любы час."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "Для працы ${ MEET_APP_NAME } патрэбны WebRTC. Абнавіце свой браўзер або прыладу да версіі, якую падтрымлівае WebRTC, паспрабуйце іншы браўзер, або адключыце любыя пашырэнні, якія могуць блакіраваць яго."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } і яшчэ ${ otherParticipantsCount } удзельнік запісваюць"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } запісвае"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (вы) прадстаўляеце"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } прадстаўляе"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } і іншыя адрэагавалі на ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } адрэагаваў з ${ emoji }"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } з ${ maxParticipants } максімальных удзельнікаў"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } удзельнік",
+        "${ totalParticipantCount } удзельнікі",
+        "${ totalParticipantCount } удзельнікаў",
+        "${ totalParticipantCount } удзельнікаў"
+      ],
+      "(You)": [
+        "(Вы)"
+      ],
+      "-Removed dangerous URL-": [
+        "- Выдалена небяспечная URL-спасылка-"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Ананімны ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "Вы ўпэўнены, што хочаце выйсці?"
+      ],
+      "Are you sure you want to stop recording?": [
+        "Вы сапраўды хочаце спыніць запіс?"
+      ],
+      "Attention required": [
+        "Патрабуецца ўвага"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Вы пацвярджаеце і згаджаецеся на запіс сустрэчы, калі працягніце ўдзел у ёй."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Далучыўшыся, вы пагаджаецеся з нашымі ${ termsLink } і ${ privacyLink }."
+      ],
+      "camera": [
+        "камера"
+      ],
+      "Camera permission denied": [
+        "Доступ да камеры забаронены"
+      ],
+      "Chat with everyone": [
+        "Чат з усімі"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Праверце сістэмныя налады, каб пераканацца ў даступнасці камеры."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Праверце сістэмныя налады, каб пераканацца ў даступнасці мікрафона."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+      ],
+      "Coming soon": [
+        "Неўзабаве з'явіцца"
+      ],
+      "Connection failed": [
+        "Збой падключэння"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "Падключэнне перарвана. Перападключэнне..."
+      ],
+      "Connection issue detected. Attempting to recover…": [
+        "Выяўлены праблемы з падключэннем. Адбываецца спроба аднавіць падключэнне..."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Падключэнне страчана. Адбываецца перападключэнне..."
+      ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
+      "Could not access the camera.": [
+        "Не ўдалося атрымаць доступ да камеры."
+      ],
+      "Could not start recording.": [
+        "Не ўдалося пачаць запіс."
+      ],
+      "Country code": [
+        "Код краіны"
+      ],
+      "Create an account": [
+        "Стварыце ўліковы запіс"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Стварыце ўліковы запіс, каб праводзіць сустрэчы з удзелам да 50 удзельнікаў."
+      ],
+      "Created on ${ formattedDate }": [
+        "Створана ${ formattedDate }"
+      ],
+      "Custom combination": [
+        "Карыстальніцкая камбінацыя"
+      ],
+      "Decrypting meetings...": [
+        "Расшыфроўка сустрэчы..."
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Прадвызначаны - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Прадвызначана - Прадвызначана сістэмай"
+      ],
+      "Delete event": [
+        "Выдаліць падзею"
+      ],
+      "Delete room": [
+        "Выдаліць пакой"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Вы хочаце, каб людзі ${ deviceContentType } вас на сустрэчы?"
+      ],
+      "Download current logs": [
+        "Спампоўванне бягучых журналаў"
+      ],
+      "Each code can only be used once": [
+        "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Edit email address": [
+        "Рэдагаваць адрас электроннай пошты"
+      ],
+      "End Meeting for everyone?": [
+        "Завяршыць сустрэчу для ўсіх?"
+      ],
+      "End the meeting for everyone?": [
+        "Завяршыць сустрэчу для ўсіх?"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "Скразное шыфраванне актыўна для аўдыя і відэа."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "Скразное шыфраванне актыўнае для дэманстрацыі экрана"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "Скразное шыфраванне актыўна для гэтага чата."
+      ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
+      "Enter the code from your authenticator app": [
+        "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Увядзіце код спраўджання. Лічба ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Усе ўдзельнікі былі адключаны ад званка."
+      ],
+      "Failed to update meeting name": [
+        "Не ўдалося абнавіць назву сустрэчы"
+      ],
+      "Failed to update meeting password": [
+        "Не ўдалося абнавіць пароль сустрэчы"
+      ],
+      "Failed to update meeting schedule": [
+        "Не ўдалося абнавіць расклад сустрэчы"
+      ],
+      "Free meeting": [
+        "Бясплатная сустрэча"
+      ],
+      "Free meetings are limited to 1 hour. This call will disconnect soon.": [
+        "Бясплатныя сустрэчы абмежаваныя 1 гадзінай. Гэты званок неўзабаве будзе адключаны."
+      ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Атрымайце асабісты пакой для сустрэч. Стварыце ўліковы запіс, каб у ваб была асабістая спасылка для сустрэч. Яе можна выкарыстоўваць у любы час."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Атрымайце бяспечную спасылку на сустрэчу, а потым дадайце яе ў свой каляндар"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Атрымайце найлепшы досвед з праграмай для камп'ютара ${ protonMeet }"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Перайдзіце ў about:config, знайдзіце media.peerconnection.enabled і задайце яго значэнне true."
+      ],
+      "Host": [
+        "Арганізатар"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Арганізуйце сваю ўласную сустрэчу з акцэнтам на бяспеку. Пачніце выклік у ${ MEET_APP_NAME } і абагуліце спасылку, каб запрасіць каго заўгодна далучыцца да сустрэчы. Проста, бяспечна і бясплатна."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Пераканайцеся, што PeerConnection уключаны пры выкарыстанні браўзера Firefox."
+      ],
+      "Internet connection lost": [
+        "Падключэнне да інтэрнэту страчана"
+      ],
+      "Joined ${ roomNameLabel }": [
+        "Далучаны да ${ roomNameLabel }"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Leave meeting and stop sharing?": [
+        "Выйсці з сустрэчы і спыніць абагульванне экрана?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Выхад з сустрэчы прывядзе да спынення абагульвання вашага экрана."
+      ],
+      "Left ${ roomNameLabel }": [
+        "Пакінуў ${ roomNameLabel }"
+      ],
+      "Left by mistake?": [
+        "Памылкова выйшлі?"
+      ],
+      "Link copied to clipboard": [
+        "Спасылка скапіявана ў буфер абмену"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "Loading ${ appName }": [
+        "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
+      ],
+      "Loading meetings...": [
+        "Загрузка сустрэч..."
+      ],
+      "Loading recordings…": [
+        "Загрузка запісаў..."
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "Loading…": [
+        "Загрузка..."
+      ],
+      "Lower participant's hand": [
+        "Апусціць руку ўдзельніка"
+      ],
+      "Meet without restrictions": [
+        "Сустракайцеся без абмежаванняў"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Праводзьце сустрэчы без абмежаванняў. Палепшыце свой тарыфны план, каб зняць абмежаванне на сустрэчу, якая цяпер складае 1 гадзіну і запрашайце на сустрэчу да 100 удзельнікаў."
+      ],
+      "Meeting ended": [
+        "Сустрэча завершана"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Сустрэча запоўнена (удзельнікаў: ${ maxParticipants })"
+      ],
+      "Meeting is decrypting...": [
+        "Сустрэча расшыфроўваецца..."
+      ],
+      "Meeting link": [
+        "Спасылка на сустрэчу"
+      ],
+      "Meeting locked. No new participants can join.": [
+        "Сустрэча заблакіравана. Новыя ўдзельнікі не могуць далучыцца."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Запісы сустрэч не падтрымліваюцца ў Firefox."
+      ],
+      "Meeting time is up": [
+        "Час сустрэчы завяршыўся"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Сустрэча разблакіравана. Удзельнікі могуць далучыцца паўторна."
+      ],
+      "Meeting will end in ${ timeLeft }": [
+        "Сустрэча завершыцца праз ${ timeLeft }"
+      ],
+      "Member": [
+        "Удзельнік"
+      ],
+      "Message from ${ participantName }": [
+        "Паведамленне ад ${ participantName }"
+      ],
+      "microphone": [
+        "мікрафон"
+      ],
+      "Microphone effects": [
+        "Эфекты мікрафона"
+      ],
+      "Microphone permission denied": [
+        "Доступ да мікрафона забаронены"
+      ],
+      "Mute microphone": [
+        "Адключыць мікрафон"
+      ],
+      "My meetings": [
+        "Мае сустрэчы"
+      ],
+      "My rooms": [
+        "Мае пакоі"
+      ],
+      "New": [
+        "Новы"
+      ],
+      "New host": [
+        "Новы арганізатар"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Не выяўлены ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+      ],
+      "No camera detected": [
+        "Камера не выяўлена"
+      ],
+      "No camera detected.": [
+        "Камера не выяўлена."
+      ],
+      "No microphone detected": [
+        "Мікрафон не выяўлены"
+      ],
+      "No microphone detected.": [
+        "Мікрафон не выяўлены."
+      ],
+      "No publications": [
+        "Няма публікацый"
+      ],
+      "No recordings found on this device.": [
+        "Запісы на гэтай прыладзе не знойдзены."
+      ],
+      "No remote participants": [
+        "Няма аддаленых удзельнікаў"
+      ],
+      "No results found": [
+        "Нічога не знойдзена"
+      ],
+      "No search results": [
+        "Нічога не знойдзена"
+      ],
+      "No speaker detected": [
+        "Дынамік не выяўлены"
+      ],
+      "Only meetings you created appear here": [
+        "У гэтым месцы будуць толькі сустрэчы, створаныя вамі"
+      ],
+      "Open external link": [
+        "Адкрыць знешнюю спасылку"
+      ],
+      "Other accounts": [
+        "Іншыя ўліковыя запісы"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Нашы сустрэчы, якія зашыфраваны скразным метадам, абараняюць прыватнасць і забяспечваюць сапраўды свабоднае самавыяўленне."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Старонка ${ displayPage } з ${ totalPages }"
+      ],
+      "Participant": [
+        "Удзельнік"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Устаўце сваю спасылку ${ MEET_APP_NAME }, каб далучыцца да бяспечнай сустрэчы"
+      ],
+      "Permissions not given.": [
+        "Дазволы не дадзены."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Уключыце доступ да вашага ${ microphoneLinkButton }${ andString }${ cameraLinkButton } для паляпшэння працы."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Увядзіце парольную фразу для расшыфроўкі і прагляду гэтай сустрэчы"
+      ],
+      "Please try again or try another browser": [
+        "Паспрабуйце яшчэ раз або скарыстайцеся іншым браўзерам"
+      ],
+      "Poor connection": [
+        "Нестабільнае падключэнне"
+      ],
+      "Premium meeting": [
+        "Прэміяльная сустрэча"
+      ],
+      "Presenting": [
+        "Прадстаўляем"
+      ],
+      "privacy": [
+        "прыватнасць"
+      ],
+      "Quick reactions": [
+        "Хуткія рэакцыі"
+      ],
+      "Reactions": [
+        "Рэакцыі"
+      ],
+      "Reconnected successfully": [
+        "Паспяхова перападключана"
+      ],
+      "Reconnecting to meeting...": [
+        "Перападключэнне да сустрэчы..."
+      ],
+      "Record your meetings": [
+        "Запісвайце свае сустрэчы"
+      ],
+      "Recording": [
+        "Запіс"
+      ],
+      "Recording deleted": [
+        "Запіс выдалены"
+      ],
+      "Recording in progress": [
+        "Адбываецца запіс"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "Пачынаецца запіс. Удзельнікі будуць апавешчаны."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Запісы захоўваюцца лакальна ў вашым браўзеры. Спампуйце тыя, якія хочаце захаваць. Запісы без захавання будуць выдалены праз 30 дзён."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+      ],
+      "Refresh audio and video tracks": [
+        "Абнавіць аўдыя і відэа трэкі"
+      ],
+      "Refresh screen share track": [
+        "Абнавіць прагляд абагуленага экрана"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Заплануйце сваю наступную сустрэчу. Стварыце ўліковы запіс, каб планаваць сустрэчы з дапамогай свайго календара."
+      ],
+      "Select a camera": [
+        "Выбар камеры"
+      ],
+      "Select a microphone": [
+        "Выбраць мікрафон"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Перад выхадам выберыце ўдзельніка, якога вы хочаце прызначыць новым арганізатарам: "
+      ],
+      "Select a speaker": [
+        "Выберыце дынамік"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
+      ],
+      "Session timed out": [
+        "Сеанс завяршыўся"
+      ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Наладзьце пастаянны пакой для сустрэч. Карысна для вашай каманды або кліентаў"
+      ],
+      "Share screen": [
+        "Абагуліць экран"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Абагуліце гэту спасылку, каб запрасіць іншых. Вы таксама можаце знайсці яе ў любы час, націснуўшы на значок інфармацыі на панэлі інструментаў."
+      ],
+      "Sign in": [
+        "ўвайдзіце"
+      ],
+      "Sort by": [
+        "Сартаваць па"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Выбар дакладчыка недаступны ў гэтым браўзеры. Скарыстайцеся сістэмнымі наладамі, каб выбраць іншага дакладчыка."
+      ],
+      "Start recording": [
+        "Пачаць запіс"
+      ],
+      "Starting camera…": [
+        "Запуск камеры…"
+      ],
+      "Stop sharing your screen": [
+        "Спыніць абагульванне экрана"
+      ],
+      "Successfully deleted meeting": [
+        "Сустрэча паспяхова выдалена"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Дзякуем за правядзенне прэміяльнай сустрэчы."
+      ],
+      "Thank you for joining.": [
+        "Дзякуй, што далучыліся."
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "Арганізатар выдаліў вас з гэтай сустрэчы. Папрасіце арганізатара запрасіць вас паўторна, калі лічыце гэта памылкай."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Спасылка на сустрэчу, якую вы спрабуеце адкрыць не існуе або тэрмін яе дзеяння скончыўся. Пераканайцеся, што спасылка з'яўляецца правільнай або пачніце новую бяспечную сустрэчу."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Гэты чат зашыфраваны скразным метадам з часовымі паведамленнямі, якія знікаюць у канцы званка."
+      ],
+      "This meeting is being recorded": [
+        "Гэта сустрэча запісваецца"
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Гэта сустрэча заблакіравана. Звяжыцеся з арганізатарам, каб далучыцца."
+      ],
+      "This meeting is password protected": [
+        "Гэта сустрэча абаронена паролем"
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "У гэтай сустрэчы скончыўся бясплатны час, які прадугледжаны бясплатным тарыфным планам. Абнавіце свой тарыфны план, каб пашырыць працягласць сустрэчы ў будучых званках."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Гэта сустрэча была адкрыта ў праграме для камп'ютара ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Гэты запіс будзе незваротна выдалены з вашай прылады. Гэта дзеянне нельга будзе адрабіць."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Гэта дзеянне прывядзе да завяршэння сустрэчы для ўсіх удзельнікаў і спыніць ваша абагульванне экрана."
+      ],
+      "This will end the meeting for all participants.": [
+        "Гэта завершыць сустрэчу для ўсіх удзельнікаў."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
+      ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Вам спатрэбіцца **бясплатны ўліковы запіс ${ BRAND_NAME }**, каб стварыць і захаваць пакой. Гэта не зойме шмат часу."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Вам спатрэбіцца **бясплатны ўліковы запіс ${ BRAND_NAME }**, каб запланаваць падзею і захаваць падзею. Гэта не зойме шмат часу."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Вам спатрэбіцца **бясплатны ўліковы запіс ${ BRAND_NAME }**, каб выкарыстоўваць асабісты пакой для сустрэч. Гэта зойме ўсяго некалькі секунд."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Сёння ў ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Заўтра ў ${ absoluteDate }"
+      ],
+      "Turn off camera": [
+        "Выключыць камеру"
+      ],
+      "Turn on camera": [
+        "Уключыць камеру"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Немагчыма перападключыцца да сустрэчы. Далучыцеся да сустрэчы паўторна або выйдзіце з яе."
+      ],
+      "unlimited meeting": [
+        "неабмежаваную колькасць сустрэч"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "Разблакуйце ${ unlimitedMeeting } і прэміяльныя функцыі"
+      ],
+      "Unmute microphone": [
+        "Уключыць мікрафон"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Палепшыць, каб запісваць сустрэчы лакальна."
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Палепшыце, каб выдаліць абмежаванне ў 1 гадзіну і прапускайце адваротны адлік. Атрымлівайце асалоду ад сустрэч, якія доўжацца да 24 гадзін."
+      ],
+      "Video effects": [
+        "Відэаэфекты"
+      ],
+      "Warning": [
+        "Папярэджанне"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Вам адпраўлены новы код спраўджання на ${ strong }"
+      ],
+      "Week": [
+        "Тыдзень"
+      ],
+      "Would you like to delete this event?": [
+        "Ці хочаце вы выдаліць гэту падзею?"
+      ],
+      "Would you like to delete this room?": [
+        "Ці хочаце вы выдаліць гэты пакой?"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Ці хочаце вы атрымаць новы код спраўджання або скарыстацца альтэрнатыўным спосабам праверкі?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Ці хочаце вы атрымаць новы код спраўджання?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Учора ў ${ absoluteDate }"
+      ],
+      "You are almost there": [
+        "Амаль усё гатова"
+      ],
+      "You can close this tab.": [
+        "Вы можаце закрыць гэтую ўкладку."
+      ],
+      "You can now return to the application to continue": [
+        "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Вы ўсё яшчэ можаце адключыць мікрафон і камеру ў любы час падчас сустрэчы"
+      ],
+      "You left the meeting": [
+        "Вы выйшлі з сустрэчы"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Для гэтай функцыі вам спатрэбіцца платны тарыфны план ${ MEET_SHORT_APP_NAME } або Workspace. Звярніцеся да адміністратара вашай арганізацыі, каб палепшыць яго."
+      ],
+      "You were removed from the meeting": [
+        "Вас выдалілі з сустрэчы"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Вы выйдзеце з сустрэчы. Астатнія ўдзельнікі працягнуць яе."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Вас запрасілі далучыцца да бяспечнай сустрэчы. Пацвердзіце сваё імя і націсніце ніжэй, каб увайсці."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
+      ],
+      "Your always available meeting room": [
+        "Ваша пакой для сустрэч, даступны заўсёды"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Ваш браўзер блакіруе доступ да камеры і мікрафона. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць іх."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Ваш браўзер блакіруе доступ да камеры. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць яе."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Ваш браўзер блакіруе доступ да мікрафона. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць яго."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Ваш браўзер блакіруе доступ да абагуленага экрана. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць яго."
+      ],
+      "Your browser or device isn’t supported": [
+        "Ваш браўзер або прылада не падтрымліваецца"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
+      ],
+      "Your meeting is ready": [
+        "Ваша сустрэча гатова"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Вы збіраецеся адкрыць спасылку ў новай укладцы. Пераканайцеся, што вы давяраеце вэб-сайту перад працягам."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "Імя карыстальніка ${ BRAND_NAME }"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } зорка",
+        "${ numberOfStars } зоркі",
+        "${ numberOfStars } зорак",
+        "${ numberOfStars } зорак"
+      ],
+      "Add optional details": [
+        "Дадаць неабавязковыя падрабязнасці"
+      ],
+      "Add to calendar": [
+        "Дадаць у каляндар"
+      ],
+      "Advanced mode": [
+        "Пашыраны рэжым"
+      ],
+      "Attach screenshot(s)": [
+        "Далучыць здымак(-і) экрана"
+      ],
+      "Audio": [
+        "Аўдыя"
+      ],
+      "Authenticator app": [
+        "Праграма аўтэнтыфікацыі"
+      ],
+      "Browser": [
+        "Браўзер"
+      ],
+      "Browser version": [
+        "Версія браўзера"
+      ],
+      "Camera Active": [
+        "Камера актыўная"
+      ],
+      "Category": [
+        "Катэгорыя"
+      ],
+      "Code is 6 digits without spaces": [
+        "Код складаецца з 6 лічбаў без прабелаў"
+      ],
+      "Connection Quality": [
+        "Якасць злучэння"
+      ],
+      "Copy all activity events": [
+        "Скапіяваць усе падзеі актыўнасці"
+      ],
+      "Copy invite link": [
+        "Скапіяваць запрашальную спасылку"
+      ],
+      "Create meeting options": [
+        "Стварыць параметры сустрэчы"
+      ],
+      "Created": [
+        "Створана"
+      ],
+      "Current": [
+        "Бягучыя"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete recovery-related information.": [
+        "Выдаліць інфармацыю звязаную з аднаўленнем."
+      ],
+      "Does not repeat": [
+        "Не паўтараць"
+      ],
+      "Download .ics": [
+        "Спампаваць .ics"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
+      "Emoji picker": [
+        "Выбар эмодзі"
+      ],
+      "Emoji reactions": [
+        "Рэакцыі эмодзі"
+      ],
+      "Enabled": [
+        "Уключана"
+      ],
+      "Ended": [
+        "Завершана"
+      ],
+      "Every day": [
+        "Кожны дзень"
+      ],
+      "Every month": [
+        "Кожны месяц"
+      ],
+      "Every week": [
+        "Кожны тыдзень"
+      ],
+      "Every weekday": [
+        "Кожны працоўны дзень"
+      ],
+      "Every year": [
+        "Кожны год"
+      ],
+      "Google Calendar": [
+        "Каляндар Google"
+      ],
+      "Hide password": [
+        "Схаваць пароль"
+      ],
+      "How was the call quality?": [
+        "Якая была якасць сувязі?"
+      ],
+      "Identity": [
+        "Ідэнтычнасць"
+      ],
+      "Include application logs in bug report": [
+        "Уключыць журналы праграмы ў справаздачу аб памылцы"
+      ],
+      "Last used": [
+        "Апошняе выкарыстанне"
+      ],
+      "Leave meeting options": [
+        "Выйсці з параметраў сустрэчы"
+      ],
+      "Manage recordings": [
+        "Кіраванне запісамі"
+      ],
+      "Meeting ID": [
+        "Ідэнт. сустрэчы"
+      ],
+      "Meeting link": [
+        "Спасылка на сустрэчу"
+      ],
+      "Message": [
+        "Паведамленне"
+      ],
+      "Microphone Active": [
+        "Мікрафон актыўны"
+      ],
+      "Monday to Friday": [
+        "З панядзелка па пятніцу"
+      ],
+      "Muted": [
+        "Заглушаны"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Next": [
+        "Далей"
+      ],
+      "Operating system": [
+        "Аперацыйная сістэма"
+      ],
+      "Operating system version": [
+        "Версія аперацыйнай сістэмы"
+      ],
+      "Outlook Calendar": [
+        "Каляндар Outlook"
+      ],
+      "Participant controls": [
+        "Элементы кіравання ўдзельнікамі"
+      ],
+      "Passphrase": [
+        "Парольная фраза"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Phone number": [
+        "Нумар тэлефона"
+      ],
+      "Raw": [
+        "Raw"
+      ],
+      "Remember my name on this device": [
+        "Запомніць маё імя на гэтай прыладзе"
+      ],
+      "Repeat event": [
+        "Паўтараць падзею"
+      ],
+      "Return to dashboard": [
+        "Вярнуцца ў панэль кіравання"
+      ],
+      "Reveal password": [
+        "Паказаць пароль"
+      ],
+      "Schedule meeting": [
+        "Запланаваць сустрэчу"
+      ],
+      "Screen share": [
+        "Абагульванне экрана"
+      ],
+      "Selected Camera": [
+        "Выбраная камера"
+      ],
+      "Selected Microphone": [
+        "Выбраны мікрафон"
+      ],
+      "Selected Speaker": [
+        "Выбраны дынамік"
+      ],
+      "Subscribed": [
+        "Ёсць падпіска"
+      ],
+      "System information": [
+        "Сістэмная інфармацыя"
+      ],
+      "Track SID": [
+        "Адсочваць SID"
+      ],
+      "Use simple selfie segmentation": [
+        "Выкарыстанне простай сегментацыі сэлфі"
+      ],
+      "Verification code": [
+        "Код спраўджання"
+      ],
+      "Video": [
+        "Відэа"
+      ],
+      "What happened?": [
+        "Што здарылася?"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "ачыстка кэшу вашага браўзера"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "privacy policy": [
+        "палітыкай прыватнасці"
+      ],
+      "Request an invite": [
+        "Запытаць запрашэнне"
+      ],
+      "Sign in": [
+        "Увайсці"
+      ],
+      "terms and conditions": [
+        "умовамі выкарыстання"
+      ],
+      "What’s this?": [
+        "Што гэта?"
+      ]
+    },
+    "meet": {
+      "Create and copy link": [
+        "Стварыць і скапіяваць спасылку"
+      ],
+      "Create new room": [
+        "Стварыць новы пакой"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Пакой для сустрэч можна выкарыстоўваць у любы час"
+      ],
+      "Save and copy link": [
+        "Захаваць і скапіяваць спасылку"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Ваш браўзер або праграмная прылада не падтрымлівае ${ MEET_APP_NAME }. ${ MEET_APP_NAME } патрабуе WebAssembly (Wasm) для сваёй працы. Абнавіце свой браўзер або прыладу да версіі, якую падтрымлівае Wasm або паспрабуйце іншы браўзер."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Паколькі вы адзіны ўдзельнік гэтай сустрэчы, сустрэча аўтаматычна закрыецца. Вы сапраўды хочаце застацца ў гэтай сустрэчы?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Пакінуць сустрэчу"
+      ],
+      "Stay in the meeting": [
+        "Застацца ў сустрэчы"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Не ўдалося запусціць \"Малюнак у малюнку\""
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "Неўзабаве з'явіцца"
+      ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
+      "Could not send feedback": [
+        "Немагчыма адправіць водгук"
+      ],
+      "Link copied to clipboard": [
+        "Спасылка скапіявана ў буфер абмену"
+      ],
+      "Room name updated": [
+        "Назва пакоя абноўлена"
+      ],
+      "Successfully rotated your personal meeting": [
+        "Паспяхова зроблена ратацыя вашай асабістай сустрэчы"
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "У вас няма магчымасці пакінуць водгук аб сустрэчы, на якой вы не былі"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "Аўдыя перарывалася"
+      ],
+      "I couldn't hear others": [
+        "Я не змог пачуць іншых"
+      ],
+      "I couldn't present ": [
+        "Я не змог выступіць "
+      ],
+      "I couldn't see others' video": [
+        "Я не бачыў відэа ад іншых удзельнікаў"
+      ],
+      "I couldn't see the presentation": [
+        "Я не змог убачыць прэзентацыю"
+      ],
+      "Others couldn't hear me": [
+        "Іншыя ўдзельнікі не чуюць мяне"
+      ],
+      "Others couldn't see my video": [
+        "Іншыя не бачаць маё відэа"
+      ],
+      "The presentation was blurry": [
+        "Прэзентацыя была размытай"
+      ],
+      "Video quality was poor": [
+        "Нізкая якасць відэа"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Спосаб сувязі з вамі"
+      ],
+      "E.g., ": [
+        "Напрыклад, "
+      ],
+      "Enter passphrase": [
+        "Увядзіце парольную фразу"
+      ],
+      "Enter time": [
+        "Увядзіце час"
+      ],
+      "Enter your name": [
+        "Увядзіце сваё імя."
+      ],
+      "Find...": [
+        "Пошук..."
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Назва сустрэчы, напрыклад, сінхранізацыя каманды, абнаўленне праекта і г.д."
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Назва сустрэчы, напрыклад, сінхранізацыя каманды, абнаўленне праекта і г.д."
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Запланаваць у ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Пошук"
+      ],
+      "Select": [
+        "Выбраць"
+      ],
+      "Share more details": [
+        "Абагуліце больш падрабязнасцяў"
+      ],
+      "Type an encrypted message...": [
+        "Увядзіце зашыфраванае паведамленне..."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Агляд бяспекі ўліковага запісу"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Рэгістрацыя завяршылася з памылкай."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Нічога не знойдзена"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Выхад"
+      ],
+      "Stay signed in": [
+        "Заставацца ў сістэме"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } гадзіна",
+        "${ gracePeriodHoursRemaining } гадзіны",
+        "${ gracePeriodHoursRemaining } гадзін",
+        "${ gracePeriodHoursRemaining } гадзін"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } цяпер даступна."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзеце з сістэмы да скідання пароля."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Скінуць пароль"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Выйсці без скідання пароля?"
+      ]
+    },
+    "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Па алфавіце (А–Я)"
+      ],
+      "Newly created": [
+        "Нядаўна створаныя"
+      ],
+      "Past meetings": [
+        "Мінулыя сустрэчы"
+      ],
+      "Upcoming": [
+        "Надыходзячыя"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перайсці ў тарыфныя планы"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Уваход"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
+      ]
+    },
+    "Status": {
+      "No": [
+        "Не"
+      ],
+      "Yes": [
+        "Так"
+      ]
+    },
+    "Success": {
+      "Assigned new host": [
+        "Прызначаны новы арганізатар"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Код адпраўлены на ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Адрас электроннай пошты скапіяваны ў буфер абмену"
+      ],
+      "Problem reported": [
+        "Паведамлена аб праблеме"
+      ],
+      "Verification successful": [
+        "Праверка паспяхова выканана"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Size": [
+        "Памер"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Уліковы запіс абмежаваны"
+      ],
+      "Account temporarily locked": [
+        "Уліковы запіс часова заблакіраваны"
+      ],
+      "Activity events": [
+        "Падзеі актыўнасці"
+      ],
+      "All participants": [
+        "Усе ўдзельнікі"
+      ],
+      "Allow camera ": [
+        "Дазволіць камеру "
+      ],
+      "Allow camera and microphone": [
+        "Дазволіць камеру і мікрафон"
+      ],
+      "Allow microphone": [
+        "Дазволіць мікрафон"
+      ],
+      "Are you sure?": [
+        "Вы ўпэўнены?"
+      ],
+      "Assign a new host": [
+        "Прызначыць новага арганізатара"
+      ],
+      "Audio": [
+        "Аўдыя"
+      ],
+      "Available Cameras": [
+        "Даступныя камеры"
+      ],
+      "Available Microphones": [
+        "Даступныя мікрафоны"
+      ],
+      "Available Speakers": [
+        "Даступныя дынамікі"
+      ],
+      "Background blur comparison": [
+        "Параўнанне размытасці фону"
+      ],
+      "Camera and microphone are blocked": [
+        "Камера і мікрафон заблакіраваны"
+      ],
+      "Camera is blocked": [
+        "Камера заблакіравана"
+      ],
+      "Chat": [
+        "Чат"
+      ],
+      "Constants": [
+        "Канстанты"
+      ],
+      "Couldn't prepare the recording": [
+        "Не ўдалося падрыхтаваць запіс"
+      ],
+      "Create new room": [
+        "Стварыць новы пакой"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Debug Overlay": [
+        "Адладка накладання"
+      ],
+      "Delete recording?": [
+        "Выдаліць запіс?"
+      ],
+      "Enter your password": [
+        "Увядзіце свой пароль"
+      ],
+      "Epoch": [
+        "Epoch"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Эпоха ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Памылка ў эпосе ${ log.epoch }"
+      ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
+      ],
+      "Help center": [
+        "Даведачны цэнтр"
+      ],
+      "Human verification": [
+        "Антыспамавая праверка"
+      ],
+      "Info": [
+        "Звесткі"
+      ],
+      "Invalid meeting link": [
+        "Памылковая спасылка на сустрэчу"
+      ],
+      "Invalid verification code": [
+        "Памылковы код спраўджання"
+      ],
+      "Invite link": [
+        "Запрашальная спасылка"
+      ],
+      "Join a meeting": [
+        "Далучыцца да сустрэчы"
+      ],
+      "Join meeting": [
+        "Далучыцца да сустрэчы"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Далучана ў эпоху ${ log.epoch }"
+      ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Далучэнне да сустрэчы з ${ participantCount } іншым удзельнікам...",
+        "Далучэнне да сустрэчы з ${ participantCount } іншымі ўдзельнікамі...",
+        "Далучэнне да сустрэчы з ${ participantCount } іншымі ўдзельнікамі...",
+        "Далучэнне да сустрэчы з ${ participantCount } іншымі ўдзельнікамі..."
+      ],
+      "Launching Meeting...": [
+        "Запуск сустрэчы..."
+      ],
+      "Local Participant": [
+        "Лакальны ўдзельнік"
+      ],
+      "Meeting": [
+        "Сустрэча"
+      ],
+      "Meeting created": [
+        "Сустрэча створана"
+      ],
+      "Meeting details": [
+        "Падрабязнасці сустрэчы"
+      ],
+      "Meeting edited": [
+        "Сустрэча адрэдагавана"
+      ],
+      "Meeting settings": [
+        "Налады сустрэчы"
+      ],
+      "Messaging Layer Security": [
+        "Messaging Layer Security (MLS)"
+      ],
+      "Microphone is blocked": [
+        "Мікрафон заблакіраваны"
+      ],
+      "Minicalendar": [
+        "Мінікаляндар"
+      ],
+      "No one is waiting": [
+        "Ніхто не чакае"
+      ],
+      "No results found": [
+        "Нічога не знойдзена"
+      ],
+      "Participants": [
+        "Удзельнікі"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Удзельнікі (${ filteredParticipants.length })"
+      ],
+      "Passphrase": [
+        "Парольная фраза"
+      ],
+      "Personal meeting room": [
+        "Асабісты пакой для сустрэч"
+      ],
+      "Preparing your recording…": [
+        "Падрыхтоўка вашага запісу.."
+      ],
+      "Publications": [
+        "Публікацыі"
+      ],
+      "Reconnection Testing": [
+        "Тэсціраванне перападключэння"
+      ],
+      "Record this meeting": [
+        "Запісаць гэту сустрэчу"
+      ],
+      "Recordings": [
+        "Запісы"
+      ],
+      "Remote Participants": [
+        "Аддаленыя ўдзельнікі"
+      ],
+      "Report a problem": [
+        "Паведаміць аб праблеме"
+      ],
+      "Request new code": [
+        "Запытаць новы код"
+      ],
+      "Schedule a meeting": [
+        "Запланаваць сустрэчу"
+      ],
+      "Screen share is blocked": [
+        "Абагульванне экрана заблакіравана"
+      ],
+      "Secure meeting": [
+        "Бяспечная сустрэча"
+      ],
+      "Security": [
+        "Бяспека"
+      ],
+      "Security code": [
+        "Код бяспекі"
+      ],
+      "Settings": [
+        "Налады"
+      ],
+      "Sign out": [
+        "Выйсці"
+      ],
+      "Starting meeting as the first participant…": [
+        "Пачатак сустрэчы ў якасці першага ўдзельніка…"
+      ],
+      "Stop recording": [
+        "Спыніць запіс"
+      ],
+      "Talk confidentially": [
+        "Размаўляйце канфідэнцыяльна"
+      ],
+      "Thank you!": [
+        "Дзякуй!"
+      ],
+      "Time": [
+        "Час"
+      ],
+      "Title": [
+        "Загаловак"
+      ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Video": [
+        "Відэа"
+      ],
+      "Waiting room": [
+        "Пакой чакання"
+      ],
+      "What went wrong?": [
+        "Што пайшло не так?"
+      ],
+      "Your feedback has been submitted": [
+        "Ваш водгук быў адпраўлены"
+      ],
+      "Your recording is ready": [
+        "Ваш запіс гатовы"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сёння"
+      ]
+    },
+    "Tooltip": {
+      "Background blur is not supported on your browser": [
+        "Размыццё фону не падтрымліваецца вашым браўзерам"
+      ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Стварыце новую спасылку для сустрэчы. Існуючая спасылка перастане дзейнічаць."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+      ],
+      "Recurring meeting": [
+        "Перыядычная сустрэча"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Вы можаце генерыраваць новую спасылку для сустрэчы адзін раз у дзень."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Праблема з Wallet"
+      ]
+    },
+    "Warning": {
+      "Connection is taking longer than expected": [
+        "Падключэнне займае больш часу, чым чакалася"
+      ],
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Не ўдалося атрымаць доступ да камеры або мікрафона. Вы можаце паспрабаваць зноў іх уключыць з элементаў кіравання сустрэчай."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Не ўдалося атрымаць доступ да камеры. Вы можаце паспрабаваць зноў яе ўключыць з элементаў кіравання сустрэчай."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Не ўдалося атрымаць доступ да мікрафона. Вы можаце паспрабаваць зноў яго ўключыць з элементаў кіравання сустрэчай."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
+      ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Збой падключэння UDP STUN. Адбываецца спроба зрабіць гэта праз прамежкавы TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Выйшаў час чакання для падключэння STUN UDP. Адбываецца спроба зрабіць гэта праз прамежкавы TURN"
+      ],
+      "Trying another route…": [
+        "Адбываецца спроба скарыстацца іншым маршрутам…"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
+      ]
+    }
+  }
+}

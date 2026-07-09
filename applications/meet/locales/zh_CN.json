@@ -1,1972 +1,1969 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "es_LA"
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "zh_CN"
   },
   "contexts": {
     "Accessibility": {
       "(opens in new tab)": [
-        "(se abre en una pestaña nueva)"
+        "(在新标签页中打开)"
       ],
       "camera off": [
-        "cámara desactivada"
+        "摄像头已关闭"
       ],
       "camera on": [
-        "cámara activada"
+        "摄像头已开启"
       ],
       "Meeting controls": [
-        "Controles de reunión"
+        "会议控制"
       ],
       "microphone muted": [
-        "micrófono silenciado"
+        "麦克风已静音"
       ],
       "microphone on": [
-        "micrófono activado"
+        "麦克风已开启"
       ]
     },
     "Accessibility announcement": {
       "${ name } joined the meeting": [
-        "${ name } se ha unido a la reunión"
+        "${ name } 加入了会议"
       ],
       "${ name } left the meeting": [
-        "${ name } ha abandonado la reunión"
+        "${ name } 离开了会议"
       ],
       "${ name } lowered their hand": [
-        "${ name } bajó la mano"
+        "${ name } 放下了手"
       ],
       "${ name } raised their hand": [
-        "${ name } levantó la mano"
+        "${ name } 举起了手"
       ],
       "${ name } reacted with ${ emoji }": [
-        "${ name } reaccionó con ${ emoji }"
+        "${ name } 回应了 ${ emoji }"
       ],
       "${ name } says: ${ message }": [
-        "${ name } dijo: ${ message }"
+        "${ name } 说：${ message }"
       ],
       "A participant joined the meeting": [
-        "Un participante se unió a la reunión"
+        "一名参与者加入了会议"
       ],
       "A participant left the meeting": [
-        "Un participante abandonó la reunión"
+        "一名参与者离开了会议"
       ],
       "A participant lowered their hand": [
-        "Un participante bajó la mano"
+        "一名参与者放下了手"
       ],
       "A participant raised their hand": [
-        "Un participante levantó la mano"
+        "一名参与者举起了手"
       ],
       "A participant reacted with ${ emoji }": [
-        "Un participante reaccionó con ${ emoji }"
+        "一名参与者回应了 ${ emoji }"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "Conexión mediante modo de retransmisión TURN debido a restricciones en la red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
+        "由于网络限制，已通过 TURN 中继模式连接。这可能会增加延迟并影响通话质量。"
       ],
       "Connection lost. Reconnecting…": [
-        "Conexión perdida. Reconectando…"
+        "连接断开，正在重连…"
       ],
       "New chat message: ${ message }": [
-        "Nuevo mensaje de chat: ${ message }"
+        "新聊天消息：${ message }"
       ],
       "Now starting recording": [
-        "Comenzó la grabación"
+        "正在开始录制"
       ],
       "Reconnected to the meeting": [
-        "Reconectando a la reunión"
+        "已重新连接会议"
       ],
       "Recording saved": [
-        "Grabación guardada"
+        "录制已保存"
       ],
       "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "Comenzó la grabación. Al continuar en la reunión, reconoce y autoriza que se le grabe."
+        "录制已开始，继续参加会议即表示您知悉并同意被录制。"
       ],
       "Recording stopped": [
-        "Se detuvo la grabación"
+        "录制已停止"
       ],
       "Screen share started": [
-        "Se inició compartir la pantalla"
+        "屏幕共享已开始"
       ],
       "Screen share started by ${ name }": [
-        "${ name } inició compartir la pantalla"
+        "${ name } 已开始屏幕共享"
       ],
       "Screen share stopped": [
-        "Se dejó de compartir la pantalla"
+        "屏幕共享已停止"
       ],
       "Screen share stopped by ${ name }": [
-        "${ name } detuvo compartir la pantalla"
+        "${ name } 已停止屏幕共享"
       ],
       "The meeting will close in 1 minute": [
-        "Esta reunión se cerrará en 1 minuto"
+        "会议将在 1 分钟后关闭"
       ],
       "The meeting will close in 15 seconds": [
-        "Esta reunión se cerrará en 15 segundos"
+        "会议将在 15 秒后关闭"
       ],
       "The meeting will close in 30 seconds": [
-        "Esta reunión se cerrará en 30 segundos"
+        "会议将在 30 秒后关闭"
       ],
       "The meeting will end in 1 minute": [
-        "Esta reunión finalizará en 1 minuto"
+        "会议将在 1 分钟后结束"
       ],
       "The meeting will end in 10 minutes": [
-        "Esta reunión finalizará en 10 minutos"
+        "会议将在 10 分钟后结束"
       ],
       "The meeting will end in 15 seconds": [
-        "La reunión finalizará en 15 segundos"
+        "会议将在 15 秒后结束"
       ],
       "The meeting will end in 5 minutes": [
-        "Esta reunión finalizará en 5 minutos"
+        "会议将在 5 分钟后结束"
       ],
       "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
-        "Esta reunión está siendo grabada. Al unirse, reconoce y autoriza que se le grabe."
+        "会议正在被录制，加入即表示您知悉并同意被录制。"
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
-        "Es el único participante. La reunión se cerrará en 2 minutos a menos que alguien más se una."
+        "您是唯一的参与者。会议将在 2 分钟后关闭，除非有其他人加入。"
       ],
       "You have been disconnected from the meeting": [
-        "Se ha desconectado de la reunión."
+        "您已与会议断开连接"
       ],
       "You have been muted by the host": [
-        "Se ha silenciado su micrófono"
+        "您已被主持人静音"
       ],
       "Your camera has been turned off by the host": [
-        "Su cámara fue desactivada por el anfitrión"
+        "您已被主持人关闭摄像头"
       ]
     },
     "Action": {
       "${ BRAND_NAME } shop": [
-        "Tienda ${ BRAND_NAME }"
+        "${ BRAND_NAME } 商店"
       ],
       "Add account": [
-        "Agregar una cuenta"
+        "添加账户"
       ],
       "Add another account": [
-        "Añada otra cuenta"
+        "添加其他账户"
       ],
       "Admit": [
-        "Admitir"
+        "批准"
       ],
       "Admit ${ participantName }": [
-        "Admitir a ${ participantName }"
+        "批准 ${ participantName }"
       ],
       "Admit all": [
-        "Admitir a todos"
+        "全部批准"
       ],
       "Allow access": [
-        "Permitir el acceso"
+        "允许访问"
       ],
       "Anyone with the link can join immediately": [
-        "CUalquiera con el enlace puede unirse automáticamente"
+        "任何拥有链接的人均可立即加入"
       ],
       "Applied": [
-        "Aplicado"
+        "已应用"
       ],
       "Apply changes": [
-        "Aplicar cambios"
+        "应用更改"
       ],
       "Approve participants before they can join": [
-        "Aprobar a los participantes antes de que se unan"
+        "在参与者加入前批准"
       ],
       "Assign ${ selectedParticipantName } as host": [
-        "Asignar a ${ selectedParticipantName } como anfitrión"
+        "指定 ${ selectedParticipantName } 为主持人"
       ],
       "Assign new host": [
-        "Asignar nuevo anfitrión"
+        "指定新主持人"
       ],
       "Attach screenshot(s)": [
-        "Adjuntar una o varias capturas de pantalla"
+        "添加截图"
       ],
       "Authenticate": [
-        "Autenticar"
+        "身份验证"
       ],
       "Back": [
-        "Atrás"
+        "上一步"
       ],
       "Background blur": [
-        "Desenfoque de fondo"
+        "背景虚化"
       ],
       "Cancel": [
-        "Cancelar"
+        "取消"
       ],
       "Change password": [
-        "Cambiar contraseña"
+        "更改密码"
       ],
       "Chat with us": [
-        "Chatee con nosotros"
+        "与我们实时对话"
       ],
       "Close": [
-        "Cerrar"
+        "关闭"
       ],
       "Close preview": [
-        "Cerrar vista previa"
+        "关闭预览"
       ],
       "Close this banner": [
-        "Cerrar este banner"
+        "关闭此横幅"
       ],
       "Continue": [
-        "Continuar"
+        "继续"
       ],
       "Continue without camera": [
-        "Continuar sin cámara"
+        "不使用摄像头，继续参会"
       ],
       "Continue without mic and camera": [
-        "Continuar sin micrófono ni cámara"
+        "无麦克风和相机继续"
       ],
       "Continue without microphone": [
-        "Continuar sin micrófono"
+        "不使用麦克风，继续参会"
       ],
       "Copy address": [
-        "Copiar la dirección"
+        "复制邮箱地址"
       ],
       "Copy invitation link": [
-        "Copiar enlace de invitación"
+        "复制邀请链接"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "复制链接"
       ],
       "Copy link and close": [
-        "Copiar enlace y cerrar"
+        "复制链接并关闭"
       ],
       "Copy meeting link": [
-        "Copiar enlace de la reunión"
+        "复制会议链接"
       ],
       "Copy room link": [
-        "Copiar enlace de sala"
+        "复制会议室链接"
       ],
       "Create a free account": [
-        "Crear una cuenta gratuita"
+        "创建免费账户"
       ],
       "Create a room": [
-        "Crear una sala"
+        "创建会议室"
       ],
       "Create an account": [
-        "Crear una cuenta"
+        "创建账户"
       ],
       "Create meeting": [
-        "Crear una reunión"
+        "创建会议"
       ],
       "Delete": [
-        "Eliminar"
+        "删除"
       ],
       "Deny": [
-        "Denegar"
+        "拒绝"
       ],
       "Deny ${ participantName }": [
-        "Denegar a ${ participantName }"
+        "拒绝 ${ participantName }"
       ],
       "Disable ${ participantName }'s video": [
-        "Desactivar el vídeo de ${ participantName }"
+        "禁用 ${ participantName } 的视频"
       ],
       "Disable camera": [
-        "Desactivar la cámara"
+        "禁用摄像头"
       ],
       "Disable waiting room": [
-        "Desactivar sala de espera"
+        "禁用等候室"
       ],
       "Dismiss": [
-        "Descartar"
+        "忽略"
       ],
       "Done": [
-        "Hecho"
+        "完成"
       ],
       "Download": [
-        "Descargar"
+        "下载"
       ],
       "Download app": [
-        "Descargar aplicación"
+        "下载应用程序"
       ],
       "Download local participant report": [
-        "Descargar informe de participante local"
+        "下载本地参与者报告"
       ],
       "Download logs": [
-        "Descargar los registros"
+        "下载日志"
       ],
       "Download participant report": [
-        "Descargar informe de participante"
+        "下载参与者报告"
       ],
       "Download recording": [
-        "Descargar grabación"
+        "下载录制"
       ],
       "Download room level report": [
-        "Descargar informe de nivel de sala"
+        "下载会议室级别报告"
       ],
       "Edit": [
-        "Editar"
+        "更改"
       ],
       "Edit email address": [
-        "Editar dirección de correo"
+        "更改邮箱地址"
       ],
       "Edit phone number": [
-        "Editar número de teléfono"
+        "编辑手机号码"
       ],
       "Edit sign-in details": [
-        "Editar datos de inicio de sesión"
+        "更改登录信息"
       ],
       "Enable camera": [
-        "Activar la cámara"
+        "启用摄像头"
       ],
       "Enable waiting room": [
-        "Activar sala de espera"
+        "启用等候室"
       ],
       "End meeting": [
-        "Finalizar la reunión"
+        "结束会议"
       ],
       "End meeting for all": [
-        "Finalizar reunión para todos"
+        "为所有人结束会议"
       ],
       "Forgot password?": [
-        "¿Olvidó su contraseña?"
+        "忘记密码？"
       ],
       "Full size": [
-        "Tamaño completo"
+        "完整大小"
       ],
       "Generate a new meeting link.": [
-        "Generar un enlace de reunión."
+        "生成新的会议链接。"
       ],
       "Get Meet Professional": [
-        "Obtenga Meet Profesional"
+        "获取 Meet 专业版"
       ],
       "Get verification code": [
-        "Obtener código de verificación"
+        "获取验证码"
       ],
       "Help and feedback": [
-        "Ayuda y comentarios"
+        "帮助和反馈"
       ],
       "Help and resources": [
-        "Ayuda y recursos"
+        "帮助和资源"
       ],
       "Hide options": [
-        "Ocultar opciones"
+        "隐藏选项"
       ],
       "Hide participants": [
-        "Ocultar participantes"
+        "隐藏参与者"
       ],
       "Hide self view": [
-        "Ocultar mi vista"
+        "隐藏自身视图"
       ],
       "Hide timezones": [
-        "Ocultar zonas horarias"
+        "隐藏时区"
       ],
       "Insert emoji": [
-        "Insertar emoji"
+        "插入表情"
       ],
       "Join": [
-        "Unirse"
+        "加入"
       ],
       "Join meeting": [
-        "Unirse a la reunión"
+        "加入会议"
       ],
       "Join with a link": [
-        "Unirse con un enlace"
+        "通过链接加入"
       ],
       "Kick out": [
-        "Expulsar"
+        "移出"
       ],
       "Kick out ${ participantName }": [
-        "Expulsar a ${ participantName }"
+        "移出 ${ participantName }"
       ],
       "Leave": [
-        "Salir"
+        "离开"
       ],
       "Leave meeting": [
-        "Salir de la reunión"
+        "离开会议"
       ],
       "Lock meeting": [
-        "Bloquear reunión"
+        "锁定会议"
       ],
       "Lower hand": [
-        "Bajar la mano"
+        "放下"
       ],
       "Minimize preview": [
-        "Minimizar vista previa"
+        "最小化预览"
       ],
       "More info: ${ safeTitle }": [
-        "Más información: ${ safeTitle }"
+        "更多信息：${ safeTitle }"
       ],
       "More options for accounts": [
-        "Más opciones para las cuentas"
+        "更多账户选项"
       ],
       "Mute ${ participantName }": [
-        "Silenciar a ${ participantName }"
+        "将 ${ participantName } 静音"
       ],
       "Next month": [
-        "Mes siguiente"
+        "下个月"
       ],
       "Next page": [
-        "Página siguiente"
+        "下一页"
       ],
       "Noise cancellation": [
-        "Cancelación de ruido"
+        "降噪"
       ],
       "Open app": [
-        "Abrir la aplicación"
+        "打开应用"
       ],
       "Open link": [
-        "Abrir enlace"
+        "打开链接"
       ],
       "Participants join after you approve them": [
-        "Los participantes se unen después de que los apruebe"
+        "参与者需经您批准后方可加入"
       ],
       "Participants join the call directly": [
-        "Los participantes se unen directamente a la llamada"
+        "参与者直接加入通话"
       ],
       "Pause": [
-        "Pausar"
+        "暂停"
       ],
       "Previous month": [
-        "Mes anterior"
+        "上个月"
       ],
       "Previous page": [
-        "Página anterior"
+        "上一页"
       ],
       "Raise hand": [
-        "Levantar la mano"
+        "举手"
       ],
       "React with ${ emoji }": [
-        "Reaccionar con ${ emoji }"
+        "使用 ${ emoji } 回复"
       ],
       "React with ${ emoji }, ${ identities.length } reaction": [
-        "Reaccionar con ${ emoji }, ${ identities.length } reacción",
-        "Reaccionar con ${ emoji }, ${ identities.length } reacciones"
+        "使用 ${ emoji } 表情回应，${ identities.length } 人已回应"
       ],
       "Receive video": [
-        "Recibir video"
+        "接收视频"
       ],
       "Record": [
-        "Grabar"
+        "录制"
       ],
       "Refer a friend": [
-        "Referir una amistad"
+        "邀请好友"
       ],
       "Refresh audio and video tracks": [
-        "Actualizar pistas de audio y video"
+        "刷新音视频轨道"
       ],
       "Refresh screen share track": [
-        "Actualizar la señal de la pantalla compartida"
+        "刷新屏幕共享画面"
       ],
       "Refresh the page": [
-        "Refrescar la página"
+        "刷新页面"
       ],
       "Rejoin meeting": [
-        "Volver a unirse a la reunión"
+        "重新加入会议"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
-        "Eliminar reacción ${ emoji }, ${ identities.length } reacción",
-        "Eliminar reacción ${ emoji }, ${ identities.length } reacciones"
+        "移除回应 ${ emoji }，${ identities.length } 个回应"
       ],
       "Report a problem": [
-        "Reportar un problema"
+        "反馈问题"
       ],
       "Request a call": [
-        "Solicitar una llamada"
+        "申请电话沟通"
       ],
       "Request a feature": [
-        "Solicitar una característica"
+        "功能建议"
       ],
       "Request new code": [
-        "Solicitar un código nuevo"
+        "重发验证码"
       ],
       "Resend code": [
-        "Reenviar código"
+        "重新发送验证码"
       ],
       "Reset to defaults": [
-        "Restablecer valores por defecto"
+        "重置为默认值"
       ],
       "Resume": [
-        "Reanudar"
+        "继续"
       ],
       "Return to dashboard": [
-        "Volver al panel"
+        "返回仪表盘"
       ],
       "Room": [
-        "Sala"
+        "会议室"
       ],
       "Rotate personal meeting link": [
-        "Rotar enlace de reunión personal"
+        "更换个人会议链接"
       ],
       "Save": [
-        "Guardar"
+        "保存"
       ],
       "Schedule": [
-        "Programar"
+        "安排"
       ],
       "Schedule a meeting": [
-        "Programar una reunión"
+        "安排会议"
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "Programar en ${ CALENDAR_APP_NAME }"
+        "在 ${ CALENDAR_APP_NAME } 中安排"
       ],
       "Search countries": [
-        "Buscar países"
+        "搜索国家"
       ],
       "Send an encrypted message": [
-        "Enviar un mensaje cifrado"
+        "发送加密消息"
       ],
       "Settings": [
-        "Ajustes"
+        "设置"
       ],
       "Show duration": [
-        "Mostrar duración"
+        "显示时长"
       ],
       "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
+        "屏幕共享时显示浮动缩略图"
       ],
       "Show options": [
-        "Mostrar opciones"
+        "显示选项"
       ],
       "Show participants": [
-        "Mostrar participantes"
+        "显示参与者"
       ],
       "Show timezones": [
-        "Mostrar zonas horarias"
+        "显示时区"
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "登录"
       ],
       "Sign out": [
-        "Cerrar sesión"
+        "登出"
       ],
       "Sign out of all accounts": [
-        "Cerrar la sesión de todas las cuentas"
+        "登出所有账户"
       ],
       "Simulate reconnection": [
-        "Reconexión simulada"
+        "模拟重连"
       ],
       "Skip": [
-        "Omitir"
+        "跳过"
       ],
       "Skip to main content": [
-        "Saltar al contenido principal"
+        "跳转到主要内容"
       ],
       "Start an instant meeting": [
-        "Iniciar una reunión al instante"
+        "开始即时会议"
       ],
       "Start meeting": [
-        "Comenzar la reunión"
+        "开始会议"
       ],
       "Start new meeting": [
-        "Iniciar una reunión"
+        "开始新会议"
       ],
       "Start recording": [
-        "Iniciar grabación"
+        "开始录制"
       ],
       "Start Recording Track Stats": [
-        "Iniciar estadísticas de grabación"
+        "开始录制轨道统计"
       ],
       "Start your own meeting": [
-        "Inicie su propia reunión"
+        "发起会议"
       ],
       "Starting…": [
-        "Iniciando…"
+        "正在启动…"
       ],
       "Stay in meeting": [
-        "Permanecer en la reunión"
+        "留在会议中"
       ],
       "Stop opening meetings in the desktop app": [
-        "Dejar de abrir reuniones en la aplicación de escritorio"
+        "停止在桌面应用中打开会议"
       ],
       "Stop receiving video": [
-        "Dejar de recibir video"
+        "停止接收视频"
       ],
       "Stop recording": [
-        "Detener grabación"
+        "停止录制"
       ],
       "Stop recording and download video": [
-        "Detener la grabación y descargar video."
+        "停止录制并下载视频"
       ],
       "Stop Recording Track Stats": [
-        "Detener estadísticas de grabación"
+        "停止录制轨道统计"
       ],
       "Submit": [
-        "Enviar"
+        "提交"
       ],
       "Switch or add account": [
-        "Cambiar o agregar cuenta"
+        "切换或添加账户"
       ],
       "Tap to unblock audio playback": [
-        "Pulsar para reproducir audio"
+        "点击以解除音频播放阻止"
       ],
       "The current link will stop working.": [
-        "El enlace actual dejará de funcionar."
+        "当前链接将失效！"
       ],
       "Try again": [
-        "Volver a intentar"
+        "重试"
       ],
       "Try another method": [
-        "Intente otro método"
+        "更换验证方式"
       ],
       "Turn off incoming video": [
-        "Desactivar video entrante"
+        "关闭接收视频"
       ],
       "Upgrade": [
-        "Actualizar"
+        "升级账户"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "立即升级账户"
       ],
       "Upgrade your plan to use waiting room in your next meeting.": [
-        "Actualice su plan para usar la sala de espera en su próxima reunión."
+        "升级套餐以在下次会议中使用等候室"
       ],
       "Upload another video": [
-        "Cargar otro video"
+        "上传其他视频"
       ],
       "Upload video": [
-        "Cargar video"
+        "上传视频"
       ],
       "Use authentication code": [
-        "Usar código de autenticación"
+        "使用验证码"
       ],
       "Use camera": [
-        "Usar cámara"
+        "使用摄像头"
       ],
       "Use microphone": [
-        "Usar micrófono"
+        "使用麦克风"
       ],
       "Use recovery code": [
-        "Usar un código de recuperación"
+        "使用恢复码"
       ],
       "Use waiting room with a paid plan": [
-        "Usar sala de espera con un plan de pago"
+        "使用付费套餐的等候室"
       ],
       "Verify": [
-        "Verificar"
+        "验证"
       ],
       "Verify account": [
-        "Verificar cuenta"
+        "验证账户"
       ],
       "View invoice": [
-        "Ver la factura"
+        "查看账单"
       ],
       "Waiting room": [
-        "Sala de espera"
+        "等候室"
       ]
     },
     "Alt": {
       "Audio settings": [
-        "Ajustes de audio"
+        "音频设置"
       ],
       "Blur background": [
-        "Difuminar fondo"
+        "模糊背景"
       ],
       "Chat": [
-        "Chat"
+        "聊天"
       ],
       "Close": [
-        "Cerrar"
+        "关闭"
       ],
       "Close search": [
-        "Cerrar la búsqueda"
+        "关闭搜索"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "复制链接"
       ],
       "Copy meeting link": [
-        "Copiar enlace de la reunión"
+        "复制会议链接"
       ],
       "Debug overlay": [
-        "Superposición de depuración"
+        "调试叠加层"
       ],
       "Go to dashboard": [
-        "Ir al panel de control"
+        "转到控制面板"
       ],
       "Hide self view": [
-        "Ocultar vista propia"
+        "隐藏自身视图"
       ],
       "Leave Meeting": [
-        "Salir de la reunión"
+        "离开会议"
       ],
       "Lock meeting": [
-        "Bloquear reunión"
+        "锁定会议"
       ],
       "Lower hand": [
-        "Bajar la mano"
+        "放下"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "会议详情"
       ],
       "More options": [
-        "Más opciones"
+        "更多选项"
       ],
       "Noise cancellation": [
-        "Cancelación de ruido"
+        "降噪"
       ],
       "Open chat message search": [
-        "Abrir búsqueda de mensajes del chat"
+        "打开聊天消息搜索"
       ],
       "Open participants search": [
-        "Abrir la búsqueda de participantes"
+        "打开参与者搜索"
       ],
       "Participant host control options": [
-        "Opciones de control del anfitrión participante"
+        "参与者主持人控制选项"
       ],
       "Participants": [
-        "Participantes"
+        "参与者"
       ],
       "Raise hand": [
-        "Levantar la mano"
+        "举手"
       ],
       "Rotate camera": [
-        "Rotar cámara"
+        "旋转摄像头"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "屏幕共享"
       ],
       "Settings": [
-        "Ajustes"
+        "设置"
       ],
       "Show duration": [
-        "Mostrar duración"
+        "显示时长"
       ],
       "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
+        "屏幕共享时显示浮动缩略图"
       ],
       "Show passphrase": [
-        "Mostrar frase de contraseña"
+        "显示密码"
       ],
       "Stop recording and download.": [
-        "Detener la grabación y descargar."
+        "停止录制并下载"
       ],
       "Toggle chat": [
-        "Alternar chat"
+        "切换聊天"
       ],
       "Toggle emoji reactions": [
-        "Alternar reacciones con emojis"
+        "切换表情反应"
       ],
       "Toggle meeting details": [
-        "Alternar detalles de la reunión"
+        "切换会议详情"
       ],
       "Toggle participants": [
-        "Alternar participantes"
+        "切换参与者列表"
       ],
       "Toggle screen share": [
-        "Alternar compartir pantalla"
+        "切换屏幕共享"
       ],
       "Toggle settings": [
-        "Alternar ajustes"
+        "切换设置"
       ],
       "Turn off incoming video": [
-        "Desactivar video entrante"
+        "关闭接收视频"
       ],
       "Video settings": [
-        "Ajustes de video"
+        "视频设置"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicaciones de ${ BRAND_NAME }"
+        "${ BRAND_NAME } 应用"
       ]
     },
     "Aria": {
       "Assign host": [
-        "Asignar anfitrión"
+        "指定主持人"
       ],
       "Audio settings": [
-        "Ajustes de audio"
+        "音频设置"
       ],
       "Chat": [
-        "Chat"
+        "聊天"
       ],
       "Chat messages": [
-        "Mensajes del chat"
+        "聊天消息"
       ],
       "Device settings": [
-        "Ajustes del dispositivo"
+        "设备设置"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "会议详情"
       ],
       "Meeting rooms": [
-        "Salas de reunión"
+        "会议室"
       ],
       "Participants": [
-        "Participantes"
+        "参与者"
       ],
       "Participants list": [
-        "Lista de participantes"
+        "参与者列表"
       ],
       "Primary navigation": [
-        "Navegación principal"
+        "主导航"
       ],
       "Settings": [
-        "Ajustes"
+        "设置"
       ],
       "Video settings": [
-        "Ajustes de video"
+        "视频设置"
       ]
     },
     "Badge": {
       "Active": [
-        "Activo"
+        "活跃"
       ]
     },
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "Conexión mediante modo de retransmisión TURN debido a restricciones en su red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
+        "由于您的网络限制，已通过 TURN 中继模式连接。这可能会增加延迟并影响通话质量。"
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "Problema con ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME } 问题"
       ],
       "Application problem": [
-        "Problema con la aplicación"
+        "应用程序问题"
       ],
       "Authenticator problem": [
-        "Problema con el autenticador"
+        "验证器问题"
       ],
       "Bridge problem": [
-        "Problema de Bridge"
+        "Bridge 问题"
       ],
       "Calendar problem": [
-        "Problema del calendario"
+        "Proton Calendar 问题"
       ],
       "Connection problem": [
-        "Problema de conexión"
+        "连接问题"
       ],
       "Contacts problem": [
-        "Problema de contactos"
+        "通讯录问题"
       ],
       "Custom domain problem": [
-        "Problema de dominio personalizado"
+        "自有域名问题"
       ],
       "Docs problem": [
-        "Problema de Docs"
+        "Proton Docs 问题"
       ],
       "Drive problem": [
-        "Problema de Drive"
+        "Proton Drive 问题"
       ],
       "Feature request": [
-        "Solicitar funcionalidad"
+        "功能建议"
       ],
       "Import / export problem": [
-        "Problema de importación/exportación"
+        "导入/导出问题"
       ],
       "Installation problem": [
-        "Problema de instalación"
+        "安装问题"
       ],
       "Mail problem": [
-        "Problema del correo"
+        "Proton Mail 问题"
       ],
       "Manual setup problem": [
-        "Problema de configuración manual"
+        "手动设置问题"
       ],
       "Meet problem": [
-        "Problema de Meet"
+        "Meet 问题"
       ],
       "Other": [
-        "Otro"
+        "其他"
       ],
       "Pass problem": [
-        "Problema con Proton Pass"
+        "Proton Pass 问题"
       ],
       "Payments problem": [
-        "Problema de pagos"
+        "支付问题"
       ],
       "Sheets problem": [
-        "Problema de Sheets"
+        "表格问题"
       ],
       "Sign in problem": [
-        "Problema de inicio de sesión"
+        "登录问题"
       ],
       "Sign up problem": [
-        "Problema de registro"
+        "注册问题"
       ],
       "Signup problem": [
-        "Problema de registro"
+        "注册问题"
       ],
       "Slow speed problem": [
-        "Problema de velocidad baja"
+        "速度慢的问题"
       ],
       "Speed problem": [
-        "Problema de velocidad"
+        "速度问题"
       ],
       "Streaming problem": [
-        "Problema de transmisión"
+        "视频播放问题"
       ],
       "Update problem": [
-        "Problema de actualización"
+        "更新问题"
       ],
       "VPN problem": [
-        "Problema de VPN"
+        "Proton VPN 问题"
       ],
       "Website access problem": [
-        "Problema de acceso web"
+        "网站连接问题"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Minimizar"
+        "收起"
       ],
       "Expand": [
-        "Expandir"
+        "展开"
       ]
     },
     "color": {
       "carrot": [
-        "zanahoria"
+        "胡萝卜橙"
       ],
       "cerise": [
-        "cereza"
+        "水红色"
       ],
       "cobalt": [
-        "cobalto"
+        "钴蓝色"
       ],
       "copper": [
-        "cobre"
+        "紫铜色"
       ],
       "enzian": [
-        "genciana"
+        "龙胆蓝"
       ],
       "fern": [
-        "helecho"
+        "丝袍绿"
       ],
       "forest": [
-        "bosque"
+        "森林绿"
       ],
       "ocean": [
-        "océano"
+        "海蓝色"
       ],
       "olive": [
-        "aceituna"
+        "橄榄绿"
       ],
       "pacific": [
-        "pacífico"
+        "太平洋蓝"
       ],
       "pickle": [
-        "pepinillo"
+        "橄榄黄"
       ],
       "pine": [
-        "pino"
+        "松林绿"
       ],
       "pink": [
-        "rosa"
+        "粉色"
       ],
       "plum": [
-        "ciruela"
+        "绛紫色"
       ],
       "purple": [
-        "púrpura"
+        "紫色"
       ],
       "reef": [
-        "arrecife"
+        "珊瑚绿"
       ],
       "sahara": [
-        "sahara"
+        "撒哈拉棕"
       ],
       "slateblue": [
-        "azul pizarra"
+        "板岩蓝"
       ],
       "soil": [
-        "suelo"
+        "土地灰"
       ],
       "strawberry": [
-        "fresa"
+        "草莓红"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "Abjasia"
+        "阿布哈兹"
       ],
       "Afghanistan": [
-        "Afganistán"
+        "阿富汗"
       ],
       "Albania": [
-        "Albania"
+        "阿尔巴尼亚"
       ],
       "Algeria": [
-        "Argelia"
+        "阿尔及利亚"
       ],
       "American Samoa": [
-        "Samoa Americana"
+        "美属萨摩亚"
       ],
       "Andorra": [
-        "Andorra"
+        "安道尔"
       ],
       "Angola": [
-        "Angola"
+        "安哥拉"
       ],
       "Anguilla": [
-        "Anguila"
+        "安圭拉"
       ],
       "Antarctica": [
-        "Antártida"
+        "南极洲"
       ],
       "Antigua and Barbuda": [
-        "Antigua y Barbuda"
+        "安提瓜和巴布达"
       ],
       "Argentina": [
-        "Argentina"
+        "阿根廷"
       ],
       "Armenia": [
-        "Armenia"
+        "亚美尼亚"
       ],
       "Aruba": [
-        "Aruba"
+        "阿鲁巴"
       ],
       "Ascension Island": [
-        "Isla Ascensión"
+        "阿森松岛"
       ],
       "Australia": [
-        "Australia"
+        "澳大利亚"
       ],
       "Austria": [
-        "Austria"
+        "奥地利"
       ],
       "Azerbaijan": [
-        "Azerbaiyán"
+        "阿塞拜疆"
       ],
       "Bahamas": [
-        "Bahamas"
+        "巴哈马"
       ],
       "Bahrain": [
-        "Baréin"
+        "巴林"
       ],
       "Bangladesh": [
-        "Bangladés"
+        "孟加拉国"
       ],
       "Barbados": [
-        "Barbados"
+        "巴巴多斯"
       ],
       "Belarus": [
-        "Bielorrusia"
+        "白俄罗斯"
       ],
       "Belgium": [
-        "Bélgica"
+        "比利时"
       ],
       "Belize": [
-        "Belice"
+        "伯利兹"
       ],
       "Benin": [
-        "Benín"
+        "贝宁"
       ],
       "Bermuda": [
-        "Bermudas"
+        "百慕大"
       ],
       "Bhutan": [
-        "Bután"
+        "不丹"
       ],
       "Bolivia": [
-        "Bolivia"
+        "玻利维亚"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Caribe Neerlandés"
+        "荷兰加勒比区"
       ],
       "Bosnia and Herzegovina": [
-        "Bosnia Herzegovina"
+        "波斯尼亚和黑塞哥维那"
       ],
       "Botswana": [
-        "Botsuana"
+        "博茨瓦纳"
       ],
       "Bouvet Island": [
-        "Isla Bouvet"
+        "布韦岛"
       ],
       "Brazil": [
-        "Brasil"
+        "巴西"
       ],
       "British Indian Ocean Territory": [
-        "Territorio Británico del Océano Índico"
+        "英属印度洋领地"
       ],
       "Brunei Darussalam": [
-        "Brunéi"
+        "文莱达鲁萨兰"
       ],
       "Bulgaria": [
-        "Bulgaria"
+        "保加利亚"
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        "布基纳法索"
       ],
       "Burundi": [
-        "Burundi"
+        "布隆迪"
       ],
       "Cambodia": [
-        "Camboya"
+        "柬埔寨"
       ],
       "Cameroon": [
-        "Camerún"
+        "喀麦隆"
       ],
       "Canada": [
-        "Canadá"
+        "加拿大"
       ],
       "Cape Verde": [
-        "Cabo Verde"
+        "佛得角"
       ],
       "Cayman Islands": [
-        "Islas Caimán"
+        "开曼群岛"
       ],
       "Central African Republic": [
-        "Rep. Centroafricana"
+        "中非共和国"
       ],
       "Chad": [
-        "Chad"
+        "乍得"
       ],
       "Chile": [
-        "Chile"
+        "智利"
       ],
       "China": [
-        "China"
+        "中国"
       ],
       "Christmas Island": [
-        "Isla de Navidad"
+        "圣诞岛"
       ],
       "Cocos (Keeling) Islands": [
-        "Islas Cocos (Keeling)"
+        "科科斯（基林）群岛"
       ],
       "Colombia": [
-        "Colombia"
+        "哥伦比亚"
       ],
       "Comoros": [
-        "Comoras"
+        "科摩罗"
       ],
       "Congo": [
-        "Congo"
+        "刚果（布）"
       ],
       "Congo, Democratic Republic of the": [
-        "RD del Congo"
+        "刚果（金）"
       ],
       "Cook Islands": [
-        "Islas Cook"
+        "库克群岛"
       ],
       "Costa Rica": [
-        "Costa Rica"
+        "哥斯达黎加"
       ],
       "Croatia": [
-        "Croacia"
+        "克罗地亚"
       ],
       "Cuba": [
-        "Cuba"
+        "古巴"
       ],
       "Curaçao": [
-        "Curazao"
+        "库拉索"
       ],
       "Cyprus": [
-        "Chipre"
+        "塞浦路斯"
       ],
       "Czech Republic": [
-        "República Checa"
+        "捷克"
       ],
       "Côte d'Ivoire": [
-        "Costa de Marfil"
+        "科特迪瓦"
       ],
       "Denmark": [
-        "Dinamarca"
+        "丹麦"
       ],
       "Djibouti": [
-        "Yibuti"
+        "吉布提"
       ],
       "Dominica": [
-        "Dominica"
+        "多米尼克"
       ],
       "Dominican Republic": [
-        "República Dominicana"
+        "多米尼加共和国"
       ],
       "Ecuador": [
-        "Ecuador"
+        "厄瓜多尔"
       ],
       "Egypt": [
-        "Egipto"
+        "埃及"
       ],
       "El Salvador": [
-        "El Salvador"
+        "萨尔瓦多"
       ],
       "Equatorial Guinea": [
-        "Guinea Ecuatorial"
+        "赤道几内亚"
       ],
       "Eritrea": [
-        "Eritrea"
+        "厄立特里亚"
       ],
       "Estonia": [
-        "Estonia"
+        "爱沙尼亚"
       ],
       "Eswatini": [
-        "Suazilandia"
+        "斯威士兰"
       ],
       "Ethiopia": [
-        "Etiopía"
+        "埃塞俄比亚"
       ],
       "Falkland Islands": [
-        "Islas Malvinas"
+        "福克兰群岛"
       ],
       "Faroe Islands": [
-        "Islas Faroe"
+        "法罗群岛"
       ],
       "Federated States of Micronesia": [
-        "EF de Micronesia"
+        "密克罗尼西亚联邦"
       ],
       "Fiji": [
-        "Fiyi"
+        "斐济"
       ],
       "Finland": [
-        "Finlandia"
+        "芬兰"
       ],
       "France": [
-        "Francia"
+        "法国"
       ],
       "French Guiana": [
-        "Guyana Francesa"
+        "法属圭亚那"
       ],
       "French Polynesia": [
-        "Polinesia Francesa"
+        "法属波利尼西亚"
       ],
       "French Southern Territories": [
-        "Territorios Australes Franceses"
+        "法属南部领地"
       ],
       "Gabon": [
-        "Gabón"
+        "加蓬"
       ],
       "Gambia": [
-        "Gambia"
+        "冈比亚"
       ],
       "Georgia": [
-        "Georgia"
+        "格鲁吉亚"
       ],
       "Germany": [
-        "Alemania"
+        "德国"
       ],
       "Ghana": [
-        "Ghana"
+        "加纳"
       ],
       "Gibraltar": [
-        "Gibraltar"
+        "直布罗陀"
       ],
       "Greece": [
-        "Grecia"
+        "希腊"
       ],
       "Greenland": [
-        "Groenlandia"
+        "格陵兰"
       ],
       "Grenada": [
-        "Granada"
+        "格林纳达"
       ],
       "Guadeloupe": [
-        "Guadalupe"
+        "瓜德罗普"
       ],
       "Guam": [
-        "Guam"
+        "关岛"
       ],
       "Guatemala": [
-        "Guatemala"
+        "危地马拉"
       ],
       "Guernsey": [
-        "Guernsey"
+        "根西"
       ],
       "Guinea": [
-        "Guinea"
+        "几内亚"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bisáu"
+        "几内亚比绍"
       ],
       "Guyana": [
-        "Guayana"
+        "圭亚那"
       ],
       "Haiti": [
-        "Haití"
+        "海地"
       ],
       "Heard Island and McDonald Islands": [
-        "Islas Heard y McDonald"
+        "赫德岛和麦克唐纳群岛"
       ],
       "Holy See (Vatican City State)": [
-        "Cd. del Vaticano"
+        "圣座（梵蒂冈城邦）"
       ],
       "Honduras": [
-        "Honduras"
+        "洪都拉斯"
       ],
       "Hong Kong": [
-        "Hong Kong"
+        "中国香港特别行政区"
       ],
       "Hungary": [
-        "Hungría"
+        "匈牙利"
       ],
       "Iceland": [
-        "Islandia"
+        "冰岛"
       ],
       "India": [
-        "India"
+        "印度"
       ],
       "Indonesia": [
-        "Indonesia"
+        "印度尼西亚"
       ],
       "International": [
-        "Internacional"
+        "全球"
       ],
       "Iran": [
-        "Irán"
+        "伊朗"
       ],
       "Iraq": [
-        "Irak"
+        "伊拉克"
       ],
       "Ireland": [
-        "Irlanda"
+        "爱尔兰"
       ],
       "Isle of Man": [
-        "Isla de Man"
+        "马恩岛"
       ],
       "Israel": [
-        "Israel"
+        "以色列"
       ],
       "Italy": [
-        "Italia"
+        "意大利"
       ],
       "Jamaica": [
-        "Jamaica"
+        "牙买加"
       ],
       "Japan": [
-        "Japón"
+        "日本"
       ],
       "Jersey": [
-        "Jersey"
+        "泽西岛"
       ],
       "Jordan": [
-        "Jordania"
+        "约旦"
       ],
       "Kazakhstan": [
-        "Kazajistán"
+        "哈萨克斯坦"
       ],
       "Kenya": [
-        "Kenia"
+        "肯尼亚"
       ],
       "Kiribati": [
-        "Kiribati"
+        "基里巴斯"
       ],
       "Kosovo": [
-        "Kosovo"
+        "科索沃"
       ],
       "Kuwait": [
-        "Kuwait"
+        "科威特"
       ],
       "Kyrgyzstan": [
-        "Kirguistán"
+        "吉尔吉斯斯坦"
       ],
       "Laos": [
-        "Laos"
+        "老挝"
       ],
       "Latvia": [
-        "Letonia"
+        "拉脱维亚"
       ],
       "Lebanon": [
-        "Líbano"
+        "黎巴嫩"
       ],
       "Lesotho": [
-        "Lesoto"
+        "莱索托"
       ],
       "Liberia": [
-        "Liberia"
+        "利比里亚"
       ],
       "Libya": [
-        "Libia"
+        "利比亚"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        "列支敦士登"
       ],
       "Lithuania": [
-        "Lituania"
+        "立陶宛"
       ],
       "Luxembourg": [
-        "Luxemburgo"
+        "卢森堡"
       ],
       "Macao": [
-        "Macao"
+        "澳门"
       ],
       "Madagascar": [
-        "Madagascar"
+        "马达加斯加"
       ],
       "Malawi": [
-        "Malaui"
+        "马拉维"
       ],
       "Malaysia": [
-        "Malasia"
+        "马来西亚"
       ],
       "Maldives": [
-        "Maldivas"
+        "马尔代夫"
       ],
       "Mali": [
-        "Malí"
+        "马里"
       ],
       "Malta": [
-        "Malta"
+        "马耳他"
       ],
       "Marshall Islands": [
-        "Islas Marshall"
+        "马绍尔群岛"
       ],
       "Martinique": [
-        "Martinica"
+        "马提尼克"
       ],
       "Mauritania": [
-        "Mauritania"
+        "毛里塔尼亚"
       ],
       "Mauritius": [
-        "Mauricio"
+        "毛里求斯"
       ],
       "Mayotte": [
-        "Mayotte"
+        "马约特"
       ],
       "Mexico": [
-        "México"
+        "墨西哥"
       ],
       "Moldova": [
-        "Moldavia"
+        "摩尔多瓦"
       ],
       "Monaco": [
-        "Mónaco"
+        "摩纳哥"
       ],
       "Mongolia": [
-        "Mongolia"
+        "蒙古"
       ],
       "Montenegro": [
-        "Montenegro"
+        "黑山"
       ],
       "Montserrat": [
-        "Montserrat"
+        "蒙特塞拉特"
       ],
       "Morocco": [
-        "Marruecos"
+        "摩洛哥"
       ],
       "Mozambique": [
-        "Mozambique"
+        "莫桑比克"
       ],
       "Myanmar": [
-        "Myanmar"
+        "缅甸"
       ],
       "Namibia": [
-        "Namibia"
+        "纳米比亚"
       ],
       "Nauru": [
-        "Nauru"
+        "瑙鲁"
       ],
       "Nepal": [
-        "Nepal"
+        "尼泊尔"
       ],
       "Netherlands": [
-        "Países Bajos"
+        "荷兰"
       ],
       "New Caledonia": [
-        "Nueva Caledonia"
+        "新喀里多尼亚"
       ],
       "New Zealand": [
-        "Nueva Zelanda"
+        "新西兰"
       ],
       "Nicaragua": [
-        "Nicaragua"
+        "尼加拉瓜"
       ],
       "Niger": [
-        "Níger"
+        "尼日尔"
       ],
       "Nigeria": [
-        "Nigeria"
+        "尼日利亚"
       ],
       "Niue": [
-        "Niue"
+        "纽埃"
       ],
       "Norfolk Island": [
-        "Isla Norfolk"
+        "诺福克岛"
       ],
       "North Korea": [
-        "Corea del Norte"
+        "朝鲜"
       ],
       "North Macedonia": [
-        "Macedonia del Norte"
+        "北马其顿"
       ],
       "Northern Mariana Islands": [
-        "Islas Marianas del Norte"
+        "北马里亚纳群岛"
       ],
       "Norway": [
-        "Noruega"
+        "挪威"
       ],
       "Oman": [
-        "Omán"
+        "阿曼"
       ],
       "Pakistan": [
-        "Pakistán"
+        "巴基斯坦"
       ],
       "Palau": [
-        "Palaos"
+        "帕劳"
       ],
       "Palestine": [
-        "Palestina"
+        "巴勒斯坦"
       ],
       "Panama": [
-        "Panamá"
+        "巴拿马"
       ],
       "Papua New Guinea": [
-        "Papúa Nueva Guinea"
+        "巴布亚新几内亚"
       ],
       "Paraguay": [
-        "Paraguay"
+        "巴拉圭"
       ],
       "Peru": [
-        "Perú"
+        "秘鲁"
       ],
       "Philippines": [
-        "Filipinas"
+        "菲律宾"
       ],
       "Pitcairn": [
-        "Pitcairn"
+        "皮特凯恩"
       ],
       "Poland": [
-        "Polonia"
+        "波兰"
       ],
       "Portugal": [
-        "Portugal"
+        "葡萄牙"
       ],
       "Puerto Rico": [
-        "Puerto Rico"
+        "波多黎各"
       ],
       "Qatar": [
-        "Catar"
+        "卡塔尔"
       ],
       "Reunion": [
-        "Reunión"
+        "留尼汪"
       ],
       "Romania": [
-        "Rumania"
+        "罗马尼亚"
       ],
       "Russia": [
-        "Rusia"
+        "俄罗斯"
       ],
       "Rwanda": [
-        "Ruanda"
+        "卢旺达"
       ],
       "Saint Barthélemy": [
-        "San Bartolomé"
+        "圣巴泰勒米"
       ],
       "Saint Helena": [
-        "Santa Helena"
+        "圣赫勒拿岛"
       ],
       "Saint Kitts and Nevis": [
-        "San Cristóbal y Nieves"
+        "圣基茨和尼维斯"
       ],
       "Saint Lucia": [
-        "Santa Lucía"
+        "圣卢西亚"
       ],
       "Saint Martin (French Part)": [
-        "San Martín (parte francesa)"
+        "法属圣马丁"
       ],
       "Saint Pierre and Miquelon": [
-        "San Pedro y Miquelón"
+        "圣皮埃尔和密克隆"
       ],
       "Saint Vincent and the Grenadines": [
-        "San Vicente y las Granadinas"
+        "圣文森特和格林纳丁斯"
       ],
       "Samoa": [
-        "Samoa"
+        "萨摩亚"
       ],
       "San Marino": [
-        "San Marino"
+        "圣马力诺"
       ],
       "Sao Tome and Principe": [
-        "Santo Tomé y Príncipe"
+        "圣多美与普林西比"
       ],
       "Saudi Arabia": [
-        "Arabia Saudita"
+        "沙特阿拉伯"
       ],
       "Senegal": [
-        "Senegal"
+        "塞内加尔"
       ],
       "Serbia": [
-        "Serbia"
+        "塞尔维亚"
       ],
       "Seychelles": [
-        "Seychelles"
+        "塞舌尔"
       ],
       "Sierra Leone": [
-        "Sierra Leona"
+        "塞拉利昂"
       ],
       "Singapore": [
-        "Singapur"
+        "新加坡"
       ],
       "Sint Maarten": [
-        "San Martín"
+        "荷属圣马丁"
       ],
       "Slovakia": [
-        "Eslovaquia"
+        "斯洛伐克"
       ],
       "Slovenia": [
-        "Eslovenia"
+        "斯洛文尼亚"
       ],
       "Solomon Islands": [
-        "Islas Salomón"
+        "所罗门群岛"
       ],
       "Somalia": [
-        "Somalia"
+        "索马里"
       ],
       "South Africa": [
-        "Sudáfrica"
+        "南非"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Islas Georgias del Sur y Sándwich del Sur"
+        "南乔治亚岛和南桑威奇群岛"
       ],
       "South Korea": [
-        "Corea del Sur"
+        "韩国"
       ],
       "South Ossetia": [
-        "Osetia del Sur"
+        "南奥塞梯"
       ],
       "South Sudan": [
-        "Sudán del Sur"
+        "南苏丹"
       ],
       "Spain": [
-        "España"
+        "西班牙"
       ],
       "Sri Lanka": [
-        "Sri Lanka"
+        "斯里兰卡"
       ],
       "Sudan": [
-        "Sudán"
+        "苏丹"
       ],
       "Suriname": [
-        "Surinam"
+        "苏里南"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard y Jan Mayen"
+        "斯瓦尔巴和扬马延"
       ],
       "Sweden": [
-        "Suecia"
+        "瑞典"
       ],
       "Switzerland": [
-        "Suiza"
+        "瑞士"
       ],
       "Syria": [
-        "Siria"
+        "叙利亚"
       ],
       "Taiwan": [
-        "Taiwán"
+        "台湾地区"
       ],
       "Tajikistan": [
-        "Tayikistán"
+        "塔吉克斯坦"
       ],
       "Tanzania": [
-        "Tanzania"
+        "坦桑尼亚"
       ],
       "Thailand": [
-        "Tailandia"
+        "泰国"
       ],
       "Timor-Leste": [
-        "Timor Oriental"
+        "东帝汶"
       ],
       "Togo": [
-        "Togo"
+        "多哥"
       ],
       "Tokelau": [
-        "Tokelau"
+        "托克劳"
       ],
       "Tonga": [
-        "Tonga"
+        "汤加"
       ],
       "Trinidad and Tobago": [
-        "Trinidad y Tobago"
+        "特立尼达和多巴哥"
       ],
       "Tristan da Cunha": [
-        "Tristán de Acuña"
+        "特里斯坦达库尼亚"
       ],
       "Tunisia": [
-        "Túnez"
+        "突尼斯"
       ],
       "Turkey": [
-        "Turquía"
+        "土耳其"
       ],
       "Turkmenistan": [
-        "Turkmenistán"
+        "土库曼斯坦"
       ],
       "Turks and Caicos Islands": [
-        "Islas Turcas y Caicos"
+        "特克斯和凯科斯群岛"
       ],
       "Tuvalu": [
-        "Tuvalu"
+        "图瓦卢"
       ],
       "Uganda": [
-        "Uganda"
+        "乌干达"
       ],
       "Ukraine": [
-        "Ucrania"
+        "乌克兰"
       ],
       "United Arab Emirates": [
-        "Emiratos Árabes Unidos"
+        "阿联酋"
       ],
       "United Kingdom": [
-        "Reino Unido"
+        "英国"
       ],
       "United States": [
-        "Estados Unidos"
+        "美国"
       ],
       "United States Minor Outlying Islands": [
-        "Islas Ultramarinas Menores de Estados Unidos"
+        "美国本土外小岛屿"
       ],
       "Uruguay": [
-        "Uruguay"
+        "乌拉圭"
       ],
       "Uzbekistan": [
-        "Uzbekistán"
+        "乌兹别克斯坦"
       ],
       "Vanuatu": [
-        "Vanuatu"
+        "瓦努阿图"
       ],
       "Venezuela": [
-        "Venezuela"
+        "委内瑞拉"
       ],
       "Vietnam": [
-        "Vietnam"
+        "越南"
       ],
       "Virgin Islands, British": [
-        "Islas Vírgenes Británicas"
+        "英属维尔京群岛"
       ],
       "Virgin Islands, U.S.": [
-        "Islas Vírgenes de EE. UU."
+        "美属维尔京群岛"
       ],
       "Wallis and Futuna": [
-        "Wallis y Futuna"
+        "瓦利斯和富图纳"
       ],
       "Western Sahara": [
-        "Sahara Occidental"
+        "西撒哈拉"
       ],
       "Yemen": [
-        "Yemen"
+        "也门"
       ],
       "Zambia": [
-        "Zambia"
+        "赞比亚"
       ],
       "Zimbabwe": [
-        "Zimbabue"
+        "津巴布韦"
       ],
       "Åland Islands": [
-        "Islas Aland"
+        "奥兰群岛"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Factura atrasada"
+        "逾期账单"
       ]
     },
     "Description": {
       "Encrypting with Messaging Layer Security (MLS)": [
-        "Cifrando con Messaging Layer Security (MLS)"
+        "正在使用消息层安全协议（MLS）进行加密"
       ],
       "Rotating group encryption key for best security": [
-        "Rotando la clave de cifrado del grupo para mejor seguridad"
+        "正在轮换群组加密密钥以实现最佳安全性"
       ],
       "Try a different name.": [
-        "Pruebe un nombre diferente."
+        "请尝试其他名称！"
       ],
       "You'll see people here when they join the meeting.": [
-        "Verá personas aquí cuando se unan a la reunión."
+        "参与者加入会议后将在此显示！"
       ]
     },
     "Display name": {
       "Loading…": [
-        "Cargando…"
+        "正在加载…"
       ]
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contacto de confianza"
+        "已信任联系人"
       ]
     },
     "Error": {
       "Domain not available, try again later": [
-        "Dominio no disponible, inténtelo más tarde"
+        "域名不可用，请稍后再试"
       ],
       "Email is not valid": [
-        "Correo no válido"
+        "无效邮箱"
       ],
       "Enter 6 digits": [
-        "Ingrese 6 dígitos"
+        "请输入 6 位验证码"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
+        "请输入您的用户名（不含 @example.com 域名）"
       ],
       "Event deleted": [
-        "Evento eliminado"
+        "日程已删除"
       ],
       "Failed to assign host": [
-        "Error al asignar anfitrión"
+        "指定主持人失败"
       ],
       "Failed to create meeting": [
-        "Error al crear la reunión"
+        "无法创建会议"
       ],
       "Failed to create personal meeting, please refresh the page": [
-        "Error al crear la reunión personal, actualice la página"
+        "创建个人会议失败，请刷新页面"
       ],
       "Failed to decrypt session key": [
-        "Error al descifrar la clave de sesión"
+        "解密会话密钥失败"
       ],
       "Failed to delete event": [
-        "Error al eliminar el evento"
+        "删除日程失败"
       ],
       "Failed to delete recording": [
-        "Error al eliminar la grabación"
+        "删除录制失败"
       ],
       "Failed to delete room": [
-        "Error al eliminar la sala"
+        "删除会议室失败"
       ],
       "Failed to download recording": [
-        "Error al descargar grabaciones"
+        "下载录制失败"
       ],
       "Failed to edit room name": [
-        "Error al editar el nombre de la sala"
+        "编辑会议室名称失败"
       ],
       "Failed to join meeting. Please try again later.": [
-        "Error al unirse a la reunión. Intente de nuevo más tarde."
+        "加入会议失败，请稍后重试。"
       ],
       "Failed to join meeting. Please try again.": [
-        "Error al unirse a la reunión. Intente de nuevo."
+        "加入会议失败，请重试。"
       ],
       "Failed to lock meeting": [
-        "Error al bloquear la reunión"
+        "锁定会议失败"
       ],
       "Failed to rotate personal meeting link": [
-        "Error al rotar el enlace de reunión personal"
+        "轮换个人会议链接失败"
       ],
       "Failed to send chat message. Please try again.": [
-        "Error al enviar el mensaje de chat. Intente de nuevo."
+        "发送聊天消息失败，请重试。"
       ],
       "Failed to send emoji reaction. Please try again.": [
-        "Error al enviar la reacción de emoji. Inténtelo de nuevo."
+        "发送表情回复失败，请重试。"
       ],
       "Failed to send reaction. Please try again.": [
-        "Error al enviar la reacción. Inténtelo de nuevo."
+        "发送回复失败，请重试。"
       ],
       "Failed to start meeting. Please try again.": [
-        "Error al iniciar la reunión. Intente de nuevo."
+        "开始会议失败，请重试。"
       ],
       "Failed to start recording": [
-        "Error al iniciar la grabación"
+        "开始录制失败"
       ],
       "Failed to start screen share": [
-        "Error al comenzar compartir la pantalla"
+        "开始屏幕共享失败"
       ],
       "Failed to unlock meeting": [
-        "Error al desbloquear la reunión"
+        "解锁会议失败"
       ],
       "Incorrect username": [
-        "Nombre de usuario incorrecto"
+        "用户名不正确"
       ],
       "Invalid meeting link": [
-        "Enlace de reunión no válido"
+        "无效的会议链接"
       ],
       "Invalid passphrase": [
-        "Frase de contraseña inválida"
+        "密码无效"
       ],
       "Invalid verification code": [
-        "Código de verificación inválido"
+        "验证码无效"
       ],
       "Not a valid number": [
-        "Número no válido"
+        "无效号码"
       ],
       "Passwords do not match": [
-        "Las contraseñas no coinciden"
+        "密码不匹配"
       ],
       "Please allow screen sharing in your system permissions, then try again": [
-        "Permita compartir la pantalla en los permisos de su sistema y luego inténtelo de nuevo."
+        "请在系统权限中允许屏幕共享，然后重试"
       ],
       "Request timed out": [
-        "Tiempo de espera agotado"
+        "请求超时"
       ],
       "Room deleted": [
-        "Sala eliminada"
+        "会议室已删除"
       ],
       "Screen share is not supported on mobile browsers": [
-        "Compartir pantalla no se admite en navegadores móviles"
+        "移动浏览器不支持屏幕共享"
       ],
       "Signature verification failed": [
-        "Error en la verificación de la firma"
+        "签名验证失败"
       ],
       "The email addresses do not match": [
-        "Las direcciónes de correo electrónico no son las mismas"
+        "邮箱地址不一致"
       ],
       "The meeting password is incorrect": [
-        "La contraseña de la reunión es incorrecta"
+        "会议密码错误"
       ],
       "The meeting password is invalid": [
-        "La contraseña de la reunión no es válida"
+        "会议密码无效"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
       "This field is required": [
-        "Este campo es obligatorio"
+        "此项必须填写"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+        "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
-        "Esta reunión es de una versión anterior, el anfitrión debe finalizarla y actualizar Meet para reiniciar con la última versión."
+        "此会议使用的是旧版本，主持人必须结束会议并刷新 Meet 以使用最新版本重新开始。"
       ],
       "Try using only letters, numerals, and _.-": [
-        "Intente usando solo letras, números y _.-"
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
-        "Error desconocido"
+        "未知错误"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o dígito"
+        "用户名必须以字母或数字开头"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o dígito"
+        "用户名必须以字母或数字结尾"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
-        "Su navegador se quedó sin espacio de almacenamiento. Se guardó la grabación hasta este momento."
+        "您的浏览器存储空间已满，我们已保存截至目前的录制。"
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
-        "Parece que la hora de su dispositivo está desincronizada. Revísela e intente de nuevo."
+        "您的设备时钟似乎不同步。请检查您的系统时间并重试。"
       ]
     },
     "Error message": {
       "App currently unavailable": [
-        "La aplicación no está disponible actualmente."
+        "应用当前不可用"
       ],
       "Error: ${ errorMessage }": [
-        "Error: ${ errorMessage }"
+        "错误：${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Hubo un problema"
+        "糟糕，出错了"
       ],
       "Open in browser": [
-        "Abrir en el navegador"
+        "在浏览器中打开"
       ],
       "Please refresh the page or try again later.": [
-        "Actualice la página o intente nuevamente."
+        "请刷新页面或稍后重试。"
       ],
       "Something went wrong": [
-        "Hubo un problema"
+        "出错了"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
+        "要使用 ${ MAIL_APP_NAME } 或 ${ CALENDAR_APP_NAME }，请切换到网页版本。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
+        "页面加载失败，请刷新或检查网络连接。"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Ninguna imagen seleccionada"
+        "没有选择图像"
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "使用安全密钥认证时出现问题，请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con la cuenta de ${ BRAND_NAME }."
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
       "Security key": [
-        "Clave de seguridad"
+        "安全密钥"
       ],
       "Touch your security key.": [
-        "Toque su llave de seguridad."
+        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clave de seguridad"
+        "安全密钥"
       ]
     },
     "file size format": {
       "byte": [
-        "byte",
-        "bytes"
+        "B"
       ],
       "GB": [
         "GB"
@@ -1983,87 +1980,82 @@
     },
     "file size format, long": {
       "Byte": [
-        "Byte",
-        "Bytes"
+        "B"
       ],
       "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
+        "GB"
       ],
       "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
+        "KB"
       ],
       "Megabyte": [
-        "Megabyte",
-        "Megabytes"
+        "MB"
       ],
       "Terabyte": [
-        "Terabyte",
-        "Terabytes"
+        "TB"
       ]
     },
     "Font face option": {
       "System default": [
-        "Predeterminado del sistema"
+        "跟随系统"
       ],
       "Theme font": [
-        "Fuente del tema"
+        "跟随配色"
       ]
     },
     "Font size option": {
       "Large": [
-        "Grande"
+        "大"
       ],
       "Medium (recommended)": [
-        "Mediana (recomendada)"
+        "中等（推荐）"
       ],
       "Small": [
-        "Pequeña"
+        "小"
       ],
       "Very large": [
-        "Muy grande"
+        "极大"
       ],
       "Very small": [
-        "Muy pequeña"
+        "极小"
       ]
     },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
-        "¿Ya tiene una cuenta? ${ signIn }"
+        "已经有账户了？${ signIn }"
       ]
     },
     "Group": {
       "Account": [
-        "Cuenta"
+        "账户"
       ],
       "Apps": [
-        "Aplicaciones"
+        "应用"
       ],
       "Network": [
-        "Red"
+        "网络"
       ],
       "Other category": [
-        "Otra categoría"
+        "其他类别"
       ],
       "Services": [
-        "Servicios"
+        "服务"
       ]
     },
     "Header": {
       "Protect your conversations with end-to-end encryption": [
-        "Proteja sus conversaciones con cifrado de extremo a extremo"
+        "通过端到端加密保护您的对话"
       ]
     },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
-        "${ createAnActionAction } o ${ signInAction } para acceder a su sala personal y crear más salas"
+        "${ createAnActionAction } 或 ${ signInAction } 以访问您的个人会议室并创建新的会议室"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
-        "${ createAnActionAction } o ${ signInAction } para programar reuniones"
+        "${ createAnActionAction } 或 ${ signInAction } 以安排会议"
       ],
       "Talk in total ${ privacyWord }": [
-        "Hable en total ${ privacyWord }"
+        "以 ${ privacyWord } 方式进行全程对话"
       ]
     },
     "Human verification method": {
@@ -2071,1563 +2063,1557 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Correo"
+        "邮箱验证"
       ],
       "Manual": [
-        "Manual"
+        "人工验证"
       ],
       "No verification method available": [
-        "No hay un método de verificación disponible"
+        "没有可用的验证方法"
       ],
       "SMS": [
-        "SMS"
+        "短信验证"
       ]
     },
     "Info": {
       " and ": [
-        " y "
+        "和"
       ],
       "${ maxParticipants } participant limit reached": [
-        "Se alcanzó el límite de ${ maxParticipants } participantes"
+        "已达到 ${ maxParticipants } 名参与者上限"
       ],
       "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
-        "${ MEET_APP_NAME } necesita acceso para que otros puedan escucharle durante la llamada. Puede activar o desactivar la cámara o micrófono en cualquier momento."
+        "${ MEET_APP_NAME } 需要获取访问权限，以便通话时其他人可以看到和听到您的声音。您可以随时关闭摄像头或麦克风。"
       ],
       "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceder a la cámara para que otros puedan verle durante la llamada. Puede desactivarla en cualquier momento."
+        "${ MEET_APP_NAME } 需要获取摄像头权限，以便通话时其他人可以看到您。您可以随时将其关闭。"
       ],
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceder a su micrófono para que otros vuedan escucharle durante la llamada. Puede desactivarla en cualquier momento."
+        "${ MEET_APP_NAME } 需要获取麦克风权限，以便通话时其他人可以听到您的声音。您可以随时将其关闭。"
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
+        "${ MEET_APP_NAME } 需要 WebRTC 才能运行。请将您的浏览器或设备更新到支持 WebRTC 的版本，或尝试其他浏览器，或禁用可能阻止它的任何扩展程序。"
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
-        "${ participantName } y ${ otherParticipantsCount } más están grabando"
+        "${ participantName } 和其他 ${ otherParticipantsCount } 人正在录制"
       ],
       "${ participantName } is recording": [
-        "${ participantName } está grabando"
+        "${ participantName } 正在录制"
       ],
       "${ presenterName } (you) is presenting": [
-        "${ presenterName } (usted) está presentando"
+        "${ presenterName } (您) 正在共享屏幕"
       ],
       "${ presenterName } is presenting": [
-        "${ presenterName } está presentando"
+        "${ presenterName } 正在共享屏幕"
       ],
       "${ reactorNames } and others reacted with ${ emoji }": [
-        "${ reactorNames } y otras personas han reaccionado con ${ emoji }"
+        "${ reactorNames } 及其他用户对 ${ emoji } 表情做出了回应"
       ],
       "${ reactorNames } reacted with ${ emoji }": [
-        "${ reactorNames } reaccionó con ${ emoji }"
+        "${ reactorNames } 对 ${ emoji } 表情做出了回应"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
-        "${ totalParticipantCount } de un máximo de ${ maxParticipants } participantes"
+        "${ totalParticipantCount } / ${ maxParticipants } 名参与者"
       ],
       "${ totalParticipantCount } participant": [
-        "${ totalParticipantCount } participante",
-        "${ totalParticipantCount } participantes"
+        "${ totalParticipantCount } 名参与者"
       ],
       "(You)": [
-        "(Usted)"
+        "(您)"
       ],
       "-Removed dangerous URL-": [
-        "-Se eliminó una URL peligrosa-"
+        "-已移除危险网址-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Modo avanzado: ajuste cada constante de difuminado para la siguiente versión y luego pulse en Aplicar para reconstruir la vista previa. Las anulaciones tienen prioridad sobre los valores de archivo y de Liberar."
+        "高级模式：调整下一版本中的每个模糊常量，然后点击“应用”以重建预览。覆盖优先级高于文件和 Unleash 值。"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
-        "Anónimo ${ particle } ${ participantNumber }"
+        "匿名 ${ particle } ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
-        "¿En verdad desea salir?"
+        "您确定要离开吗？"
       ],
       "Are you sure you want to stop recording?": [
-        "¿En verdad desea detener la grabación?"
+        "您确定要停止录制吗？"
       ],
       "Attention required": [
-        "Atención requerida"
+        "需要关注"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
+        "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "Al continuar en la reunión, usted reconoce y consiente que se le grabe."
+        "继续参加会议即表示您知晓并同意被录制"
       ],
       "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
-        "Al unirse, acepta nuestros ${ termsLink } y ${ privacyLink }."
+        "加入即表示您同意我们的 ${ termsLink } 和 ${ privacyLink }"
       ],
       "camera": [
-        "cámara"
+        "摄像头"
       ],
       "Camera permission denied": [
-        "Permiso de cámara denegado"
+        "摄像头权限被拒绝"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
-        "Los cambios se realizan por fases. Aplique para reconstruir la vista previa con las constantes nuevas."
+        "更改已暂存，应用以使用新常量重建预览。"
       ],
       "Chat with everyone": [
-        "Chatear con todos"
+        "与所有人聊天"
       ],
       "Check your system settings to make sure that a camera is available.": [
-        "Verifique los ajustes del sistema y asegúrese que una cámara está disponible."
+        "请检查您的系统设置，确保摄像头已启用。"
       ],
       "Check your system settings to make sure that a microphone is available.": [
-        "Verifique los ajustes del sistema y asegúrese que un micrófono está disponible."
+        "请检查您的系统设置，确保麦克风可用。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
+        "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
       "Coming soon": [
-        "Próximamente"
+        "即将推出"
       ],
       "Connection failed": [
-        "Error de conexión"
+        "连接失败"
       ],
       "Connection interrupted. Reconnecting...": [
-        "Conexión interrumpida. Reconectando..."
+        "连接中断，正在重新连接..."
       ],
       "Connection issue detected. Attempting to recover…": [
-        "Problema de conexión detectado. Intentando recuperar…"
+        "检测到连接问题，正在尝试恢复…"
       ],
       "Connection lost. Reconnecting…": [
-        "Conexión perdida. Reconectando…"
+        "连接断开，正在重连…"
       ],
       "Copied to clipboard": [
-        "Copiado al portapapeles"
+        "已复制到剪贴板"
       ],
       "Could not access the camera.": [
-        "No se pudo acceder a la cámara."
+        "无法访问摄像头"
       ],
       "Could not start recording.": [
-        "No se pudo iniciar la grabación."
+        "无法开始录制"
       ],
       "Country code": [
-        "Código de país"
+        "国家/地区代码"
       ],
       "Create an account": [
-        "Cree una cuenta"
+        "创建账户"
       ],
       "Create an account to host meetings with up to 50 participants.": [
-        "Cree una cuenta para organizar reuniones con hasta 50 participantes."
+        "创建账户即可主持最多容纳 50 名参与者的会议。"
       ],
       "Created on ${ formattedDate }": [
-        "Creada el ${ formattedDate }"
+        "创建于 ${ formattedDate }"
       ],
       "Custom combination": [
-        "Combinación personalizada"
+        "自定义组合"
       ],
       "Decrypting meetings...": [
-        "Descifrando las reuniones..."
+        "正在解密会议..."
       ],
       "Default - ${ systemDefault.label }": [
-        "Por defecto - ${ systemDefault.label }"
+        "默认 - ${ systemDefault.label }"
       ],
       "Default - System Default": [
-        "Por defecto - por defecto del sistema"
+        "默认 - 系统默认"
       ],
       "Delete event": [
-        "Eliminar evento"
+        "删除日程"
       ],
       "Delete room": [
-        "Eliminar sala"
+        "删除会议室"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "¿Desea que la gente le ${ deviceContentType } en la reunión?"
+        "您是否允许他人在会议中向您 ${ deviceContentType }？"
       ],
       "Download current logs": [
-        "Descargar registros actuales"
+        "下载当前日志"
       ],
       "Each code can only be used once": [
-        "Cada código solo puede usarse una vez"
+        "每个恢复码只能使用一次"
       ],
       "Edit email address": [
-        "Editar dirección de correo"
+        "编辑邮箱地址"
       ],
       "End Meeting for everyone?": [
-        "¿Finalizar reunión para todos?"
+        "结束全体会议？"
       ],
       "End the meeting for everyone?": [
-        "¿Finalizar la reunión para todos?"
+        "结束全体会议？"
       ],
       "End-to-end encryption is active for audio and video.": [
-        "El cifrado de extremo a extremo está activo audio y video."
+        "音频和视频已启用端到端加密"
       ],
       "End-to-end encryption is active for screen share": [
-        "El cifrado de extremo a extremo está activo para compartir pantalla"
+        "屏幕共享已启用端到端加密"
       ],
       "End-to-end encryption is active for this chat.": [
-        "El cifrado de extremo a extremo está activo para este chat."
+        "此聊天已启用端到端加密"
       ],
       "Enter code": [
-        "Ingresar código"
+        "输入代码"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación."
+        "请输入身份验证应用中的验证码"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Ingrese el código de verificación que fue enviado a ${ destinationText }."
+        "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your own password (as organization admin).": [
-        "Ingrese su propia contraseña (como administrador de la organización)."
+        "请输入您自己的密码（作为组织管理员）。"
       ],
       "Enter your own password (as trusted contact).": [
-        "Ingrese su propia contraseña (como contacto de confianza)."
+        "输入您自己的密码（作为可信联系人）"
       ],
       "Everyone has been disconnected from the call.": [
-        "Todos se han desconectado de la llamada."
+        "所有人都已断开通话连接。"
       ],
       "Failed to apply background blur": [
-        "Error al aplicar el fondo difuminado"
+        "应用背景模糊失败"
       ],
       "Failed to update meeting name": [
-        "Error al actualizar el nombre de la reunión"
+        "更新会议名称失败"
       ],
       "Failed to update meeting password": [
-        "Error al actualizar la contraseña de la reunión"
+        "更新会议密码失败"
       ],
       "Failed to update meeting schedule": [
-        "Error al actualizar el horario de la reunión"
+        "更新会议计划失败"
       ],
       "Free meeting": [
-        "Reunión gratuita"
+        "免费会议"
       ],
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
-        "Las reuniones gratuitas están limitadas a 1 hora. Esta llamada se desconectará pronto."
+        "免费会议时长限制为 1 小时，本次通话即将断开。"
       ],
       "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
-        "Consiga su propia sala de reuniones. Cree una cuenta para tener un enlace personal que podrá usar en cualquier momento."
+        "获取个人会议室，创建账户即可获得一个可随时使用的个人会议链接。"
       ],
       "Get a secure meeting link then add it to your calendar": [
-        "Obtenga un enlace de reunión seguro y luego añádalo a su calendario"
+        "获取安全的会议链接，然后将其添加到您的日历"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
-        "Obtenga la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
+        "通过 ${ protonMeet } 桌面应用获得最佳体验"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Vaya a about:config, busque media.peerconnection.enabled y actívelo."
+        "请前往 about:config，搜索 media.peerconnection.enabled，并将其设置为 true"
       ],
       "Host": [
-        "Anfitrión"
+        "主持人"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Organice sus propias reuniones seguras. Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para invitar a quien quiera. Fácil, seguro y gratuito."
+        "主持您自己的安全会议！在 ${ MEET_APP_NAME } 中发起通话，分享链接即可邀请任何人加入。简单、安全且免费。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
+        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
+        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Si está usando Firefox, asegúrese de que PeerConnection está activado."
+        "如果您正在使用 Firefox，请确保已启用 PeerConnection。"
       ],
       "Internet connection lost": [
-        "Sin conexión a Internet"
+        "网络连接已断开"
       ],
       "Joined ${ roomNameLabel }": [
-        "Se unió a ${ roomNameLabel }"
+        "已加入 ${ roomNameLabel }"
       ],
       "Learn more": [
-        "Más información"
+        "了解详情"
       ],
       "Leave meeting and stop sharing?": [
-        "¿Salir de la reunión y dejar de compartir?"
+        "离开会议并停止共享？"
       ],
       "Leaving the meeting will stop your screen sharing.": [
-        "Al abandonar la reunión detendrá el uso compartido de su pantalla."
+        "离开会议将停止您的屏幕共享！"
       ],
       "Left ${ roomNameLabel }": [
-        "Salió de ${ roomNameLabel }"
+        "已离开 ${ roomNameLabel }"
       ],
       "Left by mistake?": [
-        "¿Salió por error?"
+        "不小心留在这里？"
       ],
       "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
+        "链接已复制到剪贴板"
       ],
       "Loading": [
-        "Cargando"
+        "加载中"
       ],
       "Loading ${ appName }": [
-        "Cargando ${ appName }"
+        "正在加载 ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
+        "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
       ],
       "Loading meetings...": [
-        "Cargando reuniones..."
+        "正在加载会议..."
       ],
       "Loading recordings…": [
-        "Cargando grabaciones…"
+        "正在加载录制内容…"
       ],
       "Loading...": [
-        "Cargando..."
+        "加载中..."
       ],
       "Loading…": [
-        "Cargando…"
+        "正在加载…"
       ],
       "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Reproduzca en bucle un video cargado o su cámara en directo a través de ambas versiones con fondo difuminado, una al lado de la otra."
+        "循环播放上传的视频或实时摄像头画面，并排显示两种背景模糊版本。"
       ],
       "Lower participant's hand": [
-        "Bajar la mano del participante"
+        "降低参与者的举手状态"
       ],
       "Meet without restrictions": [
-        "Reúnase sin restricciones"
+        "无限制使用 Meet"
       ],
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
-        "Reuniones sin restricciones. Actualice a un plan superior para quitar el límite de 1 hora y reunir hasta a 100 participantes."
+        "无限制地开会，升级以解除 1 小时限制并主持最多容纳 100 名参与者的会议。"
       ],
       "Meeting ended": [
-        "Reunión finalizada"
+        "会议已结束"
       ],
       "Meeting full (${ maxParticipants } participants)": [
-        "Reunión llena (${ maxParticipants } participantes)"
+        "会议已满 (${ maxParticipants } 名参与者)"
       ],
       "Meeting is decrypting...": [
-        "Descifrando la reunión..."
+        "会议正在解密..."
       ],
       "Meeting link": [
-        "Enlace de la reunión"
+        "会议链接"
       ],
       "Meeting locked. No new participants can join.": [
-        "Reunión bloqueada. No pueden unirse participantes nuevos."
+        "会议已锁定，新参与者无法加入。"
       ],
       "Meeting recordings aren’t supported in Firefox.": [
-        "Firefox no admite la grabación de reuniones."
+        "Firefox 不支持录制会议"
       ],
       "Meeting time is up": [
-        "Se agotó el tiempo de reunión"
+        "会议时间已到"
       ],
       "Meeting unlocked. Participants can join again.": [
-        "Reunión desbloqueada. Los participantes pueden unirse de nuevo."
+        "会议已解锁，参与者可以重新加入"
       ],
       "Meeting will end in ${ timeLeft }": [
-        "La reunión terminará en ${ timeLeft }"
+        "会议将在 ${ timeLeft } 后结束"
       ],
       "Member": [
-        "Miembro"
+        "成员"
       ],
       "Message from ${ participantName }": [
-        "Mensaje de ${ participantName }"
+        "来自 ${ participantName } 的消息"
       ],
       "microphone": [
-        "micrófono"
+        "麦克风"
       ],
       "Microphone effects": [
-        "Efectos de micrófono"
+        "麦克风效果"
       ],
       "Microphone permission denied": [
-        "Permiso de micrófono denegado"
+        "麦克风权限被拒绝"
       ],
       "Mute microphone": [
-        "Silenciar micrófono"
+        "麦克风静音"
       ],
       "My meetings": [
-        "Mis reuniones"
+        "我的会议"
       ],
       "My rooms": [
-        "Mis salas"
+        "我的会议室"
       ],
       "New": [
-        "Nuevo"
+        "新"
       ],
       "New host": [
-        "Nuevo anfitrión"
+        "新主持人"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
-        "No se detectaron un ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+        "未检测到 ${ microphoneLinkButton }${ andString }${ cameraLinkButton }"
       ],
       "No camera detected": [
-        "No se detectó una cámara"
+        "未检测到摄像头"
       ],
       "No camera detected.": [
-        "No se detectó una cámara."
+        "未检测到摄像头"
       ],
       "No microphone detected": [
-        "Ningún micrófono detectado"
+        "未检测到麦克风"
       ],
       "No microphone detected.": [
-        "Ningún micrófono detectado."
+        "未检测到麦克风"
       ],
       "No publications": [
-        "Sin publicaciones"
+        "无发布内容"
       ],
       "No recordings found on this device.": [
-        "No se encontraron grabaciones en este dispositivo."
+        "此设备上未找到录制"
       ],
       "No remote participants": [
-        "No hay participantes remotos"
+        "无远程参与者"
       ],
       "No results found": [
-        "No se encontraron resultados"
+        "未找到结果"
       ],
       "No search results": [
-        "No hay resultados de búsqueda"
+        "无搜索结果"
       ],
       "No speaker detected": [
-        "Ningún altavoz detectado"
+        "未检测到扬声器"
       ],
       "Only meetings you created appear here": [
-        "Aquí solo aparecen las reuniones que ha creado usted"
+        "此处仅显示您创建的会议"
       ],
       "Open external link": [
-        "Abrir enlace externo"
+        "打开外部链接"
       ],
       "Other accounts": [
-        "Otras cuentas"
+        "其他账户"
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
-        "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y fomentan la verdadera libertad de expresión."
+        "我们的端到端加密会议保护隐私，支持真正的自由表达"
       ],
       "Page ${ displayPage } of ${ totalPages }": [
-        "Página ${ displayPage } de ${ totalPages }"
+        "第 ${ displayPage } 页，共 ${ totalPages } 页"
       ],
       "Participant": [
-        "Participante"
+        "参与者"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
-        "Pegue su enlace de ${ MEET_APP_NAME } para unirse a una reunión segura"
+        "粘贴您的 ${ MEET_APP_NAME } 链接以加入安全会议"
       ],
       "Permissions not given.": [
-        "Permisos no otorgados."
+        "未授予权限"
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
-        "Active el acceso a su ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para una mejor experiencia."
+        "请启用对 ${ microphoneLinkButton }${ andString }${ cameraLinkButton } 的访问权限，以获得最佳体验。"
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
-        "Ingrese la frase contraseña para descifrar y visualizar esta reunión"
+        "请输入密码以解密并查看此会议"
       ],
       "Please try again or try another browser": [
-        "Inténtelo de nuevo o pruebe con otro navegador"
+        "请重试或尝试其他浏览器"
       ],
       "Poor connection": [
-        "Conexión débil"
+        "连接质量差"
       ],
       "Premium meeting": [
-        "Reunión premium"
+        "高级会议"
       ],
       "Presenting": [
-        "Presentando"
+        "正在演示"
       ],
       "privacy": [
-        "privacidad"
+        "私密"
       ],
       "Quick reactions": [
-        "Reacciones rápidas"
+        "快速回应"
       ],
       "Reactions": [
-        "Reacciones"
+        "回应"
       ],
       "Reconnected successfully": [
-        "Reconectada con éxito"
+        "已成功重新连接"
       ],
       "Reconnecting to meeting...": [
-        "Reconectando la reunión..."
+        "正在重新连接会议..."
       ],
       "Record your meetings": [
-        "Grabe sus reuniones"
+        "录制您的会议"
       ],
       "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
-        "Grabe la señal de video original de su cámara y el fondo difuminado de la producción simultáneamente. Al detener la descarga, se detendrán ambos clips."
+        "并排录制原始摄像头画面和成品背景模糊效果，停止录制会同时下载两个片段。"
       ],
       "Recording": [
-        "Grabando"
+        "正在录制"
       ],
       "Recording deleted": [
-        "Grabación eliminada"
+        "录制已删除"
       ],
       "Recording in progress": [
-        "Grabación en curso"
+        "正在录制"
       ],
       "Recording will begin and attendees will be notified.": [
-        "La grabación comenzará y se notificará a los invitados."
+        "录制即将开始，参与者将会收到通知。"
       ],
       "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
-        "Las grabaciones se almacenan localmente en su navegador. Descargue cualquiera que desee mantener, se eliminarán automáticamente después de 30 días."
+        "录制存储在浏览器的本地。请下载您想要保留的录制，它们会在 30 天后自动删除。"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
+        "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
       ],
       "Refresh audio and video tracks": [
-        "Actualizar pistas de audio y video"
+        "刷新音视频轨道"
       ],
       "Refresh screen share track": [
-        "Actualizar la señal de la pantalla compartida"
+        "刷新屏幕共享画面"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+        "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
-        "Programe su próxima reunión. Cree una cuenta para programar reuniones con su calendario."
+        "安排您的下一次会议，创建账户即可通过日历安排会议。"
       ],
       "Select a camera": [
-        "Seleccionar una cámara"
+        "选择摄像头"
       ],
       "Select a microphone": [
-        "Seleccionar un micrófono"
+        "选择麦克风"
       ],
       "Select a participant to assign as the new host before you go: ": [
-        "Seleccione un participante para asignarlo como el nuevo anfitrión antes de irse: "
+        "在离开前，请选择一名参与者指定为新的主持人："
       ],
       "Select a speaker": [
-        "Seleccionar un altavoz"
+        "选择扬声器"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
+        "服务器无法访问，请过几分钟后再试"
       ],
       "Session timed out": [
-        "Sesión agotada"
+        "会话超时"
       ],
       "Set up a permanent meeting room for your team or clients": [
-        "Configure una sala de reunión permanente para su equipo o clientes"
+        "为您的团队或客户设置一个永久会议室"
       ],
       "Share screen": [
-        "Compartir pantalla"
+        "共享屏幕"
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Comparta este enlace para invitar a otros. También puede encontrarlo en cualquier momento haciendo clic en el ícono de información en la barra de herramientas."
+        "分享此链接以邀请他人，您也可以随时点击工具栏中的信息图标找到它。"
       ],
       "Sign in": [
-        "Inicie sesión"
+        "登录"
       ],
       "Sort by": [
-        "Ordenar por"
+        "排序方式"
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
-        "La selección de altavoz no está disponible en este navegador. Use los ajustes de su sistema para elegir un altavoz diferente."
+        "此浏览器不支持扬声器选择，请使用系统设置选择其他扬声器。"
       ],
       "Start recording": [
-        "Iniciar grabación"
+        "开始录制"
       ],
       "Starting camera…": [
-        "Iniciando la cámara…"
+        "正在启动摄像头…"
       ],
       "Stop sharing your screen": [
-        "Dejar de compartir la pantalla"
+        "停止共享您的屏幕"
       ],
       "Successfully deleted meeting": [
-        "Reunión eliminada con éxito"
+        "会议已成功删除"
       ],
       "Thank you for hosting a premium meeting.": [
-        "Gracias por organizar una reunión premium."
+        "感谢主持高级会议！"
       ],
       "Thank you for joining.": [
-        "Gracias por unirse."
+        "感谢加入！"
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
-        "El anfitrión le ha retirado de esta reunión. Si fue un error, solicite que vuelva a invitarle."
+        "会议主持已将您移出本次会议。若该操作有误，请联系会议主持以再次邀请您。"
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Este enlace de reunión que intentó abrir no existe o expiró. Asegúrese de que el enlace sea correcto, o inicie una reunión segura nueva."
+        "您尝试打开的会议链接不存在或已过期。请确认链接正确，或开始新的安全会议。"
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
-        "Este es un chat cifrado de extremo a extremo con mensajes efímeros, que desaparecen al final de la llamada."
+        "这是一个端到端加密的聊天，消息为临时性质，通话结束后将自动消失。"
       ],
       "This meeting is being recorded": [
-        "Esta reunión está siendo grabada"
+        "此会议正在被录制"
       ],
       "This meeting is locked. Please contact the host to join.": [
-        "Esta reunión está bloqueada. Contacte con el anfitrión para unirse."
+        "此会议已锁定，请联系主持人以加入。"
       ],
       "This meeting is password protected": [
-        "Esta reunión está protegida con contraseña"
+        "此会议受密码保护"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
-        "Esta reunión alcanzó el límite de tiempo del plan gratuito. Actualice para extender el tiempo de reunión en futuras llamadas."
+        "此会议已达到免费套餐的时长限制，请升级以在未来的通话中延长会议时长。"
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
+        "此会议已在 ${ MEET_APP_NAME } 桌面应用中打开"
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
-        "Esta grabación será eliminada permanentemente de este dispositivo. Esta acción no se puede deshacer."
+        "此录制将从本设备中永久删除，此操作无法撤销。"
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
-        "Esto finalizará la reunión para todos los participantes y detendrá el uso compartido de su pantalla."
+        "这将结束所有参与者的会议并停止您的屏幕共享！"
       ],
       "This will end the meeting for all participants.": [
-        "Esto finalizará la reunión a todos los participantes."
+        "这将为所有参与者结束会议"
       ],
       "This will sign you out of all accounts currently logged in.": [
-        "Esto cerrará la sesión de todas las cuentas con la sesión activa."
+        "此操作将退出当前登录的所有账户。"
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
-        "Para crear una sala, necesitará **una Cuenta ${ BRAND_NAME } gratuita** para que podamos guardar la sala. Esto solo toma unos segundos."
+        "要创建会议室，您需要**一个免费的 ${ BRAND_NAME } 账户**，以便我们保存该会议室。这仅需几秒钟。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para luchar contra el spam y el abuso, verifique que es humano."
+        "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
-        "Para programar un evento, necesitará **una cuenta gratuita de ${ BRAND_NAME }** para que podamos guardar el evento. Esto solo toma unos segundos."
+        "要安排活动，您需要**一个免费的 ${ BRAND_NAME } 账户**，以便我们保存该活动。这仅需几秒钟。"
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
-        "Para usar su sala de reuniones personal, necesitará **una cuenta gratuita de ${ BRAND_NAME }**. Esto solo toma unos segundos."
+        "要使用您的个人会议室，您需要**一个免费的 ${ BRAND_NAME } 账户**。这仅需几秒钟。"
       ],
       "Today — ${ absoluteDate }": [
-        "Hoy — ${ absoluteDate }"
+        "今天 — ${ absoluteDate }"
       ],
       "Tomorrow — ${ absoluteDate }": [
-        "Mañana — ${ absoluteDate }"
+        "明天 — ${ absoluteDate }"
       ],
       "Turn off camera": [
-        "Apagar la cámara"
+        "关闭摄像头"
       ],
       "Turn on camera": [
-        "Encender la cámara"
+        "开启摄像头"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "No se puede reconectar a la reunión. Vuelva a unirse o abandone."
+        "无法重新连接到会议，请重新加入或离开。"
       ],
       "unlimited meeting": [
-        "reuniones ilimitadas"
+        "无限制会议"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
-        "Desbloquee ${ unlimitedMeeting } y funciones premium"
+        "解锁 ${ unlimitedMeeting } 及高级功能"
       ],
       "Unmute microphone": [
-        "Activar micrófono"
+        "取消麦克风静音"
       ],
       "Upgrade to record your meetings locally.": [
-        "Actualice para grabar sus reuniones localmente."
+        "升级以在本地录制您的会议。"
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
-        "Mejore su plan para eliminar el límite de 1 hora y omitir la cuenta atrás. Disfrute de reuniones de hasta 24 horas."
+        "升级可移除 1 小时限制并跳过倒计时，享受长达 24 小时的会议。"
       ],
       "Video effects": [
-        "Efectos de video"
+        "视频效果"
       ],
       "Warning": [
-        "Advertencia"
+        "注意"
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Enviaremos un código de verificación nuevo a ${ strong }"
+        "我们将向 ${ strong } 发送新的验证码"
       ],
       "Week": [
-        "Semana"
+        "周"
       ],
       "Would you like to delete this event?": [
-        "¿Quiere eliminar este evento?"
+        "您确定要删除日程吗？"
       ],
       "Would you like to delete this room?": [
-        "¿Desea eliminar esta sala?"
+        "是否要删除此会议室？"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
+        "您想重新获取验证码还是更换验证方式？"
       ],
       "Would you like to receive a new verification code?": [
-        "¿Desearía recibir un código de verificación nuevo?"
+        "要重新发送验证码吗？"
       ],
       "Yesterday — ${ absoluteDate }": [
-        "Ayer — ${ absoluteDate }"
+        "昨天 — ${ absoluteDate }"
       ],
       "You are almost there": [
-        "Ya casi terminamos"
+        "快要完成了"
       ],
       "You can close this tab.": [
-        "Puede cerrar esta pestaña."
+        "您可以关闭此标签页"
       ],
       "You can now return to the application to continue": [
-        "Ahora puede regresar a la aplicación para continuar."
+        "您现在可以返回到应用程序以继续"
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
-        "Aún puede apagar su micrófono y cámara en cualquier momento de la reunión"
+        "您仍可以在会议中随时关闭麦克风和摄像头"
       ],
       "You left the meeting": [
-        "Abandonó la reunión"
+        "您已离开会议"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
-        "Esta función requiere un plan de pago de ${ MEET_SHORT_APP_NAME } o Workspace. Contacte con la administración de su organización para mejorar el plan."
+        "您需要付费的 ${ MEET_SHORT_APP_NAME } 或 Workspace 套餐才能使用此功能。请联系您的组织管理员进行升级。"
       ],
       "You were removed from the meeting": [
-        "Se le retiró de la reunión"
+        "您已被移出会议"
       ],
       "You will leave the meeting. Others will continue.": [
-        "Saldrá de la reunión. Los demás continuarán."
+        "您将离开会议，其他参与者将继续。"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
-        "Se le invitó unirse a una reunión segura. Confirme su nombre y pulse abajo para ingresar."
+        "您已被邀请加入一个安全会议，请确认您的姓名并点击下方进入。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "La cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en el buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
+        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your always available meeting room": [
-        "Su sala de reunión siempre disponible"
+        "您的永久可用会议室"
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su cámara y micrófono. Para activarlos, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "您的浏览器已阻止访问相机和麦克风。若要启用它们，请更新浏览器设置并重新加入通话。"
       ],
       "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su cámara. Para activarlo, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "您的浏览器已阻止访问相机。若要启用它，请更新浏览器设置并重新加入通话。"
       ],
       "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su micrófono. Para activarlo, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "您的浏览器已阻止访问麦克风。若要启用它，请更新浏览器设置并重新加入通话。"
       ],
       "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su pantalla. Para activarlo, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "您的浏览器已阻止访问屏幕共享。若要启用它，请更新浏览器设置并重新加入通话。"
       ],
       "Your browser or device isn’t supported": [
-        "Su navegador o dispositivo no está soportado"
+        "您的浏览器或设备不受支持"
       ],
       "Your email will only be used for this one-time verification.": [
-        "El correo electrónico sólo se usará para esta verificación única."
+        "您的邮箱将只会用于此一次性验证。"
       ],
       "Your meeting is ready": [
-        "Su reunión ya está lista"
+        "您的会议已准备就绪"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "El número de teléfono sólo se usará para esta verificación única."
+        "您的电话号码将只会用于此一次性验证。"
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
-        "Está por abrir un enlace en una pestaña nueva. Asegúrese de que el sitio web sea de confianza antes de continuar."
+        "您即将在新标签页中打开一个链接。请确保您信任该网站，然后再继续。"
       ]
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nombre de usuario de ${ BRAND_NAME }"
+        "${ BRAND_NAME } 用户名"
       ],
       "${ numberOfStars } star": [
-        "${ numberOfStars } estrella",
-        "${ numberOfStars } estrellas"
+        "${ numberOfStars } 星"
       ],
       "Add optional details": [
-        "Añadir detalles opcionales"
+        "添加可选详细信息"
       ],
       "Add to calendar": [
-        "Añadir al calendario"
+        "添加到日历"
       ],
       "Advanced mode": [
-        "Modo avanzado"
+        "高级模式"
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s)"
+        "截图"
       ],
       "Audio": [
-        "Audio"
+        "音频"
       ],
       "Authenticator app": [
-        "Aplicación de autenticación"
+        "身份验证应用"
       ],
       "Blurred (next)": [
-        "Difuminado (siguiente)"
+        "模糊（下一版本）"
       ],
       "Browser": [
-        "Navegador"
+        "浏览器"
       ],
       "Browser version": [
-        "Versión del navegador"
+        "浏览器版本"
       ],
       "Camera Active": [
-        "Cámara activa"
+        "摄像头已激活"
       ],
       "Category": [
-        "Categoría"
+        "类别"
       ],
       "Code is 6 digits without spaces": [
-        "El código es de 6 dígitos sin espacios"
+        "验证码是无空格的六位数"
       ],
       "Connection Quality": [
-        "Calidad de la conexión"
+        "连接质量"
       ],
       "Copy all activity events": [
-        "Copiar todos los eventos de actividad"
+        "复制所有活动事件"
       ],
       "Copy invite link": [
-        "Copiar enlace de invitación"
+        "复制邀请链接"
       ],
       "Create meeting options": [
-        "Crear opciones de la reunión"
+        "创建会议选项"
       ],
       "Created": [
-        "Creado"
+        "创建时间"
       ],
       "Current": [
-        "Actual"
+        "当前"
       ],
       "Delete": [
-        "Eliminar"
+        "删除"
       ],
       "Delete recovery-related information.": [
-        "Eliminar información de recuperación relacionada."
+        "删除恢复相关的数据"
       ],
       "Does not repeat": [
-        "No se repite"
+        "不重复"
       ],
       "Download .ics": [
-        "Descargar .ics"
+        "下载 .ics 文件"
       ],
       "Email address": [
-        "Dirección de correo"
+        "邮箱地址"
       ],
       "Emoji picker": [
-        "Selector de emojis"
+        "表情选择器"
       ],
       "Emoji reactions": [
-        "Reacciones con emojis"
+        "表情回应"
       ],
       "Enabled": [
-        "Activada"
+        "已启用"
       ],
       "Ended": [
-        "Finalizada"
+        "已结束"
       ],
       "Every day": [
-        "Diariamente"
+        "每天"
       ],
       "Every month": [
-        "Mensualmente"
+        "每月"
       ],
       "Every week": [
-        "Cada semana"
+        "每周"
       ],
       "Every weekday": [
-        "Todos los días laborables"
+        "每个工作日"
       ],
       "Every year": [
-        "Anualmente"
+        "每年"
       ],
       "Google Calendar": [
-        "Calendario de Google"
+        "Google 日历"
       ],
       "Hide password": [
-        "Ocultar contraseña"
+        "隐藏密码"
       ],
       "How was the call quality?": [
-        "¿Qué tal ha sido la calidad de la llamada?"
+        "通话质量如何？"
       ],
       "Identity": [
-        "Identidad"
+        "身份信息"
       ],
       "Include application logs in bug report": [
-        "Incluir registros de la aplicación en el informe de errores"
+        "在问题反馈中包含应用日志"
       ],
       "Last used": [
-        "Último uso"
+        "上次使用"
       ],
       "Leave meeting options": [
-        "Abandonar opciones de la reunión"
+        "离开会议选项"
       ],
       "Manage recordings": [
-        "Gestionar grabaciones"
+        "管理录制"
       ],
       "Meeting ID": [
-        "ID de la reunión"
+        "会议 ID"
       ],
       "Meeting link": [
-        "Enlace de la reunión"
+        "会议链接"
       ],
       "Message": [
-        "Mensaje"
+        "消息"
       ],
       "Microphone Active": [
-        "Micrófono activo"
+        "麦克风已激活"
       ],
       "Monday to Friday": [
-        "De lunes a viernes"
+        "周一至周五"
       ],
       "Muted": [
-        "Silenciado"
+        "已静音"
       ],
       "Name": [
-        "Nombre"
+        "名称"
       ],
       "Next": [
-        "Siguiente"
+        "下一步"
       ],
       "Operating system": [
-        "Sistema operativo"
+        "操作系统"
       ],
       "Operating system version": [
-        "Versión del sistema operativo"
+        "操作系统版本"
       ],
       "Outlook Calendar": [
-        "Calendario de Outlook"
+        "Outlook 日历"
       ],
       "Participant controls": [
-        "Controles de participante"
+        "参与者控制"
       ],
       "Passphrase": [
-        "Frase de contraseña"
+        "密码"
       ],
       "Password": [
-        "Contraseña"
+        "密码"
       ],
       "Phone number": [
-        "Número telefónico"
+        "电话号码"
       ],
       "Raw": [
-        "En bruto"
+        "原始"
       ],
       "Remember my name on this device": [
-        "Recordar mi nombre en este dispositivo"
+        "在此设备上记住我的姓名"
       ],
       "Repeat event": [
-        "Repetir el evento"
+        "重复事件"
       ],
       "Return to dashboard": [
-        "Volver al panel"
+        "返回仪表盘"
       ],
       "Reveal password": [
-        "Mostrar contraseña"
+        "显示密码"
       ],
       "Schedule meeting": [
-        "Programar reunión"
+        "安排会议"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "屏幕共享"
       ],
       "Selected Camera": [
-        "Cámara seleccionada"
+        "已选摄像头"
       ],
       "Selected Microphone": [
-        "Micrófono seleccionado"
+        "已选麦克风"
       ],
       "Selected Speaker": [
-        "Altavoz seleccionado"
+        "已选扬声器"
       ],
       "Subscribed": [
-        "Suscrito"
+        "已订阅"
       ],
       "System information": [
-        "Información del sistema"
+        "系统信息"
       ],
       "Track SID": [
-        "Seguimiento de SID"
+        "跟踪 SID"
       ],
       "Use live camera feed": [
-        "Usar transmisión de la cámara en directo"
+        "使用实时摄像头画面"
       ],
       "Use simple selfie segmentation": [
-        "Usar una segmentación sencilla para selfies"
+        "使用简单自拍分割"
       ],
       "Verification code": [
-        "Código de verificación"
+        "验证码"
       ],
       "Video": [
-        "Video"
+        "视频"
       ],
       "What happened?": [
-        "¿Qué ha ocurrido?"
+        "发生了什么？"
       ],
       "Your password (admin)": [
-        "Su contraseña (admin)"
+        "您的密码（管理员）"
       ],
       "Your password (trusted contact)": [
-        "Su contraseña (contacto de confianza)"
+        "您的密码（可信联系人）"
       ]
     },
     "Link": {
       "clearing your browser cache": [
-        "vaciar la caché del navegador"
+        "清除浏览器缓存"
       ],
       "Learn more": [
-        "Más información"
+        "了解详情"
       ],
       "privacy policy": [
-        "política de privacidad"
+        "隐私政策"
       ],
       "Request an invite": [
-        "Solicitar una invitación"
+        "申请注册"
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "登录"
       ],
       "terms and conditions": [
-        "términos y condiciones"
+        "服务条款"
       ],
       "What’s this?": [
-        "¿Qué es esto?"
+        "这是什么？"
       ]
     },
     "meet": {
       "Create and copy link": [
-        "Crear y copiar el enlace"
+        "创建并复制链接"
       ],
       "Create new room": [
-        "Crear una sala"
+        "创建新会议室"
       ],
       "Meeting rooms can be used at any time": [
-        "Las salas de reuniones pueden usarse en cualquier momento"
+        "会议室可随时使用"
       ],
       "Save and copy link": [
-        "Guardar y copiar el enlace"
+        "保存并复制链接"
       ]
     },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Su navegador o el software de su dispositivo no admite ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requiere WebAssembly (Wasm) para funcionar. Actualice su navegador o dispositivo a una versión que admita Wasm, o intente usar un navegador diferente."
+        "您的浏览器或设备软件不支持 ${ MEET_APP_NAME }。${ MEET_APP_NAME } 需要 WebAssembly (Wasm) 才能运行。请将您的浏览器或设备更新到支持 Wasm 的版本，或尝试使用其他浏览器。"
       ]
     },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
-        "Como solo usted está de participante, la reunión se cerrará automáticamente. ¿Desea mantenerse en esta reunión?"
+        "由于您是此会议的唯一参与者，会议将自动关闭。您希望留在此会议中吗？"
       ]
     },
     "meet_2025 Action": {
       "Leave meeting": [
-        "Salir de la reunión"
+        "离开会议"
       ],
       "Stay in the meeting": [
-        "Permanecer en la reunión"
+        "留在会议中"
       ]
     },
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
-        "Error al iniciar Imagen en Imagen"
+        "启动画中画失败"
       ]
     },
     "Notification": {
       "Coming soon": [
-        "Próximamente"
+        "即将推出"
       ],
       "Copied to clipboard": [
-        "Copiado al portapapeles"
+        "已复制到剪贴板"
       ],
       "Could not send feedback": [
-        "No se pudo enviar el comentario"
+        "无法发送反馈"
       ],
       "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
+        "链接已复制到剪贴板"
       ],
       "Room name updated": [
-        "Nombre de la sala actualizado"
+        "会议室名称已更新"
       ],
       "Successfully rotated your personal meeting": [
-        "Su reunión personal se rotó con éxito"
+        "已成功轮换您的个人会议"
       ],
       "You can't send a feedback for a meeting you haven't been to": [
-        "No puede enviar comentarios de una reunión a la que no ha asistido"
+        "您无法为未参加的会议发送反馈"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Algunas imágenes no se cargaron debido a archivos duplicados en la selección actual."
+        "由于当前选中的文件名重复，某些图像未上传。"
       ]
     },
     "Option": {
       "Audio was breaking up": [
-        "El audio se entrecortaba"
+        "音频卡顿"
       ],
       "I couldn't hear others": [
-        "No pude oír a los demás"
+        "我听不到其他人的声音"
       ],
       "I couldn't present ": [
-        "No pude presentar "
+        "我无法演示"
       ],
       "I couldn't see others' video": [
-        "No pude ver el video de los demás"
+        "我看不到其他人的视频"
       ],
       "I couldn't see the presentation": [
-        "No podía ver la presentación"
+        "我无法看到演示"
       ],
       "Others couldn't hear me": [
-        "No podían oírme"
+        "其他人听不到我的声音"
       ],
       "Others couldn't see my video": [
-        "Otros no pueden ver mi video"
+        "其他人看不到我的视频"
       ],
       "The presentation was blurry": [
-        "La presentación estaba borrosa"
+        "演示画面模糊"
       ],
       "Video quality was poor": [
-        "La calidad de video era deficiente"
+        "视频质量较差"
       ]
     },
     "Placeholder": {
       "A way to contact you": [
-        "Una forma de contactarle"
+        "您的联系方式"
       ],
       "E.g., ": [
-        "Ej., "
+        "例如："
       ],
       "Enter passphrase": [
-        "Ingresar la frase de contraseña"
+        "输入密码短语"
       ],
       "Enter time": [
-        "Ingresar la hora"
+        "输入时间"
       ],
       "Enter your name": [
-        "Ingrese su nombre"
+        "请输入您的姓名"
       ],
       "Find...": [
-        "Buscar..."
+        "查找…"
       ],
       "Loading...": [
-        "Cargando..."
+        "正在加载…"
       ],
       "Meeting name, e.g. team sync, project update, etc": [
-        "Nombre de la reunión, ej. sincronización de equipo, actualización de proyecto, etc."
+        "会议名称，例如：团队同步、项目更新等"
       ],
       "Password": [
-        "Contraseña"
+        "密码"
       ],
       "Please describe the problem and include any error messages": [
-        "Describa el problema e incluya cualquier mensaje de error"
+        "请说明您的问题，并附上看到的所有错误提示"
       ],
       "Room name, e.g. team sync, project update, etc": [
-        "Nombre de la sala, por ejemplo, sincronización de equipo, actualización de proyecto, etc."
+        "会议室名称，例如：团队同步、项目更新等"
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "Programar en ${ CALENDAR_APP_NAME }"
+        "在 ${ CALENDAR_APP_NAME } 中安排"
       ],
       "Search": [
-        "Buscar"
+        "搜索"
       ],
       "Select": [
-        "Seleccionar"
+        "选择"
       ],
       "Share more details": [
-        "Compartir más detalles"
+        "分享更多详情"
       ],
       "Type an encrypted message...": [
-        "Escriba un mensaje cifrado..."
+        "输入加密消息…"
       ]
     },
     "Safety review": {
       "Review account safety": [
-        "Compruebe la seguridad de la cuenta"
+        "审查账户安全"
       ]
     },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
-        "No se completó el inicio de sesión."
+        "登录未成功。"
       ]
     },
     "Select search results": {
       "No results found": [
-        "No se encontraron resultados"
+        "未找到结果"
       ]
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Cerrar cuenta"
+        "登出"
       ],
       "Stay signed in": [
-        "Seguir conectado"
+        "保持登录"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } hora",
-        "${ gracePeriodHoursRemaining } horas"
+        "${ gracePeriodHoursRemaining } 小时"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } ahora está disponible."
+        "${ passwordReset }现已可用。"
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Si cierra la sesión antes de restablecer la contraseña, podría perder el acceso a la cuenta."
+        "如果您在重置密码完成之前登出，您可能会失去对账户的访问权限。"
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Si cierra la sesión sin restablecer la contraseña, podría perder el acceso a la cuenta."
+        "如果您未重置密码就登出，您可能会失去对账户的访问权限。"
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
-        "Podrá restablecer la contraseña en ${ boldTimeLeft }."
+        "您可以在${ boldTimeLeft }之内重置密码。"
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Restablecimiento de contraseña"
+        "密码重置"
       ]
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+        "登出而不重置密码？"
       ]
     },
     "Sort option": {
       "Alphabetical (A–Z)": [
-        "Alfabético (A–Z)"
+        "按字母顺序 (A–Z)"
       ],
       "Newly created": [
-        "Recién creada"
+        "新创建的"
       ],
       "Past meetings": [
-        "Reuniones anteriores"
+        "过往会议"
       ],
       "Upcoming": [
-        "Próximamente"
+        "即将开始"
       ]
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Ir a los planes de suscripción"
+        "查看账户等级"
       ],
       "Upgrade": [
-        "Mejorar"
+        "升级账户"
       ]
     },
     "sso": {
       "Sign in": [
-        "Iniciar sesión"
+        "登录"
       ],
       "Sign in to your organization": [
-        "Iniciar sesión en la organización"
+        "登录到您的组织"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Se le redirigirá a su proveedor de SSO de terceros."
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "Status": {
       "No": [
-        "No"
+        "否"
       ],
       "Yes": [
-        "Sí"
+        "是"
       ]
     },
     "Success": {
       "Assigned new host": [
-        "Se asignó un nuevo anfitrión"
+        "已指定新主持人"
       ],
       "Code sent to ${ methodTo }": [
-        "Código enviado a ${ methodTo }"
+        "验证码已发至 ${ methodTo }"
       ],
       "Email address copied to clipboard": [
-        "Dirección de correo copiada al portapapeles"
+        "邮箱地址已复制到剪贴板"
       ],
       "Problem reported": [
-        "Se notificó el problema."
+        "问题报告"
       ],
       "Verification successful": [
-        "Verificación completada"
+        "验证成功"
       ]
     },
     "Table header": {
       "Actions": [
-        "Acciones"
+        "操作"
       ],
       "Date": [
-        "Fecha"
+        "日期"
       ],
       "Name": [
-        "Nombre"
+        "名称"
       ],
       "Size": [
-        "Tamaño"
+        "大小"
       ]
     },
     "Title": {
       "Account restricted": [
-        "Cuenta restringida"
+        "账户受限"
       ],
       "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
+        "账户暂时锁定"
       ],
       "Activity events": [
-        "Eventos de actividad"
+        "活动事件"
       ],
       "All participants": [
-        "Todos los participantes"
+        "所有参与者"
       ],
       "Allow camera ": [
-        "Permitir cámara "
+        "允许使用摄像头"
       ],
       "Allow camera and microphone": [
-        "Permitir cámara y micrófono"
+        "允许使用摄像头和麦克风"
       ],
       "Allow microphone": [
-        "Permitir micrófono"
+        "允许使用麦克风"
       ],
       "Are you sure?": [
-        "¿Está seguro?"
+        "是否确定？"
       ],
       "Assign a new host": [
-        "Asignar un nuevo anfitrión"
+        "指定新的主持人"
       ],
       "Audio": [
-        "Audio"
+        "音频"
       ],
       "Available Cameras": [
-        "Cámaras disponibles"
+        "可用摄像头"
       ],
       "Available Microphones": [
-        "Micrófonos disponibles"
+        "可用麦克风"
       ],
       "Available Speakers": [
-        "Altavoces disponibles"
+        "可用扬声器"
       ],
       "Background blur comparison": [
-        "Comparación de fondo difuminado"
+        "背景模糊对比"
       ],
       "Camera and microphone are blocked": [
-        "El acceso a la cámara y el micrófono está bloqueado"
+        "相机和麦克风已被阻止"
       ],
       "Camera is blocked": [
-        "La cámara está bloqueada"
+        "相机已被阻止"
       ],
       "Chat": [
-        "Chat"
+        "聊天"
       ],
       "Constants": [
-        "Constantes"
+        "常量"
       ],
       "Couldn't prepare the recording": [
-        "No se ha podido preparar la grabación"
+        "无法准备录制"
       ],
       "Create new room": [
-        "Crear una sala"
+        "创建新会议室"
       ],
       "Date": [
-        "Fecha"
+        "日期"
       ],
       "Debug Overlay": [
-        "Superposición de depuración"
+        "调试叠加层"
       ],
       "Delete recording?": [
-        "¿Eliminar grabación?"
+        "删除录制？"
       ],
       "Enter your password": [
-        "Ingrese su contraseña"
+        "请输入您的密码"
       ],
       "Epoch": [
-        "Epoch"
+        "时间点"
       ],
       "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
-        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+        "时间点 ${ prevLog.epoch } → ${ log.epoch }"
       ],
       "Error at epoch ${ log.epoch }": [
-        "Error en epoch ${ log.epoch }"
+        "时间点 ${ log.epoch } 处出错"
       ],
       "Help and feedback": [
-        "Ayuda y comentarios"
+        "帮助和反馈"
       ],
       "Help center": [
-        "Centro de ayuda"
+        "帮助中心"
       ],
       "Human verification": [
-        "Verificación humana"
+        "身份验证"
       ],
       "Info": [
-        "Info."
+        "信息"
       ],
       "Invalid meeting link": [
-        "Enlace de reunión inválido"
+        "无效的会议链接"
       ],
       "Invalid verification code": [
-        "Código de verificación inválido"
+        "验证码无效"
       ],
       "Invite link": [
-        "Enlace de invitación"
+        "邀请链接"
       ],
       "Join a meeting": [
-        "Unirse a una reunión"
+        "加入会议"
       ],
       "Join meeting": [
-        "Unirse a la reunión"
+        "加入会议"
       ],
       "Joined at epoch ${ log.epoch }": [
-        "Se unió en epoch ${ log.epoch }"
+        "加入于时间点 ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participant…": [
-        "Uniéndose a la reunión con ${ participantCount } participante más…",
-        "Uniéndose a la reunión con ${ participantCount } participantes más…"
+        "正在加入会议，还有其他 ${ participantCount } 名参与者…"
       ],
       "Launching Meeting...": [
-        "Iniciando reunión..."
+        "正在启动会议..."
       ],
       "Local Participant": [
-        "Participante local"
+        "本地参与者"
       ],
       "Meeting": [
-        "Reunión"
+        "会议"
       ],
       "Meeting created": [
-        "Reunión creada"
+        "会议已创建"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "会议详情"
       ],
       "Meeting edited": [
-        "Reunión editada"
+        "会议已编辑"
       ],
       "Meeting settings": [
-        "Ajustes de la reunión"
+        "会议设置"
       ],
       "Messaging Layer Security": [
-        "Messaging Layer Security (MLS)"
+        "消息层安全协议"
       ],
       "Microphone is blocked": [
-        "El micrófono está bloqueado"
+        "麦克风已被阻止"
       ],
       "Minicalendar": [
-        "Minicalendario"
+        "迷你日历"
       ],
       "No one is waiting": [
-        "Nadie está esperando"
+        "暂无等待者"
       ],
       "No results found": [
-        "No se encontraron resultados"
+        "未找到结果"
       ],
       "Participants": [
-        "Participantes"
+        "参与者"
       ],
       "Participants (${ filteredParticipants.length })": [
-        "Participantes (${ filteredParticipants.length })"
+        "参与者 (${ filteredParticipants.length })"
       ],
       "Passphrase": [
-        "Frase de contraseña"
+        "密码"
       ],
       "Personal meeting room": [
-        "Sala de reuniones personal"
+        "个人会议室"
       ],
       "Preparing your recording…": [
-        "Preparando su grabación..."
+        "正在准备您的录制…"
       ],
       "Publications": [
-        "Publicaciones"
+        "发布内容"
       ],
       "Reconnection Testing": [
-        "Prueba de reconexión"
+        "重连测试"
       ],
       "Record raw vs blurred camera": [
-        "Grabación en bruto vs. cámara borrosa"
+        "录制原始画面与模糊后画面对比"
       ],
       "Record this meeting": [
-        "Grabar esta reunión"
+        "录制此会议"
       ],
       "Recordings": [
-        "Grabaciones"
+        "录制"
       ],
       "Remote Participants": [
-        "Participantes remotos"
+        "远程参与者"
       ],
       "Report a problem": [
-        "Reportar un problema"
+        "反馈问题"
       ],
       "Request new code": [
-        "Solicitar un código nuevo"
+        "请求新验证码"
       ],
       "Schedule a meeting": [
-        "Programar una reunión"
+        "安排会议"
       ],
       "Screen share is blocked": [
-        "Compartir pantalla está bloqueado"
+        "屏幕共享已被阻止"
       ],
       "Secure meeting": [
-        "Reunión segura"
+        "安全会议"
       ],
       "Security": [
-        "Seguridad"
+        "安全"
       ],
       "Security code": [
-        "Código de seguridad"
+        "安全码"
       ],
       "Settings": [
-        "Ajustes"
+        "设置"
       ],
       "Sign out": [
-        "Cerrar sesión"
+        "登出"
       ],
       "Starting meeting as the first participant…": [
-        "Iniciando la reunión como primer participante…"
+        "正在以首位参与者身份启动会议…"
       ],
       "Stop recording": [
-        "Detener grabación"
+        "停止录制"
       ],
       "Talk confidentially": [
-        "Hable con confidencialidad"
+        "进行私密交谈"
       ],
       "Thank you!": [
-        "¡Gracias!"
+        "谢谢！"
       ],
       "Time": [
-        "Hora"
+        "时间"
       ],
       "Title": [
-        "Título"
+        "标题"
       ],
       "Two-factor authentication": [
-        "Autenticación de dos factores"
+        "双因素身份验证"
       ],
       "Video": [
-        "Video"
+        "视频"
       ],
       "Waiting room": [
-        "Sala de espera"
+        "等候室"
       ],
       "What went wrong?": [
-        "¿Qué salió mal?"
+        "哪里出了问题？"
       ],
       "Your feedback has been submitted": [
-        "Sus comentarios han sido enviados"
+        "您的反馈已提交！"
       ],
       "Your recording is ready": [
-        "Su grabación está lista"
+        "您的录制已准备就绪"
       ]
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        "Hoy"
+        "今天"
       ]
     },
     "Tooltip": {
       "Background blur is not supported on your browser": [
-        "El desenfoque de fondo no es compatible en su navegador"
+        "您的浏览器不支持背景虚化"
       ],
       "Generate a new meeting link. The current link will stop working.": [
-        "Generar un nuevo enlace para la reunión. El enlace actual dejará de funcionar."
+        "生成新的会议链接，当前链接即将失效。"
       ],
       "Instant AI assistance, human expert on hand!": [
-        "¡Asistencia IA inmediata, experto humano a su disposición!"
+        "获取 AI 和人工专家的即时协助！"
       ],
       "Recurring meeting": [
-        "Reunión recurrente"
+        "周期性会议"
       ],
       "You can generate a new meeting link once per day.": [
-        "Solo puede generar un nuevo enlace de reunión una vez al día."
+        "您每天可以生成一个新的会议链接！"
       ]
     },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
-        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problema con Wallet"
+        "Proton Wallet 问题"
       ]
     },
     "Warning": {
       "Connection is taking longer than expected": [
-        "La conexión está tardando más de lo esperado"
+        "连接时间超出预期"
       ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "No se pudo acceder a la cámara o micrófono. Puede intentar activarlas de nuevo desde los controles de la reunión."
+        "无法访问摄像头或麦克风，您可以尝试从会议控制栏中重新启用它们。"
       ],
       "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "No se pudo acceder a la cámara. Puede intentar activarla de nuevo desde los controles de la reunión."
+        "无法访问摄像头，您可以尝试从会议控制栏中重新启用它。"
       ],
       "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "No se pudo acceder al micrófono. Puede intentar activarlo de nuevo desde los controles de la reunión."
+        "无法访问麦克风，您可以尝试从会议控制栏中重新启用它。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
+        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "Error en la conexión UDP por STUN; intentando con retransmisión TURN…"
+        "STUN UDP 连接失败，正在尝试通过 TURN 中继连接..."
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
-        "Se agotó el tiempo de espera en la conexión UDP por STUN; intentando con retransmisión TURN"
+        "STUN UDP 连接超时，正在尝试通过 TURN 中继连接"
       ],
       "Trying another route…": [
-        "Probando otra ruta…"
+        "正在尝试其他路由…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Lamentablemente no estamos en línea en este momento. Complete el formulario a continuación para describir el problema, lo investigaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
       ]
     }
   }
