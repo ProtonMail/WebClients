@@ -547,6 +547,12 @@
       "Regenerate": [
         "Regenerare"
       ],
+      "Regex invalid": [
+        "Expresie regulată nevalidă"
+      ],
+      "Regex unsafe": [
+        "Expresie regulată nesigură"
+      ],
       "Reject": [
         "Respingere"
       ],
@@ -1170,6 +1176,12 @@
       "Failed to set default mailbox": [
         "Setarea contului implicit de e-mail a eșuat."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Pornirea agentului SSH a eșuat: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Oprirea agentului SSH a eșuat: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Sincronizarea aliasurilor a eșuat."
       ],
@@ -1552,6 +1564,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } va folosi cheile SSH salvate în seifurile tale."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modul deconectat ${ PASS_SHORT_APP_NAME } activat."
@@ -2115,6 +2130,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2144,6 +2164,9 @@
       ],
       "No network connection": [
         "Nu există conexiune la rețea."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nu s-au găsit chei SSH în ${ PASS_SHORT_APP_NAME }. Creați articole cu chei SSH pentru a le utiliza cu agentul."
       ],
       "No vaults available.": [
         "Nu există seifuri disponibile."
@@ -2984,6 +3007,9 @@
       "Address details": [
         "Detalii adresă"
       ],
+      "Advanced": [
+        "Avansat"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -3029,6 +3055,9 @@
       "Bank Name": [
         "Nume bancă"
       ],
+      "Basic": [
+        "De bază"
+      ],
       "Beta Access": [
         "Acces la Beta"
       ],
@@ -3061,6 +3090,9 @@
       ],
       "Catch-All": [
         "Adresă de agregare"
+      ],
+      "Check": [
+        "Verificare"
       ],
       "Checkbox": [
         "Casetă de validare"
@@ -3217,6 +3249,12 @@
       ],
       "Enter email or username": [
         "Introduceți e-mail sau utilizator"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
       ],
       "Expiration date": [
         "Dată expirare"
@@ -3533,6 +3571,9 @@
       "Never": [
         "Niciodată"
       ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
       "New email": [
         "E-mail nou"
       ],
@@ -3592,6 +3633,9 @@
       ],
       "Owner": [
         "Proprietar"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Passkey": [
         "Cheie de acces"
@@ -3694,6 +3738,9 @@
       ],
       "Reddit handle": [
         "Cont Reddit"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
       ],
       "Remove link": [
         "Eliminare legătură web"
@@ -3808,6 +3855,9 @@
       ],
       "SSN": [
         "Număr asigurări de sănătate"
+      ],
+      "Starts with": [
+        "Începe cu"
       ],
       "State or province": [
         "Județul"
@@ -3935,6 +3985,12 @@
       "Update": [
         "Actualizare"
       ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Folosire ${ PASS_APP_NAME } ca agest SSH"
+      ],
       "Use for AI agent": [
         "Utilizare pentru agentu de IA"
       ],
@@ -4055,6 +4111,24 @@
         "${ count } element",
         "${ count } articole",
         "${ count } de articole"
+      ],
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ],
       "You can drag and drop the selected item to another vault": [
         "Puteți trage și plasa articolul selectat în alt seif.",
@@ -4357,6 +4431,23 @@
         "Folosit la ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduceți o adresă URL pentru a verifica dacă regula curentă se potrivește cu adresa URL."
+      ],
+      "The rule is matching this URL": [
+        "Regula se potrivește cu acest URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regula NU se potrivește cu acest URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Acest URL nu va fi autocompletat"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Acest URL va fi autocompletat"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
@@ -4509,6 +4600,12 @@
       "Random prefix generation successfully enabled": [
         "Generarea aleatorie a prefixelor a fost activată."
       ],
+      "SSH agent successfully started": [
+        "Agentul SSH a fost pornit"
+      ],
+      "SSH agent successfully stopped": [
+        "Agentul SSH a fost oprit"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizator.",
         "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizatori.",
@@ -4556,6 +4653,9 @@
       ],
       "Add mailbox": [
         "Adăugare cont de e-mail"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajustați comportamentele de completare automată pentru a schimba unde sunt sugerate datele de conectare."
       ],
       "Agent setup instructions": [
         "Instrucțiuni de setare agent"
@@ -4756,6 +4856,9 @@
       ],
       "Last modified": [
         "Ultima modificare"
+      ],
+      "Learn more": [
+        "Aflați mai multe"
       ],
       "Leave this item?": [
         "Părăsiți acest articol?"
@@ -4960,6 +5063,9 @@
       "SPF (Optional)": [
         "SPF (Opțional)"
       ],
+      "SSH Agent": [
+        "Agent SSH"
+      ],
       "Status": [
         "Stare"
       ],
@@ -4978,6 +5084,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronizați-vă aliasurile din SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Testați un URL cu această regulă"
+      ],
       "Transfer ownership": [
         "Transfer proprietar"
       ],
@@ -4992,6 +5101,9 @@
       ],
       "Update available": [
         "Actualizare disponibilă"
+      ],
+      "URL matching": [
+        "Potrivire URL"
       ],
       "Vault": [
         "Seif"
@@ -5109,6 +5221,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Este necesară parola ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modul deconectat ${ PASS_SHORT_APP_NAME } dezactivat."
@@ -5311,6 +5426,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ceva nu a mers bine la pornirea ${ PASS_APP_NAME }. Încercați să reîmprospătați sau să reîncărcați extensia."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Agentul SSH necesită utilizarea cheilor SSH, care nu sunt disponibile în planul actual."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
@@ -5319,6 +5437,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Această adresă de e-mail nu va mai fi monitorizată pentru divulgări."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Acest articol nu poate fi sugerat pentru completare automată din cauza opțiunii „${ neverModeDescriptionStrong }”. Adăugați o altă adresă URL dacă doriți ca acest articol să fie completat automat."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Acest articol este partajat. Dacă îl ștergeți, ceilalți utilizatori nu-l vor mai putea accesa."

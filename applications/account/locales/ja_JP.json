@@ -1092,6 +1092,9 @@
       "Organization": [
         "組織"
       ],
+      "Pause": [
+        "一時停止"
+      ],
       "Pay": [
         "支払う"
       ],
@@ -6412,12 +6415,6 @@
       "Intended recipient does not support calendar sharing": [
         "対象の受信者はカレンダーの共有をサポートしていません"
       ],
-      "Invalid ${ name } code": [
-        "無効な ${ name } コードです"
-      ],
-      "Invalid card number": [
-        "無効なカード番号です"
-      ],
       "Invalid code": [
         "無効なコードです"
       ],
@@ -6429,9 +6426,6 @@
       ],
       "Invalid email address": [
         "メールアドレスが正しくありません"
-      ],
-      "Invalid expiration date": [
-        "無効な有効期限"
       ],
       "Invalid IBAN": [
         "IBANが無効"
@@ -20363,12 +20357,6 @@
       "${ n } user detached from SSO": [
         "${ n }人のユーザーがSSOから離れました"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n }人のユーザーがあなたの組織にアイデンティティプロバイダーを通じて参加しました。今すぐアカウントを確認してください。"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n }人のユーザーが非アクティブです。組織からこのユーザーを安全に削除することができます。"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }人のユーザーはシングルサインオンで${ BRAND_NAME }アカウントにサインインするためにあなたの支援を要請しています。"
       ],
@@ -23949,9 +23937,6 @@
       ],
       "Confirm all": [
         "全て確認"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "この間に暗号化キーが更新されたため、${ n } ユーザーの管理者アクセス権を自動的に有効にできませんでした："
       ],
       "Could not enable administrator access: ${ error }": [
         "管理者アクセスを有効にできません：${ error }"

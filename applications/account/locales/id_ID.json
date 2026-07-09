@@ -1089,6 +1089,9 @@
       "Organization": [
         "Organisasi"
       ],
+      "Pause": [
+        "Jeda"
+      ],
       "Pay": [
         "Bayar"
       ],
@@ -6341,12 +6344,6 @@
       "Intended recipient does not support calendar sharing": [
         "Penerima yang dituju tidak mendukung berbagi kalender"
       ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
       "Invalid code": [
         "Kode tidak valid"
       ],
@@ -6358,9 +6355,6 @@
       ],
       "Invalid email address": [
         "Alamat email tidak valid"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
       ],
       "Invalid IBAN": [
         "IBAN tidak valid"
@@ -20116,12 +20110,6 @@
       "${ n } user detached from SSO": [
         "${ n } pengguna dilepas dari SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Tinjau akun mereka sekarang juga:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } pengguna tidak aktif. Anda dapat menghapus rangkaian pengguna ini dari organisasi Anda secara aman."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } pengguna meminta bantuan Anda untuk masuk ke Akun ${ BRAND_NAME } mereka dengan single sign-on."
       ],
@@ -23681,9 +23669,6 @@
       ],
       "Confirm all": [
         "Konfirmasi semua"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Akses administrator untuk ${ n } pengguna tidak dapat diaktifkan secara otomatis karena kunci enkripsi para pengguna berikut telah diperbarui:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Izin administrator tidak dapat diaktifkan: ${ error }"

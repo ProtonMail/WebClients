@@ -1043,6 +1043,9 @@
       "Sign up": [
         "Registreren"
       ],
+      "Skip": [
+        "Overslaan"
+      ],
       "Skip verification": [
         "Verificatie overslaan"
       ],
@@ -1141,6 +1144,9 @@
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
+      ],
+      "Upload anyway": [
+        "Toch uploaden"
       ],
       "Upload file": [
         "Bestand uploaden"
@@ -3662,12 +3668,6 @@
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
-      "Invalid ${ name } code": [
-        "Ongeldig ${ name } code"
-      ],
-      "Invalid card number": [
-        "Ongeldig creditcardnummer"
-      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -3676,9 +3676,6 @@
       ],
       "Invalid email address": [
         "Ongeldig e-mailadres"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
       ],
       "Invalid IBAN": [
         "Ongeldige IBAN"
@@ -7484,9 +7481,6 @@
       ],
       "Index kinds": [
         "Soorten indexen"
-      ],
-      "Initial indexing": [
-        "Eerste indexering"
       ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
@@ -13245,6 +13239,20 @@
       ],
       "You’ve got 5 GB of storage": [
         "U heeft 5 GB aan opslag"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Acties"
+      ],
+      "Fingerprint": [
+        "Vingerafdruk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Soort"
       ]
     },
     "Today icon tooltip in mini calendar": {

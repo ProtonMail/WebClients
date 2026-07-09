@@ -2356,20 +2356,11 @@
       "Input isn't a valid email or bitcoin address": [
         "Уведзены няправільны адрас электроннай пошты або адрас Bitcoin"
       ],
-      "Invalid ${ name } code": [
-        "Памылковы код ${ name }"
-      ],
-      "Invalid card number": [
-        "Памылковы нумар карткі"
-      ],
       "Invalid code": [
         "Памылковы код"
       ],
       "Invalid coupon": [
         "Памылковы купон"
-      ],
-      "Invalid expiration date": [
-        "Памылковая дата завяршэння тэрміну дзеяння"
       ],
       "Invalid IBAN": [
         "Памылковы IBAN"
@@ -5751,6 +5742,9 @@
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Уліковы запіс абмежаваны"
       ],
@@ -6036,6 +6030,11 @@
       ],
       "The user must have an address to request data access": [
         "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     },
     "Validation": {

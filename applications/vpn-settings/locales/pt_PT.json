@@ -669,6 +669,9 @@
       "Organization": [
         "Organização"
       ],
+      "Pause": [
+        "Pausar"
+      ],
       "Pay": [
         "Pagar"
       ],
@@ -3904,12 +3907,6 @@
       "Incorrect username": [
         "Nome de utilizador incorreto"
       ],
-      "Invalid ${ name } code": [
-        "O código ${ name } é inválido."
-      ],
-      "Invalid card number": [
-        "O número de cartão é inválido."
-      ],
       "Invalid code": [
         "O código é inválido."
       ],
@@ -3921,9 +3918,6 @@
       ],
       "Invalid email address": [
         "Endereço de email inválido"
-      ],
-      "Invalid expiration date": [
-        "A data de expiração é inválida."
       ],
       "Invalid IBAN": [
         "IBAN inválido"
@@ -12975,14 +12969,6 @@
         "${ n } utilizador foi removido do SSO.",
         "${ n } utilizadores foram removidos do SSO."
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } utilizador entrou na sua organização por meio do seu fornecedor de identidade. Verifique a conta agora:",
-        "${ n } utilizadores ingressaram na sua organização por meio do seu fornecedor de identidade. Verifique as suas contas agora:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } utilizador está inativo. Pode remover este utilizador com segurança da sua organização.",
-        "${ n } utilizadores estão inativos. Pode remover estes utilizadores com segurança da sua organização."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utilizador solicita a sua ajuda para entrar na sua conta da ${ BRAND_NAME } com autenticação única.",
         "${ n } utilizadores solicitam a sua ajuda para entrar na sua conta da ${ BRAND_NAME } com autenticação única."
@@ -15558,10 +15544,6 @@
       ],
       "Confirm all": [
         "Confirmar tudo"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Não foi possível ativar automaticamente o acesso de administrador para ${ n } utilizador porque as chaves de encriptação foram atualizadas entretanto:",
-        "Não foi possível ativar automaticamente o acesso de administrador para ${ n } utilizadores porque as chaves de encriptação foram atualizadas entretanto:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Não foi possível ativar o acesso administrador: ${ error }"

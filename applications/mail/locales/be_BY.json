@@ -4439,6 +4439,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Адбудзецца імпартаванне вашых старых лістоў і сінхранізацыя новых паведамленняў з Gmail у будучыні"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
@@ -5039,12 +5042,6 @@
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
       ],
-      "Invalid ${ name } code": [
-        "Памылковы код ${ name }"
-      ],
-      "Invalid card number": [
-        "Памылковы нумар карткі"
-      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -5053,9 +5050,6 @@
       ],
       "Invalid email address": [
         "Памылковы адрас электроннай пошты"
-      ],
-      "Invalid expiration date": [
-        "Памылковая дата завяршэння тэрміну дзеяння"
       ],
       "Invalid expiration time": [
         "Памылковы час завяршэння тэрміну дзеяння"
@@ -5131,6 +5125,9 @@
       ],
       "No contacts found to import": [
         "Не знойдзены кантакты для імпартавання"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
@@ -5467,6 +5464,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ],
       "Unknown error": [
         "Невядомая памылка"
@@ -7867,6 +7867,9 @@
         "файлаў далучаны",
         "файлаў далучаны"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсіх лістоў, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
@@ -9307,6 +9310,12 @@
       "You have ${ totalLabel } in your inbox.": [
         "У вашай паштовай скрыні ${ totalLabel }."
       ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "У вас ёсць **${ count } размова** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размовы** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } размоў** у катэгорыі ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } размова**",
         "У гэтай папцы ў вас захоўваецца **${ count } размовы**",
@@ -9318,6 +9327,12 @@
         "У вас **${ count } размовы** пазначаны гэтай меткай",
         "У вас **${ count } размоў** пазначаны гэтай меткай",
         "У вас **${ count } размоў** пазначаны гэтай меткай"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "У вас ёсць **${ count } паведамленне** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленні** ў катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у катэгорыі ${ categoryLabel }",
+        "У вас ёсць **${ count } паведамленняў** у катэгорыі ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } паведамленне**",
@@ -9357,6 +9372,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } размову** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размовы** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } размоў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Вы выбралі **${ checked } паведамленне** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленні** ў катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }",
+        "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Вы выбралі **${ count } размову** з гэтай папкі",
@@ -10392,9 +10419,6 @@
       "Navigation": [
         "Навігацыя"
       ],
-      "New": [
-        "Новае"
-      ],
       "New password": [
         "Новы пароль"
       ],
@@ -10424,9 +10448,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Апавяшчэнні адключаны. Змяніце налады браўзера, каб уключыць іх."
-      ],
-      "Open in a new tab": [
-        "Адкрыць у новай укладцы"
       ],
       "Operating system": [
         "Аперацыйная сістэма"
@@ -15621,6 +15642,12 @@
         "Перамясціць ${ selectionCount } паведамленняў",
         "Перамясціць ${ selectionCount } паведамленняў"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Перамешчана ў ${ label }. Аналагічнае паведамленне будзе катэгарызавана тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні.",
+        "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць катэгарызаваны тут у будучыні."
+      ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
@@ -15927,6 +15954,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ numMessages } message": [
         "${ numMessages } паведамленне",
@@ -17009,6 +17039,26 @@
         "Ваш больш кароткі адрас гатовы да выкарыстання"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сёння"
@@ -17104,6 +17154,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
       ]
     },
     "tooltip": {
@@ -17153,6 +17206,11 @@
       ],
       "Your default font will look like following:": [
         "Ваш прадвызначаны шрыфт будзе выглядаць вось так:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     },
     "Validation": {

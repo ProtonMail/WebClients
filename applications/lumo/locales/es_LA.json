@@ -970,8 +970,17 @@
       "Clear auto-generated": [
         "Borrar autogenerada"
       ],
+      "click to hide me": [
+        "clic para ocultar"
+      ],
+      "click to let me out": [
+        "clic para dejar salir"
+      ],
       "Close": [
         "Cerrar"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "Contraer ${ LUMO_SHORT_APP_NAME }"
       ],
       "Continue": [
         "Continuar"
@@ -1011,6 +1020,9 @@
       ],
       "I like this response": [
         "Me gusta esta respuesta."
+      ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Dejar salir a ${ LUMO_SHORT_APP_NAME }"
       ],
       "Light": [
         "Claro"
@@ -1071,9 +1083,6 @@
       ],
       "Try again": [
         "Reintentar"
-      ],
-      "Turn off": [
-        "Desactivar"
       ],
       "Turn off and delete": [
         "Desactivar y eliminar"
@@ -1374,8 +1383,8 @@
       "More thorough answers, but can take longer": [
         "Respuestas más completas, pero pueden tardar más"
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Elimina permanentemente su proyecto y sus chats. Esto es irreversible."
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Elimina permanentemente sus proyectos, chats y memorias guardadas. Esto es irreversible."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Los chats de proyectos se mantienen totalmente aislados. Responden a sus propias instrucciones y archivos e ignoran en su totalidad la memoria global."
@@ -1406,11 +1415,6 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desactivar la memoria eliminará peermanentemente todos los ${ memories.length } recuerdos guardados. Puede reactivar la memoria después, pero los recuerdos eliminados no se recuperarán."
-      ]
-    },
-    "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Desactive la memoria de ${ LUMO_SHORT_APP_NAME } en cualquier momento."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1664,9 +1668,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "La memoria solo usa los chats generales, nunca dentro de proyectos. Almacenada con cifrado de acceso cero."
-      ],
       "You can turn it off again at any time.": [
         "Puede desactivarla en cualquier momento"
       ]
@@ -1909,9 +1910,6 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Genere un gráfico de flujo de trabajo y el código de implementación para el siguiente objetivo. Lenguaje de destino para el código:"
       ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Genérelos desde sus chats recientes, o agréguelos debajo."
-      ],
       "Generating…": [
         "Generando…"
       ],
@@ -2091,6 +2089,12 @@
       ],
       "There was an error processing this file.": [
         "Ocurrió un error al procesar este archivo."
+      ],
+      "These files are no longer referred to in this conversation.": [
+        "Estos archivos ya no se hacen referencia en esta conversación."
+      ],
+      "These files are referred to in the conversation.": [
+        "Estos archivos se hacen referencia en la conversación."
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Estos archivos pertenecían a mensajes resumidos y ya no se envían al modelo."
@@ -5823,20 +5827,11 @@
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
-      "Invalid ${ name } code": [
-        "Código ${ name } inválido"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta inválido"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
       "Invalid coupon": [
         "Cupón inválido"
-      ],
-      "Invalid expiration date": [
-        "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
         "El IBAN no es válido."
@@ -9809,6 +9804,11 @@
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Validation": {

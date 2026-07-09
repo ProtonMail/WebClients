@@ -2422,6 +2422,11 @@
         "Laissez-vous guider"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Comporte un événement de calendrier"
@@ -4378,6 +4383,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Nous importerons vos anciens messages et synchroniserons désormais les nouveaux messages provenant de Gmail."
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
@@ -4958,12 +4966,6 @@
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
-      "Invalid ${ name } code": [
-        "Le code ${ name } n'est pas valide."
-      ],
-      "Invalid card number": [
-        "Le numéro de carte n’est pas valide."
-      ],
       "Invalid code": [
         "Le code n'est pas valide."
       ],
@@ -4972,9 +4974,6 @@
       ],
       "Invalid email address": [
         "L'adresse e-mail n'est pas valide."
-      ],
-      "Invalid expiration date": [
-        "La date d'expiration n’est pas valide."
       ],
       "Invalid expiration time": [
         "Le délai d'expiration n'est pas valide."
@@ -5048,6 +5047,9 @@
       ],
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
+      ],
+      "No drive found to import": [
+        "Aucun disque à importer détecté"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -5374,6 +5376,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -7608,6 +7613,9 @@
         "fichier joint",
         "fichiers joints"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les messages entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
       ],
@@ -7870,7 +7878,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
+        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -9872,6 +9880,12 @@
       "Encrypt emails": [
         "Chiffrer les messages"
       ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
+      ],
       "Expires": [
         "Expire le"
       ],
@@ -9964,6 +9978,9 @@
       ],
       "Import to:": [
         "Importer dans :"
+      ],
+      "Import your emails": [
+        "Importez vos e-mails"
       ],
       "Include application logs in bug report": [
         "Inclure les journaux d'application dans le rapport de bug"
@@ -10076,8 +10093,8 @@
       "Navigation": [
         "Navigation"
       ],
-      "New": [
-        "Nouveau"
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
       ],
       "New password": [
         "Nouveau mot de passe"
@@ -10109,9 +10126,6 @@
       "Notifications are disabled, to enable them change the browser settings.": [
         "Les notifications sont désactivées. Pour les activer, modifiez les paramètres du navigateur."
       ],
-      "Open in a new tab": [
-        "Ouvrir dans un nouvel onglet"
-      ],
       "Operating system": [
         "Système d'exploitation"
       ],
@@ -10132,6 +10146,9 @@
       ],
       "Original link": [
         "Lien d'origine"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
       ],
       "Participants": [
         "Participants"
@@ -10211,6 +10228,9 @@
       "Region": [
         "Région"
       ],
+      "Regular expression": [
+        "Expression régulière"
+      ],
       "Remember my choice": [
         "Se souvenir de mon choix"
       ],
@@ -10270,6 +10290,9 @@
       ],
       "Start date": [
         "Date de début"
+      ],
+      "Starts with": [
+        "Commence par"
       ],
       "State": [
         "État"
@@ -10357,6 +10380,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
       ],
       "Username": [
         "Nom d'utilisateur"
@@ -10960,14 +10986,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
       "Fw:": [
         "Tr :"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Le ${ date }, ${ senderString } a écrit :"
       ],
       "Re:": [
         "Re :"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Votre essai gratuit est terminé. ${ nonAutoRenewalAction }"
@@ -15350,6 +15394,9 @@
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ numMessages } message": [
         "${ numMessages } message",
         "${ numMessages } messages"
@@ -16407,6 +16454,26 @@
         "Votre adresse au format plus court est maintenant prête."
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
@@ -16502,6 +16569,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
       ]
     },
     "tooltip": {
@@ -16551,6 +16621,11 @@
       ],
       "Your default font will look like following:": [
         "Votre police par défaut ressemblera à ceci :"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     },
     "Validation": {
@@ -16657,6 +16732,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",

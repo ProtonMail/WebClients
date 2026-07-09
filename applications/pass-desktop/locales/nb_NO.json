@@ -322,6 +322,9 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
+      "Done": [
+        "Utført"
+      ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
       ],
@@ -1106,6 +1109,9 @@
       ],
       "Error reporting problem": [
         "Problem med feilrapportering"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Utløpstiden må være mellom 1 time og 1 år"
       ],
       "Failed loading group members": [
         "Kunne ikke laste inn gruppemedlemmer"
@@ -1953,11 +1959,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Hver gang aliaset ditt mottar en e-post fra noen, opprettes det automatisk en ny kontakt."
       ],
+      "Expired on ${ formattedDate }": [
+        "Utløpte ${ formattedDate }"
+      ],
       "Expires in": [
         "Utløper om"
       ],
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Utløper ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Eksporterer dataene dine..."
@@ -2926,11 +2938,23 @@
         "${ years } år",
         "${ years } år"
       ],
+      "1 day": [
+        "1 dag"
+      ],
       "1 hour": [
         "1 time"
       ],
       "1 minute": [
         "1 minutt"
+      ],
+      "1 month": [
+        "1 måned"
+      ],
+      "1 week": [
+        "1 uke"
+      ],
+      "1 year": [
+        "1 år"
       ],
       "10 minutes": [
         "10 minutter"
@@ -3000,6 +3024,9 @@
       ],
       "Address details": [
         "Adressedetaljer"
+      ],
+      "Advanced": [
+        "Avansert"
       ],
       "Alias": [
         "Alias"
@@ -3159,6 +3186,12 @@
       ],
       "Crypto Wallet": [
         "Krypto-wallet"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Custom expiration (minutes)": [
+        "Tilpasset utløpstid (minutter)"
       ],
       "Custom Items": [
         "Tilpassede elementer"

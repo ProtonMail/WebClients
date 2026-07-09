@@ -727,7 +727,7 @@
         "Desa els canvis"
       ],
       "Save preferences": [
-        "Deseu les preferències"
+        "Desar les preferències"
       ],
       "Search": [
         "Cerca"
@@ -3183,6 +3183,9 @@
       "Failed to resend invitation": [
         "No s'ha pogut tornar a enviar la invitació"
       ],
+      "Failed to trash document.": [
+        "No s'ha pogut enviar el document a la paperera."
+      ],
       "Failed to unshare node": [
         "No s'ha pogut deixar de compartir el node"
       ],
@@ -3282,9 +3285,6 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -4505,10 +4505,6 @@
         "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
         "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } seleccionat",
-        "${ selectedCount } seleccionats"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } carpeta seleccionada",
         "${ selectedFoldersCountLocalized } carpetes seleccionades"
@@ -4708,7 +4704,7 @@
         "Continueu"
       ],
       "Converting document...": [
-        "S'està convertint el document..."
+        "S’està convertint el document..."
       ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
@@ -4760,7 +4756,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant el document..."
+        "S'està creant el nou document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4776,9 +4772,6 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "S'ha validat la signatura digital. La carpeta va ser carregada de manera segura per ${ emailAddress }."
-      ],
-      "Disable table of contents": [
-        "Desactiveu la taula de continguts"
       ],
       "Display word count": [
         "Mostra el nombre de paraules"
@@ -4833,9 +4826,6 @@
       ],
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
-      ],
-      "Enable table of contents": [
-        "Habiliteu la taula de continguts"
       ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
@@ -4946,7 +4936,7 @@
         "Obtingueu una adreça de correu electrònic professional @lavostra-empresa.com, 1 TB d'emmagatzematge segur per usuari, trucades de vídeo més llargues i molt més amb el Workspace de ${ BRAND_NAME }."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
         "Rebeu notificacions sobre els comentaris"
@@ -4954,8 +4944,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent al vostre informe."
+      ],
       "here": [
         "aquí"
+      ],
+      "Hide table of contents": [
+        "Amagar la taula de continguts"
       ],
       "High Priority": [
         "Alta prioritat"
@@ -5103,7 +5099,7 @@
         "Prioritat baixa"
       ],
       "Making a copy...": [
-        "S'està fent una còpia..."
+        "S’està fent una còpia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
@@ -5137,7 +5133,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne algun."
+        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne un."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -5181,8 +5177,8 @@
       "Only the people with the link and the password can access this folder.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquesta carpeta."
       ],
-      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Vaja! Aquest full de càlcul no pot desar les vostres edicions més recents, de manera que hem pausat l'edició per evitar que perdeu la vostra feina.\nAjudeu-nos a millorar aquesta experiència informant del problema. Si us sembla bé compartir el contingut del full de càlcul, adjunteu la informació de depuració de més avall al vostre informe."
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Vaja! Aquest full de càlcul no pot desar les darreres modificacions, així que hem aturat l'edició per evitar que perdeu la feina."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
@@ -5359,6 +5355,9 @@
       "Shared on": [
         "Compartit el"
       ],
+      "Show table of contents": [
+        "Mostra la taula de continguts"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
       ],
@@ -5436,7 +5435,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "L'URL que heu introduït sembla que s'ha copiat d'Slack incorrectament. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i a continuació trieu \"Copiar l'enllaç\" en comptes de copiar directament el tros de text de l'URL."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de l'Slack. Quan copieu enllaços llargs de l'Slack, heu de tocar amb el botó dret a l'enllaç i, a continuació, heu de triar «Copiar l'enllaç» en lloc de copiar directament el segment de text de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -6126,13 +6125,19 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Habiliteu les notificacions per correu electrònic"
+        "Habilitar les notificacions per correu electrònic"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
       "Erase this link and remove everyone with access": [
         "Esborreu aquest enllaç i elimineu a tothom amb accés"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
       ],
       "Expiry": [
         "Caducitat"
@@ -6183,7 +6188,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
-        "Incloeu el nom del document a la notificació"
+        "Inclou el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -6254,6 +6259,9 @@
       "Navigation": [
         "Navegació"
       ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
       "New password": [
         "Contrasenya nova"
       ],
@@ -6274,6 +6282,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
       ],
       "Password": [
         "Contrasenya"
@@ -6314,6 +6325,9 @@
       "Region": [
         "Regió"
       ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
       "Replace existing file": [
         "Substitueix el fitxer existent"
       ],
@@ -6350,6 +6364,9 @@
       "Skip folder": [
         "Omet la carpeta"
       ],
+      "Starts with": [
+        "Comença amb"
+      ],
       "Stop sharing": [
         "Deixa de compartir"
       ],
@@ -6382,6 +6399,9 @@
       ],
       "Upload picture": [
         "Carrega la imatge"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ],
       "Username": [
         "Nom d'usuari"
@@ -6717,6 +6737,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
       ],
@@ -8077,6 +8115,15 @@
       "Device renamed": [
         "S'ha canviat el nom del dispositiu"
       ],
+      "Document failed to be restored from trash": [
+        "No s'ha pogut restaurar el document de la paperera"
+      ],
+      "Document moved to trash": [
+        "S'ha enviat el document a la paperera"
+      ],
+      "Document restored from trash": [
+        "S'ha restaurat el document de la paperera"
+      ],
       "External invitation removed from the share": [
         "S'ha esborrat la invitació externa de la compartició"
       ],
@@ -9252,7 +9299,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "S'està creant el full de càlcul..."
+        "S'està creant el full de càlcul nou..."
       ],
       "Detect automatically": [
         "Ho detecta automàticament"
@@ -10637,6 +10684,26 @@
         "La vostra informació exposada"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Created": [
+        "S'ha creat"
+      ],
+      "Expires": [
+        "Caduca"
+      ],
+      "Fingerprint": [
+        "Empremta digital"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
@@ -10721,6 +10788,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
       ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
       ]
@@ -10753,6 +10823,11 @@
       ],
       "The user must have an address to request data access": [
         "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     },
     "Validation": {
@@ -10871,6 +10946,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",

@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Пасля націску больш не паказваць"
       ],
+      "Do not show this again": [
+        "Больш не паказваць"
+      ],
       "Don't show this again": [
         "Больш не паказваць"
+      ],
+      "Done": [
+        "Гатова"
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
@@ -1222,6 +1228,9 @@
       "Failed to set default mailbox": [
         "Не ўдалося задаць прадвызначаную паштовую скрыню"
       ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Не ўдалося спыніць агент SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Не ўдалося сінхранізаваць псеўданімы"
       ],
@@ -1479,7 +1488,7 @@
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Абагуленне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
+        "Абагульванне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
       ]
     },
     "file size format": {
@@ -1642,6 +1651,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і ідэнтычнасці."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } будзе выкарыстоўваць ключы SSH захаваныя ў вашым сховішчы."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Пазасеткавы рэжым у ${ PASS_SHORT_APP_NAME } уключаны."
@@ -2030,6 +2042,9 @@
       "finance": [
         "фінансы"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Знайдзіце поле \"Агент аўтэнтыфікацыі OpenSSH\" і націсніце правай кнопкай мышы, каб выбраць \"Уласцівасці\"."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
       ],
@@ -2074,6 +2089,9 @@
       ],
       "Identity confirmed": [
         "Ідэнтычнасць пацверджана"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Не забудзьце адключыць гэтую наладу перад пераключэннем на гэты ўліковы запіс, калі вы не плануеце выкарыстоўваць агент SSH на іншым платным уліковым запісе."
       ],
       "Import the CSV file below.": [
         "Імпартуйце файл CSV ніжэй."
@@ -2186,6 +2204,9 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Пераканайцеся, што ${ PASS_APP_NAME } застаўся запушчаным (можа быць згорнуты ў сістэмны латок) для таго, каб агент SSH заставаўся актыўным. Ключы SSH з парольнай фразай у цяперашні момант не падтрымліваюцца."
+      ],
       "Manager": [
         "Менеджар"
       ],
@@ -2249,6 +2270,9 @@
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ключы SSH не знойдзены ў ${ PASS_SHORT_APP_NAME }. Стварыце элементы ключа SSH, каб выкарыстоўваць з агентам."
+      ],
       "No vaults available.": [
         "Няма даступных сховішчаў."
       ],
@@ -2272,6 +2296,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Паказаны толькі токены, якія пратэрмінаваны за апошнія 30 дзён. Больш старыя токены аўтаматычна выдалены."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Адкрыйце \"Сэрвісы\" (вы можаце скарыстацца панэллю пошуку ў Windows або націснуць камбінацыю клавіш Win+R і ўвесці каманду services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Адкрыйце свае налады Safari для пашырэння і пераканайцеся, што дазволы вэб-сайта ўключаны для даменаў ${ BRAND_NAME }"
@@ -2299,6 +2326,9 @@
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
+      ],
+      "Paste the following command in your terminal:": [
+        "Устаўце наступную каманду ў свой тэрмінал:"
       ],
       "Paused": [
         "Прыпынена"
@@ -2505,7 +2535,7 @@
         "Выберыце сховішчы, якія можа прачытаць \"${ token.Name }\"."
       ],
       "Select vault to share": [
-        "Выберыце сховішча для абагулення"
+        "Выберыце сховішча для абагульвання"
       ],
       "Select where you want your imported vaults to be saved.": [
         "Выберыце куды вы хочаце захаваць свае імпартаваныя сховішчы."
@@ -2527,6 +2557,9 @@
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Задаць \"Тып запуску\" для \"Адключана\", націсніце OK."
       ],
       "Set by your organization": [
         "Зададзена вашай арганізацыяй"
@@ -2672,6 +2705,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Парада: дадайце яго ў свой файл .bashrc або .zshrc. Гэта дазволіць аўтаматычна запускаць яго пры адкрыцці тэрмінала."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"
       ],
@@ -2686,6 +2722,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "${ PASS_APP_NAME } патрабуе новыя дазволы ад браўзера, каб наладзіць біяметрычную разблакіроўку. Пашырэнне будзе перазагружана, калі праграма атрымае адпаведныя дазволы."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Вам неабходна адключыць сэрвіс OpenSSH, каб выкарыстоўваць ${ PASS_APP_NAME } SSH у Windows."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Нам давяраюць больш за 50 000 карыстальнікаў у сферы бізнесу і 100 мільёнаў уліковых запісаў па ўсім свеце."
@@ -3113,6 +3152,9 @@
       ],
       "Address details": [
         "Звесткі аб адрасе"
+      ],
+      "Advanced": [
+        "Дадаткова"
       ],
       "Alias": [
         "Псеўданім"
@@ -4708,6 +4750,12 @@
       "Random prefix generation successfully enabled": [
         "Адвольная генерацыя прэфіксу паспяхова ўключана"
       ],
+      "SSH agent successfully started": [
+        "Агент SSH паспяхова запушчаны"
+      ],
+      "SSH agent successfully stopped": [
+        "Агент SSH паспяхова спынены"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальніка.",
         "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікі.",
@@ -5126,6 +5174,9 @@
       "Review and share": [
         "Прагляд і абагульванне"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Здымак экрана сэрвісу OpenSSH у Windows"
+      ],
       "Secure your data": [
         "Бяспека вашых даных"
       ],
@@ -5164,6 +5215,9 @@
       ],
       "SPF (Optional)": [
         "SPF (неабавязкова)"
+      ],
+      "SSH Agent": [
+        "Агент SSH"
       ],
       "Status": [
         "Статус"

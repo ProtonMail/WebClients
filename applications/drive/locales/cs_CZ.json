@@ -1038,6 +1038,9 @@
       "Sign up": [
         "Zaregistrovat se"
       ],
+      "Skip": [
+        "Přeskočit"
+      ],
       "Skip verification": [
         "Přeskočit ověření"
       ],
@@ -1133,6 +1136,9 @@
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
+      ],
+      "Upload anyway": [
+        "Přesto nahrát"
       ],
       "Upload file": [
         "Nahrát soubor"
@@ -3631,12 +3637,6 @@
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -3645,9 +3645,6 @@
       ],
       "Invalid email address": [
         "Neplatná e-mailová adresa"
-      ],
-      "Invalid expiration date": [
-        "Neplatné datum expirace"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -5241,10 +5238,10 @@
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -5745,7 +5742,7 @@
         "Za pouhých ${ bundlePlanPriceInline }"
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 GB bezplatného šifrovaného úložného prostoru"
@@ -5847,7 +5844,7 @@
         "V dalším kroku budete moci odeslat vklad pomocí bitcoinové adresy."
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Index is empty.": [
         "Index je prázdný."
@@ -6690,13 +6687,13 @@
         "Aktulizace vyhledání na disku..."
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -6783,7 +6780,7 @@
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -7116,7 +7113,7 @@
     },
     "Key badge": {
       "Active Signer": [
-        "Aktivní podpisový klíč"
+        "Aktivní podepisovatel"
       ],
       "Compromised": [
         "Kompromitovaný"
@@ -7394,7 +7391,7 @@
         "Přesto stáhnout"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ],
       "Duplicate found": [
         "Nalezeny duplicity"
@@ -7515,9 +7512,6 @@
       ],
       "Index kinds": [
         "Typy indexů"
-      ],
-      "Initial indexing": [
-        "Počáteční indexace"
       ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
@@ -8980,7 +8974,7 @@
         "Neomezený objem/šířka pásma"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",
@@ -13353,7 +13347,7 @@
         "Ověření selhalo"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."
@@ -13450,6 +13444,20 @@
       ],
       "You’ve got 5 GB of storage": [
         "Máte k dispozici 5 GB úložného prostoru"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     },
     "Today icon tooltip in mini calendar": {

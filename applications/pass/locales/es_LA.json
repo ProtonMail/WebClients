@@ -1165,6 +1165,12 @@
       "Failed to set default mailbox": [
         "No se pudo establecer el buzón por defecto."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Error al iniciar el agente SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Error al detener el agente SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Error al sincronizar los alias"
       ],
@@ -1534,6 +1540,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } usará las claves SSH guardadas en sus bóvedas."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } activado."
@@ -2089,6 +2098,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2118,6 +2131,9 @@
       ],
       "No network connection": [
         "No hay conexión a la red"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No se encontraron claves SSH en ${ PASS_SHORT_APP_NAME }. Cree claves SSH para usar con este agente."
       ],
       "No vaults available.": [
         "No hay bóvedas disponibles."
@@ -2937,6 +2953,9 @@
       ],
       "Address details": [
         "Detalles de la dirección"
+      ],
+      "Advanced": [
+        "Avanzado"
       ],
       "Alias": [
         "Alias"
@@ -3889,6 +3908,9 @@
       "Update": [
         "Actualizar"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Usar ${ PASS_APP_NAME } como agente SSH"
+      ],
       "Use for AI agent": [
         "Uso para agente de IA"
       ],
@@ -4459,6 +4481,12 @@
       "Random prefix generation successfully enabled": [
         "Se activó la generación aleatoria de prefijos."
       ],
+      "SSH agent successfully started": [
+        "Agente SSH iniciado con éxito"
+      ],
+      "SSH agent successfully stopped": [
+        "Agente SSH detenido con éxito"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Las bóvedas no pueden contener más de ${ targetMaxMembers } usuario.",
         "Las bóvedas no pueden contener más de ${ targetMaxMembers } usuarios."
@@ -4904,6 +4932,9 @@
       "SPF (Optional)": [
         "SPF (opcional)"
       ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
       "Status": [
         "Estado"
       ],
@@ -5249,6 +5280,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ocurrió un error al iniciar ${ PASS_APP_NAME }. Intente refrescar o recargar la extensión."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "El agente SSH requiere usar claves SSH, las cuales no están disponibles en su plan."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefijo del alias no puede tener más de 40 caracteres."

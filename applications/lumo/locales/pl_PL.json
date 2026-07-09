@@ -1102,9 +1102,6 @@
       "Try again": [
         "Spróbuj ponownie"
       ],
-      "Turn off": [
-        "Wyłącz"
-      ],
       "Turn off and delete": [
         "Wyłącz i usuń"
       ],
@@ -1390,9 +1387,6 @@
       "More thorough answers, but can take longer": [
         "Bardziej szczegółowe odpowiedzi, ale mogą potrwać dłużej"
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Trwale usuń swój projekt i czaty. Ta operacja jest nieodwracalna."
-      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Czaty projektowe są całkowicie odizolowane. Opierają się na własnych instrukcjach i plikach oraz całkowicie ignorują Twoje globalne wspomnienia."
       ],
@@ -1422,11 +1416,6 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Wyłączenie pamięci trwale usunie wszystkie ${ memories.length } zapisane wspomnienia. Możesz włączyć pamięć później, ale usuniętych wspomnień nie będzie można odzyskać."
-      ]
-    },
-    "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Wyłącz pamięć ${ LUMO_SHORT_APP_NAME } w dowolnym momencie."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1680,9 +1669,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "Pamięć jest używana tylko w czatach ogólnych, nigdy wewnątrz projektów. Przechowywana przy użyciu szyfrowania o zerowym dostępie."
-      ],
       "You can turn it off again at any time.": [
         "Możesz to wyłączyć w dowolnym momencie."
       ]
@@ -1932,9 +1918,6 @@
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Wygeneruj graf przepływu pracy oraz kod implementacji dla następującego celu. Język docelowy dla kodu:"
-      ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Generuj je na podstawie swoich ostatnich czatów lub dodaj własne poniżej."
       ],
       "Generating…": [
         "Generowanie…"
@@ -5831,20 +5814,11 @@
       "Incorrect username": [
         "Nazwa użytkownika jest nieprawidłowa"
       ],
-      "Invalid ${ name } code": [
-        "Kod ${ name } jest nieprawidłowy"
-      ],
-      "Invalid card number": [
-        "Numer karty jest nieprawidłowy"
-      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
       "Invalid coupon": [
         "Nieprawidłowy kupon"
-      ],
-      "Invalid expiration date": [
-        "Termin ważności jest nieprawidłowy"
       ],
       "Invalid IBAN": [
         "Numer IBAN jest nieprawidłowy"

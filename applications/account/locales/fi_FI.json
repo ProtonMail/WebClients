@@ -109,6 +109,9 @@
       "Add calendar from URL": [
         "Lisää kalenteri URL-osoitteesta"
       ],
+      "Add company": [
+        "Lisää yritys"
+      ],
       "Add condition": [
         "Lisää ehto"
       ],
@@ -187,6 +190,9 @@
       "Apply to existing messages": [
         "Käytä nykyisille viesteille"
       ],
+      "Approve": [
+        "Hyväksy"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -249,6 +255,9 @@
       ],
       "Check import progress": [
         "Tarkasta tuonnin tila"
+      ],
+      "Check now": [
+        "Tarkasta nyt"
       ],
       "Choose a file or drag it here": [
         "Valitse tiedosto tai pudota se tähän"
@@ -544,6 +553,9 @@
       "Disable categories": [
         "Poista luokat käytöstä"
       ],
+      "Disable company": [
+        "Poista yritys käytöstä"
+      ],
       "Disable recovery phrase": [
         "Poista palautuslauseke käytöstä"
       ],
@@ -682,6 +694,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Ota ${ darkWebMonitoring } käyttöön"
       ],
+      "Enable company": [
+        "Ota yritys käytttöön"
+      ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
       ],
@@ -718,11 +733,17 @@
       "Export as CSV": [
         "Vie CSV:nä"
       ],
+      "Export breakdown by company as ZIP": [
+        "Vie erittely yrityksen mukaan ZIP-tiedostona"
+      ],
       "Export key": [
         "Vie avain"
       ],
       "Export key before deleting": [
         "Vie avain ennen poistoa"
+      ],
+      "Export overview as CSV": [
+        "Vie yleiskatsaus CSV-tiedostona"
       ],
       "Extend": [
         "Pidennä"
@@ -982,6 +1003,9 @@
       "Make key primary": [
         "Aseta avain ensisijaiseksi"
       ],
+      "Manage": [
+        "Hallinnoi"
+      ],
       "Manage addresses": [
         "Hallitse osoitteita"
       ],
@@ -1104,6 +1128,9 @@
       ],
       "Organization": [
         "Organisaatio"
+      ],
+      "Pause": [
+        "Pysäytä"
       ],
       "Pay": [
         "Maksa"
@@ -1407,6 +1434,9 @@
       ],
       "Set as default": [
         "Aseta oletukseksi"
+      ],
+      "Set as default mail application": [
+        "Aseta oletussähköpostisovellukseksi"
       ],
       "Set catch-all": [
         "Aseta nappaa kaikki"
@@ -2598,6 +2628,12 @@
       "Sign in to Google Workspace": [
         "Kirjaudu Google Workspace -palveluun"
       ],
+      "Size": [
+        "Koko"
+      ],
+      "Skip": [
+        "Ohita"
+      ],
       "Status": [
         "Tila"
       ],
@@ -2606,6 +2642,9 @@
       ],
       "Users migrated": [
         "Käyttäjät siirretty"
+      ],
+      "Verified": [
+        "Vahvistettu"
       ],
       "Verify your domain": [
         "Vahvista verkkotunnuksesi"
@@ -3289,6 +3328,29 @@
       ],
       "white": [
         "valkoinen"
+      ]
+    },
+    "Column header": {
+      "Billing period": [
+        "Laskutuskausi"
+      ],
+      "Company": [
+        "Yritys"
+      ],
+      "Managed companies": [
+        "Hallinnoitavat yhtiöt"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Total billed seats": [
+        "Laskutettujen paikkojen kokonaismäärä"
+      ],
+      "Total cost": [
+        "Kokonaishinta"
+      ],
+      "Used / assigned seats": [
+        "Käytetyt / varatut paikat"
       ]
     },
     "Condition for custom filter": {
@@ -4475,6 +4537,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }ssä antaa sinun työskennellä yhdessä muiden kanssa, turvallisessa ja salatussa ympäristössä."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } ei ole oletussähköpostisovelluksesi."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } on oletussähköpostisovelluksesi."
+      ],
       "A checked box means the feature is disabled.": [
         "Rasti ruudussa tarkoittaa, että toiminto ei ole käytössä."
       ],
@@ -4589,6 +4657,15 @@
       "No one in your organization can connect to shared servers.": [
         "Kukaan organisaatiossasi ei voi yhdistää jaettuihin palvelimiin."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Huomaa, että tähän osoitteeseen lähetettyjä sähköposteja, edes muista ${ BRAND_NAME } -osoitteista, ei enää salata päästä päähän."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu ja tili poistettu käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
       ],
@@ -4667,6 +4744,9 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Voit nyt lähettää sähköposteja ${ BRAND_NAME }:sta tällä osoitteella."
+      ],
+      "You can reconnect this address at any time.": [
+        "Voit yhdistää tämän osoitteen uudelleen milloin tahansa."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Välität ${ numAddressesOrSync } Gmail-osoitteen sovellukseen ${ MAIL_APP_NAME }.",
@@ -5971,12 +6051,6 @@
       "Intended recipient does not support calendar sharing": [
         "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
       ],
-      "Invalid ${ name } code": [
-        "Virheellinen ${ name }-koodi"
-      ],
-      "Invalid card number": [
-        "Virheellinen kortin numero"
-      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -5988,9 +6062,6 @@
       ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
-      ],
-      "Invalid expiration date": [
-        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid IBAN": [
         "Virheellinen IBAN"
@@ -6076,6 +6147,9 @@
       ],
       "Not a valid number": [
         "Virheellinen numero"
+      ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "Tälle osoitteelle voidaan muuttaa ainoastaan kirjainten kokoa ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja)"
       ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
@@ -6213,6 +6287,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta",
+        "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta",
+        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta"
       ],
       "Server not found": [
         "Palvelinta ei löytynyt"
@@ -7218,6 +7300,9 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
+      "Insert your security key into your device.": [
+        "Aseta turva-avain laitteeseesi."
+      ],
       "Security key": [
         "Suojausavain"
       ],
@@ -7629,6 +7714,12 @@
     "group_modal": {
       "General": [
         "Yleinen"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ],
       "Roles and permissions": [
         "Roolit ja oikeudet"
@@ -8186,6 +8277,9 @@
       "In progress...": [
         "Käynnissä..."
       ],
+      "Migrated": [
+        "Siirretty"
+      ],
       "Paused": [
         "Keskeytetty"
       ],
@@ -8239,6 +8333,9 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } asetetaan oletuskalenteriksi."
       ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME }:n Business paketit tarjoavat tiimillesi kaikki yhteistyötyökalut, joita se tarvitsee voidakseen työskennellä tuottavasti ja järjestelmällisesti, samalla kun ne turvaavat yrityksesi."
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } on itsenäisesti rahoitettu ja toimii ilman mainontaa. Alla on esimerkkejä siitä, miten tätä itsenäisyyttä on hyödynnetty käytännössä."
       ],
@@ -8247,6 +8344,9 @@
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ei koskaan jaa tietojasi ulkopuolisille tahoille. Tiedot ovat peräisin ${ BRAND_NAME }in omista analyyseistä ja Constella Intelligenceltä."
+      ],
+      "${ BRAND_NAME } Pass Professional": [
+        "${ BRAND_NAME } Pass Professional"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
@@ -8286,6 +8386,10 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } on virheellinen"
+      ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } jäsen lisätty ryhmää",
+        "${ emails.length } jäsentä lisätty ryhmään"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
@@ -8383,9 +8487,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } uutta jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
-        "${ pendingAdminMemberCount } uutta jäsentä on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } uusi jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
+        "${ pendingAdminApprovalCount } uutta jäsenta on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -8653,6 +8757,9 @@
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
       ],
+      "All data and settings are preserved": [
+        "Kaikki tiedot ja asetukset säilytetään"
+      ],
       "All inactive members deleted": [
         "Kaikki inaktiiviset jäsenet on poistettu"
       ],
@@ -8777,6 +8884,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
+      "Assigned seats won't be billed while disabled": [
+        "Varattuja paikkoja ei laskuteta, kun ne ovat poistettu käytöstä"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
       ],
@@ -8794,6 +8904,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt viestit automaattisesti."
+      ],
+      "Average": [
+        "Keskiarvo"
       ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
@@ -9350,6 +9463,9 @@
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "Erääntyy ${ ExpMonth }/${ ExpYear }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
       ],
@@ -9461,11 +9577,17 @@
       "Got it": [
         "Selvä"
       ],
+      "Group created": [
+        "Ryhmä luotu"
+      ],
       "Group deleted": [
         "Ryhmä poistettiin"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ryhmittele samaan keskusteluun kuuluvat viestit yhteen tai näytä ne erillään."
+      ],
+      "Group roles assigned": [
+        "Ryhmäroolit määritetty"
       ],
       "Groups": [
         "Ryhmät"
@@ -9872,6 +9994,9 @@
       "Member": [
         "Jäsen"
       ],
+      "Members are signed out and can't sign back in": [
+        "Jäsenet on kirjattu ulos, eivätkä he voi kirjautua takaisin sisään"
+      ],
       "Merged": [
         "Yhdistetty"
       ],
@@ -10001,6 +10126,9 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Kun tilillesi on myönnetty käyttöoikeus, he voivat avata **Palautus**-asetuksesi ja **vaihtaa ${ ACCOUNT_APP_NAME } -salasanasi** puolestasi."
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
+        "Tässä voidaan muuttaa vain isojen kirjainten käyttöä ja välimerkkejä (pisteitä, väliviivoja ja alaviivoja). Jos haluat käyttää eri osoitetta, lisää uusi osoite."
+      ],
       "Only sign in on devices you trust": [
         "Kirjaudu sisään vain laitteilla, joihin luotat"
       ],
@@ -10104,6 +10232,9 @@
       ],
       "per month, billed at ${ price }": [
         "kuukaudessa, laskutetaan ${ price }"
+      ],
+      "Per seat/month": [
+        "Per paikka/kuukausi"
       ],
       "Phone number": [
         "Puhelinnumero"
@@ -10302,6 +10433,9 @@
       "Restore": [
         "Palauta"
       ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Tarkastele aiempia kausia ja vie tiedot raportointia tai asiakaskirjanpitoa varten."
+      ],
       "Right to Left": [
         "Oikealta vasemmalle"
       ],
@@ -10382,6 +10516,9 @@
       ],
       "Set password": [
         "Aseta salasana"
+      ],
+      "Set the name, status, and assigned seats": [
+        "Määritä nimi, tila ja osoitetut paikat"
       ],
       "Set up your organization": [
         "Määritä organisaatiosi"
@@ -10574,6 +10711,9 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } viestiä ei enää näytetä, mutta voit silti poistaa lukituksen tiedoista kohdassa ${ encryptionAndKeysLink }."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "Yritys ja kaikki sen jäsenet menettävät käyttöoikeutensa välittömästi."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Pimeä verkko on Internetin piilotettu osa, jossa identiteettien kaltaiset varastetut henkilökohtaiset tiedot ovat kauppatavaraa."
@@ -11125,8 +11265,14 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Nollauskoodisi lähetetään seuraavaan osoitteeseen tai numeroon: ${ boldValue }."
       ],
+      "What happens:": [
+        "Mitä tapahtuu:"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kun ei käytössä, estää kuvatiedostoja latautumasta laitteellesi ilman tietoasi."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Kun tämä on sallittu, tarkistamme onko ${ MAIL_APP_NAME } oletus sähköpostisovellus ja ilmoitamme, jos ei ole."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetintarjoajaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetintarjoajasi soveltuviin tietokenttiin."
@@ -11172,6 +11318,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Ryhmien avulla voit helposti ja nopeasti lähettää sähköposteja kaikille tiettyyn ryhmään kuuluville henkilöille."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Hallinnoitujen yritysten avulla voit lisätä, muokata ja poistaa käyttöoikeuksia organisaatioille, joita valvot."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita olemassa oleville käyttäjille, etkä käyttää muita kuin yksityisiä käyttäjätilejä."
@@ -11245,6 +11394,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
+      ],
+      "You can enable this company again at any time.": [
+        "Voit ottaa tämän yrityksen uudelleen käyttöön milloin tahansa."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
@@ -11380,6 +11532,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Et voi palauttaa lukittuja tietoja lataamillasi palautustiedostoilla. Tämä poistaa myös laitepohjaisen palautuksen käytöstä."
       ],
+      "You'll be billed monthly based on the average number of assigned seats.": [
+        "Laskutus tapahtuu kuukausittain, ja sen perustana on osoitettujen käyttöoikeuksien keskimääräinen lukumäärä."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Saatte krediitit 1 kuukausi sen jälkeen, kun ystävänne tilaa vuositilauksen, ja 2 kuukautta sen jälkeen, kun he tilaavat kuukausitilauksen."
       ],
@@ -11499,6 +11654,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Kaikkien hallinnoitavien yritysten kuukausittaiset kokonaiskustannukset."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Tilauksesi päättyy ajassa ${ timeRemaining }."
@@ -11629,6 +11787,9 @@
       ],
       "Group Owner": [
         "Ryhmän omistaja"
+      ],
+      "Invited": [
+        "Kutsuttu"
       ],
       "Paused": [
         "Pysäytetty"
@@ -12203,6 +12364,9 @@
       "App password": [
         "Sovellussalasana"
       ],
+      "App Settings": [
+        "Sovellusasetukset"
+      ],
       "Apply filter to existing emails": [
         "Käytä suodatinta nykyisille viesteille"
       ],
@@ -12214,6 +12378,9 @@
       ],
       "Assertion Consumer Service URL": [
         "Valtuutuksen käyttäjäpalvelun (Assertion Consumer Service, ACS) URL"
+      ],
+      "Assigned seats": [
+        "Määrätyt paikat"
       ],
       "Attach public key": [
         "Liitä julkinen avain"
@@ -12263,6 +12430,9 @@
       "Autosuggest": [
         "Automaattiehdotus"
       ],
+      "Average": [
+        "Keskimäärin"
+      ],
       "Awarded": [
         "Palkittu"
       ],
@@ -12275,8 +12445,14 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Laskutetaan 12 kuukauden välein hintaan ${ priceYearly }."
       ],
+      "Billed average": [
+        "Laskutettu keskiarvo"
+      ],
       "Billed monthly.": [
         "Laskutetaan kuukausittain."
+      ],
+      "Billed seats": [
+        "Laskutetut paikat"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -12365,6 +12541,9 @@
       "Common passwords": [
         "Yleiset salasanat"
       ],
+      "Companies": [
+        "Yritykset"
+      ],
       "Company": [
         "Yritys"
       ],
@@ -12421,6 +12600,9 @@
       ],
       "Copy IP address to clipboard": [
         "Kopioi IP-osoite leikepöydälle"
+      ],
+      "Cost": [
+        "Hinta"
       ],
       "Could you please let us know which provider?": [
         "Kortoisitko meille, mikä palveluntarjoaja?"
@@ -12986,6 +13168,9 @@
       "Password": [
         "Salasana"
       ],
+      "Password check-ins": [
+        "Salasanalla kirjautumiset"
+      ],
       "Password strength": [
         "Salasanan vahvuus"
       ],
@@ -13118,6 +13303,12 @@
       "Search": [
         "Haku"
       ],
+      "Seats": [
+        "Paikat"
+      ],
+      "Seats usage": [
+        "Paikkojen käyttö"
+      ],
       "Second password": [
         "Toinen salasana"
       ],
@@ -13169,6 +13360,9 @@
       ],
       "Show sender images": [
         "Näytä lähettäjien kuvat"
+      ],
+      "Show unread count": [
+        "Näytä lukemattomien viestien määrä"
       ],
       "Show unread count in Favicon": [
         "Näytä lukemattomien viestien määrä faviconissa"
@@ -13295,6 +13489,9 @@
       ],
       "today": [
         "tänään"
+      ],
+      "Total cost": [
+        "Kokonaishinta"
       ],
       "Transactions": [
         "Siirrot"
@@ -13492,8 +13689,14 @@
       ]
     },
     "Label for domain setup": {
+      "Host name": [
+        "Isäntänimi"
+      ],
       "Status": [
         "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
       ]
     },
     "Label for new member": {
@@ -16848,6 +17051,14 @@
         "Rajoitetun ajan tarjous."
       ]
     },
+    "password_reminder": {
+      "Turn off check-ins": [
+        "Poista sisäänkirjautumiset käytöstä"
+      ],
+      "Turn off password check-ins?": [
+        "Poistetaanko salasanan syöttövaatimus käytöstä?"
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Kaikki ylläpitäjät saavat avaimen käyttöoikeuden."
@@ -17340,6 +17551,9 @@
       "Enter a name": [
         "Syötä nimi"
       ],
+      "Enter company name": [
+        "Anna yrityksen nimi"
+      ],
       "example@domain.com": [
         "esimerkki@verkkotunnus.fi"
       ],
@@ -17396,6 +17610,9 @@
       ],
       "Search": [
         "Etsi"
+      ],
+      "Search for a company": [
+        "Hae yritystä"
       ],
       "Search for a user or address": [
         "Etsi käyttäjää tai osoitetta"
@@ -17790,8 +18007,14 @@
       ]
     },
     "Recovery score": {
+      "Critical": [
+        "Kriittinen"
+      ],
       "Inactive recovery options": [
         "Käyttämättömät palautusvaihtoehdot"
+      ],
+      "Weak": [
+        "Heikko"
       ]
     },
     "Recovery score item": {
@@ -18343,6 +18566,9 @@
       "Done": [
         "Valmis"
       ],
+      "Download": [
+        "Lataa"
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -18415,6 +18641,14 @@
       ],
       "Testing SAML configuration": [
         "SAML-määritystä testataan"
+      ]
+    },
+    "scim": {
+      "New": [
+        "Uusi"
+      ],
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Yksityiseksi asetetut käyttäjät joutuvat hyväksymään kutsun, jotta asetusten määrittäminen voidaan saattaa loppuun. Lähetämme heille kutsun, kun olet hyväksynyt sen."
       ]
     },
     "scim: Action": {
@@ -19634,13 +19868,13 @@
         "${ n } käyttäjä erotettu SSO:sta",
         "${ n } käyttäjää erotettu SSO:sta"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajasi kautta. Tarkista tili nyt:",
-        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajasi kautta. Tarkista tilit nyt:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajasi kautta",
+        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajasi kautta"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } käyttäjä ei ole aktiivinen. Voit turvallisesti poistaa tämän käyttäjän organisaatiostasi.",
-        "${ n } käyttäjää ei ole aktiivisena. Voit turvallisesti poistaa heidät organisaatiostasi."
+      "${ n } user is inactive.": [
+        "${ n } käyttäjä on passiivinen.",
+        "${ n } käyttäjää on passiivisia."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } käyttäjä pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tilillensä kertakirjautumisella.",
@@ -19909,6 +20143,9 @@
       ],
       "Disabled": [
         "Poistettu käytöstä"
+      ],
+      "Outdated": [
+        "Vanhentunut"
       ],
       "Verify ${ value }": [
         "Vahvista ${ value }"
@@ -20589,6 +20826,18 @@
       ]
     },
     "Success": {
+      "${ company.name } enabled": [
+        "${ company.name } otettu käyttöön"
+      ],
+      "${ confirmDisable.name } disabled": [
+        "${ confirmDisable.name } poistettu käytöstä"
+      ],
+      "${ data.name } added": [
+        "${ data.name } lisättiin"
+      ],
+      "${ data.name } updated": [
+        "${ data.name } päivitettiin"
+      ],
       "Account deleted. Signing out...": [
         "Tili on poistettu. Kirjaudutaan ulos..."
       ],
@@ -20708,6 +20957,12 @@
       ],
       "Organization name updated": [
         "Organisaation nimi päivitettiin"
+      ],
+      "Password check-ins disabled": [
+        "Salasanalla tehdyt kirjautumiset poistettu käytöstä"
+      ],
+      "Password check-ins enabled": [
+        "Salasanalla kirjautuminen on käytössä"
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
@@ -21192,6 +21447,9 @@
       "Add another notification to remind you of this event": [
         "Lisää uusi ilmoitus muistuttamaan tapahtumasta"
       ],
+      "Add company": [
+        "Lisää yritys"
+      ],
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
       ],
@@ -21294,6 +21552,9 @@
       "Are you sure you want to close?": [
         "Haluatko varmasti sulkea määrityksen?"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Haluatko varmasti katkaista yhteyden ja poistaa tämän osoitteen käytöstä?"
+      ],
       "Are you sure you want to disconnect this address?": [
         "Haluatko varmasti katkaista tämän osoitteen yhteyden?"
       ],
@@ -21368,6 +21629,9 @@
       ],
       "Change second password": [
         "Vaihda toinen salasana"
+      ],
+      "Check your default mail application": [
+        "Tarkista oletussähköpostisovelluksesi"
       ],
       "Choose a provider": [
         "Valitse tarjoaja"
@@ -21623,6 +21887,9 @@
       "Disable categories?": [
         "Poistetaanko luokat käytöstä?"
       ],
+      "Disable company": [
+        "Poista yritys käytöstä"
+      ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
       ],
@@ -21673,6 +21940,9 @@
       ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
+      ],
+      "Edit company": [
+        "Muokkaa yritystä"
       ],
       "Edit countries": [
         "Muokkaa maita"
@@ -21860,6 +22130,9 @@
       ],
       "Get complete privacy coverage": [
         "Hanki täydellinen yksityisyyden suoja"
+      ],
+      "Get more from your privacy suite": [
+        "Ota kaikki irti tietosuojapaketistasi"
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
@@ -22158,6 +22431,9 @@
       ],
       "Previous": [
         "Edellinen"
+      ],
+      "Previous billing periods": [
+        "Edelliset laskutuskaudet"
       ],
       "Priority support:": [
         "Ensisijainen tuki:"
@@ -22634,6 +22910,9 @@
       "WireGuard configuration": [
         "WireGuard-määritykset"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "${ BRAND_NAME } -tilisi avulla pääset käyttämään kaikkia ${ BRAND_NAME } -sovelluksia"
+      ],
       "You are all set": [
         "Kaikki on valmista"
       ],
@@ -22711,6 +22990,9 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Päivämäärä"
+      ],
       "Size": [
         "Koko"
       ]
@@ -22949,6 +23231,9 @@
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
       ],
@@ -22984,6 +23269,9 @@
       "Group membership paused": [
         "Ryhmän jäsenyys on pysäytetty"
       ],
+      "Resuming role assignment": [
+        "Roolin määrityksen jatkaminen"
+      ],
       "Role assignment paused": [
         "Roolien määrittäminen keskeytetty"
       ],
@@ -22993,11 +23281,14 @@
       "User declined invitation": [
         "Käyttäjä hylkäsi kutsun"
       ],
-      "User is a group": [
-        "Käyttäjä on ryhmä"
+      "User is a group owner": [
+        "Käyttäjä on ryhmän omistaja"
       ],
       "via ${ groupNames }": [
         "${ groupNames } kautta"
+      ],
+      "Waiting for admin approval": [
+        "Odotetaan järjestelmänvalvojan hyväksyntää"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
@@ -23087,8 +23378,14 @@
       "Payment reversal": [
         "Maksun peruutus"
       ],
+      "Prepayment": [
+        "Ennakkomaksu"
+      ],
       "Refund": [
         "Hyvitys"
+      ],
+      "Test credit": [
+        "Testikrediitti"
       ]
     },
     "Unlimited offer": {
@@ -23133,9 +23430,9 @@
       "Confirm all": [
         "Vahvista kaikki"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa ovat välillä muuttuneet:",
-        "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa on välillä muuttunut:"
+      "Could not enable admin access for ${ n } user": [
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia",
+        "${ n }:lle käyttäjälle ei voitu antaa järjestelmänvalvojan oikeuksia"
       ],
       "Could not enable administrator access: ${ error }": [
         "Hallintaoikeutta ei voitu myöntää: ${ error }"
@@ -23176,6 +23473,10 @@
       "Request user permission for data access": [
         "Pyydä käyttäjältä tietojen käsittelyoikeutta"
       ],
+      "Review their account now.": [
+        "Tarkista heidän tilinsä nyt.",
+        "Tarkista heidän tilinsä nyt."
+      ],
       "Revoke access": [
         "Mitätöi käyttöoikeus"
       ],
@@ -23187,6 +23488,9 @@
       ],
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Heidän salausavaimet päivitettiin samalla, kun teimme muutoksia."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Tämä peruu odottavan käyttäjän tietojen tai salasanan nollauksen hallintapyynnön."
@@ -23205,6 +23509,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Voit ${ reject } pyynnön, jos et halua jatkaa."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Voit poistaa tämän käyttäjän turvallisesti organisaatiostasi.",
+        "Voit poistaa nämä käyttäjät turvallisesti organisaatiostasi."
       ]
     },
     "Update font modal": {
@@ -23305,6 +23613,15 @@
       ],
       "Invitation email": [
         "Kutsusähköposti"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkia käyttäjiä, ryhmiä, suojausasetuksia, laskutusasetuksia ja järjestelmän määrityksiä."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hallinnoi käyttäjiä ja ryhmiä, määritä rooleja ja jaa lisenssejä jäsenille."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Hallinnoi suojausasetuksia ja voi tarkastella kaikkia tapahtumalokeja ja käyttäjätietoja."
       ],
       "Name": [
         "Nimi"

@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Nicht erneut anzeigen, wenn ich drücke"
       ],
+      "Do not show this again": [
+        "Nicht mehr anzeigen"
+      ],
       "Don't show this again": [
         "Nicht mehr anzeigen"
+      ],
+      "Done": [
+        "Fertig"
       ],
       "Download this CSV template": [
         "Diese CSV-Vorlage herunterladen"
@@ -1212,6 +1218,12 @@
       "Failed to set default mailbox": [
         "Fehler beim Festlegen des Standardpostfachs."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht gestartet werden: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH-Agent konnte nicht beendet werden: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Fehler beim Synchronisieren der Aliasse."
       ],
@@ -1607,6 +1619,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen, Kreditkarten und Identitäten."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } verwendet die in deinen Tresoren gespeicherten SSH-Schlüssel."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } Offline-Modus aktiviert."
       ],
@@ -1986,6 +2001,9 @@
       "finance": [
         "Finanzen"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Suchen „OpenSSH Authentication Agent“ und klicke mit der rechten Maustaste darauf, um die Eigenschaften aufzurufen."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
       ],
@@ -2026,6 +2044,9 @@
       ],
       "Identity confirmed": [
         "Identität bestätigt"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Falls du den SSH-Agenten nicht auf einem anderen kostenpflichtigen Konto verwenden möchtest, denk bitte daran, diese Einstellung zu deaktivieren, bevor du zu diesem Konto wechselst."
       ],
       "Import the CSV file below.": [
         "Importiere die CSV-Datei unten."
@@ -2136,6 +2157,9 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Stelle sicher, dass ${ PASS_APP_NAME } ausgeführt wird (kann minimiert sein), damit der SSH-Agent aktiv bleibt. SSH-Schlüssel mit Passphrase werden derzeit nicht unterstützt."
+      ],
       "Manager": [
         "Manager"
       ],
@@ -2197,6 +2221,9 @@
       "No network connection": [
         "Keine Netzwerkverbindung"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "In ${ PASS_SHORT_APP_NAME } wurden keine SSH-Schlüssel gefunden. Erstelle einen SSH-Schlüssel-Eintrag für die Verwendung mit dem Agenten."
+      ],
       "No vaults available.": [
         "Keine Tresore verfügbar."
       ],
@@ -2220,6 +2247,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Nur Token, die in den letzten 30 Tagen abgelaufen sind, werden angezeigt. Ältere Token wurden automatisch gelöscht."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Öffne „Dienste“ (du kannst dazu die Windows-Suchleiste verwenden oder die Tastenkombination Win+R drücken und „services.msc“ eingeben)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Öffne deine Safari-Einstellungen für die Erweiterung und überprüfe, ob die Seitenberechtigungen für ${ BRAND_NAME }-Domains aktiviert sind."
@@ -2245,6 +2275,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
         "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Paste the following command in your terminal:": [
+        "Füge den folgenden Befehl in deinen Terminal ein:"
       ],
       "Paused": [
         "Angehalten"
@@ -2474,6 +2507,9 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "„Start-up-Typ“ auf deaktiviert einstellen und auf OK klicken."
+      ],
       "Set by your organization": [
         "Von deiner Organisation festgelegt"
       ],
@@ -2616,6 +2652,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dadurch wird das Gerät **${ name }**, das versuchte, sich am **${ date }** bei deinem ${ BRAND_NAME }-Konto anzumelden, abgelehnt."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tipp: Füge den Befehl in deine .bashrc- oder .zshrc-Datei ein, damit er automatisch ausgeführt wird, wenn du das Terminal öffnest."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Um weiterhin E-Mails zu empfangen, übertrage diese Aliase auf ein anderes E-Mail-Postfach:"
       ],
@@ -2630,6 +2669,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Um die biometrische Entsperrung einzurichten, benötigt ${ PASS_APP_NAME } eine neue Browser-Berechtigung. Nachdem du diese akzeptiert hast, wird die Erweiterung neu geladen. Bitte öffne diese Seite anschließend erneut."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Um den ${ PASS_APP_NAME }-SSH-Agenten unter Windows nutzen zu können, muss der OpenSSH-Dienst deaktiviert sein."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrauenswürdig für über 50'000 Geschäftsbenutzern und 100 Millionen Konten weltweit."
@@ -3021,6 +3063,9 @@
       ],
       "Address details": [
         "Adressdetails"
+      ],
+      "Advanced": [
+        "Fortgeschritten"
       ],
       "Alias": [
         "Alias"
@@ -4021,6 +4066,9 @@
       "Update": [
         "Aktualisieren"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "${ PASS_APP_NAME } als SSH-Agent verwenden"
+      ],
       "Use for AI agent": [
         "Für KI-Agenten verwenden"
       ],
@@ -4608,6 +4656,12 @@
       "Random prefix generation successfully enabled": [
         "Die zufällige Präfixgenerierung wurde aktiviert."
       ],
+      "SSH agent successfully started": [
+        "SSH-Agent erfolgreich gestartet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-Agent erfolgreich gestoppt"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten.",
         "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten."
@@ -5014,6 +5068,9 @@
       "Review and share": [
         "Überprüfen und teilen"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Screenshot des OpenSSH-Dienstes unter Windows"
+      ],
       "Secure your data": [
         "Schütze deine Daten"
       ],
@@ -5035,6 +5092,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "${ PASS_APP_NAME } SSH-Agent einrichten"
+      ],
       "Setup offline mode": [
         "Offline-Modus einrichten"
       ],
@@ -5052,6 +5112,9 @@
       ],
       "SPF (Optional)": [
         "SPF (optional)"
+      ],
+      "SSH Agent": [
+        "SSH-Agent"
       ],
       "Status": [
         "Status"
@@ -5401,6 +5464,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Beim Starten von ${ PASS_APP_NAME } ist ein Fehler aufgetreten. Bitte versuche, die Erweiterung zu aktualisieren oder neu zu laden."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Für den SSH-Agenten ist die Verwendung von SSH-Schlüsseln erforderlich, was in deinem Abonnement nicht verfügbar ist."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Der Alias-Präfix darf nicht länger als 40 Zeichen sein."

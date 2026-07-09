@@ -3265,9 +3265,6 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
-      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
         "Vissa kontakter har ingen e-postadress: ${ noEmailsContactNamesList } "
@@ -4484,10 +4481,6 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt vald",
         "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } vald",
-        "${ selectedCount } valda"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapp vald",
         "${ selectedFoldersCountLocalized } mappar valda"
@@ -4756,9 +4749,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ emailAddress }."
       ],
-      "Disable table of contents": [
-        "Inaktivera innehållsförteckning"
-      ],
       "Display word count": [
         "Visa antalet ord"
       ],
@@ -4812,9 +4802,6 @@
       ],
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
-      ],
-      "Enable table of contents": [
-        "Aktivera innehållsförteckning"
       ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
@@ -4933,6 +4920,9 @@
       "here": [
         "här"
       ],
+      "Hide table of contents": [
+        "Dölj innehållsförteckning"
+      ],
       "High Priority": [
         "Hög prioritet"
       ],
@@ -4959,6 +4949,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
@@ -5328,6 +5321,9 @@
       ],
       "Shared on": [
         "Delat den"
+      ],
+      "Show table of contents": [
+        "Visa innehållsförteckning"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signatur kan inte valideras på grund av nätverksfel, försök igen senare."
@@ -6098,6 +6094,9 @@
       "Erase this link and remove everyone with access": [
         "Radera denna länk och ta bort alla med åtkomst"
       ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
       "Expiry": [
         "Löper ut"
       ],
@@ -6278,6 +6277,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
       "Replace existing file": [
         "Ersätt befintlig fil"
       ],
@@ -6313,6 +6315,9 @@
       ],
       "Skip folder": [
         "Hoppa över mapp"
+      ],
+      "Starts with": [
+        "Börjar med"
       ],
       "Stop sharing": [
         "Sluta dela"
@@ -8037,6 +8042,9 @@
       ],
       "Device renamed": [
         "Enhet omdöpt"
+      ],
+      "Document moved to trash": [
+        "Dokument flyttat till papperskorg"
       ],
       "External invitation removed from the share": [
         "Extern inbjudan borttagen från delningen"
@@ -9972,6 +9980,9 @@
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "Account recovery": [
         "Kontoåterställning"
       ],
@@ -10586,6 +10597,26 @@
         "Din exponerade information"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
@@ -10667,6 +10698,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
       ]
@@ -10699,6 +10733,11 @@
       ],
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Validation": {

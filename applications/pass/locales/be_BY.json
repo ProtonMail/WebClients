@@ -1175,6 +1175,9 @@
       "Failed to set default mailbox": [
         "Не ўдалося задаць прадвызначаную паштовую скрыню"
       ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Не ўдалося спыніць агент SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Не ўдалося сінхранізаваць псеўданімы"
       ],
@@ -1432,7 +1435,7 @@
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Абагуленне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
+        "Абагульванне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
       ]
     },
     "file size format": {
@@ -1570,6 +1573,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і ідэнтычнасці."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } будзе выкарыстоўваць ключы SSH захаваныя ў вашым сховішчы."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Пазасеткавы рэжым у ${ PASS_SHORT_APP_NAME } уключаны."
@@ -2141,6 +2147,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2170,6 +2182,9 @@
       ],
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ключы SSH не знойдзены ў ${ PASS_SHORT_APP_NAME }. Стварыце элементы ключа SSH, каб выкарыстоўваць з агентам."
       ],
       "No vaults available.": [
         "Няма даступных сховішчаў."
@@ -2427,7 +2442,7 @@
         "Выберыце сховішчы, якія можа прачытаць \"${ token.Name }\"."
       ],
       "Select vault to share": [
-        "Выберыце сховішча для абагулення"
+        "Выберыце сховішча для абагульвання"
       ],
       "Select where you want your imported vaults to be saved.": [
         "Выберыце куды вы хочаце захаваць свае імпартаваныя сховішчы."
@@ -3029,6 +3044,9 @@
       ],
       "Address details": [
         "Звесткі аб адрасе"
+      ],
+      "Advanced": [
+        "Дадаткова"
       ],
       "Alias": [
         "Псеўданім"
@@ -4559,6 +4577,12 @@
       "Random prefix generation successfully enabled": [
         "Адвольная генерацыя прэфіксу паспяхова ўключана"
       ],
+      "SSH agent successfully started": [
+        "Агент SSH паспяхова запушчаны"
+      ],
+      "SSH agent successfully stopped": [
+        "Агент SSH паспяхова спынены"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальніка.",
         "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікі.",
@@ -5015,6 +5039,9 @@
       ],
       "SPF (Optional)": [
         "SPF (неабавязкова)"
+      ],
+      "SSH Agent": [
+        "Агент SSH"
       ],
       "Status": [
         "Статус"

@@ -1072,9 +1072,6 @@
       "Try again": [
         "Riprova"
       ],
-      "Turn off": [
-        "Disattiva"
-      ],
       "Turn off and delete": [
         "Disattiva ed elimina"
       ],
@@ -1356,9 +1353,6 @@
       "More thorough answers, but can take longer": [
         "Risposte più approfondite, ma possono richiedere più tempo"
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Elimina definitivamente il tuo progetto e le chat. Questa azione è irreversibile."
-      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Le chat di progetto sono mantenute completamente isolate. Si basano sulle proprie istruzioni e sui propri file, ignorando del tutto i tuoi ricordi globali."
       ],
@@ -1388,11 +1382,6 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Disattivando la memoria eliminerai in modo permanente tutti i ${ memories.length } ricordi salvati. Potrai riattivare la memoria in seguito, ma i ricordi eliminati non potranno essere recuperati."
-      ]
-    },
-    "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Disattiva la memoria di ${ LUMO_SHORT_APP_NAME } in qualsiasi momento."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1646,9 +1635,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "La memoria viene utilizzata solo nelle chat generali, mai all'interno dei progetti. Archiviata con crittografia a zero accesso."
-      ],
       "You can turn it off again at any time.": [
         "Puoi disattivarlo di nuovo in qualsiasi momento."
       ]
@@ -1890,9 +1876,6 @@
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Genera un grafico del flusso di lavoro e il codice di implementazione per il seguente obiettivo. Lingua di destinazione del codice:"
-      ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Generali dalle tue chat recenti o aggiungi i tuoi qui sotto."
       ],
       "Generating…": [
         "Generazione in corso…"
@@ -5781,20 +5764,11 @@
       "Incorrect username": [
         "Username non corretto"
       ],
-      "Invalid ${ name } code": [
-        "Codice ${ name } non valido"
-      ],
-      "Invalid card number": [
-        "Numero della carta non valido"
-      ],
       "Invalid code": [
         "Codice non valido"
       ],
       "Invalid coupon": [
         "Coupon non valido"
-      ],
-      "Invalid expiration date": [
-        "Data di scadenza non valida"
       ],
       "Invalid IBAN": [
         "IBAN non valido"
@@ -5872,7 +5846,7 @@
         "Timeout della richiesta"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
@@ -6706,7 +6680,7 @@
         "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Il tuo account è attualmente configurato per applicare il regime di reverse charge. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
+        "Il tuo account è attualmente configurato per applicare il regime di inversione contabile. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
       ],
       "Your email will only be used for this one-time verification.": [
         "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
