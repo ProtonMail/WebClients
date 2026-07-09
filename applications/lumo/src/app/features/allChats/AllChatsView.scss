@@ -1,0 +1,30 @@
+.lumo-chat-list-item {
+	&:hover {
+		background-color: var(--interaction-default-hover);
+	}
+
+	.lumo-chat-list-item-timestamp {
+		transition: opacity 0.15s ease;
+	}
+
+	&:hover .lumo-chat-list-item-timestamp,
+	.lumo-chat-list-item-timestamp.is-hidden {
+		opacity: 0;
+	}
+
+	.lumo-chat-list-item-ellipsis {
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.15s ease;
+
+		&.is-open {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+
+	&:hover .lumo-chat-list-item-ellipsis {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
