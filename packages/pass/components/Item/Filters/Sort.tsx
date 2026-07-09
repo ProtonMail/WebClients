@@ -10,10 +10,12 @@ import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IconName } from '@proton/icons/types';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { intoDisplayedSortFilter } from '@proton/pass/lib/items/item.utils';
 import type { ItemSortFilter } from '@proton/pass/types';
 
 type Props = {
     value: ItemSortFilter;
+    hasSearch: boolean;
     onChange: (value: ItemSortFilter) => void;
 };
 
@@ -62,8 +64,11 @@ const getSortOptionDetails = (option: ItemSortFilter) => {
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
 const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['relevant', 'recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
-export const SortFilter = memo(({ value, onChange }: Props) => {
+export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+
+    const displayValue = intoDisplayedSortFilter(value, hasSearch);
+    const { label, shortLabel, icon } = getSortOptionDetails(displayValue);
 
     return (
         <>
@@ -76,9 +81,9 @@ export const SortFilter = memo(({ value, onChange }: Props) => {
                 title={c('Action').t`Sort vault items`}
                 className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <span className="sr-only">{getSortOptionDetails(value).label}</span>
-                <Icon name={getSortOptionDetails(value).icon as IconName} className="shrink-0" />
-                <span className="text-ellipsis hidden sm:block">{getSortOptionDetails(value).shortLabel}</span>
+                <span className="sr-only">{label}</span>
+                <Icon name={icon} className="shrink-0" />
+                <span className="text-ellipsis hidden sm:block">{shortLabel}</span>
             </DropdownButton>
 
             <Dropdown
@@ -90,7 +95,7 @@ export const SortFilter = memo(({ value, onChange }: Props) => {
                 size={DROPDOWN_SIZE}
             >
                 <DropdownMenu>
-                    {ITEMS_SORT_OPTIONS.map((type) => {
+                    {ITEMS_SORT_OPTIONS.filter((type) => type !== 'relevant' || hasSearch).map((type) => {
                         const { label, icon } = getSortOptionDetails(type);
                         return (
                             <DropdownMenuButton

@@ -296,7 +296,7 @@ const itemMatchers: ItemMatchMap = {
 
 const matchItem: ItemMatch = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);
 
-export const searchItems = <T extends ItemRevision>(items: T[], search?: string, rankByRelevance = true) => {
+export const searchItems = <T extends ItemRevision>(items: T[], search?: string, rankByRelevance = false) => {
     if (!search || search.trim() === '') return items;
 
     /** split the search term into multiple normalized needles, dropping empties
