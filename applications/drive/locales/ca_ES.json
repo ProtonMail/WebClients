@@ -1317,6 +1317,9 @@
       ],
       "Re-indexing in progress": [
         "La reindexació està en curs"
+      ],
+      "Skip": [
+        "Omet"
       ]
     },
     "Action: Docs": {
@@ -7408,6 +7411,20 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Els vostres fitxers s'estan reindexant. Podeu continuar cercant però els resultats podrien ser incomplets mentre no acabi. Us farem saber quan hagi finalitzat."
+      ],
+      "Album": [
+        "Àlbum"
+      ],
+      "Do you still want to upload it?": [
+        "Encara voleu carregar-lo?",
+        "Encara voleu carregar-los?"
+      ],
+      "This file appears to be empty:": [
+        "Sembla que aquest fitxer és buit:",
+        "Sembla que aquests fitxers són buits:"
+      ],
+      "Uploaded - file is empty": [
+        "S'ha carregat (el fitxer és buit)"
       ]
     },
     "info": {
@@ -8285,6 +8302,27 @@
       ],
       "Indexing": [
         "S'està indexant"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
+      ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
+      "Starts with": [
+        "Comença amb"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ]
     },
     "Label for contact group color": {
@@ -8614,6 +8652,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ]
     },
     "Message display when a new app version is available": {
@@ -13886,6 +13942,9 @@
       ],
       "We'd love to hear from you!": [
         "Ens agradaria rebre la vostra opinió!"
+      ],
+      "Upload empty file?": [
+        "Voleu carregar un fitxer buit?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14217,6 +14276,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ]
     },
     "Provider option": {

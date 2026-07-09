@@ -1317,6 +1317,9 @@
       ],
       "Re-indexing in progress": [
         "Επαναδημιουργία ευρετηρίου σε εξέλιξη"
+      ],
+      "Skip": [
+        "Παράλειψη"
       ]
     },
     "Action: Docs": {
@@ -7408,6 +7411,20 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Τα αρχεία σας καταχωρούνται εκ νέου στο ευρετήριο. Μπορείτε να συνεχίσετε την αναζήτηση - τα αποτελέσματα ενδέχεται να μην είναι ολοκληρωμένα μέχρι να ολοκληρωθεί. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      ],
+      "Album": [
+        "Άλμπουμ"
+      ],
+      "Do you still want to upload it?": [
+        "Θέλετε ακόμα να το μεταμορφώσετε;",
+        "Θέλετε ακόμα να τα μεταμορφώσετε;"
+      ],
+      "This file appears to be empty:": [
+        "Αυτό το αρχείο φαίνεται να είναι κενό:",
+        "Αυτά τα αρχεία φαίνονται να είναι κενά:"
+      ],
+      "Uploaded - file is empty": [
+        "Μεταμορφώθηκε - το αρχείο είναι κενό"
       ]
     },
     "info": {
@@ -8282,6 +8299,27 @@
       ],
       "Indexing": [
         "Δημιουργία ευρετηρίου"
+      ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
+      ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
+      ],
+      "Starts with": [
+        "Ξεκινάει με"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
       ]
     },
     "Label for contact group color": {
@@ -8611,6 +8649,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Η δωρεάν δοκιμή σας έληξε. Η πρόσβαση στον λογαριασμό σας θα απενεργοποιηθεί σύντομα. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ]
     },
     "Message display when a new app version is available": {
@@ -13826,6 +13882,9 @@
       ],
       "We'd love to hear from you!": [
         "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
+      ],
+      "Upload empty file?": [
+        "Μεταφόρτωση κενού αρχείου;"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14157,6 +14216,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ]
     },
     "Provider option": {

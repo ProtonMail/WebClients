@@ -1277,6 +1277,27 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "앨범 \"${ ellipsedAlbumName }\"(으)로 돌아가기"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "\"${ name }\"에 추가 (${ photoCount }개 사진)"
+      ],
+      "List layout": [
+        "목록 레이아웃"
+      ],
+      "Re-indexing in progress": [
+        "재색인 진행 중"
+      ],
+      "Report abuse": [
+        "악용 사례 신고"
+      ],
+      "Search is unavailable": [
+        "검색을 사용할 수 없음"
+      ],
+      "Skip": [
+        "건너뛰기"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "${ BRAND_NAME } Workspace 체험하기"
       ]
     },
     "Action: Docs": {
@@ -4078,6 +4099,9 @@
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }에 공간이 충분하지 않음"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length }개 항목 이동 실패"
       ]
     },
     "error": {
@@ -7138,6 +7162,87 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
+      ],
+      "${ albums } album": [
+        "${ albums }개 앨범"
+      ],
+      "${ files } file": [
+        "${ files }개 파일"
+      ],
+      "${ folders } folder": [
+        "${ folders }개 폴더"
+      ],
+      "${ photos } photo": [
+        "${ photos }개 사진"
+      ],
+      "Album": [
+        "앨범"
+      ],
+      "Do you still want to upload it?": [
+        "해당 항목을 정말 업로드하시겠어요?"
+      ],
+      "File could not be scanned": [
+        "파일을 스캔할 수 없음."
+      ],
+      "File flagged as potentially malicious": [
+        "파일이 잠재적으로 멀웨어가 포함된 것으로 확인됨"
+      ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "본인은 본 리포트에 기재된 정보 및 내용이 정확하고 완전함을 성실하게 확인합니다."
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second }, ${ third }이(가) 색인됨"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } 및 ${ fourth }이(가) 색인됨"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "색인 중 오류가 발생했으며 계속 진행할 수 없습니다. 복원하려면 재색인을 진행하십시오."
+      ],
+      "Not enough storage space": [
+        "저장공간이 충분하지 않습니다"
+      ],
+      "Preparing download": [
+        "다운로드 준비 중"
+      ],
+      "Preparing…": [
+        "준비 중…"
+      ],
+      "Re-indexing in progress": [
+        "재색인 진행 중"
+      ],
+      "Search data is corrupted": [
+        "검색 데이터가 손상됨"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "검색에 내부 오류가 발생했습니다. 복구하려면 다시 색인을 진행하십시오."
+      ],
+      "Search engine error": [
+        "검색 앤진 오류"
+      ],
+      "Search error": [
+        "검색 오류"
+      ],
+      "This file appears to be empty:": [
+        "해당 파일은 비어있는 것으로 보입니다:"
+      ],
+      "Uploaded - file is empty": [
+        "업로드 완료 - 업로드된 파일이 비어 있습니다"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "다수의 사진을 드라이브에 저장하지 못했습니다"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "${ nameAuthor }님이 ${ nodeName } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
+      ],
+      "We were not able to add this photo to your album": [
+        "이 사진을 앨범에 추가하지 못했습니다"
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "파일 검색 색인 도중 브라우저의 사용 가능 공간이 가득 찼습니다. 공간을 충분히 확보한 후 재색인을 진행하십시오."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "파일이 재색인 중입니다. 계속 검색할 수 있으나 색인 완료 전까지는 검색 결과가 완전하지 않을 수 있습니다. 색인 완료 후 알려드립니다."
       ]
     },
     "info": {
@@ -7952,6 +8057,45 @@
       ],
       "Drive": [
         "드라이브"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads }개 다운로드"
+      ],
+      "Asset": [
+        "에셋"
+      ],
+      "Created ${ created }": [
+        "${ created } 생성됨"
+      ],
+      "Deleted ${ deleted }": [
+        "${ deleted }이(가) 삭제됨"
+      ],
+      "Device #${ position }": [
+        "기기 #${ position }"
+      ],
+      "Device: ${ name }": [
+        "기기: ${ name }"
+      ],
+      "Expires ${ formatted }": [
+        "${ formatted }뒤에 만료됨"
+      ],
+      "Indexing": [
+        "색인 중"
+      ],
+      "Location: ${ item.location }": [
+        "위치: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "${ modified }에 수정됨"
+      ],
+      "Never expires": [
+        "만료되지 않음"
+      ],
+      "Non-consensual intimate imagery": [
+        "합의 없는 사적 촬영물"
+      ],
+      "Pending invitation": [
+        "대기 중인 초대장"
       ]
     },
     "Label for contact group color": {
@@ -9735,6 +9879,39 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } 주소를 사용할 수 있습니다."
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\"이(가) 복사됨"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\"이(가) 삭제됨"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\"(을)를 이동할 수 없습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\"이(가) 성공적으로 이동되었습니다"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length }개 사진이 \"${ albumName }\"에 추가되었습니다."
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length }개 항목 삭제 실패"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems }개 항목 복사됨"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems }개 항목 이동"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed }개 사진이 \"${ albumName }\" 앨범에서 제거되었습니다."
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "\"${ ellipsedName }\"의 사본이 휴지통으로 이동됨"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13357,6 +13534,27 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 파일은 ${ author }에 의해 안전하게 생성되었습니다."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 파일은 ${ author }에 의해 안전하게 업로드되었습니다."
+      ],
+      "Out of storage space": [
+        "저장 공간 부족"
+      ],
+      "Upload empty file?": [
+        "비어있는 파일을 업로드하시겠습니까?"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "${ author }님이 해당 파일을 생성했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "${ author }님이 이 폴더를 업로드했는지 확인할 수 없었습니다."
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "${ claimedKeyAuthor }님이 해당 노드를 생성했는지 확인할 수 없습니다. 원인: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13460,6 +13658,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "즉각적인 AI 지원, 상시 대기 중인 전문가!"
+      ],
+      "Version 6 OpenPGP key": [
+        "버전 6 OpenPGP 키"
       ]
     },
     "tooltip": {
@@ -13838,6 +14039,12 @@
       ],
       "Type": [
         "종류"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Expires": [
+        "만료"
       ]
     }
   }
