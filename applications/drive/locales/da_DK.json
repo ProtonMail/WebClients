@@ -782,6 +782,9 @@
       "Re-index": [
         "Re-indeksér"
       ],
+      "Re-indexing in progress": [
+        "Gen-indeksering i gang"
+      ],
       "Re-sign": [
         "Signér igen"
       ],
@@ -1046,6 +1049,9 @@
       "Sign up": [
         "Tilmeld dig"
       ],
+      "Skip": [
+        "Spring over"
+      ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
@@ -1144,6 +1150,9 @@
       ],
       "Upload and share files": [
         "Upload og del filer"
+      ],
+      "Upload anyway": [
+        "Upload alligevel"
       ],
       "Upload file": [
         "Upload fil"
@@ -3665,12 +3674,6 @@
       "Incorrect username": [
         "Forkert brugernavn"
       ],
-      "Invalid ${ name } code": [
-        "Ugyldig ${ name }-kode"
-      ],
-      "Invalid card number": [
-        "Ugyldigt kortnummer"
-      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -3679,9 +3682,6 @@
       ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
-      ],
-      "Invalid expiration date": [
-        "Ugyldig udløbsdato"
       ],
       "Invalid IBAN": [
         "Ugyldig IBAN"
@@ -3749,9 +3749,6 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En af kontakterne har ingen e-mailadresse: ${ noEmailsContactNamesList }",
@@ -6245,6 +6242,9 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
+      "Re-indexing in progress": [
+        "Gen-indeksering i gang"
+      ],
       "Ready to add some photos?": [
         "Klar til at tilføje nogle fotos?"
       ],
@@ -6969,6 +6969,9 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Dine filer bliver gen-indekseret. Du kan blive ved med at søge - resultaterne kan være ufuldstændige, indtil de er færdige. Vi giver dig besked, når det er færdigt."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dine filer er ikke længere tilgængelige på grund af en nulstilling af adgangskoden. Gen-upload den gamle krypteringsnøgle for at få adgang igen. ${ KeyReactivationButton }"
       ],
@@ -7503,8 +7506,8 @@
       "Index kinds": [
         "Typer af indeks"
       ],
-      "Initial indexing": [
-        "Første indeksering"
+      "Indexing": [
+        "Indekserer"
       ],
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelsesværktøj"
@@ -13268,6 +13271,26 @@
         "Du har 5 GB lagerplads"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Expires": [
+        "Udløber"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
@@ -13364,6 +13387,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nøgle version 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
       ]
@@ -13406,6 +13432,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Få Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]
     },
     "Validation": {
