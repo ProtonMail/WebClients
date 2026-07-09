@@ -159,7 +159,7 @@ export const useElements: UseElements = ({
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
-    const { categoryViewAccess } = useCategoriesView();
+    const { isCategoryViewEnabled } = useCategoriesView();
     const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const { esStatus } = useEncryptedSearchContext();
@@ -258,7 +258,7 @@ export const useElements: UseElements = ({
 
         // Update the category IDs and push the disabled categories if the default category is selected
         const categoryIDs: CategoryLabelID[] = [];
-        if (categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX) {
+        if (isCategoryViewEnabled && labelID === MAILBOX_LABEL_IDS.INBOX) {
             const categoryInURL = categoryIDFromUrl(location);
             const category = categoryInURL ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
             categoryIDs.push(category);
@@ -323,7 +323,7 @@ export const useElements: UseElements = ({
         labelIDs,
         esEnabled,
         onPage,
-        categoryViewAccess,
+        isCategoryViewEnabled,
         disabledCategoriesIDs,
     ]);
 

@@ -111,7 +111,7 @@ const SidebarItem = ({
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const { categoryViewAccess } = useCategoriesView();
+    const { isCategoryViewEnabled } = useCategoriesView();
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID;
 
@@ -119,7 +119,7 @@ const SidebarItem = ({
     if (isCategoryLabel(labelID)) {
         // Category labels view redirect to /inbox#category=CATEGORY
         link = setCategoryInUrl(labelID);
-    } else if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
+    } else if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
         // We want to redirect to /inbox#category=primary when categories are enabled
         link = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
     } else {

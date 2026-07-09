@@ -19,7 +19,7 @@ import { useCategoriesView } from './useCategoriesView';
 
 export const useCategoriesShortcuts = () => {
     const history = useHistory();
-    const { activeCategoriesTabs, categoryViewAccess } = useCategoriesView();
+    const { activeCategoriesTabs, isCategoryViewEnabled } = useCategoriesView();
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
@@ -32,7 +32,7 @@ export const useCategoriesShortcuts = () => {
     };
 
     const moveToCategoriesOption: CommanderItemInterface[] =
-        categoryViewAccess && activeCategoriesTabs.length > 0
+        isCategoryViewEnabled && activeCategoriesTabs.length > 0
             ? activeCategoriesTabs.map((category) => ({
                   icon: getCategoryIconName(category.id, 'outlined'),
                   label: getLabelFromCategoryIdInCommander(category.id),
@@ -55,7 +55,7 @@ export const useCategoriesShortcuts = () => {
               ];
 
     const categoriesAndInboxShortcuts: HotkeyTuple[] =
-        categoryViewAccess && activeCategoriesTabs.length > 0
+        isCategoryViewEnabled && activeCategoriesTabs.length > 0
             ? activeCategoriesTabs.map((tab): HotkeyTuple => {
                   const [first, second] = getCategoryCommanderKeyboardShortcut(tab.id) as Hotkey[];
                   return [

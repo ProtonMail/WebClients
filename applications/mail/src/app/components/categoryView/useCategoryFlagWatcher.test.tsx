@@ -24,8 +24,8 @@ const CATEGORY_DEFAULT_URL = '/inbox#category=primary';
 const mockReplace = jest.fn();
 const mockDispatch = jest.fn();
 
-const hasCategoryAccess = { categoryViewAccess: true } as ReturnType<typeof useCategoriesView>;
-const noCategoryAccess = { categoryViewAccess: false } as ReturnType<typeof useCategoriesView>;
+const hasCategoryAccess = { isCategoryViewEnabled: true } as ReturnType<typeof useCategoriesView>;
+const noCategoryAccess = { isCategoryViewEnabled: false } as ReturnType<typeof useCategoriesView>;
 
 describe('useCategoryFlagWatcher', () => {
     beforeEach(() => {
