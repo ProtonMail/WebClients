@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Nu mai afișa când apăs"
       ],
+      "Do not show this again": [
+        "Nu mai afișa acest mesaj"
+      ],
       "Don't show this again": [
         "Nu mai afișa asta"
+      ],
+      "Done": [
+        "Gata"
       ],
       "Download this CSV template": [
         "Descărcați acest șablon de fișier CSV"
@@ -570,6 +576,12 @@
       ],
       "Regenerate": [
         "Regenerare"
+      ],
+      "Regex invalid": [
+        "Expresie regulată nevalidă"
+      ],
+      "Regex unsafe": [
+        "Expresie regulată nesigură"
       ],
       "Reject": [
         "Respingere"
@@ -1217,6 +1229,12 @@
       "Failed to set default mailbox": [
         "Setarea contului implicit de e-mail a eșuat."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Pornirea agentului SSH a eșuat: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Oprirea agentului SSH a eșuat: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Sincronizarea aliasurilor a eșuat."
       ],
@@ -1625,6 +1643,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } va folosi cheile SSH salvate în seifurile tale."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modul deconectat ${ PASS_SHORT_APP_NAME } activat."
       ],
@@ -2008,6 +2029,9 @@
       "finance": [
         "finanțe"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Găsiți „Agent de autentificare OpenSSH”, clic-dreapta pe „Proprietăți”."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Urmați acești pași pentru a importa datele dintr-un fișier CSV generic:"
       ],
@@ -2050,6 +2074,9 @@
       ],
       "Identity confirmed": [
         "Identitate confirmată."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Dacă nu intenționați să utilizați agentul SSH pe un alt cont plătit, nu uitați să dezactivați această setare înainte de a trece la contul respectiv."
       ],
       "Import the CSV file below.": [
         "Importați mai jos fișierul CSV."
@@ -2161,6 +2188,9 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Asigurați-vă că ${ PASS_APP_NAME } rulează în continuare (poate fi minimizat) pentru ca agentul SSH să rămână activ. Cheile SSH cu parolă nu sunt acceptate în prezent."
+      ],
       "Manager": [
         "Manager"
       ],
@@ -2223,6 +2253,9 @@
       "No network connection": [
         "Nu există conexiune la rețea."
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Nu s-au găsit chei SSH în ${ PASS_SHORT_APP_NAME }. Creați articole cu chei SSH pentru a le utiliza cu agentul."
+      ],
       "No vaults available.": [
         "Nu există seifuri disponibile."
       ],
@@ -2246,6 +2279,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Sunt afișate doar codurile de acces care au expirat în ultimele 30 de zile. Cele mai vechi sunt șterse automat."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Deschideți „Servicii” (puteți folosi bara de căutare Windows sau puteți apăsa Win+R și introduce services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Deschideți setările Safari pentru extensie și verificați dacă permisiunile de site sunt activate pentru domeniile ${ BRAND_NAME }."
@@ -2272,6 +2308,9 @@
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
         "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
+      ],
+      "Paste the following command in your terminal:": [
+        "Inserați comanda următoare în terminal:"
       ],
       "Paused": [
         "Suspendat"
@@ -2501,6 +2540,9 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Setați „Tip de pornire” la dezactivat, faceți clic pe OK."
+      ],
       "Set by your organization": [
         "Setat de către organizație"
       ],
@@ -2644,6 +2686,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Sfat: adăugați-l în fișierul .bashrc sau .zshrc, astfel încât să ruleze automat când deschideți terminalul."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Pentru a continua să primiți mesaje pe e-mail, transferați aceste aliasuri la un alt cont de e-mail:"
       ],
@@ -2658,6 +2703,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Pentru a configura deblocarea biometrică, ${ PASS_APP_NAME } necesită o nouă permisiune de la navigatorul web. După ce o acceptați, extensia se va reîncărca. Apoi redeschideți această pagină."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Pentru a utiliza agentul SSH ${ PASS_APP_NAME } pe Windows, serviciul OpenSSH trebuie dezactivat."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Aprobat de peste 50.000 de utilizatori de afaceri și 100 de milioane de conturi din întreaga lume."
@@ -3068,6 +3116,9 @@
       "Address details": [
         "Detalii adresă"
       ],
+      "Advanced": [
+        "Avansat"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -3113,6 +3164,9 @@
       "Bank Name": [
         "Nume bancă"
       ],
+      "Basic": [
+        "De bază"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
       ],
@@ -3145,6 +3199,9 @@
       ],
       "Catch-All": [
         "Adresă de agregare"
+      ],
+      "Check": [
+        "Verificare"
       ],
       "Checkbox": [
         "Casetă de validare"
@@ -3310,6 +3367,12 @@
       ],
       "Enter email or username": [
         "Introduceți e-mail sau utilizator"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
       ],
       "Experimental": [
         "Experimental"
@@ -3638,6 +3701,9 @@
       "Never": [
         "Niciodată"
       ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
       "New": [
         "Nou"
       ],
@@ -3700,6 +3766,9 @@
       ],
       "Owner": [
         "Proprietar"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Passkey": [
         "Cheie de acces"
@@ -3811,6 +3880,9 @@
       ],
       "Reddit handle": [
         "Cont Reddit"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
       ],
       "Remove link": [
         "Eliminare legătură web"
@@ -3937,6 +4009,9 @@
       ],
       "SSN": [
         "Număr asigurări de sănătate"
+      ],
+      "Starts with": [
+        "Începe cu"
       ],
       "State or province": [
         "Județul"
@@ -4066,6 +4141,12 @@
       ],
       "Update": [
         "Actualizare"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Folosire ${ PASS_APP_NAME } ca agest SSH"
       ],
       "Use for AI agent": [
         "Utilizare pentru agentu de IA"
@@ -4204,6 +4285,24 @@
         "${ count } element",
         "${ count } articole",
         "${ count } de articole"
+      ],
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ],
       "You can drag and drop the selected item to another vault": [
         "Puteți trage și plasa articolul selectat în alt seif.",
@@ -4506,6 +4605,23 @@
         "Folosit la ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduceți o adresă URL pentru a verifica dacă regula curentă se potrivește cu adresa URL."
+      ],
+      "The rule is matching this URL": [
+        "Regula se potrivește cu acest URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regula NU se potrivește cu acest URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Acest URL nu va fi autocompletat"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Acest URL va fi autocompletat"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
@@ -4658,6 +4774,12 @@
       "Random prefix generation successfully enabled": [
         "Generarea aleatorie a prefixelor a fost activată."
       ],
+      "SSH agent successfully started": [
+        "Agentul SSH a fost pornit"
+      ],
+      "SSH agent successfully stopped": [
+        "Agentul SSH a fost oprit"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizator.",
         "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizatori.",
@@ -4705,6 +4827,9 @@
       ],
       "Add mailbox": [
         "Adăugare cont de e-mail"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajustați comportamentele de completare automată pentru a schimba unde sunt sugerate datele de conectare."
       ],
       "Agent setup instructions": [
         "Instrucțiuni de setare agent"
@@ -4906,6 +5031,9 @@
       "Last modified": [
         "Ultima modificare"
       ],
+      "Learn more": [
+        "Aflați mai multe"
+      ],
       "Leave this item?": [
         "Părăsiți acest articol?"
       ],
@@ -5070,6 +5198,9 @@
       "Review and share": [
         "Revizuire și partajare"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captură de ecran a serviciului OpenSSH pe Windows"
+      ],
       "Secure your data": [
         "Securizați-vă datele"
       ],
@@ -5091,6 +5222,9 @@
       "Settings": [
         "Setări"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Setare agent SSH ${ PASS_APP_NAME }"
+      ],
       "Setup offline mode": [
         "Configurare mod deconectat"
       ],
@@ -5108,6 +5242,9 @@
       ],
       "SPF (Optional)": [
         "SPF (Opțional)"
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ],
       "Status": [
         "Stare"
@@ -5127,6 +5264,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronizați-vă aliasurile din SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Testați un URL cu această regulă"
+      ],
       "Transfer ownership": [
         "Transfer proprietar"
       ],
@@ -5141,6 +5281,9 @@
       ],
       "Update available": [
         "Actualizare disponibilă"
+      ],
+      "URL matching": [
+        "Potrivire URL"
       ],
       "Vault": [
         "Seif"
@@ -5258,6 +5401,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Este necesară parola ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modul deconectat ${ PASS_SHORT_APP_NAME } dezactivat."
@@ -5463,6 +5609,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ceva nu a mers bine la pornirea ${ PASS_APP_NAME }. Încercați să reîmprospătați sau să reîncărcați extensia."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "Agentul SSH necesită utilizarea cheilor SSH, care nu sunt disponibile în planul actual."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
@@ -5471,6 +5620,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Această adresă de e-mail nu va mai fi monitorizată pentru divulgări."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Acest articol nu poate fi sugerat pentru completare automată din cauza opțiunii „${ neverModeDescriptionStrong }”. Adăugați o altă adresă URL dacă doriți ca acest articol să fie completat automat."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Acest articol este partajat. Dacă îl ștergeți, ceilalți utilizatori nu-l vor mai putea accesa."

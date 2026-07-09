@@ -91,7 +91,7 @@
         "Aplicar"
       ],
       "Ask me next time": [
-        "Preguntarme después"
+        "Preguntarme la próxima vez"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
@@ -727,7 +727,7 @@
         "Guardar los cambios"
       ],
       "Save preferences": [
-        "Guardar preferencias"
+        "Guardar las preferencias"
       ],
       "Search": [
         "Buscar"
@@ -3283,9 +3283,6 @@
       "Not a valid number": [
         "Número no válido"
       ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
-      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
         "Algunos contactos no tienen dirección de correo: ${ noEmailsContactNamesList } "
@@ -4505,10 +4502,6 @@
         "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
         "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } seleccionado",
-        "${ selectedCount } seleccionados"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } carpeta seleccionada",
         "${ selectedFoldersCountLocalized } carpeta seleccionada"
@@ -4708,7 +4701,7 @@
         "Continuar"
       ],
       "Converting document...": [
-        "Convirtiendo documento..."
+        "Convirtiendo el documento..."
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4760,7 +4753,7 @@
         "Creando enlace a la carpeta"
       ],
       "Creating new document...": [
-        "Creando nuevo documento..."
+        "Creando el documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4776,9 +4769,6 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Esta carpeta fue cargada de forma segura por ${ emailAddress }."
-      ],
-      "Disable table of contents": [
-        "Desactivar tabla de contenidos"
       ],
       "Display word count": [
         "Mostrar contador de palabras"
@@ -4834,9 +4824,6 @@
       "Emails are automatically signed": [
         "Los correos son firmados automáticamente"
       ],
-      "Enable table of contents": [
-        "Activar tabla de contenidos"
-      ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
       ],
@@ -4871,10 +4858,10 @@
         "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Error al convertir documento: ${ errorMessage }"
+        "Error al convertir el documento: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "Error al cargar documento: ${ errorDetail }"
+        "Error al cargar el documento: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error al sincronizar"
@@ -4946,7 +4933,7 @@
         "Obtenga un correo electrónico profesional @su-negocio.com, 1TB de almacenamiento seguro por usuario, videollamadas más largas, y más con ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios agregados a sus documentos."
+        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios añadidos a sus documentos."
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones de los comentarios"
@@ -4954,8 +4941,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear su actividad en línea. Ocultando su IP real y cifrando su actividad de navegación se vuelve privada."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ayúdenos a mejorar esta experiencia informando del problema. Si está de acuerdo en compartir el contenido de la hoja de cálculo, adjunte la información de depuración que aparece a continuación a su informe."
+      ],
       "here": [
         "aquí"
+      ],
+      "Hide table of contents": [
+        "Ocultar tabla de contenidos"
       ],
       "High Priority": [
         "Prioridad alta"
@@ -5181,8 +5174,8 @@
       "Only the people with the link and the password can access this folder.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a esta carpeta."
       ],
-      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "¡Ups! Esta hoja de cálculo no puede guardar sus últimas ediciones, por lo que hemos pausado la edición para evitar que pierda su trabajo.\nAyúdenos a mejorar esta experiencia reportando el problema. Si está de acuerdo en compartir el contenido de la hoja de cálculo, adjunte la información de depuración que aparece a continuación a su reporte."
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "¡Ups! Esta hoja de cálculo no puede guardar sus últimas ediciones así que hemos pausado la edición para evitar que pierda su trabajo."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra la guía para ver las acciones recomendadas y los enlaces útiles."
@@ -5358,6 +5351,9 @@
       ],
       "Shared on": [
         "Compartido el"
+      ],
+      "Show table of contents": [
+        "Mostrar tabla de contenidos"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
@@ -6183,7 +6179,7 @@
         "Incluir registros de la aplicación en el informe de errores"
       ],
       "Include document name in notification": [
-        "Incluir nombre de documento en notificaciones"
+        "Incluir el nombre del documento en las notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -9252,7 +9248,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Creando nueva hoja de cálculo..."
+        "Creando una hoja de cálculo..."
       ],
       "Detect automatically": [
         "Detectar automáticamente"
@@ -10637,6 +10633,26 @@
         "Sus datos expuestos"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
@@ -10721,6 +10737,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
       ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
       ]
@@ -10753,6 +10772,11 @@
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Validation": {

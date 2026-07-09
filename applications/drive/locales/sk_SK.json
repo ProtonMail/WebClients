@@ -792,6 +792,9 @@
       "Re-index": [
         "Preindexovať"
       ],
+      "Re-indexing in progress": [
+        "Prebieha opätovná indexácia"
+      ],
       "Re-sign": [
         "Znovu podpísať"
       ],
@@ -866,6 +869,9 @@
       ],
       "Report a problem": [
         "Nahlásiť problém"
+      ],
+      "Report abuse": [
+        "Nahlásiť zneužitie"
       ],
       "Report an issue": [
         "Nahlásiť problém"
@@ -1053,6 +1059,9 @@
       "Sign up": [
         "Zaregistrujte sa"
       ],
+      "Skip": [
+        "Preskočiť"
+      ],
       "Skip verification": [
         "Preskočiť overenie"
       ],
@@ -1151,6 +1160,9 @@
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
+      ],
+      "Upload anyway": [
+        "Napriek tomu nahrať"
       ],
       "Upload file": [
         "Nahrať súbor"
@@ -3712,12 +3724,6 @@
       "Incorrect username": [
         "Nesprávne používateľské meno"
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -3726,9 +3732,6 @@
       ],
       "Invalid email address": [
         "Neplatná emailová adresa"
-      ],
-      "Invalid expiration date": [
-        "Neplatný koniec platnosti"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -3798,9 +3801,6 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktov nemá emailovú adresu: ${ noEmailsContactNamesList }",
@@ -5891,6 +5891,9 @@
       "How does encrypted search work?": [
         "Ako funguje vyhľadávanie v šifrovaných dátach?"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Týmto potvrdzujem, že som v dobrej viere presvedčený, že informácie a tvrdenia uvedené v správe sú správne a úplné."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Ak tieto súbory nie sú plne stiahnuté lokálne na ${ deviceName }, stratíte k nim prístup."
       ],
@@ -6418,6 +6421,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
+      ],
+      "Re-indexing in progress": [
+        "Prebieha opätovná indexácia"
       ],
       "Ready to add some photos?": [
         "Chcete pridať nejaké fotografie?"
@@ -7163,6 +7169,9 @@
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Vaše súbory sa práve znovu indexujú. Môžete pokračovať vo vyhľadávaní – výsledky môžu byť neúplné, kým sa proces nedokončí. Dáme vám vedieť, keď bude hotový."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Vaše súbory už nie sú prístupné z dôvodu resetovania hesla. Pre opätovné obnovenie prístupu znovu nahrajte starý šifrovací kľúč. ${ KeyReactivationButton }"
       ],
@@ -7711,8 +7720,8 @@
       "Index kinds": [
         "Typy indexu"
       ],
-      "Initial indexing": [
-        "Počiatočné indexovanie"
+      "Indexing": [
+        "Indexovanie"
       ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
@@ -13728,6 +13737,26 @@
         "Máte k dispozícii 5 GB úložného priestoru"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcie"
+      ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Odtlačok prsta"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
@@ -13824,6 +13853,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
       ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
       ]
@@ -13866,6 +13898,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Získať Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]
     },
     "Validation": {

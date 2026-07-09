@@ -110,6 +110,9 @@
       "Apply": [
         "Aplicare"
       ],
+      "Approve": [
+        "Aprobare"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Extindere"
       ],
-      "Finish": [
-        "Finalizare"
-      ],
       "Fit to window": [
         "Potrivire la fereastră"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Organizația"
+      ],
+      "Pause": [
+        "Suspendare"
       ],
       "Pay": [
         "Plătire"
@@ -1847,7 +1850,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -4491,12 +4494,6 @@
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
-      "Invalid ${ name } code": [
-        "Cod ${ name } nevalid."
-      ],
-      "Invalid card number": [
-        "Număr de card nevalid."
-      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -4508,9 +4505,6 @@
       ],
       "Invalid email address": [
         "Adresă de e-mail nevalidă."
-      ],
-      "Invalid expiration date": [
-        "Data expirării nu este validă."
       ],
       "Invalid IBAN": [
         "Acest IBAN nu este valid."
@@ -4576,9 +4570,6 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Pentru această adresă poate fi modificată doar scrierea cu majuscule și punctuația (puncte, cratime și caractere de subliniere)."
@@ -4713,6 +4704,16 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }",
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }",
+        "Membri pentru care nu s-a putut atribui rolul: ${ errors.length }"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }",
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }",
+        "Grupuri pentru care nu s-a putut atribui rolul: ${ failedGroupCount }"
       ],
       "Server not found": [
         "Server negăsit"
@@ -6414,6 +6415,11 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
       ],
+      "${ emails.length } member added to the group": [
+        "Membri adăugați la grup: ${ emails.length }",
+        "Membri adăugați la grup: ${ emails.length }",
+        "Membri adăugați la grup: ${ emails.length }"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagine completă"
       ],
@@ -6489,10 +6495,10 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }",
-        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }",
-        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }"
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminApprovalCount }"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
@@ -6922,11 +6928,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Facturat cu ${ monthlyDiscountedPrice } pentru primele 6 luni, se reînnoiește cu ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Facturat cu ${ monthlyDiscountedPriceElement } pentru primele 6 luni, se reînnoiește cu ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Facturat cu ${ yearlyDiscountedPrice } pentru primele 12 luni, se reînnoiește cu ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Facturat cu ${ yearlyDiscountedPriceElement } pentru primele 12 luni, se reînnoiește cu ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
@@ -7441,8 +7447,14 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Group created": [
+        "Grup creat"
+      ],
       "Group deleted": [
         "Grupul s-a șters."
+      ],
+      "Group roles assigned": [
+        "Roluri de grup atribuite"
       ],
       "Groups": [
         "Grupuri"
@@ -9334,6 +9346,9 @@
       "Group Owner": [
         "Proprietar grup"
       ],
+      "Invited": [
+        "Invitat"
+      ],
       "Paused": [
         "Suspendată"
       ],
@@ -10693,20 +10708,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Utilizatori și adrese"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Asistența live este disponibilă cu ${ planName }"
-      ],
-      "Open support form": [
-        "Deschidere formular de asistență"
-      ],
-      "Upgrade subscription": [
-        "Modificare abonament"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Modificați-vă planul pentru a debloca asistența live și alte funcții premium sau folosiți formularul de suport gratuit pentru a raporta o problemă."
       ]
     },
     "Loading info": {
@@ -14352,8 +14353,8 @@
       "Updated": [
         "Actualizat"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Utilizatorii pe care i-ați setat ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Utilizatorii setați ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
       ]
     },
     "scim: Action": {
@@ -15170,15 +15171,15 @@
         "Utilizatori detașați de la autentificarea unică (SSO): ${ n }",
         "Utilizatori detașați de la autentificarea unică (SSO): ${ n }"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "S-a alăturat organizației ${ n } utilizator prin furnizorul de identitate. Revizuiți-i contul acum:",
-        "S-au alăturat organizației ${ n } utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:",
-        "S-au alăturat organizației ${ n } de utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:"
+      "${ n } user has joined your organization through your identity provider": [
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }",
+        "Utilizatori care s-a alăturat organizației prin intermediul furnizorului de identitate: ${ n }"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } utilizator nu este activ. Puteți să-l ștergeți în siguranță din organizație.",
-        "${ n } utilizatori nu sunt activi. Puteți să-i ștergeți în siguranță din organizație.",
-        "${ n } de utilizatori nu sunt activi. Puteți să-i ștergeți în siguranță din organizație."
+      "${ n } user is inactive.": [
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }",
+        "Utilizatori inactivi: ${ n }"
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utilizator vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO).",
@@ -18076,6 +18077,9 @@
       "Group membership paused": [
         "Apartenența la grup a fost suspendată"
       ],
+      "Resuming role assignment": [
+        "Reluare atribuire rol"
+      ],
       "Role assignment paused": [
         "Atribuirea rolului a fost suspendată"
       ],
@@ -18085,11 +18089,14 @@
       "User declined invitation": [
         "Utilizatorul a refuzat invitația"
       ],
-      "User is a group": [
-        "Utilizatorul este un grup"
+      "User is a group owner": [
+        "Utilizatorul este proprietar de grup"
       ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Așteptare aprobare de la administrator"
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
@@ -18203,10 +18210,10 @@
       "Confirm all": [
         "Confirmare toate"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizator, deoarece cheile sale de criptare au fost actualizate între timp:",
-        "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:",
-        "Nu s-a putut activa automat accesul de administrator pentru ${ n } de utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:"
+      "Could not enable admin access for ${ n } user": [
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }",
+        "Utilizatori pentru care nu s-a putut activa accesul de administrator: ${ n }"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nu s-a putut activa accesul de administrator: ${ error }"
@@ -18235,6 +18242,11 @@
       "Request user permission for data access": [
         "Solicitare permisiune de la utilizator de a-i accesa datele"
       ],
+      "Review their account now.": [
+        "Revizuiți-i contul acum.",
+        "Revizuiți-le contul acum.",
+        "Revizuiți-le contul acum."
+      ],
       "Revoke access": [
         "Revocare acces"
       ],
@@ -18247,6 +18259,9 @@
       "The user must have an address to request data access": [
         "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Cheile lor de criptare au fost actualizate în timp ce s-au efectuat modificări."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Aceasta va anula solicitarea în așteptare pentru accesul de administrare a datelor utilizatorului sau de resetare a parolei."
       ],
@@ -18258,6 +18273,11 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Pentru a continua, va trebui să solicitați permisiunea utilizatorului de a-i putea accesa datele sau de a-i reseta parola."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Puteți elimina în siguranță acest utilizator din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație.",
+        "Puteți elimina în siguranță acești utilizatori din organizație."
       ]
     },
     "Upsell": {

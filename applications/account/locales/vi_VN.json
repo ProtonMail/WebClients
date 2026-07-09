@@ -1083,6 +1083,9 @@
       "Organization": [
         "Tổ chức"
       ],
+      "Pause": [
+        "Tạm dừng"
+      ],
       "Pay": [
         "Thanh toán"
       ],
@@ -6433,12 +6436,6 @@
       "Intended recipient does not support calendar sharing": [
         "Người nhận dự kiến không hỗ trợ chia sẻ lịch"
       ],
-      "Invalid ${ name } code": [
-        "Mã ${ name } không hợp lệ"
-      ],
-      "Invalid card number": [
-        "Số thẻ không hợp lệ"
-      ],
       "Invalid code": [
         "Mã không hợp lệ"
       ],
@@ -6450,9 +6447,6 @@
       ],
       "Invalid email address": [
         "Địa chỉ email không hợp lệ"
-      ],
-      "Invalid expiration date": [
-        "Ngày hết hạn không hợp lệ"
       ],
       "Invalid IBAN": [
         "IBAN không hợp lệ"
@@ -20223,12 +20217,6 @@
       "${ n } user detached from SSO": [
         "Đã gỡ SSO cho ${ n } người dùng"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } người dùng đã tham gia tổ chức thông qua nhà cung cấp danh tính. Xem lại tài khoản ngay bây giờ:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "Có ${ n } người dùng không hoạt động. Có thể xóa họ khỏi tổ chức một cách an toàn."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } người dùng đang cần bạn trợ giúp đăng nhập vào tài khoản ${ BRAND_NAME } qua phương thức đăng nhập một lần."
       ],
@@ -23803,9 +23791,6 @@
       ],
       "Confirm all": [
         "Xác nhận tất cả"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Không thể tự động kích hoạt quyền quản trị viên cho ${ n } người dùng, vì khóa bảo mật của họ đang được cập nhật ngay lúc này:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Không thể kích hoạt quyền truy cập quản trị viên: ${ error }"

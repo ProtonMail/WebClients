@@ -467,9 +467,6 @@
       "Extend": [
         "تمديد"
       ],
-      "Finish": [
-        "انتهى"
-      ],
       "Fit to window": [
         "ملاءمة للنافذة"
       ],
@@ -709,6 +706,9 @@
       ],
       "Organization": [
         "المؤسسة"
+      ],
+      "Pause": [
+        "إيقاف مؤقت"
       ],
       "Pay": [
         "الدفع"
@@ -1801,6 +1801,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } months": [
+        "${ n } شهر",
+        "${ n } شهر",
+        "${ n } شهران",
+        "${ n } أشهر",
+        "${ n } شهراً",
+        "${ n } شهر"
+      ],
       "${ n } years": [
         "${ n } سنة",
         "${ n } سنة",
@@ -2100,6 +2108,14 @@
       ],
       "Subtotal": [
         "المجموع الفرعي"
+      ],
+      "Subtotal for ${ cycle } months": [
+        "المجموع الفرعي ل ${ cycle } شهر",
+        "المجموع الفرعي لـ ${ cycle } شهر",
+        "المجموع الفرعي لـ ${ cycle } شهور",
+        "المجموع الفرعي لـ ${ cycle } أشهر",
+        "المجموع الفرعي لـ ${ cycle } شهراً",
+        "المجموع الفرعي لـ ${ cycle } شهر"
       ],
       "Total": [
         "الإجمالي"
@@ -3422,6 +3438,15 @@
       "No one in your organization can connect to shared servers.": [
         "لا يمكن لأي شخص في مؤسستك الاتصال بالخوادم المشتركة"
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "يرجى ملاحظة أن رسائل البريد الإلكتروني المُرسلة إلى هذا العنوان، بما في ذلك الرسائل الواردة من عناوين ${ BRAND_NAME } الأخرى، لن تعود مشفّرة بتشفيرٍ شامل بين الطرفين."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "بمجرد إلغاء الربط وتعطيل هذا العنوان، لن تتمكن بعد الآن من إرسال رسائل البريد الإلكتروني أو استلامها باستخدام ${ address.Email } في ${ BRAND_NAME }. وستظل الرسائل المرسلة إلى هذا العنوان تصل إلى Gmail، لكنها لن تصل إلى ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "بعد إلغاء ربط هذا العنوان، لن تتمكن بعد الآن من إرسال رسائل البريد الإلكتروني أو استلامها باستخدام ${ address.Email } في ${ BRAND_NAME }. وستظل الرسائل المرسلة إلى هذا العنوان تصل إلى Gmail، لكنها لن تصل إلى ${ MAIL_APP_NAME }."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "اقرأ وأجب وابق على قمة Gmail من داخل ${ MAIL_APP_NAME }"
       ],
@@ -3501,6 +3526,9 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "يمكنك الآن إرسال رسائل البريد الإلكتروني من ${ BRAND_NAME } باستخدام هذا العنوان."
+      ],
+      "You can reconnect this address at any time.": [
+        "يمكنك إعادة ربط هذا العنوان في أي وقت."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of your connected accounts.": [
         "لقد قمت باتصال ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة",
@@ -4189,12 +4217,6 @@
       "Incorrect username": [
         "اسم مستخدم غير صحيح"
       ],
-      "Invalid ${ name } code": [
-        "رمز ${ name } غير صالح"
-      ],
-      "Invalid card number": [
-        "رقم البطاقة غير صالح"
-      ],
       "Invalid code": [
         "رمز غير صالح"
       ],
@@ -4206,9 +4228,6 @@
       ],
       "Invalid email address": [
         "عنوان بريد غير صالح"
-      ],
-      "Invalid expiration date": [
-        "تاريخ انتهاء صلاحية غير صالح"
       ],
       "Invalid IBAN": [
         "رقم IBAN غير صالح"
@@ -14473,14 +14492,6 @@
         "طلب ${ n } عضوًا مساعدتك في تسجيل الدخول.",
         "طلب ${ n } عضوًا مساعدتك في تسجيل الدخول."
       ],
-      "${ n } users are inactive. You can safely remove them from your organization.": [
-        "${ n } من المستخدمين غير نشطين. يمكنك إزالتهم بأمان من مؤسستك.",
-        "يوجد مستخدم واحد (${ n }) غير نشط. يمكنك إزالة هذا المستخدم بأمان من مؤسستك.",
-        "يوجد مستخدمان (${ n }) غير نشطين. يمكنك إزالتهما بأمان من مؤسستك.",
-        "يوجد ${ n } مستخدمين غير نشطين. يمكنك إزالتهم بأمان من مؤسستك.",
-        "يوجد ${ n } مستخدمًا غير نشط. يمكنك إزالتهم بأمان من مؤسستك.",
-        "يوجد ${ n } مستخدمًا غير نشط. يمكنك إزالتهم بأمان من مؤسستك."
-      ],
       "${ n } users are requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } من المستخدمين يطلبون مساعدتك لتسجيل الدخول إلى حساب ${ BRAND_NAME } الخاص بهم باستخدام SSO.",
         "مستخدم واحد (${ n }) يطلب مساعدتك لتسجيل الدخول إلى حساب ${ BRAND_NAME } الخاص به باستخدام SSO.",
@@ -14504,14 +14515,6 @@
         "فُصِل ${ n } مستخدمين عن SSO",
         "فُصِل ${ n } مستخدمًا عن SSO",
         "فُصِل ${ n } مستخدمًا عن SSO"
-      ],
-      "${ n } users have joined your organization through your Identity Provider. Review their accounts now:": [
-        "انضم ${ n } من المستخدمين إلى مؤسستك من خلال مزود الهوية الخاص بك. راجع حساباتهم الآن:",
-        "انضم مستخدم واحد (${ n }) إلى مؤسستك من خلال مزود الهوية الخاص بك. راجع الحساب الآن:",
-        "انضم مستخدمان (${ n }) إلى مؤسستك من خلال مزود الهوية الخاص بك. راجع حساباتهما الآن:",
-        "انضم ${ n } مستخدمين إلى مؤسستك من خلال مزود الهوية الخاص بك. راجع حساباتهم الآن:",
-        "انضم ${ n } مستخدمًا إلى مؤسستك من خلال مزود الهوية الخاص بك. راجع حساباتهم الآن:",
-        "انضم ${ n } مستخدمًا إلى مؤسستك من خلال مزود الهوية الخاص بك. راجع حساباتهم الآن:"
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**سيتم حذف مستخدمي SSO (المقدمين من موفر الهوية الخاص بك)** وسيتعين عليك إنشاؤهم يدويًا لإضافتهم مرة أخرى إلى مؤسستك."
@@ -16024,6 +16027,9 @@
       "Are you sure you want to close the preview?": [
         "هل أنت متأكد أنك تريد إغلاق المعاينة؟"
       ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "هل أنت متأكد من أنك تريد قطع اتصال هذا العنوان وتعطيله؟';'"
+      ],
       "Are you sure you want to disconnect this address?": [
         "هل ترغب بالتأكيد في قطع الاتصال بهذا العنوان؟"
       ],
@@ -17259,9 +17265,6 @@
       "User declined invitation": [
         "رفض المستخدم الدعوة"
       ],
-      "User is a group": [
-        "المستخدم هو مجموعة"
-      ],
       "Waiting for user to accept the invitation": [
         "في انتظار قبول المستخدم للدعوة"
       ]
@@ -17367,14 +17370,6 @@
       ],
       "Confirm all": [
         "تأكيد الكل"
-      ],
-      "Could not automatically enable administrator access for ${ n } users, because their encryption keys have been updated in the meanwhile:": [
-        "تعذر تفعيل صلاحية المشرف تلقائيا لـ ${ n } من المستخدمين، لأنه جرى تحديث مفاتيح تشفيره في هذه الأثناء:",
-        "تعذر تفعيل صلاحية المشرف تلقائيًا لمستخدم واحد (${ n })، لأنه جرى تحديث مفتاح تشفيره في هذه الأثناء:",
-        "تعذر تفعيل صلاحية المشرف تلقائيًا لمستخدمين (${ n })، لأنه جرى تحديث مفتاحي تشفيرهما في هذه الأثناء:",
-        "تعذر تفعيل صلاحية المشرف تلقائيا لـ ${ n } من المستخدمين، لأنه جرى تحديث مفاتيح تشفيره في هذه الأثناء:",
-        "تعذر تفعيل صلاحية المشرف تلقائيا لـ ${ n } من المستخدمين، لأنه جرى تحديث مفاتيح تشفيره في هذه الأثناء:",
-        "تعذر تفعيل صلاحية المشرف تلقائيا لـ ${ n } من المستخدمين، لأنه جرى تحديث مفاتيح تشفيره في هذه الأثناء:"
       ],
       "Could not enable administrator access: ${ error }": [
         "تعذر تفعيل وصول المسؤول: ${ error }"

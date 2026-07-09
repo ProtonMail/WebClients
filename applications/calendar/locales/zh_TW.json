@@ -3710,12 +3710,6 @@
       "Interval cannot be empty": [
         "間隔不能為空白"
       ],
-      "Invalid ${ name } code": [
-        "${ name } 代碼無效"
-      ],
-      "Invalid card number": [
-        "卡號無效"
-      ],
       "Invalid code": [
         "代碼無效"
       ],
@@ -3724,9 +3718,6 @@
       ],
       "Invalid email address": [
         "電郵位址無效"
-      ],
-      "Invalid expiration date": [
-        "到期日無效"
       ],
       "Invalid IBAN": [
         "國際銀行帳號不正確"
@@ -12177,6 +12168,14 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
+      ]
+    },
+    "Title header for keys table": {
+      "Created": [
+        "已創建"
+      ],
+      "Expires": [
+        "到期日"
       ]
     },
     "Title; create calendar modal": {

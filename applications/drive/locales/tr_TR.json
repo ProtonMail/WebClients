@@ -782,6 +782,9 @@
       "Re-index": [
         "Dizini yeniden oluştur"
       ],
+      "Re-indexing in progress": [
+        "Dizini yeniden oluşturma işlemi sürüyor"
+      ],
       "Re-sign": [
         "Yeniden imzala"
       ],
@@ -1046,6 +1049,9 @@
       "Sign up": [
         "Hesap açın"
       ],
+      "Skip": [
+        "Atla"
+      ],
       "Skip verification": [
         "Doğrulamayı atla"
       ],
@@ -1144,6 +1150,9 @@
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
+      ],
+      "Upload anyway": [
+        "Yine de yükle"
       ],
       "Upload file": [
         "Dosya yükle"
@@ -3665,12 +3674,6 @@
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
-      "Invalid ${ name } code": [
-        "${ name } kodu geçersiz"
-      ],
-      "Invalid card number": [
-        "Kart numarası geçersiz"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -3679,9 +3682,6 @@
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
-      ],
-      "Invalid expiration date": [
-        "Son kullanma tarihi geçersiz"
       ],
       "Invalid IBAN": [
         "IBAN geçersiz"
@@ -3749,9 +3749,6 @@
       ],
       "Not a valid number": [
         "Numara geçerli değil"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Yeterli ${ DRIVE_APP_NAME } depolama alanınız yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -5729,7 +5726,7 @@
         "Şifrelenmiş arama nasıl çalışır?"
       ],
       "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "İşbu belge ile raporda yer alan bilgi ve beyanların doğru ve eksiksiz olduğuna iyi niyetle inandığımı teyit ederim."
+        "Bu belge ile bildirimde yer alan bilgi ve beyanların doğru ve eksiksiz olduğuna iyi niyetle inandığımı teyit ederim."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Bu dosyalar tam olarak ${ deviceName } üzerine yerel olarak indirilmemişse, onlara erişemeyeceksiniz."
@@ -6244,6 +6241,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
+      ],
+      "Re-indexing in progress": [
+        "Dizini yeniden oluşturma işlemi sürüyor"
       ],
       "Ready to add some photos?": [
         "Fotoğraflarınızı eklemeye hazır mısınız?"
@@ -6969,6 +6969,9 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Dosyalarınızın dizini yeniden oluşturuluyor. Arama yapmaya sürdürebilirsiniz. İşlem tamamlanana kadar sonuçlar eksik olabilir. İşlem tamamlandığında size haber vereceğiz."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Bir parola sıfırlama işlemi nedeniyle dosyalarınız erişilebilir değil. Erişimi yeniden sağlamak için eski şifreleme anahtarını yeniden yükleyin. ${ KeyReactivationButton }"
       ],
@@ -7503,8 +7506,8 @@
       "Index kinds": [
         "Dizin türleri"
       ],
-      "Initial indexing": [
-        "İlk dizin oluşturma"
+      "Indexing": [
+        "Dizin oluşturma"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -13268,6 +13271,26 @@
         "5 GB depolama alanı kazandınız"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Fingerprint": [
+        "Parmak izi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Type": [
+        "Tür"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
@@ -13364,6 +13387,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ],
+      "Version 6 OpenPGP key": [
+        "6. sürüm OpenPGP anahtarı"
+      ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
       ]
@@ -13406,6 +13432,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Drive for Business edinin"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     },
     "Validation": {

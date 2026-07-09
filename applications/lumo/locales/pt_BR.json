@@ -1072,9 +1072,6 @@
       "Try again": [
         "Tentar novamente"
       ],
-      "Turn off": [
-        "Desativar"
-      ],
       "Turn off and delete": [
         "Desativar e excluir"
       ],
@@ -1374,9 +1371,6 @@
       "More thorough answers, but can take longer": [
         "Respostas mais detalhadas, mas podem demorar mais"
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Exclua permanentemente seu projeto e bate-papos. Isso é irreversível."
-      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Os chats do projeto são mantidos totalmente isolados. Eles contam com suas próprias instruções e arquivos e ignoram totalmente suas memórias globais."
       ],
@@ -1406,11 +1400,6 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desativar a memória excluirá permanentemente todas as ${ memories.length } memórias salvas. Você poderá ativar a memória mais tarde, mas as memórias excluídas não poderão ser recuperadas."
-      ]
-    },
-    "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Desativar memória do ${ LUMO_SHORT_APP_NAME } a qualquer momento."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1664,9 +1653,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "A memória só é usada em chats gerais, nunca dentro de projetos. Armazenada com criptografia de acesso zero."
-      ],
       "You can turn it off again at any time.": [
         "Você pode desativá-lo novamente a qualquer momento."
       ]
@@ -1908,9 +1894,6 @@
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Gere um gráfico de fluxo de trabalho e o código de implementação para o seguinte objetivo. Linguagem de destino para o código:"
-      ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Gere-as a partir dos seus chats recentes ou adicione as suas próprias abaixo."
       ],
       "Generating…": [
         "Gerando…"
@@ -5820,20 +5803,11 @@
       "Incorrect username": [
         "Nome de usuário incorreto"
       ],
-      "Invalid ${ name } code": [
-        "O código ${ name } não é válido."
-      ],
-      "Invalid card number": [
-        "O número do cartão não é válido."
-      ],
       "Invalid code": [
         "O código não é válido."
       ],
       "Invalid coupon": [
         "Cupom inválido"
-      ],
-      "Invalid expiration date": [
-        "A data de validade não é válida."
       ],
       "Invalid IBAN": [
         "IBAN inválido"

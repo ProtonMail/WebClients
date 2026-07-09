@@ -4372,6 +4372,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi kommer importera din gamla e-post och synkronisera nya meddelanden från Gmail framöver."
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
@@ -4952,12 +4955,6 @@
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
-      "Invalid ${ name } code": [
-        "Ogiltig ${ name }-kod"
-      ],
-      "Invalid card number": [
-        "Ogiltigt kortnummer"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -4966,9 +4963,6 @@
       ],
       "Invalid email address": [
         "Ogiltig e-postadress"
-      ],
-      "Invalid expiration date": [
-        "Ogiltigt förfallodatum"
       ],
       "Invalid expiration time": [
         "Ogiltig förfallotid"
@@ -5054,9 +5048,6 @@
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
@@ -6829,6 +6820,9 @@
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } är en end-to-end-krypterad lösning för videokonferenser. Lägg till den i ditt paket för att hålla säkra möten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Användarplatserför ${ MEET_APP_NAME }"
       ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
@@ -9023,6 +9017,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "Du har ${ totalLabel } i din inkorg."
       ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du har **${ count } konversation** i kategori ${ categoryLabel }",
+        "Du har **${ count } konversationer** i kategori ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } konversation** lagrad i denna mapp",
         "Du har **${ count } konversationer** lagrade i denna mapp"
@@ -9030,6 +9028,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Du har **${ count } konversation** märkt med denna etikett",
         "Du har **${ count } konversationer** märkta med denna etikett"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du har **${ count } meddelande** i kategori ${ categoryLabel }",
+        "Du har **${ count } meddelanden** i kategori ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } meddelande** lagrat i denna mapp",
@@ -9065,6 +9067,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du valde **${ checked } konversation** i kategori ${ categoryLabel }",
+        "Du valde **${ checked } konversationer** i kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du valde **${ checked } meddelande** i kategori ${ categoryLabel }",
+        "Du valde **${ checked } meddelanden** i kategori ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du valde **${ count } konversation** från denna mapp",
@@ -9849,6 +9859,9 @@
       "Encrypt emails": [
         "Kryptera e-post"
       ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
       "Expires": [
         "Löper ut"
       ],
@@ -10056,9 +10069,6 @@
       "Navigation": [
         "Navigering"
       ],
-      "New": [
-        "Nytt"
-      ],
       "New password": [
         "Nytt lösenord"
       ],
@@ -10085,9 +10095,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Meddelanden är inaktiverade, för att aktivera dem ändrar du webbläsarinställningarna."
-      ],
-      "Open in a new tab": [
-        "Öppna i en ny flik"
       ],
       "Operating system": [
         "Operativsystem"
@@ -10182,6 +10189,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
       "Remember my choice": [
         "Kom ihåg mitt val"
       ],
@@ -10238,6 +10248,9 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "Starts with": [
+        "Börjar med"
       ],
       "State": [
         "Delstat"
@@ -10301,6 +10314,9 @@
       ],
       "Transactions": [
         "Transaktioner"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitton, bokningar, fakturor och beställningar"
       ],
       "Undisclosed Recipients": [
         "Hemliga mottagare"
@@ -15026,6 +15042,10 @@
         "Flytta ${ selectionCount } meddelande",
         "Flytta ${ selectionCount } meddelanden"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Flyttad till ${ label }. Liknande meddelande kommer att kategoriseras här i framtiden.",
+        "Flyttad till ${ label }. Liknande meddelanden kommer att kategoriseras här i framtiden."
+      ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
@@ -15310,6 +15330,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
       "${ numMessages } message": [
         "${ numMessages } meddelande",
@@ -16368,6 +16391,26 @@
         "Din kortare adress är redo nu"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
@@ -16463,6 +16506,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -16512,6 +16558,11 @@
       ],
       "Your default font will look like following:": [
         "Ditt standardtypsnitt kommer att se ut som följande:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Validation": {

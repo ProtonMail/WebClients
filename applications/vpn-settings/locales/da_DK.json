@@ -110,6 +110,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Approve": [
+        "Godkend"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -494,9 +497,6 @@
       "Extend": [
         "Forlæng"
       ],
-      "Finish": [
-        "Afslut"
-      ],
       "Fit to window": [
         "Tilpas til vinduet"
       ],
@@ -751,6 +751,9 @@
       ],
       "Organization": [
         "Organisation"
+      ],
+      "Pause": [
+        "Pause"
       ],
       "Pay": [
         "Betal"
@@ -4460,12 +4463,6 @@
       "Incorrect username": [
         "Forkert brugernavn"
       ],
-      "Invalid ${ name } code": [
-        "Ugyldig ${ name }-kode"
-      ],
-      "Invalid card number": [
-        "Ugyldigt kortnummer"
-      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -4477,9 +4474,6 @@
       ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
-      ],
-      "Invalid expiration date": [
-        "Ugyldig udløbsdato"
       ],
       "Invalid IBAN": [
         "Ugyldig IBAN"
@@ -4544,9 +4538,6 @@
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Der er ikke nok lagerplads i dit ${ DRIVE_APP_NAME }"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Kun store bogstaver og tegnsætning (punktummer, bindestreger og understregninger) kan ændres for denne adresse"
@@ -4680,6 +4671,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlem",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlemmer"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedGroupCount } gruppe",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedGroupCount } grupper"
       ],
       "Server not found": [
         "Server ikke fundet"
@@ -6352,6 +6351,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } medlem tilføjet til gruppen",
+        "${ emails.length } medlemmer tilføjet til gruppen"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
       ],
@@ -6418,9 +6421,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
-        "${ pendingAdminMemberCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingAdminApprovalCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -6828,11 +6831,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Faktureret med ${ monthlyDiscountedPrice } i de første 6 måneder, og fornyes til ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Faktureret med ${ monthlyDiscountedPriceElement } i de første 6 måneder, og fornyes til ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Faktureret med ${ yearlyDiscountedPrice } i de første 12 måneder, og fornyes til ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Faktureret med ${ yearlyDiscountedPriceElement } i de første 12 måneder, og fornyes til ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
@@ -7341,8 +7344,14 @@
       "Got it": [
         "Forstået"
       ],
+      "Group created": [
+        "Gruppe oprettet"
+      ],
       "Group deleted": [
         "Gruppe slettet"
+      ],
+      "Group roles assigned": [
+        "Grupperoller tildelt"
       ],
       "Groups": [
         "Grupper"
@@ -9208,6 +9217,9 @@
       "Group Owner": [
         "Gruppeejer"
       ],
+      "Invited": [
+        "Inviteret"
+      ],
       "Paused": [
         "Sat på pause"
       ],
@@ -10560,20 +10572,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Brugere og adresser"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Live chat er tilgængelig med ${ planName }"
-      ],
-      "Open support form": [
-        "Åbn supportformular"
-      ],
-      "Upgrade subscription": [
-        "Opgrader abonnement"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Opgrader for at låse op for chat-support og andre premium-funktioner, eller brug vores gratis supportformular til at rapportere dit problem."
       ]
     },
     "Loading info": {
@@ -14151,8 +14149,8 @@
       "Updated": [
         "Opdateret"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Brugere, du har angivet som private, skal acceptere invitationen for at færdiggøre konfigurationen. Vi sender dem en invitation når du har godkendt."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brugere, definerede som private, skal acceptere invitationen for at færdiggøre opsætningen. Vi sender dem en invitation når du har godkendt."
       ]
     },
     "scim: Action": {
@@ -14948,13 +14946,13 @@
         "${ n } bruger frakoblet SSO",
         "${ n } brugere frakoblet SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå kontoen nu:",
-        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå deres konti nu:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder",
+        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } bruger er inaktiv. Du kan trygt fjerne denne bruger fra din organisation.",
-        "${ n } brugere er inaktive. Du kan trygt fjerne disse brugere fra din organisation."
+      "${ n } user is inactive.": [
+        "${ n } bruger er inaktiv.",
+        "${ n } brugere er inaktive."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } bruger beder om din hjælp til at logge ind på sin ${ BRAND_NAME }-konto med single sign-on.",
@@ -17813,6 +17811,9 @@
       "Group membership paused": [
         "Gruppemedlemskab sat på pause"
       ],
+      "Resuming role assignment": [
+        "Genoptager rolletildeling"
+      ],
       "Role assignment paused": [
         "Rolletildeling sat på pause"
       ],
@@ -17822,11 +17823,14 @@
       "User declined invitation": [
         "Brugeren afviste invitationen"
       ],
-      "User is a group": [
-        "Brugeren er en gruppe"
+      "User is a group owner": [
+        "Brugeren er ejer af en gruppe"
       ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Venter på godkendelse fra administrator"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
@@ -17940,9 +17944,9 @@
       "Confirm all": [
         "Bekræft alle"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi dennes krypteringsnøgler er blevet opdaterer i mellemtiden:",
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdateret i mellemtiden:"
+      "Could not enable admin access for ${ n } user": [
+        "Kunne ikke tildele administratoradgang til ${ n } bruger",
+        "Kunne ikke tildele administratoradgang til ${ n } brugere"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunne ikke aktivere administratoradgang: ${ error }"
@@ -17971,6 +17975,10 @@
       "Request user permission for data access": [
         "Anmod om brugertilladelse til dataadgang"
       ],
+      "Review their account now.": [
+        "Gennemgå deres konto nu.",
+        "Gennemgå deres konti nu."
+      ],
       "Revoke access": [
         "Tilbagekald adgang"
       ],
@@ -17983,6 +17991,9 @@
       "The user must have an address to request data access": [
         "Brugeren skal have en adresse for at anmode om dataadgang"
       ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deres krypteringsnøgler blev opdateret, mens vi lavede ændringer."
+      ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Dette vil annuller afventende anmodning om administratoradgang til brugerens data eller nulstilling af adgangskode."
       ],
@@ -17994,6 +18005,10 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "For at fortsætte skal du bede om brugerens tilladelse til at tilgå deres data eller nulstille deres adgangskode."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan trygt fjerne denne bruger fra din organisation.",
+        "Du kan trygt fjerne disse brugere fra din organisation."
       ]
     },
     "Upsell": {
