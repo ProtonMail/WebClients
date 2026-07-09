@@ -42,7 +42,7 @@ export const useCategoryFlagWatcher = () => {
 
         void dispatch(conversationCountsThunk({ cache: CacheType.None }));
         void dispatch(messageCountsThunk({ cache: CacheType.None }));
-    }, [categoryView.categoryViewAccess, dispatch]);
+    }, [categoryView.isCategoryViewEnabled, dispatch]);
 
     // We get the ID from the URL because the labelID in the state is not up-to-date yet.
     useEffect(() => {
@@ -54,7 +54,7 @@ export const useCategoryFlagWatcher = () => {
 
         const categoryID = categoryIDFromUrl(location);
         if (
-            (categoryView.categoryViewAccess && !categoryID) ||
+            (categoryView.isCategoryViewEnabled && !categoryID) ||
             (categoryID && disabledCategories?.includes(categoryID))
         ) {
             dispatch(
@@ -71,7 +71,7 @@ export const useCategoryFlagWatcher = () => {
                 {
                     extra: {
                         currentUrl: window.location.href,
-                        categoryViewAccess: categoryView.categoryViewAccess,
+                        categoryViewAccess: categoryView.isCategoryViewEnabled,
                         categoryID,
                         disabledCategories: disabledCategories,
                     },
@@ -81,7 +81,7 @@ export const useCategoryFlagWatcher = () => {
             return;
         }
 
-        if (!categoryView.categoryViewAccess && categoryID) {
+        if (!categoryView.isCategoryViewEnabled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
             history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
 
@@ -92,7 +92,7 @@ export const useCategoryFlagWatcher = () => {
                 {
                     extra: {
                         currentUrl: window.location.href,
-                        categoryViewAccess: categoryView.categoryViewAccess,
+                        categoryViewAccess: categoryView.isCategoryViewEnabled,
                         categoryID,
                     },
                 }
@@ -100,5 +100,5 @@ export const useCategoryFlagWatcher = () => {
 
             return;
         }
-    }, [categoryView.categoryViewAccess, history, dispatch, location, disabledCategories]);
+    }, [categoryView.isCategoryViewEnabled, history, dispatch, location, disabledCategories]);
 };

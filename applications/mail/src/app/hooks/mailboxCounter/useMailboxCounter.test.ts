@@ -54,12 +54,12 @@ const mockSelector = (
 };
 
 const getMockCategoryView = (override: Partial<CategoryViewType> = {}): CategoryViewType => ({
-    categoryViewAccess: false,
+    isCategoryViewEnabled: false,
     shouldSeeWideToolbars: false,
     shouldShowTabs: false,
     categoriesStore: [],
     activeCategoriesTabs: [],
-    hasAccessToCategoryView: false,
+    canUseCategoryView: false,
     ...override,
 });
 
@@ -241,7 +241,7 @@ describe('useMailboxCounter', () => {
         });
 
         it('should redirect inbox to CATEGORY_DEFAULT when category access is enabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ isCategoryViewEnabled: true }));
 
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX)).toStrictEqual(
@@ -250,7 +250,7 @@ describe('useMailboxCounter', () => {
         });
 
         it('should return CATEGORY_DEFAULT count when passed CATEGORY_DEFAULT with category access enabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ isCategoryViewEnabled: true }));
 
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)).toStrictEqual(
@@ -259,7 +259,7 @@ describe('useMailboxCounter', () => {
         });
 
         it('should not redirect inbox to CATEGORY_DEFAULT when ignoreCategories is set, even with category access enabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ isCategoryViewEnabled: true }));
 
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX, { ignoreCategories: true })).toStrictEqual(
@@ -312,7 +312,7 @@ describe('useMailboxCounter', () => {
             jest.mocked(useMailSelector).mockImplementation((selector) =>
                 mockSelector(selector, { labelID: MAILBOX_LABEL_IDS.INBOX })
             );
-            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ isCategoryViewEnabled: true }));
 
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.getCurrentLocationCount()).toStrictEqual(
@@ -327,7 +327,7 @@ describe('useMailboxCounter', () => {
                     categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 })
             );
-            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ isCategoryViewEnabled: true }));
             jest.mocked(useConversationCounts).mockReturnValue([
                 [
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 50, 60),
@@ -346,7 +346,7 @@ describe('useMailboxCounter', () => {
             jest.mocked(useMailSelector).mockImplementation((selector) =>
                 mockSelector(selector, { labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT })
             );
-            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ isCategoryViewEnabled: true }));
 
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.getCurrentLocationCount()).toStrictEqual(
