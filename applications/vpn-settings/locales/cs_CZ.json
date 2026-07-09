@@ -488,9 +488,6 @@
       "Extend": [
         "Rozšířit"
       ],
-      "Finish": [
-        "Dokončit"
-      ],
       "Fit to window": [
         "Přizpůsobit oknu"
       ],
@@ -742,6 +739,9 @@
       ],
       "Organization": [
         "Organizace"
+      ],
+      "Pause": [
+        "Pozastavit"
       ],
       "Pay": [
         "Zaplatit"
@@ -4409,12 +4409,6 @@
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -4426,9 +4420,6 @@
       ],
       "Invalid email address": [
         "Neplatná e-mailová adresa"
-      ],
-      "Invalid expiration date": [
-        "Neplatné datum expirace"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -6554,13 +6545,13 @@
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Tímto dojde k deaktivaci dvoufázové ověřování.**"
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } další",
@@ -6837,12 +6828,6 @@
       ],
       "Beta": [
         "Beta"
-      ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Cena za prvních 6 měsíců činí ${ monthlyDiscountedPrice }, při prodloužení pak ${ monthlyRenewalPrice }."
-      ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Cena za prvních 12 měsíců činí ${ yearlyDiscountedPrice }, při prodloužení pak ${ yearlyRenewalPrice }."
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
@@ -7298,7 +7283,7 @@
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Free trial": [
         "Bezplatná zkušební verze"
@@ -7469,7 +7454,7 @@
         "Zahrnout detaily zařízení, polohu a IP"
       ],
       "Included": [
-        "Včetně"
+        "Zahrnuto"
       ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
@@ -8426,7 +8411,7 @@
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s tímto uživatelem."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet nebude možné znovu aktivovat."
+        "Tímto trvale smažete svůj účet a všechna jeho data. Tento účet nebude možné znovu aktivovat."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
@@ -8582,13 +8567,13 @@
         "Neověřená e-mailová adresa."
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -8750,7 +8735,7 @@
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -9652,7 +9637,7 @@
         "Příště nezobrazovat"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ],
       "e.g. example.com": [
         "např. priklad.cz"
@@ -10600,20 +10585,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Uživatelé a adresy"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Živý chat je dostupný s tarifem ${ planName }"
-      ],
-      "Open support form": [
-        "Otevřít formulář podpory"
-      ],
-      "Upgrade subscription": [
-        "Navýšit předplatné"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Navyšte svůj tarif pro odemknutí podpory pomocí chatu a dalších prémiových funkcí, nebo použijte k nahlášení problému náš bezplatný formulář podpory."
       ]
     },
     "Loading info": {
@@ -11680,7 +11651,7 @@
         "Neomezený objem/šířka pásma"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",
@@ -14967,18 +14938,6 @@
         "${ n } uživatelů odpojeno od SSO",
         "${ n } uživatelů odpojeno od SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } uživatel se připojil k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účet:",
-        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } uživatel je neaktivní. Tohoto uživatele můžete bezpečně odebrat z organizace.",
-        "${ n } uživatelé jsou neaktivní. Tyto uživatele můžete bezpečně odebrat z organizace.",
-        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace.",
-        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } uživatel vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
         "${ n } uživatelé vás žádají o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
@@ -17550,7 +17509,7 @@
         "Potvrďte, že jste to vy"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."
@@ -17871,9 +17830,6 @@
       "User declined invitation": [
         "Uživatel odmítl pozvání"
       ],
-      "User is a group": [
-        "Uživatel je skupina"
-      ],
       "Waiting for user to accept the invitation": [
         "Čekání na přijetí pozvánky uživatelem"
       ]
@@ -17979,12 +17935,6 @@
       ],
       "Confirm all": [
         "Potvrdit vše"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jeho šifrovací klíč byl mezitím aktualizován:",
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jejich šifrovací klíče byly mezitím aktualizovány:",
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatelů, protože jejich šifrovací klíče byly mezitím aktualizovány:",
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatelů, protože jejich šifrovací klíče byly mezitím aktualizovány:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nepodařilo se povolit přístup správce: ${ error }"

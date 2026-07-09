@@ -633,6 +633,9 @@
       "Organization": [
         "संगठन"
       ],
+      "Pause": [
+        "ठहरें"
+      ],
       "Pay": [
         "भुगतान करें"
       ],
@@ -3382,12 +3385,6 @@
       "Incorrect username": [
         "गलत यूज़रनेम"
       ],
-      "Invalid ${ name } code": [
-        "अमान्य ${ name } कोड"
-      ],
-      "Invalid card number": [
-        "अवैध कार्ड संख्या"
-      ],
       "Invalid code": [
         "अवैध कोड"
       ],
@@ -3396,9 +3393,6 @@
       ],
       "Invalid email address": [
         "अमान्य ईमेल पता"
-      ],
-      "Invalid expiration date": [
-        "अमान्य समाप्ति तिथि"
       ],
       "Invalid IBAN": [
         "अमान्य IBAN"
@@ -11198,14 +11192,6 @@
         "${ n } उपयोगकर्ता को SSO से अलग किया गया",
         "${ n } उपयोगकर्ताओं को SSO से अलग किया गया"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } उपयोगकर्ता आपके पहचान प्रदाता के माध्यम से आपके संगठन में शामिल हुआ है। अब खाता की समीक्षा करें:",
-        "${ n } उपयोगकर्ता आपके पहचान प्रदाता के माध्यम से आपके संगठन में शामिल हुए हैं। अब उनके खातों की समीक्षा करें:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } उपयोगकर्ता निष्क्रिय है। आप इस उपयोगकर्ता को सुरक्षित रूप से अपने संगठन से हटा सकते हैं।",
-        "${ n } उपयोगकर्ता निष्क्रिय हैं। आप उन्हें सुरक्षित रूप से अपने संगठन से हटा सकते हैं।"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } उपयोगकर्ता आपके सहायता का अनुरोध कर रहा है ताकि वह अपने ${ BRAND_NAME } खाते में सिंगल साइन-ऑन के साथ साइन इन कर सके।",
         "${ n } उपयोगकर्ता अपने ${ BRAND_NAME } खाता में एकल साइन-ऑन के साथ साइनइन करने के लिए आपकी सहायता का अनुरोध कर रहे हैं।"
@@ -13445,10 +13431,6 @@
       ],
       "Confirm all": [
         "सभी की पुष्टि करें"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "इस बीच उनकी एन्क्रिप्शन चाबियाँ अपडेट हुई होने के कारण, ${ n } उपयोगकर्ता के लिए स्वचालित रूप से प्रशासक पहुंच सक्षम नहीं की जा सकी:",
-        "${ n } उपयोगकर्ताओं के लिए स्वचालित रूप से एडमिन एक्सेस सक्षम नहीं किया जा सका, क्योंकि उनकी एन्क्रिप्शन चाबियाँ इस बीच अपडेट हो गई हैं:"
       ],
       "Could not enable administrator access: ${ error }": [
         "एडमिन एक्सेस सक्षम नहीं किया जा सका: ${ error }"

@@ -107,6 +107,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Approve": [
+        "დადასტურება"
+      ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
@@ -473,9 +476,6 @@
       "Extend": [
         "გაგრძელება"
       ],
-      "Finish": [
-        "დასრულება"
-      ],
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
@@ -709,6 +709,9 @@
       ],
       "Organization": [
         "ორგანიზაცია"
+      ],
+      "Pause": [
+        "შეჩერება"
       ],
       "Pay": [
         "გადახდა"
@@ -4153,12 +4156,6 @@
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
-      "Invalid ${ name } code": [
-        "არასწორი კოდი ${ name }"
-      ],
-      "Invalid card number": [
-        "ბარათის არასწორი ნომერი"
-      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -4170,9 +4167,6 @@
       ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
-      ],
-      "Invalid expiration date": [
-        "არასწორი ვადა"
       ],
       "Invalid IBAN": [
         "არასწორი IBAN"
@@ -8456,6 +8450,9 @@
     "invitation status": {
       "Declined": [
         "უარყოფილია"
+      ],
+      "Invited": [
+        "მოწვეულია"
       ],
       "Paused": [
         "შეჩერებულია"
@@ -12997,6 +12994,9 @@
     "scim": {
       "New": [
         "ახალი"
+      ],
+      "Updated": [
+        "განახლებულია"
       ]
     },
     "scim: Action": {
@@ -13759,14 +13759,6 @@
         "${ n } მომხმარებელი მოხსნილია SSO-დან",
         "${ n } მომხმარებელი მოხსნილია SSO-დან"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } მომხმარებელი შეუერთდა თქვენს ორგანიზაციას იდენტიფიკატორის მომწოდებლით. გადახედეთ ანგარიშს ახლა:",
-        "${ n } მომხმარებელი შეუერთდა თქვენს ორგანიზაციას იდენტიფიკატორის მომწოდებლით. გადახედეთ ანგარიშს ახლა:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ.",
-        "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
@@ -14016,6 +14008,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ]
+    },
+    "Status": {
+      "completed": [
+        "დასრულებულია"
+      ],
+      "finalizing": [
+        "დასრულება"
       ]
     },
     "Storage": {
@@ -16380,9 +16380,6 @@
       "User declined invitation": [
         "მომხმარებელმა უარჰყო მოსაწვევი"
       ],
-      "User is a group": [
-        "მომხმარებელი ჯგუფია"
-      ],
       "Waiting for user to accept the invitation": [
         "მომხმარებლის დადასტურების მოლოდინი"
       ]
@@ -16458,6 +16455,9 @@
       "Payment reversal": [
         "გადახდის დაბრუნება"
       ],
+      "Prepayment": [
+        "წინასწარი გადახდა"
+      ],
       "Refund": [
         "ანაზღაურება"
       ]
@@ -16488,10 +16488,6 @@
       ],
       "Confirm all": [
         "ყველას დადასტურება"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:",
-        "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:"
       ],
       "Could not enable administrator access: ${ error }": [
         "ვერ ჩავრთე ადმინისტრატორის წვდომა: ${ error }"
