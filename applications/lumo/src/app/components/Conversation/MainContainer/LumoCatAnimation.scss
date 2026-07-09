@@ -10,10 +10,10 @@ im.$media-expressions: $media-expressions;
 	overflow: visible;
 	inline-size: rem(200);
 	block-size: rem(159);
-	margin-block-start: rem(-59);
-	margin-block-end: rem(24);
+	margin-block: rem(-59) rem(24);
 	flex-shrink: 0;
-	--lumo-cat-hint-arrow-color: #6D4AFF;
+
+	--lumo-cat-hint-arrow-color: #6d4aff;
 
 	&--clickable {
 		cursor: pointer;
@@ -34,8 +34,8 @@ im.$media-expressions: $media-expressions;
 
 	&__hint {
 		position: absolute;
-		inset-block-start: 3rem;
-		inset-inline-start: 10.375rem;
+		inset-block-start: rem(20);
+		inset-inline: rem(12) auto;
 		inline-size: rem(150);
 		opacity: 0;
 		visibility: hidden;
@@ -44,50 +44,33 @@ im.$media-expressions: $media-expressions;
 			visibility 0.15s ease;
 		pointer-events: none;
 		z-index: 1;
-
 	}
 
 	&__hint-text {
-		margin: rem(-10) rem(-10) rem(-10) rem(-30);
+		margin-block: rem(-10) rem(6);
+		margin-inline: rem(-10) rem(-20);
 		font-family: 'Segoe Script', 'Bradley Hand', 'Apple Chancery', cursive;
 		font-size: rem(18);
 		line-height: 1.15;
 		color: var(--lumo-welcome-text, var(--text-norm));
 		text-align: start;
 		white-space: nowrap;
-		transform: rotate(25deg);
-		transform-origin: 0% 100%;
-
+		transform: rotate(333deg);
+		transform-origin: 40% 100%;
 	}
 
 	&__hint-arrow {
 		position: absolute;
-		inset-block-start: rem(26);
-		inset-inline-start: rem(-20);
 		inline-size: rem(21);
 		block-size: rem(20);
 		color: var(--lumo-cat-hint-arrow-color);
-
-	}
-
-	&__hint--outside {
-
-		inset-block-start: rem(-20);
-		inset-inline-start: 90%;
-
-
-		.lumo-cat-animation__hint-text {
-			transform: rotate(-5deg);
-			transform-origin: center center;
-		}
-
-		.lumo-cat-animation__hint-arrow {
-			inset-block-start: rem(26);
-			inset-inline-start: rem(-22);
-		}
+		inset-block-start: rem(42);
+		inset-inline: rem(36) auto;
+		transform: scaleX(-1) rotate(6deg);
+		transform-origin: top left;
 	}
 }
 
 body:has(#lumo-light-theme) .lumo-cat-animation {
-	--lumo-cat-hint-arrow-color: var(-#6D4AFF);
+	--lumo-cat-hint-arrow-color: var(-#6d4aff);
 }
