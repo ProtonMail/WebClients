@@ -1,9 +1,10 @@
 import type { DBSchema, IDBPDatabase } from 'idb';
 import { openDB } from 'idb';
 
+import type { BFSVisitorState } from '../worker/indexer/utils/resumableTreeVisitor/ResumableFolderBFSVisitor';
 import type { IndexKind, IndexingProgress, TreeEventScopeId } from './types';
 
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 const dbName = (userId: string) => `search:${userId}`;
 
@@ -22,6 +23,9 @@ export interface IndexPopulatorState {
     version: number;
     done: boolean;
     progress: IndexingProgress;
+    // Monotonic counter handing out one epoch per subtree re-index run for this populator.
+    // Optional for backward-compat with rows written before the feature (treated as 0).
+    subtreeReindexEpoch?: number;
 }
 
 interface SearchDBSchema extends DBSchema {
@@ -40,6 +44,11 @@ interface SearchDBSchema extends DBSchema {
     userSettings: {
         key: string;
         value: string | boolean;
+    };
+    treeVisitorStates: {
+        key: string;
+        value: BFSVisitorState;
+        indexes: { by_updated_at: number };
     };
 }
 
@@ -70,6 +79,10 @@ export class SearchDB {
                     database.createObjectStore('treeEventScopeSubscriptions');
                     database.createObjectStore('indexPopulatorStates');
                     database.createObjectStore('userSettings');
+                }
+                if (oldVersion < 2) {
+                    const treeStore = database.createObjectStore('treeVisitorStates', { keyPath: 'id' });
+                    treeStore.createIndex('by_updated_at', 'updatedAt');
                 }
             },
         });
@@ -194,6 +207,31 @@ export class SearchDB {
         return this.db.put('userSettings', true, 'hasSearchableIndex');
     }
 
+    // --- BFS visitor states ---
+
+    getBFSVisitorState(id: string): Promise<BFSVisitorState | undefined> {
+        return this.db.get('treeVisitorStates', id);
+    }
+
+    putBFSVisitorState(state: BFSVisitorState): Promise<string> {
+        return this.db.put('treeVisitorStates', state) as Promise<string>;
+    }
+
+    deleteBFSVisitorState(id: string): Promise<void> {
+        return this.db.delete('treeVisitorStates', id);
+    }
+
+    async deleteStaleBFSVisitorStates(olderThanMs: number): Promise<void> {
+        const cutoff = Date.now() - olderThanMs;
+        const tx = this.db.transaction('treeVisitorStates', 'readwrite');
+        const range = IDBKeyRange.upperBound(cutoff);
+        const index = tx.store.index('by_updated_at');
+        for await (const cursor of index.iterate(range)) {
+            await cursor.delete();
+        }
+        await tx.done;
+    }
+
     // Clear index blobs, subscriptions and populator states so the indexer rebuilds from scratch.
     // Used when the encryption key is regenerated (e.g. after key rotation).
     async clearIndex(): Promise<void> {
@@ -201,6 +239,7 @@ export class SearchDB {
         await this.db.clear('treeEventScopeSubscriptions');
         await this.db.clear('indexPopulatorStates');
         await this.db.delete('userSettings', 'hasSearchableIndex');
+        await this.db.clear('treeVisitorStates');
     }
 
     /**

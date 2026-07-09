@@ -8,17 +8,16 @@ import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import { SearchDB } from '../../../shared/SearchDB';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
-import { findDocumentsByTag } from '../../../testing/indexHelpers';
+import { findDocuments, findDocumentsByTag } from '../../../testing/indexHelpers';
 import { makeTaskContext } from '../../../testing/makeTaskContext';
 import { setupRealSearchLibraryWasm } from '../../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../../index/IndexRegistry';
 import { TreeSubscriptionRegistry } from '../TreeSubscriptionRegistry';
-import type { IndexEntry } from '../indexEntry';
 import { normalizedFilenameForTag } from '../indexEntry';
 import type { TaskContext } from '../tasks/BaseTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
 import { RemoveTreeEventScopeIdTask } from '../tasks/CoreTasks/RemoveTreeEventScopeIdTask';
-import { IndexPopulator } from './IndexPopulator';
+import { NodeTreeIndexPopulator } from './NodeTreeIndexPopulator';
 
 setupRealSearchLibraryWasm();
 
@@ -61,16 +60,16 @@ const makeDriveEvent = (type: string, eventId: string, extra: Record<string, unk
     ({ type, eventId, treeEventScopeId: SCOPE_ID, ...extra }) as unknown as DriveEvent;
 
 /**
- * Concrete test populator that yields nothing during initial scan.
- * We only test incremental update logic here.
+ * Concrete node-tree populator. The node/tree incremental logic under test lives on
+ * NodeTreeIndexPopulator; the base IndexPopulator is agnostic of nodes/trees/traversal.
  */
-class TestPopulator extends IndexPopulator {
+class TestPopulator extends NodeTreeIndexPopulator {
     constructor() {
         super(SCOPE_ID, IndexKind.MAIN, 'test-pop', 1);
     }
 
-    async *visitAndProduceIndexEntries(_ctx: TaskContext): AsyncIterableIterator<IndexEntry> {
-        // no-op for these tests
+    protected async getRootNodeUid(): Promise<string> {
+        return 'root';
     }
 }
 
@@ -588,7 +587,7 @@ describe('IndexPopulator', () => {
             expect(results.map((r) => r.identifier)).toEqual(['file-1']);
         });
 
-        it('updates descendants when folder moves', async () => {
+        it('on a folder move: upserts the anchor and re-indexes the subtree inline (adds new children), clearing the marker on completion', async () => {
             bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
             bridge.setNode(
                 'folder-a',
@@ -611,13 +610,14 @@ describe('IndexPopulator', () => {
             await indexNode(populator, ctx, 'child-1', 'folder-a');
             await indexNode(populator, ctx, 'folder-b', 'root');
 
-            // Move folder-a under folder-b
+            // Move folder-a under folder-b; the SDK reports the (moved) subtree incl. a new child.
             bridge.setNode(
                 'folder-a',
                 makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'folder-b' })
             );
             bridge.setChildren('folder-a', [
                 makeMaybeNode({ uid: 'child-1', name: 'c1.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
+                makeMaybeNode({ uid: 'child-2', name: 'c2.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
             ]);
 
             await populator.processNodeMutation(
@@ -625,9 +625,35 @@ describe('IndexPopulator', () => {
                 ctx
             );
 
-            // folder-a and child-1 should still be indexed
+            // Anchor upserted; subtree re-indexed inline (existing kept, new added).
             await expectIndexed('folder-a');
             await expectIndexed('child-1');
+            await expectIndexed('child-2');
+            // Marker cleared on completion.
+            expect(
+                await db.getBFSVisitorState(
+                    NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'folder-a')
+                )
+            ).toBeUndefined();
+        });
+
+        it('allocates a fresh epoch per completed re-index run', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            const event = makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'root' });
+            await populator.processNodeMutation(event, ctx);
+            await populator.processNodeMutation(event, ctx);
+
+            // Each run completes and clears its marker, so the next run takes the next epoch.
+            const state = await db.getPopulatorState(populator.getUid());
+            expect(state?.subtreeReindexEpoch).toBe(2);
         });
 
         it('does not affect sibling nodes', async () => {
@@ -661,7 +687,7 @@ describe('IndexPopulator', () => {
             await expectIndexed('file-b');
         });
 
-        it('re-indexes folder subtree when un-trashed', async () => {
+        it('on un-trash: restores the folder subtree inline', async () => {
             bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
             bridge.setNode(
                 'folder-a',
@@ -709,104 +735,14 @@ describe('IndexPopulator', () => {
                 ctx
             );
 
+            // Anchor + subtree restored inline.
             await expectIndexed('folder-a');
             await expectIndexed('child-1');
-        });
-
-        it('restores an entire subtree when a trashed folder is un-trashed', async () => {
-            // folder-a/
-            //   file-1
-            //   nested-folder/
-            //     deep-file
-            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
-            );
-            bridge.setNode(
-                'file-1',
-                makeMaybeNode({ uid: 'file-1', name: 'f1.txt', type: 'file' as NodeType, parentUid: 'folder-a' })
-            );
-            bridge.setNode(
-                'nested-folder',
-                makeMaybeNode({
-                    uid: 'nested-folder',
-                    name: 'Nested',
-                    type: 'folder' as NodeType,
-                    parentUid: 'folder-a',
-                })
-            );
-            bridge.setNode(
-                'deep-file',
-                makeMaybeNode({
-                    uid: 'deep-file',
-                    name: 'deep.txt',
-                    type: 'file' as NodeType,
-                    parentUid: 'nested-folder',
-                })
-            );
-
-            const populator = new TestPopulator();
-            const ctx = await buildCtx();
-
-            // Seed the index with the live subtree.
-            await indexNode(populator, ctx, 'folder-a', 'root');
-            await indexNode(populator, ctx, 'file-1', 'folder-a');
-            await indexNode(populator, ctx, 'nested-folder', 'folder-a');
-            await indexNode(populator, ctx, 'deep-file', 'nested-folder');
-
-            // Trash the top folder. Folder stays in the index, descendants wiped.
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({
-                    uid: 'folder-a',
-                    name: 'A',
-                    type: 'folder' as NodeType,
-                    parentUid: 'root',
-                    trashTime: new Date('2025-06-01'),
-                })
-            );
-            await populator.processNodeMutation(
-                makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'root', isTrashed: true }),
-                ctx
-            );
-            await expectIndexed('folder-a');
-            await expectIndexed('file-1', 0);
-            await expectIndexed('nested-folder', 0);
-            await expectIndexed('deep-file', 0);
-
-            // Un-trash. SDK must now return the (non-trashed) subtree via iterateFolderChildren.
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
-            );
-            bridge.setChildren('folder-a', [
-                makeMaybeNode({ uid: 'file-1', name: 'f1.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
-                makeMaybeNode({
-                    uid: 'nested-folder',
-                    name: 'Nested',
-                    type: 'folder' as NodeType,
-                    parentUid: 'folder-a',
-                }),
-            ]);
-            bridge.setChildren('nested-folder', [
-                makeMaybeNode({
-                    uid: 'deep-file',
-                    name: 'deep.txt',
-                    type: 'file' as NodeType,
-                    parentUid: 'nested-folder',
-                }),
-            ]);
-
-            await populator.processNodeMutation(
-                makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'root', isTrashed: false }),
-                ctx
-            );
-
-            await expectIndexed('folder-a');
-            await expectIndexed('file-1');
-            await expectIndexed('nested-folder');
-            await expectIndexed('deep-file');
+            expect(
+                await db.getBFSVisitorState(
+                    NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'folder-a')
+                )
+            ).toBeUndefined();
         });
 
         it('indexes a node not previously in the index (upsert)', async () => {
@@ -825,6 +761,261 @@ describe('IndexPopulator', () => {
             );
 
             await expectIndexed('new-file');
+        });
+    });
+
+    // =========================================================================
+    // handleNodeUpdated — inline resumable subtree re-index (structural folder)
+    // =========================================================================
+    describe('handleNodeUpdated inline subtree re-index', () => {
+        const indexNode = async (
+            populator: TestPopulator,
+            ctx: TaskContext,
+            nodeUid: string,
+            parentNodeUid?: string
+        ) => {
+            await populator.processNodeMutation(makeNodeEvent('node_created', nodeUid, { parentNodeUid }), ctx);
+        };
+
+        const reindexFolder = async (
+            populator: TestPopulator,
+            ctx: TaskContext,
+            nodeUid: string,
+            parentNodeUid: string
+        ) => {
+            await populator.processNodeMutation(makeNodeEvent('node_updated', nodeUid, { parentNodeUid }), ctx);
+        };
+
+        it('skips trashed children while re-indexing', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            await indexNode(populator, ctx, 'folder-a', 'root');
+            bridge.setChildren('folder-a', [
+                makeMaybeNode({ uid: 'child-ok', name: 'ok.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
+                makeMaybeNode({
+                    uid: 'child-trashed',
+                    name: 'trashed.txt',
+                    type: 'file' as NodeType,
+                    parentUid: 'folder-a',
+                    trashTime: new Date('2024-06-01'),
+                }),
+            ]);
+
+            await reindexFolder(populator, ctx, 'folder-a', 'root');
+
+            await expectIndexed('child-ok');
+            await expectIndexed('child-trashed', 0);
+        });
+
+        it('indexes undecryptable children with a fallback name', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            await indexNode(populator, ctx, 'folder-a', 'root');
+            bridge.setChildren('folder-a', [makeUndecryptableNode({ uid: 'bad-child', parentUid: 'folder-a' })]);
+
+            await reindexFolder(populator, ctx, 'folder-a', 'root');
+
+            await expectIndexed('bad-child');
+        });
+
+        it('re-indexes nested subfolders', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            await indexNode(populator, ctx, 'folder-a', 'root');
+            bridge.setChildren('folder-a', [
+                makeMaybeNode({ uid: 'sub-folder', name: 'Sub', type: 'folder' as NodeType, parentUid: 'folder-a' }),
+            ]);
+            bridge.setChildren('sub-folder', [
+                makeMaybeNode({
+                    uid: 'deep-file',
+                    name: 'deep.txt',
+                    type: 'file' as NodeType,
+                    parentUid: 'sub-folder',
+                }),
+            ]);
+
+            await reindexFolder(populator, ctx, 'folder-a', 'root');
+
+            await expectIndexed('sub-folder');
+            await expectIndexed('deep-file');
+        });
+
+        it('sweeps obsolete descendants no longer reported by the SDK', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+            bridge.setNode(
+                'child-stays',
+                makeMaybeNode({
+                    uid: 'child-stays',
+                    name: 'stays.txt',
+                    type: 'file' as NodeType,
+                    parentUid: 'folder-a',
+                })
+            );
+            bridge.setNode(
+                'child-gone',
+                makeMaybeNode({ uid: 'child-gone', name: 'gone.txt', type: 'file' as NodeType, parentUid: 'folder-a' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            await indexNode(populator, ctx, 'folder-a', 'root');
+            await indexNode(populator, ctx, 'child-stays', 'folder-a');
+            await indexNode(populator, ctx, 'child-gone', 'folder-a');
+            await expectIndexed('child-stays');
+            await expectIndexed('child-gone');
+
+            // Content change: child-gone removed, child-new added. Only the folder event fires.
+            bridge.setChildren('folder-a', [
+                makeMaybeNode({
+                    uid: 'child-stays',
+                    name: 'stays.txt',
+                    type: 'file' as NodeType,
+                    parentUid: 'folder-a',
+                }),
+                makeMaybeNode({ uid: 'child-new', name: 'new.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
+            ]);
+
+            await reindexFolder(populator, ctx, 'folder-a', 'root');
+
+            await expectIndexed('child-stays'); // re-walked, re-stamped
+            await expectIndexed('child-new'); // added
+            await expectIndexed('child-gone', 0); // swept: not re-walked, still at old epoch
+        });
+
+        it('resumes from a persisted checkpoint using the pinned epoch (does not re-allocate)', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+            bridge.setNode(
+                'phantom',
+                makeMaybeNode({ uid: 'phantom', name: 'phantom.txt', type: 'file' as NodeType, parentUid: 'folder-a' })
+            );
+            bridge.setChildren('folder-a', [
+                makeMaybeNode({ uid: 'child-1', name: 'c1.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
+            ]);
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+            await indexNode(populator, ctx, 'folder-a', 'root');
+            await indexNode(populator, ctx, 'phantom', 'folder-a'); // seeded at epoch 0
+
+            // Seed a mid-walk marker (as if a prior run had checkpointed) with a pinned epoch of 5.
+            const visitorId = NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'folder-a');
+            await db.putBFSVisitorState({
+                id: visitorId,
+                queue: [{ folderUid: 'folder-a', parentPath: '/folder-a' }],
+                generation: 1,
+                updatedAt: 0,
+                nodeUid: 'folder-a',
+                parentPath: '/folder-a',
+                epoch: 5,
+            });
+
+            await reindexFolder(populator, ctx, 'folder-a', 'root');
+
+            // Walked child stamped with the pinned epoch (5); phantom (epoch 0) swept.
+            await expectIndexed('child-1');
+            await expectIndexed('phantom', 0);
+            const instance = await indexRegistry.get(IndexKind.MAIN, db);
+            expect(await findDocuments(instance.indexReader, { nodeUid: 'child-1', reindexEpoch: 5n })).toHaveLength(1);
+
+            // Marker cleared; the epoch counter was never bumped (resume reused the pinned epoch).
+            expect(await db.getBFSVisitorState(visitorId)).toBeUndefined();
+            const state = await db.getPopulatorState(populator.getUid());
+            expect(state?.subtreeReindexEpoch ?? 0).toBe(0);
+        });
+
+        it('discards a subtree marker left by a previous generation instead of resuming it', async () => {
+            // Scenario: a subtree re-index crashed mid-walk (leaving its marker), then a tree_refresh
+            // bumped the populator generation and re-populated the whole tree at epoch 0. The stale
+            // marker survived markAsNotDone. Resuming it would replay the frozen checkpoint and reuse
+            // the pinned epoch 5, so the sweep would delete the freshly-populated child (epoch 0 < 5).
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+            bridge.setNode(
+                'child-fresh',
+                makeMaybeNode({
+                    uid: 'child-fresh',
+                    name: 'fresh.txt',
+                    type: 'file' as NodeType,
+                    parentUid: 'folder-a',
+                })
+            );
+            bridge.setChildren('folder-a', [
+                makeMaybeNode({
+                    uid: 'child-fresh',
+                    name: 'fresh.txt',
+                    type: 'file' as NodeType,
+                    parentUid: 'folder-a',
+                }),
+            ]);
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+            await indexNode(populator, ctx, 'folder-a', 'root');
+            await indexNode(populator, ctx, 'child-fresh', 'folder-a'); // freshly populated at epoch 0
+
+            // A tree_refresh bumped the populator to generation 2.
+            await populator.markAsNotDone(db);
+
+            // Stale marker frozen at the previous generation (1), a high pinned epoch (5), and an
+            // empty frontier (as if the prior walk finished all folders but crashed before finalize).
+            const visitorId = NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'folder-a');
+            await db.putBFSVisitorState({
+                id: visitorId,
+                queue: [],
+                generation: 1,
+                updatedAt: 0,
+                nodeUid: 'folder-a',
+                parentPath: '/folder-a',
+                epoch: 5,
+            });
+
+            await reindexFolder(populator, ctx, 'folder-a', 'root');
+
+            // The stale marker was discarded: the subtree was fully re-walked at a freshly allocated
+            // epoch, so the freshly-populated child survives instead of being swept at pinned epoch 5.
+            await expectIndexed('child-fresh');
+            const instance = await indexRegistry.get(IndexKind.MAIN, db);
+            expect(
+                await findDocuments(instance.indexReader, { nodeUid: 'child-fresh', reindexEpoch: 1n })
+            ).toHaveLength(1);
+
+            // Marker cleared and a fresh epoch was allocated (proving the stale pinned epoch was not reused).
+            expect(await db.getBFSVisitorState(visitorId)).toBeUndefined();
+            const state = await db.getPopulatorState(populator.getUid());
+            expect(state?.subtreeReindexEpoch).toBe(1);
         });
     });
 
@@ -938,6 +1129,41 @@ describe('IndexPopulator', () => {
             expect(ctx.enqueueOnce).toHaveBeenCalledWith(expect.any(IndexPopulatorTask));
         });
 
+        it('processes a structural folder update inline, then applies a related follow-up event in the same batch', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'folder-a',
+                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
+            );
+            bridge.setNode(
+                'child-y',
+                makeMaybeNode({ uid: 'child-y', name: 'y.txt', type: 'file' as NodeType, parentUid: 'folder-a' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            const events: DriveEvent[] = [
+                makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'root' }),
+                // Related follow-up: create a child in the same folder. Since the folder's
+                // re-index (walk + sweep) completes inline first, child-y is inserted afterwards
+                // and is NOT clobbered by the sweep.
+                makeNodeEvent('node_created', 'child-y', { parentNodeUid: 'folder-a' }),
+            ];
+
+            const result = await populator.processIncrementalUpdates(events, ctx);
+
+            // Whole batch consumed in one cycle; the follow-up child survives.
+            expect(result).toBe(2);
+            await expectIndexed('folder-a');
+            await expectIndexed('child-y');
+            expect(
+                await db.getBFSVisitorState(
+                    NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'folder-a')
+                )
+            ).toBeUndefined();
+        });
+
         it('bumps generation on tree_refresh and persists state', async () => {
             const populator = new TestPopulator();
             const ctx = await buildCtx();
@@ -1045,178 +1271,6 @@ describe('IndexPopulator', () => {
             await populator.processNodeMutation(event, ctx);
 
             await expectIndexed('bad-name');
-        });
-    });
-
-    // =========================================================================
-    // walkFolderTreeFromSdk — trashed children skipped
-    // =========================================================================
-    describe('walkFolderTreeFromSdk skips trashed children', () => {
-        const indexNode = async (
-            populator: TestPopulator,
-            ctx: TaskContext,
-            nodeUid: string,
-            parentNodeUid?: string
-        ) => {
-            const event = makeNodeEvent('node_created', nodeUid, { parentNodeUid });
-            await populator.processNodeMutation(event, ctx);
-        };
-
-        it('skips trashed children when re-indexing a moved folder', async () => {
-            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
-            );
-            bridge.setNode(
-                'child-ok',
-                makeMaybeNode({ uid: 'child-ok', name: 'ok.txt', type: 'file' as NodeType, parentUid: 'folder-a' })
-            );
-            bridge.setNode(
-                'child-trashed',
-                makeMaybeNode({
-                    uid: 'child-trashed',
-                    name: 'trashed.txt',
-                    type: 'file' as NodeType,
-                    parentUid: 'folder-a',
-                    trashTime: new Date('2024-06-01'),
-                })
-            );
-
-            const populator = new TestPopulator();
-            const ctx = await buildCtx();
-
-            await indexNode(populator, ctx, 'folder-a', 'root');
-            await indexNode(populator, ctx, 'child-ok', 'folder-a');
-
-            // Simulate move: SDK now returns one healthy child and one trashed child
-            bridge.setChildren('folder-a', [
-                makeMaybeNode({ uid: 'child-ok', name: 'ok.txt', type: 'file' as NodeType, parentUid: 'folder-a' }),
-                makeMaybeNode({
-                    uid: 'child-trashed',
-                    name: 'trashed.txt',
-                    type: 'file' as NodeType,
-                    parentUid: 'folder-a',
-                    trashTime: new Date('2024-06-01'),
-                }),
-            ]);
-
-            await populator.processNodeMutation(
-                makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'root' }),
-                ctx
-            );
-
-            await expectIndexed('folder-a');
-            await expectIndexed('child-ok');
-            await expectIndexed('child-trashed', 0);
-        });
-
-        it('indexes undecryptable children with fallback name when re-indexing a moved folder', async () => {
-            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
-            );
-
-            const populator = new TestPopulator();
-            const ctx = await buildCtx();
-
-            await indexNode(populator, ctx, 'folder-a', 'root');
-
-            // SDK returns one undecryptable child (no indexable filename)
-            bridge.setChildren('folder-a', [makeUndecryptableNode({ uid: 'bad-child', parentUid: 'folder-a' })]);
-
-            await populator.processNodeMutation(
-                makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'root' }),
-                ctx
-            );
-
-            await expectIndexed('folder-a');
-            await expectIndexed('bad-child');
-        });
-    });
-
-    // =========================================================================
-    // walkFolderTreeFromSdk — nested subfolder BFS
-    // =========================================================================
-    describe('walkFolderTreeFromSdk with nested subfolders', () => {
-        const indexNode = async (
-            populator: TestPopulator,
-            ctx: TaskContext,
-            nodeUid: string,
-            parentNodeUid?: string
-        ) => {
-            const event = makeNodeEvent('node_created', nodeUid, { parentNodeUid });
-            await populator.processNodeMutation(event, ctx);
-        };
-
-        it('re-indexes nested subfolders when a folder moves', async () => {
-            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'root' })
-            );
-            bridge.setNode(
-                'sub-folder',
-                makeMaybeNode({
-                    uid: 'sub-folder',
-                    name: 'Sub',
-                    type: 'folder' as NodeType,
-                    parentUid: 'folder-a',
-                })
-            );
-            bridge.setNode(
-                'deep-file',
-                makeMaybeNode({
-                    uid: 'deep-file',
-                    name: 'deep.txt',
-                    type: 'file' as NodeType,
-                    parentUid: 'sub-folder',
-                })
-            );
-            bridge.setNode(
-                'folder-dest',
-                makeMaybeNode({ uid: 'folder-dest', name: 'Dest', type: 'folder' as NodeType, parentUid: 'root' })
-            );
-
-            const populator = new TestPopulator();
-            const ctx = await buildCtx();
-
-            await indexNode(populator, ctx, 'folder-a', 'root');
-            await indexNode(populator, ctx, 'sub-folder', 'folder-a');
-            await indexNode(populator, ctx, 'deep-file', 'sub-folder');
-            await indexNode(populator, ctx, 'folder-dest', 'root');
-
-            // Move folder-a under folder-dest
-            bridge.setNode(
-                'folder-a',
-                makeMaybeNode({ uid: 'folder-a', name: 'A', type: 'folder' as NodeType, parentUid: 'folder-dest' })
-            );
-            bridge.setChildren('folder-a', [
-                makeMaybeNode({
-                    uid: 'sub-folder',
-                    name: 'Sub',
-                    type: 'folder' as NodeType,
-                    parentUid: 'folder-a',
-                }),
-            ]);
-            bridge.setChildren('sub-folder', [
-                makeMaybeNode({
-                    uid: 'deep-file',
-                    name: 'deep.txt',
-                    type: 'file' as NodeType,
-                    parentUid: 'sub-folder',
-                }),
-            ]);
-
-            await populator.processNodeMutation(
-                makeNodeEvent('node_updated', 'folder-a', { parentNodeUid: 'folder-dest' }),
-                ctx
-            );
-
-            await expectIndexed('folder-a');
-            await expectIndexed('sub-folder');
-            await expectIndexed('deep-file');
         });
     });
 });
