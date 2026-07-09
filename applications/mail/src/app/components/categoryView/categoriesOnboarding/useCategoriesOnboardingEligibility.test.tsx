@@ -43,6 +43,7 @@ const B2C_ONBOARDING_IN_PROGRESS = B2C_ONBOARDING_SEEN & ~CategoriesOnboardingFl
 
 const defaultCategoriesView: ReturnType<typeof useCategoriesView> = {
     isCategoryViewEnabled: true,
+    isCategoryViewEnabledSettled: true,
     canUseCategoryView: true,
     shouldShowTabs: true,
     categoriesStore: [],

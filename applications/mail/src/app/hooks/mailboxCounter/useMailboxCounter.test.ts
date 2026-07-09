@@ -55,6 +55,7 @@ const mockSelector = (
 
 const getMockCategoryView = (override: Partial<CategoryViewType> = {}): CategoryViewType => ({
     isCategoryViewEnabled: false,
+    isCategoryViewEnabledSettled: true,
     shouldSeeWideToolbars: false,
     shouldShowTabs: false,
     categoriesStore: [],

@@ -7,6 +7,7 @@ export const mockUseCategoriesData = (params?: Partial<UseCategoriesDataReturnTy
         categoriesStore: [],
         activeCategoriesTabs: [],
         isCategoryViewEnabled: false,
+        isCategoryViewEnabledSettled: true,
         shouldSeeWideToolbars: false,
         canUseCategoryView: false,
         ...params,
