@@ -1,10 +1,10 @@
-import { c } from 'ttag';
-
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
+import { c } from 'ttag';
+
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
@@ -606,4 +606,52 @@ export const validateOrganizationSignatureHelper = async ({
             state: OrganizationSignatureState.error,
         };
     }
+};
+
+export interface SubsidiaryOrganizationKeysPayload {
+    PrivateKey: string;
+    ParentOrgToken: string;
+    ParentOrgSignature: string;
+}
+
+/**
+ * Generates the cryptographic payload required to create a subsidiary organization.
+ *
+ * A random token is generated and used to:
+ *   - ParentOrgToken: the token encrypted to the MSP admin's org key (armored PGP message)
+ *   - ParentOrgSignature: detached signature over the token by the admin's org key
+ *   - PrivateKey: the subsidiary's org private key, exported encrypted with the raw token
+ */
+export const generateSubsidiaryOrganizationKeys = async ({
+    adminOrgKey,
+    keyGenConfig,
+}: {
+    adminOrgKey: PrivateKeyReference;
+    keyGenConfig: KeyGenConfig;
+}): Promise<SubsidiaryOrganizationKeysPayload> => {
+    const tokenBytes = crypto.getRandomValues(new Uint8Array(32));
+    const token = tokenBytes.toHex();
+
+    // Encrypt the token to the admin's org key → armored PGP message + detached signature
+    const { encryptedToken, signature } = await encryptAddressKeyToken({
+        token,
+        userKey: adminOrgKey,
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+    });
+
+    const subsidiaryPrivateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
+        ...keyGenConfig,
+    });
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+        privateKey: subsidiaryPrivateKey,
+        passphrase: token,
+    });
+    await CryptoProxy.clearKey({ key: subsidiaryPrivateKey });
+
+    return {
+        PrivateKey: privateKeyArmored,
+        ParentOrgToken: encryptedToken,
+        ParentOrgSignature: signature,
+    };
 };

@@ -88,8 +88,8 @@ const from = (value: string | undefined): PersistedSessionLite[] | undefined => 
 
 export const writeAccountSessions = (persistedSessions = getPersistedSessions()) => {
     const sessions = persistedSessions
-        // Remove oauth sessions, we don't want them to be visible in the in-app account switcher
-        .filter((session) => session.source !== SessionSource.Oauth)
+        // Only want Proton and Saml sessions in the account switcher. Ignore Oauth and Msp.
+        .filter((session) => [SessionSource.Proton, SessionSource.Saml].some((source) => source === session.source))
         .map(getMinimalPersistedSession);
     syncToCookie(to(sessions));
 };
