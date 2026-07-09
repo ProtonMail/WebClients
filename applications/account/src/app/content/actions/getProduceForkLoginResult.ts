@@ -83,6 +83,10 @@ export const getProduceForkLoginResult = async ({
             return getProductDisabledLoginResult({ api, app, paths, session });
         }
 
+        if (session.data.persistedSession.source === SessionSource.Msp) {
+            return getProductDisabledLoginResult({ api, app, paths, session });
+        }
+
         if (getRequiresAddressSetup(app, session.data.User)) {
             return getSetupAddressLoginResult({ session, app });
         }

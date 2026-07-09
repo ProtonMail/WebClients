@@ -1,4 +1,5 @@
 import { serverTime } from '@protontech/crypto';
+
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -428,32 +429,32 @@ const pickSessionByEmail = async ({
 
 const sessionComparator = (
     a: { localID: number; source: SessionSource },
-    b: {
-        localID: number;
-        source: SessionSource;
-    },
+    b: { localID: number; source: SessionSource },
     localID: number | undefined
 ) => {
     // Prioritise the matching session
     if (localID !== undefined) {
-        {
-            if (a.localID === localID && b.localID !== localID) {
-                return -1;
-            }
-            if (a.localID !== localID && b.localID === localID) {
-                return 1;
-            }
+        const isLocalIdMatch = (s: typeof a) => (s.localID === localID ? 1 : 0);
+        const localIdMatchDiff = isLocalIdMatch(b) - isLocalIdMatch(a);
+        if (localIdMatchDiff !== 0) {
+            return localIdMatchDiff;
         }
     }
+
     // Deprioritise oauth sessions
-    {
-        if (a.source === SessionSource.Oauth && b.source !== SessionSource.Oauth) {
-            return 1;
-        }
-        if (a.source !== SessionSource.Oauth && b.source === SessionSource.Oauth) {
-            return -1;
-        }
+    const isOauth = (s: typeof a) => (s.source === SessionSource.Oauth ? 1 : 0);
+    const oauthDiff = isOauth(a) - isOauth(b);
+    if (oauthDiff !== 0) {
+        return oauthDiff;
     }
+
+    // Deprioritise msp sessions
+    const isMsp = (s: typeof a) => (s.source === SessionSource.Msp ? 1 : 0);
+    const mspDiff = isMsp(a) - isMsp(b);
+    if (mspDiff !== 0) {
+        return mspDiff;
+    }
+
     return 0;
 };
 
@@ -539,13 +540,15 @@ export const getActiveSessionsResult = async ({
     // The only time an oauth session needs to be picked is when BEX opens the "manage subscription" view,
     // the way it does that is by passing an `?email` parameter.
     // TODO: This should ideally be improved to accurately target the BEX scenario and not confuse it with others.
-    const sessionsExceptOauth = sessions.filter((session) => session.persisted.source !== SessionSource.Oauth);
+    const filteredSessions = sessions.filter((session) =>
+        [SessionSource.Proton, SessionSource.Saml].some((source) => source === session.persisted.source)
+    );
 
-    const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && sessionsExceptOauth.length === 1;
+    const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && filteredSessions.length === 1;
     // This is technically incorrect, but users have bookmarked sessions with expired local ids, so in the case of 1 session on account
     // we still autopick the session even if a specific local id is requested.
     // TODO: We need to improve this, specifically the scenarios when account has lost a session but the session still exists on subdomains.
-    const hasOnlyOneSession = sessionsExceptOauth.length === 1;
+    const hasOnlyOneSession = filteredSessions.length === 1;
 
     const type =
         hasOnlyOneSession || hasOnlyOneSessionAndUnspecifiedLocalID || localID === session.localID
@@ -554,7 +557,7 @@ export const getActiveSessionsResult = async ({
 
     const result: GetActiveSessionsResult = {
         session,
-        sessions: sessionsExceptOauth,
+        sessions: filteredSessions,
         type,
     };
 

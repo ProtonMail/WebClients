@@ -229,6 +229,18 @@ export const getLoginResult = async ({
         };
     }
 
+    // Msp sessions are only allowed for account.
+    if (persistedSession.source === SessionSource.Msp) {
+        const url = new URL(getAppHref(`/${getSlugFromApp(toApp)}`, APPS.PROTONACCOUNT, session.data.localID));
+        return {
+            type: 'done',
+            payload: {
+                session,
+                url,
+            },
+        };
+    }
+
     if (
         getRequiresAddressSetup(toApp, user) &&
         !maybeLocalRedirect?.location.pathname.includes(SETUP_ADDRESS_PATH) &&

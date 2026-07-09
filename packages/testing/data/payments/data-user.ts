@@ -52,6 +52,7 @@ const user: User = {
         'pass-from-sl': false,
         'has-a-byoe-address': false,
         'delegated-access': false,
+        'org-access': false,
     },
     DriveEarlyAccess: 0,
     Idle: 0,

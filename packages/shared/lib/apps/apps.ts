@@ -1,3 +1,6 @@
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { getAccessType } from '@proton/shared/lib/authentication/getAccessType';
+
 import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronMail } from '../helpers/desktop';
 import type { OrganizationExtended, User } from '../interfaces';
@@ -59,6 +62,11 @@ const getAvailableAppsByOrganization = ({ user, organization }: GetOrganizationA
 };
 
 const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): AppSet => {
+    // Disallow MSP sessions to access any apps. It's only allowed for organization admin management.
+    if (options.user && getAccessType(options.user) === AccessType.Msp) {
+        return new Set([]);
+    }
+
     if (options.oauth || getIsSSOVPNOnlyAccount(options.user)) {
         return new Set([APPS.PROTONVPN_SETTINGS]);
     }

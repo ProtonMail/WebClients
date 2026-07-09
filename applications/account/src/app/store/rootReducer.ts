@@ -6,6 +6,7 @@ import {
     authDevicesReducer,
     domainsAddressesReducer,
     memberAuthDevicesReducer,
+    mspSubsidiariesReducer,
     passwordPoliciesReducer,
     paymentMethodsReducer,
     retentionPoliciesReducer,
@@ -40,6 +41,7 @@ export const rootReducer = combineReducers({
     ...memberAuthDevicesReducer,
     ...oauthTokenReducer,
     ...retentionPoliciesReducer,
+    ...mspSubsidiariesReducer,
     ...appNameReducer,
     ...safetyReviewTelemetryReducer,
 });
