@@ -1,0 +1,13 @@
+diff --git a/lib/common/index.js b/lib/common/index.js
+index 93b0e2357878e2f5f6dc0d888d04970d3880cc92..beeeb8bf0fd89b06cd18d828772fe4f32314242c 100644
+--- a/lib/common/index.js
++++ b/lib/common/index.js
+@@ -1102,7 +1102,7 @@ function resolveHook(filename, specifier) {
+ function shouldTransform(filename) {
+   if (_externalMatcher(filename))
+     return false;
+-  return !belongsToNodeModules(filename);
++  return !belongsToNodeModules(filename) || filename.includes('@protontech');
+ }
+ var transformData;
+ function setTransformData(pluginName, value) {
