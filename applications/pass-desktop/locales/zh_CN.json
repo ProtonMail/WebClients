@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "当我按下时不再显示"
       ],
+      "Do not show this again": [
+        "不再显示"
+      ],
       "Don't show this again": [
         "不再显示"
+      ],
+      "Done": [
+        "完成"
       ],
       "Download this CSV template": [
         "下载CSV模板"
@@ -1207,6 +1213,12 @@
       "Failed to set default mailbox": [
         "设置默认邮箱失败"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "启动 SSH 代理失败：${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "停止 SSH 代理失败：${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "同步别名失败"
       ],
@@ -1382,7 +1394,7 @@
         "未知错误"
       ],
       "Unknown error.": [
-        "未知错误。"
+        "未知错误"
       ],
       "Unknown invite": [
         "无效的邀请"
@@ -1588,6 +1600,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } 将使用保存在您保险库中的 SSH 密钥。"
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } 离线模式已启用"
@@ -1964,6 +1979,9 @@
       "finance": [
         "金融"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "找到“OpenSSH 身份验证代理”，右键点击选择“属性”。"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "按照这些步骤使用通用 CSV 导入数据："
       ],
@@ -2002,6 +2020,9 @@
       ],
       "Identity confirmed": [
         "身份已确认"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "如果您不打算在其他付费账户上使用 SSH 代理，请在切换至该账户前记得禁用此设置。"
       ],
       "Import the CSV file below.": [
         "导入以下 CSV 文件。"
@@ -2111,6 +2132,9 @@
       "Low Priority": [
         "较低优先顺序"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "请确保 ${ PASS_APP_NAME } 保持运行（可最小化），以便 SSH 代理持续生效。当前不支持带有密码短语的 SSH 密钥。"
+      ],
       "Manager": [
         "管理员"
       ],
@@ -2174,6 +2198,9 @@
       "No network connection": [
         "无网络连接"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "在 ${ PASS_SHORT_APP_NAME } 中未找到 SSH 密钥，请创建 SSH 密钥项以供代理使用。"
+      ],
       "No vaults available.": [
         "没有可用的保险库"
       ],
@@ -2198,6 +2225,9 @@
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "仅显示过去 30 天内过期的令牌，更早的令牌将被自动删除。"
       ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "打开“服务”（可使用 Windows 搜索栏，或按 Win+R 并输入 services.msc）。"
+      ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "打开您的扩展程序的 Safari 设置，并验证是否为 ${ BRAND_NAME } 域名启用了网站权限"
       ],
@@ -2221,6 +2251,9 @@
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "超过 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周的密码将自动从历史记录中删除。"
+      ],
+      "Paste the following command in your terminal:": [
+        "在终端中粘贴以下命令："
       ],
       "Paused": [
         "已暂停"
@@ -2450,6 +2483,9 @@
       "Session timed out": [
         "会话超时"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "将“启动类型”设为“禁用”，然后点击“确定”。"
+      ],
       "Set by your organization": [
         "由贵组织设定"
       ],
@@ -2591,6 +2627,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "这将拒绝尝试在 **${ date }** 登录您的 ${ BRAND_NAME } 账户的设备 **${ name }**。"
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "提示：将其添加到 .bashrc 或 .zshrc 文件中，以便在打开终端时自动运行。"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
@@ -2605,6 +2644,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "若要设置生物识别解锁，${ PASS_APP_NAME } 需要一个新的浏览器权限。接受后，扩展程序将重新加载。请之后重新打开此页面。"
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "要在 Windows 上使用 ${ PASS_APP_NAME } SSH 代理，必须禁用 OpenSSH 服务。"
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
@@ -2978,6 +3020,9 @@
       ],
       "Address details": [
         "地址详情"
+      ],
+      "Advanced": [
+        "高级"
       ],
       "Alias": [
         "别名"
@@ -3975,6 +4020,9 @@
       "Update": [
         "更新"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "将 ${ PASS_APP_NAME } 用作 SSH 代理"
+      ],
       "Use for AI agent": [
         "用于 AI 代理"
       ],
@@ -4558,6 +4606,12 @@
       "Random prefix generation successfully enabled": [
         "成功启用随机前缀生成功能"
       ],
+      "SSH agent successfully started": [
+        "SSH 代理已成功启动"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH 代理已成功停止"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "保险库包含的用户数不能超过 ${ targetMaxMembers } 位。"
       ],
@@ -4958,6 +5012,9 @@
       "Review and share": [
         "回顾与分享"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Windows 上 OpenSSH 服务的屏幕截图"
+      ],
       "Secure your data": [
         "保护您的数据"
       ],
@@ -4979,6 +5036,9 @@
       "Settings": [
         "设置"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "设置 ${ PASS_APP_NAME } SSH 代理"
+      ],
       "Setup offline mode": [
         "设置离线模式"
       ],
@@ -4996,6 +5056,9 @@
       ],
       "SPF (Optional)": [
         "SPF (可选)"
+      ],
+      "SSH Agent": [
+        "SSH 代理"
       ],
       "Status": [
         "状态"
@@ -5340,6 +5403,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "启用${ PASS_APP_NAME }时发生了错误。请尝试刷新或重载该插件。"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH 代理需要使用 SSH 密钥，而您的套餐不支持此功能。"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "别名前缀不可超过40个字符"

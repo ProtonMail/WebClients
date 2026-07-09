@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "Bastığımda bir daha görüntülenmesin"
       ],
+      "Do not show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don't show this again": [
         "Bunu yeniden gösterme"
+      ],
+      "Done": [
+        "Tamam"
       ],
       "Download this CSV template": [
         "Bu CSV kalıbını indir"
@@ -1212,6 +1218,12 @@
       "Failed to set default mailbox": [
         "Varsayılan e-posta kutusu ayarlanamadı"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH agent başlatılamadı: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH agent durdurulamadı: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Takma adlar eşitlenemedi"
       ],
@@ -1607,6 +1619,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } kasalarınızda kaydedilmiş SSH anahtarlarını kullanacaktır."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
       ],
@@ -1986,6 +2001,9 @@
       "finance": [
         "finans"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "\"OpenSSH Authentication Agent\" hizmetini bulun ve üzerine sağ tıklayıp Özellikleri seçin."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Verilerinizi sıradan bir CSV dosyası ile içe aktarmak için şu adımları izleyin:"
       ],
@@ -2026,6 +2044,9 @@
       ],
       "Identity confirmed": [
         "Kimlik onaylandı"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "SSH agent'ı başka bir ücretli hesapta kullanmayı planlamıyorsanız o hesaba geçmeden önce bu ayarı devre dışı bırakmayı unutmayın."
       ],
       "Import the CSV file below.": [
         "Aşağıdan CSV dosyasını içe aktarın."
@@ -2136,6 +2157,9 @@
       "Low Priority": [
         "Düşük Öncelik"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "SSH agent'ın aktif kalması için ${ PASS_APP_NAME } uygulamasının çalışır durumda olduğundan emin olun (pencere küçültülmüş olabilir). Parola gerektiren SSH anahtarları şu anda desteklenmemektedir."
+      ],
       "Manager": [
         "Yönetici"
       ],
@@ -2200,6 +2224,9 @@
       "No network connection": [
         "Ağ bağlantısı yok"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME } içinde SSH anahtarı bulunamadı. Aracı ile birlikte kullanmak üzere SSH anahtarı öğeleri oluşturun."
+      ],
       "No vaults available.": [
         "Kullanılabilecek bir kasa yok."
       ],
@@ -2223,6 +2250,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Yalnızca son 30 gün içinde süresi dolan kodlar görüntülenir. Daha eski kodlar otomatik olarak silinir."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "\"Hizmetler\"i açın (Windows arama çubuğunu kullanabilir veya Win+R tuşlarına basıp services.msc yazabilirsiniz)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Eklenti için Safari ayarlarını açın ve site izinlerinin ${ BRAND_NAME } etki alanı için açık olduğunu doğrulayın"
@@ -2248,6 +2278,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+      ],
+      "Paste the following command in your terminal:": [
+        "Aşağıdaki komutu terminalinize yapıştırın:"
       ],
       "Paused": [
         "Duraklatıldı"
@@ -2477,6 +2510,9 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "\"Başlangıç türünü\" \"Devre Dışı\" olarak ayarlayın ve TAMAM'a tıklayın."
+      ],
       "Set by your organization": [
         "Kuruluşunuz tarafından ayarlanmış"
       ],
@@ -2619,6 +2655,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Bu işlem, **${ date }** tarihinde ${ BRAND_NAME } hesabınızda oturum açmayı deneyen **${ name }** aygıtına izin vermeyecek."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "İpucu: Terminali açtığınızda otomatik olarak çalışması için bunu .bashrc veya .zshrc dosyanıza ekleyin."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "E-posta almayı sürdürmek için bu takma adları farklı bir e-posta kutusuna aktarın:"
       ],
@@ -2633,6 +2672,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Biyometri ile kilit açmak için ${ PASS_APP_NAME } uygulamasına yeni bir tarayıcı izni verilmesi gerekiyor. İzni verdikten sonra eklenti yeniden yüklenecek. Ardından bu sayfayı yeniden açın."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Windows'ta ${ PASS_APP_NAME } SSH agent kullanmak için OpenSSH hizmetinin devre dışı bırakılması gerekir."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
@@ -3024,6 +3066,9 @@
       ],
       "Address details": [
         "Adres bilgileri"
+      ],
+      "Advanced": [
+        "Gelişmiş"
       ],
       "Alias": [
         "Takma ad"
@@ -4024,6 +4069,9 @@
       "Update": [
         "Güncelle"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "SSH agent olarak ${ PASS_APP_NAME } kullanın"
+      ],
       "Use for AI agent": [
         "Yapay zeka aracısı için kullan"
       ],
@@ -4611,6 +4659,12 @@
       "Random prefix generation successfully enabled": [
         "Rastgele ön ek oluşturma özelliği açıldı"
       ],
+      "SSH agent successfully started": [
+        "SSH agent başarıyla başlatıldı"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent başarıyla durduruldu"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
         "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz"
@@ -5017,6 +5071,9 @@
       "Review and share": [
         "Gözden geçirip paylaş"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Windows'ta OpenSSH hizmetinin ekran görüntüsü"
+      ],
       "Secure your data": [
         "Verilerinizi koruyun"
       ],
@@ -5038,6 +5095,9 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "${ PASS_APP_NAME } SSH Agent'ı Kur"
+      ],
       "Setup offline mode": [
         "Çevrim dışı kipi kur"
       ],
@@ -5055,6 +5115,9 @@
       ],
       "SPF (Optional)": [
         "SPF (isteğe bağlı)"
+      ],
+      "SSH Agent": [
+        "SSH Agent"
       ],
       "Status": [
         "Durum"
@@ -5404,6 +5467,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent tarifenizde bulunmayan SSH anahtarlarının kullanılmasını gerektirir."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Takma ad ön ekiniz 40 karakterden uzun olamaz"

@@ -319,8 +319,14 @@
       "Do not show again when I press": [
         "No m'ho tornis a mostrar quan ho premi"
       ],
+      "Do not show this again": [
+        "No m'ho torneu a mostrar"
+      ],
       "Don't show this again": [
         "No m'ho torneu a mostrar"
+      ],
+      "Done": [
+        "Fet"
       ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
@@ -570,6 +576,12 @@
       ],
       "Regenerate": [
         "Regenera"
+      ],
+      "Regex invalid": [
+        "Expressió regular no vàlida"
+      ],
+      "Regex unsafe": [
+        "Expressió regular no segura"
       ],
       "Reject": [
         "Rebutja"
@@ -1212,6 +1224,12 @@
       "Failed to set default mailbox": [
         "No s'ha pogut establir la bústia de correu per defecte."
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "No s'ha pogut iniciar l'agent SSH: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "No s'ha pogut aturar l'agent SSH: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "No s'han pogut sincronitzar els àlies."
       ],
@@ -1607,6 +1625,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes, targetes de crèdit i identitats."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } utilitzarà les claus SSH desades a les vostres caixes fortes."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "S'ha habilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1986,6 +2007,9 @@
       "finance": [
         "finances"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Cerqueu \"Agent d'Autenticació d'OpenSSH\", feu clic amb el botó dret a Propietats."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Seguiu aquests passos per a importar les dades amb un fitxer CSV genèric:"
       ],
@@ -2026,6 +2050,9 @@
       ],
       "Identity confirmed": [
         "S'ha confirmat la identitat."
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Si no teniu previst utilitzar l'agent SSH en un altre compte de pagament, recordeu desactivar aquest paràmetre abans de canviar de compte."
       ],
       "Import the CSV file below.": [
         "Importa el fitxer CSV de sota."
@@ -2136,6 +2163,9 @@
       "Low Priority": [
         "Prioritat baixa"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Assegureu-vos de mantenir ${ PASS_APP_NAME } en execució (es pot minimitzar) perquè l'agent SSH es mantingui actiu. Actualment no s'admeten les claus SSH amb frase de contrasenya."
+      ],
       "Manager": [
         "Gestor"
       ],
@@ -2200,6 +2230,9 @@
       "No network connection": [
         "No hi ha connexió de xarxa."
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "No s'ha trobat cap clau SSH a ${ PASS_SHORT_APP_NAME }. Creeu elements de clau SSH per utilitzar-los amb l'agent."
+      ],
       "No vaults available.": [
         "No hi ha cap caixa forta disponible."
       ],
@@ -2223,6 +2256,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els més antics s'eliminen automàticament."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Obriu \"Serveis\" (podeu utilitzar la barra de cerca de Windows o prémer Win+R i introduir services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Obriu la configuració de l'extensió a Safari i comproveu que els permisos del lloc web estiguin activats per als dominis de ${ BRAND_NAME }"
@@ -2248,6 +2284,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
         "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes s'esborren automàticament de l'historial."
+      ],
+      "Paste the following command in your terminal:": [
+        "Enganxeu la instrucció següent al vostre terminal:"
       ],
       "Paused": [
         "Pausat"
@@ -2477,6 +2516,9 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Establiu \"Tipus d'inici\" a Desactivat, feu clic a OK."
+      ],
       "Set by your organization": [
         "Configurat per la vostra organització"
       ],
@@ -2619,6 +2661,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Això rebutjarà el dispositiu **${ name }** que va intentar iniciar la sessió al vostre compte ${ BRAND_NAME } el **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Consell: afegiu-ho al vostre fitxer .bashrc o .zshrc perquè s'executi automàticament quan obriu el terminal."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuar rebent correus electrònics, transferiu aquests àlies a una bústia de correu diferent:"
       ],
@@ -2633,6 +2678,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Per configurar el desbloqueig biomètric, ${ PASS_APP_NAME } requereix un nou permís del navegador. Un cop l'hàgiu acceptat, l'extensió es tornarà a carregar. Torneu a obrir aquesta pàgina després."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Per utilitzar l'agent SSH de ${ PASS_APP_NAME } a Windows, cal desactivar el servei OpenSSH."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Més de 50.000 usuaris empresarials i 100 milions de comptes a tot el món confien en nosaltres."
@@ -3025,6 +3073,9 @@
       "Address details": [
         "Detalls de l'adreça"
       ],
+      "Advanced": [
+        "Avançat"
+      ],
       "Alias": [
         "Àlies"
       ],
@@ -3070,6 +3121,9 @@
       "Bank Name": [
         "Nom del banc"
       ],
+      "Basic": [
+        "Bàsic"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A més de conservar les vostres credencials, ${ PASS_APP_NAME } protegeix la vostra identitat amb la seva funcionalitat d'àlies de correu electrònic integrada. Cada vegada que us registreu per obtenir un compte en línia nou, ${ PASS_APP_NAME } pot crear automàticament un àlies per protegir la vostra adreça electrònica real. "
       ],
@@ -3102,6 +3156,9 @@
       ],
       "Catch-All": [
         "Capturar-ho tot"
+      ],
+      "Check": [
+        "Comprova"
       ],
       "Checkbox": [
         "Casella de selecció"
@@ -3267,6 +3324,12 @@
       ],
       "Enter email or username": [
         "Introduïu el correu electrònic o el nom d’usuari"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
       ],
       "Experimental": [
         "Experimental"
@@ -3595,6 +3658,9 @@
       "Never": [
         "Mai"
       ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
       "New": [
         "Nou"
       ],
@@ -3657,6 +3723,9 @@
       ],
       "Owner": [
         "Propietari"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
       ],
       "Passkey": [
         "Clau d'accés"
@@ -3768,6 +3837,9 @@
       ],
       "Reddit handle": [
         "Nom d'usuari del Reddit"
+      ],
+      "Regular expression": [
+        "Expressió regular"
       ],
       "Remove link": [
         "Esborra l'enllaç"
@@ -3894,6 +3966,9 @@
       ],
       "SSN": [
         "Número de la seguretat social"
+      ],
+      "Starts with": [
+        "Comença amb"
       ],
       "State or province": [
         "Estat o província"
@@ -4023,6 +4098,12 @@
       ],
       "Update": [
         "Actualitza"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Utilitzeu ${ PASS_APP_NAME } com a agent SSH"
       ],
       "Use for AI agent": [
         "Per a ús de l'agent d'IA"
@@ -4160,6 +4241,24 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ],
       "You can drag and drop the selected item to another vault": [
         "Podeu arrossegar i deixar anar l'element seleccionat a una altra caixa forta.",
@@ -4460,6 +4559,23 @@
         "Utilitzada a ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduïu un URL per comprovar si la vostra regla actual coincideix amb l'URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincideix amb aquest URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincideix amb aquest URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Aquest URL es bloquejarà per l'emplenament automàtic"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Aquest URL NO es bloquejarà per l'emplenament automàtic"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
@@ -4611,6 +4727,12 @@
       "Random prefix generation successfully enabled": [
         "S'ha activat la generació aleatòria de prefixos."
       ],
+      "SSH agent successfully started": [
+        "S'ha iniciat correctament l'agent SSH"
+      ],
+      "SSH agent successfully stopped": [
+        "S'ha aturat correctament l'agent SSH"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Les caixes fortes no poden contenir més d'${ targetMaxMembers } usuari.",
         "Les caixes fortes no poden contenir més de ${ targetMaxMembers } usuaris."
@@ -4657,6 +4779,9 @@
       ],
       "Add mailbox": [
         "Afegeix una bústia de correu"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta els comportaments de l'emplenament automàtic per canviar on se suggereixen els inicis de sessió."
       ],
       "Agent setup instructions": [
         "Instruccions de configuració de l'agent"
@@ -4857,6 +4982,9 @@
       "Last modified": [
         "Última modificació"
       ],
+      "Learn more": [
+        "Saber-ne més"
+      ],
       "Leave this item?": [
         "Voleu deixar aquest element?"
       ],
@@ -5017,6 +5145,9 @@
       "Review and share": [
         "Reviseu i comparteu"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Captura de pantalla del servei OpenSSH a Windows"
+      ],
       "Secure your data": [
         "Assegureu les vostres dades"
       ],
@@ -5038,6 +5169,9 @@
       "Settings": [
         "Preferències"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Configureu l'agent SSH de ${ PASS_APP_NAME }"
+      ],
       "Setup offline mode": [
         "Configureu el mode fora de línia"
       ],
@@ -5055,6 +5189,9 @@
       ],
       "SPF (Optional)": [
         "SPF (opcional)"
+      ],
+      "SSH Agent": [
+        "Agent SSH"
       ],
       "Status": [
         "Estat"
@@ -5074,6 +5211,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronitzeu els vostres àlies de SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Comproveu un URL amb aquesta regla"
+      ],
       "Transfer ownership": [
         "Transfereix la propietat"
       ],
@@ -5088,6 +5228,9 @@
       ],
       "Update available": [
         "Hi ha una actualització disponible"
+      ],
+      "URL matching": [
+        "Coincidència d'URL"
       ],
       "Vault": [
         "Caixa forta"
@@ -5203,6 +5346,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "S'ha deshabilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
@@ -5405,6 +5551,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Alguna cosa ha anat malament en iniciar ${ PASS_APP_NAME }. Proveu de refrescar o tornar a carregar l'extensió"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "L'agent SSH requereix l'ús de claus SSH que no estan incloses en el vostre pla."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefix de l'àlies no pot tenir més de 40 caràcters"
       ],
@@ -5413,6 +5562,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Aquesta adreça de correu electrònic ja no es controlarà per detectar infraccions de dades."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Aquest element no es pot suggerir per a l'emplenament automàtic a causa de «${ neverModeDescriptionStrong }». Afegiu un altre URL si voleu que aquest element s'empleni automàticament."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Aquest element està compartit actualment. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."
