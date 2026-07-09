@@ -1206,7 +1206,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu total"
+        "2 TiB spațiu de stocare"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -3202,6 +3202,9 @@
       "Failed to resend invitation": [
         "Eșuare retrimitere invitație."
       ],
+      "Failed to trash document.": [
+        "Documentul nu a putut fi mutat în gunoi."
+      ],
       "Failed to unshare node": [
         "Eșuare anulare partajare nod."
       ],
@@ -3302,9 +3305,6 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
@@ -4559,11 +4559,6 @@
         "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }",
         "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } selectat",
-        "${ selectedCount } selectate",
-        "${ selectedCount } selectate"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Foldere selectate: ${ selectedFoldersCountLocalized }",
         "Foldere selectate: ${ selectedFoldersCountLocalized }",
@@ -4842,9 +4837,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ emailAddress }."
       ],
-      "Disable table of contents": [
-        "Dezactivare cuprins"
-      ],
       "Display word count": [
         "Afișare număr cuvinte"
       ],
@@ -4898,9 +4890,6 @@
       ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
-      ],
-      "Enable table of contents": [
-        "Activare cuprins"
       ],
       "End-to-end encrypted": [
         "Criptat bilateral"
@@ -5019,8 +5008,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Ajutați-ne să îmbunătățim această experiență raportând problema. Dacă nu vă deranjează să partajați conținutul din foaia de calcul, atașați informațiile de depanare de mai jos la raport."
+      ],
       "here": [
         "aici"
+      ],
+      "Hide table of contents": [
+        "Ascundere cuprins"
       ],
       "High Priority": [
         "Prioritate înaltă"
@@ -5248,8 +5243,8 @@
       "Only the people with the link and the password can access this folder.": [
         "Numai persoanele care au legătura și parola pot accesa acest folder."
       ],
-      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Hopa! Această foaie de calcul nu poate salva cele mai recente modificări, așa s-a întrerupt editarea pentru a vă împiedica să vă pierdeți munca.\n\nAjutați-ne să îmbunătățim această experiență raportând problema. Dacă nu vă deranjează să partajați conținutul foii de calcul, atașați informațiile de depanare de mai jos la raportul trimis."
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Hopa! Această foaie de calcul nu poate salva cele mai recente modificări, așa că s-a întrerupt editarea pentru a nu vă pierde munca."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
@@ -5426,6 +5421,9 @@
       ],
       "Shared on": [
         "Partajat"
+      ],
+      "Show table of contents": [
+        "Afișare cuprins"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
@@ -6210,6 +6208,12 @@
       "Erase this link and remove everyone with access": [
         "Ștergere legătură și eliminare toate persoanele cu acces"
       ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
       "Expiry": [
         "Expirare"
       ],
@@ -6330,6 +6334,9 @@
       "Navigation": [
         "Navigare"
       ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
       "New password": [
         "Parola nouă"
       ],
@@ -6350,6 +6357,9 @@
       ],
       "Optional": [
         "Opțional"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Password": [
         "Parola"
@@ -6390,6 +6400,9 @@
       "Region": [
         "Județ"
       ],
+      "Regular expression": [
+        "Expresie regulată"
+      ],
       "Replace existing file": [
         "Înlocuire fișier existent"
       ],
@@ -6426,6 +6439,9 @@
       "Skip folder": [
         "Omitere folder"
       ],
+      "Starts with": [
+        "Începe cu"
+      ],
       "Stop sharing": [
         "Oprire partajare"
       ],
@@ -6458,6 +6474,9 @@
       ],
       "Upload picture": [
         "Încărcare imagine"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ],
       "Username": [
         "Nume utilizator"
@@ -6804,6 +6823,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
@@ -8146,6 +8183,15 @@
       ],
       "Device renamed": [
         "Dispozitivul a fost redenumit."
+      ],
+      "Document failed to be restored from trash": [
+        "Documentul nu a putut fi restaurat din gunoi."
+      ],
+      "Document moved to trash": [
+        "Documentul a fost mutat în gunoi."
+      ],
+      "Document restored from trash": [
+        "Documentul a fost restaurat din gunoi."
       ],
       "External invitation removed from the share": [
         "Invitația externă a fost eliminată din partajare."
@@ -10768,6 +10814,26 @@
         "Informații expuse"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Expires": [
+        "Expiră"
+      ],
+      "Fingerprint": [
+        "Amprenta"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Type": [
+        "Tip"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
@@ -10852,6 +10918,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
       ],
+      "Version 6 OpenPGP key": [
+        "Cheie PGP versiunea 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
       ]
@@ -10884,6 +10953,11 @@
       ],
       "The user must have an address to request data access": [
         "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]
     },
     "Validation": {
@@ -11016,6 +11090,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",

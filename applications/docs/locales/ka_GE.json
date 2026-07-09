@@ -4405,10 +4405,6 @@
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
       ],
-      "${ selectedCount } selected": [
-        "მონიშნულია ${ selectedCount }",
-        "მონიშნულია ${ selectedCount }"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
@@ -10280,6 +10276,20 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "ქმედებები"
+      ],
+      "Fingerprint": [
+        "ანაბეჭდი"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "Type": [
+        "ტიპი"
       ]
     },
     "Today icon tooltip in mini calendar": {

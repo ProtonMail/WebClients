@@ -648,6 +648,9 @@
       "Reload": [
         "Recarregar"
       ],
+      "Reload spreadsheet": [
+        "Recarregar planilha"
+      ],
       "Remove": [
         "Remover"
       ],
@@ -677,6 +680,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Report issue": [
+        "Reportar problema"
       ],
       "Request a call": [
         "Solicitar uma chamada"
@@ -3250,6 +3256,9 @@
       "No contacts found to import": [
         "Nenhum contato encontrado para importação"
       ],
+      "No drive found to import": [
+        "Não encontrou nenhuma unidade para importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
       ],
@@ -4475,10 +4484,6 @@
         "${ selectedContactsLength }/${ contactsLength } contato selecionado",
         "${ selectedContactsLength }/${ contactsLength } contatos selecionados"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } selecionados",
-        "${ selectedCount } selecionados"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta selecionada",
         "${ selectedFoldersCountLocalized } pastas selecionadas"
@@ -4918,6 +4923,9 @@
       "here": [
         "aqui"
       ],
+      "Hide table of contents": [
+        "Ocultar tabela de conteúdos"
+      ],
       "High Priority": [
         "Alta prioridade"
       ],
@@ -5314,6 +5322,9 @@
       "Shared on": [
         "Compartilhado em"
       ],
+      "Show table of contents": [
+        "Mostrar tabela de conteúdos"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Não é possível validar a assinatura devido a um erro de rede. Tente novamente mais tarde.."
       ],
@@ -5389,9 +5400,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "O URL que você inseriu parece ter sido copiado incorretamente do Slack. Ao copiar links longos do Slack, clique com o botão direito no link e selecione \"Copiar o link\" em vez de copiar o texto do URL truncado diretamente."
       ],
       "There are no documents in the trash.": [
         "Não há documentos na lixeira."
@@ -6328,6 +6336,9 @@
       ],
       "Trash": [
         "Lixeira"
+      ],
+      "Unknown user": [
+        "Usuário desconhecido"
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -10188,6 +10199,9 @@
       "Edit image": [
         "Editar imagem"
       ],
+      "Editing paused": [
+        "Edição pausada"
+      ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
@@ -10577,6 +10591,26 @@
         "Sua informação exposta"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Ações"
+      ],
+      "Created": [
+        "Criada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Impressão digital"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -10660,6 +10694,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
