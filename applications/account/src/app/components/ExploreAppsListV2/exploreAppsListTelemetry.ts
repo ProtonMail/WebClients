@@ -5,7 +5,7 @@ import { TelemetryExploreAppsEvents, TelemetryMeasurementGroups } from '@proton/
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
-type OpenMethod = 'same_tab' | 'new_tab' | 'settings';
+type OpenMethod = 'same_tab' | 'new_tab' | 'settings' | 'settings-menu';
 
 export const useExploreAppsListTelemetry = () => {
     const api = useApi();
