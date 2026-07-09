@@ -204,6 +204,9 @@
       "Apply to existing messages": [
         "Tillämpa till befintliga meddelanden"
       ],
+      "Approve": [
+        "Godkänn"
+      ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
@@ -1214,6 +1217,9 @@
       ],
       "Organization": [
         "Organisation"
+      ],
+      "Pause": [
+        "Pausa"
       ],
       "Pay": [
         "Betala"
@@ -2942,6 +2948,9 @@
       "All": [
         "Alla"
       ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alla migrerade användarkonton är redo att bjudas in till din ${ BRAND_NAME }-organisation."
+      ],
       "An unknown error ocurred. Please refresh the page and try again": [
         "Ett okänt fel uppstod. Uppdatera sidan och försök igen"
       ],
@@ -3099,6 +3108,9 @@
       "Missing organization public key": [
         "Saknar organisationens offentliga nyckel"
       ],
+      "More details": [
+        "Mer detaljer"
+      ],
       "Need help?": [
         "Behöver du hjälp?"
       ],
@@ -3141,6 +3153,9 @@
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Välj de konton du vill flytta till ${ BRAND_NAME }. Du kan migrera hela organisationen idag eller börja i liten skala och flytta över resten när du är redo."
+      ],
       "Select users to migrate": [
         "Välj användare att migrera"
       ],
@@ -3176,6 +3191,9 @@
       "Status": [
         "Status"
       ],
+      "Update records for receiving": [
+        "Uppdatera poster för mottagning"
+      ],
       "User": [
         "Användare"
       ],
@@ -3205,6 +3223,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi skapar dina konton och importerar din data nu så att ditt team har allt de behöver när de börjar använda sitt säkra ${ BRAND_NAME }-konto."
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
@@ -5337,6 +5358,9 @@
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan ansluta till delade servrar."
       ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Observera att e-post som skickas till denna adress, även från andra ${ BRAND_NAME }-adresser, inte längre kommer vara end-to-end-krypterade."
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
       ],
@@ -5403,6 +5427,9 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi kommer importera din gamla e-post och synkronisera nya meddelanden från Gmail framöver."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
@@ -6522,6 +6549,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Om de inte bad om din hjälp** är det möjligt att någon annan försöker komma åt deras konto. I så fall, ignorera denna begäran."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Skydda ditt arv.** Uppgradera ditt paket för att lägga till nödkontakter."
+      ],
       "Access account": [
         "Kom åt konto"
       ],
@@ -7157,12 +7187,6 @@
       "Intended recipient does not support calendar sharing": [
         "Avsedd mottagare stöder inte kalenderdelning"
       ],
-      "Invalid ${ name } code": [
-        "Ogiltig ${ name }-kod"
-      ],
-      "Invalid card number": [
-        "Ogiltigt kortnummer"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -7174,9 +7198,6 @@
       ],
       "Invalid email address": [
         "Ogiltig e-postadress"
-      ],
-      "Invalid expiration date": [
-        "Ogiltigt förfallodatum"
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
@@ -7268,9 +7289,6 @@
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -7414,6 +7432,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "System för omvänd skattskyldighet stöds inte för detta paket"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlem",
+        "Rolltilldelning kunde inte slutföras för ${ errors.length } medlemmar"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupp",
+        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupper"
       ],
       "Server not found": [
         "Server hittades inte"
@@ -9664,6 +9690,9 @@
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } är en end-to-end-krypterad lösning för videokonferenser. Lägg till den i ditt paket för att hålla säkra möten."
       ],
+      "${ MEET_APP_NAME } seats": [
+        "Användarplatserför ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } adress",
         "${ n } adresser"
@@ -10191,6 +10220,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Be din organisationsadministratör att ställa in gateways."
+      ],
+      "Assigned seats won't be billed while disabled": [
+        "Tilldelade användarplatser debiteras inte när de är inaktiverade"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
@@ -10981,11 +11013,17 @@
       "Got it": [
         "Jag förstår"
       ],
+      "Group created": [
+        "Grupp skapad"
+      ],
       "Group deleted": [
         "Grupp borttagen"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
+      ],
+      "Group roles assigned": [
+        "Grupproller tilldelade"
       ],
       "Groups": [
         "Grupper"
@@ -11421,6 +11459,9 @@
       ],
       "Member": [
         "Medlem"
+      ],
+      "Members are signed out and can't sign back in": [
+        "Medlemmar är utloggade och kan inte logga in igen"
       ],
       "Merged": [
         "Sammanslagna"
@@ -11905,6 +11946,9 @@
       ],
       "Restore": [
         "Återställ"
+      ],
+      "Review past periods and export the data for reporting or client invoicing.": [
+        "Granska tidigare perioder och exportera data för rapportering eller klientfakturering."
       ],
       "Right to Left": [
         "Höger till vänster"
@@ -13013,6 +13057,9 @@
       "You can now sign in to your account again.": [
         "Du kan nu logga in på ditt konto igen."
       ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Du kan bara ha en chattinstans öppen åt gången. Stäng tidigare konversationer innan du startar en ny."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
@@ -13422,6 +13469,9 @@
       ],
       "Group Owner": [
         "Gruppägare"
+      ],
+      "Invited": [
+        "Inbjuden"
       ],
       "Paused": [
         "Pausad"
@@ -14085,6 +14135,9 @@
       "App password": [
         "Applösenord"
       ],
+      "App Settings": [
+        "App-inställningar"
+      ],
       "Apply filter to existing emails": [
         "Tillämpa filter till befintlig e-post"
       ],
@@ -14168,6 +14221,9 @@
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureras med ${ priceYearly } var 12:e månad."
+      ],
+      "Billed average": [
+        "Fakturerat genomsnitt"
       ],
       "Billed monthly.": [
         "Faktureras månadsvis."
@@ -14307,9 +14363,6 @@
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
       ],
-      "Confirm MX records added": [
-        "Bekräfta tillagda MX-poster"
-      ],
       "Confirm new password": [
         "Bekräfta nytt lösenord"
       ],
@@ -14385,6 +14438,9 @@
       ],
       "Daily email notifications": [
         "Dagliga e-postaviseringar"
+      ],
+      "Data harvesting": [
+        "Datainsamling"
       ],
       "Date": [
         "Datum"
@@ -14577,6 +14633,9 @@
       ],
       "Event notifications": [
         "Händelseaviseringar"
+      ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
       ],
       "Exclude Spam/Trash from All mail": [
         "Exkludera skräppost/papperskorg från “All e-post“"
@@ -15091,6 +15150,9 @@
       "Recovery phrase": [
         "Återställningsfras"
       ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
       "Remove": [
         "Ta bort"
       ],
@@ -15197,6 +15259,9 @@
       "Show sender images": [
         "Visa avsändarbilder"
       ],
+      "Show unread count": [
+        "Visa antal olästa"
+      ],
       "Show unread count in Favicon": [
         "Visa antal oläst i Favicon"
       ],
@@ -15259,6 +15324,9 @@
       ],
       "Start weekday": [
         "Första veckodagen"
+      ],
+      "Starts with": [
+        "Börjar med"
       ],
       "State": [
         "Delstat"
@@ -15343,6 +15411,9 @@
       ],
       "Transactions": [
         "Transaktioner"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktioner - Kvitton, bokningar, fakturor och beställningar"
       ],
       "Two-password mode": [
         "Två-lösenordsläge"
@@ -19159,6 +19230,9 @@
     "Password reminder": {
       "Do you remember your ${ BRAND_NAME } password?": [
         "Kommer du ihåg ditt lösenord för ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Det bästa sättet att undvika att förlora åtkomst till ditt konto och dina data är att komma ihåg dina inloggningsuppgifter."
       ]
     },
     "password_reminder": {
@@ -20222,6 +20296,9 @@
       "Recovery score: ${ score }": [
         "Återställningspoäng: ${ score }"
       ],
+      "Require verified password reset option (email or SMS)": [
+        "Kräver verifierat alternativ för lösenordsåterställning (e-post eller SMS)"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "Poäng: ${ score }/${ maxScore }"
       ],
@@ -21063,6 +21140,9 @@
       "Add options": [
         "Lägga till alternativ"
       ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Lägg till personer du litar på och enkelt kan kontakta. Din nödkontakt kommer att kunna komma åt ditt konto och återställa ditt lösenord åt dig om det behövs."
+      ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Lägg till personer du litar på och enkelt kan kontakta. De kommer att kunna hjälpa dig att låsa upp dina data efter du återställt ditt lösenord."
       ],
@@ -21177,6 +21257,9 @@
       "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Om du glömmer ditt lösenord kan du logga in med en QR-kod. Allt du behöver göra är att vara inloggad på en ${ BRAND_NAME }-tjänst på annan enhet."
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kan du logga in och återställa dina data. Det är det enda sättet att återställa allt direkt, så se till att du förvarar det någonstans säkert."
+      ],
       "If your recovery email has changed, ${ updateEmailLink }.": [
         "Om din e-post för återställning har ändrats, ${ updateEmailLink }"
       ],
@@ -21206,6 +21289,9 @@
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Detta ger dig snabb åtkomst till ditt ${ BRAND_NAME }-konto så du kan ändra ditt lösenord."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Detta låter dig återställa ditt lösenord om du tappat bort det men fortfarande är inloggad på ${ BRAND_NAME }. Det är ofta det enklaste sättet att återställa ditt konto om du är inloggad."
       ],
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Detta kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
@@ -21266,6 +21352,9 @@
       ],
       "Verify your recovery phone": [
         "Verifiera din telefon för återställning"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verifiering av din e-postadress ökar din kontosäkerhet och tillåter ytterligare alternativ för återställning."
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
@@ -21373,6 +21462,9 @@
       "Approve changes from your identity provider": [
         "Godkänn ändringar från din identitetsleverantör"
       ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Slutgiltigt godkännande behövs för att bevilja åtkomst till alla ${ BRAND_NAME }-tjänster."
+      ],
       "From your identity provider": [
         "Från din identitetsleverantör"
       ],
@@ -21381,6 +21473,9 @@
       ],
       "Private user": [
         "Privat användare"
+      ],
+      "Review users and groups before finishing setup": [
+        "Granska användare och grupper innan du slutför installation"
       ],
       "Updated": [
         "Uppdaterad"
@@ -21538,6 +21633,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera återställning via e-post och SMS."
+      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "För att säkerställa att du alltid kan komma åt ditt ${ BRAND_NAME }-konto, ladda ner din återställningsfras."
       ],
@@ -21563,6 +21661,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Lägg till i ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Låter dig lägga till en Zoom-videokonferens till alla dina kalenderhändelser"
       ]
@@ -22795,13 +22896,13 @@
         "${ n } användare frånkopplad från SSO",
         "${ n } användare frånkopplad från SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } användare är inaktiv. Du kan säkert ta bort denna användare från din organisation.",
-        "${ n } användare är inaktiva. Du kan säkert ta bort dem från din organisation."
+      "${ n } user is inactive.": [
+        "${ n } användare är inaktiv.",
+        "${ n } användare är inaktiva."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } användare ber om din hjälp för att logga in på deras ${ BRAND_NAME }-konto med enkel inloggning.",
@@ -24438,6 +24539,9 @@
         "${ friendsSubscribed } vän prenumererar",
         "${ friendsSubscribed } vänner prenumererar"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -24678,6 +24782,9 @@
       ],
       "Are you sure you want to close?": [
         "Är du säker på att du vill stänga?"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Är du säker på att du vill koppla från och inaktivera denna adress?"
       ],
       "Are you sure you want to disconnect this address?": [
         "Är du säker på att du vill koppla från denna adress?"
@@ -24955,6 +25062,9 @@
       ],
       "Data recovery": [
         "Dataåterställning"
+      ],
+      "Data recovery contacts": [
+        "Kontakter för dataåterställning"
       ],
       "Data recovery options": [
         "Alternativ för dataåterställning"
@@ -26673,6 +26783,9 @@
       "This feature is only available on Beta": [
         "Denna funktion är endast tillgänglig på Beta"
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare på äldre appar för att kryptera data de skickar till dig."
+      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare för att kryptera data de skickar till dig"
       ],
@@ -26705,6 +26818,9 @@
       ],
       "Verified email address": [
         "Verifierad e-postadress"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi upptäckte ett problem med din DNS-konfiguration. Se till att dina poster matchar instruktionerna nedan. Om problemet kvarstår måste vi stänga av DKIM-signering."
@@ -26750,6 +26866,9 @@
       "Group membership paused": [
         "Gruppmedlemskap pausad"
       ],
+      "Resuming role assignment": [
+        "Återuppta rolltilldelning"
+      ],
       "Role assignment paused": [
         "Rolltilldelning pausad"
       ],
@@ -26759,8 +26878,8 @@
       "User declined invitation": [
         "Användare avböjde inbjudan"
       ],
-      "User is a group": [
-        "Användare är en grupp"
+      "User is a group owner": [
+        "Användare är en gruppägare"
       ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
@@ -26878,6 +26997,9 @@
       ],
       "Refund": [
         "Återbetalning"
+      ],
+      "Test credit": [
+        "Testkredit"
       ]
     },
     "Unlimited offer": {
@@ -26922,9 +27044,9 @@
       "Confirm all": [
         "Bekräfta alla"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:",
-        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:"
+      "Could not enable admin access for ${ n } user": [
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare",
+        "Kunde inte aktivera administratörsåtkomst för ${ n } användare"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunde inte aktivera administratörsåtkomst: ${ error }"
@@ -26965,6 +27087,10 @@
       "Request user permission for data access": [
         "Begär användarbehörighet för dataåtkomst"
       ],
+      "Review their account now.": [
+        "Granska deras konto nu.",
+        "Granska deras konton nu."
+      ],
       "Revoke access": [
         "Återkalla åtkomst"
       ],
@@ -26976,6 +27102,9 @@
       ],
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Deras krypteringsnycklar uppdaterades medan vi gjorde ändringar."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Detta kommer avbryta den väntande begäran om administratörsåtkomst till användarens data eller lösenordsåterställning."
@@ -26994,6 +27123,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Du kan ${ reject } denna begäran om du inte vill fortsätta."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Du kan säkert ta bort denna användare från din organisation.",
+        "Du kan säkert ta bort dessa användare från din organisation."
       ]
     },
     "Update font modal": {
@@ -27133,6 +27266,9 @@
       "Manage all users, groups, security, billing, and system configurations.": [
         "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
       ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Hantera användare och grupper, tilldela roller och allokera licenser till medlemmar."
+      ],
       "Manages security settings and can view all event logs and user details.": [
         "Hanterar säkerhetsinställningar och kan visa alla händelseloggar och användardetaljer."
       ],
@@ -27168,6 +27304,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Users table: badge": {

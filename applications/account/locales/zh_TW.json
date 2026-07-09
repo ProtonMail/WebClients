@@ -919,6 +919,9 @@
       "Organization": [
         "組織"
       ],
+      "Pause": [
+        "暫停"
+      ],
       "Pay": [
         "付款"
       ],
@@ -4795,12 +4798,6 @@
       "Intended recipient does not support calendar sharing": [
         "擬收件人不支援行事曆共享"
       ],
-      "Invalid ${ name } code": [
-        "${ name } 代碼無效"
-      ],
-      "Invalid card number": [
-        "卡號無效"
-      ],
       "Invalid code": [
         "代碼無效"
       ],
@@ -4812,9 +4809,6 @@
       ],
       "Invalid email address": [
         "電郵位址無效"
-      ],
-      "Invalid expiration date": [
-        "到期日無效"
       ],
       "Invalid IBAN": [
         "國際銀行帳號不正確"
@@ -15896,12 +15890,6 @@
       "${ n } user detached from SSO": [
         "${ n } 個使用者已從 SSO 脫鉤"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n }使用者透過您的身分提供者已加入您的組織機構。立即查看帳號:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } 使用者已停用。此使用者可以安全地從您的組織中移除。"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }使用者要求您協助透過單一登入登入至它們的${ BRAND_NAME }帳號。"
       ],
@@ -18851,9 +18839,6 @@
       ],
       "Confirm all": [
         "確認全部"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "因為他們的加密金鑰同時被更新，無法替${ n }使用者自動啟用管理員權限權"
       ],
       "Enable admin access?": [
         "啟用管理員存取權?"

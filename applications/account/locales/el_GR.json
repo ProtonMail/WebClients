@@ -204,6 +204,9 @@
       "Apply to existing messages": [
         "Εφαρμογή στα υπάρχοντα μηνύματα"
       ],
+      "Approve": [
+        "Έγκριση"
+      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -1220,6 +1223,9 @@
       ],
       "Organization": [
         "Οργανισμός"
+      ],
+      "Pause": [
+        "Παύση"
       ],
       "Pay": [
         "Πληρωμή"
@@ -2993,6 +2999,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Προέκυψε άγνωστο σφάλμα. Παρακαλούμε ανανεώστε τη σελίδα και προσπαθήστε ξανά"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Είστε σίγουροι ότι θέλετε να συνεχίσετε χωρίς ${ withoutString } και ${ notMigratedOthers } άλλον;",
+        "Είστε σίγουροι ότι θέλετε να συνεχίσετε χωρίς ${ withoutString } και ${ notMigratedOthers } άλλους;"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Είστε σίγουροι ότι θέλετε να συνεχίσετε χωρίς ${ withoutString };"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Είστε σίγουρος ότι θέλετε να συνεχίσετε; Οι χρήστες που δεν έχουν διεκδικήσει τον λογαριασμό τους πριν ολοκληρωθεί η μετεγκατάσταση θα χρειαστεί να ζητήσουν επαναφορά κωδικού πρόσβασης από τον διαχειριστή της οργάνωσης ${ BRAND_NAME }."
       ],
@@ -3040,6 +3053,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Διαγράψτε τυχόν προϋπάρχοντες κωδικούς MX και, στη συνέχεια, αντιγράψτε τους παρακάτω κωδικούς και επικολλήστε τους στην ενότητα DNS του κεντρικού υπολογιστή τομέα σας."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "Το DKIM προσθέτει μια ψηφιακή υπογραφή σε κάθε μήνυμα ηλεκτρονικού ταχυδρομείου, ώστε οι παραλήπτες να μπορούν να επαληθεύσουν ότι το μήνυμα προήλθε όντως από τον τομέα σας και δεν τροποποιήθηκε κατά τη μεταφορά του. Χωρίς αυτήν, τα μηνύματα ενδέχεται να θεωρηθούν λιγότερο αξιόπιστα."
@@ -3174,6 +3190,9 @@
       "Missing organization public key": [
         "Λείπει το δημόσιο κλειδί του οργανισμού"
       ],
+      "More details": [
+        "Περισσότερες λεπτομέρειες"
+      ],
       "Need help?": [
         "Χρειάζεσαι βοήθεια;"
       ],
@@ -3267,11 +3286,17 @@
       "Some accounts are not claimed": [
         "Ορισμένοι λογαριασμοί δεν έχουν διεκδικηθεί"
       ],
+      "Some members weren't migrated": [
+        "Ορισμένα μέλη δεν μετεγκαταστάθηκαν"
+      ],
       "Status": [
         "Κατάσταση"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Για να μεταφέρετε τα δεδομένα του οργανισμού σας στο ${ BRAND_NAME }, εγκαταστήστε το ${ BRAND_NAME } Easy Switch από το Google Workspace Marketplace. Αφού το εγκαταστήσετε, επιστρέψτε εδώ για να συνεχίσετε."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Για να ολοκληρώσετε τη μετεγκατάσταση, βεβαιωθείτε ότι διατηρείτε μόνο τους κωδικούς MX ${ BRAND_NAME }."
       ],
       "Update records for receiving": [
         "Ενημέρωση αρχείων για παραλαβή"
@@ -3327,6 +3352,9 @@
       "You": [
         "Εσείς"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Δε θα μπορείτε να αντιγράψετε τα δεδομένα αυτών των χρηστών αργότερα."
+      ],
       "You're all set!": [
         "Όλα έτοιμα!"
       ],
@@ -3336,6 +3364,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Το τρέχον πλάνο σας επιτρέπει έως και ${ maxMembers } χρήστη. Για να μετεγκαταστήσετε επιπλέον χρήστες, προσθέστε περισσότερες θέσεις στη συνδρομή σας.",
         "Το τρέχον πλάνο σας επιτρέπει έως και ${ maxMembers } χρήστες. Για να μετεγκαταστήσετε επιπλέον χρήστες, προσθέστε περισσότερες θέσεις στη συνδρομή σας."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Η διαμόρφωση του τομέα σας εξακολουθεί να περιλαμβάνει τους κωδικούς MX ενός άλλου παρόχου."
       ]
     },
     "breadcrumb": {
@@ -7337,12 +7368,6 @@
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
       ],
-      "Invalid ${ name } code": [
-        "Μη έγκυρο ${ name } κωδικός"
-      ],
-      "Invalid card number": [
-        "Μη έγκυρος αριθμός κάρτας"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -7354,9 +7379,6 @@
       ],
       "Invalid email address": [
         "Μη έγκυρη διεύθυνση email"
-      ],
-      "Invalid expiration date": [
-        "Μη έγκυρη ημερομηνία λήξης"
       ],
       "Invalid IBAN": [
         "Μη έγκυρο IBAN"
@@ -7451,9 +7473,6 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Μόνο τα κεφαλαία και τα σημεία στίξης (τελείες, παύλες και παύλες υπογράμμισης) μπορούν να αλλάξουν για αυτήν τη διεύθυνση"
@@ -7600,6 +7619,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλος",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλη"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδα",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδες"
       ],
       "Server not found": [
         "Δε βρέθηκε ο διακομιστής"
@@ -9838,6 +9865,10 @@
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } μέλος προστέθηκε στην ομάδα",
+        "${ emails.length } μέλη προστέθηκαν στην ομάδα"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: εικόνα πλήρους μεγέθους"
       ],
@@ -9934,9 +9965,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
-        "${ pendingAdminMemberCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
+        "${ pendingAdminApprovalCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -10524,11 +10555,11 @@
       "Beta": [
         "Beta (Δοκιμαστική)"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Χρεώνεται ${ monthlyDiscountedPrice } για τους πρώτους 6 μήνες, ανανεώνεται στα ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Χρεώνεται ${ monthlyDiscountedPriceElement } για τους πρώτους 6 μήνες, ανανεώνεται στα ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Χρεώνεται ${ yearlyDiscountedPrice } για τους πρώτους 12 μήνες, ανανεώνεται στα ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Χρεώνεται ${ yearlyDiscountedPriceElement } για τους πρώτους 12 μήνες, ανανεώνεται στα ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
@@ -11244,11 +11275,17 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "Group created": [
+        "Η ομάδα δημιουργήθηκε"
+      ],
       "Group deleted": [
         "Η ομάδα διαγράφηκε"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
+      ],
+      "Group roles assigned": [
+        "Ρόλοι ομάδας που έχουν ανατεθεί"
       ],
       "Groups": [
         "Ομάδες"
@@ -13355,6 +13392,9 @@
       "You can now sign in to your account again.": [
         "Τώρα μπορείτε να συνδεθείτε ξανά στον λογαριασμό σας."
       ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Παρακαλούμε κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
@@ -13780,6 +13820,9 @@
       ],
       "Group Owner": [
         "Κάτοχος Ομάδας"
+      ],
+      "Invited": [
+        "Προσκεκλημένοι"
       ],
       "Paused": [
         "Σε παύση"
@@ -14455,6 +14498,9 @@
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
+      "App Settings": [
+        "Ρυθμίσεις Εφαρμογής"
+      ],
       "Apply filter to existing emails": [
         "Εφαρμογή φίλτρου στα υπάρχοντα μηνύματα"
       ],
@@ -14683,8 +14729,8 @@
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
-      "Confirm MX records added": [
-        "Επιβεβαίωση προσθήκης εγγραφών MX"
+      "Confirm MX records updated": [
+        "Επιβεβαίωση ενημέρωσης εγγραφών MX"
       ],
       "Confirm new password": [
         "Επιβεβαίωση νέου κωδικού"
@@ -14956,6 +15002,12 @@
       ],
       "Event notifications": [
         "Ειδοποιήσεις εκδήλωσης"
+      ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
       ],
       "Exclude Spam/Trash from All mail": [
         "Εξαίρεση Ανεπιθύμητης αλληλογραφίας/Κάδου απορριμμάτων από Όλα τα Μηνύματα"
@@ -15254,6 +15306,9 @@
       "Navigation": [
         "Πλοήγηση"
       ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
       "New display name": [
         "Νέο εμφανιζόμενο όνομα"
       ],
@@ -15361,6 +15416,9 @@
       ],
       "Other amount": [
         "Άλλο ποσό"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
       ],
       "Passkeys": [
         "Κλειδιά πρόσβασης"
@@ -15481,6 +15539,9 @@
       ],
       "Recovery phrase": [
         "Φράση ανάκτησης"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -15660,6 +15721,9 @@
       "Start weekday": [
         "Εκκίνηση της εβδομάδας"
       ],
+      "Starts with": [
+        "Ξεκινάει με"
+      ],
       "State": [
         "Πολιτεία"
       ],
@@ -15785,6 +15849,9 @@
       ],
       "URL": [
         "Διεύθυνση URL"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
       ],
       "Use another payment method": [
         "Χρησιμοποιήστε άλλη μέθοδο πληρωμής"
@@ -16858,6 +16925,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Όλες οι ενέργειες φίλτρου θα εφαρμοστούν σε όλα τα μηνύματα στον ${ MAIL_APP_NAME } λογαριασμό σας. Δε θα σταλούν μηνύματα ηλεκτρονικού ταχυδρομείου αυτόματης απάντησης."
       ],
@@ -16867,6 +16937,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας στο ${ BRAND_NAME } για να ρυθμίσετε προσαρμοσμένες διευθύνσεις email (π.χ. you@yourcompany.com). Ο οδηγός μας θα σας καθοδηγήσει στη διαδικασία."
       ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Δείτε τη δραστηριότητα του ${ PASS_APP_NAME } σε όλο τον οργανισμό σας."
       ],
@@ -16875,6 +16957,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Προβολή εκδηλώσεων σύνδεσης, ανάκτησης και ασφαλείας χρήστη."
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Η δωρεάν δοκιμή σας έχει λήξει. ${ nonAutoRenewalAction }"
@@ -21933,8 +22018,8 @@
       "Updated": [
         "Ενημερώθηκε"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Οι χρήστες που έχετε ορίσει ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Οι χρήστες που έχουν οριστεί ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
       ]
     },
     "scim: Action": {
@@ -23355,13 +23440,13 @@
         "${ n } χρήστης αποσυνδέθηκε από SSO",
         "${ n } χρήστες αποσυνδέθηκαν από SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τον λογαριασμό του τώρα:",
-        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τους λογαριασμούς τους τώρα:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω του παρόχου ταυτότητας σας",
+        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω του παρόχου ταυτότητας σας"
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } χρήστης είναι ανενεργός. Μπορείτε να καταργήσετε με ασφάλεια αυτόν τον χρήστη από τον οργανισμό σας.",
-        "${ n } χρήστες είναι ανενεργοί. Μπορείτε να καταργήσετε με ασφάλεια αυτούς τους χρήστες από τον οργανισμό σας."
+      "${ n } user is inactive.": [
+        "${ n } χρήστης είναι ανενεργός.",
+        "${ n } χρήστες είναι ανενεργοί."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } χρήστης ζητά τη βοήθειά σας για να συνδεθεί στον λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση.",
@@ -25935,6 +26020,9 @@
       "Get more from your password manager": [
         "Αποκτήστε περισσότερα από τον διαχειριστή κωδικών πρόσβασής σας"
       ],
+      "Get more from your privacy suite": [
+        "Αξιοποιήστε στο έπακρο τη σουίτα απορρήτου σας"
+      ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
       ],
@@ -26876,6 +26964,9 @@
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Με τον λογαριασμό σας ${ BRAND_NAME }, έχετε πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME }"
+      ],
       "You are all set": [
         "Είστε έτοιμοι"
       ],
@@ -27320,6 +27411,9 @@
       "Verified email address": [
         "Επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Version 6 OpenPGP key": [
+        "Κλειδί OpenPGP έκδοσης 6"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί να υφίσταται, θα πρέπει να αλλάξουμε την υπογραφή DKIM."
       ],
@@ -27364,6 +27458,9 @@
       "Group membership paused": [
         "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
       ],
+      "Resuming role assignment": [
+        "Συνέχιση ανάθεσης ρόλου"
+      ],
       "Role assignment paused": [
         "Η ανάθεση ρόλου τέθηκε σε παύση"
       ],
@@ -27373,11 +27470,14 @@
       "User declined invitation": [
         "Ο χρήστης απέρριψε την πρόσκληση"
       ],
-      "User is a group": [
-        "Ο χρήστης είναι μια ομάδα"
+      "User is a group owner": [
+        "Ο χρήστης είναι κάτοχος ομάδας"
       ],
       "via ${ groupNames }": [
         "μέσω ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "Αναμονή για έγκριση από τον διαχειριστή"
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
@@ -27539,9 +27639,9 @@
       "Confirm all": [
         "Επιβεβαίωση όλων"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τον ${ n } χρήστη, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:",
-        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τους ${ n } χρήστες, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:"
+      "Could not enable admin access for ${ n } user": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή για ${ n } χρήστη",
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή για ${ n } χρήστες"
       ],
       "Could not enable administrator access: ${ error }": [
         "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή: ${ error }"
@@ -27582,6 +27682,10 @@
       "Request user permission for data access": [
         "Αίτηση άδειας χρήστη για πρόσβαση σε δεδομένα"
       ],
+      "Review their account now.": [
+        "Ελέγξτε τον λογαριασμό τους τώρα.",
+        "Ελέγξτε τους λογαριασμούς τους τώρα."
+      ],
       "Revoke access": [
         "Ανάκληση πρόσβασης"
       ],
@@ -27593,6 +27697,9 @@
       ],
       "The user must have an address to request data access": [
         "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Τα κλειδιά κρυπτογράφησης ενημερώθηκαν ενώ κάναμε αλλαγές."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Αυτό θα ακυρώσει το εκκρεμές αίτημα για πρόσβαση διαχειριστή στα δεδομένα του χρήστη ή επαναφορά κωδικού πρόσβασης."
@@ -27611,6 +27718,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Μπορείτε να ${ reject } αυτό το αίτημα εάν δεν επιθυμείτε να προχωρήσετε."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Μπορείτε να καταργήσετε με ασφάλεια αυτόν τον χρήστη από τον οργανισμό σας.",
+        "Μπορείτε να καταργήσετε με ασφάλεια αυτούς τους χρήστες από τον οργανισμό σας."
       ]
     },
     "Update font modal": {
@@ -28112,6 +28223,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
       "Are you sure you want to remove your notification email?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε το email ειδοποίησής σας;"

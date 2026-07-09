@@ -953,6 +953,9 @@
       "Organization": [
         "Organizacija"
       ],
+      "Pause": [
+        "Premor"
+      ],
       "Pay": [
         "Plačilo"
       ],
@@ -5247,12 +5250,6 @@
       "Intended recipient does not support calendar sharing": [
         "Predvideni prejemnik ne podpira skupne rabe koledarja"
       ],
-      "Invalid ${ name } code": [
-        "Neveljavna koda ${ name }"
-      ],
-      "Invalid card number": [
-        "Neveljavna številka kartice"
-      ],
       "Invalid code": [
         "Neveljavna koda"
       ],
@@ -5264,9 +5261,6 @@
       ],
       "Invalid email address": [
         "Neveljaven e-poštni naslov"
-      ],
-      "Invalid expiration date": [
-        "Neveljaven datum poteka veljavnosti"
       ],
       "Invalid IBAN": [
         "Neveljaven IBAN"
@@ -9898,6 +9892,9 @@
       ],
       "You can now return to the application to continue": [
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Naenkrat je lahko odprta samo ena seja klepeta. Preden začnete novo, zaprite prejšnje pogovore."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
@@ -17002,18 +16999,6 @@
         "${ n } uporabniki so bili odstranjeni iz SSO",
         "${ n } uporabnikov je bilo odstranjenih iz SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } uporabnik se je pridružil vaši organizaciji preko vašega ponudnika identitete. Preglejte račun zdaj:",
-        "${ n } uporabnika sta je pridružila vaši organizaciji preko vašega ponudnika identitete. Preglejte računa zdaj:",
-        "${ n } uporabniki so se pridružili vaši organizaciji preko vašega ponudnika identitete. Preglejte račune zdaj:",
-        "${ n } uporabnikov se je pridružilo vaši organizaciji preko vašega ponudnika identitete. Preglejte račune zdaj:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } uporabnik je neaktiven. Tega uporabnika lahko varno odstranite iz svoje organizacije.",
-        "${ n } uporabnika sta neaktivna. Ta uporabnika lahko varno odstranite iz svoje organizacije.",
-        "${ n } uporabniki so neaktivni. Te uporabnike lahko varno odstranite iz svoje organizacije.",
-        "${ n } uporabnikov je neaktivnih. Te uporabnike lahko varno odstranite iz svoje organizacije."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } uporabnik zahteva vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
         "${ n } uporabnika zahtevata vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
@@ -20067,9 +20052,6 @@
       "User declined invitation": [
         "Uporabnik je zavrnil vabilo"
       ],
-      "User is a group": [
-        "Uporabnik je skupina"
-      ],
       "Waiting for user to accept the invitation": [
         "Čakanje, da uporabnik sprejme povabilo"
       ]
@@ -20168,12 +20150,6 @@
       ],
       "Confirm all": [
         "Potrdi vse"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnika ni bila mogoča, ker so bili medtem posodobljeni njegovi šifrirni ključi:",
-        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnika ni bila mogoča, ker so bili medtem posodobljeni njuni šifrirni ključi:",
-        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnike ni bila mogoča, ker so bili medtem posodobljeni njihovi šifrirni ključi:",
-        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnikov ni bila mogoča, ker so bili medtem posodobljeni njihovi šifrirni ključi:"
       ],
       "Enable admin access?": [
         "Omogoči administratorski dostop?"
