@@ -1,30 +1,52 @@
-import { useState } from 'react';
+import { addCompanyThunk, setCompanyStatusThunk, updateCompanyThunk } from '@proton/account/mspSubsidiaries/actions';
+import { useMspSubsidiaries } from '@proton/account/mspSubsidiaries/hooks';
+import { manageCompanyThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
+import { useMspDispatch } from '@proton/account/mspSubsidiaries/useMspDispatch';
+import { MSP_SUBSIDIARY_STATUS } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 
-import generateUID from '@proton/utils/generateUID';
-
-import MOCK_COMPANIES from '../mock/companies';
 import type { CompanyFormData, CompanyStatus, MspCompany } from '../types';
 
-// Replace this hook's internals with real API calls when the API is ready.
-// The returned interface should remain stable so the component needs no changes.
+const toCompanyStatus = (status: MspSubsidiary['Status']): CompanyStatus => {
+    if (status === MSP_SUBSIDIARY_STATUS.ACTIVE) {
+        return 'active';
+    }
+    if (status === MSP_SUBSIDIARY_STATUS.DISABLED) {
+        return 'disabled';
+    }
+    return 'on-hold';
+};
+
+const toCompany = (sub: MspSubsidiary): MspCompany => ({
+    id: sub.ID,
+    name: sub.Name,
+    assignedSeats: sub.MaxMembers,
+    usedSeats: sub.ActiveMembers,
+    status: toCompanyStatus(sub.Status),
+});
+
 const useMspCompanies = () => {
-    const [companies, setCompanies] = useState<MspCompany[]>(MOCK_COMPANIES);
+    const dispatch = useMspDispatch();
+    const [subsidiaries, loading] = useMspSubsidiaries();
+    const companies = (subsidiaries ?? []).map(toCompany);
 
-    const addCompany = (data: CompanyFormData): MspCompany => {
-        const newCompany: MspCompany = { id: generateUID('company'), usedSeats: 0, ...data };
-        setCompanies((prev) => [...prev, newCompany]);
-        return newCompany;
+    const addCompany = async (data: CompanyFormData) => {
+        return dispatch(addCompanyThunk({ data }));
     };
 
-    const updateCompany = (id: string, data: CompanyFormData) => {
-        setCompanies((prev) => prev.map((c) => (c.id === id ? { ...c, ...data } : c)));
+    const updateCompany = async (id: string, data: CompanyFormData) => {
+        return dispatch(updateCompanyThunk({ id, data }));
     };
 
-    const setCompanyStatus = (id: string, status: CompanyStatus) => {
-        setCompanies((prev) => prev.map((c) => (c.id === id ? { ...c, status } : c)));
+    const setCompanyStatus = async (id: string, status: CompanyStatus) => {
+        return dispatch(setCompanyStatusThunk({ id, status }));
     };
 
-    return { companies, addCompany, updateCompany, setCompanyStatus };
+    const manageCompany = async (id: string) => {
+        return dispatch(manageCompanyThunk({ id }));
+    };
+
+    return { companies, loading, addCompany, updateCompany, setCompanyStatus, manageCompany };
 };
 
 export default useMspCompanies;

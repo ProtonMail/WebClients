@@ -8,5 +8,8 @@ export const getAccessType = (user: User) => {
     if (user.Flags?.['delegated-access']) {
         return AccessType.EmergencyAccess;
     }
+    if (user.Flags?.['org-access']) {
+        return AccessType.Msp;
+    }
     return AccessType.Self;
 };

@@ -1,3 +1,5 @@
+import isEnumValue from '@proton/utils/isEnumValue';
+
 import { SessionSource } from '../SessionInterface';
 import { getReturnUrlParameter } from '../returnUrl';
 import { type ForkPayloadVersion, ForkSearchParameters, type ForkType } from './constants';
@@ -21,8 +23,7 @@ const getValidatedSource = (string: string | null): SessionSource => {
         return SessionSource.Proton;
     }
     const number = Number(string);
-    const validSources = [SessionSource.Saml, SessionSource.Oauth, SessionSource.Proton];
-    if (validSources.some((source) => source === number)) {
+    if (isEnumValue(number, SessionSource)) {
         return number;
     }
     return SessionSource.Proton;
