@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import {
     DropdownActions,
+    Loader,
     Pagination,
     SearchInput,
     Table,
@@ -17,6 +18,8 @@ import {
     TableHeaderCell,
     TableRow,
     useActiveBreakpoint,
+    useErrorHandler,
+    useModalStateWithData,
     useNotifications,
     usePagination,
 } from '@proton/components';
@@ -25,12 +28,15 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import useMspCompanies from '../hooks/useMspCompanies';
-import type { MspCompany } from '../types';
+import type { CompanyFormData, MspCompany } from '../types';
 import CompanyModal from './CompanyModal';
 import DisableCompanyModal from './DisableCompanyModal';
+import { MspLoginModal } from './MspLoginModal';
 
 import './MspCompaniesSection.scss';
 
@@ -45,16 +51,21 @@ const ManageButton = ({ className, ...props }: { className?: string } & ButtonPr
     </Button>
 );
 
-const MspCompaniesSection = () => {
+const MspCompaniesSection = ({ path }: { path: string }) => {
     const [user] = useUser();
     const isAdmin = user.isAdmin;
     const { createNotification } = useNotifications();
-    const { companies, addCompany, updateCompany, setCompanyStatus } = useMspCompanies();
+    const handleError = useErrorHandler();
+    const { companies, loading, addCompany, updateCompany, setCompanyStatus, manageCompany } = useMspCompanies();
     const { viewportWidth } = useActiveBreakpoint();
 
     const [search, setSearch] = useState('');
     const [modal, setModal] = useState<ModalState>(null);
     const [confirmDisable, setConfirmDisable] = useState<MspCompany | null>(null);
+    const [{ data: manageAccountModalData, ...manageAccountModalProps }, openManageAccountModal, renderManageAccount] =
+        useModalStateWithData<{
+            linkUrl: string;
+        }>();
 
     const filtered = companies
         .filter((company) => company.name.toLowerCase().includes(search.toLowerCase()))
@@ -73,30 +84,55 @@ const MspCompaniesSection = () => {
         onSelect(1);
     }, [search]);
 
-    const handleSave = (data: Parameters<typeof addCompany>[0]) => {
-        if (modal?.mode === 'edit') {
-            updateCompany(modal.company.id, data);
-            createNotification({ text: c('Success').t`${data.name} updated`, type: 'success' });
-        } else {
-            addCompany(data);
-            createNotification({ text: c('Success').t`${data.name} added`, type: 'success' });
+    const handleSave = async (data: CompanyFormData) => {
+        try {
+            if (modal?.mode === 'edit') {
+                await updateCompany(modal.company.id, data);
+                createNotification({ text: c('Success').t`${data.name} updated`, type: 'success' });
+            } else {
+                await addCompany(data);
+                createNotification({ text: c('Success').t`${data.name} added`, type: 'success' });
+            }
+            setModal(null);
+        } catch (e) {
+            handleError(e);
         }
-        setModal(null);
     };
 
-    const handleConfirmDisable = () => {
+    const handleConfirmDisable = async () => {
         if (!confirmDisable) {
             return;
         }
-        setCompanyStatus(confirmDisable.id, 'disabled');
-        createNotification({ text: c('Success').t`${confirmDisable.name} disabled`, type: 'success' });
-        setConfirmDisable(null);
+        try {
+            await setCompanyStatus(confirmDisable.id, 'disabled');
+            createNotification({ text: c('Success').t`${confirmDisable.name} disabled`, type: 'success' });
+            setConfirmDisable(null);
+        } catch (e) {
+            handleError(e);
+        }
     };
 
-    const handleEnable = (company: MspCompany) => {
-        setCompanyStatus(company.id, 'active');
-        createNotification({ text: c('Success').t`${company.name} enabled`, type: 'success' });
+    const handleEnable = async (company: MspCompany) => {
+        try {
+            await setCompanyStatus(company.id, 'active');
+            createNotification({ text: c('Success').t`${company.name} enabled`, type: 'success' });
+        } catch (e) {
+            handleError(e);
+        }
     };
+
+    const handleManageCompany = async (company: MspCompany) => {
+        try {
+            const result = await manageCompany(company.id);
+            openManageAccountModal({ linkUrl: getAppHref(path, APPS.PROTONACCOUNT, result.localID) });
+        } catch (e) {
+            handleError(e);
+        }
+    };
+
+    if (loading) {
+        return <Loader />;
+    }
 
     return (
         <SettingsSectionExtraWide>
@@ -148,7 +184,6 @@ const MspCompaniesSection = () => {
                                 text: c('Action').t`Edit`,
                                 onClick: () => setModal({ mode: 'edit', company }),
                             },
-
                             {
                                 key: 'toggle-status',
                                 text: isDisabled ? c('Action').t`Enable company` : c('Action').t`Disable company`,
@@ -185,12 +220,16 @@ const MspCompaniesSection = () => {
                                     <ManageButton
                                         className="inline-flex gap-1 justify-center md:hidden"
                                         fullWidth
-                                        disabled
+                                        onClick={() => handleManageCompany(company)}
                                     />
                                 </TableCell>
                                 <TableCell className="text-right action-cell">
                                     <div className="inline-flex flex-nowrap gap-2">
-                                        <ManageButton className="md:inline-flex  gap-1 hidden" size="small" disabled />
+                                        <ManageButton
+                                            size="small"
+                                            className="md:inline-flex gap-1 hidden"
+                                            onClick={() => handleManageCompany(company)}
+                                        />
                                         <DropdownActions
                                             size="small"
                                             shape="ghost"
@@ -229,6 +268,10 @@ const MspCompaniesSection = () => {
 
             {confirmDisable && (
                 <DisableCompanyModal onConfirm={handleConfirmDisable} onClose={() => setConfirmDisable(null)} />
+            )}
+
+            {renderManageAccount && manageAccountModalData && (
+                <MspLoginModal {...manageAccountModalProps} linkUrl={manageAccountModalData.linkUrl} />
             )}
         </SettingsSectionExtraWide>
     );

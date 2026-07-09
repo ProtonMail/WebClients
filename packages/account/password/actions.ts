@@ -5,7 +5,9 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { disable2FA as disable2FAConfig, updatePassword } from '@proton/shared/lib/api/settings';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
@@ -41,7 +43,11 @@ export const changeLoginPassword = ({
     persistPasswordScope: boolean;
     disable2FA: boolean;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return async () => {
+    return async (_dispatch, _getState, extra) => {
+        // Since the initial implementation of Msp forks a copy of itself, let's only allow password changes in the main session to avoid it getting signed out.
+        if (getPersistedSession(extra.authentication.localID)?.source === SessionSource.Msp) {
+            throw new Error('Please change password in your main session');
+        }
         if (disable2FA) {
             await api(disable2FAConfig({ PersistPasswordScope: true }));
         }
@@ -73,9 +79,14 @@ export const changePassword = ({
     mode: 'two-password-mode' | 'one-password-mode';
     disable2FA: boolean;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, getState, extra) => {
+    return async (dispatch, _getState, extra) => {
         extra.eventManager.stop();
         try {
+            // Since the initial implementation of Msp forks a copy of itself, let's only allow password changes in the main session to avoid it getting signed out.
+            if (getPersistedSession(extra.authentication.localID)?.source === SessionSource.Msp) {
+                throw new Error('Please change password in your main session');
+            }
+
             const [addresses, user, userKeysList, organizationKey] = await Promise.all([
                 dispatch(addressesThunk()),
                 dispatch(userThunk()),

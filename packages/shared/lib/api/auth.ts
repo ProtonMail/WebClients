@@ -114,6 +114,7 @@ export const pushForkSession = (data: {
     Independent: 0 | 1;
     Selector?: string;
     UserCode?: string;
+    ActiveOrganizationID?: string;
 }) => ({
     method: 'post',
     url: 'auth/v4/sessions/forks',
