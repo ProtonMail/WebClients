@@ -946,6 +946,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Ajouter un fichier à ${ DRIVE_APP_NAME }"
       ],
+      "Add memory": [
+        "Ajouter une mémoire"
+      ],
       "Add to active": [
         "Ajouter aux éléments actifs"
       ],
@@ -970,8 +973,17 @@
       "Clear auto-generated": [
         "Effacer le contenu généré automatiquement"
       ],
+      "click to hide me": [
+        "cliquez pour me cacher"
+      ],
+      "click to let me out": [
+        "cliquez pour me libérer"
+      ],
       "Close": [
         "Fermer"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "Réduire ${ LUMO_SHORT_APP_NAME }"
       ],
       "Continue": [
         "Continuer"
@@ -1012,11 +1024,17 @@
       "I like this response": [
         "Cette réponse me convient."
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Libérer ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Light": [
         "Clair"
       ],
       "Manage files": [
         "Gérer les fichiers"
+      ],
+      "More options": [
+        "Plus d'options"
       ],
       "New chat": [
         "Nouvelle session de chat"
@@ -1072,11 +1090,11 @@
       "Try again": [
         "Essayer à nouveau"
       ],
-      "Turn off": [
-        "Désactiver"
-      ],
       "Turn off and delete": [
         "Désactiver et supprimer"
+      ],
+      "Turn off memory": [
+        "Désactiver la mémoire"
       ],
       "Turn on memory": [
         "Activer la mémoire"
@@ -1374,8 +1392,8 @@
       "More thorough answers, but can take longer": [
         "Des réponses plus complètes, mais qui peuvent prendre plus de temps."
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Supprimez définitivement votre projet et vos discussions. Cette action est irréversible."
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Supprimez définitivement votre projet, vos discussions et vos mémoires enregistrés. Cette action est irréversible."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Les discussions de projet sont totalement isolées. Elles utilisent leurs propres instructions et fichiers, et ne tiennent absolument pas compte de votre mémoire globale."
@@ -1409,8 +1427,8 @@
       ]
     },
     "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Désactivez la mémoire de ${ LUMO_SHORT_APP_NAME } à tout moment"
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Supprime tous les souvenirs enregistrés et désactive la fonction de mémorisation."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1664,9 +1682,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "La mémoire est utilisée uniquement dans les discussions générales, jamais au sein des projets. Elle est stockée avec un chiffrement à accès nul."
-      ],
       "You can turn it off again at any time.": [
         "Vous pouvez l'activer ou le désactiver à tout moment."
       ]
@@ -1909,8 +1924,8 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Générez un graphique de flux de travail et du code d'implémentation pour l'objectif suivant. Langage cible pour le code :"
       ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Générez-les à partir de vos conversations récentes ou ajoutez les vôtres ci-dessous."
+      "Generate them from your recent chats, or add one with + above.": [
+        "Générez-les à partir de vos conversations récentes, ou ajoutez-en une avec le + ci-dessus."
       ],
       "Generating…": [
         "En cours de génération…"
@@ -5829,20 +5844,11 @@
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
-      "Invalid ${ name } code": [
-        "Le code ${ name } n'est pas valide."
-      ],
-      "Invalid card number": [
-        "Le numéro de carte n’est pas valide."
-      ],
       "Invalid code": [
         "Le code n'est pas valide."
       ],
       "Invalid coupon": [
         "Le code cadeau n'est pas valide."
-      ],
-      "Invalid expiration date": [
-        "La date d'expiration n’est pas valide."
       ],
       "Invalid IBAN": [
         "Cet IBAN n'est pas valide."
@@ -9555,6 +9561,9 @@
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account restricted": [
         "Compte restreint"
       ],
@@ -9812,6 +9821,11 @@
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     },
     "Validation": {
