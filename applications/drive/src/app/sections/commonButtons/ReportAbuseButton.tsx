@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcFlag } from '@proton/icons/icons/IcFlag';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
@@ -33,7 +33,7 @@ export const ReportAbuseButton = ({ onClick, close, buttonType }: Props) => {
         return (
             <ToolbarButton
                 title={c('Action').t`Report abuse`}
-                icon={<IcExclamationCircle alt={c('Action').t`Report abuse`} />}
+                icon={<IcFlag alt={c('Action').t`Report abuse`} />}
                 onClick={onClick}
                 data-testid="toolbar-report-abuse"
             />
@@ -42,7 +42,7 @@ export const ReportAbuseButton = ({ onClick, close, buttonType }: Props) => {
 
     return (
         <ContextMenuButton
-            icon="exclamation-circle"
+            icon="flag"
             name={c('Action').t`Report abuse`}
             action={onClick}
             close={close}
