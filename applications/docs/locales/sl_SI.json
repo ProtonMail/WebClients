@@ -4297,12 +4297,6 @@
         "${ selectedContactsLength }/${ contactsLength } izbrani stiki",
         "${ selectedContactsLength }/${ contactsLength } izbranih stikov"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } izbrano",
-        "${ selectedCount } izbrani",
-        "${ selectedCount } izbrane",
-        "${ selectedCount } izbranih"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } izbrana mapa",
         "${ selectedFoldersCountLocalized } izbrani mapi",
@@ -10122,6 +10116,11 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ]
+    },
+    "Title header for keys table": {
+      "Type": [
+        "Vrsta"
       ]
     },
     "Today icon tooltip in mini calendar": {

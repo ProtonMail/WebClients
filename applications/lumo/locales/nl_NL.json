@@ -1072,9 +1072,6 @@
       "Try again": [
         "Probeer opnieuw"
       ],
-      "Turn off": [
-        "Uitschakelen"
-      ],
       "Turn off and delete": [
         "Schakel uit en verwijder"
       ],
@@ -1356,9 +1353,6 @@
       "More thorough answers, but can take longer": [
         "Grondigere antwoorden, maar kan langer duren"
       ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Verwijder uw project en gesprekken permanent. Dit is onomkeerbaar."
-      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Projectchats worden volledig geïsoleerd gehouden. Ze vertrouwen op hun eigen instructies en bestanden en negeren uw globale herinneringen volledig."
       ],
@@ -1388,11 +1382,6 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Als u het geheugen uitschakelt, worden alle ${ memories.length } opgeslagen herinneringen permanent verwijderd. U kunt het geheugen later inschakelen, maar de verwijderde herinneringen kunnen niet worden hersteld."
-      ]
-    },
-    "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Schakel het geheugen van ${ LUMO_SHORT_APP_NAME } op elk gewenst moment uit."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1646,9 +1635,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "Het geheugen wordt alleen gebruikt in algemene chats, nooit binnen projecten. Opgeslagen met zero-access-versleuteling."
-      ],
       "You can turn it off again at any time.": [
         "U kunt het op elk gewenst moment weer uitschakelen."
       ]
@@ -1890,9 +1876,6 @@
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Genereer een workflow-grafiek en implementatiecode voor het volgende doel. Doeltaal voor code:"
-      ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Genereer ze uit uw recente chats, of voeg hieronder uw eigen chats toe."
       ],
       "Generating…": [
         "Genereren…"
@@ -5781,20 +5764,11 @@
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
-      "Invalid ${ name } code": [
-        "Ongeldig ${ name } code"
-      ],
-      "Invalid card number": [
-        "Ongeldig creditcardnummer"
-      ],
       "Invalid code": [
         "Ongeldige code"
       ],
       "Invalid coupon": [
         "Ongeldige kortingscode"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
       ],
       "Invalid IBAN": [
         "Ongeldige IBAN"

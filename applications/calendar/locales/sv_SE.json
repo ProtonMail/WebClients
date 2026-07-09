@@ -3858,12 +3858,6 @@
       "Interval cannot be empty": [
         "Intervall kan inte vara tomt"
       ],
-      "Invalid ${ name } code": [
-        "Ogiltig ${ name }-kod"
-      ],
-      "Invalid card number": [
-        "Ogiltigt kortnummer"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -3872,9 +3866,6 @@
       ],
       "Invalid email address": [
         "Ogiltig e-postadress"
-      ],
-      "Invalid expiration date": [
-        "Ogiltigt förfallodatum"
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
@@ -3957,9 +3948,6 @@
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Inte tillräckligt lagringsutrymme i ditt ${ DRIVE_APP_NAME }"
       ],
       "Number of occurrences cannot be empty": [
         "Antalet förekomster kan inte vara tomt"
@@ -7175,6 +7163,9 @@
       "Every": [
         "Varje"
       ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
       "Expires": [
         "Löper ut"
       ],
@@ -7377,6 +7368,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Ta bort ${ MEET_APP_NAME }-videokonferens"
       ],
@@ -7415,6 +7409,9 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "Starts with": [
+        "Börjar med"
       ],
       "State": [
         "Delstat"
@@ -11910,6 +11907,9 @@
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "Account recovery": [
         "Kontoåterställning"
       ],
@@ -12676,6 +12676,26 @@
         "Välj ett nummer"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Expires": [
+        "Löper ut"
+      ],
+      "Fingerprint": [
+        "Fingeravtryck"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Skapa kalender"
@@ -12772,6 +12792,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-nyckel version 6"
       ]
     },
     "tooltip": {
@@ -12810,6 +12833,11 @@
       ],
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]
     },
     "Validation": {

@@ -336,6 +336,9 @@
       "Download anyway": [
         "Télécharger quand même"
       ],
+      "Download debug information": [
+        "Télécharger les informations de débogage"
+      ],
       "Download logs": [
         "Télécharger les journaux"
       ],
@@ -3268,6 +3271,9 @@
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
       ],
+      "No drive found to import": [
+        "Aucun disque à importer détecté"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
@@ -3496,6 +3502,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4493,10 +4502,6 @@
         "Nombre de contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
         "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } sélectionné",
-        "${ selectedCount } sélectionnés"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } dossier sélectionné",
         "${ selectedFoldersCountLocalized } dossiers sélectionnés"
@@ -4894,6 +4899,9 @@
       "File will not be updated": [
         "Le fichier ne sera pas mis à jour."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
       "finance": [
         "finance"
       ],
@@ -4933,8 +4941,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Aidez-nous à améliorer cette expérience en signalant le problème. Si vous souhaitez partager le contenu de votre feuille de calcul, veuillez joindre les informations de débogage ci-dessous à votre rapport."
+      ],
       "here": [
         "ici"
+      ],
+      "Hide table of contents": [
+        "Ne pas afficher la table des matières"
       ],
       "High Priority": [
         "Priorité élevée"
@@ -5160,6 +5174,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
       ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Oups ! Cette feuille de calcul ne peut pas enregistrer vos dernières modifications ; nous avons donc suspendu l'édition pour éviter que vous ne perdiez votre travail."
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Ouvrez le guide pour les actions recommandées et les liens utiles."
       ],
@@ -5334,6 +5351,9 @@
       ],
       "Shared on": [
         "Partagé le"
+      ],
+      "Show table of contents": [
+        "Afficher la table des matières"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -6110,6 +6130,12 @@
       "Erase this link and remove everyone with access": [
         "Effacer ce lien et retirer toutes les personnes ayant accès"
       ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
+      ],
       "Expiry": [
         "Expiration"
       ],
@@ -6230,6 +6256,9 @@
       "Navigation": [
         "Navigation"
       ],
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
       "New password": [
         "Nouveau mot de passe"
       ],
@@ -6250,6 +6279,9 @@
       ],
       "Optional": [
         "Facultatif"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
       ],
       "Password": [
         "Mot de passe"
@@ -6290,6 +6322,9 @@
       "Region": [
         "Région"
       ],
+      "Regular expression": [
+        "Expression régulière"
+      ],
       "Replace existing file": [
         "Remplacer le fichier existant"
       ],
@@ -6326,6 +6361,9 @@
       "Skip folder": [
         "Ignorer le dossier"
       ],
+      "Starts with": [
+        "Commence par"
+      ],
       "Stop sharing": [
         "Arrêter le partage"
       ],
@@ -6358,6 +6396,9 @@
       ],
       "Upload picture": [
         "Importer une image"
+      ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
       ],
       "Username": [
         "Nom d'utilisateur"
@@ -6693,6 +6734,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Votre essai gratuit est terminé. ${ nonAutoRenewalAction }"
       ],
@@ -9987,6 +10046,9 @@
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Récupération du compte"
       ],
@@ -10610,6 +10672,26 @@
         "Vos informations exposées"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
@@ -10694,6 +10776,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
       ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
       ]
@@ -10726,6 +10811,11 @@
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     },
     "Validation": {
@@ -10844,6 +10934,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",

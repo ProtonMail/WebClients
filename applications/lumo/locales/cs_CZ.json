@@ -976,7 +976,7 @@
       "Add ${ selectedCount } sheet": [
         "Přidat ${ selectedCount } list",
         "Přidat ${ selectedCount } listy",
-        "Přidat ${ selectedCount } listu",
+        "Přidat ${ selectedCount } listů",
         "Přidat ${ selectedCount } listů"
       ],
       "Add file to ${ DRIVE_APP_NAME }": [
@@ -998,10 +998,10 @@
         "Zrušit (Esc)"
       ],
       "Clear": [
-        "Zrušit"
+        "Smazat"
       ],
       "Clear all": [
-        "Zrušit vše"
+        "Smazat vše"
       ],
       "Clear auto-generated": [
         "Vymazat automaticky vygenerované"
@@ -1108,9 +1108,6 @@
       "Try again": [
         "Zkusit znovu"
       ],
-      "Turn off": [
-        "Vypnout"
-      ],
       "Turn off and delete": [
         "Vypnout a smazat"
       ],
@@ -1121,7 +1118,7 @@
         "Aktualizovat z chatů"
       ],
       "Update from chats (${ newPromptsSinceLastUpdate } new)": [
-        "Aktualizovat z chatů (${ newPromptsSinceLastUpdate } nový)",
+        "Aktualizovat z chatů (${ newPromptsSinceLastUpdate } nová)",
         "Aktualizovat z chatů (${ newPromptsSinceLastUpdate } nové)",
         "Aktualizovat z chatů (${ newPromptsSinceLastUpdate } nových)",
         "Aktualizovat z chatů (${ newPromptsSinceLastUpdate } nových)"
@@ -1244,19 +1241,19 @@
         "${ removed } uvolněno"
       ],
       "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } zkrácená dřívější zpráva",
-        "${ stats.summarizedMessageCount } zkrácené dřívější zprávy",
-        "${ stats.summarizedMessageCount } zkrácených dřívějších zpráv",
-        "${ stats.summarizedMessageCount } zkrácených dřívějších zpráv"
+        "${ stats.summarizedMessageCount } dřívější zpráva zkrácena",
+        "${ stats.summarizedMessageCount } dřívější zprávy zkráceny",
+        "${ stats.summarizedMessageCount } dřívějších zpráv zkráceno",
+        "${ stats.summarizedMessageCount } dřívějších zpráv zkráceno"
       ],
       "Chat shortened to keep going": [
         "Chat byl zkrácen, aby bylo možné pokračovat"
       ],
       "cleared old tool results": [
-        "odstranil staré výsledky nástrojů"
+        "odstraněny staré výsledky nástrojů"
       ],
       "dropped old messages": [
-        "vyřazené staré zprávy"
+        "vyřazeny staré zprávy"
       ],
       "Files from summarized messages": [
         "Soubory ze shrnutých zpráv"
@@ -1265,22 +1262,22 @@
         "Již se neodesílá modelu"
       ],
       "removed file context": [
-        "odebraný kontext souboru"
+        "odebrán kontext souboru"
       ],
       "removed tool calls": [
-        "odebraná volání nástrojů"
+        "odebrána volání nástrojů"
       ],
       "summarized the conversation": [
-        "shrnul konverzaci"
+        "shrnula konverzaci"
       ],
       "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Tento chat je už dlouhý – shrnujeme dřívější zprávy, abychom mohli pokračovat…"
+        "Tento chat je dlouhý – probíhá sumarizace dřívějších zpráv, abychom mohli pokračovat…"
       ],
       "Tool calls removed": [
         "Volání nástrojů byla odebrána"
       ],
       "Tool output cleared": [
-        "Výstup nástroje byl vymazán"
+        "Výstup nástroje byl smazán"
       ],
       "What ${ LUMO_SHORT_APP_NAME } still remembers": [
         "Co si ${ LUMO_SHORT_APP_NAME } stále pamatuje"
@@ -1388,16 +1385,13 @@
         "Odlehčený model pro každodenní úkoly"
       ],
       "Memories are stored encrypted, only you can access them.": [
-        "Vzpomínky jsou uloženy v šifrované podobě, přistupovat k nim můžete pouze vy."
+        "Vzpomínky jsou ukládány šifrovaně, přístup k nim máte pouze vy."
       ],
       "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
         "Paměť umožňuje aplikaci ${ LUMO_SHORT_APP_NAME } zapamatovat si stálé předvolby a kontext napříč obecnými chaty, takže se nemusíte opakovat."
       ],
       "More thorough answers, but can take longer": [
         "Důkladnější odpovědi, které však mohou trvat déle"
-      ],
-      "Permanently delete your project and chats. This is irreversible.": [
-        "Trvale smažte svůj projekt a chaty. Tento úkon nelze vrátit zpět."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Chaty v rámci projektů jsou udržovány zcela izolované. Spoléhají na vlastní instrukce a soubory a vaše globální vzpomínky zcela ignorují."
@@ -1427,12 +1421,7 @@
         "Tímto trvale odeberete všechny uložené vzpomínky. Aplikace ${ LUMO_SHORT_APP_NAME } je již v budoucích chatech nebude používat."
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
-        "Vypnutím paměti trvale smažete všech ${ memories.length } uložených vzpomínek. Paměť můžete později znovu zapnout, ale smazané vzpomínky již nelze obnovit."
-      ]
-    },
-    "collider_2025: DisableMemory": {
-      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
-        "Paměť aplikace ${ LUMO_SHORT_APP_NAME } můžete kdykoli vypnout."
+        "Vypnutím paměti trvale smažete všech ${ memories.length } uložených vzpomínek. Paměť můžete později znovu zapnout, ale smazané vzpomínky již nebude možné obnovit."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1568,7 +1557,7 @@
         "Pokud opakování pokusu nefunguje, zkuste to znovu za několik minut. Mezitím děláme vše pro to, aby vše probíhalo hladce."
       ],
       "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
-        "Pokud opakování pokusu nefunguje, zkuste to znovu později nebo zvažte upgrade na verzi ${ LUMO_SHORT_APP_NAME } Plus, abyste v době špičky přeskočili frontu."
+        "Pokud opakování pokusu nefunguje, zkuste to znovu později nebo zvažte navýšení na verzi ${ LUMO_SHORT_APP_NAME } Plus, abyste se ve špičce dostali na začátek fronty požadavků."
       ],
       "Please try asking a different question or making a different request.": [
         "Zkuste prosím položit jinou otázku nebo zadat jiný požadavek."
@@ -1686,9 +1675,6 @@
       ]
     },
     "collider_2025: Hint": {
-      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
-        "Paměť se používá pouze v obecných chatech, nikdy v rámci projektů. Uloženo pomocí šifrování s nulovým přístupem."
-      ],
       "You can turn it off again at any time.": [
         "Tuto funkci můžete kdykoli znovu vypnout."
       ]
@@ -1939,9 +1925,6 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Vytvořte graf pracovního postupu a implementační kód pro následující úkol. Cílový jazyk kódu:"
       ],
-      "Generate them from your recent chats, or add your own below.": [
-        "Vygenerujte je ze svých nedávných chatů nebo níže přidejte vlastní."
-      ],
       "Generating…": [
         "Generování…"
       ],
@@ -2126,7 +2109,7 @@
         "Tyto soubory patřily ke shrnutým zprávám a již se neodesílají modelu."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
-        "Tento chat bude za 2 dny odebrán. Chcete-li si jej ponechat, upgradujte na ${ LUMO_SHORT_APP_NAME } Plus."
+        "Tento chat bude za 2 dny odebrán. Chcete-li jej zachovat, navyšte na ${ LUMO_SHORT_APP_NAME } Plus."
       ],
       "This chat will be removed today unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Tento chat bude dnes odebrán, pokud neupgradujete na ${ LUMO_SHORT_APP_NAME } Plus."
@@ -2168,7 +2151,7 @@
         "Upgradujte pro více generování obrázků a přístup k pokročilým modelům."
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
-        "Upgradujte pro neomezený počet chatů, projektů, nahrávání větších souborů a další výhody."
+        "Navyšte svůj tarif pro neomezený počet chatů, projektů, nahrávání větších souborů a další výhody."
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "Nahrávání \"${ file.name }\" do ${ DRIVE_APP_NAME }..."
@@ -2192,7 +2175,7 @@
         "Dosáhli jste limitu obrázků pro toto období."
       ],
       "You've reached your image limit for this period. Upgrade to keep creating images.": [
-        "Dosáhli jste svého limitu pro vytváření obrázků pro toto období. Chcete-li pokračovat ve vytváření obrázků, proveďte upgrade."
+        "Dosáhli jste svého limitu pro vytváření obrázků pro toto období. Chcete-li pokračovat ve vytváření obrázků, proveďte navýšení."
       ],
       "You've run out of weekly chats, please ": [
         "Vyčerpal(a) jste týdenní limity chatů, prosím "
@@ -2431,7 +2414,7 @@
         "Přihlásit se"
       ],
       "upgrade": [
-        "upgradovat"
+        "navýšit"
       ],
       "Upgrade": [
         "Navýšení"
@@ -2468,7 +2451,7 @@
         "Vytvořte si účet nebo se přihlaste, abyste si uložili své konverzace a zvýšili limity."
       ],
       "You're on ${ LUMO_SHORT_APP_NAME } Lite. Switch to Max for more capable answers.": [
-        "Používáte verzi ${ LUMO_SHORT_APP_NAME } Lite. Chcete-li získat schopnější odpovědi, přejděte na verzi Max."
+        "Používáte verzi ${ LUMO_SHORT_APP_NAME } Lite. Chcete-li získat důkladnější odpovědi, přepněte na verzi Max."
       ]
     },
     "collider_2025: Option": {
@@ -2596,10 +2579,10 @@
     },
     "collider_2025: Success": {
       "Added ${ added } memory from your chats": [
-        "Z Vašich chatů byla přidána ${ added } vzpomínka",
-        "Z Vašich chatů byly přidány ${ added } vzpomínky",
-        "Z Vašich chatů bylo přidáno ${ added } vzpomínek",
-        "Z Vašich chatů bylo přidáno ${ added } vzpomínek"
+        "Z vašich chatů byla přidána ${ added } vzpomínka",
+        "Z vašich chatů byly přidány ${ added } vzpomínky",
+        "Z vašich chatů bylo přidáno ${ added } vzpomínek",
+        "Z vašich chatů bylo přidáno ${ added } vzpomínek"
       ],
       "All chats deleted successfully": [
         "Všechny konverzace úspěšně smazány."
@@ -2645,7 +2628,7 @@
         "Každou vzpomínku pište stručně – jedna předvolba nebo fakt na řádek."
       ],
       "Write stable facts, not one-off questions.": [
-        "Pište stálá fakta, ne jednorázové otázky."
+        "Uvádějte neměnná fakta, ne jednorázové otázky."
       ]
     },
     "collider_2025: Title": {
@@ -2695,10 +2678,10 @@
         "Chat"
       ],
       "Clear all memories?": [
-        "Zrušit všechny vzpomínky?"
+        "Smazat všechny vzpomínky?"
       ],
       "Clear chat-based memories?": [
-        "Vymazat vzpomínky z chatu?"
+        "Smazat vzpomínky z chatu?"
       ],
       "Conversational AI": [
         "Konverzační AI"
@@ -2957,7 +2940,7 @@
         "Vaše historie chatů je omezena na 7 dní. Požádejte svého správce o neomezenou historii chatů a další prémiové funkce."
       ],
       "Your chat history is limited to 7 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited history and other premium features.": [
-        "Vaše historie chatu je omezena na 7 dní. Upgradujte na ${ LUMO_SHORT_APP_NAME } Plus pro neomezenou historii a další prémiové funkce."
+        "Vaše historie chatu je omezena na 7 dní. Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro neomezenou historii a další prémiové funkce."
       ]
     },
     "collider_2025: Upsell Title": {
@@ -2991,7 +2974,7 @@
         "Nepodařilo se indexovat soubor pro vyhledávání: ${ processingResult.message }"
       ],
       "Long conversations can slow down responses. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Dlouhé konverzace mohou zpomalit odezvu. Chcete-li zajistit hladký chod aplikace ${ LUMO_SHORT_APP_NAME }, spusťte nový chat."
+        "Dlouhé konverzace mohou zpomalit odezvu. Chcete-li zajistit hladký chod ${ LUMO_SHORT_APP_NAME }, spusťte novou konverzaci."
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Podezřelé: ${ urlParts.subdomainCount } subdoména",
@@ -3030,7 +3013,7 @@
         "Tento projekt se zaplňuje. Úklid konverzací, které již nepotřebujete, zajišťuje hladký chod aplikace ${ LUMO_SHORT_APP_NAME }."
       ],
       "This project is filling up. Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Tento projekt se zaplňuje. Úklid souborů, které již nepotřebujete, zajišťuje hladký chod aplikace ${ LUMO_SHORT_APP_NAME }."
+        "Tento projekt se zaplňuje. Úklid souborů, které již nepotřebujete, zajistí hladký chod ${ LUMO_SHORT_APP_NAME }."
       ],
       "Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
         "Úklid souborů, které již nepotřebujete, zajišťuje hladký chod aplikace ${ LUMO_SHORT_APP_NAME }."
@@ -3048,7 +3031,7 @@
         "Máme vyšší provoz než obvykle, takže odpovědi mohou být o něco pomalejší. Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro přednostní přístup v době špičky."
       ],
       "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
-        "Blížíte se k limitu počtu projektů, jejichž hladký chod dokáže aplikace ${ LUMO_SHORT_APP_NAME } zajistit."
+        "Blížíte se k maximálnímu počtu projektů, jejichž hladký chod dokáže ${ LUMO_SHORT_APP_NAME } zajistit."
       ]
     },
     "collider_2025: Web Search": {
@@ -3235,7 +3218,7 @@
         "Sdílet"
       ],
       "Show knowledge panel": [
-        "Zobrazit znalostní panel"
+        "Zobrazit panel znalostí"
       ],
       "Show sidebar": [
         "Zobrazit postranní panel"
@@ -3259,7 +3242,7 @@
         "Odpojit složku"
       ],
       "Upgrade for more custom ${ LUMO_SHORT_APP_NAME }s": [
-        "Upgradujte pro více vlastních ${ LUMO_SHORT_APP_NAME }s"
+        "Navyšte pro více vlastních ${ LUMO_SHORT_APP_NAME }s"
       ],
       "Upgrade to Plus": [
         "Přejít na tarif Plus"
@@ -3298,7 +3281,7 @@
     },
     "collider_2025:Agent name": {
       "Account Assistant": [
-        "Asistent pro účet"
+        "Asistent(ka) účetnictví"
       ],
       "Data Analyst": [
         "Datový analytik"
@@ -3534,7 +3517,7 @@
         "Agenti promění chat ve specializovaného asistenta s vlastními instrukcemi."
       ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it's owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
-        "Systémy AI od technologických gigantů jsou postaveny na shromažďování vašich dat. Ale ${ LUMO_SHORT_APP_NAME } je jiná. Byla vytvořena vědci, kteří stojí za inovativními službami zaměřenými na ochranu soukromí, jako jsou ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }. A vlastní ji švýcarská nezisková organizace, jejímž posláním je prosazovat soukromí a nikdy nevydělávat na uživatelských datech."
+        "AI od velkých technologických společností jsou založeny na sběru vašich dat. Ale ${ LUMO_SHORT_APP_NAME } je jiná. Byla vytvořena vědci, kteří stojí za inovativními službami založenými na soukromí jako ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }. A vlastní ji švýcarská nezisková organizace, jejímž posláním je prosazovat soukromí a nikdy nevydělávat peníze z uživatelských dat."
       ],
       "All messages and chat history": [
         "Všechny zprávy a historie chatu"
@@ -3546,7 +3529,7 @@
         "Smazány budou také všechny obrázky vygenerované v těchto konverzacích."
       ],
       "Any images generated in this conversation will also be deleted.": [
-        "Smazány budou také všechny obrázky vygenerované v této konverzaci."
+        "Smažou se také všechny obrázky vygenerované v této konverzaci."
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Opravdu chcete smazat \"${ project.name }\"? Tuto akci nelze vrátit zpět."
@@ -3594,7 +3577,7 @@
         "Vytvářejte účelové asistenty s vlastními instrukcemi. Nastavte je jednou a budou pokaždé dodržovat vaše předvolby."
       ],
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
-        "Vytvářejte vizuály z výzvy, upravit fotografie, analyzujte grafy nebo převeďte hrubé náčrty na profesionální grafiku."
+        "Na základě příkazu nechte vytvořit grafiku, upravit fotky, analyzovat grafy, nebo převést náčrty na profesionální grafiku."
       ],
       "Current chat:": [
         "Aktuální konverzace:"
@@ -3618,7 +3601,7 @@
         "Každá konverzace s AI za sebou zanechává stopu. Vaše práce. Vaše zdraví. Vaše vztahy. Dokonce i to, kde žijete. Nahrajte svá data z AI a podívejte se, co by o vás technologičtí giganti dokázali poskládat pouze z vašich slov. Na rozdíl od nich je ale my vidět nemůžeme."
       ],
       "Example prompts shown when a conversation begins.": [
-        "Ukázkové výzvy zobrazené na začátku konverzace."
+        "Ukázková zadání zobrazená na začátku konverzace."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Soubor \"${ file.name }\" je již v tomto projektu"
@@ -3645,13 +3628,13 @@
         "V ChatGPT a Claude deaktivujte historii chatů a trénování modelů všude, kde toto nastavení existuje."
       ],
       "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
-        "Odvozené detaily se balí a prodávají. Jediný profil tak může projít desítkami společností, o kterých jste nikdy neslyšeli."
+        "Odvozené údaje jsou baleny a prodávány. Jediný profil tak může projít desítkami společností, o kterých jste nikdy neslyšeli."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "Odvozené politické sklony pohání mikrocílené zprávy navržené tak, aby změnily vaše pocity a to, jak volíte – často bez toho, abyste si toho všimli."
       ],
       "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
-        "Odvozené vlastnosti jsou sdružovány do balíčků a prodávány zprostředkovatelům, inzerentům a komukoli, kdo je ochoten zaplatit."
+        "Odvozené vlastnosti jsou sdružovány a prodávány zprostředkovatelům, inzerentům a komukoli, kdo je ochoten zaplatit."
       ],
       "Initializing Drive...": [
         "Příprava Drive..."
@@ -3768,7 +3751,7 @@
         "Zadejte @filename pro dotaz ke konkrétnímu souboru"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Upgradujte na ${ LUMO_SHORT_APP_NAME } Plus, abyste mohli vytvářet neomezené množství vlastních ${ LUMO_SHORT_APP_NAME }ů, odemknout pokročilé modely AI a další."
+        "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus, abyste mohli vytvářet neomezené množství vlastních ${ LUMO_SHORT_APP_NAME }, odemknout pokročilé modely AI a další."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro tvorbu neomezeného počtu projektů a odemknutí pokročilých modelů AI a další."
@@ -3848,7 +3831,7 @@
         "Futuristické abstraktní pozadí, neonově zelený a modrý přechod, hladké organické tvary, jemná záře, éterická atmosféra, čistá kompozice, jemné světelné efekty, špičkový design, měkká hloubka, elegantní a snová atmosféra, mimořádně vysoké rozlišení."
       ],
       "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
-        "Silně rozmazaný, neostrý surrealistický profilový portrét. Zářivý neonový přechod s jasně oranžovou, sytě růžovou a hlubokou elektrickou modří. Vysoký kontrast, výrazné filmové zrno, minimalistická abstraktní estetika."
+        "Silně rozmazaný, neostrý surrealistický profilový portrét. Zářivý neonový přechod s jasně oranžovou, žhavě růžovou a hlubokou elektrickou modří. Vysoký kontrast, výrazná filmová zrnitost, minimalistická abstraktní estetika."
       ],
       "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
         "Hyperrealistické objemné nadýchané bílé mraky, husté a jemné textury, minimalistické bledě modré gradientní nebe, měkké kinematografické osvětlení, čistá estetika, éterická a klidná nálada, styl studiového 3D renderu, rozlišení 8k"
@@ -3901,7 +3884,7 @@
         "chaty"
       ],
       "Conversation starters (optional)": [
-        "Podněty ke konverzaci (volitelné)"
+        "Náměty ke konverzaci (volitelné)"
       ],
       "Created": [
         "Vytvořeno"
@@ -3985,7 +3968,7 @@
         "Sdílet na"
       ],
       "Thick": [
-        "Silné"
+        "Silný"
       ],
       "Tip": [
         "Tip"
@@ -3994,7 +3977,7 @@
         "Nepojmenovaný chat"
       ],
       "While you wait — how your data gets used": [
-        "Zatímco čekáte – jak se využívají vaše data"
+        "Zatímco čekáte – jak jsou využívána vaše data"
       ]
     },
     "collider_2025:Notification": {
@@ -4275,13 +4258,13 @@
         "Obrázek prohlédnut"
       ],
       "Looked things up online": [
-        "Vyhledal jsem informace online"
+        "Vyhledala jsem informace online"
       ],
       "Looked up market data": [
         "Vyhledány tržní údaje"
       ],
       "Looked up the forecast": [
-        "Vyhledána předpověď počasí"
+        "Předpověď vyhledána"
       ],
       "Looking at your image": [
         "Prohlížím si váš obrázek"
@@ -4299,7 +4282,7 @@
         "Vyhledávání tržních dat"
       ],
       "Looking up the forecast": [
-        "Vyhledávám předpověď počasí"
+        "Vyhledávám předpověď"
       ],
       "Market Cap": [
         "Tržní kapitalizace"
@@ -4341,7 +4324,7 @@
         "Přemýšlím..."
       ],
       "Thought this through": [
-        "Promyšleno"
+        "Promyslela jsem to"
       ],
       "Updated your image": [
         "Váš obrázek byl aktualizován"
@@ -4359,10 +4342,10 @@
         "Práce na obrázku"
       ],
       "Worked through your question": [
-        "Zabýval jsem se vaší otázkou"
+        "Zabývala jsem se vaší otázkou"
       ],
       "Working on an image": [
-        "Práce na obrázku"
+        "Zpracovávám obrázek"
       ],
       "Working on this": [
         "Pracuji na tom"
@@ -4441,7 +4424,7 @@
         "AI o vás ví víc, než si myslíte"
       ],
       "AI Paper Trail": [
-        "Digitální stopa AI"
+        "Stopa aktivit v AI"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Asistent s AI by vám měl pomáhat, nikoli vás zneužívat pro vaše data."
@@ -4519,7 +4502,7 @@
         "Neviditelný režim"
       ],
       "Health hints can shape your premiums": [
-        "Informace o zdraví mohou ovlivnit výši vašeho pojistného"
+        "Zdravotní nápověda může ovlivnit výši vašeho pojistného"
       ],
       "History": [
         "Historie"
@@ -4690,7 +4673,7 @@
         "Vaše karta ke sdílení"
       ],
       "Your traits get bundled and sold": [
-        "Vaše vlastnosti jsou spojovány do balíčků a prodávány"
+        "Vaše vlastnosti jsou sdružovány a prodávány"
       ],
       "Your views can be used to nudge you": [
         "Vaše názory mohou být použity k vašemu ovlivňování"
@@ -4698,7 +4681,7 @@
     },
     "collider_2025:Toggle": {
       "Ghost chat mode": [
-        "Režim anonymního chatu"
+        "Neviditelný režim chatu"
       ]
     },
     "collider_2025:Tooltip": {
@@ -5837,20 +5820,11 @@
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
       "Invalid coupon": [
         "Neplatný kupón"
-      ],
-      "Invalid expiration date": [
-        "Neplatné datum expirace"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -7271,7 +7245,7 @@
         "Nativní bridge: onLimitReachedError"
       ],
       "Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.": [
-        "Nativní bridge editoru nebyl detekován — volání budou protokolována, ale neprovedou žádnou akci. Otevřete aplikaci v obálce iOS/Android, abyste mohli bridge otestovat."
+        "Nativní bridge editoru nebyl rozpoznán — volání budou logována, ale neprovedou žádnou akci. Otevřete aplikaci ve wrapperu iOS/Android, abyste mohli bridge otestovat."
       ],
       "No": [
         "Ne"
@@ -7364,13 +7338,13 @@
         "Tokenů/s"
       ],
       "Trigger assets limit": [
-        "Vyvolat limit assetů"
+        "Vyvolat limit aktiv"
       ],
       "Trigger conversations limit": [
         "Vyvolat limit konverzací"
       ],
       "Trigger generation rejected": [
-        "Spuštění generování bylo odmítnuto"
+        "Vyvolat zamítnutí generování"
       ],
       "Trigger harmful content": [
         "Vyvolat škodlivý obsah"
@@ -7382,13 +7356,13 @@
         "Vyvolat limit zpráv"
       ],
       "Trigger spaces limit": [
-        "Vyvolat limit prostorů"
+        "Vyvolat limit prostoru"
       ],
       "Trigger stream disconnected": [
-        "Spouštěcí stream odpojen"
+        "Vyvolat odpojení streamu"
       ],
       "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
-        "Spouští chybové zprávy generování s textem specifickým pro danou úroveň. Typ uživatele: ${ lumoUserType }"
+        "Vyvolává chybové zprávy generování s textem specifickým pro danou úroveň. Typ uživatele: ${ lumoUserType }"
       ],
       "Unsynced conversations": [
         "Nesynchronizované konverzace"
@@ -8014,7 +7988,7 @@
         "Neomezený objem/šířka pásma"
       ],
       "Unlock streaming": [
-        "Odblokování streamování"
+        "Odemkněte streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",

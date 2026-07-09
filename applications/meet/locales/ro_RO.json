@@ -1,0 +1,3648 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);",
+    "language": "ro_RO"
+  },
+  "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(se deschide în filă nouă)"
+      ],
+      "camera off": [
+        "cameră oprită"
+      ],
+      "camera on": [
+        "cameră pornită"
+      ],
+      "Meeting controls": [
+        "Controale conferință"
+      ],
+      "microphone muted": [
+        "microfon oprit"
+      ],
+      "microphone on": [
+        "microfon pornit"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } s-a alăturat conferinței"
+      ],
+      "${ name } left the meeting": [
+        "${ name } a părăsit conferința"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } a coborât mâna"
+      ],
+      "${ name } raised their hand": [
+        "${ name } a ridicat mâna"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } a reacționat cu ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } spune: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Un participant s-a alăturat conferinței"
+      ],
+      "A participant left the meeting": [
+        "Un participant a părăsit conferința"
+      ],
+      "A participant lowered their hand": [
+        "Un participant a lăsat mâna jos"
+      ],
+      "A participant raised their hand": [
+        "Un participant a ridicat mâna"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Un participant a reacționat cu ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Conectat prin modul releu TURN din cauza restricțiilor de rețea. Acest lucru poate crește latența și afecta calitatea apelurilor."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Conexiune pierdută. Se reconectează…"
+      ],
+      "New chat message: ${ message }": [
+        "Mesaj nou: ${ message }"
+      ],
+      "Now starting recording": [
+        "Acum începe înregistrarea"
+      ],
+      "Reconnected to the meeting": [
+        "V-ați reconectat la conferință"
+      ],
+      "Recording saved": [
+        "Înregistrare a fost salvată"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Înregistrarea a început. Prin participarea la conferință, ați luat la cunoștință și sunteți de acord cu înregistrarea."
+      ],
+      "Recording stopped": [
+        "Înregistrare oprită"
+      ],
+      "Screen share started": [
+        "Partajare ecran pornită"
+      ],
+      "Screen share started by ${ name }": [
+        "${ name } a pornit partajarea ecranului"
+      ],
+      "Screen share stopped": [
+        "Partajarea ecranului s-a oprit"
+      ],
+      "Screen share stopped by ${ name }": [
+        "${ name } a oprit partajarea ecranului"
+      ],
+      "The meeting will close in 1 minute": [
+        "Conferința se va încheia peste un minut"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Conferința se va încheia peste 15 secunde"
+      ],
+      "The meeting will close in 30 seconds": [
+        "Conferința se va încheia peste 30 de secunde"
+      ],
+      "The meeting will end in 1 minute": [
+        "Conferința se va încheia peste un minut"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Conferința se va încheia peste 10 minute"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Conferința se va încheia peste 15 secunde"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Conferința se va încheia peste 5 minute"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Această întâlnire este înregistrată. Prin participare, luați la cunoștință și sunteți de acord cu înregistrarea conferinței."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Ești singurul participant. Conferința se va încheia peste 2 minute, dacă nu se alătură cineva."
+      ],
+      "You have been disconnected from the meeting": [
+        "V-ați deconectat de la întâlnire"
+      ],
+      "You have been muted by the host": [
+        "Gazda v-a oprit microfonul"
+      ],
+      "Your camera has been turned off by the host": [
+        "Gazda v-a oprit camera"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Magazin ${ BRAND_NAME }"
+      ],
+      "Add account": [
+        "Adăugare cont"
+      ],
+      "Add another account": [
+        "Adăugare alt cont"
+      ],
+      "Admit": [
+        "Admitere"
+      ],
+      "Admit ${ participantName }": [
+        "Admitere pe ${ participantName }"
+      ],
+      "Admit all": [
+        "Admitere toți"
+      ],
+      "Allow access": [
+        "Permitere acces"
+      ],
+      "Anyone with the link can join immediately": [
+        "Oricine are legătura web se poate alătura imediat"
+      ],
+      "Applied": [
+        "Aplicat"
+      ],
+      "Apply changes": [
+        "Aplicare modificări"
+      ],
+      "Approve participants before they can join": [
+        "Aprobare participanți înainte participare"
+      ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Desemnare ${ selectedParticipantName } ca gazdă"
+      ],
+      "Assign new host": [
+        "Desemnare gazdă nouă"
+      ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
+      ],
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Back": [
+        "Înapoi"
+      ],
+      "Background blur": [
+        "Estompare fundal"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Change password": [
+        "Modificare parolă"
+      ],
+      "Chat with us": [
+        "Conversați cu noi"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Close preview": [
+        "Închidere examinare"
+      ],
+      "Close this banner": [
+        "Închidere norificare"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
+      "Continue without camera": [
+        "Continuare fără cameră"
+      ],
+      "Continue without mic and camera": [
+        "Continuare fără microfon și cameră"
+      ],
+      "Continue without microphone": [
+        "Continuare fără microfon"
+      ],
+      "Copy address": [
+        "Copiere adresă"
+      ],
+      "Copy invitation link": [
+        "Copiere legătură web invitație"
+      ],
+      "Copy link": [
+        "Copiere legătură web"
+      ],
+      "Copy link and close": [
+        "Copiere legătură web și închidere"
+      ],
+      "Copy meeting link": [
+        "Copiere legătură web întâlnire"
+      ],
+      "Copy room link": [
+        "Copiere legătură web cameră"
+      ],
+      "Create a free account": [
+        "Creare cont gratuit"
+      ],
+      "Create a room": [
+        "Creare cameră"
+      ],
+      "Create an account": [
+        "Creare cont"
+      ],
+      "Create meeting": [
+        "Creare conferință"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Deny": [
+        "Refuzare"
+      ],
+      "Deny ${ participantName }": [
+        "Refuzare ${ participantName }"
+      ],
+      "Disable ${ participantName }'s video": [
+        "Dezactivare video pentru ${ participantName }"
+      ],
+      "Disable camera": [
+        "Dezactivare cameră"
+      ],
+      "Disable waiting room": [
+        "Dezactivare sală de așteptare"
+      ],
+      "Dismiss": [
+        "Renunțare"
+      ],
+      "Done": [
+        "Gata"
+      ],
+      "Download": [
+        "Descărcare"
+      ],
+      "Download app": [
+        "Descărcare aplicație"
+      ],
+      "Download local participant report": [
+        "Descărcare raport participant local"
+      ],
+      "Download logs": [
+        "Jurnal descărcare"
+      ],
+      "Download participant report": [
+        "Descărcare raport participanți"
+      ],
+      "Download recording": [
+        "Descărcare înregistrare"
+      ],
+      "Download room level report": [
+        "Descărcare raport la nivel de cameră"
+      ],
+      "Edit": [
+        "Editare"
+      ],
+      "Edit email address": [
+        "Editare adresa de e-mail"
+      ],
+      "Edit phone number": [
+        "Editare număr de telefon"
+      ],
+      "Edit sign-in details": [
+        "Editare detalii de conectare"
+      ],
+      "Enable camera": [
+        "Activare cameră"
+      ],
+      "Enable waiting room": [
+        "Activare sală de așteptare"
+      ],
+      "End meeting": [
+        "Încheiere conferință"
+      ],
+      "End meeting for all": [
+        "Încheiere întâlnire pentru toți"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
+      "Full size": [
+        "Mărime completă"
+      ],
+      "Generate a new meeting link.": [
+        "Generare o legătură web de conferință."
+      ],
+      "Get Meet Professional": [
+        "Luați Meet Professional"
+      ],
+      "Get verification code": [
+        "Obținere cod de verificare"
+      ],
+      "Help and feedback": [
+        "Ajutor și feedback"
+      ],
+      "Help and resources": [
+        "Ajutor și resurse"
+      ],
+      "Hide options": [
+        "Ascundere opțiuni"
+      ],
+      "Hide participants": [
+        "Ascundere participanți"
+      ],
+      "Hide self view": [
+        "Ascundere vizualizare proprie"
+      ],
+      "Hide timezones": [
+        "Ascundere fusuri orare"
+      ],
+      "Insert emoji": [
+        "Inserare emoji"
+      ],
+      "Join": [
+        "Alăturare"
+      ],
+      "Join meeting": [
+        "Alăturare la întâlnire"
+      ],
+      "Join with a link": [
+        "Participare cu legătură web"
+      ],
+      "Kick out": [
+        "Eliminare"
+      ],
+      "Kick out ${ participantName }": [
+        "Eliminare ${ participantName }"
+      ],
+      "Leave": [
+        "Lăsați"
+      ],
+      "Leave meeting": [
+        "Părăsire întâlnire"
+      ],
+      "Lock meeting": [
+        "Blocare întâlnire"
+      ],
+      "Lower hand": [
+        "Mâna coborâtă"
+      ],
+      "Minimize preview": [
+        "Micșorare examinare"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mai multe informații: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
+      ],
+      "Mute ${ participantName }": [
+        "Amuțire ${ participantName }"
+      ],
+      "Next month": [
+        "Luna viitoare"
+      ],
+      "Next page": [
+        "Pagina următoare"
+      ],
+      "Noise cancellation": [
+        "Anulare zgomot"
+      ],
+      "Open app": [
+        "Deschidere aplicație"
+      ],
+      "Open link": [
+        "Deschidere legătură web"
+      ],
+      "Participants join after you approve them": [
+        "Participanții se alătură după ce-i aprobați"
+      ],
+      "Participants join the call directly": [
+        "Participanți se alătură direct la conferință"
+      ],
+      "Pause": [
+        "Suspendare"
+      ],
+      "Previous month": [
+        "Luna trecută"
+      ],
+      "Previous page": [
+        "Pagina anterioară"
+      ],
+      "Raise hand": [
+        "Mână ridicată"
+      ],
+      "React with ${ emoji }": [
+        "Reacționare cu ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reacționează cu ${ emoji }, ${ identities.length } reacție",
+        "Reacționează cu ${ emoji }, ${ identities.length } reacții",
+        "Reacționează cu ${ emoji }, ${ identities.length } de reacții"
+      ],
+      "Receive video": [
+        "Recepționare video"
+      ],
+      "Record": [
+        "Înregistrare"
+      ],
+      "Refer a friend": [
+        "Recomandați persoane"
+      ],
+      "Refresh audio and video tracks": [
+        "Împrospătare piste audio și video"
+      ],
+      "Refresh screen share track": [
+        "Împrospătare partajare ecran"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
+      ],
+      "Rejoin meeting": [
+        "Revenire la întâlnire"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Eliminare reacție ${ emoji }, ${ identities.length } reacție",
+        "Eliminare reacție ${ emoji }, ${ identities.length } reacții",
+        "Eliminare reacție ${ emoji }, ${ identities.length } de reacții"
+      ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
+      "Request a call": [
+        "Solicitați un apel"
+      ],
+      "Request a feature": [
+        "Solicitare funcție"
+      ],
+      "Request new code": [
+        "Solicitați un cod nou"
+      ],
+      "Resend code": [
+        "Retrimitere cod"
+      ],
+      "Reset to defaults": [
+        "Resetare la valori implicite"
+      ],
+      "Resume": [
+        "Reluare"
+      ],
+      "Return to dashboard": [
+        "Înapoi la panoul de control"
+      ],
+      "Room": [
+        "Camera"
+      ],
+      "Rotate personal meeting link": [
+        "Alternare legătura web personală conferință"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Schedule": [
+        "Planificare"
+      ],
+      "Schedule a meeting": [
+        "Planificare conferință"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Planificare în ${ CALENDAR_APP_NAME }"
+      ],
+      "Search countries": [
+        "Căutare țări"
+      ],
+      "Send an encrypted message": [
+        "Trimitere mesaj criptat"
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Show duration": [
+        "Afișare durată"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Afișare miniatură flotantă în timpul partajării ecranului."
+      ],
+      "Show options": [
+        "Afișare opțiuni"
+      ],
+      "Show participants": [
+        "Afișare participanți"
+      ],
+      "Show timezones": [
+        "Afișare fusuri orare"
+      ],
+      "Sign in": [
+        "Autentificare"
+      ],
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Sign out of all accounts": [
+        "Deconectare din toate conturile"
+      ],
+      "Simulate reconnection": [
+        "Simulare reconectare"
+      ],
+      "Skip": [
+        "Omitere"
+      ],
+      "Skip to main content": [
+        "Salt la conținutul principal"
+      ],
+      "Start an instant meeting": [
+        "Pornire conferință instantanee"
+      ],
+      "Start meeting": [
+        "Începere întâlnire"
+      ],
+      "Start new meeting": [
+        "Începere conferință"
+      ],
+      "Start recording": [
+        "Pornire înregistrare"
+      ],
+      "Start Recording Track Stats": [
+        "Pornire înregistrare statistici urmărire"
+      ],
+      "Start your own meeting": [
+        "Începeți propria conferință"
+      ],
+      "Starting…": [
+        "Se pornește…"
+      ],
+      "Stay in meeting": [
+        "Rămânere în întâlnire"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Nu se mai deschid conferințe în aplicația desktop"
+      ],
+      "Stop receiving video": [
+        "Oprire recepționare video"
+      ],
+      "Stop recording": [
+        "Oprire înregistrare"
+      ],
+      "Stop recording and download video": [
+        "Oprire înregistrare și descărcare videoclip"
+      ],
+      "Stop Recording Track Stats": [
+        "Oprire înregistrare statistici urmărire"
+      ],
+      "Submit": [
+        "Trimitere"
+      ],
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ],
+      "Tap to unblock audio playback": [
+        "Atingeți pentru a debloca redarea audio"
+      ],
+      "The current link will stop working.": [
+        "Legătura web curentă nu va mai funcționa."
+      ],
+      "Try again": [
+        "Reîncercați"
+      ],
+      "Try another method": [
+        "Încercaţi o altă metodă"
+      ],
+      "Turn off incoming video": [
+        "Oprire recepționare video"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Modificați-vă planul pentru a putea folosi săli de așteptare la următoarele conferințe."
+      ],
+      "Upload another video": [
+        "Încărcare alt videoclip"
+      ],
+      "Upload video": [
+        "Încărcare videoclip"
+      ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
+      "Use camera": [
+        "Utilizare cameră"
+      ],
+      "Use microphone": [
+        "Folosire microfon"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
+      ],
+      "Use waiting room with a paid plan": [
+        "Folosiți săli de așteptare cu un abonament plătit"
+      ],
+      "Verify": [
+        "Verifică"
+      ],
+      "Verify account": [
+        "Verificare cont"
+      ],
+      "View invoice": [
+        "Afișare factură"
+      ],
+      "Waiting room": [
+        "Sală de așteptare"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Setări audio"
+      ],
+      "Blur background": [
+        "Estompare fundal"
+      ],
+      "Chat": [
+        "Conversație"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Close search": [
+        "Închidere căutare"
+      ],
+      "Copy link": [
+        "Copiere legătură web"
+      ],
+      "Copy meeting link": [
+        "Copiere legătură web întâlnire"
+      ],
+      "Debug overlay": [
+        "Panou de depanare"
+      ],
+      "Go to dashboard": [
+        "Spre panoul de control"
+      ],
+      "Hide self view": [
+        "Ascundere afișare proprie"
+      ],
+      "Leave Meeting": [
+        "Părăsire întâlnire"
+      ],
+      "Lock meeting": [
+        "Blocare întâlnire"
+      ],
+      "Lower hand": [
+        "Coborâre mână"
+      ],
+      "Meeting details": [
+        "Detalii reuniune"
+      ],
+      "More options": [
+        "Mai multe opțiuni"
+      ],
+      "Noise cancellation": [
+        "Anulare zgomot"
+      ],
+      "Open chat message search": [
+        "Deschidere căutare în mesajele din conversație"
+      ],
+      "Open participants search": [
+        "Deschidere căutare participanți"
+      ],
+      "Participant host control options": [
+        "Opțiuni de control ale gazdei pentru participanți"
+      ],
+      "Participants": [
+        "Participanți"
+      ],
+      "Raise hand": [
+        "Ridicare mână"
+      ],
+      "Rotate camera": [
+        "Rotire cameră"
+      ],
+      "Screen share": [
+        "Partajare ecran"
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Show duration": [
+        "Afișare durată"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Afișare miniatură flotantă în timpul partajării ecranului."
+      ],
+      "Show passphrase": [
+        "Afișare frază de acces"
+      ],
+      "Stop recording and download.": [
+        "Oprire înregistrare și descărcare."
+      ],
+      "Toggle chat": [
+        "Comutare conversație"
+      ],
+      "Toggle emoji reactions": [
+        "Comutare reacții emoji"
+      ],
+      "Toggle meeting details": [
+        "Comutare detalii întâlnire"
+      ],
+      "Toggle participants": [
+        "Comutare participanți"
+      ],
+      "Toggle screen share": [
+        "Comutare partajare ecran"
+      ],
+      "Toggle settings": [
+        "Comutare setări"
+      ],
+      "Turn off incoming video": [
+        "Oprire recepționare video"
+      ],
+      "Video settings": [
+        "Setări video"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplicații ${ BRAND_NAME }"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Atribuire gazdă"
+      ],
+      "Audio settings": [
+        "Setări audio"
+      ],
+      "Chat": [
+        "Conversație"
+      ],
+      "Chat messages": [
+        "Mesaje conversații"
+      ],
+      "Device settings": [
+        "Setări dispozitiv"
+      ],
+      "Meeting details": [
+        "Detalii conferință"
+      ],
+      "Meeting rooms": [
+        "Săli de conferințe"
+      ],
+      "Participants": [
+        "Participanți"
+      ],
+      "Participants list": [
+        "Listă de participanți"
+      ],
+      "Primary navigation": [
+        "Navigare primară"
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Video settings": [
+        "Setări video"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Activ"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Conectat prin modul releu TURN din cauza restricțiilor de rețea. Acest lucru poate crește latența și afecta calitatea apelurilor."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicați ${ MAIL_APP_NAME } Desktop"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Application problem": [
+        "Problemă aplicație"
+      ],
+      "Authenticator problem": [
+        "Problemă autentificator"
+      ],
+      "Bridge problem": [
+        "Problemă „Bridge”"
+      ],
+      "Calendar problem": [
+        "Problemă calendar"
+      ],
+      "Connection problem": [
+        "Problemă de conectare"
+      ],
+      "Contacts problem": [
+        "Problemă contacte"
+      ],
+      "Custom domain problem": [
+        "Problemă domeniu personal"
+      ],
+      "Docs problem": [
+        "Problemă Docs"
+      ],
+      "Drive problem": [
+        "Problemă „Drive”"
+      ],
+      "Feature request": [
+        "Solicitare funcții noi"
+      ],
+      "Import / export problem": [
+        "Problemă importare/exportare"
+      ],
+      "Installation problem": [
+        "Problemă la instalare"
+      ],
+      "Mail problem": [
+        "Problemă e-mail"
+      ],
+      "Manual setup problem": [
+        "Problemă setare manuală"
+      ],
+      "Meet problem": [
+        "Problemă Meet"
+      ],
+      "Other": [
+        "Altele"
+      ],
+      "Pass problem": [
+        "Problemă manager parole"
+      ],
+      "Payments problem": [
+        "Problemă plăți"
+      ],
+      "Sheets problem": [
+        "Problemă foaie de calcul"
+      ],
+      "Sign in problem": [
+        "Problemă autentificare"
+      ],
+      "Sign up problem": [
+        "Problemă înregistrare"
+      ],
+      "Signup problem": [
+        "Problemă înregistrare"
+      ],
+      "Slow speed problem": [
+        "Problemă viteză scăzută"
+      ],
+      "Speed problem": [
+        "Problemă viteză"
+      ],
+      "Streaming problem": [
+        "Problemă redare în flux"
+      ],
+      "Update problem": [
+        "Problemă la actualizare"
+      ],
+      "VPN problem": [
+        "Problemă VPN"
+      ],
+      "Website access problem": [
+        "Problemă accesare site web"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Restrângere"
+      ],
+      "Expand": [
+        "Extindere"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "morcov"
+      ],
+      "cerise": [
+        "cireșiu"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "cupru"
+      ],
+      "enzian": [
+        "gențiană"
+      ],
+      "fern": [
+        "ferigă"
+      ],
+      "forest": [
+        "pădure"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "măsliniu"
+      ],
+      "pacific": [
+        "pacific"
+      ],
+      "pickle": [
+        "murături"
+      ],
+      "pine": [
+        "pin"
+      ],
+      "pink": [
+        "roz"
+      ],
+      "plum": [
+        "prună"
+      ],
+      "purple": [
+        "violet"
+      ],
+      "reef": [
+        "recif"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "slateblue": [
+        "ardezie albastră"
+      ],
+      "soil": [
+        "pământiu"
+      ],
+      "strawberry": [
+        "căpșună"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazia"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "Samoa Americană"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua și Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Insula Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaidjan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladeș"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sfântul Eustasie și Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia și Herțegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Insula Bouvet"
+      ],
+      "Brazil": [
+        "Brazilia"
+      ],
+      "British Indian Ocean Territory": [
+        "Teritoriul Britanic al Oceanului Indian"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambogia"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Capul Verde"
+      ],
+      "Cayman Islands": [
+        "Insulele Caiman"
+      ],
+      "Central African Republic": [
+        "Republica Central Africană"
+      ],
+      "Chad": [
+        "Ciad"
+      ],
+      "Chile": [
+        "Cile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Insula Crăciunului"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Insulele Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Columbia"
+      ],
+      "Comoros": [
+        "Comore"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Republica Democrată"
+      ],
+      "Cook Islands": [
+        "Insulele Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croația"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cipru"
+      ],
+      "Czech Republic": [
+        "Republica Cehă"
+      ],
+      "Côte d'Ivoire": [
+        "Coasta de Fildeș"
+      ],
+      "Denmark": [
+        "Danemarca"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Republica Dominicană"
+      ],
+      "Dominican Republic": [
+        "Republica Dominicană"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egipt"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guineea Ecuatorială"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Insulele Falkland"
+      ],
+      "Faroe Islands": [
+        "Insulele Feroe"
+      ],
+      "Federated States of Micronesia": [
+        "Statele federative ale Microneziei"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlanda"
+      ],
+      "France": [
+        "Franța"
+      ],
+      "French Guiana": [
+        "Guiana Franceză"
+      ],
+      "French Polynesia": [
+        "Polinezia Franceză"
+      ],
+      "French Southern Territories": [
+        "Teritoriile Franceze de Sud"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Germania"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlanda"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guineea"
+      ],
+      "Guinea-Bissau": [
+        "Guineea-Bissau"
+      ],
+      "Guyana": [
+        "Guiana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Insula Heard și Insulele McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Sfântul Scaun (Statul Orașului Vatican)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungaria"
+      ],
+      "Iceland": [
+        "Islanda"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonezia"
+      ],
+      "International": [
+        "Internațional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Insula Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japonia"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Iordan"
+      ],
+      "Kazakhstan": [
+        "Kazahstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuweit"
+      ],
+      "Kyrgyzstan": [
+        "Kârgâzstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonia"
+      ],
+      "Lebanon": [
+        "Liban"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituania"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaezia"
+      ],
+      "Maldives": [
+        "Maldive"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Insulele Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexic"
+      ],
+      "Moldova": [
+        "Republica Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Muntenegru"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroc"
+      ],
+      "Mozambique": [
+        "Mozambic"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Țările de Jos"
+      ],
+      "New Caledonia": [
+        "Noua Caledonie"
+      ],
+      "New Zealand": [
+        "Noua Zeelandă"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Nigeria"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Insula Niue"
+      ],
+      "Norfolk Island": [
+        "Insula Norfolk"
+      ],
+      "North Korea": [
+        "Coreea de Nord"
+      ],
+      "North Macedonia": [
+        "Macedonia de Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Insulele Mariane de Nord"
+      ],
+      "Norway": [
+        "Norvegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Noua Guinee"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipine"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portugalia"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "România"
+      ],
+      "Russia": [
+        "Rusia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Sfântul Bartolomeu"
+      ],
+      "Saint Helena": [
+        "Sfânta Elena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Sfântul Cristofor și Nevis"
+      ],
+      "Saint Lucia": [
+        "Sfânta Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sfântul Martin (Franța)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sfântul Pierre și Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Sfântul Vincențiu și Grenadinele"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome și Principe"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudită"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovacia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Insula Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Africa de Sud"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia de Sud și Insulele Sandwich de Sud"
+      ],
+      "South Korea": [
+        "Coreea de Sud"
+      ],
+      "South Ossetia": [
+        "Oseția de Sud"
+      ],
+      "South Sudan": [
+        "Sudanul de Sud"
+      ],
+      "Spain": [
+        "Spania"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard și Jan Mayen"
+      ],
+      "Sweden": [
+        "Suedia"
+      ],
+      "Switzerland": [
+        "Elveția"
+      ],
+      "Syria": [
+        "Siria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Tailanda"
+      ],
+      "Timor-Leste": [
+        "Timorul De Est"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad și Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turcia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Insulele Turks și Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraina"
+      ],
+      "United Arab Emirates": [
+        "Emiratele Arabe Unite"
+      ],
+      "United Kingdom": [
+        "Regatul Unit"
+      ],
+      "United States": [
+        "SUA"
+      ],
+      "United States Minor Outlying Islands": [
+        "Insulele Minore Îndepărtate ale Statelor Unite"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Insulele Virgine, Britania"
+      ],
+      "Virgin Islands, U.S.": [
+        "Insulele Virgine, S.U.A."
+      ],
+      "Wallis and Futuna": [
+        "Wallis și Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara de Vest"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Insulele Åland"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factură restantă"
+      ]
+    },
+    "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Criptare cu Messaging Layer Security (MLS)"
+      ],
+      "Rotating group encryption key for best security": [
+        "Rotirea cheii de criptare a grupului pentru cea mai bună securitate."
+      ],
+      "Try a different name.": [
+        "Încercați un nume diferit."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Veți vedea aici persoane când se alătură conferinței."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "Se încarcă…"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contact aprobat"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Domeniul nu este disponibil. Reîncercați mai târziu."
+      ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
+      "Enter 6 digits": [
+        "Introduceți 6 cifre"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
+      ],
+      "Event deleted": [
+        "Eveniment șters."
+      ],
+      "Failed to assign host": [
+        "Desemnarea gazdei a eșuat."
+      ],
+      "Failed to create meeting": [
+        "Crearea conferinței a eșuat"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Nu s-a putut crea ședința personală. Împrospătați pagina."
+      ],
+      "Failed to decrypt session key": [
+        "Nu s-a putut decripta cheia de sesiune."
+      ],
+      "Failed to delete event": [
+        "Nu s-a putut șterge evenimentul."
+      ],
+      "Failed to delete recording": [
+        "Ștergerea articolului a eșuat."
+      ],
+      "Failed to delete room": [
+        "Eroare la ștergerea camerei."
+      ],
+      "Failed to download recording": [
+        "Descărcarea înregistrării a eșuat."
+      ],
+      "Failed to edit room name": [
+        "Eroare la editarea numelui camerei."
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Nu s-a putut alătura ședinței. Reîncercați mai târziu."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "Eșuare participare la conferință. Reîncercați."
+      ],
+      "Failed to lock meeting": [
+        "Blocarea conferinței a eșuat."
+      ],
+      "Failed to rotate personal meeting link": [
+        "Nu s-a putut roti legătura web a întâlnirii personale."
+      ],
+      "Failed to send chat message. Please try again.": [
+        "Eroare la trimiterea mesajului din conversație. Reîncercați."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "Nu s-a putut trimite reacția emoji. Reîncercați."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "Nu s-a putut trimite reacția. Reîncercați."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Eșuare pornire conferință. Reîncercați."
+      ],
+      "Failed to start recording": [
+        "Pornirea înregistrării a eșuat"
+      ],
+      "Failed to start screen share": [
+        "Eșuare pornire partajare ecran"
+      ],
+      "Failed to unlock meeting": [
+        "Deblocarea conferinței a eșuat."
+      ],
+      "Incorrect username": [
+        "Nume de utilizator incorect."
+      ],
+      "Invalid meeting link": [
+        "Legătură web nevalidă pentru conferință."
+      ],
+      "Invalid passphrase": [
+        "Frază de acces nevalidă"
+      ],
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
+      ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
+      ],
+      "Please allow screen sharing in your system permissions, then try again": [
+        "Permiteți partajarea ecranului în permisiunile de sistem, apoi reîncercați."
+      ],
+      "Request timed out": [
+        "Solicitarea a expirat"
+      ],
+      "Room deleted": [
+        "Cameră ștearsă"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "Partajarea ecranului nu este acceptată pe navigatoarele web mobile."
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
+      "The meeting password is incorrect": [
+        "Parola întâlnirii nu este corectă"
+      ],
+      "The meeting password is invalid": [
+        "Parola conferinței nu este validă."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      ],
+      "This field is required": [
+        "Acest câmp este obligatoriu"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Această conferință este pe o versiune mai veche, gazda trebuie să o încheie și să împrospăteze Meet pentru a reporni cu cea mai recentă versiune."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unknown error": [
+        "Eroare necunoscută"
+      ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Navigatorul web nu mai are spațiu disponibil. Înregistrarea s-a salvat până în acest moment."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Se pare că ceasul dispozitivului nu este sincronizat. Verificați ora sistemului și reîncercați."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Aplicație momentan indisponibilă"
+      ],
+      "Error: ${ errorMessage }": [
+        "Eroare: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Hopa, ceva nu a mers bine!"
+      ],
+      "Open in browser": [
+        "Deschidere în navigator web"
+      ],
+      "Please refresh the page or try again later.": [
+        "Împrospătați pagina sau reîncercați mai târziu."
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pentru a folosi ${ MAIL_APP_NAME } sau ${ CALENDAR_APP_NAME }, comutați la versiunea web."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Imagine neselectată"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie de securitate"
+      ],
+      "Touch your security key.": [
+        "Atingeți cheia de securitate."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie de securitate"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
+      "GB": [
+        "GiB"
+      ],
+      "KB": [
+        "KiB"
+      ],
+      "MB": [
+        "MiB"
+      ],
+      "TB": [
+        "TiB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Terabyte": [
+        "Tibibait",
+        "Tibibaiți",
+        "Tibibaiți"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
+      "Theme font": [
+        "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Aveți deja un cont? ${ signIn }"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Cont"
+      ],
+      "Apps": [
+        "Aplicaţii"
+      ],
+      "Network": [
+        "Rețea"
+      ],
+      "Other category": [
+        "Altă categorie"
+      ],
+      "Services": [
+        "Servicii"
+      ]
+    },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Protejați-vă conversațiile cu criptare bilaterală"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } sau ${ signInAction } pentru a vă accesa camera personală și a crea camere noi"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } sau ${ signInAction } pentru a putea accesa planificarea conferințelor"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Discutați în totală ${ privacyWord }"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Manual": [
+        "Manuală"
+      ],
+      "No verification method available": [
+        "Nu sunt metode de verificare disponibile"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " și "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "A fost atinsă limita de participanți: ${ maxParticipants }."
+      ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } are nevoie de acces pentru ca alte persoane să vă poată vedea și auzi pe durata apelului. Puteți dezactiva camera sau microfonul oricând."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } are nevoie de acces la cameră pentru ca ceilalți să vă poată vedea pe durata apelului. Puteți dezactiva opțiunea oricând."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } are nevoie de acces la microfon pentru ca ceilalți să vă poată auzi pe durata apelului. Puteți dezactiva opțiunea oricând."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } necesită WebRTC pentru a funcționa. Actualizați navigatorul web sau dispozitivul la o versiune care acceptă WebRTC, încercați un alt navigator web sau dezactivați orice extensii care ar putea să-l blocheze."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } și încă ${ otherParticipantsCount } persoane înregistrează"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } înregistrează"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (dvs.) prezintă"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } prezintă"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } și alții au reacționat cu ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } a reacționat cu ${ emoji }"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "Participanți: ${ totalParticipantCount } din ${ maxParticipants }"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } participant",
+        "${ totalParticipantCount } participanți",
+        "${ totalParticipantCount } de participanți"
+      ],
+      "(You)": [
+        "(Eu)"
+      ],
+      "-Removed dangerous URL-": [
+        "-URL periculos eliminat-"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Mod avansat: ajustați fiecare constantă de estompare pentru următoarea versiune, apoi aplicați pentru a reconstrui examinarea. Suprascrierile au prioritate față de valorile fișierului și Unleash."
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anonim ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "Sigur doriți să ieșiți?"
+      ],
+      "Are you sure you want to stop recording?": [
+        "Sigur opriți înregistrarea?"
+      ],
+      "Attention required": [
+        "Necesită atenție"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Continuând conferința, luați la cunoștință și sunteți de acord cu înregistrarea sesiunii."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Prin acceptare, sunteți de acord cu ${ termsLink } și ${ privacyLink }."
+      ],
+      "camera": [
+        "camera"
+      ],
+      "Camera permission denied": [
+        "Accesul la cameră a fost respins"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Modificările sunt implementate în etape. Aplicați pentru a reconstrui examinarea cu noile constante."
+      ],
+      "Chat with everyone": [
+        "Conversare cu toată lumea"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Verificați setările din sistem pentru a vă asigura că este disponibilă o cameră."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Verificați setările din sistem pentru a vă asigura că este disponibil un microfon."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+      ],
+      "Coming soon": [
+        "În curând"
+      ],
+      "Connection failed": [
+        "Conexiunea a eșuat"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "Conexiune întreruptă. Se reconectează..."
+      ],
+      "Connection issue detected. Attempting to recover…": [
+        "S-au detectat probleme la conexiune. Se încearcă recuperarea…"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Conexiune pierdută. Se reconectează…"
+      ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
+      "Could not access the camera.": [
+        "Nu s-a putut accesa camera."
+      ],
+      "Could not start recording.": [
+        "Nu s-a putut porni înregistrarea."
+      ],
+      "Country code": [
+        "Cod țară"
+      ],
+      "Create an account": [
+        "Creați un cont"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Creați un cont pentru a găzdui conferințe cu până la 50 de participanți."
+      ],
+      "Created on ${ formattedDate }": [
+        "Creat la ${ formattedDate }"
+      ],
+      "Custom combination": [
+        "Combinație personală"
+      ],
+      "Decrypting meetings...": [
+        "Conferințele se decriptează..."
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Implicit - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Implicit - Implicit din sistem"
+      ],
+      "Delete event": [
+        "Ștergere eveniment"
+      ],
+      "Delete room": [
+        "Ștergere cameră"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Doriți ca oamenii să vă ${ deviceContentType } în conferință?"
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
+      ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar o dată."
+      ],
+      "Edit email address": [
+        "Editare adresă de e-mail"
+      ],
+      "End Meeting for everyone?": [
+        "Încheiați conferința pentru toată lumea?"
+      ],
+      "End the meeting for everyone?": [
+        "Încheiați conferința pentru toată lumea?"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "Criptarea bilaterală este activă pentru audio și video."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "Criptarea bilaterală este activă pentru partajarea ecranului."
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "Criptarea bilaterală este activă pentru această discuție."
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduceți codul de verificare. Cifra ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Toată lumea a fost deconectată de la apel."
+      ],
+      "Failed to apply background blur": [
+        "Aplicarea fundalului estompat a eșuat."
+      ],
+      "Failed to update meeting name": [
+        "Actualizarea numelui întâlnirii a eșuat."
+      ],
+      "Failed to update meeting password": [
+        "Actualizarea parolei întâlnirii a eșuat."
+      ],
+      "Failed to update meeting schedule": [
+        "Actualizarea planificării conferinței a eșuat."
+      ],
+      "Free meeting": [
+        "Întâlnire gratuită"
+      ],
+      "Free meetings are limited to 1 hour. This call will disconnect soon.": [
+        "Conferințele gratuite sunt limitate la o oră. Acest apel se va deconecta în curând."
+      ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Obțineți o sală de conferințe personală. Creați un cont pentru a avea o legătură web personală pentru conferințe pe care o puteți folosi oricând."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Obțineți o legătură web securizată pentru conferință, apoi adăugați-o în calendarul personal."
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Obțineți cea mai bună experiență cu aplicația desktop ${ protonMeet }"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Accesați opțiunea „about:config”, căutați „media.peerconnection.enabled” și setați la „true”."
+      ],
+      "Host": [
+        "Gazdă"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Găzduiți-vă propriile conferințe securizate. Începeți un apel în ${ MEET_APP_NAME } și partajați legătura web pentru a invita pe oricine să se alăture. Simplu, sigur și gratuit."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Dacă utilizați Firefox, asigurați-vă că PeerConnection este activat."
+      ],
+      "Internet connection lost": [
+        "Conexiunea la internet s-a întrerupt"
+      ],
+      "Joined ${ roomNameLabel }": [
+        "A intrat în ${ roomNameLabel }"
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Leave meeting and stop sharing?": [
+        "Părăsiți conferința și opriți partajarea?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Părăsirea conferinței va opri partajarea ecranului."
+      ],
+      "Left ${ roomNameLabel }": [
+        "A ieșit din ${ roomNameLabel }"
+      ],
+      "Left by mistake?": [
+        "Ați ieșit din greșeală?"
+      ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
+      "Loading": [
+        "Se încarcă"
+      ],
+      "Loading ${ appName }": [
+        "Se încarcă ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de planificări Calendly într-o filă nouă."
+      ],
+      "Loading meetings...": [
+        "Conferințele se încarcă..."
+      ],
+      "Loading recordings…": [
+        "Se încarcă înregistrările…"
+      ],
+      "Loading...": [
+        "Se încarcă…"
+      ],
+      "Loading…": [
+        "Se încarcă…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Redă în buclă un videoclip încărcat sau camera live prin ambele versiuni de estompare a fundalului, una lângă alta."
+      ],
+      "Lower participant's hand": [
+        "Coborâți mâna participantului"
+      ],
+      "Meet without restrictions": [
+        "Întâlniți-vă fără restricții"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Întâlniți-vă fără restricții. Treceți la un plan superior a elimina limita de o oră și găzduiți până la 100 de participanți."
+      ],
+      "Meeting ended": [
+        "Conferința s-a încheiat"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Conferință plină (Participanți: ${ maxParticipants })"
+      ],
+      "Meeting is decrypting...": [
+        "Conferința se decriptează..."
+      ],
+      "Meeting link": [
+        "Legătură web întâlnire"
+      ],
+      "Meeting locked. No new participants can join.": [
+        "Întâlnirea este blocată. Niciun participant nou nu se poate alătura."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Înregistrările conferințelor nu sunt suportate în Firefox."
+      ],
+      "Meeting time is up": [
+        "Timpul conferinței a expirat"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Întâlnirea a fost deblocată. Participanții se pot alătura din nou."
+      ],
+      "Meeting will end in ${ timeLeft }": [
+        "Conferința se va încheia peste ${ timeLeft }."
+      ],
+      "Member": [
+        "Membru"
+      ],
+      "Message from ${ participantName }": [
+        "Mesaj de la ${ participantName }"
+      ],
+      "microphone": [
+        "microfon"
+      ],
+      "Microphone effects": [
+        "Efecte microfon"
+      ],
+      "Microphone permission denied": [
+        "Accesul la microfon a fost respins"
+      ],
+      "Mute microphone": [
+        "Oprire microfon"
+      ],
+      "My meetings": [
+        "Conferințele mele"
+      ],
+      "My rooms": [
+        "Camerele mele"
+      ],
+      "New": [
+        "Nou"
+      ],
+      "New host": [
+        "Gazdă nouă"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Nu s-a detectat ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+      ],
+      "No camera detected": [
+        "Nu a fost detectată nicio cameră."
+      ],
+      "No camera detected.": [
+        "Nu a fost detectată nicio cameră."
+      ],
+      "No microphone detected": [
+        "Nu a fost detectat niciun microfon."
+      ],
+      "No microphone detected.": [
+        "Nu a fost detectat niciun microfon."
+      ],
+      "No publications": [
+        "Nu există publicări"
+      ],
+      "No recordings found on this device.": [
+        "Nu s-au găsit articole pe acest dispozitiv."
+      ],
+      "No remote participants": [
+        "Niciun participant la distanță"
+      ],
+      "No results found": [
+        "Nu s-au găsit rezultate"
+      ],
+      "No search results": [
+        "Nu există rezultate."
+      ],
+      "No speaker detected": [
+        "Niciun difuzor detectat"
+      ],
+      "Only meetings you created appear here": [
+        "Aici apar doar conferințele pe care le-ați creat."
+      ],
+      "Open external link": [
+        "Deschidere legătura web externă"
+      ],
+      "Other accounts": [
+        "Alte conturi"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Întâlnirile noastre criptate bilateral vă protejează confidențialitatea și vă permit o exprimare cu adevărat liberă."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Pagina ${ displayPage } din ${ totalPages }"
+      ],
+      "Participant": [
+        "Participant"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Inserați legătura web ${ MEET_APP_NAME } pentru a vă alătura unei întâlniri securizate."
+      ],
+      "Permissions not given.": [
+        "Permisiuni neacordate."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Activați accesul la ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pentru cea mai bună experiență."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Introduceți fraza de acces pentru a decripta și vizualiza această întâlnire."
+      ],
+      "Please try again or try another browser": [
+        "Reîncercați sau folosiți un alt navigator web"
+      ],
+      "Poor connection": [
+        "Conexiune slabă"
+      ],
+      "Premium meeting": [
+        "Conferință premium"
+      ],
+      "Presenting": [
+        "Prezentare"
+      ],
+      "privacy": [
+        "confidențialitate"
+      ],
+      "Quick reactions": [
+        "Reacții rapide"
+      ],
+      "Reactions": [
+        "Reacții"
+      ],
+      "Reconnected successfully": [
+        "Reconectare reușită"
+      ],
+      "Reconnecting to meeting...": [
+        "Se reconectează la conferință..."
+      ],
+      "Record your meetings": [
+        "Înregistrați-vă conferințele"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Înregistrare flux brut al camerei și estomparea fundalului de producție, unul lângă altul. Oprirea descarcă ambele clipuri."
+      ],
+      "Recording": [
+        "Înregistrare"
+      ],
+      "Recording deleted": [
+        "Înregistrare ștearsă"
+      ],
+      "Recording in progress": [
+        "Înregistrare în derulare"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "Înregistrarea va începe și participanții vor fi notificați."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Înregistrările sunt stocate local în navigatorul web. Descărcați orice doriți să păstrați, acestea fiind șterse automat după 30 de zile."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
+      ],
+      "Refresh audio and video tracks": [
+        "Împrospătare piste audio și video"
+      ],
+      "Refresh screen share track": [
+        "Împrospătare partajare ecran"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Planificați-vă următoarea întâlnire. Creați un cont pentru a vă planifica întâlniri din calendarul personal."
+      ],
+      "Select a camera": [
+        "Selectați o cameră"
+      ],
+      "Select a microphone": [
+        "Selectați un microfon"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Selectați un participant pe care să-l desemnați ca gazdă nouă înainte de a pleca: "
+      ],
+      "Select a speaker": [
+        "Selectați un difuzor"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
+      ],
+      "Session timed out": [
+        "Sesiunea a expirat"
+      ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Configurați o cameră permanentă pentru echipa sau clienții personali."
+      ],
+      "Share screen": [
+        "Partajare ecran"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Partajați această legătură web pentru a invita pe alții. O puteți găsi oricând făcând clic pe pictograma info din bara de unelte."
+      ],
+      "Sign in": [
+        "înregistrați-vă"
+      ],
+      "Sort by": [
+        "Sortare după"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Selectarea difuzorului nu este disponibilă în acest navigator web. Folosiți setările sistemului pentru a alege un alt difuzor."
+      ],
+      "Start recording": [
+        "Pornire înregistrare"
+      ],
+      "Starting camera…": [
+        "Se pornește camera…"
+      ],
+      "Stop sharing your screen": [
+        "Oprire partajare ecran"
+      ],
+      "Successfully deleted meeting": [
+        "Conferința a fost ștearsă."
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Vă mulțumim că ați găzduit o conferință premium."
+      ],
+      "Thank you for joining.": [
+        "Vă mulțumim că v-ați alăturat."
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "Gazda v-a eliminat din această întâlnire. Dacă a fost o greșeală, rugați gazda să vă invite din nou."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Legătura web a întâlnirii pe care ați încercat să o deschideți nu există sau poate a expirat. Asigurați-vă că aceasta este corectă sau începeți o întâlnire securizată nouă."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Aceasta este o conversație criptată bilateral cu mesaje efemere, care dispar la sfârșitul apelului."
+      ],
+      "This meeting is being recorded": [
+        "Această întâlnire este înregistrată."
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Această întâlnire este blocată. Contactați gazda pentru a vă alătura."
+      ],
+      "This meeting is password protected": [
+        "Această întâlnire este protejată cu parolă."
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Această întâlnire a atins limita de timp a unui abonament gratuit. Modificați planul pentru a prelungi durata conferințelor în apelurile viitoare."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Această conferință a fost deschisă în aplicația desktop ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Această înregistrare va fi ștearsă definitiv de pe acest dispozitiv. Această acțiune nu poate fi anulată."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Aceasta va încheia conferința pentru toți participanții și vă va opri partajarea ecranului."
+      ],
+      "This will end the meeting for all participants.": [
+        "Aceasta va încheia întâlnirea pentru toți participanții."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Aceasta vă va deconectat din toate conturile conectate acum."
+      ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Pentru a crea o cameră, veți avea nevoie de **un cont gratuit ${ BRAND_NAME }** pentru a o putea salva. Acest lucru durează doar câteva secunde."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Pentru a combate abuzurile, dovediți că sunteți o persoană."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Pentru a programa un eveniment, veți avea nevoie de **un cont gratuit ${ BRAND_NAME }** pentru a putea salva evenimentul. Acest lucru durează doar câteva secunde."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Pentru a utiliza propria cameră de conferințe, veți avea nevoie de **un cont ${ BRAND_NAME } gratuit**. Acest lucru durează doar câteva secunde."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Astăzi — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Mâine — ${ absoluteDate }"
+      ],
+      "Turn off camera": [
+        "Dezactivare cameră"
+      ],
+      "Turn on camera": [
+        "Activare cameră"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Nu se poate reconecta conferința. Realăturați-vă sau părăsiți-o."
+      ],
+      "unlimited meeting": [
+        "conferințe nelimitate"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "Deblocați ${ unlimitedMeeting } și funcțiile premium"
+      ],
+      "Unmute microphone": [
+        "Activare microfon"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Schimbați-vă tipul planului pentru a putea înregistra local conferințele."
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Treceți la alt tip de plan pentru a elimina limita de 1 oră și a omite numărătoarea inversă. Bucurați-vă de întâlniri de până la 24 de ore."
+      ],
+      "Video effects": [
+        "Efecte video"
+      ],
+      "Warning": [
+        "Avertizare"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "Week": [
+        "Săptămâna"
+      ],
+      "Would you like to delete this event?": [
+        "Doriți să ștergeți acest eveniment?"
+      ],
+      "Would you like to delete this room?": [
+        "Doriți să ștergeți această cameră de întâlnire?"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Doriți să primiți un cod nou de verificare?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Ieri — ${ absoluteDate }"
+      ],
+      "You are almost there": [
+        "Aproape gata"
+      ],
+      "You can close this tab.": [
+        "Puteți închide această filă."
+      ],
+      "You can now return to the application to continue": [
+        "Puteți reveni la aplicație pentru a continua"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Puteți totuși dezactiva microfonul și camera oricând în cadrul ședinței."
+      ],
+      "You left the meeting": [
+        "Ați părăsit conferința"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Aveți nevoie de un plan cu plată ${ MEET_SHORT_APP_NAME } sau Workspace pentru această funcționalitate. Contactați administratorul organizației pentru a efectua modificarea planului."
+      ],
+      "You were removed from the meeting": [
+        "Gazda v-a eliminat din conferință"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Veți părăsi conferința. Ceilalți vor continua."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Ați primit o invitație să vă alăturați unei întâlniri securizate. Confirmați-vă numele și faceți clic mai jos pentru a intra."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
+      ],
+      "Your always available meeting room": [
+        "Camera personală de conferințe disponibilă permanent"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Navigatorul web a blocat accesul la microfon și cameră. Pentru a-l activa, modificați setările din navigator și reinițiați apelul."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Navigatorul web a blocat accesul la cameră. Pentru a-l activa, modificați setările din navigator și reinițiați apelul."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Navigatorul web a blocat accesul la microfon. Pentru a-l activa, modificați setările din navigator și reinițiați apelul."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Navigatorul web a blocat accesul la partajarea ecranului. Pentru a o activa, modificați setările din navigator și reinițiați apelul."
+      ],
+      "Your browser or device isn’t supported": [
+        "Navigatorul web sau dispozitivul nu este suportat."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Adresa va fi folosită doar pentru această verificare unică."
+      ],
+      "Your meeting is ready": [
+        "Întâlnirea este pregătită"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Urmează să deschideți o legătură web într-o filă nouă. Asigurați-vă că aprobați site-ul web înainte de a continua."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "Nnume de utilizator ${ BRAND_NAME }"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } stea",
+        "${ numberOfStars } stele",
+        "${ numberOfStars } de stele"
+      ],
+      "Add optional details": [
+        "Adăugare detalii opționale"
+      ],
+      "Add to calendar": [
+        "Adăugare în calendar"
+      ],
+      "Advanced mode": [
+        "Mod avansat"
+      ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
+      ],
+      "Audio": [
+        "Audio"
+      ],
+      "Authenticator app": [
+        "Aplicația Authenticator"
+      ],
+      "Blurred (next)": [
+        "Estompat (următorul)"
+      ],
+      "Browser": [
+        "Navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "Camera Active": [
+        "Cameră activă"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "Code is 6 digits without spaces": [
+        "Codul este format din 6 cifre fără spații"
+      ],
+      "Connection Quality": [
+        "Calitate conexiune"
+      ],
+      "Copy all activity events": [
+        "Copiere toate evenimentele de activitate"
+      ],
+      "Copy invite link": [
+        "Copiere legătură web invitație"
+      ],
+      "Create meeting options": [
+        "Opțiuni de creare conferință"
+      ],
+      "Created": [
+        "Creat la"
+      ],
+      "Current": [
+        "Actual"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Delete recovery-related information.": [
+        "Ștergere informații privind recuperarea."
+      ],
+      "Does not repeat": [
+        "Nu se repetă"
+      ],
+      "Download .ics": [
+        "Descărcare .ics"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
+      "Emoji picker": [
+        "Selector emoticon"
+      ],
+      "Emoji reactions": [
+        "Reacții cu emoticoane"
+      ],
+      "Enabled": [
+        "Activă"
+      ],
+      "Ended": [
+        "Încheiată"
+      ],
+      "Every day": [
+        "Zilnic"
+      ],
+      "Every month": [
+        "Lunar"
+      ],
+      "Every week": [
+        "Săptămânal"
+      ],
+      "Every weekday": [
+        "În fiecare zi lucrătoare"
+      ],
+      "Every year": [
+        "Anual"
+      ],
+      "Google Calendar": [
+        "Calendar Google"
+      ],
+      "Hide password": [
+        "Ascundere parolă"
+      ],
+      "How was the call quality?": [
+        "Cum a fost calitatea apelului?"
+      ],
+      "Identity": [
+        "Identitate"
+      ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
+      ],
+      "Last used": [
+        "Ultima utilizare"
+      ],
+      "Leave meeting options": [
+        "Opțiuni părăsire conferință"
+      ],
+      "Manage recordings": [
+        "Gestionare înregistrări"
+      ],
+      "Meeting ID": [
+        "ID întâlnire"
+      ],
+      "Meeting link": [
+        "Legătură web conferință"
+      ],
+      "Message": [
+        "Mesaj"
+      ],
+      "Microphone Active": [
+        "Microfon activ"
+      ],
+      "Monday to Friday": [
+        "De luni până vineri"
+      ],
+      "Muted": [
+        "Dezactivat"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Next": [
+        "Următor"
+      ],
+      "Operating system": [
+        "Sistem de operare"
+      ],
+      "Operating system version": [
+        "Versiune sistem de operare"
+      ],
+      "Outlook Calendar": [
+        "Calendar Outlook"
+      ],
+      "Participant controls": [
+        "Control participanți"
+      ],
+      "Passphrase": [
+        "Frază de acces"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Phone number": [
+        "Număr de telefon"
+      ],
+      "Raw": [
+        "Brut"
+      ],
+      "Remember my name on this device": [
+        "Reține-mi numele pe acest dispozitiv"
+      ],
+      "Repeat event": [
+        "Eveniment repetat"
+      ],
+      "Return to dashboard": [
+        "Înapoi la panoul de control"
+      ],
+      "Reveal password": [
+        "Afișare parolă"
+      ],
+      "Schedule meeting": [
+        "Planificare conferință"
+      ],
+      "Screen share": [
+        "Partajare ecran"
+      ],
+      "Selected Camera": [
+        "Cameră selectată"
+      ],
+      "Selected Microphone": [
+        "Microfon selectat"
+      ],
+      "Selected Speaker": [
+        "Difuzor selectat"
+      ],
+      "Subscribed": [
+        "Abonat"
+      ],
+      "System information": [
+        "Informații sistem"
+      ],
+      "Track SID": [
+        "Urmărire SID"
+      ],
+      "Use live camera feed": [
+        "Folosire sursă cameră live"
+      ],
+      "Use simple selfie segmentation": [
+        "Folosire segmentată simplă a autoportretelor"
+      ],
+      "Verification code": [
+        "Cod de verificare"
+      ],
+      "Video": [
+        "Video"
+      ],
+      "What happened?": [
+        "Ce s-a întâmplat?"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "golind bufferul navigatorului web"
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "privacy policy": [
+        "politica de confidențialitate"
+      ],
+      "Request an invite": [
+        "Solicitați o invitație"
+      ],
+      "Sign in": [
+        "Autentificare"
+      ],
+      "terms and conditions": [
+        "termenii și condițiile"
+      ],
+      "What’s this?": [
+        "Ce este asta?"
+      ]
+    },
+    "meet": {
+      "Create and copy link": [
+        "Creare și copiere legătură web"
+      ],
+      "Create new room": [
+        "Creare cameră"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Camerele de conferințe pot fi folosite oricând"
+      ],
+      "Save and copy link": [
+        "Salvare și copiere legătură web"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Navigatorul web sau programul dispozitivului nu acceptă ${ MEET_APP_NAME }. ${ MEET_APP_NAME } necesită WebAssembly (Wasm) pentru a rula. Actualizați navigatorul web sau dispozitivul la o versiune care acceptă Wasm sau încercați să utilizați un alt navigator web."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Deoarece nu mai participă altcineva la această întâlnire, aceasta se va închide automat. Doriți să rămâneți la această întâlnire?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Părăsire întâlnire"
+      ],
+      "Stay in the meeting": [
+        "Rămânere în întâlnire"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Eșuare pornire Imagine în imagine"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "În curând"
+      ],
+      "Copied to clipboard": [
+        "S-a copiat în memorie."
+      ],
+      "Could not send feedback": [
+        "Mesajul nu s-a putut trimite."
+      ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
+      "Room name updated": [
+        "Nume cameră actualizat"
+      ],
+      "Successfully rotated your personal meeting": [
+        "V-ați rotit cu succes întâlnirea personală."
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Nu puteți trimite un feedback pentru o conferință la care nu ați participat."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "Sunetul se întrerupea"
+      ],
+      "I couldn't hear others": [
+        "Nu i-am putut auzi pe ceilalți"
+      ],
+      "I couldn't present ": [
+        "Nu am putut prezenta "
+      ],
+      "I couldn't see others' video": [
+        "Nu am putut vedea imaginea celorlalți"
+      ],
+      "I couldn't see the presentation": [
+        "Nu am putut vedea prezentarea"
+      ],
+      "Others couldn't hear me": [
+        "Alții nu m-au putut auzi"
+      ],
+      "Others couldn't see my video": [
+        "Ceilalți nu mi-ai putut vedea imaginea"
+      ],
+      "The presentation was blurry": [
+        "Prezentarea a fost neclară"
+      ],
+      "Video quality was poor": [
+        "Calitatea video a fost slabă"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Modalitate de contactare"
+      ],
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Enter passphrase": [
+        "Introduceți fraza de acces"
+      ],
+      "Enter time": [
+        "Introduceți ora"
+      ],
+      "Enter your name": [
+        "Introduceți-vă numele"
+      ],
+      "Find...": [
+        "Căutare..."
+      ],
+      "Loading...": [
+        "Se încarcă…"
+      ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Nume întâlnire, ex. sincronizare echipă, actualizare proiect, etc."
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrieți problema incluzând și mesajele de eroare care apar."
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Nume cameră, ex. sincronizare echipă, actualizare proiect, etc."
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Planificare în ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "Select": [
+        "Selectare"
+      ],
+      "Share more details": [
+        "Furnizați mai multe detalii"
+      ],
+      "Type an encrypted message...": [
+        "Scrieți un mesaj criptat..."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Revizuire securitate cont"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Înscrierea nu o fost finalizată corect."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nu s-au găsit rezultate"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Stay signed in": [
+        "Nu mă deconectez"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } oră",
+        "${ gracePeriodHoursRemaining } ore",
+        "${ gracePeriodHoursRemaining } de ore"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } este acum posibilă."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Dacă vă deconectați înainte de a vă reseta parola, v-ați putea pierde accesul la cont."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Dacă vă deconectați fără a vă reseta parola, v-ați putea pierde accesul la cont."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Veți putea să vă resetați parola peste ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Resetare parolă"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Vă deconectați fără a vă reseta parola?"
+      ]
+    },
+    "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Alfabetic (A–Z)"
+      ],
+      "Newly created": [
+        "Nou create"
+      ],
+      "Past meetings": [
+        "Conferințe anterioare"
+      ],
+      "Upcoming": [
+        "Viitoare"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Conectare"
+      ],
+      "Sign in to your organization": [
+        "Autentificare în organizație"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
+      ]
+    },
+    "Status": {
+      "No": [
+        "Nu"
+      ],
+      "Yes": [
+        "Da"
+      ]
+    },
+    "Success": {
+      "Assigned new host": [
+        "Gazda nouă a fost desemnată"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Cod trimis la ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Adresa de e-mail a fost copiată în memorie"
+      ],
+      "Problem reported": [
+        "Problemă raportată"
+      ],
+      "Verification successful": [
+        "Verificare reușită"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Size": [
+        "Mărime"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Cont restricționat"
+      ],
+      "Account temporarily locked": [
+        "Cont blocat temporar"
+      ],
+      "Activity events": [
+        "Evenimente activitate"
+      ],
+      "All participants": [
+        "Toți participanții"
+      ],
+      "Allow camera ": [
+        "Permitere cameră"
+      ],
+      "Allow camera and microphone": [
+        "Permitere cameră și microfon"
+      ],
+      "Allow microphone": [
+        "Permitere microfon"
+      ],
+      "Are you sure?": [
+        "Confirmați?"
+      ],
+      "Assign a new host": [
+        "Desemnare o gazdă nouă"
+      ],
+      "Audio": [
+        "Audio"
+      ],
+      "Available Cameras": [
+        "Camere disponibile"
+      ],
+      "Available Microphones": [
+        "Microfoane disponibile"
+      ],
+      "Available Speakers": [
+        "Difuzoare disponibile"
+      ],
+      "Background blur comparison": [
+        "Comparare estompare fundal"
+      ],
+      "Camera and microphone are blocked": [
+        "Camera și microfonul sunt blocate"
+      ],
+      "Camera is blocked": [
+        "Camera este blocată"
+      ],
+      "Chat": [
+        "Conversație"
+      ],
+      "Constants": [
+        "Constante"
+      ],
+      "Couldn't prepare the recording": [
+        "Nu s-a putut pregăti înregistrarea"
+      ],
+      "Create new room": [
+        "Creare cameră"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Debug Overlay": [
+        "Panou de depanare"
+      ],
+      "Delete recording?": [
+        "Ștergeți înregistrarea?"
+      ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
+      "Epoch": [
+        "Epoca"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoca ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Eroare la epoca ${ log.epoch }"
+      ],
+      "Help and feedback": [
+        "Ajutor și feedback"
+      ],
+      "Help center": [
+        "Centru de ajutor"
+      ],
+      "Human verification": [
+        "Verificare persoană"
+      ],
+      "Info": [
+        "Informații"
+      ],
+      "Invalid meeting link": [
+        "Legătură web conferință nevalidă"
+      ],
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
+      ],
+      "Invite link": [
+        "Link web de invitație"
+      ],
+      "Join a meeting": [
+        "Alăturare la întâlnire"
+      ],
+      "Join meeting": [
+        "Alăturare la întâlnire"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Alăturat la epoca ${ log.epoch }"
+      ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Vă alăturați întâlnirii cu încă ${ participantCount } participant…",
+        "Vă alăturați întâlnirii cu încă ${ participantCount } participanți…",
+        "Vă alăturați întâlnirii cu încă ${ participantCount } de participanți…"
+      ],
+      "Launching Meeting...": [
+        "Se inițiază conferința..."
+      ],
+      "Local Participant": [
+        "Participant local"
+      ],
+      "Meeting": [
+        "Conferință"
+      ],
+      "Meeting created": [
+        "Conferință creată"
+      ],
+      "Meeting details": [
+        "Detalii reuniune"
+      ],
+      "Meeting edited": [
+        "Conferință editată"
+      ],
+      "Meeting settings": [
+        "Setări conferință"
+      ],
+      "Messaging Layer Security": [
+        "Securitatea stratului de mesagerie"
+      ],
+      "Microphone is blocked": [
+        "Microfonul este blocat"
+      ],
+      "Minicalendar": [
+        "Minicalendar"
+      ],
+      "No one is waiting": [
+        "Nimeni nu așteaptă"
+      ],
+      "No results found": [
+        "Nu s-au găsit rezultate."
+      ],
+      "Participants": [
+        "Participanți"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Participanți (${ filteredParticipants.length })"
+      ],
+      "Passphrase": [
+        "Frază de acces"
+      ],
+      "Personal meeting room": [
+        "Cameră de întâlnire personală"
+      ],
+      "Preparing your recording…": [
+        "Se pregătește înregistrarea…"
+      ],
+      "Publications": [
+        "Publicări"
+      ],
+      "Reconnection Testing": [
+        "Testare reconectare"
+      ],
+      "Record raw vs blurred camera": [
+        "Înregistrare cameră brută vs estompată"
+      ],
+      "Record this meeting": [
+        "Înregistrare această întâlnire"
+      ],
+      "Recordings": [
+        "Înregistrări"
+      ],
+      "Remote Participants": [
+        "Participanți la distanță"
+      ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
+      "Request new code": [
+        "Solicitare cod nou"
+      ],
+      "Schedule a meeting": [
+        "Planificare întâlnire"
+      ],
+      "Screen share is blocked": [
+        "Partajarea ecranului este blocată"
+      ],
+      "Secure meeting": [
+        "Întâlnire securizată"
+      ],
+      "Security": [
+        "Securitate"
+      ],
+      "Security code": [
+        "Cod de securitate"
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Starting meeting as the first participant…": [
+        "Se inițiază întâlnirea în calitate de prim participant…"
+      ],
+      "Stop recording": [
+        "Oprire înregistrare"
+      ],
+      "Talk confidentially": [
+        "Discuție confidențială"
+      ],
+      "Thank you!": [
+        "Vă mulțumim!"
+      ],
+      "Time": [
+        "Ora"
+      ],
+      "Title": [
+        "Titlu"
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
+      ],
+      "Video": [
+        "Videoclip"
+      ],
+      "Waiting room": [
+        "Sală de așteptare"
+      ],
+      "What went wrong?": [
+        "Ce nu a funcționat?"
+      ],
+      "Your feedback has been submitted": [
+        "Mesajul a fost trimis."
+      ],
+      "Your recording is ready": [
+        "Înregistrarea este pregătită"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Astăzi"
+      ]
+    },
+    "Tooltip": {
+      "Background blur is not supported on your browser": [
+        "Estomparea fundalului nu este acceptată în navigatorul web."
+      ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Generați o legătură web pentru conferință. Legătura web actuală nu va mai funcționa."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistență instantanee prin IA, expert uman la îndemână!"
+      ],
+      "Recurring meeting": [
+        "Întâlnire recurentă"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Puteți genera o legătură web de conferință o dată pe zi."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemă portofel"
+      ]
+    },
+    "Warning": {
+      "Connection is taking longer than expected": [
+        "Conexiunea durează mai mult decât se aștepta"
+      ],
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Nu s-a putut accesa camera sau microfonul. Puteți încerca să le reactivați din comenzile conferinței."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Nu s-a putut accesa camera. Puteți încerca să o activați din nou din comenzile conferinței."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Nu s-a putut accesa microfonul. Puteți încerca să-l reactivați din comenzile conferinței."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
+      ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Conexiunea UDP STUN a eșuat, se încearcă prin releul TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Eroare la conexiunea STUN UDP, se încearcă prin releul TURN"
+      ],
+      "Trying another route…": [
+        "Se încearcă altă rută…"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      ]
+    }
+  }
+}

@@ -204,6 +204,9 @@
       "Apply to existing messages": [
         "Apliqueu als missatges existents"
       ],
+      "Approve": [
+        "Aprovar"
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -1221,6 +1224,9 @@
       "Organization": [
         "Organització"
       ],
+      "Pause": [
+        "Pausa"
+      ],
       "Pay": [
         "Pagar"
       ],
@@ -1546,7 +1552,7 @@
         "Estableix com a predeterminat"
       ],
       "Set as default mail application": [
-        "Establiu com aplicació de correu per defecte"
+        "Establiu com l'aplicació de correu per defecte"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -2993,6 +2999,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "S'ha produït un error desconegut. Actualitzeu la pàgina i torneu-ho a provar"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Esteu segur que voleu continuar sense ${ withoutString } i ${ notMigratedOthers } altre?",
+        "Esteu segur que voleu continuar sense ${ withoutString } i ${ notMigratedOthers } altres?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Esteu segur que voleu continuar sense ${ withoutString }?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Segur que voleu continuar? Els usuaris que no hagin demanat el compte abans que finalitzi la migració hauran de sol·licitar un restabliment de contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
       ],
@@ -3040,6 +3053,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Elimineu tots els codis MX existents, després copieu els codis de més avall i enganxeu-los a la secció de DNS del vostre proveïdor de domini."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM afegeix una signatura digital a cada correu electrònic perquè els destinataris puguin verificar que el missatge prové realment del vostre domini i no ha estat alterat durant el trànsit. Sense ella, els missatges poden ser considerats menys fiables."
@@ -3174,6 +3190,9 @@
       "Missing organization public key": [
         "Falta la clau pública de l'organització"
       ],
+      "More details": [
+        "Més detalls"
+      ],
       "Need help?": [
         "Necessiteu ajuda?"
       ],
@@ -3267,11 +3286,17 @@
       "Some accounts are not claimed": [
         "Alguns comptes no s'han reclamat"
       ],
+      "Some members weren't migrated": [
+        "Alguns membres no s'han migrat"
+      ],
       "Status": [
         "Estat"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Per portar les dades de la vostra organització a ${ BRAND_NAME }, instal·leu ${ BRAND_NAME } Easy Switch des del Marketplace de Google Workspace. Després d'instal·lar-lo, torneu aquí per continuar."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Per completar la migració, assegureu-vos que només manteniu els codis MX de ${ BRAND_NAME }."
       ],
       "Update records for receiving": [
         "Actualitzeu els registres per a la recepció"
@@ -3327,6 +3352,9 @@
       "You": [
         "Tú"
       ],
+      "You will not be able to copy these users' data later.": [
+        "No podreu copiar les dades d'aquests usuaris més endavant."
+      ],
       "You're all set!": [
         "Ja ho teniu tot a punt!"
       ],
@@ -3336,6 +3364,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
         "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "La configuració del vostre domini encara inclou els codis MX d'un altre proveïdor."
       ]
     },
     "breadcrumb": {
@@ -5330,7 +5361,7 @@
         "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } és la vostra aplicació de correu electrònic per defecte."
+        "${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } manté segures les dades del vostre negoci i us permet enviar correus electrònics xifrats a qualsevol persona."
@@ -7337,12 +7368,6 @@
       "Intended recipient does not support calendar sharing": [
         "El destinatari escollit no admet la compartició de calendari."
       ],
-      "Invalid ${ name } code": [
-        "Codi ${ name } no vàlid"
-      ],
-      "Invalid card number": [
-        "Número de targeta no vàlid"
-      ],
       "Invalid code": [
         "Codi invàlid"
       ],
@@ -7354,9 +7379,6 @@
       ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
-      ],
-      "Invalid expiration date": [
-        "Data de caducitat invàlida"
       ],
       "Invalid IBAN": [
         "L'IBAN no és vàlid."
@@ -7451,9 +7473,6 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Només es poden canviar les majúscules i la puntuació (punts, guionets i guions baixos) per aquesta adreça"
@@ -7600,6 +7619,14 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membre",
+        "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membres"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grup",
+        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grups"
       ],
       "Server not found": [
         "No s'ha trobat el servidor"
@@ -9838,6 +9865,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
       ],
+      "${ emails.length } member added to the group": [
+        "S'ha afegit ${ emails.length }membre al grup",
+        "S'han afegit ${ emails.length }membres al grup"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
       ],
@@ -9934,9 +9965,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "S'ha afegit ${ pendingAdminMemberCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
-        "S'han afegit ${ pendingAdminMemberCount } membres nous a través del vostre proveïdor d'identitat i estan pendents de revisió."
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingAdminApprovalCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingAdminApprovalCount } membres nous mitjançant el vostre proveïdor d'identitat i estan pendents de revisió."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -10524,11 +10555,11 @@
       "Beta": [
         "Beta"
       ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "Es facturarà a ${ monthlyDiscountedPrice } els primers sis mesos i es renovarà a ${ monthlyRenewalPrice }."
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Es facturarà a ${ monthlyDiscountedPriceElement } els primers sis mesos i es renovarà a ${ monthlyRenewalPriceElement }."
       ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "Es facturarà a ${ yearlyDiscountedPrice } els primers dotze mesos i es renovarà a ${ yearlyRenewalPrice }."
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Es facturarà a ${ yearlyDiscountedPriceElement } els primers dotze mesos i es renovarà a ${ yearlyRenewalPriceElement }."
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
@@ -11241,11 +11272,17 @@
       "Got it": [
         "D'acord"
       ],
+      "Group created": [
+        "S'ha creat el grup"
+      ],
       "Group deleted": [
         "S'ha eliminat el grup."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupeu correus electrònics en la mateixa conversa a la safata d'entrada o mostreu-los separadament."
+      ],
+      "Group roles assigned": [
+        "S'han assignat els rols del grup"
       ],
       "Groups": [
         "Grups"
@@ -13179,7 +13216,7 @@
         "Si s'inhabilita, s'evita que imatges remotes es carreguin sense el vostre coneixement.\t"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us ho notificarem si no ho fos."
+        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us ho notificaríem si no ho fos."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
@@ -13351,6 +13388,9 @@
       ],
       "You can now sign in to your account again.": [
         "Ja podeu tornar a iniciar sessió al vostre compte."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Només podeu tenir una instància de xat oberta alhora. Tanqueu les converses anteriors abans de començar-ne una de nova."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
@@ -13777,6 +13817,9 @@
       ],
       "Group Owner": [
         "Propietari del grup"
+      ],
+      "Invited": [
+        "Convidat"
       ],
       "Paused": [
         "En pausa"
@@ -14452,6 +14495,9 @@
       "App password": [
         "Contrasenya de l'aplicació"
       ],
+      "App Settings": [
+        "Preferències de l'aplicació"
+      ],
       "Apply filter to existing emails": [
         "Aplica el filtre als correus existents"
       ],
@@ -14680,8 +14726,8 @@
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
       ],
-      "Confirm MX records added": [
-        "Confirmeu que s'han afegit els registres MX"
+      "Confirm MX records updated": [
+        "Confirmeu que s'han actualitzat els codis MX"
       ],
       "Confirm new password": [
         "Confirmi la nova contrasenya"
@@ -14953,6 +14999,12 @@
       ],
       "Event notifications": [
         "Notificacions de l'esdeveniment"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
       ],
       "Exclude Spam/Trash from All mail": [
         "Exclou Correu brossa / Paperera de Tot el correu"
@@ -15251,6 +15303,9 @@
       "Navigation": [
         "Navegació"
       ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
       "New display name": [
         "Nou nom per a mostrar"
       ],
@@ -15358,6 +15413,9 @@
       ],
       "Other amount": [
         "Una altra quantitat"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
       ],
       "Passkeys": [
         "Claus d'accés"
@@ -15478,6 +15536,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ],
+      "Regular expression": [
+        "Expressió regular"
       ],
       "Remove": [
         "Esborra"
@@ -15657,6 +15718,9 @@
       "Start weekday": [
         "Primer dia de la setmana"
       ],
+      "Starts with": [
+        "Comença amb"
+      ],
       "State": [
         "Estat"
       ],
@@ -15782,6 +15846,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ],
       "Use another payment method": [
         "Utilitzeu un altre mètode de pagament"
@@ -16855,6 +16922,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Totes les accions de filtre s'aplicaran a tots els missatges del vostre compte ${ MAIL_APP_NAME }. No s'enviaran correus electrònics de resposta automàtica."
       ],
@@ -16864,6 +16934,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
       ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Visualitzeu l'activitat de ${ PASS_APP_NAME } en la vostra organització."
       ],
@@ -16872,6 +16954,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Mostra els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
@@ -21930,8 +22015,8 @@
       "Updated": [
         "Actualitzat"
       ],
-      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
-        "Els usuaris que hàgiu configurat com a privats han d'acceptar la invitació per completar la configuració. Els enviarem una invitació un cop els aproveu."
+      "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Els usuaris configurats com a privats han d'acceptar la invitació per acabar la configuració. Els enviarem una invitació un cop ho aproveu."
       ]
     },
     "scim: Action": {
@@ -23355,13 +23440,13 @@
         "S'ha desconnectat ${ n } usuari de l'inici de sessió únic (SSO).",
         "S'han desconnectat ${ n } usuaris de l'inici de sessió únic (SSO)."
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } usuari s'ha unit a la vostra organització mitjançant el vostre proveïdor d'identitat. Reviseu el compte ara:",
-        "${ n } usuaris s'han unit a la vostra organització mitjançant el vostre proveïdor d'identitat. Reviseu els seus comptes ara:"
+      "${ n } user has joined your organization through your identity provider": [
+        "${ n } usuari s'ha unit a la vostra organització a través del vostre proveïdor d'identitat.",
+        "${ n } usuaris s'han unit a la vostra organització a través del vostre proveïdor d'identitat."
       ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } usuari està inactiu. Podeu suprimir aquest usuari de la vostra organització amb seguretat.",
-        "${ n } usuaris estan inactius. Podeu eliminar-los de la vostra organització amb seguretat."
+      "${ n } user is inactive.": [
+        "${ n } usuari està inactiu.",
+        "${ n } usuaris estan inactius."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuari demana la vostra ajuda per a iniciar la sessió al seu compte de ${ BRAND_NAME } amb un inici de sessió únic.",
@@ -25935,6 +26020,9 @@
       "Get more from your password manager": [
         "Aprofiteu més el vostre gestor de contrasenyes"
       ],
+      "Get more from your privacy suite": [
+        "Traieu-ne més profit del vostre paquet de privacitat"
+      ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
       ],
@@ -26876,6 +26964,9 @@
       "WireGuard configuration": [
         "Configuració del WireGuard"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Amb el vostre compte de ${ BRAND_NAME } obtindreu accés a totes les aplicacions de ${ BRAND_NAME }"
+      ],
       "You are all set": [
         "Ja esteu a punt"
       ],
@@ -27320,6 +27411,9 @@
       "Verified email address": [
         "Adreça de correu electrònic verificada"
       ],
+      "Version 6 OpenPGP key": [
+        "Clau OpenPGP de la versió 6"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
       ],
@@ -27364,6 +27458,9 @@
       "Group membership paused": [
         "S'ha pausat la subscripció del grup."
       ],
+      "Resuming role assignment": [
+        "S'està reprenent l'assignació de rols"
+      ],
       "Role assignment paused": [
         "S'ha pausat l'assignació de rols"
       ],
@@ -27373,11 +27470,14 @@
       "User declined invitation": [
         "L'usuari ha rebutjat la invitació."
       ],
-      "User is a group": [
-        "L'usuari és un grup"
+      "User is a group owner": [
+        "L'usuari és propietari d'un grup"
       ],
       "via ${ groupNames }": [
         "mitjançant ${ groupNames }"
+      ],
+      "Waiting for admin approval": [
+        "S'està esperant l'aprovació de l'administrador"
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
@@ -27539,9 +27639,9 @@
       "Confirm all": [
         "Confirma-ho tot"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "No s'ha pogut activar automàticament l'accés d'administrador per a ${ n } usuari perquè les seves claus de xifratge s'han actualitzat recentment:",
-        "No s'ha pogut activar automàticament l'accés d'administrador per a ${ n } usuaris perquè les seves claus de xifratge s'han actualitzat recentment:"
+      "Could not enable admin access for ${ n } user": [
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuari",
+        "No s'ha pogut activar l'accés d'administrador per a ${ n } usuaris"
       ],
       "Could not enable administrator access: ${ error }": [
         "No s'ha pogut activar l'accés de l'administrador: ${ error }"
@@ -27582,6 +27682,10 @@
       "Request user permission for data access": [
         "Sol·licita permís a l'usuari per accedir a les dades"
       ],
+      "Review their account now.": [
+        "Reviseu el seu compte ara.",
+        "Reviseu els seus comptes ara."
+      ],
       "Revoke access": [
         "Revoca l'accés"
       ],
@@ -27593,6 +27697,9 @@
       ],
       "The user must have an address to request data access": [
         "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
+      ],
+      "Their encryption keys were updated while we were making changes.": [
+        "Les seves claus d'encriptació s'han actualitzat mentre estàvem fent canvis."
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
         "Això cancel·larà la sol·licitud pendent d'accés de l'administrador a les dades de l'usuari o al restabliment de la contrasenya."
@@ -27611,6 +27718,10 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "Podeu ${ reject } aquesta sol·licitud si no voleu continuar."
+      ],
+      "You can safely remove this user from your organization.": [
+        "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
+        "Podeu eliminar aquests usuaris de la vostra organització de manera segura."
       ]
     },
     "Update font modal": {
@@ -28112,6 +28223,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "Are you sure you want to remove your notification email?": [
         "Esteu segur que voleu esborrar el vostre correu electrònic de notificacions?"

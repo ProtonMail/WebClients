@@ -782,6 +782,9 @@
       "Re-index": [
         "Επαναδημιουργία ευρετηρίου"
       ],
+      "Re-indexing in progress": [
+        "Επαναδημιουργία ευρετηρίου σε εξέλιξη"
+      ],
       "Re-sign": [
         "Επανασυνδεθείτε"
       ],
@@ -1046,6 +1049,9 @@
       "Sign up": [
         "Εγγραφείτε"
       ],
+      "Skip": [
+        "Παράλειψη"
+      ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
       ],
@@ -1144,6 +1150,9 @@
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
+      ],
+      "Upload anyway": [
+        "Ανέβασμα οπωσδήποτε"
       ],
       "Upload file": [
         "Ανέβασμα αρχείου"
@@ -3665,12 +3674,6 @@
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
-      "Invalid ${ name } code": [
-        "Μη έγκυρο ${ name } κωδικός"
-      ],
-      "Invalid card number": [
-        "Μη έγκυρος αριθμός κάρτας"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -3679,9 +3682,6 @@
       ],
       "Invalid email address": [
         "Μη έγκυρη διεύθυνση email"
-      ],
-      "Invalid expiration date": [
-        "Μη έγκυρη ημερομηνία λήξης"
       ],
       "Invalid IBAN": [
         "Μη έγκυρο IBAN"
@@ -3749,9 +3749,6 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
@@ -5256,6 +5253,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ],
+      "Album": [
+        "Άλμπουμ"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Όλοι (${ totalFoldersCount } φάκελος)",
         "Όλοι (${ totalFoldersCount } φάκελοι)"
@@ -5525,6 +5525,10 @@
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
+      ],
+      "Do you still want to upload it?": [
+        "Θέλετε ακόμα να το μεταμορφώσετε;",
+        "Θέλετε ακόμα να τα μεταμορφώσετε;"
       ],
       "Done": [
         "Έτοιμο"
@@ -6245,6 +6249,9 @@
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
+      "Re-indexing in progress": [
+        "Επαναδημιουργία ευρετηρίου σε εξέλιξη"
+      ],
       "Ready to add some photos?": [
         "Είστε έτοιμοι να προσθέσετε φωτογραφίες;"
       ],
@@ -6498,6 +6505,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Αυτό ΔΕΝ μπορεί να αναιρεθεί. Παρακαλούμε εισάγετε το όνομα της συσκευής για να επιβεβαιώσετε την αφαίρεση."
       ],
+      "This file appears to be empty:": [
+        "Αυτό το αρχείο φαίνεται να είναι κενό:",
+        "Αυτά τα αρχεία φαίνονται να είναι κενά:"
+      ],
       "This file is too large to preview": [
         "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
       ],
@@ -6684,6 +6695,9 @@
       ],
       "Uploaded": [
         "Ανέβηκε"
+      ],
+      "Uploaded - file is empty": [
+        "Μεταμορφώθηκε - το αρχείο είναι κενό"
       ],
       "Uploading": [
         "Γίνεται μεταφόρτωση"
@@ -6968,6 +6982,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Τα αρχεία σας καταχωρούνται εκ νέου στο ευρετήριο. Μπορείτε να συνεχίσετε την αναζήτηση - τα αποτελέσματα ενδέχεται να μην είναι ολοκληρωμένα μέχρι να ολοκληρωθεί. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Τα αρχεία σας δεν είναι πλέον προσβάσιμα, λόγω επαναφοράς κωδικού πρόσβασης. Για να αποκτήσετε ξανά πρόσβαση, ανεβάστε ξανά το παλιό κλειδί κρυπτογράφησης. ${ KeyReactivationButton }"
@@ -7422,6 +7439,12 @@
       "Environment compatible": [
         "Συμβατό με το περιβάλλον"
       ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
+      ],
       "Expired": [
         "Έχει λήξει"
       ],
@@ -7503,8 +7526,8 @@
       "Index kinds": [
         "Τύποι ευρετηρίου"
       ],
-      "Initial indexing": [
-        "Αρχικοποίηση ευρετηρίου"
+      "Indexing": [
+        "Δημιουργία ευρετηρίου"
       ],
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
@@ -7587,6 +7610,9 @@
       "Never expires": [
         "Δε λήγει ποτέ"
       ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
       "New password": [
         "Νέος κωδικός"
       ],
@@ -7619,6 +7645,9 @@
       ],
       "Outdated version": [
         "Ξεπερασμένη έκδοση"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -7673,6 +7702,9 @@
       ],
       "Region": [
         "Περιοχή"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
       ],
       "Replace existing folder or file": [
         "Αντικατάσταση υπάρχοντος φακέλου ή αρχείου"
@@ -7749,6 +7781,9 @@
       "Start date": [
         "Ημερομηνία Έναρξης"
       ],
+      "Starts with": [
+        "Ξεκινάει με"
+      ],
       "State": [
         "Πολιτεία"
       ],
@@ -7814,6 +7849,9 @@
       ],
       "Uploaded by": [
         "Ανέβηκε από"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
       ],
       "User opted in": [
         "Ο χρήστης επέλεξε να συμμετάσχει"
@@ -8216,6 +8254,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Η δωρεάν δοκιμή σας έχει λήξει. ${ nonAutoRenewalAction }"
       ],
@@ -13141,6 +13197,9 @@
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
       ],
+      "Upload empty file?": [
+        "Μεταφόρτωση κενού αρχείου;"
+      ],
       "Uploaded": [
         "Ανέβηκε"
       ],
@@ -13268,6 +13327,26 @@
         "Έχετε 5 GB αποθηκευτικού χώρου"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Expires": [
+        "Λήγει"
+      ],
+      "Fingerprint": [
+        "Δακτυλικό αποτύπωμα"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Type": [
+        "Τύπος"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Σήμερα"
@@ -13364,6 +13443,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
       ],
+      "Version 6 OpenPGP key": [
+        "Κλειδί OpenPGP έκδοσης 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
       ]
@@ -13406,6 +13488,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Αποκτήστε το Drive για Επιχειρήσεις"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
       ]
     },
     "Validation": {
@@ -13524,6 +13611,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",

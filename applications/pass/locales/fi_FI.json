@@ -752,6 +752,9 @@
       "Folder": [
         "Kansio"
       ],
+      "Item": [
+        "Kohde"
+      ],
       "Reason": [
         "Syy"
       ],
@@ -1931,6 +1934,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2680,6 +2687,9 @@
       ],
       "Address details": [
         "Osoitetiedot"
+      ],
+      "Advanced": [
+        "Edistynyt"
       ],
       "Alias": [
         "Alias"
@@ -3918,6 +3928,9 @@
       ],
       "Coupon": [
         "Etukoodi"
+      ],
+      "e.g. 60": [
+        "esim. 60"
       ],
       "e.g. My automation script": [
         "esim. Oma automaatioskriptini"

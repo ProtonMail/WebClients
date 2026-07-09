@@ -1175,6 +1175,12 @@
       "Failed to set default mailbox": [
         "Nastavenie predvolenej poštovej schránky zlyhalo"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa spustiť SSH agenta: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Nepodarilo sa zastaviť SSH agenta: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Nepodarilo sa synchronizovať aliasy"
       ],
@@ -1570,6 +1576,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky, platobné karty a identity."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } použije SSH kľúče uložené vo vašich trezoroch."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je povolený."
@@ -2141,6 +2150,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2170,6 +2185,9 @@
       ],
       "No network connection": [
         "Žiadne sieťové pripojenie"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "V ${ PASS_SHORT_APP_NAME } neboli nájdené žiadne SSH kľúče. Vytvorte položky SSH kľúčov na použitie s agentom."
       ],
       "No vaults available.": [
         "Nie sú k dispozícii žiadne trezory."
@@ -3029,6 +3047,9 @@
       ],
       "Address details": [
         "Detaily adresy"
+      ],
+      "Advanced": [
+        "Pokročilé"
       ],
       "Alias": [
         "Alias"
@@ -3981,6 +4002,9 @@
       "Update": [
         "Aktualizovať"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Použiť ${ PASS_APP_NAME } ako SSH agenta"
+      ],
       "Use for AI agent": [
         "Použiť pre AI agenta"
       ],
@@ -4559,6 +4583,12 @@
       "Random prefix generation successfully enabled": [
         "Generovanie náhodnej predpony bolo úspešne povolené"
       ],
+      "SSH agent successfully started": [
+        "SSH agent bol úspešne spustený"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent bol úspešne zastavený"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľa.",
         "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
@@ -5016,6 +5046,9 @@
       "SPF (Optional)": [
         "SPF (nepovinné)"
       ],
+      "SSH Agent": [
+        "SSH Agent"
+      ],
       "Status": [
         "Stav"
       ],
@@ -5371,6 +5404,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Pri spúšťaní ${ PASS_APP_NAME } sa niečo pokazilo. Skúste, prosím, obnoviť alebo znova načítať rozšírenie."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent vyžaduje použitie SSH kľúčov, čo vo vašom pláne nie je k dispozícii."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Predpona aliasu nemôže byť dlhšia ako 40 znakov"

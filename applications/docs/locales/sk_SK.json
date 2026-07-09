@@ -3326,9 +3326,6 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
-      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktov nemá emailovú adresu: ${ noEmailsContactNamesList }",
         "Niektoré kontakty nemajú emailové adresy: ${ noEmailsContactNamesList } ",
@@ -4616,12 +4613,6 @@
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } vybraný",
-        "${ selectedCount } vybrané",
-        "${ selectedCount } vybraných",
-        "${ selectedCount } vybraných"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } vybratá zložka",
         "${ selectedFoldersCountLocalized } vybraté zložky",
@@ -4910,9 +4901,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitálny podpis overený. Tento priečinok bol bezpečne nahraný prostredníctvom ${ emailAddress }."
       ],
-      "Disable table of contents": [
-        "Deaktivovať obsah"
-      ],
       "Display word count": [
         "Zobraziť počet slov"
       ],
@@ -4966,9 +4954,6 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
-      ],
-      "Enable table of contents": [
-        "Povoliť obsah"
       ],
       "End-to-end encrypted": [
         "End-to-end šifrované"
@@ -5087,8 +5072,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Pomôžte nám vylepšiť túto funkciu tým, že nahlásite tento problém. Ak vám nevadí zdieľať obsah tabuľky, priložte k hláseniu nižšie uvedené informácie na účely ladenia."
+      ],
       "here": [
         "tu"
+      ],
+      "Hide table of contents": [
+        "Skryť obsah"
       ],
       "High Priority": [
         "Vysoká priorita"
@@ -5318,8 +5309,8 @@
       "Only the people with the link and the password can access this folder.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto priečinku."
       ],
-      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Ups! Táto tabuľka nedokáže uložiť vaše posledné úpravy, preto sme úpravy pozastavili, aby ste o svoju prácu neprišli.\nPomôžte nám vylepšiť túto funkciu tým, že nahlásite tento problém. Ak vám nevadí zdieľať obsah tabuľky, priložte k hláseniu nižšie uvedené informácie o ladení."
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Ups! Táto tabuľka nedokáže uložiť vaše posledné úpravy, preto sme pozastavili úpravy, aby ste o svoju prácu neprišli."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
@@ -5497,6 +5488,9 @@
       ],
       "Shared on": [
         "Zdieľané"
+      ],
+      "Show table of contents": [
+        "Zobraziť obsah"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
@@ -10959,6 +10953,26 @@
         "Vaše odhalené informácie"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Akcie"
+      ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
+      "Fingerprint": [
+        "Odtlačok prsta"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
@@ -11043,6 +11057,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
       ],
+      "Version 6 OpenPGP key": [
+        "Kľúč OpenPGP verzie 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
       ]
@@ -11075,6 +11092,11 @@
       ],
       "The user must have an address to request data access": [
         "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]
     },
     "Validation": {

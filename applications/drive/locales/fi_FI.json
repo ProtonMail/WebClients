@@ -779,6 +779,9 @@
       "Re-index": [
         "Indeksoi uudelleen"
       ],
+      "Re-indexing in progress": [
+        "Uudelleenindeksointi käynnissä"
+      ],
       "Re-sign": [
         "Allekirjoita uudelleen"
       ],
@@ -850,6 +853,9 @@
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
+      ],
+      "Report abuse": [
+        "Ilmoita väärinkäytöstä"
       ],
       "Report an issue": [
         "Ilmoita ongelmasta"
@@ -1034,6 +1040,9 @@
       "Sign up": [
         "Rekisteröidy"
       ],
+      "Skip": [
+        "Ohita"
+      ],
       "Skip verification": [
         "Ohita vahvistus"
       ],
@@ -1129,6 +1138,9 @@
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
+      ],
+      "Upload anyway": [
+        "Tallenna silti"
       ],
       "Upload file": [
         "Tallenna tiedosto"
@@ -1613,6 +1625,9 @@
       ],
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
+      ],
+      "Size": [
+        "Koko"
       ],
       "Status": [
         "Tila"
@@ -3560,12 +3575,6 @@
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
       ],
-      "Invalid ${ name } code": [
-        "Virheellinen ${ name }-koodi"
-      ],
-      "Invalid card number": [
-        "Virheellinen kortin numero"
-      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -3574,9 +3583,6 @@
       ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
-      ],
-      "Invalid expiration date": [
-        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid IBAN": [
         "Virheellinen IBAN"
@@ -5569,6 +5575,9 @@
       "How does encrypted search work?": [
         "Miten salattu haku toimii?"
       ],
+      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+        "Vahvistan täten vilpittömästi, että raportissa annetut tiedot ja lausunnot ovat oikeita ja täydellisiä."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Jos näitä tiedostoja ei ole ladattu kokonaan paikallisesti laitteelle ${ deviceName }, menetät pääsyn niihin."
       ],
@@ -6043,6 +6052,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
+      ],
+      "Re-indexing in progress": [
+        "Uudelleenindeksointi käynnissä"
       ],
       "Ready to add some photos?": [
         "Oletko valmis lisäämään kuvia?"
@@ -6738,6 +6750,9 @@
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Tiedostojasi indeksoidaan parhaillaan uudelleen. Voit jatkaa hakua – tulokset saattavat olla puutteellisia, kunnes indeksointi on valmis. Ilmoitamme sinulle, kun se on valmis."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Tiedostosi eivät ole enää salasanan uudelleenasetuksen vuoksi käytettävissä. Palauta käyttöoikeus lataamalla vanha salausavaimesi uudelleen. ${ KeyReactivationButton }"
       ],
@@ -7242,8 +7257,8 @@
       "Index kinds": [
         "Indeksilajit"
       ],
-      "Initial indexing": [
-        "Alustava indeksointi"
+      "Indexing": [
+        "Indeksoidaan"
       ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
@@ -12880,6 +12895,26 @@
         "Sinulla on 5 Gt tallennustilaa"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Tänään"
@@ -12976,6 +13011,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
       ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
       ]
@@ -13018,6 +13056,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Hanki Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     },
     "Validation": {

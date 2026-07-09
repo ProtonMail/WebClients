@@ -782,6 +782,9 @@
       "Re-index": [
         "Ré-indexer"
       ],
+      "Re-indexing in progress": [
+        "Ré-indexation en cours"
+      ],
       "Re-sign": [
         "Signer à nouveau"
       ],
@@ -1046,6 +1049,9 @@
       "Sign up": [
         "S'inscrire"
       ],
+      "Skip": [
+        "Ignorer"
+      ],
       "Skip verification": [
         "Ignorer la vérification"
       ],
@@ -1144,6 +1150,9 @@
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"
+      ],
+      "Upload anyway": [
+        "Importer quand même"
       ],
       "Upload file": [
         "Importer un fichier"
@@ -3665,12 +3674,6 @@
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
-      "Invalid ${ name } code": [
-        "Le code ${ name } n'est pas valide."
-      ],
-      "Invalid card number": [
-        "Le numéro de carte n’est pas valide."
-      ],
       "Invalid code": [
         "Le code n'est pas valide."
       ],
@@ -3679,9 +3682,6 @@
       ],
       "Invalid email address": [
         "L'adresse e-mail n'est pas valide."
-      ],
-      "Invalid expiration date": [
-        "La date d'expiration n’est pas valide."
       ],
       "Invalid IBAN": [
         "Cet IBAN n'est pas valide."
@@ -3734,6 +3734,9 @@
       ],
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
+      ],
+      "No drive found to import": [
+        "Aucun disque à importer détecté"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -3984,6 +3987,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Conflit de stratégie inconnu : ${ strategy }"
@@ -5662,6 +5668,9 @@
       "Files and folders that others shared with you will appear here": [
         "Les dossiers et fichiers partagés avec vous par d'autres utilisateurs s'afficheront ici."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
       "finance": [
         "finance"
       ],
@@ -6232,6 +6241,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
+      ],
+      "Re-indexing in progress": [
+        "Ré-indexation en cours"
       ],
       "Ready to add some photos?": [
         "Prêt à ajouter des photos ?"
@@ -6957,6 +6969,9 @@
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Vos fichiers sont en cours de ré-indexation. Vous pouvez continuer à chercher ; les résultats peuvent être incomplets jusqu'à la fin du processus. Nous vous préviendrons quand il sera terminé."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Vos fichiers ne sont plus accessibles suite à une réinitialisation du mot de passe. Rechargez l'ancienne clé de chiffrement pour retrouver l'accès. ${ KeyReactivationButton }"
       ],
@@ -7413,6 +7428,12 @@
       "Environment compatible": [
         "Environnement compatible"
       ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
+      ],
       "Expired": [
         "Expiré"
       ],
@@ -7494,8 +7515,8 @@
       "Index kinds": [
         "Types d'index"
       ],
-      "Initial indexing": [
-        "Indexation initiale"
+      "Indexing": [
+        "Indexation en cours"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
@@ -7578,6 +7599,9 @@
       "Never expires": [
         "N'expire jamais"
       ],
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
       "New password": [
         "Nouveau mot de passe"
       ],
@@ -7610,6 +7634,9 @@
       ],
       "Outdated version": [
         "Version obsolète"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
       ],
       "Password": [
         "Mot de passe"
@@ -7664,6 +7691,9 @@
       ],
       "Region": [
         "Région"
+      ],
+      "Regular expression": [
+        "Expression régulière"
       ],
       "Replace existing folder or file": [
         "Remplacer le dossier ou le fichier existant"
@@ -7740,6 +7770,9 @@
       "Start date": [
         "Date de début"
       ],
+      "Starts with": [
+        "Commence par"
+      ],
       "State": [
         "État"
       ],
@@ -7805,6 +7838,9 @@
       ],
       "Uploaded by": [
         "Importé par"
+      ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
       ],
       "User opted in": [
         "L'utilisateur a accepté"
@@ -8207,6 +8243,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Votre essai gratuit est terminé. ${ nonAutoRenewalAction }"
       ],
@@ -12311,6 +12365,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } d'importations gratuites."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Récupération du compte"
       ],
@@ -13313,6 +13370,26 @@
         "Vous avez 5 Go d'espace de stockage."
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Created": [
+        "Créé"
+      ],
+      "Expires": [
+        "Expire"
+      ],
+      "Fingerprint": [
+        "Empreinte digitale"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
@@ -13409,6 +13486,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
       ],
+      "Version 6 OpenPGP key": [
+        "Clé OpenPGP version 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
       ]
@@ -13451,6 +13531,11 @@
     "Upsell": {
       "Get Drive for Business": [
         "Obtenir Drive for Business"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     },
     "Validation": {
@@ -13569,6 +13654,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",

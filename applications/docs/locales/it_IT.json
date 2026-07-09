@@ -3234,7 +3234,7 @@
         "Timeout della richiesta"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "Search failed": [
         "Ricerca non riuscita"
@@ -4366,10 +4366,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } contatto selezionato",
         "${ selectedContactsLength }/${ contactsLength } contatti selezionati"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } selezionato",
-        "${ selectedCount } selezionati"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } cartella selezionata",
@@ -10283,6 +10279,20 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Fingerprint": [
+        "Impronta digitale"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Today icon tooltip in mini calendar": {

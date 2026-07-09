@@ -2220,6 +2220,9 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
+      "Size": [
+        "Koko"
+      ],
       "Status": [
         "Tila"
       ],
@@ -4901,12 +4904,6 @@
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
       ],
-      "Invalid ${ name } code": [
-        "Virheellinen ${ name }-koodi"
-      ],
-      "Invalid card number": [
-        "Virheellinen kortin numero"
-      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -4915,9 +4912,6 @@
       ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
-      ],
-      "Invalid expiration date": [
-        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid expiration time": [
         "Virheellinen tuhoutumisaika"
@@ -9985,9 +9979,6 @@
       "Navigation": [
         "Navigaatio"
       ],
-      "New": [
-        "Uusi"
-      ],
       "New password": [
         "Uusi salasana"
       ],
@@ -10014,9 +10005,6 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Ilmoitukset on poistettu käytöstä. Voit ottaa ne käyttöön selaimen asetuksissa."
-      ],
-      "Open in a new tab": [
-        "Avaa uudessa välilehdessä"
       ],
       "Operating system": [
         "Käyttöjärjestelmä"
@@ -16228,6 +16216,26 @@
         "Lyhyempi osoittesi on nyt valmis"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Tänään"
@@ -16323,6 +16331,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
       ]
     },
     "tooltip": {
@@ -16372,6 +16383,11 @@
       ],
       "Your default font will look like following:": [
         "Tekstisi näyttää oletusarvoisesti tältä:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     },
     "Validation": {

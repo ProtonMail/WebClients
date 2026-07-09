@@ -1005,6 +1005,9 @@
       "Sign up": [
         "註冊"
       ],
+      "Skip": [
+        "略過"
+      ],
       "Skip verification": [
         "略過驗證"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Upload and share files": [
         "上傳並共享檔案"
+      ],
+      "Upload anyway": [
+        "仍要上載"
       ],
       "Upload file": [
         "上載檔案"
@@ -3481,12 +3487,6 @@
       "Incorrect username": [
         "錯誤的使用者名稱"
       ],
-      "Invalid ${ name } code": [
-        "${ name } 代碼無效"
-      ],
-      "Invalid card number": [
-        "卡號無效"
-      ],
       "Invalid code": [
         "代碼無效"
       ],
@@ -3495,9 +3495,6 @@
       ],
       "Invalid email address": [
         "電郵位址無效"
-      ],
-      "Invalid expiration date": [
-        "到期日無效"
       ],
       "Invalid IBAN": [
         "國際銀行帳號不正確"
@@ -6975,9 +6972,6 @@
       ],
       "Index kinds": [
         "排序種類"
-      ],
-      "Initial indexing": [
-        "初始索引"
       ],
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
@@ -12376,6 +12370,14 @@
       ],
       "You’ve got 5 GB of storage": [
         "您已獲得 5 GB 的儲存空間"
+      ]
+    },
+    "Title header for keys table": {
+      "Created": [
+        "已創建"
+      ],
+      "Expires": [
+        "到期日"
       ]
     },
     "Today icon tooltip in mini calendar": {

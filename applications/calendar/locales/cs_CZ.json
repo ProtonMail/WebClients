@@ -3872,12 +3872,6 @@
       "Interval cannot be empty": [
         "Interval nemůže být prázdný"
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -3886,9 +3880,6 @@
       ],
       "Invalid email address": [
         "Neplatná e-mailová adresa"
-      ],
-      "Invalid expiration date": [
-        "Neplatné datum expirace"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -5457,10 +5448,10 @@
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
-        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+        "**Získají ${ refereeRewardAmount }** v kreditech, pokud si pořídí předplatné."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+        "**Získáte ${ referrerRewardAmount }** kreditů za každého přítele, který si pořídí předplatné."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -5907,7 +5898,7 @@
         "Jen za ${ bundlePlanPriceInline }"
       ],
       "Forgot password?": [
-        "Zapomenuté heslo?"
+        "Zapomněli jste heslo?"
       ],
       "Frequency modifications will be lost.": [
         "Změny frekvence budou ztraceny."
@@ -6618,7 +6609,7 @@
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll remind you to verify your password again later": [
-        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
+        "Později vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -7016,7 +7007,7 @@
     },
     "Key badge": {
       "Active Signer": [
-        "Aktivní podpisový klíč"
+        "Aktivní podepisovatel"
       ],
       "Compromised": [
         "Kompromitovaný"
@@ -7286,7 +7277,7 @@
         "Příště nezobrazovat"
       ],
       "Drive": [
-        "Disk"
+        "Drive"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
@@ -13017,7 +13008,7 @@
         "Ověření selhalo"
       ],
       "Verify your password": [
-        "Ověření hesla"
+        "Ověřte své heslo"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."
@@ -13101,6 +13092,20 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vyberte číslo"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Akce"
+      ],
+      "Fingerprint": [
+        "Digitální otisk"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Type": [
+        "Typ"
       ]
     },
     "Title; create calendar modal": {

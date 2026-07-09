@@ -1165,6 +1165,12 @@
       "Failed to set default mailbox": [
         "Varsayılan e-posta kutusu ayarlanamadı"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH agent başlatılamadı: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH agent durdurulamadı: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Takma adlar eşitlenemedi"
       ],
@@ -1534,6 +1540,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } kasalarınızda kaydedilmiş SSH anahtarlarını kullanacaktır."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
@@ -2090,7 +2099,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2121,6 +2131,9 @@
       ],
       "No network connection": [
         "Ağ bağlantısı yok"
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME } içinde SSH anahtarı bulunamadı. Aracı ile birlikte kullanmak üzere SSH anahtarı öğeleri oluşturun."
       ],
       "No vaults available.": [
         "Kullanılabilecek bir kasa yok."
@@ -2940,6 +2953,9 @@
       ],
       "Address details": [
         "Adres bilgileri"
+      ],
+      "Advanced": [
+        "Gelişmiş"
       ],
       "Alias": [
         "Takma ad"
@@ -3892,6 +3908,9 @@
       "Update": [
         "Güncelle"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "SSH agent olarak ${ PASS_APP_NAME } kullanın"
+      ],
       "Use for AI agent": [
         "Yapay zeka aracısı için kullan"
       ],
@@ -4462,6 +4481,12 @@
       "Random prefix generation successfully enabled": [
         "Rastgele ön ek oluşturma özelliği açıldı"
       ],
+      "SSH agent successfully started": [
+        "SSH agent başarıyla başlatıldı"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH agent başarıyla durduruldu"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
         "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz"
@@ -4907,6 +4932,9 @@
       "SPF (Optional)": [
         "SPF (isteğe bağlı)"
       ],
+      "SSH Agent": [
+        "SSH Agent"
+      ],
       "Status": [
         "Durum"
       ],
@@ -5252,6 +5280,9 @@
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH agent tarifenizde bulunmayan SSH anahtarlarının kullanılmasını gerektirir."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Takma ad ön ekiniz 40 karakterden uzun olamaz"

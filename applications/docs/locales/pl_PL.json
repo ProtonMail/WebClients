@@ -4388,12 +4388,6 @@
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }",
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount }",
-        "${ selectedCount }",
-        "${ selectedCount }",
-        "${ selectedCount }"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } zaznaczony folder",
         "${ selectedFoldersCountLocalized } zaznaczone foldery",
@@ -10432,6 +10426,17 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
+      ]
+    },
+    "Title header for keys table": {
+      "Fingerprint": [
+        "Odcisk klucza"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Rodzaj"
       ]
     },
     "Today icon tooltip in mini calendar": {

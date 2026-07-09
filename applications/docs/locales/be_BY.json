@@ -79,7 +79,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць карыстальнікаў або групы для абагулення"
+        "Дадаць карыстальнікаў або групы для абагульвання"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -342,6 +342,9 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
+      "Download debug information": [
+        "Спампаваць адладачную інфармацыю"
+      ],
       "Download logs": [
         "Спампаваць журналы"
       ],
@@ -384,11 +387,20 @@
       "Export contact group": [
         "Экспартаваць групу кантактаў"
       ],
+      "Export editor state for version": [
+        "Экспартаваць стан рэдактара для версіі"
+      ],
       "Export selection as .vcf": [
         "Экспарт вылучэння ў фармат .vcf"
       ],
+      "Export this version (as docx)": [
+        "Экспартаваць гэту версію (у фармаце docx)"
+      ],
       "Export this version (as xlsx)": [
         "Экспартаваць гэту версію (у фармаце xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Экспартаваць стан YJS для версіі"
       ],
       "Forgot password?": [
         "Забылі пароль?"
@@ -645,6 +657,9 @@
       "Reload": [
         "Перазагрузіць"
       ],
+      "Reload spreadsheet": [
+        "Перазагрузіць электронную табліцу"
+      ],
       "Remove": [
         "Выдаліць"
       ],
@@ -673,6 +688,9 @@
         "Замяніць файл"
       ],
       "Report a problem": [
+        "Паведаміць аб праблеме"
+      ],
+      "Report issue": [
         "Паведаміць аб праблеме"
       ],
       "Request a call": [
@@ -3200,6 +3218,9 @@
       "Failed to remove older revisions": [
         "Не ўдалося выдаліць больш старую рэдакцыю"
       ],
+      "Failed to rename document": [
+        "Не ўдалося перайменаваць дакумент"
+      ],
       "Failed to rename document. Please try again later.": [
         "Не ўдалося перайменаваць дакумент. Паспрабуйце яшчэ раз пазней."
       ],
@@ -3295,6 +3316,9 @@
       ],
       "No contacts found to import": [
         "Не знойдзены кантакты для імпартавання"
+      ],
+      "No drive found to import": [
+        "Не знойдзены дыск для імпартавання"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
@@ -3532,6 +3556,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Нечаканая памылка. Немагчыма імпартаваць файлы."
       ],
       "Unknown error": [
         "Невядомая памылка"
@@ -4589,12 +4616,6 @@
         "Выбраны ${ selectedContactsLength } кантактаў з ${ contactsLength }",
         "Выбраны ${ selectedContactsLength } кантактаў з ${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } выбраны",
-        "${ selectedCount } выбраны",
-        "${ selectedCount } выбраны",
-        "${ selectedCount } выбраны"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
         "Выбрана ${ selectedFoldersCountLocalized } папкі",
@@ -5012,6 +5033,9 @@
       "File will not be updated": [
         "Файл не будзе абноўлены"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
       "finance": [
         "фінансы"
       ],
@@ -5051,8 +5075,14 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
+      ],
       "here": [
         "тут"
+      ],
+      "Hide table of contents": [
+        "Схаваць змест"
       ],
       "High Priority": [
         "Высокі прыярытэт"
@@ -5282,6 +5312,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтай папкі."
       ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Вой! Не ўдалося захаваць апошнія змены ў гэтай электроннай табліцы. Рэдагаванне часова прыпынена, каб не дапусціць страты вашай працы."
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыйце дапаможнік, дзе можна даведацца пра рэкамендаваныя дзеянні і карысныя спасылкі."
       ],
@@ -5451,13 +5484,16 @@
         "Налады абноўлены"
       ],
       "Share via link settings": [
-        "Налады для абагулення праз спасылку"
+        "Налады для абагульвання праз спасылку"
       ],
       "Shared by": [
         "Абагулена"
       ],
       "Shared on": [
         "Абагулена"
+      ],
+      "Show table of contents": [
+        "Адлюстраваць змест"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу з прычыны памылкі сеткі. Паспрабуйце яшчэ раз пазней."
@@ -6492,6 +6528,9 @@
       ],
       "Trash": [
         "Сметніца"
+      ],
+      "Unknown user": [
+        "Невядомы карыстальнік"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -10334,6 +10373,9 @@
         "${ emailsCount } адрасоў электроннай пошты",
         "${ emailsCount } адрасоў электроннай пошты"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -10570,6 +10612,9 @@
       ],
       "Edit image": [
         "Рэдагаванне відарыса"
+      ],
+      "Editing paused": [
+        "Рэдагаванне прыпынена"
       ],
       "Email addresses": [
         "Адрасы электроннай пошты"
@@ -10962,6 +11007,26 @@
         "Вашы скампраметаваныя звесткі"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Created": [
+        "Створаны"
+      ],
+      "Expires": [
+        "Дзейнічаюць да"
+      ],
+      "Fingerprint": [
+        "Адбітак пальца"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сёння"
@@ -11046,6 +11111,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версіі 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
       ]
@@ -11078,6 +11146,11 @@
       ],
       "The user must have an address to request data access": [
         "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
       ]
     },
     "Validation": {

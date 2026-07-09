@@ -969,6 +969,9 @@
       "Sign up": [
         "Zarejestruj się"
       ],
+      "Skip": [
+        "Pomiń"
+      ],
       "Skip verification": [
         "Pomiń weryfikację"
       ],
@@ -1064,6 +1067,9 @@
       ],
       "Upload and share files": [
         "Prześlij i udostępnij pliki"
+      ],
+      "Upload anyway": [
+        "Prześlij mimo to"
       ],
       "Upload file": [
         "Prześlij plik"
@@ -3488,12 +3494,6 @@
       "Incorrect username": [
         "Nazwa użytkownika jest nieprawidłowa"
       ],
-      "Invalid ${ name } code": [
-        "Kod ${ name } jest nieprawidłowy"
-      ],
-      "Invalid card number": [
-        "Numer karty jest nieprawidłowy"
-      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -3502,9 +3502,6 @@
       ],
       "Invalid email address": [
         "Adres e-mail jest nieprawidłowy"
-      ],
-      "Invalid expiration date": [
-        "Termin ważności jest nieprawidłowy"
       ],
       "Invalid IBAN": [
         "Numer IBAN jest nieprawidłowy"
@@ -12778,6 +12775,17 @@
       ],
       "You’ve got 5 GB of storage": [
         "Masz 5 GB przestrzeni dyskowej"
+      ]
+    },
+    "Title header for keys table": {
+      "Fingerprint": [
+        "Odcisk klucza"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Type": [
+        "Rodzaj"
       ]
     },
     "Today icon tooltip in mini calendar": {

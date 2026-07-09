@@ -1,0 +1,3634 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "ca_ES"
+  },
+  "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(s'obre en una pestanya nova)"
+      ],
+      "camera off": [
+        "càmera desactivada"
+      ],
+      "camera on": [
+        "càmera activada"
+      ],
+      "Meeting controls": [
+        "Controls de la reunió"
+      ],
+      "microphone muted": [
+        "micròfon silenciat"
+      ],
+      "microphone on": [
+        "micròfon activat"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } s'ha unit a la reunió"
+      ],
+      "${ name } left the meeting": [
+        "${ name } ha marxat"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } ha baixat la mà"
+      ],
+      "${ name } raised their hand": [
+        "${ name } ha aixecat la mà"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } ha reaccionat amb ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } diu: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Un assistent s'ha afegit a la reunió"
+      ],
+      "A participant left the meeting": [
+        "Un assistent ha marxat"
+      ],
+      "A participant lowered their hand": [
+        "Un participant ha baixat la mà"
+      ],
+      "A participant raised their hand": [
+        "Un assistent ha alçat la mà"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Un participant ha reaccionat amb ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "S'ha connectat a través del mode de relleu TURN a causa de restriccions de xarxa. Això pot augmentar la latència i afectar la qualitat de la trucada."
+      ],
+      "Connection lost. Reconnecting…": [
+        "S'ha perdut la connexió. S'està tornant a connectar…"
+      ],
+      "New chat message: ${ message }": [
+        "Nou missatge de xat: ${ message }"
+      ],
+      "Now starting recording": [
+        "Ara comença l'enregistrament"
+      ],
+      "Reconnected to the meeting": [
+        "Se us ha tornat a connectar amb la reunió."
+      ],
+      "Recording saved": [
+        "S'ha desat l'enregistrament"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "S'ha iniciat l'enregistrament. En continuar a la reunió, reconeixeu i consentiu que us gravin."
+      ],
+      "Recording stopped": [
+        "S'ha aturat l'enregistrament"
+      ],
+      "Screen share started": [
+        "S'ha iniciat la compartició de pantalla"
+      ],
+      "Screen share started by ${ name }": [
+        "${ name } ha iniciat la compartició de pantalla"
+      ],
+      "Screen share stopped": [
+        "S'ha aturat la compartició de pantalla"
+      ],
+      "Screen share stopped by ${ name }": [
+        "${ name } ha aturat la compartició de pantalla"
+      ],
+      "The meeting will close in 1 minute": [
+        "La reunió finalitzarà en 1 minut"
+      ],
+      "The meeting will close in 15 seconds": [
+        "La reunió es tancarà en 15 segons"
+      ],
+      "The meeting will close in 30 seconds": [
+        "La reunió es tancarà en 30 segons"
+      ],
+      "The meeting will end in 1 minute": [
+        "La reunió finalitzarà en 1 minut"
+      ],
+      "The meeting will end in 10 minutes": [
+        "La reunió finalitzarà en 10 minuts"
+      ],
+      "The meeting will end in 15 seconds": [
+        "La reunió s'acabarà en 15 segons"
+      ],
+      "The meeting will end in 5 minutes": [
+        "La reunió finalitzarà en 5 minuts"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Aquesta reunió s'està enregistrant. En unir-vos-hi, reconeixeu i consentiu que us gravin."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Sou l'únic participant. La reunió es tancarà en 2 minuts si no s'hi uneix ningú més."
+      ],
+      "You have been disconnected from the meeting": [
+        "Se us ha desconnectat de la reunió."
+      ],
+      "You have been muted by the host": [
+        "El moderador us ha silenciat"
+      ],
+      "Your camera has been turned off by the host": [
+        "El moderador us ha desconnectat la càmera"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Botiga de ${ BRAND_NAME }"
+      ],
+      "Add account": [
+        "Afegeix un compte"
+      ],
+      "Add another account": [
+        "Afegeix un altre compte"
+      ],
+      "Admit": [
+        "Admetre"
+      ],
+      "Admit ${ participantName }": [
+        "Admetre ${ participantName }"
+      ],
+      "Admit all": [
+        "Admetre'ls tots"
+      ],
+      "Allow access": [
+        "Permeteu l'accés"
+      ],
+      "Anyone with the link can join immediately": [
+        "Qualsevol persona amb l'enllaç s'hi pot unir immediatament"
+      ],
+      "Applied": [
+        "S'ha aplicat"
+      ],
+      "Apply changes": [
+        "Aplica els canvis"
+      ],
+      "Approve participants before they can join": [
+        "Aprovar els participants abans que puguin unir-s'hi"
+      ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Assigneu ${ selectedParticipantName } com a amfitrió"
+      ],
+      "Assign new host": [
+        "Assigneu un nou amfitrió"
+      ],
+      "Attach screenshot(s)": [
+        "Adjunta una o més captures de pantalla"
+      ],
+      "Authenticate": [
+        "Autentica"
+      ],
+      "Back": [
+        "Torna"
+      ],
+      "Background blur": [
+        "Desenfocament de fons"
+      ],
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Change password": [
+        "Canvia la contrasenya"
+      ],
+      "Chat with us": [
+        "Xategeu amb nosaltres"
+      ],
+      "Close": [
+        "Tanca"
+      ],
+      "Close preview": [
+        "Tanqueu la previsualització"
+      ],
+      "Close this banner": [
+        "Tanca aquest bàner"
+      ],
+      "Continue": [
+        "Continua"
+      ],
+      "Continue without camera": [
+        "Continueu sense càmera"
+      ],
+      "Continue without mic and camera": [
+        "Continueu sense micròfon ni càmera"
+      ],
+      "Continue without microphone": [
+        "Continueu sense micròfon"
+      ],
+      "Copy address": [
+        "Copia l'adreça"
+      ],
+      "Copy invitation link": [
+        "Copiar l'enllaç d'invitació"
+      ],
+      "Copy link": [
+        "Copia l'enllaç"
+      ],
+      "Copy link and close": [
+        "Copieu l'enllaç i tanqueu"
+      ],
+      "Copy meeting link": [
+        "Copieu l'enllaç de la reunió"
+      ],
+      "Copy room link": [
+        "Copiar l'enllaç de la sala"
+      ],
+      "Create a free account": [
+        "Creeu un compte gratuït"
+      ],
+      "Create a room": [
+        "Creeu una sala"
+      ],
+      "Create an account": [
+        "Crea un compte"
+      ],
+      "Create meeting": [
+        "Creeu una reunió"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Deny": [
+        "Refusar"
+      ],
+      "Deny ${ participantName }": [
+        "Refusar ${ participantName }"
+      ],
+      "Disable ${ participantName }'s video": [
+        "Desactiveu el vídeo de ${ participantName }"
+      ],
+      "Disable camera": [
+        "Desactiveu la càmera"
+      ],
+      "Disable waiting room": [
+        "Deshabilitar la sala d'espera"
+      ],
+      "Dismiss": [
+        "Descarta"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Download": [
+        "Baixa"
+      ],
+      "Download app": [
+        "Descarregueu l'aplicació"
+      ],
+      "Download local participant report": [
+        "Descarregueu l'informe del participant local"
+      ],
+      "Download logs": [
+        "Descarrega els registres"
+      ],
+      "Download participant report": [
+        "Descarregueu l'informe de participants"
+      ],
+      "Download recording": [
+        "Descarregueu l'enregistrament"
+      ],
+      "Download room level report": [
+        "Descarregueu l'informe del nivell de la sala"
+      ],
+      "Edit": [
+        "Edita"
+      ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
+      "Edit phone number": [
+        "Edita el número de telèfon"
+      ],
+      "Edit sign-in details": [
+        "Edita detalls d'inici de sessió"
+      ],
+      "Enable camera": [
+        "Habiliteu la càmera"
+      ],
+      "Enable waiting room": [
+        "Habilitar la sala d'espera"
+      ],
+      "End meeting": [
+        "Finalitzeu la reunió"
+      ],
+      "End meeting for all": [
+        "Finalitzeu la reunió per a tothom"
+      ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
+      ],
+      "Full size": [
+        "Mida completa"
+      ],
+      "Generate a new meeting link.": [
+        "Generar un nou enllaç de reunió."
+      ],
+      "Get Meet Professional": [
+        "Obtingueu Meet Professional"
+      ],
+      "Get verification code": [
+        "Obtenir codi de verificació"
+      ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
+      ],
+      "Help and resources": [
+        "Ajuda i recursos"
+      ],
+      "Hide options": [
+        "Amagar les opcions"
+      ],
+      "Hide participants": [
+        "Amagueu els participants"
+      ],
+      "Hide self view": [
+        "Amagueu la vista pròpia"
+      ],
+      "Hide timezones": [
+        "Amagueu els fusos horaris"
+      ],
+      "Insert emoji": [
+        "Inserir un emoji"
+      ],
+      "Join": [
+        "Afegiu-vos-hi"
+      ],
+      "Join meeting": [
+        "Afegiu-vos a la reunió"
+      ],
+      "Join with a link": [
+        "Uniu-vos-hi amb un enllaç"
+      ],
+      "Kick out": [
+        "Expulseu"
+      ],
+      "Kick out ${ participantName }": [
+        "Expulseu ${ participantName }"
+      ],
+      "Leave": [
+        "Surt"
+      ],
+      "Leave meeting": [
+        "Sortiu de la reunió"
+      ],
+      "Lock meeting": [
+        "Bloquegeu la reunió"
+      ],
+      "Lower hand": [
+        "Abaixar la mà"
+      ],
+      "Minimize preview": [
+        "Minimitzeu la previsualització"
+      ],
+      "More info: ${ safeTitle }": [
+        "Més informació: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Més opcions per als comptes"
+      ],
+      "Mute ${ participantName }": [
+        "Silencieu ${ participantName }"
+      ],
+      "Next month": [
+        "Mes següent"
+      ],
+      "Next page": [
+        "Pàgina següent"
+      ],
+      "Noise cancellation": [
+        "Cancel·lació de soroll"
+      ],
+      "Open app": [
+        "Obriu l'aplicació"
+      ],
+      "Open link": [
+        "Obriu l'enllaç"
+      ],
+      "Participants join after you approve them": [
+        "Els participants s'hi podran unir un cop els aproveu"
+      ],
+      "Participants join the call directly": [
+        "Els participants s'uneixen a la trucada directament."
+      ],
+      "Pause": [
+        "Pausa"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Previous page": [
+        "Pàgina anterior"
+      ],
+      "Raise hand": [
+        "Aixecar la mà"
+      ],
+      "React with ${ emoji }": [
+        "Reaccionar amb ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reaccioneu amb ${ emoji }, ${ identities.length } reacció",
+        "Reaccioneu amb ${ emoji }, ${ identities.length } reaccions"
+      ],
+      "Receive video": [
+        "Rebre vídeo"
+      ],
+      "Record": [
+        "Enregistrament"
+      ],
+      "Refer a friend": [
+        "Recomana una amistat"
+      ],
+      "Refresh audio and video tracks": [
+        "Actualitzar les pistes d'àudio i vídeo"
+      ],
+      "Refresh screen share track": [
+        "Actualitzar la pista de compartició de pantalla"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
+      ],
+      "Rejoin meeting": [
+        "Torneu a unir-vos a la reunió"
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Esborreu la reacció ${ emoji }, ${ identities.length } reacció",
+        "Esborreu la reacció ${ emoji }, ${ identities.length } reaccions"
+      ],
+      "Report a problem": [
+        "Notifica un problema"
+      ],
+      "Request a call": [
+        "Sol·licita una trucada"
+      ],
+      "Request a feature": [
+        "Demaneu una nova característica"
+      ],
+      "Request new code": [
+        "Demana un nou codi"
+      ],
+      "Resend code": [
+        "Reenvia el codi"
+      ],
+      "Reset to defaults": [
+        "Restabliu els valors predeterminats"
+      ],
+      "Resume": [
+        "Continuar"
+      ],
+      "Return to dashboard": [
+        "Tornar al tauler de control"
+      ],
+      "Room": [
+        "Sala"
+      ],
+      "Rotate personal meeting link": [
+        "Roteu l'enllaç personal de la reunió"
+      ],
+      "Save": [
+        "Desa"
+      ],
+      "Schedule": [
+        "Programeu"
+      ],
+      "Schedule a meeting": [
+        "Programeu una reunió"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Programeu-la a ${ CALENDAR_APP_NAME }"
+      ],
+      "Search countries": [
+        "Cerca països"
+      ],
+      "Send an encrypted message": [
+        "Envieu un missatge xifrat"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Show duration": [
+        "Mostra la durada"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Mostrar la miniatura flotant mentre compartiu la pantalla"
+      ],
+      "Show options": [
+        "Mostra les opcions"
+      ],
+      "Show participants": [
+        "Mostrar els participants"
+      ],
+      "Show timezones": [
+        "Mostrar els fusos horaris"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
+      ],
+      "Sign out": [
+        "Tanca la sessió"
+      ],
+      "Sign out of all accounts": [
+        "Tanca tots els comptes"
+      ],
+      "Simulate reconnection": [
+        "Simular la reconnexió"
+      ],
+      "Skip": [
+        "Omet"
+      ],
+      "Skip to main content": [
+        "Aneu al contingut principal"
+      ],
+      "Start an instant meeting": [
+        "Inicieu una reunió ara mateix"
+      ],
+      "Start meeting": [
+        "Inicieu la reunió"
+      ],
+      "Start new meeting": [
+        "Inicieu una nova reunió"
+      ],
+      "Start recording": [
+        "Inicieu l'enregistrament"
+      ],
+      "Start Recording Track Stats": [
+        "Inicieu les estadístiques de gravació de pistes"
+      ],
+      "Start your own meeting": [
+        "Comenceu la vostra pròpia reunió"
+      ],
+      "Starting…": [
+        "S'està iniciant…"
+      ],
+      "Stay in meeting": [
+        "Romaneu a la reunió"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Deixeu d'obrir les reunions a l'aplicació d'escriptori"
+      ],
+      "Stop receiving video": [
+        "Deixeu de rebre el vídeo"
+      ],
+      "Stop recording": [
+        "Atureu l'enregistrament"
+      ],
+      "Stop recording and download video": [
+        "Aturar l'enregistrament i descarregar el vídeo"
+      ],
+      "Stop Recording Track Stats": [
+        "Atureu les estadístiques de gravació de pistes"
+      ],
+      "Submit": [
+        "Envia"
+      ],
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ],
+      "Tap to unblock audio playback": [
+        "Toqueu per desbloquejar la reproducció d'àudio"
+      ],
+      "The current link will stop working.": [
+        "L'enllaç actual deixarà de funcionar."
+      ],
+      "Try again": [
+        "Proveu de nou"
+      ],
+      "Try another method": [
+        "Proveu amb un altre mètode"
+      ],
+      "Turn off incoming video": [
+        "Desactiveu el vídeo entrant"
+      ],
+      "Upgrade": [
+        "Millora el pla"
+      ],
+      "Upgrade now": [
+        "Millora el pla ara"
+      ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Milloreu el vostre pla per utilitzar la sala d'espera a la propera reunió."
+      ],
+      "Upload another video": [
+        "Carregueu un altre vídeo"
+      ],
+      "Upload video": [
+        "Carrega el vídeo"
+      ],
+      "Use authentication code": [
+        "Utilitza el codi d'autenticació"
+      ],
+      "Use camera": [
+        "Utilitzeu la càmera"
+      ],
+      "Use microphone": [
+        "Utilitzeu el micròfon"
+      ],
+      "Use recovery code": [
+        "Utilitza un codi de recuperació"
+      ],
+      "Use waiting room with a paid plan": [
+        "Utilitzeu la sala d'espera amb un pla de pagament"
+      ],
+      "Verify": [
+        "Verifica"
+      ],
+      "Verify account": [
+        "Verifiqueu el compte"
+      ],
+      "View invoice": [
+        "Mostra la factura"
+      ],
+      "Waiting room": [
+        "Sala d'espera"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Preferències d'àudio"
+      ],
+      "Blur background": [
+        "Desenfocament de fons"
+      ],
+      "Chat": [
+        "Xat"
+      ],
+      "Close": [
+        "Tanqueu"
+      ],
+      "Close search": [
+        "Tanqueu la cerca"
+      ],
+      "Copy link": [
+        "Copieu l'enllaç"
+      ],
+      "Copy meeting link": [
+        "Copieu l'enllaç de la reunió"
+      ],
+      "Debug overlay": [
+        "Superposició de depuració"
+      ],
+      "Go to dashboard": [
+        "Aneu al tauler de control"
+      ],
+      "Hide self view": [
+        "Amagar la vista pròpia"
+      ],
+      "Leave Meeting": [
+        "Sortiu de la reunió"
+      ],
+      "Lock meeting": [
+        "Bloquegeu la reunió"
+      ],
+      "Lower hand": [
+        "Abaixar la mà"
+      ],
+      "Meeting details": [
+        "Detalls de la reunió"
+      ],
+      "More options": [
+        "Més opcions"
+      ],
+      "Noise cancellation": [
+        "Cancel·lació de sorolls"
+      ],
+      "Open chat message search": [
+        "Obriu la cerca de missatges del xat"
+      ],
+      "Open participants search": [
+        "Obriu la cerca de participants"
+      ],
+      "Participant host control options": [
+        "Opcions de control dels participants per part.de l'amfitrió"
+      ],
+      "Participants": [
+        "Participants"
+      ],
+      "Raise hand": [
+        "Aixecar la mà"
+      ],
+      "Rotate camera": [
+        "Gireu la càmera"
+      ],
+      "Screen share": [
+        "Compartir pantalla"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Show duration": [
+        "Mostra la durada"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Mostrar la miniatura flotant mentre compartiu la pantalla"
+      ],
+      "Show passphrase": [
+        "Mostreu la frase de contrasenya"
+      ],
+      "Stop recording and download.": [
+        "Atura la gravació i la descarrega."
+      ],
+      "Toggle chat": [
+        "Commuteu el xat"
+      ],
+      "Toggle emoji reactions": [
+        "Commuteu les reaccions amb emojis"
+      ],
+      "Toggle meeting details": [
+        "Commutar els detalls de la reunió"
+      ],
+      "Toggle participants": [
+        "Alterna participants"
+      ],
+      "Toggle screen share": [
+        "Alterneu la compartició de pantalla"
+      ],
+      "Toggle settings": [
+        "Commuta les preferències"
+      ],
+      "Turn off incoming video": [
+        "Desactiveu el vídeo entrant"
+      ],
+      "Video settings": [
+        "Preferències de vídeo"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplicacions de ${ BRAND_NAME }"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Assigneu l'amfitrió"
+      ],
+      "Audio settings": [
+        "Preferències d'àudio"
+      ],
+      "Chat": [
+        "Xat"
+      ],
+      "Chat messages": [
+        "Missatges de xat"
+      ],
+      "Device settings": [
+        "Configuració del dispositiu"
+      ],
+      "Meeting details": [
+        "Detalls de la reunió"
+      ],
+      "Meeting rooms": [
+        "Sales de reunions"
+      ],
+      "Participants": [
+        "Participants"
+      ],
+      "Participants list": [
+        "Llista de participants"
+      ],
+      "Primary navigation": [
+        "Navegació principal"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Video settings": [
+        "Preferències de vídeo"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Actiu"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "S'ha connectat mitjançant el mode de relleu TURN a causa de les vostres restriccions de xarxa. Això pot augmentar la latència i afectar la qualitat de la trucada."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema amb ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Application problem": [
+        "Problema d’aplicació"
+      ],
+      "Authenticator problem": [
+        "Hi ha hagut un problema amb l'autenticador"
+      ],
+      "Bridge problem": [
+        "Problema a Bridge"
+      ],
+      "Calendar problem": [
+        "Problemes del calendari"
+      ],
+      "Connection problem": [
+        "Problema de connexió"
+      ],
+      "Contacts problem": [
+        "Problemes de contactes"
+      ],
+      "Custom domain problem": [
+        "Problema als dominis personalitzats"
+      ],
+      "Docs problem": [
+        "Problema amb Docs"
+      ],
+      "Drive problem": [
+        "Problemes de Drive"
+      ],
+      "Feature request": [
+        "Petició d'una característica"
+      ],
+      "Import / export problem": [
+        "Problema d'importació / exportació"
+      ],
+      "Installation problem": [
+        "Problema d'instal·lació"
+      ],
+      "Mail problem": [
+        "Problemes de correu"
+      ],
+      "Manual setup problem": [
+        "Problema de configuració manual"
+      ],
+      "Meet problem": [
+        "Problema amb Meet"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Pass problem": [
+        "Problema amb Pass"
+      ],
+      "Payments problem": [
+        "Problema de pagament"
+      ],
+      "Sheets problem": [
+        "Hi ha hagut un problema amb els fulls de càlcul"
+      ],
+      "Sign in problem": [
+        "Problema d'inici de sessió"
+      ],
+      "Sign up problem": [
+        "Problema de registre"
+      ],
+      "Signup problem": [
+        "Problema de registre"
+      ],
+      "Slow speed problem": [
+        "Problema de baixa velocitat"
+      ],
+      "Speed problem": [
+        "Problema de velocitat"
+      ],
+      "Streaming problem": [
+        "Problema d'estríming"
+      ],
+      "Update problem": [
+        "Problema d'actualització"
+      ],
+      "VPN problem": [
+        "Problema de VPN"
+      ],
+      "Website access problem": [
+        "Problema d'acces a la web"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replega"
+      ],
+      "Expand": [
+        "Amplia"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "pastanaga"
+      ],
+      "cerise": [
+        "vermell cirera"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "coure"
+      ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "verd falguera"
+      ],
+      "forest": [
+        "verd bosc"
+      ],
+      "ocean": [
+        "oceà"
+      ],
+      "olive": [
+        "verd oliva"
+      ],
+      "pacific": [
+        "pacífic"
+      ],
+      "pickle": [
+        "cogombre"
+      ],
+      "pine": [
+        "verd pi"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "pruna"
+      ],
+      "purple": [
+        "porpra"
+      ],
+      "reef": [
+        "corall"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "blau pissarra"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "maduixa"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhàzia"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albània"
+      ],
+      "Algeria": [
+        "Algèria"
+      ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguila"
+      ],
+      "Antarctica": [
+        "Antàrtida"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua i Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armènia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Illa de l'Ascensió"
+      ],
+      "Australia": [
+        "Austràlia"
+      ],
+      "Austria": [
+        "Àustria"
+      ],
+      "Azerbaijan": [
+        "Azerbaidjan"
+      ],
+      "Bahamas": [
+        "Bahames"
+      ],
+      "Bahrain": [
+        "Bahrein"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarús"
+      ],
+      "Belgium": [
+        "Bèlgica"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benín"
+      ],
+      "Bermuda": [
+        "Bermudes"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolívia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius i Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bòsnia i Hercegovina"
+      ],
+      "Botswana": [
+        "Botsuana"
+      ],
+      "Bouvet Island": [
+        "Illa Bouvet"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Territori Britànic de l'Oceà Índic"
+      ],
+      "Brunei Darussalam": [
+        "Brunei"
+      ],
+      "Bulgaria": [
+        "Bulgària"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canadà"
+      ],
+      "Cape Verde": [
+        "Cap Verd"
+      ],
+      "Cayman Islands": [
+        "Illes Caimà"
+      ],
+      "Central African Republic": [
+        "República Centreafricana"
+      ],
+      "Chad": [
+        "Txad"
+      ],
+      "Chile": [
+        "Xile"
+      ],
+      "China": [
+        "Xina"
+      ],
+      "Christmas Island": [
+        "Illa Christmas"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Illes Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colòmbia"
+      ],
+      "Comoros": [
+        "Les Comores"
+      ],
+      "Congo": [
+        "República del Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, República Democràtica del"
+      ],
+      "Cook Islands": [
+        "Illes Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croàcia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Xipre"
+      ],
+      "Czech Republic": [
+        "República Txeca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Ivori"
+      ],
+      "Denmark": [
+        "Dinamarca"
+      ],
+      "Djibouti": [
+        "Gibuti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Equador"
+      ],
+      "Egypt": [
+        "Egipte"
+      ],
+      "El Salvador": [
+        "el Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Equatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estònia"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Etiòpia"
+      ],
+      "Falkland Islands": [
+        "Illes Flkland"
+      ],
+      "Faroe Islands": [
+        "Illes Fèroe"
+      ],
+      "Federated States of Micronesia": [
+        "Estats Federats de Micronèsia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlàndia"
+      ],
+      "France": [
+        "França"
+      ],
+      "French Guiana": [
+        "Guaiana Francesa"
+      ],
+      "French Polynesia": [
+        "Polinèsia Francesa"
+      ],
+      "French Southern Territories": [
+        "Territoris Francesos del Sud"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gàmbia"
+      ],
+      "Georgia": [
+        "Geòrgia"
+      ],
+      "Germany": [
+        "Alemanya"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grècia"
+      ],
+      "Greenland": [
+        "Groenlàndia"
+      ],
+      "Grenada": [
+        "Granada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea Bissau"
+      ],
+      "Guyana": [
+        "Guaiana"
+      ],
+      "Haiti": [
+        "Haití"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Illa Heard i Illes McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Santa Seu (Estat de la Ciutat del Vaticà)"
+      ],
+      "Honduras": [
+        "Hondures"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hongria"
+      ],
+      "Iceland": [
+        "Islàndia"
+      ],
+      "India": [
+        "Índia"
+      ],
+      "Indonesia": [
+        "Indonèsia"
+      ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Iraq"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Illa de Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Itàlia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japó"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordània"
+      ],
+      "Kazakhstan": [
+        "Casaquistan"
+      ],
+      "Kenya": [
+        "Kènia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Al-Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirguizstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letònia"
+      ],
+      "Lebanon": [
+        "Líban"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Libèria"
+      ],
+      "Libya": [
+        "Líbia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituània"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malàisia"
+      ],
+      "Maldives": [
+        "Illes Maldives"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Illes Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritània"
+      ],
+      "Mauritius": [
+        "Illes Maurici"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mèxic"
+      ],
+      "Moldova": [
+        "Moldàvia"
+      ],
+      "Monaco": [
+        "Mònaco"
+      ],
+      "Mongolia": [
+        "Mongòlia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marroc"
+      ],
+      "Mozambique": [
+        "Moçambic"
+      ],
+      "Myanmar": [
+        "Mianmar"
+      ],
+      "Namibia": [
+        "Namíbia"
+      ],
+      "Nauru": [
+        "Naüru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Països Baixos"
+      ],
+      "New Caledonia": [
+        "Nova Caledònia"
+      ],
+      "New Zealand": [
+        "Nova Zelanda"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Níger"
+      ],
+      "Nigeria": [
+        "Nigèria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Illa Norfolk"
+      ],
+      "North Korea": [
+        "Corea del Nord"
+      ],
+      "North Macedonia": [
+        "Macedònia del Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Illes Marianes del Nord"
+      ],
+      "Norway": [
+        "Noruega"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Paquiistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panamà"
+      ],
+      "Papua New Guinea": [
+        "Papua Nova Guinea"
+      ],
+      "Paraguay": [
+        "Paraguai"
+      ],
+      "Peru": [
+        "Perú"
+      ],
+      "Philippines": [
+        "Illes Filipines"
+      ],
+      "Pitcairn": [
+        "Illes Pitcairn"
+      ],
+      "Poland": [
+        "Polònia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Illa de la Reunió"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Rússia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Sant Bartomeu"
+      ],
+      "Saint Helena": [
+        "Santa Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts i Nevis"
+      ],
+      "Saint Lucia": [
+        "Santa Llúcia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Part Francesa)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sant Pere i Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent i les Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé i Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Aràbia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sèrbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Saint-Martin"
+      ],
+      "Slovakia": [
+        "Eslovàquia"
+      ],
+      "Slovenia": [
+        "Eslovènia"
+      ],
+      "Solomon Islands": [
+        "Illes Salomó"
+      ],
+      "Somalia": [
+        "Somàlia"
+      ],
+      "South Africa": [
+        "Sud-àfrica"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Illes Geòrgia del Sud i Sandwich del Sud"
+      ],
+      "South Korea": [
+        "Corea del Sud"
+      ],
+      "South Ossetia": [
+        "Ossètia del Sud"
+      ],
+      "South Sudan": [
+        "Sudan del Sud"
+      ],
+      "Spain": [
+        "Espanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard i Jan Mayen"
+      ],
+      "Sweden": [
+        "Suècia"
+      ],
+      "Switzerland": [
+        "Suïssa"
+      ],
+      "Syria": [
+        "Síria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tatgiquistan"
+      ],
+      "Tanzania": [
+        "Tanzània"
+      ],
+      "Thailand": [
+        "Tailàndia"
+      ],
+      "Timor-Leste": [
+        "Timor Oriental"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinitat i Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunísia"
+      ],
+      "Turkey": [
+        "Turquia"
+      ],
+      "Turkmenistan": [
+        "Turcmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Illes de Turks i Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraïna"
+      ],
+      "United Arab Emirates": [
+        "Emirats Àrabs Units"
+      ],
+      "United Kingdom": [
+        "Regne Unit"
+      ],
+      "United States": [
+        "Estats Units"
+      ],
+      "United States Minor Outlying Islands": [
+        "Illes Menors dels Estats Units"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Usbequistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Veneçuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Illes Verges, Britàniques"
+      ],
+      "Virgin Islands, U.S.": [
+        "Illes Verges, Americanes"
+      ],
+      "Wallis and Futuna": [
+        "Wallis i Futuna"
+      ],
+      "Western Sahara": [
+        "Sàhara Occidental"
+      ],
+      "Yemen": [
+        "Iemen"
+      ],
+      "Zambia": [
+        "Zàmbia"
+      ],
+      "Zimbabwe": [
+        "Zimbàbue"
+      ],
+      "Åland Islands": [
+        "Illes Aland"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factura vençuda"
+      ]
+    },
+    "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "S'està xifrant amb Messaging Layer Security (MLS)"
+      ],
+      "Rotating group encryption key for best security": [
+        "S'està rotant la clau de xifratge de grup per millorar la seguretat"
+      ],
+      "Try a different name.": [
+        "Proveu amb un altre nom"
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Veureu la gent aquí quan s'uneixin a la reunió."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "S'està carregant..."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacte de confiança"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "El domini no està disponible, torneu-ho a provar més tard"
+      ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
+      "Enter 6 digits": [
+        "Introduïu 6 dígits"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
+      ],
+      "Event deleted": [
+        "S'ha suprimit l'esdeveniment"
+      ],
+      "Failed to assign host": [
+        "No s'ha pogut assignar amfitrió"
+      ],
+      "Failed to create meeting": [
+        "No s'ha pogut crear la reunió."
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "No s'ha pogut crear la reunió personal. Actualitzeu la pàgina."
+      ],
+      "Failed to decrypt session key": [
+        "No s'ha pogut desxifrar la clau de sessió"
+      ],
+      "Failed to delete event": [
+        "No s'ha pogut eliminar l'esdeveniment"
+      ],
+      "Failed to delete recording": [
+        "No s'ha pogut eliminar l'enregistrament"
+      ],
+      "Failed to delete room": [
+        "No s'ha pogut eliminar la sala"
+      ],
+      "Failed to download recording": [
+        "No s'han pogut descarregar els enregistraments"
+      ],
+      "Failed to edit room name": [
+        "No s'ha pogut editar el nom de la sala"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "No us heu pogut afegir a la reunió. Torneu-ho a provar més tard."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "No us heu pogut unir a la reunió. Torneu-ho a provar."
+      ],
+      "Failed to lock meeting": [
+        "No s'ha pogut bloquejar la reunió"
+      ],
+      "Failed to rotate personal meeting link": [
+        "No s'ha pogut rotar l'enllaç personal de la reunió"
+      ],
+      "Failed to send chat message. Please try again.": [
+        "No s'ha pogut enviar el missatge del xat. Torneu-ho a provar."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "No s'ha pogut enviar la reacció amb emoji. Torneu-ho a provar."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "No s'ha pogut enviar la reacció. Torneu-ho a provar."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "No s'ha pogut iniciar la reunió. Torneu-ho a provar."
+      ],
+      "Failed to start recording": [
+        "No s'ha pogut iniciar l'enregistrament"
+      ],
+      "Failed to start screen share": [
+        "No s'ha pogut iniciar la compartició de pantalla."
+      ],
+      "Failed to unlock meeting": [
+        "No s'ha pogut desbloquejar la reunió"
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
+      ],
+      "Invalid meeting link": [
+        "L'enllaç de la reunió no és vàlid"
+      ],
+      "Invalid passphrase": [
+        "Aquesta frase de contrasenya no és vàlida"
+      ],
+      "Invalid verification code": [
+        "El codi de verificació no és vàlid."
+      ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
+      ],
+      "Please allow screen sharing in your system permissions, then try again": [
+        "Permeteu l'ús compartit de la pantalla en els permisos del sistema i, després, torneu-ho a provar"
+      ],
+      "Request timed out": [
+        "La sol·licitud ha caducat"
+      ],
+      "Room deleted": [
+        "S'ha eliminat la sala"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "La compartició de pantalla no és compatible amb els navegadors de mòbil"
+      ],
+      "Signature verification failed": [
+        "No s'ha pogut verificar la signatura."
+      ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
+      "The meeting password is incorrect": [
+        "La contrasenya de la reunió és incorrecta"
+      ],
+      "The meeting password is invalid": [
+        "La contrasenya de la reunió no és vàlida"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
+      ],
+      "This field is required": [
+        "Aquest camp és obligatori."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Aquesta reunió té lloc en una versió antiga. L'amfitrió ha de finalitzar-la i actualitzar el Meet per reiniciar-la amb la darrera versió."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzar només lletres, numerals i _.-"
+      ],
+      "Unknown error": [
+        "Error desconegut"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "El vostre navegador s'ha quedat sense espai d'emmagatzematge. S'ha desat l'enregistrament fins a aquest punt."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Sembla que el rellotge del dispositiu no està sincronitzat. Comproveu l'hora del sistema i torneu-ho a intentar."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "L'aplicació no està disponible actualment."
+      ],
+      "Error: ${ errorMessage }": [
+        "Error: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Vaja, alguna cosa ha anat malament"
+      ],
+      "Open in browser": [
+        "Obre al navegador"
+      ],
+      "Please refresh the page or try again later.": [
+        "Refresqueu la pàgina o proveu de nou més tard."
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "No s'ha seleccionat cap imatge"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clau de seguretat"
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clau de seguretat"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Valor per defecte del sistema"
+      ],
+      "Theme font": [
+        "Família tipogràfica del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Ja teniu un compte? ${ signIn }"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Compte"
+      ],
+      "Apps": [
+        "Aplicacions"
+      ],
+      "Network": [
+        "Xarxa"
+      ],
+      "Other category": [
+        "Una altra categoria"
+      ],
+      "Services": [
+        "Serveis"
+      ]
+    },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Protegiu les vostres converses amb xifratge d’extrem a extrem"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } o ${ signInAction } per accedir a la vostra sala personal i crear noves sales"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } o ${ signInAction } per programar reunions"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Parleu amb una ${ privacyWord } total"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Cap mètode de verificació disponible"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " i "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "S'ha arribat al límit de ${ maxParticipants } participants"
+      ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } necessita accés perquè els altres us puguin veure i sentir durant la trucada. Podreu apagar la càmera o el micròfon en qualsevol moment."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } necessita accés a la càmera perquè els altres us puguin veure durant la trucada. La podreu apagar en qualsevol moment."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } necessita accés al micròfon perquè els altres us puguin sentir durant la trucada. El podreu apagar en qualsevol moment."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } necessita WebRTC per funcionar. Actualitzeu el navegador o el dispositiu a una versió que sigui compatible amb WebRTC, proveu un altre navegador o desactiveu qualsevol extensió que l'estigui bloquejant."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } i ${ otherParticipantsCount } persones més estan enregistrant"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } està enregistrant"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (vós) esteu presentant"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } està presentant"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } i d'altres han reaccionat amb ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } ha reaccionat amb ${ emoji }"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } d'un màxim de ${ maxParticipants } participants"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } participant",
+        "${ totalParticipantCount } participants"
+      ],
+      "(You)": [
+        "(Vós)"
+      ],
+      "-Removed dangerous URL-": [
+        "-S'ha eliminat una URL perillosa-"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Mode avançat: ajusteu cada constant de difuminat per a la versió següent i després apliqueu-ho per tornar a generar la previsualització. Les sobreescriptures tenen prioritat sobre els valors del fitxer i d'Unleash."
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anònim ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "Segur que voleu marxar?"
+      ],
+      "Are you sure you want to stop recording?": [
+        "Segur que voleu aturar l'enregistrament?"
+      ],
+      "Attention required": [
+        "Es requereix la vostra atenció"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "En continuar a la reunió, reconeixeu i consentiu que se us enregistri."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "En unir-vos-hi, accepteu els nostres ${ termsLink } i ${ privacyLink }."
+      ],
+      "camera": [
+        "càmera"
+      ],
+      "Camera permission denied": [
+        "S'ha denegat el permís de la càmera"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Els canvis estan a punt. Apliqueu-los per tornar a generar la previsualització amb les noves constants."
+      ],
+      "Chat with everyone": [
+        "Xategeu amb tothom"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Comproveu la configuració del sistema per assegurar-vos que hi ha una càmera disponible."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Comproveu les preferències del sistema per assegurar-vos que hi ha un micròfon disponible."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
+      ],
+      "Coming soon": [
+        "Pròximament"
+      ],
+      "Connection failed": [
+        "La connexió ha fallat"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "Connexió interrompuda. Tornant a connectar..."
+      ],
+      "Connection issue detected. Attempting to recover…": [
+        "S'ha detectat un problema de connexió. S'està intentant recuperar..."
+      ],
+      "Connection lost. Reconnecting…": [
+        "S'ha perdut la connexió. S'està tornant a connectar…"
+      ],
+      "Copied to clipboard": [
+        "S'ha copiat al porta-retalls."
+      ],
+      "Could not access the camera.": [
+        "No s'ha pogut accedir a la càmera."
+      ],
+      "Could not start recording.": [
+        "No s'ha pogut iniciar l'enregistrament."
+      ],
+      "Country code": [
+        "Codi de país"
+      ],
+      "Create an account": [
+        "Creeu un compte"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Creeu un compte per organitzar reunions amb fins a 50 participants."
+      ],
+      "Created on ${ formattedDate }": [
+        "Creat el ${ formattedDate }"
+      ],
+      "Custom combination": [
+        "Combinació personalitzada"
+      ],
+      "Decrypting meetings...": [
+        "S'estan desxifrant les reunions..."
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Per defecte - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Per defecte: valor per defecte del sistema"
+      ],
+      "Delete event": [
+        "Elimineu l'esdeveniment"
+      ],
+      "Delete room": [
+        "Elimineu la sala"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Voleu que la gent us ${ deviceContentType } a la reunió?"
+      ],
+      "Download current logs": [
+        "Descarrega els registres actuals"
+      ],
+      "Each code can only be used once": [
+        "Cada codi només es pot utilitzar una vegada"
+      ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
+      "End Meeting for everyone?": [
+        "Voleu finalitzar la reunió per a tothom?"
+      ],
+      "End the meeting for everyone?": [
+        "Voleu finalitzar la reunió per a tothom?"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "El xifratge d'extrem a extrem està actiu per a l'àudio i el vídeo."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "El xifratge d'extrem a extrem està actiu per la compartició de pantalla."
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "El xifratge d'extrem a extrem està actiu per a aquest xat."
+      ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduïu el codi de la vostra aplicació d'autenticació."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "S'ha desconnectat tothom de la trucada."
+      ],
+      "Failed to apply background blur": [
+        "No s'ha pogut aplicar el difuminat de fons"
+      ],
+      "Failed to update meeting name": [
+        "No s'ha pogut actualitzar el nom de la reunió"
+      ],
+      "Failed to update meeting password": [
+        "No s'ha pogut actualitzar la contrasenya de la reunió"
+      ],
+      "Failed to update meeting schedule": [
+        "No s'ha pogut actualitzar la programació de la reunió"
+      ],
+      "Free meeting": [
+        "Reunió gratuïta"
+      ],
+      "Free meetings are limited to 1 hour. This call will disconnect soon.": [
+        "Les reunions gratuïtes estan limitades a 1 hora. Aquesta trucada es desconnectarà aviat."
+      ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Obtingueu una sala de reunions personal. Creeu un compte per tenir un enllaç de reunió personal que pugueu fer servir en qualsevol moment."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Obtingueu un enllaç de reunió segur i afegiu-lo al vostre calendari"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Obtingueu la millor experiència amb l'aplicació d'escriptori ${ protonMeet }"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Aneu a about:config, cerqueu media.peerconnection.enabled i establiu el valor a \"true\"."
+      ],
+      "Host": [
+        "Amfitrió"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Organitzeu la vostra pròpia reunió segura. Inicieu una trucada a ${ MEET_APP_NAME } i compartiu l'enllaç per convidar qui vulgueu. Senzill, segur i gratuït."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Si utilitzeu Firefox, assegureu-vos que PeerConnection estigui habilitada."
+      ],
+      "Internet connection lost": [
+        "S'ha perdut la connexió a Internet"
+      ],
+      "Joined ${ roomNameLabel }": [
+        "Us heu unit a ${ roomNameLabel }"
+      ],
+      "Learn more": [
+        "Més informació"
+      ],
+      "Leave meeting and stop sharing?": [
+        "Voleu sortir de la reunió i deixar de compartir-la?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Si sortiu de la reunió, es deixarà de compartir la vostra pantalla."
+      ],
+      "Left ${ roomNameLabel }": [
+        "Heu sortit de ${ roomNameLabel }"
+      ],
+      "Left by mistake?": [
+        "Heu marxat per error?"
+      ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Loading": [
+        "Carregant"
+      ],
+      "Loading ${ appName }": [
+        "Carregant ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
+      ],
+      "Loading meetings...": [
+        "S'estan carregant les reunions..."
+      ],
+      "Loading recordings…": [
+        "S'estan carregant els enregistraments…"
+      ],
+      "Loading...": [
+        "S'està carregant..."
+      ],
+      "Loading…": [
+        "S'està carregant…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Reproduïu en bucle un vídeo penjat o de la vostra càmera en directe amb les dues versions de difuminat de fons, una al costat de l'altra."
+      ],
+      "Lower participant's hand": [
+        "Abaixar la mà del participant"
+      ],
+      "Meet without restrictions": [
+        "Reuniu-vos sense restriccions"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Reuniu-vos sense restriccions. Milloreu de pla per eliminar el límit d'una hora i organitzar reunions de fins a 100 participants."
+      ],
+      "Meeting ended": [
+        "La reunió ha finalitzat"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Reunió completa (${ maxParticipants } participants)"
+      ],
+      "Meeting is decrypting...": [
+        "S'està desxifrant la reunió..."
+      ],
+      "Meeting link": [
+        "Enllaç de la reunió"
+      ],
+      "Meeting locked. No new participants can join.": [
+        "La reunió està bloquejada. No s'hi poden afegir nous participants."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Firefox no permet fer gravacions de les reunions.."
+      ],
+      "Meeting time is up": [
+        "S'ha esgotat el temps de la reunió"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "S'ha desbloquejat la reunió. Els participants s'hi poden tornar a unir."
+      ],
+      "Meeting will end in ${ timeLeft }": [
+        "La reunió finalitzarà en ${ timeLeft }"
+      ],
+      "Member": [
+        "Membre"
+      ],
+      "Message from ${ participantName }": [
+        "Missatge de ${ participantName }"
+      ],
+      "microphone": [
+        "micròfon"
+      ],
+      "Microphone effects": [
+        "Efectes de micròfon"
+      ],
+      "Microphone permission denied": [
+        "S'ha denegat el permís del micròfon"
+      ],
+      "Mute microphone": [
+        "Silenciar el micròfon"
+      ],
+      "My meetings": [
+        "Les meves reunions"
+      ],
+      "My rooms": [
+        "Les meves sales"
+      ],
+      "New": [
+        "Nova"
+      ],
+      "New host": [
+        "Nou amfitrió"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "No s'ha detectat cap ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+      ],
+      "No camera detected": [
+        "No s'ha detectat cap càmera"
+      ],
+      "No camera detected.": [
+        "No s'ha detectat cap càmera."
+      ],
+      "No microphone detected": [
+        "No s'ha detectat cap micròfon"
+      ],
+      "No microphone detected.": [
+        "No s'ha detectat cap micròfon."
+      ],
+      "No publications": [
+        "No hi ha publicacions"
+      ],
+      "No recordings found on this device.": [
+        "No s'han trobat enregistraments en aquest dispositiu."
+      ],
+      "No remote participants": [
+        "No hi ha participants remots"
+      ],
+      "No results found": [
+        "No s'ha trobat cap resultat."
+      ],
+      "No search results": [
+        "No s'ha trobat cap resultat de la cerca"
+      ],
+      "No speaker detected": [
+        "No s'ha trobat cap altaveu"
+      ],
+      "Only meetings you created appear here": [
+        "Només les reunions que hàgiu creat apareixen aquí"
+      ],
+      "Open external link": [
+        "Obriu l'enllaç extern"
+      ],
+      "Other accounts": [
+        "Altres comptes"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Les nostres reunions xifrades d’extrem a extrem protegeixen la privacitat i fomenten la llibertat d'expressió real."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Pàgina ${ displayPage } de ${ totalPages }"
+      ],
+      "Participant": [
+        "Participant"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Enganxeu l'enllaç de ${ MEET_APP_NAME } per afegir-vos a una reunió segura"
+      ],
+      "Permissions not given.": [
+        "No s'han concedit els permisos."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Habiliteu l'accés al vostre ${ microphoneLinkButton }${ andString }${ cameraLinkButton } per una millor experiència."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Introduïu la frase de contrasenya per a desxifrar i veure aquesta reunió"
+      ],
+      "Please try again or try another browser": [
+        "Torneu-ho a provar o feu-ho amb un altre navegador"
+      ],
+      "Poor connection": [
+        "Connexió feble"
+      ],
+      "Premium meeting": [
+        "Trobada prèmium"
+      ],
+      "Presenting": [
+        "Us presentem"
+      ],
+      "privacy": [
+        "privacitat"
+      ],
+      "Quick reactions": [
+        "Reaccions ràpides"
+      ],
+      "Reactions": [
+        "Reaccions"
+      ],
+      "Reconnected successfully": [
+        "S'ha reconnectat correctament"
+      ],
+      "Reconnecting to meeting...": [
+        "Tornant a connectar amb la reunió..."
+      ],
+      "Record your meetings": [
+        "Graveu les vostres reunions"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Enregistra el flux de càmera en brut i amb l'aplicació del difuminat de fons al costat. En aturar-ho es descarregaran els dos resultats."
+      ],
+      "Recording": [
+        "S'està enregistrant"
+      ],
+      "Recording deleted": [
+        "S'ha eliminat l'enregistrament"
+      ],
+      "Recording in progress": [
+        "Enregistrament en curs"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "S'iniciarà l'enregistrament i es notificarà els assistents."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Els enregistraments s'emmagatzemen localment al vostre navegador. Descarregueu els que vulgueu conservar; ja que s'eliminaran automàticament al cap de 30 dies."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
+      ],
+      "Refresh audio and video tracks": [
+        "Actualitzar les pistes d'àudio i vídeo"
+      ],
+      "Refresh screen share track": [
+        "Actualitzar la pista de compartició de pantalla"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Programeu la vostra pròxima reunió. Creeu un compte per a programar reunions amb el vostre calendari."
+      ],
+      "Select a camera": [
+        "Seleccioneu una càmera"
+      ],
+      "Select a microphone": [
+        "Seleccioneu un micròfon"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Abans de marxar seleccioneu un participant per assignar com a nou amfitrió: "
+      ],
+      "Select a speaker": [
+        "Seleccioneu un altaveu"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
+      ],
+      "Session timed out": [
+        "S'ha esgotat el temps de sessió"
+      ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Configureu una sala de reunions permanent per al vostre equip o clients"
+      ],
+      "Share screen": [
+        "Compartiu la pantalla"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Compartiu aquest enllaç per convidar altres persones. També el podeu trobar en qualsevol moment fent clic a la icona d'informació de la barra d'eines."
+      ],
+      "Sign in": [
+        "Inicieu la sessió"
+      ],
+      "Sort by": [
+        "Ordena per"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "La selecció d'altaveu no està disponible en aquest navegador. Utilitzeu la configuració del vostre sistema per triar un altaveu diferent."
+      ],
+      "Start recording": [
+        "Inicia l'enregistrament"
+      ],
+      "Starting camera…": [
+        "S'està iniciant la càmera…"
+      ],
+      "Stop sharing your screen": [
+        "Deixeu de compartir la pantalla"
+      ],
+      "Successfully deleted meeting": [
+        "La reunió s'ha eliminat correctament"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Gràcies per organitzar una reunió prèmium."
+      ],
+      "Thank you for joining.": [
+        "Gràcies per unir-vos-hi."
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "L'amfitrió us ha eliminat d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "L'enllaç de la reunió que heu intentat obrir no existeix o pot haver caducat. Assegureu-vos que l'enllaç sigui correcte o inicieu una nova reunió segura."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Aquest és un xat xifrat d'extrem a extrem amb missatges efímers que desapareixeran al final de la trucada."
+      ],
+      "This meeting is being recorded": [
+        "S'està enregistrant aquesta reunió"
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Aquesta reunió està bloquejada. Contacteu amb l'amfitrió per unir-vos-hi."
+      ],
+      "This meeting is password protected": [
+        "Aquesta reunió està protegida amb contrasenya"
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Aquesta reunió ha assolit el límit de temps d'un pla gratuït. Milloreu de pla per ampliar la durada de la reunió en futures trucades."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Aquesta reunió s'ha obert a l'aplicació d'escriptori ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Aquest enregistrament s'eliminarà permanentment del dispositiu. Aquesta acció no es podrà desfer."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Això finalitzarà la reunió per a tots els participants i deixareu de compartir la vostra pantalla."
+      ],
+      "This will end the meeting for all participants.": [
+        "Això finalitzarà la reunió per a tots els participants."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
+      ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Per crear una sala, necessitareu **un compte gratuït de ${ BRAND_NAME }** perquè puguem desar la sala. Només us portarà uns segons."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Per programar un esdeveniment, necessitareu **un compte gratuït de ${ BRAND_NAME }** perquè puguem desar l'esdeveniment. Només us portarà uns segons."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Per utilitzar la vostra sala de reunions personal, necessitareu **un compte gratuït de ${ BRAND_NAME }**. Només us portarà uns segons."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Avui — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Demà — ${ absoluteDate }"
+      ],
+      "Turn off camera": [
+        "Desactiveu la càmera"
+      ],
+      "Turn on camera": [
+        "Activeu la càmera"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "No s'ha pogut tornar a connectar a la reunió. Entreu-hi de nou o marxeu."
+      ],
+      "unlimited meeting": [
+        "reunió il·limitada"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "Desbloqueu ${ unlimitedMeeting } i funcions prèmium"
+      ],
+      "Unmute microphone": [
+        "Connectar el micròfon"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Milloreu per gravar les teves reunions localment."
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Milloreu el pla per eliminar el límit d'una hora i ometre el compte enrere. Gaudiu de reunions de fins a 24 hores."
+      ],
+      "Video effects": [
+        "Efectes de vídeo"
+      ],
+      "Warning": [
+        "Advertència"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "Week": [
+        "Setmana"
+      ],
+      "Would you like to delete this event?": [
+        "Voleu suprimir aquest esdeveniment?"
+      ],
+      "Would you like to delete this room?": [
+        "Voleu eliminar aquesta sala?"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Voleu rebre un codi de verificació nou?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Ahir — ${ absoluteDate }"
+      ],
+      "You are almost there": [
+        "Ja gairebé ho teniu"
+      ],
+      "You can close this tab.": [
+        "Podeu tancar aquesta pestanya."
+      ],
+      "You can now return to the application to continue": [
+        "Ara podeu tornar a l'aplicació per continuar."
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Podeu desactivar el vostre micròfon i la càmera en qualsevol moment durant la reunió"
+      ],
+      "You left the meeting": [
+        "Heu sortit de la reunió"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Necessiteu un pla de pagament de ${ MEET_SHORT_APP_NAME } o Workspace per aquesta funció. Poseu-vos en contacte amb l'administrador de la vostra organització per millorar-lo."
+      ],
+      "You were removed from the meeting": [
+        "Us han eliminat de la reunió"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Deixareu la reunió. Els altres continuaran."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Se us ha convidat a unir-vos a una reunió segura. Confirmeu el vostre nom i feu clic a continuació per introduir."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
+      ],
+      "Your always available meeting room": [
+        "La vostra sala de reunions sempre disponible"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "El navegador us ha bloquejat l'accés a la càmera i al micròfon. Per activar-los, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "El navegador us ha bloquejat l'accés a la càmera. Per activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "El navegador us ha bloquejat l'accés al micròfon. Per activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "El navegador us ha bloquejat l'accés a la compartició de pantalla. Per activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
+      ],
+      "Your browser or device isn’t supported": [
+        "El vostre navegador o dispositiu no és compatible"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your meeting is ready": [
+        "La vostra reunió està a punt"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Esteu a punt d'obrir un enllaç en una pestanya nova. Assegureu-vos que confieu en el lloc web abans de continuar."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "Nom d'usuari de ${ BRAND_NAME }"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } estrella",
+        "${ numberOfStars } estrelles"
+      ],
+      "Add optional details": [
+        "Afegiu detalls opcionals"
+      ],
+      "Add to calendar": [
+        "Afegiu-ho al calendari"
+      ],
+      "Advanced mode": [
+        "Mode avançat"
+      ],
+      "Attach screenshot(s)": [
+        "Adjunta una o més captures de pantalla"
+      ],
+      "Audio": [
+        "Àudio"
+      ],
+      "Authenticator app": [
+        "Aplicació d'autenticació"
+      ],
+      "Blurred (next)": [
+        "Difuminat (següent)"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
+      ],
+      "Camera Active": [
+        "Càmera activa"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "Code is 6 digits without spaces": [
+        "El codi consta de 6 dígits sense espais"
+      ],
+      "Connection Quality": [
+        "Qualitat de la connexió"
+      ],
+      "Copy all activity events": [
+        "Copia tots els esdeveniments d'activitat"
+      ],
+      "Copy invite link": [
+        "Copieu l'enllaç d'invitació"
+      ],
+      "Create meeting options": [
+        "Opcions per crear la reunió"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Current": [
+        "Actual"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete recovery-related information.": [
+        "Elimina la informació de recuperació."
+      ],
+      "Does not repeat": [
+        "No es repeteix"
+      ],
+      "Download .ics": [
+        "Descarregueu .ics"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Emoji picker": [
+        "Selector d'emoticones"
+      ],
+      "Emoji reactions": [
+        "Reaccions amb emoticones"
+      ],
+      "Enabled": [
+        "Habilitat"
+      ],
+      "Ended": [
+        "Finalitzada"
+      ],
+      "Every day": [
+        "Cada dia"
+      ],
+      "Every month": [
+        "Cada mes"
+      ],
+      "Every week": [
+        "Cada setmana"
+      ],
+      "Every weekday": [
+        "Cada dia feiner"
+      ],
+      "Every year": [
+        "Cada any"
+      ],
+      "Google Calendar": [
+        "Calendari de Google"
+      ],
+      "Hide password": [
+        "Amaga la contrasenya"
+      ],
+      "How was the call quality?": [
+        "Com ha estat la qualitat de la trucada?"
+      ],
+      "Identity": [
+        "Identitat"
+      ],
+      "Include application logs in bug report": [
+        "Inclou els registres de l'aplicació a l'informe d'errors"
+      ],
+      "Last used": [
+        "Darrer ús"
+      ],
+      "Leave meeting options": [
+        "Opcions per abandonar la reunió"
+      ],
+      "Manage recordings": [
+        "Gestionar els enregistraments"
+      ],
+      "Meeting ID": [
+        "Identificador de la reunió"
+      ],
+      "Meeting link": [
+        "Enllaç de la reunió"
+      ],
+      "Message": [
+        "Missatge"
+      ],
+      "Microphone Active": [
+        "Micròfon actiu"
+      ],
+      "Monday to Friday": [
+        "De dilluns a divendres"
+      ],
+      "Muted": [
+        "Silenciat"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "Operating system": [
+        "Sistema operatiu"
+      ],
+      "Operating system version": [
+        "Versió del sistema operatiu"
+      ],
+      "Outlook Calendar": [
+        "Calendari d'Outlook"
+      ],
+      "Participant controls": [
+        "Controls dels participants"
+      ],
+      "Passphrase": [
+        "Frase de pas"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
+      "Raw": [
+        "En brut"
+      ],
+      "Remember my name on this device": [
+        "Recorda el meu nom en aquest dispositiu"
+      ],
+      "Repeat event": [
+        "Repetir l'esdeveniment"
+      ],
+      "Return to dashboard": [
+        "Tornar al tauler de control"
+      ],
+      "Reveal password": [
+        "Mostra la contrasenya"
+      ],
+      "Schedule meeting": [
+        "Programeu una reunió"
+      ],
+      "Screen share": [
+        "Compartir pantalla"
+      ],
+      "Selected Camera": [
+        "Càmera seleccionada"
+      ],
+      "Selected Microphone": [
+        "Micròfon seleccionat"
+      ],
+      "Selected Speaker": [
+        "Altaveu seleccionat"
+      ],
+      "Subscribed": [
+        "Subscrits"
+      ],
+      "System information": [
+        "Informació del sistema"
+      ],
+      "Track SID": [
+        "Track SID"
+      ],
+      "Use live camera feed": [
+        "Utilitzeu la transmissió de la càmera en directe"
+      ],
+      "Use simple selfie segmentation": [
+        "Utilitza una segmentació d'autoretrat senzilla"
+      ],
+      "Verification code": [
+        "Codi de verificació"
+      ],
+      "Video": [
+        "Vídeo"
+      ],
+      "What happened?": [
+        "Què ha passat?"
+      ],
+      "Your password (admin)": [
+        "La vostra contrasenya (administrador)"
+      ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
+      "Learn more": [
+        "Més informació"
+      ],
+      "privacy policy": [
+        "política de privacitat"
+      ],
+      "Request an invite": [
+        "Demana una invitació"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
+      ],
+      "terms and conditions": [
+        "termes i condicions"
+      ],
+      "What’s this?": [
+        "Què és això?"
+      ]
+    },
+    "meet": {
+      "Create and copy link": [
+        "Crea i copia l'enllaç"
+      ],
+      "Create new room": [
+        "Creeu una sala nova"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Les sales de reunions es poden utilitzar en qualsevol moment"
+      ],
+      "Save and copy link": [
+        "Deseu i copieu l'enllaç"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "El programari del vostre navegador o dispositiu no és compatible amb ${ MEET_APP_NAME }. ${ MEET_APP_NAME } necessita WebAssembly (Wasm) per funcionar. Actualitzeu el vostre navegador o dispositiu a una versió compatible amb Wasm, o proveu d'utilitzar un navegador diferent."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Com que en sou l'únic participant, aquesta reunió es tancarà automàticament. Voleu continuar-hi de totes maneres?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Sortiu de la reunió"
+      ],
+      "Stay in the meeting": [
+        "Romaneu a la reunió"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "No s'ha pogut iniciar el mode Imatge sobre imatge"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "Disponible properament"
+      ],
+      "Copied to clipboard": [
+        "S'ha copiat al porta-retalls."
+      ],
+      "Could not send feedback": [
+        "No s'ha pogut enviar el comentari"
+      ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Room name updated": [
+        "S'ha actualitzat el nom de la sala"
+      ],
+      "Successfully rotated your personal meeting": [
+        "S'ha rotat correctament la vostra reunió personal"
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "No podeu enviar comentaris d'una reunió a la qual no heu assistit"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "L'àudio s'interrompia"
+      ],
+      "I couldn't hear others": [
+        "No podia sentir els altres"
+      ],
+      "I couldn't present ": [
+        "No s'ha pogut presentar "
+      ],
+      "I couldn't see others' video": [
+        "No podia veure el vídeo dels altres"
+      ],
+      "I couldn't see the presentation": [
+        "No podia veure la presentació"
+      ],
+      "Others couldn't hear me": [
+        "Els altres no m'han pogut sentir"
+      ],
+      "Others couldn't see my video": [
+        "Els altres no podien veure el meu vídeo"
+      ],
+      "The presentation was blurry": [
+        "La presentació es veia borrosa"
+      ],
+      "Video quality was poor": [
+        "La qualitat del vídeo era baixa"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Una manera de contactar amb tu"
+      ],
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Enter passphrase": [
+        "Introduïu la frase de contrasenya"
+      ],
+      "Enter time": [
+        "Introduïu l'hora"
+      ],
+      "Enter your name": [
+        "Introduïu el vostre nom"
+      ],
+      "Find...": [
+        "Cerqueu..."
+      ],
+      "Loading...": [
+        "S'està carregant…"
+      ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Nom de la reunió, per exemple, sincronització d'equip, actualització de projecte, etc."
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descriviu el problema i incloeu qualsevol missatge d'error"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Nom de la sala, per exemple, sincronització d'equip, actualització de projecte, etc."
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Programeu-ho a ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Cerca"
+      ],
+      "Select": [
+        "Seleccionar"
+      ],
+      "Share more details": [
+        "Compartiu més detalls"
+      ],
+      "Type an encrypted message...": [
+        "Escriviu un missatge xifrat..."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Reviseu la seguretat del compte"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No s'ha completat l'inici de sessió."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "No s'ha trobat cap resultat."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Tanqueu la sessió"
+      ],
+      "Stay signed in": [
+        "Mantén la sessió iniciada"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } està disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si tanqueu la sessió abans de restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si tanqueu la sessió sense restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Podreu restablir la vostra contrasenya en ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Voleu tancar la sessió sense restablir la contrasenya?"
+      ]
+    },
+    "Sort option": {
+      "Alphabetical (A–Z)": [
+        "En ordre alfabètic (de la A a la Z)"
+      ],
+      "Newly created": [
+        "Creada recentment"
+      ],
+      "Past meetings": [
+        "Reunions passades"
+      ],
+      "Upcoming": [
+        "Pròximament"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ves als plans de subscripció"
+      ],
+      "Upgrade": [
+        "Millora el pla"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Inicia la sessió"
+      ],
+      "Sign in to your organization": [
+        "Inicieu la sessió a la vostra organització"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
+      ]
+    },
+    "Status": {
+      "No": [
+        "No"
+      ],
+      "Yes": [
+        "Sí"
+      ]
+    },
+    "Success": {
+      "Assigned new host": [
+        "S'ha assignat un nou amfitrió"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Codi enviat a ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Correu electronic copiat al porta-retalls"
+      ],
+      "Problem reported": [
+        "S'ha notificat el problema."
+      ],
+      "Verification successful": [
+        "Èxit de verificació"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Accions"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Size": [
+        "Mida"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "S'ha restringit el compte"
+      ],
+      "Account temporarily locked": [
+        "El compte s'ha bloquejat temporalment"
+      ],
+      "Activity events": [
+        "Esdeveniments d'activitats"
+      ],
+      "All participants": [
+        "Tots els participants"
+      ],
+      "Allow camera ": [
+        "Permeteu l'accés a la càmera "
+      ],
+      "Allow camera and microphone": [
+        "Permeteu l'accés a la càmera i al micròfon"
+      ],
+      "Allow microphone": [
+        "Permeteu l'accés al micròfon"
+      ],
+      "Are you sure?": [
+        "N'esteu segur?"
+      ],
+      "Assign a new host": [
+        "Assigneu un nou amfitrió"
+      ],
+      "Audio": [
+        "Àudio"
+      ],
+      "Available Cameras": [
+        "Càmeres disponibles"
+      ],
+      "Available Microphones": [
+        "Micròfons disponibles"
+      ],
+      "Available Speakers": [
+        "Altaveus disponibles"
+      ],
+      "Background blur comparison": [
+        "Comparació del difuminat de fons"
+      ],
+      "Camera and microphone are blocked": [
+        "La càmera i el micròfon estan bloquejats"
+      ],
+      "Camera is blocked": [
+        "La càmera està bloquejada"
+      ],
+      "Chat": [
+        "Xat"
+      ],
+      "Constants": [
+        "Constants"
+      ],
+      "Couldn't prepare the recording": [
+        "No s'ha pogut preparar l'enregistrament"
+      ],
+      "Create new room": [
+        "Creeu una sala nova"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Debug Overlay": [
+        "Superposició de la depuració"
+      ],
+      "Delete recording?": [
+        "Voleu eliminar la gravació?"
+      ],
+      "Enter your password": [
+        "Introduïu la vostra contrasenya"
+      ],
+      "Epoch": [
+        "Època"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Època ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "S'ha produït un error a l'època ${ log.epoch }"
+      ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
+      ],
+      "Help center": [
+        "Centre d'ajuda"
+      ],
+      "Human verification": [
+        "Verificació humana"
+      ],
+      "Info": [
+        "Informació"
+      ],
+      "Invalid meeting link": [
+        "L'enllaç de la reunió no és vàlid"
+      ],
+      "Invalid verification code": [
+        "El codi de verificació no és vàlid."
+      ],
+      "Invite link": [
+        "Enllaç d'invitació"
+      ],
+      "Join a meeting": [
+        "Afegiu-vos a la reunió"
+      ],
+      "Join meeting": [
+        "Afegiu-vos a la reunió"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "S'ha unit a l'època ${ log.epoch }"
+      ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Us esteu unint a la reunió amb ${ participantCount } altre participant…",
+        "Us esteu unint a la reunió amb ${ participantCount } participants més…"
+      ],
+      "Launching Meeting...": [
+        "S'està iniciant la reunió..."
+      ],
+      "Local Participant": [
+        "Participant local"
+      ],
+      "Meeting": [
+        "Reunió"
+      ],
+      "Meeting created": [
+        "S'ha creat la reunió"
+      ],
+      "Meeting details": [
+        "Detalls de la reunió"
+      ],
+      "Meeting edited": [
+        "S'ha editat la reunió"
+      ],
+      "Meeting settings": [
+        "Detalls de la reunió"
+      ],
+      "Messaging Layer Security": [
+        "Seguretat de la capa de missatgeria"
+      ],
+      "Microphone is blocked": [
+        "El micròfon està bloquejat"
+      ],
+      "Minicalendar": [
+        "Minicalendari"
+      ],
+      "No one is waiting": [
+        "No hi ha ningú en espera"
+      ],
+      "No results found": [
+        "No s'ha trobat cap resultat."
+      ],
+      "Participants": [
+        "Participants"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Participants ${ filteredParticipants.length }"
+      ],
+      "Passphrase": [
+        "Frase de contrasenya"
+      ],
+      "Personal meeting room": [
+        "Sala de reunions personals"
+      ],
+      "Preparing your recording…": [
+        "S'està preparant el vostre enregistrament..."
+      ],
+      "Publications": [
+        "Publicacions"
+      ],
+      "Reconnection Testing": [
+        "Proves de reconnexió"
+      ],
+      "Record raw vs blurred camera": [
+        "Enregistrar amb la càmera en brut o desenfocada"
+      ],
+      "Record this meeting": [
+        "Enregistrar la reunió"
+      ],
+      "Recordings": [
+        "Enregistraments"
+      ],
+      "Remote Participants": [
+        "Participants remots"
+      ],
+      "Report a problem": [
+        "Notifica un problema"
+      ],
+      "Request new code": [
+        "Demana un codi nou"
+      ],
+      "Schedule a meeting": [
+        "Programeu una reunió"
+      ],
+      "Screen share is blocked": [
+        "La compartició de pantalla està bloquejada"
+      ],
+      "Secure meeting": [
+        "Reunió segura"
+      ],
+      "Security": [
+        "Seguretat"
+      ],
+      "Security code": [
+        "Codi de seguretat"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Sign out": [
+        "Tanca la sessió"
+      ],
+      "Starting meeting as the first participant…": [
+        "S'està iniciant la reunió com a primer participant..."
+      ],
+      "Stop recording": [
+        "Aturar l'enregistrament"
+      ],
+      "Talk confidentially": [
+        "Parleu amb confidencialitat"
+      ],
+      "Thank you!": [
+        "Gràcies!"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Title": [
+        "Títol"
+      ],
+      "Two-factor authentication": [
+        "Autenticació de doble factor"
+      ],
+      "Video": [
+        "Vídeo"
+      ],
+      "Waiting room": [
+        "Sala d'espera"
+      ],
+      "What went wrong?": [
+        "Què ha anat malament?"
+      ],
+      "Your feedback has been submitted": [
+        "Els vostres comentaris s'han enviat"
+      ],
+      "Your recording is ready": [
+        "El vostre enregistrament està a punt"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Avui"
+      ]
+    },
+    "Tooltip": {
+      "Background blur is not supported on your browser": [
+        "El desenfocament de fons no és compatible amb el vostre navegador"
+      ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Genereu un enllaç de reunió nou. L'enllaç actual deixarà de funcionar."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+      ],
+      "Recurring meeting": [
+        "Reunió periòdica"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Podeu generar un enllaç de reunió nou un cop al dia."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema amb Wallet"
+      ]
+    },
+    "Warning": {
+      "Connection is taking longer than expected": [
+        "La connexió està trigant més del previst"
+      ],
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "No s'ha pogut accedir a la càmera o al micròfon. Podeu provar de tornar-los a activar des dels controls de la reunió."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "No s'ha pogut accedir a la càmera. Podeu provar de tornar-la a activar des dels controls de la reunió."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "No s'ha pogut accedir al micròfon. Podeu provar de tornar-lo a activar des dels controls de la reunió."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
+      ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "La connexió UDP de STUN ha fallat, s'està provant amb l'alternativa TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "La connexió UDP de STUN ha superat el temps d'espera, s'està provant amb l'alternativa TURN"
+      ],
+      "Trying another route…": [
+        "S'està provant una altra ruta…"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      ]
+    }
+  }
+}

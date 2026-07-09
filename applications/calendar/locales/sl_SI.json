@@ -3625,12 +3625,6 @@
       "Interval cannot be empty": [
         "Interval ne more biti prazen"
       ],
-      "Invalid ${ name } code": [
-        "Neveljavna koda ${ name }"
-      ],
-      "Invalid card number": [
-        "Neveljavna številka kartice"
-      ],
       "Invalid code": [
         "Neveljavna koda"
       ],
@@ -3639,9 +3633,6 @@
       ],
       "Invalid email address": [
         "Neveljaven e-poštni naslov"
-      ],
-      "Invalid expiration date": [
-        "Neveljaven datum poteka veljavnosti"
       ],
       "Invalid IBAN": [
         "Neveljaven IBAN"
@@ -12154,6 +12145,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Izberite številko"
+      ]
+    },
+    "Title header for keys table": {
+      "Type": [
+        "Vrsta"
       ]
     },
     "Title; create calendar modal": {

@@ -3870,12 +3870,6 @@
       "Interval cannot be empty": [
         "El intervalo no puede estar vacío"
       ],
-      "Invalid ${ name } code": [
-        "Código ${ name } inválido"
-      ],
-      "Invalid card number": [
-        "Número de tarjeta inválido"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -3884,9 +3878,6 @@
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
-      ],
-      "Invalid expiration date": [
-        "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
         "El IBAN no es válido."
@@ -3975,9 +3966,6 @@
       ],
       "Not a valid number": [
         "Número no válido"
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
       ],
       "Number of occurrences cannot be empty": [
         "El número de ocurrencias no puede estar vacío"
@@ -12727,6 +12715,26 @@
         "Elija un número"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Created": [
+        "Creada"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Crear calendario"
@@ -12823,6 +12831,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -12861,6 +12872,11 @@
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Validation": {

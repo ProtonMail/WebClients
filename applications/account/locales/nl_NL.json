@@ -1200,6 +1200,9 @@
       "Organization": [
         "Organisatie"
       ],
+      "Pause": [
+        "Onderbreken"
+      ],
       "Pay": [
         "Betalen"
       ],
@@ -1520,9 +1523,6 @@
       ],
       "Set as default": [
         "Als standaard instellen"
-      ],
-      "Set as default mail application": [
-        "Stel in als standaard e-mailapplicatie"
       ],
       "Set catch-all": [
         "Stel catch-all in"
@@ -5262,12 +5262,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } is niet uw standaard e-mailapplicatie."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } houdt uw bedrijfsgegevens veilig en laat u versleutelde e-mails verzenden naar iedereen."
       ],
@@ -7255,12 +7249,6 @@
       "Intended recipient does not support calendar sharing": [
         "De bedoelde ontvangen heeft geen ondersteuning voor het delen van een agenda."
       ],
-      "Invalid ${ name } code": [
-        "Ongeldig ${ name } code"
-      ],
-      "Invalid card number": [
-        "Ongeldig creditcardnummer"
-      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -7272,9 +7260,6 @@
       ],
       "Invalid email address": [
         "Ongeldig e-mailadres"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
       ],
       "Invalid IBAN": [
         "Ongeldige IBAN"
@@ -9825,10 +9810,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
       ],
-      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } nieuw lid toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring.",
-        "${ pendingAdminMemberCount } nieuwe leden toegevoegd via uw identiteitsprovider en in afwachting van goedkeuring."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
@@ -10405,12 +10386,6 @@
       ],
       "Beta": [
         "Bèta"
-      ],
-      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
-        "De eerste 6 maanden wordt het abonnement gefactureerd tegen ${ monthlyDiscountedPrice }, waarna het wordt verlengd tegen ${ monthlyRenewalPrice }."
-      ],
-      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
-        "De eerste 12 maanden wordt het abonnement gefactureerd tegen ${ yearlyDiscountedPrice }, waarna het wordt verlengd tegen ${ yearlyRenewalPrice }."
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
@@ -13026,9 +13001,6 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat externe afbeeldingen worden geladen zonder dat u het weet."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Wanneer ingeschakeld, zullen we controleren of ${ MAIL_APP_NAME } uw standaard e-mail applicatie is en u informeren indien dit niet het geval is."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
       ],
@@ -13193,6 +13165,9 @@
       ],
       "You can now sign in to your account again.": [
         "U kunt nu opnieuw inloggen op uw account."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "U kunt slechts één gesprek tegelijk voeren. Sluit voorgaande gesprekken voordat u een nieuw gesprek begint."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -14497,9 +14472,6 @@
       ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
-      ],
-      "Confirm MX records added": [
-        "Bevestig dat MX-records zijn toegevoegd"
       ],
       "Confirm new password": [
         "Bevestig nieuw wachtwoord"
@@ -23029,14 +23001,6 @@
         "${ n } gebruiker losgekoppeld van SSO",
         "${ n } gebruikers losgekoppeld van SSO"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } gebruiker heeft zich aangesloten bij uw organisatie via uw Identity Provider. Controleer het account nu:",
-        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } gebruiker is inactief. U kunt deze gebruiker veilig verwijderen uit uw organisatie.",
-        "${ n } gebruikers zijn inactief. U kunt ze veilig verwijderen uit uw organisatie."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
         "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
@@ -24972,9 +24936,6 @@
       ],
       "Change second password": [
         "Verander tweede wachtwoord"
-      ],
-      "Check your default mail application": [
-        "Controleer uw standaard e-mailapplicatie"
       ],
       "Choose a provider": [
         "Kies een provider"
@@ -26984,9 +26945,6 @@
       "User declined invitation": [
         "Gebruiker weigerde uitnodiging"
       ],
-      "User is a group": [
-        "Gebruiker is een groep"
-      ],
       "via ${ groupNames }": [
         "via ${ groupNames }"
       ],
@@ -27143,10 +27101,6 @@
       ],
       "Confirm all": [
         "Alles bevestigen"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
-        "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kan beheerderstoegang niet inschakelen: ${ error }"

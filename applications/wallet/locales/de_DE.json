@@ -2330,20 +2330,11 @@
       "Input isn't a valid email or bitcoin address": [
         "Die Eingabe ist keine gültige E-Mail-Adresse oder Bitcoin-Adresse"
       ],
-      "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
-      ],
-      "Invalid card number": [
-        "Kartennummer ungültig"
-      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
       "Invalid coupon": [
         "Ungültiger Gutschein"
-      ],
-      "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
@@ -5875,6 +5866,11 @@
       ],
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]
     },
     "Validation": {

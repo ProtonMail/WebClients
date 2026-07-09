@@ -3795,12 +3795,6 @@
       "Interval cannot be empty": [
         "L'intervallo non può essere vuoto"
       ],
-      "Invalid ${ name } code": [
-        "Codice ${ name } non valido"
-      ],
-      "Invalid card number": [
-        "Numero della carta non valido"
-      ],
       "Invalid code": [
         "Codice non valido"
       ],
@@ -3809,9 +3803,6 @@
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
-      ],
-      "Invalid expiration date": [
-        "Data di scadenza non valida"
       ],
       "Invalid IBAN": [
         "IBAN non valido"
@@ -12616,6 +12607,20 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Scegli un numero"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Fingerprint": [
+        "Impronta digitale"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Title; create calendar modal": {

@@ -654,6 +654,9 @@
       "Organization": [
         "Szervezet"
       ],
+      "Pause": [
+        "Szüneteltetés"
+      ],
       "Pay": [
         "Fizetés"
       ],
@@ -3704,12 +3707,6 @@
       "Incorrect username": [
         "Helytelen felhasználónév"
       ],
-      "Invalid ${ name } code": [
-        "Érvénytelen ${ name } kód"
-      ],
-      "Invalid card number": [
-        "Érvénytelen kártyaszám"
-      ],
       "Invalid code": [
         "Érvénytelen kód"
       ],
@@ -3721,9 +3718,6 @@
       ],
       "Invalid email address": [
         "Érvénytelen e-mail cím"
-      ],
-      "Invalid expiration date": [
-        "Érvénytelen lejárati dátum"
       ],
       "Invalid IBAN": [
         "Érvénytelen IBAN"
@@ -12285,14 +12279,6 @@
         "${ n } felhasználó leválasztva az SSO-ról",
         "${ n } felhasználó leválasztva az SSO-ról"
       ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } felhasználó csatlakozott a szervezethez az Ön azonosító szolgáltatóján keresztül. Tekintse át a fiókot most:",
-        "${ n } felhasználó csatlakozott a szervezethez az Ön azonosító szolgáltatóján keresztül. Tekintse át a fiókot most:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } felhasználó inaktív. A felhasználót nyugodtan eltávolíthatja a szervezetéből.",
-        "${ n } felhasználó inaktív. A felhasználót nyugodtan eltávolíthatja a szervezetéből."
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel.",
         "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel."
@@ -14803,10 +14789,6 @@
       ],
       "Confirm all": [
         "Összes megerősítése"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nem sikerült automatikusan engedélyezni a rendszergazdai hozzáférést ${ n } felhasználó számára, mert a titkosítási kulcsaik időközben frissítésre kerültek:",
-        "Nem sikerült automatikusan engedélyezni a rendszergazdai hozzáférést ${ n } felhasználó számára, mert a titkosítási kulcsaik időközben frissítésre kerültek:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nem lehetett az adminisztrátori hozzáférést bekapcsolni: ${ error }"

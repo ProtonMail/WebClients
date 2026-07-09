@@ -2056,6 +2056,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2887,6 +2891,9 @@
       "Address details": [
         "Adressuppgifter"
       ],
+      "Advanced": [
+        "Avancerat"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -2932,6 +2939,9 @@
       "Bank Name": [
         "Banknamn"
       ],
+      "Basic": [
+        "Grundläggande"
+      ],
       "Beta Access": [
         "Beta-åtkomst"
       ],
@@ -2964,6 +2974,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Kontrollera"
       ],
       "Checkbox": [
         "Kryssruta"
@@ -3120,6 +3133,9 @@
       ],
       "Enter email or username": [
         "Ange e-post eller användarnamn"
+      ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -3595,6 +3611,9 @@
       "Reddit handle": [
         "Reddit-användarnamn"
       ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
       "Remove link": [
         "Ta bort länk"
       ],
@@ -3708,6 +3727,9 @@
       ],
       "SSN": [
         "SSN"
+      ],
+      "Starts with": [
+        "Börjar med"
       ],
       "State or province": [
         "Delstat eller provins"
@@ -4254,6 +4276,11 @@
         "Används på ${ url }"
       ]
     },
+    "Result": {
+      "The rule is matching this URL": [
+        "Regeln matchar denna URL"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
@@ -4404,6 +4431,12 @@
       ],
       "Random prefix generation successfully enabled": [
         "Slumpmässig prefixgenerering aktiverad"
+      ],
+      "SSH agent successfully started": [
+        "SSH-agent startad"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agent stoppad"
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Valv kan inte innehålla fler än ${ targetMaxMembers } användare.",
@@ -4645,6 +4678,9 @@
       "Last modified": [
         "Senast ändrad"
       ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
       "Leave this item?": [
         "Lämna detta objekt?"
       ],
@@ -4841,6 +4877,9 @@
       "SPF (Optional)": [
         "SPF (valfritt)"
       ],
+      "SSH Agent": [
+        "SSH-agent"
+      ],
       "Status": [
         "Status"
       ],
@@ -4873,6 +4912,9 @@
       ],
       "Update available": [
         "Uppdatering tillgänglig"
+      ],
+      "URL matching": [
+        "URL-matchning"
       ],
       "Vault": [
         "Valv"

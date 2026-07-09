@@ -1486,6 +1486,9 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
+      "Size": [
+        "Koko"
+      ],
       "Status": [
         "Tila"
       ],
@@ -3795,12 +3798,6 @@
       "Interval cannot be empty": [
         "Aikaväli ei voi olla tyhjä"
       ],
-      "Invalid ${ name } code": [
-        "Virheellinen ${ name }-koodi"
-      ],
-      "Invalid card number": [
-        "Virheellinen kortin numero"
-      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -3809,9 +3806,6 @@
       ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
-      ],
-      "Invalid expiration date": [
-        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid IBAN": [
         "Virheellinen IBAN"
@@ -12511,6 +12505,26 @@
         "Valitse määrä"
       ]
     },
+    "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Expires": [
+        "Erääntyy"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Luo kalenteri"
@@ -12607,6 +12621,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGP-avain, versio 6"
       ]
     },
     "tooltip": {
@@ -12645,6 +12662,11 @@
       ],
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     },
     "Validation": {
