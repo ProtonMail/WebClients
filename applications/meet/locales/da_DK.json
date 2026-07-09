@@ -1,986 +1,986 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "es_LA"
+    "language": "da_DK"
   },
   "contexts": {
     "Accessibility": {
       "(opens in new tab)": [
-        "(se abre en una pestaña nueva)"
+        "(åbner i en ny fane)"
       ],
       "camera off": [
-        "cámara desactivada"
+        "Kamera slået fra"
       ],
       "camera on": [
-        "cámara activada"
+        "Kamera slået til"
       ],
       "Meeting controls": [
-        "Controles de reunión"
+        "Møde-kontroller"
       ],
       "microphone muted": [
-        "micrófono silenciado"
+        "Mikrofon slået fra"
       ],
       "microphone on": [
-        "micrófono activado"
+        "mikrofon slået til"
       ]
     },
     "Accessibility announcement": {
       "${ name } joined the meeting": [
-        "${ name } se ha unido a la reunión"
+        "${ name } deltager i mødet"
       ],
       "${ name } left the meeting": [
-        "${ name } ha abandonado la reunión"
+        "${ name } forlod mødet"
       ],
       "${ name } lowered their hand": [
-        "${ name } bajó la mano"
+        "${ name } sænkede hånden"
       ],
       "${ name } raised their hand": [
-        "${ name } levantó la mano"
+        "${ name } rakte hånden op"
       ],
       "${ name } reacted with ${ emoji }": [
-        "${ name } reaccionó con ${ emoji }"
+        "${ name } reagerede med ${ emoji }"
       ],
       "${ name } says: ${ message }": [
-        "${ name } dijo: ${ message }"
+        "${ name } siger: ${ message }"
       ],
       "A participant joined the meeting": [
-        "Un participante se unió a la reunión"
+        "En deltager tilsluttede sig mødet"
       ],
       "A participant left the meeting": [
-        "Un participante abandonó la reunión"
+        "En deltager forlod mødet"
       ],
       "A participant lowered their hand": [
-        "Un participante bajó la mano"
+        "En deltager sænkede hånden"
       ],
       "A participant raised their hand": [
-        "Un participante levantó la mano"
+        "En deltager ræk hånden op"
       ],
       "A participant reacted with ${ emoji }": [
-        "Un participante reaccionó con ${ emoji }"
+        "En deltager reagerede med ${ emoji }"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "Conexión mediante modo de retransmisión TURN debido a restricciones en la red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
+        "Forbundet via TURN-relætilstand på grund af dine netværksbegrænsninger. Dette kan øge latenstiden og påvirke opkaldskvaliteten."
       ],
       "Connection lost. Reconnecting…": [
-        "Conexión perdida. Reconectando…"
+        "Forbindelsen blev afbrudt. Genopretter forbindelse..."
       ],
       "New chat message: ${ message }": [
-        "Nuevo mensaje de chat: ${ message }"
+        "Ny chat-besked:${ message }"
       ],
       "Now starting recording": [
-        "Comenzó la grabación"
+        "Begynder optagelse nu"
       ],
       "Reconnected to the meeting": [
-        "Reconectando a la reunión"
+        "Genoprettede forbindelsen til mødet"
       ],
       "Recording saved": [
-        "Grabación guardada"
+        "Optagelse gemt"
       ],
       "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "Comenzó la grabación. Al continuar en la reunión, reconoce y autoriza que se le grabe."
+        "Optagelse startet. Ved at fortsætte i mødet accepterer du og giver samtykke til at blive optaget."
       ],
       "Recording stopped": [
-        "Se detuvo la grabación"
+        "Optagelse stoppet"
       ],
       "Screen share started": [
-        "Se inició compartir la pantalla"
+        "Skærmdeling startet"
       ],
       "Screen share started by ${ name }": [
-        "${ name } inició compartir la pantalla"
+        "Skærmdeling startet af ${ name }"
       ],
       "Screen share stopped": [
-        "Se dejó de compartir la pantalla"
+        "Skærmdeling standset"
       ],
       "Screen share stopped by ${ name }": [
-        "${ name } detuvo compartir la pantalla"
+        "Skærmdeling stoppet af ${ name }"
       ],
       "The meeting will close in 1 minute": [
-        "Esta reunión se cerrará en 1 minuto"
+        "Mødet afsluttes om 1 minut"
       ],
       "The meeting will close in 15 seconds": [
-        "Esta reunión se cerrará en 15 segundos"
+        "Mødet afsluttes om 15 sekunder"
       ],
       "The meeting will close in 30 seconds": [
-        "Esta reunión se cerrará en 30 segundos"
+        "Mødet afsluttes om 30 sekunder"
       ],
       "The meeting will end in 1 minute": [
-        "Esta reunión finalizará en 1 minuto"
+        "Mødet afsluttes om 1 minut"
       ],
       "The meeting will end in 10 minutes": [
-        "Esta reunión finalizará en 10 minutos"
+        "Mødet afsluttes om 10 minutter"
       ],
       "The meeting will end in 15 seconds": [
-        "La reunión finalizará en 15 segundos"
+        "Mødet afsluttes om 15 sekunder"
       ],
       "The meeting will end in 5 minutes": [
-        "Esta reunión finalizará en 5 minutos"
+        "Mødet afsluttes om 5 minutter"
       ],
       "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
-        "Esta reunión está siendo grabada. Al unirse, reconoce y autoriza que se le grabe."
+        "Dette møde bliver optaget. Ved at deltage accepterer du og giver samtykke til at blive optaget."
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
-        "Es el único participante. La reunión se cerrará en 2 minutos a menos que alguien más se una."
+        "Du er den eneste deltager. Mødet afsluttes om 2 minutter, medmindre nogen træder ind."
       ],
       "You have been disconnected from the meeting": [
-        "Se ha desconectado de la reunión."
+        "Du er blevet koblet ud af mødet"
       ],
       "You have been muted by the host": [
-        "Se ha silenciado su micrófono"
+        "Værten har slået din lyd fra"
       ],
       "Your camera has been turned off by the host": [
-        "Su cámara fue desactivada por el anfitrión"
+        "Værten har slået dit kamera fra"
       ]
     },
     "Action": {
       "${ BRAND_NAME } shop": [
-        "Tienda ${ BRAND_NAME }"
+        "${ BRAND_NAME }-butik"
       ],
       "Add account": [
-        "Agregar una cuenta"
+        "Tilføj konto"
       ],
       "Add another account": [
-        "Añada otra cuenta"
+        "Tilføj en anden konto"
       ],
       "Admit": [
-        "Admitir"
+        "Luk ind"
       ],
       "Admit ${ participantName }": [
-        "Admitir a ${ participantName }"
+        "Luk ${ participantName } ind"
       ],
       "Admit all": [
-        "Admitir a todos"
+        "Luk alle ind"
       ],
       "Allow access": [
-        "Permitir el acceso"
+        "Tillad adgang"
       ],
       "Anyone with the link can join immediately": [
-        "CUalquiera con el enlace puede unirse automáticamente"
+        "Enhver med linket kan tilslutte sig øjeblikkeligt"
       ],
       "Applied": [
-        "Aplicado"
+        "Anvendt"
       ],
       "Apply changes": [
-        "Aplicar cambios"
+        "Anvend ændringer"
       ],
       "Approve participants before they can join": [
-        "Aprobar a los participantes antes de que se unan"
+        "Godkend deltagere før de kan deltage"
       ],
       "Assign ${ selectedParticipantName } as host": [
-        "Asignar a ${ selectedParticipantName } como anfitrión"
+        "Angiv ${ selectedParticipantName } som vært"
       ],
       "Assign new host": [
-        "Asignar nuevo anfitrión"
+        "Angiv ny vært"
       ],
       "Attach screenshot(s)": [
-        "Adjuntar una o varias capturas de pantalla"
+        "Vedhæft skærmfoto(s)"
       ],
       "Authenticate": [
-        "Autenticar"
+        "Godkend"
       ],
       "Back": [
-        "Atrás"
+        "Tilbage"
       ],
       "Background blur": [
-        "Desenfoque de fondo"
+        "Baggrundssløring"
       ],
       "Cancel": [
-        "Cancelar"
+        "Annullér"
       ],
       "Change password": [
-        "Cambiar contraseña"
+        "Skift adgangskode"
       ],
       "Chat with us": [
-        "Chatee con nosotros"
+        "Chat med os"
       ],
       "Close": [
-        "Cerrar"
+        "Luk"
       ],
       "Close preview": [
-        "Cerrar vista previa"
+        "Luk forhåndsvisning"
       ],
       "Close this banner": [
-        "Cerrar este banner"
+        "Luk dette banner"
       ],
       "Continue": [
-        "Continuar"
+        "Fortsæt"
       ],
       "Continue without camera": [
-        "Continuar sin cámara"
+        "Fortsæt uden kamera"
       ],
       "Continue without mic and camera": [
-        "Continuar sin micrófono ni cámara"
+        "Fortsæt uden mikrofon og kamera."
       ],
       "Continue without microphone": [
-        "Continuar sin micrófono"
+        "Fortsæt uden mikrofon"
       ],
       "Copy address": [
-        "Copiar la dirección"
+        "Kopier adresse"
       ],
       "Copy invitation link": [
-        "Copiar enlace de invitación"
+        "Kopiér invitationslink"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "Kopiér link"
       ],
       "Copy link and close": [
-        "Copiar enlace y cerrar"
+        "Kopiér link og luk"
       ],
       "Copy meeting link": [
-        "Copiar enlace de la reunión"
+        "Kopiér mødelink"
       ],
       "Copy room link": [
-        "Copiar enlace de sala"
+        "Kopiér link til møderum"
       ],
       "Create a free account": [
-        "Crear una cuenta gratuita"
+        "Opret en gratis konto"
       ],
       "Create a room": [
-        "Crear una sala"
+        "Opret et rum"
       ],
       "Create an account": [
-        "Crear una cuenta"
+        "Opret en konto"
       ],
       "Create meeting": [
-        "Crear una reunión"
+        "Opret møde"
       ],
       "Delete": [
-        "Eliminar"
+        "Slet"
       ],
       "Deny": [
-        "Denegar"
+        "Afvis"
       ],
       "Deny ${ participantName }": [
-        "Denegar a ${ participantName }"
+        "Afvis ${ participantName }"
       ],
       "Disable ${ participantName }'s video": [
-        "Desactivar el vídeo de ${ participantName }"
+        "Deaktiver ${ participantName }s video"
       ],
       "Disable camera": [
-        "Desactivar la cámara"
+        "Slå kamera fra"
       ],
       "Disable waiting room": [
-        "Desactivar sala de espera"
+        "Deaktiver venteværelse"
       ],
       "Dismiss": [
-        "Descartar"
+        "Afvis"
       ],
       "Done": [
-        "Hecho"
+        "Udført"
       ],
       "Download": [
-        "Descargar"
+        "Download"
       ],
       "Download app": [
-        "Descargar aplicación"
+        "Download app"
       ],
       "Download local participant report": [
-        "Descargar informe de participante local"
+        "Download lokal-deltagerrapport"
       ],
       "Download logs": [
-        "Descargar los registros"
+        "Download logfiler"
       ],
       "Download participant report": [
-        "Descargar informe de participante"
+        "Download deltagerrapport"
       ],
       "Download recording": [
-        "Descargar grabación"
+        "Download optagelsen"
       ],
       "Download room level report": [
-        "Descargar informe de nivel de sala"
+        "Download rapport på rumniveau"
       ],
       "Edit": [
-        "Editar"
+        "Redigér"
       ],
       "Edit email address": [
-        "Editar dirección de correo"
+        "Rediger e-mailadresse"
       ],
       "Edit phone number": [
-        "Editar número de teléfono"
+        "Redigér telefonnummer"
       ],
       "Edit sign-in details": [
-        "Editar datos de inicio de sesión"
+        "Rediger login-detaljer"
       ],
       "Enable camera": [
-        "Activar la cámara"
+        "Slå kamera til"
       ],
       "Enable waiting room": [
-        "Activar sala de espera"
+        "Aktivér venteværelse"
       ],
       "End meeting": [
-        "Finalizar la reunión"
+        "Afslut møde"
       ],
       "End meeting for all": [
-        "Finalizar reunión para todos"
+        "Afslut møde for alle"
       ],
       "Forgot password?": [
-        "¿Olvidó su contraseña?"
+        "Glemt adgangskode?"
       ],
       "Full size": [
-        "Tamaño completo"
+        "Fuld størrelse"
       ],
       "Generate a new meeting link.": [
-        "Generar un enlace de reunión."
+        "Opret et nyt mødelink."
       ],
       "Get Meet Professional": [
-        "Obtenga Meet Profesional"
+        "Få Meet Professional"
       ],
       "Get verification code": [
-        "Obtener código de verificación"
+        "Få bekræftelseskode"
       ],
       "Help and feedback": [
-        "Ayuda y comentarios"
+        "Hjælp og feedback"
       ],
       "Help and resources": [
-        "Ayuda y recursos"
+        "Hjælp og ressourcer"
       ],
       "Hide options": [
-        "Ocultar opciones"
+        "Skjul indstillinger"
       ],
       "Hide participants": [
-        "Ocultar participantes"
+        "Skjul deltagere"
       ],
       "Hide self view": [
-        "Ocultar mi vista"
+        "Skjul selvvisning"
       ],
       "Hide timezones": [
-        "Ocultar zonas horarias"
+        "Skjul tidszoner"
       ],
       "Insert emoji": [
-        "Insertar emoji"
+        "Indsæt emoji"
       ],
       "Join": [
-        "Unirse"
+        "Deltag"
       ],
       "Join meeting": [
-        "Unirse a la reunión"
+        "Deltag i mødet"
       ],
       "Join with a link": [
-        "Unirse con un enlace"
+        "Deltag med et link"
       ],
       "Kick out": [
-        "Expulsar"
+        "Udeluk"
       ],
       "Kick out ${ participantName }": [
-        "Expulsar a ${ participantName }"
+        "Fjern ${ participantName }"
       ],
       "Leave": [
-        "Salir"
+        "Forlad"
       ],
       "Leave meeting": [
-        "Salir de la reunión"
+        "Forlad møde"
       ],
       "Lock meeting": [
-        "Bloquear reunión"
+        "Lås møde"
       ],
       "Lower hand": [
-        "Bajar la mano"
+        "Sænk hånden"
       ],
       "Minimize preview": [
-        "Minimizar vista previa"
+        "Minimér forhåndsvisning"
       ],
       "More info: ${ safeTitle }": [
-        "Más información: ${ safeTitle }"
+        "Yderligere information: ${ safeTitle }"
       ],
       "More options for accounts": [
-        "Más opciones para las cuentas"
+        "Flere muligheder for konti"
       ],
       "Mute ${ participantName }": [
-        "Silenciar a ${ participantName }"
+        "Slå lyd fra for ${ participantName }"
       ],
       "Next month": [
-        "Mes siguiente"
+        "Næste måned"
       ],
       "Next page": [
-        "Página siguiente"
+        "Næste side"
       ],
       "Noise cancellation": [
-        "Cancelación de ruido"
+        "Støjreduktion"
       ],
       "Open app": [
-        "Abrir la aplicación"
+        "Åbn app"
       ],
       "Open link": [
-        "Abrir enlace"
+        "Åbn link"
       ],
       "Participants join after you approve them": [
-        "Los participantes se unen después de que los apruebe"
+        "Deltagere tilslutter sig efter du har godkendt dem"
       ],
       "Participants join the call directly": [
-        "Los participantes se unen directamente a la llamada"
+        "Deltagere tilslutter sig opkaldet direkte"
       ],
       "Pause": [
-        "Pausar"
+        "Pause"
       ],
       "Previous month": [
-        "Mes anterior"
+        "Forrige måned"
       ],
       "Previous page": [
-        "Página anterior"
+        "Forrige side"
       ],
       "Raise hand": [
-        "Levantar la mano"
+        "Ræk hånden op"
       ],
       "React with ${ emoji }": [
-        "Reaccionar con ${ emoji }"
+        "Reager med ${ emoji }"
       ],
       "React with ${ emoji }, ${ identities.length } reaction": [
-        "Reaccionar con ${ emoji }, ${ identities.length } reacción",
-        "Reaccionar con ${ emoji }, ${ identities.length } reacciones"
+        "Reager med ${ emoji }, ${ identities.length } reaktion",
+        "Reager med ${ emoji }, ${ identities.length } reaktioner"
       ],
       "Receive video": [
-        "Recibir video"
+        "Modtag video"
       ],
       "Record": [
-        "Grabar"
+        "Optag"
       ],
       "Refer a friend": [
-        "Referir una amistad"
+        "Henvis en ven"
       ],
       "Refresh audio and video tracks": [
-        "Actualizar pistas de audio y video"
+        "Opdatér lyd- og videostreams"
       ],
       "Refresh screen share track": [
-        "Actualizar la señal de la pantalla compartida"
+        "Opdater skærmdelingsspor"
       ],
       "Refresh the page": [
-        "Refrescar la página"
+        "Opdater siden"
       ],
       "Rejoin meeting": [
-        "Volver a unirse a la reunión"
+        "Deltag i mødet igen"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
-        "Eliminar reacción ${ emoji }, ${ identities.length } reacción",
-        "Eliminar reacción ${ emoji }, ${ identities.length } reacciones"
+        "Fjern reaktion ${ emoji }, ${ identities.length } reaktion",
+        "Fjern reaktion ${ emoji }, ${ identities.length } reaktioner"
       ],
       "Report a problem": [
-        "Reportar un problema"
+        "Anmeld et problem"
       ],
       "Request a call": [
-        "Solicitar una llamada"
+        "Anmod om opkald"
       ],
       "Request a feature": [
-        "Solicitar una característica"
+        "Anmod om en funktion"
       ],
       "Request new code": [
-        "Solicitar un código nuevo"
+        "Anmod om ny kode"
       ],
       "Resend code": [
-        "Reenviar código"
+        "Send kode igen"
       ],
       "Reset to defaults": [
-        "Restablecer valores por defecto"
+        "Nulstil til standardindstillinger"
       ],
       "Resume": [
-        "Reanudar"
+        "Genoptag"
       ],
       "Return to dashboard": [
-        "Volver al panel"
+        "Tilbage til kontrolpanel"
       ],
       "Room": [
-        "Sala"
+        "Rum"
       ],
       "Rotate personal meeting link": [
-        "Rotar enlace de reunión personal"
+        "Forny personligt mødelink"
       ],
       "Save": [
-        "Guardar"
+        "Gem"
       ],
       "Schedule": [
-        "Programar"
+        "Planlæg"
       ],
       "Schedule a meeting": [
-        "Programar una reunión"
+        "Planlæg et møde"
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "Programar en ${ CALENDAR_APP_NAME }"
+        "Planlæg i ${ CALENDAR_APP_NAME }"
       ],
       "Search countries": [
-        "Buscar países"
+        "Søg lande"
       ],
       "Send an encrypted message": [
-        "Enviar un mensaje cifrado"
+        "Send en krypteret besked"
       ],
       "Settings": [
-        "Ajustes"
+        "Indstillinger"
       ],
       "Show duration": [
-        "Mostrar duración"
+        "Vis varighed"
       ],
       "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
+        "Vis flydende miniature under skærmdeling"
       ],
       "Show options": [
-        "Mostrar opciones"
+        "Vis valgmuligheder"
       ],
       "Show participants": [
-        "Mostrar participantes"
+        "Vis deltagere"
       ],
       "Show timezones": [
-        "Mostrar zonas horarias"
+        "Vis tidszoner"
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "Log ind"
       ],
       "Sign out": [
-        "Cerrar sesión"
+        "Log ud"
       ],
       "Sign out of all accounts": [
-        "Cerrar la sesión de todas las cuentas"
+        "Log ud af alle konti"
       ],
       "Simulate reconnection": [
-        "Reconexión simulada"
+        "Simulér genoprettelse af forbindelsen"
       ],
       "Skip": [
-        "Omitir"
+        "Spring over"
       ],
       "Skip to main content": [
-        "Saltar al contenido principal"
+        "Spring til hovedindholdet"
       ],
       "Start an instant meeting": [
-        "Iniciar una reunión al instante"
+        "Start et hurtigt møde"
       ],
       "Start meeting": [
-        "Comenzar la reunión"
+        "Start møde"
       ],
       "Start new meeting": [
-        "Iniciar una reunión"
+        "Start et nyt møde"
       ],
       "Start recording": [
-        "Iniciar grabación"
+        "Start optagelse"
       ],
       "Start Recording Track Stats": [
-        "Iniciar estadísticas de grabación"
+        "Start med at optage sporingsstatistik"
       ],
       "Start your own meeting": [
-        "Inicie su propia reunión"
+        "Start dit eget møde"
       ],
       "Starting…": [
-        "Iniciando…"
+        "Starter…"
       ],
       "Stay in meeting": [
-        "Permanecer en la reunión"
+        "Bliv i møde"
       ],
       "Stop opening meetings in the desktop app": [
-        "Dejar de abrir reuniones en la aplicación de escritorio"
+        "Stop åbning af møder i desktop-appen"
       ],
       "Stop receiving video": [
-        "Dejar de recibir video"
+        "Stop indgående video"
       ],
       "Stop recording": [
-        "Detener grabación"
+        "Stop optagelse"
       ],
       "Stop recording and download video": [
-        "Detener la grabación y descargar video."
+        "Stop optagelse og download video"
       ],
       "Stop Recording Track Stats": [
-        "Detener estadísticas de grabación"
+        "Stop optagelse af sporingsstatistik"
       ],
       "Submit": [
-        "Enviar"
+        "Indsend"
       ],
       "Switch or add account": [
-        "Cambiar o agregar cuenta"
+        "Skift eller tilføj konto"
       ],
       "Tap to unblock audio playback": [
-        "Pulsar para reproducir audio"
+        "Tryk for at afspille lyd"
       ],
       "The current link will stop working.": [
-        "El enlace actual dejará de funcionar."
+        "Det nuværende link vil holde op med at virke."
       ],
       "Try again": [
-        "Volver a intentar"
+        "Prøv igen"
       ],
       "Try another method": [
-        "Intente otro método"
+        "Prøv en anden metode"
       ],
       "Turn off incoming video": [
-        "Desactivar video entrante"
+        "Slå indgående video fra"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Opgradér"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "Opgradér nu"
       ],
       "Upgrade your plan to use waiting room in your next meeting.": [
-        "Actualice su plan para usar la sala de espera en su próxima reunión."
+        "Opgrader dit abonnement for at bruge venteværelset i dit næste møde"
       ],
       "Upload another video": [
-        "Cargar otro video"
+        "Upload en anden video"
       ],
       "Upload video": [
-        "Cargar video"
+        "Upload video"
       ],
       "Use authentication code": [
-        "Usar código de autenticación"
+        "Brug godkendelseskode"
       ],
       "Use camera": [
-        "Usar cámara"
+        "Brug kamera"
       ],
       "Use microphone": [
-        "Usar micrófono"
+        "Brug mikrofon"
       ],
       "Use recovery code": [
-        "Usar un código de recuperación"
+        "Brug gendannelseskode"
       ],
       "Use waiting room with a paid plan": [
-        "Usar sala de espera con un plan de pago"
+        "Brug venteværelset med et betalt abonnement"
       ],
       "Verify": [
-        "Verificar"
+        "Bekræft"
       ],
       "Verify account": [
-        "Verificar cuenta"
+        "Bekræft konto"
       ],
       "View invoice": [
-        "Ver la factura"
+        "Vis faktura"
       ],
       "Waiting room": [
-        "Sala de espera"
+        "Venteværelse"
       ]
     },
     "Alt": {
       "Audio settings": [
-        "Ajustes de audio"
+        "Lydindstillinger"
       ],
       "Blur background": [
-        "Difuminar fondo"
+        "Slør baggrund"
       ],
       "Chat": [
         "Chat"
       ],
       "Close": [
-        "Cerrar"
+        "Luk"
       ],
       "Close search": [
-        "Cerrar la búsqueda"
+        "Luk søgning"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "Kopier link"
       ],
       "Copy meeting link": [
-        "Copiar enlace de la reunión"
+        "Kopier mødelink"
       ],
       "Debug overlay": [
-        "Superposición de depuración"
+        "Fejldebug-overlay"
       ],
       "Go to dashboard": [
-        "Ir al panel de control"
+        "Gå til kontrolpanel"
       ],
       "Hide self view": [
-        "Ocultar vista propia"
+        "Skjul selvvisning"
       ],
       "Leave Meeting": [
-        "Salir de la reunión"
+        "Forlad møde"
       ],
       "Lock meeting": [
-        "Bloquear reunión"
+        "Lås møde"
       ],
       "Lower hand": [
-        "Bajar la mano"
+        "Sænk hånden"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "Mødedetaljer"
       ],
       "More options": [
-        "Más opciones"
+        "Flere indstillinger"
       ],
       "Noise cancellation": [
-        "Cancelación de ruido"
+        "Støjdæmpning"
       ],
       "Open chat message search": [
-        "Abrir búsqueda de mensajes del chat"
+        "Åbn chatbeskedsøgning"
       ],
       "Open participants search": [
-        "Abrir la búsqueda de participantes"
+        "Åbn deltagersøgning"
       ],
       "Participant host control options": [
-        "Opciones de control del anfitrión participante"
+        "Deltagerværts kontrolindstillinger"
       ],
       "Participants": [
-        "Participantes"
+        "Deltagere"
       ],
       "Raise hand": [
-        "Levantar la mano"
+        "Ræk hånden op"
       ],
       "Rotate camera": [
-        "Rotar cámara"
+        "Rotér kamera"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "Skærmdeling"
       ],
       "Settings": [
-        "Ajustes"
+        "Indstillinger"
       ],
       "Show duration": [
-        "Mostrar duración"
+        "Vis varighed"
       ],
       "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
+        "Vis flydende miniature under skærmdeling"
       ],
       "Show passphrase": [
-        "Mostrar frase de contraseña"
+        "Vis adgangssætning"
       ],
       "Stop recording and download.": [
-        "Detener la grabación y descargar."
+        "Stop optagelse og download."
       ],
       "Toggle chat": [
-        "Alternar chat"
+        "Vis/skjul chat"
       ],
       "Toggle emoji reactions": [
-        "Alternar reacciones con emojis"
+        "Slå emoji-reaktioner til/fra"
       ],
       "Toggle meeting details": [
-        "Alternar detalles de la reunión"
+        "Vis/skjul mødedetaljer"
       ],
       "Toggle participants": [
-        "Alternar participantes"
+        "Vis/skjul deltagere"
       ],
       "Toggle screen share": [
-        "Alternar compartir pantalla"
+        "Slå skærmdeling til/fra"
       ],
       "Toggle settings": [
-        "Alternar ajustes"
+        "Åbn/luk indstillinger"
       ],
       "Turn off incoming video": [
-        "Desactivar video entrante"
+        "Slå indgående video fra"
       ],
       "Video settings": [
-        "Ajustes de video"
+        "Videoindstillinger"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicaciones de ${ BRAND_NAME }"
+        "${ BRAND_NAME } applikationer"
       ]
     },
     "Aria": {
       "Assign host": [
-        "Asignar anfitrión"
+        "Angiv vært"
       ],
       "Audio settings": [
-        "Ajustes de audio"
+        "Lydindstillinger"
       ],
       "Chat": [
-        "Chat"
+        "Samtale"
       ],
       "Chat messages": [
-        "Mensajes del chat"
+        "Chatbeskeder"
       ],
       "Device settings": [
-        "Ajustes del dispositivo"
+        "Enhedsindstillinger"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "Mødedetaljer"
       ],
       "Meeting rooms": [
-        "Salas de reunión"
+        "Mødelokaler"
       ],
       "Participants": [
-        "Participantes"
+        "Deltagere"
       ],
       "Participants list": [
-        "Lista de participantes"
+        "Liste over deltagere"
       ],
       "Primary navigation": [
-        "Navegación principal"
+        "Primær navigation"
       ],
       "Settings": [
-        "Ajustes"
+        "Indstillinger"
       ],
       "Video settings": [
-        "Ajustes de video"
+        "Videoindstillinger"
       ]
     },
     "Badge": {
       "Active": [
-        "Activo"
+        "Aktiv"
       ]
     },
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "Conexión mediante modo de retransmisión TURN debido a restricciones en su red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
+        "Forbundet via TURN-relætilstand på grund af dine netværksbegrænsninger. Dette kan øge latenstiden og påvirke opkaldskvaliteten."
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME } skrivebordsapp"
       ]
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "Problema con ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME }-problem"
       ],
       "Application problem": [
-        "Problema con la aplicación"
+        "Applikationsproblem"
       ],
       "Authenticator problem": [
-        "Problema con el autenticador"
+        "Autentificeringsproblem"
       ],
       "Bridge problem": [
-        "Problema de Bridge"
+        "Bridge-problem"
       ],
       "Calendar problem": [
-        "Problema del calendario"
+        "Kalender-problem"
       ],
       "Connection problem": [
-        "Problema de conexión"
+        "Forbindelsesproblem"
       ],
       "Contacts problem": [
-        "Problema de contactos"
+        "Kontakt-problem"
       ],
       "Custom domain problem": [
-        "Problema de dominio personalizado"
+        "Brugerdomæne-problem"
       ],
       "Docs problem": [
-        "Problema de Docs"
+        "Docs-problem"
       ],
       "Drive problem": [
-        "Problema de Drive"
+        "Drive-problem"
       ],
       "Feature request": [
-        "Solicitar funcionalidad"
+        "Anmodning om funktionalitet"
       ],
       "Import / export problem": [
-        "Problema de importación/exportación"
+        "Import-/eksportproblem"
       ],
       "Installation problem": [
-        "Problema de instalación"
+        "Installationsproblem"
       ],
       "Mail problem": [
-        "Problema del correo"
+        "Mail-problem"
       ],
       "Manual setup problem": [
-        "Problema de configuración manual"
+        "Problem med manuel opsætning"
       ],
       "Meet problem": [
-        "Problema de Meet"
+        "Meet-problem"
       ],
       "Other": [
-        "Otro"
+        "Andet"
       ],
       "Pass problem": [
-        "Problema con Proton Pass"
+        "Pass-problem"
       ],
       "Payments problem": [
-        "Problema de pagos"
+        "Betalingsproblem"
       ],
       "Sheets problem": [
-        "Problema de Sheets"
+        "Regnearksproblem"
       ],
       "Sign in problem": [
-        "Problema de inicio de sesión"
+        "Log ind-problem"
       ],
       "Sign up problem": [
-        "Problema de registro"
+        "Tilmeldingsproblem"
       ],
       "Signup problem": [
-        "Problema de registro"
+        "Tilmeldingsproblem"
       ],
       "Slow speed problem": [
-        "Problema de velocidad baja"
+        "Lav hastighed problem"
       ],
       "Speed problem": [
-        "Problema de velocidad"
+        "Hastighedsproblem"
       ],
       "Streaming problem": [
-        "Problema de transmisión"
+        "Streaming-problem"
       ],
       "Update problem": [
-        "Problema de actualización"
+        "Opdateringsproblem"
       ],
       "VPN problem": [
-        "Problema de VPN"
+        "VPN-problem"
       ],
       "Website access problem": [
-        "Problema de acceso web"
+        "Adgangsproblem på websted"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Minimizar"
+        "Fold sammen"
       ],
       "Expand": [
-        "Expandir"
+        "Udvid"
       ]
     },
     "color": {
       "carrot": [
-        "zanahoria"
+        "gulerod"
       ],
       "cerise": [
-        "cereza"
+        "kirsebærrød"
       ],
       "cobalt": [
-        "cobalto"
+        "kobolt"
       ],
       "copper": [
-        "cobre"
+        "kobber"
       ],
       "enzian": [
-        "genciana"
+        "ensian"
       ],
       "fern": [
-        "helecho"
+        "bregne"
       ],
       "forest": [
-        "bosque"
+        "skov"
       ],
       "ocean": [
-        "océano"
+        "ocean"
       ],
       "olive": [
-        "aceituna"
+        "oliven"
       ],
       "pacific": [
-        "pacífico"
+        "stillehav"
       ],
       "pickle": [
-        "pepinillo"
+        "syltet agurk"
       ],
       "pine": [
-        "pino"
+        "fyr"
       ],
       "pink": [
-        "rosa"
+        "pink"
       ],
       "plum": [
-        "ciruela"
+        "blomme"
       ],
       "purple": [
-        "púrpura"
+        "lilla"
       ],
       "reef": [
-        "arrecife"
+        "rev"
       ],
       "sahara": [
         "sahara"
       ],
       "slateblue": [
-        "azul pizarra"
+        "skiferblå"
       ],
       "soil": [
-        "suelo"
+        "jord"
       ],
       "strawberry": [
-        "fresa"
+        "jordbær"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "Abjasia"
+        "Abkhasien"
       ],
       "Afghanistan": [
-        "Afganistán"
+        "Afghanistan"
       ],
       "Albania": [
-        "Albania"
+        "Albanien"
       ],
       "Algeria": [
-        "Argelia"
+        "Algeriet"
       ],
       "American Samoa": [
-        "Samoa Americana"
+        "Amerikansk Samoa"
       ],
       "Andorra": [
         "Andorra"
@@ -989,91 +989,91 @@
         "Angola"
       ],
       "Anguilla": [
-        "Anguila"
+        "Anguilla"
       ],
       "Antarctica": [
-        "Antártida"
+        "Antarktis"
       ],
       "Antigua and Barbuda": [
-        "Antigua y Barbuda"
+        "Antigua og Barbudas"
       ],
       "Argentina": [
         "Argentina"
       ],
       "Armenia": [
-        "Armenia"
+        "Armenien"
       ],
       "Aruba": [
         "Aruba"
       ],
       "Ascension Island": [
-        "Isla Ascensión"
+        "Ascension Island"
       ],
       "Australia": [
-        "Australia"
+        "Australien"
       ],
       "Austria": [
-        "Austria"
+        "Østrig"
       ],
       "Azerbaijan": [
-        "Azerbaiyán"
+        "Aserbajdsjan"
       ],
       "Bahamas": [
         "Bahamas"
       ],
       "Bahrain": [
-        "Baréin"
+        "Bahrain"
       ],
       "Bangladesh": [
-        "Bangladés"
+        "Bangladesh"
       ],
       "Barbados": [
         "Barbados"
       ],
       "Belarus": [
-        "Bielorrusia"
+        "Hviderusland"
       ],
       "Belgium": [
-        "Bélgica"
+        "Belgien"
       ],
       "Belize": [
-        "Belice"
+        "Belize"
       ],
       "Benin": [
-        "Benín"
+        "Benin"
       ],
       "Bermuda": [
-        "Bermudas"
+        "Bermuda"
       ],
       "Bhutan": [
-        "Bután"
+        "Bhutan"
       ],
       "Bolivia": [
         "Bolivia"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Caribe Neerlandés"
+        "Bonaire, Sint Eustatius og Saba"
       ],
       "Bosnia and Herzegovina": [
-        "Bosnia Herzegovina"
+        "Bosnien-Hercegovina"
       ],
       "Botswana": [
-        "Botsuana"
+        "Botswana"
       ],
       "Bouvet Island": [
-        "Isla Bouvet"
+        "Bouvetøen"
       ],
       "Brazil": [
-        "Brasil"
+        "Brasilien"
       ],
       "British Indian Ocean Territory": [
-        "Territorio Británico del Océano Índico"
+        "Britiske territorium i Det Indiske Ocean"
       ],
       "Brunei Darussalam": [
-        "Brunéi"
+        "Brunei Darussalam"
       ],
       "Bulgaria": [
-        "Bulgaria"
+        "Bulgarien"
       ],
       "Burkina Faso": [
         "Burkina Faso"
@@ -1082,148 +1082,148 @@
         "Burundi"
       ],
       "Cambodia": [
-        "Camboya"
+        "Cambodja"
       ],
       "Cameroon": [
-        "Camerún"
+        "Cameroon"
       ],
       "Canada": [
-        "Canadá"
+        "Canada"
       ],
       "Cape Verde": [
-        "Cabo Verde"
+        "Kap Verde"
       ],
       "Cayman Islands": [
-        "Islas Caimán"
+        "Caymanøerne"
       ],
       "Central African Republic": [
-        "Rep. Centroafricana"
+        "Den Centralafrikanske Republik"
       ],
       "Chad": [
-        "Chad"
+        "Tchad"
       ],
       "Chile": [
         "Chile"
       ],
       "China": [
-        "China"
+        "Kina"
       ],
       "Christmas Island": [
-        "Isla de Navidad"
+        "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
-        "Islas Cocos (Keeling)"
+        "Cocos (Keeling)-øerne"
       ],
       "Colombia": [
         "Colombia"
       ],
       "Comoros": [
-        "Comoras"
+        "Comorerne"
       ],
       "Congo": [
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "RD del Congo"
+        "Congo, Demokratiske Republik"
       ],
       "Cook Islands": [
-        "Islas Cook"
+        "Cookøerne"
       ],
       "Costa Rica": [
         "Costa Rica"
       ],
       "Croatia": [
-        "Croacia"
+        "Kroatien"
       ],
       "Cuba": [
         "Cuba"
       ],
       "Curaçao": [
-        "Curazao"
+        "Curaçao"
       ],
       "Cyprus": [
-        "Chipre"
+        "Cypern"
       ],
       "Czech Republic": [
-        "República Checa"
+        "Tjekkiet"
       ],
       "Côte d'Ivoire": [
-        "Costa de Marfil"
+        "Elfenbenskysten"
       ],
       "Denmark": [
-        "Dinamarca"
+        "Danmark"
       ],
       "Djibouti": [
-        "Yibuti"
+        "Djibouti"
       ],
       "Dominica": [
         "Dominica"
       ],
       "Dominican Republic": [
-        "República Dominicana"
+        "Dominikanske Republik"
       ],
       "Ecuador": [
         "Ecuador"
       ],
       "Egypt": [
-        "Egipto"
+        "Egypten"
       ],
       "El Salvador": [
         "El Salvador"
       ],
       "Equatorial Guinea": [
-        "Guinea Ecuatorial"
+        "Ækvatorialguinea"
       ],
       "Eritrea": [
         "Eritrea"
       ],
       "Estonia": [
-        "Estonia"
+        "Estland"
       ],
       "Eswatini": [
-        "Suazilandia"
+        "Eswatini"
       ],
       "Ethiopia": [
-        "Etiopía"
+        "Etiopien"
       ],
       "Falkland Islands": [
-        "Islas Malvinas"
+        "Falklandsøerne"
       ],
       "Faroe Islands": [
-        "Islas Faroe"
+        "Færøerne"
       ],
       "Federated States of Micronesia": [
-        "EF de Micronesia"
+        "Mikronesien"
       ],
       "Fiji": [
-        "Fiyi"
+        "Fiji"
       ],
       "Finland": [
-        "Finlandia"
+        "Finland"
       ],
       "France": [
-        "Francia"
+        "Frankrig"
       ],
       "French Guiana": [
-        "Guyana Francesa"
+        "Fransk Guyana"
       ],
       "French Polynesia": [
-        "Polinesia Francesa"
+        "Fransk Polynesien"
       ],
       "French Southern Territories": [
-        "Territorios Australes Franceses"
+        "Franske sydlige territorier"
       ],
       "Gabon": [
-        "Gabón"
+        "Gabon"
       ],
       "Gambia": [
         "Gambia"
       ],
       "Georgia": [
-        "Georgia"
+        "Georgien"
       ],
       "Germany": [
-        "Alemania"
+        "Tyskland"
       ],
       "Ghana": [
         "Ghana"
@@ -1232,16 +1232,16 @@
         "Gibraltar"
       ],
       "Greece": [
-        "Grecia"
+        "Grækenland"
       ],
       "Greenland": [
-        "Groenlandia"
+        "Grønland"
       ],
       "Grenada": [
-        "Granada"
+        "Grenada"
       ],
       "Guadeloupe": [
-        "Guadalupe"
+        "Guadeloupe"
       ],
       "Guam": [
         "Guam"
@@ -1256,19 +1256,19 @@
         "Guinea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bisáu"
+        "Guinea-Bissau"
       ],
       "Guyana": [
-        "Guayana"
+        "Guyana"
       ],
       "Haiti": [
-        "Haití"
+        "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        "Islas Heard y McDonald"
+        "Heard Island og McDonald Islands"
       ],
       "Holy See (Vatican City State)": [
-        "Cd. del Vaticano"
+        "Den Hellige Stol (Vatikanstaten)"
       ],
       "Honduras": [
         "Honduras"
@@ -1277,55 +1277,55 @@
         "Hong Kong"
       ],
       "Hungary": [
-        "Hungría"
+        "Ungarn"
       ],
       "Iceland": [
-        "Islandia"
+        "Island"
       ],
       "India": [
-        "India"
+        "Indien"
       ],
       "Indonesia": [
-        "Indonesia"
+        "Indonesien"
       ],
       "International": [
-        "Internacional"
+        "International"
       ],
       "Iran": [
-        "Irán"
+        "Iran"
       ],
       "Iraq": [
         "Irak"
       ],
       "Ireland": [
-        "Irlanda"
+        "Irland"
       ],
       "Isle of Man": [
-        "Isla de Man"
+        "Isle of Man"
       ],
       "Israel": [
         "Israel"
       ],
       "Italy": [
-        "Italia"
+        "Italien"
       ],
       "Jamaica": [
         "Jamaica"
       ],
       "Japan": [
-        "Japón"
+        "Japan"
       ],
       "Jersey": [
         "Jersey"
       ],
       "Jordan": [
-        "Jordania"
+        "Jordan"
       ],
       "Kazakhstan": [
-        "Kazajistán"
+        "Kasakhstan"
       ],
       "Kenya": [
-        "Kenia"
+        "Kenya"
       ],
       "Kiribati": [
         "Kiribati"
@@ -1337,82 +1337,82 @@
         "Kuwait"
       ],
       "Kyrgyzstan": [
-        "Kirguistán"
+        "Kirgisistan"
       ],
       "Laos": [
         "Laos"
       ],
       "Latvia": [
-        "Letonia"
+        "Letland"
       ],
       "Lebanon": [
-        "Líbano"
+        "Libanon"
       ],
       "Lesotho": [
-        "Lesoto"
+        "Lesotho"
       ],
       "Liberia": [
         "Liberia"
       ],
       "Libya": [
-        "Libia"
+        "Libyen"
       ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
       "Lithuania": [
-        "Lituania"
+        "Litauen"
       ],
       "Luxembourg": [
-        "Luxemburgo"
+        "Luxembourg"
       ],
       "Macao": [
-        "Macao"
+        "Macau"
       ],
       "Madagascar": [
-        "Madagascar"
+        "Madagaskar"
       ],
       "Malawi": [
-        "Malaui"
+        "Malawi"
       ],
       "Malaysia": [
-        "Malasia"
+        "Malaysia"
       ],
       "Maldives": [
-        "Maldivas"
+        "Maldiverne"
       ],
       "Mali": [
-        "Malí"
+        "Mali"
       ],
       "Malta": [
         "Malta"
       ],
       "Marshall Islands": [
-        "Islas Marshall"
+        "Marshalløerne"
       ],
       "Martinique": [
-        "Martinica"
+        "Martinique"
       ],
       "Mauritania": [
-        "Mauritania"
+        "Mauretanien"
       ],
       "Mauritius": [
-        "Mauricio"
+        "Mauritius"
       ],
       "Mayotte": [
         "Mayotte"
       ],
       "Mexico": [
-        "México"
+        "Mexico"
       ],
       "Moldova": [
-        "Moldavia"
+        "Moldova"
       ],
       "Monaco": [
-        "Mónaco"
+        "Monaco"
       ],
       "Mongolia": [
-        "Mongolia"
+        "Mongoliet"
       ],
       "Montenegro": [
         "Montenegro"
@@ -1421,7 +1421,7 @@
         "Montserrat"
       ],
       "Morocco": [
-        "Marruecos"
+        "Marokko"
       ],
       "Mozambique": [
         "Mozambique"
@@ -1439,19 +1439,19 @@
         "Nepal"
       ],
       "Netherlands": [
-        "Países Bajos"
+        "Nederlandene"
       ],
       "New Caledonia": [
-        "Nueva Caledonia"
+        "Ny Kaledonien"
       ],
       "New Zealand": [
-        "Nueva Zelanda"
+        "New Zealand"
       ],
       "Nicaragua": [
         "Nicaragua"
       ],
       "Niger": [
-        "Níger"
+        "Niger"
       ],
       "Nigeria": [
         "Nigeria"
@@ -1460,52 +1460,52 @@
         "Niue"
       ],
       "Norfolk Island": [
-        "Isla Norfolk"
+        "Norfolk Island"
       ],
       "North Korea": [
-        "Corea del Norte"
+        "Nordkorea"
       ],
       "North Macedonia": [
-        "Macedonia del Norte"
+        "Nordmakedonien"
       ],
       "Northern Mariana Islands": [
-        "Islas Marianas del Norte"
+        "Nordmarianerne"
       ],
       "Norway": [
-        "Noruega"
+        "Norge"
       ],
       "Oman": [
-        "Omán"
+        "Oman"
       ],
       "Pakistan": [
-        "Pakistán"
+        "Pakistan"
       ],
       "Palau": [
-        "Palaos"
+        "Palau"
       ],
       "Palestine": [
-        "Palestina"
+        "Palæstina"
       ],
       "Panama": [
-        "Panamá"
+        "Panama"
       ],
       "Papua New Guinea": [
-        "Papúa Nueva Guinea"
+        "Papua Ny Guinea"
       ],
       "Paraguay": [
         "Paraguay"
       ],
       "Peru": [
-        "Perú"
+        "Peru"
       ],
       "Philippines": [
-        "Filipinas"
+        "Filippinerne"
       ],
       "Pitcairn": [
         "Pitcairn"
       ],
       "Poland": [
-        "Polonia"
+        "Polen"
       ],
       "Portugal": [
         "Portugal"
@@ -1514,40 +1514,40 @@
         "Puerto Rico"
       ],
       "Qatar": [
-        "Catar"
+        "Qatar"
       ],
       "Reunion": [
-        "Reunión"
+        "Reunion"
       ],
       "Romania": [
-        "Rumania"
+        "Rumænien"
       ],
       "Russia": [
-        "Rusia"
+        "Rusland"
       ],
       "Rwanda": [
-        "Ruanda"
+        "Rwanda"
       ],
       "Saint Barthélemy": [
-        "San Bartolomé"
+        "Skt. Barthélemy"
       ],
       "Saint Helena": [
-        "Santa Helena"
+        "Sankt Helena"
       ],
       "Saint Kitts and Nevis": [
-        "San Cristóbal y Nieves"
+        "Saint Kitts og Nevis"
       ],
       "Saint Lucia": [
-        "Santa Lucía"
+        "Saint Lucia"
       ],
       "Saint Martin (French Part)": [
-        "San Martín (parte francesa)"
+        "Saint Martin (franske del)"
       ],
       "Saint Pierre and Miquelon": [
-        "San Pedro y Miquelón"
+        "Saint Pierre og Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "San Vicente y las Granadinas"
+        "Saint Vincent og Grenadinerne"
       ],
       "Samoa": [
         "Samoa"
@@ -1556,94 +1556,94 @@
         "San Marino"
       ],
       "Sao Tome and Principe": [
-        "Santo Tomé y Príncipe"
+        "Sao Tome og Principe"
       ],
       "Saudi Arabia": [
-        "Arabia Saudita"
+        "Saudi-Arabien"
       ],
       "Senegal": [
         "Senegal"
       ],
       "Serbia": [
-        "Serbia"
+        "Serbien"
       ],
       "Seychelles": [
-        "Seychelles"
+        "Seychellerne"
       ],
       "Sierra Leone": [
-        "Sierra Leona"
+        "Sierra Leone"
       ],
       "Singapore": [
-        "Singapur"
+        "Singapore"
       ],
       "Sint Maarten": [
-        "San Martín"
+        "Sint Maarten"
       ],
       "Slovakia": [
-        "Eslovaquia"
+        "Slovakiet"
       ],
       "Slovenia": [
-        "Eslovenia"
+        "Slovenien"
       ],
       "Solomon Islands": [
-        "Islas Salomón"
+        "Salomon-øerne"
       ],
       "Somalia": [
         "Somalia"
       ],
       "South Africa": [
-        "Sudáfrica"
+        "Sydafrika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Islas Georgias del Sur y Sándwich del Sur"
+        "Sydgeorgien og de sydlige Sandwichøer"
       ],
       "South Korea": [
-        "Corea del Sur"
+        "Sydkorea"
       ],
       "South Ossetia": [
-        "Osetia del Sur"
+        "Sydossetien"
       ],
       "South Sudan": [
-        "Sudán del Sur"
+        "Sydsudan"
       ],
       "Spain": [
-        "España"
+        "Spanien"
       ],
       "Sri Lanka": [
         "Sri Lanka"
       ],
       "Sudan": [
-        "Sudán"
+        "Sudan"
       ],
       "Suriname": [
         "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard y Jan Mayen"
+        "Svalbard og Jan Mayen"
       ],
       "Sweden": [
-        "Suecia"
+        "Sverige"
       ],
       "Switzerland": [
-        "Suiza"
+        "Schweiz"
       ],
       "Syria": [
-        "Siria"
+        "Syrien"
       ],
       "Taiwan": [
-        "Taiwán"
+        "Taiwan"
       ],
       "Tajikistan": [
-        "Tayikistán"
+        "Tadsjikistan"
       ],
       "Tanzania": [
         "Tanzania"
       ],
       "Thailand": [
-        "Tailandia"
+        "Thailand"
       ],
       "Timor-Leste": [
-        "Timor Oriental"
+        "Timor-Leste"
       ],
       "Togo": [
         "Togo"
@@ -1655,22 +1655,22 @@
         "Tonga"
       ],
       "Trinidad and Tobago": [
-        "Trinidad y Tobago"
+        "Trinidad og Tobago"
       ],
       "Tristan da Cunha": [
-        "Tristán de Acuña"
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        "Túnez"
+        "Tunesien"
       ],
       "Turkey": [
-        "Turquía"
+        "Tyrkiet"
       ],
       "Turkmenistan": [
-        "Turkmenistán"
+        "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
-        "Islas Turcas y Caicos"
+        "Turks- og Caicosøerne"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -1679,25 +1679,25 @@
         "Uganda"
       ],
       "Ukraine": [
-        "Ucrania"
+        "Ukraine"
       ],
       "United Arab Emirates": [
-        "Emiratos Árabes Unidos"
+        "Forenede Arabiske Emirater"
       ],
       "United Kingdom": [
-        "Reino Unido"
+        "Storbritannien"
       ],
       "United States": [
-        "Estados Unidos"
+        "Amerika"
       ],
       "United States Minor Outlying Islands": [
-        "Islas Ultramarinas Menores de Estados Unidos"
+        "Amerikas mindre fjerntliggende øer"
       ],
       "Uruguay": [
         "Uruguay"
       ],
       "Uzbekistan": [
-        "Uzbekistán"
+        "Uzbekistan"
       ],
       "Vanuatu": [
         "Vanuatu"
@@ -1709,16 +1709,16 @@
         "Vietnam"
       ],
       "Virgin Islands, British": [
-        "Islas Vírgenes Británicas"
+        "Jomfruøerne, britiske"
       ],
       "Virgin Islands, U.S.": [
-        "Islas Vírgenes de EE. UU."
+        "Jomfruøerne (de amerikanske, USVI)"
       ],
       "Wallis and Futuna": [
-        "Wallis y Futuna"
+        "Wallis og Futuna"
       ],
       "Western Sahara": [
-        "Sahara Occidental"
+        "Vestsahara"
       ],
       "Yemen": [
         "Yemen"
@@ -1727,240 +1727,240 @@
         "Zambia"
       ],
       "Zimbabwe": [
-        "Zimbabue"
+        "Zimbabwe"
       ],
       "Åland Islands": [
-        "Islas Aland"
+        "Ålandsøerne"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Factura atrasada"
+        "Forfalden faktura"
       ]
     },
     "Description": {
       "Encrypting with Messaging Layer Security (MLS)": [
-        "Cifrando con Messaging Layer Security (MLS)"
+        "Krypterer med Messaging Layer Security (MLS)"
       ],
       "Rotating group encryption key for best security": [
-        "Rotando la clave de cifrado del grupo para mejor seguridad"
+        "Fornyer gruppekrypteringsnøgle for optimal sikkerhed"
       ],
       "Try a different name.": [
-        "Pruebe un nombre diferente."
+        "Prøv et andet navn."
       ],
       "You'll see people here when they join the meeting.": [
-        "Verá personas aquí cuando se unan a la reunión."
+        "Her vil du kunne se personer når de tilslutter sig mødet."
       ]
     },
     "Display name": {
       "Loading…": [
-        "Cargando…"
+        "Indlæser..."
       ]
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contacto de confianza"
+        "Betroet kontakt"
       ]
     },
     "Error": {
       "Domain not available, try again later": [
-        "Dominio no disponible, inténtelo más tarde"
+        "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Email is not valid": [
-        "Correo no válido"
+        "E-mail er ikke gyldig"
       ],
       "Enter 6 digits": [
-        "Ingrese 6 dígitos"
+        "Indtast 6 cifre"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
+        "Indtast dit brugernavn uden domænet (@example.com)"
       ],
       "Event deleted": [
-        "Evento eliminado"
+        "Begivenhed slettet"
       ],
       "Failed to assign host": [
-        "Error al asignar anfitrión"
+        "Kunne ikke angive vært"
       ],
       "Failed to create meeting": [
-        "Error al crear la reunión"
+        "Kunne ikke oprette møde"
       ],
       "Failed to create personal meeting, please refresh the page": [
-        "Error al crear la reunión personal, actualice la página"
+        "Kunne ikke oprette personligt møde, opdatér siden."
       ],
       "Failed to decrypt session key": [
-        "Error al descifrar la clave de sesión"
+        "Kunne ikke dekryptere sessionsnøgle"
       ],
       "Failed to delete event": [
-        "Error al eliminar el evento"
+        "Kunne ikke slette begivenhed"
       ],
       "Failed to delete recording": [
-        "Error al eliminar la grabación"
+        "Kunne ikke slette optagelse"
       ],
       "Failed to delete room": [
-        "Error al eliminar la sala"
+        "Kunne ikke slette rummet"
       ],
       "Failed to download recording": [
-        "Error al descargar grabaciones"
+        "Kunne ikke downloade optagelse"
       ],
       "Failed to edit room name": [
-        "Error al editar el nombre de la sala"
+        "Kunne ikke redigere rumnavn"
       ],
       "Failed to join meeting. Please try again later.": [
-        "Error al unirse a la reunión. Intente de nuevo más tarde."
+        "Det lykkedes ikke at deltage i mødet. Prøv igen senere."
       ],
       "Failed to join meeting. Please try again.": [
-        "Error al unirse a la reunión. Intente de nuevo."
+        "Kunne ikke tilslutte mødet. Prøv igen."
       ],
       "Failed to lock meeting": [
-        "Error al bloquear la reunión"
+        "Kunne ikke låse mødet"
       ],
       "Failed to rotate personal meeting link": [
-        "Error al rotar el enlace de reunión personal"
+        "Kunne ikke forny personligt mødelink"
       ],
       "Failed to send chat message. Please try again.": [
-        "Error al enviar el mensaje de chat. Intente de nuevo."
+        "Kunne ikke sende chatbesked. Prøv igen."
       ],
       "Failed to send emoji reaction. Please try again.": [
-        "Error al enviar la reacción de emoji. Inténtelo de nuevo."
+        "Kunne ikke sende emoji-reaktion. Prøv igen."
       ],
       "Failed to send reaction. Please try again.": [
-        "Error al enviar la reacción. Inténtelo de nuevo."
+        "Kunne ikke sende reaktion. Prøv igen."
       ],
       "Failed to start meeting. Please try again.": [
-        "Error al iniciar la reunión. Intente de nuevo."
+        "Kunne ikke starte mødet. Prøv igen."
       ],
       "Failed to start recording": [
-        "Error al iniciar la grabación"
+        "Kunne ikke begynde optagelsen"
       ],
       "Failed to start screen share": [
-        "Error al comenzar compartir la pantalla"
+        "Kunne ikke starte skærmdeling"
       ],
       "Failed to unlock meeting": [
-        "Error al desbloquear la reunión"
+        "Kunne ikke låse møde op"
       ],
       "Incorrect username": [
-        "Nombre de usuario incorrecto"
+        "Forkert brugernavn"
       ],
       "Invalid meeting link": [
-        "Enlace de reunión no válido"
+        "Ugyldigt mødelink"
       ],
       "Invalid passphrase": [
-        "Frase de contraseña inválida"
+        "Ugyldig adgangssætning"
       ],
       "Invalid verification code": [
-        "Código de verificación inválido"
+        "Ugyldig verifikationskode"
       ],
       "Not a valid number": [
-        "Número no válido"
+        "Ikke et gyldigt nummer"
       ],
       "Passwords do not match": [
-        "Las contraseñas no coinciden"
+        "Adgangskoder stemmer ikke overens"
       ],
       "Please allow screen sharing in your system permissions, then try again": [
-        "Permita compartir la pantalla en los permisos de su sistema y luego inténtelo de nuevo."
+        "Tillad skærmdeling i dine systemtilladelser og prøv så igen"
       ],
       "Request timed out": [
-        "Tiempo de espera agotado"
+        "Forespørgsel fik timeout"
       ],
       "Room deleted": [
-        "Sala eliminada"
+        "Rum slettet"
       ],
       "Screen share is not supported on mobile browsers": [
-        "Compartir pantalla no se admite en navegadores móviles"
+        "Skærmdeling understøttes ikke på mobile browsere"
       ],
       "Signature verification failed": [
-        "Error en la verificación de la firma"
+        "Bekræftelse af signatur mislykkedes"
       ],
       "The email addresses do not match": [
-        "Las direcciónes de correo electrónico no son las mismas"
+        "E-mailadresserne stemmer ikke overens"
       ],
       "The meeting password is incorrect": [
-        "La contraseña de la reunión es incorrecta"
+        "Mødeadgangskoden er forkert"
       ],
       "The meeting password is invalid": [
-        "La contraseña de la reunión no es válida"
+        "Mødeadgangskoden er ugyldig"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
       "This field is required": [
-        "Este campo es obligatorio"
+        "Feltet er påkrævet"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+        "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
-        "Esta reunión es de una versión anterior, el anfitrión debe finalizarla y actualizar Meet para reiniciar con la última versión."
+        "Dette møde er i en ældre version, værten skal afslutte det og opdatere Meet for at genstarte med den seneste version."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Intente usando solo letras, números y _.-"
+        "Prøv kun at bruge bogstaver, tal og _.-"
       ],
       "Unknown error": [
-        "Error desconocido"
+        "Ukendt fejl"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o dígito"
+        "Brugernavn skal begynde med et bogstav eller et tal"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o dígito"
+        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
-        "Su navegador se quedó sin espacio de almacenamiento. Se guardó la grabación hasta este momento."
+        "Din browser løb tør for lagerplads. Vi gemte optagelsen indtil dette tidspunkt."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
-        "Parece que la hora de su dispositivo está desincronizada. Revísela e intente de nuevo."
+        "Uret på din enhed ser ud til ikke at være synkroniseret. Kontroller tidsindstillingen på din enhed, og prøv igen."
       ]
     },
     "Error message": {
       "App currently unavailable": [
-        "La aplicación no está disponible actualmente."
+        "App ikke tilgængelig i øjeblikket"
       ],
       "Error: ${ errorMessage }": [
-        "Error: ${ errorMessage }"
+        "Fejl: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Hubo un problema"
+        "Ups, noget gik galt"
       ],
       "Open in browser": [
-        "Abrir en el navegador"
+        "Åbn i browseren"
       ],
       "Please refresh the page or try again later.": [
-        "Actualice la página o intente nuevamente."
+        "Opdater venligst siden eller prøv igen senere."
       ],
       "Something went wrong": [
-        "Hubo un problema"
+        "Noget gik galt"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
+        "Skift til webversionen for at bruge ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
+        "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Ninguna imagen seleccionada"
+        "Intet billede valgt"
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con la cuenta de ${ BRAND_NAME }."
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Sikkerhedsnøgle"
       ],
       "Touch your security key.": [
-        "Toque su llave de seguridad."
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clave de seguridad"
+        "Sikkerhedsnøgle"
       ]
     },
     "file size format": {
@@ -2000,70 +2000,70 @@
       ],
       "Terabyte": [
         "Terabyte",
-        "Terabytes"
+        "Terabyte"
       ]
     },
     "Font face option": {
       "System default": [
-        "Predeterminado del sistema"
+        "Systemstandard"
       ],
       "Theme font": [
-        "Fuente del tema"
+        "Temaskrifttype"
       ]
     },
     "Font size option": {
       "Large": [
-        "Grande"
+        "Stor"
       ],
       "Medium (recommended)": [
-        "Mediana (recomendada)"
+        "Mellem (anbefalet)"
       ],
       "Small": [
-        "Pequeña"
+        "Lille"
       ],
       "Very large": [
-        "Muy grande"
+        "Meget stor"
       ],
       "Very small": [
-        "Muy pequeña"
+        "Meget lille"
       ]
     },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
-        "¿Ya tiene una cuenta? ${ signIn }"
+        "Har du allerede en konto? ${ signIn }"
       ]
     },
     "Group": {
       "Account": [
-        "Cuenta"
+        "Konto"
       ],
       "Apps": [
-        "Aplicaciones"
+        "Apps"
       ],
       "Network": [
-        "Red"
+        "Netværk"
       ],
       "Other category": [
-        "Otra categoría"
+        "Anden kategori"
       ],
       "Services": [
-        "Servicios"
+        "Tjenester"
       ]
     },
     "Header": {
       "Protect your conversations with end-to-end encryption": [
-        "Proteja sus conversaciones con cifrado de extremo a extremo"
+        "Beskyt dine samtaler med end-to-end-kryptering"
       ]
     },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
-        "${ createAnActionAction } o ${ signInAction } para acceder a su sala personal y crear más salas"
+        "${ createAnActionAction } eller ${ signInAction } for at få adgang til dit personlige rum og oprette nye rum"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
-        "${ createAnActionAction } o ${ signInAction } para programar reuniones"
+        "${ createAnActionAction } eller ${ signInAction } for at planlægge møder"
       ],
       "Talk in total ${ privacyWord }": [
-        "Hable en total ${ privacyWord }"
+        "Samlet taletid ${ privacyWord }"
       ]
     },
     "Human verification method": {
@@ -2071,13 +2071,13 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Correo"
+        "E-mail"
       ],
       "Manual": [
-        "Manual"
+        "Manuel"
       ],
       "No verification method available": [
-        "No hay un método de verificación disponible"
+        "Ingen bekræftelsesmetode tilgængelig"
       ],
       "SMS": [
         "SMS"
@@ -2085,1308 +2085,1308 @@
     },
     "Info": {
       " and ": [
-        " y "
+        " og "
       ],
       "${ maxParticipants } participant limit reached": [
-        "Se alcanzó el límite de ${ maxParticipants } participantes"
+        "${ maxParticipants }-deltagergrænsen er nået"
       ],
       "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
-        "${ MEET_APP_NAME } necesita acceso para que otros puedan escucharle durante la llamada. Puede activar o desactivar la cámara o micrófono en cualquier momento."
+        "${ MEET_APP_NAME } skal bruge adgang, så andre kan se og høre dig i opkaldet. Du kan slå dit kamera eller din mikrofon fra når som helst."
       ],
       "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceder a la cámara para que otros puedan verle durante la llamada. Puede desactivarla en cualquier momento."
+        "${ MEET_APP_NAME } skal bruge adgang til kameraet så andre kan se dig i opkaldet. Du kan slå det fra når som helst."
       ],
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceder a su micrófono para que otros vuedan escucharle durante la llamada. Puede desactivarla en cualquier momento."
+        "${ MEET_APP_NAME } skal bruge adgang til mikrofonen så andre kan høre dig i opkaldet. Du kan slå det fra når som helst."
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
+        "${ MEET_APP_NAME } kræver WebRTC for at køre. Opdatér din browser eller enhed til en version, der understøtter WebRTC, prøv en anden browser, eller deaktivér eventuelle udvidelser, der måtte blokere det."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
-        "${ participantName } y ${ otherParticipantsCount } más están grabando"
+        "${ participantName } og ${ otherParticipantsCount } andre optager"
       ],
       "${ participantName } is recording": [
-        "${ participantName } está grabando"
+        "${ participantName } optager"
       ],
       "${ presenterName } (you) is presenting": [
-        "${ presenterName } (usted) está presentando"
+        "${ presenterName } (dig) præsenterer"
       ],
       "${ presenterName } is presenting": [
-        "${ presenterName } está presentando"
+        "${ presenterName } præsenterer"
       ],
       "${ reactorNames } and others reacted with ${ emoji }": [
-        "${ reactorNames } y otras personas han reaccionado con ${ emoji }"
+        "${ reactorNames } og andre reagerede med ${ emoji }"
       ],
       "${ reactorNames } reacted with ${ emoji }": [
-        "${ reactorNames } reaccionó con ${ emoji }"
+        "${ reactorNames } reagerede med ${ emoji }"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
-        "${ totalParticipantCount } de un máximo de ${ maxParticipants } participantes"
+        "${ totalParticipantCount } af op til ${ maxParticipants } deltagere"
       ],
       "${ totalParticipantCount } participant": [
-        "${ totalParticipantCount } participante",
-        "${ totalParticipantCount } participantes"
+        "${ totalParticipantCount } deltager",
+        "${ totalParticipantCount } deltagere"
       ],
       "(You)": [
-        "(Usted)"
+        "(Dig)"
       ],
       "-Removed dangerous URL-": [
-        "-Se eliminó una URL peligrosa-"
+        "-Fjernede farlig URL-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Modo avanzado: ajuste cada constante de difuminado para la siguiente versión y luego pulse en Aplicar para reconstruir la vista previa. Las anulaciones tienen prioridad sobre los valores de archivo y de Liberar."
+        "Avanceret tilstand: Indstil hver sløringskonstant til den næste version, og tryk derefter på Anvend for at oprette forhåndsvisningen igen. Overrides prioriteres højere end fil- og Unleash-værdier."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
-        "Anónimo ${ particle } ${ participantNumber }"
+        "Anonym ${ particle } ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
-        "¿En verdad desea salir?"
+        "Er du sikker på, du vil forlade mødet?"
       ],
       "Are you sure you want to stop recording?": [
-        "¿En verdad desea detener la grabación?"
+        "Er du sikker på, at du vil stoppe optagelsen?"
       ],
       "Attention required": [
-        "Atención requerida"
+        "Opmærksomhed påkrævet"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
+        "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "Al continuar en la reunión, usted reconoce y consiente que se le grabe."
+        "Ved at fortsætte i mødet anerkender du og samtykker til at blive optaget."
       ],
       "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
-        "Al unirse, acepta nuestros ${ termsLink } y ${ privacyLink }."
+        "Ved at deltage accepterer du vores ${ termsLink } og ${ privacyLink }."
       ],
       "camera": [
-        "cámara"
+        "kamera"
       ],
       "Camera permission denied": [
-        "Permiso de cámara denegado"
+        "Kameratilladelse nægtet"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
-        "Los cambios se realizan por fases. Aplique para reconstruir la vista previa con las constantes nuevas."
+        "Ændringerne er klar. Anvend dem for at oprette forhåndsvisningen igen med de nye konstanter."
       ],
       "Chat with everyone": [
-        "Chatear con todos"
+        "Chat med alle"
       ],
       "Check your system settings to make sure that a camera is available.": [
-        "Verifique los ajustes del sistema y asegúrese que una cámara está disponible."
+        "Kontroller dine systemindstillinger for at sikre, at et kamera er tilgængeligt."
       ],
       "Check your system settings to make sure that a microphone is available.": [
-        "Verifique los ajustes del sistema y asegúrese que un micrófono está disponible."
+        "Kontrollér dine systemindstillinger for at sikre, at en mikrofon er tilgængelig."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
       "Coming soon": [
-        "Próximamente"
+        "Kommer snart"
       ],
       "Connection failed": [
-        "Error de conexión"
+        "Forbindelse mislykkedes"
       ],
       "Connection interrupted. Reconnecting...": [
-        "Conexión interrumpida. Reconectando..."
+        "Forbindelse afbrudt. Genopretter forbindelse..."
       ],
       "Connection issue detected. Attempting to recover…": [
-        "Problema de conexión detectado. Intentando recuperar…"
+        "Der er et problem med forbindelsen. Forsøger at fikse det..."
       ],
       "Connection lost. Reconnecting…": [
-        "Conexión perdida. Reconectando…"
+        "Forbindelsen blev afbrudt. Genopretter forbindelse..."
       ],
       "Copied to clipboard": [
-        "Copiado al portapapeles"
+        "Kopieret til udklipsholder"
       ],
       "Could not access the camera.": [
-        "No se pudo acceder a la cámara."
+        "Kunne ikke få adgang til kameraet."
       ],
       "Could not start recording.": [
-        "No se pudo iniciar la grabación."
+        "Kunne ikke starte optagelsen."
       ],
       "Country code": [
-        "Código de país"
+        "Landekode"
       ],
       "Create an account": [
-        "Cree una cuenta"
+        "Opret en konto"
       ],
       "Create an account to host meetings with up to 50 participants.": [
-        "Cree una cuenta para organizar reuniones con hasta 50 participantes."
+        "Opret en konto for at afholde møder med op til 50 deltagere."
       ],
       "Created on ${ formattedDate }": [
-        "Creada el ${ formattedDate }"
+        "Oprettet den ${ formattedDate }"
       ],
       "Custom combination": [
-        "Combinación personalizada"
+        "Brugerdefineret kombination"
       ],
       "Decrypting meetings...": [
-        "Descifrando las reuniones..."
+        "Dekrypterer møder..."
       ],
       "Default - ${ systemDefault.label }": [
-        "Por defecto - ${ systemDefault.label }"
+        "Standard - ${ systemDefault.label }"
       ],
       "Default - System Default": [
-        "Por defecto - por defecto del sistema"
+        "Standard - Systemstandard"
       ],
       "Delete event": [
-        "Eliminar evento"
+        "Slet begivenhed"
       ],
       "Delete room": [
-        "Eliminar sala"
+        "Slet rum"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "¿Desea que la gente le ${ deviceContentType } en la reunión?"
+        "Ønsker du, at folk skal ${ deviceContentType } dig i mødet?"
       ],
       "Download current logs": [
-        "Descargar registros actuales"
+        "Download aktuelle logs"
       ],
       "Each code can only be used once": [
-        "Cada código solo puede usarse una vez"
+        "Hver kode kan kun bruges én gang"
       ],
       "Edit email address": [
-        "Editar dirección de correo"
+        "Rediger e-mailadresse"
       ],
       "End Meeting for everyone?": [
-        "¿Finalizar reunión para todos?"
+        "Afslut mødet for alle?"
       ],
       "End the meeting for everyone?": [
-        "¿Finalizar la reunión para todos?"
+        "Afslut mødet for alle?"
       ],
       "End-to-end encryption is active for audio and video.": [
-        "El cifrado de extremo a extremo está activo audio y video."
+        "End-to-end kryptering er aktiv for lyd og video."
       ],
       "End-to-end encryption is active for screen share": [
-        "El cifrado de extremo a extremo está activo para compartir pantalla"
+        "End-to-end kryptering er aktiv for skærmdeling"
       ],
       "End-to-end encryption is active for this chat.": [
-        "El cifrado de extremo a extremo está activo para este chat."
+        "End-to-end kryptering er aktiv for denne chat."
       ],
       "Enter code": [
-        "Ingresar código"
+        "Indtast kode"
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación."
+        "Indtast koden fra din godkendelsesapp"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Ingrese el código de verificación que fue enviado a ${ destinationText }."
+        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Ingrese su propia contraseña (como administrador de la organización)."
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Enter your own password (as trusted contact).": [
-        "Ingrese su propia contraseña (como contacto de confianza)."
+        "Indtast din egen adgangskode (som betroet kontakt)."
       ],
       "Everyone has been disconnected from the call.": [
-        "Todos se han desconectado de la llamada."
+        "Alle er blevet afbrudt fra opkaldet."
       ],
       "Failed to apply background blur": [
-        "Error al aplicar el fondo difuminado"
+        "Kunne ikke anvende baggrundssløring"
       ],
       "Failed to update meeting name": [
-        "Error al actualizar el nombre de la reunión"
+        "Det lykkedes ikke at opdatere mødenavnet"
       ],
       "Failed to update meeting password": [
-        "Error al actualizar la contraseña de la reunión"
+        "Det lykkedes ikke at opdatere mødeadgangskoden"
       ],
       "Failed to update meeting schedule": [
-        "Error al actualizar el horario de la reunión"
+        "Kunne ikke opdatere mødeplanen"
       ],
       "Free meeting": [
-        "Reunión gratuita"
+        "Gratis møde"
       ],
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
-        "Las reuniones gratuitas están limitadas a 1 hora. Esta llamada se desconectará pronto."
+        "Gratis møder er begrænset til 1 time. Dette opkald afbrydes snart."
       ],
       "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
-        "Consiga su propia sala de reuniones. Cree una cuenta para tener un enlace personal que podrá usar en cualquier momento."
+        "Få et personligt møderum. Opret en konto for at få et personligt mødelink, som du kan bruge når som helst."
       ],
       "Get a secure meeting link then add it to your calendar": [
-        "Obtenga un enlace de reunión seguro y luego añádalo a su calendario"
+        "Få et sikkert mødelink, og tilføj det derefter til din kalender"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
-        "Obtenga la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
+        "Få den bedste oplevelse med desktop-appen ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Vaya a about:config, busque media.peerconnection.enabled y actívelo."
+        "Gå til about:config, søg efter media.peerconnection.enabled, og sæt den til true."
       ],
       "Host": [
-        "Anfitrión"
+        "Vært"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Organice sus propias reuniones seguras. Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para invitar a quien quiera. Fácil, seguro y gratuito."
+        "Afhold dit eget sikre møde. Start et opkald i ${ MEET_APP_NAME }, og del linket for at invitere andre med. Enkelt, sikkert og gratis."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
+        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
+        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Si está usando Firefox, asegúrese de que PeerConnection está activado."
+        "Hvis du bruger Firefox, sørg da for, at PeerConnection er aktiv."
       ],
       "Internet connection lost": [
-        "Sin conexión a Internet"
+        "Internetforbindelse mistet"
       ],
       "Joined ${ roomNameLabel }": [
-        "Se unió a ${ roomNameLabel }"
+        "Tilmeldte sig ${ roomNameLabel }"
       ],
       "Learn more": [
-        "Más información"
+        "Få mere at vide"
       ],
       "Leave meeting and stop sharing?": [
-        "¿Salir de la reunión y dejar de compartir?"
+        "Forlad mødet og stop deling?"
       ],
       "Leaving the meeting will stop your screen sharing.": [
-        "Al abandonar la reunión detendrá el uso compartido de su pantalla."
+        "Hvis du forlader mødet stopper din skærmdeling."
       ],
       "Left ${ roomNameLabel }": [
-        "Salió de ${ roomNameLabel }"
+        "Forlod ${ roomNameLabel }"
       ],
       "Left by mistake?": [
-        "¿Salió por error?"
+        "Forlod du ved en fejl?"
       ],
       "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
+        "Link kopieret til udklipsholder"
       ],
       "Loading": [
-        "Cargando"
+        "Indlæser"
       ],
       "Loading ${ appName }": [
-        "Cargando ${ appName }"
+        "Indlæser ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
+        "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
       "Loading meetings...": [
-        "Cargando reuniones..."
+        "Indlæser møder..."
       ],
       "Loading recordings…": [
-        "Cargando grabaciones…"
+        "Indlæser optagelser..."
       ],
       "Loading...": [
-        "Cargando..."
+        "Indlæser..."
       ],
       "Loading…": [
-        "Cargando…"
+        "Indlæser…"
       ],
       "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Reproduzca en bucle un video cargado o su cámara en directo a través de ambas versiones con fondo difuminado, una al lado de la otra."
+        "Loop en uploadet video eller dit live kamera gennem begge versioner af baggrundssløring side om side."
       ],
       "Lower participant's hand": [
-        "Bajar la mano del participante"
+        "Tag deltagerens hånd ned"
       ],
       "Meet without restrictions": [
-        "Reúnase sin restricciones"
+        "Hold møder uden begrænsninger"
       ],
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
-        "Reuniones sin restricciones. Actualice a un plan superior para quitar el límite de 1 hora y reunir hasta a 100 participantes."
+        "Møder uden begrænsninger. Opgrader for at fjerne tidsbegrænsningen på 1 time og vær vært for op til 100 deltagere."
       ],
       "Meeting ended": [
-        "Reunión finalizada"
+        "Møde afsluttet"
       ],
       "Meeting full (${ maxParticipants } participants)": [
-        "Reunión llena (${ maxParticipants } participantes)"
+        "Mødet er fuldt (${ maxParticipants } deltagere)"
       ],
       "Meeting is decrypting...": [
-        "Descifrando la reunión..."
+        "Mødet dekrypteres..."
       ],
       "Meeting link": [
-        "Enlace de la reunión"
+        "Mødelink"
       ],
       "Meeting locked. No new participants can join.": [
-        "Reunión bloqueada. No pueden unirse participantes nuevos."
+        "Mødet er låst. Ingen nye deltagere kan tilslutte sig."
       ],
       "Meeting recordings aren’t supported in Firefox.": [
-        "Firefox no admite la grabación de reuniones."
+        "Mødeoptagelser understøttes ikke i Firefox."
       ],
       "Meeting time is up": [
-        "Se agotó el tiempo de reunión"
+        "Mødetiden er opbrugt"
       ],
       "Meeting unlocked. Participants can join again.": [
-        "Reunión desbloqueada. Los participantes pueden unirse de nuevo."
+        "Møde låst op. Deltagere kan tilslutte sig igen."
       ],
       "Meeting will end in ${ timeLeft }": [
-        "La reunión terminará en ${ timeLeft }"
+        "Mødet slutter om ${ timeLeft }"
       ],
       "Member": [
-        "Miembro"
+        "Medlem"
       ],
       "Message from ${ participantName }": [
-        "Mensaje de ${ participantName }"
+        "Besked fra ${ participantName }"
       ],
       "microphone": [
-        "micrófono"
+        "mikrofon"
       ],
       "Microphone effects": [
-        "Efectos de micrófono"
+        "Mikrofoneffekter"
       ],
       "Microphone permission denied": [
-        "Permiso de micrófono denegado"
+        "Mikrofontilladelse nægtet"
       ],
       "Mute microphone": [
-        "Silenciar micrófono"
+        "Slå mikrofonen fra"
       ],
       "My meetings": [
-        "Mis reuniones"
+        "Mine møder"
       ],
       "My rooms": [
-        "Mis salas"
+        "Mine rum"
       ],
       "New": [
-        "Nuevo"
+        "Ny"
       ],
       "New host": [
-        "Nuevo anfitrión"
+        "Ny vært"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
-        "No se detectaron un ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+        "Ingen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } registreret."
       ],
       "No camera detected": [
-        "No se detectó una cámara"
+        "Intet kamera registreret"
       ],
       "No camera detected.": [
-        "No se detectó una cámara."
+        "Intet kamera registreret."
       ],
       "No microphone detected": [
-        "Ningún micrófono detectado"
+        "Ingen mikrofon registreret"
       ],
       "No microphone detected.": [
-        "Ningún micrófono detectado."
+        "Ingen mikrofon registreret"
       ],
       "No publications": [
-        "Sin publicaciones"
+        "Ingen publikationer"
       ],
       "No recordings found on this device.": [
-        "No se encontraron grabaciones en este dispositivo."
+        "Ingen optagelser fundet på denne enhed."
       ],
       "No remote participants": [
-        "No hay participantes remotos"
+        "Ingen fjern-deltagere"
       ],
       "No results found": [
-        "No se encontraron resultados"
+        "Ingen resultater fundet"
       ],
       "No search results": [
-        "No hay resultados de búsqueda"
+        "Ingen søgeresultater"
       ],
       "No speaker detected": [
-        "Ningún altavoz detectado"
+        "Ingen højttaler registreret"
       ],
       "Only meetings you created appear here": [
-        "Aquí solo aparecen las reuniones que ha creado usted"
+        "Kun møder oprettet af dig vises her"
       ],
       "Open external link": [
-        "Abrir enlace externo"
+        "Åbn eksternt link"
       ],
       "Other accounts": [
-        "Otras cuentas"
+        "Andre konti"
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
-        "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y fomentan la verdadera libertad de expresión."
+        "Vores end-to-end krypterede møder beskytter privatliv og giver muligheden til at udtrykke sig frit."
       ],
       "Page ${ displayPage } of ${ totalPages }": [
-        "Página ${ displayPage } de ${ totalPages }"
+        "Side ${ displayPage } af ${ totalPages }"
       ],
       "Participant": [
-        "Participante"
+        "Deltager"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
-        "Pegue su enlace de ${ MEET_APP_NAME } para unirse a una reunión segura"
+        "Indsæt dit ${ MEET_APP_NAME }-link for at deltage i et sikkert møde"
       ],
       "Permissions not given.": [
-        "Permisos no otorgados."
+        "Tilladelser ikke givet."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
-        "Active el acceso a su ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para una mejor experiencia."
+        "Aktivér adgang til din ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for den bedste oplevelse."
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
-        "Ingrese la frase contraseña para descifrar y visualizar esta reunión"
+        "Indtast adgangssætningen for at dekryptere og se dette møde"
       ],
       "Please try again or try another browser": [
-        "Inténtelo de nuevo o pruebe con otro navegador"
+        "Prøv igen, eller brug en anden browser"
       ],
       "Poor connection": [
-        "Conexión débil"
+        "Dårlig forbindelse"
       ],
       "Premium meeting": [
-        "Reunión premium"
+        "Premium møde"
       ],
       "Presenting": [
-        "Presentando"
+        "Fremlægger"
       ],
       "privacy": [
-        "privacidad"
+        "privatlivsbeskyttelse"
       ],
       "Quick reactions": [
-        "Reacciones rápidas"
+        "Hurtige reaktioner"
       ],
       "Reactions": [
-        "Reacciones"
+        "Reaktioner"
       ],
       "Reconnected successfully": [
-        "Reconectada con éxito"
+        "Forbindelse genoprettet"
       ],
       "Reconnecting to meeting...": [
-        "Reconectando la reunión..."
+        "Genskaber forbindelse til mødet..."
       ],
       "Record your meetings": [
-        "Grabe sus reuniones"
+        "Optag dine møder"
       ],
       "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
-        "Grabe la señal de video original de su cámara y el fondo difuminado de la producción simultáneamente. Al detener la descarga, se detendrán ambos clips."
+        "Optag med dit blotte kamera, og din baggrundssløring side om side. Begge klip downloades når optagelsen stoppes."
       ],
       "Recording": [
-        "Grabando"
+        "Optager"
       ],
       "Recording deleted": [
-        "Grabación eliminada"
+        "Optagelse slettet"
       ],
       "Recording in progress": [
-        "Grabación en curso"
+        "Optagelse i gang"
       ],
       "Recording will begin and attendees will be notified.": [
-        "La grabación comenzará y se notificará a los invitados."
+        "Optagelsen starter, og deltagerne underrettes."
       ],
       "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
-        "Las grabaciones se almacenan localmente en su navegador. Descargue cualquiera que desee mantener, se eliminarán automáticamente después de 30 días."
+        "Optagelser opbevares lokalt i din browser. Download dem du gerne vil beholde, da de slettes automatisk efter 30 dage."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
+        "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
       "Refresh audio and video tracks": [
-        "Actualizar pistas de audio y video"
+        "Opdatér lyd- og videostreams"
       ],
       "Refresh screen share track": [
-        "Actualizar la señal de la pantalla compartida"
+        "Opdater skærmdelingsspor"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
-        "Programe su próxima reunión. Cree una cuenta para programar reuniones con su calendario."
+        "Planlæg dit næste møde. Opret en konto for at planlægge møder med din kalender."
       ],
       "Select a camera": [
-        "Seleccionar una cámara"
+        "Vælg et kamera"
       ],
       "Select a microphone": [
-        "Seleccionar un micrófono"
+        "Vælg en mikrofon"
       ],
       "Select a participant to assign as the new host before you go: ": [
-        "Seleccione un participante para asignarlo como el nuevo anfitrión antes de irse: "
+        "Vælg en deltager, der skal angives som ny vært, før du forlader mødet: "
       ],
       "Select a speaker": [
-        "Seleccionar un altavoz"
+        "Vælg en højttaler"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
+        "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
       "Session timed out": [
-        "Sesión agotada"
+        "Session er udløbet"
       ],
       "Set up a permanent meeting room for your team or clients": [
-        "Configure una sala de reunión permanente para su equipo o clientes"
+        "Opret et permanent mødelokale til dit team eller dine kunder"
       ],
       "Share screen": [
-        "Compartir pantalla"
+        "Del skærm"
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Comparta este enlace para invitar a otros. También puede encontrarlo en cualquier momento haciendo clic en el ícono de información en la barra de herramientas."
+        "Del dette link for at invitere andre. De kan også finde det når som helst ved at klikke på infoikonet på værktøjslinjen."
       ],
       "Sign in": [
-        "Inicie sesión"
+        "Log ind"
       ],
       "Sort by": [
-        "Ordenar por"
+        "Sorter efter"
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
-        "La selección de altavoz no está disponible en este navegador. Use los ajustes de su sistema para elegir un altavoz diferente."
+        "Du kan ikke vælge højtalere i denne browser. Brug dine systemindstillinger til at vælge en anden højtaler."
       ],
       "Start recording": [
-        "Iniciar grabación"
+        "Start optagelse"
       ],
       "Starting camera…": [
-        "Iniciando la cámara…"
+        "Starter kamera…"
       ],
       "Stop sharing your screen": [
-        "Dejar de compartir la pantalla"
+        "Stop deling af din skærm"
       ],
       "Successfully deleted meeting": [
-        "Reunión eliminada con éxito"
+        "Møde slettet"
       ],
       "Thank you for hosting a premium meeting.": [
-        "Gracias por organizar una reunión premium."
+        "Tak for at afholde et premium-møde."
       ],
       "Thank you for joining.": [
-        "Gracias por unirse."
+        "Tak for at deltage."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
-        "El anfitrión le ha retirado de esta reunión. Si fue un error, solicite que vuelva a invitarle."
+        "Værten har fjernet dig fra dette møde. Hvis det var en fejl, kan du bede værten om at invitere dig igen."
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Este enlace de reunión que intentó abrir no existe o expiró. Asegúrese de que el enlace sea correcto, o inicie una reunión segura nueva."
+        "Mødelinket, som du prøvede at åbne, eksisterer ikke eller er udløbet. Bekræft at linket er korrekt, eller start et nyt sikkert møde i stedet."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
-        "Este es un chat cifrado de extremo a extremo con mensajes efímeros, que desaparecen al final de la llamada."
+        "Denne chat er end-to-end krypteret, og beskeder forsvinder når opkaldet afsluttes."
       ],
       "This meeting is being recorded": [
-        "Esta reunión está siendo grabada"
+        "Dette møde optages"
       ],
       "This meeting is locked. Please contact the host to join.": [
-        "Esta reunión está bloqueada. Contacte con el anfitrión para unirse."
+        "Dette møde er låst. Kontakt værten for at deltage."
       ],
       "This meeting is password protected": [
-        "Esta reunión está protegida con contraseña"
+        "Dette møde er adgangskodebeskyttet"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
-        "Esta reunión alcanzó el límite de tiempo del plan gratuito. Actualice para extender el tiempo de reunión en futuras llamadas."
+        "Dette møde har nået tidsgrænsen for det gratis abonnement. Opgrader for at forlænge mødetiden i fremtidige møder."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
+        "Dette møde blev åbnet i desktop-appen ${ MEET_APP_NAME }"
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
-        "Esta grabación será eliminada permanentemente de este dispositivo. Esta acción no se puede deshacer."
+        "Denne optagelse slettes permanent fra denne enhed. Handlingen kan ikke fortrydes."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
-        "Esto finalizará la reunión para todos los participantes y detendrá el uso compartido de su pantalla."
+        "Dette afslutter mødet for alle deltagere og stopper din skærmdeling."
       ],
       "This will end the meeting for all participants.": [
-        "Esto finalizará la reunión a todos los participantes."
+        "Dette vil afslutte mødet for alle deltagere."
       ],
       "This will sign you out of all accounts currently logged in.": [
-        "Esto cerrará la sesión de todas las cuentas con la sesión activa."
+        "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
-        "Para crear una sala, necesitará **una Cuenta ${ BRAND_NAME } gratuita** para que podamos guardar la sala. Esto solo toma unos segundos."
+        "For at oprette et møderum, skal du bruge **en gratis ${ BRAND_NAME }-konto** så vi kan gemme rummet. Det tager kun et nogle sekunder."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para luchar contra el spam y el abuso, verifique que es humano."
+        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
-        "Para programar un evento, necesitará **una cuenta gratuita de ${ BRAND_NAME }** para que podamos guardar el evento. Esto solo toma unos segundos."
+        "For at planlægge en begivenhed, skal du bruge **en gratis ${ BRAND_NAME }-konto**, så vi kan gemme begivenheden. Det tager kun et par sekunder."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
-        "Para usar su sala de reuniones personal, necesitará **una cuenta gratuita de ${ BRAND_NAME }**. Esto solo toma unos segundos."
+        "For at bruge dit personlige mødelokale, skal du have **en gratis ${ BRAND_NAME }-konto**. Det tager kun et par sekunder."
       ],
       "Today — ${ absoluteDate }": [
-        "Hoy — ${ absoluteDate }"
+        "I dag — ${ absoluteDate }"
       ],
       "Tomorrow — ${ absoluteDate }": [
-        "Mañana — ${ absoluteDate }"
+        "I morgen — ${ absoluteDate }"
       ],
       "Turn off camera": [
-        "Apagar la cámara"
+        "Slå kamera fra"
       ],
       "Turn on camera": [
-        "Encender la cámara"
+        "Slå kamera til"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "No se puede reconectar a la reunión. Vuelva a unirse o abandone."
+        "Kunne ikke genoprette forbindelsen til mødet. Tilslut dig igen eller forlad mødet."
       ],
       "unlimited meeting": [
-        "reuniones ilimitadas"
+        "ubegrænset møde"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
-        "Desbloquee ${ unlimitedMeeting } y funciones premium"
+        "Lås op for ${ unlimitedMeeting } og premium-funktioner"
       ],
       "Unmute microphone": [
-        "Activar micrófono"
+        "Slå mikrofon til"
       ],
       "Upgrade to record your meetings locally.": [
-        "Actualice para grabar sus reuniones localmente."
+        "Opgrader for at optage dine møder lokalt."
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
-        "Mejore su plan para eliminar el límite de 1 hora y omitir la cuenta atrás. Disfrute de reuniones de hasta 24 horas."
+        "Opgradér for at fjerne begrænsningen på én time og spring nedtællingen over. Nyd møder på op til 24 timer."
       ],
       "Video effects": [
-        "Efectos de video"
+        "Videoeffekter"
       ],
       "Warning": [
-        "Advertencia"
+        "Advarsel"
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Enviaremos un código de verificación nuevo a ${ strong }"
+        "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
       "Week": [
-        "Semana"
+        "Uge"
       ],
       "Would you like to delete this event?": [
-        "¿Quiere eliminar este evento?"
+        "Vil du slette denne begivenhed?"
       ],
       "Would you like to delete this room?": [
-        "¿Desea eliminar esta sala?"
+        "Vil du slette dette rum?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
+        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
       "Would you like to receive a new verification code?": [
-        "¿Desearía recibir un código de verificación nuevo?"
+        "Ønsker du at modtage en ny verifikationskode?"
       ],
       "Yesterday — ${ absoluteDate }": [
-        "Ayer — ${ absoluteDate }"
+        "I går — ${ absoluteDate }"
       ],
       "You are almost there": [
-        "Ya casi terminamos"
+        "Du er der næsten"
       ],
       "You can close this tab.": [
-        "Puede cerrar esta pestaña."
+        "Du kan lukke denne fane."
       ],
       "You can now return to the application to continue": [
-        "Ahora puede regresar a la aplicación para continuar."
+        "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
-        "Aún puede apagar su micrófono y cámara en cualquier momento de la reunión"
+        "Du kan stadig slå din mikrofon og dit kamera fra når som helst under mødet"
       ],
       "You left the meeting": [
-        "Abandonó la reunión"
+        "Du forlod mødet"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
-        "Esta función requiere un plan de pago de ${ MEET_SHORT_APP_NAME } o Workspace. Contacte con la administración de su organización para mejorar el plan."
+        "Du skal bruge en betalt ${ MEET_SHORT_APP_NAME } eller et Workspace-abonnement for at bruge denne funktion. Kontakt din organisationsadministrator for at opgradere."
       ],
       "You were removed from the meeting": [
-        "Se le retiró de la reunión"
+        "Du blev fjernet fra mødet"
       ],
       "You will leave the meeting. Others will continue.": [
-        "Saldrá de la reunión. Los demás continuarán."
+        "Du forlader mødet. Andre fortsætter."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
-        "Se le invitó unirse a una reunión segura. Confirme su nombre y pulse abajo para ingresar."
+        "Du er blevet inviteret til et sikkert møde. Bekræft dit navn, og klik nedenfor for at deltage."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "La cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en el buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
+        "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
       ],
       "Your always available meeting room": [
-        "Su sala de reunión siempre disponible"
+        "Dit altid tilgængelige mødelokale"
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su cámara y micrófono. Para activarlos, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "Din browser har blokeret adgangen til dit kamera og din mikrofon. For at slå dem til skal du opdatere dine browserindstillinger og deltage i mødet igen."
       ],
       "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su cámara. Para activarlo, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "Din browser har blokeret adgangen til dit kamera. For at slå det til skal du opdatere dine browserindstillinger og deltage i mødet igen."
       ],
       "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su micrófono. Para activarlo, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "Din browser har blokeret adgangen til din mikrofon. For at slå den til skal du opdatere dine browserindstillinger og deltage i mødet igen."
       ],
       "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Su navegador ha bloqueado el acceso a su pantalla. Para activarlo, actualice sus ajustes de navegador y únase nuevamene a la llamada."
+        "Din browser har blokeret for adgangen til skærmdeling. For at slå det til skal du opdatere dine browserindstillinger og deltage i mødet igen."
       ],
       "Your browser or device isn’t supported": [
-        "Su navegador o dispositivo no está soportado"
+        "Din browser eller enhed understøttes ikke"
       ],
       "Your email will only be used for this one-time verification.": [
-        "El correo electrónico sólo se usará para esta verificación única."
+        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
       "Your meeting is ready": [
-        "Su reunión ya está lista"
+        "Dit møde er klar"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "El número de teléfono sólo se usará para esta verificación única."
+        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
-        "Está por abrir un enlace en una pestaña nueva. Asegúrese de que el sitio web sea de confianza antes de continuar."
+        "Du er ved at åbne et link i en ny fane. Vær sikker på, at webstedet er troværdigt, før du fortsætter."
       ]
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nombre de usuario de ${ BRAND_NAME }"
+        "${ BRAND_NAME } brugernavn"
       ],
       "${ numberOfStars } star": [
-        "${ numberOfStars } estrella",
-        "${ numberOfStars } estrellas"
+        "${ numberOfStars } stjerne",
+        "${ numberOfStars } stjerner"
       ],
       "Add optional details": [
-        "Añadir detalles opcionales"
+        "Tilføj valgfrie detaljer"
       ],
       "Add to calendar": [
-        "Añadir al calendario"
+        "Tilføj til kalender"
       ],
       "Advanced mode": [
-        "Modo avanzado"
+        "Avanceret tilstand"
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s)"
+        "Vedhæft skærmfoto(s)"
       ],
       "Audio": [
-        "Audio"
+        "Lyd"
       ],
       "Authenticator app": [
-        "Aplicación de autenticación"
+        "Godkendelsesapp"
       ],
       "Blurred (next)": [
-        "Difuminado (siguiente)"
+        "Sløret (næste)"
       ],
       "Browser": [
-        "Navegador"
+        "Browser"
       ],
       "Browser version": [
-        "Versión del navegador"
+        "Browser-version"
       ],
       "Camera Active": [
-        "Cámara activa"
+        "Kamera aktivt"
       ],
       "Category": [
-        "Categoría"
+        "Kategori"
       ],
       "Code is 6 digits without spaces": [
-        "El código es de 6 dígitos sin espacios"
+        "Koden er på 6 cifre uden mellemrum"
       ],
       "Connection Quality": [
-        "Calidad de la conexión"
+        "Forbindelseskvalitet"
       ],
       "Copy all activity events": [
-        "Copiar todos los eventos de actividad"
+        "Kopiér alle aktivitetsbegivenheder"
       ],
       "Copy invite link": [
-        "Copiar enlace de invitación"
+        "Kopiér invitationslink"
       ],
       "Create meeting options": [
-        "Crear opciones de la reunión"
+        "Opret mødeindstillinger"
       ],
       "Created": [
-        "Creado"
+        "Oprettet"
       ],
       "Current": [
-        "Actual"
+        "Nuværende"
       ],
       "Delete": [
-        "Eliminar"
+        "Slet"
       ],
       "Delete recovery-related information.": [
-        "Eliminar información de recuperación relacionada."
+        "Slet gendannelsesrelaterede oplysninger."
       ],
       "Does not repeat": [
-        "No se repite"
+        "Gentages ikke"
       ],
       "Download .ics": [
-        "Descargar .ics"
+        "Download .ics"
       ],
       "Email address": [
-        "Dirección de correo"
+        "E-mail"
       ],
       "Emoji picker": [
-        "Selector de emojis"
+        "Emoji-vælger"
       ],
       "Emoji reactions": [
-        "Reacciones con emojis"
+        "Emoji-reaktioner"
       ],
       "Enabled": [
-        "Activada"
+        "Aktiveret"
       ],
       "Ended": [
-        "Finalizada"
+        "Afsluttet"
       ],
       "Every day": [
-        "Diariamente"
+        "Hver dag"
       ],
       "Every month": [
-        "Mensualmente"
+        "Hver måned"
       ],
       "Every week": [
-        "Cada semana"
+        "Hver uge"
       ],
       "Every weekday": [
-        "Todos los días laborables"
+        "Hver ugedag"
       ],
       "Every year": [
-        "Anualmente"
+        "Hvert år"
       ],
       "Google Calendar": [
-        "Calendario de Google"
+        "Google Kalender"
       ],
       "Hide password": [
-        "Ocultar contraseña"
+        "Skjul adgangskode"
       ],
       "How was the call quality?": [
-        "¿Qué tal ha sido la calidad de la llamada?"
+        "Hvordan var opkaldskvaliteten?"
       ],
       "Identity": [
-        "Identidad"
+        "Identitet"
       ],
       "Include application logs in bug report": [
-        "Incluir registros de la aplicación en el informe de errores"
+        "Inkluder applikationslogfiler i fejlrapporten"
       ],
       "Last used": [
-        "Último uso"
+        "Senest brugt"
       ],
       "Leave meeting options": [
-        "Abandonar opciones de la reunión"
+        "Forlad mødeindstillinger"
       ],
       "Manage recordings": [
-        "Gestionar grabaciones"
+        "Administrer optagelser"
       ],
       "Meeting ID": [
-        "ID de la reunión"
+        "Møde-ID"
       ],
       "Meeting link": [
-        "Enlace de la reunión"
+        "Mødelink"
       ],
       "Message": [
-        "Mensaje"
+        "Besked"
       ],
       "Microphone Active": [
-        "Micrófono activo"
+        "Mikrofon aktiv"
       ],
       "Monday to Friday": [
-        "De lunes a viernes"
+        "Mandag til fredag"
       ],
       "Muted": [
-        "Silenciado"
+        "Lydløs"
       ],
       "Name": [
-        "Nombre"
+        "Navn"
       ],
       "Next": [
-        "Siguiente"
+        "Næste"
       ],
       "Operating system": [
-        "Sistema operativo"
+        "Operativsystem"
       ],
       "Operating system version": [
-        "Versión del sistema operativo"
+        "Operativsystemversion"
       ],
       "Outlook Calendar": [
-        "Calendario de Outlook"
+        "Outlook-kalender"
       ],
       "Participant controls": [
-        "Controles de participante"
+        "Deltagerkontroller"
       ],
       "Passphrase": [
-        "Frase de contraseña"
+        "Adgangssætning"
       ],
       "Password": [
-        "Contraseña"
+        "Adgangskode"
       ],
       "Phone number": [
-        "Número telefónico"
+        "Telefonnummer"
       ],
       "Raw": [
-        "En bruto"
+        "Raw"
       ],
       "Remember my name on this device": [
-        "Recordar mi nombre en este dispositivo"
+        "Husk mit navn på denne enhed"
       ],
       "Repeat event": [
-        "Repetir el evento"
+        "Gentag begivenhed"
       ],
       "Return to dashboard": [
-        "Volver al panel"
+        "Tilbage til kontrolpanel"
       ],
       "Reveal password": [
-        "Mostrar contraseña"
+        "Vis adgangskode"
       ],
       "Schedule meeting": [
-        "Programar reunión"
+        "Planlæg møde"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "Skærmdeling"
       ],
       "Selected Camera": [
-        "Cámara seleccionada"
+        "Valgt kamera"
       ],
       "Selected Microphone": [
-        "Micrófono seleccionado"
+        "Valgt mikrofon"
       ],
       "Selected Speaker": [
-        "Altavoz seleccionado"
+        "Valgt højttaler"
       ],
       "Subscribed": [
-        "Suscrito"
+        "Abonneret"
       ],
       "System information": [
-        "Información del sistema"
+        "Systemoplysninger"
       ],
       "Track SID": [
-        "Seguimiento de SID"
+        "Spor SID"
       ],
       "Use live camera feed": [
-        "Usar transmisión de la cámara en directo"
+        "Brug live kamera"
       ],
       "Use simple selfie segmentation": [
-        "Usar una segmentación sencilla para selfies"
+        "Brug simpel selfie-segmentering"
       ],
       "Verification code": [
-        "Código de verificación"
+        "Verifikationskode"
       ],
       "Video": [
         "Video"
       ],
       "What happened?": [
-        "¿Qué ha ocurrido?"
+        "Hvad skete der?"
       ],
       "Your password (admin)": [
-        "Su contraseña (admin)"
+        "Din adgangskode (admin)"
       ],
       "Your password (trusted contact)": [
-        "Su contraseña (contacto de confianza)"
+        "Din adgangskode (betroet kontakt)"
       ]
     },
     "Link": {
       "clearing your browser cache": [
-        "vaciar la caché del navegador"
+        "rydder din browser-cache"
       ],
       "Learn more": [
-        "Más información"
+        "Få mere at vide"
       ],
       "privacy policy": [
-        "política de privacidad"
+        "privatlivspolitik"
       ],
       "Request an invite": [
-        "Solicitar una invitación"
+        "Anmod om invitation"
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "Log ind"
       ],
       "terms and conditions": [
-        "términos y condiciones"
+        "vilkår og betingelser"
       ],
       "What’s this?": [
-        "¿Qué es esto?"
+        "Hvad er dette?"
       ]
     },
     "meet": {
       "Create and copy link": [
-        "Crear y copiar el enlace"
+        "Opret og kopiér link"
       ],
       "Create new room": [
-        "Crear una sala"
+        "Opret nyt rum"
       ],
       "Meeting rooms can be used at any time": [
-        "Las salas de reuniones pueden usarse en cualquier momento"
+        "Møderum kan bruges når som helst"
       ],
       "Save and copy link": [
-        "Guardar y copiar el enlace"
+        "Gem og kopier link"
       ]
     },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Su navegador o el software de su dispositivo no admite ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requiere WebAssembly (Wasm) para funcionar. Actualice su navegador o dispositivo a una versión que admita Wasm, o intente usar un navegador diferente."
+        "Din browser eller enhedssoftware understøtter ikke ${ MEET_APP_NAME }. ${ MEET_APP_NAME } kræver WebAssembly (Wasm) for at køre. Opdatér din browser eller enhed til en version, der understøtter Wasm, eller prøv at bruge en anden browser."
       ]
     },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
-        "Como solo usted está de participante, la reunión se cerrará automáticamente. ¿Desea mantenerse en esta reunión?"
+        "Da du er den eneste deltager i dette møde, vil mødet automatisk lukke. Ønsker du at blive i dette møde?"
       ]
     },
     "meet_2025 Action": {
       "Leave meeting": [
-        "Salir de la reunión"
+        "Forlad møde"
       ],
       "Stay in the meeting": [
-        "Permanecer en la reunión"
+        "Bliv i mødet"
       ]
     },
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
-        "Error al iniciar Imagen en Imagen"
+        "Kunne ikke starte billede-i-billede"
       ]
     },
     "Notification": {
       "Coming soon": [
-        "Próximamente"
+        "Kommer snart"
       ],
       "Copied to clipboard": [
-        "Copiado al portapapeles"
+        "Kopieret til udklipsholder"
       ],
       "Could not send feedback": [
-        "No se pudo enviar el comentario"
+        "Kunne ikke sende feedback"
       ],
       "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
+        "Link kopieret til udklipsholder"
       ],
       "Room name updated": [
-        "Nombre de la sala actualizado"
+        "Rumnavn opdateret"
       ],
       "Successfully rotated your personal meeting": [
-        "Su reunión personal se rotó con éxito"
+        "Dit personlige møde blev fornyet."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
-        "No puede enviar comentarios de una reunión a la que no ha asistido"
+        "Du kan ikke give feedback for et møde, du ikke har deltaget i"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Algunas imágenes no se cargaron debido a archivos duplicados en la selección actual."
+        "Nogle billeder blev ikke uploadet grundet duplikerede filnavne i det nuværende valg."
       ]
     },
     "Option": {
       "Audio was breaking up": [
-        "El audio se entrecortaba"
+        "Lyden hakkede"
       ],
       "I couldn't hear others": [
-        "No pude oír a los demás"
+        "Jeg kunne ikke høre andre"
       ],
       "I couldn't present ": [
-        "No pude presentar "
+        "Jeg kunne ikke præsentere "
       ],
       "I couldn't see others' video": [
-        "No pude ver el video de los demás"
+        "Jeg kunne ikke se de andres video"
       ],
       "I couldn't see the presentation": [
-        "No podía ver la presentación"
+        "Jeg kunne ikke se præsentationen"
       ],
       "Others couldn't hear me": [
-        "No podían oírme"
+        "Andre kunne ikke høre mig"
       ],
       "Others couldn't see my video": [
-        "Otros no pueden ver mi video"
+        "Andre kunne ikke se min video"
       ],
       "The presentation was blurry": [
-        "La presentación estaba borrosa"
+        "Præsentationen var sløret"
       ],
       "Video quality was poor": [
-        "La calidad de video era deficiente"
+        "Videokvaliteten var dårlig"
       ]
     },
     "Placeholder": {
       "A way to contact you": [
-        "Una forma de contactarle"
+        "En måde at kontakte dig på"
       ],
       "E.g., ": [
-        "Ej., "
+        "F.eks., "
       ],
       "Enter passphrase": [
-        "Ingresar la frase de contraseña"
+        "Indtast adgangssætning"
       ],
       "Enter time": [
-        "Ingresar la hora"
+        "Indtast tidspunkt"
       ],
       "Enter your name": [
-        "Ingrese su nombre"
+        "Indtast dit navn"
       ],
       "Find...": [
-        "Buscar..."
+        "Søg..."
       ],
       "Loading...": [
-        "Cargando..."
+        "Indlæser…"
       ],
       "Meeting name, e.g. team sync, project update, etc": [
-        "Nombre de la reunión, ej. sincronización de equipo, actualización de proyecto, etc."
+        "Mødenavn, f.eks. team sync, projektstatus, osv."
       ],
       "Password": [
-        "Contraseña"
+        "Adgangskode"
       ],
       "Please describe the problem and include any error messages": [
-        "Describa el problema e incluya cualquier mensaje de error"
+        "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
       "Room name, e.g. team sync, project update, etc": [
-        "Nombre de la sala, por ejemplo, sincronización de equipo, actualización de proyecto, etc."
+        "Navn på møderum, f.eks. team sync, projektstatus, osv."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "Programar en ${ CALENDAR_APP_NAME }"
+        "Opret i ${ CALENDAR_APP_NAME }"
       ],
       "Search": [
-        "Buscar"
+        "Søg"
       ],
       "Select": [
-        "Seleccionar"
+        "Vælg"
       ],
       "Share more details": [
-        "Compartir más detalles"
+        "Del flere detaljer"
       ],
       "Type an encrypted message...": [
-        "Escriba un mensaje cifrado..."
+        "Skriv en krypteret besked..."
       ]
     },
     "Safety review": {
       "Review account safety": [
-        "Compruebe la seguridad de la cuenta"
+        "Gennemgå kontoens sikkerhed"
       ]
     },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
-        "No se completó el inicio de sesión."
+        "Indlogningen var ikke gennemført."
       ]
     },
     "Select search results": {
       "No results found": [
-        "No se encontraron resultados"
+        "Ingen resultater fundet"
       ]
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Cerrar cuenta"
+        "Log ud"
       ],
       "Stay signed in": [
-        "Seguir conectado"
+        "Forbliv logget ind"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } hora",
-        "${ gracePeriodHoursRemaining } horas"
+        "${ gracePeriodHoursRemaining } time",
+        "${ gracePeriodHoursRemaining } timer"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } ahora está disponible."
+        "${ passwordReset } er nu tilgængelig."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Si cierra la sesión antes de restablecer la contraseña, podría perder el acceso a la cuenta."
+        "Hvis du logger ud, før du har nulstillet din adgangskode, kan du miste adgangen til din konto."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Si cierra la sesión sin restablecer la contraseña, podría perder el acceso a la cuenta."
+        "Hvis du logger ud uden at nulstille din adgangskode, kan du miste adgangen til din konto."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
-        "Podrá restablecer la contraseña en ${ boldTimeLeft }."
+        "Du vil kunne nulstille din adgangskode om ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Restablecimiento de contraseña"
+        "Adgangskodenulstilling"
       ]
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+        "Log ud uden at nulstille adgangskoden?"
       ]
     },
     "Sort option": {
       "Alphabetical (A–Z)": [
-        "Alfabético (A–Z)"
+        "Alfabetisk (A–Z)"
       ],
       "Newly created": [
-        "Recién creada"
+        "Nyoprettet"
       ],
       "Past meetings": [
-        "Reuniones anteriores"
+        "Tidligere møder"
       ],
       "Upcoming": [
-        "Próximamente"
+        "Kommende"
       ]
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Ir a los planes de suscripción"
+        "Gå til abonnementer"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Opgradér"
       ]
     },
     "sso": {
       "Sign in": [
-        "Iniciar sesión"
+        "Log ind"
       ],
       "Sign in to your organization": [
-        "Iniciar sesión en la organización"
+        "Log ind på din organisation"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Se le redirigirá a su proveedor de SSO de terceros."
+        "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
       ]
     },
     "Status": {
       "No": [
-        "No"
+        "Nej"
       ],
       "Yes": [
-        "Sí"
+        "Ja"
       ]
     },
     "Success": {
       "Assigned new host": [
-        "Se asignó un nuevo anfitrión"
+        "Ny vært angivet"
       ],
       "Code sent to ${ methodTo }": [
-        "Código enviado a ${ methodTo }"
+        "Kode sendt til ${ methodTo }"
       ],
       "Email address copied to clipboard": [
-        "Dirección de correo copiada al portapapeles"
+        "E-mailadresse kopieret til udklipsholder"
       ],
       "Problem reported": [
-        "Se notificó el problema."
+        "Problem indberettet"
       ],
       "Verification successful": [
-        "Verificación completada"
+        "Bekræftelse gennemført"
       ]
     },
     "Table header": {
       "Actions": [
-        "Acciones"
+        "Handlinger"
       ],
       "Date": [
-        "Fecha"
+        "Dato"
       ],
       "Name": [
-        "Nombre"
+        "Navn"
       ],
       "Size": [
-        "Tamaño"
+        "Størrelse"
       ]
     },
     "Title": {
       "Account restricted": [
-        "Cuenta restringida"
+        "Kontoen har begrænsninger"
       ],
       "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
+        "Konto midlertidigt låst"
       ],
       "Activity events": [
-        "Eventos de actividad"
+        "Aktivitetsbegivenheder"
       ],
       "All participants": [
-        "Todos los participantes"
+        "Alle deltagere"
       ],
       "Allow camera ": [
-        "Permitir cámara "
+        "Tillad kamera "
       ],
       "Allow camera and microphone": [
-        "Permitir cámara y micrófono"
+        "Tillad kamera og mikrofon"
       ],
       "Allow microphone": [
-        "Permitir micrófono"
+        "Tillad mikrofon"
       ],
       "Are you sure?": [
-        "¿Está seguro?"
+        "Er du sikker?"
       ],
       "Assign a new host": [
-        "Asignar un nuevo anfitrión"
+        "Angiv en ny vært"
       ],
       "Audio": [
-        "Audio"
+        "Lyd"
       ],
       "Available Cameras": [
-        "Cámaras disponibles"
+        "Tilgængelige kameraer"
       ],
       "Available Microphones": [
-        "Micrófonos disponibles"
+        "Tilgængelige mikrofoner"
       ],
       "Available Speakers": [
-        "Altavoces disponibles"
+        "Tilgængelige højttalere"
       ],
       "Background blur comparison": [
-        "Comparación de fondo difuminado"
+        "Sammenligning af baggrundssløring"
       ],
       "Camera and microphone are blocked": [
-        "El acceso a la cámara y el micrófono está bloqueado"
+        "Kamera og mikrofon er blokeret"
       ],
       "Camera is blocked": [
-        "La cámara está bloqueada"
+        "Kameraet er blokeret"
       ],
       "Chat": [
         "Chat"
       ],
       "Constants": [
-        "Constantes"
+        "Konstanter"
       ],
       "Couldn't prepare the recording": [
-        "No se ha podido preparar la grabación"
+        "Optagelsen kunne ikke forberedes"
       ],
       "Create new room": [
-        "Crear una sala"
+        "Opret nyt rum"
       ],
       "Date": [
-        "Fecha"
+        "Dato"
       ],
       "Debug Overlay": [
-        "Superposición de depuración"
+        "Fejldebug-overlay"
       ],
       "Delete recording?": [
-        "¿Eliminar grabación?"
+        "Slet optagelse?"
       ],
       "Enter your password": [
-        "Ingrese su contraseña"
+        "Indtast din adgangskode"
       ],
       "Epoch": [
         "Epoch"
@@ -3395,239 +3395,239 @@
         "Epoch ${ prevLog.epoch } → ${ log.epoch }"
       ],
       "Error at epoch ${ log.epoch }": [
-        "Error en epoch ${ log.epoch }"
+        "Fejl ved epoch ${ log.epoch }"
       ],
       "Help and feedback": [
-        "Ayuda y comentarios"
+        "Hjælp og feedback"
       ],
       "Help center": [
-        "Centro de ayuda"
+        "Hjælp-center"
       ],
       "Human verification": [
-        "Verificación humana"
+        "Menneskelig bekræftelse"
       ],
       "Info": [
-        "Info."
+        "Info"
       ],
       "Invalid meeting link": [
-        "Enlace de reunión inválido"
+        "Ugyldigt mødelink"
       ],
       "Invalid verification code": [
-        "Código de verificación inválido"
+        "Ugyldig bekræftelseskode"
       ],
       "Invite link": [
-        "Enlace de invitación"
+        "Invitationslink"
       ],
       "Join a meeting": [
-        "Unirse a una reunión"
+        "Deltag i et møde"
       ],
       "Join meeting": [
-        "Unirse a la reunión"
+        "Deltag i mødet"
       ],
       "Joined at epoch ${ log.epoch }": [
-        "Se unió en epoch ${ log.epoch }"
+        "Tilmeldt ved epoch ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participant…": [
-        "Uniéndose a la reunión con ${ participantCount } participante más…",
-        "Uniéndose a la reunión con ${ participantCount } participantes más…"
+        "Tilslutter møde med ${ participantCount } anden deltager…",
+        "Tilslutter møde med ${ participantCount } andre deltagere…"
       ],
       "Launching Meeting...": [
-        "Iniciando reunión..."
+        "Starter møde..."
       ],
       "Local Participant": [
-        "Participante local"
+        "Lokal deltager"
       ],
       "Meeting": [
-        "Reunión"
+        "Møde"
       ],
       "Meeting created": [
-        "Reunión creada"
+        "Møde oprettet"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "Mødedetaljer"
       ],
       "Meeting edited": [
-        "Reunión editada"
+        "Møde redigeret"
       ],
       "Meeting settings": [
-        "Ajustes de la reunión"
+        "Mødeindstillinger"
       ],
       "Messaging Layer Security": [
-        "Messaging Layer Security (MLS)"
+        "Messaging Layer Security"
       ],
       "Microphone is blocked": [
-        "El micrófono está bloqueado"
+        "Mikrofonen er blokeret"
       ],
       "Minicalendar": [
-        "Minicalendario"
+        "Minikalender"
       ],
       "No one is waiting": [
-        "Nadie está esperando"
+        "Der er ingen der venter"
       ],
       "No results found": [
-        "No se encontraron resultados"
+        "Ingen resultater fundet"
       ],
       "Participants": [
-        "Participantes"
+        "Deltagere"
       ],
       "Participants (${ filteredParticipants.length })": [
-        "Participantes (${ filteredParticipants.length })"
+        "Deltagere (${ filteredParticipants.length })"
       ],
       "Passphrase": [
-        "Frase de contraseña"
+        "Adgangssætning"
       ],
       "Personal meeting room": [
-        "Sala de reuniones personal"
+        "Personligt mødelokale"
       ],
       "Preparing your recording…": [
-        "Preparando su grabación..."
+        "Forbereder din optagelse"
       ],
       "Publications": [
-        "Publicaciones"
+        "Publikationer"
       ],
       "Reconnection Testing": [
-        "Prueba de reconexión"
+        "Test af genoprettelse af forbindelsen"
       ],
       "Record raw vs blurred camera": [
-        "Grabación en bruto vs. cámara borrosa"
+        "Optag raw vs. sløret kamera"
       ],
       "Record this meeting": [
-        "Grabar esta reunión"
+        "Optag dette møde"
       ],
       "Recordings": [
-        "Grabaciones"
+        "Optagelser"
       ],
       "Remote Participants": [
-        "Participantes remotos"
+        "Fjern-deltagere"
       ],
       "Report a problem": [
-        "Reportar un problema"
+        "Anmeld et problem"
       ],
       "Request new code": [
-        "Solicitar un código nuevo"
+        "Anmod om ny kode"
       ],
       "Schedule a meeting": [
-        "Programar una reunión"
+        "Planlæg et møde"
       ],
       "Screen share is blocked": [
-        "Compartir pantalla está bloqueado"
+        "Skærmdeling er blokeret"
       ],
       "Secure meeting": [
-        "Reunión segura"
+        "Sikkert møde"
       ],
       "Security": [
-        "Seguridad"
+        "Sikkerhed"
       ],
       "Security code": [
-        "Código de seguridad"
+        "Sikkerhedskode"
       ],
       "Settings": [
-        "Ajustes"
+        "Indstillinger"
       ],
       "Sign out": [
-        "Cerrar sesión"
+        "Log ud"
       ],
       "Starting meeting as the first participant…": [
-        "Iniciando la reunión como primer participante…"
+        "Starter mødet som den første deltager…"
       ],
       "Stop recording": [
-        "Detener grabación"
+        "Stop optagelse"
       ],
       "Talk confidentially": [
-        "Hable con confidencialidad"
+        "Tal fortroligt"
       ],
       "Thank you!": [
-        "¡Gracias!"
+        "Tak!"
       ],
       "Time": [
-        "Hora"
+        "Tid"
       ],
       "Title": [
-        "Título"
+        "Titel"
       ],
       "Two-factor authentication": [
-        "Autenticación de dos factores"
+        "To-faktor-godkendelse"
       ],
       "Video": [
         "Video"
       ],
       "Waiting room": [
-        "Sala de espera"
+        "Venteværelse"
       ],
       "What went wrong?": [
-        "¿Qué salió mal?"
+        "Hvad gik galt?"
       ],
       "Your feedback has been submitted": [
-        "Sus comentarios han sido enviados"
+        "Din feedback er blevet indsendt"
       ],
       "Your recording is ready": [
-        "Su grabación está lista"
+        "Din optagelse er klar"
       ]
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        "Hoy"
+        "I dag"
       ]
     },
     "Tooltip": {
       "Background blur is not supported on your browser": [
-        "El desenfoque de fondo no es compatible en su navegador"
+        "Baggrundssløring understøttes ikke i din browser"
       ],
       "Generate a new meeting link. The current link will stop working.": [
-        "Generar un nuevo enlace para la reunión. El enlace actual dejará de funcionar."
+        "Generér et nyt mødelink. Det nuværende link vil ophøre med at fungere."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "¡Asistencia IA inmediata, experto humano a su disposición!"
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Recurring meeting": [
-        "Reunión recurrente"
+        "Tilbagevendende møde"
       ],
       "You can generate a new meeting link once per day.": [
-        "Solo puede generar un nuevo enlace de reunión una vez al día."
+        "Du kan generere et nyt mødelink én gang om dagen."
       ]
     },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
-        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problema con Wallet"
+        "Problem med wallet"
       ]
     },
     "Warning": {
       "Connection is taking longer than expected": [
-        "La conexión está tardando más de lo esperado"
+        "Opretning af forbindelsen tager længere tid end forventet"
       ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "No se pudo acceder a la cámara o micrófono. Puede intentar activarlas de nuevo desde los controles de la reunión."
+        "Ingen adgang til kamera eller mikrofon. Du kan prøve at aktivere dem igen fra mødekontrolelementerne."
       ],
       "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "No se pudo acceder a la cámara. Puede intentar activarla de nuevo desde los controles de la reunión."
+        "Ingen adgang til kameraet. Du kan prøve at aktivere det igen fra mødekontrolelementerne."
       ],
       "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "No se pudo acceder al micrófono. Puede intentar activarlo de nuevo desde los controles de la reunión."
+        "Ingen adgang til mikrofonen. Du kan prøve at aktivere den igen fra mødekontrolelementerne."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
+        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "Error en la conexión UDP por STUN; intentando con retransmisión TURN…"
+        "STUN UDP-forbindelse mislykkedes, prøver igen med TURN relay…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
-        "Se agotó el tiempo de espera en la conexión UDP por STUN; intentando con retransmisión TURN"
+        "STUN UDP-forbindelse fik timeout, forsøger med TURN-relay"
       ],
       "Trying another route…": [
-        "Probando otra ruta…"
+        "Prøver en anden rute..."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Lamentablemente no estamos en línea en este momento. Complete el formulario a continuación para describir el problema, lo investigaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
       ]
     }
   }

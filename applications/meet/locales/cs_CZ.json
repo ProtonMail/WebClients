@@ -1,909 +1,789 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "es_ES"
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "cs_CZ"
   },
   "contexts": {
-    "Accessibility announcement": {
-      "${ name } joined the meeting": [
-        "${ name } se ha unido a la reunión"
-      ],
-      "${ name } left the meeting": [
-        "${ name } ha abandonado la reunión"
-      ],
-      "${ name } lowered their hand": [
-        "${ name } ha bajado la mano"
-      ],
-      "${ name } raised their hand": [
-        "${ name } ha levantado la mano"
-      ],
-      "${ name } reacted with ${ emoji }": [
-        "${ name } ha reaccionado con ${ emoji }"
-      ],
-      "${ name } says: ${ message }": [
-        "${ name } dice: ${ message }"
-      ],
-      "A participant joined the meeting": [
-        "Se ha unido un participante a la reunión"
-      ],
-      "A participant left the meeting": [
-        "Un participante ha abandonado la reunión"
-      ],
-      "A participant lowered their hand": [
-        "Un participante ha bajado la mano"
-      ],
-      "A participant raised their hand": [
-        "Un participante ha levantado la mano"
-      ],
-      "A participant reacted with ${ emoji }": [
-        "Un participante ha reaccionado con ${ emoji }"
-      ],
-      "Connection lost. Reconnecting…": [
-        "Se ha perdido la conexión. Reconectando…"
-      ],
-      "New chat message: ${ message }": [
-        "Nuevo mensaje de chat: ${ message }"
-      ],
-      "Now starting recording": [
-        "Se inicia la grabación"
-      ],
-      "Reconnected to the meeting": [
-        "Te has reconectado a la reunión"
-      ],
-      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "Se ha iniciado la grabación. Al continuar en la reunión, reconoces y aceptas la grabación."
-      ],
-      "Recording stopped": [
-        "Grabación detenida"
-      ],
-      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
-        "Esta reunión se está grabando. Al unirte, reconoces y aceptas la grabación."
-      ],
-      "You have been disconnected from the meeting": [
-        "Te has desconectado de la reunión"
-      ],
-      "You have been muted by the host": [
-        "El organizador te ha silenciado"
-      ],
-      "Your camera has been turned off by the host": [
-        "El organizador ha desactivado tu cámara"
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
-        "Tienda ${ BRAND_NAME }"
+        "Obchod ${ BRAND_NAME }"
       ],
       "Add account": [
-        "Añadir una cuenta"
+        "Přidat účet"
       ],
       "Add another account": [
-        "Añadir otra cuenta"
+        "Přidat další účet"
       ],
       "Allow access": [
-        "Permitir el acceso"
-      ],
-      "Approve participants before they can join": [
-        "Aprobar a los participantes antes de que se unan"
+        "Povolit přístup"
       ],
       "Assign ${ selectedParticipantName } as host": [
-        "Asignar a ${ selectedParticipantName } como anfitrión"
+        "Přiřadit ${ selectedParticipantName } jako hostitele"
       ],
       "Assign new host": [
-        "Asignar nuevo anfitrión"
+        "Přiřadit nového hostitele"
       ],
       "Attach screenshot(s)": [
-        "Adjuntar una o varias capturas de pantalla"
+        "Přiložit sním(ek/ky) obrazovky"
       ],
       "Authenticate": [
-        "Autenticar"
+        "Ověřit"
       ],
       "Back": [
-        "Atrás"
+        "Zpět"
       ],
       "Background blur": [
-        "Desenfoque de fondo"
+        "Rozostření pozadí"
       ],
       "Cancel": [
-        "Cancelar"
+        "Zrušit"
       ],
       "Change password": [
-        "Cambiar contraseña"
+        "Změnit heslo"
       ],
       "Chat with us": [
-        "Chatea con nosotros"
+        "Chatujte s námi"
       ],
       "Close": [
-        "Cerrar"
+        "Zavřít"
       ],
       "Close this banner": [
-        "Cerrar este banner"
+        "Zavřít tento banner"
       ],
       "Continue": [
-        "Continuar"
+        "Pokračovat"
       ],
       "Continue without camera": [
-        "Continuar sin cámara"
+        "Pokračovat bez fotoaparátu"
       ],
       "Continue without mic and camera": [
-        "Continuar sin micrófono ni cámara"
+        "Pokračovat bez mikrofonu a kamery"
       ],
       "Continue without microphone": [
-        "Continuar sin micrófono"
+        "Pokračovat bez mikrofonu"
       ],
       "Copy address": [
-        "Copiar la dirección"
+        "Kopírovat adresu"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "Kopírovat odkaz"
       ],
       "Copy link and close": [
-        "Copiar enlace y cerrar"
+        "Kopírovat odkaz a zavřít"
       ],
       "Copy meeting link": [
-        "Copiar enlace de la reunión"
+        "Kopírovat odkaz na schůzku"
       ],
       "Copy room link": [
-        "Copiar enlace de la sala"
+        "Zkopírovat odkaz na místnost"
       ],
       "Create a free account": [
-        "Crear una cuenta gratuita"
+        "Vytvořit účet zdarma"
       ],
       "Create a room": [
-        "Crear una sala"
+        "Vytvořit místnost"
       ],
       "Create an account": [
-        "Crear una cuenta"
+        "Vytvořit účet"
       ],
       "Create meeting": [
-        "Crear reunión"
+        "Vytvořit schůzku"
       ],
       "Delete": [
-        "Eliminar"
+        "Smazat"
       ],
       "Disable ${ participantName }'s video": [
-        "Desactivar el vídeo de ${ participantName }"
+        "Deaktivovat video uživatele ${ participantName }"
       ],
       "Disable camera": [
-        "Desactivar la cámara"
-      ],
-      "Disable waiting room": [
-        "Desactivar sala de espera"
+        "Deaktivovat kameru"
       ],
       "Dismiss": [
-        "Descartar"
+        "Skrýt"
       ],
       "Done": [
-        "Hecho"
+        "Hotovo"
       ],
       "Download": [
-        "Descargar"
+        "Stáhnout"
       ],
       "Download app": [
-        "Descargar aplicación"
+        "Stáhnout aplikaci"
       ],
       "Download local participant report": [
-        "Descargar informe de participantes"
+        "Stáhnout hlášení místní účasti"
       ],
       "Download logs": [
-        "Descargar los registros"
+        "Stáhnout logy"
       ],
       "Download participant report": [
-        "Descargar informe de participantes"
-      ],
-      "Download recording": [
-        "Descargar grabación"
+        "Stáhnout hlášení o účasti"
       ],
       "Download room level report": [
-        "Descargar informe de la sala"
+        "Stáhnout hlášení na úrovni místnosti"
       ],
       "Edit": [
-        "Editar"
+        "Upravit"
       ],
       "Edit email address": [
-        "Editar dirección de correo electrónico"
+        "Upravit e-mailovou adresu"
       ],
       "Edit phone number": [
-        "Editar número de teléfono"
+        "Upravit telefonní číslo"
       ],
       "Edit sign-in details": [
-        "Editar datos de inicio de sesión"
+        "Upravit přihlašovací údaje"
       ],
       "Enable camera": [
-        "Habilitar la cámara"
-      ],
-      "Enable waiting room": [
-        "Activar sala de espera"
+        "Povolit kameru"
       ],
       "End meeting": [
-        "Finalizar reunión"
+        "Ukončit schůzku"
       ],
       "End meeting for all": [
-        "Finalizar la reunión para todos"
+        "Ukončit schůzku pro všechny"
       ],
       "Forgot password?": [
-        "¿Contraseña olvidada?"
+        "Zapomenuté heslo?"
       ],
       "Generate a new meeting link.": [
-        "Generar un nuevo enlace de la reunión"
+        "Vytvořit nový odkaz na schůzku."
       ],
       "Get Meet Professional": [
-        "Obtén Meet Profesional"
+        "Získejte Meet Professional"
       ],
       "Get verification code": [
-        "Obtener código de verificación"
+        "Odeslat ověřovací kód"
       ],
       "Help and feedback": [
-        "Ayuda y comentarios"
+        "Nápověda a zpětná vazba"
       ],
       "Help and resources": [
-        "Ayuda y recursos"
+        "Nápověda a zdroje"
       ],
       "Hide participants": [
-        "Ocultar participantes"
+        "Skrýt účastníky"
       ],
       "Hide self view": [
-        "Ocultar mi vista"
+        "Skrýt vlastní zobrazení"
       ],
       "Hide timezones": [
-        "Ocultar zonas horarias"
+        "Skrýt časová pásma"
       ],
       "Insert emoji": [
-        "Insertar emoji"
+        "Vložit emoji"
       ],
       "Join": [
-        "Unirte"
+        "Připojit se"
       ],
       "Join meeting": [
-        "Unirse a la reunión"
+        "Připojte se ke schůzce"
       ],
       "Join with a link": [
-        "Unirse con un enlace"
+        "Připojit přes odkaz"
       ],
       "Kick out": [
-        "Expulsar"
+        "Vyhodit"
       ],
       "Kick out ${ participantName }": [
-        "Expulsar a ${ participantName }"
+        "Vyhodit ${ participantName }"
       ],
       "Leave": [
-        "Salir"
+        "Opustit"
       ],
       "Leave meeting": [
-        "Salir de la reunión"
+        "Opustit schůzku"
       ],
       "Lock meeting": [
-        "Bloquear reunión"
+        "Zamknout schůzku"
       ],
       "Lower hand": [
-        "Bajar la mano"
+        "Dát ruku dolů"
       ],
       "More info: ${ safeTitle }": [
-        "Más información: ${ safeTitle }"
+        "Více informací: ${ safeTitle }"
       ],
       "More options for accounts": [
-        "Más opciones para las cuentas"
+        "Další možnosti účtů"
       ],
       "Mute ${ participantName }": [
-        "Silenciar a ${ participantName }"
+        "Ztlumit ${ participantName }"
       ],
       "Next month": [
-        "Mes siguiente"
+        "Další měsíc"
       ],
       "Next page": [
-        "Página siguiente"
+        "Další stránka"
       ],
       "Noise cancellation": [
-        "Cancelación de ruido"
+        "Potlačení šumu"
       ],
       "Open app": [
-        "Abrir aplicación"
+        "Otevřít aplikaci"
       ],
       "Open link": [
-        "Abrir enlace"
-      ],
-      "Participants join the call directly": [
-        "Los participantes se unen directamente a la llamada"
+        "Otevřít odkaz"
       ],
       "Pause": [
-        "Pausa"
+        "Pozastavit"
       ],
       "Previous month": [
-        "Mes anterior"
+        "Předchozí měsíc"
       ],
       "Previous page": [
-        "Página anterior"
+        "Předchozí stránka"
       ],
       "Raise hand": [
-        "Levantar la mano"
+        "Zvednout ruku"
       ],
       "React with ${ emoji }": [
-        "Reacciona con ${ emoji }"
-      ],
-      "React with ${ emoji }, ${ identities.length } reaction": [
-        "Reaccionar con ${ emoji }, ${ identities.length } reacción",
-        "Reaccionar con ${ emoji }, ${ identities.length } reacciones"
+        "Reagovat pomocí ${ emoji }"
       ],
       "Receive video": [
-        "Recibir vídeo"
+        "Přijmout video"
       ],
       "Refer a friend": [
-        "Recomendar a un amigo"
+        "Doporučit přátelům"
       ],
       "Refresh audio and video tracks": [
-        "Actualizar pistas de audio y vídeo"
+        "Obnovit zvukové a obrazové stopy"
       ],
       "Refresh screen share track": [
-        "Actualizar la señal de pantalla"
+        "Obnovit sledování sdílené obrazovky"
       ],
       "Refresh the page": [
-        "Actualizar la página"
+        "Obnovit stránku"
       ],
       "Rejoin meeting": [
-        "Volver a unirse a la reunión"
+        "Znovu se připojit ke schůzce"
       ],
       "Report a problem": [
-        "Notificar un problema"
+        "Nahlásit problém"
       ],
       "Request a call": [
-        "Solicitar una llamada"
+        "Požádat o hovor"
       ],
       "Request a feature": [
-        "Solicitar una función"
+        "Požádejte o funkci"
       ],
       "Request new code": [
-        "Solicitar un nuevo código"
+        "Vyžádejte si nový kód"
       ],
       "Resend code": [
-        "Reenviar código"
+        "Znovu odeslat kód"
       ],
       "Resume": [
-        "Reanudar"
-      ],
-      "Return to dashboard": [
-        "Volver al panel principal"
+        "Pokračovat"
       ],
       "Room": [
-        "Sala"
+        "Místnost"
       ],
       "Rotate personal meeting link": [
-        "Renovar enlace de reunión personal"
+        "Obnovit odkaz na osobní schůzku"
       ],
       "Save": [
-        "Guardar"
+        "Uložit"
       ],
       "Schedule": [
-        "Planificación"
+        "Naplánovat"
       ],
       "Schedule a meeting": [
-        "Programar una reunión"
+        "Naplánovat schůzku"
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "Programar en ${ CALENDAR_APP_NAME }"
+        "Naplánovat v aplikaci ${ CALENDAR_APP_NAME }"
       ],
       "Search countries": [
-        "Buscar países"
+        "Vyhledat země"
       ],
       "Send an encrypted message": [
-        "Enviar un mensaje cifrado"
+        "Poslat šifrovanou zprávu"
       ],
       "Settings": [
-        "Ajustes"
-      ],
-      "Show duration": [
-        "Mostrar duración"
+        "Nastavení"
       ],
       "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
+        "Zobrazit plovoucí náhled při sdílení obrazovky"
       ],
       "Show options": [
-        "Mostrar las opciones"
+        "Zobrazit možnosti"
       ],
       "Show participants": [
-        "Mostrar participantes"
+        "Zobrazit účastníky"
       ],
       "Show timezones": [
-        "Mostrar zonas horarias"
+        "Zobrazit časová pásma"
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "Přihlásit se"
       ],
       "Sign out": [
-        "Cerrar sesión"
+        "Odhlásit se"
       ],
       "Sign out of all accounts": [
-        "Cerrar sesión en todas las cuentas"
+        "Odhlásit se ze všech účtů"
       ],
       "Simulate reconnection": [
-        "Simular reconexión"
+        "Simulovat opětovné připojení"
       ],
       "Skip": [
-        "Omitir"
+        "Přeskočit"
       ],
       "Start an instant meeting": [
-        "Iniciar una reunión instantánea"
+        "Zahájit okamžitou schůzku"
       ],
       "Start meeting": [
-        "Comenzar la reunión"
-      ],
-      "Start new meeting": [
-        "Iniciar nueva reunión"
+        "Zahájit schůzku"
       ],
       "Start recording": [
-        "Empezar a grabar"
+        "Spustit nahrávání"
       ],
       "Start Recording Track Stats": [
-        "Iniciar estadísticas de grabación"
+        "Spustit nahrávání statistik sledování"
       ],
       "Start your own meeting": [
-        "Inicia tu propia reunión"
+        "Zahajte vlastní schůzku"
       ],
       "Stay in meeting": [
-        "Permanecer en la reunión"
+        "Zůstat na schůzce"
       ],
       "Stop opening meetings in the desktop app": [
-        "Dejar de abrir reuniones en la aplicación de escritorio"
+        "Ukončit otevírání schůzek v desktopové aplikaci"
       ],
       "Stop receiving video": [
-        "Detener video entrante"
+        "Ukončit příjem videa"
       ],
       "Stop recording": [
-        "Detener la grabación"
+        "Zastavit nahrávání"
       ],
       "Stop recording and download video": [
-        "Detener la grabación y descargar el video"
+        "Zastavit nahrávání a stáhnout video"
       ],
       "Stop Recording Track Stats": [
-        "Detener estadísticas de grabación"
+        "Zastavit nahrávání statistik sledování"
       ],
       "Submit": [
-        "Enviar"
+        "Odeslat"
       ],
       "Switch or add account": [
-        "Cambiar o añadir cuenta"
+        "Přepnout nebo přidat účet"
       ],
       "Tap to unblock audio playback": [
-        "Toca para permitir la reproducción de audio"
+        "Klepnutím odblokujete přehrávání zvuku"
       ],
       "The current link will stop working.": [
-        "El enlace actual dejará de funcionar."
+        "Tento odkaz přestane fungovat."
       ],
       "Try again": [
-        "Inténtalo de nuevo"
+        "Zkuste to znovu"
       ],
       "Try another method": [
-        "Intenta con otro método"
+        "Zkuste jinou metodu"
       ],
       "Turn off incoming video": [
-        "Desactivar vídeo entrante"
+        "Vypnout příchozí video"
       ],
       "Upgrade": [
-        "Cambiar de plan"
+        "Přejít na placený tarif"
       ],
       "Upgrade now": [
-        "Cambiar de plan"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Actualiza tu plan para usar la sala de espera en tu próxima reunión."
+        "Navýšit nyní"
       ],
       "Use authentication code": [
-        "Usar un código de autenticación"
+        "Použít ověřovací kód"
       ],
       "Use camera": [
-        "Utilizar la cámara"
+        "Použít fotoaparát"
       ],
       "Use microphone": [
-        "Usar micrófono"
+        "Použít mikrofon"
       ],
       "Use recovery code": [
-        "Usar un código de recuperación"
+        "Použít kód pro obnovení"
       ],
       "Verify": [
-        "Verificar"
+        "Ověřit"
       ],
       "Verify account": [
-        "Verificar cuenta"
+        "Ověřit účet"
       ],
       "View invoice": [
-        "Ver la factura"
-      ],
-      "Waiting room": [
-        "Sala de espera"
+        "Zobrazit fakturu"
       ]
     },
     "Alt": {
       "Audio settings": [
-        "Ajustes de audio"
+        "Nastavení zvuku"
       ],
       "Blur background": [
-        "Desenfocar el fondo"
+        "Rozostřit pozadí"
       ],
       "Chat": [
         "Chat"
       ],
       "Close": [
-        "Cerrar"
+        "Zavřít"
       ],
       "Close search": [
-        "Cerrar búsqueda"
+        "Zavřít hledání"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "Kopírovat odkaz"
       ],
       "Copy meeting link": [
-        "Copiar enlace de la reunión"
+        "Kopírovat odkaz na schůzku"
       ],
       "Debug overlay": [
-        "Capa de depuración"
+        "Okno ladění"
       ],
       "Go to dashboard": [
-        "Ir al panel de control"
-      ],
-      "Hide self view": [
-        "Ocultar vista propia"
+        "Přejít na ovládací panel"
       ],
       "Leave Meeting": [
-        "Salir de la reunión"
+        "Opustit schůzku"
       ],
       "Lock meeting": [
-        "Bloquear reunión"
-      ],
-      "Lower hand": [
-        "Bajar la mano"
+        "Zamknout schůzku"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
-      ],
-      "Noise cancellation": [
-        "Cancelación de ruido"
+        "Detaily schůzky"
       ],
       "Open chat message search": [
-        "Abrir búsqueda de mensajes del chat"
+        "Otevřít vyhledávání zpráv konverzace"
       ],
       "Open participants search": [
-        "Abrir búsqueda de participantes"
+        "Otevřít hledání účastníků"
       ],
       "Participant host control options": [
-        "Opciones de control del anfitrión de los participantes"
+        "Možnosti ovládání účastníků hostitelem"
       ],
       "Participants": [
-        "Participantes"
-      ],
-      "Raise hand": [
-        "Levantar la mano"
+        "Účastníci"
       ],
       "Rotate camera": [
-        "Rotar la cámara"
+        "Otočit fotoaparát"
       ],
       "Screen share": [
-        "Comparte pantalla"
+        "Sdílení obrazovky"
       ],
       "Settings": [
-        "Ajustes"
-      ],
-      "Show duration": [
-        "Mostrar duración"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
+        "Nastavení"
       ],
       "Show passphrase": [
-        "Mostrar contraseña"
+        "Zobrazit heslo"
       ],
       "Stop recording and download.": [
-        "Detener la grabación y descargar."
+        "Zastavit nahrávání a stáhnout."
       ],
       "Toggle chat": [
-        "Mostrar/Ocultar Chat"
+        "Přepnout chat"
       ],
       "Toggle emoji reactions": [
-        "Alternar reacciones con emojis"
+        "Přepnout reakce pomocí emoji"
       ],
       "Toggle meeting details": [
-        "Abrir/cerrar detalles de la reunión"
+        "Přepnout detaily schůzky"
       ],
       "Toggle participants": [
-        "Ocultar participantes"
+        "Přepnout účastníky"
       ],
       "Toggle screen share": [
-        "Alternar compartir pantalla"
+        "Přepnout sdílení obrazovky"
       ],
       "Toggle settings": [
-        "Abre/Cierra configuración"
-      ],
-      "Turn off incoming video": [
-        "Desactivar vídeo entrante"
+        "Přepnout nastavení"
       ],
       "Video settings": [
-        "Ajustes de vídeo"
+        "Nastavení videa"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicaciones de ${ BRAND_NAME }"
+        "Aplikace ${ BRAND_NAME }"
       ]
     },
     "Badge": {
       "Active": [
-        "Activo"
+        "Aktivní"
       ]
     },
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "Conexión mediante modo de retransmisión TURN debido a restricciones en tu red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
+        "Připojeno přes režim předávání TURN kvůli omezením vaší sítě. To může zvýšit latenci a ovlivnit kvalitu hovoru."
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "Problema con ${ LUMO_SHORT_APP_NAME }"
+        "Problém s ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
-        "Problema con la aplicación"
+        "Problém s aplikací"
       ],
       "Authenticator problem": [
-        "Problema con el autenticador"
+        "Problém s ověřovací aplikací"
       ],
       "Bridge problem": [
-        "Problema con el Bridge"
+        "Problém s aplikací Bridge"
       ],
       "Calendar problem": [
-        "Problema con el calendario"
+        "Problém s aplikací Kalendář"
       ],
       "Connection problem": [
-        "Problema con la conexión"
+        "Problém s připojením"
       ],
       "Contacts problem": [
-        "Problema con los contactos"
+        "Problém s aplikací Kontaky"
       ],
       "Custom domain problem": [
-        "Problema con el dominio personalizado"
+        "Problém s vlastní doménou"
       ],
       "Docs problem": [
-        "Problema de Docs"
+        "Problém s aplikací Docs"
       ],
       "Drive problem": [
-        "Problema con unidad de almacenamiento"
+        "Problém s aplikací Drive"
       ],
       "Feature request": [
-        "Solicitar función"
+        "Žádost o novou funkci"
       ],
       "Import / export problem": [
-        "Problema de importación/exportación"
+        "Problém s importem / exportem"
       ],
       "Installation problem": [
-        "Problema con la instalación"
+        "Problém s instalací"
       ],
       "Mail problem": [
-        "Problema con el correo"
+        "Problém s aplikací Mail"
       ],
       "Manual setup problem": [
-        "Problema de configuración manual"
+        "Problém s ručním nastavením"
       ],
       "Meet problem": [
-        "Problema de Meet"
+        "Problém s Meet"
       ],
       "Other": [
-        "Otro"
+        "Ostatní"
       ],
       "Pass problem": [
-        "Problema con Proton Pass"
+        "Problém s aplikací Pass"
       ],
       "Payments problem": [
-        "Problema con los pagos"
+        "Problém s platbami"
       ],
       "Sheets problem": [
-        "Problema con los menús desplegables"
+        "Problém s Sheets"
       ],
       "Sign in problem": [
-        "Problema con el inicio de sesión"
+        "Problém s přihlášením"
       ],
       "Sign up problem": [
-        "Problema con el registro"
+        "Problém s registrací"
       ],
       "Signup problem": [
-        "Problema de registro"
+        "Problém s registrací"
       ],
       "Slow speed problem": [
-        "Problema de velocidad baja"
+        "Problém s nízkou rychlostí"
       ],
       "Speed problem": [
-        "Problema de velocidad"
+        "Problém s rychlostí"
       ],
       "Streaming problem": [
-        "Problema de transmisión"
+        "Problém se streamingem"
       ],
       "Update problem": [
-        "Problema de actualización"
+        "Problém s aktualizací"
       ],
       "VPN problem": [
-        "Problema con la VPN"
+        "Problém s VPN"
       ],
       "Website access problem": [
-        "Problema de acceso al sitio web"
+        "Problém s přístupem k webové stránce"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Minimizar"
+        "Sbalit"
       ],
       "Expand": [
-        "Expandir"
+        "Rozbalit"
       ]
     },
     "color": {
       "carrot": [
-        "zanahoria"
+        "mrkev"
       ],
       "cerise": [
-        "cereza"
+        "třešeň"
       ],
       "cobalt": [
-        "cobalto"
+        "kobalt"
       ],
       "copper": [
-        "cobre"
+        "měď"
       ],
       "enzian": [
-        "genciana"
+        "hořec"
       ],
       "fern": [
-        "helecho"
+        "kapradina"
       ],
       "forest": [
-        "bosque"
+        "les"
       ],
       "ocean": [
-        "océano"
+        "oceán"
       ],
       "olive": [
-        "aceituna"
+        "oliva"
       ],
       "pacific": [
-        "pacífico"
+        "pacifik"
       ],
       "pickle": [
-        "pepinillo"
+        "okurka"
       ],
       "pine": [
-        "pino"
+        "borovice"
       ],
       "pink": [
-        "rosa"
+        "růžová"
       ],
       "plum": [
-        "ciruela"
+        "švestka"
       ],
       "purple": [
-        "púrpura"
+        "purpurová"
       ],
       "reef": [
-        "arrecife"
+        "útes"
       ],
       "sahara": [
-        "sáhara"
+        "sahara"
       ],
       "slateblue": [
-        "azul pizarra"
+        "břidličná modř"
       ],
       "soil": [
-        "tierra"
+        "půda"
       ],
       "strawberry": [
-        "fresa"
+        "jahoda"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "Abjasia"
+        "Abcházie"
       ],
       "Afghanistan": [
-        "Afganistán"
+        "Afghánistán"
       ],
       "Albania": [
-        "Albania"
+        "Albánie"
       ],
       "Algeria": [
-        "Argelia"
+        "Alžírsko"
       ],
       "American Samoa": [
-        "Samoa Americana"
+        "Americká Samoa"
       ],
       "Andorra": [
-        "Andorra"
+        "Andora"
       ],
       "Angola": [
         "Angola"
       ],
       "Anguilla": [
-        "Anguila"
+        "Anguilla"
       ],
       "Antarctica": [
-        "Antártida"
+        "Antarktida"
       ],
       "Antigua and Barbuda": [
-        "Antigua y Barbuda"
+        "Antigua a Barbuda"
       ],
       "Argentina": [
         "Argentina"
       ],
       "Armenia": [
-        "Armenia"
+        "Arménie"
       ],
       "Aruba": [
         "Aruba"
       ],
       "Ascension Island": [
-        "Isla Ascensión"
+        "Ostrov Ascension"
       ],
       "Australia": [
-        "Australia"
+        "Austrálie"
       ],
       "Austria": [
-        "Austria"
+        "Rakousko"
       ],
       "Azerbaijan": [
-        "Azerbaiyán"
+        "Ázerbájdžán"
       ],
       "Bahamas": [
-        "Bahamas"
+        "Bahamy"
       ],
       "Bahrain": [
-        "Bahréin"
+        "Bahrajn"
       ],
       "Bangladesh": [
-        "Bangladesh"
+        "Bangladéš"
       ],
       "Barbados": [
         "Barbados"
       ],
       "Belarus": [
-        "Bielorrusia"
+        "Bělorusko"
       ],
       "Belgium": [
-        "Bélgica"
+        "Belgie"
       ],
       "Belize": [
-        "Belice"
+        "Belize"
       ],
       "Benin": [
-        "Benín"
+        "Benin"
       ],
       "Bermuda": [
-        "Bermudas"
+        "Bermudy"
       ],
       "Bhutan": [
-        "Bután"
+        "Bhútán"
       ],
       "Bolivia": [
-        "Bolivia"
+        "Bolívie"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Caribe Neerlandés"
+        "Bonaire, Svatý Eustach a Saba"
       ],
       "Bosnia and Herzegovina": [
-        "Bosnia Herzegovina"
+        "Bosna a Hercegovina"
       ],
       "Botswana": [
-        "Bostwana"
+        "Botswana"
       ],
       "Bouvet Island": [
-        "Isla Bouvet"
+        "Bouvetův ostrov"
       ],
       "Brazil": [
-        "Brasil"
+        "Brazílie"
       ],
       "British Indian Ocean Territory": [
-        "Territorio Británico del Océano Índico"
+        "Britské indickooceánské území"
       ],
       "Brunei Darussalam": [
-        "Brunéi"
+        "Brunej Darussalam"
       ],
       "Bulgaria": [
-        "Bulgaria"
+        "Bulharsko"
       ],
       "Burkina Faso": [
         "Burkina Faso"
@@ -912,148 +792,148 @@
         "Burundi"
       ],
       "Cambodia": [
-        "Camboya"
+        "Kambodža"
       ],
       "Cameroon": [
-        "Camerún"
+        "Kamerun"
       ],
       "Canada": [
-        "Canadá"
+        "Kanada"
       ],
       "Cape Verde": [
-        "Cabo Verde"
+        "Kapverdské ostrovy"
       ],
       "Cayman Islands": [
-        "Islas Caimán"
+        "Kajmanské ostrovy"
       ],
       "Central African Republic": [
-        "República Centroafricana"
+        "Středoafrická republika"
       ],
       "Chad": [
-        "Chad"
+        "Čad"
       ],
       "Chile": [
         "Chile"
       ],
       "China": [
-        "China"
+        "Čína"
       ],
       "Christmas Island": [
-        "Isla de Navidad"
+        "Vánoční ostrov"
       ],
       "Cocos (Keeling) Islands": [
-        "Islas Cocos"
+        "Kokosové (Keelingovy) ostrovy"
       ],
       "Colombia": [
-        "Colombia"
+        "Kolumbie"
       ],
       "Comoros": [
-        "Comores"
+        "Komory"
       ],
       "Congo": [
-        "Congo"
+        "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "Congo, República Democrática del"
+        "Demokratická republika Kongo"
       ],
       "Cook Islands": [
-        "Islas Cook"
+        "Cookovy ostrovy"
       ],
       "Costa Rica": [
-        "Costa Rica"
+        "Kostarika"
       ],
       "Croatia": [
-        "Croacia"
+        "Chorvatsko"
       ],
       "Cuba": [
-        "Cuba"
+        "Kuba"
       ],
       "Curaçao": [
-        "Curazao"
+        "Curaçao"
       ],
       "Cyprus": [
-        "Chipre"
+        "Kypr"
       ],
       "Czech Republic": [
-        "República Checa"
+        "Česká republika"
       ],
       "Côte d'Ivoire": [
-        "Costa de Marfil"
+        "Pobřeží slonoviny"
       ],
       "Denmark": [
-        "Dinamarca"
+        "Dánsko"
       ],
       "Djibouti": [
-        "Yibuti"
+        "Džibutsko"
       ],
       "Dominica": [
-        "Dominica"
+        "Dominika"
       ],
       "Dominican Republic": [
-        "República Dominicana"
+        "Dominikánská republika"
       ],
       "Ecuador": [
-        "Ecuador"
+        "Ekvádor"
       ],
       "Egypt": [
-        "Egipto"
+        "Egypt"
       ],
       "El Salvador": [
-        "El Salvador"
+        "Salvador"
       ],
       "Equatorial Guinea": [
-        "Guinea Ecuatorial"
+        "Rovníková Guinea"
       ],
       "Eritrea": [
         "Eritrea"
       ],
       "Estonia": [
-        "Estonia"
+        "Estonsko"
       ],
       "Eswatini": [
-        "Suazilandia"
+        "Svazijsko"
       ],
       "Ethiopia": [
-        "Etiopía"
+        "Etiopie"
       ],
       "Falkland Islands": [
-        "Islas Malvinas"
+        "Falklandské ostrovy"
       ],
       "Faroe Islands": [
-        "Islas Faroe"
+        "Faerské ostrovy"
       ],
       "Federated States of Micronesia": [
-        "Estados Federados de Micronesia"
+        "Federativní státy Mikronésie"
       ],
       "Fiji": [
-        "Fiyi"
+        "Fidži"
       ],
       "Finland": [
-        "Finlandia"
+        "Finsko"
       ],
       "France": [
-        "Francia"
+        "Francie"
       ],
       "French Guiana": [
-        "Guyana Francesa"
+        "Francouzská Guyana"
       ],
       "French Polynesia": [
-        "Polinesia Francesa"
+        "Francouzská Polynésie"
       ],
       "French Southern Territories": [
-        "Territorios Australes Franceses"
+        "Francouzská jižní území"
       ],
       "Gabon": [
-        "Gabón"
+        "Gabon"
       ],
       "Gambia": [
-        "Gambia"
+        "Gambie"
       ],
       "Georgia": [
-        "Georgia"
+        "Gruzie"
       ],
       "Germany": [
-        "Alemania"
+        "Německo"
       ],
       "Ghana": [
         "Ghana"
@@ -1062,16 +942,16 @@
         "Gibraltar"
       ],
       "Greece": [
-        "Grecia"
+        "Řecko"
       ],
       "Greenland": [
-        "Groenlandia"
+        "Grónsko"
       ],
       "Grenada": [
-        "Granada"
+        "Grenada"
       ],
       "Guadeloupe": [
-        "Guadalupe"
+        "Guadeloupe"
       ],
       "Guam": [
         "Guam"
@@ -1086,19 +966,19 @@
         "Guinea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bisáu"
+        "Guinea-Bissau"
       ],
       "Guyana": [
-        "Guayana"
+        "Guyana"
       ],
       "Haiti": [
-        "Haití"
+        "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        "Islas Heard y McDonald"
+        "Heardův ostrov a McDonaldovy ostrovy"
       ],
       "Holy See (Vatican City State)": [
-        "Ciudad del Vaticano"
+        "Svatý stolec (Vatikánský městský stát)"
       ],
       "Honduras": [
         "Honduras"
@@ -1107,55 +987,55 @@
         "Hong Kong"
       ],
       "Hungary": [
-        "Hungría"
+        "Maďarsko"
       ],
       "Iceland": [
-        "Islandia"
+        "Island"
       ],
       "India": [
-        "India"
+        "Indie"
       ],
       "Indonesia": [
-        "Indonesia"
+        "Indonésie"
       ],
       "International": [
-        "Internacional"
+        "Mezinárodní"
       ],
       "Iran": [
-        "Irán"
+        "Írán"
       ],
       "Iraq": [
-        "Irak"
+        "Irák"
       ],
       "Ireland": [
-        "Irlanda"
+        "Irsko"
       ],
       "Isle of Man": [
-        "Isla de Man"
+        "Ostrov Man"
       ],
       "Israel": [
-        "Israel"
+        "Izrael"
       ],
       "Italy": [
-        "Italia"
+        "Itálie"
       ],
       "Jamaica": [
-        "Jamaica"
+        "Jamajka"
       ],
       "Japan": [
-        "Japón"
+        "Japonsko"
       ],
       "Jersey": [
         "Jersey"
       ],
       "Jordan": [
-        "Jordania"
+        "Jordánsko"
       ],
       "Kazakhstan": [
-        "Kazajistán"
+        "Kazachstán"
       ],
       "Kenya": [
-        "Kenia"
+        "Keňa"
       ],
       "Kiribati": [
         "Kiribati"
@@ -1164,220 +1044,220 @@
         "Kosovo"
       ],
       "Kuwait": [
-        "Kuwait"
+        "Kuvajt"
       ],
       "Kyrgyzstan": [
-        "Kirguistán"
+        "Kyrgyzstán"
       ],
       "Laos": [
         "Laos"
       ],
       "Latvia": [
-        "Letonia"
+        "Lotyšsko"
       ],
       "Lebanon": [
-        "Líbano"
+        "Libanon"
       ],
       "Lesotho": [
-        "Lesoto"
+        "Lesotho"
       ],
       "Liberia": [
-        "Liberia"
+        "Libérie"
       ],
       "Libya": [
-        "Líbia"
+        "Libye"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        "Lichtenštejnsko"
       ],
       "Lithuania": [
-        "Lituania"
+        "Litva"
       ],
       "Luxembourg": [
-        "Luxemburgo"
+        "Lucembursko"
       ],
       "Macao": [
         "Macao"
       ],
       "Madagascar": [
-        "Madagascar"
+        "Madagaskar"
       ],
       "Malawi": [
         "Malawi"
       ],
       "Malaysia": [
-        "Malasia"
+        "Malajsie"
       ],
       "Maldives": [
-        "Maldivas"
+        "Maledivy"
       ],
       "Mali": [
-        "Malí"
+        "Mali"
       ],
       "Malta": [
         "Malta"
       ],
       "Marshall Islands": [
-        "Islas Marshall"
+        "Marshallovy ostrovy"
       ],
       "Martinique": [
-        "Martinica"
+        "Martinik"
       ],
       "Mauritania": [
-        "Mauritania"
+        "Mauretánie"
       ],
       "Mauritius": [
-        "Mauricio, islas"
+        "Mauricius"
       ],
       "Mayotte": [
         "Mayotte"
       ],
       "Mexico": [
-        "México"
+        "Mexiko"
       ],
       "Moldova": [
-        "Moldavia"
+        "Moldavsko"
       ],
       "Monaco": [
-        "Mónaco"
+        "Monako"
       ],
       "Mongolia": [
-        "Mongolia"
+        "Mongolsko"
       ],
       "Montenegro": [
-        "Montenegro"
+        "Černá Hora"
       ],
       "Montserrat": [
         "Montserrat"
       ],
       "Morocco": [
-        "Marruecos"
+        "Maroko"
       ],
       "Mozambique": [
-        "Mozambique"
+        "Mosambik"
       ],
       "Myanmar": [
-        "Birmania"
+        "Myanmar"
       ],
       "Namibia": [
-        "Namibia"
+        "Namibie"
       ],
       "Nauru": [
         "Nauru"
       ],
       "Nepal": [
-        "Nepal"
+        "Nepál"
       ],
       "Netherlands": [
-        "Países Bajos"
+        "Nizozemsko"
       ],
       "New Caledonia": [
-        "Nueva Caledonia"
+        "Nová Kaledonie"
       ],
       "New Zealand": [
-        "Nueva Zelanda"
+        "Nový Zéland"
       ],
       "Nicaragua": [
-        "Nicaragua"
+        "Nikaragua"
       ],
       "Niger": [
-        "República del Níger"
+        "Niger"
       ],
       "Nigeria": [
-        "Nigeria"
+        "Nigérie"
       ],
       "Niue": [
         "Niue"
       ],
       "Norfolk Island": [
-        "Isla Norfolk"
+        "Norfolk"
       ],
       "North Korea": [
-        "Corea del Norte"
+        "Severní Korea"
       ],
       "North Macedonia": [
-        "Macedonia del Norte"
+        "Severní Makedonie"
       ],
       "Northern Mariana Islands": [
-        "Islas Marianas del Norte"
+        "Severní Mariany"
       ],
       "Norway": [
-        "Noruega"
+        "Norsko"
       ],
       "Oman": [
         "Omán"
       ],
       "Pakistan": [
-        "Pakistán"
+        "Pákistán"
       ],
       "Palau": [
-        "Palaos"
+        "Palau"
       ],
       "Palestine": [
         "Palestina"
       ],
       "Panama": [
-        "Panamá"
+        "Panama"
       ],
       "Papua New Guinea": [
-        "Papúa Nueva Guinea"
+        "Papua-Nová Guinea"
       ],
       "Paraguay": [
         "Paraguay"
       ],
       "Peru": [
-        "Perú"
+        "Peru"
       ],
       "Philippines": [
-        "Filipinas"
+        "Filipíny"
       ],
       "Pitcairn": [
         "Pitcairn"
       ],
       "Poland": [
-        "Polonia"
+        "Polsko"
       ],
       "Portugal": [
-        "Portugal"
+        "Portugalsko"
       ],
       "Puerto Rico": [
-        "Puerto Rico"
+        "Portoriko"
       ],
       "Qatar": [
-        "Qatar"
+        "Katar"
       ],
       "Reunion": [
-        "Reunión"
+        "Réunion"
       ],
       "Romania": [
-        "Rumanía"
+        "Rumunsko"
       ],
       "Russia": [
-        "Rusia"
+        "Rusko"
       ],
       "Rwanda": [
-        "Ruanda"
+        "Rwanda"
       ],
       "Saint Barthélemy": [
-        "San Bartolomé"
+        "Svatý Bartoloměj"
       ],
       "Saint Helena": [
-        "Santa Helena"
+        "Svatá Helena"
       ],
       "Saint Kitts and Nevis": [
-        "San Cristóbal y Nieves"
+        "Svatý Kryštof a Nevis"
       ],
       "Saint Lucia": [
-        "Santa Lucía"
+        "Svatá Lucie"
       ],
       "Saint Martin (French Part)": [
-        "San Martín (parte francesa)"
+        "Svatý Martin (francouzská část)"
       ],
       "Saint Pierre and Miquelon": [
-        "San Pedro y Miquelón"
+        "Saint-Pierre a Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "San Vicente y las Granadinas"
+        "Svatý Vincenc a Grenadiny"
       ],
       "Samoa": [
         "Samoa"
@@ -1386,94 +1266,94 @@
         "San Marino"
       ],
       "Sao Tome and Principe": [
-        "Santo Tomé y Príncipe"
+        "Svatý Tomáš a Princův ostrov"
       ],
       "Saudi Arabia": [
-        "Arabia Saudita"
+        "Saúdská Arábie"
       ],
       "Senegal": [
         "Senegal"
       ],
       "Serbia": [
-        "Serbia"
+        "Srbsko"
       ],
       "Seychelles": [
-        "Seychelles"
+        "Seychely"
       ],
       "Sierra Leone": [
-        "Sierra Leona"
+        "Sierra Leone"
       ],
       "Singapore": [
         "Singapur"
       ],
       "Sint Maarten": [
-        "San Martín"
+        "Svatý Martin"
       ],
       "Slovakia": [
-        "Eslovaquia"
+        "Slovensko"
       ],
       "Slovenia": [
-        "Eslovenia"
+        "Slovinsko"
       ],
       "Solomon Islands": [
-        "Islas Salomón"
+        "Šalamounovy ostrovy"
       ],
       "Somalia": [
-        "Somalia"
+        "Somálsko"
       ],
       "South Africa": [
-        "Sudáfrica"
+        "Jihoafrická republika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Islas Georgias del Sur y Sándwich del Sur"
+        "Jižní Georgie a Jižní Sandwichovy ostrovy"
       ],
       "South Korea": [
-        "Corea del Sur"
+        "Jižní Korea"
       ],
       "South Ossetia": [
-        "Osetia del Sur"
+        "Jižní Osetie"
       ],
       "South Sudan": [
-        "Sudán del Sur"
+        "Jižní Súdán"
       ],
       "Spain": [
-        "España"
+        "Španělsko"
       ],
       "Sri Lanka": [
-        "Sri Lanka"
+        "Srí Lanka"
       ],
       "Sudan": [
-        "Sudán"
+        "Súdán"
       ],
       "Suriname": [
         "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard y Jan Mayen"
+        "Špicberky a Jan Mayen"
       ],
       "Sweden": [
-        "Suecia"
+        "Švédsko"
       ],
       "Switzerland": [
-        "Suiza"
+        "Švýcarsko"
       ],
       "Syria": [
-        "Siria"
+        "Sýrie"
       ],
       "Taiwan": [
-        "Taiwán"
+        "Tchaj-wan"
       ],
       "Tajikistan": [
-        "Tayikistán"
+        "Tádžikistán"
       ],
       "Tanzania": [
-        "Tanzania"
+        "Tanzanie"
       ],
       "Thailand": [
-        "Tailandia"
+        "Thajsko"
       ],
       "Timor-Leste": [
-        "Timor Oriental"
+        "Východní Timor"
       ],
       "Togo": [
         "Togo"
@@ -1485,22 +1365,22 @@
         "Tonga"
       ],
       "Trinidad and Tobago": [
-        "Trinidad y Tobago"
+        "Trinidad a Tobago"
       ],
       "Tristan da Cunha": [
-        "Tristán de Acuña"
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        "Túnez"
+        "Tunisko"
       ],
       "Turkey": [
-        "Turquía"
+        "Turecko"
       ],
       "Turkmenistan": [
         "Turkmenistán"
       ],
       "Turks and Caicos Islands": [
-        "Islas Turcas y Caicos"
+        "Ostrovy Turks a Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -1509,19 +1389,19 @@
         "Uganda"
       ],
       "Ukraine": [
-        "Ucrania"
+        "Ukrajina"
       ],
       "United Arab Emirates": [
-        "Emiratos Árabes Unidos"
+        "Spojené arabské emiráty"
       ],
       "United Kingdom": [
-        "Reino Unido"
+        "Velká Británie"
       ],
       "United States": [
-        "Estados Unidos"
+        "Spojené státy"
       ],
       "United States Minor Outlying Islands": [
-        "Islas Ultramarinas Menores de Estados Unidos"
+        "Menší odlehlé ostrovy USA"
       ],
       "Uruguay": [
         "Uruguay"
@@ -1539,246 +1419,242 @@
         "Vietnam"
       ],
       "Virgin Islands, British": [
-        "Islas Vírgenes Británicas"
+        "Britské Panenské ostrovy"
       ],
       "Virgin Islands, U.S.": [
-        "Islas Vírgenes de los Estados Unidos."
+        "Americké Panenské ostrovy"
       ],
       "Wallis and Futuna": [
-        "Wallis y Futuna"
+        "Wallis a Futuna"
       ],
       "Western Sahara": [
-        "Sahara Occidental"
+        "Západní Sahara"
       ],
       "Yemen": [
-        "Yemen"
+        "Jemen"
       ],
       "Zambia": [
-        "Zambia"
+        "Zambie"
       ],
       "Zimbabwe": [
-        "Zimbabue"
+        "Zimbabwe"
       ],
       "Åland Islands": [
-        "Islas Aland"
+        "Ålandské ostrovy"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Factura atrasada"
+        "Faktura po splatnosti"
       ]
     },
     "Description": {
       "Encrypting with Messaging Layer Security (MLS)": [
-        "Cifrando con Messaging Layer Security (MLS)"
+        "Šifrování pomocí MLS (Messaging Layer Security)"
       ],
       "Rotating group encryption key for best security": [
-        "Renovando la clave de cifrado de grupo para una seguridad óptima"
+        "Obměňování šifrovacího klíče skupiny pro nejlepší zabezpečení"
       ]
     },
     "Display name": {
       "Loading…": [
-        "Cargando…"
+        "Načítání…"
       ]
     },
     "emergency_access": {
       "Trusted contact": [
-        "Contacto de confianza"
+        "Důvěryhodný kontakt"
       ]
     },
     "Error": {
       "Domain not available, try again later": [
-        "Dominio no disponible. Inténtalo de nuevo más tarde."
+        "Doména není dostupná, zkuste to znovu později"
       ],
       "Email is not valid": [
-        "El correo no es válido."
+        "E-mailová adresa není platná"
       ],
       "Enter 6 digits": [
-        "Introduce 6 dígitos."
+        "Zadejte 6 číslic"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
+        "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
       "Event deleted": [
-        "Evento eliminado"
+        "Událost smazána"
       ],
       "Failed to assign host": [
-        "Error al asignar anfitrión"
+        "Přiřazení hostitele selhalo"
       ],
       "Failed to create meeting": [
-        "Error al crear la reunión"
+        "Vytvoření schůzky selhalo"
       ],
       "Failed to create personal meeting, please refresh the page": [
-        "No se pudo crear tu reunión personal, actualiza la página."
+        "Vytvoření osobní schůzky selhalo, obnovte prosím stránku"
       ],
       "Failed to decrypt session key": [
-        "Error al descifrar la clave de sesión"
+        "Dešifrování klíče relace selhalo"
       ],
       "Failed to delete event": [
-        "No se ha podido eliminar el evento"
+        "Nepodařilo se smazat událost"
       ],
       "Failed to delete room": [
-        "No se ha podido eliminar la sala"
+        "Nepodařilo se odstranit místnost"
       ],
       "Failed to edit room name": [
-        "Error al editar el nombre de la sala"
+        "Úprava názvu místnosti selhala"
       ],
       "Failed to join meeting. Please try again later.": [
-        "Error al unirse a la reunión. Inténtalo de nuevo más tarde."
+        "Připojení ke schůzce selhalo. Zkuste to prosím později."
       ],
       "Failed to lock meeting": [
-        "Error al bloquear la reunión"
+        "Uzamknutí schůzky selhalo"
       ],
       "Failed to rotate personal meeting link": [
-        "No se pudo rotar el enlace de reunión personal"
+        "Obnovení odkazu na osobní schůzku selhalo"
       ],
       "Failed to send chat message. Please try again.": [
-        "No se pudo enviar el mensaje de chat. Inténtalo de nuevo."
+        "Nepodařilo se odeslat zprávu v chatu. Zkuste to prosím znovu."
       ],
       "Failed to send emoji reaction. Please try again.": [
-        "Error al enviar la reacción de emoji. Inténtalo de nuevo."
+        "Nepodařilo se odeslat reakci pomocí emoji. Zkuste to prosím znovu."
       ],
       "Failed to send reaction. Please try again.": [
-        "Error al enviar la reacción. Inténtalo de nuevo."
+        "Nepodařilo se odeslat reakci. Zkuste to prosím znovu."
       ],
       "Failed to start recording": [
-        "Error al iniciar la grabación"
+        "Spuštění nahrávání selhalo"
       ],
       "Failed to start screen share": [
-        "Error al iniciar compartir pantalla"
+        "Zahájení sdílení obrazovky selhalo"
       ],
       "Failed to unlock meeting": [
-        "Error al desbloquear la reunión"
+        "Odemknutí schůzky selhalo"
       ],
       "Incorrect username": [
-        "El nombre de usuario no es correcto."
+        "Nesprávné uživatelské jméno"
       ],
       "Invalid meeting link": [
-        "Enlace de reunión no válido"
+        "Neplatný odkaz na schůzku"
       ],
       "Invalid passphrase": [
-        "Frase de acceso inválida"
+        "Neplatné heslo"
       ],
       "Invalid verification code": [
-        "Código de verificación no válido"
+        "Neplatný ověřovací kód"
       ],
       "Not a valid number": [
-        "No es un número válido."
+        "Neplatné číslo"
       ],
       "Passwords do not match": [
-        "Las contraseñas no coinciden."
+        "Hesla se neshodují"
       ],
       "Please allow screen sharing in your system permissions, then try again": [
-        "Permite compartir pantalla en los permisos del sistema e inténtalo de nuevo"
+        "Povolte prosím sdílení obrazovky v systémových oprávněních a poté to zkuste znovu"
       ],
       "Request timed out": [
-        "Tiempo de espera agotado"
+        "Vypršel časový limit žádosti"
       ],
       "Room deleted": [
-        "Sala eliminada"
+        "Místnost odstraněna"
       ],
       "Screen share is not supported on mobile browsers": [
-        "Compartir pantalla no es compatible en navegadores móviles"
+        "Sdílení obrazovky není v mobilních prohlížečích podporováno"
       ],
       "Signature verification failed": [
-        "Error al verificar la firma"
+        "Ověření podpisu selhalo"
       ],
       "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden"
+        "E-mailové adresy se neshodují"
       ],
       "The meeting password is incorrect": [
-        "La contraseña de la reunión es incorrecta"
+        "Heslo ke schůzce je nesprávné"
       ],
       "The meeting password is invalid": [
-        "La contraseña de la reunión no es válida"
+        "Heslo ke schůzce je neplatné"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
       ],
       "This field is required": [
-        "Este campo es obligatorio."
+        "Toto pole je povinné"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
-        "Esta reunión está en una versión anterior, el anfitrión debe finalizarla y actualizar Meet para reiniciarla con la última versión."
+        "Tato schůzka běží na starší verzi, hostitel ji musí ukončit a obnovit Meet, aby se restartoval na nejnovější verzi."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Utiliza solo letras, números y _.-"
+        "Zkuste používat pouze písmena, číslice a _.-"
       ],
       "Unknown error": [
-        "Error desconocido"
+        "Neznámá chyba"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número."
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número."
-      ],
-      "Your browser ran out of storage space. We saved the recording up to this point.": [
-        "Tu navegador se ha quedado sin espacio de almacenamiento. Se ha guardado la grabación hasta este momento."
-      ],
-      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
-        "Parece que el reloj de tu dispositivo no está sincronizado. Comprueba la hora del sistema e inténtalo de nuevo."
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ]
     },
     "Error message": {
       "App currently unavailable": [
-        "La aplicación no está disponible actualmente."
+        "Aplikace je momentálně nedostupná"
       ],
       "Error: ${ errorMessage }": [
-        "Error: ${ errorMessage }"
+        "Chyba: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Se ha producido un error."
+        "Jejda, něco se pokazilo"
       ],
       "Open in browser": [
-        "Abrir en el navegador"
+        "Otevřít v prohlížeči"
       ],
       "Please refresh the page or try again later.": [
-        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
+        "Aktualizujte prosím stránku nebo to zkuste znovu později."
       ],
       "Something went wrong": [
-        "Se ha producido un error."
+        "Něco se pokazilo"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "Para utilizar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
+        "Chcete-li použít ${ MAIL_APP_NAME } nebo ${ CALENDAR_APP_NAME }, přejděte na webovou verzi."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
+        "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Ninguna imagen seleccionada"
+        "Není vybrán žádný obrázek"
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Bezpečnostní klíč"
       ],
       "Touch your security key.": [
-        "Toca tu llave de seguridad."
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clave de seguridad"
+        "Bezpečnostní klíč"
       ]
     },
     "file size format": {
       "byte": [
-        "byte",
-        "bytes"
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
       ],
       "GB": [
         "GB"
@@ -1795,87 +1671,97 @@
     },
     "file size format, long": {
       "Byte": [
-        "Byte",
-        "Bytes"
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
       ],
       "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
       ],
       "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
       ],
       "Megabyte": [
-        "Megabyte",
-        "Megabytes"
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
       ],
       "Terabyte": [
-        "Terabyte",
-        "Terabytes"
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
       ]
     },
     "Font face option": {
       "System default": [
-        "Valor por defecto del sistema"
+        "Systémové výchozí"
       ],
       "Theme font": [
-        "Fuente del tema"
+        "Písmo motivu"
       ]
     },
     "Font size option": {
       "Large": [
-        "Grande"
+        "Velké"
       ],
       "Medium (recommended)": [
-        "Mediano (recomendado)"
+        "Střední (doporučeno)"
       ],
       "Small": [
-        "Pequeño"
+        "Malé"
       ],
       "Very large": [
-        "Muy grande"
+        "Velmi velké"
       ],
       "Very small": [
-        "Muy pequeño"
+        "Velmi malé"
       ]
     },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
-        "¿Ya tienes una cuenta? ${ signIn }"
+        "Máte již účet? ${ signIn }"
       ]
     },
     "Group": {
       "Account": [
-        "Cuenta"
+        "Účet"
       ],
       "Apps": [
-        "Aplicaciones"
+        "Aplikace"
       ],
       "Network": [
-        "Red"
+        "Síť"
       ],
       "Other category": [
-        "Otra categoría"
+        "Ostatní kategorie"
       ],
       "Services": [
-        "Servicios"
+        "Služby"
       ]
     },
     "Header": {
       "Protect your conversations with end-to-end encryption": [
-        "Protege tus conversaciones con cifrado de extremo a extremo"
+        "Zabezpečte své konverzace koncovým šifrováním"
       ]
     },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
-        "${ createAnActionAction } o ${ signInAction } para acceder a tu sala personal y crear nuevas salas"
+        "${ createAnActionAction } nebo ${ signInAction } pro přístup do vaší osobní místnosti a vytváření nových místností"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
-        "${ createAnActionAction } o ${ signInAction } para programar reuniones"
+        "${ createAnActionAction } nebo ${ signInAction } pro plánování schůzek"
       ],
       "Talk in total ${ privacyWord }": [
-        "Habla con total ${ privacyWord }"
+        "Komunikujte v naprostém ${ privacyWord }"
       ]
     },
     "Human verification method": {
@@ -1883,13 +1769,13 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Correo electrónico"
+        "E-mail"
       ],
       "Manual": [
-        "Manual"
+        "Ručně"
       ],
       "No verification method available": [
-        "No hay ningún método de verificación disponible."
+        "Nejsou k dispozici žádné metody ověřování"
       ],
       "SMS": [
         "SMS"
@@ -1897,1423 +1783,1378 @@
     },
     "Info": {
       " and ": [
-        " y "
+        " a "
       ],
       "${ maxParticipants } participant limit reached": [
-        "Se ha alcanzado el límite de ${ maxParticipants } participantes"
-      ],
-      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
-        "${ MEET_APP_NAME } necesita acceso para que el resto pueda verte y oírte durante la llamada. Puedes apagar tu cámara o el micrófono en cualquier momento."
-      ],
-      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceso a la cámara para que el resto pueda verte durante la llamada. Puedes apagarla en cualquier momento."
-      ],
-      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceso a la cámara para que el resto pueda verte durante la llamada. Puedes apagarla en cualquier momento."
+        "Dosažen limit ${ maxParticipants } účastníků"
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualiza tu navegador o dispositivo a una versión que sea compatible con WebRTC, prueba con otro navegador o desactiva cualquier extensión que pueda estar bloqueándolo."
+        "${ MEET_APP_NAME } potřebuje ke spuštění WebRTC. Prosím, aktualizujte svůj prohlížeč nebo zařízení na verzi, která podporuje WebRTC, zkuste jiný prohlížeč, nebo deaktivujte všechna rozšíření, která by jej mohla blokovat."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
-        "${ participantName } y ${ otherParticipantsCount } personas más están grabando"
+        "${ participantName } a dalších ${ otherParticipantsCount } účastníků právě nahrávají"
       ],
       "${ participantName } is recording": [
-        "${ participantName } está grabando"
+        "${ participantName } nahrává"
       ],
       "${ presenterName } (you) is presenting": [
-        "${ presenterName } (tú) está presentando"
+        "${ presenterName } (vy) prezentujete"
       ],
       "${ presenterName } is presenting": [
-        "${ presenterName } está presentando"
+        "${ presenterName } prezentuje"
       ],
       "${ reactorNames } and others reacted with ${ emoji }": [
-        "${ reactorNames } y otras personas han reaccionado con ${ emoji }"
+        "${ reactorNames } a další reagovali ${ emoji }"
       ],
       "${ reactorNames } reacted with ${ emoji }": [
-        "${ reactorNames } ha reaccionado con ${ emoji }"
+        "${ reactorNames } reagoval(a) ${ emoji }"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
-        "${ totalParticipantCount } de hasta ${ maxParticipants } participantes"
+        "${ totalParticipantCount } z maximálně ${ maxParticipants } účastníků"
       ],
       "${ totalParticipantCount } participant": [
-        "${ totalParticipantCount } participante",
-        "${ totalParticipantCount } participantes"
+        "${ totalParticipantCount } účastník",
+        "${ totalParticipantCount } účastníci",
+        "${ totalParticipantCount } účastníků",
+        "${ totalParticipantCount } účastníků"
       ],
       "(You)": [
-        "(Tú)"
+        "(Vy)"
       ],
       "-Removed dangerous URL-": [
-        "-Se ha eliminado una URL peligrosa-"
+        "-Nebezpečná adresa URL byla odebrána-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
+        "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
-        "Anónimo ${ particle } ${ participantNumber }"
+        "Anonymní ${ particle } ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
-        "¿Seguro que quieres salir?"
+        "Opravdu chcete odejít?"
       ],
       "Are you sure you want to stop recording?": [
-        "¿Estás seguro de que deseas detener la grabación?"
+        "Opravdu chcete zastavit nahrávání?"
       ],
       "Attention required": [
-        "Atención requerida"
+        "Vyžadována pozornost"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
+        "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "Al continuar en la reunión, aceptas ser grabado."
+        "Pokračováním ve schůzce berete na vědomí a souhlasíte s nahráváním."
       ],
       "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
-        "Al unirte, aceptas nuestros ${ termsLink } y ${ privacyLink }."
+        "Připojením souhlasíte s našimi ${ termsLink } a ${ privacyLink }."
       ],
       "camera": [
-        "cámara"
-      ],
-      "Camera permission denied": [
-        "Sin acceso a la cámara"
+        "fotoaparát"
       ],
       "Chat with everyone": [
-        "Chatea con todos"
+        "Chatujte se všemi"
       ],
       "Check your system settings to make sure that a camera is available.": [
-        "Comprueba los ajustes de tu sistema para asegurarte de que una cámara esté disponible."
+        "Zkontrolujte nastavení systému a ujistěte se, že je fotoaparát dostupný."
       ],
       "Check your system settings to make sure that a microphone is available.": [
-        "Comprueba los ajustes de tu sistema para asegurarte de que una cámara esté disponible."
+        "Zkontrolujte nastavení systému a ujistěte se, že je mikrofon dostupný."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
       "Coming soon": [
-        "Próximamente"
+        "Již brzy"
       ],
       "Connection failed": [
-        "Error de conexión"
+        "Připojení selhalo"
       ],
       "Connection interrupted. Reconnecting...": [
-        "Conexión interrumpida. Reconectando..."
+        "Připojení přerušeno. Znovu se připojujeme…"
       ],
       "Connection issue detected. Attempting to recover…": [
-        "Se ha detectado un problema de conexión. Intentando recuperar…"
+        "Byla zjištěna chyba připojení. Probíhá pokus o obnovení…"
       ],
       "Connection lost. Reconnecting…": [
-        "Se ha perdido la conexión. Reconectando…"
+        "Připojení ztraceno. Probíhá opětovné připojení…"
       ],
       "Copied to clipboard": [
-        "Copiada al portapapeles"
+        "Zkopírováno do schránky"
       ],
       "Country code": [
-        "Código de país"
+        "Kód země"
       ],
       "Create an account": [
-        "Crear una cuenta"
+        "Vytvořit účet"
       ],
       "Create an account to host meetings with up to 50 participants.": [
-        "Crea una cuenta para organizar reuniones con hasta 50 participantes."
+        "Vytvořte si účet a pořádejte schůzky až s 50 účastníky."
       ],
       "Created on ${ formattedDate }": [
-        "Creado el ${ formattedDate }"
+        "Vytvořeno ${ formattedDate }"
       ],
       "Custom combination": [
-        "Combinación personalizada"
+        "Vlastní kombinace"
       ],
       "Decrypting meetings...": [
-        "Descifrando reuniones..."
+        "Dešifrování schůzek..."
       ],
       "Default - ${ systemDefault.label }": [
-        "Por defecto: ${ systemDefault.label }"
+        "Výchozí - ${ systemDefault.label }"
       ],
       "Default - System Default": [
-        "Predeterminado — Predeterminado del sistema"
+        "Výchozí – výchozí nastavení systému"
       ],
       "Delete event": [
-        "Eliminar evento"
+        "Smazat událost"
       ],
       "Delete room": [
-        "Eliminar sala"
+        "Smazat místnost"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "¿Quieres que la gente te ${ deviceContentType } en la reunión?"
+        "Chcete, aby vás lidé na schůzce ${ deviceContentType }?"
       ],
       "Download current logs": [
-        "Descargar los registros actuales"
+        "Stáhnout aktuální logy"
       ],
       "Each code can only be used once": [
-        "Cada código solo se puede usar una vez"
+        "Každý kód lze použít pouze jednou"
       ],
       "Edit email address": [
-        "Editar la dirección de correo electrónico"
+        "Upravit e-mailovou adresu"
       ],
       "End Meeting for everyone?": [
-        "¿Finalizar la reunión para todos?"
+        "Ukončit schůzku pro všechny?"
       ],
       "End the meeting for everyone?": [
-        "¿Finalizar la reunión para todos?"
+        "Ukončit schůzku pro všechny?"
       ],
       "End-to-end encryption is active for audio and video.": [
-        "El cifrado de extremo a extremo está activo para audio y vídeo."
+        "Koncové šifrování je aktivní pro zvuk a video."
       ],
       "End-to-end encryption is active for screen share": [
-        "El cifrado de extremo a extremo está activo para compartir pantalla"
+        "Koncové šifrování je pro sdílení obrazovky aktivní"
       ],
       "End-to-end encryption is active for this chat.": [
-        "El cifrado de extremo a extremo está activo para este chat."
+        "Koncové šifrování je pro tento chat aktivní"
       ],
       "Enter code": [
-        "Introduce el código"
+        "Zadejte kód"
       ],
       "Enter the code from your authenticator app": [
-        "Ingresa el código de la aplicación de autenticación."
+        "Zadejte kód z vaší ověřovací aplikace"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduce el código de verificación que se ha enviado a ${ destinationText }."
+        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingresa el código de verificación. Escribe ${ digit }."
+        "Zadejte ověřovací kód. Číslice ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduce tu propia contraseña (como administrador de la organización)."
+        "Zadejte vlastní heslo (jako správce organizace)."
       ],
       "Enter your own password (as trusted contact).": [
-        "Introduce tu propia contraseña (como contacto de confianza)."
-      ],
-      "Everyone has been disconnected from the call.": [
-        "Se ha desconectado a todo el mundo de la llamada."
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "Failed to update meeting name": [
-        "Error al actualizar el nombre de la reunión"
+        "Aktualizace názvu schůzky selhala"
       ],
       "Failed to update meeting password": [
-        "Error al actualizar la contraseña de la reunión"
+        "Aktualizace hesla schůzky selhala"
       ],
       "Failed to update meeting schedule": [
-        "No se ha podido actualizar la programación de la reunión"
+        "Aktualizace plánu schůzky selhala"
       ],
       "Free meeting": [
-        "Reunión gratuita"
+        "Volná schůzka"
       ],
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
-        "Las reuniones gratuitas están limitadas a 1 hora. Esta llamada se desconectará pronto."
+        "Bezplatné schůzky jsou omezeny na 1 hodinu. Tento hovor bude brzy ukončen."
       ],
       "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
-        "Consigue tu propia sala de reuniones. Crea una cuenta para tener un enlace personal que podrás usar en cualquier momento."
+        "Získejte osobní zasedací místnost. Vytvořte si účet a získejte osobní odkaz na schůzku, který můžete použít kdykoli."
       ],
       "Get a secure meeting link then add it to your calendar": [
-        "Obtén un enlace de reunión seguro y añádelo a tu calendario"
+        "Získejte zabezpečený odkaz na schůzku a poté jej přidejte do svého kalendáře"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
-        "Disfruta de la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
+        "Získejte nejlepší zážitek s desktopovou aplikací ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Ve a about:config, busca media.peerconnection.enabled y establécelo en true."
+        "Přejděte na about:config, vyhledejte media.peerconnection.enabled a nastavte na true."
       ],
       "Host": [
-        "Anfitrión"
+        "Hostitel"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Organiza tus propias reuniones seguras. Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para invitar a quien quieras. Fácil, seguro y gratuito."
+        "Uspořádejte si vlastní zabezpečenou schůzku. Zahajte hovor v ${ MEET_APP_NAME } a sdílejte odkaz, abyste kohokoli pozvali k připojení. Jednoduché, bezpečné a zdarma."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
+        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
+        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
+        "Pokud jste ztratili přístup ke své ověřovací aplikaci, můžete použít jeden ze 16 záložních obnovovacích kódů, které jste obdrželi při nastavování dvoufázového ověřování. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Si usas Firefox, asegúrate de que PeerConnection esté activado."
+        "Pokud používáte Firefox, ujistěte se, že je PeerConnection povoleno."
       ],
       "Internet connection lost": [
-        "Se ha perdido la conexión a internet."
+        "Připojení k Internetu bylo ztraceno"
       ],
       "Joined ${ roomNameLabel }": [
-        "Se ha unido a ${ roomNameLabel }"
+        "Připojen(a) k ${ roomNameLabel }"
       ],
       "Learn more": [
-        "Más información"
+        "Zjistěte více"
       ],
       "Leave meeting and stop sharing?": [
-        "¿Salir de la reunión y dejar de compartir?"
+        "Opustit schůzku a ukončit sdílení?"
       ],
       "Leaving the meeting will stop your screen sharing.": [
-        "Al salir de la reunión, se deja de compartir la pantalla."
+        "Opuštění schůzky ukončí také vaše sdílení obrazovky."
       ],
       "Left ${ roomNameLabel }": [
-        "Ha salido de ${ roomNameLabel }"
+        "Opustil(a) ${ roomNameLabel }"
       ],
       "Left by mistake?": [
-        "¿Saliste por error?"
+        "Odešli jste omylem?"
       ],
       "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
+        "Odkaz zkopírován do schránky"
       ],
       "Loading": [
-        "Cargando"
+        "Načítání"
       ],
       "Loading ${ appName }": [
-        "Cargando ${ appName }"
+        "Načítání aplikace ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Espera ya que se está cargando el calendario. Se te redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
+        "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
       ],
       "Loading meetings...": [
-        "Cargando reuniones..."
+        "Načítání schůzek…"
       ],
       "Loading...": [
-        "Cargando..."
-      ],
-      "Loading…": [
-        "Cargando…"
+        "Načítání..."
       ],
       "Lower participant's hand": [
-        "Bajar la mano del participante"
+        "Dát ruku účastníka dolů"
       ],
       "Meet without restrictions": [
-        "Reúnete sin restricciones"
+        "Setkávejte se bez omezení"
       ],
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
-        "Reuniones sin restricciones. Pásate a un plan superior para eliminar el límite de 1 hora y reunir hasta a 100 participantes."
+        "Setkávejte se bez omezení. Upgradujte a odstraňte hodinový limit a hostujte až 100 účastníků."
       ],
       "Meeting ended": [
-        "Reunión finalizada"
+        "Schůzka skončila"
       ],
       "Meeting full (${ maxParticipants } participants)": [
-        "Reunión completa (${ maxParticipants } participantes)"
+        "Schůzka plná (${ maxParticipants } účastníků)"
       ],
       "Meeting is decrypting...": [
-        "Desencriptando la reunión..."
+        "Schůzka se dešifruje…"
       ],
       "Meeting link": [
-        "Enlace de la reunión"
+        "Odkaz na schůzku"
       ],
       "Meeting locked. No new participants can join.": [
-        "Reunión bloqueada. No pueden unirse nuevos participantes."
+        "Schůzka uzamčena. Nemohou se připojit žádní noví účastníci."
       ],
       "Meeting recordings aren’t supported in Firefox.": [
-        "Firefox no soporta grabar reuniones."
-      ],
-      "Meeting time is up": [
-        "Se ha agotado el tiempo de la reunión"
+        "Firefox nepodporuje nahrávání schůzek."
       ],
       "Meeting unlocked. Participants can join again.": [
-        "Reunión desbloqueada. Los participantes pueden unirse de nuevo."
+        "Schůzka odemčena. Účastníci se mohou znovu připojit."
       ],
       "Meeting will end in ${ timeLeft }": [
-        "La reunión terminará en ${ timeLeft }"
+        "Schůzka končí za ${ timeLeft }"
       ],
       "Member": [
-        "Miembro"
+        "Člen"
       ],
       "microphone": [
-        "micrófono"
+        "mikrofon"
       ],
       "Microphone effects": [
-        "Efectos de micrófono"
-      ],
-      "Microphone permission denied": [
-        "Permiso de micrófono denegado"
-      ],
-      "Mute microphone": [
-        "Silenciar micrófono"
+        "Efekty mikrofonu"
       ],
       "My meetings": [
-        "Mis reuniones"
+        "Moje schůzky"
       ],
       "My rooms": [
-        "Mis salas"
+        "Moje místnosti"
       ],
       "New": [
-        "Nuevo"
+        "Nově"
       ],
       "New host": [
-        "Nuevo anfitrión"
+        "Nový hostitel"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
-        "No se detectaron ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+        "Nerozpoznán žádný ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
       ],
       "No camera detected": [
-        "No se detectó ninguna cámara"
+        "Nerozpoznán žádný fotoaparát"
       ],
       "No camera detected.": [
-        "No se detectó ninguna cámara."
+        "Nerozpoznán žádný fotoaparát."
       ],
       "No microphone detected": [
-        "No se detecta ningún micrófono"
+        "Nerozpoznán žádný mikrofon"
       ],
       "No microphone detected.": [
-        "No se detecta ningún micrófono"
+        "Nebyl rozpoznán žádný mikrofon."
       ],
       "No publications": [
-        "Sin publicaciones"
+        "Žádné publikace"
       ],
       "No remote participants": [
-        "No hay participantes remotos"
+        "Žádní vzdálení účastníci"
       ],
       "No results found": [
-        "No se han encontrado resultados."
+        "Nebyly nalezeny žádné výsledky"
       ],
       "No search results": [
-        "No se han encontrado resultados"
+        "Žádné výsledky hledání"
       ],
       "No speaker detected": [
-        "No se detectan altavoces"
+        "Nenalezen žádný reproduktor"
       ],
       "Only meetings you created appear here": [
-        "Aquí solo aparecen las reuniones que has creado tú"
+        "Zde se zobrazí pouze schůzky, které jste vytvořili"
       ],
       "Open external link": [
-        "Abrir enlace externo"
+        "Otevřít externí odkaz"
       ],
       "Other accounts": [
-        "Otras cuentas"
+        "Další účty"
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
-        "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y facilitan la verdadera libertad de expresión."
+        "Naše schůzky s koncovým šifrováním chrání soukromí a umožňují skutečně svobodné vyjádření."
       ],
       "Participant": [
-        "Participante"
+        "Účastník"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
-        "Pega tu enlace de ${ MEET_APP_NAME } para unirte a una reunión segura"
+        "Vložte svůj odkaz ${ MEET_APP_NAME } pro připojení k zabezpečené schůzce"
       ],
       "Permissions not given.": [
-        "Faltan los permisos."
+        "Oprávnění nebyla udělena."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
-        "Activa el acceso a tu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para la mejor experiencia."
+        "Povolte prosím přístup k vašemu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pro nejlepší zážitek."
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
-        "Introduce la contraseña para descifrar y visualizar el contenido."
+        "Zadejte prosím heslo k dešifrování a zobrazení této schůzky"
       ],
       "Please try again or try another browser": [
-        "Inténtalo de nuevo o prueba con otro navegador"
+        "Zkuste to prosím znovu, nebo zkuste jiný prohlížeč"
       ],
       "Poor connection": [
-        "Conexión débil"
+        "Slabé připojení"
       ],
       "Premium meeting": [
-        "Reunión prémium"
+        "Prémiová schůzka"
       ],
       "Presenting": [
-        "Presentando"
+        "Prezentující"
       ],
       "privacy": [
-        "privacidad"
+        "soukromí"
       ],
       "Reconnected successfully": [
-        "Reconectado con éxito"
+        "Úspěšně znovu připojeno"
       ],
       "Reconnecting to meeting...": [
-        "Reconectando a la reunión..."
+        "Znovu se připojujeme ke schůzce…"
       ],
       "Record your meetings": [
-        "Grabar tus reuniones"
+        "Nahrávejte své schůzky"
       ],
       "Recording": [
-        "Grabando"
+        "Nahrávání"
       ],
       "Recording in progress": [
-        "Grabación en curso"
+        "Probíhá nahrávání"
       ],
       "Recording will begin and attendees will be notified.": [
-        "La grabación comenzará y se notificará a los participantes."
+        "Záznam bude zahájen a účastníci budou o tom informováni."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
+        "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
       "Refresh audio and video tracks": [
-        "Actualizar pistas de audio y vídeo"
+        "Obnovit zvukové a obrazové stopy"
       ],
       "Refresh screen share track": [
-        "Actualizar la señal de la pantalla compartida"
+        "Obnovit sledování sdílené obrazovky"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
+        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
-        "Programa tu próxima reunión. Crea una cuenta para programar reuniones con tu calendario."
+        "Naplánujte si schůzku. Vytvořte si účet a plánujte schůzky pomocí svého kalendáře."
       ],
       "Select a camera": [
-        "Seleccionar una cámara"
+        "Vyberte fotoaparát"
       ],
       "Select a microphone": [
-        "Selecciona un micrófono"
+        "Vyberte mikrofon"
       ],
       "Select a participant to assign as the new host before you go: ": [
-        "Selecciona un participante para asignarlo como el nuevo anfitrión antes de que te vayas: "
+        "Než odejdete, vyberte účastníka pro přiřazení jako nového hostitele: "
       ],
       "Select a speaker": [
-        "Seleccionar un altavoz"
+        "Vyberte reproduktor"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
+        "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
       "Session timed out": [
-        "El tiempo de la sesión ha expirado."
+        "Relace vypršela"
       ],
       "Set up a permanent meeting room for your team or clients": [
-        "Configurar una sala de reuniones permanente para tu equipo o clientes"
+        "Nastavit trvalou zasedací místnost pro váš tým nebo klienty"
       ],
       "Share screen": [
-        "Compartir pantalla"
+        "Sdílet obrazovku"
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Comparte este enlace para invitar a otros. También puedes encontrarlo en cualquier momento haciendo clic en el icono de información en la barra de herramientas."
+        "Sdílejte tento odkaz k pozvání ostatních. Můžete jej také kdykoli najít kliknutím na ikonu informací na panelu nástrojů."
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "Přihlásit se"
       ],
       "Sort by": [
-        "Ordenar por"
+        "Seřadit podle"
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
-        "La selección de altavoz no está disponible en este navegador. Usa los ajustes del sistema para elegir un altavoz diferente."
+        "V tomto prohlížeči nelze vybrat reproduktor. Chcete-li vybrat jiný reproduktor, použijte nastavení systému."
       ],
       "Start recording": [
-        "Comenzar a grabar"
+        "Spustit nahrávání"
       ],
       "Stop sharing your screen": [
-        "Dejar de compartir tu pantalla"
+        "Ukončit sdílení obrazovky"
       ],
       "Successfully deleted meeting": [
-        "Reunión eliminada"
+        "Schůzka byla úspěšně smazána"
       ],
       "Thank you for hosting a premium meeting.": [
-        "Gracias por organizar una reunión prémium."
+        "Děkujeme za uspořádání prémiové schůzky."
       ],
       "Thank you for joining.": [
-        "Gracias por unirte."
+        "Děkujeme, že jste se připojili."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
-        "El anfitrión te ha retirado de esta reunión. Si ha sido un error, pídele que vuelva a invitarte."
-      ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "El enlace de la reunión que has intentado abrir no existe o puede haber caducado. Asegúrate de que el enlace es correcto o inicia una nueva reunión segura."
+        "Pořadatel vás z této schůzky odebral. Pokud se jedná o chybu, požádejte ho o novou pozvánku."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
-        "Esta es una conversación cifrada de extremo a extremo con mensajes efímeros, que desaparecen al final de la llamada."
+        "Jedná se o chat s koncovým šifrováním a dočasnými zprávami, které zmizí po skončení hovoru."
       ],
       "This meeting is being recorded": [
-        "Esta reunión se está grabando"
+        "Tato schůzka je nahrávána"
       ],
       "This meeting is locked. Please contact the host to join.": [
-        "Esta reunión está bloqueada. Contacta al anfitrión para unirte."
+        "Tato schůzka je uzamčena. Pro připojení kontaktujte hostitele."
       ],
       "This meeting is password protected": [
-        "Esta reunión está protegida con contraseña"
-      ],
-      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
-        "Esta reunión ha alcanzado el límite de tiempo de un plan gratuito. Mejora tu plan para ampliar la duración de la reunión en próximas llamadas."
+        "Tato schůzka je chráněna heslem"
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Esta reunión se ha abierto en la aplicación de escritorio de ${ MEET_APP_NAME }."
+        "Tato schůzka byla zahájena v desktopové aplikaci ${ MEET_APP_NAME }."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
-        "Esto finaliza la reunión para todos los participantes y deja de compartir pantalla."
+        "Toto ukončí schůzku pro všechny a zastaví sdílení vaší obrazovky."
       ],
       "This will end the meeting for all participants.": [
-        "Esto finalizará la reunión para todos los participantes."
+        "Tímto bude schůzka pro všechny účastníky ukončena."
       ],
       "This will sign you out of all accounts currently logged in.": [
-        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
+        "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
-        "Para crear una sala, necesitarás **una cuenta gratuita de ${ BRAND_NAME }** para guardarla. Esto solo toma unos segundos."
+        "Chcete-li vytvořit místnost, budete potřebovat **bezplatný účet ${ BRAND_NAME }**, abychom mohli místnost uložit. Zabere to jen několik sekund."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
+        "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
-        "Para programar un evento necesitarás **una cuenta gratuita de ${ BRAND_NAME }** para guardarlo. Esto solo toma algunos segundos."
+        "Chcete-li naplánovat událost, budete potřebovat **bezplatný účet ${ BRAND_NAME }**, abychom mohli událost uložit. Zabere to jen pár vteřin."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
-        "Para usar tu sala personal de reuniones, necesitarás **una cuenta gratuita de ${ BRAND_NAME }**. Esto solo toma unos segundos."
+        "Použití vaší zasedací místnosti pro schůzky, vyžaduje **bezplatný účet ${ BRAND_NAME }**. Zabere to několik sekund."
       ],
       "Today — ${ absoluteDate }": [
-        "Hoy — ${ absoluteDate }"
+        "Dnes — ${ absoluteDate }"
       ],
       "Tomorrow — ${ absoluteDate }": [
-        "Mañana — ${ absoluteDate }"
+        "Zítra — ${ absoluteDate }"
       ],
       "Turn off camera": [
-        "Apagar cámara"
+        "Vypnout fotoaparát"
       ],
       "Turn on camera": [
-        "Encender cámara"
+        "Zapnout fotoaparát"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "No se ha podido retomar la conexión con la reunión. Vuelve a unirte o sal."
+        "Nelze se znovu připojit ke schůzce. Zkuste se připojit znovu nebo schůzku opustit."
       ],
       "unlimited meeting": [
-        "reuniones ilimitadas"
+        "neomezené schůzky"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
-        "Desbloquea ${ unlimitedMeeting } y funciones prémium"
-      ],
-      "Unmute microphone": [
-        "Activar micrófono"
+        "Odemkněte ${ unlimitedMeeting } a prémiové funkce"
       ],
       "Upgrade to record your meetings locally.": [
-        "Mejora tu cuenta para grabar tus reuniones localmente."
+        "Navyšte si účet a nahrávejte své schůzky lokálně."
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
-        "Mejora tu plan para eliminar el límite de 1 hora y omitir la cuenta atrás. Disfruta de reuniones de hasta 24 horas."
+        "Navyšte své předplatné, abyste odstranili hodinový limit a přeskočili odpočítávání. Užívejte si schůzky trvající až 24 hodin."
       ],
       "Video effects": [
-        "Efectos de vídeo"
+        "Efekty videa"
       ],
       "Warning": [
-        "Advertencia"
+        "Varování"
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Enviaremos un nuevo código de verificación a ${ strong }."
+        "Zašleme nový ověřovací kód na ${ strong }"
       ],
       "Week": [
-        "Semana"
+        "Týden"
       ],
       "Would you like to delete this event?": [
-        "¿Quieres eliminar este evento?"
+        "Chcete smazat tuto událost?"
       ],
       "Would you like to delete this room?": [
-        "¿Quieres eliminar esta sala?"
+        "Chcete smazat tuto místnost?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
+        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
       ],
       "Would you like to receive a new verification code?": [
-        "¿Quieres recibir un nuevo código de verificación?"
+        "Chcete obdržet nový ověřovací kód?"
       ],
       "Yesterday — ${ absoluteDate }": [
-        "Ayer — ${ absoluteDate }"
+        "Včera — ${ absoluteDate }"
       ],
       "You are almost there": [
-        "Ya casi has terminado"
+        "Už to bude"
       ],
       "You can close this tab.": [
-        "Puedes cerrar esta pestaña."
+        "Tuto kartu můžete zavřít."
       ],
       "You can now return to the application to continue": [
-        "Ahora puedes regresar a la aplicación para continuar."
+        "Nyní se můžete vrátit do aplikace a pokračovat"
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
-        "Todavía puedes apagar tu micrófono y cámara en cualquier momento de la reunión."
+        "Svůj mikrofon a fotoaparát můžete během schůzky kdykoli vypnout."
       ],
       "You left the meeting": [
-        "Has salido de la reunión"
+        "Opustili jste schůzku"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
-        "Esta función requiere un plan de pago de ${ MEET_SHORT_APP_NAME } o Workspace. Contacta con el administrador de tu organización para mejorar el plan."
+        "K využívání této funkce potřebujete placený tarif ${ MEET_SHORT_APP_NAME } nebo Workspace. Ohledně přechodu na vyšší tarif se obraťte na správce vaší organizace."
       ],
       "You were removed from the meeting": [
-        "Te han retirado de la reunión"
+        "Byli jste odebráni ze schůzky"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Opustíte schůzku. Ostatní budou pokračovat."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
-        "Te han invitado a unirte a una reunión segura. Confirma tu nombre y haz clic abajo para ingresar."
+        "Byli jste pozváni k připojení do zabezpečené schůzky. Potvrďte své jméno a vstupte kliknutím níže."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
+        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
       ],
       "Your always available meeting room": [
-        "Tu sala de reuniones siempre disponible"
+        "Vaše vždy dostupná zasedací místnost"
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Tu navegador ha bloqueado el acceso a la cámara y al micrófono. Para habilitarlos, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+        "Váš prohlížeč zablokoval přístup k vaší kameře a mikrofonu. Chcete-li přístup povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
       ],
       "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Tu navegador ha bloqueado el acceso a la cámara. Para habilitarla, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+        "Váš prohlížeč zablokoval přístup k vaší kameře. Chcete-li přístup povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
       ],
       "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Tu navegador ha bloqueado el acceso al micrófono. Para habilitarlo, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+        "Váš prohlížeč zablokoval přístup k mikrofonu. Chcete-li jej povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
       ],
       "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Tu navegador ha bloqueado el acceso al uso compartido de pantalla. Para habilitarlo, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+        "Váš prohlížeč zablokoval přístup k vašemu sdílení obrazovky. Chcete-li sdílení povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
       ],
       "Your browser or device isn’t supported": [
-        "Tu navegador o dispositivo no es compatible"
+        "Váš prohlížeč nebo zařízení není podporováno"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Tu correo electrónico se utilizará solo para esta verificación única."
+        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
       "Your meeting is ready": [
-        "Tu reunión está lista"
+        "Vaše schůzka je připravena."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Tu número de teléfono se utilizará solo para esta verificación única."
+        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
-        "Estás a punto de abrir un enlace en una nueva pestaña. Asegúrate de que el sitio web es de confianza antes de continuar."
+        "Chystáte se otevřít odkaz na nové záložce. Než budete pokračovat, ujistěte se, že dané webové stránce důvěřujete."
       ]
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nombre de usuario de ${ BRAND_NAME }"
+        "Uživatelské jméno ${ BRAND_NAME }"
       ],
       "${ numberOfStars } star": [
-        "${ numberOfStars } estrella",
-        "${ numberOfStars } estrellas"
+        "${ numberOfStars } hvězdička",
+        "${ numberOfStars } hvězdičky",
+        "${ numberOfStars } hvězdiček",
+        "${ numberOfStars } hvězdiček"
       ],
       "Add optional details": [
-        "Añadir detalles opcionales"
+        "Přidat nepovinné detaily"
       ],
       "Add to calendar": [
-        "Añadir al calendario"
+        "Přidat do kalendáře"
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
+        "Přiložit sním(ek/ky) obrazovky"
       ],
       "Audio": [
-        "Audio"
+        "Zvuk"
       ],
       "Authenticator app": [
-        "Aplicación de autenticación"
+        "Ověřovací aplikace"
       ],
       "Browser": [
-        "Navegador"
+        "Prohlížeč"
       ],
       "Browser version": [
-        "Versión del navegador"
+        "Verze prohlížeče"
       ],
       "Camera Active": [
-        "Cámara activa"
+        "Kamera aktivní"
       ],
       "Category": [
-        "Categoría"
+        "Kategorie"
       ],
       "Code is 6 digits without spaces": [
-        "El código es de 6 dígitos sin espacios."
+        "Kód má 6 číslic bez mezer"
       ],
       "Connection Quality": [
-        "Calidad de la conexión"
+        "Kvalita připojení"
       ],
       "Copy all activity events": [
-        "Copiar todos los eventos de actividad"
+        "Kopírovat všechny události aktivity"
       ],
       "Copy invite link": [
-        "Copiar enlace de invitación"
+        "Kopírovat odkaz pozvánky"
       ],
       "Created": [
-        "Creado"
+        "Vytvořeno"
       ],
       "Delete": [
-        "Eliminar"
+        "Odstranit"
       ],
       "Delete recovery-related information.": [
-        "Eliminar la información de recuperación."
+        "Odstranit informace související s obnovením."
       ],
       "Does not repeat": [
-        "No se repite"
+        "Neopakovat"
       ],
       "Download .ics": [
-        "Descargar .ics"
+        "Stáhnout .ics"
       ],
       "Email address": [
-        "Dirección de correo electrónico"
+        "E-mailová adresa"
       ],
       "Enabled": [
-        "Activado"
+        "Povoleno"
       ],
       "Ended": [
-        "Finalizado"
+        "Ukončeno"
       ],
       "Every day": [
-        "Diariamente"
+        "Každý den"
       ],
       "Every month": [
-        "Mensualmente"
+        "Každý měsíc"
       ],
       "Every week": [
-        "Todas las semanas"
+        "Každý týden"
       ],
       "Every weekday": [
-        "Todos los días laborables"
+        "Každý pracovní den"
       ],
       "Every year": [
-        "Anualmente"
+        "Každý rok"
       ],
       "Google Calendar": [
-        "Calendario de Google"
+        "Kalendář Google"
       ],
       "Hide password": [
-        "Ocultar contraseña"
+        "Skrýt heslo"
       ],
       "How was the call quality?": [
-        "¿Qué tal ha sido la calidad de la llamada?"
+        "Jaká byla kvalita hovoru?"
       ],
       "Identity": [
-        "Identidad"
+        "Identita"
       ],
       "Include application logs in bug report": [
-        "Incluir los registros de la aplicación en el informe de errores"
+        "Zahrnout logy aplikace do chybového hlášení"
       ],
       "Last used": [
-        "Último utilizado"
+        "Naposledy použito"
       ],
       "Meeting ID": [
-        "Identificador de la reunión"
+        "ID schůzky"
       ],
       "Message": [
-        "Mensaje"
+        "Zpráva"
       ],
       "Microphone Active": [
-        "Micrófono activo"
+        "Mikrofon aktivní"
       ],
       "Monday to Friday": [
-        "De lunes a viernes"
+        "Pondělí až pátek"
       ],
       "Muted": [
-        "Silenciado"
+        "Ztlumeno"
       ],
       "Name": [
-        "Nombre"
+        "Jméno"
       ],
       "Next": [
-        "Siguiente"
+        "Další"
       ],
       "Operating system": [
-        "Sistema operativo"
+        "Operační systém"
       ],
       "Operating system version": [
-        "Versión del sistema operativo"
+        "Verze operačního systému"
       ],
       "Outlook Calendar": [
-        "Calendario de Outlook"
+        "Outlook kalendář"
       ],
       "Passphrase": [
-        "Frase de contraseña"
+        "Heslo"
       ],
       "Password": [
-        "Contraseña"
+        "Heslo"
       ],
       "Phone number": [
-        "Número de teléfono"
+        "Telefonní číslo"
       ],
       "Remember my name on this device": [
-        "Recordar mi nombre en este dispositivo"
+        "Pamatovat mé jméno na tomto zařízení"
       ],
       "Repeat event": [
-        "Repetir evento"
-      ],
-      "Return to dashboard": [
-        "Volver al panel principal"
+        "Opakovat událost"
       ],
       "Reveal password": [
-        "Mostrar contraseña"
+        "Zobrazit heslo"
       ],
       "Schedule meeting": [
-        "Programar reunión"
+        "Naplánovat schůzku"
       ],
       "Selected Camera": [
-        "Cámara seleccionada"
+        "Vybraná kamera"
       ],
       "Selected Microphone": [
-        "Micrófono seleccionado"
+        "Vybraný mikrofon"
       ],
       "Selected Speaker": [
-        "Altavoz seleccionado"
+        "Vybraný reproduktor"
       ],
       "Subscribed": [
-        "Suscrito"
+        "Odebíráno"
       ],
       "System information": [
-        "Información del sistema"
+        "Informace o systému"
       ],
       "Track SID": [
-        "SID de pista"
+        "Sledovat SID"
       ],
       "Verification code": [
-        "Código de verificación"
+        "Ověřovací kód"
       ],
       "Video": [
-        "Vídeo"
+        "Video"
       ],
       "What happened?": [
-        "¿Qué ha ocurrido?"
+        "Co se stalo?"
       ],
       "Your password (admin)": [
-        "Tu contraseña (admin)"
+        "Vaše heslo (správce)"
       ],
       "Your password (trusted contact)": [
-        "Tu contraseña (contacto de confianza)"
+        "Vaše heslo (důvěryhodný kontakt)"
       ]
     },
     "Link": {
       "clearing your browser cache": [
-        "limpiando la memoria caché de tu navegador"
+        "vyprazdňuji cache ve vašem prohlížeči"
       ],
       "Learn more": [
-        "Más información"
+        "Více informací"
       ],
       "privacy policy": [
-        "política de privacidad"
+        "zásadami ochrany osobních údajů"
       ],
       "Request an invite": [
-        "Solicitar una invitación"
+        "Požádat o pozvánku"
       ],
       "Sign in": [
-        "Iniciar sesión"
+        "Přihlásit se"
       ],
       "terms and conditions": [
-        "términos y condiciones"
+        "smluvními podmínkami užívání"
       ],
       "What’s this?": [
-        "¿Qué es esto?"
+        "Co je to?"
       ]
     },
     "meet": {
       "Create and copy link": [
-        "Crear y copiar enlace"
+        "Vytvořit a zkopírovat odkaz"
       ],
       "Create new room": [
-        "Crear una nueva sala"
+        "Vytvořit novou místnost"
       ],
       "Meeting rooms can be used at any time": [
-        "Las salas de reuniones se pueden usar en cualquier momento"
+        "Zasedací místnosti lze využívat kdykoli"
       ],
       "Save and copy link": [
-        "Guardar y copiar enlace"
+        "Uložit a zkopírovat odkaz"
       ]
     },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Tu navegador o el software de tu dispositivo no es compatible con ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requiere WebAssembly (Wasm) para funcionar. Actualiza tu navegador o dispositivo a una versión que soporte Wasm, o intenta usar un navegador diferente."
+        "Váš prohlížeč nebo software zařízení nepodporuje ${ MEET_APP_NAME }. ${ MEET_APP_NAME } vyžaduje ke spuštění WebAssembly (Wasm). Prosím, aktualizujte svůj prohlížeč nebo zařízení na verzi, která podporuje Wasm, nebo zkuste použít jiný prohlížeč."
       ]
     },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
-        "Dado que eres el único participante en esta reunión, la reunión se cerrará automáticamente. ¿Quieres quedarte en esta reunión?"
+        "Jelikož jste jediným účastníkem této schůzky, schůzka bude automaticky ukončena. Chcete zůstat v této schůzce?"
       ]
     },
     "meet_2025 Action": {
       "Leave meeting": [
-        "Salir de la reunión"
+        "Opustit schůzku"
       ],
       "Stay in the meeting": [
-        "Permanecer en la reunión"
+        "Zůstat na schůzce"
       ]
     },
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
-        "Error al iniciar Pantalla en pantalla"
+        "Zahájení režimu Obraz v obraze selhalo"
       ]
     },
     "Notification": {
       "Coming soon": [
-        "Próximamente"
+        "Již brzy"
       ],
       "Copied to clipboard": [
-        "Copiada al portapapeles"
+        "Zkopírováno do schránky"
       ],
       "Could not send feedback": [
-        "No se pudo enviar el comentario"
+        "Nelze odeslat zpětnou vazbu"
       ],
       "Link copied to clipboard": [
-        "Se ha copiado el enlace al portapapeles."
+        "Odkaz zkopírován do schránky"
       ],
       "Room name updated": [
-        "Nombre de la sala actualizado"
+        "Název místnosti aktualizován"
       ],
       "Successfully rotated your personal meeting": [
-        "Has renovado con éxito tu reunión personal"
+        "Úspěšně jste změnili vaši osobní schůzku"
       ],
       "You can't send a feedback for a meeting you haven't been to": [
-        "No puedes enviar comentarios de una reunión a la que no has asistido"
+        "Nemůžete odeslat zpětnou vazbu ke schůzce, které jste se nezúčastnili"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Algunas imágenes no se han cargado debido a archivos duplicados en la selección actual."
+        "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
       ]
     },
     "Option": {
       "Audio was breaking up": [
-        "El audio se entrecortaba"
+        "Zvuk se přerušoval"
       ],
       "I couldn't hear others": [
-        "No pude oír a los demás"
+        "Neslyšel jsem ostatní"
       ],
       "I couldn't present ": [
-        "No pude presentar "
+        "Nemohl jsem prezentovat "
       ],
       "I couldn't see others' video": [
-        "No pude ver el vídeo de los demás"
+        "Nemohl(a) jsem vidět videa ostatních"
       ],
       "I couldn't see the presentation": [
-        "No podía ver la presentación"
+        "Nemohl(a) jsem vidět prezentaci"
       ],
       "Others couldn't hear me": [
-        "No podían oírme"
+        "Ostatní mě neslyšeli"
       ],
       "Others couldn't see my video": [
-        "Los demás no podían ver mi vídeo"
+        "Ostatní nemohli vidět mé video"
       ],
       "The presentation was blurry": [
-        "La presentación estaba borrosa"
+        "Prezentace byla rozostřená"
       ],
       "Video quality was poor": [
-        "La calidad del vídeo era baja"
+        "Kvalita videa byla špatná"
       ]
     },
     "Placeholder": {
       "A way to contact you": [
-        "Una forma de contactarte"
+        "Způsob, jak vás kontaktovat"
       ],
       "E.g., ": [
-        "P. ej., "
+        "Např., "
       ],
       "Enter passphrase": [
-        "Introducir la frase de contraseña"
+        "Zadejte heslo"
       ],
       "Enter time": [
-        "Ingresar hora"
+        "Zadejte čas"
       ],
       "Enter your name": [
-        "Escribe tu nombre"
+        "Zadejte své jméno"
       ],
       "Find...": [
-        "Buscar..."
+        "Hledat..."
       ],
       "Loading...": [
-        "Cargando..."
+        "Načítání..."
       ],
       "Meeting name, e.g. team sync, project update, etc": [
-        "Nombre de la reunión, por ejemplo, sincronización de equipo, actualización de proyecto, etc."
+        "Název schůzky, např. koordinace týmu, aktualizace projektu atd."
       ],
       "Password": [
-        "Contraseña"
+        "Heslo"
       ],
       "Please describe the problem and include any error messages": [
-        "Describe el problema e incluye cualquier mensaje de error."
+        "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
       "Room name, e.g. team sync, project update, etc": [
-        "Nombre de la sala, por ejemplo, sincronización de equipo, actualización de proyecto, etc"
+        "Název místnosti, např. synchronizace týmu, aktualizace projektu atd."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "Programar en ${ CALENDAR_APP_NAME }"
+        "Naplánovat v aplikaci ${ CALENDAR_APP_NAME }"
       ],
       "Search": [
-        "Buscar"
+        "Vyhledat"
       ],
       "Select": [
-        "Seleccionar"
+        "Vybrat"
       ],
       "Share more details": [
-        "Compartir más detalles"
+        "Sdílet další podrobnosti"
       ],
       "Type an encrypted message...": [
-        "Escribe un mensaje cifrado..."
+        "Napište šifrovanou zprávu..."
       ]
     },
     "Safety review": {
       "Review account safety": [
-        "Verificar la seguridad de la cuenta"
+        "Zkontrolujte bezpečnost účtu"
       ]
     },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
-        "No se ha completado el inicio de sesión."
+        "Přihlášení nebylo úspěšně dokončeno."
       ]
     },
     "Select search results": {
       "No results found": [
-        "No se han encontrado resultados."
+        "Nebyly nalezeny žádné výsledky"
       ]
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Cerrar sesión"
+        "Odhlásit se"
       ],
       "Stay signed in": [
-        "Seguir conectado"
+        "Zůstat přihlášen(a)"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } hora",
-        "${ gracePeriodHoursRemaining } horas"
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodin",
+        "${ gracePeriodHoursRemaining } hodin"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } está ahora disponible."
+        "${ passwordReset } je nyní k dispozici."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Si cierras la sesión antes de restablecer su contraseña, podrías perder el acceso a tu cuenta."
+        "Pokud se před resetováním hesla odhlásíte, můžete ztratit přístup ke svému účtu."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Si cierras la sesión sin restablecer tu contraseña, podrías perder el acceso a tu cuenta."
+        "Pokud se bez resetování hesla odhlásíte, můžete ztratit přístup ke svému účtu."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
-        "Podrás restablecer tu contraseña en ${ boldTimeLeft }."
+        "Heslo budete moci resetovat za ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Restablecimiento de contraseña"
+        "Reset hesla"
       ]
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Quieres cerrar sesión sin restablecimiento de contraseña?"
+        "Odhlásit se bez resetování hesla?"
       ]
     },
     "Sort option": {
       "Alphabetical (A–Z)": [
-        "Alfabético (A–Z)"
+        "Abecedně (A–Z)"
       ],
       "Newly created": [
-        "Nuevas"
+        "Nově vytvořeno"
       ],
       "Past meetings": [
-        "Reuniones pasadas"
+        "Minulé schůzky"
       ],
       "Upcoming": [
-        "Próximamente"
+        "Nadcházející"
       ]
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Ir a los planes de suscripción"
+        "Přejít na předplatné"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Navýšit"
       ]
     },
     "sso": {
       "Sign in": [
-        "Iniciar sesión"
+        "Přihlásit se"
       ],
       "Sign in to your organization": [
-        "Iniciar sesión en tu organización"
+        "Přihlaste se ke své organizaci"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Se te redirigirá a tu proveedor de SSO de terceros."
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "Status": {
       "No": [
-        "No"
+        "Ne"
       ],
       "Yes": [
-        "Sí"
+        "Ano"
       ]
     },
     "Success": {
       "Assigned new host": [
-        "Se asignó un nuevo anfitrión"
+        "Nový hostitel přiřazen"
       ],
       "Code sent to ${ methodTo }": [
-        "Código enviado a ${ methodTo }"
+        "Kód zaslán na ${ methodTo }"
       ],
       "Email address copied to clipboard": [
-        "Dirección de correo electrónico copiada al portapapeles"
+        "E-mailová adresa zkopírována do schránky"
       ],
       "Problem reported": [
-        "Se ha notificado el problema."
+        "Problém nahlášen"
       ],
       "Verification successful": [
-        "Verificación completada"
+        "Ověření proběhlo úspěšně"
       ]
     },
     "Table header": {
       "Actions": [
-        "Acciones"
+        "Akce"
       ],
       "Name": [
-        "Nombre"
+        "Název"
       ]
     },
     "Title": {
       "Account restricted": [
-        "Cuenta restringida"
+        "Účet omezen"
       ],
       "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
+        "Účet dočasně uzamčen"
       ],
       "Activity events": [
-        "Eventos de actividad"
-      ],
-      "Allow camera ": [
-        "Permitir cámara "
-      ],
-      "Allow camera and microphone": [
-        "Permitir cámara y micrófono"
-      ],
-      "Allow microphone": [
-        "Permitir micrófono"
+        "Události aktivity"
       ],
       "Are you sure?": [
-        "¿Estás seguro?"
+        "Jste si jisti?"
       ],
       "Assign a new host": [
-        "Asignar un nuevo anfitrión"
+        "Přiřadit nového hostitele"
       ],
       "Audio": [
-        "Audio"
+        "Zvuk"
       ],
       "Available Cameras": [
-        "Cámaras disponibles"
+        "Dostupné kamery"
       ],
       "Available Microphones": [
-        "Micrófonos disponibles"
+        "Dostupné mikrofony"
       ],
       "Available Speakers": [
-        "Altavoces disponibles"
+        "Dostupné reproduktory"
       ],
       "Camera and microphone are blocked": [
-        "Se han bloqueado la cámara y el micrófono"
+        "Kamera a mikrofon jsou zablokovány"
       ],
       "Camera is blocked": [
-        "La cámara está bloqueada"
+        "Kamera je blokována"
       ],
       "Chat": [
-        "Chat"
-      ],
-      "Couldn't prepare the recording": [
-        "No se ha podido preparar la grabación"
+        "Konverzace"
       ],
       "Create new room": [
-        "Crear nueva sala"
+        "Vytvořit novou místnost"
       ],
       "Date": [
-        "Fecha"
+        "Datum"
       ],
       "Debug Overlay": [
-        "Capa de depuración"
+        "Okno ladění"
       ],
       "Enter your password": [
-        "Introduce tu contraseña"
+        "Zadejte své heslo"
       ],
       "Epoch": [
-        "Epoch"
+        "Epocha"
       ],
       "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
-        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+        "Epocha ${ prevLog.epoch } → ${ log.epoch }"
       ],
       "Error at epoch ${ log.epoch }": [
-        "Error en el Epoch ${ log.epoch }"
+        "Chyba v epoše ${ log.epoch }"
       ],
       "Help and feedback": [
-        "Ayuda y comentarios"
+        "Nápověda a zpětná vazba"
       ],
       "Help center": [
-        "Centro de ayuda"
+        "Centrum podpory"
       ],
       "Human verification": [
-        "Verificación humana"
+        "Lidské ověření"
       ],
       "Info": [
-        "Información"
-      ],
-      "Invalid meeting link": [
-        "Enlace de reunión no válido"
+        "Informace"
       ],
       "Invalid verification code": [
-        "Código de verificación no válido"
+        "Neplatný ověřovací kód"
       ],
       "Invite link": [
-        "Enlace de invitación"
+        "Odkaz s pozvánkou"
       ],
       "Join a meeting": [
-        "Unirse a una reunión"
+        "Připojení ke schůzce"
       ],
       "Join meeting": [
-        "Unirse a la reunión"
+        "Připojte se ke schůzce"
       ],
       "Joined at epoch ${ log.epoch }": [
-        "Unido en el Epoch ${ log.epoch }"
+        "Připojen/a v ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participant…": [
-        "Uniéndote a la reunión con ${ participantCount } participante más…",
-        "Uniéndote a la reunión con ${ participantCount } participantes más…"
+        "Připojování ke schůzce s ${ participantCount } dalším účastníkem…",
+        "Připojování ke schůzce s ${ participantCount } dalšími účastníky…",
+        "Připojování ke schůzce s ${ participantCount } dalšími účastníky…",
+        "Připojování ke schůzce s ${ participantCount } dalšími účastníky…"
       ],
       "Launching Meeting...": [
-        "Iniciando reunión..."
+        "Spouštím schůzku..."
       ],
       "Local Participant": [
-        "Participante local"
+        "Místní účastník"
       ],
       "Meeting": [
-        "Reunión"
+        "Schůzka"
       ],
       "Meeting created": [
-        "Reunión creada"
+        "Schůzka vytvořena"
       ],
       "Meeting details": [
-        "Detalles de la reunión"
+        "Detaily schůzky"
       ],
       "Meeting edited": [
-        "Reunión editada"
+        "Schůzka upravena"
       ],
       "Meeting settings": [
-        "Configuración de la reunión"
+        "Nastavení schůzky"
       ],
       "Messaging Layer Security": [
-        "Seguridad de capa de mensajería (MLS)"
+        "Zabezpečení vrstvy zpráv"
       ],
       "Microphone is blocked": [
-        "El micrófono está bloqueado"
+        "Mikrofon je zablokován"
       ],
       "Minicalendar": [
-        "Minicalendario"
+        "Minikalendář"
       ],
       "No results found": [
-        "No hay resultados"
+        "Nebyly nalezeny žádné výsledky"
       ],
       "Participants": [
-        "Participantes"
+        "Účastníci"
       ],
       "Participants (${ filteredParticipants.length })": [
-        "Participantes (${ filteredParticipants.length })"
+        "Účastníci (${ filteredParticipants.length })"
       ],
       "Passphrase": [
-        "Contraseña"
+        "Heslo"
       ],
       "Personal meeting room": [
-        "Sala de reuniones personal"
-      ],
-      "Preparing your recording…": [
-        "Preparar tu grabación..."
+        "Osobní zasedací místnost"
       ],
       "Publications": [
-        "Publicaciones"
+        "Publikace"
       ],
       "Reconnection Testing": [
-        "Pruebas de reconexión"
+        "Testování opětovného připojení"
       ],
       "Record this meeting": [
-        "Grabar esta reunión"
+        "Nahrát tuto schůzku"
       ],
       "Remote Participants": [
-        "Participantes remotos"
+        "Vzdálení účastníci"
       ],
       "Report a problem": [
-        "Notificar un problema"
+        "Nahlásit problém"
       ],
       "Request new code": [
-        "Solicitar un nuevo código"
+        "Poslat nový kód"
       ],
       "Schedule a meeting": [
-        "Programar una reunión"
+        "Naplánovat schůzku"
       ],
       "Screen share is blocked": [
-        "Se ha bloqueado el uso compartido de pantalla"
+        "Sdílení obrazovky je blokováno"
       ],
       "Secure meeting": [
-        "Reunión segura"
+        "Zabezpečená schůzka"
       ],
       "Security": [
-        "Seguridad"
+        "Zabezpečení"
       ],
       "Security code": [
-        "Código de seguridad"
+        "Bezpečnostní kód"
       ],
       "Settings": [
-        "Configuración"
+        "Nastavení"
       ],
       "Sign out": [
-        "Cerrar sesión"
+        "Odhlásit se"
       ],
       "Starting meeting as the first participant…": [
-        "Iniciando la reunión como el primer participante…"
+        "Zahájení schůzky jako první účastník…"
       ],
       "Stop recording": [
-        "Detener grabación"
+        "Zastavit nahrávání"
       ],
       "Talk confidentially": [
-        "Hablar confidencialmente"
+        "Hovořit soukromě"
       ],
       "Thank you!": [
-        "¡Gracias!"
+        "Děkujeme!"
       ],
       "Time": [
-        "Fecha"
+        "Čas"
       ],
       "Title": [
-        "Título"
+        "Název"
       ],
       "Two-factor authentication": [
-        "Autenticación de dos factores"
+        "Dvoufázové ověření"
       ],
       "Video": [
-        "Vídeo"
+        "Video"
       ],
       "What went wrong?": [
-        "¿Qué salió mal?"
+        "Kde se stala chyba?"
       ],
       "Your feedback has been submitted": [
-        "Tus comentarios han sido enviados"
-      ],
-      "Your recording is ready": [
-        "Tu grabación está lista"
+        "Vaše zpětná vazba byla odeslána"
       ]
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        "Hoy"
+        "Dnes"
       ]
     },
     "Tooltip": {
       "Background blur is not supported on your browser": [
-        "El desenfoque de fondo no es compatible en tu navegador"
+        "Rozostření pozadí není ve vašem prohlížeči podporováno"
       ],
       "Generate a new meeting link. The current link will stop working.": [
-        "Generar un nuevo enlace de reunión. El enlace actual dejará de funcionar."
+        "Vytvořte nový odkaz na schůzku. Stávající odkaz přestane fungovat."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Asistencia de IA al instante y un experto humano a tu disposición."
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ],
       "Recurring meeting": [
-        "Reunión periódica"
+        "Opakovaná schůzka"
       ],
       "You can generate a new meeting link once per day.": [
-        "Puedes generar un nuevo enlace de reunión una vez al día."
+        "Nový odkaz na schůzku si můžete vygenerovat jednou denně."
       ]
     },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
-        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problema con Wallet"
+        "Problém s Wallet"
       ]
     },
     "Warning": {
       "Connection is taking longer than expected": [
-        "La conexión está tardando más de lo esperado"
+        "Připojení trvá déle, než se očekávalo"
       ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "No se pudo acceder a la cámara o al micrófono. Puedes intentar activarlos de nuevo desde los controles de la reunión."
+        "Nepodařilo se získat přístup ke kameře nebo mikrofonu. Můžete je zkusit znovu povolit pomocí ovládacích prvků schůzky."
       ],
       "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "No se pudo acceder a la cámara. Puedes intentar activarla de nuevo desde los controles de la reunión."
+        "Nepodařilo se získat přístup ke kameře. Můžete ji zkusit znovu povolit pomocí ovládacích prvků schůzky."
       ],
       "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "No se pudo acceder al micrófono. Puedes intentar activarlo de nuevo desde los controles de la reunión."
+        "Nepodařilo se získat přístup k mikrofonu. Můžete jej zkusit znovu povolit pomocí ovládacích prvků schůzky."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
+        "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "Error en la conexión UDP por STUN; intentándolo mediante el servidor de retransmisión TURN…"
+        "Připojení STUN UDP selhalo, zkouší se připojení přes TURN…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
-        "Se agotó el tiempo de espera en la conexión UDP por STUN; se intentará con el retransmisor TURN"
+        "Časový limit pro připojení STUN UDP vypršel, zkouší se připojení přes TURN"
       ],
       "Trying another route…": [
-        "Probando otra ruta…"
+        "Zkouší se jiná trasa…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."
+        "Bohužel nejsme momentálně dostupní. Chcete-li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat vás, až budeme opět dostupní."
       ]
     }
   }

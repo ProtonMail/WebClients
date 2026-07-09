@@ -1,0 +1,3634 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "el_GR"
+  },
+  "contexts": {
+    "Accessibility": {
+      "(opens in new tab)": [
+        "(ανοίγει σε νέα καρτέλα)"
+      ],
+      "camera off": [
+        "κάμερα απενεργοποιημένη"
+      ],
+      "camera on": [
+        "κάμερα ενεργοποιημένη"
+      ],
+      "Meeting controls": [
+        "Στοιχεία ελέγχου συσκέψεων"
+      ],
+      "microphone muted": [
+        "μικρόφωνο απενεργοποιημένο"
+      ],
+      "microphone on": [
+        "μικρόφωνο ενεργό"
+      ]
+    },
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "Ο χρήστης ${ name } συμμετείχε στη συνάντηση"
+      ],
+      "${ name } left the meeting": [
+        "Ο χρήστης ${ name } αποχώρησε από τη συνάντηση"
+      ],
+      "${ name } lowered their hand": [
+        "Ο χρήστης ${ name } κατέβασε το χέρι του"
+      ],
+      "${ name } raised their hand": [
+        "Ο χρήστης ${ name } σήκωσε το χέρι του"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } αντέδρασαν με ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "Ο χρήστης ${ name } λέει: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Ένας συμμετέχων συμμετείχε στη σύσκεψη"
+      ],
+      "A participant left the meeting": [
+        "Ένας συμμετέχων αποχώρησε από τη σύσκεψη"
+      ],
+      "A participant lowered their hand": [
+        "Ένας συμμετέχων κατέβασε το χέρι του"
+      ],
+      "A participant raised their hand": [
+        "Ένας συμμετέχων σήκωσε το χέρι του"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Ένας συμμετέχων αντέδρασε με ${ emoji }"
+      ],
+      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
+        "Συνδεδεμένος μέσω της λειτουργίας αναμετάδοσης TURN λόγω περιορισμών του δικτύου. Αυτό μπορεί να αυξήσει την καθυστέρηση και να επηρεάσει την ποιότητα της κλήσης."
+      ],
+      "Connection lost. Reconnecting…": [
+        "Χάθηκε η σύνδεση. Επανασύνδεση…"
+      ],
+      "New chat message: ${ message }": [
+        "Νέο μήνυμα συνομιλίας: ${ message }"
+      ],
+      "Now starting recording": [
+        "Ξεκινά η ηχογράφηση τώρα"
+      ],
+      "Reconnected to the meeting": [
+        "Επανασυνδέθηκε στη σύσκεψη"
+      ],
+      "Recording saved": [
+        "Η ηχογράφηση αποθηκεύτηκε"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Η ηχογράφηση ξεκίνησε. Συνεχίζοντας στη σύσκεψη, αποδέχεστε και συναινείτε στην ηχογράφησή σας."
+      ],
+      "Recording stopped": [
+        "Η καταγραφή σταμάτησε"
+      ],
+      "Screen share started": [
+        "Η κοινή χρήση οθόνης έχει ξεκινήσει"
+      ],
+      "Screen share started by ${ name }": [
+        "Η κοινή χρήση οθόνης ξεκίνησε από τον ${ name }"
+      ],
+      "Screen share stopped": [
+        "Η κοινή χρήση οθόνης έχει σταματήσει"
+      ],
+      "Screen share stopped by ${ name }": [
+        "Η κοινή χρήση οθόνης διακόπηκε από τον χρήστη ${ name }"
+      ],
+      "The meeting will close in 1 minute": [
+        "Η σύσκεψη θα κλείσει σε 1 λεπτό"
+      ],
+      "The meeting will close in 15 seconds": [
+        "Η σύσκεψη θα ολοκληρωθεί σε 15 δευτερόλεπτα"
+      ],
+      "The meeting will close in 30 seconds": [
+        "Η σύσκεψη θα ολοκληρωθεί σε 30 δευτερόλεπτα"
+      ],
+      "The meeting will end in 1 minute": [
+        "Η σύσκεψη θα ολοκληρωθεί σε 1 λεπτό"
+      ],
+      "The meeting will end in 10 minutes": [
+        "Η σύσκεψη θα ολοκληρωθεί σε 10 λεπτά"
+      ],
+      "The meeting will end in 15 seconds": [
+        "Η σύσκεψη θα ολοκληρωθεί σε 15 δευτερόλεπτα"
+      ],
+      "The meeting will end in 5 minutes": [
+        "Η σύσκεψη θα ολοκληρωθεί σε 5 λεπτά"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Αυτή η συνάντηση καταγράφεται. Με τη συμμετοχή σας, αποδέχεστε και συναινείτε στην καταγραφή της."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Είστε ο μόνος συμμετέχων. Η σύσκεψη θα κλείσει σε 2 λεπτά, εκτός εάν κάποιος συμμετάσχει."
+      ],
+      "You have been disconnected from the meeting": [
+        "Έχετε αποσυνδεθεί από τη σύσκεψη"
+      ],
+      "You have been muted by the host": [
+        "Έχετε τεθεί σε σίγαση από τον οικοδεσπότη"
+      ],
+      "Your camera has been turned off by the host": [
+        "Η κάμερά σας έχει απενεργοποιηθεί από τον οικοδεσπότη"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } κατάστημα"
+      ],
+      "Add account": [
+        "Προσθήκη λογαριασμού"
+      ],
+      "Add another account": [
+        "Προσθήκη επιπλέον λογαριασμού"
+      ],
+      "Admit": [
+        "Αποδοχή"
+      ],
+      "Admit ${ participantName }": [
+        "Αποδοχή ${ participantName }"
+      ],
+      "Admit all": [
+        "Αποδοχή όλων"
+      ],
+      "Allow access": [
+        "Να επιτρέπεται η πρόσβαση"
+      ],
+      "Anyone with the link can join immediately": [
+        "Όποιος έχει τον σύνδεσμο μπορεί να συμμετάσχει αμέσως"
+      ],
+      "Applied": [
+        "Εφαρμοσμένα"
+      ],
+      "Apply changes": [
+        "Εφαρμογή αλλαγών"
+      ],
+      "Approve participants before they can join": [
+        "Εγκρίνετε τους συμμετέχοντες πριν μπορέσουν να συμμετάσχουν"
+      ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Ορίστε τον ${ selectedParticipantName } ως οικοδεσπότη"
+      ],
+      "Assign new host": [
+        "Ανάθεση νέου οικοδεσπότη"
+      ],
+      "Attach screenshot(s)": [
+        "Επισύναψη στιγμιότυπου/ων οθόνης"
+      ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Back": [
+        "Πίσω"
+      ],
+      "Background blur": [
+        "Θόλωμα παρασκηνίου"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Chat with us": [
+        "Επικοινωνήστε μαζί μας"
+      ],
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Close preview": [
+        "Κλείσιμο προεπισκόπησης"
+      ],
+      "Close this banner": [
+        "Κλείσιμο αυτού του banner"
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
+      "Continue without camera": [
+        "Συνέχεια χωρίς κάμερα"
+      ],
+      "Continue without mic and camera": [
+        "Συνέχεια χωρίς μικρόφωνο και κάμερα"
+      ],
+      "Continue without microphone": [
+        "Συνέχεια χωρίς μικρόφωνο"
+      ],
+      "Copy address": [
+        "Αντιγραφή διεύθυνσης"
+      ],
+      "Copy invitation link": [
+        "Αντιγραφή συνδέσμου πρόσκλησης"
+      ],
+      "Copy link": [
+        "Αντιγραφή συνδέσμου"
+      ],
+      "Copy link and close": [
+        "Αντιγραφή συνδέσμου και κλείσιμο"
+      ],
+      "Copy meeting link": [
+        "Αντιγραφή συνδέσμου σύσκεψης"
+      ],
+      "Copy room link": [
+        "Αντιγραφή συνδέσμου δωματίου"
+      ],
+      "Create a free account": [
+        "Δημιουργία δωρεάν λογαριασμού"
+      ],
+      "Create a room": [
+        "Δημιουργία μίας αίθουσας"
+      ],
+      "Create an account": [
+        "Δημιουργία λογαριασμού"
+      ],
+      "Create meeting": [
+        "Δημιουργία σύσκεψης"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Deny": [
+        "Απόρριψη"
+      ],
+      "Deny ${ participantName }": [
+        "Απόρριψη ${ participantName }"
+      ],
+      "Disable ${ participantName }'s video": [
+        "Απενεργοποίηση βίντεο του ${ participantName }"
+      ],
+      "Disable camera": [
+        "Απενεργοποίηση κάμερας"
+      ],
+      "Disable waiting room": [
+        "Απενεργοποίηση αίθουσας αναμονής"
+      ],
+      "Dismiss": [
+        "Παράβλεψη"
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Download app": [
+        "Λήψη εφαρμογής"
+      ],
+      "Download local participant report": [
+        "Λήψη τοπικής έκθεσης συμμετεχόντων"
+      ],
+      "Download logs": [
+        "Λήψη αρχείων καταγραφής"
+      ],
+      "Download participant report": [
+        "Λήψη αναφοράς συμμετεχόντων"
+      ],
+      "Download recording": [
+        "Λήψη ηχογράφησης"
+      ],
+      "Download room level report": [
+        "Λήψη αναφοράς επιπέδου δωματίου"
+      ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
+      ],
+      "Edit phone number": [
+        "Επεξεργασία αριθμού τηλεφώνου"
+      ],
+      "Edit sign-in details": [
+        "Επεξεργασία στοιχείων εισόδου"
+      ],
+      "Enable camera": [
+        "Ενεργοποίηση κάμερας"
+      ],
+      "Enable waiting room": [
+        "Ενεργοποίηση αίθουσας αναμονής"
+      ],
+      "End meeting": [
+        "Τερματισμός σύσκεψης"
+      ],
+      "End meeting for all": [
+        "Τερματισμός σύσκεψης για όλους"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
+      "Full size": [
+        "Πλήρες μέγεθος"
+      ],
+      "Generate a new meeting link.": [
+        "Δημιουργήστε έναν νέο σύνδεσμο συνάντησης."
+      ],
+      "Get Meet Professional": [
+        "Αποκτήστε Meet Professional"
+      ],
+      "Get verification code": [
+        "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
+      "Help and resources": [
+        "Βοήθεια και πληροφορίες"
+      ],
+      "Hide options": [
+        "Απόκρυψη επιλογών"
+      ],
+      "Hide participants": [
+        "Απόκρυψη συμμετεχόντων"
+      ],
+      "Hide self view": [
+        "Απόκρυψη εαυτού"
+      ],
+      "Hide timezones": [
+        "Απόκρυψη ζωνών ώρας"
+      ],
+      "Insert emoji": [
+        "Εισάγετε emoji"
+      ],
+      "Join": [
+        "Συμμετοχή"
+      ],
+      "Join meeting": [
+        "Συμμετοχή στη σύσκεψη"
+      ],
+      "Join with a link": [
+        "Συμμετοχή με σύνδεσμο"
+      ],
+      "Kick out": [
+        "Διώξιμο"
+      ],
+      "Kick out ${ participantName }": [
+        "Αποβολή του ${ participantName }"
+      ],
+      "Leave": [
+        "Αποχώρηση"
+      ],
+      "Leave meeting": [
+        "Αποχώρηση από τη σύσκεψη"
+      ],
+      "Lock meeting": [
+        "Κλείδωμα σύσκεψης"
+      ],
+      "Lower hand": [
+        "Κατεβάστε το χέρι"
+      ],
+      "Minimize preview": [
+        "Ελαχιστοποίηση προεπισκόπησης"
+      ],
+      "More info: ${ safeTitle }": [
+        "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
+      ],
+      "Mute ${ participantName }": [
+        "Σίγαση ${ participantName }"
+      ],
+      "Next month": [
+        "Επόμενος μήνας"
+      ],
+      "Next page": [
+        "Επόμενη σελίδα"
+      ],
+      "Noise cancellation": [
+        "Απαλειφή θορύβου"
+      ],
+      "Open app": [
+        "Άνοιγμα εφαρμογής"
+      ],
+      "Open link": [
+        "Άνοιγμα συνδέσμου"
+      ],
+      "Participants join after you approve them": [
+        "Οι συμμετέχοντες συμμετέχουν αφού τους εγκρίνετε"
+      ],
+      "Participants join the call directly": [
+        "Οι συμμετέχοντες συμμετέχουν απευθείας στην κλήση"
+      ],
+      "Pause": [
+        "Παύση"
+      ],
+      "Previous month": [
+        "Προηγούμενος μήνας"
+      ],
+      "Previous page": [
+        "Προηγούμενη σελίδα"
+      ],
+      "Raise hand": [
+        "Σηκώστε το χέρι"
+      ],
+      "React with ${ emoji }": [
+        "Αντίδραση με ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Αντίδραση με ${ emoji }, ${ identities.length } αντίδραση",
+        "Αντίδραση με ${ emoji }, ${ identities.length } αντιδάσεις"
+      ],
+      "Receive video": [
+        "Λήψη βίντεο"
+      ],
+      "Record": [
+        "Ηχογράφηση"
+      ],
+      "Refer a friend": [
+        "Συστήστε ένα φίλο"
+      ],
+      "Refresh audio and video tracks": [
+        "Ανανέωση ροών ήχου και βίντεο"
+      ],
+      "Refresh screen share track": [
+        "Ανανέωση κοινής χρήσης οθόνης"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
+      ],
+      "Rejoin meeting": [
+        "Εκ νέου συμμετοχή στη σύσκεψη."
+      ],
+      "Remove reaction ${ emoji }, ${ identities.length } reaction": [
+        "Αφαίρεση αντίδρασης ${ emoji }, ${ identities.length } αντίδραση",
+        "Αφαίρεση αντίδρασης ${ emoji }, ${ identities.length } αντιδράσεις"
+      ],
+      "Report a problem": [
+        "Αναφορά προβλήματος"
+      ],
+      "Request a call": [
+        "Ζητήστε τηλεφωνική επικοινωνία"
+      ],
+      "Request a feature": [
+        "Ζητήστε μια δυνατότητα"
+      ],
+      "Request new code": [
+        "Ζητήστε νέο κωδικό"
+      ],
+      "Resend code": [
+        "Επαναποστολή κωδικού"
+      ],
+      "Reset to defaults": [
+        "Επαναφορά προεπιλογών"
+      ],
+      "Resume": [
+        "Συνέχεια"
+      ],
+      "Return to dashboard": [
+        "Επιστροφή στον πίνακα εργαλείων"
+      ],
+      "Room": [
+        "Αίθουσα"
+      ],
+      "Rotate personal meeting link": [
+        "Περιστροφή συνδέσμου προσωπικής σύσκεψης"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Schedule": [
+        "Πρόγραμμα"
+      ],
+      "Schedule a meeting": [
+        "Προγραμματίστε μια σύσκεψη"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Προγραμματισμός στο ${ CALENDAR_APP_NAME }"
+      ],
+      "Search countries": [
+        "Αναζήτηση χωρών"
+      ],
+      "Send an encrypted message": [
+        "Στείλτε ένα κρυπτογραφημένο μήνυμα"
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
+      "Show duration": [
+        "Διάρκεια εμφάνισης"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Εμφάνιση αιωρούμενης μικρογραφίας κατά την κοινή χρήση οθόνης"
+      ],
+      "Show options": [
+        "Εμφάνιση ενεργειών"
+      ],
+      "Show participants": [
+        "Εμφάνιση συμμετεχόντων"
+      ],
+      "Show timezones": [
+        "Εμφάνιση ζωνών ώρας"
+      ],
+      "Sign in": [
+        "Είσοδος"
+      ],
+      "Sign out": [
+        "Αποσύνδεση"
+      ],
+      "Sign out of all accounts": [
+        "Έξοδος από όλους τους λογαριασμούς"
+      ],
+      "Simulate reconnection": [
+        "Προσομοίωση επανασύνδεσης"
+      ],
+      "Skip": [
+        "Παράλειψη"
+      ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
+      ],
+      "Start an instant meeting": [
+        "Ξεκινήστε μια άμεση σύσκεψη"
+      ],
+      "Start meeting": [
+        "Έναρξη σύσκεψης"
+      ],
+      "Start new meeting": [
+        "Έναρξη νέας σύσκεψης"
+      ],
+      "Start recording": [
+        "Έναρξη καταγραφής"
+      ],
+      "Start Recording Track Stats": [
+        "Έναρξη Καταγραφής Στατιστικών"
+      ],
+      "Start your own meeting": [
+        "Ξεκινήστε τη δική σας σύσκεψη"
+      ],
+      "Starting…": [
+        "Γίνεται έναρξη…"
+      ],
+      "Stay in meeting": [
+        "Παραμείνετε στη σύσκεψη"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Να μην ανοίγουν πλέον οι συσκέψεις στην εφαρμογή για υπολογιστές"
+      ],
+      "Stop receiving video": [
+        "Διακοπή λήψης βίντεο"
+      ],
+      "Stop recording": [
+        "Διακοπή καταγραφής"
+      ],
+      "Stop recording and download video": [
+        "Διακοπή καταγραφής και λήψη βίντεο"
+      ],
+      "Stop Recording Track Stats": [
+        "Διακοπή Καταγραφής Στατιστικών"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "Switch or add account": [
+        "Εναλλαγή ή προσθήκη λογαριασμού"
+      ],
+      "Tap to unblock audio playback": [
+        "Πατήστε για να ξεμπλοκάρετε την αναπαραγωγή ήχου"
+      ],
+      "The current link will stop working.": [
+        "Ο τρέχων σύνδεσμος θα σταματήσει να λειτουργεί."
+      ],
+      "Try again": [
+        "Δοκιμάστε ξανά"
+      ],
+      "Try another method": [
+        "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Turn off incoming video": [
+        "Απενεργοποίηση εισερχόμενου βίντεο"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Αναβαθμίστε το πλάνο σας για να χρησιμοποιήσετε την αίθουσα αναμονής στην επόμενη σύσκεψή σας."
+      ],
+      "Upload another video": [
+        "Ανεβάστε ένα άλλο βίντεο"
+      ],
+      "Upload video": [
+        "Μεταφόρτωση βίντεο"
+      ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
+      "Use camera": [
+        "Χρήση κάμερας"
+      ],
+      "Use microphone": [
+        "Χρήση μικροφώνου"
+      ],
+      "Use recovery code": [
+        "Χρήση κωδικού ανάκτησης"
+      ],
+      "Use waiting room with a paid plan": [
+        "Χρησιμοποιήστε την αίθουσα αναμονής με ένα πρόγραμμα επί πληρωμή"
+      ],
+      "Verify": [
+        "Επαλήθευση"
+      ],
+      "Verify account": [
+        "Επαλήθευση λογαριασμού"
+      ],
+      "View invoice": [
+        "Προβολή τιμολογίου"
+      ],
+      "Waiting room": [
+        "Αίθουσα αναμονής"
+      ]
+    },
+    "Alt": {
+      "Audio settings": [
+        "Ρυθμίσεις ήχου"
+      ],
+      "Blur background": [
+        "Θόλωμα παρασκηνίου"
+      ],
+      "Chat": [
+        "Συνομιλία"
+      ],
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Close search": [
+        "Κλείσιμο αναζήτησης"
+      ],
+      "Copy link": [
+        "Αντιγραφή συνδέσμου"
+      ],
+      "Copy meeting link": [
+        "Αντιγραφή συνδέσμου σύσκεψης"
+      ],
+      "Debug overlay": [
+        "Επικάλυψη εντοπισμού σφαλμάτων"
+      ],
+      "Go to dashboard": [
+        "Μετάβαση στον αρχικό πίνακα"
+      ],
+      "Hide self view": [
+        "Απόκρυψη εαυτού"
+      ],
+      "Leave Meeting": [
+        "Αποχώρηση από τη Σύσκεψη"
+      ],
+      "Lock meeting": [
+        "Κλείδωμα σύσκεψης"
+      ],
+      "Lower hand": [
+        "Κατεβάστε το χέρι"
+      ],
+      "Meeting details": [
+        "Λεπτομέρειες σύσκεψης"
+      ],
+      "More options": [
+        "Περισσότερες επιλογές"
+      ],
+      "Noise cancellation": [
+        "Απαλειφή θορύβου"
+      ],
+      "Open chat message search": [
+        "Άνοιγμα αναζήτησης μηνυμάτων συνομιλίας"
+      ],
+      "Open participants search": [
+        "Άνοιγμα αναζήτησης συμμετεχόντων"
+      ],
+      "Participant host control options": [
+        "Επιλογές οικοδεσπότη ελέγχου συμμετεχόντων"
+      ],
+      "Participants": [
+        "Συμμετέχοντες"
+      ],
+      "Raise hand": [
+        "Σηκώστε το χέρι"
+      ],
+      "Rotate camera": [
+        "Περιστροφή κάμερας"
+      ],
+      "Screen share": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
+      "Show duration": [
+        "Διάρκεια εμφάνισης"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Εμφάνιση αιωρούμενης μικρογραφίας κατά την κοινή χρήση οθόνης"
+      ],
+      "Show passphrase": [
+        "Εμφάνιση κωδικού πρόσβασης"
+      ],
+      "Stop recording and download.": [
+        "Διακοπή καταγραφής και λήψη."
+      ],
+      "Toggle chat": [
+        "Εναλλαγή συνομιλίας"
+      ],
+      "Toggle emoji reactions": [
+        "Εναλλαγή αντιδράσεων emoji"
+      ],
+      "Toggle meeting details": [
+        "Εναλλαγή λεπτομερειών σύσκεψης"
+      ],
+      "Toggle participants": [
+        "Εναλλαγή συμμετεχόντων"
+      ],
+      "Toggle screen share": [
+        "Εναλλαγή κοινής χρήσης οθόνης"
+      ],
+      "Toggle settings": [
+        "Εναλλαγή ρυθμίσεων"
+      ],
+      "Turn off incoming video": [
+        "Απενεργοποίηση εισερχόμενου βίντεο"
+      ],
+      "Video settings": [
+        "Ρυθμίσεις βίντεο"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } εφαρμογές"
+      ]
+    },
+    "Aria": {
+      "Assign host": [
+        "Ανάθεση οικοδεσπότη"
+      ],
+      "Audio settings": [
+        "Ρυθμίσεις ήχου"
+      ],
+      "Chat": [
+        "Συνομιλία"
+      ],
+      "Chat messages": [
+        "Μηνύματα συνομιλίας"
+      ],
+      "Device settings": [
+        "Ρυθμίσεις συσκευής"
+      ],
+      "Meeting details": [
+        "Λεπτομέρειες σύσκεψης"
+      ],
+      "Meeting rooms": [
+        "Αίθουσες συσκέψεων"
+      ],
+      "Participants": [
+        "Συμμετέχοντες"
+      ],
+      "Participants list": [
+        "Λίστα συμμετεχόντων"
+      ],
+      "Primary navigation": [
+        "Κύρια πλοήγηση"
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
+      "Video settings": [
+        "Ρυθμίσεις βίντεο"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Ενεργό"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Συνδεδεμένος μέσω της λειτουργίας αναμετάδοσης TURN λόγω περιορισμών του δικτύου σας. Αυτό μπορεί να αυξήσει την καθυστέρηση και να επηρεάσει την ποιότητα της κλήσης."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } πρόβλημα"
+      ],
+      "Application problem": [
+        "Πρόβλημα εφαρμογής"
+      ],
+      "Authenticator problem": [
+        "Πρόβλημα ταυτοποίησης"
+      ],
+      "Bridge problem": [
+        "Πρόβλημα Bridge"
+      ],
+      "Calendar problem": [
+        "Πρόβλημα ημερολογίου"
+      ],
+      "Connection problem": [
+        "Πρόβλημα σύνδεσης"
+      ],
+      "Contacts problem": [
+        "Πρόβλημα επαφών"
+      ],
+      "Custom domain problem": [
+        "Πρόβλημα προσαρμοσμένου τομέα"
+      ],
+      "Docs problem": [
+        "Πρόβλημα Docs"
+      ],
+      "Drive problem": [
+        "Πρόβλημα Drive"
+      ],
+      "Feature request": [
+        "Αίτημα μελλοντικού χαρακτηριστικού"
+      ],
+      "Import / export problem": [
+        "Πρόβλημα εισαγωγής / εξαγωγής"
+      ],
+      "Installation problem": [
+        "Πρόβλημα εγκατάστασης"
+      ],
+      "Mail problem": [
+        "Πρόβλημα αλληλογραφίας"
+      ],
+      "Manual setup problem": [
+        "Πρόβλημα χειροκίνητης ρύθμισης"
+      ],
+      "Meet problem": [
+        "Πρόβλημα Meet"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Pass problem": [
+        "Πρόβλημα Pass"
+      ],
+      "Payments problem": [
+        "Πρόβλημα πληρωμής"
+      ],
+      "Sheets problem": [
+        "Πρόβλημα Sheets"
+      ],
+      "Sign in problem": [
+        "Πρόβλημα σύνδεσης"
+      ],
+      "Sign up problem": [
+        "Πρόβλημα εγγραφής"
+      ],
+      "Signup problem": [
+        "Πρόβλημα εγγραφής"
+      ],
+      "Slow speed problem": [
+        "Πρόβλημα αργής ταχύτητας"
+      ],
+      "Speed problem": [
+        "Πρόβλημα ταχύτητας"
+      ],
+      "Streaming problem": [
+        "Πρόβλημα μετάδοσης"
+      ],
+      "Update problem": [
+        "Πρόβλημα αναβάθμισης"
+      ],
+      "VPN problem": [
+        "Πρόβλημα VPN"
+      ],
+      "Website access problem": [
+        "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Σύμπτυξη"
+      ],
+      "Expand": [
+        "Ανάπτυξη"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "καρότο"
+      ],
+      "cerise": [
+        "κεράσι"
+      ],
+      "cobalt": [
+        "κοβάλτιο"
+      ],
+      "copper": [
+        "χαλκός"
+      ],
+      "enzian": [
+        "βαθύ μπλέ"
+      ],
+      "fern": [
+        "φτέρη"
+      ],
+      "forest": [
+        "δάσος"
+      ],
+      "ocean": [
+        "ωκεανός"
+      ],
+      "olive": [
+        "λαδί"
+      ],
+      "pacific": [
+        "ειρηνικός"
+      ],
+      "pickle": [
+        "τουρσί"
+      ],
+      "pine": [
+        "πεύκο"
+      ],
+      "pink": [
+        "ροζ"
+      ],
+      "plum": [
+        "δαμάσκηνο"
+      ],
+      "purple": [
+        "μωβ"
+      ],
+      "reef": [
+        "ύφαλος"
+      ],
+      "sahara": [
+        "Σαχάρα"
+      ],
+      "slateblue": [
+        "μπλε ροζέ"
+      ],
+      "soil": [
+        "χώμα"
+      ],
+      "strawberry": [
+        "φράουλα"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Αμπχαζία"
+      ],
+      "Afghanistan": [
+        "Αφγανιστάν"
+      ],
+      "Albania": [
+        "Αλβανία"
+      ],
+      "Algeria": [
+        "Αλγερία"
+      ],
+      "American Samoa": [
+        "Αμερικανική Σαμόα"
+      ],
+      "Andorra": [
+        "Ανδόρα"
+      ],
+      "Angola": [
+        "Ανγκόλα"
+      ],
+      "Anguilla": [
+        "Ανγκουίλα"
+      ],
+      "Antarctica": [
+        "Ανταρκτική"
+      ],
+      "Antigua and Barbuda": [
+        "Αντίγκουα και Μπαρμπούντα"
+      ],
+      "Argentina": [
+        "Αργεντινή"
+      ],
+      "Armenia": [
+        "Αρμενία"
+      ],
+      "Aruba": [
+        "Αρούμπα"
+      ],
+      "Ascension Island": [
+        "Νήσος Αναλήψεως"
+      ],
+      "Australia": [
+        "Αυστραλία"
+      ],
+      "Austria": [
+        "Αυστρία"
+      ],
+      "Azerbaijan": [
+        "Αζερμπαϊτζάν"
+      ],
+      "Bahamas": [
+        "Μπαχάμες"
+      ],
+      "Bahrain": [
+        "Μπαχρέιν"
+      ],
+      "Bangladesh": [
+        "Μπαγκλαντές"
+      ],
+      "Barbados": [
+        "Μπαρμπάντος"
+      ],
+      "Belarus": [
+        "Λευκορωσία"
+      ],
+      "Belgium": [
+        "Βέλγιο"
+      ],
+      "Belize": [
+        "Μπελίζ"
+      ],
+      "Benin": [
+        "Μπενίν"
+      ],
+      "Bermuda": [
+        "Βερμούδες"
+      ],
+      "Bhutan": [
+        "Μπουτάν"
+      ],
+      "Bolivia": [
+        "Βολιβία"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Μπονέρ, Άγιος Ευστάθιος και Σάμπα"
+      ],
+      "Bosnia and Herzegovina": [
+        "Βοσνία Ερζεγοβίνη"
+      ],
+      "Botswana": [
+        "Μποτσουάνα"
+      ],
+      "Bouvet Island": [
+        "Μπουβέ"
+      ],
+      "Brazil": [
+        "Βραζιλία"
+      ],
+      "British Indian Ocean Territory": [
+        "Βρετανικό Έδαφος Ινδικού Ωκεανού"
+      ],
+      "Brunei Darussalam": [
+        "Μπρουνέι"
+      ],
+      "Bulgaria": [
+        "Βουλγαρία"
+      ],
+      "Burkina Faso": [
+        "Μπουρκίνα Φάσο"
+      ],
+      "Burundi": [
+        "Μπουρούντι"
+      ],
+      "Cambodia": [
+        "Καμπότζη"
+      ],
+      "Cameroon": [
+        "Καμερούν"
+      ],
+      "Canada": [
+        "Καναδάς"
+      ],
+      "Cape Verde": [
+        "Πράσινο Ακρωτήριo"
+      ],
+      "Cayman Islands": [
+        "Νήσοι Κέιμαν"
+      ],
+      "Central African Republic": [
+        "Κεντροαφρικανική Δημοκρατία"
+      ],
+      "Chad": [
+        "Τσαντ"
+      ],
+      "Chile": [
+        "Χιλή"
+      ],
+      "China": [
+        "Κίνα"
+      ],
+      "Christmas Island": [
+        "Νήσος Χριστουγέννων"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Νήσοι Κόκος"
+      ],
+      "Colombia": [
+        "Κολομβία"
+      ],
+      "Comoros": [
+        "Κομόρες"
+      ],
+      "Congo": [
+        "Κογκό"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Κονγκό-Κινσάσα"
+      ],
+      "Cook Islands": [
+        "Νήσοι Κουκ"
+      ],
+      "Costa Rica": [
+        "Κόστα Ρίκα"
+      ],
+      "Croatia": [
+        "Κροατία"
+      ],
+      "Cuba": [
+        "Κούβα"
+      ],
+      "Curaçao": [
+        "Κουρασάο"
+      ],
+      "Cyprus": [
+        "Κύπρος"
+      ],
+      "Czech Republic": [
+        "Τσεχία"
+      ],
+      "Côte d'Ivoire": [
+        "Ακτή Ελεφαντοστού"
+      ],
+      "Denmark": [
+        "Δανία"
+      ],
+      "Djibouti": [
+        "Τζιμπουτί"
+      ],
+      "Dominica": [
+        "Δομινίκα"
+      ],
+      "Dominican Republic": [
+        "Δομινικανή Δημοκρατία"
+      ],
+      "Ecuador": [
+        "Ισημερινός"
+      ],
+      "Egypt": [
+        "Αίγυπτος"
+      ],
+      "El Salvador": [
+        "Ελ Σαλβαδόρ"
+      ],
+      "Equatorial Guinea": [
+        "Ισημερινή Γουινέα"
+      ],
+      "Eritrea": [
+        "Ερυθραία"
+      ],
+      "Estonia": [
+        "Εσθονία"
+      ],
+      "Eswatini": [
+        "Εσουατίνη"
+      ],
+      "Ethiopia": [
+        "Αιθιοπία"
+      ],
+      "Falkland Islands": [
+        "Νήσοι Φόκλαντ"
+      ],
+      "Faroe Islands": [
+        "Φερόες"
+      ],
+      "Federated States of Micronesia": [
+        "Ομόσπονδες Πολιτείες της Μικρονησίας"
+      ],
+      "Fiji": [
+        "Φίτζι"
+      ],
+      "Finland": [
+        "Φινλανδία"
+      ],
+      "France": [
+        "Γαλλία"
+      ],
+      "French Guiana": [
+        "Γαλλική Γουιάνα"
+      ],
+      "French Polynesia": [
+        "Γαλλική Πολυνησία"
+      ],
+      "French Southern Territories": [
+        "Γαλλικά Νότια και Ανταρκτικά Εδάφη"
+      ],
+      "Gabon": [
+        "Γκαμπόν"
+      ],
+      "Gambia": [
+        "Γκάμπια"
+      ],
+      "Georgia": [
+        "Γεωργία"
+      ],
+      "Germany": [
+        "Γερμανία"
+      ],
+      "Ghana": [
+        "Γκάνα"
+      ],
+      "Gibraltar": [
+        "Γιβραλτάρ"
+      ],
+      "Greece": [
+        "Ελλάδα"
+      ],
+      "Greenland": [
+        "Γροιλανδία"
+      ],
+      "Grenada": [
+        "Γρενάδα"
+      ],
+      "Guadeloupe": [
+        "Γουαδελούπη"
+      ],
+      "Guam": [
+        "Γκουάμ"
+      ],
+      "Guatemala": [
+        "Γουατεμάλα"
+      ],
+      "Guernsey": [
+        "Γκέρνζι"
+      ],
+      "Guinea": [
+        "Γουινέα"
+      ],
+      "Guinea-Bissau": [
+        "Γουινέα-Μπισάου"
+      ],
+      "Guyana": [
+        "Γουιάνα"
+      ],
+      "Haiti": [
+        "Αϊτή"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Νήσοι Χερντ και Μακντόναλντ"
+      ],
+      "Holy See (Vatican City State)": [
+        "Βατικανό"
+      ],
+      "Honduras": [
+        "Ονδούρα"
+      ],
+      "Hong Kong": [
+        "Χονγκ Κονγκ"
+      ],
+      "Hungary": [
+        "Ουγγαρία"
+      ],
+      "Iceland": [
+        "Ισλανδία"
+      ],
+      "India": [
+        "Ινδία"
+      ],
+      "Indonesia": [
+        "Ινδονησία"
+      ],
+      "International": [
+        "Διεθνές"
+      ],
+      "Iran": [
+        "Ιράν"
+      ],
+      "Iraq": [
+        "Ιράκ"
+      ],
+      "Ireland": [
+        "Ιρλανδία"
+      ],
+      "Isle of Man": [
+        "Νήσος Μαν"
+      ],
+      "Israel": [
+        "Ισραήλ"
+      ],
+      "Italy": [
+        "Ιταλία"
+      ],
+      "Jamaica": [
+        "Τζαμάικα"
+      ],
+      "Japan": [
+        "Ιαπωνία"
+      ],
+      "Jersey": [
+        "Βαϊλάτο του Τζέρσεϊ"
+      ],
+      "Jordan": [
+        "Ιορδανία"
+      ],
+      "Kazakhstan": [
+        "Καζακστάν"
+      ],
+      "Kenya": [
+        "Κένυα"
+      ],
+      "Kiribati": [
+        "Κιριμπάτι"
+      ],
+      "Kosovo": [
+        "Κόσοβο"
+      ],
+      "Kuwait": [
+        "Κουβέιτ"
+      ],
+      "Kyrgyzstan": [
+        "Κιργιστάν"
+      ],
+      "Laos": [
+        "Λάος"
+      ],
+      "Latvia": [
+        "Λετονία"
+      ],
+      "Lebanon": [
+        "Λίβανος"
+      ],
+      "Lesotho": [
+        "Λεσότο"
+      ],
+      "Liberia": [
+        "Λιβερία"
+      ],
+      "Libya": [
+        "Λιβύη"
+      ],
+      "Liechtenstein": [
+        "Λιχτενστάιν"
+      ],
+      "Lithuania": [
+        "Λιθουανία"
+      ],
+      "Luxembourg": [
+        "Λουξεμβούργο"
+      ],
+      "Macao": [
+        "Μακάο"
+      ],
+      "Madagascar": [
+        "Μαδαγασκάρη"
+      ],
+      "Malawi": [
+        "Μαλάουι"
+      ],
+      "Malaysia": [
+        "Μαλαισία"
+      ],
+      "Maldives": [
+        "Μαλδίβες"
+      ],
+      "Mali": [
+        "Μάλι"
+      ],
+      "Malta": [
+        "Μάλτα"
+      ],
+      "Marshall Islands": [
+        "Νήσοι Μάρσαλ"
+      ],
+      "Martinique": [
+        "Μαρτινίκα"
+      ],
+      "Mauritania": [
+        "Μαυριτανία"
+      ],
+      "Mauritius": [
+        "Μαυρίκιος"
+      ],
+      "Mayotte": [
+        "Μαγιότ"
+      ],
+      "Mexico": [
+        "Μεξικό"
+      ],
+      "Moldova": [
+        "Μολδαβία"
+      ],
+      "Monaco": [
+        "Μονακό"
+      ],
+      "Mongolia": [
+        "Μογγολία"
+      ],
+      "Montenegro": [
+        "Μαυροβούνιο"
+      ],
+      "Montserrat": [
+        "Μονσεράτ"
+      ],
+      "Morocco": [
+        "Μαρόκο"
+      ],
+      "Mozambique": [
+        "Μοζαμβίκη"
+      ],
+      "Myanmar": [
+        "Μιανμάρ"
+      ],
+      "Namibia": [
+        "Ναμίμπια"
+      ],
+      "Nauru": [
+        "Ναούρου"
+      ],
+      "Nepal": [
+        "Νεπάλ"
+      ],
+      "Netherlands": [
+        "Κάτω Χώρες"
+      ],
+      "New Caledonia": [
+        "Νέα Καληδονία"
+      ],
+      "New Zealand": [
+        "Νέα Ζηλανδία"
+      ],
+      "Nicaragua": [
+        "Νικαράγουα"
+      ],
+      "Niger": [
+        "Νίγηρας"
+      ],
+      "Nigeria": [
+        "Νιγηρία"
+      ],
+      "Niue": [
+        "Νιούε"
+      ],
+      "Norfolk Island": [
+        "Νήσος Νόρφολκ"
+      ],
+      "North Korea": [
+        "Βόρεια Κορέα"
+      ],
+      "North Macedonia": [
+        "Βόρεια Μακεδονία"
+      ],
+      "Northern Mariana Islands": [
+        "Βόρειες Μαριάνες"
+      ],
+      "Norway": [
+        "Νορβηγία"
+      ],
+      "Oman": [
+        "Ομάν"
+      ],
+      "Pakistan": [
+        "Πακιστάν"
+      ],
+      "Palau": [
+        "Παλάου"
+      ],
+      "Palestine": [
+        "Παλαιστίνη"
+      ],
+      "Panama": [
+        "Παναμάς"
+      ],
+      "Papua New Guinea": [
+        "Παπούα Νέα Γουινέα"
+      ],
+      "Paraguay": [
+        "Παραγουάη"
+      ],
+      "Peru": [
+        "Περού"
+      ],
+      "Philippines": [
+        "Φιλιππίνες"
+      ],
+      "Pitcairn": [
+        "Πίτκαιρν"
+      ],
+      "Poland": [
+        "Πολωνία"
+      ],
+      "Portugal": [
+        "Πορτογαλία"
+      ],
+      "Puerto Rico": [
+        "Πουέρτο Ρίκο"
+      ],
+      "Qatar": [
+        "Κατάρ"
+      ],
+      "Reunion": [
+        "Ρεϋνιόν"
+      ],
+      "Romania": [
+        "Ρουμανία"
+      ],
+      "Russia": [
+        "Ρωσία"
+      ],
+      "Rwanda": [
+        "Ρουάντα"
+      ],
+      "Saint Barthélemy": [
+        "Άγιος Βαρθολομαίος"
+      ],
+      "Saint Helena": [
+        "Αγία Ελένη"
+      ],
+      "Saint Kitts and Nevis": [
+        "Άγιος Χριστόφορος"
+      ],
+      "Saint Lucia": [
+        "Αγία Λουκία"
+      ],
+      "Saint Martin (French Part)": [
+        "Άγιος Μαρτίνος (Γαλλικό τμήμα)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Άγιος Πέτρος Μικελόν"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Άγιος Βικέντιος"
+      ],
+      "Samoa": [
+        "Σαμόα"
+      ],
+      "San Marino": [
+        "Άγιος Μαρίνος"
+      ],
+      "Sao Tome and Principe": [
+        "Άγιος Θωμάς"
+      ],
+      "Saudi Arabia": [
+        "Σαουδική Αραβία"
+      ],
+      "Senegal": [
+        "Σενεγάλη"
+      ],
+      "Serbia": [
+        "Σερβία"
+      ],
+      "Seychelles": [
+        "Σεϊχέλες"
+      ],
+      "Sierra Leone": [
+        "Σιέρα Λεόνε"
+      ],
+      "Singapore": [
+        "Σιγκαπούρη"
+      ],
+      "Sint Maarten": [
+        "Άγιος Μαρτίνος"
+      ],
+      "Slovakia": [
+        "Σλοβακία"
+      ],
+      "Slovenia": [
+        "Σλοβενία"
+      ],
+      "Solomon Islands": [
+        "Νήσοι Σολομώντος"
+      ],
+      "Somalia": [
+        "Σομαλία"
+      ],
+      "South Africa": [
+        "Νότια Αφρική"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Νήσοι Νότια Γεωργία και Νότιες Σάντουιτς"
+      ],
+      "South Korea": [
+        "Νότια Κορέα"
+      ],
+      "South Ossetia": [
+        "Νότια Οσετία"
+      ],
+      "South Sudan": [
+        "Νότιο Σουδάν"
+      ],
+      "Spain": [
+        "Ισπανία"
+      ],
+      "Sri Lanka": [
+        "Σρι Λάνκα"
+      ],
+      "Sudan": [
+        "Σουδάν"
+      ],
+      "Suriname": [
+        "Σουρινάμ"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Σβάλμπαρντ"
+      ],
+      "Sweden": [
+        "Σουηδία"
+      ],
+      "Switzerland": [
+        "Ελβετία"
+      ],
+      "Syria": [
+        "Συρία"
+      ],
+      "Taiwan": [
+        "Ταϊβάν"
+      ],
+      "Tajikistan": [
+        "Τατζικιστάν"
+      ],
+      "Tanzania": [
+        "Τανζανία"
+      ],
+      "Thailand": [
+        "Ταϊλάνδη"
+      ],
+      "Timor-Leste": [
+        "Ανατολικό Τιμόρ"
+      ],
+      "Togo": [
+        "Τόγκο"
+      ],
+      "Tokelau": [
+        "Τοκελάου"
+      ],
+      "Tonga": [
+        "Τόνγκα"
+      ],
+      "Trinidad and Tobago": [
+        "Τρινιντάντ"
+      ],
+      "Tristan da Cunha": [
+        "Τριστάν ντα Κούνια"
+      ],
+      "Tunisia": [
+        "Τυνησία"
+      ],
+      "Turkey": [
+        "Τουρκία"
+      ],
+      "Turkmenistan": [
+        "Τουρκμενιστάν"
+      ],
+      "Turks and Caicos Islands": [
+        "Νήσοι Τερκς και Κάικος"
+      ],
+      "Tuvalu": [
+        "Τουβαλού"
+      ],
+      "Uganda": [
+        "Ουγκάντα"
+      ],
+      "Ukraine": [
+        "Ουκρανία"
+      ],
+      "United Arab Emirates": [
+        "Ηνωμένα Αραβικά Εμιράτα"
+      ],
+      "United Kingdom": [
+        "Ηνωμένο Βασίλειο"
+      ],
+      "United States": [
+        "Ηνωμένες Πολιτείες"
+      ],
+      "United States Minor Outlying Islands": [
+        "Απομακρυσμένες Νησίδες των Ηνωμένων Πολιτειών"
+      ],
+      "Uruguay": [
+        "Ουρουγουάη"
+      ],
+      "Uzbekistan": [
+        "Ουζμπεκιστάν"
+      ],
+      "Vanuatu": [
+        "Βανουάτου"
+      ],
+      "Venezuela": [
+        "Βενεζουέλα"
+      ],
+      "Vietnam": [
+        "Βιετνάμ"
+      ],
+      "Virgin Islands, British": [
+        "Βρετανικές Παρθένες Νήσοι"
+      ],
+      "Virgin Islands, U.S.": [
+        "Αμερικανικές Παρθένες Νήσοι"
+      ],
+      "Wallis and Futuna": [
+        "Ουαλίς και Φουτουνά"
+      ],
+      "Western Sahara": [
+        "Δυτική Σαχάρα"
+      ],
+      "Yemen": [
+        "Υεμένη"
+      ],
+      "Zambia": [
+        "Ζάμπια"
+      ],
+      "Zimbabwe": [
+        "Ζιμπάμπουε"
+      ],
+      "Åland Islands": [
+        "Νήσοι Άλαντ"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Καθυστερημένο τιμολόγιο"
+      ]
+    },
+    "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Κρυπτογράφηση με το Messaging Layer Security (MLS)"
+      ],
+      "Rotating group encryption key for best security": [
+        "Περιστρέφεται το κλειδί κρυπτογράφησης ομάδας για βέλτιστη ασφάλεια"
+      ],
+      "Try a different name.": [
+        "Δοκιμάστε ένα διαφορετικό όνομα."
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Θα δείτε άτομα εδώ όταν συμμετέχουν στη σύσκεψη."
+      ]
+    },
+    "Display name": {
+      "Loading…": [
+        "Φόρτωση…"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
+      ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "Enter 6 digits": [
+        "Εισάγετε 6 ψηφία"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
+      ],
+      "Event deleted": [
+        "Η εκδήλωση διαγράφηκε"
+      ],
+      "Failed to assign host": [
+        "Αποτυχία ανάθεσης νέου οικοδεσπότη"
+      ],
+      "Failed to create meeting": [
+        "Αποτυχία δημιουργίας σύσκεψης"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Αποτυχία δημιουργίας προσωπικής σύσκεψης, παρακαλούμε ανανεώστε τη σελίδα"
+      ],
+      "Failed to decrypt session key": [
+        "Αποτυχία αποκρυπτογράφησης του κλειδιού συνεδρίας"
+      ],
+      "Failed to delete event": [
+        "Αποτυχία διαγραφής εκδήλωσης"
+      ],
+      "Failed to delete recording": [
+        "Η διαγραφή της ηχογράφησης απέτυχε"
+      ],
+      "Failed to delete room": [
+        "Αποτυχία διαγραφής αίθουσας"
+      ],
+      "Failed to download recording": [
+        "Αποτυχία λήψης ηχογράφησης"
+      ],
+      "Failed to edit room name": [
+        "Αποτυχία επεξεργασίας ονόματος αίθουσας"
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Αποτυχία σύνδεσης στη σύσκεψη. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Failed to join meeting. Please try again.": [
+        "Αποτυχία σύνδεσης στη σύσκεψη. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Failed to lock meeting": [
+        "Αποτυχία κλειδώματος σύσκεψης"
+      ],
+      "Failed to rotate personal meeting link": [
+        "Αποτυχία περιστροφής προσωπικού συνδέσμου σύσκεψης"
+      ],
+      "Failed to send chat message. Please try again.": [
+        "Απέτυχε η αποστολή μηνύματος συνομιλίας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "Απέτυχε η αποστολή αντίδρασης emoji. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "Απέτυχε η αποστολή αντίδρασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Failed to start meeting. Please try again.": [
+        "Αποτυχία έναρξης σύσκεψης. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Failed to start recording": [
+        "Αποτυχία έναρξης της καταγραφής"
+      ],
+      "Failed to start screen share": [
+        "Αποτυχία εκκίνησης κοινής χρήσης οθόνης"
+      ],
+      "Failed to unlock meeting": [
+        "Αποτυχία ξεκλειδώματος σύσκεψης"
+      ],
+      "Incorrect username": [
+        "Εσφαλμένο όνομα χρήστη"
+      ],
+      "Invalid meeting link": [
+        "Μη έγκυρος σύνδεσμος σύσκεψης"
+      ],
+      "Invalid passphrase": [
+        "Μη έγκυρη φράση πρόσβασης"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
+      ],
+      "Please allow screen sharing in your system permissions, then try again": [
+        "Παρακαλούμε επιτρέψτε την κοινή χρήση οθόνης στις άδειες του συστήματός σας και, δοκιμάστε ξανά."
+      ],
+      "Request timed out": [
+        "Λήξη χρονικού ορίου αιτήματος"
+      ],
+      "Room deleted": [
+        "Η Αίθουσα διαγράφηκε"
+      ],
+      "Screen share is not supported on mobile browsers": [
+        "Η κοινή χρήση οθόνης δεν υποστηρίζεται σε προγράμματα περιήγησης για κινητά"
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "The email addresses do not match": [
+        "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
+      "The meeting password is incorrect": [
+        "Ο κωδικός πρόσβασης της σύσκεψης είναι λανθασμένος"
+      ],
+      "The meeting password is invalid": [
+        "Ο κωδικός πρόσβασης της σύσκεψης δεν είναι έγκυρος"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      ],
+      "This field is required": [
+        "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Αυτή η συνάντηση είναι σε παλαιότερη έκδοση, ο διοργανωτής πρέπει να την τερματίσει και να ανανεώσει το Meet για να την επανεκκινήσει με την πιο πρόσφατη έκδοση."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Unknown error": [
+        "Άγνωστο σφάλμα"
+      ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Ο χώρος αποθήκευσης του προγράμματος περιήγησής σας εξαντλήθηκε. Αποθηκεύσαμε την ηχογράφηση μέχρι αυτό το σημείο."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Το ρολόι της συσκευής σας φαίνεται να μην είναι συγχρονισμένο. Παρακαλούμε ελέγξτε την ώρα του συστήματός σας και προσπαθήστε ξανά."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
+      ],
+      "Error: ${ errorMessage }": [
+        "Σφάλμα: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Ωχ, κάτι πήγε στραβά"
+      ],
+      "Open in browser": [
+        "Άνοιγμα στο πρόγραμμα περιήγησης"
+      ],
+      "Please refresh the page or try again later.": [
+        "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Για να χρησιμοποιήσετε ${ MAIL_APP_NAME } ή ${ CALENDAR_APP_NAME }, μεταβείτε στην έκδοση ιστού."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Δεν επιλέχθηκε εικόνα"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ],
+      "Touch your security key.": [
+        "Αγγίξτε το κλειδί ασφαλείας σας."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Προεπιλογή συστήματος"
+      ],
+      "Theme font": [
+        "Γραμματοσειρά εμφάνισης"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Μεγάλο"
+      ],
+      "Medium (recommended)": [
+        "Μεσαίο (συνιστάται)"
+      ],
+      "Small": [
+        "Μικρό"
+      ],
+      "Very large": [
+        "Πολύ μεγάλο"
+      ],
+      "Very small": [
+        "Πολύ μικρό"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Έχετε ήδη λογαριασμό; ${ signIn }"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Λογαριασμός"
+      ],
+      "Apps": [
+        "Εφαρμογές"
+      ],
+      "Network": [
+        "Δίκτυο"
+      ],
+      "Other category": [
+        "Άλλη κατηγορία"
+      ],
+      "Services": [
+        "Υπηρεσίες"
+      ]
+    },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Προστατεύστε τις συνομιλίες σας με διατερματική κρυπτογράφηση"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } ή ${ signInAction } για να αποκτήσετε πρόσβαση στην προσωπική σας αίθουσα και να δημιουργήσετε νέες αίθουσες"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } ή ${ signInAction } για τον προγραμματισμό συσκέψεων"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Μιλήστε με απόλυτη ${ privacyWord }"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Χειροκίνητα"
+      ],
+      "No verification method available": [
+        "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      " and ": [
+        " και "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "Έχει συμπληρωθεί το όριο των ${ maxParticipants } συμμετεχόντων."
+      ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "Το ${ MEET_APP_NAME } χρειάζεται πρόσβαση, ώστε να μπορούν να σας βλέπουν και να σας ακούν άλλοι κατά τη διάρκεια της κλήσης. Μπορείτε να απενεργοποιήσετε την κάμερα ή το μικρόφωνό σας ανά πάσα στιγμή."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "Η εφαρμογή ${ MEET_APP_NAME } χρειάζεται πρόσβαση στην κάμερα, ώστε να μπορούν να σας βλέπουν και άλλοι κατά τη διάρκεια της κλήσης. Μπορείτε να την απενεργοποιήσετε ανά πάσα στιγμή."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "Η εφαρμογή ${ MEET_APP_NAME } χρειάζεται πρόσβαση στο μικρόφωνο, ώστε να μπορούν να σας ακούν και άλλοι χρήστες κατά τη διάρκεια της κλήσης. Μπορείτε να την απενεργοποιήσετε ανά πάσα στιγμή."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "Το ${ MEET_APP_NAME } χρειάζεται το WebRTC για να λειτουργήσει. Παρακαλούμε ενημερώστε το πρόγραμμα περιήγησης ή τη συσκευή σας σε μια έκδοση που υποστηρίζει το WebRTC, δοκιμάστε ένα διαφορετικό πρόγραμμα περιήγησης ή απενεργοποιήστε τυχόν προεκτάσεις που ενδέχεται να το εμποδίζουν."
+      ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } και ${ otherParticipantsCount } άλλοι βιντεογραφούν"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } βιντεογραφεί"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (εσείς) παρουσιάζει"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } παρουσιάζει"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } και άλλοι αντέδρασαν με ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } αντέδρασαν με ${ emoji }"
+      ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } από ${ maxParticipants } συμμετέχοντες"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } συμμετέχων",
+        "${ totalParticipantCount } συμμετέχοντες"
+      ],
+      "(You)": [
+        "(Εσείς)"
+      ],
+      "-Removed dangerous URL-": [
+        "--Αφαιρέθηκε επικίνδυνη διεύθυνση URL--"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
+      ],
+      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Λειτουργία για προχωρημένους: ρυθμίστε κάθε σταθερά θολώματος για την επόμενη έκδοση και, στη συνέχεια, εφαρμόστε για να δημιουργήσετε ξανά την προεπισκόπηση. Οι παρακάμψεις έχουν προτεραιότητα έναντι των τιμών αρχείου και Unleash."
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Ανώνυμος ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "Θέλετε σίγουρα να αποχωρήσετε;"
+      ],
+      "Are you sure you want to stop recording?": [
+        "Είστε σίγουροι ότι θέλετε να διακόψετε την εγγραφή;"
+      ],
+      "Attention required": [
+        "Απαιτείται προσοχή"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Συνεχίζοντας στη σύσκεψη, αναγνωρίζετε και συναινείτε στην καταγραφή σας."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Με τη συμμετοχή σας, συμφωνείτε με τους ${ termsLink } και ${ privacyLink }."
+      ],
+      "camera": [
+        "κάμερα"
+      ],
+      "Camera permission denied": [
+        "Η άδεια χρήσης κάμερας απορρίφθηκε"
+      ],
+      "Changes are staged. Apply to rebuild the preview with the new constants.": [
+        "Οι αλλαγές προετοιμάζονται. Εφαρμόστε για να αναδημιουργήσετε την προεπισκόπηση με τις νέες σταθερές."
+      ],
+      "Chat with everyone": [
+        "Συνομιλήστε με όλους"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Ελέγξτε τις ρυθμίσεις του συστήματός σας για να βεβαιωθείτε ότι υπάρχει διαθέσιμη κάμερα."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Ελέγξτε τις ρυθμίσεις του συστήματός σας για να βεβαιωθείτε ότι υπάρχει διαθέσιμο μικρόφωνο."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "Coming soon": [
+        "Έρχεται σύντομα"
+      ],
+      "Connection failed": [
+        "Αποτυχία σύνδεσης"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "Η σύνδεση διακόπηκε. Επανασύνδεση..."
+      ],
+      "Connection issue detected. Attempting to recover…": [
+        "Εντοπίστηκε πρόβλημα σύνδεσης. Γίνεται προσπάθεια ανάκτησης…"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Χάθηκε η σύνδεση. Επανασύνδεση…"
+      ],
+      "Copied to clipboard": [
+        "Αντιγράφηκε στο πρόχειρο"
+      ],
+      "Could not access the camera.": [
+        "Δεν ήταν δυνατή η πρόσβαση στην κάμερα."
+      ],
+      "Could not start recording.": [
+        "Δεν ήταν δυνατή η εκκίνηση της εγγραφής."
+      ],
+      "Country code": [
+        "Κωδικός χώρας"
+      ],
+      "Create an account": [
+        "Δημιουργία λογαριασμού"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Δημιουργήστε έναν λογαριασμό για να διοργανώνετε συσκέψεις με έως και 50 συμμετέχοντες."
+      ],
+      "Created on ${ formattedDate }": [
+        "Δημιουργήθηκε στις ${ formattedDate }"
+      ],
+      "Custom combination": [
+        "Προσαρμοσμένος συνδυασμός"
+      ],
+      "Decrypting meetings...": [
+        "Αποκρυπτογράφηση συσκέψεων..."
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Προεπιλογή - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Προεπιλογή - Προεπιλογή Συστήματος"
+      ],
+      "Delete event": [
+        "Διαγραφή εκδήλωσης"
+      ],
+      "Delete room": [
+        "Διαγραφή αίθουσας"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Θέλετε οι άνθρωποι να σας ${ deviceContentType } στη σύσκεψη;"
+      ],
+      "Download current logs": [
+        "Λήψη τρεχόντων αρχείων καταγραφής"
+      ],
+      "Each code can only be used once": [
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
+      ],
+      "Edit email address": [
+        "Επεξεργασία ηλεκτρονικής διεύθυνσης"
+      ],
+      "End Meeting for everyone?": [
+        "Τερματισμός της Σύσκεψης για όλους;"
+      ],
+      "End the meeting for everyone?": [
+        "Τερματισμός της σύσκεψης για όλους;"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "Η κρυπτογράφηση από άκρο σε άκρο είναι ενεργή για ήχο και βίντεο."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "Η κρυπτογράφηση από άκρο σε άκρο είναι ενεργή για την κοινή χρήση οθόνης"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "Η κρυπτογράφηση από άκρο σε άκρο είναι ενεργή για αυτήν τη συνομιλία."
+      ],
+      "Enter code": [
+        "Εισαγάγετε κωδικό"
+      ],
+      "Enter the code from your authenticator app": [
+        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Όλοι έχουν αποσυνδεθεί από την κλήση."
+      ],
+      "Failed to apply background blur": [
+        "Αποτυχία εφαρμογής θολώματος φόντου"
+      ],
+      "Failed to update meeting name": [
+        "Αποτυχία ενημέρωσης του ονόματος της συνάντησης"
+      ],
+      "Failed to update meeting password": [
+        "Αποτυχία ενημέρωσης του κωδικού πρόσβασης της συνάντησης"
+      ],
+      "Failed to update meeting schedule": [
+        "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
+      ],
+      "Free meeting": [
+        "Δωρεάν σύσκεψη"
+      ],
+      "Free meetings are limited to 1 hour. This call will disconnect soon.": [
+        "Οι δωρεάν συσκέψεις περιορίζονται σε 1 ώρα. Αυτή η κλήση θα αποσυνδεθεί σύντομα."
+      ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Αποκτήστε μια προσωπική αίθουσα συσκέψεων. Δημιουργήστε έναν λογαριασμό για να έχετε έναν προσωπικό σύνδεσμο συσκέψεων που μπορείτε να χρησιμοποιείτε ανά πάσα στιγμή."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Λάβετε έναν ασφαλή σύνδεσμο σύσκεψης και προσθέστε τον στο ημερολόγιό σας"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Απολαύστε την καλύτερη εμπειρία με την εφαρμογή για υπολογιστές ${ protonMeet }"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Μεταβείτε στο about:config, αναζητήστε το media.peerconnection.enabled και ορίστε το σε true."
+      ],
+      "Host": [
+        "Διακομιστής"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Διοργανώστε τη δική σας ασφαλή σύσκεψη. Ξεκινήστε μια κλήση στο ${ MEET_APP_NAME } και κοινοποιήστε τον σύνδεσμο για να προσκαλέσετε οποιονδήποτε να συμμετάσχει. Απλό, ασφαλές και δωρεάν."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
+      ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Εάν χρησιμοποιείτε τον Firefox, βεβαιωθείτε ότι η λειτουργία PeerConnection είναι ενεργοποιημένη."
+      ],
+      "Internet connection lost": [
+        "Απώλεια σύνδεσης στο διαδίκτυο"
+      ],
+      "Joined ${ roomNameLabel }": [
+        "Μπήκε στο ${ roomNameLabel }"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "Leave meeting and stop sharing?": [
+        "Αποχώρηση από τη σύσκεψη και διακοπή κοινοποίησης;"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Η αποχώρηση από τη σύσκεψη θα σταματήσει την κοινοποίηση οθόνης."
+      ],
+      "Left ${ roomNameLabel }": [
+        "Αποχώρησε από το ${ roomNameLabel }"
+      ],
+      "Left by mistake?": [
+        "Αποχωρήσατε κατά λάθος;"
+      ],
+      "Link copied to clipboard": [
+        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Loading": [
+        "Φόρτωση"
+      ],
+      "Loading ${ appName }": [
+        "Φόρτωση ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
+      ],
+      "Loading meetings...": [
+        "Φόρτωση συσκέψεων..."
+      ],
+      "Loading recordings…": [
+        "Φόρτωση ηχογραφήσεων…"
+      ],
+      "Loading...": [
+        "Φόρτωση..."
+      ],
+      "Loading…": [
+        "Φόρτωση…"
+      ],
+      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
+        "Επαναλάβετε ένα μεταφορτωμένο βίντεο ή τη ζωντανή κάμερά σας μέσα από και τις δύο εκδόσεις θολώματος φόντου δίπλα-δίπλα."
+      ],
+      "Lower participant's hand": [
+        "Κατέβασε το χέρι του συμμετέχοντα"
+      ],
+      "Meet without restrictions": [
+        "Συσκεφθείτε χωρίς περιορισμούς"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Συναντηθείτε χωρίς περιορισμούς. Αναβαθμίστε για να καταργήσετε το όριο της 1 ώρας και να φιλοξενήσετε έως και 100 συμμετέχοντες."
+      ],
+      "Meeting ended": [
+        "Η σύσκεψη έληξε"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Η σύσκεψη είναι πλήρης (${ maxParticipants } συμμετέχοντες)"
+      ],
+      "Meeting is decrypting...": [
+        "Η σύσκεψη αποκρυπτογραφείται..."
+      ],
+      "Meeting link": [
+        "Σύνδεσμος σύσκεψης"
+      ],
+      "Meeting locked. No new participants can join.": [
+        "Η σύσκεψη είναι κλειδωμένη. Δεν μπορούν να συμμετάσχουν νέοι συμμετέχοντες."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Οι εγγραφές συναντήσεων δεν υποστηρίζονται στον Firefox."
+      ],
+      "Meeting time is up": [
+        "Η ώρα της σύσκεψης έληξε"
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Η σύσκεψη ξεκλειδώθηκε. Οι συμμετέχοντες μπορούν να συνδεθούν ξανά."
+      ],
+      "Meeting will end in ${ timeLeft }": [
+        "Η σύσκεψη θα λήξει σε ${ timeLeft }"
+      ],
+      "Member": [
+        "Μέλος"
+      ],
+      "Message from ${ participantName }": [
+        "Μήνυμα από ${ participantName }"
+      ],
+      "microphone": [
+        "μικρόφωνο"
+      ],
+      "Microphone effects": [
+        "Εφέ μικροφώνου"
+      ],
+      "Microphone permission denied": [
+        "Η άδεια μικροφώνου απορρίφθηκε"
+      ],
+      "Mute microphone": [
+        "Σίγαση μικροφώνου"
+      ],
+      "My meetings": [
+        "Οι Συσκέψεις μου"
+      ],
+      "My rooms": [
+        "Οι αίθουσές μου"
+      ],
+      "New": [
+        "Νέο"
+      ],
+      "New host": [
+        "Νέος οικοδεσπότης"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Δεν εντοπίστηκαν ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+      ],
+      "No camera detected": [
+        "Δεν εντοπίστηκε κάμερα"
+      ],
+      "No camera detected.": [
+        "Δεν εντοπίστηκε κάμερα."
+      ],
+      "No microphone detected": [
+        "Δεν εντοπίστηκε μικρόφωνο"
+      ],
+      "No microphone detected.": [
+        "Δεν εντοπίστηκε μικρόφωνο."
+      ],
+      "No publications": [
+        "Δεν υπάρχουν δημοσιεύσεις"
+      ],
+      "No recordings found on this device.": [
+        "Δε βρέθηκαν ηχογραφήσεις σε αυτήν τη συσκευή."
+      ],
+      "No remote participants": [
+        "Δεν υπάρχουν απομακρυσμένοι συμμετέχοντες"
+      ],
+      "No results found": [
+        "Δεν βρέθηκαν αποτελέσματα"
+      ],
+      "No search results": [
+        "Δεν βρέθηκαν αποτελέσματα αναζήτησης"
+      ],
+      "No speaker detected": [
+        "Δεν εντοπίστηκε ηχείο"
+      ],
+      "Only meetings you created appear here": [
+        "Εδώ εμφανίζονται μόνο οι συσκέψεις που έχετε δημιουργήσει εσείς"
+      ],
+      "Open external link": [
+        "Άνοιγμα εξωτερικού συνδέσμου"
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Οι κρυπτογραφημένες συναντήσεις μας από άκρο σε άκρο προστατεύουν την ιδιωτικότητα και ενισχύουν την πραγματικά ελεύθερη έκφραση."
+      ],
+      "Page ${ displayPage } of ${ totalPages }": [
+        "Σελίδα ${ displayPage } από ${ totalPages }"
+      ],
+      "Participant": [
+        "Συμμετέχων"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Επικολλήστε τον σύνδεσμο ${ MEET_APP_NAME } για να συμμετάσχετε σε μια ασφαλή σύσκεψη"
+      ],
+      "Permissions not given.": [
+        "Δεν δόθηκαν δικαιώματα."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Παρακαλούμε ενεργοποιήστε την πρόσβαση στο ${ microphoneLinkButton }${ andString }${ cameraLinkButton } για βέλτιστη εμπειρία."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Εισάγετε τον κωδικό πρόσβασης για να αποκρυπτογραφήσετε και να δείτε αυτή τη σύσκεψη."
+      ],
+      "Please try again or try another browser": [
+        "Παρακαλούμε προσπαθήστε ξανά ή δοκιμάστε έναν άλλο περιηγητή"
+      ],
+      "Poor connection": [
+        "Κακή σύνδεση"
+      ],
+      "Premium meeting": [
+        "Premium σύσκεψη"
+      ],
+      "Presenting": [
+        "Παρουσιάζοντας"
+      ],
+      "privacy": [
+        "ιδιωτικότητα"
+      ],
+      "Quick reactions": [
+        "Γρήγορες αντιδράσεις"
+      ],
+      "Reactions": [
+        "Αντιδράσεις"
+      ],
+      "Reconnected successfully": [
+        "Επανασύνδεση με επιτυχία"
+      ],
+      "Reconnecting to meeting...": [
+        "Επανασύνδεση με τη συνάντηση..."
+      ],
+      "Record your meetings": [
+        "Καταγράψτε τις συναντήσεις σας"
+      ],
+      "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
+        "Καταγράψτε την ακατέργαστη τροφοδοσία της κάμερας και το θάμπωμα φόντου παραγωγής δίπλα-δίπλα. Διακοπή λήψεων και των δύο κλιπ."
+      ],
+      "Recording": [
+        "Βιντεογράφηση"
+      ],
+      "Recording deleted": [
+        "Η ηχογράφηση διαγράφηκε."
+      ],
+      "Recording in progress": [
+        "Βιντεογράφηση σε εξέλιξη"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "Η καταγραφή θα ξεκινήσει και οι συμμετέχοντες θα ειδοποιηθούν"
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Οι ηχογραφήσεις αποθηκεύονται τοπικά στο πρόγραμμα περιήγησής σας. Κατεβάστε όσες θέλετε να διατηρήσετε, διαγράφονται αυτόματα μετά από 30 ημέρες."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
+      ],
+      "Refresh audio and video tracks": [
+        "Ανανέωση ροών ήχου και βίντεο"
+      ],
+      "Refresh screen share track": [
+        "Ανανέωση κοινής χρήσης οθόνης"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Προγραμματίστε την επόμενη σύσκεψή σας. Δημιουργήστε έναν λογαριασμό για να προγραμματίσετε συσκέψεις με το ημερολόγιό σας."
+      ],
+      "Select a camera": [
+        "Επιλέξτε μια κάμερα"
+      ],
+      "Select a microphone": [
+        "Επιλογή ενός μικροφώνου"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Επιλέξτε έναν συμμετέχοντα για να τον ορίσετε ως νέο οικοδεσπότη πριν φύγετε: "
+      ],
+      "Select a speaker": [
+        "Επιλέξτε έναν ομιλητή"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
+      ],
+      "Session timed out": [
+        "Η συνεδρία έληξε"
+      ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Δημιουργήστε μια μόνιμη αίθουσα συσκέψεων για την ομάδα ή τους πελάτες σας"
+      ],
+      "Share screen": [
+        "Κοινοποίηση οθόνης"
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Μοιραστείτε αυτόν τον σύνδεσμο για να προσκαλέσετε άλλους. Μπορείτε επίσης να τον βρείτε ανά πάσα στιγμή κάνοντας κλικ στο εικονίδιο πληροφοριών στη γραμμή εργαλείων."
+      ],
+      "Sign in": [
+        "Σύνδεση"
+      ],
+      "Sort by": [
+        "Ταξινόμηση κατά"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Η επιλογή ηχείου δεν είναι διαθέσιμη σε αυτόν τον περιηγητή. Χρησιμοποιήστε τις ρυθμίσεις του συστήματός σας για να επιλέξετε διαφορετικό ηχείο."
+      ],
+      "Start recording": [
+        "Έναρξη καταγραφής"
+      ],
+      "Starting camera…": [
+        "Έναρξη κάμερας…"
+      ],
+      "Stop sharing your screen": [
+        "Σταματήστε να μοιράζεστε την οθόνη σας"
+      ],
+      "Successfully deleted meeting": [
+        "Η σύσκεψη διαγράφηκε με επιτυχία"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Σας ευχαριστούμε που διοργανώσατε μια premium σύσκεψη."
+      ],
+      "Thank you for joining.": [
+        "Σας ευχαριστούμε για τη συμμετοχή σας"
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "Ο οικοδεσπότης σας έχει αφαιρέσει από αυτήν τη σύσκεψη. Εάν αυτό ήταν λάθος, ζητήστε από τον οικοδεσπότη να σας προσκαλέσει ξανά."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Ο σύνδεσμος σύσκεψης που προσπαθήσατε να ανοίξετε δεν υπάρχει ή ενδέχεται να έχει λήξει. Βεβαιωθείτε ότι ο σύνδεσμος είναι σωστός ή ξεκινήστε μια νέα ασφαλή σύσκεψη."
+      ],
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Αυτό είναι μια κρυπτογραφημένη συνομιλία από άκρη σε άκρη με προσωρινά μηνύματα, τα οποία εξαφανίζονται στο τέλος της κλήσης."
+      ],
+      "This meeting is being recorded": [
+        "Αυτή η συνεδρία καταγράφεται"
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Αυτή η σύσκεψη είναι κλειδωμένη. Παρακαλούμε επικοινωνήστε με τον διοργανωτή για να συμμετάσχετε."
+      ],
+      "This meeting is password protected": [
+        "Αυτή η συσκεψη προστατεύεται με κωδικό πρόσβασης."
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Αυτή η σύσκεψη έφτασε στο χρονικό όριο ενός δωρεάν προγράμματος. Αναβαθμίστε για να επεκτείνετε τη διάρκεια της σύσκεψής σας σε μελλοντικές κλήσεις."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Αυτή η σύσκεψη ξεκίνησε στην εφαρμογή για επιτραπέζιους υπολογιστές ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Αυτή η ηχογράφηση θα διαγραφεί οριστικά από αυτήν τη συσκευή. Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Αυτό θα τερματίσει τη σύσκεψη για όλους τους συμμετέχοντες και θα σταματήσει την κοινοποίηση οθόνης."
+      ],
+      "This will end the meeting for all participants.": [
+        "Αυτό θα τερματίσει τη σύσκεψη για όλους τους συμμετέχοντες."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
+      ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Για να δημιουργήσετε μία αίθουσα, θα χρειαστείτε **έναν δωρεάν λογαριασμό ${ BRAND_NAME }** ώστε να μπορέσουμε να αποθηκεύσουμε την αίθουσα. Αυτό διαρκεί μόνο λίγα δευτερόλεπτα."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Για να προγραμματίσετε μια εκδήλωση, θα χρειαστείτε **έναν δωρεάν λογαριασμό ${ BRAND_NAME }** ώστε να μπορέσουμε να αποθηκεύσουμε την εκδήλωση. Αυτό παίρνει μόνο λίγα δευτερόλεπτα."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Για να χρησιμοποιήσετε την προσωπική αίθουσα συσκέψεων, θα χρειαστείτε **ένα δωρεάν λογαριασμό ${ BRAND_NAME }**. Αυτό διαρκεί μόνο μερικά δευτερόλεπτα."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Σήμερα — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Αύριο — ${ absoluteDate }"
+      ],
+      "Turn off camera": [
+        "Απενεργοποίηση κάμερας"
+      ],
+      "Turn on camera": [
+        "Ενεργοποίηση κάμερας"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Δεν είναι δυνατή η επανασύνδεση στη σύσκεψη. Παρακαλούμε συμμετάσχετε ξανά ή αποχωρήστε."
+      ],
+      "unlimited meeting": [
+        "απεριόριστη σύσκεψη"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "Ξεκλειδώστε το ${ unlimitedMeeting } και premium λειτουργίες"
+      ],
+      "Unmute microphone": [
+        "Κατάργηση σίγασης μικροφώνου"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Αναβαθμίστε για να καταγράφετε τις συναντήσεις σας τοπικά."
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Αναβαθμίστε για να αφαιρεθεί το όριο 1 ώρας και να παραληφθεί η αντίστροφη μέτρηση. Απολαύστε συσκέψεις διάρκειας έως και 24 ωρών."
+      ],
+      "Video effects": [
+        "Εφέ βίντεο"
+      ],
+      "Warning": [
+        "Προειδοποίηση"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "Week": [
+        "Εβδομάδα"
+      ],
+      "Would you like to delete this event?": [
+        "Θα θέλατε να διαγράψετε αυτή την εκδήλωση;"
+      ],
+      "Would you like to delete this room?": [
+        "Θέλετε να διαγράψετε αυτό το δωμάτιο;"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Χθες — ${ absoluteDate }"
+      ],
+      "You are almost there": [
+        "Σχεδόν τελειώσατε"
+      ],
+      "You can close this tab.": [
+        "Μπορείτε να κλείσετε αυτήν την καρτέλα."
+      ],
+      "You can now return to the application to continue": [
+        "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
+      ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "Μπορείτε να απενεργοποιήσετε το μικρόφωνο και την κάμερά σας ανά πάσα στιγμή κατά τη διάρκεια της σύσκεψης."
+      ],
+      "You left the meeting": [
+        "Αποχωρήσατε από τη σύσκεψή"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Χρειάζεστε ένα επί πληρωμή πλάνο ${ MEET_SHORT_APP_NAME } ή Workspace για αυτή τη λειτουργία. Επικοινωνήστε με τον διαχειριστή της οργάνωσής σας για αναβάθμιση."
+      ],
+      "You were removed from the meeting": [
+        "Αφαιρεθήκατε από τη σύσκεψη"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Θα φύγετε από τη συνάντηση. Οι άλλοι θα συνεχίσουν."
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Έχετε προσκληθεί να συμμετάσχετε σε μια ασφαλή σύσκεψη. Επιβεβαιώστε το όνομά σας και κάντε κλικ παρακάτω για να εισέλθετε."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
+      ],
+      "Your always available meeting room": [
+        "Η πάντα διαθέσιμη αίθουσα συσκέψεών σας"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κάμερα και στο μικρόφωνό σας. Για να τα ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κάμερά σας. Για να την ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στο μικρόφωνό σας. Για να την ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κοινή χρήση οθόνης σας. Για να την ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
+      ],
+      "Your browser or device isn’t supported": [
+        "Το πρόγραμμα περιήγησης ή η συσκευή σας δεν υποστηρίζεται"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your meeting is ready": [
+        "Η σύσκεψή σας είναι έτοιμη"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "Είστε έτοιμοι να ανοίξετε έναν σύνδεσμο σε νέα καρτέλα. Βεβαιωθείτε ότι εμπιστεύεστε τον ιστότοπο πριν συνεχίσετε."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "όνομα χρήστη ${ BRAND_NAME }"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } αστέρι",
+        "${ numberOfStars } αστέρια"
+      ],
+      "Add optional details": [
+        "Προσθέστε προαιρετικές λεπτομέρειες"
+      ],
+      "Add to calendar": [
+        "Προσθήκη στο ημερολόγιο"
+      ],
+      "Advanced mode": [
+        "Λειτουργία για προχωρημένους"
+      ],
+      "Attach screenshot(s)": [
+        "Επισύναψη στιγμιότυπου/ων οθόνης"
+      ],
+      "Audio": [
+        "Ήχος"
+      ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
+      "Blurred (next)": [
+        "Θολό (επόμενο)"
+      ],
+      "Browser": [
+        "Πρόγραμμα περιήγησης"
+      ],
+      "Browser version": [
+        "Έκδοση προγράμματος περιήγησης"
+      ],
+      "Camera Active": [
+        "Κάμερα Ενεργοποιημένη"
+      ],
+      "Category": [
+        "Κατηγορία"
+      ],
+      "Code is 6 digits without spaces": [
+        "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
+      "Connection Quality": [
+        "Ποιότητα σύνδεσης"
+      ],
+      "Copy all activity events": [
+        "Αντιγραφή όλων των συμβάντων δραστηριότητας"
+      ],
+      "Copy invite link": [
+        "Αντιγραφή συνδέσμου πρόσκλησης"
+      ],
+      "Create meeting options": [
+        "Δημιουργία επιλογών σύσκεψης"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Current": [
+        "Τρέχουσα"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Delete recovery-related information.": [
+        "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
+      ],
+      "Does not repeat": [
+        "Δεν επαναλαμβάνεται"
+      ],
+      "Download .ics": [
+        "Λήψη .ics"
+      ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
+      "Emoji picker": [
+        "Επιλογέας emoji"
+      ],
+      "Emoji reactions": [
+        "Αντιδράσεις emoji"
+      ],
+      "Enabled": [
+        "Ενεργοποιημένο"
+      ],
+      "Ended": [
+        "Έληξε"
+      ],
+      "Every day": [
+        "Κάθε ημέρα"
+      ],
+      "Every month": [
+        "Κάθε μήνα"
+      ],
+      "Every week": [
+        "Κάθε ευδομάδα"
+      ],
+      "Every weekday": [
+        "Κάθε εργάσιμη"
+      ],
+      "Every year": [
+        "Κάθε χρόνο"
+      ],
+      "Google Calendar": [
+        "Ημερολόγιο Google"
+      ],
+      "Hide password": [
+        "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "How was the call quality?": [
+        "Πώς ήταν η ποιότητα της κλήσης;"
+      ],
+      "Identity": [
+        "Ταυτότητα"
+      ],
+      "Include application logs in bug report": [
+        "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
+      ],
+      "Last used": [
+        "Τελευταία χρήση"
+      ],
+      "Leave meeting options": [
+        "Επιλογές αποχώρησης από τη σύσκεψη"
+      ],
+      "Manage recordings": [
+        "Διαχείριση ηχογραφήσεων"
+      ],
+      "Meeting ID": [
+        "ID σύσκεψης"
+      ],
+      "Meeting link": [
+        "Σύνδεσμος σύσκεψης"
+      ],
+      "Message": [
+        "Μήνυμα"
+      ],
+      "Microphone Active": [
+        "Μικρόφωνο Ενεργοποιημένο"
+      ],
+      "Monday to Friday": [
+        "Δευτέρα έως Παρασκευή"
+      ],
+      "Muted": [
+        "Σιγασμένο"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "Operating system": [
+        "Λειτουργικό σύστημα (OS)"
+      ],
+      "Operating system version": [
+        "Έκδοση λειτουργικού συστήματος"
+      ],
+      "Outlook Calendar": [
+        "Ημερολόγιο Outlook"
+      ],
+      "Participant controls": [
+        "Έλεγχοι συμμετεχόντων"
+      ],
+      "Passphrase": [
+        "Συνθηματικό"
+      ],
+      "Password": [
+        "Κωδικός πρόσβασης"
+      ],
+      "Phone number": [
+        "Αριθμός τηλεφώνου"
+      ],
+      "Raw": [
+        "Ακατέργαστη"
+      ],
+      "Remember my name on this device": [
+        "Θυμήσου το όνομά μου σε αυτή τη συσκευή"
+      ],
+      "Repeat event": [
+        "Επανάληψη εκδήλωσης"
+      ],
+      "Return to dashboard": [
+        "Επιστροφή στον πίνακα εργαλείων"
+      ],
+      "Reveal password": [
+        "Εμφάνιση κωδικού"
+      ],
+      "Schedule meeting": [
+        "Προγραμματισμός σύσκεψης"
+      ],
+      "Screen share": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Selected Camera": [
+        "Επιλεγμένη Κάμερα"
+      ],
+      "Selected Microphone": [
+        "Επιλεγμένο Μικρόφωνο"
+      ],
+      "Selected Speaker": [
+        "Επιλεγμένος Ομιλητής"
+      ],
+      "Subscribed": [
+        "Εγγραφήκατε"
+      ],
+      "System information": [
+        "Πληροφορίες Συστήματος"
+      ],
+      "Track SID": [
+        "SID Παρακολούθησης"
+      ],
+      "Use live camera feed": [
+        "Χρήση ζωντανής ροής κάμερας"
+      ],
+      "Use simple selfie segmentation": [
+        "Χρησιμοποιήστε απλή τμηματοποίηση selfie"
+      ],
+      "Verification code": [
+        "Κωδικός επαλήθευσης"
+      ],
+      "Video": [
+        "Βίντεο"
+      ],
+      "What happened?": [
+        "Τι συνέβη;"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "privacy policy": [
+        "πολιτική απορρήτου"
+      ],
+      "Request an invite": [
+        "Ζητήστε μια πρόσκληση"
+      ],
+      "Sign in": [
+        "Είσοδος"
+      ],
+      "terms and conditions": [
+        "όροι και προϋποθέσεις"
+      ],
+      "What’s this?": [
+        "Τι είναι αυτό;"
+      ]
+    },
+    "meet": {
+      "Create and copy link": [
+        "Δημιουργία και αντιγραφή συνδέσμου"
+      ],
+      "Create new room": [
+        "Δημιουργία νέας αίθουσας"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Οι αίθουσες συσκέψεων μπορούν να χρησιμοποιηθούν ανά πάσα στιγμή."
+      ],
+      "Save and copy link": [
+        "Αποθήκευση και αντιγραφή συνδέσμου"
+      ]
+    },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Το πρόγραμμα περιήγησης ή το λογισμικό της συσκευής σας δεν υποστηρίζει το ${ MEET_APP_NAME }. Το ${ MEET_APP_NAME } απαιτεί WebAssembly (Wasm) για να λειτουργήσει. Παρακαλούμε ενημερώστε το πρόγραμμα περιήγησης ή τη συσκευή σας σε μια έκδοση που υποστηρίζει Wasm ή δοκιμάστε να χρησιμοποιήσετε ένα διαφορετικό πρόγραμμα περιήγησης."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Επειδή είστε ο μόνος συμμετέχων σε αυτή τη σύσκεψη, η σύσκεψη θα κλείσει αυτόματα. Θέλετε να παραμείνετε σε αυτή τη σύσκεψη;"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Αποχώρηση από τη σύσκεψη"
+      ],
+      "Stay in the meeting": [
+        "Παραμείνετε στη σύσκεψη"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Αποτυχία εκκίνησης της λειτουργίας Picture-in-Picture"
+      ]
+    },
+    "Notification": {
+      "Coming soon": [
+        "Προσεχώς"
+      ],
+      "Copied to clipboard": [
+        "Αντιγράφηκε στο πρόχειρο"
+      ],
+      "Could not send feedback": [
+        "Δεν ήταν δυνατή η αποστολή σχολίων"
+      ],
+      "Link copied to clipboard": [
+        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Room name updated": [
+        "Το όνομα της αίθουσας ενημερώθηκε"
+      ],
+      "Successfully rotated your personal meeting": [
+        "Η προσωπική σας σύσκεψη περιστράφηκε με επιτυχία"
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Δεν μπορείτε να στείλετε σχόλια για μια σύσκεψη στην οποία δεν έχετε συμμετάσχει"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Ορισμένες εικόνες δε μεταφορτώθηκαν λόγω διπλότυπων ονομάτων αρχείων στην τρέχουσα επιλογή."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "Ο ήχος διακόπτονταν"
+      ],
+      "I couldn't hear others": [
+        "Δεν μπορούσα να ακούσω τους άλλους"
+      ],
+      "I couldn't present ": [
+        "Δεν μπορούσα να παρουσιάσω "
+      ],
+      "I couldn't see others' video": [
+        "Δεν μπορούσα να δω τα βίντεο των άλλων"
+      ],
+      "I couldn't see the presentation": [
+        "Δεν μπορούσα να δω την παρουσίαση"
+      ],
+      "Others couldn't hear me": [
+        "Οι άλλοι δεν μπορούσαν να με ακούσουν"
+      ],
+      "Others couldn't see my video": [
+        "Άλλοι δεν μπορούσαν να δουν το βίντεό μου"
+      ],
+      "The presentation was blurry": [
+        "Η παρουσίαση ήταν θολή"
+      ],
+      "Video quality was poor": [
+        "Η ποιότητα του βίντεο ήταν κακή"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
+      ],
+      "E.g., ": [
+        "Για παράδειγμα, "
+      ],
+      "Enter passphrase": [
+        "Εισαγάγετε τη φράση πρόσβασης"
+      ],
+      "Enter time": [
+        "Εισάγετε ώρα"
+      ],
+      "Enter your name": [
+        "Εισάγετε το όνομά σας"
+      ],
+      "Find...": [
+        "Εύρεση..."
+      ],
+      "Loading...": [
+        "Γίνεται φόρτωση..."
+      ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Όνομα σύσκεψης, π.χ. συγχρονισμός ομάδας, ενημέρωση έργου, κ.λπ."
+      ],
+      "Password": [
+        "Κωδικός πρόσβασης"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Όνομα αίθουσας, π.χ. συγχρονισμός ομάδας, ενημέρωση έργου, κ.λπ."
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Προγραμματισμός στο ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Αναζήτηση"
+      ],
+      "Select": [
+        "Επιλογή"
+      ],
+      "Share more details": [
+        "Μοιραστείτε περισσότερες λεπτομέρειες"
+      ],
+      "Type an encrypted message...": [
+        "Πληκτρολογήστε ένα κρυπτογραφημένο μήνυμα..."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Έλεγχος ασφάλειας λογαριασμού"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Η είσοδος δεν ολοκληρώθηκε με επιτυχία."
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Δεν βρέθηκαν αποτελέσματα"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Αποσύνδεση"
+      ],
+      "Stay signed in": [
+        "Παραμείνετε συνδεδεμένοι"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } είναι τώρα διαθέσιμο."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Εάν αποσυνδεθείτε πριν επαναφέρετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Εάν αποσυνδεθείτε χωρίς να επαναφέρετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας στο ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Αποσύνδεση χωρίς επαναφορά κωδικού πρόσβασης;"
+      ]
+    },
+    "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Αλφαβητικά (A–Ω)"
+      ],
+      "Newly created": [
+        "Πρόσφατα δημιουργημένο"
+      ],
+      "Past meetings": [
+        "Προηγούμενες συσκέψεις"
+      ],
+      "Upcoming": [
+        "Προσεχή"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Μεταβείτε στα συνδρομητικά πλάνα"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Σύνδεση"
+      ],
+      "Sign in to your organization": [
+        "Συνδεθήτε στον οργανισμό σας"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
+      ]
+    },
+    "Status": {
+      "No": [
+        "Όχι"
+      ],
+      "Yes": [
+        "Ναι"
+      ]
+    },
+    "Success": {
+      "Assigned new host": [
+        "Ανατέθηκε νέος οικοδεσπότης"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
+      ],
+      "Problem reported": [
+        "Η αναφορά του προβλήματος ολοκληρώθηκε"
+      ],
+      "Verification successful": [
+        "Επιτυχία επαλήθευσης"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Ο λογαριασμός περιορίστηκε"
+      ],
+      "Account temporarily locked": [
+        "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
+      ],
+      "Activity events": [
+        "Δραστηριότητα γεγονότων"
+      ],
+      "All participants": [
+        "Όλοι οι συμμετέχοντες"
+      ],
+      "Allow camera ": [
+        "Πρόσβαση στην κάμερα "
+      ],
+      "Allow camera and microphone": [
+        "Να επιτρέπεται η κάμερα και το μικρόφωνο"
+      ],
+      "Allow microphone": [
+        "Πρόσβαση στο μικρόφωνο"
+      ],
+      "Are you sure?": [
+        "Είστε σίγουρος/η;"
+      ],
+      "Assign a new host": [
+        "Ανάθεση νέου οικοδεσπότη"
+      ],
+      "Audio": [
+        "Ήχος"
+      ],
+      "Available Cameras": [
+        "Διαθέσιμες Κάμερες"
+      ],
+      "Available Microphones": [
+        "Διαθέσιμα Μικρόφωνα"
+      ],
+      "Available Speakers": [
+        "Διαθέσιμοι Ομιλητές"
+      ],
+      "Background blur comparison": [
+        "Σύγκριση θολώματος φόντου"
+      ],
+      "Camera and microphone are blocked": [
+        "Η κάμερα και το μικρόφωνο είναι αποκλεισμένα"
+      ],
+      "Camera is blocked": [
+        "Η κάμερα είναι αποκλεισμένη"
+      ],
+      "Chat": [
+        "Συνομιλία"
+      ],
+      "Constants": [
+        "Σταθερές"
+      ],
+      "Couldn't prepare the recording": [
+        "Δεν ήταν δυνατή η προετοιμασία της ηχογράφησης"
+      ],
+      "Create new room": [
+        "Δημιουργία νέας αίθουσας"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Debug Overlay": [
+        "Επικάλυψη Εντοπισμού Σφαλμάτων"
+      ],
+      "Delete recording?": [
+        "Διαγραφή ηχογράφησης;"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
+      "Epoch": [
+        "Εποχή"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Σφάλμα στην epoch ${ log.epoch }"
+      ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
+      "Help center": [
+        "Κέντρο βοήθειας"
+      ],
+      "Human verification": [
+        "Ανθρώπινη Επαλήθευση"
+      ],
+      "Info": [
+        "Πληροφορίες"
+      ],
+      "Invalid meeting link": [
+        "Μη έγκυρος σύνδεσμος σύσκεψης"
+      ],
+      "Invalid verification code": [
+        "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Invite link": [
+        "Σύνδεσμος πρόσκλησης"
+      ],
+      "Join a meeting": [
+        "Συμμετοχή σε σύσκεψη"
+      ],
+      "Join meeting": [
+        "Συμμετοχή στη σύσκεψη"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Εντάχθηκε στην epoch ${ log.epoch }"
+      ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Συμμετοχή σε σύσκεψη με ${ participantCount } άλλο συμμετέχοντα …",
+        "Συμμετοχή σε σύσκεψη με ${ participantCount } άλλους συμμετέχοντες…"
+      ],
+      "Launching Meeting...": [
+        "Έναρξη Σύσκεψης..."
+      ],
+      "Local Participant": [
+        "Τοπικός Συμμετέχων"
+      ],
+      "Meeting": [
+        "Σύσκεψη"
+      ],
+      "Meeting created": [
+        "Η σύσκεψη δημιουργήθηκε"
+      ],
+      "Meeting details": [
+        "Λεπτομέρειες σύσκεψης"
+      ],
+      "Meeting edited": [
+        "Η σύσκεψη επεξεργάστηκε"
+      ],
+      "Meeting settings": [
+        "Ρυθμίσεις σύσκεψης"
+      ],
+      "Messaging Layer Security": [
+        "Ασφάλεια Επιπέδου Μηνυμάτων"
+      ],
+      "Microphone is blocked": [
+        "Το μικρόφωνο είναι αποκλεισμένο"
+      ],
+      "Minicalendar": [
+        "Μίνι ημερολόγιο"
+      ],
+      "No one is waiting": [
+        "Κανείς δεν περιμένει"
+      ],
+      "No results found": [
+        "Κανένα αποτέλεσμα"
+      ],
+      "Participants": [
+        "Συμμετέχοντες"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Συμμετέχοντες (${ filteredParticipants.length })"
+      ],
+      "Passphrase": [
+        "Συνθηματικό"
+      ],
+      "Personal meeting room": [
+        "Προσωπική αίθουσα σύσκεψης"
+      ],
+      "Preparing your recording…": [
+        "Γίνεται προετοιμασία της ηχογράφησης σας…"
+      ],
+      "Publications": [
+        "Δημοσιεύσεις"
+      ],
+      "Reconnection Testing": [
+        "Δοκιμή Επανασύνδεσης"
+      ],
+      "Record raw vs blurred camera": [
+        "Εγγραφή raw vs θολή κάμερα"
+      ],
+      "Record this meeting": [
+        "Καταγραφή αυτής της σύσκεψης"
+      ],
+      "Recordings": [
+        "Ηχογραφήσεις"
+      ],
+      "Remote Participants": [
+        "Απομακρυσμένοι Συμμετέχοντες"
+      ],
+      "Report a problem": [
+        "Αναφορά προβλήματος"
+      ],
+      "Request new code": [
+        "Αίτηση νέου κωδικού"
+      ],
+      "Schedule a meeting": [
+        "Προγραμματίστε μια σύσκεψη"
+      ],
+      "Screen share is blocked": [
+        "Η κοινή χρήση οθόνης έχει αποκλειστεί"
+      ],
+      "Secure meeting": [
+        "Ασφαλής σύσκεψη"
+      ],
+      "Security": [
+        "Ασφάλεια"
+      ],
+      "Security code": [
+        "Κωδικός ασφαλείας"
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
+      "Sign out": [
+        "Αποσύνδεση"
+      ],
+      "Starting meeting as the first participant…": [
+        "Έναρξη σύσκεψης ως πρώτος συμμετέχων..."
+      ],
+      "Stop recording": [
+        "Διακοπή καταγραφής"
+      ],
+      "Talk confidentially": [
+        "Μιλήστε εμπιστευτικά"
+      ],
+      "Thank you!": [
+        "Σας ευχαριστούμε!"
+      ],
+      "Time": [
+        "Ώρα"
+      ],
+      "Title": [
+        "Τίτλος"
+      ],
+      "Two-factor authentication": [
+        "Έλεγχος ταυτότητας δύο παραγόντων"
+      ],
+      "Video": [
+        "Βίντεο"
+      ],
+      "Waiting room": [
+        "Αίθουσα αναμονής"
+      ],
+      "What went wrong?": [
+        "Τι πήγε στραβά;"
+      ],
+      "Your feedback has been submitted": [
+        "Τα σχόλιά σας έχουν υποβληθεί"
+      ],
+      "Your recording is ready": [
+        "Η ηχογράφηση σας είναι έτοιμη"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Σήμερα"
+      ]
+    },
+    "Tooltip": {
+      "Background blur is not supported on your browser": [
+        "Το θάμπωμα παρασκηνίου δεν υποστηρίζεται στο πρόγραμμα περιήγησής σας."
+      ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Δημιουργήστε έναν νέο σύνδεσμο για τη συνάντηση. Ο τρέχων σύνδεσμος θα σταματήσει να λειτουργεί."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
+      ],
+      "Recurring meeting": [
+        "Επαναλαμβανόμενη σύσκεψη"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Μπορείτε να δημιουργήσετε έναν νέο σύνδεσμο συνάντησης μία φορά ανά ημέρα."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Πρόβλημα Wallet"
+      ]
+    },
+    "Warning": {
+      "Connection is taking longer than expected": [
+        "Η σύνδεση διαρκεί περισσότερο από το αναμενόμενο"
+      ],
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Δεν ήταν δυνατή η πρόσβαση στην κάμερα ή στο μικρόφωνο. Μπορείτε να δοκιμάσετε να τα ενεργοποιήσετε ξανά από τα στοιχεία ελέγχου της σύσκεψης."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Δεν ήταν δυνατή η πρόσβαση στην κάμερα. Μπορείτε να δοκιμάσετε να την ενεργοποιήσετε ξανά από τα στοιχεία ελέγχου της σύσκεψης."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Δεν ήταν δυνατή η πρόσβαση στο μικρόφωνο. Μπορείτε να δοκιμάσετε να το ενεργοποιήσετε ξανά από τα στοιχεία ελέγχου της σύσκεψης."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
+      ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Η σύνδεση STUN UDP απέτυχε, δοκιμάζουμε με αναμετάδοση TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Η σύνδεση STUN UDP ξεπέρασε το όριο χρόνου, δοκιμάζουμε με αναμετάδοση TURN"
+      ],
+      "Trying another route…": [
+        "Δοκιμάζοντας άλλη διαδρομή…"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
+      ]
+    }
+  }
+}
