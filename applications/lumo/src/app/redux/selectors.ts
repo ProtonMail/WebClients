@@ -144,12 +144,14 @@ export const selectIsFileExcluded = (messageId: string, filename: string) => (st
  * re-renders when the derived data hasn't meaningfully changed.
  */
 
-// Sorted array of starred (non-ghost) conversations. Stable reference when
-// the starred subset is unchanged (e.g. during non-starred conversation streaming).
+const selectChatHistoryDateField = (state: LumoState) => state.lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+
+// Sorted array of starred (non-ghost) conversations, always by creation date.
+// Sidebar favorites use this order regardless of the history sort preference.
 export const selectStarredConversationsSorted = createSelector([selectConversations], (conversations) =>
     Object.values(conversations)
         .filter((c: Conversation) => !c.ghost && c.starred === true)
-        .sort(sortByDate('desc'))
+        .sort(sortByDate<Conversation>('desc', 'createdAt'))
 );
 
 // Conversation count per spaceId. Does NOT change when only titles stream —
@@ -175,13 +177,14 @@ export const selectAttachmentCountsBySpaceId = createSelector([selectAttachments
     return counts;
 });
 
-// Pre-filtered, sorted base list for ChatHistory. Excludes ghost and starred
-// conversations (starred appear in FavoritesSidebarSection). Use with shallowEqual —
-// streaming a starred conversation's title no longer re-renders ChatHistory at all.
-export const selectHistoryConversationsSorted = createSelector([selectConversations], (conversations) =>
-    Object.values(conversations)
-        .filter((c: Conversation) => !c.ghost && !c.starred)
-        .sort(sortByDate<Conversation>('desc', 'updatedAt'))
+// Pre-filtered, sorted base list for chat history. Excludes ghost and starred
+// conversations (starred appear in the sidebar favorites section).
+export const selectHistoryConversationsSorted = createSelector(
+    [selectConversations, selectChatHistoryDateField],
+    (conversations, dateField) =>
+        Object.values(conversations)
+            .filter((c: Conversation) => !c.ghost && !c.starred)
+            .sort(sortByDate<Conversation>('desc', dateField))
 );
 
 // Minimal per-conversation row for the chat history list — contains only stable
@@ -195,15 +198,13 @@ export interface ConversationHistoryRow {
     createdAt: string;
 }
 
-const selectChatHistoryDateField = (state: LumoState) => state.lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
-
 export const selectHistoryConversationRows = createSelector(
     [selectConversations, selectChatHistoryDateField],
     (conversations, dateField): ConversationHistoryRow[] => {
         const now = startOfDay(new Date());
         return Object.values(conversations)
             .filter((c: Conversation) => !c.ghost && !c.starred)
-            .sort(sortByDate<Conversation>('desc', 'updatedAt'))
+            .sort(sortByDate<Conversation>('desc', dateField))
             .map((c: Conversation) => {
                 const dateValue = (c[dateField as keyof Conversation] as string | undefined) ?? c.updatedAt;
                 const dayDiff = differenceInCalendarDays(now, startOfDay(new Date(dateValue)));
