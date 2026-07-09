@@ -19,6 +19,7 @@ import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
 import { FavoritesSidebarSection } from './FavoritesSidebarSection';
 import { ChatHistorySection } from './components/ChatHistorySection';
+import { ChatsSidebarButton } from './components/ChatsSidebarButton';
 import { GallerySidebarButton } from './components/GallerySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
@@ -82,6 +83,7 @@ const LumoSidebarContent = () => {
                             }}
                         />
                     )}
+                    {!isGuest && <ChatsSidebarButton onItemClick={closeOnItemClick ?? (() => {})} />}
                 </div>
 
                 <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 gap-2">

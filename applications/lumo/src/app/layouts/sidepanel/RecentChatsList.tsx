@@ -1,32 +1,31 @@
-import { memo, useState } from 'react';
+import { memo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
+
 import { LumoLink } from '../../components/Links/LumoLink';
-import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { Conversation, ConversationId } from '../../types';
-import ChatDropdownMenu from './ChatDropdownMenu';
+import ConversationActionsDropdown from './ConversationActionsDropdown';
 import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
 
 export interface ConversationListItemProps {
     conversation: Conversation;
     isSelected: boolean;
     showDropdown: boolean;
-    isTouchDevice: boolean;
     onItemClick?: () => void;
 }
 
 export const ConversationListItem = memo(
-    ({ conversation, isSelected, showDropdown, isTouchDevice, onItemClick }: ConversationListItemProps) => {
-        const [isHovered, setIsHovered] = useState(false);
+    ({ conversation, isSelected, showDropdown, onItemClick }: ConversationListItemProps) => {
         const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+        const [isActionsMounted, setIsActionsMounted] = useState(false);
+        const [isActionsOpen, setIsActionsOpen] = useState(false);
+        const ellipsisRef = useRef<HTMLButtonElement>(null);
 
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
-        // Mount the dropdown when hovered, open, or on touch (no hover available).
-        // Keeping it mounted while open prevents the portal from closing when the
-        // cursor leaves the list item to reach the dropdown panel.
-        const mountDropdown = showDropdown && (isTouchDevice || isHovered || isDropdownOpen);
 
         return (
             <li
@@ -36,8 +35,6 @@ export const ConversationListItem = memo(
                     'hover:bg-weak rounded-md transition-colors text-sm',
                     isSelected && 'is-active'
                 )}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
             >
                 <LumoLink
                     to={`/c/${conversation.id}`}
@@ -53,13 +50,41 @@ export const ConversationListItem = memo(
                     </span>
                 </LumoLink>
                 {showDropdown && (
-                    <div className="relative z-1 ml-auto pl-1 shrink-0">
-                        {mountDropdown ? (
-                            <ChatDropdownMenu conversation={conversation} onOpenChange={setIsDropdownOpen} />
-                        ) : (
-                            <span aria-hidden="true" className="chat-history-item-actions-spacer" />
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
+                    <div
+                        className={clsx(
+                            'relative z-1 ml-auto pl-1 shrink-0',
+                            !isDropdownOpen && 'group-hover:opacity-100 opacity-0'
                         )}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <Button
+                            ref={ellipsisRef}
+                            icon
+                            shape="ghost"
+                            size="small"
+                            className="rounded-sm"
+                            aria-label={c('collider_2025:Action').t`More options`}
+                            onMouseEnter={() => setIsActionsMounted(true)}
+                            onClick={() => {
+                                setIsActionsOpen(true);
+                                setIsDropdownOpen(true);
+                            }}
+                        >
+                            <LumoIcon name="Ellipsis" size={16} />
+                        </Button>
                     </div>
+                )}
+                {isActionsMounted && (
+                    <ConversationActionsDropdown
+                        conversation={conversation}
+                        anchorRef={ellipsisRef}
+                        isOpen={isActionsOpen}
+                        onClose={() => {
+                            setIsActionsOpen(false);
+                            setIsDropdownOpen(false);
+                        }}
+                    />
                 )}
             </li>
         );
@@ -76,8 +101,6 @@ interface ChatsListProps {
 }
 
 const RecentChatsList = memo(({ conversations, selectedConversationId, disabled, onItemClick }: ChatsListProps) => {
-    const isTouchDevice = useIsTouchDevice();
-
     return (
         <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
             {conversations.map((conversation) => (
@@ -86,7 +109,6 @@ const RecentChatsList = memo(({ conversations, selectedConversationId, disabled,
                     conversation={conversation}
                     isSelected={selectedConversationId === conversation.id}
                     showDropdown={!disabled}
-                    isTouchDevice={isTouchDevice}
                     onItemClick={onItemClick}
                 />
             ))}
