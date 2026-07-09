@@ -99,7 +99,7 @@ im.$media-expressions: $media-expressions;
 }
 
 // Override global structure.scss `.sidebar { contain: content; overflow: auto }`
-// so the inner `.sidebar-main-content` owns scrolling instead.
+// so the inner `.sidebar-main-scroll` owns scrolling instead.
 .sidebar.lumo-sidebar-container {
 	contain: none;
 	display: flex;
