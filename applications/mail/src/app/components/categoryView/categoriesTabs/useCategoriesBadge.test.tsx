@@ -47,7 +47,7 @@ const mockSelector = (selector: any, options?: MockSelectorParams) => {
         return options?.disabledCategories || [];
     }
 
-    return options?.unreadCount || 0;
+    return { count: options?.unreadCount || 0, loading: false };
 };
 
 describe('useCategoriesBadge', () => {
