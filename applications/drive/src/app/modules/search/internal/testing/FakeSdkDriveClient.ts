@@ -6,8 +6,8 @@ export class FakeSdkDriveClient implements SdkDriveClient {
     private rootNode: NodeEntity | undefined;
     private nodes = new Map<string, NodeEntity>();
     private tree = new Map<string, NodeEntity[]>();
-    private trashedNodes: NodeEntity[] = [];
     private iterateError: Error | undefined;
+    private failNextIterateFolders = new Map<string, Error>();
 
     setNode(nodeUid: string, node: NodeEntity): void {
         this.nodes.set(nodeUid, node);
@@ -21,12 +21,13 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         this.tree.set(parentUid, children);
     }
 
-    setTrashedNodes(nodes: NodeEntity[]): void {
-        this.trashedNodes = nodes;
+    setIterateError(error: Error): void {
+        this.iterateError = error;
     }
 
-    setIterateFolderChildrenError(error: Error): void {
-        this.iterateError = error;
+    /** Make the NEXT children-iteration for this folder throw once, then succeed (transient failure). */
+    failNextIterateForFolder(folderUid: string, error: Error): void {
+        this.failNextIterateFolders.set(folderUid, error);
     }
 
     async getNode(nodeUid: string): Promise<NodeEntity> {
@@ -44,22 +45,39 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         return this.rootNode;
     }
 
-    async *iterateFolderChildren(
+    async *iterateFolderChildrenNodeUids(
         parentNodeUid: string,
         _filterOptions?: { type?: NodeType }
-    ): AsyncIterable<NodeEntity> {
+    ): AsyncIterable<string> {
         if (this.iterateError) {
             throw this.iterateError;
         }
+        const oneShotError = this.failNextIterateFolders.get(parentNodeUid);
+        if (oneShotError) {
+            this.failNextIterateFolders.delete(parentNodeUid);
+            throw oneShotError;
+        }
         const children = this.tree.get(parentNodeUid) ?? [];
         for (const child of children) {
-            yield child;
+            yield child.uid;
         }
     }
 
-    async *iterateTrashedNodes(): AsyncIterable<NodeEntity> {
-        for (const node of this.trashedNodes) {
-            yield node;
+    async *iterateNodes(uids: string[]): AsyncIterable<NodeEntity> {
+        for (const uid of uids) {
+            const node = this.nodes.get(uid);
+            if (node !== undefined) {
+                yield node;
+                continue;
+            }
+            // Fallback: scan tree so tests that only call setChildren still work.
+            for (const children of this.tree.values()) {
+                const found = children.find((c) => c.uid === uid);
+                if (found) {
+                    yield found;
+                    break;
+                }
+            }
         }
     }
 }

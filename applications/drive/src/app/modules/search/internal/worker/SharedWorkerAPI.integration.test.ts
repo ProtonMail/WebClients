@@ -1,6 +1,8 @@
+import type { DriveEvent, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { DriveEventType } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../shared/SearchDB';
@@ -40,13 +42,46 @@ const STATE_CHANNEL = `search-state-${USER_ID}`;
 // --- Node helpers ---
 
 const folder = (uid: string, name: string) =>
-    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'folder' as any });
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'folder' as NodeType.Folder });
 const trashedFolder = (uid: string, name: string) =>
-    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'folder' as any, trashTime: new Date() });
+    createMockNodeEntity({
+        uid,
+        name: { ok: true, value: name },
+        type: 'folder' as NodeType.Folder,
+        trashTime: new Date(),
+    });
 const file = (uid: string, name: string) =>
-    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'file' as any });
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'file' as NodeType.File });
 const trashedFile = (uid: string, name: string) =>
-    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'file' as any, trashTime: new Date() });
+    createMockNodeEntity({
+        uid,
+        name: { ok: true, value: name },
+        type: 'file' as NodeType.File,
+        trashTime: new Date(),
+    });
+
+// Nodes with an explicit parent, registered via bridge.setNode so getNode() and parent-path
+// resolution work during incremental updates. buildComplexTree only wires setChildren (which feeds
+// the initial walk and iterateNodes), so incremental node events need these too.
+const fileWithParent = (uid: string, name: string, parentUid?: string) =>
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'file' as NodeType.File, parentUid });
+const folderWithParent = (uid: string, name: string, parentUid?: string) =>
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'folder' as NodeType.Folder, parentUid });
+
+const nodeEvent = (
+    type: DriveEventType.NodeCreated | DriveEventType.NodeUpdated | DriveEventType.NodeDeleted,
+    nodeUid: string,
+    parentNodeUid?: string
+): DriveEvent =>
+    ({
+        type,
+        nodeUid,
+        parentNodeUid,
+        eventId: `evt-${type}-${nodeUid}`,
+        treeEventScopeId: SCOPE_ID,
+        isTrashed: false,
+        isShared: false,
+    }) as DriveEvent;
 
 // --- State stream ---
 
@@ -230,6 +265,70 @@ async function search(
 
 async function getAllIndexedItemsForGeneration(api: SharedWorkerAPI, generation: number): Promise<SearchResultItem[]> {
     return search(api, '', { indexPopulatorGeneration: BigInt(generation) });
+}
+
+// Incremental updates don't broadcast isIndexing, so there's no state edge to wait on. Drive the
+// debounced IncrementalUpdateTask by advancing fake timers and poll search until the index reflects
+// the change (tolerating brief writer-busy while a commit is in flight).
+async function advanceUntilSearch(
+    api: SharedWorkerAPI,
+    query: string,
+    predicate: (results: SearchResultItem[]) => boolean,
+    maxIterations = 1000
+): Promise<SearchResultItem[]> {
+    for (let i = 0; i < maxIterations; i++) {
+        try {
+            const results = await search(api, query);
+            if (predicate(results)) {
+                return results;
+            }
+        } catch (e) {
+            if (!(e instanceof Error) || !/write session|write handle/i.test(e.message)) {
+                throw e;
+            }
+        }
+        await jest.advanceTimersByTimeAsync(200);
+    }
+    throw new Error(`advanceUntilSearch('${query}') timed out`);
+}
+
+async function exportAll(api: SharedWorkerAPI, kind: IndexKind): Promise<SerializedIndexEntry[]> {
+    const entries: SerializedIndexEntry[] = [];
+    await api.exportIndexEntries(kind, (event: WorkerIndexExportEvent) => {
+        if (event.type === 'entry') {
+            entries.push({ identifier: event.identifier, attributes: event.attributes });
+        }
+    });
+    return entries;
+}
+
+// The `path` attribute of an exported entry: the ancestor-uid chain, e.g. "/folder-a/folder-b".
+function pathOf(entries: SerializedIndexEntry[], identifier: string): string | undefined {
+    return entries.find((e) => e.identifier === identifier)?.attributes.path?.[0] as string | undefined;
+}
+
+// Like advanceUntilSearch, but polls the diagnostics export (used to observe the `path` attribute,
+// which isn't returned by search results).
+async function advanceUntilExport(
+    api: SharedWorkerAPI,
+    kind: IndexKind,
+    predicate: (entries: SerializedIndexEntry[]) => boolean,
+    maxIterations = 1000
+): Promise<SerializedIndexEntry[]> {
+    for (let i = 0; i < maxIterations; i++) {
+        try {
+            const entries = await exportAll(api, kind);
+            if (predicate(entries)) {
+                return entries;
+            }
+        } catch (e) {
+            if (!(e instanceof Error) || !/write session|write handle/i.test(e.message)) {
+                throw e;
+            }
+        }
+        await jest.advanceTimersByTimeAsync(200);
+    }
+    throw new Error('advanceUntilExport timed out');
 }
 
 // Post-bootstrap cleanup tasks can hold the writer briefly. Retry with fake-timer advances
@@ -732,16 +831,6 @@ describe('SharedWorkerAPI integration', () => {
     });
 
     describe('Scenario: diagnostics export / byte-size / remove', () => {
-        async function exportAll(api: SharedWorkerAPI, kind: IndexKind): Promise<SerializedIndexEntry[]> {
-            const entries: SerializedIndexEntry[] = [];
-            await api.exportIndexEntries(kind, (event: WorkerIndexExportEvent) => {
-                if (event.type === 'entry') {
-                    entries.push({ identifier: event.identifier, attributes: event.attributes });
-                }
-            });
-            return entries;
-        }
-
         it('exportIndexEntries streams every entry with typed attributes', async () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
@@ -812,8 +901,102 @@ describe('SharedWorkerAPI integration', () => {
         });
     });
 
+    describe('Scenario: incremental updates', () => {
+        it('node_created makes a new file searchable', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // A new report is created under Projects. getNode + parent-path resolution read setNode.
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'root-uid'));
+            bridge.setNode('report-q3', fileWithParent('report-q3', 'report-q3.pdf', 'folder-projects'));
+
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeCreated, 'report-q3', 'folder-projects'));
+
+            const results = await advanceUntilSearch(api, 'report', (r) => r.some((x) => x.nodeUid === 'report-q3'));
+            expect(results.map((r) => r.nodeUid).sort()).toEqual(['old-report', 'report-q1', 'report-q2', 'report-q3']);
+        }, 15_000);
+
+        it('node_updated on a folder re-indexes its subtree: adds new children and sweeps vanished ones', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            const initial = (await search(api, 'report')).map((r) => r.nodeUid).sort();
+            expect(initial).toEqual(['old-report', 'report-q1', 'report-q2']);
+
+            // Projects contents change: report-q2 removed, report-q3 added (archive/old-report kept).
+            // The backend sends only the folder event, so the subtree is re-walked from the SDK.
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'root-uid'));
+            bridge.setChildren('folder-projects', [
+                file('report-q1', 'report-q1.pdf'),
+                file('report-q3', 'report-q3.pdf'),
+                folder('folder-archive', 'Archive'),
+            ]);
+
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeUpdated, 'folder-projects', 'root-uid'));
+
+            // q1 kept (re-stamped), q3 added, q2 swept by the epoch GC, old-report re-walked (survives).
+            const results = await advanceUntilSearch(api, 'report', (r) => {
+                const ids = r.map((x) => x.nodeUid);
+                return ids.includes('report-q3') && !ids.includes('report-q2');
+            });
+            expect(results.map((r) => r.nodeUid).sort()).toEqual(['old-report', 'report-q1', 'report-q3']);
+        }, 15_000);
+
+        it('node_deleted removes the node and its descendants', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            expect((await search(api, 'vacation')).map((r) => r.nodeUid)).toEqual(['vacation']);
+
+            // Deleting the Photos folder takes its descendants with it (no per-descendant events).
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeDeleted, 'folder-photos'));
+
+            await advanceUntilSearch(api, 'vacation', (r) => r.length === 0);
+            expect(await search(api, 'vacation')).toHaveLength(0);
+        }, 15_000);
+
+        it('node_updated moves an entire subtree and re-paths every descendant', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Before the move: Projects sits at the root, so its subtree is anchored under it.
+            const before = await exportAll(api, IndexKind.MAIN);
+            expect(pathOf(before, 'folder-projects')).toBe('');
+            expect(pathOf(before, 'report-q1')).toBe('/folder-projects');
+            expect(pathOf(before, 'folder-archive')).toBe('/folder-projects');
+            expect(pathOf(before, 'old-report')).toBe('/folder-projects/folder-archive');
+
+            // Move Projects (with its whole subtree) under a new Destination folder. Only the top
+            // folder event is emitted; the subtree must be re-walked and every descendant re-pathed.
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode('folder-dest', folderWithParent('folder-dest', 'Destination', 'root-uid'));
+            bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'folder-dest'));
+
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeUpdated, 'folder-projects', 'folder-dest'));
+
+            // After the move: paths are rebased under /folder-dest/folder-projects/...
+            const after = await advanceUntilExport(
+                api,
+                IndexKind.MAIN,
+                (entries) => pathOf(entries, 'old-report') === '/folder-dest/folder-projects/folder-archive'
+            );
+            expect(pathOf(after, 'folder-projects')).toBe('/folder-dest');
+            expect(pathOf(after, 'report-q1')).toBe('/folder-dest/folder-projects');
+            expect(pathOf(after, 'folder-archive')).toBe('/folder-dest/folder-projects');
+            expect(pathOf(after, 'old-report')).toBe('/folder-dest/folder-projects/folder-archive');
+
+            // The moved files are still searchable — nothing lost or duplicated.
+            expect((await search(api, 'report')).map((r) => r.nodeUid).sort()).toEqual([
+                'old-report',
+                'report-q1',
+                'report-q2',
+            ]);
+        }, 15_000);
+    });
+
     // TODO: Add version upgrade scenario
-    // TODO: Add incremental update scenario
     // TODO: Add shared_with_me scenarios: tree removed, tree added
     // TODO: Add volume changed after password recovery
     // TODO: Add DB corrupted scenario
