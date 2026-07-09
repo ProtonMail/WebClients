@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { AppsDropdown, useModalStateObject } from '@proton/components';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
@@ -72,7 +73,7 @@ const LumoSidebarContent = () => {
                     <NewChatSidebarButton />
                 </div>
 
-                <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 min-h-0 gap-2">
+                <Scroll className="sidebar-main-scroll flex flex-column flex-1 min-h-0" scrollContained>
                     <div className="sidebar-section flex flex-column gap-1">
                         {showSearch && <SearchSection onSearchClick={() => searchModal.openModal(true)} />}
                         {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
@@ -92,7 +93,7 @@ const LumoSidebarContent = () => {
                         <ProjectsSidebarSection onItemClick={closeOnItemClick} isSmallScreen={isSmallScreen} />
                     </Suspense>
                     <ChatsSidebarSection onItemClick={closeOnItemClick} />
-                </div>
+                </Scroll>
 
                 <div className="sidebar-section sidebar-bottom flex flex-column gap-1 shrink-0">
                     <SidebarItem
