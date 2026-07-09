@@ -7,8 +7,8 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash/useFlag';
 
 export const useCategoriesData = () => {
-    const [mailSettings] = useMailSettings();
-    const [organization] = useOrganization();
+    const [mailSettings, mailSettingsLoading] = useMailSettings();
+    const [organization, organizationLoading] = useOrganization();
 
     const categoryViewFlag = useFlag('CategoryView');
     const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
@@ -24,11 +24,15 @@ export const useCategoriesData = () => {
     const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
     const shouldSeeWideToolbars = !isRefreshedToolbarUIDisabled || hasBetaAccess;
 
+    // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
+    const isCategoryViewEnabledSettled = !mailSettingsLoading && !organizationLoading && !betaFlag.loading;
+
     return {
         canUseCategoryView,
         categoriesStore,
         activeCategoriesTabs: isCategoryViewEnabled ? activeCategoriesTabs : [],
         isCategoryViewEnabled,
+        isCategoryViewEnabledSettled,
         shouldSeeWideToolbars,
     };
 };
