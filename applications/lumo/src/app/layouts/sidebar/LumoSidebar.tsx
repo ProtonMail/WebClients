@@ -17,9 +17,8 @@ import { useSearchModal } from '../../providers/SearchModalProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
-import { FavoritesSidebarSection } from './FavoritesSidebarSection';
-import { ChatHistorySection } from './components/ChatHistorySection';
 import { ChatsSidebarButton } from './components/ChatsSidebarButton';
+import { ChatsSidebarSection } from './components/ChatsSidebarSection';
 import { GallerySidebarButton } from './components/GallerySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
@@ -54,9 +53,9 @@ const LumoSidebarContent = () => {
 
     return (
         <>
-            <div className="lumo-sidebar flex flex-column h-full">
+            <div className="lumo-sidebar flex flex-column flex-1 min-h-0 overflow-hidden">
                 {showMobileHeader && (
-                    <div className="lumo-sidebar-mobile-header flex flex-row flex-nowrap items-center py-3 px-4 border-bottom border-weak">
+                    <div className="lumo-sidebar-mobile-header flex flex-row flex-nowrap items-center py-3 px-4 border-bottom border-weak shrink-0">
                         <img src={lumoCatIcon} alt="Lumo" className="lumo-sidebar-mobile-header-logo shrink-0" />
                         <button
                             className="shrink-0 flex items-center justify-center color-weak interactive-pseudo-inset rounded-sm ml-auto"
@@ -69,33 +68,33 @@ const LumoSidebarContent = () => {
                     </div>
                 )}
 
-                <div className="sidebar-section flex flex-column gap-1">
+                <div className="sidebar-top shrink-0">
                     <NewChatSidebarButton />
-                    {showSearch && <SearchSection onSearchClick={() => searchModal.openModal(true)} />}
-                    {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
-                    {apiKeyManagement && (
-                        <SidebarItem
-                            icon="CodeXml"
-                            label={c('collider_2025:Button').t`API`}
-                            onClick={() => {
-                                history.push('/docs/api');
-                                closeOnItemClick?.();
-                            }}
-                        />
-                    )}
-                    {!isGuest && <ChatsSidebarButton onItemClick={closeOnItemClick ?? (() => {})} />}
                 </div>
 
-                <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 gap-2">
+                <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 min-h-0 gap-2">
+                    <div className="sidebar-section flex flex-column gap-1">
+                        {showSearch && <SearchSection onSearchClick={() => searchModal.openModal(true)} />}
+                        {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
+                        {apiKeyManagement && (
+                            <SidebarItem
+                                icon="CodeXml"
+                                label={c('collider_2025:Button').t`API`}
+                                onClick={() => {
+                                    history.push('/docs/api');
+                                    closeOnItemClick?.();
+                                }}
+                            />
+                        )}
+                        {!isGuest && <ChatsSidebarButton onItemClick={closeOnItemClick ?? (() => {})} />}
+                    </div>
                     <Suspense fallback={null}>
                         <ProjectsSidebarSection onItemClick={closeOnItemClick} isSmallScreen={isSmallScreen} />
                     </Suspense>
-                    <FavoritesSidebarSection onItemClick={closeOnItemClick} />
-                    {/* <ChatHistorySection /> */}
-                    {!isGuest && <ChatHistorySection />}
+                    <ChatsSidebarSection onItemClick={closeOnItemClick} />
                 </div>
 
-                <div className="sidebar-section sidebar-bottom flex flex-column gap-1">
+                <div className="sidebar-section sidebar-bottom flex flex-column gap-1 shrink-0">
                     <SidebarItem
                         icon="Settings"
                         label={c('collider_2025:Button').t`Settings`}
@@ -130,12 +129,14 @@ const LumoSidebar = () => {
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
-                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none bg-norm rounded-xl',
+                    'sidebar lumo-sidebar-container h-full min-h-0 flex flex-column overflow-hidden no-print outline-none bg-norm rounded-xl',
                     !isVisible && 'sidebar--hidden',
                     isOverlay && 'sidebar-expanded'
                 )}
             >
-                <LumoSidebarHeader />
+                <div className="shrink-0">
+                    <LumoSidebarHeader />
+                </div>
                 <LumoSidebarContent />
             </div>
         </>

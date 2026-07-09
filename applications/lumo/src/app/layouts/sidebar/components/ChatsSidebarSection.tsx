@@ -1,0 +1,178 @@
+import { memo, useMemo } from 'react';
+import { shallowEqual } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { startOfDay, subDays } from 'date-fns';
+import { c } from 'ttag';
+
+import { FREE_USER_CHAT_RETENTION_DAYS } from '../../../constants/limits';
+import { useLumoUserSettings } from '../../../hooks';
+import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useConversation } from '../../../providers/ConversationProvider';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { useSidebar } from '../../../providers/SidebarProvider';
+import { useLumoSelector } from '../../../redux/hooks';
+import {
+    historyRowsEqual,
+    selectConversationById,
+    selectHistoryConversationRows,
+    selectStarredConversationsSorted,
+} from '../../../redux/selectors';
+import { selectSpaceMap } from '../../../redux/slices/core/spaces';
+import { ChatHistoryGroupByMenu } from '../../sidepanel/ChatHistoryGroupByMenu';
+import RecentChatsList, { ConversationListItem } from '../../sidepanel/RecentChatsList';
+import { SIDEBAR_CHAT_TOTAL_LIMIT } from '../constants';
+import { CollapsibleSidebarSection } from './CollapsibleSidebarSection';
+
+const SKELETON_ROWS = 8;
+
+const ChatsSidebarLoadingSkeleton = () => {
+    return (
+        <div className="flex flex-column gap-1 px-1.5 pt-1">
+            {Array.from({ length: SKELETON_ROWS }).map((_, i) => (
+                <div key={i} className="skeleton rounded-lg" style={{ height: '32px', opacity: 1 - i * 0.08 }} />
+            ))}
+        </div>
+    );
+};
+
+interface ConnectedItemProps {
+    id: string;
+    isSelected: boolean;
+    onItemClick?: () => void;
+}
+
+const ConnectedConversationListItem = memo(({ id, isSelected, onItemClick }: ConnectedItemProps) => {
+    const conversation = useLumoSelector(selectConversationById(id));
+
+    if (!conversation) {
+        return null;
+    }
+
+    return (
+        <ConversationListItem
+            conversation={conversation}
+            isSelected={isSelected}
+            showDropdown
+            onItemClick={onItemClick}
+        />
+    );
+});
+
+ConnectedConversationListItem.displayName = 'ConnectedConversationListItem';
+
+interface ChatsSidebarSectionInnerProps {
+    onItemClick?: () => void;
+}
+
+const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps) => {
+    const favorites = useLumoSelector(selectStarredConversationsSorted, shallowEqual);
+    const conversationRows = useLumoSelector(selectHistoryConversationRows, historyRowsEqual);
+    const spaceMap = useLumoSelector(selectSpaceMap, shallowEqual);
+    const { conversationId } = useConversation();
+    const { hasLumoPlus } = useLumoPlan();
+    const { lumoUserSettings } = useLumoUserSettings();
+    const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
+
+    const { filteredHistoryRows, visibleHistoryRows, showSeeMore } = useMemo(() => {
+        const projectFilteredRows = showProjectConversationsInHistory
+            ? conversationRows
+            : conversationRows.filter((row) => {
+                  const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
+                  return space?.isProject !== true;
+              });
+
+        let retainedRows = projectFilteredRows;
+        if (!hasLumoPlus) {
+            const cutoff = subDays(startOfDay(new Date()), FREE_USER_CHAT_RETENTION_DAYS);
+            retainedRows = projectFilteredRows.filter((row) => startOfDay(new Date(row.createdAt)) >= cutoff);
+        }
+
+        const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - favorites.length);
+
+        return {
+            filteredHistoryRows: retainedRows,
+            visibleHistoryRows: retainedRows.slice(0, historySlots),
+            showSeeMore: retainedRows.length > historySlots,
+        };
+    }, [conversationRows, spaceMap, showProjectConversationsInHistory, hasLumoPlus, favorites.length]);
+
+    return (
+        <div className="chats-sidebar-section flex flex-column min-w-0 gap-2">
+            <CollapsibleSidebarSection
+                label={c('collider_2025:Title').t`Favorites`}
+                className="favorites-sidebar-section"
+            >
+                {favorites.length === 0 ? (
+                    <div className="color-weak text-sm px-1.5 py-1">
+                        {c('collider_2025:Info').t`No favorites yet. Star a chat to find it here quickly.`}
+                    </div>
+                ) : (
+                    <div className="chat-history-list">
+                        <RecentChatsList
+                            conversations={favorites}
+                            selectedConversationId={conversationId}
+                            onItemClick={onItemClick}
+                        />
+                    </div>
+                )}
+            </CollapsibleSidebarSection>
+
+            <CollapsibleSidebarSection
+                label={c('collider_2025:Title').t`Recent`}
+                className="chat-history-sidebar-section"
+                actionButton={<ChatHistoryGroupByMenu />}
+            >
+                {filteredHistoryRows.length === 0 ? (
+                    <div className="color-weak text-sm px-1.5 py-1">
+                        {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
+                    </div>
+                ) : (
+                    <div className="chat-history-list">
+                        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
+                            {visibleHistoryRows.map((row) => (
+                                <ConnectedConversationListItem
+                                    key={row.id}
+                                    id={row.id}
+                                    isSelected={row.id === conversationId}
+                                    onItemClick={onItemClick}
+                                />
+                            ))}
+                        </ul>
+                        {showSeeMore && (
+                            <Link
+                                to="/chats"
+                                className="block text-sm color-weak px-1.5 py-2 text-center text-no-decoration hover:color-norm"
+                                onClick={onItemClick}
+                            >
+                                {c('collider_2025:Button').t`All chats`}
+                            </Link>
+                        )}
+                    </div>
+                )}
+            </CollapsibleSidebarSection>
+        </div>
+    );
+};
+
+interface ChatsSidebarSectionProps {
+    onItemClick?: () => void;
+}
+
+export const ChatsSidebarSection = ({ onItemClick }: ChatsSidebarSectionProps) => {
+    const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
+    const isGuest = useIsGuest();
+    const { closeOnItemClick } = useSidebar();
+
+    if (isGuest) {
+        return null;
+    }
+
+    const handleItemClick = onItemClick ?? closeOnItemClick;
+
+    if (!reduxLoadedFromIdb) {
+        return <ChatsSidebarLoadingSkeleton />;
+    }
+
+    return <ChatsSidebarSectionInner onItemClick={handleItemClick} />;
+};
