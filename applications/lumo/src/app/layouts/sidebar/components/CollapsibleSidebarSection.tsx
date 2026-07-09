@@ -40,7 +40,7 @@ export const CollapsibleSidebarSection = ({
     };
 
     return (
-        <div className={clsx('collapsible-sidebar-section flex flex-column min-w-0 overflow-hidden', className)}>
+        <div className={clsx('collapsible-sidebar-section flex flex-column min-w-0 flex-nowrap', className)}>
             <div
                 className="collapsible-section-header flex items-center py-2 px-1.5 rounded-lg"
                 onMouseEnter={() => setIsHovered(true)}

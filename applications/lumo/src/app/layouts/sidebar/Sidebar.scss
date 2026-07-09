@@ -7,8 +7,6 @@ im.$media-expressions: $media-expressions;
 // Main sidebar container - handles positioning and transitions
 .sidebar {
 	font-weight: 500;
-	overflow-x: hidden;
-	overflow-y: auto;
 
 	// Smooth width transitions for desktop
 	transition:
@@ -47,6 +45,7 @@ im.$media-expressions: $media-expressions;
 		block-size: 100% !important;
 		max-block-size: none !important;
 		z-index: 100 !important;
+
 		// Override global .sidebar max-inline-size (272px) from structure.scss
 		inline-size: 80vw !important;
 		max-inline-size: 80vw !important;
@@ -97,6 +96,18 @@ im.$media-expressions: $media-expressions;
 	// Desktop sidebar z-index to ensure it's above disclaimers and other content
 	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
 	position: relative;
+}
+
+// Override global structure.scss `.sidebar { contain: content; overflow: auto }`
+// so the inner `.sidebar-main-content` owns scrolling instead.
+.sidebar.lumo-sidebar-container {
+	contain: none;
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	max-block-size: 100%;
+	min-block-size: 0;
+	overflow: hidden;
 }
 
 // Sidebar expanded state (used for mobile overlay styling)

@@ -1,15 +1,12 @@
-import { memo, useRef, useState } from 'react';
+import { memo } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-
 import { LumoLink } from '../../components/Links/LumoLink';
-import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { Conversation, ConversationId } from '../../types';
-import ConversationActionsDropdown from './ConversationActionsDropdown';
 import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
+import { ConversationSidebarActions } from './ConversationSidebarActions';
 
 export interface ConversationListItemProps {
     conversation: Conversation;
@@ -20,11 +17,6 @@ export interface ConversationListItemProps {
 
 export const ConversationListItem = memo(
     ({ conversation, isSelected, showDropdown, onItemClick }: ConversationListItemProps) => {
-        const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-        const [isActionsMounted, setIsActionsMounted] = useState(false);
-        const [isActionsOpen, setIsActionsOpen] = useState(false);
-        const ellipsisRef = useRef<HTMLButtonElement>(null);
-
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
 
         return (
@@ -50,41 +42,9 @@ export const ConversationListItem = memo(
                     </span>
                 </LumoLink>
                 {showDropdown && (
-                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
-                    <div
-                        className={clsx(
-                            'relative z-1 ml-auto pl-1 shrink-0',
-                            !isDropdownOpen && 'group-hover:opacity-100 opacity-0'
-                        )}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <Button
-                            ref={ellipsisRef}
-                            icon
-                            shape="ghost"
-                            size="small"
-                            className="rounded-sm"
-                            aria-label={c('collider_2025:Action').t`More options`}
-                            onMouseEnter={() => setIsActionsMounted(true)}
-                            onClick={() => {
-                                setIsActionsOpen(true);
-                                setIsDropdownOpen(true);
-                            }}
-                        >
-                            <LumoIcon name="Ellipsis" size={16} />
-                        </Button>
+                    <div className="relative z-1 ml-auto pl-1 shrink-0">
+                        <ConversationSidebarActions conversation={conversation} />
                     </div>
-                )}
-                {isActionsMounted && (
-                    <ConversationActionsDropdown
-                        conversation={conversation}
-                        anchorRef={ellipsisRef}
-                        isOpen={isActionsOpen}
-                        onClose={() => {
-                            setIsActionsOpen(false);
-                            setIsDropdownOpen(false);
-                        }}
-                    />
                 )}
             </li>
         );

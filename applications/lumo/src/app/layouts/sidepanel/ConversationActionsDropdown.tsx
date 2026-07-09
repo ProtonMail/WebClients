@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { RefObject } from 'react';
 
 import { c } from 'ttag';
@@ -6,10 +7,9 @@ import { Dropdown, DropdownMenu, DropdownMenuButton } from '@proton/components';
 
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
-import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
-import { useConversationDelete } from '../../hooks/useConversationDelete';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import type { Conversation } from '../../types';
+import { ConversationDeleteFlow } from './ConversationDeleteFlow';
 
 interface Props {
     conversation: Conversation;
@@ -19,15 +19,11 @@ interface Props {
 }
 
 const ConversationActionsDropdown = ({ conversation, anchorRef, isOpen, onClose }: Props) => {
+    const [showDeleteFlow, setShowDeleteFlow] = useState(false);
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
         location: 'sidebar',
     });
-
-    const { openConfirmationModal, showConfirmDeleteModal, handleDelete, confirmDeleteModalProps, hasGeneratedImages } =
-        useConversationDelete({
-            conversation,
-        });
 
     return (
         <>
@@ -50,19 +46,18 @@ const ConversationActionsDropdown = ({ conversation, anchorRef, isOpen, onClose 
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="flex flex-row flex-nowrap items-center gap-2 w-full"
-                        onClick={openConfirmationModal}
+                        onClick={() => {
+                            setShowDeleteFlow(true);
+                            onClose();
+                        }}
                     >
                         <LumoIcon name="Trash2" size={16} />
                         <span>{c('Option').t`Delete`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
-            {showConfirmDeleteModal && (
-                <ConfirmDeleteModal
-                    handleDelete={handleDelete}
-                    hasGeneratedImages={hasGeneratedImages}
-                    {...confirmDeleteModalProps}
-                />
+            {showDeleteFlow && (
+                <ConversationDeleteFlow conversation={conversation} onClose={() => setShowDeleteFlow(false)} />
             )}
             {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
         </>
