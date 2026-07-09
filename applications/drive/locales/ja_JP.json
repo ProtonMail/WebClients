@@ -1011,6 +1011,9 @@
       "Sign up": [
         "サインアップ"
       ],
+      "Skip": [
+        "スキップ"
+      ],
       "Skip verification": [
         "検証をスキップする"
       ],
@@ -1106,6 +1109,9 @@
       ],
       "Upload and share files": [
         "ファイルをアップロードして共有"
+      ],
+      "Upload anyway": [
+        "とにかくアップロード"
       ],
       "Upload file": [
         "ファイルをアップロード"
@@ -3532,12 +3538,6 @@
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
       ],
-      "Invalid ${ name } code": [
-        "無効な ${ name } コードです"
-      ],
-      "Invalid card number": [
-        "無効なカード番号です"
-      ],
       "Invalid code": [
         "無効なコードです"
       ],
@@ -3546,9 +3546,6 @@
       ],
       "Invalid email address": [
         "メールアドレスが正しくありません"
-      ],
-      "Invalid expiration date": [
-        "無効な有効期限"
       ],
       "Invalid IBAN": [
         "IBANが無効"
@@ -12590,6 +12587,20 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "操作"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "状態"
+      ],
+      "Type": [
+        "種類"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -966,6 +966,9 @@
       "Sign up": [
         "Prijavite se"
       ],
+      "Skip": [
+        "Preskoči"
+      ],
       "Skip verification": [
         "Preskoči preverjanje"
       ],
@@ -1052,6 +1055,9 @@
       ],
       "Upload and share files": [
         "Naloži in deli datoteke"
+      ],
+      "Upload anyway": [
+        "Vseeno naloži"
       ],
       "Upload file": [
         "Naloži datoteko"
@@ -3358,12 +3364,6 @@
       "Incorrect username": [
         "Nepravilno uporabniško ime"
       ],
-      "Invalid ${ name } code": [
-        "Neveljavna koda ${ name }"
-      ],
-      "Invalid card number": [
-        "Neveljavna številka kartice"
-      ],
       "Invalid code": [
         "Neveljavna koda"
       ],
@@ -3372,9 +3372,6 @@
       ],
       "Invalid email address": [
         "Neveljaven e-poštni naslov"
-      ],
-      "Invalid expiration date": [
-        "Neveljaven datum poteka veljavnosti"
       ],
       "Invalid IBAN": [
         "Neveljaven IBAN"
@@ -6909,9 +6906,6 @@
       ],
       "Index kinds": [
         "Vrste indeksa"
-      ],
-      "Initial indexing": [
-        "Začetno indeksiranje"
       ],
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
@@ -12191,6 +12185,11 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ]
+    },
+    "Title header for keys table": {
+      "Type": [
+        "Vrsta"
       ]
     },
     "Today icon tooltip in mini calendar": {

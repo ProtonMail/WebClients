@@ -1006,6 +1006,9 @@
       "Sign up": [
         "Registrati"
       ],
+      "Skip": [
+        "Salta"
+      ],
       "Skip verification": [
         "Salta la verifica"
       ],
@@ -1101,6 +1104,9 @@
       ],
       "Upload and share files": [
         "Carica e condividi file"
+      ],
+      "Upload anyway": [
+        "Carica comunque"
       ],
       "Upload file": [
         "Carica file"
@@ -3538,12 +3544,6 @@
       "Incorrect username": [
         "Username non corretto"
       ],
-      "Invalid ${ name } code": [
-        "Codice ${ name } non valido"
-      ],
-      "Invalid card number": [
-        "Numero della carta non valido"
-      ],
       "Invalid code": [
         "Codice non valido"
       ],
@@ -3552,9 +3552,6 @@
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
-      ],
-      "Invalid expiration date": [
-        "Data di scadenza non valida"
       ],
       "Invalid IBAN": [
         "IBAN non valido"
@@ -3730,7 +3727,7 @@
         "Timeout della richiesta"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Il regime di reverse charge non è previsto per questo piano"
+        "Il regime di inversione contabile non è previsto per questo piano"
       ],
       "Search failed": [
         "Ricerca non riuscita"
@@ -6653,7 +6650,7 @@
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Il tuo account è attualmente configurato per applicare il regime di reverse charge. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
+        "Il tuo account è attualmente configurato per applicare il regime di inversione contabile. Questo non è previsto per il piano selezionato. Per procedere, rimuovi il numero di partita IVA dall'indirizzo di fatturazione o seleziona un piano diverso."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
@@ -7164,9 +7161,6 @@
       ],
       "Index kinds": [
         "Tipi di indice"
-      ],
-      "Initial indexing": [
-        "Indicizzazione iniziale"
       ],
       "Integrated 2FA authenticator": [
         "Autenticatore 2FA integrato"
@@ -12844,6 +12838,20 @@
       ],
       "You’ve got 5 GB of storage": [
         "Hai 5 GB di spazio archiviazione"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Fingerprint": [
+        "Impronta digitale"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Type": [
+        "Tipo"
       ]
     },
     "Today icon tooltip in mini calendar": {
