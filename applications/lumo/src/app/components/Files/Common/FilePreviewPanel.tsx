@@ -6,13 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments } from '../../../redux/selectors';
-import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { Role } from '../../../types';
 import { storeAttachmentInRedux } from '../../../util/attachmentHelpers';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
 import { isPastedContentAttachment, updatePastedContentAttachment } from '../../../util/pastedContentHelper';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
@@ -64,6 +64,7 @@ const parseCSVContent = (content: string): string[][] => {
 };
 
 export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }: FilePreviewPanelProps) => {
+    useNativeComposerVisibilityApi({ isBlocking: true });
     const dispatch = useLumoDispatch();
     // Always read the latest version from Redux so the panel reflects edits made via Save.
     const attachments = useLumoSelector(selectAttachments);
@@ -141,7 +142,6 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
     const isProcessing = attachment.processing;
     const handleClose = () => {
         onClose();
-        setNativeComposerVisibility(true);
     };
 
     const renderTableView = (content: string) => {
