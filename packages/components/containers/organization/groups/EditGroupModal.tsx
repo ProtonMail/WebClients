@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -56,6 +57,8 @@ const EditGroupModal = () => {
     const [organization] = useOrganization();
 
     const showRolesTab = useFlag('AdminRoleMVP');
+
+    const isScimGroup = getIsScimGroup(groupData);
 
     const onCancel = () => {
         if (dirty) {
@@ -131,6 +134,7 @@ const EditGroupModal = () => {
                                     }
                                 }}
                                 error={errors.name}
+                                disabled={isScimGroup}
                             />
                         </InputFieldStacked>
                         <InputFieldStacked isGroupElement icon="text-align-left">
