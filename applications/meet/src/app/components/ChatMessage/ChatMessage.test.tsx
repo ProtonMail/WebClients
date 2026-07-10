@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { cleanup, render, screen } from '@testing-library/react';
+import { act, cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
@@ -203,6 +203,59 @@ describe('ChatMessage', () => {
 
         // The component should refocus the textarea after sending
         expect(textarea).toHaveFocus();
+    });
+
+    it('clears the field before the send resolves so continued typing does not append to the sent text', async () => {
+        let resolveSend: (value: boolean) => void = () => {};
+        const mockOnMessageSend = vi.fn(
+            () =>
+                new Promise<boolean>((resolve) => {
+                    resolveSend = resolve;
+                })
+        );
+        const user = userEvent.setup();
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
+
+        const textarea = screen.getByPlaceholderText(placeholderText);
+        await user.type(textarea, 'First');
+        await user.keyboard('{Enter}');
+
+        expect(mockOnMessageSend).toHaveBeenCalledWith('First');
+
+        // The field is flushed immediately, before the (still pending) send resolves.
+        expect(textarea).toHaveValue('');
+
+        // Typing while the send is in flight starts from an empty field instead of appending.
+        await user.type(textarea, 'Second');
+        expect(textarea).toHaveValue('Second');
+
+        await act(async () => {
+            resolveSend(true);
+        });
+
+        // Resolving the earlier send must not clobber the newly typed text.
+        expect(textarea).toHaveValue('Second');
+    });
+
+    it('restores the unsent text when sending fails and nothing new was typed', async () => {
+        const mockOnMessageSend = vi.fn().mockResolvedValue(false);
+        const user = userEvent.setup();
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
+
+        const textarea = screen.getByPlaceholderText(placeholderText);
+        await user.type(textarea, 'Test message');
+        await user.keyboard('{Enter}');
+
+        expect(mockOnMessageSend).toHaveBeenCalledWith('Test message');
+        expect(textarea).toHaveValue('Test message');
     });
 
     it('does not send empty or whitespace-only messages via Enter', async () => {

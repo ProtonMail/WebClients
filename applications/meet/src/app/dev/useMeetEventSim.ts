@@ -14,7 +14,7 @@ import { initMeetEventSim } from './meetEventSim';
 export const useMeetEventSim = () => {
     const dispatch = useMeetDispatch();
 
-    const sendMessage = useChatMessage();
+    const { sendMessage } = useChatMessage();
 
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
