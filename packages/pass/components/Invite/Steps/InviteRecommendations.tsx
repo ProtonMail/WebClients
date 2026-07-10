@@ -18,6 +18,18 @@ import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
+export type InviteSuggestionItem = { email: string; isGroup: boolean; groupName: string | undefined };
+
+export const filterInviteSuggestions = (query: string, items: InviteSuggestionItem[]): InviteSuggestionItem[] => {
+    const contains = query.toLowerCase();
+    return isEmptyString(contains)
+        ? items
+        : items.filter(
+              ({ email, groupName }) =>
+                  email.toLowerCase().includes(contains) || groupName?.toLowerCase().includes(contains)
+          );
+};
+
 export type InviteRecommendationsProps = {
     autocomplete: string;
     excluded: Set<string>;
@@ -68,14 +80,7 @@ export const InviteRecommendations: FC<InviteRecommendationsProps> = (props) => 
             return suggested.map(({ email, isGroup }) => ({ email, isGroup, groupName: undefined }));
         })();
 
-        const startsWith = props.autocomplete.toLowerCase();
-
-        return isEmptyString(startsWith)
-            ? displayed
-            : displayed.filter(
-                  ({ email, groupName }) =>
-                      email.toLowerCase().startsWith(startsWith) || groupName?.toLowerCase().startsWith(startsWith)
-              );
+        return filterInviteSuggestions(props.autocomplete, displayed);
     }, [suggested, organization, organizationGroups, view, props.autocomplete]);
 
     const loading = loadingSuggestions || loadingOrganization;
