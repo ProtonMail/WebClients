@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Regex invalid": [
+        "Expressió regular no vàlida"
+      ],
+      "Regex unsafe": [
+        "Expressió regular no segura"
       ]
     },
     "Activity": {
@@ -4170,6 +4176,36 @@
       ],
       "Expires in": [
         "Caducarà d'aquí a"
+      ],
+      "Advanced": [
+        "Avançat"
+      ],
+      "Basic": [
+        "Bàsic"
+      ],
+      "Check": [
+        "Comprova"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
+      ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
+      "Starts with": [
+        "Comença amb"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ]
     },
     "Link": {
@@ -4199,6 +4235,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Heu seleccionat ${ semiboldText } en aquesta caixa forta."
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ]
     },
     "new_plans: feature": {
@@ -5205,6 +5259,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajusta els comportaments de l'emplenament automàtic per canviar on se suggereixen els inicis de sessió."
+      ],
+      "Learn more": [
+        "Saber-ne més"
+      ],
+      "Test a URL against this rule": [
+        "Comproveu un URL amb aquesta regla"
+      ],
+      "URL matching": [
+        "Coincidència d'URL"
       ]
     },
     "Title_cloned_item": {
@@ -5554,6 +5620,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Aquest element no es pot suggerir per a l'emplenament automàtic a causa de «${ neverModeDescriptionStrong }». Afegiu un altre URL si voleu que aquest element s'empleni automàticament."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduïu un URL per comprovar si la vostra regla actual coincideix amb l'URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincideix amb aquest URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincideix amb aquest URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Aquest URL es bloquejarà per l'emplenament automàtic"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Aquest URL NO es bloquejarà per l'emplenament automàtic"
       ]
     }
   }

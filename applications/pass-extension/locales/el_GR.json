@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Regex invalid": [
+        "Μη έγκυρο Regex"
+      ],
+      "Regex unsafe": [
+        "Μη ασφαλές Regex"
       ]
     },
     "Activity": {
@@ -4171,6 +4177,36 @@
       ],
       "Expires in": [
         "Λήγει σε"
+      ],
+      "Advanced": [
+        "Για προχωρημένους"
+      ],
+      "Basic": [
+        "Βασικό"
+      ],
+      "Check": [
+        "Έλεγχος"
+      ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
+      ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
+      ],
+      "Starts with": [
+        "Ξεκινάει με"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
       ]
     },
     "Link": {
@@ -4200,6 +4236,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη."
+      ],
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ]
     },
     "new_plans: feature": {
@@ -5206,6 +5260,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Προσαρμόστε τις συμπεριφορές αυτόματης συμπλήρωσης για να αλλάξετε πού προτείνονται οι συνδέσεις."
+      ],
+      "Learn more": [
+        "Μάθε περισσότερα"
+      ],
+      "Test a URL against this rule": [
+        "Δοκιμή μιας διεύθυνσης URL με βάση αυτόν τον κανόνα"
+      ],
+      "URL matching": [
+        "Αντιστοίχιση URL"
       ]
     },
     "Title_cloned_item": {
@@ -5555,6 +5621,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Αυτό το στοιχείο δεν μπορεί να προταθεί για αυτόματη συμπλήρωση λόγω του \"${ neverModeDescriptionStrong }\". Προσθέστε μια άλλη διεύθυνση URL εάν θέλετε να γίνεται αυτόματη συμπλήρωση αυτού του στοιχείου."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Εισαγάγετε μια διεύθυνση URL για να ελέγξετε αν ο τρέχων κανόνας σας ταιριάζει με τη διεύθυνση URL"
+      ],
+      "The rule is matching this URL": [
+        "Ο κανόνας ταιριάζει με αυτήν τη διεύθυνση URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Ο κανόνας ΔΕΝ ταιριάζει με αυτήν τη διεύθυνση URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Αυτή η διεύθυνση URL θα αποκλειστεί από την αυτόματη συμπλήρωση"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Αυτή η διεύθυνση URL ΔΕ θα αποκλειστεί από την αυτόματη συμπλήρωση"
       ]
     }
   }
