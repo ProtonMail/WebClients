@@ -3,6 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { CategoriesOnboardingFlags } from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
@@ -19,7 +20,7 @@ import {
     hasSeenOnboardingModal,
 } from './categoriesOnboarding.helpers';
 import type { CategorizeStepLocation } from './onboardingInterface';
-import { CategoriesOnboardingFlags, OnboardingFlow, OnboardingStep } from './onboardingInterface';
+import { OnboardingFlow, OnboardingStep } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 interface CategoriesOnboardingContextProps {
