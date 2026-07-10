@@ -9,17 +9,14 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import {
-    CUSTOM_VIEWS,
-    CUSTOM_VIEWS_LABELS,
-    LABEL_IDS_TO_HUMAN,
-    type MARK_AS_STATUS,
-} from '@proton/shared/lib/mail/constants';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, type MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
+import { getInboxRedirectUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
@@ -86,9 +83,11 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, navigation }
     const subscriptionContainerRef = useRef<HTMLDivElement>(null);
 
     const { sendNewslettersViewVisit } = useNewsletterSubscriptionTelemetry();
+    const { isCategoryViewEnabled, isCategoryViewEnabledSettled } = useCategoriesView();
     const hasSentPageView = useRef(false);
 
     const isDomBusy = domIsBusy();
+    const redirectURL = getInboxRedirectUrl({ isCategoryViewEnabled, isCategoryViewEnabledSettled });
 
     const overrideActions = {
         ...actions,
@@ -126,7 +125,7 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, navigation }
 
     // The view is not available on mobile, we want to make sure to avoid showing it to users
     if (breakpoints.viewportWidth['<=small']) {
-        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
+        return redirectURL ? <Redirect to={redirectURL} /> : <Redirect to="/" />;
     }
 
     if (subscriptionCount === 0) {
