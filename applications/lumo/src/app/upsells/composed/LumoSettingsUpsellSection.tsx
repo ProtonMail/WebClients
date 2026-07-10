@@ -5,6 +5,7 @@ import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shar
 import { LUMO_SIGNUP_PATH, LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { isNativeMobileApp } from '../../util/userAgent';
 import BasicUpgradeButton from '../primitives/BasicUpgradeButton';
 import GetLumoBusinessButton from '../primitives/GetLumoBusinessButton';
 import GetProtonWorkspaceButton from '../primitives/GetProtonWorkspaceButton';
@@ -75,9 +76,11 @@ const FreeTierUpsell = ({ isGuest }: { isGuest: boolean }) => (
         <h2 className="text-lg text-bold mb-4">{c('collider_2025: Upsell Title').t`Elevate your AI experience`}</h2>
         <div className="flex flex-row flex-nowrap gap-3">
             <PlusCard isGuest={isGuest} />
-            <PlanCard planName={c('collider_2025: Plan Name').t`Business`} features={businessFeaturesFull}>
-                <GetLumoBusinessButton />
-            </PlanCard>
+            {!isNativeMobileApp() && (
+                <PlanCard planName={c('collider_2025: Plan Name').t`Business`} features={businessFeaturesFull}>
+                    <GetLumoBusinessButton />
+                </PlanCard>
+            )}
         </div>
     </div>
 );
