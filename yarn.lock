@@ -10755,6 +10755,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/nav@workspace:packages/nav"
   dependencies:
+    "@proton/components": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/testing": "workspace:^"

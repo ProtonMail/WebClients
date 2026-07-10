@@ -40,7 +40,6 @@ import {
     InvoicesSection,
     LanguageSection,
     LogsSection,
-    OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
     OverviewSection,
     PasswordsSection,
@@ -69,7 +68,6 @@ import {
     UsernameSection,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
-    WireGuardConfigurationSection,
     YourPlanSection,
     YourPlanSectionV2,
     YourPlanUpsellsSectionV2,
@@ -98,11 +96,11 @@ import { locales } from '@proton/shared/lib/i18n/locales';
 import type { Permission } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
-import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 import { TVContainer } from '@proton/vpn/components/tv';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
+import { DownloadsRoute } from '../routes/downloads';
 import { VPNSidebar } from './VPNSidebar';
 import { getRoutes } from './routes';
 
@@ -406,11 +404,7 @@ const MainContainer: FunctionComponent = () => {
                                     </PrivateMainSettingsArea>
                                 </Route>
                                 <Route path={vpnRoutes.downloads.to}>
-                                    <PrivateMainSettingsArea config={vpnRoutes.downloads}>
-                                        <VPNClientsSection />
-                                        <WireGuardConfigurationSection />
-                                        <OpenVPNConfigurationSection />
-                                    </PrivateMainSettingsArea>
+                                    <DownloadsRoute legacyRouteConfig={vpnRoutes.downloads} />
                                 </Route>
                                 {getIsSectionAvailable(vpnRoutes.referral) && (
                                     <Route path={vpnRoutes.referral.to}>
