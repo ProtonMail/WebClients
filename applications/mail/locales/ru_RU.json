@@ -1838,6 +1838,9 @@
       ],
       "Writing assistant seats": [
         "Лицензии помощника по написанию"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "{count, plural, one {# лицензия} few {# лицензии} many {# лицензий} other {# лицензии}} ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -1997,6 +2000,9 @@
       ],
       "You have reached the trial limit.": [
         "Вы достигли лимита пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "В течение пробного периода вы можете использовать до ${ TRIAL_MAX_LUMO_SEATS } {TRIAL_MAX_LUMO_SEATS, plural, one {# лицензия #} few {# лицензии #} many {# лицензий #} other {# лицензии #}} ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -2191,6 +2197,12 @@
       ],
       "Yearly": [
         "Ежегодно"
+      ],
+      "${ n } year": [
+        "${ n } {n, plural, one {год} few {года} many {лет} other {года}}",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
       ]
     },
     "BOSS": {
@@ -4508,6 +4520,9 @@
       ],
       "Only": [
         "Только"
+      ],
+      "2 user accounts": [
+        "{count, plural, one {# аккаунт пользователя} few {# аккаунта пользователя} many {# аккаунтов пользователей} other {# аккаунта пользователя}}"
       ]
     },
     "Duo offer: Link": {
@@ -9344,6 +9359,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Создать безопасное облако для ${ memberCount } участника",
+        "Создать безопасное облако для ${ memberCount } участников",
+        "Создать безопасное облако для ${ memberCount } {memberCount, plural, one {участника} few {участников} many {участников} other {участника}}",
+        "Создайте безопасное облако для ${ memberCount } участников"
       ]
     },
     "info": {
@@ -10489,6 +10510,9 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } {maxLength, plural, one {символ} few {символа} many {символов} other {символа}}"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11050,6 +11074,9 @@
         "Включено ${ seats } лицензии",
         "Включено ${ seats } лицензий",
         "Включено ${ seats } лицензий"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "В течение пробного периода вам доступно до ${ TRIAL_MAX_MEET_SEATS } {TRIAL_MAX_MEET_SEATS, plural, one {лицензия} few {лицензии} many {лицензий} other {лицензии}} ${ MEET_SHORT_APP_NAME }."
       ]
     },
     "Message": {
@@ -12247,6 +12274,12 @@
         "Поддержка ${ n } пользовательских доменов электронной почты",
         "Поддержка ${ n } пользовательских доменов электронной почты",
         "Поддержка ${ n } пользовательских доменов электронной почты"
+      ],
+      "${ n } country": [
+        "${ n } страна",
+        "${ n } {n, plural, one {страна} few {страны} many {стран} other {страны}}",
+        "${ n } {n, plural, one {страна} few {страны} many {стран} other {страны}}",
+        "${ n } стран"
       ]
     },
     "Notification": {
@@ -13556,6 +13589,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можете получить до **${ maxRewardAmount }** в качестве остатка на счете."
+      ],
+      "Friend subscribed": [
+        "{count, plural, one {Друг подписался} few {Друга подписалось} many {Друзей подписалось} other {Друг подписался}}",
+        "Друга подписались",
+        "Друзей подписалось",
+        "Друзей подписалось"
       ]
     },
     "Remaining days before the message expire": {

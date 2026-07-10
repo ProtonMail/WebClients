@@ -10256,6 +10256,27 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Exact host matching": [
+        "精确主机匹配"
+      ],
+      "Exact URL matching": [
+        "精确 URL 匹配"
+      ],
+      "Never fill on this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Parent domain and subdomains (default)": [
+        "父域名及子域名（默认）"
+      ],
+      "Regular expression": [
+        "正则表达式"
+      ],
+      "Starts with": [
+        "开头为"
+      ],
+      "URL wildcard pattern": [
+        "URL 通配符模式"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10801,6 +10822,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "“开头为”匹配规则"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精确（子）域名匹配规则"
+      ],
+      "Exact URL matching rule": [
+        "精确 URL 匹配规则"
+      ],
+      "Never fill with this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Regular expression rule": [
+        "正则表达式规则"
+      ],
+      "Wildcard pattern matching rule": [
+        "通配符模式匹配规则"
       ]
     },
     "Message display when a new app version is available": {
@@ -14770,7 +14809,7 @@
         "来自 ${ sendersList } 的邮件将被标记为 ${ labelsList }"
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
-        "来自 ${ sendersList } 的邮件将被移动到 ${ folder }"
+        "来自 ${ sendersList } 的邮件将移至 ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "移动 ${ selectionCount } 项会话"
@@ -16434,6 +16473,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
       ]
     },
     "WeekDay": {

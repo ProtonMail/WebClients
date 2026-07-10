@@ -4456,6 +4456,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Bir kategoride son ziyaretinizden bu yana okunmamış iletiler olduğunda mavi bir nokta belirir."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Ayarlar bölümünden istediğiniz zaman kategoriler ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tamamen kapatabilirsiniz."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı başka bir kategoriye sürükleyip bırakın. Benzer e-postalar bundan sonra otomatik olarak o kategoride sıralanacaktır."
       ]
     },
     "description": {
@@ -9260,6 +9269,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
       ]
     },
     "info": {
@@ -10422,6 +10434,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
+      ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
+      ],
+      "Regular expression": [
+        "Düzenli ifade"
+      ],
+      "Starts with": [
+        "Şununla başlar"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10979,6 +11012,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ]
     },
     "Message display when a new app version is available": {
@@ -16413,6 +16464,15 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "New messages": [
+        "Yeni iletiler"
+      ],
+      "Personalize your Categories": [
+        "Kategorilerinizi kişiselleştirin"
+      ],
+      "You're in control": [
+        "Kontrol sizde"
       ]
     },
     "Title header for keys table": {
@@ -16761,6 +16821,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
       ]
     },
     "WeekDay": {
@@ -17030,6 +17093,17 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Actions": {
+      "Got it": [
+        "Anlaşıldı"
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "Skip": [
+        "Atla"
       ]
     }
   }
