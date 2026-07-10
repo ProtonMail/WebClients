@@ -776,6 +776,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Regex invalid": [
+        "Regex ogiltigt"
       ]
     },
     "Activity": {
@@ -1380,6 +1383,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Misslyckades att starta SSH-agent: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Misslyckades att stoppa SSH-agent: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2739,6 +2748,9 @@
       "Moving an item to another vault will erase its secure links.": [
         "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
         "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } kommer använda SSH-nycklarna sparade i dina valv."
       ]
     },
     "Keyboard key": {
@@ -3945,6 +3957,33 @@
       ],
       "Custom expiration (minutes)": [
         "Anpassad utgång (minuter)"
+      ],
+      "Advanced": [
+        "Avancerat"
+      ],
+      "Basic": [
+        "Grundläggande"
+      ],
+      "Check": [
+        "Kontrollera"
+      ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
+      ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
+      "Starts with": [
+        "Börjar med"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Använd ${ PASS_APP_NAME } som SSH-agent"
       ]
     },
     "Link": {
@@ -3979,6 +4018,9 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valde ${ semiboldText } i detta valv."
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ]
     },
     "new_plans: feature": {
@@ -4955,6 +4997,15 @@
       ],
       "SSH Agent": [
         "SSH-agent"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "Test a URL against this rule": [
+        "Testa en URL mot denna regel"
+      ],
+      "URL matching": [
+        "URL-matchning"
       ]
     },
     "Title_cloned_item": {
@@ -5303,6 +5354,23 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ange en URL för att kontrollera om din nuvarande regel matchar URL:en"
+      ],
+      "The rule is matching this URL": [
+        "Regeln matchar denna URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regeln matchar INTE denna URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denna URL kommer att blockeras från automatisk ifyllning"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denna URL kommer INTE att blockeras från automatisk ifyllning"
       ]
     }
   }

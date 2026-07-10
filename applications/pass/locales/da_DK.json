@@ -1404,6 +1404,12 @@
       ],
       "Expiration must be between 1 hour and 1 year": [
         "Udløb skal være mellem 1 time og 1 år"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Kunne ikke starte SSH-agenten: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Kunne ikke stoppe SSH-agenten: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2793,6 +2799,12 @@
       "Moving an item to another vault will erase its secure links.": [
         "Flyttes et element til en anden boks, slettes dets sikre links.",
         "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } bruger SSH-nøglerne, der er opbevaret i dine bokse."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ingen SSH-nøgler fundet i ${ PASS_SHORT_APP_NAME }. Opret SSH-nøgleelementer til at bruge med agenten."
       ]
     },
     "Keyboard key": {
@@ -4002,6 +4014,12 @@
       ],
       "Expires in": [
         "Udløber om"
+      ],
+      "Advanced": [
+        "Avanceret"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Brug ${ PASS_APP_NAME } som SSH-agent"
       ]
     },
     "Link": {
@@ -4486,6 +4504,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Bekræftelsesmail sendt. Tjek din indbakke for at bekræfte din postkasse."
+      ],
+      "SSH agent successfully started": [
+        "SSH-agent startet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agent stoppet"
       ]
     },
     "Theme": {
@@ -5012,6 +5036,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "SSH Agent": [
+        "SSH-agent"
       ]
     },
     "Title_cloned_item": {
@@ -5360,6 +5387,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agenten kræver at man bruger SSH-nøgler, hvilket ikke er tilgængeligt i dit nuværende abonnement."
       ]
     }
   }
