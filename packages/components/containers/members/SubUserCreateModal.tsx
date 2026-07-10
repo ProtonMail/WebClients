@@ -643,6 +643,7 @@ const SubUserCreateModal = ({
                           ]
                         : []),
                 ]}
+                style={{ minBlockSize: '45rem' }}
             />
             <ModalFooter>
                 {showMultipleUserUploadButton ? (
