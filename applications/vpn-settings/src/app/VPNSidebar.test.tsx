@@ -131,6 +131,7 @@ describe('VPNSidebar', () => {
         (navigation.useB2BAdminNavigation as Mock).mockReturnValue({
             enabled: true,
             loading: false,
+            nav: { items: [] },
             sidebar: { status: true, toggle: vi.fn() },
             spotlight: { isOn: true, setOff: vi.fn() },
             routes: resolved,
@@ -161,6 +162,7 @@ describe('VPNSidebar', () => {
             loading: false,
             sidebar: { status: false, toggle },
             spotlight: { isOn: false, setOff: vi.fn() },
+            nav: { items: [] },
             routes: {
                 items: [
                     {

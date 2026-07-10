@@ -15,6 +15,7 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
+        "@proton/components": "workspace:^",
         "@proton/icons": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/testing": "workspace:^",
