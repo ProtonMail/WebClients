@@ -2,8 +2,11 @@ import { c } from 'ttag';
 
 import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineNavigation } from '@proton/nav/api/defineNavigation';
+import { findNavItemById } from '@proton/nav/api/findNavItem';
 import type { NavContext } from '@proton/nav/types/models';
-import type { NavDefinition, NavItemDefinition } from '@proton/nav/types/nav';
+import type { NavDefinition, NavItemDefinition, NavItemResolved, NavResolved } from '@proton/nav/types/nav';
+import type { NavDefinitionIds, NavSectionIds as SectionIds } from '@proton/nav/types/navIds';
+import type { NavSectionResolved } from '@proton/nav/types/section';
 import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
@@ -595,3 +598,46 @@ export const resolveNavigation = ({
 
     return prefix ? applyPrefix(nav, prefix) : nav;
 };
+
+type NavId = NavDefinitionIds<typeof routesDefinition>;
+
+/**
+ * Given an item id, type-safe and autocomplete, finds all section ids
+ * It's tied to `routesDefinition`
+ *
+ * @example
+ * type DownloadSectionIds = NavSectionIds<'my-vpn.download-apps'>;
+ * // 'my-vpn.download-apps.protonvpn-clients' | 'my-vpn.download-apps.wireguard-configuration'
+ * //   | 'my-vpn.download-apps.openvpn-configuration-files'
+ */
+type NavSectionIds<ParentId extends NavId> = SectionIds<typeof routesDefinition, ParentId>;
+
+/**
+ * Utility type to have typed resolved nav items, otherwise its `id` would default back to string.
+ *
+ * @example
+ * const item: NavItem<'my-vpn.download-apps'> | undefined = findNavItem(nav, 'my-vpn.download-apps');
+ * item?.id;               // 'my-vpn.download-apps'                — a literal, not `string`
+ * item?.sections?.[0].id; // NavSectionIds<'my-vpn.download-apps'> — a literal, not `string`
+ */
+interface NavItem<Id extends NavId> extends Omit<NavItemResolved, 'id' | 'sections'> {
+    id: Id;
+    sections: (Omit<NavSectionResolved, 'id'> & { id: NavSectionIds<Id> })[] | undefined;
+}
+
+/**
+ * Adds a literal type back because a NavResolved is dynamic. TypeScript widens it since it doesn't know the final outcome.
+ *
+ *
+ * The returned item's `id` is `Id` and each `section.id` is a {@link NavSectionIds}`<Id>` —
+ * `id` is constrained to {@link NavId} for autocomplete and typo safety.
+ *
+ * @example
+ * const downloads = findNavItem(adminSidebarFeature.nav, 'my-vpn.download-apps');
+ * if (downloads) {
+ *     downloads.to;               // the resolved route path
+ *     downloads.sections?.[0].id; // NavSectionIds<'my-vpn.download-apps'>
+ * }
+ */
+export const findNavItem = <Id extends NavId>(nav: NavResolved, id: Id): NavItem<Id> | undefined =>
+    findNavItemById(nav, id) as NavItem<Id> | undefined;
