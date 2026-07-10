@@ -1,6 +1,7 @@
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
+
 import type { NavContext } from '../types/models';
 import type { NavDefinition } from '../types/nav';
-import { SettingsLayoutVariant } from '../types/searchOptions';
 import { defineSearchOptions } from './defineSearchOptions';
 
 const makeContext = (): NavContext => ({ user: { id: 'u1', email: 'user@example.com' } }) as unknown as NavContext;

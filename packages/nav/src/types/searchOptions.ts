@@ -1,9 +1,5 @@
+import type { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
 import type { IconName } from '@proton/icons/types';
-
-export const enum SettingsLayoutVariant {
-    Default = 'default',
-    Card = 'card',
-}
 
 export interface SearchOption {
     id: string;

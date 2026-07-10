@@ -1,7 +1,8 @@
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
+
 import { compute } from '../compute';
 import type { NavContext } from '../types/models';
 import type { NavArgs, NavItemDefinition, NavItemResolved, NavResolved } from '../types/nav';
-import { SettingsLayoutVariant } from '../types/searchOptions';
 import type { NavSectionDefinition, NavSectionResolved } from '../types/section';
 import { assertUniqueIds } from './assertUniqueIds';
 
