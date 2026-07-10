@@ -43,8 +43,8 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
  * See comment at the top of this file.
  */
 export const ctLogs ={
-  version: '85.100',
-  log_list_timestamp: '2026-06-06T13:39:36Z',
+  version: '87.11',
+  log_list_timestamp: '2026-07-07T13:41:34Z',
   operators: [
     {
       name: 'Google',
@@ -123,7 +123,86 @@ export const ctLogs ={
           }
         }
       ],
-      tiled_logs: []
+      tiled_logs: [
+        {
+          description: "Google 'ParcelYard2026h2' log",
+          log_id: 'utuIpG+cr6QJDoLlk1bbbni0pT9YLbCBl5UkLym2jJg=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEP2H56bHx6pPm5mCku6PFpeRuA5Ux0gs8iwXIVhvVdbojs0pPwZqLtlIEoJNbjxMEePTYo/qDW85AjhMJITlavA==',
+          submission_url: 'https://parcelyard2026h2.prod.certificate.transparency.goog/',
+          monitoring_url: 'https://storage.googleapis.com/parcelyard2026h2.prod.certificate.transparency.goog/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2026-07-01T00:00:00Z',
+            end_exclusive: '2027-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: "Google 'ParcelYard2027h1' log",
+          log_id: 'HIl0B+YBCgEpO7Z439ejaM6xjMpSHcyk04bkoy5bXQQ=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX7i7gYwmBxpiLXAlM/VLk4BFzspJRmZA86iReO7NVRlwGL1KWb/Dv5DRXJNBZd+9uREkNUTee5yBy2dRdRGa0w==',
+          submission_url: 'https://parcelyard2027h1.prod.certificate.transparency.goog/',
+          monitoring_url: 'https://storage.googleapis.com/parcelyard2027h1.prod.certificate.transparency.goog/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-01-01T00:00:00Z',
+            end_exclusive: '2027-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: "Google 'ParcelYard2027h2' log",
+          log_id: 'aYS3IzyydLLRRn2l4EDXH+upCiHniGU3Srn5vPhocjc=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+CTFsoroxXi53eLT+x2T4gsMKOcqzYEhqSLjyF6uVfdgF8yBeyA2cDWsu6nmhKGhqyoohwLh3PPgXdltfPP3BA==',
+          submission_url: 'https://parcelyard2027h2.prod.certificate.transparency.goog/',
+          monitoring_url: 'https://storage.googleapis.com/parcelyard2027h2.prod.certificate.transparency.goog/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-07-01T00:00:00Z',
+            end_exclusive: '2028-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: "Google 'PlumbersArms2026h2' log",
+          log_id: 'IPBfqqOkkvxqwUjMM6ICNhhrSfqpfmuzkk+yXsNrHDU=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERcKG6mGyrCTtzkWBNT51LFFsM1lZ3ZPSIoXgVilDtnY0dyhwKSX7jomkXvdyqWr8DOP3HA6I6kzmREX5wpUvug==',
+          submission_url: 'https://plumbersarms2026h2.prod.certificate.transparency.goog/',
+          monitoring_url: 'https://storage.googleapis.com/plumbersarms2026h2.prod.certificate.transparency.goog/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2026-07-01T00:00:00Z',
+            end_exclusive: '2027-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: "Google 'PlumbersArms2027h1' log",
+          log_id: 'X/nA+6QtrHjOZELrGazggaKb1OL7U68MYzB55QWCBMk=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAKYYdjIeQwDP0RIY9mhAVntX5s2ObMc2F6u8cELSbhvavljWD/OesJZHUtqQjBXE5Ekbpiq6nchmaVnEHHpJmw==',
+          submission_url: 'https://plumbersarms2027h1.prod.certificate.transparency.goog/',
+          monitoring_url: 'https://storage.googleapis.com/plumbersarms2027h1.prod.certificate.transparency.goog/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-01-01T00:00:00Z',
+            end_exclusive: '2027-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: "Google 'PlumbersArms2027h2' log",
+          log_id: 'M3qex8rmqQSLdS8tk65+SyqQLSG0lxKdg+J5x1PJL4w=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHCu5hooSXlk8FAiSkoWiZJ5G9GzCiJhj3eoJ9p3F3ZzV2QgcgxWWI9f75vnFgygju+baK11dsf3bXHAo/+TL/Q==',
+          submission_url: 'https://plumbersarms2027h2.prod.certificate.transparency.goog/',
+          monitoring_url: 'https://storage.googleapis.com/plumbersarms2027h2.prod.certificate.transparency.goog/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-07-01T00:00:00Z',
+            end_exclusive: '2028-01-01T00:00:00Z'
+          }
+        }
+      ]
     },
     {
       name: 'Cloudflare',
@@ -473,19 +552,6 @@ export const ctLogs ={
       ],
       tiled_logs: [
         {
-          description: "Let's Encrypt 'Sycamore2026h1'",
-          log_id: 'pcl4kl1XRheChw3YiWYLXFVki30AQPLsB2hR0YhpGfc=',
-          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfEEe0JZknA91/c6eNl1aexgeKzuGQUMvRCXPXg9L227O5I4Pi++Abcpq6qxlVUKPYafAJelAnMfGzv3lHCc8gA==',
-          submission_url: 'https://log.sycamore.ct.letsencrypt.org/2026h1/',
-          monitoring_url: 'https://mon.sycamore.ct.letsencrypt.org/2026h1/',
-          mmd: 60,
-          state: { usable: { timestamp: '2025-11-27T03:00:00Z' } },
-          temporal_interval: {
-            start_inclusive: '2025-12-18T00:00:00Z',
-            end_exclusive: '2026-06-18T00:00:00Z'
-          }
-        },
-        {
           description: "Let's Encrypt 'Sycamore2026h2'",
           log_id: 'bP5QGUOoXqkWvFLRM+TcyR7xQRx9JYQg0XOAnhgY6zo=',
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwR1FtiiMbpvxR+sIeiZ5JSCIDIdTAPh7OrpdchcrCcyNVDvNUq358pqJx2qdyrOI+EjGxZ7UiPcN3bL3Q99FqA==',
@@ -522,19 +588,6 @@ export const ctLogs ={
           temporal_interval: {
             start_inclusive: '2027-06-18T00:00:00Z',
             end_exclusive: '2027-12-16T00:00:00Z'
-          }
-        },
-        {
-          description: "Let's Encrypt 'Willow2026h1'",
-          log_id: '4yON8o2iiOCq4Kzw+pDJhfC2v/XSpSewAfwcRFjEtug=',
-          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtpFyulwgy1+u+wYQ37lbV+HsPFNYoi4sy6dZP662N/Z/usdNi4+Q3RLES1RY2PNk7zL/7VPSn3JERMPu/s4e4A==',
-          submission_url: 'https://log.willow.ct.letsencrypt.org/2026h1/',
-          monitoring_url: 'https://mon.willow.ct.letsencrypt.org/2026h1/',
-          mmd: 60,
-          state: { usable: { timestamp: '2025-11-27T03:00:00Z' } },
-          temporal_interval: {
-            start_inclusive: '2025-12-17T00:00:00Z',
-            end_exclusive: '2026-06-17T00:00:00Z'
           }
         },
         {
