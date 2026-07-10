@@ -31,6 +31,7 @@ import { createIFrameAppController } from './IFrameAppController';
 export type IFrameAppState = {
     connectionID: MaybeNull<string>;
     domain: string;
+    title: MaybeNull<string>;
     settings: ProxiedSettings;
     visible: boolean;
 };
@@ -38,6 +39,7 @@ export type IFrameAppState = {
 const getInitialIFrameAppState = (): IFrameAppState => ({
     connectionID: null,
     domain: '',
+    title: null,
     settings: getInitialSettings(),
     visible: false,
 });
@@ -70,7 +72,11 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                     case InlinePortMessageType.IFRAME_INIT:
                         AppStateManager.setState(message.payload.appState);
                         theme.setState(message.payload.theme);
-                        setState({ settings: message.payload.settings, domain: message.payload.domain });
+                        setState({
+                            settings: message.payload.settings,
+                            domain: message.payload.domain,
+                            title: message.payload.title,
+                        });
                         /** immediately set the locale on iframe init : the `IFramContextProvider`
                          * does not use the standard `ExtensionApp` wrapper which takes care of
                          * hydrating the initial locale and watching for language changes */
