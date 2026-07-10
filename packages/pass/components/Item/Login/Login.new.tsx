@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -26,7 +27,12 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
+import {
+    bindOTPSanitizer,
+    getSanitizedUserIdentifiers,
+    resolveDefaultItemName,
+    sanitizeExtraField,
+} from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
 import { createNewUrlItem, fromItems } from '@proton/pass/lib/urls/utils/autofill';
 import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
@@ -44,6 +50,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 const FORM_ID = 'new-login';
 
 export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentUrl, onCancel, onSubmit }) => {
+    const { getExtensionClientState } = usePassCore();
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
@@ -68,7 +75,9 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             itemEmail: clone?.content.itemEmail ?? searchParams.get('email') ?? '',
             itemUsername: clone?.content.itemUsername ?? '',
             mailboxes: [],
-            name: clone?.metadata.name ?? domain ?? '',
+            name:
+                clone?.metadata.name ??
+                resolveDefaultItemName({ title: getExtensionClientState?.()?.title, url: currentUrl }),
             note: clone?.metadata.note ?? '',
             passkeys: [],
             password: clone?.content.password ?? '',
