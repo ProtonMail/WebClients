@@ -1,8 +1,9 @@
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
 import type { IconName } from '@proton/icons/types';
 
 import type { NavContext } from '../types/models';
 import type { NavArgs, NavItemResolved, NavResolved } from '../types/nav';
-import { type SearchOption, SettingsLayoutVariant } from '../types/searchOptions';
+import type { SearchOption } from '../types/searchOptions';
 import { defineNavigation } from './defineNavigation';
 
 export function defineSearchOptions<TContext extends NavContext>(arg: NavArgs<TContext> | NavResolved): SearchOption[] {
