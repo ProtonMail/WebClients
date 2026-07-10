@@ -4,14 +4,14 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon, useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { formatShortDate } from '../../util/date';
 import { ProjectActionsDropdown } from './ProjectActionsDropdown';
-import { getProjectCategory } from './constants';
 import { useProjects } from './hooks/useProjects';
 import { ProjectLimitModal } from './modals/ProjectLimitModal';
 import type { Project } from './types';
@@ -58,8 +58,6 @@ export const ProjectCard = ({
         }
     };
 
-    const category = getProjectCategory(project.icon);
-
     if (listRow) {
         return (
             <ButtonLike
@@ -71,7 +69,11 @@ export const ProjectCard = ({
                 onMouseLeave={() => setIsHovered(false)}
             >
                 <div className="project-card-main min-h-custom" style={{ '--min-h-custom': '28px' }}>
-                    <Icon name={category.icon as any} size={4} className="project-card-icon color-weak flex-shrink-0" />
+                    <ProjectIcon
+                        iconId={project.icon}
+                        size={16}
+                        className="project-card-icon color-weak flex-shrink-0"
+                    />
                     <span className="project-card-title">{project.name}</span>
                     {project.conversationCount !== undefined && (
                         <span className="project-card-stat text-sm ml-1">
@@ -107,7 +109,7 @@ export const ProjectCard = ({
         >
             <div className="project-card-header">
                 <div className="project-card-title-row">
-                    <Icon name={category.icon as any} size={4.5} className="project-card-icon" />
+                    <ProjectIcon iconId={project.icon} size={18} className="project-card-icon" />
                     <h3 className="project-card-title">{project.name}</h3>
                 </div>
                 {!project.isExample && (
