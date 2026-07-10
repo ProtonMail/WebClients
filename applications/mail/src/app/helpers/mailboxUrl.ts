@@ -193,3 +193,19 @@ export const setCategoryInUrl = (category: CategoryLabelID) => {
         category: LABEL_IDS_TO_HUMAN[category],
     });
 };
+
+export const getInboxRedirectUrl = ({
+    isCategoryViewEnabled,
+    isCategoryViewEnabledSettled,
+}: {
+    isCategoryViewEnabled: boolean;
+    isCategoryViewEnabledSettled: boolean;
+}): string | null => {
+    if (!isCategoryViewEnabledSettled) {
+        return null;
+    }
+
+    return isCategoryViewEnabled
+        ? setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+        : `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
+};
