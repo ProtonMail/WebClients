@@ -7,8 +7,7 @@ import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shar
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 
-export const getPassAppRoutes = ({ app, user, organization, subscription, flags }: OrganizationRouterParams) => {
-    const { canDisplayPassReports = false } = flags;
+export const getPassAppRoutes = ({ app, user, organization, subscription }: OrganizationRouterParams) => {
     const isAdmin = user.isAdmin && user.isSelf;
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -61,8 +60,7 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, flags 
                 text: c('Title').t`Reports`,
                 to: '/reports',
                 icon: 'chart-line',
-                available:
-                    canDisplayPassReports && (hasOrganizationKey || hasOrganization) && isAdmin && hasPassOrBundleB2B,
+                available: (hasOrganizationKey || hasOrganization) && isAdmin && hasPassOrBundleB2B,
                 subsections: [
                     {
                         id: 'reports',
