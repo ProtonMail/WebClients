@@ -63,7 +63,7 @@ const MessageDetailsModal = ({
     const { getFeature } = useFeatures([FeatureCode.NumAttachmentsWithoutEmbedded]);
     const { feature: numAttachmentsWithoutEmbeddedFeature } = getFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
 
-    const { categoryViewAccess } = useCategoriesData();
+    const { isCategoryViewEnabled } = useCategoriesData();
 
     const { onClose } = rest;
 
@@ -201,7 +201,7 @@ const MessageDetailsModal = ({
                         </span>
                     </div>
                     {/* Only show category when the user is viewing a message in the inbox */}
-                    {categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX && (
+                    {isCategoryViewEnabled && labelID === MAILBOX_LABEL_IDS.INBOX && (
                         <div className="mb-2 flex flex-nowrap">
                             <span className="mr-2 flex">
                                 <span className="m-auto flex">

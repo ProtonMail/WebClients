@@ -19,13 +19,13 @@ export const prepareNotificationData = ({
     history,
     mailSettings,
     notifier,
-    categoryViewAccess,
+    isCategoryViewEnabled,
 }: {
     message: Message;
     history: History<unknown>;
     mailSettings: MailSettings;
     notifier: string[];
-    categoryViewAccess: boolean;
+    isCategoryViewEnabled: boolean;
 }) => {
     const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
     const sender = Sender.Name || Sender.Address;
@@ -33,7 +33,7 @@ export const prepareNotificationData = ({
     const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
 
     let labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
-    if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
+    if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
         const categoryLabel = LabelIDs.find(isCategoryLabel);
         if (categoryLabel && notifier.includes(categoryLabel)) {
             labelID = categoryLabel;
@@ -42,7 +42,7 @@ export const prepareNotificationData = ({
             labelID = MAILBOX_LABEL_IDS.ALL_MAIL;
         }
         // Fallback case, when categories are disabled we redirect to Inbox
-    } else if (isCategoryLabel(labelID) && !categoryViewAccess) {
+    } else if (isCategoryLabel(labelID) && !isCategoryViewEnabled) {
         labelID = MAILBOX_LABEL_IDS.INBOX;
     }
 
@@ -68,21 +68,21 @@ export const displayNotification = ({
     mailSettings,
     notifier,
     onOpenElement,
-    categoryViewAccess,
+    isCategoryViewEnabled,
 }: {
     message: Message;
     history: History<unknown>;
     mailSettings: MailSettings;
     notifier: string[];
     onOpenElement: () => void;
-    categoryViewAccess: boolean;
+    isCategoryViewEnabled: boolean;
 }) => {
     const notificationData = prepareNotificationData({
         message,
         history,
         mailSettings,
         notifier,
-        categoryViewAccess,
+        isCategoryViewEnabled,
     });
 
     if (isElectronMail) {

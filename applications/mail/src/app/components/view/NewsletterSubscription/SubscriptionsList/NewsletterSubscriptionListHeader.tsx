@@ -173,14 +173,14 @@ export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: Newslette
     const counts = useMailSelector(selectSubscriptionsCount);
     const dispatch = useMailDispatch();
 
-    const { hasAccessToCategoryView } = useCategoriesView();
+    const { canUseCategoryView } = useCategoriesView();
 
     const handleTabClick = (tab: SubscriptionTabs) => {
         dispatch(newsletterSubscriptionsActions.setSelectedTab(tab));
         tabClickCallback();
     };
 
-    const title = hasAccessToCategoryView
+    const title = canUseCategoryView
         ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, counts.active)
         : c('Title').t`Newsletters`;
 

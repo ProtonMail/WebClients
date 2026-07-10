@@ -42,8 +42,9 @@ const B2C_ONBOARDING_SEEN =
 const B2C_ONBOARDING_IN_PROGRESS = B2C_ONBOARDING_SEEN & ~CategoriesOnboardingFlags.INITIAL_MODAL;
 
 const defaultCategoriesView: ReturnType<typeof useCategoriesView> = {
-    categoryViewAccess: true,
-    hasAccessToCategoryView: true,
+    isCategoryViewEnabled: true,
+    isCategoryViewEnabledSettled: true,
+    canUseCategoryView: true,
     shouldShowTabs: true,
     categoriesStore: [],
     activeCategoriesTabs: [],
@@ -175,7 +176,7 @@ describe('useCategoriesOnboardingEligibility', () => {
             it('are not eligible when the organization enabled categories but they lack flag access', () => {
                 mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
                 mockAllMailCount(10);
-                mockCategoriesView({ categoryViewAccess: false, hasAccessToCategoryView: false });
+                mockCategoriesView({ isCategoryViewEnabled: false, canUseCategoryView: false });
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
@@ -325,7 +326,7 @@ describe('useCategoriesOnboardingEligibility', () => {
             it('are not eligible without flag access, even mid-onboarding', () => {
                 mockAccountCreatedAt(EXISTING_ACCOUNT_CREATE_TIME);
                 mockAllMailCount(10);
-                mockCategoriesView({ categoryViewAccess: false });
+                mockCategoriesView({ isCategoryViewEnabled: false });
                 mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_IN_PROGRESS });
 
                 expect(renderEligibility()).toStrictEqual({

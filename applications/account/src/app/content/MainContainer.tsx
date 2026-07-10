@@ -213,7 +213,7 @@ const MainContainer = () => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
 
-    const { hasAccessToCategoryView } = useCategoriesData();
+    const { canUseCategoryView } = useCategoriesData();
 
     const [referralInfo] = useReferralInfo();
 
@@ -318,7 +318,7 @@ const MainContainer = () => {
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
         isAuthenticatorAvailable,
-        isCategoryViewEnabled: hasAccessToCategoryView,
+        isCategoryViewEnabled: canUseCategoryView,
         isRolesAndPermissionsEnabled,
         isMspEnabled,
         isRecoverySettingsRedesignEnabled,

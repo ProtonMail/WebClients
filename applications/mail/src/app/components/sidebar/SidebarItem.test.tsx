@@ -42,7 +42,7 @@ describe('SidebarItem', () => {
     beforeEach(() => {
         minimalCache();
         mockUseMailSettings();
-        mockUseCategoriesData({ categoryViewAccess: false });
+        mockUseCategoriesData({ isCategoryViewEnabled: false });
     });
 
     afterEach(() => {
@@ -50,7 +50,7 @@ describe('SidebarItem', () => {
     });
 
     it('should trigger refresh when on inbox with category hash', async () => {
-        mockUseCategoriesData({ categoryViewAccess: true });
+        mockUseCategoriesData({ isCategoryViewEnabled: true });
 
         await mailTestRender(<SidebarItem {...defaultProps} />, {
             initialEntries: ['/inbox#category=primary'],
@@ -72,7 +72,7 @@ describe('SidebarItem', () => {
     });
 
     it('should NOT trigger refresh when on inbox with extra hash params beyond category', async () => {
-        mockUseCategoriesData({ categoryViewAccess: true });
+        mockUseCategoriesData({ isCategoryViewEnabled: true });
 
         await mailTestRender(<SidebarItem {...defaultProps} />, {
             initialEntries: ['/inbox#category=primary&page=2'],
@@ -94,7 +94,7 @@ describe('SidebarItem', () => {
     });
 
     it('should NOT trigger refresh when on a message inside inbox', async () => {
-        mockUseCategoriesData({ categoryViewAccess: true });
+        mockUseCategoriesData({ isCategoryViewEnabled: true });
 
         await mailTestRender(<SidebarItem {...defaultProps} />, {
             initialEntries: ['/inbox/messageID#category=primary'],

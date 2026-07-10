@@ -11,6 +11,6 @@ export const useCategoriesView = () => {
 
     return {
         ...categoriesData,
-        shouldShowTabs: labelID === MAILBOX_LABEL_IDS.INBOX && !isSearching && categoriesData.categoryViewAccess,
+        shouldShowTabs: labelID === MAILBOX_LABEL_IDS.INBOX && !isSearching && categoriesData.isCategoryViewEnabled,
     };
 };
