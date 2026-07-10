@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 import { cleanup, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
@@ -15,10 +16,22 @@ import { ChatItem } from './ChatItem';
 
 vi.mock('@livekit/components-react', () => ({
     useLocalParticipant: () => ({ localParticipant: { identity: 'local-user' } }),
+    useRoomContext: () => ({ localParticipant: { identity: 'local-user' } }),
 }));
 
 vi.mock('../../hooks/bridges/useChatMessageReaction', () => ({
     useChatMessageReaction: () => vi.fn(),
+}));
+
+const mockRetryMessage = vi.fn();
+const mockDiscardMessage = vi.fn();
+
+vi.mock('../../hooks/bridges/useChatMessage', () => ({
+    useChatMessage: () => ({
+        sendMessage: vi.fn(),
+        retryMessage: mockRetryMessage,
+        discardMessage: mockDiscardMessage,
+    }),
 }));
 
 const timestamp = 1718534400;
@@ -118,5 +131,45 @@ describe('ChatItem', () => {
         );
 
         expect(screen.getByText('JD')).toBeInTheDocument();
+    });
+
+    it('should render a pending message with disabled text color and no error UI', () => {
+        render(
+            <Wrapper>
+                <ChatItem item={{ ...mockChatMessage, status: 'pending' }} displayDate={true} />
+            </Wrapper>
+        );
+
+        expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-disabled');
+        expect(screen.queryByText('Not sent, check your connection.')).not.toBeInTheDocument();
+    });
+
+    it('should render a sent message with the default text color', () => {
+        render(
+            <Wrapper>
+                <ChatItem item={{ ...mockChatMessage, status: 'sent' }} displayDate={true} />
+            </Wrapper>
+        );
+
+        expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-norm');
+    });
+
+    it('should render retry/discard actions and an error message for a failed message', async () => {
+        const user = userEvent.setup();
+
+        render(
+            <Wrapper>
+                <ChatItem item={{ ...mockChatMessage, status: 'failed' }} displayDate={true} />
+            </Wrapper>
+        );
+
+        expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-disabled');
+        expect(screen.getByText('Not sent, check your connection.')).toBeInTheDocument();
+
+        await user.click(screen.getByRole('button', { name: 'Retry' }));
+        expect(mockRetryMessage).toHaveBeenCalledWith({ ...mockChatMessage, status: 'failed' });
+
+        await user.click(screen.getByRole('button', { name: 'Discard' }));
+        expect(mockDiscardMessage).toHaveBeenCalledWith(mockChatMessage.id);
     });
 });

@@ -1,7 +1,12 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ChatMessageReactions, MeetChatMessage, ParticipantEventRecord } from '../../types/types';
+import type {
+    ChatMessageReactions,
+    ChatMessageStatus,
+    MeetChatMessage,
+    ParticipantEventRecord,
+} from '../../types/types';
 import type { MeetState } from '../rootReducer';
 
 export interface ChatReactionRef {
@@ -38,8 +43,51 @@ const slice = createSlice({
         addChatMessages: (state, action: PayloadAction<MeetChatMessage[]>) => {
             state.chatMessages = [...state.chatMessages, ...action.payload];
         },
+        updateChatMessageStatus: (state, action: PayloadAction<{ messageId: string; status: ChatMessageStatus }>) => {
+            const { messageId, status } = action.payload;
+            const message = state.chatMessages.find((m) => m.id === messageId);
+            if (!message) {
+                return;
+            }
+            message.status = status;
+        },
+        removeChatMessage: (state, action: PayloadAction<{ messageId: string }>) => {
+            state.chatMessages = state.chatMessages.filter((m) => m.id !== action.payload.messageId);
+        },
         markChatMessagesAsSeen: (state) => {
-            state.chatMessages = state.chatMessages.map((message) => ({ ...message, seen: true }));
+            // Opening the chat sidebar reveals root-level messages and replies of already-expanded
+            // threads. Replies inside a collapsed thread stay hidden, so they remain unseen until the
+            // thread is expanded
+            const expandedRootIds = new Set(state.chatMessages.filter((m) => m.expanded).map((m) => m.id));
+            state.chatMessages = state.chatMessages.map((message) => {
+                const isReply = !!message.topicId && message.topicId !== message.id;
+                const isInCollapsedThread = isReply && !expandedRootIds.has(message.topicId as string);
+                return isInCollapsedThread ? message : { ...message, seen: true };
+            });
+        },
+        setChatThreadExpanded: (state, action: PayloadAction<{ messageId: string; expanded: boolean }>) => {
+            const { messageId, expanded } = action.payload;
+            const root = state.chatMessages.find((m) => m.id === messageId);
+            if (!root) {
+                return;
+            }
+            root.expanded = expanded;
+            // Opening a thread reveals its replies, so they are considered seen.
+            if (expanded) {
+                state.chatMessages.forEach((m) => {
+                    if (m.id !== messageId && m.topicId === messageId) {
+                        m.seen = true;
+                    }
+                });
+            }
+        },
+        setChatThreadReplyDraft: (state, action: PayloadAction<{ messageId: string; draft: string }>) => {
+            const { messageId, draft } = action.payload;
+            const root = state.chatMessages.find((m) => m.id === messageId);
+            if (!root) {
+                return;
+            }
+            root.replyDraft = draft;
         },
         // Used by the legacy chat handling path (MeetNewChatHandling disabled).
         toggleChatMessageReaction: (
@@ -134,12 +182,16 @@ const slice = createSlice({
 export const {
     setDraftMessage,
     addChatMessages,
+    updateChatMessageStatus,
+    removeChatMessage,
     toggleChatMessageReaction,
     addChatMessageReaction,
     removeChatMessageReaction,
     addEvent,
     resetChatAndReactions,
     markChatMessagesAsSeen,
+    setChatThreadExpanded,
+    setChatThreadReplyDraft,
     raiseHand,
     lowerHand,
     setActiveReaction,
@@ -156,6 +208,14 @@ export const selectChatMessages = (state: MeetState) => {
 
 export const selectEvents = (state: MeetState) => {
     return state.meetingChatAndReactions.events;
+};
+
+export const selectChatThreadExpanded = (state: MeetState, messageId: string): boolean | undefined => {
+    return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId)?.expanded;
+};
+
+export const selectChatThreadReplyDraft = (state: MeetState, messageId: string): string => {
+    return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId)?.replyDraft ?? '';
 };
 
 export const selectRaisedHands = (state: MeetState) => {

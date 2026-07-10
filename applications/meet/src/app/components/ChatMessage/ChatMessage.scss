@@ -1,9 +1,28 @@
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+
 .display-none {
 	display: none !important;
 }
 
 .send-message-button {
-	background-color: var(--interaction-norm-minor-1) !important;
+	background-color: var(--interaction-weak) !important;
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--interaction-weak-major-1) !important;
+	}
+}
+
+.emoji-picker-button {
+	background-color: var(--interaction-weak-minor-1) !important;
+	border-color: var(--info-card-border) !important;
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--interaction-weak) !important;
+	}
 }
 
 .hide-scrollbar {
@@ -17,4 +36,48 @@
 
 .wrap-placeholder::placeholder {
 	white-space: nowrap;
+}
+
+.chat-message-thread-close-button {
+	inset-inline-end: 0.375rem;
+	inset-block-start: -0.375rem;
+}
+
+.chat-message-field--thread {
+	.wrap-placeholder {
+		@include im.media('<=small') {
+			padding-block: 0;
+			line-height: 1.5rem;
+			text-size-adjust: 100%;
+			text-size-adjust: 100%;
+			position: relative;
+			inset-block-start: 0.25rem;
+		}
+	}
+
+	.chat-message-thread-pill {
+		min-block-size: 3rem;
+		background: var(--field-background-color, var(--background-norm));
+
+		// A 1px resting border that turns into a 2px-looking accent ring on focus, without shifting layout.
+		border: 1px solid var(--field-norm, var(--border-norm));
+		transition:
+			border-color 0.1s ease,
+			box-shadow 0.1s ease;
+
+		&:focus-within {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 1px var(--interaction-norm);
+		}
+	}
+
+	// Neutral circular emoji/send buttons (no accent fill), matching the reply field design.
+	.chat-message-thread-action {
+		background-color: var(--background-strong) !important;
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--interaction-default-hover) !important;
+		}
+	}
 }

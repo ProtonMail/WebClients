@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,14 +11,18 @@ import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
 import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
+import { useChatMessageListNavigation } from '../../hooks/useChatMessageListNavigation';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
 import { ChatItem } from '../ChatItem/ChatItem';
+import { ChatThread } from '../ChatItem/ChatThread';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
+import { NewMessagePill } from './NewMessagePill';
 
 import './Chat.scss';
 
@@ -29,7 +33,14 @@ export const Chat = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
+    const [newMessageCount, setNewMessageCount] = useState(0);
+
+    // Whether a thread root is pinned at the top; drives the opaque header (see below).
+    const [hasStuckThread, setHasStuckThread] = useState(false);
+
     const roomName = useMeetSelector(selectRoomName);
+
+    const isChatThreadsEnabled = useFlag('MeetChatThreads');
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
@@ -37,41 +48,108 @@ export const Chat = () => {
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
-    const sendMessage = useChatMessage();
+    const { sendMessage } = useChatMessage();
+
+    const { navigationProps: messageListNavigationProps } = useChatMessageListNavigation<HTMLUListElement>();
 
     const scrollRef = useRef<HTMLDivElement>(null);
     const wasAtBottomRef = useRef(true);
     const prevMessageCountRef = useRef(0);
+    const prevMainChatCountRef = useRef(0);
+
+    const scrollToBottom = () => {
+        const el = scrollRef.current;
+        if (!el) {
+            return;
+        }
+        el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+        wasAtBottomRef.current = true;
+        setNewMessageCount(0);
+    };
+
+    // A root is pinned when it rests at the pin line (below the header) with its thread still below.
+    const updateStuckThreadState = useCallback(() => {
+        const container = scrollRef.current;
+        if (!container) {
+            return;
+        }
+
+        const stickyHeaders = container.querySelectorAll<HTMLElement>('.chat-thread-header--sticky');
+        if (stickyHeaders.length === 0) {
+            setHasStuckThread(false);
+            return;
+        }
+
+        const containerTop = container.getBoundingClientRect().top;
+        const headerHeight = parseFloat(getComputedStyle(container).getPropertyValue('--side-bar-header-height')) || 0;
+        const pinLine = containerTop + headerHeight;
+
+        let stuck = false;
+        stickyHeaders.forEach((header) => {
+            const rect = header.getBoundingClientRect();
+            if (rect.top <= pinLine + 1 && rect.bottom > pinLine) {
+                stuck = true;
+            }
+        });
+
+        setHasStuckThread(stuck);
+    }, []);
 
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
         setIsScrolled(event.currentTarget.scrollTop > 0);
+
+        updateStuckThreadState();
 
         const el = scrollRef.current;
         if (!el) {
             return;
         }
-        wasAtBottomRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 10;
+        const isAtBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 10;
+        wasAtBottomRef.current = isAtBottom;
+
+        // Scrolling back to the bottom clears the pill.
+        if (isAtBottom) {
+            setNewMessageCount(0);
+        }
     };
 
     // Handle scroll to bottom when chat opens or receiving new updates
     useEffect(() => {
+        const mainChatMessageCount = meetingRoomUpdates.filter((item) => {
+            if (item.type !== 'message') {
+                return false;
+            }
+            const message = item as MeetChatMessage;
+            return !message.topicId || message.topicId === message.id;
+        }).length;
+
         const el = scrollRef.current;
         if (!el) {
             return;
         }
         const messageCount = meetingRoomUpdates.length;
         const prevCount = prevMessageCountRef.current;
+        const mainChatDelta = mainChatMessageCount - prevMainChatCountRef.current;
 
-        if (messageCount > prevCount && wasAtBottomRef.current) {
-            el.scrollTop = el.scrollHeight;
+        if (messageCount > prevCount) {
+            if (wasAtBottomRef.current) {
+                el.scrollTop = el.scrollHeight;
+            } else if (mainChatDelta > 0) {
+                setNewMessageCount((count) => count + mainChatDelta);
+            }
         }
         prevMessageCountRef.current = messageCount;
+        prevMainChatCountRef.current = mainChatMessageCount;
+        // Running this effect if the length of updates changes
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [meetingRoomUpdates.length]);
 
     // Handle marking messages as seen
     useEffect(() => {
         if (isChatOpen && scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+            wasAtBottomRef.current = true;
+            setNewMessageCount(0);
         }
 
         if (isChatOpen) {
@@ -88,6 +166,51 @@ export const Chat = () => {
                   (item as MeetChatMessage)?.message?.toLowerCase().includes(lowerCaseSearchExpression)
               );
 
+    // Group thread replies under their root message. A reply carries the thread `topicId` (which
+    // points at the root message id) and is therefore rendered inside the root's thread rather than
+    // as a standalone top-level entry. Threading is skipped while searching so no result is hidden.
+    const threadView = useMemo(() => {
+        const repliesByTopic = new Map<string, MeetChatMessage[]>();
+        const replyIds = new Set<string>();
+
+        for (const item of filteredMeetingRoomUpdates) {
+            if (item.type === 'message') {
+                const message = item as MeetChatMessage;
+                if (message.topicId && message.topicId !== message.id) {
+                    const replies = repliesByTopic.get(message.topicId) ?? [];
+                    replies.push(message);
+                    repliesByTopic.set(message.topicId, replies);
+                    replyIds.add(message.id);
+                }
+            }
+        }
+
+        return filteredMeetingRoomUpdates
+            .filter((item) => !(item.type === 'message' && replyIds.has((item as MeetChatMessage).id)))
+            .map((item) => {
+                if (item.type === 'message') {
+                    const message = item as MeetChatMessage;
+                    return {
+                        root: message,
+                        replies: repliesByTopic.get(message.id) ?? [],
+                        isRootMissing: message.isMissingRoot,
+                    };
+                }
+
+                return { root: item, replies: [] as MeetChatMessage[], isRootMissing: false };
+            });
+    }, [filteredMeetingRoomUpdates]);
+
+    // Recompute after layout changes and resize (no scroll event fires for those).
+    useEffect(() => {
+        updateStuckThreadState();
+    }, [threadView, isChatOpen, updateStuckThreadState]);
+
+    useEffect(() => {
+        window.addEventListener('resize', updateStuckThreadState);
+        return () => window.removeEventListener('resize', updateStuckThreadState);
+    }, [updateStuckThreadState]);
+
     const hasNoMessages = !meetingRoomUpdates.length;
 
     if (!isChatOpen) {
@@ -101,6 +224,7 @@ export const Chat = () => {
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
+            paddingHeaderClassName={hasStuckThread ? 'chat-panel-header' : ''}
             header={
                 <div className="flex items-center">
                     {!isSearchOn && (
@@ -166,15 +290,49 @@ export const Chat = () => {
                         <div className="text-center color-disabled">{c('Info').t`No search results`}</div>
                     </div>
                 )}
-                <ul className="unstyled m-0 p-0" aria-label={c('Aria').t`Chat messages`} aria-live="polite">
-                    {filteredMeetingRoomUpdates.map((item) => (
-                        <li key={`${item.identity}-${item.timestamp}`}>
-                            <ChatItem item={item} roomName={roomName} />
-                        </li>
-                    ))}
+                {/* Messages already announced by the centralized announcer */}
+                <ul
+                    {...messageListNavigationProps}
+                    className="unstyled m-0 p-0"
+                    aria-label={c('Aria').t`Chat messages`}
+                >
+                    {isSearchOn || !isChatThreadsEnabled
+                        ? filteredMeetingRoomUpdates.map((item) => (
+                              <li key={`${item.identity}-${item.timestamp}`}>
+                                  <ChatItem item={item} roomName={roomName} />
+                              </li>
+                          ))
+                        : threadView.map(({ root, replies, isRootMissing }) => (
+                              <li key={`${root.identity}-${root.timestamp}`}>
+                                  {root.type === 'message' ? (
+                                      <ChatThread
+                                          rootMessage={root as MeetChatMessage}
+                                          replies={replies}
+                                          roomName={roomName}
+                                          isRootMissing={isRootMissing}
+                                      />
+                                  ) : (
+                                      <ChatItem item={root} roomName={roomName} />
+                                  )}
+                              </li>
+                          ))}
                 </ul>
             </section>
-            <ChatMessage onMessageSend={sendMessage} />
+            <div className="relative">
+                {!isSearchOn && newMessageCount > 0 && (
+                    <div
+                        className="absolute bottom-custom left-0 right-0 flex justify-center"
+                        style={{ '--bottom-custom': '100%' }}
+                    >
+                        <NewMessagePill
+                            newMessageCount={newMessageCount}
+                            onScrollToBottom={scrollToBottom}
+                            onDismiss={() => setNewMessageCount(0)}
+                        />
+                    </div>
+                )}
+                <ChatMessage onMessageSend={sendMessage} />
+            </div>
         </SideBar>
     );
 };
