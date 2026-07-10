@@ -12,16 +12,16 @@ export const PROTON_PROJECT_ICON_TO_LUCIDE = {
     'pass-work': 'Briefcase',
     'presentation-screen': 'Presentation',
 
-    code: 'Code',
-    'window-terminal': 'Terminal',
-    'users-merge': 'Users',
+    code: 'CodeXml',
+    'window-terminal': 'SquareTerminal',
+    'users-merge': 'GitFork',
     robot: 'Bot',
     rocket: 'Rocket',
     bolt: 'Zap',
     wrench: 'Wrench',
 
     palette: 'Palette',
-    'pen-sparks': 'Sparkles',
+    'pen-sparks': 'WandSparkles',
     camera: 'Camera',
     'pass-atom': 'Atom',
 
@@ -42,7 +42,7 @@ export const PROTON_PROJECT_ICON_TO_LUCIDE = {
     'pass-leaf': 'Leaf',
     'pass-flower': 'Flower2',
     'pass-fish': 'Fish',
-    'pass-bear': 'PawPrint',
+    'pass-bear': 'Panda',
     'pass-cream': 'IceCreamCone',
     sun: 'Sun',
     fire: 'Flame',
@@ -53,7 +53,7 @@ export const PROTON_PROJECT_ICON_TO_LUCIDE = {
     'pass-book': 'BookOpen',
     bookmark: 'Bookmark',
 
-    'pass-basketball': 'Trophy',
+    'pass-basketball': 'Volleyball',
     'pass-pacman': 'Gamepad2',
 } satisfies Record<string, IconName>;
 
