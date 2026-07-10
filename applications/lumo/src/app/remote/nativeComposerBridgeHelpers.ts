@@ -1,6 +1,7 @@
 import type { ModelTier, ResponseMode } from '../providers/ModelTierProvider';
 import type { LUMO_API_ERRORS } from '../types';
 import {
+    type CustomLumo,
     type LimitReachedPayload,
     type LimitReachedResource,
     type LumoFile,
@@ -113,6 +114,32 @@ export const setNativeResponseMode = (responseMode: ResponseMode): void => {
         return;
     }
     (window as any).nativeComposerApiInstance.setNativeResponseMode(responseMode);
+};
+
+export const setNativeCustomLumos = (list: CustomLumo[]): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setCustomLumos(list);
+};
+
+export const setNativeSelectedCustomLumo = (lumo: CustomLumo | null): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setSelectedCustomLumo(lumo);
+};
+
+export const onNativeSelectCustomLumo = (handler: SelectCustomLumoEventHandler): (() => void) => {
+    window.addEventListener('lumo:selectCustomLumo', handler as EventListener);
+    return () => window.removeEventListener('lumo:selectCustomLumo', handler as EventListener);
+};
+
+export const onNativeClearCustomLumo = (handler: () => void): (() => void) => {
+    window.addEventListener('lumo:clearCustomLumo', handler as EventListener);
+    return () => window.removeEventListener('lumo:clearCustomLumo', handler as EventListener);
 };
 
 export const onNativeHandleFileUploadRequest = (handler: FileUploadEventHandler): (() => void) => {
@@ -261,7 +288,7 @@ export const injectNativeImageGenerationHelper = (prompt: string): void => {
     (window as any).nativeComposerApiInstance.injectImageGenerationHelperPrompt(prompt);
 };
 
-export type { LimitReachedPayload, LimitReachedResource, LumoFile, LumoMode, State };
+export type { CustomLumo, LimitReachedPayload, LimitReachedResource, LumoFile, LumoMode, State };
 export { LumoFileType, getLumoFileType, limitResourceToErrorType } from './nativeComposerBridge';
 
 export type FileUploadEventHandler = (
@@ -274,3 +301,4 @@ export type RemoveFileEventHandler = (event: CustomEvent<{ attachmentId: string 
 export type PreviewFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
 export type ChangeModelTypeEventHandler = (event: CustomEvent<{ modelTier: ModelTier }>) => void;
 export type ChangeResponseModeEventHandler = (event: CustomEvent<{ responseMode: ResponseMode }>) => void;
+export type SelectCustomLumoEventHandler = (event: CustomEvent<{ id: string }>) => void;
