@@ -14,6 +14,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 // eslint-disable-next-line no-restricted-imports
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { selectCategories } from '@proton/mail/store/labels';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -54,6 +55,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
     const filter = useMailSelector(selectFilter);
 
     const currentContext = useMailSelector(selectCurrentContextIdentifier);
+    const categories = useMailSelector(selectCategories);
     const ctxTotal = useMailSelector(contextTotal);
     const ctxPage = useMailSelector(contextPages);
     const el = useMailSelector(elements);
@@ -69,6 +71,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
 
     const data = {
         params,
+        categories,
         contextTotal: total,
         elementsLength: length,
         counts: {
