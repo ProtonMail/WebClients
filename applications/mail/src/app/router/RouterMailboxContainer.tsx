@@ -21,6 +21,7 @@ import MailHeader from 'proton-mail/components/header/MailHeader';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from 'proton-mail/constants';
 import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
+import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
 import { useScrollListToTopOnViewChange } from 'proton-mail/router/hooks/useScrollListToTopOnViewChange';
@@ -59,7 +60,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const { shouldSeeWideToolbars } = useCategoriesData();
+    const { shouldSeeWideToolbars, isCategoryViewEnabled } = useCategoriesData();
 
     /**
      * Temporary: Router mailbox side effects
@@ -81,18 +82,22 @@ export const RouterMailboxContainer = () => {
         dispatch(layoutActions.setSelectAll(false));
     }, [labelID, dispatch]);
 
+    const redirectURL = isCategoryViewEnabled
+        ? setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+        : `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
+
     if (!labelID) {
-        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
+        return <Redirect to={redirectURL} />;
     }
 
     // Prevent non-admin users from accessing the Deleted folder via URL
     if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
-        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
+        return <Redirect to={redirectURL} />;
     }
 
     // Redirect users without retention rules from accessing the Deleted folder via URL
     if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && retentionRules && !retentionRules.length) {
-        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
+        return <Redirect to={redirectURL} />;
     }
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
@@ -137,6 +142,7 @@ export const RouterMailboxContainer = () => {
                     mainBordered={canShowDrawer && !!showDrawerSidebar}
                 >
                     <Switch>
+                        <Redirect exact from="/" to={redirectURL} />
                         <Route
                             path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
                             render={() => (

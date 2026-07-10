@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { LEGACY_FORUM_CATEGORY_ID } from '@proton/mail/helpers/location';
 // eslint-disable-next-line no-restricted-imports
@@ -149,7 +149,6 @@ export const useElements: UseElements = ({
     const canReactToSettingsUpdate = useRef(false);
 
     const abortControllerRef = useRef<AbortController>();
-    const history = useHistory();
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -216,12 +215,13 @@ export const useElements: UseElements = ({
     }, [labels.length, folders.length]);
 
     useEffect(() => {
-        const { rawLabelID, elementID, messageID } = getParametersFromPath(location.pathname);
-
-        if (!rawLabelID) {
-            history.replace(location.pathname + LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]);
+        // The router redirects users to the inbox when they visit the root path
+        // We ignore it to avoid resetting elements state unnecessarily
+        if (location.pathname === '/') {
+            return;
         }
 
+        const { rawLabelID, elementID, messageID } = getParametersFromPath(location.pathname);
         const labelID = getLabelIDFromRawID(labelIDs, rawLabelID);
         const sort = sortFromUrl(location, labelID);
         const filter = filterFromUrl(location);
