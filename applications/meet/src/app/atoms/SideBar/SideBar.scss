@@ -21,6 +21,7 @@
 	border-end-end-radius: 0;
 
 	&.side-bar-transparent-header {
+		z-index: 2;
 		backdrop-filter: blur(5px);
 		background: linear-gradient(0deg, rgb(40 36 62 / 0) 0%, #28243e 100%);
 	}

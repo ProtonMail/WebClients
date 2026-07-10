@@ -51,6 +51,9 @@ export const announcementMessages = {
             ? c('Accessibility announcement').t`${name} says: ${message}`
             : c('Accessibility announcement').t`New chat message: ${message}`,
 
+    chatMessageContent: (message: string, name?: string) =>
+        name ? c('Accessibility announcement').t`${name}: ${message}` : message,
+
     connectionLost: () => c('Accessibility announcement').t`Connection lost. Reconnecting…`,
 
     reconnected: () => c('Accessibility announcement').t`Reconnected to the meeting`,

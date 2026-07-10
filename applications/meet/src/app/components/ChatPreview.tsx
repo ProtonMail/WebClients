@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
-import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import {
+    selectLocalParticipantIdentity,
+    selectTotalParticipantCount,
+} from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useMeetingRoomUpdates } from '../hooks/useMeetingRoomUpdates';
+import { isRelevantThreadMessage } from '../utils/isRelevantThreadMessage';
 import { ChatItem } from './ChatItem/ChatItem';
 
 const CHAT_MESSAGE_TIMEOUT = 8000;
@@ -24,6 +29,10 @@ export const ChatPreview = () => {
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
+    const chatMessages = useMeetSelector(selectChatMessages);
+
+    const localIdentity = useMeetSelector(selectLocalParticipantIdentity);
+
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
@@ -35,6 +44,8 @@ export const ChatPreview = () => {
     const latestMeetingRoomUpdate = meetingRoomUpdates
         .filter(
             (item) =>
+                !(item.type === 'message' && item.isMissingRoot) &&
+                (item.type !== 'message' || isRelevantThreadMessage(item, chatMessages, localIdentity)) &&
                 (item.type === 'message' ||
                     (!participantCountBiggerThanThreshold && participantDecryptedNameMap[item.identity])) &&
                 now - item.timestamp < CHAT_MESSAGE_TIMEOUT
