@@ -17,7 +17,6 @@ import noop from '@proton/utils/noop';
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getOrganization } from '../../public/organization';
 import { getReAuthState } from '../../public/reauthContainerState';
-import { extraThunkArguments } from '../../store/thunk.ts';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';
@@ -181,9 +180,8 @@ export const getLoginResult = async ({
 
     // In any forking scenario, ignore the app switcher
     if (!maybeToApp && !forkState) {
-        const isGenericSettingsEnabled = extraThunkArguments.unleashClient?.isEnabled('GenericUserSettings');
         // Skip app switcher when accessing generic settings
-        if (isGenericSettingsEnabled && maybeLocalRedirect) {
+        if (maybeLocalRedirect) {
             const url = getUrlFromLocation({
                 location: maybeLocalRedirect.location,
                 toApp: APPS.PROTONACCOUNT,
