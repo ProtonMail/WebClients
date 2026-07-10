@@ -1,6 +1,7 @@
+import type { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+
 import type { Computed } from './computed';
 import type { NavContext } from './models';
-import type { SettingsLayoutVariant } from './searchOptions';
 
 export interface NavSectionDefinition<TContext extends NavContext = NavContext> {
     id: string;
