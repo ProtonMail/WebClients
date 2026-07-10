@@ -42,7 +42,7 @@ describe('prepareNotificationData', () => {
             history: MOCK_HISTORY,
             mailSettings: MOCK_MAIL_SETTINGS,
             notifier: [MAILBOX_LABEL_IDS.INBOX],
-            categoryViewAccess: false,
+            isCategoryViewEnabled: false,
         });
 
         expect(result).toEqual({
@@ -66,7 +66,7 @@ describe('prepareNotificationData', () => {
             history: MOCK_HISTORY,
             mailSettings: MOCK_MAIL_SETTINGS,
             notifier: [MAILBOX_LABEL_IDS.SENT],
-            categoryViewAccess: false,
+            isCategoryViewEnabled: false,
         });
 
         expect(result.labelID).toBe(MAILBOX_LABEL_IDS.ALL_MAIL);
@@ -78,7 +78,7 @@ describe('prepareNotificationData', () => {
             history: MOCK_HISTORY,
             mailSettings: { ...MOCK_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE },
             notifier: [MAILBOX_LABEL_IDS.INBOX],
-            categoryViewAccess: false,
+            isCategoryViewEnabled: false,
         });
 
         expect(result.elementID).toBe('123');
@@ -97,7 +97,7 @@ describe('prepareNotificationData', () => {
                 history: MOCK_HISTORY,
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
             });
 
             expect(result.location.pathname).toContain('/inbox');
@@ -111,7 +111,7 @@ describe('prepareNotificationData', () => {
                 history: MOCK_HISTORY,
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX],
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
             });
 
             expect(result.location.pathname).toContain('/all-mail');
@@ -124,7 +124,7 @@ describe('prepareNotificationData', () => {
                 history: MOCK_HISTORY,
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX],
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
             });
 
             expect(result.location.pathname).toContain('/all-mail');
@@ -140,7 +140,7 @@ describe('prepareNotificationData', () => {
                 history: MOCK_HISTORY,
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX, 'custom-folder'],
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
             });
 
             expect(result.location.pathname).toContain('/custom-folder');
@@ -156,7 +156,7 @@ describe('prepareNotificationData', () => {
                 history: MOCK_HISTORY,
                 mailSettings: MOCK_MAIL_SETTINGS,
                 notifier: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
-                categoryViewAccess: false,
+                isCategoryViewEnabled: false,
             });
 
             expect(result.location.pathname).toContain('/inbox');

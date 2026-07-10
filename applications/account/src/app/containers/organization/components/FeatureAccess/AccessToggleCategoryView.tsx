@@ -18,7 +18,7 @@ export const AccessToggleCategoryView = () => {
     const [organization] = useOrganization();
     const { createNotification } = useNotifications();
 
-    const { hasAccessToCategoryView } = useCategoriesData();
+    const { canUseCategoryView } = useCategoriesData();
 
     const [categoryLoading, withCategoryLoading] = useLoading();
 
@@ -33,7 +33,7 @@ export const AccessToggleCategoryView = () => {
         createNotification({ text: c('Success notification').t`Preferences updated` });
     };
 
-    if (!hasAccessToCategoryView) {
+    if (!canUseCategoryView) {
         return null;
     }
 

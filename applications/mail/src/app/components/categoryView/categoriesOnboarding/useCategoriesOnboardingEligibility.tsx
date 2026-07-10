@@ -33,7 +33,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     const accountDateThreshold = useFeature<number>(FeatureCode.CategoryViewOnboardingAccountDateThreshold);
 
     const { getLocationCount, loading: loadingMailboxCount } = useMailboxCounter();
-    const { categoryViewAccess, hasAccessToCategoryView } = useCategoriesView();
+    const { isCategoryViewEnabled, canUseCategoryView } = useCategoriesView();
 
     const loading =
         loadingOrganization ||
@@ -64,7 +64,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     if (isUserB2B) {
         const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
         // B2B users must opt-in, we start the onboarding if the flag is ON and their organisation allows it
-        const hasB2BCategoryAccess = hasAccessToCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
+        const hasB2BCategoryAccess = canUseCategoryView && !!organization?.Settings.MailCategoryViewEnabled;
 
         // The onboarding is opt-in, we only show to users who don't already have it on
         const hasEnabledCategoryView = mailSettings.MailCategoryView;
@@ -97,7 +97,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
     // Existing B2C users see the card if they have a given number of emails and the checklist is no longer present on the list of email
     return {
         isUserEligible:
-            categoryViewAccess &&
+            isCategoryViewEnabled &&
             isExistingUser &&
             !allOnboardingSeen &&
             allMailsElementsCount.Total > B2C_REQUIRED_NUMBER_OF_MAILS &&

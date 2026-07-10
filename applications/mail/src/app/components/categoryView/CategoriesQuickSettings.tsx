@@ -12,12 +12,12 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 export const CategoriesQuickSettings = () => {
-    const { hasAccessToCategoryView } = useCategoriesData();
+    const { canUseCategoryView } = useCategoriesData();
     const { handleChange, state, loading } = useCategoriesToggle();
 
     const authentication = useAuthentication();
 
-    if (!hasAccessToCategoryView) {
+    if (!canUseCategoryView) {
         return null;
     }
 
