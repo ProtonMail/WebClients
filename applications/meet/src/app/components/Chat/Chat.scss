@@ -1,3 +1,19 @@
 .message-list {
-	padding-block-start: 5rem;
+	--message-list-header-offset: 5rem;
+
+	padding-block-start: var(--message-list-header-offset);
+}
+
+.chat-panel-header {
+	background: var(--background-card) !important;
+	backdrop-filter: none;
+}
+
+.new-message-pill {
+	color: var(--border-card) !important;
+	padding-inline-end: 0.5rem;
+
+	&:hover {
+		background-color: var(--primary-major-1) !important;
+	}
 }

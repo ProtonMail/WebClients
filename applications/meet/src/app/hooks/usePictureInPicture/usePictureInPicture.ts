@@ -213,7 +213,9 @@ export function usePictureInPicture({
     useEffect(() => {
         if (chatMessages.length > 0) {
             const lastMessage = chatMessages[chatMessages.length - 1];
-            addChatMessage(participantDecryptedNameMapRef.current[lastMessage.identity], lastMessage.message);
+            if (!lastMessage.isMissingRoot) {
+                addChatMessage(participantDecryptedNameMapRef.current[lastMessage.identity], lastMessage.message);
+            }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chatMessages, addChatMessage]);

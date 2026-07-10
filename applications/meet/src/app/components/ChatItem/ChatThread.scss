@@ -1,0 +1,49 @@
+.chat-thread {
+	// Pin the root + collapse toggle below the header while replies scroll underneath; releases once
+	// the whole thread scrolls away.
+	.chat-thread-header--sticky {
+		position: sticky;
+
+		// Cancel the list's top padding and re-apply the measured header offset to pin flush.
+		inset-block-start: calc(
+			var(--side-bar-header-height, var(--message-list-header-offset)) - var(--message-list-header-offset)
+		);
+		z-index: 1;
+
+		// Opaque so replies scrolling behind don't bleed through.
+		background-color: var(--background-card);
+	}
+
+	.chat-thread-toggle {
+		inline-size: fit-content;
+		background: transparent !important;
+		color: var(--interaction-norm-major-1) !important;
+	}
+
+	.chat-thread-body {
+		&-open {
+			border-inline-start: 2px solid var(--border-norm);
+		}
+
+		&-closed {
+			border-inline-start: none;
+		}
+	}
+
+	.chat-thread-missing-root-avatar {
+		background-color: var(--border-norm);
+	}
+
+	.display-none {
+		display: none !important;
+	}
+
+	.new-reply-badge {
+		background-color: var(--interaction-norm-minor-3);
+		color: var(--interaction-norm-major-1);
+
+		.new-reply-dot {
+			background-color: var(--interaction-norm-major-1);
+		}
+	}
+}

@@ -5,11 +5,12 @@ import { ChatEventKind } from '@proton-meet/proton-meet-core';
 import type { RemoteParticipant } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
     addChatMessageReaction,
     addChatMessages,
     removeChatMessageReaction,
+    selectChatMessages,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
@@ -21,10 +22,12 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { isValidMessageString } from '../../utils/isValidMessageString';
+import { retry } from '../../utils/retry';
 import type { ChatIncomingEventInfoData } from '../../wasm/MeetCoreClient';
 
 export const useChat = () => {
     const dispatch = useMeetDispatch();
+    const store = useMeetStore();
     const room = useRoomContext();
 
     const sideBarState = useMeetSelector(selectSideBarState);
@@ -51,9 +54,18 @@ export const useChat = () => {
                     return;
                 }
 
-                const event = (await meetCoreClient.decodeChat(payload)) as ChatIncomingEventInfoData & {
-                    type: string;
-                };
+                // Decoding relies on MLS group state that may not be ready yet, so retry a few
+                // times with increasing delays, mirroring the legacy decryption retry.
+                const event = (await retry(() => meetCoreClient.decodeChat(payload), {
+                    stopAfterFirstSuccess: true,
+                })) as (ChatIncomingEventInfoData & { type: string }) | undefined;
+
+                if (!event) {
+                    // Decoding failed after all retries; surface it like the legacy decrypt path
+                    // rather than dropping the message silently.
+                    reportMeetError('Failed to decode chat event', { level: 'error' });
+                    return;
+                }
 
                 // new version of decodeChat will preserve the type property for backwards compatibility
                 if (event.type && event.type !== PublishableDataTypes.Message) {
@@ -106,22 +118,65 @@ export const useChat = () => {
 
                 const sanitizedMessage = sanitizeMessage(event.text);
 
+                // A reply carries the thread `topic_id` (which points at the root message id) and is
+                // therefore not a root message of its own thread.
+                const isReply = !!event.topic_id && event.topic_id !== event.id;
+
+                const messagesToAdd: MeetChatMessage[] = [];
+
+                // A reply is only seen when the chat is open and its parent thread is expanded; a
+                // collapsed thread hides the reply, so it stays unseen. Threads default to expanded
+                // once they already have replies.
+                let seen = isChatOpen;
+                if (isReply) {
+                    const chatMessages = selectChatMessages(store.getState());
+                    const root = chatMessages.find((m) => m.id === event.topic_id);
+
+                    // The thread's root message is not available locally (e.g. it was sent before the
+                    // local participant joined). Create a placeholder root the first time so the
+                    // thread's open/seen state can be tracked like any other thread.
+                    if (!root) {
+                        messagesToAdd.push({
+                            id: event.topic_id as string,
+                            timestamp: Number(event.received_at_ms),
+                            identity: '',
+                            seen: true,
+                            message: '',
+                            type: 'message',
+                            topicId: event.topic_id,
+                            expanded: false,
+                            isMissingRoot: true,
+                        });
+                    }
+
+                    if (isChatOpen) {
+                        const threadHasReplies = chatMessages.some(
+                            (m) => m.id !== event.topic_id && m.topicId === event.topic_id
+                        );
+                        seen = root?.expanded ?? threadHasReplies;
+                    }
+                }
+
                 const newMessage: MeetChatMessage = {
                     id: event.id,
                     timestamp: Number(event.received_at_ms),
                     identity: mlsSenderId,
-                    seen: isChatOpen,
+                    seen,
                     message: sanitizedMessage,
                     type: 'message',
+                    inReplyToId: event.in_reply_to_id,
+                    topicId: event.topic_id,
                 };
 
-                dispatch(addChatMessages([newMessage]));
+                messagesToAdd.push(newMessage);
+
+                dispatch(addChatMessages(messagesToAdd));
             } catch (error) {
                 // eslint-disable-next-line no-console
                 console.error('Error handling chat event:', error);
             }
         },
-        [dispatch, isChatOpen, meetCoreClient, reportMeetError]
+        [dispatch, isChatOpen, meetCoreClient, reportMeetError, store]
     );
 
     const handleDataReceiveLegacy = useCallback(

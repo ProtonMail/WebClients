@@ -1,24 +1,36 @@
+import type { FocusEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
+import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     type MeetChatMessage,
     type MeetingRoomUpdate,
     ParticipantEvent,
     type ParticipantEventRecord,
 } from '@proton/meet/types/types';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
+import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ChatMessageContent } from '../ChatMessageContent';
+import { announcementMessages } from '../MeetingAnnouncer/messages';
+import { useAnnounce } from '../MeetingAnnouncer/useAnnounce';
+import { ChatMessageFailedActions } from './ChatMessageFailedActions';
 import { ChatMessageReactions } from './ChatMessageReactions';
 
 import './ChatItem.scss';
 
-const QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '😢', '👎'];
+const QUICK_REACTIONS = ['👏', '💜', '🙌', '👍', '👎'];
 
 interface ChatItemProps {
     roomName?: string;
@@ -26,6 +38,13 @@ interface ChatItemProps {
     displayDate?: boolean;
     shouldGrow?: boolean;
     ellipsisOverflow?: boolean;
+    /**
+     * 'default' renders the item as a top-level chat entry.
+     * 'thread' renders a more compact entry meant to be nested inside a thread.
+     */
+    variant?: 'default' | 'thread';
+    /** When provided, a reply button is shown alongside the quick reactions. */
+    onReply?: () => void;
 }
 
 const isMeetChatMessage = (item: MeetingRoomUpdate): item is MeetChatMessage => {
@@ -42,16 +61,35 @@ export const ChatItem = ({
     displayDate = true,
     shouldGrow = false,
     ellipsisOverflow = false,
+    variant = 'default',
+    onReply,
 }: ChatItemProps) => {
     const { type, identity, timestamp } = item;
 
+    const isThreadItem = variant === 'thread';
+    const avatarSize = isThreadItem ? '2rem' : '2.5rem';
+
     const participantName = useMeetSelector((state) => selectParticipantName(state, identity));
+    const localParticipantIdentity = useMeetSelector(selectLocalParticipantIdentity);
+    const isLocalParticipant = identity === localParticipantIdentity;
     const sendReaction = useChatMessageReaction();
+    const { retryMessage, discardMessage } = useChatMessage();
 
     const { participantColors } = useParticipantDisplayColors(identity);
 
-    const showReactionControls = isMeetChatMessage(item) && !ellipsisOverflow;
+    const isChatThreadsEnabled = useFlag('MeetChatThreads');
+
+    const isPending = isMeetChatMessage(item) && item.status === 'pending';
+    const isFailed = isMeetChatMessage(item) && item.status === 'failed';
+
+    const showReactionControls = isMeetChatMessage(item) && !ellipsisOverflow && !isPending && !isFailed;
     const messageA11yDescriptionId = isMeetChatMessage(item) ? `chat-message-a11y-${item.id}` : undefined;
+
+    // The quick-reaction emoji buttons form a single tab stop; Arrow Left/Right rove
+    // between them.
+    const { toolbarProps: emojiToolbarProps } = useToolbarRovingFocus<HTMLDivElement>({
+        orientation: 'horizontal',
+    });
 
     const roomNameLabel = (
         <span key="room-name" className="ml-1 room-name">
@@ -59,27 +97,79 @@ export const ChatItem = ({
         </span>
     );
 
+    const isMessage = isMeetChatMessage(item);
+
+    const announce = useAnnounce();
+
+    const rowRef = useRef<HTMLDivElement>(null);
+
+    const [areActionsVisible, setAreActionsVisible] = useState(false);
+
+    useEffect(() => {
+        if (!areActionsVisible) {
+            return;
+        }
+
+        const handlePointerDown = (event: PointerEvent) => {
+            if (rowRef.current && !rowRef.current.contains(event.target as Node)) {
+                setAreActionsVisible(false);
+            }
+        };
+
+        document.addEventListener('pointerdown', handlePointerDown);
+
+        return () => document.removeEventListener('pointerdown', handlePointerDown);
+    }, [areActionsVisible]);
+
+    const handleRowFocus = (event: FocusEvent<HTMLDivElement>) => {
+        if (event.target !== event.currentTarget || !isMeetChatMessage(item)) {
+            return;
+        }
+
+        announce(announcementMessages.chatMessageContent(item.message, participantName), {
+            dedupeKey: `chat-focus-${item.id}`,
+        });
+    };
+
+    const handleRowClick = () => {
+        const supportsHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
+
+        if (showReactionControls && !supportsHover) {
+            setAreActionsVisible((visible) => !visible);
+        }
+    };
+
     return (
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role, jsx-a11y/click-events-have-key-events
         <div
+            ref={rowRef}
             key={`${type}-${identity}-${timestamp}`}
             className={clsx(
                 'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2 py-2 px-1',
                 (shouldGrow || ellipsisOverflow) && 'flex-1',
-                showReactionControls && 'chat-item--with-reactions'
+                showReactionControls && 'chat-item--with-reactions',
+                areActionsVisible && 'chat-item--actions-visible',
+                isThreadItem && 'chat-item--thread'
             )}
             style={{ '--height-custom': 'fit-content' }}
             role={showReactionControls ? 'group' : undefined}
             aria-label={showReactionControls ? c('Info').t`Message from ${participantName}` : undefined}
+            // The message itself is the first tab stop for the entry and the landing point for
+            // Up/Down arrow navigation between messages; its actions follow it in the tab order.
+            tabIndex={isMessage && !ellipsisOverflow ? 0 : undefined}
+            data-chat-message-row={isMessage ? '' : undefined}
+            onFocus={handleRowFocus}
+            onClick={handleRowClick}
         >
             <div className="flex flex-nowrap items-start shrink-0">
                 <div
                     className={clsx(
                         participantColors.backgroundColor,
                         participantColors.profileTextColor,
-                        'color-invert rounded-full flex items-center justify-center w-custom h-custom'
+                        'color-invert rounded-full flex items-center justify-center w-custom h-custom',
+                        isThreadItem && 'text-sm'
                     )}
-                    style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
+                    style={{ '--w-custom': avatarSize, '--h-custom': avatarSize }}
                 >
                     <div>{getParticipantInitials(participantName)}</div>
                 </div>
@@ -89,6 +179,7 @@ export const ChatItem = ({
                 <div className="flex items-start text-semibold flex-nowrap">
                     <span className="text-ellipsis" title={participantName}>
                         <bdi>{participantName}</bdi>
+                        {isLocalParticipant && <span className="color-weak ml-1">{c('Info').t`(You)`}</span>}
                     </span>
                     {displayDate && (
                         <time
@@ -108,32 +199,74 @@ export const ChatItem = ({
                         <div
                             id={messageA11yDescriptionId}
                             className={clsx(
-                                'color-norm text-semibold chat-message text-break',
+                                'text-semibold chat-message text-break',
+                                isPending || isFailed ? 'color-disabled' : 'color-norm',
                                 ellipsisOverflow && 'text-ellipsis-four-lines'
                             )}
                         >
                             <ChatMessageContent message={item.message} />
                         </div>
+                        {isFailed && (
+                            <div className="flex flex-column items-start gap-2 mt-2">
+                                <div className="flex items-center gap-1 error-message text-sm">
+                                    <IcExclamationCircle size={4} className="shrink-0" />
+                                    <span>{c('Info').t`Not sent, check your connection.`}</span>
+                                </div>
+                                <ChatMessageFailedActions
+                                    onRetry={() => {
+                                        void retryMessage(item);
+                                    }}
+                                    onDiscard={() => discardMessage(item.id)}
+                                />
+                            </div>
+                        )}
                         {showReactionControls && (
+                            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                             <div
-                                className="chat-item-quick-reactions flex gap-1 p-1 rounded-lg border border-weak bg-norm absolute"
-                                role="toolbar"
-                                aria-label={c('Info').t`Quick reactions`}
+                                className="chat-item-quick-reactions flex items-center absolute gap-1 p-1.5 border rounded-full"
+                                role="group"
+                                aria-label={c('Info').t`Message actions`}
                             >
-                                {QUICK_REACTIONS.map((emoji) => (
-                                    <button
-                                        key={emoji}
-                                        type="button"
-                                        className="chat-item-quick-reaction-btn text-xl rounded-full flex items-center justify-center"
-                                        aria-label={c('Action').t`React with ${emoji}`}
-                                        aria-describedby={messageA11yDescriptionId}
-                                        onClick={() => {
-                                            void sendReaction(item.id, emoji);
-                                        }}
-                                    >
-                                        {emoji}
-                                    </button>
-                                ))}
+                                {isChatThreadsEnabled && onReply && (
+                                    <>
+                                        <button
+                                            type="button"
+                                            className="chat-item-quick-reaction-btn chat-item-reply-btn rounded-full flex items-center justify-center rounded-full cursor-pointer"
+                                            aria-label={c('Action').t`Reply`}
+                                            aria-describedby={messageA11yDescriptionId}
+                                            onClick={onReply}
+                                        >
+                                            <IcArrowUpAndLeft className="rtl:mirror" />
+                                        </button>
+                                        <span className="chat-item-reply-divider shrink-0" aria-hidden="true" />
+                                    </>
+                                )}
+                                <div
+                                    className="flex items-center gap-0.5"
+                                    role="toolbar"
+                                    aria-label={c('Info').t`Quick reactions`}
+                                    {...emojiToolbarProps}
+                                >
+                                    {QUICK_REACTIONS.map((emoji) => (
+                                        <button
+                                            key={emoji}
+                                            type="button"
+                                            className="chat-item-emoji-reaction-btn text-xl rounded-full border flex items-center justify-center shrink-0 w-custom h-custom p-custom cursor-pointer rounded-full"
+                                            style={{
+                                                '--w-custom': '1.875rem',
+                                                '--h-custom': '1.875rem',
+                                                '--p-custom': '0.375rem',
+                                            }}
+                                            aria-label={c('Action').t`React with ${emoji}`}
+                                            aria-describedby={messageA11yDescriptionId}
+                                            onClick={() => {
+                                                void sendReaction(item.id, emoji);
+                                            }}
+                                        >
+                                            {emoji}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         )}
                         {showReactionControls && (

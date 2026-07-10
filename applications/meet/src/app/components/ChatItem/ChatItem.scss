@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 .chat-item {
 	overflow: visible;
 
@@ -18,17 +20,18 @@
 		-webkit-box-orient: vertical;
 	}
 
-	&.chat-item--with-reactions:hover,
-	&.chat-item--with-reactions:focus-within {
-		border-radius: var(--border-radius-md);
-		background: var(--interaction-default-hover);
+	.chat-item-reply-btn {
+		block-size: 1.875rem !important;
 	}
 
 	.chat-item-quick-reactions {
-		inset-block-end: 100%;
+		// Anchor the toolbar so its bottom edge touches the baseline of the first
+		// line of the message text, letting it float up and overlap the area above.
+		inset-block-start: 1.1rem;
 		inset-inline-end: 0;
+		transform: translateY(-100%);
 		z-index: 1;
-		background: color-mix(in srgb, var(--interaction-weak-minor-3) 60%, transparent);
+		background: var(--interaction-weak-minor-1);
 
 		// Kept mounted but hidden so the buttons stay in the tab order; revealing
 		// via opacity (not display/visibility) is what lets keyboard focus trigger
@@ -38,10 +41,22 @@
 		transition: opacity 0.1s ease;
 	}
 
-	&:hover .chat-item-quick-reactions,
-	&:focus-within .chat-item-quick-reactions {
+	// Reveal the toolbar for keyboard focus and for the touch tap-to-toggle state.
+	&:focus-visible .chat-item-quick-reactions,
+	&:has(:focus-visible) .chat-item-quick-reactions,
+	&.chat-item--actions-visible .chat-item-quick-reactions {
 		opacity: 1;
 		pointer-events: auto;
+	}
+
+	// Only reveal on hover for devices that actually support hovering. On touch
+	// devices a tap would otherwise reveal the toolbar and dispatch the click to
+	// the freshly revealed button in a single gesture.
+	@media (hover: hover) {
+		&:hover .chat-item-quick-reactions {
+			opacity: 1;
+			pointer-events: auto;
+		}
 	}
 
 	.chat-item-quick-reaction-btn {
@@ -49,8 +64,7 @@
 		block-size: 2.25rem;
 		border: none;
 		background: transparent;
-		cursor: pointer;
-		border-radius: 999px;
+		font-size: rem(12) !important;
 
 		&:hover {
 			background: rgb(255 255 255 / 0.2);
@@ -60,5 +74,40 @@
 			outline: 2px solid var(--focus-outline, var(--interaction-norm));
 			outline-offset: 2px;
 		}
+	}
+
+	.chat-item-emoji-reaction-btn {
+		background: var(--interaction-weak-minor-2);
+		line-height: 1;
+		font-size: rem(12) !important;
+		cursor: pointer;
+
+		&:hover {
+			background: var(--interaction-weak-minor-1);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--focus-outline, var(--interaction-norm));
+			outline-offset: 2px;
+		}
+	}
+
+	// The reply action sits with the quick reactions but is visually set apart by a divider.
+	.chat-item-reply-divider {
+		inline-size: 1px;
+		align-self: stretch;
+		margin-block: 0.25rem;
+		margin-inline: 0.125rem;
+		background: var(--border-norm);
+	}
+
+	.retry-button {
+		background: var(--interaction-weak-minor-1) !important;
+		color: var(--text-norm) !important;
+		border-color: var(--info-card-border) !important;
+	}
+
+	.error-message {
+		color: var(--signal-danger-major-1);
 	}
 }

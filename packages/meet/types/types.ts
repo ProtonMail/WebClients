@@ -30,11 +30,28 @@ export enum UpsellModalTypes {
 
 export type ChatMessageReactions = Record<string, string[]>;
 
+export type ChatMessageStatus = 'pending' | 'sent' | 'failed';
+
 export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 'timestamp'> {
     identity: string;
     seen?: boolean;
     type?: 'message';
     reactions?: ChatMessageReactions;
+    /** Id of the message this message is a reply to (only set for replies). */
+    inReplyToId?: string;
+    /** Id of the thread/topic this message belongs to. Root messages of a thread share their id as topic. */
+    topicId?: string;
+    /** Delivery status; only set for messages sent by the local participant. */
+    status?: ChatMessageStatus;
+    /** Whether the thread started by this (root) message is expanded. Only meaningful on root messages. */
+    expanded?: boolean;
+    /** Unsent reply text for the thread started by this (root) message. Only meaningful on root messages. */
+    replyDraft?: string;
+    /**
+     * Placeholder root message created to anchor a thread whose actual root message is not available
+     * locally (e.g. it was sent before the local participant joined). It carries no real content.
+     */
+    isMissingRoot?: boolean;
 }
 
 export enum ParticipantEvent {
