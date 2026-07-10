@@ -89,6 +89,38 @@ export interface EditMode {
     active: boolean;
 }
 
+/**
+ * Display-only projection of a Custom Lumo (internally an "agent") for the native
+ * bridge. Deliberately excludes `instructions`/`conversationStarters` — those are only
+ * used server-side on web and would bloat every state push. From native's point of
+ * view this is the whole concept: there is no fuller variant it ever sees.
+ */
+export interface CustomLumo {
+    /** Stable id. Pass this straight back into `selectCustomLumo`. */
+    id: string;
+    /** Display name, shown as the primary label in the picker. */
+    name: string;
+    /**
+     * One of the (web-only, freely growing) `AGENT_ICONS` ids, always populated —
+     * never missing (`toCustomLumos` falls back to `DEFAULT_AGENT_ICON`, same as every
+     * other web render site). Native parses it into its own statically-bundled icon
+     * enum, defaulting on any string it doesn't recognize yet — so this stays a plain
+     * `string` here rather than a closed union: the bridge doesn't need to know which
+     * icons native has shipped assets for, and web never needs updating when native's
+     * coverage grows or when a new icon is added to the picker.
+     */
+    icon: string;
+    /**
+     * Short one-line byline, already derived server-side from the explicit description
+     * or (falling back) a snippet of `instructions` — the same text the web picker
+     * shows under the name. Omitted when there's nothing to show; render nothing rather
+     * than inventing a placeholder.
+     */
+    description?: string;
+    /** Whether the user authored this themselves, or it's a Proton-published/shared one — surface e.g. a "Built-in" badge for non-personal entries, matching the web picker. */
+    source: 'personal' | 'published' | 'shared';
+}
+
 export interface State {
     lumoMode: LumoMode;
     /** Legacy field for old native clients; derived from `responseMode`. */
@@ -112,6 +144,13 @@ export interface State {
     attachedFiles: LumoFile[];
     featureFlags: FeatureFlags;
     editMode: EditMode;
+    customLumos: CustomLumo[];
+    /**
+     * The full active Custom Lumo, or `null`. Sent as the full object (rather than
+     * just its id) so native can render "what's currently selected" — e.g. a badge —
+     * without needing the whole `customLumos` list in scope to look it up.
+     */
+    selectedCustomLumo: CustomLumo | null;
 }
 
 /**
@@ -255,6 +294,8 @@ class NativeComposerApi {
             isToolsEnabled: true,
         },
         editMode: { active: false },
+        customLumos: [],
+        selectedCustomLumo: null,
     };
 
     constructor() {
@@ -396,6 +437,38 @@ class NativeComposerApi {
     public setNativeModelTier(modelTier: ModelTier): void {
         console.log(`NativeComposerApi: Setting model type to ${modelTier}`);
         this.updateState({ model: getSelectedModelTier(modelTier) });
+    }
+
+    public setCustomLumos(list: CustomLumo[]): void {
+        console.log(`NativeComposerApi: Setting custom lumos list (${list.length} items)`);
+        this.updateState({ customLumos: list });
+    }
+
+    public setSelectedCustomLumo(lumo: CustomLumo | null): void {
+        console.log(`NativeComposerApi: Setting selected custom lumo to`, lumo);
+        this.updateState({ selectedCustomLumo: lumo });
+    }
+
+    public async selectCustomLumo(id: string): Promise<any> {
+        console.log('NativeComposerApi: Select custom lumo', { id });
+        const event = new CustomEvent('lumo:selectCustomLumo', {
+            detail: { id },
+        });
+        window.dispatchEvent(event);
+
+        // Return success (the actual API call will be handled by the web app)
+        return { success: true };
+    }
+
+    public async clearCustomLumo(): Promise<any> {
+        console.log('NativeComposerApi: Clear custom lumo');
+        const event = new CustomEvent('lumo:clearCustomLumo', {
+            detail: null,
+        });
+        window.dispatchEvent(event);
+
+        // Return success (the actual API call will be handled by the web app)
+        return { success: true };
     }
 
     public setMaxModelAvailable(available: boolean): void {
@@ -672,6 +745,13 @@ try {
         toggleCreateImage: createNativeWrapper('toggleCreateImage'),
         changeModelTier: createNativeWrapper('changeModelTier'),
         changeResponseMode: createNativeWrapper('changeResponseMode'),
+
+        // Custom Lumos. Note: setCustomLumos/setSelectedCustomLumo are deliberately NOT
+        // exposed here (mirrors setNativeModelTier/setNativeResponseMode above) — they
+        // must only ever be pushed by web, never written by native, or the write would
+        // be silently clobbered by the next real state push.
+        selectCustomLumo: createNativeWrapper('selectCustomLumo'),
+        clearCustomLumo: createNativeWrapper('clearCustomLumo'),
 
         // Actions
         uploadFiles: createNativeWrapper('uploadFiles'),
