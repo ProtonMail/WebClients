@@ -9,6 +9,7 @@ import {
     updateOverridePermissions,
 } from '@proton/account';
 import { addGroupOwnerThunk } from '@proton/account/groups/addGroupOwner';
+import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -86,6 +87,9 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChan
 
     const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
     const isGroupOwnersEnabled = useFlag('UserGroupsGroupOwner');
+    const isScimGroup = getIsScimGroup(group);
+
+    const isRevokeInvitationDisabled = isScimGroup || isFrozen;
 
     const memberPermissionOptions: PermissionOption[] = [
         { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.NONE },
@@ -254,7 +258,11 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChan
                     {c('Action').t`Resend invitation`}
                 </DropdownMenuButton>
             )}
-            <DropdownMenuButton className="text-left color-danger" onClick={handleRevokeInvitation} disabled={isFrozen}>
+            <DropdownMenuButton
+                className="text-left color-danger"
+                onClick={handleRevokeInvitation}
+                disabled={isRevokeInvitationDisabled}
+            >
                 {c('Action').t`Revoke invitation`}
             </DropdownMenuButton>
         </Fragment>,
