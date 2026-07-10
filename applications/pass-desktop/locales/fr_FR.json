@@ -806,6 +806,12 @@
       ],
       "Done": [
         "Terminé"
+      ],
+      "Regex invalid": [
+        "Expression régulière non valide"
+      ],
+      "Regex unsafe": [
+        "Expression régulière non sécurisée"
       ]
     },
     "Activity": {
@@ -2185,7 +2191,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -4181,6 +4188,36 @@
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Utilisez ${ PASS_APP_NAME } comme agent SSH"
+      ],
+      "Advanced": [
+        "Paramètres avancés"
+      ],
+      "Basic": [
+        "Paramètres de base"
+      ],
+      "Check": [
+        "Vérifier"
+      ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
+      ],
+      "Regular expression": [
+        "Expression régulière"
+      ],
+      "Starts with": [
+        "Commence par"
+      ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
       ]
     },
     "Link": {
@@ -4229,6 +4266,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Vous avez sélectionné ${ semiboldText } dans ce coffre-fort."
+      ],
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
       ]
     },
     "new_plans: feature": {
@@ -5220,6 +5275,18 @@
       ],
       "SSH Agent": [
         "Agent SSH"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Modifiez les paramètres de remplissage automatique pour déterminer les emplacements où les identifiants de connexion sont suggérés."
+      ],
+      "Learn more": [
+        "En savoir plus"
+      ],
+      "Test a URL against this rule": [
+        "Vérifier si une URL respecte cette règle"
+      ],
+      "URL matching": [
+        "Correspondance d'URL"
       ]
     },
     "Title_cloned_item": {
@@ -5574,6 +5641,29 @@
       ],
       "SSH agent requires using SSH keys, which is not available in your plan.": [
         "L'agent SSH nécessite l'utilisation de clés SSH, cette fonctionnalité n'est pas incluse dans votre abonnement."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Cet élément ne peut pas être proposé pour le remplissage automatique en raison de « ${ neverModeDescriptionStrong } ». Ajoutez une autre URL si vous souhaitez que cet élément soit rempli automatiquement."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Saisissez une URL pour vérifier si votre règle actuelle correspond à cette URL"
+      ],
+      "The rule is matching this URL": [
+        "La règle correspond à cette URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La règle ne correspond PAS à cette URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Cette URL ne sera pas prise en compte par la fonction de remplissage automatique"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Cette URL ne sera PAS exclue de la fonction de remplissage automatique"
       ]
     }
   }
