@@ -13,7 +13,9 @@ export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match, history }) =>
     const error = !breaches.loading && !didLoad;
 
     const scrollRef = useRef<HTMLElement>(null);
-    useLayoutEffect(() => scrollRef.current?.scrollTo({ top: 0 }), [history.location.pathname]);
+    useLayoutEffect(() => {
+        scrollRef.current?.scrollTo({ top: 0 });
+    }, [history.location.pathname]);
 
     useEffect(() => {
         /** if the monitor data wasn't loaded - try to
