@@ -101,7 +101,7 @@ export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
                             <DropdownMenuButton
                                 key={type}
                                 onClick={() => onChange(type)}
-                                isSelected={value === type}
+                                isSelected={displayValue === type}
                                 size="small"
                                 label={label}
                                 icon={icon}
