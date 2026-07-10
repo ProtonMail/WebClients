@@ -643,6 +643,7 @@ const SubUserEditModal = ({
                     title={c('Title').t`Edit user`}
                     tabIndex={activeTabIndex}
                     onChangeTabIndex={setActiveTabIndex}
+                    style={{ minBlockSize: '50rem' }}
                     tabs={[
                         {
                             title: c('user_modal').t`General`,
