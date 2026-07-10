@@ -5,6 +5,7 @@ import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSl
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
 
+import { isRelevantThreadMessage } from '../../../utils/isRelevantThreadMessage';
 import { announcementMessages } from '../messages';
 import { useAnnounce } from '../useAnnounce';
 
@@ -31,6 +32,10 @@ export const useChatAnnouncements = () => {
         // the toast preview, and when open it exposes new messages to screen readers without moving focus.
         for (const message of newMessages) {
             if (message.identity === localIdentity) {
+                continue;
+            }
+
+            if (message.isMissingRoot || !isRelevantThreadMessage(message, chatMessages, localIdentity)) {
                 continue;
             }
 

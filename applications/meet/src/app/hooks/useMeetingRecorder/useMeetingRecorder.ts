@@ -129,7 +129,7 @@ export const useMeetingRecorder = () => {
             }
 
             await publishRecordingStatus(RecordingStatus.Started);
-        }, [0, 2_000, 5_000]);
+        });
     });
 
     // Update local recording state after a reconnection changes the local participant identity.
