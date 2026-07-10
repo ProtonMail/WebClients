@@ -38,8 +38,8 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     const count = useMemo(() => items.length, [items]);
 
     return (
-        <div className="flex justify-space-between items-center" title={name}>
-            <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)}>
+        <div className="flex justify-space-between items-center">
+            <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)} title={name}>
                 <div className="w-custom" style={{ '--w-custom': '6.25rem' }}>
                     <strong className="text-sm block text-ellipsis">{name}</strong>
                     <span className="text-sm text-weak">{formatItemsCount(count)}</span>
