@@ -7411,6 +7411,26 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Dosyalarınızın dizini yeniden oluşturuluyor. Arama yapmaya sürdürebilirsiniz. İşlem tamamlanana kadar sonuçlar eksik olabilir. İşlem tamamlandığında size haber vereceğiz."
+      ],
+      "Album": [
+        "Albüm"
+      ],
+      "Do you still want to upload it?": [
+        "Hâlâ yüklemek istiyor musunuz?",
+        "Hâlâ bunları yüklemek istiyor musunuz?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Bu açıklamayla raporda yer alan bilgi ve beyanların doğru ve eksiksiz olduğunu iyi niyetle teyit ederim."
+      ],
+      "This file appears to be empty:": [
+        "Bu dosya boş gibi görünüyor:",
+        "Bu dosyalar boş gibi görünüyor:"
+      ],
+      "Uploaded - file is empty": [
+        "Yüklendi - dosya boş"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
       ]
     },
     "info": {
@@ -8285,6 +8305,27 @@
       ],
       "Indexing": [
         "Dizin oluşturma"
+      ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
+      ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
+      ],
+      "Regular expression": [
+        "Düzenli ifade"
+      ],
+      "Starts with": [
+        "Şununla başlar"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ]
     },
     "Label for contact group color": {
@@ -8614,6 +8655,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ]
     },
     "Message display when a new app version is available": {
@@ -13925,6 +13984,9 @@
       ],
       "We'd love to hear from you!": [
         "Sizden haber almak isteriz!"
+      ],
+      "Upload empty file?": [
+        "Boş dosya yüklensin mi?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14256,6 +14318,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
       ]
     },
     "Provider option": {
