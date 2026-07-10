@@ -1,3 +1,7 @@
+### Version 1.38.2
+
+- Fix Pass Monitor crash when clicking on "See all" on Chromium-based browsers
+
 ### Version 1.38.0
 
 - Add setting to automatically copy the 2FA code from your last-used login after autofill
