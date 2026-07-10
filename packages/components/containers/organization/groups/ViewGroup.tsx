@@ -4,6 +4,7 @@ import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/group
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
@@ -90,6 +91,9 @@ const ViewGroup = () => {
     ).length;
     const invitedMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING).length;
 
+    const isAddGroupMemberDisabled = isScimGroup || isFrozen;
+    const isDeleteGroupDisabled = isScimGroup || isResumingRoleAssignment;
+
     return (
         <>
             <section className="flex flex-column flex-nowrap">
@@ -114,17 +118,24 @@ const ViewGroup = () => {
                             </div>
                         }
                         actions={[
-                            <Button
-                                color="norm"
-                                icon={isMobile}
-                                disabled={isFrozen}
-                                className="flex items-center"
-                                key="button-add-user"
-                                onClick={() => addUsersToGroupModal.openModal(true)}
+                            <Tooltip
+                                key="button-add"
+                                title={isScimGroup ? c('Info').t`Manage groups in your identity provider` : null}
                             >
-                                <IcPlus className="shrink-0 md:mr-2" alt={c('Action').t`Add user`} />
-                                {!isMobile && <span>{c('Action').t`Add user`}</span>}
-                            </Button>,
+                                <span>
+                                    <Button
+                                        color="norm"
+                                        icon={isMobile}
+                                        disabled={isAddGroupMemberDisabled}
+                                        className="flex items-center"
+                                        key="button-add-user"
+                                        onClick={() => addUsersToGroupModal.openModal(true)}
+                                    >
+                                        <IcPlus className="shrink-0 md:mr-2" alt={c('Action').t`Add user`} />
+                                        {!isMobile && <span>{c('Action').t`Add user`}</span>}
+                                    </Button>
+                                </span>
+                            </Tooltip>,
                             <AdminRolesSpotlight
                                 key="button-edit"
                                 show={shouldShowSpotlight}
@@ -148,18 +159,24 @@ const ViewGroup = () => {
                                     <IcPencil alt={c('Action').t`Edit group`} />
                                 </Button>
                             </AdminRolesSpotlight>,
-                            <Button
-                                shape="outline"
-                                icon
+                            <Tooltip
                                 key="button-delete"
-                                disabled={isResumingRoleAssignment}
-                                onClick={() => {
-                                    deleteGroupPrompt.openModal(true);
-                                }}
-                                title={c('Action').t`Delete group`}
+                                title={isScimGroup ? c('Info').t`Manage groups in your identity provider` : null}
                             >
-                                <IcTrash alt={c('Action').t`Delete group`} />
-                            </Button>,
+                                <span>
+                                    <Button
+                                        shape="outline"
+                                        icon
+                                        disabled={isDeleteGroupDisabled}
+                                        onClick={() => {
+                                            deleteGroupPrompt.openModal(true);
+                                        }}
+                                        title={c('Action').t`Delete group`}
+                                    >
+                                        <IcTrash alt={c('Action').t`Delete group`} />
+                                    </Button>
+                                </span>
+                            </Tooltip>,
                         ]}
                     />
                 </div>
