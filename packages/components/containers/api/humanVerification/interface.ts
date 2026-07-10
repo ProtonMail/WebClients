@@ -37,7 +37,7 @@ export interface VerificationTokenResult {
 }
 
 export interface OwnershipMethodCache {
-    promise: Promise<[VerificationDataResult, null]>;
+    promise: Promise<VerificationDataResult>;
     result: OwnershipVerificationModel;
 }
 

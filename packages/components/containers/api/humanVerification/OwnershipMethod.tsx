@@ -10,7 +10,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import { isVerifyAddressOwnership } from '@proton/components/containers/api/humanVerification/helper';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     getVerificationDataRoute,
     sendVerificationCode,
@@ -50,22 +50,36 @@ const getOwnershipData = async ({
     method,
     cacheRef,
     api,
+    createNotification,
 }: {
     token: string;
     method: 'ownership-email' | 'ownership-sms';
     cacheRef: MutableRefObject<OwnershipCache>;
     api: Api;
+    createNotification: ReturnType<typeof useNotifications>['createNotification'];
 }) => {
     const cache = cacheRef.current[method];
     if (cache.promise === undefined) {
-        const promise = Promise.all([
-            api<VerificationDataResult>(getVerificationDataRoute(token, method)),
-            // Automatically send the code the first time.
-            api<null>(sendVerificationCode(token, method)),
-        ]);
-        cache.promise = promise;
+        cache.promise = (async () => {
+            const [dataOutcome, sendOutcome] = await Promise.allSettled([
+                api<VerificationDataResult>(getVerificationDataRoute(token, method)),
+                // Automatically send the code the first time
+                api<null>({ ...sendVerificationCode(token, method), silence: true }),
+            ]);
+
+            if (dataOutcome.status === 'rejected') {
+                throw dataOutcome.reason;
+            } else if (sendOutcome.status === 'rejected') {
+                const errorMessage = getApiErrorMessage(sendOutcome.reason);
+                createNotification({
+                    type: 'error',
+                    text: errorMessage || c('Error').t`We couldn’t send a verification code using this method.`,
+                });
+            }
+            return dataOutcome.value;
+        })();
     }
-    const [verificationData] = await cache.promise;
+    const verificationData = await cache.promise;
     const result: OwnershipVerificationModel = {
         method,
         value: verificationData.ChallengeDestination,
@@ -112,7 +126,7 @@ const OwnershipMethod = ({
 
     useEffect(() => {
         let isActive = true;
-        getOwnershipData({ method, token, api, cacheRef: ownershipCacheRef })
+        getOwnershipData({ method, token, api, cacheRef: ownershipCacheRef, createNotification })
             .then(() => {
                 if (!isActive) {
                     return;
