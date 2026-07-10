@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -29,12 +30,14 @@ const GroupItemMoreOptionsDropdown = ({
     handleDeleteAllGroupMembers,
 }: Props) => {
     const { restrictedBy, selectedGroup } = useGroupsManagement();
-    const isResumingRoleAssignment =
-        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
+    const isScimGroup = getIsScimGroup(group);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
     const removeAllMembersPrompt = useModalStateObject();
 
+    const isResumingRoleAssignment =
+        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
+    const isDeleteGroupDisabled = isResumingRoleAssignment || isScimGroup;
     return (
         <>
             {removeAllMembersPrompt.render && (
@@ -81,7 +84,7 @@ const GroupItemMoreOptionsDropdown = ({
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
                 <DropdownMenu>
                     <DropdownMenuButton
-                        disabled={isResumingRoleAssignment}
+                        disabled={isDeleteGroupDisabled}
                         className="text-left color-danger"
                         onClick={() => {
                             deleteGroupPrompt.openModal(true);
