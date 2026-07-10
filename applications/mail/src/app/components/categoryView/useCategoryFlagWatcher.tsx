@@ -44,8 +44,13 @@ export const useCategoryFlagWatcher = () => {
         void dispatch(messageCountsThunk({ cache: CacheType.None }));
     }, [isCategoryViewEnabled, dispatch]);
 
-    // We get the ID from the URL because the labelID in the state is not up-to-date yet.
     useEffect(() => {
+        // Wait for all needed data to be loaded before redirecting user
+        if (!isCategoryViewEnabledSettled) {
+            return;
+        }
+
+        // We get the ID from the URL because the labelID in the state is not up-to-date yet.
         const { rawLabelID } = getParametersFromPath(location.pathname);
         const isInbox = !rawLabelID || rawLabelID === LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX];
         if (!isInbox) {
@@ -78,7 +83,7 @@ export const useCategoryFlagWatcher = () => {
             return;
         }
 
-        if (!isCategoryViewEnabled && isCategoryViewEnabledSettled && categoryID) {
+        if (!isCategoryViewEnabled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
             history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
 
