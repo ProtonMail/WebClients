@@ -2,6 +2,7 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
@@ -98,15 +99,26 @@ export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
                     {ITEMS_SORT_OPTIONS.filter((type) => type !== 'relevant' || hasSearch).map((type) => {
                         const { label, icon } = getSortOptionDetails(type);
                         return (
-                            <DropdownMenuButton
+                            <Tooltip
                                 key={type}
-                                onClick={() => onChange(type)}
-                                isSelected={displayValue === type}
-                                size="small"
-                                label={label}
-                                icon={icon}
-                                ellipsis={false}
-                            />
+                                originalPlacement="right"
+                                title={
+                                    type === 'relevant'
+                                        ? // translator: tooltip explaining how the "Relevant" sorting works
+                                          c('Info')
+                                              .t`Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).`
+                                        : undefined
+                                }
+                            >
+                                <DropdownMenuButton
+                                    onClick={() => onChange(type)}
+                                    isSelected={displayValue === type}
+                                    size="small"
+                                    label={label}
+                                    icon={icon}
+                                    ellipsis={false}
+                                />
+                            </Tooltip>
                         );
                     })}
                 </DropdownMenu>
