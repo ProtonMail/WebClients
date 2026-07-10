@@ -1,4 +1,4 @@
-### Version 1.38.0
+### Version 1.38.1
 
 - Add "Check for update" button in Settings on macOS/Windows
 - Switch installer to .msix, enabling deployment via Intune for organizations on Windows
