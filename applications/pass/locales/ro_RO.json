@@ -778,6 +778,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Regex invalid": [
+        "Expresie regulată nevalidă"
+      ],
+      "Regex unsafe": [
+        "Expresie regulată nesigură"
       ]
     },
     "Activity": {
@@ -4066,6 +4072,36 @@
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Folosire ${ PASS_APP_NAME } ca agest SSH"
+      ],
+      "Advanced": [
+        "Avansat"
+      ],
+      "Basic": [
+        "De bază"
+      ],
+      "Check": [
+        "Verificare"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
+      ],
+      "Starts with": [
+        "Începe cu"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ]
     },
     "Link": {
@@ -4102,6 +4138,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Articole selectate în acest seif: ${ semiboldText }."
+      ],
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ]
     },
     "new_plans: feature": {
@@ -5096,6 +5150,18 @@
       ],
       "SSH Agent": [
         "Agent SSH"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajustați comportamentele de completare automată pentru a schimba unde sunt sugerate datele de conectare."
+      ],
+      "Learn more": [
+        "Aflați mai multe"
+      ],
+      "Test a URL against this rule": [
+        "Testați un URL cu această regulă"
+      ],
+      "URL matching": [
+        "Potrivire URL"
       ]
     },
     "Title_cloned_item": {
@@ -5451,6 +5517,29 @@
       ],
       "SSH agent requires using SSH keys, which is not available in your plan.": [
         "Agentul SSH necesită utilizarea cheilor SSH, care nu sunt disponibile în planul actual."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Acest articol nu poate fi sugerat pentru completare automată din cauza opțiunii „${ neverModeDescriptionStrong }”. Adăugați o altă adresă URL dacă doriți ca acest articol să fie completat automat."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Introduceți o adresă URL pentru a verifica dacă regula curentă se potrivește cu adresa URL."
+      ],
+      "The rule is matching this URL": [
+        "Regula se potrivește cu acest URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regula NU se potrivește cu acest URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Acest URL nu va fi autocompletat"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Acest URL va fi autocompletat"
       ]
     }
   }
