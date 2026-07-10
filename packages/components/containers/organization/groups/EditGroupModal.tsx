@@ -244,6 +244,7 @@ const EditGroupModal = () => {
                               ]
                             : []),
                     ]}
+                    style={{ minBlockSize: '22rem' }}
                 />
                 <ModalTwoFooter>
                     <Button color="weak" onClick={onCancel}>
