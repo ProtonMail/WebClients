@@ -26,10 +26,9 @@ export default meta;
 
 type Story = StoryObj<typeof TransitionSlot>;
 
-/** The motivating case: move a loader into a success icon by reusing existing themed components. */
 export const LoaderToCheckmark: Story = {
     render: () => {
-        const [done, setDone] = useState(false);
+        const [done, setDone] = useState(true);
         return (
             <div className="flex flex-column items-center gap-4">
                 <TransitionSlot
