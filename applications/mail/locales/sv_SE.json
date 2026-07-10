@@ -4445,6 +4445,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "En blå prick visas när en kategori har olästa meddelanden sedan ditt senaste besök."
       ]
     },
     "description": {
@@ -9239,6 +9242,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
       ]
     },
     "info": {
@@ -10395,6 +10401,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10865,6 +10877,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -10949,6 +10964,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ]
     },
     "Message display when a new app version is available": {
@@ -16389,6 +16407,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "New messages": [
+        "Nya meddelanden"
+      ],
+      "Personalize your Categories": [
+        "Personifiera dina kategorier"
+      ],
+      "You're in control": [
+        "Du har kontrollen"
       ]
     },
     "Title header for keys table": {
@@ -17006,6 +17033,17 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Actions": {
+      "Got it": [
+        "Jag förstår"
+      ],
+      "Next": [
+        "Nästa"
+      ],
+      "Skip": [
+        "Hoppa över"
       ]
     }
   }
