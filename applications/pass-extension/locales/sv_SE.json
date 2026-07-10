@@ -794,6 +794,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Regex invalid": [
+        "Regex ogiltigt"
       ]
     },
     "Activity": {
@@ -4090,6 +4093,30 @@
       ],
       "Custom expiration (minutes)": [
         "Anpassad utgång (minuter)"
+      ],
+      "Advanced": [
+        "Avancerat"
+      ],
+      "Basic": [
+        "Grundläggande"
+      ],
+      "Check": [
+        "Kontrollera"
+      ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
+      ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
+      "Starts with": [
+        "Börjar med"
       ]
     },
     "Link": {
@@ -4119,6 +4146,9 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valde ${ semiboldText } i detta valv."
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ]
     },
     "new_plans: feature": {
@@ -5116,6 +5146,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "Test a URL against this rule": [
+        "Testa en URL mot denna regel"
+      ],
+      "URL matching": [
+        "URL-matchning"
       ]
     },
     "Title_cloned_item": {
@@ -5465,6 +5504,23 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ange en URL för att kontrollera om din nuvarande regel matchar URL:en"
+      ],
+      "The rule is matching this URL": [
+        "Regeln matchar denna URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regeln matchar INTE denna URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denna URL kommer att blockeras från automatisk ifyllning"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denna URL kommer INTE att blockeras från automatisk ifyllning"
       ]
     }
   }

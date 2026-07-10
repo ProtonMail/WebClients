@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Regex invalid": [
+        "Regex geçersiz"
+      ],
+      "Regex unsafe": [
+        "Regex güvenli değil"
       ]
     },
     "Activity": {
@@ -4170,6 +4176,36 @@
       ],
       "Expires in": [
         "Geçerlilik sonu"
+      ],
+      "Advanced": [
+        "Gelişmiş"
+      ],
+      "Basic": [
+        "Temel"
+      ],
+      "Check": [
+        "Kontrol et"
+      ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
+      ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
+      ],
+      "Regular expression": [
+        "Düzenli ifade"
+      ],
+      "Starts with": [
+        "Şununla başlar"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ]
     },
     "Link": {
@@ -4199,6 +4235,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Bu kasada ${ semiboldText } seçtiniz."
+      ],
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ]
     },
     "new_plans: feature": {
@@ -5205,6 +5259,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Otomatik doldurma davranışlarını ayarlayarak oturum açma bilgilerinin önerileceği yerleri değiştirin."
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Test a URL against this rule": [
+        "Bir URL'yi bu kurala göre test et"
+      ],
+      "URL matching": [
+        "URL eşleştirme"
       ]
     },
     "Title_cloned_item": {
@@ -5554,6 +5620,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Bu öğe \"${ neverModeDescriptionStrong }\" nedeniyle otomatik doldurma için önerilemez. Bu öğenin otomatik olarak doldurulmasını istiyorsanız başka bir URL ekleyin."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Mevcut kuralınızın bu URL ile eşleşip eşleşmediğini kontrol etmek için bir URL yazın"
+      ],
+      "The rule is matching this URL": [
+        "Kural bu URL ile eşleşiyor"
+      ],
+      "The rule is NOT matching this URL": [
+        "Kural bu URL ile EŞLEŞMİYOR"
+      ],
+      "This URL will be blocked from autofill": [
+        "Bu URL otomatik doldurma özelliğinden engellenecek"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Bu URL otomatik doldurma özelliğinden engellenmeyecek"
       ]
     }
   }
