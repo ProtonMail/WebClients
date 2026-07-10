@@ -22,14 +22,12 @@ export const selectMostRecentInvite = createSelector(
     (invites): MaybeNull<Invite> => first(Object.values(invites).sort(sortOn('createTime', 'DESC'))) ?? null
 );
 
-/** Loading group invites is only needed if the user is a group owner.
- * Fetching every group members list to define if the user is a group
- * owner would be too long: limit to b2b and having at least one group. */
 export const selectLoadGroupInvites = createSelector(
-    [selectPassPlan, selectGroups, selectFeatureFlag(PassFeature.PassGroupInvitesV1)],
-    (plan, groups, enabled): boolean => {
-        if (!enabled) return false;
-        const b2b = isBusinessPlan(plan);
-        return b2b && !!groups?.length;
-    }
+    [selectPassPlan, selectFeatureFlag(PassFeature.PassGroupInvitesV1)],
+    (plan, enabled): boolean => enabled && isBusinessPlan(plan)
+);
+
+export const selectLegacyGroupInvites = createSelector(
+    [selectLoadGroupInvites, selectGroups],
+    (load, groups): boolean => load && !!groups?.length
 );
