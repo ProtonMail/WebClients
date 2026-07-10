@@ -13,15 +13,17 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
-import { AudienceType, CategoriesOnboardingFlags, FeatureValueDefault } from './onboardingInterface';
+import { CategoriesOnboardingFlags, FeatureValueDefault, OnboardingFlow } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
 jest.mock('proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider');
 jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
 jest.mock('@proton/account/welcomeFlags');
 jest.mock('@proton/features/useFeature');
+jest.mock('proton-mail/store/hooks');
 jest.mock('../useCategoriesView');
 
 const ONBOARDING_ACCOUNT_THRESHOLD = 1738371600; // 2025-02-01
@@ -140,6 +142,7 @@ const renderEligibility = () => renderHook(() => useCategoriesOnboardingEligibil
 describe('useCategoriesOnboardingEligibility', () => {
     beforeAll(() => {
         jest.mocked(useWelcomeFlags).mockReturnValue(defaultWelcomeFlags);
+        jest.mocked(useMailSelector).mockReturnValue(false);
     });
 
     // Reset every per-test mock to its default so a test cannot leak state into the next one.
@@ -168,7 +171,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -180,7 +183,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -192,7 +195,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
@@ -204,7 +207,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -217,7 +220,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -229,7 +232,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: B2B_ONBOARDING_SEEN,
                 });
             });
@@ -240,7 +243,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -252,7 +255,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2B,
+                    onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -271,7 +274,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -283,7 +286,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -294,7 +297,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
                 });
             });
@@ -306,7 +309,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_SEEN,
                 });
             });
@@ -318,7 +321,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: true,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_IN_PROGRESS,
                 });
             });
@@ -331,20 +334,83 @@ describe('useCategoriesOnboardingEligibility', () => {
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_IN_PROGRESS,
                 });
             });
         });
 
         describe('new users', () => {
-            it('are not eligible even with a closed checklist and enough mails', () => {
-                mockAccountCreatedAt(NEW_ACCOUNT_CREATE_TIME);
-                mockAllMailCount(10);
+            it('are eligible to free prompt if enough emails received and is free', () => {
+                mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
+                jest.mocked(useMailSelector).mockReturnValue(true);
+                mockAllMailCount(100);
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: true,
+                    onboardingFlow: OnboardingFlow.FREE_PROMPT,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('are not eligible to free prompt if enough emails received and is not free', () => {
+                mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: true }]);
+                jest.mocked(useMailSelector).mockReturnValue(true);
+                mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({
                     isUserEligible: false,
-                    audienceType: AudienceType.B2C,
+                    onboardingFlow: OnboardingFlow.FREE_PROMPT,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('are not eligible to free prompt if not enough emails received', () => {
+                mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
+                jest.mocked(useMailSelector).mockReturnValue(true);
+                mockAllMailCount(40);
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: false,
+                    onboardingFlow: OnboardingFlow.FREE_PROMPT,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('are not eligible to free prompt if already seen the spotlight', () => {
+                mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
+                jest.mocked(useMailSelector).mockReturnValue(true);
+                mockAllMailCount(100);
+                mockFeatures({ b2cOnboardingFlag: CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS });
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: false,
+                    onboardingFlow: OnboardingFlow.FREE_PROMPT,
+                    flagValue: CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS,
+                });
+            });
+
+            it('are not eligible if no category view access', () => {
+                mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
+                jest.mocked(useMailSelector).mockReturnValue(true);
+                mockAllMailCount(100);
+                mockCategoriesView({ isCategoryViewEnabled: false });
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: false,
+                    onboardingFlow: OnboardingFlow.FREE_PROMPT,
+                    flagValue: FeatureValueDefault,
+                });
+            });
+
+            it('are not eligible to free prompt if not default category configuration', () => {
+                mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
+                jest.mocked(useMailSelector).mockReturnValue(false);
+                mockAllMailCount(100);
+
+                expect(renderEligibility()).toStrictEqual({
+                    isUserEligible: false,
+                    onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: FeatureValueDefault,
                 });
             });

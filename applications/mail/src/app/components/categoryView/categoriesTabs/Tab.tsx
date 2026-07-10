@@ -41,7 +41,7 @@ export const Tab = ({ category, tabState }: Props) => {
     const { call } = useEventManager();
 
     const { shouldShowCounter, shouldShowNewBadge, count } = useCategoriesBadge({ tabState, category });
-    const { activeStep, userIsInOnboarding } = useCategoriesOnboarding();
+    const { activeStep, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
     const onboardingOverride =
         activeStep === OnboardingStep.MESSAGE && category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL;
@@ -55,7 +55,7 @@ export const Tab = ({ category, tabState }: Props) => {
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         // We prevent the user from navigating during the onboarding
-        if (userIsInOnboarding) {
+        if (userIsInB2COnboardingFlow) {
             e.preventDefault();
             return;
         }
