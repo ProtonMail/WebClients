@@ -336,6 +336,11 @@ describe('Item utils', () => {
             expect(sortedItems.map((item) => item.itemId)).toEqual(['item2', 'item1', 'item3']);
         });
 
+        test('should sort items by relevant using the recent order (no search context)', () => {
+            const sortedItems = sortItems('relevant')(items);
+            expect(sortedItems.map((item) => item.itemId)).toEqual(['item2', 'item1', 'item3']);
+        });
+
         test('should sort items by titleASC', () => {
             const login1 = itemBuilder('login');
             login1.get('metadata').set('name', 'Zebra');
