@@ -40,23 +40,20 @@ export interface RoleRow {
     name: string;
     description: string | null;
     isChecked: boolean;
-    isGroupSourced: boolean;
-    isLocked: boolean;
-    groupName: string | null;
+    isDisabled: boolean;
+    badge: string | null;
 }
 
 interface Props {
     rows: RoleRow[];
     onToggle: (roleId: string) => void;
-    disabled?: boolean;
     isGroupContext?: boolean;
 }
 
-const RoleCheckList = ({ rows, onToggle, disabled = false, isGroupContext = false }: Props) => {
+const RoleCheckList = ({ rows, onToggle, isGroupContext = false }: Props) => {
     return (
         <div className="flex flex-column gap-3">
-            {rows.map(({ id, name, description, isChecked, isGroupSourced, isLocked, groupName }) => {
-                const isDisabled = disabled || isGroupSourced || isLocked;
+            {rows.map(({ id, name, description, isChecked, isDisabled, badge }) => {
                 const resolvedDescription = description || getFallbackDescription(name, isGroupContext);
                 return (
                     <div key={id} className="flex flex-nowrap items-start gap-2 py-2">
@@ -70,13 +67,7 @@ const RoleCheckList = ({ rows, onToggle, disabled = false, isGroupContext = fals
                         <div className={clsx('flex-1', isDisabled && 'color-disabled')}>
                             <label htmlFor={`role-${id}`} className={clsx(!isDisabled && 'cursor-pointer')}>
                                 {name}
-                                {isGroupSourced && (
-                                    <span className="ml-1">
-                                        {groupName
-                                            ? c('user_modal').t`(via ${groupName})`
-                                            : c('user_modal').t`(via group)`}
-                                    </span>
-                                )}
+                                {badge && <span className="ml-1">{badge}</span>}
                             </label>
                             <div className={clsx('text-sm', !isDisabled && 'color-weak')}>
                                 {resolvedDescription}
