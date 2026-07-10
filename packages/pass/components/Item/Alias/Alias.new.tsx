@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -29,7 +30,7 @@ import { usePortal } from '@proton/pass/hooks/usePortal';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
+import { bindOTPSanitizer, resolveDefaultItemName, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import { reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
@@ -47,6 +48,7 @@ const FORM_ID = 'new-alias';
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
+    const { getExtensionClientState } = usePassCore();
     const { ParentPortal, openPortal } = usePortal();
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
 
@@ -64,10 +66,11 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const domain = url ? resolveSubdomain(url) : null;
+        const name = resolveDefaultItemName({ title: getExtensionClientState?.()?.title, url });
 
         return domain
-            ? { name: domain, note: getPlaceholderNote(domain), aliasPrefix: deriveAliasPrefix(domain) }
-            : { name: '', note: '', aliasPrefix: '' };
+            ? { name, note: getPlaceholderNote(domain), aliasPrefix: deriveAliasPrefix(domain) }
+            : { name, note: '', aliasPrefix: '' };
     }, []);
 
     /* set initial `aliasPrefix` to an empty string to avoid a

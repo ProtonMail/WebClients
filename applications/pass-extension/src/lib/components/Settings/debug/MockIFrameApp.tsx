@@ -24,6 +24,7 @@ const mockAppState = (appState?: Partial<AppState>) => ({
 
 const mockIFrameAppState = (domain?: string): IFrameAppState => ({
     domain: domain ?? 'proton.test',
+    title: null,
     connectionID: 'test',
     settings: getInitialSettings(),
     visible: true,

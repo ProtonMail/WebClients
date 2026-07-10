@@ -71,15 +71,19 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
         const service = state.apps[id];
         if (!service) return;
 
-        const port = ctx?.getExtensionContext()?.port;
-        const url = ctx?.getExtensionContext()?.frameUrl;
+        const ext = ctx?.getExtensionContext();
+        const port = ext?.port;
+        const url = ext?.frameUrl;
 
-        if (url && port && service.getState().port !== port) {
+        if (ctx && url && port && service.getState().port !== port) {
             const settings = ctx.getSettings();
 
             service.init(port, () => ({
                 appState: ctx.getState(),
                 domain: resolveSubdomain(url) ?? '',
+                /** Top-level tab title from the worker — not `document.title`, which
+                 * reflects the current frame (eg. payment/login iframes). */
+                title: ext?.tabTitle ?? null,
                 features: ctx.getFeatureFlags(),
                 settings: ctx.getSettings(),
                 theme: getIFrameTheme(settings.theme),
