@@ -146,6 +146,10 @@ export const filterItemsByUserIdentifier = (email: string) => (items: LoginItem[
         return acc;
     }, []);
 
+/** `relevant` only ranks while a search is active; with no search it degrades to `recent` */
+export const intoDisplayedSortFilter = (sort: ItemSortFilter, hasSearch: boolean): ItemSortFilter =>
+    sort === 'relevant' && !hasSearch ? 'recent' : sort;
+
 export const sortItems =
     (sort?: MaybeNull<ItemSortFilter>) =>
     <T extends ItemRevision>(items: T[]) => {
@@ -157,6 +161,9 @@ export const sortItems =
                     return a.createTime - b.createTime;
                 case 'createTimeDESC':
                     return b.createTime - a.createTime;
+                /* `relevant` orders by relevance only while searching (see
+                 * `searchItems`); with no active search it falls back to recency */
+                case 'relevant':
                 case 'recent':
                     return (
                         Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -

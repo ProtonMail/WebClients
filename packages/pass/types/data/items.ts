@@ -116,7 +116,7 @@ export type SelectedItem = UniqueItem;
 export type SelectedRevision = SelectedItem & { revision: number };
 export type OptimisticItem = SelectedShare & { optimisticId: string; optimisticTime?: number };
 
-export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
+export type ItemSortFilter = 'relevant' | 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
 export type ItemTypeFilter = '*' | Exclude<ItemType, 'sshKey' | 'wifi'>;
 
 export type ItemFilters = {
