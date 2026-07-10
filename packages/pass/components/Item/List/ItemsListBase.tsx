@@ -14,7 +14,7 @@ import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
+import { getItemKey, interpolateRecentItems, intoDisplayedSortFilter } from '@proton/pass/lib/items/item.utils';
 import { selectIsWritableVault } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemFilters, ItemRevision, SelectedItem } from '@proton/pass/types';
@@ -55,8 +55,11 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort, filters.selectedShareId]);
 
     const { interpolation, interpolationIndexes } = useMemo(
-        () => interpolateRecentItems(items)(filters.sort === 'recent'),
-        [filters.type, filters.sort, items]
+        /* Date sections follow recency: `relevant` degrades to `recent` while
+         * browsing (no active search); a `relevant` search ranks by relevance,
+         * so date labels are hidden. */
+        () => interpolateRecentItems(items)(intoDisplayedSortFilter(filters.sort, Boolean(filters.search)) === 'recent'),
+        [filters.type, filters.sort, filters.search, items]
     );
 
     const handleContextMenu = useCallback(
