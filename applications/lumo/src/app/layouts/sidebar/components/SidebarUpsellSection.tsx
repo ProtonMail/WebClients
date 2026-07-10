@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { useIsTouchDevice } from '../../../hooks/useIsTouchDevice';
 import { isSidebarUpsellDismissed, persistSidebarUpsellDismissed } from '../../../util/sidebarUpsellStorage';
 
 import './SidebarUpsellSection.scss';
@@ -29,6 +30,7 @@ export const SidebarUpsellSection = ({
         return isSidebarUpsellDismissed(upsellId);
     });
 
+    const isTouchDevice = useIsTouchDevice();
     const handleDismiss = () => {
         persistSidebarUpsellDismissed(upsellId);
         setIsDismissed(true);
@@ -48,7 +50,10 @@ export const SidebarUpsellSection = ({
             <Button
                 icon
                 shape="ghost"
-                className="sidebar-upsell-section-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm group-hover:opacity-100"
+                className={clsx(
+                    'sidebar-upsell-section-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm',
+                    !isTouchDevice && 'group-hover:opacity-100'
+                )}
                 onClick={handleDismiss}
                 title={c('Action').t`Dismiss`}
             >
