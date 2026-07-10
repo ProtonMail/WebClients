@@ -23,10 +23,11 @@ describe('useCategoriesShortcuts', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: [],
                 activeCategoriesTabs: [],
-                categoryViewAccess: false,
+                isCategoryViewEnabled: false,
+                isCategoryViewEnabledSettled: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
-                hasAccessToCategoryView: false,
+                canUseCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -47,10 +48,11 @@ describe('useCategoriesShortcuts', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: [],
                 activeCategoriesTabs: [],
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
+                isCategoryViewEnabledSettled: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
-                hasAccessToCategoryView: false,
+                canUseCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -71,10 +73,11 @@ describe('useCategoriesShortcuts', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
                 activeCategoriesTabs: mockActiveCategoriesData,
-                categoryViewAccess: false,
+                isCategoryViewEnabled: false,
+                isCategoryViewEnabledSettled: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
-                hasAccessToCategoryView: false,
+                canUseCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -88,10 +91,11 @@ describe('useCategoriesShortcuts', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
                 activeCategoriesTabs: mockActiveCategoriesData,
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
+                isCategoryViewEnabledSettled: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
-                hasAccessToCategoryView: false,
+                canUseCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -107,10 +111,11 @@ describe('useCategoriesShortcuts', () => {
                     mockActiveCategoriesData[1],
                     mockActiveCategoriesData[2],
                 ],
-                categoryViewAccess: true,
+                isCategoryViewEnabled: true,
+                isCategoryViewEnabledSettled: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
-                hasAccessToCategoryView: false,
+                canUseCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());

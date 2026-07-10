@@ -51,11 +51,11 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
     const history = useHistory();
     const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
-    const { categoryViewAccess, activeCategoriesTabs } = useCategoriesData();
+    const { isCategoryViewEnabled, activeCategoriesTabs } = useCategoriesData();
 
     const notifier = [MAILBOX_LABEL_IDS.STARRED, ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID)];
 
-    if (!categoryViewAccess) {
+    if (!isCategoryViewEnabled) {
         notifier.push(MAILBOX_LABEL_IDS.INBOX);
     } else {
         activeCategoriesTabs
@@ -91,7 +91,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                     mailSettings,
                     notifier,
                     onOpenElement,
-                    categoryViewAccess,
+                    isCategoryViewEnabled,
                 });
             });
         }
@@ -130,7 +130,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
                     mailSettings,
                     notifier,
                     onOpenElement,
-                    categoryViewAccess,
+                    isCategoryViewEnabled,
                 });
             });
         });

@@ -10,12 +10,12 @@ export const useCategoryViewConversationPrefetch = () => {
     const dispatch = useMailDispatch();
     const getConversation = useGetConversation();
 
-    const { categoryViewAccess } = useCategoriesView();
+    const { isCategoryViewEnabled } = useCategoriesView();
     const isCategoryViewConversationPrefetchDisabled = useFlag('CategoryViewConversationPrefetchDisabled');
 
     return (conversationID: string) => {
         const existing = getConversation(conversationID);
-        if (isCategoryViewConversationPrefetchDisabled || !categoryViewAccess || existing) {
+        if (isCategoryViewConversationPrefetchDisabled || !isCategoryViewEnabled || existing) {
             return;
         }
 
