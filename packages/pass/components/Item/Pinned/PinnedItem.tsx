@@ -20,7 +20,7 @@ type Props = ButtonLikeProps<any> & {
 export const PinnedItem = memo(({ item, active = false, className, onClick, ...rest }: Props) => (
     <ButtonLike
         as="a"
-        className={clsx('pass-pinned-list--item shrink-0 button-xs', className, active && 'is-active')}
+        className={clsx('pass-pinned-list--item shrink-0', className, active && 'is-active')}
         color="weak"
         shape="ghost"
         size="small"
