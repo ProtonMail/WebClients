@@ -7403,6 +7403,26 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Vos fichiers sont en cours de ré-indexation. Vous pouvez continuer à chercher ; les résultats peuvent être incomplets jusqu'à la fin du processus. Nous vous préviendrons quand il sera terminé."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Do you still want to upload it?": [
+        "Voulez-vous quand même l'importer ?",
+        "Voulez-vous quand même les importer ?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Je confirme par la présente, en toute bonne foi, que les informations et les déclarations contenues dans le rapport sont exactes et complètes."
+      ],
+      "This file appears to be empty:": [
+        "Ce fichier semble être vide :",
+        "Ces fichiers semblent être vides :"
+      ],
+      "Uploaded - file is empty": [
+        "Le fichier a été importé, il est vide."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
       ]
     },
     "info": {
@@ -14016,6 +14036,9 @@
       ],
       "We'd love to hear from you!": [
         "N'hésitez pas à nous donner votre avis !"
+      ],
+      "Upload empty file?": [
+        "Importer un fichier vide ?"
       ]
     },
     "Today icon tooltip in mini calendar": {

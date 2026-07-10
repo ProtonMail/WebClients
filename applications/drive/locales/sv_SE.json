@@ -7348,6 +7348,20 @@
       ],
       "Album": [
         "Album"
+      ],
+      "Do you still want to upload it?": [
+        "Vill du fortfarande ladda upp den?",
+        "Vill du fortfarande ladda upp dem?"
+      ],
+      "This file appears to be empty:": [
+        "Denna fil verkar vara tom:",
+        "Dessa filer verkar vara tomma:"
+      ],
+      "Uploaded - file is empty": [
+        "Uppladdad – fil är tom"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
       ]
     },
     "info": {
@@ -8225,6 +8239,12 @@
       ],
       "Starts with": [
         "Börjar med"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ]
     },
     "Label for contact group color": {
@@ -8551,6 +8571,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ]
     },
     "Message display when a new app version is available": {
@@ -13913,6 +13936,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Upload empty file?": [
+        "Ladda upp tom fil?"
       ]
     },
     "Today icon tooltip in mini calendar": {
