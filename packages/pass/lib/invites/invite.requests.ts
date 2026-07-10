@@ -311,7 +311,7 @@ export const getInviteRecommendationsSuggested = async (
 ) => {
     return api({
         url: `pass/v1/share/${shareId}/invite/recommended_emails/suggested`,
-        params: { StartsWith: startsWith },
+        params: { Contains: startsWith },
         method: 'get',
         signal: signal,
     });
@@ -324,7 +324,7 @@ export const getInviteRecommendationsOrganization = async (
     return (
         await api({
             url: `pass/v1/share/${shareId}/invite/recommended_emails/organization`,
-            params: { PlanPageSize: pageSize, StartsWith: startsWith, ...(since ? { PlanSince: since } : {}) },
+            params: { PlanPageSize: pageSize, Contains: startsWith, ...(since ? { PlanSince: since } : {}) },
             method: 'get',
             signal: signal,
         })
