@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -15,14 +15,15 @@ interface Props {
     tabs: Tab[];
     tabIndex: number;
     onChangeTabIndex: (index: number) => void;
+    style?: CSSProperties;
 }
 
-const ModalHeaderWithTabs = ({ title, tabs, tabIndex, onChangeTabIndex }: Props) => {
+const ModalHeaderWithTabs = ({ title, tabs, tabIndex, onChangeTabIndex, style }: Props) => {
     if (tabs.length <= 1) {
         return (
             <>
                 <ModalHeader title={title} />
-                <ModalContent>{tabs[0]?.content}</ModalContent>
+                <ModalContent style={style}>{tabs[0]?.content}</ModalContent>
             </>
         );
     }
@@ -42,7 +43,7 @@ const ModalHeaderWithTabs = ({ title, tabs, tabIndex, onChangeTabIndex }: Props)
                     </div>
                 }
             />
-            <ModalContent>{tabs[tabIndex]?.content}</ModalContent>
+            <ModalContent style={style}>{tabs[tabIndex]?.content}</ModalContent>
         </>
     );
 };
