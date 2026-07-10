@@ -33,8 +33,7 @@ jest.mock('../categoriesOnboarding/CategoriesOnboardingSpotlights', () => ({
 jest.mock('../categoriesOnboarding/CategoriesOnboardingContext', () => ({
     useCategoriesOnboarding: jest.fn(() => ({
         activeStep: 6, // OnboardingStep.DONE
-        userIsInOnboarding: false,
-        categorizeStepLocation: undefined as any,
+        userIsInB2COnboardingFlow: false,
     })),
 }));
 
