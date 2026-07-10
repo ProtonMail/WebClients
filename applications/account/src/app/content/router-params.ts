@@ -45,7 +45,6 @@ export type AccountSettings = {
 
 // Define the feature flag that are used in the account app
 export type Flags = {
-    canDisplayPassReports?: boolean;
     canDisplayNonPrivateEmailPhone?: boolean;
     isUserGroupsFeatureEnabled?: boolean;
     isUserGroupsNoCustomDomainEnabled?: boolean;

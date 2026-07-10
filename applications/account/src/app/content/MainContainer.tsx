@@ -201,7 +201,6 @@ const MainContainer = () => {
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isCryptoPostQuantumOptInEnabled =
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
-    const canDisplayPassReports = useFlag('PassB2BReports');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
@@ -305,7 +304,6 @@ const MainContainer = () => {
     };
 
     const flags: Flags = {
-        canDisplayPassReports,
         canDisplayNonPrivateEmailPhone,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
