@@ -24,9 +24,9 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
     const spotlight = useNewsletterSubscriptionSpotlight();
 
     const [newsletterSub] = useNewsletterSubscriptions();
-    const { hasAccessToCategoryView } = useCategoriesView();
+    const { canUseCategoryView } = useCategoriesView();
 
-    const title = hasAccessToCategoryView
+    const title = canUseCategoryView
         ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, newsletterSub.tabs.active.totalCount)
         : c('Title').t`Newsletters`;
 

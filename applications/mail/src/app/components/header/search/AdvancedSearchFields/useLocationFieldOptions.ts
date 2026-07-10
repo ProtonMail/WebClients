@@ -71,7 +71,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const folderMap = getStandardFolders();
 
     const categoryView = useCategoriesView();
-    const categoriesOptions: ItemDefaultFolder[] = categoryView.categoryViewAccess
+    const categoriesOptions: ItemDefaultFolder[] = categoryView.isCategoryViewEnabled
         ? categoryView.activeCategoriesTabs.map((category) => {
               return {
                   value: category.id,

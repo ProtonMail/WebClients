@@ -29,7 +29,7 @@ export const useCategoryFlagWatcher = () => {
     const disabledCategories = useMailSelector(selectDisabledCategoriesIDs);
 
     const dispatch = useMailDispatch();
-    const categoryView = useCategoriesView();
+    const { isCategoryViewEnabled, isCategoryViewEnabledSettled } = useCategoriesView();
 
     const isFirstRun = useRef(true);
 
@@ -42,7 +42,7 @@ export const useCategoryFlagWatcher = () => {
 
         void dispatch(conversationCountsThunk({ cache: CacheType.None }));
         void dispatch(messageCountsThunk({ cache: CacheType.None }));
-    }, [categoryView.categoryViewAccess, dispatch]);
+    }, [isCategoryViewEnabled, dispatch]);
 
     // We get the ID from the URL because the labelID in the state is not up-to-date yet.
     useEffect(() => {
@@ -53,10 +53,7 @@ export const useCategoryFlagWatcher = () => {
         }
 
         const categoryID = categoryIDFromUrl(location);
-        if (
-            (categoryView.categoryViewAccess && !categoryID) ||
-            (categoryID && disabledCategories?.includes(categoryID))
-        ) {
+        if ((isCategoryViewEnabled && !categoryID) || (categoryID && disabledCategories?.includes(categoryID))) {
             dispatch(
                 reset({
                     params: { labelID: MAILBOX_LABEL_IDS.INBOX },
@@ -71,7 +68,7 @@ export const useCategoryFlagWatcher = () => {
                 {
                     extra: {
                         currentUrl: window.location.href,
-                        categoryViewAccess: categoryView.categoryViewAccess,
+                        categoryViewAccess: isCategoryViewEnabled,
                         categoryID,
                         disabledCategories: disabledCategories,
                     },
@@ -81,7 +78,7 @@ export const useCategoryFlagWatcher = () => {
             return;
         }
 
-        if (!categoryView.categoryViewAccess && categoryID) {
+        if (!isCategoryViewEnabled && isCategoryViewEnabledSettled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
             history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
 
@@ -92,7 +89,7 @@ export const useCategoryFlagWatcher = () => {
                 {
                     extra: {
                         currentUrl: window.location.href,
-                        categoryViewAccess: categoryView.categoryViewAccess,
+                        categoryViewAccess: isCategoryViewEnabled,
                         categoryID,
                     },
                 }
@@ -100,5 +97,5 @@ export const useCategoryFlagWatcher = () => {
 
             return;
         }
-    }, [categoryView.categoryViewAccess, history, dispatch, location, disabledCategories]);
+    }, [isCategoryViewEnabled, isCategoryViewEnabledSettled, history, dispatch, location, disabledCategories]);
 };
