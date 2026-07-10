@@ -42,6 +42,7 @@ import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
 import { useImageGenerationMode } from './hooks/useImageGenerationMode';
+import { useNativeComposerCustomLumoApi } from './hooks/useNativeComposerCustomLumoApi';
 import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
 import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
 import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
@@ -201,6 +202,7 @@ const ComposerComponentInner = ({
         showFileModal: isSheetModalOpen,
     });
     useNativeComposerFeatureFlagsApi();
+    useNativeComposerCustomLumoApi(messageChain?.[0]?.conversationId, canUseAgents);
 
     // registers a hook that updates the native composer state
     useNativeComposerFileApi(
