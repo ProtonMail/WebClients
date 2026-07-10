@@ -22,7 +22,6 @@ const mockedHasCancellablePlan = jest.mocked(hasCancellablePlan);
 const mockedIsCancellableOnlyViaSupport = jest.mocked(isCancellableOnlyViaSupport);
 
 const defaultFlags: Flags = {
-    canDisplayPassReports: false,
     canDisplayNonPrivateEmailPhone: false,
     isUserGroupsFeatureEnabled: false,
     isUserGroupsNoCustomDomainEnabled: false,
