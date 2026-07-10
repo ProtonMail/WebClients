@@ -3,6 +3,7 @@ import { CCFieldType } from '@protontech/autofill/types';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
+import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '@proton/pass/types';
 import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
@@ -28,6 +29,7 @@ import {
     intoSelectedItem,
     intoUserIdentifier,
     matchDraftsForShare,
+    resolveDefaultItemName,
     smartCloneItemName,
     sortItems,
 } from './item.utils';
@@ -630,6 +632,27 @@ describe('Item utils', () => {
             login.set('extraFields', [{ fieldName: '2FA', type: 'totp', data: { totpUri: extraFieldTotpUri } }]);
             const item = createTestItem('login', { data: login.data });
             expect(getItemTOTPUri(item)).toBe(topLevelTotpUri);
+        });
+    });
+
+    describe('resolveDefaultItemName', () => {
+        test('should prefer a non-empty page title', () => {
+            expect(
+                resolveDefaultItemName({
+                    title: 'Sign in · Example',
+                    url: parseUrl('https://login.example.com'),
+                })
+            ).toBe('Sign in · Example');
+        });
+
+        test('should fall back to the domain when the title is missing or empty', () => {
+            expect(resolveDefaultItemName({ title: null, url: parseUrl('https://login.example.com') })).toBe(
+                'login.example.com'
+            );
+            expect(resolveDefaultItemName({ title: '   ', url: parseUrl('https://login.example.com') })).toBe(
+                'login.example.com'
+            );
+            expect(resolveDefaultItemName({ title: null, fallback: 'example.com' })).toBe('example.com');
         });
     });
 });

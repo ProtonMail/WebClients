@@ -4,7 +4,9 @@ import { c, msgid } from 'ttag';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
+import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import { getFirstUrl } from '@proton/pass/lib/urls/utils/autofill';
+import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type {
     BulkSelectionDTO,
@@ -30,6 +32,28 @@ import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constan
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { hasUserIdentifier, isEditItemDraft, isExtraOTPField } from './item.predicates';
+
+/** Default item title when creating from a web page: prefer the page title when
+ * present, otherwise fall back to the hostname (previous default behaviour). */
+export const resolveDefaultItemName = ({
+    title,
+    url,
+    fallback,
+}: {
+    title?: MaybeNull<string>;
+    url?: MaybeNull<ParsedUrl>;
+    fallback?: MaybeNull<string>;
+}): string => {
+    const trimmedTitle = title?.trim();
+    if (trimmedTitle) return trimmedTitle.slice(0, MAX_ITEM_NAME_LENGTH);
+
+    if (url) {
+        const fromUrl = resolveSubdomain(url);
+        if (fromUrl) return fromUrl;
+    }
+
+    return fallback?.trim() ?? '';
+};
 
 export const compoundItemFilters: Partial<Record<ItemType, ItemType[]>> = {
     custom: ['custom', 'sshKey', 'wifi'],
