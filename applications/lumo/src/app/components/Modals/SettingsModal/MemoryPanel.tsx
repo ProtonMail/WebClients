@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 
+import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -18,6 +19,7 @@ import {
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
+import { useIsTouchDevice } from '../../../hooks/useIsTouchDevice';
 import { useMemoryGeneration } from '../../../hooks/useMemoryGeneration';
 import { useLumoDispatch, useLumoStore } from '../../../redux/hooks';
 import { appendGeneratedMemoriesThunk } from '../../../redux/slices/lumoUserSettings';
@@ -300,8 +302,15 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
         onSaveEdit(trimmed);
     };
 
+    const isTouchDevice = useIsTouchDevice();
+
     return (
-        <li className="memory-panel-list-item flex flex-row flex-nowrap items-start gap-3 p-3 group-hover-opacity-container">
+        <li
+            className={clsx(
+                'memory-panel-list-item flex flex-row flex-nowrap items-start gap-3 p-3',
+                !isTouchDevice && 'group-hover-opacity-container'
+            )}
+        >
             <div className="flex flex-column flex-nowrap flex-1 min-w-0 gap-1">
                 <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
                     <time dateTime={new Date(memory.createdAt).toISOString()}>
@@ -341,7 +350,10 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
             </div>
 
             <div
-                className={`flex flex-row flex-nowrap items-center gap-0 shrink-0${isEditing ? '' : ' group-hover:opacity-100'}`}
+                className={clsx(
+                    'flex flex-row flex-nowrap items-center gap-0 shrink-0',
+                    !isTouchDevice && !isEditing && 'group-hover:opacity-100'
+                )}
             >
                 {isEditing ? (
                     <>
@@ -425,6 +437,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const promptsUntilAutoSave = Math.max(0, MEMORY_AUTO_SAVE_PROMPT_THRESHOLD - newPromptsSinceLastUpdate);
     const hasMemories = memories.length > 0;
     const hasNewChats = newPromptsSinceLastUpdate > 0;
+    const showUpdateFromChatsButton = hasMemories && hasNewChats;
 
     const persistMemories = (next: Memory[], extra: Partial<typeof lumoUserSettings> = {}) => {
         updateSettings({ memories: next, _autoSave: true, ...extra });
@@ -567,7 +580,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         <div className="memory-panel flex flex-column flex-nowrap h-full min-h-0 min-w-0 overflow-hidden">
             <div className="flex flex-column flex-nowrap flex-1 gap-2 min-h-0 overflow-hidden pb-1">
                 {isMemoryEnabled && (
-                    <div className="flex flex-column flex-nowrap gap-2 pt-2 shrink-0">
+                    <div className="flex flex-column flex-nowrap gap-2 shrink-0">
                         <ToggleRow
                             id="memory-autosave-toggle"
                             label={c('collider_2025: Title').t`Auto update memory`}
@@ -586,79 +599,83 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                 {!isMemoryEnabled && <MemoryEducation onEnable={handleToggleEnableMemory} />}
 
                 {isMemoryEnabled && (
-                    <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 rounded-lg border border-weak bg-weak overflow-hidden">
-                        <header className="shrink-0 flex flex-row flex-nowrap items-center justify-space-between gap-2 py-2 px-3 border-bottom border-weak bg-norm">
-                            <div className="flex flex-row flex-nowrap items-center gap-1 text-sm text-semibold min-w-0">
-                                <span>{c('collider_2025: Title').t`Saved memories`}</span>
-                                {hasMemories && (
-                                    <span className="color-weak text-normal shrink-0">({memories.length})</span>
-                                )}
-                            </div>
-                            <div className="flex flex-row flex-nowrap items-center gap-1 shrink-0">
-                                {hasMemories && hasNewChats && (
+                    <div className="flex flex-column flex-nowrap flex-1 min-h-0 gap-2">
+                        <h3 className="memory-panel-section-title m-0 text-sm text-semibold shrink-0">
+                            {c('collider_2025: Title').t`Saved memories`}
+                            {hasMemories && <span className="color-weak text-normal"> ({memories.length})</span>}
+                        </h3>
+
+                        <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 rounded-lg border border-weak bg-weak overflow-hidden">
+                            <header className="shrink-0 flex flex-row flex-nowrap items-center justify-space-between gap-2 py-2 px-3 border-bottom border-weak bg-norm">
+                                <div className="flex flex-row flex-nowrap items-center min-w-0">
+                                    {showUpdateFromChatsButton && (
+                                        <Button
+                                            shape="ghost"
+                                            size="small"
+                                            color="norm"
+                                            onClick={handleUpdateFromChats}
+                                            disabled={!canGenerateFromChats || isGenerating}
+                                            loading={isBootstrapping}
+                                            className="flex flex-row flex-nowrap items-center text-sm"
+                                        >
+                                            <LumoIcon name="WandSparkles" size={14} className="mr-2" />
+                                            {updateButtonLabel}
+                                        </Button>
+                                    )}
+                                </div>
+                                <div className="flex flex-row flex-nowrap items-center gap-1 shrink-0">
+                                    <AddMemoryPopover tipsTitle={memoryTipsTitle} onAdd={handleAddMemory} />
+                                    <MemoryActionsMenu
+                                        hasMemories={hasMemories}
+                                        hasGeneratedMemories={generatedMemories.length > 0}
+                                        onClearAll={() => clearAllModal.openModal(true)}
+                                        onClearGenerated={() => clearGeneratedModal.openModal(true)}
+                                    />
+                                </div>
+                            </header>
+
+                            {hasMemories ? (
+                                <ul className="memory-panel-list unstyled m-0 p-0 flex-1 min-h-0 overflow-y-auto">
+                                    {memories.map((memory) => (
+                                        <MemoryRow
+                                            key={memory.id}
+                                            memory={memory}
+                                            isEditing={editingId === memory.id}
+                                            onStartEdit={() => setEditingId(memory.id)}
+                                            onCancelEdit={() => setEditingId(null)}
+                                            onSaveEdit={(next) => handleSaveEdit(memory.id, next)}
+                                            onDelete={() => handleDeleteMemory(memory.id)}
+                                        />
+                                    ))}
+                                </ul>
+                            ) : (
+                                <div className="flex flex-column flex-nowrap items-center justify-center gap-2 py-6 px-4 text-center flex-1 min-h-0 overflow-y-auto">
+                                    <span className="memory-panel-empty-icon mb-1" aria-hidden="true">
+                                        <LumoIcon name="Archive" size={20} />
+                                    </span>
+                                    <p className="m-0 text-sm text-semibold">
+                                        {c('collider_2025: Title').t`No memories yet`}
+                                    </p>
+                                    <p className="memory-panel-empty-hint m-0 text-sm color-weak lh130">
+                                        {c('collider_2025: Info')
+                                            .t`Generate them from your recent chats, or add one with + above.`}
+                                    </p>
                                     <Button
-                                        shape="ghost"
+                                        className="mt-2"
+                                        shape="solid"
                                         size="small"
                                         color="norm"
                                         onClick={handleUpdateFromChats}
-                                        disabled={!canGenerateFromChats || isGenerating}
+                                        disabled={!canGenerateFromChats}
                                         loading={isBootstrapping}
                                     >
                                         <LumoIcon name="WandSparkles" size={16} className="mr-2" />
-                                        {updateButtonLabel}
+                                        {c('collider_2025: Action').t`Generate from chats`}
                                     </Button>
-                                )}
-                                <AddMemoryPopover tipsTitle={memoryTipsTitle} onAdd={handleAddMemory} />
-                                <MemoryActionsMenu
-                                    hasMemories={hasMemories}
-                                    hasGeneratedMemories={generatedMemories.length > 0}
-                                    onClearAll={() => clearAllModal.openModal(true)}
-                                    onClearGenerated={() => clearGeneratedModal.openModal(true)}
-                                />
-                            </div>
-                        </header>
-
-                        {hasMemories ? (
-                            <ul className="memory-panel-list unstyled m-0 p-0 flex-1 min-h-0 overflow-y-auto">
-                                {memories.map((memory) => (
-                                    <MemoryRow
-                                        key={memory.id}
-                                        memory={memory}
-                                        isEditing={editingId === memory.id}
-                                        onStartEdit={() => setEditingId(memory.id)}
-                                        onCancelEdit={() => setEditingId(null)}
-                                        onSaveEdit={(next) => handleSaveEdit(memory.id, next)}
-                                        onDelete={() => handleDeleteMemory(memory.id)}
-                                    />
-                                ))}
-                            </ul>
-                        ) : (
-                            <div className="flex flex-column flex-nowrap items-center justify-center gap-2 py-6 px-4 text-center flex-1 min-h-0 overflow-y-auto">
-                                <span className="memory-panel-empty-icon mb-1" aria-hidden="true">
-                                    <LumoIcon name="Archive" size={20} />
-                                </span>
-                                <p className="m-0 text-sm text-semibold">
-                                    {c('collider_2025: Title').t`No memories yet`}
-                                </p>
-                                <p className="memory-panel-empty-hint m-0 text-sm color-weak lh130">
-                                    {c('collider_2025: Info')
-                                        .t`Generate them from your recent chats, or add one with + above.`}
-                                </p>
-                                <Button
-                                    className="mt-2"
-                                    shape="solid"
-                                    size="small"
-                                    color="norm"
-                                    onClick={handleUpdateFromChats}
-                                    disabled={!canGenerateFromChats}
-                                    loading={isBootstrapping}
-                                >
-                                    <LumoIcon name="WandSparkles" size={16} className="mr-2" />
-                                    {c('collider_2025: Action').t`Generate from chats`}
-                                </Button>
-                            </div>
-                        )}
-                    </section>
+                                </div>
+                            )}
+                        </section>
+                    </div>
                 )}
             </div>
 
