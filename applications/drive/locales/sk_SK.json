@@ -7633,6 +7633,30 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Vaše súbory sa práve znovu indexujú. Môžete pokračovať vo vyhľadávaní – výsledky môžu byť neúplné, kým sa proces nedokončí. Dáme vám vedieť, keď bude hotový."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Do you still want to upload it?": [
+        "Chcete ho aj tak nahrať?",
+        "Chcete ich aj tak nahrať?",
+        "Chcete ich aj tak nahrať?",
+        "Chcete ich aj tak nahrať?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Týmto v dobrej viere potvrdzujem, že informácie a tvrdenia uvedené v správe sú správne a úplné."
+      ],
+      "This file appears to be empty:": [
+        "Zdá sa, že tento súbor je prázdny:",
+        "Zdá sa, že tieto súbory sú prázdne:",
+        "Zdá sa, že tieto súbory sú prázdne:",
+        "Zdá sa, že tieto súbory sú prázdne:"
+      ],
+      "Uploaded - file is empty": [
+        "Nahrané – súbor je prázdny"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -8519,6 +8543,27 @@
       ],
       "Indexing": [
         "Indexovanie"
+      ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
+      "Starts with": [
+        "Začína s"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ]
     },
     "Label for contact group color": {
@@ -8868,6 +8913,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ]
     },
     "Message display when a new app version is available": {
@@ -14335,6 +14398,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Nemohli sme overiť, že tento priečinok nahral používateľ ${ author }."
+      ],
+      "Upload empty file?": [
+        "Nahrať prázdny súbor?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14693,6 +14759,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ]
     },
     "Provider option": {
