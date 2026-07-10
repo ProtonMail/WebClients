@@ -127,7 +127,6 @@ enum AccountFlag {
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
-    PasswordReminderASR = 'PasswordReminderASR',
     RecoveryFileShareEnabled = 'RecoveryFileShareEnabled',
     GenericUserSettings = 'GenericUserSettings',
 }
