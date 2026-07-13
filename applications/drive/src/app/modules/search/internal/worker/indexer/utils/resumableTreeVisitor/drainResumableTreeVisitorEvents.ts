@@ -1,5 +1,6 @@
 import type { NodeEntity } from '@proton/drive';
 
+import { Logger } from '../../../../shared/Logger';
 import type { IndexKind } from '../../../index/IndexRegistry';
 import type { IndexEntry } from '../../indexEntry';
 import type { TaskContext } from '../../tasks/BaseTask';
@@ -8,9 +9,9 @@ import type { BFSNodeEvent, BFSVisitorCheckpoint } from './ResumableFolderBFSVis
 
 // Commit the write session at least this often (in walked nodes). Bounds peak session memory and
 // write amplification; also caps the work re-done after a crash.
-export const COMMIT_EVERY_N_ENTRIES = 500;
+export const COMMIT_EVERY_N_ENTRIES = 30;
 // Advance the persisted resume checkpoint at most this many folder-expansions apart.
-export const CHECKPOINT_EVERY_N_FOLDERS = 5;
+export const CHECKPOINT_EVERY_N_FOLDERS = 10;
 
 export interface ResumableWalkHandlers {
     // Map a walked node to the index entry to write (populator-specific: identity, epoch, progress).
@@ -42,6 +43,15 @@ export async function drainResumableTreeVisitorEvents(
     let session = indexWriter.startWriteSession();
     let pendingInserts = 0;
     let foldersSinceCheckpoint = 0;
+
+    const commit = async () => {
+        const startCommitTime = performance.now();
+        await session.commit();
+        Logger.info(
+            `search-log: committed ${pendingInserts} entries in ${Math.round(performance.now() - startCommitTime)}ms`
+        );
+    };
+
     try {
         for await (const event of events) {
             ctx.signal.throwIfAborted();
@@ -50,7 +60,7 @@ export async function drainResumableTreeVisitorEvents(
                 session.insert(handlers.toEntry(event.node, event.parentPath, event.generation));
                 ctx.notifyIndexingProgress();
                 if (++pendingInserts >= COMMIT_EVERY_N_ENTRIES) {
-                    await session.commit();
+                    await commit();
                     await new CleanUpStaleBlobsTask().execute(ctx);
                     session = indexWriter.startWriteSession();
                     pendingInserts = 0;
@@ -65,7 +75,7 @@ export async function drainResumableTreeVisitorEvents(
             if (isMidFolder || ++foldersSinceCheckpoint >= CHECKPOINT_EVERY_N_FOLDERS) {
                 if (pendingInserts > 0) {
                     // Blobs must be durable BEFORE the checkpoint advances past them.
-                    await session.commit();
+                    await commit();
                     await new CleanUpStaleBlobsTask().execute(ctx);
                     session = indexWriter.startWriteSession();
                     pendingInserts = 0;
@@ -78,7 +88,7 @@ export async function drainResumableTreeVisitorEvents(
         }
 
         if (pendingInserts > 0) {
-            await session.commit();
+            await commit();
             await new CleanUpStaleBlobsTask().execute(ctx);
         }
     } finally {
