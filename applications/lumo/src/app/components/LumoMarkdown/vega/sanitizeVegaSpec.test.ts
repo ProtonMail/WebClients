@@ -99,6 +99,30 @@ describe('sanitizeVegaSpec', () => {
         expect(sanitizeVegaSpec(spec)).toMatchObject({ mark: { type: 'bar', color: PROTON_BAR_COLOR } });
     });
 
+    it('accepts unquoted object keys from LLM output', () => {
+        const spec = `{
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "data": {
+                "values": [
+                    {"week": 1, "DAU": 31.2},
+                    {"week": 2, "DAU": 33.4}
+                ]
+            },
+            "mark": {"type": "line", "point": true},
+            "encoding": {
+                "x": {"field": "week", "type": "ordinal", "axis": {"title": "Week"}},
+                "y": {"field": "DAU", "type": "quantitative", "axis": {"title": "DAU (k)", format: ".1f"}}
+            }
+        }`;
+
+        const sanitized = sanitizeVegaSpec(spec) as {
+            encoding?: { y?: { axis?: { format?: string } } };
+        };
+
+        expect(sanitized.encoding?.y?.axis).toMatchObject({ format: '.1f' });
+    });
+
     it('allows url as a data field name inside inline values', () => {
         const spec = JSON.stringify({
             mark: 'bar',

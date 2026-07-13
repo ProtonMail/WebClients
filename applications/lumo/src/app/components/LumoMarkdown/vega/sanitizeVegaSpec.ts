@@ -79,12 +79,22 @@ function normalizeJsonText(raw: string): string {
         .replace(/[\u2018\u2019]/g, "'");
 }
 
+/** Quote bare object keys that LLMs often emit as JavaScript literals (e.g. `format: ".1f"`). */
+function quoteUnquotedJsonKeys(raw: string): string {
+    return raw.replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":');
+}
+
 function parseJsonLenient(raw: string): unknown {
+    const withoutTrailingCommas = (text: string) => text.replace(/,\s*([}\]])/g, '$1');
     const candidates = [
         raw,
         normalizeJsonText(raw),
-        raw.replace(/,\s*([}\]])/g, '$1'),
-        normalizeJsonText(raw).replace(/,\s*([}\]])/g, '$1'),
+        withoutTrailingCommas(raw),
+        withoutTrailingCommas(normalizeJsonText(raw)),
+        quoteUnquotedJsonKeys(raw),
+        quoteUnquotedJsonKeys(normalizeJsonText(raw)),
+        withoutTrailingCommas(quoteUnquotedJsonKeys(raw)),
+        withoutTrailingCommas(quoteUnquotedJsonKeys(normalizeJsonText(raw))),
     ];
 
     let lastError: Error | undefined;
