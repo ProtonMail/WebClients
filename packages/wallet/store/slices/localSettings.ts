@@ -1,7 +1,8 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 
 import { getSettings, setSettings } from '../../utils/cache';
 import { type WalletThemeOption, getWalletDefaultTheme } from '../../utils/theme';
