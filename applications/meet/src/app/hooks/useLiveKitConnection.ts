@@ -23,6 +23,16 @@ export const isConnectionTimeoutError = (error: any): boolean => {
     return msg.includes('Connection timeout after');
 };
 
+// Thrown post-signaling when the PeerConnection fails to reach `connected` (ICE FAILED).
+const isPeerConnectionError = (error: any): boolean => {
+    const msg = error?.message || '';
+    return msg.includes('could not establish pc connection');
+};
+
+// Connection failures worth retrying over a different transport policy.
+const isRecoverableConnectionError = (error: any): boolean =>
+    isConnectionError(error) || isConnectionTimeoutError(error) || isPeerConnectionError(error);
+
 export type ConnectionInfo = { stunFailed: boolean; connectionAttempts: number };
 
 interface UseLiveKitConnectionParams {
@@ -122,31 +132,55 @@ export const useLiveKitConnection = ({
         }
     };
 
+    const connectDirect = async (url: string, token: string, timeout: number): Promise<void> => {
+        await connectWithTimeout(
+            url,
+            token,
+            timeout,
+            { autoSubscribe: false, peerConnectionTimeout: timeout / 2 },
+            c('Warning').t`Connection is taking longer than expected`,
+            c('Warning').t`Trying another route…`
+        );
+    };
+
     const connectWithStunFallbackToTurnRelay = async (
         url: string,
         token: string,
         timeout: number
     ): Promise<ConnectionInfo> => {
         const noMediaPermission = cameraPermission !== 'granted' && microphonePermission !== 'granted';
+
+        // Firefox can't gather host/srflx candidates without media permission, so force
+        // TURN relay first and fall back to a direct attempt if the relay fails.
         if (isFirefox() && noMediaPermission) {
-            await connectViaTurnRelay(url, token, timeout);
-            setIsUsingTurnRelay(true);
-            return { stunFailed: false, connectionAttempts: 1 };
+            try {
+                await connectViaTurnRelay(url, token, timeout);
+                setIsUsingTurnRelay(true);
+                return { stunFailed: false, connectionAttempts: 1 };
+            } catch (relayError: any) {
+                if (!isRecoverableConnectionError(relayError)) {
+                    throw relayError;
+                }
+
+                reportMeetError(
+                    'Forced TURN relay failed on Firefox without media permission, trying direct connection',
+                    withMeetingLinkNameTag(relayError)
+                );
+                setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
+                setJoiningLoaderSubtitle(c('Warning').t`Trying another route…`);
+
+                await connectDirect(url, token, timeout);
+                setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
+                return { stunFailed: true, connectionAttempts: 2 };
+            }
         }
 
         try {
-            await connectWithTimeout(
-                url,
-                token,
-                timeout,
-                { autoSubscribe: false, peerConnectionTimeout: timeout / 2 },
-                c('Warning').t`Connection is taking longer than expected`,
-                c('Warning').t`Trying another route…`
-            );
+            await connectDirect(url, token, timeout);
             setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
             return { stunFailed: false, connectionAttempts: 1 };
         } catch (roomConnectionError: any) {
-            if (!isConnectionError(roomConnectionError) && !isConnectionTimeoutError(roomConnectionError)) {
+            if (!isRecoverableConnectionError(roomConnectionError)) {
                 throw roomConnectionError;
             }
 
