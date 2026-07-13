@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Logo } from '@proton/components';
 import { Branch } from '@proton/components/components/sidebar/nav/Branch';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -52,15 +51,15 @@ const SidebarAppsList = () => {
                         }
                         return (
                             <li key={app}>
-                                <ButtonLike
-                                    as={'a'}
+                                <a
                                     href={getSettingsHref(app, localId)}
-                                    className="navigation-link flex flex-nowrap items-center gap-2 py-1 px-3 text-no-decoration interactive-pseudo rounded"
+                                    className="interactive-pseudo-inset relative flex flex-nowrap items-center gap-2 py-1 px-3 text-no-decoration rounded"
+                                    style={{ '--link-hover': 'var(--text-norm)' }}
                                     aria-label={name}
                                 >
                                     <Logo appName={app} variant="glyph-only" size={4} className="shrink-0" />
                                     <span className="text-ellipsis">{name}</span>
-                                </ButtonLike>
+                                </a>
                             </li>
                         );
                     })}
