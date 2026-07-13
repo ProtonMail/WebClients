@@ -78,7 +78,7 @@ $padding-inline-end-link: var(--space-2) !default;
 }
 
 .navigation-link {
-	@extend %interactive;
+	@extend .interactive;
 
 	position: relative;
 	border-radius: var(--border-radius-md);
