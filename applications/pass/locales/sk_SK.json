@@ -780,6 +780,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Regex invalid": [
+        "Neplatný regulárny výraz"
+      ],
+      "Regex unsafe": [
+        "Nebezpečný regulárny výraz"
       ]
     },
     "Activity": {
@@ -2857,6 +2863,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Zoradené podľa poľa (najskôr názov, potom používateľské meno alebo email, webová stránka, poznámky) a presnosti zhody (presná zhoda, začína na, obsahuje)."
       ]
     },
     "Keyboard key": {
@@ -4097,6 +4106,36 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Basic": [
+        "Základná"
+      ],
+      "Check": [
+        "Skontrolovať"
+      ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
+      "Relevant": [
+        "Relevantné"
+      ],
+      "Starts with": [
+        "Začína s"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ]
     },
     "Link": {
@@ -4135,6 +4174,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Vybrali ste ${ semiboldText } v tomto trezore."
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ]
     },
     "new_plans: feature": {
@@ -5138,6 +5195,18 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Upravte správanie funkcie automatického vypĺňania, aby ste zmenili miesta, kde sa navrhujú prihlasovacie údaje."
+      ],
+      "Learn more": [
+        "Zistiť viac"
+      ],
+      "Test a URL against this rule": [
+        "Otestujte URL adresu podľa tohto pravidla"
+      ],
+      "URL matching": [
+        "Zhoda URL"
       ]
     },
     "Title_cloned_item": {
@@ -5497,6 +5566,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Táto položka nemôže byť navrhnutá na automatické vyplnenie kvôli „${ neverModeDescriptionStrong }“. Ak chcete, aby sa táto položka automaticky vyplnila, pridajte ďalšiu URL adresu."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Zadajte URL adresu, aby ste skontrolovali, či sa s ňou zhoduje vaše aktuálne pravidlo"
+      ],
+      "The rule is matching this URL": [
+        "Pravidlo zodpovedá tejto URL adrese"
+      ],
+      "The rule is NOT matching this URL": [
+        "Toto pravidlo sa na túto URL adresu NEVZŤAHUJE"
+      ],
+      "This URL will be blocked from autofill": [
+        "Táto URL adresa bude vylúčená z automatického vypĺňania"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Táto URL adresa NEBUDE vylúčená z automatického vypĺňania"
       ]
     }
   }

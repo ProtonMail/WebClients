@@ -776,6 +776,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
+      ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Regex utrygg"
       ]
     },
     "Activity": {
@@ -1401,6 +1407,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Klarte ikke å starte SSH-agenten: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Klarte ikke å stoppe SSH-agenten: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2779,6 +2791,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } vil bruke SSH-nøklene som er lagret i hvelvene dine."
+      ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ingen SSH-nøkler funnet i ${ PASS_SHORT_APP_NAME }. Opprett SSH-nøkkelelementer som skal brukes med agenten."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Rangert etter felt (tittel først, deretter brukernavn eller e-post, nettsted, notater) og samsvarspresisjon (nøyaktig, starter med, inneholder)."
       ]
     },
     "Keyboard key": {
@@ -3988,6 +4009,39 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Basic": [
+        "Grunnleggende"
+      ],
+      "Check": [
+        "Sjekk"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
+      "Relevant": [
+        "Relevant"
+      ],
+      "Starts with": [
+        "Begynner med"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Bruk ${ PASS_APP_NAME } som SSH-agent"
       ]
     },
     "Link": {
@@ -4022,6 +4076,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valgte ${ semiboldText } i dette hvelvet."
+      ],
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ]
     },
     "new_plans: feature": {
@@ -4472,6 +4544,12 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Bekreftelses-e-post sendt. Sjekk innboksen din for å bekrefte postkassen din"
+      ],
+      "SSH agent successfully started": [
+        "SSH-agenten ble startet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agenten ble stoppet"
       ]
     },
     "Theme": {
@@ -4998,6 +5076,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Juster autofyll-atferden for å endre hvor pålogginger foreslås."
+      ],
+      "Learn more": [
+        "Lær mer"
+      ],
+      "SSH Agent": [
+        "SSH-agent"
+      ],
+      "Test a URL against this rule": [
+        "Test en URL mot denne regelen"
+      ],
+      "URL matching": [
+        "URL-samsvar"
       ]
     },
     "Title_cloned_item": {
@@ -5346,6 +5439,32 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
+      ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agenten krever bruk av SSH-nøkler, noe som ikke er tilgjengelig i abonnementet ditt."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dette elementet kan ikke foreslås for autofyll på grunn av \"${ neverModeDescriptionStrong }\". Legg til en annen URL hvis du vil at dette elementet skal fylles ut automatisk."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Skriv inn en URL for å sjekke om den nåværende regelen samsvarer med URL-en"
+      ],
+      "The rule is matching this URL": [
+        "Regelen samsvarer med denne nettadressen"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regelen samsvarer IKKE med denne URL-en"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denne nettadressen vil bli blokkert fra autofyll"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denne nettadressen vil IKKE bli blokkert fra autofyll"
       ]
     }
   }
