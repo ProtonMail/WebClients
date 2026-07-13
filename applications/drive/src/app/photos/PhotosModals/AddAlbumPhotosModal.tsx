@@ -115,7 +115,7 @@ const AlbumSquare = ({
     }
     const shouldShowLoading = loading && albumProgress.status !== 'done';
 
-    if (!name || !photoCount) {
+    if (!name || photoCount === undefined) {
         return null;
     }
     return (
@@ -209,9 +209,13 @@ export const AddAlbumPhotosModal = ({
     const { albumsUids, albumsMap } = useAlbumsStore(
         useShallow((state) => ({ albumsUids: state.albumsUids, albumsMap: state.albums }))
     );
-    const recentUids = new Set(albumsUids.slice(0, 2));
+    const recentUids = albumsUids.slice(0, 2);
     const sharedAlbumsUids = albumsUids.filter((uid) => albumsMap.get(uid)?.isShared);
-    const notSharedAlbumsUids = albumsUids.filter((uid) => !albumsMap.get(uid)?.isShared && !recentUids.has(uid));
+    // Share mode lists shared albums in their own section; non-share mode has no such
+    // section, so shared albums belong in "All albums" (only Recent is split out).
+    const otherAlbumsUids = albumsUids.filter((uid) =>
+        share ? !albumsMap.get(uid)?.isShared : !recentUids.includes(uid)
+    );
 
     const [activeAlbumUid, setActiveAlbumUid] = useState<string | undefined>();
 
@@ -287,25 +291,14 @@ export const AddAlbumPhotosModal = ({
                         </Button>
                         {!!albumsUids.length && (
                             <>
-                                {!share && albumsUids[0] && (
+                                {!share && !!recentUids.length && (
                                     <>
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`Recent`}</h2>
-                                        <ul className="unstyled mt-0">
-                                            <AlbumSquare
-                                                loading={activeAlbumUid === albumsUids[0]}
-                                                disabled={!!activeAlbumUid && activeAlbumUid !== albumsUids[0]}
-                                                nodeUid={albumsUids[0]}
-                                                onClick={handleSelectAlbum}
-                                            />
-                                            {albumsUids[1] && (
-                                                <AlbumSquare
-                                                    loading={activeAlbumUid === albumsUids[1]}
-                                                    disabled={!!activeAlbumUid && activeAlbumUid !== albumsUids[1]}
-                                                    nodeUid={albumsUids[1]}
-                                                    onClick={handleSelectAlbum}
-                                                />
-                                            )}
-                                        </ul>
+                                        <AlbumSquareList
+                                            nodeUids={recentUids}
+                                            activeAlbumUid={activeAlbumUid}
+                                            onSelectAlbum={handleSelectAlbum}
+                                        />
                                     </>
                                 )}
                                 {share && !!sharedAlbumsUids.length && (
@@ -319,11 +312,11 @@ export const AddAlbumPhotosModal = ({
                                         />
                                     </>
                                 )}
-                                {!!notSharedAlbumsUids.length && (
+                                {!!otherAlbumsUids.length && (
                                     <>
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`All albums`}</h2>
                                         <AlbumSquareList
-                                            nodeUids={notSharedAlbumsUids}
+                                            nodeUids={otherAlbumsUids}
                                             activeAlbumUid={activeAlbumUid}
                                             onSelectAlbum={handleSelectAlbum}
                                         />
