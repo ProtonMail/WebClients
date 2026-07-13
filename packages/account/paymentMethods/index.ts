@@ -6,6 +6,8 @@ import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { formatPaymentMethod, formatPaymentMethods } from '@proton/payments/core/methods';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
@@ -14,8 +16,6 @@ import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/upd
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 
 const name = 'paymentMethods' as const;
 

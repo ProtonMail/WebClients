@@ -1,6 +1,7 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState } from '@proton/account';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 const name = 'hide_amounts' as const;

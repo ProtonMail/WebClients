@@ -1,6 +1,6 @@
 import type { Draft } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
