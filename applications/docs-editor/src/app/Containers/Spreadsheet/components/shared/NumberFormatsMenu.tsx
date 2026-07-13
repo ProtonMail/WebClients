@@ -274,7 +274,10 @@ function CurrencySubMenuPopover() {
 
 function NewBadge() {
   return (
-    <span className="flex shrink-0 items-center self-center rounded bg-[#F4F1FF] px-1 text-xs font-semibold leading-4 text-[#6D4AFF]">
+    <span
+      aria-hidden="true"
+      className="flex shrink-0 items-center self-center rounded bg-[#F4F1FF] px-1 text-xs font-semibold leading-4 text-[#6D4AFF]"
+    >
       {c('Info').t`New`}
     </span>
   )
