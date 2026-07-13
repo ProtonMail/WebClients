@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getSAMLConfigs, getSAMLStaticInfo, getSCIMInfo } from '@proton/shared/lib/api/samlSSO';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Organization, SSO, User } from '@proton/shared/lib/interfaces';
@@ -10,8 +12,6 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import { type OrganizationState, organizationFulfilled, organizationThunk } from '../organization';
 import { type UserState, userFulfilled, userThunk } from '../user';
 

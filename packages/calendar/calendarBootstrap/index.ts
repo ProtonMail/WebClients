@@ -1,14 +1,12 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import type { AddressKeysState, AddressesState, ModelState } from '@proton/account';
+import type { AddressKeysState, AddressesState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseMapStore,
-} from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
+import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import { getFullCalendar } from '@proton/shared/lib/api/calendars';
 import {
     getIsCalendarMemberEventManagerCreate,

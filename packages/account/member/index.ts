@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getSelfMember } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Member, User } from '@proton/shared/lib/interfaces';
@@ -12,8 +14,6 @@ import type { AddressKeysState } from '../addressKeys';
 import type { AddressesState } from '../addresses';
 import { serverEvent } from '../eventLoop';
 import type { InactiveKeysState } from '../inactiveKeys';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import type { UserState } from '../user';
 import { userThunk } from '../user';
 import type { UserKeysState } from '../userKeys';

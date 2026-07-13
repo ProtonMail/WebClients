@@ -14,6 +14,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
@@ -23,7 +24,6 @@ import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import type { ModelState } from '../interface';
 import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'subscription' as const;

@@ -1,8 +1,10 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getAddress as getAddressConfig, getAllAddresses } from '@proton/shared/lib/api/addresses';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
@@ -15,8 +17,6 @@ import { upsertById } from '@proton/utils/upsertById';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 
 const name = 'addresses' as const;
 

@@ -1,15 +1,13 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { type ModelState, serverEvent } from '@proton/account';
+import { serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseMapStore,
-} from '@proton/redux-utilities/promiseStore';
+import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import { getContact } from '@proton/shared/lib/api/contacts';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

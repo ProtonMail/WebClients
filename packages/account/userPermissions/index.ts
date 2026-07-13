@@ -2,11 +2,11 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getUserPermissions } from '@proton/shared/lib/api/userPermissions';
 import { PERMISSIONS, type Permission, type UserPermission } from '@proton/shared/lib/interfaces';
 
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import { type UserState, selectUser } from '../user';
 
 const name = 'userPermissions';

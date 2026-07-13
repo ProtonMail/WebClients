@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import type { OrganizationRole } from '@proton/shared/lib/interfaces';
 
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import type { UserState } from '../user';
 
 const name = 'organizationRoles' as const;

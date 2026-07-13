@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getAllMspSubsidiaries } from '@proton/shared/lib/api/msp';
 import type { MspSubsidiary, MspSubsidiaryStatusValue } from '@proton/shared/lib/interfaces/MspSubsidiary';
 
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import type { UserState } from '../user';
 
 const name = 'mspSubsidiaries' as const;
