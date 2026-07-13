@@ -51,6 +51,7 @@ import {
     unhandledError,
 } from '../lib';
 import { addCheckpoint, chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
+import { getParentOrigin } from './get-parent-origin';
 
 function isChargebeeEvent(event: any): boolean {
     return !!event?.cbEvent;
@@ -716,6 +717,7 @@ export class MessageBus {
 
             this.sendMessage(message);
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error('Failed to send error message to parent');
             throw error;
         }
@@ -733,7 +735,8 @@ export class MessageBus {
             error: this.formatError(message.error),
         };
 
-        window.parent.postMessage(JSON.stringify(messageToSend), '*');
+        const targetOrigin = getParentOrigin(window.location.origin);
+        window.parent.postMessage(JSON.stringify(messageToSend), targetOrigin);
     }
 
     // regular Error type + some specific properties from Chargebee
