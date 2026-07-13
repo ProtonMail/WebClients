@@ -15,12 +15,13 @@ import { useApplication } from '~/utils/application-context'
 import { getFullPathFromAncestry, getIsSharedWithMe } from '~/drive-sdk'
 import { createItemValue } from './create-document-items'
 import { useRecentsStore } from './use-recents-store'
-import { getRoleFromHierarchy } from '~/utils/get-role-from-ancestors'
+import { getRoleFromHierarchy } from '~/drive-sdk/get-role-from-hierarchy'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
-import type { SDKEventListener } from '~/utils/drive-events'
+import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()
@@ -32,7 +33,7 @@ export function useRecents(drive: ProtonDriveClient) {
   }, [addresses])
 
   const app = useApplication()
-  const { docsApi, logger } = app
+  const { docsApi } = app
   const { createNotification } = useNotifications()
 
   const recentDocuments = useRecentsStore((state) => state.recentDocuments)
@@ -79,13 +80,18 @@ export function useRecents(drive: ProtonDriveClient) {
         })
         .catch((error) => {
           setIsRecentsUpdating(false)
-          logger.error('Failed to load recent documents', error)
+          traceError(error, {
+            tags: {
+              initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+              feature: 'DocsLoadRecentsWithDriveSDK',
+            },
+          })
           createNotification({
             type: 'error',
             text: c('Error').t`Failed to load recent documents`,
           })
         }),
-    [fetchRecents, logger, createNotification],
+    [fetchRecents, createNotification],
   )
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
@@ -102,61 +108,71 @@ export function useRecents(drive: ProtonDriveClient) {
   }, [])
 
   const recentsListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
-    const drive = getDrive()
-    const { setDocument, setRecentDocuments, removeChildrenOf, removeDocument, addresses } = useRecentsStore.getState()
+    try {
+      const drive = getDrive()
+      const { setDocument, setRecentDocuments, removeChildrenOf, removeDocument, addresses } =
+        useRecentsStore.getState()
 
-    if (event.type === 'node_deleted') {
-      removeDocument(event.nodeUid)
-    }
-
-    if (event.type === 'node_created') {
-      const node = await drive.getNode(event.nodeUid)
-      if (mimeTypeToProtonDocumentType(node.mediaType)) {
-        // Adding a new document
-        setDocument(await loadDocument(drive, event.nodeUid, addresses))
+      if (event.type === 'node_deleted') {
+        removeDocument(event.nodeUid)
       }
-    }
 
-    if (event.type === 'node_updated') {
-      const node = await drive.getNode(event.nodeUid)
-
-      if (event.isTrashed) {
-        if (node.type === NodeType.Folder) {
-          removeChildrenOf(node.uid)
-        } else {
-          removeDocument(node.uid)
-        }
-      } else {
+      if (event.type === 'node_created') {
+        const node = await drive.getNode(event.nodeUid)
         if (mimeTypeToProtonDocumentType(node.mediaType)) {
-          // Existing document was updated
-          const { recentDocuments } = useRecentsStore.getState()
-          const document = recentDocuments[node.uid]
-          setDocument(await loadDocument(drive, event.nodeUid, addresses, document))
-        } else if (node.type === NodeType.Folder) {
-          const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
+          // Adding a new document
+          setDocument(await loadDocument(drive, event.nodeUid, addresses))
+        }
+      }
 
-          const { recentDocuments } = useRecentsStore.getState()
-          // Which of already loaded documents are children of the updated folder?
-          for (const documentNodeUid in recentDocuments) {
-            if (recentDocuments[documentNodeUid].ancestorsNodeUids?.includes(node.uid)) {
-              childrenOfUpdatedFolder.push(recentDocuments[documentNodeUid])
+      if (event.type === 'node_updated') {
+        const node = await drive.getNode(event.nodeUid)
+
+        if (event.isTrashed) {
+          if (node.type === NodeType.Folder) {
+            removeChildrenOf(node.uid)
+          } else {
+            removeDocument(node.uid)
+          }
+        } else {
+          if (mimeTypeToProtonDocumentType(node.mediaType)) {
+            // Existing document was updated
+            const { recentDocuments } = useRecentsStore.getState()
+            const document = recentDocuments[node.uid]
+            setDocument(await loadDocument(drive, event.nodeUid, addresses, document))
+          } else if (node.type === NodeType.Folder) {
+            const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
+
+            const { recentDocuments } = useRecentsStore.getState()
+            // Which of already loaded documents are children of the updated folder?
+            for (const documentNodeUid in recentDocuments) {
+              if (recentDocuments[documentNodeUid].ancestorsNodeUids?.includes(node.uid)) {
+                childrenOfUpdatedFolder.push(recentDocuments[documentNodeUid])
+              }
+            }
+
+            // In case we have children of the updated folder we'll only reload existing nodes
+            if (childrenOfUpdatedFolder.length > 0) {
+              const updatedDocuments = await Promise.all(
+                childrenOfUpdatedFolder.map((document) =>
+                  loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), addresses, document),
+                ),
+              )
+              setRecentDocuments(updatedDocuments)
+            } else {
+              // This is probably a folder restored from trash - reload everything
+              // Currently not supported
             }
           }
-
-          // In case we have children of the updated folder we'll only reload existing nodes
-          if (childrenOfUpdatedFolder.length > 0) {
-            const updatedDocuments = await Promise.all(
-              childrenOfUpdatedFolder.map((document) =>
-                loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), addresses, document),
-              ),
-            )
-            setRecentDocuments(updatedDocuments)
-          } else {
-            // This is probably a folder restored from trash - reload everything
-            // Currently not supported
-          }
         }
       }
+    } catch (error) {
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsLoadRecentsWithDriveSDK',
+        },
+      })
     }
   }, [])
 
