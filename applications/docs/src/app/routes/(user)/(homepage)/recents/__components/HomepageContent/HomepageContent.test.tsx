@@ -33,6 +33,11 @@ jest.mock('@proton/components/hooks/useAuthentication', () => ({
   default: () => ({ getLocalID: () => 0 }),
 }))
 
+jest.mock('@proton/components/hooks/useNotifications', () => ({
+  __esModule: true,
+  default: () => ({ createNotification: jest.fn() }),
+}))
+
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
     type: 'document',

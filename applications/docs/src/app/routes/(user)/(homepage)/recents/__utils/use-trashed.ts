@@ -5,13 +5,11 @@ import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetyp
 import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
-import { useApplication } from '~/utils/application-context'
 import { nodeToTrashedItemValue } from './create-document-items'
-import type { SDKEventListener } from '~/utils/drive-events'
+import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
+import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 
 export function useTrashed(drive: ProtonDriveClient) {
-  const app = useApplication()
-  const { logger } = app
   const { createNotification } = useNotifications()
 
   const [trashedDocumentItems, setTrashedDocumentItems] = useState<RecentDocumentsItemValue[]>([])
@@ -29,7 +27,12 @@ export function useTrashed(drive: ProtonDriveClient) {
         nodes.push(node)
       }
     } catch (error: any) {
-      logger.error('Failed to load trashed document with SDK', error)
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsLoadRecentsWithDriveSDK',
+        },
+      })
       createNotification({
         type: 'error',
         text: c('Error').t`Some trashed documents could not be loaded`,
@@ -38,25 +41,34 @@ export function useTrashed(drive: ProtonDriveClient) {
 
     setTrashedDocumentItems(nodes.map(nodeToTrashedItemValue))
     setIsTrashLoading(false)
-  }, [createNotification, drive, logger])
+  }, [createNotification, drive])
 
   const trashedListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
-    const drive = getDrive()
+    try {
+      const drive = getDrive()
 
-    if (event.type === 'node_updated') {
-      if (event.isTrashed) {
-        const node = await drive.getNode(event.nodeUid)
-        if (!mimeTypeToProtonDocumentType(node.mediaType)) {
-          return
+      if (event.type === 'node_updated') {
+        if (event.isTrashed) {
+          const node = await drive.getNode(event.nodeUid)
+          if (!mimeTypeToProtonDocumentType(node.mediaType)) {
+            return
+          }
+          setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
+        } else {
+          setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
         }
-        setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
-      } else {
+      }
+
+      if (event.type === 'node_deleted') {
         setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
       }
-    }
-
-    if (event.type === 'node_deleted') {
-      setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
+    } catch (error) {
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsLoadRecentsWithDriveSDK',
+        },
+      })
     }
   }, [])
 
