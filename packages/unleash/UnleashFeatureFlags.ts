@@ -111,7 +111,6 @@ enum AccountFlag {
     AdminRoleMVP = 'AdminRoleMVP',
     MspEnabled = 'MspEnabled',
     MspCostsTableEnabled = 'MspCostsTableEnabled',
-    UseZendeskV2 = 'UseZendeskV2',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',

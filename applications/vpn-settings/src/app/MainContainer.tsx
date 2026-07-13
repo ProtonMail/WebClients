@@ -19,12 +19,9 @@ import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesT
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AccountRecoverySection,
-    AuthenticatedBugModal,
     AutomaticSubscriptionModal,
-    type BugModalMode,
     CancelSubscriptionSection,
     CancelSubscriptionViaSupportSection,
     CancellationReminderSection,
@@ -72,7 +69,6 @@ import {
     YourPlanSectionV2,
     YourPlanUpsellsSectionV2,
     useActiveBreakpoint,
-    useModalState,
     useRecoveryNotification,
     useToggle,
 } from '@proton/components';
@@ -120,7 +116,6 @@ const MainContainer: FunctionComponent = () => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [permissions, loadingOrgPermissions] = useOrgPermissions();
-    const [userSettings] = useUserSettings();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
@@ -189,19 +184,12 @@ const MainContainer: FunctionComponent = () => {
         flags,
     });
 
-    const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
-    const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
     const [{ ignoreOnboarding }] = useState(() => {
         return {
             ignoreOnboarding: location.pathname !== '/downloads',
         };
     });
     const app = APPS.PROTONVPN_SETTINGS;
-
-    const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
-        setAuthenticatedBugReportMode(mode);
-        setAuthenticatedBugReportModal(true);
-    };
 
     useEffect(() => {
         setExpand(false);
@@ -227,9 +215,6 @@ const MainContainer: FunctionComponent = () => {
             onBoardingButton={<GetStartedOnboarding />}
         />
     );
-
-    const name = user.DisplayName || user.Name;
-    const email = user.Email || userSettings?.Email?.Value;
 
     const getRedirectPath = () => {
         if (getIsSectionAvailable(vpnRoutes.dashboardV2)) {
@@ -272,7 +257,6 @@ const MainContainer: FunctionComponent = () => {
 
     return (
         <SubscriptionModalProvider app={app}>
-            {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
             <Switch>
                 <Route path={VPN_TV_PATHS}>
                     <UnAuthenticated>
@@ -438,16 +422,7 @@ const MainContainer: FunctionComponent = () => {
                                 <LiveChatZendesk
                                     tags={getZendeskTags(user, organization)}
                                     zendeskRef={zendeskRef}
-                                    name={name || ''}
-                                    email={email || ''}
-                                    onLoaded={() => {
-                                        if (showZendeskChat.autoLaunch) {
-                                            zendeskRef.current?.open();
-                                        }
-                                    }}
-                                    onUnavailable={() => {
-                                        openAuthenticatedBugReportModal('chat-no-agents');
-                                    }}
+                                    autoLaunch={showZendeskChat.autoLaunch}
                                     locale={localeCode.replace('_', '-')}
                                 />
                             )}
