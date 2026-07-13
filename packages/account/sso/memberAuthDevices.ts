@@ -2,6 +2,8 @@ import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolki
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Domain, EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
 import type { MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
@@ -10,8 +12,6 @@ import { AuthDeviceState, getPendingMemberAuthDevices } from '@proton/shared/lib
 import type { AddressKeysState } from '../addressKeys';
 import { type DomainsState, domainsThunk } from '../domains';
 import { serverEvent } from '../eventLoop';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import type { MembersState } from '../members';
 import { selectMembers } from '../members';
 import { type OrganizationKeyState, selectOrganizationKey } from '../organizationKey';
@@ -21,11 +21,7 @@ import type { UserKeysState } from '../userKeys';
 const name = 'memberAuthDevices' as const;
 
 export interface MemberAuthDevicesState
-    extends UserKeysState,
-        AddressKeysState,
-        OrganizationKeyState,
-        MembersState,
-        DomainsState {
+    extends UserKeysState, AddressKeysState, OrganizationKeyState, MembersState, DomainsState {
     [name]: ModelState<MemberAuthDeviceOutput[]>;
 }
 

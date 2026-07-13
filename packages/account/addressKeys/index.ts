@@ -8,16 +8,16 @@ import {
 import type { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { defaultLongExpiry, getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
-import { defaultLongExpiry, getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { type AddressesState, addressesThunk } from '../addresses';
 import { inactiveKeysActions } from '../inactiveKeys';
-import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 

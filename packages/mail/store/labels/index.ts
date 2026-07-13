@@ -1,8 +1,10 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
-import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import { serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { MailEventV6Response } from '@proton/shared/lib/api/events';
 import { getByIds, getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
