@@ -1,31 +1,30 @@
 import { render } from '@testing-library/react';
 
+import {
+    selectAccountSecurityElements,
+    selectAccountSecurityIssuesCount,
+    selectCanDisplayAccountSecuritySection,
+    selectHasAccountSecurityIssue,
+    selectUnreadBreachesCount,
+} from '@proton/account';
 import { ThemeColor } from '@proton/colors/types';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDrawerAppButton';
-import {
-    selectAccountSecurityElements,
-    selectAccountSecurityIssuesCount,
-    selectHasAccountSecurityIssue,
-} from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
-import { selectUnreadBreachesCount } from '../views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
 
-jest.mock('../views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice', () => ({
+jest.mock('@proton/account', () => ({
     selectUnreadBreachesCount: jest.fn(),
+    selectHasAccountSecurityIssue: jest.fn(),
+    selectAccountSecurityElements: jest.fn(),
+    selectAccountSecurityIssuesCount: jest.fn(),
+    selectCanDisplayAccountSecuritySection: jest.fn(),
 }));
 
 jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(),
-}));
-
-jest.mock('../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice', () => ({
-    selectHasAccountSecurityIssue: jest.fn(),
-    selectAccountSecurityElements: jest.fn(),
-    selectHasAccountSecurityIssuesCount: jest.fn(),
 }));
 
 jest.mock('@proton/react-redux-store', () => ({
@@ -58,6 +57,7 @@ const setupMocks = ({
     hasAccountSecurityWarning = true,
     accountSecurityCardsCount = 2, //account and data
     unreadBreachesCount = 3,
+    canDisplayAccountSecurity = true,
     isSecurityCenterEnabled = true,
 } = {}) => {
     (useFlag as jest.Mock).mockImplementation((flag: string) => {
@@ -79,6 +79,8 @@ const setupMocks = ({
                     recoveryPhraseSet,
                     hasSentinelEnabled,
                 };
+            case selectCanDisplayAccountSecuritySection:
+                return canDisplayAccountSecurity;
             default:
                 return null;
         }
