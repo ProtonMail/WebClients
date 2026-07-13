@@ -80,6 +80,7 @@ import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 import { trashAndNotify } from '~/drive-sdk/trash'
+import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -195,7 +196,12 @@ export function DocumentTitleDropdown({
               })
             })
             .catch((error) => {
-              application.logger.error('Failed to rename document', error)
+              traceError(error, {
+                tags: {
+                  initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+                  feature: 'DocsRenameWithDriveSDK',
+                },
+              })
               PostApplicationError(application.eventBus, { translatedError: c('Error').t`Failed to rename document` })
               setTitle(oldName)
             })
