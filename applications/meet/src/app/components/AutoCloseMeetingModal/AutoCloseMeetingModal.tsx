@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { MINUTE } from '@proton/shared/lib/constants';
+
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
 import { AnnouncementPriority } from '../MeetingAnnouncer/types';
@@ -12,8 +14,8 @@ interface AutoCloseMeetingModalProps {
     onLeave: () => void;
 }
 
-const autoCloseTimeInSeconds = 420; // 7 minutes
-const showAutoCloseAfterSeconds = 300; // 5 minutes
+const showAutoCloseAfterSeconds = 30 * MINUTE;
+const autoCloseTimeInSeconds = showAutoCloseAfterSeconds + 2 * MINUTE;
 
 // Seconds remaining, high → low. First message carries the context; the rest are terse.
 const ANNOUNCEMENT_THRESHOLDS: { secondsLeft: number; message: () => string }[] = [
