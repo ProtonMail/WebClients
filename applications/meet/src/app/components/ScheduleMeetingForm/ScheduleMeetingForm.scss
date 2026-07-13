@@ -3,22 +3,13 @@
 }
 
 .create-container {
-	& > *:not(.button),
-	.input,
-	.select,
-	.field,
-	label,
-	span:not(.button *),
-	div:not(.button *) {
-		font-size: 0.875rem;
-	}
+	font-size: 0.875rem;
 
 	// ------------------------------------------------------------
 	// overrides for themes
 	// ------------------------------------------------------------
 	a,
-	.link,
-	.timezone-button {
+	.link {
 		color: var(--theme-color, var(--link-norm));
 
 		&:hover,
@@ -57,7 +48,7 @@
 		background-color: var(--background-card) !important;
 		border-radius: 1.5rem !important;
 		padding: 0.5rem !important;
-		border-width: 0.063rem !important;
+		border-width: 1px !important;
 		border-style: solid;
 		border-color: var(--border-weak);
 	}
@@ -74,14 +65,6 @@
 	.input.focus,
 	.input:not(.disabled):focus-within {
 		box-shadow: 0 0 0 0.063rem var(--theme-color, var(--ui-purple-interaction-minor-1));
-	}
-
-	.button {
-		padding: 0.8rem;
-	}
-
-	.timezone-button {
-		font-weight: 500 !important;
 	}
 
 	.schedule-proton-calendar-button {
