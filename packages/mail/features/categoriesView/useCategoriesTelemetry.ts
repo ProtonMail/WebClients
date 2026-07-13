@@ -44,12 +44,6 @@ export const useCategoriesTelemetry = () => {
         });
     };
 
-    const sendReportCloseCategoryCard = (categoryID: CategoryLabelID) => {
-        sendReport(TelemetryCategoriesOnboardingEvents.onboarding_card_close, {
-            categoryID,
-        });
-    };
-
     const sendReportCategoriesNav = (navSource: CategoriesClickSource, categoryID: CategoryLabelID) => {
         sendReport(TelemetryCategoriesOnboardingEvents.category_nav, {
             navSource,
@@ -94,7 +88,6 @@ export const useCategoriesTelemetry = () => {
     return {
         sendEventOnboardingAccept,
         sendEventOnboardingDismiss,
-        sendReportCloseCategoryCard,
         sendReportRecategorizeEmail,
         sendReportToggleCategory,
         sendReportToggleNotification,
