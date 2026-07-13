@@ -47,17 +47,9 @@ interface Props {
     defaultCountry?: string;
     defaultPhone?: string;
     defaultEmail?: string;
-    hasConfirmWarning?: boolean;
 }
 
-const RecoveryStep = ({
-    defaultPhone,
-    defaultEmail,
-    defaultCountry,
-    hasConfirmWarning = true,
-    onSubmit,
-    onBack,
-}: Props) => {
+const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, onBack }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [loadingDiscard, withLoadingDiscard] = useLoading();
@@ -86,7 +78,7 @@ const RecoveryStep = ({
             return;
         }
 
-        if (hasConfirmWarning && !recoveryPhone && !recoveryEmail) {
+        if (!recoveryPhone && !recoveryEmail) {
             setConfirmModal(true);
             return;
         }
@@ -188,11 +180,7 @@ const RecoveryStep = ({
                         fullWidth
                         disabled={loading}
                         onClick={() => {
-                            if (hasConfirmWarning) {
-                                setConfirmModal(true);
-                            } else {
-                                return withLoadingDiscard(onSubmit({})).catch(noop);
-                            }
+                            setConfirmModal(true);
                         }}
                         className="mt-2"
                     >

@@ -57,10 +57,8 @@ const CustomStep = ({
     measure,
     product,
     signupParameters,
-    hasRecoveryStepConfirmWarning = true,
     hasExploreStep,
 }: SignupCustomStepProps & {
-    hasRecoveryStepConfirmWarning?: boolean;
     hasExploreStep?: boolean;
 }) => {
     const createFlow = useFlowRef();
@@ -187,7 +185,6 @@ const CustomStep = ({
             )}
             {step === Step.SaveRecovery && (
                 <RecoveryStep
-                    hasConfirmWarning={hasRecoveryStepConfirmWarning}
                     defaultCountry={defaultCountry}
                     defaultEmail={defaultEmail}
                     defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}

@@ -35,10 +35,10 @@ import {
     getJoinString,
     getNoLogsFeature,
 } from '../configuration/helper';
+import CustomStep from '../defaultCustomStep/CustomStep';
 import type { PlanParameters, SignupConfiguration } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 import { getCustomMailFeatures } from '../mail/configuration';
-import CustomStep from './CustomStep';
 
 const getBuiltInEuropeFeature = () => ({
     key: 'built-in-europe',
