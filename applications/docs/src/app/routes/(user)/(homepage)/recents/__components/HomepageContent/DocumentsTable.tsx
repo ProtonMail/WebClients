@@ -8,6 +8,7 @@ import {
   DropdownMenuButton,
   Icon,
   useAuthentication,
+  useNotifications,
   usePopperAnchor,
 } from '@proton/components'
 import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
@@ -37,6 +38,8 @@ import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
+import { useRenameWithSDK } from '~/utils/flags'
 
 // table
 // -----
@@ -286,6 +289,8 @@ function Row({ document, variant }: RowProps) {
   const { location } = document
   const displayName = useOwnerName(document)
   const { updateRenamedDocumentInCache } = useHomepageView()
+  const { createNotification } = useNotifications()
+  const renameWithSDK = useRenameWithSDK()
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
   const [, setState] = useState(false)
@@ -380,11 +385,29 @@ function Row({ document, variant }: RowProps) {
               onClick={(event) => event.stopPropagation()}
               disabled={documentActions.isRenameSaving}
               onKeyDown={async (event) => {
+                // Accept name change
                 if (event.key === 'Enter') {
                   const { value } = event.currentTarget
-                  await documentActions.rename(document, value)
-                  await updateRenamedDocumentInCache(document.uniqueId(), value)
+                  try {
+                    await documentActions.rename(document, value)
+                    await updateRenamedDocumentInCache(document.uniqueId(), value)
+                  } catch (error) {
+                    createNotification({
+                      type: 'error',
+                      text: c('Notification').t`Failed to rename document`,
+                    })
+                    if (renameWithSDK) {
+                      traceError(error, {
+                        tags: {
+                          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+                          feature: 'DocsRenameWithDriveSDK',
+                        },
+                      })
+                    }
+                  }
                 }
+
+                // Revoke name change
                 if (event.key === 'Escape') {
                   if (documentActions.isRenameSaving) {
                     return

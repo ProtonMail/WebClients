@@ -27,9 +27,10 @@ import {
 } from './homepage-view'
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
-import { manageEventsSubscription } from '~/utils/drive-events'
+import { manageEventsSubscription } from '~/drive-sdk/manage-events-subscription'
 import { c } from 'ttag'
 import useNotifications from '@proton/components/hooks/useNotifications'
+import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 
 const subscribeToEvents = manageEventsSubscription()
 
@@ -75,10 +76,16 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
       .then((maybeMyFiles) => {
         setMyFilesNode(maybeMyFiles)
       })
-      .catch(() => {
+      .catch((error) => {
         createNotification({
           type: 'error',
           text: c('Error').t`Failed to load 'My files' folder`,
+        })
+        traceError(error, {
+          tags: {
+            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+            feature: 'DocsLoadRecentsWithDriveSDK',
+          },
         })
       })
   }, [createNotification, drive])
@@ -91,26 +98,36 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
     return subscribeToEvents(drive, myFilesNode.treeEventScopeId, logger, [recentsListener, trashedListener])
   }, [drive, recentsListener, trashedListener, logger, myFilesNode])
 
-  const state = useMemo(() => {
-    if (isTrashRoute) {
-      return buildTrashState(trashedDocumentItems, isTrashLoading)
-    } else if (search && search.length > 0) {
-      return buildSearchState(
-        search,
-        isRecentsUpdating,
-        recentDocumentsInitialized,
-        Object.values(recentDocuments),
-        type,
-      )
-    } else {
-      return buildRecentsState(
-        Object.values(recentDocuments),
-        recentDocumentsInitialized,
-        isRecentsUpdating,
-        recentsSort,
-        contactEmails,
-        type,
-      )
+  const state = useMemo((): HomepageViewState => {
+    try {
+      if (isTrashRoute) {
+        return buildTrashState(trashedDocumentItems, isTrashLoading)
+      } else if (search && search.length > 0) {
+        return buildSearchState(
+          search,
+          isRecentsUpdating,
+          recentDocumentsInitialized,
+          Object.values(recentDocuments),
+          type,
+        )
+      } else {
+        return buildRecentsState(
+          Object.values(recentDocuments),
+          recentDocumentsInitialized,
+          isRecentsUpdating,
+          recentsSort,
+          contactEmails,
+          type,
+        )
+      }
+    } catch (error) {
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsLoadRecentsWithDriveSDK',
+        },
+      })
+      return { view: 'unknown' }
     }
   }, [
     contactEmails,
