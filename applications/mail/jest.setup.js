@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 
+import '@proton/testing/lib/mockFlagSvg';
 import '@proton/testing/lib/mockMatchMedia';
 import '@proton/testing/lib/mockUnleash';
 
