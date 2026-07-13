@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { TextDecoder, TextEncoder } from 'util';
 
+import '@proton/testing/lib/mockFlagSvg';
 import '@proton/testing/lib/mockMatchMedia';
 import '@proton/testing/lib/mockUnleash';
 
@@ -69,17 +70,6 @@ HTMLCanvasElement.prototype.getContext = jest.fn();
 HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
     callback(new Blob(['abc']));
 });
-
-// Mock VPN flag to prevent those issues
-// TypeError: require.context is not a function
-// > 1 | const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
-jest.mock('@proton/components/containers/vpn/flag', () => ({
-    getFlagSvg: jest.fn().mockImplementation((it) => it),
-}));
-
-jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
-    getFlagSvg: jest.fn().mockImplementation((it) => it),
-}));
 
 jest.mock('@protontech/drive-sdk/dist/telemetry', () => {
     return {
