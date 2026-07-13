@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ConditionalTooltip } from '../../components/ConditionalTooltip/ConditionalTooltip';
+import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
 
 import './TruncatedTextWithTooltip.scss';
 

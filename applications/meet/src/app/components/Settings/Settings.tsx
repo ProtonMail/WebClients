@@ -14,6 +14,7 @@ import {
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
+import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
@@ -22,9 +23,6 @@ import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
 import { SettingsArea } from './shared/SettingsArea';
-import { SettingsToggle } from './shared/SettingsToggle';
-
-import './Settings.scss';
 
 export const Settings = () => {
     const dispatch = useMeetDispatch();
@@ -63,7 +61,7 @@ export const Settings = () => {
                     {(isLocalParticipantAdmin || isLocalParticipantHost) && (
                         <SettingsArea title={c('Title').t`Security`}>
                             <WaitingRoomToggle />
-                            <SettingsToggle
+                            <SettingToggle
                                 id="lock-meeting"
                                 label={c('Action').t`Lock meeting`}
                                 ariaLabel={c('Alt').t`Lock meeting`}
@@ -87,21 +85,21 @@ export const Settings = () => {
                                 withTooltip={true}
                             />
                         )}
-                        <SettingsToggle
+                        <SettingToggle
                             id="disable-videos"
                             label={c('Action').t`Turn off incoming video`}
                             ariaLabel={c('Alt').t`Turn off incoming video`}
                             onChange={() => dispatch(setDisableVideos(!disableVideos))}
                             checked={disableVideos}
                         />
-                        <SettingsToggle
+                        <SettingToggle
                             id="self-view"
                             label={c('Action').t`Hide self view`}
                             ariaLabel={c('Alt').t`Hide self view`}
                             onChange={() => dispatch(setSelfView(!selfView))}
                             checked={!selfView}
                         />
-                        <SettingsToggle
+                        <SettingToggle
                             id="pip-enabled"
                             label={c('Action').t`Show floating thumbnail during screensharing`}
                             ariaLabel={c('Alt').t`Show floating thumbnail during screensharing`}
@@ -121,7 +119,7 @@ export const Settings = () => {
                     </SettingsArea>
                     {isPaidUser && (
                         <SettingsArea title={c('Title').t`Meeting settings`}>
-                            <SettingsToggle
+                            <SettingToggle
                                 id="show-duration"
                                 label={c('Action').t`Show duration`}
                                 ariaLabel={c('Alt').t`Show duration`}

@@ -36,6 +36,7 @@ import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
@@ -471,15 +472,9 @@ export const ScheduleMeetingForm = ({
                             </div>
                         </div>
                     )}
-                    <div className="w-full flex flex-nowrap items-center justify-end gap-2">
-                        <Button
-                            className="color-primary ml-auto rounded-full timezone-button"
-                            shape="ghost"
-                            onClick={() => setShowTimezones(!showTimezones)}
-                        >
-                            {timeZoneAction}
-                        </Button>
-                    </div>
+                    <ExpandOptionsButton containerClassName="mt-2" onClick={() => setShowTimezones(!showTimezones)}>
+                        {timeZoneAction}
+                    </ExpandOptionsButton>
 
                     <TimeInputBlock
                         name="start"
@@ -548,7 +543,7 @@ export const ScheduleMeetingForm = ({
                     </div>
                     {isMeetWaitingRoomEnabled && <ScheduleMeetingOptions />}
 
-                    <div className="w-full flex flex-nowrap justify-center flex-row mt-10 gap-4">
+                    <div className="w-full flex flex-nowrap justify-center flex-row mt-6 gap-4">
                         <Button
                             type="button"
                             className="tertiary rounded-full text-semibold w-full"
