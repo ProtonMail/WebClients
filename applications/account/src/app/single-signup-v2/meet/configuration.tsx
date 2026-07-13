@@ -51,9 +51,9 @@ import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
 import { getBenefits, getBuiltInEncryptionBenefit, getGenericFeatures, getJoinString } from '../configuration/helper';
+import CustomStep from '../defaultCustomStep/CustomStep';
 import type { SignupConfiguration } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
-import CustomStep from './CustomStep';
 
 const getNoLogsBenefit = (): BenefitItem => {
     return {
