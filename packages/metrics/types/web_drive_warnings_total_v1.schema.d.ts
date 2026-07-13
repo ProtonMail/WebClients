@@ -10,7 +10,7 @@
  */
 export interface HttpsProtonMeWebDriveWarningsTotalV1SchemaJson {
   Labels: {
-    warning: "app_outdated" | "cannot_init_sw" | "cannot_create_small_enough_thumbnail";
+    warning: "app_outdated" | "cannot_init_sw" | "cannot_create_small_enough_thumbnail" | "http_client_rate_limited";
   };
   Value: number;
 }
