@@ -2,7 +2,7 @@
 import { SearchWorkerDisconnectedError } from '../shared/errors';
 import type { ClientId, UserId } from '../shared/types';
 import type { MainThreadBridge } from './MainThreadBridge';
-import { WorkerClient } from './WorkerClient';
+import { HEARTBEAT_INTERVAL, HEARTBEAT_TIMEOUT, WorkerClient } from './WorkerClient';
 
 const fakeApi = {
     registerClient: jest.fn(),
@@ -88,17 +88,17 @@ describe('WorkerClient', () => {
     });
 
     describe('reverse heartbeat', () => {
-        it('sends heartbeat every 3 seconds', () => {
+        it('sends heartbeat every interval', () => {
             new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
 
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(3000);
+            jest.advanceTimersByTime(HEARTBEAT_INTERVAL);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(1);
             // jsdom default visibilityState is 'visible'
             expect(fakeApi.heartbeatClient).toHaveBeenCalledWith(CLIENT_ID, true);
 
-            jest.advanceTimersByTime(3000);
+            jest.advanceTimersByTime(HEARTBEAT_INTERVAL);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(2);
         });
 
@@ -111,7 +111,7 @@ describe('WorkerClient', () => {
             createdWorkers = [];
 
             // Trigger heartbeat + timeout in one step
-            await jest.advanceTimersByTimeAsync(3000 + 5000);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
 
             // Reconnect spawns a new SharedWorker after a jitter delay (0–1s)
             await jest.advanceTimersByTimeAsync(1000);
@@ -129,7 +129,7 @@ describe('WorkerClient', () => {
             createdWorkers = [];
 
             // Trigger heartbeat + timeout
-            await jest.advanceTimersByTimeAsync(3000 + 5000);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
 
             // Reconnect after jitter
             await jest.advanceTimersByTimeAsync(1000);
@@ -158,7 +158,7 @@ describe('WorkerClient', () => {
             })();
 
             // Trigger heartbeat timeout → reconnect
-            await jest.advanceTimersByTimeAsync(3000 + 5000);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
 
             const error = await done;
             expect(error).toBeInstanceOf(SearchWorkerDisconnectedError);
@@ -172,7 +172,7 @@ describe('WorkerClient', () => {
             client.start();
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
 
-            await jest.advanceTimersByTimeAsync(3000);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
 
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(2);
         });
@@ -184,7 +184,7 @@ describe('WorkerClient', () => {
             client.start();
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
 
-            await jest.advanceTimersByTimeAsync(3000);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
 
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
         });
@@ -194,7 +194,7 @@ describe('WorkerClient', () => {
 
             new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
 
-            await jest.advanceTimersByTimeAsync(3000);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
 
             expect(fakeApi.registerClient).not.toHaveBeenCalled();
         });
