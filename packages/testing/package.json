@@ -52,6 +52,7 @@
         "./lib/mockUseSpotlightOnFeature": "./lib/mockUseSpotlightOnFeature.ts",
         "./lib/mockUseSubscription": "./lib/mockUseSubscription.ts",
         "./lib/mockUseUser": "./lib/mockUseUser.ts",
+        "./lib/mockFlagSvg": "./lib/mockFlagSvg.ts",
         "./lib/mockUseUserSettings": "./lib/mockUseUserSettings.ts",
         "./lib/payments/api-endpoints": "./lib/payments/api-endpoints.ts",
         "./lib/payments/mockVerifyPayment": "./lib/payments/mockVerifyPayment.ts",
@@ -65,6 +66,7 @@
         "./lib/vitest/mockUseOrganization": "./lib/vitest/mockUseOrganization.ts",
         "./lib/vitest/mockUseUser": "./lib/vitest/mockUseUser.ts",
         "./lib/vitest/mockUseUserKeys": "./lib/vitest/mockUseUserKeys.ts",
+        "./lib/vitest/mockFlagSvg": "./lib/vitest/mockFlagSvg.ts",
         "./configs/vitest.config": "./configs/vitest.config.ts"
     },
     "scripts": {
