@@ -1,5 +1,12 @@
 import { c } from 'ttag';
 
+import {
+    selectAccountSecurityElements,
+    selectAccountSecurityIssuesCount,
+    selectCanDisplayAccountSecuritySection,
+    selectHasAccountSecurityIssue,
+    selectUnreadBreachesCount,
+} from '@proton/account';
 import { ThemeColor } from '@proton/colors/types';
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
@@ -10,13 +17,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import SecurityCenterDrawerLogo from '../drawerIcons/SecurityCenterDrawerLogo';
-import {
-    selectAccountSecurityElements,
-    selectAccountSecurityIssuesCount,
-    selectHasAccountSecurityIssue,
-} from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
-import { selectCanDisplayAccountSecuritySection } from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
-import { selectUnreadBreachesCount } from '../views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import BreachAlertsSpotlight from '../views/SecurityCenter/BreachAlertsSpotlight';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
 
