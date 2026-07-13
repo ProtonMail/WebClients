@@ -7,8 +7,13 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
+import clsx from '@proton/utils/clsx';
+
+import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
+import { WaitingRoomDropdown } from './WaitingRoomDropdown';
 
 import './PreJoinDetails.scss';
 
@@ -38,6 +43,7 @@ export const PreJoinDetails = ({
     isLoadingMeetings = false,
 }: PreJoinDetailsProps) => {
     const notificationManager = useNotifications();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -75,7 +81,7 @@ export const PreJoinDetails = ({
             className="pre-join-details-container flex flex-nowrap flex-column mt-0 gap-2 lg:py-4 lg:gap-4 w-full md:w-custom flex-none md:flex-1 lg:flex-none md:justify-center md:items-center"
             style={{ '--md-w-custom': '25rem' }}
         >
-            <div className="pre-join-details-header flex flex-column gap-2">
+            <div className="pre-join-details-header flex flex-column gap-2 py-2 lg:py-4">
                 {!isLoadingMeetings && (
                     <>
                         <h1
@@ -87,7 +93,7 @@ export const PreJoinDetails = ({
                     </>
                 )}
             </div>
-            <div className="flex flex-column gap-2 lg:gap-4 py-2 lg:py-4 w-full">
+            <div className="flex flex-column gap-2 lg:gap-4 w-full">
                 <InputFieldStackedGroup classname="w-full">
                     {!instantMeeting && (
                         <InputFieldStacked classname="meeting-id-field hidden md:block py-4 px-5" isGroupElement>
@@ -126,7 +132,10 @@ export const PreJoinDetails = ({
                         </InputFieldStacked>
                     )}
 
-                    <InputFieldStacked isGroupElement classname="pre-join-details-name-input-field">
+                    <InputFieldStacked
+                        isGroupElement
+                        classname={clsx(!instantMeeting && viewportWidth['<=small'] && 'rounded-xl')}
+                    >
                         <InputFieldTwo
                             label={c('Label').t`Name`}
                             type="text"
@@ -139,17 +148,35 @@ export const PreJoinDetails = ({
                             autoFocus={true}
                         />
                     </InputFieldStacked>
+                    {instantMeeting && (
+                        <InputFieldStacked isGroupElement>
+                            <SettingToggle
+                                id="keep-display-name-on-device"
+                                label={c('Label').t`Save my name on this device`}
+                                ariaLabel={c('Alt').t`Save my name on this device`}
+                                checked={keepDisplayNameOnDevice}
+                                onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
+                                size="medium"
+                                className="remember-my-name-on-this-device"
+                            />
+                        </InputFieldStacked>
+                    )}
                 </InputFieldStackedGroup>
-                <div className="w-full py-1">
-                    <Checkbox
-                        checked={keepDisplayNameOnDevice}
-                        onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
-                        id="keep-display-name-on-device"
-                    >
-                        <span className="color-weak ml-2">{c('Label').t`Remember my name on this device`}</span>
-                    </Checkbox>
-                </div>
+                {!instantMeeting && (
+                    <div className="w-full py-1">
+                        <Checkbox
+                            checked={keepDisplayNameOnDevice}
+                            onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
+                            id="keep-display-name-on-device"
+                        >
+                            <span className="color-weak ml-2">{c('Label').t`Remember my name on this device`}</span>
+                        </Checkbox>
+                    </div>
+                )}
             </div>
+
+            {instantMeeting && <WaitingRoomDropdown />}
+
             <Button
                 className="primary py-4 px-5 md:py-5 rounded-full"
                 size="large"

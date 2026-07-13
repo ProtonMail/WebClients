@@ -1,0 +1,17 @@
+.label-and-description {
+	.label-and-description-label {
+		display: block;
+		inline-size: 100%;
+		user-select: none;
+	}
+
+	@container (max-width: 17.44em) {
+		.label-and-description-label {
+			font-size: 0.875rem !important;
+		}
+
+		.label-and-description-description {
+			font-size: 0.75rem !important;
+		}
+	}
+}

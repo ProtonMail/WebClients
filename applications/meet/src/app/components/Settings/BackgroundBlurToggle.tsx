@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SettingsToggle } from './shared/SettingsToggle';
+import { SettingToggle, type SettingToggleSize } from '../../atoms/SettingToggle/SettingToggle';
 
 export const BackgroundBlurToggle = ({
     backgroundBlur,
@@ -8,15 +8,17 @@ export const BackgroundBlurToggle = ({
     isBackgroundBlurSupported,
     onChange,
     withTooltip = false,
+    size = 'large',
 }: {
     backgroundBlur: boolean;
     loadingBackgroundBlur: boolean;
     isBackgroundBlurSupported: boolean;
     onChange: () => void;
     withTooltip?: boolean;
+    size?: SettingToggleSize;
 }) => {
     return (
-        <SettingsToggle
+        <SettingToggle
             id="blur-background"
             label={c('Action').t`Background blur`}
             ariaLabel={c('Alt').t`Blur background`}
@@ -29,6 +31,7 @@ export const BackgroundBlurToggle = ({
                     ? c('Tooltip').t`Background blur is not supported on your browser`
                     : undefined
             }
+            size={size}
         />
     );
 };
