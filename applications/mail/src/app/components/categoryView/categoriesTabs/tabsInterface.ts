@@ -1,5 +1,3 @@
-export type TabSize = 'default' | 'small' | 'tiny';
-
 export enum TabState {
     ACTIVE = 'active',
     INACTIVE = 'inactive',

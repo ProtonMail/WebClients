@@ -11,7 +11,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return inactive when category is not selected nor dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 0,
@@ -27,7 +27,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return active if the category is part of disabled categories', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 0,
@@ -43,7 +43,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return active if the category is the same as the labelID', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 0,
@@ -59,7 +59,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return dragging over if the categories is dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 0,
@@ -75,7 +75,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return active is categories is dragged over but is already active', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 0,
@@ -91,7 +91,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return the dragging neighbor if the next category is dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 1,
@@ -107,7 +107,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return the dragging neighbor if the previous category is dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 3,
@@ -123,7 +123,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return inactive if select all is enabled even if dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 0,
@@ -139,7 +139,7 @@ describe('CategoriesTabsHelper', () => {
         it('should return inative if select all is enabled even if neighbor', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                colorShade: CATEGORIES_COLOR_SHADES.TEAL,
             };
             const tabState = getTabState({
                 index: 3,
