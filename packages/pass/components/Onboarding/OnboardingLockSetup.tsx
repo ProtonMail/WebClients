@@ -9,7 +9,6 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import type { IconName } from '@proton/icons/types';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -20,7 +19,6 @@ type LockModeOption = {
     value: LockMode;
     label: ReactNode;
     icon: IconName;
-    needsUpgrade?: boolean;
     active: boolean;
 };
 
@@ -46,14 +44,12 @@ export const OnboardingLockSetup: FC = () => {
                 value: LockMode.BIOMETRICS,
                 label: c('Label').t`Biometrics`,
                 icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
-                needsUpgrade: biometrics.needsUpgrade,
                 active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
             },
             {
                 value: LockMode.DESKTOP,
                 label: c('Label').t`Biometrics`,
                 icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
-                needsUpgrade: extensionBiometrics.needsUpgrade,
                 active: EXTENSION_BUILD && extensionBiometrics.enabled,
             },
             {
@@ -80,7 +76,7 @@ export const OnboardingLockSetup: FC = () => {
                 value={lock.mode}
                 className={clsx('pass-onboarding-modal--radio w-full', !online && 'opacity-70 pointer-events-none')}
                 disableChange={!online || lock.loading}
-                options={lockModes.map(({ value, icon, label, needsUpgrade }) => ({
+                options={lockModes.map(({ value, icon, label }) => ({
                     value,
                     label: (
                         <div className="pass-onboarding-modal--option rounded-xl flex items-center w-full py-3 px-4">
@@ -89,7 +85,6 @@ export const OnboardingLockSetup: FC = () => {
                             {lock.mode === value && (
                                 <IcCheckmarkCircleFilled size={6} color="var(--interaction-norm)" />
                             )}
-                            {needsUpgrade && <PassPlusPromotionButton />}
                         </div>
                     ),
                 }))}

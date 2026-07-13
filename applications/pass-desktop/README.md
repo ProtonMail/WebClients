@@ -33,6 +33,12 @@ Start the app in development mode, it'll target black environment:
 yarn start
 ```
 
+If you want to target prod, use this instead
+
+```bash
+yarn start:prod
+```
+
 On Linux, if you get a sandbox error, you'll need to disable Electron sandbox by doing:
 
 ```bash
