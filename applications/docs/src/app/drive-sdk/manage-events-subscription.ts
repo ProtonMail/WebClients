@@ -13,6 +13,9 @@ export function manageEventsSubscription() {
     }
   }
 
+  /**
+   * @param listeners an array of callbacks that CANNOT throw (no error handling here)
+   */
   return function subscribeToEvents(
     drive: ProtonDriveClient,
     treeEventScopeId: string,
@@ -23,12 +26,8 @@ export function manageEventsSubscription() {
 
     drive
       .subscribeToTreeEvents(treeEventScopeId, async (event) => {
-        try {
-          for (const listener of listeners) {
-            await listener(event)
-          }
-        } catch (error: any) {
-          logger.error('Failed to handle SDK event', error)
+        for (const listener of listeners) {
+          await listener(event)
         }
       })
       .then((newSubscription) => {

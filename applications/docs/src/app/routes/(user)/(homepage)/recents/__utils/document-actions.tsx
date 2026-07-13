@@ -27,7 +27,7 @@ export type DocumentActionsContextValue = {
   // since this "document actions" context shouldn't hold UI state.
   // Just something to keep in mind if this is refactored in the future.
   startRename: (document: RecentDocumentsItem) => void
-  cancelRename: () => void
+  cancelRename: (force?: boolean) => void
   rename: (document: RecentDocumentsItem, newName: string) => Promise<void>
   isRenaming: (document: RecentDocumentsItem) => boolean
   isRenameSaving: boolean
@@ -116,13 +116,16 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const rename = useEvent(async (document: RecentDocumentsItem, newName: string) => {
     setRenameSaving(true)
-    if (renameWithSDK) {
-      await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
-    } else {
-      await driveCompat.renameDocument(document, newName)
+    try {
+      if (renameWithSDK) {
+        await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
+      } else {
+        await driveCompat.renameDocument(document, newName)
+      }
+    } finally {
+      cancelRename(true)
+      setRenameSaving(false)
     }
-    cancelRename(true)
-    setRenameSaving(false)
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_renamed)
   })
 
