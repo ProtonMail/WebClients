@@ -24,8 +24,8 @@ import type { MainThreadBridge } from './MainThreadBridge';
 // so that custom error types survive serialization across the comlink boundary.
 registerComlinkErrorTransferHandler();
 
-const HEARTBEAT_INTERVAL = 3000;
-const HEARTBEAT_TIMEOUT = 5000;
+export const HEARTBEAT_INTERVAL = 5_000;
+export const HEARTBEAT_TIMEOUT = 60_000;
 
 export class WorkerClient {
     private api: Comlink.Remote<SharedWorkerAPI>;
