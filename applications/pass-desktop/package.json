@@ -23,6 +23,7 @@
         "make": "electron-forge make --skip-package",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env-shell NODE_ENV=development API_ENV=proton.black 'electron-forge start'",
+        "start:prod": "cross-env-shell NODE_ENV=development 'electron-forge start'",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci --passWithNoTests",
         "test:watch": "jest --watch",

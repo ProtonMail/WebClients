@@ -11,18 +11,16 @@ import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/component
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
+import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectLockMode, selectLockTTL } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull, Result } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { cloneObfuscation } from '@proton/pass/utils/obfuscate/xor';
@@ -44,15 +42,11 @@ type LockState = {
 type BiometricsState = {
     /** `true` if biometric already setup or on successful `canCheckPresence` */
     enabled: boolean;
-    /** Biometrics is a paid only feature (disabled for free users) */
-    needsUpgrade: boolean;
 };
 
 type ExtensionBiometricsState = {
     /** `true` if on extension and feature flag is on */
     enabled: boolean;
-    /** Biometrics is a paid only feature (disabled for free users) */
-    needsUpgrade: boolean;
 };
 
 type PasswordState = {
@@ -80,7 +74,6 @@ export const useLockSetup = (): LockSetup => {
     const confirmPassword = usePasswordUnlock();
     const confirmDesktop = useDesktopUnlock();
     const passwordTypeSwitch = usePasswordTypeSwitch();
-    const upsell = useUpselling();
     const authStore = useAuthStore();
 
     const org = useOrganization({ sync: true });
@@ -88,9 +81,6 @@ export const useLockSetup = (): LockSetup => {
 
     const currentLockMode = useSelector(selectLockMode);
     const lockTTL = useSelector(selectLockTTL);
-
-    const plan = useSelector(selectPassPlan);
-    const isFreePlan = !isPaidPlan(plan);
 
     const desktopUnlockFeatureFlag = useFeatureFlag(PassFeature.PassDesktopUnlock);
 
@@ -111,13 +101,6 @@ export const useLockSetup = (): LockSetup => {
     });
 
     const setLockMode = async (mode: LockMode) => {
-        if (isFreePlan && (mode === LockMode.BIOMETRICS || mode === LockMode.DESKTOP)) {
-            return upsell({
-                type: 'pass-plus',
-                upsellRef: UpsellRef.PASS_BIOMETRICS,
-            });
-        }
-
         const ttl = orgLockTTL || (lockTTL ?? DEFAULT_LOCK_TTL);
 
         /** 1. Verify the current lock and collect the typed `UnlockDTO`.
@@ -364,10 +347,7 @@ export const useLockSetup = (): LockSetup => {
         [currentLockMode, nextLock, orgLockTTL, lockTTL, createLock.loading]
     );
 
-    const biometrics = useMemo(
-        () => ({ enabled: biometricsEnabled, needsUpgrade: isFreePlan }),
-        [biometricsEnabled, isFreePlan]
-    );
+    const biometrics = useMemo(() => ({ enabled: biometricsEnabled }), [biometricsEnabled]);
 
     const password = useMemo(() => ({ enabled: !EXTENSION_BUILD }), []);
 
@@ -379,9 +359,8 @@ export const useLockSetup = (): LockSetup => {
                 // It's not possible to constraint a feature flag to extension + os
                 // Limiting to macos is meant to be removed
                 isMac(),
-            needsUpgrade: isFreePlan,
         }),
-        [desktopUnlockFeatureFlag, isFreePlan]
+        [desktopUnlockFeatureFlag]
     );
 
     return {
