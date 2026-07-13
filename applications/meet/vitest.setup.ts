@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
 import '@proton/polyfill';
+import '@proton/testing/lib/vitest/mockFlagSvg';
 import '@proton/testing/lib/vitest/mockMatchMedia';
 import '@proton/testing/lib/vitest/mockUnleash';
 
@@ -63,17 +64,6 @@ vi.mock('@proton/components/components/input/TelInput', () => ({
 vi.mock('@proton/components/components/modal/PreviewPDFModal', () => ({
     __esModule: true,
     default: () => null,
-}));
-
-vi.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
-    __esModule: true,
-    getFlagSvg: () => null,
-}));
-
-vi.mock('@proton/components/containers/vpn/flag', () => ({
-    __esModule: true,
-    flags: {},
-    flagsMap: {},
 }));
 
 vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndicator', () => ({
