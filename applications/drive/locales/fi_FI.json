@@ -4063,6 +4063,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "ALV-tunnuksen on alettava etuliitteillä ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
       ]
     },
     "error": {

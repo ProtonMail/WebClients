@@ -4152,6 +4152,9 @@
       ],
       "Unexpected error, we can't import the files": [
         "Uventet feil, vi kan ikke importere filene"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ]
     },
     "error": {
@@ -7396,6 +7399,26 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Filene dine blir indeksert på nytt. Du kan fortsette å søke – resultatene kan være ufullstendige før det er ferdig. Vi gir deg beskjed når det er ferdig."
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Do you still want to upload it?": [
+        "Vil du fortsatt laste den opp?",
+        "Vil du fortsatt laste de opp?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Jeg bekrefter herved i god tro at informasjonen og uttalelsene i rapporten er korrekte og fullstendige."
+      ],
+      "This file appears to be empty:": [
+        "Denne filen ser ut til å være tom:",
+        "Disse filene ser ut til å være tomme:"
+      ],
+      "Uploaded - file is empty": [
+        "Opplastet - filen er tom"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
       ]
     },
     "info": {
@@ -8270,6 +8293,18 @@
       ],
       "Indexing": [
         "Indekserer"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
+      "Starts with": [
+        "Begynner med"
       ]
     },
     "Label for contact group color": {
@@ -8599,6 +8634,15 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
       ]
     },
     "Message display when a new app version is available": {
@@ -13967,6 +14011,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Upload empty file?": [
+        "Laste opp tom fil?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14069,7 +14116,7 @@
         "Ny!"
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Version 6 OpenPGP key": [
         "Versjon 6 OpenPGP-nøkkel"

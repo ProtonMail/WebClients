@@ -4222,6 +4222,9 @@
       ],
       "Unexpected error, we can't import the files": [
         "Нечаканая памылка. Немагчыма імпартаваць файлы."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ]
     },
     "error": {
@@ -7636,6 +7639,30 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Вашы файлы будуць паўторна індэксаваныя. Вы можаце працягваць пошук, але вынікі могуць быць няпоўнымі, пакуль пошук не завершыцца. Сістэма паведаміць вам, калі працэс будзе завершаны."
+      ],
+      "Album": [
+        "Альбом"
+      ],
+      "Do you still want to upload it?": [
+        "Вы ўсё яшчэ хочаце запампаваць яго?",
+        "Вы ўсё яшчэ хочаце запампаваць іх?",
+        "Вы ўсё яшчэ хочаце запампаваць іх?",
+        "Вы ўсё яшчэ хочаце запампаваць іх?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Я пацвярджаю і ўсведамляю, што інфармацыя і заявы, якія змяшчаюцца ў справаздачы, з'яўляюцца правільнымі і поўнымі."
+      ],
+      "This file appears to be empty:": [
+        "Здаецца, што гэты файл пусты:",
+        "Здаецца, што гэтыя файлы пустыя:",
+        "Здаецца, што гэтыя файлы пустыя:",
+        "Здаецца, што гэтыя файлы пустыя:"
+      ],
+      "Uploaded - file is empty": [
+        "Запампавана: файл пусты"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
       ]
     },
     "info": {
@@ -8522,6 +8549,24 @@
       ],
       "Indexing": [
         "Індэксаванне"
+      ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ]
     },
     "Label for contact group color": {
@@ -8871,6 +8916,18 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
       ]
     },
     "Message display when a new app version is available": {
@@ -14389,6 +14446,9 @@
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Не ўдалося пацвердзіць, што назва была створана або зменена ${ claimedNameAuthor }. Прычына: ${ node.nameAuthor.error.error }"
+      ],
+      "Upload empty file?": [
+        "Запампаваць пусты файл?"
       ]
     },
     "Today icon tooltip in mini calendar": {
