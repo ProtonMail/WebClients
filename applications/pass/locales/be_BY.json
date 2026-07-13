@@ -780,6 +780,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Regex invalid": [
+        "Памылковы рэгулярны выраз"
+      ],
+      "Regex unsafe": [
+        "Небяспечны рэгулярны выраз"
       ]
     },
     "Activity": {
@@ -1414,6 +1420,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Не ўдалося запусціць агент SSH: ${ errorMessage }"
       ]
     },
     "Error message": {
@@ -2854,6 +2863,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Упарадкавана па полі (спачатку загаловак, потым імя карыстальніка або электронная пошта, вэб-сайт, нататкі) і адпавядае дакладнасці (дакладна, пачынаецца з, змяшчае)."
       ]
     },
     "Keyboard key": {
@@ -4091,6 +4103,36 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Basic": [
+        "Асноўныя"
+      ],
+      "Check": [
+        "Праверка"
+      ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
+      "Relevant": [
+        "Рэлевантныя"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Выкарыстоўваць ${ PASS_APP_NAME } як агент SSH"
       ]
     },
     "Link": {
@@ -4129,6 +4171,18 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбралі ${ semiboldText } у гэтым сховішчы."
+      ],
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
       ]
     },
     "new_plans: feature": {
@@ -5132,6 +5186,18 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Адрэгулюйце паводзіны аўтазапаўнення, каб змяніць дзе прапаноўваць запісы ўваходу"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Test a URL against this rule": [
+        "Праверце URL-адрас на адпаведнасць гэтаму правілу"
+      ],
+      "URL matching": [
+        "Супадзенне URL-адраса"
       ]
     },
     "Title_cloned_item": {
@@ -5488,6 +5554,23 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Гэты элемент не можа быць прапанаваны для аўтазапаўнення з прычыны таго, што ён мае метку \"${ neverModeDescriptionStrong }\". Дадайце іншы URL-адрас, калі хочаце аўтазапаўняць гэты элемент."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Увядзіце URL-адрас, каб праверыць, ці адпавядае ваша бягучае правіла URL-адрасу"
+      ],
+      "The rule is matching this URL": [
+        "Правіла адпавядае гэтаму URL-адрасу"
+      ],
+      "This URL will be blocked from autofill": [
+        "Гэты URL-адрас будзе заблакіраваны для аўтазапаўнення"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Гэты URL-адрас НЕ будзе заблакіраваны для аўтазапаўнення"
       ]
     }
   }
