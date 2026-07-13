@@ -72,116 +72,127 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
     planName?: CustomLogoPlanName;
     size?: number;
     dark?: boolean;
+    'data-testid'?: string;
 }
 
-const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
+const getSrc = ({ planName, app, dark }: Pick<Props, 'planName' | 'app' | 'dark'>) => {
     if (planName === PLANS.VPN2024) {
-        return <img {...rest} src={vpn} width={size} alt="" className="w-full" />;
+        return vpn;
     }
     if (planName === PLANS.MAIL) {
-        return <img {...rest} src={mail} width={size} alt="" className="w-full" />;
+        return mail;
     }
     if (planName === PLANS.DRIVE) {
-        return <img {...rest} src={drive} width={size} alt="" className="w-full" />;
+        return drive;
     }
     if (planName === PLANS.DRIVE_1TB) {
-        return <img {...rest} src={drive} width={size} alt="" className="w-full" />;
+        return drive;
     }
     if (planName === PLANS.PASS) {
-        return <img {...rest} src={pass} width={size} alt="" className="w-full" />;
+        return pass;
     }
     if (planName === PLANS.BUNDLE) {
-        return <img {...rest} src={bundle} width={size} alt="" className="w-full" />;
+        return bundle;
     }
     if (planName === PLANS.DUO) {
-        return <img {...rest} src={duo} width={size} alt="" className="w-full" />;
+        return duo;
     }
     if (planName === PLANS.FAMILY) {
-        return <img {...rest} src={family} width={size} alt="" className="w-full" />;
+        return family;
     }
     if (planName === PLANS.VISIONARY) {
-        return <img {...rest} src={visionary} width={size} alt="" className="w-full" />;
+        return visionary;
     }
     if (planName === PLANS.PASS_FAMILY) {
-        return <img {...rest} src={passFamily} width={size} alt="" className="w-full" />;
+        return passFamily;
     }
     if (planName === PLANS.PASS_LIFETIME) {
-        return <img {...rest} src={passLifetime} width={size} alt="" className="w-full" />;
+        return passLifetime;
     }
     if (planName === PLANS.VPN_BUSINESS) {
-        return <img {...rest} src={vpnBusiness} width={size} alt="" className="w-full" />;
+        return vpnBusiness;
     }
     if (planName === PLANS.BUNDLE_PRO_2024) {
-        return <img {...rest} src={workspace} width={size} alt="" className="w-full" />;
+        return workspace;
     }
     if (planName === PLANS.BUNDLE_BIZ_2025) {
-        return <img {...rest} src={workspacePremium} width={size} alt="" className="w-full" />;
+        return workspacePremium;
     }
     if ((planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) && dark) {
-        return <img {...rest} src={vpnPassBundleDark} width={size} alt="" className="w-full" />;
+        return vpnPassBundleDark;
     }
     if (planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
-        return <img {...rest} src={vpnPassBundle} width={size} alt="" className="w-full" />;
+        return vpnPassBundle;
     }
     if (planName === PLANS.MEET) {
-        return <img {...rest} src={meet} width={size} alt="" className="w-full" />;
+        return meet;
     }
     if (planName === PLANS.MEET_BUSINESS) {
-        return <img {...rest} src={meetBusiness} width={size} alt="" className="w-full" />;
+        return meetBusiness;
     }
     if (planName === PLANS.LUMO) {
-        return <img {...rest} src={lumoPlus} width={size} alt="" className="w-full" />;
+        return lumoPlus;
     }
     if (planName === PLANS.LUMO_BUSINESS) {
-        return <img {...rest} src={lumoBusiness} width={size} alt="" className="w-full" />;
+        return lumoBusiness;
     }
     if (planName === PLANS.VPN_PRO) {
-        return <img {...rest} src={vpnPro} width={size} alt="" className="w-full" />;
+        return vpnPro;
     }
     if (planName === PLANS.DRIVE_PRO) {
-        return <img {...rest} src={drivePro} width={size} alt="" className="w-full" />;
+        return drivePro;
     }
     if (planName === PLANS.DRIVE_BUSINESS) {
-        return <img {...rest} src={driveBusiness} width={size} alt="" className="w-full" />;
+        return driveBusiness;
     }
     if (planName === PLANS.MAIL_PRO) {
-        return <img {...rest} src={mailPro} width={size} alt="" className="w-full" />;
+        return mailPro;
     }
     if (planName === PLANS.MAIL_BUSINESS) {
-        return <img {...rest} src={mailBusiness} width={size} alt="" className="w-full" />;
+        return mailBusiness;
     }
     if (planName === PLANS.PASS_PRO) {
-        return <img {...rest} src={passPro} width={size} alt="" className="w-full" />;
+        return passPro;
     }
     if (planName === PLANS.PASS_BUSINESS) {
-        return <img {...rest} src={passBusiness} width={size} alt="" className="w-full" />;
+        return passBusiness;
     }
 
     // Temporary fix to use Mail's logo for calendar until design creates one.
     if (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR) {
-        return <img {...rest} src={mailFree} width={size} alt="" className="w-full" />;
+        return mailFree;
     }
     if (app === APPS.PROTONPASS) {
-        return <img {...rest} src={passFree} width={size} alt="" className="w-full" />;
+        return passFree;
     }
     if (app === APPS.PROTONVPN_SETTINGS) {
-        return <img {...rest} src={vpnFree} width={size} alt="" className="w-full" />;
+        return vpnFree;
     }
     if (app === APPS.PROTONDRIVE) {
-        return <img {...rest} src={driveFree} width={size} alt="" className="w-full" />;
+        return driveFree;
     }
     if (app === APPS.PROTONMEET) {
-        return <img {...rest} src={meetFree} width={size} alt="" className="w-full" />;
+        return meetFree;
     }
     if (app === APPS.PROTONLUMO) {
-        return <img {...rest} src={lumoFree} width={size} alt="" className="w-full" />;
+        return lumoFree;
     }
 
     if (!planName) {
-        return <img {...rest} src={genericFree} width={size} alt="" className="w-full" />;
+        return genericFree;
     }
 
     return null;
+};
+
+const CustomLogo = ({ planName, app, size, dark, 'data-testid': dataTestId = 'plan-logo', ...rest }: Props) => {
+    const src = getSrc({ planName, app, dark });
+
+    if (!src) {
+        return null;
+    }
+
+    return <img {...rest} src={src} width={size} alt="" className="w-full" data-testid={dataTestId} />;
 };
 
 export default CustomLogo;
