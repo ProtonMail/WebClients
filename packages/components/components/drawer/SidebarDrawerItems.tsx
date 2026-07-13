@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { selectHasAccountSecurityIssue } from '@proton/account';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
@@ -12,7 +13,6 @@ import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
-import { selectHasAccountSecurityIssue } from './views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 
 interface SidebarDrawerItemProps {

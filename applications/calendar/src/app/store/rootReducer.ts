@@ -5,7 +5,7 @@ import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
-import { breachesCountReducer } from '@proton/components/components/drawer/views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
+import { breachesCountReducer } from '@proton/account';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { busySlotsReducer } from './busySlots/busySlotsSlice';
