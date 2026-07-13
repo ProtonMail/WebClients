@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
+import '@proton/testing/lib/vitest/mockFlagSvg';
+
 global.AnimationEvent = class AnimationEvent extends Event implements AnimationEvent {
     private _animationName: string;
 
@@ -51,14 +53,6 @@ global.ResizeObserver = class {
 
     disconnect = vi.fn();
 } as unknown as typeof ResizeObserver;
-
-vi.mock('@proton/components/containers/vpn/flag', () => ({
-    getFlagSvg: vi.fn().mockImplementation((it) => it),
-}));
-
-vi.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
-    getFlagSvg: vi.fn().mockImplementation((it) => it),
-}));
 
 vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndicator', () => ({
     __esModule: true,
