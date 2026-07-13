@@ -71,7 +71,6 @@ import type { Permission, UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
-import noop from '@proton/utils/noop';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
@@ -611,12 +610,7 @@ const MainContainer = () => {
                         <LiveChatZendesk
                             tags={getZendeskTags(user, organization)}
                             zendeskRef={zendeskRef}
-                            onLoaded={() => {
-                                if (showZendeskChat.autoLaunch) {
-                                    zendeskRef.current?.open();
-                                }
-                            }}
-                            onUnavailable={noop}
+                            autoLaunch={showZendeskChat.autoLaunch}
                             locale={localeCode.replace('_', '-')}
                         />
                     )}
