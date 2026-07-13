@@ -1298,6 +1298,15 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace 체험하기"
+      ],
+      "Add storage": [
+        "스토리지 추가"
+      ],
+      "Re-index": [
+        "재색인"
+      ],
+      "Rebuild index": [
+        "색인 재구축"
       ]
     },
     "Action: Docs": {
@@ -4102,6 +4111,12 @@
       ],
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length }개 항목 이동 실패"
+      ],
+      "Folder not found": [
+        "폴더를 찾을 수 없습니다"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ]
     },
     "error": {
@@ -7243,6 +7258,27 @@
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "파일이 재색인 중입니다. 계속 검색할 수 있으나 색인 완료 전까지는 검색 결과가 완전하지 않을 수 있습니다. 색인 완료 후 알려드립니다."
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace가 데이터 누출 위험 없아 효율적으로 팀 간에 협업할 수 있도록 도와드립니다."
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "본인은 본 리포트에 기재된 정보 및 내용이 정확하고 완전함을 성실하게 확인합니다."
+      ],
+      "Indexed ${ first }": [
+        "${ first } 색인됨"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } 및 ${ second } 색인됨"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "하나의 암호화된 스위트. 완벽한 비즈니스 보안."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "검색 엔진 내부 오류가 발생했습니다. 복구하려면 다시 색인을 진행하십시오."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ]
     },
     "info": {
@@ -7840,7 +7876,7 @@
         "악용 유형 선택"
       ],
       "Set a password to limit access via link": [
-        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
+        "비밀번호를 설정하여 링크를 통한 접근 제한"
       ],
       "Set recovery method": [
         "복구 방법 설정"
@@ -8096,6 +8132,15 @@
       ],
       "Pending invitation": [
         "대기 중인 초대장"
+      ],
+      "Expired on ${ formatted }": [
+        "${ formatted }에 만료됨"
+      ],
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy }님에 의해 공유됨"
+      ],
+      "Shared by Public link": [
+        "공개 링크로 공유됨"
       ]
     },
     "Label for contact group color": {
@@ -9912,6 +9957,24 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "\"${ ellipsedName }\"의 사본이 휴지통으로 이동됨"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\"이(가) 성공적으로 생성되었습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\"을(를) 생성할 수 없습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" 삭제 실패"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\"의 휴지통에서 삭제를 실패했습니다"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" 이(가) 휴지통에서 복구되었습니다"
+      ],
+      "Failed to load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10858,6 +10921,9 @@
       ],
       "Optional feedback": [
         "선택 피드백"
+      ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
       ]
     },
     "Placeholder for contact group name": {
@@ -13555,6 +13621,21 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "${ claimedKeyAuthor }님이 해당 노드를 생성했는지 확인할 수 없습니다. 원인: ${ node.keyAuthor.error.error }"
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 폴더는 ${ author }에 의해 안전하게 생성되었습니다."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 폴더는 ${ author }에 의해 안전하게 업로드 되었습니다."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "${ author }이(가) 해당 폴더를 생성했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "${ author }님이 이 파일을 업로드했는지 확인할 수 없었습니다."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ node.nameAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13948,6 +14029,9 @@
       ],
       "Not activated": [
         "활성화되지 않음"
+      ],
+      "Pending": [
+        "보류 중"
       ]
     },
     "q2campaign2026: Action": {
@@ -14045,6 +14129,11 @@
       ],
       "Expires": [
         "만료"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "앨범의 이름이 성공적으로 변경되었습니다"
       ]
     }
   }

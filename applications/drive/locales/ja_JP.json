@@ -1274,6 +1274,18 @@
       ],
       "Skip": [
         "スキップ"
+      ],
+      "Add storage": [
+        "ストレージを追加"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "「${ ellipsedAlbumName }」アルバムに戻る"
+      ],
+      "Report abuse": [
+        "通報"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "${ BRAND_NAME } Workspaceのお試し"
       ]
     },
     "Action: Docs": {
@@ -4066,6 +4078,15 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "VAT番号は ${ prefixes } で始まる必要があります"
+      ],
+      "Folder not found": [
+        "フォルダーが見つかりません"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "検索の問題が発生しました。 後でもう一度試してください。"
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "検索の問題が発生しました。容量不足です。"
       ]
     },
     "error": {
@@ -7079,6 +7100,30 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "現在、お客様のアカウントはリバースチャージ制度を適用するように構成されていますが、これは選択されたプランではサポートされていません。手続きを進めるには、請求先住所からVAT番号を削除するか、別のプランを選択してください。"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length }件"
+      ],
+      "Album": [
+        "アルバム"
+      ],
+      "Invitation confirmed": [
+        "招待を確認しました"
+      ],
+      "Not enough storage space": [
+        "容量不足"
+      ],
+      "Preparing download": [
+        "ダウンロード準備中"
+      ],
+      "Preparing…": [
+        "準備中…"
+      ],
+      "Search engine error": [
+        "検索エンジンのエラー"
+      ],
+      "Search module is not available.": [
+        "検索サービスは利用できません。"
       ]
     },
     "info": {
@@ -7872,6 +7917,45 @@
       ],
       "Drive": [
         "ドライブ"
+      ],
+      "${ downloads } downloads": [
+        "ダウンロード ${ downloads } 件"
+      ],
+      "Created ${ created }": [
+        "${ created }に作成"
+      ],
+      "Deleted ${ deleted }": [
+        "${ deleted }に削除"
+      ],
+      "Device: ${ name }": [
+        "デバイス：${ name }"
+      ],
+      "Expired on ${ formatted }": [
+        "${ formatted }に期限切れ"
+      ],
+      "Expires ${ formatted }": [
+        "有効期限 ${ formatted }"
+      ],
+      "Location: ${ item.location }": [
+        "位置：${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "${ modified }に変更"
+      ],
+      "Never expires": [
+        "有効期限なし"
+      ],
+      "Non-consensual intimate imagery": [
+        "非同意性的画像"
+      ],
+      "Outdated version": [
+        "古いバージョン"
+      ],
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy }が共有"
+      ],
+      "Shared on ${ sharedOn }": [
+        "${ sharedOn }に共有"
       ]
     },
     "Label for contact group color": {
@@ -9655,6 +9739,33 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME }アドレスの準備が整いました"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "「${ ellipsedName }」を作成しました"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "「${ ellipsedName }」を削除しました"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "「${ ellipsedName }」がごみ箱から完全に削除されました"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "「${ ellipsedName }」の作成に失敗しました"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "「${ ellipsedName }」をごみ箱から復元できませんでした"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "「${ ellipsedName }」を移動しました"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "「${ ellipsedName }」がごみ箱から復元されました"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "「${ ellipsedName }」のコピーをごみ箱に移動しました"
+      ],
+      "Failed to load sharing details": [
+        "共有の詳細を読み込めませんでした"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13265,6 +13376,27 @@
       ],
       "Verify your password": [
         "パスワードの確認"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "デジタル署名が検証されました。このファイルは${ author }によって安全に作成されました。"
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "デジタル署名が検証されました。このフォルダーは${ author }によって安全に作成されました。"
+      ],
+      "Search": [
+        "検索"
+      ],
+      "Upload empty file?": [
+        "空のファイルをアップロードしますか？"
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "${ author } がこのフォルダを作成したことを検証できませんでした。"
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "${ author } がこのファイルをアップロードしたことを検証できませんでした。"
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "${ author } がこのフォルダーをアップロードしたことを検証できませんでした。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13739,6 +13871,17 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Created": [
+        "作成しました"
+      ],
+      "Expires": [
+        "有効期限"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "アルバムの名前を変更しました"
       ]
     }
   }
