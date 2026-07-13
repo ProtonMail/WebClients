@@ -14,5 +14,4 @@ export enum CATEGORIES_COLOR_SHADES {
     ORANGE = 'orange',
     RED = 'red',
     PINK = 'pink',
-    BLUE = 'blue',
 }
