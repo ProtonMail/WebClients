@@ -53,6 +53,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);
+
+        void import('@proton/shared/lib/desktop/bootstrapAccountInboxDesktop').then((module) => {
+            void module.bootstrapAccountInboxDesktop();
+        });
     }
 
     const run = async () => {

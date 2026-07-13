@@ -43,6 +43,7 @@ import { startOAuthSession, clearOAuthSession } from "../utils/oauthProcess";
 import { sentryReport } from "../utils/sentryReport";
 import { openExternalIPC } from "../utils/openExternal/openExternal";
 import { externalProtocolManager } from "../utils/openExternal/manager";
+import { urlRedirectManager } from "../utils/urlRedirects/manager";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -288,6 +289,9 @@ export const handleIPCCalls = () => {
                     break;
                 case "setAllowedProtocols":
                     externalProtocolManager.extendAllowedProtocols(payload.source ?? "ipc", payload.protocols);
+                    break;
+                case "setUrlRedirectRules":
+                    urlRedirectManager.addRules(payload.rules);
                     break;
                 default:
                     ipcLogger.error(`unknown message type: ${type}`);
