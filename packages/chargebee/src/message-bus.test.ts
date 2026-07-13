@@ -26,6 +26,14 @@ import { MessageBus, createMessageBus, getMessageBus, verifySavedCardMessageType
 
 window.parent.postMessage = jest.fn();
 
+Object.defineProperty(window, 'location', {
+    value: new URL('https://account-api.proton.me'),
+    writable: true,
+    configurable: true,
+});
+
+const expectedParentOrigin = 'https://account.proton.me';
+
 let messageBus: MessageBus | null = null;
 beforeEach(() => {
     jest.clearAllMocks();
@@ -110,7 +118,7 @@ it('should listen to set configuration event', () => {
             status: 'success',
             data: {},
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -151,7 +159,7 @@ it('should listen to submit event', () => {
             status: 'success',
             data: {},
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -201,7 +209,7 @@ it('should listen to set paypal payment intent event', () => {
                 approvalUrl: 'https://proton.me',
             },
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -243,7 +251,7 @@ it('should listen to get height event', () => {
                 extraBottom: 8,
             },
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -282,7 +290,7 @@ it('should listen to get bin event', () => {
             correlationId: event.correlationId,
             ...response,
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -320,7 +328,7 @@ it('should listen to validate form event', () => {
             status: 'success',
             data: [],
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -367,7 +375,7 @@ it('should listen to verify saved card event', () => {
                 approvalUrl: 'https://proton.me',
             },
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -389,7 +397,7 @@ it('should send paypal authorized message', () => {
             type: 'paypal-authorized',
             ...expectedMessage,
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -412,7 +420,7 @@ it('should send 3ds challenge message', () => {
             type: '3ds-challenge',
             ...expectedMessage,
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -435,7 +443,7 @@ it('should send 3ds failed message', () => {
             type: 'chargebee-submit-response',
             ...expectedMessage,
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -461,7 +469,7 @@ it('should send form validation error message', () => {
             type: 'chargebee-submit-response',
             ...expectedMessage,
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -488,7 +496,7 @@ it('should send 3ds success message', () => {
             type: 'chargebee-submit-response',
             ...expectedMessage,
         }),
-        '*'
+        expectedParentOrigin
     );
 });
 
@@ -579,6 +587,6 @@ it('should listen to direct debit submit event', () => {
             status: 'success',
             data: {},
         }),
-        '*'
+        expectedParentOrigin
     );
 });
