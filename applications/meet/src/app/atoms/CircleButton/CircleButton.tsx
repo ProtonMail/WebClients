@@ -7,7 +7,7 @@ import type { PopperPlacement } from '@proton/components/index';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
-import { ConditionalTooltip } from '../../components/ConditionalTooltip/ConditionalTooltip';
+import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
 
 import './CircleButton.scss';
 

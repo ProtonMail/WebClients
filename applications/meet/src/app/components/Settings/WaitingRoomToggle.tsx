@@ -6,7 +6,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { SettingsToggle } from './shared/SettingsToggle';
+import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 
 export const WaitingRoomToggle = () => {
     const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
@@ -46,7 +46,7 @@ export const WaitingRoomToggle = () => {
     };
 
     return (
-        <SettingsToggle
+        <SettingToggle
             id="waiting-room"
             label={c('Action').t`Waiting room`}
             description={getWaitingRoomDescription()}

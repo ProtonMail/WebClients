@@ -8,9 +8,9 @@ import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/s
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { RAISE_HAND_EMOJI } from '../../constants';
 import { useRaiseHand } from '../../hooks/bridges/useRaiseHand';
-import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
 
 type Props = {
     participantIdentity: string;

@@ -3,8 +3,7 @@
 	// overrides for themes
 	// ------------------------------------------------------------
 	a,
-	.link,
-	.timezone-button {
+	.link {
 		color: var(--theme-color, var(--link-norm));
 
 		&:hover,

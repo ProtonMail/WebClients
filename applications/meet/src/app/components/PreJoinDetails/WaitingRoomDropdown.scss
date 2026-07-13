@@ -1,0 +1,6 @@
+.waiting-room-dropdown {
+	.dropdown-content::before,
+	.dropdown-content::after {
+		display: none;
+	}
+}

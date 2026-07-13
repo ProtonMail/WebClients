@@ -1,7 +1,10 @@
 .option-button {
 	word-break: keep-all;
-	margin-inline-start: -0.425rem;
 	white-space: nowrap;
+
+	&.icon-on-the-left {
+		margin-inline-start: -0.425rem;
+	}
 
 	&:hover,
 	&:focus-within {
