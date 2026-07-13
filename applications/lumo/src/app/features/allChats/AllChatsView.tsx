@@ -14,6 +14,7 @@ import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoUserSettings } from '../../hooks';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { ChatHistorySortMenu } from '../../layouts/sidepanel/ChatHistorySortMenu';
 import { ConversationDeleteFlow } from '../../layouts/sidepanel/ConversationDeleteFlow';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
@@ -31,6 +32,19 @@ import './AllChatsView.scss';
 const ROW_HEIGHT = 68;
 
 type FilterValue = 'all' | 'favorites';
+
+const getSortFieldLabel = (sortField: ChatHistoryDateField): string => {
+    if (sortField === 'updatedAt') {
+        return c('collider_2025:Option').t`Recent activity`;
+    }
+
+    return c('collider_2025:Option').t`Date created`;
+};
+
+const allChatsSortOptions = [
+    { value: 'updatedAt' as const, label: c('collider_2025:Option').t`Recent activity` },
+    { value: 'createdAt' as const, label: c('collider_2025:Option').t`Date created` },
+];
 
 interface AllChatsEmptyStateProps {
     variant: 'no-chats' | 'no-favorites' | 'no-results';
@@ -129,17 +143,13 @@ const AllChatsToolbar = ({
                 </Button>
             </div>
 
-            <select
-                className="all-chats-sort-select shrink-0"
-                value={sortField}
-                aria-label={c('collider_2025:Title').t`Sort by`}
-                onChange={(event) => {
-                    onSortFieldChange(event.target.value as ChatHistoryDateField);
-                }}
-            >
-                <option value="updatedAt">{c('collider_2025:Option').t`Recent activity`}</option>
-                <option value="createdAt">{c('collider_2025:Option').t`Date created`}</option>
-            </select>
+            <ChatHistorySortMenu
+                sortField={sortField}
+                onSortFieldChange={onSortFieldChange}
+                options={allChatsSortOptions}
+                buttonLabel={getSortFieldLabel(sortField)}
+                buttonClassName="all-chats-sort-menu-button shrink-0"
+            />
         </div>
     );
 };
