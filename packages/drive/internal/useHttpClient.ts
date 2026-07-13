@@ -8,6 +8,7 @@ import type {
 import { AbortError } from '@protontech/drive-sdk';
 
 import useApi from '@proton/components/hooks/useApi';
+import metrics from '@proton/metrics';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
@@ -36,6 +37,9 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
                 // SDK has own parsing of responses.
                 output: 'raw',
             });
+            if (result.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                instrumentRateLimitedRequest();
+            }
             return result;
         } catch (error) {
             // useApi throws StatusCodeError when the status code is not 2xx.
@@ -84,9 +88,16 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
             signal: options.signal,
             credentials: 'omit',
         });
-        return callWithTimeout(fetch(request)).catch((error) => {
-            throw categorizeNetworkFailure(error, requestDetails);
-        });
+        return callWithTimeout(fetch(request))
+            .then((response) => {
+                if (response.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                    instrumentRateLimitedRequest();
+                }
+                return response;
+            })
+            .catch((error) => {
+                throw categorizeNetworkFailure(error, requestDetails);
+            });
     };
 
     // Ensure the reference is stable across renders. Never update the whole object.
@@ -147,6 +158,9 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         };
 
         xhr.onload = () => {
+            if (xhr.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                instrumentRateLimitedRequest();
+            }
             resolve(
                 new Response(xhr.response, {
                     status: xhr.status,
@@ -237,6 +251,10 @@ function withRequestSummary(message: string, request: TransferRequestDetails) {
         return message;
     }
     return `${message} (${summary})`;
+}
+
+function instrumentRateLimitedRequest() {
+    metrics.drive_warnings_total.increment({ warning: 'http_client_rate_limited' });
 }
 
 function summarizeRequest({ url, method }: TransferRequestDetails) {
