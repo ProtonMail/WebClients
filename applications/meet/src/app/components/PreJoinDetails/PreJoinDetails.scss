@@ -1,8 +1,9 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/meet/meet-breakpoints' as *;
-@use '~@proton/styles/scss/lib/include-media' as im;
-im.$breakpoints: $breakpoints;
-im.$media-expressions: $media-expressions;
+@use '~@proton/styles/scss/lib/include-media' as im with (
+	$breakpoints: $breakpoints,
+	$media-expressions: $media-expressions
+);
 
 .stacked-field {
 	&#{&} {
@@ -54,7 +55,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .pre-join-details-name-input-field {
-	border-radius: 1rem;
+	border-radius: initial;
 
 	@include im.media('>small') {
 		border-radius: initial;
@@ -85,4 +86,8 @@ im.$media-expressions: $media-expressions;
 	@include im.media('>small') {
 		min-block-size: 5.3rem !important;
 	}
+}
+
+.remember-my-name-on-this-device {
+	line-height: 2.4375rem;
 }

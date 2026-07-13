@@ -95,6 +95,7 @@ const VideoSettingsDropdownComponent = ({
                                 void withLoadingBackgroundBlur(toggleBackgroundBlur());
                             }}
                             withTooltip
+                            size="medium"
                         />
                     </div>
                 </div>

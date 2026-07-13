@@ -1,0 +1,19 @@
+.setting-toggle-inactive {
+	--field-norm: var(--interaction-weak);
+}
+
+.setting-toggle {
+	.toggle-container-img {
+		visibility: hidden;
+	}
+
+	.toggle-container--checked {
+		&::after {
+			border: 1px solid var(--interaction-norm) !important;
+		}
+	}
+}
+
+.setting-container {
+	container-type: inline-size;
+}

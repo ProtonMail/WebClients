@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
-import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
+import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { DashboardMeetingListTab } from './types';
 
 import './DashboardMeetingListTabs.scss';
