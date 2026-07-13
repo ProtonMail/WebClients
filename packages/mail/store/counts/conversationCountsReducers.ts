@@ -1,7 +1,7 @@
 import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';

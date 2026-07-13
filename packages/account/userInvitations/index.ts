@@ -2,8 +2,10 @@ import { type PayloadAction, type UnknownAction, createSlice } from '@reduxjs/to
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { CacheType } from '@proton/redux-utilities/interface';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getInvitation, getInvitations } from '@proton/shared/lib/api/user';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
@@ -13,8 +15,6 @@ import type { Api, PendingInvitation, PendingInvitation as PendingUserInvitation
 import noop from '@proton/utils/noop';
 
 import { serverEvent } from '../eventLoop';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import type { OrganizationState } from '../organization';
 import { selectOrganization } from '../organization';
 

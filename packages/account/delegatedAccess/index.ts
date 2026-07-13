@@ -1,6 +1,8 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
@@ -12,8 +14,6 @@ import type { AddressKeysState } from '../addressKeys';
 import type { AddressesState } from '../addresses';
 import { serverEvent } from '../eventLoop';
 import type { InactiveKeysState } from '../inactiveKeys';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import type { KtState } from '../kt';
 import type { OrganizationKeyState } from '../organizationKey';
 import type { UserState } from '../user';

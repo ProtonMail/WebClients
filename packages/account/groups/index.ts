@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroup, getGroups } from '@proton/shared/lib/api/groups';
@@ -27,8 +29,6 @@ import type { DomainsState } from '../domains';
 import { serverEvent } from '../eventLoop';
 import type { GroupMembershipsState } from '../groupMemberships';
 import { groupMembershipsThunk } from '../groupMemberships';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import { organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
 import { userThunk } from '../user';
