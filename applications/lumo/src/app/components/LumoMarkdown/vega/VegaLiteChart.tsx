@@ -113,7 +113,7 @@ async function embedChart(
  *
  * Security controls:
  * - Spec JSON is parsed and sanitized before render (no external data URLs, no embed overrides).
- * - vega-embed uses the sandboxed expression interpreter instead of `eval`.
+ * - vega-embed uses AST mode with the sandboxed expression interpreter instead of `eval`.
  * - A custom loader rejects all network/file loads so only inline `data.values` work.
  * - Toolbar actions (export/source menu) are disabled; custom download/source controls are provided instead.
  */
@@ -175,6 +175,7 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
                 const dark = isDarkSurface(chartShell);
                 const embedOptions = {
                     actions: false,
+                    ast: true,
                     expr: expressionInterpreter,
                     loader: createSecureVegaLoader(),
                     config: getProtonVegaConfig(chartShell),
