@@ -13,6 +13,7 @@ import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
+import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
 
 import './PreJoinDetails.scss';
@@ -26,8 +27,6 @@ interface PreJoinDetailsProps {
     onJoinMeeting: (displayName: string, keepOnDevice: boolean) => void;
     shareLink: string;
     instantMeeting: boolean;
-    isPersonalRoom?: boolean;
-    isLoadingMeetings?: boolean;
 }
 
 export const PreJoinDetails = ({
@@ -39,8 +38,6 @@ export const PreJoinDetails = ({
     onJoinMeeting,
     shareLink,
     instantMeeting,
-    isPersonalRoom = false,
-    isLoadingMeetings = false,
 }: PreJoinDetailsProps) => {
     const notificationManager = useNotifications();
     const { viewportWidth } = useActiveBreakpoint();
@@ -49,50 +46,12 @@ export const PreJoinDetails = ({
 
     const actionLabel = instantMeeting ? c('Action').t`Start meeting` : c('Action').t`Join meeting`;
 
-    const getTitle = () => {
-        if (roomName) {
-            return roomName;
-        }
-        // if the room name is not set, show the personal meeting room title base on the meeting type
-        if (isPersonalRoom) {
-            return c('Title').t`Personal meeting room`;
-        }
-        if (instantMeeting) {
-            return c('Title').t`Talk confidentially`;
-        }
-        return c('Title').t`Join meeting`;
-    };
-
-    const getSubtitle = () => {
-        if (isPersonalRoom) {
-            return c('Info').t`Your always available meeting room`;
-        }
-        if (instantMeeting) {
-            return c('Info').t`Our end-to-end encrypted meetings protect privacy and empower truly free expression.`;
-        }
-        return c('Info').t`You've been invited to join a secure meeting. Confirm your name and click below to enter.`;
-    };
-
-    const title = getTitle();
-    const subtitle = getSubtitle();
-
     return (
         <div
             className="pre-join-details-container flex flex-nowrap flex-column mt-0 gap-2 lg:py-4 lg:gap-4 w-full md:w-custom flex-none md:flex-1 lg:flex-none md:justify-center md:items-center"
             style={{ '--md-w-custom': '25rem' }}
         >
-            <div className="pre-join-details-header flex flex-column gap-2 py-2 lg:py-4">
-                {!isLoadingMeetings && (
-                    <>
-                        <h1
-                            className={`title text-semibold text-center hidden md:block m-0 ${isPersonalRoom ? 'color-primary' : ''}`}
-                        >
-                            {title || ' '}
-                        </h1>
-                        <div className="text-center color-weak hidden md:block">{subtitle}</div>
-                    </>
-                )}
-            </div>
+            <PreJoinDetailsHeader roomName={roomName} roomId={roomId} instantMeeting={instantMeeting} />
             <div className="flex flex-column gap-2 lg:gap-4 w-full">
                 <InputFieldStackedGroup classname="w-full">
                     {!instantMeeting && (
