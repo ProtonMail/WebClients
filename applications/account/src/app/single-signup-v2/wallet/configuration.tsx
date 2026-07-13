@@ -47,10 +47,10 @@ import {
     getSwissFeature,
     getSwissPrivacyLawsBenefit,
 } from '../configuration/helper';
+import CustomStep from '../defaultCustomStep/CustomStep';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
-import CustomStep from './CustomStep';
 
 export const getWalletBenefits = (): BenefitItem[] => {
     return [
