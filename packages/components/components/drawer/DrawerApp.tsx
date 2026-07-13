@@ -18,7 +18,7 @@ import noop from '@proton/utils/noop';
 import useDrawer from '../../hooks/drawer/useDrawer';
 import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
-import { useGetBreachesCounts } from './views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
+import { useGetBreachesCounts } from '@proton/account';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 import DrawerReferralView from './views/referral/DrawerReferralView';
 import DrawerVPNView from './views/vpn/DrawerVPNView';

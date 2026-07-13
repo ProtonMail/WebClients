@@ -1,9 +1,11 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import type { UserSettingsState, UserState } from '@proton/account';
 import type { FeaturesReducerState } from '@proton/features';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+
+import type { UserState } from '../user';
+import type { UserSettingsState } from '../userSettings';
 
 const name = 'accountSecurity' as const;
 

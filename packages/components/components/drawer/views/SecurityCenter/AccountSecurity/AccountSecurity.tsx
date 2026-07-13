@@ -14,7 +14,7 @@ import {
     selectAccountSecurityIssuesCount,
     selectHasAccountSecurityCardToDisplay,
     selectHasSentinelOrTFACardToDisplay,
-} from './slice/accountSecuritySlice';
+} from '@proton/account';
 
 const AccountSecurity = () => {
     const api = useApi();
