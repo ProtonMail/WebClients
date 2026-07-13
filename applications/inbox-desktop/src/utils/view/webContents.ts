@@ -6,18 +6,13 @@ import {
     isAccountAuthorize,
     isAccountLogin,
     isAccountSwitch,
-    isAccoutLite,
-    isBookingURL,
-    isBornPrivateURL,
     isCalendar,
-    isCloseTicketURL,
     isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
     isMail,
     isMicrosoftAuthURL,
     isUpgradeURL,
-    isUpsellURL,
     isZoomAuthURL,
 } from "../urls/urlTests";
 import {
@@ -42,6 +37,7 @@ import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthW
 import { sentryReport } from "../sentryReport";
 import { enableAppSwitcherMenuItems } from "../menus/menuApplication";
 import { openExternalRedirect } from "../openExternal/openExternal";
+import { urlRedirectManager } from "../urlRedirects/manager";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
@@ -199,24 +195,8 @@ export function handleWebContents(contents: WebContents) {
             return details.preventDefault();
         }
 
-        // We want to open booking URLs in the browser to avoid blocking the user
-        if (isBookingURL(details.url)) {
-            logger().info("opening booking URL in browser", details.url);
-            void openExternalRedirect(details.url);
-            return details.preventDefault();
-        }
-
-        // Born private URLs open in the browser
-        if (isBornPrivateURL(details.url)) {
-            logger().info("opening born private URL in browser", details.url);
-            void openExternalRedirect(details.url);
-            return details.preventDefault();
-        }
-
-        // Close ticket URLs use window.close() which doesn't work in Electron,
-        // so open them in the browser where the close tab button works correctly
-        if (isCloseTicketURL(details.url)) {
-            logger().info("opening close ticket URL in browser", details.url);
+        if (urlRedirectManager.match(details.url)) {
+            logger().info("url redirect in browser", details.url);
             void openExternalRedirect(details.url);
             return details.preventDefault();
         }
@@ -295,23 +275,15 @@ export function handleWebContents(contents: WebContents) {
             };
         }
 
-        // We want to open booking URLs in the browser to avoid blocking the user
-        if (isBookingURL(url)) return denyAndOpenExternalRedirect(`booking link in browser ${url}`);
-
-        // Born private URLs open in the browser
-        if (isBornPrivateURL(url)) return denyAndOpenExternalRedirect(`born private link in browser ${url}`);
+        if (urlRedirectManager.match(url)) {
+            return denyAndOpenExternalRedirect(`url redirect in browser ${url}`);
+        }
 
         if (isCalendar(url)) return denyAndShowView(url, "calendar", `calendar link in calendar view ${url}`);
 
         if (isMail(url)) return denyAndShowView(url, "mail", `mail link in mail view ${url}`);
 
         if (isAccount(url)) {
-            if (isAccoutLite(url)) return denyAndOpenExternalRedirect(`account lite in browser ${url}`);
-
-            if (isUpsellURL(url)) return denyAndOpenExternalRedirect(`upsell in browser ${url}`);
-
-            if (isCloseTicketURL(url)) return denyAndOpenExternalRedirect(`close ticket in browser ${url}`);
-
             return denyAndShowView(url, "account", `account link in account view ${url}`);
         }
 
