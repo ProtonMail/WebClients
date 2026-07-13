@@ -11,6 +11,7 @@ import type { UploadConflictType, UploadEventSubscriberCallback } from './types'
 import { EmptyFileDecision, type UploadConflictStrategy, UploadStatus } from './types';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
+import { isEmptyFolderPlaceholder } from './utils/isEmptyFolderPlaceholder';
 import { isDataTransferList, processDroppedItems } from './utils/processDroppedItems';
 
 /**
@@ -168,7 +169,8 @@ export class UploadManager {
             ? await processDroppedItems(filesOrDataTransfer, { skipEmptyFolders: isForPhotos })
             : Array.from(filesOrDataTransfer);
 
-        const emptyFiles = filesArray.filter((f) => f.size === 0);
+        const isEmptyFile = (f: File) => f.size === 0 && !isEmptyFolderPlaceholder(f);
+        const emptyFiles = filesArray.filter(isEmptyFile);
         const confirmedEmptyFiles = new Set<File>();
         if (emptyFiles.length > 0 && this.emptyFileResolver) {
             const result = await this.emptyFileResolver(emptyFiles.map((f) => f.name));
@@ -180,7 +182,7 @@ export class UploadManager {
             }
         }
         const filteredFilesArray = filesArray.filter((f) => {
-            if (f.size === 0 && this.emptyFileResolver) {
+            if (isEmptyFile(f) && this.emptyFileResolver) {
                 return confirmedEmptyFiles.has(f);
             }
             return true;
