@@ -47,7 +47,7 @@ import {
     selectShouldBreachAlertsRefresh,
     selectUnreadBreachesCount,
     setUnreadBreachesCount,
-} from './slice/breachNotificationsSlice';
+} from '@proton/account';
 
 const BreachAlertsSecurityCenter = () => {
     const handleError = useErrorHandler();
