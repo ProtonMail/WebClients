@@ -225,6 +225,17 @@ export const searchMetrics = {
             Value: sizeMb,
         });
     },
+
+    /**
+     * Report other search error.
+     */
+    markSearchOtherError({ error }: { error: unknown }): void {
+        // TODO(DRVWEB-5567): Add grafana metric inrement.
+
+        sendErrorReportForSearch('Search unknown error', error, {
+            tags: { label: 'search-other-errors' },
+        });
+    },
 };
 
 export type SearchMetrics = typeof searchMetrics;
