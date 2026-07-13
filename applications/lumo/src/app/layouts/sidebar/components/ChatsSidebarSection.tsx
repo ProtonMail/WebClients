@@ -21,6 +21,7 @@ import {
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { ChatHistoryGroupByMenu } from '../../sidepanel/ChatHistoryGroupByMenu';
 import RecentChatsList, { ConversationListItem } from '../../sidepanel/RecentChatsList';
+import { applyRetentionPolicy } from '../../sidepanel/helpers';
 import { SIDEBAR_CHAT_TOTAL_LIMIT } from '../constants';
 import { CollapsibleSidebarSection } from './CollapsibleSidebarSection';
 
@@ -74,6 +75,10 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
 
+    const retainedFavorites = useMemo(() => {
+        return applyRetentionPolicy(favorites, hasLumoPlus);
+    }, [favorites, hasLumoPlus]);
+
     const { filteredHistoryRows, visibleHistoryRows, showSeeMore } = useMemo(() => {
         const projectFilteredRows = showProjectConversationsInHistory
             ? conversationRows
@@ -88,14 +93,14 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
             retainedRows = projectFilteredRows.filter((row) => startOfDay(new Date(row.createdAt)) >= cutoff);
         }
 
-        const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - favorites.length);
+        const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - retainedFavorites.length);
 
         return {
             filteredHistoryRows: retainedRows,
             visibleHistoryRows: retainedRows.slice(0, historySlots),
             showSeeMore: retainedRows.length > historySlots,
         };
-    }, [conversationRows, spaceMap, showProjectConversationsInHistory, hasLumoPlus, favorites.length]);
+    }, [conversationRows, retainedFavorites.length, spaceMap, showProjectConversationsInHistory, hasLumoPlus]);
 
     return (
         <div className="chats-sidebar-section flex flex-column min-w-0 gap-2">
@@ -103,14 +108,14 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
                 label={c('collider_2025:Title').t`Favorites`}
                 className="favorites-sidebar-section"
             >
-                {favorites.length === 0 ? (
+                {retainedFavorites.length === 0 ? (
                     <div className="color-weak text-sm px-1.5 py-1">
                         {c('collider_2025:Info').t`No favorites yet. Star a chat to find it here quickly.`}
                     </div>
                 ) : (
                     <div className="chat-history-list">
                         <RecentChatsList
-                            conversations={favorites}
+                            conversations={retainedFavorites}
                             selectedConversationId={conversationId}
                             onItemClick={onItemClick}
                         />

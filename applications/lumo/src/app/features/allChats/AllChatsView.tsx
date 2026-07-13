@@ -13,9 +13,11 @@ import { LumoLink } from '../../components/Links/LumoLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoUserSettings } from '../../hooks';
 import { useConversationStar } from '../../hooks/useConversationStar';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { ChatHistorySortMenu } from '../../layouts/sidepanel/ChatHistorySortMenu';
 import { ConversationDeleteFlow } from '../../layouts/sidepanel/ConversationDeleteFlow';
+import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
@@ -23,6 +25,8 @@ import { changeConversationTitle, pushConversationRequest } from '../../redux/sl
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
 import { sendConversationEditTitleEvent } from '../../util/telemetry';
+import type { AllChatsEmptyVariant, AllChatsFilterValue } from './filterAllChatsConversations';
+import { filterAllChatsConversations, getAllChatsEmptyVariant } from './filterAllChatsConversations';
 import { formatChatRelativeDate } from './formatChatRelativeDate';
 import type { AllChatsRowData } from './selectAllChatsRowData';
 import { selectAllChatsRowDataMap } from './selectAllChatsRowData';
@@ -31,7 +35,7 @@ import './AllChatsView.scss';
 
 const ROW_HEIGHT = 68;
 
-type FilterValue = 'all' | 'favorites';
+type FilterValue = AllChatsFilterValue;
 
 const getSortFieldLabel = (sortField: ChatHistoryDateField): string => {
     if (sortField === 'updatedAt') {
@@ -47,7 +51,7 @@ const allChatsSortOptions = [
 ];
 
 interface AllChatsEmptyStateProps {
-    variant: 'no-chats' | 'no-favorites' | 'no-results';
+    variant: AllChatsEmptyVariant;
 }
 
 const AllChatsEmptyState = ({ variant }: AllChatsEmptyStateProps) => {
@@ -254,8 +258,14 @@ const ConversationRow = memo(({ conversation, rowData, isSelected, sortField }: 
                     />
                 ) : (
                     <>
-                        <div className="all-chats-row-title text-ellipsis overflow-hidden whitespace-nowrap">
-                            {label}
+                        <div className="all-chats-row-title flex items-center gap-1 min-w-0">
+                            <ConversationExpirationIndicator
+                                conversation={conversation}
+                                className="all-chats-row-interactive shrink-0"
+                            />
+                            <span className="text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
+                                {label}
+                            </span>
                         </div>
                         {preview ? (
                             <div className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap">
@@ -351,41 +361,23 @@ export const AllChatsView = () => {
     const conversationsMap = useLumoSelector(selectConversations, shallowEqual);
     const rowDataMap = useLumoSelector(selectAllChatsRowDataMap, shallowEqual);
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const { hasLumoPlus } = useLumoPlan();
     const chatHistoryDateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
     const { conversationId } = useConversation();
 
     const [filter, setFilter] = useState<FilterValue>('all');
     const [searchQuery, setSearchQuery] = useState('');
 
-    const allConversations = useMemo(() => {
-        return Object.values(conversationsMap).filter((conversation) => {
-            return !conversation.ghost;
-        });
-    }, [conversationsMap]);
-
     const filteredConversations = useMemo<Conversation[]>(() => {
-        const normalizedQuery = searchQuery.trim().toLowerCase();
-
-        let items = allConversations;
-
-        if (filter === 'favorites') {
-            items = items.filter((conversation) => {
-                return conversation.starred === true;
-            });
-        }
-
-        if (normalizedQuery) {
-            items = items.filter((conversation) => {
-                const title = (conversation.title || '').toLowerCase();
-                const preview = (rowDataMap[conversation.id]?.preview || '').toLowerCase();
-                return title.includes(normalizedQuery) || preview.includes(normalizedQuery);
-            });
-        }
-
-        return [...items].sort((left, right) => {
-            return new Date(right[chatHistoryDateField]).getTime() - new Date(left[chatHistoryDateField]).getTime();
+        return filterAllChatsConversations({
+            conversations: Object.values(conversationsMap),
+            filter,
+            searchQuery,
+            rowDataMap,
+            sortField: chatHistoryDateField,
+            hasLumoPlus,
         });
-    }, [allConversations, chatHistoryDateField, filter, rowDataMap, searchQuery]);
+    }, [conversationsMap, chatHistoryDateField, filter, hasLumoPlus, rowDataMap, searchQuery]);
 
     const handleSortFieldChange = useCallback(
         (nextSortField: ChatHistoryDateField) => {
@@ -408,15 +400,7 @@ export const AllChatsView = () => {
 
     const virtualItems = virtualizer.getVirtualItems();
 
-    const emptyVariant = (() => {
-        if (searchQuery.trim()) {
-            return 'no-results' as const;
-        }
-        if (filter === 'favorites') {
-            return 'no-favorites' as const;
-        }
-        return 'no-chats' as const;
-    })();
+    const emptyVariant = getAllChatsEmptyVariant(searchQuery, filter);
 
     const isEmpty = filteredConversations.length === 0;
 
