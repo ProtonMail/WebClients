@@ -89,6 +89,7 @@ enum AccountFlag {
     VpnOrganizationLogRelayGatewayUpdateMultiIp = 'VpnOrganizationLogRelayGatewayUpdateMultiIp',
     B2BNonPrivateEmailPhone = 'B2BNonPrivateEmailPhone',
     B2BDarkWebMonitoring = 'B2BDarkWebMonitoring',
+    B2BAlwaysOnEnabled = 'B2BAlwaysOnEnabled',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsGroupOwner = 'UserGroupsGroupOwner',
     EasySwitchOutlookSelectAccountDisabled = 'EasySwitchOutlookSelectAccountDisabled',
