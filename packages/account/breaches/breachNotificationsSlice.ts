@@ -17,7 +17,7 @@ const fetchUnreadBreachCount = (api: Api) =>
         return { Count, Refresh: true };
     });
 
-export interface UserBreachesState {
+interface UserBreachesState {
     [name]: ModelState<BreachesCount>;
 }
 
@@ -25,7 +25,7 @@ type SliceState = UserBreachesState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
 // selectors
-export const selectBreachesCount = (state: UserBreachesState) => state[name];
+const selectBreachesCount = (state: UserBreachesState) => state[name];
 export const selectShouldBreachAlertsRefresh = (state: UserBreachesState) => state[name].value?.Refresh;
 export const selectUnreadBreachesCount = (state: UserBreachesState) => state[name].value?.Count;
 
@@ -66,7 +66,7 @@ const slice = createSlice({
 
 export const { decreaseUnreadBreachCount, setUnreadBreachesCount } = slice.actions;
 export const breachesCountReducer = { [name]: slice.reducer };
-export const breachesCountThunk = modelThunk.thunk;
+const breachesCountThunk = modelThunk.thunk;
 
 const hooks = createHooks(breachesCountThunk, selectBreachesCount);
 export const useBreachesCounts = hooks.useValue;
