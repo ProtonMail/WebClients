@@ -1286,6 +1286,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspaceのお試し"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "「${ name }」に追加（${ photoCount } 枚の写真）"
+      ],
+      "List layout": [
+        "リストレイアウト"
       ]
     },
     "Action: Docs": {
@@ -4087,6 +4093,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "検索の問題が発生しました。容量不足です。"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length }個のアイテムの移動に失敗しました"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
       ]
     },
     "error": {
@@ -7124,6 +7136,45 @@
       ],
       "Search module is not available.": [
         "検索サービスは利用できません。"
+      ],
+      "${ albums } album": [
+        "${ albums }個のアルバム"
+      ],
+      "${ files } file": [
+        "${ files }個のファイル"
+      ],
+      "${ folders } folder": [
+        "${ folders }個のフォルダ"
+      ],
+      "${ photos } photo": [
+        "${ photos }枚の写真"
+      ],
+      "Do you still want to upload it?": [
+        "まだアップロードしますか？"
+      ],
+      "Move ${ dragCount } item": [
+        "${ dragCount }個のアイテムを移動"
+      ],
+      "Move ${ fileCount } file": [
+        "${ fileCount }個のファイルを移動"
+      ],
+      "Move ${ folderCount } folder": [
+        "${ folderCount }個のフォルダを移動"
+      ],
+      "Photo saved to your Drive": [
+        "写真をドライブに保存しました"
+      ],
+      "This file appears to be empty:": [
+        "このファイルは空のようです:"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "この写真をドライブに保存することができませんでした"
+      ],
+      "We were not able to add this photo to your album": [
+        "この写真をアルバムに追加することができませんでした"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
       ]
     },
     "info": {
@@ -7956,6 +8007,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "${ sharedOn }に共有"
+      ],
+      "Searchable": [
+        "検索対象"
       ]
     },
     "Label for contact group color": {
@@ -9766,6 +9820,21 @@
       ],
       "Failed to load sharing details": [
         "共有の詳細を読み込めませんでした"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length }枚の写真が「${ albumName }」に追加されました"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length }個のアイテムの削除に失敗しました"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems }個のアイテムがコピーされました"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems }個のアイテムが移動されました"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed }枚の写真が「${ albumName }」から削除されました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13500,6 +13569,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "即時AIアシスタンス、専門スタッフも待機しています！"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGPキー バージョン6"
       ]
     },
     "tooltip": {
