@@ -2156,8 +2156,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -4105,6 +4104,15 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
+      ],
+      "Basic": [
+        "Básico"
+      ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
+      "Starts with": [
+        "Iniciar com"
       ]
     },
     "Link": {
@@ -4153,6 +4161,9 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Você selecionou ${ semiboldText } nesse cofre."
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
       ]
     },
     "new_plans: feature": {
@@ -5129,6 +5140,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
+      "URL matching": [
+        "Correspondência de URL"
       ]
     },
     "Title_cloned_item": {
