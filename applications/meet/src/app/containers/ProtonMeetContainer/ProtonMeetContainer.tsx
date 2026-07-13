@@ -897,6 +897,12 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
         } catch (error: any) {
             reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
             setJoiningInProgress(false);
+            if (!error?.userNotified && !isConnectionTimeoutError(error)) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Failed to join meeting. Please try again.`,
+                });
+            }
         }
 
         joinBlockedRef.current = false;
