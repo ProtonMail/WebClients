@@ -87,7 +87,6 @@ export enum UpsellRef {
     SECURE_LINKS = 'secure_links',
     SETTING = 'setting',
     PASS_MONITOR = 'pass_monitor',
-    PASS_BIOMETRICS = 'pass_biometrics',
     PASS_FAMILY_FREE_399 = 'pass_family_free_399',
     PASS_FAMILY_PLUS_399 = 'pass_family_plus_399',
     PASS_FAMILY_1LT_299 = 'pass_family_1lt_299',
