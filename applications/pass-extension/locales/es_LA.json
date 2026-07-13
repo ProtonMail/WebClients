@@ -794,6 +794,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Regex invalid": [
+        "Expresión regular inválida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular insegura"
       ]
     },
     "Activity": {
@@ -2214,7 +2220,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2971,6 +2978,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificado por campo (título primero, luego nombre de usuario o correo electrónico, sitio web, notas) y precisión de coincidencia (exacto, comienza con, contiene)."
       ]
     },
     "Keyboard key": {
@@ -4156,6 +4166,36 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Basic": [
+        "Básico"
+      ],
+      "Check": [
+        "Comprobar"
+      ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Relevant": [
+        "Relevante"
+      ],
+      "Starts with": [
+        "Comienza con"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ]
     },
     "Link": {
@@ -4185,6 +4225,24 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Seleccionó ${ semiboldText } en esta bóveda."
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
       ]
     },
     "new_plans: feature": {
@@ -5191,6 +5249,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajuste el comportamiento del completado automático para cambiar dónde se sugieren los inicios de sesión."
+      ],
+      "Learn more": [
+        "Más información"
+      ],
+      "Test a URL against this rule": [
+        "Pruebe una URL contra esta regla"
+      ],
+      "URL matching": [
+        "Coincidencia de URL"
       ]
     },
     "Title_cloned_item": {
@@ -5540,6 +5610,29 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este elemento no se puede sugerir para autocompletar debido a «${ neverModeDescriptionStrong }». Añada otra URL si desea que este elemento se complete automáticamente."
+      ]
+    },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ingrese una URL para comprobar si la regla actual coincide con la URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincide con esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincide con esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL se bloqueará del completado automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NO se bloqueará del completado automático"
       ]
     }
   }

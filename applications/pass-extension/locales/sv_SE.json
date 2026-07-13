@@ -794,6 +794,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Regex invalid": [
+        "Regex ogiltigt"
       ]
     },
     "Activity": {
@@ -2896,6 +2899,10 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ]
     },
     "Keyboard key": {
@@ -4090,6 +4097,12 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ]
     },
     "Link": {
@@ -4119,6 +4132,9 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valde ${ semiboldText } i detta valv."
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ]
     },
     "new_plans: feature": {
@@ -4418,6 +4434,18 @@
     "Result": {
       "The rule is matching this URL": [
         "Regeln matchar denna URL"
+      ],
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ange en URL för att kontrollera om din nuvarande regel matchar URL:en"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regeln matchar INTE denna URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denna URL kommer att blockeras från automatisk ifyllning"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denna URL kommer INTE att blockeras från automatisk ifyllning"
       ]
     },
     "Security Center - Info": {
@@ -5127,6 +5155,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Test a URL against this rule": [
+        "Testa en URL mot denna regel"
       ]
     },
     "Title_cloned_item": {
