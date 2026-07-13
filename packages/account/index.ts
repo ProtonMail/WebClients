@@ -69,3 +69,23 @@ export * from './referralInfo';
 export * from './referrals';
 
 export { safetyReviewTelemetryReducer } from './safetyReview/telemetry/safetyReviewTelemetrySlice';
+
+export { startAccountSecurityListener } from './accountSecurity/accountSecurityListener';
+export {
+    selectShouldBreachAlertsRefresh,
+    selectUnreadBreachesCount,
+    decreaseUnreadBreachCount,
+    setUnreadBreachesCount,
+    breachesCountReducer,
+    useGetBreachesCounts,
+} from './breaches/breachNotificationsSlice';
+
+export {
+    securityCenterReducer,
+    selectCanDisplayAccountSecuritySection,
+    selectAccountSecurityElements,
+    selectHasAccountSecurityIssue,
+    selectHasAccountSecurityCardToDisplay,
+    selectAccountSecurityIssuesCount,
+    selectHasSentinelOrTFACardToDisplay,
+} from './accountSecurity/accountSecuritySlice';
