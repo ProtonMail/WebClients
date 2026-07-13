@@ -2,12 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { SettingsLink, Toggle } from '@proton/components/index';
+import { SettingsLink } from '@proton/components/index';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants';
+import clsx from '@proton/utils/clsx';
+
+import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
+import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 
 import './ScheduleMeetingOptions.scss';
 
@@ -42,16 +45,20 @@ const WaitingRoomCard = () => {
     };
 
     return (
-        <div className="schedule-meeting-options flex flex-nowrap flex-1 items-center gap-4 px-6 py-4 rounded-xl">
-            <div className="flex flex-column flex-1">
-                <label className="color-norm" htmlFor="waiting-room">
-                    {c('Action').t`Waiting room`}
-                </label>
-                <span className="setting-description color-weak">{getDescription()}</span>
-            </div>
-            <Toggle
+        <div
+            className={clsx(
+                'schedule-meeting-options flex flex-nowrap flex-1 items-center gap-4 px-6 py-4 rounded-xl',
+                !isPaidUser && 'schedule-meeting-options-upsell'
+            )}
+        >
+            <SettingToggle
                 id="waiting-room"
+                ariaLabel={c('Alt').t`Waiting room`}
+                label={c('Action').t`Waiting room`}
+                description={getDescription()}
                 checked={isWaitingRoomEnabled}
+                size="medium"
+                changeLabelColor={false}
                 onChange={() => {
                     if (!isPaidUser) {
                         return;
@@ -59,7 +66,6 @@ const WaitingRoomCard = () => {
 
                     setIsWaitingRoomEnabled(!isWaitingRoomEnabled);
                 }}
-                disabled={!isPaidUser}
             />
         </div>
     );
@@ -71,15 +77,9 @@ export const ScheduleMeetingOptions = () => {
 
     return (
         <>
-            <div className="w-full flex flex-nowrap items-center justify-end gap-2">
-                <Button
-                    className="color-primary ml-auto rounded-full timezone-button"
-                    shape="ghost"
-                    onClick={() => setShowOptions(!showOptions)}
-                >
-                    {showOptions ? c('Action').t`Hide options` : c('Action').t`Show options`}
-                </Button>
-            </div>
+            <ExpandOptionsButton containerClassName="mt-2" onClick={() => setShowOptions(!showOptions)}>
+                {showOptions ? c('Action').t`Hide options` : c('Action').t`Show options`}
+            </ExpandOptionsButton>
             {showOptions && (
                 <div className="w-full flex flex-nowrap items-center gap-4">
                     <IcHourglass
