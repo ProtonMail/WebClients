@@ -116,6 +116,19 @@ export class SharedWorkerHeartbeatTimeout extends Error {
     }
 }
 
+/**
+ * Thrown when getDb is called with a userId that differs from the one the worker's
+ * SearchDB was opened for. The SharedWorker is namespaced per user, so this must never
+ * happen - if it does, an isolation invariant is broken and we fail hard rather than
+ * risk operating on another user's index.
+ */
+export class SearchDBUserMismatchError extends Error {
+    constructor() {
+        super('SearchDB was opened for a different user than the one requested');
+        this.name = 'SearchDBUserMismatchError';
+    }
+}
+
 export class InvalidIndexerState extends Error {
     constructor(message: string) {
         super(message);
