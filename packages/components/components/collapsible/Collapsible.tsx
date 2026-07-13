@@ -52,11 +52,9 @@ const Collapsible = <E extends ElementType = typeof defaultElement>({
     const headerId = generateUID('collapsible');
 
     const toggle = () => {
-        setIsExpanded((prevState) => {
-            const next = !prevState;
-            onToggle?.(next);
-            return next;
-        });
+        const next = !isExpanded;
+        setIsExpanded(next);
+        onToggle?.(next);
     };
 
     const contextValue: CollapsibleContextValue = {
