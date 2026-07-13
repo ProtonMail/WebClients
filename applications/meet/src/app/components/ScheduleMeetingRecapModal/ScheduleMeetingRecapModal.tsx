@@ -20,8 +20,8 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { formatDate, formatTimeHHMM } from '../../utils/timeFormat';
-import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
 import { DeleteMeetingModal } from '../DashboardMeetingList/DeleteMeetingModal';
 import type { MeetingVariant } from '../ScheduleMeetingForm/ScheduleMeetingForm';
 import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
