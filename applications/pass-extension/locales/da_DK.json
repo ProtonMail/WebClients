@@ -2214,7 +2214,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2971,6 +2972,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Rangeret efter felt (titel først, derefter brugernavn eller e-mail, hjemmeside, noter) og matchens præcision (præcis, starter med, indeholder)."
       ]
     },
     "Keyboard key": {
@@ -4156,6 +4160,9 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Relevant": [
+        "Relevant"
       ]
     },
     "Link": {
