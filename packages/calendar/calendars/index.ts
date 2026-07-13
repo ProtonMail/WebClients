@@ -1,11 +1,12 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { AddressesState, ModelState } from '@proton/account';
-import { getInitialModelState } from '@proton/account/initialModelState';
+import type { AddressesState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getCalendar, queryCalendars, queryMembers } from '@proton/shared/lib/api/calendars';
 import type { CalendarEventV6Response } from '@proton/shared/lib/api/events';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';

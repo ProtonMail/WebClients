@@ -10,17 +10,13 @@ import {
 import { getPaymentMethodStatus } from '@proton/payments/core/api/api';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import {
-    cacheHelper,
-    createPromiseStore,
-} from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import { MINUTE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
-
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 
 const name = 'paymentStatus' as const;
 
