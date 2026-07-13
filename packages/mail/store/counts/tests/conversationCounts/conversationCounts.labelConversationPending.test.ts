@@ -1,6 +1,5 @@
 import type { Draft } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account/interface';
 import { labelConversationsPending } from '@proton/mail/store/counts/conversationCountsReducers';
 import {
     CUSTOM_FOLDER_ID1,
@@ -10,6 +9,7 @@ import {
     customFolders,
     customLabels,
 } from '@proton/mail/store/counts/tests/counts.test.helpers';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 

@@ -2,16 +2,12 @@ import { type ThunkDispatch, type UnknownAction, createAction, createSlice } fro
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
-import {
-    type AddressKeysState,
-    type ModelState,
-    type UserKeysState,
-    getInitialModelState,
-    userKeysThunk,
-} from '@proton/account';
+import { type AddressKeysState, type UserKeysState, userKeysThunk } from '@proton/account';
 import type { WasmApiWalletAccount, WasmApiWalletSettings } from '@proton/andromeda';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 
 import type { IWasmApiWalletData } from '../../types';
 import { decryptWallet } from '../../utils';

@@ -2,9 +2,11 @@ import { createAction, createSlice } from '@reduxjs/toolkit';
 import pick from 'lodash/pick';
 import set from 'lodash/set';
 
-import type { AddressKeysState, ModelState, UserKeysState } from '@proton/account';
-import { dispatchGetAllAddressesKeys, getInitialModelState, userKeysThunk } from '@proton/account';
+import type { AddressKeysState, UserKeysState } from '@proton/account';
+import { dispatchGetAllAddressesKeys, userKeysThunk } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -132,6 +134,7 @@ const modelThunk = createAsyncModelThunk<
         notFoundHashedTxIds = notFoundHashedTxIds?.filter((hashedTxId) => !updatedState[hashedTxId]);
 
         if (!!notFoundHashedTxIds?.length) {
+            // eslint-disable-next-line no-console
             console.warn("Some transactions weren't find", notFoundHashedTxIds);
         }
 

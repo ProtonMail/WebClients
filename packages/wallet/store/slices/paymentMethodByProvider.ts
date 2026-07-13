@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account';
-import { getInitialModelState } from '@proton/account';
 import type { WasmFiatCurrencySymbol, WasmGatewayProvider, WasmPaymentMethod } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MINUTE } from '@proton/shared/lib/constants';
 
 import type { WalletThunkArguments } from '../thunk';

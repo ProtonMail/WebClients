@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPasswordPolicies, getShouldUsePasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
 import { DAY } from '@proton/shared/lib/constants';
 import type { PasswordPolicies } from '@proton/shared/lib/interfaces';
 
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 
 const name = 'passwordPolicies' as const;

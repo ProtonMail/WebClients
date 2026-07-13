@@ -2,6 +2,8 @@ import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolki
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import {
     type AuthDeviceOutput,
@@ -13,8 +15,6 @@ import {
 import type { AddressKeysState } from '../addressKeys';
 import { selectAddresses } from '../addresses';
 import { serverEvent } from '../eventLoop';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import { userThunk } from '../user';
 import type { UserKeysState } from '../userKeys';
 

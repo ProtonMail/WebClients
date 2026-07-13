@@ -3,10 +3,11 @@ import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { previousSelector } from '@proton/redux-utilities/creator';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
-import { previousSelector } from '@proton/redux-utilities/creator';
 import { getDomain as getDomainConfig, queryDomains } from '@proton/shared/lib/api/domains';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -21,7 +22,6 @@ import { upsertById } from '@proton/utils/upsertById';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import type { ModelState } from '../interface';
 import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'domains' as const;
