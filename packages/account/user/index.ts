@@ -7,21 +7,18 @@ import {
 } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseStore,
-} from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import type { CacheType } from '@proton/redux-utilities/interface';
+import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 
 const name = 'user' as const;
 

@@ -3,14 +3,14 @@ import merge from 'lodash/merge';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { DeepPartial, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 
 const name = 'userSettings' as const;
 

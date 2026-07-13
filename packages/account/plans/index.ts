@@ -14,13 +14,13 @@ import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore, getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { getInitialModelState } from '../initialModelState';
-import type { ModelState } from '../interface';
 import { type PaymentStatusState, paymentStatusThunk } from '../paymentStatus';
 import { type SubscriptionState, subscriptionThunk } from '../subscription';
 import { type UserState, selectUser } from '../user';

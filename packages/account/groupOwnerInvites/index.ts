@@ -2,14 +2,14 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroupOwnerInvites } from '@proton/shared/lib/api/groups';
 import type { GroupOwnerInvite } from '@proton/shared/lib/interfaces';
 
-import type { ModelState } from '../interface';
 import type { UserState } from '../user';
 
 const name = 'groupOwnerInvites' as const;

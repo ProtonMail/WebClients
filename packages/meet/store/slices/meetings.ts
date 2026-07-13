@@ -1,10 +1,10 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
-import type { ModelState } from '@proton/account';
-import { getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getMeetingQuery, getUpcomingMeetingsQuery } from '@proton/shared/lib/api/meet';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
