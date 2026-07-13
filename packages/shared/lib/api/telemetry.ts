@@ -332,7 +332,6 @@ export enum TelemetryMailComposerAssistantEvents {
 
 export enum TelemetryCategoriesOnboardingEvents {
     onboarding_reply = 'onboarding_reply',
-    onboarding_card_close = 'onboarding_card_close',
     category_nav = 'category_nav',
     recategorize_email = 'recategorize_email',
     settings_toggle_category_view = 'settings_toggle_category_view',
