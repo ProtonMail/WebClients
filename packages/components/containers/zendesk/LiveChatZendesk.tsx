@@ -12,7 +12,6 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import type { Api } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 type MessageDestination = 'proton' | 'zendesk';
@@ -64,15 +63,12 @@ const setActiveMarker = () => {
 
 interface Props {
     zendeskRef?: MutableRefObject<ZendeskRef | undefined>;
-    name?: string;
-    email?: string;
-    onLoaded: () => void;
-    onUnavailable: () => void;
+    autoLaunch: boolean;
     locale: string;
     tags: string[];
 }
 
-const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, locale, tags }: Props) => {
+const LiveChatZendesk = ({ zendeskRef, autoLaunch, locale, tags }: Props) => {
     const api = useSilentApi();
     const [style, setStyle] = useState({
         position: 'absolute',
@@ -83,23 +79,22 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
         zIndex: '999999',
         ...CLOSED_SIZE,
     });
-    const [state, setState] = useState({ loaded: false, connected: false });
-    const stateRef = useRef({ loaded: false, connected: false });
+    const [loaded, setLoaded] = useState(false);
+    const loadedRef = useRef(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const pendingLoadingRef = useRef<{ open?: boolean; locale?: string }>({});
-    const [isZendeskV2Enabled] = useState(useFlag('UseZendeskV2'));
     const { APP_NAME } = useConfig();
-    const iframeUrl = getZendeskIframeUrl(APP_NAME, isZendeskV2Enabled);
+    const iframeUrl = getZendeskIframeUrl(APP_NAME);
 
     const src = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
 
     const sendMessage = (args: any, destination: MessageDestination = 'zendesk') => {
         const contentWindow = iframeRef.current?.contentWindow;
-        if (!contentWindow || !stateRef.current.loaded) {
+        if (!contentWindow || !loadedRef.current) {
             captureMessage('Zendesk: Sending message to invalid iframe', {
                 level: 'error',
-                extra: { hasContentWindow: !!contentWindow, isLoaded: stateRef.current.loaded, args: args[0] },
+                extra: { hasContentWindow: !!contentWindow, isLoaded: loadedRef.current, args: args[0] },
             });
             return;
         }
@@ -115,16 +110,8 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
 
     const handleOpen = () => {
         // Using the ref instead of state to not have to wait for re-render
-        if (!stateRef.current.connected) {
-            onUnavailable();
-            return;
-        }
         pendingLoadingRef.current.open = true;
-        if (isZendeskV2Enabled) {
-            sendMessage(['messenger', 'open']);
-        } else {
-            sendMessage(['webWidget', 'toggle']);
-        }
+        sendMessage(['messenger', 'open']);
     };
 
     useImperativeHandle(zendeskRef, () => ({
@@ -133,7 +120,7 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
     }));
 
     useEffect(() => {
-        if (state.loaded && isZendeskV2Enabled) {
+        if (loaded) {
             (async () => {
                 const jwt = await fetchJWT(api);
                 if (jwt) {
@@ -141,49 +128,27 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                 }
             })().catch(noop);
         }
-    }, [state.loaded]);
+    }, [loaded]);
 
     useEffect(() => {
-        if (!state.loaded || isZendeskV2Enabled) {
+        if (!loaded) {
             return;
         }
 
-        sendMessage([
-            'webWidget',
-            'prefill',
-            {
-                name: { value: name, readOnly: false },
-                email: { value: email, readOnly: Boolean(email) },
-            },
-        ]);
-    }, [state.loaded, name, email]);
+        sendMessage(['messenger:set', 'locale', locale]);
+    }, [loaded, locale]);
 
     useEffect(() => {
-        if (!state.loaded) {
+        if (!loaded || !tags.length) {
             return;
         }
-        if (isZendeskV2Enabled) {
-            sendMessage(['messenger:set', 'locale', locale]);
-        } else {
-            sendMessage(['webWidget', 'setLocale', locale]);
-        }
-    }, [state.loaded, locale]);
+        sendMessage(['messenger:set', 'conversationTags', tags]);
+        // `id` is from Zendesk. Talk to support team for any questions
+        sendMessage(['messenger:set', 'conversationFields', [{ id: '34274976897554', value: tags[0] }]]);
+    }, [loaded, tags]);
 
     useEffect(() => {
-        if (!state.loaded || !tags.length) {
-            return;
-        }
-        if (isZendeskV2Enabled) {
-            sendMessage(['messenger:set', 'conversationTags', tags]);
-            // `id` is from Zendesk. Talk to support team for any questions
-            sendMessage(['messenger:set', 'conversationFields', [{ id: '34274976897554', value: tags[0] }]]);
-        } else {
-            sendMessage(['webWidget', 'chat:addTags', tags]);
-        }
-    }, [state.loaded, tags]);
-
-    useEffect(() => {
-        if (!state.loaded || !pendingLoadingRef.current) {
+        if (!loaded || !pendingLoadingRef.current) {
             return;
         }
         const oldPending = pendingLoadingRef.current;
@@ -191,35 +156,15 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
         if (oldPending.open) {
             handleOpen();
         }
-    }, [state.loaded]);
+    }, [loaded]);
 
     useEffect(() => {
-        let globalId = 1;
-        const handlers: { [key: string]: [(value: any) => void, (reason?: any) => void, number] } = {};
-
-        const sendMessageWithReply = <T,>(
-            contentWindow: Window,
-            args: any,
-            destination: MessageDestination = 'zendesk'
-        ): Promise<T> => {
-            const id = globalId++;
-            contentWindow.postMessage({ id, args, destination }, targetOrigin);
-            return new Promise((resolve, reject) => {
-                const intervalId = window.setTimeout(() => {
-                    delete handlers[id];
-                }, 30000);
-                handlers[id] = [resolve, reject, intervalId];
-            });
-        };
-
         const handleMessage = (event: MessageEvent) => {
             const contentWindow = iframeRef.current?.contentWindow;
             const { origin, data, source } = event;
             if (!contentWindow || origin !== targetOrigin || !data || source !== contentWindow) {
                 return;
             }
-
-            const departmentName = isZendeskV2Enabled ? 'VPN Chat' : 'Support';
 
             if (data.type === 'on') {
                 if (data.payload?.event === 'open') {
@@ -229,83 +174,20 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                 if (data.payload?.event === 'close') {
                     setStyle((oldStyle) => ({ ...oldStyle, ...CLOSED_SIZE }));
                 }
-
-                if (data.payload?.event === 'chat:connected') {
-                    sendMessage([
-                        'webWidget',
-                        'updateSettings',
-                        {
-                            webWidget: {
-                                chat: {
-                                    departments: {
-                                        enabled: [departmentName],
-                                        select: departmentName,
-                                    },
-                                },
-                            },
-                        },
-                    ]);
-
-                    sendMessageWithReply<any>(contentWindow, ['webWidget:get', 'chat:department', departmentName])
-                        .then((result) => {
-                            const connected = result?.status === 'online';
-                            stateRef.current = { loaded: true, connected };
-                            setState({ loaded: true, connected });
-                            onLoaded();
-                        })
-                        .catch(() => {
-                            stateRef.current = { loaded: true, connected: false };
-                            setState({ loaded: true, connected: false });
-                            onLoaded();
-                        });
-                }
-
-                if (data.payload?.event === 'chat:departmentStatus') {
-                    const { chatDepartment } = data.payload;
-                    if (!chatDepartment) {
-                        return;
-                    }
-                    const connected = chatDepartment?.status === 'online';
-                    stateRef.current = { loaded: true, connected };
-                    setState({ loaded: true, connected });
-                }
-            } else if (data.type === 'response') {
-                if (data.payload.id !== undefined) {
-                    const handler = handlers[data.payload.id];
-                    if (handler) {
-                        delete handlers[data.payload.id];
-                        handler[0](data.payload.result);
-                    }
-                }
             } else if (data.type === 'loaded') {
-                if (isZendeskV2Enabled) {
-                    const updatedState = { loaded: true, connected: true };
-                    stateRef.current = updatedState;
-                    setState(updatedState);
-                    sendMessage([
-                        'messenger:set',
-                        'customization',
-                        {
-                            theme: {
-                                primary: '#6d4aff',
-                            },
+                loadedRef.current = true;
+                setLoaded(true);
+                sendMessage([
+                    'messenger:set',
+                    'customization',
+                    {
+                        theme: {
+                            primary: '#6d4aff',
                         },
-                    ]);
-                    onLoaded();
-                } else {
-                    sendMessage([
-                        'webWidget',
-                        'updateSettings',
-                        {
-                            webWidget: {
-                                color: {
-                                    launcher: '#6d4aff',
-                                    button: '#6d4aff',
-                                    header: '#261b57',
-                                },
-                            },
-                        },
-                    ]);
+                    },
+                ]);
+                if (autoLaunch) {
+                    handleOpen();
                 }
             } else if (data.type === 'login-response') {
                 // payload will be `null` on successful authentication and will contain error details for failed attempts
@@ -330,18 +212,11 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
 
         return () => {
             window.removeEventListener('message', handleMessage, false);
-
-            for (const handlerKey of Object.keys(handlers)) {
-                const handler = handlers[handlerKey];
-                handler[1](new Error('Unmount'));
-                window.clearTimeout(handler[2]);
-                delete handlers[handlerKey];
-            }
         };
     }, []);
 
     return (
-        <div className={!state.connected ? 'hidden' : ''}>
+        <div className={!loaded ? 'hidden' : ''}>
             <iframe
                 title="Zendesk"
                 src={src}
@@ -387,12 +262,6 @@ const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
             actualZendeskRef.current?.open(...args);
         },
     }));
-
-    useEffect(() => {
-        if (!isActive) {
-            rest.onLoaded();
-        }
-    }, []);
 
     if (!isActive) {
         return null;
