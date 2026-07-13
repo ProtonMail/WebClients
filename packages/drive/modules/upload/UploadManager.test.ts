@@ -1,11 +1,18 @@
 import { NodeType } from '@protontech/drive-sdk';
 
 import { UploadManager } from './UploadManager';
+import { EMPTY_FOLDER_PLACEHOLDER_FILE, EMPTY_FOLDER_PLACEHOLDER_MIMETYPE } from './constants';
 import { useUploadQueueStore } from './store/uploadQueue.store';
-import { type FileUploadItem, type PhotosUploadItem, isPhotosUploadItem } from './types';
+import { EmptyFileDecision, type FileUploadItem, type PhotosUploadItem, isPhotosUploadItem } from './types';
 
 const createFileWithPath = (name: string, path: string) => {
     const file = new File(['test content'], name);
+    Object.defineProperty(file, 'webkitRelativePath', { value: path });
+    return file;
+};
+
+const createEmptyFileWithPath = (name: string, path: string, type?: string) => {
+    const file = new File([], name, type ? { type } : undefined);
     Object.defineProperty(file, 'webkitRelativePath', { value: path });
     return file;
 };
@@ -132,6 +139,58 @@ describe('UploadManager', () => {
                 expect(file.parentUid).toBe('parent-uid-789');
                 expect(file.parentUploadId).toBeUndefined();
             });
+        });
+    });
+
+    describe('empty file handling', () => {
+        it('should not prompt for the .proton-drive-keep placeholder and still create its empty folder', async () => {
+            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Cancel);
+            uploadManager.setEmptyFileResolver(emptyFileResolver);
+
+            const files = [
+                createEmptyFileWithPath(
+                    EMPTY_FOLDER_PLACEHOLDER_FILE,
+                    `EmptyFolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`,
+                    EMPTY_FOLDER_PLACEHOLDER_MIMETYPE
+                ),
+            ];
+
+            await uploadManager.upload(files, 'parent-uid-123');
+
+            // The placeholder is a 0-byte marker for an empty folder, so it must be exempt
+            // from the empty-file prompt (otherwise cancelling would drop the folder).
+            expect(emptyFileResolver).not.toHaveBeenCalled();
+
+            const queueItems = Array.from(useUploadQueueStore.getState().queue.values());
+            const folderItems = queueItems.filter((item) => item.type === NodeType.Folder);
+            expect(folderItems.some((item) => item.name === 'EmptyFolder')).toBe(true);
+        });
+
+        it('should prompt for genuine 0-byte files', async () => {
+            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Allow);
+            uploadManager.setEmptyFileResolver(emptyFileResolver);
+
+            const files = [createEmptyFileWithPath('empty.txt', 'empty.txt', 'text/plain')];
+
+            await uploadManager.upload(files, 'parent-uid-123');
+
+            expect(emptyFileResolver).toHaveBeenCalledWith(['empty.txt']);
+
+            const queueItems = Array.from(useUploadQueueStore.getState().queue.values());
+            const emptyItem = queueItems.find((item) => item.name === 'empty.txt') as FileUploadItem;
+            expect(emptyItem?.allowEmptyFile).toBe(true);
+        });
+
+        it('should not queue a genuine 0-byte file when the user cancels', async () => {
+            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Cancel);
+            uploadManager.setEmptyFileResolver(emptyFileResolver);
+
+            const files = [createEmptyFileWithPath('empty.txt', 'empty.txt', 'text/plain')];
+
+            await uploadManager.upload(files, 'parent-uid-123');
+
+            const queueItems = Array.from(useUploadQueueStore.getState().queue.values());
+            expect(queueItems).toHaveLength(0);
         });
     });
 
