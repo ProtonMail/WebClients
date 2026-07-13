@@ -57,11 +57,9 @@ import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { logJoinStats } from '../../hooks/telemetry/meetingTelemetry';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
-import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useDisplayName } from '../../hooks/useDisplayName';
 import { useKeyManagement } from '../../hooks/useKeyManagement';
 import { isConnectionTimeoutError, useLiveKitConnection } from '../../hooks/useLiveKitConnection';
-import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { useMlsSession } from '../../hooks/useMlsSession';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
@@ -113,8 +111,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
     const meetJoinTelemetryEnabled = useFlag('MeetJoinTelemetry');
 
     useWakeLock();
-
-    const { personalMeeting, meetingsListStatus } = useDependencySetup();
 
     const location = useLocation<{ instantJoin?: boolean }>();
 
@@ -313,15 +309,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
             ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
             : window.location.pathname
     }`;
-
-    // Check if joining own personal meeting room
-    const isPersonalRoom = !isGuest && personalMeeting?.MeetingLinkName === token;
-
-    // Check if still loading meetings (to avoid showing wrong title initially)
-    const isLoadingMeetings =
-        !isGuest &&
-        (meetingsListStatus === MeetingListStatus.InitialLoading ||
-            meetingsListStatus === MeetingListStatus.InitialDecrypting);
 
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
 
@@ -1220,8 +1207,6 @@ export const ProtonMeetContainer = ({ keyProvider, user = null }: ProtonMeetCont
                     displayName={displayName}
                     setDisplayName={setDisplayName}
                     isInstantJoin={isInstantJoin}
-                    isPersonalRoom={isPersonalRoom}
-                    isLoadingMeetings={isLoadingMeetings}
                     joiningLoaderHeader={joiningLoaderHeader}
                     joiningLoaderSubtitle={joiningLoaderSubtitle}
                     userId={user?.ID}

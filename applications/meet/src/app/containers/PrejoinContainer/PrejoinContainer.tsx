@@ -47,8 +47,6 @@ interface PrejoinContainerProps {
     setDisplayName: (displayName: string) => void;
     isInstantJoin: boolean;
     userId?: string;
-    isPersonalRoom?: boolean;
-    isLoadingMeetings?: boolean;
     joiningLoaderHeader?: string;
     joiningLoaderSubtitle?: string;
 }
@@ -66,8 +64,6 @@ export const PrejoinContainer = ({
     setDisplayName,
     isInstantJoin,
     userId,
-    isPersonalRoom = false,
-    isLoadingMeetings = false,
     joiningLoaderHeader,
     joiningLoaderSubtitle,
 }: PrejoinContainerProps) => {
@@ -193,10 +189,8 @@ export const PrejoinContainer = ({
                             keepDisplayName={hasStoredDisplayName}
                             onDisplayNameChange={setDisplayName}
                             onJoinMeeting={handleJoinMeeting}
-                            isPersonalRoom={isPersonalRoom}
                             shareLink={shareLink}
                             instantMeeting={instantMeeting}
-                            isLoadingMeetings={isLoadingMeetings}
                         />
                     )}
                 </div>
