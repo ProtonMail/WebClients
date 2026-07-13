@@ -4,7 +4,7 @@
 @use '~@proton/styles/scss/lib/include-media' as *;
 @use '~@proton/styles/scss/lib/easing' as *;
 
-$tab-badge-ease: easing(ease-out-quint);
+$tab-dot-ease: easing(ease-out-quint);
 
 @mixin reveal-tab-labels {
 	.tab-wrapper {
@@ -16,30 +16,6 @@ $tab-badge-ease: easing(ease-out-quint);
 		.tab-label,
 		.tag-count {
 			display: block;
-		}
-
-		.tab-new-count {
-			display: block;
-			block-size: 0;
-			opacity: 0;
-			transform: translateY(rem(4));
-			overflow: hidden;
-		}
-
-		&:hover,
-		&:focus-visible {
-			// Removed the animation and transition for now
-
-			/* .tab-new-dot {
-				opacity: 0;
-				transform: scale(0.4);
-			} */
-
-			.tab-new-count {
-				block-size: rem(16);
-				opacity: 1;
-				transform: translateY(0);
-			}
 		}
 	}
 }
@@ -132,20 +108,10 @@ $tab-badge-ease: easing(ease-out-quint);
 			box-shadow: 0 0 0 rem(1.5) var(--toolbar-background-color);
 			transform-origin: center;
 			pointer-events: none;
-			animation: tab-new-dot-appear 0.42s $tab-badge-ease;
+			animation: tab-new-dot-appear 0.42s $tab-dot-ease;
 			transition:
-				opacity 0.28s $tab-badge-ease,
-				transform 0.32s $tab-badge-ease;
-		}
-
-		.tab-new-count {
-			display: none;
-			font-size: rem(11);
-			line-height: rem(16);
-			transition:
-				opacity 0.28s $tab-badge-ease,
-				block-size 0.32s $tab-badge-ease,
-				transform 0.32s $tab-badge-ease;
+				opacity 0.28s $tab-dot-ease,
+				transform 0.32s $tab-dot-ease;
 		}
 
 		&:hover,
