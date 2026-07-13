@@ -71,7 +71,7 @@ export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Pr
     };
 
     const subtitle = isYearly
-        ? c('Subtitle').t`Save 50% for 1 year, and keep full access`
+        ? c('Subtitle').t`Save 50% for one year, and keep full access`
         : c('Subtitle').t`Save 50% for 6 months, and keep full access`;
 
     const handleClaimOffer = () => {
