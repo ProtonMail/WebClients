@@ -78,9 +78,6 @@ export { default as QuickSettingsButton } from './components/drawer/views/quickS
 export { default as QuickSettingsButtonSection } from './components/drawer/views/quickSettings/QuickSettingsButtonSection';
 export { QuickSettingsRequestNotifications } from './components/drawer/views/quickSettings/QuickSettingsRequestNotifications';
 export { default as QuickSettingsSectionRow } from './components/drawer/views/quickSettings/QuickSettingsSectionRow';
-export { startAccountSecurityListener } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
-export { securityCenterReducer } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
-export { breachesCountReducer } from './components/drawer/views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 export { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from './components/drawer/views/SecurityCenter/constants';
 export { default as CreatePassAliasesForm } from './components/drawer/views/SecurityCenter/PassAliases/modals/CreatePassAliasesForm/CreatePassAliasesForm';
 export { default as PassAliasesUpsellModal } from './components/drawer/views/SecurityCenter/PassAliases/modals/PassAliasesUpsellModal';

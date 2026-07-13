@@ -2,7 +2,7 @@ import { baseUseSelector } from '@proton/react-redux-store';
 
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';
 import AccountSecurity from './AccountSecurity/AccountSecurity';
-import { selectCanDisplayAccountSecuritySection } from './AccountSecurity/slice/accountSecuritySlice';
+import { selectCanDisplayAccountSecuritySection } from '@proton/account';
 import BreachAlertsSecurityCenter from './BreachAlerts/BreachAlertsSecurityCenter';
 import PassAliasesContainer from './PassAliases/PassAliasesContainer';
 import ProtonSentinel from './ProtonSentinel/ProtonSentinel';
