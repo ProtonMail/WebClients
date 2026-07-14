@@ -22,6 +22,7 @@ import { LumoMetricCardRow } from './card/LumoMetricCardRow';
 import { tryParseCardSpec } from './card/parseCardSpec';
 import { renderCardAwareSegment } from './card/renderCardSegments';
 import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
+import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from './lumoMarkdownCardShell';
 import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
 import { VegaChartLoading } from './vega/VegaChartLoading';
@@ -521,8 +522,8 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                                         message={message}
                                     />
                                 ) : null}
-                                <div className="lumo-insight-card-block">
-                                    <div className="lumo-insight-card">
+                                <div className="lumo-insight-card-block w-full my-2 mb-3">
+                                    <div className={`${LUMO_MARKDOWN_CARD_SHELL_CLASS} lumo-insight-card p-4`}>
                                         <div className="lumo-insight-card__label">
                                             <span>Loading card…</span>
                                         </div>

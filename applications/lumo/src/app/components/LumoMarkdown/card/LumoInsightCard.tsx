@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import type { LumoCardDirection, LumoCardSpec } from './cardTypes';
+import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from '../lumoMarkdownCardShell';
 
 import './LumoInsightCard.scss';
 
@@ -33,13 +34,23 @@ export const LumoInsightCard = ({ spec }: { spec: LumoCardSpec }) => {
         const direction = spec.direction ?? 'flat';
 
         return (
-            <div className="lumo-insight-card lumo-insight-card--metric">
-                <div className="lumo-insight-card__label">
+            <div
+                className={clsx(
+                    LUMO_MARKDOWN_CARD_SHELL_CLASS,
+                    'lumo-insight-card lumo-insight-card--metric flex flex-1 flex-column min-h-full w-full p-4'
+                )}
+            >
+                <div className="lumo-insight-card__label flex justify-space-between">
                     <span>{spec.title}</span>
                 </div>
                 <div className="lumo-insight-card__value">{spec.value}</div>
                 {spec.delta ? (
-                    <div className={clsx('lumo-insight-card__delta', `lumo-insight-card__delta--${direction}`)}>
+                    <div
+                        className={clsx(
+                            'lumo-insight-card__delta flex items-center gap-1',
+                            `lumo-insight-card__delta--${direction}`
+                        )}
+                    >
                         <span>{deltaPrefix(direction)}</span>
                         <span>{spec.delta}</span>
                     </div>
@@ -54,13 +65,14 @@ export const LumoInsightCard = ({ spec }: { spec: LumoCardSpec }) => {
     return (
         <div
             className={clsx(
-                'lumo-insight-card',
+                LUMO_MARKDOWN_CARD_SHELL_CLASS,
+                'lumo-insight-card p-4',
                 isFinding && 'lumo-insight-card--finding',
                 isFinding && severityClass(spec.severity)
             )}
         >
             {showTitle ? (
-                <div className="lumo-insight-card__label">
+                <div className="lumo-insight-card__label flex justify-space-between">
                     <span>{spec.title}</span>
                     {isFinding ? <span>{spec.severity ?? 'info'}</span> : null}
                 </div>
@@ -69,9 +81,9 @@ export const LumoInsightCard = ({ spec }: { spec: LumoCardSpec }) => {
             {spec.tags && spec.tags.length > 0 ? (
                 <>
                     <hr className="lumo-insight-card__divider" />
-                    <div className="lumo-insight-card__tags">
+                    <div className="lumo-insight-card__tags flex flex-wrap gap-1.5">
                         {spec.tags.map((tag) => (
-                            <span key={tag} className="lumo-insight-card__tag">
+                            <span key={tag} className="lumo-insight-card__tag border border-weak rounded-full">
                                 {tag}
                             </span>
                         ))}

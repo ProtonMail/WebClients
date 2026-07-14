@@ -1,36 +1,11 @@
 @use '~@proton/styles/scss/lib' as *;
 
 .vega-lite-chart {
-    background: var(--background-norm, #ffffff);
-    border: 1px solid #dad3ef;
-    border-radius: rem(12);
-    box-shadow: 0 rem(1) rem(3) rgb(109 74 255 / 0.05);
-    margin-block: rem(8);
-    overflow: hidden;
-    padding: rem(16) rem(18);
-    position: relative;
-    width: 100%;
-    min-width: 0;
-
     &:has(.vega-lite-chart__loading) {
-        border: none;
-        box-shadow: none;
         min-height: rem(220);
     }
 
-    &--loading-only {
-        align-items: center;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        display: flex;
-        justify-content: center;
-        position: relative;
-    }
-
     &__viewport {
-        width: 100%;
-
         &--hidden {
             inset: 0;
             opacity: 0;
@@ -41,24 +16,9 @@
     }
 
     &__actions {
-        display: flex;
-        gap: rem(4);
-        position: absolute;
-        right: rem(8);
-        top: rem(8);
+        inset-block-start: rem(8);
+        inset-inline-end: rem(8);
         z-index: 2;
-    }
-
-    &__action-button,
-    &__download-button {
-        background: rgb(255 255 255 / 0.92);
-        box-shadow: 0 rem(1) rem(2) rgb(109 74 255 / 0.08);
-    }
-
-    &__source-panel {
-        border-top: 1px solid #dad3ef;
-        margin-top: rem(12);
-        padding-top: rem(12);
     }
 
     &__source-label {
@@ -71,23 +31,14 @@
     }
 
     &__source-error {
-        color: var(--signal-danger, #dc3257);
+        color: var(--signal-danger);
         font-size: rem(12);
         line-height: 1.4;
         margin: 0 0 rem(8);
     }
 
-    &__source-switch {
-        display: flex;
-        flex-wrap: wrap;
-        gap: rem(6);
-        margin-bottom: rem(8);
-    }
-
     &__source-switch-button {
         background: transparent;
-        border: 1px solid #dad3ef;
-        border-radius: rem(999);
         color: #6a6580;
         cursor: pointer;
         font-size: rem(11);
@@ -122,24 +73,6 @@
     &__viewport .vega-embed .chart-wrapper.fit-x,
     &__viewport .vega-embed.fit-x {
         width: 100%;
-    }
-
-    &__loading {
-        align-items: center;
-        display: flex;
-        inset: 0;
-        justify-content: center;
-        pointer-events: none;
-        position: absolute;
-        z-index: 1;
-    }
-
-    &__loading-content {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: rem(12);
-        position: relative;
     }
 
     &__loading-icon {
@@ -193,10 +126,10 @@
 
 // Vega tooltip is appended to document.body — compact rows, Lumo chrome.
 #vg-tooltip-element {
-    background-color: var(--background-norm, #ffffff);
-    border: 1px solid #dad3ef;
-    border-radius: rem(6);
-    box-shadow: 0 rem(1) rem(3) rgb(109 74 255 / 0.08);
+    background-color: var(--background-norm);
+    border: 1px solid var(--border-weak);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-norm);
     color: #1c1340;
     font-family: Inter, system-ui, sans-serif;
     font-size: rem(11);
@@ -245,12 +178,12 @@
     }
 
     &.dark-theme {
-        background-color: var(--background-norm, #1b1b1f);
-        border-color: var(--border-norm, #4a4658);
-        color: var(--text-norm, #ffffff);
+        background-color: var(--background-norm);
+        border-color: var(--border-norm);
+        color: var(--text-norm);
 
         td.key {
-            color: var(--text-weak, #adaba9);
+            color: var(--text-weak);
         }
     }
 }

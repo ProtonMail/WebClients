@@ -277,11 +277,55 @@ function isUncertaintyMark(node: Record<string, unknown>): boolean {
 }
 
 function isProductColorField(field: string): boolean {
-    return /(product|service|app|route)/i.test(field);
+    return /^(product|service|app)$/i.test(field);
 }
 
-function applyColorFieldScale(color: Record<string, unknown>, node: Record<string, unknown>): void {
-    if (applySemanticProductScale(color)) {
+function resolveInlineValues(
+    node: Record<string, unknown>,
+    root: Record<string, unknown>
+): Record<string, unknown>[] | null {
+    for (const source of [node, root]) {
+        const data = source.data;
+        if (!data || typeof data !== 'object' || Array.isArray(data)) {
+            continue;
+        }
+
+        const values = (data as Record<string, unknown>).values;
+        if (!Array.isArray(values) || values.length === 0) {
+            continue;
+        }
+
+        return values.filter(
+            (row): row is Record<string, unknown> => !!row && typeof row === 'object' && !Array.isArray(row)
+        );
+    }
+
+    return null;
+}
+
+function colorFieldValuesUseProtonProducts(
+    field: string,
+    node: Record<string, unknown>,
+    root: Record<string, unknown>
+): boolean {
+    const rows = resolveInlineValues(node, root);
+    if (!rows) {
+        return /^product$/i.test(field);
+    }
+
+    const productNames = new Set<string>(PROTON_PRODUCT_DOMAIN);
+    return rows.some((row) => {
+        const value = row[field];
+        return typeof value === 'string' && productNames.has(value);
+    });
+}
+
+function applyColorFieldScale(
+    color: Record<string, unknown>,
+    node: Record<string, unknown>,
+    root: Record<string, unknown>
+): void {
+    if (applySemanticProductScale(color, node, root)) {
         return;
     }
 
@@ -304,9 +348,13 @@ function applyColorFieldScale(color: Record<string, unknown>, node: Record<strin
     };
 }
 
-function applySemanticProductScale(colorEncoding: Record<string, unknown>): boolean {
+function applySemanticProductScale(
+    colorEncoding: Record<string, unknown>,
+    node: Record<string, unknown>,
+    root: Record<string, unknown>
+): boolean {
     const field = String(colorEncoding.field ?? '');
-    if (!isProductColorField(field)) {
+    if (!isProductColorField(field) || !colorFieldValuesUseProtonProducts(field, node, root)) {
         return false;
     }
 
@@ -363,13 +411,13 @@ export function applyProtonMarkColors(spec: Record<string, unknown>): void {
         if (colorEncoding && typeof colorEncoding === 'object' && !Array.isArray(colorEncoding) && 'field' in colorEncoding) {
             const color = colorEncoding as Record<string, unknown>;
             if (color.field !== PROTON_STATIC_COLOR_BAND_FIELD) {
-                applyColorFieldScale(color, node);
+                applyColorFieldScale(color, node, spec);
             }
         } else if (colorEncoding && typeof colorEncoding === 'object' && !Array.isArray(colorEncoding)) {
             const color = colorEncoding as Record<string, unknown>;
             const condition = color.condition;
             if (condition && typeof condition === 'object' && !Array.isArray(condition) && 'field' in condition) {
-                applyColorFieldScale(condition as Record<string, unknown>, node);
+                applyColorFieldScale(condition as Record<string, unknown>, node, spec);
             }
         }
 
