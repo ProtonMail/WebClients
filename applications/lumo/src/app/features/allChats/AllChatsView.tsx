@@ -79,9 +79,9 @@ const AllChatsEmptyState = ({ variant }: AllChatsEmptyStateProps) => {
     })();
 
     return (
-        <div className="all-chats-empty flex flex-column items-center justify-center gap-2 h-full px-6">
-            <div className="flex items-center justify-center rounded-full bg-weak p-4">
-                <LumoIcon name={content.icon} size={24} className="color-weak" />
+        <div className="flex flex-column items-center justify-center gap-2 h-full px-6 mx-auto">
+            <div className="all-chats-empty-icon flex items-center justify-center rounded-full p-4">
+                <LumoIcon name={content.icon} size={24} />
             </div>
             <h2 className="text-lg text-semibold m-0">{content.heading}</h2>
             <p className="text-sm color-weak m-0">{content.subline}</p>
@@ -107,52 +107,54 @@ const AllChatsToolbar = ({
     onSortFieldChange,
 }: AllChatsToolbarProps) => {
     return (
-        <div className="all-chats-toolbar flex flex-row flex-nowrap items-center w-full px-4 py-3 shrink-0">
+        <div className="all-chats-toolbar flex flex-column sm:flex-row sm:flex-nowrap items-center w-full px-2 md:px-4 py-3 shrink-0 items-stretch">
             <Input
-                className="all-chats-search flex-1 min-w-0"
+                className="all-chats-search flex-none sm:flex-1 min-w-0"
                 value={searchQuery}
                 onValue={onSearchQueryChange}
                 placeholder={c('collider_2025:Placeholder').t`Search chats`}
                 aria-label={c('collider_2025:Button').t`Search chats`}
                 prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
             />
-            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
-            <div
-                className="all-chats-segmented flex shrink-0"
-                role="group"
-                aria-label={c('collider_2025:Button').t`Filter chats`}
-            >
-                <Button
-                    className={clsx('all-chats-segmented-button', filter === 'all' && 'is-active')}
-                    shape="ghost"
-                    size="small"
-                    aria-pressed={filter === 'all'}
-                    onClick={() => {
-                        onFilterChange('all');
-                    }}
+            <div className="flex items-center gap-2 flex-nowrap justify-space-between">
+                {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                <div
+                    className="all-chats-segmented flex shrink-0"
+                    role="group"
+                    aria-label={c('collider_2025:Button').t`Filter chats`}
                 >
-                    {c('collider_2025:Option').t`All`}
-                </Button>
-                <Button
-                    className={clsx('all-chats-segmented-button', filter === 'favorites' && 'is-active')}
-                    shape="ghost"
-                    size="small"
-                    aria-pressed={filter === 'favorites'}
-                    onClick={() => {
-                        onFilterChange('favorites');
-                    }}
-                >
-                    {c('collider_2025:Option').t`Favorites`}
-                </Button>
-            </div>
+                    <Button
+                        className={clsx('all-chats-segmented-button', filter === 'all' && 'is-active')}
+                        shape="ghost"
+                        size="small"
+                        aria-pressed={filter === 'all'}
+                        onClick={() => {
+                            onFilterChange('all');
+                        }}
+                    >
+                        {c('collider_2025:Option').t`All`}
+                    </Button>
+                    <Button
+                        className={clsx('all-chats-segmented-button', filter === 'favorites' && 'is-active')}
+                        shape="ghost"
+                        size="small"
+                        aria-pressed={filter === 'favorites'}
+                        onClick={() => {
+                            onFilterChange('favorites');
+                        }}
+                    >
+                        {c('collider_2025:Option').t`Favorites`}
+                    </Button>
+                </div>
 
-            <ChatHistorySortMenu
-                sortField={sortField}
-                onSortFieldChange={onSortFieldChange}
-                options={allChatsSortOptions}
-                buttonLabel={getSortFieldLabel(sortField)}
-                buttonClassName="all-chats-sort-menu-button shrink-0"
-            />
+                <ChatHistorySortMenu
+                    sortField={sortField}
+                    onSortFieldChange={onSortFieldChange}
+                    options={allChatsSortOptions}
+                    buttonLabel={getSortFieldLabel(sortField)}
+                    buttonClassName="all-chats-sort-menu-button shrink-0"
+                />
+            </div>
         </div>
     );
 };
@@ -229,7 +231,7 @@ const ConversationRow = memo(({ conversation, rowData, isSelected, sortField }: 
 
     return (
         <div
-            className="all-chats-row group relative flex items-center gap-3 px-3 min-w-0 overflow-hidden"
+            className="all-chats-row group relative flex items-center gap-3 px-0 md:px-3 min-w-0 overflow-hidden"
             style={{ height: `${ROW_HEIGHT}px` }}
         >
             {!isRenaming && (
