@@ -438,6 +438,9 @@
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "лицензии ${ LUMO_APP_NAME }"
+      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -2463,6 +2466,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Номер НДС должен начинаться с ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Нам не удалось отправить код подтверждения этим способом."
       ],
       "Wrong billing address": [
         "Неверный адрес для выставления счетов"

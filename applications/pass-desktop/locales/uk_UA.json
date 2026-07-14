@@ -930,6 +930,9 @@
       "Error reporting problem": [
         "Помилка під час надсилання повідомлення про проблему"
       ],
+      "Failed loading group members": [
+        "Не вдалося завантажити учасників групи"
+      ],
       "Failed removing the invite.": [
         "Помилка вилучення запрошення."
       ],
@@ -1307,6 +1310,17 @@
       ],
       "Very small": [
         "Дуже маленький"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Домен"
+      ],
+      "Password ends with": [
+        "Пароль закінчується на"
+      ],
+      "Username": [
+        "Ім'я користувача"
       ]
     },
     "Info": {
@@ -1762,6 +1776,9 @@
       ],
       "Latest breach on ${ formattedDate }": [
         "Останній витік у ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Дізнайтеся, що робити, ${ dataLeakedLink }"
       ],
       "Leaving vault...": [
         "Покидання сховища..."
@@ -3369,6 +3386,9 @@
       "auto create rules ››": [
         "автоматичне створення правил ››"
       ],
+      "if your data is leaked": [
+        "якщо стався витік ваших даних"
+      ],
       "Learn more": [
         "Докладніше"
       ]
@@ -3921,6 +3941,9 @@
       "Inactive 2FA": [
         "Неактивна 2FA"
       ],
+      "Information exposed in breach": [
+        "Інформація, розкрита під час витоку"
+      ],
       "Install extension": [
         "Встановити розширення"
       ],
@@ -4198,6 +4221,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сьогодні"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Не вся перелічена тут інформація була розкрита для всіх користувачів."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Якщо зашифровані паролі не розшифровано, вони залишаються безпечними, навіть якщо їх було розкрито."
       ]
     },
     "Validation": {

@@ -3964,6 +3964,9 @@
       "VAT number must start with ${ prefixes }": [
         "Davčna številka se mora začeti z ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
+      ],
       "Wrong billing address": [
         "Napačen naslov za izstavitev računa"
       ],
@@ -6229,6 +6232,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Trenutno ste prijavljeni kot ${ username }."

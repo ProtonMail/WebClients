@@ -4024,6 +4024,9 @@
       "We cannot retrieve this item": [
         "No s'ha pogut recuperar aquest element"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
       "We were not able to load some invitations": [
         "No s'han pogut carregar algunes invitacions"
       ],
@@ -5732,8 +5735,8 @@
       "How does encrypted search work?": [
         "Com funciona la cerca xifrada?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "Per la present confirmo que, de bona fe, la informació i les declaracions contingudes en l'informe són correctes i completes."
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Per la present, confirmo de bona fe que la informació i les declaracions contingudes en l'informe són correctes i completes."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Si aquests fitxers no estan completament descarregats a ${ deviceName }, hi perdreu l'accés."
@@ -6697,7 +6700,7 @@
         "Carregat"
       ],
       "Uploaded - file is empty": [
-        "S'ha carregat - el fitxer és buit"
+        "S'ha carregat (el fitxer és buit)"
       ],
       "Uploading": [
         "S'està pujant"
@@ -6857,6 +6860,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Heu iniciat sessió com a ${ username }."

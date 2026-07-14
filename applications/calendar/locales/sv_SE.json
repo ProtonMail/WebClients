@@ -470,6 +470,12 @@
       "Go to settings": [
         "Gå till inställningar"
       ],
+      "Go to the first available appointment": [
+        "Gå till första lediga tid"
+      ],
+      "Go to the next available appointment": [
+        "Gå till nästa lediga tid"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -3928,6 +3934,9 @@
       "Network error": [
         "Nätverksfel"
       ],
+      "No booking page data received": [
+        "Ingen information om bokningssida har mottagits"
+      ],
       "No calendars found to import": [
         "Inga kalendrar hittades att importera"
       ],
@@ -4207,6 +4216,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Momsregistreringsnumret måste börja med ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
@@ -5473,6 +5485,9 @@
       "Are you sure you want to discard your import?": [
         "Är du säker på att du vill kasta din import?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Be din admin att uppgradera ditt paket eller ta bort en sida från sidofältet för bokningssidor."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
@@ -5991,6 +6006,12 @@
       "New": [
         "Ny"
       ],
+      "No appointments available": [
+        "Inga lediga tider tillgängliga"
+      ],
+      "No appointments available this week": [
+        "Inga lediga tider denna vecka"
+      ],
       "No calendar available; please delete the booking page.": [
         "Ingen kalender tillgänglig, ta bort bokningssidan."
       ],
@@ -5999,6 +6020,9 @@
       ],
       "No email address": [
         "Ingen e-postadress"
+      ],
+      "No future appointments available": [
+        "Inga framtida möten tillgängliga"
       ],
       "No group found": [
         "Ingen grupp hittades"
@@ -6321,6 +6345,9 @@
       "This booking page cannot be edited, the associated calendar is disabled": [
         "Denna bokningssida kan inte redigeras, den associerade kalendern är inaktiverad"
       ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Denna bokning gjordes via ${ CALENDAR_APP_NAME }, en del av ${ BRAND_NAME }s serie med produkter som sätter integriteten främst."
+      ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Denna händelse har uppdaterats av organisatören. Vill du ändra ditt svar endast för denna förekomst i denna serie?"
       ],
@@ -6356,6 +6383,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "För att lägga till en ny bokningssida, be din administratör att uppgradera ditt paket."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "För att lägga till en ny bokningssida, ta bort en befintlig från sidofältet för bokningssidor."
       ],
       "To add a new booking page, upgrade your plan.": [
         "För att lägga till en ny bokningssida, uppgradera ditt paket."
@@ -6483,6 +6513,9 @@
       "What do you want to call this booking page?": [
         "Vad vill du kalla denna bokningssida?"
       ],
+      "When can appointments be booked?": [
+        "När kan möten bokas?"
+      ],
       "When working remotely": [
         "När du arbetar på distans"
       ],
@@ -6545,6 +6578,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du är på väg att öppna din standardwebbläsare och besöka:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du är för närvarande inloggad som ${ username }."
@@ -6744,6 +6780,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nått gränsen för antal bokningsbara tider (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -7280,6 +7319,9 @@
       "Navigation": [
         "Navigering"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New password": [
         "Nytt lösenord"
       ],
@@ -7309,6 +7351,9 @@
       ],
       "Organizer": [
         "Organisatör"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ],
       "participant": [
         "deltagare",
@@ -7529,8 +7574,14 @@
       "End time of the booking range": [
         "Sluttid för bokningsintervallet"
       ],
+      "How long should an appointment last?": [
+        "Hur långt ska ett möte vara?"
+      ],
       "Start time of the booking range": [
         "Starttid för bokningsintervallet"
+      ],
+      "What should people know about this appointment?": [
+        "Vad bör man veta om detta möte?"
       ]
     },
     "Label for contact group color": {
@@ -7882,6 +7933,9 @@
     "Message": {
       "Fw:": [
         "Vb:"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ],
       "Re:": [
         "Svar:"
@@ -11835,6 +11889,9 @@
       ]
     },
     "Text": {
+      "No bookings available.": [
+        "Inga bokningar tillgängliga."
+      ],
       "Please check the link and try again.": [
         "Kontrollera länken och försök igen."
       ],

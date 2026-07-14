@@ -553,6 +553,12 @@
       "Regenerate": [
         "Згенерыраваць яшчэ раз"
       ],
+      "Regex invalid": [
+        "Памылковы рэгулярны выраз"
+      ],
+      "Regex unsafe": [
+        "Небяспечны рэгулярны выраз"
+      ],
       "Reject": [
         "Адхіліць"
       ],
@@ -2267,6 +2273,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2533,6 +2545,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Хуткае аўтазапаўненне вашых захаваных ідэнтычнасцей."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Упарадкавана па полі (спачатку загаловак, потым імя карыстальніка або электронная пошта, вэб-сайт, нататкі) і адпавядае дакладнасці (дакладна, пачынаецца з, змяшчае)."
       ],
       "Read item": [
         "Прачытаць элемент"
@@ -2818,9 +2833,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
-      ],
-      "Unlock with biometrics": [
-        "Разблакіраваць з дапамогай біяметрыі"
       ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
@@ -3294,6 +3306,9 @@
       "Bank Name": [
         "Назва банка"
       ],
+      "Basic": [
+        "Асноўныя"
+      ],
       "Basic Auth autofill": [
         "Базавае аўтазапаўненне пры аўтэнтыфікацыі"
       ],
@@ -3323,6 +3338,9 @@
       ],
       "Catch-All": [
         "Уся пошта дамена"
+      ],
+      "Check": [
+        "Праверка"
       ],
       "Checkbox": [
         "Сцяжок"
@@ -3482,6 +3500,12 @@
       ],
       "Enter email or username": [
         "Увядзіце электронную пошту або імя карыстальніка"
+      ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
       ],
       "Expiration date": [
         "Тэрмін дзеяння"
@@ -3831,6 +3855,9 @@
       "Owner": [
         "Уладальнік"
       ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
       "Passkey": [
         "Ключ доступу"
       ],
@@ -3942,6 +3969,12 @@
       "Reddit handle": [
         "Ідэнтыфікатар Reddit"
       ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
+      "Relevant": [
+        "Рэлевантныя"
+      ],
       "Remove link": [
         "Выдаліць спасылку"
       ],
@@ -4049,6 +4082,9 @@
       ],
       "SSN": [
         "Нумар сацыяльнага страхавання"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
       ],
       "State or province": [
         "Вобласць або раён"
@@ -4164,6 +4200,9 @@
       "Update": [
         "Абнавіць"
       ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Выкарыстоўваць ${ PASS_APP_NAME } як прадвызначаны менеджар пароляў у вашым браўзеры"
       ],
@@ -4271,6 +4310,18 @@
         "${ count } элементы",
         "${ count } элементаў",
         "${ count } элементаў"
+      ],
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
       ],
       "You can drag and drop the selected item to another vault": [
         "Вы можаце перацягнуць выбраны элемент у іншае сховішча",
@@ -4578,6 +4629,20 @@
         "Выкарыстоўваецца на ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Увядзіце URL-адрас, каб праверыць, ці адпавядае ваша бягучае правіла URL-адрасу"
+      ],
+      "The rule is matching this URL": [
+        "Правіла адпавядае гэтаму URL-адрасу"
+      ],
+      "This URL will be blocked from autofill": [
+        "Гэты URL-адрас будзе заблакіраваны для аўтазапаўнення"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Гэты URL-адрас НЕ будзе заблакіраваны для аўтазапаўнення"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлены іншыя патэнцыяльныя ўцечкі з назвай ${ name } і колькасцю роўнай ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -4785,6 +4850,9 @@
       ],
       "Add mailbox": [
         "Дадаць паштовую скрыню"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Адрэгулюйце паводзіны аўтазапаўнення, каб змяніць дзе прапаноўваць запісы ўваходу"
       ],
       "Agent setup instructions": [
         "Інструкцыі па наладцы агента"
@@ -5001,6 +5069,9 @@
       ],
       "Last modified": [
         "Апошняе змяненне"
+      ],
+      "Learn more": [
+        "Даведацца больш"
       ],
       "Leave this item?": [
         "Выйсці з гэтага элемента?"
@@ -5224,6 +5295,9 @@
       "Sync your aliases from SimpleLogin": [
         "Сінхранізацыя вашых псеўданімаў з SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Праверце URL-адрас на адпаведнасць гэтаму правілу"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Дзякуй, што ўсталявалі ${ PASS_APP_NAME }"
       ],
@@ -5244,6 +5318,9 @@
       ],
       "Update available": [
         "Даступна абнаўленне"
+      ],
+      "URL matching": [
+        "Супадзенне URL-адраса"
       ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"
@@ -5571,6 +5648,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Гэты адрас электроннай пошты больш не будзе адсочвацца на прадмет уцечкі даных."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Гэты элемент не можа быць прапанаваны для аўтазапаўнення з прычыны таго, што ён мае метку \"${ neverModeDescriptionStrong }\". Дадайце іншы URL-адрас, калі хочаце аўтазапаўняць гэты элемент."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Гэты элемент у цяперашні час абагулены. Яго выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."

@@ -2214,7 +2214,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2480,6 +2481,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Autofyld hurtigt dine gemte legitimationsoplysninger."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Rangeret efter felt (titel først, derefter brugernavn eller e-mail, hjemmeside, noter) og matchens præcision (præcis, starter med, indeholder)."
       ],
       "Read item": [
         "Læs element"
@@ -2763,9 +2767,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den op med din pinkode for at få adgang til indstillingerne."
-      ],
-      "Unlock with biometrics": [
-        "Lås op med biometri"
       ],
       "Unpinning item...": [
         "Frigør element..."
@@ -3850,6 +3851,9 @@
       ],
       "Reddit handle": [
         "Reddit-brugernavn"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Fjern link"

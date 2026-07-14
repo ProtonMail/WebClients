@@ -62,8 +62,14 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Copy link and close": [
+        "Скопировать ссылку и закрыть"
+      ],
       "Copy meeting link": [
         "Скопировать ссылку на встречу"
+      ],
+      "Create a free account": [
+        "Создать бесплатный аккаунт"
       ],
       "Create a room": [
         "Создать комнату"
@@ -82,6 +88,9 @@
       ],
       "Disable camera": [
         "Отключить камеру"
+      ],
+      "Discard": [
+        "Сбросить"
       ],
       "Dismiss": [
         "Отклонить"
@@ -230,6 +239,9 @@
       "Rejoin meeting": [
         "Снова присоединиться к встрече"
       ],
+      "Reply": [
+        "Ответить"
+      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -247,6 +259,9 @@
       ],
       "Resume": [
         "Возобновить"
+      ],
+      "Retry": [
+        "Повторить"
       ],
       "Room": [
         "Комната"
@@ -1441,6 +1456,9 @@
       "Failed to create personal meeting, please refresh the page": [
         "Не удалось создать личную встречу, обновите страницу"
       ],
+      "Failed to decrypt session key": [
+        "Не удалось расшифровать ключ сеанса"
+      ],
       "Failed to delete event": [
         "Не удалось удалить событие"
       ],
@@ -1539,6 +1557,9 @@
       ],
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Нам не удалось отправить код подтверждения этим способом."
       ]
     },
     "Error message": {
@@ -1850,6 +1871,12 @@
       "Enter your own password (as trusted contact).": [
         "Введите собственный пароль (как доверенный контакт)."
       ],
+      "Failed to update meeting name": [
+        "Не удалось обновить название встречи"
+      ],
+      "Failed to update meeting password": [
+        "Не удалось обновить пароль встречи"
+      ],
       "Failed to update meeting schedule": [
         "Не удалось обновить расписание встречи"
       ],
@@ -1870,6 +1897,9 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Перейдите на страницу about:config, найдите media.peerconnection.enabled и установите для него значение true."
+      ],
+      "Host": [
+        "Организатор"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Проведите собственную безопасную встречу. Начните звонок в ${ MEET_APP_NAME } и поделитесь ссылкой, чтобы пригласить любого пользователя. Просто, безопасно и бесплатно."
@@ -2251,6 +2281,9 @@
       "Delete recovery-related information.": [
         "Удалите информацию, связанную с восстановлением."
       ],
+      "Disabled": [
+        "Отключено"
+      ],
       "Does not repeat": [
         "Не повторять"
       ],
@@ -2513,6 +2546,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Reply...": [
+        "Ответить..."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Запланировать в ${ CALENDAR_APP_NAME }"

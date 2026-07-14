@@ -66,6 +66,9 @@
       "Accept": [
         "Accepter"
       ],
+      "Account settings": [
+        "Kontoindstillinger"
+      ],
       "activate": [
         "aktivér"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Administrer kommunikationspræferencer"
+      ],
+      "Manage company": [
+        "Administrér virksomhed"
       ],
       "Manage folders": [
         "Administrer mapper"
@@ -2999,6 +3005,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Der opstod en ukendt fejl. Prøv at genindlæse siden og prøv igen"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Er du sikker på du vil fortsætte uden ${ withoutString } og ${ notMigratedOthers } andre?",
+        "Er du sikker på du vil fortsætte uden ${ withoutString } og ${ notMigratedOthers } anden?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Er du sikker på du vil fortsætte uden ${ withoutString }?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Er du sikker på, at du vil fortsætte? Brugere, som ikke har indløst deres konto før migrationen er færdiggjort, vil skulle anmode om at nulstille adgangskoden fra deres ${ BRAND_NAME } organisationsadministrator."
       ],
@@ -3046,6 +3059,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Slet alle eksisterende MX-koder, kopiér derefter nedenstående koder og indsæt dem i DNS-sektionen på din domænehost."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM tilføjer en digital signatur til hver e-mail, så modtagerne kan verificere at beskeden virkelig kom fra dit domæne, og ikke blev ændret undervejs. Beskeder kan blive betragtet som mindre troværdige uden den."
@@ -3180,6 +3196,9 @@
       "Missing organization public key": [
         "Mangler organisationens offentlige nøgle"
       ],
+      "More details": [
+        "Flere detaljer"
+      ],
       "Need help?": [
         "Har du brug for hjælp?"
       ],
@@ -3273,11 +3292,17 @@
       "Some accounts are not claimed": [
         "Nogle konti er ikke indløst"
       ],
+      "Some members weren't migrated": [
+        "Nogle medlemmer blev ikke migreret."
+      ],
       "Status": [
         "Status"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Installer ${ BRAND_NAME } Easy Switch fra Google Workspace Marketplace for at overføre din organisations data til ${ BRAND_NAME }. Kom tilbage her efter det er installeret for at fortsætte."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "For at fuldføre migreringen skal du sørge for, at du kun beholder ${ BRAND_NAME } MX-koder."
       ],
       "Update records for receiving": [
         "Opdater records for modtagelse"
@@ -3333,6 +3358,9 @@
       "You": [
         "Dig"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Du vil ikke kunne kopiere disse brugeres data senere."
+      ],
       "You're all set!": [
         "Så er du klar!"
       ],
@@ -3342,6 +3370,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nuværende plan tillader op til ${ maxMembers } bruger. Tilføj flere pladser til dit abonnement for at migrere flere brugere.",
         "Din nuværende plan tillader op til ${ maxMembers } brugere. Tilføj flere pladser til dit abonnement for at migrere flere brugere."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Din domænekonfiguration indeholder stadig en anden udbyders MX-koder."
       ]
     },
     "breadcrumb": {
@@ -7786,6 +7817,9 @@
       "We couldn't sign you in": [
         "Vi kunne ikke logge dig på"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
       ],
@@ -8357,8 +8391,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer en ny bruger."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Du mister adgang til alle premium-funktioner, der indgår i ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Du mister adgang til alle premium-funktioner, der indgår i ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Du er inviteret af **${ invite.InviterEmail }** til at forbinde din konto til dette gruppeabonnement."
@@ -11700,6 +11734,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
       ],
+      "Manage groups in your identity provider": [
+        "Administrér grupper i din identitetsudbyder"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrér hvilke ${ BRAND_NAME }-applikationer medlemmerne af din organisation kan få adgang til. Hvis deaktiveret, vil kun administratorer have adgang."
       ],
@@ -13283,6 +13320,9 @@
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er i øjeblikket logget ind som ${ username } i (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du er i øjeblikket logget ind som ${ username }."
       ],
@@ -13354,6 +13394,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu få adgang til og administrere kontoen som administrator."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Du kan nu få adgang til og administrere virksomheden som administrator."
       ],
       "You can now close this tab.": [
         "Du kan lukke denne fane nu."
@@ -14706,6 +14749,9 @@
       ],
       "Confirm login password": [
         "Bekræft adgangskode til login"
+      ],
+      "Confirm MX records updated": [
+        "Bekræft tilføjede MX-records"
       ],
       "Confirm new password": [
         "Bekræft ny adgangskode"
@@ -16184,9 +16230,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Don't have access to your 2FA?": [
-        "Har du ikke adgang til din 2FA?"
       ],
       "Downloads": [
         "Downloads"
@@ -24442,9 +24485,6 @@
       "per month, billed annually": [
         "pr. måned, faktureret årligt"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spar 50% i 1 år, og behold fuld adgang"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Spar 50% i 6 måneder, og behold fuld adgang"
       ],
@@ -26110,8 +26150,8 @@
       "Layout": [
         "Layout"
       ],
-      "Leave ${ organisationName }?": [
-        "Forlad ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Forlad ${ organization.Name }?"
       ],
       "Leave group?": [
         "Forlad gruppe?"
@@ -26133,6 +26173,9 @@
       ],
       "Make your business stand out": [
         "Få din virksomhed til at skille sig ud"
+      ],
+      "Manage company": [
+        "Administrér virksomhed"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrér filer på tværs af enheder på Windows, Mac, Android og iOS."

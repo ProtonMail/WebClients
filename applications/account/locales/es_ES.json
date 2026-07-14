@@ -61,6 +61,9 @@
       "Accept": [
         "Aceptar"
       ],
+      "Account settings": [
+        "Ajustes de cuenta"
+      ],
       "activate": [
         "activar"
       ],
@@ -1020,6 +1023,9 @@
       ],
       "Manage communication preferences": [
         "Administrar las preferencias de comunicación"
+      ],
+      "Manage company": [
+        "Gestionar empresa"
       ],
       "Manage folders": [
         "Administrar carpetas"
@@ -3029,6 +3035,9 @@
       "Missing organization public key": [
         "Falta la clave pública de la organización"
       ],
+      "More details": [
+        "Más detalles"
+      ],
       "Need help?": [
         "¿Necesitas ayuda?"
       ],
@@ -3902,6 +3911,9 @@
       ],
       "Cancel subscription": [
         "Cancelar suscripción"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
       ],
       "Upload any new files": [
         "Cargar cualquier archivo nuevo"
@@ -7164,6 +7176,14 @@
       "Reverse charge scheme is not supported for this plan": [
         "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No se ha podido completar la asignación de roles para ${ errors.length } miembro",
+        "No se ha podido completar la asignación de roles para ${ errors.length } miembros"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No se ha podido completar la asignación de roles para ${ failedGroupCount } grupo",
+        "No se ha podido completar la asignación de roles para ${ failedGroupCount } grupos"
+      ],
       "Server not found": [
         "Servidor no encontrado"
       ],
@@ -7343,6 +7363,9 @@
       ],
       "We couldn't sign you in": [
         "No hemos podido iniciar sesión."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
@@ -7898,8 +7921,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Debes configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Perderás todo acceso a las funciones premium incluidas en ${ plan }"
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Perderás el acceso a todas las funciones premium incluidas en ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "**${ invite.InviterEmail }** te ha invitado a vincular tu cuenta a este plan de grupo."
@@ -9313,6 +9336,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida."
       ],
+      "${ emails.length } member added to the group": [
+        "Se ha añadido ${ emails.length } miembro al grupo",
+        "Se han añadido ${ emails.length } miembros al grupo"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
@@ -9408,6 +9435,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nuevo miembro añadido a través de tu proveedor de identidad y pendiente de revisión.",
+        "${ pendingAdminApprovalCount } nuevos miembros añadidos a través de tu proveedor de identidad y pendientes de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -9985,6 +10016,9 @@
       ],
       "Change your password": [
         "Cambia tu contraseña"
+      ],
+      "Check your network and try again.": [
+        "Comprueba la conexión e inténtalo de nuevo."
       ],
       "Choose a plan that works best for you.": [
         "Elige el plan que mejor se adapte a ti."
@@ -11023,6 +11057,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
+      ],
+      "Manage groups in your identity provider": [
+        "Gestiona los grupos en tu proveedor de identidad"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administra las aplicaciones ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
@@ -12520,6 +12557,9 @@
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Actualmente estás conectado como ${ username }."
       ],
@@ -12585,6 +12625,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Ya puedes acceder a la empresa y gestionarla como administrador."
       ],
       "You can now close this tab.": [
         "Puedes cerrar esta pestaña."
@@ -13936,6 +13979,9 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email addresses per user": [
+        "Direcciones de correo electrónico por usuario"
+      ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
       ],
@@ -14311,6 +14357,9 @@
       "Newsletters - News, editorial emails, and non-promotional content": [
         "Boletines - Noticias, correos electrónicos editoriales y contenido no promocional"
       ],
+      "No": [
+        "No"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "No (los usuarios no podrán usar la aplicación hasta que se comparta una caja fuerte con ellos)"
       ],
@@ -14660,6 +14709,9 @@
       "Storage": [
         "Almacenamiento"
       ],
+      "Storage per user": [
+        "Espacio de almacenamiento por usuario"
+      ],
       "Street address": [
         "Nombre de la calle"
       ],
@@ -14713,6 +14765,9 @@
       ],
       "today": [
         "hoy"
+      ],
+      "Total cost": [
+        "Coste total"
       ],
       "Transactions": [
         "Transacciones"
@@ -15103,9 +15158,6 @@
       ],
       "Details": [
         "Detalles"
-      ],
-      "Don't have access to your 2FA?": [
-        "¿No tienes acceso a tu 2FA?"
       ],
       "Downloads": [
         "Descargas"
@@ -19413,6 +19465,9 @@
       "Verify now": [
         "Verificar ahora"
       ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "Confirma ahora esta dirección de correo electrónico de recuperación: ${ emailData.value }"
+      ],
       "Verify recovery email?": [
         "¿Verificar el correo electrónico de recuperación?"
       ],
@@ -19485,6 +19540,9 @@
       "Take precautions to avoid losing access": [
         "Toma precauciones para evitar perder el acceso"
       ],
+      "Weak": [
+        "Poco segura"
+      ],
       "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
         "Tu protección es total. Una revisión periódica mantiene todo en funcionamiento a medida que tus dispositivos y contactos cambian con el tiempo."
       ],
@@ -19535,8 +19593,14 @@
       "Email recovery enabled": [
         "Correo de recuperación habilitado"
       ],
+      "Emergency contacts added": [
+        "Contactos de emergencia añadidos"
+      ],
       "Enable email recovery": [
         "Activar la recuperación por correo electrónico"
+      ],
+      "Password verified": [
+        "Contraseña verificada"
       ],
       "Phone recovery enabled": [
         "Teléfono de recuperación habilitado"
@@ -20437,6 +20501,12 @@
       ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "Para confirmar que esta dirección es realmente tuya, se envía un correo electrónico con un enlace de verificación."
+      ],
+      "Update": [
+        "Actualizar"
+      ],
+      "Update recovery email": [
+        "Actualizar el correo electrónico de recuperación"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "Actualiza tu plan para activar el acceso de emergencia en tu cuenta. Esto te permite designar de 1 a 5 personas que pueden restablecer tu contraseña por ti."
@@ -22297,6 +22367,9 @@
       "Add an email address": [
         "Añadir una dirección de correo electrónico"
       ],
+      "Available on this device": [
+        "Disponible en este dispositivo"
+      ],
       "completed": [
         "completado"
       ],
@@ -23717,6 +23790,9 @@
       "Address and key verification": [
         "Verificación de direcciones y claves"
       ],
+      "Advanced recovery options": [
+        "Opciones avanzadas de recuperación"
+      ],
       "Allocate storage": [
         "Asignar almacenamiento"
       ],
@@ -23866,6 +23942,9 @@
       ],
       "Close": [
         "Cerrar"
+      ],
+      "Code expired": [
+        "El código ha expirado"
       ],
       "Collaborate on documents": [
         "Colabora en documentos"
@@ -24126,6 +24205,9 @@
       ],
       "Disable categories?": [
         "¿Desactivar categorías?"
+      ],
+      "Disable company": [
+        "Desactivar empresa"
       ],
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
@@ -24416,6 +24498,9 @@
       "Get more from your password manager": [
         "Saca más provecho de tu gestor de contraseñas"
       ],
+      "Get more from your privacy suite": [
+        "Saca más partido a tu paquete de privacidad"
+      ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"
       ],
@@ -24549,8 +24634,8 @@
       "Layout": [
         "Disposición"
       ],
-      "Leave ${ organisationName }?": [
-        "¿Abandonar ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "¿Abandonar ${ organization.Name }?"
       ],
       "Leave group?": [
         "¿Deseas salir del grupo?"
@@ -24572,6 +24657,9 @@
       ],
       "Make your business stand out": [
         "Haz que tu negocio destaque"
+      ],
+      "Manage company": [
+        "Gestionar empresa"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administra archivos en dispositivos Windows, Mac, Android e iOS."
@@ -25285,6 +25373,9 @@
       "Welcome to your new password manager!": [
         "¡Te damos la bienvenida a tu nuevo gestor de contraseñas!"
       ],
+      "What changes if you switch to the Free plan": [
+        "¿Qué cambia si te pasas al plan gratuito?"
+      ],
       "What is an alias?": [
         "¿Qué es un alias?"
       ],
@@ -25474,6 +25565,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
       ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Permite recuperar tu cuenta mediante un código de un solo uso enviado a tu número de teléfono de recuperación"
+      ],
       "Allow resetting your password from the account settings": [
         "Permitir restablecer la contraseña desde la configuración de la cuenta"
       ],
@@ -25656,6 +25750,9 @@
       ],
       "Verified email address": [
         "Se ha verificado el correo electrónico."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Se ha detectado un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, se tendrá que cerrar la sesión de DKIM."

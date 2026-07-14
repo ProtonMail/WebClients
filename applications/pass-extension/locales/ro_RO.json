@@ -2246,6 +2246,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2511,6 +2516,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Autocompletați rapid datele de conectare salvate."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificat după câmp (titlul mai întâi, apoi numele de utilizator sau adresa de e-mail, site web, note) și precizia potrivirii (exactă, începe cu, conține)."
       ],
       "Read item": [
         "Citire articol"
@@ -2795,9 +2803,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Deblocați-o cu codul PIN pentru a accesa setările."
-      ],
-      "Unlock with biometrics": [
-        "Deblocare cu date biometrice"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
@@ -3921,6 +3926,9 @@
       ],
       "Regular expression": [
         "Expresie regulată"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Eliminare legătură web"

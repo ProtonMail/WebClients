@@ -3518,6 +3518,9 @@
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Não foi possível importar este arquivo para o ${ SHEETS_APP_NAME }. Você pode tentar copiar e colar o conteúdo em um novo ${ SHEETS_APP_NAME }."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação usando este método."
+      ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
       ],
@@ -4953,6 +4956,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Se você se remover, perderá o acesso a \"${ fileName }\" e não poderá abri-lo novamente, a menos que o proprietário o compartilhe com você."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
@@ -5632,6 +5638,9 @@
       "You are about to open your default browser and visit:": [
         "Você está prestes a abrir seu navegador padrão e visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Você está atualmente com sessão iniciada como ${ username } para ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Você está atualmente iniciado sessão como ${ username }."
       ],
@@ -5684,6 +5693,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Você não poderá compartilhar \"${ fileName }\" depois de alterar o acesso para visualizador. Somente o proprietário poderá alterar seu acesso novamente."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
@@ -6274,6 +6286,9 @@
       "Region": [
         "Estado"
       ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
       "Replace existing file": [
         "Substituir pasta existente"
       ],
@@ -6309,6 +6324,9 @@
       ],
       "Skip folder": [
         "Pular Pasta"
+      ],
+      "Starts with": [
+        "Iniciar com"
       ],
       "Stop sharing": [
         "Parar de compartilhar"
@@ -6677,6 +6695,9 @@
       ]
     },
     "Message": {
+      "Regular expression rule": [
+        "Regra de expressão regular"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
       ],
@@ -8030,6 +8051,12 @@
       ],
       "Device renamed": [
         "Dispositivo renomeado"
+      ],
+      "Document moved to trash": [
+        "Documento movido para a lixeira"
+      ],
+      "Document restored from trash": [
+        "Documento restaurado da lixeira"
       ],
       "External invitation removed from the share": [
         "Convite externo removido dos compartilhados"

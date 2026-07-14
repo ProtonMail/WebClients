@@ -1443,9 +1443,6 @@
       "Start setup": [
         "セットアップを開始"
       ],
-      "Start testing": [
-        "テストを開始"
-      ],
       "Stay": [
         "終了しない"
       ],
@@ -1725,6 +1722,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME } で開く"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "カテゴリをカスタマイズ"
+      ],
+      "Got it": [
+        "はい"
+      ],
+      "Next": [
+        "次"
+      ],
+      "Not now": [
+        "また今度"
+      ],
+      "Skip": [
+        "スキップ"
       ]
     },
     "Actions message": {
@@ -4080,8 +4094,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "最後に見てから未読メッセージがあるカテゴリには青い点が表示されます。"
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } にフォルダやファイルを追加し、チームメンバーを招待して表示または編集を許可します。"
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "カテゴリの追加や削除、通知の管理、セットアップの調整はいつでも設定で行えます。"
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "カテゴリの追加や削除、通知の管理、または通知を完全にオフにすることはいつでも設定で行えます。"
       ],
       "Also included": [
         "含まれています"
@@ -4164,9 +4187,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "メッセージが誤ったカテゴリに表示された場合は、正しいカテゴリに移動してください。メッセージを右クリックして新しいカテゴリを選択するか、ドラッグ＆ドロップで適切な場所に移動できます。"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
@@ -4193,6 +4213,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }内からGmailの閲覧、返信、最新情報の確認が行えます"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "メールを右クリックして「移動する」を選ぶか、他のカテゴリにドラックアンドドロップしてください。今後似たようなメールが自動的にそこにソートされます。"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "${ MAIL_APP_NAME }で直接Gmailメッセージを送受信できます。${ addressesSettingsLink }でお客様のアドレスを接続してください。"
@@ -4340,9 +4363,6 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "あなたのプランでは、合計${ MAX_SYNC_PAID_USER }件のGmailアドレスをサポートしています。"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Proton Mailの新機能であるカテゴリビューが正式リリースされる前に、いち早くお試しいただけます。お客様からのフィードバックは、Proton Mailのメール分類機能の改善に役立てられます。"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
@@ -5270,6 +5290,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "VAT番号は ${ prefixes } で始まる必要があります"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
       ],
       "Wrong billing address": [
         "請求先住所を変更"
@@ -7661,6 +7684,9 @@
       "Low Priority": [
         "優先度：低"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }を既定のメールアプリにする"
+      ],
       "Manage your folders": [
         "フォルダを管理"
       ],
@@ -8750,6 +8776,9 @@
       "You are about to open your default browser and visit:": [
         "既定のブラウザーで次のページにアクセスしようとしています"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
+      ],
       "You are currently signed in as ${ username }.": [
         "現在 ${ username } としてサインインしています。"
       ],
@@ -8804,11 +8833,20 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "受信箱に ${ totalLabel } があります。"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel }カテゴリ内に**${ count }件の会話**があります"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "このフォルダー内に **${ count } 件の会話**があります"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "このラベルがついた **${ count } 件の会話**があります"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "${ categoryLabel }カテゴリ内に**${ count }件のメッセージ**があります"
       ],
       "You have **${ count } message** stored in this folder": [
         "このフォルダー内に **${ count } 件のメッセージ**があります"
@@ -8821,6 +8859,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
+      ],
+      "You have no conversations in this category": [
+        "このカテゴリに会話はありません"
+      ],
+      "You have no messages in this category": [
+        "このカテゴリにメッセージはありません"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "このメールには件名がありません。このままメッセージを送信しますか？"
@@ -8836,6 +8880,12 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリ内の **${ checked } 件の会話**を選択しました"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリ内の **${ checked } 件のメッセージ**を選択しました"
       ],
       "You selected **${ count } conversation** from this folder": [
         "このフォルダー内の **${ count } 件の会話**を選択中"
@@ -9817,6 +9867,9 @@
       "Newsletters": [
         "ニュースレター"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "ニュースレター - ニュース、編集者からのメール、非プロモーションコンテンツ"
+      ],
       "No label found": [
         "ラベルが見つかりませんでした"
       ],
@@ -9904,8 +9957,14 @@
       "Primary": [
         "プライマリー"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "プライマリー - 個人と仕事のメール、それと重要なお知らせ"
+      ],
       "Promotions": [
         "プロモーション"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "プロモーション - お得な情報、オファー、マーケティングメール"
       ],
       "Proration": [
         "日割り計算"
@@ -9972,6 +10031,9 @@
       ],
       "Social": [
         "ソーシャル"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "ソーシャル - ソーシャルメディアの更新、アクティビティ、メッセージ"
       ],
       "Social media updates and activity": [
         "ソーシャルメディアの更新とアクティビティ"
@@ -10048,6 +10110,9 @@
       "Transactions": [
         "取引"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "取引 - 領収書、予約、請求書、注文"
+      ],
       "Undisclosed Recipients": [
         "非公開の宛先"
       ],
@@ -10059,6 +10124,9 @@
       ],
       "Updates": [
         "更新情報"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "アップデート - 自動的な確認、アラート、アカウントの更新"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -12218,6 +12286,12 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "Remind me later": [
+        "また後で通知する"
+      ],
+      "Yes, don't show again": [
+        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -14638,6 +14712,9 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } 件のメッセージを移動"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "${ label }に移動しました。今後似たようなメッセージがここにカテゴライズされます。"
+      ],
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
       ],
@@ -15314,9 +15391,6 @@
       "Help center": [
         "ヘルプ センター"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME }のメールカテゴリの未来を形作るお手伝いをしてください"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }でメールを非表示に"
       ],
@@ -15377,6 +15451,9 @@
       "Invalid verification code": [
         "無効な検証コードです"
       ],
+      "Keep this banner hidden?": [
+        "このバーナーを隠したままにしますか？"
+      ],
       "Label as": [
         "ラベル付け"
       ],
@@ -15403,6 +15480,9 @@
       ],
       "Make a secure connection your default": [
         "安全な接続を標準設定にする"
+      ],
+      "Make Categories your own": [
+        "カテゴリをあなただけのものに"
       ],
       "Mark all messages as read": [
         "すべてのメッセージを既読にする"
@@ -15512,6 +15592,9 @@
       "New message": [
         "新規メッセージ"
       ],
+      "New messages": [
+        "新メッセージ"
+      ],
       "Newsletters": [
         "ニュースレター"
       ],
@@ -15589,6 +15672,9 @@
       ],
       "Payment verification": [
         "支払いの検証"
+      ],
+      "Personalize your Categories": [
+        "カテゴリをパーソナライズ"
       ],
       "Phone numbers": [
         "電話番号"
@@ -15923,6 +16009,9 @@
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"
       ],
+      "You're in control": [
+        "あなたの思い通りに"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
@@ -15957,6 +16046,12 @@
     "Title header for keys table": {
       "Actions": [
         "操作"
+      ],
+      "Created": [
+        "作成しました"
+      ],
+      "Expires": [
+        "有効期限"
       ],
       "Fingerprint": [
         "指紋"
@@ -16063,6 +16158,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGPキー バージョン6"
       ]
     },
     "tooltip": {
