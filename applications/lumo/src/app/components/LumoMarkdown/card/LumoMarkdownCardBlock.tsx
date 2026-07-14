@@ -22,7 +22,7 @@ export const LumoMarkdownCardBlock = ({ code, language }: LumoMarkdownCardBlockP
         const spec = parseCardSpec(code);
 
         return (
-            <div className="lumo-insight-card-block">
+            <div className="lumo-insight-card-block w-full my-2 mb-3">
                 <LumoInsightCard spec={spec} />
             </div>
         );

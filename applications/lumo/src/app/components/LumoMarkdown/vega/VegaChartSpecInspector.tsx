@@ -64,18 +64,20 @@ export const VegaChartSpecPanel = ({
         activeView === 'rendered' ? c('Info').t`Rendered spec` : c('Info').t`Model output`;
 
     return (
-        <div className="vega-lite-chart__source-panel lumo-no-copy">
+        <div className="vega-lite-chart__source-panel lumo-no-copy border-top border-weak mt-3 pt-3">
             {renderError ? <p className="vega-lite-chart__source-error">{renderError}</p> : null}
             {sanitizeError && !renderedSpecJson ? (
                 <p className="vega-lite-chart__source-error">{sanitizeError}</p>
             ) : null}
             {hasDiff ? (
-                <div className="vega-lite-chart__source-switch" role="tablist" aria-label={c('Info').t`Chart spec view`}>
+                <div className="vega-lite-chart__source-switch flex flex-wrap gap-1.5 mb-2" role="tablist" aria-label={c('Info').t`Chart spec view`}>
                     <button
                         type="button"
                         role="tab"
                         aria-selected={activeView === 'rendered'}
-                        className={clsx('vega-lite-chart__source-switch-button', {
+                        className={clsx(
+                            'vega-lite-chart__source-switch-button border border-weak rounded-full',
+                            {
                             'vega-lite-chart__source-switch-button--active': activeView === 'rendered',
                         })}
                         onClick={() => setActiveView('rendered')}
@@ -86,7 +88,9 @@ export const VegaChartSpecPanel = ({
                         type="button"
                         role="tab"
                         aria-selected={activeView === 'raw'}
-                        className={clsx('vega-lite-chart__source-switch-button', {
+                        className={clsx(
+                            'vega-lite-chart__source-switch-button border border-weak rounded-full',
+                            {
                             'vega-lite-chart__source-switch-button--active': activeView === 'raw',
                         })}
                         onClick={() => setActiveView('raw')}

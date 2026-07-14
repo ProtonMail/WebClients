@@ -1,9 +1,11 @@
+import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { VisualizationSpec } from 'vega-embed';
 import embed, { type Result } from 'vega-embed';
 import { expressionInterpreter } from 'vega-interpreter';
 
+import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from '../lumoMarkdownCardShell';
 import { useLumoTheme } from '../../../providers';
 import { getRenderedSpecJson } from './chartSpecDisplay';
 import { getChartDownloadFilename } from './chartDownloadFilename';
@@ -22,6 +24,7 @@ interface VegaLiteChartProps {
 }
 
 const FALLBACK_CHART_WIDTH = 480;
+
 
 async function waitForLayoutWidth(element: HTMLElement, timeoutMs = 3000): Promise<void> {
     if (element.clientWidth > 0) {
@@ -58,16 +61,36 @@ function chartHasVisibleMarks(container: HTMLElement): boolean {
         return false;
     }
 
-    const box = svg.getBoundingClientRect();
-    if (box.width <= 0 || box.height <= 0) {
-        return false;
+    const markSelector =
+        'g.mark-group, g[class*="mark-"], path[class*="mark"], rect[class*="mark"], line[class*="mark"], circle[class*="mark"], text[class*="mark"]';
+    const marks = svg.querySelectorAll<SVGElement>(markSelector);
+
+    for (const mark of marks) {
+        if (mark.tagName === 'text' && mark.textContent?.trim()) {
+            return true;
+        }
+
+        const box = mark.getBoundingClientRect();
+        if (box.width > 0 && box.height > 0) {
+            return true;
+        }
     }
 
-    return (
-        svg.querySelector(
-            'g.mark-group, g[class*="mark-"], path[class*="mark"], rect[class*="mark"], line[class*="mark"], circle[class*="mark"]'
-        ) !== null
-    );
+    return svg.querySelector('rect[class*="mark"], path[class*="mark"], line[class*="mark"], circle[class*="mark"]') !== null;
+}
+
+async function mountChart(
+    container: HTMLElement,
+    spec: VisualizationSpec,
+    options: Parameters<typeof embed>[2]
+): Promise<Result> {
+    const result = await embedChart(container, spec, options);
+    await result.view.run();
+    result.view.resize();
+    await new Promise<void>((resolve) => {
+        requestAnimationFrame(() => resolve());
+    });
+    return result;
 }
 
 function specUsesContainerWidth(spec: VisualizationSpec): boolean {
@@ -182,12 +205,20 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
                     tooltip: dark ? { theme: 'dark' } : true,
                 } as Parameters<typeof embed>[2];
 
-                let result = await embedChart(container, spec, embedOptions);
+                const wantsContainerWidth = specUsesContainerWidth(spec);
+                const layoutWidth = chartShell.clientWidth;
+                const shouldUseFallback = wantsContainerWidth && layoutWidth === 0;
 
-                if (!chartHasVisibleMarks(container) && specUsesContainerWidth(spec)) {
+                let result = await mountChart(
+                    container,
+                    shouldUseFallback ? withFallbackWidth(spec) : spec,
+                    embedOptions
+                );
+
+                if (!chartHasVisibleMarks(container) && wantsContainerWidth && !shouldUseFallback) {
                     result.view.finalize();
                     container.replaceChildren();
-                    result = await embed(container, withFallbackWidth(spec), embedOptions);
+                    result = await mountChart(container, withFallbackWidth(spec), embedOptions);
                 }
 
                 if (cancelled) {
@@ -196,10 +227,8 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
                 }
 
                 embedResultRef.current = result;
-                await result.view.run();
-                result.view.resize();
 
-                if (!chartHasVisibleMarks(container) && specUsesContainerWidth(spec)) {
+                if (!chartHasVisibleMarks(container)) {
                     throw new Error('Chart rendered without visible marks');
                 }
 
@@ -243,9 +272,16 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
     const showFailedState = !!renderError || !!sanitizeError;
 
     return (
-        <div className={showFailedState ? 'vega-lite-chart vega-lite-chart--failed' : 'vega-lite-chart'}>
+        <div
+            className={clsx(
+                'vega-lite-chart relative overflow-hidden p-4 my-2 mb-5',
+                LUMO_MARKDOWN_CARD_SHELL_CLASS,
+                isRendering && 'border-none shadow-none',
+                showFailedState && 'vega-lite-chart--failed'
+            )}
+        >
             {showActions ? (
-                <div className="vega-lite-chart__actions lumo-no-copy">
+                <div className="vega-lite-chart__actions lumo-no-copy absolute flex gap-1">
                     {canDownload ? (
                         <VegaChartDownloadButton getView={getView} filename={downloadFilename} />
                     ) : null}
@@ -255,7 +291,7 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
                     />
                 </div>
             ) : null}
-            {!showFailedState ? <div ref={containerRef} className="vega-lite-chart__viewport" /> : null}
+            {!showFailedState ? <div ref={containerRef} className="vega-lite-chart__viewport w-full" /> : null}
             {isRendering ? <VegaChartLoadingOverlay /> : null}
             {showActions && specSourceExpanded ? (
                 <VegaChartSpecPanel

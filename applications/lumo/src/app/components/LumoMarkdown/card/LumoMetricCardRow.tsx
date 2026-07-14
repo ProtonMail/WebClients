@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 
+import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from '../lumoMarkdownCardShell';
 import { tryParseCardSpec } from './parseCardSpec';
 import { getMetricRowColumnCount } from './metricCardRowUtils';
 import { LumoMarkdownCardBlock } from './LumoMarkdownCardBlock';
@@ -11,8 +12,13 @@ interface LumoMetricCardRowProps {
 
 function MetricCardSkeleton() {
     return (
-        <div className="lumo-insight-card-block">
-            <div className="lumo-insight-card lumo-insight-card--metric lumo-insight-card--skeleton">
+        <div className="lumo-insight-card-block flex min-w-0">
+            <div
+                className={clsx(
+                    LUMO_MARKDOWN_CARD_SHELL_CLASS,
+                    'lumo-insight-card lumo-insight-card--metric lumo-insight-card--skeleton flex flex-1 flex-column min-h-full w-full p-4'
+                )}
+            >
                 <div className="lumo-insight-card__label">
                     <span className="lumo-insight-card__shimmer">&nbsp;</span>
                 </div>
@@ -34,7 +40,7 @@ export const LumoMetricCardRow = ({ cards, pendingSlot = false }: LumoMetricCard
         pendingSlot && reservedSlots < columnCount ? columnCount - reservedSlots : 0;
 
     return (
-        <div className={clsx('lumo-metric-card-row', `lumo-metric-card-row--${columnCount}`)}>
+        <div className={clsx('lumo-metric-card-row grid items-stretch gap-3 w-full my-2 mb-3', `lumo-metric-card-row--${columnCount}`)}>
             {cards.map((card, index) => (
                 <LumoMarkdownCardBlock
                     key={metricCardKey(card, index)}

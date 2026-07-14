@@ -296,6 +296,92 @@ describe('compileVegaSpec', () => {
         expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
     });
 
+    it('compiles layered horizontal MAU bars with growth labels after sanitization', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            data: {
+                values: [
+                    { product: 'Mail', mau: 921000, growth_pct: 3 },
+                    { product: 'VPN', mau: 638000, growth_pct: 1 },
+                    { product: 'Drive', mau: 312000, growth_pct: 8 },
+                    { product: 'Calendar', mau: 184000, growth_pct: 5 },
+                    { product: 'Lumo', mau: 48200, growth_pct: 22 },
+                ],
+            },
+            layer: [
+                {
+                    mark: { type: 'bar', cornerRadiusEnd: 4 },
+                    encoding: {
+                        y: { field: 'product', type: 'nominal', sort: '-x', title: null },
+                        x: { field: 'mau', type: 'quantitative', title: 'MAU', axis: { format: '~s' } },
+                        color: { field: 'product', type: 'nominal' },
+                        tooltip: [
+                            { field: 'product', type: 'nominal' },
+                            { field: 'mau', type: 'quantitative', format: ',', title: 'MAU' },
+                            { field: 'growth_pct', type: 'quantitative', format: '+d%', title: 'MoM Growth' },
+                        ],
+                    },
+                },
+                {
+                    mark: { type: 'text', align: 'left', dx: 6, fontSize: 11, fontWeight: 'bold' },
+                    encoding: {
+                        y: { field: 'product', type: 'nominal', sort: '-x' },
+                        x: { field: 'mau', type: 'quantitative' },
+                        text: { field: 'growth_pct', type: 'quantitative', format: '+d%' },
+                    },
+                },
+            ],
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const textLayer = (spec.layer as Record<string, unknown>[])[1]!;
+        const textEncoding = textLayer.encoding as Record<string, unknown>;
+
+        expect(textEncoding.text).toMatchObject({ field: 'growth_pct', format: '+.0f' });
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
+
+        const compiled = compile({ ...spec, width: 480 } as unknown as TopLevelSpec);
+        const collectMarkTypes = (marks: { type?: string; marks?: { type?: string; marks?: unknown[] }[] }[] | undefined): string[] =>
+            (marks ?? []).flatMap((mark) => [mark.type ?? 'unknown', ...collectMarkTypes(mark.marks as typeof marks)]);
+
+        expect(collectMarkTypes((compiled.spec as { marks?: { type?: string; marks?: unknown[] }[] }).marks)).toEqual(
+            expect.arrayContaining(['rect', 'text'])
+        );
+    });
+
+    it('compiles horizontal API route error bars after sanitization', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: {
+                text: 'Errors by API Route (24h)',
+                subtitle: '/v1/embed accounts for 52% of all errors; /v1/chat second at 22%',
+            },
+            data: {
+                values: [
+                    { route: '/v1/embed', errors: 42 },
+                    { route: '/v1/chat', errors: 18 },
+                    { route: '/v1/search', errors: 11 },
+                    { route: '/v1/models', errors: 6 },
+                    { route: '/v1/auth', errors: 4 },
+                ],
+            },
+            mark: { type: 'bar' },
+            encoding: {
+                x: { field: 'errors', type: 'quantitative', axis: { title: 'Error count' } },
+                y: { field: 'route', type: 'ordinal', axis: { title: 'Route' } },
+                color: { field: 'route', type: 'nominal', legend: null },
+            },
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const color = (spec.encoding as Record<string, unknown>).color as Record<string, unknown>;
+
+        expect((color.scale as Record<string, unknown>).domain).toBeUndefined();
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
+    });
+
     it('compiles hourly line chart with Excel-style :0 formats after sanitization', () => {
         const raw = JSON.stringify({
             $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
