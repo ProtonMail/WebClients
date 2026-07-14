@@ -2156,7 +2156,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2643,9 +2644,6 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloqueie ${ PASS_SHORT_APP_NAME } com sua segunda senha"
       ],
-      "Unlock with biometrics": [
-        "Desbloquear com a biometria"
-      ],
       "Unpinning item...": [
         "Desafiando item..."
       ],
@@ -3054,6 +3052,9 @@
       ],
       "Bank Name": [
         "Nome do banco"
+      ],
+      "Basic": [
+        "Básico"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Além de armazenar suas credenciais de início de sessão, o ${ PASS_APP_NAME } protege sua identidade com um recurso de alias de e-mail integrado.\n\nSempre que você criar uma conta online, o ${ PASS_APP_NAME } poderá criar um alias automaticamente para manter seu endereço real de e-mail protegido. "
@@ -3754,6 +3755,12 @@
       "Reddit handle": [
         "Usuário no Reddit"
       ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
+      "Relevant": [
+        "Relevante"
+      ],
       "Remove link": [
         "Remover link"
       ],
@@ -3879,6 +3886,9 @@
       ],
       "SSN": [
         "SSN"
+      ],
+      "Starts with": [
+        "Iniciar com"
       ],
       "State or province": [
         "Estado ou município"
@@ -4145,6 +4155,9 @@
       "${ count } item": [
         "${ count } item",
         "${ count } itens"
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
       ],
       "You can drag and drop the selected item to another vault": [
         "Você pode arrastar e soltar o item selecionado para outro cofre",
@@ -4842,6 +4855,9 @@
       "Last modified": [
         "Última modificação"
       ],
+      "Learn more": [
+        "Saiba mais"
+      ],
       "Leave this item?": [
         "Deixar este item?"
       ],
@@ -5041,6 +5057,9 @@
       "SPF (Optional)": [
         "SPF (Opcional)"
       ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
       "Status": [
         "Status"
       ],
@@ -5073,6 +5092,9 @@
       ],
       "Update available": [
         "Atualização disponível"
+      ],
+      "URL matching": [
+        "Correspondência de URL"
       ],
       "Vault": [
         "Cofre"

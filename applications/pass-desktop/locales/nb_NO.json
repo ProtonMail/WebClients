@@ -319,6 +319,9 @@
       "Do not show again when I press": [
         "Ikke vis igjen når jeg trykker"
       ],
+      "Do not show this again": [
+        "Ikke vis dette igjen"
+      ],
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
@@ -573,6 +576,12 @@
       ],
       "Regenerate": [
         "Generer på nytt"
+      ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Regex utrygg"
       ],
       "Reject": [
         "Avvis"
@@ -1215,6 +1224,12 @@
       "Failed to set default mailbox": [
         "Kan ikke angi standard postboks"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Klarte ikke å starte SSH-agenten: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Klarte ikke å stoppe SSH-agenten: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Kunne ikke synkronisere aliaser"
       ],
@@ -1610,6 +1625,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } vil bruke SSH-nøklene som er lagret i hvelvene dine."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } frakoblet modus aktivert."
       ],
@@ -1989,6 +2007,9 @@
       "finance": [
         "finans"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Finn \"OpenSSH Authentication Agent\", høyreklikk på Egenskaper."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil:"
       ],
@@ -2029,6 +2050,9 @@
       ],
       "Identity confirmed": [
         "Identitet bekreftet"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Hvis du ikke planlegger å bruke SSH-agenten på en annen betalt konto, husk å deaktivere denne innstillingen før du bytter til den kontoen."
       ],
       "Import the CSV file below.": [
         "Importer CSV-filen nedenfor."
@@ -2139,6 +2163,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Sørg for at ${ PASS_APP_NAME } kjører (kan minimeres) for at SSH-agenten skal forbli aktiv. SSH-nøkler med passordfrase støttes for øyeblikket ikke."
+      ],
       "Manager": [
         "Administrator"
       ],
@@ -2166,6 +2193,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2200,6 +2231,9 @@
       "No network connection": [
         "Ingen internettforbindelse"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "Ingen SSH-nøkler funnet i ${ PASS_SHORT_APP_NAME }. Opprett SSH-nøkkelelementer som skal brukes med agenten."
+      ],
       "No vaults available.": [
         "Ingen hvelv tilgjengelig."
       ],
@@ -2223,6 +2257,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Bare tokener som har utløpt i løpet av de siste 30 dagene vises. Eldre tokener slettes automatisk."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Åpne \"Tjenester\" (du kan bruke søkefeltet i Windows eller trykke på Win+R og skrive inn services.msc)."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Åpne Safari-innstillingene for utvidelsen og kontroller at nettstedstillatelser er aktivert for ${ BRAND_NAME }-domener"
@@ -2248,6 +2285,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke slettes automatisk fra historikken.",
         "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker slettes automatisk fra historikken."
+      ],
+      "Paste the following command in your terminal:": [
+        "Lim inn følgende kommando i terminalen din:"
       ],
       "Paused": [
         "Satt på pause"
@@ -2396,6 +2436,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet av ${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
       ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Rangert etter felt (tittel først, deretter brukernavn eller e-post, nettsted, notater) og samsvarspresisjon (nøyaktig, starter med, inneholder)."
+      ],
       "Read item": [
         "Les element"
       ],
@@ -2476,6 +2519,9 @@
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Sett \"Oppstartstype\" til Deaktivert, og klikk OK."
       ],
       "Set by your organization": [
         "Angitt av organisasjonen din"
@@ -2619,6 +2665,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Tips: legg den til i .bashrc- eller .zshrc-filen din, slik at den kjører automatisk når du åpner terminalen."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"
       ],
@@ -2633,6 +2682,9 @@
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "For å konfigurere biometrisk opplåsing krever ${ PASS_APP_NAME } en ny nettlesertillatelse. Etter at du har godtatt den, lastes utvidelsen inn på nytt. Åpne denne siden på nytt etterpå."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "For å bruke ${ PASS_APP_NAME } SSH-agenten på Windows, må OpenSSH-tjenesten være deaktivert."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Klarert av over 50 000 forretningsbrukere og 100 millioner kontoer rundt om i verden."
@@ -2660,9 +2712,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med det andre passordet ditt"
-      ],
-      "Unlock with biometrics": [
-        "Lås opp med biometri"
       ],
       "Unpinning item...": [
         "Løser element..."
@@ -3073,6 +3122,9 @@
       "Bank Name": [
         "Banknavn"
       ],
+      "Basic": [
+        "Grunnleggende"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "I tillegg til å lagre påloggingene dine, beskytter ${ PASS_APP_NAME } identiteten din med en integrert e-postaliasfunksjon. Hver gang du registrerer deg for en ny nettkonto, kan ${ PASS_APP_NAME } automatisk opprette et alias for å holde din faktiske e-postadresse beskyttet. "
       ],
@@ -3105,6 +3157,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Sjekk"
       ],
       "Checkbox": [
         "Avmerkingsboks"
@@ -3270,6 +3325,12 @@
       ],
       "Enter email or username": [
         "Skriv inn e-post eller brukernavn"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
       ],
       "Experimental": [
         "Eksperimentell"
@@ -3598,6 +3659,9 @@
       "Never": [
         "Aldri"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
       "New": [
         "Ny"
       ],
@@ -3660,6 +3724,9 @@
       ],
       "Owner": [
         "Eier"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
       ],
       "Passkey": [
         "Tilgangsnøkkel"
@@ -3771,6 +3838,12 @@
       ],
       "Reddit handle": [
         "Reddit-brukernavn"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Fjern kobling"
@@ -3897,6 +3970,9 @@
       ],
       "SSN": [
         "Fødselsnummer"
+      ],
+      "Starts with": [
+        "Begynner med"
       ],
       "State or province": [
         "Delstat eller provins"
@@ -4026,6 +4102,12 @@
       ],
       "Update": [
         "Oppdater"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Bruk ${ PASS_APP_NAME } som SSH-agent"
       ],
       "Use for AI agent": [
         "Bruk for KI-agent"
@@ -4163,6 +4245,24 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
+      ],
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan dra og slippe det valgte elementet til et annet hvelv",
@@ -4463,6 +4563,23 @@
         "Brukt på ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Skriv inn en URL for å sjekke om den nåværende regelen samsvarer med URL-en"
+      ],
+      "The rule is matching this URL": [
+        "Regelen samsvarer med denne nettadressen"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regelen samsvarer IKKE med denne URL-en"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denne nettadressen vil bli blokkert fra autofyll"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denne nettadressen vil IKKE bli blokkert fra autofyll"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
@@ -4614,6 +4731,12 @@
       "Random prefix generation successfully enabled": [
         "Generering av tilfeldige prefikser er aktivert"
       ],
+      "SSH agent successfully started": [
+        "SSH-agenten ble startet"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agenten ble stoppet"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } bruker.",
         "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } brukere."
@@ -4660,6 +4783,9 @@
       ],
       "Add mailbox": [
         "Legg til postboks"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Juster autofyll-atferden for å endre hvor pålogginger foreslås."
       ],
       "Agent setup instructions": [
         "Instruksjoner for agentoppsett"
@@ -4860,6 +4986,9 @@
       "Last modified": [
         "Sist endret"
       ],
+      "Learn more": [
+        "Lær mer"
+      ],
       "Leave this item?": [
         "Forlate dette elementet?"
       ],
@@ -5020,6 +5149,9 @@
       "Review and share": [
         "Se over og del"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Skjermbilde av OpenSSH-tjenesten på Windows"
+      ],
       "Secure your data": [
         "Sikre dataene dine"
       ],
@@ -5041,6 +5173,9 @@
       "Settings": [
         "Innstillinger"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Konfigurer ${ PASS_APP_NAME } SSH-agent"
+      ],
       "Setup offline mode": [
         "Konfigurer frakoblet modus"
       ],
@@ -5058,6 +5193,9 @@
       ],
       "SPF (Optional)": [
         "SPF (valgfritt)"
+      ],
+      "SSH Agent": [
+        "SSH-agent"
       ],
       "Status": [
         "Status"
@@ -5077,6 +5215,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synkroniser aliasene dine fra SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Test en URL mot denne regelen"
+      ],
       "Transfer ownership": [
         "Overfør eierskap"
       ],
@@ -5091,6 +5232,9 @@
       ],
       "Update available": [
         "Oppdatering tilgjengelig"
+      ],
+      "URL matching": [
+        "URL-samsvar"
       ],
       "Vault": [
         "Hvelv"
@@ -5206,6 +5350,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } frakoblet modus deaktivert."
@@ -5408,6 +5555,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Noe gikk galt under oppstart av ${ PASS_APP_NAME }. Prøv å oppdatere eller laste inn utvidelsen på nytt."
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agenten krever bruk av SSH-nøkler, noe som ikke er tilgjengelig i abonnementet ditt."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Aliasprefikset kan ikke være lenger enn 40 tegn."
       ],
@@ -5416,6 +5566,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denne e-postadressen vil ikke lenger overvåkes for datainnbrudd."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dette elementet kan ikke foreslås for autofyll på grunn av \"${ neverModeDescriptionStrong }\". Legg til en annen URL hvis du vil at dette elementet skal fylles ut automatisk."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dette elementet er for øyeblikket delt. Hvis du sletter det, fjernes tilgangen for alle andre brukere."
