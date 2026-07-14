@@ -1,8 +1,15 @@
-import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@protontech/crypto';
+
+import { useApi } from '@proton/components';
 import { createMeetingCall } from '@proton/shared/lib/api/meet';
-import { CustomPasswordState, MeetingType, ProtonCalendarState } from '@proton/shared/lib/interfaces/Meet';
+import {
+    CustomPasswordState,
+    MeetingType,
+    ProtonCalendarState,
+    WaitingRoomState,
+} from '@proton/shared/lib/interfaces/Meet';
 import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { CreateMeetingParams } from '../types/types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
@@ -16,12 +23,24 @@ export interface SaveMeetingParams {
 }
 
 export const useSaveMeeting = () => {
+    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+
     const api = useApi();
 
     const { reportMeetError } = useMeetErrorReporting();
 
     const saveMeeting = async ({
-        params: { customPassword, protonCalendar, meetingName, startTime, endTime, recurrence, timeZone, type },
+        params: {
+            customPassword,
+            protonCalendar,
+            meetingName,
+            startTime,
+            endTime,
+            recurrence,
+            timeZone,
+            type,
+            waitingRoom,
+        },
         privateKey,
         addressId,
         noPasswordSave = false,
@@ -65,6 +84,7 @@ export const useSaveMeeting = () => {
                     ProtonCalendar: !!protonCalendar
                         ? ProtonCalendarState.FROM_PROTON_CALENDAR
                         : ProtonCalendarState.NOT_FROM_PROTON_CALENDAR,
+                    ...(isMeetWaitingRoomEnabled ? { WaitingRoom: waitingRoom ?? WaitingRoomState.DISABLED } : {}),
                 }),
             });
 

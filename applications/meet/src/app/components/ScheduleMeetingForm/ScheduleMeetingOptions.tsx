@@ -7,6 +7,7 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants';
+import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
@@ -14,9 +15,18 @@ import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 
 import './ScheduleMeetingOptions.scss';
 
-const WaitingRoomCard = () => {
-    const [isWaitingRoomEnabled, setIsWaitingRoomEnabled] = useState(false);
+export type WaitingRoomChange = (value: WaitingRoomState) => void;
+
+const WaitingRoomCard = ({
+    waitingRoom,
+    onWaitingRoomChange,
+}: {
+    waitingRoom: WaitingRoomState;
+    onWaitingRoomChange: WaitingRoomChange;
+}) => {
     const { isPaidUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
+
+    const isWaitingRoomEnabled = waitingRoom === WaitingRoomState.ENABLED;
 
     const getDescription = () => {
         if (!isPaidUser) {
@@ -64,14 +74,20 @@ const WaitingRoomCard = () => {
                         return;
                     }
 
-                    setIsWaitingRoomEnabled(!isWaitingRoomEnabled);
+                    onWaitingRoomChange(isWaitingRoomEnabled ? WaitingRoomState.DISABLED : WaitingRoomState.ENABLED);
                 }}
             />
         </div>
     );
 };
 
-export const ScheduleMeetingOptions = () => {
+export const ScheduleMeetingOptions = ({
+    onWaitingRoomChange,
+    waitingRoom,
+}: {
+    onWaitingRoomChange: WaitingRoomChange;
+    waitingRoom: WaitingRoomState;
+}) => {
     const [showOptions, setShowOptions] = useState(false);
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
@@ -86,7 +102,7 @@ export const ScheduleMeetingOptions = () => {
                         size={5}
                         style={{ color: isPaidUser ? 'var(--interaction-weak-major-3)' : '#FEAE8A' }}
                     />
-                    <WaitingRoomCard />
+                    <WaitingRoomCard waitingRoom={waitingRoom} onWaitingRoomChange={onWaitingRoomChange} />
                 </div>
             )}
         </>

@@ -11,9 +11,17 @@ import { prepareMeetingCryptoData } from '@proton/meet/utils/cryptoUtils';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { rotatePersonalMeetingLink } from '@proton/shared/lib/api/meet';
 import type { RotatePersonalMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
-import { CustomPasswordState, MeetingType, ProtonCalendarState } from '@proton/shared/lib/interfaces/Meet';
+import {
+    CustomPasswordState,
+    MeetingType,
+    ProtonCalendarState,
+    WaitingRoomState,
+} from '@proton/shared/lib/interfaces/Meet';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useRotatePersonalMeetingLink = () => {
+    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+
     const api = useApi();
 
     const { reportMeetError } = useMeetErrorReporting();
@@ -57,6 +65,7 @@ export const useRotatePersonalMeetingLink = () => {
                     CustomPassword: CustomPasswordState.NO_PASSWORD,
                     Type: MeetingType.PERSONAL,
                     ProtonCalendar: ProtonCalendarState.NOT_FROM_PROTON_CALENDAR,
+                    ...(isMeetWaitingRoomEnabled ? { WaitingRoom: WaitingRoomState.DISABLED } : {}),
                 })
             );
 

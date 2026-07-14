@@ -1,6 +1,6 @@
 import type { ChatMessage } from 'livekit-client';
 
-import type { MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import type { MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 export interface CreateMeetingParams {
     meetingName: string;
@@ -11,6 +11,7 @@ export interface CreateMeetingParams {
     customPassword?: string;
     type?: MeetingType;
     protonCalendar?: boolean;
+    waitingRoom?: WaitingRoomState;
 }
 
 export enum UpsellModalTypes {
