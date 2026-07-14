@@ -206,7 +206,6 @@ const MainContainer = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
-    const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const isMspEnabled = useFlag('MspEnabled');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
@@ -316,7 +315,6 @@ const MainContainer = () => {
         isRetentionPoliciesEnabled,
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
-        isRolesAndPermissionsEnabled,
         isMspEnabled,
         isRecoverySettingsRedesignEnabled,
         isMnemonicAvailable,

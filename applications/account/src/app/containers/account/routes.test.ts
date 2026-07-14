@@ -36,7 +36,6 @@ const defaultFlags: Flags = {
     isAuthenticatorAvailable: false,
     isCategoryViewEnabled: false,
     isRecoveryContactsEnabled: false,
-    isRolesAndPermissionsEnabled: false,
     isRecoverySettingsRedesignEnabled: false,
 };
 
