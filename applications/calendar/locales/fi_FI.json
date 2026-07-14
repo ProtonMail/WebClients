@@ -261,6 +261,9 @@
       "Create": [
         "Luo"
       ],
+      "Create a booking page": [
+        "Luo varaussivu"
+      ],
       "Create a free account": [
         "Luo ilmainen tili"
       ],
@@ -785,8 +788,14 @@
       "See plan features": [
         "Näytä tilauksen ominaisuudet"
       ],
+      "See previous availability": [
+        "Näytä edellinen tavoitettavuus"
+      ],
       "See upcoming availability": [
         "Katso tuleva saatavuus"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Valitse ${ dateHeaderLongString } klo ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Valitse ${ planOrAppName }"
@@ -949,6 +958,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for 200GB": [
+        "Päivitä 200 Gt:n tilaukseen"
       ],
       "Upgrade Now": [
         "Päivitä tilaus nyt"
@@ -3281,6 +3293,9 @@
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Saat pian turvallisen sähköpostin, joka sisältää tiedot."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
@@ -3753,6 +3768,9 @@
       "Failed to create meeting": [
         "Kokouksen luominen epäonnistui"
       ],
+      "Failed to decrypt session key": [
+        "Istuntoavaimen salauksen purku epäonnistui"
+      ],
       "Failed to get event": [
         "Tapahtuman lataus epäonnistui"
       ],
@@ -3867,6 +3885,9 @@
       ],
       "Network error": [
         "Verkkovirhe"
+      ],
+      "No booking page data received": [
+        "Varaussivun tietoja ei vastaanotettu"
       ],
       "No calendars found to import": [
         "Tuotavia kalentereita ei löytynyt"
@@ -4145,11 +4166,17 @@
       "VAT number must start with ${ prefixes }": [
         "ALV-numeron on alettava etuliitteellä ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
+      ],
       "Wrong billing address": [
         "Virheellinen laskutusosoite"
       ],
       "You already added this holidays calendar": [
         "Olet jo lisännyt nämä yleiset vapaapäivät"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Yhteys Zoomiin on palautettu. Voitte tallentaa tapahtuman nyt."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -5398,6 +5425,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumista niiden nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
+      "Appointment duration": [
+        "Tapaamisen kesto"
+      ],
       "Are you sure you want to delete this booking page?": [
         "Haluatko varmasti poistaa tämän varaussivun?"
       ],
@@ -5436,6 +5466,9 @@
       ],
       "Booking page deleted": [
         "Varaussivu poistettu"
+      ],
+      "Booking page example": [
+        "Esimerkki varaussivusta"
       ],
       "Booking updated successfully": [
         "Varaus päivitettiin onnistuneesti"
@@ -5693,6 +5726,9 @@
       "Failed to update meeting name": [
         "Kokouksen nimen päivitys epäonnistui"
       ],
+      "Failed to update meeting password": [
+        "Kokouksen salasanan päivitys epäonnistui"
+      ],
       "Failed to update meeting schedule": [
         "Kokouksen aikataulun päivitys epäonnistui"
       ],
@@ -5790,6 +5826,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
+      "In which calendar should bookings appear?": [
+        "Missä kalenterissa varausten tulisi näkyä?"
+      ],
       "Included": [
         "Sisältyy"
       ],
@@ -5843,6 +5882,9 @@
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Lue, mitä tehdä, ${ dataLeakedLink }"
+      ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Antakaa muiden varata aikaa kanssanne automaattisesti ilman sähköpostiviestittelyä edestakaisin. Jakakaa linkki ja hallitkaa omaa tavoitettavuuttanne."
       ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
@@ -6152,6 +6194,9 @@
       "Setting up your new address…": [
         "Määritetään uutta osoitettasi…"
       ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Jakakaa tämä sivu, jotta muut voivat varata aikaa kalenteristanne. Löydätte sivun ja voitte muokata sitä sivupalkin kohdassa Varaussivut."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
@@ -6194,6 +6239,9 @@
       ],
       "Symbols (#$&)": [
         "Symbolit (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Ottakaa digitaalinen elämänne hallintaan"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
@@ -6242,6 +6290,12 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Tätä varaussivua ei voi muokata, sillä siihen liittyvä kalenteri on poistettu käytöstä"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Tämä varaus tehtiin palvelun ${ CALENDAR_APP_NAME } kautta, joka on osa ${ BRAND_NAME }-tuoteperheen yksityisyyden ensisijalle asettavia tuotteita."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Järjestäjä on päivittänyt tapahtuman. Haluatko vaihtaa vastauksesi vain ketjun tälle tapahtumalle?"
@@ -6405,6 +6459,12 @@
       "Week and month views only apply to desktop.": [
         "Viikko- ja kuukaisinäkymät koskevat vain työpöytäkäyttöä."
       ],
+      "What do you want to call this booking page?": [
+        "Minkä nimen haluatte antaa tälle varaussivulle?"
+      ],
+      "When can appointments be booked?": [
+        "Milloin tapaamisia voi varata?"
+      ],
       "When working remotely": [
         "Etätyöskennellessä"
       ],
@@ -6467,6 +6527,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Olet nyt kirjautuneena ${ username } tilille."
@@ -6606,6 +6669,9 @@
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ilmainen kokeilujaksosi muunnettiin onnistuneesti ${ cycle } kuukauden tilaukseksi. Uusimispäivämääräsi on ${ nextBillingDate }."
       ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ilmainen kokeilunne muunnettiin onnistuneesti kuukausitilaukseksi. Uusiutumispäivänne on ${ nextBillingDate }."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
       ],
@@ -6657,6 +6723,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Menetätte myös ${ boldPlanTitle }-ominaisuuksien käyttöoikeuden:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Menetätte pääsyn tilaukseen ${ boldPlanTitle } ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
@@ -6872,6 +6941,9 @@
       "Account holder": [
         "Tilinhaltija"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Lisää ${ MEET_APP_NAME } -konferenssi"
+      ],
       "Add email address": [
         "Lisää sähköpostiosoite"
       ],
@@ -7079,6 +7151,12 @@
       "Every": [
         "Joka"
       ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
+      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -7193,6 +7271,9 @@
       "Navigation": [
         "Navigaatio"
       ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
       "New password": [
         "Uusi salasana"
       ],
@@ -7222,6 +7303,9 @@
       ],
       "Organizer": [
         "Järjestäjä"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
       "participant": [
         "osallistuja",
@@ -7281,6 +7365,9 @@
       "Region": [
         "Alue"
       ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Poista ${ MEET_APP_NAME } videokonferenssi"
       ],
@@ -7319,6 +7406,9 @@
       ],
       "Start date": [
         "Aloituspäivä"
+      ],
+      "Starts with": [
+        "Alkaa"
       ],
       "State": [
         "Osavaltio"
@@ -7367,6 +7457,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
       ],
       "Username": [
         "Käyttäjätunnus"
@@ -7430,11 +7523,20 @@
       ]
     },
     "label": {
+      "Date of the booking range": [
+        "Varausajanjakson päivämäärä"
+      ],
+      "End time of the booking range": [
+        "Varausajanjakson päättymisaika"
+      ],
       "How long should an appointment last?": [
         "Kuinka kauan kokouksen pitäisi kestää?"
       ],
       "Start time of the booking range": [
         "Varausajanjakson aloitusaika"
+      ],
+      "What should people know about this appointment?": [
+        "Mitä ihmisten tulisi tietää tästä tapaamisesta?"
       ]
     },
     "Label for contact group color": {
@@ -7784,11 +7886,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
       "Fw:": [
         "Vl:"
       ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
+      ],
       "Re:": [
         "Vs:"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ilmainen kokeilusi on päättynyt. ${ nonAutoRenewalAction }"
@@ -9186,6 +9306,9 @@
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Viimeinen tilaisuus saada 80 % alennusta ensimmäisestä kuukaudestanne tilauksesta ${ plan }."
+      ],
       "Last day to save": [
         "Viimeisin tallennettava päivä"
       ],
@@ -9216,6 +9339,12 @@
       "This offer won't be shown again.": [
         "Tätä tarjousta ei näytetä uudelleen"
       ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tuottavuutenne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tallennustilanne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
       "When you switch from a monthly to annual subscription.": [
         "Kun vaihdat kuukausittaisesta tilauksesta vuosittaiseen."
       ],
@@ -9241,6 +9370,9 @@
       "Advanced threat protection": [
         "Edistynyt uhkasuojaus"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Tee yhteistyötä muiden kuin ${ BRAND_NAME } -käyttäjien kanssa"
+      ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
@@ -9264,6 +9396,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "Huippunopeat VPN-yhteydet yli 110 maassa"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Rajattomasti aliaksia henkilöllisyytenne suojaamiseksi"
       ]
     },
     "Onboarding": {
@@ -9333,11 +9468,20 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Voitte silti peruuttaa 30 päivän kuluessa ja saada suhteellisen hyvityksen."
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Voitte edelleen peruuttaa tilauksen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
+      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Voitte käyttää tilausta ${ planTitle } kokeilun päättymiseen saakka veloituksetta."
       ]
     },
     "Option": {
@@ -9881,6 +10025,9 @@
       ],
       "E.g., ": [
         "Esim. "
+      ],
+      "Email for booking confirmation": [
+        "Sähköpostiosoite varausvahvistusta varten"
       ],
       "Enter a name": [
         "Syötä nimi"
@@ -10790,11 +10937,23 @@
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hankkikaa 500 Gt kaikkien tiedostojenne ja valokuvienne turvalliseen tallentamiseen"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Käyttäkää huippunopeita VPN-palvelimia yli 110 maassa"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hankkikaa yksi tilaus, joka sisältää kaiken: hankkikaa ${ BRAND_NAME } Unlimited"
+      ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Suojatkaa tilinne uhilta Sentinelin avulla"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
@@ -10832,6 +10991,9 @@
       ],
       "Custom event colors": [
         "Omat tapahtumavärit"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Ajoittakaa ${ MEET_APP_NAME } -puhelut ja liittykää niihin suoraan kalenteristanne."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Luo ja lisää videokokouslinkkejä tapahtumiisi saumattomasti."
@@ -11057,6 +11219,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa teille pääsyn kaikkiin premium-ominaisuuksiin palveluissa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Yksityisyys on sisäänrakennettu, joten voitte jatkaa toimintaanne tietäen, että tietonne ja henkilöllisyytenne ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -11809,6 +11974,9 @@
       "Apply gift code": [
         "Käytä lahjakoodia"
       ],
+      "Appointment details": [
+        "Tapaamisen tiedot"
+      ],
       "Are you sure?": [
         "Oletko varma?"
       ],
@@ -12409,6 +12577,12 @@
       "Upgrade to keep your premium benefits.": [
         "Päivitä säilyttääksesi premium-etusi."
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tuottavuutenne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tallennustilanne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
       ],
@@ -12781,6 +12955,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",

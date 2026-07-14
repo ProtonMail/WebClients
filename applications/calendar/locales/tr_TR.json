@@ -4226,6 +4226,9 @@
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Bu yöntemle doğrulama kodunu gönderemedik."
+      ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
       ],
@@ -6588,6 +6591,9 @@
       "You are about to open your default browser and visit:": [
         "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
       "You are currently signed in as ${ username }.": [
         "Şu anda ${ username } olarak oturum açmışsınız."
       ],
@@ -7208,6 +7214,12 @@
       "Every": [
         "Her"
       ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
+      ],
       "Expires": [
         "Geçerlilik süresi sonu"
       ],
@@ -7322,6 +7334,9 @@
       "Navigation": [
         "Gezinme"
       ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
       "New password": [
         "Yeni parola"
       ],
@@ -7351,6 +7366,9 @@
       ],
       "Organizer": [
         "Düzenleyici"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
       ],
       "participant": [
         "katılımcı",
@@ -7410,6 +7428,9 @@
       "Region": [
         "Bölge"
       ],
+      "Regular expression": [
+        "Düzenli ifade"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } görüntülü görüşmesini kaldır"
       ],
@@ -7448,6 +7469,9 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
+      ],
+      "Starts with": [
+        "Şununla başlar"
       ],
       "State": [
         "İl"
@@ -7496,6 +7520,9 @@
       ],
       "URL": [
         "İnternet adresi"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -7922,11 +7949,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
       "Fw:": [
         "İlt:"
       ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
+      ],
       "Re:": [
         "Ynt:"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -12991,6 +13036,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",

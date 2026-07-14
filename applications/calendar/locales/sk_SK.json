@@ -4304,6 +4304,9 @@
       "VAT number must start with ${ prefixes }": [
         "Číslo DIČ musí začínať predponami ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
+      ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
       ],
@@ -6764,6 +6767,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "V súčasnosti používate účet ako ${ username }."
       ],
@@ -7402,6 +7408,12 @@
       "Every": [
         "Každý"
       ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
       "Expires": [
         "Exspiruje"
       ],
@@ -7516,6 +7528,9 @@
       "Navigation": [
         "Navigácia"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
       "New password": [
         "Nové heslo"
       ],
@@ -7545,6 +7560,9 @@
       ],
       "Organizer": [
         "Organizátor"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "participant": [
         "účastník",
@@ -7606,6 +7624,9 @@
       "Region": [
         "Kraj"
       ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Odstrániť videokonferenciu ${ MEET_APP_NAME }"
       ],
@@ -7644,6 +7665,9 @@
       ],
       "Start date": [
         "Dátum začiatku"
+      ],
+      "Starts with": [
+        "Začína s"
       ],
       "State": [
         "Štát"
@@ -7692,6 +7716,9 @@
       ],
       "URL": [
         "Odkaz"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ],
       "Username": [
         "Používateľské meno"
@@ -8142,11 +8169,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
       "Fw:": [
         "Fw:"
       ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
@@ -13477,6 +13522,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
