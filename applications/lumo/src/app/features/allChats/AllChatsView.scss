@@ -2,6 +2,8 @@
 	--all-chats-preview-color: #9294a0;
 	--all-chats-favorite-color: #f0a417;
 	--all-chats-tile-radius: 11px;
+	--all-chats-icon-background-color: var(--background-upsell-toggle);
+	--all-chats-icon-color: var(--interaction-norm-hover);
 }
 
 .all-chats-panel {
@@ -88,10 +90,10 @@
 }
 
 .all-chats-row-tile {
-	background-color: var(--background-upsell-toggle);
+	background-color: var(--all-chats-icon-background-color);
+	color: var(--all-chats-icon-color);
 	block-size: 40px;
 	border-radius: var(--all-chats-tile-radius);
-	color: var(--interaction-norm-hover);
 	inline-size: 40px;
 }
 
@@ -154,4 +156,9 @@
 	color: var(--all-chats-preview-color);
 	font-size: 0.875rem;
 	font-weight: 500;
+}
+
+.all-chats-empty-icon {
+	color: var(--all-chats-icon-color);
+	background-color: var(--all-chats-icon-background-color);
 }
