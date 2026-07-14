@@ -141,6 +141,104 @@ function getPolarEncodings(encoding: Record<string, unknown>): Record<string, un
     return shared;
 }
 
+const LAYER_UNIT_KEYS = ['mark', 'layer', 'facet', 'repeat', 'spec', 'vconcat', 'hconcat', 'concat'] as const;
+
+function visitLayerParents(spec: Record<string, unknown>, visit: (node: Record<string, unknown>) => void): void {
+    visit(spec);
+
+    for (const key of ['vconcat', 'hconcat', 'concat', 'layer'] as const) {
+        const children = spec[key];
+        if (!Array.isArray(children)) {
+            continue;
+        }
+
+        for (const child of children) {
+            if (child && typeof child === 'object' && !Array.isArray(child)) {
+                visitLayerParents(child as Record<string, unknown>, visit);
+            }
+        }
+    }
+
+    const nestedSpec = spec.spec;
+    if (nestedSpec && typeof nestedSpec === 'object' && !Array.isArray(nestedSpec)) {
+        visitLayerParents(nestedSpec as Record<string, unknown>, visit);
+    }
+}
+
+function isValidLayerUnit(layer: unknown): layer is Record<string, unknown> {
+    if (!layer || typeof layer !== 'object' || Array.isArray(layer)) {
+        return false;
+    }
+
+    const layerObj = layer as Record<string, unknown>;
+    return LAYER_UNIT_KEYS.some((key) => {
+        if (key === 'mark') {
+            return !!layerObj.mark;
+        }
+
+        if (key === 'layer' || key === 'vconcat' || key === 'hconcat' || key === 'concat') {
+            return Array.isArray(layerObj[key]) && (layerObj[key] as unknown[]).length > 0;
+        }
+
+        return !!layerObj[key];
+    });
+}
+
+/**
+ * LLMs sometimes emit placeholder `{}` entries inside `layer` when mixing a root unit spec with
+ * highlight overlays. Vega-Lite treats each layer child as a full unit spec, so `{}` fails compile.
+ */
+export function normalizeLayeredChartUnits(spec: Record<string, unknown>): void {
+    visitLayerParents(spec, (node) => {
+        const layers = node.layer;
+        if (!Array.isArray(layers) || layers.length === 0) {
+            return;
+        }
+
+        const validLayers = layers.filter(isValidLayerUnit);
+        if (validLayers.length === 0) {
+            delete node.layer;
+            return;
+        }
+
+        let baseEncoding: Record<string, unknown> | undefined;
+        for (const layer of validLayers) {
+            const encoding = layer.encoding as Record<string, unknown> | undefined;
+            if (encoding?.x && encoding?.y) {
+                baseEncoding = encoding;
+                break;
+            }
+        }
+
+        node.layer = validLayers.map((layer) => {
+            if (!layer.mark || !baseEncoding) {
+                return layer;
+            }
+
+            const layerObj = { ...layer };
+            const encoding = {
+                ...(layerObj.encoding && typeof layerObj.encoding === 'object' && !Array.isArray(layerObj.encoding)
+                    ? (layerObj.encoding as Record<string, unknown>)
+                    : {}),
+            };
+
+            if (!encoding.x && baseEncoding.x) {
+                encoding.x = baseEncoding.x;
+            }
+
+            if (!encoding.y && baseEncoding.y) {
+                encoding.y = baseEncoding.y;
+            }
+
+            if (Object.keys(encoding).length > 0) {
+                layerObj.encoding = encoding;
+            }
+
+            return layerObj;
+        });
+    });
+}
+
 /**
  * LLMs often emit a unit chart (mark + encoding) alongside a `layer` array for labels.
  * Vega-Lite then ignores the root unit and only compiles the layer — e.g. donut + text
@@ -160,7 +258,7 @@ export function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void 
     const polarEncodings = getPolarEncodings(rootEncoding);
     const rootMarkType = getMarkTypeFromNode(spec);
 
-    const normalizedLayers = layers.map((layer) => {
+    const normalizedLayers = layers.filter(isValidLayerUnit).map((layer) => {
         if (!layer || typeof layer !== 'object' || Array.isArray(layer)) {
             return layer;
         }
@@ -576,6 +674,7 @@ export function normalizeVegaLiteSpec(spec: Record<string, unknown>): Record<str
     normalizeTitle(normalized);
     stripFullVegaKeys(normalized);
     normalizeRootUnitWithLayer(normalized);
+    normalizeLayeredChartUnits(normalized);
     normalizeWideDataLayerCharts(normalized);
 
     const result = splitDualAxisCharts(
@@ -603,6 +702,163 @@ export function normalizeVegaLiteSpec(spec: Record<string, unknown>): Record<str
     repairInteractiveSpec(result);
     return result;
 }
+
+const ARC_CENTROID_THETA_FIELD = 'centroid';
+const ARC_CHART_HEIGHT = 280;
+const ARC_BOTTOM_LEGEND = {
+    orient: 'bottom',
+    direction: 'horizontal',
+    title: null,
+    labelFontSize: 10,
+    symbolSize: 80,
+    columnPadding: 12,
+} as const;
+
+function getEncodingField(encoding: Record<string, unknown>, channel: string): string | null {
+    const channelEncoding = encoding[channel] as Record<string, unknown> | undefined;
+    return typeof channelEncoding?.field === 'string' ? channelEncoding.field : null;
+}
+
+function isArcTextLabelLayer(layer: Record<string, unknown>): boolean {
+    return getMarkTypeFromNode(layer) === 'text';
+}
+
+function shouldRemoveArcTextLayer(arcEncoding: Record<string, unknown>, textLayer: Record<string, unknown>): boolean {
+    const textEncoding = textLayer.encoding as Record<string, unknown> | undefined;
+    if (!textEncoding) {
+        return true;
+    }
+
+    const thetaField = getEncodingField(arcEncoding, 'theta');
+    const textField = getEncodingField(textEncoding, 'text');
+    const textThetaField = getEncodingField(textEncoding, 'theta');
+
+    if (textThetaField === ARC_CENTROID_THETA_FIELD) {
+        return true;
+    }
+
+    if (thetaField && (textField === thetaField || textThetaField === thetaField)) {
+        return true;
+    }
+
+    return true;
+}
+
+function configureArcLegendAndTooltips(arcLayer: Record<string, unknown>): void {
+    const encoding = arcLayer.encoding as Record<string, unknown> | undefined;
+    if (!encoding) {
+        return;
+    }
+
+    const color = encoding.color;
+    if (color && typeof color === 'object' && !Array.isArray(color) && 'field' in color) {
+        const colorEncoding = color as Record<string, unknown>;
+        colorEncoding.legend = ARC_BOTTOM_LEGEND;
+    }
+
+    if (encoding.tooltip) {
+        return;
+    }
+
+    const thetaField = getEncodingField(encoding, 'theta');
+    const categoryField = getEncodingField(encoding, 'color');
+    const tooltip: Record<string, unknown>[] = [];
+
+    if (categoryField) {
+        tooltip.push({ field: categoryField, type: 'nominal' });
+    }
+
+    if (thetaField) {
+        tooltip.push({
+            field: thetaField,
+            type: 'quantitative',
+            format: '.0f',
+            title: 'Share (%)',
+        });
+    }
+
+    if (tooltip.length > 0) {
+        encoding.tooltip = tooltip;
+    }
+}
+
+function getArcChartLayer(spec: Record<string, unknown>): Record<string, unknown> | null {
+    if (getMarkTypeFromNode(spec) === 'arc') {
+        return spec;
+    }
+
+    const layers = spec.layer;
+    if (!Array.isArray(layers)) {
+        return null;
+    }
+
+    for (const layer of layers) {
+        if (layer && typeof layer === 'object' && !Array.isArray(layer) && getMarkTypeFromNode(layer) === 'arc') {
+            return layer as Record<string, unknown>;
+        }
+    }
+
+    return null;
+}
+
+function isArcChartSpec(spec: Record<string, unknown>): boolean {
+    return getArcChartLayer(spec) !== null;
+}
+
+function scaleArcMarkRadii(mark: Record<string, unknown>, targetOuterRadius: number): void {
+    const outer = mark.outerRadius;
+    if (typeof outer !== 'number' || outer >= targetOuterRadius * 0.9) {
+        return;
+    }
+
+    const scale = targetOuterRadius / outer;
+    mark.outerRadius = Math.round(outer * scale);
+    if (typeof mark.innerRadius === 'number') {
+        mark.innerRadius = Math.round(mark.innerRadius * scale);
+    }
+}
+
+/**
+ * LLM donut specs often use:
+ * - a separate text layer with precomputed `centroid` theta values (invalid positioning)
+ * - numeric text labels that overlap and duplicate the legend
+ * - fixed pixel radii that look tiny inside responsive cards
+ * - layer-only arc specs where the label layer never inherits polar encodings
+ */
+export function normalizeArcDonutCharts(spec: Record<string, unknown>): void {
+    const arcLayer = getArcChartLayer(spec);
+    if (!arcLayer) {
+        return;
+    }
+
+    const arcEncoding = arcLayer.encoding as Record<string, unknown> | undefined;
+    if (!arcEncoding) {
+        return;
+    }
+
+    const chartHeight = typeof spec.height === 'number' ? spec.height : ARC_CHART_HEIGHT;
+    const targetOuterRadius = Math.round(Math.min(chartHeight * 0.36, 115));
+
+    const arcMark = arcLayer.mark;
+    if (arcMark && typeof arcMark === 'object' && !Array.isArray(arcMark)) {
+        scaleArcMarkRadii(arcMark as Record<string, unknown>, targetOuterRadius);
+    }
+
+    const layers = spec.layer;
+    if (Array.isArray(layers)) {
+        spec.layer = layers.filter((layer) => {
+            if (!layer || typeof layer !== 'object' || Array.isArray(layer)) {
+                return true;
+            }
+
+            return !isArcTextLabelLayer(layer) || !shouldRemoveArcTextLayer(arcEncoding, layer);
+        });
+    }
+
+    configureArcLegendAndTooltips(arcLayer);
+}
+
+export { isArcChartSpec };
 
 function isDiscreteFieldType(type: unknown): boolean {
     return type === 'ordinal' || type === 'nominal';

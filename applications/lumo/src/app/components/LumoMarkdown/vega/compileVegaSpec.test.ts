@@ -266,7 +266,7 @@ describe('compileVegaSpec', () => {
         const markTypes = (compiled.spec as { marks?: { type?: string }[] }).marks?.map((mark) => mark.type);
 
         expect(markTypes).toContain('arc');
-        expect(markTypes).toContain('text');
+        expect(markTypes).not.toContain('text');
     });
 
     it('compiles hourly error bars with datum test highlight colors after sanitization', () => {
@@ -379,6 +379,94 @@ describe('compileVegaSpec', () => {
         const color = (spec.encoding as Record<string, unknown>).color as Record<string, unknown>;
 
         expect((color.scale as Record<string, unknown>).domain).toBeUndefined();
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
+    });
+
+    it('compiles authentication donut charts after sanitization', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: {
+                text: 'Lumo Authentication Methods',
+                subtitle: 'Password remains dominant (41%), modern auth (Passkey + OAuth + SSO) at 56%',
+            },
+            layer: [
+                {
+                    mark: { type: 'arc', outerRadius: 80, innerRadius: 40 },
+                    encoding: {
+                        theta: { field: 'percent', type: 'quantitative' },
+                        color: { field: 'method', type: 'nominal', legend: null },
+                    },
+                },
+                {
+                    mark: { type: 'text', radius: 60 },
+                    encoding: {
+                        theta: { field: 'centroid', type: 'quantitative' },
+                        text: { field: 'label', type: 'nominal' },
+                    },
+                },
+            ],
+            data: {
+                values: [
+                    { method: 'Password', percent: 41, label: '41%', centroid: 180 },
+                    { method: 'SSO', percent: 29, label: '29%', centroid: 308 },
+                    { method: 'OAuth', percent: 19, label: '19%', centroid: 438 },
+                    { method: 'Passkey', percent: 8, label: '8%', centroid: 522 },
+                    { method: 'Other', percent: 3, label: '3%', centroid: 558 },
+                ],
+            },
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const arcLayer = (spec.layer as Record<string, unknown>[])[0]!;
+        const arcEncoding = arcLayer.encoding as Record<string, unknown>;
+
+        expect(spec.autosize).toEqual({ type: 'fit', contains: 'padding' });
+        expect((spec.layer as Record<string, unknown>[]).length).toBe(1);
+        expect(arcEncoding.color).toMatchObject({
+            legend: {
+                orient: 'bottom',
+                direction: 'horizontal',
+                title: null,
+            },
+        });
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
+    });
+
+    it('compiles hourly line chart with empty layer placeholder and area highlight', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: {
+                text: 'API Error Rate by Hour (UTC)',
+                subtitle: 'Spike at 14-15h reached 1.34% (2.8× baseline) post config push',
+            },
+            data: {
+                values: Array.from({ length: 24 }, (_, hour) => ({
+                    hour,
+                    rate: hour === 14 ? 1.34 : hour === 15 ? 1.28 : 0.4,
+                })),
+            },
+            mark: { type: 'line', point: true, interpolate: 'monotone' },
+            encoding: {
+                x: { field: 'hour', type: 'ordinal', axis: { title: 'Hour (UTC)' } },
+                y: { field: 'rate', type: 'quantitative', axis: { title: 'Error rate (%)' } },
+                color: { field: 'rate', type: 'quantitative', legend: null },
+            },
+            layer: [
+                {},
+                {
+                    transform: [{ filter: 'datum.hour >= 14 && datum.hour <= 15' }],
+                    mark: { type: 'area', opacity: 0.3 },
+                },
+            ],
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const layers = spec.layer as Record<string, unknown>[];
+
+        expect(layers.length).toBe(2);
+        expect(layers.every((layer) => Object.keys(layer).length > 0)).toBe(true);
         expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
     });
 

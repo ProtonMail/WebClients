@@ -58,7 +58,9 @@ Chart titles (required on every spec):
 Chart-type guidance:
 
 LINE / AREA — time-series and trends. Use \`"interpolate": "monotone"\`. Multiple same-unit series:
-one chart with fold + \`color\` encoding, or \`layer\`.
+one chart with fold + \`color\` encoding, or \`layer\`. When using \`layer\`, put **every** mark in the
+\`layer\` array (no root \`mark\`/\`encoding\`) and never emit empty \`{}\` placeholders. Highlight
+overlays must include \`mark\`, \`encoding\` (at least \`x\` and \`y\`), and any \`transform\`.
 
 BAR — default for **hourly / daily / monthly** single-series comparisons (error rate by hour,
 traffic by day, etc.). Vertical bars for time/ordinal x. Horizontal when category labels are long.
@@ -68,9 +70,10 @@ with \`datum\` expressions.
 
 SCATTER / BUBBLE — relationships between two quantitative variables.
 
-PIE / DONUT — part-of-whole only, ≤ 7 slices. Not for time-series. Put arc and any label text in
-\`layer\` (do not combine root-level \`mark\`/\`encoding\` with \`layer\`). Label layers must repeat
-\`encoding.theta\` (and \`encoding.color\` when used) from the arc layer.
+PIE / DONUT — part-of-whole only, ≤ 7 slices. Not for time-series. Use a single arc layer only;
+do **not** add a separate text label layer (slice labels overlap and duplicate the legend). Rely on
+\`encoding.color.legend\` for slice names and tooltips for values. Put arc in \`layer\` when the spec
+has other layers (do not combine root-level \`mark\`/\`encoding\` with \`layer\`).
 
 BOX PLOT — distribution comparisons; use \`mark: "boxplot"\` directly.
 

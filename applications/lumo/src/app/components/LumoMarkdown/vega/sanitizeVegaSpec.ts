@@ -1,6 +1,6 @@
 import type { VisualizationSpec } from 'vega-embed';
 
-import { normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding } from './normalizeVegaLiteSpec';
+import { normalizeVegaLiteSpec, normalizeArcDonutCharts, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding } from './normalizeVegaLiteSpec';
 import { applyProtonChartPolish, applyProtonMarkColors, applyResponsiveChartLayout, stripHardcodedChartColors, stripStrayCompositionMarkEncoding } from './protonVegaTheme';
 
 export class VegaSpecSecurityError extends Error {
@@ -159,6 +159,7 @@ export function sanitizeVegaSpec(raw: string): VisualizationSpec {
     stripStrayCompositionMarkEncoding(normalized);
     applyProtonChartPolish(normalized);
     applyResponsiveChartLayout(normalized);
+    normalizeArcDonutCharts(normalized);
     normalizeTestBasedColorEncoding(normalized);
     normalizeStoredPercentFormats(normalized);
     normalizeInvalidD3Formats(normalized);
