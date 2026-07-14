@@ -3168,6 +3168,9 @@
       "Failed to resend invitation": [
         "Fehler beim erneuten Senden der Einladung"
       ],
+      "Failed to trash document.": [
+        "Dokument konnte nicht in den Papierkorb verschoben werden"
+      ],
       "Failed to unshare node": [
         "Fehler beim Zurücknehmen des freigegebenen Knotens"
       ],
@@ -3514,6 +3517,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Wir konnten diese Datei nicht in ${ SHEETS_APP_NAME } importieren. Du kannst versuchen, den Inhalt zu kopieren in ein neues ${ SHEETS_APP_NAME } einzufügen."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
       ],
       "Wrong billing address": [
         "Ungültige Rechnungsadresse"
@@ -5616,6 +5622,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
       ],
       "You are currently signed in as ${ username }.": [
         "Du bist derzeit als „${ username }“ angemeldet."
@@ -8018,6 +8027,15 @@
       ],
       "Device renamed": [
         "Gerät umbenannt"
+      ],
+      "Document failed to be restored from trash": [
+        "Dokument konnte nicht aus dem Papierkorb wiederhergestellt werden"
+      ],
+      "Document moved to trash": [
+        "Dokument in den Papierkorb verschoben"
+      ],
+      "Document restored from trash": [
+        "Dokument aus dem Papierkorb wiederhergestellt"
       ],
       "External invitation removed from the share": [
         "Externe Einladung von der Freigabe entfernt."

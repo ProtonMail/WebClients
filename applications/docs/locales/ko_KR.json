@@ -1224,6 +1224,9 @@
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
       ],
+      "Pending": [
+        "보류 중"
+      ],
       "Status": [
         "상태"
       ],
@@ -3404,6 +3407,9 @@
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "해당 파일을 ${ SHEETS_APP_NAME }로 불러오지 못했습니다. 이 파일의 내용물을 복사 및 붙여놓기하여 ${ SHEETS_APP_NAME }에 추가 가능합니다."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
+      ],
       "Wrong billing address": [
         "청구 주소가 잘못되었습니다"
       ],
@@ -5444,6 +5450,9 @@
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
+      ],
       "You are currently signed in as ${ username }.": [
         "현재 ${ username }(으)로 로그인 했습니다."
       ],
@@ -6089,7 +6098,7 @@
         "비밀번호 표시"
       ],
       "Set a password to limit access via link": [
-        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
+        "비밀번호를 설정하여 링크를 통한 접근 제한"
       ],
       "Set expiration date": [
         "만료 시간 설정"
@@ -7602,6 +7611,15 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\"이(가) 성공적으로 생성되었습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\"을(를) 생성할 수 없습니다"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" 항목이 이동되었습니다"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
       ],
@@ -7733,6 +7751,9 @@
       ],
       "Failed to load invitation details": [
         "초대 상세 정보를 불러오지 못했습니다"
+      ],
+      "Failed to load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
       ],
       "Failed to reject share invitation": [
         "초대장 공유 거절 실패"
@@ -8282,6 +8303,9 @@
       ],
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
+      ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
       ],
       "Search parent folder": [
         "상위 폴더 검색"

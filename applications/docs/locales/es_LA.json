@@ -3183,6 +3183,9 @@
       "Failed to resend invitation": [
         "Error al reenviar la invitación"
       ],
+      "Failed to trash document.": [
+        "Error al enviar el documento a la papelera."
+      ],
       "Failed to unshare node": [
         "Error al dejar de compartir el nodo"
       ],
@@ -3535,6 +3538,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "No pudimos importar este archivo a ${ SHEETS_APP_NAME }. Puede intentar copiar y pegar el contenido en una ${ SHEETS_APP_NAME } nueva."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -5665,6 +5671,9 @@
       "You are about to open your default browser and visit:": [
         "Está a punto de abrir su navegador por defecto y consultar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Actualmente inició sesión como ${ username }."
       ],
@@ -6130,6 +6139,12 @@
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
       ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
+      ],
       "Expiry": [
         "Vencimiento"
       ],
@@ -6250,6 +6265,9 @@
       "Navigation": [
         "Navegación"
       ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
       "New password": [
         "Contraseña nueva"
       ],
@@ -6270,6 +6288,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Password": [
         "Contraseña"
@@ -6310,6 +6331,9 @@
       "Region": [
         "Estado"
       ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
       "Replace existing file": [
         "Reemplazar archivo existente"
       ],
@@ -6346,6 +6370,9 @@
       "Skip folder": [
         "Omitir carpeta"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "Stop sharing": [
         "Dejar de compartir"
       ],
@@ -6378,6 +6405,9 @@
       ],
       "Upload picture": [
         "Cargar imagen"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ],
       "Username": [
         "Nombre de usuario"
@@ -6713,6 +6743,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Su prueba gratuita ha finalizado. ${ nonAutoRenewalAction }"
       ],
@@ -8072,6 +8120,15 @@
       ],
       "Device renamed": [
         "Dispositivo renombrado"
+      ],
+      "Document failed to be restored from trash": [
+        "Error al restaurar el documento de la papelera"
+      ],
+      "Document moved to trash": [
+        "Documento movido a la papelera"
+      ],
+      "Document restored from trash": [
+        "Documento restaurado de la papelera"
       ],
       "External invitation removed from the share": [
         "Se eliminó la invitación externa de los elementos compartidos."
@@ -10895,6 +10952,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",

@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Change my access": [
+        "Ubah akses saya"
+      ],
       "Change password": [
         "Ubah kata sandi"
       ],
@@ -642,6 +645,9 @@
       "Remove file": [
         "Hapus file"
       ],
+      "Remove my access": [
+        "Hapus akses saya"
+      ],
       "Rename": [
         "Ubah nama"
       ],
@@ -723,6 +729,9 @@
       "Select all": [
         "Pilih semua"
       ],
+      "Set password or expiration date": [
+        "Atur kata sandi atau tanggal kedalewarsa"
+      ],
       "Set recovery methods": [
         "Atur metode pemulihan"
       ],
@@ -749,6 +758,9 @@
       ],
       "Shared": [
         "Dibagikan"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Berbagi terenkripsi secara end-to-end"
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
@@ -2882,6 +2894,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item gagal dipindahkan"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Identitas dan alamat > Domain pendek (pm.me)"
       ],
@@ -2951,6 +2966,9 @@
       "Cannot export this contact": [
         "Kontak tidak dapat diekspor"
       ],
+      "Cannot find move target": [
+        "Tidak dapat menemukan target pemindahan"
+      ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
@@ -3004,6 +3022,9 @@
       ],
       "Failed loading group members": [
         "Gagal memuat anggota grup"
+      ],
+      "Failed to change permissions settings": [
+        "Gagal mengubah pengaturan izin"
       ],
       "Failed to copy photo to album": [
         "Gagal menyalin foto ke album"
@@ -3376,6 +3397,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Kami tidak dapat mengimpor file ini ke ${ SHEETS_APP_NAME }. Anda dapat mencoba untuk menyalin dan menempelkan isi file ini ke dalam ${ SHEETS_APP_NAME } baru."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
       ],
       "Wrong billing address": [
         "Alamat penagihan salah"
@@ -4394,6 +4418,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
       ],
+      "Already in this folder": [
+        "Sudah ada di folder ini"
+      ],
       "an anonymous user": [
         "pengguna anonim"
       ],
@@ -4439,8 +4466,20 @@
       "Can edit": [
         "Dapat menyunting"
       ],
+      "Can edit and manage access": [
+        "Dapat mengedit dan mengelola akses"
+      ],
+      "Can view and edit": [
+        "Dapat melihat dan mengedit"
+      ],
       "Can view only": [
         "Hanya dapat melihat"
+      ],
+      "Can't move a folder into itself": [
+        "Tidak dapat memindahkan folder ke dalam dirinya sendiri"
+      ],
+      "Can't write into folder": [
+        "Tidak dapat menulis ke dalam folder"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda membersihkan data terenkripsi dari semua kontak yang dienkripsi dengan kunci ini dan sekaligus menutup peringatan tersebut."
@@ -4723,6 +4762,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jika menghapus diri sendiri, Anda akan kehilangan akses ke \"${ fileName }\" dan tidak akan dapat membukanya lagi kecuali pemilik membagikannya kembali kepada Anda."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
@@ -5045,6 +5087,9 @@
       "Scan the QR code with your mobile device": [
         "Pindai kode QR ini dengan perangkat seluler Anda"
       ],
+      "Select a destination folder": [
+        "Pilih folder tujuan"
+      ],
       "Select a folder to move to.": [
         "Pilih folder tujuan."
       ],
@@ -5357,6 +5402,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Saat Anda terhubung ke VPN, teknologi enkripsi digunakan untuk menyembunyikan alamat IP Anda (kode unik yang ditetapkan pada perangkat Anda)."
       ],
+      "Who has access": [
+        "Siapa yang memiliki akses"
+      ],
       "words": [
         "kata"
       ],
@@ -5380,6 +5428,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Anda akan membuka peramban bawaan dan mengunjungi:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Anda sedang masuk sebagai ${ username }"
@@ -5431,6 +5482,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Tidak akan dapat membagikan \"${ fileName }\" setelah mengubah akses menjadi penampil. Hanya pemilik yang dapat mengubah akses kembali."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kredit akan diterima 1 bulan setelah teman berlangganan paket tahunan, dan 2 bulan setelah teman berlangganan paket bulanan."
@@ -5668,8 +5722,14 @@
       "Alias title": [
         "Judul alias"
       ],
+      "Allow editors to change permissions and share": [
+        "Izinkan editor untuk mengubah izin dan membagikan"
+      ],
       "Anonymous": [
         "Anonim"
+      ],
+      "Anyone on the Internet with the link": [
+        "Siapa saja di Internet yang memiliki tautan"
       ],
       "Anyone on the Internet with the link can edit": [
         "Siapa pun di Internet yang memiliki tautan ini dapat mengedit"
@@ -5764,8 +5824,14 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete link and remove access for everyone": [
+        "Hapus tautan dan hapus akses untuk semua orang"
+      ],
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
+      ],
+      "Disable this link on a specific date": [
+        "Nonaktifkan tautan ini pada tanggal tertentu"
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
@@ -5941,6 +6007,9 @@
       "New password": [
         "Kata sandi baru"
       ],
+      "Not active": [
+        "Tidak aktif"
+      ],
       "Note": [
         "Catatan"
       ],
@@ -6001,8 +6070,14 @@
       "Replace existing folder": [
         "Gantikan folder yang telah ada"
       ],
+      "Require password": [
+        "Wajibkan kata sandi"
+      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Set a password to limit access via link": [
+        "Atur kata sandi untuk membatasi akses melalui tautan"
       ],
       "Set expiration date": [
         "Atur tanggal kedaluwarsa"
@@ -7572,6 +7647,18 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" berhasil dibuat"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" gagal dibuat"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" dipindahkan"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" dibagikan"
+      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" dihapus"
       ],
@@ -7634,6 +7721,9 @@
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } item gagal dipulihkan dari sampah"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item dipindahkan"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item dipindahkan ke sampah"
@@ -7698,6 +7788,9 @@
       "Failed to load invitation details": [
         "Rincian undangan gagal dimuat"
       ],
+      "Failed to load sharing details": [
+        "Gagal memuat rincian berbagi"
+      ],
       "Failed to reject share invitation": [
         "Undangan untuk berbagi gagal ditolak"
       ],
@@ -7742,6 +7835,12 @@
       ],
       "Root folder failed to be loaded": [
         "Folder root gagal dimuat"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Pengaturan diperbarui. Editor dapat mengubah izin dan membagikan."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Pengaturan diperbarui. Editor tidak dapat mengubah izin atau membagikan."
       ],
       "Share invitation accepted successfully": [
         "Undangan pembagian berhasil diterima"
@@ -8667,6 +8766,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -9084,6 +9192,9 @@
       ],
       "Pending": [
         "Menunggu jawaban"
+      ],
+      "user joined": [
+        "pengguna bergabung"
       ]
     },
     "Storage": {
@@ -9546,6 +9657,9 @@
       "Cannot load link": [
         "Tautan tidak dapat dimuat"
       ],
+      "Change access to viewer?": [
+        "Ubah akses menjadi penampil?"
+      ],
       "Change password": [
         "Ubah kata sandi"
       ],
@@ -9903,6 +10017,9 @@
       "Public link": [
         "Tautan publik"
       ],
+      "Public link settings": [
+        "Pengaturan tautan publik"
+      ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
       ],
@@ -9920,6 +10037,9 @@
       ],
       "Recover data": [
         "Pulihkan data"
+      ],
+      "Remove your access?": [
+        "Hapus akses Anda?"
       ],
       "Report a problem": [
         "Laporkan masalah"
@@ -9962,6 +10082,12 @@
       ],
       "Settings": [
         "Pengaturan"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Pengaturan untuk ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Bagikan \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Bagikan ${ name }"
@@ -10100,6 +10226,12 @@
       "Actions": [
         "Tindakan"
       ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
       "Fingerprint": [
         "Sidik jari"
       ],
@@ -10124,6 +10256,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Beralih otomatis antara tema pilihan Anda untuk siang dan malam, selaras dengan mode siang dan malam sistem Anda."
+      ],
+      "Change shared item settings": [
+        "Ubah pengaturan item yang dibagikan"
       ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
@@ -10190,6 +10325,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses file ini."

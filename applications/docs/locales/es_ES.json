@@ -3515,6 +3515,9 @@
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "No pudimos importar este archivo a ${ SHEETS_APP_NAME }. Puedes intentar copiar y pegar el contenido en una nueva ${ SHEETS_APP_NAME }."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
+      ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
       ],
@@ -5601,6 +5604,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Actualmente estás conectado como ${ username }."
@@ -10555,6 +10561,9 @@
       "Created": [
         "Creado"
       ],
+      "Expires": [
+        "Expira"
+      ],
       "Type": [
         "Tipo"
       ]
@@ -10642,6 +10651,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
