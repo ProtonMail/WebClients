@@ -1,5 +1,7 @@
 import { CANONICALIZE_SCHEME, canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 
+import type { ApiImporterOrganizationUser } from '../api/api.interface';
+
 export const areEquivalentEmails = (...emails: (string | undefined)[]) => {
     const normalizedEmails = emails.map((email) =>
         email ? canonicalizeEmail(email, CANONICALIZE_SCHEME.DEFAULT) : undefined
@@ -13,3 +15,6 @@ export const isKnownEmail = (email: string | undefined, knownEmails: (string | u
 export const shouldCreateUserPredicate =
     (selfEmail: string | undefined, knownEmails: (string | undefined)[]) => (user: { Email: string }) =>
         !areEquivalentEmails(user.Email, selfEmail) && !isKnownEmail(user.Email, knownEmails);
+
+export const isProviderUserSelectable = (u: ApiImporterOrganizationUser) =>
+    !u.ImporterOrganizationUser && u.Eligibility.IsEligible;
