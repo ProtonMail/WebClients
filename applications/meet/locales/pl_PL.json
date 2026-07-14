@@ -62,8 +62,14 @@
       "Copy link": [
         "Kopiuj link"
       ],
+      "Copy link and close": [
+        "Skopiuj link i zamknij"
+      ],
       "Copy meeting link": [
         "Skopiuj link spotkania"
+      ],
+      "Create a free account": [
+        "Utwórz darmowe konto"
       ],
       "Create a room": [
         "Utwórz pokój"
@@ -82,6 +88,9 @@
       ],
       "Disable camera": [
         "Wyłącz kamerę"
+      ],
+      "Discard": [
+        "Odrzuć"
       ],
       "Dismiss": [
         "Odrzuć"
@@ -233,6 +242,9 @@
       "Rejoin meeting": [
         "Ponownie dołącz do spotkania"
       ],
+      "Reply": [
+        "Odpowiedz"
+      ],
       "Report a problem": [
         "Zgłoś problem"
       ],
@@ -250,6 +262,9 @@
       ],
       "Resume": [
         "Wznów"
+      ],
+      "Retry": [
+        "Spróbuj ponownie"
       ],
       "Room": [
         "Pokój"
@@ -1444,6 +1459,9 @@
       "Failed to create personal meeting, please refresh the page": [
         "Nie udało się utworzyć osobistego spotkania, odśwież stronę"
       ],
+      "Failed to decrypt session key": [
+        "Nie udało się odszyfrować klucza sesji"
+      ],
       "Failed to delete event": [
         "Nie udało się usunąć wydarzenia"
       ],
@@ -1542,6 +1560,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nie udało się wysłać kodu weryfikacyjnego tą metodą."
       ]
     },
     "Error message": {
@@ -1853,6 +1874,12 @@
       "Enter your own password (as trusted contact).": [
         "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
+      "Failed to update meeting name": [
+        "Nie udało się zaktualizować nazwy spotkania"
+      ],
+      "Failed to update meeting password": [
+        "Nie udało się zaktualizować hasła spotkania"
+      ],
       "Failed to update meeting schedule": [
         "Nie udało się zaktualizować harmonogramu spotkania"
       ],
@@ -1873,6 +1900,9 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Przejdź do about:config, wyszukaj media.peerconnection.enabled i ustaw na true."
+      ],
+      "Host": [
+        "Organizator"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Zorganizuj własne bezpieczne spotkanie. Rozpocznij połączenie w ${ MEET_APP_NAME } i udostępnij link, aby zaprosić innych do dołączenia. Prosto, bezpiecznie i za darmo."
@@ -2257,6 +2287,9 @@
       "Delete recovery-related information.": [
         "Usuń informacje o odzyskiwaniu."
       ],
+      "Disabled": [
+        "Wyłączono"
+      ],
       "Does not repeat": [
         "Nie powtarza się"
       ],
@@ -2519,6 +2552,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Opisz problem i dołącz wszelkie informacje o błędach"
+      ],
+      "Reply...": [
+        "Odpowiedz..."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Zaplanuj w aplikacji ${ CALENDAR_APP_NAME }"
