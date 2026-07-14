@@ -120,6 +120,10 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     try {
       if (renameWithSDK) {
         await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
+        const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
+        createNotification({
+          text: <span className="text-pre-wrap">{successNotificationText}</span>,
+        })
       } else {
         await driveCompat.renameDocument(document, newName)
       }
