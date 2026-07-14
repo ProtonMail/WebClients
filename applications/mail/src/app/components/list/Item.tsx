@@ -5,9 +5,8 @@ import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
-import type { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Label, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -16,16 +15,13 @@ import clsx from '@proton/utils/clsx';
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 import OneTimeCodeDetector from 'proton-mail/helpers/message/otp/OneTimeCodeDetector';
 import { shouldRunOtpExtraction } from 'proton-mail/helpers/message/otp/shouldRunOtpExtraction';
-import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
-import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
@@ -50,6 +46,8 @@ interface Props {
     loading: boolean;
     columnLayout: boolean;
     element: Element;
+    isSelected: boolean;
+    useContentSearch: boolean;
     checked?: boolean;
     onCheck: (event: ChangeEvent, elementID: string) => void;
     onClick: (elementID: string | undefined) => void;
@@ -61,7 +59,6 @@ interface Props {
     index: number;
     onFocus: (elementID: string) => void;
     userSettings: UserSettings;
-    mailSettings: MailSettings;
     labels?: Label[];
 }
 
@@ -72,6 +69,8 @@ const Item = ({
     loading,
     element,
     columnLayout,
+    isSelected,
+    useContentSearch,
     checked = false,
     onCheck,
     onClick,
@@ -82,19 +81,11 @@ const Item = ({
     dragged,
     index,
     onFocus,
-    mailSettings,
     userSettings,
     labels,
 }: Props) => {
-    const { shouldHighlight, esStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled, contentIndexingDone } = esStatus;
-
-    const elementID = useMailSelector(selectElementID);
-
     const { listSpotlightStep, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
-    const useContentSearch =
-        dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
     const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
 
@@ -114,11 +105,6 @@ const Item = ({
         isSent(element) ||
         isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
-    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const isSelected =
-        isConversationContentView && isElementMessage(element)
-            ? elementID === element.ConversationID
-            : elementID === element.ID;
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
     const senders = conversationMode
         ? getSenders(element)

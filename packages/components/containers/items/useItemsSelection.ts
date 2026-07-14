@@ -1,8 +1,12 @@
 import type { ChangeEvent, DependencyList } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import useHandler from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import unique from '@proton/utils/unique';
+
+// Stable reference for the empty-selection case so that consumers memoizing on
+// `checkedIDs` are not invalidated every time the selection is reset to empty.
+const EMPTY_CHECKED_IDS: string[] = [];
 
 interface Props {
     activeID?: string;
@@ -49,7 +53,8 @@ const useItemsSelection = ({
     useEffect(() => setCheckedMap({}), resetDependencies || []);
 
     const checkedIDs = useMemo(() => {
-        return Object.keys(checkedMap).filter((ID) => checkedMap[ID]);
+        const ids = Object.keys(checkedMap).filter((ID) => checkedMap[ID]);
+        return ids.length ? ids : EMPTY_CHECKED_IDS;
     }, [checkedMap]);
 
     const selectedIDs = useMemo(() => {
