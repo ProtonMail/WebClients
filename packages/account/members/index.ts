@@ -222,6 +222,12 @@ const slice = createSlice({
                 member.roleState = 'rejected';
             }
         },
+        invalidateMemberRoles: (state, action: PayloadAction<{ member: Member }>) => {
+            const member = getMemberFromState(state, action.payload.member);
+            if (member && member.roleState !== 'initial') {
+                member.roleState = 'stale';
+            }
+        },
         setUnprivatizationState: (state, action: PayloadAction<UnprivatizationMemberState>) => {
             state.unprivatization = action.payload;
         },
@@ -503,6 +509,7 @@ export const updateMemberRoles = ({
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk;
 export const upsertMember = slice.actions.upsertMember;
+export const invalidateMemberRoles = slice.actions.invalidateMemberRoles;
 export const membersActions = slice.actions;
 export const setUnprivatizationState = slice.actions.setUnprivatizationState;
 export { default as UnavailableAddressesError } from './errors/UnavailableAddressesError';
