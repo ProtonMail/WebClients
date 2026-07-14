@@ -298,6 +298,9 @@
       "Do not show again": [
         "Älä näytä uudelleen"
       ],
+      "Do not show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
@@ -543,6 +546,12 @@
       ],
       "Regenerate": [
         "Luo uusi"
+      ],
+      "Regex invalid": [
+        "Lauseke on virheellinen"
+      ],
+      "Regex unsafe": [
+        "Lauseke ei ole turvallinen"
       ],
       "Reject": [
         "Kieltäydy"
@@ -1129,6 +1138,12 @@
       "Failed to set default mailbox": [
         "Postilaatikon asettaminen oletukseksi epäonnistui"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "SSH-agentin käynnistys epäonnistui: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "SSH-agentin pysäytys epäonnistui: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Aliasten synkronointi epäonnistui"
       ],
@@ -1509,6 +1524,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot, maksukortit ja identiteetit."
       ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } käyttää holveihisi tallennettuja SSH-avaimia."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tila käytössä."
       ],
@@ -1837,6 +1855,9 @@
       "finance": [
         "rahoitus"
       ],
+      "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
+        "Etsi ”OpenSSH Authentication Agent” ja napsauta sitä hiiren kakkospainikkeella ja valitse ”Ominaisuudet”."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Noudata ohjeita tuodaksesi tietosi yleisellä CSV-tiedostolla:"
       ],
@@ -1877,6 +1898,9 @@
       ],
       "Identity confirmed": [
         "Identiteetti vahvistettiin"
+      ],
+      "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
+        "Jos et aio käyttää SSH-agenttia toisella maksullisella tilillä, muista poistaa tämä asetus käytöstä ennen siirtymistä kyseiselle tilille."
       ],
       "Import the CSV file below.": [
         "Tuo CSV-tiedosto alta."
@@ -1981,6 +2005,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "Make sure to keep ${ PASS_APP_NAME } running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.": [
+        "Varmista, että ${ PASS_APP_NAME } on käynnissä (voidaan minimoida), jotta SSH-agentti pysyy aktiivisena. Salasanalla suojattuja SSH-avaimia ei tällä hetkellä tueta."
+      ],
       "Manager": [
         "Hallitsija"
       ],
@@ -2005,6 +2032,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2036,6 +2067,9 @@
       "No network connection": [
         "Verkkoyhteyttä ei ole"
       ],
+      "No SSH keys found in ${ PASS_SHORT_APP_NAME }. Create SSH key items to use with the agent.": [
+        "${ PASS_SHORT_APP_NAME }-sovelluksesta ei löytynyt SSH-avaimia. Luo agentin kanssa käytettävät SSH-avainkohteet."
+      ],
       "None": [
         "Ei mitään"
       ],
@@ -2053,6 +2087,9 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Näkyvissä ovat vain viimeisten 30 päivän aikana vanhentuneet tunnukset. Vanhemmat tunnukset poistetaan automaattisesti."
+      ],
+      "Open \"Services\" (you can use the Windows search bar or press Win+R and enter services.msc).": [
+        "Avaa ”Palvelut” (voit käyttää Windowsin hakupalkkia tai painaa Win+R ja kirjoittaa services.msc)."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
@@ -2075,6 +2112,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti.",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti."
+      ],
+      "Paste the following command in your terminal:": [
+        "Liitä seuraava komento terminaaliin:"
       ],
       "Paused": [
         "Pysäytetty"
@@ -2196,6 +2236,9 @@
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
       ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Järjestys kentän (ensin otsikko, sitten käyttäjätunnus tai sähköpostiosoite, verkkosivusto, muistiinpanot) ja vastaavuustarkkuuden (tarkka, alkaa merkeillä, sisältää) mukaan."
+      ],
       "Reconnect": [
         "Uudelleenyhdistä"
       ],
@@ -2267,6 +2310,9 @@
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
+      ],
+      "Set \"Startup type\" to Disabled, click OK.": [
+        "Aseta ”Käynnistystyyppi” -asetukseksi ”Poissa käytöstä” ja napsauta OK."
       ],
       "Set by your organization": [
         "Organisaatiosi asettama"
@@ -2395,6 +2441,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
       ],
+      "Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.": [
+        "Vinkki: lisää se .bashrc- tai .zshrc-tiedostoon, jotta se suoritetaan automaattisesti, kun avaat terminaalin."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Siirrä nämä aliakset toiseen postilaatikkoon jatkaaksesi sähköpostien vastaanottamista:"
       ],
@@ -2406,6 +2455,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
+      ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "Jotta ${ PASS_APP_NAME } SSH-agenttia voidaan käyttää Windowsissa, OpenSSH-palvelu on poistettava käytöstä."
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
@@ -2810,6 +2862,9 @@
       "Bank Name": [
         "Pankin nimi"
       ],
+      "Basic": [
+        "Perus"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Kirjautumistietojesi tallentamisen lisäksi ${ PASS_APP_NAME } suojaa identiteettisi sisäänrakennetulla sähköpostialiasominaisuudella. Aina kun luot uuden tilin verkossa, ${ PASS_APP_NAME } voi automaattisesti luoda aliaksen, jotta todellinen sähköpostiosoitteesi pysyy suojattuna. "
       ],
@@ -2842,6 +2897,9 @@
       ],
       "Catch-All": [
         "Nappaa kaikki"
+      ],
+      "Check": [
+        "Tarkista"
       ],
       "Checkbox": [
         "Valintaruutu"
@@ -3007,6 +3065,12 @@
       ],
       "Enter email or username": [
         "Syötä sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
       ],
       "Experimental": [
         "Kokeellinen"
@@ -3326,6 +3390,9 @@
       "Never": [
         "Ei koskaan"
       ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
       "New": [
         "Uusi"
       ],
@@ -3388,6 +3455,9 @@
       ],
       "Owner": [
         "Omistaja"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
       "Passkey": [
         "Pääsyavain"
@@ -3496,6 +3566,12 @@
       ],
       "Reddit handle": [
         "Reddit-tunnus"
+      ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
+      ],
+      "Relevant": [
+        "Aiheeseen liittyvät"
       ],
       "Remove link": [
         "Poista linkki"
@@ -3619,6 +3695,9 @@
       ],
       "SSN": [
         "Hetu"
+      ],
+      "Starts with": [
+        "Alkaa"
       ],
       "State or province": [
         "Osavaltio tai maakunta"
@@ -3745,6 +3824,12 @@
       ],
       "Update": [
         "Päivitä"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Käytä ${ PASS_APP_NAME }-sovellusta SSH-agenttina"
       ],
       "Used in": [
         "Käyttökohteet"
@@ -3876,6 +3961,24 @@
       "${ count } item": [
         "${ count } kohde",
         "${ count } kohdetta"
+      ],
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
       ],
       "You can drag and drop the selected item to another vault": [
         "Voit vetää ja pudottaa valitun kohteen toiseen holviin",
@@ -4159,6 +4262,23 @@
         "Käytetään osoitteessa ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Syötä URL-osoite, jotta voit tarkistaa, vastaako nykyinen sääntösi kyseistä URL-osoitetta"
+      ],
+      "The rule is matching this URL": [
+        "Sääntö vastaa tätä URL-osoitetta"
+      ],
+      "The rule is NOT matching this URL": [
+        "Sääntö EI vastaa tätä URL-osoitetta"
+      ],
+      "This URL will be blocked from autofill": [
+        "Tämän URL-osoitteen automaattinen täyttö estetään"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Tätä URL-osoitetta EI estetä automaattisen täytön kohteena"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
@@ -4301,6 +4421,12 @@
       "Random prefix generation successfully enabled": [
         "Satunnaisen etuliitteen luominen on otettu käyttöön"
       ],
+      "SSH agent successfully started": [
+        "SSH-agentti käynnistettiin onnistuneesti"
+      ],
+      "SSH agent successfully stopped": [
+        "SSH-agentti pysäytettiin onnistuneesti"
+      ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsenen.",
         "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsentä."
@@ -4341,6 +4467,9 @@
       ],
       "Add mailbox": [
         "Lisää postilaatikko"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Säädä automaattisen täytön asetuksia, jotta voit muuttaa sitä, missä kirjautumistietoja ehdotetaan."
       ],
       "Alias contacts": [
         "Aliasyhteystiedot"
@@ -4529,6 +4658,9 @@
       "Last modified": [
         "Muokattu viimeksi"
       ],
+      "Learn more": [
+        "Lue lisää"
+      ],
       "Leave this item?": [
         "Poistutaanko tästä kohteesta?"
       ],
@@ -4677,6 +4809,9 @@
       "Review and share": [
         "Tarkista ja jaa"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Kuvakaappaus OpenSSH-palvelusta Windowsissa"
+      ],
       "Secure your data": [
         "Suojaa tietosi"
       ],
@@ -4698,6 +4833,9 @@
       "Settings": [
         "Asetukset"
       ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Määritä ${ PASS_APP_NAME } SSH-agentti"
+      ],
       "Setup offline mode": [
         "Määritä offline-tila"
       ],
@@ -4715,6 +4853,9 @@
       ],
       "SPF (Optional)": [
         "SPF (valinnainen)"
+      ],
+      "SSH Agent": [
+        "SSH-agentti"
       ],
       "Status": [
         "Tila"
@@ -4734,6 +4875,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synkronoi aliaksesi SimpleLoginista"
       ],
+      "Test a URL against this rule": [
+        "Testaa URL-osoite tämän säännön perusteella"
+      ],
       "Transfer ownership": [
         "Siirrä omistajuus"
       ],
@@ -4748,6 +4892,9 @@
       ],
       "Update available": [
         "Päivitys saatavilla"
+      ],
+      "URL matching": [
+        "URL-vastaavuus"
       ],
       "Vault": [
         "Holvi"
@@ -4860,6 +5007,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-salasana vaaditaan"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tila pois käytöstä."
@@ -5056,6 +5206,9 @@
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Jokin meni pieleen ${ PASS_APP_NAME } -laajennusta käynnistettäessä. Yritä päivittää tai ladata se uudelleen"
       ],
+      "SSH agent requires using SSH keys, which is not available in your plan.": [
+        "SSH-agentti edellyttää SSH-avainten käyttöä, mikä ei ole mahdollista valitsemassasi tilauksessa."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Aliaksen etuliite voi sisältää enintään 40 merkkiä"
       ],
@@ -5064,6 +5217,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Sähköpostiosoitetta ei enää valvota tietomurtojen varalta."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Tätä kohdetta ei voida ehdottaa automaattisen täytön kohteeksi, koska siinä on ”${ neverModeDescriptionStrong }”. Lisää toinen URL-osoite, jos haluat, että tämä kohta täytetään automaattisesti."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Tämä kohde on tällä hetkellä jaettuna. Sen poistaminen poistaa pääsyn kaikilta muilta käyttäjiltä."
