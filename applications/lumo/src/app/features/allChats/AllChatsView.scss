@@ -1,5 +1,4 @@
 .all-chats-view {
-	--all-chats-hover-bg: #f6f6fa;
 	--all-chats-preview-color: #9294a0;
 	--all-chats-favorite-color: #f0a417;
 	--all-chats-tile-radius: 11px;
@@ -76,10 +75,6 @@
 	block-size: 68px;
 	border-radius: 12px;
 	transition: background-color 0.15s ease;
-
-	&:hover {
-		background-color: var(--all-chats-hover-bg);
-	}
 }
 
 .all-chats-row-link {
