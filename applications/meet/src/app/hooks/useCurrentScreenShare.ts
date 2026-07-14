@@ -76,7 +76,6 @@ export function useCurrentScreenShare({
                     audio:
                         isMeetEnableScreenShareAudio && !(isElectronApp && isWindows())
                             ? {
-                                  // @ts-expect-error Property exist but livekit types doesn't support it yet https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/restrictOwnAudio
                                   restrictOwnAudio: true,
                               }
                             : false,
