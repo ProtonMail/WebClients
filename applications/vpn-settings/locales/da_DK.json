@@ -4833,6 +4833,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Bekræftelse mislykkedes, forsøg igen om en time."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
       ],
@@ -7664,6 +7667,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
       ],
+      "Manage groups in your identity provider": [
+        "Administrér grupper i din identitetsudbyder"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrér hvilke ${ BRAND_NAME }-applikationer medlemmerne af din organisation kan få adgang til. Hvis deaktiveret, vil kun administratorer have adgang."
       ],
@@ -8819,6 +8825,9 @@
       ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er i øjeblikket logget ind som ${ username } i (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du er i øjeblikket logget ind som ${ username }."
@@ -10399,9 +10408,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Don't have access to your 2FA?": [
-        "Har du ikke adgang til din 2FA?"
       ],
       "Encryption and keys": [
         "Kryptering og nøgler"
@@ -15862,9 +15868,6 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Sammenlign de vigtigste forskelle der har en betydning for din virksomhed."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spar 50% i 1 år, og behold fuld adgang"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Spar 50% i 6 måneder, og behold fuld adgang"

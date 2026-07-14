@@ -4337,6 +4337,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Weryfikacja nie powiodła się. Spróbuj ponownie za godzinę."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nie udało się wysłać kodu weryfikacyjnego tą metodą."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zatrzymaliśmy podpisywanie DKIM z powodu problemów z konfiguracją rekordów DNS. Wykonaj tę instrukcję, aby wznowić podpisywanie."
       ],
@@ -7947,6 +7950,9 @@
       "You already have a free account": [
         "Posiadasz już darmowe konto"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Obecnie zalogowano jako ${ username } dla organizacji ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Jesteś obecnie zalogowany jako ${ username }."
       ],
@@ -9323,9 +9329,6 @@
       ],
       "Create an alias": [
         "Utwórz alias"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nie masz dostępu do swojego uwierzytelniania dwustopniowego?"
       ],
       "Encryption and keys": [
         "Szyfrowanie i klucze"
@@ -13028,6 +13031,24 @@
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {

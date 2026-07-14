@@ -2433,6 +2433,9 @@
       "Cancel subscription": [
         "Cancelar suscripción"
       ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
       "Upload any new files": [
         "Cargar cualquier archivo nuevo"
       ]
@@ -4596,6 +4599,14 @@
       "Reverse charge scheme is not supported for this plan": [
         "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "No se ha podido completar la asignación de roles para ${ errors.length } miembro",
+        "No se ha podido completar la asignación de roles para ${ errors.length } miembros"
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "No se ha podido completar la asignación de roles para ${ failedGroupCount } grupo",
+        "No se ha podido completar la asignación de roles para ${ failedGroupCount } grupos"
+      ],
       "Server not found": [
         "Servidor no encontrado"
       ],
@@ -4745,6 +4756,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La verificación no ha funcionado. Inténtalo de nuevo en una hora."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
@@ -6228,6 +6242,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida."
       ],
+      "${ emails.length } member added to the group": [
+        "Se ha añadido ${ emails.length } miembro al grupo",
+        "Se han añadido ${ emails.length } miembros al grupo"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
@@ -6293,6 +6311,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nuevo miembro añadido a través de tu proveedor de identidad y pendiente de revisión.",
+        "${ pendingAdminApprovalCount } nuevos miembros añadidos a través de tu proveedor de identidad y pendientes de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -7518,6 +7540,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
       ],
+      "Manage groups in your identity provider": [
+        "Gestiona los grupos en tu proveedor de identidad"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administra las aplicaciones ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
       ],
@@ -8671,6 +8696,9 @@
       "You already have a free account": [
         "Ya tienes una cuenta gratuita."
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Actualmente estás conectado como ${ username }."
       ],
@@ -9436,6 +9464,9 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email addresses per user": [
+        "Direcciones de correo electrónico por usuario"
+      ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
       ],
@@ -9682,6 +9713,9 @@
       "New second password": [
         "Nueva segunda contraseña"
       ],
+      "No": [
+        "No"
+      ],
       "No filter": [
         "Sin filtro"
       ],
@@ -9883,6 +9917,9 @@
       ],
       "Storage": [
         "Almacenamiento"
+      ],
+      "Storage per user": [
+        "Espacio de almacenamiento por usuario"
       ],
       "Street address": [
         "Nombre de la calle"
@@ -10142,9 +10179,6 @@
       ],
       "Details": [
         "Detalles"
-      ],
-      "Don't have access to your 2FA?": [
-        "¿No tienes acceso a tu 2FA?"
       ],
       "Encryption and keys": [
         "Cifrado y claves"
@@ -13351,6 +13385,9 @@
       ],
       "Verify now": [
         "Verificar ahora"
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "Confirma ahora esta dirección de correo electrónico de recuperación: ${ emailData.value }"
       ],
       "Verify recovery email?": [
         "¿Verificar el correo electrónico de recuperación?"
@@ -17148,6 +17185,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Te damos la bienvenida a ${ BRAND_NAME } for Business"
+      ],
+      "What changes if you switch to the Free plan": [
+        "¿Qué cambia si te pasas al plan gratuito?"
       ],
       "What is an alias?": [
         "¿Qué es un alias?"

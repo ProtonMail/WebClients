@@ -4833,6 +4833,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "La vérification n'a pas réussi, nous vous invitons à réessayer dans une heure."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nous avons arrêté la signature DKIM suite à des problèmes avec votre configuration DNS. Nous vous invitons à suivre les instructions ci-dessous pour reprendre la signature."
       ],
@@ -7664,6 +7667,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
+      "Manage groups in your identity provider": [
+        "Gérez les groupes dans votre fournisseur d'identité"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gérez les applications ${ BRAND_NAME } auxquelles les membres de votre organisation peuvent accéder. Si cette option est désactivée, seuls les administrateurs y auront accès."
       ],
@@ -8819,6 +8825,9 @@
       ],
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Vous êtes actuellement connecté en tant que ${ username }."
@@ -10399,9 +10408,6 @@
       ],
       "Details": [
         "Informations"
-      ],
-      "Don't have access to your 2FA?": [
-        "Vous n'avez pas accès à votre A2F ?"
       ],
       "Encryption and keys": [
         "Chiffrement et clés"
@@ -15866,11 +15872,11 @@
       "Compare the key differences that matter for your business.": [
         "Comparez les différences clés qui importent pour votre entreprise."
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Économisez 50 % pendant 1 an, et gardez un accès complet"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Économisez 50% pendant 6 mois, et gardez un accès complet"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Économisez 50 % pendant un an, et gardez un accès complet"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Voir comment ${ MAIL_APP_NAME } se positionne, et découvrir pourquoi notre indépendance fait la différence."
