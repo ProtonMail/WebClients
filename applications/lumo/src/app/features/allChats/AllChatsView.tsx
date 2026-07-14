@@ -236,7 +236,7 @@ const ConversationRow = memo(({ conversation, rowData, isSelected, sortField }: 
             {!isRenaming && (
                 <LumoLink
                     to={`/c/${conversation.id}`}
-                    className="all-chats-row-link absolute inset-0"
+                    className="all-chats-row-link absolute inset-0 button button-ghost-weak"
                     aria-current={isSelected ? 'page' : undefined}
                 />
             )}
