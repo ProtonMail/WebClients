@@ -23,6 +23,9 @@
       "${ name } says: ${ message }": [
         "${ name } dice: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Se ha unido un participante a la reunión"
       ],
@@ -73,6 +76,10 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } nuevo",
+        "${ newMessageCount } nuevos"
+      ],
       "Add account": [
         "Añadir una cuenta"
       ],
@@ -114,6 +121,9 @@
       ],
       "Close": [
         "Cerrar"
+      ],
+      "Close reply composer": [
+        "Cerrar editor de respuestas"
       ],
       "Close this banner": [
         "Cerrar este banner"
@@ -169,8 +179,14 @@
       "Disable waiting room": [
         "Desactivar sala de espera"
       ],
+      "Discard": [
+        "Descartar"
+      ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Dismiss new messages": [
+        "Descartar nuevos mensajes"
       ],
       "Done": [
         "Hecho"
@@ -341,6 +357,9 @@
       "Rejoin meeting": [
         "Volver a unirse a la reunión"
       ],
+      "Reply": [
+        "Responder"
+      ],
       "Report a problem": [
         "Notificar un problema"
       ],
@@ -358,6 +377,9 @@
       ],
       "Resume": [
         "Reanudar"
+      ],
+      "Retry": [
+        "Reintentar"
       ],
       "Return to dashboard": [
         "Volver al panel principal"
@@ -385,6 +407,9 @@
       ],
       "Send an encrypted message": [
         "Enviar un mensaje cifrado"
+      ],
+      "Send reply": [
+        "Enviar respuesta"
       ],
       "Settings": [
         "Ajustes"
@@ -1716,6 +1741,9 @@
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Tu navegador se ha quedado sin espacio de almacenamiento. Se ha guardado la grabación hasta este momento."
       ],
@@ -1932,6 +1960,10 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } ha reaccionado con ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } respuesta",
+        "${ replyCount } respuestas"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } de hasta ${ maxParticipants } participantes"
       ],
@@ -1944,6 +1976,9 @@
       ],
       "-Removed dangerous URL-": [
         "-Se ha eliminado una URL peligrosa-"
+      ],
+      "1 reply draft": [
+        "1 borrador de respuesta"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
@@ -2209,6 +2244,9 @@
       "Member": [
         "Miembro"
       ],
+      "Message actions": [
+        "Acciones del mensaje"
+      ],
       "microphone": [
         "micrófono"
       ],
@@ -2232,6 +2270,9 @@
       ],
       "New host": [
         "Nuevo anfitrión"
+      ],
+      "New reply": [
+        "Nueva respuesta"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "No se detectaron ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
@@ -2262,6 +2303,9 @@
       ],
       "No speaker detected": [
         "No se detectan altavoces"
+      ],
+      "Not sent, check your connection.": [
+        "No se ha enviado. Comprueba tu conexión."
       ],
       "Only meetings you created appear here": [
         "Aquí solo aparecen las reuniones que has creado tú"
@@ -2395,6 +2439,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "El enlace de la reunión que has intentado abrir no existe o puede haber caducado. Asegúrate de que el enlace es correcto o inicia una nueva reunión segura."
       ],
+      "This conversation started before you joined.": [
+        "Esta conversación ha empezado antes de que te unieras."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Esta es una conversación cifrada de extremo a extremo con mensajes efímeros, que desaparecen al final de la llamada."
       ],
@@ -2466,6 +2513,9 @@
       ],
       "Video effects": [
         "Efectos de vídeo"
+      ],
+      "View ": [
+        "Ver "
       ],
       "Warning": [
         "Advertencia"
@@ -2605,6 +2655,9 @@
       "Delete recovery-related information.": [
         "Eliminar la información de recuperación."
       ],
+      "Disabled": [
+        "Desactivado"
+      ],
       "Does not repeat": [
         "No se repite"
       ],
@@ -2697,6 +2750,9 @@
       ],
       "Repeat event": [
         "Repetir evento"
+      ],
+      "Reply": [
+        "Responde"
       ],
       "Return to dashboard": [
         "Volver al panel principal"
@@ -2888,6 +2944,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
+      ],
+      "Reply...": [
+        "Responder..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "Nombre de la sala, por ejemplo, sincronización de equipo, actualización de proyecto, etc"

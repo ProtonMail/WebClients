@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } a dit : ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name } : ${ message }"
+      ],
       "A participant joined the meeting": [
         "Un participant a rejoint la réunion"
       ],
@@ -135,6 +138,10 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } nouveau",
+        "${ newMessageCount } nouveaux"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -197,6 +204,9 @@
       ],
       "Close preview": [
         "Fermer l'aperçu"
+      ],
+      "Close reply composer": [
+        "Fermer l'éditeur de réponses"
       ],
       "Close this banner": [
         "Fermer cette bannière"
@@ -261,8 +271,14 @@
       "Disable waiting room": [
         "Désactiver la salle d'attente"
       ],
+      "Discard": [
+        "Abandonner"
+      ],
       "Dismiss": [
         "Annuler"
+      ],
+      "Dismiss new messages": [
+        "Fermer les nouveaux messages"
       ],
       "Done": [
         "Terminé"
@@ -452,6 +468,9 @@
         "Retirer la réaction ${ emoji }, ${ identities.length } réaction",
         "Retirer la réaction ${ emoji }, ${ identities.length } réactions"
       ],
+      "Reply": [
+        "Répondre"
+      ],
       "Report a problem": [
         "Signaler un bug"
       ],
@@ -472,6 +491,9 @@
       ],
       "Resume": [
         "Reprendre"
+      ],
+      "Retry": [
+        "Réessayer"
       ],
       "Return to dashboard": [
         "Revenir au tableau de bord"
@@ -499,6 +521,9 @@
       ],
       "Send an encrypted message": [
         "Envoyer un message chiffré"
+      ],
+      "Send reply": [
+        "Envoyer la réponse"
       ],
       "Settings": [
         "Paramètres"
@@ -637,6 +662,12 @@
       ],
       "Waiting room": [
         "Salle d'attente"
+      ],
+      "Waiting room disabled": [
+        "La salle d'attente a été désactivé"
+      ],
+      "Waiting room enabled": [
+        "La salle d'attente a été activé"
       ]
     },
     "Alt": {
@@ -706,6 +737,9 @@
       "Rotate camera": [
         "Faire pivoter la caméra"
       ],
+      "Save my name on this device": [
+        "Enregistrer mon nom sur cet appareil"
+      ],
       "Screen share": [
         "Partage d’écran"
       ],
@@ -747,6 +781,9 @@
       ],
       "Video settings": [
         "Paramètres vidéo"
+      ],
+      "Waiting room": [
+        "Salle d'attente"
       ]
     },
     "Apps dropdown": {
@@ -1904,6 +1941,9 @@
       "Username must end with a letter or digit": [
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Votre navigateur n'a plus d'espace de stockage disponible. Nous avons enregistré la vidéo jusqu'à ce moment-là."
       ],
@@ -2120,6 +2160,10 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } a réagi avec ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } réponse",
+        "${ replyCount } réponses"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } sur un maximum de ${ maxParticipants } participants"
       ],
@@ -2132,6 +2176,9 @@
       ],
       "-Removed dangerous URL-": [
         "-URL dangereuse retirée-"
+      ],
+      "1 reply draft": [
+        "1 brouillon de réponse"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
@@ -2418,6 +2465,9 @@
       "Member": [
         "Membre"
       ],
+      "Message actions": [
+        "Actions des messages"
+      ],
       "Message from ${ participantName }": [
         "Message de ${ participantName }"
       ],
@@ -2444,6 +2494,9 @@
       ],
       "New host": [
         "Nouvel hôte"
+      ],
+      "New reply": [
+        "Nouvelle réponse"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Aucun ${ microphoneLinkButton }${ andString }${ cameraLinkButton } détecté."
@@ -2477,6 +2530,9 @@
       ],
       "No speaker detected": [
         "Aucun haut-parleur détecté"
+      ],
+      "Not sent, check your connection.": [
+        "Envoi impossible, veuillez vérifier votre connexion."
       ],
       "Only meetings you created appear here": [
         "Seules les réunions que vous avez créées apparaissent ici"
@@ -2631,6 +2687,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Le lien de réunion que vous avez essayé d'ouvrir n'existe pas ou a expiré. Assurez-vous que ce lien est correct, ou démarrez une nouvelle réunion sécurisée à la place."
       ],
+      "This conversation started before you joined.": [
+        "Cette conversation a commencé avant votre arrivée."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Ceci est un chat chiffré de bout en bout avec des messages éphémères, qui disparaissent à la fin de l'appel."
       ],
@@ -2705,6 +2764,9 @@
       ],
       "Video effects": [
         "Effets vidéo"
+      ],
+      "View ": [
+        "Voir "
       ],
       "Warning": [
         "Attention"
@@ -2808,6 +2870,9 @@
       "Advanced mode": [
         "Mode avancé"
       ],
+      "Anyone with the link can join": [
+        "Toute personne disposant du lien peut rejoindre"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -2858,6 +2923,9 @@
       ],
       "Delete recovery-related information.": [
         "Supprimer les informations liées à la récupération."
+      ],
+      "Disabled": [
+        "Désactivé"
       ],
       "Does not repeat": [
         "Ne pas répéter"
@@ -2955,6 +3023,9 @@
       "Participant controls": [
         "Contrôles des participants"
       ],
+      "Participants join after you approve them": [
+        "Les participants rejoindront le groupe une fois que vous les aurez validés"
+      ],
       "Passphrase": [
         "Phrase secrète"
       ],
@@ -2973,11 +3044,17 @@
       "Repeat event": [
         "Répéter l'événement"
       ],
+      "Reply": [
+        "Répondre"
+      ],
       "Return to dashboard": [
         "Revenir au tableau de bord"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Save my name on this device": [
+        "Enregistrer mon nom sur cet appareil"
       ],
       "Schedule meeting": [
         "Planifier une réunion"
@@ -3172,6 +3249,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
+      ],
+      "Reply...": [
+        "Répondre..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "Le nom de la salle, par exemple : réunion de coordination de l'équipe, point sur le projet, etc."
