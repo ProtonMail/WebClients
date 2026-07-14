@@ -90,6 +90,12 @@
       "Add photos": [
         "Tambah foto"
       ],
+      "Add storage": [
+        "Tambah penyimpanan"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Tambahkan ke \"${ name }\" (${ photoCount } foto)"
+      ],
       "Add to album": [
         "Tambah ke album"
       ],
@@ -135,8 +141,14 @@
       "Cancel download": [
         "Batalkan pengunduhan"
       ],
+      "Cancel downloads": [
+        "Batalkan unduhan"
+      ],
       "Cancel subscription": [
         "Batalkan langganan"
+      ],
+      "Cancel transfers": [
+        "Batalkan transfer"
       ],
       "Cancel trial and pay": [
         "Batalkan uji coba dan bayar"
@@ -146,6 +158,9 @@
       ],
       "Change": [
         "Ubah"
+      ],
+      "Change my access": [
+        "Ubah akses saya"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -378,6 +393,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
       ],
+      "Download (${ nbSelected })": [
+        "Unduh (${ nbSelected })"
+      ],
       "Download anyway": [
         "Tetap unduh"
       ],
@@ -507,6 +525,9 @@
       "Go back": [
         "Kembali"
       ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Kembali ke album \"${ ellipsedAlbumName }\""
+      ],
       "Go to ${ planOrAppName }": [
         "Buka ${ planOrAppName }"
       ],
@@ -596,6 +617,9 @@
       ],
       "Let's talk": [
         "Mari berbincang"
+      ],
+      "List layout": [
+        "Tata letak daftar"
       ],
       "Load": [
         "Muat"
@@ -750,8 +774,17 @@
       "Quit": [
         "Keluar"
       ],
+      "Re-index": [
+        "Indeks ulang"
+      ],
+      "Re-indexing in progress": [
+        "Pengindeksan ulang sedang berlangsung"
+      ],
       "Re-sign": [
         "Tanda tangani ulang"
+      ],
+      "Rebuild index": [
+        "Bangun ulang indeks"
       ],
       "Reconnect": [
         "Hubungkan kembali"
@@ -764,6 +797,9 @@
       ],
       "Refer a friend": [
         "Rujuk teman"
+      ],
+      "Refetch index": [
+        "Ambil ulang indeks"
       ],
       "Refresh the page": [
         "Muat ulang halaman"
@@ -798,6 +834,9 @@
       "Remove me": [
         "Hapus saya"
       ],
+      "Remove my access": [
+        "Hapus akses saya"
+      ],
       "Remove without saving": [
         "Hapus tanpa menyimpan"
       ],
@@ -815,6 +854,9 @@
       ],
       "Report a problem": [
         "Laporkan masalah"
+      ],
+      "Report abuse": [
+        "Laporkan penyalahgunaan"
       ],
       "Report an issue": [
         "Laporkan isu"
@@ -867,11 +909,20 @@
       "Save changes": [
         "Simpan perubahan"
       ],
+      "Save photo to your gallery": [
+        "Simpan foto ke galeri"
+      ],
       "Save photos and remove": [
         "Simpan foto dan hapus"
       ],
       "Scan & Download": [
         "Pindai & Unduh"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Pindai & Unduh (${ nbSelected })"
+      ],
+      "Scan and Download": [
+        "Pindai dan Unduh"
       ],
       "Search": [
         "Cari"
@@ -881,6 +932,9 @@
       ],
       "Search drive": [
         "Cari di drive"
+      ],
+      "Search is unavailable": [
+        "Pencarian tidak tersedia"
       ],
       "See how": [
         "Lihat caranya"
@@ -914,6 +968,9 @@
       ],
       "Set as cover": [
         "Pasang sebagai sampul"
+      ],
+      "Set password or expiration date": [
+        "Atur kata sandi atau tanggal kedalewarsa"
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"
@@ -953,6 +1010,9 @@
       ],
       "Shared": [
         "Dibagikan"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Berbagi terenkripsi secara end-to-end"
       ],
       "Sharing options": [
         "Opsi berbagi"
@@ -1040,6 +1100,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Coba ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Coba lagi"
@@ -1166,6 +1229,11 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Buka di ${ DOCS_APP_NAME }"
       ]
     },
     "Action: Sheets": {
@@ -3278,6 +3346,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item gagal dipindahkan"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Identitas dan alamat > Domain pendek (pm.me)"
       ],
@@ -3341,8 +3412,14 @@
       "Can't find any secure link": [
         "Tidak dapat menemukan tautan aman mana pun"
       ],
+      "Can't retrieve device name": [
+        "Tidak dapat mengambil nama perangkat"
+      ],
       "Cannot export this contact": [
         "Kontak tidak dapat diekspor"
+      ],
+      "Cannot find move target": [
+        "Tidak dapat menemukan target pemindahan"
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
@@ -3376,6 +3453,9 @@
       ],
       "Could not remove from favorites": [
         "Tidak dapat menghapus dari favorit"
+      ],
+      "Data integrity check failed": [
+        "Pemeriksaan integritas data gagal"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
@@ -3434,6 +3514,9 @@
       "Failed loading group members": [
         "Gagal memuat anggota grup"
       ],
+      "Failed to change permissions settings": [
+        "Gagal mengubah pengaturan izin"
+      ],
       "Failed to copy photo to album": [
         "Gagal menyalin foto ke album"
       ],
@@ -3484,6 +3567,9 @@
       ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
+      ],
+      "Folder not found": [
+        "Folder tidak ditemukan"
       ],
       "Forward address is required": [
         "Alamat penerusan wajib diisi"
@@ -3716,6 +3802,12 @@
       "Something went wrong while fetching available domains": [
         "Terjadi kesalahan saat mengambil domain yang tersedia"
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Terjadi kesalahan pada pencarian. Harap coba lagi nanti."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Terjadi kesalahan pada pencarian: Ruang penyimpanan tidak cukup."
+      ],
       "Something went wrong. Please try again.": [
         "Terjadi kesalahan. Silakan coba lagi."
       ],
@@ -3830,6 +3922,12 @@
       "VAT number must start with ${ prefixes }": [
         "Nomor PPN harus dimulai dengan ${ prefixes }"
       ],
+      "We cannot retrieve this item": [
+        "Tidak dapat mengambil item ini"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
       "We were not able to load some invitations": [
         "Kami tidak dapat memuat sebagian undangan"
       ],
@@ -3848,8 +3946,17 @@
       "We were not able to load some of your shared items": [
         "Kami tidak dapat memuat sebagian item yang Anda bagikan"
       ],
+      "We were not able to load some search results": [
+        "Gagal memuat beberapa hasil pencarian"
+      ],
+      "We were not able to load the file history": [
+        "Gagal memuat riwayat file"
+      ],
       "We were not able to load the folder contents": [
         "Kami tidak dapat memuat isi folder"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Maaf, tetapi unggahan gratis tidak tersedia saat ini."
       ],
       "Wrong billing address": [
         "Alamat penagihan salah"
@@ -4764,11 +4871,17 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } berhasil dihapus"
       ],
+      "${ albums } album": [
+        "${ albums } album"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace memberdayakan tim untuk berkolaborasi secara efisien tanpa membahayakan data perusahaan."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
@@ -4806,6 +4919,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "File ${ DOCS_APP_NAME } dan ${ SHEETS_APP_NAME } tidak dapat diunduh secara langsung dan tidak akan disertakan pada unduhan ini. Anda dapat mengunduh file lainnya dengan mengklik 'Lanjut unduh'."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } mendeteksi bahwa indeks pencarian lokal rusak dan tidak dapat digunakan lagi. Bangun ulang indeks untuk memulihkan pencarian."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } di App Store"
       ],
@@ -4820,6 +4936,12 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pratinjau resolusi rendah"
+      ],
+      "${ files } file": [
+        "${ files } file"
+      ],
+      "${ folders } folder": [
+        "${ folders } folder"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
@@ -4847,6 +4969,9 @@
       ],
       "${ photoCount } item": [
         "${ photoCount } item"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
@@ -4880,6 +5005,9 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entri"
       ],
       "${ storage } storage": [
         "Penyimpanan ${ storage }"
@@ -4925,6 +5053,9 @@
       ],
       "30-day money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Versi baru ${ DRIVE_APP_NAME } telah tersedia. Harap muat ulang untuk terus menggunakan pencarian."
       ],
       "A number will be added to the filename": [
         "Nomor akan ditambahkan ke nama file"
@@ -4974,6 +5105,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Semua (${ totalFoldersCount } folder)"
       ],
@@ -4985,6 +5119,9 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
+      "Already in this folder": [
+        "Sudah ada di folder ini"
       ],
       "Already in your library": [
         "Sudah dalam pustaka Anda"
@@ -5082,8 +5219,23 @@
       "Can edit": [
         "Dapat menyunting"
       ],
+      "Can edit and manage access": [
+        "Dapat mengedit dan mengelola akses"
+      ],
+      "Can view and edit": [
+        "Dapat melihat dan mengedit"
+      ],
       "Can view only": [
         "Hanya dapat melihat"
+      ],
+      "Can't move a folder into itself": [
+        "Tidak dapat memindahkan folder ke dalam dirinya sendiri"
+      ],
+      "Can't rename to same name": [
+        "Tidak dapat mengubah nama menjadi nama yang sama"
+      ],
+      "Can't write into folder": [
+        "Tidak dapat menulis ke dalam folder"
       ],
       "Canceled": [
         "Dibatalkan"
@@ -5103,6 +5255,9 @@
       "Choose a plan that works best for you.": [
         "Pilih paket yang paling sesuai dengan kebutuhan Anda."
       ],
+      "Clear all search data": [
+        "Bersihkan semua data pencarian"
+      ],
       "Clear data": [
         "Bersihkan data"
       ],
@@ -5114,6 +5269,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Membersihkan data peramban yang terkait dengan pencarian terenkripsi."
+      ],
+      "Clears browser data related to the search.": [
+        "Membersihkan data peramban yang terkait dengan pencarian."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Edit\" untuk mengubahnya."
@@ -5141,6 +5299,9 @@
       ],
       "Copy your referral link": [
         "Salin tautan rujukan Anda"
+      ],
+      "Could not scan file for malware": [
+        "Tidak dapat memindai file dari malware"
       ],
       "Country code": [
         "Kode negara"
@@ -5210,6 +5371,9 @@
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Apakah Anda mengingat kata sandi? ${ verifyButton }"
+      ],
+      "Do you still want to upload it?": [
+        "Apakah masih ingin mengunggahnya?"
       ],
       "Done": [
         "Selesai"
@@ -5343,6 +5507,12 @@
       "Feb": [
         "Feb"
       ],
+      "File could not be scanned": [
+        "File tidak dapat dipindai"
+      ],
+      "File flagged as potentially malicious": [
+        "File ditandai sebagai berpotensi berbahaya"
+      ],
       "File will not be updated": [
         "File tidak akan diperbarui"
       ],
@@ -5403,6 +5573,9 @@
       "How does encrypted search work?": [
         "Bagaimana cara pencarian terenkripsi bekerja?"
       ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Dengan ini menyatakan, dengan niat baik, bahwa informasi dan pernyataan yang tercantum dalam laporan ini adalah benar dan lengkap."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Apabila file ini tidak diunduh secara lokal pada ${ deviceName }, Anda akan kehilangan akses ke file ini."
       ],
@@ -5432,6 +5605,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jika menghapus diri sendiri, Anda akan kehilangan akses ke \"${ fileName }\" dan tidak akan dapat membukanya lagi kecuali pemilik membagikannya kembali kepada Anda."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
@@ -5463,6 +5639,27 @@
       "Included": [
         "Termasuk"
       ],
+      "Index is empty.": [
+        "Indeks kosong."
+      ],
+      "Indexed ${ first }": [
+        "Mengindeks ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Mengindeks ${ first } dan ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Mengindeks ${ first }, ${ second } dan ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Mengindeks ${ first }, ${ second }, ${ third } dan ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Pengindeksan mengalami keadaan yang tidak terduga dan tidak dapat dilanjutkan. Bangun ulang indeks untuk memulihkan."
+      ],
+      "Indexing in progress": [
+        "Pengindeksan sedang berlangsung"
+      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Mengindeks item ${ esProgress } dari ${ totalProgressToShow }"
       ],
@@ -5483,6 +5680,9 @@
       ],
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
+      ],
+      "Invitation confirmed": [
+        "Undangan dikonfirmasi"
       ],
       "Invite link copied": [
         "Tautan undangan disalin"
@@ -5586,6 +5786,9 @@
       "Makes your account safer": [
         "Membuat akun Anda lebih aman"
       ],
+      "Malware detected": [
+        "Malware terdeteksi"
+      ],
       "Mar": [
         "Mar"
       ],
@@ -5618,6 +5821,15 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Sebagian besar jaringan WiFi publik aman, tetapi beberapa di antaranya kurang aman, sehingga mengekspos Anda pada ancaman siber. VPN mengenkripsi lalu lintas Anda, menjaga Anda tetap terlindungi."
+      ],
+      "Move ${ dragCount } item": [
+        "Pindahkan ${ dragCount } item"
+      ],
+      "Move ${ fileCount } file": [
+        "Pindahkan ${ fileCount } file"
+      ],
+      "Move ${ folderCount } folder": [
+        "Pindahkan ${ folderCount } folder"
       ],
       "Moving files": [
         "Memindahkan file"
@@ -5652,6 +5864,9 @@
       "No payment is required at this time.": [
         "Saat ini tidak diperlukan pembayaran."
       ],
+      "No populator states found.": [
+        "Tidak ada status pengisi yang ditemukan."
+      ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
@@ -5666,6 +5881,9 @@
       ],
       "Not connected": [
         "Tidak terhubung"
+      ],
+      "Not enough storage space": [
+        "Ruang penyimpanan tidak cukup"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Catatan: data mungkin masih akan tersedia secara lokal pada perangkat yang Anda pasangi ${ DRIVE_APP_NAME }."
@@ -5690,6 +5908,9 @@
       ],
       "On public WiFi networks": [
         "Di jaringan WiFI publik"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Satu rangkaian terenkripsi. Perlindungan bisnis penuh."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Salah satu drive Anda terkunci. Hal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi yang berlangsung baru-baru ini."
@@ -5750,6 +5971,9 @@
       ],
       "Photo is set as album cover": [
         "Foto dipasang sebagai sampul album"
+      ],
+      "Photo saved to your Drive": [
+        "Foto disimpan ke Drive"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto telah disalin ke aliran dan ditandai favorit di sana."
@@ -5817,6 +6041,12 @@
       "Preparing": [
         "Menyiapkan"
       ],
+      "Preparing download": [
+        "Menyiapkan unduhan"
+      ],
+      "Preparing…": [
+        "Menyiapkan…"
+      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -5853,6 +6083,9 @@
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
+      "Re-indexing in progress": [
+        "Pengindeksan ulang sedang berlangsung"
+      ],
       "Ready to add some photos?": [
         "Siap menambahkan foto?"
       ],
@@ -5879,6 +6112,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Minta akses, atau ganti akun yang memiliki akses."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Item yang diminta sudah tidak ada lagi"
       ],
       "Restore": [
         "Pulihkan"
@@ -5907,8 +6143,35 @@
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan di peramban ini"
       ],
+      "Search data is corrupted": [
+        "Data pencarian rusak"
+      ],
       "Search Enabled": [
         "Pencarian Diaktifkan"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Pencarian diaktifkan. Sekarang dapat menutup dialog ini dan mencari file serta folder."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Pencarian mengalami kesalahan internal. Bangun ulang indeks untuk memulihkan."
+      ],
+      "Search engine error": [
+        "Kesalahan mesin pencari"
+      ],
+      "Search error": [
+        "Kesalahan pencarian"
+      ],
+      "Search is in an invalid state": [
+        "Pencarian berada dalam keadaan tidak valid"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Pencarian siap. File telah diindeks."
+      ],
+      "Search module is not available.": [
+        "Modul pencarian tidak tersedia."
+      ],
+      "Select a destination folder": [
+        "Pilih folder tujuan"
       ],
       "Select a folder to make the copy in": [
         "Pilih folder sebagai lokasi tujuan salinan"
@@ -6051,6 +6314,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
       ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Mesin pencari mengalami kesalahan internal. Bangun ulang indeks untuk memulihkan."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab peramban baru. Silakan nonaktifkan pemblokir pop-up yang aktif."
       ],
@@ -6071,6 +6337,9 @@
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Tindakan ini TIDAK dapat diurungkan. Silakan masukkan nama perangkat untuk mengonfirmasi penghapusan."
+      ],
+      "This file appears to be empty:": [
+        "File ini tampaknya kosong:"
       ],
       "This file is too large to preview": [
         "File terlalu besar untuk dipratinjau"
@@ -6104,6 +6373,12 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Kode unik ini dapat digunakan oleh situs web dan ISP (penyedia layanan internet) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Tindakan ini akan membatalkan semua unduhan yang tersisa."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tindakan ini akan membatalkan semua unggahan dan unduhan yang tersisa. Unggahan yang dibatalkan tidak akan disimpan di ${ DRIVE_APP_NAME }."
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Tindakan ini akan membatalkan seluruh unggahan yang tersisa. File yang dibatalkan tidak akan disimpan di ${ DRIVE_APP_NAME }."
@@ -6144,8 +6419,14 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Untuk mengaktifkan pencarian yang benar-benar pribadi, kami perlu mengindeks file Anda secara lokal. Anda tetap dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa — kami akan memberi tahu Anda saat pengindeksan selesai."
       ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Untuk mengaktifkan pencarian yang sesungguhnya, file perlu diindeks secara lokal. Tetap dapat menggunakan ${ DRIVE_APP_NAME } secara normal - pemberitahuan akan diberikan saat pengindeksan selesai."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai file dengan cara yang menjaga privasi dan memblokir file berbahaya. Namun, tetap disarankan untuk hanya mengunduh file dari sumber tepercaya. "
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Untuk membantu mengingat kata sandi, diminta untuk memasukkannya secara berkala. Frekuensi permintaan akan berkurang seiring waktu."
@@ -6195,6 +6476,9 @@
       "Try searching by file name, date, or type.": [
         "Cobalah untuk mencari berdasarkan nama, tanggal pembuatan, atau tipe berkas."
       ],
+      "Unexpected download error": [
+        "Kesalahan unduhan tidak terduga"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sayangnya, file ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
@@ -6210,6 +6494,12 @@
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
+      "Unsupported file type for Photos": [
+        "Tipe file tidak didukung untuk Foto"
+      ],
+      "Update required": [
+        "Pembaruan diperlukan"
+      ],
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
       ],
@@ -6222,6 +6512,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Tingkatkan atau bersihkan ruang penyimpanan kapan saja untuk memindahkan sisanya"
       ],
+      "Upgrade to get more storage space": [
+        "Tingkatkan untuk mendapatkan lebih banyak ruang penyimpanan"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Tingkatkan untuk mempertahankan berbagai manfaat ${ planTitle } Anda."
       ],
@@ -6233,6 +6526,9 @@
       ],
       "Uploaded": [
         "Diunggah"
+      ],
+      "Uploaded - file is empty": [
+        "Berhasil diunggah - file kosong"
       ],
       "Uploading": [
         "Mengunggah"
@@ -6285,6 +6581,12 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Selamat, Anda baru saja meningkatkan kapasitas ruang penyimpanan Anda ke 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Gagal menyimpan beberapa foto ke Drive"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Tidak dapat memverifikasi bahwa ${ nameAuthor } mengunggah ${ nodeName }. Urutan data file mungkin telah dimanipulasi. Hanya buka jika memercayainya."
+      ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
@@ -6296,6 +6598,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
+      ],
+      "We were not able to add this photo to your album": [
+        "Gagal menambahkan beberapa foto ke album"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Kami akan mengarahkan Anda ke PayPal di tab peramban baru untuk menyelesaikan transaksi ini. Jika Anda menggunakan pemblokir pop-up, silakan nonaktifkan untuk melanjutkan."
@@ -6315,6 +6620,9 @@
       "Week": [
         "Minggu"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Selamat datang di ${ DRIVE_APP_NAME }, untuk 10 menit pertama, file apa pun yang diunggah tidak akan dihitung dalam kuota penyimpanan."
+      ],
       "What do you want to do?": [
         "Apa yang ingin Anda lakukan?"
       ],
@@ -6332,6 +6640,9 @@
       ],
       "who": [
         "siapa"
+      ],
+      "Who has access": [
+        "Siapa yang memiliki akses"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "akan dipulihkan ke versi dari ${ formattedRevisionDate }. Semua versi lainnya masih akan disimpan."
@@ -6375,6 +6686,9 @@
       "You are about to open your default browser and visit:": [
         "Anda akan membuka peramban bawaan dan mengunjungi:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Anda sedang masuk sebagai ${ username }"
       ],
@@ -6407,6 +6721,9 @@
       ],
       "You cannot undo this action.": [
         "Anda tidak dapat mengurungkan tindakan ini."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Tidak memiliki izin untuk menyalin file ke folder ini."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
@@ -6441,6 +6758,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Tidak akan dapat membagikan \"${ fileName }\" setelah mengubah akses menjadi penampil. Hanya pemilik yang dapat mengubah akses kembali."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kredit akan diterima 1 bulan setelah teman berlangganan paket tahunan, dan 2 bulan setelah teman berlangganan paket bulanan."
       ],
@@ -6474,6 +6794,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Akun saat ini dikonfigurasi untuk menerapkan skema reverse charge. Hal ini tidak didukung untuk paket yang dipilih. Untuk melanjutkan, hapus nomor PPN dari alamat penagihan atau pilih paket lain."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Peramban kehabisan ruang saat mengindeks file untuk pencarian. Kosongkan penyimpanan, lalu bangun ulang indeks."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
@@ -6485,6 +6808,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "File sedang diindeks ulang. Pencarian dapat terus dilakukan - hasil mungkin tidak lengkap hingga proses selesai. Pemberitahuan akan diberikan setelah selesai."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "File Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses file Anda. ${ KeyReactivationButton }"
@@ -6641,6 +6967,9 @@
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } unduhan"
+      ],
       "${ n } month": [
         "${ n } bulan"
       ],
@@ -6692,11 +7021,17 @@
       "All": [
         "Semua"
       ],
+      "Allow editors to change permissions and share": [
+        "Izinkan editor untuk mengubah izin dan membagikan"
+      ],
       "Anderson": [
         "Anderson"
       ],
       "Anonymous": [
         "Anonim"
+      ],
+      "Anyone on the Internet with the link": [
+        "Siapa saja di Internet yang memiliki tautan"
       ],
       "App password": [
         "Kata sandi aplikasi"
@@ -6712,6 +7047,9 @@
       ],
       "Apply to all unverified items": [
         "Terapkan ke seluruh item yang tidak terverifikasi"
+      ],
+      "Asset": [
+        "Aset"
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -6824,6 +7162,9 @@
       "Created": [
         "Dibuat"
       ],
+      "Created ${ created }": [
+        "Dibuat ${ created }"
+      ],
       "Credits": [
         "Kredit"
       ],
@@ -6833,17 +7174,32 @@
       "Delete drive?": [
         "Hapus drive?"
       ],
+      "Delete link and remove access for everyone": [
+        "Hapus tautan dan hapus akses untuk semua orang"
+      ],
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
       ],
       "Deleted": [
         "Dihapus"
       ],
+      "Deleted ${ deleted }": [
+        "Dihapus ${ deleted }"
+      ],
       "Device": [
         "Perangkat"
       ],
+      "Device #${ position }": [
+        "Perangkat #${ position }"
+      ],
       "Device name": [
         "Nama perangkat"
+      ],
+      "Device: ${ name }": [
+        "Perangkat: ${ name }"
+      ],
+      "Disable this link on a specific date": [
+        "Nonaktifkan tautan ini pada tanggal tertentu"
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
@@ -6899,11 +7255,20 @@
       "Enter device name": [
         "Masukkan nama perangkat"
       ],
+      "Environment compatible": [
+        "Lingkungan kompatibel"
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Expired on ${ formatted }": [
+        "Kedaluwarsa pada ${ formatted }"
+      ],
       "Expires": [
         "Kedaluwarsa"
+      ],
+      "Expires ${ formatted }": [
+        "Kedaluwarsa ${ formatted }"
       ],
       "Expiry": [
         "Kedaluwarsa"
@@ -6971,8 +7336,17 @@
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama file dalam email undangan"
       ],
+      "Index kinds": [
+        "Jenis indeks"
+      ],
+      "Indexing": [
+        "Pengindeksan"
+      ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
+      ],
+      "Item #${ position }": [
+        "Item #${ position }"
       ],
       "Keep both": [
         "Pertahankan keduanya"
@@ -6998,6 +7372,9 @@
       "Location": [
         "Lokasi"
       ],
+      "Location: ${ item.location }": [
+        "Lokasi: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Masuk atau daftar "
       ],
@@ -7018,6 +7395,9 @@
       ],
       "Modified": [
         "Dimodifikasi"
+      ],
+      "Modified ${ modified }": [
+        "Diubah ${ modified }"
       ],
       "Move to Archive": [
         "Pindahkan ke Arsip"
@@ -7040,8 +7420,17 @@
       "Never": [
         "Tidak pernah"
       ],
+      "Never expires": [
+        "Tidak pernah kedaluwarsa"
+      ],
       "New password": [
         "Kata sandi baru"
+      ],
+      "Non-consensual intimate imagery": [
+        "Citra intim nonkonsensual"
+      ],
+      "Not active": [
+        "Tidak aktif"
       ],
       "Not selected": [
         "Tidak dipilih"
@@ -7064,6 +7453,9 @@
       "Other": [
         "Lainnya"
       ],
+      "Outdated version": [
+        "Versi usang"
+      ],
       "Password": [
         "Kata sandi"
       ],
@@ -7078,6 +7470,9 @@
       ],
       "Payment method": [
         "Metode pembayaran"
+      ],
+      "Pending invitation": [
+        "Undangan tertunda"
       ],
       "PGP scheme": [
         "Skema PGP"
@@ -7118,17 +7513,26 @@
       "Replace existing folder or file": [
         "Ganti folder atau file yang telah ada"
       ],
+      "Require password": [
+        "Wajibkan kata sandi"
+      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Searchable": [
+        "Dapat dicari"
+      ],
       "Select type of abuse": [
         "Pilih jenis penyalahgunaan"
       ],
       "Selected": [
         "Dipilih"
+      ],
+      "Set a password to limit access via link": [
+        "Atur kata sandi untuk membatasi akses melalui tautan"
       ],
       "Set recovery method": [
         "Tentukan metode pemulihan"
@@ -7142,8 +7546,17 @@
       "Shared by": [
         "Dibagikan oleh"
       ],
+      "Shared by ${ sharedBy }": [
+        "Dibagikan oleh ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Dibagikan oleh Tautan publik"
+      ],
       "Shared on": [
         "Dibagikan pada"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Dibagikan pada ${ sharedOn }"
       ],
       "Shared with me": [
         "Dibagikan dengan saya"
@@ -7238,6 +7651,9 @@
       "Uploaded by": [
         "Diunggah oleh"
       ],
+      "User opted in": [
+        "Pengguna menyetujui"
+      ],
       "Username": [
         "Nama pengguna"
       ],
@@ -7249,6 +7665,9 @@
       ],
       "Viewer": [
         "Peninjau"
+      ],
+      "Visible columns:": [
+        "Kolom yang terlihat:"
       ],
       "Vulnerable": [
         "Rentan"
@@ -8829,6 +9248,45 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" disalin"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" berhasil dibuat"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" dihapus"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" dihapus secara permanen dari Sampah"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" gagal dibuat"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" gagal dihapus"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" gagal dihapus secara permanen dari Sampah"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" gagal dipindahkan"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" gagal dipulihkan dari Sampah"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" dipindahkan"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" dipulihkan dari Sampah"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" berhasil dipindahkan"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" dibagikan"
+      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" dihapus secara permanen"
       ],
@@ -8844,17 +9302,26 @@
       "\"${ newName }\" renamed successfully": [
         "Nama \"${ newName }\" berhasil diubah"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto telah ditambahkan ke \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } item gagal didekripsi"
       ],
       "${ errors.length } item failed to be copied": [
         "${ errors.length } item gagal disalin"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item gagal dihapus"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } item gagal dihapus"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } item yang disalin dipindahkan ke sampah"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item disalin"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item dihapus"
@@ -8877,6 +9344,9 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } item gagal dipulihkan dari sampah"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item dipindahkan"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item dipindahkan ke sampah"
       ],
@@ -8891,6 +9361,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } telah diaktifkan"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto telah dihapus dari \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Akses untuk anggota dihapus"
@@ -8916,6 +9389,9 @@
       "Contact group updated": [
         "Grup kontak telah diperbarui"
       ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Salinan \"${ ellipsedName }\" dipindahkan ke Sampah"
+      ],
       "Device failed to be removed": [
         "Perangkat gagal dihapus"
       ],
@@ -8936,6 +9412,9 @@
       ],
       "Failed to accept share invitation": [
         "Gagal menerima undangan pembagian"
+      ],
+      "Failed to load sharing details": [
+        "Gagal memuat rincian berbagi"
       ],
       "Failed to move, please try again": [
         "Pemindahan gagal, silakan coba lagi"
@@ -8975,6 +9454,15 @@
       ],
       "Selected item was not removed from your list": [
         "Item yang dipilih gagal dihapus dari daftar Anda"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Item terpilih berhasil dihapus dari daftar"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Pengaturan diperbarui. Editor dapat mengubah izin dan membagikan."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Pengaturan diperbarui. Editor tidak dapat mengubah izin atau membagikan."
       ],
       "Share invitation accepted successfully": [
         "Undangan pembagian berhasil diterima"
@@ -9016,6 +9504,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Beberapa gambar tidak diunggah karena nama file yang berduplikat dalam seleksi saat ini."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Nama album berhasil diubah"
       ]
     },
     "Oauth instructions": {
@@ -9380,6 +9873,9 @@
       ],
       "Create new group": [
         "Buat grup baru"
+      ],
+      "Expected structure": [
+        "Struktur yang diharapkan"
       ],
       "Ignore group": [
         "Abaikan grup"
@@ -10338,6 +10834,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -10737,6 +11242,9 @@
     "Status": {
       "pending": [
         "menunggu"
+      ],
+      "user joined": [
+        "pengguna bergabung"
       ]
     },
     "Storage": {
@@ -11246,6 +11754,9 @@
       "Albums you've shared will appear here": [
         "Album yang Anda bagikan akan muncul di sini"
       ],
+      "Shared by ${ sharedBy }": [
+        "Dibagikan oleh ${ sharedBy }"
+      ],
       "Your favorited photos will appear here": [
         "Foto favorit Anda akan muncul di sini"
       ],
@@ -11521,6 +12032,9 @@
       "${ feature } is now active": [
         "${ feature } kini telah aktif"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } unggahan gratis."
+      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -11605,6 +12119,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all downloads?": [
+        "Batalkan semua unduhan?"
+      ],
+      "Cancel all transfers?": [
+        "Batalkan semua transfer?"
+      ],
       "Cancel all uploads?": [
         "Batalkan seluruh unggahan?"
       ],
@@ -11616,6 +12136,9 @@
       ],
       "Card verification": [
         "Verifikasi kartu"
+      ],
+      "Change access to viewer?": [
+        "Ubah akses menjadi penampil?"
       ],
       "Change layout": [
         "Ubah tata letak"
@@ -11767,6 +12290,18 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital terverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Tanda tangan digital terverifikasi. File ini dibuat secara aman oleh ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Tanda tangan digital terverifikasi. File ini diunggah secara aman oleh ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Tanda tangan digital terverifikasi. Folder ini dibuat secara aman oleh ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Tanda tangan digital terverifikasi. Folder ini diunggah secara aman oleh ${ author }."
+      ],
       "Discard": [
         "Batalkan"
       ],
@@ -11863,6 +12398,9 @@
       "Folder details": [
         "Rincian folder"
       ],
+      "Found ${ resultCount } result": [
+        "Menemukan ${ resultCount } hasil"
+      ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Dapatkan ${ DRIVE_SHORT_APP_NAME } pada ponsel Anda"
       ],
@@ -11937,6 +12475,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Impor data Anda ke ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Pengisi indeks"
       ],
       "Information exposed in breach": [
         "Informasi yang terpapar dalam pembobolan data"
@@ -12094,6 +12635,9 @@
       "Other names": [
         "Nama lain"
       ],
+      "Out of storage space": [
+        "Kehabisan ruang penyimpanan"
+      ],
       "Payment failed": [
         "Pembayaran gagal"
       ],
@@ -12120,6 +12664,9 @@
       ],
       "Public link": [
         "Tautan publik"
+      ],
+      "Public link settings": [
+        "Pengaturan tautan publik"
       ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
@@ -12150,6 +12697,9 @@
       ],
       "Remove item?": [
         "Hapus item?"
+      ],
+      "Remove your access?": [
+        "Hapus akses Anda?"
       ],
       "Rename a file": [
         "Ubah nama berkas"
@@ -12217,8 +12767,14 @@
       "Settings": [
         "Pengaturan"
       ],
+      "Settings for ${ sharedFileName }": [
+        "Pengaturan untuk ${ sharedFileName }"
+      ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Bagikan \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Bagikan kalender Anda dengan tim Anda"
@@ -12346,6 +12902,9 @@
       "Upload and share files": [
         "Unggah dan bagikan file"
       ],
+      "Upload empty file?": [
+        "Unggah file kosong?"
+      ],
       "Uploaded": [
         "Diunggah"
       ],
@@ -12376,6 +12935,18 @@
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
       ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Tidak dapat memverifikasi bahwa ${ author } membuat file ini."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Tidak dapat memverifikasi bahwa ${ author } membuat folder ini."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Tidak dapat memverifikasi bahwa ${ author } mengunggah file ini."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Tidak dapat memverifikasi bahwa ${ author } mengunggah folder ini."
+      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Kami tidak dapat memverifikasi bahwa file ini dibuat oleh pengguna anonim."
       ],
@@ -12390,6 +12961,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Kami tidak dapat mengonfirmasi bahwa isi file ini diunggah oleh ${ claimedContentAuthor }. Alasannya: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Tidak dapat mengonfirmasi bahwa nama dibuat atau diubah oleh ${ claimedNameAuthor }. Alasannya: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Tidak dapat mengonfirmasi bahwa node dibuat oleh ${ claimedKeyAuthor }. Alasannya: ${ node.keyAuthor.error.error }"
       ],
       "We'd love to hear from you!": [
         "Kami ingin mendengar dari Anda!"
@@ -12459,6 +13036,12 @@
       "Actions": [
         "Tindakan"
       ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ],
       "Fingerprint": [
         "Sidik jari"
       ],
@@ -12483,6 +13066,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Beralih otomatis antara tema pilihan Anda untuk siang dan malam, selaras dengan mode siang dan malam sistem Anda."
+      ],
+      "Change shared item settings": [
+        "Ubah pengaturan item yang dibagikan"
       ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
@@ -12561,6 +13147,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses file ini."

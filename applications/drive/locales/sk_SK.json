@@ -4084,6 +4084,9 @@
       "We cannot retrieve this item": [
         "Túto položku sa nám nepodarilo získať"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
+      ],
       "We were not able to load some invitations": [
         "Neboli sme schopní načítať niektoré pozvánky"
       ],
@@ -5405,6 +5408,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Všetky (${ totalFoldersCount } zložka)",
         "Všetky (${ totalFoldersCount } zložky)",
@@ -5687,6 +5693,12 @@
       "Do you remember your password? ${ verifyButton }": [
         "Pamätáte si svoje heslo? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Chcete ho aj tak nahrať?",
+        "Chcete ich aj tak nahrať?",
+        "Chcete ich aj tak nahrať?",
+        "Chcete ich aj tak nahrať?"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -5891,8 +5903,8 @@
       "How does encrypted search work?": [
         "Ako funguje vyhľadávanie v šifrovaných dátach?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "Týmto potvrdzujem, že som v dobrej viere presvedčený, že informácie a tvrdenia uvedené v správe sú správne a úplné."
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Týmto v dobrej viere potvrdzujem, že informácie a tvrdenia uvedené v správe sú správne a úplné."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Ak tieto súbory nie sú plne stiahnuté lokálne na ${ deviceName }, stratíte k nim prístup."
@@ -6680,6 +6692,12 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Toto sa NEDÁ vrátiť späť. Odstránenie potvrďte zadaním názvu zariadenia."
       ],
+      "This file appears to be empty:": [
+        "Zdá sa, že tento súbor je prázdny:",
+        "Zdá sa, že tieto súbory sú prázdne:",
+        "Zdá sa, že tieto súbory sú prázdne:",
+        "Zdá sa, že tieto súbory sú prázdne:"
+      ],
       "This file is too large to preview": [
         "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
@@ -6869,6 +6887,9 @@
       "Uploaded": [
         "Nahrané"
       ],
+      "Uploaded - file is empty": [
+        "Nahrané – súbor je prázdny"
+      ],
       "Uploading": [
         "Nahrávanie"
       ],
@@ -7033,6 +7054,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "V súčasnosti používate účet ako ${ username }."
@@ -7639,6 +7663,12 @@
       "Environment compatible": [
         "Kompatibilné prostredie"
       ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
       "Expired": [
         "Vypršal"
       ],
@@ -7804,6 +7834,9 @@
       "Never expires": [
         "Platnosť nikdy nevyprší"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
       "New password": [
         "Nové heslo"
       ],
@@ -7836,6 +7869,9 @@
       ],
       "Outdated version": [
         "Zastaralá verzia"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "Password": [
         "Heslo"
@@ -7890,6 +7926,9 @@
       ],
       "Region": [
         "Kraj"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
       ],
       "Replace existing folder or file": [
         "Nahradiť existujúci priečinok alebo súbor"
@@ -7966,6 +8005,9 @@
       "Start date": [
         "Dátum začiatku"
       ],
+      "Starts with": [
+        "Začína s"
+      ],
       "State": [
         "Štát"
       ],
@@ -8031,6 +8073,9 @@
       ],
       "Uploaded by": [
         "Nahrané používateľom"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ],
       "User opted in": [
         "Používateľ udelil súhlas"
@@ -8457,6 +8502,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
       ],
@@ -13610,6 +13673,9 @@
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
       ],
+      "Upload empty file?": [
+        "Nahrať prázdny súbor?"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -14049,6 +14115,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",

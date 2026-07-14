@@ -4024,6 +4024,9 @@
       "We cannot retrieve this item": [
         "Δεν είναι δυνατή η ανάκτηση αυτού του στοιχείου"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
+      ],
       "We were not able to load some invitations": [
         "Δεν μπορέσαμε να φορτώσουμε μερικές προσκλήσεις"
       ],
@@ -5732,8 +5735,8 @@
       "How does encrypted search work?": [
         "Πώς δουλεύει η κρυπτογραφημένη αναζήτηση;"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "Με την παρούσα βεβαιώνω ότι είμαι καλόπιστος/η ότι οι πληροφορίες και οι δηλώσεις που περιέχονται στην έκθεση είναι ορθές και πλήρεις."
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Με την παρούσα βεβαιώνω, καλή τη πίστει, ότι οι πληροφορίες και οι δηλώσεις που περιέχονται στην έκθεση είναι ορθές και πλήρεις."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Εάν αυτά τα αρχεία δεν έχουν ληφθεί πλήρως τοπικά στη συσκευή ${ deviceName }, θα χάσετε πρόσβαση σε αυτά."
@@ -6857,6 +6860,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως ${ username } για το ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Είστε συνδεδεμένος/η ως ${ username }."
