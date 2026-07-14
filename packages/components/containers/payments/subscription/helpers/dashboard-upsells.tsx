@@ -209,6 +209,7 @@ type GetUpsellArgs = {
     upsellPath: DASHBOARD_UPSELL_PATHS;
     customCycle?: CYCLE;
     telemetryFlow: TelemetryPaymentFlow;
+    onMount?: () => void;
 } & Partial<UpsellWithPlan>;
 
 export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
