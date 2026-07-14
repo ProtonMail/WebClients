@@ -404,6 +404,32 @@ describe('normalizeVegaLiteSpec', () => {
         expect(tooltip[0]?.format).toBe('%');
     });
 
+    it('rewrites percent formats on layer children using root inline data', () => {
+        const spec: Record<string, unknown> = {
+            data: {
+                values: [
+                    { product: 'Mail', growth_pct: 3 },
+                    { product: 'Lumo', growth_pct: 22 },
+                ],
+            },
+            layer: [
+                { mark: 'bar', encoding: { x: { field: 'product', type: 'nominal' } } },
+                {
+                    mark: 'text',
+                    encoding: {
+                        text: { field: 'growth_pct', type: 'quantitative', format: '+d%' },
+                    },
+                },
+            ],
+        };
+
+        normalizeStoredPercentFormats(spec);
+        const textLayer = (spec.layer as Record<string, unknown>[])[1]!;
+        const text = (textLayer.encoding as Record<string, unknown>).text as Record<string, unknown>;
+
+        expect(text.format).toBe('+.0f');
+    });
+
     it('rewrites Excel-style axis formats like :0 into valid d3 formats', () => {
         const spec: Record<string, unknown> = {
             mark: 'line',

@@ -84,9 +84,25 @@ function quoteUnquotedJsonKeys(raw: string): string {
     return raw.replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":');
 }
 
+/**
+ * LLMs sometimes double-wrap array objects: `[{ { "k": v } }]` instead of `[{ "k": v }]`.
+ * Only matches when `{` immediately follows `[{`, which is invalid JSON and safe to collapse.
+ */
+function fixDoubleWrappedArrayObjects(raw: string): string {
+    return raw.replace(/\[\{\s*\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}\s*\}\s*\]/g, '[{$1}]');
+}
+
+function withoutTrailingCommas(text: string): string {
+    return text.replace(/,\s*([}\]])/g, '$1');
+}
+
+function repairLlmJson(raw: string): string {
+    return withoutTrailingCommas(quoteUnquotedJsonKeys(fixDoubleWrappedArrayObjects(normalizeJsonText(raw))));
+}
+
 function parseJsonLenient(raw: string): unknown {
-    const withoutTrailingCommas = (text: string) => text.replace(/,\s*([}\]])/g, '$1');
     const candidates = [
+        repairLlmJson(raw),
         raw,
         normalizeJsonText(raw),
         withoutTrailingCommas(raw),
@@ -95,6 +111,8 @@ function parseJsonLenient(raw: string): unknown {
         quoteUnquotedJsonKeys(normalizeJsonText(raw)),
         withoutTrailingCommas(quoteUnquotedJsonKeys(raw)),
         withoutTrailingCommas(quoteUnquotedJsonKeys(normalizeJsonText(raw))),
+        fixDoubleWrappedArrayObjects(raw),
+        fixDoubleWrappedArrayObjects(normalizeJsonText(raw)),
     ];
 
     let lastError: Error | undefined;

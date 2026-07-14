@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
 import { useEncryptedTextAnimation } from '../../../hooks/useEncryptedTextAnimation';
@@ -47,7 +48,7 @@ const VegaChartLoadingContent = () => {
     }, []);
 
     return (
-        <div className="vega-lite-chart__loading-content">
+        <div className="vega-lite-chart__loading-content relative flex flex-column items-center gap-3">
             <LumoIcon
                 key={CHART_ICONS[iconIndex]}
                 name={CHART_ICONS[iconIndex] ?? 'ChartNoAxesCombined'}
@@ -64,14 +65,24 @@ const VegaChartLoadingContent = () => {
 
 /** Standalone chart loading shell — must include `.vega-lite-chart` for layout/sizing. */
 export const VegaChartLoading = () => (
-    <div className="vega-lite-chart vega-lite-chart--loading-only" aria-busy="true" aria-live="polite">
+    <div
+        className={clsx(
+            'vega-lite-chart vega-lite-chart--loading-only relative flex items-center justify-center border-none shadow-none bg-transparent'
+        )}
+        aria-busy="true"
+        aria-live="polite"
+    >
         <VegaChartLoadingContent />
     </div>
 );
 
 /** Overlay variant used while vega-embed mounts inside an existing chart container. */
 export const VegaChartLoadingOverlay = () => (
-    <div className="vega-lite-chart__loading" aria-busy="true" aria-live="polite">
+    <div
+        className="vega-lite-chart__loading absolute inset-0 flex items-center justify-center pointer-events-none z-1"
+        aria-busy="true"
+        aria-live="polite"
+    >
         <VegaChartLoadingContent />
     </div>
 );
