@@ -22,6 +22,7 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { areEquivalentEmails } from '../../helpers';
 import type { CreateMigrationBatchError } from '../../thunk';
 import ActivationStatus from './ActivationStatus';
 import ImportStatus, { coalesceStatus } from './ImportStatus';
@@ -273,7 +274,7 @@ const ProviderUsersTable: FC<Props> = ({
                                     <label htmlFor={`select-user-${index}`} className="m-0">
                                         <p className="m-0 text-ellipsis" title={u.AdminSetName}>
                                             {u.AdminSetName}{' '}
-                                            {u.Email === currentUser && (
+                                            {areEquivalentEmails(u.Email, currentUser) && (
                                                 <span className="ml-0.5">({c('BOSS').t`You`})</span>
                                             )}
                                         </p>
@@ -301,7 +302,7 @@ const ProviderUsersTable: FC<Props> = ({
                                 >
                                     <ActivationStatus
                                         isActivated={
-                                            u.Email === currentUser ||
+                                            areEquivalentEmails(u.Email, currentUser) ||
                                             u.ImporterOrganizationUser?.HasTemporaryPassword === false
                                         }
                                     />
