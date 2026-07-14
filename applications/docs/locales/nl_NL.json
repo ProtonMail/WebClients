@@ -3500,6 +3500,9 @@
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "We konden dit bestand niet importeren in ${ SHEETS_APP_NAME }. U kunt proberen de inhoud te kopiëren en te plakken in een nieuwe ${ SHEETS_APP_NAME }."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
+      ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
       ],
@@ -5586,6 +5589,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
@@ -10484,6 +10490,12 @@
       "Actions": [
         "Acties"
       ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
       "Fingerprint": [
         "Vingerafdruk"
       ],
@@ -10577,6 +10589,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."

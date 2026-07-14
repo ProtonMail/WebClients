@@ -2943,6 +2943,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } ელემენტის გადატანა ჩავარდა",
+        "${ failureItems.length } ელემენტის გადატანა ჩავარდა"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } არის თქვენი მომხმარებლის სახელი. ${ emailAddress }-ის შესაქმნელად, გთხოვთ, გადახვიდეთ აქ: პარამეტრები > იდენტობა და მისამართები > მოკლე დომენი (pm.me)"
       ],
@@ -3070,6 +3074,9 @@
       ],
       "Failed loading group members": [
         "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
+      "Failed to change permissions settings": [
+        "ნებართვების პარამეტრების შეცვლა ჩავარდა"
       ],
       "Failed to copy photo to album": [
         "სურათის ალბომში კოპირება ჩავარდა"
@@ -3444,6 +3451,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "თქვენი დოკუმენტის სინქრონიზაციის პრობლემა. განაახლეთ გვერდი."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
       ],
       "Wrong billing address": [
         "არასწორი გადახდის მისამართი"
@@ -4462,6 +4472,18 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "ტელეფონის ნომერი, მხოლოდ, ერთი ${ BRAND_NAME }-ის ანგარიშის გადასამოწმებლად შეგიძლიათ, გამოიყენოთ"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "უსაფრთხო კავშირი აუცილებელია დისტანციურად მუშაობისას. VPN იცავს კომპანიის მონაცემებს კიბერსაფრთხეებისგან და ინარჩუნებს თქვენს სამუშაოს პირადად."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN შიფრავს თქვენს კავშირს და მალავს თქვენს IP მისამართს, რაც მნიშვნელოვნად ართულებს ნებისმიერისთვის თქვენი ვებ-სერფინგის თვალყურის დევნებას ან მონიტორინგს."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN მალავს თქვენს IP მისამართს და შიფრავს თქვენი ვებ-სერფინგის აქტივობას, რაც ვებსაიტებს, რეკლამის განმთავსებლებსა და ISP-ებს დროთა განმავლობაში თქვენი თვალთვალის შესაძლებლობას ართულებს."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN არის უსაფრთხო გვირაბი თქვენს მოწყობილობასა და ინტერნეტს შორის. ის მალავს თქვენს მდებარეობასა და აქტივობას თქვენი ინტერნეტ პროვაიდერისაგან (ISP) და იმ ვებსაიტებისგან, რომლებსაც სტუმრობთ."
+      ],
       "Accept/decline": [
         "მიღება/უარყოფა"
       ],
@@ -4470,6 +4492,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "რეკლამის განმთავსებლები თვალს ადევნებენ თქვენს ვებ-სერფინგს მიზნობრივი რეკლამების საჩვენებლად. ${ VPN_APP_NAME } ბლოკავს ტრეკერებსა და რეკლამებს, რაც აჩქარებს თქვენს კავშირს და აუმჯობესებს თქვენს ონლაინ გამოცდილებას."
       ],
       "All": [
         "ყველა"
@@ -4799,6 +4824,9 @@
       "Geoblocking": [
         "გეოდაბლოკვა"
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "მთავრობებსა და ISP-ებს შეუძლიათ თქვენი ონლაინ აქტივობის მონიტორინგი. თქვენი რეალური IP-ის დამალვით და თქვენი აქტივობის დაშიფვრით, თქვენი ვებ-სერფინგი ხდება პირადი."
+      ],
       "here": [
         "აქ"
       ],
@@ -4828,6 +4856,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "თუ მაინც აპირებთ ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "თუ საკუთარ თავს ამოშლით, დაკარგავთ წვდომას ელემენტზე „${ fileName }“ და ვეღარ შეძლებთ მის გახსნას, სანამ მფლობელი მას კვლავ არ გაგიზიარებთ."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა",
@@ -4962,6 +4993,9 @@
       ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "საჯარო WiFi ქსელების უმეტესობა უსაფრთხოა, მაგრამ ზოგიერთს აკლია დაცვა, რაც კიბერსაფრთხეების წინაშე გაყენებთ. VPN შიფრავს თქვენს ტრაფიკს და გიცავთ თქვენ."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
@@ -5201,6 +5235,12 @@
       "Some edits are taking longer to sync than expected.": [
         "ზოგიერთი ჩასწორების სინქრონიზაციას მეტი დრო სჭირდება, ვიდრე ამას მოველოდით."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "ზოგიერთი მთავრობა ბლოკავს ან ზღუდავს წვდომას გარკვეულ ვებსაიტებზე. VPN გეხმარებათ ცენზურის გვერდის ავლით, თანაც ინარჩუნებს თქვენს აქტივობასა და იდენტობას პირადად."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "ზოგიერთი ვებსაიტი და სტრიმინგის სერვისი ბლოკავს კონტენტს რეგიონის მიხედვით. VPN საშუალებას გაძლევთ გვერდი აუაროთ ამ შეზღუდვებს და თავისუფლად მიიღოთ წვდომა ინტერნეტთან."
+      ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
@@ -5289,8 +5329,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "ეს ბმული Drive-ის ძველ შეიქმნა და ვერ შეიცვლება. პარამტრების შესაცვლელად წაშალეთ ეს ბმული და შექმენით ახალი."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "ეს ნიშნავს, რომ თქვენი ISP და ვებსაიტები, რომლებსაც სტუმრობთ, ვერ დააკავშირებენ თქვენს პერსონალურ ინფორმაციას თქვენს ონლაინ აქტივობასთან."
+      ],
       "This message will be presented again later": [
         "ეს შეტყობინება მოგვენებით ისევ იქნება წარმოდგენილი"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "ეს უნიკალური კოდი შეიძლება გამოყენებულ იქნას ვებსაიტებისა და ISP-ების (ინტერნეტ პროვაიდერების) მიერ თქვენი მდებარეობისა და ბრაუზინგის ისტორიის თქვენს მოწყობილობასთან დასაკავშირებლად"
       ],
       "This will permanently delete the file you uploaded.": [
         "ეს თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
@@ -5472,6 +5518,9 @@
       "You are about to open your default browser and visit:": [
         "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "თქვენ ამჟამად შესული ხართ როგორც ${ username } ${ organizationName }-სთვის."
+      ],
       "You are currently signed in as ${ username }.": [
         "შესული ბრძანდებით, როგორც ${ username }."
       ],
@@ -5525,12 +5574,24 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "წვდომის მნახველზე შეცვლის შემდეგ ვეღარ შეძლებთ „${ fileName }“-ის გაზიარებას. თქვენი წვდომის კვლავ შეცვლა მხოლოდ მფლობელს შეუძლია."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "თქვენ მიიღებთ კრედიტს 1 თვის შემდეგ, რაც თქვენი მეგობარი გამოიწერს წლიურ პაკეტს, ხოლო 2 თვის შემდეგ, რაც ისინი გამოიწერენ ყოველთვიურ პაკეტს."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "ამის შემდეგ გადახდა განხორციელდება ყოველ ${ renewCycle } თვეში, ${ renewAmountStr } ოდენობით. შეგიძლიათ გააუქმოთ ნებისმიერ დროს.",
         "ამის შემდეგ გადახდა განხორციელდება ყოველ ${ renewCycle } თვეში, ${ renewAmountStr } ოდენობით. შეგიძლიათ გააუქმოთ ნებისმიერ დროს."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "თქვენ აპირებთ უარყოთ მოწვევა ალბომში „${ invitationName }“ გასაწევრიანებლად. თუ გააგრძელებთ, მასზე წვდომას ვერ შეძლებთ, სანამ მფლობელი ხელახლა არ მოგიწვევთ. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "თქვენ აპირებთ უარყოთ მოწვევა საქაღალდეში „${ invitationName }“ გასაწევრიანებლად. თუ გააგრძელებთ, მასზე წვდომას ვერ შეძლებთ, სანამ მფლობელი ხელახლა არ მოგიწვევთ. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "თქვენ აპირებთ უარყოთ მოწვევა ელემენტთან „${ invitationName }“ გასაერთიანებლად. თუ გააგრძელებთ, მასზე წვდომას ვერ შეძლებთ, სანამ მფლობელი ხელახლა არ მოგიწვევთ. დარწმუნებული ხართ, რომ გსურთ გაგრძელება?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა):"
@@ -5631,6 +5692,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
       ]
     },
     "info": {
@@ -7658,6 +7722,18 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ წარმატებით შეიქმნა"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“-ის შექმნა ჩავარდა"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "„${ ellipsedName }“ გადატანილია"
+      ],
+      "\"${ fileName }\" shared": [
+        "„${ fileName }“ გაზიარებულია"
+      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" წაიშალა"
       ],
@@ -7729,6 +7805,10 @@
         "${ numberOfItems } ელემენტის ნაგვიდან აღდგენის შეცდომა",
         "${ numberOfItems } ელემენტის ნაგვიდან აღდგენის შეცდომა"
       ],
+      "${ numberOfItems } item moved": [
+        "გადატანილია ${ numberOfItems } ელემენტი",
+        "გადატანილია ${ numberOfItems } ელემენტი"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } ფაილი ნაგავში ჩავარდა",
         "${ numberOfItems } ფაილი ნაგავში ჩავარდა"
@@ -7794,6 +7874,9 @@
       "Failed to load invitation details": [
         "მოწვევის დეტალების ჩატვირთვა ჩავარდა"
       ],
+      "Failed to load sharing details": [
+        "გაზიარების დეტალების ჩატვირთვა ჩავარდა"
+      ],
       "Failed to reject share invitation": [
         "ზიარის მოსაწვეის უარყოფა ჩავარდა"
       ],
@@ -7842,6 +7925,12 @@
       ],
       "Root folder failed to be loaded": [
         "Root საქაღალდის ჩატვირთვის შეცდომა"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "პარამეტრი განახლდა. რედაქტორებს შეუძლიათ ნებართვების შეცვლა და გაზიარება."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "პარამეტრი განახლდა. რედაქტორებს არ შეუძლიათ ნებართვების შეცვლა ან გაზიარება."
       ],
       "Share invitation accepted successfully": [
         "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
@@ -8776,6 +8865,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად."
       ]
     },
     "session_recovery:available:link": {
@@ -9716,6 +9817,9 @@
       "Cannot load link": [
         "ბმულის ჩატვირთვის შეცდომა"
       ],
+      "Change access to viewer?": [
+        "შეიცვალოს წვდომა მნახველზე?"
+      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -10145,6 +10249,9 @@
       "Settings for ${ sharedFileName }": [
         "პარამეტრები ${ sharedFileName }-ისთვის"
       ],
+      "Share \"${ fileName }\"": [
+        "გააზიარეთ „${ fileName }“"
+      ],
       "Share ${ name }": [
         "${ name }-ის გაზიარება"
       ],
@@ -10282,6 +10389,12 @@
       "Actions": [
         "ქმედებები"
       ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Expires": [
+        "ვადა"
+      ],
       "Fingerprint": [
         "ანაბეჭდი"
       ],
@@ -10306,6 +10419,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
+      ],
+      "Change shared item settings": [
+        "გაზიარებული ელემენტის პარამეტრების შეცვლა"
       ],
       "Customize import to reduce the number of folders": [
         "საქაღალდეების რაოდენობის შესამცირებლად მოირგეთ შემოტანის პარამეტრები"
@@ -10372,6 +10488,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP გასაღები"
       ],
       "We have sent them an invite to access the item.": [
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
