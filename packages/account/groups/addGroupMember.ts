@@ -33,7 +33,7 @@ import { getGroupKey } from '../groups/getGroupKey';
 import { type GroupsState, getGroupRoles } from '../groups/index';
 import { disableGroupAddressEncryption } from '../groups/setGroupAddressFlags';
 import type { KtState } from '../kt';
-import { type MembersState, getMemberAddresses, membersThunk } from '../members';
+import { type MembersState, getMemberAddresses, invalidateMemberRoles, membersThunk } from '../members';
 import { promoteMemberToOrgAdmin } from '../members/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { isOrgKeyRequired } from '../organizationRoles/helpers';
@@ -289,7 +289,8 @@ export const addGroupMembersThunk = ({
 
         const groupRoles = await dispatch(getGroupRoles({ group: { ID: groupId } }));
         const shouldPromote = groupRoles.some(({ Role }) => isOrgKeyRequired(Role));
-        const members = shouldPromote ? await dispatch(membersThunk()) : [];
+        const hasGroupRoles = groupRoles.length > 0;
+        const members = hasGroupRoles ? await dispatch(membersThunk()) : [];
 
         // Add each member, passing pre-computed values
         const results = await Promise.allSettled(
@@ -303,14 +304,20 @@ export const addGroupMembersThunk = ({
                     })
                 );
 
-                if (shouldPromote) {
-                    const member = getMemberByEmail(members, canonicalizeInternalEmail(email));
-                    if (member) {
-                        // TODO(partial-failure): the member is added to the group but promotion may fail here.
-                        // Reconcile / surface a recovery path in a follow-up MR.
-                        await dispatch(promoteMemberToOrgAdmin({ member, api: extra.api }));
-                    }
+                if (!hasGroupRoles) {
+                    return;
                 }
+
+                const member = getMemberByEmail(members, canonicalizeInternalEmail(email));
+                if (!member) {
+                    return;
+                }
+
+                if (shouldPromote) {
+                    await dispatch(promoteMemberToOrgAdmin({ member, api: extra.api }));
+                }
+
+                dispatch(invalidateMemberRoles({ member }));
             })
         );
 
