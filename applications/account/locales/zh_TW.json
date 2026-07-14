@@ -58,6 +58,9 @@
       "Accept": [
         "接受"
       ],
+      "Account settings": [
+        "帳號設定"
+      ],
       "activate": [
         "啟用"
       ],
@@ -1733,7 +1736,7 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "未顯示 ${ hiddenResultsCount } 個結果"
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -2369,7 +2372,7 @@
         "${ maxSpaceTB }儲存"
       ],
       "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位使用者"
+        "至多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -4349,6 +4352,9 @@
       "120 minutes": [
         "120 分鐘"
       ],
+      "120m": [
+        "120 分鐘"
+      ],
       "30 minutes": [
         "30分鐘"
       ],
@@ -4358,7 +4364,13 @@
       "60 minutes": [
         "60 分鐘"
       ],
+      "60m": [
+        "60 分鐘"
+      ],
       "90 minutes": [
+        "90 分鐘"
+      ],
+      "90m": [
         "90 分鐘"
       ]
     },
@@ -5163,6 +5175,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "驗證失敗，請在一小時後再試。"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "我們停止了 DKIM 簽章，因為您的 DNS 配置發生問題。請遵從下列指示以恢復簽章。"
@@ -9143,6 +9158,9 @@
       "You are about to open your default browser and visit:": [
         "您將要開啟預設瀏覽器並造訪："
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
+      ],
       "You are currently signed in as ${ username }.": [
         "您目前已登入為 ${ username }。"
       ],
@@ -10530,6 +10548,9 @@
       "Newsletters": [
         "電子報"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "電子報 - 新聞、編輯電子郵件和非促銷內容"
+      ],
       "No filter": [
         "無篩選器"
       ],
@@ -10650,8 +10671,14 @@
       "Primary": [
         "主要"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "主要 - 個人和工作電子郵件，以及重要更新"
+      ],
       "Promotions": [
         "優惠活動"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "促銷 - 優惠、促銷和行銷電子郵件"
       ],
       "Proration": [
         "按比例分配後"
@@ -10770,6 +10797,9 @@
       "Social": [
         "社群網路"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "社群 - 社群媒體更新、活動和訊息"
+      ],
       "Social media updates and activity": [
         "社交媒體更新和活動"
       ],
@@ -10842,6 +10872,9 @@
       "Transactions": [
         "交易記錄"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "交易 - 回條、預訂、帳單和訂單"
+      ],
       "Two-password mode": [
         "雙重密碼模式"
       ],
@@ -10856,6 +10889,9 @@
       ],
       "Updates": [
         "更新"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "更新 - 自動確認、警示和帳號更新"
       ],
       "Upload 1 or more encryption keys": [
         "上載一個或以上的加密金鑰"
@@ -11099,9 +11135,6 @@
       ],
       "Create an alias": [
         "建立一個別名"
-      ],
-      "Don't have access to your 2FA?": [
-        "無法存取您的雙重驗證？"
       ],
       "Encryption and keys": [
         "加密與金鑰"
@@ -12376,7 +12409,7 @@
         "保管庫共享 (至多 ${ n } 人)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "與最多 ${ n } 個人分享保管庫"
+        "至多可與 ${ n } 個人共用保管庫"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN 附帶廣告攔截器及惡意軟體防護"
@@ -13179,6 +13212,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "在110 多個國家提供極速 VPN 伺服器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding": {
@@ -13239,6 +13275,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -15086,6 +15125,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -15730,6 +15778,9 @@
       "Browse securely": [
         "安全地瀏覽"
       ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
+      ],
       "Get unlimited aliases": [
         "取得無限別名"
       ],
@@ -15835,6 +15886,9 @@
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "保持您的密碼安全和整齊於多個保管庫"
@@ -16392,6 +16446,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 可讓您存取 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能。內建隱私保護，確保您的資料和身分安全無虞，讓您可以放心使用。"
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } 為您提供所有應用程式、所有功能、搶先體驗新版本，以及您掌握資料及其安全性所需的一切。"
@@ -17919,9 +17976,6 @@
       "Layout": [
         "版面配置"
       ],
-      "Leave ${ organisationName }?": [
-        "退出 ${ organisationName } ?"
-      ],
       "Leave group?": [
         "退出群組?"
       ],
@@ -18414,6 +18468,9 @@
       "Upgrade your privacy": [
         "升級您的隱私"
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
       "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
         "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
@@ -18667,6 +18724,9 @@
       "Instant AI assistance, human expert on hand!": [
         "即時 AI 協助，真人專家隨時待命！"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
       "Origin Internet Service Provider (ISP)": [
         "來源網際網路服務提供商 (ISP)"
       ],
@@ -18703,6 +18763,9 @@
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "使用瀏覽器預設的滾動拉桿。此會更明顯、容易使用"
       ],
@@ -18711,6 +18774,9 @@
       ],
       "Verified email address": [
         "已驗證的電子郵件位址"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"

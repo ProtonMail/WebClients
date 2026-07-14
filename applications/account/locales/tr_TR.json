@@ -66,6 +66,9 @@
       "Accept": [
         "Kabul et"
       ],
+      "Account settings": [
+        "Hesap ayarları"
+      ],
       "activate": [
         "kullanıma al"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "İletişim ayarları yönetimi"
+      ],
+      "Manage company": [
+        "Şirketi yönet"
       ],
       "Manage folders": [
         "Klasör yönetimi"
@@ -2999,6 +3005,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Bilinmeyen bir sorun çıktı. Lütfen sayfayı yenileyip yeniden deneyin"
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "${ withoutString } ve ${ notMigratedOthers } olmadan devam etmek istediğinizden emin misiniz?",
+        "${ withoutString } ve ${ notMigratedOthers } olmadan devam etmek istediğinizden emin misiniz?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "${ withoutString } olmadan devam etmek istediğinizden emin misiniz?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "İlerlemek istediğinize emin misiniz? Aktarım işlemi tamamlanmadan önce hesaplarını doğrulamamış olan kullanıcıların ${ BRAND_NAME } kuruluş yöneticisinden parola sıfırlama isteğinde bulunmaları gerekecek."
       ],
@@ -3046,6 +3059,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Mevcut tüm MX kayıtlarını silin ardından aşağıdaki kodları kopyalayıp alan adı barındırıcınızın DNS bölümüne yapıştırın."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve aktarım sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
@@ -3180,6 +3196,9 @@
       "Missing organization public key": [
         "Kuruluşun herkese açık anahtarı bulunamadı"
       ],
+      "More details": [
+        "Daha fazla ayrıntı"
+      ],
       "Need help?": [
         "Yardım mı gerekiyor?"
       ],
@@ -3273,11 +3292,17 @@
       "Some accounts are not claimed": [
         "Bazı hesaplar sahiplenilmemiş"
       ],
+      "Some members weren't migrated": [
+        "Bazı üyeler aktarılmadı"
+      ],
       "Status": [
         "Durum"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Kuruluşunuzun verilerini ${ BRAND_NAME } üzerine taşımak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Easy Switch uygulamasını kurun. Kurulum sonrasında ilerlemek için buraya dönün."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Geçiş işlemini tamamlamak için yalnızca ${ BRAND_NAME } MX kayıtlarını koruduğunuzdan emin olun."
       ],
       "Update records for receiving": [
         "Almak için kayıtları güncelleyin"
@@ -3333,6 +3358,9 @@
       "You": [
         "Siz"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Bu kullanıcıların verilerini daha sonra kopyalayamayacaksınız."
+      ],
       "You're all set!": [
         "Hazırsınız!"
       ],
@@ -3342,6 +3370,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin.",
         "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Etki alanı yapılandırmanızda hâlâ başka bir sağlayıcının MX kayıtları yer almakta."
       ]
     },
     "breadcrumb": {
@@ -7786,6 +7817,9 @@
       "We couldn't sign you in": [
         "Oturumunuz açılamadı"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Bu yöntemle doğrulama kodunu gönderemedik."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
       ],
@@ -8357,8 +8391,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "${ plan } tarifesindeki tüm ücretli özelliklere erişiminizi kaybedeceksiniz."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "${ planName } paketinde yer alan tüm premium özelliklere erişiminiz sona erecek"
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "**${ invite.InviterEmail }** tarafından hesabınızı bu grup tarifesiyle ilişkilendirmeye davet edildiniz."
@@ -9840,6 +9874,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } üye gruba eklendi",
+        "${ emails.length } üye gruba eklendi"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: tam boyutlu görsel"
       ],
@@ -11246,6 +11284,9 @@
       "Got it": [
         "Tamam"
       ],
+      "Group created": [
+        "Grup oluşturuldu"
+      ],
       "Group deleted": [
         "Grup silindi"
       ],
@@ -11689,6 +11730,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
+      ],
+      "Manage groups in your identity provider": [
+        "Kimlik sağlayıcınızdaki grupları yönetin"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
@@ -13273,6 +13317,9 @@
       "You are about to open your default browser and visit:": [
         "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
       "You are currently signed in as ${ username }.": [
         "Şu anda ${ username } olarak oturum açmışsınız."
       ],
@@ -13344,6 +13391,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Şimdi hesaba bir yönetici olarak erişebilir ve yönetebilirsiniz."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Artık yönetici olarak şirkete erişebilir ve onu yönetebilirsiniz."
       ],
       "You can now close this tab.": [
         "Artık bu sekmeyi kapatabilirsiniz."
@@ -14466,6 +14516,9 @@
       "App password": [
         "Uygulama parolası"
       ],
+      "App Settings": [
+        "Uygulama Ayarları"
+      ],
       "Apply filter to existing emails": [
         "Süzgeci var olan e-postalara uygula"
       ],
@@ -14693,6 +14746,9 @@
       ],
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
+      ],
+      "Confirm MX records updated": [
+        "MX kayıtlarının güncellendiğini doğrula"
       ],
       "Confirm new password": [
         "Yeni parola onayı"
@@ -14964,6 +15020,12 @@
       ],
       "Event notifications": [
         "Etkinlik bildirimleri"
+      ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
       ],
       "Exclude Spam/Trash from All mail": [
         "Tüm e-postalar klasöründe İstenmeyen/Çöp iletiler görüntülenmesin"
@@ -15262,6 +15324,9 @@
       "Navigation": [
         "Gezinme"
       ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
       "New display name": [
         "Yeni görüntülenecek ad"
       ],
@@ -15369,6 +15434,9 @@
       ],
       "Other amount": [
         "Diğer tutar"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
       ],
       "Passkeys": [
         "Geçiş anahtarları"
@@ -15489,6 +15557,9 @@
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
+      ],
+      "Regular expression": [
+        "Düzenli ifade"
       ],
       "Remove": [
         "Kaldır"
@@ -15668,6 +15739,9 @@
       "Start weekday": [
         "Haftanın başlangıç günü"
       ],
+      "Starts with": [
+        "Şununla başlar"
+      ],
       "State": [
         "İl"
       ],
@@ -15793,6 +15867,9 @@
       ],
       "URL": [
         "İnternet adresi"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ],
       "Use another payment method": [
         "Başka bir ödeme yöntemi kullanın"
@@ -16171,9 +16248,6 @@
       ],
       "Details": [
         "Ayrıntılar"
-      ],
-      "Don't have access to your 2FA?": [
-        "İki adımlı doğrulamanıza erişemiyor musunuz?"
       ],
       "Downloads": [
         "İndirmeler"
@@ -16866,6 +16940,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Tüm süzgeç işlemleri, ${ MAIL_APP_NAME } hesabınızdaki tüm iletilere uygulanacak. Herhangi bir otomatik yanıt e-postası gönderilmeyecek."
       ],
@@ -16875,6 +16952,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
       ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Kuruluşunuz genelindeki ${ PASS_APP_NAME } etkinliğini görüntüleyin."
       ],
@@ -16883,6 +16972,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Kullanıcı oturum açma, kurtarma ve güvenlik etkinliklerini görüntüleyin."
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -24429,11 +24521,11 @@
       "per month, billed annually": [
         "aylık, yılda bir faturalanır"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "1 yıl boyunca tam erişimle %50 kazanın"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "6 ay boyunca tam erişimle %50 kazanın"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Bir yıl boyunca %50 tasarruf edin ve tam erişim hakkınızı koruyun"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "${ MAIL_APP_NAME } karşılaştırması ile bağımsızlığımızın neden fark yarattığını görün."
@@ -25943,6 +26035,9 @@
       "Get more from your password manager": [
         "Parola yöneticinizden daha fazla yararlanın"
       ],
+      "Get more from your privacy suite": [
+        "Gizlilik paketinizden daha fazla yararlanın"
+      ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
       ],
@@ -26094,8 +26189,8 @@
       "Layout": [
         "Görünüm"
       ],
-      "Leave ${ organisationName }?": [
-        "${ organisationName } kuruluşundan ayrılmak istiyor musunuz?"
+      "Leave ${ organization.Name }?": [
+        "${ organization.Name } kuruluşundan ayrılmak mı istiyorsunuz?"
       ],
       "Leave group?": [
         "Gruptan ayrılmak istiyor musunuz?"
@@ -26117,6 +26212,9 @@
       ],
       "Make your business stand out": [
         "Kuruluşunuzu öne çıkarın"
+      ],
+      "Manage company": [
+        "Şirketi yönet"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dosyaları Windows, Mac, Android ve iOS aygıtları arasında yönetin."
@@ -26883,6 +26981,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard yapılandırması"
+      ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "${ BRAND_NAME } hesabınızla tüm ${ BRAND_NAME } uygulamalarına erişebilirsiniz"
       ],
       "You are all set": [
         "Artık hazırsınız"
@@ -28140,6 +28241,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
       ],
       "Are you sure you want to remove your notification email?": [
         "Bildirim e-posta adresinizi kaldırmak istediğinize emin misiniz?"

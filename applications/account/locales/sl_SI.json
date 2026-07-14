@@ -50,6 +50,9 @@
       "Accept": [
         "Sprejmi"
       ],
+      "Account settings": [
+        "Nastavitve računa"
+      ],
       "activate": [
         "aktiviraj"
       ],
@@ -853,6 +856,9 @@
       ],
       "Manage communication preferences": [
         "Upravljanje nastavitev za komunikacijo"
+      ],
+      "Manage company": [
+        "Upravljanje organizacije"
       ],
       "Manage folders": [
         "Upravljanje map"
@@ -4121,7 +4127,7 @@
         "Zdaj lahko s tega naslova pošiljate e-pošto iz ${ BRAND_NAME }."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail"
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
@@ -5616,6 +5622,9 @@
       "We couldn't sign you in": [
         "Nismo vas mogli prijaviti"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Ustavili smo DKIM podpisovanje zaradi napak v vaši DNS konfiguraciji. Prosimo sledite spodnjim navodilom, da nadaljujete s podpisovanjem."
       ],
@@ -6126,6 +6135,9 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Pred ustvarjanjem novega uporabnika morate nastaviti domeno po meri."
+      ],
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Izgubili boste dostop do vseh premium funkcij, ki so del paketa ${ planName }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate v vseh premijskih funkcijah ${ brandOrAppName }."
@@ -8672,6 +8684,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Poskrbite, da ${ addARecoveryMethod }, da boste lahko ponovno dostopali do svojega računa, če pozabite geslo."
       ],
+      "Manage groups in your identity provider": [
+        "Skupine upravljajte pri vašem ponudniku identitet"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Upravljajte, do katerih aplikacij ${ BRAND_NAME } lahko dostopajo člani vaše organizacije. Če je to onemogočeno, bodo imeli dostop samo skrbniki."
       ],
@@ -9818,6 +9833,9 @@
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Trenutno ste prijavljeni kot ${ username }."
       ],
@@ -9883,6 +9901,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Zdaj lahko dostopate do računa in ga upravljate kot administrator."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Sedaj lahko dostopate do organizacije in jo upravljate kot skrbnik."
       ],
       "You can now close this tab.": [
         "Zdaj lahko zaprete ta zavihek."
@@ -11867,9 +11888,6 @@
       ],
       "Create an alias": [
         "Ustvari vzdevek"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nimate dostopa do svoje 2FA?"
       ],
       "Encryption and keys": [
         "Šifriranje in ključi."
@@ -19174,8 +19192,8 @@
       "Layout": [
         "Postavitev"
       ],
-      "Leave ${ organisationName }?": [
-        "Ali zapustim ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Ali zapustim ${ organization.Name }?"
       ],
       "Leave group?": [
         "Zapusti skupino?"
@@ -19191,6 +19209,9 @@
       ],
       "Main password": [
         "Glavno geslo"
+      ],
+      "Manage company": [
+        "Upravljanje organizacije"
       ],
       "Messages": [
         "Sporočila"
