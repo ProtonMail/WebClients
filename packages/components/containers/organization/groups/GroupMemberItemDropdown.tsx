@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import {
     deleteGroupMember,
+    invalidateMemberRoles,
     resumeGroupMember as resumeGroupMemberAction,
     updateOverridePermissions,
 } from '@proton/account';
@@ -104,6 +105,9 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChan
             try {
                 await api(revokeGroupInvitation(groupMember.ID));
                 dispatch(deleteGroupMember({ groupID: group.ID, memberID: groupMember.ID }));
+                if (member) {
+                    dispatch(invalidateMemberRoles({ member }));
+                }
             } catch (error) {
                 handleError(error);
             }

@@ -13,6 +13,7 @@ import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
 import { getGroupRoles, updateGroupRoles } from '@proton/account/groups/index';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
+import { invalidateMemberRoles } from '@proton/account/members';
 import { promoteMemberToOrgAdmin } from '@proton/account/members/actions';
 import { useGetMembers, useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -243,6 +244,15 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         return { cancelled: false, errors };
     };
 
+    const invalidateGroupMemberRoles = (groupMembersToInvalidate: GroupMember[]) => {
+        for (const groupMember of groupMembersToInvalidate) {
+            const member = groupMember.Email ? addressEmailToMemberMap[groupMember.Email] : undefined;
+            if (member) {
+                dispatch(invalidateMemberRoles({ member }));
+            }
+        }
+    };
+
     const syncGroupAdminRoles = async (group: Pick<Group, 'ID'>) => {
         if (!isAdminRolesEnabled) {
             return;
@@ -266,24 +276,24 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
 
         await dispatch(updateGroupRoles({ group, currentRoleIds, desiredRoleIds, api }));
 
-        if (!addedRolesRequireOrgKey) {
-            return;
+        if (addedRolesRequireOrgKey) {
+            // Members inherit the group's roles. When a newly added role needs the organization key,
+            // each non-admin member must be promoted so they receive it. Role removals are demoted by the BE.
+            const { errors } = await promoteGroupMembersToOrgAdmin(transformedGroupMembers);
+            errors.forEach((error) => handleError(error, { notify: false }));
+            if (errors.length > 0) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').ngettext(
+                        msgid`Role assignment could not be completed for ${errors.length} member`,
+                        `Role assignment could not be completed for ${errors.length} members`,
+                        errors.length
+                    ),
+                });
+            }
         }
 
-        // Members inherit the group's roles. When a newly added role needs the organization key,
-        // each non-admin member must be promoted so they receive it. Role removals are demoted by the BE.
-        const { errors } = await promoteGroupMembersToOrgAdmin(transformedGroupMembers);
-        errors.forEach((error) => handleError(error, { notify: false }));
-        if (errors.length > 0) {
-            createNotification({
-                type: 'error',
-                text: c('Error').ngettext(
-                    msgid`Role assignment could not be completed for ${errors.length} member`,
-                    `Role assignment could not be completed for ${errors.length} members`,
-                    errors.length
-                ),
-            });
-        }
+        invalidateGroupMemberRoles(transformedGroupMembers);
     };
 
     const handleSaveGroup = async () => {
@@ -433,6 +443,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
                 }
 
                 await dispatch(getGroupRoles({ group, cache: CacheType.None }));
+                invalidateGroupMemberRoles(groupMembersList);
             } catch (error) {
                 failedGroupCount += 1;
                 handleError(error);
