@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } diz: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Um participante entrou na reunião"
       ],
@@ -115,6 +118,12 @@
       "The meeting will end in 5 minutes": [
         "A reunião encerará em 5 minutos"
       ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Esta reunião está sendo gravada. Ao participar, você reconhece e concorda em ser gravado."
+      ],
+      "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
+        "Você é o único participante. A reunião será encerrada em 2 minutos, a menos que alguém entre."
+      ],
       "You have been disconnected from the meeting": [
         "Você foi desconectado da reunião"
       ],
@@ -128,6 +137,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } novo",
+        "${ newMessageCount } novos"
       ],
       "Add account": [
         "Adicionar conta"
@@ -147,11 +160,17 @@
       "Allow access": [
         "Permitir acesso"
       ],
+      "Anyone with the link can join immediately": [
+        "Qualquer pessoa que tenha o link pode participar imediatamente"
+      ],
       "Applied": [
         "Aplicado"
       ],
       "Apply changes": [
         "Aplicar alterações"
+      ],
+      "Approve participants before they can join": [
+        "Aprovar os participantes antes que eles possam entrar"
       ],
       "Assign ${ selectedParticipantName } as host": [
         "Atribuir ${ selectedParticipantName } como anfitrião"
@@ -185,6 +204,9 @@
       ],
       "Close preview": [
         "Fechar pré-visualização"
+      ],
+      "Close reply composer": [
+        "Fecgar compositor de resposta"
       ],
       "Close this banner": [
         "Fechar este painel"
@@ -249,8 +271,14 @@
       "Disable waiting room": [
         "Desativar sala de espera"
       ],
+      "Discard": [
+        "Descartar"
+      ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Dismiss new messages": [
+        "Descartar nova mensagem"
       ],
       "Done": [
         "Concluído"
@@ -440,6 +468,9 @@
         "Remover reação ${ emoji }, ${ identities.length } reação",
         "Remover reação ${ emoji }, ${ identities.length } reações"
       ],
+      "Reply": [
+        "Responder"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -460,6 +491,9 @@
       ],
       "Resume": [
         "Retomar"
+      ],
+      "Retry": [
+        "Tentar novamente"
       ],
       "Return to dashboard": [
         "Voltar para o painel"
@@ -487,6 +521,9 @@
       ],
       "Send an encrypted message": [
         "Enviar uma mensagem criptografada"
+      ],
+      "Send reply": [
+        "Enviar resposta"
       ],
       "Settings": [
         "Configurações"
@@ -1735,6 +1772,9 @@
       ],
       "Try a different name.": [
         "Tente um nome diferente"
+      ],
+      "You'll see people here when they join the meeting.": [
+        "Você verá as pessoas aqui assim que elas entrarem na reunião."
       ]
     },
     "Display name": {
@@ -1888,6 +1928,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação usando este método."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "O seu relógio parece estar dessincronizado. Verifique a hora do sistema e tente novamente."
@@ -2102,6 +2145,10 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reagiu com ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } resposta",
+        "${ replyCount } respostas"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } de até ${ maxParticipants } participantes"
       ],
@@ -2114,6 +2161,9 @@
       ],
       "-Removed dangerous URL-": [
         "-URL perigoso removido-"
+      ],
+      "1 reply draft": [
+        "1 rascunho de resposta"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
@@ -2388,6 +2438,9 @@
       "Member": [
         "Membro"
       ],
+      "Message actions": [
+        "Ações de mensagem"
+      ],
       "Message from ${ participantName }": [
         "Mensagem de ${ participantName }"
       ],
@@ -2414,6 +2467,9 @@
       ],
       "New host": [
         "Novo anfitrião"
+      ],
+      "New reply": [
+        "Nova resposta"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Nenhum ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detectado."
@@ -2520,6 +2576,9 @@
       "Recording will begin and attendees will be notified.": [
         "A gravação começará e os participantes serão notificados."
       ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "As gravações são armazenadas localmente no seu navegador. Baixe as que quiser guardar, pois, serão automaticamente excluídas após 30 dias."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
       ],
@@ -2607,8 +2666,14 @@
       "This meeting is password protected": [
         "Esta reunião está protegida por senha"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Essa reunião alcançou o limite de tempo do plano gratuito. Faça upgrade para estender o tempo de reunião em futuras chamadas."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunião foi aberta no aplicativo do ${ MEET_APP_NAME } para computador."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Essa gravação será excluída penetrantemente desse dispositivo. Essa ação não pode ser desfeita."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Isso encerrará a reunião para todos os participantes e interromperá o compartilhamento de tela."
@@ -2663,6 +2728,9 @@
       ],
       "Video effects": [
         "Efeitos de vídeo"
+      ],
+      "View ": [
+        "Ver "
       ],
       "Warning": [
         "Alerta"
@@ -2775,6 +2843,9 @@
       "Authenticator app": [
         "Aplicativo de autenticação"
       ],
+      "Blurred (next)": [
+        "Desfocado (próximo)"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -2813,6 +2884,9 @@
       ],
       "Delete recovery-related information.": [
         "Excluir a informação de recuperação."
+      ],
+      "Disabled": [
+        "Desativado"
       ],
       "Does not repeat": [
         "Não repete"
@@ -2927,6 +3001,9 @@
       ],
       "Repeat event": [
         "Repetir evento"
+      ],
+      "Reply": [
+        "Responder"
       ],
       "Return to dashboard": [
         "Voltar para o painel"
@@ -3128,6 +3205,9 @@
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
+      "Reply...": [
+        "Responder..."
+      ],
       "Room name, e.g. team sync, project update, etc": [
         "Nome da sala, por ex. sincronização da equipe, atualização do projeto, etc"
       ],
@@ -3309,6 +3389,9 @@
       ],
       "Available Speakers": [
         "Alto-falantes disponíveis"
+      ],
+      "Background blur comparison": [
+        "Comparação de desfoque de fundo"
       ],
       "Camera and microphone are blocked": [
         "A câmera e o microfone estão bloqueados"
