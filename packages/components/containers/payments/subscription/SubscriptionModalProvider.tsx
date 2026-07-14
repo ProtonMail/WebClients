@@ -56,6 +56,7 @@ export interface OpenCallbackProps extends Pick<
 > {
     hasClose?: boolean;
     onClose?: () => void;
+    onMount?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
     // Identifies the upsell surface the modal was opened from.
@@ -230,6 +231,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         };
 
         setModalState(true);
+
+        subscriptionModalProps.onMount?.();
 
         if (subscriptionModalProps.upsellTelemetryContext) {
             checkoutTelemetry.reportUpsellModalOpen({

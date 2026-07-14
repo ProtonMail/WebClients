@@ -1,9 +1,14 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import useApi from '@proton/components/hooks/useApi';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS } from '@proton/payments/core/constants';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
@@ -15,6 +20,8 @@ import UpsellMultiBox from './UpsellMultiBox';
 
 const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
     const plan = PLANS.VPN_BUSINESS;
+    const [user] = useUser();
+    const api = useApi();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
@@ -23,6 +30,19 @@ const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.B2B,
             telemetryFlow,
+            onMount: () => {
+                void sendTelemetryReport({
+                    api,
+                    delay: false,
+                    event: TelemetryAccountDashboardEvents.upsellCtaClick,
+                    measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                    dimensions: {
+                        app,
+                        cta: 'compare_plans',
+                        user_tier: getTelemetryUserTier(user),
+                    },
+                });
+            },
         });
     };
 
