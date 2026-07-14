@@ -287,6 +287,17 @@ export function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void 
         return layerObj;
     });
 
+    const hasDuplicateRootMark = normalizedLayers.some(
+        (layer) => !!layer && typeof layer === 'object' && !Array.isArray(layer) && getMarkTypeFromNode(layer) === rootMarkType
+    );
+
+    if (hasDuplicateRootMark) {
+        spec.layer = normalizedLayers;
+        delete spec.mark;
+        delete spec.encoding;
+        return;
+    }
+
     spec.layer = [
         {
             mark: spec.mark,
@@ -299,7 +310,65 @@ export function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void 
 }
 
 function looksLikeCalendarYear(value: unknown): boolean {
-    return typeof value === 'number' && Number.isInteger(value) && value >= 1000 && value <= 3000;
+    if (typeof value === 'number' && Number.isInteger(value)) {
+        return value >= 1000 && value <= 3000;
+    }
+
+    if (typeof value === 'string' && /^\d{4}$/.test(value)) {
+        const year = Number(value);
+        return year >= 1000 && year <= 3000;
+    }
+
+    return false;
+}
+
+function isYearLikeFieldName(field: string): boolean {
+    return /year/i.test(field);
+}
+
+function fieldValuesLookLikeCalendarYears(values: Record<string, unknown>[], field: string): boolean {
+    return values.length > 0 && values.every((row) => looksLikeCalendarYear(row[field]));
+}
+
+function normalizeCalendarYearChannel(x: Record<string, unknown>): void {
+    x.type = 'ordinal';
+    delete x.timeUnit;
+
+    if (x.axis && typeof x.axis === 'object' && !Array.isArray(x.axis)) {
+        const axis = { ...(x.axis as Record<string, unknown>) };
+        delete axis.format;
+        delete axis.labelExpr;
+        x.axis = axis;
+    }
+
+    if (x.sort === undefined) {
+        x.sort = 'ascending';
+    }
+}
+
+/** Numeric calendar years encoded as temporal (or ordinal + timeUnit) collapse to Jan 1970 ticks. */
+export function normalizeYearAxisEncoding(spec: Record<string, unknown>): void {
+    const rootValues = extractInlineValues(spec);
+
+    visitChartNodesForNormalize(spec, (node) => {
+        const values = extractInlineValues(node) ?? rootValues;
+        const encoding = node.encoding as Record<string, unknown> | undefined;
+        const x = encoding?.x as Record<string, unknown> | undefined;
+        if (!values || !x || typeof x.field !== 'string') {
+            return;
+        }
+
+        const field = x.field;
+        if (!isYearLikeFieldName(field) && !fieldValuesLookLikeCalendarYears(values, field)) {
+            return;
+        }
+
+        if (!fieldValuesLookLikeCalendarYears(values, field)) {
+            return;
+        }
+
+        normalizeCalendarYearChannel(x);
+    });
 }
 
 function layerHasFieldBinding(layer: Record<string, unknown>): boolean {
@@ -431,32 +500,6 @@ export function normalizeWideDataLayerCharts(spec: Record<string, unknown>): voi
         layerObj.encoding = encoding;
 
         return layerObj;
-    });
-}
-
-/** Numeric calendar years encoded as temporal collapse to a single x tick — use ordinal instead. */
-export function normalizeYearAxisEncoding(spec: Record<string, unknown>): void {
-    const rootValues = extractInlineValues(spec);
-
-    visitChartNodesForNormalize(spec, (node) => {
-        const values = extractInlineValues(node) ?? rootValues;
-        const encoding = node.encoding as Record<string, unknown> | undefined;
-        const x = encoding?.x as Record<string, unknown> | undefined;
-        if (!values || !x || typeof x.field !== 'string' || x.type !== 'temporal') {
-            return;
-        }
-
-        const field = x.field;
-        if (!values.every((row) => looksLikeCalendarYear(row[field]))) {
-            return;
-        }
-
-        x.type = 'ordinal';
-        if (x.axis && typeof x.axis === 'object' && !Array.isArray(x.axis)) {
-            const axis = { ...(x.axis as Record<string, unknown>) };
-            delete axis.format;
-            x.axis = axis;
-        }
     });
 }
 
@@ -699,6 +742,7 @@ export function normalizeVegaLiteSpec(spec: Record<string, unknown>): Record<str
     normalizeSelectionFilters(result);
     normalizeMisusedHeatmaps(result);
     normalizeYearAxisEncoding(result);
+    normalizeInvertedQuantitativeAxes(result);
     repairInteractiveSpec(result);
     return result;
 }
@@ -1488,6 +1532,96 @@ export function normalizeSelectionFilters(spec: Record<string, unknown>): void {
             if (typeof paramFilter.param === 'string' && paramFilter.empty !== true) {
                 paramFilter.empty = true;
             }
+        }
+    });
+}
+
+const UNSAFE_METHOD_CALL_PATTERN = /\.\s*[A-Za-z_$][\w$]*\s*\(/;
+
+function isUnsafeVegaExpression(expression: unknown): expression is string {
+    return typeof expression === 'string' && UNSAFE_METHOD_CALL_PATTERN.test(expression);
+}
+
+function stripUnsafeExpressionProperties(container: Record<string, unknown>): void {
+    for (const key of ['labelExpr', 'titleExpr', 'descriptionExpr', 'subtitleExpr', 'expr'] as const) {
+        if (isUnsafeVegaExpression(container[key])) {
+            delete container[key];
+        }
+    }
+}
+
+function visitUnsafeVegaExpressions(value: unknown): void {
+    if (!value || typeof value !== 'object') {
+        return;
+    }
+
+    if (Array.isArray(value)) {
+        value.forEach(visitUnsafeVegaExpressions);
+        return;
+    }
+
+    const objectValue = value as Record<string, unknown>;
+    stripUnsafeExpressionProperties(objectValue);
+
+    const axis = objectValue.axis;
+    if (axis && typeof axis === 'object' && !Array.isArray(axis)) {
+        stripUnsafeExpressionProperties(axis as Record<string, unknown>);
+    }
+
+    const condition = objectValue.condition;
+    if (condition && typeof condition === 'object' && !Array.isArray(condition)) {
+        const conditionObject = condition as Record<string, unknown>;
+        if (isUnsafeVegaExpression(conditionObject.test)) {
+            delete conditionObject.test;
+        }
+    }
+
+    if (isUnsafeVegaExpression(objectValue.filter)) {
+        delete objectValue.filter;
+    }
+
+    if (isUnsafeVegaExpression(objectValue.calculate)) {
+        delete objectValue.calculate;
+    }
+
+    for (const nestedValue of Object.values(objectValue)) {
+        visitUnsafeVegaExpressions(nestedValue);
+    }
+}
+
+/**
+ * vega-interpreter (CSP-safe) rejects method calls like `datum.label.split(' ')[0]`.
+ * LLMs often emit these in axis `labelExpr` when formatting temporal ticks.
+ */
+export function normalizeUnsafeVegaExpressions(spec: Record<string, unknown>): void {
+    visitUnsafeVegaExpressions(spec);
+}
+
+function isDescendingSort(sort: unknown): boolean {
+    return sort === -1 || sort === '-x' || sort === 'descending';
+}
+
+/** Quantitative axes use `scale.reverse`, not `sort: -1`, to invert direction. */
+export function normalizeInvertedQuantitativeAxes(spec: Record<string, unknown>): void {
+    visitChartNodesForNormalize(spec, (node) => {
+        const encoding = node.encoding as Record<string, unknown> | undefined;
+        if (!encoding) {
+            return;
+        }
+
+        for (const channel of ['x', 'y'] as const) {
+            const channelEncoding = encoding[channel] as Record<string, unknown> | undefined;
+            if (!channelEncoding || channelEncoding.type !== 'quantitative' || !isDescendingSort(channelEncoding.sort)) {
+                continue;
+            }
+
+            channelEncoding.scale = {
+                ...(channelEncoding.scale && typeof channelEncoding.scale === 'object' && !Array.isArray(channelEncoding.scale)
+                    ? (channelEncoding.scale as Record<string, unknown>)
+                    : {}),
+                reverse: true,
+            };
+            delete channelEncoding.sort;
         }
     });
 }
