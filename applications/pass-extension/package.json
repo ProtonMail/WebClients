@@ -48,18 +48,18 @@
         "@types/react-helmet": "^6.1.11",
         "@types/socketcluster-server": "^19.0.1",
         "@types/webextension-polyfill": "^0.12.5",
-        "@typescript/native-preview": "^7.0.0-0",
+        "@typescript/native-preview": "^7.0.0-dev.20260707.2",
         "babel-loader": "^10.0.0",
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-env": "^10.1.0",
-        "eslint": "^9.39.4",
+        "eslint": "^9.39.5",
         "jest": "^30.4.2",
-        "prettier": "^3.8.3",
+        "prettier": "^3.9.5",
         "socketcluster-server": "^19.2.2",
         "string-replace-loader": "^3.3.0",
         "typescript": "^6.0.2",
-        "webpack": "^5.106.2",
-        "webpack-dev-server": "^5.2.5"
+        "webpack": "^5.108.4",
+        "webpack-dev-server": "^5.2.6"
     },
     "peerDependencies": {
         "react": "^18.3.1",

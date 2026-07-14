@@ -44,10 +44,10 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@protontech/crypto": "*",
-        "uuid": "^14.0.0"
+        "uuid": "^14.0.1"
     },
     "devDependencies": {
-        "eslint": "^9.39.4"
+        "eslint": "^9.39.5"
     },
     "peerDependencies": {
         "@proton/atoms": "workspace:^",
