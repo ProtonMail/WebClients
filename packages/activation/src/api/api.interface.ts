@@ -268,14 +268,16 @@ export type ProductStatus = {
     Error: string;
 };
 
+export interface ApiImporterOrganizationUserEligibility {
+    IsEligible: boolean;
+    Reasons: string[];
+}
+
 export interface ApiImporterOrganizationUser {
     ID: string;
     Email: string;
     AdminSetName: string;
     Domain: string;
-    IsDisabled: boolean;
-    IsArchived: boolean;
-    IsSuspended: boolean;
     FirstName: string;
     LastName: string;
     TotalQuota: number;
@@ -288,6 +290,7 @@ export interface ApiImporterOrganizationUser {
         ProductStatuses: ProductStatus[];
         HasTemporaryPassword: boolean;
     };
+    Eligibility: ApiImporterOrganizationUserEligibility;
 }
 
 export type ApiImporterProduct = 'Mail' | 'Contacts' | 'Calendar';
