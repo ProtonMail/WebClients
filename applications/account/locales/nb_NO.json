@@ -66,6 +66,9 @@
       "Accept": [
         "Aksepter"
       ],
+      "Account settings": [
+        "Kontoinnstillinger"
+      ],
       "activate": [
         "aktiver"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Administrer kommunikasjonsinnstillinger"
+      ],
+      "Manage company": [
+        "Administrer foretak"
       ],
       "Manage folders": [
         "Behandle mapper"
@@ -2999,6 +3005,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "En ukjent feil oppstod. Oppdater siden og prøv igjen."
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Er du sikker på at du ønsker å fortsette uten ${ withoutString } og ${ notMigratedOthers } annen?",
+        "Er du sikker på at du ønsker å fortsette uten ${ withoutString } og ${ notMigratedOthers } andre?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Er du sikker på at du ønsker å fortsette uten ${ withoutString }?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Er du sikker på at du vil fortsette? Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
       ],
@@ -3046,6 +3059,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Slett eventuelle eksisterende MX-koder, kopier deretter kodene nedenfor og lim dem inn i DNS-delen av domeneverten din."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
@@ -3180,6 +3196,9 @@
       "Missing organization public key": [
         "Mangler offentlig nøkkel for organisasjonen"
       ],
+      "More details": [
+        "Flere detaljer"
+      ],
       "Need help?": [
         "Trenger du hjelp?"
       ],
@@ -3273,11 +3292,17 @@
       "Some accounts are not claimed": [
         "Noen kontoer er ikke gjort krav på"
       ],
+      "Some members weren't migrated": [
+        "Noen medlemmer ble ikke migrert"
+      ],
       "Status": [
         "Status"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "For å overføre organisasjonens data til ${ BRAND_NAME }, installer ${ BRAND_NAME } Easy Switch fra Google Workspace Marketplace. Etter at du har installert det, kan du komme tilbake hit for å fortsette."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "For å fullføre migreringen, sørg for at du bare beholder ${ BRAND_NAME } MX-koder."
       ],
       "Update records for receiving": [
         "Oppdater poster for mottak"
@@ -3333,6 +3358,9 @@
       "You": [
         "Du"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Du vil ikke kunne kopiere dataene til disse brukerne senere."
+      ],
       "You're all set!": [
         "Nå er du klar!"
       ],
@@ -3342,6 +3370,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere seter i abonnementet ditt.",
         "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere seter i abonnementet ditt."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Domenekonfigurasjonen din inkluderer fortsatt MX-koder fra en annen leverandør."
       ]
     },
     "breadcrumb": {
@@ -7786,6 +7817,9 @@
       "We couldn't sign you in": [
         "Vi kunne ikke logge deg på"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
       ],
@@ -8357,8 +8391,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du må konfigurere et egendefinert domene før du kan opprette en ny bruker."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Du vil miste tilgang til alle premiumfunksjoner inkludert med ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Du vil miste tilgang til alle premiumfunksjoner inkludert med ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Du er invitert av **${ invite.InviterEmail }** til å koble kontoen din til denne gruppeplanen."
@@ -9840,6 +9874,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } medlem lagt til i gruppen",
+        "${ emails.length } medlemmer lagt til i gruppen"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
       ],
@@ -9935,6 +9973,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nytt medlem lagt til via identitetsleverandøren din og venter på vurdering.",
+        "${ pendingAdminApprovalCount } nye medlemer lagt til via identitetsleverandøren din og venter på vurdering."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
@@ -10213,8 +10255,8 @@
         "Legg til flere brukere til din organisasjon på engang."
       ],
       "Add server (${ availableAddedCount } available)": [
-        "Legg til tjener (${ availableAddedCount }) tilgjengelig",
-        "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
+        "Legg til server (${ availableAddedCount }) tilgjengelig",
+        "Legg til server (${ availableAddedCount }) tilgjengelige"
       ],
       "Add users by name or email to this group.": [
         "Legg til brukere etter navn eller e-post i denne gruppen."
@@ -10233,8 +10275,8 @@
         "Å legge til en ekstern e-postadresse vil deaktivere ende-til-ende-kryptering for all e-postkommunikasjon innenfor den gruppen. Vil du fortsette?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Legger til porttjener: ${ serverNumber } / ${ total }",
-        "Legger til porttjenere: ${ serverNumber } / ${ total }"
+        "Legger til gateway-server: ${ serverNumber } / ${ total }",
+        "Legger til gateway-servere: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -10522,6 +10564,12 @@
       "Beta": [
         "Beta"
       ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Faktureres til ${ monthlyDiscountedPriceElement } de første 6 månedene, fornyes til ${ monthlyRenewalPriceElement }."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Faktureres til ${ yearlyDiscountedPriceElement } de første 12 månedene, fornyes til ${ yearlyRenewalPriceElement }."
+      ],
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
@@ -10711,8 +10759,8 @@
         "Opprett din første gateway"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Oppretter gateway-tjener: ${ serverNumber } / ${ total }",
-        "Oppretter gateway-tjenere: ${ serverNumber } / ${ total }"
+        "Oppretter gateway-server: ${ serverNumber } / ${ total }",
+        "Oppretter gateway-servere: ${ serverNumber } / ${ total }"
       ],
       "Creating gateway with ${ total } server": [
         "Oppretter gateway med ${ total } server",
@@ -10794,8 +10842,8 @@
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Sletter ${ deletedServerCount } gateway-tjener",
-        "Sletter ${ deletedServerCount } gateway-tjenere"
+        "Sletter ${ deletedServerCount } gateway-server",
+        "Sletter ${ deletedServerCount } gateway-servere"
       ],
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter angitt **ventetid**."
@@ -11235,6 +11283,9 @@
       ],
       "Got it": [
         "Skjønner"
+      ],
+      "Group created": [
+        "Gruppe opprettet"
       ],
       "Group deleted": [
         "Gruppe slettet"
@@ -11679,6 +11730,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for at du ${ addARecoveryMethod } slik at du kan få komme inn på kontoen din igjen hvis du glemmer passordet."
+      ],
+      "Manage groups in your identity provider": [
+        "Administrer grupper i identitetsleverandøren din"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
@@ -13263,12 +13317,15 @@
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du er for øyeblikket pålogget som ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
-        "Du bruker for øyeblikket ${ ipCount } tilgjengelige dedikerte tjenere ut av ${ ipAddresses }."
+        "Du bruker for øyeblikket ${ ipCount } av ${ ipAddresses } tilgjengelige dedikerte servere.",
+        "Du bruker for øyeblikket ${ ipCount } av ${ ipAddresses } tilgjengelige dedikerte servere."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelige brukerlisens og ${ usedAI } av ${ maxAI } tilgjengelige skriveassistentlisens.",
@@ -13334,6 +13391,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nå få tilgang til og behandle kontoen som en administrator."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Du kan nå få tilgang til og behandle foretaket som en administrator."
       ],
       "You can now close this tab.": [
         "Du kan lukke denne fanen nå."
@@ -14456,6 +14516,9 @@
       "App password": [
         "App-passord"
       ],
+      "App Settings": [
+        "Appinnstillinger"
+      ],
       "Apply filter to existing emails": [
         "Anvend filter på eksisterende e-postmeldinger"
       ],
@@ -14683,6 +14746,9 @@
       ],
       "Confirm login password": [
         "Bekreft påloggingspassord"
+      ],
+      "Confirm MX records updated": [
+        "Bekreft at MX-postene er oppdaterte"
       ],
       "Confirm new password": [
         "Bekreft nytt passord"
@@ -14954,6 +15020,12 @@
       ],
       "Event notifications": [
         "Hendelsesvarsler"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
       ],
       "Exclude Spam/Trash from All mail": [
         "Ekskluder Søppelpost/Søppel fra All e-post"
@@ -15252,6 +15324,9 @@
       "Navigation": [
         "Navigasjon"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
       "New display name": [
         "Nytt visningsnavn"
       ],
@@ -15359,6 +15434,9 @@
       ],
       "Other amount": [
         "Annet beløp"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
       ],
       "Passkeys": [
         "Tilgangsnøkler"
@@ -15479,6 +15557,9 @@
       ],
       "Recovery phrase": [
         "Gjenopprettingsfrase"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
       ],
       "Remove": [
         "Fjern"
@@ -15658,6 +15739,9 @@
       "Start weekday": [
         "Start ukedag"
       ],
+      "Starts with": [
+        "Begynner med"
+      ],
       "State": [
         "Stat"
       ],
@@ -15737,7 +15821,7 @@
         "Tokennavn"
       ],
       "Total cost": [
-        "Totalkostnad"
+        "Totale kostnader"
       ],
       "Transactions": [
         "Transaksjoner"
@@ -15783,6 +15867,9 @@
       ],
       "URL": [
         "Nettadresse"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Use another payment method": [
         "Bruk en annen betalingsmåte"
@@ -16161,9 +16248,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Don't have access to your 2FA?": [
-        "Har du ikke tilgang til din 2FA?"
       ],
       "Downloads": [
         "Nedlastinger"
@@ -16856,6 +16940,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Alle filterhandlinger vil bli brukt på alle meldinger i ${ MAIL_APP_NAME }-kontoen din. Ingen automatiske svar-e-poster vil bli sendt."
       ],
@@ -16865,6 +16952,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Koble ditt egendefinerte domene til ${ BRAND_NAME } for å sette opp tilpassede e-postadresser (eks., du@dittfirma.no). Vår veileder vil rettlede deg gjennom prosessen."
       ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Vis ${ PASS_APP_NAME }-aktivitet på tvers av organisasjonen din."
       ],
@@ -16873,6 +16972,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Vis brukerpålogging, gjenoppretting og sikkerhetshendelser."
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
@@ -24419,9 +24521,6 @@
       "per month, billed annually": [
         "per måned, faktureres årlig"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spar 50 % i 1 år, og behold full tilgang"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Spar 50 % i 6 måneder, og behold full tilgang"
       ],
@@ -24575,7 +24674,7 @@
         "Organisasjonsnavn oppdatert"
       ],
       "Password check-ins disabled": [
-        "Passordbekreftelse deaktivert"
+        "Passordsjekking deaktivert"
       ],
       "Password check-ins enabled": [
         "Passordsjekking aktivert"
@@ -25933,6 +26032,9 @@
       "Get more from your password manager": [
         "Få mer ut av passordbehandleren din"
       ],
+      "Get more from your privacy suite": [
+        "Få mer ut av personvernpakken din"
+      ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
       ],
@@ -26084,8 +26186,8 @@
       "Layout": [
         "Utforming"
       ],
-      "Leave ${ organisationName }?": [
-        "Forlate ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Forlate ${ organization.Name }?"
       ],
       "Leave group?": [
         "Forlate gruppen?"
@@ -26107,6 +26209,9 @@
       ],
       "Make your business stand out": [
         "Få bedriften din til å skille seg ut"
+      ],
+      "Manage company": [
+        "Administrer foretak"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrer filer på tvers av enheter på Windows, Mac, Android og iOS."
@@ -26874,6 +26979,9 @@
       "WireGuard configuration": [
         "WireGuard-konfigurering"
       ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Med ${ BRAND_NAME }-kontoen din får du tilgang til alle ${ BRAND_NAME }-apper"
+      ],
       "You are all set": [
         "Du er klar"
       ],
@@ -27178,7 +27286,7 @@
         "Inkluderer profesjonell e-post på @dittdomene.com, skylagring med samarbeidende dokumentredigering, planlegging og videokonferanser, passordadministrasjon, et sikker ${ VPN_SHORT_APP_NAME } og mer."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer som ikke bruker 2FA vil motta en e-post som ber dem om å aktivere det så snart som mulig. Brukere med enkel pålogging vil ikke motta e-postpåminnelsen."
@@ -28130,6 +28238,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "Are you sure you want to remove your notification email?": [
         "Er du sikker på at du vil fjerne tilknyttet e-post for varsling?"

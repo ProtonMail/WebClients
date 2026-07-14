@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Cancelar subscrição"
       ],
+      "Change my access": [
+        "Alterar o meu acesso"
+      ],
       "Change password": [
         "Alterar a palavra-passe"
       ],
@@ -344,6 +347,9 @@
       ],
       "enable desktop notifications": [
         "ativar as notificações"
+      ],
+      "Encrypted": [
+        "Encriptado"
       ],
       "Expand": [
         "Expandir"
@@ -624,6 +630,9 @@
       "Remove file": [
         "Remover o ficheiro"
       ],
+      "Remove my access": [
+        "Remover o meu acesso"
+      ],
       "Rename": [
         "Renomear"
       ],
@@ -699,6 +708,9 @@
       "Select all": [
         "Seleccionar tudo"
       ],
+      "Set password or expiration date": [
+        "Definir palavra-passe ou data de expiração"
+      ],
       "Set recovery methods": [
         "Definir os métodos de recuperação"
       ],
@@ -722,6 +734,12 @@
       ],
       "Share your calendar with your team": [
         "Partilhe o seu calendário com a sua equipa"
+      ],
+      "Shared": [
+        "Partilhado"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "A partilha é encriptada de ponto a ponto"
       ],
       "Show advanced PGP settings": [
         "Mostrar definições de PGP avançadas"
@@ -806,6 +824,9 @@
       ],
       "Upgrade": [
         "Atualizar"
+      ],
+      "Upgrade for 200GB": [
+        "Upgrade para 200GB"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -2824,6 +2845,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Não foi possível mover ${ failureItems.length } item",
+        "Não foi possível mover ${ failureItems.length } itens"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
       ],
@@ -2893,6 +2918,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contacto"
       ],
+      "Cannot find move target": [
+        "Não é possível encontrar o destino do movimento"
+      ],
       "Contact could not be saved": [
         "Não foi possível guardar o contacto."
       ],
@@ -2949,6 +2977,9 @@
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
       ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as definições de permissões"
+      ],
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
       ],
@@ -2957,6 +2988,9 @@
       ],
       "Failed to create public share node": [
         "Erro ao criar o nó de partilha público"
+      ],
+      "Failed to expand folder": [
+        "Falha ao expandir a pasta"
       ],
       "Failed to fetch node": [
         "Erro ao obter o nó"
@@ -3290,6 +3324,9 @@
       "Unknown error": [
         "Erro desconhecido"
       ],
+      "Unknown location": [
+        "Localização desconhecida"
+      ],
       "Update Too Large": [
         "Atualização muito grande"
       ],
@@ -3307,6 +3344,9 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Estamos com problemas para salvar as edições recentes. Por favor, atualize a página."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação através deste método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -3329,6 +3369,9 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indecriptável"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome não desencriptável"
@@ -4357,6 +4400,9 @@
         "Todos os seus contactos serão importados, até ao limite de ${ maxContact }",
         "Todos os seus contactos serão importados, até ao limite de ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Já se encontra nesta pasta"
+      ],
       "an anonymous user": [
         "um utilizador anónimo"
       ],
@@ -4398,6 +4444,24 @@
       ],
       "Calendar side panel": [
         "Painel lateral de calendário"
+      ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can edit and manage access": [
+        "Pode editar e gerir o acesso"
+      ],
+      "Can view and edit": [
+        "Pode ver e editar"
+      ],
+      "Can view only": [
+        "Apenas pode ver"
+      ],
+      "Can't move a folder into itself": [
+        "Não é possível mover uma pasta para dentro de si própria"
+      ],
+      "Can't write into folder": [
+        "Não é possível escrever na pasta"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
@@ -4676,6 +4740,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Se continuar com a alteração, perderá o acesso às funcionalidades pagas do ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Se se remover, perderá o acesso a \"${ fileName }\" e não poderá abri-lo novamente, a menos que o proprietário o partilhe consigo."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
@@ -4757,6 +4824,9 @@
       ],
       "Limited availability": [
         "Disponibilidade limitada"
+      ],
+      "Link copied": [
+        "Ligação copiada"
       ],
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
@@ -4873,6 +4943,9 @@
       "Owner": [
         "Proprietário"
       ],
+      "owner": [
+        "proprietário"
+      ],
       "password": [
         "palavra-passe"
       ],
@@ -4981,6 +5054,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Leia o código QR com o seu dispositivo móvel."
+      ],
+      "Select a destination folder": [
+        "Selecione uma pasta de destino"
       ],
       "Select a folder to move to.": [
         "Selecione a pasta de destino para mover"
@@ -5286,6 +5362,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Quando se liga a uma VPN, esta utiliza tecnologia de encriptação para ocultar o seu endereço IP (um código único atribuído ao seu dispositivo)."
       ],
+      "Who has access": [
+        "Quem tem acesso"
+      ],
       "words": [
         "palavras"
       ],
@@ -5309,6 +5388,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Tem atualmente sessão iniciada como ${ username } em ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Tem atualmente sessão iniciada como ${ username }."
@@ -5362,6 +5444,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Não lhe será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Não poderá partilhar \"${ fileName }\" depois de alterar o acesso para visualizador. Apenas o proprietário pode alterar o seu acesso novamente."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Receberá o crédito de recompensa 1 mês após o seu amigo subscrever um plano anual e 2 meses após subscrever um plano mensal."
@@ -5580,8 +5665,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
       ],
+      "Access": [
+        "Acesso"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Aceda ao ${ PASS_APP_NAME } de forma segura a partir do terminal, ideal para scripting, automação e fluxos de trabalho de desenvolvimento."
+      ],
+      "Active": [
+        "Ativo"
       ],
       "Add email address": [
         "Adicionar um endereço de e-mail"
@@ -5597,6 +5688,15 @@
       ],
       "Alias title": [
         "Título do alias"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitir que os editores alterem permissões e partilhem"
+      ],
+      "Anonymous": [
+        "Anónimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualquer pessoa na Internet com a ligação"
       ],
       "Anyone on the Internet with the link can edit": [
         "Qualquer pessoa na Internet com esta ligação pode editar."
@@ -5639,6 +5739,12 @@
       ],
       "Calendars": [
         "Calendários"
+      ],
+      "can edit": [
+        "pode editar"
+      ],
+      "can view": [
+        "pode ver"
       ],
       "Cancel download": [
         "Cancelar transferência"
@@ -5685,8 +5791,14 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete link and remove access for everyone": [
+        "Eliminar ligação e remover o acesso para todos"
+      ],
       "Delete recovery-related information.": [
         "Eliminar informações relacionadas com a recuperação."
+      ],
+      "Disable this link on a specific date": [
+        "Desativar esta ligação numa data específica"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -5741,6 +5853,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Apagar esta ligação e remover todos os que têm acesso"
+      ],
+      "Expiry": [
+        "Expiração"
       ],
       "Extended address": [
         "Endereço completo"
@@ -5859,6 +5974,9 @@
       "New password": [
         "Nova palavra-passe"
       ],
+      "Not active": [
+        "Inativo"
+      ],
       "Note": [
         "Nota"
       ],
@@ -5919,8 +6037,14 @@
       "Replace existing folder": [
         "Substituir a pasta existente"
       ],
+      "Require password": [
+        "Requer palavra-passe"
+      ],
       "Reveal password": [
         "Mostrar a palavra-passe"
+      ],
+      "Set a password to limit access via link": [
+        "Defina uma palavra-passe para limitar o acesso via ligação"
       ],
       "Set expiration date": [
         "Definir data de validade"
@@ -7473,6 +7597,18 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" criado com sucesso"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Não foi possível criar \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" partilhado"
+      ],
       "\"${ name }\" deleted": [
         "«${ name }» foi eliminado."
       ],
@@ -7544,6 +7680,10 @@
         "Erro ao restaurar ${ numberOfItems } ficheiro do lixo",
         "Erro ao restaurar ${ numberOfItems } ficheiros do lixo"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item movido",
+        "${ numberOfItems } itens movidos"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item movido para o lixo",
         "${ numberOfItems } itens movidos para o lixo"
@@ -7609,6 +7749,9 @@
       "Failed to load invitation details": [
         "Erro ao carregar os detalhes do convite"
       ],
+      "Failed to load sharing details": [
+        "Falha ao carregar os detalhes de partilha"
+      ],
       "Failed to reject share invitation": [
         "Erro ao rejeitar o convite de partilha"
       ],
@@ -7657,6 +7800,12 @@
       ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta principal"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Definição atualizada. Os editores podem alterar permissões e partilhar."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Definição atualizada. Os editores não podem alterar permissões ou partilhar."
       ],
       "Share invitation accepted successfully": [
         "O convite de partilha foi aceite."
@@ -7759,6 +7908,9 @@
       "Limited-time offer": [
         "Oferta por tempo limitado"
       ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -7779,6 +7931,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta não será mostrada novamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Atualize a sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Atualize o seu armazenamento por apenas ${ pricingTitle } com ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando mudar de uma subscrição mensal para uma anual."
@@ -7805,11 +7963,20 @@
       "Advanced threat protection": [
         "Proteção avançada contra ameaças"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore com utilizadores que não usam ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
+      "Edit docs online": [
+        "Editar docs online"
+      ],
       "Email addresses": [
         "Endereços de e-mail"
+      ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do ficheiro (mais de 1 semana)"
       ],
       "Free": [
         "Free"
@@ -8395,6 +8562,9 @@
       "Invite friends. Get credits.": [
         "Convide amigos. Ganhe créditos."
       ],
+      "Invited friends": [
+        "Amigos convidados"
+      ],
       "More sharing options": [
         "Mais opções de partilha"
       ],
@@ -8559,6 +8729,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds } segundo para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -8966,8 +9148,14 @@
       "Accepted": [
         "Aceitado"
       ],
+      "pending": [
+        "pendente"
+      ],
       "Pending": [
         "Pendente"
+      ],
+      "user joined": [
+        "utilizador aderiu"
       ]
     },
     "Storage": {
@@ -9454,6 +9642,9 @@
       "Cannot load link": [
         "Não é possível carregar a ligação."
       ],
+      "Change access to viewer?": [
+        "Alterar acesso para visualizador?"
+      ],
       "Change password": [
         "Alterar a palavra-passe"
       ],
@@ -9802,6 +9993,12 @@
       "Private browsing vs VPN": [
         "Navegação privada e VPN"
       ],
+      "Public link": [
+        "Ligação pública"
+      ],
+      "Public link settings": [
+        "Definições da ligação pública"
+      ],
       "Re-sign all contacts": [
         "A re-assinar todos os contactos"
       ],
@@ -9816,6 +10013,9 @@
       ],
       "Recover data": [
         "Recuperar dados"
+      ],
+      "Remove your access?": [
+        "Remover o seu acesso?"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -9858,6 +10058,12 @@
       ],
       "Settings": [
         "Definições"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Definições para ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Partilhar \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Partilhar ${ name }"
@@ -9931,6 +10137,12 @@
       "Upgrade to keep your premium benefits.": [
         "Atualize para manter os seus benefícios premium."
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Atualize a sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Atualize o seu armazenamento por ${ formattedPrice } com ${ planName }"
+      ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
       ],
@@ -9986,6 +10198,14 @@
         "As suas informações expostas"
       ]
     },
+    "Title header for keys table": {
+      "Created": [
+        "Criado"
+      ],
+      "Expires": [
+        "Expira"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -10000,6 +10220,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
+      ],
+      "Change shared item settings": [
+        "Alterar definições do item partilhado"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize a importação para reduzir o número de pastas"
@@ -10066,6 +10289,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ],
       "We have sent them an invite to access the item.": [
         "Enviámos-lhes um convite para aceder ao item."

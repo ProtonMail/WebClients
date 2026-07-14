@@ -547,6 +547,12 @@
       "Regenerate": [
         "Generovať znova"
       ],
+      "Regex invalid": [
+        "Neplatný regulárny výraz"
+      ],
+      "Regex unsafe": [
+        "Nebezpečný regulárny výraz"
+      ],
       "Reject": [
         "Odmietnuť"
       ],
@@ -669,9 +675,6 @@
       ],
       "Skip": [
         "Preskočiť"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Triediť položky trezoru"
@@ -1342,9 +1345,6 @@
       ],
       "Trashing item failed": [
         "Presun do koša zlyhal"
-      ],
-      "Try reaching out to the link owner.": [
-        "Skúste kontaktovať vlastníka odkazu."
       ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
@@ -2150,12 +2150,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2386,6 +2380,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Zoradené podľa poľa (najskôr názov, potom používateľské meno alebo email, webová stránka, poznámky) a presnosti zhody (presná zhoda, začína na, obsahuje)."
       ],
       "Read item": [
         "Prečítať položku"
@@ -2656,9 +2653,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho druhého hesla"
-      ],
-      "Unlock with biometrics": [
-        "Odomknúť pomocou biometrie"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
@@ -3096,6 +3090,9 @@
       "Bank Name": [
         "Názov banky"
       ],
+      "Basic": [
+        "Základná"
+      ],
       "Beta Access": [
         "Beta prístup"
       ],
@@ -3128,6 +3125,9 @@
       ],
       "Catch-All": [
         "Doménový kôš"
+      ],
+      "Check": [
+        "Skontrolovať"
       ],
       "Checkbox": [
         "Zaškrtávacie políčko"
@@ -3284,6 +3284,12 @@
       ],
       "Enter email or username": [
         "Zadajte email alebo používateľské meno"
+      ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
       ],
       "Expiration date": [
         "Koniec platnosti "
@@ -3600,6 +3606,9 @@
       "Never": [
         "Nikdy"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
       "New email": [
         "Nový email"
       ],
@@ -3659,6 +3668,9 @@
       ],
       "Owner": [
         "Vlastník"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "Passkey": [
         "Prístupový kľúč"
@@ -3761,6 +3773,12 @@
       ],
       "Reddit handle": [
         "Používateľské meno Reddit"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
+      "Relevant": [
+        "Relevantné"
       ],
       "Remove link": [
         "Odstrániť odkaz"
@@ -3876,6 +3894,9 @@
       "SSN": [
         "SSN"
       ],
+      "Starts with": [
+        "Začína s"
+      ],
       "State or province": [
         "Štát alebo provincia"
       ],
@@ -3923,9 +3944,6 @@
       ],
       "Theme": [
         "Vzhľad"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
       ],
       "Tier/Level": [
         "Úroveň členstva"
@@ -4001,6 +4019,9 @@
       ],
       "Update": [
         "Aktualizovať"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Použiť ${ PASS_APP_NAME } ako SSH agenta"
@@ -4126,6 +4147,24 @@
         "${ count } položky",
         "${ count } položiek",
         "${ count } položiek"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ],
       "You can drag and drop the selected item to another vault": [
         "Vybratú položku môžete pretiahnuť do iného trezoru",
@@ -4430,6 +4469,23 @@
         "Používa sa na ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Zadajte URL adresu, aby ste skontrolovali, či sa s ňou zhoduje vaše aktuálne pravidlo"
+      ],
+      "The rule is matching this URL": [
+        "Pravidlo zodpovedá tejto URL adrese"
+      ],
+      "The rule is NOT matching this URL": [
+        "Toto pravidlo sa na túto URL adresu NEVZŤAHUJE"
+      ],
+      "This URL will be blocked from autofill": [
+        "Táto URL adresa bude vylúčená z automatického vypĺňania"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Táto URL adresa NEBUDE vylúčená z automatického vypĺňania"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
@@ -4638,6 +4694,9 @@
       "Add mailbox": [
         "Pridať poštovú schránku"
       ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Upravte správanie funkcie automatického vypĺňania, aby ste zmenili miesta, kde sa navrhujú prihlasovacie údaje."
+      ],
       "Agent setup instructions": [
         "Pokyny na nastavenie agenta"
       ],
@@ -4838,6 +4897,9 @@
       ],
       "Last modified": [
         "Posledná zmena"
+      ],
+      "Learn more": [
+        "Zistiť viac"
       ],
       "Leave this item?": [
         "Opustiť túto položku?"
@@ -5067,6 +5129,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synchronizujte svoje aliasy z aplikácie SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Otestujte URL adresu podľa tohto pravidla"
+      ],
       "Transfer ownership": [
         "Previesť vlastníctvo"
       ],
@@ -5081,6 +5146,9 @@
       ],
       "Update available": [
         "K dispozícii je aktualizácia"
+      ],
+      "URL matching": [
+        "Zhoda URL"
       ],
       "Vault": [
         "Trezor"
@@ -5200,6 +5268,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } heslo je povinné"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je zakázaný."
@@ -5416,6 +5487,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Táto emailová adresa už nebude monitorovaná na úniky údajov"
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Táto položka nemôže byť navrhnutá na automatické vyplnenie kvôli „${ neverModeDescriptionStrong }“. Ak chcete, aby sa táto položka automaticky vyplnila, pridajte ďalšiu URL adresu."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Táto položka je v súčasnosti zdieľaná. Jej odstránením sa zruší prístup pre všetkých ostatných používateľov."

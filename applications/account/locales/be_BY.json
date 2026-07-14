@@ -66,6 +66,9 @@
       "Accept": [
         "Прыняць"
       ],
+      "Account settings": [
+        "Налады ўліковага запісу"
+      ],
       "activate": [
         "актываваць"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Кіраванне параметрамі зносін"
+      ],
+      "Manage company": [
+        "Кіраваць кампаніяй"
       ],
       "Manage folders": [
         "Кіраванне папкамі"
@@ -3033,6 +3039,9 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Адбылася невядомая памылка. Абнавіце старонку і паспрабуйце яшчэ раз"
       ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Вы сапраўды хочаце працягнуць без ${ withoutString }?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Вы сапраўды хочаце працягнуць? Карыстальнікі, якія не запыталі свой уліковы запіс да завяршэння пераносу, неабходна будзе скінуць пароль праз адміністратара арганізацыі ${ BRAND_NAME }."
       ],
@@ -3080,6 +3089,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Статус пераносу даных з Google Workspace у ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Выдаліце любыя коды MX, якія былі прапісаны раней, а потым скапіюйце коды і ўстаўце іх у раздзел DNS свайго пастаўшчыка даменаў."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
@@ -3216,6 +3228,9 @@
       "Missing organization public key": [
         "Адсутнічае адкрыты ключ арганізацыі"
       ],
+      "More details": [
+        "Дадатковая інфармацыя"
+      ],
       "Need help?": [
         "Неабходна дапамога?"
       ],
@@ -3315,11 +3330,17 @@
       "Some accounts are not claimed": [
         "Некаторыя ўліковыя запісы не пацверджаны"
       ],
+      "Some members weren't migrated": [
+        "Некаторыя ўдзельнікі не былі перанесены."
+      ],
       "Status": [
         "Статус"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Усталюйце ${ BRAND_NAME } Easy Switch з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі ў ${ BRAND_NAME }. Вярніцеся сюды зноў для працягу, калі праграма будзе ўсталявана."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Пакіньце сабе толькі коды ${ BRAND_NAME } MX, каб завяршыць перанос."
       ],
       "Update records for receiving": [
         "Абнавіце запісы для атрымання"
@@ -3375,6 +3396,9 @@
       "You": [
         "Вы"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Пазней вы не зможаце скапіяваць даныя гэтых карыстальнікаў."
+      ],
       "You're all set!": [
         "Усё гатова!"
       ],
@@ -3386,6 +3410,9 @@
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Канфігурацыя вашага дамена ўсё яшчэ ўключае коды MX ад іншых пастаўшчыкоў"
       ]
     },
     "breadcrumb": {
@@ -7896,6 +7923,9 @@
       "We couldn't sign you in": [
         "Не ўдалося ўвайсці ў сістэму"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Мы прыпынілі падпісанне DKIM з прычыны праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
       ],
@@ -8481,8 +8511,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перад стварэннем новага карыстальніка неабходна сканфігураваць карыстальніцкі дамен."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Вы згубіце доступ да ўсіх прэміяльных функцый, які ўключае тарыфны план ${ plan } пасля таго, як выйдзіце з яго."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Вы згубіце доступ да ўсіх прэміяльных функцый, якія ўключае тарыфны план ${ planName } пасля таго, як зменіце яго."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Вас запрашае **${ invite.InviterEmail }** звязаць ваш уліковы запіс з гэтым групавым тарыфным планам."
@@ -10010,6 +10040,12 @@
       "${ emailAddress } is invalid": [
         "Памылковы адрас ${ emailAddress }"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } удзельнік дадзены ў групу",
+        "${ emails.length } удзельнікі дадзены ў групу",
+        "${ emails.length } удзельнікаў дадзены ў групу",
+        "${ emails.length } удзельнікаў дадзены ў групу"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
       ],
@@ -11492,6 +11528,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "Group created": [
+        "Група створана"
+      ],
       "Group deleted": [
         "Група выдалена"
       ],
@@ -11941,6 +11980,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
+      ],
+      "Manage groups in your identity provider": [
+        "Кіраванне групамі ў вашым пастаўшчыку пасведчанняў"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
@@ -13547,6 +13589,9 @@
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
       ],
@@ -13630,6 +13675,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Цяпер вы можаце атрымаць доступ і кіраваць кампаніяй як адміністратар."
       ],
       "You can now close this tab.": [
         "Цяпер вы можаце закрыць гэту ўкладку."
@@ -14778,6 +14826,9 @@
       "App password": [
         "Пароль праграмы"
       ],
+      "App Settings": [
+        "Налады праграмы"
+      ],
       "Apply filter to existing emails": [
         "Прымяніць фільтр да існуючых лістоў"
       ],
@@ -15005,6 +15056,9 @@
       ],
       "Confirm login password": [
         "Пацвердзіць пароль уваходу"
+      ],
+      "Confirm MX records updated": [
+        "Пацвярджэнне абнаўлення запісаў MX"
       ],
       "Confirm new password": [
         "Пацвердзіце новы пароль"
@@ -15278,6 +15332,12 @@
       ],
       "Event notifications": [
         "Апавяшчэнні пра падзеі"
+      ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
       ],
       "Exclude Spam/Trash from All mail": [
         "Выключыць папкі Спам і Сметніца з папкі Уся пошта"
@@ -15684,6 +15744,9 @@
       "Other amount": [
         "Іншая сума"
       ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
       "Passkeys": [
         "Ключы доступу"
       ],
@@ -15803,6 +15866,9 @@
       ],
       "Recovery phrase": [
         "Фраза аднаўлення"
+      ],
+      "Regular expression": [
+        "Рэгулярны выраз"
       ],
       "Remove": [
         "Выдаліць"
@@ -15984,6 +16050,9 @@
       "Start weekday": [
         "Першы дзень тыдня"
       ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
       "State": [
         "Штат"
       ],
@@ -16109,6 +16178,9 @@
       ],
       "URL": [
         "URL-адрас"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ],
       "Use another payment method": [
         "Выкарыстоўваць іншы спосаб аплаты"
@@ -16489,9 +16561,6 @@
       ],
       "Details": [
         "Падрабязнасці"
-      ],
-      "Don't have access to your 2FA?": [
-        "Адсутнічае доступ да 2ФА?"
       ],
       "Downloads": [
         "Спампоўкі"
@@ -17214,6 +17283,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Усе дзеянні фільтра будуць ужыты да ўсіх паведамленняў у вашым уліковым запісе ${ MAIL_APP_NAME }. Лісты з аўтаматычным адказам не будуць адпраўляцца."
       ],
@@ -17222,6 +17294,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashakampanija.com). Наш майстар дапаможа вам з працэсам наладжвання."
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Паглядзець дзейнасць ${ PASS_APP_NAME } па ўсёй вашай арганізацыі."
@@ -25037,9 +25118,6 @@
       "per month, billed annually": [
         "у месяц (аплачваецца адзін раз у год)"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Зэканомце 50% пры аплаце за 1 год і пакіньце поўны доступ"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Зэканомце 50% пры аплаце за 6 месяцаў і пакіньце поўны доступ"
       ],
@@ -26583,6 +26661,9 @@
       "Get more from your password manager": [
         "Атрымайце больш ад свайго менеджара пароляў"
       ],
+      "Get more from your privacy suite": [
+        "Атрымлівайце больш ад вашага набору прыватнасці"
+      ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
@@ -26736,8 +26817,8 @@
       "Layout": [
         "Макет"
       ],
-      "Leave ${ organisationName }?": [
-        "Выйсці з ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Выйсці з ${ organization.Name }?"
       ],
       "Leave group?": [
         "Выйсці з групы?"
@@ -26759,6 +26840,9 @@
       ],
       "Make your business stand out": [
         "Вылучыце свой бізнес"
+      ],
+      "Manage company": [
+        "Кіраванне кампаніяй"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Кіраванне файламі на ўсіх прыладах: Windows, Mac, Android і iOS."
@@ -27527,6 +27611,9 @@
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
+      ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Вы атрымаеце доступ да ўсіх праграм ${ BRAND_NAME } са сваім уліковым запісам ${ BRAND_NAME }"
       ],
       "You are all set": [
         "Усё гатова"

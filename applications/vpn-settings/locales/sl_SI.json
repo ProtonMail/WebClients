@@ -3040,7 +3040,7 @@
         "Razpoložljiva shramba: ${ storageText }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Onemogočite Googlu, da bi ustvaril vaš profil. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
+        "Onemogočite Googlu, da bi ustvaril profil o vas. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
       ],
       "Connect your CRM, website, printers, and more.": [
         "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
@@ -3160,7 +3160,7 @@
         "Zdaj lahko s tega naslova pošiljate e-pošto iz ${ BRAND_NAME }."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail"
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
@@ -4055,6 +4055,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Preverjanje ni uspelo, poskusite znova čez eno uro."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Ustavili smo DKIM podpisovanje zaradi napak v vaši DNS konfiguraciji. Prosimo sledite spodnjim navodilom, da nadaljujete s podpisovanjem."
@@ -6433,6 +6436,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Poskrbite, da ${ addARecoveryMethod }, da boste lahko ponovno dostopali do svojega računa, če pozabite geslo."
       ],
+      "Manage groups in your identity provider": [
+        "Skupine upravljajte pri vašem ponudniku identitet"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Upravljajte, do katerih aplikacij ${ BRAND_NAME } lahko dostopajo člani vaše organizacije. Če je to onemogočeno, bodo imeli dostop samo skrbniki."
       ],
@@ -7338,6 +7344,9 @@
       ],
       "You already have a free account": [
         "Brezplačen račun že imate"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Trenutno ste prijavljeni kot ${ username }."
@@ -8618,9 +8627,6 @@
       ],
       "Create an alias": [
         "Ustvari vzdevek"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nimate dostopa do svoje 2FA?"
       ],
       "Encryption and keys": [
         "Šifriranje in ključi."

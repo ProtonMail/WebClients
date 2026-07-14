@@ -66,6 +66,9 @@
       "Accept": [
         "Aceitar"
       ],
+      "Account settings": [
+        "Configurações da conta"
+      ],
       "activate": [
         "ativar"
       ],
@@ -7621,6 +7624,9 @@
       "We couldn't sign you in": [
         "Não foi possível conectar você"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação usando este método."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Suspendemos a assinatura do DKIM devido a problemas com a configuração de seu DNS. Siga as instruções abaixo para retomar a assinatura."
       ],
@@ -8191,9 +8197,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Você precisa configurar um domínio personalizado antes de criar um novo usuário."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Você perderá o acesso a todos os recursos premium incluídos no ${ plan }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Você foi convidado por **${ invite.InviterEmail }** para vincular sua conta a este plano de grupo."
@@ -12951,6 +12954,9 @@
       "You are about to open your default browser and visit:": [
         "Você está prestes a abrir seu navegador padrão e visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Você está atualmente com sessão iniciada como ${ username } para ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Você está atualmente iniciado sessão como ${ username }."
       ],
@@ -15159,6 +15165,9 @@
       "Recovery phrase": [
         "Frase de recuperação"
       ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
       "Remove": [
         "Remover"
       ],
@@ -15333,6 +15342,9 @@
       ],
       "Start weekday": [
         "Dia de início da semana"
+      ],
+      "Starts with": [
+        "Iniciar com"
       ],
       "State": [
         "Estado"
@@ -15837,9 +15849,6 @@
       ],
       "Details": [
         "Detalhes"
-      ],
-      "Don't have access to your 2FA?": [
-        "Não tem acesso ao seu A2F?"
       ],
       "Downloads": [
         "Downloads"
@@ -16540,6 +16549,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@sua-empresa.com). Nosso assistente guiará você no processo."
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Ver atividade de ${ PASS_APP_NAME } na sua organização."
@@ -23906,9 +23918,6 @@
       "per month, billed annually": [
         "por mês, com cobrança anual"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Economize 50% em 1 ano e mantenha o acesso completo"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Economize 50% em 6 meses e mantenha o acesso completo"
       ],
@@ -25564,9 +25573,6 @@
       ],
       "Layout": [
         "Layout"
-      ],
-      "Leave ${ organisationName }?": [
-        "Sair ${ organisationName }?"
       ],
       "Leave group?": [
         "Sair do grupo?"

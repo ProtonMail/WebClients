@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Avvia configurazione"
       ],
-      "Start testing": [
-        "Inizia a testare"
-      ],
       "Stay": [
         "Resta"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Apri in ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizza le categorie"
+      ],
+      "Got it": [
+        "Capito"
+      ],
+      "Next": [
+        "Avanti"
+      ],
+      "Not now": [
+        "Non ora"
+      ],
+      "Skip": [
+        "Ignora"
       ]
     },
     "Actions message": {
@@ -4106,8 +4120,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Un punto blu appare quando una categoria contiene messaggi non letti dalla tua ultima visita."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Aggiungi o rimuovi categorie, gestisci le notifiche e modifica la configurazione in qualsiasi momento dalle Impostazioni."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Aggiungi o rimuovi categorie, gestisci le notifiche o disattivale del tutto, in qualsiasi momento nelle Impostazioni."
       ],
       "Also included": [
         "Incluso anche"
@@ -4190,9 +4213,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Aiuta il tuo team ad archiviare in modo sicuro le password relative a informazioni aziendali e dei clienti sensibili."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Se un messaggio appare nella categoria sbagliata, ti basta spostarlo in quella corretta. Fai clic destro su un messaggio per scegliere una nuova categoria, oppure usa il trascinare e rilasciare dove desideri."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
@@ -4220,6 +4240,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leggi, rispondi e gestisci Gmail da ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Fai clic con il pulsante destro del mouse su un'email e seleziona \"Sposta in\" oppure trascinala e rilasciala in un'altra categoria. In futuro le email simili verranno ordinate automaticamente lì."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Invia e ricevi messaggi Gmail direttamente in ${ MAIL_APP_NAME }. Connetti il tuo indirizzo in ${ addressesSettingsLink }."
@@ -4373,9 +4396,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Il tuo piano supporta un totale di ${ MAX_SYNC_PAID_USER } indirizzi Gmail",
         "Il tuo piano supporta un totale di ${ MAX_SYNC_PAID_USER } indirizzi Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Sei tra i primi a provare la nostra nuova visualizzazione per categoria prima del suo lancio. Il tuo feedback aiuterà a migliorare il modo in cui Proton Mail organizza le email per tutti."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
@@ -5314,6 +5334,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Il numero di partita IVA deve iniziare con ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Non è stato possibile inviare un codice di verifica con questo metodo."
       ],
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
@@ -7788,6 +7811,9 @@
       "Low Priority": [
         "Priorità bassa"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Imposta ${ MAIL_APP_NAME } come applicazione email predefinita."
+      ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
       ],
@@ -8883,6 +8909,9 @@
       "You are about to open your default browser and visit:": [
         "Stai per aprire il tuo browser predefinito e visitare:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Al momento hai effettuato l'accesso come ${ username } per ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Sei attualmente connesso come ${ username }."
       ],
@@ -8939,6 +8968,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Hai ${ totalLabel } nella tua posta in arrivo."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Hai **${ count } conversazione** nella categoria ${ categoryLabel }",
+        "Hai **${ count } conversazioni** nella categoria ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Hai **${ count } conversazione** memorizzata in questa cartella",
         "Hai **${ count } conversazioni** memorizzate in questa cartella"
@@ -8946,6 +8982,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Hai **${ count } conversazione** taggata con questa etichetta",
         "Hai **${ count } conversazioni** taggate con questa etichetta"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Hai **${ count } messaggio** nella categoria ${ categoryLabel }",
+        "Hai **${ count } messaggi** nella categoria ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Hai **${ count } messaggio ** archiviato in questa cartella",
@@ -8961,6 +9001,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Hai un abbonamento di prova a ${ planTitle }. In questo momento non è richiesto alcun pagamento. Il tuo abbonamento verrà rinnovato automaticamente al termine del periodo di prova."
       ],
+      "You have no conversations in this category": [
+        "Non hai conversazioni in questa categoria"
+      ],
+      "You have no messages in this category": [
+        "Non hai messaggi in questa categoria"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Non hai inserito alcun oggetto nella email. Vuoi comunque inviare il messaggio?"
       ],
@@ -8975,6 +9021,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Devi disabilitare o rimuovere qualsiasi utente aggiuntivo di ${ MAIL_APP_NAME }, indirizzi e domini personalizzati prima di poter effettuare il downgrade."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } conversazione** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } conversazioni** nella categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } messaggio** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } messaggi** nella categoria ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Hai selezionato **${ count } conversazione** da questa cartella",
@@ -9976,6 +10030,9 @@
       "Newsletters": [
         "Newsletter"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletter - Notizie, email editoriali e contenuti non promozionali"
+      ],
       "No label found": [
         "Nessuna etichetta trovata"
       ],
@@ -10063,8 +10120,14 @@
       "Primary": [
         "Primario"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principale - Email personali e di lavoro, oltre ad aggiornamenti importanti"
+      ],
       "Promotions": [
         "Promozioni"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promozioni - Offerte, sconti ed email di marketing"
       ],
       "Proration": [
         "Calcolo proporzionale"
@@ -10131,6 +10194,9 @@
       ],
       "Social": [
         "Social"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Aggiornamenti dei social media, attività e messaggi"
       ],
       "Social media updates and activity": [
         "Aggiornamenti e attività sui social media"
@@ -10207,6 +10273,9 @@
       "Transactions": [
         "Transazioni"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transazioni - Ricevute, prenotazioni, fatture e ordini"
+      ],
       "Undisclosed Recipients": [
         "Destinatari nascosti"
       ],
@@ -10218,6 +10287,9 @@
       ],
       "Updates": [
         "Aggiornamenti"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aggiornamenti - Conferme automatiche, avvisi e aggiornamenti dell'account"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -12417,6 +12489,12 @@
       ],
       "No parent folder": [
         "Nessuna cartella principale"
+      ],
+      "Remind me later": [
+        "Ricordamelo più tardi"
+      ],
+      "Yes, don't show again": [
+        "Sì, non mostrare più"
       ]
     },
     "Option group": {
@@ -13614,6 +13692,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Hai ${ timeRemaining.inHours } ora per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inHours } ore per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Hai ${ timeRemaining.inMinutes } minuto per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inMinutes } minuti per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Hai ${ timeRemaining.inSeconds } secondo per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inSeconds } secondi per reimpostare la tua password."
       ]
     },
     "session_recovery:available:link": {
@@ -14903,6 +14993,10 @@
         "Sposta ${ selectionCount } messaggio",
         "Sposta ${ selectionCount } messaggi"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Spostato in ${ label }. In futuro i messaggi simili verranno inseriti in questa categoria.",
+        "Spostati in ${ label }. In futuro i messaggi simili verranno inseriti in questa categoria."
+      ],
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
@@ -15598,9 +15692,6 @@
       "Help center": [
         "Centro assistenza"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Aiutaci a definire il futuro delle categorie email in ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Nascondi la tua email con ${ PASS_APP_NAME }"
       ],
@@ -15662,6 +15753,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Keep this banner hidden?": [
+        "Vuoi tenere nascosto questo banner?"
+      ],
       "Label as": [
         "Etichetta come..."
       ],
@@ -15689,6 +15783,9 @@
       ],
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
+      ],
+      "Make Categories your own": [
+        "Personalizza le categorie a modo tuo"
       ],
       "Mark all messages as read": [
         "Segna tutti i messaggi come letti"
@@ -15798,6 +15895,9 @@
       "New message": [
         "Scrivi un messaggio"
       ],
+      "New messages": [
+        "Nuovi messaggi"
+      ],
       "Newsletters": [
         "Newsletter"
       ],
@@ -15875,6 +15975,9 @@
       ],
       "Payment verification": [
         "Verifica pagamento"
+      ],
+      "Personalize your Categories": [
+        "Personalizza le tue Categorie"
       ],
       "Phone numbers": [
         "Numeri di telefono"
@@ -16211,6 +16314,9 @@
       "You can now create unlimited folders and labels": [
         "Adesso puoi creare cartelle ed etichette illimitate"
       ],
+      "You're in control": [
+        "Hai tutto sotto controllo"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
       ],
@@ -16245,6 +16351,12 @@
     "Title header for keys table": {
       "Actions": [
         "Azioni"
+      ],
+      "Created": [
+        "Data di creazione"
+      ],
+      "Expires": [
+        "Scadenza"
       ],
       "Fingerprint": [
         "Impronta digitale"
@@ -16351,6 +16463,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chiave OpenPGP versione 6"
       ]
     },
     "tooltip": {

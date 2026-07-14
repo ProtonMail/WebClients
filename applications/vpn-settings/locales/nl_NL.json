@@ -4784,6 +4784,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verificatie mislukt, probeer het over een uur opnieuw."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
       ],
@@ -8726,6 +8729,9 @@
       "You already have a free account": [
         "U heeft al een gratis account"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
       ],
@@ -10293,9 +10299,6 @@
       ],
       "Details": [
         "Details"
-      ],
-      "Don't have access to your 2FA?": [
-        "Heeft u geen toegang tot uw 2FA?"
       ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
@@ -15685,9 +15688,6 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Vergelijk de belangrijkste verschillen die relevant zijn voor uw bedrijf."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Bespaar 50% gedurende 1 jaar en behoud volledige toegang"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Bespaar 50% gedurende 6 maanden en behoud volledige toegang."

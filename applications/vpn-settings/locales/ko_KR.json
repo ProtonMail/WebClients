@@ -167,6 +167,9 @@
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME }주소 얻기"
       ],
+      "Claim offer": [
+        "혜택 받기"
+      ],
       "Claim this address": [
         "주소 얻기"
       ],
@@ -226,6 +229,9 @@
       ],
       "Continue anyway": [
         "무시하고 계속"
+      ],
+      "Continue cancelling": [
+        "계속 취소하기"
       ],
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
@@ -1307,6 +1313,9 @@
       "${ users } user": [
         "${ users }명 사용자"
       ],
+      "Add-on": [
+        "애드온"
+      ],
       "Dedicated VPN servers": [
         "전용 VPN 서버"
       ],
@@ -1435,6 +1444,20 @@
     "Admin": {
       "admin": [
         "관리자"
+      ]
+    },
+    "Admin roles onboarding": {
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "모든 사용자, 그룹, 스토리지, 보안, 결제, 감사 로그 및 시스템 구성을 관리하세요."
+      ],
+      "New: Control admin access for individual users": [
+        "신규: 개별 사용자에 대한 관리자 접근 권한 제어하기"
+      ],
+      "Organization admin:": [
+        "조직 관리자:"
+      ],
+      "Security admin:": [
+        "보안 관리자:"
       ]
     },
     "AdminRole_Info": {
@@ -1910,6 +1933,9 @@
       ],
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Pending": [
+        "보류 중"
       ],
       "Status": [
         "상태"
@@ -4291,6 +4317,9 @@
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "이 주소는 대문자와 구두점(마침표, 하이픈 및 밑줄)만 변경할 수 있습니다."
+      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -4419,6 +4448,12 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "${ errors.length }명 구성원에 대한 규칙 할당을 완료할 수 없습니다."
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "${ failedGroupCount }개 그룹에 대한 규칙 할당을 완료할 수 없습니다."
       ],
       "Server not found": [
         "서버를 찾을 수 없습니다"
@@ -4566,6 +4601,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "인증에 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
@@ -5125,6 +5163,9 @@
       "10+ premium features": [
         "10개 이상의 premium 기능"
       ],
+      "3 email domains": [
+        "3개 이메일 도메인"
+      ],
       "500 GB storage": [
         "500 GB 저장공간"
       ],
@@ -5166,6 +5207,9 @@
       ],
       "Remove": [
         "삭제"
+      ],
+      "Schedule and snooze emails": [
+        "스케쥴과 방해금지"
       ],
       "Secure Core servers": [
         "Secure Core 서버"
@@ -5485,6 +5529,11 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount }명 회원"
+      ]
+    },
+    "group_modal": {
+      "Roles and permissions": [
+        "역할 및 권한"
       ]
     },
     "Header": {
@@ -5986,6 +6035,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length }명 구성원이 그룹에 추가되었습니다."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
       ],
@@ -6000,6 +6052,9 @@
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "그룹 이메일 수신을 시작하려면 ${ invitedMemberCount }명 사용자들이 초대를 수락 받아야 합니다."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
@@ -6039,6 +6094,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount }명의 새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
@@ -6886,6 +6944,9 @@
       "Got it": [
         "확인"
       ],
+      "Group created": [
+        "그룹 생성됨"
+      ],
       "Group deleted": [
         "그룹이 삭제됨"
       ],
@@ -7243,6 +7304,9 @@
       "New activity data will stop being collected and shown.": [
         "신규 활동 데이터 수집이 중단되며 보여지지 않습니다."
       ],
+      "New group created via your identity provider and pending review.": [
+        "새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
+      ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
       ],
@@ -7546,6 +7610,9 @@
       "Resend verification email": [
         "확인 이메일 다시 보내기"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "활성 웹 세션에서 비밀번호를 재설정하면 비밀번호 재설정 이후로도 **암호화된 데이터는 계속 접근할 수 있습니다.**"
+      ],
       "Restore": [
         "복원"
       ],
@@ -7738,6 +7805,9 @@
       "Symbols (#$&)": [
         "기호 (#$&)"
       ],
+      "Synced from identity provider": [
+        "신원 제공자로부터 동기화됨"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro가 5점 만점 중 4.2점으로 추천합니다"
       ],
@@ -7797,6 +7867,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
+      ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "${ pausedCount }개 그룹에 대한 작업이 중단되었습니다. 규칙 할당을 다시 시작하려면 클릭하여 계속합니다."
       ],
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
@@ -8275,6 +8348,9 @@
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
+      ],
       "You are currently signed in as ${ username }.": [
         "현재 ${ username }(으)로 로그인 했습니다."
       ],
@@ -8712,6 +8788,9 @@
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ maxAddresses }개 중 ${ addressesAvailable }개의 이메일 주소 사용 가능"
       ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
       ],
@@ -8847,6 +8926,9 @@
       "Block malware, ads and trackers": [
         "멀웨어, 광고 및 추적기 차단"
       ],
+      "Brand your workspace": [
+        "워크스페이스 브랜딩하기"
+      ],
       "Browser": [
         "브라우저"
       ],
@@ -8970,6 +9052,9 @@
       "Custom domain": [
         "커스텀 도메인"
       ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
+      ],
       "Date": [
         "날짜"
       ],
@@ -9083,6 +9168,9 @@
       ],
       "Folder location": [
         "폴더 위치"
+      ],
+      "Folders, labels, and filters": [
+        "폴더, 라벨 및 필터"
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } 및 ${ DOCS_SHORT_APP_NAME }용."
@@ -9357,6 +9445,9 @@
       "Proration": [
         "할당"
       ],
+      "Protected by Swiss privacy laws": [
+        "스위스 개인정보 보호법에 의거해 보호됨"
+      ],
       "Public certificate (X.509)": [
         "공개 인증서 (X.509)"
       ],
@@ -9558,6 +9649,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
+      "You don't have permissions": [
+        "권한이 없습니다"
+      ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
       ],
@@ -9705,9 +9799,6 @@
       "data recovery option": [
         "데이터 복구 방법"
       ],
-      "Don't have access to your 2FA?": [
-        "회원님의 2단계 인증에 접근할 수 없으신가요?"
-      ],
       "Encryption and keys": [
         "암호화 및 키"
       ],
@@ -9803,6 +9894,9 @@
       ],
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
+      ],
+      "Learn how": [
+        "자세히 알아보기"
       ],
       "Learn more": [
         "더 알아보기"
@@ -10113,6 +10207,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "${ n }명 참가자의 화상 회의"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단기 및 멀웨어 보호 기능이 포함된 VPN"
       ]
     },
     "meet_2025: Info": {
@@ -10230,6 +10327,17 @@
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } 계정에 접근하려면 로그인"
+      ]
+    },
+    "Missing feature": {
+      "Explore the latest news": [
+        "최신 뉴스 살펴보기"
+      ],
+      "Make your voice heard": [
+        "회원님의 목소리를 들려주세요."
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "피드백 포럼에서 기능을 요청하거나 다른 사용자의 아이디어를 투표해 보세요."
       ]
     },
     "Modal title": {
@@ -10729,6 +10837,9 @@
       ],
       "Send & receive invitations": [
         "전송 및 받은 초대"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries }개 이상 국가 내 서버"
       ],
       "Share files with no size limit": [
         "크기 제한 없는 파일 공유"
@@ -12534,6 +12645,9 @@
       "Search for an email or IP address": [
         "이메일 또는 IP 주소 검색하기"
       ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
+      ],
       "Search parent folder": [
         "상위 폴더 검색"
       ],
@@ -13225,6 +13339,35 @@
       ],
       "Testing SAML configuration": [
         "SAML 구성 테스트 중"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount }명 신규 구성원"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups }개 그룹 동기화됨"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers }명 사용자 동기화됨"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount }개 그룹"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount }개 그룹 동기화됨."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount }명 사용자"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount }명 사용자 동기화됨."
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "모든 ${ BRAND_NAME } 서비스 접근 권한을 부여하려면 최종 승인을 받아야 합니다."
+      ],
+      "Private user": [
+        "비공개 사용자"
       ]
     },
     "scim: Action": {
@@ -13973,6 +14116,9 @@
       "${ n } user detached from SSO": [
         "${ n }명 SSO연결 해제됨"
       ],
+      "${ n } user is inactive.": [
+        "${ n }명의 사용자가 비활성 상태입니다."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
       ],
@@ -14228,6 +14374,11 @@
     "State": {
       "Canceling your subscription, please wait": [
         "구독을 취소하고 있습니다. 기다려 주세요"
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... 대기 중"
       ]
     },
     "Storage": {
@@ -15374,6 +15525,9 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
+      "Approve changes": [
+        "변경 사항 승인"
+      ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "브라우저에서 ${ BRAND_NAME }에 로그인된 상태로 유지되어 있나요?"
       ],
@@ -15782,6 +15936,9 @@
       "Get complete privacy coverage": [
         "완전한 개인정보 보호 커버리지 받기"
       ],
+      "Get direct support": [
+        "즉각적인 지원 받기"
+      ],
       "Get help with an issue": [
         "문제에 대한 도움 받기"
       ],
@@ -15799,6 +15956,9 @@
       ],
       "Gift code": [
         "기프트 코드"
+      ],
+      "Group role assignment paused": [
+        "그룹 규칙 할당 중단됨"
       ],
       "Groups": [
         "그룹"
@@ -15916,6 +16076,9 @@
       ],
       "No events": [
         "일정 없음"
+      ],
+      "No events yet": [
+        "이벤트 없음"
       ],
       "Open": [
         "열기"
@@ -16252,6 +16415,12 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME }로 문제 해결받기"
+      ],
+      "Troubleshoot your issue": [
+        "문제 해결 받기"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } 체험하기"
@@ -16635,11 +16804,20 @@
       "Group membership paused": [
         "그룹 구성 권한 중단됨"
       ],
+      "Resuming role assignment": [
+        "규칙 할당 다시 시작"
+      ],
       "Sending member invitation": [
         "구성원 초대장 발송 중"
       ],
       "User declined invitation": [
         "사용자가 초대를 거절함"
+      ],
+      "via ${ groupNames }": [
+        "(${ groupNames } 경유)"
+      ],
+      "Waiting for admin approval": [
+        "관리자의 승인을 기다리는 중"
       ],
       "Waiting for user to accept the invitation": [
         "사용자의 초대 수락 대기 중"
@@ -16747,6 +16925,9 @@
       "Confirm all": [
         "일괄 허가"
       ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n }명 사용자에 대한 관리자 접근 권한 활성화를 할 수 없음"
+      ],
       "Could not enable administrator access: ${ error }": [
         "관리자 권한 활성화 불가 : ${ error }"
       ],
@@ -16774,6 +16955,9 @@
       "Request user permission for data access": [
         "데이터 접근을 위한 사용자 권한 요청"
       ],
+      "Review their account now.": [
+        "해당 계정들의 검토를 진행하세요."
+      ],
       "Revoke access": [
         "접근 권한 회수"
       ],
@@ -16797,6 +16981,9 @@
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "계속하려면 데이터 접근을 하거나 비밀번호 재설정을 위해 사용자 권한 요청이 필요합니다."
+      ],
+      "You can safely remove this user from your organization.": [
+        "사용자의 조직에서 해당 사용자를 안전하게 제거할 수 있습니다."
       ]
     },
     "Upsell": {
@@ -16899,6 +17086,9 @@
       "Invitation email": [
         "초대 이메일"
       ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "사용자와 그룹을 관리하고, 규칙을 할당하며, 구성원 개개인에 대한 라이선스를 할당하세요."
+      ],
       "Name": [
         "성명"
       ],
@@ -16910,6 +17100,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
+      ],
+      "Save": [
+        "저장"
       ],
       "Send invite link via email instead": [
         "대신 이메일로 초대 링크 보내기"

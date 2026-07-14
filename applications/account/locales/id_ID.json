@@ -66,6 +66,9 @@
       "Accept": [
         "Terima"
       ],
+      "Account settings": [
+        "Pengaturan akun"
+      ],
       "activate": [
         "aktifkan"
       ],
@@ -6749,6 +6752,9 @@
       "We couldn't sign you in": [
         "Kami tidak dapat memasukkan Anda ke akun"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
       ],
@@ -7306,9 +7312,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Anda harus mengatur domain kustom sebelum membuat pengguna baru."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Anda akan kehilangan akses ke seluruh fitur premium yang disertakan dalam ${ plan }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Anda diundang oleh **${ invite.InviterEmail }** untuk menautkan akun Anda ke paket milik grup ini."
@@ -11492,6 +11495,9 @@
       "You are about to open your default browser and visit:": [
         "Anda akan membuka peramban bawaan dan mengunjungi:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Anda sedang masuk sebagai ${ username }"
       ],
@@ -13272,6 +13278,9 @@
       "Newsletters": [
         "Buletin"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Buletin - Berita, email editorial, dan konten non-promosi"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Tidak (pengguna tidak dapat menggunakan aplikasi hingga terdapat brankas yang dibagikan dengan mereka)"
       ],
@@ -13410,8 +13419,14 @@
       "Primary": [
         "Utama"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Utama - Email pribadi dan kerja, serta pembaruan penting"
+      ],
       "Promotions": [
         "Penawaran"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promosi - Penawaran, promo, dan email pemasaran"
       ],
       "Prompt to trust keys": [
         "Tanyakan untuk memercayai kunci"
@@ -13575,6 +13590,9 @@
       "Social": [
         "Sosial"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosial - Pembaruan, aktivitas, dan pesan media sosial"
+      ],
       "Social media updates and activity": [
         "Pembaruan dan aktivitas sosial media"
       ],
@@ -13674,6 +13692,9 @@
       "Transactions": [
         "Transaksi"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaksi - Resi, pemesanan, tagihan, dan pesanan"
+      ],
       "Two-password mode": [
         "Mode kata sandi ganda"
       ],
@@ -13694,6 +13715,9 @@
       ],
       "Updates": [
         "Pembaruan"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Pembaruan - Konfirmasi otomatis, peringatan, dan pembaruan akun"
       ],
       "Upload 1 or more encryption keys": [
         "Unggah setidaknya 1 kunci enkripsi"
@@ -14006,9 +14030,6 @@
       ],
       "Create an alias": [
         "Buat alias"
-      ],
-      "Don't have access to your 2FA?": [
-        "Tidak memiliki akses ke 2FA?"
       ],
       "Downloads": [
         "Unduhan"
@@ -19118,6 +19139,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -22431,9 +22461,6 @@
       "Layout": [
         "Tata letak"
       ],
-      "Leave ${ organisationName }?": [
-        "Tinggalkan ${ organisationName }?"
-      ],
       "Leave group?": [
         "Tinggalkan grup?"
       ],
@@ -23465,6 +23492,9 @@
       ],
       "Verified email address": [
         "Alamat email terverifikasi"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan catatan Anda sesuai dengan petunjuk di bawah ini. Jika masalah berlanjut, kami harus menonaktifkan penandatanganan DKIM."

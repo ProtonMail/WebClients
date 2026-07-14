@@ -4304,6 +4304,9 @@
       "VAT number must start with ${ prefixes }": [
         "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
       ],
@@ -6764,6 +6767,9 @@
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
       ],
@@ -7402,6 +7408,12 @@
       "Every": [
         "Кожны"
       ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
       "Expires": [
         "Дзейнічае да"
       ],
@@ -7546,6 +7558,9 @@
       "Organizer": [
         "Арганізатар"
       ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
       "participant": [
         "удзельнік",
         "удзельнікі",
@@ -7606,6 +7621,9 @@
       "Region": [
         "Вобласць"
       ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Выдаліць відэаканферэнцыю ${ MEET_APP_NAME }"
       ],
@@ -7644,6 +7662,9 @@
       ],
       "Start date": [
         "Дата пачатку"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
       ],
       "State": [
         "Штат"
@@ -7692,6 +7713,9 @@
       ],
       "URL": [
         "URL-адрас"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -8142,11 +8166,23 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
       "Fw:": [
         "Пераслаць:"
       ],
       "Re:": [
         "Адказаць:"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"

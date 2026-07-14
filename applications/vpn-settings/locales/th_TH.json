@@ -4380,6 +4380,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "การตรวจสอบความถูกต้องไม่สำเร็จ โปรดลองอีกครั้งภายในหนึ่งชั่วโมง"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "ไม่สามารถส่งรหัสยืนยันด้วยวิธีนี้ได้"
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "เราได้หยุดการลงลายเซ็น DKIM เนื่องจากมีปัญหากับการกำหนดค่า DNS ของคุณ โปรดทำตามคำแนะนำด้านล่างเพื่อลงลายเซ็นต่อ"
       ],
@@ -7882,6 +7885,9 @@
       "You already have a free account": [
         "คุณมีบัญชีฟรีอยู่แล้ว"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "ขณะนี้เข้าสู่ระบบในชื่อ ${ username } สำหรับ ${ organizationName }"
+      ],
       "You are currently signed in as ${ username }.": [
         "ขณะนี้เข้าสู่ระบบในชื่อ ${ username }"
       ],
@@ -9245,9 +9251,6 @@
       ],
       "Create an alias": [
         "สร้างนามแฝง"
-      ],
-      "Don't have access to your 2FA?": [
-        "ไม่สามารถเข้าถึง 2FA ใช่หรือไม่?"
       ],
       "Encryption and keys": [
         "คีย์ต่างๆ และการเข้ารหัส"
@@ -12911,6 +12914,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "คุณมีเวลา ${ timeRemaining.inDays } วันในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inHours } ชั่วโมงในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inMinutes } นาทีในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inSeconds } วินาทีในการรีเซ็ตรหัสผ่าน"
       ]
     },
     "session_recovery:available:link": {

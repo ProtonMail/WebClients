@@ -4403,6 +4403,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifikasi gagal, silakan coba satu jam lagi."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
       ],
@@ -7932,6 +7935,9 @@
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Anda sedang masuk sebagai ${ username }"
       ],
@@ -9298,9 +9304,6 @@
       ],
       "Create an alias": [
         "Buat alias"
-      ],
-      "Don't have access to your 2FA?": [
-        "Tidak memiliki akses ke 2FA?"
       ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
@@ -12964,6 +12967,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {

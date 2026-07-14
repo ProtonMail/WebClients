@@ -123,6 +123,9 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "Change my access": [
+        "Zmień mój dostęp"
+      ],
       "Change password": [
         "Zmień hasło"
       ],
@@ -344,6 +347,9 @@
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
+      ],
+      "Encrypted": [
+        "Zaszyfrowane"
       ],
       "Expand": [
         "Rozwiń"
@@ -627,6 +633,9 @@
       "Remove file": [
         "Usuń plik"
       ],
+      "Remove my access": [
+        "Odbierz mi dostęp"
+      ],
       "Rename": [
         "Zmień nazwę"
       ],
@@ -702,6 +711,9 @@
       "Select all": [
         "Zaznacz wszystkie"
       ],
+      "Set password or expiration date": [
+        "Ustaw hasło lub datę wygaśnięcia"
+      ],
       "Set recovery methods": [
         "Ustaw metody odzyskiwania"
       ],
@@ -725,6 +737,12 @@
       ],
       "Share your calendar with your team": [
         "Udostępnij kalendarz zespołowi"
+      ],
+      "Shared": [
+        "Udostępniono"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Udostępnianie jest szyfrowane end-to-end"
       ],
       "Show advanced PGP settings": [
         "Pokaż zaawansowane ustawienia PGP"
@@ -2867,6 +2885,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Przeniesienie ${ failureItems.length } elementu nie powiodło się",
+        "Przeniesienie ${ failureItems.length } elementów nie powiodło się",
+        "Przeniesienie ${ failureItems.length } elementów nie powiodło się",
+        "Przeniesienie ${ failureItems.length } elementów nie powiodło się"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)"
       ],
@@ -2936,6 +2960,9 @@
       "Cannot export this contact": [
         "Nie można wyeksportować tego kontaktu"
       ],
+      "Cannot find move target": [
+        "Nie można znaleźć celu przeniesienia"
+      ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
       ],
@@ -2996,6 +3023,9 @@
       "Failed loading group members": [
         "Błąd podczas wczytywania członków grupy"
       ],
+      "Failed to change permissions settings": [
+        "Nie udało się zmienić ustawień uprawnień"
+      ],
       "Failed to copy photo to album": [
         "Nie udało się skopiować zdjęcia do albumu"
       ],
@@ -3004,6 +3034,9 @@
       ],
       "Failed to create public share node": [
         "Nie udało się utworzyć publicznego węzła udostępniania"
+      ],
+      "Failed to expand folder": [
+        "Nie udało się rozwinąć folderu"
       ],
       "Failed to fetch node": [
         "Nie udało się pobrać węzła"
@@ -3368,6 +3401,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Mamy problem z zapisaniem ostatnich zmian. Odśwież stronę."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nie udało się wysłać kodu weryfikacyjnego tą metodą."
+      ],
       "Wrong billing address": [
         "Nieprawidłowy adres rozliczeniowy"
       ],
@@ -3391,6 +3427,9 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nieodszyfrowywalne urządzenie"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Zaszyfrowana nazwa"
@@ -4493,6 +4532,9 @@
         "Wszystkie Twoje kontakty zostaną zaimportowane, do limitu ${ maxContact }",
         "Wszystkie Twoje kontakty zostaną zaimportowane, do limitu ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Już w tym folderze"
+      ],
       "an anonymous user": [
         "anonimowy użytkownik"
       ],
@@ -4534,6 +4576,24 @@
       ],
       "Calendar side panel": [
         "Panel boczny kalendarza"
+      ],
+      "Can edit": [
+        "Może edytować"
+      ],
+      "Can edit and manage access": [
+        "Może edytować i zarządzać dostępem"
+      ],
+      "Can view and edit": [
+        "Może wyświetlać i edytować"
+      ],
+      "Can view only": [
+        "Tylko do odczytu"
+      ],
+      "Can't move a folder into itself": [
+        "Nie można przenieść folderu do samego siebie"
+      ],
+      "Can't write into folder": [
+        "Nie można zapisać w folderze"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nie pamiętasz hasła? Aby odrzucić powiadomienie, możesz usunąć dane wszystkich kontaktów zaszyfrowanych tym kluczem."
@@ -4808,6 +4868,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jeśli się usuniesz, stracisz dostęp do „${ fileName }” i nie będziesz mieć możliwości ponownego otwarcia tego elementu, chyba że właściciel ponownie go Tobie udostępni."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarz",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarze",
@@ -4891,6 +4954,9 @@
       ],
       "Limited availability": [
         "Ograniczona dostępność"
+      ],
+      "Link copied": [
+        "Link został skopiowany"
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
@@ -5009,6 +5075,9 @@
       "Owner": [
         "Właściciel"
       ],
+      "owner": [
+        "właściciel"
+      ],
       "password": [
         "hasło"
       ],
@@ -5119,6 +5188,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Zeskanuj kod QR za pomocą urządzenia mobilnego"
+      ],
+      "Select a destination folder": [
+        "Wybierz folder docelowy"
       ],
       "Select a folder to move to.": [
         "Wybierz folder do przeniesienia."
@@ -5426,6 +5498,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Usługa VPN wykorzystuje szyfrowanie, aby ukryć Twój adres IP (unikalny kod przypisany do Twojego urządzenia)."
       ],
+      "Who has access": [
+        "Kto ma dostęp"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
       ],
@@ -5446,6 +5521,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Obecnie zalogowano jako ${ username } dla organizacji ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Jesteś obecnie zalogowany jako ${ username }."
@@ -5503,6 +5581,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nie zostaniesz obciążony opłatą, jeśli anulujesz przed ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Nie będziesz mieć możliwości udostępniania „${ fileName }” po zmianie dostępu na wyświetlającego. Tylko właściciel może ponownie zmienić Twój dostęp."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Środki otrzymasz 1 miesiąc po zasubskrybowaniu przez Twojego znajomego planu rocznego lub 2 miesiące po zasubskrybowaniu planu miesięcznego."
@@ -5731,8 +5812,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
+      "Access": [
+        "Dostęp"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Uzyskaj bezpieczny dostęp do ${ PASS_APP_NAME } z terminala, co jest idealne do skryptów, automatyzacji i przepływów pracy programistycznej."
+      ],
+      "Active": [
+        "Aktywny"
       ],
       "Add email address": [
         "Dodaj adres e-mail"
@@ -5748,6 +5835,15 @@
       ],
       "Alias title": [
         "Tytuł aliasu"
+      ],
+      "Allow editors to change permissions and share": [
+        "Zezwalaj osobom edytującym na zmianę uprawnień i udostępnianie"
+      ],
+      "Anonymous": [
+        "Anonimowy użytkownik"
+      ],
+      "Anyone on the Internet with the link": [
+        "Każdy w Internecie, kto posiada link"
       ],
       "Anyone on the Internet with the link can edit": [
         "Każdy, kto ma link, może edytować zawartość"
@@ -5790,6 +5886,12 @@
       ],
       "Calendars": [
         "Kalendarze"
+      ],
+      "can edit": [
+        "może edytować"
+      ],
+      "can view": [
+        "może przeglądać"
       ],
       "Cancel download": [
         "Anuluj pobieranie"
@@ -5836,8 +5938,14 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete link and remove access for everyone": [
+        "Usuń link i zablokuj dostęp dla wszystkich"
+      ],
       "Delete recovery-related information.": [
         "Usuń informacje o odzyskiwaniu."
+      ],
+      "Disable this link on a specific date": [
+        "Wyłącz ten link w określonym dniu"
       ],
       "Don't ask again": [
         "Nie pytaj ponownie"
@@ -5892,6 +6000,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Usuń link i dostęp wszystkim"
+      ],
+      "Expiry": [
+        "Wygaśnięcie"
       ],
       "Extended address": [
         "Rozszerzony adres"
@@ -6010,6 +6121,9 @@
       "New password": [
         "Nowe hasło"
       ],
+      "Not active": [
+        "Nieaktywny"
+      ],
       "Note": [
         "Notatka"
       ],
@@ -6070,8 +6184,14 @@
       "Replace existing folder": [
         "Zastąp obecny folder"
       ],
+      "Require password": [
+        "Wymagaj hasła"
+      ],
       "Reveal password": [
         "Pokaż hasło"
+      ],
+      "Set a password to limit access via link": [
+        "Ustaw hasło, aby ograniczyć dostęp za pośrednictwem linku"
       ],
       "Set expiration date": [
         "Ustaw datę wygaśnięcia"
@@ -7755,6 +7875,18 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "Pomyślnie utworzono „${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Utworzenie „${ ellipsedName }” nie powiodło się"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Element „${ ellipsedName }” został przeniesiony"
+      ],
+      "\"${ fileName }\" shared": [
+        "Udostępniono „${ fileName }”"
+      ],
       "\"${ name }\" deleted": [
         "Usunięto \"${ name }\""
       ],
@@ -7842,6 +7974,12 @@
         "Przywrócenie ${ numberOfItems } elementów z kosza nie powiodło się",
         "Przywrócenie ${ numberOfItems } elementów z kosza nie powiodło się"
       ],
+      "${ numberOfItems } item moved": [
+        "Przeniesiono ${ numberOfItems } element",
+        "Przeniesiono ${ numberOfItems } elementy",
+        "Przeniesiono ${ numberOfItems } elementów",
+        "Przeniesiono ${ numberOfItems } elementy"
+      ],
       "${ numberOfItems } item moved to trash": [
         "Przeniesiono ${ numberOfItems } element do kosza",
         "Przeniesiono ${ numberOfItems } elementy do kosza",
@@ -7911,6 +8049,9 @@
       "Failed to load invitation details": [
         "Nie udało się załadować szczegółów zaproszenia"
       ],
+      "Failed to load sharing details": [
+        "Nie udało się załadować szczegółów udostępniania"
+      ],
       "Failed to reject share invitation": [
         "Nie udało się odrzucić zaproszenia"
       ],
@@ -7967,6 +8108,12 @@
       ],
       "Root folder failed to be loaded": [
         "Załadowanie głównego folderu nie powiodło się"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Ustawienie zaktualizowane. Osoby edytujące mogą zmieniać uprawnień i udostępniać."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Ustawienie zaktualizowane. Osoby edytujące nie mogą zmieniać uprawnień ani udostępniać."
       ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"
@@ -8922,6 +9069,24 @@
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {
@@ -9345,8 +9510,14 @@
       "Accepted": [
         "Zaakceptowane"
       ],
+      "pending": [
+        "oczekujący"
+      ],
       "Pending": [
         "Oczekujące"
+      ],
+      "user joined": [
+        "użytkownik dołączył"
       ]
     },
     "Storage": {
@@ -9881,6 +10052,9 @@
       "Cannot load link": [
         "Nie można załadować linku"
       ],
+      "Change access to viewer?": [
+        "Zmienić dostęp na wyświetlającego?"
+      ],
       "Change password": [
         "Zmień hasło"
       ],
@@ -10238,6 +10412,12 @@
       "Private browsing vs VPN": [
         "Prywatne przeglądanie Internetu a VPN"
       ],
+      "Public link": [
+        "Link publiczny"
+      ],
+      "Public link settings": [
+        "Ustawienia linku publicznego"
+      ],
       "Re-sign all contacts": [
         "Podpisz ponownie wszystkie kontakty"
       ],
@@ -10252,6 +10432,9 @@
       ],
       "Recover data": [
         "Odzyskaj dane"
+      ],
+      "Remove your access?": [
+        "Odebrać Ci dostęp?"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -10294,6 +10477,12 @@
       ],
       "Settings": [
         "Ustawienia"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ustawienia dla: ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Udostępnij „${ fileName }”"
       ],
       "Share ${ name }": [
         "Udostępnij ${ name }"
@@ -10429,6 +10618,12 @@
       ]
     },
     "Title header for keys table": {
+      "Created": [
+        "Utworzono"
+      ],
+      "Expires": [
+        "Wygasa"
+      ],
       "Fingerprint": [
         "Odcisk klucza"
       ],
@@ -10453,6 +10648,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
+      ],
+      "Change shared item settings": [
+        "Zmień ustawienia udostępnionego elementu"
       ],
       "Customize import to reduce the number of folders": [
         "Dostosuj proces importowania, aby zmniejszyć liczbę folderów"
@@ -10519,6 +10717,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klucz OpenPGP w wersji 6"
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."

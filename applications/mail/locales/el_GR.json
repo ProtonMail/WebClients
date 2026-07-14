@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Έναρξη ρύθμισης"
       ],
-      "Start testing": [
-        "Ξεκίνημα δοκιμής"
-      ],
       "Stay": [
         "Παραμονή"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Άνοιγμα με ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Προσαρμογή κατηγοριών"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "Not now": [
+        "Όχι τώρα"
+      ],
+      "Skip": [
+        "Παράλειψη"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Μια μπλε κουκκίδα εμφανίζεται όταν μια κατηγορία έχει μη αναγνωσμένα μηνύματα από την τελευταία σας επίσκεψη."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Προσθέστε φακέλους και αρχεία στο ${ DRIVE_APP_NAME } και προσκαλέστε μέλη της ομάδας για προβολή ή επεξεργασία."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Προσθέστε ή καταργήστε κατηγορίες, διαχειριστείτε ειδοποιήσεις και προσαρμόστε τις ρυθμίσεις σας ανά πάσα στιγμή στις ρυθμίσεις."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Προσθέστε ή καταργήστε κατηγορίες, διαχειριστείτε ειδοποιήσεις ή απενεργοποιήστε τες εντελώς - οποιαδήποτε στιγμή στις Ρυθμίσεις."
       ],
       "Also included": [
         "Περιλαμβάνονται επίσης"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Εάν ένα μήνυμα εμφανίζεται σε λάθος κατηγορία, απλώς μετακινήστε το στη σωστή. Κάντε δεξί κλικ σε ένα μήνυμα για να επιλέξετε μια νέα κατηγορία ή σύρετέ το και αποθέστε το εκεί που ανήκει."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Κάντε δεξί κλικ σε ένα email και επιλέξτε \"Μετακίνηση σε\" ή σύρετέ το και αποθέστε το σε άλλη κατηγορία. Παρόμοια μηνύματα θα ταξινομούνται αυτόματα εκεί στο μέλλον."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Αποστολή και λήψη μηνυμάτων Gmail απευθείας στο ${ MAIL_APP_NAME }. Συνδέστε τη διεύθυνσή σας στο ${ addressesSettingsLink }."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Είστε από τους πρώτους που θα δοκιμάσουν τη νέα μας προβολή κατηγοριών πριν κυκλοφορήσει. Τα σχόλιά σας θα βοηθήσουν στη βελτίωση του τρόπου με τον οποίο το Proton Mail ταξινομεί τα ηλεκτρονικά μηνύματα για όλους."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Ο αριθμός ΦΠΑ πρέπει να ξεκινά με ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
       ],
       "Wrong billing address": [
         "Λανθασμένη διεύθυνσης χρέωσης"
@@ -8974,6 +8997,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως ${ username } για το ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Είστε συνδεδεμένος/η ως ${ username }."
@@ -15807,9 +15833,6 @@
       "Help center": [
         "Κέντρο βοήθειας"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Βοηθήστε στη διαμόρφωση του μέλλοντος των κατηγοριών ηλεκτρονικών μηνυμάτων στο ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Κρύψτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας με το ${ PASS_APP_NAME }"
       ],
@@ -15901,6 +15924,9 @@
       ],
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
+      ],
+      "Make Categories your own": [
+        "Κάντε τις Κατηγορίες δικές σας"
       ],
       "Mark all messages as read": [
         "Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
@@ -16010,6 +16036,9 @@
       "New message": [
         "Νέο μήνυμα"
       ],
+      "New messages": [
+        "Νέα μηνύματα"
+      ],
       "Newsletters": [
         "Ενημερωτικά δελτία"
       ],
@@ -16087,6 +16116,9 @@
       ],
       "Payment verification": [
         "Επαλήθευση Πληρωμής"
+      ],
+      "Personalize your Categories": [
+        "Εξατομικεύστε τις Κατηγορίες σας"
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
@@ -16422,6 +16454,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Τώρα μπορείτε να δημιουργήσετε απεριόριστους φακέλους και ετικέτες"
+      ],
+      "You're in control": [
+        "Εσείς έχετε τον έλεγχο"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"

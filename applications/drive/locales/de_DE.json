@@ -4006,6 +4006,9 @@
       "We cannot retrieve this item": [
         "Dieses Element konnte nicht abgerufen werden"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
+      ],
       "We were not able to load some invitations": [
         "Wir konnten einige deiner Einladungen nicht laden."
       ],
@@ -5235,6 +5238,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
@@ -5505,6 +5511,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "Erinnerst du dich an dein Passwort? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Möchtest du sie trotzdem hochladen?",
+        "Möchtest du sie trotzdem hochladen?"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -5707,7 +5717,7 @@
       "How does encrypted search work?": [
         "Wie funktioniert die verschlüsselte Suche?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Hiermit bestätige ich nach bestem Wissen und Gewissen, dass die im Bericht enthaltenen Angaben und Aussagen richtig und vollständig sind."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
@@ -6480,6 +6490,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Dies kann NICHT rückgängig gemacht werden. Bitte gib den Gerätenamen ein, um das Entfernen zu bestätigen."
       ],
+      "This file appears to be empty:": [
+        "Diese Datei scheint leer zu sein:",
+        "Diese Dateien scheinen leer zu sein:"
+      ],
       "This file is too large to preview": [
         "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
       ],
@@ -6667,6 +6681,9 @@
       "Uploaded": [
         "Hochgeladen"
       ],
+      "Uploaded - file is empty": [
+        "Hochgeladen - Datei ist leer"
+      ],
       "Uploading": [
         "Wird hochgeladen"
       ],
@@ -6825,6 +6842,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
       ],
       "You are currently signed in as ${ username }.": [
         "Du bist derzeit als „${ username }“ angemeldet."
@@ -13182,6 +13202,9 @@
       ],
       "Upload and share files": [
         "Dateien hochladen und teilen"
+      ],
+      "Upload empty file?": [
+        "Leere Datei hochladen?"
       ],
       "Uploaded": [
         "Hochgeladen"

@@ -2220,7 +2220,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2486,6 +2487,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Remplit automatiquement et rapidement vos identifiants enregistrés."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Classés par champ (titre en premier, puis nom d'utilisateur ou adresse e-mail, site web, notes) et par précision de la correspondance (exact, commence par, contient)."
       ],
       "Read item": [
         "Élément lu"
@@ -2769,9 +2773,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
-      ],
-      "Unlock with biometrics": [
-        "Déverrouiller avec les données biométriques"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."
@@ -3877,6 +3878,9 @@
       ],
       "Regular expression": [
         "Expression régulière"
+      ],
+      "Relevant": [
+        "Pertinent"
       ],
       "Remove link": [
         "Retirer le lien"

@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change my access": [
+        "Modifica il mio accesso"
+      ],
       "Change password": [
         "Cambia la password"
       ],
@@ -356,6 +359,9 @@
       ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
+      ],
+      "Encrypted": [
+        "Crittografato"
       ],
       "Expand": [
         "Espandi"
@@ -642,6 +648,9 @@
       "Remove file": [
         "Rimuovi file"
       ],
+      "Remove my access": [
+        "Rimuovi il mio accesso"
+      ],
       "Rename": [
         "Rinomina"
       ],
@@ -749,6 +758,9 @@
       ],
       "Share your calendar with your team": [
         "Condividi il tuo calendario con il tuo team"
+      ],
+      "Shared": [
+        "Condiviso"
       ],
       "Sharing is end-to-end encrypted": [
         "La condivisione è crittografata end-to-end"
@@ -2968,6 +2980,9 @@
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
       ],
+      "Cannot find move target": [
+        "Impossibile trovare la destinazione dello spostamento"
+      ],
       "Contact could not be saved": [
         "Impossibile salvare il contatto"
       ],
@@ -3023,6 +3038,9 @@
       ],
       "Failed loading group members": [
         "Impossibile caricare i membri del gruppo"
+      ],
+      "Failed to change permissions settings": [
+        "Impossibile modificare le impostazioni dei permessi"
       ],
       "Failed to copy photo to album": [
         "Impossibile copiare la foto nell'album"
@@ -3400,6 +3418,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Non è stato possibile importare questo file in ${ SHEETS_APP_NAME }. Prova a copiare e incollare il contenuto in un nuovo ${ SHEETS_APP_NAME }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Non è stato possibile inviare un codice di verifica con questo metodo."
       ],
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
@@ -4508,8 +4529,23 @@
       "Calendar side panel": [
         "Pannello laterale del calendario"
       ],
+      "Can edit": [
+        "Può modificare"
+      ],
+      "Can edit and manage access": [
+        "Può modificare e gestire l'accesso"
+      ],
+      "Can view and edit": [
+        "Può visualizzare e modificare"
+      ],
+      "Can view only": [
+        "Può solo visualizzare"
+      ],
       "Can't move a folder into itself": [
         "Non puoi spostare una cartella in se stessa"
+      ],
+      "Can't write into folder": [
+        "Impossibile scrivere nella cartella"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -4793,6 +4829,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Se ti rimuovi, perderai l'accesso a \"${ fileName }\" e non potrai aprirlo di nuovo a meno che il proprietario non lo condivida con te."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
@@ -5458,6 +5497,9 @@
       "You are about to open your default browser and visit:": [
         "Stai per aprire il tuo browser predefinito e visitare:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Al momento hai effettuato l'accesso come ${ username } per ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Sei attualmente connesso come ${ username }."
       ],
@@ -5510,6 +5552,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Non potrai più condividere \"${ fileName }\" dopo aver modificato l'accesso in visualizzatore. Solo il proprietario potrà modificare di nuovo il tuo accesso."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
@@ -5728,6 +5773,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
+      "Access": [
+        "Accesso"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
       ],
@@ -5748,6 +5796,9 @@
       ],
       "Alias title": [
         "Titolo dell'alias"
+      ],
+      "Allow editors to change permissions and share": [
+        "Consenti agli editor di modificare i permessi e condividere"
       ],
       "Anonymous": [
         "Anonimo"
@@ -5854,6 +5905,9 @@
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
       ],
+      "Disable this link on a specific date": [
+        "Disattiva questo link in una data specifica"
+      ],
       "Don't ask again": [
         "Non chiederlo più"
       ],
@@ -5907,6 +5961,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Elimina questo link e rimuovi chiunque abbia l'accesso"
+      ],
+      "Expiry": [
+        "Scadenza"
       ],
       "Extended address": [
         "Indirizzo completo"
@@ -6088,8 +6145,14 @@
       "Replace existing folder": [
         "Sostituisci la cartella esistente"
       ],
+      "Require password": [
+        "Richiedi password"
+      ],
       "Reveal password": [
         "Mostra la password"
+      ],
+      "Set a password to limit access via link": [
+        "Imposta una password per limitare l'accesso tramite link"
       ],
       "Set expiration date": [
         "Imposta data di scadenza"
@@ -7695,6 +7758,9 @@
       "\"${ ellipsedName }\" moved": [
         "Spostamento di \"${ ellipsedName }\""
       ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" condiviso"
+      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" eliminato"
       ],
@@ -7835,6 +7901,9 @@
       "Failed to load invitation details": [
         "Impossibile caricare i dettagli dell'invito"
       ],
+      "Failed to load sharing details": [
+        "Impossibile caricare i dettagli di condivisione"
+      ],
       "Failed to reject share invitation": [
         "Impossibile rifiutare l'invito alla condivisione"
       ],
@@ -7883,6 +7952,12 @@
       ],
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Impostazione aggiornata. Gli editor possono modificare i permessi e condividere."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Impostazione aggiornata. Gli editor non possono modificare i permessi o condividere."
       ],
       "Share invitation accepted successfully": [
         "Invito alla condivisione accettato con successo"
@@ -8827,6 +8902,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Hai ${ timeRemaining.inHours } ora per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inHours } ore per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Hai ${ timeRemaining.inMinutes } minuto per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inMinutes } minuti per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Hai ${ timeRemaining.inSeconds } secondo per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inSeconds } secondi per reimpostare la tua password."
       ]
     },
     "session_recovery:available:link": {
@@ -9239,6 +9326,9 @@
       ],
       "Pending": [
         "In attesa"
+      ],
+      "user joined": [
+        "l'utente si è unito"
       ]
     },
     "Storage": {
@@ -9725,6 +9815,9 @@
       "Cannot load link": [
         "Impossibile caricare il link"
       ],
+      "Change access to viewer?": [
+        "Modificare l'accesso in visualizzatore?"
+      ],
       "Change password": [
         "Modifica la password"
       ],
@@ -10103,6 +10196,9 @@
       "Recover data": [
         "Recupera dati"
       ],
+      "Remove your access?": [
+        "Rimuovere il tuo accesso?"
+      ],
       "Report a problem": [
         "Segnala un problema"
       ],
@@ -10147,6 +10243,9 @@
       ],
       "Settings for ${ sharedFileName }": [
         "Impostazioni per ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Condividi \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Condividi ${ name }"
@@ -10285,6 +10384,12 @@
       "Actions": [
         "Azioni"
       ],
+      "Created": [
+        "Data di creazione"
+      ],
+      "Expires": [
+        "Scadenza"
+      ],
       "Fingerprint": [
         "Impronta digitale"
       ],
@@ -10309,6 +10414,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
+      ],
+      "Change shared item settings": [
+        "Modifica le impostazioni dell'elemento condiviso"
       ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
@@ -10375,6 +10483,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chiave OpenPGP versione 6"
       ],
       "We have sent them an invite to access the item.": [
         "Abbiamo spedito un invito per accedere all'elemento."

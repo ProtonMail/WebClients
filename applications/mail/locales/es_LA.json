@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Iniciar la configuración"
       ],
-      "Start testing": [
-        "Iniciar la prueba"
-      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir en ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "Not now": [
+        "Ahora no"
+      ],
+      "Skip": [
+        "Omitir"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA agrega una capa de seguridad adicional, evitando acceso no autorizado."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Aparece un punto azul cuando una categoría tiene mensajes sin leer desde su última visita."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Agregue carpetas y archivos a ${ DRIVE_APP_NAME } e invite a los miembros del equipo a ver o editar."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Añada o elimine categorías, gestione las notificaciones y ajuste sus preferencias en cualquier momento en los ajustes."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Añada o elimine categorías, gestione las notificaciones o desactívelas por completo en cualquier momento en los ajustes."
       ],
       "Also included": [
         "También incluido"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayude a su equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Si un mensaje está mal categorizada, simplemente muévala a la categoría correcta. Haga clic derecho en el mensaje que desea recategorizar, o arrastre y suéltelo donde pertenece."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lea, responda y manténgase al día con Gmail desde dentro de ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haga clic derecho en un correo electrónico y seleccione «Mover a», o arrástrelo y suéltelo en otra categoría. Los correos similares se clasificarán ahí automáticamente en el futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envíe y reciba mensajes de Gmail directamente en ${ MAIL_APP_NAME }. Conecte su dirección en ${ addressesSettingsLink }."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Forma parte de las primeras personas en probar nuestra nueva vista por categoría antes de lanzarse. Sus comentarios ayudará a cómo Proton Mail categoriza correos electrónicos para todos."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "El número IVA debe comenzar con ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -8975,6 +8998,9 @@
       "You are about to open your default browser and visit:": [
         "Está a punto de abrir su navegador por defecto y consultar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Actualmente inició sesión como ${ username }."
       ],
@@ -9880,6 +9906,12 @@
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
+      ],
       "Expires": [
         "Expira"
       ],
@@ -10087,6 +10119,9 @@
       "Navigation": [
         "Navegación"
       ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
       "New password": [
         "Contraseña nueva"
       ],
@@ -10137,6 +10172,9 @@
       ],
       "Original link": [
         "Enlace original"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Participants": [
         "Participantes"
@@ -10216,6 +10254,9 @@
       "Region": [
         "Estado"
       ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
       "Remember my choice": [
         "Recordar mi elección"
       ],
@@ -10275,6 +10316,9 @@
       ],
       "Start date": [
         "Fecha inicial"
+      ],
+      "Starts with": [
+        "Comienza con"
       ],
       "State": [
         "Estado"
@@ -10362,6 +10406,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ],
       "Username": [
         "Nombre de usuario"
@@ -10965,14 +11012,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
       "Fw:": [
         "Rv:"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "El ${ date }, ${ senderString } escribió:"
       ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Su prueba gratuita ha finalizado. ${ nonAutoRenewalAction }"
@@ -15768,9 +15833,6 @@
       "Help center": [
         "Centro de ayuda"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Ayude a dar forma el futuro de las categorías de correo electrónico en ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte su correo electrónico con ${ PASS_APP_NAME }"
       ],
@@ -15862,6 +15924,9 @@
       ],
       "Make a secure connection your default": [
         "Elija una conexión segura como opción predeterminada"
+      ],
+      "Make Categories your own": [
+        "Haga suyas las categorías"
       ],
       "Mark all messages as read": [
         "Marcar todos los mensajes como leídos"
@@ -15971,6 +16036,9 @@
       "New message": [
         "Mensaje nuevo"
       ],
+      "New messages": [
+        "Mensajes nuevos"
+      ],
       "Newsletters": [
         "Boletines informativos"
       ],
@@ -16048,6 +16116,9 @@
       ],
       "Payment verification": [
         "Verificación de pago"
+      ],
+      "Personalize your Categories": [
+        "Personalice sus categorías"
       ],
       "Phone numbers": [
         "Números de teléfono"
@@ -16384,6 +16455,9 @@
       "You can now create unlimited folders and labels": [
         "Ahora puede crear carpetas y etiquetas ilimitadas."
       ],
+      "You're in control": [
+        "Usted tiene el control"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La prueba gratuita de ${ planName } termina el ${ textDate }."
       ],
@@ -16693,6 +16767,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",

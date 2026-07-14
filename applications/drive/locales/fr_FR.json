@@ -4024,6 +4024,9 @@
       "We cannot retrieve this item": [
         "Cet élément n'a pas pu être récupéré."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
+      ],
       "We were not able to load some invitations": [
         "Nous n'avons pas pu charger certaines invitations."
       ],
@@ -5253,6 +5256,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tous (${ totalFoldersCount } dossier)",
         "Tous (${ totalFoldersCount } dossiers)"
@@ -5523,6 +5529,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "Vous souvenez-vous de votre mot de passe ? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Voulez-vous quand même l'importer ?",
+        "Voulez-vous quand même les importer ?"
+      ],
       "Done": [
         "Terminé"
       ],
@@ -5725,8 +5735,8 @@
       "How does encrypted search work?": [
         "Comment fonctionne la recherche chiffrée ?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "Je confirme par la présente que je suis de bonne foi et que les informations et déclarations contenues dans le rapport sont exactes et complètes."
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Je confirme par la présente, en toute bonne foi, que les informations et les déclarations contenues dans le rapport sont exactes et complètes."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Si ces fichiers ne sont pas entièrement téléchargés localement sur ${ deviceName }, vous n'y aurez plus accès."
@@ -6498,6 +6508,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Cette action ne peut pas être annulée. Saisissez le nom de l'appareil pour confirmer le retrait."
       ],
+      "This file appears to be empty:": [
+        "Ce fichier semble être vide :",
+        "Ces fichiers semblent être vides :"
+      ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
@@ -6685,6 +6699,9 @@
       "Uploaded": [
         "Importé"
       ],
+      "Uploaded - file is empty": [
+        "Le fichier a été importé, il est vide."
+      ],
       "Uploading": [
         "Chargement en cours"
       ],
@@ -6843,6 +6860,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Vous allez ouvrir votre navigateur par défaut et consulter :"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Vous êtes actuellement connecté en tant que ${ username }."
@@ -13242,6 +13262,9 @@
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"
+      ],
+      "Upload empty file?": [
+        "Importer un fichier vide ?"
       ],
       "Uploaded": [
         "Importé"

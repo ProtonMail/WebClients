@@ -4833,6 +4833,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Doğrulama başarısız oldu. Lütfen bir saat içinde yeniden deneyin."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Bu yöntemle doğrulama kodunu gönderemedik."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
       ],
@@ -6351,6 +6354,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } üye gruba eklendi",
+        "${ emails.length } üye gruba eklendi"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: tam boyutlu görsel"
       ],
@@ -7340,6 +7347,9 @@
       "Got it": [
         "Tamam"
       ],
+      "Group created": [
+        "Grup oluşturuldu"
+      ],
       "Group deleted": [
         "Grup silindi"
       ],
@@ -7656,6 +7666,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
+      ],
+      "Manage groups in your identity provider": [
+        "Kimlik sağlayıcınızdaki grupları yönetin"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
@@ -8812,6 +8825,9 @@
       ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
       ],
       "You are currently signed in as ${ username }.": [
         "Şu anda ${ username } olarak oturum açmışsınız."
@@ -10392,9 +10408,6 @@
       ],
       "Details": [
         "Ayrıntılar"
-      ],
-      "Don't have access to your 2FA?": [
-        "İki adımlı doğrulamanıza erişemiyor musunuz?"
       ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
@@ -15856,11 +15869,11 @@
       "Compare the key differences that matter for your business.": [
         "Kuruluşunuz için önemli olan temel farklılıkları karşılaştırın."
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "1 yıl boyunca tam erişimle %50 kazanın"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "6 ay boyunca tam erişimle %50 kazanın"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Bir yıl boyunca %50 tasarruf edin ve tam erişim hakkınızı koruyun"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "${ MAIL_APP_NAME } karşılaştırması ile bağımsızlığımızın neden fark yarattığını görün."

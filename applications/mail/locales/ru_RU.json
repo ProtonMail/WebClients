@@ -342,6 +342,9 @@
       "Copy addresses": [
         "Копировать адреса"
       ],
+      "Copy alias “${ name }”": [
+        "Скопировать псевдоним «${ name }»"
+      ],
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
       ],
@@ -1446,9 +1449,6 @@
       "Start setup": [
         "Приступить к настройке"
       ],
-      "Start testing": [
-        "Начать тестирование"
-      ],
       "Stay": [
         "Остаться"
       ],
@@ -1593,6 +1593,9 @@
       "Upgrade": [
         "Улучшить"
       ],
+      "Upgrade for 200GB": [
+        "Перейдите на тариф с 200 ГБ"
+      ],
       "Upgrade Now": [
         "Улучшить сейчас"
       ],
@@ -1730,6 +1733,23 @@
         "Открыть в ${ SHEETS_APP_NAME }"
       ]
     },
+    "Actions": {
+      "Customize categories": [
+        "Настроить категории"
+      ],
+      "Got it": [
+        "Понятно"
+      ],
+      "Next": [
+        "Далее"
+      ],
+      "Not now": [
+        "Не сейчас"
+      ],
+      "Skip": [
+        "Пропустить"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } или ${ importContact }."
@@ -1778,6 +1798,9 @@
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "лицензии ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
@@ -2005,6 +2028,11 @@
       ],
       "Keep subscription": [
         "Продолжить подписку"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ваш бесплатный пробный период заканчивается через ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4099,8 +4127,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Синяя точка появляется, когда в категории есть непрочитанные сообщения с момента вашего последнего посещения."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Добавляйте или удаляйте категории, управляйте уведомлениями и настраивайте параметры в любое время в настройках."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Добавляйте или удаляйте категории, управляйте уведомлениями или полностью отключайте их в любое время в настройках."
       ],
       "Also included": [
         "Также включены"
@@ -4183,9 +4220,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Поможет вашей команде защищенно хранить пароли к конфиденциальной деловой и клиентской информации."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Если сообщение появилось в неправильной категории, просто переместите его в нужную. Нажмите на сообщение правой кнопкой мыши, чтобы выбрать новую категорию, или перетащите его туда, где оно должно быть."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
@@ -4215,6 +4249,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Читайте, отвечайте и управляйте почтой Gmail прямо из ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Нажмите правой кнопкой мыши на электронное письмо и выберите «Переместить в» или перетащите его в другую категорию. Подобные электронные письма будут автоматически сортироваться туда в будущем."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Отправляйте и получайте сообщения Gmail прямо в ${ MAIL_APP_NAME }. Подключите свой адрес в ${ addressesSettingsLink }."
@@ -4381,9 +4418,6 @@
         "Ваш тариф поддерживает в общей сложности ${ MAX_SYNC_PAID_USER } адресов Gmail",
         "Ваш тариф поддерживает в общей сложности ${ MAX_SYNC_PAID_USER } адресов Gmail"
       ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Вы одни из первых, кто пробует наш новый вид категорий до его запуска. Ваша обратная связь поможет улучшить то, как Proton Mail сортирует электронные письма для всех."
-      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
       ]
@@ -4502,6 +4536,9 @@
       ],
       "2 TB of storage to share": [
         "2 ТБ для хранения, чтобы поделиться"
+      ],
+      "2 user accounts": [
+        "2 аккаунта пользователя"
       ],
       "All premium features from your current plan": [
         "Все платные функции вашего текущего тарифа"
@@ -5337,6 +5374,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Номер НДС должен начинаться с ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Нам не удалось отправить код подтверждения этим способом."
       ],
       "Wrong billing address": [
         "Неверный адрес для выставления счетов"
@@ -6266,6 +6306,9 @@
       ],
       "Domain": [
         "Домен"
+      ],
+      "Drawer": [
+        "Боковая панель"
       ],
       "Hardware not compatible": [
         "Оборудование несовместимо"
@@ -7791,6 +7834,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Если вы измените свое решение, вы сможете снова подписаться в любое время. Жаль расставаться!"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -7961,6 +8007,9 @@
       ],
       "Low Priority": [
         "Низкий приоритет"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Установите ${ MAIL_APP_NAME } как приложение по умолчанию для электронной почты."
       ],
       "Manage your folders": [
         "Управлять вашими папками"
@@ -8553,6 +8602,9 @@
       "Text to display": [
         "Текст для отображения"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Спасибо, что выбрали ${ BRAND_NAME } для защиты вашей организации."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Спасибо за подписку. Защищенный просмотр веб-страниц начинается сейчас."
       ],
@@ -9066,6 +9118,9 @@
       "You are about to open your default browser and visit:": [
         "Вы собираетесь открыть браузер по умолчанию и посетить:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "В настоящее время вы вошли как ${ username } для ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "В настоящее время вы вошли как ${ username }."
       ],
@@ -9126,6 +9181,15 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "У вас ${ totalLabel } в вашем почтовом ящике."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "У вас есть **${ count } цепочка писем** в категории «${ categoryLabel }»",
+        "У вас есть **${ count } цепочки писем** в категории «${ categoryLabel }»",
+        "У вас есть **${ count } цепочек писем** в категории «${ categoryLabel }»",
+        "У вас есть **${ count } цепочек писем** в категории «${ categoryLabel }»"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "У Вас **${ count } цепочка писем** в этой папке",
         "У Вас **${ count } цепочки писем** в этой папке",
@@ -9137,6 +9201,12 @@
         "У Вас **${ count } цепочки писем** с этим ярлыком",
         "У Вас **${ count } цепочек писем** с этим ярлыком",
         "У Вас **${ count } цепочек писем** с этим ярлыком"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "У вас есть **${ count } сообщение** в категории «${ categoryLabel }»",
+        "У вас есть **${ count } сообщения** в категории «${ categoryLabel }»",
+        "У вас есть **${ count } сообщений** в категории «${ categoryLabel }»",
+        "У вас есть **${ count } сообщений** в категории «${ categoryLabel }»"
       ],
       "You have **${ count } message** stored in this folder": [
         "У Вас **${ count } сообщение** в этой папке",
@@ -9156,6 +9226,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас пробная подписка на ${ planTitle }. В данный момент оплата не требуется. Ваша подписка будет автоматически продлена по окончании пробного периода."
       ],
+      "You have no conversations in this category": [
+        "У вас нет цепочек писем в этой категории"
+      ],
+      "You have no messages in this category": [
+        "У вас нет сообщений в этой категории"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Вы не указали тему сообщения. Всё равно отправить сообщение?"
       ],
@@ -9170,6 +9246,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Вы выбрали **${ checked } цепочку писем** в категории «${ categoryLabel }»",
+        "Вы выбрали **${ checked } цепочки писем** в категории «${ categoryLabel }»",
+        "Вы выбрали **${ checked } цепочек писем** в категории «${ categoryLabel }»",
+        "Вы выбрали **${ checked } цепочек писем** в категории «${ categoryLabel }»"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Вы выбрали **${ checked } сообщение** в категории «${ categoryLabel }»",
+        "Вы выбрали **${ checked } сообщения** в категории «${ categoryLabel }»",
+        "Вы выбрали **${ checked } сообщений** в категории «${ categoryLabel }»",
+        "Вы выбрали **${ checked } сообщений** в категории «${ categoryLabel }»"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Вы выбрали **${ count } цепочку писем** из этой папки",
@@ -9221,6 +9309,9 @@
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "В этот день вы потеряете доступ к возможностям ${ planTitle }."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Плата не будет взиматься, если вы отмените подписку до ${ trialEndsOnFormatted }."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы написали \"${ attachmentsFoundKeyword }\", но ни одно вложение не было добавлено. Хотите ли вы все равно отправить свое сообщение?"
@@ -9275,6 +9366,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ваш бесплатный пробный период был успешно переведен в подписку на ${ cycle } мес. Дата продления — ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ваш бесплатный пробный период был успешно переведен в ежемесячную подписку. Дата продления — ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваше оборудование не поддерживает работу помощника по написанию локально. Попробуйте запустить его на серверах."
@@ -9339,8 +9436,17 @@
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша подписка будет автоматически обновлена ${ renewalTime }."
       ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Пробная версия закончится через ${ timeRemaining }."
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Вы также потеряете доступ к функциям тарифа ${ boldPlanTitle }:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Вы потеряете доступ к ${ boldPlanTitle } ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Вы по-прежнему сможете просматривать данные своего аккаунта, но все аккаунты пользователей будут удалены из вашей организации."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
@@ -9404,6 +9510,9 @@
       ],
       "Fallback": [
         "Резервный"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Устаревший"
@@ -9712,6 +9821,9 @@
       ],
       "Address": [
         "Адрес"
+      ],
+      "Alias title": [
+        "Название псевдонима"
       ],
       "ALL": [
         "ВСЁ"
@@ -10184,6 +10296,9 @@
       "Newsletters": [
         "Рассылки"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Рассылки — новости, редакционные электронные письма и нерекламный контент"
+      ],
       "No label found": [
         "Ярлыки не найдены"
       ],
@@ -10271,8 +10386,14 @@
       "Primary": [
         "Основной"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Основной — личные и рабочие электронные письма, а также важные обновления"
+      ],
       "Promotions": [
         "Акции"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Промоакции — акции, предложения и рекламные электронные письма"
       ],
       "Proration": [
         "Пропорциональное распределение"
@@ -10339,6 +10460,9 @@
       ],
       "Social": [
         "Социальные"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Соцсети — обновления социальных сетей, активность и сообщения"
       ],
       "Social media updates and activity": [
         "Обновления социальных сетей и активность"
@@ -10415,6 +10539,9 @@
       "Transactions": [
         "Транзакции"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Транзакции — чеки, бронирования, счета и заказы"
+      ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
       ],
@@ -10426,6 +10553,9 @@
       ],
       "Updates": [
         "Обновления"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Обновления — автоматические подтверждения, оповещения и обновления аккаунта"
       ],
       "Upload picture": [
         "Загрузить изображение"
@@ -10441,6 +10571,9 @@
       ],
       "Very Dissatisfied": [
         "Очень не удовлетворен"
+      ],
+      "Video conference": [
+        "Видеоконференция"
       ],
       "Vulnerable": [
         "Уязвимый"
@@ -11444,6 +11577,9 @@
       "${ size } storage per user": [
         "${ size } хранилища на пользователя"
       ],
+      "1 TB secure storage": [
+        "1 ТБ защищённого хранения"
+      ],
       "1 user": [
         "1 пользователь"
       ],
@@ -11485,6 +11621,9 @@
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Расширенные возможности псевдонимов (с помощью SimpleLogin)"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Все продукты и функции ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -11603,6 +11742,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with a prompt": [
+        "Создавайте электронные письма с помощью запросов"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -11669,6 +11811,12 @@
       "Private photo backup": [
         "Конфиденциальное резервное копирование фото"
       ],
+      "Proofread and refine your emails": [
+        "Вычитывайте и дорабатывайте свои электронные письма"
+      ],
+      "Quickly craft replies": [
+        "Быстро составляйте ответы"
+      ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
       ],
@@ -11722,6 +11870,9 @@
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
+      ],
+      "Support for up to 2 users": [
+        "Поддержка до 2 пользователей"
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
@@ -12350,11 +12501,17 @@
       "Get the deal": [
         "Воспользоваться предложением"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Последний шанс получить скидку 80 % на первый месяц подписки ${ plan }."
+      ],
       "Last day to save": [
         "Последний день, чтобы сэкономить"
       ],
       "Limited-time offer": [
         "Ограниченное предложение"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Ограниченное по времени предложение, действительно в течение первого месяца"
       ],
       "Maybe later": [
         "Может быть позже"
@@ -12376,6 +12533,12 @@
       ],
       "This offer won't be shown again.": [
         "Это предложение больше не будет показано."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Повысьте продуктивность всего за ${ pricingTitle } с тарифом ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Увеличьте объем хранения всего за ${ pricingTitle } с тарифом ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "При переключении с ежемесячной на годовую подписку."
@@ -12399,11 +12562,23 @@
       "500 GB secure storage": [
         "500 ГБ защищённого хранилища"
       ],
+      "Advanced threat protection": [
+        "Улучшенная защита от угроз"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Сотрудничайте с пользователями, не использующими ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Пользовательский домен электронной почты"
       ],
+      "Edit docs online": [
+        "Изменять документы онлайн"
+      ],
       "Email addresses": [
         "Адреса электронной почты"
+      ],
+      "File version history (over 1 week)": [
+        "История версий файлов (более 1 недели)"
       ],
       "Free": [
         "Free"
@@ -12413,6 +12588,12 @@
       ],
       "Storage": [
         "Хранилище"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Сверхбыстрые серверы VPN более чем в 110 странах"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Неограниченное количество псевдонимов для защиты личных данных"
       ]
     },
     "Onboarding List Placeholder": {
@@ -12599,6 +12780,9 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Отмените в любое время до ${ cancelDate }."
       ],
+      "Cancel anytime before then.": [
+        "Вы можете отменить подписку в любое время до этого момента."
+      ],
       "contact our support team": [
         "свяжитесь с нашей службой поддержки"
       ],
@@ -12620,11 +12804,20 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы все еще можете отменить подписку в течение 30 дней и получить пропорциональный возврат средств."
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Вы все еще можете отменить подписку в течение 30 дней и получить пропорциональный возврат средств."
+      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можете использовать тариф ${ planTitle } до окончания пробного периода без взимания платы."
       ],
       "Your free trial has started": [
         "Ваш бесплатный пробный период начался"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Ваша полная подписка на ${ planTitle } начинается ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Вы сможете бесплатно использовать ${ planTitle } до окончания пробной версии."
       ]
     },
     "Option": {
@@ -12645,6 +12838,12 @@
       ],
       "No parent folder": [
         "Без родительской папки"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Yes, don't show again": [
+        "Да, больше не показывать"
       ]
     },
     "Option group": {
@@ -13536,6 +13735,12 @@
         "Друзей присоединилось",
         "Друзья присоединились"
       ],
+      "Friend subscribed": [
+        "Друг подписался",
+        "Друга подписались",
+        "Друзей подписалось",
+        "Друзей подписалось"
+      ],
       "Invite friends. Get credits.": [
         "Приглашайте друзей. Получайте остаток на счете."
       ],
@@ -13859,6 +14064,24 @@
         "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас остался ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас осталась ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас осталась ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -14161,11 +14384,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Безопасный просмотр"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Делайте больше с ${ BRAND_NAME }"
+      ],
       "Get unlimited aliases": [
         "Получить неограниченное число псевдонимов"
       ],
       "Go to subscription plans": [
         "Перейти к тарифам"
+      ],
+      "Guard against threats": [
+        "Защита от угроз"
+      ],
+      "Increase your storage": [
+        "Увеличить объем хранения"
+      ],
+      "Keep passwords safe": [
+        "Хранить пароли в безопасности"
+      ],
+      "Unblock streaming content": [
+        "Разблокировать стриминговый контент"
       ],
       "Upgrade": [
         "Сменить тариф"
@@ -14246,8 +14487,26 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Получить доступ к контенту на стриминговых сервисах по всему миру"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Получите 500 ГБ для безопасного хранения всех файлов и фотографий"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Получить доступ к сверхбыстрым серверам VPN более чем в 110 странах"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Получите один тариф, включающий все функции: выберите ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Используйте неограниченное количество псевдонимов для защиты личных данных и уменьшения количества спама"
+      ],
       "Keep your passwords safe and organized in multiple vaults": [
         "Храните свои пароли в безопасности и порядке в нескольких хранилищах"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Защитите свой аккаунт от угроз с помощью Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
@@ -14570,6 +14829,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Тариф ${ planName } дает вам доступ ко всем платным функциям ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }. Конфиденциальность встроена по умолчанию, поэтому вы можете заниматься своими делами, зная, что ваши данные и личная информация в безопасности."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
@@ -15208,6 +15470,12 @@
         "Переместить ${ selectionCount } сообщения",
         "Переместить ${ selectionCount } сообщений",
         "Переместить ${ selectionCount } сообщений"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Перенесено в ${ label }. Подобное сообщение будет классифицироваться здесь в будущем.",
+        "Перенесено в ${ label }. Подобные сообщения будут классифицироваться здесь в будущем.",
+        "Перенесено в ${ label }. Подобные сообщения будут классифицироваться здесь в будущем.",
+        "Перенесено в ${ label }. Подобные сообщения будут классифицироваться здесь в будущем."
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
@@ -15939,9 +16207,6 @@
       "Help center": [
         "Справочный центр"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Помогите сформировать будущее категорий электронных писем в ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Скройте адрес электронной почты с помощью ${ PASS_APP_NAME }"
       ],
@@ -16002,6 +16267,9 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
+      "Keep this banner hidden?": [
+        "Скрыть этот баннер?"
+      ],
       "Label as": [
         "Отметить как"
       ],
@@ -16031,6 +16299,9 @@
       ],
       "Make a secure connection your default": [
         "Сделайте защищенное подключение вашим подключением по умолчанию"
+      ],
+      "Make Categories your own": [
+        "Сделайте категории удобными для вас"
       ],
       "Mark all messages as read": [
         "Отметить все сообщения как прочитанные"
@@ -16137,6 +16408,9 @@
       "New message": [
         "Новое сообщение"
       ],
+      "New messages": [
+        "Новые сообщения"
+      ],
       "Newsletters": [
         "Рассылки"
       ],
@@ -16214,6 +16488,9 @@
       ],
       "Payment verification": [
         "Проверка платежа"
+      ],
+      "Personalize your Categories": [
+        "Персонализируйте свои категории"
       ],
       "Phone numbers": [
         "Hомера телефонов"
@@ -16479,6 +16756,12 @@
       "Upgrade to keep your premium benefits.": [
         "Улучшите подписку, чтобы сохранить свои платные преимущества."
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Повысьте продуктивность за ${ formattedPrice } с тарифом ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Увеличьте объем хранения за ${ formattedPrice } с тарифом ${ planName }"
+      ],
       "Upload and share files": [
         "Загружайте и делитесь файлами"
       ],
@@ -16545,6 +16828,9 @@
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
       ],
+      "You're in control": [
+        "Вы всё контролируете"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
@@ -16574,6 +16860,14 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ]
+    },
+    "Title header for keys table": {
+      "Created": [
+        "Создано"
+      ],
+      "Expires": [
+        "Истекает"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16671,6 +16965,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
+      ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версии 6"
       ]
     },
     "tooltip": {

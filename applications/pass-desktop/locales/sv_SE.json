@@ -577,6 +577,9 @@
       "Regenerate": [
         "Generera igen"
       ],
+      "Regex invalid": [
+        "Regex ogiltigt"
+      ],
       "Reject": [
         "Avvisa"
       ],
@@ -1200,6 +1203,12 @@
       "Failed to set default mailbox": [
         "Misslyckades att ställa in standardbrevlåda"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Misslyckades att starta SSH-agent: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Misslyckades att stoppa SSH-agent: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Misslyckades att synkronisera alias"
       ],
@@ -1591,6 +1600,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } kommer använda SSH-nycklarna sparade i dina valv."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } offlineläge aktiverat."
@@ -2137,6 +2149,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2218,6 +2234,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
+      ],
+      "Paste the following command in your terminal:": [
+        "Klistra in följande kommando i din terminal:"
       ],
       "Paused": [
         "Pausad"
@@ -2589,6 +2608,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på ${ PASS_APP_NAME }-ikonen i din webbläsares verktygsfält."
       ],
+      "To use ${ PASS_APP_NAME } SSH agent on Windows, the OpenSSH service must be disabled.": [
+        "För att använda ${ PASS_APP_NAME } SSH-agent i Windows måste OpenSSH-tjänsten vara inaktiverad."
+      ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betrodd av över 50 000 företagsanvändare och 100 miljoner konton runt om i världen."
       ],
@@ -2615,9 +2637,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt andra lösenord"
-      ],
-      "Unlock with biometrics": [
-        "Lås upp med biometri"
       ],
       "Unpinning item...": [
         "Lossar objekt …"
@@ -3559,6 +3578,9 @@
       "Never": [
         "Aldrig"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New": [
         "Nytt"
       ],
@@ -3621,6 +3643,9 @@
       ],
       "Owner": [
         "Ägare"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ],
       "Passkey": [
         "Passkey"
@@ -3732,6 +3757,9 @@
       ],
       "Regular expression": [
         "Vanligt uttryck"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Ta bort länk"
@@ -3991,6 +4019,9 @@
       "Update": [
         "Uppdatera"
       ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Använd ${ PASS_APP_NAME } som SSH-agent"
+      ],
       "Use for AI agent": [
         "Använd för AI-agent"
       ],
@@ -4127,6 +4158,9 @@
       "${ count } item": [
         "${ count } objekt",
         "${ count } objekt"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan dra och släppa det valda objektet till ett annat valv",
@@ -4428,8 +4462,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ange en URL för att kontrollera om din nuvarande regel matchar URL:en"
+      ],
       "The rule is matching this URL": [
         "Regeln matchar denna URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regeln matchar INTE denna URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denna URL kommer att blockeras från automatisk ifyllning"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denna URL kommer INTE att blockeras från automatisk ifyllning"
       ]
     },
     "Security Center - Info": {
@@ -4989,6 +5035,9 @@
       "Review and share": [
         "Granska och dela"
       ],
+      "Screenshot of OpenSSH service on Windows": [
+        "Skärmdump av OpenSSH-tjänst i Windows"
+      ],
       "Secure your data": [
         "Säkra dina data"
       ],
@@ -5009,6 +5058,9 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Setup ${ PASS_APP_NAME } SSH Agent": [
+        "Ställ in ${ PASS_APP_NAME } SSH-agent"
       ],
       "Setup offline mode": [
         "Ställ in offlineläge"
@@ -5048,6 +5100,9 @@
       ],
       "Sync your aliases from SimpleLogin": [
         "Synkronisera dina alias från SimpleLogin"
+      ],
+      "Test a URL against this rule": [
+        "Testa en URL mot denna regel"
       ],
       "Transfer ownership": [
         "Överför ägarskap"

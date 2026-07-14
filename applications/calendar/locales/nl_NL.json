@@ -4220,6 +4220,9 @@
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
+      ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
       ],
@@ -6578,6 +6581,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
@@ -12707,6 +12713,12 @@
       "Actions": [
         "Acties"
       ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
       "Fingerprint": [
         "Vingerafdruk"
       ],
@@ -12813,6 +12825,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ]
     },
     "tooltip": {

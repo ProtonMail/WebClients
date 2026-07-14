@@ -1447,9 +1447,6 @@
       "Start setup": [
         "მორგების დაწყება"
       ],
-      "Start testing": [
-        "შემოწმების დაწყება"
-      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME }-ში გახსნა"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "კატეგორიების მორგება"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Not now": [
+        "არა ახლა"
+      ],
+      "Skip": [
+        "გამოტოვება"
       ]
     },
     "Actions message": {
@@ -4142,8 +4156,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "ცისფერი წერტილი გამოჩნდება მაშინ, როდესაც თქვენი ბოლო ვიზიტის შემდეგ კატეგორიაში არის წაუკითხავი შეტყობინებები."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "დაამატეთ საქაღალდეები და ფაილები ${ DRIVE_APP_NAME }-ს და მოიწვიეთ გუნდის წევრები მის სანახავად, ან ჩასასწორებლად."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "დაამატეთ ან ამოშალეთ კატეგორიები, მართეთ შეტყობინებები და შეცვალეთ თქვენი დაყენება ნებისმიერ დროს პარამეტრებში."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "დაამატეთ ან ამოშალეთ კატეგორიები, მართეთ შეტყობინებები ან მთლიანად გამორთეთ ისინი - ნებისმიერ დროს პარამეტრებიდან."
       ],
       "Also included": [
         "ასევე შეიცავს"
@@ -4226,9 +4249,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "დაეხმარეთ თქვენს გუნდს, უსაფრთხოდ შეინახოს პაროლები კონფიდენციალური ბიზნესისა და კლიენტის ინფორმაციებისთვის."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "თუ შეტყობინება არასწორ კატეგორიაში გამოჩნდა, უბრალოდ გადაიტანეთ ის სწორ კატეგორიაში. დააწკაპუნეთ შეტყობინებაზე მარჯვენა ღილაკით ახალი კატეგორიის ასარჩევად, ან გამოიყენეთ გადაადგილება და ჩაგდება მისთვის შესაფერის ადგილას."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
       ],
@@ -4256,6 +4276,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "წაიკითხეთ, უპასუხეთ და მართეთ Gmail-ი ${ MAIL_APP_NAME }-ის საშუალებით"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "დააწკაპუნეთ ელფოსტაზე მარჯვენა ღილაკით და აირჩიეთ „გადატანა...“ ან გადაათრიეთ და ჩააგდეთ იგი სხვა კატეგორიაში. მსგავსი ელფოსტები მომავალში აქ ავტომატურად დალაგდება."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "გაგზავნეთ და მიიღეთ Gmail-ის შეტყობინებები პირდაპირ ${ MAIL_APP_NAME }-ში. დააკავშირეთ თქვენი მისამართი ${ addressesSettingsLink }-ში."
@@ -4409,9 +4432,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "თქვენი პაკეტი მხარს უჭერს სულ ${ MAX_SYNC_PAID_USER } Gmail მისამართს",
         "თქვენი პაკეტი სულ ${ MAX_SYNC_PAID_USER } Gmail-ის მისამართს უჭერს მხარს"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "თქვენ ხართ ერთ-ერთი პირველი, ვინც ცდის ჩვენს ახალ კატეგორიების ხედს მის ოფიციალურ გაშვებამდე. თქვენი უკუკავშირი დაგვეხმარება გავაუმჯობესოთ, თუ როგორ ახარისხებს Proton Mail ელფოსტას ყველასთვის."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
@@ -5350,6 +5370,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "დღგ-ის ნომერი უნდა იწყებოდეს ${ prefixes }-ით"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
       ],
       "Wrong billing address": [
         "არასწორი გადახდის მისამართი"
@@ -6958,8 +6981,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "გამოწერის გაუქმების მოთხოვნა დაგზავნის ამ სიიდან ავტორს გაეგზავნება და ავტომატურად დამუშავდება."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "უსაფრთხო კავშირი აუცილებელია დისტანციურად მუშაობისას. VPN იცავს კომპანიის მონაცემებს კიბერსაფრთხეებისგან და ინარჩუნებს თქვენს სამუშაოს პირადად."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "მომხმარებელი წარმოადგენს ანგარიშს, რომელსაც ერთადერთი მომხმარებლის სახელი, საფოსტო ყუთი და მფლობელი გააჩნია"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN შიფრავს თქვენს კავშირს და მალავს თქვენს IP მისამართს, რაც მნიშვნელოვნად ართულებს ნებისმიერისთვის თქვენი ვებ-სერფინგის თვალყურის დევნებას ან მონიტორინგს."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN მალავს თქვენს IP მისამართს და შიფრავს თქვენი ვებ-სერფინგის აქტივობას, რაც ვებსაიტებს, რეკლამის განმთავსებლებსა და ISP-ებს დროთა განმავლობაში თქვენი თვალთვალის შესაძლებლობას ართულებს."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN არის უსაფრთხო გვირაბი თქვენს მოწყობილობასა და ინტერნეტს შორის. ის მალავს თქვენს მდებარეობასა და აქტივობას თქვენი ინტერნეტ პროვაიდერისაგან (ISP) და იმ ვებსაიტებისგან, რომლებსაც სტუმრობთ."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "მიიღეთ წვდომა 6500-ზე მეტ მაღალსიჩქარიან სერვერზე 10-მდე მოწყობილობაზე, რათა დაიცვათ თქვენი დათვალიერების მონაცემები. ხელმისაწვდომია ${ ios }, ${ android }, ${ appleTV }-სა და ${ desktop }-ზე."
@@ -6993,6 +7028,9 @@
       ],
       "Addresses settings": [
         "მისამართის მორგება"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "რეკლამის განმთავსებლები თვალს ადევნებენ თქვენს ვებ-სერფინგს მიზნობრივი რეკლამების საჩვენებლად. ${ VPN_APP_NAME } ბლოკავს ტრეკერებსა და რეკლამებს, რაც აჩქარებს თქვენს კავშირს და აუმჯობესებს თქვენს ონლაინ გამოცდილებას."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
@@ -7603,6 +7641,9 @@
       "Google Pay mark": [
         "Google Pay-ის ნიშანი"
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "მთავრობებსა და ISP-ებს შეუძლიათ თქვენი ონლაინ აქტივობის მონიტორინგი. თქვენი რეალური IP-ის დამალვით და თქვენი აქტივობის დაშიფვრით, თქვენი ვებ-სერფინგი ხდება პირადი."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "აქვს ${ numAttachments } მიმაგრებული ფაილი (${ numAttachmentsSize })",
         "აქვს ${ numAttachments } მიმაგრებული ფაილი (${ numAttachmentsSize })"
@@ -7803,6 +7844,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "გახადეთ ${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია."
+      ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
       ],
@@ -7880,6 +7924,9 @@
       ],
       "More refine actions": [
         "მეტი დახვეწის ქმედებები"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "საჯარო WiFi ქსელების უმეტესობა უსაფრთხოა, მაგრამ ზოგიერთს აკლია დაცვა, რაც კიბერსაფრთხეების წინაშე გაყენებთ. VPN შიფრავს თქვენს ტრაფიკს და გიცავთ თქვენ."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
@@ -8309,6 +8356,12 @@
       "Snoozing this conversation will be canceled.": [
         "ამ საუბრის დროებით დადუმება გაუქმდება."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "ზოგიერთი მთავრობა ბლოკავს ან ზღუდავს წვდომას გარკვეულ ვებსაიტებზე. VPN გეხმარებათ ცენზურის გვერდის ავლით, თანაც ინარჩუნებს თქვენს აქტივობასა და იდენტობას პირადად."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "ზოგიერთი ვებსაიტი და სტრიმინგის სერვისი ბლოკავს კონტენტს რეგიონის მიხედვით. VPN საშუალებას გაძლევთ გვერდი აუაროთ ამ შეზღუდვებს და თავისუფლად მიიღოთ წვდომა ინტერნეტთან."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "ეს შეტყობინება არ არსებობს, ან ვადა გაუვიდა."
       ],
@@ -8492,6 +8545,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "ეს ბმული შეიძლება ჰომოგრაფიულ შეტევას წარმოადგენდეს. შეამოწმეთ ბმული და დარწმუნდით, რომ ის უსაფრთხოა."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "ეს ნიშნავს, რომ თქვენი ISP და ვებსაიტები, რომლებსაც სტუმრობთ, ვერ დააკავშირებენ თქვენს პერსონალურ ინფორმაციას თქვენს ონლაინ აქტივობასთან."
+      ],
       "This message has a key attached, that has not been trusted yet.": [
         "ამ შეტყობინებას თან ერთვის გასაღები, რომელიც ჯერ არ არის სანდო."
       ],
@@ -8570,6 +8626,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "გამოგზავნის საჯარო გასაღები ჯერ სანდო არაა."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "ეს უნიკალური კოდი შეიძლება გამოყენებულ იქნას ვებსაიტებისა და ISP-ების (ინტერნეტ პროვაიდერების) მიერ თქვენი მდებარეობისა და ბრაუზინგის ისტორიის თქვენს მოწყობილობასთან დასაკავშირებლად"
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "ეს ნაჩვენებია იმიტომ, რომ თქვენი ელფოსტის ხაზი პაროლის ჩამოყრის საკვანძო სიტყვებს შეიცავს."
@@ -8883,6 +8942,9 @@
       "You are about to open your default browser and visit:": [
         "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "თქვენ ამჟამად შესული ხართ როგორც ${ username } ${ organizationName }-სთვის."
+      ],
       "You are currently signed in as ${ username }.": [
         "შესული ბრძანდებით, როგორც ${ username }."
       ],
@@ -8939,6 +9001,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "თქვენს შემოსულებში არის ${ totalLabel }."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "თქვენ გაქვთ **${ count } მიმოწერა** ${ categoryLabel } კატეგორიაში",
+        "თქვენ გაქვთ **${ count } მიმოწერა** ${ categoryLabel } კატეგორიაში"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება**",
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება**"
@@ -8946,6 +9015,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "ამ ჭდით არსებობს **${ count } შეტყობინება**",
         "ამ ჭდით არსებობს **${ count } შეტყობინება**"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "თქვენ გაქვთ **${ count } შეტყობინება** ${ categoryLabel } კატეგორიაში",
+        "თქვენ გაქვთ **${ count } შეტყობინება** ${ categoryLabel } კატეგორიაში"
       ],
       "You have **${ count } message** stored in this folder": [
         "ამ საქაღალდეში შენახულია **${ count } შეტყობინება**",
@@ -8961,6 +9034,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "გაქვთ ${ planTitle }-ის საცდელი გამოწერა. ამისთვის გადახდა საჭირო არაა. თქვენი გამოწერა სატესტო პერიოდის ბოლოს ავტომატურად განახლდება."
       ],
+      "You have no conversations in this category": [
+        "ამ კატეგორიაში მიმოწერები არ გაქვთ"
+      ],
+      "You have no messages in this category": [
+        "ამ კატეგორიაში შეტყობინებები არ გაქვთ"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "თქვენი ელფოსტისთვის სათაური არ მიგითითებიათ. მაინც გნებავთ შეტყობინების გაგზავნა?"
       ],
@@ -8975,6 +9054,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "თქვენ მონიშნეთ **${ checked } მიმოწერა** ${ categoryLabel } კატეგორიაში",
+        "თქვენ მონიშნეთ **${ checked } მიმოწერა** ${ categoryLabel } კატეგორიაში"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "თქვენ მონიშნეთ **${ checked } შეტყობინება** ${ categoryLabel } კატეგორიაში",
+        "თქვენ მონიშნეთ **${ checked } შეტყობინება** ${ categoryLabel } კატეგორიაში"
       ],
       "You selected **${ count } conversation** from this folder": [
         "ამ საქაღალდიდან მონიშნული გაქვთ **${ count } საუბარი**",
@@ -9060,6 +9147,12 @@
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
       ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "თქვენი უფასო საცდელი ვერსია წარმატებით გადაკეთდა ${ cycle }-თვიან გამოწერად. განახლების თარიღია ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "თქვენი უფასო საცდელი ვერსია წარმატებით გადაკეთდა ყოველთვიურ გამოწერად. განახლების თარიღია ${ nextBillingDate }."
+      ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "თქვენს აპარატურას წერის დამხმარის ლოკალურად გაშვების მხარდაჭერა არ გააჩნია. სცადეთ, ის სერვერებზე გაუშვათ."
       ],
@@ -9127,6 +9220,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
@@ -9963,6 +10059,9 @@
       "Newsletters": [
         "სიახლეები"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "საინფორმაციო ბიულეტენები - სიახლეები, სარედაქციო ელფოსტა და არასარეკლამო შინაარსი"
+      ],
       "No label found": [
         "ჭდეები ნაპოვნი არაა"
       ],
@@ -10050,8 +10149,14 @@
       "Primary": [
         "ძირითადი"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "ძირითადი - პირადი და სამსახურის ელფოსტა, ასევე მნიშვნელოვანი განახლებები"
+      ],
       "Promotions": [
         "რეკლამა"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "პრომოაქციები - ფასდაკლებები, შეთავაზებები და მარკეტინგული ელფოსტა"
       ],
       "Proration": [
         "პროპორცია"
@@ -10118,6 +10223,9 @@
       ],
       "Social": [
         "სოციალური"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "სოციალური - სოციალური მედიის განახლებები, აქტივობები და შეტყობინებები"
       ],
       "Social media updates and activity": [
         "სოციალური მედიის განახლებები და აქტივობა"
@@ -10194,6 +10302,9 @@
       "Transactions": [
         "ტრანზაქციები"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "ტრანზაქციები - ქვითრები, ჯავშნები, გადასახადები და შეკვეთები"
+      ],
       "Undisclosed Recipients": [
         "გაუმჟღავნებელი მიმღებები"
       ],
@@ -10205,6 +10316,9 @@
       ],
       "Updates": [
         "განახლებები"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "განახლებები - ავტომატური დადასტურებები, გაფრთხილებები და ანგარიშის განახლებები"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -12404,6 +12518,12 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Remind me later": [
+        "მოგვიანებით შემახსენე"
+      ],
+      "Yes, don't show again": [
+        "დიახ, აღარ მაჩვენო"
       ]
     },
     "Option group": {
@@ -13591,6 +13711,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად."
       ]
     },
     "session_recovery:available:link": {
@@ -14307,6 +14439,9 @@
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } გაძლევთ წვდომას ყველა პრემიუმ ფუნქციაზე ${ BRAND_NAME }-ის ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME } პროდუქტებიდან. კონფიდენციალურობა ჩაშენებულია, ასე რომ შეგიძლიათ მშვიდად განაგრძოთ მუშაობა იმის ცოდნით, რომ თქვენი მონაცემები და იდენტობა უსაფრთხოდაა."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
       ],
@@ -14500,6 +14635,9 @@
       ],
       "Upload any new files": [
         "ატვირთეთ ნებისმიერი ახალი ფაილი"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "მომხმარებელთა გამოწერები ${ BRAND_NAME }-ის შემოსავლის ერთადერთი წყაროა. თქვენი მხარდაჭერა გვეხმარება დამოუკიდებლობის შენარჩუნებაში, ხელს უწყობს ჩვენს მისიას ონლაინ კონფიდენციალურობისთვის და ეხმარება თავისუფლებისთვის მებრძოლ აქტივისტებსა და ორგანიზაციებს."
       ],
       "Users won’t be able to manage their calendars": [
         "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
@@ -14873,6 +15011,10 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } შეტყობინების გადატანა",
         "${ selectionCount } შეტყობინების გადატანა"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "გადავიდა საქაღალდეში: ${ label }. მსგავსი შეტყობინება მომავალში აქ განთავსდება.",
+        "გადავიდა საქაღალდეში: ${ label }. მსგავსი შეტყობინებები მომავალში აქ განთავსდება."
       ],
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბუფერში"
@@ -15569,9 +15711,6 @@
       "Help center": [
         "დახმარების ცენტრი"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "დაეხმარეთ ${ MAIL_APP_NAME }-ის ელფოსტის კატეგორიების მომავლის ჩამოყალიბებას"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "დამალეთ თქვენი ელფოსტა ${ PASS_APP_NAME }-თან ერთად"
       ],
@@ -15633,6 +15772,9 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
+      "Keep this banner hidden?": [
+        "დავტოვოთ ეს ბანერი დამალული?"
+      ],
       "Label as": [
         "დანიშვნა, როგორც"
       ],
@@ -15660,6 +15802,9 @@
       ],
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
+      ],
+      "Make Categories your own": [
+        "აქციეთ კატეგორიები თქვენსად"
       ],
       "Mark all messages as read": [
         "ყველა შეტყობინებების მონიშვნა წაკითხულად"
@@ -15769,6 +15914,9 @@
       "New message": [
         "ახალი შეტყობინება"
       ],
+      "New messages": [
+        "ახალი შეტყობინებები"
+      ],
       "Newsletters": [
         "სიახლეები"
       ],
@@ -15846,6 +15994,9 @@
       ],
       "Payment verification": [
         "გადახდის შემოწმება"
+      ],
+      "Personalize your Categories": [
+        "მოარგეთ თქვენი კატეგორიები"
       ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
@@ -16182,6 +16333,9 @@
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
       ],
+      "You're in control": [
+        "თქვენ აკონტროლებთ"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
@@ -16216,6 +16370,12 @@
     "Title header for keys table": {
       "Actions": [
         "ქმედებები"
+      ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Expires": [
+        "ვადა"
       ],
       "Fingerprint": [
         "ანაბეჭდი"
@@ -16322,6 +16482,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP გასაღები"
       ]
     },
     "tooltip": {

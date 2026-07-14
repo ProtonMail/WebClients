@@ -50,6 +50,9 @@
       "Accept": [
         "Elfogadás"
       ],
+      "Account settings": [
+        "Fiókbeállítások"
+      ],
       "activate": [
         "aktiválás"
       ],
@@ -5559,9 +5562,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Új felhasználó létrehozása előtt konfigurálnia kell egy saját domain nevet."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Elveszíti a hozzáférést a ${ plan } összes prémium funkciójához."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a családi csomaghoz, és együtt használhassák a ${ brandOrAppName } prémium funkcióit."
@@ -11104,9 +11104,6 @@
       ],
       "Create an alias": [
         "E-mail álnév létrehozása"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nincs hozzáférése a kétlépcsős hitelesítéséhez?"
       ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
@@ -18184,9 +18181,6 @@
       ],
       "Layout": [
         "Elrendezés"
-      ],
-      "Leave ${ organisationName }?": [
-        "Elhagyja a(z) ${ organisationName } szervezetet?"
       ],
       "Leave group?": [
         "Csoport elhagyása?"

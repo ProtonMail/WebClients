@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } şunu dedi: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Bir katılımcı görüşmeye katıldı"
       ],
@@ -135,6 +138,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } yeni",
+        "${ newMessageCount } yeni"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -197,6 +204,9 @@
       ],
       "Close preview": [
         "Ön izlemeyi kapat"
+      ],
+      "Close reply composer": [
+        "Yanıt oluşturma penceresini kapat"
       ],
       "Close this banner": [
         "Bu uyarıyı kapat"
@@ -261,8 +271,14 @@
       "Disable waiting room": [
         "Bekleme odasını kullanımdan kaldır"
       ],
+      "Discard": [
+        "Sil"
+      ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Dismiss new messages": [
+        "Yeni mesajları yoksay"
       ],
       "Done": [
         "Tamam"
@@ -452,6 +468,9 @@
         "${ emoji } tepkisini kaldır, ${ identities.length } tepki",
         "${ emoji } tepkisini kaldır, ${ identities.length } tepki"
       ],
+      "Reply": [
+        "Yanıtla"
+      ],
       "Report a problem": [
         "Sorun bildirin"
       ],
@@ -472,6 +491,9 @@
       ],
       "Resume": [
         "Sürdür"
+      ],
+      "Retry": [
+        "Yeniden dene"
       ],
       "Return to dashboard": [
         "Panoya dön"
@@ -499,6 +521,9 @@
       ],
       "Send an encrypted message": [
         "Şifrelenmiş bir ileti gönderin"
+      ],
+      "Send reply": [
+        "Yanıt gönder"
       ],
       "Settings": [
         "Ayarlar"
@@ -637,6 +662,12 @@
       ],
       "Waiting room": [
         "Bekleme odası"
+      ],
+      "Waiting room disabled": [
+        "Bekleme odası devre dışı"
+      ],
+      "Waiting room enabled": [
+        "Bekleme odası etkinleştirildi"
       ]
     },
     "Alt": {
@@ -706,6 +737,9 @@
       "Rotate camera": [
         "Kamerayı döndür"
       ],
+      "Save my name on this device": [
+        "Adımı bu aygıta kaydet"
+      ],
       "Screen share": [
         "Ekran paylaşımı"
       ],
@@ -747,6 +781,9 @@
       ],
       "Video settings": [
         "Görüntü ayarları"
+      ],
+      "Waiting room": [
+        "Bekleme odası"
       ]
     },
     "Apps dropdown": {
@@ -1904,6 +1941,9 @@
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Bu yöntemle doğrulama kodunu gönderemedik."
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Tarayıcınızın depolama alanı doldu. Bu ana kadar olan kayıt kaydedildi."
       ],
@@ -2120,6 +2160,10 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames }, ${ emoji } ile tepki verdi"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } yanıt",
+        "${ replyCount } yanıt"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "Toplam ${ totalParticipantCount } katılımcıdan ${ maxParticipants } katılımcıya kadar"
       ],
@@ -2132,6 +2176,9 @@
       ],
       "-Removed dangerous URL-": [
         "-Tehlikeli adres kaldırıldı-"
+      ],
+      "1 reply draft": [
+        "1 yanıt taslağı"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -2418,6 +2465,9 @@
       "Member": [
         "Üye"
       ],
+      "Message actions": [
+        "Mesaj işlemleri"
+      ],
       "Message from ${ participantName }": [
         "${ participantName } kişisinden ileti"
       ],
@@ -2444,6 +2494,9 @@
       ],
       "New host": [
         "Yeni görüşme sahibi"
+      ],
+      "New reply": [
+        "Yeni yanıt"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "${ microphoneLinkButton }${ andString }${ cameraLinkButton } bulunamadı."
@@ -2477,6 +2530,9 @@
       ],
       "No speaker detected": [
         "Bir hoparlör bulunamadı"
+      ],
+      "Not sent, check your connection.": [
+        "Gönderilmedi, bağlantınızı kontrol edin."
       ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
@@ -2631,6 +2687,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Açmaya çalıştığınız görüşme bağlantısı bulunamadı veya süresi dolmuş olabilir. Bağlantının doğru olduğundan emin olun ya da bunun yerine yeni bir güvenli görüşme başlatın."
       ],
+      "This conversation started before you joined.": [
+        "Bu sohbet sen katılmadan önce başlamıştı."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
       ],
@@ -2705,6 +2764,9 @@
       ],
       "Video effects": [
         "Video etkileri"
+      ],
+      "View ": [
+        "Görüntüle "
       ],
       "Warning": [
         "Uyarı"
@@ -2808,6 +2870,9 @@
       "Advanced mode": [
         "Gelişmiş kip"
       ],
+      "Anyone with the link can join": [
+        "Bağlantıya sahip olan herkes katılabilir"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -2858,6 +2923,9 @@
       ],
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
+      ],
+      "Disabled": [
+        "Kapalı"
       ],
       "Does not repeat": [
         "Yinelenmiyor"
@@ -2955,6 +3023,9 @@
       "Participant controls": [
         "Katılımcı denetimleri"
       ],
+      "Participants join after you approve them": [
+        "Katılımcılar sizin onayınızı aldıktan sonra gruba katılırlar"
+      ],
       "Passphrase": [
         "Parola ifadesi"
       ],
@@ -2973,11 +3044,17 @@
       "Repeat event": [
         "Etkinliği yinele"
       ],
+      "Reply": [
+        "Yanıtla"
+      ],
       "Return to dashboard": [
         "Panoya dön"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
+      ],
+      "Save my name on this device": [
+        "Adımı bu aygıta kaydet"
       ],
       "Schedule meeting": [
         "Görüşme zamanla"
@@ -3172,6 +3249,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Reply...": [
+        "Yanıtla..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "Oda adı. Ekip koordinasyonu, proje güncellemesi gibi"

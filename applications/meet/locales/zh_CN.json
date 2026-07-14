@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } 说：${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }：${ message }"
+      ],
       "A participant joined the meeting": [
         "一名参与者加入了会议"
       ],
@@ -135,6 +138,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } 条新消息"
+      ],
       "Add account": [
         "添加账户"
       ],
@@ -197,6 +203,9 @@
       ],
       "Close preview": [
         "关闭预览"
+      ],
+      "Close reply composer": [
+        "关闭回复编辑器"
       ],
       "Close this banner": [
         "关闭此横幅"
@@ -261,8 +270,14 @@
       "Disable waiting room": [
         "禁用等候室"
       ],
+      "Discard": [
+        "放弃"
+      ],
       "Dismiss": [
         "忽略"
+      ],
+      "Dismiss new messages": [
+        "忽略新消息"
       ],
       "Done": [
         "完成"
@@ -450,6 +465,9 @@
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "移除回应 ${ emoji }，${ identities.length } 个回应"
       ],
+      "Reply": [
+        "回复"
+      ],
       "Report a problem": [
         "反馈问题"
       ],
@@ -470,6 +488,9 @@
       ],
       "Resume": [
         "继续"
+      ],
+      "Retry": [
+        "重试"
       ],
       "Return to dashboard": [
         "返回仪表盘"
@@ -497,6 +518,9 @@
       ],
       "Send an encrypted message": [
         "发送加密消息"
+      ],
+      "Send reply": [
+        "发送回复"
       ],
       "Settings": [
         "设置"
@@ -1902,6 +1926,9 @@
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "我们无法通过此类方式发送验证码。"
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "您的浏览器存储空间已满，我们已保存截至目前的录制。"
       ],
@@ -1923,7 +1950,7 @@
         "在浏览器中打开"
       ],
       "Please refresh the page or try again later.": [
-        "请刷新页面或稍后重试。"
+        "请刷新或稍后重试！"
       ],
       "Something went wrong": [
         "出错了"
@@ -2112,6 +2139,9 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } 对 ${ emoji } 表情做出了回应"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } 条回复"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } / ${ maxParticipants } 名参与者"
       ],
@@ -2123,6 +2153,9 @@
       ],
       "-Removed dangerous URL-": [
         "-已移除危险网址-"
+      ],
+      "1 reply draft": [
+        "1 条回复草稿"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
@@ -2409,6 +2442,9 @@
       "Member": [
         "成员"
       ],
+      "Message actions": [
+        "消息操作"
+      ],
       "Message from ${ participantName }": [
         "来自 ${ participantName } 的消息"
       ],
@@ -2435,6 +2471,9 @@
       ],
       "New host": [
         "新主持人"
+      ],
+      "New reply": [
+        "新回复"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "未检测到 ${ microphoneLinkButton }${ andString }${ cameraLinkButton }"
@@ -2468,6 +2507,9 @@
       ],
       "No speaker detected": [
         "未检测到扬声器"
+      ],
+      "Not sent, check your connection.": [
+        "未发送，请检查您的网络连接。"
       ],
       "Only meetings you created appear here": [
         "此处仅显示您创建的会议"
@@ -2622,6 +2664,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "您尝试打开的会议链接不存在或已过期。请确认链接正确，或开始新的安全会议。"
       ],
+      "This conversation started before you joined.": [
+        "会话在您加入之前就已开始！"
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "这是一个端到端加密的聊天，消息为临时性质，通话结束后将自动消失。"
       ],
@@ -2696,6 +2741,9 @@
       ],
       "Video effects": [
         "视频效果"
+      ],
+      "View ": [
+        "查看 "
       ],
       "Warning": [
         "注意"
@@ -2849,6 +2897,9 @@
       "Delete recovery-related information.": [
         "删除恢复相关的数据"
       ],
+      "Disabled": [
+        "未启用"
+      ],
       "Does not repeat": [
         "不重复"
       ],
@@ -2962,6 +3013,9 @@
       ],
       "Repeat event": [
         "重复事件"
+      ],
+      "Reply": [
+        "回复"
       ],
       "Return to dashboard": [
         "返回仪表盘"
@@ -3162,6 +3216,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
+      ],
+      "Reply...": [
+        "回复..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "会议室名称，例如：团队同步、项目更新等"

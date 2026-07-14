@@ -523,6 +523,12 @@
       "Regenerate": [
         "Luo uusi"
       ],
+      "Regex invalid": [
+        "Lauseke on virheellinen"
+      ],
+      "Regex unsafe": [
+        "Lauseke ei ole turvallinen"
+      ],
       "Reject": [
         "Kieltäydy"
       ],
@@ -2040,6 +2046,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2262,6 +2272,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Automaattitäytä kirjautumistietosi nopeasti."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Järjestys kentän (ensin otsikko, sitten käyttäjätunnus tai sähköpostiosoite, verkkosivusto, muistiinpanot) ja vastaavuustarkkuuden (tarkka, alkaa merkeillä, sisältää) mukaan."
       ],
       "Reconnect": [
         "Uudelleenyhdistä"
@@ -2919,6 +2932,9 @@
       "Bank Name": [
         "Pankin nimi"
       ],
+      "Basic": [
+        "Perus"
+      ],
       "Biometrics": [
         "Biometria"
       ],
@@ -2945,6 +2961,9 @@
       ],
       "Catch-All": [
         "Nappaa kaikki"
+      ],
+      "Check": [
+        "Tarkista"
       ],
       "Checkbox": [
         "Valintaruutu"
@@ -3104,6 +3123,12 @@
       ],
       "Enter email or username": [
         "Syötä sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
       ],
       "Expiration date": [
         "Voimassaolo päättyy"
@@ -3387,6 +3412,9 @@
       "Never": [
         "Ei koskaan"
       ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
       "New email": [
         "Uusi sähköpostiosoite"
       ],
@@ -3443,6 +3471,9 @@
       ],
       "Owner": [
         "Omistaja"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
       "Passkey": [
         "Pääsyavain"
@@ -3552,6 +3583,12 @@
       "Reddit handle": [
         "Reddit-tunnus"
       ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
+      ],
+      "Relevant": [
+        "Aiheeseen liittyvät"
+      ],
       "Remove link": [
         "Poista linkki"
       ],
@@ -3656,6 +3693,9 @@
       ],
       "SSN": [
         "Hetu"
+      ],
+      "Starts with": [
+        "Alkaa"
       ],
       "State or province": [
         "Osavaltio tai maakunta"
@@ -3768,6 +3808,9 @@
       "Update": [
         "Päivitä"
       ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Käytä ${ PASS_APP_NAME }ia selaimesi oletusarvoisena salasanahallintana"
       ],
@@ -3867,6 +3910,24 @@
       "${ count } item": [
         "${ count } kohde",
         "${ count } kohdetta"
+      ],
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
       ],
       "You can drag and drop the selected item to another vault": [
         "Voit vetää ja pudottaa valitun kohteen toiseen holviin",
@@ -4156,6 +4217,23 @@
         "Käytetään osoitteessa ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Syötä URL-osoite, jotta voit tarkistaa, vastaako nykyinen sääntösi kyseistä URL-osoitetta"
+      ],
+      "The rule is matching this URL": [
+        "Sääntö vastaa tätä URL-osoitetta"
+      ],
+      "The rule is NOT matching this URL": [
+        "Sääntö EI vastaa tätä URL-osoitetta"
+      ],
+      "This URL will be blocked from autofill": [
+        "Tämän URL-osoitteen automaattinen täyttö estetään"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Tätä URL-osoitetta EI estetä automaattisen täytön kohteena"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
@@ -4344,6 +4422,9 @@
       ],
       "Add mailbox": [
         "Lisää postilaatikko"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Säädä automaattisen täytön asetuksia, jotta voit muuttaa sitä, missä kirjautumistietoja ehdotetaan."
       ],
       "Alias contacts": [
         "Aliasyhteystiedot"
@@ -4546,6 +4627,9 @@
       ],
       "Last modified": [
         "Muokattu viimeksi"
+      ],
+      "Learn more": [
+        "Lue lisää"
       ],
       "Leave this item?": [
         "Poistutaanko tästä kohteesta?"
@@ -4752,6 +4836,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synkronoi aliaksesi SimpleLoginista"
       ],
+      "Test a URL against this rule": [
+        "Testaa URL-osoite tämän säännön perusteella"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Kiitos ${ PASS_APP_NAME }in asennuksesta"
       ],
@@ -4772,6 +4859,9 @@
       ],
       "Update available": [
         "Päivitys saatavilla"
+      ],
+      "URL matching": [
+        "URL-vastaavuus"
       ],
       "Use my email": [
         "Käytä sähköpostiosoitettani"
@@ -4882,6 +4972,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-salasana vaaditaan"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } offline-tila pois käytöstä."
@@ -5080,6 +5173,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Sähköpostiosoitetta ei enää valvota tietomurtojen varalta."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Tätä kohdetta ei voida ehdottaa automaattisen täytön kohteeksi, koska siinä on ”${ neverModeDescriptionStrong }”. Lisää toinen URL-osoite, jos haluat, että tämä kohta täytetään automaattisesti."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Tämä kohde on tällä hetkellä jaettuna. Sen poistaminen poistaa pääsyn kaikilta muilta käyttäjiltä."

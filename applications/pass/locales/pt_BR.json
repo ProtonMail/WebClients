@@ -670,9 +670,6 @@
       "Skip": [
         "Ignorar"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguém compartilhou um item com você no ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Ordenar itens do cofre"
       ],
@@ -1317,9 +1314,6 @@
       ],
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
-      ],
-      "Try reaching out to the link owner.": [
-        "Tente entrar em contato com o proprietário do link."
       ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
@@ -2078,8 +2072,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2566,9 +2559,6 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloqueie ${ PASS_SHORT_APP_NAME } com sua segunda senha"
       ],
-      "Unlock with biometrics": [
-        "Desbloquear com a biometria"
-      ],
       "Unpinning item...": [
         "Desafiando item..."
       ],
@@ -2968,6 +2958,9 @@
       ],
       "Bank Name": [
         "Nome do banco"
+      ],
+      "Basic": [
+        "Básico"
       ],
       "Beta Access": [
         "Acesso beta"
@@ -3635,6 +3628,12 @@
       "Reddit handle": [
         "Usuário no Reddit"
       ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
+      "Relevant": [
+        "Relevante"
+      ],
       "Remove link": [
         "Remover link"
       ],
@@ -3749,6 +3748,9 @@
       "SSN": [
         "SSN"
       ],
+      "Starts with": [
+        "Iniciar com"
+      ],
       "State or province": [
         "Estado ou município"
       ],
@@ -3796,9 +3798,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
       ],
       "Tier/Level": [
         "Camada/Nível"
@@ -3994,6 +3993,9 @@
       "${ count } item": [
         "${ count } item",
         "${ count } itens"
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
       ],
       "You can drag and drop the selected item to another vault": [
         "Você pode arrastar e soltar o item selecionado para outro cofre",
@@ -4691,6 +4693,9 @@
       "Last modified": [
         "Última modificação"
       ],
+      "Learn more": [
+        "Saiba mais"
+      ],
       "Leave this item?": [
         "Deixar este item?"
       ],
@@ -4890,6 +4895,9 @@
       "SPF (Optional)": [
         "SPF (Opcional)"
       ],
+      "SSH Agent": [
+        "Agente SSH"
+      ],
       "Status": [
         "Status"
       ],
@@ -4922,6 +4930,9 @@
       ],
       "Update available": [
         "Atualização disponível"
+      ],
+      "URL matching": [
+        "Correspondência de URL"
       ],
       "Vault": [
         "Cofre"
