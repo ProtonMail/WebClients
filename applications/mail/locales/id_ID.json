@@ -1443,9 +1443,6 @@
       "Start setup": [
         "Mulai penyetelan"
       ],
-      "Start testing": [
-        "Mulai pengujian"
-      ],
       "Stay": [
         "Tinggal"
       ],
@@ -1725,6 +1722,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Buka di ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Sesuaikan kategori"
+      ],
+      "Got it": [
+        "Paham"
+      ],
+      "Next": [
+        "Berikutnya"
+      ],
+      "Not now": [
+        "Tidak sekarang"
+      ],
+      "Skip": [
+        "Lewati"
       ]
     },
     "Actions message": {
@@ -4086,8 +4100,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Titik biru muncul ketika kategori memiliki pesan yang belum dibaca sejak kunjungan terakhir."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tambahkan folder dan file ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau mengedit file ini."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Tambah atau hapus kategori, kelola notifikasi, dan atur pengaturan kapan saja di pengaturan."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Tambah atau hapus kategori, kelola notifikasi, atau matikan sepenuhnya - kapan saja di Pengaturan."
       ],
       "Also included": [
         "Juga termasuk"
@@ -4170,9 +4193,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Jika pesan muncul dalam kategori yang salah, cukup pindahkan ke kategori yang benar. Klik kanan pesan untuk memilih kategori baru, atau seret dan lepas pesan tersebut ke tempat yang sesuai."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -4199,6 +4219,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Baca, balas, dan pantau Gmail dari dalam ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik kanan email dan pilih \"Pindahkan ke\", atau seret dan lepas ke kategori lain. Email serupa akan disortir ke sana secara otomatis di masa mendatang."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Kirim dan terima pesan Gmail secara langsung di ${ MAIL_APP_NAME }. Hubungkan alamat Anda di ${ addressesSettingsLink }."
@@ -4346,9 +4369,6 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Paket Anda mendukung total ${ MAX_SYNC_PAID_USER } alamat Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Menjadi salah satu yang pertama mencoba tampilan kategori baru sebelum diluncurkan. Masukan Anda akan membantu meningkatkan cara Proton Mail mengurutkan email untuk semua orang."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
@@ -5276,6 +5296,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Nomor PPN harus dimulai dengan ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
       ],
       "Wrong billing address": [
         "Alamat penagihan salah"
@@ -7658,6 +7681,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan."
+      ],
       "Manage your folders": [
         "Kelola folder Anda"
       ],
@@ -8747,6 +8773,9 @@
       "You are about to open your default browser and visit:": [
         "Anda akan membuka peramban bawaan dan mengunjungi:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Anda sedang masuk sebagai ${ username }"
       ],
@@ -8801,11 +8830,20 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Memiliki ${ totalLabel } di kotak masuk."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Memiliki **${ count } percakapan** dalam kategori ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Anda memiliki **${ count } percakapan** yang tersimpan dalam folder ini"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Anda memiliki **${ count } percakapan** yang ditandai dengan label ini"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Memiliki **${ count } pesan** dalam kategori ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Anda memiliki **${ count } pesan** yang tersimpan dalam folder ini"
@@ -8818,6 +8856,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan uji coba ${ planTitle }. Tidak diperlukan pembayaran saat ini. Langganan Anda akan diperpanjang secara otomatis di akhir masa uji coba."
+      ],
+      "You have no conversations in this category": [
+        "Tidak ada percakapan dalam kategori ini"
+      ],
+      "You have no messages in this category": [
+        "Tidak ada pesan dalam kategori ini"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Anda belum menuliskan subjek apa pun pada email Anda. Apakah Anda ingin tetap mengirim pesan ini?"
@@ -8833,6 +8877,12 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Memilih **${ checked } percakapan** dalam kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Memilih **${ checked } pesan** dalam kategori ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Anda memilih **${ count } percakapan** dari folder ini"
@@ -9814,6 +9864,9 @@
       "Newsletters": [
         "Buletin"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Buletin - Berita, email editorial, dan konten non-promosi"
+      ],
       "No label found": [
         "Tidak ada label yang ditemukan"
       ],
@@ -9901,8 +9954,14 @@
       "Primary": [
         "Utama"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Utama - Email pribadi dan kerja, serta pembaruan penting"
+      ],
       "Promotions": [
         "Penawaran"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promosi - Penawaran, promo, dan email pemasaran"
       ],
       "Proration": [
         "Prorasi"
@@ -9969,6 +10028,9 @@
       ],
       "Social": [
         "Sosial"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosial - Pembaruan, aktivitas, dan pesan media sosial"
       ],
       "Social media updates and activity": [
         "Pembaruan dan aktivitas sosial media"
@@ -10045,6 +10107,9 @@
       "Transactions": [
         "Transaksi"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaksi - Resi, pemesanan, tagihan, dan pesanan"
+      ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
       ],
@@ -10056,6 +10121,9 @@
       ],
       "Updates": [
         "Pembaruan"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Pembaruan - Konfirmasi otomatis, peringatan, dan pembaruan akun"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -12215,6 +12283,12 @@
       ],
       "No parent folder": [
         "Tidak ada folder induk"
+      ],
+      "Remind me later": [
+        "Ingatkan nanti"
+      ],
+      "Yes, don't show again": [
+        "Ya, jangan tampilkan lagi"
       ]
     },
     "Option group": {
@@ -13387,6 +13461,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -14626,6 +14709,9 @@
       "Move ${ selectionCount } message": [
         "Pindahkan ${ selectionCount } pesan"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Dipindahkan ke ${ label }. Pesan serupa akan dikategorikan di sini di masa mendatang."
+      ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
       ],
@@ -15302,9 +15388,6 @@
       "Help center": [
         "Pusat bantuan"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Bantu menentukan masa depan kategori email di ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Sembunyikan email Anda dengan ${ PASS_APP_NAME }"
       ],
@@ -15365,6 +15448,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Keep this banner hidden?": [
+        "Biarkan banner ini tetap tersembunyi?"
+      ],
       "Label as": [
         "Labeli sebagai"
       ],
@@ -15391,6 +15477,9 @@
       ],
       "Make a secure connection your default": [
         "Jadikan koneksi aman sebagai koneksi bawaan Anda"
+      ],
+      "Make Categories your own": [
+        "Sesuaikan Kategori sendiri"
       ],
       "Mark all messages as read": [
         "Tandai semua pesan dibaca"
@@ -15500,6 +15589,9 @@
       "New message": [
         "Pesan baru"
       ],
+      "New messages": [
+        "Pesan baru"
+      ],
       "Newsletters": [
         "Buletin"
       ],
@@ -15577,6 +15669,9 @@
       ],
       "Payment verification": [
         "Verifikasi pembayaran"
+      ],
+      "Personalize your Categories": [
+        "Sesuaikan Kategori"
       ],
       "Phone numbers": [
         "Nomor telepon"
@@ -15911,6 +16006,9 @@
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"
       ],
+      "You're in control": [
+        "Kendali berada di tangan Anda"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
       ],
@@ -15945,6 +16043,12 @@
     "Title header for keys table": {
       "Actions": [
         "Tindakan"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
       ],
       "Fingerprint": [
         "Sidik jari"
@@ -16051,6 +16155,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ]
     },
     "tooltip": {

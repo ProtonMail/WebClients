@@ -1455,9 +1455,6 @@
       "Start setup": [
         "Spustit nastavení"
       ],
-      "Start testing": [
-        "Zahájit testování"
-      ],
       "Stay": [
         "Zůstat"
       ],
@@ -1743,6 +1740,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Otevřít v ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Přizpůsobit kategorie"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Next": [
+        "Další"
+      ],
+      "Not now": [
+        "Nyní ne"
+      ],
+      "Skip": [
+        "Přeskočit"
       ]
     },
     "Actions message": {
@@ -4167,8 +4181,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Modrá tečka se zobrazí, pokud kategorie obsahuje nepřečtené zprávy od vaší poslední návštěvy."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Přidejte složky a soubory do ${ DRIVE_APP_NAME } a pozvěte členy týmu k prohlížení nebo úpravám."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Přidávat nebo odebírat kategorie, spravovat oznámení a upravovat nastavení můžete kdykoli v nastavení."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Přidávat nebo odebírat kategorie, spravovat oznámení nebo je zcela vypnout můžete kdykoli v Nastavení."
       ],
       "Also included": [
         "Zahrnuje také"
@@ -4251,9 +4274,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomozte svému týmu bezpečně ukládat hesla k citlivým obchodním informacím a informacím o klientech."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Pokud se zpráva zobrazí ve špatné kategorii, jednoduše ji přesuňte do té správné. Klikněte pravým tlačítkem na zprávu a zvolte novou kategorii, nebo ji táhněte a pusťte tam, kam patří."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -4283,6 +4303,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čtěte, odpovídejte a mějte přehled o Gmailu přímo z aplikace ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klikněte na e-mail pravým tlačítkem a zvolte „Přesunout do“ nebo jej přetáhněte do jiné kategorie. Podobné e-maily sem budou v budoucnu automaticky roztříděny."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Odesílejte a přijímejte zprávy Gmailu přímo v aplikaci ${ MAIL_APP_NAME }. Připojte svou adresu na stránce ${ addressesSettingsLink }."
@@ -4448,9 +4471,6 @@
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adresy Gmail",
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail",
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Patříte mezi první uživatele, kteří mohou před spuštěním vyzkoušet naše nové zobrazení kategorií. Vaše zpětná vazba pomůže zlepšit způsob, jakým Proton Mail třídí e-maily pro všechny uživatele."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
@@ -5411,6 +5431,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "DIČ musí začínat ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ],
       "Wrong billing address": [
         "Nesprávná fakturační adresa"
@@ -8060,6 +8083,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavte aplikaci ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
+      ],
       "Manage your folders": [
         "Spravovat složky"
       ],
@@ -9167,6 +9193,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte se otevřít výchozí prohlížeč a navštívit:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Aktuálně jste přihlášeni jako ${ username }."
       ],
@@ -9227,6 +9256,15 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "V doručené poště máte ${ totalLabel }."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } konverzaci**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "V této složce máte uloženou **${ count } konverzaci**",
         "V této složce máte uloženy **${ count } konverzace**",
@@ -9238,6 +9276,12 @@
         "Máte **${ count } konverzace** označené tímto štítkem",
         "Máte **${ count } konverzací** označených tímto štítkem",
         "Máte **${ count } konverzací** označených tímto štítkem"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } zprávu**",
+        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**"
       ],
       "You have **${ count } message** stored in this folder": [
         "V této složce máte uloženou **${ count } zprávu**",
@@ -9257,6 +9301,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Máte zkušební verzi předplatného ${ planTitle }. Nyní není potřeba nic platit. Vaše předplatné bude automaticky obnoveno na konci zkušební doby."
       ],
+      "You have no conversations in this category": [
+        "V této kategorii nemáte žádné konverzace"
+      ],
+      "You have no messages in this category": [
+        "V této kategorii nemáte žádné zprávy"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nedal(a) jste e-mailu žádný předmět. Chcete ho i přesto odeslat?"
       ],
@@ -9271,6 +9321,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Než budete moci přejít na nižší verzi, musíte deaktivovat nebo odebrat všechny další uživatele, adresy a vlastní domény účtu ${ MAIL_APP_NAME }."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Vybrali jste **${ checked } konverzaci** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } konverzace** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } konverzací** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } konverzací** v kategorii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Vybrali jste **${ checked } zprávu** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } zprávy** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } zpráv** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } zpráv** v kategorii ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z této složky jste vybral(a) **${ count } konverzaci**",
@@ -10312,6 +10374,9 @@
       "Newsletters": [
         "E-mailové zpravodaje"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Zpravodaje – novinky, redakční e-maily a nepropagační obsah"
+      ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
       ],
@@ -10399,8 +10464,14 @@
       "Primary": [
         "Primární"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primární – osobní a pracovní e-maily a důležité aktualizace"
+      ],
       "Promotions": [
         "Propagační akce"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promo akce – nabídky, slevy a marketingové e-maily"
       ],
       "Proration": [
         "Prorace"
@@ -10467,6 +10538,9 @@
       ],
       "Social": [
         "Sociální"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociální sítě – aktualizace, aktivity a zprávy ze sociálních sítí"
       ],
       "Social media updates and activity": [
         "Aktualizace a aktivita na sociálních médiích"
@@ -10543,6 +10617,9 @@
       "Transactions": [
         "Transakce"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakce – stvrzenky, rezervace, účty a objednávky"
+      ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
       ],
@@ -10554,6 +10631,9 @@
       ],
       "Updates": [
         "Aktualizace"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualizace – automatická potvrzení, upozornění a aktualizace účtu"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -12845,6 +12925,12 @@
       ],
       "No parent folder": [
         "Žádná nadřazená složka"
+      ],
+      "Remind me later": [
+        "Připomenout později"
+      ],
+      "Yes, don't show again": [
+        "Ano, znovu nezobrazovat"
       ]
     },
     "Option group": {
@@ -15499,6 +15585,12 @@
         "Přesunout ${ selectionCount } zpráv",
         "Přesunout ${ selectionCount } zpráv"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Přesunuto do složky ${ label }. Podobná zpráva sem bude v budoucnu zařazena automaticky.",
+        "Přesunuto do složky ${ label }. Podobné zprávy sem budou v budoucnu zařazeny automaticky.",
+        "Přesunuto do složky ${ label }. Podobné zprávy sem budou v budoucnu zařazeny automaticky.",
+        "Přesunuto do složky ${ label }. Podobné zprávy sem budou v budoucnu zařazeny automaticky."
+      ],
       "Password copied to clipboard": [
         "Heslo bylo zkopírováno do schránky"
       ],
@@ -16232,9 +16324,6 @@
       "Help center": [
         "Centrum podpory"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Pomozte utvářet budoucnost e-mailových kategorií v ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skryjte svůj e-mail pomocí ${ PASS_APP_NAME }"
       ],
@@ -16298,6 +16387,9 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
+      "Keep this banner hidden?": [
+        "Ponechat tento banner skrytý?"
+      ],
       "Label as": [
         "Přidat štítek"
       ],
@@ -16327,6 +16419,9 @@
       ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené připojení jako výchozí"
+      ],
+      "Make Categories your own": [
+        "Přizpůsobte si kategorie podle sebe"
       ],
       "Mark all messages as read": [
         "Označit všechny zprávy jako přečtené"
@@ -16436,6 +16531,9 @@
       "New message": [
         "Nová zpráva"
       ],
+      "New messages": [
+        "Nové zprávy"
+      ],
       "Newsletters": [
         "E-mailové zpravodaje"
       ],
@@ -16513,6 +16611,9 @@
       ],
       "Payment verification": [
         "Ověřování platby"
+      ],
+      "Personalize your Categories": [
+        "Přizpůsobte si kategorie"
       ],
       "Phone numbers": [
         "Telefonní čísla"
@@ -16853,6 +16954,9 @@
       "You can now create unlimited folders and labels": [
         "Nyní můžete vytvořit neomezený počet složek a štítků"
       ],
+      "You're in control": [
+        "Máte vše pod kontrolou"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
       ],
@@ -16887,6 +16991,12 @@
     "Title header for keys table": {
       "Actions": [
         "Akce"
+      ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Expires": [
+        "Vyprší"
       ],
       "Fingerprint": [
         "Digitální otisk"
@@ -16993,6 +17103,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ]
     },
     "tooltip": {

@@ -1455,9 +1455,6 @@
       "Start setup": [
         "Spustiť nastavenie"
       ],
-      "Start testing": [
-        "Začať testovanie"
-      ],
       "Stay": [
         "Zostať"
       ],
@@ -1743,6 +1740,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Otvoriť v ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Prispôsobenie kategórií"
+      ],
+      "Got it": [
+        "Rozumiem"
+      ],
+      "Next": [
+        "Ďalej"
+      ],
+      "Not now": [
+        "Teraz nie"
+      ],
+      "Skip": [
+        "Preskočiť"
       ]
     },
     "Actions message": {
@@ -4232,8 +4246,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Ak má nejaká kategória od vašej poslednej návštevy neprečítané správy, zobrazí sa modrá bodka."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Pridajte priečinky a súbory do ${ DRIVE_APP_NAME } a pozvite členov tímu na prezeranie alebo úpravu."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "V nastaveniach môžete kedykoľvek pridávať alebo odstraňovať kategórie, spravovať upozornenia a upravovať svoje nastavenia."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "V nastaveniach môžete kedykoľvek pridávať alebo odstraňovať kategórie, spravovať upozornenia alebo ich úplne vypnúť."
       ],
       "Also included": [
         "Zahŕňa aj"
@@ -4316,9 +4339,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Ak sa správa zobrazí v nesprávnej kategórii, jednoducho ju presuňte do tej správnej. Kliknite pravým tlačidlom na správu a vyberte novú kategóriu, alebo ju pretiahnite a umiestnite tam, kam patrí."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
       ],
@@ -4348,6 +4368,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Odosielajte a prijímajte Gmailové správy priamo v ${ MAIL_APP_NAME }. Pripojte svoju adresu v ${ addressesSettingsLink }."
@@ -4516,9 +4539,6 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Patríte medzi prvých, ktorí si môžu vyskúšať naše nové zobrazenie kategórií ešte pred jeho spustením. Vaša spätná väzba pomôže vylepšiť spôsob, akým Proton Mail triedi emaily pre každého."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
@@ -5485,6 +5505,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Číslo DIČ musí začínať predponami ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
@@ -6923,7 +6946,7 @@
         "${ elementsCount } konverzácia bude označená ako prečítaná.",
         "${ elementsCount } konverzácie budú označené ako prečítané.",
         "${ elementsCount } konverzácií bude označených ako prečítané",
-        "${ elementsCount } konverzácií bude označených ako prečítané"
+        "${ elementsCount } konverzácií bude označených ako prečítané."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } konverzácia bude označená ako neprečítaná.",
@@ -9247,6 +9270,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "V súčasnosti používate účet ako ${ username }."
       ],
@@ -10212,6 +10238,12 @@
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
       "Expires": [
         "Exspiruje"
       ],
@@ -10419,6 +10451,9 @@
       "Navigation": [
         "Navigácia"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
       "New password": [
         "Nové heslo"
       ],
@@ -10469,6 +10504,9 @@
       ],
       "Original link": [
         "Pôvodný odkaz"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "Participants": [
         "Účastníci"
@@ -10548,6 +10586,9 @@
       "Region": [
         "Kraj"
       ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
       "Remember my choice": [
         "Zapamätať si voľbu"
       ],
@@ -10607,6 +10648,9 @@
       ],
       "Start date": [
         "Dátum začiatku"
+      ],
+      "Starts with": [
+        "Začína s"
       ],
       "State": [
         "Štát"
@@ -10694,6 +10738,9 @@
       ],
       "URL": [
         "Odkaz"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ],
       "Username": [
         "Používateľské meno"
@@ -11321,14 +11368,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
       "Fw:": [
         "Fw:"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } napísal/a:"
       ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
@@ -16384,9 +16449,6 @@
       "Help center": [
         "Centrum pomoci"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Pomôžte nám formovať budúcnosť kategórií emailov v ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ukryte svoj email pomocou ${ PASS_APP_NAME }"
       ],
@@ -16482,6 +16544,9 @@
       ],
       "Make a secure connection your default": [
         "Nastavte zabezpečené pripojenie ako východzie"
+      ],
+      "Make Categories your own": [
+        "Vytvorte si vlastné kategórie"
       ],
       "Mark all messages as read": [
         "Označiť všetky správy ako prečítané"
@@ -16591,6 +16656,9 @@
       "New message": [
         "Nová správa"
       ],
+      "New messages": [
+        "Nové správy"
+      ],
       "Newsletters": [
         "Newslettery"
       ],
@@ -16668,6 +16736,9 @@
       ],
       "Payment verification": [
         "Overenie platby"
+      ],
+      "Personalize your Categories": [
+        "Prispôsobte si svoje kategórie"
       ],
       "Phone numbers": [
         "Telefónne čísla"
@@ -17008,6 +17079,9 @@
       "You can now create unlimited folders and labels": [
         "Teraz môžete vytvárať neobmedzený počet priečinkov a štítkov"
       ],
+      "You're in control": [
+        "Máte to pod kontrolou"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
       ],
@@ -17343,6 +17417,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
