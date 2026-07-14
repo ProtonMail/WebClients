@@ -59,7 +59,6 @@ export type Flags = {
     isAuthenticatorAvailable?: boolean;
     isCategoryViewEnabled?: boolean;
     isRecoveryContactsEnabled?: boolean;
-    isRolesAndPermissionsEnabled?: boolean;
     isRecoverySettingsRedesignEnabled?: boolean;
     isMspEnabled?: boolean;
     isMnemonicAvailable?: boolean;
