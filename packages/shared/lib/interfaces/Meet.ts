@@ -48,6 +48,11 @@ export enum MeetingType {
     PERMANENT = 4,
 }
 
+export enum WaitingRoomState {
+    DISABLED = 0,
+    ENABLED = 1,
+}
+
 export interface MeetingPayload {
     AddressID: string | null;
     Name?: string;
@@ -65,6 +70,8 @@ export interface MeetingPayload {
     Type: MeetingType;
     CustomPassword: CustomPasswordState;
     ProtonCalendar?: ProtonCalendarState;
+    // Make WaitingRoom mandatory when cleanup MeetWaitingRoom feature flag
+    WaitingRoom?: WaitingRoomState;
 }
 
 export interface Meeting extends Omit<MeetingPayload, 'Name'> {
