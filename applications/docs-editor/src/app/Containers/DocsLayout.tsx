@@ -1,10 +1,7 @@
 import React from 'react'
 import clsx from '@proton/utils/clsx'
-import { useMediaQuery } from '../Hooks/useMediaQuery'
+import './DocsLayout.scss'
 
-// screen breakpoint at which the left panel is enabled
-const LEFT_PANEL_ENABLED_BREAKPOINT = 1024
-const EDITOR_WIDTH = 816
 // screen breakpoint used to determine the minimum allowed width of the left panel
 const LEFT_PANEL_MIN_WIDTH_BREAKPOINT = 1300
 const MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT = 260
@@ -12,8 +9,7 @@ const MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT = 100
 const MAX_LEFT_PANEL_WIDTH = 800
 
 function LeftPanel({ children }: React.PropsWithChildren) {
-  const { updateLeftPanelWidth, leftPanelWidth, resetLeftPanelToDefault, leftPanelActive, leftPanelEnabled } =
-    useDocsLayoutContext()
+  const { updateLeftPanelWidth, resetLeftPanelToDefault, leftPanelActive } = useDocsLayoutContext()
   const [canResize, setCanResize] = React.useState(false)
   // store event listeners created on resize to cleanup on unmount if resize interrupted
   const cleanupRef = React.useRef<(() => void) | null>(null)
@@ -35,7 +31,8 @@ function LeftPanel({ children }: React.PropsWithChildren) {
     const pointerId = e.pointerId
     handle.setPointerCapture(pointerId)
     const startX = e.clientX
-    const startWidth = leftPanelWidth
+    const leftPanel = handle.parentElement
+    const startWidth = leftPanel?.offsetWidth ?? 0
 
     function onPointerMove(moveEvent: PointerEvent) {
       updateLeftPanelWidth(startWidth + (moveEvent.clientX - startX))
@@ -64,17 +61,9 @@ function LeftPanel({ children }: React.PropsWithChildren) {
     handle.addEventListener('pointercancel', onPointerUp)
   }
 
-  if (!leftPanelEnabled) {
-    return null
-  }
-
   return (
     <div
-      className="relative overflow-hidden"
-      style={{
-        gridRow: 1,
-        gridColumn: '1 / 2',
-      }}
+      className="docs-layout-left-panel relative overflow-hidden"
       onMouseEnter={leftPanelActive ? () => setCanResize(true) : undefined}
       onMouseLeave={leftPanelActive ? () => setCanResize(false) : undefined}
       onMouseOver={leftPanelActive ? () => setCanResize(true) : undefined}
@@ -97,32 +86,16 @@ function LeftPanel({ children }: React.PropsWithChildren) {
 }
 
 function RightPanel({ children }: React.PropsWithChildren) {
-  const { leftPanelWidth, leftPanelEnabled } = useDocsLayoutContext()
-  return (
-    <div
-      className="relative grid scroll-pt-[20px] overflow-auto"
-      style={{
-        gridRow: 1,
-        gridColumn: leftPanelEnabled ? '2 / 3' : 1,
-        '--right-panel-padding': `calc((100% + ${leftPanelWidth}px - ${EDITOR_WIDTH}px) / 2)`,
-      }}
-    >
-      {children}
-    </div>
-  )
+  return <div className="docs-layout-right-panel relative grid scroll-pt-[20px] overflow-auto">{children}</div>
 }
 
 function Grid({ children }: React.PropsWithChildren) {
-  const { leftPanelWidth, leftPanelEnabled } = useDocsLayoutContext()
+  const { leftPanelWidth, hasUserResized } = useDocsLayoutContext()
 
   return (
     <div
-      id="docs-layout-grid"
-      className="grid overflow-x-hidden overflow-y-scroll"
-      style={{
-        gridTemplateRows: '1fr',
-        gridTemplateColumns: leftPanelEnabled ? `${leftPanelWidth}px minmax(0, 1fr)` : '1fr',
-      }}
+      className={clsx('docs-layout-grid grid', hasUserResized && 'user-resized')}
+      style={hasUserResized ? { '--left-panel-width': `${leftPanelWidth}px` } : undefined}
     >
       {children}
     </div>
@@ -131,21 +104,19 @@ function Grid({ children }: React.PropsWithChildren) {
 
 type DocsLayoutContextValue = {
   leftPanelWidth: number
+  hasUserResized: boolean
   updateLeftPanelWidth: (width: number) => void
-  defaultLeftPanelWidth: number
   leftPanelActive: boolean
   setLeftPanelActive: React.Dispatch<React.SetStateAction<boolean>>
-  leftPanelEnabled: boolean
   resetLeftPanelToDefault: () => void
 }
 
 const DocsLayoutContext = React.createContext<DocsLayoutContextValue>({
   leftPanelWidth: 0,
-  defaultLeftPanelWidth: 0,
+  hasUserResized: false,
   updateLeftPanelWidth: () => {},
   leftPanelActive: false,
   setLeftPanelActive: () => {},
-  leftPanelEnabled: false,
   resetLeftPanelToDefault: () => {},
 })
 
@@ -158,42 +129,32 @@ interface DocsLayoutProviderProps {
 }
 
 function DocsLayoutProvider({ children, tableOfContentsVisible }: React.PropsWithChildren<DocsLayoutProviderProps>) {
-  const leftPanelEnabled = useMediaQuery(`only screen and (min-width: ${LEFT_PANEL_ENABLED_BREAKPOINT}px)`)
-  const isGreaterThanBreakpoint = useMediaQuery(`only screen and (min-width: ${LEFT_PANEL_MIN_WIDTH_BREAKPOINT}px)`)
-
-  const [defaultLeftPanelWidth, setDefaultLeftPanelWidth] = React.useState<number>(0)
   const [leftPanelWidth, setLeftPanelWidth] = React.useState<number>(0)
+  const [hasUserResized, setHasUserResized] = React.useState<boolean>(false)
   const [leftPanelActive, setLeftPanelActive] = React.useState<boolean>(false)
 
-  React.useLayoutEffect(() => {
-    const defaultWidth = getDefaultWidth()
-    setLeftPanelWidth(defaultWidth)
-    setDefaultLeftPanelWidth(defaultWidth)
-
+  React.useEffect(() => {
     function handleResize() {
-      const defaultWidth = getDefaultWidth()
-      setDefaultLeftPanelWidth(defaultWidth)
-      setLeftPanelWidth(defaultWidth)
+      setHasUserResized(false)
     }
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const updateLeftPanelWidth = React.useCallback(
-    (width: number) => {
-      if (isGreaterThanBreakpoint) {
-        setLeftPanelWidth(Math.min(Math.max(width, MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT), MAX_LEFT_PANEL_WIDTH))
-      } else {
-        setLeftPanelWidth(Math.min(Math.max(width, MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT), MAX_LEFT_PANEL_WIDTH))
-      }
-    },
-    [isGreaterThanBreakpoint],
-  )
+  const updateLeftPanelWidth = React.useCallback((width: number) => {
+    const minWidth =
+      window.innerWidth >= LEFT_PANEL_MIN_WIDTH_BREAKPOINT
+        ? MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT
+        : MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT
+
+    setLeftPanelWidth(Math.min(Math.max(width, minWidth), MAX_LEFT_PANEL_WIDTH))
+    setHasUserResized(true)
+  }, [])
 
   const resetLeftPanelToDefault = React.useCallback(() => {
-    updateLeftPanelWidth(defaultLeftPanelWidth)
-  }, [defaultLeftPanelWidth, updateLeftPanelWidth])
+    setHasUserResized(false)
+  }, [])
 
   React.useEffect(() => {
     if (!tableOfContentsVisible) {
@@ -201,19 +162,14 @@ function DocsLayoutProvider({ children, tableOfContentsVisible }: React.PropsWit
     }
   }, [tableOfContentsVisible, resetLeftPanelToDefault])
 
-  function getDefaultWidth() {
-    return (window.innerWidth - EDITOR_WIDTH) / 2
-  }
-
   return (
     <DocsLayoutContext.Provider
       value={{
-        defaultLeftPanelWidth,
         leftPanelWidth,
+        hasUserResized,
         updateLeftPanelWidth,
         leftPanelActive,
         setLeftPanelActive,
-        leftPanelEnabled,
         resetLeftPanelToDefault,
       }}
     >
