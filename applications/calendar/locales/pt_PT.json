@@ -53,6 +53,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a date": [
+        "Adicionar uma data"
+      ],
       "Add account": [
         "Adicionar uma conta"
       ],
@@ -61,6 +64,9 @@
       ],
       "Add another account": [
         "Adicionar outra conta"
+      ],
+      "Add another booking range to this day": [
+        "Adicionar outro intervalo de agendamento a este dia"
       ],
       "Add birthday": [
         "Adicionar data de nascimento"
@@ -174,6 +180,9 @@
       "Close navigation": [
         "Fechar navegação"
       ],
+      "Close sidebar": [
+        "Fechar barra lateral"
+      ],
       "Close this banner": [
         "Fechar esta faixa"
       ],
@@ -188,6 +197,9 @@
       ],
       "Confirm": [
         "Confirmar"
+      ],
+      "Confirm booking": [
+        "Confirmar agendamento"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura da hiperligação ${ linkToShow }"
@@ -225,6 +237,9 @@
       "Copy alias “${ name }”": [
         "Copiar o alias «${ name }»"
       ],
+      "Copy booking page link": [
+        "Copiar ligação da página de agendamento"
+      ],
       "Copy email address": [
         "Copiar o endereço de e-mail"
       ],
@@ -233,6 +248,9 @@
       ],
       "Copy link": [
         "Copiar ligação"
+      ],
+      "Copy link and close": [
+        "Copiar ligação e fechar"
       ],
       "Copy password": [
         "Copiar a palavra-passe"
@@ -243,11 +261,26 @@
       "Create": [
         "Criar"
       ],
+      "Create a booking page": [
+        "Criar uma página de agendamento"
+      ],
+      "Create a free account": [
+        "Criar uma conta gratuita"
+      ],
+      "Create a new booking page": [
+        "Criar uma nova página de agendamento"
+      ],
       "Create a new contact group": [
         "Criar um grupo de contactos"
       ],
+      "Create an event": [
+        "Criar um evento"
+      ],
       "Create and copy alias": [
         "Criar e colar alias"
+      ],
+      "Create booking page": [
+        "Criar página de agendamento"
       ],
       "Create calendar": [
         "Criar um calendário"
@@ -289,6 +322,9 @@
       "Delete ${ selectedCount } contact group": [
         "Eliminar ${ selectedCount } grupo de contactos",
         "Eliminar ${ selectedCount } grupos de contactos"
+      ],
+      "Delete booking page": [
+        "Eliminar página de agendamento"
       ],
       "Delete contact": [
         "Eliminar contacto"
@@ -335,6 +371,9 @@
       "Edit billing address": [
         "Editar o endereço da fatura"
       ],
+      "Edit booking page": [
+        "Editar página de agendamento"
+      ],
       "Edit email address": [
         "Editar o endereço de e-mail"
       ],
@@ -355,6 +394,12 @@
       ],
       "enable desktop notifications": [
         "ativar as notificações"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Expandir barra de navegação para ver agendamentos"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandir barra de navegação para ver calendários"
       ],
       "Expand video conferencing widget": [
         "Expandir o widget de videoconferência"
@@ -421,6 +466,12 @@
       ],
       "Go to settings": [
         "Ir para as definições"
+      ],
+      "Go to the first available appointment": [
+        "Ir para o primeiro compromisso disponível"
+      ],
+      "Go to the next available appointment": [
+        "Ir para o próximo compromisso disponível"
       ],
       "Got it": [
         "Entendido"
@@ -683,6 +734,9 @@
       "Remove gift code": [
         "Remover código de oferta"
       ],
+      "Remove the booking range": [
+        "Remover o intervalo de agendamento"
+      ],
       "Remove this notification": [
         "Remover esta notificação"
       ],
@@ -733,6 +787,15 @@
       ],
       "See plan features": [
         "Veja as funcionalidades do plano"
+      ],
+      "See previous availability": [
+        "Ver disponibilidade anterior"
+      ],
+      "See upcoming availability": [
+        "Ver disponibilidade futura"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Selecionar ${ dateHeaderLongString } às ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Selecionar ${ planOrAppName }"
@@ -892,6 +955,9 @@
       ],
       "Upgrade": [
         "Atualizar"
+      ],
+      "Upgrade for 200GB": [
+        "Upgrade para 200GB"
       ],
       "Upgrade Now": [
         "Atualizar agora"
@@ -2868,6 +2934,15 @@
       ]
     },
     "Custom frequency option": {
+      "Doesn't end": [
+        "Não termina"
+      ],
+      "Ends after": [
+        "Termina após"
+      ],
+      "Ends on": [
+        "Termina em"
+      ],
       "event": [
         "evento",
         "eventos"
@@ -3168,6 +3243,9 @@
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Irá receber em breve um e-mail seguro com os detalhes."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
       ]
@@ -3325,6 +3403,32 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplicar o evento"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 minutos"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "30 minutes": [
+        "30 minutos"
+      ],
+      "30m": [
+        "30 min"
+      ],
+      "60 minutes": [
+        "60 minutos"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90 minutes": [
+        "90 minutos"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3513,6 +3617,9 @@
       "Cancellation failed to be sent": [
         "Erro ao enviar o cancelamento"
       ],
+      "Cannot create a booking with a disabled address": [
+        "Não é possível criar um agendamento com um endereço desativado"
+      ],
       "Cannot export this contact": [
         "Não é possível exportar este contacto"
       ],
@@ -3602,8 +3709,14 @@
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Falha ao adicionar a videoconferência existente do ${ MEET_APP_NAME }"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Falha ao criar a videoconferência ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Erro ao criar a reunião"
+      ],
+      "Failed to decrypt session key": [
+        "Falha ao desencriptar a chave de sessão"
       ],
       "Failed to get event": [
         "Erro ao obter o evento"
@@ -3698,6 +3811,9 @@
       "Last name is too long": [
         "O último nome é muito longo."
       ],
+      "Location is required": [
+        "A localização é obrigatória"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combine pelo menos ${ calendarsToFixCount } calendário com um calendário ${ BRAND_NAME } existente.",
         "Combine pelo menos ${ calendarsToFixCount } calendários com calendários ${ BRAND_NAME } existentes"
@@ -3716,6 +3832,9 @@
       ],
       "Network error": [
         "Erro de rede"
+      ],
+      "No booking page data received": [
+        "Nenhum dado da página de agendamento foi recebido"
       ],
       "No calendars found to import": [
         "Não foi encontrado nenhum calendário para importação."
@@ -3993,6 +4112,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar por ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação através deste método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -4589,6 +4711,11 @@
         "Muito pequeno"
       ]
     },
+    "Form": {
+      "Confirm your booking": [
+        "Confirme o seu agendamento"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Juntar-se ao Google Meet"
@@ -4993,6 +5120,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -5044,6 +5174,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "Videochamada do ${ MEET_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação. É um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
@@ -5232,8 +5365,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualquer um com esta ligação pode ver no seu calendário se está livre ou não. Não podem ver os detalhes do evento, como título, localização ou participantes."
       ],
+      "Appointment duration": [
+        "Duração do compromisso"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Tem a certeza de que deseja eliminar esta página de agendamento?"
+      ],
       "Are you sure you want to discard your import?": [
         "Tem a certeza de que deseja descartar a importação?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Peça ao seu administrador para atualizar o plano ou remova uma página da barra lateral de Páginas de agendamento."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
@@ -5262,6 +5404,15 @@
       "Booking contact email: ${ selectedCalendar.Email }": [
         "E-mail de contacto da reserva: ${ selectedCalendar.Email }"
       ],
+      "Booking page deleted": [
+        "Página de agendamento eliminada"
+      ],
+      "Booking page example": [
+        "Exemplo de página de agendamento"
+      ],
+      "Booking updated successfully": [
+        "Agendamento atualizado com sucesso"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulsione a identidade da sua organização e crie uma experiência online mais consistente para os seus utilizadores."
       ],
@@ -5279,6 +5430,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Não consegue encontrar os eventos que procura? Alguns eventos em calendários ocultos correspondem à sua consulta. Para ver esses resultados, ative a visibilidade para ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create a range across days.": [
+        "Não é possível criar um intervalo que atravesse vários dias."
+      ],
+      "Cannot create a range in the past.": [
+        "Não é possível criar um intervalo no passado."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
@@ -5506,6 +5663,12 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed to update meeting name": [
+        "Falha ao atualizar o nome da reunião"
+      ],
+      "Failed to update meeting password": [
+        "Falha ao atualizar a palavra-passe da reunião"
+      ],
       "finance": [
         "finanças"
       ],
@@ -5539,8 +5702,14 @@
       "High Priority": [
         "Prioridade alta"
       ],
+      "Host": [
+        "Anfitrião"
+      ],
       "How far in advance can someone book?": [
         "Com que antecedência é possível efetuar uma reserva?"
+      ],
+      "How long should an appointment last?": [
+        "Quanto tempo deve durar um compromisso?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Se os atalhos de teclado estiverem ativados, pode utilizar as seguintes teclas para ações rápidas ou para saltar para diferentes visualizações. O atalho ${ metaKey } + K está sempre ativado."
@@ -5593,6 +5762,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "Em que calendário devem aparecer os agendamentos?"
       ],
       "Included": [
         "Incluído"
@@ -5648,6 +5820,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Saiba o que fazer ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Permita que outros marquem reuniões consigo automaticamente. Sem e-mails de trás para a frente. Partilhe uma ligação e mantenha o controlo da sua disponibilidade."
+      ],
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
       ],
@@ -5669,8 +5844,14 @@
       "Loading events": [
         "A carregar os eventos"
       ],
+      "Location": [
+        "Localização"
+      ],
       "Low Priority": [
         "Prioridade baixa"
+      ],
+      "Manage booking page": [
+        "Gerir página de agendamento"
       ],
       "Manage your calendars": [
         "Gerir os seus calendários"
@@ -5711,11 +5892,23 @@
       "New": [
         "Novo"
       ],
+      "No appointments available": [
+        "Nenhum compromisso disponível"
+      ],
+      "No appointments available this week": [
+        "Nenhum compromisso disponível esta semana"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Nenhum calendário disponível; por favor elimine a página de agendamento."
+      ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
       ],
       "No email address": [
         "Sem endereço de e-mail"
+      ],
+      "No future appointments available": [
+        "Nenhum compromisso futuro disponível"
       ],
       "No group found": [
         "Nenhum grupo encontrado"
@@ -5853,8 +6046,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto pesquisamos contactos que contenham dados encriptados com a chave inativa."
       ],
+      "Powered by": [
+        "Desenvolvido por"
+      ],
+      "Powered by ${ protonButton }": [
+        "Desenvolvido por ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "As modificações anteriores desta série serão perdidas."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Os eventos agendados anteriormente não serão eliminados."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
@@ -5862,8 +6064,20 @@
       "Primary": [
         "Principal"
       ],
+      "Privacy by default": [
+        "Privacidade por predefinição"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "A navegação privada (ou modo «incógnito») só é útil para manter a sua atividade oculta no seu dispositivo. Impede que o seu navegador guarde histórico e cookies, mas não o torna invisível. O seu ISP, o administrador de rede e os sítios web que visita ainda podem ver o que faz online."
+      ],
+      "Range already exists.": [
+        "O intervalo já existe."
+      ],
+      "Range is too short.": [
+        "O intervalo é demasiado curto."
+      ],
+      "Range overlaps with an existing range.": [
+        "O intervalo sobrepõe-se a um intervalo existente."
       ],
       "RECOMMENDED": [
         "RECOMENDADO"
@@ -5882,6 +6096,10 @@
       ],
       "Removed participants will be notified.": [
         "Os participantes removidos serão notificados."
+      ],
+      "Saving event": [
+        "A guardar o evento",
+        "A guardar os eventos"
       ],
       "Scan the QR code with your mobile device": [
         "Leia o código QR com o seu dispositivo móvel."
@@ -5912,6 +6130,9 @@
       ],
       "Setting up your new address…": [
         "A configurar o seu novo endereço…"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Partilhe esta página para permitir que outros marquem reuniões no seu calendário. Pode encontrá-la e editá-la na barra lateral sob Páginas de agendamento."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
@@ -5955,6 +6176,9 @@
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Assuma o controlo da sua vida digital"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -6004,6 +6228,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário tem de ativar primeiro o endereço."
       ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Este agendamento foi feito através do ${ CALENDAR_APP_NAME }, que faz parte da suite de produtos focados na privacidade da ${ BRAND_NAME }."
+      ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Este evento foi atualizado pelo organizador. Deseja alterar a sua resposta só para esta ocorrência da série?"
       ],
@@ -6036,6 +6266,15 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Esta ação irá terminar a sessão de todas as contas atualmente conectadas."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, peça ao seu administrador para atualizar o seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, atualize o seu plano."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
@@ -6157,11 +6396,20 @@
       "Week and month views only apply to desktop.": [
         "As vistas semanal e mensal só se aplicam à área de trabalho."
       ],
+      "What do you want to call this booking page?": [
+        "Como deseja chamar esta página de agendamento?"
+      ],
+      "When can appointments be booked?": [
+        "Quando podem ser marcados compromissos?"
+      ],
       "When working remotely": [
         "Ao trabalhar remotamente"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Quando se liga a uma VPN, esta utiliza tecnologia de encriptação para ocultar o seu endereço IP (um código único atribuído ao seu dispositivo)."
+      ],
+      "Where will the appointment take place?": [
+        "Onde se realizará o compromisso?"
       ],
       "Which calendars should block bookings?": [
         "Quais os calendários que devem bloquear reservas?"
@@ -6216,6 +6464,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Tem atualmente sessão iniciada como ${ username } em ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Tem atualmente sessão iniciada como ${ username }."
@@ -6312,6 +6563,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Atingiu o número máximo de endereços no grupo de contacto."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Atingiu o número máximo de páginas de agendamento disponíveis no seu plano."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
@@ -6412,6 +6666,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Atingiu o limite de vagas de agendamento (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6621,6 +6878,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Adicionar videoconferência ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Adicionar um endereço de e-mail"
       ],
@@ -6632,6 +6892,9 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Add Zoom meeting": [
+        "Adicionar reunião Zoom"
       ],
       "Additional comments": [
         "Comentários adicionais"
@@ -6734,6 +6997,9 @@
       ],
       "Copy": [
         "Copiar"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copie a ligação ou gira a sua página a partir daqui a qualquer momento."
       ],
       "Could you please let us know which provider?": [
         "Pode indicar-nos qual é o fornecedor?"
@@ -6842,6 +7108,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Full name": [
+        "Nome completo"
       ],
       "Get the deal": [
         "Aproveite a oferta"
@@ -7027,6 +7296,9 @@
       "Remove Zoom video conference": [
         "Remover videoconferência Zoom"
       ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
+      ],
       "Reveal password": [
         "Mostrar a palavra-passe"
       ],
@@ -7093,6 +7365,9 @@
       "Toolbar": [
         "Barra de ferramentas"
       ],
+      "Unavailable": [
+        "Indisponível"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -7107,6 +7382,9 @@
       ],
       "Very Dissatisfied": [
         "Muito insatisfeito"
+      ],
+      "Video conference": [
+        "Videoconferência"
       ],
       "Vulnerable": [
         "Vulnerável"
@@ -7152,6 +7430,26 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Zoom meeting": [
+        "Reunião Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Data do intervalo de agendamento"
+      ],
+      "End time of the booking range": [
+        "Hora de término do intervalo de agendamento"
+      ],
+      "How long should an appointment last?": [
+        "Quanto tempo deve durar um compromisso?"
+      ],
+      "Start time of the booking range": [
+        "Hora de início do intervalo de agendamento"
+      ],
+      "What should people know about this appointment?": [
+        "O que as pessoas devem saber sobre este compromisso?"
       ]
     },
     "Label for contact group color": {
@@ -7218,6 +7516,9 @@
     "Link": {
       "Add a gift code": [
         "Adicionar código de oferta"
+      ],
+      "Booking pages": [
+        "Páginas de agendamento"
       ],
       "Calendars": [
         "Calendários"
@@ -8909,6 +9210,9 @@
       "Limited-time offer": [
         "Oferta por tempo limitado"
       ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -8929,6 +9233,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta não será mostrada novamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Atualize a sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Atualize o seu armazenamento por apenas ${ pricingTitle } com ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando mudar de uma subscrição mensal para uma anual."
@@ -8955,11 +9265,20 @@
       "Advanced threat protection": [
         "Proteção avançada contra ameaças"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore com utilizadores que não usam ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
+      "Edit docs online": [
+        "Editar docs online"
+      ],
       "Email addresses": [
         "Endereços de e-mail"
+      ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do ficheiro (mais de 1 semana)"
       ],
       "Free": [
         "Free"
@@ -9602,8 +9921,14 @@
       "E.g., ": [
         "Ex., "
       ],
+      "Email for booking confirmation": [
+        "E-mail para confirmação de agendamento"
+      ],
       "Enter a name": [
         "Introduza um nome"
+      ],
+      "Enter a short description or additional info": [
+        "Introduza uma breve descrição ou informações adicionais"
       ],
       "Enter passphrase": [
         "Introduzir frase-passe"
@@ -9640,6 +9965,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Name of attendee": [
+        "Nome do participante"
       ],
       "Name or email address": [
         "Nome ou endereço de e-mail"
@@ -9922,6 +10250,9 @@
       "Invite friends. Get credits.": [
         "Convide amigos. Ganhe créditos."
       ],
+      "Invited friends": [
+        "Amigos convidados"
+      ],
       "More sharing options": [
         "Mais opções de partilha"
       ],
@@ -10102,6 +10433,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds } segundo para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -10526,11 +10869,17 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "O ${ MEET_APP_NAME } chegou!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Codifique o seu calendário por cores para organizar melhor o seu dia, controlar o seu tempo e muito mais."
       ],
       "Custom event colors": [
         "Cores de eventos personalizados"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Agende e participe em chamadas do ${ MEET_APP_NAME } diretamente a partir do seu calendário."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Crie e adicione facilmente ligações de videoconferência aos seus eventos."
@@ -10756,6 +11105,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "O ${ planName } dá-lhe acesso a todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. A privacidade é integrada para que possa continuar com o seu dia, sabendo que os seus dados e a sua identidade estão seguros."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } dá-lhe acesso a todas as aplicações, todas as funcionalidades, acesso antecipado às novas versões e tudo o que precisa para ter controlo sobre os seus dados e a sua segurança."
@@ -11108,6 +11460,12 @@
       "Billing details updated": [
         "Os detalhes de faturação forem atualizados."
       ],
+      "Booking page created": [
+        "Página de agendamento criada"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Página de agendamento criada e ligação copiada para a área de transferência"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "O calendário foi adicionado. Poderá levar alguns minutos a sincronizar."
       ],
@@ -11365,6 +11723,17 @@
         "Participar na reunião do Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Nenhum agendamento disponível."
+      ],
+      "Please check the link and try again.": [
+        "Por favor, verifique a ligação e tente novamente."
+      ],
+      "Please try again later.": [
+        "Por favor, tente novamente mais tarde."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -11491,6 +11860,9 @@
       "Apply gift code": [
         "Aplicar código de oferta"
       ],
+      "Appointment details": [
+        "Detalhes do compromisso"
+      ],
       "Are you sure?": [
         "Tem a certeza?"
       ],
@@ -11518,6 +11890,9 @@
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços"
       ],
+      "Cannot create more Booking pages": [
+        "Não é possível criar mais páginas de agendamento"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -11529,6 +11904,9 @@
       ],
       "Choose a provider": [
         "Escolha um fornecedor"
+      ],
+      "Choose a time": [
+        "Escolha uma hora"
       ],
       "Choose how many times this event will repeat": [
         "Escolha quantas vezes é que este evento se repete"
@@ -11621,6 +11999,9 @@
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
+      ],
+      "Delete booking page?": [
+        "Eliminar página de agendamento?"
       ],
       "Delete event": [
         "Eliminar evento"
@@ -11757,6 +12138,9 @@
       "High security for your account": [
         "Alta segurança para sua conta"
       ],
+      "Host": [
+        "Anfitrião"
+      ],
       "How does it all work?": [
         "Como tudo funciona?"
       ],
@@ -11787,6 +12171,9 @@
       ],
       "Information exposed in breach": [
         "Informação exposta na violação"
+      ],
+      "Introducing booking pages": [
+        "Apresentamos as páginas de agendamento"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -11886,6 +12273,9 @@
       ],
       "Reactivate calendar keys": [
         "Reativar as chaves do calendário"
+      ],
+      "Ready to automate your scheduling?": [
+        "Pronto para automatizar os seus agendamentos?"
       ],
       "Recommended": [
         "Recomendado"
@@ -12034,6 +12424,15 @@
       "Summer Sale": [
         "Saldos de Verão"
       ],
+      "The booking feature is currently unavailable.": [
+        "A funcionalidade de agendamento está atualmente indisponível."
+      ],
+      "This booking page can’t be shown.": [
+        "Esta página de agendamento não pode ser mostrada."
+      ],
+      "This booking page has expired.": [
+        "Esta página de agendamento expirou."
+      ],
       "Time": [
         "Hora"
       ],
@@ -12060,6 +12459,12 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "Atualize para manter os seus benefícios premium."
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Atualize a sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Atualize o seu armazenamento por ${ formattedPrice } com ${ planName }"
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
@@ -12130,6 +12535,15 @@
       "Your account is protected": [
         "A sua conta está protegida"
       ],
+      "Your booking is confirmed": [
+        "O seu agendamento está confirmado"
+      ],
+      "Your booking page is ready": [
+        "A sua página de agendamento está pronta"
+      ],
+      "Your booking pages live here": [
+        "As suas páginas de agendamento ficam aqui"
+      ],
       "Your calendar link": [
         "A sua ligação ao calendário"
       ],
@@ -12146,6 +12560,14 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Escolha um número"
+      ]
+    },
+    "Title header for keys table": {
+      "Created": [
+        "Criado"
+      ],
+      "Expires": [
+        "Expira"
       ]
     },
     "Title; create calendar modal": {
@@ -12244,6 +12666,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ]
     },
     "tooltip": {

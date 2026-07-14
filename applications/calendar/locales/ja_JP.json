@@ -4106,6 +4106,9 @@
       "VAT number must start with ${ prefixes }": [
         "VAT番号は${ prefixes }で始まる必要があります"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
+      ],
       "Wrong billing address": [
         "請求先住所を変更"
       ],
@@ -6412,6 +6415,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "既定のブラウザーで次のページにアクセスしようとしています"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
       ],
       "You are currently signed in as ${ username }.": [
         "現在 ${ username } としてサインインしています。"
@@ -12393,6 +12399,12 @@
       "Actions": [
         "操作"
       ],
+      "Created": [
+        "作成しました"
+      ],
+      "Expires": [
+        "有効期限"
+      ],
       "Fingerprint": [
         "指紋"
       ],
@@ -12499,6 +12511,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGPキー バージョン6"
       ]
     },
     "tooltip": {

@@ -4232,6 +4232,9 @@
       "VAT number must start with ${ prefixes }": [
         "DIČ musí začínat na ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
+      ],
       "Wrong billing address": [
         "Nesprávná fakturační adresa"
       ],
@@ -6688,6 +6691,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Chystáte se otevřít výchozí prohlížeč a navštívit:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Aktuálně jste přihlášeni jako ${ username }."
@@ -13098,6 +13104,12 @@
       "Actions": [
         "Akce"
       ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Expires": [
+        "Vyprší"
+      ],
       "Fingerprint": [
         "Digitální otisk"
       ],
@@ -13204,6 +13216,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ]
     },
     "tooltip": {
