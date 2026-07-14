@@ -14,6 +14,13 @@ import SnoozeDropdown from './SnoozeDropdown';
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/account/userSettings/hooks');
 jest.mock('@proton/components/components/link/useSettingsLink');
+jest.mock('../components/SnoozeUpsellModal', () => ({
+    __esModule: true,
+    default: () => {
+        const { createElement } = require('react');
+        return createElement('div', { 'data-testid': 'composer:snooze-message:upsell-modal' });
+    },
+}));
 jest.mock('proton-mail/store/hooks', () => ({
     useMailDispatch: jest.fn().mockReturnValue(jest.fn()),
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
@@ -160,6 +167,8 @@ describe('Snooze dropdown', () => {
     });
 
     it('should open upsell modal when free user press the custom button', async () => {
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
         const button = screen.getByTestId('dropdown-button');
         fireEvent.click(button);
@@ -167,8 +176,6 @@ describe('Snooze dropdown', () => {
         const customButton = screen.getByTestId('snooze-duration-custom');
         fireEvent.click(customButton);
 
-        setTimeout(() => {
-            screen.getByTestId('composer:snooze-message:upsell-modal');
-        }, 1);
+        await screen.findByTestId('composer:snooze-message:upsell-modal');
     });
 });
