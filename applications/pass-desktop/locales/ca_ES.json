@@ -2195,7 +2195,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2434,6 +2435,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Ordenat per camp (primer el títol, després el nom d'usuari o correu electrònic, el lloc web i les notes) i per la precisió de la coincidència (exacta, comença per, conté)."
       ],
       "Read item": [
         "Llegir l'element"
@@ -2708,9 +2712,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la segona contrasenya"
-      ],
-      "Unlock with biometrics": [
-        "Desbloquegeu-ho amb dades biomètriques"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
@@ -3840,6 +3841,9 @@
       ],
       "Regular expression": [
         "Expressió regular"
+      ],
+      "Relevant": [
+        "Rellevant"
       ],
       "Remove link": [
         "Esborra l'enllaç"
