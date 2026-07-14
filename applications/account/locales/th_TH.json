@@ -66,6 +66,9 @@
       "Accept": [
         "ยอมรับ"
       ],
+      "Account settings": [
+        "การตั้งค่าบัญชี"
+      ],
       "activate": [
         "เปิดการใช้งาน"
       ],
@@ -6687,6 +6690,9 @@
       "We couldn't sign you in": [
         "เราไม่สามารถลงชื่อเข้าใช้ให้คุณได้"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "ไม่สามารถส่งรหัสยืนยันด้วยวิธีนี้ได้"
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "เราได้หยุดการลงลายเซ็น DKIM เนื่องจากมีปัญหากับการกำหนดค่า DNS ของคุณ โปรดทำตามคำแนะนำด้านล่างเพื่อลงลายเซ็นต่อ"
       ],
@@ -7244,9 +7250,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "ต้องกำหนดค่าโดเมนที่กำหนดเองก่อนสร้างผู้ใช้ใหม่"
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "คุณจะสูญเสียการเข้าถึงคุณสมบัติพรีเมียมทั้งหมดที่รวมอยู่ใน ${ plan }"
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "คุณได้รับเชิญจาก **${ invite.InviterEmail }** ให้เชื่อมโยงบัญชีของคุณกับแผนกลุ่มนี้"
@@ -11382,6 +11385,9 @@
       "You are about to open your default browser and visit:": [
         "คุณกำลังจะเปิดเบราว์เซอร์เริ่มต้นและเข้าชม:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "ขณะนี้เข้าสู่ระบบในชื่อ ${ username } สำหรับ ${ organizationName }"
+      ],
       "You are currently signed in as ${ username }.": [
         "ขณะนี้เข้าสู่ระบบในชื่อ ${ username }"
       ],
@@ -13156,6 +13162,9 @@
       "Newsletters": [
         "จดหมายข่าว"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "จดหมายข่าว - ข่าวสาร อีเมลบรรณาธิการ และเนื้อหาที่ไม่ใช่การโปรโมต"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "ไม่ใช่ (ผู้ใช้ไม่สามารถใช้แอปได้จนกว่าจะมีการแชร์ห้องนิรภัยกับพวกเขา)"
       ],
@@ -13294,8 +13303,14 @@
       "Primary": [
         "เป็นหลัก"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "หลัก - อีเมลส่วนตัวและอีเมลงาน รวมถึงการอัปเดตที่สำคัญ"
+      ],
       "Promotions": [
         "โปรโมชัน"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "โปรโมชัน - ดีล ข้อเสนอ และอีเมลการตลาด"
       ],
       "Prompt to trust keys": [
         "แจ้งเตือนให้เชื่อถือคีย์"
@@ -13459,6 +13474,9 @@
       "Social": [
         "โซเชียล"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "โซเชียล - การอัปเดต กิจกรรม และข้อความจากโซเชียลมีเดีย"
+      ],
       "Social media updates and activity": [
         "การอัปเดตจากโซเชียลมีเดียและกิจกรรม"
       ],
@@ -13555,6 +13573,9 @@
       "Transactions": [
         "ธุรกรรม"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "ธุรกรรม - ใบเสร็จ การจอง บิล และคำสั่งซื้อ"
+      ],
       "Two-password mode": [
         "แบบการตั้งรหัสผ่าน 2 ชั้น"
       ],
@@ -13575,6 +13596,9 @@
       ],
       "Updates": [
         "การอัปเดต"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "อัปเดต - การยืนยันแบบอัตโนมัติ การแจ้งเตือน และการอัปเดตบัญชี"
       ],
       "Upload 1 or more encryption keys": [
         "อัปโหลดคีย์การเข้ารหัสลับ 1 รายการขึ้นไป"
@@ -13884,9 +13908,6 @@
       ],
       "Create an alias": [
         "สร้างนามแฝง"
-      ],
-      "Don't have access to your 2FA?": [
-        "ไม่สามารถเข้าถึง 2FA ใช่หรือไม่?"
       ],
       "Downloads": [
         "ดาวน์โหลด"
@@ -18993,6 +19014,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "คุณมีเวลา ${ timeRemaining.inDays } วันในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inHours } ชั่วโมงในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inMinutes } นาทีในการรีเซ็ตรหัสผ่าน"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "มีเวลาอีก ${ timeRemaining.inSeconds } วินาทีในการรีเซ็ตรหัสผ่าน"
       ]
     },
     "session_recovery:available:link": {
@@ -22289,9 +22319,6 @@
       "Layout": [
         "เค้าโครง"
       ],
-      "Leave ${ organisationName }?": [
-        "ออกจาก ${ organisationName } หรือไม่?"
-      ],
       "Leave group?": [
         "ออกจากกลุ่มหรือไม่?"
       ],
@@ -23314,6 +23341,9 @@
       ],
       "Verified email address": [
         "ที่อยู่อีเมลที่ยืนยันแล้ว"
+      ],
+      "Version 6 OpenPGP key": [
+        "คีย์ OpenPGP เวอร์ชัน 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "พบปัญหาในการกำหนดค่า DNS ของคุณ โปรดแน่ใจว่าบันทึกของคุณได้ตรงกับวิธีที่แนะนำไว้ด้านล่างนี้ หากปัญหายังไม่คลี่คลายเราจำเป็นต้องยกเลิกการเซ็น DKIM"

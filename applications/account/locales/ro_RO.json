@@ -66,6 +66,9 @@
       "Accept": [
         "Acceptare"
       ],
+      "Account settings": [
+        "Setări cont"
+      ],
       "activate": [
         "activare"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Gestionare preferințe de comunicare"
+      ],
+      "Manage company": [
+        "Gestionare companie"
       ],
       "Manage folders": [
         "Gestionare foldere"
@@ -7867,6 +7873,9 @@
       "We couldn't sign you in": [
         "Nu s-a putut conecta."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nu s-a putut trimite un cod de verificare folosind această metodă."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
       ],
@@ -8445,8 +8454,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Trebuie să configurați un domeniu personal înainte de a crea un utilizator."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Veți pierde accesul la toate funcțiile premium incluse în ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Veți pierde accesul la toate funcțiile premium incluse în ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "**${ invite.InviterEmail }** v-a invitat să vă alăturați contul la acest plan de grup."
@@ -11850,6 +11859,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
       ],
+      "Manage groups in your identity provider": [
+        "Gestionați grupurile în furnizorul de identitate"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
       ],
@@ -13444,6 +13456,9 @@
       "You are about to open your default browser and visit:": [
         "Urmează să deschideți navigatorul web implicit și să vizitați:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "V-ați conectat cu ${ username } pentru (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "V-ați conectat cu ${ username }."
       ],
@@ -13520,6 +13535,9 @@
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
       ],
       "You can now access and manage the account as an administrator.": [
+        "Acum puteți accesa și gestiona contul ca administrator."
+      ],
+      "You can now access and manage the company as an administrator.": [
         "Acum puteți accesa și gestiona contul ca administrator."
       ],
       "You can now close this tab.": [
@@ -16391,9 +16409,6 @@
       ],
       "Details": [
         "Detalii"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nu aveți acces la A2F?"
       ],
       "Downloads": [
         "Descărcări"
@@ -24812,11 +24827,11 @@
       "per month, billed annually": [
         "pe lună, facturat anual"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Economisiți 50% pentru un an și păstrați accesul complet"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Economisiți 50% pentru 6 luni și păstrați accesul complet"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Economisiți 50% pentru un an și păstrați accesul complet"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Vedeți cum se compară ${ MAIL_APP_NAME } și de ce independența noastră face diferența."
@@ -26497,8 +26512,8 @@
       "Layout": [
         "Aspect"
       ],
-      "Leave ${ organisationName }?": [
-        "Părăsiți ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Părăsiți ${ organization.Name }?"
       ],
       "Leave group?": [
         "Părăsiți grupul?"
@@ -26520,6 +26535,9 @@
       ],
       "Make your business stand out": [
         "Scoateți-vă afacerea în evidență"
+      ],
+      "Manage company": [
+        "Gestionare companie"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestionați fișierele pe diferite dispozitive, pe Windows, Mac, Android și iOS."

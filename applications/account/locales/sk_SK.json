@@ -66,6 +66,9 @@
       "Accept": [
         "Prijať"
       ],
+      "Account settings": [
+        "Nastavenie účtu"
+      ],
       "activate": [
         "aktivovať"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Spravovať nastavenia komunikácie"
+      ],
+      "Manage company": [
+        "Spravovať spoločnosť"
       ],
       "Manage folders": [
         "Spravovať priečinky"
@@ -3033,6 +3039,15 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Došlo k neznámej chybe. Obnovte stránku a skúste to znovu, prosím."
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers }?",
+        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers } ďalších?",
+        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers } ďalších?",
+        "Naozaj chcete pokračovať bez ${ withoutString } a ${ notMigratedOthers } ďalších?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Naozaj chcete pokračovať bez ${ withoutString }?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Naozaj chcete pokračovať? Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
       ],
@@ -3080,6 +3095,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Odstráňte všetky existujúce MX záznamy, potom skopírujte nižšie uvedené kódy a vložte ich do sekcie DNS u vášho poskytovateľa doménových služieb."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
@@ -3216,6 +3234,9 @@
       "Missing organization public key": [
         "Chýba verejný kľúč organizácie"
       ],
+      "More details": [
+        "Ďalšie podrobnosti"
+      ],
       "Need help?": [
         "Potrebujete pomoc?"
       ],
@@ -3315,11 +3336,17 @@
       "Some accounts are not claimed": [
         "Niektoré účty neboli prevzaté"
       ],
+      "Some members weren't migrated": [
+        "Niektorí členovia neboli prenesení"
+      ],
       "Status": [
         "Stav"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Ak chcete preniesť dáta vašej organizácie do ${ BRAND_NAME }, nainštalujte si aplikáciu ${ BRAND_NAME } Easy Switch z obchodu Google Workspace Marketplace. Po inštalácii sa vráťte sem a pokračujte."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Aby ste migráciu dokončili, uistite sa, že ponecháte iba MX záznamy pre ${ BRAND_NAME }."
       ],
       "Update records for receiving": [
         "Aktualizovať záznamy o príjme"
@@ -3375,6 +3402,9 @@
       "You": [
         "Vy"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Údaje týchto používateľov už neskôr nebude možné skopírovať."
+      ],
       "You're all set!": [
         "Všetko je pripravené!"
       ],
@@ -3386,6 +3416,9 @@
         "Váš súčasný plán umožňuje ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
         "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
         "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Konfigurácia vašej domény stále obsahuje MX záznamy iného poskytovateľa."
       ]
     },
     "breadcrumb": {
@@ -7896,6 +7929,9 @@
       "We couldn't sign you in": [
         "Nemohli sme vás prihlásiť"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zastavili sme podpisovanie DKIM kvôli problémom s vašou konfiguráciou DNS. Ak chcete pokračovať v podpisovaní, postupujte podľa pokynov nižšie."
       ],
@@ -8481,8 +8517,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Pred vytvorením nového používateľa, musíte nakonfigurovať vlastnú doménu."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Stratíte prístup ku všetkým prémiovým funkciám, ktoré sú súčasťou ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Stratíte prístup ku všetkým prémiovým funkciám, ktoré sú súčasťou ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Dostali ste pozvánku od **${ invite.InviterEmail }**, na prepojenie vášho účtu s týmto skupinovým plánom."
@@ -10010,6 +10046,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } je neplatná"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } člen pridaný do skupiny",
+        "Do skupiny boli pridaní ${ emails.length } členovia",
+        "Do skupiny boli pridaní ${ emails.length } členovia",
+        "Do skupiny boli pridaní ${ emails.length } členovia"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázok v plnej veľkosti"
       ],
@@ -11492,6 +11534,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Group created": [
+        "Skupina bola vytvorená"
+      ],
       "Group deleted": [
         "Skupina bola vymazaná"
       ],
@@ -11941,6 +11986,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Uistite sa, že ste ${ addARecoveryMethod }, aby ste sa mohli dostať späť do svojho účtu, ak zabudnete heslo."
+      ],
+      "Manage groups in your identity provider": [
+        "Skupiny spravujte vo vašom poskytovateľovi identít"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
@@ -13547,6 +13595,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "V súčasnosti používate účet ako ${ username }."
       ],
@@ -13630,6 +13681,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Teraz môžete pristupovať k účtu a spravovať ho ako správca."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Teraz môžete pristupovať k organizácii a spravovať ju ako správca."
       ],
       "You can now close this tab.": [
         "Túto kartu teraz môžete zatvoriť."
@@ -14778,6 +14832,9 @@
       "App password": [
         "Heslo aplikácie"
       ],
+      "App Settings": [
+        "Nastavenia aplikácie"
+      ],
       "Apply filter to existing emails": [
         "Použiť filter na existujúce emaily"
       ],
@@ -15005,6 +15062,9 @@
       ],
       "Confirm login password": [
         "Potvrďte prihlasovacie heslo"
+      ],
+      "Confirm MX records updated": [
+        "Potvrďte aktualizáciu MX záznamov"
       ],
       "Confirm new password": [
         "Potvrďte nové heslo"
@@ -15278,6 +15338,12 @@
       ],
       "Event notifications": [
         "Notifikácie udalosti"
+      ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
       ],
       "Exclude Spam/Trash from All mail": [
         "Vynechať Spam/Kôš zo Všetkej pošty"
@@ -15576,6 +15642,9 @@
       "Navigation": [
         "Navigácia"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
       "New display name": [
         "Nové zobrazované meno"
       ],
@@ -15683,6 +15752,9 @@
       ],
       "Other amount": [
         "Iná suma"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "Passkeys": [
         "Prístupové kľúče"
@@ -15803,6 +15875,9 @@
       ],
       "Recovery phrase": [
         "Obnovovacia fráza"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
       ],
       "Remove": [
         "Odstrániť"
@@ -15984,6 +16059,9 @@
       "Start weekday": [
         "Začiatok pracovného týždňa"
       ],
+      "Starts with": [
+        "Začína s"
+      ],
       "State": [
         "Štát"
       ],
@@ -16109,6 +16187,9 @@
       ],
       "URL": [
         "Odkaz"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ],
       "Use another payment method": [
         "Použite iný spôsob platby"
@@ -16489,9 +16570,6 @@
       ],
       "Details": [
         "Podrobnosti"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nemáte prístup k vášmu 2FA?"
       ],
       "Downloads": [
         "Na stiahnutie"
@@ -17214,6 +17292,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Všetky akcie filtrov sa použijú na všetky správy vo vašom ${ MAIL_APP_NAME } účte. Neodošlú sa žiadne emaily s automatickou odpoveďou."
       ],
@@ -17223,6 +17304,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Prepojte vašu vlastnú doménu s ${ BRAND_NAME }, aby ste vytvorili vlastné emailové adresy (napr. vy@vasafirma.com). Náš sprievodca vás prevedie celým postupom."
       ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Zobraziť aktivitu ${ PASS_APP_NAME } v rámci vašej organizácie."
       ],
@@ -17231,6 +17324,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Zobraziť udalosti prihlásenia, obnovenia a bezpečnosti používateľa."
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
@@ -25037,9 +25133,6 @@
       "per month, billed annually": [
         "mesačne, účtované každý rok"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Ušetrite 50 % na 1 rok a zachovajte si plný prístup"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Ušetrite 50 % na 6 mesiacov a zachovajte si plný prístup"
       ],
@@ -26583,6 +26676,9 @@
       "Get more from your password manager": [
         "Získajte viac z vášho správcu hesiel"
       ],
+      "Get more from your privacy suite": [
+        "Využite svoj balík nástrojov na ochranu súkromia naplno"
+      ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
       ],
@@ -26736,8 +26832,8 @@
       "Layout": [
         "Rozloženie"
       ],
-      "Leave ${ organisationName }?": [
-        "Opustiť ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Opustiť ${ organization.Name }?"
       ],
       "Leave group?": [
         "Opustiť skupinu?"
@@ -26759,6 +26855,9 @@
       ],
       "Make your business stand out": [
         "Nechajte svoju firmu vyniknúť"
+      ],
+      "Manage company": [
+        "Spravovať spoločnosť"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Spravujte súbory na rôznych zariadeniach so systémom Windows, Mac, Android a iOS."
@@ -27527,6 +27626,9 @@
       ],
       "WireGuard configuration": [
         "Konfigurácia WireGuard"
+      ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "S vaším ${ BRAND_NAME } účtom získate prístup ku všetkým aplikáciám ${ BRAND_NAME }"
       ],
       "You are all set": [
         "Všetko je nastavené"
@@ -28818,6 +28920,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "Are you sure you want to remove your notification email?": [
         "Naozaj chcete odstrániť váš notifikačný email?"
