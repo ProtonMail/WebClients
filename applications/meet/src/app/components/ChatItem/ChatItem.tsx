@@ -30,7 +30,7 @@ import { ChatMessageReactions } from './ChatMessageReactions';
 
 import './ChatItem.scss';
 
-const QUICK_REACTIONS = ['👏', '💜', '🙌', '👍', '👎'];
+const QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '🥲', '👎'];
 
 interface ChatItemProps {
     roomName?: string;
