@@ -17,7 +17,6 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { DEFAULT_MAIL_SETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
@@ -139,6 +138,7 @@ export const baseApiMocks = () => {
     addApiMock('settings/calendar', () => ({}));
     addApiMock('calendar/v1', () => ({}));
     addApiMock('payments/v5/plans', () => ({ Plans: [] }));
+    addApiMock('payments/v4/plans', () => ({ Plans: [] }));
 };
 
 export const setup = async ({
