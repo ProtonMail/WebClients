@@ -71,6 +71,7 @@ import {
     type ApiJoiningLinkData,
 } from '../api/api.interface';
 import type { OAuthToken } from '../logic/oauthToken';
+import { areEquivalentEmails, shouldCreateUserPredicate } from './helpers';
 import type { JoiningLink, MigrationConfiguration } from './types';
 
 type RequiredState = KtState &
@@ -275,14 +276,15 @@ export const createMigrationBatch = createAsyncThunk<
         }
 
         const getKnownAddresses = () => Object.values(membersAddresses).flat();
-        const isSelf = (email: string) => email === oauthToken.Account;
-        const isKnownAddress = (email: string) => getKnownAddresses().find((a) => a.Email === email);
-        const isExistingUser = (email: string) => isSelf(email) || isKnownAddress(email);
+        const isSelf = (email: string) => areEquivalentEmails(email, oauthToken.Account);
 
         const users = providerUsers.filter((u) => selectedUsers.includes(u.ID));
-        const usersToCreate = users.filter((u) => !isSelf(u.Email) && !isKnownAddress(u.Email));
-        const existingUsers = providerUsers.filter((u) => isExistingUser(u.Email));
+        const shouldCreateUser = shouldCreateUserPredicate(
+            oauthToken.Account,
+            getKnownAddresses().map((a) => a.Email)
+        );
 
+        const usersToCreate = users.filter(shouldCreateUser);
         const availableSeats = organization.MaxMembers - organization.UsedMembers;
         if (usersToCreate.length > availableSeats) {
             throw { name: 'SeatsError', message: c('BOSS').t`Organization does not have enough seats available` };
@@ -302,6 +304,7 @@ export const createMigrationBatch = createAsyncThunk<
             allocatableStorage = organization.MaxSpace - newQuota;
         }
 
+        const existingUsers = providerUsers.filter((u) => !shouldCreateUser(u));
         const userQuota = Math.floor(allocatableStorage / (providerUsers.length - existingUsers.length));
         const totalStorageRequired = usersToCreate.length * userQuota;
         if ((usersToCreate.length > 1 && userQuota < 1) || totalStorageRequired > allocatableStorage) {
@@ -354,7 +357,8 @@ export const createMigrationBatch = createAsyncThunk<
                 }
 
                 const calendars = (await dispatch(calendarsThunk())).filter(
-                    (calendar) => getIsOwnedCalendar(calendar) && calendar.Owner.Email === oauthToken.Account
+                    (calendar) =>
+                        getIsOwnedCalendar(calendar) && areEquivalentEmails(calendar.Owner.Email, oauthToken.Account)
                 );
 
                 if (!calendars.length) {
@@ -439,7 +443,7 @@ export const createMigrationBatch = createAsyncThunk<
 
         const addressesToMigrate = (() => {
             const knownAddresses = getKnownAddresses();
-            return users.map((u) => knownAddresses.find((a) => a.Email === u.Email)).filter(isTruthy);
+            return users.map((u) => knownAddresses.find((a) => areEquivalentEmails(a.Email, u.Email))).filter(isTruthy);
         })();
 
         if (addressesToMigrate.length) {
@@ -533,7 +537,8 @@ export const completeMigration = createAsyncThunk<
     }
 
     for (const user of migratedUsers) {
-        const { member, address } = membersWithAddresses.find((m) => m.address?.Email === user.Email) ?? {};
+        const { member, address } =
+            membersWithAddresses.find((m) => areEquivalentEmails(m.address?.Email, user.Email)) ?? {};
 
         if (!member || !address || member.Self) {
             continue;
