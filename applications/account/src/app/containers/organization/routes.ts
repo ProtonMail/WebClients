@@ -10,11 +10,9 @@ import {
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     hasAnyB2bBundle,
-    hasBundleBiz2025,
     hasMeet,
     hasMeetBusiness,
     hasVPNPassProfessional,
-    hasVisionary,
     hasVpnBusiness,
 } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
@@ -58,7 +56,6 @@ export const getOrganizationAppRoutes = ({
         isSharedServerFeatureEnabled = false,
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
-        isRolesAndPermissionsEnabled = false,
     } = flags;
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -154,14 +151,6 @@ export const getOrganizationAppRoutes = ({
         isOrgActive &&
         isOrgConfigured &&
         isOrganizationOneOf(organization, [PLANS.BUNDLE_BIZ_2025, PLANS.VISIONARY, PLANS.BUNDLE_PRO_2024]);
-
-    const canShowRolesAndPermissionsSection = !!(
-        isRolesAndPermissionsEnabled &&
-        canHaveOrganization &&
-        isOrgActive &&
-        isOrgConfigured &&
-        (hasBundleBiz2025(subscription) || hasVisionary(subscription))
-    );
 
     const canShowSecuritySection =
         permissions['account.security_policy.read'] &&
@@ -405,18 +394,6 @@ export const getOrganizationAppRoutes = ({
                     id: 'feature-access',
                     text: c('Title').t`Feature access`,
                     available: canShowVideoConferenceSection || canShowScribeSection,
-                },
-            ],
-        },
-        rolesAndPermissions: {
-            id: 'rolesAndPermissions',
-            text: c('Title').t`Roles and permissions`,
-            to: '/roles-and-permissions',
-            icon: 'users-plus',
-            available: canShowRolesAndPermissionsSection,
-            subsections: [
-                {
-                    id: 'roles',
                 },
             ],
         },
