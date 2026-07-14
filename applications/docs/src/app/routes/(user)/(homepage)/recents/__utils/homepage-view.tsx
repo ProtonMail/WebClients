@@ -163,8 +163,6 @@ function useHomepageViewState({
   isRecentsInitial,
   isTrashedLoading,
 }: HomepageViewStateOptions): HomepageViewState {
-  return { view: 'unknown' }
-
   // The state, without the items.
   const protoState = useMemo(() => {
     let outputState: HomepageViewState = { view: 'unknown' }
