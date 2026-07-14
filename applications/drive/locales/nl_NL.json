@@ -782,6 +782,9 @@
       "Re-index": [
         "Opnieuw indexeren"
       ],
+      "Re-indexing in progress": [
+        "Bezig met opnieuw indexeren"
+      ],
       "Re-sign": [
         "Opnieuw ondertekenen"
       ],
@@ -856,6 +859,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Report abuse": [
+        "Misbruik melden"
       ],
       "Report an issue": [
         "Een probleem melden"
@@ -4012,6 +4018,9 @@
       "We cannot retrieve this item": [
         "We kunnen dit item niet raadplegen"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
+      ],
       "We were not able to load some invitations": [
         "We konden sommige uitnodigingen niet laden."
       ],
@@ -5241,6 +5250,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
         "Alle (${ totalFoldersCount } mappen)"
@@ -5511,6 +5523,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "Weet u uw wachtwoord nog? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Wilt u het nog steeds uploaden?",
+        "Wilt u ze nog steeds uploaden?"
+      ],
       "Done": [
         "Voltooid"
       ],
@@ -5709,6 +5725,9 @@
       ],
       "How does encrypted search work?": [
         "Hoe werkt versleuteld zoeken?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Ik bevestig hierbij, te goeder trouw, dat de informatie en verklaringen in dit rapport juist en volledig zijn."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Als die bestanden niet volledig lokaal zijn gedownload op ${ deviceName }, verliest u er de toegang toe."
@@ -6224,6 +6243,9 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
+      "Re-indexing in progress": [
+        "Bezig met opnieuw indexeren"
+      ],
       "Ready to add some photos?": [
         "Klaar om foto's toe te voegen?"
       ],
@@ -6477,6 +6499,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Deze actie kan NIET ongedaan gemaakt worden. Wilt u de naam van uw toestel in te geven om uw verwijdering te bevestigen."
       ],
+      "This file appears to be empty:": [
+        "Dit bestand lijkt leeg te zijn:",
+        "Deze bestanden lijken leeg te zijn:"
+      ],
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
       ],
@@ -6664,6 +6690,9 @@
       "Uploaded": [
         "Geüpload"
       ],
+      "Uploaded - file is empty": [
+        "Geüpload - bestand is leeg"
+      ],
       "Uploading": [
         "Aan het uploaden"
       ],
@@ -6823,6 +6852,9 @@
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
       ],
@@ -6947,6 +6979,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Uw bestanden worden opnieuw geïndexeerd. U kunt blijven zoeken - de resultaten kunnen onvolledig zijn totdat het proces is voltooid. We laten u weten wanneer het klaar is."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Uw bestanden zijn niet meer toegankelijk vanwege een wachtwoord-reset. Upload de oude versleutelingssleutel om weer toegang te krijgen. ${ KeyReactivationButton }"
@@ -7481,6 +7516,9 @@
       ],
       "Index kinds": [
         "Soorten indexen"
+      ],
+      "Indexing": [
+        "Indexeren"
       ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
@@ -13114,6 +13152,9 @@
       "Upload and share files": [
         "Bestanden uploaden en delen"
       ],
+      "Upload empty file?": [
+        "Leeg bestand uploaden?"
+      ],
       "Uploaded": [
         "Geüpload"
       ],
@@ -13245,6 +13286,12 @@
       "Actions": [
         "Acties"
       ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
       "Fingerprint": [
         "Vingerafdruk"
       ],
@@ -13350,6 +13397,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."

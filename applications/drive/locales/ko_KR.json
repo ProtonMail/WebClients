@@ -90,6 +90,9 @@
       "Add photos": [
         "사진 추가"
       ],
+      "Add storage": [
+        "스토리지 추가"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "\"${ name }\"에 추가 (${ photoCount }개 사진)"
       ],
@@ -615,6 +618,9 @@
       "Let's talk": [
         "상담 및 계약 필요"
       ],
+      "List layout": [
+        "목록 레이아웃"
+      ],
       "Load": [
         "불러오기"
       ],
@@ -768,8 +774,17 @@
       "Quit": [
         "나가기"
       ],
+      "Re-index": [
+        "재색인"
+      ],
+      "Re-indexing in progress": [
+        "재색인 진행 중"
+      ],
       "Re-sign": [
         "재서명"
+      ],
+      "Rebuild index": [
+        "색인 재구축"
       ],
       "Reconnect": [
         "다시 연결"
@@ -894,6 +909,9 @@
       "Save changes": [
         "변경 사항 저장"
       ],
+      "Save photo to your gallery": [
+        "귀하의 갤러리에 사진 저장"
+      ],
       "Save photos and remove": [
         "사진 저장 및 삭제"
       ],
@@ -914,6 +932,9 @@
       ],
       "Search drive": [
         "드라이브에서 검색"
+      ],
+      "Search is unavailable": [
+        "검색을 사용할 수 없음"
       ],
       "See how": [
         "방법 보기"
@@ -1079,6 +1100,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "${ BRAND_NAME } Workspace 체험하기"
       ],
       "Try again": [
         "다시 시도"
@@ -1595,6 +1619,9 @@
       ],
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Pending": [
+        "보류 중"
       ],
       "Status": [
         "상태"
@@ -3550,6 +3577,9 @@
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
       ],
+      "Folder not found": [
+        "폴더를 찾을 수 없습니다"
+      ],
       "Forward address is required": [
         "전달 주소가 필요합니다."
       ],
@@ -3903,6 +3933,9 @@
       ],
       "We cannot retrieve this item": [
         "해당 항목을 가져올 수 없습니다"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
       "We were not able to load some invitations": [
         "초대 중 일부를 불러올 수 없었습니다"
@@ -4859,6 +4892,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace가 데이터 누출 위험 없아 효율적으로 팀 간에 협업할 수 있도록 도와드립니다."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
@@ -4894,6 +4930,9 @@
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } 및 ${ SHEETS_APP_NAME } 파일은 직접 다운로드할 수 없으며 해당 다운로드에 포함되어 있지 않습니다. '계속 다운로드'를 클릭하여 다른 파일들을 계속 다운로드할 수 있습니다."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME }에서 로컬 검색 인덱스가 손상되어 더 이상 사용할 수 없음을 감지했습니다. 검색을 복원하려면 인덱스를 재구축하십시오."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store에서 ${ DRIVE_APP_NAME } 받기"
@@ -5080,6 +5119,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ],
+      "Album": [
+        "앨범"
       ],
       "All (${ totalFoldersCount } folder)": [
         "총 (${ totalFoldersCount } 개 폴더)"
@@ -5345,6 +5387,9 @@
       "Do you remember your password? ${ verifyButton }": [
         "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "해당 항목을 정말 업로드하시겠어요?"
+      ],
       "Done": [
         "완료"
       ],
@@ -5477,6 +5522,12 @@
       "Feb": [
         "2월"
       ],
+      "File could not be scanned": [
+        "파일을 스캔할 수 없음."
+      ],
+      "File flagged as potentially malicious": [
+        "파일이 잠재적으로 멀웨어가 포함된 것으로 확인됨"
+      ],
       "File will not be updated": [
         "파일이 업로드되지 않습니다"
       ],
@@ -5536,6 +5587,9 @@
       ],
       "How does encrypted search work?": [
         "암호화된 검색은 어떻게 작동하나요?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "본인은 본 리포트에 기재된 정보 및 내용이 정확하고 완전함을 성실하게 확인합니다."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "만약 해당 파일들이 ${ deviceName }(에)서 로컬 드라이브로 완전히 다운로드되지 않았다면, 해당 파일에 대한 접근 권한을 잃게 됩니다."
@@ -5603,6 +5657,21 @@
       "Index is empty.": [
         "색인이 비어있습니다."
       ],
+      "Indexed ${ first }": [
+        "${ first } 색인됨"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } 및 ${ second } 색인됨"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second }, ${ third }이(가) 색인됨"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } 및 ${ fourth }이(가) 색인됨"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "색인 중 오류가 발생했으며 계속 진행할 수 없습니다. 복원하려면 재색인을 진행하십시오."
+      ],
       "Indexing in progress": [
         "색인 진행 중"
       ],
@@ -5626,6 +5695,9 @@
       ],
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
+      ],
+      "Invitation confirmed": [
+        "초대 확인됨"
       ],
       "Invite link copied": [
         "초대 링크를 복사했습니다"
@@ -5807,6 +5879,9 @@
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
       ],
+      "No populator states found.": [
+        "인구 통계 상태를 찾을 수 없습니다."
+      ],
       "No results found": [
         "결과를 찾을 수 없음"
       ],
@@ -5821,6 +5896,9 @@
       ],
       "Not connected": [
         "연결되지 않음"
+      ],
+      "Not enough storage space": [
+        "저장공간이 충분하지 않습니다"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "참고: ${ DRIVE_APP_NAME }를 설치한 기기에서는 데이터가 로컬에 저장됩니다."
@@ -5845,6 +5923,9 @@
       ],
       "On public WiFi networks": [
         "공공 WiFi 네트워크에서 사용시"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "하나의 암호화된 스위트. 완벽한 비즈니스 보안."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
@@ -5975,6 +6056,9 @@
       "Preparing": [
         "준비 중"
       ],
+      "Preparing download": [
+        "다운로드 준비 중"
+      ],
       "Preparing…": [
         "준비 중…"
       ],
@@ -6013,6 +6097,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
+      ],
+      "Re-indexing in progress": [
+        "재색인 진행 중"
       ],
       "Ready to add some photos?": [
         "사진 좀 올려 볼까요?"
@@ -6071,11 +6158,26 @@
       "Search cannot be enabled in this browser": [
         "이 브라우저에서 검색을 활성화할 수 없습니다"
       ],
+      "Search data is corrupted": [
+        "검색 데이터가 손상됨"
+      ],
       "Search Enabled": [
         "검색 활성화됨"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "검색에 내부 오류가 발생했습니다. 복구하려면 다시 색인을 진행하십시오."
+      ],
+      "Search engine error": [
+        "검색 앤진 오류"
+      ],
+      "Search error": [
+        "검색 오류"
+      ],
+      "Search is in an invalid state": [
+        "검색이 잘못된 상태입니다"
       ],
       "Search is ready. Your files have been indexed.": [
         "검색이 준비되었습니다. 사용자의 파일이 색인 완료되었습니다."
@@ -6227,6 +6329,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "검색 엔진 내부 오류가 발생했습니다. 복구하려면 다시 색인을 진행하십시오."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
@@ -6247,6 +6352,9 @@
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "이 작업은 되돌릴 수 없습니다. 그래도 삭제하시려면 기기 이름을 입력하여 확인해주세요."
+      ],
+      "This file appears to be empty:": [
+        "해당 파일은 비어있는 것으로 보입니다:"
       ],
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
@@ -6419,6 +6527,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
       ],
+      "Upgrade to get more storage space": [
+        "더 많은 저장 공간을 확보하려면 업그레이드하세요"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
@@ -6430,6 +6541,9 @@
       ],
       "Uploaded": [
         "업로드 완료"
+      ],
+      "Uploaded - file is empty": [
+        "업로드 완료 - 업로드된 파일이 비어 있습니다"
       ],
       "Uploading": [
         "업로드 중"
@@ -6484,6 +6598,9 @@
       ],
       "We couldn't save this photo to your Drive": [
         "다수의 사진을 드라이브에 저장하지 못했습니다"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "${ nameAuthor }님이 ${ nodeName } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
       ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
@@ -6583,6 +6700,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ],
       "You are currently signed in as ${ username }.": [
         "현재 ${ username }(으)로 로그인 했습니다."
@@ -6689,6 +6809,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "파일 검색 색인 도중 브라우저의 사용 가능 공간이 가득 찼습니다. 공간을 충분히 확보한 후 재색인을 진행하십시오."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
@@ -6700,6 +6823,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "파일이 재색인 중입니다. 계속 검색할 수 있으나 색인 완료 전까지는 검색 결과가 완전하지 않을 수 있습니다. 색인 완료 후 알려드립니다."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "비밀번호 재설정으로 인해 파일에 더 이상 접근할 수 없습니다. 다시 접근하기 위해 이전 암호화 키를 다시 업로드하세요. ${ KeyReactivationButton }"
@@ -6856,6 +6982,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
       ],
+      "${ downloads } downloads": [
+        "${ downloads }개 다운로드"
+      ],
       "${ n } month": [
         "${ n }개월"
       ],
@@ -6933,6 +7062,9 @@
       ],
       "Apply to all unverified items": [
         "인증되지 않은 모든 항목에 적용"
+      ],
+      "Asset": [
+        "에셋"
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
@@ -7045,6 +7177,9 @@
       "Created": [
         "생성됨"
       ],
+      "Created ${ created }": [
+        "${ created } 생성됨"
+      ],
       "Credits": [
         "크레딧"
       ],
@@ -7063,11 +7198,20 @@
       "Deleted": [
         "삭제됨"
       ],
+      "Deleted ${ deleted }": [
+        "${ deleted }이(가) 삭제됨"
+      ],
       "Device": [
         "기기"
       ],
+      "Device #${ position }": [
+        "기기 #${ position }"
+      ],
       "Device name": [
         "기기 이름"
+      ],
+      "Device: ${ name }": [
+        "기기: ${ name }"
       ],
       "Disable this link on a specific date": [
         "특정 날짜에 이 링크 비활성화"
@@ -7132,8 +7276,14 @@
       "Expired": [
         "만료됨"
       ],
+      "Expired on ${ formatted }": [
+        "${ formatted }에 만료됨"
+      ],
       "Expires": [
         "만료"
+      ],
+      "Expires ${ formatted }": [
+        "${ formatted }뒤에 만료됨"
       ],
       "Expiry": [
         "만료"
@@ -7204,8 +7354,14 @@
       "Index kinds": [
         "색인 종류"
       ],
+      "Indexing": [
+        "색인 중"
+      ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
+      ],
+      "Item #${ position }": [
+        "항목 #${ position }"
       ],
       "Keep both": [
         "둘 다 유지"
@@ -7231,6 +7387,9 @@
       "Location": [
         "위치"
       ],
+      "Location: ${ item.location }": [
+        "위치: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "로그인하거나 회원 가입하세요 "
       ],
@@ -7251,6 +7410,9 @@
       ],
       "Modified": [
         "수정됨"
+      ],
+      "Modified ${ modified }": [
+        "${ modified }에 수정됨"
       ],
       "Move to Archive": [
         "보관 편지함으로 이동"
@@ -7273,8 +7435,14 @@
       "Never": [
         "안 함"
       ],
+      "Never expires": [
+        "만료되지 않음"
+      ],
       "New password": [
         "새 비밀번호"
+      ],
+      "Non-consensual intimate imagery": [
+        "합의 없는 사적 촬영물"
       ],
       "Not active": [
         "비활성"
@@ -7317,6 +7485,9 @@
       ],
       "Payment method": [
         "결제 수단"
+      ],
+      "Pending invitation": [
+        "대기 중인 초대장"
       ],
       "PGP scheme": [
         "PGP 방식"
@@ -7376,7 +7547,7 @@
         "선택됨"
       ],
       "Set a password to limit access via link": [
-        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
+        "비밀번호를 설정하여 링크를 통한 접근 제한"
       ],
       "Set recovery method": [
         "복구 방법 설정"
@@ -7390,8 +7561,17 @@
       "Shared by": [
         "다음에 의해 공유됨:"
       ],
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy }님에 의해 공유됨"
+      ],
+      "Shared by Public link": [
+        "공개 링크로 공유됨"
+      ],
       "Shared on": [
         "다음에서 공유됨:"
+      ],
+      "Shared on ${ sharedOn }": [
+        "${ sharedOn }에 공유됨"
       ],
       "Shared with me": [
         "나와 공유됨"
@@ -9026,6 +9206,42 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\"이(가) 복사됨"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\"이(가) 성공적으로 생성되었습니다"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\"이(가) 삭제됨"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" 항목이 휴지통에서 영구적으로 삭제되었습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\"을(를) 생성할 수 없습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" 삭제 실패"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\"의 휴지통에서 삭제를 실패했습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\"(을)를 이동할 수 없습니다"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" 항목이 이동되었습니다"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" 이(가) 휴지통에서 복구되었습니다"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\"이(가) 성공적으로 이동되었습니다"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
       ],
@@ -9131,6 +9347,9 @@
       "Contact group updated": [
         "연락처 그룹 업데이트됨"
       ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "\"${ ellipsedName }\"의 사본이 휴지통으로 이동됨"
+      ],
       "Device failed to be removed": [
         "기기 삭제 실패"
       ],
@@ -9151,6 +9370,9 @@
       ],
       "Failed to accept share invitation": [
         "초대장 공유 수락 실패"
+      ],
+      "Failed to load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
       ],
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
@@ -9240,6 +9462,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "앨범의 이름이 성공적으로 변경되었습니다"
       ]
     },
     "Oauth instructions": {
@@ -10148,6 +10375,9 @@
       ],
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
+      ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
       ],
       "Search parent folder": [
         "상위 폴더 검색"
@@ -12021,6 +12251,18 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
       ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 파일은 ${ author }에 의해 안전하게 생성되었습니다."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 파일은 ${ author }에 의해 안전하게 업로드되었습니다."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 폴더는 ${ author }에 의해 안전하게 생성되었습니다."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "디지털 서명이 인증되었습니다. 이 폴더는 ${ author }에 의해 안전하게 업로드 되었습니다."
+      ],
       "Discard": [
         "취소"
       ],
@@ -12195,6 +12437,9 @@
       "Import your data to ${ BRAND_NAME }": [
         "${ BRAND_NAME }으로 데이터 불러오기"
       ],
+      "Index populators": [
+        "인덱스 구성기"
+      ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
@@ -12350,6 +12595,9 @@
       ],
       "Other names": [
         "다른 이름"
+      ],
+      "Out of storage space": [
+        "저장 공간 부족"
       ],
       "Payment failed": [
         "결제 실패"
@@ -12615,6 +12863,9 @@
       "Upload and share files": [
         "파일 업로드 및 공유하기"
       ],
+      "Upload empty file?": [
+        "비어있는 파일을 업로드하시겠습니까?"
+      ],
       "Uploaded": [
         "업로드 완료"
       ],
@@ -12645,6 +12896,18 @@
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
       ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "${ author }님이 해당 파일을 생성했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "${ author }이(가) 해당 폴더를 생성했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "${ author }님이 이 파일을 업로드했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "${ author }님이 이 폴더를 업로드했는지 확인할 수 없었습니다."
+      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "익명의 사용자가 이 파일을 생성했는지 확인할 수 없습니다."
       ],
@@ -12659,6 +12922,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "${ claimedContentAuthor }님이 파일을 업로드했는지 확인할 수 없었습니다. 원인: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "${ claimedKeyAuthor }님이 해당 노드를 생성했는지 확인할 수 없습니다. 원인: ${ node.keyAuthor.error.error }"
       ],
       "We'd love to hear from you!": [
         "회원님의 의견을 기다리고 있어요!"
