@@ -676,9 +676,6 @@
       "Skip": [
         "Omet"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Ordena els elements de la caixa forta"
       ],
@@ -1338,9 +1335,6 @@
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
-      ],
-      "Try reaching out to the link owner.": [
-        "Intenteu contactar el propietari de l'enllaç."
       ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
@@ -2105,8 +2099,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2336,6 +2329,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Ordenat per camp (primer el títol, després el nom d'usuari o correu electrònic, el lloc web i les notes) i per la precisió de la coincidència (exacta, comença per, conté)."
       ],
       "Read item": [
         "Llegir l'element"
@@ -2604,9 +2600,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la segona contrasenya"
-      ],
-      "Unlock with biometrics": [
-        "Desbloquegeu-ho amb dades biomètriques"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
@@ -3695,6 +3688,9 @@
       "Regular expression": [
         "Expressió regular"
       ],
+      "Relevant": [
+        "Rellevant"
+      ],
       "Remove link": [
         "Esborra l'enllaç"
       ],
@@ -3859,9 +3855,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
       "Tier/Level": [
         "Nivell"
