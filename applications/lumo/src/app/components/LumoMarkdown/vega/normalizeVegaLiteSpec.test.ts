@@ -1,4 +1,5 @@
-import { normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
+import { normalizeArcDonutCharts, normalizeLayeredChartUnits, normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
+import { applyResponsiveChartLayout } from './protonVegaTheme';
 
 describe('normalizeVegaLiteSpec', () => {
     it('combines same-unit series on one chart when inferring from values', () => {
@@ -74,6 +75,62 @@ describe('normalizeVegaLiteSpec', () => {
         expect(normalized.vconcat ?? normalized.encoding).toBeDefined();
         expect(normalized.mark).toBeUndefined();
         expect(normalized.resolve).toBeUndefined();
+    });
+
+    it('removes empty layer placeholders and inherits x/y for highlight overlays', () => {
+        const normalized = normalizeVegaLiteSpec({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: { text: 'API Error Rate by Hour (UTC)', subtitle: 'Spike at 14-15h' },
+            data: {
+                values: [
+                    { hour: 13, rate: 0.49 },
+                    { hour: 14, rate: 1.34 },
+                    { hour: 15, rate: 1.28 },
+                ],
+            },
+            mark: { type: 'line', point: true, interpolate: 'monotone' },
+            encoding: {
+                x: { field: 'hour', type: 'ordinal', axis: { title: 'Hour (UTC)' } },
+                y: { field: 'rate', type: 'quantitative', axis: { title: 'Error rate (%)' } },
+                color: { field: 'rate', type: 'quantitative', legend: null },
+            },
+            layer: [
+                {},
+                {
+                    transform: [{ filter: 'datum.hour >= 14 && datum.hour <= 15' }],
+                    mark: { type: 'area', opacity: 0.3 },
+                },
+            ],
+        });
+
+        const layers = normalized.layer as Record<string, unknown>[];
+        const areaLayer = layers[1]!;
+        const areaEncoding = areaLayer.encoding as Record<string, unknown>;
+
+        expect(layers).toHaveLength(2);
+        expect(layers.every((layer) => Object.keys(layer).length > 0)).toBe(true);
+        expect(areaEncoding.x).toMatchObject({ field: 'hour', type: 'ordinal' });
+        expect(areaEncoding.y).toMatchObject({ field: 'rate', type: 'quantitative' });
+    });
+
+    it('strips empty layer entries from layer-only specs', () => {
+        const spec: Record<string, unknown> = {
+            layer: [
+                {
+                    mark: 'line',
+                    encoding: {
+                        x: { field: 'hour', type: 'ordinal' },
+                        y: { field: 'rate', type: 'quantitative' },
+                    },
+                },
+                {},
+            ],
+        };
+
+        normalizeLayeredChartUnits(spec);
+
+        expect((spec.layer as Record<string, unknown>[]).length).toBe(1);
     });
 
     it('splits dual-axis layered specs into vconcat', () => {
@@ -447,6 +504,93 @@ describe('normalizeVegaLiteSpec', () => {
         const encoding = spec.encoding as Record<string, unknown>;
         expect((encoding.x as Record<string, unknown>).axis).toMatchObject({ format: 'd' });
         expect((encoding.tooltip as Record<string, unknown>[])[0]).toMatchObject({ format: 'd' });
+    });
+
+    it('removes overlapping donut label layers and uses a bottom legend', () => {
+        const spec: Record<string, unknown> = {
+            width: 'container',
+            layer: [
+                {
+                    mark: { type: 'arc', outerRadius: 80, innerRadius: 40 },
+                    encoding: {
+                        theta: { field: 'percent', type: 'quantitative' },
+                        color: { field: 'method', type: 'nominal', legend: null },
+                    },
+                },
+                {
+                    mark: { type: 'text', radius: 60 },
+                    encoding: {
+                        theta: { field: 'centroid', type: 'quantitative' },
+                        text: { field: 'label', type: 'nominal' },
+                    },
+                },
+            ],
+            data: {
+                values: [
+                    { method: 'Password', percent: 41, label: '41%', centroid: 180 },
+                    { method: 'SSO', percent: 29, label: '29%', centroid: 308 },
+                ],
+            },
+        };
+
+        applyResponsiveChartLayout(spec);
+        normalizeArcDonutCharts(spec);
+
+        const layers = spec.layer as Record<string, unknown>[];
+        const arcLayer = layers[0]!;
+        const arcMark = arcLayer.mark as Record<string, unknown>;
+        const arcEncoding = arcLayer.encoding as Record<string, unknown>;
+
+        expect(spec.autosize).toEqual({ type: 'fit', contains: 'padding' });
+        expect(spec.height).toBe(280);
+        expect(layers).toHaveLength(1);
+        expect(arcMark.outerRadius).toBeGreaterThan(80);
+        expect(arcEncoding.color).toMatchObject({
+            field: 'method',
+            legend: {
+                orient: 'bottom',
+                direction: 'horizontal',
+                title: null,
+            },
+        });
+        expect(arcEncoding.tooltip).toEqual([
+            { field: 'method', type: 'nominal' },
+            { field: 'percent', type: 'quantitative', format: '.0f', title: 'Share (%)' },
+        ]);
+    });
+
+    it('removes numeric share_pct text labels from donut charts', () => {
+        const spec: Record<string, unknown> = {
+            width: 'container',
+            layer: [
+                {
+                    mark: { type: 'arc', outerRadius: 80, innerRadius: 40 },
+                    encoding: {
+                        theta: { field: 'share_pct', type: 'quantitative' },
+                        color: { field: 'method', type: 'nominal' },
+                    },
+                },
+                {
+                    mark: { type: 'text', radius: 60, fontSize: 12 },
+                    encoding: {
+                        theta: { field: 'share_pct', type: 'quantitative' },
+                        color: { field: 'method', type: 'nominal' },
+                        text: { field: 'share_pct', type: 'quantitative', format: '.0f' },
+                    },
+                },
+            ],
+            data: {
+                values: [
+                    { method: 'Password', share_pct: 41 },
+                    { method: 'SSO', share_pct: 29 },
+                ],
+            },
+        };
+
+        applyResponsiveChartLayout(spec);
+        normalizeArcDonutCharts(spec);
+
+        expect((spec.layer as Record<string, unknown>[]).length).toBe(1);
     });
 });
 

@@ -17,6 +17,7 @@ import {
     PROTON_SEQUENTIAL_RAMP,
     PROTON_STATIC_COLOR_BAND_FIELD,
 } from './protonChartTokens';
+import { isArcChartSpec } from './normalizeVegaLiteSpec';
 
 export {
     PROTON_BAR_COLOR,
@@ -571,6 +572,7 @@ function isLeafChartNode(node: Record<string, unknown>): boolean {
 }
 
 const DEFAULT_CHART_HEIGHT = 220;
+const ARC_CHART_HEIGHT = 280;
 const COMPOSED_PANEL_HEIGHT = 180;
 
 function isPanelStack(spec: Record<string, unknown>): boolean {
@@ -610,7 +612,9 @@ function stripIncompatibleAutosize(spec: Record<string, unknown>): void {
 
 function applyContainerAutosize(spec: Record<string, unknown>): void {
     if (spec.width === 'container') {
-        spec.autosize = { type: 'fit-x', contains: 'padding' };
+        spec.autosize = isArcChartSpec(spec)
+            ? { type: 'fit', contains: 'padding' }
+            : { type: 'fit-x', contains: 'padding' };
     }
 }
 
@@ -644,7 +648,7 @@ export function applyResponsiveChartLayout(spec: Record<string, unknown>): void 
     if (hasLayer || isLeafChartNode(spec)) {
         spec.width = 'container';
         if (spec.height === undefined) {
-            spec.height = DEFAULT_CHART_HEIGHT;
+            spec.height = isArcChartSpec(spec) ? ARC_CHART_HEIGHT : DEFAULT_CHART_HEIGHT;
         }
         stripIncompatibleAutosize(spec);
         applyContainerAutosize(spec);
