@@ -4024,6 +4024,9 @@
       "We cannot retrieve this item": [
         "Vi kan ikke hente dette elementet"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
+      ],
       "We were not able to load some invitations": [
         "Vi kunne ikke laste inn enkelte invitasjoner"
       ],
@@ -5253,6 +5256,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "(${ totalFoldersCount } mappe)",
         "Alle (${ totalFoldersCount } mapper)"
@@ -5523,6 +5529,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "Husker du passordet ditt? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Vil du fortsatt laste den opp?",
+        "Vil du fortsatt laste de opp?"
+      ],
       "Done": [
         "Fullført"
       ],
@@ -5725,8 +5735,8 @@
       "How does encrypted search work?": [
         "Hvordan fungerer kryptert søk?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "Jeg bekrefter herved at jeg i god tro har bekreftet at informasjonen og uttalelsene i rapporten er korrekte og fullstendige."
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Jeg bekrefter herved i god tro at informasjonen og uttalelsene i rapporten er korrekte og fullstendige."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Hvis disse filene ikke er fullstendig lastet ned lokalt på ${ deviceName }, vil du miste tilgang til dem."
@@ -6498,6 +6508,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Dette kan IKKE angres. Skriv inn enhetens navn for å bekrefte fjerningen."
       ],
+      "This file appears to be empty:": [
+        "Denne filen ser ut til å være tom:",
+        "Disse filene ser ut til å være tomme:"
+      ],
       "This file is too large to preview": [
         "Denne filen er for stor til å forhåndsvises"
       ],
@@ -6685,6 +6699,9 @@
       "Uploaded": [
         "Lastet opp"
       ],
+      "Uploaded - file is empty": [
+        "Opplastet - filen er tom"
+      ],
       "Uploading": [
         "Laster opp"
       ],
@@ -6843,6 +6860,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du er for øyeblikket pålogget som ${ username }."
@@ -7425,6 +7445,12 @@
       "Environment compatible": [
         "Miljøkompatibel"
       ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
+      ],
       "Expired": [
         "Utløpt"
       ],
@@ -7590,6 +7616,9 @@
       "Never expires": [
         "Utløper aldri"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
       "New password": [
         "Nytt passord"
       ],
@@ -7622,6 +7651,9 @@
       ],
       "Outdated version": [
         "Utdatert versjon"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
       ],
       "Password": [
         "Passord"
@@ -7676,6 +7708,9 @@
       ],
       "Region": [
         "Region"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
       ],
       "Replace existing folder or file": [
         "Erstatt eksisterende mappe eller fil"
@@ -7752,6 +7787,9 @@
       "Start date": [
         "Startdato"
       ],
+      "Starts with": [
+        "Begynner med"
+      ],
       "State": [
         "Stat"
       ],
@@ -7817,6 +7855,9 @@
       ],
       "Uploaded by": [
         "Lastet opp av"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "User opted in": [
         "Brukeren samtykket"
@@ -8219,6 +8260,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
       ],
@@ -13201,6 +13260,9 @@
       "Upload and share files": [
         "Last opp og del filer"
       ],
+      "Upload empty file?": [
+        "Laste opp tom fil?"
+      ],
       "Uploaded": [
         "Lastet opp"
       ],
@@ -13403,7 +13465,7 @@
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Load image": [
         "Last inn bilde"
@@ -13612,6 +13674,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",

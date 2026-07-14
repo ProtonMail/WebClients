@@ -782,6 +782,9 @@
       "Re-index": [
         "Indexera igen"
       ],
+      "Re-indexing in progress": [
+        "Omindexering pågår"
+      ],
       "Re-sign": [
         "Återsignera"
       ],
@@ -3880,6 +3883,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
       ],
+      "Something went wrong during folder listing": [
+        "Något gick fel när mappen skulle listas"
+      ],
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
       ],
@@ -4009,6 +4015,9 @@
       "We cannot retrieve this item": [
         "Vi kan inte hämta detta objekt"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
       "We were not able to load some invitations": [
         "Vi kunde inte ladda några inbjudningar"
       ],
@@ -4063,6 +4072,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Okrypterbar enhet"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
@@ -4983,6 +4995,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace ger ditt team möjlighet att samarbeta effektivt utan att någonsin riskera ditt företags data."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
@@ -5024,6 +5039,9 @@
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } och ${ SHEETS_APP_NAME }-filer kan inte laddas ner direkt och kommer inte att inkluderas i denna nedladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nedladdning'."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } upptäckte att det lokala sökindexet är skadat och inte längre kan användas. Bygg om indexet för att återställa sökfunktionen."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } på App Store"
@@ -5122,6 +5140,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } poster"
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
@@ -5499,6 +5520,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "Kommer du ihåg ditt lösenord? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Vill du fortfarande ladda upp den?",
+        "Vill du fortfarande ladda upp dem?"
+      ],
       "Done": [
         "Klar"
       ],
@@ -5698,6 +5723,9 @@
       "How does encrypted search work?": [
         "Hur fungerar krypterad sökning?"
       ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Jag bekräftar härmed på heder och samvete att informationen och uttalandena i rapporten är korrekta och fullständiga."
+      ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Om dessa filer inte är fullständigt nedladdade lokalt på ${ deviceName } kommer du förlora åtkomst till dem."
       ],
@@ -5776,6 +5804,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexerade ${ first }, ${ second }, ${ third } och ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexeringen stötte på ett oväntat tillstånd och kan inte fortsätta. Bygg om indexet för att återställa."
       ],
       "Indexing in progress": [
         "Indexering pågår"
@@ -5988,6 +6019,9 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
+      "No populator states found.": [
+        "Inga populator-tillstånd hittades."
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -6029,6 +6063,9 @@
       ],
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "En krypterad svit. Fullt företagsskydd."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "En av dina krypterade diskar är låst. Det mest sannolika är att det beror på att lösenordet nyligen återställts."
@@ -6459,6 +6496,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Detta kan INTE ångras. Ange enhetens namn för att bekräfta borttagning."
       ],
+      "This file appears to be empty:": [
+        "Denna fil verkar vara tom:",
+        "Dessa filer verkar vara tomma:"
+      ],
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
       ],
@@ -6537,6 +6578,9 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "För att möjliggöra en verkligt privat sökfunktion så behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } som vanligt - vi informerar dig när indexeringen är färdig."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "För att aktivera en verkligt privat sökfunktion behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } som vanligt - vi meddelar dig när indexeringen är klar."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
@@ -6643,6 +6687,9 @@
       "Uploaded": [
         "Uppladdad"
       ],
+      "Uploaded - file is empty": [
+        "Uppladdad – fil är tom"
+      ],
       "Uploading": [
         "Laddar upp"
       ],
@@ -6698,6 +6745,9 @@
         "Vi kunde inte spara detta foto till din Drive",
         "Vi kunde inte spara flera foton till din Drive"
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Vi kunde inte verifiera att ${ nameAuthor } laddade upp ${ nodeName }. Följande kan ha blivit manipulerat: filernas ordning. Öppna endast om du litar på det."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
@@ -6731,6 +6781,9 @@
       ],
       "Week": [
         "Vecka"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Välkommen till ${ DRIVE_APP_NAME }, under de första 10 minuterna räknas inte filer som du laddar upp mot din kvot för lagringsutrymme."
       ],
       "What do you want to do?": [
         "Vad vill du göra?"
@@ -6795,6 +6848,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du är på väg att öppna din standardwebbläsare och besöka:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du är för närvarande inloggad som ${ username }."
@@ -6869,6 +6925,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att du har ändrat behörighet till visare. Endast ägaren kan ändra din behörighet igen."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
       ],
@@ -6903,6 +6962,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Din webbläsare fick slut på utrymme vid indexering av filer för sökning. Frigör lagringsutrymme och bygg sedan om indexet."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -6914,6 +6976,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Dina filer håller på att omindexeras. Du kan fortsätta söka - resultaten kan dock vara ofullständiga tills det är klart. Vi meddelar dig när det är färdigt."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dina filer är inte längre åtkomliga på grund av en lösenordsåterställning. Ladda upp den gamla krypteringsnyckeln igen för att återfå åtkomsten. ${ KeyReactivationButton }"
@@ -7144,6 +7209,9 @@
       ],
       "App password": [
         "Applösenord"
+      ],
+      "Applications in a business setting": [
+        "Applikationer i en affärsmiljö"
       ],
       "Apply to all duplicated files": [
         "Tillämpa till alla duplicerade filer"
@@ -7533,8 +7601,14 @@
       "Never expires": [
         "Löper aldrig ut"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "Non-consensual intimate imagery": [
+        "Icke-konsensuella intima bilder"
       ],
       "Not active": [
         "Inte aktiv"
@@ -7562,6 +7636,9 @@
       ],
       "Outdated version": [
         "Föråldrad version"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ],
       "Password": [
         "Lösenord"
@@ -8089,6 +8166,9 @@
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
@@ -8162,6 +8242,9 @@
       ]
     },
     "Message": {
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
       ],
@@ -9909,6 +9992,12 @@
       ],
       "Faster uploads for large or multiple files": [
         "Snabbare uppladdningar för stora eller flera filer"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Filer som laddas upp under denna tid kommer inte att räknas av mot din gräns för lagringsutrymme."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Filer som laddas upp nu räknas inte av mot din gräns för lagringsutrymme"
       ],
       "Final approval in progress": [
         "Slutligt godkännande pågår"
@@ -12373,6 +12462,9 @@
       "Card verification": [
         "Kortverifiering"
       ],
+      "Change access to viewer?": [
+        "Ändra behörighet till visare?"
+      ],
       "Change layout": [
         "Ändra layout"
       ],
@@ -12713,6 +12805,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importera din data till ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Index-populatorer"
       ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
@@ -13138,6 +13233,9 @@
       "Upload and share files": [
         "Ladda upp och dela filer"
       ],
+      "Upload empty file?": [
+        "Ladda upp tom fil?"
+      ],
       "Uploaded": [
         "Uppladdat"
       ],
@@ -13299,6 +13397,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
+      ],
+      "Change shared item settings": [
+        "Ändra inställningar för delat objekt"
       ],
       "Customize import to reduce the number of folders": [
         "Anpassa import för att minska antalet mappar"

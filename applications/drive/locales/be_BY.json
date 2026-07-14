@@ -4084,6 +4084,9 @@
       "We cannot retrieve this item": [
         "Немагчыма атрымаць гэты элемент"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
       "We were not able to load some invitations": [
         "Не ўдалося загрузіць некаторыя запрашэнні"
       ],
@@ -5405,6 +5408,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
       ],
+      "Album": [
+        "Альбом"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Усе (${ totalFoldersCount } папка)",
         "Усе (${ totalFoldersCount } папкі)",
@@ -5687,6 +5693,12 @@
       "Do you remember your password? ${ verifyButton }": [
         "Вы памятаеце свой пароль? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Вы ўсё яшчэ хочаце запампаваць яго?",
+        "Вы ўсё яшчэ хочаце запампаваць іх?",
+        "Вы ўсё яшчэ хочаце запампаваць іх?",
+        "Вы ўсё яшчэ хочаце запампаваць іх?"
+      ],
       "Done": [
         "Гатова"
       ],
@@ -5891,7 +5903,7 @@
       "How does encrypted search work?": [
         "Як працуе зашыфраваны пошук?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Я пацвярджаю і ўсведамляю, што інфармацыя і заявы, якія змяшчаюцца ў справаздачы, з'яўляюцца правільнымі і поўнымі."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
@@ -6680,6 +6692,12 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Гэта дзеянне НЕМАГЧЫМА адрабіць. Увядзіце назву прылады, каб пацвердзіць выдаленне."
       ],
+      "This file appears to be empty:": [
+        "Здаецца, што гэты файл пусты:",
+        "Здаецца, што гэтыя файлы пустыя:",
+        "Здаецца, што гэтыя файлы пустыя:",
+        "Здаецца, што гэтыя файлы пустыя:"
+      ],
       "This file is too large to preview": [
         "Занадта вялікі файл для папярэдняга прагляду"
       ],
@@ -6869,6 +6887,9 @@
       "Uploaded": [
         "Запампавана"
       ],
+      "Uploaded - file is empty": [
+        "Запампавана: файл пусты"
+      ],
       "Uploading": [
         "Запампоўванне"
       ],
@@ -7033,6 +7054,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
@@ -7639,6 +7663,12 @@
       "Environment compatible": [
         "Сумяшчальнасць з асяроддзем"
       ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
       "Expired": [
         "Пратэрмінавана"
       ],
@@ -7837,6 +7867,9 @@
       "Outdated version": [
         "Састарэлая версія"
       ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -7890,6 +7923,9 @@
       ],
       "Region": [
         "Вобласць"
+      ],
+      "Regular expression": [
+        "Рэгулярны выраз"
       ],
       "Replace existing folder or file": [
         "Замяніць існуючую папку або файл"
@@ -7966,6 +8002,9 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
       "State": [
         "Штат"
       ],
@@ -8031,6 +8070,9 @@
       ],
       "Uploaded by": [
         "Запампавана"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ],
       "User opted in": [
         "Карыстальнік, які выбраў"
@@ -8457,6 +8499,18 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
@@ -13660,6 +13714,9 @@
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
+      ],
+      "Upload empty file?": [
+        "Запампаваць пусты файл?"
       ],
       "Uploaded": [
         "Запампавана"
