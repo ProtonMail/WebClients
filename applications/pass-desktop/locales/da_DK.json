@@ -2188,6 +2188,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2425,6 +2429,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet af ${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Rangeret efter felt (titel først, derefter brugernavn eller e-mail, hjemmeside, noter) og matchens præcision (præcis, starter med, indeholder)."
       ],
       "Read item": [
         "Læs element"
@@ -2699,9 +2706,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås ${ PASS_SHORT_APP_NAME } op med din sekundære adgangskode"
-      ],
-      "Unlock with biometrics": [
-        "Lås op med biometri"
       ],
       "Unpinning item...": [
         "Frigør element..."
@@ -3810,6 +3814,9 @@
       ],
       "Reddit handle": [
         "Reddit-brugernavn"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Fjern link"
