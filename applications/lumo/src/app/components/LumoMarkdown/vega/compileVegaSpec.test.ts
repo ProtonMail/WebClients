@@ -506,4 +506,114 @@ describe('compileVegaSpec', () => {
         expect(tooltip[0]?.format).toBe('d');
         expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
     });
+
+    it('compiles FIFA ranking line chart with unsafe labelExpr after sanitization', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: {
+                text: 'FIFA Rankings: England, France, Colombia, Ireland (1994-2024)',
+                subtitle: 'Lower values indicate better ranking; inverted Y-axis shows improvement upward',
+            },
+            data: {
+                values: [
+                    { year: 1994, country: 'England', ranking: 11 },
+                    { year: 1994, country: 'France', ranking: 15 },
+                    { year: 2024, country: 'England', ranking: 4 },
+                    { year: 2024, country: 'France', ranking: 2 },
+                ],
+            },
+            mark: { type: 'line', interpolate: 'monotone', point: true },
+            encoding: {
+                x: {
+                    field: 'year',
+                    type: 'temporal',
+                    axis: {
+                        labelExpr: "datum.label.split(' ')[0]",
+                        format: 'yyyy',
+                    },
+                },
+                y: {
+                    field: 'ranking',
+                    type: 'quantitative',
+                    axis: { title: 'FIFA Ranking (inverted)' },
+                    sort: -1,
+                },
+                color: { field: 'country', type: 'nominal', legend: { title: 'Country' } },
+            },
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const x = (spec.encoding as Record<string, unknown>).x as Record<string, unknown>;
+        const y = (spec.encoding as Record<string, unknown>).y as Record<string, unknown>;
+        const xAxis = x.axis as Record<string, unknown>;
+
+        expect(x.type).toBe('ordinal');
+        expect(xAxis.labelExpr).toBeUndefined();
+        expect(y.scale).toEqual({ reverse: true });
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
+    });
+
+    it('compiles FIFA evolution line chart with integer years after sanitization', () => {
+        const raw = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 'container',
+            title: {
+                text: 'FIFA Rankings Evolution 1994-2024',
+                subtitle: 'England, France, Colombia and Ireland ranking trajectories over three decades',
+            },
+            data: {
+                values: [
+                    { year: 1994, rank: 14, country: 'England' },
+                    { year: 2024, rank: 3, country: 'England' },
+                    { year: 1994, rank: 10, country: 'France' },
+                    { year: 2024, rank: 1, country: 'France' },
+                ],
+            },
+            mark: { type: 'line', point: true, interpolate: 'monotone' },
+            encoding: {
+                x: { field: 'year', type: 'temporal', title: 'Year', timeUnit: 'yearmonth' },
+                y: { field: 'rank', type: 'quantitative', title: 'FIFA Rank' },
+                color: { field: 'country', type: 'nominal', legend: { title: 'Country' } },
+            },
+            layer: [
+                {
+                    mark: { type: 'line', point: true, interpolate: 'monotone' },
+                    encoding: {
+                        x: { field: 'year', type: 'temporal' },
+                        y: { field: 'rank', type: 'quantitative' },
+                        color: { field: 'country', type: 'nominal' },
+                    },
+                },
+                {
+                    mark: { type: 'text', align: 'left', dx: 4 },
+                    encoding: {
+                        x: { field: 'year', type: 'temporal' },
+                        y: { field: 'rank', type: 'quantitative' },
+                        text: { field: 'rank', type: 'quantitative', format: 'd' },
+                    },
+                },
+            ],
+        });
+
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+        const layers = spec.layer as Record<string, unknown>[];
+        const lineLayer = layers[0]!;
+        const x = (lineLayer.encoding as Record<string, unknown>).x as Record<string, unknown>;
+        const getLayerMarkType = (layer: Record<string, unknown>): string | undefined => {
+            const mark = layer.mark;
+            if (typeof mark === 'string') {
+                return mark;
+            }
+            if (mark && typeof mark === 'object' && !Array.isArray(mark)) {
+                return (mark as Record<string, unknown>).type as string | undefined;
+            }
+            return undefined;
+        };
+
+        expect(layers.filter((layer) => getLayerMarkType(layer) === 'line')).toHaveLength(1);
+        expect(x.type).toBe('ordinal');
+        expect(x.timeUnit).toBeUndefined();
+        expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
+    });
 });

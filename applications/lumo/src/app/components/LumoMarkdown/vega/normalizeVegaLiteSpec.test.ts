@@ -1,4 +1,4 @@
-import { normalizeArcDonutCharts, normalizeLayeredChartUnits, normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
+import { normalizeArcDonutCharts, normalizeInvertedQuantitativeAxes, normalizeLayeredChartUnits, normalizeUnsafeVegaExpressions, normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
 import { applyResponsiveChartLayout } from './protonVegaTheme';
 
 describe('normalizeVegaLiteSpec', () => {
@@ -591,6 +591,131 @@ describe('normalizeVegaLiteSpec', () => {
         normalizeArcDonutCharts(spec);
 
         expect((spec.layer as Record<string, unknown>[]).length).toBe(1);
+    });
+
+    it('strips unsafe axis labelExpr method calls used for temporal tick formatting', () => {
+        const spec: Record<string, unknown> = {
+            encoding: {
+                x: {
+                    field: 'year',
+                    type: 'ordinal',
+                    axis: {
+                        labelExpr: "datum.label.split(' ')[0]",
+                    },
+                },
+            },
+        };
+
+        normalizeUnsafeVegaExpressions(spec);
+
+        const axis = ((spec.encoding as Record<string, unknown>).x as Record<string, unknown>).axis as Record<string, unknown>;
+        expect(axis.labelExpr).toBeUndefined();
+    });
+
+    it('converts quantitative sort -1 into scale.reverse for inverted axes', () => {
+        const spec: Record<string, unknown> = {
+            encoding: {
+                y: {
+                    field: 'ranking',
+                    type: 'quantitative',
+                    sort: -1,
+                },
+            },
+        };
+
+        normalizeInvertedQuantitativeAxes(spec);
+
+        const y = (spec.encoding as Record<string, unknown>).y as Record<string, unknown>;
+        expect(y.sort).toBeUndefined();
+        expect(y.scale).toEqual({ reverse: true });
+    });
+
+    it('normalizes FIFA ranking line charts with temporal year axis and inverted y', () => {
+        const normalized = normalizeVegaLiteSpec({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            data: {
+                values: [
+                    { year: 1994, country: 'England', ranking: 11 },
+                    { year: 2024, country: 'France', ranking: 2 },
+                ],
+            },
+            mark: { type: 'line', point: true },
+            encoding: {
+                x: {
+                    field: 'year',
+                    type: 'temporal',
+                    axis: {
+                        labelExpr: "datum.label.split(' ')[0]",
+                        format: 'yyyy',
+                    },
+                },
+                y: {
+                    field: 'ranking',
+                    type: 'quantitative',
+                    sort: -1,
+                },
+                color: { field: 'country', type: 'nominal' },
+            },
+        });
+
+        const x = (normalized.encoding as Record<string, unknown>).x as Record<string, unknown>;
+        const y = (normalized.encoding as Record<string, unknown>).y as Record<string, unknown>;
+        const xAxis = x.axis as Record<string, unknown>;
+
+        expect(x.type).toBe('ordinal');
+        expect(x.timeUnit).toBeUndefined();
+        expect(x.sort).toBe('ascending');
+        expect(xAxis.labelExpr).toBeUndefined();
+        expect(xAxis.format).toBeUndefined();
+        expect(y.sort).toBeUndefined();
+        expect(y.scale).toEqual({ reverse: true });
+    });
+
+    it('strips timeUnit from ordinal year axes and avoids duplicate line layers', () => {
+        const normalized = normalizeVegaLiteSpec({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            data: {
+                values: [
+                    { year: 1994, rank: 14, country: 'England' },
+                    { year: 2024, rank: 3, country: 'England' },
+                ],
+            },
+            mark: { type: 'line', point: true, interpolate: 'monotone' },
+            encoding: {
+                x: { field: 'year', type: 'temporal', title: 'Year', timeUnit: 'yearmonth' },
+                y: { field: 'rank', type: 'quantitative', title: 'FIFA Rank' },
+                color: { field: 'country', type: 'nominal' },
+            },
+            layer: [
+                {
+                    mark: { type: 'line', point: true, interpolate: 'monotone' },
+                    encoding: {
+                        x: { field: 'year', type: 'temporal' },
+                        y: { field: 'rank', type: 'quantitative' },
+                        color: { field: 'country', type: 'nominal' },
+                    },
+                },
+                {
+                    mark: { type: 'text', align: 'left', dx: 4 },
+                    encoding: {
+                        x: { field: 'year', type: 'temporal' },
+                        y: { field: 'rank', type: 'quantitative' },
+                        color: { field: 'country', type: 'nominal' },
+                        text: { field: 'rank', type: 'quantitative', format: 'd' },
+                    },
+                },
+            ],
+        });
+
+        const layers = normalized.layer as Record<string, unknown>[];
+        const lineLayer = layers[0]!;
+        const x = (lineLayer.encoding as Record<string, unknown>).x as Record<string, unknown>;
+
+        expect(layers).toHaveLength(2);
+        expect(getMarkTypeFromLayer(lineLayer)).toBe('line');
+        expect(getMarkTypeFromLayer(layers[1]!)).toBe('text');
+        expect(x.type).toBe('ordinal');
+        expect(x.timeUnit).toBeUndefined();
     });
 });
 

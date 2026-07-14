@@ -33,7 +33,15 @@ Rules that always apply:
 - Every spec must have \`mark\` + \`encoding\`, or valid \`layer\` / \`vconcat\` / \`facet\` sub-specs.
   Never emit \`mark\` without \`encoding\`.
 - Uncertainty bands (\`area\` / \`errorband\` with y/y2) only when the data actually provides bounds.
-- Keep axis titles short; use \`"timeUnit"\` for date fields; prefer ordinal x for categorical sequences.
+- Keep axis titles short; prefer ordinal x for categorical sequences.
+
+Dates and time axes (critical):
+- **Integer calendar years** (e.g. \`1994\`, \`2024\` in a \`year\` field): use \`encoding.x.type: "ordinal"\`.
+  Never \`temporal\`, never \`timeUnit\`, never \`axis.format\`. Integer years are not timestamps — encoding
+  them as temporal produces broken \`Jan 1970\` x-axis labels.
+- **ISO date strings** (\`"2024-03-15"\`) or true timestamps: use \`encoding.x.type: "temporal"\` and
+  \`timeUnit\` only when the values are actual dates, not bare years.
+- Never combine \`type: "ordinal"\` with \`timeUnit\` on the same channel.
 
 Number formatting (critical):
 - d3 \`format: "%"\` expects **unit fractions** (0.29 → 29%). Never use it when values are already
@@ -61,6 +69,8 @@ LINE / AREA — time-series and trends. Use \`"interpolate": "monotone"\`. Multi
 one chart with fold + \`color\` encoding, or \`layer\`. When using \`layer\`, put **every** mark in the
 \`layer\` array (no root \`mark\`/\`encoding\`) and never emit empty \`{}\` placeholders. Highlight
 overlays must include \`mark\`, \`encoding\` (at least \`x\` and \`y\`), and any \`transform\`.
+To invert a quantitative axis (e.g. rankings), use \`encoding.y.scale.reverse: true\`, not \`sort: -1\`.
+Do not add per-point \`text\` label layers on multi-series line charts — use tooltips and the legend.
 
 BAR — default for **hourly / daily / monthly** single-series comparisons (error rate by hour,
 traffic by day, etc.). Vertical bars for time/ordinal x. Horizontal when category labels are long.
