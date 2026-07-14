@@ -3227,6 +3227,9 @@
       "Failed to resend invitation": [
         "Не ўдалося паўторна адправіць запрашэнне"
       ],
+      "Failed to trash document.": [
+        "Не ўдалося перамясціць дакумент у сметніцу."
+      ],
       "Failed to unshare node": [
         "Не ўдалося скасаваць абаагульванне вузла"
       ],
@@ -3589,6 +3592,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Нам не ўдалося імпартаваць гэты файл у ${ SHEETS_APP_NAME }. Вы можаце паспрабаваць скапіяваць і ўставіць змесціва ў новы файл ${ SHEETS_APP_NAME }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
@@ -5807,6 +5813,9 @@
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
       ],
@@ -6286,6 +6295,12 @@
       "Erase this link and remove everyone with access": [
         "Сцерці гэту спасылку і выдаліць доступ для ўсіх"
       ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
       "Expiry": [
         "Тэрмін дзеяння"
       ],
@@ -6427,6 +6442,9 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -6466,6 +6484,9 @@
       "Region": [
         "Вобласць"
       ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
       "Replace existing file": [
         "Замяніць бягучы файл"
       ],
@@ -6502,6 +6523,9 @@
       "Skip folder": [
         "Прапусціць папку"
       ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
       "Stop sharing": [
         "Спыніць абагульванне"
       ],
@@ -6534,6 +6558,9 @@
       ],
       "Upload picture": [
         "Запампаваць малюнак"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -6891,6 +6918,18 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
@@ -8324,6 +8363,15 @@
       ],
       "Device renamed": [
         "Прылада перайменавана"
+      ],
+      "Document failed to be restored from trash": [
+        "Не ўдалося аднавіць дакумент са сметніцы"
+      ],
+      "Document moved to trash": [
+        "Дакумент перамешчаны ў сметніцу"
+      ],
+      "Document restored from trash": [
+        "Дакумент адноўлены са сметніцы"
       ],
       "External invitation removed from the share": [
         "Знешнія запрашэнні выдалены з абагульвання"

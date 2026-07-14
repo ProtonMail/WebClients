@@ -964,7 +964,7 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "未顯示 ${ hiddenResultsCount } 個結果"
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1257,7 +1257,7 @@
         "${ maxSpaceTB }儲存"
       ],
       "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位使用者"
+        "至多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -2939,17 +2939,26 @@
       "Failed loading group members": [
         "無法再入群組成員"
       ],
+      "Failed to change permissions settings": [
+        "變更權限設定失敗"
+      ],
       "Failed to copy photo to album": [
         "複製照片至相簿失敗"
       ],
       "Failed to create folder": [
         "建立資料夾失敗"
       ],
+      "Failed to create public share node": [
+        "建立公開共享節點失敗"
+      ],
       "Failed to expand folder": [
         "展開資料夾失敗"
       ],
       "Failed to fetch node": [
         "擷取節點失敗"
+      ],
+      "Failed to fetch sharing info": [
+        "擷取共享資訊失敗"
       ],
       "Failed to load subscription data. Please try again later.": [
         "無法載入訂閱資料。請稍後再試。"
@@ -2962,6 +2971,15 @@
       ],
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
+      ],
+      "Failed to unshare node": [
+        "取消共享節點失敗"
+      ],
+      "Failed to update direct share node": [
+        "更新直接共享節點失敗"
+      ],
+      "Failed to update public share node": [
+        "更新公開共享節點失敗"
       ],
       "File \"${ name }\" is already downloading": [
         "檔案 「${ name } 」已在下載中"
@@ -3167,6 +3185,9 @@
       "status page": [
         "狀態頁面"
       ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此項目失敗"
+      ],
       "The address might be misspelled": [
         "位址可能拼錯了"
       ],
@@ -3277,6 +3298,9 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "我們在儲存最近的編輯時遇到問題，請重新整理頁面。"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
       ],
       "Wrong billing address": [
         "錯誤帳單地址"
@@ -4229,6 +4253,9 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "使用您的推薦連結**邀請朋友**加入 ${ BRAND_NAME }。"
       ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**緊急終止開關**：如果 VPN 意外斷線，則會封鎖您的網際網路，以防止資料外洩。"
+      ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "若他們訂閱，**即可獲得 ${ refereeRewardAmount }** 可用額度。"
       ],
@@ -4250,8 +4277,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN 可以隱藏您的 IP 位址並加密您的瀏覽活動，使網站、廣告商和 ISP 更難在一段時間內追蹤您。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
@@ -4366,6 +4399,9 @@
       ],
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "指派通訊錄給群組 ${ contactGroupName }"
@@ -4574,6 +4610,9 @@
       "Geoblocking": [
         "地理封鎖"
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
+      ],
       "here": [
         "這裡"
       ],
@@ -4603,6 +4642,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "若您仍然選擇降級，你將會失去 ${ VPN_APP_NAME } 的付費功能。"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "若你移除自己，你將失去對「${ fileName }」的存取權，且除非擁有者再次與你共享，否則你將無法重新開啟它。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
@@ -4871,6 +4913,9 @@
       "Primary": [
         "主要"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
+      ],
       "Read-only": [
         "唯讀"
       ],
@@ -4952,6 +4997,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "有些網站和串流服務會根據地區限制內容。VPN 能讓您繞過這些限制並自由存取網路。"
       ],
@@ -4960,6 +5008,9 @@
       ],
       "Spreadsheets": [
         "試算表"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "啟用以下 VPN 設定，輕鬆保持連線："
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "每${ cycle }個月自動續訂。"
@@ -5029,6 +5080,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
       ],
       "This will permanently delete the file you uploaded.": [
         "此將會永久刪除所有上傳的檔案。"
@@ -5171,6 +5225,9 @@
       "When working remotely": [
         "當遠端工作時"
       ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "當您連線到 VPN 時，它會使用加密技術來隱藏您的 IP 位址（分配給您裝置的唯一代碼）。"
+      ],
       "Who has access": [
         "誰有訪問權"
       ],
@@ -5197,6 +5254,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "您將要開啟預設瀏覽器並造訪："
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
       ],
       "You are currently signed in as ${ username }.": [
         "您目前已登入為 ${ username }。"
@@ -5243,14 +5303,23 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "將存取權變更為檢視者後，你將無法共享「${ fileName }」。只有擁有者能再次變更你的存取權。"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "你即將拒絕加入共享相簿 ${ invitationName } 的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該相簿。確定要繼續嗎？"
+      ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "您將拒絕此加入至 ${ invitationName } 資料夾的邀請。若您繼續，您將無法存取至它除非擁有者再次邀請您。您確定要繼續嗎?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "你即將拒絕加入 ${ invitationName } 項目的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該項目。確定要繼續嗎？"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："
@@ -5293,6 +5362,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的網際網路服務供應商可以監控並有時出售您的資料，甚至限制您可以存取的網站。"
       ],
       "Your IP": [
         "您的 IP"
@@ -5405,6 +5477,9 @@
       "Fallback": [
         "後備"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "已廢止"
       ],
@@ -5457,6 +5532,9 @@
       ],
       "Alias title": [
         "別名標題"
+      ],
+      "Allow editors to change permissions and share": [
+        "允許編輯者變更權限和共享"
       ],
       "Anonymous": [
         "匿名 "
@@ -5563,6 +5641,9 @@
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
       ],
+      "Disable this link on a specific date": [
+        "在特定日期停用此連結"
+      ],
       "Don't ask again": [
         "不要再次詢問"
       ],
@@ -5616,6 +5697,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "刪除連結並移除所有有權限者"
+      ],
+      "Expiry": [
+        "到期時間"
       ],
       "Extended address": [
         "詳細位址"
@@ -6904,7 +6988,7 @@
         "保管庫共享 (至多 ${ n } 人)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "與最多 ${ n } 個人分享保管庫"
+        "至多可與 ${ n } 個人共用保管庫"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN 附帶廣告攔截器及惡意軟體防護"
@@ -7320,6 +7404,9 @@
       "\"${ ellipsedName }\" failed to be created": [
         "「${ ellipsedName }」創建失敗"
       ],
+      "\"${ ellipsedName }\" moved": [
+        "「${ ellipsedName }」已移動"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" 已共享"
       ],
@@ -7452,6 +7539,9 @@
       "Failed to load invitation details": [
         "載入邀請函詳細資料失敗"
       ],
+      "Failed to load sharing details": [
+        "載入共享詳細資料失敗"
+      ],
       "Failed to reject share invitation": [
         "失敗拒絕加入邀請"
       ],
@@ -7493,6 +7583,12 @@
       ],
       "Root folder failed to be loaded": [
         "根資料夾載入失敗"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "設定已更新。編輯者可以變更權限和共享。"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "設定已更新。編輯者無法變更權限或進行共享。"
       ],
       "Share invitation accepted successfully": [
         "共享邀請函成功同意"
@@ -7669,6 +7765,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "在110 多個國家提供極速 VPN 伺服器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding Trial": {
@@ -7713,6 +7812,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -8376,6 +8478,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -8596,6 +8707,9 @@
       "Browse securely": [
         "安全地瀏覽"
       ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
+      ],
       "Get unlimited aliases": [
         "取得無限別名"
       ],
@@ -8701,6 +8815,9 @@
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "保持您的密碼安全和整齊於多個保管庫"
@@ -9494,6 +9611,9 @@
       "Link confirmation": [
         "外部連結確認"
       ],
+      "Make a secure connection your default": [
+        "將安全連線設為您的預設設定"
+      ],
       "Manage secure link": [
         "管理安全連結"
       ],
@@ -9713,6 +9833,9 @@
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
       "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
         "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
@@ -9739,6 +9862,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
+      ],
+      "What can a VPN protect you from?": [
+        "VPN 可以保護您免受什麼威脅？"
       ],
       "What is a VPN?": [
         "甚麼是 VPN?"
@@ -9788,6 +9914,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
+      "Change shared item settings": [
+        "變更共享項目設定"
+      ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"
       ],
@@ -9827,6 +9956,9 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "當包含於此電子郵件訊息和檔案名稱以零存取加密儲存"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
       ],
@@ -9845,8 +9977,14 @@
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ],
       "We have sent them an invite to access the item.": [
         "您已寄送他們存取項目的邀請。"
@@ -9896,6 +10034,9 @@
       ],
       "Name must not be empty": [
         "名稱不得留空"
+      ],
+      "Name must not contain slashes (/)": [
+        "名稱不得包含斜線 (/)"
       ]
     },
     "Video control": {

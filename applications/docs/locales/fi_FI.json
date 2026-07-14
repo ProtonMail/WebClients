@@ -855,6 +855,9 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
+      "Upgrade for 200GB": [
+        "Päivitä 200 Gt:n tilaukseen"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
@@ -2634,6 +2637,9 @@
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Avaa 15 Gt tallennustilaa vain hintaan ${ config.offerPrice }."
       ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Päivittäkää tilaukseen ${ planName }, jotta voitte jatkaa tiedostojen jakamista muokkausoikeudella"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
@@ -2989,6 +2995,9 @@
       "Cannot export this contact": [
         "Tätä yhteystietoa ei voida viedä"
       ],
+      "Cannot find move target": [
+        "Siirtokohdetta ei löydy"
+      ],
       "Contact could not be saved": [
         "Yhteystietoa ei voitu tallentaa"
       ],
@@ -3054,6 +3063,15 @@
       "Failed to create folder": [
         "Kansion luominen epäonnistui"
       ],
+      "Failed to create public share node": [
+        "Julkisen jakosolmun luominen epäonnistui"
+      ],
+      "Failed to expand folder": [
+        "Kansion laajentaminen epäonnistui"
+      ],
+      "Failed to fetch node": [
+        "Solmun noutaminen epäonnistui"
+      ],
       "Failed to fetch sharing info": [
         "Jakotietojen nouto epäonnistui"
       ],
@@ -3080,6 +3098,9 @@
       ],
       "Failed to resend invitation": [
         "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
+      "Failed to trash document.": [
+        "Dokumentin siirtäminen roskakoriin epäonnistui."
       ],
       "Failed to unshare node": [
         "Solmun jaon poistaminen epäonnistui"
@@ -3422,6 +3443,9 @@
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Emme voineet tuoda tätä tiedostoa kohteeseen ${ SHEETS_APP_NAME }. Voit yrittää kopioida ja liittää sisällön uuteen ${ SHEETS_APP_NAME }-tiedostoon."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
+      ],
       "Wrong billing address": [
         "Virheellinen laskutusosoite"
       ],
@@ -3446,6 +3470,9 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Laite, jonka salausta ei voi purkaa"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
@@ -4541,6 +4568,9 @@
       "Can't move a folder into itself": [
         "Kansiota ei voi siirtää itseensä"
       ],
+      "Can't write into folder": [
+        "Kansioon ei voida kirjoittaa"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
@@ -5494,6 +5524,9 @@
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Olet nyt kirjautuneena ${ username } tilille."
       ],
@@ -5662,6 +5695,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Menetätte myös ${ boldPlanTitle }-ominaisuuksien käyttöoikeuden:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Menetätte pääsyn tilaukseen ${ boldPlanTitle } ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
@@ -5953,6 +5989,12 @@
       "Erase this link and remove everyone with access": [
         "Poista tämä linkki ja kaikki myönnetyt käyttöoikeudet"
       ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
+      ],
       "Expiry": [
         "Erääntyminen"
       ],
@@ -6070,6 +6112,9 @@
       "Navigation": [
         "Navigaatio"
       ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
       "New password": [
         "Uusi salasana"
       ],
@@ -6090,6 +6135,9 @@
       ],
       "Optional": [
         "Valinnainen"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
       "Password": [
         "Salasana"
@@ -6130,6 +6178,9 @@
       "Region": [
         "Alue"
       ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
+      ],
       "Replace existing file": [
         "Korvaa olemassa oleva tiedosto"
       ],
@@ -6166,6 +6217,9 @@
       "Skip folder": [
         "Ohita kansio"
       ],
+      "Starts with": [
+        "Alkaa"
+      ],
       "Stop sharing": [
         "Lopeta jakaminen"
       ],
@@ -6198,6 +6252,9 @@
       ],
       "Upload picture": [
         "Lataa kuva"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
       ],
       "Username": [
         "Käyttäjätunnus"
@@ -6533,6 +6590,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ilmainen kokeilusi on päättynyt. ${ nonAutoRenewalAction }"
       ],
@@ -7836,6 +7911,15 @@
       "Device renamed": [
         "Laite nimettiin uudelleen"
       ],
+      "Document failed to be restored from trash": [
+        "Asiakirjan palauttaminen roskakorista epäonnistui"
+      ],
+      "Document moved to trash": [
+        "Dokumentti siirrettiin roskakoriin"
+      ],
+      "Document restored from trash": [
+        "Asiakirja palautettu roskakorista"
+      ],
       "External invitation removed from the share": [
         "Ulkoinen kutsu poistettiin jaosta"
       ],
@@ -7856,6 +7940,9 @@
       ],
       "Failed to reject share invitation": [
         "Jakokutsusta kieltäytyminen epäonnistui"
+      ],
+      "Failed to rename document": [
+        "Asiakirjan uudelleennimeäminen epäonnistui"
       ],
       "Failed to upload files: ${ err }": [
         "Tiedostojen tallennus epäonnistui: ${ err }"
@@ -7998,6 +8085,9 @@
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Viimeinen tilaisuus saada 80 % alennusta ensimmäisestä kuukaudestanne tilauksesta ${ plan }."
+      ],
       "Last day to save": [
         "Viimeisin tallennettava päivä"
       ],
@@ -8028,6 +8118,12 @@
       "This offer won't be shown again.": [
         "Tätä tarjousta ei näytetä uudelleen"
       ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tuottavuutenne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tallennustilanne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
       "When you switch from a monthly to annual subscription.": [
         "Kun vaihdat kuukausittaisesta tilauksesta vuosittaiseen."
       ],
@@ -8053,6 +8149,9 @@
       "Advanced threat protection": [
         "Edistynyt uhkasuojaus"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Tee yhteistyötä muiden kuin ${ BRAND_NAME } -käyttäjien kanssa"
+      ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
@@ -8076,6 +8175,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "Huippunopeat VPN-yhteydet yli 110 maassa"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Rajattomasti aliaksia henkilöllisyytenne suojaamiseksi"
       ]
     },
     "Onboarding Trial": {
@@ -8109,11 +8211,20 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Voitte silti peruuttaa 30 päivän kuluessa ja saada suhteellisen hyvityksen."
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Voitte edelleen peruuttaa tilauksen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
+      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Voitte käyttää tilausta ${ planTitle } kokeilun päättymiseen saakka veloituksetta."
       ]
     },
     "Option": {
@@ -9172,11 +9283,23 @@
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hankkikaa 500 Gt kaikkien tiedostojenne ja valokuvienne turvalliseen tallentamiseen"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Käyttäkää huippunopeita VPN-palvelimia yli 110 maassa"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hankkikaa yksi tilaus, joka sisältää kaiken: hankkikaa ${ BRAND_NAME } Unlimited"
+      ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Suojatkaa tilinne uhilta Sentinelin avulla"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
@@ -10027,6 +10150,9 @@
       "Need more aliases?": [
         "Tarvitsetko lisää aliaksia?"
       ],
+      "Need to share more files with edit access?": [
+        "Haluatteko jakaa useampia tiedostoja muokkausoikeudella?"
+      ],
       "Next": [
         "Seuraava"
       ],
@@ -10224,6 +10350,12 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "Päivitä säilyttääksesi premium-etusi."
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tuottavuutenne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tallennustilanne hintaan ${ formattedPrice } tilauksella ${ planName }"
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
@@ -10542,6 +10674,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",

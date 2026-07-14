@@ -3224,6 +3224,9 @@
       "Failed to resend invitation": [
         "Opätovné odoslanie pozvánky zlyhalo"
       ],
+      "Failed to trash document.": [
+        "Odstránenie dokumentu do koša zlyhalo."
+      ],
       "Failed to unshare node": [
         "Nepodarilo sa zrušiť zdieľanie uzla"
       ],
@@ -3586,6 +3589,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Tento súbor sa nepodarilo importovať do aplikácie ${ SHEETS_APP_NAME }. Môžete skúsiť skopírovať a vložiť obsah do nového dokumentu ${ SHEETS_APP_NAME }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
@@ -5804,6 +5810,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "V súčasnosti používate účet ako ${ username }."
       ],
@@ -6283,6 +6292,12 @@
       "Erase this link and remove everyone with access": [
         "Vymazať tento odkaz a odstrániť všetkých s prístupom"
       ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
       "Expiry": [
         "Platnosť"
       ],
@@ -6403,6 +6418,9 @@
       "Navigation": [
         "Navigácia"
       ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
       "New password": [
         "Nové heslo"
       ],
@@ -6423,6 +6441,9 @@
       ],
       "Optional": [
         "Voliteľné"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "Password": [
         "Heslo"
@@ -6463,6 +6484,9 @@
       "Region": [
         "Kraj"
       ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
       "Replace existing file": [
         "Nahradiť existujúci súbor"
       ],
@@ -6499,6 +6523,9 @@
       "Skip folder": [
         "Preskočiť priečinok"
       ],
+      "Starts with": [
+        "Začína s"
+      ],
       "Stop sharing": [
         "Ukončiť zdieľanie"
       ],
@@ -6531,6 +6558,9 @@
       ],
       "Upload picture": [
         "Nahrať obrázok"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ],
       "Username": [
         "Používateľské meno"
@@ -6888,6 +6918,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
       ],
@@ -8270,6 +8318,15 @@
       ],
       "Device renamed": [
         "Zariadenie premenované"
+      ],
+      "Document failed to be restored from trash": [
+        "Obnova dokumentu z koša zlyhala"
+      ],
+      "Document moved to trash": [
+        "Dokument bol presunutý do koša"
+      ],
+      "Document restored from trash": [
+        "Dokument z koša bol obnovený"
       ],
       "External invitation removed from the share": [
         "Externá pozvánka odstránená zo zdieľania"
@@ -11243,6 +11300,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
