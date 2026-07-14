@@ -4420,6 +4420,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Xác minh không thành công, vui lòng thử lại trong một giờ."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Không thể gửi mã xác minh bằng phương thức này."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Chúng tôi đã dừng ký DKIM do sự cố với cấu hình DNS. Vui lòng làm theo hướng dẫn dưới đây để tiếp tục ký."
       ],
@@ -7940,6 +7943,9 @@
       "You already have a free account": [
         "Bạn đã có một tài khoản miễn phí"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Hiện đang đăng nhập với tên ${ username } cho ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Bạn hiện đang đăng nhập với tên ${ username }."
       ],
@@ -9309,9 +9315,6 @@
       ],
       "Create an alias": [
         "Tạo biệt danh"
-      ],
-      "Don't have access to your 2FA?": [
-        "Không có quyền truy cập 2FA?"
       ],
       "Encryption and keys": [
         "Mã hóa và khóa"
@@ -12978,6 +12981,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Bạn có ${ timeRemaining.inDays } ngày để đặt lại mật khẩu."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Còn ${ timeRemaining.inHours } giờ để đặt lại mật khẩu."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Còn ${ timeRemaining.inMinutes } phút để đặt lại mật khẩu."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Còn ${ timeRemaining.inSeconds } giây để đặt lại mật khẩu."
       ]
     },
     "session_recovery:available:link": {

@@ -4500,6 +4500,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "შემოწმება წარუმატებელია. ერთ საათში თავიდან სცადეთ."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DKIM ხელმოწერა შეწყვეტილია თქვენი DNS-ის კონფიგურაციის პრობლემების გამო. ხელმოწერის გასაგრძელებლად ქვემოთ მოყვანილ ინსტრუქციებს მიჰყევით."
       ],
@@ -8119,6 +8122,9 @@
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "თქვენ ამჟამად შესული ხართ როგორც ${ username } ${ organizationName }-სთვის."
+      ],
       "You are currently signed in as ${ username }.": [
         "შესული ბრძანდებით, როგორც ${ username }."
       ],
@@ -8369,6 +8375,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
@@ -9503,9 +9512,6 @@
       ],
       "Details": [
         "დეტალები"
-      ],
-      "Don't have access to your 2FA?": [
-        "არ გაქვთ წვდომა თქვენს 2FA-ზე?"
       ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
@@ -13232,6 +13238,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად."
       ]
     },
     "session_recovery:available:link": {
@@ -14258,6 +14276,9 @@
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } გაძლევთ წვდომას ყველა პრემიუმ ფუნქციაზე ${ BRAND_NAME }-ის ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME } პროდუქტებიდან. კონფიდენციალურობა ჩაშენებულია, ასე რომ შეგიძლიათ მშვიდად განაგრძოთ მუშაობა იმის ცოდნით, რომ თქვენი მონაცემები და იდენტობა უსაფრთხოდაა."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
       ],
@@ -14478,6 +14499,9 @@
       ],
       "Upload any new files": [
         "ატვირთეთ ნებისმიერი ახალი ფაილი"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "მომხმარებელთა გამოწერები ${ BRAND_NAME }-ის შემოსავლის ერთადერთი წყაროა. თქვენი მხარდაჭერა გვეხმარება დამოუკიდებლობის შენარჩუნებაში, ხელს უწყობს ჩვენს მისიას ონლაინ კონფიდენციალურობისთვის და ეხმარება თავისუფლებისთვის მებრძოლ აქტივისტებსა და ორგანიზაციებს."
       ],
       "Users won’t be able to manage their calendars": [
         "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
