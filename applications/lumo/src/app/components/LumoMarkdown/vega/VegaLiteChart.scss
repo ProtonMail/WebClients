@@ -53,8 +53,16 @@
         }
     }
 
+    &--loading-only {
+        min-height: rem(220);
+    }
+
     &--failed {
-        min-height: auto;
+        min-height: rem(72);
+    }
+
+    &__failure-summary {
+        line-height: 1.4;
     }
 
     &__viewport .vega-embed {
@@ -130,7 +138,7 @@
     border: 1px solid var(--border-weak);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-norm);
-    color: #1c1340;
+    color: var(--text-norm);
     font-family: Inter, system-ui, sans-serif;
     font-size: rem(11);
     line-height: 1.15;
@@ -162,7 +170,7 @@
     }
 
     table tr td.key {
-        color: #6a6580;
+        color: var(--text-weak);
         max-width: rem(120);
         padding-right: rem(6);
         text-align: left;

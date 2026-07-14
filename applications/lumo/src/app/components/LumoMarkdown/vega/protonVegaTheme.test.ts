@@ -311,4 +311,22 @@ describe('protonVegaTheme', () => {
             '#43239B',
         ]);
     });
+
+    it('uses readable ink and legend colors in dark mode', () => {
+        const darkTheme = document.createElement('style');
+        darkTheme.id = 'lumo-dark-theme';
+        document.head.appendChild(darkTheme);
+
+        try {
+            const config = getProtonVegaConfig();
+
+            expect(config.title?.color).toBe('#FFFFFF');
+            expect(config.legend?.labelColor).toBe('#ADABA9');
+            expect(config.text?.color).toBe('#ADABA9');
+            expect(config.range?.ramp).toEqual(['#2A2440', '#4A3878', '#6D4AFF', '#A780FF', '#DAC7FF']);
+            expect(config.arc?.stroke).toBe('#1C1B22');
+        } finally {
+            darkTheme.remove();
+        }
+    });
 });

@@ -21,6 +21,8 @@ Prefer native charts over generated images:
   when a \`vega-lite\` block would work.
 
 Rules that always apply:
+- Emit **strict JSON only**: double-quoted keys and strings, no trailing commas, no comments, no
+  JavaScript (no \`labelExpr\` with \`.split()\`, no \`color.condition.test\` with \`datum\` expressions).
 - Data inline only: use \`data.values\` — never external URLs, file paths, or remote sources.
 - Use \`"width": "container"\` (Lumo also enforces this). Do not set fixed pixel widths.
 - Never set custom hex colors, \`scale.scheme\`, \`scale.range\`, or \`config.range\`. Lumo applies the
@@ -32,6 +34,10 @@ Rules that always apply:
   \`vconcat\` only when units differ materially.
 - Every spec must have \`mark\` + \`encoding\`, or valid \`layer\` / \`vconcat\` / \`facet\` sub-specs.
   Never emit \`mark\` without \`encoding\`.
+- **Never combine** root-level \`mark\`/\`encoding\` with a \`layer\` array. Pick one shape:
+  - single chart → root \`mark\` + \`encoding\`
+  - multiple marks → \`layer\` only (each entry must have \`mark\` + \`encoding\`, never \`{}\`)
+- Do not set \`height\`, \`autosize\`, or theme \`config\` — Lumo applies layout and styling.
 - Uncertainty bands (\`area\` / \`errorband\` with y/y2) only when the data actually provides bounds.
 - Keep axis titles short; prefer ordinal x for categorical sequences.
 
@@ -97,6 +103,88 @@ Interactivity (rare — default to static charts):
 - Never add selection params to multi-panel \`vconcat\` dashboards (3+ panels).
 - When used: exactly 2 linked \`vconcat\` panels, 1 param defined at the **top level**, filter only on
   the second panel.
+
+Canonical examples (copy these shapes — adapt fields/values only):
+
+Hourly bar chart:
+\`\`\`vega-lite
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "title": { "text": "API Error Rate by Hour", "subtitle": "Peak 1.3% at 03:00 UTC" },
+  "data": {
+    "values": [
+      { "hour": 0, "error_rate": 0.4 },
+      { "hour": 3, "error_rate": 1.3 }
+    ]
+  },
+  "mark": { "type": "bar" },
+  "encoding": {
+    "x": { "field": "hour", "type": "ordinal", "title": "Hour (UTC)" },
+    "y": { "field": "error_rate", "type": "quantitative", "title": "Error rate (%)" }
+  }
+}
+\`\`\`
+
+Multi-series line chart (preferred over root mark + layer):
+\`\`\`vega-lite
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "title": { "text": "FIFA Rankings by Country", "subtitle": "France leads at rank 1 in 2024" },
+  "data": {
+    "values": [
+      { "year": 1994, "country": "France", "ranking": 15 },
+      { "year": 2024, "country": "France", "ranking": 1 },
+      { "year": 1994, "country": "England", "ranking": 11 },
+      { "year": 2024, "country": "England", "ranking": 4 }
+    ]
+  },
+  "mark": { "type": "line", "point": true, "interpolate": "monotone" },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year" },
+    "y": {
+      "field": "ranking",
+      "type": "quantitative",
+      "title": "FIFA rank (lower is better)",
+      "scale": { "reverse": true }
+    },
+    "color": { "field": "country", "type": "nominal", "legend": { "title": "Country" } }
+  }
+}
+\`\`\`
+
+Donut chart (single arc layer — no text labels, no root mark + layer):
+\`\`\`vega-lite
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "title": { "text": "Auth Methods", "subtitle": "Password 41%, modern methods 47% combined" },
+  "data": {
+    "values": [
+      { "method": "Password", "share_pct": 41 },
+      { "method": "SSO", "share_pct": 29 },
+      { "method": "OAuth", "share_pct": 19 },
+      { "method": "Passkey", "share_pct": 8 },
+      { "method": "Other", "share_pct": 3 }
+    ]
+  },
+  "mark": { "type": "arc", "innerRadius": 50 },
+  "encoding": {
+    "theta": { "field": "share_pct", "type": "quantitative" },
+    "color": { "field": "method", "type": "nominal", "legend": { "title": "Method" } }
+  }
+}
+\`\`\`
+
+Invalid patterns (never emit):
+- Root \`mark\`/\`encoding\` **and** a \`layer\` array in the same spec.
+- Empty \`layer\` entries like \`{}\`, or \`layer\` marks missing \`encoding\`.
+- \`encoding.x.type: "temporal"\` or \`timeUnit\` on integer \`year\` values (1994, 2024).
+- \`axis.labelExpr\`, \`filter\`/\`calculate\` with string methods (\`.split()\`, etc.).
+- Donut/pie text label layers, \`centroid\` fields, or per-slice \`text\` marks.
+- \`color.condition.test\` with \`datum\` for bar highlights — use uniform color instead.
+- Hard-coded colors, \`scale.range\`, \`scale.scheme\`, or Excel formats like \`:0\`.
 
 [Card blocks]
 Use fenced blocks for KPIs, findings, and summaries. Lumo renders KPIs as a compact dashboard row.

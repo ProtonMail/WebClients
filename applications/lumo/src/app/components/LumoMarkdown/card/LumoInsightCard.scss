@@ -2,7 +2,7 @@
 
 .lumo-insight-card {
     &__label {
-        color: #a49dc0;
+        color: var(--text-weak);
         font-size: rem(10.5);
         font-weight: 600;
         letter-spacing: 0.07em;
@@ -12,7 +12,7 @@
     }
 
     &__value {
-        color: #1c1340;
+        color: var(--text-norm);
         font-size: rem(26);
         font-style: italic;
         font-weight: 500;
@@ -34,27 +34,27 @@
         }
 
         &--flat {
-            color: #a49dc0;
+            color: var(--text-weak);
         }
     }
 
     &__body {
-        color: #6a6580;
+        color: var(--text-weak);
         font-size: rem(13.5);
         line-height: 1.6;
         margin-top: rem(8);
     }
 
     &__divider {
-        background: #ede9f7;
+        background: var(--border-weak);
         border: 0;
         height: 1px;
         margin: rem(12) 0;
     }
 
     &__tag {
-        background: #f8f1ff;
-        color: #43239b;
+        background: var(--background-weak);
+        color: var(--text-norm);
         font-size: rem(10);
         font-weight: 500;
         padding: rem(3) rem(9);
@@ -76,7 +76,12 @@
 .lumo-insight-card--skeleton {
     .lumo-insight-card__shimmer {
         animation: lumo-insight-card-shimmer 1.4s ease-in-out infinite;
-        background: linear-gradient(90deg, #ede9f7 0%, #f8f1ff 50%, #ede9f7 100%);
+        background: linear-gradient(
+            90deg,
+            var(--background-weak) 0%,
+            var(--background-norm) 50%,
+            var(--background-weak) 100%
+        );
         background-size: 200% 100%;
         border-radius: var(--border-radius-sm);
         color: transparent;
