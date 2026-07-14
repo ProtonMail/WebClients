@@ -11,11 +11,15 @@ import { selectConversationById } from '../redux/selectors';
 import type { ResourceLimitError, ResourceLimitType } from '../redux/slices/meta/errors';
 import { dismissResourceLimitError, selectResourceLimitErrors } from '../redux/slices/meta/errors';
 import { limitResourceToErrorType, onComposerError } from '../remote/nativeComposerBridgeHelpers';
-import type { ConversationId } from '../types';
+import type { ConversationId, SpaceId } from '../types';
 import { shouldShowResourceLimitError } from './resourceLimitNotificationHelpers';
 
 interface ConversationRouteParams {
     conversationId: ConversationId;
+}
+
+interface ProjectRouteParams {
+    projectId: SpaceId;
 }
 
 const getLimitErrorText = (error: ResourceLimitError, isProjectSpace = true): string => {
@@ -56,30 +60,31 @@ const getLimitErrorText = (error: ResourceLimitError, isProjectSpace = true): st
 /**
  * Hook that watches Redux for resource-limit errors raised by background sync
  * sagas (see LimitReachedError in api.ts / sagas) and surfaces them to the
- * user as error notifications. Each error is shown once and then dismissed
- * from state.
+ * user as error notifications. Conversation, asset, and project-scoped errors are
+ * only shown when the user is viewing the matching chat or project. Each shown
+ * error is displayed once and then dismissed from state.
  */
 export const useResourceLimitNotifications = () => {
     const { createNotification } = useNotifications();
     const dispatch = useLumoDispatch();
     const errors = useLumoSelector((state) => selectResourceLimitErrors({ errors: state.errors }));
     const conversationMatch = useRouteMatch<ConversationRouteParams>('/c/:conversationId');
+    const projectMatch = useRouteMatch<ProjectRouteParams>('/projects/:projectId');
     const activeConversationId = conversationMatch?.params.conversationId;
     const activeConversation = useLumoSelector((state) =>
         activeConversationId ? selectConversationById(activeConversationId)(state) : undefined
     );
-    const activeSpaceId = activeConversation?.spaceId;
+    const activeSpaceId = projectMatch?.params.projectId ?? activeConversation?.spaceId;
     const spaces = useLumoSelector((state) => state.spaces);
     const shown = useRef<Set<string>>(new Set());
 
     useEffect(() => {
         for (const error of errors) {
             if (shown.current.has(error.id)) continue;
-            shown.current.add(error.id);
-            if (!shouldShowResourceLimitError(error, activeConversationId)) {
-                dispatch(dismissResourceLimitError(error.id));
+            if (!shouldShowResourceLimitError(error, activeConversationId, activeSpaceId)) {
                 continue;
             }
+            shown.current.add(error.id);
             const errorSpaceId = error.spaceId ?? activeSpaceId;
             const errorSpace = errorSpaceId ? spaces[errorSpaceId] : undefined;
             const isProjectSpace = errorSpace ? errorSpace.isProject === true : !errorSpaceId;
