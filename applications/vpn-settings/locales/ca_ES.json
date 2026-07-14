@@ -4833,6 +4833,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "No s'ha pogut realitzar la verificació. Intenteu-ho de nou d'aquí a una hora."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
       ],
@@ -7661,6 +7664,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
       ],
+      "Manage groups in your identity provider": [
+        "Gestioneu els grups al vostre proveïdor d'identitat"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions de ${ BRAND_NAME } poden accedir els membres de la vostra organització. Si està desactivat, només els administradors hi tindran accés."
       ],
@@ -8816,6 +8822,9 @@
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Heu iniciat sessió com a ${ username }."
@@ -10396,9 +10405,6 @@
       ],
       "Details": [
         "Detalls"
-      ],
-      "Don't have access to your 2FA?": [
-        "No teniu accés al vostre 2FA?"
       ],
       "Encryption and keys": [
         "Xifratge i claus"
@@ -15863,11 +15869,11 @@
       "Compare the key differences that matter for your business.": [
         "Compareu les diferències clau que són importants per la vostra empresa."
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Estalvieu el 50% durant 1 any i mantingueu l'accés complet"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Estalvieu el 50% durant sis mesos i mantingueu l'accés complet"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Estalvieu el 50% durant 1 any i mantingueu-hi l'accés complet"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Vegeu com es compara ${ MAIL_APP_NAME } i per què la nostra independència marca la diferència."

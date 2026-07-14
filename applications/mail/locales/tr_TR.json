@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Kurulumu başlat"
       ],
-      "Start testing": [
-        "Denemeyi başlat"
-      ],
       "Stay": [
         "Kal"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME } uygulamasında aç"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Kategorileri özelleştir"
+      ],
+      "Got it": [
+        "Anlaşıldı"
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
+      "Skip": [
+        "Atla"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Bir kategoride son ziyaretinizden bu yana okunmamış iletiler olduğunda mavi bir nokta belirir."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } üzerine klasörler ve dosyalar ekleyerek bunları görüntülemeleri veya düzenlemeleri için ekip arkadaşarınızı davet edin."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Ayarlar bölümünden istediğiniz zaman kategori ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ve ayarlarınızı değiştirebilirsiniz."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Ayarlar bölümünden istediğiniz zaman kategoriler ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tamamen kapatabilirsiniz."
       ],
       "Also included": [
         "Ayrıca şunlar da bulunur"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Bir ileti yanlış kategoride görünürse onu doğru kategoriye taşımanız yeterlidir. Yeni bir kategori seçmek için bir iletiye sağ tıklayın veya iletiyi ait olduğu yere sürükleyip bırakın."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı başka bir kategoriye sürükleyip bırakın. Benzer e-postalar bundan sonra otomatik olarak o kategoride sıralanacaktır."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Gmail iletilerini doğrudan ${ MAIL_APP_NAME } üzerinden gönderin ve alın. ${ addressesSettingsLink } bölümünden adresinizi bağlayın."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Yeni kategori görünümümüzü duyurulmasından önce ilk deneyenlerdensiniz. Geri bildirimleriniz e-postaların Proton Mail tarafından sıralanmasını geliştirmeye yardımcı olacak."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Bu yöntemle doğrulama kodunu gönderemedik."
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -8975,6 +8998,9 @@
       "You are about to open your default browser and visit:": [
         "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
       "You are currently signed in as ${ username }.": [
         "Şu anda ${ username } olarak oturum açmışsınız."
       ],
@@ -9880,6 +9906,12 @@
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
+      ],
       "Expires": [
         "Geçerlilik süresi sonu"
       ],
@@ -10087,6 +10119,9 @@
       "Navigation": [
         "Gezinme"
       ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
       "New password": [
         "Yeni parola"
       ],
@@ -10137,6 +10172,9 @@
       ],
       "Original link": [
         "Özgün bağlantı"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
       ],
       "Participants": [
         "Katılımcılar"
@@ -10216,6 +10254,9 @@
       "Region": [
         "Bölge"
       ],
+      "Regular expression": [
+        "Düzenli ifade"
+      ],
       "Remember my choice": [
         "Seçimimi hatırla"
       ],
@@ -10275,6 +10316,9 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
+      ],
+      "Starts with": [
+        "Şununla başlar"
       ],
       "State": [
         "İl"
@@ -10362,6 +10406,9 @@
       ],
       "URL": [
         "İnternet adresi"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -10965,14 +11012,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
       "Fw:": [
         "İlt:"
+      ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ senderString }, ${ date } tarihinde şunu yazdı:"
       ],
       "Re:": [
         "Ynt:"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -15768,9 +15833,6 @@
       "Help center": [
         "Yardım merkezi"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } içindeki e-posta kategorilerinin geleceğini şekillendirmeye yardımcı olun"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ile e-posta adresinizi gizleyin"
       ],
@@ -15862,6 +15924,9 @@
       ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
+      ],
+      "Make Categories your own": [
+        "Kategorileri kendinize göre uyarlayın"
       ],
       "Mark all messages as read": [
         "Tüm iletileri okunmuş olarak işaretle"
@@ -15971,6 +16036,9 @@
       "New message": [
         "Yeni ileti"
       ],
+      "New messages": [
+        "Yeni iletiler"
+      ],
       "Newsletters": [
         "Duyurular"
       ],
@@ -16048,6 +16116,9 @@
       ],
       "Payment verification": [
         "Ödeme doğrulama"
+      ],
+      "Personalize your Categories": [
+        "Kategorilerinizi kişiselleştirin"
       ],
       "Phone numbers": [
         "Telefon numaraları"
@@ -16384,6 +16455,9 @@
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"
       ],
+      "You're in control": [
+        "Kontrol sizde"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
@@ -16693,6 +16767,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",

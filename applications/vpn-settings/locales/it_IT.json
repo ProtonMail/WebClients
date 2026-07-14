@@ -4516,6 +4516,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifica non riuscita, riprova tra un'ora."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Non è stato possibile inviare un codice di verifica con questo metodo."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Abbiamo interrotto la firma DKIM a causa di problemi con la tua configurazione DNS. Segui le istruzioni di seguito per riprendere la firma."
       ],
@@ -8241,6 +8244,9 @@
       "You already have a free account": [
         "Hai già un account gratuito"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Al momento hai effettuato l'accesso come ${ username } per ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Sei attualmente connesso come ${ username }."
       ],
@@ -9676,9 +9682,6 @@
       ],
       "Details": [
         "Dettagli"
-      ],
-      "Don't have access to your 2FA?": [
-        "Non riesci ad accedere al tuo 2FA?"
       ],
       "Encryption and keys": [
         "Crittografia e chiavi"
@@ -13440,6 +13443,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Hai ${ timeRemaining.inHours } ora per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inHours } ore per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Hai ${ timeRemaining.inMinutes } minuto per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inMinutes } minuti per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Hai ${ timeRemaining.inSeconds } secondo per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inSeconds } secondi per reimpostare la tua password."
       ]
     },
     "session_recovery:available:link": {

@@ -1004,7 +1004,7 @@
         "Smazat vše"
       ],
       "Clear auto-generated": [
-        "Vymazat automaticky vygenerované"
+        "Smazat automaticky vygenerované"
       ],
       "Close": [
         "Zavřít"
@@ -1192,7 +1192,7 @@
     },
     "collider_2025: Characteristic": {
       "${ LUMO_SHORT_APP_NAME }'s code is fully open source, so anyone can independently verify that it's private and secure—and that we never use your data to train the model.": [
-        "Kód aplikace ${ LUMO_SHORT_APP_NAME } je plně otevřený zdrojový kód, takže kdokoli může nezávisle ověřit, že je soukromá a bezpečná – a že Vaše data nikdy nepoužíváme k trénování modelu."
+        "Aplikace ${ LUMO_SHORT_APP_NAME } má plně otevřený zdrojový kód, takže kdokoli může nezávisle ověřit, že je soukromá a bezpečná – a že vaše data nikdy nepoužíváme k trénování modelu."
       ],
       "1 TB cloud storage": [
         "1 TB cloudového úložiště"
@@ -1352,7 +1352,7 @@
         "Aplikace ${ LUMO_SHORT_APP_NAME } odkazuje na vaše uložené vzpomínky, aby přizpůsobila odpovědi – styl komunikace, odbornost, opakující se nástroje a dlouhodobé projekty."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
-        "Kdykoli můžete přidat vlastní vzpomínky, upravit jakýkoli automaticky vygenerovaný záznam nebo vše vymazat. Vygenerované vzpomínky, které upravíte, budou povýšeny na vaše vlastní."
+        "Kdykoli můžete přidat vlastní vzpomínky, upravit automaticky vygenerované, nebo vše smazat. Vygenerované vzpomínky, které upravíte, budou povýšeny na vaše vlastní."
       ],
       "Always enable web search for new conversations": [
         "Vždy povolit vyhledávání na webu u nových konverzací"
@@ -1514,13 +1514,13 @@
         "Odpověď se nepodařilo analyzovat. Níže je uveden nezpracovaný výstup."
       ],
       "This chat is full to the whiskers. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Tento chat je plný až po vousy. Spusťte nový chat, aby aplikace ${ LUMO_SHORT_APP_NAME } i nadále spokojeně vrněla."
+        "Tento chat je plný. Chcete-li zajistit hladký chod ${ LUMO_SHORT_APP_NAME }, spusťte nový chat."
       ],
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Tato konverzace je příliš dlouhá na to, aby mohla pokračovat. Spusťte nový chat, aby byl zajištěn hladký chod a rychlá odezva aplikace ${ LUMO_SHORT_APP_NAME }."
       ],
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Tento projekt je plný až po vousy. Smažte konverzaci, abyste uvolnili místo pro novou a aplikace ${ LUMO_SHORT_APP_NAME } i nadále spokojeně vrněla."
+        "Tento projekt je plný. Smažte konverzaci, abyste uvolnili prostor pro novou a zajistili plynulý chod ${ LUMO_SHORT_APP_NAME }."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro neomezené konverzace, rozšířenou historii, přístup k pokročilým modelům AI a další."
@@ -1690,7 +1690,7 @@
         "Nabídka výběru modelu"
       ],
       "Web search": [
-        "Vyhledat na webu"
+        "Hledání na webu"
       ]
     },
     "collider_2025: Info": {
@@ -2112,10 +2112,10 @@
         "Tento chat bude za 2 dny odebrán. Chcete-li jej zachovat, navyšte na ${ LUMO_SHORT_APP_NAME } Plus."
       ],
       "This chat will be removed today unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
-        "Tento chat bude dnes odebrán, pokud neupgradujete na ${ LUMO_SHORT_APP_NAME } Plus."
+        "Tento chat bude dnes odebrán, pokud nenavýšíte na ${ LUMO_SHORT_APP_NAME } Plus."
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
-        "Tento chat bude zítra odebrán, pokud neupgradujete na ${ LUMO_SHORT_APP_NAME } Plus."
+        "Tento chat bude zítra odebrán, pokud nenavýšíte na ${ LUMO_SHORT_APP_NAME } Plus."
       ],
       "This folder is empty": [
         "Tato složka je prázdná"
@@ -2136,7 +2136,7 @@
         "Chcete-li se později k této konverzaci vrátit, přihlaste se nebo si vytvořte účet."
       ],
       "tokens": [
-        "tokeny"
+        "tokenů"
       ],
       "tokens / 30d": [
         "tokeny / 30 dnů"
@@ -2148,7 +2148,7 @@
         "Tento soubor nelze analyzovat jako tabulku."
       ],
       "Upgrade for more image generations and access to advanced models.": [
-        "Upgradujte pro více generování obrázků a přístup k pokročilým modelům."
+        "Navyšte svůj účet pro generování více obrázků a přístup k pokročilým modelům."
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
         "Navyšte svůj tarif pro neomezený počet chatů, projektů, nahrávání větších souborů a další výhody."
@@ -2178,13 +2178,13 @@
         "Dosáhli jste svého limitu pro vytváření obrázků pro toto období. Chcete-li pokračovat ve vytváření obrázků, proveďte navýšení."
       ],
       "You've run out of weekly chats, please ": [
-        "Vyčerpal(a) jste týdenní limity chatů, prosím "
+        "Dosáhli jste týdenního limitu chatů, prosím "
       ],
       "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
         "Vyčerpali jste týdenní limity chatů, prosím přihlaste se nebo si vytvořte účet pro získání vyšších limitů."
       ],
       "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Vyčerpali jste týdenní limity chatů, prosím upgradujte pro získání vyšších limitů."
+        "Vyčerpali jste týdenní limit chatů, prosím navyšte předplatné pro zvýšení limitů."
       ],
       "You've run out of weekly chats. Contact your admin to get higher limits.": [
         "Vyčerpali jste své týdenní chaty. Kontaktujte svého správce pro získání vyšších limitů."
@@ -3001,13 +3001,13 @@
         "Tato konverzace začíná být dlouhá. Brzy spusťte nový chat, aby byl zajištěn hladký chod aplikace ${ LUMO_SHORT_APP_NAME }."
       ],
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
-        "Tato konverzace je příliš dlouhá, než aby mohla pokračovat. Spusťte nový chat, aby aplikace ${ LUMO_SHORT_APP_NAME } i nadále spokojeně vrněla a rychle reagovala."
+        "Tato konverzace je příliš dlouhá, než aby mohla pokračovat. Spusťte nový chat, aby byl zajištěn hladký chod ${ LUMO_SHORT_APP_NAME }."
       ],
       "This is the only time you'll see this key. Copy it now.": [
         "Tento kód uvidíte jen jednou. Zkopírujte si ho."
       ],
       "This project is filling up": [
-        "Tento projekt se zaplňuje"
+        "Tento projekt začíná být plný"
       ],
       "This project is filling up. Tidying away conversations you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
         "Tento projekt se zaplňuje. Úklid konverzací, které již nepotřebujete, zajišťuje hladký chod aplikace ${ LUMO_SHORT_APP_NAME }."
@@ -3086,7 +3086,7 @@
         "Kopírovat odkaz a popisek"
       ],
       "Copy prompt": [
-        "Zkopírovat zadání"
+        "Kopírovat zadání"
       ],
       "Create": [
         "Vytvořit"
@@ -3484,7 +3484,7 @@
         " Chaty v projektu"
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
-        "Aplikace ${ LUMO_SHORT_APP_NAME } potřebuje místní databázové úložiště (IndexedDB), aby mohla uchovávat vaše konverzace v tomto zařízení, ale zde není k dispozici."
+        "${ LUMO_SHORT_APP_NAME } potřebuje místní databázové úložiště (IndexedDB), aby mohla uchovávat vaše konverzace v tomto zařízení, ale toto úložiště není k dispozici."
       ],
       "${ LUMO_SHORT_APP_NAME } remembers your preferences, so each conversation can build on the last. It can also handle longer chats and larger documents.": [
         "${ LUMO_SHORT_APP_NAME } si pamatuje vaše předvolby, takže každá konverzace může navazovat na tu předchozí. Dokáže také pracovat s delšími konverzacemi a většími dokumenty."
@@ -3502,10 +3502,10 @@
         "${ project.fileCount } souborů"
       ],
       "A few habits go a long way to shrinking your paper trail.": [
-        "Pár návyků výrazně přispěje ke zmenšení Vaší digitální stopy."
+        "Pár návyků výrazně přispěje ke zmenšení vaší digitální stopy."
       ],
       "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
-        "Profil, jako je tento, pohání reklamy a zprávy navržené tak, aby brnkaly na vaše citlivé struny – produkty, názory, a dokonce i na to, jak volíte."
+        "Právě takový profil slouží jako základ pro reklamy a zprávy, které jsou navrženy tak, aby na vás zapůsobily – ať už jde o produkty, názory, nebo dokonce o to, jak volíte."
       ],
       "ad value": [
         "reklamní hodnota"
@@ -3523,13 +3523,13 @@
         "Všechny zprávy a historie chatu"
       ],
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what cover you're offered and what you pay.": [
-        "Letmá zmínka o stresu, diagnóze nebo lécích může napájet rizikové modely, které tiše ovlivňují, jaké krytí je vám nabízeno a kolik platíte."
+        "Vaše letmá zmínka o stresu, diagnóze nebo lécích může krmit rizikové modely, které tiše ovlivňují, jaké pojištění je vám nabízeno a kolik zaplatíte."
       ],
       "Any images generated in these conversations will also be deleted.": [
         "Smazány budou také všechny obrázky vygenerované v těchto konverzacích."
       ],
       "Any images generated in this conversation will also be deleted.": [
-        "Smažou se také všechny obrázky vygenerované v této konverzaci."
+        "Budou smazány také obrázky vygenerované v této konverzaci."
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Opravdu chcete smazat \"${ project.name }\"? Tuto akci nelze vrátit zpět."
@@ -3589,7 +3589,7 @@
         "datové body"
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
-        "Zjistěte, co by o vás umělá inteligence technologických gigantů mohla poskládat z vaší historie chatu – a získejte skóre soukromí, které můžete sdílet."
+        "Zjistěte, co by o vás mohla poskládat AI velkých technologických firem z vaší historie chatu – a získejte skóre soukromí, které můžete sdílet."
       ],
       "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
         "Stáhněte si svá data z ChatGPT (Nastavení → Správa dat → Exportovat), nebo Claude (Nastavení → Soukromí → Exportovat data)."
@@ -3601,7 +3601,7 @@
         "Každá konverzace s AI za sebou zanechává stopu. Vaše práce. Vaše zdraví. Vaše vztahy. Dokonce i to, kde žijete. Nahrajte svá data z AI a podívejte se, co by o vás technologičtí giganti dokázali poskládat pouze z vašich slov. Na rozdíl od nich je ale my vidět nemůžeme."
       ],
       "Example prompts shown when a conversation begins.": [
-        "Ukázková zadání zobrazená na začátku konverzace."
+        "Dotazy na Lumo, které bude možné spustit na začátku konverzace."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Soubor \"${ file.name }\" je již v tomto projektu"
@@ -3631,7 +3631,7 @@
         "Odvozené údaje jsou baleny a prodávány. Jediný profil tak může projít desítkami společností, o kterých jste nikdy neslyšeli."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
-        "Odvozené politické sklony pohání mikrocílené zprávy navržené tak, aby změnily vaše pocity a to, jak volíte – často bez toho, abyste si toho všimli."
+        "Na základě odvozených politických preferencí jsou vytvářeny mikrocílené zprávy, jejichž cílem je změnit vaše pocity a to, jak volíte. Často aniž byste si to uvědomili."
       ],
       "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
         "Odvozené vlastnosti jsou sdružovány a prodávány zprostředkovatelům, inzerentům a komukoli, kdo je ochoten zaplatit."
@@ -3652,7 +3652,7 @@
         "Režim uzamčení je na vašem zařízení aktivován"
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
-        "Na této kartě nejsou žádné osobní údaje – pouze vaše skóre vystavení podle oblastí. Nižší hodnota znamená, že jste o sobě prozradili méně."
+        "Na této kartě nejsou žádné osobní údaje – pouze vaše míra ohrožení soukromí podle oblastí. Nižší hodnota znamená, že jste o sobě prozradili méně."
       ],
       "No projects yet": [
         "Zatím žádné projekty"
@@ -3670,7 +3670,7 @@
         "VLOŽENO"
       ],
       "Periodically review, download, and delete the data AI services hold on you.": [
-        "Pravidelně kontrolujte, stahujte a mažte data, která o Vás služby AI uchovávají."
+        "Pravidelně kontrolujte, stahujte a mažte data, která o vás uchovávají služby AI."
       ],
       "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
         "Vybírejte si služby, které netrénují modely na vašich konverzacích ani je neprodávají – jako například ${ LUMO_SHORT_APP_NAME }, která vaše chaty nedokáže číst."
@@ -3682,10 +3682,10 @@
         "Zpracování..."
       ],
       "Profiled by Big Tech AI": [
-        "Profilováno AI od Big Tech"
+        "Profilováno pomocí AI od velkých technologických firem"
       ],
       "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
-        "Profily mohou ovlivnit výsledky v pojišťovnictví, poskytování půjček a náboru zaměstnanců – aniž byste se o tom kdy dozvěděli."
+        "Profily mohou ovlivnit co vám nabízí pojišťovny, úvěrové firmy a zaměstnavatelé – aniž byste se o tom kdy dozvěděli."
       ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Projekty vám pomáhají organizovat konverzace pomocí vlastních pokynů a souborů."
@@ -3703,7 +3703,7 @@
         "Vyhodnocuji, kolik jste toho odhalili…"
       ],
       "See the profile an AI company can piece together from your conversations alone.": [
-        "Podívejte se na profil, který o vás společnost vyvíjející umělou inteligenci dokáže sestavit pouze na základě vašich konverzací."
+        "Podívejte se na profil, který o vás AI společnost dokáže sestavit jen na základě vašich konverzací."
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Podívejte se, co o vás ví umělá inteligence velkých technologických firem. Vytvořeno pomocí ${ LUMO_SHORT_APP_NAME }."
@@ -3715,7 +3715,7 @@
         "Vyhledávání vzorců v tom, co jste napsali…"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
-        "Čím plnější je ukazatel, tím větší část této oblasti by mohl Big Tech z Vašich chatů zrekonstruovat. Nižší hodnota je lepší. Najetím na řádek zobrazíte, co Vás prozradilo."
+        "Čím plnější je proužek, tím více informací mohou z dané oblasti velké technologické firmy rekonstruovat z vašich chatů. Nižší hodnota je lepší. Najetím na řádek zobrazíte, co vás prozradilo."
       ],
       "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
         "Čm více toho o vás útočník ví, tím uvěřitelnější je phishingová zpráva. Personalizované podvody se odhalují mnohem hůře."
@@ -3727,10 +3727,10 @@
         "Toto jsou nejcitlivější kategorie, které o vás může AI velkých technologických společností odvodit z vašich chatů."
       ],
       "This is exactly the kind of profiling ${ LUMO_SHORT_APP_NAME } is built to stop. With ${ LUMO_SHORT_APP_NAME }, your conversations are encrypted and never used to build a profile of you.": [
-        "Přesně tomuto druhu profilování má ${ LUMO_SHORT_APP_NAME } zabránit. S ${ LUMO_SHORT_APP_NAME } jsou vaše konverzace šifrované a nikdy se nepoužijí k vytvoření vašeho profilu."
+        "Přesně tomuto druhu profilování ${ LUMO_SHORT_APP_NAME } předchází. S ${ LUMO_SHORT_APP_NAME } jsou vaše konverzace šifrované a nejsou nikdy použity k vašemu profilování."
       ],
       "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
-        "Tohle nejsou jen tak nějaké zajímavosti. Zde je ukázka toho, k čemu může být profil, jako je ten Váš, skutečně použit."
+        "To není jen nějaká zajímavost. Je to příklad využití profilu jako ten váš."
       ],
       "This message is empty. Sorry about that.": [
         "Tato zpráva je prázdná. Omlouváme se."
@@ -3739,7 +3739,7 @@
         "Tento projekt již obsahuje soubory. Před propojením složky Drive odeberte všechny soubory."
       ],
       "This usually happens when:": [
-        "K tomu obvykle dochází, když:"
+        "Obvykle k tomu dochází, když:"
       ],
       "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
         "Toto odebere všech ${ fileCount } souborů z tohoto projektu. Tuto akci nelze vzít zpět."
@@ -3757,7 +3757,7 @@
         "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro tvorbu neomezeného počtu projektů a odemknutí pokročilých modelů AI a další."
       ],
       "Use email aliases and hide-my-email so your real address isn't tied to every account.": [
-        "Používejte e-mailové aliasy a hide-my-email, aby vaše skutečná adresa nebyla spojena s každým účtem."
+        "Používejte e-mailové aliasy hide-my-email, aby vaše skutečná adresa nebyla spojena s každým účtem."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Pro komplexní práci použijte model Max nebo model Lite pro každodenní úkoly. Pro rychlé odpovědi zvolte režim Rychlý nebo režim Přemýšlení pro náročnější otázky."
@@ -3769,7 +3769,7 @@
         "Uložíme vaši kartu, abyste ji mohli připojit k příspěvku – sociální sítě za vás obrázek přidat nemohou."
       ],
       "Working out what Big Tech AI could infer…": [
-        "Vyhodnocování, co by umělá inteligence od Big Tech mohla vyvodit…"
+        "Vyhodnocování, co by mohla vyvodit AI od velkých technologických firem…"
       ],
       "You're using private browsing": [
         "Používáte soukromé procházení"
@@ -3846,7 +3846,7 @@
         "Moderní dvoupodlažní minimalistická bílá vila se zaoblenými hranami, velkými posuvnými skleněnými dveřmi a bazénem. Minimalistický nábytek na terase, středomořská atmosféra, styl architektonické fotografie, jasný slunečný den."
       ],
       "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
-        "Fotorealistický mockup bílého trička visícího na stěně uvnitř moderního butiku s oblečením, čisté bílé tričko z prémiové bavlny úhledně vystavené na dřevěném ramínku, zavěšené na jemné pastelové stěně (světle béžová, pudrově růžová nebo šalvějově zelená), stylový interiér prodejny v pozadí s jemně rozostřenými věšáky na oblečení a policemi, přirozené denní světlo smíchané s teplým okolním osvětlením obchodu, realistická textura látky a záhyby, čistá minimalistická estetika, špičkový módní merchandising, malá hloubka ostrosti, vycentrovaná kompozice, komerční mockup oblečení, prázdné tričko připravené pro umístění vlastního designu, ultrarealistické, vysoké rozlišení, 8k."
+        "Fotorealistický model bílého trička visícího na stěně uvnitř moderního butiku s oblečením, čisté bílé tričko z prémiové bavlny úhledně vystavené na dřevěném ramínku, zavěšené na jemné pastelové stěně (světle béžová, pudrově růžová nebo šalvějově zelená), stylový interiér prodejny v pozadí s jemně rozostřenými věšáky na oblečení a policemi, přirozené denní světlo smíchané s teplým okolním osvětlením obchodu, realistická textura látky a záhyby, čistá minimalistická estetika, špičkový módní merchandising, malá hloubka ostrosti, vycentrovaná kompozice, komerční model oblečení, prázdné tričko připravené pro umístění vlastního designu, ultrarealistické, vysoké rozlišení, 8k."
       ],
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
         "Surová rychlost zachycená v jediném snímku – vůz F1 řítící se po asfaltu s pohybovým rozostřením, které rozmazává vše za ním, jiskry odlétající od povrchu a carbonová vlákna zachycující světlo z působivého nízkého úhlu přímo u asfaltu."
@@ -3917,7 +3917,7 @@
         "Vysoká"
       ],
       "How AI gets more out of you": [
-        "Jak z vás umělá inteligence dostává víc"
+        "Jak z vás AI dostává víc"
       ],
       "Image preview": [
         "Náhled obrázku"
@@ -3932,7 +3932,7 @@
         "Pojištění"
       ],
       "It doesn't expire": [
-        "Platnost nevyprší"
+        "Nevyprší"
       ],
       "Lending & hiring": [
         "Půjčky a nábor"
@@ -3965,7 +3965,7 @@
         "Vybráno:"
       ],
       "Share to": [
-        "Sdílet na"
+        "Sdílet s"
       ],
       "Thick": [
         "Silný"
@@ -3998,7 +3998,7 @@
     },
     "collider_2025:Placeholder": {
       "Add a conversation starter": [
-        "Přidat podnět ke konverzaci"
+        "Přidat dotaz ke konverzaci"
       ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Přidejte instrukce týkající se tónu, stylu a osobnosti, kterou si má ${ LUMO_SHORT_APP_NAME } osvojit."
@@ -4010,7 +4010,7 @@
         "Zeptejte se na cokoli…"
       ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "Popište roli, rozsah a chování, které chcete, aby aplikace ${ LUMO_SHORT_APP_NAME } přijala."
+        "Popište roli, rozsah a chování, které chcete, aby ${ LUMO_SHORT_APP_NAME } přijala."
       ],
       "Describe your image...": [
         "Popište svůj obrázek..."
@@ -4028,7 +4028,7 @@
         "Zadejte název projektu"
       ],
       "Fluffy McFluff Face": [
-        "Fluffy McFluff Face"
+        "Jméno asistenta"
       ],
       "Help with login, password and recovery issues.": [
         "Pomoc s přihlášením, heslem a problémy s obnovením."
@@ -4037,7 +4037,7 @@
         "Plánovač dovolené"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
-        "Hledat vlastní ${ LUMO_SHORT_APP_NAME }"
+        "Prohledat vlastní ${ LUMO_SHORT_APP_NAME }"
       ],
       "Sign in required": [
         "Vyžadováno přihlášení"
@@ -4303,7 +4303,7 @@
         "Zisková marže"
       ],
       "Read a web page": [
-        "Přečtení webové stránky"
+        "Čtení webové stránky"
       ],
       "Reading a web page": [
         "Čtení webové stránky"
@@ -4312,7 +4312,7 @@
         "Výnosy (TTM)"
       ],
       "Searched the web": [
-        "Vyhledáno na webu"
+        "Prohledán web"
       ],
       "Searching the web": [
         "Vyhledávání na webu"
@@ -4330,7 +4330,7 @@
         "Váš obrázek byl aktualizován"
       ],
       "Updating your image": [
-        "Aktualizace Vašeho obrázku"
+        "Aktualizace vašeho obrázku"
       ],
       "Used a tool": [
         "Použití nástroje"
@@ -4339,7 +4339,7 @@
         "Použití nástroje"
       ],
       "Worked on an image": [
-        "Práce na obrázku"
+        "Pracovala jsem na obrázku"
       ],
       "Worked through your question": [
         "Zabývala jsem se vaší otázkou"
@@ -4376,7 +4376,7 @@
     },
     "collider_2025:Subline": {
       "Custom ${ LUMO_SHORT_APP_NAME }s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
-        "Vlastní asistenti ${ LUMO_SHORT_APP_NAME } promění chat v úzce zaměřeného asistenta s vlastními pokyny. Vyberte si jednoho v editoru a začněte s ním konverzovat."
+        "Vlastní ${ LUMO_SHORT_APP_NAME } zajistí chat s úzce zaměřeným asistentem s vlastními instrukcemi. Vyberte si asistenta v editoru a začněte s ním konverzovat."
       ],
       "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
         "Projekty vám pomohou udržet související chaty, soubory a pokyny na jednom místě. Usnadňují organizaci a opětovné použití kontextu napříč chaty."
@@ -4484,7 +4484,7 @@
         "Exportujte svá data"
       ],
       "Exposure scorecard": [
-        "Skóre ohrožení soukromí"
+        "Karta míry ohrožení soukromí"
       ],
       "Favorites": [
         "Oblíbené"
@@ -4496,7 +4496,7 @@
         "Začněte vytvořením nového projektu"
       ],
       "Get your AI Paper Trail": [
-        "Získejte svůj přehled AI Paper Trail"
+        "Získejte svou stopu v AI"
       ],
       "Ghost mode": [
         "Neviditelný režim"
@@ -4544,7 +4544,7 @@
         "Přesvědčivější podvody"
       ],
       "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Více vlastních ${ LUMO_SHORT_APP_NAME }s s ${ LUMO_SHORT_APP_NAME } Plus"
+        "Více vlastních ${ LUMO_SHORT_APP_NAME } s ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "More options": [
         "Více možností"
@@ -4595,7 +4595,7 @@
         "Odebrat všechny soubory?"
       ],
       "See your AI paper trail": [
-        "Zobrazit historii aktivit s AI"
+        "Zobrazte svou stopu aktivit v AI"
       ],
       "Share less with AI": [
         "Sdílejte méně s AI"
@@ -4631,7 +4631,7 @@
         "Tento chat zmizí, když jej zavřete a není nikdy ukládán."
       ],
       "Turn off history & training": [
-        "Vypnout historii a trénování"
+        "Vypněte historii a trénování"
       ],
       "Two models, two modes": [
         "Dva modely, dva režimy"
@@ -4646,7 +4646,7 @@
         "Nepodařilo se nám přečíst vaši stopu aktivit"
       ],
       "What Big Tech inferred": [
-        "Co o vás technologičtí giganti vyvodili"
+        "Co o vás vyvodily velké technologické firmy"
       ],
       "What do you want to create today?": [
         "Co chcete vytvořit dnes?"
@@ -4658,7 +4658,7 @@
         "Proč na tom záleží"
       ],
       "You can't un-share it": [
-        "Sdílení již nelze zrušit"
+        "Sdílení nemůžete zrušit"
       ],
       "You might be shown a higher price": [
         "Může vám být zobrazena vyšší cena"
@@ -5954,6 +5954,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "DIČ musí začínat ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ],
       "Wrong billing address": [
         "Nesprávná fakturační adresa"
@@ -7287,7 +7290,7 @@
         "Hledat"
       ],
       "Send assets limit to native": [
-        "Odeslat limit assetů do nativního prostředí"
+        "Odeslat limit aktiv do nativního prostředí"
       ],
       "Send conversations limit to native": [
         "Odeslat limit konverzací do nativního prostředí"

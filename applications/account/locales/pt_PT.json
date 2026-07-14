@@ -50,6 +50,9 @@
       "Accept": [
         "Aceitar"
       ],
+      "Account settings": [
+        "Definições de conta"
+      ],
       "activate": [
         "ativar"
       ],
@@ -1348,6 +1351,9 @@
       ],
       "Upgrade": [
         "Atualizar"
+      ],
+      "Upgrade for 200GB": [
+        "Upgrade para 200GB"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -4390,6 +4396,32 @@
         "Partilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
       ]
     },
+    "Duration": {
+      "120 minutes": [
+        "120 minutos"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "30 minutes": [
+        "30 minutos"
+      ],
+      "30m": [
+        "30 min"
+      ],
+      "60 minutes": [
+        "60 minutos"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90 minutes": [
+        "90 minutos"
+      ],
+      "90m": [
+        "90 min"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, atualize para ${ planName }."
@@ -5323,6 +5355,9 @@
       "We couldn't sign you in": [
         "Não foi possível iniciar sessão."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação através deste método."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
       ],
@@ -5822,9 +5857,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "É necessário configurar um domínio personalizado antes de criar um utilizador."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Perderá o acesso a todas as funcionalidades premium incluídas no ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de família e a usufruir em conjunto de todas as funcionalidades premium do ${ brandOrAppName }."
@@ -9551,6 +9583,9 @@
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Tem atualmente sessão iniciada como ${ username } em ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Tem atualmente sessão iniciada como ${ username }."
       ],
@@ -10976,6 +11011,9 @@
       "Newsletters": [
         "Boletins informativos"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletters - Notícias, e-mails editoriais e conteúdos não promocionais"
+      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -11090,8 +11128,14 @@
       "Primary": [
         "Principal"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principal - E-mails pessoais e de trabalho, além de atualizações importantes"
+      ],
       "Promotions": [
         "Promoções"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promoções - Acordos, ofertas e e-mails de marketing"
       ],
       "Proration": [
         "Repartição"
@@ -11205,6 +11249,9 @@
       "Social": [
         "Rede social"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Atualizações, atividades e mensagens das redes sociais"
+      ],
       "Social media updates and activity": [
         "Atualizações e atividade das redes sociais"
       ],
@@ -11280,6 +11327,9 @@
       "Transactions": [
         "Transações"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transações - Recibos, reservas, faturas e encomendas"
+      ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
       ],
@@ -11294,6 +11344,9 @@
       ],
       "Updates": [
         "Atualizações"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Atualizações - Confirmações automáticas, alertas e atualizações de conta"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de encriptação"
@@ -11541,9 +11594,6 @@
       ],
       "Create an alias": [
         "Criar um alias"
-      ],
-      "Don't have access to your 2FA?": [
-        "Não consegue aceder ao seu 2FA?"
       ],
       "Encryption and keys": [
         "Encriptação e chaves"
@@ -13646,6 +13696,9 @@
       "Limited-time offer": [
         "Oferta por tempo limitado"
       ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -13666,6 +13719,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta não será mostrada novamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Atualize a sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Atualize o seu armazenamento por apenas ${ pricingTitle } com ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando mudar de uma subscrição mensal para uma anual."
@@ -13692,11 +13751,20 @@
       "Advanced threat protection": [
         "Proteção avançada contra ameaças"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore com utilizadores que não usam ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
+      "Edit docs online": [
+        "Editar docs online"
+      ],
       "Email addresses": [
         "Endereços de e-mail"
+      ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do ficheiro (mais de 1 semana)"
       ],
       "Free": [
         "Free"
@@ -15947,6 +16015,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds } segundo para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -17430,6 +17510,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "O ${ planName } dá-lhe acesso a todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. A privacidade é integrada para que possa continuar com o seu dia, sabendo que os seus dados e a sua identidade estão seguros."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } dá-lhe acesso a todas as aplicações, todas as funcionalidades, acesso antecipado às novas versões e tudo o que precisa para ter controlo sobre os seus dados e a sua segurança."
@@ -19016,9 +19099,6 @@
       "Layout": [
         "Layout"
       ],
-      "Leave ${ organisationName }?": [
-        "Deixar ${ organisationName }?"
-      ],
       "Leave group?": [
         "Deixar o grupo?"
       ],
@@ -19509,6 +19589,12 @@
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Atualize a sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Atualize o seu armazenamento por ${ formattedPrice } com ${ planName }"
+      ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
       ],
@@ -19857,6 +19943,9 @@
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detetámos um problema com a sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."

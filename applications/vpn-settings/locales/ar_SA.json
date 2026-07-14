@@ -3530,6 +3530,14 @@
       "You can reconnect this address at any time.": [
         "يمكنك إعادة ربط هذا العنوان في أي وقت."
       ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "تتم إعادة توجيه ${ numAddressesOrSync } من عناوين Gmail إلى ${ MAIL_APP_NAME }.",
+        "تتم إعادة توجيه عنوان Gmail (${ numAddressesOrSync }) إلى ${ MAIL_APP_NAME }.",
+        "أنت تقوم بإعادة توجيه ${ numAddressesOrSync } عنوانين من Gmail إلى ${ MAIL_APP_NAME }.",
+        "أنت تقوم بإعادة توجيه ${ numAddressesOrSync } من عناوين Gmail إلى ${ MAIL_APP_NAME }.",
+        "أنت تقوم بإعادة توجيه ${ numAddressesOrSync } عنواناً من Gmail إلى ${ MAIL_APP_NAME }.",
+        "أنت تقوم بإعادة توجيه ${ numAddressesOrSync } من عناوين Gmail إلى ${ MAIL_APP_NAME }."
+      ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of your connected accounts.": [
         "لقد قمت باتصال ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة",
         "لقد قمت باتصال ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة.",
@@ -3546,6 +3554,22 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "نظرًا لأن حسابك المجاني في ${ MAIL_APP_NAME } يتضمن مساحة تخزين محدودة، فسنستورد فقط أحدث رسائل Gmail لديك."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail addresses.": [
+        "تدعم الخطة ${ MAX_SYNC_FREE_USER } من عناوين Gmail.",
+        "تدعم خطتك ${ MAX_SYNC_FREE_USER } عنوان Gmail.",
+        "تدعم خطتك ${ MAX_SYNC_FREE_USER } عنوان من عناوين Gmail.",
+        "تدعم خطتك ${ MAX_SYNC_FREE_USER } من عناوين Gmail.",
+        "تدعم خطتك ${ MAX_SYNC_FREE_USER } عنواناً من عناوين Gmail.",
+        "تدعم خطتك ${ MAX_SYNC_FREE_USER } من عناوين Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail addresses": [
+        "تدعم الخطة إجمالي ${ MAX_SYNC_PAID_USER } من عناوين Gmail",
+        "تدعم خطتك إجمالي ${ MAX_SYNC_PAID_USER } عنوان من عناوين Gmail",
+        "تدعم خطتك إجمالي ${ MAX_SYNC_PAID_USER } من عناوين Gmail",
+        "تدعم خطتك إجمالي ${ MAX_SYNC_PAID_USER } من عناوين Gmail",
+        "تدعم خطتك إجمالي ${ MAX_SYNC_PAID_USER } من عناوين Gmail",
+        "تدعم خطتك إجمالي ${ MAX_SYNC_PAID_USER } من عناوين Gmail."
       ]
     },
     "description": {
@@ -4571,6 +4595,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "لم تنجح عملية التحقق، يرجى المحاولة مرة أخرى بعد ساعة."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "تعذر إرسال رمز التحقق باستخدام هذه الطريقة."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "لقد أوقفنا توقيع DKIM بسبب مشاكل في تكوين DNS الخاص بك. يرجى اتباع التعليمات التالية لاستئناف العملية."
@@ -6101,6 +6128,12 @@
       "${ emailAddress } is invalid": [
         "عنوان البريد الإلكتروني ${ emailAddress } غير صالح"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: صورة بالحجم الكامل"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: معاينة منخفضة الدقة"
+      ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } من أفراد عائلتك يستخدمون المصادقة الثنائية.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } من أفراد عائلتك يستخدمون المصادقة الثنائية.",
@@ -6737,6 +6770,14 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "أنشئ تسمية للرسائل المستوردة، ونطاقًا زمنيًا لهذا الاستيراد، والتسميات التي ترغب في استيرادها."
+      ],
+      "Create a secure cloud for ${ memberCount } members": [
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضو",
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضو",
+        "إنشاء سحابة آمنة لعضوين (${ memberCount })",
+        "أنشئ سحابة آمنة لـ ${ memberCount } أعضاء",
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضوًا",
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضو"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "قم بإنشاء وإدارة الحسابات الفرعية وتعيين عناوين البريد الإلكتروني لها في نطاقك المخصص."
@@ -8488,6 +8529,9 @@
       "You already have a free account": [
         "لديك حساب مجاني بالفعل"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "أنت مسجّل الدخول حاليًا باسم ${ username } لدى ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "لقد سجلت دخولك حاليًا باسم المستخدم ${ username }."
       ],
@@ -9974,9 +10018,6 @@
       "Details": [
         "تفاصيل"
       ],
-      "Don't have access to your 2FA?": [
-        "تعذر الوصول إلى المصادقة الثنائية (2FA)؟"
-      ],
       "Encryption and keys": [
         "التشفير والمفاتيح"
       ],
@@ -10427,6 +10468,14 @@
         "ما يصل إلى ${ n } مشارك",
         "ما يصل إلى ${ n } مشارك",
         "ما يصل إلى ${ n } مشارك"
+      ],
+      "Video meetings, ${ n } participants": [
+        "اجتماعات فيديو، لا يوجد مشاركين (${ n })",
+        "اجتماعات فيديو، مشارك واحد (${ n })",
+        "اجتماعات فيديو، مشاركان (${ n })",
+        "اجتماعات فيديو، ${ n } مشاركون",
+        "اجتماعات فيديو، ${ n } مشاركاً",
+        "اجتماعات فيديو، ${ n } مشارك"
       ]
     },
     "meet_2025: Info": {
@@ -11641,6 +11690,14 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } countries": [
+        "${ n } دولة",
+        "الدولة ${ n }",
+        "${ n } دولة",
+        "${ n } دول",
+        "${ n } دولة",
+        "${ n } دولة"
+      ],
       "Access advanced VPN features": [
         "الوصول إلى ميزات VPN المتقدمة"
       ],
@@ -13917,6 +13974,30 @@
         "لديك ${ timeRemaining.inDays } أيام لإعادة تعيين كلمة مرورك.",
         "لديك ${ timeRemaining.inDays } يومًا لإعادة تعيين كلمة مرورك.",
         "لديك ${ timeRemaining.inDays } يومًا لإعادة تعيين كلمة مرورك."
+      ],
+      "You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعات لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور."
+      ],
+      "You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقائق لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور."
+      ],
+      "You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثوانٍ لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور."
       ]
     },
     "session_recovery:available:link": {

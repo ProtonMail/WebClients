@@ -4780,6 +4780,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifieringen lyckades inte, försök igen om en timme."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppade DKIM-signering på grund av problem med din DNS-konfiguration. Följ instruktionerna nedan för att återuppta signeringen."
       ],
@@ -8676,6 +8679,9 @@
       "You already have a free account": [
         "Du har redan ett gratis konto"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du är för närvarande inloggad som ${ username }."
       ],
@@ -10231,9 +10237,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Don't have access to your 2FA?": [
-        "Har du inte åtkomst till din 2FA?"
-      ],
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
@@ -10590,6 +10593,9 @@
       ],
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
@@ -15632,9 +15638,6 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Jämför de viktigaste skillnaderna som är viktiga för ditt företag."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spara 50 % i 1 år och behåll full åtkomst"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Spara 50 % i 6 månader och behåll full åtkomst"

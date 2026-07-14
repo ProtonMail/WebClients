@@ -2220,6 +2220,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2458,6 +2463,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificat după câmp (titlul mai întâi, apoi numele de utilizator sau adresa de e-mail, site web, note) și precizia potrivirii (exactă, începe cu, conține)."
       ],
       "Read item": [
         "Citire articol"
@@ -2733,9 +2741,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola secundară."
-      ],
-      "Unlock with biometrics": [
-        "Deblocare cu date biometrice"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
@@ -3883,6 +3888,9 @@
       ],
       "Regular expression": [
         "Expresie regulată"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Eliminare legătură web"

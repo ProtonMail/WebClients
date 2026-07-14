@@ -1443,9 +1443,6 @@
       "Start setup": [
         "설정 시작"
       ],
-      "Start testing": [
-        "테스트 시작"
-      ],
       "Stay": [
         "기다리기"
       ],
@@ -1725,6 +1722,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME }에서 열기"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "카테고리 맞춤 설정"
+      ],
+      "Got it": [
+        "확인"
+      ],
+      "Next": [
+        "다음"
+      ],
+      "Not now": [
+        "나중에"
+      ],
+      "Skip": [
+        "건너뛰기"
       ]
     },
     "Actions message": {
@@ -2204,6 +2218,9 @@
       ],
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Pending": [
+        "보류 중"
       ],
       "Status": [
         "상태"
@@ -4097,8 +4114,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2단계 인증이 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "마지막 방문 이후 카테고리에 읽지 않은 메시지가 있는 경우 파란색 점이 나타납니다."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME }에 폴더와 파일을 추가한 뒤 팀원을 초대하여 확인하거나 편집합니다."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "언제든지 설정에서 카테고리를 추가하거나 삭제하고, 알림을 관리하고, 혹은 설정값을 조정할 수 있습니다."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "언제든지 설정에서 카테고리를 추가하거나 삭제하고, 알림을 관리하고, 혹은 모두 비활성화할 수 있습니다."
       ],
       "Also included": [
         "이것 외에도"
@@ -4181,9 +4207,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "메시지가 잘못된 카테고리에 표시되는 경우, 올바른 카테고리로 이동하면 됩니다. 메시지를 마우스 오른쪽 버튼으로 클릭하여 새 카테고리를 선택하거나, 해당 메시지를 끌어다 놓으십시오."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
       ],
@@ -4210,6 +4233,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 안에서 Gmail을 읽고, 답장하고 관리하세요."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "이메일에서 우클릭하여 \"댜음으로 이동\"을 선택하거나 다른 카테고리로 이동하려면 드래그 앤 드롭하세요. 유사한 이메일이 추후에 선택한 카테고리로 자동 분류됩니다."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "${ MAIL_APP_NAME }에서 Gmail 메시지를 직접 보내고 받아보세요. ${ addressesSettingsLink }에서 회원님의 주소를 연결하세요."
@@ -4360,9 +4386,6 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "새로운 카테고리 보기 기능이 출시되기 전에 가장 먼저 체험해보는 회원님 중 한 분입니다. 회원님의 의견은 모든 사용자를 위해 Proton Mail이 이메일을 분류하는 방식을 개선하는 데 큰 도움이 됩니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
@@ -5290,6 +5313,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
       "Wrong billing address": [
         "청구 주소가 잘못되었습니다"
@@ -8772,6 +8798,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ],
       "You are currently signed in as ${ username }.": [
         "현재 ${ username }(으)로 로그인 했습니다."
@@ -12839,6 +12868,9 @@
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
       ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
+      ],
       "Search messages": [
         "메시지 검색"
       ],
@@ -15388,9 +15420,6 @@
       "Help center": [
         "지원 센터"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME }의 이메일 카테고리 기능을 발전시키는 데 도움을 주십시오"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }로 이메일 숨기기"
       ],
@@ -15480,6 +15509,9 @@
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
+      ],
+      "Make Categories your own": [
+        "나만의 카테고리 만들기"
       ],
       "Mark all messages as read": [
         "모든 메시지를 읽음으로 표시"
@@ -15589,6 +15621,9 @@
       "New message": [
         "새 메시지"
       ],
+      "New messages": [
+        "새 메시지"
+      ],
       "Newsletters": [
         "뉴스레터"
       ],
@@ -15666,6 +15701,9 @@
       ],
       "Payment verification": [
         "지불 방법 확인"
+      ],
+      "Personalize your Categories": [
+        "카테고리 개인화"
       ],
       "Phone numbers": [
         "전화번호"
@@ -15999,6 +16037,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."
+      ],
+      "You're in control": [
+        "내가 직접 관리"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."

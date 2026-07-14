@@ -66,6 +66,9 @@
       "Accept": [
         "承認する"
       ],
+      "Account settings": [
+        "アカウントの設定"
+      ],
       "activate": [
         "有効にする"
       ],
@@ -527,6 +530,9 @@
       ],
       "Disable account monitor": [
         "アカウントモニターを無効化"
+      ],
+      "Disable category": [
+        "カテゴリーを無効化"
       ],
       "Disable recovery phrase": [
         "回復用フレーズを無効にする"
@@ -1272,6 +1278,9 @@
       "Save": [
         "保存"
       ],
+      "Save & finish": [
+        "保存して終了"
+      ],
       "Save address": [
         "メールアドレスを保存"
       ],
@@ -1490,6 +1499,9 @@
       ],
       "Stay": [
         "終了しない"
+      ],
+      "Stop": [
+        "停止"
       ],
       "Stop using single sign-on": [
         "シングル サインオンの使用を停止する"
@@ -6406,6 +6418,9 @@
       "Incorrect password": [
         "パスワードが正しくありません"
       ],
+      "Incorrect recovery code. Please try again.": [
+        "無効な回復用コードです。再度お試しください。"
+      ],
       "Incorrect second password. Please try again.": [
         "セカンドパスワードが正しくありません。もう一度お試しください。"
       ],
@@ -6825,6 +6840,9 @@
       ],
       "We couldn't sign you in": [
         "サインインできませんでした"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS設定に問題があるため、DKIMの署名を停止しました。署名を再開するには、以下の手順に従ってください。"
@@ -7387,9 +7405,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "新規ユーザーを作成する前にカスタムドメインを設定する必要があります。"
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "${ plan }に含まれる全てのプレミアム機能へのアクセスを失います。"
-      ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "あなたのアカウントをこのグループプランにリンクするよう、**${ invite.InviterEmail }**から招待されています。"
       ],
@@ -7533,6 +7548,12 @@
       ],
       "10+ premium features": [
         "10個以上のプレミアム機能"
+      ],
+      "3 email domains": [
+        "メールドメイン３つ"
+      ],
+      "500 GB storage": [
+        "容量500GB"
       ],
       "Access to all countries": [
         "すべての国にアクセス"
@@ -9862,6 +9883,9 @@
       "Get visibility into account access": [
         "アカウントへのアクセス状況を確認する"
       ],
+      "Get VPN Plus": [
+        "VPN Plus を入手"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "トークンに、使用する予定のサービスなどのわかりやすい名前を付け、アクティブなカスタムドメインアドレスのいずれかを選択してください。このアドレスのみが、このトークンを使用してメールを送信することができます。"
       ],
@@ -11077,6 +11101,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
       ],
+      "Thinking…": [
+        "考え中…"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
@@ -11625,6 +11652,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "既定のブラウザーで次のページにアクセスしようとしています"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
       ],
       "You are currently signed in as ${ username }.": [
         "現在 ${ username } としてサインインしています。"
@@ -13421,6 +13451,9 @@
       "Newsletters": [
         "ニュースレター"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "ニュースレター - ニュース、編集者からのメール、非プロモーションコンテンツ"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "いいえ (保管庫が共有されない限り、ユーザーはアプリを使用できません)"
       ],
@@ -13562,8 +13595,14 @@
       "Primary": [
         "プライマリー"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "プライマリー - 個人と仕事のメール、それと重要なお知らせ"
+      ],
       "Promotions": [
         "プロモーション"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "プロモーション - お得な情報、オファー、マーケティングメール"
       ],
       "Prompt to trust keys": [
         "鍵を信頼するか確認する"
@@ -13727,6 +13766,9 @@
       "Social": [
         "ソーシャル"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "ソーシャル - ソーシャルメディアの更新、アクティビティ、メッセージ"
+      ],
       "Social media updates and activity": [
         "ソーシャルメディアの更新とアクティビティ"
       ],
@@ -13826,6 +13868,9 @@
       "Transactions": [
         "取引"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "取引 - 領収書、予約、請求書、注文"
+      ],
       "Two-password mode": [
         "2 パスワードモード"
       ],
@@ -13846,6 +13891,9 @@
       ],
       "Updates": [
         "更新情報"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "アップデート - 自動的な確認、アラート、アカウントの更新"
       ],
       "Upload 1 or more encryption keys": [
         "1 つ以上の暗号鍵をアップロード"
@@ -14167,9 +14215,6 @@
       ],
       "Create an alias": [
         "エイリアスを作成"
-      ],
-      "Don't have access to your 2FA?": [
-        "2要素認証にアクセスできませんか？"
       ],
       "Downloads": [
         "ダウンロード"
@@ -18370,6 +18415,14 @@
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
       ]
     },
+    "Recovery score item": {
+      "Enable email recovery": [
+        "メールでの回復を有効化"
+      ],
+      "Phone recovery enabled": [
+        "電話番号回復を有効化しました"
+      ]
+    },
     "RecoveryPhrase: Action": {
       "Continue": [
         "続ける"
@@ -19024,6 +19077,17 @@
       ],
       "Your recovery phone number is:": [
         "あなたの回復用電話番号は："
+      ]
+    },
+    "safety_review": {
+      "Done": [
+        "完了"
+      ],
+      "Download recovery file": [
+        "回復用ファイルをダウンロード"
+      ],
+      "Verify your recovery phone": [
+        "回復用電話を検証しましょう"
       ]
     },
     "saml: Action": {
@@ -20620,6 +20684,9 @@
     "Status": {
       "Disabled": [
         "無効"
+      ],
+      "Off": [
+        "切"
       ]
     },
     "Step in filter modal": {
@@ -22360,6 +22427,9 @@
       "Edit billing address": [
         "請求先住所を編集"
       ],
+      "Edit company": [
+        "企業情報を編集"
+      ],
       "Edit countries": [
         "国を編集"
       ],
@@ -22699,9 +22769,6 @@
       "Layout": [
         "レイアウト"
       ],
-      "Leave ${ organisationName }?": [
-        "${ organisationName } を退出しますか？"
-      ],
       "Leave group?": [
         "グループを離れますか？"
       ],
@@ -22938,6 +23005,9 @@
       ],
       "Remove forwarding address": [
         "転送先アドレスを削除する"
+      ],
+      "Remove recovery phone number": [
+        "回復用電話番号を削除"
       ],
       "Remove server?": [
         "サーバーを削除しますか？"
@@ -23733,6 +23803,9 @@
       ],
       "Verified email address": [
         "検証済みのメールアドレス"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGPキー バージョン6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"

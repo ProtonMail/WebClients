@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } hovorí: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Účastník sa pripojil k schôdzi"
       ],
@@ -135,6 +138,12 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } nová",
+        "${ newMessageCount } nové",
+        "${ newMessageCount } nových",
+        "${ newMessageCount } nových"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -197,6 +206,9 @@
       ],
       "Close preview": [
         "Zavrieť náhľad"
+      ],
+      "Close reply composer": [
+        "Zatvoriť editor odpovede"
       ],
       "Close this banner": [
         "Zatvoriť tento banner"
@@ -261,8 +273,14 @@
       "Disable waiting room": [
         "Deaktivovať čakáreň"
       ],
+      "Discard": [
+        "Zahodiť"
+      ],
       "Dismiss": [
         "Odmietnuť"
+      ],
+      "Dismiss new messages": [
+        "Zavrieť nové správy"
       ],
       "Done": [
         "Hotovo"
@@ -456,6 +474,9 @@
         "Odstrániť reakciu ${ emoji }, ${ identities.length } reakcií",
         "Odstrániť reakciu ${ emoji }, ${ identities.length } reakcií"
       ],
+      "Reply": [
+        "Odpovedať"
+      ],
       "Report a problem": [
         "Nahlásiť problém"
       ],
@@ -476,6 +497,9 @@
       ],
       "Resume": [
         "Pokračovať"
+      ],
+      "Retry": [
+        "Opakovať"
       ],
       "Return to dashboard": [
         "Návrat na nástenku"
@@ -503,6 +527,9 @@
       ],
       "Send an encrypted message": [
         "Odoslať zašifrovanú správu"
+      ],
+      "Send reply": [
+        "Odoslať odpoveď"
       ],
       "Settings": [
         "Nastavenia"
@@ -1908,6 +1935,9 @@
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Váš prehliadač prečerpal pamäťový priestor. Záznam sme uložili až po tento moment."
       ],
@@ -2136,6 +2166,12 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reagoval(a) pomocou ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } odpoveď",
+        "${ replyCount } odpovede",
+        "${ replyCount } odpovedí",
+        "${ replyCount } odpovedí"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } z maximálne ${ maxParticipants } účastníkov"
       ],
@@ -2150,6 +2186,9 @@
       ],
       "-Removed dangerous URL-": [
         "-Odstránená nebezpečná URL adresa-"
+      ],
+      "1 reply draft": [
+        "1 koncept odpovede"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
@@ -2436,6 +2475,9 @@
       "Member": [
         "Člen"
       ],
+      "Message actions": [
+        "Akcie správy"
+      ],
       "Message from ${ participantName }": [
         "Správa od ${ participantName }"
       ],
@@ -2462,6 +2504,9 @@
       ],
       "New host": [
         "Nový hostiteľ"
+      ],
+      "New reply": [
+        "Nová odpoveď"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Nebol zistený žiadny ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
@@ -2495,6 +2540,9 @@
       ],
       "No speaker detected": [
         "Nebol zistený žiadny reproduktor"
+      ],
+      "Not sent, check your connection.": [
+        "Neodoslané, skontrolujte pripojenie."
       ],
       "Only meetings you created appear here": [
         "Tu sa zobrazia len vami vytvorené schôdzky"
@@ -2649,6 +2697,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Odkaz na schôdzku, ktorý ste sa pokúsili otvoriť, neexistuje alebo jeho platnosť mohla vypršať. Skontrolujte, či je odkaz správny, alebo namiesto toho začnite novú zabezpečenú schôdzku."
       ],
+      "This conversation started before you joined.": [
+        "Táto konverzácia sa začala ešte predtým, ako ste sa pripojili."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Toto je end-to-end šifrovaný chat s dočasnými správami, ktoré zmiznú po ukončení hovoru."
       ],
@@ -2723,6 +2774,9 @@
       ],
       "Video effects": [
         "Video efekty"
+      ],
+      "View ": [
+        "Zobraziť "
       ],
       "Warning": [
         "Varovanie"
@@ -2879,6 +2933,9 @@
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
       ],
+      "Disabled": [
+        "Vypnutý"
+      ],
       "Does not repeat": [
         "Neopakuje sa"
       ],
@@ -2992,6 +3049,9 @@
       ],
       "Repeat event": [
         "Opakovať udalosť"
+      ],
+      "Reply": [
+        "Odpovedať"
       ],
       "Return to dashboard": [
         "Návrat na nástenku"
@@ -3192,6 +3252,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Opíšte prosím problém a uveďte akékoľvek chybové správy"
+      ],
+      "Reply...": [
+        "Odpovedať..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "Názov miestnosti, napr. koordinácia tímu, aktualizácia projektu atď."

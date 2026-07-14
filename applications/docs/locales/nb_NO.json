@@ -90,6 +90,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Ask me next time": [
+        "Spør meg neste gang"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
         "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
@@ -719,6 +722,9 @@
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Save preferences": [
+        "Lagre preferanser"
       ],
       "Search": [
         "Søk"
@@ -3174,6 +3180,9 @@
       "Failed to resend invitation": [
         "Kunne ikke sende invitasjonen på nytt"
       ],
+      "Failed to trash document.": [
+        "Kunne ikke legge dokumentet i papirkurven."
+      ],
       "Failed to unshare node": [
         "Kunne ikke oppheve deling av node"
       ],
@@ -3526,6 +3535,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Vi kunne ikke importere denne filen til ${ SHEETS_APP_NAME }. Du kan prøve å kopiere og lime inn innholdet i en ny ${ SHEETS_APP_NAME }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
@@ -4691,6 +4703,9 @@
       "Continue": [
         "Fortsett"
       ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
@@ -4739,6 +4754,9 @@
       ],
       "Creating link to folder": [
         "Oppretter kobling til mappe"
+      ],
+      "Creating new document...": [
+        "Oppretter nytt dokument..."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -4842,6 +4860,12 @@
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Feil ved konvertering av dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Feil ved lasting av dokument: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -4910,6 +4934,12 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Skaff deg en profesjonell e-post med @din-bedrift.com-adresse, 1 TB sikker lagringsplass per bruker, lengre videosamtaler og mer med ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
+      ],
+      "Get Notified About Comments": [
+        "Bli varslet om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -5068,6 +5098,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Making a copy...": [
+        "Lager en kopi…"
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
@@ -5098,6 +5131,9 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Ingen dokument oppgitt i URL-en. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5398,6 +5434,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
+      ],
       "There are no documents in the trash.": [
         "Det er ingen dokumenter i papirkurven."
       ],
@@ -5628,6 +5667,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du er for øyeblikket pålogget som ${ username }."
@@ -6085,11 +6127,20 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
+      "Enable email notifications": [
+        "Aktiver e-postvarsler"
+      ],
       "Encrypt emails": [
         "Krypter e-poster"
       ],
       "Erase this link and remove everyone with access": [
         "Slett denne koblingen og fjern alle med tilgang"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
       ],
       "Expiry": [
         "Utløp"
@@ -6138,6 +6189,9 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
+      ],
+      "Include document name in notification": [
+        "Inkluder dokumentnavn i varsel"
       ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
@@ -6208,6 +6262,9 @@
       "Navigation": [
         "Navigasjon"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
       "New password": [
         "Nytt passord"
       ],
@@ -6228,6 +6285,9 @@
       ],
       "Optional": [
         "Valgfritt"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
       ],
       "Password": [
         "Passord"
@@ -6268,6 +6328,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
       "Replace existing file": [
         "Erstatt eksisterende fil"
       ],
@@ -6304,6 +6367,9 @@
       "Skip folder": [
         "Hopp over mappe"
       ],
+      "Starts with": [
+        "Begynner med"
+      ],
       "Stop sharing": [
         "Avslutt deling"
       ],
@@ -6336,6 +6402,9 @@
       ],
       "Upload picture": [
         "Last opp bilde"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Username": [
         "Brukernavn"
@@ -6671,6 +6740,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
       ],
@@ -8031,6 +8118,15 @@
       "Device renamed": [
         "Enhet byttet navn"
       ],
+      "Document failed to be restored from trash": [
+        "Kunne ikke gjenopprette dokumentet fra papirkurven"
+      ],
+      "Document moved to trash": [
+        "Dokument flyttet til papirkurven"
+      ],
+      "Document restored from trash": [
+        "Dokument gjenopprettet fra papirkurven"
+      ],
       "External invitation removed from the share": [
         "Ekstern invitasjon fjernet fra delingen"
       ],
@@ -8051,6 +8147,9 @@
       ],
       "Failed to reject share invitation": [
         "Kunne ikke avvise delingsinvitasjon"
+      ],
+      "Failed to rename document": [
+        "Kunne ikke endre navn på dokumentet"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke laste opp filer: ${ err }"
@@ -9205,6 +9304,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Oppretter nytt regneark..."
+      ],
       "Detect automatically": [
         "Oppdag automatisk"
       ],
@@ -10657,7 +10759,7 @@
         "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Load image": [
         "Last inn bilde"
@@ -10850,6 +10952,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",

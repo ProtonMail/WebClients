@@ -66,6 +66,9 @@
       "Accept": [
         "Accepter"
       ],
+      "Account settings": [
+        "Paramètres du compte"
+      ],
       "activate": [
         "activer"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Gérer les préférences de communication"
+      ],
+      "Manage company": [
+        "Gérer l'entreprise"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -2999,6 +3005,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Une erreur inconnue s'est produite. Veuillez rafraîchir la page et réessayer."
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Voulez-vous vraiment continuer sans ${ withoutString } et ${ notMigratedOthers } autre ?",
+        "Voulez-vous vraiment continuer sans ${ withoutString } et ${ notMigratedOthers } autres ?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Voulez-vous vraiment continuer sans ${ withoutString } ?"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Voulez-vous vraiment continuer ? Les utilisateurs qui n'auront pas activé leur compte avant la fin de la migration devront demander une réinitialisation de mot de passe à l'administrateur de leur organisation ${ BRAND_NAME }."
       ],
@@ -3046,6 +3059,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Supprimez tous les enregistrements MX existants, puis copiez les enregistrements ci-dessous et collez-les dans la section DNS de votre hébergeur de domaine."
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM ajoute une signature numérique à chaque e-mail afin que les destinataires puissent vérifier que le message provient bien de votre domaine et qu'il n'a pas été altéré pendant son acheminement. Sans cela, les messages risquent d'être considérés comme moins fiables."
@@ -3180,6 +3196,9 @@
       "Missing organization public key": [
         "La clé publique de l'organisation est absente."
       ],
+      "More details": [
+        "Plus d'informations"
+      ],
       "Need help?": [
         "Besoin d'aide ?"
       ],
@@ -3273,11 +3292,17 @@
       "Some accounts are not claimed": [
         "Certains comptes ne sont pas activés."
       ],
+      "Some members weren't migrated": [
+        "Certains membres n'ont pas été transférés."
+      ],
       "Status": [
         "État"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Pour transférer les données de votre organisation vers ${ BRAND_NAME }, installez ${ BRAND_NAME } Easy Switch depuis le marketplace Google Workspace. Une fois l'installation terminée, revenez ici pour continuer."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Pour finaliser la migration, veillez à ne conserver que les enregistrements MX de ${ BRAND_NAME }."
       ],
       "Update records for receiving": [
         "Mettre à jour les enregistrements pour recevoir"
@@ -3333,6 +3358,9 @@
       "You": [
         "Vous"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Vous ne pourrez plus copier les données de ces utilisateurs par la suite."
+      ],
       "You're all set!": [
         "Tout est prêt !"
       ],
@@ -3342,6 +3370,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateur. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement.",
         "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateurs. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "La configuration de votre domaine contient toujours les enregistrements MX d'un autre fournisseur."
       ]
     },
     "breadcrumb": {
@@ -7786,6 +7817,9 @@
       "We couldn't sign you in": [
         "Nous n’avons pas pu vous connecter."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nous avons arrêté la signature DKIM suite à des problèmes avec votre configuration DNS. Nous vous invitons à suivre les instructions ci-dessous pour reprendre la signature."
       ],
@@ -8357,8 +8391,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Vous devez configurer un domaine personnalisé avant de créer un nouvel utilisateur."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Vous n'aurez plus accès à toutes les fonctionnalités premium inclus dans ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Vous n'aurez plus accès à toutes les fonctionnalités premium incluses dans ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Vous êtes invitée par **${ invite.InviterEmail }** à associer votre compte à cet abonnement groupé."
@@ -11700,6 +11734,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
+      "Manage groups in your identity provider": [
+        "Gérez les groupes dans votre fournisseur d'identité"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gérez les applications ${ BRAND_NAME } auxquelles les membres de votre organisation peuvent accéder. Si cette option est désactivée, seuls les administrateurs y auront accès."
       ],
@@ -13283,6 +13320,9 @@
       "You are about to open your default browser and visit:": [
         "Vous allez ouvrir votre navigateur par défaut et consulter :"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Vous êtes actuellement connecté en tant que ${ username }."
       ],
@@ -13354,6 +13394,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Vous pouvez désormais accéder à l'entreprise et la gérer en tant qu'administrateur."
       ],
       "You can now close this tab.": [
         "Vous pouvez maintenant fermer cet onglet."
@@ -14706,6 +14749,9 @@
       ],
       "Confirm login password": [
         "Confirmer le mot de passe de connexion"
+      ],
+      "Confirm MX records updated": [
+        "Vérifier les enregistrements MX mis à jour"
       ],
       "Confirm new password": [
         "Confirmer le nouveau mot de passe"
@@ -16205,9 +16251,6 @@
       ],
       "Details": [
         "Informations"
-      ],
-      "Don't have access to your 2FA?": [
-        "Vous n'avez pas accès à votre A2F ?"
       ],
       "Downloads": [
         "Téléchargements"
@@ -24484,11 +24527,11 @@
       "per month, billed annually": [
         "par mois (facturation annuelle)"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Économisez 50 % pendant 1 an, et gardez un accès complet"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Économisez 50% pendant 6 mois, et gardez un accès complet"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Économisez 50 % pendant un an, et gardez un accès complet"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Voir comment ${ MAIL_APP_NAME } se positionne, et découvrir pourquoi notre indépendance fait la différence."
@@ -26152,8 +26195,8 @@
       "Layout": [
         "Disposition"
       ],
-      "Leave ${ organisationName }?": [
-        "Quitter ${ organisationName } ?"
+      "Leave ${ organization.Name }?": [
+        "Quitter ${ organization.Name } ?"
       ],
       "Leave group?": [
         "Voulez-vous quitter le groupe ?"
@@ -26175,6 +26218,9 @@
       ],
       "Make your business stand out": [
         "Faites en sorte que votre entreprise se démarque !"
+      ],
+      "Manage company": [
+        "Gérer l'entreprise"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gérer vos fichiers sur l'ensemble de vos appareils sur Windows, Mac, Android et iOS."

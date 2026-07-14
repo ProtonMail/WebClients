@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Iniciar la configuración"
       ],
-      "Start testing": [
-        "Comenzar las pruebas"
-      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir en ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "Not now": [
+        "Ahora no"
+      ],
+      "Skip": [
+        "Omitir"
       ]
     },
     "Actions message": {
@@ -4175,8 +4189,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "La autenticación de dos factores añade una capa de seguridad adicional, evitando accesos no autorizados."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Aparece un punto azul cuando una categoría tiene mensajes no leídos desde tu última visita."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Añade carpetas y archivos a ${ DRIVE_APP_NAME } e invita a los miembros del equipo a ver o editar."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Añade o elimina categorías, gestiona las notificaciones y ajusta tus preferencias en cualquier momento en la configuración."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Añade o elimina categorías, gestiona las notificaciones o desactívalas por completo en cualquier momento en la configuración."
       ],
       "Also included": [
         "También incluido"
@@ -4259,9 +4282,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayuda a tu equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Si un mensaje aparece en la categoría incorrecta, muévelo a la correcta. Haz clic derecho en un mensaje para elegir una nueva categoría o arrástralo y suéltalo donde corresponda."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
@@ -4289,6 +4309,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lee, responde y mantente al día con Gmail desde ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haz clic con el botón derecho en un correo electrónico y selecciona \"Mover a\", o arrástralo y suéltalo en otra categoría. Los correos similares se clasificarán allí automáticamente en el futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envía y recibe mensajes de Gmail directamente en ${ MAIL_APP_NAME }. Conecta tu dirección en ${ addressesSettingsLink }."
@@ -4445,9 +4468,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail.",
         "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail."
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Estás entre las primeras personas en probar la nueva vista de categorías antes de que se lance. Tus comentarios ayudan a mejorar cómo Proton Mail clasifica los correos para todo el mundo."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
@@ -5386,6 +5406,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "El número de IVA debe empezar por ${ prefixes }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -7863,6 +7886,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo electrónico predeterminada."
+      ],
       "Manage your folders": [
         "Administra tus carpetas"
       ],
@@ -8958,6 +8984,9 @@
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Actualmente estás conectado como ${ username }."
       ],
@@ -9017,6 +9046,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "Tienes ${ totalLabel } en tu bandeja de entrada."
       ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Tienes **${ count } conversación** en la categoría ${ categoryLabel }",
+        "Tienes **${ count } conversaciones** en la categoría ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Tienes **${ count } conversación** almacenada en esta carpeta",
         "Tienes **${ count } conversaciones** almacenadas en esta carpeta"
@@ -9024,6 +9057,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Tienes **${ count } conversación** marcada con esta etiqueta",
         "Tienes **${ count } conversaciones** marcadas con esta etiqueta"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Tienes **${ count } mensaje** en la categoría ${ categoryLabel }",
+        "Tienes **${ count } mensajes** en la categoría ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Tienes **${ count } mensaje** almacenado en esta carpeta",
@@ -9059,6 +9096,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } conversación** en la categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } mensaje** en la categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } mensajes** en la categoría ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Has seleccionado **${ count } conversación** de esta carpeta",
@@ -15026,6 +15071,10 @@
         "Mover ${ selectionCount } mensaje",
         "Mover ${ selectionCount } mensajes"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Se ha movido a ${ label }. Los mensajes similares se clasificarán aquí en el futuro.",
+        "Se han movido a ${ label }. Los mensajes similares se clasificarán aquí en el futuro."
+      ],
       "Password copied to clipboard": [
         "Se ha copiado la contraseña al portapapeles."
       ],
@@ -15721,9 +15770,6 @@
       "Help center": [
         "Centro de ayuda"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Ayuda a dar forma al futuro de las categorías de correo en ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculta tu email con ${ PASS_APP_NAME }"
       ],
@@ -15815,6 +15861,9 @@
       ],
       "Make a secure connection your default": [
         "Elige una conexión segura como opción predeterminada"
+      ],
+      "Make Categories your own": [
+        "Haz tuyas las categorías"
       ],
       "Mark all messages as read": [
         "Marcar todos los mensajes como leídos"
@@ -15924,6 +15973,9 @@
       "New message": [
         "Nuevo mensaje"
       ],
+      "New messages": [
+        "Nuevos mensajes"
+      ],
       "Newsletters": [
         "Boletines"
       ],
@@ -16001,6 +16053,9 @@
       ],
       "Payment verification": [
         "Verificación del pago"
+      ],
+      "Personalize your Categories": [
+        "Personaliza tus Categorías"
       ],
       "Phone numbers": [
         "Números de teléfono"
@@ -16337,6 +16392,9 @@
       "You can now create unlimited folders and labels": [
         "Ahora puedes crear carpetas y etiquetas ilimitadas."
       ],
+      "You're in control": [
+        "Tú tienes el control"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."
       ],
@@ -16374,6 +16432,9 @@
       ],
       "Created": [
         "Creado"
+      ],
+      "Expires": [
+        "Expira"
       ],
       "Type": [
         "Tipo"
@@ -16474,6 +16535,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {

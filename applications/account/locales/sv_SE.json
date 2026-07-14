@@ -66,6 +66,9 @@
       "Accept": [
         "Acceptera"
       ],
+      "Account settings": [
+        "Kontoinställningar"
+      ],
       "activate": [
         "aktivera"
       ],
@@ -1091,6 +1094,9 @@
       ],
       "Manage communication preferences": [
         "Hantera kommunikationspreferenser"
+      ],
+      "Manage company": [
+        "Hantera företag"
       ],
       "Manage folders": [
         "Hantera mappar"
@@ -3188,6 +3194,9 @@
         "Hoppade över ${ count } händelse på grund av inkompatibiliteter",
         "Hoppade över ${ count } händelser på grund av inkompatibiliteter"
       ],
+      "Some members weren't migrated": [
+        "Några medlemmar migrerades inte"
+      ],
       "Status": [
         "Status"
       ],
@@ -3235,6 +3244,9 @@
       ],
       "You're all set!": [
         "Du är klar!"
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Din domänkonfiguration innehåller fortfarande en annan leverantörs MX-koder."
       ]
     },
     "breadcrumb": {
@@ -7624,6 +7636,9 @@
       "We couldn't sign you in": [
         "Vi kunde inte logga in dig"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppade DKIM-signering på grund av problem med din DNS-konfiguration. Följ instruktionerna nedan för att återuppta signeringen."
       ],
@@ -8194,9 +8209,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du måste konfigurera en anpassad domän innan du skapar en ny användare."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Du kommer förlora åtkomst till alla premiumfunktioner inkluderat med ${ plan }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Du inbjuden av **${ invite.InviterEmail }** för att länka ditt konto till detta gruppaket."
@@ -12976,6 +12988,9 @@
       "You are about to open your default browser and visit:": [
         "Du är på väg att öppna din standardwebbläsare och besöka:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du är för närvarande inloggad som ${ username }."
       ],
@@ -14931,6 +14946,9 @@
       "Navigation": [
         "Navigering"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New display name": [
         "Nytt visningsnamn"
       ],
@@ -14951,6 +14969,9 @@
       ],
       "Newsletters": [
         "Nyhetsbrev"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhetsbrev - Nyheter, redaktionell e-post och icke-kommersiellt innehåll"
       ],
       "No": [
         "Nej"
@@ -15036,6 +15057,9 @@
       "Other amount": [
         "Annat belopp"
       ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
+      ],
       "Passkeys": [
         "Passkeys"
       ],
@@ -15108,11 +15132,17 @@
       "Primary": [
         "Primär"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primär - Personliga e-postmeddelanden och jobb-e-post, samt viktiga uppdateringar"
+      ],
       "Priority support": [
         "Prioriterad support"
       ],
       "Promotions": [
         "Kampanjer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Erbjudanden - Erbjudanden, kampanjer och marknadsförings-e-post"
       ],
       "Prompt to trust keys": [
         "Fråga om att lita på nycklar"
@@ -15298,6 +15328,9 @@
       "Social": [
         "Socialt"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Socialt - Uppdateringar, aktivitet och meddelanden från sociala medier"
+      ],
       "Social media updates and activity": [
         "Uppdateringar och aktivitet i sociala medier"
       ],
@@ -15435,6 +15468,9 @@
       ],
       "Updates": [
         "Uppdateringar"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Uppdateringar - Automatiska bekräftelser, aviseringar och kontouppdateringar"
       ],
       "Upload 1 or more encryption keys": [
         "Ladda upp 1 eller flera krypteringsnycklar"
@@ -15822,9 +15858,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Don't have access to your 2FA?": [
-        "Har du inte åtkomst till din 2FA?"
       ],
       "Downloads": [
         "Nedladdningar"
@@ -16310,6 +16343,9 @@
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
@@ -16511,6 +16547,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Visa ${ PASS_APP_NAME }-aktivitet i hela din organisation."
@@ -23953,9 +23992,6 @@
       "per month, billed annually": [
         "per månad, faktureras årligen"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spara 50 % i 1 år och behåll full åtkomst"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Spara 50 % i 6 månader och behåll full åtkomst"
       ],
@@ -25615,8 +25651,8 @@
       "Layout": [
         "Layout"
       ],
-      "Leave ${ organisationName }?": [
-        "Lämna ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Lämna ${ organization.Name }?"
       ],
       "Leave group?": [
         "Lämna grupp?"
@@ -25638,6 +25674,9 @@
       ],
       "Make your business stand out": [
         "Få ditt företag att sticka ut"
+      ],
+      "Manage company": [
+        "Hantera företag"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Hantera filer över enheter på Windows, Mac, Android och iOS."

@@ -2468,6 +2468,9 @@
       "VAT number must start with ${ prefixes }": [
         "Momsregistreringsnummer måste börja med ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
       "Wrong billing address": [
         "Fel faktureringsadress"
       ]
@@ -3622,6 +3625,9 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",

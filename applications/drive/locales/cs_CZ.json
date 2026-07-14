@@ -93,6 +93,9 @@
       "Add photos": [
         "Přidat fotky"
       ],
+      "Add storage": [
+        "Přidat úložiště"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Přidat do \"${ name }\" (${ photoCount } fotka)",
         "Přidat do \"${ name }\" (${ photoCount } fotky)",
@@ -537,6 +540,9 @@
       "Go back": [
         "Zpět"
       ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Zpět do alba „${ ellipsedAlbumName }“"
+      ],
       "Go to ${ planOrAppName }": [
         "Jít do ${ planOrAppName }"
       ],
@@ -626,6 +632,9 @@
       ],
       "Let's talk": [
         "Promluvme si"
+      ],
+      "List layout": [
+        "Zobrazení seznamu"
       ],
       "Load": [
         "Načíst"
@@ -783,8 +792,14 @@
       "Re-index": [
         "Znovu indexovat"
       ],
+      "Re-indexing in progress": [
+        "Probíhá opětovné indexování"
+      ],
       "Re-sign": [
         "Znovu podepsat"
+      ],
+      "Rebuild index": [
+        "Znovu sestavit index"
       ],
       "Reconnect": [
         "Obnovit připojení"
@@ -854,6 +869,9 @@
       ],
       "Report a problem": [
         "Nahlásit problém"
+      ],
+      "Report abuse": [
+        "Nahlásit zneužití"
       ],
       "Report an issue": [
         "Nahlásit problém"
@@ -929,6 +947,9 @@
       ],
       "Search drive": [
         "Prohledat disk"
+      ],
+      "Search is unavailable": [
+        "Vyhledávání je nedostupné"
       ],
       "See how": [
         "Podívejte se, jak"
@@ -1094,6 +1115,9 @@
       ],
       "Trust": [
         "Důvěřovat"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Vyzkoušet ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Zkuste to znovu"
@@ -3622,6 +3646,9 @@
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
       ],
+      "Folder not found": [
+        "Složka nebyla nalezena"
+      ],
       "Forward address is required": [
         "Adresa přeposílání je vyžadována"
       ],
@@ -3990,6 +4017,9 @@
       ],
       "We cannot retrieve this item": [
         "Tuto položku se nepodařilo načíst"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ],
       "We were not able to load some invitations": [
         "Některé pozvánky se nám nepodařilo načíst"
@@ -5012,6 +5042,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "Prostředí ${ BRAND_NAME } Workspace umožňuje vašemu týmu efektivně spolupracovat, aniž by byla ohrožena data vaší společnosti."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
@@ -5065,6 +5098,9 @@
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Soubory ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nelze stáhnout přímo a nebudou zahrnuty do tohoto balíku dat ke stažení. Ostatní soubory si můžete stáhnout kliknutím na 'Pokračovat ve stahování'."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "Služba ${ DRIVE_APP_NAME } zjistila, že lokální vyhledávací index je poškozen a nelze jej dále používat. Obnovte index pro obnovení vyhledávání."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } v App Store"
@@ -5306,6 +5342,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -5507,6 +5546,9 @@
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
       ],
+      "Could not scan file for malware": [
+        "Nepodařilo se zkontrolovat přítomnost malwaru v souboru"
+      ],
       "Country code": [
         "Kód země"
       ],
@@ -5584,6 +5626,12 @@
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Pamatujete si své heslo? ${ verifyButton }"
+      ],
+      "Do you still want to upload it?": [
+        "Přesto jej chcete nahrát?",
+        "Přesto je chcete nahrát?",
+        "Přesto je chcete nahrát?",
+        "Přesto je chcete nahrát?"
       ],
       "Done": [
         "Hotovo"
@@ -5720,6 +5768,12 @@
       "Feb": [
         "Úno"
       ],
+      "File could not be scanned": [
+        "Soubor nebylo možné naskenovat"
+      ],
+      "File flagged as potentially malicious": [
+        "Soubor byl označen jako potenciálně škodlivý"
+      ],
       "File will not be updated": [
         "Soubor nebude aktualizován"
       ],
@@ -5779,6 +5833,9 @@
       ],
       "How does encrypted search work?": [
         "Jak funguje vyhledávání v šifrovaných datech?"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Tímto prohlašuji v dobré víře, že informace a prohlášení obsažená v tomto oznámení jsou správná a úplná."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Pokud tyto soubory nebudou plně staženy lokálně do ${ deviceName }, ztratíte k nim přístup."
@@ -5860,6 +5917,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexováno ${ first }, ${ second }, ${ third } a ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexování se dostalo do neočekávaného stavu a nemůže pokračovat. Obnovte index, abyste jej mohli obnovit."
       ],
       "Indexing in progress": [
         "Probíhá indexování"
@@ -6098,6 +6158,9 @@
       "Not connected": [
         "Nepřipojeno"
       ],
+      "Not enough storage space": [
+        "Nedostatek úložného prostoru"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ DRIVE_APP_NAME }, mohou být data stále dostupná lokálně."
       ],
@@ -6121,6 +6184,9 @@
       ],
       "On public WiFi networks": [
         "Ve veřejných sítích Wi-Fi"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Jeden šifrovaný balíček. Kompletní ochrana podnikání."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných disků je uzamčen. Je to pravděpodobně způsobeno nedávným resetem hesla."
@@ -6181,6 +6247,12 @@
       ],
       "Photo is set as album cover": [
         "Fotka je nastavena jako obálka alba"
+      ],
+      "Photo saved to your Drive": [
+        "Fotka byla uložena na váš disk",
+        "Fotky byly uloženy na váš disk",
+        "Fotky byly uloženy na váš disk",
+        "Fotky byly uloženy na váš disk"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotka byla zkopírována do streamu a tam označena jako oblíbená."
@@ -6251,6 +6323,12 @@
       "Preparing": [
         "Příprava"
       ],
+      "Preparing download": [
+        "Příprava stahování"
+      ],
+      "Preparing…": [
+        "Připravuje se…"
+      ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
       ],
@@ -6286,6 +6364,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Veřejné sdílení dokumentů ještě není podporováno."
+      ],
+      "Re-indexing in progress": [
+        "Probíhá opětovné indexování"
       ],
       "Ready to add some photos?": [
         "Jste připraveni přidat nějaké fotky?"
@@ -6344,11 +6425,29 @@
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
       ],
+      "Search data is corrupted": [
+        "Data vyhledávání jsou poškozena"
+      ],
       "Search Enabled": [
         "Vyhledávání Zapnuto"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Vyhledávání aktivováno. Nyní můžete toto dialogové okno zavřít a vyhledávat soubory a složky."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Při vyhledávání došlo k vnitřní chybě. Chcete-li situaci vyřešit, obnovte index."
+      ],
+      "Search engine error": [
+        "Chyba vyhledávače"
+      ],
+      "Search error": [
+        "Chyba vyhledávání"
+      ],
+      "Search is in an invalid state": [
+        "Vyhledávání je v neplatném stavu"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Vyhledávání je připraveno. Vaše soubory byly naindexovány."
       ],
       "Search module is not available.": [
         "Modul vyhledávání není dostupný."
@@ -6500,6 +6599,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Ve vyhledávači došlo k vnitřní chybě. Obnovte index, abyste jej mohli obnovit."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
@@ -6520,6 +6622,12 @@
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Tuto akci NELZE vrátit zpět. Pro potvrzení odebrání zařízení zadejte jeho název."
+      ],
+      "This file appears to be empty:": [
+        "Tento soubor se zdá být prázdný:",
+        "Tyto soubory se zdají být prázdné:",
+        "Tyto soubory se zdají být prázdné:",
+        "Tyto soubory se zdají být prázdné:"
       ],
       "This file is too large to preview": [
         "Tento soubor je pro náhled příliš velký"
@@ -6695,6 +6803,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
+      "Upgrade to get more storage space": [
+        "Upgradujte tarif a získejte více úložného prostoru"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
       ],
@@ -6706,6 +6817,9 @@
       ],
       "Uploaded": [
         "Nahrané"
+      ],
+      "Uploaded - file is empty": [
+        "Nahráno – soubor je prázdný"
       ],
       "Uploading": [
         "Nahrávání"
@@ -6758,6 +6872,15 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborně, právě jste si navýšili úložný prostor na 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Tuto fotku se nám nepodařilo uložit na váš disk",
+        "Tyto fotky se nám nepodařilo uložit na váš disk",
+        "Tyto fotky se nám nepodařilo uložit na váš disk",
+        "Tyto fotky se nám nepodařilo uložit na váš disk"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nemohli jsme ověřit, zda uživatel ${ nameAuthor } nahrál soubor ${ nodeName }. S následujícím obsahem mohlo být manipulováno: pořadí dat v souboru. Soubor otevřete pouze v případě, že mu důvěřujete."
+      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -6769,6 +6892,12 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "K zabezpečení vašich plateb používáme 3-D Secure"
+      ],
+      "We were not able to add this photo to your album": [
+        "Tuto fotku se nám nepodařilo přidat do vašeho alba",
+        "Některé fotky se nám nepodařilo přidat do vašeho alba",
+        "Některé fotky se nám nepodařilo přidat do vašeho alba",
+        "Některé fotky se nám nepodařilo přidat do vašeho alba"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
@@ -6856,6 +6985,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Chystáte se otevřít výchozí prohlížeč a navštívit:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Aktuálně jste přihlášeni jako ${ username }."
@@ -6977,6 +7109,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Vašemu prohlížeči došlo místo při indexování souborů pro vyhledávání. Uvolněte úložiště a poté index obnovte."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
@@ -6988,6 +7123,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Vaše soubory se znovu indexují. Ve vyhledávání můžete pokračovat, ale výsledky mohou být neúplné, dokud proces neskončí. O dokončení vás budeme informovat."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Vaše soubory již nejsou přístupné z důvodu resetování hesla. Pro obnovení přístupu znovu nahrajte starý šifrovací klíč. ${ KeyReactivationButton }"
@@ -7153,6 +7291,9 @@
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } stažení"
+      ],
       "${ n } month": [
         "${ n } měsíc",
         "${ n } měsíce",
@@ -7239,6 +7380,9 @@
       ],
       "Apply to all unverified items": [
         "Použít na všechny neověřené položky"
+      ],
+      "Asset": [
+        "Prvek"
       ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
@@ -7351,6 +7495,9 @@
       "Created": [
         "Vytvořeno"
       ],
+      "Created ${ created }": [
+        "Vytvořeno ${ created }"
+      ],
       "Credits": [
         "Kredity"
       ],
@@ -7372,11 +7519,20 @@
       "Deleted": [
         "Odstraněno"
       ],
+      "Deleted ${ deleted }": [
+        "Smazáno ${ deleted }"
+      ],
       "Device": [
         "Zařízení"
       ],
+      "Device #${ position }": [
+        "Zařízení č. ${ position }"
+      ],
       "Device name": [
         "Název zařízení"
+      ],
+      "Device: ${ name }": [
+        "Zařízení: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Deaktivovat tento odkaz k určitému datu"
@@ -7441,8 +7597,14 @@
       "Expired": [
         "Vypršelo"
       ],
+      "Expired on ${ formatted }": [
+        "Platnost vypršela ${ formatted }"
+      ],
       "Expires": [
         "Vyprší"
+      ],
+      "Expires ${ formatted }": [
+        "Platnost vyprší ${ formatted }"
       ],
       "Expiry": [
         "Vypršení platnosti"
@@ -7513,8 +7675,14 @@
       "Index kinds": [
         "Typy indexů"
       ],
+      "Indexing": [
+        "Indexování"
+      ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
+      ],
+      "Item #${ position }": [
+        "Položka č. ${ position }"
       ],
       "Keep both": [
         "Ponechat obě"
@@ -7540,6 +7708,9 @@
       "Location": [
         "Umístění"
       ],
+      "Location: ${ item.location }": [
+        "Umístění: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Přihlaste se, nebo se zaregistrujte "
       ],
@@ -7560,6 +7731,9 @@
       ],
       "Modified": [
         "Upraveno"
+      ],
+      "Modified ${ modified }": [
+        "Změněno ${ modified }"
       ],
       "Move to Archive": [
         "Přesunout do archivu"
@@ -7582,8 +7756,14 @@
       "Never": [
         "Nikdy"
       ],
+      "Never expires": [
+        "Platnost nikdy nevyprší"
+      ],
       "New password": [
         "Nové heslo"
+      ],
+      "Non-consensual intimate imagery": [
+        "Intimní snímky bez souhlasu zobrazené osoby"
       ],
       "Not active": [
         "Neaktivní"
@@ -7626,6 +7806,9 @@
       ],
       "Payment method": [
         "Platební metoda"
+      ],
+      "Pending invitation": [
+        "Nevyřízená pozvánka"
       ],
       "PGP scheme": [
         "PGP schéma"
@@ -7699,8 +7882,17 @@
       "Shared by": [
         "Sdílel(a)"
       ],
+      "Shared by ${ sharedBy }": [
+        "Sdílí uživatel ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Sdíleno prostřednictvím veřejného odkazu"
+      ],
       "Shared on": [
         "Sdíleno na"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Nasdíleno ${ sharedOn }"
       ],
       "Shared with me": [
         "Sdíleno se mnou"
@@ -9512,6 +9704,12 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" úspěšně přejmenován"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "Do alba „${ albumName }“ byla přidána ${ addedUids.length } fotka",
+        "Do alba „${ albumName }“ byly přidány ${ addedUids.length } fotky",
+        "Do alba „${ albumName }“ bylo přidáno ${ addedUids.length } fotek",
+        "Do alba „${ albumName }“ bylo přidáno ${ addedUids.length } fotek"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } položku se nepodařilo dešifrovat",
         "${ count } položky se nepodařilo dešifrovat",
@@ -9620,6 +9818,12 @@
       "${ reason } has been enabled": [
         "${ reason } byl povolen"
       ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "Z alba „${ albumName }“ byla odebrána ${ removed } fotka",
+        "Z alba „${ albumName }“ byly odebrány ${ removed } fotky",
+        "Z alba „${ albumName }“ bylo odebráno ${ removed } fotek",
+        "Z alba „${ albumName }“ bylo odebráno ${ removed } fotek"
+      ],
       "Access for the member removed": [
         "Přístup pro člena odebrán"
       ],
@@ -9667,6 +9871,9 @@
       ],
       "Failed to accept share invitation": [
         "Přijetí pozvánky ke sdílení selhalo"
+      ],
+      "Failed to load sharing details": [
+        "Nepodařilo se načíst podrobnosti o sdílení"
       ],
       "Failed to move, please try again": [
         "Přesun selhal, zkuste to prosím znovu"
@@ -12731,6 +12938,18 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitální podpis byl částečně ověřen. Tato složka byla nahrána pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
       ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digitální podpis ověřen. Tento soubor byl bezpečně vytvořen uživatelem ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digitální podpis ověřen. Tato složka byla bezpečně vytvořena uživatelem ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ author }."
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -13070,6 +13289,9 @@
       "Other names": [
         "Ostatní jména"
       ],
+      "Out of storage space": [
+        "Nedostatek úložného prostoru"
+      ],
       "Payment failed": [
         "Platba selhala"
       ],
@@ -13337,6 +13559,9 @@
       "Upload and share files": [
         "Nahrát a sdílet soubory"
       ],
+      "Upload empty file?": [
+        "Nahrát prázdný soubor?"
+      ],
       "Uploaded": [
         "Nahráno"
       ],
@@ -13367,6 +13592,18 @@
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
       ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } vytvořil tento soubor."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } vytvořil tuto složku."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } nahrál tento soubor."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nepodařilo se nám ověřit, že uživatel ${ author } nahrál tuto složku."
+      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nepodařilo se nám ověřit, že anonymní uživatel vytvořil tento soubor."
       ],
@@ -13381,6 +13618,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Nepodařilo se nám potvrdit, že obsah souboru nahrál uživatel ${ claimedContentAuthor }. Důvod: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že název byl vytvořen nebo upraven uživatelem ${ claimedNameAuthor }. Důvod: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že objekt byl vytvořen uživatelem ${ claimedKeyAuthor }. Důvod: ${ node.keyAuthor.error.error }"
       ],
       "We'd love to hear from you!": [
         "Budeme rádi za váš názor!"
@@ -13449,6 +13692,12 @@
     "Title header for keys table": {
       "Actions": [
         "Akce"
+      ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Expires": [
+        "Vyprší"
       ],
       "Fingerprint": [
         "Digitální otisk"
@@ -13555,6 +13804,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."

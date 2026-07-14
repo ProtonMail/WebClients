@@ -123,6 +123,9 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
+      "Change my access": [
+        "Изменить мой доступ"
+      ],
       "Change password": [
         "Изменить пароль"
       ],
@@ -221,6 +224,9 @@
       ],
       "Copy address": [
         "Копировать адрес"
+      ],
+      "Copy alias “${ name }”": [
+        "Скопировать псевдоним «${ name }»"
       ],
       "Copy as markdown": [
         "Копировать в формате markdown"
@@ -347,6 +353,9 @@
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
+      ],
+      "Encrypted": [
+        "Зашифровано"
       ],
       "Expand": [
         "Развернуть"
@@ -624,6 +633,9 @@
       "Remove file": [
         "Удалить файл"
       ],
+      "Remove my access": [
+        "Отказываюсь от доступа"
+      ],
       "Rename": [
         "Переименовать"
       ],
@@ -699,6 +711,9 @@
       "Select all": [
         "Выделить все"
       ],
+      "Set password or expiration date": [
+        "Установить пароль или срок действия"
+      ],
       "Set recovery methods": [
         "Установить методы восстановления"
       ],
@@ -722,6 +737,12 @@
       ],
       "Share your calendar with your team": [
         "Делитесь вашим календарем со своей командой"
+      ],
+      "Shared": [
+        "Общий доступ открыт"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Общий доступ защищен сквозным шифрованием"
       ],
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
@@ -806,6 +827,9 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Upgrade for 200GB": [
+        "Перейдите на тариф с 200 ГБ"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
@@ -906,6 +930,9 @@
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Лицензия ${ LUMO_APP_NAME } AI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "лицензии ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } лицензия ${ LUMO_APP_NAME } AI",
@@ -1011,6 +1038,11 @@
       ],
       "Keep subscription": [
         "Продолжить подписку"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ваш бесплатный пробный период заканчивается через ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -2713,6 +2745,9 @@
       "2 TB of storage to share": [
         "2 ТБ для хранения, чтобы поделиться"
       ],
+      "2 user accounts": [
+        "2 аккаунта пользователя"
+      ],
       "All premium features from your current plan": [
         "Все платные функции вашего текущего тарифа"
       ],
@@ -2839,6 +2874,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Не удалось переместить ${ failureItems.length } элемент",
+        "Не удалось переместить ${ failureItems.length } элемента",
+        "Не удалось переместить ${ failureItems.length } элементов",
+        "Не удалось переместить ${ failureItems.length } элемента"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
       ],
@@ -2908,6 +2949,9 @@
       "Cannot export this contact": [
         "Не удается экспортировать этот контакт"
       ],
+      "Cannot find move target": [
+        "Не удается найти целевую папку перемещения"
+      ],
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
       ],
@@ -2968,8 +3012,26 @@
       "Failed loading group members": [
         "Ошибка при загрузке членов группы"
       ],
+      "Failed to change permissions settings": [
+        "Не удалось изменить настройки разрешений"
+      ],
       "Failed to copy photo to album": [
         "Не удалось скопировать фото в альбом"
+      ],
+      "Failed to create folder": [
+        "Не удалось создать папку"
+      ],
+      "Failed to create public share node": [
+        "Не удалось создать публичную ссылку общего доступа"
+      ],
+      "Failed to expand folder": [
+        "Не удалось развернуть папку"
+      ],
+      "Failed to fetch node": [
+        "Не удалось загрузить объект"
+      ],
+      "Failed to fetch sharing info": [
+        "Не удалось загрузить информацию об общем доступе"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Не удалось загрузить данные о подписке. Повторите попытку позже."
@@ -2979,6 +3041,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Не удалось переименовать документ. Повторите попытку позже."
+      ],
+      "Failed to resend invitation": [
+        "Не удалось повторно отправить приглашение"
+      ],
+      "Failed to unshare node": [
+        "Не удалось закрыть общий доступ к объекту"
+      ],
+      "Failed to update direct share node": [
+        "Не удалось обновить прямой доступ к объекту"
+      ],
+      "Failed to update public share node": [
+        "Не удалось обновить публичную ссылку общего доступа"
       ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" уже скачивается"
@@ -3292,6 +3366,9 @@
       "Unknown error": [
         "Неизвестная ошибка"
       ],
+      "Unknown location": [
+        "Неизвестное местоположение"
+      ],
       "Update Too Large": [
         "Обновление слишком большое"
       ],
@@ -3309,6 +3386,9 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "У нас возникли проблемы при сохранении последних изменений. Попробуйте обновить страницу."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Нам не удалось отправить код подтверждения этим способом."
       ],
       "Wrong billing address": [
         "Неверный адрес для выставления счетов"
@@ -3333,6 +3413,9 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Нерасшифровываемое устройство"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Нерасшифруемое имя"
@@ -3855,6 +3938,9 @@
     "Header": {
       "Domain": [
         "Домен"
+      ],
+      "Drawer": [
+        "Боковая панель"
       ],
       "Password ends with": [
         "Пароль заканчивается на"
@@ -4432,6 +4518,9 @@
         "Все ваши контакты будут импортированы, до лимита в ${ maxContact } контактов",
         "Все ваши контакты будут импортированы, до лимита в ${ maxContact } контактов"
       ],
+      "Already in this folder": [
+        "Уже в этой папке"
+      ],
       "an anonymous user": [
         "анонимный пользователь"
       ],
@@ -4473,6 +4562,24 @@
       ],
       "Calendar side panel": [
         "Боковая панель календаря"
+      ],
+      "Can edit": [
+        "Может изменять"
+      ],
+      "Can edit and manage access": [
+        "Может изменять и управлять доступом"
+      ],
+      "Can view and edit": [
+        "Просмотр и изменение"
+      ],
+      "Can view only": [
+        "Только просмотр"
+      ],
+      "Can't move a folder into itself": [
+        "Нельзя переместить папку саму в себя"
+      ],
+      "Can't write into folder": [
+        "Не удается выполнить запись в папку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
@@ -4735,6 +4842,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Если вы измените свое решение, вы сможете снова подписаться в любое время. Жаль расставаться!"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -4749,6 +4859,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Если вы удалите себя, вы потеряете доступ к объекту «${ fileName }» и не сможете открыть его снова, пока владелец не поделится им с вами."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
@@ -4833,6 +4946,9 @@
       ],
       "Limited availability": [
         "Ограниченная доступность"
+      ],
+      "Link copied": [
+        "Ссылка скопирована"
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -4951,6 +5067,9 @@
       "Owner": [
         "Владелец"
       ],
+      "owner": [
+        "владелец"
+      ],
       "password": [
         "пароль"
       ],
@@ -5061,6 +5180,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Отсканируйте QR-код с вашего мобильного устройства"
+      ],
+      "Select a destination folder": [
+        "Выберите конечную папку"
       ],
       "Select a folder to move to.": [
         "Выберите папку для перемещения."
@@ -5368,6 +5490,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
       ],
+      "Who has access": [
+        "У кого есть доступ"
+      ],
       "words": [
         "слова"
       ],
@@ -5391,6 +5516,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Вы собираетесь открыть браузер по умолчанию и посетить:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "В настоящее время вы вошли как ${ username } для ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "В настоящее время вы вошли как ${ username }."
@@ -5445,6 +5573,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Плата не будет взиматься, если вы отмените подписку до ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Вы не сможете делиться объектом «${ fileName }» после изменения доступа на просмотр. Только владелец сможет снова изменить ваши права доступа."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы получите вознаграждение на остаток на счете через 1 месяц после того, как ваш друг подпишется на годовой тариф, и через 2 месяца после того, как он подпишется на месячный тариф."
@@ -5557,8 +5691,17 @@
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша подписка будет автоматически обновлена ${ renewalTime }."
       ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Пробная версия закончится через ${ timeRemaining }."
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Вы также потеряете доступ к функциям тарифа ${ boldPlanTitle }:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Вы потеряете доступ к ${ boldPlanTitle } ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Вы по-прежнему сможете просматривать данные своего аккаунта, но все аккаунты пользователей будут удалены из вашей организации."
       ]
     },
     "info": {
@@ -5629,6 +5772,9 @@
       "Fallback": [
         "Резервный"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Устаревший"
       ],
@@ -5658,8 +5804,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
       ],
+      "Access": [
+        "Доступ"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Безопасный доступ к ${ PASS_APP_NAME } из терминала, что идеально подходит для создания скриптов, автоматизации и рабочих процессов разработки."
+      ],
+      "Active": [
+        "Активна"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -5672,6 +5824,18 @@
       ],
       "Additional comments": [
         "Дополнительные комментарии"
+      ],
+      "Alias title": [
+        "Название псевдонима"
+      ],
+      "Allow editors to change permissions and share": [
+        "Разрешить редакторам изменять разрешения и делиться ссылкой"
+      ],
+      "Anonymous": [
+        "Анонимно"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любой пользователь в Интернете, у которого есть ссылка"
       ],
       "Anyone on the Internet with the link can edit": [
         "Любой пользователь, имеющий ссылку, может редактировать"
@@ -5714,6 +5878,12 @@
       ],
       "Calendars": [
         "Календари"
+      ],
+      "can edit": [
+        "может редактировать"
+      ],
+      "can view": [
+        "может просматривать"
       ],
       "Cancel download": [
         "Отменить скачивание"
@@ -5760,8 +5930,14 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete link and remove access for everyone": [
+        "Удалить ссылку и закрыть доступ для всех"
+      ],
       "Delete recovery-related information.": [
         "Удалите информацию, связанную с восстановлением."
+      ],
+      "Disable this link on a specific date": [
+        "Отключить эту ссылку в определенный день"
       ],
       "Don't ask again": [
         "Больше не спрашивать"
@@ -5816,6 +5992,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
+      ],
+      "Expiry": [
+        "Срок действия"
       ],
       "Extended address": [
         "Расширенный адрес"
@@ -5934,6 +6113,9 @@
       "New password": [
         "Новый пароль"
       ],
+      "Not active": [
+        "Неактивна"
+      ],
       "Note": [
         "Заметка"
       ],
@@ -5994,8 +6176,14 @@
       "Replace existing folder": [
         "Заменить существующую папку"
       ],
+      "Require password": [
+        "Требовать пароль"
+      ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Set a password to limit access via link": [
+        "Установите пароль, чтобы ограничить доступ по ссылке"
       ],
       "Set expiration date": [
         "Задать срок действия"
@@ -6812,6 +7000,9 @@
       "${ size } storage per user": [
         "${ size } хранилища на пользователя"
       ],
+      "1 TB secure storage": [
+        "1 ТБ защищённого хранения"
+      ],
       "1 user": [
         "1 пользователь"
       ],
@@ -6853,6 +7044,9 @@
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Расширенные возможности псевдонимов (с помощью SimpleLogin)"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Все продукты и функции ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6971,6 +7165,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with a prompt": [
+        "Создавайте электронные письма с помощью запросов"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -7037,6 +7234,12 @@
       "Private photo backup": [
         "Конфиденциальное резервное копирование фото"
       ],
+      "Proofread and refine your emails": [
+        "Вычитывайте и дорабатывайте свои электронные письма"
+      ],
+      "Quickly craft replies": [
+        "Быстро составляйте ответы"
+      ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
       ],
@@ -7090,6 +7293,9 @@
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
+      ],
+      "Support for up to 2 users": [
+        "Поддержка до 2 пользователей"
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
@@ -7604,6 +7810,18 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" успешно создано"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Не удалось создать \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" перемещено"
+      ],
+      "\"${ fileName }\" shared": [
+        "Общий доступ к «${ fileName }» открыт"
+      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" удалён"
       ],
@@ -7691,6 +7909,12 @@
         "${ numberOfItems } элементов не удалось восстановить из корзины",
         "${ numberOfItems } элементов не удалось восстановить из корзины"
       ],
+      "${ numberOfItems } item moved": [
+        "Перемещен ${ numberOfItems } элемент",
+        "Перемещено ${ numberOfItems } элемента",
+        "Перемещено ${ numberOfItems } элементов",
+        "Перемещено ${ numberOfItems } элемента"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } элемент перемещен в корзину",
         "${ numberOfItems } элемента перемещено в корзину",
@@ -7760,6 +7984,9 @@
       "Failed to load invitation details": [
         "Не удалось загрузить информацию о приглашении"
       ],
+      "Failed to load sharing details": [
+        "Не удалось загрузить информацию о доступе"
+      ],
       "Failed to reject share invitation": [
         "Не удалось отклонить приглашение на использование общего ресурса"
       ],
@@ -7816,6 +8043,12 @@
       ],
       "Root folder failed to be loaded": [
         "Не удалось загрузить корневую папку"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Настройка обновлена. Редакторы могут изменять разрешения и делиться ссылкой."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Настройка обновлена. Редакторы не могут изменять разрешения или делиться ссылкой."
       ],
       "Share invitation accepted successfully": [
         "Приглашение на использование общего ресурса успешно принято"
@@ -7908,11 +8141,17 @@
       "Get the deal": [
         "Воспользоваться предложением"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Последний шанс получить скидку 80 % на первый месяц подписки ${ plan }."
+      ],
       "Last day to save": [
         "Последний день, чтобы сэкономить"
       ],
       "Limited-time offer": [
         "Ограниченное предложение"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Ограниченное по времени предложение, действительно в течение первого месяца"
       ],
       "Maybe later": [
         "Может быть позже"
@@ -7934,6 +8173,12 @@
       ],
       "This offer won't be shown again.": [
         "Это предложение больше не будет показано."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Повысьте продуктивность всего за ${ pricingTitle } с тарифом ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Увеличьте объем хранения всего за ${ pricingTitle } с тарифом ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "При переключении с ежемесячной на годовую подписку."
@@ -7957,11 +8202,23 @@
       "500 GB secure storage": [
         "500 ГБ защищённого хранилища"
       ],
+      "Advanced threat protection": [
+        "Улучшенная защита от угроз"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Сотрудничайте с пользователями, не использующими ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Пользовательский домен электронной почты"
       ],
+      "Edit docs online": [
+        "Изменять документы онлайн"
+      ],
       "Email addresses": [
         "Адреса электронной почты"
+      ],
+      "File version history (over 1 week)": [
+        "История версий файлов (более 1 недели)"
       ],
       "Free": [
         "Free"
@@ -7971,6 +8228,12 @@
       ],
       "Storage": [
         "Хранилище"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Сверхбыстрые серверы VPN более чем в 110 странах"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Неограниченное количество псевдонимов для защиты личных данных"
       ]
     },
     "Onboarding Trial": {
@@ -7979,6 +8242,9 @@
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Отмените в любое время до ${ cancelDate }."
+      ],
+      "Cancel anytime before then.": [
+        "Вы можете отменить подписку в любое время до этого момента."
       ],
       "contact our support team": [
         "свяжитесь с нашей службой поддержки"
@@ -8001,11 +8267,20 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы все еще можете отменить подписку в течение 30 дней и получить пропорциональный возврат средств."
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Вы все еще можете отменить подписку в течение 30 дней и получить пропорциональный возврат средств."
+      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можете использовать тариф ${ planTitle } до окончания пробного периода без взимания платы."
       ],
       "Your free trial has started": [
         "Ваш бесплатный пробный период начался"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Ваша полная подписка на ${ planTitle } начинается ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Вы сможете бесплатно использовать ${ planTitle } до окончания пробной версии."
       ]
     },
     "Option": {
@@ -8544,6 +8819,12 @@
         "Друзей присоединилось",
         "Друзья присоединились"
       ],
+      "Friend subscribed": [
+        "Друг подписался",
+        "Друга подписались",
+        "Друзей подписалось",
+        "Друзей подписалось"
+      ],
       "Invite friends. Get credits.": [
         "Приглашайте друзей. Получайте остаток на счете."
       ],
@@ -8720,6 +9001,24 @@
         "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас остался ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас осталась ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас осталась ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
+        "У вас осталось ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -8964,11 +9263,29 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Безопасный просмотр"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Делайте больше с ${ BRAND_NAME }"
+      ],
       "Get unlimited aliases": [
         "Получить неограниченное число псевдонимов"
       ],
       "Go to subscription plans": [
         "Перейти к тарифам"
+      ],
+      "Guard against threats": [
+        "Защита от угроз"
+      ],
+      "Increase your storage": [
+        "Увеличить объем хранения"
+      ],
+      "Keep passwords safe": [
+        "Хранить пароли в безопасности"
+      ],
+      "Unblock streaming content": [
+        "Разблокировать стриминговый контент"
       ],
       "Upgrade": [
         "Сменить тариф"
@@ -9049,8 +9366,26 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Получить доступ к контенту на стриминговых сервисах по всему миру"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Получите 500 ГБ для безопасного хранения всех файлов и фотографий"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Получить доступ к сверхбыстрым серверам VPN более чем в 110 странах"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Получите один тариф, включающий все функции: выберите ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Используйте неограниченное количество псевдонимов для защиты личных данных и уменьшения количества спама"
+      ],
       "Keep your passwords safe and organized in multiple vaults": [
         "Храните свои пароли в безопасности и порядке в нескольких хранилищах"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Защитите свой аккаунт от угроз с помощью Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
@@ -9107,8 +9442,14 @@
       "Accepted": [
         "Принято"
       ],
+      "pending": [
+        "ожидает подтверждения"
+      ],
       "Pending": [
         "В ожидании"
+      ],
+      "user joined": [
+        "пользователь присоединился"
       ]
     },
     "Storage": {
@@ -9643,6 +9984,9 @@
       "Cannot load link": [
         "Не удалось загрузить ссылку"
       ],
+      "Change access to viewer?": [
+        "Изменить доступ на просмотр?"
+      ],
       "Change password": [
         "Изменить пароль"
       ],
@@ -9997,6 +10341,12 @@
       "Private browsing vs VPN": [
         "Приватный просмотр по сравнению с VPN"
       ],
+      "Public link": [
+        "Публичная ссылка"
+      ],
+      "Public link settings": [
+        "Настройки публичной ссылки"
+      ],
       "Re-sign all contacts": [
         "Переподписать все контакты"
       ],
@@ -10011,6 +10361,9 @@
       ],
       "Recover data": [
         "Восстановление данных"
+      ],
+      "Remove your access?": [
+        "Отказаться от доступа?"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -10053,6 +10406,12 @@
       ],
       "Settings": [
         "Настройки"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Настройки для «${ sharedFileName }»"
+      ],
+      "Share \"${ fileName }\"": [
+        "Поделиться «${ fileName }»"
       ],
       "Share ${ name }": [
         "Общий ресурс ${ name }"
@@ -10126,6 +10485,12 @@
       "Upgrade to keep your premium benefits.": [
         "Улучшите подписку, чтобы сохранить свои платные преимущества."
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Повысьте продуктивность за ${ formattedPrice } с тарифом ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Увеличьте объем хранения за ${ formattedPrice } с тарифом ${ planName }"
+      ],
       "Upload and share files": [
         "Загружайте и делитесь файлами"
       ],
@@ -10181,6 +10546,14 @@
         "Ваша раскрытая информация"
       ]
     },
+    "Title header for keys table": {
+      "Created": [
+        "Создано"
+      ],
+      "Expires": [
+        "Истекает"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сегодня"
@@ -10195,6 +10568,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
+      ],
+      "Change shared item settings": [
+        "Изменить настройки общего элемента"
       ],
       "Customize import to reduce the number of folders": [
         "Настройте импорт, чтобы уменьшить количество папок"
@@ -10262,6 +10638,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
       ],
+      "Version 6 OpenPGP key": [
+        "Ключ OpenPGP версии 6"
+      ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
       ]
@@ -10319,6 +10698,9 @@
       ],
       "Name must not be empty": [
         "Имя не может быть пустым"
+      ],
+      "Name must not contain slashes (/)": [
+        "Имя не должно содержать косую черту (/)"
       ]
     },
     "Video control": {

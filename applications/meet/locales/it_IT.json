@@ -4,9 +4,18 @@
     "language": "it_IT"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
+      ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } nuovo",
+        "${ newMessageCount } nuovi"
       ],
       "Add account": [
         "Aggiungi un account"
@@ -91,6 +100,9 @@
       ],
       "Disable camera": [
         "Disattivare telecamera"
+      ],
+      "Discard": [
+        "Scarta"
       ],
       "Dismiss": [
         "Ignora"
@@ -242,6 +254,9 @@
       "Rejoin meeting": [
         "Unisciti alla riunione"
       ],
+      "Reply": [
+        "Rispondi"
+      ],
       "Report a problem": [
         "Segnala un problema"
       ],
@@ -259,6 +274,9 @@
       ],
       "Resume": [
         "Riprendi"
+      ],
+      "Retry": [
+        "Riprova"
       ],
       "Room": [
         "Stanza"
@@ -283,6 +301,9 @@
       ],
       "Send an encrypted message": [
         "Invia un messaggio cifrato"
+      ],
+      "Send reply": [
+        "Invia risposta"
       ],
       "Settings": [
         "Consenti"
@@ -1562,6 +1583,9 @@
       ],
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Non è stato possibile inviare un codice di verifica con questo metodo."
       ]
     },
     "Error message": {
@@ -1755,6 +1779,9 @@
       ],
       "-Removed dangerous URL-": [
         "-URL pericoloso rimosso-"
+      ],
+      "1 reply draft": [
+        "1 bozza di risposta"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
@@ -1993,6 +2020,9 @@
       "Member": [
         "Membro"
       ],
+      "Message actions": [
+        "Azioni del messaggio"
+      ],
       "microphone": [
         "microfono"
       ],
@@ -2040,6 +2070,9 @@
       ],
       "No speaker detected": [
         "Nessun altoparlante rilevato"
+      ],
+      "Not sent, check your connection.": [
+        "Messaggio non inviato. Controlla la connessione."
       ],
       "Only meetings you created appear here": [
         "Solo le riunioni che hai creato compaiono qui"
@@ -2149,6 +2182,9 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'organizzatore ti ha rimosso da questa riunione. Se si è trattato di un errore, chiedi all'organizzatore di invitarti di nuovo."
       ],
+      "This conversation started before you joined.": [
+        "This conversation started before you joined."
+      ],
       "This meeting is being recorded": [
         "Questa sessione è in fase di registrazione"
       ],
@@ -2190,6 +2226,9 @@
       ],
       "Video effects": [
         "Effetti video"
+      ],
+      "View ": [
+        "Mostra "
       ],
       "Warning": [
         "Spazio esaurito"
@@ -2308,6 +2347,9 @@
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
       ],
+      "Disabled": [
+        "Disabilitato"
+      ],
       "Does not repeat": [
         "Nessuna ripetizione"
       ],
@@ -2400,6 +2442,9 @@
       ],
       "Repeat event": [
         "Ripetizione evento"
+      ],
+      "Reply": [
+        "Risposta"
       ],
       "Reveal password": [
         "Mostra la password"
@@ -2576,6 +2621,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrivi il problema e includi eventuali messaggi di errore"
+      ],
+      "Reply...": [
+        "Rispondi..."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Programma in ${ CALENDAR_APP_NAME }"

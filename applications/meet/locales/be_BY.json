@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } кажа: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Удзельнік далучыўся да сустрэчы"
       ],
@@ -135,6 +138,12 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "${ newMessageCount } new": [
+        "${ newMessageCount } новы",
+        "${ newMessageCount } новыя",
+        "${ newMessageCount } новых",
+        "${ newMessageCount } новых"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -153,8 +162,14 @@
       "Allow access": [
         "Дазволіць доступ"
       ],
+      "Anyone with the link can join immediately": [
+        "Любы карыстальнік з гэтай спасылкай зможа неадкладна далучыцца да сустрэчы"
+      ],
       "Applied": [
         "Прыменена"
+      ],
+      "Apply changes": [
+        "Прымяніць змены"
       ],
       "Approve participants before they can join": [
         "Ухваліце ўдзельнікаў, перад іх далучэннем"
@@ -191,6 +206,9 @@
       ],
       "Close preview": [
         "Закрыць папярэдні прагляд"
+      ],
+      "Close reply composer": [
+        "Закрыць рэдактар адказу"
       ],
       "Close this banner": [
         "Закрыць гэты банер"
@@ -255,8 +273,14 @@
       "Disable waiting room": [
         "Адключыць пакой чакання"
       ],
+      "Discard": [
+        "Адхіліць"
+      ],
       "Dismiss": [
         "Адхіліць"
+      ],
+      "Dismiss new messages": [
+        "Адхіліць новае паведамленне"
       ],
       "Done": [
         "Гатова"
@@ -447,6 +471,9 @@
         "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцый",
         "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцый"
       ],
+      "Reply": [
+        "Адказаць"
+      ],
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
@@ -467,6 +494,9 @@
       ],
       "Resume": [
         "Узнавіць"
+      ],
+      "Retry": [
+        "Паўтарыць"
       ],
       "Return to dashboard": [
         "Вярнуцца ў панэль кіравання"
@@ -494,6 +524,9 @@
       ],
       "Send an encrypted message": [
         "Адправіць зашыфраванае паведамленне"
+      ],
+      "Send reply": [
+        "Адправіць адказ"
       ],
       "Settings": [
         "Налады"
@@ -548,6 +581,9 @@
       ],
       "Start your own meeting": [
         "Пачаць сваю ўласную сустрэчу"
+      ],
+      "Starting…": [
+        "Падрыхтоўка…"
       ],
       "Stay in meeting": [
         "Застацца на сустрэчы"
@@ -1896,6 +1932,9 @@
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "У вашым браўзеры скончылася месца для захоўвання. Запіс захаваны да гэтага моманту."
       ],
@@ -2124,6 +2163,12 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } адрэагаваў з ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "${ replyCount } адказ",
+        "${ replyCount } адказы",
+        "${ replyCount } адказаў",
+        "${ replyCount } адказаў"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } з ${ maxParticipants } максімальных удзельнікаў"
       ],
@@ -2138,6 +2183,9 @@
       ],
       "-Removed dangerous URL-": [
         "- Выдалена небяспечная URL-спасылка-"
+      ],
+      "1 reply draft": [
+        "1 чарнавы адказ"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
@@ -2283,6 +2331,9 @@
       "Everyone has been disconnected from the call.": [
         "Усе ўдзельнікі былі адключаны ад званка."
       ],
+      "Failed to apply background blur": [
+        "Не ўдалося прымяніць размыты фон"
+      ],
       "Failed to update meeting name": [
         "Не ўдалося абнавіць назву сустрэчы"
       ],
@@ -2412,6 +2463,9 @@
       "Member": [
         "Удзельнік"
       ],
+      "Message actions": [
+        "Дзеянні з паведамленнямі"
+      ],
       "Message from ${ participantName }": [
         "Паведамленне ад ${ participantName }"
       ],
@@ -2438,6 +2492,9 @@
       ],
       "New host": [
         "Новы арганізатар"
+      ],
+      "New reply": [
+        "Новы адказ"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Не выяўлены ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
@@ -2471,6 +2528,9 @@
       ],
       "No speaker detected": [
         "Дынамік не выяўлены"
+      ],
+      "Not sent, check your connection.": [
+        "Не адпраўлена. Праверце сваё падключэнне."
       ],
       "Only meetings you created appear here": [
         "У гэтым месцы будуць толькі сустрэчы, створаныя вамі"
@@ -2697,6 +2757,9 @@
       "Video effects": [
         "Відэаэфекты"
       ],
+      "View ": [
+        "Выгляд "
+      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -2810,6 +2873,9 @@
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
+      "Blurred (next)": [
+        "Размыта (далей)"
+      ],
       "Browser": [
         "Браўзер"
       ],
@@ -2848,6 +2914,9 @@
       ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
+      ],
+      "Disabled": [
+        "Адключана"
       ],
       "Does not repeat": [
         "Не паўтараць"
@@ -2963,6 +3032,9 @@
       "Repeat event": [
         "Паўтараць падзею"
       ],
+      "Reply": [
+        "Адказ"
+      ],
       "Return to dashboard": [
         "Вярнуцца ў панэль кіравання"
       ],
@@ -2992,6 +3064,9 @@
       ],
       "Track SID": [
         "Адсочваць SID"
+      ],
+      "Use live camera feed": [
+        "Выкарыстоўваць жывую трансляцыю з камеры"
       ],
       "Use simple selfie segmentation": [
         "Выкарыстанне простай сегментацыі сэлфі"
@@ -3159,6 +3234,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
+      ],
+      "Reply...": [
+        "Адказаць..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "Назва сустрэчы, напрыклад, сінхранізацыя каманды, абнаўленне праекта і г.д."

@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Començar la configuració"
       ],
-      "Start testing": [
-        "Inicieu la prova"
-      ],
       "Stay": [
         "Mantenir"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Obriu-ho a ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalitzeu les categories"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "Not now": [
+        "Ara no"
+      ],
+      "Skip": [
+        "Ometre"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Hi apareix un punt blau quan una categoria té missatges no llegits des de la vostra darrera visita."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Afegiu carpetes i fitxers al ${ DRIVE_APP_NAME } i convideu els membres de l'equip a veure'ls o a editar-los."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Afegiu o suprimiu categories, gestioneu les notificacions i ajusteu la vostra configuració en qualsevol moment a les preferències."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Afegiu o elimineu categories, gestioneu les notificacions o desactiveu-les completament a les preferències quan vulgueu."
       ],
       "Also included": [
         "També inclòs"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Si un missatge apareix a la categoria incorrecta, simplement desplaceu-lo a la correcta. Feu clic amb el botó dret en un missatge per triar una nova categoria, o arrossegueu-lo i deixeu-lo anar on correspongui."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Llegiu, responeu i estigueu al dia de Gmail des de ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Feu clic amb el botó dret en un correu i seleccioneu «Moure a», o arrossegueu-lo i deixeu-lo anar en una altra categoria. En el futur, els correus similars s'hi classificaran automàticament."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envieu i rebeu missatges de Gmail directament a ${ MAIL_APP_NAME }. Connecteu la vostra adreça a ${ addressesSettingsLink }."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Sou dels primers a provar la nostra nova visualització per categories abans del seu llançament. Els vostres comentaris ajudaran a millorar la manera com Proton Mail classifica els correus electrònics per a tothom."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "El número d'IVA ha de començar per ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
       ],
       "Wrong billing address": [
         "L'adreça de facturació és incorrecta"
@@ -8974,6 +8997,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Heu iniciat sessió com a ${ username }."
@@ -15807,9 +15833,6 @@
       "Help center": [
         "Centre d'ajuda"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Ajudeu a donar forma al futur de les categories de correu electrònic a ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Amagueu el vostre correu electrònic amb ${ PASS_APP_NAME }"
       ],
@@ -15901,6 +15924,9 @@
       ],
       "Make a secure connection your default": [
         "Feu d'una connexió segura l'opció predeterminada"
+      ],
+      "Make Categories your own": [
+        "Definiu les vostres pròpies categories"
       ],
       "Mark all messages as read": [
         "Marca tots els missatges com a llegits"
@@ -16010,6 +16036,9 @@
       "New message": [
         "Missatge nou"
       ],
+      "New messages": [
+        "Missatges nous"
+      ],
       "Newsletters": [
         "Butlletins"
       ],
@@ -16087,6 +16116,9 @@
       ],
       "Payment verification": [
         "Verificació de pagament"
+      ],
+      "Personalize your Categories": [
+        "Personalitzar les categories"
       ],
       "Phone numbers": [
         "Números de telèfon"
@@ -16422,6 +16454,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."
+      ],
+      "You're in control": [
+        "En teniu el control"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"

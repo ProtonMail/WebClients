@@ -4769,6 +4769,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "A verificação não obteve êxito. Tente novamente dentro de uma hora."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação usando este método."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Suspendemos a assinatura do DKIM devido a problemas com a configuração de seu DNS. Siga as instruções abaixo para retomar a assinatura."
       ],
@@ -8641,6 +8644,9 @@
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Você está atualmente com sessão iniciada como ${ username } para ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Você está atualmente iniciado sessão como ${ username }."
       ],
@@ -10220,9 +10226,6 @@
       ],
       "Details": [
         "Detalhes"
-      ],
-      "Don't have access to your 2FA?": [
-        "Não tem acesso ao seu A2F?"
       ],
       "Encryption and keys": [
         "Criptografia e chaves"
@@ -15632,9 +15635,6 @@
       ],
       "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planTitle } ajuda você a garantir que cada um dos membros da sua família, e os seus dados, estejam protegidos sempre que estiverem on-line."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Economize 50% em 1 ano e mantenha o acesso completo"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Economize 50% em 6 meses e mantenha o acesso completo"

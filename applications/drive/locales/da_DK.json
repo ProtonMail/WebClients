@@ -4024,6 +4024,9 @@
       "We cannot retrieve this item": [
         "Vi kan ikke hente dette element"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
+      ],
       "We were not able to load some invitations": [
         "Vi kunne ikke indlæse nogle invitationer"
       ],
@@ -5253,6 +5256,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ],
+      "Album": [
+        "Album"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } mappe)",
         "Alle (${ totalFoldersCount } mapper)"
@@ -5523,6 +5529,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "Kan du huske din adgangskode? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "Vil du stadig uploade det?",
+        "Vil du stadig uploade dem?"
+      ],
       "Done": [
         "Udført"
       ],
@@ -5725,8 +5735,8 @@
       "How does encrypted search work?": [
         "Hvordan fungerer krypteret søgning?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
-        "Jeg bekræfter hermed, at jeg handler i god tro og informationerne og udtalelserne i rapporten er korrekte og fuldstændige."
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "Jeg bekræfter hermed - i god tro - at informationer og udtalelser i rapporten er korrekte og fuldstændige."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "Hvis disse filer ikke er fuldt downloadet lokalt på ${ deviceName }, vil du miste adgangen til dem."
@@ -6498,6 +6508,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Dette kan IKKE fortrydes. Indtast enhedens navn for at bekræfte fjernelsen."
       ],
+      "This file appears to be empty:": [
+        "Denne fil ser ud til at være tom:",
+        "Disse filer ser ud til at være tomme:"
+      ],
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
       ],
@@ -6685,6 +6699,9 @@
       "Uploaded": [
         "Uploadet"
       ],
+      "Uploaded - file is empty": [
+        "Uploadet - filen er tom"
+      ],
       "Uploading": [
         "Uploader"
       ],
@@ -6843,6 +6860,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er i øjeblikket logget ind som ${ username } i (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du er i øjeblikket logget ind som ${ username }."
@@ -13143,6 +13163,9 @@
       ],
       "Upload and share files": [
         "Upload og del filer"
+      ],
+      "Upload empty file?": [
+        "Upload en tom fil?"
       ],
       "Uploaded": [
         "Uploadet"

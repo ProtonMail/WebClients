@@ -623,6 +623,9 @@
       "Let's talk": [
         "Habla con nosotros"
       ],
+      "List layout": [
+        "Vista de lista"
+      ],
       "Load": [
         "Cargar"
       ],
@@ -4015,6 +4018,9 @@
       "We cannot retrieve this item": [
         "No se puede recuperar este elemento"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
+      ],
       "We were not able to load some invitations": [
         "No pudimos cargar algunas invitaciones"
       ],
@@ -5244,6 +5250,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ],
+      "Album": [
+        "Álbum"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -5514,6 +5523,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "¿Recuerdas tu contraseña? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "¿Aún quieres subirlo?",
+        "¿Aún quieres subirlos?"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -5713,7 +5726,7 @@
       "How does encrypted search work?": [
         "¿Cómo funciona la búsqueda cifrada?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Por la presente confirmo que, de buena fe, la información y las declaraciones contenidas en el informe son correctas y completas."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
@@ -6486,6 +6499,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Esta acción no se puede deshacer. Ingresa el nombre del dispositivo para confirmar la eliminación."
       ],
+      "This file appears to be empty:": [
+        "Este archivo parece estar vacío:",
+        "Estos archivos parecen estar vacíos:"
+      ],
       "This file is too large to preview": [
         "Este archivo es demasiado grande para previsualizarlo."
       ],
@@ -6673,6 +6690,9 @@
       "Uploaded": [
         "Cargado"
       ],
+      "Uploaded - file is empty": [
+        "Cargado - el archivo está vacío"
+      ],
       "Uploading": [
         "Cargando"
       ],
@@ -6831,6 +6851,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Actualmente estás conectado como ${ username }."
@@ -7496,6 +7519,9 @@
       ],
       "Index kinds": [
         "Tipos de índice"
+      ],
+      "Indexing": [
+        "Indexando"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -9505,6 +9531,10 @@
       "${ errors.length } item failed to be copied": [
         "Error al copiar ${ errors.length } elemento",
         "Error al copiar ${ errors.length } elementos"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "No se pudo eliminar ${ errors.length } elemento",
+        "No se pudieron eliminar ${ errors.length } elementos"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } elemento no se pudo mover a la papelera",
@@ -13178,6 +13208,9 @@
       "Upload and share files": [
         "Cargar y compartir archivos"
       ],
+      "Upload empty file?": [
+        "¿Cargar archivo vacío?"
+      ],
       "Uploaded": [
         "Cargado"
       ],
@@ -13312,6 +13345,9 @@
       "Created": [
         "Creado"
       ],
+      "Expires": [
+        "Expira"
+      ],
       "Type": [
         "Tipo"
       ]
@@ -13411,6 +13447,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
