@@ -66,6 +66,9 @@
       "Accept": [
         "Aceptar"
       ],
+      "Account settings": [
+        "Ajustes de la cuenta"
+      ],
       "activate": [
         "activar"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Gestionar preferencias de comunicación"
+      ],
+      "Manage company": [
+        "Gestionar empresa"
       ],
       "Manage folders": [
         "Gestionar carpetas"
@@ -3047,6 +3053,9 @@
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estado de migración de datos desde Google Workspace a ${ BRAND_NAME }"
       ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Elimine cualquier código MX preexistente, luego copie los códigos a continuación y péguelos en la sección DNS de su proveedor de dominio."
+      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM añade una firma digital a cada correo para que los destinatarios puedan verificar que el mensaje viene realmente de su dominio y no fue alterado en su tránsito. Sin ella, los mensajes podrían considerarse menos confiables."
       ],
@@ -3180,6 +3189,9 @@
       "Missing organization public key": [
         "Falta la clave pública de organización"
       ],
+      "More details": [
+        "Más detalles"
+      ],
       "Need help?": [
         "¿Necesita ayuda?"
       ],
@@ -3273,11 +3285,17 @@
       "Some accounts are not claimed": [
         "Algunas cuentas no están reclamadas"
       ],
+      "Some members weren't migrated": [
+        "No se migraron algunos miembros"
+      ],
       "Status": [
         "Estado"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Para traer los datos de la organización a ${ BRAND_NAME }, instale ${ BRAND_NAME } Easy Switch desde la Marketplace de Google Workspace.\nDespués de instalarla, regrese aquí para continuar."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Para completar la migración, asegúrese de conservar solo los códigos MX de ${ BRAND_NAME }."
       ],
       "Update records for receiving": [
         "Actualizar registros para recepción"
@@ -3333,6 +3351,9 @@
       "You": [
         "Usted"
       ],
+      "You will not be able to copy these users' data later.": [
+        "No podrá copiar los datos de estos usuarios después."
+      ],
       "You're all set!": [
         "¡Todo listo!"
       ],
@@ -3342,6 +3363,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Su plan actual permite hasta ${ maxMembers } usuario. Para migrar usuarios adicionales, añada más licencias a la suscripción.",
         "Su plan actual permite hasta ${ maxMembers } usuarios. Para migrar usuarios adicionales, añada más licencias a la suscripción."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Su configuración de dominio aún incluye códigos MX de otro proveedor."
       ]
     },
     "breadcrumb": {
@@ -7786,6 +7810,9 @@
       "We couldn't sign you in": [
         "No pudimos iniciar su sesión."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Detuvimos la firma de DKIM por problemas con la configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
       ],
@@ -8357,8 +8384,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Debe configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Perderá todo acceso a las funciones premium incluidas en ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Perderá todo acceso a las funciones premium incluidas en ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Recibió una invitación de **${ invite.InviterEmail }** para vincular su cuenta a este plan de grupo."
@@ -9843,6 +9870,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } miembro añadido al grupo",
+        "${ emails.length } miembros añadidos al grupo"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
@@ -11249,6 +11280,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Group created": [
+        "Grupo creado"
+      ],
       "Group deleted": [
         "Grupo eliminado"
       ],
@@ -11692,6 +11726,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrese de ${ addARecoveryMethod } de tal modo que pueda volver a tener acceso a la cuenta en caso de olvidar la contraseña."
+      ],
+      "Manage groups in your identity provider": [
+        "Gestione los grupos en su proveedor de identidad"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administre las aplicaciones de ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
@@ -13276,6 +13313,9 @@
       "You are about to open your default browser and visit:": [
         "Está a punto de abrir su navegador por defecto y consultar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Actualmente inició sesión como ${ username }."
       ],
@@ -13347,6 +13387,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puede acceder y gestionar la cuenta como administrador."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Ahora puede acceder y gestionar la empresa como administrador."
       ],
       "You can now close this tab.": [
         "Puede cerrar esta pestaña."
@@ -14469,6 +14512,9 @@
       "App password": [
         "Contraseña de la aplicación"
       ],
+      "App Settings": [
+        "Ajustes de la aplicación"
+      ],
       "Apply filter to existing emails": [
         "Aplicar filtro a los correos existentes"
       ],
@@ -14696,6 +14742,9 @@
       ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
+      ],
+      "Confirm MX records updated": [
+        "Confirmar registros MX actualizados"
       ],
       "Confirm new password": [
         "Confirmar contraseña nueva"
@@ -14967,6 +15016,12 @@
       ],
       "Event notifications": [
         "Notificaciones de eventos"
+      ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
       ],
       "Exclude Spam/Trash from All mail": [
         "Excluir Spam/Papelera de Todos los mensajes"
@@ -15265,6 +15320,9 @@
       "Navigation": [
         "Navegación"
       ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
       "New display name": [
         "Nombre a mostrar nuevo"
       ],
@@ -15372,6 +15430,9 @@
       ],
       "Other amount": [
         "Otra cantidad"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Passkeys": [
         "Claves de acceso"
@@ -15492,6 +15553,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Regular expression": [
+        "Expresión regular"
       ],
       "Remove": [
         "Eliminar"
@@ -15671,6 +15735,9 @@
       "Start weekday": [
         "Primer día de la semana"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State": [
         "Estado"
       ],
@@ -15796,6 +15863,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ],
       "Use another payment method": [
         "Use otro método de pago"
@@ -16174,9 +16244,6 @@
       ],
       "Details": [
         "Detalles"
-      ],
-      "Don't have access to your 2FA?": [
-        "¿No tiene acceso a su 2FA?"
       ],
       "Downloads": [
         "Descargas"
@@ -16869,6 +16936,9 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Todas las acciones de filtrado se aplicarán a todos los mensajes de la cuenta de ${ MAIL_APP_NAME }. No se enviarán correos de respuesta automática."
       ],
@@ -16878,6 +16948,18 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte el dominio personalizado a ${ BRAND_NAME } para configurar direcciones de correo personalizadas (p. ej., usted@suempresa.com). Nuestro asistente le guiará a través del proceso."
       ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Ver la actividad de ${ PASS_APP_NAME } a través de su organización."
       ],
@@ -16886,6 +16968,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Ver eventos de inicio de sesión, recuperación y seguridad del usuario."
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Su prueba gratuita ha finalizado. ${ nonAutoRenewalAction }"
@@ -24432,9 +24517,6 @@
       "per month, billed annually": [
         "al mes con facturación anual"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Ahorre 50% por 1 año y mantenga el acceso completo"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Ahorre 50% por 6 meses y mantenga el acceso completo"
       ],
@@ -25946,6 +26028,9 @@
       "Get more from your password manager": [
         "Obtenga más de su gestor de contraseñas"
       ],
+      "Get more from your privacy suite": [
+        "Obtenga más de su suite de privacidad"
+      ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
       ],
@@ -26097,8 +26182,8 @@
       "Layout": [
         "Diseño"
       ],
-      "Leave ${ organisationName }?": [
-        "¿Abandonar ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "¿Abandonar ${ organization.Name }?"
       ],
       "Leave group?": [
         "¿Desea salir del grupo?"
@@ -26120,6 +26205,9 @@
       ],
       "Make your business stand out": [
         "Haga que su negocio se destaque"
+      ],
+      "Manage company": [
+        "Gestionar empresa"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestione archivos en dispositivos Windows, Mac, Android e iOS."
@@ -26886,6 +26974,9 @@
       ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
+      ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "Con su cuenta de ${ BRAND_NAME }, obtiene acceso a todas las aplicaciones de ${ BRAND_NAME }"
       ],
       "You are all set": [
         "Ya está todo listo"
@@ -28143,6 +28234,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
       "Are you sure you want to remove your notification email?": [
         "¿Realmente desea borrar su correo electrónico de notificación?"

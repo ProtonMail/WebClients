@@ -66,6 +66,9 @@
       "Accept": [
         "Annehmen"
       ],
+      "Account settings": [
+        "Konto-Einstellungen"
+      ],
       "activate": [
         "aktivieren"
       ],
@@ -1079,6 +1082,9 @@
       ],
       "Manage communication preferences": [
         "Kommunikationseinstellungen verwalten"
+      ],
+      "Manage company": [
+        "Unternehmen verwalten"
       ],
       "Manage folders": [
         "Ordner verwalten"
@@ -2978,6 +2984,13 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Ein unbekannter Fehler ist aufgetreten. Lade die Seite neu und versuche es erneut."
       ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Möchtest du wirklich ohne ${ withoutString } und ${ notMigratedOthers } fortfahren?",
+        "Möchtest du wirklich ohne ${ withoutString } und ${ notMigratedOthers } fortfahren?"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "Möchtest du wirklich ohne ${ withoutString } fortfahren?"
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -3022,6 +3035,9 @@
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
+      ],
+      "Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.": [
+        "Lösche allen bereits vorhandenen MX-Code, kopiere dann den unten stehenden Code und füge ihn im DNS-Bereich deiner Domain-Organisation ein."
       ],
       "Domain added": [
         "Domain hinzugefügt"
@@ -3138,6 +3154,9 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "More details": [
+        "Weitere Details"
+      ],
       "Need help?": [
         "Brauchst du Hilfe?"
       ],
@@ -3213,11 +3232,17 @@
         "${ count } Termin aufgrund von Inkompatibilitäten übersprungen",
         "${ count } Termine aufgrund von Inkompatibilitäten übersprungen"
       ],
+      "Some members weren't migrated": [
+        "Einige Mitglieder wurden nicht übernommen"
+      ],
       "Status": [
         "Status"
       ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "Um die Daten deines Unternehmens auf ${ BRAND_NAME } zu übertragen, installiere „${ BRAND_NAME } Easy Switch“ aus dem Google Workspace Marketplace. Kehren nach der Installation hierher zurück, um fortzufahren."
+      ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Um die Migration abzuschließen, stelle sicher, dass du ausschließlich den MX-Code von ${ BRAND_NAME } beibehältst."
       ],
       "User": [
         "Benutzer"
@@ -3270,6 +3295,9 @@
       "You": [
         "Du"
       ],
+      "You will not be able to copy these users' data later.": [
+        "Du kannst die Daten dieser Benutzer später nicht mehr kopieren."
+      ],
       "You're all set!": [
         "Du kannst loslegen!"
       ],
@@ -3279,6 +3307,9 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu migrieren, füge deinem Abonnement weitere Lizenzen hinzu.",
         "Dein aktuelles Abonnement umfasst bis zu ${ maxMembers } Benutzer. Um weitere Benutzer zu migrieren, füge deinem Abonnement weitere Lizenzen hinzu."
+      ],
+      "Your domain configuration still includes another provider's MX codes.": [
+        "Deine Domain-Konfiguration enthält noch immer den MX-Code eines anderen Anbieters."
       ]
     },
     "breadcrumb": {
@@ -7685,6 +7716,9 @@
       "We couldn't sign you in": [
         "Wir konnten dich nicht anmelden"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
       ],
@@ -8256,8 +8290,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Du verlierst den Zugang zu allen Premium-Funktionen, die in ${ plan } enthalten sind."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Du verlierst den Zugang zu allen Premium-Funktionen, die in ${ planName } enthalten sind."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Du wurdest von **${ invite.InviterEmail }** eingeladen, dein Konto mit diesem Gruppenabonnement zu verknüpfen."
@@ -13110,6 +13144,9 @@
       "You are about to open your default browser and visit:": [
         "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du bist derzeit als „${ username }“ angemeldet."
       ],
@@ -13178,6 +13215,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kannst nun als Administrator auf das Konto zugreifen und es verwalten."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Du kannst nun als Administrator auf das Unternehmen zugreifen und es verwalten."
       ],
       "You can now close this tab.": [
         "Du kannst diesen Tab nun schließen."
@@ -14507,6 +14547,9 @@
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
       ],
+      "Confirm MX records updated": [
+        "Überprüfe, ob die MX-Einträge aktualisiert wurden"
+      ],
       "Confirm new password": [
         "Neues Passwort bestätigen"
       ],
@@ -15087,6 +15130,9 @@
       "Newsletters": [
         "Newsletter"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletter – Neuigkeiten, redaktionelle E-Mails und nicht-werbliche Inhalte"
+      ],
       "No": [
         "Nein"
       ],
@@ -15243,11 +15289,17 @@
       "Primary": [
         "Primäre"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Haupt – Persönliche und geschäftliche E-Mails sowie wichtige Aktualisierungen"
+      ],
       "Priority support": [
         "Vorrangiger Support"
       ],
       "Promotions": [
         "Werbung"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Angebote – Deals, Aktionen und Marketing-E-Mails"
       ],
       "Prompt to trust keys": [
         "Aufforderung, Schlüsseln zu vertrauen"
@@ -15427,6 +15479,9 @@
       "Social": [
         "Soziale Medien"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Soziale Netzwerke – Updates, Aktivitäten und Nachrichten in sozialen Medien"
+      ],
       "Social media updates and activity": [
         "Aktualisierungen und Aktivitäten in sozialen Medien"
       ],
@@ -15535,6 +15590,9 @@
       "Transactions": [
         "Transaktionen"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktionen – Bestätigungen, Buchungen, Rechnungen und Bestellungen"
+      ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
       ],
@@ -15555,6 +15613,9 @@
       ],
       "Updates": [
         "Aktualisierungen"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualisierungen – Automatische Bestätigungen, Warnmeldungen und Konto-Aktualisierungen"
       ],
       "Upload 1 or more encryption keys": [
         "Lade einen oder mehrere Verschlüsselungsschlüssel hoch"
@@ -15933,9 +15994,6 @@
       ],
       "Details": [
         "Details"
-      ],
-      "Don't have access to your 2FA?": [
-        "Du hast keinen Zugriff auf deine 2FA?"
       ],
       "Downloads": [
         "Downloads"
@@ -24026,9 +24084,6 @@
       "per month, billed annually": [
         "pro Monat, jährliche Abrechnung"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spare 1 Jahr lang 50 % und behalte den vollen Zugriff"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Spare 6 Monate lang 50 % und behalte den vollen Zugriff"
       ],
@@ -25673,8 +25728,8 @@
       "Layout": [
         "Anordnung"
       ],
-      "Leave ${ organisationName }?": [
-        "${ organisationName } verlassen?"
+      "Leave ${ organization.Name }?": [
+        "${ organization.Name } verlassen?"
       ],
       "Leave group?": [
         "Gruppe verlassen?"
@@ -25696,6 +25751,9 @@
       ],
       "Make your business stand out": [
         "Dein Unternehmen hervorheben"
+      ],
+      "Manage company": [
+        "Unternehmen verwalten"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dateien geräteübergreifend auf Windows, Mac, Android und iOS verwalten."

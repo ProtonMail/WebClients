@@ -66,6 +66,9 @@
       "Accept": [
         "Accepta"
       ],
+      "Account settings": [
+        "Configuració del compte"
+      ],
       "activate": [
         "activar"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Manage communication preferences": [
         "Gestiona les preferències de comunicació"
+      ],
+      "Manage company": [
+        "Gestionar l'empresa"
       ],
       "Manage folders": [
         "Gestiona les carpetes"
@@ -7811,6 +7817,9 @@
       "We couldn't sign you in": [
         "No hem pogut iniciar la sessió."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
       ],
@@ -8382,8 +8391,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Perdreu qualsevol accés a les funcions prèmium incloses en ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "Perdreu l'accés a totes les característiques prèmium incloses a ${ planName }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "Heu estat convidat per **${ invite.InviterEmail }** a enllaçar el vostre compte a aquest pla de grup."
@@ -11719,6 +11728,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
       ],
+      "Manage groups in your identity provider": [
+        "Gestioneu els grups al vostre proveïdor d'identitat"
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions de ${ BRAND_NAME } poden accedir els membres de la vostra organització. Si està desactivat, només els administradors hi tindran accés."
       ],
@@ -13302,6 +13314,9 @@
       "You are about to open your default browser and visit:": [
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Heu iniciat sessió com a ${ username }."
       ],
@@ -13373,6 +13388,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "Ara podeu accedir a l'empresa i gestionar-la com a administrador."
       ],
       "You can now close this tab.": [
         "Ara podeu tancar aquesta pestanya."
@@ -16227,9 +16245,6 @@
       ],
       "Details": [
         "Detalls"
-      ],
-      "Don't have access to your 2FA?": [
-        "No teniu accés al vostre 2FA?"
       ],
       "Downloads": [
         "Descàrregues"
@@ -24506,11 +24521,11 @@
       "per month, billed annually": [
         "al mes amb facturació anual"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Estalvieu el 50% durant 1 any i mantingueu l'accés complet"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Estalvieu el 50% durant sis mesos i mantingueu l'accés complet"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Estalvieu el 50% durant 1 any i mantingueu-hi l'accés complet"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "Vegeu com es compara ${ MAIL_APP_NAME } i per què la nostra independència marca la diferència."
@@ -26174,8 +26189,8 @@
       "Layout": [
         "Disposició"
       ],
-      "Leave ${ organisationName }?": [
-        "Voleu deixar ${ organisationName }?"
+      "Leave ${ organization.Name }?": [
+        "Voleu sortir de ${ organization.Name }?"
       ],
       "Leave group?": [
         "Voleu abandonar el grup?"
@@ -26197,6 +26212,9 @@
       ],
       "Make your business stand out": [
         "Feu que el vostre negoci destaqui"
+      ],
+      "Manage company": [
+        "Gestionar l'empresa"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestioneu fitxers entre dispositius Windows, Mac, Android i iOS."

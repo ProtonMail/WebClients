@@ -55,6 +55,9 @@
       "Accept": [
         "قبول"
       ],
+      "Account settings": [
+        "إعدادات الحساب"
+      ],
       "activate": [
         "تفعيل"
       ],
@@ -876,6 +879,9 @@
       ],
       "Manage communication preferences": [
         "إدارة تفضيلات التواصل"
+      ],
+      "Manage company": [
+        "إدارة الشركة"
       ],
       "Manage folders": [
         "إدارة المجلدات"
@@ -6408,6 +6414,9 @@
       "We couldn't sign you in": [
         "تعذر تسجيل دخولك"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "تعذر إرسال رمز التحقق باستخدام هذه الطريقة."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "لقد أوقفنا توقيع DKIM بسبب مشاكل في تكوين DNS الخاص بك. يرجى اتباع التعليمات التالية لاستئناف العملية."
       ],
@@ -6927,8 +6936,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "يجب تكوين نطاق مخصَّص قبل إنشاء مستخدم جديد."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "ستفقد الوصول إلى جميع الميزات المميزة المضمنة في ${ plan }."
+      "You will lose access to all premium features included with ${ planName }.": [
+        "ستفقد إمكانية الوصول إلى جميع الميزات المميزة المتضمنة في ${ planName }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "أنت مدعو لربط حساب ${ BRAND_NAME } الخاص بك بهذه الخطة العائلية والاستمتاع معًا بجميع الميزات المميزة لـ ${ brandOrAppName }."
@@ -8306,6 +8315,12 @@
       "${ emailAddress } is invalid": [
         "عنوان البريد الإلكتروني ${ emailAddress } غير صالح"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: صورة بالحجم الكامل"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: معاينة منخفضة الدقة"
+      ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } من أفراد عائلتك يستخدمون المصادقة الثنائية.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } من أفراد عائلتك يستخدمون المصادقة الثنائية.",
@@ -9080,6 +9095,14 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "أنشئ تسمية للرسائل المستوردة، ونطاقًا زمنيًا لهذا الاستيراد، والتسميات التي ترغب في استيرادها."
+      ],
+      "Create a secure cloud for ${ memberCount } members": [
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضو",
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضو",
+        "إنشاء سحابة آمنة لعضوين (${ memberCount })",
+        "أنشئ سحابة آمنة لـ ${ memberCount } أعضاء",
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضوًا",
+        "أنشئ سحابة آمنة لـ ${ memberCount } عضو"
       ],
       "Create an account": [
         "إنشاء حساب"
@@ -11211,6 +11234,9 @@
       "You are about to open your default browser and visit:": [
         "أنت على وشك فتح متصفحك الافتراضي وزيارة:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "أنت مسجّل الدخول حاليًا باسم ${ username } لدى ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "لقد سجلت دخولك حاليًا باسم المستخدم ${ username }."
       ],
@@ -11300,6 +11326,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "يمكنك الآن الوصول إلى الحساب وإدارته كمسؤول."
+      ],
+      "You can now access and manage the company as an administrator.": [
+        "يمكنك الآن الوصول إلى المؤسسة وإدارتها بصفتك مسؤولًا."
       ],
       "You can now close this tab.": [
         "يمكنك الآن إغلاق علامة التبويب هذه."
@@ -12944,8 +12973,14 @@
       "Primary": [
         "الرئيسي"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "أساسي - رسائل البريد الإلكتروني الشخصية والعمل، بالإضافة إلى التحديثات الهامة"
+      ],
       "Promotions": [
         "العروض الترويجية"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "العروض الترويجية - الصفقات والعروض ورسائل البريد الإلكتروني التسويقية"
       ],
       "Proration": [
         "التناسب"
@@ -13081,6 +13116,9 @@
       "Social": [
         "الاجتماعية"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "مواقع التواصل - تحديثات وسائل التواصل الاجتماعي، والنشاط، والرسائل"
+      ],
       "Social media updates and activity": [
         "تحديثات وأنشطة وسائل التواصل الاجتماعي"
       ],
@@ -13159,6 +13197,9 @@
       "Transactions": [
         "المعاملات"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "المعاملات المالية - الإيصالات، والحجوزات، والفواتير، والطلبات"
+      ],
       "Two-password mode": [
         "نمط كلمة مرور الثنائية"
       ],
@@ -13179,6 +13220,9 @@
       ],
       "Updates": [
         "التحديثات"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "تحديثات - تأكيدات وتنبيهات تلقائية، وتحديثات الحساب"
       ],
       "Upload 1 or more encryption keys": [
         "تحميل مفتاح تشفير واحد أو أكثر"
@@ -13445,9 +13489,6 @@
       ],
       "Details": [
         "تفاصيل"
-      ],
-      "Don't have access to your 2FA?": [
-        "تعذر الوصول إلى المصادقة الثنائية (2FA)؟"
       ],
       "Downloads": [
         "التنزيلات"
@@ -13991,6 +14032,14 @@
         "ما يصل إلى ${ n } مشارك",
         "ما يصل إلى ${ n } مشارك",
         "ما يصل إلى ${ n } مشارك"
+      ],
+      "Video meetings, ${ n } participants": [
+        "اجتماعات فيديو، لا يوجد مشاركين (${ n })",
+        "اجتماعات فيديو، مشارك واحد (${ n })",
+        "اجتماعات فيديو، مشاركان (${ n })",
+        "اجتماعات فيديو، ${ n } مشاركون",
+        "اجتماعات فيديو، ${ n } مشاركاً",
+        "اجتماعات فيديو، ${ n } مشارك"
       ]
     },
     "meet_2025: Info": {
@@ -14162,6 +14211,14 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } months ${ onDayString }": [
+        "كل ${ interval } أشهر ${ onDayString }",
+        "كل شهر ${ interval } ${ onDayString }",
+        "كل ${ interval } شهرين ${ onDayString }",
+        "كل ${ interval } أشهر ${ onDayString }",
+        "كل ${ interval } شهرًا ${ onDayString }",
+        "كل ${ interval } شهرًا ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "شهريا ${ onDayString }"
       ]
@@ -15441,6 +15498,14 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } countries": [
+        "${ n } دولة",
+        "الدولة ${ n }",
+        "${ n } دولة",
+        "${ n } دول",
+        "${ n } دولة",
+        "${ n } دولة"
+      ],
       "Access advanced VPN features": [
         "الوصول إلى ميزات VPN المتقدمة"
       ],
@@ -18662,6 +18727,30 @@
         "لديك ${ timeRemaining.inDays } أيام لإعادة تعيين كلمة مرورك.",
         "لديك ${ timeRemaining.inDays } يومًا لإعادة تعيين كلمة مرورك.",
         "لديك ${ timeRemaining.inDays } يومًا لإعادة تعيين كلمة مرورك."
+      ],
+      "You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعات لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inHours } ساعة لإعادة تعيين كلمة المرور."
+      ],
+      "You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقائق لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inMinutes } دقيقة لإعادة تعيين كلمة المرور."
+      ],
+      "You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثوانٍ لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور.",
+        "لديك ${ timeRemaining.inSeconds } ثانية لإعادة تعيين كلمة المرور."
       ]
     },
     "session_recovery:available:link": {
@@ -22230,8 +22319,8 @@
       "Layout": [
         "التصميم"
       ],
-      "Leave ${ organisationName }?": [
-        "هل تريد مغادرة ${ organisationName }؟"
+      "Leave ${ organization.Name }?": [
+        "هل تريد مغادرة ${ organization.Name }؟"
       ],
       "Leave group?": [
         "هل تريد مغادرة المجموعة؟"
@@ -22244,6 +22333,9 @@
       ],
       "Main password": [
         "كلمة المرور الرئيسية"
+      ],
+      "Manage company": [
+        "إدارة الشركة"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "إدارة الملفات عبر الأجهزة على أنظمة Windows و Mac و Android و iOS."
@@ -23175,6 +23267,9 @@
       "Verified email address": [
         "عنوان بريد إلكتروني تم التحقق منه"
       ],
+      "Version 6 OpenPGP key": [
+        "مفتاح OpenPGP من الإصدار 6"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "اكتشفنا مشكلة في تكوين DNS الخاص بك. يرجى التأكد من مطابقة سجلاتك للتعليمات التالية. إذا استمرت المشكلة، سيتعين علينا إيقاف تشغيل تسجيل DKIM."
       ],
@@ -23993,6 +24088,14 @@
         "الاثنين كل ${ interval } من اﻷسابيع",
         "الاثنين كل ${ interval } من اﻷسابيع"
       ],
+      "Every ${ interval } weeks on Monday, ${ timesString }": [
+        "كل ${ interval } أسابيع يوم الإثنين، ${ timesString }",
+        "كل أسبوع ${ interval } يوم الاثنين، ${ timesString }",
+        "كل ${ interval } أسبوعين يوم الاثنين، ${ timesString }",
+        "كل ${ interval } أسابيع يوم الإثنين، ${ timesString }",
+        "كل ${ interval } أسبوعًا يوم الإثنين، ${ timesString }",
+        "كل ${ interval } أسبوعًا يوم الإثنين، ${ timesString }"
+      ],
       "Every ${ interval } weeks on Saturday": [
         "السبت كل ${ interval } من اﻷسابيع",
         "${ interval } أسبوعياً كل سبت",
@@ -24009,6 +24112,14 @@
         "أسبوعيا يوم الأحد",
         "أسبوعيا يوم الأحد"
       ],
+      "Every ${ interval } weeks on Sunday, ${ timesString }": [
+        "كل ${ interval } أسابيع يوم الأحد، ${ timesString }",
+        "كل أسبوع ${ interval } يوم الأحد، ${ timesString }",
+        "كل ${ interval } أسبوعين يوم الأحد، ${ timesString }",
+        "كل ${ interval } أسابيع يوم الأحد، ${ timesString }",
+        "كل ${ interval } أسبوعًا يوم الأحد، ${ timesString }",
+        "كل ${ interval } أسبوعًا يوم الأحد، ${ timesString }"
+      ],
       "Every ${ interval } weeks on Thursday": [
         "${ interval } أسبوعياً كل خميس",
         "${ interval } أسبوعياً كل خميس",
@@ -24024,6 +24135,14 @@
         "الثلاثاء كل ${ interval } من اﻷسابيع",
         "الثلاثاء كل ${ interval } من اﻷسابيع",
         "الثلاثاء كل ${ interval } من اﻷسابيع"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
+        "كل ${ interval } أسابيع يوم الثلاثاء، ${ timesString }",
+        "كل أسبوع ${ interval } يوم الثلاثاء، ${ timesString }",
+        "كل ${ interval } أسبوعين يوم الثلاثاء، ${ timesString }",
+        "كل ${ interval } أسابيع يوم الثلاثاء، ${ timesString }",
+        "كل ${ interval } أسبوعًا يوم الثلاثاء، ${ timesString }",
+        "كل ${ interval } أسبوعًا يوم الثلاثاء، ${ timesString }"
       ],
       "Every ${ interval } weeks on Wednesday": [
         "اﻷربعاء كل ${ interval } من اﻷسابيع",
