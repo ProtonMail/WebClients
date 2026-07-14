@@ -21,9 +21,9 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@dnd-kit/dom": "^0.4.0",
-        "@dnd-kit/react": "^0.4.0",
-        "@livekit/components-react": "^2.9.21",
+        "@dnd-kit/dom": "^0.5.0",
+        "@dnd-kit/react": "^0.5.0",
+        "@livekit/components-react": "^2.9.23",
         "@livekit/krisp-noise-filter": "^0.4.3",
         "@livekit/track-processors": "^0.7.2",
         "@proton-meet/proton-meet-core": "1.1.7-5",
@@ -39,34 +39,34 @@
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
         "@protontech/crypto": "*",
-        "@types/react": "^18.3.28",
+        "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "@types/wicg-file-system-access": "2023.10.7",
         "@workadventure/noise-suppression": "0.1.1",
         "cross-env": "^10.1.0",
         "date-fns-tz": "^2.0.1",
-        "livekit-client": "2.18.9",
-        "mediabunny": "^1.0.0",
+        "livekit-client": "2.20.1",
+        "mediabunny": "^1.50.8",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
-        "webpack": "^5.106.2"
+        "webpack": "^5.108.4"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "@vitejs/plugin-react": "^6.0.2",
-        "@vitest/coverage-v8": "^4.1.8",
-        "@vitest/ui": "3.2.4",
-        "eslint": "^9.39.4",
-        "happy-dom": "^20.9.0",
-        "prettier": "^3.8.3",
+        "@vitejs/plugin-react": "^6.0.3",
+        "@vitest/coverage-v8": "^4.1.10",
+        "@vitest/ui": "3.2.7",
+        "eslint": "^9.39.5",
+        "happy-dom": "^20.10.6",
+        "prettier": "^3.9.5",
         "typescript": "^6.0.2",
-        "vitest": "^4.1.8"
+        "vitest": "^4.1.10"
     }
 }
