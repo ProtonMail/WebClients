@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Démarrer la configuration"
       ],
-      "Start testing": [
-        "Commencer à tester"
-      ],
       "Stay": [
         "Rester"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Ouvrir dans ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personnaliser les catégories"
+      ],
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Next": [
+        "Suivant"
+      ],
+      "Not now": [
+        "Pas maintenant"
+      ],
+      "Skip": [
+        "Ignorer"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Un point bleu apparaît lorsqu'une catégorie contient des messages non lus depuis votre dernière visite."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Ajoutez des dossiers et des fichiers à ${ DRIVE_APP_NAME } et invitez les membres de l’équipe à les consulter ou à les modifier."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Ajoutez ou supprimez des catégories, gérer les notifications et ajustez votre configuration à n'importe quel moment dans les paramètres."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Ajoutez ou supprimez des catégories, gérez les notifications ou désactivez-les complètement, à tout moment dans les Paramètres."
       ],
       "Also included": [
         "Également inclus"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Aidez votre équipe à stocker en toute sécurité les mots de passe relatifs aux informations sensibles de l’entreprise et des clients."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Si un message apparaît dans la mauvaise catégorie, il suffit de le déplacer vers la bonne. Effectuez un clic droit sur un message pour choisir une nouvelle catégorie, ou faites-le glisser et déposez-le à l'endroit qui lui correspond."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faites un clic droit sur un e-mail et sélectionnez « Déplacer vers », ou faites-le glisser et déposez-le dans une autre catégorie. Les e-mails similaires y seront automatiquement triés par la suite."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envoyez et recevez les messages Gmail directement dans ${ MAIL_APP_NAME }. Connectez votre adresse dans ${ addressesSettingsLink }."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Vous faites partie des premiers à tester notre nouvel affichage par catégorie avant son lancement. Vos commentaires nous aideront à améliorer la façon dont Proton Mail trie les e-mails pour tous les utilisateurs."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Le numéro de TVA doit commencer par ${ prefixes }."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
@@ -8974,6 +8997,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Vous allez ouvrir votre navigateur par défaut et consulter :"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Vous êtes actuellement connecté en tant que ${ username }."
@@ -15807,9 +15833,6 @@
       "Help center": [
         "Aide & Support"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Contribuez à façonner l'avenir des catégories d'e-mails dans ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dissimulez votre e-mail avec ${ PASS_APP_NAME }"
       ],
@@ -15901,6 +15924,9 @@
       ],
       "Make a secure connection your default": [
         "Optez par défaut pour une connexion sécurisée"
+      ],
+      "Make Categories your own": [
+        "Rendez vos catégories uniques"
       ],
       "Mark all messages as read": [
         "Marquer tous les messages comme lus"
@@ -16010,6 +16036,9 @@
       "New message": [
         "Nouveau message"
       ],
+      "New messages": [
+        "Nouveaux messages"
+      ],
       "Newsletters": [
         "Newsletters"
       ],
@@ -16087,6 +16116,9 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
+      ],
+      "Personalize your Categories": [
+        "Personnalisez vos Catégories"
       ],
       "Phone numbers": [
         "Numéros de téléphone"
@@ -16422,6 +16454,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
+      ],
+      "You're in control": [
+        "Vous avez le contrôle"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."

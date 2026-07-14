@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Aloita määritys"
       ],
-      "Start testing": [
-        "Aloita testaus"
-      ],
       "Stay": [
         "Pysy"
       ],
@@ -1595,6 +1592,9 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
+      "Upgrade for 200GB": [
+        "Päivitä 200 Gt:n tilaukseen"
+      ],
       "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
@@ -1728,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Mukauta kategorioita"
+      ],
+      "Got it": [
+        "Selvä"
+      ],
+      "Next": [
+        "Seuraava"
+      ],
+      "Not now": [
+        "Ei nyt"
+      ],
+      "Skip": [
+        "Ohita"
       ]
     },
     "Actions message": {
@@ -4121,8 +4138,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Sininen piste tulee näkyviin, kun kategoriassa on lukemattomia viestejä edellisen vierailunne jälkeen."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Voitte lisätä tai poistaa luokkia, hallita ilmoituksia ja muokata asetuksianne milloin tahansa asetuksissa."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Voitte lisätä tai poistaa luokkia, hallita ilmoituksia tai poistaa ne kokonaan käytöstä milloin tahansa Asetuksissa."
       ],
       "Also included": [
         "Sisältää myös:"
@@ -4205,9 +4231,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auta tiimiäsi arkaluonteisten yritys- ja asiakastietojen salasanojen turvallisessa säilyttämisessä."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Jos viesti näkyy väärässä luokassa, siirtäkää se yksinkertaisesti oikeaan luokkaan. Valitkaa uusi luokka napsauttamalla viestiä hiiren kakkospainikkeella tai vetämällä ja pudottamalla se oikeaan paikkaan."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
@@ -4235,6 +4258,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Napsauttakaa sähköpostia hiiren kakkospainikkeella ja valitkaa ”Siirrä kohteeseen” tai vetäkää ja pudottakaa se toiseen luokkaan. Vastaavat sähköpostit lajitellaan jatkossa sinne automaattisesti."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Lähetä ja vastaanota Gmail-viestejä suoraan palvelussa ${ MAIL_APP_NAME }. Yhdistä osoitteenne kohdassa ${ addressesSettingsLink }."
@@ -4388,9 +4414,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Olette ensimmäisten joukossa kokeilemassa uutta luokkanäkymäämme ennen sen julkaisua. Palautteenne auttaa parantamaan sitä, miten Proton Mail lajittelee sähköpostit kaikkien käyttäjien osalta."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
@@ -5326,6 +5349,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "ALV-tunnuksen on alettava etuliitteillä ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
       ],
       "Wrong billing address": [
         "Virheellinen laskutusosoite"
@@ -8901,6 +8927,9 @@
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Olet nyt kirjautuneena ${ username } tilille."
       ],
@@ -8957,6 +8986,13 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Teillä on ${ totalLabel } saapuneissa."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Teillä on **${ count } keskustelu** luokassa ${ categoryLabel }",
+        "Teillä on **${ count } keskustelua** luokassa ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Kansio sisältää **${ count } keskustelun**",
         "Kansio sisältää **${ count } keskustelua**"
@@ -8964,6 +9000,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Olet merkinnyt **${ count } keskustelun** tällä tunnisteella",
         "Olet merkinnyt **${ count } keskustelua** tällä tunnisteella"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Teillä on **${ count } viesti** luokassa ${ categoryLabel }",
+        "Teillä on **${ count } viestiä** luokassa ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Kansio sisältää **${ count } viestin**",
@@ -8979,6 +9019,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Sinulla on ${ planTitle } -kokeilutilaus. Maksua ei vaadita tällä hetkellä. Tilauksesi uusitaan automaattisesti kokeilujakson päätyttyä."
       ],
+      "You have no conversations in this category": [
+        "Teillä ei ole keskusteluja tässä luokassa"
+      ],
+      "You have no messages in this category": [
+        "Teillä ei ole viestejä tässä luokassa"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Et ole täyttänyt viestin aihetta. Haluatko silti lähettää sen?"
       ],
@@ -8993,6 +9039,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Valitsitte **${ checked } keskustelun** luokassa ${ categoryLabel }",
+        "Valitsitte **${ checked } keskustelua** luokassa ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Valitsitte **${ checked } viestin** luokassa ${ categoryLabel }",
+        "Valitsitte **${ checked } viestiä** luokassa ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Valitsit kansiosta **${ count } keskustelun**",
@@ -9085,6 +9139,9 @@
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ilmainen kokeilujaksosi muunnettiin onnistuneesti ${ cycle } kuukauden tilaukseksi. Uusimispäivämääräsi on ${ nextBillingDate }."
       ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ilmainen kokeilunne muunnettiin onnistuneesti kuukausitilaukseksi. Uusiutumispäivänne on ${ nextBillingDate }."
+      ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Laitteistosi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista palvelimilla."
       ],
@@ -9149,6 +9206,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Menetätte myös ${ boldPlanTitle }-ominaisuuksien käyttöoikeuden:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Menetätte pääsyn tilaukseen ${ boldPlanTitle } ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
@@ -9775,6 +9835,12 @@
       "Encrypt emails": [
         "Salaa viestit"
       ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
+      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -9979,6 +10045,9 @@
       "Navigation": [
         "Navigaatio"
       ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
       "New password": [
         "Uusi salasana"
       ],
@@ -9987,6 +10056,9 @@
       ],
       "Newsletters": [
         "Uutiskirjeet"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Uutiskirjeet - uutiset, pääkirjoitussähköpostit ja ei-kaupallinen sisältö"
       ],
       "No label found": [
         "Tunnistetta ei löytynyt"
@@ -10026,6 +10098,9 @@
       ],
       "Original link": [
         "Alkuperäinen linkki"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
       "Participants": [
         "Osallistujat"
@@ -10075,8 +10150,14 @@
       "Primary": [
         "Ensisijainen"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Ensisijainen - henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset"
+      ],
       "Promotions": [
         "Kampanjat"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Tarjoukset - edut, tarjoukset ja markkinointisähköpostit"
       ],
       "Proration": [
         "Hyvitys"
@@ -10098,6 +10179,9 @@
       ],
       "Region": [
         "Alue"
+      ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
       ],
       "Remember my choice": [
         "Muista valintani"
@@ -10144,6 +10228,9 @@
       "Social": [
         "Sosiaalinen"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosiaaliset - sosiaalisen median päivitykset, toiminta ja viestit"
+      ],
       "Social media updates and activity": [
         "Sosiaalisen median päivitykset ja toiminta"
       ],
@@ -10155,6 +10242,9 @@
       ],
       "Start date": [
         "Aloituspäivä"
+      ],
+      "Starts with": [
+        "Alkaa"
       ],
       "State": [
         "Osavaltio"
@@ -10219,6 +10309,9 @@
       "Transactions": [
         "Siirrot"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Tapahtumat - kuitit, varaukset, laskut ja tilaukset"
+      ],
       "Undisclosed Recipients": [
         "Piilotetut vastaanottajat"
       ],
@@ -10231,11 +10324,17 @@
       "Updates": [
         "Päivitykset"
       ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Päivitykset - automaattiset vahvistukset, hälytykset ja tilipäivitykset"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
       ],
       "Username": [
         "Käyttäjätunnus"
@@ -10839,14 +10938,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
       "Fw:": [
         "Vl:"
+      ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } kirjoitti:"
       ],
       "Re:": [
         "Vs:"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ilmainen kokeilusi on päättynyt. ${ nonAutoRenewalAction }"
@@ -12096,6 +12213,9 @@
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Viimeinen tilaisuus saada 80 % alennusta ensimmäisestä kuukaudestanne tilauksesta ${ plan }."
+      ],
       "Last day to save": [
         "Viimeisin tallennettava päivä"
       ],
@@ -12126,6 +12246,12 @@
       "This offer won't be shown again.": [
         "Tätä tarjousta ei näytetä uudelleen"
       ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tuottavuutenne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tallennustilanne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
       "When you switch from a monthly to annual subscription.": [
         "Kun vaihdat kuukausittaisesta tilauksesta vuosittaiseen."
       ],
@@ -12151,6 +12277,9 @@
       "Advanced threat protection": [
         "Edistynyt uhkasuojaus"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Tee yhteistyötä muiden kuin ${ BRAND_NAME } -käyttäjien kanssa"
+      ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
@@ -12174,6 +12303,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "Huippunopeat VPN-yhteydet yli 110 maassa"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Rajattomasti aliaksia henkilöllisyytenne suojaamiseksi"
       ]
     },
     "Onboarding List Placeholder": {
@@ -12384,11 +12516,20 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Voitte silti peruuttaa 30 päivän kuluessa ja saada suhteellisen hyvityksen."
       ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Voitte edelleen peruuttaa tilauksen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
+      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Voitte käyttää tilausta ${ planTitle } kokeilun päättymiseen saakka veloituksetta."
       ]
     },
     "Option": {
@@ -14004,11 +14145,23 @@
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hankkikaa 500 Gt kaikkien tiedostojenne ja valokuvienne turvalliseen tallentamiseen"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Käyttäkää huippunopeita VPN-palvelimia yli 110 maassa"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hankkikaa yksi tilaus, joka sisältää kaiken: hankkikaa ${ BRAND_NAME } Unlimited"
+      ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Suojatkaa tilinne uhilta Sentinelin avulla"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
@@ -14315,6 +14468,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa teille pääsyn kaikkiin premium-ominaisuuksiin palveluissa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Yksityisyys on sisäänrakennettu, joten voitte jatkaa toimintaanne tietäen, että tietonne ja henkilöllisyytenne ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -14885,6 +15041,10 @@
       "Move ${ selectionCount } message": [
         "Siirrä ${ selectionCount } viesti",
         "Siirrä ${ selectionCount } viestiä"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Siirretty luokkaan ${ label }. Vastaava viesti luokitellaan jatkossa tänne.",
+        "Siirretty luokkaan ${ label }. Vastaavat viestit luokitellaan jatkossa tänne."
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
@@ -15581,9 +15741,6 @@
       "Help center": [
         "Tukikeskus"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Auttakaa muokkaamaan ${ MAIL_APP_NAME }-sovelluksen sähköpostiluokkien tulevaisuutta"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Piilota sähköpostisi ${ PASS_APP_NAME }illa"
       ],
@@ -15675,6 +15832,9 @@
       ],
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletukseksesi"
+      ],
+      "Make Categories your own": [
+        "Tehkää kategorioista omanne"
       ],
       "Mark all messages as read": [
         "Merkitse kaikki viestit luetuiksi"
@@ -15781,6 +15941,9 @@
       "New message": [
         "Uusi viesti"
       ],
+      "New messages": [
+        "Uusia viestejä"
+      ],
       "Newsletters": [
         "Uutiskirjeet"
       ],
@@ -15858,6 +16021,9 @@
       ],
       "Payment verification": [
         "Maksun vahvistus"
+      ],
+      "Personalize your Categories": [
+        "Mukauttakaa kategorioitanne"
       ],
       "Phone numbers": [
         "Puhelinnumerot"
@@ -16121,6 +16287,12 @@
       "Upgrade to keep your premium benefits.": [
         "Päivitä säilyttääksesi premium-etusi."
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tuottavuutenne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tallennustilanne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
       ],
@@ -16184,6 +16356,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
+      ],
+      "You're in control": [
+        "Sinä päätät"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"
@@ -16494,6 +16669,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
