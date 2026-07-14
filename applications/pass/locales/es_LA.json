@@ -547,6 +547,12 @@
       "Regenerate": [
         "Regenerar"
       ],
+      "Regex invalid": [
+        "Expresión regular inválida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular insegura"
+      ],
       "Reject": [
         "Rechazar"
       ],
@@ -669,9 +675,6 @@
       ],
       "Skip": [
         "Omitir"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguien compartió un elemento con usted en ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar elementos de la bóveda"
@@ -1332,9 +1335,6 @@
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
-      ],
-      "Try reaching out to the link owner.": [
-        "Intente comunicarse con el propietario del enlace."
       ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento"
@@ -2098,10 +2098,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
-      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2330,6 +2326,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Clasificado por campo (título primero, luego nombre de usuario o correo electrónico, sitio web, notas) y precisión de coincidencia (exacto, comienza con, contiene)."
       ],
       "Read item": [
         "Leer elemento"
@@ -2598,9 +2597,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su segunda contraseña."
-      ],
-      "Unlock with biometrics": [
-        "Desbloquear con biometría"
       ],
       "Unpinning item...": [
         "Desfijando elemento..."
@@ -3002,6 +2998,9 @@
       "Bank Name": [
         "Nombre del banco"
       ],
+      "Basic": [
+        "Básico"
+      ],
       "Beta Access": [
         "Acceso Beta"
       ],
@@ -3034,6 +3033,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Comprobar"
       ],
       "Checkbox": [
         "Casilla de verificación"
@@ -3190,6 +3192,12 @@
       ],
       "Enter email or username": [
         "Ingresar correo o nombre de usuario"
+      ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -3506,6 +3514,9 @@
       "Never": [
         "Nunca"
       ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
       "New email": [
         "Correo nuevo"
       ],
@@ -3565,6 +3576,9 @@
       ],
       "Owner": [
         "Propietario"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -3667,6 +3681,12 @@
       ],
       "Reddit handle": [
         "Nombre de usuario de Reddit"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Relevant": [
+        "Relevante"
       ],
       "Remove link": [
         "Eliminar el enlace"
@@ -3782,6 +3802,9 @@
       "SSN": [
         "Número de la Seguridad Social"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State or province": [
         "Estado o provincia"
       ],
@@ -3829,9 +3852,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
       ],
       "Tier/Level": [
         "Nivel"
@@ -3907,6 +3927,9 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ],
       "Use ${ PASS_APP_NAME } as SSH agent": [
         "Usar ${ PASS_APP_NAME } como agente SSH"
@@ -4030,6 +4053,24 @@
       "${ count } item": [
         "${ count } elemento",
         "${ count } elementos"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
       ],
       "You can drag and drop the selected item to another vault": [
         "Puede arrastrar y soltar el elemento seleccionado en otra bóveda.",
@@ -4330,6 +4371,23 @@
         "Usado en ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ingrese una URL para comprobar si la regla actual coincide con la URL"
+      ],
+      "The rule is matching this URL": [
+        "La regla coincide con esta URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "La regla NO coincide con esta URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Esta URL se bloqueará del completado automático"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Esta URL NO se bloqueará del completado automático"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
@@ -4534,6 +4592,9 @@
       "Add mailbox": [
         "Agregar un buzón"
       ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Ajuste el comportamiento del completado automático para cambiar dónde se sugieren los inicios de sesión."
+      ],
       "Agent setup instructions": [
         "Instrucciones de configuración del agente"
       ],
@@ -4732,6 +4793,9 @@
       ],
       "Last modified": [
         "Última modificación"
+      ],
+      "Learn more": [
+        "Más información"
       ],
       "Leave this item?": [
         "¿Desea abandonar este elemento?"
@@ -4953,6 +5017,9 @@
       "Sync your aliases from SimpleLogin": [
         "Sincronice sus alias desde SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Pruebe una URL contra esta regla"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -4967,6 +5034,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "URL matching": [
+        "Coincidencia de URL"
       ],
       "Vault": [
         "Bóveda"
@@ -5082,6 +5152,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Se requiere la contraseña de ${ BRAND_NAME }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "Modo sin conexión de ${ PASS_SHORT_APP_NAME } desactivado."
@@ -5292,6 +5365,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Este elemento no se puede sugerir para autocompletar debido a «${ neverModeDescriptionStrong }». Añada otra URL si desea que este elemento se complete automáticamente."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Este elemento está compartido actualmente. Si lo elimina, se eliminará el acceso para todos los demás usuarios."
