@@ -228,7 +228,7 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
       <HeadingParamListener scrollToNode={scrollToNode} />
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
-      <div className="flex h-full min-w-0 flex-col gap-4 p-4" data-testid="table-of-contents">
+      <div className="table-of-contents flex h-full min-w-0 flex-col gap-4 p-4" data-testid="table-of-contents">
         <div className="relative flex items-center gap-2">
           <button
             onClick={() => setLeftPanelActive((prev: boolean) => !prev)}
