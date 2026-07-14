@@ -4,7 +4,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMeasurementGroups, TelemetryVpnAlwaysOnPolicyEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
-export type ConfigureOpenedSource = 'cta' | 'reconfigure';
+export type ConfigureOpenedSource = 'call-to-action' | 'reconfigure';
 
 export const useAlwaysOnPolicyTelemetry = () => {
     const api = useApi();
