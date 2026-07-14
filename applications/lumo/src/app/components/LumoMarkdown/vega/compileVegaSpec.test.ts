@@ -342,10 +342,11 @@ describe('compileVegaSpec', () => {
         expect(() => compile({ ...spec, width: 480 } as unknown as TopLevelSpec)).not.toThrow();
 
         const compiled = compile({ ...spec, width: 480 } as unknown as TopLevelSpec);
-        const collectMarkTypes = (marks: { type?: string; marks?: { type?: string; marks?: unknown[] }[] }[] | undefined): string[] =>
-            (marks ?? []).flatMap((mark) => [mark.type ?? 'unknown', ...collectMarkTypes(mark.marks as typeof marks)]);
+        type VegaMark = { type?: string; marks?: VegaMark[] };
+        const collectMarkTypes = (marks: VegaMark[] | undefined): string[] =>
+            (marks ?? []).flatMap((mark) => [mark.type ?? 'unknown', ...collectMarkTypes(mark.marks)]);
 
-        expect(collectMarkTypes((compiled.spec as { marks?: { type?: string; marks?: unknown[] }[] }).marks)).toEqual(
+        expect(collectMarkTypes((compiled.spec as { marks?: VegaMark[] }).marks)).toEqual(
             expect.arrayContaining(['rect', 'text'])
         );
     });
