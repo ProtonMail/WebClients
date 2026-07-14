@@ -66,6 +66,9 @@
       "Accept": [
         "Přijmout"
       ],
+      "Account settings": [
+        "Nastavení účtu"
+      ],
       "activate": [
         "aktivovat"
       ],
@@ -7391,6 +7394,9 @@
       "We couldn't sign you in": [
         "Nemohli jsme vás přihlásit"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zastavili jsme podepisování DKIM kvůli problémům s vaší konfigurací DNS. Chcete-li pokračovat v podepisování, postupujte podle pokynů níže."
       ],
@@ -7975,9 +7981,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Před vytvořením nového uživatele je třeba nakonfigurovat vlastní doménu."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Ztratíte přístup ke všem prémiovým funkcím, které jsou součástí ${ plan }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "**${ invite.InviterEmail }** vás zve k propojení vašeho účtu s tímto skupinovým tarifem."
@@ -12849,6 +12852,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte se otevřít výchozí prohlížeč a navštívit:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Aktuálně jste přihlášeni jako ${ username }."
       ],
@@ -14854,6 +14860,9 @@
       "Newsletters": [
         "E-mailové zpravodaje"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Zpravodaje – novinky, redakční e-maily a nepropagační obsah"
+      ],
       "No": [
         "Ne"
       ],
@@ -15007,11 +15016,17 @@
       "Primary": [
         "Primární"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primární – osobní a pracovní e-maily a důležité aktualizace"
+      ],
       "Priority support": [
         "Prioritní podpora"
       ],
       "Promotions": [
         "Propagační akce"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promo akce – nabídky, slevy a marketingové e-maily"
       ],
       "Prompt to trust keys": [
         "Dotaz na důvěru klíčům"
@@ -15187,6 +15202,9 @@
       "Social": [
         "Sociální"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociální sítě – aktualizace, aktivity a zprávy ze sociálních sítí"
+      ],
       "Social media updates and activity": [
         "Aktualizace a aktivita na sociálních médiích"
       ],
@@ -15295,6 +15313,9 @@
       "Transactions": [
         "Transakce"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakce – stvrzenky, rezervace, účty a objednávky"
+      ],
       "Two-password mode": [
         "Režim dvou hesel"
       ],
@@ -15315,6 +15336,9 @@
       ],
       "Updates": [
         "Aktualizace"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualizace – automatická potvrzení, upozornění a aktualizace účtu"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrát 1 nebo více dešifrovacích klíčů"
@@ -15678,9 +15702,6 @@
       ],
       "Details": [
         "Detaily"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nemáte přístup ke svému 2FA?"
       ],
       "Downloads": [
         "Stažení"
@@ -23567,9 +23588,6 @@
       "per month, billed annually": [
         "za měsíc, účtováno ročně"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Ušetřete 50 % na 1 rok a zachovejte si plný přístup"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Ušetřete 50 % na 6 měsíců a zachovejte si plný přístup"
       ],
@@ -25195,9 +25213,6 @@
       "Layout": [
         "Rozložení stránky"
       ],
-      "Leave ${ organisationName }?": [
-        "Opustit ${ organisationName }?"
-      ],
       "Leave group?": [
         "Opustit skupinu?"
       ],
@@ -26400,6 +26415,9 @@
       ],
       "Verified email address": [
         "Ověřená e-mailová adresa"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."

@@ -43,6 +43,9 @@
       "${ name } says: ${ message }": [
         "${ name } spune: ${ message }"
       ],
+      "${ name }: ${ message }": [
+        "${ name }: ${ message }"
+      ],
       "A participant joined the meeting": [
         "Un participant s-a alăturat conferinței"
       ],
@@ -135,6 +138,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "${ newMessageCount } new": [
+        "Mesaje noi: ${ newMessageCount }",
+        "Mesaje noi: ${ newMessageCount }",
+        "Mesaje noi: ${ newMessageCount }"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -197,6 +205,9 @@
       ],
       "Close preview": [
         "Închidere examinare"
+      ],
+      "Close reply composer": [
+        "Închidere editor răspuns"
       ],
       "Close this banner": [
         "Închidere norificare"
@@ -261,8 +272,14 @@
       "Disable waiting room": [
         "Dezactivare sală de așteptare"
       ],
+      "Discard": [
+        "Renunțare"
+      ],
       "Dismiss": [
         "Renunțare"
+      ],
+      "Dismiss new messages": [
+        "Închidere mesaje noi"
       ],
       "Done": [
         "Gata"
@@ -454,6 +471,9 @@
         "Eliminare reacție ${ emoji }, ${ identities.length } reacții",
         "Eliminare reacție ${ emoji }, ${ identities.length } de reacții"
       ],
+      "Reply": [
+        "Răspuns"
+      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -474,6 +494,9 @@
       ],
       "Resume": [
         "Reluare"
+      ],
+      "Retry": [
+        "Reîncercare"
       ],
       "Return to dashboard": [
         "Înapoi la panoul de control"
@@ -501,6 +524,9 @@
       ],
       "Send an encrypted message": [
         "Trimitere mesaj criptat"
+      ],
+      "Send reply": [
+        "Trimitere răspuns"
       ],
       "Settings": [
         "Setări"
@@ -639,6 +665,12 @@
       ],
       "Waiting room": [
         "Sală de așteptare"
+      ],
+      "Waiting room disabled": [
+        "Sală de așteptare dezactivată"
+      ],
+      "Waiting room enabled": [
+        "Sală de așteptare activată"
       ]
     },
     "Alt": {
@@ -708,6 +740,9 @@
       "Rotate camera": [
         "Rotire cameră"
       ],
+      "Save my name on this device": [
+        "Salvează-mi numele pe acest dispozitiv"
+      ],
       "Screen share": [
         "Partajare ecran"
       ],
@@ -749,6 +784,9 @@
       ],
       "Video settings": [
         "Setări video"
+      ],
+      "Waiting room": [
+        "Sală de așteptare"
       ]
     },
     "Apps dropdown": {
@@ -1906,6 +1944,9 @@
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nu s-a putut trimite un cod de verificare folosind această metodă."
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Navigatorul web nu mai are spațiu disponibil. Înregistrarea s-a salvat până în acest moment."
       ],
@@ -2128,6 +2169,11 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } a reacționat cu ${ emoji }"
       ],
+      "${ replyCount } reply": [
+        "Răspunsuri: ${ replyCount }",
+        "Răspunsuri: ${ replyCount }",
+        "Răspunsuri: ${ replyCount }"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "Participanți: ${ totalParticipantCount } din ${ maxParticipants }"
       ],
@@ -2141,6 +2187,9 @@
       ],
       "-Removed dangerous URL-": [
         "-URL periculos eliminat-"
+      ],
+      "1 reply draft": [
+        "O ciornă de răspuns"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
@@ -2427,6 +2476,9 @@
       "Member": [
         "Membru"
       ],
+      "Message actions": [
+        "Acțiuni mesaj"
+      ],
       "Message from ${ participantName }": [
         "Mesaj de la ${ participantName }"
       ],
@@ -2453,6 +2505,9 @@
       ],
       "New host": [
         "Gazdă nouă"
+      ],
+      "New reply": [
+        "Răspuns nou"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Nu s-a detectat ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
@@ -2486,6 +2541,9 @@
       ],
       "No speaker detected": [
         "Niciun difuzor detectat"
+      ],
+      "Not sent, check your connection.": [
+        "Netrimis. Verificați conexiunea."
       ],
       "Only meetings you created appear here": [
         "Aici apar doar conferințele pe care le-ați creat."
@@ -2640,6 +2698,9 @@
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "Legătura web a întâlnirii pe care ați încercat să o deschideți nu există sau poate a expirat. Asigurați-vă că aceasta este corectă sau începeți o întâlnire securizată nouă."
       ],
+      "This conversation started before you joined.": [
+        "Această conversație a început înainte de a vă alătura."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Aceasta este o conversație criptată bilateral cu mesaje efemere, care dispar la sfârșitul apelului."
       ],
@@ -2714,6 +2775,9 @@
       ],
       "Video effects": [
         "Efecte video"
+      ],
+      "View ": [
+        "Afișare "
       ],
       "Warning": [
         "Avertizare"
@@ -2818,6 +2882,9 @@
       "Advanced mode": [
         "Mod avansat"
       ],
+      "Anyone with the link can join": [
+        "Oricine are legătura web poate participa"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -2868,6 +2935,9 @@
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
+      ],
+      "Disabled": [
+        "Dezactivat"
       ],
       "Does not repeat": [
         "Nu se repetă"
@@ -2965,6 +3035,9 @@
       "Participant controls": [
         "Control participanți"
       ],
+      "Participants join after you approve them": [
+        "Participanții se alătură după ce-i aprobați"
+      ],
       "Passphrase": [
         "Frază de acces"
       ],
@@ -2983,11 +3056,17 @@
       "Repeat event": [
         "Eveniment repetat"
       ],
+      "Reply": [
+        "Răspuns"
+      ],
       "Return to dashboard": [
         "Înapoi la panoul de control"
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Save my name on this device": [
+        "Salvează-mi numele pe acest dispozitiv"
       ],
       "Schedule meeting": [
         "Planificare conferință"
@@ -3182,6 +3261,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare care apar."
+      ],
+      "Reply...": [
+        "Răspuns..."
       ],
       "Room name, e.g. team sync, project update, etc": [
         "Nume cameră, ex. sincronizare echipă, actualizare proiect, etc."

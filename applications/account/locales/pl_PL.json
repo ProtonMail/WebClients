@@ -50,6 +50,9 @@
       "Accept": [
         "Akceptuj"
       ],
+      "Account settings": [
+        "Ustawienia konta"
+      ],
       "activate": [
         "aktywować"
       ],
@@ -4660,6 +4663,32 @@
         "Udostępnij korzyści swojego planu z ${ BRAND_NAME } Duo"
       ]
     },
+    "Duration": {
+      "120 minutes": [
+        "120 minut"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "30 minutes": [
+        "30 minut"
+      ],
+      "30m": [
+        "30 min"
+      ],
+      "60 minutes": [
+        "60 minut"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90 minutes": [
+        "90 minut"
+      ],
+      "90m": [
+        "90 min"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } kont."
@@ -5789,6 +5818,9 @@
       "We couldn't sign you in": [
         "Logowanie się nie powiodło"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Nie udało się wysłać kodu weryfikacyjnego tą metodą."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zatrzymaliśmy podpisywanie DKIM z powodu problemów z konfiguracją rekordów DNS. Wykonaj tę instrukcję, aby wznowić podpisywanie."
       ],
@@ -6297,9 +6329,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Musisz skonfigurować niestandardową domenę przed utworzeniem nowego użytkownika."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "Stracisz dostęp do wszystkich funkcji premium, które są częścią planu ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem rodzinnym, aby razem korzystać z wszystkich funkcji premium ${ brandOrAppName }."
@@ -10302,6 +10331,9 @@
       "You are about to open your default browser and visit:": [
         "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Obecnie zalogowano jako ${ username } dla organizacji ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Jesteś obecnie zalogowany jako ${ username }."
       ],
@@ -11864,6 +11896,9 @@
       "Newsletters": [
         "Newslettery"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newslettery – wiadomości, artykuły redakcyjne i treści niepromocyjne"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nie (użytkownicy nie mogą korzystać z aplikacji, dopóki nie udostępni się im sejfu)"
       ],
@@ -11993,8 +12028,14 @@
       "Primary": [
         "Główna"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Główne – wiadomości osobiste i służbowe oraz ważne aktualizacje"
+      ],
       "Promotions": [
         "Promocje"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Oferty – promocje, oferty i wiadomości marketingowe"
       ],
       "Prompt to trust keys": [
         "Podpowiadaj dodawanie kluczy do zaufanych"
@@ -12131,6 +12172,9 @@
       "Social": [
         "Media społecznościowe"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Społeczności – powiadomienia z mediów społecznościowych, aktywności i wiadomości"
+      ],
       "Social media updates and activity": [
         "Aktualizacje i aktywność w mediach społecznościowych"
       ],
@@ -12209,6 +12253,9 @@
       "Transactions": [
         "Transakcje"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakcje – rachunki, rezerwacje, faktury i zamówienia"
+      ],
       "Two-password mode": [
         "Tryb podwójnego hasła"
       ],
@@ -12223,6 +12270,9 @@
       ],
       "Updates": [
         "Aktualizacje"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Powiadomienia – automatyczne potwierdzenia, alerty i aktualizacje konta"
       ],
       "Upload 1 or more encryption keys": [
         "Prześlij co najmniej 1 klucz szyfrowania"
@@ -12502,9 +12552,6 @@
       ],
       "Create an alias": [
         "Utwórz alias"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nie masz dostępu do swojego uwierzytelniania dwustopniowego?"
       ],
       "Encryption and keys": [
         "Szyfrowanie i klucze"
@@ -17264,6 +17311,24 @@
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {
@@ -20530,9 +20595,6 @@
       "Layout": [
         "Widok"
       ],
-      "Leave ${ organisationName }?": [
-        "Opuścić organizację ${ organisationName }?"
-      ],
       "Leave group?": [
         "Opuścić grupę?"
       ],
@@ -21432,6 +21494,9 @@
       ],
       "Verified email address": [
         "Adres e-mail został zweryfikowany"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klucz OpenPGP w wersji 6"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Wykryliśmy problem z konfiguracją rekordów DNS. Upewnij się, że rekordy pasują do instrukcji. Jeśli ten problem będzie się powtarzał, wyłączymy podpisywanie DKIM."

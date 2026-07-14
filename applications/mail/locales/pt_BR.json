@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Iniciar configuração"
       ],
-      "Start testing": [
-        "Iniciar teste"
-      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir no ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizar categorias"
+      ],
+      "Got it": [
+        "Entendi"
+      ],
+      "Next": [
+        "Próximo"
+      ],
+      "Not now": [
+        "Agora não"
+      ],
+      "Skip": [
+        "Pular"
       ]
     },
     "Actions message": {
@@ -4163,8 +4177,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A A2F adiciona uma camada extra de segurança, prevenindo acesso não autorizado."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Um ponto azul aparece quando uma categoria tem mensagens não lidas desde a sua última visita."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adicione pastas e arquivos ao ${ DRIVE_APP_NAME } e convide os membros da equipe para visualizar ou editar."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Adicione ou remova categorias, gerencie notificações e ajuste a sua configuração a qualquer momento nas configurações."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Adicione ou remova categorias, gerencie notificações ou desative-as completamente — a qualquer momento nas configurações."
       ],
       "Also included": [
         "Também incluído"
@@ -4247,9 +4270,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Se uma mensagem aparecer na categoria errada, basta movê-la para a correta. Clique com o botão direito em uma mensagem para escolher uma nova categoria ou use o recurso de arrastar e soltar para onde ela pertence."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
@@ -4277,6 +4297,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leia, responda e fique por dentro do Gmail de dentro do ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Clique com o botão direito em um e-mail e selecione \"Mover para\" ou arraste e solte-o em outra categoria. E-mails semelhantes serão organizados lá automaticamente no futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envie e receba mensagens do Gmail diretamente no ${ MAIL_APP_NAME }. Conecte seus endereços em ${ addressesSettingsLink }."
@@ -4430,9 +4453,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Você é um dos primeiros a testar nossa nova visualização por categorias antes do lançamento. Seu feedback ajudará a melhorar a forma como o Proton Mail organiza os e-mails para todos."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
@@ -5377,6 +5397,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar com ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação usando este método."
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
@@ -8952,6 +8975,9 @@
       "You are about to open your default browser and visit:": [
         "Você está prestes a abrir seu navegador padrão e visitar:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Você está atualmente com sessão iniciada como ${ username } para ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Você está atualmente iniciado sessão como ${ username }."
       ],
@@ -10193,6 +10219,9 @@
       "Region": [
         "Estado"
       ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
       "Remember my choice": [
         "Lembrar minha escolha"
       ],
@@ -10252,6 +10281,9 @@
       ],
       "Start date": [
         "Data de início"
+      ],
+      "Starts with": [
+        "Iniciar com"
       ],
       "State": [
         "Estado"
@@ -10950,6 +10982,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
@@ -15049,6 +15084,10 @@
         "Mover ${ selectionCount } mensagem",
         "Mover ${ selectionCount } mensagens"
       ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Movida para ${ label }. Mensagem semelhante será categorizada aqui no futuro.",
+        "Movidas para ${ label }. Mensagens semelhantes serão categorizadas aqui no futuro."
+      ],
       "Password copied to clipboard": [
         "A senha foi copiada para a área de transferências."
       ],
@@ -15747,9 +15786,6 @@
       "Help center": [
         "Central de ajuda"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Ajude a moldar o futuro das categorias de e-mail do ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte seu e-mail com ${ PASS_APP_NAME }"
       ],
@@ -15841,6 +15877,9 @@
       ],
       "Make a secure connection your default": [
         "Defina uma conexão segura como seu padrão"
+      ],
+      "Make Categories your own": [
+        "Deixe as categorias do seu jeito"
       ],
       "Mark all messages as read": [
         "Marcar todas as mensagens como lidas"
@@ -15950,6 +15989,9 @@
       "New message": [
         "Nova mensagem"
       ],
+      "New messages": [
+        "Novas mensagens"
+      ],
       "Newsletters": [
         "Boletins informativos"
       ],
@@ -16027,6 +16069,9 @@
       ],
       "Payment verification": [
         "Verificação de pagamento"
+      ],
+      "Personalize your Categories": [
+        "Personalize suas categorias"
       ],
       "Phone numbers": [
         "Números de telefone"
@@ -16362,6 +16407,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."
+      ],
+      "You're in control": [
+        "Você está no controle"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"

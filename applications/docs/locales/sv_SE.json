@@ -3168,6 +3168,9 @@
       "Failed to resend invitation": [
         "Misslyckades att skicka inbjudan igen"
       ],
+      "Failed to trash document.": [
+        "Misslyckades att slänga dokument."
+      ],
       "Failed to unshare node": [
         "Misslyckades att sluta dela nod"
       ],
@@ -3518,6 +3521,9 @@
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Vi kunde inte importera denna fil till ${ SHEETS_APP_NAME }. Du kan försöka kopiera och klistra in innehållet i ett nytt ${ SHEETS_APP_NAME }."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
       "Wrong billing address": [
         "Fel faktureringsadress"
       ],
@@ -3542,6 +3548,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Okrypterbar enhet"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
@@ -5632,6 +5641,9 @@
       "You are about to open your default browser and visit:": [
         "Du är på väg att öppna din standardwebbläsare och besöka:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du är för närvarande inloggad som ${ username }."
       ],
@@ -5684,6 +5696,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att du har ändrat behörighet till visare. Endast ägaren kan ändra din behörighet igen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
@@ -6217,6 +6232,9 @@
       "Navigation": [
         "Navigering"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New password": [
         "Nytt lösenord"
       ],
@@ -6237,6 +6255,9 @@
       ],
       "Optional": [
         "Valfritt"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ],
       "Password": [
         "Lösenord"
@@ -6619,6 +6640,9 @@
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
@@ -6683,6 +6707,9 @@
       ]
     },
     "Message": {
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
       ],
@@ -8043,8 +8070,14 @@
       "Device renamed": [
         "Enhet omdöpt"
       ],
+      "Document failed to be restored from trash": [
+        "Dokument misslyckades att återställas från papperskorg"
+      ],
       "Document moved to trash": [
         "Dokument flyttat till papperskorg"
+      ],
+      "Document restored from trash": [
+        "Dokument återställd från papperskorg"
       ],
       "External invitation removed from the share": [
         "Extern inbjudan borttagen från delningen"
@@ -10035,6 +10068,9 @@
       "Cannot load link": [
         "Kan inte ladda länk"
       ],
+      "Change access to viewer?": [
+        "Ändra behörighet till visare?"
+      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -10631,6 +10667,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
+      ],
+      "Change shared item settings": [
+        "Ändra inställningar för delat objekt"
       ],
       "Customize import to reduce the number of folders": [
         "Anpassa import för att minska antalet mappar"

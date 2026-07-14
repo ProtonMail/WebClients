@@ -2194,6 +2194,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2431,6 +2435,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Ταξινόμηση ανά πεδίο (πρώτα τίτλος, στη συνέχεια όνομα χρήστη ή email, ιστότοπος, σημειώσεις) και ακρίβεια αντιστοίχησης (ακριβώς, αρχίζει με, περιέχει)"
       ],
       "Read item": [
         "Διαβασμένο στοιχείο"
@@ -2705,9 +2712,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον δεύτερο κωδικό πρόσβασής σας"
-      ],
-      "Unlock with biometrics": [
-        "Ξεκλείδωμα με βιομετρικά στοιχεία"
       ],
       "Unpinning item...": [
         "Ξεκαρφίτσωμα στοιχείου..."
@@ -3837,6 +3841,9 @@
       ],
       "Regular expression": [
         "Κανονική έκφραση"
+      ],
+      "Relevant": [
+        "Σχετικό"
       ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"

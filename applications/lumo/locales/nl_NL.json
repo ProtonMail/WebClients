@@ -1154,7 +1154,7 @@
     },
     "collider_2025: Characteristic": {
       "${ LUMO_SHORT_APP_NAME }'s code is fully open source, so anyone can independently verify that it's private and secure—and that we never use your data to train the model.": [
-        "De code van ${ LUMO_SHORT_APP_NAME } is volledig open source, zodat iedereen onafhankelijk kan controleren of deze privé en veilig is — en dat we uw gegevens nooit gebruiken om het model te trainen."
+        "De code van ${ LUMO_SHORT_APP_NAME } is volledig open source, zodat iedereen onafhankelijk kan controleren of deze privé en veilig is, en dat we uw gegevens nooit gebruiken om het model te trainen."
       ],
       "1 TB cloud storage": [
         "1 TB cloudopslag"
@@ -1231,7 +1231,7 @@
         "heeft het gesprek samengevat"
       ],
       "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Deze chat is lang geworden — eerdere berichten worden samengevat zodat we door kunnen gaan…"
+        "Deze chat is lang geworden. Eerdere berichten worden samengevat zodat we door kunnen gaan…"
       ],
       "Tool calls removed": [
         "Tool-aanroepen verwijderd"
@@ -1707,7 +1707,7 @@
         "${ urgentTotal } chats verlopen binnen 24 uur"
       ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Het volgt het OpenAI API-schema — te integreren in uw bestaande client met een wijziging van slechts één regel."
+        ". Het volgt het OpenAI API-schema; te integreren in uw bestaande client met een wijziging van slechts één regel."
       ],
       "1 file": [
         "1 bestand"
@@ -2124,7 +2124,7 @@
         "U staat op het punt een externe website te bezoeken:"
       ],
       "You've reached your image limit for this period.": [
-        "U hebt uw afbeeldingenlimiet voor deze periode bereikt."
+        "U heeft uw afbeeldingenlimiet voor deze periode bereikt."
       ],
       "You've reached your image limit for this period. Upgrade to keep creating images.": [
         "U heeft de limiet voor het aantal afbeeldingen voor deze periode bereikt. Upgrade om afbeeldingen te blijven maken."
@@ -2133,10 +2133,10 @@
         "U heeft geen wekelijkse chats meer, alstublieft "
       ],
       "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "U hebt geen wekelijkse chats meer over, log in of maak een account aan voor hogere limieten."
+        "U heeft geen wekelijkse chats meer over, log in of maak een account aan voor hogere limieten."
       ],
       "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "U hebt geen wekelijkse chats meer over, upgrade uw account voor hogere limieten."
+        "U heeft geen wekelijkse chats meer over, upgrade uw account voor hogere limieten."
       ],
       "You've run out of weekly chats. Contact your admin to get higher limits.": [
         "U heeft geen wekelijkse chats meer over. Neem contact op met uw beheerder voor hogere limieten."
@@ -3449,7 +3449,7 @@
         "Een paar gewoonten dragen al aanzienlijk bij aan het verkleinen van uw papierspoor."
       ],
       "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
-        "Een profiel als dit vormt de basis voor advertenties en berichten die zijn ontworpen om u te bespelen — producten, meningen, zelfs hoe u stemt."
+        "Een profiel als dit vormt de basis voor advertenties en berichten die zijn ontworpen om u te bespelen zoals producten, meningen, zelfs hoe u stemt."
       ],
       "ad value": [
         "advertentiewaarde"
@@ -3509,7 +3509,7 @@
         "Gesprek versleuteld"
       ],
       "Conversational AI doesn't just answer — it asks follow-up questions. Each time you add detail (\"actually, I'm 34 and based in Berlin\"), you hand over another verified fact.": [
-        "Conversatie-AI geeft niet alleen antwoord — het stelt ook vervolgvragen. Telkens wanneer u gegevens toevoegt (\"eigenlijk ben ik 34 en woon ik in Berlijn\"), overhandigt u weer een geverifieerd feit."
+        "Conversatie-AI geeft niet alleen antwoord, het stelt ook vervolgvragen. Telkens wanneer u gegevens toevoegt (\"eigenlijk ben ik 34 en woon ik in Berlijn\"), overhandigt u weer een geverifieerd feit."
       ],
       "Cookies or website data are blocked in your browser settings": [
         "Cookies of websitegegevens worden geblokkeerd in uw browserinstellingen"
@@ -3533,7 +3533,7 @@
         "datapunten"
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
-        "Ontdek wat Big Tech AI over u zou kunnen afleiden uit uw chatgeschiedenis — en ontvang een privacyscore die u kunt delen."
+        "Ontdek wat Big Tech AI over u zou kunnen afleiden uit uw chatgeschiedenis, en ontvang een privacyscore die u kunt delen."
       ],
       "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
         "Download uw gegevens van ChatGPT (Instellingen → Gegevensbeheer → Exporteren) of Claude (Instellingen → Privacy → Gegevens exporteren)."
@@ -3563,7 +3563,7 @@
         "Ontvang snellere, nauwkeurigere antwoorden van het web, met bronvermeldingen zodat u de bron kunt controleren."
       ],
       "Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
-        "Let op — een deel van wat u hebt geplakt, kan de grenzen van de werkplek, wetgeving of gegevensbescherming overschrijden. Dit is bedoeld om u te helpen dit te ontdekken, niet om te oordelen."
+        "Let op! Een deel van wat u heeft geplakt, kan de grenzen van de werkplek, wetgeving of gegevensbescherming overschrijden. Dit is bedoeld om u te helpen dit te ontdekken, niet om te oordelen."
       ],
       "If a profile suggests you can pay more — or that you're in a hurry — you may simply see a higher price than the next person.": [
         "Als een profiel suggereert dat u meer kunt betalen — of dat u haast heeft — ziet u wellicht een hogere prijs dan de volgende persoon."
@@ -3572,10 +3572,10 @@
         "Schakel in ChatGPT en Claude de chatgeschiedenis en modeltraining uit, overal waar deze instelling aanwezig is."
       ],
       "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
-        "Afgeleide gegevens worden gebundeld en verhandeld. Een enkel profiel kan door tientallen bedrijven gaan waar u nog nooit van hebt gehoord."
+        "Afgeleide gegevens worden gebundeld en verhandeld. Een enkel profiel kan door tientallen bedrijven gaan waar u nog nooit van heeft gehoord."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
-        "Afgeleide politieke voorkeuren vormen de basis voor micro-targeted berichten die zijn ontworpen om te veranderen hoe u zich voelt — en hoe u stemt — vaak zonder dat u het merkt."
+        "Afgeleide politieke voorkeuren vormen de basis voor micro-targeted berichten die zijn ontworpen om te veranderen hoe u zich voelt, en hoe u stemt, vaak zonder dat u het merkt."
       ],
       "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
         "Afgeleide eigenschappen worden gebundeld en verkocht aan databrokers, adverteerders en iedereen die bereid is te betalen."
@@ -3596,7 +3596,7 @@
         "De vergrendelingsmodus is ingeschakeld op uw apparaat"
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
-        "Er staan geen persoonlijke gegevens op deze kaart — alleen uw blootstellingsscore per gebied. Lager betekent dat u minder hebt prijsgegeven."
+        "Er staan geen persoonlijke gegevens op deze kaart, alleen uw blootstellingsscore per gebied. Lager betekent dat u minder hebt prijsgegeven."
       ],
       "No projects yet": [
         "Nog geen projecten"
@@ -3617,7 +3617,7 @@
         "Controleer, download en verwijder periodiek de gegevens die AI-diensten over u bewaren."
       ],
       "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
-        "Kies diensten die niet trainen op uw gesprekken of deze verkopen — zoals ${ LUMO_SHORT_APP_NAME }, dat uw chats niet kan lezen."
+        "Kies diensten die niet trainen op uw gesprekken of deze verkopen, zoals ${ LUMO_SHORT_APP_NAME }, dat uw chats niet kan lezen."
       ],
       "Processing file...": [
         "Bestand wordt verwerkt..."
@@ -3629,7 +3629,7 @@
         "Geprofileerd door Big Tech AI"
       ],
       "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
-        "Profielen kunnen van invloed zijn op beslissingen over verzekeringen, kredietverlening en aanwerving — zonder dat u het ooit weet."
+        "Profielen kunnen van invloed zijn op beslissingen over verzekeringen, kredietverlening en aanwerving, zonder dat u het ooit weet."
       ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden."
@@ -3793,7 +3793,7 @@
         "Fotorealistische mockup van een wit T-shirt hangend aan een muur in een moderne boetiekkledingwinkel, blanco wit premium katoenen T-shirt netjes gepresenteerd op een houten hanger, gemonteerd tegen een zachte pastelkleurige muur (lichtbeige, blush roze of saliegroen), stijlvol winkelinterieur op de achtergrond met kledingrekken en planken zacht vervaagd, natuurlijk daglicht gemengd met warme sfeerverlichting van de winkel, realistische stoftextuur en plooien, strakke minimalistische esthetiek, high-end modemerchandising, kleine scherptediepte, gecentreerde compositie, commerciële kledingmockup, blanco T-shirt klaar voor plaatsing van een aangepast ontwerp, ultrarealistisch, hoge resolutie, 8k."
       ],
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
-        "Pure snelheid samengevat in een enkel frame — de F1-auto die over het asfalt scheurt met bewegingsonscherpte die alles erachter vervaagt, vonken die van het oppervlak vliegen en carbonfiber dat het licht vangt vanuit die intense lage hoek vlak op het asfalt."
+        "Pure snelheid samengevat in een enkel frame: de F1-auto die over het asfalt scheurt met bewegingsonscherpte die alles erachter vervaagt, vonken die van het oppervlak vliegen en carbonfiber dat het licht vangt vanuit die intense lage hoek vlak op het asfalt."
       ],
       "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
         "Het woord \"FLUORISH\" volledig gevormd uit weelderig groen gras en natuurlijke vegetatie, elke letter gemaakt van dicht, vers gras, realistische organische textuur, levendige groentinten, complexe botanische details, fotorealistische natuurtypografie, zacht natuurlijk zonlicht, subtiele schaduwen, zeer gedetailleerd milieuvriendelijk ontwerp, geïsoleerd op een schone achtergrond, premium 3D-belettering, ultrarealistisch, 8k, scherpe focus, professionele reclamekwaliteit."
@@ -5898,6 +5898,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ],
       "Wrong billing address": [
         "Verkeerd factuuradres"

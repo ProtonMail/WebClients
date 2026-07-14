@@ -553,6 +553,12 @@
       "Regenerate": [
         "重新生成"
       ],
+      "Regex invalid": [
+        "正则表达式无效"
+      ],
+      "Regex unsafe": [
+        "正则表达式不安全"
+      ],
       "Reject": [
         "拒绝"
       ],
@@ -1457,7 +1463,7 @@
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "请刷新页面或稍后重试。"
+        "请刷新或稍后重试！"
       ],
       "Something went wrong": [
         "出错了"
@@ -2187,7 +2193,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2452,6 +2458,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "快速自动填充已保存的凭据。"
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "按字段排序（标题优先，然后是用户名或邮箱、网站、备注）和匹配精度（精确匹配、开头匹配、包含匹配）。"
       ],
       "Read item": [
         "读取项目"
@@ -2734,9 +2743,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "输入 PIN 码查看设置"
-      ],
-      "Unlock with biometrics": [
-        "使用生物识别解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."
@@ -3156,6 +3162,9 @@
       "Bank Name": [
         "银行名称"
       ],
+      "Basic": [
+        "基本"
+      ],
       "Basic Auth autofill": [
         "基本身份验证自动填充"
       ],
@@ -3185,6 +3194,9 @@
       ],
       "Catch-All": [
         "通配邮箱"
+      ],
+      "Check": [
+        "检查"
       ],
       "Checkbox": [
         "复选框"
@@ -3341,6 +3353,12 @@
       ],
       "Enter email or username": [
         "请输入邮箱地址或用户名"
+      ],
+      "Exact host matching": [
+        "精确主机匹配"
+      ],
+      "Exact URL matching": [
+        "精确 URL 匹配"
       ],
       "Expiration date": [
         "有效期至"
@@ -3633,6 +3651,9 @@
       "Never": [
         "永不"
       ],
+      "Never fill on this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
       "New email": [
         "新邮箱"
       ],
@@ -3689,6 +3710,9 @@
       ],
       "Owner": [
         "所有者"
+      ],
+      "Parent domain and subdomains (default)": [
+        "父域名及子域名（默认）"
       ],
       "Passkey": [
         "通行密钥"
@@ -3801,6 +3825,12 @@
       "Reddit handle": [
         "Reddit 用户名"
       ],
+      "Regular expression": [
+        "正则表达式"
+      ],
+      "Relevant": [
+        "相关"
+      ],
       "Remove link": [
         "移除链接"
       ],
@@ -3908,6 +3938,9 @@
       ],
       "SSN": [
         "社会保险号码（SSN）"
+      ],
+      "Starts with": [
+        "开头为"
       ],
       "State or province": [
         "省、自治区或直辖市"
@@ -4023,6 +4056,9 @@
       "Update": [
         "更新"
       ],
+      "URL wildcard pattern": [
+        "URL 通配符模式"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "使用 ${ PASS_APP_NAME } 作为浏览器的默认密码管理器"
       ],
@@ -4127,6 +4163,24 @@
     "Message": {
       "${ count } item": [
         "${ count } 项"
+      ],
+      "'Starts with' matching rule": [
+        "“开头为”匹配规则"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精确（子）域名匹配规则"
+      ],
+      "Exact URL matching rule": [
+        "精确 URL 匹配规则"
+      ],
+      "Never fill with this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Regular expression rule": [
+        "正则表达式规则"
+      ],
+      "Wildcard pattern matching rule": [
+        "通配符模式匹配规则"
       ],
       "You can drag and drop the selected item to another vault": [
         "您可以将所选项目拖放到另一个保险库中"
@@ -4428,6 +4482,23 @@
         "用于 ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "输入要检查的 URL，查看当前规则是否匹配该 URL"
+      ],
+      "The rule is matching this URL": [
+        "该规则匹配此 URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "该规则不匹配此 URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "此 URL 将被阻止自动填充"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "此 URL 不会被阻止自动填充"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
@@ -4629,6 +4700,9 @@
       ],
       "Add mailbox": [
         "添加邮箱"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "调整自动填充行为以更改登录信息的建议位置。"
       ],
       "Agent setup instructions": [
         "代理设置说明"
@@ -4843,6 +4917,9 @@
       "Last modified": [
         "最后修改"
       ],
+      "Learn more": [
+        "了解详情"
+      ],
       "Leave this item?": [
         "离开此项目吗？"
       ],
@@ -5053,6 +5130,9 @@
       "Sync your aliases from SimpleLogin": [
         "从 SimpleLogin 同步您的别名"
       ],
+      "Test a URL against this rule": [
+        "针对此规则测试 URL"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "感谢您安装 ${ PASS_APP_NAME }"
       ],
@@ -5073,6 +5153,9 @@
       ],
       "Update available": [
         "有可用更新"
+      ],
+      "URL matching": [
+        "URL 匹配"
       ],
       "Use my email": [
         "使用我的邮箱"
@@ -5184,6 +5267,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "需要 ${ BRAND_NAME } 密码"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } 离线模式已禁用"
@@ -5385,6 +5471,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "该邮箱地址将不再受到数据泄露监测。"
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "由于“${ neverModeDescriptionStrong }”，此项目无法被建议用于自动填充。如果您希望此项目自动填充，请添加其他 URL。"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "此项目目前是共享的。删除它将取消所有其他用户的访问权限。"

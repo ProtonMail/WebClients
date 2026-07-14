@@ -66,6 +66,9 @@
       "Accept": [
         "수락"
       ],
+      "Account settings": [
+        "계정 설정"
+      ],
       "activate": [
         "활성화"
       ],
@@ -273,6 +276,9 @@
       "Claim it": [
         "수령하기"
       ],
+      "Claim offer": [
+        "혜택 받기"
+      ],
       "Claim this address": [
         "주소 얻기"
       ],
@@ -353,6 +359,9 @@
       ],
       "Continue anyway": [
         "무시하고 계속"
+      ],
+      "Continue cancelling": [
+        "계속 취소하기"
       ],
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
@@ -554,6 +563,12 @@
       ],
       "Disable categories": [
         "카테고리 비활성화"
+      ],
+      "Disable category": [
+        "카테고리 비활성화"
+      ],
+      "Disable company": [
+        "회사 비활성화"
       ],
       "Disable recovery phrase": [
         "복구시점 기록 중지"
@@ -1335,6 +1350,9 @@
       "Save": [
         "저장"
       ],
+      "Save & finish": [
+        "저장 및 완료"
+      ],
       "Save address": [
         "주소 저장"
       ],
@@ -1568,6 +1586,9 @@
       ],
       "Stay": [
         "기다리기"
+      ],
+      "Stop": [
+        "중지"
       ],
       "Stop using single sign-on": [
         "싱글 사인온 (SSO) 중지"
@@ -1902,6 +1923,9 @@
       "${ users } user": [
         "${ users }명 사용자"
       ],
+      "Add-on": [
+        "애드온"
+      ],
       "Dedicated VPN servers": [
         "전용 VPN 서버"
       ],
@@ -2030,6 +2054,20 @@
     "Admin": {
       "admin": [
         "관리자"
+      ]
+    },
+    "Admin roles onboarding": {
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "모든 사용자, 그룹, 스토리지, 보안, 결제, 감사 로그 및 시스템 구성을 관리하세요."
+      ],
+      "New: Control admin access for individual users": [
+        "신규: 개별 사용자에 대한 관리자 접근 권한 제어하기"
+      ],
+      "Organization admin:": [
+        "조직 관리자:"
+      ],
+      "Security admin:": [
+        "보안 관리자:"
       ]
     },
     "AdminRole_Info": {
@@ -2804,6 +2842,12 @@
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM은 각 이메일에 첨부되는 디지털 서명으로서, 수신자가 메시지를 보낸 사람이 정말 본인인지와 전송 중에 변경된 사항은 없는지 검증할 수 있습니다. DKIM 없이는 메시지의 신뢰성이 떨어질 수 있습니다."
       ],
+      "Domain provider": [
+        "도메인 제공자"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "시작하는 방법을 모르시겠다명? ${ registrarLink }(에)서 DNS 업데이트 방법을 살펴보세요."
+      ],
       "Estimated size": [
         "예상 용량"
       ],
@@ -2819,6 +2863,9 @@
       "Has errors": [
         "오류 있음"
       ],
+      "Import completed successfully": [
+        "불러오기를 성공적으로 완료했습니다."
+      ],
       "In progress": [
         "진행 중"
       ],
@@ -2828,8 +2875,20 @@
       "Install migration app": [
         "이전 앱 설치"
       ],
+      "Invitation link": [
+        "초대 링크"
+      ],
+      "Invitation message": [
+        "초대장 메시지"
+      ],
+      "invite link": [
+        "초대 링크"
+      ],
       "Mail": [
         "멩리"
+      ],
+      "Migrate accounts": [
+        "계정 이전"
       ],
       "Migrate from Google Workspace": [
         "Google Workspace에서 이전"
@@ -2843,6 +2902,9 @@
       "Migration status": [
         "마이그레이션 상태"
       ],
+      "Need help?": [
+        "도움이 필요한가요?"
+      ],
       "Not activated": [
         "활성화되지 않음"
       ],
@@ -2851,6 +2913,12 @@
       ],
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Pending": [
+        "보류 중"
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "이전을 시작하려면 Google Workspace 계정 재인증을 하십시오"
       ],
       "Select at least one user to start a migration": [
         "하나 이상의 사용자를 선택하여 마이그레이션을 시작하세요"
@@ -2861,6 +2929,18 @@
       "Sign in to Google Workspace": [
         "Google Workspace에 로그인"
       ],
+      "Skip": [
+        "건너뛰기"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "호환되지 않는 연락처 ${ count }개 건너뜀"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "호환되지 않는 이메일 ${ count }개 건너뜀"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "호환되지 않는 이벤트 ${ count }개 건너뜀"
+      ],
       "Status": [
         "상태"
       ],
@@ -2869,6 +2949,9 @@
       ],
       "User": [
         "사용자"
+      ],
+      "Users activated": [
+        "사용자 활성화됨"
       ],
       "Users migrated": [
         "사용자가 이전되었습니다."
@@ -2890,6 +2973,9 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "현재 플랜에서 최대 ${ maxMembers }명 사용자를 추가할 수 있습니다. 추가적인 사용자 전환을 위해서는 구독에 사용자 시트를 더 추가해야 합니다."
       ]
     },
     "breadcrumb": {
@@ -2997,6 +3083,9 @@
       ]
     },
     "Button": {
+      "Cancel": [
+        "취소"
+      ],
       "Close": [
         "닫기"
       ],
@@ -3589,6 +3678,11 @@
       ],
       "white": [
         "흰색"
+      ]
+    },
+    "Column header": {
+      "Total billed seats": [
+        "최종 결제된 사용 권한(시트)"
       ]
     },
     "Condition for custom filter": {
@@ -4809,6 +4903,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }의 ${ DOCS_SHORT_APP_NAME }를 사용하면 안전하고 암호화된 환경에서 다른 사람들과 함께 작업할 수 있습니다."
       ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있습니다."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME }이 비즈니스 데이터를 안전하게 보호하고 모두가 암호화된 이메일을 전송하도록 해드립니다."
       ],
@@ -4955,6 +5052,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 안에서 Gmail을 읽고, 답장하고 관리하세요."
+      ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "추가하고 싶은 카테고리를 설정하고 각 카테고리에서 푸시 알림을 받을지 여부를 선택하세요."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "모든 사용자의 계정을 설정하며 ${ BRAND_NAME }에 가입하도록 초대합니다."
@@ -6150,6 +6250,9 @@
       "Add": [
         "추가"
       ],
+      "Add 1 more": [
+        "한 명 더 추가하기"
+      ],
       "Add emergency contact": [
         "비상 연락처 추가"
       ],
@@ -6281,6 +6384,9 @@
       ],
       "Less than a minute left": [
         "1분 미만 남음"
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "최대 ${ limit }개 연락처에 도달했습니다. 연락처를 삭제한 뒤 새 연락처를 생성하십시오."
       ],
       "Only ": [
         "단 "
@@ -6844,6 +6950,9 @@
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
+      "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
+        "이 주소는 대문자와 구두점(마침표, 하이픈 및 밑줄)만 변경할 수 있습니다."
+      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -6984,6 +7093,12 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "Role assignment could not be completed for ${ errors.length } member": [
+        "${ errors.length }명 구성원에 대한 규칙 할당을 완료할 수 없습니다."
+      ],
+      "Role assignment could not be completed for ${ failedGroupCount } group": [
+        "${ failedGroupCount }개 그룹에 대한 규칙 할당을 완료할 수 없습니다."
       ],
       "Server not found": [
         "서버를 찾을 수 없습니다"
@@ -7161,6 +7276,9 @@
       ],
       "We couldn't sign you in": [
         "로그인할 수 없습니다."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
@@ -7723,9 +7841,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "새 사용자를 생성하기 전 지정 도메인 구성이 필요합니다."
       ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "${ plan }에 포함된 모든 프리미엄 기능 접근 권한을 잃게됩니다."
-      ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "**${ invite.InviterEmail }** 님이 회원님의 계정을 이 그룹 플랜에 연결하도록 초대했습니다."
       ],
@@ -7876,6 +7991,9 @@
       "10+ premium features": [
         "10개 이상의 premium 기능"
       ],
+      "3 email domains": [
+        "3개 이메일 도메인"
+      ],
       "500 GB storage": [
         "500 GB 저장공간"
       ],
@@ -7917,6 +8035,9 @@
       ],
       "Remove": [
         "삭제"
+      ],
+      "Schedule and snooze emails": [
+        "스케쥴과 방해금지"
       ],
       "Secure Core servers": [
         "Secure Core 서버"
@@ -8281,6 +8402,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "${ BRAND_NAME } 모바일 앱의 오래된 버전에서는 더 이상 로그인할 수 없음을 확인했습니다."
+      ]
+    },
     "Form heading": {
       "Enter your email address": [
         "부모의 이매일 주소를 입력하세요"
@@ -8427,6 +8553,11 @@
       ],
       "Group membership": [
         "그룹 구성원"
+      ]
+    },
+    "group_modal": {
+      "Roles and permissions": [
+        "역할 및 권한"
       ]
     },
     "Header": {
@@ -9087,6 +9218,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length }명 구성원이 그룹에 추가되었습니다."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
       ],
@@ -9101,6 +9235,9 @@
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "그룹 이메일 수신을 시작하려면 ${ invitedMemberCount }명 사용자들이 초대를 수락 받아야 합니다."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
@@ -9167,6 +9304,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount }명의 새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
@@ -9284,6 +9424,9 @@
       ],
       "(formerly Twitter)": [
         "(구 Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "사용자의 계정에서 **${ appName }**을(를) 사용할 수 없습니다."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }**이(가) 사용자의 조직 **${ organizationName }**(에)서 지원되지 않습니다."
@@ -9747,6 +9890,9 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
+      "Check your network and try again.": [
+        "네트워크 상태 확인 후 다시 시도하세요."
+      ],
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
       ],
@@ -9770,6 +9916,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "10점 중 8.4점 평가의 CNET 에디터 초이스 어워드"
+      ],
+      "Code has been re-sent.": [
+        "코드가 재전송 되었습니다."
       ],
       "Coming soon": [
         "곧 찾아옵니다"
@@ -10365,6 +10514,9 @@
       "Got it": [
         "확인"
       ],
+      "Group created": [
+        "그룹 생성됨"
+      ],
       "Group deleted": [
         "그룹이 삭제됨"
       ],
@@ -10854,6 +11006,9 @@
       "New activity data will stop being collected and shown.": [
         "신규 활동 데이터 수집이 중단되며 보여지지 않습니다."
       ],
+      "New group created via your identity provider and pending review.": [
+        "새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
+      ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
       ],
@@ -10943,6 +11098,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "비 ${ BRAND_NAME } 수신자와 PGP를 사용하는 경우에만 이 설정을 변경해 주세요."
+      ],
+      "Only sign in on devices you trust": [
+        "신뢰하는 기기에서만 로그인하세요"
       ],
       "Only you can see the label": [
         "오직 사용자만 이 라벨을 확인할 수 있어요"
@@ -11268,6 +11426,9 @@
       "Resend verification email": [
         "확인 이메일 다시 보내기"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "활성 웹 세션에서 비밀번호를 재설정하면 비밀번호 재설정 이후로도 **암호화된 데이터는 계속 접근할 수 있습니다.**"
+      ],
       "Restore": [
         "복원"
       ],
@@ -11529,6 +11690,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. ${ ios }, ${ android } 및 ${ desktop }에서 모두 사용 가능합니다."
       ],
+      "Synced from identity provider": [
+        "신원 제공자로부터 동기화됨"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro가 5점 만점 중 4.2점으로 추천합니다"
       ],
@@ -11576,6 +11740,9 @@
       ],
       "The calendar will be removed from your account.": [
         "캘린더가 사용자의 계정에서 지워집니다."
+      ],
+      "The company and all its members will lose access immediately.": [
+        "사내 구성원의 접근 권한이 즉시 상실됩니다."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "다크 웹이란 신원과 같은 도난당한 개인 정보의 매매가 이루어지기도 하는 인터넷의 숨겨진 일부입니다."
@@ -11628,6 +11795,9 @@
       "The name will be visible to your users while they are signed in.": [
         "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
       ],
+      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
+        "${ pausedCount }개 그룹에 대한 작업이 중단되었습니다. 규칙 할당을 다시 시작하려면 클릭하여 계속합니다."
+      ],
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
       ],
@@ -11645,6 +11815,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "생각 중..."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "이 계정은 규정 위반이 의심되어 정지되었습니다."
@@ -11907,6 +12080,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "계정에서 로그아웃하거나 비밀번호를 변경하지 않는 한, 세션은 활성 상태로 유지됩니다. 세션은 60일 동안 활동이 없으면 만료됩니다."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "VPN Plus로 스트리밍 잠금 해제"
+      ],
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
       ],
@@ -12038,6 +12214,9 @@
       ],
       "Version ${ version }": [
         "${ version } 버전"
+      ],
+      "Version history": [
+        "버전 기록"
       ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
@@ -12236,6 +12415,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ],
       "You are currently signed in as ${ username }.": [
         "현재 ${ username }(으)로 로그인 했습니다."
@@ -13153,6 +13335,9 @@
       "${ Brand } ending with ${ Last4 }": [
         "${ Last4 }(으)로 끝나는 ${ Brand }"
       ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
       ],
@@ -13468,6 +13653,9 @@
       "Bookings, billings, and orders": [
         "예약, 청구 및 주문"
       ],
+      "Brand your workspace": [
+        "워크스페이스 브랜딩하기"
+      ],
       "Browser": [
         "브라우저"
       ],
@@ -13638,6 +13826,9 @@
       ],
       "Custom domain": [
         "커스텀 도메인"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
       ],
       "Daily email notifications": [
         "일일 이메일 알림"
@@ -13833,6 +14024,9 @@
       ],
       "Folder location": [
         "폴더 위치"
+      ],
+      "Folders, labels, and filters": [
+        "폴더, 라벨 및 필터"
       ],
       "Font family": [
         "글꼴 모음"
@@ -14281,6 +14475,9 @@
       "Proration": [
         "할당"
       ],
+      "Protected by Swiss privacy laws": [
+        "스위스 개인정보 보호법에 의거해 보호됨"
+      ],
       "Protection mode": [
         "보호 모드"
       ],
@@ -14349,6 +14546,9 @@
       ],
       "Search for a name or email": [
         "이름 및 이메일 검색"
+      ],
+      "Seats usage": [
+        "사용 권한 사용량"
       ],
       "Second password": [
         "2차 비밀번호"
@@ -14536,6 +14736,9 @@
       "Token name": [
         "토큰 이름"
       ],
+      "Total cost": [
+        "총 비용"
+      ],
       "Transactions": [
         "거래 내역"
       ],
@@ -14670,6 +14873,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
+      ],
+      "You don't have permissions": [
+        "권한이 없습니다"
       ],
       "Your activation code:": [
         "나의 활성화 코드:"
@@ -14911,9 +15117,6 @@
       "data recovery option": [
         "데이터 복구 방법"
       ],
-      "Don't have access to your 2FA?": [
-        "회원님의 2단계 인증에 접근할 수 없으신가요?"
-      ],
       "Downloads": [
         "다운로드"
       ],
@@ -14952,6 +15155,9 @@
       ],
       "Help": [
         "지원"
+      ],
+      "Help & support": [
+        "도움말 및 지원"
       ],
       "Help translate": [
         "번역 돕기"
@@ -15018,6 +15224,9 @@
       ],
       "Import/export": [
         "가져오기 및 내보내기"
+      ],
+      "Learn how": [
+        "자세히 알아보기"
       ],
       "Learn more": [
         "더 알아보기"
@@ -15438,6 +15647,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "${ n }명 참가자의 화상 회의"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단기 및 멀웨어 보호 기능이 포함된 VPN"
       ]
     },
     "meet_2025: Info": {
@@ -15629,6 +15841,17 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
+      ]
+    },
+    "Missing feature": {
+      "Explore the latest news": [
+        "최신 뉴스 살펴보기"
+      ],
+      "Make your voice heard": [
+        "회원님의 목소리를 들려주세요."
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "피드백 포럼에서 기능을 요청하거나 다른 사용자의 아이디어를 투표해 보세요."
       ]
     },
     "Modal title": {
@@ -16315,6 +16538,9 @@
       ],
       "Send & receive invitations": [
         "전송 및 받은 초대"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries }개 이상 국가 내 서버"
       ],
       "Share files with no size limit": [
         "크기 제한 없는 파일 공유"
@@ -18790,6 +19016,9 @@
       "Search for an email or IP address": [
         "이메일 또는 IP 주소 검색하기"
       ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
+      ],
       "Search parent folder": [
         "상위 폴더 검색"
       ],
@@ -18934,6 +19163,11 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }(으)로 업그레이드"
+      ]
+    },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "키 생성을 할 수 없음. 양자 내성 암호화를 활성화하려면 새로운 양자 내성 암호화 키 생성을 완료해야 합니다.\n\n${ goToSettingsLink } '사라진 키 생성'을 선택하세요."
       ]
     },
     "PQC key generation": {
@@ -19311,8 +19545,14 @@
       "Emergency contacts added": [
         "비상 연락처가 추가되었습니다"
       ],
+      "Enable email recovery": [
+        "이메일로 복구 활성화"
+      ],
       "Password reset allowed from settings": [
         "설정에서 비밀번호 재설정 허용됨"
+      ],
+      "Phone recovery enabled": [
+        "휴대폰 복구 활성화됨"
       ],
       "Recovery contacts added": [
         "복구 연락처가 추가되었습니다."
@@ -20176,6 +20416,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "만약 ${ BRAND_NAME } 계정이 잠긴 경우, 복구 키가 데이터 복구와 다시 로그인하는 데 도움이 됩니다. 이 방법은 즉시 모든 정보를 복구할 수 있는 유일한 방법이므로, 반드시 접근 가능하고 안전한 곳에 보관해야 합니다."
       ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "복구 이메일이 변경된 경우, ${ updateEmailLink }."
+      ],
       "Later": [
         "나중에"
       ],
@@ -20209,8 +20452,14 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "해당 휴대폰 번호가 본인의 것인지 확인하기 위해, ${ boldPhoneNumber }(으)로 전송된 인증 코드를 입력해 주세요."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "본인 여부를 확인하기 위해, 인증 링크가 포함된 이메일을 보내드립니다."
+      ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
         "본인 여부를 확인하기 위해, 인증 링크가 포함된 이메일을 보내드립니다."
+      ],
+      "Update recovery phone": [
+        "복구 휴대폰 업데이트"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "계정에 비상 접근을 활성화하려면 플랜을 업그레이드하세요. 지정된 1~5명의 사용자가 회원님의 비밀번호를 재설정하는데 도움을 줄 수 있습니다."
@@ -20244,6 +20493,9 @@
       ],
       "Verify your recovery phone": [
         "복구 휴대폰 인증"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "휴대폰 번호를 통한 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
       ],
       "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
         "이 기기에서 데이터 백업을 활성화할 수 있으며 계정의 비밀번호를 재설정한 다음 이 기기로 다시 로그인하여 이메일과 연락처, 파일, 비밀번호 및 다른 모든 암호화된 데이터에 대한 접근 권한을 복구할 수 있게 됩니다."
@@ -20320,6 +20572,35 @@
       ],
       "Testing SAML configuration": [
         "SAML 구성 테스트 중"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount }명 신규 구성원"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups }개 그룹 동기화됨"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers }명 사용자 동기화됨"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount }개 그룹"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount }개 그룹 동기화됨."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount }명 사용자"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount }명 사용자 동기화됨."
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "모든 ${ BRAND_NAME } 서비스 접근 권한을 부여하려면 최종 승인을 받아야 합니다."
+      ],
+      "Private user": [
+        "비공개 사용자"
       ]
     },
     "scim: Action": {
@@ -20499,6 +20780,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }에 추가"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Zoom 영상 회의를 캘린더 이벤트에 추가할 수 있도록 합니다"
       ]
@@ -20917,6 +21201,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
         "스팸 방지를 위한 hide-my-email 이메일 별칭 ${ FREE_PASS_ALIASES }개"
       ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses }개 주소"
       ],
@@ -20952,6 +21239,12 @@
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS }개 기기에서의 고속 VPN 연결"
+      ],
+      "${ VPN_SERVERS.free.servers }+ VPN servers in ${ VPN_SERVERS.free.countries } country": [
+        "${ VPN_SERVERS.free.countries }개 국가의 ${ VPN_SERVERS.free.servers }개 이상 VPN 서버"
+      ],
+      "${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries }개 이상의 국가"
       ],
       "/user": [
         "/사용자 당"
@@ -21012,6 +21305,9 @@
       ],
       "Connect all your devices": [
         "내 모든 기기와 연결"
+      ],
+      "Continue with ${ planName }": [
+        "${ planName }(으)로 계속"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
@@ -21213,6 +21509,9 @@
       ],
       "use your own email.": [
         "자신만의 이메일 주소를 사용해보세요."
+      ],
+      "VPN with servers in ${ VPN_SERVERS.free.countries } country": [
+        "${ VPN_SERVERS.free.countries }개 국가에 소재된 서버의 VPN"
       ],
       "We’ll email you before your trial ends.": [
         "체험이 종료되기 전 이메일을 보내드립니다"
@@ -21635,6 +21934,9 @@
       "${ n } user detached from SSO": [
         "${ n }명 SSO연결 해제됨"
       ],
+      "${ n } user is inactive.": [
+        "${ n }명의 사용자가 비활성 상태입니다."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
       ],
@@ -21898,6 +22200,9 @@
     "Status": {
       "${ count } person": [
         "${ count }명"
+      ],
+      "... waiting": [
+        "... 대기 중"
       ],
       "Active": [
         "활성화"
@@ -23376,6 +23681,9 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
+      "Approve changes": [
+        "변경 사항 승인"
+      ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "브라우저에서 ${ BRAND_NAME }에 로그인된 상태로 유지되어 있나요?"
       ],
@@ -23631,6 +23939,9 @@
       "Dashboard": [
         "대시보드"
       ],
+      "Data collection": [
+        "데이터 수집"
+      ],
       "Data locked": [
         "데이터 잠김"
       ],
@@ -23801,6 +24112,9 @@
       ],
       "Edit billing address": [
         "청구 주소 수정"
+      ],
+      "Edit company": [
+        "회사 편집"
       ],
       "Edit countries": [
         "국가 편집"
@@ -24006,6 +24320,9 @@
       "Get complete privacy coverage": [
         "완전한 개인정보 보호 커버리지 받기"
       ],
+      "Get direct support": [
+        "즉각적인 지원 받기"
+      ],
       "Get help with an issue": [
         "문제에 대한 도움 받기"
       ],
@@ -24044,6 +24361,9 @@
       ],
       "Group membership": [
         "그룹 구성원"
+      ],
+      "Group role assignment paused": [
+        "그룹 규칙 할당 중단됨"
       ],
       "Groups": [
         "그룹"
@@ -24159,9 +24479,6 @@
       "Layout": [
         "레이아웃"
       ],
-      "Leave ${ organisationName }?": [
-        "${ organisationName }을(를) 떠나시겠어요?"
-      ],
       "Leave group?": [
         "그룹을 떠날까요?"
       ],
@@ -24242,6 +24559,9 @@
       ],
       "No events": [
         "일정 없음"
+      ],
+      "No events yet": [
+        "이벤트 없음"
       ],
       "No need to empty the trash": [
         "휴지통을 비울 필요 없어요."
@@ -24600,6 +24920,9 @@
       "Sign in on TV": [
         "TV에서 로그인"
       ],
+      "Sign in on TV?": [
+        "TV에서 로그인하시나요?"
+      ],
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
       ],
@@ -24744,6 +25067,12 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME }로 문제 해결받기"
+      ],
+      "Troubleshoot your issue": [
+        "문제 해결 받기"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } 체험하기"
       ],
@@ -24887,6 +25216,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 설정"
+      ],
+      "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
+        "${ BRAND_NAME } 계정으로 모든 ${ BRAND_NAME } 앱에 접근할 수 있어요."
       ],
       "You are all set": [
         "모든 준비가 완료되었어요"
@@ -25346,11 +25678,20 @@
       "Group membership paused": [
         "그룹 구성 권한 중단됨"
       ],
+      "Resuming role assignment": [
+        "규칙 할당 다시 시작"
+      ],
       "Sending member invitation": [
         "구성원 초대장 발송 중"
       ],
       "User declined invitation": [
         "사용자가 초대를 거절함"
+      ],
+      "via ${ groupNames }": [
+        "(${ groupNames } 경유)"
+      ],
+      "Waiting for admin approval": [
+        "관리자의 승인을 기다리는 중"
       ],
       "Waiting for user to accept the invitation": [
         "사용자의 초대 수락 대기 중"
@@ -25506,6 +25847,9 @@
       "Confirm all": [
         "일괄 허가"
       ],
+      "Could not enable admin access for ${ n } user": [
+        "${ n }명 사용자에 대한 관리자 접근 권한 활성화를 할 수 없음"
+      ],
       "Could not enable administrator access: ${ error }": [
         "관리자 권한 활성화 불가 : ${ error }"
       ],
@@ -25545,6 +25889,9 @@
       "Request user permission for data access": [
         "데이터 접근을 위한 사용자 권한 요청"
       ],
+      "Review their account now.": [
+        "해당 계정들의 검토를 진행하세요."
+      ],
       "Revoke access": [
         "접근 권한 회수"
       ],
@@ -25574,6 +25921,9 @@
       ],
       "You can ${ reject } this request if you do not wish to proceed.": [
         "원치 않는다면 이 요청을 ${ reject } 가능합니다."
+      ],
+      "You can safely remove this user from your organization.": [
+        "사용자의 조직에서 해당 사용자를 안전하게 제거할 수 있습니다."
       ]
     },
     "Update font modal": {
@@ -25700,6 +26050,9 @@
       "Invitation email": [
         "초대 이메일"
       ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "사용자와 그룹을 관리하고, 규칙을 할당하며, 구성원 개개인에 대한 라이선스를 할당하세요."
+      ],
       "Name": [
         "성명"
       ],
@@ -25711,6 +26064,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
+      ],
+      "Save": [
+        "저장"
       ],
       "Send invite link via email instead": [
         "대신 이메일로 초대 링크 보내기"

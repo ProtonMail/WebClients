@@ -66,6 +66,9 @@
       "Accept": [
         "Accepteren"
       ],
+      "Account settings": [
+        "Accountinstellingen"
+      ],
       "activate": [
         "activeer"
       ],
@@ -7675,6 +7678,9 @@
       "We couldn't sign you in": [
         "We konden u niet aanmelden"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
       ],
@@ -8245,9 +8251,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
-      ],
-      "You will lose access to all premium features included with ${ plan }.": [
-        "U verliest toegang tot alle premium-functies van ${ plan }."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
         "U bent uitgenodigd door **${ invite.InviterEmail }** om uw account te koppelen aan dit groepsabonnement."
@@ -13082,6 +13085,9 @@
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
       ],
@@ -15926,9 +15932,6 @@
       ],
       "Details": [
         "Details"
-      ],
-      "Don't have access to your 2FA?": [
-        "Heeft u geen toegang tot uw 2FA?"
       ],
       "Downloads": [
         "Downloads"
@@ -24050,9 +24053,6 @@
       "per month, billed annually": [
         "per maand, jaarlijks gefactureerd"
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Bespaar 50% gedurende 1 jaar en behoud volledige toegang"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Bespaar 50% gedurende 6 maanden en behoud volledige toegang."
       ],
@@ -25667,9 +25667,6 @@
       "Layout": [
         "Lay-out"
       ],
-      "Leave ${ organisationName }?": [
-        "${ organisationName } verlaten?"
-      ],
       "Leave group?": [
         "Groep verlaten?"
       ],
@@ -26894,6 +26891,9 @@
       ],
       "Verified email address": [
         "Geverifieerd e-mailadres"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
