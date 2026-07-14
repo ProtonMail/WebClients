@@ -2468,6 +2468,9 @@
       "VAT number must start with ${ prefixes }": [
         "MVA-nummeret må starte med ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
+      ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
       ]
@@ -5807,7 +5810,7 @@
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"
