@@ -6,7 +6,7 @@
 	--left-panel-width: max(0px, calc((100% - var(--docs-editor-width)) / 2));
 
 	grid-template-rows: 1fr;
-	overflow: hidden scroll;
+	overflow: auto;
 
 	@media (width >= 1024px) {
 		grid-template-columns: var(--left-panel-width) minmax(0, 1fr);
