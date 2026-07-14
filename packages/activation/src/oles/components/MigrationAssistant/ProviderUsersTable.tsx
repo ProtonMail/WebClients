@@ -8,12 +8,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcUserArrowRight } from '@proton/icons/icons/IcUserArrowRight';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -77,6 +79,27 @@ const getFilterTranslation = (filter: ProviderUserFilter) => {
             return c('BOSS').t`Activated`;
         case ProviderUserFilter.NOT_ACTIVATED:
             return c('BOSS').t`Not activated`;
+    }
+};
+
+const usersAddressesLink = <SettingsLink path="/users-addresses">{c('Title').t`Users and addresses`}</SettingsLink>;
+
+const getEligibilityReasonTranslation = (reason: string) => {
+    switch (reason) {
+        case 'source_account_disabled':
+            return c('BOSS').t`To migrate this user, enable their account in your Google Workspace Admin Console.`;
+        case 'source_account_suspended':
+            return c('BOSS').t`To migrate this user, unsuspend them in your Google Workspace Admin Console.`;
+        case 'source_account_archived':
+            return c('BOSS').t`To migrate this user, unarchive them in your Google Workspace Admin Console.`;
+        case 'address_disabled':
+            return c('BOSS').jt`To migrate this user, enable their address under ${usersAddressesLink}.`;
+        case 'user_disabled':
+            return c('BOSS').jt`To migrate this user, enable their account under ${usersAddressesLink}.`;
+        case 'address_cannot_receive':
+            return c('BOSS').t`To migrate this user, they need to accept their invitation to join ${BRAND_NAME}.`;
+        default:
+            return c('BOSS').t`This user can not be migrated due to platform incompatibilities.`;
     }
 };
 
@@ -262,15 +285,25 @@ const ProviderUsersTable: FC<Props> = ({
                         <TableRow key={u.ID}>
                             <TableCell className="provider-users-table-cell pr-0">
                                 <div className="flex flex-nowrap items-center py-2 relative pl-4 provider-users-table-cell-check-users">
-                                    {setSelected && (
-                                        <Checkbox
-                                            className="mr-4 shrink-0"
-                                            id={`select-user-${index}`}
-                                            checked={selected.includes(u.ID) || Boolean(u.ImporterOrganizationUser)}
-                                            onChange={handleSelectSingle(u.ID)}
-                                            disabled={Boolean(u.ImporterOrganizationUser)}
-                                        />
-                                    )}
+                                    {setSelected &&
+                                        (u.Eligibility.IsEligible ? (
+                                            <Checkbox
+                                                className="mr-4 shrink-0"
+                                                id={`select-user-${index}`}
+                                                checked={selected.includes(u.ID) || Boolean(u.ImporterOrganizationUser)}
+                                                onChange={handleSelectSingle(u.ID)}
+                                                disabled={Boolean(u.ImporterOrganizationUser)}
+                                            />
+                                        ) : (
+                                            <Tooltip
+                                                title={getEligibilityReasonTranslation(u.Eligibility.Reasons[0])}
+                                                openDelay={0}
+                                            >
+                                                <div className="mr-4">
+                                                    <IcExclamationCircle size={5} className="shrink-0 color-hint" />
+                                                </div>
+                                            </Tooltip>
+                                        ))}
                                     <label htmlFor={`select-user-${index}`} className="m-0">
                                         <p className="m-0 text-ellipsis" title={u.AdminSetName}>
                                             {u.AdminSetName}{' '}
