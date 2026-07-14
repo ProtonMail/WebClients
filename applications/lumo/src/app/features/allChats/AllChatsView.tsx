@@ -11,7 +11,6 @@ import { Input } from '@proton/atoms/Input/Input';
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoLink } from '../../components/Links/LumoLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
-import { useLumoUserSettings } from '../../hooks';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -360,13 +359,12 @@ ConversationRow.displayName = 'ConversationRow';
 export const AllChatsView = () => {
     const conversationsMap = useLumoSelector(selectConversations, shallowEqual);
     const rowDataMap = useLumoSelector(selectAllChatsRowDataMap, shallowEqual);
-    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { hasLumoPlus } = useLumoPlan();
-    const chatHistoryDateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
     const { conversationId } = useConversation();
 
     const [filter, setFilter] = useState<FilterValue>('all');
     const [searchQuery, setSearchQuery] = useState('');
+    const [sortField, setSortField] = useState<ChatHistoryDateField>('updatedAt');
 
     const filteredConversations = useMemo<Conversation[]>(() => {
         return filterAllChatsConversations({
@@ -374,20 +372,10 @@ export const AllChatsView = () => {
             filter,
             searchQuery,
             rowDataMap,
-            sortField: chatHistoryDateField,
+            sortField,
             hasLumoPlus,
         });
-    }, [conversationsMap, chatHistoryDateField, filter, hasLumoPlus, rowDataMap, searchQuery]);
-
-    const handleSortFieldChange = useCallback(
-        (nextSortField: ChatHistoryDateField) => {
-            updateSettings({
-                chatHistoryDateField: nextSortField,
-                _autoSave: true,
-            });
-        },
-        [updateSettings]
-    );
+    }, [conversationsMap, sortField, filter, hasLumoPlus, rowDataMap, searchQuery]);
 
     const parentRef = useRef<HTMLDivElement>(null);
 
@@ -422,8 +410,8 @@ export const AllChatsView = () => {
                             onSearchQueryChange={setSearchQuery}
                             filter={filter}
                             onFilterChange={setFilter}
-                            sortField={chatHistoryDateField}
-                            onSortFieldChange={handleSortFieldChange}
+                            sortField={sortField}
+                            onSortFieldChange={setSortField}
                         />
 
                         <div ref={parentRef} className="flex-1 overflow-auto min-h-0 px-2 pb-2">
@@ -456,7 +444,7 @@ export const AllChatsView = () => {
                                                     conversation={conversation}
                                                     rowData={rowData}
                                                     isSelected={conversation.id === conversationId}
-                                                    sortField={chatHistoryDateField}
+                                                    sortField={sortField}
                                                 />
                                             </div>
                                         );
