@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { CreateMeetingParams } from '../types/types';
 import { getMeetingLink } from '../utils/getMeetingLink';
@@ -8,6 +9,8 @@ import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 import { useSaveMeeting } from './useSaveMeeting';
 
 export const useCreateMeeting = () => {
+    const isMeetWaitingRoomEnabled = useFlag('MeetWaitingRoom');
+
     const saveMeeting = useSaveMeeting();
 
     const getMeetingDependencies = useGetMeetingDependencies();
@@ -21,12 +24,23 @@ export const useCreateMeeting = () => {
         customPassword = '',
         type = MeetingType.INSTANT,
         protonCalendar = false,
+        waitingRoom = WaitingRoomState.DISABLED,
     }: CreateMeetingParams) => {
         const { privateKey, addressId } = await getMeetingDependencies();
 
         try {
             const { response, passwordBase } = await saveMeeting({
-                params: { customPassword, protonCalendar, meetingName, startTime, endTime, recurrence, timeZone, type },
+                params: {
+                    customPassword,
+                    protonCalendar,
+                    meetingName,
+                    startTime,
+                    endTime,
+                    recurrence,
+                    timeZone,
+                    type,
+                    ...(isMeetWaitingRoomEnabled ? { waitingRoom } : {}),
+                },
                 privateKey,
                 addressId,
             });
