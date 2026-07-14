@@ -908,6 +908,9 @@
       ],
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Нам не удалось отправить код подтверждения этим способом."
       ]
     },
     "Error message": {
@@ -1269,6 +1272,9 @@
       "${ size } storage per user": [
         "${ size } хранилища на пользователя"
       ],
+      "1 TB secure storage": [
+        "1 ТБ защищённого хранения"
+      ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
       ],
@@ -1286,6 +1292,9 @@
       ],
       "Advanced account protection": [
         "Расширенная защита аккаунта"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Все продукты и функции ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -1341,6 +1350,9 @@
       "End-to-end encryption": [
         "Сквозное шифрование"
       ],
+      "Generate emails with a prompt": [
+        "Создавайте электронные письма с помощью запросов"
+      ],
       "HTML signatures": [
         "Подписи HTML"
       ],
@@ -1355,6 +1367,12 @@
       ],
       "Private photo backup": [
         "Конфиденциальное резервное копирование фото"
+      ],
+      "Proofread and refine your emails": [
+        "Вычитывайте и дорабатывайте свои электронные письма"
+      ],
+      "Quickly craft replies": [
+        "Быстро составляйте ответы"
       ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
@@ -1376,6 +1394,9 @@
       ],
       "SMTP submission": [
         "Отправки через SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Поддержка до 2 пользователей"
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"

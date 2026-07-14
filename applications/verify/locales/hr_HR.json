@@ -908,11 +908,17 @@
       ],
       "Username must end with a letter or digit": [
         "Korisničko ime mora završavati slovom ili brojkom"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nismo uspjeli poslati kôd za potvrdu ovom metodom."
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "Osvježite stranicu ili pokušajte ponovno kasnije."
       ],
       "Something went wrong": [
         "Nešto je pošlo po zlu"
@@ -1246,11 +1252,29 @@
       "${ size } storage per user": [
         "${ size } prostora za pohranu po korisniku"
       ],
+      "1 TB secure storage": [
+        "1 TB sigurne pohrane"
+      ],
+      "10 email addresses/aliases": [
+        "10 adresa e-pošte/pseudonima"
+      ],
+      "10 more premium features": [
+        "Još 10 premium značajki"
+      ],
       "10-year file version history": [
         "10-godišnja povijest verzija datoteka"
       ],
       "15 GB storage": [
         "15 GB pohrane"
+      ],
+      "200 GB of storage": [
+        "200 GB pohrane"
+      ],
+      "Advanced account protection": [
+        "Napredna zaštita korisničkog računa"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Svi ${ BRAND_NAME } proizvodi i značajke"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Sve osnovne ${ BRAND_NAME } usluge (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -1285,6 +1309,9 @@
       "Custom email domains": [
         "Prilagođene domene"
       ],
+      "Data retention policies": [
+        "Pravila o zadržavanju podataka"
+      ],
       "Desktop app": [
         "Aplikacija za radnu površinu"
       ],
@@ -1303,6 +1330,9 @@
       "End-to-end encryption": [
         "Krajnje šifriranje"
       ],
+      "Generate emails with a prompt": [
+        "Generirajte e-poštu uz upit"
+      ],
       "HTML signatures": [
         "HTML potpisi"
       ],
@@ -1315,17 +1345,38 @@
       "Password-protected Emails": [
         "Emailovi zaštićeni lozinkom"
       ],
+      "Private photo backup": [
+        "Privatno sigurnosno kopiranje fotografija"
+      ],
+      "Proofread and refine your emails": [
+        "Lektura i dotjerivanje vaše e-pošte"
+      ],
+      "Quickly craft replies": [
+        "Brzo sastavite odgovore"
+      ],
       "Recover previous file versions": [
         "Oporavi prethodne verzije datoteka"
+      ],
+      "Save time emailing": [
+        "Uštedite vrijeme pri slanju e-pošte"
       ],
       "Schedule and snooze emails for any time": [
         "Planirajte i odgodite e-poštu za bilo koje vrijeme"
       ],
+      "Secure file storage and sharing": [
+        "Sigurna pohrana i dijeljenje datoteka"
+      ],
       "Share files with no size limit": [
         "Dijeli datoteke bez ograničenja veličine"
       ],
+      "Short domain (@pm.me)": [
+        "Kratka domena (@pm.me)"
+      ],
       "SMTP submission": [
         "SMTP predaja"
+      ],
+      "Support for up to 2 users": [
+        "Podrška za do 2 korisnika"
       ],
       "Sync and backup all your files across devices": [
         "Sinkronizirajte i napravite sigurnosnu kopiju svih svojih datoteka na svim uređajima"
@@ -1347,6 +1398,14 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } pohrane"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 prilagođena domena e-pošte"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Stvorite više adresa e-pošte za svoje mrežne identitete, npr. JohnShopper@${ domain } za račune za kupovinu, JohnNews@${ domain2 } za pretplatu na vijesti"
       ]
     },
     "new_plans: tooltip": {
