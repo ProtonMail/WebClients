@@ -946,6 +946,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Adicionar arquivo para o ${ DRIVE_APP_NAME }"
       ],
+      "Add memory": [
+        "Adicionar memória"
+      ],
       "Add to active": [
         "Adicionar a ativos"
       ],
@@ -970,8 +973,17 @@
       "Clear auto-generated": [
         "Limpar o texto gerado automaticamente"
       ],
+      "click to hide me": [
+        "clique para me ocultar"
+      ],
+      "click to let me out": [
+        "clique aqui para me soltar"
+      ],
       "Close": [
         "Fechar"
+      ],
+      "Collapse ${ LUMO_SHORT_APP_NAME }": [
+        "Ocultar o ${ LUMO_SHORT_APP_NAME }"
       ],
       "Continue": [
         "Continuar"
@@ -1017,6 +1029,9 @@
       ],
       "Manage files": [
         "Gerenciar arquivos"
+      ],
+      "More options": [
+        "Mais opções"
       ],
       "New chat": [
         "Novo bate-papo"
@@ -1074,6 +1089,9 @@
       ],
       "Turn off and delete": [
         "Desativar e excluir"
+      ],
+      "Turn off memory": [
+        "Desativar memórias"
       ],
       "Turn on memory": [
         "Ativar memórias"
@@ -1371,6 +1389,9 @@
       "More thorough answers, but can take longer": [
         "Respostas mais detalhadas, mas podem demorar mais"
       ],
+      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
+        "Exclua permanentemente seus projetos, bate-papos e memórias salvas. Essa ação é irreversível."
+      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Os chats do projeto são mantidos totalmente isolados. Eles contam com suas próprias instruções e arquivos e ignoram totalmente suas memórias globais."
       ],
@@ -1400,6 +1421,11 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desativar a memória excluirá permanentemente todas as ${ memories.length } memórias salvas. Você poderá ativar a memória mais tarde, mas as memórias excluídas não poderão ser recuperadas."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Exclui todas as memórias salvas e desativa o recurso de memória."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1894,6 +1920,9 @@
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Gere um gráfico de fluxo de trabalho e o código de implementação para o seguinte objetivo. Linguagem de destino para o código:"
+      ],
+      "Generate them from your recent chats, or add one with + above.": [
+        "Gere-os a partir de seus bate-papos recentes ou adicione um usando o sinal + acima."
       ],
       "Generating…": [
         "Gerando…"
@@ -5937,6 +5966,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar com ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação usando este método."
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"

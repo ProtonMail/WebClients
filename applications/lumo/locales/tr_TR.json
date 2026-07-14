@@ -946,6 +946,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Dosyayı ${ DRIVE_APP_NAME } uygulamasına ekle"
       ],
+      "Add memory": [
+        "Bellek ekle"
+      ],
       "Add to active": [
         "Etkin olana ekle"
       ],
@@ -1030,6 +1033,9 @@
       "Manage files": [
         "Dosya yönetimi"
       ],
+      "More options": [
+        "Diğer seçenekler"
+      ],
       "New chat": [
         "Yeni sohbet"
       ],
@@ -1086,6 +1092,9 @@
       ],
       "Turn off and delete": [
         "Kapat ve sil"
+      ],
+      "Turn off memory": [
+        "Belleği kapat"
       ],
       "Turn on memory": [
         "Belleği aç"
@@ -1415,6 +1424,11 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Belleği kapatmak kaydedilmiş olan tüm ${ memories.length } bellekleri kalıcı olarak siler. Belleği daha sonra yeniden açabilirsiniz ancak silinen bellekler geri getirilemez."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Deletes all saved memories and turns off the memory feature.": [
+        "Kaydedilmiş tüm bellekleri siler ve bellek özelliğini devre dışı bırakır."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1909,6 +1923,9 @@
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Şu hedef için bir iş akışı çizelgesi ve uygulama kodu oluştur. Kod için hedef dil:"
+      ],
+      "Generate them from your recent chats, or add one with + above.": [
+        "Son sohbetlerinizden oluşturun ya da yukarıdaki + işaretini kullanarak yeni bir tane ekleyin."
       ],
       "Generating…": [
         "Oluşturuluyor…"
@@ -5961,6 +5978,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Bu yöntemle doğrulama kodunu gönderemedik."
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
