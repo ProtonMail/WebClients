@@ -23,7 +23,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useErrorHandler } from '../../errors';
-import { shouldCreateUserPredicate } from '../../helpers';
+import { isProviderUserSelectable, shouldCreateUserPredicate } from '../../helpers';
 import { createMigrationBatch, setupJoiningLink } from '../../thunk';
 import { useProviderUsers } from '../../useProviderUsers';
 import type { StepComponentProps } from '../MigrationSetup/MigrationSetup';
@@ -57,7 +57,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();
 
     const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
-    const selectableUsers = providerUsers?.filter((u) => !u.ImporterOrganizationUser).map((u) => u.ID) ?? [];
+    const selectableUsers = providerUsers?.filter(isProviderUserSelectable).map((u) => u.ID) ?? [];
     const filteredSelected = selectedUsers.filter((u) => selectableUsers.includes(u));
 
     const [migrating, setMigrating] = useState<boolean>(false);
