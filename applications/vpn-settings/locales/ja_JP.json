@@ -4072,6 +4072,9 @@
       "Incorrect password": [
         "パスワードが正しくありません"
       ],
+      "Incorrect recovery code. Please try again.": [
+        "無効な回復用コードです。再度お試しください。"
+      ],
       "Incorrect second password. Please try again.": [
         "セカンドパスワードが正しくありません。もう一度お試しください。"
       ],
@@ -4419,6 +4422,9 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "検証に失敗しました。一時間程経ってからもう一度試してください。"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS設定に問題があるため、DKIMの署名を停止しました。署名を再開するには、以下の手順に従ってください。"
@@ -4971,6 +4977,12 @@
       ],
       "10+ premium features": [
         "10個以上のプレミアム機能"
+      ],
+      "3 email domains": [
+        "メールドメイン３つ"
+      ],
+      "500 GB storage": [
+        "容量500GB"
       ],
       "Access to all countries": [
         "すべての国にアクセス"
@@ -8000,6 +8012,9 @@
       "You already have a free account": [
         "あなたはすでに無料アカウントをお持ちです"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
+      ],
       "You are currently signed in as ${ username }.": [
         "現在 ${ username } としてサインインしています。"
       ],
@@ -9369,9 +9384,6 @@
       ],
       "Create an alias": [
         "エイリアスを作成"
-      ],
-      "Don't have access to your 2FA?": [
-        "2要素認証にアクセスできませんか？"
       ],
       "Encryption and keys": [
         "暗号化と鍵"
@@ -15533,6 +15545,9 @@
       ],
       "Remove forwarding address": [
         "転送先アドレスを削除する"
+      ],
+      "Remove recovery phone number": [
+        "回復用電話番号を削除"
       ],
       "Remove server?": [
         "サーバーを削除しますか？"
