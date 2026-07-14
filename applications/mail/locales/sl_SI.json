@@ -1676,6 +1676,23 @@
         "Odpri v ${ SHEETS_APP_NAME }"
       ]
     },
+    "Actions": {
+      "Customize categories": [
+        "Prilagodi kategorije"
+      ],
+      "Got it": [
+        "Razumem"
+      ],
+      "Next": [
+        "Naprej"
+      ],
+      "Not now": [
+        "Ne zdaj"
+      ],
+      "Skip": [
+        "Preskoči"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ali ${ importContact }."
@@ -3985,8 +4002,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Modra pika se prikaže, kadar kategorija vsebuje neprebrana sporočila od vašega zadnjega obiska."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Dodajte mape in datoteke v ${ DRIVE_APP_NAME } ter povabite člane ekipe, da si jih ogledajo ali jih uredijo."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "V nastavitvah lahko kadarkoli dodajate ali odstranjujete kategorije, upravljate z obvestili in prilagajate svoje nastavitve."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "V nastavitvah lahko kadarkoli dodajate ali odstranjujete kategorije, upravljate z obvestili ali jih popolnoma izklopite."
       ],
       "Also included": [
         "Tudi vključeno"
@@ -4004,7 +4030,7 @@
         "Razpoložljiva shramba: ${ storageText }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Onemogočite Googlu, da bi ustvaril vaš profil. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
+        "Onemogočite Googlu, da bi ustvaril profil o vas. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
       ],
       "Connect your CRM, website, printers, and more.": [
         "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
@@ -4083,6 +4109,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Berite, odgovarjajte in bodite na tekočem z Gmailom neposredno v ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Z desnim klikom na e-poštno sporočilo izberite »Premakni v« ali pa ga povlecite in spustite v drugo kategorijo. Podobna e-poštna sporočila se bodo v prihodnje samodejno razvrstila v to kategorijo."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Pošiljajte in prejemajte sporočila Gmail neposredno v ${ MAIL_APP_NAME }. Povežite svoj naslov v ${ addressesSettingsLink }."
@@ -4184,7 +4213,7 @@
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail"
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
@@ -5096,6 +5125,9 @@
       ],
       "Username must end with a letter or digit": [
         "Uporabniško ime se mora končati s črko ali številko"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
       ],
       "Wrong billing address": [
         "Napačen naslov za izstavitev računa"
@@ -8642,6 +8674,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Trenutno ste prijavljeni kot ${ username }."
@@ -15173,6 +15208,9 @@
       "Make a secure connection your default": [
         "Nastavite varno povezavo kot privzeto"
       ],
+      "Make Categories your own": [
+        "Ustvarite svoje lastne kategorije"
+      ],
       "Mark all messages as read": [
         "Vsa sporočila označi kot prebrana"
       ],
@@ -15275,6 +15313,9 @@
       "New message": [
         "Novo sporočilo"
       ],
+      "New messages": [
+        "Nova sporočila"
+      ],
       "Newsletters": [
         "Glasila"
       ],
@@ -15349,6 +15390,9 @@
       ],
       "Payment verification": [
         "Preverjanje plačila"
+      ],
+      "Personalize your Categories": [
+        "Prilagodite svoje kategorije"
       ],
       "Phone numbers": [
         "Telefonske številke"
@@ -15667,6 +15711,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Zdaj lahko ustvarite neomejeno število map in oznak"
+      ],
+      "You're in control": [
+        "VI imate nadzor"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"

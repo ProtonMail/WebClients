@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Start oppsettet"
       ],
-      "Start testing": [
-        "Begynn å teste"
-      ],
       "Stay": [
         "Bli"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Åpne i ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Tilpass kategorier"
+      ],
+      "Got it": [
+        "Skjønner"
+      ],
+      "Next": [
+        "Neste"
+      ],
+      "Not now": [
+        "Ikke nå"
+      ],
+      "Skip": [
+        "Hopp over"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag og forhindrer uautorisert tilgang."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "En blå prikk vises når en kategori har uleste meldinger siden ditt siste besøk."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Legg til eller fjern kategorier, administrer varsler og juster oppsettet ditt når som helst i innstillingene."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Legg til eller fjern kategorier, administrer varsler eller slå dem av helt – når som helst i Innstillinger."
       ],
       "Also included": [
         "Også inkludert"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjelp teamet ditt med å lagre passord til sensitiv forretnings- og klientinformasjon på en sikker måte."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Hvis en melding vises i feil kategori, flytter du den ganske enkelt til riktig kategori. Høyreklikk på en melding for å velge en ny kategori, eller dra og slipp den der den hører hjemme."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Høyreklikk på en e-post og velg \"Flytt til\", eller dra og slipp den i en annen kategori. Lignende e-poster vil bli sortert der automatisk i fremtiden."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Send og motta Gmail-meldinger direkte i ${ MAIL_APP_NAME }. Koble til adressen din i ${ addressesSettingsLink }."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Du er blant de første som prøver den nye kategorivisningen vår før den lanseres. Tilbakemeldingene dine vil bidra til å forbedre hvordan Proton Mail sorterer e-poster for alle."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "MVA-nummeret må starte med ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
@@ -8975,6 +8998,9 @@
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du er for øyeblikket pålogget som ${ username }."
       ],
@@ -9880,6 +9906,12 @@
       "Encrypt emails": [
         "Krypter e-poster"
       ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
+      ],
       "Expires": [
         "Utløper"
       ],
@@ -10087,6 +10119,9 @@
       "Navigation": [
         "Navigasjon"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
       "New password": [
         "Nytt passord"
       ],
@@ -10137,6 +10172,9 @@
       ],
       "Original link": [
         "Opprinnelig kobling"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
       ],
       "Participants": [
         "Deltakere"
@@ -10216,6 +10254,9 @@
       "Region": [
         "Region"
       ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
       "Remember my choice": [
         "Husk valget mitt"
       ],
@@ -10275,6 +10316,9 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "Starts with": [
+        "Begynner med"
       ],
       "State": [
         "Stat"
@@ -10362,6 +10406,9 @@
       ],
       "URL": [
         "Nettadresse"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ],
       "Username": [
         "Brukernavn"
@@ -10965,14 +11012,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
       "Fw:": [
         "Vs:"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "På ${ date }, skrev ${ senderString }:"
       ],
       "Re:": [
         "Sv:"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
@@ -15768,9 +15833,6 @@
       "Help center": [
         "Hjelpesenter"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Bidra til å forme fremtiden til e-postkategorier i ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul e-posten din med ${ PASS_APP_NAME }"
       ],
@@ -15862,6 +15924,9 @@
       ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
+      ],
+      "Make Categories your own": [
+        "Gjør kategorier til dine egne"
       ],
       "Mark all messages as read": [
         "Merk alle meldinger som lest"
@@ -15971,6 +16036,9 @@
       "New message": [
         "Ny melding"
       ],
+      "New messages": [
+        "Nye meldinger"
+      ],
       "Newsletters": [
         "Nyhetsbrev"
       ],
@@ -16048,6 +16116,9 @@
       ],
       "Payment verification": [
         "Betalingsbekreftelse"
+      ],
+      "Personalize your Categories": [
+        "Personliggjør kategoriene dine"
       ],
       "Phone numbers": [
         "Telefonnumre"
@@ -16384,6 +16455,9 @@
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
       ],
+      "You're in control": [
+        "Du har kontrollen"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
       ],
@@ -16484,7 +16558,7 @@
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Load image": [
         "Last inn bilde"
@@ -16693,6 +16767,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",

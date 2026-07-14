@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Installatie starten"
       ],
-      "Start testing": [
-        "Begin met Testen"
-      ],
       "Stay": [
         "Blijf"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Openen in ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Categorieën aanpassen"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "Not now": [
+        "Niet nu"
+      ],
+      "Skip": [
+        "Overslaan"
       ]
     },
     "Actions message": {
@@ -4175,8 +4189,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Er verschijnt een blauwe stip wanneer een categorie ongelezen berichten bevat sinds uw laatste bezoek."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Voeg categorieën toe of verwijder ze, beheer meldingen en pas uw setup op elk gewenst moment aan in de instellingen."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Voeg categorieën toe of verwijder ze, beheer meldingen of schakel ze volledig uit - op elk gewenst moment in de instellingen."
       ],
       "Also included": [
         "Ook inbegrepen"
@@ -4259,9 +4282,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Als een bericht in de verkeerde categorie verschijnt, verplaatst u het eenvoudig naar de juiste categorie. Klik met de rechtermuisknop op een bericht om een ​​nieuwe categorie te kiezen, of sleep het bericht naar de plek waar het thuishoort."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
@@ -4289,6 +4309,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik met de rechtermuisknop op een e-mail en selecteer \"Verplaatsen naar\", of sleep deze naar een andere categorie. Vergelijkbare e-mails worden in de toekomst automatisch daar gesorteerd."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Verzend en ontvang Gmail-berichten rechtstreeks in ${ MAIL_APP_NAME }. Verbind uw adres in ${ addressesSettingsLink }."
@@ -4442,9 +4465,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adres.",
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adressen."
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "U bent een van de eersten die onze nieuwe categorieweergave uitprobeert voordat deze wordt gelanceerd. Uw feedback helpt bij het verbeteren van de manier waarop Proton Mail e-mails voor iedereen sorteert."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
@@ -5383,6 +5403,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "BTW-nummer moet beginnen met ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
@@ -7860,6 +7883,9 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
+      ],
       "Manage your folders": [
         "Mappen beheren"
       ],
@@ -8954,6 +8980,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
@@ -12536,6 +12565,12 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Yes, don't show again": [
+        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -15736,9 +15771,6 @@
       "Help center": [
         "Helpcentrum"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Help mee de toekomst van e-mailcategorieën vorm te geven in ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verberg uw e-mail met ${ PASS_APP_NAME }"
       ],
@@ -15800,6 +15832,9 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Keep this banner hidden?": [
+        "Deze banner verbergen?"
+      ],
       "Label as": [
         "Labellen als"
       ],
@@ -15827,6 +15862,9 @@
       ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
+      ],
+      "Make Categories your own": [
+        "Maak categorieën uw eigen"
       ],
       "Mark all messages as read": [
         "Markeer alle berichten als gelezen"
@@ -15936,6 +15974,9 @@
       "New message": [
         "Nieuw bericht"
       ],
+      "New messages": [
+        "Nieuwe berichten"
+      ],
       "Newsletters": [
         "Nieuwsbrieven"
       ],
@@ -16013,6 +16054,9 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
+      ],
+      "Personalize your Categories": [
+        "Personaliseer uw categorieën"
       ],
       "Phone numbers": [
         "Telefoonnummers"
@@ -16349,6 +16393,9 @@
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
       ],
+      "You're in control": [
+        "U heeft de controle"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
@@ -16383,6 +16430,12 @@
     "Title header for keys table": {
       "Actions": [
         "Acties"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
       ],
       "Fingerprint": [
         "Vingerafdruk"
@@ -16489,6 +16542,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ]
     },
     "tooltip": {

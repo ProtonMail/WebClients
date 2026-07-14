@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Start opsætning"
       ],
-      "Start testing": [
-        "Begynd at teste"
-      ],
       "Stay": [
         "Bliv her"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Åbn i ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Tilpas kategorier"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Next": [
+        "Næste"
+      ],
+      "Not now": [
+        "Ikke nu"
+      ],
+      "Skip": [
+        "Spring over"
       ]
     },
     "Actions message": {
@@ -4180,8 +4194,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Der vises en blå prik, når en kategori har ulæste beskeder siden Deres seneste besøg."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tilføj mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til at se eller redigere."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Tilføj eller fjern kategorier, administrer notifikationer og tilpas Deres konfiguration når som helst i indstillinger."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Tilføj eller fjern kategorier, administrer notifikationer, eller slå dem helt fra – når som helst i indstillinger."
       ],
       "Also included": [
         "Også inkluderet"
@@ -4264,9 +4287,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjælp dit team med sikkert at lagre adgangskoder til følsomme forretnings- og klientoplysninger."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den hvor den hører hjemme."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -4294,6 +4314,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Højreklik på en e-mail, og vælg \"Flyt til\", eller træk og slip den i en anden kategori. Lignende e-mails vil automatisk blive sorteret der i fremtiden."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Send og modtag Gmail-beskeder direkte i ${ MAIL_APP_NAME }. Forbind din adresse i ${ addressesSettingsLink }."
@@ -4450,9 +4473,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre hvordan Proton Mail sorterer e-mails for alle."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
@@ -5397,6 +5417,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Momsnummer skal starte med ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
       ],
       "Wrong billing address": [
         "Forkert faktureringsadresse"
@@ -8974,6 +8997,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er i øjeblikket logget ind som ${ username } i (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du er i øjeblikket logget ind som ${ username }."
@@ -15768,9 +15794,6 @@
       "Help center": [
         "Hjælp-center"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Vær med til at forme fremtiden for e-mail-kategorier i ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul din e-mail med ${ PASS_APP_NAME }"
       ],
@@ -15862,6 +15885,9 @@
       ],
       "Make a secure connection your default": [
         "Gør en sikker forbindelse til din standard"
+      ],
+      "Make Categories your own": [
+        "Gør kategorier til Deres egne"
       ],
       "Mark all messages as read": [
         "Marker alle meddelelser som læste"
@@ -15971,6 +15997,9 @@
       "New message": [
         "Ny besked"
       ],
+      "New messages": [
+        "Nye beskeder"
+      ],
       "Newsletters": [
         "Nyhedsbreve"
       ],
@@ -16048,6 +16077,9 @@
       ],
       "Payment verification": [
         "Betalingsbekræftelse"
+      ],
+      "Personalize your Categories": [
+        "Gør Deres kategorier personlige"
       ],
       "Phone numbers": [
         "Telefonnumre"
@@ -16383,6 +16415,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
+      ],
+      "You're in control": [
+        "De har kontrollen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
