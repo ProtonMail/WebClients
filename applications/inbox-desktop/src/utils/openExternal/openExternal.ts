@@ -3,7 +3,7 @@ import { externalProtocolManager } from "./manager";
 import { mainLogger } from "../log";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { type ProtocolSource } from "@proton/shared/lib/desktop/externalProtocols";
-import { t } from "ttag";
+import { c } from "ttag";
 import noop from "@proton/utils/noop";
 import { sentryReport } from "../sentryReport";
 import { normalizeProtocol, validateUrl } from "./validate";
@@ -43,10 +43,10 @@ async function openExternal({ url, source, requiresUserConfirmation }: OpenExter
     // show a confirmation dialog to the user to ask if they want to open the external url.
     if (requiresUserConfirmation && !isAllowed) {
         const { response } = await dialog.showMessageBox({
-            buttons: [t`Open external url`, t`Cancel`],
+            buttons: [c("Action").t`Open external url`, c("Action").t`Cancel`],
             title: MAIL_APP_NAME,
-            message: t`Open external url`,
-            detail: t`The protocol ${parsedProtocol} is not allowed. Do you want to open the external url?`,
+            message: c("Action").t`Open external url`,
+            detail: c("Action").t`The protocol ${parsedProtocol} is not allowed. Do you want to open the external url?`,
         });
 
         if (response !== 0) {
