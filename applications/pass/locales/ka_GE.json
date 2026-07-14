@@ -661,9 +661,6 @@
       "Skip": [
         "გამოტოვება"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
-      ],
       "Sort vault items": [
         "საცავის ელემენტების დალაგება"
       ],
@@ -1233,9 +1230,6 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
-      ],
-      "Try reaching out to the link owner.": [
-        "სცადეთ, ბმულის ავტორს დაუკავშირდეთ."
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -1929,10 +1923,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -3556,9 +3546,6 @@
       ],
       "Theme": [
         "თემა"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
       ],
       "Tier/Level": [
         "დონე"

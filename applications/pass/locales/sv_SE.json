@@ -547,6 +547,9 @@
       "Regenerate": [
         "Generera igen"
       ],
+      "Regex invalid": [
+        "Regex ogiltigt"
+      ],
       "Reject": [
         "Avvisa"
       ],
@@ -669,9 +672,6 @@
       ],
       "Skip": [
         "Hoppa över"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortera valvobjekt"
@@ -1147,6 +1147,12 @@
       "Failed to set default mailbox": [
         "Misslyckades att ställa in standardbrevlåda"
       ],
+      "Failed to start SSH agent: ${ errorMessage }": [
+        "Misslyckades att starta SSH-agent: ${ errorMessage }"
+      ],
+      "Failed to stop SSH agent: ${ errorMessage }": [
+        "Misslyckades att stoppa SSH-agent: ${ errorMessage }"
+      ],
       "Failed to sync aliases": [
         "Misslyckades att synkronisera alias"
       ],
@@ -1305,9 +1311,6 @@
       ],
       "Trashing item failed": [
         "Borttagning av objekt misslyckades"
-      ],
-      "Try reaching out to the link owner.": [
-        "Prova att kontakta länkägaren."
       ],
       "Unable to generate an OTP code for this item": [
         "Kan inte generera en OTP-kod för detta objekt"
@@ -1513,6 +1516,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
+      ],
+      "${ PASS_APP_NAME } will use the SSH keys saved in your vaults.": [
+        "${ PASS_APP_NAME } kommer använda SSH-nycklarna sparade i dina valv."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } offlineläge aktiverat."
@@ -2056,10 +2062,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2538,9 +2540,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt andra lösenord"
-      ],
-      "Unlock with biometrics": [
-        "Lås upp med biometri"
       ],
       "Unpinning item...": [
         "Lossar objekt …"
@@ -3452,6 +3451,9 @@
       "Never": [
         "Aldrig"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New email": [
         "Ny e-post"
       ],
@@ -3511,6 +3513,9 @@
       ],
       "Owner": [
         "Ägare"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ],
       "Passkey": [
         "Passkey"
@@ -3613,6 +3618,9 @@
       ],
       "Regular expression": [
         "Vanligt uttryck"
+      ],
+      "Relevant": [
+        "Relevant"
       ],
       "Remove link": [
         "Ta bort länk"
@@ -3779,9 +3787,6 @@
       "Theme": [
         "Tema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
-      ],
       "Tier/Level": [
         "Nivå"
       ],
@@ -3856,6 +3861,9 @@
       ],
       "Update": [
         "Uppdatera"
+      ],
+      "Use ${ PASS_APP_NAME } as SSH agent": [
+        "Använd ${ PASS_APP_NAME } som SSH-agent"
       ],
       "Use for AI agent": [
         "Använd för AI-agent"
@@ -3976,6 +3984,9 @@
       "${ count } item": [
         "${ count } objekt",
         "${ count } objekt"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan dra och släppa det valda objektet till ett annat valv",
@@ -4277,8 +4288,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Ange en URL för att kontrollera om din nuvarande regel matchar URL:en"
+      ],
       "The rule is matching this URL": [
         "Regeln matchar denna URL"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regeln matchar INTE denna URL"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denna URL kommer att blockeras från automatisk ifyllning"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denna URL kommer INTE att blockeras från automatisk ifyllning"
       ]
     },
     "Security Center - Info": {
@@ -4897,6 +4920,9 @@
       ],
       "Sync your aliases from SimpleLogin": [
         "Synkronisera dina alias från SimpleLogin"
+      ],
+      "Test a URL against this rule": [
+        "Testa en URL mot denna regel"
       ],
       "Transfer ownership": [
         "Överför ägarskap"
