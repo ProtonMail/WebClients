@@ -19,6 +19,7 @@ export enum CommonFeatureFlag {
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
+    InboxDesktopCategoryViewSettingsToggleReloadDisabled = 'InboxDesktopCategoryViewSettingsToggleReloadDisabled',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     WalletAutoSetup = 'WalletAutoSetup',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
