@@ -28,7 +28,7 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^2.2.0",
         "@sentry/browser": "^7.120.4",
-        "@types/node": "^24.12.4",
+        "@types/node": "^24.13.3",
         "@types/papaparse": "^5.5.2",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -39,7 +39,7 @@
         "idb": "^8.0.3",
         "is-valid-domain": "0.1.6",
         "loglevel": "^1.9.2",
-        "papaparse": "^5.5.3",
+        "papaparse": "^5.5.4",
         "ua-parser-js": "^1.0.41",
         "web-streams-polyfill": "^3.3.3",
         "web-vitals": "^4.2.4",
@@ -49,14 +49,14 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/types": "workspace:^",
-        "@types/file-saver": "^2.0.5",
+        "@types/file-saver": "^2.0.7",
         "@vitest/browser-playwright": "^4.1.10",
-        "@webgpu/types": "^0.1.70",
-        "eslint": "^9.39.4",
+        "@webgpu/types": "^0.1.71",
+        "eslint": "^9.39.5",
         "playwright": "patch:playwright@npm%3A1.61.1#~/.yarn/patches/playwright-npm-1.61.1-55c1fb1408.patch",
-        "prettier": "^3.8.3",
+        "prettier": "^3.9.5",
         "ttag": "^1.8.12",
         "typescript": "^6.0.2",
-        "vitest": "^4.1.8"
+        "vitest": "^4.1.10"
     }
 }
