@@ -553,6 +553,12 @@
       "Regenerate": [
         "Generer på nytt"
       ],
+      "Regex invalid": [
+        "Ugyldig regex"
+      ],
+      "Regex unsafe": [
+        "Regex utrygg"
+      ],
       "Reject": [
         "Avvis"
       ],
@@ -2213,6 +2219,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2477,6 +2487,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Autofyll raskt den lagrede legitimasjonen din."
+      ],
+      "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
+        "Rangert etter felt (tittel først, deretter brukernavn eller e-post, nettsted, notater) og samsvarspresisjon (nøyaktig, starter med, inneholder)."
       ],
       "Read item": [
         "Les element"
@@ -2760,9 +2773,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den opp med PIN-koden din for å få tilgang til innstillingene"
-      ],
-      "Unlock with biometrics": [
-        "Lås opp med biometri"
       ],
       "Unpinning item...": [
         "Løser element..."
@@ -3200,6 +3210,9 @@
       "Bank Name": [
         "Banknavn"
       ],
+      "Basic": [
+        "Grunnleggende"
+      ],
       "Basic Auth autofill": [
         "Grunnleggende autoutfylling av legitimasjon"
       ],
@@ -3229,6 +3242,9 @@
       ],
       "Catch-All": [
         "Catch-all"
+      ],
+      "Check": [
+        "Sjekk"
       ],
       "Checkbox": [
         "Avmerkingsboks"
@@ -3388,6 +3404,12 @@
       ],
       "Enter email or username": [
         "Skriv inn e-post eller brukernavn"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
       ],
       "Expiration date": [
         "Utløpsdato"
@@ -3680,6 +3702,9 @@
       "Never": [
         "Aldri"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
       "New email": [
         "Ny e-post"
       ],
@@ -3736,6 +3761,9 @@
       ],
       "Owner": [
         "Eier"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
       ],
       "Passkey": [
         "Tilgangsnøkkel"
@@ -3848,6 +3876,12 @@
       "Reddit handle": [
         "Reddit-brukernavn"
       ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
+      "Relevant": [
+        "Relevant"
+      ],
       "Remove link": [
         "Fjern kobling"
       ],
@@ -3955,6 +3989,9 @@
       ],
       "SSN": [
         "Fødselsnummer"
+      ],
+      "Starts with": [
+        "Begynner med"
       ],
       "State or province": [
         "Delstat eller provins"
@@ -4070,6 +4107,9 @@
       "Update": [
         "Oppdater"
       ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
+      ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Bruk ${ PASS_APP_NAME } som din nettleseres standard passordbehandler"
       ],
@@ -4175,6 +4215,24 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
+      ],
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ],
       "You can drag and drop the selected item to another vault": [
         "Du kan dra og slippe det valgte elementet til et annet hvelv",
@@ -4478,6 +4536,23 @@
         "Brukt på ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check to see if your current rule is matching the URL": [
+        "Skriv inn en URL for å sjekke om den nåværende regelen samsvarer med URL-en"
+      ],
+      "The rule is matching this URL": [
+        "Regelen samsvarer med denne nettadressen"
+      ],
+      "The rule is NOT matching this URL": [
+        "Regelen samsvarer IKKE med denne URL-en"
+      ],
+      "This URL will be blocked from autofill": [
+        "Denne nettadressen vil bli blokkert fra autofyll"
+      ],
+      "This URL will NOT be blocked from autofill": [
+        "Denne nettadressen vil IKKE bli blokkert fra autofyll"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
@@ -4681,6 +4756,9 @@
       ],
       "Add mailbox": [
         "Legg til postboks"
+      ],
+      "Adjust autofill behaviors to change where logins are suggested.": [
+        "Juster autofyll-atferden for å endre hvor pålogginger foreslås."
       ],
       "Agent setup instructions": [
         "Instruksjoner for agentoppsett"
@@ -4896,6 +4974,9 @@
       "Last modified": [
         "Sist endret"
       ],
+      "Learn more": [
+        "Lær mer"
+      ],
       "Leave this item?": [
         "Forlate dette elementet?"
       ],
@@ -5110,6 +5191,9 @@
       "Sync your aliases from SimpleLogin": [
         "Synkroniser aliasene dine fra SimpleLogin"
       ],
+      "Test a URL against this rule": [
+        "Test en URL mot denne regelen"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Takk for at du installerte ${ PASS_APP_NAME }"
       ],
@@ -5130,6 +5214,9 @@
       ],
       "Update available": [
         "Oppdatering tilgjengelig"
+      ],
+      "URL matching": [
+        "URL-samsvar"
       ],
       "Use my email": [
         "Bruk min e-post"
@@ -5243,6 +5330,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
         "${ PASS_SHORT_APP_NAME } frakoblet modus deaktivert."
@@ -5447,6 +5537,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denne e-postadressen vil ikke lenger overvåkes for datainnbrudd."
+      ],
+      "This item can't be suggested for autofill due to the \"${ neverModeDescriptionStrong }\". Add another URL if you want this item to autofill.": [
+        "Dette elementet kan ikke foreslås for autofyll på grunn av \"${ neverModeDescriptionStrong }\". Legg til en annen URL hvis du vil at dette elementet skal fylles ut automatisk."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dette elementet er for øyeblikket delt. Hvis du sletter det, fjernes tilgangen for alle andre brukere."
