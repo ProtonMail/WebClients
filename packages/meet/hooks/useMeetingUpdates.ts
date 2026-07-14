@@ -1,10 +1,16 @@
-import { CustomPasswordState, type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import {
+    CustomPasswordState,
+    type Meeting,
+    MeetingType,
+    type WaitingRoomState,
+} from '@proton/shared/lib/interfaces/Meet';
 
 import { decryptMeetingPassword, decryptSessionKey, getCombinedPassword } from '../utils/cryptoUtils';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 import { useUpdateMeetingName } from './useUpdateMeetingName';
 import { useUpdateMeetingPassword } from './useUpdateMeetingPassword';
 import { useUpdateMeetingSchedule } from './useUpdateMeetingSchedule';
+import { useUpdateMeetingWaitingRoom } from './useUpdateMeetingWaitingRoom';
 
 // Check if the password is encrypted (PGP armored message)
 const isPasswordEncrypted = (password: string): boolean => {
@@ -19,6 +25,8 @@ export const useMeetingUpdates = () => {
     const { updateMeetingPassword } = useUpdateMeetingPassword();
 
     const { updateMeetingSchedule } = useUpdateMeetingSchedule();
+
+    const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
 
     const saveMeetingPassword = async ({
         passphrase,
@@ -109,5 +117,15 @@ export const useMeetingUpdates = () => {
         return updateMeetingSchedule(id, startTime, endTime, recurrence, timezone);
     };
 
-    return { saveMeetingPassword, saveMeetingName, saveMeetingSchedule };
+    const saveMeetingWaitingRoom = async ({
+        meetingLinkName,
+        waitingRoom,
+    }: {
+        meetingLinkName: string;
+        waitingRoom: WaitingRoomState;
+    }) => {
+        return updateMeetingWaitingRoom({ meetingLinkName, waitingRoom: waitingRoom });
+    };
+
+    return { saveMeetingPassword, saveMeetingName, saveMeetingSchedule, saveMeetingWaitingRoom };
 };

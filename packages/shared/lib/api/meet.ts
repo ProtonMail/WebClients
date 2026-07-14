@@ -166,3 +166,14 @@ export const sendFeedback = (meetingLinkName: string, data: { Score: number; Fee
     url: `meet/v1/meetings/links/${meetingLinkName}/feedback`,
     data,
 });
+
+// Waiting Room APIs
+export const enableWaitingRoom = (meetingLinkName: string) => ({
+    method: 'post',
+    url: `meet/v1/meetings/links/${meetingLinkName}/waiting-room`,
+});
+
+export const disableWaitingRoom = (meetingLinkName: string) => ({
+    method: 'delete',
+    url: `meet/v1/meetings/links/${meetingLinkName}/waiting-room`,
+});

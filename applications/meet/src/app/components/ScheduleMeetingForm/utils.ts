@@ -3,6 +3,7 @@ import { zonedTimeToUtc } from 'date-fns-tz';
 
 import { MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
+import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 import type { FormValues } from './types';
 
@@ -97,7 +98,7 @@ export const validate = (values: FormValues) => {
     return errors;
 };
 
-export const getInitialValues = (): FormValues => {
+export const getInitialValues = (isMeetWaitingRoomEnabled: boolean): FormValues => {
     const now = new Date();
     const end = new Date(now.getTime() + 30 * MINUTE);
     const pad = (n: number) => String(n).padStart(2, '0');
@@ -117,5 +118,6 @@ export const getInitialValues = (): FormValues => {
         timeZone: '',
         customPassword: '',
         recurrence: 'NO_REPEAT',
+        waitingRoom: isMeetWaitingRoomEnabled ? WaitingRoomState.DISABLED : undefined,
     };
 };
