@@ -4413,6 +4413,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Hindi nagtagumpay ang verification, pakisubukang muli sa loob ng isang oras."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Hindi maipadala ang verification code gamit ang paraang ito."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Itinigil namin ang pag-sign ng DKIM dahil sa mga problema sa configuration ng DNS. Mangyaring sundin ang mga tagubilin sa ibaba upang ipagpatuloy ang pag-sign."
       ],
@@ -5851,6 +5854,9 @@
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "Ang ${ MEET_APP_NAME } ay isang end-to-end na naka-encrypt na solusyon sa video conferencing. Idagdag sa plano upang makapagsagawa ng mga ligtas na meeting."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "mga seat sa ${ MEET_APP_NAME }"
       ],
       "${ n } address": [
         "${ n } address",
@@ -7977,6 +7983,9 @@
       "You already have a free account": [
         "Mayroon ka nang libreng account"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Kasalukuyang naka-sign in bilang ${ username } para sa ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Kasalukuyang naka-sign in bilang ${ username }."
       ],
@@ -9361,9 +9370,6 @@
       "Create an alias": [
         "Gumawa ng alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Walang access sa 2FA?"
-      ],
       "Encryption and keys": [
         "Encryption at mga key"
       ],
@@ -9709,6 +9715,9 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "Lisensya ng ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "mga seat sa ${ MEET_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } na upuan",
@@ -13031,6 +13040,14 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } araw",
+        "${ timeRemaining.inDays } na araw"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } oras",
+        "${ timeRemaining.inHours } na oras"
+      ],
       "Didn’t make this request?": [
         "Hindi ginawa ang request na ito?"
       ],
@@ -13042,6 +13059,14 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Mangyaring pumunta sa naka-sign in na device (sa session kung saan sinimulan ang request) upang palitan ang password."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inDays } araw",
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inDays } na araw"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inHours } oras",
+        "Mag-e-expire ang pahintulot na ito sa loob ng ${ timeRemaining.inHours } na oras"
       ],
       "This permission expires soon": [
         "Malapit nang mag-expire ang pahintulot na ito"
@@ -13061,6 +13086,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "May ${ timeRemaining.inDays } araw upang i-reset ang password.",
         "May ${ timeRemaining.inDays } na araw upang i-reset ang password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "May ${ timeRemaining.inHours } oras upang i-reset ang password.",
+        "May ${ timeRemaining.inHours } na oras upang i-reset ang password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "May ${ timeRemaining.inMinutes } minuto upang i-reset ang password.",
+        "May ${ timeRemaining.inMinutes } na minuto upang i-reset ang password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "May ${ timeRemaining.inSeconds } segundo upang i-reset ang password.",
+        "May ${ timeRemaining.inSeconds } na segundo upang i-reset ang password."
       ]
     },
     "session_recovery:available:link": {
@@ -13141,6 +13178,10 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } pang oras",
+        "${ gracePeriodHoursRemaining } pang oras"
+      ],
       "Didn’t make this request?": [
         "Hindi ginawa ang request na ito?"
       ],
@@ -13152,6 +13193,10 @@
       ],
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Available ang pag-reset ng password mula ${ boldDate }. Binibigyan ka nito ng oras upang kanselahin ang anumang mapanlokong request."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Humiling ng pag-reset ng password (${ user.Email }). Maaaring palitan ang password sa loob ng ${ hoursRemaining } oras.",
+        "Hiningi ang pag-reset ng password (${ user.Email }). Maaaring baguhin ang password sa loob ng ${ hoursRemaining } na oras."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Upang matiyak na ikaw talaga ang sumusubok na i-reset ang password, naghihintay kami ng 72 oras bago aprubahan ang mga request. Maaari mong palitan ang password sa loob ng ${ boldTimeLeft }. ${ viewRequest }"
@@ -13343,6 +13388,24 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Mag-Go Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } araw",
+        "${ days } na araw"
+      ],
+      "${ hours } hour": [
+        "${ hours } oras",
+        "${ hours } na oras"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } na minuto"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } na segundo"
       ]
     },
     "specialoffer: Deal details": {

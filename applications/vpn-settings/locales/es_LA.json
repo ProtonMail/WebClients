@@ -4833,6 +4833,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "La verificación no funcionó. Vuelva a intentarlo en una hora."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Detuvimos la firma de DKIM por problemas con la configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
       ],
@@ -6351,6 +6354,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } miembro añadido al grupo",
+        "${ emails.length } miembros añadidos al grupo"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
@@ -7340,6 +7347,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Group created": [
+        "Grupo creado"
+      ],
       "Group deleted": [
         "Grupo eliminado"
       ],
@@ -7656,6 +7666,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrese de ${ addARecoveryMethod } de tal modo que pueda volver a tener acceso a la cuenta en caso de olvidar la contraseña."
+      ],
+      "Manage groups in your identity provider": [
+        "Gestione los grupos en su proveedor de identidad"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administre las aplicaciones de ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
@@ -8812,6 +8825,9 @@
       ],
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Actualmente inició sesión como ${ username }."
@@ -10392,9 +10408,6 @@
       ],
       "Details": [
         "Detalles"
-      ],
-      "Don't have access to your 2FA?": [
-        "¿No tiene acceso a su 2FA?"
       ],
       "Encryption and keys": [
         "Cifrado y claves"
@@ -15855,9 +15868,6 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Compare las diferencias clave que importan para su negocio."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Ahorre 50% por 1 año y mantenga el acceso completo"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Ahorre 50% por 6 meses y mantenga el acceso completo"

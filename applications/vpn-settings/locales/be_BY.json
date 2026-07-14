@@ -4903,6 +4903,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Не ўдалося праверыць. Паспрабуйце яшчэ раз праз гадзіну."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Мы прыпынілі падпісанне DKIM з прычыны праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
       ],
@@ -6479,6 +6482,12 @@
       "${ emailAddress } is invalid": [
         "Памылковы адрас ${ emailAddress }"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } удзельнік дадзены ў групу",
+        "${ emails.length } удзельнікі дадзены ў групу",
+        "${ emails.length } удзельнікаў дадзены ў групу",
+        "${ emails.length } удзельнікаў дадзены ў групу"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
       ],
@@ -7544,6 +7553,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "Group created": [
+        "Група створана"
+      ],
       "Group deleted": [
         "Група выдалена"
       ],
@@ -7864,6 +7876,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
+      ],
+      "Manage groups in your identity provider": [
+        "Кіраванне групамі ў вашым пастаўшчыку пасведчанняў"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
@@ -9040,6 +9055,9 @@
       ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
@@ -10662,9 +10680,6 @@
       ],
       "Details": [
         "Падрабязнасці"
-      ],
-      "Don't have access to your 2FA?": [
-        "Адсутнічае доступ да 2ФА?"
       ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
@@ -16361,9 +16376,6 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Параўнайце ключавыя адрозненні, якія маюць значэнне для вашага бізнесу."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Зэканомце 50% пры аплаце за 1 год і пакіньце поўны доступ"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Зэканомце 50% пры аплаце за 6 месяцаў і пакіньце поўны доступ"

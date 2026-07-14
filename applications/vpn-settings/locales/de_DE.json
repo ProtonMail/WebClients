@@ -4821,6 +4821,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
       ],
@@ -8808,6 +8811,9 @@
       "You already have a free account": [
         "Du verfügst bereits über ein kostenloses Konto."
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du bist derzeit als „${ username }“ angemeldet."
       ],
@@ -10384,9 +10390,6 @@
       ],
       "Details": [
         "Details"
-      ],
-      "Don't have access to your 2FA?": [
-        "Du hast keinen Zugriff auf deine 2FA?"
       ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
@@ -15847,9 +15850,6 @@
       ],
       "Compare the key differences that matter for your business.": [
         "Vergleiche die wichtigsten Unterschiede, die für dein Unternehmen von Bedeutung sind."
-      ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spare 1 Jahr lang 50 % und behalte den vollen Zugriff"
       ],
       "Save 50% for 6 months, and keep full access": [
         "Spare 6 Monate lang 50 % und behalte den vollen Zugriff"

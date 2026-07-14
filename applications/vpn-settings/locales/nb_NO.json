@@ -4833,6 +4833,9 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifisering lyktes ikke, prøv igjen om en time."
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
+      ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
       ],
@@ -6351,6 +6354,10 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
+      "${ emails.length } member added to the group": [
+        "${ emails.length } medlem lagt til i gruppen",
+        "${ emails.length } medlemmer lagt til i gruppen"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
       ],
@@ -6416,6 +6423,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
+      ],
+      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminApprovalCount } nytt medlem lagt til via identitetsleverandøren din og venter på vurdering.",
+        "${ pendingAdminApprovalCount } nye medlemer lagt til via identitetsleverandøren din og venter på vurdering."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
@@ -6634,8 +6645,8 @@
         "Legg til flere brukere til din organisasjon på engang."
       ],
       "Add server (${ availableAddedCount } available)": [
-        "Legg til tjener (${ availableAddedCount }) tilgjengelig",
-        "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
+        "Legg til server (${ availableAddedCount }) tilgjengelig",
+        "Legg til server (${ availableAddedCount }) tilgjengelige"
       ],
       "Add users by name or email to this group.": [
         "Legg til brukere etter navn eller e-post i denne gruppen."
@@ -6654,8 +6665,8 @@
         "Å legge til en ekstern e-postadresse vil deaktivere ende-til-ende-kryptering for all e-postkommunikasjon innenfor den gruppen. Vil du fortsette?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Legger til porttjener: ${ serverNumber } / ${ total }",
-        "Legger til porttjenere: ${ serverNumber } / ${ total }"
+        "Legger til gateway-server: ${ serverNumber } / ${ total }",
+        "Legger til gateway-servere: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -6823,6 +6834,12 @@
       "Beta": [
         "Beta"
       ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Faktureres til ${ monthlyDiscountedPriceElement } de første 6 månedene, fornyes til ${ monthlyRenewalPriceElement }."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Faktureres til ${ yearlyDiscountedPriceElement } de første 12 månedene, fornyes til ${ yearlyRenewalPriceElement }."
+      ],
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
@@ -6952,8 +6969,8 @@
         "Opprett din første gateway"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Oppretter gateway-tjener: ${ serverNumber } / ${ total }",
-        "Oppretter gateway-tjenere: ${ serverNumber } / ${ total }"
+        "Oppretter gateway-server: ${ serverNumber } / ${ total }",
+        "Oppretter gateway-servere: ${ serverNumber } / ${ total }"
       ],
       "Creating gateway with ${ total } server": [
         "Oppretter gateway med ${ total } server",
@@ -7008,8 +7025,8 @@
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Sletter ${ deletedServerCount } gateway-tjener",
-        "Sletter ${ deletedServerCount } gateway-tjenere"
+        "Sletter ${ deletedServerCount } gateway-server",
+        "Sletter ${ deletedServerCount } gateway-servere"
       ],
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter angitt **ventetid**."
@@ -7330,6 +7347,9 @@
       "Got it": [
         "Skjønner"
       ],
+      "Group created": [
+        "Gruppe opprettet"
+      ],
       "Group deleted": [
         "Gruppe slettet"
       ],
@@ -7646,6 +7666,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for at du ${ addARecoveryMethod } slik at du kan få komme inn på kontoen din igjen hvis du glemmer passordet."
+      ],
+      "Manage groups in your identity provider": [
+        "Administrer grupper i identitetsleverandøren din"
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
@@ -8803,12 +8826,15 @@
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du er for øyeblikket pålogget som ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
-        "Du bruker for øyeblikket ${ ipCount } tilgjengelige dedikerte tjenere ut av ${ ipAddresses }."
+        "Du bruker for øyeblikket ${ ipCount } av ${ ipAddresses } tilgjengelige dedikerte servere.",
+        "Du bruker for øyeblikket ${ ipCount } av ${ ipAddresses } tilgjengelige dedikerte servere."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelige brukerlisens og ${ usedAI } av ${ maxAI } tilgjengelige skriveassistentlisens.",
@@ -10382,9 +10408,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Don't have access to your 2FA?": [
-        "Har du ikke tilgang til din 2FA?"
       ],
       "Encryption and keys": [
         "Kryptering og nøkler"
@@ -15846,9 +15869,6 @@
       "Compare the key differences that matter for your business.": [
         "Sammenlign de viktigste forskjellene som er viktige for din bedrift."
       ],
-      "Save 50% for 1 year, and keep full access": [
-        "Spar 50 % i 1 år, og behold full tilgang"
-      ],
       "Save 50% for 6 months, and keep full access": [
         "Spar 50 % i 6 måneder, og behold full tilgang"
       ],
@@ -15957,7 +15977,7 @@
         "Organisasjonsnavn oppdatert"
       ],
       "Password check-ins disabled": [
-        "Passordbekreftelse deaktivert"
+        "Passordsjekking deaktivert"
       ],
       "Password check-ins enabled": [
         "Passordsjekking aktivert"
@@ -17700,7 +17720,7 @@
         "Inkluderer profesjonell e-post på @dittdomene.com, skylagring med samarbeidende dokumentredigering, planlegging og videokonferanser, passordadministrasjon, et sikker ${ VPN_SHORT_APP_NAME } og mer."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer som ikke bruker 2FA vil motta en e-post som ber dem om å aktivere det så snart som mulig. Brukere med enkel pålogging vil ikke motta e-postpåminnelsen."
