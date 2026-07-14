@@ -11,10 +11,14 @@ import {
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import { useApi } from '@proton/components/index';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN } from '@proton/payments/core/subscription/helpers';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import family from '@proton/styles/assets/img/vpn/download-section/family.svg';
 import household from '@proton/styles/assets/img/vpn/download-section/household.svg';
@@ -23,6 +27,7 @@ import sensitiveData from '@proton/styles/assets/img/vpn/download-section/sensit
 import tv from '@proton/styles/assets/img/vpn/download-section/tv.svg';
 
 export const GetMoreSection = () => {
+    const api = useApi();
     const [user] = useUser();
     const [subscription] = useSubscription();
     const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONVPN_SETTINGS);
@@ -32,6 +37,19 @@ export const GetMoreSection = () => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.BUNDLE,
             telemetryFlow,
+            onMount: () => {
+                void sendTelemetryReport({
+                    api,
+                    delay: false,
+                    event: TelemetryAccountDashboardEvents.upsellCtaClick,
+                    measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                    dimensions: {
+                        app: APPS.PROTONVPN_SETTINGS,
+                        cta: 'discover_unlimited_upgrade_section',
+                        user_tier: getTelemetryUserTier(user),
+                    },
+                });
+            },
         });
     };
 
