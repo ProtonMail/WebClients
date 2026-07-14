@@ -4024,6 +4024,9 @@
       "We cannot retrieve this item": [
         "No se puede recuperar este elemento"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
+      ],
       "We were not able to load some invitations": [
         "No pudimos cargar algunas invitaciones"
       ],
@@ -5253,6 +5256,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ],
+      "Album": [
+        "Álbum"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -5523,6 +5529,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "¿Recuerda su contraseña? ${ verifyButton }"
       ],
+      "Do you still want to upload it?": [
+        "¿Aún desea cargarlo?",
+        "¿Aún desea cargarlos?"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -5725,7 +5735,7 @@
       "How does encrypted search work?": [
         "¿Cómo funciona la búsqueda cifrada?"
       ],
-      "I hereby confirm that I am in good faith that the information and statements contained in the report are correct and complete.": [
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Por la presente confirmo que actúo de buena fe y que la información y las declaraciones contenidas en el informe son correctas y completas."
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
@@ -6498,6 +6508,10 @@
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Esta acción no se puede deshacer. Ingrese el nombre del dispositivo para confirmar la eliminación."
       ],
+      "This file appears to be empty:": [
+        "Este archivo parece estar vacío:",
+        "Estos archivos parecen estar vacíos:"
+      ],
       "This file is too large to preview": [
         "Este archivo es demasiado grande para previsualizarlo."
       ],
@@ -6685,6 +6699,9 @@
       "Uploaded": [
         "Cargado"
       ],
+      "Uploaded - file is empty": [
+        "Cargado, el archivo está vacío"
+      ],
       "Uploading": [
         "Cargando"
       ],
@@ -6843,6 +6860,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Está a punto de abrir su navegador por defecto y consultar:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Actualmente inició sesión como ${ username }."
@@ -7428,6 +7448,12 @@
       "Environment compatible": [
         "Entorno compatible"
       ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7593,6 +7619,9 @@
       "Never expires": [
         "Nunca expira"
       ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
       "New password": [
         "Contraseña nueva"
       ],
@@ -7625,6 +7654,9 @@
       ],
       "Outdated version": [
         "Versión obsoleta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Password": [
         "Contraseña"
@@ -7679,6 +7711,9 @@
       ],
       "Region": [
         "Estado"
+      ],
+      "Regular expression": [
+        "Expresión regular"
       ],
       "Replace existing folder or file": [
         "Reemplazar la carpeta o el archivo existente"
@@ -7755,6 +7790,9 @@
       "Start date": [
         "Fecha inicial"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State": [
         "Estado"
       ],
@@ -7820,6 +7858,9 @@
       ],
       "Uploaded by": [
         "Cargado por"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ],
       "User opted in": [
         "El usuario optó por participar"
@@ -8222,6 +8263,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Su prueba gratuita ha finalizado. ${ nonAutoRenewalAction }"
       ],
@@ -13204,6 +13263,9 @@
       "Upload and share files": [
         "Cargue y comparta archivos"
       ],
+      "Upload empty file?": [
+        "¿Cargar archivo vacío?"
+      ],
       "Uploaded": [
         "Cargado"
       ],
@@ -13615,6 +13677,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",
