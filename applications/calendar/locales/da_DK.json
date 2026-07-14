@@ -4226,6 +4226,9 @@
       "VAT number must start with ${ prefixes }": [
         "Momsnummer skal starte med ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
+      ],
       "Wrong billing address": [
         "Forkert faktureringsadresse"
       ],
@@ -6587,6 +6590,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er i øjeblikket logget ind som ${ username } i (${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Du er i øjeblikket logget ind som ${ username }."
