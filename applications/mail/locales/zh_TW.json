@@ -1434,9 +1434,6 @@
       "Start setup": [
         "開始設定"
       ],
-      "Start testing": [
-        "開始測試"
-      ],
       "Stay": [
         "停留"
       ],
@@ -1715,6 +1712,23 @@
         "於 ${ SHEETS_APP_NAME } 開啟"
       ]
     },
+    "Actions": {
+      "Customize categories": [
+        "自訂類別"
+      ],
+      "Got it": [
+        "瞭解"
+      ],
+      "Next": [
+        "下一步"
+      ],
+      "Not now": [
+        "現在不要"
+      ],
+      "Skip": [
+        "略過"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } 或 ${ importContact }。"
@@ -1937,7 +1951,7 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "未顯示 ${ hiddenResultsCount } 個結果"
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -2592,7 +2606,7 @@
         "${ maxSpaceTB }儲存"
       ],
       "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位使用者"
+        "至多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -4050,8 +4064,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "自您上次訪問以來，當某個類別有未讀訊息時，即會顯示藍點。"
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "隨時可在設定中新增或移除類別、管理通知，並調整您的設定。"
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "隨時可在「設定」中新增或移除類別、管理通知，或將其完全關閉。"
       ],
       "Also included": [
         "並包含"
@@ -4134,9 +4157,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "如果訊息出現在錯誤的類別中，只需將其移動到正確的類別即可。在訊息上按一下滑鼠右鍵以選擇新類別，或直接將其拖放至應屬的位置。"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
@@ -4163,6 +4183,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "直接在 ${ MAIL_APP_NAME } 中閱讀、回覆並隨時掌握 Gmail 動態"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "右鍵按一下電子郵件並選取「移至」，或是將其拖放至其他類別。未來類似的電子郵件將會自動分類到該處。"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "直接在 ${ MAIL_APP_NAME } 中傳送和接收 Gmail 訊息。請在 ${ addressesSettingsLink } 中連線您的位址。"
@@ -4310,9 +4333,6 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "您是首批在正式發佈前試用我們全新類別檢視功能的使用者。您的意見回饋將有助於改善 Proton Mail 對所有使用者電子郵件的分類方式。"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
@@ -5234,6 +5254,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "增值稅號碼必須以 ${ prefixes } 開頭"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
       ],
       "Wrong billing address": [
         "錯誤帳單地址"
@@ -6746,6 +6769,9 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "使用您的推薦連結**邀請朋友**加入 ${ BRAND_NAME }。"
       ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**緊急終止開關**：如果 VPN 意外斷線，則會封鎖您的網際網路，以防止資料外洩。"
+      ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "若他們訂閱，**即可獲得 ${ refereeRewardAmount }** 可用額度。"
       ],
@@ -6767,11 +6793,17 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "取消訂閱此郵遞論壇的需求將會被傳送到電子報的傳送者並自動處理。"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN 可以隱藏您的 IP 位址並加密您的瀏覽活動，使網站、廣告商和 ISP 更難在一段時間內追蹤您。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
@@ -7045,6 +7077,9 @@
       ],
       "Confirm phishing report": [
         "確認提報釣魚郵件"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "考慮收件者最佳收件電子郵件的時間，並預定寄送時間。"
@@ -7402,6 +7437,9 @@
       ],
       "Google Pay mark": [
         "Google Pay 標記"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "計有 ${ numAttachments } 個附件，檔案大小為 (${ numAttachmentsSize })"
@@ -7922,6 +7960,9 @@
       "Print email": [
         "列印電郵"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
+      ],
       "Private by design.": [
         "私有設計。"
       ],
@@ -8108,6 +8149,9 @@
       "Snoozing this conversation will be canceled.": [
         "此對話內容的延後通知將被取消"
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "有些網站和串流服務會根據地區限制內容。VPN 能讓您繞過這些限制並自由存取網路。"
       ],
@@ -8119,6 +8163,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "開始使用更短、更好記的電子郵件地址。"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "啟用以下 VPN 設定，輕鬆保持連線："
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "儲存功能無法支援此瀏覽器，我們需要此支援以啟用訊息內容搜尋。"
@@ -8368,6 +8415,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "此寄件人的公開金鑰尚未信任。"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "此因為您電子郵件主旨行包含密碼重設關鍵字而顯示。"
@@ -8642,6 +8692,9 @@
       "When working remotely": [
         "當遠端工作時"
       ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "當您連線到 VPN 時，它會使用加密技術來隱藏您的 IP 位址（分配給您裝置的唯一代碼）。"
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
       ],
@@ -8677,6 +8730,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "您將要開啟預設瀏覽器並造訪："
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
       ],
       "You are currently signed in as ${ username }.": [
         "您目前已登入為 ${ username }。"
@@ -8732,11 +8788,20 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
+      "You have ${ totalLabel } in your inbox.": [
+        "您的收件匣中有 ${ totalLabel }。"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 類別中有 **${ count } 則對話**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "您有 **${ count } 則往來對話** 已標上此標籤"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 類別中有 **${ count } 則訊息**"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"
@@ -8749,6 +8814,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
+      ],
+      "You have no conversations in this category": [
+        "此類別中沒有任何對話"
+      ],
+      "You have no messages in this category": [
+        "此類別中沒有任何訊息"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "您的電郵未有加上主旨。無論如何，您仍要傳送郵件嗎？"
@@ -8764,6 +8835,12 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "您已選取在 ${ categoryLabel } 類別中的 **${ checked } 則對話**"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "您已選取在 ${ categoryLabel } 類別中的 **${ checked } 則訊息**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "您從此資料夾選取了 **${ count } 則往來對話**"
@@ -8854,6 +8931,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的網際網路服務供應商可以監控並有時出售您的資料，甚至限制您可以存取的網站。"
       ],
       "Your IP": [
         "您的 IP"
@@ -8968,6 +9048,9 @@
       ],
       "Fallback": [
         "後備"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "已廢止"
@@ -9736,6 +9819,9 @@
       "Newsletters": [
         "電子報"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "電子報 - 新聞、編輯電子郵件和非促銷內容"
+      ],
       "No label found": [
         "找不到標籤"
       ],
@@ -9823,8 +9909,14 @@
       "Primary": [
         "主要"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "主要 - 個人和工作電子郵件，以及重要更新"
+      ],
       "Promotions": [
         "優惠活動"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "促銷 - 優惠、促銷和行銷電子郵件"
       ],
       "Proration": [
         "按比例分配後"
@@ -9891,6 +9983,9 @@
       ],
       "Social": [
         "社群網路"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "社群 - 社群媒體更新、活動和訊息"
       ],
       "Social media updates and activity": [
         "社交媒體更新和活動"
@@ -9967,6 +10062,9 @@
       "Transactions": [
         "交易記錄"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "交易 - 回條、預訂、帳單和訂單"
+      ],
       "Undisclosed Recipients": [
         "隱名收件者"
       ],
@@ -9978,6 +10076,9 @@
       ],
       "Updates": [
         "更新"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "更新 - 自動確認、警示和帳號更新"
       ],
       "Upload picture": [
         "上載圖像"
@@ -11276,7 +11377,7 @@
         "保管庫共享 (至多 ${ n } 人)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "與最多 ${ n } 個人分享保管庫"
+        "至多可與 ${ n } 個人共用保管庫"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN 附帶廣告攔截器及惡意軟體防護"
@@ -11890,6 +11991,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "在110 多個國家提供極速 VPN 伺服器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding List Placeholder": {
@@ -12111,6 +12215,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -13285,6 +13392,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -13569,6 +13685,9 @@
       "Browse securely": [
         "安全地瀏覽"
       ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
+      ],
       "Get unlimited aliases": [
         "取得無限別名"
       ],
@@ -13674,6 +13793,9 @@
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "保持您的密碼安全和整齊於多個保管庫"
@@ -13978,6 +14100,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 可讓您存取 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能。內建隱私保護，確保您的資料和身分安全無虞，讓您可以放心使用。"
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } 為您提供所有應用程式、所有功能、搶先體驗新版本，以及您掌握資料及其安全性所需的一切。"
@@ -14342,7 +14467,7 @@
         "${ elementsCount } 則訊息已不再歸屬 ${ labelName }。"
       ],
       "${ elementsCount } message removed from Starred.": [
-        "已移除 ${ elementsCount } 則訊息的星號。"
+        "${ elementsCount } 則訊息已移除星號。"
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
@@ -14499,6 +14624,9 @@
       ],
       "Move ${ selectionCount } message": [
         "移動 ${ selectionCount } 封郵件"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "已移至 ${ label }。未來類似的訊息將會分類到此處。"
       ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
@@ -15173,9 +15301,6 @@
       "Help center": [
         "說明中心"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "協助形塑 ${ MAIL_APP_NAME } 電子郵件分類的未來"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "使用${ PASS_APP_NAME }隱藏您的電子郵件"
       ],
@@ -15233,6 +15358,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
+      ],
       "Label as": [
         "套用標籤"
       ],
@@ -15256,6 +15384,12 @@
       ],
       "Mailing list": [
         "郵寄清單"
+      ],
+      "Make a secure connection your default": [
+        "將安全連線設為您的預設設定"
+      ],
+      "Make Categories your own": [
+        "打造專屬的類別"
       ],
       "Mark all messages as read": [
         "標記所有訊息為已讀"
@@ -15362,6 +15496,9 @@
       "New message": [
         "撰寫"
       ],
+      "New messages": [
+        "新訊息"
+      ],
       "Newsletters": [
         "電子報"
       ],
@@ -15439,6 +15576,9 @@
       ],
       "Payment verification": [
         "付款驗證"
+      ],
+      "Personalize your Categories": [
+        "個人化您的類別"
       ],
       "Phone numbers": [
         "手機號碼"
@@ -15701,6 +15841,9 @@
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
       "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
         "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
@@ -15752,6 +15895,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
       ],
+      "What can a VPN protect you from?": [
+        "VPN 可以保護您免受什麼威脅？"
+      ],
       "What is a VPN?": [
         "甚麼是 VPN?"
       ],
@@ -15763,6 +15909,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "您現在可創建無上限標籤和資料夾"
+      ],
+      "You're in control": [
+        "由您掌控"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
@@ -15857,6 +16006,9 @@
       "Load image": [
         "載入圖像"
       ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
       ],
@@ -15890,8 +16042,14 @@
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ]
     },
     "tooltip": {

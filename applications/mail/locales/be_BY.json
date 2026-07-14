@@ -1455,9 +1455,6 @@
       "Start setup": [
         "Пачаць наладжванне"
       ],
-      "Start testing": [
-        "Пачаць тэсціраванне"
-      ],
       "Stay": [
         "Застацца"
       ],
@@ -1743,6 +1740,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Адкрыць у ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Наладзіць катэгорыі"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Next": [
+        "Далей"
+      ],
+      "Not now": [
+        "Не цяпер"
+      ],
+      "Skip": [
+        "Прапусціць"
       ]
     },
     "Actions message": {
@@ -4232,8 +4246,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "З'яўленне блакітнай кропкі сімвалізуе аб тым, што ў катэгорыі ёсць непрачытаныя паведамленні з моманту вашага апошняга наведвання."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Дадавайце або выдаляйце катэгорыі, кіруйце апавяшчэннямі і рэгулюйце свае налады ў наладах, калі вам гэта неабходна."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Дадавайце або выдаляйце катэгорыі, кіруйце апавяшчэннямі або цалкам адключайце іх у наладах, калі вам будзе гэта неабходна."
       ],
       "Also included": [
         "Таксама ўключае"
@@ -4316,9 +4339,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Проста перамясціце ліст у слушную катэгорыю, калі ён трапіў не туды. Правы націск па лісту дазволіць выбраць для яго новую катэгорыю або проста перацягніце яго ў тую катэгорыю, якой ён належыць."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
@@ -4348,6 +4368,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Націсніце правай кнопкай мышы па лісту і выберыце \"Перамясціць у\" або перацягніце яго ў іншую катэгорыю. Аналагічныя лісты будуць сартавацца там у будучыні."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Адпраўляйце і атрымлівайце паведамленні Gmail наўпрост у ${ MAIL_APP_NAME }. Падключыце свой адрас у ${ addressesSettingsLink }."
@@ -4516,9 +4539,6 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Вы адзін з першых сярод тых, хто паспрабуе нашы новыя катэгорыі перад іх запускам. Вашы водгукі дапамогуць удасканаліць сартаванне лістоў у Proton Mail для кожнага карыстальніка."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
@@ -5485,6 +5505,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Нумар ПДВ павінен пачынацца з ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
@@ -9247,6 +9270,9 @@
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
       ],
@@ -10212,6 +10238,12 @@
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
       "Expires": [
         "Дзейнічае да"
       ],
@@ -10470,6 +10502,9 @@
       "Original link": [
         "Арыгінальная спасылка"
       ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
       "Participants": [
         "Удзельнікі"
       ],
@@ -10548,6 +10583,9 @@
       "Region": [
         "Вобласць"
       ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
       "Remember my choice": [
         "Запомніць мой выбар"
       ],
@@ -10607,6 +10645,9 @@
       ],
       "Start date": [
         "Дата пачатку"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
       ],
       "State": [
         "Штат"
@@ -10694,6 +10735,9 @@
       ],
       "URL": [
         "URL-адрас"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -11321,6 +11365,15 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
       "Fw:": [
         "Пераслаць:"
       ],
@@ -11329,6 +11382,9 @@
       ],
       "Re:": [
         "Адказаць:"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
@@ -16384,9 +16440,6 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Дапамажыце вызначыць будучыню катэгорый электроннай пошты ў ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Схавайце сваю электронную пошту з дапамогай ${ PASS_APP_NAME }"
       ],
@@ -16482,6 +16535,9 @@
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
+      ],
+      "Make Categories your own": [
+        "Стварыце свае ўласныя катэгорыі"
       ],
       "Mark all messages as read": [
         "Пазначыць усе паведамленні як прачытаныя"
@@ -16591,6 +16647,9 @@
       "New message": [
         "Новае паведамленне"
       ],
+      "New messages": [
+        "Новыя паведамленні"
+      ],
       "Newsletters": [
         "Рассылкі"
       ],
@@ -16668,6 +16727,9 @@
       ],
       "Payment verification": [
         "Праверка плацяжу"
+      ],
+      "Personalize your Categories": [
+        "Персаналізацыя вашых катэгорый"
       ],
       "Phone numbers": [
         "Нумары тэлефонаў"
@@ -17007,6 +17069,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
+      ],
+      "You're in control": [
+        "Цяпер вы кантралюеце сітуацыю"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"

@@ -1447,9 +1447,6 @@
       "Start setup": [
         "Starta inställning"
       ],
-      "Start testing": [
-        "Börja testa"
-      ],
       "Stay": [
         "Stanna"
       ],
@@ -1731,6 +1728,23 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Öppna i ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Anpassa kategorier"
+      ],
+      "Got it": [
+        "Jag förstår"
+      ],
+      "Next": [
+        "Nästa"
+      ],
+      "Not now": [
+        "Inte nu"
+      ],
+      "Skip": [
+        "Hoppa över"
       ]
     },
     "Actions message": {
@@ -4169,8 +4183,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "En blå prick visas när en kategori har olästa meddelanden sedan ditt senaste besök."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lägg till mappar och filer i ${ DRIVE_APP_NAME } och bjud in gruppmedlemmar att visa eller redigera."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Lägg till eller ta bort kategorier, hantera aviseringar och anpassa din konfiguration när som helst i inställningar."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Lägg till eller ta bort kategorier, hantera aviseringar eller stäng av dem helt – när som helst i Inställningar."
       ],
       "Also included": [
         "Även inkluderat"
@@ -4253,9 +4276,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
       ],
-      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Om ett meddelande visas i fel kategori flyttar du det helt enkelt till rätt kategori. Högerklicka på ett meddelande för att välja en ny kategori, eller dra och släpp det där det hör hemma."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
       ],
@@ -4283,6 +4303,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Högerklicka på ett e-postmeddelande och välj ”Flytta till”, eller dra och släpp det i en annan kategori. Liknande e-postmeddelanden kommer att sorteras dit automatiskt i framtiden."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Skicka och ta emot Gmail-meddelanden direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
@@ -4439,9 +4462,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
-      ],
-      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Du är bland de första som får prova vår nya kategorivy innan den lanseras. Din feedback hjälper till att förbättra hur Proton Mail sorterar e-post för alla."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -5383,6 +5403,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Momsregistreringsnummer måste börja med ${ prefixes }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
@@ -8958,6 +8981,9 @@
       "You are about to open your default browser and visit:": [
         "Du är på väg att öppna din standardwebbläsare och besöka:"
       ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
       "You are currently signed in as ${ username }.": [
         "Du är för närvarande inloggad som ${ username }."
       ],
@@ -10069,6 +10095,9 @@
       "Navigation": [
         "Navigering"
       ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
       "New password": [
         "Nytt lösenord"
       ],
@@ -10077,6 +10106,9 @@
       ],
       "Newsletters": [
         "Nyhetsbrev"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhetsbrev - Nyheter, redaktionell e-post och icke-kommersiellt innehåll"
       ],
       "No label found": [
         "Ingen etikett hittades"
@@ -10116,6 +10148,9 @@
       ],
       "Original link": [
         "Originallänk"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
       ],
       "Participants": [
         "Deltagare"
@@ -10165,8 +10200,14 @@
       "Primary": [
         "Primär"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primär - Personliga e-postmeddelanden och jobb-e-post, samt viktiga uppdateringar"
+      ],
       "Promotions": [
         "Kampanjer"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Erbjudanden - Erbjudanden, kampanjer och marknadsförings-e-post"
       ],
       "Proration": [
         "Proportionell beräkning"
@@ -10236,6 +10277,9 @@
       ],
       "Social": [
         "Socialt"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Socialt - Uppdateringar, aktivitet och meddelanden från sociala medier"
       ],
       "Social media updates and activity": [
         "Uppdateringar och aktivitet i sociala medier"
@@ -10329,6 +10373,9 @@
       ],
       "Updates": [
         "Uppdateringar"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Uppdateringar - Automatiska bekräftelser, aviseringar och kontouppdateringar"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -10862,6 +10909,9 @@
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-användarplatser"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
@@ -10937,6 +10987,9 @@
     "Message": {
       "Fw:": [
         "Vb:"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Den ${ date }, ${ senderString } skrev:"
@@ -15744,9 +15797,6 @@
       "Help center": [
         "Hjälpcenter"
       ],
-      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
-        "Hjälp till att forma framtiden för e-postkategorier i ${ MAIL_APP_NAME }"
-      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dölj din e-post med ${ PASS_APP_NAME }"
       ],
@@ -15838,6 +15888,9 @@
       ],
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"
+      ],
+      "Make Categories your own": [
+        "Gör kategorier till dina egna"
       ],
       "Mark all messages as read": [
         "Markera alla meddelanden som lästa"
@@ -15947,6 +16000,9 @@
       "New message": [
         "Nytt meddelande"
       ],
+      "New messages": [
+        "Nya meddelanden"
+      ],
       "Newsletters": [
         "Nyhetsbrev"
       ],
@@ -16024,6 +16080,9 @@
       ],
       "Payment verification": [
         "Betalningsverifiering"
+      ],
+      "Personalize your Categories": [
+        "Personifiera dina kategorier"
       ],
       "Phone numbers": [
         "Telefonnummer"
@@ -16359,6 +16418,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
+      ],
+      "You're in control": [
+        "Du har kontrollen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
