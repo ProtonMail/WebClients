@@ -1,0 +1,66 @@
+:root {
+	--docs-editor-width: 816px;
+}
+
+.docs-layout-grid {
+	--left-panel-width: max(0px, calc((100% - var(--docs-editor-width)) / 2));
+
+	grid-template-rows: 1fr;
+	overflow: hidden scroll;
+
+	@media (width >= 1024px) {
+		grid-template-columns: var(--left-panel-width) minmax(0, 1fr);
+	}
+
+	@media (width <= 1023px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.docs-layout-left-panel {
+	grid-row: 1;
+
+	@media (width >= 1024px) {
+		grid-column: 1 / 2;
+	}
+
+	@media (width <= 1023px) {
+		display: none;
+	}
+}
+
+.docs-layout-right-panel {
+	grid-row: 1;
+
+	--right-panel-padding: max(0px, calc(100% - var(--docs-editor-width)));
+
+	@media (width >= 1024px) {
+		grid-column: 2 / 3;
+	}
+
+	@media (width <= 1023px) {
+		grid-column: 1;
+
+		--right-panel-padding: 0px;
+	}
+}
+
+.docs-layout-grid.user-resized .docs-layout-right-panel {
+	--right-panel-padding: calc((100% + var(--left-panel-width) - var(--docs-editor-width)) / 2);
+}
+
+@media print {
+	.docs-layout-grid {
+		--left-panel-width: max(0px, calc((100% - var(--docs-editor-width)) / 2)) !important;
+
+		overflow: visible !important;
+	}
+
+	.docs-layout-grid .docs-layout-right-panel {
+		--right-panel-padding: max(0px, calc(100% - var(--docs-editor-width))) !important;
+	}
+
+	.table-of-contents {
+		display: none !important;
+	}
+}
