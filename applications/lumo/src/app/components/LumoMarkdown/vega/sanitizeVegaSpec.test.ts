@@ -138,6 +138,56 @@ describe('sanitizeVegaSpec', () => {
         expect(sanitizeVegaSpec(spec)).toMatchObject({ mark: { type: 'bar', color: PROTON_BAR_COLOR } });
     });
 
+    it('repairs double-wrapped objects in data.values arrays', () => {
+        const spec = `{
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "data": {
+                "values": [
+                    { "hour": 0, "rate": 0.41 },
+                    { "hour": 14, "rate": 1.34 }
+                ]
+            },
+            "layer": [
+                {
+                    "mark": { "type": "bar" },
+                    "encoding": {
+                        "x": { "field": "hour", "type": "ordinal" },
+                        "y": { "field": "rate", "type": "quantitative" }
+                    }
+                },
+                {
+                    "data": { "values": [{ { "threshold": 0.46 } }] },
+                    "mark": { "type": "rule" },
+                    "encoding": {
+                        "y": { "field": "threshold", "type": "quantitative" }
+                    }
+                }
+            ]
+        }`;
+
+        const sanitized = sanitizeVegaSpec(spec) as {
+            layer?: { data?: { values?: { threshold?: number }[] } }[];
+        };
+
+        expect(sanitized.layer?.[1]?.data?.values).toEqual([{ threshold: 0.46 }]);
+    });
+
+    it('does not break valid nested objects inside array values', () => {
+        const spec = JSON.stringify({
+            data: { values: [{ metrics: { rate: 0.46, count: 3 } }] },
+            mark: 'bar',
+            encoding: {
+                x: { field: 'metrics', type: 'nominal' },
+                y: { field: 'count', type: 'quantitative' },
+            },
+        });
+
+        expect(sanitizeVegaSpec(spec)).toMatchObject({
+            data: { values: [{ metrics: { rate: 0.46, count: 3 } }] },
+        });
+    });
+
     it('forces responsive width so charts fill the card', () => {
         const spec = JSON.stringify({
             width: 480,

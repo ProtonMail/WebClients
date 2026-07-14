@@ -1044,13 +1044,15 @@ function valuesAreStoredAsPercentPoints(values: number[]): boolean {
     return true;
 }
 
-function decimalFormatForPercentValues(values: number[]): string {
+function decimalFormatForPercentValues(values: number[], originalFormat?: unknown): string {
     const max = Math.max(...values);
-    if (max <= 1.5) {
-        return '.1f';
+    const base = max <= 1.5 ? '.1f' : max >= 10 ? '.0f' : '.1f';
+
+    if (typeof originalFormat === 'string' && originalFormat.startsWith('+')) {
+        return `+${base}`;
     }
 
-    return max >= 10 ? '.0f' : '.1f';
+    return base;
 }
 
 function ensurePercentLabel(channel: Record<string, unknown>, field: string): void {
@@ -1081,7 +1083,7 @@ function fixChannelPercentFormat(channel: Record<string, unknown>, field: string
         return;
     }
 
-    channel.format = decimalFormatForPercentValues(values);
+    channel.format = decimalFormatForPercentValues(values, channel.format);
     ensurePercentLabel(channel, field);
 
     const axis = channel.axis;
@@ -1133,7 +1135,9 @@ function visitEncodingFormatChannels(
 export function normalizeStoredPercentFormats(spec: Record<string, unknown>): void {
     visitChartNodesForNormalize(spec, (node) => {
         visitEncodingFormatChannels(node, (channel, field) => {
-            fixChannelPercentFormat(channel, field, numericValuesForField(node, field));
+            const nodeValues = numericValuesForField(node, field);
+            const values = nodeValues.length > 0 ? nodeValues : numericValuesForField(spec, field);
+            fixChannelPercentFormat(channel, field, values);
         });
     });
 }

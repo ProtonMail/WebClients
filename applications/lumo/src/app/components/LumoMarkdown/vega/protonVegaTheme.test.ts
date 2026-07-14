@@ -254,6 +254,12 @@ describe('protonVegaTheme', () => {
     it('applies semantic product colours when color encodes product', () => {
         const spec: Record<string, unknown> = {
             mark: 'bar',
+            data: {
+                values: [
+                    { product: 'Mail', sessions: 920 },
+                    { product: 'Lumo', sessions: 48 },
+                ],
+            },
             encoding: {
                 x: { field: 'week', type: 'ordinal' },
                 y: { field: 'sessions', type: 'quantitative' },
@@ -271,6 +277,38 @@ describe('protonVegaTheme', () => {
             '#34C77B',
             '#4F8EF7',
             '#F26B4D',
+        ]);
+    });
+
+    it('uses categorical colours when route field encodes API paths, not Proton products', () => {
+        const spec: Record<string, unknown> = {
+            mark: 'bar',
+            data: {
+                values: [
+                    { route: '/v1/embed', errors: 42 },
+                    { route: '/v1/chat', errors: 18 },
+                ],
+            },
+            encoding: {
+                x: { field: 'errors', type: 'quantitative' },
+                y: { field: 'route', type: 'ordinal' },
+                color: { field: 'route', type: 'nominal', legend: null },
+            },
+        };
+
+        applyProtonMarkColors(spec);
+
+        const color = (spec.encoding as Record<string, unknown>).color as Record<string, unknown>;
+        expect((color.scale as Record<string, unknown>).domain).toBeUndefined();
+        expect((color.scale as Record<string, unknown>).range).toEqual([
+            '#6D4AFF',
+            '#34C77B',
+            '#4F8EF7',
+            '#F26B4D',
+            '#C494FF',
+            '#A0B4C8',
+            '#F2B84B',
+            '#43239B',
         ]);
     });
 });
