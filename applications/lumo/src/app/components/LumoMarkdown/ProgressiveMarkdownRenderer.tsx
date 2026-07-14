@@ -22,7 +22,7 @@ import { LumoMetricCardRow } from './card/LumoMetricCardRow';
 import { tryParseCardSpec } from './card/parseCardSpec';
 import { renderCardAwareSegment } from './card/renderCardSegments';
 import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
-import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from './lumoMarkdownCardShell';
+import { LUMO_MARKDOWN_CARD_SHELL_CLASS, TRAILING_VEGA_CHART_KEY } from './lumoMarkdownCardShell';
 import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
 import { VegaChartLoading } from './vega/VegaChartLoading';
@@ -469,7 +469,8 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
         }, [isIos(), isIpad(), isSafari()]);
         return (
             <div className="progressive-markdown-content markdown-rendering" ref={messageContentContainerRef}>
-                {renderUnits.map((unit) => {
+                {renderUnits.map((unit, unitIndex) => {
+                    const isTrailingUnit = unitIndex === renderUnits.length - 1;
                     if (unit.kind === 'metric-row') {
                         return (
                             <div key={unit.key}>
@@ -534,8 +535,10 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                     }
 
                     if (openVegaFence) {
+                        const wrapperKey = isTrailingUnit ? TRAILING_VEGA_CHART_KEY : block.key;
+
                         return (
-                            <div key={block.key} className={className}>
+                            <div key={wrapperKey} className={className}>
                                 {openVegaFence.prefix.trim() ? (
                                     <MarkdownBlock
                                         content={openVegaFence.prefix}
@@ -545,7 +548,13 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                                         message={message}
                                     />
                                 ) : null}
-                                <VegaChartLoading />
+                                <Suspense fallback={<VegaChartLoading />}>
+                                    <VegaLiteChart
+                                        code={openVegaFence.body}
+                                        language={openVegaFence.language || 'vega-lite'}
+                                        deferRender
+                                    />
+                                </Suspense>
                             </div>
                         );
                     }
@@ -554,8 +563,10 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                         singleFence &&
                         shouldRenderAsVegaChart(singleFence.language, singleFence.code)
                     ) {
+                        const wrapperKey = isTrailingUnit ? TRAILING_VEGA_CHART_KEY : block.key;
+
                         return (
-                            <div key={block.key}>
+                            <div key={wrapperKey}>
                                 <Suspense fallback={<VegaChartLoading />}>
                                     <VegaLiteChart
                                         code={singleFence.code}

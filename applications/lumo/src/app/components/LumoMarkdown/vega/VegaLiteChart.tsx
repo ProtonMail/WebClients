@@ -5,7 +5,7 @@ import type { VisualizationSpec } from 'vega-embed';
 import embed, { type Result } from 'vega-embed';
 import { expressionInterpreter } from 'vega-interpreter';
 
-import { LUMO_MARKDOWN_CARD_SHELL_CLASS } from '../lumoMarkdownCardShell';
+import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';
 import { useLumoTheme } from '../../../providers';
 import { getRenderedSpecJson } from './chartSpecDisplay';
 import { getChartDownloadFilename } from './chartDownloadFilename';
@@ -13,6 +13,7 @@ import { createSecureVegaLoader } from './secureVegaLoader';
 import { VegaChartDownloadButton } from './VegaChartDownloadButton';
 import { VegaChartSourceButton, VegaChartSpecPanel } from './VegaChartSpecInspector';
 import { getProtonVegaConfig, isDarkSurface } from './protonVegaTheme';
+import { shouldHoldVegaChartLoading } from './detectVegaSpec';
 import { sanitizeVegaSpec } from './sanitizeVegaSpec';
 import { VegaChartLoadingOverlay } from './VegaChartLoading';
 
@@ -21,6 +22,8 @@ import './VegaLiteChart.scss';
 interface VegaLiteChartProps {
     code: string;
     language: string;
+    /** Hold the loading shell while an upstream Vega fence is still streaming. */
+    deferRender?: boolean;
 }
 
 const FALLBACK_CHART_WIDTH = 480;
@@ -140,7 +143,7 @@ async function embedChart(
  * - A custom loader rejects all network/file loads so only inline `data.values` work.
  * - Toolbar actions (export/source menu) are disabled; custom download/source controls are provided instead.
  */
-export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
+export const VegaLiteChart = ({ code, language, deferRender = false }: VegaLiteChartProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const embedResultRef = useRef<Result | null>(null);
     const { isDarkLumoTheme } = useLumoTheme();
@@ -160,6 +163,19 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
     useEffect(() => {
         const container = containerRef.current;
         if (!container) {
+            return;
+        }
+
+        if (shouldHoldVegaChartLoading(code, deferRender)) {
+            setIsRendering(true);
+            setRenderError(null);
+            setSanitizeError(null);
+            setRenderedSpecJson(null);
+            setCanDownload(false);
+            setSpecSourceExpanded(false);
+            embedResultRef.current?.view.finalize();
+            embedResultRef.current = null;
+            container.replaceChildren();
             return;
         }
 
@@ -185,6 +201,11 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
             setRenderedSpecJson(sanitized.json);
 
             if (!sanitized.json) {
+                if (shouldHoldVegaChartLoading(code, deferRender)) {
+                    setIsRendering(true);
+                    return;
+                }
+
                 setRenderError(sanitized.error ?? 'Failed to sanitize Vega spec');
                 setIsRendering(false);
                 setSpecSourceExpanded(true);
@@ -266,17 +287,18 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
             embedResultRef.current?.view.finalize();
             embedResultRef.current = null;
         };
-    }, [code, isDarkLumoTheme]);
+    }, [code, deferRender, isDarkLumoTheme]);
 
-    const showActions = !isRendering;
-    const showFailedState = !!renderError || !!sanitizeError;
+    const isPendingChart = shouldHoldVegaChartLoading(code, deferRender);
+    const showActions = !isRendering && !isPendingChart;
+    const showFailedState = !isPendingChart && (!!renderError || !!sanitizeError) && !isRendering;
+    const failureMessage = renderError ?? sanitizeError;
+    const showLoading = isRendering || isPendingChart;
 
     return (
         <div
             className={clsx(
-                'vega-lite-chart relative overflow-hidden p-4 my-2 mb-5',
-                LUMO_MARKDOWN_CARD_SHELL_CLASS,
-                isRendering && 'border-none shadow-none',
+                LUMO_VEGA_CHART_SHELL_CLASS,
                 showFailedState && 'vega-lite-chart--failed'
             )}
         >
@@ -292,7 +314,10 @@ export const VegaLiteChart = ({ code, language }: VegaLiteChartProps) => {
                 </div>
             ) : null}
             {!showFailedState ? <div ref={containerRef} className="vega-lite-chart__viewport w-full" /> : null}
-            {isRendering ? <VegaChartLoadingOverlay /> : null}
+            {showFailedState && failureMessage ? (
+                <p className="vega-lite-chart__failure-summary m-0 pe-10 text-sm color-danger">{failureMessage}</p>
+            ) : null}
+            {showLoading ? <VegaChartLoadingOverlay /> : null}
             {showActions && specSourceExpanded ? (
                 <VegaChartSpecPanel
                     rawCode={code}

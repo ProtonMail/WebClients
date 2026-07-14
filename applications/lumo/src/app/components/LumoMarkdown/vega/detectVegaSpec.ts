@@ -61,6 +61,25 @@ export function looksLikeVegaSpecPartial(code: string): boolean {
     );
 }
 
+/** Keep the loading shell until a streamed fence has enough JSON to sanitize/render. */
+export function shouldHoldVegaChartLoading(code: string, deferRender = false): boolean {
+    if (deferRender) {
+        return true;
+    }
+
+    const trimmed = code.trim();
+    if (!trimmed) {
+        return true;
+    }
+
+    try {
+        JSON.parse(trimmed);
+        return false;
+    } catch {
+        return looksLikeVegaSpecPartial(trimmed) || !trimmed.endsWith('}');
+    }
+}
+
 export function shouldRenderAsVegaChart(language: string, code: string): boolean {
     if (isVegaLanguage(language)) {
         return true;

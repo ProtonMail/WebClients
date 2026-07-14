@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useEncryptedTextAnimation } from '../../../hooks/useEncryptedTextAnimation';
 import { LumoIcon, type IconName } from '../../LumoIcon/LumoIcon';
 
+import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';
+
 import './VegaLiteChart.scss';
 
 const CHART_ICONS: IconName[] = [
@@ -63,12 +65,10 @@ const VegaChartLoadingContent = () => {
     );
 };
 
-/** Standalone chart loading shell — must include `.vega-lite-chart` for layout/sizing. */
+/** Standalone chart loading shell — matches VegaLiteChart chrome for seamless transitions. */
 export const VegaChartLoading = () => (
     <div
-        className={clsx(
-            'vega-lite-chart vega-lite-chart--loading-only relative flex items-center justify-center border-none shadow-none bg-transparent'
-        )}
+        className={clsx(LUMO_VEGA_CHART_SHELL_CLASS, 'vega-lite-chart--loading-only flex items-center justify-center')}
         aria-busy="true"
         aria-live="polite"
     >

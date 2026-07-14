@@ -31,22 +31,29 @@ export {
 const DARK_AXIS = {
     ink: '#FFFFFF',
     inkDim: '#ADABA9',
-    inkFaint: '#6A6580',
+    inkFaint: '#8E8A9A',
     hairline: '#4A4658',
     grid: '#343140',
     purple: PROTON_PURPLE_MID,
 } as const;
 
+const DARK_SEQUENTIAL_RAMP = ['#2A2440', '#4A3878', '#6D4AFF', '#A780FF', '#DAC7FF'] as const;
+
 function readCssColor(element: Element | null | undefined, variable: string, fallback: string): string {
-    if (!element || typeof window === 'undefined') {
+    const target = element ?? document.documentElement;
+    if (typeof window === 'undefined') {
         return fallback;
     }
 
-    const value = window.getComputedStyle(element).getPropertyValue(variable).trim();
+    const value = window.getComputedStyle(target).getPropertyValue(variable).trim();
     return value || fallback;
 }
 
 export function isDarkSurface(element: Element | null | undefined): boolean {
+    if (typeof document !== 'undefined' && document.getElementById('lumo-dark-theme')) {
+        return true;
+    }
+
     if (!element || typeof window === 'undefined') {
         return false;
     }
@@ -57,25 +64,27 @@ export function isDarkSurface(element: Element | null | undefined): boolean {
         : background.startsWith('rgb') && background.includes('0, 0, 0');
 }
 
-function buildProtonConfigTokens(dark: boolean) {
+function buildProtonConfigTokens(dark: boolean, themeRoot?: Element | null) {
     if (dark) {
         return {
-            ink: readCssColor(undefined, '--text-norm', DARK_AXIS.ink),
-            inkDim: readCssColor(undefined, '--text-weak', DARK_AXIS.inkDim),
-            inkFaint: DARK_AXIS.inkFaint,
-            hairline: DARK_AXIS.hairline,
+            ink: readCssColor(themeRoot, '--text-norm', DARK_AXIS.ink),
+            inkDim: readCssColor(themeRoot, '--text-weak', DARK_AXIS.inkDim),
+            inkFaint: readCssColor(themeRoot, '--text-hint', DARK_AXIS.inkFaint),
+            hairline: readCssColor(themeRoot, '--border-weak', DARK_AXIS.hairline),
             grid: DARK_AXIS.grid,
             purple: DARK_AXIS.purple,
+            markStroke: readCssColor(themeRoot, '--background-norm', '#1C1B22'),
         };
     }
 
     return {
-        ink: PROTON_INK,
-        inkDim: PROTON_INK_DIM,
+        ink: readCssColor(themeRoot, '--text-norm', PROTON_INK),
+        inkDim: readCssColor(themeRoot, '--text-weak', PROTON_INK_DIM),
         inkFaint: PROTON_INK_FAINT,
         hairline: PROTON_HAIRLINE,
         grid: PROTON_PURPLE_TINT,
         purple: PROTON_PURPLE,
+        markStroke: '#ffffff',
     };
 }
 
@@ -84,12 +93,8 @@ function buildProtonConfigTokens(dark: boolean) {
  */
 export function getProtonVegaConfig(themeRoot?: Element | null): Config {
     const dark = isDarkSurface(themeRoot);
-    const tokens = buildProtonConfigTokens(dark);
-
-    if (themeRoot && !dark) {
-        tokens.ink = readCssColor(themeRoot, '--text-norm', PROTON_INK);
-        tokens.inkDim = readCssColor(themeRoot, '--text-weak', PROTON_INK_DIM);
-    }
+    const tokens = buildProtonConfigTokens(dark, themeRoot);
+    const sequentialRamp = dark ? [...DARK_SEQUENTIAL_RAMP] : [...PROTON_SEQUENTIAL_RAMP];
 
     return {
         background: 'transparent',
@@ -135,7 +140,7 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
             titleFontSize: 10.5,
             labelFontWeight: 400,
             titleFontWeight: 600,
-            labelColor: '#4A4560',
+            labelColor: tokens.inkDim,
             titleColor: tokens.ink,
             symbolSize: 90,
             symbolType: 'circle',
@@ -146,10 +151,12 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
         },
         range: {
             category: [...PROTON_CATEGORY_COLORS],
-            diverging: [PROTON_DRIVE_RED, PROTON_PURPLE_TINT, PROTON_PURPLE],
-            ramp: [...PROTON_SEQUENTIAL_RAMP],
-            heatmap: [...PROTON_SEQUENTIAL_RAMP],
-            ordinal: [PROTON_PURPLE, '#8B6BFF', PROTON_PURPLE_MID, PROTON_PURPLE_LIGHT, '#DAC7FF', PROTON_PURPLE_TINT],
+            diverging: [PROTON_DRIVE_RED, dark ? '#4A3878' : PROTON_PURPLE_TINT, PROTON_PURPLE],
+            ramp: sequentialRamp,
+            heatmap: sequentialRamp,
+            ordinal: dark
+                ? [PROTON_PURPLE_MID, '#8B6BFF', PROTON_PURPLE, PROTON_PURPLE_LIGHT, '#DAC7FF', '#4A3878']
+                : [PROTON_PURPLE, '#8B6BFF', PROTON_PURPLE_MID, PROTON_PURPLE_LIGHT, '#DAC7FF', PROTON_PURPLE_TINT],
         },
         line: { color: tokens.purple, strokeWidth: 2.25, interpolate: 'monotone' },
         trail: { color: tokens.purple, strokeWidth: 2 },
@@ -163,8 +170,8 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
             interpolate: 'monotone',
             line: { color: tokens.purple, strokeWidth: 2.25 },
         },
-        arc: { fill: tokens.purple, padAngle: 0.015, stroke: '#ffffff', strokeWidth: 1.5 },
-        rect: { fill: tokens.purple, cornerRadius: 2, stroke: '#ffffff', strokeWidth: 0.5 },
+        arc: { fill: tokens.purple, padAngle: 0.015, stroke: tokens.markStroke, strokeWidth: 1.5 },
+        rect: { fill: tokens.purple, cornerRadius: 2, stroke: tokens.markStroke, strokeWidth: 0.5 },
         tick: { color: tokens.purple, opacity: 0.7, thickness: 1.5, bandSize: 14 },
         boxplot: {
             box: { fill: PROTON_PURPLE_LIGHT, stroke: tokens.purple, strokeWidth: 1.5 },
@@ -182,7 +189,7 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
             ticks: { stroke: tokens.inkDim, strokeWidth: 1.5, size: 6 },
         },
         rule: { color: tokens.hairline, strokeWidth: 1 },
-        text: { color: '#4A4560', font: PROTON_FONT_BODY, fontSize: 10.5 },
+        text: { color: tokens.inkDim, font: PROTON_FONT_BODY, fontSize: 10.5 },
         view: { stroke: 'transparent', continuousWidth: 500, continuousHeight: 220 },
         concat: { spacing: 16 },
         facet: { spacing: 16 },
@@ -466,12 +473,12 @@ export function applyProtonMarkColors(spec: Record<string, unknown>): void {
         }
 
         if (markType === 'arc') {
-            mergeMark(node, { type: 'arc', fill: PROTON_PURPLE, padAngle: 0.015, stroke: '#ffffff', strokeWidth: 1.5 });
+            mergeMark(node, { type: 'arc', fill: PROTON_PURPLE, padAngle: 0.015, strokeWidth: 1.5 });
             return;
         }
 
         if (markType === 'rect') {
-            mergeMark(node, { type: 'rect', fill: PROTON_PURPLE, stroke: '#ffffff', strokeWidth: 0.5 });
+            mergeMark(node, { type: 'rect', fill: PROTON_PURPLE, strokeWidth: 0.5 });
         }
     });
 }

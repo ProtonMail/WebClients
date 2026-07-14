@@ -2,6 +2,7 @@ import {
     hasOpenVegaCodeFence,
     looksLikeVegaSpec,
     looksLikeVegaSpecPartial,
+    shouldHoldVegaChartLoading,
     shouldRenderAsVegaChart,
     splitAroundOpenVegaCodeFence,
 } from './detectVegaSpec';
@@ -92,5 +93,32 @@ describe('splitAroundOpenVegaCodeFence', () => {
 describe('looksLikeVegaSpecPartial', () => {
     it('detects partial chart JSON while streaming', () => {
         expect(looksLikeVegaSpecPartial('{\n  "width": 600,\n  "data": { "values": [')).toBe(true);
+    });
+});
+
+describe('shouldHoldVegaChartLoading', () => {
+    it('holds loading for empty or deferred chart code', () => {
+        expect(shouldHoldVegaChartLoading('')).toBe(true);
+        expect(shouldHoldVegaChartLoading('   ')).toBe(true);
+        expect(shouldHoldVegaChartLoading('{"mark":"bar"}', true)).toBe(true);
+    });
+
+    it('holds loading for partial specs that are not yet complete', () => {
+        const partial = '{\n  "$schema": "https://vega-lang.org/schema/v5",\n  "data": { "values": [';
+
+        expect(shouldHoldVegaChartLoading(partial)).toBe(true);
+    });
+
+    it('allows rendering once a spec looks complete', () => {
+        const code = JSON.stringify({
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            mark: 'line',
+            encoding: {
+                x: { field: 'week', type: 'ordinal' },
+                y: { field: 'dau', type: 'quantitative' },
+            },
+        });
+
+        expect(shouldHoldVegaChartLoading(code)).toBe(false);
     });
 });
