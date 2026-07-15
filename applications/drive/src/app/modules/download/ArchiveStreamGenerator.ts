@@ -53,15 +53,15 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize:
             const inFlightBytes = Object.values(downloadedBytesMap).reduce((acc, val) => acc + val, 0);
             onProgress(inFlightBytes, claimedSize);
         },
-        attachController(taskId: string, controller: DownloadController) {
+        attachController(taskId: string, controller: DownloadController, completionPromise: Promise<void>) {
             controllerByUid.set(taskId, controller);
 
-            const completionPromise = controller.completion().finally(() => {
+            const trackedCompletion = completionPromise.finally(() => {
                 completionPromises.delete(taskId);
                 controllerByUid.delete(taskId);
             });
 
-            completionPromises.set(taskId, completionPromise);
+            completionPromises.set(taskId, trackedCompletion);
         },
         // individual task completion
         waitForTaskCompletion(taskId: string): Promise<void> {
@@ -254,9 +254,9 @@ export class ArchiveStreamGenerator {
             await waitForUnsupportedFileDecision(this.downloadId, completeIndividualFile);
         }
 
-        void completeIndividualFile();
+        const completionPromise = completeIndividualFile();
 
-        this.tracker.attachController(taskId, controller);
+        this.tracker.attachController(taskId, controller, completionPromise);
 
         return {
             isFile: true,

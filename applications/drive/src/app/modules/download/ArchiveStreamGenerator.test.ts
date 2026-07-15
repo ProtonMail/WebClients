@@ -4,7 +4,7 @@ import { NodeType } from '@proton/drive/index';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
-import { DownloadStatus, useDownloadManagerStore } from './downloadManager.store';
+import { DownloadStatus, IssueStatus, useDownloadManagerStore } from './downloadManager.store';
 import type { DownloadQueueTask } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createDeferred, flushAsync, trackInstances } from './testUtils';
@@ -170,6 +170,68 @@ describe('ArchiveStreamGenerator', () => {
 
         const finalIteration = await generatorInstance.generator.next();
         expect(finalIteration.done).toBe(true);
+    });
+
+    it('should not fail the archive when a signature issue is approved', async () => {
+        const abortController = new AbortController();
+        const downloadControllerDeferred = createDeferred<void>();
+        const downloadController = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => downloadControllerDeferred.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => true),
+        };
+
+        const downloadToStream = jest.fn(() => downloadController);
+        const getFileDownloader = jest.fn(async () => ({
+            downloadToStream,
+            getClaimedSizeInBytes: jest.fn(() => 1024),
+        }));
+        getDownloadSdkMock.mockImplementation(() => ({ getFileDownloader }));
+
+        // Pre-approving the decision lets addAndWaitForManifestIssueDecision resolve
+        // immediately instead of polling for a modal decision that never comes in this test.
+        useDownloadManagerStore.setState((state) => {
+            const existing = state.queue.get('download-id');
+            if (!existing) {
+                return state;
+            }
+            const queue = new Map(state.queue);
+            queue.set('download-id', { ...existing, signatureIssueAllDecision: IssueStatus.Approved });
+            return { ...state, queue };
+        });
+
+        const schedulerInstance = schedulerTracker.Mock();
+        const node = createMockNodeEntity({
+            uid: 'file-signature',
+            name: { ok: true, value: 'signed.txt' },
+        });
+
+        async function* entries() {
+            yield node;
+        }
+
+        const generatorInstance = new ArchiveStreamGenerator({
+            entries: entries(),
+            onProgress: jest.fn(),
+            scheduler: schedulerInstance,
+            abortController,
+            parentPathByUid: new Map<string, string[]>([['file-signature', []]]),
+            downloadId: 'download-id',
+            malwareDetection: createMalwareDetectionMock(),
+        });
+
+        await flushAsync();
+        const scheduledTask = schedulerInstance._tasks[0];
+        const completion = scheduledTask.start();
+
+        const { done } = await generatorInstance.generator.next();
+        expect(done).toBe(false);
+
+        downloadControllerDeferred.reject(new Error('manifest signature mismatch'));
+
+        await expect(completion).resolves.toBeUndefined();
+        await expect(generatorInstance.controller.completion()).resolves.toBeUndefined();
     });
 
     it('should enqueue folder entries without accessing downloader', async () => {

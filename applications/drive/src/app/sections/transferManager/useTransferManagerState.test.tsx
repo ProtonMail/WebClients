@@ -7,6 +7,7 @@ import { type UploadItem, UploadStatus, useUploadQueueStore } from '@proton/driv
 import {
     type DownloadItem,
     DownloadStatus,
+    IssueStatus,
     useDownloadManagerStore,
 } from '../../modules/download/downloadManager.store';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
@@ -449,6 +450,42 @@ describe('useTransferManagerState', () => {
             const idsInOrder = result.current.items.map(({ id }) => id);
 
             expect(idsInOrder).toEqual(['empty-upload', 'finished-upload']);
+        });
+    });
+
+    describe('Integrity issue status', () => {
+        it('flags a finished download that had an approved integrity issue', () => {
+            addDownloadItems(
+                createDownloadItem({
+                    downloadId: 'download-integrity',
+                    status: DownloadStatus.Finished,
+                    signatureIssues: {
+                        'signed.txt': {
+                            name: 'signed.txt',
+                            nodeType: NodeType.File,
+                            issueStatus: IssueStatus.Approved,
+                            message: 'Signature issue',
+                        },
+                    },
+                })
+            );
+
+            const { result } = renderHook(() => useTransferManagerState());
+
+            expect(result.current.downloads[0].warningMessage).toBe('Data integrity check failed');
+        });
+
+        it('does not flag a finished download without integrity issues', () => {
+            addDownloadItems(
+                createDownloadItem({
+                    downloadId: 'download-clean',
+                    status: DownloadStatus.Finished,
+                })
+            );
+
+            const { result } = renderHook(() => useTransferManagerState());
+
+            expect(result.current.downloads[0].warningMessage).toBeUndefined();
         });
     });
 
