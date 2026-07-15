@@ -32,6 +32,8 @@ export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCa
     const hasMultiSessions = useSessions().length > 1;
 
     const commandToCopy = `export SSH_AUTH_SOCK=${socketPath ?? '~/.ssh/proton-pass-ssh-agent.sock'}`;
+    const gitSshCommand = 'git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"';
+    const gitSigningCommand = 'git config --global gpg.ssh.program "C:/Windows/System32/OpenSSH/ssh-keygen.exe"';
     const isWindowsBuild = BUILD_TARGET === 'win32';
 
     const form = useFormik<SSHAgentInstructionsValues>({
@@ -73,6 +75,19 @@ export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCa
                             <li>{c('Info').t`Set "Startup type" to Disabled, click OK.`}</li>
                         </ol>
                         <img src={windowsScreenshot} alt={c('Title').t`Screenshot of OpenSSH service on Windows`} />
+                        <div className="mt-4">
+                            {c('Info')
+                                .t`To make Git work with ${PASS_APP_NAME} SSH agent, Git must use Windows OpenSSH. This can be done by running this command:`}
+                        </div>
+                        <ClickToCopy value={gitSshCommand}>
+                            <code className="text-small bg-weak color-weak">{gitSshCommand}</code>
+                        </ClickToCopy>
+                        <div className="mt-4">
+                            {c('Info').t`If you sign your Git commits with your SSH key, also run this command:`}
+                        </div>
+                        <ClickToCopy value={gitSigningCommand}>
+                            <code className="text-small bg-weak color-weak">{gitSigningCommand}</code>
+                        </ClickToCopy>
                     </div>
                 )}
 
