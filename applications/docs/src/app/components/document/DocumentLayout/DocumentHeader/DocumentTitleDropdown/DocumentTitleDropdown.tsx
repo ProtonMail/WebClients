@@ -79,8 +79,8 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
-import { trashAndNotify } from '~/drive-sdk/trash'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
+import { reportTrashError, trashDocument as trashDocumentSDK } from '~/drive-sdk/trash'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -369,10 +369,13 @@ export function DocumentTitleDropdown({
       if (trashWithSDK) {
         const drive = getDrive()
         const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
-        await trashAndNotify(drive, createNotification, generateNodeUid(volumeId, linkId), () =>
-          authenticatedController.markAsRestored(),
-        )
-        authenticatedController.markAsTrashed()
+        try {
+          await trashDocumentSDK(drive, generateNodeUid(volumeId, linkId))
+          authenticatedController.markAsTrashed()
+        } catch (error) {
+          reportTrashError(error)
+          createNotification({ type: 'error', text: c('Notification').t`Failed to trash document` })
+        }
       } else {
         await authenticatedController.trashDocument()
       }
