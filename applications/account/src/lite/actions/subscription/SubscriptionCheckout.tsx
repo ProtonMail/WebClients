@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useAppName } from '@proton/account/appName';
 import CalendarDowngradeModal from '@proton/components/containers/payments/subscription/CalendarDowngradeModal';
@@ -44,7 +44,7 @@ const SubscriptionCheckoutWithPayments = ({
     const { initialize, plansMap, selectNewPlan } = usePayments();
     const api = useSilentApi();
     const app = useAppName();
-
+    const [paymentInitialized, setPaymentInitialized] = useState(false);
     const {
         shouldDisableCurrencySelection,
         availableCurrencies,
@@ -59,6 +59,7 @@ const SubscriptionCheckoutWithPayments = ({
     });
 
     const handleUnlimitedUpgrade = () => {
+        setPaymentInitialized(false);
         selectNewPlan({
             ...getPlanToCheck({
                 planIDs: {
@@ -67,7 +68,9 @@ const SubscriptionCheckoutWithPayments = ({
                 currency: checkoutModel.currency,
                 cycle: checkoutModel.cycle,
             }),
-        }).catch(noop);
+        })
+            .catch(noop)
+            .finally(() => setPaymentInitialized(true));
     };
     const {
         plusToPlusUpsellModal,
@@ -90,6 +93,7 @@ const SubscriptionCheckoutWithPayments = ({
         void (async () => {
             const shouldInitializePayments = await initializePlanTransition();
             if (shouldInitializePayments) {
+                setPaymentInitialized(false);
                 await initialize({
                     api,
                     paymentFlow: 'subscription',
@@ -102,7 +106,7 @@ const SubscriptionCheckoutWithPayments = ({
                         cycle: overrideCycle ?? checkoutModel.cycle,
                         planIDs: overridePlanIds ?? checkoutModel.planIDs,
                     },
-                });
+                }).finally(() => setPaymentInitialized(true));
             }
         })();
     }, []);
@@ -113,6 +117,7 @@ const SubscriptionCheckoutWithPayments = ({
                 hasSavedPaymentMethods={
                     !!(paymentFacade.methods.savedMethods && paymentFacade.methods.savedMethods.length > 0)
                 }
+                paymentInitialized={paymentInitialized}
                 availableCurrencies={availableCurrencies}
                 shouldDisableCurrencySelection={shouldDisableCurrencySelection}
                 onChangePlan={() => onStepChange(SUBSCRIPTION_STEPS.PLAN_SELECTION)}
