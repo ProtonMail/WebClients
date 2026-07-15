@@ -128,6 +128,8 @@ const MainContainer: FunctionComponent = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
+    const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
+
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -167,6 +169,7 @@ const MainContainer: FunctionComponent = () => {
         isSharedServerFeatureEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
+        isAlwaysOnVpnEnabled,
     };
 
     const organizationAppRoutes = getOrganizationAppRoutes({
