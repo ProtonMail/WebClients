@@ -1,4 +1,4 @@
-import { useAuthentication, useNotifications } from '@proton/components'
+import { useAuthentication, useConfirmActionModal, useNotifications } from '@proton/components'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -16,7 +16,7 @@ import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
-import { reportTrashError, trashAndNotify } from '~/drive-sdk/trash'
+import { deleteDocument, reportTrashError, trashAndNotify, restoreAndNotify } from '~/drive-sdk/trash'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -67,6 +67,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const { showSharingModal, sharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
+  const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
@@ -159,7 +160,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
         reportTrashError(error)
         createNotification({
           type: 'error',
-          text: c('Error').t`Failed to trash document.`,
+          text: c('Error').t`Failed to trash document`,
         })
         setCurrentlyTrashingId(undefined)
         return
@@ -179,7 +180,20 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const restore = useEvent(async (document: RecentDocumentsItem) => {
     setCurrentlyRestoringId(document.uniqueId())
-    await application.recentDocumentsService.restoreDocument(document)
+
+    if (trashWithSDK) {
+      try {
+        const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+        await restoreAndNotify(drive, createNotification, nodeUid)
+      } catch (error) {
+        reportTrashError(error)
+        createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+        return
+      }
+    } else {
+      await application.recentDocumentsService.restoreDocument(document)
+    }
+
     setCurrentlyRestoringId(undefined)
     RESTORED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_restored)
@@ -190,8 +204,36 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const deletePermanently = useEvent(async (document: RecentDocumentsItem) => {
-    await application.recentDocumentsService.deleteDocumentPermanently(document)
-    application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
+    if (trashWithSDK) {
+      const itemName = document.name
+      showConfirmDeleteModal({
+        title: c('Title').t`Delete permanently`,
+        submitText: c('Action').t`Delete permanently`,
+        message: c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`,
+        onSubmit: async () => {
+          const drive = getDrive()
+          try {
+            const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+            await deleteDocument(drive, nodeUid)
+          } catch (error) {
+            reportTrashError(error)
+            createNotification({
+              type: 'error',
+              text: c('Notification').t`Failed to delete document`,
+            })
+            return
+          }
+          createNotification({
+            type: 'success',
+            text: c('Notification').t`"Document deleted permanently`,
+          })
+          application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
+        },
+      })
+    } else {
+      await application.recentDocumentsService.deleteDocumentPermanently(document)
+      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
+    }
   })
 
   const value = useMemo(
@@ -237,6 +279,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       {children}
       {sharingModal}
       {moveItemsModal}
+      {confirmDeleteModal}
     </DocumentActionsContext.Provider>
   )
 }
