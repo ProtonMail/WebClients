@@ -235,6 +235,12 @@ const routesDefinition = {
                             to: '/shared-servers',
                         },
                         {
+                            id: 'organization.vpn.always-on',
+                            label: () => c('Title').t`Always-on VPN`,
+                            to: '/always-on-vpn',
+                            isVisible: ({ context }) => !!context.flags.B2BAlwaysOnEnabled,
+                        },
+                        {
                             id: 'organization.vpn.gateway-monitor',
                             label: () => c('Title').t`Gateway monitor`,
                             to: '/gateway-monitor',

@@ -54,6 +54,7 @@ export const getOrganizationAppRoutes = ({
         isZoomIntegrationEnabled = false,
         isProtonMeetIntegrationEnabled = false,
         isSharedServerFeatureEnabled = false,
+        isAlwaysOnVpnEnabled = false,
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
     } = flags;
@@ -277,6 +278,15 @@ export const getOrganizationAppRoutes = ({
                     id: 'servers',
                 },
             ],
+        },
+        alwaysOnVpn: {
+            id: 'alwaysOnVpn',
+            text: c('Title').t`Always-on VPN`,
+            description: c('Subtitle')
+                .t`Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.`,
+            to: '/always-on-vpn',
+            icon: 'vault',
+            available: isAlwaysOnVpnEnabled && canHaveOrganization && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
         },
         connectionEvents: {
             id: 'connectionEvents',
