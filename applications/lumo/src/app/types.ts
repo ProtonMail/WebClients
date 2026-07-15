@@ -429,6 +429,9 @@ export type MessagePriv = {
     // Suggested follow-up questions from the model
     suggestedQuestions?: string[];
 
+    /** Model id/hash that served this response (from SSE `model` field). */
+    modelID?: string;
+
     // Context compaction boundary. When set, this message is a "compaction marker"
     // rather than ordinary content: it records how the conversation was condensed
     // and is rendered as a divider in the UI. See CompactionMeta.
@@ -489,6 +492,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.reasoning === undefined || typeof value.reasoning === 'string') &&
         (value.reasoningChunks === undefined || Array.isArray(value.reasoningChunks)) &&
         (value.thinkingTimeline === undefined || Array.isArray(value.thinkingTimeline)) &&
+        (value.suggestedQuestions === undefined || Array.isArray(value.suggestedQuestions)) &&
+        (value.modelID === undefined || typeof value.modelID === 'string') &&
         (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null))
     );
 }
@@ -510,6 +515,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         reasoning,
         reasoningChunks,
         thinkingTimeline,
+        suggestedQuestions,
+        modelID,
         compaction,
     } = m;
     return {
@@ -523,6 +530,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         reasoning,
         reasoningChunks,
         thinkingTimeline,
+        suggestedQuestions,
+        modelID,
         compaction,
     };
 }
@@ -557,6 +566,8 @@ export function cleanMessage(message: Message): Message {
         reasoning,
         reasoningChunks,
         thinkingTimeline,
+        suggestedQuestions,
+        modelID,
         compaction,
     } = message;
     return {
@@ -577,6 +588,8 @@ export function cleanMessage(message: Message): Message {
         ...(reasoning !== undefined && { reasoning }),
         ...(reasoningChunks !== undefined && { reasoningChunks }),
         ...(thinkingTimeline !== undefined && { thinkingTimeline }),
+        ...(suggestedQuestions !== undefined && { suggestedQuestions }),
+        ...(modelID !== undefined && { modelID }),
         ...(compaction !== undefined && { compaction }),
     };
 }
@@ -625,6 +638,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.reasoning === undefined &&
         value.reasoningChunks === undefined &&
         value.thinkingTimeline === undefined &&
+        value.suggestedQuestions === undefined &&
+        value.modelID === undefined &&
         value.compaction === undefined
     );
 }
@@ -988,6 +1003,7 @@ export type FinishMessageAction = {
     content: string;
     status: Status;
     role: Role;
+    modelID?: string;
 };
 
 export type PopulateInitialStateAction = {

@@ -183,6 +183,8 @@ export type LumoStreamUsage = {
     remaining_limits?: LumoRemainingLimits;
     applied_limit_category?: string;
     image_limit_applied?: boolean;
+    /** Model id/hash that served the response (from SSE chunk `model` field). */
+    model?: string;
 };
 
 export type ChatCompletionsRequest = {

@@ -1,9 +1,9 @@
-import {createAction, createReducer} from '@reduxjs/toolkit';
-import {v4 as uuidv4} from 'uuid';
+import { createAction, createReducer } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
-import {appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks} from '../../../messageHelpers';
-import type {Priority} from '../../../remote/scheduler';
-import type {IdMapEntry, RemoteMessage} from '../../../remote/types';
+import { appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks } from '../../../messageHelpers';
+import type { Priority } from '../../../remote/scheduler';
+import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
 import type {
     ChunkAction,
     FinishMessageAction,
@@ -181,7 +181,7 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
         })
         .addCase(finishMessage, (state, action) => {
             const finishAction = action.payload;
-            const { messageId, content, status } = finishAction;
+            const { messageId, content, status, modelID } = finishAction;
             const message = state[messageId];
             if (!message) {
                 console.warn(`cannot modify message ${messageId}: not found in Redux state`);
@@ -195,35 +195,38 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             }
             message.placeholder = false;
             message.status = status;
+            if (modelID !== undefined) {
+                message.modelID = modelID;
+            }
         })
         .addCase(deleteAllMessages, () => {
             return EMPTY_MESSAGE_MAP;
         })
-        .addCase(pushMessageRequest, (state, action) => {
+        .addCase(pushMessageRequest, (state, _action) => {
             return state;
         })
-        .addCase(pushMessageSuccess, (state, action) => {
+        .addCase(pushMessageSuccess, (state, _action) => {
             return state;
         })
-        .addCase(pushMessageNoop, (state, action) => {
+        .addCase(pushMessageNoop, (state, _action) => {
             return state;
         })
-        .addCase(pushMessageNeedsRetry, (state, action) => {
+        .addCase(pushMessageNeedsRetry, (state, _action) => {
             return state;
         })
-        .addCase(pushMessageFailure, (state, action) => {
+        .addCase(pushMessageFailure, (state, _action) => {
             return state;
         })
-        .addCase(locallyRefreshMessageFromRemoteRequest, (state, action) => {
+        .addCase(locallyRefreshMessageFromRemoteRequest, (state, _action) => {
             return state;
         })
-        .addCase(pullMessageRequest, (state, action) => {
+        .addCase(pullMessageRequest, (state, _action) => {
             return state;
         })
-        .addCase(pullMessageSuccess, (state, action) => {
+        .addCase(pullMessageSuccess, (state, _action) => {
             return state;
         })
-        .addCase(pullMessageFailure, (state, action) => {
+        .addCase(pullMessageFailure, (state, _action) => {
             return state;
         });
 });
