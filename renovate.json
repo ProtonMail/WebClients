@@ -78,6 +78,11 @@
             "groupName": "ignore inbox-desktop snapcraft image",
             "matchPackageNames": ["harbor.protontech.ch/ghcr.io/canonical/snapcraft"],
             "enabled": false
+        },
+        {
+            "groupName": "ignore ariakit",
+            "matchPackageNames": ["@ariakit/*"],
+            "enabled": false
         }
     ]
 }
