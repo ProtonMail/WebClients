@@ -28,7 +28,7 @@ import { SetupOrganizationSection } from '@proton/components/containers/organiza
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { GatewaysSection } from '@proton/vpn/components/Gateways';
 
 import { FeatureAccessSection } from './components/FeatureAccessSection';
@@ -39,7 +39,6 @@ const OrganizationSettingsRouter = ({
     redirect,
     path,
     organizationAppRoutes,
-    user,
     organization,
     subscription,
     onOpenChat,
@@ -48,7 +47,6 @@ const OrganizationSettingsRouter = ({
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
-    user: UserModel;
     organization?: OrganizationExtended;
     subscription: MaybeFreeSubscription;
     onOpenChat?: () => void;
@@ -180,7 +178,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(activityMonitor) && (
                 <Route path={getSectionPath(path, activityMonitor)}>
                     <PrivateMainSettingsArea config={activityMonitor}>
-                        <ActivityMonitorDashboard user={user} organization={organization} subscription={subscription} />
+                        <ActivityMonitorDashboard organization={organization} subscription={subscription} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
