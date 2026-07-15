@@ -11,15 +11,21 @@ import type { AppVersion, DesktopVersion } from './DesktopVersion';
 import type { ProtocolSource } from './externalProtocols';
 import type { SerializedUrlRule } from './urls/builder';
 
-export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
-export type ElectronNotification = {
-    title: string;
-    body: string;
-    app: CHANGE_VIEW_TARGET;
-    elementID?: string;
-    messageID?: string;
-    labelID?: string;
-};
+const changeViewTarget = z.enum(['mail', 'calendar', 'account']);
+
+export const electronNotificationSchema = z
+    .object({
+        title: z.string().max(256),
+        body: z.string().transform((s) => s.slice(0, 1024)),
+        app: changeViewTarget,
+        elementID: z.string().max(256).optional(),
+        messageID: z.string().max(256).optional(),
+        labelID: z.string().max(256).optional(),
+    })
+    .strict();
+
+export type ElectronNotification = z.infer<typeof electronNotificationSchema>;
+export type CHANGE_VIEW_TARGET = z.infer<typeof changeViewTarget>;
 
 export type ESUserChoice = boolean | null;
 

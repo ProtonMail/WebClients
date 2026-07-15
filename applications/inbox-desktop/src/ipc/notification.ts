@@ -7,12 +7,14 @@ import {
     openMail,
 } from "../utils/view/viewManagement";
 import { ipcLogger, notificationLogger } from "../utils/log";
-import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
+import { ElectronNotification, electronNotificationSchema } from "@proton/shared/lib/desktop/desktopTypes";
 import { isWindows, isMac } from "../utils/helpers";
 import { parseURLParams } from "../utils/urls/urlHelpers";
 import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links";
 import { isWindowValid } from "../utils/view/windowUtils";
 import { getFileResourcePath } from "../constants/resources";
+import { escapeXML } from "../utils/xml";
+import { sentryReport } from "../utils/sentryReport";
 
 const notifications: Map<string, Notification> = new Map();
 
@@ -139,7 +141,7 @@ export const resetBadge = () => {
     setBadgeCount(0);
 };
 
-const windowsToastNotification = (
+export const windowsToastNotification = (
     payload: ElectronNotification,
     uuid: string,
     localID: string | null,
@@ -159,34 +161,46 @@ const windowsToastNotification = (
         urlParams.set(NOTIFICATION_ID_KEY, uuid);
         urlParams.set("localID", localID ?? "null");
 
-        // Replace & with &amp; for XML compatibility
-        params = `?${urlParams.toString().replace(/&/g, "&amp;")}`;
+        params = `?${urlParams.toString()}`;
     }
 
+    const launch = `${DEEPLINK_PROTOCOL}:${action}${params}`;
+
     return {
-        toastXml: `<toast launch="${DEEPLINK_PROTOCOL}:${action}${params}" activationType="protocol">
+        toastXml: `<toast launch="${escapeXML(launch)}" activationType="protocol">
                 <visual>
                 <binding template="ToastText02">
-                <text id="1">${title}</text>
-                <text id="2">${body}</text>
+                <text id="1">${escapeXML(title)}</text>
+                <text id="2">${escapeXML(body)}</text>
                 </binding>
                 </visual>
                 </toast>`,
     };
 };
 
-const filterSenisitve = (payload: ElectronNotification): string =>
+const filterSensitive = (payload: ElectronNotification): string =>
     `app="${payload.app}", labelID="${payload.labelID}", elementID="${payload.elementID}"`;
 
 export const showNotification = (payload: ElectronNotification) => {
+    const parsed = electronNotificationSchema.safeParse(payload);
+    if (!parsed.success) {
+        sentryReport.reportMessage("showNotification parsing failed", {
+            level: "error",
+            error: parsed.error,
+        });
+        notificationLogger.error("Ignoring invalid notification payload", parsed.error.flatten());
+        return;
+    }
+    const safePayload = parsed.data;
+
     const uuid: string = crypto.randomUUID();
     const localID = getCurrentLocalID();
-    notificationLogger.debug(`Notification request received ${uuid}, ${localID}:`, filterSenisitve(payload));
+    notificationLogger.debug(`Notification request received ${uuid}, ${localID}:`, filterSensitive(payload));
 
-    const { title, body, app, labelID, elementID, messageID } = payload;
+    const { title, body, app, labelID, elementID, messageID } = safePayload;
 
     const notification = new Notification(
-        isWindows ? windowsToastNotification(payload, uuid, localID) : { title, body },
+        isWindows ? windowsToastNotification(safePayload, uuid, localID) : { title, body },
     );
 
     notification.on("click", () => {
@@ -219,8 +233,16 @@ export const showNotification = (payload: ElectronNotification) => {
         notifications.delete(uuid);
     });
 
-    notification.on("failed", () => {
+    // This `.on` handler is only available on win32/darwin platforms.
+    notification.on("failed", (_, error) => {
         notificationLogger.info("Notification failed", uuid);
+        sentryReport.reportMessage("Notification failed", {
+            level: "warning",
+            error: new Error(error),
+            tags: {
+                notificationUUID: uuid,
+            },
+        });
         notifications.delete(uuid);
     });
 
