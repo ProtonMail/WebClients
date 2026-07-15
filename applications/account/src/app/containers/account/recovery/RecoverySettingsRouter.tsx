@@ -2,16 +2,10 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
-import { RecoveryContactSection } from '@proton/account/delegatedAccess/recoveryContact/RecoveryContactSection';
 import {
-    AccountRecoverySection,
-    DataRecoverySection,
-    OverviewSection,
     PrivateMainSettingsArea,
     PrivateMainSubSettingsArea,
     RecoveryPageTelemetry,
-    SessionRecoverySection,
     SettingsNavGroup,
 } from '@proton/components';
 import { getSectionPath, getSubroutePath } from '@proton/components/containers/layout/helper';
@@ -227,9 +221,7 @@ const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
     const recoveryPath = getSectionPath(path, recovery);
     const location = useLocation();
 
-    const showRedesign = !!recovery.subrouteGroups;
-
-    if (showRedesign && location.pathname === recoveryPath) {
+    if (location.pathname === recoveryPath) {
         const params = new URLSearchParams(location.search);
         const action = params.get('action');
         const { dataRecovery, advancedRecovery } = recovery.subrouteGroups;
@@ -265,25 +257,9 @@ const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
     }
 
     return (
-        <RecoverySettingsTelemetryVariantProvider value={showRedesign ? 'B' : 'A'}>
+        <RecoverySettingsTelemetryVariantProvider value={'B'}>
             <RecoveryPageTelemetry />
-            {showRedesign ? (
-                <RedesignRecoverySettingsRouter app={app} recovery={recovery} path={path} />
-            ) : (
-                <Switch>
-                    <Route exact path={recoveryPath}>
-                        <PrivateMainSettingsArea config={recovery}>
-                            <OverviewSection />
-                            <AccountRecoverySection />
-                            <DataRecoverySection />
-                            <RecoveryContactSection app={app} />
-                            <EmergencyContactSection app={app} />
-                            <SessionRecoverySection />
-                        </PrivateMainSettingsArea>
-                    </Route>
-                    <Redirect to={recoveryPath} />
-                </Switch>
-            )}
+            <RedesignRecoverySettingsRouter app={app} recovery={recovery} path={path} />
         </RecoverySettingsTelemetryVariantProvider>
     );
 };

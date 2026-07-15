@@ -208,7 +208,6 @@ const MainContainer = () => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMspEnabled = useFlag('MspEnabled');
-    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const isGenericUserSettingsEnabled = useFlag('GenericUserSettings');
 
     const { canUseCategoryView } = useCategoriesData();
@@ -318,7 +317,6 @@ const MainContainer = () => {
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isMspEnabled,
-        isRecoverySettingsRedesignEnabled,
         isMnemonicAvailable,
         isRecoveryFileAvailable,
     };

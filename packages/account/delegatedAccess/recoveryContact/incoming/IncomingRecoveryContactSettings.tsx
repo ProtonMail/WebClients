@@ -9,9 +9,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -153,38 +151,20 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
 };
 
 export const IncomingRecoveryContactSettings = () => {
-    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useIncomingController();
 
-    if (isRecoverySettingsRedesignEnabled) {
-        if (controller.loading || !controller.items.recoveryContacts.length) {
-            return null;
-        }
-
-        return (
-            <DashboardCard>
-                <DashboardCardContent>
-                    <h3 className="text-semibold text-rg mb-3">
-                        {c('emergency_access').t`People who have you as a recovery contact`}
-                    </h3>
-                    <IncomingTable controller={controller} />
-                </DashboardCardContent>
-            </DashboardCard>
-        );
+    if (controller.loading || !controller.items.recoveryContacts.length) {
+        return null;
     }
 
     return (
-        <>
-            <div className="text-semibold text-xl mb-3">
-                {c('emergency_access').t`People who have you as a recovery contact`}
-            </div>
-            {!controller.items.recoveryContacts.length && !controller.loading ? (
-                <SettingsParagraph>
-                    {c('emergency_access').t`You have not been designated as a recovery contact for anyone yet.`}
-                </SettingsParagraph>
-            ) : (
+        <DashboardCard>
+            <DashboardCardContent>
+                <h3 className="text-semibold text-rg mb-3">
+                    {c('emergency_access').t`People who have you as a recovery contact`}
+                </h3>
                 <IncomingTable controller={controller} />
-            )}
-        </>
+            </DashboardCardContent>
+        </DashboardCard>
     );
 };
