@@ -9,14 +9,22 @@ import { DENSITY } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
-import { selectConversationMode, selectIsSearching, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import {
+    selectConversationMode,
+    selectElementID,
+    selectIsSearching,
+    selectLabelID,
+} from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isElementMessage } from '../../helpers/elements';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
+import type { ESMessage } from '../../models/encryptedSearch';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
@@ -67,13 +75,18 @@ const MailboxListItems = ({
     const labelID = useMailSelector(selectLabelID);
     const isSearch = useMailSelector(selectIsSearching);
     const conversationMode = useMailSelector(selectConversationMode);
+    const elementID = useMailSelector(selectElementID);
 
     const { displayState, changeChecklistDisplay, canDisplayChecklist, byoeFlowInProgress } = useGetStartedChecklist();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const [mailSettings] = useMailSettings();
-    const { contentIndexingDone, esEnabled } = esStatus;
-    const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
+    const { contentIndexingDone, esEnabled, dbExists } = esStatus;
+    const shouldHighlightSearch = shouldHighlight();
+    const shouldOverrideCompactness = shouldHighlightSearch && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
+    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
+    // Whether content-search highlighting can apply; combined per-row with the element's decrypted body
+    const contentSearchEnabled = dbExists && esEnabled && shouldHighlightSearch && contentIndexingDone;
 
     const location = useLocation();
 
@@ -123,6 +136,11 @@ const MailboxListItems = ({
             <div className="w-full shrink-0" ref={listRef}>
                 {elements.map((element, index) => {
                     const isPlaceholder = element.ID.startsWith(PLACEHOLDER_ID_PREFIX);
+                    const isSelected =
+                        isConversationContentView && isElementMessage(element)
+                            ? elementID === element.ConversationID
+                            : elementID === element.ID;
+                    const useContentSearch = contentSearchEnabled && !!(element as ESMessage)?.decryptedBody;
 
                     const item = (
                         <Item
@@ -132,6 +150,8 @@ const MailboxListItems = ({
                             loading={mailboxListLoading}
                             columnLayout={columnLayout}
                             element={element}
+                            isSelected={isSelected}
+                            useContentSearch={useContentSearch}
                             checked={!!checkedIDsMap[element.ID || '']}
                             onCheck={onCheckOne}
                             onClick={onClick}
@@ -142,7 +162,6 @@ const MailboxListItems = ({
                             index={index}
                             onFocus={onFocus}
                             userSettings={userSettings}
-                            mailSettings={mailSettings}
                             onBack={onBack}
                             labels={labels}
                         />
