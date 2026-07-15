@@ -15,8 +15,8 @@ import { IndexKind, IndexRegistry } from '../../index/IndexRegistry';
 import { TreeSubscriptionRegistry } from '../TreeSubscriptionRegistry';
 import { normalizedFilenameForTag } from '../indexEntry';
 import type { TaskContext } from '../tasks/BaseTask';
+import { CleanUpStaleIndexEntryTask } from '../tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
-import { RemoveTreeEventScopeIdTask } from '../tasks/CoreTasks/RemoveTreeEventScopeIdTask';
 import { NodeTreeIndexPopulator } from './NodeTreeIndexPopulator';
 
 setupRealSearchLibraryWasm();
@@ -1179,7 +1179,7 @@ describe('IndexPopulator', () => {
             expect(state?.generation).toBe(2);
         });
 
-        it('returns early on tree_remove and enqueues RemoveTreeEventScopeIdTask', async () => {
+        it('tears down the scope on tree_remove, leaves the event uncommitted, and stops processing the batch', async () => {
             const populator = new TestPopulator();
             const ctx = await buildCtx();
 
@@ -1190,9 +1190,38 @@ describe('IndexPopulator', () => {
 
             const result = await populator.processIncrementalUpdates(events, ctx);
 
-            expect(result).toBe(1);
+            // Nothing before tree_remove, so nothing is committed (cursor stays before it).
+            expect(result).toBe(0);
+            // Teardown: cleanup sweep enqueued and the subscription/DB rows removed.
+            expect(ctx.enqueueOnce).toHaveBeenCalledWith(expect.any(CleanUpStaleIndexEntryTask));
+            expect(await db.getSubscription(SCOPE_ID)).toBeUndefined();
+            // Trailing node_created was not processed.
+            await expectIndexed('n1', 0);
+        });
 
-            expect(ctx.enqueueOnce).toHaveBeenCalledWith(expect.any(RemoveTreeEventScopeIdTask));
+        it('commits the prefix before a mid-batch tree_remove but not the tree_remove itself', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode(
+                'n1',
+                makeMaybeNode({ uid: 'n1', name: 'a.txt', type: 'file' as NodeType, parentUid: 'root' })
+            );
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            const events: DriveEvent[] = [
+                makeNodeEvent('node_created', 'n1', { parentNodeUid: 'root' }),
+                makeDriveEvent('tree_remove', 'none'),
+                makeNodeEvent('node_created', 'n2', { parentNodeUid: 'root' }), // should not be processed
+            ];
+
+            const result = await populator.processIncrementalUpdates(events, ctx);
+
+            // Only the 1 event before tree_remove is committed.
+            expect(result).toBe(1);
+            expect(ctx.enqueueOnce).toHaveBeenCalledWith(expect.any(CleanUpStaleIndexEntryTask));
+            await expectIndexed('n1');
+            await expectIndexed('n2', 0);
         });
 
         it('handles shared_with_me_updated without stopping', async () => {
