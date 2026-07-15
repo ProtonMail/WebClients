@@ -117,6 +117,29 @@ describe('StreamProcessor', () => {
         ]);
     });
 
+    it('carries the SSE model hash into usage messages', () => {
+        const processor = new StreamProcessor();
+
+        processor.processChunk(
+            `data: ${JSON.stringify({
+                model: '3b6be88a',
+                choices: [{ index: 0, delta: { content: 'Hello' } }],
+            })}\n\n`
+        );
+
+        const messages = processor.processChunk(`data: ${JSON.stringify({ usage: { completion_tokens: 1 } })}\n\n`);
+
+        expect(messages).toEqual([
+            {
+                type: 'usage',
+                usage: {
+                    completion_tokens: 1,
+                    model: '3b6be88a',
+                },
+            },
+        ]);
+    });
+
     it('emits done on [DONE] and stream errors on error chunks', () => {
         const processor = new StreamProcessor();
 

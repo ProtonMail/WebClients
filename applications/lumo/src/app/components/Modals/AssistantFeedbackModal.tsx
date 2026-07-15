@@ -64,6 +64,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const [shareResponse, setShareResponse] = useState('');
 
     const shareContentCheckboxId = `model-content-${message.id}`;
+    const servingModelID = message.modelID;
 
     const resetFeedbackForm = useCallback(() => {
         setSelectedOption(undefined);
@@ -95,7 +96,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     Category: 'positive',
                     Sentiment: 'Positive',
                     Environment: 'Remote',
-                    ModelID: undefined,
+                    ModelID: servingModelID,
                     Body: '',
                     Component: 'Lumo',
                 })
@@ -111,7 +112,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             });
             setFeedbackSubmitted(false);
         }
-    }, [api, createNotification, setFeedbackSubmitted]);
+    }, [api, createNotification, servingModelID, setFeedbackSubmitted]);
 
     const handleThumbUpClick = useCallback(() => {
         if (hasSeenPositiveFeedbackIntro()) {
@@ -187,7 +188,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Category: selectedOption,
             Sentiment: 'Negative',
             Environment: 'Remote',
-            ModelID: undefined,
+            ModelID: servingModelID,
             Body: body || '',
             Component: 'Lumo',
             Prompt: undefined,
@@ -213,7 +214,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Category: selectedOption,
             Sentiment: 'Negative',
             Environment: 'Remote',
-            ModelID: undefined,
+            ModelID: servingModelID,
             Body: body || '',
             Component: 'Lumo',
             Prompt: stripUnshareableAttachmentContent(sharePrompt),
