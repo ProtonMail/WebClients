@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,7 +13,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
@@ -23,78 +23,51 @@ import { VPNEvents } from '../VPN/VPNEvents';
 import ActivityMonitorEvents from './ActivityMonitorEvents';
 
 interface Props {
-    user: UserModel;
     organization?: OrganizationExtended;
     subscription: MaybeFreeSubscription;
 }
 
-const canViewB2BActivityMonitor = (user: UserModel, organization?: OrganizationExtended) => {
-    const isAdmin = user.isAdmin && user.isSelf;
-    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
-    const hasOrganization = hasOrganizationSetup(organization);
+const getTabPermissions = (subscription: MaybeFreeSubscription, organization: OrganizationExtended | undefined) => {
+    const hasOrganizationSetupOrKey = hasOrganizationSetupWithKeys(organization) || hasOrganizationSetup(organization);
     const isB2B = getIsB2BAudienceFromPlan(organization?.PlanName);
-
-    return (hasOrganizationKey || hasOrganization || isB2B) && isAdmin;
-};
-
-const useCanViewB2BOrganization = (user: UserModel, organization?: OrganizationExtended) => {
-    const isAdmin = user.isAdmin && user.isSelf;
-    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
-    const hasOrganization = hasOrganizationSetup(organization);
-
-    return (hasOrganizationKey || hasOrganization) && isAdmin;
-};
-
-const useCanViewGatewayMonitor = (
-    user: UserModel,
-    subscription: MaybeFreeSubscription,
-    organization?: OrganizationExtended
-) => {
-    const isAdmin = user.isAdmin && user.isSelf;
-    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
-    const hasOrganization = hasOrganizationSetup(organization);
-    const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasPlanWithEventLogging =
         hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
-
-    return hasPlanWithEventLogging && canHaveOrganization && (hasOrganizationKey || hasOrganization);
-};
-
-const useCanViewPassMonitor = (
-    user: UserModel,
-    subscription: MaybeFreeSubscription,
-    organization?: OrganizationExtended
-) => {
-    const isAdmin = user.isAdmin && user.isSelf;
-    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
-    const hasOrganization = hasOrganizationSetup(organization);
-    const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasPassOrBundleB2B = hasPassBusiness(subscription) || hasAnyB2bBundle(subscription);
 
-    return hasPassOrBundleB2B && canHaveOrganization && (hasOrganizationKey || hasOrganization);
+    return {
+        canDisplayAccountEvents: hasOrganizationSetupOrKey || isB2B,
+        canDisplayB2BOrganizationEvents: hasOrganizationSetupOrKey,
+        canDisplayB2BLogsVPN: hasPlanWithEventLogging && !!organization,
+        canDisplayB2BLogsPass: hasPassOrBundleB2B && !!organization,
+    };
 };
 
-const ActivityMonitorDashboard = ({ user, organization, subscription }: Props) => {
+const ActivityMonitorDashboard = ({ organization, subscription }: Props) => {
     const [activeTab, setActiveTab] = useState(0);
+    const tabPermissions = useMemo(() => getTabPermissions(subscription, organization), [subscription, organization]);
 
-    const tabs = [
-        canViewB2BActivityMonitor(user, organization) && {
-            title: c('Accounts').t`Accounts`,
-            content: <ActivityMonitorEvents />,
-        },
-        useCanViewB2BOrganization(user, organization) && {
-            title: c('Organization').t`Organization`,
-            content: <OrganizationEvents />,
-        },
-        useCanViewGatewayMonitor(user, subscription, organization) && {
-            title: c('VPN Gateways').t`VPN Gateways`,
-            content: <VPNEvents />,
-        },
-        useCanViewPassMonitor(user, subscription, organization) && {
-            title: PASS_APP_NAME,
-            content: <PassEvents />,
-        },
-    ].filter(isTruthy);
+    const tabs = useMemo(
+        () =>
+            [
+                tabPermissions.canDisplayAccountEvents && {
+                    title: c('Accounts').t`Accounts`,
+                    content: <ActivityMonitorEvents />,
+                },
+                tabPermissions.canDisplayB2BOrganizationEvents && {
+                    title: c('Organization').t`Organization`,
+                    content: <OrganizationEvents />,
+                },
+                tabPermissions.canDisplayB2BLogsVPN && {
+                    title: c('VPN Gateways').t`VPN Gateways`,
+                    content: <VPNEvents />,
+                },
+                tabPermissions.canDisplayB2BLogsPass && {
+                    title: PASS_APP_NAME,
+                    content: <PassEvents />,
+                },
+            ].filter(isTruthy),
+        [tabPermissions]
+    );
 
     return (
         <SettingsSectionExtraWide>
