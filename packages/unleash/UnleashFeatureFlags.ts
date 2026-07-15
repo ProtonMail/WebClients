@@ -115,7 +115,6 @@ enum AccountFlag {
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
-    RecoverySettingsRedesign = 'RecoverySettingsRedesign',
     SystemGroupFlag = 'SystemGroupFlag',
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',

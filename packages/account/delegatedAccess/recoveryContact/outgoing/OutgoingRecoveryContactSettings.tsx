@@ -6,7 +6,6 @@ import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
-import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
@@ -16,11 +15,8 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url.ts';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getFormattedAccessibleAtDate } from '../../emergencyContact/date';
@@ -184,7 +180,6 @@ export const OutgoingRecoveryContactSettings = ({
     userHasNoAccountRecoveryMethodSet: boolean;
     passwordResetOptionRequiredWarning?: ReactNode;
 }) => {
-    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
     const [{ isSentinelUser }] = useIsSentinelUser();
 
@@ -197,90 +192,48 @@ export const OutgoingRecoveryContactSettings = ({
         controller.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
         !controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit;
 
-    if (isRecoverySettingsRedesignEnabled) {
-        if (controller.outgoingDelegatedAccess.loading) {
-            return <Loader />;
-        }
-
-        return (
-            <>
-                {canAddRecoveryContact && (
-                    <div className="mb-2">
-                        <Button
-                            // Non-sentinel users need to have a recovery method
-                            disabled={userHasNoAccountRecoveryMethodSet && !isSentinelUser}
-                            color="norm"
-                            className="inline-flex gap-2 items-center"
-                            onClick={() => {
-                                controller.notify({ type: 'add', value: 'recovery-contact' });
-                            }}
-                        >
-                            <IcPlus className="shrink-0" />
-                            {c('emergency_access').t`Add recovery contact`}
-                        </Button>
-                    </div>
-                )}
-
-                <DashboardCard>
-                    {passwordResetOptionRequiredWarning}
-                    {controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 && (
-                        <DashboardCardContent>
-                            <h3 className="text-semibold text-rg mb-3">{c('emergency_access')
-                                .t`Your recovery contacts`}</h3>
-                            {controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit && (
-                                <Banner variant="info">
-                                    {c('emergency_access').ngettext(
-                                        msgid`Maximum of ${limit} contact reached. To change, remove a contact and add a new one.`,
-                                        `Maximum of ${limit} contacts reached. To change, remove a contact and add a new one.`,
-                                        limit
-                                    )}
-                                </Banner>
-                            )}
-                            <OutgoingTable controller={controller} />
-                        </DashboardCardContent>
-                    )}
-                </DashboardCard>
-            </>
-        );
+    if (controller.outgoingDelegatedAccess.loading) {
+        return <Loader />;
     }
 
     return (
         <>
-            <SettingsParagraph>
-                {c('Info')
-                    .t`By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.`}{' '}
-                <Href href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
-            </SettingsParagraph>
-            <div className="text-semibold text-xl mb-3">{c('emergency_access').t`Your recovery contacts`}</div>
-            <div className="mb-4">
-                {userHasNoAccountRecoveryMethodSet && (
-                    <div className="mb-4">
-                        <Banner
-                            action={
-                                <Button
-                                    onClick={() => {
-                                        document.getElementById('account')?.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                >{c('emergency_access').t`Add recovery method`}</Button>
-                            }
-                        >
-                            {c('emergency_access')
-                                .t`To add recovery contacts, you must have a recovery email address or phone number.`}
-                        </Banner>
-                    </div>
-                )}
-                {canAddRecoveryContact && (
+            {canAddRecoveryContact && (
+                <div className="mb-2">
                     <Button
-                        disabled={userHasNoAccountRecoveryMethodSet}
+                        // Non-sentinel users need to have a recovery method
+                        disabled={userHasNoAccountRecoveryMethodSet && !isSentinelUser}
                         color="norm"
+                        className="inline-flex gap-2 items-center"
                         onClick={() => {
                             controller.notify({ type: 'add', value: 'recovery-contact' });
                         }}
-                    >{c('emergency_access').t`Add recovery contact`}</Button>
+                    >
+                        <IcPlus className="shrink-0" />
+                        {c('emergency_access').t`Add recovery contact`}
+                    </Button>
+                </div>
+            )}
+
+            <DashboardCard>
+                {passwordResetOptionRequiredWarning}
+                {controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 && (
+                    <DashboardCardContent>
+                        <h3 className="text-semibold text-rg mb-3">{c('emergency_access')
+                            .t`Your recovery contacts`}</h3>
+                        {controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit && (
+                            <Banner variant="info">
+                                {c('emergency_access').ngettext(
+                                    msgid`Maximum of ${limit} contact reached. To change, remove a contact and add a new one.`,
+                                    `Maximum of ${limit} contacts reached. To change, remove a contact and add a new one.`,
+                                    limit
+                                )}
+                            </Banner>
+                        )}
+                        <OutgoingTable controller={controller} />
+                    </DashboardCardContent>
                 )}
-            </div>
-            {(controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 ||
-                controller.outgoingDelegatedAccess.loading) && <OutgoingTable controller={controller} />}
+            </DashboardCard>
         </>
     );
 };
