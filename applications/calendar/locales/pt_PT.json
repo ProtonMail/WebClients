@@ -971,6 +971,78 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a date": [
+        "Adicionar uma data"
+      ],
+      "Add another booking range to this day": [
+        "Adicionar outro intervalo de agendamento a este dia"
+      ],
+      "Close sidebar": [
+        "Fechar barra lateral"
+      ],
+      "Confirm booking": [
+        "Confirmar agendamento"
+      ],
+      "Copy booking page link": [
+        "Copiar ligação da página de agendamento"
+      ],
+      "Copy link and close": [
+        "Copiar ligação e fechar"
+      ],
+      "Create a booking page": [
+        "Criar uma página de agendamento"
+      ],
+      "Create a free account": [
+        "Criar uma conta gratuita"
+      ],
+      "Create a new booking page": [
+        "Criar uma nova página de agendamento"
+      ],
+      "Create an event": [
+        "Criar um evento"
+      ],
+      "Create booking page": [
+        "Criar página de agendamento"
+      ],
+      "Delete booking page": [
+        "Eliminar página de agendamento"
+      ],
+      "Edit booking page": [
+        "Editar página de agendamento"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Expandir barra de navegação para ver agendamentos"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandir barra de navegação para ver calendários"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Explore o ${ MEET_SHORT_APP_NAME }"
+      ],
+      "Go to the first available appointment": [
+        "Ir para o primeiro compromisso disponível"
+      ],
+      "Go to the next available appointment": [
+        "Ir para o próximo compromisso disponível"
+      ],
+      "Remove the booking range": [
+        "Remover o intervalo de agendamento"
+      ],
+      "See previous availability": [
+        "Ver disponibilidade anterior"
+      ],
+      "See upcoming availability": [
+        "Ver disponibilidade futura"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Selecionar ${ dateHeaderLongString } às ${ timeString }"
+      ],
+      "Subscribe now": [
+        "Subscrever agora"
+      ],
+      "Upgrade for 200GB": [
+        "Upgrade para 200GB"
       ]
     },
     "action": {
@@ -2871,6 +2943,15 @@
       "event": [
         "evento",
         "eventos"
+      ],
+      "Doesn't end": [
+        "Não termina"
+      ],
+      "Ends after": [
+        "Termina após"
+      ],
+      "Ends on": [
+        "Termina em"
       ]
     },
     "customer_support.feature.all": {
@@ -3170,6 +3251,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "Irá receber em breve um e-mail seguro com os detalhes."
       ]
     },
     "description": {
@@ -4036,6 +4120,33 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "A sua ligação ao Zoom expirou. Volte a ligar-se para continuar."
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Não é possível criar um agendamento com um endereço desativado"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Falha ao criar a videoconferência ${ MEET_APP_NAME }"
+      ],
+      "Failed to decrypt session key": [
+        "Falha ao desencriptar a chave de sessão"
+      ],
+      "Location is required": [
+        "A localização é obrigatória"
+      ],
+      "No booking page data received": [
+        "Nenhum dado da página de agendamento foi recebido"
+      ],
+      "No drive found to import": [
+        "Nenhuma unidade encontrada para importar"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não conseguimos importar os ficheiros"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Não conseguimos enviar um código de verificação através deste método."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Utilizou todos os endereços do seu plano. Atualize o seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
       ]
     },
     "error": {
@@ -6421,6 +6532,146 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "Videochamada do ${ MEET_APP_NAME }"
+      ],
+      "${ total } user found": [
+        "${ total } utilizador encontrado",
+        "${ total } utilizadores encontrados"
+      ],
+      "Appointment duration": [
+        "Duração do compromisso"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Tem a certeza de que deseja eliminar esta página de agendamento?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Peça ao seu administrador para atualizar o plano ou remova uma página da barra lateral de Páginas de agendamento."
+      ],
+      "Booking page deleted": [
+        "Página de agendamento eliminada"
+      ],
+      "Booking page example": [
+        "Exemplo de página de agendamento"
+      ],
+      "Booking updated successfully": [
+        "Agendamento atualizado com sucesso"
+      ],
+      "Cannot create a range across days.": [
+        "Não é possível criar um intervalo que atravesse vários dias."
+      ],
+      "Cannot create a range in the past.": [
+        "Não é possível criar um intervalo no passado."
+      ],
+      "Failed to update meeting name": [
+        "Falha ao atualizar o nome da reunião"
+      ],
+      "Failed to update meeting password": [
+        "Falha ao atualizar a palavra-passe da reunião"
+      ],
+      "Failed to update meeting schedule": [
+        "Falha ao atualizar o agendamento da reunião"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+      ],
+      "Host": [
+        "Anfitrião"
+      ],
+      "How long should an appointment last?": [
+        "Quanto tempo deve durar um compromisso?"
+      ],
+      "In which calendar should bookings appear?": [
+        "Em que calendário devem aparecer os agendamentos?"
+      ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Permita que outros marquem reuniões consigo automaticamente. Sem e-mails de trás para a frente. Partilhe uma ligação e mantenha o controlo da sua disponibilidade."
+      ],
+      "Location": [
+        "Localização"
+      ],
+      "Manage booking page": [
+        "Gerir página de agendamento"
+      ],
+      "No appointments available": [
+        "Nenhum compromisso disponível"
+      ],
+      "No appointments available this week": [
+        "Nenhum compromisso disponível esta semana"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Nenhum calendário disponível; por favor elimine a página de agendamento."
+      ],
+      "No future appointments available": [
+        "Nenhum compromisso futuro disponível"
+      ],
+      "Powered by": [
+        "Desenvolvido por"
+      ],
+      "Powered by ${ protonButton }": [
+        "Desenvolvido por ${ protonButton }"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Os eventos agendados anteriormente não serão eliminados."
+      ],
+      "Privacy by default": [
+        "Privacidade por predefinição"
+      ],
+      "Range already exists.": [
+        "O intervalo já existe."
+      ],
+      "Range is too short.": [
+        "O intervalo é demasiado curto."
+      ],
+      "Range overlaps with an existing range.": [
+        "O intervalo sobrepõe-se a um intervalo existente."
+      ],
+      "Saving event": [
+        "A guardar o evento",
+        "A guardar os eventos"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Partilhe esta página para permitir que outros marquem reuniões no seu calendário. Pode encontrá-la e editá-la na barra lateral sob Páginas de agendamento."
+      ],
+      "Take control of your digital life": [
+        "Assuma o controlo da sua vida digital"
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Este agendamento foi feito através do ${ CALENDAR_APP_NAME }, que faz parte da suite de produtos focados na privacidade da ${ BRAND_NAME }."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, peça ao seu administrador para atualizar o seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, atualize o seu plano."
+      ],
+      "What do you want to call this booking page?": [
+        "Como deseja chamar esta página de agendamento?"
+      ],
+      "When can appointments be booked?": [
+        "Quando podem ser marcados compromissos?"
+      ],
+      "Where will the appointment take place?": [
+        "Onde se realizará o compromisso?"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Tem atualmente sessão iniciada como ${ username } em ${ organizationName }."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Atingiu o número máximo de páginas de agendamento disponíveis no seu plano."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Atingiu o limite de vagas de agendamento (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -7161,6 +7412,54 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Adicionar videoconferência ${ MEET_APP_NAME }"
+      ],
+      "Add Zoom meeting": [
+        "Adicionar reunião Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copie a ligação ou gira a sua página a partir daqui a qualquer momento."
+      ],
+      "Exact host matching": [
+        "Correspondência exata de anfitrião"
+      ],
+      "Exact URL matching": [
+        "Correspondência exata de URL"
+      ],
+      "Full name": [
+        "Nome completo"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca preencher neste URL exato"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domínio principal e subdomínios (predefinição)"
+      ],
+      "Regular expression": [
+        "Expressão regular"
+      ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Partilhe de forma segura partes da sua agenda através de uma página de reserva que pode enviar a qualquer pessoa."
+      ],
+      "Starts with": [
+        "Começa com"
+      ],
+      "Unavailable": [
+        "Indisponível"
+      ],
+      "URL wildcard pattern": [
+        "Padrão de URL com caráter universal"
+      ],
+      "Video conference": [
+        "Videoconferência"
+      ],
+      "Zoom meeting": [
+        "Reunião Zoom"
       ]
     },
     "Label for contact group color": {
@@ -7320,6 +7619,9 @@
       ],
       "What’s this?": [
         "O que é isto?"
+      ],
+      "Booking pages": [
+        "Páginas de agendamento"
       ]
     },
     "Link label (optional)": {
@@ -7518,6 +7820,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "O seu teste gratuito terminou. O acesso à sua conta será desativado em breve. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regra de correspondência 'Começa com'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regra de correspondência de (sub)domínio exato"
+      ],
+      "Exact URL matching rule": [
+        "Regra de correspondência de URL exato"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca preencher com este URL exato"
+      ],
+      "Regular expression rule": [
+        "Regra de expressão regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regra de correspondência de padrão de caráter universal"
       ]
     },
     "Message display when a new app version is available": {
@@ -8947,6 +9267,15 @@
       ],
       "Your subscription renews soon": [
         "A sua subscrição renova em breve."
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Atualize a sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Atualize o seu armazenamento por apenas ${ pricingTitle } com ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -8984,6 +9313,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliases ilimitados para proteger a sua identidade"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore com utilizadores que não usam ${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Editar docs online"
+      ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do ficheiro (mais de 1 semana)"
       ]
     },
     "Onboarding": {
@@ -9715,6 +10053,18 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Email for booking confirmation": [
+        "E-mail para confirmação de agendamento"
+      ],
+      "Enter a short description or additional info": [
+        "Introduza uma breve descrição ou informações adicionais"
+      ],
+      "Name of attendee": [
+        "Nome do participante"
+      ],
+      "Search for users or addresses": [
+        "Pesquisar por utilizadores ou endereços"
       ]
     },
     "Placeholder for contact group name": {
@@ -9951,7 +10301,28 @@
         "Tem **${ daysRemaining } dias restantes** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer."
       ],
       "Invited friends": [
-        "{count, plural, one {Amigo convidado} other {Amigos convidados}}"
+        "Amigos convidados"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se cancelar antes desta data,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se não subscrever,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se não cancelar,** o seu plano completo começará e obterá **${ referrerRewardAmount }** em créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se subscrever antes desta data,** obterá **${ referrerRewardAmount }** em créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Usufrua do **${ planTitle }** gratuitamente até **${ textDate }**."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Última oportunidade para explorar todas as poderosas funcionalidades que o **${ planTitle }** tem para oferecer."
+      ],
+      "your subscription": [
+        "a sua subscrição"
       ]
     },
     "Reload event button tooltip": {
@@ -10114,6 +10485,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tem ${ timeRemaining.inSeconds } segundo para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -10549,6 +10932,12 @@
       ],
       "Video conferencing is here!": [
         "A videoconferência está aqui!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "O ${ MEET_APP_NAME } chegou!"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Agende e participe em chamadas do ${ MEET_APP_NAME } diretamente a partir do seu calendário."
       ]
     },
     "sso": {
@@ -11008,6 +11397,9 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "O ${ planName } dá-lhe acesso a todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. A privacidade é integrada para que possa continuar com o seu dia, sabendo que os seus dados e a sua identidade estão seguros."
       ]
     },
     "subscription reminder": {
@@ -11271,6 +11663,12 @@
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
+      ],
+      "Booking page created": [
+        "Página de agendamento criada"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Página de agendamento criada e ligação copiada para a área de transferência"
       ]
     },
     "Suffix": {
@@ -12153,6 +12551,60 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Appointment details": [
+        "Detalhes do compromisso"
+      ],
+      "Cannot create more Booking pages": [
+        "Não é possível criar mais páginas de agendamento"
+      ],
+      "Choose a time": [
+        "Escolha uma hora"
+      ],
+      "Delete booking page?": [
+        "Eliminar página de agendamento?"
+      ],
+      "Host": [
+        "Anfitrião"
+      ],
+      "How your free trial works": [
+        "Como funciona a sua avaliação gratuita"
+      ],
+      "Introducing booking pages": [
+        "Apresentamos as páginas de agendamento"
+      ],
+      "Ready to automate your scheduling?": [
+        "Pronto para automatizar os seus agendamentos?"
+      ],
+      "The booking feature is currently unavailable.": [
+        "A funcionalidade de agendamento está atualmente indisponível."
+      ],
+      "This booking page can’t be shown.": [
+        "Esta página de agendamento não pode ser mostrada."
+      ],
+      "This booking page has expired.": [
+        "Esta página de agendamento expirou."
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Atualize a sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Atualize o seu armazenamento por ${ formattedPrice } com ${ planName }"
+      ],
+      "Users and addresses": [
+        "Utilizadores e endereços"
+      ],
+      "Your booking is confirmed": [
+        "O seu agendamento está confirmado"
+      ],
+      "Your booking page is ready": [
+        "A sua página de agendamento está pronta"
+      ],
+      "Your booking pages live here": [
+        "As suas páginas de agendamento ficam aqui"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12256,6 +12708,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
+      ],
+      "Version 6 OpenPGP key": [
+        "Chave OpenPGP versão 6"
       ]
     },
     "tooltip": {
@@ -12472,6 +12927,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "O \"${ modeLabelStong }\" oferece um controlo poderoso, mas um único erro pode fazer com que o preenchimento automático corresponda e preencha dados em sítios web fraudulentos ou de phishing."
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12738,6 +13196,212 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ativado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já está a ser utilizado por um utilizador fora da sua organização. Contacte o apoio ao cliente para resolver este problema"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estado da migração de dados do Google Workspace para o ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Erros"
+      ],
+      "Estimated size": [
+        "Tamanho estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "Has errors": [
+        "Tem erros"
+      ],
+      "In progress": [
+        "Em progresso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Endereço de membro não encontrado. Contacte o apoio ao cliente para resolver este problema"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Migration status": [
+        "Estado da migração"
+      ],
+      "Missing organization private key": [
+        "Chave privada da organização em falta"
+      ],
+      "Missing organization public key": [
+        "Chave pública da organização em falta"
+      ],
+      "No users to display": [
+        "Nenhum utilizador para apresentar"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficiente disponível"
+      ],
+      "Pending": [
+        "Pendente"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecione exatamente o que gostaria de migrar. Isto aplicar-se-á a todos os utilizadores da organização."
+      ],
+      "Select users to migrate": [
+        "Selecionar utilizadores para migrar"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este utilizador não pode ser migrado devido a incompatibilidades de plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar este utilizador, ative a sua conta na sua Consola de Administração do Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar este utilizador, ative a sua conta sob ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar este utilizador, ative o seu endereço sob ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar este utilizador, este precisa de aceitar o seu convite para se juntar à ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar este utilizador, retire-o do arquivo na sua Consola de Administração do Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar este utilizador, reative-o na sua Consola de Administração do Google Workspace."
+      ],
+      "User": [
+        "Utilizador"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizadores que acederam à sua conta do ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "O que está a migrar?"
+      ],
+      "You": [
+        "Você"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 minutos"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "15 minutes": [
+        "15 minutos"
+      ],
+      "30 minutes": [
+        "30 minutos"
+      ],
+      "30m": [
+        "30 min"
+      ],
+      "60 minutes": [
+        "60 minutos"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90 minutes": [
+        "90 minutos"
+      ],
+      "90m": [
+        "90 min"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "Confirme o seu agendamento"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Data do intervalo de agendamento"
+      ],
+      "End time of the booking range": [
+        "Hora de término do intervalo de agendamento"
+      ],
+      "How long should an appointment last?": [
+        "Quanto tempo deve durar um compromisso?"
+      ],
+      "Start time of the booking range": [
+        "Hora de início do intervalo de agendamento"
+      ],
+      "What should people know about this appointment?": [
+        "O que as pessoas devem saber sobre este compromisso?"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Nenhum agendamento disponível."
+      ],
+      "Please check the link and try again.": [
+        "Por favor, verifique a ligação e tente novamente."
+      ],
+      "Please try again later.": [
+        "Por favor, tente novamente mais tarde."
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Ações"
+      ],
+      "Created": [
+        "Criado"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Impressão digital"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Type": [
+        "Tipo"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Poderá atribuir cargos assim que o utilizador aceitar o convite."
       ]
     }
   }

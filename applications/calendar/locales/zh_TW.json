@@ -1018,6 +1018,27 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Add another booking range to this day": [
+        "為這一天新增另一個預約範圍"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "停用自動新增 ${ MEET_APP_NAME } 連結功能"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "探索 ${ MEET_SHORT_APP_NAME }"
+      ],
+      "Explore other plans": [
+        "探索其他方案"
+      ],
+      "See previous availability": [
+        "查看先前的空閒時間"
+      ],
+      "Subscribe now": [
+        "立即訂閱"
+      ],
+      "Turn off auto-add": [
+        "關閉自動新增"
       ]
     },
     "action": {
@@ -1206,7 +1227,7 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "未顯示 ${ hiddenResultsCount } 個結果"
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1442,6 +1463,114 @@
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "您組織外部的使用者已在使用此位址。請聯絡客戶支援服務以解決此問題"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Configure migration": [
+        "設定轉移"
+      ],
+      "Contacts": [
+        "聯絡人"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "從 Google Workspace 到 ${ BRAND_NAME } 的資料移轉狀態"
+      ],
+      "Emails": [
+        "電子郵件"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Estimated size": [
+        "預估大小"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以遷移哪些內容。"
+      ],
+      "Has errors": [
+        "有錯誤"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Migrate": [
+        "移轉"
+      ],
+      "Migrated": [
+        "已遷移"
+      ],
+      "Migration status": [
+        "轉移狀態"
+      ],
+      "No users to display": [
+        "沒有可顯示的使用者"
+      ],
+      "Not activated": [
+        "未啟用"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Organization does not have enough storage available": [
+        "組織沒有足夠的可用儲存空間"
+      ],
+      "Pending": [
+        "擱置中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "選取您確切想移轉的項目。這將套用至所有組織使用者。"
+      ],
+      "Select users to migrate": [
+        "選取要遷移的使用者"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由於平台不相容，無法遷移此使用者。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的位址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受加入 ${ BRAND_NAME } 的邀請。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中將其取消封存。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中取消停用他們。"
+      ],
+      "User": [
+        "使用者"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已存取其 ${ BRAND_NAME } 帳號的使用者"
+      ],
+      "What are you migrating?": [
+        "您要轉移什麼？"
+      ],
+      "You": [
+        "您"
       ]
     },
     "Browser": {
@@ -3388,6 +3517,18 @@
       ],
       "90 minutes": [
         "90 分鐘"
+      ],
+      "120m": [
+        "120 分鐘"
+      ],
+      "15 minutes": [
+        "15 分鐘"
+      ],
+      "60m": [
+        "60 分鐘"
+      ],
+      "90m": [
+        "90 分鐘"
       ]
     },
     "Edit billing address form note": {
@@ -4096,6 +4237,24 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您 Zoom 連接階段已逾期，請重新連接以繼續。"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "無法使用停用的位址建立預約"
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "新增現有的 ${ MEET_APP_NAME } 視訊會議失敗"
+      ],
+      "No drive found to import": [
+        "找不到可匯入的雲端硬碟"
+      ],
+      "Unexpected error, we can't import the files": [
+        "發生非預期錯誤，我們無法匯入檔案"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
       ]
     },
     "error": {
@@ -6496,6 +6655,84 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今日過期。"
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**緊急終止開關**：如果 VPN 意外斷線，則會封鎖您的網際網路，以防止資料外洩。"
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN 可以隱藏您的 IP 位址並加密您的瀏覽活動，使網站、廣告商和 ISP 更難在一段時間內追蹤您。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "請聯絡您的管理員以升級方案，或從預約頁面側邊欄中移除頁面。"
+      ],
+      "Cannot create a range across days.": [
+        "無法建立跨越天數的範圍。"
+      ],
+      "Cannot create a range in the past.": [
+        "無法建立過去時間的範圍。"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
+      ],
+      "Failed to update meeting schedule": [
+        "無法更新會議排程"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "僅限檔案（不含相片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }）- 總計最高 100 GB、100,000 個檔案，且單一檔案最高 50 GB"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
+      ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "讓其他人自動與您預約時間。無需來回發送電子郵件。共享連結，並隨時掌控您的空閒時間。"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
+      ],
+      "Range overlaps with an existing range.": [
+        "範圍與現有範圍重疊。"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "共享此頁面以讓其他人可在您的行事曆中預約時間。您可以在側邊欄的「預約頁面」下找到並編輯此頁面。"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "啟用以下 VPN 設定，輕鬆保持連線："
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "我們已自動新增 ${ MEET_APP_NAME } 連結"
+      ],
+      "What do you want to call this booking page?": [
+        "您想如何命名此預約頁面？"
+      ],
+      "When can appointments be booked?": [
+        "何時可以預約約定？"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "當您連線到 VPN 時，它會使用加密技術來隱藏您的 IP 位址（分配給您裝置的唯一代碼）。"
+      ],
+      "Which calendars should block bookings?": [
+        "哪些行事曆應封鎖預約？"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的網際網路服務供應商可以監控並有時出售您的資料，甚至限制您可以存取的網站。"
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "您已達到預約時段限制 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6618,6 +6855,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Keyboard shortcut name": {
@@ -7245,6 +7485,36 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
+      ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "如果您的時間有衝突、會遲到或無法等候該事件，請讓其他人知道。"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必須具有至少 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
+      ],
+      "Regular expression": [
+        "正規表示式"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "透過可以傳送給任何人的預約頁面，安全地共享您的部分排程。"
+      ],
+      "Starts with": [
+        "開頭為"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
       ]
     },
     "label": {
@@ -7256,6 +7526,12 @@
       ],
       "Start time of the booking range": [
         "預定範圍的開始時間"
+      ],
+      "End time of the booking range": [
+        "預約範圍的結束時間"
+      ],
+      "What should people know about this appointment?": [
+        "關於此約定，有哪些是其他人應該了解的？"
       ]
     },
     "Label for contact group color": {
@@ -7604,6 +7880,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
       ]
     },
     "Message display when a new app version is available": {
@@ -8313,7 +8607,7 @@
         "保管庫共享 (至多 ${ n } 人)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "與最多 ${ n } 個人分享保管庫"
+        "至多可與 ${ n } 個人共用保管庫"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN 附帶廣告攔截器及惡意軟體防護"
@@ -9032,6 +9326,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "在110 多個國家提供極速 VPN 伺服器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding": {
@@ -9112,6 +9409,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -9758,6 +10058,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Search for users or addresses": [
+        "搜尋使用者或位址"
       ]
     },
     "Placeholder for contact group name": {
@@ -9985,6 +10288,30 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您將取得至多 **${ maxRewardAmount }** 額度。"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期前取消，**試用結束時您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不訂閱，**您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，**您的完整方案將會開始，且您將獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期前訂閱，**您將會獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免費使用 **${ planTitle }** 直至 **${ textDate }**。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "最後機會探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您還有 **${ daysRemaining } 天**的時間來探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "your subscription": [
+        "您的訂閱"
       ]
     },
     "Reload event button tooltip": {
@@ -10142,6 +10469,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -10434,6 +10770,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
       ]
     },
     "specialoffer: Offers": {
@@ -10525,6 +10864,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10565,6 +10907,9 @@
       ],
       "Video conferencing is here!": [
         "會議於此!"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "直接從您的行事曆排程並加入 ${ MEET_APP_NAME } 通話。"
       ]
     },
     "sso": {
@@ -10995,6 +11340,24 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 可讓您存取 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能。內建隱私保護，確保您的資料和身分安全無虞，讓您可以放心使用。"
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } 超越基本功能，協助您更高效、更有條理，並掌控您的收件匣、電子郵件身分等。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 為您的檔案和相片提供 ${ planMaxSpace } 儲存空間。您也有資格獲得年度儲存空間獎勵。"
+      ],
+      "Comprehensive privacy and security": [
+        "全方位的隱私與安全"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 的精華"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "當您取消 ${ planName } 時您將放棄的權益"
       ]
     },
     "subscription reminder": {
@@ -11258,6 +11621,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "已停用自動新增 ${ MEET_APP_NAME } 連結"
       ]
     },
     "Suffix": {
@@ -12172,6 +12538,24 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "How your free trial works": [
+        "您的免費試用如何運作"
+      ],
+      "Make a secure connection your default": [
+        "將安全連線設為您的預設設定"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
+      ],
+      "What can a VPN protect you from?": [
+        "VPN 可以保護您免受什麼威脅？"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12269,6 +12653,15 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ]
     },
     "tooltip": {
@@ -12471,6 +12864,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12715,6 +13111,23 @@
       ],
       "Expires": [
         "到期日"
+      ],
+      "Actions": [
+        "動作"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Type": [
+        "類型"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
       ]
     }
   }

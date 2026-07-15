@@ -1400,6 +1400,27 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
       ]
     },
     "Browser": {
@@ -4005,6 +4026,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
       ]
     },
     "error": {
@@ -6430,6 +6454,12 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Stanje čakalnice sestanka ni mogoče posodobiti"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -12149,6 +12179,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

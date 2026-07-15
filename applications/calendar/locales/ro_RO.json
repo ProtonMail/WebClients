@@ -1582,6 +1582,27 @@
       ],
       "You": [
         "Eu"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
       ]
     },
     "Browser": {
@@ -4314,6 +4335,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nu s-a putut trimite un cod de verificare folosind această metodă."
       ]
     },
     "error": {
@@ -6893,6 +6917,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Actualizarea stării sălii de așteptare a conferinței a eșuat."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "V-ați conectat cu ${ username } pentru (${ organizationName }."
       ]
     },
     "info": {
@@ -7666,6 +7696,27 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
+      ],
+      "Starts with": [
+        "Începe cu"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ]
     },
     "label": {
@@ -8055,6 +8106,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ]
     },
     "Message display when a new app version is available": {
@@ -12950,6 +13019,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13286,6 +13358,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

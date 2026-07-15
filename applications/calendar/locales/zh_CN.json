@@ -333,7 +333,7 @@
         "取消全选"
       ],
       "Disable auto-add ${ MEET_APP_NAME } links feature": [
-        "停用自动添加 ${ MEET_APP_NAME } 链接功能"
+        "禁用自动添加 ${ MEET_APP_NAME } 链接功能"
       ],
       "Discard": [
         "放弃"
@@ -540,7 +540,7 @@
         "加入日历"
       ],
       "Join with ${ MEET_APP_NAME }": [
-        "加入${ MEET_APP_NAME }"
+        "加入 ${ MEET_APP_NAME }"
       ],
       "Keep current time zone": [
         "保留当前时区"
@@ -1241,7 +1241,7 @@
         "试用期间，最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 台专用服务器"
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+        "试用期间，最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_SCRIBE_SEATS } 个 Scribe 席位"
@@ -1250,7 +1250,7 @@
         "试用期间，您最多可以拥有 ${ TRIAL_MAX_USERS } 位用户。"
       ],
       "You cannot add custom domains during the trial period.": [
-        "您在试用期内无法添加自定义域名"
+        "试用期内无法添加自定义域名！"
       ],
       "You have reached the trial limit.": [
         "您已达到试用限制！"
@@ -1303,7 +1303,7 @@
         "1 个账户"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
+        "200 GB 存储空间：当前套餐的 40 倍"
       ],
       "6 user accounts": [
         "6 个账户"
@@ -1550,6 +1550,27 @@
       ],
       "You": [
         "您"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，无法迁移此用户。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消归档该用户。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消暂停该用户。"
       ]
     },
     "Browser": {
@@ -1565,7 +1586,7 @@
         "应用程序问题"
       ],
       "Authenticator problem": [
-        "验证器问题"
+        "验证问题"
       ],
       "Bridge problem": [
         "Bridge 问题"
@@ -1962,7 +1983,7 @@
         "支持大文件上传"
       ],
       "Limited daily chats": [
-        "每日聊天次数有限"
+        "每日有限聊天次数"
       ],
       "Limited favorites": [
         "收藏数量有限"
@@ -3197,7 +3218,7 @@
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
+        "发送至 ${ connectedAddressText } 的邮件现在会显示在 ${ MAIL_APP_NAME } 中。"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "建议在组织内使用双因素身份验证以提高安全性。"
@@ -3287,7 +3308,7 @@
         "我们无法再访问 ${ boldEmails }。"
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
-        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新邮件预留空间。"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
@@ -3457,7 +3478,7 @@
         "您当前套餐的所有高级功能"
       ],
       "Only": [
-        "仅"
+        "仅限"
       ]
     },
     "Duo offer: Link": {
@@ -3555,7 +3576,7 @@
         "标题："
       ],
       "You are invited to": [
-        "您被邀请至"
+        "您受邀参加"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3780,7 +3801,7 @@
         "加载群组成员失败"
       ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
-        "无法添加现有的 ${ MEET_APP_NAME } 视频会议"
+        "添加现有 ${ MEET_APP_NAME } 视频会议失败"
       ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "创建 ${ MEET_APP_NAME } 视频会议失败"
@@ -3924,7 +3945,7 @@
         "未找到可导入的联系人"
       ],
       "No drive found to import": [
-        "未找到可导入的云端硬盘"
+        "未找到要导入的云端硬盘"
       ],
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
@@ -4212,7 +4233,7 @@
         "邮件收件人不能超过 ${ maxContacts } 位"
       ],
       "You cannot enter the organizer's email": [
-        "您不能输入组织者的电子邮件"
+        "您不能输入组织者的邮箱"
       ],
       "You have reached the maximum number of calendars.": [
         "您已达到日历创建数量的上限。"
@@ -4234,6 +4255,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我们无法通过此类方式发送验证码。"
       ]
     },
     "error": {
@@ -4241,7 +4265,7 @@
         "请使用已设置转发至 ${ MAIL_APP_NAME } 的 Gmail 地址登录"
       ],
       "Please sign in with the same Gmail address you originally connected": [
-        "请使用您最初连接时使用的相同 Gmail 地址登录"
+        "请使用您最初关联的同一 Gmail 地址登录"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4396,7 +4420,7 @@
         "在浏览器中打开"
       ],
       "Please refresh the page or try again later.": [
-        "请刷新页面或稍后重试。"
+        "请刷新或稍后重试！"
       ],
       "Something went wrong": [
         "出错了"
@@ -4684,7 +4708,7 @@
         "邮箱地址"
       ],
       "Encrypted cloud storage for files, photos and documents": [
-        "用于文件、照片和文档的加密云存储空间"
+        "用于文件、照片和文档的加密云存储"
       ],
       "More premium features": [
         "更多高级功能"
@@ -5451,7 +5475,7 @@
         "计费周期：${ text }"
       ],
       "Booking contact email: ${ selectedCalendar.Email }": [
-        "预订联系人邮箱：${ selectedCalendar.Email }"
+        "预订联系邮箱：${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "预约页面已删除"
@@ -5496,7 +5520,7 @@
         "正在检查联系人 ${ progress } / ${ max }..."
       ],
       "Choose a plan that works best for you.": [
-        "选择一个最适合您的套餐。"
+        "选择最适合您的套餐！"
       ],
       "Clear data": [
         "清除数据"
@@ -5757,7 +5781,7 @@
         "主持人"
       ],
       "How far in advance can someone book?": [
-        "可以提前多久预订？"
+        "他人可以提前多久预订？"
       ],
       "How long should an appointment last?": [
         "预约应持续多长时间？"
@@ -5922,7 +5946,7 @@
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
       "Min. 2 hours before": [
-        "提前至少 2 小时"
+        "至少提前 2 小时"
       ],
       "Min. 48 hours before": [
         "至少提前 48 小时"
@@ -6021,7 +6045,7 @@
         "其他账户"
       ],
       "Other location": [
-        "其他地点"
+        "其他位置"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "您组织内的其他用户将看到您的繁忙时段。不会共享任何活动详情。"
@@ -6375,7 +6399,7 @@
         "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "升级以保留您的 ${ planTitle } 权益。"
+        "升级以保留您的 ${ planTitle } 权益！"
       ],
       "Uppercase and lowercase letters": [
         "大写字母和小写字母"
@@ -6513,7 +6537,7 @@
         "您即将打开默认浏览器并访问："
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登录身份为 ${ username }"
+        "您当前以 ${ username } 身份登录"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您当前使用的存储空间已超出 ${ downgradedPlanName } 套餐所包含的容量。请删除数据以便降级。"
@@ -6709,6 +6733,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting waiting room status": [
+        "更新会议等候室状态失败"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您当前以 ${ username } 的身份登录 ${ organizationName }。"
       ]
     },
     "info": {
@@ -6923,7 +6953,7 @@
         "添加图像网址"
       ],
       "Add notice period": [
-        "添加通知期"
+        "添加提醒时间"
       ],
       "Add to group": [
         "添加至群组"
@@ -7346,7 +7376,7 @@
         "第二时区"
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
-        "通过可发送给任何人的预约页面，安全地分享您的日程安排部分内容。"
+        "通过可发送给任何人的预订页面，安全地分享您日程的部分内容。"
       ],
       "Show others when I'm busy": [
         "向他人展示我忙碌的时间"
@@ -7470,6 +7500,27 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Exact host matching": [
+        "精确主机匹配"
+      ],
+      "Exact URL matching": [
+        "精确 URL 匹配"
+      ],
+      "Never fill on this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Parent domain and subdomains (default)": [
+        "父域名及子域名（默认）"
+      ],
+      "Regular expression": [
+        "正则表达式"
+      ],
+      "Starts with": [
+        "开头为"
+      ],
+      "URL wildcard pattern": [
+        "URL 通配符模式"
       ]
     },
     "label": {
@@ -7831,10 +7882,28 @@
         "回复："
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "您的免费体验期已结束。${ nonAutoRenewalAction }"
+        "您的免费试用已结束。${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "“开头为”匹配规则"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精确（子）域名匹配规则"
+      ],
+      "Exact URL matching rule": [
+        "精确 URL 匹配规则"
+      ],
+      "Never fill with this exact URL": [
+        "绝不在此精确 URL 上填充"
+      ],
+      "Regular expression rule": [
+        "正则表达式规则"
+      ],
+      "Wildcard pattern matching rule": [
+        "通配符模式匹配规则"
       ]
     },
     "Message display when a new app version is available": {
@@ -9156,7 +9225,7 @@
         "${ pricingTitle } 优惠今天到期！"
       ],
       "Don't show this again": [
-        "不再显示此内容"
+        "不再显示"
       ],
       "Don’t show this again": [
         "不再显示此内容"
@@ -9469,7 +9538,7 @@
         "高级账户保护"
       ],
       "File attachments (up to 10GB)": [
-        "文件附件（最高 10GB）"
+        "文件附件 (最大 10 GB)"
       ],
       "Team policies": [
         "团队政策"
@@ -9635,7 +9704,7 @@
         "特惠价格仅在前 ${ subscriptionLength } 个月内有效"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
+        "特惠价格仅限首月有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "${ priceWithDiscount } 的特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
@@ -9719,7 +9788,7 @@
         "您先前套餐订阅未使用部分的抵扣金额"
       ],
       "Credits will be added to your balance": [
-        "积分将添加到您的账户余额"
+        "积分将添加到账户余额"
       ]
     },
     "Payments.ModificationWarning": {
@@ -10209,7 +10278,7 @@
         "此后，您的账户将降级为 **${ BRAND_NAME } Free**。如果您改变主意，可以 **重新激活您的订阅** 以继续使用高级功能。"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
-        "最高可赚取 ${ maxRewardAmount } 积分。您邀请的人订阅 ${ BRAND_NAME } 套餐后，您将获得 ${ referrerRewardAmount }。"
+        "最高可赚取 ${ maxRewardAmount } 积分。您邀请的好友订阅 ${ BRAND_NAME } 套餐后，您将获得 ${ referrerRewardAmount }。"
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "免费享受 **${ planTitle }** 直至 **${ textDate }**。"
@@ -11401,7 +11470,7 @@
         "答复已发送且日程已删除"
       ],
       "Auto-add ${ MEET_APP_NAME } links disabled": [
-        "已禁用自动添加 ${ MEET_APP_NAME } 链接"
+        "自动添加 ${ MEET_APP_NAME } 链接已禁用"
       ],
       "Billing details updated": [
         "账单详细信息已更新"
@@ -12039,7 +12108,7 @@
         "导出联系人"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
-        "配合${ planTitle }获得**${ referralInfo.uiData.refereeRewardAmount }**余额奖励。"
+        "订阅 ${ planTitle } 可获得 **${ referralInfo.uiData.refereeRewardAmount }** 积分奖励"
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
@@ -12129,7 +12198,7 @@
         "合并联系人"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "将您的组织迁移到 ${ BRAND_NAME }"
+        "将您的组织迁移至 ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "迷你日历"
@@ -12490,6 +12559,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Users and addresses": [
+        "用户和地址"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12798,6 +12870,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {

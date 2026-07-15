@@ -1037,6 +1037,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Go to the first available appointment": [
+        "Gå till första lediga tid"
+      ],
+      "Go to the next available appointment": [
+        "Gå till nästa lediga tid"
       ]
     },
     "action": {
@@ -1554,6 +1560,33 @@
       ],
       "You": [
         "Du"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har använt sitt ${ BRAND_NAME }-konto"
       ]
     },
     "Browser": {
@@ -4256,6 +4289,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-anslutning har löpt ut. Återanslut för att fortsätta."
+      ],
+      "No booking page data received": [
+        "Ingen information om bokningssida har mottagits"
+      ],
+      "No drive found to import": [
+        "Ingen drive hittades att importera"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
       ]
     },
     "error": {
@@ -6756,6 +6798,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Be din admin att uppgradera ditt paket eller ta bort en sida från sidofältet för bokningssidor."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
+      ],
+      "No appointments available": [
+        "Inga lediga tider tillgängliga"
+      ],
+      "No appointments available this week": [
+        "Inga lediga tider denna vecka"
+      ],
+      "No future appointments available": [
+        "Inga framtida möten tillgängliga"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Denna bokning gjordes via ${ CALENDAR_APP_NAME }, en del av ${ BRAND_NAME }s serie med produkter som sätter integriteten främst."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "För att lägga till en ny bokningssida, ta bort en befintlig från sidofältet för bokningssidor."
+      ],
+      "When can appointments be booked?": [
+        "När kan möten bokas?"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nått gränsen för antal bokningsbara tider (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -7523,6 +7595,27 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
+      ],
+      "Exact URL matching": [
+        "Exakt URL-matchning"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldrig på denna exakta URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Överordnad domän och underdomäner (standard)"
+      ],
+      "Regular expression": [
+        "Vanligt uttryck"
+      ],
+      "Starts with": [
+        "Börjar med"
+      ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
       ]
     },
     "label": {
@@ -7534,6 +7627,12 @@
       ],
       "Start time of the booking range": [
         "Starttid för bokningsintervallet"
+      ],
+      "How long should an appointment last?": [
+        "Hur långt ska ett möte vara?"
+      ],
+      "What should people know about this appointment?": [
+        "Vad bör man veta om detta möte?"
       ]
     },
     "Label for contact group color": {
@@ -7894,6 +7993,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldrig med denna exakta URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ]
     },
     "Message display when a new app version is available": {
@@ -11843,6 +11960,9 @@
       ],
       "Please try again later.": [
         "Försök igen senare."
+      ],
+      "No bookings available.": [
+        "Inga bokningar tillgängliga."
       ]
     },
     "Time unit": {
@@ -12672,6 +12792,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Users and addresses": [
+        "Användare och adresser"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12994,6 +13117,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
