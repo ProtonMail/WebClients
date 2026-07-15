@@ -10,6 +10,7 @@ import type {
   PublicDocumentPostMessageEvent,
 } from '~/components/document/public/utils'
 import { tmpConvertNewDocTypeToOld, type DocumentAction } from '@proton/drive-store/store/_documents/useOpenDocument'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 /**
  * A processing component that duplicates a document received from the tab opener. Once duplication completes,
@@ -26,12 +27,14 @@ export function PublicDocumentCopier({ openAction }: { openAction: DocumentActio
       const result = await duplicateDocument.executePublic(name, yjsData, documentType)
 
       if (result.isFailed()) {
+        void OpenTracer.trace('boot_public_document_copier_duplicate_document_failed', { result: result.getError() })
         PostApplicationError(application.eventBus, {
           translatedError: c('Error')
             .t`An error occurred while attempting to duplicate the document. Please try again.`,
         })
       } else {
         const shell = result.getValue()
+        void OpenTracer.trace('boot_public_document_copier_open_document_window', { mode: openAction?.mode })
         void application.compatWrapper.getUserCompat().openDocumentWindow({
           ...shell,
           type: openAction?.type ?? 'doc',

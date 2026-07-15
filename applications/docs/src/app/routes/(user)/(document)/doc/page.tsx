@@ -25,6 +25,7 @@ import { useFlag } from '@proton/unleash/useFlag'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useLocation } from 'react-router-dom-v5-compat'
 import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
@@ -32,7 +33,13 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   const [user] = useUser()
 
   const { openAction, searchParams, updateParameters, navigateToAction, removeLocalIDFromUrl } = useDocsUrlBar()
+
+  useEffect(() => {
+    void OpenTracer.trace('boot_doc_page_mount', { mode: openAction?.mode })
+  }, [openAction, searchParams])
+
   useEffectOnce(() => {
+    void OpenTracer.trace('boot_doc_page_remove_local_id')
     removeLocalIDFromUrl()
   })
 
@@ -48,11 +55,17 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
         linkId: 'linkId' in openAction ? openAction.linkId : undefined,
         volumeId: 'volumeId' in openAction ? openAction.volumeId : undefined,
       })
+      void OpenTracer.trace('boot_doc_page_open_action', {
+        mode: openAction.mode,
+        linkId: 'linkId' in openAction ? openAction.linkId : undefined,
+        volumeId: 'volumeId' in openAction ? openAction.volumeId : undefined,
+      })
     }
   }, [application.logger, openAction])
 
   const createNewDocInRoot = useCallback(async () => {
     application.logger.info('Creating new document in root')
+    void OpenTracer.trace('boot_doc_page_create_new_doc_in_root')
 
     const date = getPlatformFriendlyDateForFileName()
     const docType = openAction?.type ?? 'doc'
@@ -90,6 +103,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
       application.logger.info('Redirecting back to public context', {
         action: openAction,
       })
+      void OpenTracer.trace('boot_doc_page_redirect_back_to_public_context', { mode: openAction?.mode })
 
       navigateToAction(
         {
@@ -106,6 +120,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
       setIsCreatingNewDocument(true)
 
       void createNewDocInRoot().then((result) => {
+        void OpenTracer.trace('boot_doc_page_create_new_doc_in_root_success')
         updateParameters({
           newVolumeId: result.volumeId,
           newLinkId: result.linkId,
@@ -119,12 +134,14 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
 
     const shouldOpenHistory = openAction && openAction.mode === 'history'
     if (shouldOpenHistory) {
+      void OpenTracer.trace('boot_doc_page_should_open_history', { mode: openAction?.mode })
       setActionMode('history')
       updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
     }
 
     const shouldDownload = openAction && openAction.mode === 'download'
     if (shouldDownload) {
+      void OpenTracer.trace('boot_doc_page_should_download', { mode: openAction?.mode })
       setActionMode('download')
       updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
     }
@@ -180,6 +197,14 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   )
 }
 
+type ContentPhase =
+  | 'creating_new_document'
+  | 'copy_public'
+  | 'open_url_reauth'
+  | 'invalid_open_action'
+  | 'convert'
+  | 'document_viewer'
+
 function Content({
   isCreatingNewDocument,
   openAction,
@@ -229,7 +254,54 @@ function Content({
 
   const { search } = useLocation()
 
-  if (isCreatingNewDocument || openAction?.mode === 'new') {
+  const contentPhase = useMemo((): ContentPhase => {
+    if (isCreatingNewDocument || openAction?.mode === 'new') {
+      return 'creating_new_document'
+    }
+    if (openAction?.mode === 'copy-public') {
+      return 'copy_public'
+    }
+    if (openAction?.mode === 'open-url-reauth') {
+      return 'open_url_reauth'
+    }
+    if (
+      !openAction ||
+      openAction.mode === 'create' ||
+      openAction.mode === 'open-url-download' ||
+      openAction.mode === 'open-url' ||
+      !openAction.volumeId ||
+      !openAction.linkId ||
+      !nodeMeta
+    ) {
+      return 'invalid_open_action'
+    }
+    if (openAction.mode === 'convert') {
+      return 'convert'
+    }
+    return 'document_viewer'
+  }, [isCreatingNewDocument, nodeMeta, openAction])
+
+  useEffect(() => {
+    switch (contentPhase) {
+      case 'creating_new_document':
+        void OpenTracer.trace('boot_doc_page_creating_new_document')
+        break
+      case 'copy_public':
+        void OpenTracer.trace('boot_doc_page_copy_public', { mode: openAction?.mode })
+        break
+      case 'open_url_reauth':
+        void OpenTracer.trace('boot_doc_page_open_url_reauth', { mode: openAction?.mode })
+        break
+      case 'invalid_open_action':
+        void OpenTracer.trace('boot_doc_page_invalid_open_action', { mode: openAction?.mode })
+        break
+      case 'convert':
+        void OpenTracer.trace('boot_doc_page_convert')
+        break
+    }
+  }, [contentPhase, openAction?.mode])
+
+  if (contentPhase === 'creating_new_document') {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
@@ -242,12 +314,12 @@ function Content({
     )
   }
 
-  if (openAction?.mode === 'copy-public') {
+  if (contentPhase === 'copy_public') {
     return <PublicDocumentCopier openAction={openAction} />
   }
 
   /** Waiting for redirection */
-  if (openAction?.mode === 'open-url-reauth') {
+  if (contentPhase === 'open_url_reauth') {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
@@ -255,15 +327,7 @@ function Content({
     )
   }
 
-  if (
-    !openAction ||
-    openAction.mode === 'create' ||
-    openAction.mode === 'open-url-download' ||
-    openAction.mode === 'open-url' ||
-    !openAction.volumeId ||
-    !openAction.linkId ||
-    !nodeMeta
-  ) {
+  if (contentPhase === 'invalid_open_action') {
     const isURLTruncatedBySlack = search.includes('[%E2%80%A6]')
     if (isURLTruncatedBySlack) {
       return (
@@ -278,19 +342,19 @@ function Content({
     )
   }
 
-  if (openAction.mode === 'convert') {
-    return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={nodeMeta} />
+  if (contentPhase === 'convert') {
+    return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={nodeMeta!} />
   } else {
     return (
       <>
         {emailOptInModal}
         <DocumentViewer
           editorInitializationConfig={editorInitializationConfig}
-          nodeMeta={nodeMeta}
-          openAction={openAction}
+          nodeMeta={nodeMeta!}
+          openAction={openAction!}
           actionMode={actionMode}
           providerType="private"
-          documentType={openAction.type}
+          documentType={openAction!.type}
         />
       </>
     )

@@ -11,6 +11,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 function getEditorUrl(systemMode: EditorSystemMode, documentType: DocumentType) {
   const url = new URL(BridgeOriginProvider.GetEditorOrigin())
@@ -93,6 +94,7 @@ export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, lo
 
       if (event.data === EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD) {
         logger.info('Editor requested client reload')
+        void OpenTracer.trace('boot_editor_frame_editor_requested_client_reload')
         window.location.reload()
         return
       }
@@ -117,6 +119,7 @@ export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, lo
           if (!iframe.contentWindow) {
             if (Date.now() - startTime > MAX_POLLING_TIME) {
               logger.error(`${systemMode} editor contentWindow not available after 10 seconds of polling; restarting`)
+              void OpenTracer.trace('boot_editor_frame_editor_content_window_not_available')
               window.location.reload()
               return
             }

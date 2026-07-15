@@ -6,6 +6,7 @@ import { isPrivateNodeMeta, type NodeMeta, type PublicNodeMeta } from '@proton/d
 import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 export function useChangeAddressWhenPubliclyShared(
   nodeMeta: NodeMeta | PublicNodeMeta,
@@ -23,6 +24,7 @@ export function useChangeAddressWhenPubliclyShared(
   useEffect(
     // When SDK is enabled and AppendPublicShareKeyMaterialToTitle is not used, the default URL address is not updated
     function setInitialAddress() {
+      void OpenTracer.trace('boot_use_change_address_when_publicly_shared_set_initial_address_start')
       if (
         changedAddress.current ||
         !sharingModalDriveSdkEnabled ||
@@ -30,6 +32,7 @@ export function useChangeAddressWhenPubliclyShared(
         !documentState.getProperty('userRole').canReadPublicShareUrl() ||
         nodeMetaNotPrivate
       ) {
+        void OpenTracer.trace('boot_use_change_address_when_publicly_shared_set_initial_address_return')
         return
       }
 
@@ -48,6 +51,10 @@ export function useChangeAddressWhenPubliclyShared(
               CacheService.setLocalIDForDocumentInCache({ token }, localID)
             }
 
+            void OpenTracer.trace('boot_use_change_address_when_publicly_shared_replace_state', {
+              newAddress: newAddress.pathname,
+              localID,
+            })
             history.replaceState(null, '', newAddress)
 
             changedAddress.current = true

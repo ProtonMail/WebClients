@@ -37,16 +37,28 @@ import type { DocsStore } from '~/redux-store/store'
 import { extraThunkArguments } from '~/redux-store/thunk'
 import { useSheetsFavicon } from '../../hooks/useSheetsFavicon'
 import { bootstrapApp } from './__utils/bootstrap'
+import TracerLoader from '../../tracer/TracerLoader'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 /**
  * The entry point for the user (authenticated) application.
  */
 export default function UserApp() {
+  return (
+    <TracerLoader>
+      <BootstrappedContainer />
+    </TracerLoader>
+  )
+}
+
+function BootstrappedContainer() {
   const appState = useAppState()
   return (
     <ProtonApp config={config} ThemeProvider={DocsThemeProvider}>
       {(() => {
         const { error, MainContainer, store, initialUser, showDrawerSidebar } = appState
+        void OpenTracer.trace('boot_bootstrap_success', { error: error?.message })
+
         if (error) {
           return <StandardLoadErrorPage errorMessage={error.message} />
         }
@@ -87,6 +99,7 @@ function useAppState() {
   const [state, setState] = useState(DEFAULT_APP_STATE)
 
   useEffectOnce(() => {
+    void OpenTracer.trace('boot_bootstrap_mount')
     void (async () => {
       try {
         /*
