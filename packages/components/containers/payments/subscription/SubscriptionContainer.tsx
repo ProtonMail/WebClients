@@ -237,6 +237,7 @@ export interface SubscriptionContainerProps {
     organization: Organization | undefined;
     plans: Plan[];
     freePlan: FreePlanDefault;
+    trial?: boolean;
     mode?: 'upsell-modal';
     upsellRef?: string;
     parent?: string;
@@ -285,6 +286,7 @@ const SubscriptionContainerInner = ({
     showShortPlan,
     skipPlanTransitionChecks,
     initialBillingAddress,
+    trial,
 }: SubscriptionContainerProps) => {
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -626,6 +628,7 @@ const SubscriptionContainerInner = ({
         subscription,
         planIDs: model.planIDs,
         coupon: couponCode,
+        isTrialIntended: Boolean(trial),
         onBeforeSepaPayment: async () => {
             if (checkResult.requestData.ProrationMode === ProrationMode.Exact) {
                 const currentAmountDue = checkResult.AmountDue;
@@ -831,9 +834,17 @@ const SubscriptionContainerInner = ({
         captureWrongPlanIDs(maybePlanIDs, { source: 'SubscriptionModal/PlanIDs' });
         captureWrongPlanName(plan, { source: 'SubscriptionModal/PlanName' });
 
-        checkoutTelemetry.reportInitialization(
-            getCommonTelemetryPayload({ user, subscription, model, appName: APP_NAME, app, context: telemetryContext })
-        );
+        checkoutTelemetry.reportInitialization({
+            ...getCommonTelemetryPayload({
+                user,
+                subscription,
+                model,
+                appName: APP_NAME,
+                app,
+                context: telemetryContext,
+            }),
+            isTrial: Boolean(trial),
+        });
     }, []);
 
     useSubscriptionModificationChangeStepTelemetry({

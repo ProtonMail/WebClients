@@ -786,6 +786,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const loading = loadingSubscription || loadingPlans || plansMapLoading || upsellLoading || loadingCurrency;
 
     const hasTrackedPageView = useRef(false);
+
     useEffect(() => {
         if (loading || !subscription || hasTrackedPageView.current) {
             return;
@@ -802,6 +803,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
             selectedCycle: subscription.Cycle || DEFAULT_CYCLE,
             selectedPlanIDs: currentPlanIDs,
             selectedStep: null,
+            isTrial: false, // user's intention is not creation of trial
         });
     }, [loading, subscription]);
 

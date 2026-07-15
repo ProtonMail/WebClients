@@ -47,11 +47,13 @@ const getSearchParams = (search: string) => {
     const cycle = getValidCycle(maybeCycle);
     const maybeAudience = params.get('audience');
     const audience = getValidAudience(maybeAudience);
+    const trial = params.get('trial') === 'true';
 
     return {
         audience,
         plan: params.get('plan') || undefined,
         cycle,
+        trial,
     };
 };
 
@@ -123,6 +125,7 @@ const PlansSectionInner = ({ app }: Props) => {
             selectedCycle: subscription.Cycle || DEFAULT_CYCLE,
             selectedPlanIDs: currentPlanIDs,
             selectedStep: null,
+            isTrial: searchParams.trial,
         });
     }, [isLoading]);
 

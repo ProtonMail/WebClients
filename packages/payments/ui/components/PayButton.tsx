@@ -92,6 +92,7 @@ export const PayButton = ({
                 amount: paymentFacade.checkResult.AmountDue,
                 paymentMethodType: paymentFacade.selectedMethodType,
                 paymentMethodValue: paymentFacade.selectedMethodValue,
+                isTrial: paymentFacade.isTrialIntended,
             });
         }
 
