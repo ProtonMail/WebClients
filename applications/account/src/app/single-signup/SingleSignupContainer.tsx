@@ -518,6 +518,7 @@ const SingleSignupContainer = ({
                 selectedStep: null,
                 build: APP_NAME,
                 product: toApp,
+                isTrial: signupParameters.trial,
             });
 
             setModelDiff({

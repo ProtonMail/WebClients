@@ -673,6 +673,7 @@ const SingleSignupContainerV2 = ({
                 build: APP_NAME,
                 product: toApp,
                 context: getTelemetryContext(session),
+                isTrial: signupTrial,
             });
 
             // TODO: How to define already paid behavior?

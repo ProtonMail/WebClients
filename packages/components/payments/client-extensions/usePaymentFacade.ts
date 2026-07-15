@@ -103,7 +103,10 @@ type PaymentFacadeProps = {
     subscription?: Subscription | FreeSubscription;
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
+    /** Overrides trial detection for payment behavior. */
     isTrial?: boolean;
+    /** The user's intention to start a trial, for telemetry only. Defaults to isTrial, then false. */
+    isTrialIntended?: boolean;
     product: ProductParam;
     telemetryContext: PaymentTelemetryContext;
     sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];
@@ -137,6 +140,7 @@ export const usePaymentFacade = ({
     onBeforeSepaPayment,
     planIDs,
     isTrial: isTrialOverride,
+    isTrialIntended: isTrialIntendedOverride,
     product,
     telemetryContext,
     sortNewMethods,
@@ -171,6 +175,11 @@ export const usePaymentFacade = ({
 
     const { reportPaymentLoad } = telemetry;
 
+    // Drives payment behavior: whether the actual transaction is a trial, per the estimation.
+    const isTrial = isTrialOverride ?? checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+    // For telemetry: the user's intention to start a trial, not a lagging indicator derived from the estimation.
+    const isTrialIntended = isTrialIntendedOverride ?? isTrialOverride ?? false;
+
     const verifyPaymentChargebeeCard = useChargebeeCardVerifyPayment(api, {
         checkResult,
         user,
@@ -199,6 +208,7 @@ export const usePaymentFacade = ({
                 build: APP_NAME,
                 product,
                 context: telemetryContext,
+                isTrial: isTrialIntended,
             });
         }
     };
@@ -210,7 +220,6 @@ export const usePaymentFacade = ({
         onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL),
     });
 
-    const isTrial = isTrialOverride ?? checkResult?.SubscriptionMode === SubscriptionMode.Trial;
     const { canUseApplePay, applePayModalHandles } = useApplePayDependencies(chargebeeHandles, {
         onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.APPLE_PAY),
         onVerificationCancelled: () =>
@@ -401,6 +410,7 @@ export const usePaymentFacade = ({
         telemetryContext,
         product,
         processingPayment,
+        isTrialIntended,
     };
 };
 

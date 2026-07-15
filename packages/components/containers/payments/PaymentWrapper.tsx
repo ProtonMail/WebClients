@@ -66,6 +66,7 @@ const PaymentWrapper = ({
                         context: rest.telemetryContext,
                         build: APP_NAME,
                         product: rest.product,
+                        isTrial: rest.isTrialIntended,
                     });
                 }
 

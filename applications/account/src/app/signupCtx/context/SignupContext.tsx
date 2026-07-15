@@ -357,6 +357,7 @@ export const InnerSignupContextProvider = ({
             selectedStep: null,
             build: APP_NAME,
             product: app,
+            isTrial: paymentsContext.isTrial,
         });
     }, [paymentsContext.initialized]);
 

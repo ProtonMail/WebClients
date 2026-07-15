@@ -68,6 +68,7 @@ export const reportChangeTelemetry = (
         ...getCommonTelemetryPayload(telemetryDeps),
         paymentMethodType: paymentFacade.selectedMethodType,
         paymentMethodValue: paymentFacade.selectedMethodValue,
+        isTrial: paymentFacade.isTrialIntended,
         ...nonEmptyOverrides,
     };
 
