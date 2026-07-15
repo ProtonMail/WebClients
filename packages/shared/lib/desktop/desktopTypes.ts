@@ -21,6 +21,17 @@ export type ElectronNotification = {
     labelID?: string;
 };
 
+export const electronNotificationSchema = z
+    .object({
+        title: z.string().max(256),
+        body: z.string().max(1024),
+        app: z.enum(['mail', 'calendar', 'account']),
+        elementID: z.string().max(128).optional(),
+        messageID: z.string().max(128).optional(),
+        labelID: z.string().max(128).optional(),
+    })
+    .strict();
+
 export type ESUserChoice = boolean | null;
 
 // This type must be updated in the Electron application as well
