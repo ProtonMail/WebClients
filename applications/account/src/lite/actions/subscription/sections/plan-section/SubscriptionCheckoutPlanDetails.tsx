@@ -9,6 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Badge } from '@proton/components/components/badge/Badge';
 import Price from '@proton/components/components/price/Price';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { PlanIcon } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PlanIcon';
 import PlanIconName from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PlanIconName';
@@ -111,6 +112,7 @@ const SubscriptionCheckoutFixedPlanSectionHeader = ({
 interface SubscriptionCheckoutPlanPriceSectionProps extends CheckoutViewProps {
     planSectionRef: MutableRefObject<HTMLDivElement | null>;
     showDiscountItem: boolean;
+    paymentInitialized: boolean;
 }
 
 const SubscriptionCheckoutPlanPriceSection = ({
@@ -118,6 +120,7 @@ const SubscriptionCheckoutPlanPriceSection = ({
     checkoutView,
     loading,
     showDiscountItem,
+    paymentInitialized,
 }: SubscriptionCheckoutPlanPriceSectionProps) => {
     const { checkoutData } = checkoutView;
     const discountItem = checkoutView.getItem('discount');
@@ -125,8 +128,20 @@ const SubscriptionCheckoutPlanPriceSection = ({
     return (
         <div className="flex bg-weak p-4 w-full justify-space-between" ref={planSectionRef}>
             <PlanIconName
-                logo={<PlanIcon planName={checkoutData.planName} />}
-                topLine={getPlanTitlePlusMaybeBrand(checkoutData.planTitle, checkoutData.planName)}
+                logo={
+                    paymentInitialized ? (
+                        <PlanIcon planName={checkoutData.planName} />
+                    ) : (
+                        <SkeletonLoader width="44px" height="44px" />
+                    )
+                }
+                topLine={
+                    paymentInitialized ? (
+                        getPlanTitlePlusMaybeBrand(checkoutData.planTitle, checkoutData.planName)
+                    ) : (
+                        <SkeletonLoader height="1.375rem" width="12.5rem" />
+                    )
+                }
                 bottomLine={
                     <WithLoadingIndicator loading={loading}>{checkoutView.render('billingCycle')}</WithLoadingIndicator>
                 }
@@ -384,9 +399,15 @@ interface Props {
     hasSavedPaymentMethods: boolean;
     checkoutView: CheckoutView;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason | undefined;
+    paymentInitialized: boolean;
 }
 
-const SubscriptionCheckoutPlanDetails = ({ hasSavedPaymentMethods, checkoutView, paymentForbiddenReason }: Props) => {
+const SubscriptionCheckoutPlanDetails = ({
+    hasSavedPaymentMethods,
+    checkoutView,
+    paymentForbiddenReason,
+    paymentInitialized,
+}: Props) => {
     const planSectionRef = useRef<HTMLDivElement>(null);
     const [showFixedHeader, setShowFixedHeader] = useState(false);
     const { subscription, loading } = usePayments();
@@ -438,6 +459,7 @@ const SubscriptionCheckoutPlanDetails = ({ hasSavedPaymentMethods, checkoutView,
                     checkoutView={checkoutView}
                     loading={loading}
                     showDiscountItem={showDiscountItem}
+                    paymentInitialized={paymentInitialized}
                 />
                 <SubscriptionCheckoutAddonSection checkoutView={checkoutView} loading={loading} />
                 <SubscriptionCheckoutProration
