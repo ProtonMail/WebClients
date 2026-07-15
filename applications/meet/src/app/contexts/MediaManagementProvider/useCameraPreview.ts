@@ -11,6 +11,7 @@ import {
     ensureBackgroundBlurProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
 import type { BackgroundBlurProcessor, BackgroundProcessorVersion } from '../../processors/background-processor/types';
+import type { BlurInitializationState } from './useBlurInitializationState';
 
 interface UseCameraPreviewParams {
     selectedCameraId: string;
@@ -19,6 +20,8 @@ interface UseCameraPreviewParams {
     backgroundBlur: boolean;
     backgroundProcessorVersion: BackgroundProcessorVersion;
     room: Room;
+    trackBlurInitialization: BlurInitializationState['trackBlurInitialization'];
+    cancelBlurInitialization: BlurInitializationState['cancelBlurInitialization'];
 }
 
 export const useCameraPreview = ({
@@ -28,14 +31,27 @@ export const useCameraPreview = ({
     backgroundBlur,
     backgroundProcessorVersion,
     room,
+    trackBlurInitialization,
+    cancelBlurInitialization,
 }: UseCameraPreviewParams) => {
     const previewTrackRef = useRef<LocalVideoTrack | null>(null);
     const processorAttachInProgress = useRef(false);
+    const previewBlurInitTokenRef = useRef<number | undefined>(undefined);
 
     const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
     const backgroundProcessorCreationRequestIdRef = useRef(0);
 
+    const cancelPreviewBlurInitialization = useCallback(() => {
+        if (previewBlurInitTokenRef.current === undefined) {
+            return;
+        }
+        cancelBlurInitialization(previewBlurInitTokenRef.current);
+        previewBlurInitTokenRef.current = undefined;
+    }, [cancelBlurInitialization]);
+
     const cleanupPreviewTrack = async () => {
+        cancelPreviewBlurInitialization();
+
         const track = previewTrackRef.current;
         if (!track) {
             return;
@@ -74,6 +90,7 @@ export const useCameraPreview = ({
 
             if (!backgroundBlurProcessorInstanceRef.current || !videoTrack || !enable) {
                 backgroundBlurProcessorInstanceRef.current?.disable?.();
+                cancelPreviewBlurInitialization();
                 return;
             }
 
@@ -88,11 +105,16 @@ export const useCameraPreview = ({
                     backgroundBlurProcessorInstanceRef.current
                 );
                 processor?.enable?.();
+
+                if (processor?.waitUntilBlurApplied) {
+                    const { waitUntilBlurApplied } = processor;
+                    previewBlurInitTokenRef.current = trackBlurInitialization(() => waitUntilBlurApplied());
+                }
             } finally {
                 processorAttachInProgress.current = false;
             }
         },
-        [backgroundProcessorVersion]
+        [backgroundProcessorVersion, trackBlurInitialization, cancelPreviewBlurInitialization]
     );
 
     const handlePreviewCameraToggle = async (videoElement: HTMLVideoElement) => {
