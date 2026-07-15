@@ -270,6 +270,7 @@ export const createPaymentSubscription = async (
         context: telemetryContext,
         paymentMethodType,
         paymentMethodValue,
+        isTrial: Boolean(data.StartTrial),
     };
 
     const createSubscriptionQueryConfig = createSubscriptionQuery(data, product, version);
