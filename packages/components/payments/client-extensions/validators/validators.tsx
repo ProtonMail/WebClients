@@ -18,6 +18,7 @@ import type { ChargebeeIframeHandles, FreeSubscription, V5PaymentToken } from '@
 import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import type { ApplePayModalHandles } from '@proton/payments/core/payment-processors/useApplePay';
 import type { GooglePayModalHandles } from '@proton/payments/core/payment-processors/useGooglePay';
+import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { toV5PaymentToken } from '@proton/payments/core/utils';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -125,6 +126,7 @@ export const useChargebeeCardVerifyPayment = (
                         build: APP_NAME,
                         product,
                         context: telemetryContext,
+                        isTrial: checkResult.SubscriptionMode === SubscriptionMode.Trial,
                     });
                 }
             };

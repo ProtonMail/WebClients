@@ -372,6 +372,7 @@ const Step1 = ({
             paymentMethodValue: selectedMethodRef.current?.value,
             build: APP_NAME,
             product: app,
+            isTrial: signupTrial,
             ...nonEmptyOverrides,
         });
     };
