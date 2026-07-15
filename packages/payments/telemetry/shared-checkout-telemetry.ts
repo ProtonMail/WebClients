@@ -207,6 +207,7 @@ export type PaymentTelemetryPayload = {
     product: ProductParam;
     /** Checkout context for event naming */
     context: PaymentTelemetryContext;
+    isTrial: boolean;
 } & BillingAddressFailureAdditionalProps;
 
 /** Event name mapping for payment events */
@@ -354,6 +355,8 @@ export type EstimationChangePayload = {
     build: APP_NAMES;
     /** Product context */
     product: ProductParam;
+    /** Whether the estimated checkout is a trial */
+    isTrial: boolean;
 };
 
 /** Event name mapping for estimation change events */
@@ -436,6 +439,8 @@ type PaymentInitTelemetryPayload = {
     product: ProductParam;
     /** Checkout context for event naming */
     context: PaymentTelemetryContext;
+    /** Whether the initialized checkout is a trial */
+    isTrial: boolean;
 };
 
 /** Event name mapping for initialization events */

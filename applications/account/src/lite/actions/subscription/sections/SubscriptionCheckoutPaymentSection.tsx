@@ -184,6 +184,7 @@ const SubscriptionCheckoutPaymentSection = ({
                 context: telemetryContext,
                 build: APP_NAME,
                 product: appName,
+                isTrial: false, // lite subscription checkout has no trial intention
             });
         }
 

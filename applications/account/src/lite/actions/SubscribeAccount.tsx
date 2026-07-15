@@ -181,6 +181,7 @@ const SubscribeAccount = ({
         );
     }
 
+    const trial = searchParams.get('trial') === 'true';
     const maybeStart = searchParams.get('start');
     const maybeType = searchParams.get('type');
 
@@ -390,6 +391,7 @@ const SubscribeAccount = ({
                                     onCancel={handleClose}
                                     paymentStatus={paymentStatus}
                                     initialBillingAddress={initialBillingAddress}
+                                    trial={trial}
                                     onCheck={(data) => {
                                         // If the initial check completes, it's handled by the container itself
                                         if (data.model.initialCheckComplete) {

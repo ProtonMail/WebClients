@@ -417,6 +417,7 @@ const Step1 = ({
             paymentMethodValue: paymentFacade.selectedMethodValue,
             build: APP_NAME,
             product: toApp,
+            isTrial: signupTrial,
             ...nonEmptyOverrides,
         });
     };
