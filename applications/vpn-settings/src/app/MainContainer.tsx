@@ -406,7 +406,6 @@ const MainContainer: FunctionComponent = () => {
                                         organizationAppRoutes={organizationAppRoutes}
                                         redirect={redirect}
                                         onOpenChat={handleOpenZendeskChat}
-                                        user={user}
                                         organization={organization}
                                         subscription={subscription}
                                     />
