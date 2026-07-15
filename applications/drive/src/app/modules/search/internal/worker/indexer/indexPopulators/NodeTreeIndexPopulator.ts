@@ -12,10 +12,10 @@ import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
 import { createIndexEntry, toCoreNodeFields } from '../indexEntry';
+import { removeTreeEventScope } from '../removeTreeEventScope';
 import type { TaskContext } from '../tasks/BaseTask';
 import { CleanUpStaleIndexEntryTask } from '../tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
-import { RemoveTreeEventScopeIdTask } from '../tasks/CoreTasks/RemoveTreeEventScopeIdTask';
 import { ResumableFolderBFSVisitor } from '../utils/resumableTreeVisitor/ResumableFolderBFSVisitor';
 import { drainResumableTreeVisitorEvents } from '../utils/resumableTreeVisitor/drainResumableTreeVisitorEvents';
 import { IndexPopulator } from './IndexPopulator';
@@ -174,11 +174,20 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
                     return processed + 1;
 
                 case 'tree_remove':
-                    Logger.info(`${this.getUid()}: TreeRemove, scope cleanup needed`);
-                    ctx.enqueueOnce(new RemoveTreeEventScopeIdTask(this.treeEventScopeId));
-                    // Return early to give a chance to the above task to be processed first.
-                    // Remaining events will be processed in next incremental update.
-                    return processed + 1;
+                    Logger.info(`${this.getUid()}: TreeRemove, tearing down scope <${this.treeEventScopeId}>`);
+
+                    // Stop tracking the tree event scope id everywhere. Deleting
+                    // its populator state orphans the scope's index entries.
+                    await removeTreeEventScope(this.treeEventScopeId, ctx);
+
+                    // Remove any orphan index entries that are attached to the obsolete tree event scope id.
+                    ctx.enqueueOnce(new CleanUpStaleIndexEntryTask());
+
+                    // Do NOT count tree_remove as processed: leaving it uncommitted keeps the event cursor
+                    // before it, so the teardown is retried (reschedule + reload redelivery) if any step
+                    // above threw. On success unregisterByScope disposed the collector, so the event won't
+                    // be reprocessed.
+                    return processed;
 
                 case 'shared_with_me_updated':
                     // TODO: Shared volumes changed — may need to add/remove scope subscriptions.

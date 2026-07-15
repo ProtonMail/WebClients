@@ -147,7 +147,7 @@ export class TreeSubscriptionRegistry {
         }
     }
 
-    unregisterByScope(treeEventScopeId: TreeEventScopeId): void {
+    async unregisterByScope(treeEventScopeId: TreeEventScopeId): Promise<void> {
         const entry = this.entries.get(treeEventScopeId);
         if (entry) {
             for (const reg of entry.registrations) {
@@ -159,6 +159,9 @@ export class TreeSubscriptionRegistry {
             this.bridge.driveSdkForSearch.disposeTreeEventSubscription(treeEventScopeId);
             this.entries.delete(treeEventScopeId);
         }
+        // Delete the persisted subscription unconditionally (symmetric with register()'s putSubscription):
+        // idempotent, and also reaps a subscription that was restored on reload but never re-registered.
+        await this.db.deleteSubscription(treeEventScopeId);
     }
 
     dispose(): void {
