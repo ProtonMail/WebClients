@@ -1,6 +1,7 @@
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { DocsApi } from '../Api/DocsApi'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 const MIME_TYPE_TO_PATHNAME_MAP: Record<string, string> = {
   [PROTON_DOCS_DOCUMENT_MIMETYPE]: '/doc',
@@ -14,6 +15,7 @@ const MIME_TYPE_TO_PATHNAME_MAP: Record<string, string> = {
  * the same URL but with `/sheet`.
  */
 export function redirectToCorrectDocTypeIfNeeded(mimeType: string, docsApi: DocsApi): boolean {
+  void OpenTracer.trace('boot_redirect_to_correct_doc_type_if_needed_start', { mimeType })
   const currentURL = new URL(location.href)
   const expectedPathname = MIME_TYPE_TO_PATHNAME_MAP[mimeType]
   if (currentURL.pathname.endsWith(expectedPathname)) {

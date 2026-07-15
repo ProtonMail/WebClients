@@ -30,6 +30,7 @@ import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
@@ -96,6 +97,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     if (documentState.getProperty('userRole').isPublicUserWithAccess()) {
       this.logger.info('Redirecting to authed document')
       this.docsApi.resetInflightCount()
+      void OpenTracer.trace('boot_public_doc_loader_redirect_to_authed_document_start')
       this.driveCompat.redirectToAuthedDocument(
         {
           volumeId: documentState.getProperty('documentMeta').volumeId,
