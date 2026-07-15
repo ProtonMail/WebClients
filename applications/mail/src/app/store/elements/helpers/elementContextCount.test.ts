@@ -9,7 +9,11 @@ import {
     setupMessage,
 } from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
 
-import { computeContextTotals, updateContextTotals } from './elementContextCount';
+import {
+    computeContextTotals,
+    updateContextTotals,
+    updateDeletedSinceLastLoadFromContextTotals,
+} from './elementContextCount';
 
 const messageOne = 'msg-1';
 const messageTwo = 'msg-2';
@@ -311,5 +315,39 @@ describe('updateContextTotal', () => {
         updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         expect(state.total[inboxUnreadContext]).toBe(4); // 5 - (2 - 1)
+    });
+});
+
+describe('incrementDeletedSinceLastLoadFromContextTotals', () => {
+    it('increments deletedSinceLastLoad by the number of elements removed from the current context', () => {
+        const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+        const state = makeState({
+            total: { [inboxContext]: 3 },
+            deletedSinceLastLoad: 2,
+        });
+
+        updateDeletedSinceLastLoadFromContextTotals({
+            state,
+            countsBeforeAction: { [inboxContext]: 3 },
+            countsAfterAction: { [inboxContext]: 1 },
+        });
+
+        expect(state.deletedSinceLastLoad).toBe(4);
+    });
+
+    it('does not increment when elements are added to the current context', () => {
+        const inboxContext = generateElementContextIdentifier({ labelID: MAILBOX_LABEL_IDS.INBOX });
+        const state = makeState({
+            total: { [inboxContext]: 1 },
+            deletedSinceLastLoad: 1,
+        });
+
+        updateDeletedSinceLastLoadFromContextTotals({
+            state,
+            countsBeforeAction: { [inboxContext]: 1 },
+            countsAfterAction: { [inboxContext]: 2 },
+        });
+
+        expect(state.deletedSinceLastLoad).toBe(1);
     });
 });

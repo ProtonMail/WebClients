@@ -31,9 +31,44 @@ import type {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
-import { queryElement, queryElementsInBatch, refreshTaskRunningTimeout } from './helpers/elementQuery';
+import {
+    PAGE_FETCH_COUNT,
+    queryElement,
+    queryElementsInBatch,
+    refreshTaskRunningTimeout,
+} from './helpers/elementQuery';
 
 const REFRESHES = [5, 10, 20];
+// Backend search re-indexing after an action (e.g. delete) is typically much faster than
+// the eventual-consistency delay for regular folder counts, so we can retry sooner.
+const SEARCH_REFRESHES = [1, 2, 4];
+
+// Safety cap on how many extra anchor-paginated batches we fetch in one go, even if a very
+// large number of elements were deleted, to avoid firing an excessive number of requests.
+const MAX_SEARCH_PAGE_FETCH_COUNT = 5;
+
+/**
+ * When reloading a backend search after a bulk delete, the default `PAGE_FETCH_COUNT` might not be
+ * enough to backfill every page affected by the deletion in a single round trip. Scale the number of
+ * batches fetched based on how many elements were actually removed since the last successful load.
+ */
+const getPageFetchCount = ({
+    isSearching,
+    pageSize,
+    deletedSinceLastLoad,
+}: {
+    isSearching: boolean;
+    pageSize: number;
+    deletedSinceLastLoad: number;
+}) => {
+    if (!isSearching || deletedSinceLastLoad <= 0) {
+        return PAGE_FETCH_COUNT;
+    }
+
+    const pagesToBackfill = Math.ceil(deletedSinceLastLoad / pageSize);
+
+    return Math.min(MAX_SEARCH_PAGE_FETCH_COUNT, Math.max(PAGE_FETCH_COUNT, pagesToBackfill));
+};
 
 export const reset = createAction<NewStateParams>('elements/reset');
 
@@ -72,6 +107,12 @@ export const load = createAsyncThunk<
         // Indicates that we have a context, the location was already loaded
         const contextAlreadyPresent = onlyInsertNewData && !!state.elements.total[currentContextIdentifier];
 
+        const pageFetchCount = getPageFetchCount({
+            isSearching: params.isSearching,
+            pageSize,
+            deletedSinceLastLoad: state.elements.deletedSinceLastLoad,
+        });
+
         const onSerializedResponse = ({ result, page }: { result: QueryResults; page: number }) => {
             dispatch(
                 showSerializedElements({
@@ -90,6 +131,7 @@ export const load = createAsyncThunk<
                 pageSize,
                 params,
                 abortController,
+                pageFetchCount,
             },
             onSerializedResponse
         ).catch((error: any | undefined) => {
@@ -111,9 +153,10 @@ export const load = createAsyncThunk<
         });
 
         if (result.Stale === 1) {
+            const refreshes = params.isSearching ? SEARCH_REFRESHES : REFRESHES;
             const refreshDelay = contextAlreadyPresent
-                ? REFRESHES[Math.min(count, REFRESHES.length - 1)]
-                : REFRESHES?.[count];
+                ? refreshes[Math.min(count, refreshes.length - 1)]
+                : refreshes?.[count];
 
             if (refreshDelay !== undefined) {
                 setTimeout(() => {

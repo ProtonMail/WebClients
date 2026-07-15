@@ -16,7 +16,7 @@ import type { ElementsStateParams, QueryParams, QueryResults, RetryData } from '
 
 export const TASK_RUNNING_POLLING_INTERVAL = 10000;
 
-const PAGE_FETCH_COUNT = 2;
+export const PAGE_FETCH_COUNT = 2;
 
 const getQueryElementsParameters = ({
     page,
@@ -73,12 +73,14 @@ export const queryElementsInBatch = async (
         pageSize,
         params,
         abortController,
+        pageFetchCount = PAGE_FETCH_COUNT,
     }: {
         api: Api;
         page: number;
         pageSize: number;
         params: ElementsStateParams;
         abortController?: AbortController;
+        pageFetchCount?: number;
     },
     onSerializedResponse?: (param: { result: QueryResults; page: number }) => void
 ) => {
@@ -106,7 +108,7 @@ export const queryElementsInBatch = async (
         }),
     });
 
-    return range(0, PAGE_FETCH_COUNT).reduce(
+    return range(0, pageFetchCount).reduce(
         (lastCall: Promise<QueryResults | (QueryResults & { AnchorID: string; Anchor: string })>, _, index) => {
             return lastCall.then(async (previousResult) => {
                 if (!previousResult.More) {
