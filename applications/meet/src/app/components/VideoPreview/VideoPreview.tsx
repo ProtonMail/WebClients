@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useStableCallback } from '../../hooks/useStableCallback';
+import { BackgroundBlurInitializingOverlay } from '../BackgroundBlurInitializingOverlay/BackgroundBlurInitializingOverlay';
 
 import './VideoPreview.scss';
 
@@ -16,16 +18,19 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
 
     const { handlePreviewCameraToggle, cleanupPreviewTrack } = useMediaManagementContext();
 
+    const stableHandlePreviewCameraToggle = useStableCallback(handlePreviewCameraToggle);
     useEffect(() => {
         if (videoRef.current) {
-            void handlePreviewCameraToggle(videoRef.current);
+            void stableHandlePreviewCameraToggle(videoRef.current);
         }
-    }, [selectedCameraId, facingMode]);
+    }, [selectedCameraId, facingMode, stableHandlePreviewCameraToggle]);
 
     useEffect(() => {
         return () => {
             void cleanupPreviewTrack();
         };
+        // Setting up cleanup for unmount
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -49,6 +54,7 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                             (isSafari() || facingMode === 'environment') && isMobile() ? undefined : 'scaleX(-1)',
                     }}
                 />
+                <BackgroundBlurInitializingOverlay />
             </div>
         </>
     );

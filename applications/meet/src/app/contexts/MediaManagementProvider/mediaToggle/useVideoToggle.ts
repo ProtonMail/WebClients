@@ -27,6 +27,7 @@ import type {
 } from '../../../processors/background-processor/types';
 import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../../utils/backgroundBlurPersistance';
+import type { BlurInitializationState } from '../useBlurInitializationState';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
 const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
@@ -38,9 +39,16 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
 interface UseVideoToggleParams {
     switchActiveDevice: SwitchActiveDevice;
     backgroundProcessorVersion: BackgroundProcessorVersion;
+    trackBlurInitialization: BlurInitializationState['trackBlurInitialization'];
+    cancelBlurInitialization: BlurInitializationState['cancelBlurInitialization'];
 }
 
-export const useVideoToggle = ({ switchActiveDevice, backgroundProcessorVersion }: UseVideoToggleParams) => {
+export const useVideoToggle = ({
+    switchActiveDevice,
+    backgroundProcessorVersion,
+    trackBlurInitialization,
+    cancelBlurInitialization,
+}: UseVideoToggleParams) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const dispatch = useMeetDispatch();
@@ -75,13 +83,37 @@ export const useVideoToggle = ({ switchActiveDevice, backgroundProcessorVersion 
         }
 
         processorAttachInProgress.current = true;
+
+        const videoTrack = getCurrentVideoTrack();
+
+        // Blank the raw camera only while the processor is being attached: disabling
+        // the source makes the browser emit black frames (not a mute, so peers aren't
+        // notified) instead of leaking unblurred video during the track swap. Once
+        // attached, the processor's own output is what's published and it emits black
+        // frames until its first mask is ready, so re-enabling the source in `finally`
+        // can't reintroduce an unblurred flash — the source is now only the
+        // processor's input. It MUST be re-enabled promptly: on Safari's
+        // canvas.captureStream fallback the processor's render loop is driven by the
+        // source track, so leaving it disabled would starve the processor of frames.
+        const rawMediaStreamTrack = videoTrack?.mediaStreamTrack;
+        const shouldBlankRawFrames = !!rawMediaStreamTrack && rawMediaStreamTrack.enabled;
+        if (shouldBlankRawFrames) {
+            rawMediaStreamTrack.enabled = false;
+        }
+
         try {
-            const result = await ensureBackgroundBlurProcessor(
-                getCurrentVideoTrack(),
-                backgroundBlurProcessorInstanceRef.current
-            );
+            const result = await ensureBackgroundBlurProcessor(videoTrack, backgroundBlurProcessorInstanceRef.current);
+
+            if (result?.waitUntilBlurApplied) {
+                const { waitUntilBlurApplied } = result;
+                trackBlurInitialization(() => waitUntilBlurApplied());
+            }
+
             return result;
         } finally {
+            if (shouldBlankRawFrames) {
+                rawMediaStreamTrack.enabled = true;
+            }
             processorAttachInProgress.current = false;
         }
     });
@@ -232,6 +264,7 @@ export const useVideoToggle = ({ switchActiveDevice, backgroundProcessorVersion 
                 processor?.enable?.();
             } else {
                 backgroundBlurProcessorInstanceRef.current?.disable?.();
+                cancelBlurInitialization();
             }
         } catch (error) {
             // eslint-disable-next-line no-console
