@@ -12,7 +12,7 @@ export type ArchiveTracker = {
     recordError(error: unknown): void;
     registerFile(taskId: string): void;
     updateDownloadProgress(taskId: string, downloadedBytes: number, claimedSize: number): void;
-    attachController(taskId: string, controller: DownloadController): void;
+    attachController(taskId: string, controller: DownloadController, completionPromise: Promise<void>): void;
     waitForTaskCompletion(taskId: string): Promise<void>;
     pauseAll(): void;
     resumeAll(): void;
