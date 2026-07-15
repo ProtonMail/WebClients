@@ -104,6 +104,13 @@ export interface ElementsState {
      * List of context filters for which we are awaiting fresh data from the server.
      */
     awaitingStaleRetry: SimpleMap<boolean>;
+
+    /**
+     * Number of elements optimistically deleted since the last successful (non-stale) load.
+     * Used to fetch enough additional pages in one go when reloading a backend search after
+     * a bulk delete, instead of relying on the default, fixed page fetch count.
+     */
+    deletedSinceLastLoad: number;
 }
 
 export interface QueryParams {

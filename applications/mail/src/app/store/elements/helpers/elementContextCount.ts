@@ -63,3 +63,35 @@ export const updateContextTotals = ({
         state.total[contextIdentifier] = totalBefore - (countBefore - countAfter);
     });
 };
+
+export const updateDeletedSinceLastLoadFromContextTotals = ({
+    state,
+    countsBeforeAction,
+    countsAfterAction,
+}: {
+    state: Draft<ElementsState>;
+    countsBeforeAction: Record<string, number>;
+    countsAfterAction: Record<string, number>;
+}) => {
+    const currentContextIdentifier = getElementContextIdentifier({
+        labelID: state.params.labelID,
+        categoryIDs: state.params.categoryIDs,
+        conversationMode: state.params.conversationMode,
+        filter: state.params.filter,
+        sort: state.params.sort,
+        from: state.params.search?.from,
+        to: state.params.search?.to,
+        address: state.params.search?.address,
+        begin: state.params.search?.begin,
+        end: state.params.search?.end,
+        keyword: state.params.search?.keyword,
+        newsletterSubscriptionID: state.params.newsletterSubscriptionID,
+    });
+
+    const removedCount =
+        (countsBeforeAction[currentContextIdentifier] ?? 0) - (countsAfterAction[currentContextIdentifier] ?? 0);
+
+    if (removedCount > 0) {
+        state.deletedSinceLastLoad += removedCount;
+    }
+};
