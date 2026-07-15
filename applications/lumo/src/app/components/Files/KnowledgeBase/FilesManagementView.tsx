@@ -36,12 +36,13 @@ export const FilesManagementView = ({
     spaceId,
 }: FilesManagementViewProps) => {
     const currentAttachments = useLumoSelector(selectProvisionalAttachments);
+    const handleClose = modalProps?.onClose ?? onClose;
 
     const panel = (
         <KnowledgeBasePanel
             messageChain={messageChain}
             filesContainerRef={filesContainerRef}
-            onClose={onClose}
+            onClose={handleClose}
             isModal={true}
             currentAttachments={currentAttachments}
             filterMessage={filterMessage}
@@ -56,7 +57,7 @@ export const FilesManagementView = ({
         // can correctly drive the ModalTwo open/exit lifecycle. Fall back to a
         // hardcoded `open` only if no modalProps were provided, but always wire
         // up onClose so the host can react to close requests.
-        const resolvedModalProps: Partial<ModalStateProps> = modalProps ?? { open: true, onClose };
+        const resolvedModalProps: Partial<ModalStateProps> = modalProps ?? { open: true, onClose: handleClose };
 
         return (
             <ModalTwo {...resolvedModalProps} size="large">
