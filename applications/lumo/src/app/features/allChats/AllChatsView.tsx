@@ -17,6 +17,7 @@ import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { ChatHistorySortMenu } from '../../layouts/sidepanel/ChatHistorySortMenu';
 import { ConversationDeleteFlow } from '../../layouts/sidepanel/ConversationDeleteFlow';
 import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';
+import { ConversationSidebarActions } from '../../layouts/sidepanel/ConversationSidebarActions';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
@@ -231,7 +232,10 @@ const ConversationRow = memo(({ conversation, rowData, isSelected, sortField }: 
 
     return (
         <div
-            className="all-chats-row group relative flex items-center gap-3 px-0 md:px-3 min-w-0 overflow-hidden"
+            className={clsx(
+                'all-chats-row group relative flex items-center gap-3 px-0 md:px-3 min-w-0 overflow-hidden',
+                deleteRequested && 'all-chats-row-actions-pinned'
+            )}
             style={{ height: `${ROW_HEIGHT}px` }}
         >
             {!isRenaming && (
@@ -258,89 +262,73 @@ const ConversationRow = memo(({ conversation, rowData, isSelected, sortField }: 
                         aria-label={c('collider_2025:Action').t`Rename chat`}
                     />
                 ) : (
-                    <>
-                        <div className="all-chats-row-title flex items-center gap-1 min-w-0">
-                            <ConversationExpirationIndicator
-                                conversation={conversation}
-                                className="all-chats-row-interactive shrink-0"
-                            />
-                            <span className="text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
-                                {label}
-                            </span>
-                        </div>
+                    <div className="all-chats-row-title flex items-center gap-3 min-w-0">
+                        <ConversationExpirationIndicator
+                            conversation={conversation}
+                            className="all-chats-row-interactive shrink-0"
+                        />
+                        <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
+                            {label}
+                        </span>
                         {preview ? (
-                            <div className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap">
+                            <span className="all-chats-row-preview text-ellipsis overflow-hidden whitespace-nowrap flex-1 min-w-0">
                                 {preview}
-                            </div>
+                            </span>
                         ) : null}
-                    </>
+                    </div>
                 )}
             </div>
 
-            <div className="relative z-1 flex items-center gap-1 shrink-0 pointer-events-none">
-                <div
-                    className={clsx(
-                        'all-chats-row-actions flex items-center gap-0.5',
-                        (isRenaming || deleteRequested) && 'is-visible'
-                    )}
-                >
-                    <Button
-                        icon
-                        shape="ghost"
-                        size="small"
-                        className="all-chats-row-interactive"
-                        aria-label={c('collider_2025:Action').t`Rename chat`}
-                        onClick={(event) => {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            startRenaming();
-                        }}
-                    >
-                        <LumoIcon name="Pencil" size={15} />
-                    </Button>
-                    <Button
-                        icon
-                        shape="ghost"
-                        size="small"
-                        className="all-chats-row-interactive"
-                        aria-label={c('collider_2025:Action').t`Delete chat`}
-                        onClick={(event) => {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            setDeleteRequested(true);
-                        }}
-                    >
-                        <LumoIcon name="Trash2" size={15} />
-                    </Button>
+            {!isRenaming ? (
+                <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
+                    <span className="all-chats-row-date">{timestamp}</span>
+                    <div className="all-chats-row-actions">
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            className={clsx('all-chats-row-star shrink-0', isStarred && 'is-favorited')}
+                            aria-label={
+                                isStarred
+                                    ? c('collider_2025:Action').t`Remove from favorites`
+                                    : c('collider_2025:Action').t`Add to favorites`
+                            }
+                            aria-pressed={!!isStarred}
+                            onClick={(event) => {
+                                event.preventDefault();
+                                event.stopPropagation();
+                                handleStarToggle();
+                            }}
+                        >
+                            <LumoIcon
+                                name="Star"
+                                size={16}
+                                fill={isStarred ? 'currentColor' : 'none'}
+                                strokeWidth={isStarred ? 0 : 2}
+                            />
+                        </Button>
+                        <Button
+                            icon
+                            className="shrink-0"
+                            shape="ghost"
+                            size="small"
+                            aria-label={c('collider_2025:Action').t`Delete chat`}
+                            onClick={(event) => {
+                                event.preventDefault();
+                                event.stopPropagation();
+                                setDeleteRequested(true);
+                            }}
+                        >
+                            <LumoIcon name="Trash2" size={15} />
+                        </Button>
+                        <ConversationSidebarActions
+                            conversation={conversation}
+                            onRename={startRenaming}
+                            visibleOnHover
+                        />
+                    </div>
                 </div>
-
-                <Button
-                    icon
-                    shape="ghost"
-                    size="small"
-                    className={clsx('all-chats-row-star all-chats-row-interactive', isStarred && 'is-favorited')}
-                    aria-label={
-                        isStarred
-                            ? c('collider_2025:Action').t`Remove from favorites`
-                            : c('collider_2025:Action').t`Add to favorites`
-                    }
-                    aria-pressed={!!isStarred}
-                    onClick={(event) => {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        handleStarToggle();
-                    }}
-                >
-                    <LumoIcon
-                        name="Star"
-                        size={16}
-                        fill={isStarred ? 'currentColor' : 'none'}
-                        strokeWidth={isStarred ? 0 : 2}
-                    />
-                </Button>
-
-                <span className="all-chats-row-date">{timestamp}</span>
-            </div>
+            ) : null}
 
             {deleteRequested ? (
                 <ConversationDeleteFlow

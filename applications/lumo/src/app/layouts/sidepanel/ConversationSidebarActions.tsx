@@ -12,9 +12,11 @@ import { ConversationDeleteFlow } from './ConversationDeleteFlow';
 
 interface Props {
     conversation: Conversation;
+    onRename?: () => void;
+    visibleOnHover?: boolean;
 }
 
-export const ConversationSidebarActions = ({ conversation }: Props) => {
+export const ConversationSidebarActions = ({ conversation, onRename, visibleOnHover }: Props) => {
     const [showDeleteFlow, setShowDeleteFlow] = useState(false);
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -30,6 +32,18 @@ export const ConversationSidebarActions = ({ conversation }: Props) => {
                 handleStarToggle();
             },
         },
+        ...(onRename
+            ? [
+                  {
+                      label: c('Option').t`Rename`,
+                      icon: <LumoIcon name="Pencil" size={16} />,
+                      onClick: (e?: React.MouseEvent) => {
+                          e?.stopPropagation();
+                          onRename();
+                      },
+                  },
+              ]
+            : []),
         {
             label: c('Option').t`Delete`,
             icon: <LumoIcon name="Trash2" size={16} />,
@@ -42,7 +56,7 @@ export const ConversationSidebarActions = ({ conversation }: Props) => {
 
     return (
         <>
-            <DropdownMenu options={options} onToggle={() => {}} />
+            <DropdownMenu options={options} onToggle={() => {}} visibleOnHover={visibleOnHover} />
             {showDeleteFlow && (
                 <ConversationDeleteFlow conversation={conversation} onClose={() => setShowDeleteFlow(false)} />
             )}
