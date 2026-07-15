@@ -29,4 +29,5 @@ export type BackgroundBlurProcessor = ProcessorWrapper<BackgroundOptions> & {
     disable: () => void;
     isEnabled: () => boolean;
     getActiveDelegate: () => 'GPU' | 'CPU' | undefined;
+    waitUntilBlurApplied?: () => Promise<void>;
 };

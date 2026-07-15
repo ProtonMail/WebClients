@@ -37,6 +37,10 @@ const CACHE_NAME = 'proton-meet-background-blur-v1';
 // normal operation.
 const SEGMENTATION_TIMEOUT_MS = 2000;
 
+// Consecutive segmentation failures tolerated before the first mask before blur
+// initialization is treated as failed.
+const CONSECUTIVE_MASK_FAILURE_LIMIT = 500;
+
 type SegmentationResult = { mask: Float32Array; width: number; height: number };
 
 const fetchWithCache = async (url: string): Promise<Response> => {
@@ -176,6 +180,12 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     private pendingSegmentation: { id: number; resolve: (result: SegmentationResult | null) => void } | null = null;
     private hasInitialMask = false;
 
+    private blurAppliedWaiters: { resolve: () => void; reject: (error: Error) => void }[] = [];
+
+    private blurInitializationError: Error | null = null;
+
+    private consecutiveMaskFailures = 0;
+
     // True while a mask request is awaiting the worker. The stream-processor path
     // (Chrome) applies backpressure so transform() runs strictly serially and this
     // never blocks a request. The fallback requestAnimationFrame path (Firefox /
@@ -185,6 +195,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     // leaving the mask frozen while the video keeps moving. When a request is
     // already in flight we instead composite with the most recent mask.
     private maskRequestInFlight = false;
+
+    // Opaque-black canvas that masks the feed until the first segmentation mask
+    // is ready, so the unblurred background is never visible during warmup.
+    private blackFrameCanvas: OffscreenCanvas | null = null;
 
     constructor(opts: BackgroundProcessorOptions) {
         super();
@@ -235,6 +249,39 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         };
     }
 
+    // Resolves once the first blurred frame is produced (or immediately if it
+    // already was), and rejects if initialization explicitly failed.
+    waitUntilBlurApplied(): Promise<void> {
+        if (this.hasInitialMask) {
+            return Promise.resolve();
+        }
+        if (this.blurInitializationError) {
+            return Promise.reject(this.blurInitializationError);
+        }
+        return new Promise<void>((resolve, reject) => {
+            this.blurAppliedWaiters.push({ resolve, reject });
+        });
+    }
+
+    private resolveBlurApplied() {
+        if (this.blurAppliedWaiters.length === 0) {
+            return;
+        }
+        const waiters = this.blurAppliedWaiters;
+        this.blurAppliedWaiters = [];
+        waiters.forEach(({ resolve }) => resolve());
+    }
+
+    private rejectBlurApplied(error: Error) {
+        if (this.hasInitialMask) {
+            return;
+        }
+        this.blurInitializationError = error;
+        const waiters = this.blurAppliedWaiters;
+        this.blurAppliedWaiters = [];
+        waiters.forEach(({ reject }) => reject(error));
+    }
+
     enable() {
         this.isDisabled = false;
     }
@@ -261,6 +308,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         // init() may run more than once per instance (e.g. camera switch); tear
         // down any existing worker so we don't orphan it.
         this.teardownWorker();
+
+        // Clear any prior failure so a retry starts clean.
+        this.blurInitializationError = null;
+        this.consecutiveMaskFailures = 0;
 
         const filesetPath = this.options.assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH;
         const modelPath = this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH;
@@ -303,6 +354,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                             this.activeDelegate = event.data.delegate;
                             this.workerReady = true;
                             worker.onmessage = (e: MessageEvent) => this.handleWorkerMessage(e);
+                            // Surface a post-init crash as a blur-initialization failure.
+                            worker.onerror = (e: ErrorEvent) => {
+                                this.rejectBlurApplied(new Error(`Background segmenter worker error: ${e.message}`));
+                            };
                             // eslint-disable-next-line no-console
                             console.log(
                                 `[bg-blur] worker ready delegate=${event.data.delegate} model=${modelPath
@@ -336,6 +391,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             );
         } catch (error) {
             this.teardownWorker();
+            this.rejectBlurApplied(error instanceof Error ? error : new Error('Background blur worker init failed'));
             throw error;
         } finally {
             // Safe to revoke: the worker has loaded both blobs by ready/failure.
@@ -387,6 +443,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     async destroy() {
         await super.destroy();
         this.teardownWorker();
+        // Unblock any pending UI waiters (teardown isn't a failure, so resolve).
+        this.resolveBlurApplied();
+        this.blurInitializationError = null;
+        this.consecutiveMaskFailures = 0;
         this.hasInitialMask = false;
         this.isFirstFrame = true;
         this.maskRequestInFlight = false;
@@ -439,6 +499,28 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         this.lastCanvasHeight = 0;
     }
 
+    // Opaque-black VideoFrame matching the input size. The backing canvas is
+    // reused and only reallocated on resolution changes; the caller still owns `frame`.
+    private createBlackFrame(frame: VideoFrame): VideoFrame {
+        const width = frame.displayWidth;
+        const height = frame.displayHeight;
+        if (
+            !this.blackFrameCanvas ||
+            this.blackFrameCanvas.width !== width ||
+            this.blackFrameCanvas.height !== height
+        ) {
+            this.blackFrameCanvas = new OffscreenCanvas(width, height);
+            const ctx = this.blackFrameCanvas.getContext('2d');
+            if (ctx) {
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, width, height);
+            }
+        }
+        return new VideoFrame(this.blackFrameCanvas, {
+            timestamp: frame.timestamp ?? Math.round(Date.now() * 1000),
+        });
+    }
+
     async transform(frame: VideoFrame, controller: TransformStreamDefaultController<VideoFrame>) {
         let originalFrameTransferred = false;
         try {
@@ -466,7 +548,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
             if (this.isFirstFrame) {
                 this.isFirstFrame = false;
-                controller.enqueue(frame.clone());
+                controller.enqueue(this.createBlackFrame(frame));
 
                 if (this.inputVideo) {
                     try {
@@ -512,6 +594,14 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                     if (segmentation) {
                         await this.uploadCombinedMask(segmentation.mask, segmentation.width, segmentation.height);
                         this.hasInitialMask = true;
+                        this.consecutiveMaskFailures = 0;
+                    } else if (!this.hasInitialMask) {
+                        // Segmentation failed before blur ever applied; give up after
+                        // too many consecutive failures.
+                        this.consecutiveMaskFailures += 1;
+                        if (this.consecutiveMaskFailures >= CONSECUTIVE_MASK_FAILURE_LIMIT) {
+                            this.rejectBlurApplied(new Error('Background blur segmentation repeatedly failed'));
+                        }
                     }
                 } finally {
                     this.maskRequestInFlight = false;
@@ -528,11 +618,12 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                     timestamp: frame.timestamp ?? Math.round(frameTimeMs * 1000),
                 });
                 controller.enqueue(newFrame);
+                this.resolveBlurApplied();
             } else {
-                // No mask yet (worker warming up or a transient failure). Pass the
-                // original frame through unmodified so the user sees video.
-                controller.enqueue(frame);
-                originalFrameTransferred = true;
+                // No mask yet (worker warming up or a transient failure). Emit an
+                // opaque black frame instead of the raw camera frame so the
+                // unblurred background is never visible before blur kicks in.
+                controller.enqueue(this.createBlackFrame(frame));
             }
         } catch {
             // Ignore
@@ -1070,6 +1161,7 @@ export const BackgroundBlur = (
     processor.disable = () => transformer.disable();
     processor.isEnabled = () => transformer.isEnabled();
     processor.getActiveDelegate = () => transformer.activeDelegate;
+    processor.waitUntilBlurApplied = () => transformer.waitUntilBlurApplied();
 
     return processor;
 };

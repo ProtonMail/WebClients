@@ -59,6 +59,7 @@ import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useBackgroundProcessorPreload } from './useBackgroundProcessorPreload';
+import { useBlurInitializationState } from './useBlurInitializationState';
 import { useCameraPreview } from './useCameraPreview';
 import { useDeviceManagement } from './useDeviceManagement/useDeviceManagement';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
@@ -185,6 +186,13 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     );
 
     const {
+        isBackgroundBlurInitializing,
+        isBackgroundBlurInitializationFailed,
+        trackBlurInitialization,
+        cancelBlurInitialization,
+    } = useBlurInitializationState();
+
+    const {
         toggleVideo,
         handleRotateCamera,
         backgroundBlur,
@@ -192,7 +200,12 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         isVideoEnabled,
         facingMode,
         isBackgroundBlurSupported,
-    } = useVideoToggle({ switchActiveDevice, backgroundProcessorVersion });
+    } = useVideoToggle({
+        switchActiveDevice,
+        backgroundProcessorVersion,
+        trackBlurInitialization,
+        cancelBlurInitialization,
+    });
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
 
@@ -205,6 +218,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         backgroundBlur,
         backgroundProcessorVersion,
         room,
+        trackBlurInitialization,
+        cancelBlurInitialization,
     });
 
     const cameraPermission = useMeetSelector(selectCameraPermission);
@@ -636,6 +651,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 backgroundBlur,
                 toggleBackgroundBlur,
                 isBackgroundBlurSupported,
+                isBackgroundBlurInitializing,
+                isBackgroundBlurInitializationFailed,
                 noiseFilter,
                 toggleNoiseFilter,
                 handleRotateCamera,
