@@ -1,3 +1,8 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .all-chats-view {
 	--all-chats-preview-color: #9294a0;
 	--all-chats-favorite-color: #f0a417;
@@ -86,7 +91,12 @@
 .all-chats-row-interactive {
 	pointer-events: auto;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
+}
+
+.all-chats-row-actions .button {
+	position: relative;
+	z-index: 2;
 }
 
 .all-chats-row-tile {
@@ -103,23 +113,37 @@
 	line-height: 1.3;
 }
 
+.all-chats-row-title-text {
+	flex: 0 1 auto;
+}
+
 .all-chats-row-preview {
 	color: var(--all-chats-preview-color);
+	flex: 1 1 0;
 	font-size: 0.8125rem;
-	line-height: 1.35;
+	line-height: 1.3;
+	min-inline-size: 0;
+}
+
+.all-chats-row-meta {
+	flex-shrink: 0;
+	position: relative;
+	z-index: 2;
 }
 
 .all-chats-row-actions {
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity 0.15s ease;
+	align-items: center;
+	display: none;
+	flex-shrink: 0;
+	flex-wrap: nowrap;
+	gap: 2px;
 }
 
 .all-chats-row:hover .all-chats-row-actions,
 .all-chats-row:focus-within .all-chats-row-actions,
-.all-chats-row-actions.is-visible {
-	opacity: 1;
-	pointer-events: auto;
+.all-chats-row-actions-pinned .all-chats-row-actions,
+.all-chats-row-actions:has([aria-expanded='true']) {
+	display: flex;
 }
 
 .all-chats-row-star {
@@ -132,10 +156,28 @@
 
 .all-chats-row-date {
 	color: var(--all-chats-preview-color);
+	display: block;
+	flex-shrink: 0;
 	font-size: 0.8125rem;
-	min-inline-size: 4.5rem;
 	text-align: end;
 	white-space: nowrap;
+}
+
+.all-chats-row:hover .all-chats-row-date,
+.all-chats-row:focus-within .all-chats-row-date,
+.all-chats-row-actions-pinned .all-chats-row-date,
+.all-chats-row-meta:has([aria-expanded='true']) .all-chats-row-date {
+	display: none;
+}
+
+@include im.media('touch', '<=small') {
+	.all-chats-row-date {
+		display: none;
+	}
+
+	.all-chats-row-actions {
+		display: flex;
+	}
 }
 
 .all-chats-row-rename-input {
