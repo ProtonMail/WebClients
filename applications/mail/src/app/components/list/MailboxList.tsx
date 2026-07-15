@@ -1,5 +1,5 @@
 import type { Dispatch, ReactNode, RefObject, SetStateAction } from 'react';
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useLabels } from '@proton/mail/store/labels/hooks';
@@ -73,9 +73,12 @@ export default function MailboxList({
     const internalListRef = useRef<HTMLDivElement>(null);
     const listRefToUse = externalListRef || internalListRef;
 
-    const handleFocus = (elementID: string) => {
-        setFocusID?.(elementID);
-    };
+    const handleFocus = useCallback(
+        (elementID: string) => {
+            setFocusID?.(elementID);
+        },
+        [setFocusID]
+    );
 
     return (
         <MailboxListProvider
