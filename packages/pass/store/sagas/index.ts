@@ -77,6 +77,7 @@ import notificationSagas from './notifications/notifications.sagas';
 import organizationPauseList from './organization/organization.pause-list.saga';
 import organizationSettings from './organization/organization.settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
+import shareAccessRefresh from './shares/share-access-refresh.saga';
 import sharesDedupe from './shares/shares-dedupe.saga';
 import sharesNotification from './shares/shares-notification.saga';
 import coupon from './user/coupon.saga';
@@ -179,6 +180,7 @@ const COMMON_SAGAS = [
     vaultEdit,
     vaultMoveAllItems,
     vaultTransferOwner,
+    shareAccessRefresh,
     sharesDedupe,
     sharesNotification,
     qa,
