@@ -170,6 +170,48 @@ describe('TransferItem - malware report button', () => {
     });
 });
 
+describe('TransferItem - integrity warning', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        act(() => {
+            useDownloadManagerStore.getState().clearQueue();
+        });
+    });
+
+    it('shows a warning label when an integrity issue was approved', () => {
+        seedDownloadItem({ status: DownloadStatus.Finished });
+
+        render(
+            <TransferItem
+                entry={createEntry({
+                    status: DownloadStatus.Finished,
+                    warningMessage: 'Data integrity check failed',
+                })}
+                cancelTransfer={jest.fn()}
+                retryTransfer={jest.fn()}
+            />
+        );
+
+        expect(screen.getByTestId('transfer-row:status').textContent).toBe('Downloaded');
+        expect(screen.getByTestId('transfer-row:transferred-data').textContent).toBe('Data integrity check failed');
+    });
+
+    it('shows the normal success label when there is no integrity issue', () => {
+        seedDownloadItem({ status: DownloadStatus.Finished });
+
+        render(
+            <TransferItem
+                entry={createEntry({ status: DownloadStatus.Finished })}
+                cancelTransfer={jest.fn()}
+                retryTransfer={jest.fn()}
+            />
+        );
+
+        expect(screen.getByTestId('transfer-row:status').textContent).toBe('Downloaded');
+    });
+});
+
 describe('TransferItem - preparing state', () => {
     beforeEach(() => {
         jest.clearAllMocks();

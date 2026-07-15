@@ -58,6 +58,9 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
 };
 
 const getItemIconByStatus = (entry: TransferManagerEntry) => {
+    if (entry.status === BaseTransferStatus.Finished && entry.warningMessage) {
+        return <IcExclamationCircle size={5} className="color-warning" />;
+    }
     if (entry.status === BaseTransferStatus.Finished || entry.status === UploadStatus.PhotosDuplicate) {
         return <IcCheckmarkCircleFilled size={5} className="color-success" />;
     }
@@ -136,7 +139,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
     };
 
     const shouldShowFailedMessage = entry.status === BaseTransferStatus.Failed && entry.error;
-    const shouldShowInfo = shouldShowFailedMessage || !shouldHideSizeInfo;
+    const shouldShowInfo = shouldShowFailedMessage || !!entry.warningMessage || !shouldHideSizeInfo;
 
     const showDownloadAnywayButton = isMalwareIssue(entry.status);
     const showReportMalwareButton = entry.status === BaseTransferStatus.MalwareDetected;
@@ -183,7 +186,8 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
                                 className="text-ellipsis text-nowrap text-sm color-weak text-tabular-nums"
                                 data-testid="transfer-row:transferred-data"
                             >
-                                {shouldShowFailedMessage ? entry.error?.message : ''}
+                                {shouldShowFailedMessage && entry.error?.message}
+                                {entry.warningMessage}
                                 {!shouldHideSizeInfo && isAwaitingTotalSize && (
                                     <span className="flex items-center gap-1">
                                         {shortHumanSize(transferredBytes)} /
