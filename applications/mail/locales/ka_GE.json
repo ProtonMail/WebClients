@@ -1523,7 +1523,8 @@
         "ნდობა"
       ],
       "Trust key": [
-        "გასაღების სანდოობა"
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -2254,6 +2255,60 @@
       ],
       "You": [
         "თქვენ"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
+      ],
+      "Find out what can be migrated.": [
+        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
+      ],
+      "Missing organization private key": [
+        "ორგანიზაციის პირადი გასაღები აკლია"
+      ],
+      "Missing organization public key": [
+        "ორგანიზაციის საჯარო გასაღები აკლია"
+      ],
+      "No users to display": [
+        "საჩვენებელი მომხმარებლები არ არის"
+      ],
+      "Not activated": [
+        "არ არის გააქტიურებული"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
+      ],
+      "Select users to migrate": [
+        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
       ]
     },
     "Browser": {
@@ -4414,6 +4469,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "ცისფერი წერტილი გამოჩნდება მაშინ, როდესაც თქვენი ბოლო ვიზიტის შემდეგ კატეგორიაში არის წაუკითხავი შეტყობინებები."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "დაამატეთ ან ამოშალეთ კატეგორიები, მართეთ შეტყობინებები და შეცვალეთ თქვენი დაყენება ნებისმიერ დროს პარამეტრებში."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "დაამატეთ ან ამოშალეთ კატეგორიები, მართეთ შეტყობინებები ან მთლიანად გამორთეთ ისინი - ნებისმიერ დროს პარამეტრებიდან."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "დააწკაპუნეთ ელფოსტაზე მარჯვენა ღილაკით და აირჩიეთ „გადატანა...“ ან გადაათრიეთ და ჩააგდეთ იგი სხვა კატეგორიაში. მსგავსი ელფოსტები მომავალში აქ ავტომატურად დალაგდება."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "ჩვენ შემოვიტანთ თქვენს ძველ ელფოსტებს და მომავალში მოვახდენთ ახალი შეტყობინებების სინქრონიზაციას Gmail-დან"
       ]
     },
     "description": {
@@ -5405,6 +5475,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "თქვენმა ძებნამ მეტისმეტად ბევრი შედეგი მოიტანა. დაადეთ უფრო მეტი ლიმიტი და თავიდან სცადეთ."
+      ],
+      "No drive found to import": [
+        "შემოსატანი დისკი ვერ მოიძებნა"
+      ],
+      "Unexpected error, we can't import the files": [
+        "მოულოდნელი შეცდომა, ფაილების შემოტანა ვერ ხერხდება"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "თქვენ გამოიყენეთ თქვენს პაკეტში არსებული ყველა მისამართი. გთხოვთ განაახლოთ თქვენი პაკეტი ახალი მისამართის დასამატებლად ან გამორთოთ მისამართი თქვენს ანგარიშში."
       ]
     },
     "error": {
@@ -6628,6 +6710,9 @@
     "Import provider": {
       "More import options": [
         "მეტი შემოტანის პარამეტრები"
+      ],
+      "Import from ${ providerName }": [
+        "იმპორტი ${ providerName }-დან"
       ]
     },
     "Import warning": {
@@ -7716,8 +7801,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7813,7 +7897,7 @@
         "დაბალი პრიორიტეტი"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
+        "გახადეთ ${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
@@ -9142,6 +9226,83 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "უსაფრთხო კავშირი აუცილებელია დისტანციურად მუშაობისას. VPN იცავს კომპანიის მონაცემებს კიბერსაფრთხეებისგან და ინარჩუნებს თქვენს სამუშაოს პირადად."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN შიფრავს თქვენს კავშირს და მალავს თქვენს IP მისამართს, რაც მნიშვნელოვნად ართულებს ნებისმიერისთვის თქვენი ვებ-სერფინგის თვალყურის დევნებას ან მონიტორინგს."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN მალავს თქვენს IP მისამართს და შიფრავს თქვენი ვებ-სერფინგის აქტივობას, რაც ვებსაიტებს, რეკლამის განმთავსებლებსა და ISP-ებს დროთა განმავლობაში თქვენი თვალთვალის შესაძლებლობას ართულებს."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN არის უსაფრთხო გვირაბი თქვენს მოწყობილობასა და ინტერნეტს შორის. ის მალავს თქვენს მდებარეობასა და აქტივობას თქვენი ინტერნეტ პროვაიდერისაგან (ISP) და იმ ვებსაიტებისგან, რომლებსაც სტუმრობთ."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "რეკლამის განმთავსებლები თვალს ადევნებენ თქვენს ვებ-სერფინგს მიზნობრივი რეკლამების საჩვენებლად. ${ VPN_APP_NAME } ბლოკავს ტრეკერებსა და რეკლამებს, რაც აჩქარებს თქვენს კავშირს და აუმჯობესებს თქვენს ონლაინ გამოცდილებას."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "მხოლოდ ფაილები (ფოტოების, ${ DOCS_APP_NAME }-ის ან ${ SHEETS_APP_NAME }-ის გარეშე) — ჯამში 100 გბ-მდე, 100 000 ფაილი, და 50 გბ თითოეულ ფაილზე"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "მთავრობებსა და ISP-ებს შეუძლიათ თქვენი ონლაინ აქტივობის მონიტორინგი. თქვენი რეალური IP-ის დამალვით და თქვენი აქტივობის დაშიფვრით, თქვენი ვებ-სერფინგი ხდება პირადი."
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "საჯარო WiFi ქსელების უმეტესობა უსაფრთხოა, მაგრამ ზოგიერთს აკლია დაცვა, რაც კიბერსაფრთხეების წინაშე გაყენებთ. VPN შიფრავს თქვენს ტრაფიკს და გიცავთ თქვენ."
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "ზოგიერთი მთავრობა ბლოკავს ან ზღუდავს წვდომას გარკვეულ ვებსაიტებზე. VPN გეხმარებათ ცენზურის გვერდის ავლით, თანაც ინარჩუნებს თქვენს აქტივობასა და იდენტობას პირადად."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "ზოგიერთი ვებსაიტი და სტრიმინგის სერვისი ბლოკავს კონტენტს რეგიონის მიხედვით. VPN საშუალებას გაძლევთ გვერდი აუაროთ ამ შეზღუდვებს და თავისუფლად მიიღოთ წვდომა ინტერნეტთან."
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "ეს ნიშნავს, რომ თქვენი ISP და ვებსაიტები, რომლებსაც სტუმრობთ, ვერ დააკავშირებენ თქვენს პერსონალურ ინფორმაციას თქვენს ონლაინ აქტივობასთან."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "ეს უნიკალური კოდი შეიძლება გამოყენებულ იქნას ვებსაიტებისა და ISP-ების (ინტერნეტ პროვაიდერების) მიერ თქვენი მდებარეობისა და ბრაუზინგის ისტორიის თქვენს მოწყობილობასთან დასაკავშირებლად"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "თქვენ ამჟამად შესული ხართ როგორც ${ username } ${ organizationName }-სთვის."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "თქვენს შემოსულებში არის ${ totalLabel }."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "თქვენ გაქვთ **${ count } მიმოწერა** ${ categoryLabel } კატეგორიაში",
+        "თქვენ გაქვთ **${ count } მიმოწერა** ${ categoryLabel } კატეგორიაში"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "თქვენ გაქვთ **${ count } შეტყობინება** ${ categoryLabel } კატეგორიაში",
+        "თქვენ გაქვთ **${ count } შეტყობინება** ${ categoryLabel } კატეგორიაში"
+      ],
+      "You have no conversations in this category": [
+        "ამ კატეგორიაში მიმოწერები არ გაქვთ"
+      ],
+      "You have no messages in this category": [
+        "ამ კატეგორიაში შეტყობინებები არ გაქვთ"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "თქვენ მონიშნეთ **${ checked } მიმოწერა** ${ categoryLabel } კატეგორიაში",
+        "თქვენ მონიშნეთ **${ checked } მიმოწერა** ${ categoryLabel } კატეგორიაში"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "თქვენ მონიშნეთ **${ checked } შეტყობინება** ${ categoryLabel } კატეგორიაში",
+        "თქვენ მონიშნეთ **${ checked } შეტყობინება** ${ categoryLabel } კატეგორიაში"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "თქვენ ჩართული გაქვთ გადაგზავნა ${ MAX_SYNC_PAID_USER } Gmail მისამართზე. კიდევ ერთის დასამატებლად, ჯერ გამორთეთ ერთ-ერთი მათგანი.",
+        "თქვენ ჩართული გაქვთ გადაგზავნა ${ MAX_SYNC_PAID_USER } Gmail მისამართზე. კიდევ ერთის დასამატებლად, ჯერ გამორთეთ ერთ-ერთი მათგანი."
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "თქვენი უფასო საცდელი ვერსია წარმატებით გადაკეთდა ${ cycle }-თვიან გამოწერად. განახლების თარიღია ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "თქვენი უფასო საცდელი ვერსია წარმატებით გადაკეთდა ყოველთვიურ გამოწერად. განახლების თარიღია ${ nextBillingDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
       ]
     },
     "info": {
@@ -10289,6 +10450,48 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Exact host matching": [
+        "ზუსტი ჰოსტის შესაბამისობა"
+      ],
+      "Exact URL matching": [
+        "ზუსტი URL შესაბამისობა"
+      ],
+      "Import your emails": [
+        "თქვენი ელფოსტების იმპორტი"
+      ],
+      "Never fill on this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტ URL-ზე"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "საინფორმაციო ბიულეტენები - სიახლეები, სარედაქციო ელფოსტა და არასარეკლამო შინაარსი"
+      ],
+      "Parent domain and subdomains (default)": [
+        "მშობელი დომენი და ქვედომენები (ნაგულისხმევი)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "ძირითადი - პირადი და სამსახურის ელფოსტა, ასევე მნიშვნელოვანი განახლებები"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "პრომოაქციები - ფასდაკლებები, შეთავაზებები და მარკეტინგული ელფოსტა"
+      ],
+      "Regular expression": [
+        "რეგულარული გამოსახულება"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "სოციალური - სოციალური მედიის განახლებები, აქტივობები და შეტყობინებები"
+      ],
+      "Starts with": [
+        "იწყება"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "ტრანზაქციები - ქვითრები, ჯავშნები, გადასახადები და შეკვეთები"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "განახლებები - ავტომატური დადასტურებები, გაფრთხილებები და ანგარიშის განახლებები"
+      ],
+      "URL wildcard pattern": [
+        "URL wildcard შაბლონი"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10846,6 +11049,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "\"იწყება\" შესაბამისობის წესი"
+      ],
+      "Exact (sub) domain matching rule": [
+        "ზუსტი (ქვე) დომენის შესაბამისობის წესი"
+      ],
+      "Exact URL matching rule": [
+        "ზუსტი URL შესაბამისობის წესი"
+      ],
+      "Never fill with this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტი URL-ით"
+      ],
+      "Regular expression rule": [
+        "რეგულარული გამოსახულების წესი"
+      ],
+      "Wildcard pattern matching rule": [
+        "Wildcard შაბლონის შესაბამისობის წესი"
       ]
     },
     "Message display when a new app version is available": {
@@ -11562,6 +11783,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიების ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ]
     },
     "new_plans: feature highlight": {
@@ -12424,7 +12649,7 @@
         "მშობელი საქაღალდის გარეშე"
       ],
       "Remind me later": [
-        "შემახსენე მოგვიანებით"
+        "მოგვიანებით შემახსენე"
       ],
       "Yes, don't show again": [
         "დიახ, აღარ მაჩვენო"
@@ -13056,6 +13281,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Search for users or addresses": [
+        "მოძებნეთ მომხმარებლები ან მისამართები"
       ]
     },
     "Placeholder for contact group name": {
@@ -13334,6 +13562,16 @@
       ],
       "your subscription": [
         "თქვენი გამოწერა"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**თუ ამ თარიღამდე გააუქმებთ,** საცდელი პერიოდის დასრულებისას თქვენი პაკეტი **დაქვეითდება** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } პაკეტამდე."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ არ გააუქმებთ,** ამოქმედდება თქვენი სრული პაკეტი და მიიღებთ **${ referrerRewardAmount }** კრედიტის სახით."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ.",
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
       ]
     },
     "Remaining days before the message expire": {
@@ -13615,6 +13853,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inHours } საათი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი თქვენი პაროლის გადასატვირთად."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად.",
+        "გაქვთ ${ timeRemaining.inSeconds } წამი თქვენი პაროლის გადასატვირთად."
       ]
     },
     "session_recovery:available:link": {
@@ -14567,6 +14817,12 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } გაძლევთ წვდომას ყველა პრემიუმ ფუნქციაზე ${ BRAND_NAME }-ის ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME } პროდუქტებიდან. კონფიდენციალურობა ჩაშენებულია, ასე რომ შეგიძლიათ მშვიდად განაგრძოთ მუშაობა იმის ცოდნით, რომ თქვენი მონაცემები და იდენტობა უსაფრთხოდაა."
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "მომხმარებელთა გამოწერები ${ BRAND_NAME }-ის შემოსავლის ერთადერთი წყაროა. თქვენი მხარდაჭერა გვეხმარება დამოუკიდებლობის შენარჩუნებაში, ხელს უწყობს ჩვენს მისიას ონლაინ კონფიდენციალურობისთვის და ეხმარება თავისუფლებისთვის მებრძოლ აქტივისტებსა და ორგანიზაციებს."
       ]
     },
     "subscription reminder": {
@@ -14960,6 +15216,10 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "გადავიდა საქაღალდეში: ${ label }. მსგავსი შეტყობინება მომავალში აქ განთავსდება.",
+        "გადავიდა საქაღალდეში: ${ label }. მსგავსი შეტყობინებები მომავალში აქ განთავსდება."
       ]
     },
     "Success notification": {
@@ -15658,7 +15918,7 @@
         "შემოწმების არასწორი კოდი"
       ],
       "Keep this banner hidden?": [
-        "იყოს ეს ბანერი დამალული?"
+        "დავტოვოთ ეს ბანერი დამალული?"
       ],
       "Label as": [
         "დანიშვნა, როგორც"
@@ -16238,6 +16498,24 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } წერის დამხმარე"
+      ],
+      "Make Categories your own": [
+        "აქციეთ კატეგორიები თქვენსად"
+      ],
+      "New messages": [
+        "ახალი შეტყობინებები"
+      ],
+      "Personalize your Categories": [
+        "მოარგეთ თქვენი კატეგორიები"
+      ],
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
+      ],
+      "You're in control": [
+        "თქვენ აკონტროლებთ"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16335,6 +16613,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP გასაღები"
       ]
     },
     "tooltip": {
@@ -16558,6 +16839,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } უზრუნველყოფს ძლიერ კონტროლს, მაგრამ ერთმა შეცდომამაც კი შეიძლება გამოიწვიოს ავტოშევსების ამოქმედება და მონაცემების შევსება თაღლითურ ან ფიშინგის ვებსაიტებზე."
       ]
     },
     "WeekDay": {
@@ -16841,6 +17125,39 @@
       ],
       "Type": [
         "ტიპი"
+      ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Expires": [
+        "ვადა"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "კატეგორიების მორგება"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Not now": [
+        "არა ახლა"
+      ],
+      "Skip": [
+        "გამოტოვება"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "დუბლიკატები წინა იმპორტებიდან გამოტოვებული იქნება. დაბრუნება ან უფრო ძველი შეტყობინებების იმპორტი ${ PRODUCT_NAMES.EASY_SWITCH } პარამეტრებში."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "თქვენ შეძლებთ როლების მინიჭებას მას შემდეგ, რაც მომხმარებელი მიიღებს მოწვევას."
       ]
     }
   }

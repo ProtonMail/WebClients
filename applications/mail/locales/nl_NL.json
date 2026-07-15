@@ -1523,7 +1523,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2287,6 +2288,27 @@
       ],
       "You": [
         "U"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
       ]
     },
     "Browser": {
@@ -4447,6 +4469,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Er verschijnt een blauwe stip wanneer een categorie ongelezen berichten bevat sinds uw laatste bezoek."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Voeg categorieën toe of verwijder ze, beheer meldingen en pas uw setup op elk gewenst moment aan in de instellingen."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Voeg categorieën toe of verwijder ze, beheer meldingen of schakel ze volledig uit - op elk gewenst moment in de instellingen."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik met de rechtermuisknop op een e-mail en selecteer \"Verplaatsen naar\", of sleep deze naar een andere categorie. Vergelijkbare e-mails worden in de toekomst automatisch daar gesorteerd."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "We importeren uw oude e-mails en synchroniseren vanaf nu nieuwe berichten uit Gmail"
       ]
     },
     "description": {
@@ -5441,6 +5478,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ]
     },
     "error": {
@@ -7773,8 +7819,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9252,6 +9297,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
       ]
     },
     "info": {
@@ -10417,6 +10468,30 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
+      "Import your emails": [
+        "Uw e-mails importeren"
+      ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
+      "Starts with": [
+        "Begint met"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10974,6 +11049,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ]
     },
     "Message display when a new app version is available": {
@@ -16405,6 +16498,24 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
+      "Make Categories your own": [
+        "Maak categorieën uw eigen"
+      ],
+      "New messages": [
+        "Nieuwe berichten"
+      ],
+      "Personalize your Categories": [
+        "Personaliseer uw categorieën"
+      ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
+      "You're in control": [
+        "U heeft de controle"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16502,6 +16613,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ]
     },
     "tooltip": {
@@ -16725,6 +16839,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ]
     },
     "WeekDay": {
@@ -17008,6 +17125,39 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Categorieën aanpassen"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "Not now": [
+        "Niet nu"
+      ],
+      "Skip": [
+        "Overslaan"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplicaten van eerdere importen worden overgeslagen. Maak dit ongedaan of importeer oudere berichten in de instellingen van ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     }
   }

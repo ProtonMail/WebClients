@@ -2201,6 +2201,96 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "Activated": [
+        "有効化済み"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "アドレスはすでに組織外のユーザーによって使用されています。解決するにはカスタマーサポートまでご連絡ください"
+      ],
+      "All": [
+        "すべて"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspaceから${ BRAND_NAME }へのデータ移行ステータス"
+      ],
+      "Emails": [
+        "メール"
+      ],
+      "Errors": [
+        "エラー"
+      ],
+      "Find out what can be migrated.": [
+        "移行可能なデータを確認する。"
+      ],
+      "Has errors": [
+        "エラーあり"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "メンバーアドレスが見つかりません。解決するにはカスタマーサポートまでご連絡ください"
+      ],
+      "Migrate": [
+        "移行"
+      ],
+      "Migrated": [
+        "移行済み"
+      ],
+      "Missing organization private key": [
+        "組織の秘密鍵がありません"
+      ],
+      "Missing organization public key": [
+        "組織の公開鍵がありません"
+      ],
+      "No users to display": [
+        "表示するユーザーがいません"
+      ],
+      "Not activated": [
+        "未有効化"
+      ],
+      "Pending": [
+        "保留中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "移行したい内容を正確に選択してください。これはすべての組織ユーザーに適用されます。"
+      ],
+      "Select users to migrate": [
+        "移行するユーザーの選択"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "ステータス"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "プラットフォームの互換性がないため、このユーザーは移行できません。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでお客様のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアドレスを有効にしてください。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "このユーザーを移行するには、対象のユーザーが${ BRAND_NAME }への招待を承諾する必要があります。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーのアーカイブを解除してください。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーの一時停止を解除してください。"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME }アカウントにアクセスしたユーザー"
+      ],
+      "You": [
+        "お客様本人"
       ]
     },
     "Browser": {
@@ -4346,6 +4436,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "最後に見てから未読メッセージがあるカテゴリには青い点が表示されます。"
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "カテゴリの追加や削除、通知の管理、セットアップの調整はいつでも設定で行えます。"
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "カテゴリの追加や削除、通知の管理、または通知を完全にオフにすることはいつでも設定で行えます。"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "メールを右クリックして「移動する」を選ぶか、他のカテゴリにドラックアンドドロップしてください。今後似たようなメールが自動的にそこにソートされます。"
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "古いメールをインポートし、今後はGmailからの新しいメッセージを同期します"
       ]
     },
     "description": {
@@ -5327,6 +5432,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "No drive found to import": [
+        "インポートするドライブが見つかりません"
+      ],
+      "Unexpected error, we can't import the files": [
+        "予期しないエラーが発生したため、ファイルをインポートできません"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
       ]
     },
     "error": {
@@ -7575,7 +7689,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7671,7 +7785,7 @@
         "優先度：低"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }を規定のメールアプリにしましょう。"
+        "${ MAIL_APP_NAME }を既定のメールアプリにする"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -9004,6 +9118,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "ファイルのみ（写真、${ DOCS_APP_NAME }、${ SHEETS_APP_NAME }を除く） - 合計最大 100 GB、100,000 ファイルまで、1 ファイルあたり 50 GB まで"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "受信箱に ${ totalLabel } があります。"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel }カテゴリ内に**${ count }件の会話**があります"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "${ categoryLabel }カテゴリ内に**${ count }件のメッセージ**があります"
+      ],
+      "You have no conversations in this category": [
+        "このカテゴリに会話はありません"
+      ],
+      "You have no messages in this category": [
+        "このカテゴリにメッセージはありません"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリ内の **${ checked } 件の会話**を選択しました"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリ内の **${ checked } 件のメッセージ**を選択しました"
       ]
     },
     "info": {
@@ -10143,6 +10284,48 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Exact host matching": [
+        "正確なホスト一致"
+      ],
+      "Exact URL matching": [
+        "正確なURL一致"
+      ],
+      "Import your emails": [
+        "メールをインポートする"
+      ],
+      "Never fill on this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "ニュースレター - ニュース、編集者からのメール、非プロモーションコンテンツ"
+      ],
+      "Parent domain and subdomains (default)": [
+        "親ドメインとサブドメイン（デフォルト）"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "プライマリー - 個人と仕事のメール、それと重要なお知らせ"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "プロモーション - お得な情報、オファー、マーケティングメール"
+      ],
+      "Regular expression": [
+        "正規表現"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "ソーシャル - ソーシャルメディアの更新、アクティビティ、メッセージ"
+      ],
+      "Starts with": [
+        "前方一致"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "取引 - 領収書、予約、請求書、注文"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "アップデート - 自動的な確認、アラート、アカウントの更新"
+      ],
+      "URL wildcard pattern": [
+        "URLワイルドカードパターン"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10688,6 +10871,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "「前方一致」の一致ルール"
+      ],
+      "Exact (sub) domain matching rule": [
+        "正確な（サブ）ドメイン一致ルール"
+      ],
+      "Exact URL matching rule": [
+        "正確なURL一致ルール"
+      ],
+      "Never fill with this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Regular expression rule": [
+        "正規表現ルール"
+      ],
+      "Wildcard pattern matching rule": [
+        "ワイルドカードパターン一致ルール"
       ]
     },
     "Message display when a new app version is available": {
@@ -12238,7 +12439,7 @@
         "親フォルダーなし"
       ],
       "Remind me later": [
-        "後で通知する"
+        "また後で通知する"
       ],
       "Yes, don't show again": [
         "次回から表示しない"
@@ -12863,6 +13064,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Search for users or addresses": [
+        "ユーザーまたはアドレスを検索"
       ]
     },
     "Placeholder for contact group name": {
@@ -14724,6 +14928,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "${ label }に移動しました。今後似たようなメッセージがここにカテゴライズされます。"
       ]
     },
     "Success notification": {
@@ -15979,6 +16186,24 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } ライティングアシスタント"
+      ],
+      "Make Categories your own": [
+        "カテゴリをあなただけのものに"
+      ],
+      "New messages": [
+        "新メッセージ"
+      ],
+      "Personalize your Categories": [
+        "カテゴリをパーソナライズ"
+      ],
+      "Users and addresses": [
+        "ユーザーとアドレス"
+      ],
+      "You're in control": [
+        "あなたの思い通りに"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16076,6 +16301,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGPキー バージョン6"
       ]
     },
     "tooltip": {
@@ -16284,6 +16512,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }は強力な制御を提供しますが、誤りが1つあるだけで自動入力が一致し、詐欺サイトやフィッシングサイトにデータが入力されてしまう可能性があります。"
       ]
     },
     "WeekDay": {
@@ -16537,6 +16768,39 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Created": [
+        "作成しました"
+      ],
+      "Expires": [
+        "有効期限"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "カテゴリをカスタマイズ"
+      ],
+      "Got it": [
+        "はい"
+      ],
+      "Next": [
+        "次"
+      ],
+      "Not now": [
+        "また今度"
+      ],
+      "Skip": [
+        "スキップ"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "以前のインポートとの重複はスキップされます。元に戻す、またはより古いメッセージをインポートするには、${ PRODUCT_NAMES.EASY_SWITCH }設定に移動してください。"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "ユーザーが招待を承認すると、役割を割り当てることができるようになります。"
       ]
     }
   }

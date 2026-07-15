@@ -1531,7 +1531,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2321,6 +2324,27 @@
       ],
       "You": [
         "Vy"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
       ]
     },
     "Browser": {
@@ -4519,6 +4543,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Ak má nejaká kategória od vašej poslednej návštevy neprečítané správy, zobrazí sa modrá bodka."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "V nastaveniach môžete kedykoľvek pridávať alebo odstraňovať kategórie, spravovať upozornenia a upravovať svoje nastavenia."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "V nastaveniach môžete kedykoľvek pridávať alebo odstraňovať kategórie, spravovať upozornenia alebo ich úplne vypnúť."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
       ]
     },
     "description": {
@@ -5548,6 +5584,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ]
     },
     "error": {
@@ -6932,7 +6971,7 @@
         "${ elementsCount } konverzácia bude označená ako prečítaná.",
         "${ elementsCount } konverzácie budú označené ako prečítané.",
         "${ elementsCount } konverzácií bude označených ako prečítané",
-        "${ elementsCount } konverzácií bude označených ako prečítané"
+        "${ elementsCount } konverzácií bude označených ako prečítané."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } konverzácia bude označená ako neprečítaná.",
@@ -8051,10 +8090,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9588,6 +9624,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Momentálne ste prihlásený ako ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -10772,6 +10811,27 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Exact host matching": [
+        "Presná zhoda hostiteľa"
+      ],
+      "Exact URL matching": [
+        "Presná zhoda URL"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadradená doména a subdomény (predvolené nastavenie)"
+      ],
+      "Regular expression": [
+        "Regulárny výraz"
+      ],
+      "Starts with": [
+        "Začína s"
+      ],
+      "URL wildcard pattern": [
+        "Vzor so zástupnými znakmi v URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11353,6 +11413,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo porovnávania „začína na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo presnej zhody (pod)domén"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo presnej zhody URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevypĺňať presne túto URL adresu"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárneho výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ]
     },
     "Message display when a new app version is available": {
@@ -17055,6 +17133,21 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Make Categories your own": [
+        "Vytvorte si vlastné kategórie"
+      ],
+      "New messages": [
+        "Nové správy"
+      ],
+      "Personalize your Categories": [
+        "Prispôsobte si svoje kategórie"
+      ],
+      "Users and addresses": [
+        "Používatelia a adresy"
+      ],
+      "You're in control": [
+        "Máte to pod kontrolou"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17408,6 +17501,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ]
     },
     "WeekDay": {
@@ -17762,6 +17858,23 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Prispôsobenie kategórií"
+      ],
+      "Got it": [
+        "Rozumiem"
+      ],
+      "Next": [
+        "Ďalej"
+      ],
+      "Not now": [
+        "Teraz nie"
+      ],
+      "Skip": [
+        "Preskočiť"
       ]
     }
   }

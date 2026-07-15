@@ -2207,6 +2207,90 @@
       ],
       "What are you migrating?": [
         "Apa yang ingin Anda migrasikan?"
+      ],
+      "Activated": [
+        "Diaktifkan"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "All": [
+        "Semua"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Kesalahan"
+      ],
+      "Find out what can be migrated.": [
+        "Cari tahu apa saja yang dapat dimigrasikan."
+      ],
+      "Has errors": [
+        "Ada kesalahan"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ],
+      "Missing organization private key": [
+        "Kunci pribadi organisasi hilang"
+      ],
+      "Missing organization public key": [
+        "Kunci publik organisasi hilang"
+      ],
+      "No users to display": [
+        "Tidak ada pengguna untuk ditampilkan"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
+      ],
+      "Select users to migrate": [
+        "Pilih pengguna untuk dimigrasikan"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "Browser": {
@@ -4352,6 +4436,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Titik biru muncul ketika kategori memiliki pesan yang belum dibaca sejak kunjungan terakhir."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Tambah atau hapus kategori, kelola notifikasi, dan atur pengaturan kapan saja di pengaturan."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Tambah atau hapus kategori, kelola notifikasi, atau matikan sepenuhnya - kapan saja di Pengaturan."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik kanan email dan pilih \"Pindahkan ke\", atau seret dan lepas ke kategori lain. Email serupa akan disortir ke sana secara otomatis di masa mendatang."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Kami akan mengimpor email lama Anda dan menyinkronkan pesan baru dari Gmail ke depannya"
       ]
     },
     "description": {
@@ -5330,6 +5429,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ],
+      "No drive found to import": [
+        "Tidak ada drive yang ditemukan untuk diimpor"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Terjadi kesalahan tak terduga, tidak dapat mengimpor file"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
       ]
     },
     "error": {
@@ -6534,6 +6645,9 @@
     "Import provider": {
       "More import options": [
         "Opsi impor lainnya"
+      ],
+      "Import from ${ providerName }": [
+        "Impor dari ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7668,7 +7782,7 @@
         "Prioritas Rendah"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan Anda."
+        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan."
       ],
       "Manage your folders": [
         "Kelola folder Anda"
@@ -9001,6 +9115,36 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "${ total } user found": [
+        "${ total } pengguna ditemukan"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Hanya file (tanpa foto, ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }) - hingga total 100 GB, 100.000 file, dan 50 GB per file"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Memiliki ${ totalLabel } di kotak masuk."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Memiliki **${ count } percakapan** dalam kategori ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Memiliki **${ count } pesan** dalam kategori ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Tidak ada percakapan dalam kategori ini"
+      ],
+      "You have no messages in this category": [
+        "Tidak ada pesan dalam kategori ini"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Memilih **${ checked } percakapan** dalam kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Memilih **${ checked } pesan** dalam kategori ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10140,6 +10284,48 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
+      "Import your emails": [
+        "Impor email Anda"
+      ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Buletin - Berita, email editorial, dan konten non-promosi"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Utama - Email pribadi dan kerja, serta pembaruan penting"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promosi - Penawaran, promo, dan email pemasaran"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosial - Pembaruan, aktivitas, dan pesan media sosial"
+      ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaksi - Resi, pemesanan, tagihan, dan pesanan"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Pembaruan - Konfirmasi otomatis, peringatan, dan pembaruan akun"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10685,6 +10871,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
       ]
     },
     "Message display when a new app version is available": {
@@ -12860,6 +13064,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Search for users or addresses": [
+        "Cari pengguna atau alamat"
       ]
     },
     "Placeholder for contact group name": {
@@ -13411,6 +13618,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -14712,6 +14928,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Dipindahkan ke ${ label }. Pesan serupa akan dikategorikan di sini di masa mendatang."
       ]
     },
     "Success notification": {
@@ -15390,7 +15609,7 @@
         "Kode verifikasi tidak valid"
       ],
       "Keep this banner hidden?": [
-        "Sembunyikan banner ini?"
+        "Biarkan banner ini tetap tersembunyi?"
       ],
       "Label as": [
         "Labeli sebagai"
@@ -15967,6 +16186,24 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asisten penulisan ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Sesuaikan Kategori sendiri"
+      ],
+      "New messages": [
+        "Pesan baru"
+      ],
+      "Personalize your Categories": [
+        "Sesuaikan Kategori"
+      ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
+      ],
+      "You're in control": [
+        "Kendali berada di tangan Anda"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16064,6 +16301,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ]
     },
     "tooltip": {
@@ -16272,6 +16512,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
       ]
     },
     "WeekDay": {
@@ -16525,6 +16768,39 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Sesuaikan kategori"
+      ],
+      "Got it": [
+        "Paham"
+      ],
+      "Next": [
+        "Berikutnya"
+      ],
+      "Not now": [
+        "Tidak sekarang"
+      ],
+      "Skip": [
+        "Lewati"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikat dari impor sebelumnya akan dilewati. Urungkan atau impor pesan yang lebih lama di pengaturan ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
       ]
     }
   }

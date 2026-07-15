@@ -1471,7 +1471,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2135,6 +2138,27 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
       ]
     },
     "Browser": {
@@ -4001,7 +4025,7 @@
         "Razpoložljiva shramba: ${ storageText }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Onemogočite Googlu, da bi ustvaril vaš profil. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
+        "Onemogočite Googlu, da bi ustvaril profil o vas. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
       ],
       "Connect your CRM, website, printers, and more.": [
         "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
@@ -4181,13 +4205,25 @@
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail"
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Modra pika se prikaže, kadar kategorija vsebuje neprebrana sporočila od vašega zadnjega obiska."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "V nastavitvah lahko kadarkoli dodajate ali odstranjujete kategorije, upravljate z obvestili in prilagajate svoje nastavitve."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "V nastavitvah lahko kadarkoli dodajate ali odstranjujete kategorije, upravljate z obvestili ali jih popolnoma izklopite."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Z desnim klikom na e-poštno sporočilo izberite »Premakni v« ali pa ga povlecite in spustite v drugo kategorijo. Podobna e-poštna sporočila se bodo v prihodnje samodejno razvrstila v to kategorijo."
       ]
     },
     "description": {
@@ -5147,6 +5183,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
       ]
     },
     "error": {
@@ -7504,10 +7543,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8924,6 +8960,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ]
     },
     "info": {
@@ -15706,6 +15745,21 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Make Categories your own": [
+        "Ustvarite svoje lastne kategorije"
+      ],
+      "New messages": [
+        "Nova sporočila"
+      ],
+      "Personalize your Categories": [
+        "Prilagodite svoje kategorije"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
+      ],
+      "You're in control": [
+        "VI imate nadzor"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16370,6 +16424,23 @@
     "Title header for keys table": {
       "Type": [
         "Vrsta"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Prilagodi kategorije"
+      ],
+      "Got it": [
+        "Razumem"
+      ],
+      "Next": [
+        "Naprej"
+      ],
+      "Not now": [
+        "Ne zdaj"
+      ],
+      "Skip": [
+        "Preskoči"
       ]
     }
   }

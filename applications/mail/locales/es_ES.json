@@ -1523,7 +1523,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -2287,6 +2288,27 @@
       ],
       "You": [
         "Tú"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, activa su cuenta en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, desarchívalo en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, reactívalo en tu consola de administración de Google Workspace."
       ]
     },
     "Browser": {
@@ -4450,6 +4472,18 @@
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
         "Importaremos tus correos electrónicos antiguos y sincronizaremos los mensajes nuevos de Gmail a partir de ahora"
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Aparece un punto azul cuando una categoría tiene mensajes no leídos desde tu última visita."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Añade o elimina categorías, gestiona las notificaciones y ajusta tus preferencias en cualquier momento en la configuración."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Añade o elimina categorías, gestiona las notificaciones o desactívalas por completo en cualquier momento en la configuración."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haz clic con el botón derecho en un correo electrónico y selecciona \"Mover a\", o arrástralo y suéltalo en otra categoría. Los correos similares se clasificarán allí automáticamente en el futuro."
       ]
     },
     "description": {
@@ -5444,6 +5478,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "No drive found to import": [
+        "No se ha encontrado ningún Drive para importar"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no podemos importar los archivos"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hemos podido enviar un código de verificación con este método."
       ]
     },
     "error": {
@@ -7776,8 +7819,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7873,7 +7915,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
+        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo electrónico predeterminada."
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -9239,6 +9281,28 @@
       ],
       "You have no messages in this category": [
         "No tienes mensajes en esta categoría"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente has iniciado sesión como ${ username } en ${ organizationName }."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Tienes **${ count } conversación** en la categoría ${ categoryLabel }",
+        "Tienes **${ count } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Tienes **${ count } mensaje** en la categoría ${ categoryLabel }",
+        "Tienes **${ count } mensajes** en la categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } conversación** en la categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } conversaciones** en la categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } mensaje** en la categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } mensajes** en la categoría ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10404,6 +10468,30 @@
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Actualizaciones - Confirmaciones automatizadas, alertas y actualizaciones de la cuenta"
+      ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
+      ],
+      "Import your emails": [
+        "Importar tus correos electrónicos"
+      ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Starts with": [
+        "Comienza con"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10961,6 +11049,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
       ]
     },
     "Message display when a new app version is available": {
@@ -11677,6 +11783,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "${ options }-day file version history": [
+        "Historial de versiones de archivos de ${ options } día",
+        "Historial de ${ options } días de las versiones de los archivos"
       ]
     },
     "new_plans: feature highlight": {
@@ -15106,6 +15216,10 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Se ha movido a ${ label }. Los mensajes similares se clasificarán aquí en el futuro.",
+        "Se han movido a ${ label }. Los mensajes similares se clasificarán aquí en el futuro."
       ]
     },
     "Success notification": {
@@ -16384,6 +16498,24 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Haz tuyas las categorías"
+      ],
+      "New messages": [
+        "Nuevos mensajes"
+      ],
+      "Personalize your Categories": [
+        "Personaliza tus Categorías"
+      ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
+      ],
+      "You're in control": [
+        "Tú tienes el control"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16481,6 +16613,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
+      ],
+      "Version 6 OpenPGP key": [
+        "Clave OpenPGP versión 6"
       ]
     },
     "tooltip": {
@@ -16704,6 +16839,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ]
     },
     "WeekDay": {
@@ -16984,11 +17122,42 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
       ]
     },
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "Not now": [
+        "Ahora no"
+      ],
+      "Skip": [
+        "Omitir"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omitirán los duplicados de importaciones anteriores. Deshaz o importa mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

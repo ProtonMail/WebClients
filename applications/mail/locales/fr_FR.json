@@ -1523,7 +1523,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2287,6 +2288,27 @@
       ],
       "You": [
         "Vous"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
       ]
     },
     "Browser": {
@@ -4450,6 +4472,18 @@
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
         "Nous importerons vos anciens messages et synchroniserons désormais les nouveaux messages provenant de Gmail."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Un point bleu apparaît lorsqu'une catégorie contient des messages non lus depuis votre dernière visite."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Ajoutez ou supprimez des catégories, gérer les notifications et ajustez votre configuration à n'importe quel moment dans les paramètres."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Ajoutez ou supprimez des catégories, gérez les notifications ou désactivez-les complètement, à tout moment dans les Paramètres."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faites un clic droit sur un e-mail et sélectionnez « Déplacer vers », ou faites-le glisser et déposez-le dans une autre catégorie. Les e-mails similaires y seront automatiquement triés par la suite."
       ]
     },
     "description": {
@@ -5453,6 +5487,9 @@
       ],
       "Unexpected error, we can't import the files": [
         "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
       ]
     },
     "error": {
@@ -7785,8 +7822,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9267,6 +9303,9 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Vous êtes actuellement connecté en tant que ${ username } pour ${ organizationName }."
       ]
     },
     "info": {
@@ -10435,6 +10474,27 @@
       ],
       "Import your emails": [
         "Importez vos e-mails"
+      ],
+      "Exact host matching": [
+        "Correspondance exacte de l'hôte"
+      ],
+      "Exact URL matching": [
+        "Correspondance exacte d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domaine parent et sous-domaines (par défaut)"
+      ],
+      "Regular expression": [
+        "Expression régulière"
+      ],
+      "Starts with": [
+        "Commence par"
+      ],
+      "URL wildcard pattern": [
+        "Modèle d'URL avec caractères génériques"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10992,6 +11052,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Votre essai gratuit est terminé. L'accès à votre compte sera bientôt désactivé. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Règle de correspondance « commence par »"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Règle de correspondance exacte des (sous-)domaines"
+      ],
+      "Exact URL matching rule": [
+        "Règle de correspondance exacte d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ne saisissez jamais cette URL exacte"
+      ],
+      "Regular expression rule": [
+        "Règle d'expression régulière"
+      ],
+      "Wildcard pattern matching rule": [
+        "Règle de correspondance avec des caractères génériques"
       ]
     },
     "Message display when a new app version is available": {
@@ -16426,6 +16504,21 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Rendez vos catégories uniques"
+      ],
+      "New messages": [
+        "Nouveaux messages"
+      ],
+      "Personalize your Categories": [
+        "Personnalisez vos Catégories"
+      ],
+      "Users and addresses": [
+        "Utilisateurs et adresses"
+      ],
+      "You're in control": [
+        "Vous avez le contrôle"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16749,6 +16842,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ]
     },
     "WeekDay": {
@@ -17048,6 +17144,23 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personnaliser les catégories"
+      ],
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Next": [
+        "Suivant"
+      ],
+      "Not now": [
+        "Pas maintenant"
+      ],
+      "Skip": [
+        "Ignorer"
       ]
     }
   }

@@ -1527,7 +1527,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -2304,6 +2306,27 @@
       ],
       "You": [
         "Eu"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, activați-i contul în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, dezarhivați-l în consola de administrare din Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pentru a migra acest utilizator, deblocați-l în consola de administrare din Google Workspace."
       ]
     },
     "Browser": {
@@ -4487,6 +4510,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Când o categorie conține mesaje necitite de la ultima vizită apare un punct albastru."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Adăugați sau eliminați categorii, gestionați notificările și ajustați configurarea oricând în setări."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Adăugați sau eliminați categorii, gestionați notificările sau dezactivați-le complet - oricând în Setări."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Faceți clic dreapta pe un e-mail și selectați „Mutare în” sau glisați și plasați-l într-o altă categorie. Mesajele similare vor fi mutate automat acolo în viitor."
       ]
     },
     "description": {
@@ -5503,6 +5538,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Nu s-a putut trimite un cod de verificare folosind această metodă."
       ]
     },
     "error": {
@@ -7922,9 +7960,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9430,6 +9466,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "V-ați conectat cu ${ username } pentru (${ organizationName }."
       ]
     },
     "info": {
@@ -10606,6 +10645,27 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Exact host matching": [
+        "Potrivire exactă gazdă"
+      ],
+      "Exact URL matching": [
+        "Potrivire exactă URL"
+      ],
+      "Never fill on this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domeniu părinte și subdomeniu (implicit)"
+      ],
+      "Regular expression": [
+        "Expresie regulată"
+      ],
+      "Starts with": [
+        "Începe cu"
+      ],
+      "URL wildcard pattern": [
+        "Model URL cu caractere generice"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11175,6 +11235,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regulă de potrivire „Începe cu”"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regulă de potrivire exactă (sub) domeniu"
+      ],
+      "Exact URL matching rule": [
+        "Regulă de potrivire exactă URL"
+      ],
+      "Never fill with this exact URL": [
+        "La exact acest URL nu se completează"
+      ],
+      "Regular expression rule": [
+        "Regulă expresie regulată"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regulă de potrivire model caractere generice"
       ]
     },
     "Message display when a new app version is available": {
@@ -16743,6 +16821,21 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Make Categories your own": [
+        "Personalizați-vă categoriile"
+      ],
+      "New messages": [
+        "Mesaje noi"
+      ],
+      "Personalize your Categories": [
+        "Personalizați-vă categoriile"
+      ],
+      "Users and addresses": [
+        "Utilizatori și adrese"
+      ],
+      "You're in control": [
+        "Dețineți controlul"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17081,6 +17174,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ]
     },
     "WeekDay": {
@@ -17405,6 +17501,23 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizați categoriile"
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Next": [
+        "Înainte"
+      ],
+      "Not now": [
+        "Nu acum"
+      ],
+      "Skip": [
+        "Omitere"
       ]
     }
   }

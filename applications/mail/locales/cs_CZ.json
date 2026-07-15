@@ -1531,7 +1531,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2261,6 +2264,87 @@
       ],
       "What are you migrating?": [
         "Co migrujete?"
+      ],
+      "Activated": [
+        "Aktivováno"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu již používá uživatel mimo vaši organizaci. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "All": [
+        "Vše"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrace dat z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-maily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Find out what can be migrated.": [
+        "Zjistěte, co lze migrovat."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebyla nalezena. Pro vyřešení kontaktujte prosím zákaznickou podporu"
+      ],
+      "Migrate": [
+        "Migrovat"
+      ],
+      "Migrated": [
+        "Migrováno"
+      ],
+      "Missing organization private key": [
+        "Chybí soukromý klíč organizace"
+      ],
+      "Missing organization public key": [
+        "Chybí veřejný klíč organizace"
+      ],
+      "No users to display": [
+        "Žádní uživatelé k zobrazení"
+      ],
+      "Not activated": [
+        "Neaktivováno"
+      ],
+      "Pending": [
+        "Čekající"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte přesně to, co chcete migrovat. Bude to použito pro všechny uživatele organizace."
+      ],
+      "Select users to migrate": [
+        "Vyberte uživatele k migraci"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohoto uživatele nelze migrovat z důvodu nekompatibility platformy."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho účet v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Chcete-li tohoto uživatele migrovat, aktivujte jeho adresu v sekci ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Chcete-li tohoto uživatele migrovat, musí nejprve přijmout pozvánku k připojení ke službě ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho archivaci v administrátorské konzoli Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Chcete-li tohoto uživatele migrovat, zrušte jeho pozastavení v administrátorské konzoli Google Workspace."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Uživatelé, kteří přistoupili ke svému účtu ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Vy"
       ]
     },
     "Browser": {
@@ -4451,6 +4535,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Modrá tečka se zobrazí, pokud kategorie obsahuje nepřečtené zprávy od vaší poslední návštěvy."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Přidávat nebo odebírat kategorie, spravovat oznámení a upravovat nastavení můžete kdykoli v nastavení."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Přidávat nebo odebírat kategorie, spravovat oznámení nebo je zcela vypnout můžete kdykoli v Nastavení."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klikněte na e-mail pravým tlačítkem a zvolte „Přesunout do“ nebo jej přetáhněte do jiné kategorie. Podobné e-maily sem budou v budoucnu automaticky roztříděny."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importujeme vaše staré e-maily a budeme nadále synchronizovat nové zprávy ze služby Gmail"
       ]
     },
     "description": {
@@ -5471,6 +5570,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "No drive found to import": [
+        "Nebyl nalezen žádný disk k importu"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočekávaná chyba, soubory nelze importovat"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Pomocí této metody se nám nepodařilo odeslat ověřovací kód."
       ]
     },
     "error": {
@@ -7971,10 +8079,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8070,7 +8175,7 @@
         "Nízká priorita"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
+        "Nastavte aplikaci ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -9475,6 +9580,45 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Pouze soubory (žádné fotky, ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }) – celkem do 100 GB, 100 000 souborů a 50 GB na soubor"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Aktuálně jste přihlášeni jako ${ username } pro organizaci ${ organizationName }."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "V doručené poště máte ${ totalLabel }."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } konverzaci**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } zprávu**",
+        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**"
+      ],
+      "You have no conversations in this category": [
+        "V této kategorii nemáte žádné konverzace"
+      ],
+      "You have no messages in this category": [
+        "V této kategorii nemáte žádné zprávy"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Vybrali jste **${ checked } konverzaci** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } konverzace** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } konverzací** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } konverzací** v kategorii ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Vybrali jste **${ checked } zprávu** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } zprávy** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } zpráv** v kategorii ${ categoryLabel }",
+        "Vybrali jste **${ checked } zpráv** v kategorii ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10638,6 +10782,48 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Exact host matching": [
+        "Shoda přesného hostitele"
+      ],
+      "Exact URL matching": [
+        "Shoda přesné URL"
+      ],
+      "Import your emails": [
+        "Importovat e-maily"
+      ],
+      "Never fill on this exact URL": [
+        "Nikdy nevyplňovat na této přesné URL"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Zpravodaje – novinky, redakční e-maily a nepropagační obsah"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Nadřazená doména a subdomény (výchozí)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primární – osobní a pracovní e-maily a důležité aktualizace"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promo akce – nabídky, slevy a marketingové e-maily"
+      ],
+      "Regular expression": [
+        "Regulární výraz"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociální sítě – aktualizace, aktivity a zprávy ze sociálních sítí"
+      ],
+      "Starts with": [
+        "Začíná na"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakce – stvrzenky, rezervace, účty a objednávky"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualizace – automatická potvrzení, upozornění a aktualizace účtu"
+      ],
+      "URL wildcard pattern": [
+        "Vzor URL se zástupnými znaky"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11219,6 +11405,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Pravidlo shody „Začíná na“"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Pravidlo pro shodu přesné (sub)domény"
+      ],
+      "Exact URL matching rule": [
+        "Pravidlo shody přesné URL"
+      ],
+      "Never fill with this exact URL": [
+        "Nikdy nevyplňovat s touto přesnou URL"
+      ],
+      "Regular expression rule": [
+        "Pravidlo regulárního výrazu"
+      ],
+      "Wildcard pattern matching rule": [
+        "Pravidlo shody se vzorem se zástupnými znaky"
       ]
     },
     "Message display when a new app version is available": {
@@ -12868,7 +13072,7 @@
         "Připomenout později"
       ],
       "Yes, don't show again": [
-        "Ano, příště nezobrazovat"
+        "Ano, znovu nezobrazovat"
       ]
     },
     "Option group": {
@@ -13511,6 +13715,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Search for users or addresses": [
+        "Hledat uživatele nebo adresy"
       ]
     },
     "Placeholder for contact group name": {
@@ -15585,6 +15792,12 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Přesunuto do složky ${ label }. Podobná zpráva sem bude v budoucnu zařazena automaticky.",
+        "Přesunuto do složky ${ label }. Podobné zprávy sem budou v budoucnu zařazeny automaticky.",
+        "Přesunuto do složky ${ label }. Podobné zprávy sem budou v budoucnu zařazeny automaticky.",
+        "Přesunuto do složky ${ label }. Podobné zprávy sem budou v budoucnu zařazeny automaticky."
       ]
     },
     "Success notification": {
@@ -16323,7 +16536,7 @@
         "Neplatný ověřovací kód"
       ],
       "Keep this banner hidden?": [
-        "Skrývat tento banner?"
+        "Ponechat tento banner skrytý?"
       ],
       "Label as": [
         "Přidat štítek"
@@ -16909,6 +17122,24 @@
         "E-mailové seznamy",
         "E-mailové seznamy",
         "E-mailové seznamy"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Přizpůsobte si kategorie podle sebe"
+      ],
+      "New messages": [
+        "Nové zprávy"
+      ],
+      "Personalize your Categories": [
+        "Přizpůsobte si kategorie"
+      ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
+      ],
+      "You're in control": [
+        "Máte vše pod kontrolou"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17006,6 +17237,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
+      ],
+      "Version 6 OpenPGP key": [
+        "Klíč OpenPGP verze 6"
       ]
     },
     "tooltip": {
@@ -17259,6 +17493,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
       ]
     },
     "WeekDay": {
@@ -17602,6 +17839,39 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Expires": [
+        "Vyprší"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Přizpůsobit kategorie"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Next": [
+        "Další"
+      ],
+      "Not now": [
+        "Nyní ne"
+      ],
+      "Skip": [
+        "Přeskočit"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplicity z předchozích importů budou přeskočeny. Akci můžete vzít zpět nebo importovat starší zprávy v nastavení ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Jakmile uživatel přijme pozvánku, budete mu moci přiřadit role."
       ]
     }
   }

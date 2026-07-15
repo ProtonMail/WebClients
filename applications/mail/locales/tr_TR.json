@@ -1523,7 +1523,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2287,6 +2288,27 @@
       ],
       "You": [
         "Siz"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Platform uyuşmazlıkları nedeniyle bu kullanıcı taşınamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının hesabını açın."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından hesabını açın."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından adresini açın."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı taşımak için kullanıcının ${ BRAND_NAME } platformuna katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının arşivini kaldırın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "Browser": {
@@ -4455,6 +4477,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Son bakmanızdan bu yana okunmamış iletileri olan kategorilerde mavi bir nokta görüntülenir."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Kategorileri istediğiniz zaman ayarlar bölümünden ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ve ayarlarını değiştirebilirsiniz."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Kategorileri istediğiniz zaman ayarlar bölümünden ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tümüyle kapatabilirsiniz."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı sürükleyip başka bir kategoriye bırakın. Bundan sonra benzer e-postalar otomatik olarak oraya taşınır."
       ]
     },
     "description": {
@@ -5458,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ]
     },
     "error": {
@@ -7793,8 +7830,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9272,6 +9308,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
       ]
     },
     "info": {
@@ -10440,6 +10479,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Exact host matching": [
+        "Tam ana bilgisayar eşleşmesi"
+      ],
+      "Exact URL matching": [
+        "Tam URL eşleşmesi"
+      ],
+      "Never fill on this exact URL": [
+        "Bu URL'yi asla doldurma"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Ana etki alanı ve alt etki alanları (varsayılan)"
+      ],
+      "Regular expression": [
+        "Düzenli ifade"
+      ],
+      "Starts with": [
+        "Şununla başlar"
+      ],
+      "URL wildcard pattern": [
+        "URL genel arama karakteri deseni"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10997,6 +11057,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'Şununla başlayan' eşleştirme kuralı"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tam (alt) etki alanı eşleştirme kuralı"
+      ],
+      "Exact URL matching rule": [
+        "Tam URL eşleştirme kuralı"
+      ],
+      "Never fill with this exact URL": [
+        "Bu tam URL'yi asla doldurma"
+      ],
+      "Regular expression rule": [
+        "Düzenli ifade kuralı"
+      ],
+      "Wildcard pattern matching rule": [
+        "genel arama karakter deseni eşleştirme kuralı"
       ]
     },
     "Message display when a new app version is available": {
@@ -16431,6 +16509,21 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Make Categories your own": [
+        "Kategorileri kendinize göre uyarlayın"
+      ],
+      "New messages": [
+        "Yeni iletiler"
+      ],
+      "Personalize your Categories": [
+        "Kategorilerinizi kişiselleştirin"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
+      ],
+      "You're in control": [
+        "Kontrol sizde"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16754,6 +16847,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } güçlü bir kontrol sağlar ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı web sitelerindeki verilerle eşleşip bu verileri doldurmasına neden olabilir."
       ]
     },
     "WeekDay": {
@@ -17048,6 +17144,23 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Kategorileri özelleştir"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
+      "Skip": [
+        "Atla"
       ]
     }
   }

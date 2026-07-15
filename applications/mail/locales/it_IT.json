@@ -1523,7 +1523,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -2218,6 +2219,96 @@
       ],
       "What are you migrating?": [
         "Cosa stai migrando?"
+      ],
+      "Activated": [
+        "Attivato"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "All": [
+        "Tutti"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Errori"
+      ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "Has errors": [
+        "Presenta errori"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Migrate": [
+        "Migra"
+      ],
+      "Migrated": [
+        "Migrato"
+      ],
+      "Missing organization private key": [
+        "Chiave privata dell'organizzazione mancante"
+      ],
+      "Missing organization public key": [
+        "Chiave pubblica dell'organizzazione mancante"
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
+      ],
+      "Not activated": [
+        "Non attivato"
+      ],
+      "Pending": [
+        "In attesa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente cosa desideri migrare. Si applicherà a tutti gli utenti dell'organizzazione."
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Impossibile migrare questo utente a causa di incompatibilità della piattaforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, attiva il suo account nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrare questo utente, è necessario che accetti l'invito a unirti a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, ripristinalo dall'archivio nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, riattivalo nella tua Console di amministrazione di Google Workspace."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Tu"
       ]
     },
     "Browser": {
@@ -4378,6 +4469,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Un punto blu appare quando una categoria contiene messaggi non letti dalla tua ultima visita."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Aggiungi o rimuovi categorie, gestisci le notifiche e modifica la configurazione in qualsiasi momento dalle Impostazioni."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Aggiungi o rimuovi categorie, gestisci le notifiche o disattivale del tutto, in qualsiasi momento nelle Impostazioni."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Fai clic con il pulsante destro del mouse su un'email e seleziona \"Sposta in\" oppure trascinala e rilasciala in un'altra categoria. In futuro le email simili verranno ordinate automaticamente lì."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "In futuro importeremo le tue vecchie email e sincronizzeremo i nuovi messaggi da Gmail"
       ]
     },
     "description": {
@@ -5372,6 +5478,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "No drive found to import": [
+        "Nessun drive trovato da importare"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Errore imprevisto, non possiamo importare i file"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Non è stato possibile inviare un codice di verifica con questo metodo."
       ]
     },
     "error": {
@@ -6595,6 +6710,9 @@
     "Import provider": {
       "More import options": [
         "Altre opzioni di importazione"
+      ],
+      "Import from ${ providerName }": [
+        "Importa da ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7701,8 +7819,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -7798,7 +7915,7 @@
         "Priorità bassa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita."
+        "Imposta ${ MAIL_APP_NAME } come applicazione email predefinita."
       ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
@@ -9155,6 +9272,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo file (no foto, ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }) - fino a un totale di 100 GB, 100.000 file e 50 GB per file"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Al momento hai effettuato l'accesso come ${ username } per ${ organizationName }."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Hai ${ totalLabel } nella tua posta in arrivo."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Hai **${ count } conversazione** nella categoria ${ categoryLabel }",
+        "Hai **${ count } conversazioni** nella categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Hai **${ count } messaggio** nella categoria ${ categoryLabel }",
+        "Hai **${ count } messaggi** nella categoria ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Non hai conversazioni in questa categoria"
+      ],
+      "You have no messages in this category": [
+        "Non hai messaggi in questa categoria"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } conversazione** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } conversazioni** nella categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } messaggio** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } messaggi** nella categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10302,6 +10450,48 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Exact host matching": [
+        "Corrispondenza esatta dell'host"
+      ],
+      "Exact URL matching": [
+        "Corrispondenza URL esatta"
+      ],
+      "Import your emails": [
+        "Importa le tue email"
+      ],
+      "Never fill on this exact URL": [
+        "Non compilare mai su questo URL esatto"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletter - Notizie, email editoriali e contenuti non promozionali"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principale e sottodomini (predefinito)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Principale - Email personali e di lavoro, oltre ad aggiornamenti importanti"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Promozioni - Offerte, sconti ed email di marketing"
+      ],
+      "Regular expression": [
+        "Espressione regolare"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Social - Aggiornamenti dei social media, attività e messaggi"
+      ],
+      "Starts with": [
+        "Inizia con"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transazioni - Ricevute, prenotazioni, fatture e ordini"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aggiornamenti - Conferme automatiche, avvisi e aggiornamenti dell'account"
+      ],
+      "URL wildcard pattern": [
+        "Modello di carattere jolly dell'URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10859,6 +11049,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regola di corrispondenza \"Inizia con\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regola di corrispondenza esatta del (sotto) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regola di corrispondenza URL esatta"
+      ],
+      "Never fill with this exact URL": [
+        "Non compilare mai con questo URL esatto"
+      ],
+      "Regular expression rule": [
+        "Regola dell'espressione regolare"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regola di corrispondenza del modello di caratteri jolly"
       ]
     },
     "Message display when a new app version is available": {
@@ -11575,6 +11783,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file di ${ options } giorno",
+        "Cronologia delle versioni dei file di ${ options } giorni"
       ]
     },
     "new_plans: feature highlight": {
@@ -13069,6 +13281,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Search for users or addresses": [
+        "Cerca utenti o indirizzi"
       ]
     },
     "Placeholder for contact group name": {
@@ -13638,6 +13853,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Hai ${ timeRemaining.inHours } ora per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inHours } ore per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Hai ${ timeRemaining.inMinutes } minuto per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inMinutes } minuti per reimpostare la tua password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Hai ${ timeRemaining.inSeconds } secondo per reimpostare la tua password.",
+        "Hai ${ timeRemaining.inSeconds } secondi per reimpostare la tua password."
       ]
     },
     "session_recovery:available:link": {
@@ -14989,6 +15216,10 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Spostato in ${ label }. In futuro i messaggi simili verranno inseriti in questa categoria.",
+        "Spostati in ${ label }. In futuro i messaggi simili verranno inseriti in questa categoria."
       ]
     },
     "Success notification": {
@@ -15687,7 +15918,7 @@
         "Codice di verifica non valido"
       ],
       "Keep this banner hidden?": [
-        "Tenere nascosto questo banner?"
+        "Vuoi tenere nascosto questo banner?"
       ],
       "Label as": [
         "Etichetta come..."
@@ -16267,6 +16498,24 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Personalizza le categorie a modo tuo"
+      ],
+      "New messages": [
+        "Nuovi messaggi"
+      ],
+      "Personalize your Categories": [
+        "Personalizza le tue Categorie"
+      ],
+      "Users and addresses": [
+        "Utenti e indirizzi"
+      ],
+      "You're in control": [
+        "Hai tutto sotto controllo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16364,6 +16613,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
+      ],
+      "Version 6 OpenPGP key": [
+        "Chiave OpenPGP versione 6"
       ]
     },
     "tooltip": {
@@ -16587,6 +16839,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
       ]
     },
     "WeekDay": {
@@ -16870,6 +17125,39 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Created": [
+        "Data di creazione"
+      ],
+      "Expires": [
+        "Scadenza"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizza le categorie"
+      ],
+      "Got it": [
+        "Capito"
+      ],
+      "Next": [
+        "Avanti"
+      ],
+      "Not now": [
+        "Non ora"
+      ],
+      "Skip": [
+        "Ignora"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "I duplicati provenienti da importazioni precedenti saranno ignorati. Annulla o importa i messaggi più vecchi nelle impostazioni di ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
       ]
     }
   }

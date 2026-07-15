@@ -1523,7 +1523,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2287,6 +2288,27 @@
       ],
       "You": [
         "Tú"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, desarxiveu-lo a la vostra consola d'administració de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrar aquest usuari, reactiveu-lo a la vostra consola d'administració de Google Workspace."
       ]
     },
     "Browser": {
@@ -4455,6 +4477,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Hi apareix un punt blau quan una categoria té missatges no llegits des de la vostra darrera visita."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Afegiu o suprimiu categories, gestioneu les notificacions i ajusteu la vostra configuració en qualsevol moment a les preferències."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Afegiu o elimineu categories, gestioneu les notificacions o desactiveu-les completament a les preferències quan vulgueu."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Feu clic amb el botó dret en un correu i seleccioneu «Moure a», o arrossegueu-lo i deixeu-lo anar en una altra categoria. En el futur, els correus similars s'hi classificaran automàticament."
       ]
     },
     "description": {
@@ -5458,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
       ]
     },
     "error": {
@@ -7793,8 +7830,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9272,6 +9308,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
       ]
     },
     "info": {
@@ -10440,6 +10479,27 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Exact host matching": [
+        "Coincidència exacta d'amfitrió"
+      ],
+      "Exact URL matching": [
+        "Coincidència exacta d'URL"
+      ],
+      "Never fill on this exact URL": [
+        "No empleneu mai en aquest URL exacte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domini principal i subdominis (per defecte)"
+      ],
+      "Regular expression": [
+        "Expressió regular"
+      ],
+      "Starts with": [
+        "Comença amb"
+      ],
+      "URL wildcard pattern": [
+        "Patró de comodí d'URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10997,6 +11057,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidència «Comença amb»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidència exacta de (sub)domini"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidència exacta d'URL"
+      ],
+      "Never fill with this exact URL": [
+        "No ho emplenis mai amb aquest URL exacte"
+      ],
+      "Regular expression rule": [
+        "Regla d'expressió regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidència de patró de comodí"
       ]
     },
     "Message display when a new app version is available": {
@@ -16431,6 +16509,21 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Make Categories your own": [
+        "Definiu les vostres pròpies categories"
+      ],
+      "New messages": [
+        "Missatges nous"
+      ],
+      "Personalize your Categories": [
+        "Personalitzar les categories"
+      ],
+      "Users and addresses": [
+        "Usuaris i adreces"
+      ],
+      "You're in control": [
+        "En teniu el control"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16754,6 +16847,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ]
     },
     "WeekDay": {
@@ -17048,6 +17144,23 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalitzeu les categories"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "Not now": [
+        "Ara no"
+      ],
+      "Skip": [
+        "Ometre"
       ]
     }
   }

@@ -1523,7 +1523,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2287,6 +2288,27 @@
       ],
       "You": [
         "Εσείς"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην Κονσόλα διαχειριστή του Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του στην Κονσόλα διαχειριστή Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στην Κονσόλα διαχειριστή του Google Workspace."
       ]
     },
     "Browser": {
@@ -4455,6 +4477,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Μια μπλε κουκκίδα εμφανίζεται όταν μια κατηγορία έχει μη αναγνωσμένα μηνύματα από την τελευταία σας επίσκεψη."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Προσθέστε ή καταργήστε κατηγορίες, διαχειριστείτε ειδοποιήσεις και προσαρμόστε τις ρυθμίσεις σας ανά πάσα στιγμή στις ρυθμίσεις."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Προσθέστε ή καταργήστε κατηγορίες, διαχειριστείτε ειδοποιήσεις ή απενεργοποιήστε τες εντελώς - οποιαδήποτε στιγμή στις Ρυθμίσεις."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Κάντε δεξί κλικ σε ένα email και επιλέξτε \"Μετακίνηση σε\" ή σύρετέ το και αποθέστε το σε άλλη κατηγορία. Παρόμοια μηνύματα θα ταξινομούνται αυτόματα εκεί στο μέλλον."
       ]
     },
     "description": {
@@ -5458,6 +5492,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
       ]
     },
     "error": {
@@ -7793,8 +7830,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9272,6 +9308,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως ${ username } για το ${ organizationName }."
       ]
     },
     "info": {
@@ -10440,6 +10479,27 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Exact host matching": [
+        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
+      ],
+      "Exact URL matching": [
+        "Ακριβής αντιστοίχιση URL"
+      ],
+      "Never fill on this exact URL": [
+        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Γονικός τομέας και υποτομείς (προεπιλογή)"
+      ],
+      "Regular expression": [
+        "Κανονική έκφραση"
+      ],
+      "Starts with": [
+        "Ξεκινάει με"
+      ],
+      "URL wildcard pattern": [
+        "Πρότυπο μπαλαντέρ URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10997,6 +11057,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Η δωρεάν δοκιμή σας έληξε. Η πρόσβαση στον λογαριασμό σας θα απενεργοποιηθεί σύντομα. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
+      ],
+      "Exact URL matching rule": [
+        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
+      ],
+      "Never fill with this exact URL": [
+        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "Regular expression rule": [
+        "Κανόνας κανονικής έκφρασης"
+      ],
+      "Wildcard pattern matching rule": [
+        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
       ]
     },
     "Message display when a new app version is available": {
@@ -16431,6 +16509,21 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Make Categories your own": [
+        "Κάντε τις Κατηγορίες δικές σας"
+      ],
+      "New messages": [
+        "Νέα μηνύματα"
+      ],
+      "Personalize your Categories": [
+        "Εξατομικεύστε τις Κατηγορίες σας"
+      ],
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
+      ],
+      "You're in control": [
+        "Εσείς έχετε τον έλεγχο"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16754,6 +16847,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ]
     },
     "WeekDay": {
@@ -17048,6 +17144,23 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Προσαρμογή κατηγοριών"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "Not now": [
+        "Όχι τώρα"
+      ],
+      "Skip": [
+        "Παράλειψη"
       ]
     }
   }

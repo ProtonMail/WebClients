@@ -1531,7 +1531,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -2321,6 +2324,27 @@
       ],
       "You": [
         "Вы"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
       ]
     },
     "Browser": {
@@ -4519,6 +4543,18 @@
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
         "Адбудзецца імпартаванне вашых старых лістоў і сінхранізацыя новых паведамленняў з Gmail у будучыні"
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "З'яўленне блакітнай кропкі сімвалізуе аб тым, што ў катэгорыі ёсць непрачытаныя паведамленні з моманту вашага апошняга наведвання."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Дадавайце або выдаляйце катэгорыі, кіруйце апавяшчэннямі і рэгулюйце свае налады ў наладах, калі вам гэта неабходна."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Дадавайце або выдаляйце катэгорыі, кіруйце апавяшчэннямі або цалкам адключайце іх у наладах, калі вам будзе гэта неабходна."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Націсніце правай кнопкай мышы па лісту і выберыце \"Перамясціць у\" або перацягніце яго ў іншую катэгорыю. Аналагічныя лісты будуць сартавацца там у будучыні."
       ]
     },
     "description": {
@@ -5548,6 +5584,9 @@
       ],
       "Unexpected error, we can't import the files": [
         "Нечаканая памылка. Немагчыма імпартаваць файлы."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
       ]
     },
     "error": {
@@ -8048,10 +8087,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9588,6 +9624,9 @@
         "Вы выбралі **${ checked } паведамленні** ў катэгорыі ${ categoryLabel }",
         "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }",
         "Вы выбралі **${ checked } паведамленняў** у катэгорыі ${ categoryLabel }"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Вы ўжо ўвайшлі як ${ username } у ${ organizationName }."
       ]
     },
     "info": {
@@ -10772,6 +10811,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Exact host matching": [
+        "Дакладнае супадзенне з вузлом"
+      ],
+      "Exact URL matching": [
+        "Дакладнае супадзенне URL-адраса"
+      ],
+      "Never fill on this exact URL": [
+        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Бацькоўскі дамен і паддамены (прадвызначана)"
+      ],
+      "Regular expression": [
+        "Рэгулярны выраз"
+      ],
+      "Starts with": [
+        "Пачынаецца з"
+      ],
+      "URL wildcard pattern": [
+        "Узор падстаноўчых знакаў URL-адраса"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11353,6 +11413,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Правіла супадзення \"Пачынаць з\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Правіла дакладнага супадзення (пад)дамена"
+      ],
+      "Exact URL matching rule": [
+        "Правіла дакладнага супадзення URL-адраса"
+      ],
+      "Never fill with this exact URL": [
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
+      ],
+      "Regular expression rule": [
+        "Правіла рэгулярнага выразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
       ]
     },
     "Message display when a new app version is available": {
@@ -17055,6 +17133,21 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Стварыце свае ўласныя катэгорыі"
+      ],
+      "New messages": [
+        "Новыя паведамленні"
+      ],
+      "Personalize your Categories": [
+        "Персаналізацыя вашых катэгорый"
+      ],
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
+      ],
+      "You're in control": [
+        "Цяпер вы кантралюеце сітуацыю"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17408,6 +17501,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
       ]
     },
     "WeekDay": {
@@ -17762,6 +17858,23 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Наладзіць катэгорыі"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Next": [
+        "Далей"
+      ],
+      "Not now": [
+        "Не цяпер"
+      ],
+      "Skip": [
+        "Прапусціць"
       ]
     }
   }
