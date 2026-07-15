@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { NodeType } from '@proton/drive';
@@ -8,6 +9,7 @@ import { type UploadItem, UploadStatus, useUploadQueueStore } from '@proton/driv
 import {
     BaseTransferStatus,
     type DownloadItem,
+    IssueStatus,
     useDownloadManagerStore,
 } from '../../modules/download/downloadManager.store';
 
@@ -27,6 +29,7 @@ type TransferManagerBaseEntry = {
     transferredBytes: number;
     lastStatusUpdateTime: Date;
     error?: Error;
+    warningMessage?: string;
 };
 
 type TransferManagerDownloadEntry = TransferManagerBaseEntry & {
@@ -45,6 +48,13 @@ type TransferManagerUploadEntry = TransferManagerBaseEntry & {
 // TODO: we need to add the transfer speed in bytes from the stores
 export type TransferManagerEntry = TransferManagerDownloadEntry | TransferManagerUploadEntry;
 
+const hasApprovedIntegrityIssue = (item: DownloadItem): boolean => {
+    if (item.signatureIssueAllDecision === IssueStatus.Approved) {
+        return true;
+    }
+    return Object.values(item.signatureIssues ?? {}).some((issue) => issue.issueStatus === IssueStatus.Approved);
+};
+
 const mapDownload = (item: DownloadItem): TransferManagerDownloadEntry => ({
     type: 'download',
     id: item.downloadId,
@@ -54,6 +64,7 @@ const mapDownload = (item: DownloadItem): TransferManagerDownloadEntry => ({
     storageSize: item.storageSize ?? 0,
     lastStatusUpdateTime: item.lastStatusUpdateTime,
     malwareDetectionStatus: item.malwareDetectionStatus,
+    warningMessage: hasApprovedIntegrityIssue(item) ? c('Info').t`Data integrity check failed` : undefined,
     error: item.error,
 });
 
