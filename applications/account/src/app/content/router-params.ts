@@ -53,6 +53,7 @@ export type Flags = {
     isZoomIntegrationEnabled?: boolean;
     isProtonMeetIntegrationEnabled?: boolean;
     isSharedServerFeatureEnabled?: boolean;
+    isAlwaysOnVpnEnabled?: boolean;
     isCryptoPostQuantumOptInEnabled?: boolean;
     isSsoForPbsEnabled?: boolean;
     isRetentionPoliciesEnabled?: boolean;
