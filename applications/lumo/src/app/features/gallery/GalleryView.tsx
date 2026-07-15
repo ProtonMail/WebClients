@@ -1,6 +1,8 @@
 import type { RefObject } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { useModalStateObject } from '@proton/components';
+
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
@@ -238,7 +240,7 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     const editImageFileRef = useRef<HTMLInputElement>(null);
     const createdScrollRef = useRef<HTMLDivElement>(null);
     const filesContainerRef = useRef<HTMLDivElement>(null);
-    const [showDriveBrowser, setShowDriveBrowser] = useState(false);
+    const driveBrowserModal = useModalStateObject();
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
     const [gallerySketchTrigger] = useState(false);
@@ -294,12 +296,8 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     }, []);
 
     const handleShowDriveBrowser = useCallback(() => {
-        setShowDriveBrowser(true);
-    }, []);
-
-    const handleCloseDriveBrowser = useCallback(() => {
-        setShowDriveBrowser(false);
-    }, []);
+        driveBrowserModal.openModal(true);
+    }, [driveBrowserModal]);
 
     // Suppress hover overlays while the created section is scrolling
     useEffect(() => {
@@ -410,11 +408,12 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                         onShowDriveBrowser={handleShowDriveBrowser}
                     />
                 )}
-                {showDriveBrowser && (
+                {driveBrowserModal.render && (
                     <FilesManagementView
                         messageChain={[]}
                         filesContainerRef={filesContainerRef}
-                        onClose={handleCloseDriveBrowser}
+                        onClose={driveBrowserModal.modalProps.onClose}
+                        modalProps={driveBrowserModal.modalProps}
                         initialShowDriveBrowser
                         forceModal
                     />
