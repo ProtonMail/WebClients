@@ -48,7 +48,11 @@ import type {
     TaskRunningInfo,
 } from './elementsTypes';
 import { getElementsToBypassFilter } from './helpers/elementBypassFilters';
-import { computeContextTotals, updateContextTotals } from './helpers/elementContextCount';
+import {
+    computeContextTotals,
+    updateContextTotals,
+    updateDeletedSinceLastLoadFromContextTotals,
+} from './helpers/elementContextCount';
 import { newRetry } from './helpers/elementQuery';
 
 export const globalReset = (state: Draft<ElementsState>) => {
@@ -138,6 +142,12 @@ export const loadFulfilled = (
 
     if (!state.taskRunning.labelIDs.includes(params.labelID) && !isResponseStale) {
         state.total[contextFilter] = Total;
+    }
+
+    // Once we get a fresh (non-stale) response, the pages we fetched account for everything
+    // deleted so far, so the counter driving the dynamic page fetch count can be cleared.
+    if (!isResponseStale) {
+        state.deletedSinceLastLoad = 0;
     }
 };
 
@@ -388,6 +398,9 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
     action.payload.elementIDs.forEach((elementID) => {
         delete state.elements[elementID];
     });
+
+    state.deletedSinceLastLoad += action.payload.elementIDs.length;
+
     if (state.total) {
         const params = state.params;
 
@@ -951,6 +964,7 @@ export const labelMessagesPending = (
 
     const countsAfterAction = computeContextTotals(state);
     updateContextTotals({ state, countsBeforeAction, countsAfterAction });
+    updateDeletedSinceLastLoadFromContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const unlabelMessagesPending = (
@@ -1052,6 +1066,7 @@ export const labelConversationsPending = (
 
     const countsAfterAction = computeContextTotals(state);
     updateContextTotals({ state, countsBeforeAction, countsAfterAction });
+    updateDeletedSinceLastLoadFromContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const unlabelConversationsPending = (

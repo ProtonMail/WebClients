@@ -124,6 +124,7 @@ export const newElementsState = ({
         retry,
         taskRunning,
         awaitingStaleRetry: {},
+        deletedSinceLastLoad: 0,
     };
 };
 
