@@ -58,7 +58,12 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
-import { useDocsDocumentViewerEventsSDK, useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import {
+  useDocsDocumentViewerEventsSDK,
+  useIsSheetsEditorEnabled,
+  useSharingModalDriveSdkEnabled,
+  useIsOpenTracerEnabled,
+} from '~/utils/flags'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { Button } from '@proton/atoms/Button/Button'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -71,6 +76,8 @@ import { getDocsReportContextLines } from '~/utils/report-context'
 import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import TracerAlert from '../../../tracer/TracerAlert'
 
 const subscribeToEvents = manageEventsSubscription()
 
@@ -125,6 +132,7 @@ export function DocumentViewer({
   const [ready, setReady] = useState(false)
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
+  const isOpenTracerEnabled = useIsOpenTracerEnabled()
 
   const nodeUid = isPrivateNodeMeta(nodeMeta) ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
 
@@ -221,6 +229,12 @@ export function DocumentViewer({
       void docOrchestrator.exportAndDownload(tmpConvertNewDocTypeToOld(documentType) === 'doc' ? 'docx' : 'xlsx')
     }
   }, [docOrchestrator, didLoadTitle, didLoadEditorContent, isDownloadAction, documentType])
+
+  useEffect(() => {
+    if (didLoadEditorContent) {
+      void OpenTracer.resolveAttempt()
+    }
+  }, [didLoadEditorContent])
 
   useEffect(() => {
     if (!bridge) {
@@ -500,10 +514,12 @@ export function DocumentViewer({
       }
 
       if (!documentState) {
+        void OpenTracer.trace('boot_doc_viewer_create_bridge_document_state_not_available')
         throw new Error('Document state not yet available')
       }
 
       application.logger.info('Creating bridge from client to editor')
+      void OpenTracer.trace('boot_doc_viewer_create_bridge_creating_bridge')
 
       const clientToEditorBridge = new ClientToEditorBridge(
         editorFrame,
@@ -543,12 +559,20 @@ export function DocumentViewer({
   )
 
   useEffect(() => {
+    void OpenTracer.trace('boot_doc_viewer_loader_effect')
     if (docOrchestrator) {
+      void OpenTracer.trace('boot_doc_viewer_loader_effect_has_doc_orchestrator')
       return
     }
 
     const disposer = application.getDocLoader().addStatusObserver({
       onSuccess: (result) => {
+        void OpenTracer.trace('boot_doc_viewer_on_success', {
+          hasDocumentState: !!result.documentState,
+          hasOrchestrator: !!result.orchestrator,
+          hasDocController: !!result.docController,
+          hasEditorController: !!result.editorController,
+        })
         setDocumentState(result.documentState)
         setDocOrchestrator(result.orchestrator)
         setDocController(result.docController)
@@ -556,10 +580,12 @@ export function DocumentViewer({
         setReady(true)
         const localID = getLocalID()
         if (localID !== undefined) {
+          void OpenTracer.trace('boot_doc_viewer_set_local_id_for_document_in_cache', { localID })
           CacheService.setLocalIDForDocumentInCache(nodeMeta, localID)
         }
       },
       onError: (errorMessage, code) => {
+        void OpenTracer.trace('boot_doc_viewer_on_error', { code })
         setError({ message: errorMessage, userUnderstandableMessage: false, code })
         application.metrics.reportFullyBlockingErrorModal()
       },
@@ -567,15 +593,19 @@ export function DocumentViewer({
 
     if (!initializing) {
       setInitializing(true)
-
+      void OpenTracer.trace('boot_doc_viewer_loader_initialize_start', { documentType })
       void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType))
     }
 
-    return disposer
+    return () => {
+      void OpenTracer.trace('boot_doc_viewer_dispose')
+      disposer()
+    }
   }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta, removeLocalIDFromUrl])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && editorController && !bridge) {
+      void OpenTracer.trace('boot_doc_viewer_create_bridge')
       createBridge(docOrchestrator, editorFrame, editorController)
     }
   }, [docOrchestrator, editorFrame, createBridge, bridge, editorController])
@@ -589,18 +619,23 @@ export function DocumentViewer({
 
   const onInviteAutoAcceptResult = useCallback(
     (result: InviteAutoAcceptResult) => {
+      void OpenTracer.trace('boot_doc_viewer_on_invite_auto_accept_result')
+
       setWasAutoAcceptSuccessful(result.success)
       setDidAttemptToAutoAcceptInvite(true)
 
       if (result.success) {
         application.logger.info('Invite auto-accept successful, reloading page')
+        void OpenTracer.trace('boot_doc_viewer_on_invite_auto_accept_result_successful')
 
         if (isPublicNodeMeta(nodeMeta)) {
+          void OpenTracer.trace('boot_doc_viewer_invite_accept_public_redirect')
           application.compatWrapper.getPublicCompat().redirectToAuthedDocument({
             volumeId: result.acceptedNodeMeta.volumeId,
             linkId: result.acceptedNodeMeta.linkId,
           })
         } else {
+          void OpenTracer.trace('boot_doc_viewer_invite_accept_reload')
           window.location.reload()
         }
       }
@@ -623,10 +658,29 @@ export function DocumentViewer({
 
   const { publicContext, privateContext } = useDocsContext()
 
-  if (
+  const shouldAttemptAutoAcceptInvite =
     !didAttemptToAutoAcceptInvite &&
     (isSignedInUserInPublicReadonlyMode || isPrivateModeUserWithInsufficientPermissions)
-  ) {
+
+  useEffect(() => {
+    if (shouldAttemptAutoAcceptInvite) {
+      void OpenTracer.trace('boot_doc_viewer_attempting_to_auto_accept_invite')
+    }
+  }, [shouldAttemptAutoAcceptInvite])
+
+  useEffect(() => {
+    if (wasAutoAcceptSuccessful) {
+      void OpenTracer.trace('boot_doc_viewer_was_auto_accept_successful')
+    }
+  }, [wasAutoAcceptSuccessful])
+
+  useEffect(() => {
+    if (error) {
+      void OpenTracer.trace('boot_doc_viewer_error')
+    }
+  }, [error])
+
+  if (shouldAttemptAutoAcceptInvite) {
     application.logger.info('Attempting to auto-accept invite (if found)')
 
     return (
@@ -686,13 +740,16 @@ export function DocumentViewer({
         )}
 
       {renderEditor && (
-        <EditorFrame
-          key="docs-editor-iframe"
-          onFrameReady={onFrameReady}
-          systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
-          logger={application.logger}
-          documentType={tmpConvertNewDocTypeToOld(openAction.type)}
-        />
+        <>
+          <EditorFrame
+            key="docs-editor-iframe"
+            onFrameReady={onFrameReady}
+            systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
+            logger={application.logger}
+            documentType={tmpConvertNewDocTypeToOld(openAction.type)}
+          />
+          {isOpenTracerEnabled && <TracerAlert openBugReportModal={() => setBugReportModal(true)} />}
+        </>
       )}
 
       {publicSplashModal}

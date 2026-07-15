@@ -26,6 +26,7 @@ import { appMode } from '@proton/shared/lib/webpack.constants'
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 async function getAppContainer() {
   try {
@@ -57,19 +58,26 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
   initSafariFontFixClassnames()
   startLogoutListener()
 
+  void OpenTracer.trace('boot_bootstrap_start')
+
   if (volumeId && linkId) {
     if (localIDFromPathname !== undefined) {
       localID = localIDFromPathname
+      void OpenTracer.trace('boot_bootstrap_localid_resolution_pathname', { localIDFromPathname })
     } else {
       const localIDFromCache = CacheService.getLocalIDForDocumentFromCache({
         volumeId,
         linkId,
       })
+      void OpenTracer.trace('boot_bootstrap_localid_resolution_cache', { localIDFromCache })
       localID = localIDFromCache
     }
 
+    void OpenTracer.trace('boot_bootstrap_localid_resolution_complete', { localID })
+
     // Could not find local ID in pathname or cache
     if (localID === undefined) {
+      void OpenTracer.trace('boot_bootstrap_local_id_undefined')
       handleInvalidSession({
         appName,
         authentication,
@@ -84,6 +92,8 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
     const unleashClient = bootstrap.createUnleash({ api: silentApi })
 
     const user = sessionResult.session?.User
+    void OpenTracer.trace('boot_bootstrap_session_loaded', { hasSession: !!sessionResult.session })
+
     extendStore({ config, api, authentication, unleashClient, history })
 
     const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
@@ -130,6 +140,9 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
       bootstrap.loadCrypto({ appName, unleashClient }),
       unleashPromise,
     ])
+
+    void OpenTracer.trace('boot_bootstrap_user_loaded')
+
     // postLoad needs everything to be loaded.
     await bootstrap.postLoad({ appName, authentication, ...userData, history })
     // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
@@ -150,6 +163,7 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
     })
 
     dispatch(bootstrapEvent({ type: 'complete' }))
+    void OpenTracer.trace('boot_bootstrap_complete')
 
     return {
       ...userData,

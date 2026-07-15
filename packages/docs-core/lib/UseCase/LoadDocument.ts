@@ -21,6 +21,7 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { jwtDecode } from 'jwt-decode'
 import { realtimeTokenPayloadSchema } from './FetchRealtimeToken'
 import type { GetNodePermissions } from './GetNodePermissions'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
   documentState: E
@@ -48,6 +49,8 @@ export class LoadDocument {
 
   async executePrivate(nodeMeta: NodeMeta): Promise<DynamicResult<LoadDocumentResult<DocumentState>, ErrorResult>> {
     LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
+    void OpenTracer.trace('boot_load_document_execute_private_start')
+
     try {
       const [nodeResult, keysResult, metaResult] = await Promise.all([
         this.getNode
@@ -82,15 +85,18 @@ export class LoadDocument {
       LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
 
       if (metaResult.isFailed()) {
+        void OpenTracer.trace('boot_load_document_execute_private_meta_failed', { error: metaResult.getErrorObject() })
         return DynamicResult.fail({
           message: metaResult.getErrorObject().message,
           code: metaResult.getErrorObject().code,
         })
       }
       if (nodeResult.isFailed()) {
+        void OpenTracer.trace('boot_load_document_execute_private_node_failed', { error: nodeResult.getError() })
         return DynamicResult.fail({ message: nodeResult.getError() })
       }
       if (keysResult.isFailed()) {
+        void OpenTracer.trace('boot_load_document_execute_private_keys_failed', { error: keysResult.getError() })
         return DynamicResult.fail({ message: keysResult.getError() })
       }
 
@@ -178,6 +184,7 @@ export class LoadDocument {
 
       return DynamicResult.ok({ documentState })
     } catch (error) {
+      void OpenTracer.trace('boot_load_document_execute_private_error', { error: getErrorString(error) })
       return DynamicResult.fail({ message: getErrorString(error) ?? 'Failed to load document' })
     }
   }
@@ -286,6 +293,7 @@ export class LoadDocument {
 
       return Result.ok({ documentState, preferences: realtimeToken?.preferences })
     } catch (error) {
+      void OpenTracer.trace('boot_load_document_execute_public_error', { error: getErrorString(error) })
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }
   }
