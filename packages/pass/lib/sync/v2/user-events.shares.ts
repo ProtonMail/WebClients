@@ -17,7 +17,7 @@ import chunk from '@proton/utils/chunk';
 
 /** Fetches and decrypts a single share. `parseShareResponse` will
  * internally request share keys if not already in `PassCrypto`. */
-async function shareFetcher(shareId: ShareId): Promise<MaybeNull<Share>> {
+export async function shareFetcher(shareId: ShareId): Promise<MaybeNull<Share>> {
     const encryptedShare = await requestShare(shareId);
     const share = await parseShareResponse(encryptedShare);
     return share ?? null;
