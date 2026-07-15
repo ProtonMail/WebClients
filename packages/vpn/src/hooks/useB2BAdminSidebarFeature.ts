@@ -87,6 +87,7 @@ export const useB2BAdminSidebarFeature = ({
 
     const ZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const NewScheduleOption = useFlag('NewScheduleOption');
+    const B2BAlwaysOnEnabled = useFlag('B2BAlwaysOnEnabled');
 
     useVisibilityTracker(navigationRef, {
         onEnter: () => {
@@ -122,6 +123,7 @@ export const useB2BAdminSidebarFeature = ({
             SsoForPbs,
             ZoomIntegrationDisabled,
             NewScheduleOption,
+            B2BAlwaysOnEnabled,
         },
         context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME },
         permissions: permissions ?? {},

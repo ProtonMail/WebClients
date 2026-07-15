@@ -1,6 +1,9 @@
 import { type ReactNode, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+import { c } from 'ttag';
+
+import { Href } from '@proton/atoms/Href/Href';
 import {
     ActivityMonitorDashboard,
     CatchAllSection,
@@ -28,7 +31,9 @@ import { SetupOrganizationSection } from '@proton/components/containers/organiza
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import { AlwaysOn } from '@proton/vpn/components/AlwaysOn';
 import { GatewaysSection } from '@proton/vpn/components/Gateways';
 
 import { FeatureAccessSection } from './components/FeatureAccessSection';
@@ -72,6 +77,7 @@ const OrganizationSettingsRouter = ({
             groups,
             accessControl,
             sharedServers,
+            alwaysOnVpn,
         },
     } = organizationAppRoutes;
 
@@ -95,6 +101,21 @@ const OrganizationSettingsRouter = ({
                     <PrivateMainSettingsArea config={sharedServers}>
                         <SharedServersSection />
                     </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(alwaysOnVpn) && (
+                <Route path={getSectionPath(path, alwaysOnVpn)}>
+                    <PrivateMainSettingsAreaBase
+                        title={alwaysOnVpn.text}
+                        description={
+                            <>
+                                {alwaysOnVpn.description}{' '}
+                                <Href href={getKnowledgeBaseUrl('/mdm-always-on-vpn')}>{c('Link').t`Learn more`}</Href>
+                            </>
+                        }
+                    >
+                        <AlwaysOn />
+                    </PrivateMainSettingsAreaBase>
                 </Route>
             )}
             {isSetupAvailable && (
