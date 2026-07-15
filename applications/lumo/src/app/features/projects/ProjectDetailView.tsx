@@ -425,7 +425,8 @@ const ProjectDetailViewInner = () => {
                     <FilesManagementView
                         messageChain={[]}
                         filesContainerRef={{ current: null }}
-                        onClose={() => driveBrowserModal.openModal(false)}
+                        onClose={driveBrowserModal.modalProps.onClose}
+                        modalProps={driveBrowserModal.modalProps}
                         initialShowDriveBrowser={true}
                         forceModal={true}
                         spaceId={projectId}
