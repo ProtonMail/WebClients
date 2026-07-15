@@ -18,6 +18,8 @@ export class MailDelegate {
             doc.addAttribute('labelId', Value.tag(label));
         }
         doc.addAttribute('addressId', Value.tag(metadata.AddressID));
+
+        doc.addRangeKey(BigInt(metadata.Time));
     }
 
     stageBody(body: string, doc: Document) {
