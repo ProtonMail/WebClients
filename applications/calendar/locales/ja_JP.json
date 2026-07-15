@@ -1036,6 +1036,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME }を使ってみる"
       ]
     },
     "action": {
@@ -1478,6 +1481,96 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "Activated": [
+        "有効化済み"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "アドレスはすでに組織外のユーザーによって使用されています。解決するにはカスタマーサポートまでご連絡ください"
+      ],
+      "All": [
+        "すべて"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspaceから${ BRAND_NAME }へのデータ移行ステータス"
+      ],
+      "Emails": [
+        "メール"
+      ],
+      "Errors": [
+        "エラー"
+      ],
+      "Find out what can be migrated.": [
+        "移行可能なデータを確認する。"
+      ],
+      "Has errors": [
+        "エラーあり"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "メンバーアドレスが見つかりません。解決するにはカスタマーサポートまでご連絡ください"
+      ],
+      "Migrate": [
+        "移行"
+      ],
+      "Migrated": [
+        "移行済み"
+      ],
+      "Missing organization private key": [
+        "組織の秘密鍵がありません"
+      ],
+      "Missing organization public key": [
+        "組織の公開鍵がありません"
+      ],
+      "No users to display": [
+        "表示するユーザーがいません"
+      ],
+      "Not activated": [
+        "未有効化"
+      ],
+      "Pending": [
+        "保留中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "移行したい内容を正確に選択してください。これはすべての組織ユーザーに適用されます。"
+      ],
+      "Select users to migrate": [
+        "移行するユーザーの選択"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "ステータス"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "プラットフォームの互換性がないため、このユーザーは移行できません。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでお客様のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink }でお客様のアドレスを有効にしてください。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "このユーザーを移行するには、対象のユーザーが${ BRAND_NAME }への招待を承諾する必要があります。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーのアーカイブを解除してください。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "このユーザーを移行するには、Google Workspace管理者管理コンソールでユーザーの一時停止を解除してください。"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME }アカウントにアクセスしたユーザー"
+      ],
+      "You": [
+        "お客様本人"
       ]
     },
     "Browser": {
@@ -3433,6 +3526,9 @@
       ],
       "90m": [
         "90分"
+      ],
+      "15 minutes": [
+        "15 分"
       ]
     },
     "Edit billing address form note": {
@@ -4141,6 +4237,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoomの接続が期限切れになりました。続けるには再接続してください。"
+      ],
+      "No drive found to import": [
+        "インポートするドライブが見つかりません"
+      ],
+      "Unexpected error, we can't import the files": [
+        "予期しないエラーが発生したため、ファイルをインポートできません"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "この方法を使用して認証コードを送信することはできません。"
       ]
     },
     "error": {
@@ -6610,6 +6715,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "Failed to update meeting schedule": [
+        "ミーティングスケジュールの更新に失敗しました"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "ファイルのみ（写真、${ DOCS_APP_NAME }、${ SHEETS_APP_NAME }を除く） - 合計最大 100 GB、100,000 ファイルまで、1 ファイルあたり 50 GB まで"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "あなたは現在、${ organizationName }の${ username }としてサインインしています。"
       ]
     },
     "info": {
@@ -7368,6 +7482,30 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Exact host matching": [
+        "正確なホスト一致"
+      ],
+      "Exact URL matching": [
+        "正確なURL一致"
+      ],
+      "Never fill on this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Parent domain and subdomains (default)": [
+        "親ドメインとサブドメイン（デフォルト）"
+      ],
+      "Regular expression": [
+        "正規表現"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "誰にでも送信できる予約ページから、お客様の予定の一部を安全に共有できます。"
+      ],
+      "Starts with": [
+        "前方一致"
+      ],
+      "URL wildcard pattern": [
+        "URLワイルドカードパターン"
       ]
     },
     "label": {
@@ -7733,6 +7871,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "「前方一致」の一致ルール"
+      ],
+      "Exact (sub) domain matching rule": [
+        "正確な（サブ）ドメイン一致ルール"
+      ],
+      "Exact URL matching rule": [
+        "正確なURL一致ルール"
+      ],
+      "Never fill with this exact URL": [
+        "この正確なURLには絶対に入力しない"
+      ],
+      "Regular expression rule": [
+        "正規表現ルール"
+      ],
+      "Wildcard pattern matching rule": [
+        "ワイルドカードパターン一致ルール"
       ]
     },
     "Message display when a new app version is available": {
@@ -9893,6 +10049,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Search for users or addresses": [
+        "ユーザーまたはアドレスを検索"
       ]
     },
     "Placeholder for contact group name": {
@@ -12382,6 +12541,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } ライティングアシスタント"
+      ],
+      "Users and addresses": [
+        "ユーザーとアドレス"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12401,6 +12566,12 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Created": [
+        "作成しました"
+      ],
+      "Expires": [
+        "有効期限"
       ]
     },
     "Title; create calendar modal": {
@@ -12499,6 +12670,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ],
+      "Version 6 OpenPGP key": [
+        "OpenPGPキー バージョン6"
       ]
     },
     "tooltip": {
@@ -12701,6 +12875,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }は強力な制御を提供しますが、誤りが1つあるだけで自動入力が一致し、詐欺サイトやフィッシングサイトにデータが入力されてしまう可能性があります。"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12937,6 +13114,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "ユーザーが招待を承認すると、役割を割り当てることができるようになります。"
       ]
     }
   }

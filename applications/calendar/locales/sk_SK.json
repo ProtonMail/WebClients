@@ -1598,6 +1598,27 @@
       ],
       "You": [
         "Vy"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
       ]
     },
     "Browser": {
@@ -4342,6 +4363,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ]
     },
     "error": {
@@ -13210,6 +13234,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Users and addresses": [
+        "Používatelia a adresy"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

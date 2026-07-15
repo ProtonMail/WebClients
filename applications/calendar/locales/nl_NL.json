@@ -1566,6 +1566,27 @@
       ],
       "You": [
         "U"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
       ]
     },
     "Browser": {
@@ -4256,6 +4277,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "We konden via deze methode geen verificatiecode verzenden."
       ]
     },
     "error": {
@@ -6780,6 +6810,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Kan de wachtkamerstatus van de vergadering niet updaten"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "U bent momenteel aangemeld als ${ username } voor ${ organizationName }."
       ]
     },
     "info": {
@@ -7547,6 +7586,27 @@
       ],
       "Zoom meeting": [
         "Zoom-vergadering"
+      ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
+      "Starts with": [
+        "Begint met"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ]
     },
     "label": {
@@ -7924,6 +7984,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ]
     },
     "Message display when a new app version is available": {
@@ -12696,6 +12774,12 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12715,6 +12799,12 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Expires": [
+        "Verloopt"
       ]
     },
     "Title; create calendar modal": {
@@ -12813,6 +12903,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Version 6 OpenPGP key": [
+        "Versie 6 OpenPGP-sleutel"
       ]
     },
     "tooltip": {
@@ -13029,6 +13122,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -13295,6 +13391,11 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
       ]
     }
   }
