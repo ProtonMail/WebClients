@@ -1,7 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { Entry, ExportEvent, Expression } from '@proton/proton-foundation-search';
-import { ExportEventKind, type QueryEvent, QueryEventKind, SerDes } from '@proton/proton-foundation-search';
+import type { Entry, ExportEvent, Expression, QueryEvent } from '@proton/proton-foundation-search';
+import { ExportEventKind, QueryEventKind, SerDes } from '@proton/proton-foundation-search';
 
 import { BlobCache } from '../cache/BlobCache';
 import { EncryptedBlobTransaction } from '../crypto/EncryptedBlobTransaction';
@@ -68,12 +68,50 @@ export class IndexReader {
         }
     }
 
-    async search(exp: Expression, abortSignal: AbortSignal): Promise<string[]> {
+    private async getQueryCardinality(txn: EncryptedBlobTransaction, exp: Expression) {
+        const queryOptions = createLocalSearchQueryOptions();
+        const search = this.engine.query().withStructuredExpression(exp).withOptions(queryOptions).search();
+
+        let cardinality: { atLeast: number; atMost: number; exact: boolean } | null = null;
+        let span: { low: bigint; high: bigint } | null = null;
+
+        try {
+            let event: QueryEvent | undefined;
+            while ((event = search.next())) {
+                if (isLoadEvent(event)) {
+                    await txn.handleLoadEvent(event);
+                } else if (event.kind() === QueryEventKind.Cardinality) {
+                    const c = event.cardinality()!;
+                    const est = c.estimate();
+                    cardinality = { atLeast: est.atLeast, atMost: est.atMost, exact: est.isExact() };
+                    const r = c.range();
+                    span = { low: r.low, high: r.high };
+                    r.free();
+                    est.free();
+                    c.free();
+                    break;
+                }
+            }
+        } catch (e) {
+            console.log(e);
+        }
+
+        return { span, cardinality };
+    }
+
+    async search(
+        exp: Expression,
+        resultCallback: (results: string[]) => void,
+        abortSignal: AbortSignal
+    ): Promise<void> {
         performance.mark('search-foundation-start');
         const hits: string[] = [];
         const blobCache = new BlobCache();
         const txn = await EncryptedBlobTransaction.start(blobCache, this.db, this.indexKey);
         const queryOptions = createLocalSearchQueryOptions();
+        const cardinality = await this.getQueryCardinality(txn, exp);
+        console.log({ cardinality });
+
         const search = this.engine.query().withStructuredExpression(exp).withOptions(queryOptions).search();
         try {
             let event: QueryEvent | undefined;
@@ -96,7 +134,7 @@ export class IndexReader {
         }
         await txn.verify(this.db.transaction('config'));
         performance.measure('search-foundation', 'search-foundation-start');
-        return hits;
+        resultCallback(hits);
     }
 
     close() {
