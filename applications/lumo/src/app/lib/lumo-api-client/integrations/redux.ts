@@ -69,6 +69,7 @@ export function sendMessageWithRedux(
         // reflect just-added attachments when the next image_data chunk arrives, so we track
         // them locally to keep collision suffixes ((2), (3), …) correct within one response.
         const generatedImageFilenames = new Set<string>();
+        let servingModelID: string | undefined;
 
         const client = new LumoApiClient(config);
 
@@ -247,6 +248,9 @@ export function sendMessageWithRedux(
 
                         case 'usage':
                             applyUsageFromStreamMessage(message);
+                            if (message.usage.model) {
+                                servingModelID = message.usage.model;
+                            }
                             break;
 
                         case 'server_tool_call':
@@ -321,6 +325,7 @@ export function sendMessageWithRedux(
                                 content: accumulatedContent,
                                 status: status === 'failed' ? 'failed' : status,
                                 role,
+                                ...(servingModelID !== undefined ? { modelID: servingModelID } : {}),
                             })
                         );
                         // Always persist the message to IDB, even if generation failed.
