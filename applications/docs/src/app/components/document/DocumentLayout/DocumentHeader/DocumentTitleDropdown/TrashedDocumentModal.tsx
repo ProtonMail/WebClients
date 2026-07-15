@@ -1,11 +1,16 @@
 import type { AuthenticatedDocControllerInterface, DocumentState } from '@proton/docs-core'
 import { c } from 'ttag'
 
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components'
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
+import { useTrashWithSDK } from '~/utils/flags'
+import { generateNodeUid, getDrive } from '@proton/drive'
+import type { NodeMeta } from '@proton/drive-store/lib/NodeMeta'
+import { reportTrashError, restoreDocument } from '~/drive-sdk/trash'
+import { useEvent } from '~/utils/misc'
 
 export type TrashedDocumentModalProps = {
   controller: AuthenticatedDocControllerInterface
@@ -20,8 +25,28 @@ export function TrashedDocumentModal({
   onOpenProtonDrive,
   controller,
 }: TrashedDocumentModalProps) {
+  const { createNotification } = useNotifications()
   const { didTrashDocInCurrentSession } = controller
   const trashedState = documentState.getProperty('documentTrashState')
+  const trashWithSDK = useTrashWithSDK()
+
+  const restore = useEvent(() => {
+    if (trashWithSDK) {
+      const drive = getDrive()
+      const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
+
+      restoreDocument(drive, generateNodeUid(volumeId, linkId))
+        .then(() => {
+          controller.markAsRestored()
+        })
+        .catch((error) => {
+          reportTrashError(error)
+          createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+        })
+    } else {
+      void controller.restoreDocument()
+    }
+  })
 
   return (
     <ModalTwo className="!rounded-t-xl" open={trashedState === 'trashed'}>
@@ -40,12 +65,7 @@ export function TrashedDocumentModal({
           <>
             {didTrashDocInCurrentSession ? (
               <>
-                <Button
-                  onClick={() => {
-                    void controller.restoreDocument()
-                  }}
-                  className="flex items-center"
-                >
+                <Button onClick={restore} className="flex items-center">
                   {c('Action').t`Undo`}
                   {trashedState === 'restoring' && <CircleLoader size="small" className="ml-2" />}
                 </Button>
@@ -56,13 +76,7 @@ export function TrashedDocumentModal({
             ) : (
               <>
                 <Button onClick={onOpenProtonDrive}>{goToPlanOrAppNameText(DRIVE_SHORT_APP_NAME)}</Button>
-                <Button
-                  color="norm"
-                  onClick={() => {
-                    void controller.restoreDocument()
-                  }}
-                  className="flex items-center"
-                >
+                <Button color="norm" onClick={restore} className="flex items-center">
                   {c('Action').t`Take out of trash`}
                   {trashedState === 'restoring' && <CircleLoader size="small" className="ml-2" />}
                 </Button>
