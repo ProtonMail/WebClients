@@ -37,6 +37,7 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import type { SheetsStorageService } from '../SheetsStorageService'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
   private docController?: AuthenticatedDocControllerInterface
@@ -78,6 +79,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
   }
 
   public async initialize(nodeMeta: NodeMeta, documentType: DocumentType): Promise<void> {
+    void OpenTracer.trace('boot_doc_loader_initialize_start', { documentType })
     if (this.docController) {
       throw new Error('[DocLoader] docController already initialized')
     }
@@ -86,6 +88,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     const loadResult = await this.loadDocument.executePrivate(nodeMeta)
     if (loadResult.isFailed()) {
+      void OpenTracer.trace('boot_doc_loader_initialize_private_failed', { code: loadResult.getErrorObject().code })
       this.logger.error('Failed to load private document', loadResult.getErrorObject())
       this.statusObservers.forEach((observer) => {
         observer.onError(loadResult.getErrorObject().message, loadResult.getErrorObject().code)
@@ -192,6 +195,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     })
 
     this.logger.info(`Loaded document in ${timeToLoadInSeconds} seconds`)
+    void OpenTracer.trace('boot_doc_loader_initialize_end')
   }
 
   public addStatusObserver(observer: DocLoaderStatusObserver<DocumentState>): () => void {

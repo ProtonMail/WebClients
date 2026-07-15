@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useMemo, useState, useEffect } from 'react'
 import { useAuthentication } from '@proton/components'
 import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './flags'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { useFlag } from '@proton/unleash/useFlag'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 const DocsUrlContext = createContext<{
   searchParams: URLSearchParams
@@ -29,6 +30,10 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
   const { pathname, search } = useLocation()
   const searchParams = useMemo(() => new URLSearchParams(search), [search])
   const [openAction, setOpenAction] = useState<DocumentAction | null>(() => parseOpenAction(searchParams, pathname))
+
+  useEffect(() => {
+    void OpenTracer.trace('boot_docs_url_bar_mount', { mode: openAction?.mode })
+  }, [searchParams, openAction])
 
   /**
    * Changes the URL of the page only visually, without causing any navigation or changing
@@ -56,6 +61,7 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
       newURL.hash = action.urlPassword
     }
 
+    void OpenTracer.trace('boot_docs_url_bar_change_url_visually', { action: action.mode, newURL: newURL.pathname })
     history.replaceState(null, '', newURL)
   }, [])
 
@@ -77,6 +83,7 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
       newUrl.searchParams.set('volumeId', params.newVolumeId)
       newUrl.searchParams.set('linkId', params.newLinkId)
 
+      void OpenTracer.trace('boot_docs_url_bar_update_parameters', { params, newUrl: newUrl.pathname })
       history.replaceState(null, '', newUrl.toString())
     },
     [openAction?.type],
@@ -113,18 +120,21 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
       newUrl.hash = action.urlPassword
     }
 
+    void OpenTracer.trace('boot_docs_url_bar_navigate_to_action', { mode: action.mode, newUrl: newUrl.pathname })
     window.location.assign(newUrl.toString())
   }, [])
 
   const removeActionFromUrl = useCallback(() => {
     const newUrl = new URL(location.href)
     newUrl.searchParams.delete('action')
+    void OpenTracer.trace('boot_docs_url_bar_remove_action_from_url', { newUrl: newUrl.pathname })
     history.replaceState(null, '', newUrl.toString())
   }, [])
 
   const removeLocalIDFromUrl = useCallback(() => {
     const newUrl = new URL(location.href)
     newUrl.pathname = stripLocalBasenameFromPathname(newUrl.pathname)
+    void OpenTracer.trace('boot_docs_url_bar_remove_local_id_from_url', { newUrl: newUrl.pathname })
     history.replaceState(null, '', newUrl.toString())
   }, [])
 
@@ -132,6 +142,7 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
 
   useEffectOnce(() => {
     if (isDocsEnabled === false) {
+      void OpenTracer.trace('boot_docs_url_bar_is_docs_enabled_false')
       window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
       return
     }
@@ -141,6 +152,7 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
       (openAction?.type === 'sheet' || openAction?.type === 'spreadsheet') &&
       (openAction?.mode === 'create' || openAction?.mode === 'new')
     ) {
+      void OpenTracer.trace('boot_docs_url_bar_is_sheets_enabled_false')
       window.location.assign(getAppHref('/', APPS.PROTONDOCS, getLocalID()))
       return
     }

@@ -15,6 +15,7 @@ import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '~/redux-store/rootReducer'
 import { getLocalID as _getLocalID } from '@proton/drive-store/utils/url/localid'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 function getLocalID(token: string | null) {
   if (token) {
@@ -82,6 +83,7 @@ export async function bootstrapPublicApp({ config }: { config: ProtonConfig }) {
       if (error instanceof bootstrap.InvalidSessionError) {
         // When the fork returns, we specify to reload the document so that we properly get back in to the public app once the
         // fork has been consumed
+        void OpenTracer.trace('boot_bootstrap_public_invalid_session_fork')
         requestFork({ fromApp: APPS.PROTONDOCS, localID: Number(localId), extra: { reloadDocument: true } })
         // Promise that never resolves since request fork is performing a redirect.
         await new Promise(() => {})
