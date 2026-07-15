@@ -2282,6 +2282,33 @@
       ],
       "You": [
         "Du"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status för datamigrering från Google Workspace till ${ BRAND_NAME }"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denna användare kan inte migreras på grund av plattformsinkompatibilitet."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, aktivera deras konto i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "För att migrera denna användare måste de acceptera sin inbjudan att gå med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, återställ dem från arkivet i din Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "För att migrera denna användare, häv avstängningen för dem i din Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har använt sitt ${ BRAND_NAME }-konto"
       ]
     },
     "Browser": {
@@ -4448,6 +4475,15 @@
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
         "En blå prick visas när en kategori har olästa meddelanden sedan ditt senaste besök."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Lägg till eller ta bort kategorier, hantera aviseringar och anpassa din konfiguration när som helst i inställningar."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Lägg till eller ta bort kategorier, hantera aviseringar eller stäng av dem helt – när som helst i Inställningar."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Högerklicka på ett e-postmeddelande och välj ”Flytta till”, eller dra och släpp det i en annan kategori. Liknande e-postmeddelanden kommer att sorteras dit automatiskt i framtiden."
       ]
     },
     "description": {
@@ -5436,6 +5472,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "No drive found to import": [
+        "Ingen drive hittades att importera"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunde inte skicka en verifieringskod med den här metoden."
       ]
     },
     "error": {
@@ -9245,6 +9287,13 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktiverat vidarebefordran på ${ MAX_SYNC_PAID_USER } Gmail-adress. För att lägga till en till måste du först inaktivera en av dem.",
+        "Du har aktiverat vidarebefordran på ${ MAX_SYNC_PAID_USER } Gmail-adresser. För att lägga till en till måste du först inaktivera en av dem."
       ]
     },
     "info": {
@@ -10407,6 +10456,27 @@
       ],
       "Parent domain and subdomains (default)": [
         "Överordnad domän och underdomäner (standard)"
+      ],
+      "Exact host matching": [
+        "Exakt värdmatchning"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Nyhetsbrev - Nyheter, redaktionell e-post och icke-kommersiellt innehåll"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Primär - Personliga e-postmeddelanden och jobb-e-post, samt viktiga uppdateringar"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Erbjudanden - Erbjudanden, kampanjer och marknadsförings-e-post"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Socialt - Uppdateringar, aktivitet och meddelanden från sociala medier"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Uppdateringar - Automatiska bekräftelser, aviseringar och kontouppdateringar"
+      ],
+      "URL wildcard pattern": [
+        "Jokerteckenmönster för URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10879,7 +10949,7 @@
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
       ],
       "${ MEET_APP_NAME } seats": [
-        "{count, plural, one {# användarplats} other {# användarplatser}} för ${ MEET_APP_NAME }"
+        "${ MEET_APP_NAME }-användarplatser"
       ]
     },
     "meet_2025: Feature": {
@@ -10967,6 +11037,21 @@
       ],
       "Never fill with this exact URL": [
         "Fyll aldrig med denna exakta URL"
+      ],
+      "'Starts with' matching rule": [
+        "Matchningsregel för \"Börjar med\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Matchningsregel för exakt (under)domän"
+      ],
+      "Exact URL matching rule": [
+        "Matchningsregel för exakt URL"
+      ],
+      "Regular expression rule": [
+        "Regel för reguljärt uttryck"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchningsregel för jokerteckenmönster"
       ]
     },
     "Message display when a new app version is available": {
@@ -16416,6 +16501,12 @@
       ],
       "You're in control": [
         "Du har kontrollen"
+      ],
+      "Make Categories your own": [
+        "Gör kategorier till dina egna"
+      ],
+      "Users and addresses": [
+        "Användare och adresser"
       ]
     },
     "Title header for keys table": {
@@ -16764,6 +16855,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
       ]
     },
     "WeekDay": {
@@ -17044,6 +17138,17 @@
       ],
       "Skip": [
         "Hoppa över"
+      ],
+      "Customize categories": [
+        "Anpassa kategorier"
+      ],
+      "Not now": [
+        "Inte nu"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubbletter från tidigare importer kommer att hoppas över. Ångra eller importera äldre meddelanden i inställningarna för ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

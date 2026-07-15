@@ -2288,6 +2288,27 @@
       ],
       "You": [
         "Usted"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, active su cuenta en su consola de administración de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, active su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, active su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, este debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, desarchívelo en su consola de administración de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, reactive su cuenta suspendida en su consola de administración de Google Workspace."
       ]
     },
     "Browser": {
@@ -4456,6 +4477,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Aparece un punto azul cuando una categoría tiene mensajes sin leer desde su última visita."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Añada o elimine categorías, gestione las notificaciones y ajuste sus preferencias en cualquier momento en los ajustes."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Añada o elimine categorías, gestione las notificaciones o desactívelas por completo en cualquier momento en los ajustes."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haga clic derecho en un correo electrónico y seleccione «Mover a», o arrástrelo y suéltelo en otra categoría. Los correos similares se clasificarán ahí automáticamente en el futuro."
       ]
     },
     "description": {
@@ -5447,6 +5480,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "No pudimos enviar un código de verificación usando este método."
       ]
     },
     "error": {
@@ -9260,6 +9296,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Actualmente inició sesión como ${ username } en (${ organizationName }."
       ]
     },
     "info": {
@@ -10422,6 +10461,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Exact host matching": [
+        "Coincidencia de host exacta"
+      ],
+      "Exact URL matching": [
+        "Coincidencia de URL exacta"
+      ],
+      "Never fill on this exact URL": [
+        "Nunca completar esta URL exacta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
+      ],
+      "Regular expression": [
+        "Expresión regular"
+      ],
+      "Starts with": [
+        "Comienza con"
+      ],
+      "URL wildcard pattern": [
+        "Patrón comodín de URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10979,6 +11039,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La prueba gratuita ha terminado. El acceso a la cuenta pronto será desactivado. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Regla de coincidencia «Comienza con»"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia de (sub)dominio exacto"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia de URL exacta"
+      ],
+      "Never fill with this exact URL": [
+        "Nunca completar con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón comodín"
       ]
     },
     "Message display when a new app version is available": {
@@ -16413,6 +16491,21 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Make Categories your own": [
+        "Haga suyas las categorías"
+      ],
+      "New messages": [
+        "Mensajes nuevos"
+      ],
+      "Personalize your Categories": [
+        "Personalice sus categorías"
+      ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
+      ],
+      "You're in control": [
+        "Usted tiene el control"
       ]
     },
     "Title header for keys table": {
@@ -16761,6 +16854,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ]
     },
     "WeekDay": {
@@ -17030,6 +17126,23 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "Not now": [
+        "Ahora no"
+      ],
+      "Skip": [
+        "Omitir"
       ]
     }
   }

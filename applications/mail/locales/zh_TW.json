@@ -1703,6 +1703,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Deleting folder": [
+        "正在刪除資料夾"
+      ],
+      "Explore other plans": [
+        "探索其他方案"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "設定從 Gmail 自動轉寄"
+      ],
+      "Subscribe now": [
+        "立即訂閱"
       ]
     },
     "action": {
@@ -1937,7 +1949,7 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "未顯示 ${ hiddenResultsCount } 個結果"
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -2171,6 +2183,114 @@
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "您組織外部的使用者已在使用此位址。請聯絡客戶支援服務以解決此問題"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Configure migration": [
+        "設定轉移"
+      ],
+      "Contacts": [
+        "聯絡人"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "從 Google Workspace 到 ${ BRAND_NAME } 的資料移轉狀態"
+      ],
+      "Emails": [
+        "電子郵件"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Estimated size": [
+        "預估大小"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以遷移哪些內容。"
+      ],
+      "Has errors": [
+        "有錯誤"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Migrate": [
+        "移轉"
+      ],
+      "Migrated": [
+        "已遷移"
+      ],
+      "Migration status": [
+        "轉移狀態"
+      ],
+      "No users to display": [
+        "沒有可顯示的使用者"
+      ],
+      "Not activated": [
+        "未啟用"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Organization does not have enough storage available": [
+        "組織沒有足夠的可用儲存空間"
+      ],
+      "Pending": [
+        "擱置中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "選取您確切想移轉的項目。這將套用至所有組織使用者。"
+      ],
+      "Select users to migrate": [
+        "選取要遷移的使用者"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由於平台不相容，無法遷移此使用者。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的位址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受加入 ${ BRAND_NAME } 的邀請。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中將其取消封存。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中取消停用他們。"
+      ],
+      "User": [
+        "使用者"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已存取其 ${ BRAND_NAME } 帳號的使用者"
+      ],
+      "What are you migrating?": [
+        "您要轉移什麼？"
+      ],
+      "You": [
+        "您"
       ]
     },
     "Browser": {
@@ -2592,7 +2712,7 @@
         "${ maxSpaceTB }儲存"
       ],
       "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位使用者"
+        "至多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -4316,6 +4436,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "自您上次訪問以來，當某個類別有未讀訊息時，即會顯示藍點。"
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "隨時可在設定中新增或移除類別、管理通知，並調整您的設定。"
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "隨時可在「設定」中新增或移除類別、管理通知，或將其完全關閉。"
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "右鍵按一下電子郵件並選取「移至」，或是將其拖放至其他類別。未來類似的電子郵件將會自動分類到該處。"
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "我們將會匯入您舊的電子郵件，並同步此後來自 Gmail 的新訊息"
       ]
     },
     "description": {
@@ -5279,6 +5414,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Failed to load the STL preview": [
+        "無法載入 STL 預覽"
+      ],
+      "No drive found to import": [
+        "找不到可匯入的雲端硬碟"
+      ],
+      "Permissions request failed.": [
+        "權限請求失敗。"
+      ],
+      "Unexpected error, we can't import the files": [
+        "發生非預期錯誤，我們無法匯入檔案"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
       ]
     },
     "error": {
@@ -6483,6 +6636,9 @@
     "Import provider": {
       "More import options": [
         "更多匯入選項"
+      ],
+      "Import from ${ providerName }": [
+        "從 ${ providerName } 匯入"
       ]
     },
     "Import warning": {
@@ -8917,6 +9073,69 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今日過期。"
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**緊急終止開關**：如果 VPN 意外斷線，則會封鎖您的網際網路，以防止資料外洩。"
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN 可以隱藏您的 IP 位址並加密您的瀏覽活動，使網站、廣告商和 ISP 更難在一段時間內追蹤您。"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "僅限檔案（不含相片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }）- 總計最高 100 GB、100,000 個檔案，且單一檔案最高 50 GB"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "啟用以下 VPN 設定，輕鬆保持連線："
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "當您連線到 VPN 時，它會使用加密技術來隱藏您的 IP 位址（分配給您裝置的唯一代碼）。"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "您的收件匣中有 ${ totalLabel }。"
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 類別中有 **${ count } 則對話**"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "您在 ${ categoryLabel } 類別中有 **${ count } 則訊息**"
+      ],
+      "You have no conversations in this category": [
+        "此類別中沒有任何對話"
+      ],
+      "You have no messages in this category": [
+        "此類別中沒有任何訊息"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "您已選取在 ${ categoryLabel } 類別中的 **${ checked } 則對話**"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "您已選取在 ${ categoryLabel } 類別中的 **${ checked } 則訊息**"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的網際網路服務供應商可以監控並有時出售您的資料，甚至限制您可以存取的網站。"
       ]
     },
     "info": {
@@ -8983,6 +9202,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Key pinning": {
@@ -10044,6 +10266,51 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
+      ],
+      "Import your emails": [
+        "匯入您的電子郵件"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必須具有至少 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "電子報 - 新聞、編輯電子郵件和非促銷內容"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "主要 - 個人和工作電子郵件，以及重要更新"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "促銷 - 優惠、促銷和行銷電子郵件"
+      ],
+      "Regular expression": [
+        "正規表示式"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "社群 - 社群媒體更新、活動和訊息"
+      ],
+      "Starts with": [
+        "開頭為"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "交易 - 回條、預訂、帳單和訂單"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "更新 - 自動確認、警示和帳號更新"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10589,6 +10856,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
       ]
     },
     "Message display when a new app version is available": {
@@ -11276,7 +11561,7 @@
         "保管庫共享 (至多 ${ n } 人)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "與最多 ${ n } 個人分享保管庫"
+        "至多可與 ${ n } 個人共用保管庫"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN 附帶廣告攔截器及惡意軟體防護"
@@ -11890,6 +12175,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "在110 多個國家提供極速 VPN 伺服器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding List Placeholder": {
@@ -12111,6 +12399,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -12758,6 +13049,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Search for users or addresses": [
+        "搜尋使用者或位址"
       ]
     },
     "Placeholder for contact group name": {
@@ -13015,6 +13309,30 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您將取得至多 **${ maxRewardAmount }** 額度。"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期前取消，**試用結束時您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不訂閱，**您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，**您的完整方案將會開始，且您將獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期前訂閱，**您將會獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免費使用 **${ planTitle }** 直至 **${ textDate }**。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "最後機會探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您還有 **${ daysRemaining } 天**的時間來探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "your subscription": [
+        "您的訂閱"
       ]
     },
     "Remaining days before the message expire": {
@@ -13285,6 +13603,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -13592,6 +13919,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
       ]
     },
     "specialoffer: Offers": {
@@ -13683,6 +14013,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14197,6 +14530,24 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 可讓您存取 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能。內建隱私保護，確保您的資料和身分安全無虞，讓您可以放心使用。"
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } 超越基本功能，協助您更高效、更有條理，並掌控您的收件匣、電子郵件身分等。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 為您的檔案和相片提供 ${ planMaxSpace } 儲存空間。您也有資格獲得年度儲存空間獎勵。"
+      ],
+      "Comprehensive privacy and security": [
+        "全方位的隱私與安全"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 的精華"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "當您取消 ${ planName } 時您將放棄的權益"
       ]
     },
     "subscription reminder": {
@@ -14342,7 +14693,7 @@
         "${ elementsCount } 則訊息已不再歸屬 ${ labelName }。"
       ],
       "${ elementsCount } message removed from Starred.": [
-        "已移除 ${ elementsCount } 則訊息的星號。"
+        "${ elementsCount } 則訊息已移除星號。"
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
@@ -14562,6 +14913,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "已移至 ${ label }。未來類似的訊息將會分類到此處。"
       ]
     },
     "Success notification": {
@@ -15793,6 +16147,48 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "Connect a Gmail address": [
+        "連線 Gmail 位址"
+      ],
+      "How your free trial works": [
+        "您的免費試用如何運作"
+      ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
+      ],
+      "Make a secure connection your default": [
+        "將安全連線設為您的預設設定"
+      ],
+      "Make Categories your own": [
+        "打造專屬的類別"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "多個帳號，1 個私有收件匣"
+      ],
+      "New messages": [
+        "新訊息"
+      ],
+      "Personalize your Categories": [
+        "個人化您的類別"
+      ],
+      "Remove forwarding address": [
+        "移除轉寄位址"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
+      ],
+      "What can a VPN protect you from?": [
+        "VPN 可以保護您免受什麼威脅？"
+      ],
+      "You're in control": [
+        "由您掌控"
       ]
     },
     "Title header for keys table": {
@@ -15801,6 +16197,18 @@
       ],
       "Expires": [
         "到期日"
+      ],
+      "Actions": [
+        "動作"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Type": [
+        "類型"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15892,6 +16300,15 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ]
     },
     "tooltip": {
@@ -16100,6 +16517,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
       ]
     },
     "WeekDay": {
@@ -16339,6 +16759,33 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "自訂類別"
+      ],
+      "Got it": [
+        "瞭解"
+      ],
+      "Next": [
+        "下一步"
+      ],
+      "Not now": [
+        "現在不要"
+      ],
+      "Skip": [
+        "略過"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "來自先前匯入的重複項目將被略過。可在 ${ PRODUCT_NAMES.EASY_SWITCH } 設定中復原或匯入較舊的訊息。"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
       ]
     }
   }

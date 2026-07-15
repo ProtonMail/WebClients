@@ -1718,6 +1718,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Upgrade for 200GB": [
+        "Päivitä 200 Gt:n tilaukseen"
       ]
     },
     "action": {
@@ -2234,6 +2237,78 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "Activated": [
+        "Aktivoitu"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Osoite on jo organisaationne ulkopuolisen käyttäjän käytössä. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Tietojen siirron tila kohteesta Google Workspace kohteeseen ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Sähköpostit"
+      ],
+      "Errors": [
+        "Virheet"
+      ],
+      "Find out what can be migrated.": [
+        "Ota selvää, mitä voidaan siirtää."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Jäsenen osoitetta ei löytynyt. Ottakaa yhteyttä asiakaspalveluun tämän ratkaisemiseksi"
+      ],
+      "Migrate": [
+        "Siirrä"
+      ],
+      "Migrated": [
+        "Siirretty"
+      ],
+      "Missing organization private key": [
+        "Organisaation yksityinen avain puuttuu"
+      ],
+      "Missing organization public key": [
+        "Organisaation julkinen avain puuttuu"
+      ],
+      "No users to display": [
+        "Ei näytettäviä käyttäjiä"
+      ],
+      "Not activated": [
+        "Ei aktivoitu"
+      ],
+      "Pending": [
+        "Odottaa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Valitse tarkalleen, mitä haluat siirtää. Tämä koskee kaikkia organisaation käyttäjiä."
+      ],
+      "Select users to migrate": [
+        "Valitse siirrettävät käyttäjät"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tätä käyttäjää ei voida siirtää alustojen yhteensopimattomuuden vuoksi."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen tilinsä käyttöön Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Voit siirtää tämän käyttäjän ottamalla hänen tilinsä käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Siirtääksesi tämän käyttäjän, ota hänen osoitteensa käyttöön kohdassa ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Jotta tämä käyttäjä voidaan siirtää, hänen on hyväksyttävä kutsunsa liittyä ${ BRAND_NAME }:iin."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänet arkistosta Google Workspace -hallintakonsolissa."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Voit siirtää tämän käyttäjän poistamalla hänen jäädytyksensä Google Workspace -hallintakonsolissa."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Käyttäjät, jotka ovat käyttäneet ${ BRAND_NAME }-tiliään"
       ]
     },
     "Browser": {
@@ -4394,6 +4469,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Sininen piste tulee näkyviin, kun kategoriassa on lukemattomia viestejä edellisen vierailunne jälkeen."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Voitte lisätä tai poistaa luokkia, hallita ilmoituksia ja muokata asetuksianne milloin tahansa asetuksissa."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Voitte lisätä tai poistaa luokkia, hallita ilmoituksia tai poistaa ne kokonaan käytöstä milloin tahansa Asetuksissa."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Napsauttakaa sähköpostia hiiren kakkospainikkeella ja valitkaa ”Siirrä kohteeseen” tai vetäkää ja pudottakaa se toiseen luokkaan. Vastaavat sähköpostit lajitellaan jatkossa sinne automaattisesti."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Tuomme vanhat sähköpostisi ja synkronoimme uudet viestit Gmailista jatkossa"
       ]
     },
     "description": {
@@ -5376,6 +5466,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "No drive found to import": [
+        "Tuotavaa asemaa ei löytynyt"
+      ],
+      "Permissions request failed.": [
+        "Käyttöoikeuspyyntö epäonnistui."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Odottamaton virhe, tiedostojen tuonti ei onnistu"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Emme pystyneet lähettämään vahvistuskoodia tällä menetelmällä."
       ]
     },
     "error": {
@@ -9155,6 +9257,43 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Vain tiedostot (ei valokuvia, ${ DOCS_APP_NAME }- tai ${ SHEETS_APP_NAME }-tiedostoja) – yhteensä enintään 100 Gt, 100 000 tiedostoa ja 50 Gt tiedostoa kohden"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
+      ],
+      "You have ${ totalLabel } in your inbox.": [
+        "Teillä on ${ totalLabel } saapuneissa."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Teillä on **${ count } keskustelu** luokassa ${ categoryLabel }",
+        "Teillä on **${ count } keskustelua** luokassa ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Teillä on **${ count } viesti** luokassa ${ categoryLabel }",
+        "Teillä on **${ count } viestiä** luokassa ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Teillä ei ole keskusteluja tässä luokassa"
+      ],
+      "You have no messages in this category": [
+        "Teillä ei ole viestejä tässä luokassa"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Valitsitte **${ checked } keskustelun** luokassa ${ categoryLabel }",
+        "Valitsitte **${ checked } keskustelua** luokassa ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Valitsitte **${ checked } viestin** luokassa ${ categoryLabel }",
+        "Valitsitte **${ checked } viestiä** luokassa ${ categoryLabel }"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ilmainen kokeilunne muunnettiin onnistuneesti kuukausitilaukseksi. Uusiutumispäivänne on ${ nextBillingDate }."
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Menetätte pääsyn tilaukseen ${ boldPlanTitle } ${ boldEndDate }."
       ]
     },
     "info": {
@@ -10296,6 +10435,48 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Exact host matching": [
+        "Tarkka isäntänimien vastaavuus"
+      ],
+      "Exact URL matching": [
+        "Tarkka URL-vastaavuus"
+      ],
+      "Import your emails": [
+        "Tuo sähköpostisi"
+      ],
+      "Never fill on this exact URL": [
+        "Älä koskaan täytä juuri tätä URL-osoitetta"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Uutiskirjeet - uutiset, pääkirjoitussähköpostit ja ei-kaupallinen sisältö"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Ensisijainen - henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Tarjoukset - edut, tarjoukset ja markkinointisähköpostit"
+      ],
+      "Regular expression": [
+        "Säännöllinen lauseke"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Sosiaaliset - sosiaalisen median päivitykset, toiminta ja viestit"
+      ],
+      "Starts with": [
+        "Alkaa"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Tapahtumat - kuitit, varaukset, laskut ja tilaukset"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Päivitykset - automaattiset vahvistukset, hälytykset ja tilipäivitykset"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokerimerkkimalli"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10853,6 +11034,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "”Alkaa” -vastaavuussääntö"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
+      ],
+      "Exact URL matching rule": [
+        "Tarkka URL-vastaavuussääntö"
+      ],
+      "Never fill with this exact URL": [
+        "Älä koskaan syötä juuri tätä URL-osoitetta"
+      ],
+      "Regular expression rule": [
+        "Säännöllisen lausekkeen sääntö"
+      ],
+      "Wildcard pattern matching rule": [
+        "Jokerimerkkien vastaavuussääntö"
       ]
     },
     "Message display when a new app version is available": {
@@ -12134,6 +12333,15 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Viimeinen tilaisuus saada 80 % alennusta ensimmäisestä kuukaudestanne tilauksesta ${ plan }."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tuottavuutenne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Päivittäkää tallennustilanne vain hintaan ${ pricingTitle } tilauksella ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -12174,6 +12382,12 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "Huippunopeat VPN-yhteydet yli 110 maassa"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Tee yhteistyötä muiden kuin ${ BRAND_NAME } -käyttäjien kanssa"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Rajattomasti aliaksia henkilöllisyytenne suojaamiseksi"
       ]
     },
     "Onboarding List Placeholder": {
@@ -12389,6 +12603,15 @@
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Voitte edelleen peruuttaa tilauksen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Voitte käyttää tilausta ${ planTitle } kokeilun päättymiseen saakka veloituksetta."
       ]
     },
     "Option": {
@@ -13043,6 +13266,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Search for users or addresses": [
+        "Etsi käyttäjiä tai osoitteita"
       ]
     },
     "Placeholder for contact group name": {
@@ -13319,6 +13545,18 @@
       ],
       "your subscription": [
         "tilauksesi"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Jos peruutat ennen tätä päivämäärää,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, kun kokeilu päättyy."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Jos et tilaa,** tilauksesi **alennetaan** tasolle ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nauti tilauksesta **${ planTitle }** maksutta päivään **${ textDate }** asti."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Viimeinen mahdollisuus tutustua kaikkiin niihin tehokkaisiin ominaisuuksiin, joita tilauksella **${ planTitle }** on tarjota."
       ]
     },
     "Remaining days before the message expire": {
@@ -14012,6 +14250,18 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Hankkikaa 500 Gt kaikkien tiedostojenne ja valokuvienne turvalliseen tallentamiseen"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Käyttäkää huippunopeita VPN-palvelimia yli 110 maassa"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Hankkikaa yksi tilaus, joka sisältää kaiken: hankkikaa ${ BRAND_NAME } Unlimited"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Suojatkaa tilinne uhilta Sentinelin avulla"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14555,6 +14805,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } antaa teille pääsyn kaikkiin premium-ominaisuuksiin palveluissa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Yksityisyys on sisäänrakennettu, joten voitte jatkaa toimintaanne tietäen, että tietonne ja henkilöllisyytenne ovat turvassa."
       ]
     },
     "subscription reminder": {
@@ -14948,6 +15201,10 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Siirretty luokkaan ${ label }. Vastaava viesti luokitellaan jatkossa tänne.",
+        "Siirretty luokkaan ${ label }. Vastaavat viestit luokitellaan jatkossa tänne."
       ]
     },
     "Success notification": {
@@ -16214,6 +16471,36 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make Categories your own": [
+        "Tehkää kategorioista omanne"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Useita tilejä, 1 yksityinen saapuneet-kansio"
+      ],
+      "New messages": [
+        "Uusia viestejä"
+      ],
+      "Personalize your Categories": [
+        "Mukauttakaa kategorioitanne"
+      ],
+      "Remove forwarding address": [
+        "Poista välitysosoite"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tuottavuutenne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Päivittäkää tallennustilanne hintaan ${ formattedPrice } tilauksella ${ planName }"
+      ],
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
+      ],
+      "You're in control": [
+        "Sinä päätät"
       ]
     },
     "Title header for keys table": {
@@ -16562,6 +16849,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ]
     },
     "WeekDay": {
@@ -16831,6 +17121,28 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Mukauta kategorioita"
+      ],
+      "Got it": [
+        "Selvä"
+      ],
+      "Next": [
+        "Seuraava"
+      ],
+      "Not now": [
+        "Ei nyt"
+      ],
+      "Skip": [
+        "Ohita"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
       ]
     }
   }

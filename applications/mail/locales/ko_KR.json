@@ -2213,6 +2213,84 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "Activated": [
+        "활성화됨"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "All": [
+        "전체"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
+      ],
+      "Emails": [
+        "이메일"
+      ],
+      "Errors": [
+        "오류"
+      ],
+      "Find out what can be migrated.": [
+        "이전 가능한 항목을 확인해 보세요."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "Migrate": [
+        "이전"
+      ],
+      "Migrated": [
+        "이전 완료"
+      ],
+      "Missing organization private key": [
+        "조직 비밀 키 누락"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 누락"
+      ],
+      "No users to display": [
+        "표시할 사용자가 없습니다"
+      ],
+      "Pending": [
+        "보류 중"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
+      ],
+      "Select users to migrate": [
+        "이전할 사용자 선택"
+      ],
+      "Size": [
+        "크기"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } 계정에 접근한 사용자"
+      ],
+      "You": [
+        "나"
       ]
     },
     "Browser": {
@@ -4366,6 +4444,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "마지막 방문 이후 카테고리에 읽지 않은 메시지가 있는 경우 파란색 점이 나타납니다."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "언제든지 설정에서 카테고리를 추가하거나 삭제하고, 알림을 관리하고, 혹은 설정값을 조정할 수 있습니다."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "언제든지 설정에서 카테고리를 추가하거나 삭제하고, 알림을 관리하고, 혹은 모두 비활성화할 수 있습니다."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "이메일에서 우클릭하여 \"댜음으로 이동\"을 선택하거나 다른 카테고리로 이동하려면 드래그 앤 드롭하세요. 유사한 이메일이 추후에 선택한 카테고리로 자동 분류됩니다."
       ]
     },
     "description": {
@@ -5338,6 +5428,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "No drive found to import": [
+        "불러올 드라이브가 없습니다"
+      ],
+      "Unexpected error, we can't import the files": [
+        "예상치 못한 오류가 발생하여, 파일을 가져올 수 없습니다."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ]
     },
     "error": {
@@ -9036,6 +9135,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ]
     },
     "info": {
@@ -10190,6 +10295,27 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
+      ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
+      ],
+      "Regular expression": [
+        "정규식"
+      ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10735,6 +10861,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
       ]
     },
     "Message display when a new app version is available": {
@@ -12910,6 +13054,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Search for users or addresses": [
+        "사용자 및 주소를 검색하세요"
       ]
     },
     "Placeholder for contact group name": {
@@ -16029,6 +16176,24 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Make Categories your own": [
+        "나만의 카테고리 만들기"
+      ],
+      "New messages": [
+        "새 메시지"
+      ],
+      "Personalize your Categories": [
+        "카테고리 개인화"
+      ],
+      "Users and addresses": [
+        "사용자 및 주소"
+      ],
+      "You're in control": [
+        "내가 직접 관리"
       ]
     },
     "Title header for keys table": {
@@ -16357,6 +16522,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ]
     },
     "WeekDay": {
@@ -16596,6 +16764,28 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "카테고리 맞춤 설정"
+      ],
+      "Got it": [
+        "확인"
+      ],
+      "Next": [
+        "다음"
+      ],
+      "Not now": [
+        "나중에"
+      ],
+      "Skip": [
+        "건너뛰기"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
       ]
     }
   }
