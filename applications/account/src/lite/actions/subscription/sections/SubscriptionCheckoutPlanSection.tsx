@@ -29,6 +29,7 @@ interface Props {
     availableCurrencies: readonly Currency[];
     hasSavedPaymentMethods: boolean;
     disablePlanSelection: boolean;
+    paymentInitialized: boolean;
 }
 
 const SubscriptionCheckoutPlanSection = ({
@@ -37,6 +38,7 @@ const SubscriptionCheckoutPlanSection = ({
     availableCurrencies,
     hasSavedPaymentMethods,
     disablePlanSelection,
+    paymentInitialized,
 }: Props) => {
     const {
         checkoutUi,
@@ -267,6 +269,7 @@ const SubscriptionCheckoutPlanSection = ({
                 hasSavedPaymentMethods={hasSavedPaymentMethods}
                 checkoutView={checkoutView}
                 paymentForbiddenReason={paymentForbiddenReason}
+                paymentInitialized={paymentInitialized}
             />
             <SubscriptionCheckoutPlanMoreInformation checkoutView={checkoutView} />
         </>
