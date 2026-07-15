@@ -1036,6 +1036,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Telusuri ${ MEET_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1484,6 +1487,90 @@
       ],
       "What are you migrating?": [
         "Apa yang ingin Anda migrasikan?"
+      ],
+      "Activated": [
+        "Diaktifkan"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Alamat sudah digunakan oleh pengguna di luar organisasi. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "All": [
+        "Semua"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status migrasi data dari Google Workspace ke ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Kesalahan"
+      ],
+      "Find out what can be migrated.": [
+        "Cari tahu apa saja yang dapat dimigrasikan."
+      ],
+      "Has errors": [
+        "Ada kesalahan"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Alamat anggota tidak ditemukan. Silakan hubungi dukungan pelanggan untuk menyelesaikan ini"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "Migrated": [
+        "Dimigrasikan"
+      ],
+      "Missing organization private key": [
+        "Kunci pribadi organisasi hilang"
+      ],
+      "Missing organization public key": [
+        "Kunci publik organisasi hilang"
+      ],
+      "No users to display": [
+        "Tidak ada pengguna untuk ditampilkan"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Pilih apa yang ingin dimigrasikan. Ini akan berlaku untuk semua pengguna organisasi."
+      ],
+      "Select users to migrate": [
+        "Pilih pengguna untuk dimigrasikan"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Pengguna ini tidak dapat dimigrasikan karena ketidakcocokan platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan akunnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Untuk memigrasikan pengguna ini, aktifkan alamatnya di bawah ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Untuk memigrasikan pengguna ini, pengguna tersebut harus menerima undangan untuk bergabung dengan ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan pengarsipannya di Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Untuk memigrasikan pengguna ini, batalkan penangguhannya di Google Workspace Admin Console."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Pengguna yang telah mengakses akun ${ BRAND_NAME }"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "Browser": {
@@ -3439,6 +3526,9 @@
       ],
       "90m": [
         "90 mnt"
+      ],
+      "15 minutes": [
+        "15 menit"
       ]
     },
     "Edit billing address form note": {
@@ -4144,6 +4234,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Koneksi Zoom Anda telah kedaluwarsa. Silakan hubungkan ulang untuk melanjutkan."
+      ],
+      "No drive found to import": [
+        "Tidak ada drive yang ditemukan untuk diimpor"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Terjadi kesalahan tak terduga, tidak dapat mengimpor file"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Tidak dapat mengirim kode verifikasi menggunakan metode ini."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
       ]
     },
     "error": {
@@ -6610,6 +6712,18 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } pengguna ditemukan"
+      ],
+      "Failed to update meeting schedule": [
+        "Gagal memperbarui jadwal rapat"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Hanya file (tanpa foto, ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }) - hingga total 100 GB, 100.000 file, dan 50 GB per file"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Saat ini masuk sebagai ${ username } untuk ${ organizationName }."
       ]
     },
     "info": {
@@ -7368,6 +7482,30 @@
       ],
       "Zoom meeting": [
         "Rapat Zoom"
+      ],
+      "Exact host matching": [
+        "Pencocokan host persis"
+      ],
+      "Exact URL matching": [
+        "Pencocokan URL persis"
+      ],
+      "Never fill on this exact URL": [
+        "Jangan pernah isi pada URL persis ini"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Domain induk dan subdomain (bawaan)"
+      ],
+      "Regular expression": [
+        "Ekspresi reguler"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Bagikan bagian dari jadwal dengan aman melalui halaman pemesanan yang dapat dikirim ke siapa saja."
+      ],
+      "Starts with": [
+        "Mulai dengan"
+      ],
+      "URL wildcard pattern": [
+        "Pola wildcard URL"
       ]
     },
     "label": {
@@ -7733,6 +7871,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "Aturan pencocokan 'Mulai dengan'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Aturan pencocokan domain (sub) persis"
+      ],
+      "Exact URL matching rule": [
+        "Aturan pencocokan URL persis"
+      ],
+      "Never fill with this exact URL": [
+        "Jangan pernah isi dengan URL persis ini"
+      ],
+      "Regular expression rule": [
+        "Aturan ekspresi reguler"
+      ],
+      "Wildcard pattern matching rule": [
+        "Aturan pencocokan pola wildcard"
       ]
     },
     "Message display when a new app version is available": {
@@ -9893,6 +10049,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Search for users or addresses": [
+        "Cari pengguna atau alamat"
       ]
     },
     "Placeholder for contact group name": {
@@ -10301,6 +10460,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tersisa ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tersisa ${ timeRemaining.inMinutes } menit untuk mengatur ulang kata sandi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tersisa ${ timeRemaining.inSeconds } detik untuk mengatur ulang kata sandi."
       ]
     },
     "session_recovery:available:link": {
@@ -12373,6 +12541,12 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asisten penulisan ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Users and addresses": [
+        "Pengguna dan alamat"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12392,6 +12566,12 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Expires": [
+        "Kedaluwarsa"
       ]
     },
     "Title; create calendar modal": {
@@ -12490,6 +12670,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ],
+      "Version 6 OpenPGP key": [
+        "Kunci OpenPGP Versi 6"
       ]
     },
     "tooltip": {
@@ -12692,6 +12875,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12928,6 +13114,11 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Anda akan dapat menetapkan peran setelah pengguna menerima undangan."
       ]
     }
   }

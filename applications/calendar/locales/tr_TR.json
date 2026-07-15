@@ -1566,6 +1566,27 @@
       ],
       "You": [
         "Siz"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Platform uyuşmazlıkları nedeniyle bu kullanıcı taşınamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının hesabını açın."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından hesabını açın."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından adresini açın."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı taşımak için kullanıcının ${ BRAND_NAME } platformuna katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının arşivini kaldırın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "Browser": {
@@ -4262,6 +4283,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ]
     },
     "error": {
@@ -6792,6 +6816,9 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
+      "Failed to update meeting waiting room status": [
+        "Toplantı bekleme odası durumu güncelleştirilemedi"
       ]
     },
     "info": {
@@ -12750,6 +12777,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
