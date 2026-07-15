@@ -143,7 +143,7 @@ const SubscribeAccount = ({
     const { viewportWidth } = useActiveBreakpoint();
 
     const variant: FeatureFlagVariant<'ShowLiteAppCheckoutV2'> = useVariant('ShowLiteAppCheckoutV2');
-    const showCheckoutV2 = variant.name === 'show';
+    const showCheckoutV2 = variant.name === 'B';
 
     useEffect(() => {
         async function run() {

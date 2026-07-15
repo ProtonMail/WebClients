@@ -35,7 +35,7 @@ export type MeetSpotlightTypeVariant = 'no-cta' | 'cta';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
-export type ShowLiteAppCheckoutV2Variant = 'show' | 'hide';
+export type ShowLiteAppCheckoutV2Variant = 'A' | 'B';
 export type OlesM1Variant = 'Config';
 export type EnableVpn2024AddonsExperimentVariant =
     | 'lumo-addon-only'
