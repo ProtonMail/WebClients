@@ -29,6 +29,7 @@ type OpenAiToolCallDelta = {
 };
 
 type OpenAiChunk = {
+    model?: string;
     choices?: {
         index?: number;
         delta?: OpenAiDelta;
@@ -95,6 +96,8 @@ export class StreamProcessor {
     private leftover = '';
     private toolCalls = new Map<number, ToolCallAccumulator>();
     private defaultTarget: GenerationTarget;
+    /** Last `model` value seen on any SSE chunk for this stream. */
+    private servingModel?: string;
     private counters: StreamCounters = {
         message: 0,
         title: 0,
@@ -134,6 +137,7 @@ export class StreamProcessor {
     reset(): void {
         this.leftover = '';
         this.toolCalls.clear();
+        this.servingModel = undefined;
         this.counters = {
             message: 0,
             title: 0,
@@ -250,6 +254,10 @@ export class StreamProcessor {
     }
 
     private processOpenAiChunk(chunk: OpenAiChunk): GenerationResponseMessage[] {
+        if (typeof chunk.model === 'string' && chunk.model.length > 0) {
+            this.servingModel = chunk.model;
+        }
+
         if (chunk.error) {
             console.warn('[STREAM] Stream error:', chunk.error);
             if (chunk.error.code === CONTEXT_LENGTH_EXCEEDED_CODE) {
@@ -275,7 +283,7 @@ export class StreamProcessor {
         const messages: GenerationResponseMessage[] = [];
 
         if (chunk.usage) {
-            messages.push(this.createUsageMessage(chunk.usage));
+            messages.push(this.createUsageMessage(chunk.usage, chunk.model ?? this.servingModel));
         }
 
         if (!chunk.choices?.length) {
@@ -298,10 +306,13 @@ export class StreamProcessor {
         return messages;
     }
 
-    private createUsageMessage(usage: LumoStreamUsage): UsageMessage {
+    private createUsageMessage(usage: LumoStreamUsage, model?: string): UsageMessage {
         return {
             type: 'usage',
-            usage,
+            usage: {
+                ...usage,
+                ...(model ? { model } : {}),
+            },
         };
     }
 
