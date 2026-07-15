@@ -241,7 +241,7 @@ export enum MailFeatureFlag {
     MailStoreDebugMode = 'MailStoreDebugMode',
     OnlyInsertNewDataOnFetch = 'OnlyInsertNewDataOnFetch',
     //ML R&D
-    LumoSieveHelper = 'LumoSieveHelper',
+    LumoInMail = 'LumoInMail',
     ScribeToLumo = 'ScribeToLumo',
     OneTimePasscode = 'OneTimePasscode',
     // reworked local search using foundation search
