@@ -17,14 +17,12 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -242,7 +240,6 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
 };
 
 export const OutgoingEmergencyContactSettings = () => {
-    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
     const { APP_NAME } = useConfig();
 
@@ -252,129 +249,77 @@ export const OutgoingEmergencyContactSettings = () => {
 
     const limit = controller.outgoingDelegatedAccess.emergencyContacts.limit;
 
-    if (isRecoverySettingsRedesignEnabled) {
-        if (controller.outgoingDelegatedAccess.loading) {
-            return <Loader />;
-        }
-
-        return (
-            <>
-                <OutgoingEmergencyContactBanners />
-                {controller.outgoingDelegatedAccess.emergencyContacts.hasAccess &&
-                    !controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
-                        <div>
-                            <Button
-                                color="norm"
-                                className="inline-flex gap-2 items-center"
-                                onClick={() => {
-                                    controller.notify({ type: 'add', value: 'emergency-contact' });
-                                }}
-                            >
-                                <IcPlus className="shrink-0" />
-                                {c('emergency_access').t`Add emergency contact`}
-                            </Button>
-                        </div>
-                    )}
-
-                {controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell &&
-                    (APP_NAME === APPS.PROTONACCOUNTLITE ? (
-                        <div
-                            className="rounded-xl bg-elevated p-4 flex flex-row items-center flex-nowrap gap-4 text-left"
-                            style={{
-                                background:
-                                    'linear-gradient(30.74deg, rgba(109, 74, 255, 0.15) 16.88%, rgba(70, 26, 255, 0.04) 79.59%)',
-                            }}
-                        >
-                            <img src={shieldPurple} alt="" width={35} height={40} />
-                            <div className="color-primary">
-                                {getBoldFormattedText(
-                                    c('emergency_access')
-                                        .t`**Protect your legacy.** Upgrade your plan to add emergency contacts.`
-                                )}
-                            </div>
-                        </div>
-                    ) : (
-                        <div>
-                            <PromotionButton
-                                iconName="upgrade"
-                                onClick={() => {
-                                    controller.notify({ type: 'upsell' });
-                                }}
-                            >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
-                        </div>
-                    ))}
-
-                {controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 && (
-                    <DashboardCard>
-                        <DashboardCardContent>
-                            <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People I trust`}</h3>
-                            <p className="mt-0 mb-4 color-weak">
-                                {c('emergency_access').t`They may ask to access your account in case of an emergency.`}
-                            </p>
-                            {controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
-                                <Banner variant="info">
-                                    {c('emergency_access').ngettext(
-                                        msgid`You reached the maximum of ${limit} emergency contact.`,
-                                        `You reached the maximum of ${limit} emergency contacts.`,
-                                        limit
-                                    )}
-                                </Banner>
-                            )}
-                            <OutgoingTable controller={controller} />
-                        </DashboardCardContent>
-                    </DashboardCard>
-                )}
-            </>
-        );
+    if (controller.outgoingDelegatedAccess.loading) {
+        return <Loader />;
     }
 
     return (
         <>
             <OutgoingEmergencyContactBanners />
-            <div className="text-semibold text-xl mb-3">{c('emergency_access').t`People I trust`}</div>
-            <SettingsParagraph>
-                {c('emergency_access').t`They may ask to access my account in case of an emergency.`}
-            </SettingsParagraph>
-            <div className="mb-4">
-                {(() => {
-                    if (controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit) {
-                        const limit = controller.outgoingDelegatedAccess.emergencyContacts.limit;
-                        return (
-                            <Banner>
+            {controller.outgoingDelegatedAccess.emergencyContacts.hasAccess &&
+                !controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
+                    <div>
+                        <Button
+                            color="norm"
+                            className="inline-flex gap-2 items-center"
+                            onClick={() => {
+                                controller.notify({ type: 'add', value: 'emergency-contact' });
+                            }}
+                        >
+                            <IcPlus className="shrink-0" />
+                            {c('emergency_access').t`Add emergency contact`}
+                        </Button>
+                    </div>
+                )}
+
+            {controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell &&
+                (APP_NAME === APPS.PROTONACCOUNTLITE ? (
+                    <div
+                        className="rounded-xl bg-elevated p-4 flex flex-row items-center flex-nowrap gap-4 text-left"
+                        style={{
+                            background:
+                                'linear-gradient(30.74deg, rgba(109, 74, 255, 0.15) 16.88%, rgba(70, 26, 255, 0.04) 79.59%)',
+                        }}
+                    >
+                        <img src={shieldPurple} alt="" width={35} height={40} />
+                        <div className="color-primary">
+                            {getBoldFormattedText(
+                                c('emergency_access')
+                                    .t`**Protect your legacy.** Upgrade your plan to add emergency contacts.`
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    <div>
+                        <PromotionButton
+                            iconName="upgrade"
+                            onClick={() => {
+                                controller.notify({ type: 'upsell' });
+                            }}
+                        >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
+                    </div>
+                ))}
+
+            {controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 && (
+                <DashboardCard>
+                    <DashboardCardContent>
+                        <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People I trust`}</h3>
+                        <p className="mt-0 mb-4 color-weak">
+                            {c('emergency_access').t`They may ask to access your account in case of an emergency.`}
+                        </p>
+                        {controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
+                            <Banner variant="info">
                                 {c('emergency_access').ngettext(
                                     msgid`You reached the maximum of ${limit} emergency contact.`,
                                     `You reached the maximum of ${limit} emergency contacts.`,
                                     limit
                                 )}
                             </Banner>
-                        );
-                    }
-
-                    if (controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell) {
-                        return (
-                            <PromotionButton
-                                iconName="upgrade"
-                                onClick={() => {
-                                    controller.notify({ type: 'upsell' });
-                                }}
-                            >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
-                        );
-                    }
-
-                    if (controller.outgoingDelegatedAccess.emergencyContacts.hasAccess) {
-                        return (
-                            <Button
-                                color="norm"
-                                onClick={() => {
-                                    controller.notify({ type: 'add', value: 'emergency-contact' });
-                                }}
-                            >{c('emergency_access').t`Add emergency contact`}</Button>
-                        );
-                    }
-                })()}
-            </div>
-            {(controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 ||
-                controller.outgoingDelegatedAccess.loading) && <OutgoingTable controller={controller} />}
+                        )}
+                        <OutgoingTable controller={controller} />
+                    </DashboardCardContent>
+                </DashboardCard>
+            )}
         </>
     );
 };

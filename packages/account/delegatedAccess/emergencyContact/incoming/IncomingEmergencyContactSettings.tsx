@@ -13,10 +13,8 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { SECOND } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -223,44 +221,22 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
 };
 
 export const IncomingEmergencyContactSettings = () => {
-    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useIncomingController();
 
-    if (isRecoverySettingsRedesignEnabled) {
-        if (controller.loading || !controller.items.emergencyContacts.length) {
-            return null;
-        }
-
-        return (
-            <DashboardCard>
-                <DashboardCardContent>
-                    <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People who trust me`}</h3>
-                    <p className="mt-0 mb-4 color-weak">
-                        {c('emergency_access')
-                            .t`They added you as trusted contact. You can access their account in case of an emergency.`}
-                    </p>
-                    <IncomingTable controller={controller} />
-                </DashboardCardContent>
-            </DashboardCard>
-        );
+    if (controller.loading || !controller.items.emergencyContacts.length) {
+        return null;
     }
 
     return (
-        <>
-            <div className="text-semibold text-xl mb-3">{c('emergency_access').t`People who trust me`}</div>
-            {!controller.items.emergencyContacts.length && !controller.loading ? (
-                <SettingsParagraph>
-                    {c('emergency_access').t`You have not been designated as an emergency contact for anyone yet.`}
-                </SettingsParagraph>
-            ) : (
-                <>
-                    <SettingsParagraph>
-                        {c('emergency_access')
-                            .t`They added me as trusted contact. I can access their account in case of an emergency.`}
-                    </SettingsParagraph>
-                    <IncomingTable controller={controller} />
-                </>
-            )}
-        </>
+        <DashboardCard>
+            <DashboardCardContent>
+                <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People who trust me`}</h3>
+                <p className="mt-0 mb-4 color-weak">
+                    {c('emergency_access')
+                        .t`They added you as trusted contact. You can access their account in case of an emergency.`}
+                </p>
+                <IncomingTable controller={controller} />
+            </DashboardCardContent>
+        </DashboardCard>
     );
 };
