@@ -111,6 +111,9 @@ export interface PaymentsContextType {
     // TODO: exposing for now. Will likely want to abstract this result
     checkResult: SubscriptionEstimation;
 
+    /** User's intention to start a trial */
+    isTrial: boolean;
+
     // paymentFacade: ReturnType<typeof usePaymentFacade>;
 
     billingAddress: BillingAddressExtended;
@@ -480,6 +483,7 @@ export const PaymentsContextProvider = ({
                 paymentMethodValue: undefined,
                 build: APP_NAME,
                 product: stateRef.current.product,
+                isTrial: Boolean(newPlanToCheck.trial),
             });
         }
 
@@ -854,6 +858,7 @@ export const PaymentsContextProvider = ({
         getOptimisticCheckResult,
         getCoupon,
         checkResult: stateRef.current.checkResult,
+        isTrial: Boolean(stateRef.current.planToCheck.trial),
         // paymentFacade,
         billingAddress: stateRef.current.billingAddress,
         checkoutUi: getCheckoutUi({
