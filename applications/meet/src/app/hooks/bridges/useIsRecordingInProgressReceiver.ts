@@ -70,7 +70,7 @@ export const useIsRecordingInProgressReceiver = () => {
             const senderParticipant = await waitForParticipant(participant.identity);
 
             // Only allow messages sent by admins or hosts
-            if (!senderParticipant?.IsAdmin || !senderParticipant?.IsHost) {
+            if (!senderParticipant?.IsAdmin && !senderParticipant?.IsHost) {
                 return;
             }
 
