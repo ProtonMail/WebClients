@@ -198,6 +198,7 @@ const MainContainer = () => {
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
+    const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
     const isCryptoPostQuantumOptInEnabled =
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
@@ -310,6 +311,7 @@ const MainContainer = () => {
         isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
         isProtonMeetIntegrationEnabled,
         isSharedServerFeatureEnabled,
+        isAlwaysOnVpnEnabled,
         isCryptoPostQuantumOptInEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,

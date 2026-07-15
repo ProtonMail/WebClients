@@ -1,11 +1,6 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Href } from '@proton/atoms/Href/Href';
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { AlwaysOnPolicyServiceProvider } from '../../contexts/AlwaysOnPolicyServiceContext';
@@ -65,17 +60,6 @@ const AlwaysOnOverview = () => {
 
     return (
         <div className="flex gap-12 flex-column">
-            <div className="flex flex-column gap-2">
-                <SettingsPageTitle>{c('Title').t`Always-on VPN`}</SettingsPageTitle>
-                <span className="color-weak">
-                    {c('Info')
-                        .t`Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.`}{' '}
-                    <Href className="color-weak" href={getKnowledgeBaseUrl('/mdm-always-on-vpn')}>
-                        {c('Link').t`Learn more`}
-                    </Href>
-                </span>
-            </div>
-
             {renderContent()}
 
             <ConfigureProfileModal
