@@ -44,12 +44,11 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [, setIsEditorEmpty] = useState(true);
     const [promptSuggestion] = useState<string | undefined>(undefined);
-    // Files panel states
-    const [openPanel, setOpenPanel] = useState<{
-        type: 'files' | null;
+    const filesModal = useModalStateObject();
+    const [filesPanelState, setFilesPanelState] = useState<{
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
-    }>({ type: null });
+    } | null>(null);
     const { isGhostChatMode } = useGhostChat();
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
@@ -66,24 +65,28 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     );
 
     // Files panel handlers
-    const handleOpenFiles = useCallback((message?: Message) => {
-        if (message) {
-            setOpenPanel({ type: 'files', filterMessage: message, autoShowDriveBrowser: false });
-        } else {
-            setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: false });
-        }
-    }, []);
+    const handleOpenFiles = useCallback(
+        (message?: Message) => {
+            setFilesPanelState({
+                filterMessage: message,
+                autoShowDriveBrowser: false,
+            });
+            filesModal.openModal(true);
+        },
+        [filesModal]
+    );
 
     const handleShowDriveBrowser = useCallback(() => {
-        setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: true });
-    }, []);
+        setFilesPanelState({ autoShowDriveBrowser: true });
+        filesModal.openModal(true);
+    }, [filesModal]);
 
-    const handleCloseFiles = useCallback(() => {
-        setOpenPanel({ type: null });
-    }, []);
+    const handleCloseFiles = filesModal.modalProps.onClose;
 
     const handleClearFilter = useCallback(() => {
-        setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: false });
+        setFilesPanelState((prev) =>
+            prev ? { ...prev, filterMessage: undefined, autoShowDriveBrowser: false } : null
+        );
     }, []);
 
     return (
@@ -134,14 +137,15 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                     {filePreviewModal.render && previewAttachment && (
                         <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
                     )}
-                    {openPanel.type === 'files' && (
+                    {filesModal.render && filesPanelState && (
                         <FilesManagementView
                             messageChain={[]}
                             filesContainerRef={filesContainerRef}
                             onClose={handleCloseFiles}
-                            filterMessage={openPanel.filterMessage}
+                            modalProps={filesModal.modalProps}
+                            filterMessage={filesPanelState.filterMessage}
                             onClearFilter={handleClearFilter}
-                            initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                            initialShowDriveBrowser={filesPanelState.autoShowDriveBrowser}
                             forceModal={true}
                         />
                     )}
