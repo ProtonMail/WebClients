@@ -64,8 +64,7 @@ export type IndexerTaskKind =
     | 'incremental-update-task'
     | 'cleanup-stale-blobs-task'
     | 'cleanup-stale-index-entries-task'
-    | 'persist-data-task'
-    | 'remove-tree-event-scope-id-task';
+    | 'persist-data-task';
 
 export type SearchQuery = {
     filename: string;
