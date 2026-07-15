@@ -2288,6 +2288,27 @@
       ],
       "You": [
         "Siz"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Platform uyuşmazlıkları nedeniyle bu kullanıcı taşınamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının hesabını açın."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından hesabını açın."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı taşımak için ${ usersAddressesLink } altından adresini açın."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı taşımak için kullanıcının ${ BRAND_NAME } platformuna katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının arşivini kaldırın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı taşımak için Google Workspace Yönetici Konsolunuzda kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "Browser": {
@@ -4458,13 +4479,16 @@
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "Bir kategoride son ziyaretinizden bu yana okunmamış iletiler olduğunda mavi bir nokta belirir."
+        "Son bakmanızdan bu yana okunmamış iletileri olan kategorilerde mavi bir nokta görüntülenir."
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
-        "Ayarlar bölümünden istediğiniz zaman kategoriler ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tamamen kapatabilirsiniz."
+        "Kategorileri istediğiniz zaman ayarlar bölümünden ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ya da tümüyle kapatabilirsiniz."
       ],
       "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı başka bir kategoriye sürükleyip bırakın. Benzer e-postalar bundan sonra otomatik olarak o kategoride sıralanacaktır."
+        "Bir e-postaya sağ tıklayın ve “Şuraya taşı” seçeneğini seçin ya da e-postayı sürükleyip başka bir kategoriye bırakın. Bundan sonra benzer e-postalar otomatik olarak oraya taşınır."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Kategorileri istediğiniz zaman ayarlar bölümünden ekleyebilir veya kaldırabilir, bildirimleri yönetebilir ve ayarlarını değiştirebilirsiniz."
       ]
     },
     "description": {
@@ -5456,6 +5480,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ]
     },
     "error": {
@@ -16473,6 +16500,12 @@
       ],
       "You're in control": [
         "Kontrol sizde"
+      ],
+      "Make Categories your own": [
+        "Kategorileri kendinize göre uyarlayın"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ]
     },
     "Title header for keys table": {
@@ -17097,13 +17130,19 @@
     },
     "Actions": {
       "Got it": [
-        "Anlaşıldı"
+        "Anladım"
       ],
       "Next": [
         "Sonraki"
       ],
       "Skip": [
         "Atla"
+      ],
+      "Customize categories": [
+        "Kategorileri özelleştir"
+      ],
+      "Not now": [
+        "Şimdi değil"
       ]
     }
   }

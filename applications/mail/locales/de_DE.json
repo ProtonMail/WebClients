@@ -2282,6 +2282,33 @@
       ],
       "You": [
         "Du"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die Adresse wird bereits von einem Benutzer außerhalb deiner Organisation verwendet. Bitte wende dich an den Kundensupport, um dies zu klären"
+      ],
+      "Find out what can be migrated.": [
+        "Finde heraus, was migriert werden kann."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer kann aufgrund von Plattform-Inkompatibilitäten nicht migriert werden."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere sein Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu migrieren, aktiviere seine Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Benutzer zu migrieren, muss er deine Einladung annehmen, ${ BRAND_NAME } beizutreten."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, dearchiviere ihn in deiner Google Workspace Admin-Konsole."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Um diesen Benutzer zu migrieren, hebe seine Sperrung in deiner Google Workspace Admin-Konsole auf."
       ]
     },
     "Browser": {
@@ -4450,6 +4477,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Ein blauer Punkt wird angezeigt, wenn in einer Kategorie seit deinem letzten Besuch ungelesene Nachrichten vorliegen."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Füge Kategorien hinzu oder entferne sie, verwalte Benachrichtigungen und passe deine Einrichtung jederzeit in den Einstellungen an."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Füge Kategorien hinzu oder entferne sie, verwalte Benachrichtigungen oder schalte sie vollständig aus – jederzeit in den Einstellungen."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klicke mit der rechten Maustaste auf eine E-Mail und wähle „Verschieben nach“ oder ziehe sie per Drag-and-drop in eine andere Kategorie. Ähnliche E-Mails werden künftig automatisch dort eingeordnet."
       ]
     },
     "description": {
@@ -5435,6 +5474,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "No drive found to import": [
+        "Es wurde kein Drive zum Importieren gefunden"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
       ]
     },
     "error": {
@@ -9235,6 +9283,22 @@
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Du bist derzeit al ${ username } für ${ organizationName } angemeldet."
+      ],
+      "You have **${ count } conversation** in ${ categoryLabel } category": [
+        "Du hast **${ count } Unterhaltung** in der Kategorie ${ categoryLabel }",
+        "Du hast **${ count } Unterhaltungen** in der Kategorie ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in ${ categoryLabel } category": [
+        "Du hast **${ count } Nachricht** in der Kategorie ${ categoryLabel }",
+        "Du hast **${ count } Nachrichten** in der Kategorie ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in ${ categoryLabel } category": [
+        "Du hast **${ checked } Unterhaltung** in der Kategorie ${ categoryLabel } ausgewählt",
+        "Du hast **${ checked } Unterhaltungen** in der Kategorie ${ categoryLabel } ausgewählt"
+      ],
+      "You selected **${ checked } message** in ${ categoryLabel } category": [
+        "Du hast **${ checked } Nachricht** in der Kategorie ${ categoryLabel } ausgewählt",
+        "Du hast **${ checked } Nachrichten** in der Kategorie ${ categoryLabel } ausgewählt"
       ]
     },
     "info": {
@@ -10376,6 +10440,48 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Exact host matching": [
+        "Genaue Host-Übereinstimmung"
+      ],
+      "Exact URL matching": [
+        "Genaue URL-Übereinstimmung"
+      ],
+      "Import your emails": [
+        "Deine E-Mails importieren"
+      ],
+      "Never fill on this exact URL": [
+        "Niemals auf dieser genauen URL ausfüllen"
+      ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newsletter – Neuigkeiten, redaktionelle E-Mails und nicht-werbliche Inhalte"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Übergeordnete Domain und Subdomains (Standard)"
+      ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Haupt – Persönliche und geschäftliche E-Mails sowie wichtige Aktualisierungen"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Angebote – Deals, Aktionen und Marketing-E-Mails"
+      ],
+      "Regular expression": [
+        "Regulärer Ausdruck"
+      ],
+      "Social - Social media updates, activity, and messages": [
+        "Soziale Netzwerke – Updates, Aktivitäten und Nachrichten in sozialen Medien"
+      ],
+      "Starts with": [
+        "Beginnt mit"
+      ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transaktionen – Bestätigungen, Buchungen, Rechnungen und Bestellungen"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualisierungen – Automatische Bestätigungen, Warnmeldungen und Konto-Aktualisierungen"
+      ],
+      "URL wildcard pattern": [
+        "URL-Platzhalter-Muster"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10933,6 +11039,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "„Beginnt mit“-Übereinstimmungsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Genaue (Sub-) Domain-Übereinstimmungsregel"
+      ],
+      "Exact URL matching rule": [
+        "Genaue URL-Übereinstimmungsregel"
+      ],
+      "Never fill with this exact URL": [
+        "Niemals mit dieser genauen URL ausfüllen"
+      ],
+      "Regular expression rule": [
+        "Reguläre-Ausdruck-Regel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Platzhalter-Übereinstimmungsregel"
       ]
     },
     "Message display when a new app version is available": {
@@ -15082,6 +15206,10 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "Moved to ${ label }. Similar message will be categorized here in the future.": [
+        "Verschoben nach ${ label }. Ähnliche Nachrichten werden in Zukunft hierher kategorisiert.",
+        "Verschoben nach ${ label }. Ähnliche Nachrichten werden in Zukunft hierher kategorisiert."
       ]
     },
     "Success notification": {
@@ -16363,6 +16491,21 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Make Categories your own": [
+        "Gestalte Kategorien nach deinen Wünschen"
+      ],
+      "New messages": [
+        "Neue Nachrichten"
+      ],
+      "Personalize your Categories": [
+        "Kategorien individuell anpassen"
+      ],
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
+      ],
+      "You're in control": [
+        "Du hast die Kontrolle"
       ]
     },
     "Title header for keys table": {
@@ -16711,6 +16854,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
       ]
     },
     "WeekDay": {
@@ -16980,6 +17126,23 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Kategorien anpassen"
+      ],
+      "Got it": [
+        "Verstanden"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Not now": [
+        "Jetzt nicht"
+      ],
+      "Skip": [
+        "Überspringen"
       ]
     }
   }

@@ -2288,6 +2288,27 @@
       ],
       "You": [
         "Du"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres i Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "For å migrere denne brukeren må du oppheve arkiveringen av dem i Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "For å migrere denne brukeren må du oppheve suspensjonen av dem i Google Workspace Admin Console."
       ]
     },
     "Browser": {
@@ -4456,6 +4477,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "En blå prikk vises når en kategori har uleste meldinger siden ditt siste besøk."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Legg til eller fjern kategorier, administrer varsler og juster oppsettet ditt når som helst i innstillingene."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Legg til eller fjern kategorier, administrer varsler eller slå dem av helt – når som helst i Innstillinger."
+      ],
+      "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Høyreklikk på en e-post og velg \"Flytt til\", eller dra og slipp den i en annen kategori. Lignende e-poster vil bli sortert der automatisk i fremtiden."
       ]
     },
     "description": {
@@ -5447,6 +5480,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ]
     },
     "error": {
@@ -9260,6 +9296,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "Du er for øyeblikket pålogget som ${ username } for (${ organizationName }."
       ]
     },
     "info": {
@@ -10422,6 +10461,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Exact host matching": [
+        "Nøyaktig vertsmatching"
+      ],
+      "Exact URL matching": [
+        "Nøyaktig URL-samsvar"
+      ],
+      "Never fill on this exact URL": [
+        "Fyll aldri på denne nøyaktige nettadressen"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Overordnet domene og underdomener (standard)"
+      ],
+      "Regular expression": [
+        "Regulært uttrykk"
+      ],
+      "Starts with": [
+        "Begynner med"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertegnmønster"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10979,6 +11039,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "\"Begynner med\"-samsvarsregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regel for nøyaktig (under)domenesamsvar"
+      ],
+      "Exact URL matching rule": [
+        "Regel for nøyaktig URL-samsvar"
+      ],
+      "Never fill with this exact URL": [
+        "Fyll aldri med denne nøyaktige nettadressen"
+      ],
+      "Regular expression rule": [
+        "Regel for regulært uttrykk"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regel for samsvar med jokertegnmønster"
       ]
     },
     "Message display when a new app version is available": {
@@ -16413,6 +16491,21 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Make Categories your own": [
+        "Gjør kategorier til dine egne"
+      ],
+      "New messages": [
+        "Nye meldinger"
+      ],
+      "Personalize your Categories": [
+        "Personliggjør kategoriene dine"
+      ],
+      "Users and addresses": [
+        "Brukere og adresser"
+      ],
+      "You're in control": [
+        "Du har kontrollen"
       ]
     },
     "Title header for keys table": {
@@ -16484,7 +16577,7 @@
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
+        "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
       "Load image": [
         "Last inn bilde"
@@ -16761,6 +16854,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ]
     },
     "WeekDay": {
@@ -17030,6 +17126,23 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Actions": {
+      "Customize categories": [
+        "Tilpass kategorier"
+      ],
+      "Got it": [
+        "Skjønner"
+      ],
+      "Next": [
+        "Neste"
+      ],
+      "Not now": [
+        "Ikke nå"
+      ],
+      "Skip": [
+        "Hopp over"
       ]
     }
   }

@@ -2324,6 +2324,27 @@
       ],
       "You": [
         "Vy"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tohto používateľa nie je možné migrovať z dôvodu nekompatibility platforiem."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho účet v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Ak chcete migrovať tohto používateľa, povoľte jeho adresu v sekcii ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Ak chcete migrovať tohto používateľa, musí prijať pozvánku do služby ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho archiváciu v konzole správcu Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Ak chcete migrovať tohto používateľa, zrušte jeho pozastavenie v konzole správcu Google Workspace."
       ]
     },
     "Browser": {
@@ -4531,6 +4552,9 @@
       ],
       "Right-click an email and select “Move to,” or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
         "Kliknite pravým tlačidlom myši na email a vyberte možnosť „Presunúť do“ alebo ho pretiahnite do inej kategórie. Podobné emaily sa tam v budúcnosti zaradia automaticky."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "V nastaveniach môžete kedykoľvek pridávať alebo odstraňovať kategórie, spravovať upozornenia a upravovať svoje nastavenia."
       ]
     },
     "description": {
@@ -5548,6 +5572,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "Touto metódou sa nám nepodarilo odoslať overovací kód."
       ]
     },
     "error": {
@@ -17097,6 +17124,12 @@
       ],
       "You're in control": [
         "Máte to pod kontrolou"
+      ],
+      "Make Categories your own": [
+        "Vytvorte si vlastné kategórie"
+      ],
+      "Users and addresses": [
+        "Používatelia a adresy"
       ]
     },
     "Title header for keys table": {
@@ -17818,6 +17851,12 @@
       ],
       "Skip": [
         "Preskočiť"
+      ],
+      "Customize categories": [
+        "Prispôsobenie kategórií"
+      ],
+      "Not now": [
+        "Teraz nie"
       ]
     }
   }
