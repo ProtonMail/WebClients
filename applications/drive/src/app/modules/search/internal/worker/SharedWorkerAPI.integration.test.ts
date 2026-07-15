@@ -37,6 +37,7 @@ const USER_ID = 'test-user' as UserId;
 const CLIENT_A = 'client-a' as ClientId;
 const CLIENT_B = 'client-b' as ClientId;
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
+const SCOPE_ID_2 = 'scope-2' as TreeEventScopeId;
 const STATE_CHANNEL = `search-state-${USER_ID}`;
 
 // --- Node helpers ---
@@ -523,6 +524,119 @@ describe('SharedWorkerAPI integration', () => {
 
             const indexedResultsAfterRefresh = await getAllIndexedItemsForGeneration(api, 2);
             expect(indexedResultsAfterRefresh).toHaveLength(9);
+        }, 15_000);
+    });
+
+    describe('Scenario: tree_remove tears down the scope', () => {
+        it('removes the scope subscription, DB state, and all of its index entries', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Sanity: the scope is fully indexed and searchable.
+            await verifyThatUserCanSearchIndexProperly(api);
+            expect(await getAllIndexedItemsForGeneration(api, 1)).toHaveLength(9);
+
+            // Emit tree_remove — picked up by the debounced IncrementalUpdateTask (~60s). It tears
+            // down the scope: deletes the populator state (orphaning its entries) and unregisters the
+            // subscription, then the handler enqueues CleanUpStaleIndexEntryTask which sweeps the
+            // now-orphaned entries. Incremental work has no isIndexing state edge, so poll search.
+            bridge.emitEvent(SCOPE_ID, {
+                type: DriveEventType.TreeRemove,
+                treeEventScopeId: SCOPE_ID,
+                eventId: 'none',
+            });
+
+            // Poll until the scope's entries are gone from search.
+            await advanceUntilSearch(api, 'report', (results) => results.length === 0);
+
+            // The whole scope is gone from the index.
+            expect(await search(api, 'notes')).toHaveLength(0);
+            expect(await getAllIndexedItemsForGeneration(api, 1)).toHaveLength(0);
+
+            // The SDK subscription was disposed and its persisted rows were deleted.
+            expect(bridge.wasDisposed(SCOPE_ID)).toBe(true);
+            const db = await SearchDB.open(USER_ID);
+            expect(await db.getAllSubscriptions()).toHaveLength(0);
+            expect(await db.getAllPopulatorStates()).toHaveLength(0);
+            db.close();
+        }, 15_000);
+    });
+
+    describe('Scenario: tree_remove then reload re-subscribes from the SDK', () => {
+        it('re-derives the scope id from getMyFilesRootFolder and rebuilds the index on reload', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // Remove the only scope, then wait until its entries are gone.
+            bridge.emitEvent(SCOPE_ID, {
+                type: DriveEventType.TreeRemove,
+                treeEventScopeId: SCOPE_ID,
+                eventId: 'none',
+            });
+            await advanceUntilSearch(api, 'report', (results) => results.length === 0);
+
+            // Nothing about the scope is persisted anymore, so a reload can only learn the scope id
+            // from the SDK, not from the search DB.
+            const dbAfterRemove = await SearchDB.open(USER_ID);
+            expect(await dbAfterRemove.getAllSubscriptions()).toHaveLength(0);
+            expect(await dbAfterRemove.getAllPopulatorStates()).toHaveLength(0);
+            dbAfterRemove.close();
+
+            // Simulate reload: fresh API + bridge, same IndexedDB.
+            api.disconnectClient(CLIENT_A);
+            state.checkpoint();
+            api = new SharedWorkerAPI();
+            const freshBridge = createBridge();
+            await api.registerClient(USER_ID, CLIENT_A, freshBridge.asBridge());
+
+            // The scope is rebuilt from the SDK-provided root: its files are searchable again.
+            await advanceUntilSearch(api, 'report', (results) => results.length === 3);
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // A fresh subscription was created for the SDK-derived scope id, even though the DB had none.
+            const dbAfterReload = await SearchDB.open(USER_ID);
+            const subs = await dbAfterReload.getAllSubscriptions();
+            dbAfterReload.close();
+            expect(subs.map((s) => s.treeEventScopeId)).toEqual([SCOPE_ID]);
+        }, 15_000);
+
+        it('subscribes to the new scope id when the SDK reports a different MyFiles root on reload', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Remove the only scope, then wait until its entries are gone.
+            bridge.emitEvent(SCOPE_ID, {
+                type: DriveEventType.TreeRemove,
+                treeEventScopeId: SCOPE_ID,
+                eventId: 'none',
+            });
+            await advanceUntilSearch(api, 'report', (results) => results.length === 0);
+
+            // Simulate reload where the SDK now reports the MyFiles root under a DIFFERENT scope id.
+            api.disconnectClient(CLIENT_A);
+            state.checkpoint();
+            api = new SharedWorkerAPI();
+            const freshBridge = createBridge();
+            freshBridge.setMyFilesRootNode(
+                createMockNodeEntity({
+                    uid: 'root-uid',
+                    name: { ok: true, value: 'My Files' },
+                    type: 'folder' as NodeType.Folder,
+                    treeEventScopeId: SCOPE_ID_2,
+                })
+            );
+            await api.registerClient(USER_ID, CLIENT_A, freshBridge.asBridge());
+
+            // The index is rebuilt and searchable again under the new scope.
+            await advanceUntilSearch(api, 'report', (results) => results.length === 3);
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // The subscription is for the new scope id only — the old one is not resurrected.
+            const dbAfterReload = await SearchDB.open(USER_ID);
+            const subs = await dbAfterReload.getAllSubscriptions();
+            dbAfterReload.close();
+            expect(subs.map((s) => s.treeEventScopeId)).toEqual([SCOPE_ID_2]);
         }, 15_000);
     });
 

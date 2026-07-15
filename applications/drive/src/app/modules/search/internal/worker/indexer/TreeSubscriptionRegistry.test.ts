@@ -93,15 +93,18 @@ describe('TreeSubscriptionRegistry integration', () => {
         expect(all.has(SCOPE_2)).toBe(true);
     });
 
-    it('unregisterByScope() removes entry and disposes collectors', async () => {
+    it('unregisterByScope() removes entry, disposes collectors, and deletes the persisted subscription', async () => {
         const registry = await TreeSubscriptionRegistry.create(bridge.asBridge(), db);
         const populator = makeTestPopulator('pop-1');
 
         await registry.register(SCOPE_1, populator, 'evt-1', 1000);
-        registry.unregisterByScope(SCOPE_1);
+        expect(await db.getSubscription(SCOPE_1)).toBeDefined();
+
+        await registry.unregisterByScope(SCOPE_1);
 
         expect(registry.getRegistration(populator)).toBeUndefined();
         expect(bridge.wasDisposed(SCOPE_1)).toBe(true);
+        expect(await db.getSubscription(SCOPE_1)).toBeUndefined();
     });
 
     it('dispose() clears everything', async () => {
