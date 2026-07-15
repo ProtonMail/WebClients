@@ -1,5 +1,4 @@
 import { createRoot } from 'react-dom/client'
-
 import '@proton/polyfill'
 
 import UserApp from './routes/(user)/page'
@@ -13,9 +12,9 @@ const isPublicApp = ['open-url', 'open-url-download'].includes(
   new URL(window.location.href).searchParams.get('mode') || '',
 )
 
-// eslint-disable-next-line no-console
-console.log(`Rendering ${isPublicApp ? 'public' : 'user'} app`)
-
 const container = document.querySelector('.app-root')!
 const root = createRoot(container)
+
+// eslint-disable-next-line no-console
+console.log(`Rendering ${isPublicApp ? 'public' : 'user'} app`)
 root.render(isPublicApp ? <PublicApp /> : <UserApp />)

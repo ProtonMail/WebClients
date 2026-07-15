@@ -14,6 +14,7 @@ import {
   DocsUrlContextProvider,
 } from '~/utils/docs-url-bar'
 import { useInitializeApplication } from './useInitializeApplication'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 // container
 // ---------
@@ -107,8 +108,10 @@ function WildcardRoute({ isHomepageEnabled }: WildcardRouteProps) {
   const isOpenDocumentLink = searchParams.get('mode')?.includes('open')
 
   if (isHomepageEnabled && !isOpenDocumentLink) {
+    void OpenTracer.trace('boot_wildcard_route_navigate_to_homepage')
     return <Navigate to={HOMEPAGE_RECENTS_PATH} replace />
   }
 
+  void OpenTracer.trace('boot_wildcard_route_navigate_to_document_editor')
   return <Navigate to={{ pathname: DOCUMENT_EDITOR_PATH, search: searchParams.toString() }} replace />
 }
