@@ -19,7 +19,6 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const ShareButton = ({ buttonType, close, onClick, showTitle }: Props & CommonButtonProps) => {
     const title = c('Action').t`Share`;
-    const icon = 'user-plus';
 
     if (buttonType === 'toolbar') {
         return (
@@ -39,7 +38,7 @@ export const ShareButton = ({ buttonType, close, onClick, showTitle }: Props & C
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcUserPlus />}
                 testId="context-menu-share"
                 action={onClick}
                 close={() => close?.()}

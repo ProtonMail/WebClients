@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcImage } from '@proton/icons/icons/IcImage';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-v2-welcome.svg';
@@ -19,19 +23,19 @@ export const WelcomeStep = () => {
             <IconList
                 items={[
                     {
-                        icon: 'globe',
+                        icon: <IcGlobe />,
                         text: c('Onboarding Info').t`Sync and access your files from anywhere`,
                     },
                     {
-                        icon: 'image',
+                        icon: <IcImage />,
                         text: c('Onboarding Info').t`Back up your photos and memories`,
                     },
                     {
-                        icon: 'pencil',
+                        icon: <IcPencil />,
                         text: c('Onboarding Info').t`Edit documents online`,
                     },
                     {
-                        icon: 'users',
+                        icon: <IcUsers />,
                         text: c('Onboarding Info').t`Securely share files and folders`,
                     },
                 ]}

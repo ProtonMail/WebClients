@@ -12,12 +12,25 @@ export const RemoveButton = ({ buttonType, close, onClick }: Props) => {
     const title = c('Action').t`Remove device`;
 
     if (buttonType === 'toolbar') {
-        return <ToolbarButton title={title} icon={<IcTrash />} onClick={onClick} data-testid="toolbar-delete" />;
+        return (
+            <ToolbarButton
+                title={title}
+                icon={<IcTrash alt={title} />}
+                onClick={onClick}
+                data-testid="toolbar-delete"
+            />
+        );
     }
 
     if (buttonType === 'contextMenu') {
         return (
-            <ContextMenuButton name={title} icon="trash" testId="context-menu-remove" action={onClick} close={close} />
+            <ContextMenuButton
+                name={title}
+                icon={<IcTrash />}
+                testId="context-menu-remove"
+                action={onClick}
+                close={close}
+            />
         );
     }
 };

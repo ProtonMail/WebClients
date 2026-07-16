@@ -1,18 +1,19 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const ShareLinkButton = ({ onClick, type, close }: ActionButtonProps) => {
     const title = c('Action').t`Share`;
-    const icon = 'user-plus' as const;
+
     if (type === 'toolbar') {
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcUserPlus alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-share-link"
             />
@@ -23,7 +24,7 @@ export const ShareLinkButton = ({ onClick, type, close }: ActionButtonProps) => 
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcUserPlus />}
                 testId="context-menu-share-link"
                 action={onClick}
                 close={close}

@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const UploadFolderButton = ({ type, close, onClick }: ActionButtonProps) => {
     const title = c('Action').t`Upload folder`;
-    const icon = 'folder-arrow-up' as const;
 
     const handleClickWithClose = () => {
         onClick();
@@ -19,7 +19,7 @@ export const UploadFolderButton = ({ type, close, onClick }: ActionButtonProps) 
             <>
                 <ToolbarButton
                     data-testid="toolbar-upload-folder"
-                    icon={<Icon name={icon} alt={title} />}
+                    icon={<IcFolderArrowUp alt={title} />}
                     title={title}
                     onClick={handleClickWithClose}
                 />
@@ -32,7 +32,7 @@ export const UploadFolderButton = ({ type, close, onClick }: ActionButtonProps) 
             <>
                 <ContextMenuButton
                     testId="context-menu-upload-folder"
-                    icon={icon}
+                    icon={<IcFolderArrowUp />}
                     name={title}
                     action={handleClickWithClose}
                     close={close}

@@ -29,6 +29,7 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const RemoveMeButton = ({ nodeUid, type, showConfirmModal, close, buttonType }: Props) => {
     const { removeMe } = useSharingActions();
+    const title = c('Action').t`Remove me`;
 
     const handleRemoveMe = () => {
         removeMe(showConfirmModal, getDrivePerNodeType(type), nodeUid);
@@ -37,8 +38,8 @@ export const RemoveMeButton = ({ nodeUid, type, showConfirmModal, close, buttonT
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
-                title={c('Action').t`Remove me`}
-                icon={<IcCrossBig alt={c('Action').t`Remove me`} />}
+                title={title}
+                icon={<IcCrossBig alt={title} />}
                 onClick={handleRemoveMe}
                 data-testid="toolbar-shared-with-me-leave"
             />
@@ -47,8 +48,8 @@ export const RemoveMeButton = ({ nodeUid, type, showConfirmModal, close, buttonT
 
     return (
         <ContextMenuButton
-            icon="cross-big"
-            name={c('Action').t`Remove me`}
+            icon={<IcCrossBig />}
+            name={title}
             action={handleRemoveMe}
             close={close}
             testId="shared-with-me-leave"

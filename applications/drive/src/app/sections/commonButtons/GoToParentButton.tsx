@@ -34,7 +34,7 @@ export const GoToButton = ({ buttonType, close, onClick }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={'folder'}
+                icon={<IcFolder />}
                 testId={dataTestId}
                 action={onClick}
                 close={() => close?.()}

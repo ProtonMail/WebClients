@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
+
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
@@ -8,11 +10,12 @@ interface Props {
 }
 
 const CreateNewFolderButton = ({ close, action }: Props) => {
+    const title = c('Action').t`New folder`;
     return (
         <ContextMenuButton
             testId="context-menu-new-folder"
-            icon="folder-plus"
-            name={c('Action').t`New folder`}
+            icon={<IcFolderPlus />}
+            name={title}
             action={action}
             close={close}
         />

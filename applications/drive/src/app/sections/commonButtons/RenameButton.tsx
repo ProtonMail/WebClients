@@ -23,7 +23,6 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const RenameButton = ({ buttonType, close, onClick }: Props) => {
     const title = c('Action').t`Rename`;
-    const icon = 'pen-square';
 
     if (buttonType === 'toolbar') {
         return (
@@ -40,7 +39,7 @@ export const RenameButton = ({ buttonType, close, onClick }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcPenSquare />}
                 testId="context-menu-rename"
                 action={onClick}
                 close={() => close?.()}

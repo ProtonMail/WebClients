@@ -39,6 +39,7 @@ export const DeclineButton = ({
     buttonType,
 }: DeclineButtonProps) => {
     const { rejectInvitation } = useInvitationsActions();
+    const title = c('Action').t`Decline`;
 
     const handleDecline = () => {
         void rejectInvitation(showConfirmModal, { uid: nodeUid, invitationUid, name, type });
@@ -47,8 +48,8 @@ export const DeclineButton = ({
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
-                title={c('Action').t`Decline`}
-                icon={<IcCross alt={c('Action').t`Decline`} />}
+                title={title}
+                icon={<IcCross alt={title} />}
                 onClick={handleDecline}
                 data-testid="toolbar-decline-invitation"
             />
@@ -57,8 +58,8 @@ export const DeclineButton = ({
 
     return (
         <ContextMenuButton
-            icon="cross"
-            name={c('Action').t`Decline`}
+            icon={<IcCross />}
+            name={title}
             action={handleDecline}
             close={close}
             testId="shared-with-me-decline-invitation"

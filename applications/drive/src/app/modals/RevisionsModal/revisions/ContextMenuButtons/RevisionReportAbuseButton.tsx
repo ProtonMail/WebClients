@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { Revision } from '@proton/drive';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import { ContextMenuButton } from '../../../../statelessComponents/ContextMenu';
 import type { RevisionsProviderState } from '../../useRevisionsModalState';
@@ -12,10 +13,11 @@ interface Props {
 }
 
 export const RevisionReportAbuseButton = ({ revision, reportRevisionAbuse, close }: Props) => {
+    const title = c('Action').t`Report abuse`;
     return (
         <ContextMenuButton
-            name={c('Action').t`Report abuse`}
-            icon="exclamation-circle"
+            name={title}
+            icon={<IcExclamationCircle />}
             testId="context-menu-revision-report-abuse"
             action={() => reportRevisionAbuse(revision)}
             close={close}
