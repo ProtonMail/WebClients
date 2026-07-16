@@ -105,11 +105,6 @@ jest.mock('proton-mail/components/list/tip/useTips.tsx', () => ({
     default: jest.fn().mockReturnValue({}),
 }));
 
-jest.mock('@proton/account/securityCheckup/listener', () => ({
-    __esModule: true,
-    securityCheckupListener: jest.fn().mockReturnValue({}),
-}));
-
 jest.mock('proton-mail/components/list/list-telemetry/useListTelemetry.tsx', () => ({
     ...jest.requireActual('proton-mail/components/list/list-telemetry/useListTelemetry.tsx'),
     __esModule: true,
