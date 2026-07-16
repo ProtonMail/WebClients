@@ -90,6 +90,9 @@
       "Apply": [
         "Applica"
       ],
+      "Ask me next time": [
+        "Chiedimelo la prossima volta"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
         "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
@@ -333,6 +336,9 @@
       "Download anyway": [
         "Scarica comunque"
       ],
+      "Download debug information": [
+        "Scarica informazioni di debug"
+      ],
       "Download logs": [
         "Scarica i log"
       ],
@@ -375,11 +381,20 @@
       "Export contact group": [
         "Esporta gruppo di contatti"
       ],
+      "Export editor state for version": [
+        "Esporta stato dell'editor per la versione"
+      ],
       "Export selection as .vcf": [
         "Esporta la selezione come .vcf"
       ],
+      "Export this version (as docx)": [
+        "Esporta questa versione (come docx)"
+      ],
       "Export this version (as xlsx)": [
         "Esporta questa versione (in formato xlsx)"
+      ],
+      "Export YJS state for version": [
+        "Esporta stato YJS per la versione"
       ],
       "Forgot password?": [
         "Hai dimenticato la password?"
@@ -633,6 +648,9 @@
       "Reload": [
         "Ricarica"
       ],
+      "Reload spreadsheet": [
+        "Ricarica foglio di calcolo"
+      ],
       "Remove": [
         "Rimuovi"
       ],
@@ -662,6 +680,9 @@
       ],
       "Report a problem": [
         "Segnala un problema"
+      ],
+      "Report issue": [
+        "Segnala problema"
       ],
       "Request a call": [
         "Richiedi una chiamata"
@@ -701,6 +722,9 @@
       ],
       "Save changes": [
         "Salva le modifiche"
+      ],
+      "Save preferences": [
+        "Salva preferenze"
       ],
       "Search": [
         "Cerca"
@@ -830,6 +854,9 @@
       ],
       "Try another method": [
         "Prova un altro metodo"
+      ],
+      "Try Workspace": [
+        "Prova Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
@@ -1209,6 +1236,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Attivato"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "All": [
+        "Tutti"
+      ],
       "Calendar": [
         "Calendario"
       ],
@@ -1218,11 +1254,50 @@
       "Contacts": [
         "Contatti"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "Errors": [
+        "Errori"
+      ],
       "Estimated size": [
         "Dimensioni Stimate"
       ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "Has errors": [
+        "Presenta errori"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Migrate": [
+        "Migra"
+      ],
+      "Migrated": [
+        "Migrato"
+      ],
       "Migration status": [
         "Stato della migrazione"
+      ],
+      "Missing organization private key": [
+        "Chiave privata dell'organizzazione mancante"
+      ],
+      "Missing organization public key": [
+        "Chiave pubblica dell'organizzazione mancante"
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
+      ],
+      "Not activated": [
+        "Non attivato"
       ],
       "Organization does not have enough seats available": [
         "L'organizzazione non dispone di licenze sufficienti"
@@ -1230,11 +1305,53 @@
       "Organization does not have enough storage available": [
         "L'organizzazione non dispone di spazio di archiviazione sufficiente"
       ],
+      "Pending": [
+        "In attesa"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente cosa desideri migrare. Si applicherà a tutti gli utenti dell'organizzazione."
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Impossibile migrare questo utente a causa di incompatibilità della piattaforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, attiva il suo account nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per migrare questo utente, è necessario che accetti l'invito a unirti a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, ripristinalo dall'archivio nella tua Console di amministrazione di Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Per migrare questo utente, riattivalo nella tua Console di amministrazione di Google Workspace."
+      ],
       "User": [
         "Utente"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
+      ],
       "What are you migrating?": [
         "Cosa stai migrando?"
+      ],
+      "You": [
+        "Tu"
       ]
     },
     "Browser": {
@@ -3060,6 +3177,12 @@
       "Failed to fetch sharing info": [
         "Impossibile recuperare le informazioni di condivisione"
       ],
+      "Failed to load 'My files' folder": [
+        "Impossibile caricare la cartella \"I miei file\""
+      ],
+      "Failed to load recent documents": [
+        "Impossibile caricare i documenti recenti"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Impossibile caricare i dati dell'abbonamento. Riprova più tardi."
       ],
@@ -3069,11 +3192,17 @@
       "Failed to remove older revisions": [
         "Il sistema non è riuscito a eliminare versioni precedenti"
       ],
+      "Failed to rename document": [
+        "Impossibile rinominare il documento"
+      ],
       "Failed to rename document. Please try again later.": [
         "Impossibile rinominare il documento. Riprova più tardi."
       ],
       "Failed to resend invitation": [
         "Impossibile rinviare l'invito"
+      ],
+      "Failed to trash document": [
+        "Impossibile spostare il documento nel cestino"
       ],
       "Failed to unshare node": [
         "Impossibile annullare la condivisione del nodo"
@@ -3162,6 +3291,9 @@
       ],
       "No contacts found to import": [
         "Nessun contatto trovato da importare"
+      ],
+      "No drive found to import": [
+        "Nessun drive trovato da importare"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
@@ -3284,6 +3416,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
+      "Some trashed documents could not be loaded": [
+        "Impossibile caricare alcuni documenti nel cestino"
+      ],
       "Something went wrong while fetching available domains": [
         "Si è verificato un errore durante il recupero dei domini disponibili"
       ],
@@ -3388,6 +3523,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Errore imprevisto. Non possiamo importare i contatti."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Errore imprevisto, non possiamo importare i file"
       ],
       "Unknown error": [
         "Errore sconosciuto"
@@ -4586,6 +4724,9 @@
       "Continue": [
         "Continua"
       ],
+      "Converting document...": [
+        "Conversione del documento..."
+      ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
@@ -4635,11 +4776,17 @@
       "Creating link to folder": [
         "Creazione del link alla cartella"
       ],
+      "Creating new document...": [
+        "Creazione di un nuovo documento..."
+      ],
       "Current plan": [
         "Piano attuale"
       ],
       "Current version": [
         "Versione attuale"
+      ],
+      "Decrypting your document": [
+        "Decrittografia del tuo documento in corso"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questo file è stato caricato in modo sicuro da ${ emailAddress }."
@@ -4734,6 +4881,12 @@
       "Enter your own password (as trusted contact).": [
         "Inserisci la tua password (come contatto attendibile)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Errore durante la conversione del documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Errore durante il caricamento del documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
       ],
@@ -4770,6 +4923,9 @@
       "File will not be updated": [
         "Il file non verrà aggiornato."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo file (no foto, ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }) - fino a un totale di 100 GB, 100.000 file e 50 GB per file"
+      ],
       "finance": [
         "dati finanziari"
       ],
@@ -4797,11 +4953,29 @@
       "Geoblocking": [
         "Blocco geografico"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Ottieni un'email professionale @your-company.com, 1 TB di archiviazione sicura per utente, videochiamate più lunghe e molto altro con ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
+      ],
+      "Get Notified About Comments": [
+        "Ricevi notifiche sui commenti"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
       ],
+      "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Aiutaci a migliorare questa esperienza segnalando il problema. Se desideri condividere il contenuto del foglio di calcolo, allega le informazioni di debug qui sotto alla tua segnalazione."
+      ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Aiutaci a migliorare questa esperienza segnalando il problema. Ti preghiamo di allegare alla segnalazione le informazioni di debug riportate di seguito."
+      ],
       "here": [
         "qui"
+      ],
+      "Hide table of contents": [
+        "Nascondi sommario"
       ],
       "High Priority": [
         "Priorità alta"
@@ -4948,6 +5122,9 @@
       "Low Priority": [
         "Priorità bassa"
       ],
+      "Making a copy...": [
+        "Creazione di una copia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carattere",
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caratteri"
@@ -4978,6 +5155,9 @@
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nessun documento fornito nell'URL. Torna a ${ DRIVE_APP_NAME } e seleziona un documento."
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -5020,6 +5200,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Solamente le persone con il link e la password possono accedere a questa cartella."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
+        "Oops! Questo foglio di calcolo non può salvare le tue modifiche più recenti, quindi abbiamo messo in pausa le modifiche per evitare che tu perda il tuo lavoro."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Apri la guida per le azioni consigliate e i link utili."
@@ -5118,6 +5301,9 @@
       "Public documents are not yet enabled for your organization.": [
         "I documenti pubblici non sono ancora abilitati per la tua organizzazione."
       ],
+      "Read-only": [
+        "Sola lettura"
+      ],
       "Recent documents": [
         "Documenti recenti"
       ],
@@ -5192,6 +5378,9 @@
       ],
       "Shared on": [
         "Condiviso su"
+      ],
+      "Show table of contents": [
+        "Mostra sommario"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La firma non può essere convalidata a causa di un errore di rete, riprova più tardi."
@@ -5269,6 +5458,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "L'URL che hai inserito sembra essere stato copiato da Slack in modo errato. Quando copi link lunghi da Slack, fai clic con il pulsante destro del mouse sul link, quindi scegli \"Copia link\" anziché copiare direttamente il testo dell'URL troncato."
+      ],
       "There are no documents in the trash.": [
         "Non ci sono documenti nel cestino."
       ],
@@ -5286,6 +5478,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Questo documento contiene molte attività. Alcune funzionalità potrebbero essere temporaneamente non disponibili."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Questo documento ha molti collaboratori attivi. La modifica in tempo reale è temporaneamente non disponibile. Aggiorna per visualizzare gli ultimi aggiornamenti."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Questo documento potrebbe non esistere oppure ci sono problemi nel caricarlo. Ricarica la pagina e riprova."
@@ -5448,6 +5643,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Abbiamo rilevato che in passato hai riscontrato problemi nell'aprire un documento."
       ],
       "Week": [
         "Settimana"
@@ -5956,11 +6154,20 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable email notifications": [
+        "Attiva le notifiche email"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
       "Erase this link and remove everyone with access": [
         "Elimina questo link e rimuovi chiunque abbia l'accesso"
+      ],
+      "Exact host matching": [
+        "Corrispondenza esatta dell'host"
+      ],
+      "Exact URL matching": [
+        "Corrispondenza URL esatta"
       ],
       "Expiry": [
         "Scadenza"
@@ -6009,6 +6216,9 @@
       ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
+      ],
+      "Include document name in notification": [
+        "Includi il nome del documento nella notifica"
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"
@@ -6079,6 +6289,9 @@
       "Navigation": [
         "Navigazione"
       ],
+      "Never fill on this exact URL": [
+        "Non compilare mai su questo URL esatto"
+      ],
       "New password": [
         "Nuova password"
       ],
@@ -6099,6 +6312,9 @@
       ],
       "Optional": [
         "Facoltativo"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principale e sottodomini (predefinito)"
       ],
       "Password": [
         "Password"
@@ -6139,6 +6355,9 @@
       "Region": [
         "Regione"
       ],
+      "Regular expression": [
+        "Espressione regolare"
+      ],
       "Replace existing file": [
         "Sostituisci il file esistente"
       ],
@@ -6175,6 +6394,9 @@
       "Skip folder": [
         "Ignora cartella"
       ],
+      "Starts with": [
+        "Inizia con"
+      ],
       "Stop sharing": [
         "Interrompi la condivisione"
       ],
@@ -6202,8 +6424,14 @@
       "Trash": [
         "Cestino"
       ],
+      "Unknown user": [
+        "Utente sconosciuto"
+      ],
       "Upload picture": [
         "Carica immagine"
+      ],
+      "URL wildcard pattern": [
+        "Modello di carattere jolly dell'URL"
       ],
       "Username": [
         "Nome utente"
@@ -6539,6 +6767,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regola di corrispondenza \"Inizia con\""
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regola di corrispondenza esatta del (sotto) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regola di corrispondenza URL esatta"
+      ],
+      "Never fill with this exact URL": [
+        "Non compilare mai con questo URL esatto"
+      ],
+      "Regular expression rule": [
+        "Regola dell'espressione regolare"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regola di corrispondenza del modello di caratteri jolly"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La tua prova gratuita termina tra ${ nonAutoRenewalAction }."
       ],
@@ -6933,6 +7179,10 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
+      ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file di ${ options } giorno",
+        "Cronologia delle versioni dei file di ${ options } giorni"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin a vita"
@@ -7800,6 +8050,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" è stato rinominato correttamente"
       ],
+      "\"Document deleted permanently": [
+        "\"Documento eliminato definitivamente"
+      ],
       "${ count } item failed to be decrypted": [
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
@@ -7886,6 +8139,12 @@
       "Device renamed": [
         "Dispositivo rinominato"
       ],
+      "Document moved to trash": [
+        "Documento spostato nel cestino"
+      ],
+      "Document restored from trash": [
+        "Documento ripristinato dal cestino"
+      ],
       "External invitation removed from the share": [
         "Invito esterno rimosso dalla condivisione"
       ],
@@ -7894,6 +8153,9 @@
       ],
       "Failed to accept share invitation": [
         "Impossibile accettare l'invito alla condivisione"
+      ],
+      "Failed to delete document": [
+        "Impossibile eliminare il documento"
       ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
@@ -7906,6 +8168,15 @@
       ],
       "Failed to reject share invitation": [
         "Impossibile rifiutare l'invito alla condivisione"
+      ],
+      "Failed to rename document": [
+        "Impossibile rinominare il documento"
+      ],
+      "Failed to restore document": [
+        "Impossibile ripristinare il documento"
+      ],
+      "Failed to trash document": [
+        "Impossibile spostare il documento nel cestino"
       ],
       "Failed to upload files: ${ err }": [
         "Caricamento dei file non riuscito: ${ err }"
@@ -8464,6 +8735,9 @@
       ],
       "Search for name or email": [
         "Cerca nome o email"
+      ],
+      "Search for users or addresses": [
+        "Cerca utenti o indirizzi"
       ],
       "Search parent folder": [
         "Cerca nella cartella principale"
@@ -9043,8 +9317,62 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Valori separati da virgola (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Nuovo foglio di calcolo"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valori separati da tabulazione (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creazione di un nuovo foglio di calcolo..."
+      ],
+      "Detect automatically": [
+        "Rileva automaticamente"
+      ],
+      "Insert as new sheet": [
+        "Inserisci come nuovo foglio"
+      ],
+      "Replace current sheet": [
+        "Sostituisci il foglio corrente"
+      ],
+      "Replace data at selected cell": [
+        "Sostituisci i dati nella cella selezionata"
+      ],
+      "Replace spreadsheet": [
+        "Sostituisci foglio di calcolo"
+      ],
+      "Select a file to import": [
+        "Seleziona un file da importare"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Il tuo foglio di calcolo corrente, inclusi tutti i fogli al suo interno, verrà sostituito con questa versione."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Converti testo in numeri, date e formule"
+      ],
+      "Destination": [
+        "Destinazione"
+      ],
+      "Format": [
+        "Formato"
+      ],
+      "Separator type": [
+        "Tipo di separatore"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importa dati"
       ]
     },
     "Signing preference for emails": {
@@ -9763,6 +10091,9 @@
         "${ emailsCount } indirizzo email",
         "${ emailsCount } indirizzi email"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Recupero dell'account"
       ],
@@ -9994,6 +10325,9 @@
       "Edit image": [
         "Modifica immagine"
       ],
+      "Editing paused": [
+        "Modifica in pausa"
+      ],
       "Email addresses": [
         "Indirizzi email"
       ],
@@ -10175,6 +10509,9 @@
       "Private browsing vs VPN": [
         "Navigazione privata vs VPN"
       ],
+      "Problems Detected": [
+        "Problemi rilevati"
+      ],
       "Public link": [
         "Link pubblico"
       ],
@@ -10186,6 +10523,9 @@
       ],
       "Re-signing contacts": [
         "Nuova firma dei contatti"
+      ],
+      "Read-only": [
+        "Sola lettura"
       ],
       "Recommended actions": [
         "Azioni consigliate"
@@ -10333,6 +10673,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
+      ],
+      "Users and addresses": [
+        "Utenti e indirizzi"
       ],
       "Verify your password": [
         "Verifica la tua password"
@@ -10521,6 +10864,11 @@
         "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
@@ -10637,6 +10985,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } contatto?",
