@@ -6,7 +6,6 @@ import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';
-import RecoveryCard from './RecoveryCard';
 
 export const OverviewSection = () => {
     const keyReactivationRequests = useInactiveKeys();
@@ -40,7 +39,6 @@ export const OverviewSection = () => {
                     onDismiss={() => setDismissConfirmModalOpen(true)}
                 />
             )}
-            <RecoveryCard />
         </>
     );
 };

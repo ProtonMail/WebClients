@@ -23,7 +23,7 @@ const mockedSetItem = jest.mocked(setItem);
 
 const userId = 'userId';
 
-describe('securityCheckupSessionStorage', () => {
+describe('safetyReviewSessionStorage', () => {
     test('gets item using correct key', () => {
         getSafetyReviewSessionItem(userId);
 

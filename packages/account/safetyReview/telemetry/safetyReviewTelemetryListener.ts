@@ -8,7 +8,7 @@ import { selectAccountRecovery } from '../../recovery/accountRecovery';
 import { selectMnemonicData } from '../../recovery/mnemonic';
 import { selectRecoveryFileData } from '../../recovery/recoveryFile';
 import type { UserSettingsState } from '../../userSettings';
-import type { SafetyReviewRecoveryState } from './interfaces';
+import { getSafetyReviewRecoveryState } from './getSafetyReviewRecoveryState';
 import { safetyReviewListenerStarted, safetyReviewListenerStopped } from './listenerActions';
 import { getSafetyReviewCohortChangeTelemetry, sendSafetyReviewPageLoadTelemetryReport } from './safetyReviewTelemetry';
 import {
@@ -57,33 +57,12 @@ export const safetyReviewTelemetryListener = (startListening: SharedStartListeni
                 return;
             }
 
-            const params: SafetyReviewRecoveryState = {
-                email: {
-                    isEnabled: accountRecovery.emailRecovery.perfect,
-                    hasValue: !!accountRecovery.emailRecovery.value,
-                },
-                phone: {
-                    isEnabled: accountRecovery.phoneRecovery.perfect,
-                    hasValue: !!accountRecovery.phoneRecovery.value,
-                },
-                deviceRecovery: {
-                    isAvailable: recoveryFileData.isRecoveryFileAvailable,
-                    isEnabled: recoveryFileData.hasDeviceRecoveryEnabled,
-                },
-                phrase: { isAvailable: mnemonicData.isMnemonicAvailable, isSet: mnemonicData.isMnemonicSet },
-                recoveryContactsData: {
-                    isAvailable: outgoingDelegatedAccess.isAvailable,
-                    isEnabled:
-                        outgoingDelegatedAccess.isAvailable &&
-                        outgoingDelegatedAccess.recoveryContacts.items.length > 0,
-                },
-                emergencyContactsData: {
-                    isAvailable: outgoingDelegatedAccess.isAvailable,
-                    isEnabled:
-                        outgoingDelegatedAccess.isAvailable &&
-                        outgoingDelegatedAccess.emergencyContacts.items.length > 0,
-                },
-            };
+            const params = getSafetyReviewRecoveryState({
+                accountRecovery,
+                mnemonicData,
+                recoveryFileData,
+                outgoingDelegatedAccess,
+            });
 
             listenerApi.dispatch(safetyReviewTelemetrySlice.actions.setRecoveryState(params));
         },
