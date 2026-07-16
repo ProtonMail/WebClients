@@ -1528,10 +1528,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -2326,6 +2323,27 @@
       ],
       "Status": [
         "Статус"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго ўліковы запіс у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Каб перанесці гэтага карыстальніка, уключыце яго адрас у ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Каб перанесці гэтага карыстальніка, яму неабходна прыняць запрашэнне далучыцца да ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разгархівуйце яго ў кансолі адміністратара Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Каб перанесці гэтага карыстальніка, разблакіруйце яго ў кансолі адміністратара Google Workspace."
       ],
       "User": [
         "Карыстальнік"
@@ -10451,6 +10469,9 @@
       "Navigation": [
         "Навігацыя"
       ],
+      "Never fill on this exact URL": [
+        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
+      ],
       "New password": [
         "Новы пароль"
       ],
@@ -11377,6 +11398,9 @@
       "Fw:": [
         "Пераслаць:"
       ],
+      "Never fill with this exact URL": [
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
+      ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } піша:"
       ],
@@ -11385,6 +11409,9 @@
       ],
       "Regular expression rule": [
         "Правіла рэгулярнага выразу"
+      ],
+      "Wildcard pattern matching rule": [
+        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
@@ -17013,6 +17040,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Выкарыстоўвайце Gmail бяспечна ў ${ MAIL_APP_NAME }"
       ],
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
+      ],
       "Verification error": [
         "Памылка праверкі"
       ],
@@ -17408,6 +17438,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
