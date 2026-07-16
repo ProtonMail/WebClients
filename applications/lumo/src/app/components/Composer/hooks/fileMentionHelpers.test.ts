@@ -1,4 +1,4 @@
-import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles } from './fileMentionHelpers';
+import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles, filterStaleDriveAttachments } from './fileMentionHelpers';
 import type { FileItem } from './fileMentionHelpers';
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
@@ -67,6 +67,16 @@ describe('buildAttachedNames', () => {
         const attached = buildAttachedNames([{ filename: 'README.txt' }]);
         // Re-mentioning the same file (any casing) should be detected as already attached.
         expect(attached.has('readme.txt'.toLowerCase())).toBe(true);
+    });
+
+    it('includes drive node ids for Drive file deduplication', () => {
+        const attached = buildAttachedNames([
+            {
+                filename: 'Corporate API Documentation_.pdf',
+                driveNodeId: 'drive-node-1',
+            },
+        ]);
+        expect(attached.has('drive-node-1')).toBe(true);
     });
 });
 
@@ -167,5 +177,41 @@ describe('already-mentioned files excluded from dropdown', () => {
         const value = '@README.txt @report.pdf @notes.txt';
         const result = getDropdownFiles(value, '');
         expect(result).toHaveLength(0);
+    });
+});
+
+describe('filterStaleDriveAttachments', () => {
+    const liveIds = new Set(['drive-1']);
+
+    it('returns all files for non-Drive-linked projects', () => {
+        const files: FileItem[] = [
+            { id: 'drive-2', name: 'deleted.txt', source: 'drive' },
+            { id: 'local-1', name: 'notes.txt', source: 'local' },
+        ];
+        expect(filterStaleDriveAttachments(files, liveIds, false)).toEqual(files);
+    });
+
+    it('removes Drive files that are no longer in the live folder listing', () => {
+        const files: FileItem[] = [
+            { id: 'drive-1', name: 'active.html', source: 'drive' },
+            { id: 'drive-2', name: 'colours.txt', source: 'drive' },
+        ];
+        const result = filterStaleDriveAttachments(files, liveIds, true);
+        expect(result).toEqual([{ id: 'drive-1', name: 'active.html', source: 'drive' }]);
+    });
+
+    it('removes local attachments tied to a deleted Drive node', () => {
+        const files: FileItem[] = [
+            { id: 'drive-1', name: 'active.html', source: 'drive' },
+            {
+                id: 'att-1',
+                name: 'colours.txt',
+                source: 'local',
+                attachment: { id: 'att-1', filename: 'colours.txt', driveNodeId: 'drive-2' } as FileItem['attachment'],
+            },
+        ];
+        const result = filterStaleDriveAttachments(files, liveIds, true);
+        expect(result).toHaveLength(1);
+        expect(result[0]?.name).toBe('active.html');
     });
 });

@@ -16,6 +16,7 @@ import { selectContextFilters, selectSpaceByIdOptional } from '../../../redux/se
 import { addContextFilter, removeContextFilter } from '../../../redux/slices/contextFilters';
 import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
+import { getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
 import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
 import { useFileHandling } from '../../Composer/hooks/useFileHandling';
@@ -75,7 +76,10 @@ const FilteredFilesContent = ({
     onInclude,
 }: FilteredFilesContentProps) => {
     const autoRetrievedFiles = allFiles.filter((f) => f.autoRetrieved);
-    const manualFiles = allFiles.filter((f) => !f.autoRetrieved);
+    const autoRetrievedKeys = new Set(autoRetrievedFiles.map((f) => getAttachmentDocumentKey(f)));
+    const manualFiles = allFiles.filter(
+        (f) => !f.autoRetrieved && !autoRetrievedKeys.has(getAttachmentDocumentKey(f))
+    );
 
     const isExcluded = (f: any) => {
         const filter = contextFilters.find((cf: any) => cf.messageId === f.messageId);
@@ -385,8 +389,7 @@ export const KnowledgeBasePanel = ({
     const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, compactedHistoricalFiles } = useFilteredFiles(
         messageChain,
         currentAttachments,
-        filterMessage,
-        spaceId
+        filterMessage
     );
 
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));

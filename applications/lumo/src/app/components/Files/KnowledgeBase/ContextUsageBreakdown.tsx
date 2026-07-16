@@ -8,6 +8,7 @@ import { getSummarizedMessageIds } from '../../../llm/compaction';
 import { buildContextBreakdown, type ContextSegmentId } from '../../../llm/contextBreakdown';
 import { countTokens } from '../../../llm/tokenizer';
 import { calculateAttachmentContextSize, calculateMessageContentTokens } from '../../../llm/utils';
+import { getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments } from '../../../redux/selectors';
 import type { Attachment, Message } from '../../../types';
@@ -80,13 +81,23 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
                     continue;
                 }
                 const full = allAttachments[shallow.id];
-                if (full && !activeFiles.some((f) => f.id === full.id)) {
-                    activeFiles.push(full);
+                if (full) {
+                    const documentKey = getAttachmentDocumentKey(full);
+                    const alreadyCounted = activeFiles.some(
+                        (f) => f.id === full.id || getAttachmentDocumentKey(f) === documentKey
+                    );
+                    if (!alreadyCounted) {
+                        activeFiles.push(full);
+                    }
                 }
             }
         }
         for (const attachment of currentAttachments) {
-            if (!activeFiles.some((f) => f.id === attachment.id)) {
+            const documentKey = getAttachmentDocumentKey(attachment);
+            const alreadyCounted = activeFiles.some(
+                (f) => f.id === attachment.id || getAttachmentDocumentKey(f) === documentKey
+            );
+            if (!alreadyCounted) {
                 activeFiles.push(attachment);
             }
         }

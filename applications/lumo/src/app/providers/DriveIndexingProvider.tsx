@@ -44,6 +44,8 @@ interface DriveIndexingContextType {
     isSubscribed: boolean;
     subscribedScopes: string[];
     eventIndexingStatus: EventIndexingStatus;
+    /** Increments when indexed Drive files are added, updated, or removed. */
+    driveIndexRevision: number;
     setIndexingFile: (fileName: string | null) => void;
     setIndexingProgress: (processed: number, total: number, stage?: string) => void;
     /** Completely reset the indexing status to idle state */
@@ -68,6 +70,7 @@ const DEFAULT_CONTEXT_VALUE: DriveIndexingContextType = {
     isSubscribed: false,
     subscribedScopes: [],
     eventIndexingStatus: DEFAULT_EVENT_INDEXING_STATUS,
+    driveIndexRevision: 0,
     setIndexingFile: noop,
     setIndexingProgress: noop,
     resetIndexingStatus: noop,
@@ -93,6 +96,10 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         processedCount: 0,
         totalCount: 0,
     });
+    const [driveIndexRevision, setDriveIndexRevision] = useState(0);
+    const bumpDriveIndexRevision = useCallback(() => {
+        setDriveIndexRevision((revision) => revision + 1);
+    }, []);
 
     const indexedFolders = lumoUserSettings.indexedDriveFolders || [];
 
@@ -316,39 +323,87 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         [browseFolderChildren]
     );
 
-    // Fetch node name by browsing the folder and finding the node
-    const fetchNodeName = useCallback(
-        async (nodeUid: string, folderUid: string): Promise<string | null> => {
+    // Recursively find a file in an indexed folder tree (used when events omit parentNodeUid/name)
+    const findFileInFolderTree = useCallback(
+        async (folderUid: string, targetNodeUid: string): Promise<{ name: string } | null> => {
             try {
-                console.log('[DriveIndexingProvider] Fetching node name for:', nodeUid);
-                // Browse the folder to find the node with this UID
-                const children = await browseFolderChildren(folderUid, true); // force refresh to get latest
-                const node = children.find((child) => child.nodeUid === nodeUid);
-                if (node) {
-                    console.log('[DriveIndexingProvider] Found node name:', node.name);
-                    return node.name;
-                }
+                const visitedFolders = new Set<string>();
+                const queue: string[] = [folderUid];
 
-                // If not found in immediate children, search recursively in subfolders
-                for (const child of children) {
-                    if (child.type === NodeType.Folder) {
-                        const subChildren = await browseFolderChildren(child.nodeUid, true);
-                        const subNode = subChildren.find((c) => c.nodeUid === nodeUid);
-                        if (subNode) {
-                            console.log('[DriveIndexingProvider] Found node name in subfolder:', subNode.name);
-                            return subNode.name;
+                while (queue.length > 0) {
+                    const currentFolderUid = queue.shift()!;
+                    if (visitedFolders.has(currentFolderUid)) {
+                        continue;
+                    }
+                    visitedFolders.add(currentFolderUid);
+
+                    const children = await browseFolderChildren(currentFolderUid, true);
+                    for (const child of children) {
+                        if (child.nodeUid === targetNodeUid && child.type === NodeType.File) {
+                            return { name: child.name };
                         }
+                        if (child.type === NodeType.Folder) {
+                            queue.push(child.nodeUid);
+                        }
+                    }
+
+                    if (visitedFolders.size > 100) {
+                        console.warn('[DriveIndexingProvider] findFileInFolderTree: depth limit reached');
+                        break;
                     }
                 }
 
-                console.log('[DriveIndexingProvider] Node not found in folder tree');
                 return null;
             } catch (error) {
-                console.error('[DriveIndexingProvider] Failed to fetch node name:', error);
+                console.error('[DriveIndexingProvider] findFileInFolderTree failed:', error);
                 return null;
             }
         },
         [browseFolderChildren]
+    );
+
+    // Resolve which indexed folder contains a file. Drive node_updated events often omit parentNodeUid.
+    const resolveTargetFolderForNodeEvent = useCallback(
+        async (
+            nodeUid: string,
+            parentNodeUid: string | undefined,
+            matchingFolders: IndexedDriveFolder[],
+            searchService: SearchService
+        ): Promise<{ folder: IndexedDriveFolder; fileName?: string } | null> => {
+            if (parentNodeUid) {
+                for (const folder of matchingFolders) {
+                    const isInFolder = await isFileInIndexedFolder(parentNodeUid, folder.nodeUid);
+                    if (isInFolder) {
+                        return { folder };
+                    }
+                }
+            }
+
+            const existingDoc = searchService.getDocumentById(nodeUid);
+            if (existingDoc?.folderId) {
+                const directFolder = matchingFolders.find((f) => f.nodeUid === existingDoc.folderId);
+                if (directFolder) {
+                    return { folder: directFolder, fileName: existingDoc.name };
+                }
+
+                for (const folder of matchingFolders) {
+                    const isInFolder = await isFileInIndexedFolder(existingDoc.folderId, folder.nodeUid);
+                    if (isInFolder) {
+                        return { folder, fileName: existingDoc.name };
+                    }
+                }
+            }
+
+            for (const folder of matchingFolders) {
+                const found = await findFileInFolderTree(folder.nodeUid, nodeUid);
+                if (found) {
+                    return { folder, fileName: found.name };
+                }
+            }
+
+            return null;
+        },
+        [isFileInIndexedFolder, findFileInFolderTree]
     );
 
     // Index a single file (handles both new files and updates)
@@ -394,7 +449,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                     searchService.removeDocument(fileNodeUid);
                 }
 
-                const fileContent = await downloadFile(fileNodeUid);
+                const fileContent = await downloadFile(fileNodeUid, undefined, isUpdate);
                 const fileData = new Uint8Array(fileContent);
                 const inferredMime = getMimeTypeFromExtension(fileName) || 'application/octet-stream';
                 const fileObj = new File([fileData], fileName, { type: inferredMime });
@@ -419,6 +474,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                             console.error('[DriveIndexingProvider] Failed to index file:', indexResult.error);
                         } else {
                             console.log('[DriveIndexingProvider] Successfully indexed file:', fileName);
+                            bumpDriveIndexRevision();
 
                             // Only update document count for new files, not updates
                             if (!isUpdate) {
@@ -466,7 +522,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                 }));
             }
         },
-        [userId, downloadFile, updateSettings]
+        [userId, downloadFile, updateSettings, bumpDriveIndexRevision]
     );
 
     // Remove a file from the index
@@ -490,11 +546,46 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                 });
 
                 console.log('[DriveIndexingProvider] Successfully removed file from index');
+                bumpDriveIndexRevision();
             } catch (error) {
                 console.error('[DriveIndexingProvider] Failed to remove file from index:', error);
             }
         },
-        [userId, updateSettings]
+        [userId, updateSettings, bumpDriveIndexRevision]
+    );
+
+    // Re-sync all files in an indexed folder (e.g. after a tree_refresh event from Drive).
+    const resyncIndexedFolder = useCallback(
+        async (folder: IndexedDriveFolder) => {
+            console.log('[DriveIndexingProvider] Re-syncing indexed folder after tree refresh:', folder.name);
+
+            const collectFiles = async (folderUid: string, basePath: string): Promise<FileWithPath[]> => {
+                const files: FileWithPath[] = [];
+                const children = await browseFolderChildren(folderUid, true);
+                for (const child of children) {
+                    if (child.type === NodeType.File) {
+                        files.push({
+                            ...child,
+                            relativePath: basePath ? `${basePath}/${child.name}` : child.name,
+                        });
+                    } else if (child.type === NodeType.Folder) {
+                        const subfolderPath = basePath ? `${basePath}/${child.name}` : child.name;
+                        files.push(...(await collectFiles(child.nodeUid, subfolderPath)));
+                    }
+                }
+                return files;
+            };
+
+            try {
+                const allFiles = await collectFiles(folder.nodeUid, '');
+                for (const file of allFiles) {
+                    await indexSingleFile(folder, file.nodeUid, file.name, true);
+                }
+            } catch (error) {
+                console.error('[DriveIndexingProvider] Failed to re-sync folder:', folder.name, error);
+            }
+        },
+        [browseFolderChildren, indexSingleFile]
     );
 
     // Process pending events (debounced)
@@ -505,6 +596,9 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         if (events.length === 0) return;
 
         console.log('[DriveIndexingProvider] Processing', events.length, 'pending events');
+
+        const searchService = SearchService.get(userId);
+        await searchService.ensureManifestReady();
 
         // Update pending count for status tracking
         setEventIndexingStatus((prev) => ({
@@ -536,13 +630,17 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                     fullEvent: event,
                 });
 
+                // tree_refresh / fast_forward means the client missed events — re-sync indexed files in scope.
+                if (eventType === DriveEventType.TreeRefresh || eventType === DriveEventType.FastForward) {
+                    const matchingFolders = findFoldersByScope(treeEventScopeId);
+                    for (const folder of matchingFolders) {
+                        await resyncIndexedFolder(folder);
+                    }
+                    continue;
+                }
+
                 // Skip events that don't require indexing action
-                if (
-                    eventType === DriveEventType.FastForward ||
-                    eventType === DriveEventType.TreeRefresh ||
-                    eventType === DriveEventType.TreeRemove ||
-                    eventType === DriveEventType.SharedWithMeUpdated
-                ) {
+                if (eventType === DriveEventType.TreeRemove || eventType === DriveEventType.SharedWithMeUpdated) {
                     console.log('[DriveIndexingProvider] Skipping non-node event:', eventType);
                     continue;
                 }
@@ -587,34 +685,34 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                     continue;
                 }
 
-                // For create/update events, find which indexed folder actually contains this file
-                // by checking if the file's parent is within each folder's tree
-                let targetFolder: IndexedDriveFolder | null = null;
-                for (const folder of matchingFolders) {
-                    const isInFolder = await isFileInIndexedFolder(parentNodeUid, folder.nodeUid);
-                    if (isInFolder) {
-                        targetFolder = folder;
-                        console.log('[DriveIndexingProvider] File is in indexed folder:', folder.name);
-                        break;
-                    }
-                }
-
-                if (!targetFolder) {
-                    console.log('[DriveIndexingProvider] File is not in any indexed folder tree, skipping:', {
-                        parentNodeUid,
-                        checkedFolders: matchingFolders.map((f) => ({ uid: f.nodeUid, name: f.name })),
-                    });
-                    continue;
-                }
-
                 // Handle create/update events
                 if (eventType === DriveEventType.NodeCreated || eventType === DriveEventType.NodeUpdated) {
                     if (nodeUid) {
-                        // If we don't have the fileName, we need to fetch node details
-                        const finalFileName = fileName || (await fetchNodeName(nodeUid, targetFolder.nodeUid));
+                        const resolved = await resolveTargetFolderForNodeEvent(
+                            nodeUid,
+                            parentNodeUid,
+                            matchingFolders,
+                            searchService
+                        );
+
+                        if (!resolved) {
+                            console.log('[DriveIndexingProvider] File is not in any indexed folder tree, skipping:', {
+                                nodeUid,
+                                parentNodeUid,
+                                checkedFolders: matchingFolders.map((f) => ({ uid: f.nodeUid, name: f.name })),
+                            });
+                            continue;
+                        }
+
+                        console.log('[DriveIndexingProvider] File is in indexed folder:', resolved.folder.name);
+
+                        const finalFileName =
+                            fileName ||
+                            resolved.fileName ||
+                            (await findFileInFolderTree(resolved.folder.nodeUid, nodeUid))?.name;
                         if (finalFileName) {
                             const isUpdate = eventType === DriveEventType.NodeUpdated;
-                            await indexSingleFile(targetFolder, nodeUid, finalFileName, isUpdate);
+                            await indexSingleFile(resolved.folder, nodeUid, finalFileName, isUpdate);
                         } else {
                             console.log('[DriveIndexingProvider] Could not determine file name for nodeUid:', nodeUid);
                         }
@@ -637,7 +735,15 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             processedCount: 0,
             totalCount: 0,
         }));
-    }, [findFoldersByScope, indexSingleFile, removeFileFromIndex, isFileInIndexedFolder, fetchNodeName]);
+    }, [
+        userId,
+        findFoldersByScope,
+        indexSingleFile,
+        removeFileFromIndex,
+        resolveTargetFolderForNodeEvent,
+        findFileInFolderTree,
+        resyncIndexedFolder,
+    ]);
 
     // Handle incoming tree event
     const handleTreeEvent = useCallback(
@@ -784,6 +890,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         isSubscribed,
         subscribedScopes,
         eventIndexingStatus,
+        driveIndexRevision,
         setIndexingFile,
         setIndexingProgress,
         resetIndexingStatus,
@@ -874,6 +981,7 @@ export const useDriveIndexing = (): DriveIndexingContextType => {
             isSubscribed: false,
             subscribedScopes: [],
             eventIndexingStatus: DEFAULT_EVENT_INDEXING_STATUS,
+            driveIndexRevision: 0,
             setIndexingFile: noop,
             setIndexingProgress: noop,
             resetIndexingStatus: noop,
