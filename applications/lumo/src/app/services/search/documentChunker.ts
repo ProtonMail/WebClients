@@ -166,26 +166,3 @@ export function chunkDocument(doc: DriveDocument): DriveDocument[] {
     
     return chunks;
 }
-
-/**
- * Merge chunks from the same document in search results
- * Returns deduplicated results with best chunk per document
- */
-export function mergeChunkResults<T extends { id: string; score: number; parentDocumentId?: string }>(
-    results: T[]
-): T[] {
-    const docBestChunk = new Map<string, T>();
-    
-    for (const result of results) {
-        // Use parentDocumentId if it's a chunk, otherwise use the document id
-        const docId = result.parentDocumentId || result.id.replace(/__chunk_\d+$/, '');
-        
-        const existing = docBestChunk.get(docId);
-        if (!existing || result.score > existing.score) {
-            docBestChunk.set(docId, result);
-        }
-    }
-    
-    return Array.from(docBestChunk.values());
-}
-
