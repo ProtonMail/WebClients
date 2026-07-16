@@ -255,5 +255,10 @@ export class ESAdapter implements Functions {
         return new Map();
     }
 
+    leaveSearch() {
+        this.lastSearch?.dispose();
+        this.lastSearch = undefined;
+    }
+
     resetCache() {}
 }
