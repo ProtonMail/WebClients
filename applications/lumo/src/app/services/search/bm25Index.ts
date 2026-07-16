@@ -29,21 +29,30 @@
 
 import { STOPWORDS } from "./stopwords";
 
-function normalizeCompoundWords(text: string): string {
-    return text
-        .replace(/(\w+)\s*[-_]\s*(\w+)/g, '$1$2')
-        .replace(/(\w{3,})\s+(\w{3,})/g, (match, p1, p2) => {
-            return `${match} ${p1}${p2}`;
-        });
+/** Cap tokenization input to avoid regex / memory blow-ups on very large documents. */
+const MAX_TOKENIZE_CHARS = 512_000;
+
+function normalizeHyphenatedWords(text: string): string {
+    return text.replace(/(\w+)\s*[-_]\s*(\w+)/g, '$1$2');
 }
 
 function tokenize(text: string): string[] {
-    const normalized = normalizeCompoundWords(text);
-    return normalized
+    const truncated = text.length > MAX_TOKENIZE_CHARS ? text.slice(0, MAX_TOKENIZE_CHARS) : text;
+    const words = normalizeHyphenatedWords(truncated)
         .toLowerCase()
         .replace(/[^\w\s]/g, ' ')
         .split(/\s+/)
         .filter((t) => t.length >= 3);
+
+    const tokens = [...words];
+
+    // Add adjacent word compounds (e.g. "open source" -> "opensource") without
+    // mutating the full string via global regex replace, which can stack-overflow.
+    for (let i = 0; i < words.length - 1; i++) {
+        tokens.push(words[i] + words[i + 1]);
+    }
+
+    return tokens;
 }
 
 interface IDFIndex {
