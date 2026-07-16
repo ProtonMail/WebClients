@@ -1910,6 +1910,15 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Delete device profile": [
+        "Slett enhetsprofil"
+      ],
+      "Generate device profile": [
+        "Generer enhetsprofil"
+      ],
+      "Instructions": [
+        "Instruksjoner"
       ]
     },
     "action": {
@@ -7868,6 +7877,9 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "Could not generate the device profile. Please try again.": [
+        "Kunne ikke generere enhetsprofilen. Prøv på nytt."
       ]
     },
     "error": {
@@ -13722,6 +13734,63 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "All devices with this device profile deployed": [
+        "Alle enheter med denne enhetsprofilen distribuert"
+      ],
+      "All internet traffic is always encrypted and secure": [
+        "All internettrafikk er alltid kryptert og sikker"
+      ],
+      "Choose one:": [
+        "Velg én:"
+      ],
+      "Configure Always-on VPN": [
+        "Konfigurer alltid-på-VPN"
+      ],
+      "Deploy across all your managed devices": [
+        "Implementer på tvers av alle dine administrerte enheter"
+      ],
+      "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
+        "Enheter som har en alltid på-enhetsprofil implementert, kan ikke nå internett med mindre en ${ VPN_APP_NAME }-tilkobling er aktiv."
+      ],
+      "Download ${ removeScriptLink } and run it on each device as the system user to delete the profile automatically.": [
+        "Last ned ${ removeScriptLink } og kjør den på hver enhet som systembruker for å slette profilen automatisk."
+      ],
+      "Employees can't go online without a VPN connection": [
+        "Ansatte kan ikke gå på nett uten VPN-tilkobling"
+      ],
+      "Ensure your organization is always protected": [
+        "Sørg for at organisasjonen din alltid er beskyttet"
+      ],
+      "Generate the device profile and download a configuration file.": [
+        "Generer enhetsprofilen og last ned en konfigurasjonsfil."
+      ],
+      "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
+        "Når den er distribuert, kan det ta opptil noen timer før enhetene oppdager og håndhever retningslinjen."
+      ],
+      "Optional configuration": [
+        "Valgfri konfigurasjon"
+      ],
+      "Or run ${ ps1Link } via your MDM script execution": [
+        "Eller kjør ${ ps1Link } via MDM-skriptutførelsen din"
+      ],
+      "Restrict logins to your organization": [
+        "Begrens pålogginger til organisasjonen din"
+      ],
+      "Supported platforms": [
+        "Støttede plattformer"
+      ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically.": [
+        "For å aktivere Alltid-på-VPN må enhetsprofilen nå ${ policiesPath } på alle enheter – ${ VPN_APP_NAME }-klienten oppdager den der og håndhever profilen automatisk."
+      ],
+      "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
+        "Bruk MDM-en din til å slette filen, eller kjør ${ removeScriptLink } via MDM-ens skriptkjøring. Enhver MDM som støtter distribusjon av filer eller kjøring av skript vil fungere."
+      ],
+      "Using a different MDM? Any MDM that supports deploying files or executing PowerShell scripts will work. Refer to your MDM's documentation for further information.": [
+        "Bruker du en annen MDM? Enhver MDM som støtter distribusjon av filer eller kjøring av PowerShell-skript vil fungere. Se dokumentasjonen for MDM-en din for mer informasjon."
+      ],
+      "Your Always-on VPN device profile is ready to deploy.": [
+        "Din alltid på VPN-enhetsprofil er klar til utrulling."
       ]
     },
     "info": {
@@ -15997,6 +16066,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Applies:": [
+        "Gjelder for:"
+      ],
+      "Enforce Always-on VPN": [
+        "Håndhev alltid-på-VPN"
+      ],
+      "Login restrictions": [
+        "Innloggingsbegrensninger"
       ]
     },
     "label": {
@@ -23707,6 +23785,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Kansellerer abonnementet ditt, vent litt"
+      ],
+      "Disabled": [
+        "Deaktivert"
+      ],
+      "Enabled": [
+        "Aktivert"
+      ],
+      "No restrictions": [
+        "Ingen restriksjoner"
+      ],
+      "Restricted to members of your organization": [
+        "Begrenset til medlemmer av organisasjonen din"
       ]
     },
     "Status": {
@@ -27027,6 +27117,27 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Always-on VPN": [
+        "Alltid på-VPN"
+      ],
+      "Always-on VPN device profile": [
+        "Alltid på VPN-enhetsprofil"
+      ],
+      "Choose a deployment method": [
+        "Velg en distribusjonsmetode"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Konfigurer Alltid-på-VPN-enhetsprofil"
+      ],
+      "Deploy device profile to your devices": [
+        "Distribuer enhetsprofilen til enhetene dine"
+      ],
+      "Deploy via MDM": [
+        "Distributer via MDM"
+      ],
+      "Remove Always-on VPN device profile": [
+        "Fjern enhetsprofilen for Alltid-på-VPN"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27435,6 +27546,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto kan ha nådd båndbreddegrensen for 24 timer. ${ BRAND_NAME } vil forsøke å gjenoppta importen så snart som mulig."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Inkluderer alle brukere i organisasjonen din. Håndheves kun på enheter der enhetsprofilen for alltid-på-VPN er distribuert."
       ]
     },
     "tooltip": {
