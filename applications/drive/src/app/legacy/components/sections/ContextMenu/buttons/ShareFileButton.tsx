@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import type { useFileSharingModal } from '../../../../../modals/SelectLinkToShareModal';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
@@ -16,7 +18,7 @@ const ShareButton = ({ isSharedWithMe, showFileSharingModal, showSharingModal, c
     return (
         <ContextMenuButton
             name={c('Action').t`Share`}
-            icon={isSharedWithMe ? 'users' : 'user-plus'}
+            icon={isSharedWithMe ? <IcUsers /> : <IcUserPlus />}
             testId="context-menu-share-file-selection"
             action={() => showFileSharingModal({ showSharingModal })}
             close={close}

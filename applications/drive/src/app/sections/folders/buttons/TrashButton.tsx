@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import { type NodeType, getDrivePerNodeType } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { noSelection } from '../../../legacy/components/sections/ToolbarButtons/utils';
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
@@ -29,7 +30,6 @@ export const TrashButton = ({ selectedItems, type, close }: Props) => {
     }
 
     const title = c('Action').t`Move to trash`;
-    const icon = 'trash' as const;
 
     const handleClick = () => {
         void withLoading(async () => {
@@ -43,7 +43,7 @@ export const TrashButton = ({ selectedItems, type, close }: Props) => {
             <ToolbarButton
                 disabled={isLoading}
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcTrash alt={title} />}
                 onClick={handleClick}
                 data-testid="toolbar-trash"
             />
@@ -54,7 +54,7 @@ export const TrashButton = ({ selectedItems, type, close }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcTrash />}
                 testId="context-menu-trash"
                 action={handleClick}
                 close={() => close?.()}

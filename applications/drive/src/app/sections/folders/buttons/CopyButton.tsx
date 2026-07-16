@@ -1,19 +1,19 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcDuplicate } from '@proton/icons/icons/IcDuplicate';
 
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const CopyButton = ({ type, onClick, close }: ActionButtonProps) => {
     const title = c('Action').t`Make a copy`;
-    const icon = 'duplicate';
 
     if (type === 'toolbar') {
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcDuplicate alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-copy"
             />
@@ -21,6 +21,14 @@ export const CopyButton = ({ type, onClick, close }: ActionButtonProps) => {
     }
 
     if (type === 'context') {
-        return <ContextMenuButton name={title} icon={icon} testId="context-menu-copy" action={onClick} close={close} />;
+        return (
+            <ContextMenuButton
+                name={title}
+                icon={<IcDuplicate />}
+                testId="context-menu-copy"
+                action={onClick}
+                close={close}
+            />
+        );
     }
 };

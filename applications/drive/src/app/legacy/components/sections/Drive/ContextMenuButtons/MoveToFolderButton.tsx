@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { generateNodeUid } from '@proton/drive/index';
 import type { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 
 import type { DecryptedLink } from '../../../../../legacy/store';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
@@ -16,10 +17,11 @@ export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
 const MoveToFolderButton = ({ selectedLinks, showMoveItemsModal, close }: Props) => {
+    const title = c('Action').t`Move to folder`;
     return (
         <ContextMenuButton
-            name={c('Action').t`Move to folder`}
-            icon="arrows-cross"
+            name={title}
+            icon={<IcArrowsCross />}
             testId="context-menu-move"
             action={() => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedLinks) })}
             close={close}

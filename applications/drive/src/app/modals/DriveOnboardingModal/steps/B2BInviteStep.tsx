@@ -2,6 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useSettingsLink } from '@proton/components';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { APPS } from '@proton/shared/lib/constants';
 import inviteImg from '@proton/styles/assets/img/onboarding/drive-v2-invite.png';
 
@@ -20,15 +23,15 @@ export const B2BInviteStep = () => {
             <IconList
                 items={[
                     {
-                        icon: 'users',
+                        icon: <IcUsers />,
                         text: c('Onboarding Info').t`Share files & folders`,
                     },
                     {
-                        icon: 'pencil',
+                        icon: <IcPencil />,
                         text: c('Onboarding Info').t`Collaborate on documents`,
                     },
                     {
-                        icon: 'lock',
+                        icon: <IcLock />,
                         text: c('Onboarding Info').t`Manage access`,
                     },
                 ]}
