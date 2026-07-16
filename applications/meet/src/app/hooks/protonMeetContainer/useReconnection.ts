@@ -7,12 +7,12 @@ import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
-import type { InitializeDevices } from '../types';
-import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
-import type { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
-import type { UseLiveKitConnectionResult } from './useLiveKitConnection';
-import type { UseMlsSessionResult } from './useMlsSession';
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import type { InitializeDevices } from '../../types';
+import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
+import type { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
+import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
+import type { UseMlsSessionResult } from '../useMlsSession';
 
 interface GetAccessDetailsParams {
     displayName: string;
@@ -37,6 +37,7 @@ interface UseReconnectionParams {
     disallowHealthCheck: () => void;
     initializeDevices: InitializeDevices;
     getParticipants: (token: string) => Promise<void>;
+    resetParticipantNameMap: () => void;
     reportMeetError: (msg: string, options?: unknown) => void;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
     setJoinedRoom: Dispatch<SetStateAction<boolean>>;
@@ -69,6 +70,7 @@ export const useReconnection = ({
     disallowHealthCheck,
     initializeDevices,
     getParticipants,
+    resetParticipantNameMap,
     reportMeetError,
     withMeetingLinkNameTag,
     setJoinedRoom,
@@ -171,6 +173,7 @@ export const useReconnection = ({
                     desiredCameraState: wasCameraEnabled,
                     desiredMicrophoneState: wasMicrophoneEnabled,
                 });
+                resetParticipantNameMap();
                 await getParticipants(meetingToken);
 
                 setIsReconnecting(false);
@@ -229,6 +232,7 @@ export const useReconnection = ({
             disallowHealthCheck,
             initializeDevices,
             getParticipants,
+            resetParticipantNameMap,
             isMeetSeamlessKeyRotationEnabled,
             isMeetClientMetricsLogEnabled,
             keyRotationScheduler,
