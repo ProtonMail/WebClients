@@ -10,6 +10,7 @@ import type { Message } from '../../../../../types';
 import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
+import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import { ToolCallInfo } from './ToolCallInfo';
 import { extractSearchResults } from './toolCallUtils';
 
@@ -30,6 +31,12 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
 
     const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
+
+        if (isTrustedProtonLink(href)) {
+            openTrustedLink(href);
+            return;
+        }
+
         setCurrentLink(href);
         linkWarningModal.openModal(true);
     };
