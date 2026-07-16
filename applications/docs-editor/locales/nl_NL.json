@@ -448,6 +448,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Er is een fout opgetreden bij het verwerken van wijzigingen in het document. Laad de pagina opnieuw en probeer het nogmaals."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Deze spreadsheet heeft een lokale synchronisatie-inconsistentie gedetecteerd. Bewerken is uitgeschakeld om gegevensverlies te voorkomen. Dien aanzien een rapport in en als u akkoord gaat met het delen van de inhoud, download dan de onderstaande foutopsporingsinformatie en voeg deze toe."
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Dit rekenblad is incompatibel met de huidige clientversie. Probeer de client opnieuw te laden. Als de fout blijft optreden, neem dan contact op met de ondersteuning."
       ],
@@ -1863,6 +1866,29 @@
         "rijhoogte"
       ]
     },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Gemiddelde"
+      ],
+      "Count": [
+        "Aantal"
+      ],
+      "Customize Status Bar": [
+        "Statusbalk aanpassen"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Numeriek aantal"
+      ],
+      "Sum": [
+        "Som"
+      ]
+    },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
       "Alignment": [
         "Uitlijning"
@@ -2289,6 +2315,9 @@
       ],
       "Language not supported": [
         "Taal wordt niet ondersteund"
+      ],
+      "Outline": [
+        "Overzicht"
       ]
     },
     "Warning": {
