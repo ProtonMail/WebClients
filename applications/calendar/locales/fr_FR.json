@@ -1555,6 +1555,27 @@
       "Status": [
         "État"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
+      ],
       "User": [
         "Utilisateur"
       ],
@@ -5791,6 +5812,9 @@
       ],
       "Failed to update meeting schedule": [
         "La mise à jour de la réunion n'a pas abouti."
+      ],
+      "Failed to update meeting waiting room status": [
+        "Impossible de mettre à jour l'état de la salle d'attente de la réunion"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
@@ -12669,6 +12693,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
+      ],
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ],
       "Verification failed": [
         "La vérification n'a pas abouti."

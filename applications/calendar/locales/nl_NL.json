@@ -1555,6 +1555,27 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
+      ],
       "User": [
         "Gebruiker"
       ],
@@ -3949,6 +3970,9 @@
       "No contacts found to import": [
         "Geen contacten gevonden om te importeren"
       ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
@@ -4201,6 +4225,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -5786,6 +5813,12 @@
       "Failed to update meeting schedule": [
         "Bijwerken vergaderingsschema mislukt"
       ],
+      "Failed to update meeting waiting room status": [
+        "Kan de wachtkamerstatus van de vergadering niet updaten"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
+      ],
       "finance": [
         "financiën"
       ],
@@ -7205,6 +7238,12 @@
       "Every": [
         "Elke"
       ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
       "Expires": [
         "Verloopt"
       ],
@@ -7319,6 +7358,9 @@
       "Navigation": [
         "Navigatie"
       ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
       "New password": [
         "Nieuw wachtwoord"
       ],
@@ -7348,6 +7390,9 @@
       ],
       "Organizer": [
         "Organisator"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
       ],
       "participant": [
         "deelnemer",
@@ -7407,6 +7452,9 @@
       "Region": [
         "Regio/Provincie"
       ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Verwijder ${ MEET_APP_NAME } videoconferentie"
       ],
@@ -7445,6 +7493,9 @@
       ],
       "Start date": [
         "Begindatum"
+      ],
+      "Starts with": [
+        "Begint met"
       ],
       "State": [
         "Staat"
@@ -7493,6 +7544,9 @@
       ],
       "URL": [
         "Website"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -7919,11 +7973,29 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
       "Fw:": [
         "Fw:"
       ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
@@ -11943,6 +12015,9 @@
       "${ feature } is now active": [
         "${ feature } is nu actief"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
       "Account recovery": [
         "Accountherstel"
       ],
@@ -12619,6 +12694,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
       "Verification failed": [
         "Verificatie mislukt"
       ],
@@ -12868,6 +12946,11 @@
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -12980,6 +13063,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
