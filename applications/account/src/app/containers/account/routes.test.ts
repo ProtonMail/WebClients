@@ -36,7 +36,6 @@ const defaultFlags: Flags = {
     isAuthenticatorAvailable: false,
     isCategoryViewEnabled: false,
     isRecoveryContactsEnabled: false,
-    isRecoverySettingsRedesignEnabled: false,
 };
 
 type Overrides = Omit<Partial<AccountRouterParams>, 'flags'> & { flags?: Partial<Flags> };
