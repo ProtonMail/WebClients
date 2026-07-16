@@ -16,6 +16,7 @@ import { DbApi } from '../../indexedDb/db';
 import { createLumoListenerMiddleware } from '../../redux/listeners';
 import { rootSaga } from '../../redux/sagas';
 import type { LumoSelector } from '../../redux/selectors';
+import { setStoreRef } from '../../redux/storeRef';
 import { addConversation, newConversationId, pushConversationRequest } from '../../redux/slices/core/conversations';
 import { addMasterKey } from '../../redux/slices/core/credentials';
 import { addMessage, finishMessage, newMessageId, pushMessageRequest } from '../../redux/slices/core/messages';
@@ -261,6 +262,7 @@ export async function setupTestEnvironment({
         actionHistoryMiddleware,
         extraThunkArguments: extra,
     });
+    setStoreRef(store);
     const dispatch = store.dispatch;
 
     sagaMiddleware.run(rootSaga, { crashIfErrors: true });

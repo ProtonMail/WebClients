@@ -60,6 +60,7 @@ import {
 import {
     addConversation,
     deleteAllConversations,
+    expireConversationsRequest,
     locallyDeleteConversationFromLocalRequest,
     locallyDeleteConversationFromRemoteRequest,
     locallyRefreshConversationFromRemoteRequest,
@@ -129,6 +130,7 @@ import {
 } from './attachments';
 import {
     deserializeConversationSaga,
+    expireConversations,
     logPullConversationFailure,
     logPushConversationFailure,
     logPushConversationSuccess,
@@ -611,6 +613,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullConversationRequest, dedupSameId(pullConversation))},
         function*() { yield takeEvery(pullConversationSuccess, processPullConversationResult)},
         function*() { yield takeEvery(pullConversationFailure, logPullConversationFailure)},
+        function*() { yield takeLeading(expireConversationsRequest, expireConversations)},
         function*() { yield takeEvery(locallyDeleteConversationFromLocalRequest, softDeleteConversationFromLocal)},
         function*() { yield takeEvery(locallyDeleteConversationFromRemoteRequest, softDeleteConversationFromRemote)},
         function*() { yield takeEvery(locallyRefreshConversationFromRemoteRequest, refreshConversationFromRemote)},
