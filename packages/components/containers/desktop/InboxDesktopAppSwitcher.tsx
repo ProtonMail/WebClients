@@ -14,6 +14,7 @@ import type { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import ProductIcon from '../app/ProductIcon';
@@ -40,12 +41,13 @@ function InboxDesktopDefaultAppSwitcher({ appToLinkTo: currentApp }: Props) {
     const { APP_NAME } = useConfig();
     const isAppAccount = APP_NAME === APPS.PROTONACCOUNT;
 
+    const isAppSwitcherDisabled = useFlag('InboxDesktopCategoryViewSettingsToggleReloadDisabled');
     const handleClick = (target: CHANGE_VIEW_TARGET) => {
         void invokeInboxDesktopIPC({ type: 'changeView', payload: target });
     };
 
     // INDA-703: revert once 1.14.0 is released.
-    if (isAppAccount) {
+    if (isAppAccount && !isAppSwitcherDisabled) {
         return <div className="m-4"></div>;
     }
 
@@ -92,6 +94,7 @@ function InboxDesktopDefaultAppSwitcher({ appToLinkTo: currentApp }: Props) {
 function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
     const { APP_NAME } = useConfig();
 
+    const isAppSwitcherDisabled = useFlag('InboxDesktopCategoryViewSettingsToggleReloadDisabled');
     const isAppMail = APP_NAME === APPS.PROTONMAIL || APPS.PROTONMAIL === appToLinkTo;
     const isAppCalendar = APP_NAME === APPS.PROTONCALENDAR || APPS.PROTONCALENDAR === appToLinkTo;
     const isAppAccount = APP_NAME === APPS.PROTONACCOUNT;
@@ -101,7 +104,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
     };
 
     // INDA-703: revert once 1.14.0 is released.
-    if (isAppAccount) {
+    if (isAppAccount && !isAppSwitcherDisabled) {
         return <div className="m-4"></div>;
     }
 
