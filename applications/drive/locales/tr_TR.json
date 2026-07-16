@@ -4160,7 +4160,7 @@
         "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Bu yöntemle doğrulama kodunu gönderemedik."
+        "Doğrulama kodu bu yöntemle gönderilemedi."
       ]
     },
     "error": {
@@ -7419,21 +7419,24 @@
         "Albüm"
       ],
       "Do you still want to upload it?": [
-        "Hâlâ yüklemek istiyor musunuz?",
-        "Hâlâ bunları yüklemek istiyor musunuz?"
+        "Bunu yine de yüklemek istiyor musunuz?",
+        "Bunları yine de yüklemek istiyor musunuz?"
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
-        "Bu açıklamayla raporda yer alan bilgi ve beyanların doğru ve eksiksiz olduğunu iyi niyetle teyit ederim."
+        "Bu açıklamay ile, bildirimde yer alan bilgi ve beyanların doğru ve eksiksiz olduğunu iyi niyetle teyit ederim."
       ],
       "This file appears to be empty:": [
         "Bu dosya boş gibi görünüyor:",
         "Bu dosyalar boş gibi görünüyor:"
       ],
       "Uploaded - file is empty": [
-        "Yüklendi - dosya boş"
+        "Yüklendi. Dosya boş"
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "${ organizationName } için ${ username } olarak oturum açmış durumdasınız."
+      ],
+      "Data integrity check failed": [
+        "Veri bütünlüğü denetimi tamamlanamadı"
       ]
     },
     "info": {
@@ -13990,6 +13993,9 @@
       ],
       "Upload empty file?": [
         "Boş dosya yüklensin mi?"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14468,6 +14474,27 @@
       ],
       "You": [
         "Siz"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcıyı arşivden çıkarın."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Bu kullanıcıyı aktarmak için Google Workspace yönetici konsolunuzdan kullanıcının askıya alınma durumunu kaldırın."
       ]
     },
     "q2campaign2026: Action": {

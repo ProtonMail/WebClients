@@ -1259,6 +1259,51 @@
       ],
       "Skip": [
         "略過"
+      ],
+      "Add storage": [
+        "新增儲存空間"
+      ],
+      "Download for macOS": [
+        "下載 macOS 版"
+      ],
+      "Download for Windows": [
+        "下載 Windows 版"
+      ],
+      "Explore other plans": [
+        "探索其他方案"
+      ],
+      "Get mobile and desktop apps": [
+        "取得行動裝置與電腦版應用程式"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "回到相簿「${ ellipsedAlbumName }」"
+      ],
+      "List layout": [
+        "清單版面配置"
+      ],
+      "Make a copy": [
+        "建立副本"
+      ],
+      "New shared album": [
+        "新增共享相簿"
+      ],
+      "Re-indexing in progress": [
+        "正在重新建立索引"
+      ],
+      "Report abuse": [
+        "檢舉濫用"
+      ],
+      "Retry failed items": [
+        "重試失敗的項目"
+      ],
+      "Save photo to your gallery": [
+        "將照片儲存到你的相簿"
+      ],
+      "Subscribe now": [
+        "立即訂閱"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "體驗 ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Sheets": {
@@ -3975,6 +4020,78 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "增值稅號碼必須以 ${ prefixes } 開頭"
+      ],
+      "Data integrity check failed": [
+        "數據完整性檢查失敗"
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "目前無法下載桌面應用程式"
+      ],
+      "Expected structure attached": [
+        "附加了預期結構"
+      ],
+      "Failed to change permissions settings": [
+        "變更權限設定失敗"
+      ],
+      "Failed to create public share node": [
+        "建立公開共享節點失敗"
+      ],
+      "Failed to fetch sharing info": [
+        "擷取共享資訊失敗"
+      ],
+      "Failed to load the STL preview": [
+        "無法載入 STL 預覽"
+      ],
+      "Failed to unshare node": [
+        "取消共享節點失敗"
+      ],
+      "Failed to update direct share node": [
+        "更新直接共享節點失敗"
+      ],
+      "Failed to update public share node": [
+        "更新公開共享節點失敗"
+      ],
+      "No drive found to import": [
+        "找不到可匯入的雲端硬碟"
+      ],
+      "Something went wrong during folder listing": [
+        "列出資料夾時發生錯誤"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "搜尋時發生錯誤。請稍後再試。"
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "搜尋時發生錯誤：儲存空間不足。"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此項目失敗"
+      ],
+      "Unexpected error, we can't import the files": [
+        "發生非預期錯誤，我們無法匯入檔案"
+      ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "未知的衝突策略：${ strategy }"
+      ],
+      "We couldn’t send a verification code using this method.": [
+        "我們無法使用此方法傳送驗證碼。"
+      ],
+      "We were not able to load some invitations": [
+        "我們無法載入部分邀請"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "我們無法載入部分你受邀共享的項目"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "我們無法載入部分你儲存的共享連結"
+      ],
+      "We were not able to load some of your shared items": [
+        "我們無法載入部分你共享的項目"
+      ],
+      "We were not able to load the file history": [
+        "我們無法載入檔案歷程記錄"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
       ]
     },
     "error": {
@@ -4501,6 +4618,9 @@
       ],
       "Create new album": [
         "創建新相簿"
+      ],
+      "Create new shared album": [
+        "建立新共享相簿"
       ]
     },
     "Heading": {
@@ -6899,6 +7019,219 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "您的帳號目前設定為套用反向收費機制。所選方案不支援此功能。若要繼續，請從帳單位址移除 VAT 號碼，或選取其他方案。"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace 可讓你的團隊高效協作，而不會讓公司的數據面臨風險。"
+      ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "已完成 ${ completedItems.length } / ${ items.length } 個傳輸"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } 偵測到本地搜尋索引已損壞，無法再使用。請重建索引以還原搜尋功能。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今日過期。"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } 個項目"
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**緊急終止開關**：如果 VPN 意外斷線，則會封鎖您的網際網路，以防止資料外洩。"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "已有新版本的 ${ DRIVE_APP_NAME }。請重新載入以繼續使用搜尋功能。"
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN 可以隱藏您的 IP 位址並加密您的瀏覽活動，使網站、廣告商和 ISP 更難在一段時間內追蹤您。"
+      ],
+      "Album": [
+        "相簿"
+      ],
+      "Already in your library": [
+        "已在你的照片庫中"
+      ],
+      "Better in the app": [
+        "在應用程式中體驗更佳"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
+      ],
+      "Could not scan file for malware": [
+        "無法掃描檔案中的惡意軟體"
+      ],
+      "Do you still want to upload it?": [
+        "你仍要上載它們嗎？"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "將檔案拖放到此處上載，或點擊上載按鈕"
+      ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "匯出診斷日誌以進行技術支援和疑難排解"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "僅限檔案（不含相片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }）- 總計最高 100 GB、100,000 個檔案，且單一檔案最高 50 GB"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "取得日誌和其他資訊以進行技術支援與疑難排解"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "取得應用程式來備份手機中的照片，或在此處上載照片。"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
+      ],
+      "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
+        "我特此本著誠信確認，本檢舉中所包含的資訊與陳述均正確且完整。"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "若你移除自己，你將失去對「${ fileName }」的存取權，且除非擁有者再次與你共享，否則你將無法重新開啟它。"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "已索引 ${ first } 和 ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "已索引 ${ first }、${ second } 和 ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "已索引 ${ first }、${ second }、${ third } 和 ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "索引建立遇到意外狀態，無法繼續。請重建索引以進行復原。"
+      ],
+      "Integrity issues found": [
+        "發現完整性問題"
+      ],
+      "No populator states found.": [
+        "找不到填入器狀態。"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "一個已加密套件。完整的商務保護。"
+      ],
+      "Photo saved to your Drive": [
+        "照片已儲存至你的磁碟"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "照片已複製到串流，並在該處標記為常用。"
+      ],
+      "Preparing download": [
+        "正在準備下載"
+      ],
+      "Preparing…": [
+        "準備中…"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
+      ],
+      "Re-indexing in progress": [
+        "正在重新建立索引"
+      ],
+      "Search data is corrupted": [
+        "搜尋數據已損壞"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "搜尋遇到內部錯誤。請重建索引以進行復原。"
+      ],
+      "Search is in an invalid state": [
+        "搜尋處於無效狀態"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "搜尋已就緒。你的檔案已建立索引。"
+      ],
+      "Select a folder to make the copy in": [
+        "選取要複製到的資料夾"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "此相簿中的部分照片未儲存至你的時間軸。刪除此相簿將會永久刪除這些照片。"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "啟用以下 VPN 設定，輕鬆保持連線："
+      ],
+      "that": [
+        "那個"
+      ],
+      "This file appears to be empty:": [
+        "這些檔案似乎是空的："
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "部分選取的項目未儲存至你的照片庫。若你將其從此相簿移除，你將永久失去其存取權。"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "此唯一代碼可供網站和 ISP（網際網路服務供應商）使用，用以將您的位置和瀏覽歷程記錄與您的裝置進行連結"
+      ],
+      "This will cancel any remaining downloads.": [
+        "這將取消所有剩餘的下載。"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "這只會刪除相簿。你的照片仍會保留在時間軸中。此操作無法復原。"
+      ],
+      "This will replace the existing folder or file with the file": [
+        "這將使用該檔案取代既有的資料夾或檔案"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "這將使用該資料夾取代既有的資料夾或檔案"
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "若要下載這些檔案，請在 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 中開啟它們並進行匯出。"
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "若要啟用真正的搜尋，我們需要在本地為你的檔案建立索引。你仍可正常使用 ${ DRIVE_APP_NAME }，我們將會在索引完成後通知你。"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "為了協助保護您，${ DRIVE_APP_NAME } 可以在保護隱私的前提下掃描您的檔案並封鎖惡意檔案。不過，最好還是只從信任的來源下載檔案。 "
+      ],
+      "Unsupported file type for Photos": [
+        "不支援的照片檔案類型"
+      ],
+      "Upgrade to get more storage space": [
+        "升級以獲得更多儲存空間"
+      ],
+      "Uploaded - file is empty": [
+        "已上載 - 檔案為空"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "我們無法將多張照片儲存到你的磁碟"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "我們無法驗證 ${ nameAuthor } 上載了 ${ nodeName }。以下內容可能已被竄改：檔案數據順序。請僅在信任它的情況下開啟。"
+      ],
+      "We were not able to add this photo to your album": [
+        "我們無法將部分照片新增至你的相簿"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "歡迎使用 ${ DRIVE_APP_NAME }，在前 10 分鐘內，你上載的任何檔案都不計入你的儲存空間配額。"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "當您連線到 VPN 時，它會使用加密技術來隱藏您的 IP 位址（分配給您裝置的唯一代碼）。"
+      ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "當你將 ${ deviceName } 移出同步裝置時，從此裝置新增至「我的電腦」的所有資料夾都將從 ${ DRIVE_APP_NAME } 中永久刪除。"
+      ],
+      "You are currently signed in as ${ username } for ${ organizationName }.": [
+        "您目前已登入為 ${ organizationName } 的 ${ username }。"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "將存取權變更為檢視者後，你將無法共享「${ fileName }」。只有擁有者能再次變更你的存取權。"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "你即將拒絕加入共享相簿 ${ invitationName } 的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該相簿。確定要繼續嗎？"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "你即將拒絕加入 ${ invitationName } 項目的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該項目。確定要繼續嗎？"
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "你的瀏覽器在為搜尋建立檔案索引時空間不足。請釋出儲存空間，然後重建索引。"
+      ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "你的檔案正在重新建立索引。你仍可繼續搜尋，但在完成之前，搜尋結果可能不完整。我們將會在完成後通知你。"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的網際網路服務供應商可以監控並有時出售您的資料，甚至限制您可以存取的網站。"
       ]
     },
     "info": {
@@ -6988,6 +7321,9 @@
       ],
       "Fallback": [
         "後備"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Label": {
@@ -7728,6 +8064,63 @@
       ],
       "Drive": [
         "磁碟"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } 次下載"
+      ],
+      "Allow editors to change permissions and share": [
+        "允許編輯者變更權限和共享"
+      ],
+      "Applications in a business setting": [
+        "商業環境中的應用程式"
+      ],
+      "Asset": [
+        "資產"
+      ],
+      "Deleted ${ deleted }": [
+        "已刪除 ${ deleted }"
+      ],
+      "Disable this link on a specific date": [
+        "在特定日期停用此連結"
+      ],
+      "Exact host matching": [
+        "精確的主機比對"
+      ],
+      "Exact URL matching": [
+        "精確的 URL 比對"
+      ],
+      "Expiry": [
+        "到期時間"
+      ],
+      "Indexing": [
+        "正在建立索引"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必須具有至少 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Never fill on this exact URL": [
+        "絕不在此精確的 URL 填入"
+      ],
+      "Non-consensual intimate imagery": [
+        "非自願親密影像"
+      ],
+      "Parent domain and subdomains (default)": [
+        "上層網域和子網域 (預設)"
+      ],
+      "Pending invitation": [
+        "待處理的邀請"
+      ],
+      "Regular expression": [
+        "正規表示式"
+      ],
+      "Starts with": [
+        "開頭為"
+      ],
+      "URL wildcard pattern": [
+        "URL 萬用字元模式"
+      ],
+      "User opted in": [
+        "使用者已加入"
       ]
     },
     "Label for contact group color": {
@@ -8047,6 +8440,24 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
+      ],
+      "'Starts with' matching rule": [
+        "「開頭為」相符規則"
+      ],
+      "Exact (sub) domain matching rule": [
+        "精確的 (子) 網域比對規則"
+      ],
+      "Exact URL matching rule": [
+        "精確的 URL 比對規則"
+      ],
+      "Never fill with this exact URL": [
+        "絕不填入此精確的 URL"
+      ],
+      "Regular expression rule": [
+        "正規表示式規則"
+      ],
+      "Wildcard pattern matching rule": [
+        "萬用字元模式比對規則"
       ]
     },
     "Message display when a new app version is available": {
@@ -9517,6 +9928,45 @@
       ],
       "\"${ ellipsedName }\" deleted": [
         "「${ ellipsedName }」 已刪除"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "無法從垃圾桶永久刪除「${ ellipsedName }」"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "「${ ellipsedName }」已移動"
+      ],
+      "\"${ name }\" deleted permanently": [
+        "「${ name }」已永久刪除"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "已新增 ${ addedUids.length } 張照片至「${ albumName }」"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "已從「${ albumName }」中移除 ${ removed } 張照片"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "「${ ellipsedName }」的複本已移動到垃圾桶"
+      ],
+      "Error while listing devices": [
+        "列出裝置時發生錯誤"
+      ],
+      "Failed to load sharing details": [
+        "載入共享詳細資料失敗"
+      ],
+      "Selected item was successfully removed from your list": [
+        "已成功從你的清單中移除選取的項目"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "設定已更新。編輯者可以變更權限和共享。"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "設定已更新。編輯者無法變更權限或進行共享。"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此項目失敗"
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "此安全連結已過期，請在共享設定中變更過期日期"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9657,6 +10107,9 @@
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
         "與非 ${ BRAND_NAME } 使用者合作"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無限個別名，保護您的身分"
       ]
     },
     "Onboarding": {
@@ -9813,6 +10266,18 @@
       ],
       "Got an iPhone? We've got you covered.": [
         "是 iPhone 嗎? 我們照你。"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "在此期間上載的檔案將不計入你的儲存空間限制。"
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "現在上載的檔案將不計入你的儲存空間限制"
+      ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "使用方案中包含的儲存空間上載更多檔案，以保持這股勢頭。"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "你剛剛以創紀錄的速度獲得了一些免費數據，並透過端對端加密保護了你的檔案！"
       ]
     },
     "Onboarding Trial": {
@@ -9857,6 +10322,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -10431,6 +10899,9 @@
       ],
       "Main street 12": [
         "街道名稱 12"
+      ],
+      "Search for users or addresses": [
+        "搜尋使用者或位址"
       ]
     },
     "Placeholder for contact group name": {
@@ -10662,6 +11133,30 @@
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
         "一旦您的完整訂閱開始，您仍可在 30 天內取消並獲得按比例退款。"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期前取消，**試用結束時您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不訂閱，**您將會被**降級**至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，**您的完整方案將會開始，且您將獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期前訂閱，**您將會獲得 **${ referrerRewardAmount }** 的可用額度。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免費使用 **${ planTitle }** 直至 **${ textDate }**。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "最後機會探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您還有 **${ daysRemaining } 天**的時間來探索 **${ planTitle }** 提供的所有強大功能。"
+      ],
+      "your subscription": [
+        "您的訂閱"
       ]
     },
     "Safety review": {
@@ -10801,6 +11296,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "你還有 ${ timeRemaining.inHours } 小時來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "你還有 ${ timeRemaining.inMinutes } 分鐘來重設你的密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "你還有 ${ timeRemaining.inSeconds } 秒來重設你的密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -11048,6 +11552,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 實現更多目標"
       ]
     },
     "specialoffer: Offers": {
@@ -11139,6 +11646,9 @@
       ],
       "Keep your passwords safe and organized in multiple vaults": [
         "保持您的密碼安全和整齊於多個保管庫"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "取得無限個別名以保護您的身分並減少垃圾郵件"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11607,6 +12117,24 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } 為您提供所有應用程式、所有功能、搶先體驗新版本，以及您掌握資料及其安全性所需的一切。"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 可讓您存取 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能。內建隱私保護，確保您的資料和身分安全無虞，讓您可以放心使用。"
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } 超越基本功能，協助您更高效、更有條理，並掌控您的收件匣、電子郵件身分等。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 為您的檔案和相片提供 ${ planMaxSpace } 儲存空間。您也有資格獲得年度儲存空間獎勵。"
+      ],
+      "Comprehensive privacy and security": [
+        "全方位的隱私與安全"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 的精華"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "當您取消 ${ planName } 時您將放棄的權益"
       ]
     },
     "subscription reminder": {
@@ -11717,6 +12245,12 @@
       ],
       "Albums shared with you will appear here": [
         "與您共享的相簿將出現在此"
+      ],
+      "Your Live Photos will appear here": [
+        "你的 Live Photos 將會顯示在這裡"
+      ],
+      "Your photo bursts will appear here": [
+        "你的連拍照片將會顯示在這裡"
       ]
     },
     "Success": {
@@ -11937,6 +12471,9 @@
       ],
       "Panoramas": [
         "全景"
+      ],
+      "Bursts": [
+        "連拍"
       ]
     },
     "Time unit": {
@@ -12952,6 +13489,111 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "將您的組織轉移至 ${ BRAND_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "數位簽署已部分驗證。此檔案是由無 ${ BRAND_NAME } 帳號的使用者，透過公開存取的共享連結所建立，因此無法驗證其身分。"
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "數位簽署已部分驗證。此資料夾是由無 ${ BRAND_NAME } 帳號的使用者，透過公開存取的共享連結所建立，因此無法驗證其身分。"
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "數位簽署已部分驗證。此資料夾是由無 ${ BRAND_NAME } 帳號的使用者，透過公開存取的共享連結上載，因此無法驗證其身分。"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "數位簽署已通過驗證。此檔案是由 ${ author } 安全地建立。"
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "數位簽署已通過驗證。此檔案是由 ${ author } 安全地上載。"
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "數位簽署已通過驗證。此資料夾是由 ${ author } 安全地建立。"
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "數位簽署已通過驗證。此資料夾是由 ${ author } 安全地上載。"
+      ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "免費贈送 10 分鐘的免費上載時間，立即開始體驗。"
+      ],
+      "How your free trial works": [
+        "您的免費試用如何運作"
+      ],
+      "Index populators": [
+        "索引填入器"
+      ],
+      "Make a secure connection your default": [
+        "將安全連線設為您的預設設定"
+      ],
+      "No albums shared with me": [
+        "無與我共享的相簿"
+      ],
+      "No Live Photos": [
+        "無 Live Photos"
+      ],
+      "No panorama": [
+        "無全景照片"
+      ],
+      "Original size in bytes": [
+        "以位元組表示的原始大小"
+      ],
+      "Out of storage space": [
+        "儲存空間不足"
+      ],
+      "SHA1": [
+        "SHA1"
+      ],
+      "Size in bytes": [
+        "以位元組表示的大小"
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "這可能是由於帳號或位址已被刪除所致。"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "未命名試算表 ${ date }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "以 ${ formattedPrice } 訂閱 ${ planName }，升級您的工作效率"
+      ],
+      "Upload empty file?": [
+        "要上載空檔案嗎？"
+      ],
+      "Users and addresses": [
+        "使用者及電郵位址"
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "我們無法驗證此檔案是由 ${ author } 建立。"
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "我們無法驗證此資料夾是由 ${ author } 建立。"
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "我們無法驗證此檔案是由 ${ author } 上載。"
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "我們無法驗證此資料夾是由 ${ author } 上載。"
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "我們無法驗證上載此檔案的匿名使用者。"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "我們無法確認該名稱是由 ${ claimedNameAuthor } 建立或修改的。原因是：${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "我們無法確認該節點是由 ${ claimedKeyAuthor } 建立的。原因是：${ node.keyAuthor.error.error }"
+      ],
+      "Welcome offer": [
+        "歡迎優惠"
+      ],
+      "What can a VPN protect you from?": [
+        "VPN 可以保護您免受什麼威脅？"
+      ],
+      "You’re off to a great start!": [
+        "你的起步非常出色！"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13046,6 +13688,18 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "即時 AI 協助，真人專家隨時待命！"
+      ],
+      "Change shared item settings": [
+        "變更共享項目設定"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
+      ],
+      "Version 6 OpenPGP key": [
+        "Version 6 OpenPGP 金鑰"
       ]
     },
     "tooltip": {
@@ -13083,6 +13737,9 @@
       ],
       "Name must not be empty": [
         "名稱不得留空"
+      ],
+      "Name must not contain slashes (/)": [
+        "名稱不得包含斜線 (/)"
       ]
     },
     "Video control": {
@@ -13231,6 +13888,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
       ]
     },
     "Payments.Renewal price dependent on VAT number": {
@@ -13315,6 +13975,114 @@
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "您組織外部的使用者已在使用此位址。請聯絡客戶支援服務以解決此問題"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Configure migration": [
+        "設定轉移"
+      ],
+      "Contacts": [
+        "聯絡人"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "從 Google Workspace 到 ${ BRAND_NAME } 的資料移轉狀態"
+      ],
+      "Emails": [
+        "電子郵件"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Estimated size": [
+        "預估大小"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以遷移哪些內容。"
+      ],
+      "Has errors": [
+        "有錯誤"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Migrate": [
+        "移轉"
+      ],
+      "Migrated": [
+        "已遷移"
+      ],
+      "Migration status": [
+        "轉移狀態"
+      ],
+      "No users to display": [
+        "沒有可顯示的使用者"
+      ],
+      "Not activated": [
+        "未啟用"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Organization does not have enough storage available": [
+        "組織沒有足夠的可用儲存空間"
+      ],
+      "Pending": [
+        "擱置中"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "選取您確切想移轉的項目。這將套用至所有組織使用者。"
+      ],
+      "Select users to migrate": [
+        "選取要遷移的使用者"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由於平台不相容，無法遷移此使用者。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的帳號。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "若要遷移此使用者，請在 ${ usersAddressesLink } 下啟用他們的位址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "若要遷移此使用者，他們需要接受加入 ${ BRAND_NAME } 的邀請。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中將其取消封存。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "若要遷移此使用者，請在您的 Google Workspace 管理員控制台中取消停用他們。"
+      ],
+      "User": [
+        "使用者"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已存取其 ${ BRAND_NAME } 帳號的使用者"
+      ],
+      "What are you migrating?": [
+        "您要轉移什麼？"
+      ],
+      "You": [
+        "您"
       ]
     },
     "q2campaign2026: Action": {
@@ -13429,6 +14197,23 @@
       ],
       "Expires": [
         "到期日"
+      ],
+      "Actions": [
+        "動作"
+      ],
+      "Fingerprint": [
+        "指紋"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Type": [
+        "類型"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "一旦使用者接受邀請，您便能分配角色。"
       ]
     }
   }
