@@ -155,10 +155,12 @@ export class MetricHandler {
                 Value: metric.uploadedSize,
                 Labels: {},
             });
-            metrics.drive_sdk_upload_errors_file_size_histogram.observe({
-                Value: reduceSizePrecision(metric.expectedSize),
-                Labels: {},
-            });
+            if (metric.expectedSize) {
+                metrics.drive_sdk_upload_errors_file_size_histogram.observe({
+                    Value: reduceSizePrecision(metric.expectedSize),
+                    Labels: {},
+                });
+            }
 
             // Report only once per interval.
             if (

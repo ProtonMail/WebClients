@@ -42,6 +42,7 @@ describe('mapNodeToLegacyItem', () => {
         creationTime: new Date(revisionTime),
         contentAuthor: mockAuthor,
         storageSize: 1024,
+        isImported: false,
         claimedSize: 1000,
         claimedModificationTime: new Date(modifyTime),
         claimedDigests: {
@@ -157,6 +158,7 @@ describe('mapNodeToLegacyItem', () => {
             type: NodeType.Folder,
             folder: {
                 claimedModificationTime: new Date(modifyTime),
+                isImported: false,
             },
             activeRevision: undefined,
         };
@@ -295,6 +297,7 @@ describe('mapNodeToLegacyItem', () => {
             type: NodeType.Folder,
             folder: {
                 claimedModificationTime: new Date(modifyTime),
+                isImported: false,
             },
             activeRevision: undefined,
             mediaType: undefined,
@@ -338,6 +341,7 @@ describe('mapNodeToLegacyItem', () => {
             activeRevision: undefined,
             folder: {
                 claimedModificationTime: new Date(modifyTime),
+                isImported: false,
             },
         };
 
@@ -428,6 +432,7 @@ describe('mapNodeToLegacyItem', () => {
             activeRevision: undefined,
             folder: {
                 claimedModificationTime: new Date(shareCreateTime),
+                isImported: false,
             },
             treeEventScopeId: '',
             ownedBy: {},

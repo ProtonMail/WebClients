@@ -22,6 +22,7 @@ describe('getNodeEntity', () => {
             sha1Verified: false,
         },
         claimedAdditionalMetadata: {},
+        isImported: false,
     };
 
     const mockNodeEntity: NodeEntity = {
