@@ -14,17 +14,14 @@ interface CompleteChipProps {
 }
 
 export const ArtifactChip = ({ artifact }: CompleteChipProps) => {
-    const { setSelectedArtifact, selectedArtifact } = useArtifactContext();
-    const isActive =
-        selectedArtifact?.title === artifact.title &&
-        selectedArtifact?.type === artifact.type &&
-        selectedArtifact?.content === artifact.content;
+    const { openArtifact, selectedId } = useArtifactContext();
+    const isActive = selectedId === artifact.id;
 
     return (
         <button
             type="button"
             onClick={() => {
-                setSelectedArtifact(artifact);
+                openArtifact(artifact.id);
             }}
             className={clsx([
                 'artifact-chip',
