@@ -44,7 +44,6 @@ export * from './eventLoop';
 export * from './accountSessions';
 export * from './welcomeFlags';
 export * from './samlSSO';
-export * from './securityCheckup';
 export * from './scheduleCall';
 export * from './allowAddressDeletion';
 export * from './persist/listener';
