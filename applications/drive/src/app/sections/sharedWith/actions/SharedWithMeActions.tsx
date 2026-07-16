@@ -59,6 +59,7 @@ export const SharedWithMeActions = ({
             <InvitationActions
                 selectedInvitations={invitations}
                 showConfirmModal={showConfirmModal}
+                showReportAbuseModal={showReportAbuseModal}
                 {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );
