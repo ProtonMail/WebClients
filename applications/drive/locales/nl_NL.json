@@ -1692,6 +1692,27 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
+      ],
       "User": [
         "Gebruiker"
       ],
@@ -3735,6 +3756,9 @@
       "No contacts found to import": [
         "Geen contacten gevonden om te importeren"
       ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
@@ -3984,6 +4008,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Onbekende conflictstrategie: ${ strategy }"
@@ -5671,6 +5698,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Bestanden en mappen die anderen met u hebben gedeeld worden hier weergegeven"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
       "finance": [
         "financiën"
@@ -7436,6 +7466,12 @@
       "Environment compatible": [
         "Omgevingscompatibiliteit"
       ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -7601,6 +7637,9 @@
       "Never expires": [
         "Vervalt nooit"
       ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
       "New password": [
         "Nieuw wachtwoord"
       ],
@@ -7633,6 +7672,9 @@
       ],
       "Outdated version": [
         "Verouderde versie"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
       ],
       "Password": [
         "Wachtwoord"
@@ -7687,6 +7729,9 @@
       ],
       "Region": [
         "Regio/Provincie"
+      ],
+      "Regular expression": [
+        "Reguliere expressie"
       ],
       "Replace existing folder or file": [
         "Bestaande map of bestand vervangen"
@@ -7763,6 +7808,9 @@
       "Start date": [
         "Begindatum"
       ],
+      "Starts with": [
+        "Begint met"
+      ],
       "State": [
         "Staat"
       ],
@@ -7828,6 +7876,9 @@
       ],
       "Uploaded by": [
         "Geüpload door"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ],
       "User opted in": [
         "De gebruiker heeft ingestemd"
@@ -8230,6 +8281,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
       ],
@@ -12277,6 +12346,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } van gratis uploads."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
       "Account recovery": [
         "Accountherstel"
       ],
@@ -13161,6 +13233,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
       "Verification failed": [
         "Verificatie mislukt"
       ],
@@ -13445,6 +13520,11 @@
         "Gebruik Drive for Business"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -13561,6 +13641,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",

@@ -1692,6 +1692,27 @@
       "Status": [
         "Estado"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, activa su cuenta en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su cuenta en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Para migrar a este usuario, activa su dirección en ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar a este usuario, debe aceptar su invitación para unirse a ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, desarchívalo en tu consola de administración de Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Para migrar a este usuario, reactívalo en tu consola de administración de Google Workspace."
+      ],
       "User": [
         "Usuario"
       ],
@@ -3735,6 +3756,9 @@
       "No contacts found to import": [
         "No se han encontrado contactos para importar."
       ],
+      "No drive found to import": [
+        "No se ha encontrado ningún Drive para importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
@@ -3984,6 +4008,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Se ha producido un error inesperado. No podemos importar los contactos."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no podemos importar los archivos"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estrategia de conflicto desconocida: ${ strategy }"
@@ -5671,6 +5698,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Los archivos y carpetas que otros comparten contigo aparecerán aquí."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
       ],
       "finance": [
         "finanzas"
@@ -7439,6 +7469,12 @@
       "Environment compatible": [
         "Entorno compatible"
       ],
+      "Exact host matching": [
+        "Coincidencia exacta de host"
+      ],
+      "Exact URL matching": [
+        "Coincidencia exacta de URL"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7604,6 +7640,9 @@
       "Never expires": [
         "Nunca caduca"
       ],
+      "Never fill on this exact URL": [
+        "No rellenar nunca en esta URL exacta"
+      ],
       "New password": [
         "Nueva contraseña"
       ],
@@ -7636,6 +7675,9 @@
       ],
       "Outdated version": [
         "Versión obsoleta"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Dominio principal y subdominios (por defecto)"
       ],
       "Password": [
         "Contraseña"
@@ -7690,6 +7732,9 @@
       ],
       "Region": [
         "Región"
+      ],
+      "Regular expression": [
+        "Expresión regular"
       ],
       "Replace existing folder or file": [
         "Reemplazar la carpeta o el archivo existente"
@@ -7766,6 +7811,9 @@
       "Start date": [
         "Fecha de inicio"
       ],
+      "Starts with": [
+        "Comienza con"
+      ],
       "State": [
         "Estado"
       ],
@@ -7831,6 +7879,9 @@
       ],
       "Uploaded by": [
         "Cargado por"
+      ],
+      "URL wildcard pattern": [
+        "Patrón de comodín de URL"
       ],
       "User opted in": [
         "El usuario ha aceptado"
@@ -8233,6 +8284,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "Regla de coincidencia 'Comienza con'"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Regla de coincidencia exacta de (sub) dominio"
+      ],
+      "Exact URL matching rule": [
+        "Regla de coincidencia exacta de URL"
+      ],
+      "Never fill with this exact URL": [
+        "No rellenar nunca con esta URL exacta"
+      ],
+      "Regular expression rule": [
+        "Regla de expresión regular"
+      ],
+      "Wildcard pattern matching rule": [
+        "Regla de coincidencia de patrón de comodín"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Tu periodo de prueba gratuita ha terminado. ${ nonAutoRenewalAction }"
       ],
@@ -8636,6 +8705,10 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
+      ],
+      "${ options }-day file version history": [
+        "Historial de versiones de archivos de ${ options } día",
+        "Historial de ${ options } días de las versiones de los archivos"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
@@ -12333,6 +12406,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de subidas gratuitas."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
@@ -13217,6 +13293,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
+      "Users and addresses": [
+        "Usuarios y direcciones"
+      ],
       "Verification failed": [
         "Error de verificación"
       ],
@@ -13347,6 +13426,12 @@
       ],
       "Expires": [
         "Expira"
+      ],
+      "Fingerprint": [
+        "Huella digital"
+      ],
+      "Status": [
+        "Estado"
       ],
       "Type": [
         "Tipo"
@@ -13616,6 +13701,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } contacto?",

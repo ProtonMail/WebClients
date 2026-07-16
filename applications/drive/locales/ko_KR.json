@@ -910,7 +910,7 @@
         "변경 사항 저장"
       ],
       "Save photo to your gallery": [
-        "귀하의 갤러리에 사진 저장"
+        "내 갤러리에 사진 저장"
       ],
       "Save photos and remove": [
         "사진 저장 및 삭제"
@@ -1590,6 +1590,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "활성화됨"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "해당 주소는 조직 외부의 사용자가 이미 사용하고 있습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "All": [
+        "전체"
+      ],
       "Calendar": [
         "캘린더"
       ],
@@ -1599,8 +1608,20 @@
       "Contacts": [
         "연락처"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace에서 ${ BRAND_NAME }으로의 데이터 이전 상태"
+      ],
+      "Emails": [
+        "이메일"
+      ],
+      "Errors": [
+        "오류"
+      ],
       "Estimated size": [
         "예상 용량"
+      ],
+      "Find out what can be migrated.": [
+        "이전 가능한 항목을 확인해 보세요."
       ],
       "Has errors": [
         "오류 있음"
@@ -1608,8 +1629,26 @@
       "In progress": [
         "진행 중"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "구성원 주소를 찾을 수 없습니다. 이를 해결하려면 고객 지원에 문의해 주세요"
+      ],
+      "Migrate": [
+        "이전"
+      ],
+      "Migrated": [
+        "이전 완료"
+      ],
       "Migration status": [
         "마이그레이션 상태"
+      ],
+      "Missing organization private key": [
+        "조직 비밀 키 누락"
+      ],
+      "Missing organization public key": [
+        "조직 공개 키 누락"
+      ],
+      "No users to display": [
+        "표시할 사용자가 없습니다"
       ],
       "Not activated": [
         "활성화되지 않음"
@@ -1623,14 +1662,50 @@
       "Pending": [
         "보류 중"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "이전하고자 하는 항목을 정확히 선택하세요. 모든 조직 사용자에게 적용됩니다."
+      ],
+      "Select users to migrate": [
+        "이전할 사용자 선택"
+      ],
+      "Size": [
+        "크기"
+      ],
       "Status": [
         "상태"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 아카이브 취소해야 합니다."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "해당 사용자를 이전하려면 Google Workspace 관리자 콘솔에서 해당 사용자들을 정지 취소해야 합니다."
       ],
       "User": [
         "사용자"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } 계정에 접근한 사용자"
+      ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "You": [
+        "나"
       ]
     },
     "Browser": {
@@ -3655,6 +3730,9 @@
       "No contacts found to import": [
         "불러올 연락처를 찾을 수 없음"
       ],
+      "No drive found to import": [
+        "불러올 드라이브가 없습니다"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "불러올 이메일을 찾을 수 없음 - 계정에 받은 편지가 없습니다"
       ],
@@ -3900,6 +3978,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
+      ],
+      "Unexpected error, we can't import the files": [
+        "예상치 못한 오류가 발생하여, 파일을 가져올 수 없습니다."
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "알 수 없는 충돌 전략: ${ strategy }"
@@ -5533,6 +5614,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "타인이 나와 공유한 폴더 및 파일이 여기에 나타납니다."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
       ],
       "finance": [
         "금융정보"
@@ -7273,6 +7357,12 @@
       "Environment compatible": [
         "호환되는 환경"
       ],
+      "Exact host matching": [
+        "정확한 호스트 일치"
+      ],
+      "Exact URL matching": [
+        "정확한 URL 일치"
+      ],
       "Expired": [
         "만료됨"
       ],
@@ -7438,6 +7528,9 @@
       "Never expires": [
         "만료되지 않음"
       ],
+      "Never fill on this exact URL": [
+        "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
       "New password": [
         "새 비밀번호"
       ],
@@ -7470,6 +7563,9 @@
       ],
       "Outdated version": [
         "이전 버전"
+      ],
+      "Parent domain and subdomains (default)": [
+        "상위 도메인 및 하위 도메인(기본값)"
       ],
       "Password": [
         "비밀번호"
@@ -7524,6 +7620,9 @@
       ],
       "Region": [
         "시/도"
+      ],
+      "Regular expression": [
+        "정규식"
       ],
       "Replace existing folder or file": [
         "기존 폴더 또는 파일 대체"
@@ -7600,6 +7699,9 @@
       "Start date": [
         "시작일"
       ],
+      "Starts with": [
+        "다음으로 시작"
+      ],
       "State": [
         "시/도"
       ],
@@ -7665,6 +7767,9 @@
       ],
       "Uploaded by": [
         "업로드한 사용자:"
+      ],
+      "URL wildcard pattern": [
+        "URL 와일드카드 패턴"
       ],
       "User opted in": [
         "사용자가 수신 동의함"
@@ -8055,6 +8160,24 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'다음으로 시작' 일치 규칙"
+      ],
+      "Exact (sub) domain matching rule": [
+        "정확한 (하위) 도메인 일치 규칙"
+      ],
+      "Exact URL matching rule": [
+        "정확한 URL 일치 규칙"
+      ],
+      "Never fill with this exact URL": [
+        "이 정확한 URL에서는 자동완성 안 함"
+      ],
+      "Regular expression rule": [
+        "정규식 규칙"
+      ],
+      "Wildcard pattern matching rule": [
+        "와일드카드 패턴 일치 규칙"
+      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "무료 체험이 종료되었습니다. ${ nonAutoRenewalAction }"
       ],
@@ -11996,6 +12119,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength }간의 무료 업로드 시간."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
       "Account recovery": [
         "계정 복구"
       ],
@@ -12872,6 +12998,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"
       ],
+      "Users and addresses": [
+        "사용자 및 주소"
+      ],
       "Verification failed": [
         "인증 실패"
       ],
@@ -13156,6 +13285,11 @@
         "Drive for Business 구매"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
@@ -13258,6 +13392,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
