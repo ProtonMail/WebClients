@@ -1,4 +1,5 @@
 export interface ParsedArtifact {
+    id: string;
     type: 'code' | 'document';
     language?: string;
     title: string;
@@ -12,6 +13,7 @@ export interface ParseResult {
 
 // Represents an artifact whose <artifact ...> open tag has been seen but </artifact> has not yet arrived.
 export interface StreamingArtifact {
+    id?: string;
     // May be undefined if we've only seen a partial opening tag (no `>` yet)
     title?: string;
     type?: 'code' | 'document';
@@ -38,6 +40,17 @@ function parseAttributes(attrString: string): Record<string, string> {
     return attrs;
 }
 
+// Stable, deterministic fallback id for artifact tags emitted without an `id` attribute
+// (legacy conversations, or a model response that omitted it) — djb2 string hash.
+function hashArtifactIdentity(type: string, title: string, content: string): string {
+    const input = `${type}:${title}:${content}`;
+    let hash = 5381;
+    for (let i = 0; i < input.length; i++) {
+        hash = (hash * 33) ^ input.charCodeAt(i);
+    }
+    return `legacy-${(hash >>> 0).toString(36)}`;
+}
+
 export function parseArtifacts(raw: string): ParseResult {
     const artifacts: ParsedArtifact[] = [];
 
@@ -51,19 +64,19 @@ export function parseArtifacts(raw: string): ParseResult {
             const attrs = parseAttributes(attrString ?? '');
 
             const type = attrs.type;
-            if (!type || (type !== 'code' && type !== 'document')) {
-                return { prose: raw, artifacts: [] };
+            if (!type || (type !== 'code' && type !== 'document') || !attrs.title) {
+                // Skip only this malformed tag — leave it in the prose rather than dropping every
+                // other (potentially valid) artifact in the same message.
+                continue;
             }
 
-            if (!attrs.title) {
-                return { prose: raw, artifacts: [] };
-            }
-
+            const trimmedContent = content?.trim() ?? '';
             artifacts.push({
+                id: attrs.id || hashArtifactIdentity(type, attrs.title, trimmedContent),
                 type: type as 'code' | 'document',
                 language: type === 'code' ? (attrs.language ?? 'text') : undefined,
                 title: attrs.title,
-                content: content?.trim() ?? '',
+                content: trimmedContent,
             });
 
             prose = prose.replace(fullMatch!, '');
@@ -98,13 +111,17 @@ export function parseStreamingContent(raw: string): StreamingParseResult {
             const [fullMatch, attrString, content] = match;
             const attrs = parseAttributes(attrString ?? '');
             if ((attrs.type === 'code' || attrs.type === 'document') && attrs.title) {
+                const trimmedContent = content?.trim() ?? '';
                 completeArtifacts.push({
+                    id: attrs.id || hashArtifactIdentity(attrs.type, attrs.title, trimmedContent),
                     type: attrs.type,
                     language: attrs.type === 'code' ? (attrs.language ?? 'text') : undefined,
                     title: attrs.title,
-                    content: content?.trim() ?? '',
+                    content: trimmedContent,
                 });
             }
+            // Skip only this malformed tag — leave it in the prose rather than dropping every
+            // other (potentially valid) artifact in the same message.
             prose = prose.replace(fullMatch!, '');
         }
 
@@ -114,6 +131,7 @@ export function parseStreamingContent(raw: string): StreamingParseResult {
         if (incompleteMatch) {
             const attrs = parseAttributes(incompleteMatch[1] ?? '');
             const streamingArtifact: StreamingArtifact = {
+                id: attrs.id || undefined,
                 title: attrs.title || undefined,
                 type: attrs.type === 'code' || attrs.type === 'document' ? attrs.type : undefined,
                 language: attrs.language || undefined,
