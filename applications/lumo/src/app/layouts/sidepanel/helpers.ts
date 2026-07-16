@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
+import { FREE_USER_CHAT_DELETION_GRACE_DAYS, FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
 
@@ -105,9 +105,10 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
  */
 export const filterConversationsWithinRetentionWindow = (
     conversations: Conversation[],
-    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
 ): Conversation[] => {
-    const cutoff = subDays(startOfDay(new Date()), retentionDays);
+    const cutoff = subDays(startOfDay(now), retentionDays);
 
     return conversations.filter((conversation) => {
         const createdAt = startOfDay(new Date(conversation.createdAt));
@@ -126,6 +127,79 @@ export const applyRetentionPolicy = (conversations: Conversation[], hasLumoPlus:
 
     return filterConversationsWithinRetentionWindow(conversations);
 };
+
+/**
+ * Calendar days until a free-user conversation is permanently deleted.
+ * Returns 0 on the deletion day, negative values once past due.
+ */
+export const getConversationDeletionDaysRemaining = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    deletionGraceDays: number = FREE_USER_CHAT_DELETION_GRACE_DAYS,
+    now: Date = new Date()
+): number => {
+    const createdAt = startOfDay(new Date(conversation.createdAt));
+    const deletionDay = addDays(createdAt, retentionDays + deletionGraceDays);
+
+    return differenceInCalendarDays(deletionDay, startOfDay(now));
+};
+
+/** True when a free-user chat is past its deletion date and should be removed. */
+export const isConversationEligibleForDeletion = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    deletionGraceDays: number = FREE_USER_CHAT_DELETION_GRACE_DAYS,
+    now: Date = new Date()
+): boolean => getConversationDeletionDaysRemaining(conversation, retentionDays, deletionGraceDays, now) <= 0;
+
+export const getConversationsEligibleForDeletion = (
+    conversations: Conversation[],
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    deletionGraceDays: number = FREE_USER_CHAT_DELETION_GRACE_DAYS,
+    now: Date = new Date()
+): Conversation[] =>
+    conversations.filter((conversation) =>
+        isConversationEligibleForDeletion(conversation, retentionDays, deletionGraceDays, now)
+    );
+
+/**
+ * True when a chat is in the grace period before permanent deletion
+ * (past the sidebar retention window but not yet deleted).
+ */
+export const isConversationInDeletionGracePeriod = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    deletionGraceDays: number = FREE_USER_CHAT_DELETION_GRACE_DAYS,
+    now: Date = new Date()
+): boolean => {
+    const deletionDaysRemaining = getConversationDeletionDaysRemaining(
+        conversation,
+        retentionDays,
+        deletionGraceDays,
+        now
+    );
+
+    return (
+        deletionDaysRemaining > 0 &&
+        !filterConversationsWithinRetentionWindow([conversation], retentionDays, now).length
+    );
+};
+
+export const getConversationDeletionBannerTitle = (daysUntilDeletion: number): string => {
+    if (daysUntilDeletion === 0) {
+        return c('collider_2025: Warning').t`This chat will be deleted today`;
+    }
+
+    if (daysUntilDeletion === 1) {
+        return c('collider_2025: Warning').t`This chat will be deleted tomorrow`;
+    }
+
+    return c('collider_2025: Warning').t`This chat will be deleted soon`;
+};
+
+export const getConversationDeletionBannerDescription = (): string =>
+    c('collider_2025: Info')
+        .t`Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${LUMO_SHORT_APP_NAME} Plus.`;
 
 export type ConversationExpirationUrgency = 'warning' | 'urgent';
 
