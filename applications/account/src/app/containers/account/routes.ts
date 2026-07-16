@@ -168,12 +168,10 @@ function getV1DashboardSections(
 }
 
 const getRecoverySettings = ({
-    isDataRecoveryAvailable,
     isMnemonicAvailable,
     isRecoveryFileAvailable,
     isSessionRecoveryAvailable,
     isDelegatedAccessAvailable,
-    isRecoverySettingsRedesignEnabled,
     isAccountRecoveryAvailable,
     recoveryNotification,
 }: {
@@ -183,7 +181,6 @@ const getRecoverySettings = ({
     isRecoveryFileAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     isDelegatedAccessAvailable: boolean;
-    isRecoverySettingsRedesignEnabled: boolean;
     recoveryNotification?: ThemeColor;
 }) => {
     const recoverySubrouteGroups = {
@@ -274,62 +271,24 @@ const getRecoverySettings = ({
     return {
         id: 'recovery',
         text: c('Title').t`Recovery`,
-        description: isRecoverySettingsRedesignEnabled
-            ? c('Description')
-                  .t`${BRAND_NAME}'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.`
-            : undefined,
+        description: c('Description')
+            .t`${BRAND_NAME}'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.`,
         to: '/recovery',
         icon: 'key',
         available: isAccountRecoveryAvailable,
         notification: recoveryNotification,
-        ...(isRecoverySettingsRedesignEnabled
-            ? {
-                  subsections: [
-                      {
-                          text: '',
-                          id: 'checklist',
-                      },
-                      {
-                          text: '',
-                          id: 'password-reminder',
-                      },
-                  ],
-                  subrouteGroups: recoverySubrouteGroups,
-              }
-            : {
-                  subrouteGroups: undefined,
-                  subsections: [
-                      {
-                          text: '',
-                          id: 'checklist',
-                      },
-                      {
-                          text: c('Title').t`Account recovery`,
-                          id: recoveryIds.account,
-                      },
-                      {
-                          text: c('Title').t`Data recovery`,
-                          id: recoveryIds.data,
-                          available: isDataRecoveryAvailable,
-                      },
-                      {
-                          text: c('emergency_access').t`Data recovery contacts`,
-                          id: recoveryIds.recoveryContacts,
-                          available: isDelegatedAccessAvailable,
-                      },
-                      {
-                          text: c('emergency_access').t`Emergency access`,
-                          id: recoveryIds.emergencyAccess,
-                          available: isDelegatedAccessAvailable,
-                      },
-                      {
-                          text: c('Title').t`Password reset settings`,
-                          id: 'password-reset',
-                          available: isSessionRecoveryAvailable,
-                      },
-                  ],
-              }),
-    } as const;
+        subsections: [
+            {
+                text: '',
+                id: 'checklist',
+            },
+            {
+                text: '',
+                id: 'password-reminder',
+            },
+        ],
+        subrouteGroups: recoverySubrouteGroups,
+    } satisfies SectionConfig;
 };
 
 export const getAccountAppRoutes = ({
@@ -360,7 +319,6 @@ export const getAccountAppRoutes = ({
         isZoomIntegrationEnabled = false,
         isProtonMeetIntegrationEnabled = false,
         canDisplayNonPrivateEmailPhone = false,
-        isRecoverySettingsRedesignEnabled = false,
         isMnemonicAvailable = false,
         isRecoveryFileAvailable = false,
     } = flags;
@@ -421,7 +379,6 @@ export const getAccountAppRoutes = ({
     const recoverySettings = getRecoverySettings({
         isAccountRecoveryAvailable,
         recoveryNotification,
-        isRecoverySettingsRedesignEnabled,
         isSessionRecoveryAvailable,
         isDataRecoveryAvailable,
         isMnemonicAvailable,
