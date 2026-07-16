@@ -1520,8 +1520,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2290,6 +2289,27 @@
       ],
       "Status": [
         "État"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, activez son compte dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Pour migrer cet utilisateur, activez son adresse sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Pour migrer cet utilisateur, celui-ci doit accepter son invitation à rejoindre ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre console d'administration Google Workspace."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Pour migrer cet utilisateur, réactivez-le dans votre console d'administration Google Workspace."
       ],
       "User": [
         "Utilisateur"
@@ -16399,6 +16419,9 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Utilisez Gmail en toute sécurité dans ${ MAIL_APP_NAME }"
+      ],
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ],
       "Verification error": [
         "Erreur de vérification"
