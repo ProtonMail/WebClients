@@ -1206,6 +1206,27 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
       ]
     },
     "Browser": {
@@ -4693,6 +4714,9 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
       ],
+      "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
+        "Sporočite nam težavo in pomagajte izboljšati uporabniško izkušnjo. K poročilu priložite spodaj navedene podatke o napaki."
+      ],
       "here": [
         "tukaj"
       ],
@@ -5334,6 +5358,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "Ugotovili smo, da ste v preteklosti imeli težave pri odpiranju dokumenta."
       ],
       "Week": [
         "Teden"
@@ -9931,6 +9958,9 @@
       "Private browsing vs VPN": [
         "Zasebno brskanje v primerjavi z VPN"
       ],
+      "Problems Detected": [
+        "Ugotovljene težave"
+      ],
       "Public link": [
         "Javna povezava"
       ],
@@ -10080,6 +10110,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
+      ],
+      "Users and addresses": [
+        "Uporabniki in naslovi"
       ],
       "VPN explained": [
         "Pojasnilo o VPN"
