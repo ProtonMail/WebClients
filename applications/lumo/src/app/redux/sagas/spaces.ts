@@ -20,6 +20,7 @@ import type {
     ResourceType,
 } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
+import { removeIndexedContentForSpace } from '../../services/removeIndexedContentForSpace';
 import { SearchService } from '../../services/search/searchService';
 import { type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
 import { listify, mapIds, mapify } from '../../util/collections';
@@ -119,19 +120,31 @@ export function* deleteSpaceCascadeInRedux(spaceId: SpaceId): SagaIterator<any> 
 export function* softDeleteSpaceFromRemote({ payload: localId }: { payload: SpaceId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteSpaceFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
+    const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
     // IDB cascade first, then Redux cascade. Otherwise a failing IDB write would
     // leave Redux purged while IDB still holds the old data — on reload the state
     // would reappear as a stale tombstone. deleteSpaceCascadeInRedux reads from
     // Redux selectors, so running it after the IDB cascade is still correct.
     yield call([dbApi, dbApi.softDeleteSpaceCascade], localId, { dirty: false });
+    try {
+        yield call(removeIndexedContentForSpace, localId, userId);
+    } catch (error) {
+        console.log('softDeleteSpaceFromRemote: failed to remove indexed content, continuing with deletion', error);
+    }
     yield call(deleteSpaceCascadeInRedux, localId);
 }
 
 export function* softDeleteSpaceFromLocal({ payload: localId }: { payload: SpaceId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteSpaceFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
+    const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
     // IDB cascade first, then Redux cascade — see softDeleteSpaceFromRemote.
     yield call([dbApi, dbApi.softDeleteSpaceCascade], localId, { dirty: true });
+    try {
+        yield call(removeIndexedContentForSpace, localId, userId);
+    } catch (error) {
+        console.log('softDeleteSpaceFromLocal: failed to remove indexed content, continuing with deletion', error);
+    }
     yield call(deleteSpaceCascadeInRedux, localId);
     yield put(pushSpaceRequest({ id: localId, priority: 'urgent' }));
 }
