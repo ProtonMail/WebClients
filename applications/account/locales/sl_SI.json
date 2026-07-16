@@ -1193,9 +1193,6 @@
       "Select time zone": [
         "Izberite časovni pas"
       ],
-      "Send": [
-        "Pošlji"
-      ],
       "send auto-reply email": [
         "pošlji samodejni odgovor"
       ],
@@ -1387,9 +1384,6 @@
       ],
       "Underline": [
         "Podčrtaj"
-      ],
-      "Undo": [
-        "Razveljavi"
       ],
       "Undo import": [
         "Razveljavi uvoz"
@@ -1711,11 +1705,6 @@
     "Admin": {
       "admin": [
         "skrbnik"
-      ]
-    },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "Vloga je skupina dovoljenj, ki jih lahko dodelite članom vaše organizacije."
       ]
     },
     "Alert": {
@@ -2211,6 +2200,27 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Tega uporabnika ni mogoče prenesti zaradi nezdružljivosti platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Če želite tega uporabnika prenesti, omogočite njegov račun ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Če želite tega uporabnika prenesti, morajo sprejeti njihovo povabilo k pridružitvi ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga odstranite iz arhiva v Google Workspace administratorski konzoli."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Če želite tega uporabnika prenesti, ga omogočite v Google Workspace administratorski konzoli."
       ],
       "Users migrated": [
         "Uporabniki so se preneseni"
@@ -10933,9 +10943,6 @@
       "Date": [
         "Datum"
       ],
-      "Date format": [
-        "Oblika datuma"
-      ],
       "Deals, offers, marketing emails": [
         "Promocije, ponudbe, marketinška e-pošta"
       ],
@@ -13808,9 +13815,6 @@
       ],
       "An external address cannot be default": [
         "Zunanji naslov ne more biti privzeti."
-      ],
-      "Copied to clipboard": [
-        "Kopirano na odložišče"
       ],
       "Email notifications have been disabled": [
         "Obvestila o e-pošti so bila onemogočena"
@@ -17924,6 +17928,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "na mesec, obračunano letno"
+      ],
+      "Save 50% for one year, and keep full access": [
+        "Prihranite 50 % v enem letu in ohranite neomejen dostop"
       ]
     },
     "Success": {
@@ -19455,9 +19462,6 @@
       ],
       "Reverse charge not supported": [
         "Shema obrnjene davčne obveznosti"
-      ],
-      "Roles and permissions": [
-        "Vloge in dovoljenja"
       ],
       "Same inbox, shorter email address": [
         "Isti nabiralnik, krajši e-poštni naslov"

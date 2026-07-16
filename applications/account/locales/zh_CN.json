@@ -408,9 +408,6 @@
       "Continue with this password": [
         "使用此密码继续"
       ],
-      "Copy": [
-        "复制"
-      ],
       "Copy address": [
         "复制邮箱地址"
       ],
@@ -962,9 +959,6 @@
       ],
       "Hide": [
         "隐藏"
-      ],
-      "Hide ${ LUMO_SHORT_APP_NAME }": [
-        "隐藏 ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "隐藏更多优势"
@@ -1518,9 +1512,6 @@
       "Select time zone": [
         "选择时区"
       ],
-      "Send": [
-        "发送​​"
-      ],
       "send auto-reply email": [
         "自动回复"
       ],
@@ -1683,9 +1674,6 @@
       "Stay": [
         "留在此页"
       ],
-      "Stop": [
-        "停止"
-      ],
       "Stop using single sign-on": [
         "不再使用单点登录"
       ],
@@ -1748,9 +1736,6 @@
       ],
       "Underline": [
         "下划线"
-      ],
-      "Undo": [
-        "撤销"
       ],
       "Undo import": [
         "撤消导入"
@@ -2194,11 +2179,6 @@
       ],
       "User admin:": [
         "用户管理员："
-      ]
-    },
-    "AdminRole_Info": {
-      "A role is a group of permissions that you can assign to the members of your organization.": [
-        "角色是一组权限，您可以将其分配给组织成员。"
       ]
     },
     "Alert": {
@@ -3276,11 +3256,32 @@
       "Status": [
         "状态"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，无法迁移此用户。"
+      ],
       "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
         "若要将您组织的数据迁移到 ${ BRAND_NAME }，请从 Google Workspace 应用市场安装 ${ BRAND_NAME } Easy Switch。安装后，请返回此处继续。"
       ],
       "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
         "要完成迁移，请确保仅保留 ${ BRAND_NAME } MX 记录。"
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消归档该用户。"
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "要迁移此用户，请在 Google Workspace 管理控制台中取消暂停该用户。"
       ],
       "Update records for receiving": [
         "更新接收记录"
@@ -11180,9 +11181,6 @@
       "here": [
         "此处"
       ],
-      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
-        "您好！请描述您想要的筛选器，我来编写 Sieve 脚本。我也可以调整编辑器中已有的内容！"
-      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "通过代理加载远程内容以隐藏识别信息，可选择将内容存储为附件"
       ],
@@ -12538,9 +12536,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "这些凭据不能用于登录我们的官方 ${ VPN_APP_NAME } 应用。${ learnMore }"
-      ],
-      "Thinking…": [
-        "正在思考…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -14672,9 +14667,6 @@
       ],
       "Date": [
         "日期"
-      ],
-      "Date format": [
-        "日期格式"
       ],
       "Days of the week": [
         "星期几"
@@ -18298,9 +18290,6 @@
       "An external address cannot be default": [
         "其他邮箱的地址不能作为首选地址"
       ],
-      "Copied to clipboard": [
-        "已复制到剪贴板"
-      ],
       "Downloaded 2FA recovery codes": [
         "下载 2FA 恢复码"
       ],
@@ -18348,9 +18337,6 @@
       ],
       "Reminder has been sent": [
         "提醒已发送"
-      ],
-      "Sieve script inserted": [
-        "Sieve 脚本已插入"
       ],
       "The key has been deleted.": [
         "安全密钥已被删除。"
@@ -19991,9 +19977,6 @@
       ],
       "Cortex Inc.": [
         "Cortex 公司"
-      ],
-      "Describe the filter you want…": [
-        "请描述您想要的筛选器…"
       ],
       "domain.com": [
         "域名.com"
@@ -24215,6 +24198,9 @@
       "Save 50% for 6 months, and keep full access": [
         "节省 50% 费用持续 6 个月，并保留所有访问权限"
       ],
+      "Save 50% for one year, and keep full access": [
+        "节省 50% 费用持续 1 年，并保留所有访问权限"
+      ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "了解 ${ MAIL_APP_NAME } 的对比优势，以及我们的独立性为何能带来不同。"
       ],
@@ -25749,9 +25735,6 @@
       "Help center": [
         "帮助中心"
       ],
-      "Help from ${ LUMO_SHORT_APP_NAME }": [
-        "来自 ${ LUMO_SHORT_APP_NAME } 的帮助"
-      ],
       "Help us improve": [
         "帮助我们改进"
       ],
@@ -26210,9 +26193,6 @@
       ],
       "Revoke certificate?": [
         "撤销证书?"
-      ],
-      "Roles and permissions": [
-        "角色与权限"
       ],
       "Same inbox, shorter email address": [
         "同一个收件箱，但使用更短的邮箱地址"
