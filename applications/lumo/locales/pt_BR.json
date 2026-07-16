@@ -1024,6 +1024,9 @@
       "I like this response": [
         "Gostei da resposta"
       ],
+      "Let ${ LUMO_SHORT_APP_NAME } out": [
+        "Deixe o ${ LUMO_SHORT_APP_NAME } sair"
+      ],
       "Light": [
         "Claro"
       ],
@@ -2104,6 +2107,12 @@
       "There was an error processing this file.": [
         "Houve um erro ao processar este arquivo."
       ],
+      "These files are no longer referred to in this conversation.": [
+        "Estes arquivos não são mais mencionados nesta conversa."
+      ],
+      "These files are referred to in the conversation.": [
+        "Estes arquivos são mencionados na conversa."
+      ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Estes arquivos pertenciam a mensagens resumidas e não são mais enviados para o modelo."
       ],
@@ -2953,6 +2962,9 @@
       ],
       "Elevate your business AI experience": [
         "Eleve o nível da experiência de IA na sua empresa"
+      ],
+      "From only": [
+        "A partir de apenas"
       ],
       "Get": [
         "Obter"
@@ -9818,6 +9830,11 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
+      ]
+    },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Você poderá atribuir funções assim que o usuário aceitar o convite."
       ]
     },
     "Validation": {
