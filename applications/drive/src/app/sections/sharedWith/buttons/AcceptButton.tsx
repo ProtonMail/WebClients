@@ -26,6 +26,7 @@ interface ToolbarProps extends BaseProps {
 type Props = ContextMenuProps | ToolbarProps;
 export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }: Props) => {
     const { acceptInvitation } = useInvitationsActions();
+    const title = c('Action').t`Accept`;
 
     const handleAcceptInvitation = async () => {
         await acceptInvitation(nodeUid, invitationUid, type);
@@ -34,8 +35,8 @@ export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
-                title={c('Action').t`Accept`}
-                icon={<IcCheckmark alt={c('Action').t`Accept`} />}
+                title={title}
+                icon={<IcCheckmark alt={title} />}
                 onClick={handleAcceptInvitation}
                 data-testid="toolbar-accept-invitation"
             />
@@ -44,8 +45,8 @@ export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }
 
     return (
         <ContextMenuButton
-            icon="checkmark"
-            name={c('Action').t`Accept`}
+            icon={<IcCheckmark />}
+            name={title}
             action={handleAcceptInvitation}
             close={close}
             testId="shared-with-me-accept-invitation"

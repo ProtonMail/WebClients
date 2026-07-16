@@ -124,7 +124,7 @@ export const PublicHeader = ({
                                     {showUploadActions && (
                                         <>
                                             <ToolbarButton
-                                                icon={<IcPlus size={4} />}
+                                                icon={<IcPlus size={4} alt={c('Action').t`Create`} />}
                                                 ref={anchorRef}
                                                 onClick={toggle}
                                                 title={c('Action').t`Create`}

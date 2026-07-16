@@ -27,6 +27,7 @@ type RemoveBookmarkButtonProps = ContextMenuProps | ToolbarProps;
 
 export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, buttonType }: RemoveBookmarkButtonProps) => {
     const { deleteBookmarks } = useBookmarksActions();
+    const title = c('Action').t`Remove`;
 
     const handleRemoveBookmark = () => {
         void deleteBookmarks(showConfirmModal, Array.isArray(uids) ? uids : [uids]);
@@ -35,8 +36,8 @@ export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, buttonType
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
-                title={c('Action').t`Remove`}
-                icon={<IcCrossBig alt={c('Action').t`Remove`} />}
+                title={title}
+                icon={<IcCrossBig alt={title} />}
                 onClick={handleRemoveBookmark}
                 data-testid="toolbar-delete-bookmark"
             />
@@ -45,8 +46,8 @@ export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, buttonType
 
     return (
         <ContextMenuButton
-            icon="cross-big"
-            name={c('Action').t`Remove`}
+            icon={<IcCrossBig />}
+            name={title}
             action={handleRemoveBookmark}
             close={close}
             testId="context-menu-remove-bookmark"

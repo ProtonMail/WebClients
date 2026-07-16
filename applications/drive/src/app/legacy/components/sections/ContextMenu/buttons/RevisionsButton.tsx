@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { generateNodeUid, getDrive } from '@proton/drive';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { useRevisionsModal } from '../../../../../modals/RevisionsModal';
@@ -28,7 +29,7 @@ export const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Pro
     return (
         <ContextMenuButton
             name={c('Action').t`See version history`}
-            icon="clock-rotate-left"
+            icon={<IcClockRotateLeft />}
             testId="context-menu-revisions"
             action={() => {
                 if (isProtonDocsDocument(selectedLink.mimeType)) {

@@ -23,7 +23,6 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const PreviewButton = ({ buttonType, close, onClick }: Props) => {
     const title = c('Action').t`Preview`;
-    const icon = 'eye';
 
     if (buttonType === 'toolbar') {
         return (
@@ -35,7 +34,7 @@ export const PreviewButton = ({ buttonType, close, onClick }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcEye />}
                 testId="context-menu-preview"
                 action={onClick}
                 close={() => close?.()}

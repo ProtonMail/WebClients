@@ -23,7 +23,6 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const DetailsButton = ({ buttonType, onClick, close }: Props) => {
     const title = c('Action').t`Details`;
-    const icon = 'info-circle';
 
     if (buttonType === 'toolbar') {
         return (
@@ -38,7 +37,13 @@ export const DetailsButton = ({ buttonType, onClick, close }: Props) => {
 
     if (buttonType === 'contextMenu') {
         return (
-            <ContextMenuButton name={title} icon={icon} testId="context-menu-details" action={onClick} close={close} />
+            <ContextMenuButton
+                name={title}
+                icon={<IcInfoCircle />}
+                testId="context-menu-details"
+                action={onClick}
+                close={close}
+            />
         );
     }
 };
