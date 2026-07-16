@@ -11,7 +11,11 @@ import {
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 interface CategoryItemProps {
     category: CategoryTab;
@@ -23,11 +27,17 @@ interface CategoryItemProps {
 export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onUpdate }: CategoryItemProps) => {
     const categoryLabel = getLabelFromCategoryId(category.id);
 
+    const isReloadDisabled = useFlag('InboxDesktopCategoryViewSettingsToggleReloadDisabled');
     const { sendReportToggleCategory, sendReportToggleNotification } = useCategoriesTelemetry();
 
     const handleToggleCategory = () => {
         onUpdate({ ...category, display: !category.display });
         sendReportToggleCategory(category.id, !category.display);
+
+        // INDA-703: remove the current implementation once 1.14.0 is released
+        if (isElectronApp && !isReloadDisabled) {
+            void invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
+        }
     };
 
     const handleToggleNotification = () => {
