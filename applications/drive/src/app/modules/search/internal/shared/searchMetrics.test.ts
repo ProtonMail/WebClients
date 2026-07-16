@@ -1,10 +1,6 @@
 import metrics from '@proton/metrics';
 
-import {
-    TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS,
-    TRANSIENT_REPORT_THROTTLE_MS,
-    sendErrorReportForSearch,
-} from './errors';
+import { SENTRY_REPORT_BURST_MAX_ATTEMPTS, SENTRY_REPORT_BURST_WINDOW_MS, sendErrorReportForSearch } from './errors';
 import { resetTransientReportBurstsForTests, searchMetrics } from './searchMetrics';
 import type { IndexerTaskKind } from './types';
 
@@ -63,74 +59,74 @@ describe('searchMetrics transient Sentry throttling', () => {
     });
 
     it('reports up to MAX_REPORTED_ATTEMPTS calls within a burst, then silences', () => {
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS; i++) {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS; i++) {
             triggerTransient('task-1');
         }
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // The next call exceeds the burst budget and must not reach Sentry.
         triggerTransient('task-1');
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // The metric counter, however, always increments — throttling is Sentry-only.
-        expect(transientCounter).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1);
+        expect(transientCounter).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
 
     it('keeps silencing further calls inside the same burst window', () => {
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 10; i++) {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 10; i++) {
             triggerTransient('task-1');
         }
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
     });
 
     it('opens a new burst once the throttle window elapses', () => {
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1; i++) {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1; i++) {
             triggerTransient('task-1');
         }
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // Advance just under the window: still throttled.
-        jest.advanceTimersByTime(TRANSIENT_REPORT_THROTTLE_MS - 1);
+        jest.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS - 1);
         triggerTransient('task-1');
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // Cross the boundary: a fresh burst opens.
         jest.advanceTimersByTime(1);
         triggerTransient('task-1');
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
 
     it('tracks bursts independently per task UID', () => {
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1; i++) {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1; i++) {
             triggerTransient('task-1');
         }
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // A different task UID has its own fresh budget even while task-1 is silenced.
         triggerTransient('task-2');
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
 
     it('clears the bucket when the task succeeds, restoring a fresh budget', () => {
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1; i++) {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1; i++) {
             triggerTransient('task-1');
         }
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         searchMetrics.markIndexerTaskSucceeded({ taskUid: 'task-1', taskKind: TASK_KIND });
 
         triggerTransient('task-1');
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
 
     it('does not throttle permanent errors', () => {
         const quotaError = new DOMException('', 'QuotaExceededError');
 
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 3; i++) {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 3; i++) {
             searchMetrics.markIndexerError({ error: quotaError, taskUid: 'task-1', taskKind: TASK_KIND });
         }
 
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 3);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 3);
         expect(sendErrorReportMock).toHaveBeenCalledWith(
             expect.stringContaining('Search permanent error'),
             quotaError,
@@ -145,16 +141,90 @@ describe('searchMetrics transient Sentry throttling', () => {
         triggerTransient('task-1');
 
         // Spread calls across most of the window; window must NOT slide.
-        jest.advanceTimersByTime(TRANSIENT_REPORT_THROTTLE_MS - 1);
-        for (let i = 0; i < TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 5; i++) {
+        jest.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS - 1);
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 5; i++) {
             triggerTransient('task-1');
         }
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // Crossing the original window's end opens a new burst even though calls
         // were happening continuously — proving the window is anchored, not sliding.
         jest.advanceTimersByTime(1);
         triggerTransient('task-1');
-        expect(sendErrorReportMock).toHaveBeenCalledTimes(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS + 1);
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
+    });
+});
+
+const triggerQuarantine = (populatorUid: string) =>
+    searchMetrics.markNodeQuarantined({ populatorUid, operation: 'index', error: new Error('boom') });
+
+describe('searchMetrics node-quarantine Sentry throttling', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date('2026-01-01T00:00:00Z'));
+        resetTransientReportBurstsForTests();
+        sendErrorReportMock.mockClear();
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    it('reports the first quarantined node for a populator UID', () => {
+        triggerQuarantine('pop-1');
+
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(1);
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            expect.stringContaining('Adding node to repair table'),
+            expect.any(Error),
+            expect.objectContaining({
+                tags: expect.objectContaining({ label: 'search-repair-node' }),
+                extra: expect.objectContaining({ operation: 'index' }),
+            })
+        );
+    });
+
+    it('reports up to MAX_REPORTED_ATTEMPTS distinct nodes within a burst, then silences', () => {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS; i++) {
+            triggerQuarantine('pop-1');
+        }
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
+
+        // A mass failure quarantining many more distinct nodes must not flood past the budget.
+        triggerQuarantine('pop-1');
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
+    });
+
+    it('tracks bursts independently per populator UID', () => {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1; i++) {
+            triggerQuarantine('pop-1');
+        }
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
+
+        // A different populator UID has its own fresh budget even while pop-1 is silenced.
+        triggerQuarantine('pop-2');
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
+    });
+
+    it('opens a new burst once the throttle window elapses', () => {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1; i++) {
+            triggerQuarantine('pop-1');
+        }
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
+
+        jest.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS);
+        triggerQuarantine('pop-1');
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
+    });
+
+    it('is independent from the transient-error throttle bucket', () => {
+        for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1; i++) {
+            triggerTransient('shared-uid');
+        }
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
+
+        // Same UID string used as a populator UID still gets its own fresh quarantine budget.
+        triggerQuarantine('shared-uid');
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
 });
