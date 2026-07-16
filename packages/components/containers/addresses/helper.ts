@@ -132,7 +132,7 @@ export const getPermissions = ({
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
-        canGrantBYOEPermissions: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
+        canGrantBYOEPermissions: isSelf && isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
         canReconnectBYOE: isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
         canDisconnectBYOE: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to manually disconnect a BYOE address
     };
