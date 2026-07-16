@@ -1,17 +1,22 @@
 import { subDays } from 'date-fns';
 
-import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
+import { FREE_USER_CHAT_DELETION_GRACE_DAYS, FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import type { Conversation } from '../../types';
 import { ConversationStatus } from '../../types';
 import {
     applyRetentionPolicy,
     countConversationsByExpirationUrgency,
     getConversationDateGroupTitle,
+    getConversationDeletionBannerTitle,
+    getConversationDeletionDaysRemaining,
     getConversationExpirationBannerTitle,
     getConversationExpirationTooltip,
     getConversationExpirationUrgency,
     getConversationRetentionDaysRemaining,
+    getConversationsEligibleForDeletion,
     groupConversationsByDate,
+    isConversationEligibleForDeletion,
+    isConversationInDeletionGracePeriod,
 } from './helpers';
 
 const createTestConversation = (
@@ -181,5 +186,127 @@ describe('countConversationsByExpirationUrgency', () => {
             expiringInOneDay: 1,
             expiringToday: 1,
         });
+    });
+});
+
+describe('getConversationDeletionDaysRemaining', () => {
+    it('returns days until permanent deletion after the retention grace period', () => {
+        const conversation = createTestConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS - 1,
+            'deletion-tomorrow'
+        );
+
+        expect(getConversationDeletionDaysRemaining(conversation)).toBe(1);
+    });
+
+    it('returns 0 on the deletion day', () => {
+        const conversation = createTestConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS,
+            'deletion-today'
+        );
+
+        expect(getConversationDeletionDaysRemaining(conversation)).toBe(0);
+    });
+});
+
+describe('isConversationEligibleForDeletion', () => {
+    it('returns false before the deletion day', () => {
+        const conversation = createTestConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS - 1,
+            'not-yet'
+        );
+
+        expect(isConversationEligibleForDeletion(conversation)).toBe(false);
+    });
+
+    it('returns true on or after the deletion day', () => {
+        const conversation = createTestConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS,
+            'eligible'
+        );
+
+        expect(isConversationEligibleForDeletion(conversation)).toBe(true);
+    });
+});
+
+describe('getConversationsEligibleForDeletion', () => {
+    it('returns only conversations past the deletion threshold', () => {
+        const recent = createTestConversation(3, 'recent');
+        const eligible = createTestConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS,
+            'eligible'
+        );
+
+        expect(getConversationsEligibleForDeletion([recent, eligible]).map((conversation) => conversation.id)).toEqual([
+            'eligible',
+        ]);
+    });
+});
+
+describe('isConversationInDeletionGracePeriod', () => {
+    it('returns false while the chat is still within the retention window', () => {
+        const conversation = createTestConversation(3, 'recent');
+
+        expect(isConversationInDeletionGracePeriod(conversation)).toBe(false);
+    });
+
+    it('returns false when the chat is due for deletion the same day it leaves the retention window', () => {
+        const conversation = createTestConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS,
+            'due-today'
+        );
+
+        expect(isConversationInDeletionGracePeriod(conversation)).toBe(false);
+    });
+});
+
+describe('getConversationDeletionBannerTitle', () => {
+    it('returns the expected title for each deletion window', () => {
+        expect(getConversationDeletionBannerTitle(1)).toContain('tomorrow');
+        expect(getConversationDeletionBannerTitle(0)).toContain('today');
+    });
+});
+
+describe('free user chat retention lifecycle', () => {
+    const createdAt = '2026-01-01T00:00:00.000Z';
+    const conversation: Conversation = {
+        id: 'lifecycle-chat',
+        spaceId: 'test-space',
+        title: 'Lifecycle chat',
+        createdAt,
+        updatedAt: createdAt,
+        starred: false,
+        status: ConversationStatus.COMPLETED,
+    };
+
+    beforeEach(() => {
+        jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    it('keeps the chat visible through day 8 and not yet eligible for deletion', () => {
+        jest.setSystemTime(new Date('2026-01-08T12:00:00.000Z'));
+
+        expect(applyRetentionPolicy([conversation], false)).toHaveLength(1);
+        expect(isConversationEligibleForDeletion(conversation)).toBe(false);
+        expect(getConversationDeletionDaysRemaining(conversation)).toBe(1);
+        expect(getConversationExpirationUrgency(conversation)).toBe('urgent');
+    });
+
+    it('hides the chat from history and makes it eligible for soft deletion on day 9', () => {
+        jest.setSystemTime(new Date('2026-01-09T12:00:00.000Z'));
+
+        expect(applyRetentionPolicy([conversation], false)).toHaveLength(0);
+        expect(isConversationEligibleForDeletion(conversation)).toBe(true);
+        expect(getConversationDeletionDaysRemaining(conversation)).toBe(0);
+    });
+
+    it('does not hide expired chats from Lumo Plus users', () => {
+        jest.setSystemTime(new Date('2026-01-09T12:00:00.000Z'));
+
+        expect(applyRetentionPolicy([conversation], true)).toHaveLength(1);
     });
 });

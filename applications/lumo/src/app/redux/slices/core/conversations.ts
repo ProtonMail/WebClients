@@ -47,6 +47,13 @@ export const pushConversationSuccess = createAction<PushConversationSuccess>('lu
 export const pushConversationNoop = createAction<PushConversationRequest>('lumo/conversation/pushNoop');
 export const pushConversationNeedsRetry = createAction<PushConversationRequest>('lumo/conversation/pushNeedsRetry');
 export const pushConversationFailure = createAction<PushConversationFailure>('lumo/conversation/pushFailure');
+export type ExpireConversationsRequest = {
+    hasLumoPlus: boolean;
+};
+
+export const expireConversationsRequest = createAction<ExpireConversationsRequest>(
+    'lumo/conversation/expireConversationsRequest'
+);
 export const locallyDeleteConversationFromLocalRequest = createAction<ConversationId>('lumo/conversation/locallyDeleteFromLocalRequest'); // prettier-ignore
 export const locallyDeleteConversationFromRemoteRequest = createAction<ConversationId>('lumo/conversation/locallyDeleteFromRemoteRequest'); // prettier-ignore
 export const locallyRefreshConversationFromRemoteRequest = createAction<RemoteConversation>('lumo/conversation/refreshFromRemoteRequest'); // prettier-ignore

@@ -6,11 +6,11 @@ import { NodeType } from '@proton/drive';
 import { useDriveIndexing } from '../providers/DriveIndexingProvider';
 import {
     cancelFolderIndexing,
-    cancelFolderIndexingForSpace,
     clearFolderIndexingCancellation,
     isFolderIndexingCancelled,
 } from '../services/driveFolderIndexingState';
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
+import { removeIndexedContentForSpace } from '../services/removeIndexedContentForSpace';
 import { SearchService } from '../services/search/searchService';
 import type { SpaceId } from '../types';
 import type { DriveDocument, FolderIndexingStatus } from '../types/documents';
@@ -114,34 +114,13 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const removeIndexedFoldersBySpace = useCallback(
         async (spaceId: SpaceId) => {
             try {
-                console.log('[DriveIndexing] Removing indexed folders for space:', spaceId);
-                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
-                const foldersToRemove = latestFolders.filter((f) => f.spaceId === spaceId);
-                if (foldersToRemove.length === 0) {
-                    console.log('[DriveIndexing] No indexed folders found for space:', spaceId);
-                    return;
-                }
-
-                cancelFolderIndexingForSpace(foldersToRemove.map((folder) => folder.nodeUid));
+                removeIndexedContentForSpace(spaceId, user?.ID);
                 resetIndexingStatus();
-
-                const updatedFolders = latestFolders.filter((f) => f.spaceId !== spaceId);
-                updateSettings({
-                    indexedDriveFolders: updatedFolders,
-                    _autoSave: true,
-                });
-
-                if (user?.ID) {
-                    const searchService = SearchService.get(user.ID);
-                    searchService.removeDocumentsBySpace(spaceId);
-                }
-
-                console.log('[DriveIndexing] Removed', foldersToRemove.length, 'folders for space:', spaceId);
             } catch (error) {
                 console.error('Failed to remove indexed folders for space:', error);
             }
         },
-        [resetIndexingStatus, store, updateSettings, user?.ID]
+        [resetIndexingStatus, user?.ID]
     );
 
     // Recursively collect all files from a folder and its subfolders
