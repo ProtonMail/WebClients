@@ -763,8 +763,6 @@ export { default as useOpenDrawerOnLoad } from './hooks/drawer/useOpenDrawerOnLo
 export { default as useToggleDrawerApp } from './hooks/drawer/useToggleDrawerApp';
 export { useDrivePlan } from './hooks/drive/useDrivePlan';
 export { default as useShortDomainAddress } from './hooks/mail/useShortDomainAddress';
-export { default as useIsSecurityCheckupAvailable } from './hooks/securityCheckup/useIsSecurityCheckupAvailable';
-export { default as useSecurityCheckup } from './hooks/securityCheckup/useSecurityCheckup';
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
 export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';

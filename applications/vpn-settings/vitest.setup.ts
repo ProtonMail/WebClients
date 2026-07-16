@@ -135,8 +135,3 @@ vi.mock('@proton/llm/lib/hooks/useAssistant.tsx', () => {
         })),
     };
 });
-
-vi.mock('@proton/account/securityCheckup/listener', () => ({
-    __esModule: true,
-    securityCheckupListener: vi.fn().mockReturnValue({}),
-}));

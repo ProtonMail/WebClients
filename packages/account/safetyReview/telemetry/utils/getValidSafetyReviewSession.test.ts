@@ -6,7 +6,7 @@ import { type SafetyReviewTelemetrySession, getValidSafetyReviewSession } from '
 const today = new Date('2005-05-25');
 jest.useFakeTimers().setSystemTime(today);
 
-describe('getValidSecurityCheckupSession', () => {
+describe('getValidSafetyReviewSession', () => {
     test('returns new session if current session is undefined', () => {
         const currentSession = undefined;
         const currentCohort = SafetyReviewCohort.ACCOUNT_RECOVERY_ENABLED;

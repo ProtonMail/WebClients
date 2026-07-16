@@ -2,8 +2,6 @@ import { createContext, useCallback, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { selectSecurityCheckup } from '@proton/account/securityCheckup/slice';
-import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
 import useApi from '@proton/components/hooks/useApi';
 import { useSelector, useStore } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryMeasurementGroups, TelemetryRecoverySettingsEvents } from '@proton/shared/lib/api/telemetry';
@@ -21,8 +19,7 @@ export const useRecoverySettingsTelemetry = () => {
     const api = useApi();
     const variant = useContext(RecoverySettingsTelemetryVariantContext);
     const store = useStore();
-    const { loading: recoveryStateLoading } = useSelector(selectRecoveryState);
-    const { loading: securityCheckupLoading } = useSecurityCheckup();
+    const { loading } = useSelector(selectRecoveryState);
 
     const location = useLocation();
     const appName = getAppFromPathnameSafe(location.pathname);
@@ -38,14 +35,13 @@ export const useRecoverySettingsTelemetry = () => {
         app_name: appName,
         ...(variant === 'B' && { score_banner_variant: 'B2' }),
     };
-    const loading = recoveryStateLoading || securityCheckupLoading;
 
     const getCurrentRecoveryTelemetryDimensions = useCallback(() => {
         const state = store.getState();
         const {
             recoveryScore: { score },
+            cohort,
         } = selectRecoveryState(state);
-        const { cohort } = selectSecurityCheckup(state);
 
         return {
             cohort: cohort,
