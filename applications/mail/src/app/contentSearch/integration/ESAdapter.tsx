@@ -86,31 +86,27 @@ export class ESAdapter implements Functions {
         if (!isSearch || !esSearchParams) {
             return false;
         }
-        try {
-            if (this.lastSearch?.update(esSearchParams)) {
-                // `useApplyEncryptedSearch` invokes this more than once for the same query (each run first
-                // re-dispatches a pending state), so — like the legacy `useEncryptedSearch` — every call must
-                // end by handing the current results to `setResultsList`. Otherwise the second call leaves the
-                // list showing the pending state with no results ever arriving.
-                if (this.lastSearch.results) {
-                    setResultsList(this.lastSearch.results);
-                }
-            } else {
-                this.lastSearch?.dispose();
-                this.lastSearch = this.searchService.search(esSearchParams);
-                this.lastSearch.onResults.subscribe(setResultsList);
-                // waits for an error before the first results.
-                // needed because of the awkward error handling model in
-                // useApplyEncryptedSearch that mixes a streaming model
-                // for results but still awaits for errors.
-                // if we change that, we can also get rid of this
-                // and the onDisposed event on Search.
-                await errorBeforeFirstResults(this.lastSearch);
+        if (this.lastSearch?.update(esSearchParams)) {
+            // `useApplyEncryptedSearch` invokes this more than once for the same query (each run first
+            // re-dispatches a pending state), so — like the legacy `useEncryptedSearch` — every call must
+            // end by handing the current results to `setResultsList`. Otherwise the second call leaves the
+            // list showing the pending state with no results ever arriving.
+            if (this.lastSearch.results) {
+                setResultsList(this.lastSearch.results);
             }
-            return true;
-        } catch (err) {
-            return false;
+        } else {
+            this.lastSearch?.dispose();
+            this.lastSearch = this.searchService.search(esSearchParams);
+            this.lastSearch.onResults.subscribe(setResultsList);
+            // waits for an error before the first results.
+            // needed because of the awkward error handling model in
+            // useApplyEncryptedSearch that mixes a streaming model
+            // for results but still awaits for errors.
+            // if we change that, we can also get rid of this
+            // and the onDisposed event on Search.
+            await errorBeforeFirstResults(this.lastSearch);
         }
+        return true;
     }
 
     // Highlighting is purely keyword-driven (no index access), so it is ported verbatim from
