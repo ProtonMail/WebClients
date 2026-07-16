@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { IcLink } from '@proton/icons/icons/IcLink';
+
 import { useActions } from '../../../../../legacy/store';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
@@ -11,6 +13,7 @@ interface Props {
 
 const CopyLinkButton = ({ shareId, linkId, close }: Props) => {
     const { copyShareLinkToClipboard } = useActions(); // We can use it here since we don't need confirmModal
+    const title = c('Action').t`Copy link`;
 
     if (!copyShareLinkToClipboard) {
         return null;
@@ -18,8 +21,8 @@ const CopyLinkButton = ({ shareId, linkId, close }: Props) => {
 
     return (
         <ContextMenuButton
-            name={c('Action').t`Copy link`}
-            icon="link"
+            name={title}
+            icon={<IcLink />}
             testId="context-menu-copy-link"
             action={() => copyShareLinkToClipboard(new AbortController().signal, shareId, linkId)}
             close={close}

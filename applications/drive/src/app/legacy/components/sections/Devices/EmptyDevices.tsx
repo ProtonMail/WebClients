@@ -4,7 +4,6 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
 import emptyDevicesImg from '@proton/styles/assets/img/illustrations/empty-devices.svg';
 
 import { useDesktopDownloads } from '../../../../legacy/hooks/drive/useDesktopDownloads';
@@ -39,7 +38,7 @@ const EmptyDevices: FC<Props> = () => {
                                 color="norm"
                                 shape={index === 0 ? 'solid' : 'outline'}
                             >
-                                <Icon name={icon} />
+                                {icon}
                                 <span>
                                     {
                                         // translator: Download button for Drive desktop: "Download Windows app"

@@ -21,6 +21,14 @@ export const CreateNewFileButton = ({ type, close, onClick }: ActionButtonProps)
     }
 
     if (type === 'context') {
-        return <ContextMenuButton testId="toolbar-new-file" icon="file" name={title} action={onClick} close={close} />;
+        return (
+            <ContextMenuButton
+                testId="toolbar-new-file"
+                icon={<IcFile />}
+                name={title}
+                action={onClick}
+                close={close}
+            />
+        );
     }
 };

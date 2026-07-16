@@ -9,7 +9,7 @@ interface CreateNewSheetButtonProps {
 export const CreateNewSheetButton = ({ onClick }: CreateNewSheetButtonProps) => {
     return (
         <ToolbarButton
-            icon={<MimeIcon name="proton-sheet" />}
+            icon={<MimeIcon name="proton-sheet" alt={c('sheets_2025:Action').t`New spreadsheet`} />}
             title={c('sheets_2025:Action').t`New spreadsheet`}
             onClick={onClick}
             data-testid="toolbar-new-sheet"

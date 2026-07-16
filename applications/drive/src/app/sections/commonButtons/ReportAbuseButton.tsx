@@ -42,7 +42,7 @@ export const ReportAbuseButton = ({ onClick, close, buttonType }: Props) => {
 
     return (
         <ContextMenuButton
-            icon="flag"
+            icon={<IcFlag />}
             name={c('Action').t`Report abuse`}
             action={onClick}
             close={close}

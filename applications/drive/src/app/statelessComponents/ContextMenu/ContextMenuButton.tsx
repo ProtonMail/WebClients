@@ -1,11 +1,10 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 
-import { DropdownMenuButton, Icon } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
+import { DropdownMenuButton } from '@proton/components';
 
 interface Props {
     name: string;
-    icon: IconName | ReactElement<any>;
+    icon: ReactElement;
     testId: string;
     action: () => Promise<void> | void;
     loading?: boolean;
@@ -36,7 +35,7 @@ export const ContextMenuButton = ({
             data-testid={testId}
         >
             <div className="flex items-center flex-nowrap text-left shrink-0">
-                {typeof icon === 'string' ? <Icon className="mr-2 shrink-0" name={icon} /> : icon}
+                <span className="flex items-center shrink-0 mr-2">{icon}</span>
                 {name}
             </div>
             {children}

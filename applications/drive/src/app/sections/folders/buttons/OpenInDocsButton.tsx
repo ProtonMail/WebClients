@@ -44,17 +44,24 @@ export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
     };
 
     const title = getOpenInDocsString(documentInfo, selectedItem.mimeType);
-    const icon = <MimeIcon name={getOpenInDocsMimeIconName(documentInfo)} className="mr-2" />;
+    const iconName = getOpenInDocsMimeIconName(documentInfo);
 
     if (type === 'toolbar') {
-        return <ToolbarButton title={title} icon={icon} onClick={onClick} data-testid="toolbar-open-document" />;
+        return (
+            <ToolbarButton
+                title={title}
+                icon={<MimeIcon name={iconName} alt={title} />}
+                onClick={onClick}
+                data-testid="toolbar-open-document"
+            />
+        );
     }
 
     if (type === 'context') {
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<MimeIcon name={iconName} />}
                 testId="context-menu-open-document"
                 action={onClick}
                 close={() => close?.()}

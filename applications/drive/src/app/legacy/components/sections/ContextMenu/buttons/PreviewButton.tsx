@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { generateNodeUid, getDrive } from '@proton/drive';
+import { IcEye } from '@proton/icons/icons/IcEye';
 
 import { useDrivePreviewModal } from '../../../../../modals/preview';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
@@ -19,7 +20,7 @@ const PreviewButton = ({ shareId, volumeId, linkId, close }: Props) => {
         <>
             <ContextMenuButton
                 name={c('Action').t`Preview`}
-                icon="eye"
+                icon={<IcEye />}
                 testId="context-menu-preview"
                 action={() => {
                     showPreviewModal({

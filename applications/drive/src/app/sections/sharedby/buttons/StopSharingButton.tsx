@@ -7,11 +7,13 @@ import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { CommonButtonProps } from '../../commonButtons/types';
 
 export const StopSharingButton = ({ onClick, close, buttonType }: CommonButtonProps) => {
+    const title = c('Action').t`Stop sharing`;
+
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
-                title={c('Action').t`Stop sharing`}
-                icon={<IcLinkSlash />}
+                title={title}
+                icon={<IcLinkSlash alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-button-stop-sharing"
             />
@@ -20,8 +22,8 @@ export const StopSharingButton = ({ onClick, close, buttonType }: CommonButtonPr
 
     return (
         <ContextMenuButton
-            name={c('Action').t`Stop sharing`}
-            icon="link-slash"
+            name={title}
+            icon={<IcLinkSlash />}
             testId="context-menu-stop-sharing"
             action={onClick}
             close={close}

@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcLink } from '@proton/icons/icons/IcLink';
 
 import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
 
@@ -40,13 +42,11 @@ export const CopyLinkButton = ({ buttonType, onClick, close }: Props) => {
         }
     };
 
-    const iconName = showSuccess ? 'checkmark' : 'link';
-
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={iconName} alt={title} />}
+                icon={showSuccess ? <IcCheckmark alt={title} /> : <IcLink alt={title} />}
                 onClick={handleClick}
                 disabled={isLoading}
                 data-testid="toolbar-copy-link"
@@ -59,7 +59,7 @@ export const CopyLinkButton = ({ buttonType, onClick, close }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={iconName}
+                icon={showSuccess ? <IcCheckmark /> : <IcLink />}
                 testId="context-menu-copy-link"
                 action={handleClick}
                 close={close}

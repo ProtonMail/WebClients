@@ -1,10 +1,7 @@
-import { memo } from 'react';
-
-import { Icon } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
+import { type ReactElement, memo } from 'react';
 
 type Props = {
-    items: ({ text: string; icon?: IconName } | false)[];
+    items: ({ text: string; icon?: ReactElement } | false)[];
 };
 
 export const IconList = memo(({ items }: Props) => {
@@ -19,7 +16,7 @@ export const IconList = memo(({ items }: Props) => {
 
                 return (
                     <li key={text} className="flex flex-row flex-nowrap items-start gap-2 my-1">
-                        {icon ? <Icon name={icon} className="shrink-0 mt-0.5" /> : null}
+                        {icon}
                         <span className="flex-1">{text}</span>
                     </li>
                 );

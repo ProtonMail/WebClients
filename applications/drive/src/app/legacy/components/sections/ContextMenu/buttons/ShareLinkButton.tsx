@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { generateNodeUid, getDrive } from '@proton/drive';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
@@ -18,7 +20,7 @@ const ShareLinkButton = ({ volumeId, linkId, showSharingModal, isSharedWithMe, c
     return (
         <ContextMenuButton
             name={c('Action').t`Share`}
-            icon={isSharedWithMe ? 'users' : 'user-plus'}
+            icon={isSharedWithMe ? <IcUsers /> : <IcUserPlus />}
             testId="context-menu-share-link"
             // Forced to getDrive as it's legacy stuff not used in shared with me or shared by me
             action={() => showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId), drive: getDrive() })}

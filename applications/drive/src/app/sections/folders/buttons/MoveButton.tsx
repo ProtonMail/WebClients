@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 
 import { noSelection } from '../../../legacy/components/sections/ToolbarButtons/utils';
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
@@ -26,13 +27,12 @@ export const MoveButton = ({ selectedItems, type, onClick, close }: Props) => {
         return null;
     }
     const title = c('Action').t`Move to folder`;
-    const icon = 'arrows-cross' as const;
 
     if (type === 'toolbar') {
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcArrowsCross alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-move"
             />
@@ -40,6 +40,14 @@ export const MoveButton = ({ selectedItems, type, onClick, close }: Props) => {
     }
 
     if (type === 'context') {
-        return <ContextMenuButton name={title} icon={icon} testId="context-menu-move" action={onClick} close={close} />;
+        return (
+            <ContextMenuButton
+                name={title}
+                icon={<IcArrowsCross />}
+                testId="context-menu-move"
+                action={onClick}
+                close={close}
+            />
+        );
     }
 };

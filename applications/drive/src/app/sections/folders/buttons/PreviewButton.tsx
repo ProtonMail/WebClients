@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { hasFoldersSelected, isMultiSelect } from '../../../legacy/components/sections/ToolbarButtons/utils';
@@ -34,16 +35,10 @@ export const PreviewButton = ({ selectedItems, type, close, onClick }: Props) =>
     }
 
     const title = c('Action').t`Preview`;
-    const icon = 'eye';
 
     if (type === 'toolbar') {
         return (
-            <ToolbarButton
-                title={title}
-                icon={<Icon name={icon} alt={title} />}
-                onClick={onClick}
-                data-testid="toolbar-preview"
-            />
+            <ToolbarButton title={title} icon={<IcEye alt={title} />} onClick={onClick} data-testid="toolbar-preview" />
         );
     }
 
@@ -51,7 +46,7 @@ export const PreviewButton = ({ selectedItems, type, close, onClick }: Props) =>
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcEye />}
                 testId="context-menu-preview"
                 action={onClick}
                 close={() => close?.()}
