@@ -24,14 +24,15 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const OpenBookmarkButton = ({ url, close, buttonType }: Props) => {
     const { openBookmark } = useBookmarksActions();
+    const title = c('Action').t`Open`;
 
     const handleOpen = () => openBookmark(url);
 
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
-                title={c('Action').t`Open`}
-                icon={<IcArrowOutSquare alt={c('Action').t`Open`} />}
+                title={title}
+                icon={<IcArrowOutSquare alt={title} />}
                 onClick={handleOpen}
                 data-testid="toolbar-open-bookmark"
             />
@@ -40,8 +41,8 @@ export const OpenBookmarkButton = ({ url, close, buttonType }: Props) => {
 
     return (
         <ContextMenuButton
-            icon="arrow-out-square"
-            name={c('Action').t`Open`}
+            icon={<IcArrowOutSquare />}
+            name={title}
             action={handleOpen}
             close={close}
             testId="context-menu-open-bookmark"

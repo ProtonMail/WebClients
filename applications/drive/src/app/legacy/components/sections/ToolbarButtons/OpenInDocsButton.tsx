@@ -24,10 +24,12 @@ const OpenInDocsButton = ({ selectedBrowserItems }: Props) => {
         return null;
     }
 
+    const title = getOpenInDocsString(openInDocsInfo, selectedBrowserItem?.mimeType ?? '');
+
     return (
         <ToolbarButton
-            title={getOpenInDocsString(openInDocsInfo, selectedBrowserItem?.mimeType ?? '')}
-            icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocsInfo)} className="mr-2" />}
+            title={title}
+            icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocsInfo)} className="mr-2" alt={title} />}
             onClick={() => {
                 if (!selectedBrowserItem) {
                     return;

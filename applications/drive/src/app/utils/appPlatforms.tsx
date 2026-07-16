@@ -1,11 +1,14 @@
-import type { IconName } from '@proton/icons/types';
+import type { ReactElement } from 'react';
+
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 import { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 import { isArm, isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
 export type PlatformInfo = {
     platform: DESKTOP_PLATFORMS;
-    icon: IconName;
+    icon: ReactElement;
     name: string;
     isPreferred: boolean;
     hideIfUnavailable?: boolean;
@@ -27,21 +30,21 @@ export const appPlatforms = (
     [
         {
             platform: DESKTOP_PLATFORMS.WINDOWS_X64,
-            icon: 'brand-windows',
+            icon: <IcBrandWindows />,
             name: 'Windows',
             isPreferred: isWindows() && !isArm(),
             manifestVersion: 'v1',
         },
         {
             platform: DESKTOP_PLATFORMS.WINDOWS_ARM,
-            icon: 'brand-windows',
+            icon: <IcBrandWindows />,
             name: 'Windows ARM',
             isPreferred: isWindows() && isArm(),
             manifestVersion: 'v1',
         },
         {
             platform: DESKTOP_PLATFORMS.MACOS,
-            icon: 'brand-apple',
+            icon: <IcBrandApple />,
             name: 'macOS',
             isPreferred: isMac(),
             hideIfUnavailable: true,

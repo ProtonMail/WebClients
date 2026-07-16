@@ -1,12 +1,14 @@
 import { Fragment } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcClockCircleFilled } from '@proton/icons/icons/IcClockCircleFilled';
-import type { IconName } from '@proton/icons/types';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcKey } from '@proton/icons/icons/IcKey';
 
 import { Container } from '../Container';
 import type { OnboardingProps } from '../interface';
@@ -14,19 +16,19 @@ import type { OnboardingProps } from '../interface';
 import './PendingInvitationStep.scss';
 
 export const PendingInvitationStep = () => {
-    const steps: { icon: IconName; text: string; isDone: boolean }[] = [
+    const steps: { icon: ReactElement; text: string; isDone: boolean }[] = [
         {
-            icon: 'envelope',
+            icon: <IcEnvelope size={6} />,
             text: c('Onboarding Info').t`Invitation received`,
             isDone: true,
         },
         {
-            icon: 'envelope-open',
+            icon: <IcEnvelopeOpen size={6} />,
             text: c('Onboarding Info').t`Invitation accepted`,
             isDone: true,
         },
         {
-            icon: 'key',
+            icon: <IcKey size={6} />,
             text: c('Onboarding Info').t`Final approval pending`,
             isDone: false,
         },
@@ -45,7 +47,7 @@ export const PendingInvitationStep = () => {
                             <Fragment key={text}>
                                 <div className={'rounded bg-weak p-4 text-xl flex items-center justify-space-between'}>
                                     <div className="flex items-center gap-2">
-                                        <Icon name={icon} size={6} />
+                                        {icon}
                                         {text}
                                     </div>
                                     {isDone ? (

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useActions } from '../../../../../legacy/store';
@@ -24,7 +25,7 @@ const RenameButton = ({ link, showRenameModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Rename`}
-            icon="pen-square"
+            icon={<IcPenSquare />}
             testId="context-menu-rename"
             action={() =>
                 showRenameModal({

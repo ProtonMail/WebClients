@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const UploadFileButton = ({ type, close, onClick }: ActionButtonProps) => {
     const title = c('Action').t`Upload file`;
-    const icon = 'file-arrow-in-up' as const;
 
     const handleClickWithClose = () => {
         onClick();
@@ -19,7 +19,7 @@ export const UploadFileButton = ({ type, close, onClick }: ActionButtonProps) =>
             <>
                 <ToolbarButton
                     data-testid="toolbar-upload-file"
-                    icon={<Icon name={icon} alt={title} />}
+                    icon={<IcFileArrowInUp alt={title} />}
                     title={title}
                     onClick={handleClickWithClose}
                 />
@@ -32,7 +32,7 @@ export const UploadFileButton = ({ type, close, onClick }: ActionButtonProps) =>
             <>
                 <ContextMenuButton
                     testId="context-menu-upload-file"
-                    icon={icon}
+                    icon={<IcFileArrowInUp />}
                     name={title}
                     action={handleClickWithClose}
                     close={close}

@@ -39,7 +39,7 @@ export const RevisionsButton = ({ buttonType, close, onClick }: Props) => {
         return (
             <ContextMenuButton
                 name={title}
-                icon={'clock-rotate-left'}
+                icon={<IcClockRotateLeft />}
                 testId={dataTestId}
                 action={onClick}
                 close={() => close?.()}

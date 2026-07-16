@@ -12,7 +12,7 @@ export const CreateNewSheetButton = ({ type, close, onClick }: ActionButtonProps
         return (
             <ToolbarButton
                 data-testid="toolbar-new-sheet"
-                icon={<MimeIcon name="proton-sheet" />}
+                icon={<MimeIcon name="proton-sheet" alt={title} />}
                 title={title}
                 onClick={onClick}
             />

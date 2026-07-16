@@ -24,7 +24,6 @@ type Props = ContextMenuProps | ToolbarProps;
 
 export const DeleteButton = ({ buttonType, deletionType, close, onClick }: Props) => {
     const title = deletionType === 'delete' ? c('Action').t`Delete` : c('Action').t`Move to trash`;
-    const icon = 'trash';
 
     if (buttonType === 'toolbar') {
         return (
@@ -41,7 +40,7 @@ export const DeleteButton = ({ buttonType, deletionType, close, onClick }: Props
         return (
             <ContextMenuButton
                 name={title}
-                icon={icon}
+                icon={<IcTrash />}
                 testId={`context-menu-${deletionType}`}
                 action={onClick}
                 close={() => close?.()}

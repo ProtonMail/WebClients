@@ -2,6 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcBolt } from '@proton/icons/icons/IcBolt';
+import { IcBroom } from '@proton/icons/icons/IcBroom';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import macosImg from '@proton/styles/assets/img/onboarding/drive-v2-macos.svg';
 import windowsImg from '@proton/styles/assets/img/onboarding/drive-v2-windows.svg';
@@ -26,15 +29,15 @@ export const DesktopAppStep = ({ platform }: Props) => {
             <IconList
                 items={[
                     {
-                        icon: 'bolt',
+                        icon: <IcBolt />,
                         text: c('Onboarding Info').t`Faster uploads for large or multiple files`,
                     },
                     {
-                        icon: 'tv',
+                        icon: <IcTv />,
                         text: c('Onboarding Info').t`Organize files right from your desktop`,
                     },
                     {
-                        icon: 'broom',
+                        icon: <IcBroom />,
                         text: c('Onboarding Info').t`Free up hard drive space on your computer`,
                     },
                 ]}
