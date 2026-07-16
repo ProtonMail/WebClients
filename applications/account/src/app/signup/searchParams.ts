@@ -155,6 +155,9 @@ export const getSignupSearchParams = (
 
     const visitorId = searchParams.get('visitorId') || undefined;
 
+    // vpn2024SignupExperiment
+    const vpn2024SignupExperimentVariant = searchParams.get('v') || undefined;
+
     return {
         email,
         coupon,
@@ -181,6 +184,7 @@ export const getSignupSearchParams = (
         city,
         streetAddress,
         visitorId,
+        vpn2024SignupExperimentVariant,
     };
 };
 

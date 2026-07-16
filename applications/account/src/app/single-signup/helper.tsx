@@ -3,8 +3,13 @@ import { c } from 'ttag';
 import { VpnLogo } from '@proton/components';
 import { getVPNPassProPlan, getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
+import type { Currency } from '@proton/payments/core/interface';
+import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
+import { getPrice } from '@proton/payments/core/price-helpers';
+
+import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
 
 export const getUpsellShortPlan = (plan: Plan | undefined) => {
     if (!plan) {
@@ -86,4 +91,40 @@ export const getBillingCycleText = (cycle: CYCLE) => {
         // translator: full sentence is "Get 33% off with a 30-month subscription"
         return c('vpn_2step: discount').t`30-month`;
     }
+};
+
+/**
+ * Per-month price of adding Proton Pass on top of VPN Plus, i.e. the VPN+Pass bundle minus VPN Plus.
+ */
+export const getVpnPassBundleUpsellMonthlyPrice = ({
+    cycle,
+    currency,
+    plansMap,
+    subscriptionDataCycleMapping,
+}: {
+    cycle: CYCLE;
+    currency: Currency;
+    plansMap: PlansMap;
+    subscriptionDataCycleMapping: SubscriptionDataCycleMapping | undefined;
+}): number => {
+    const vpnCheck = subscriptionDataCycleMapping?.[PLANS.VPN2024]?.[cycle]?.checkResult;
+    const bundleCheck = subscriptionDataCycleMapping?.[PLANS.VPN_PASS_BUNDLE]?.[cycle]?.checkResult;
+
+    if (vpnCheck && bundleCheck && vpnCheck.Currency === currency && bundleCheck.Currency === currency) {
+        const bundlePerMonth = getCheckoutUi({
+            planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+            plansMap,
+            checkResult: bundleCheck,
+        }).withDiscountPerMonth;
+        const vpnPerMonth = getCheckoutUi({
+            planIDs: { [PLANS.VPN2024]: 1 },
+            plansMap,
+            checkResult: vpnCheck,
+        }).withDiscountPerMonth;
+        return bundlePerMonth - vpnPerMonth;
+    }
+
+    const vpnPrice = getPrice({ [PLANS.VPN2024]: 1 }, cycle, plansMap) / cycle;
+    const bundlePrice = getPrice({ [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle, plansMap) / cycle;
+    return bundlePrice - vpnPrice;
 };
