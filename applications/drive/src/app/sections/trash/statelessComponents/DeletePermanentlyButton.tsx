@@ -8,15 +8,27 @@ import type { CommonButtonProps } from '../../commonButtons/types';
 
 export const DeletePermanentlyButton = ({ buttonType, onClick, close }: CommonButtonProps) => {
     const title = c('Action').t`Delete permanently`;
-    const icon = 'cross-circle';
 
     if (buttonType === 'toolbar') {
-        return <ToolbarButton title={title} icon={<IcCrossCircle />} onClick={onClick} data-testid="toolbar-delete" />;
+        return (
+            <ToolbarButton
+                title={title}
+                icon={<IcCrossCircle alt={title} />}
+                onClick={onClick}
+                data-testid="toolbar-delete"
+            />
+        );
     }
 
     if (buttonType === 'contextMenu') {
         return (
-            <ContextMenuButton name={title} icon={icon} testId="context-menu-delete" action={onClick} close={close} />
+            <ContextMenuButton
+                name={title}
+                icon={<IcCrossCircle />}
+                testId="context-menu-delete"
+                action={onClick}
+                close={close}
+            />
         );
     }
 };

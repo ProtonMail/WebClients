@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { type ReactElement, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
 import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
-import type { IconName } from '@proton/icons/types';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -52,14 +56,14 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelecte
     const menuItems: {
         hidden: boolean;
         name: string;
-        icon: IconName;
+        icon: ReactElement;
         testId: string;
         action: () => void;
     }[] = [
         {
             hidden: !canShareSelectedItem,
             name: c('Action').t`Share`,
-            icon: 'user-plus',
+            icon: <IcUserPlus />,
             testId: 'actions-dropdown-share-link',
             action: () =>
                 // This is only used for standard folder view and not photos so we can force getDrive
@@ -68,14 +72,14 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelecte
         {
             hidden: !isEditor,
             name: c('Action').t`Move to folder`,
-            icon: 'arrows-cross',
+            icon: <IcArrowsCross />,
             testId: 'actions-dropdown-move',
             action: () => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedItems) }),
         },
         {
             hidden: isMultiSelect || !isEditor,
             name: c('Action').t`Rename`,
-            icon: 'pen-square',
+            icon: <IcPenSquare />,
             testId: 'actions-dropdown-rename',
             action: () => {
                 showRenameModal({
@@ -86,7 +90,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelecte
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
-            icon: 'info-circle',
+            icon: <IcInfoCircle />,
             testId: 'actions-dropdown-details',
             action: () =>
                 showDetailsModal({
@@ -96,14 +100,14 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelecte
         {
             hidden: !isMultiSelect || hasFoldersSelected,
             name: c('Action').t`Details`,
-            icon: 'info-circle',
+            icon: <IcInfoCircle />,
             testId: 'actions-dropdown-details',
             action: () => showFilesDetailsModal({ nodeUids: toNodeUidsHelper(selectedItems) }),
         },
         {
             hidden: !isEditor,
             name: c('Action').t`Move to trash`,
-            icon: 'trash',
+            icon: <IcTrash />,
             testId: 'actions-dropdown-trash',
             action: () =>
                 trashItems(
@@ -124,7 +128,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelecte
                 key={item.name}
                 hidden={item.hidden}
                 onContextMenu={(e) => e.stopPropagation()}
-                className="flex flex-nowrap items-center text-left"
+                className="flex flex-nowrap gap-2 items-center text-left"
                 onClick={(e) => {
                     e.stopPropagation();
                     item.action();
@@ -132,7 +136,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelecte
                 }}
                 data-testid={item.testId}
             >
-                <Icon className="mr-2" name={item.icon} />
+                {item.icon}
                 {item.name}
             </DropdownMenuButton>
         ));
