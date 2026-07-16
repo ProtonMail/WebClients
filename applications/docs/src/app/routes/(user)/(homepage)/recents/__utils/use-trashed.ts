@@ -5,7 +5,7 @@ import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetyp
 import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
-import { nodeToTrashedItemValue } from './create-document-items'
+import { nodeToTrashedDocumentItem } from './create-document-items'
 import type { SDKEventListener } from '~/drive-sdk/manage-events-subscription'
 import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
 
@@ -39,36 +39,27 @@ export function useTrashed(drive: ProtonDriveClient) {
       })
     }
 
-    setTrashedDocumentItems(nodes.map(nodeToTrashedItemValue))
+    setTrashedDocumentItems(nodes.map(nodeToTrashedDocumentItem))
     setIsTrashLoading(false)
   }, [createNotification, drive])
 
   const trashedListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
-    try {
-      const drive = getDrive()
+    const drive = getDrive()
 
-      if (event.type === 'node_updated') {
-        if (event.isTrashed) {
-          const node = await drive.getNode(event.nodeUid)
-          if (!mimeTypeToProtonDocumentType(node.mediaType)) {
-            return
-          }
-          setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
-        } else {
-          setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
+    if (event.type === 'node_updated') {
+      if (event.isTrashed) {
+        const node = await drive.getNode(event.nodeUid)
+        if (!mimeTypeToProtonDocumentType(node.mediaType)) {
+          return
         }
-      }
-
-      if (event.type === 'node_deleted') {
+        setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
+      } else {
         setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
       }
-    } catch (error) {
-      traceError(error, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsLoadRecentsWithDriveSDK',
-        },
-      })
+    }
+
+    if (event.type === 'node_deleted') {
+      setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
     }
   }, [])
 
@@ -84,10 +75,10 @@ function createOrUpdateItem(previousItems: RecentDocumentsItemValue[], node: Nod
   const existingItemIndex = previousItems.findIndex((item) => node.uid === generateNodeUid(item.volumeId, item.linkId))
   if (existingItemIndex >= 0) {
     const updatedItems = [...previousItems]
-    updatedItems[existingItemIndex] = nodeToTrashedItemValue(node)
+    updatedItems[existingItemIndex] = nodeToTrashedDocumentItem(node)
     return updatedItems
   } else {
-    return [...previousItems, nodeToTrashedItemValue(node)]
+    return [...previousItems, nodeToTrashedDocumentItem(node)]
   }
 }
 

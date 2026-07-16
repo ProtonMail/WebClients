@@ -7,7 +7,7 @@ import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/re
 /**
  * Creates value for RecentDocumentsItem instances based on node data from SDK and response from /recents endpoint
  */
-export function createItemValue(
+export function createDocumentItem(
   node: NodeEntity,
   documentDetails: {
     isSharedWithMe: boolean
@@ -58,7 +58,7 @@ function getLocation(path: string[], isSharedWithMe: boolean) {
   return { type: 'root' } as const
 }
 
-export function nodeToTrashedItemValue(node: NodeEntity): RecentDocumentsItemValue {
+export function nodeToTrashedDocumentItem(node: NodeEntity): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
   const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
 
