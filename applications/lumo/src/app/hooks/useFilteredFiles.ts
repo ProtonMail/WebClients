@@ -5,7 +5,8 @@ import type { ContextFilter } from '../llm';
 import { getSummarizedMessageIds } from '../llm/compaction';
 import { useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters } from '../redux/selectors';
-import { type Attachment, type Message, type SpaceId, isAttachment } from '../types';
+import { type Attachment, type Message, isAttachment } from '../types';
+import { dedupeAttachmentsByDocumentKey, getAttachmentDocumentKey } from '../util/resolveProjectFiles';
 
 // An attachment connected to a message.
 export type LinkedAttachment = Attachment & {
@@ -31,8 +32,7 @@ export function isLinkedAttachment(value: any): value is LinkedAttachment {
 export const useFilteredFiles = (
     messageChain: Message[],
     currentAttachments: Attachment[] = [],
-    filterMessage?: Message,
-    _spaceId?: SpaceId // Kept for API compatibility, but no longer used
+    filterMessage?: Message
 ) => {
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
@@ -76,7 +76,7 @@ export const useFilteredFiles = (
     };
 
     // Get files to display based on filtering (excluding non-image assistant attachments)
-    const allFiles = useMemo(() => {
+    const allFiles = useMemo((): LinkedAttachment[] => {
         if (!filterMessage) {
             // Show all files from messages in the conversation
             const messageFiles: LinkedAttachment[] = messageChain.flatMap(
@@ -92,8 +92,6 @@ export const useFilteredFiles = (
                                 // Merge autoRetrieved flag from shallow attachment (for project files)
                                 // since we skip upserting modified attachments to Redux
                                 autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
-                                isUploadedProjectFile:
-                                    shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
                                 messageId: message.id,
                                 messageIndex: messageChain.indexOf(message),
                             } satisfies LinkedAttachment;
@@ -112,8 +110,8 @@ export const useFilteredFiles = (
 
         // For assistant messages with contextFiles, show exactly the files that were used for that response
         if (filterMessage.role === 'assistant' && filterMessage.contextFiles) {
-            return filterMessage.contextFiles
-                .map((attachmentId) => {
+            const contextFiles = filterMessage.contextFiles
+                .map((attachmentId): LinkedAttachment | null => {
                     // Use combinedAttachments to find attachments even if not in Redux
                     // (auto-retrieved Drive attachments are only in message chain on synced browsers)
                     const fullAttachment = combinedAttachments[attachmentId];
@@ -124,21 +122,27 @@ export const useFilteredFiles = (
                     // Find which message this attachment belongs to for display purposes
                     let messageId = '';
                     let messageIndex = 0;
+                    let autoRetrieved = fullAttachment.autoRetrieved;
                     for (const message of messageChain) {
-                        if (message.attachments?.some((a) => a.id === attachmentId)) {
+                        const shallowAttachment = message.attachments?.find((a) => a.id === attachmentId);
+                        if (shallowAttachment) {
                             messageId = message.id;
                             messageIndex = messageChain.indexOf(message);
+                            autoRetrieved = shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved;
                             break;
                         }
                     }
 
                     return {
                         ...fullAttachment,
+                        autoRetrieved,
                         messageId,
                         messageIndex,
                     };
                 })
-                .filter((file): file is Attachment & { messageId: string; messageIndex: number } => file !== null);
+                .filter((file): file is LinkedAttachment => file != null && isLinkedAttachment(file));
+
+            return dedupeAttachmentsByDocumentKey(contextFiles);
         }
 
         // For user messages or legacy assistant messages without contextFiles,
@@ -147,7 +151,7 @@ export const useFilteredFiles = (
 
         const files = messagesUpToThisPoint.flatMap((message) => {
             return (
-                message.attachments?.map((shallowAttachment) => {
+                message.attachments?.map((shallowAttachment): LinkedAttachment | null => {
                     const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                     if (!fullAttachment) return null;
                     // Filter out assistant-generated attachments
@@ -156,8 +160,6 @@ export const useFilteredFiles = (
                         ...fullAttachment,
                         // Merge autoRetrieved flag from shallow attachment
                         autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
-                        isUploadedProjectFile:
-                            shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
                         messageId: message.id,
                         messageIndex: messageChain.indexOf(message),
                     };
@@ -165,7 +167,9 @@ export const useFilteredFiles = (
             );
         });
 
-        return files.filter((f) => f != null && isLinkedAttachment(f));
+        return dedupeAttachmentsByDocumentKey(
+            files.filter((file): file is LinkedAttachment => file != null && isLinkedAttachment(file))
+        );
     }, [messageChain, combinedAttachments, filterMessage]);
 
     // Check if a file is excluded based on context filters
@@ -177,24 +181,41 @@ export const useFilteredFiles = (
 
     const isFileFromSummarizedMessage = (file: LinkedAttachment) => summarizedMessageIds.has(file.messageId);
 
+    const autoRetrievedDocumentKeys = useMemo(() => {
+        return new Set(
+            allFiles.filter((file) => file.autoRetrieved).map((file) => getAttachmentDocumentKey(file))
+        );
+    }, [allFiles]);
+
+    const isDuplicateOfAutoRetrieved = (file: LinkedAttachment) =>
+        autoRetrievedDocumentKeys.has(getAttachmentDocumentKey(file));
+
     // Separate active, manually excluded, and compacted (summarized) files.
     const activeHistoricalFiles = useMemo(() => {
         if (filterMessage) return allFiles;
         return allFiles.filter(
-            (file) => !isFileExcluded(file) && !(file as any).autoRetrieved && !isFileFromSummarizedMessage(file)
+            (file) =>
+                !isFileExcluded(file) &&
+                !file.autoRetrieved &&
+                !isFileFromSummarizedMessage(file) &&
+                !isDuplicateOfAutoRetrieved(file)
         );
-    }, [allFiles, filterMessage, contextFilters, summarizedMessageIds]);
+    }, [allFiles, filterMessage, contextFilters, summarizedMessageIds, autoRetrievedDocumentKeys]);
 
     const unusedHistoricalFiles = useMemo(() => {
         if (filterMessage) return [];
         return allFiles.filter(
-            (file) => isFileExcluded(file) && !(file as any).autoRetrieved && !isFileFromSummarizedMessage(file)
+            (file) =>
+                isFileExcluded(file) &&
+                !file.autoRetrieved &&
+                !isFileFromSummarizedMessage(file) &&
+                !isDuplicateOfAutoRetrieved(file)
         );
-    }, [allFiles, filterMessage, contextFilters, summarizedMessageIds]);
+    }, [allFiles, filterMessage, contextFilters, summarizedMessageIds, autoRetrievedDocumentKeys]);
 
     const compactedHistoricalFiles = useMemo(() => {
         if (filterMessage) return [];
-        return allFiles.filter((file) => !(file as any).autoRetrieved && isFileFromSummarizedMessage(file));
+        return allFiles.filter((file) => !file.autoRetrieved && isFileFromSummarizedMessage(file));
     }, [allFiles, filterMessage, summarizedMessageIds]);
 
     // Calculate context based on files that will be used for next question

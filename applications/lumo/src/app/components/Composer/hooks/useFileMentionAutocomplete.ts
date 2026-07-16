@@ -5,12 +5,11 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { useDriveIndexing } from '../../../providers/DriveIndexingProvider';
 import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { newAttachmentId, upsertAttachment } from '../../../redux/slices/core/attachments';
-import { SearchService } from '../../../services/search/searchService';
 import type { Message, ProjectSpace, SpaceId } from '../../../types';
-import { getMimeTypeFromExtension } from '../../../util/filetypes';
-import { getApproximateTokenCount } from '../../../llm/tokenizer';
+import { getMimeTypeFromExtension, getProcessingCategory } from '../../../util/filetypes';
 import { useDriveFileAttachment } from './useDriveFileAttachment';
 import { useDriveFileLoader } from './useDriveFileLoader';
 import { EMPTY_FILES, useFileInventory } from './useFileInventory';
@@ -33,7 +32,10 @@ export interface FileMentionState {
 
 // Optional Drive SDK functions - passed from parent to avoid calling useDriveSDK for guests
 export interface DriveSDKFunctions {
-    browseFolderChildren: (folderId?: string) => Promise<{ id: string; name: string; type: string }[]>;
+    browseFolderChildren: (
+        folderId?: string,
+        forceRefresh?: boolean
+    ) => Promise<{ id: string; name: string; type: string }[]>;
     downloadFile: (nodeId: string) => Promise<ArrayBuffer>;
 }
 
@@ -98,9 +100,15 @@ export const useFileMentionAutocomplete = (
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
+    const { driveIndexRevision } = useDriveIndexing();
 
-    const { driveFiles, refreshDriveFiles } = useDriveFileLoader(linkedDriveFolder, driveSDK, onDriveFilesRefresh);
-    const allFiles = useFileInventory(spaceId, driveFiles);
+    const { driveFiles, refreshDriveFiles } = useDriveFileLoader(
+        linkedDriveFolder,
+        driveSDK,
+        onDriveFilesRefresh,
+        driveIndexRevision
+    );
+    const allFiles = useFileInventory(spaceId, driveFiles, !!linkedDriveFolder);
     const { attach } = useDriveFileAttachment(driveSDK, userId);
 
     // Lowercase filenames already present in this conversation — as composer chips
@@ -201,11 +209,9 @@ export const useFileMentionAutocomplete = (
                 return;
             }
 
-            // If the file is already attached to this conversation (as a composer chip or on
-            // any previous message), do NOT create a second attachment — just insert the
-            // `@filename` text reference. This prevents the duplicate-attachment bug when
-            // re-mentioning a file that is already attached.
-            if (attachedNames.has(file.name.toLowerCase())) {
+            // Re-mentioning a file already in the conversation only needs the @reference text;
+            // content is resolved from the search index at send time.
+            if (attachedNames.has(file.name.toLowerCase()) || attachedNames.has(file.id.toLowerCase())) {
                 setValue(newValue);
                 closeMention();
                 restoreCursor(textarea, newCursorPos);
@@ -214,38 +220,17 @@ export const useFileMentionAutocomplete = (
 
             if (file.source === 'local') {
                 if (file.attachment?.spaceId) {
-                    const sourceAtt = file.attachment;
-
-                    // Eagerly copy content into the provisional so it's available on the first
-                    // message even before background sagas have fully loaded from IndexedDB.
-                    // Priority: Redux state → search index → defer to fillShallowProvisionals at send time.
-                    let markdown = sourceAtt.markdown;
-                    let tokenCount = sourceAtt.tokenCount;
-                    let rawBytes = sourceAtt.rawBytes || 0;
-
-                    if (!markdown && userId) {
-                        const doc = SearchService.get(userId).getDocumentById(sourceAtt.id);
-                        if (doc?.content) {
-                            markdown = doc.content;
-                            tokenCount = getApproximateTokenCount(doc.content);
-                            rawBytes = doc.size || rawBytes;
-                        }
-                    }
-
                     dispatch(
                         upsertAttachment({
                             id: newAttachmentId(),
                             filename: file.name,
-                            mimeType: file.mimeType ?? sourceAtt.mimeType,
+                            mimeType: file.mimeType ?? file.attachment.mimeType,
                             uploadedAt: new Date().toISOString(),
-                            rawBytes,
+                            rawBytes: 0,
                             processing: false,
-                            ...(markdown && { markdown, tokenCount }),
                         })
                     );
                 }
-                // Already-provisional files (directly uploaded in this session) are already
-                // showing as chips — just insert the @mention text.
                 setValue(newValue);
                 closeMention();
                 restoreCursor(textarea, newCursorPos);
@@ -262,10 +247,8 @@ export const useFileMentionAutocomplete = (
                     return;
                 }
 
-                // Drive files: start a background download/index immediately so the content is
-                // ready by the time the user sends. A provisional loading chip is shown in the
-                // composer via the Redux attachment while processing.
                 const mimeType = getMimeTypeFromExtension(file.name);
+                const isImage = getProcessingCategory(mimeType, file.name) === 'image';
                 const provisionalId = newAttachmentId();
 
                 dispatch(
@@ -275,14 +258,15 @@ export const useFileMentionAutocomplete = (
                         mimeType,
                         uploadedAt: new Date().toISOString(),
                         rawBytes: 0,
-                        processing: true,
+                        processing: !isImage,
+                        driveNodeId: file.id,
+                        conversationContext: true,
                     })
                 );
 
                 setValue(newValue);
                 closeMention();
                 restoreCursor(textarea, newCursorPos);
-
                 void attach(file, provisionalId);
                 return;
             }

@@ -53,7 +53,6 @@ export const useAutoRetrievedAttachments = (messageChain: Message[]) => {
                 const mergedAtt: AutoRetrievedAttachment = {
                     ...baseAttachment,
                     autoRetrieved: true,
-                    isUploadedProjectFile: shallowAtt.isUploadedProjectFile || fullAtt?.isUploadedProjectFile,
                     relevanceScore: shallowAtt.relevanceScore ?? fullAtt?.relevanceScore,
                     messageId: msg.id,
                 };

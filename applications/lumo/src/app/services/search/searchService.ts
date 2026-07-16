@@ -683,10 +683,15 @@ export class SearchService {
     }
 
     removeDocument(documentId: string): void {
-        const doc = this.driveDocuments.find((d) => d.id === documentId);
-        if (doc) {
+        const docsToRemove = this.driveDocuments.filter(
+            (d) => d.id === documentId || d.parentDocumentId === documentId
+        );
+        for (const doc of docsToRemove) {
             this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
-            this.driveDocuments = this.driveDocuments.filter((d) => d.id !== documentId);
+        }
+        const removeIds = new Set(docsToRemove.map((d) => d.id));
+        this.driveDocuments = this.driveDocuments.filter((d) => !removeIds.has(d.id));
+        if (docsToRemove.length > 0) {
             void this.persistManifest();
             void this.persistBM25Index();
         }
@@ -793,72 +798,143 @@ export class SearchService {
     }
 
     /**
-     * Get a document by its ID (nodeUid for Drive files)
+     * Get a document by its ID (nodeUid for Drive files, attachment id for uploads).
+     * For chunked documents, returns the first chunk's metadata without combining content.
      */
     getDocumentById(documentId: string): DriveDocument | null {
-        // Try exact ID match first
         const exactMatch = this.driveDocuments.find((doc) => doc.id === documentId);
-        if (exactMatch) return exactMatch;
+        if (exactMatch) {
+            return exactMatch;
+        }
 
-        // If not found, check if this is a parent ID and return the first chunk
-        // This handles the case where we look up by parent ID after chunking
-        const chunkMatch = this.driveDocuments.find((doc) => doc.parentDocumentId === documentId);
-        if (chunkMatch) {
-            // Return a "virtual" document representing the full content
-            // by finding all chunks and combining them
-            const allChunks = this.driveDocuments
-                .filter((doc) => doc.parentDocumentId === documentId)
-                .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+        return this.driveDocuments.find((doc) => doc.parentDocumentId === documentId) || null;
+    }
 
-            const chunk0 = allChunks[0];
-            if (chunk0) {
-                // Return a combined document
-                return {
-                    ...chunk0,
-                    id: documentId,
-                    content: allChunks.map((c) => c.content).join('\n\n'),
-                    isChunk: false,
-                    parentDocumentId: undefined,
-                    chunkIndex: undefined,
-                    totalChunks: undefined,
-                };
+    /**
+     * Ensure the drive document manifest is loaded from IndexedDB before lookups.
+     */
+    async ensureManifestReady(): Promise<void> {
+        if (this.userId && !this.manifestReady) {
+            this.manifestReady = this.loadManifest();
+        }
+        if (this.manifestReady) {
+            await this.manifestReady;
+        }
+    }
+
+    /**
+     * Retrieve document content for @mentions and send-time resolution.
+     * For chunked documents, returns the best-matching chunk rather than the full file.
+     */
+    retrieveDocumentForMention(
+        fileName: string,
+        spaceId?: string,
+        query?: string,
+        documentId?: string
+    ): {
+        id: string;
+        name: string;
+        content: string;
+        size?: number;
+        isChunk?: boolean;
+        chunkTitle?: string;
+        chunkIndex?: number;
+        totalChunks?: number;
+        parentDocumentId?: string;
+        isDriveDocument?: boolean;
+    } | null {
+        const searchQuery = query?.trim() || fileName;
+
+        if (documentId) {
+            const byId = this.resolveMentionDocumentById(documentId, searchQuery);
+            if (byId) {
+                return byId;
             }
+        }
+
+        if (!spaceId) {
+            return null;
+        }
+
+        const lowerName = fileName.toLowerCase();
+        const inSpace = this.driveDocuments.filter(
+            (doc) => doc.spaceId === spaceId && doc.name.toLowerCase() === lowerName && doc.content
+        );
+
+        const nonChunk = inSpace.find((doc) => !doc.isChunk);
+        if (nonChunk) {
+            return this.toMentionRetrievalResult(nonChunk);
+        }
+
+        const chunks = inSpace
+            .filter((doc) => doc.isChunk)
+            .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+        if (chunks.length > 0) {
+            const parentId = chunks[0]!.parentDocumentId || chunks[0]!.id;
+            const bestChunk = this.rankDocumentChunks(chunks, searchQuery);
+            return bestChunk ? this.toMentionRetrievalResult(bestChunk, parentId) : null;
         }
 
         return null;
     }
 
-    /**
-     * Get a document by its name (for file mentions)
-     * For chunked documents, returns combined content from all chunks
-     */
-    getDocumentByName(name: string): DriveDocument | null {
-        // Try exact match first (non-chunked documents)
-        const exactMatch = this.driveDocuments.find((doc) => doc.name === name && !doc.isChunk);
-        if (exactMatch) return exactMatch;
-
-        // For chunked documents, find all chunks with this name and combine them
-        const chunks = this.driveDocuments
-            .filter((doc) => doc.name === name && doc.isChunk)
-            .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
-
-        const chunk0 = chunks[0];
-        if (chunk0) {
-            // Return a combined document
-            return {
-                ...chunk0,
-                id: chunk0.parentDocumentId || chunk0.id,
-                content: chunks.map((c) => c.content).join('\n\n'),
-                isChunk: false,
-                parentDocumentId: undefined,
-                chunkIndex: undefined,
-                totalChunks: undefined,
-            };
+    private resolveMentionDocumentById(
+        documentId: string,
+        searchQuery: string
+    ): ReturnType<SearchService['retrieveDocumentForMention']> {
+        const exactMatch = this.driveDocuments.find(
+            (doc) => doc.id === documentId && !doc.isChunk && doc.content
+        );
+        if (exactMatch) {
+            return this.toMentionRetrievalResult(exactMatch);
         }
 
-        // Fallback: try case-insensitive match (non-chunked)
-        const lowerName = name.toLowerCase();
-        return this.driveDocuments.find((doc) => doc.name.toLowerCase() === lowerName && !doc.isChunk) || null;
+        const chunks = this.driveDocuments
+            .filter((doc) => doc.parentDocumentId === documentId && doc.isChunk && doc.content)
+            .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+
+        if (chunks.length > 0) {
+            const bestChunk = this.rankDocumentChunks(chunks, searchQuery);
+            return bestChunk ? this.toMentionRetrievalResult(bestChunk, documentId) : null;
+        }
+
+        return null;
+    }
+
+    private rankDocumentChunks(chunks: DriveDocument[], query: string): DriveDocument | null {
+        if (chunks.length === 0) {
+            return null;
+        }
+        if (chunks.length === 1) {
+            return chunks[0]!;
+        }
+
+        const candidates = chunks.map((doc) => ({
+            id: doc.id,
+            text: buildSearchableText(doc, true),
+            doc,
+        }));
+        const ranked = this.bm25Index.rankDocuments(query, candidates, chunks.length, 0);
+        return ranked[0]?.document.doc ?? chunks[0]!;
+    }
+
+    private toMentionRetrievalResult(doc: DriveDocument, parentId?: string) {
+        const parentDocumentId = parentId || doc.parentDocumentId || doc.id;
+        const isDriveDocument = doc.folderPath !== 'Uploaded Files';
+        return {
+            id: parentDocumentId,
+            name: doc.name,
+            content: doc.content,
+            size: doc.size,
+            isDriveDocument,
+            ...(doc.isChunk && {
+                isChunk: true,
+                chunkTitle: doc.chunkTitle,
+                chunkIndex: doc.chunkIndex,
+                totalChunks: doc.totalChunks,
+                parentDocumentId,
+            }),
+        };
     }
 
     /**
