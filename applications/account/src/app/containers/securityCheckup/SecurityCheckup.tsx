@@ -1,23 +1,28 @@
-import { type ReactNode, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Redirect, useLocation } from 'react-router-dom';
 
 import { listOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/outgoingActions';
 import { SafetyReviewContainer } from '@proton/account/safetyReview/components/SafetyReviewContainer';
-import type { SafetyReviewBackLink } from '@proton/account/safetyReview/components/getSafetyReviewBackLink';
+import { getSafetyReviewBackLink } from '@proton/account/safetyReview/components/getSafetyReviewBackLink';
 import { safetyReviewSelector } from '@proton/account/safetyReview/components/safetyReviewSelector';
 import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
-export const SafetyReviewOrRedirect = ({
-    backLink,
-    loaderPage,
-}: {
-    backLink: SafetyReviewBackLink;
-    loaderPage: ReactNode;
-}) => {
+import AccountLoaderPage from '../../content/AccountLoaderPage';
+
+export const SecurityCheckup = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const data = useSelector(safetyReviewSelector);
+
+    const [{ backLink }] = useState(() => {
+        const initialSearchParams = new URLSearchParams(location.search);
+        const backLink = getSafetyReviewBackLink(decodeURIComponent(initialSearchParams.get('back') ?? ''));
+        return {
+            backLink,
+        };
+    });
 
     useEffect(() => {
         // Safety review require these models to be loaded (otherwise it won't be able to calculate the steps properly).
@@ -31,7 +36,7 @@ export const SafetyReviewOrRedirect = ({
     }
 
     if (data.loading) {
-        return loaderPage;
+        return <AccountLoaderPage />;
     }
 
     return <SafetyReviewContainer backLink={backLink} />;
