@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Markdown from 'react-markdown';
 
 import rehypeKatex from 'rehype-katex';
@@ -77,13 +77,17 @@ function simpleHash(str: string): string {
  * - Complete paragraphs (text followed by \n\n)
  * - Incomplete section (still streaming)
  *
- * Uses content-based keys (hash of content) so complete blocks maintain identity across updates
+ * Uses position + content hash for keys so complete blocks stay stable during
+ * append-only streaming while remaining unique (identical paragraphs, hash collisions).
  */
 function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] {
     if (!content) return [];
 
     const blocks: ContentBlock[] = [];
     let position = 0;
+
+    const nextBlockKey = (kind: 'code' | 'table' | 'para', blockContent: string) =>
+        `${kind}-${blocks.length}-${simpleHash(blockContent)}`;
 
     // Process content sequentially looking for complete blocks
     while (position < content.length) {
@@ -96,8 +100,7 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
             blocks.push({
                 type: 'complete',
                 content: blockContent,
-                // Use hash of content as key - stays same even as more content is added
-                key: `code-${simpleHash(blockContent)}`,
+                key: nextBlockKey('code', blockContent),
             });
             position += blockContent.length;
             continue;
@@ -116,7 +119,7 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
                 blocks.push({
                     type: 'complete',
                     content: blockContent,
-                    key: `table-${simpleHash(blockContent)}`,
+                    key: nextBlockKey('table', blockContent),
                 });
                 position += tableContent.length + 2; // +2 for \n\n
                 continue;
@@ -130,7 +133,7 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
             blocks.push({
                 type: 'complete',
                 content: blockContent,
-                key: `para-${simpleHash(blockContent)}`,
+                key: nextBlockKey('para', blockContent),
             });
             position += blockContent.length;
             continue;
@@ -171,6 +174,78 @@ function SafeLink({
     );
 }
 
+const RefLink = React.memo(function RefLink({
+    id,
+    children: _children,
+    toolCallResults,
+    sourcesContainerRef,
+    handleLinkClick,
+}: {
+    id: string;
+    children: React.ReactNode;
+    toolCallResults?: SearchItem[] | null;
+    sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    handleLinkClick?: HandleLinkClick;
+}) {
+    useEffect(() => {
+        return () => {
+            sourcesContainerRef?.current
+                ?.querySelector(`[data-source-index="${id}"]`)
+                ?.classList.remove('highlight-source');
+        };
+    }, [id, sourcesContainerRef]);
+
+    if (!toolCallResults) return null;
+
+    const idInt = parseInteger(id);
+    if (idInt === null) return null;
+
+    const toolCallInfo = toolCallResults?.[idInt];
+    if (!toolCallInfo) return null;
+
+    const url = toolCallInfo?.url;
+    if (!url) return null;
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (handleLinkClick) {
+            handleLinkClick(e, toolCallInfo?.url ?? '');
+        }
+    };
+
+    const handleMouseEnter = () => {
+        const sourceElement = sourcesContainerRef?.current?.querySelector(`[data-source-index="${id}"]`);
+        if (sourceElement) {
+            sourceElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            sourceElement.classList.add('highlight-source');
+        }
+    };
+
+    const handleMouseLeave = () => {
+        sourcesContainerRef?.current
+            ?.querySelector(`[data-source-index="${id}"]`)
+            ?.classList.remove('highlight-source');
+    };
+
+    return (
+        <ButtonLike
+            pill
+            size="small"
+            color="weak"
+            shape="solid"
+            as="a"
+            className="ref-link text-sm mx-1 py-0.5 px-1 lh100"
+            href={url}
+            onClick={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {getDomain(toolCallInfo)}
+        </ButtonLike>
+    );
+});
+
 interface ProgressiveMarkdownProps {
     content: string;
     isStreaming: boolean;
@@ -195,72 +270,6 @@ const MarkdownBlock: React.FC<{
     message: any;
 }> = React.memo(
     ({ content, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
-        // RefLink component for source references
-        const RefLink = useMemo(
-            () =>
-                React.memo(function RefLink({ id }: { id: string; children: React.ReactNode }) {
-                    if (!toolCallResults) return null;
-
-                    const idInt = parseInteger(id);
-                    if (idInt === null) return null;
-
-                    const toolCallInfo = toolCallResults?.[idInt];
-                    if (!toolCallInfo) return null;
-
-                    const url = toolCallInfo?.url;
-                    if (!url) return null;
-
-                    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-                        if (handleLinkClick) {
-                            handleLinkClick(e, toolCallInfo?.url ?? '');
-                        }
-                    };
-
-                    const handleMouseEnter = () => {
-                        if (sourcesContainerRef?.current) {
-                            const sourceElement = sourcesContainerRef.current.querySelector(
-                                `[data-source-index="${id}"]`
-                            );
-                            if (sourceElement) {
-                                sourceElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                sourceElement.classList.add('highlight-source');
-                            }
-                        }
-                    };
-
-                    const handleMouseLeave = () => {
-                        if (sourcesContainerRef?.current) {
-                            const sourceElement = sourcesContainerRef.current.querySelector(
-                                `[data-source-index="${id}"]`
-                            );
-                            if (sourceElement) {
-                                sourceElement.classList.remove('highlight-source');
-                            }
-                        }
-                    };
-
-                    return (
-                        <ButtonLike
-                            pill
-                            size="small"
-                            color="weak"
-                            shape="solid"
-                            as="a"
-                            className="ref-link text-sm mx-1 py-0.5 px-1 lh100"
-                            href={url}
-                            onClick={handleClick}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {getDomain(toolCallInfo)}
-                        </ButtonLike>
-                    );
-                }),
-            [toolCallResults, sourcesContainerRef, handleLinkClick]
-        );
-
         const CodeBlock = useMemo(() => {
             // eslint-disable-next-line react/display-name
             return ({ node, inline, className, children, ...props }: any) => {
@@ -290,7 +299,16 @@ const MarkdownBlock: React.FC<{
                     // Handle REF links
                     if (href?.startsWith('#ref-')) {
                         const id = href.substring(5);
-                        return <RefLink id={id}>{children}</RefLink>;
+                        return (
+                            <RefLink
+                                id={id}
+                                toolCallResults={toolCallResults}
+                                sourcesContainerRef={sourcesContainerRef}
+                                handleLinkClick={handleLinkClick}
+                            >
+                                {children}
+                            </RefLink>
+                        );
                     }
 
                     return (
@@ -325,7 +343,7 @@ const MarkdownBlock: React.FC<{
                     );
                 },
             }),
-            [CodeBlock, RefLink, handleLinkClick]
+            [CodeBlock, handleLinkClick, sourcesContainerRef, toolCallResults]
         );
 
         return (

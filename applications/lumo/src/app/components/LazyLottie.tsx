@@ -1,6 +1,6 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 
-import type { LottieComponentProps } from 'lottie-react';
+import type { LottieComponentProps, LottieRef, LottieRefCurrentProps } from 'lottie-react';
 
 const LazyLottieComponent = lazy(() => import('lottie-react'));
 
@@ -10,16 +10,33 @@ interface Props extends Omit<LottieComponentProps, 'animationData' | 'ref'> {
 
 export const LazyLottie = ({ getAnimationData, ...props }: Props) => {
     const [animationData, setAnimationData] = useState<object | null>(null);
+    const lottieRef = useRef<LottieRefCurrentProps | null>(null);
 
     useEffect(() => {
+        let cancelled = false;
+
+        // Tear down the previous animation immediately so lottie-web stops its RAF loop
+        // while the next JSON chunk loads.
+        setAnimationData(null);
+        lottieRef.current?.destroy();
+
         void (async () => {
             try {
                 const result = await getAnimationData();
-                setAnimationData(result.default);
+                if (!cancelled) {
+                    setAnimationData(result.default);
+                }
             } catch {
-                console.error('Failed to load animation');
+                if (!cancelled) {
+                    console.error('Failed to load animation');
+                }
             }
         })();
+
+        return () => {
+            cancelled = true;
+            lottieRef.current?.destroy();
+        };
     }, [getAnimationData]);
 
     const fallback = <div className={props.className} style={props.style} />;
@@ -30,7 +47,7 @@ export const LazyLottie = ({ getAnimationData, ...props }: Props) => {
 
     return (
         <Suspense fallback={fallback}>
-            <LazyLottieComponent animationData={animationData} {...props} />
+            <LazyLottieComponent lottieRef={lottieRef as LottieRef} animationData={animationData} {...props} />
         </Suspense>
     );
 };
