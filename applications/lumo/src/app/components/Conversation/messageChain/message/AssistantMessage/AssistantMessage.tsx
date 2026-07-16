@@ -21,6 +21,7 @@ import LumoAvatar from '../../../../LumoAvatar/LumoAvatar/LumoAvatar';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
+import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import SiblingSelector from '../../../../SiblingSelector';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
@@ -226,6 +227,12 @@ const AssistantMessage = ({
     const handleLinkClick = useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
             e.preventDefault();
+
+            if (isTrustedProtonLink(href)) {
+                openTrustedLink(href);
+                return;
+            }
+
             setCurrentLink(href);
             linkWarningModal.openModal(true);
         },
