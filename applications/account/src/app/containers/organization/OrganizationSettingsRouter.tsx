@@ -1,9 +1,6 @@
 import { type ReactNode, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { c } from 'ttag';
-
-import { Href } from '@proton/atoms/Href/Href';
 import {
     ActivityMonitorDashboard,
     CatchAllSection,
@@ -21,20 +18,21 @@ import {
     PrivateMainSettingsArea,
     PrivateMainSettingsAreaBase,
     SentinelSection,
-    SharedServersSection,
     SsoPage,
     UsersAndAddressesSection,
-    VPNEvents,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { SetupOrganizationSection } from '@proton/components/containers/organization/SetupOrganizationSection';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
-import { AlwaysOn } from '@proton/vpn/components/AlwaysOn';
-import { GatewaysSection } from '@proton/vpn/components/Gateways';
+import {
+    AlwaysOnVpnRoute,
+    GatewayMonitorRoute,
+    GatewaysRoute,
+    SharedServersRoute,
+} from '@proton/vpn/routes/organization';
 
 import { FeatureAccessSection } from './components/FeatureAccessSection';
 import type { getOrganizationAppRoutes } from './routes';
@@ -91,31 +89,17 @@ const OrganizationSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(gateways) && (
                 <Route path={getSectionPath(path, gateways)}>
-                    <PrivateMainSettingsArea config={gateways}>
-                        <GatewaysSection organization={organization} />
-                    </PrivateMainSettingsArea>
+                    <GatewaysRoute config={gateways} organization={organization} />
                 </Route>
             )}
             {getIsSectionAvailable(sharedServers) && (
                 <Route path={getSectionPath(path, sharedServers)}>
-                    <PrivateMainSettingsArea config={sharedServers}>
-                        <SharedServersSection />
-                    </PrivateMainSettingsArea>
+                    <SharedServersRoute config={sharedServers} />
                 </Route>
             )}
             {getIsSectionAvailable(alwaysOnVpn) && (
                 <Route path={getSectionPath(path, alwaysOnVpn)}>
-                    <PrivateMainSettingsAreaBase
-                        title={alwaysOnVpn.text}
-                        description={
-                            <>
-                                {alwaysOnVpn.description}{' '}
-                                <Href href={getKnowledgeBaseUrl('/mdm-always-on-vpn')}>{c('Link').t`Learn more`}</Href>
-                            </>
-                        }
-                    >
-                        <AlwaysOn />
-                    </PrivateMainSettingsAreaBase>
+                    <AlwaysOnVpnRoute config={alwaysOnVpn} />
                 </Route>
             )}
             {isSetupAvailable && (
@@ -191,9 +175,7 @@ const OrganizationSettingsRouter = ({
             )}
             {getIsSectionAvailable(connectionEvents) && (
                 <Route path={getSectionPath(path, connectionEvents)}>
-                    <PrivateMainSettingsArea config={connectionEvents}>
-                        <VPNEvents />
-                    </PrivateMainSettingsArea>
+                    <GatewayMonitorRoute config={connectionEvents} />
                 </Route>
             )}
             {getIsSectionAvailable(activityMonitor) && (
