@@ -20,6 +20,7 @@ export const CategoryViewToggle = () => {
     const handleToggle = ({ target }: ChangeEvent<HTMLInputElement>) => {
         void handleChange({ checked: target.checked, notification: true });
 
+        // INDA-703: remove the current implementation once 1.14.0 is released
         if (isElectronApp && !isReloadDisabled) {
             void invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
         }
