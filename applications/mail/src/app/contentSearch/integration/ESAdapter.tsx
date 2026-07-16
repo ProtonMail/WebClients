@@ -59,10 +59,6 @@ function errorBeforeFirstResults(search: Search): Promise<void> {
         let subscriptions: (() => void)[] = [];
         const unsubscribe = () => subscriptions.forEach((s) => s());
         subscriptions = [
-            search.onResults.subscribe(() => {
-                unsubscribe();
-                resolve();
-            }),
             search.onError.subscribe((err) => {
                 unsubscribe();
                 reject(err);
@@ -72,6 +68,11 @@ function errorBeforeFirstResults(search: Search): Promise<void> {
                 resolve();
             }),
         ];
+
+        void search.done.finally(() => {
+            unsubscribe();
+            resolve();
+        });
     });
 }
 
