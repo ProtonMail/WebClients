@@ -1520,8 +1520,7 @@
         "ნდობა"
       ],
       "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
+        "გასაღების სანდოობა"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -2207,6 +2206,9 @@
       "Activated": [
         "აქტიურია"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "მისამართს უკვე იყენებს მომხმარებელი თქვენი ორგანიზაციის გარეთ. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
+      ],
       "All": [
         "ყველა"
       ],
@@ -2222,6 +2224,9 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "მონაცემთა მიგრაციის სტატუსი Google Workspace-დან ${ BRAND_NAME }-ში"
+      ],
       "Emails": [
         "ელფოსტები"
       ],
@@ -2231,11 +2236,17 @@
       "Estimated size": [
         "სავარაუდო ზომა"
       ],
+      "Find out what can be migrated.": [
+        "გაიგეთ, რისი მიგრაციაა შესაძლებელი."
+      ],
       "Has errors": [
         "აქვს შეცდომები"
       ],
       "In progress": [
         "მიმდინარეობს"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "წევრის მისამართი ვერ მოიძებნა. გთხოვთ, დაუკავშირდეთ მომხმარებელთა მხარდაჭერას ამის გადასაჭრელად"
       ],
       "Migrate": [
         "მიგრაცია"
@@ -2246,6 +2257,18 @@
       "Migration status": [
         "მიგრაციის სტატუსი"
       ],
+      "Missing organization private key": [
+        "ორგანიზაციის პირადი გასაღები აკლია"
+      ],
+      "Missing organization public key": [
+        "ორგანიზაციის საჯარო გასაღები აკლია"
+      ],
+      "No users to display": [
+        "საჩვენებელი მომხმარებლები არ არის"
+      ],
+      "Not activated": [
+        "არ არის გააქტიურებული"
+      ],
       "Organization does not have enough seats available": [
         "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
       ],
@@ -2255,14 +2278,44 @@
       "Pending": [
         "რიგში"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "აირჩიეთ ზუსტად ის, რისი მიგრაციაც გსურთ. ეს გავრცელდება ორგანიზაციის ყველა მომხმარებელზე."
+      ],
+      "Select users to migrate": [
+        "აირჩიეთ მომხმარებლები მიგრაციისთვის"
+      ],
       "Size": [
         "ზომა"
       ],
       "Status": [
         "სტატუსი"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "პლატფორმების შეუთავსებლობის გამო ამ მომხმარებლის მიგრაცია შეუძლებელია."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი ანგარიში აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ჩართეთ მისი მისამართი აქ: ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მან უნდა მიიღოს მოწვევა ${ BRAND_NAME }-ში გასაწევრიანებლად."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, ამოიღეთ იგი არქივიდან თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "ამ მომხმარებლის მიგრაციისთვის, მოუხსენით მას შეჩერება თქვენს Google Workspace-ის ადმინისტრატორის კონსოლში."
+      ],
       "User": [
         "მომხმარებელი"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "მომხმარებლები, რომლებმაც მიიღეს წვდომა თავიანთ ${ BRAND_NAME } ანგარიშზე"
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
@@ -2401,6 +2454,11 @@
       ],
       "Take a tour": [
         "გასაცნობი ტური"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "დუბლიკატები წინა იმპორტებიდან გამოტოვებული იქნება. დაბრუნება ან უფრო ძველი შეტყობინებების იმპორტი ${ PRODUCT_NAMES.EASY_SWITCH } პარამეტრებში."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4368,6 +4426,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "ჩვენ შევაჩერებთ იმპორტს საცავის 80%-ზე, რათა დავტოვოთ ადგილი ახალი შეტყობინებებისთვის."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "ჩვენ შემოვიტანთ თქვენს ძველ ელფოსტებს და მომავალში მოვახდენთ ახალი შეტყობინებების სინქრონიზაციას Gmail-დან"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "დავიწყეთ თქვენი ელფოსტების იმპორტი Gmail-იდან. დასრულებისთანავე შეგატყობინებთ."
       ],
@@ -5027,6 +5088,9 @@
       "No contacts found to import": [
         "შემოსატანი კონტაქტები ვერ ვიპოვე"
       ],
+      "No drive found to import": [
+        "შემოსატანი დისკი ვერ მოიძებნა"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "შემოსატანი ელფოსტების გარეშე - ანგარიშს საფოსტო ყუთი არ გააჩნია"
       ],
@@ -5353,6 +5417,9 @@
       "Unexpected error, we can't import the contacts": [
         "მოულოდნელი შეცდომა. კონტაქტები ვერ შემოვიტანე"
       ],
+      "Unexpected error, we can't import the files": [
+        "მოულოდნელი შეცდომა, ფაილების შემოტანა ვერ ხერხდება"
+      ],
       "Unknown error": [
         "უცნობი შეცდომა"
       ],
@@ -5396,6 +5463,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "თქვენ გამოიყენეთ თქვენს პაკეტში არსებული ყველა მისამართი. გთხოვთ განაახლოთ თქვენი პაკეტი ახალი მისამართის დასამატებლად ან გამორთოთ მისამართი თქვენს ანგარიშში."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -6641,6 +6711,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ providerName }": [
+        "იმპორტი ${ providerName }-დან"
+      ],
       "More import options": [
         "მეტი შემოტანის პარამეტრები"
       ]
@@ -7582,6 +7655,9 @@
       "file attached": [
         "მიმაგრებული ფაილი",
         "მიმაგრებული ფაილი"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "მხოლოდ ფაილები (ფოტოების, ${ DOCS_APP_NAME }-ის ან ${ SHEETS_APP_NAME }-ის გარეშე) — ჯამში 100 გბ-მდე, 100 000 ფაილი, და 50 გბ თითოეულ ფაილზე"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "ფილტრები ყველა ელფოსტაზე მუშაობს, შემოსულებს და გაგზავნილების ჩათვლით. თითოეული ფილტრი უნდა შეიცავდეს 1 სახელს, პირობას და ქმედებას მაინც."
@@ -9111,6 +9187,10 @@
         "ამის შემდეგ გადახდა განხორციელდება ყოველ ${ renewCycle } თვეში, ${ renewAmountStr } ოდენობით. შეგიძლიათ გააუქმოთ ნებისმიერ დროს.",
         "ამის შემდეგ გადახდა განხორციელდება ყოველ ${ renewCycle } თვეში, ${ renewAmountStr } ოდენობით. შეგიძლიათ გააუქმოთ ნებისმიერ დროს."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "თქვენ ჩართული გაქვთ გადაგზავნა ${ MAX_SYNC_PAID_USER } Gmail მისამართზე. კიდევ ერთის დასამატებლად, ჯერ გამორთეთ ერთ-ერთი მათგანი.",
+        "თქვენ ჩართული გაქვთ გადაგზავნა ${ MAX_SYNC_PAID_USER } Gmail მისამართზე. კიდევ ერთის დასამატებლად, ჯერ გამორთეთ ერთ-ერთი მათგანი."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა):"
       ],
@@ -9846,6 +9926,12 @@
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
+      "Exact host matching": [
+        "ზუსტი ჰოსტის შესაბამისობა"
+      ],
+      "Exact URL matching": [
+        "ზუსტი URL შესაბამისობა"
+      ],
       "Expires": [
         "ვადა"
       ],
@@ -9938,6 +10024,9 @@
       ],
       "Import to:": [
         "შემოტანა:"
+      ],
+      "Import your emails": [
+        "თქვენი ელფოსტების იმპორტი"
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
@@ -10050,6 +10139,9 @@
       "Navigation": [
         "ნავიგაცია"
       ],
+      "Never fill on this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტ URL-ზე"
+      ],
       "New password": [
         "ახალი პაროლი"
       ],
@@ -10100,6 +10192,9 @@
       ],
       "Original link": [
         "საწყისი ბმული"
+      ],
+      "Parent domain and subdomains (default)": [
+        "მშობელი დომენი და ქვედომენები (ნაგულისხმევი)"
       ],
       "Participants": [
         "მონაწილეები"
@@ -10179,6 +10274,9 @@
       "Region": [
         "რაიონი"
       ],
+      "Regular expression": [
+        "რეგულარული გამოსახულება"
+      ],
       "Remember my choice": [
         "დაიმახსოვრე ჩემი არჩევანი"
       ],
@@ -10238,6 +10336,9 @@
       ],
       "Start date": [
         "საწყისი თარიღი"
+      ],
+      "Starts with": [
+        "იწყება"
       ],
       "State": [
         "მდგომარეობა"
@@ -10325,6 +10426,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "URL wildcard pattern": [
+        "URL wildcard შაბლონი"
       ],
       "Username": [
         "მომხმარებლის სახელი"
@@ -10928,14 +11032,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "\"იწყება\" შესაბამისობის წესი"
+      ],
+      "Exact (sub) domain matching rule": [
+        "ზუსტი (ქვე) დომენის შესაბამისობის წესი"
+      ],
+      "Exact URL matching rule": [
+        "ზუსტი URL შესაბამისობის წესი"
+      ],
       "Fw:": [
         "გადა:"
+      ],
+      "Never fill with this exact URL": [
+        "არასოდეს შეავსო ამ ზუსტი URL-ით"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ senderString } -მა ${ date }-ზე დაწერა:"
       ],
       "Re:": [
         "პას:"
+      ],
+      "Regular expression rule": [
+        "რეგულარული გამოსახულების წესი"
+      ],
+      "Wildcard pattern matching rule": [
+        "Wildcard შაბლონის შესაბამისობის წესი"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "თქვენი უფასო სატესტო ვერსია დასრულდა. ${ nonAutoRenewalAction }"
@@ -11251,6 +11373,10 @@
       "${ n } VPN connection": [
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიების ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
@@ -13081,6 +13207,9 @@
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
       ],
+      "Search for users or addresses": [
+        "მოძებნეთ მომხმარებლები ან მისამართები"
+      ],
       "Search messages": [
         "შეტყობინებების ძებნა"
       ],
@@ -13381,8 +13510,14 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**თუ ამ თარიღამდე გააუქმებთ,** საცდელი პერიოდის დასრულებისას თქვენი პაკეტი **დაქვეითდება** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } პაკეტამდე."
+      ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**თუ არ გამოიწერთ,** თქვენი ანგარიში **დაქვეითდება** პაკეტამდე ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ არ გააუქმებთ,** ამოქმედდება თქვენი სრული პაკეტი და მიიღებთ **${ referrerRewardAmount }** კრედიტის სახით."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
@@ -13427,6 +13562,10 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ.",
+        "თქვენ დაგრჩათ **${ daysRemaining } დღე**, რათა აღმოაჩინოთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
       ],
       "your subscription": [
         "თქვენი გამოწერა"
@@ -15301,6 +15440,9 @@
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } წერის დამხმარე"
+      ],
       "${ numMessages } message": [
         "${ numMessages } შეტყობინება",
         "${ numMessages } შეტყობინება"
@@ -16278,6 +16420,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "გამოიყენეთ Gmail უსაფრთხოდ ${ MAIL_APP_NAME }-ში"
       ],
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
+      ],
       "Verification error": [
         "შემოწმების შეცდომა"
       ],
@@ -16536,6 +16681,11 @@
         "თქვენი ნაგულისხმები ფონტი დაახლოებით ასე გამოიყურება:"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "თქვენ შეძლებთ როლების მინიჭებას მას შემდეგ, რაც მომხმარებელი მიიღებს მოწვევას."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
@@ -16640,6 +16790,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }-ი გადაიტანს იმდენ მონაცემს, უკანასკნელი შეტყობინებებით დაწყებული, რამდენიც ეს შესაძლებელი იქნება."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } უზრუნველყოფს ძლიერ კონტროლს, მაგრამ ერთმა შეცდომამაც კი შეიძლება გამოიწვიოს ავტოშევსების ამოქმედება და მონაცემების შევსება თაღლითურ ან ფიშინგის ვებსაიტებზე."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?",

@@ -1520,8 +1520,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2291,6 +2290,27 @@
       "Status": [
         "Status"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit van het platform."
+      ],
+      "To migrate this user, enable their account in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens account in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u diens adres in onder ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Om deze gebruiker te migreren, moet deze de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, haalt u deze uit het archief in uw Google Workspace Admin Console."
+      ],
+      "To migrate this user, unsuspend them in your Google Workspace Admin Console.": [
+        "Om deze gebruiker te migreren, heft u de schorsing op in uw Google Workspace Admin Console."
+      ],
       "User": [
         "Gebruiker"
       ],
@@ -2434,6 +2454,11 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplicaten van eerdere importen worden overgeslagen. Maak dit ongedaan of importeer oudere berichten in de instellingen van ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4401,6 +4426,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "We importeren uw oude e-mails en synchroniseren vanaf nu nieuwe berichten uit Gmail"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
       ],
@@ -5060,6 +5088,9 @@
       "No contacts found to import": [
         "Geen contacten gevonden om te importeren"
       ],
+      "No drive found to import": [
+        "Geen drive gevonden om te importeren"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
@@ -5385,6 +5416,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Onverwachte fout, we kunnen de bestanden niet importeren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -7621,6 +7655,9 @@
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -9889,6 +9926,12 @@
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
+      "Exact host matching": [
+        "Exacte hostovereenkomst"
+      ],
+      "Exact URL matching": [
+        "Exacte URL-overeenkomst"
+      ],
       "Expires": [
         "Verloopt"
       ],
@@ -9981,6 +10024,9 @@
       ],
       "Import to:": [
         "Importeren naar:"
+      ],
+      "Import your emails": [
+        "Uw e-mails importeren"
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
@@ -10093,6 +10139,9 @@
       "Navigation": [
         "Navigatie"
       ],
+      "Never fill on this exact URL": [
+        "Nooit invullen op deze exacte URL"
+      ],
       "New password": [
         "Nieuw wachtwoord"
       ],
@@ -10143,6 +10192,9 @@
       ],
       "Original link": [
         "Originele link"
+      ],
+      "Parent domain and subdomains (default)": [
+        "Bovenliggende domein en subdomeinen (standaard)"
       ],
       "Participants": [
         "Deelnemers"
@@ -10222,6 +10274,9 @@
       "Region": [
         "Regio/Provincie"
       ],
+      "Regular expression": [
+        "Reguliere expressie"
+      ],
       "Remember my choice": [
         "Mijn keuze onthouden"
       ],
@@ -10281,6 +10336,9 @@
       ],
       "Start date": [
         "Begindatum"
+      ],
+      "Starts with": [
+        "Begint met"
       ],
       "State": [
         "Staat"
@@ -10368,6 +10426,9 @@
       ],
       "URL": [
         "Website"
+      ],
+      "URL wildcard pattern": [
+        "URL-jokertekenpatroon"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -10971,14 +11032,32 @@
       ]
     },
     "Message": {
+      "'Starts with' matching rule": [
+        "'Begint met'-matchregel"
+      ],
+      "Exact (sub) domain matching rule": [
+        "Exacte (sub)domein matchregel"
+      ],
+      "Exact URL matching rule": [
+        "Exacte URL-matchregel"
+      ],
       "Fw:": [
         "Fw:"
+      ],
+      "Never fill with this exact URL": [
+        "Nooit invullen met deze exacte URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Op ${ date } schreef ${ senderString }:"
       ],
       "Re:": [
         "Re:"
+      ],
+      "Regular expression rule": [
+        "Reguliere expressieregel"
+      ],
+      "Wildcard pattern matching rule": [
+        "Matchregel met jokertekenpatroon"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
@@ -15361,6 +15440,9 @@
       "${ feature } is now active": [
         "${ feature } is nu actief"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-schrijfassistent"
+      ],
       "${ numMessages } message": [
         "${ numMessages } bericht",
         "${ numMessages } berichten"
@@ -16338,6 +16420,9 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Gebruik Gmail veilig in ${ MAIL_APP_NAME }"
       ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
       "Verification error": [
         "Verificatiefout"
       ],
@@ -16596,6 +16681,11 @@
         "Uw standaardlettertype zal er als volgt uitzien:"
       ]
     },
+    "user_modal": {
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -16700,6 +16790,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
+      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
+        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
