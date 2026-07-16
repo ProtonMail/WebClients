@@ -10,6 +10,8 @@ import { createMailSearchEngine } from '../engine/create';
 import { isLoadEvent } from '../utils/eventTypeGuards';
 import { createLocalSearchQueryOptions } from './queryOptions';
 
+const BUCKET_SIZE_SECONDS = 60n * 60n * 24n;
+
 export class IndexReader {
     private readonly engine = createMailSearchEngine();
 
@@ -72,7 +74,6 @@ export class IndexReader {
         const queryOptions = createLocalSearchQueryOptions();
         const search = this.engine.query().withStructuredExpression(exp).withOptions(queryOptions).search();
 
-        let cardinality: { atLeast: number; atMost: number; exact: boolean } | null = null;
         let span: { low: bigint; high: bigint } | null = null;
 
         try {
@@ -81,14 +82,11 @@ export class IndexReader {
                 if (isLoadEvent(event)) {
                     await txn.handleLoadEvent(event);
                 } else if (event.kind() === QueryEventKind.Cardinality) {
-                    const c = event.cardinality()!;
-                    const est = c.estimate();
-                    cardinality = { atLeast: est.atLeast, atMost: est.atMost, exact: est.isExact() };
-                    const r = c.range();
-                    span = { low: r.low, high: r.high };
-                    r.free();
-                    est.free();
-                    c.free();
+                    const cardinality = event.cardinality()!;
+                    const range = cardinality.range();
+                    span = { low: range.low, high: range.high };
+                    range.free();
+                    cardinality.free();
                     break;
                 }
             }
@@ -96,7 +94,7 @@ export class IndexReader {
             console.log(e);
         }
 
-        return { span, cardinality };
+        return span;
     }
 
     async search(
@@ -105,36 +103,54 @@ export class IndexReader {
         abortSignal: AbortSignal
     ): Promise<void> {
         performance.mark('search-foundation-start');
-        const hits: string[] = [];
         const blobCache = new BlobCache();
         const txn = await EncryptedBlobTransaction.start(blobCache, this.db, this.indexKey);
-        const queryOptions = createLocalSearchQueryOptions();
-        const cardinality = await this.getQueryCardinality(txn, exp);
-        console.log({ cardinality });
 
-        const search = this.engine.query().withStructuredExpression(exp).withOptions(queryOptions).search();
-        try {
-            let event: QueryEvent | undefined;
-            while ((event = search.next())) {
-                abortSignal.throwIfAborted();
-                if (isLoadEvent(event)) {
-                    performance.mark('search-foundation-read-blob');
-                    await txn.handleLoadEvent(event);
-                } else if (event.kind() === QueryEventKind.Found) {
-                    const id = event.found()?.identifier();
-                    if (id) {
-                        hits.push(id);
-                    }
-                }
-                abortSignal.throwIfAborted();
-            }
-        } finally {
-            blobCache.free();
-            search.free();
+        const expression = exp.clone();
+        const range = await this.getQueryCardinality(txn, expression);
+
+        if (!range?.high || !range?.low) {
+            // run regular search
+            // const queryOptions = createLocalSearchQueryOptions();
+            return;
         }
+
+        let start = range.high;
+
+        while (start - BUCKET_SIZE_SECONDS >= range.low) {
+            performance.mark('search-bucket-start');
+            const queryOptions = createLocalSearchQueryOptions();
+            queryOptions.setRangeLookup(start - BUCKET_SIZE_SECONDS, start);
+
+            const expression = exp.clone();
+            const search = this.engine.query().withStructuredExpression(expression).withOptions(queryOptions).search();
+            try {
+                const hits: string[] = [];
+                let event: QueryEvent | undefined;
+                while ((event = search.next())) {
+                    abortSignal.throwIfAborted();
+                    if (isLoadEvent(event)) {
+                        performance.mark('search-foundation-read-blob');
+                        await txn.handleLoadEvent(event);
+                    } else if (event.kind() === QueryEventKind.Found) {
+                        const id = event.found()?.identifier();
+                        if (id) {
+                            hits.push(id);
+                        }
+                    }
+                    abortSignal.throwIfAborted();
+                }
+                resultCallback(hits);
+            } finally {
+                search.free();
+            }
+            start -= BUCKET_SIZE_SECONDS;
+            performance.measure('search-bucket', 'search-bucket-start');
+        }
+
+        blobCache.free();
         await txn.verify(this.db.transaction('config'));
         performance.measure('search-foundation', 'search-foundation-start');
-        resultCallback(hits);
     }
 
     close() {
