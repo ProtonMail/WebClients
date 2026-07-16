@@ -116,8 +116,6 @@ type NonSavablePaymentMethods = 'bitcoin' | 'cash' | 'token';
 
 /**
  * All possible payment method values for telemetry.
- *
- * @see confluence.md for full documentation of payment methods
  */
 type TelemetryPaymentMethod = SavablePaymentMethods | SavedPaymentMethods | NonSavablePaymentMethods;
 
@@ -129,7 +127,7 @@ type TelemetryPaymentMethod = SavablePaymentMethods | SavedPaymentMethods | NonS
  *
  * When adding a new payment method:
  * 1. Add the mapping here
- * 2. Update confluence.md documentation
+ * 2. Update documentation
  * 3. Notify the data team about the new value
  */
 const PAYMENT_METHOD_MAPPING = {
@@ -205,10 +203,8 @@ export type SubscriptionModificationStepTelemetry = 'plan_selection' | 'checkout
  * When adding a new checkout flow:
  * 1. Add a new context value here
  * 2. Update `getMapping()` in shared-checkout-telemetry.ts
- * 3. Update confluence.md documentation
+ * 3. Update documentation
  * 4. Notify the data team about the new context
- *
- * @see confluence.md for full context documentation
  */
 export type PaymentTelemetryContext =
     /** V1 signup flow */
