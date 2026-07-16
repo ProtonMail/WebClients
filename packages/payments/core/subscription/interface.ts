@@ -1,5 +1,3 @@
-import type { Nullable } from '@proton/shared/lib/interfaces';
-
 import type { CheckSubscriptionData } from '../api/api';
 import type { ADDON_NAMES, PLANS } from '../constants';
 import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
@@ -75,19 +73,11 @@ export interface Subscription {
     IsPrepaid: boolean;
 }
 
-type CouponBase = {
+export type Coupon = {
     Code: string;
     Description: string;
     MaximumRedemptionsPerUser: number | null;
-};
-
-export type Coupon = Nullable<CouponBase>;
-
-type EnrichedCoupon = Nullable<
-    CouponBase & {
-        CouponDiscountBreakdown?: CouponDiscountBreakdownBE | null;
-    }
->;
+} | null;
 
 type CouponDiscountBreakdownElementBE = {
     Name: PLANS | ADDON_NAMES;
@@ -125,7 +115,7 @@ interface SubscriptionCheckResponse {
      * Coupon discount. The amount is in cents.
      */
     CouponDiscount?: number;
-    Coupon: EnrichedCoupon;
+    Coupon: Coupon;
     /**
      * In case of custom billings, the property will show the discount when user adds an addon mid-cycle. This property
      * is kind of "proration for custom billings". The amount is in cents.
@@ -163,6 +153,8 @@ interface SubscriptionCheckResponse {
      * this property will have the renew cycle.
      */
     RenewCycle: Cycle | null;
+
+    CouponDiscountBreakdown?: CouponDiscountBreakdownBE | null;
 }
 
 export type SubscriptionEstimation = SubscriptionCheckResponse & {

@@ -4,7 +4,6 @@ import type { PlansMap } from '../../../core/plan/interface';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { getStaticCouponConfig } from '../../coupon-config/get-static-coupon-config';
 import type { CouponConfig } from '../../coupon-config/interface';
-import { enrichMockCouponDiscountBreakdown } from '../../coupon-config/mock-coupon-discount-breakdown';
 import { createHeadlessCheckoutContextInner, getHeadlessCheckout } from '../get-headless-checkout';
 import { createAddonItem } from './addons';
 import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } from './test-helpers';
@@ -120,11 +119,11 @@ describe('createAddonItem', () => {
                 Code: 'SALE',
                 Description: '',
                 MaximumRedemptionsPerUser: null,
-                CouponDiscountBreakdown: [
-                    { Name: PLANS.BUNDLE_PRO_2024, Amount: -1000 },
-                    { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -240 },
-                ],
             },
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE_PRO_2024, Amount: -1000 },
+                { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -240 },
+            ],
         });
 
         const ctx = createHeadlessCheckoutContextInner({
@@ -160,11 +159,11 @@ describe('createAddonItem', () => {
                 Code: 'SALE',
                 Description: '',
                 MaximumRedemptionsPerUser: null,
-                CouponDiscountBreakdown: [
-                    { Name: PLANS.BUNDLE_PRO_2024, Amount: -1000 },
-                    { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -240 },
-                ],
             },
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE_PRO_2024, Amount: -1000 },
+                { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -240 },
+            ],
         });
 
         const ctx = createHeadlessCheckoutContextInner({
@@ -288,15 +287,11 @@ describe('Summer Sale bundle deal (integration)', () => {
             CouponDiscount: -6600,
             Coupon: { Code: COUPON_CODES.JUNE26BUNDLESALE, Description: '', MaximumRedemptionsPerUser: null },
             requestData: data,
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE, Amount: -4200 },
+                { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -2400 },
+            ],
         });
-
-        enrichMockCouponDiscountBreakdown(checkResult, data);
-
-        // The mock breakdown, filtered to the requested plans, is now on the response.
-        expect(checkResult.Coupon?.CouponDiscountBreakdown).toEqual([
-            { Name: PLANS.BUNDLE, Amount: -4200 },
-            { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -2400 },
-        ]);
 
         const result = getHeadlessCheckout({ planIDs, plansMap, checkResult, couponConfig: { hidden: true }, app });
 
@@ -314,35 +309,5 @@ describe('Summer Sale bundle deal (integration)', () => {
 
         // The discounted line items reconcile with the amount the user actually pays.
         expect(members.pricePerAllPerMonth * CYCLE.YEARLY + lumoAddon.withDiscountPerCycle).toBe(checkResult.AmountDue);
-    });
-
-    it('leaves monthly checkouts untouched (the deal is yearly-only)', () => {
-        const data: CheckSubscriptionData = {
-            Plans: planIDs,
-            Currency: 'EUR',
-            Cycle: CYCLE.MONTHLY,
-            CouponCode: COUPON_CODES.JUNE26BUNDLESALE,
-        };
-
-        const checkResult: SubscriptionEstimation = makeCheckResult({
-            Amount: 2298, // 1299 + 999
-            AmountDue: 2298,
-            Cycle: CYCLE.MONTHLY,
-            Currency: 'EUR',
-            CouponDiscount: 0,
-            requestData: data,
-        });
-
-        enrichMockCouponDiscountBreakdown(checkResult, data);
-
-        // No mock for the monthly cycle → nothing injected.
-        expect(checkResult.Coupon?.CouponDiscountBreakdown).toBeUndefined();
-
-        const result = getHeadlessCheckout({ planIDs, plansMap, checkResult, couponConfig: { hidden: true }, app });
-
-        const lumoAddon = result.getItem('addons').addons.find((a) => a.addonName === ADDON_NAMES.LUMO_BUNDLE)!;
-        expect(lumoAddon.withDiscountPerMonth).toBe(999);
-        expect(lumoAddon.discountPerCycle).toBe(0);
-        expect(lumoAddon.discountPercent).toBe(0);
     });
 });
