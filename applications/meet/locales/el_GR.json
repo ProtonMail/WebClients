@@ -1800,6 +1800,9 @@
       ]
     },
     "Error": {
+      "Background blur initialization failed. Please toggle your camera or background blur again": [
+        "Η αρχικοποίηση του θολώματος φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε ξανά την κάμερα ή το θάμπωμα φόντου."
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -2198,6 +2201,9 @@
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
+      "Background blur initializing": [
+        "Αρχικοποίηση θολώματος φόντου"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
@@ -2341,6 +2347,9 @@
       ],
       "Failed to update meeting schedule": [
         "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
+      ],
+      "Failed to update meeting waiting room status": [
+        "Αποτυχία ενημέρωσης κατάστασης αίθουσας αναμονής συσκέψεων"
       ],
       "Free meeting": [
         "Δωρεάν σύσκεψη"
