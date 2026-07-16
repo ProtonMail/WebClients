@@ -39,6 +39,13 @@ export const usePasswordReminderTelemetry = () => {
         [api]
     );
 
+    const sendBannerDisplay = useCallback(
+        (source: PasswordReminderSource) => {
+            sendReport(TelemetryPasswordReminderEvents.banner_display, { source, ...commonDimensions });
+        },
+        [sendReport, commonDimensions]
+    );
+
     const sendOpen = useCallback(
         (source: PasswordReminderSource) => {
             sendReport(TelemetryPasswordReminderEvents.open, { source, ...commonDimensions });
@@ -79,6 +86,7 @@ export const usePasswordReminderTelemetry = () => {
     }, [sendReport, commonDimensions]);
 
     return {
+        sendBannerDisplay,
         sendOpen,
         sendSuccess,
         sendWrongPassword,
