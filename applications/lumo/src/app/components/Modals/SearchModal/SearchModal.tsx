@@ -85,23 +85,40 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
             : null;
     const ProjectIcon = projectCategory ? <Icon name={projectCategory.icon as any} size={3} className="mr-1" /> : null;
 
-    // Highlight search terms in text
+    // Highlight search terms in text (case-insensitive, avoids global-regex lastIndex bugs)
     const highlightText = (text: string, searchQuery: string) => {
         if (!searchQuery.trim() || !text) return text;
 
-        const regex = new RegExp(`(${searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-        const parts = text.split(regex);
+        const normalizedQuery = searchQuery.toLowerCase();
+        const parts: React.ReactNode[] = [];
+        let lastIndex = 0;
+        let searchIndex = 0;
 
-        return parts.map((part, index) => {
-            if (regex.test(part)) {
-                return (
-                    <mark key={index} className="search-highlight">
-                        {part}
-                    </mark>
-                );
+        while (true) {
+            const matchIndex = text.toLowerCase().indexOf(normalizedQuery, searchIndex);
+            if (matchIndex === -1) {
+                if (lastIndex < text.length) {
+                    parts.push(<span key={lastIndex}>{text.slice(lastIndex)}</span>);
+                }
+                break;
             }
-            return <span key={index}>{part}</span>;
-        });
+
+            if (matchIndex > lastIndex) {
+                parts.push(<span key={lastIndex}>{text.slice(lastIndex, matchIndex)}</span>);
+            }
+
+            const matchEnd = matchIndex + searchQuery.length;
+            parts.push(
+                <mark key={matchIndex} className="search-highlight">
+                    {text.slice(matchIndex, matchEnd)}
+                </mark>
+            );
+
+            lastIndex = matchEnd;
+            searchIndex = matchIndex + 1;
+        }
+
+        return parts.length > 0 ? parts : text;
     };
 
     // Render different UI based on result type
