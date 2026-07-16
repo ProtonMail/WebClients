@@ -3559,6 +3559,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Failed to trash document": [
+        "문서 휴지통 이동에 실패했습니다"
       ]
     },
     "error": {
@@ -5788,6 +5791,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "We've detected that you've previously experienced issues opening a document.": [
+        "문서 여는 중 기존에 발생했던 문제가 감지되었습니다."
       ]
     },
     "info": {
@@ -8069,6 +8075,18 @@
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
+      ],
+      "\"Document deleted permanently": [
+        "\"문서가 영구적으로 삭제되었습니다"
+      ],
+      "Failed to delete document": [
+        "문서 삭제에 실패하였습니다."
+      ],
+      "Failed to restore document": [
+        "문서 복구에 실패했습니다"
+      ],
+      "Failed to trash document": [
+        "문서 휴지통 이동에 실패했습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10459,6 +10477,9 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "Problems Detected": [
+        "문제 감지됨"
       ]
     },
     "Title header for keys table": {
