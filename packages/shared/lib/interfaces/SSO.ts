@@ -10,7 +10,7 @@ export interface SSO {
     Certificate: string;
     DomainID: string;
     SCIMOauthClientID: string | null;
-    Flags: number;
+    Enabled: boolean;
     Type: IDP_TYPE;
     EdugainAffiliations: EdugainAffiliations[];
 }
