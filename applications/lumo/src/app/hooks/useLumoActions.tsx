@@ -11,14 +11,13 @@ import {
     sendMessage,
 } from '../components/Conversation/helper';
 import type { AesGcmCryptoKey } from '../crypto/types';
-import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from '../llm/attachments';
-import { getApproximateTokenCount } from '../llm/tokenizer';
+import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useLumoPlan } from '../hooks/useLumoPlan';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters, selectMessageAttachmentIds } from '../redux/selectors';
 import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
@@ -28,6 +27,11 @@ import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/g
 import { SearchService } from '../services/search/searchService';
 import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
+import {
+    fillAttachmentFromSearchIndex,
+    refreshAttachmentFromSearchIndex,
+    resolveReferencedFilesForSend,
+} from '../util/resolveProjectFiles';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
 import { useChatLimitGate } from './useChatLimitGate';
 import { useConversationErrors } from './useConversationErrors';
@@ -93,6 +97,7 @@ export const useLumoActions = ({
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
+    const messageAttachmentIds = useLumoSelector(selectMessageAttachmentIds);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
     const { personalization } = usePersonalization();
@@ -116,67 +121,24 @@ export const useLumoActions = ({
     const spaceId = space?.id;
 
     /**
-     * Fill any shallow provisional attachments with content at send time.
-     *
-     * When a user @mentions a project file, a metadata-only provisional is created immediately
-     * (chip in the composer, no content). This function resolves the content just before the
-     * message is dispatched, preserving the provisional ID throughout.
-     *
-     * Lookup order:
-     *   1. Redux state   — fastest; content is already in memory if the file was loaded this session.
-     *   2. Search index  — fast; works for all indexed local and Drive files.
-     *   3. IndexedDB     — fallback for files not yet in the in-memory search index.
-     *
-     * We search ALL space attachments (not just the current conversation's space) so that
-     * project files are found even when the conversation space hasn't been assigned yet
-     * (e.g. the very first message in a new project conversation).
+     * Fill shallow provisional attachments from the search index at send time.
+     * Content for all indexed files (local and Drive) is resolved through the index.
      */
     const fillShallowProvisionals = async (
         attachments: Attachment[],
-        spaceDek: AesGcmCryptoKey | undefined
+        messageContent: string,
+        projectSpaceId?: SpaceId
     ): Promise<Attachment[]> => {
         const userId = user?.ID;
-        const searchService = userId ? SearchService.get(userId) : undefined;
+        if (!userId) {
+            return attachments;
+        }
 
-        return Promise.all(
-            attachments.map(async (att) => {
-                // Skip attachments that already have content or are still downloading.
-                if (att.markdown || att.data || att.processing) return att;
+        const searchService = SearchService.get(userId);
+        await searchService.ensureManifestReady();
 
-                // Find the backing space attachment by filename across ALL space attachments.
-                // Using allAttachments (not attachmentMap) ensures project files are found
-                // regardless of which space the current conversation belongs to.
-                const sourceAtt = Object.values(allAttachments).find(
-                    (sa) => sa.spaceId && sa.filename.toLowerCase() === att.filename.toLowerCase()
-                );
-                if (!sourceAtt) return att;
-
-                // 1. Content already in Redux — use it directly.
-                if (sourceAtt.markdown) {
-                    return { ...att, markdown: sourceAtt.markdown, tokenCount: sourceAtt.tokenCount };
-                }
-
-                // 2. Try the search index (keyed by the source attachment's ID).
-                if (searchService) {
-                    const doc = searchService.getDocumentById(sourceAtt.id);
-                    if (doc?.content) {
-                        return {
-                            ...att,
-                            markdown: doc.content,
-                            rawBytes: doc.size || att.rawBytes,
-                            tokenCount: getApproximateTokenCount(doc.content),
-                        };
-                    }
-                }
-
-                // 3. Fall back to IndexedDB.
-                const filled = await fillOneAttachmentData(sourceAtt, user, spaceDek);
-                if (filled.markdown) {
-                    return { ...att, markdown: filled.markdown, tokenCount: filled.tokenCount };
-                }
-
-                return att;
-            })
+        return attachments.map((att) =>
+            fillAttachmentFromSearchIndex(att, searchService, projectSpaceId, messageContent)
         );
     };
 
@@ -199,7 +161,13 @@ export const useLumoActions = ({
                 const unseenAttachments = message.attachments.filter((a) => !seenIds.has(a.id));
 
                 if (unseenAttachments.length > 0) {
-                    const filled = await fillAttachmentData(unseenAttachments, attachmentMap, user, spaceDek);
+                    const filled = await fillAttachmentData(
+                        unseenAttachments,
+                        attachmentMap,
+                        user,
+                        spaceDek,
+                        space?.id
+                    );
                     allAttachments.push(...filled);
 
                     // Mark as seen
@@ -230,16 +198,46 @@ export const useLumoActions = ({
         const messagesWithContext = await addContextToMessages(messageChain, user, spaceDek);
         const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
 
-        // Fill any @mention provisional attachments with content from the search index (or
-        // IndexedDB as fallback). Directly-uploaded files already carry their markdown, so
-        // this is a no-op for them. The chip IDs are preserved — nothing is re-created.
-        const filledAttachments = await fillShallowProvisionals(provisionalAttachments, spaceDek);
+        // Fill @mention provisional attachments from the search index.
+        let filledAttachments = await fillShallowProvisionals(
+            provisionalAttachments,
+            newMessageContent ?? '',
+            spaceId
+        );
+
+        // Refresh from the live search index and resolve text-only @mentions.
+        if (user?.ID) {
+            const searchService = SearchService.get(user.ID);
+            await searchService.ensureManifestReady();
+            filledAttachments = filledAttachments.map((att) =>
+                refreshAttachmentFromSearchIndex(att, searchService, spaceId, newMessageContent ?? '')
+            );
+            const referencedAttachments = await resolveReferencedFilesForSend(
+                newMessageContent ?? '',
+                filledAttachments,
+                user.ID,
+                spaceId,
+                historyAttachments
+            );
+            if (referencedAttachments.length > 0) {
+                filledAttachments = [...filledAttachments, ...referencedAttachments];
+            }
+        }
 
         // Write resolved content back to Redux so the attachment chip shows "preview" content
-        // when the user clicks it on the sent message.
+        // when the user clicks it on the sent message. Mark sent @mention files so they survive
+        // clearProvisionalAttachments.
         for (const att of filledAttachments) {
-            if (att.markdown && !provisionalAttachments.find((p) => p.id === att.id)?.markdown) {
-                dispatch(upsertAttachment(att));
+            const wasProvisional = provisionalAttachments.find((p) => p.id === att.id);
+            const needsPersist =
+                att.markdown && (!wasProvisional?.markdown || att.conversationContext || att.driveNodeId);
+            if (needsPersist) {
+                dispatch(
+                    upsertAttachment({
+                        ...att,
+                        conversationContext: att.conversationContext ?? !att.spaceId,
+                    })
+                );
             }
         }
 
@@ -280,9 +278,13 @@ export const useLumoActions = ({
             })
         );
 
-        // Clear @mention provisionals now that the message has been sent.
-        // Uploaded provisionals (non-mention) were promoted to the space by sendMessage.
-        dispatch(clearProvisionalAttachments());
+        // Clear composer provisionals now that the message has been sent.
+        // Preserve attachments bound to messages (e.g. @mentioned Drive files).
+        dispatch(
+            clearProvisionalAttachments({
+                preserveIds: [...messageAttachmentIds, ...filledAttachments.map((a) => a.id)],
+            })
+        );
     };
 
     const handleRetryAction = async (
@@ -393,7 +395,8 @@ export const useLumoActions = ({
             originalMessage.attachments ?? [],
             attachmentMap,
             user,
-            spaceDek
+            spaceDek,
+            space?.id
         );
         const allAttachments = [...historyAttachments, ...editedMessageAttachments];
 

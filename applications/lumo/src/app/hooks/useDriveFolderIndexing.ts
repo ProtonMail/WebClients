@@ -202,11 +202,21 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 console.log('[DriveIndexing] Collecting files recursively from folder:', folderName);
                 const allFiles = await collectAllFiles(folderUid, '');
 
-                // Get treeEventScopeId from first file or subfolder in the folder
+                // Get treeEventScopeId from folder children or first indexed file
                 let treeEventScopeId: string | undefined;
-                const firstFile = allFiles[0];
-                if (firstFile?.treeEventScopeId) {
-                    treeEventScopeId = firstFile.treeEventScopeId;
+                try {
+                    const topLevelChildren = await browseFolderChildren(folderUid);
+                    treeEventScopeId = topLevelChildren.find((child) => child.treeEventScopeId)?.treeEventScopeId;
+                } catch (error) {
+                    console.warn('[DriveIndexing] Failed to read treeEventScopeId from folder children:', error);
+                }
+                if (!treeEventScopeId) {
+                    const firstFile = allFiles[0];
+                    if (firstFile?.treeEventScopeId) {
+                        treeEventScopeId = firstFile.treeEventScopeId;
+                    }
+                }
+                if (treeEventScopeId) {
                     console.log('[DriveIndexing] Captured treeEventScopeId:', treeEventScopeId);
                 }
 

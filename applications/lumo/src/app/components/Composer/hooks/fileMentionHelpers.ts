@@ -50,6 +50,37 @@ export function buildAlreadyMentionedNames(files: FileItem[], composerValue: str
  * that is already attached — in that case we only insert the `@filename` text
  * reference instead of dispatching another attachment.
  */
-export function buildAttachedNames(provisionalAttachments: Pick<Attachment, 'filename'>[]): Set<string> {
-    return new Set(provisionalAttachments.map((a) => a.filename.toLowerCase()));
+export function buildAttachedNames(
+    attachments: Pick<Attachment, 'filename' | 'driveNodeId'>[]
+): Set<string> {
+    const names = new Set<string>();
+    for (const attachment of attachments) {
+        names.add(attachment.filename.toLowerCase());
+        if (attachment.driveNodeId) {
+            names.add(attachment.driveNodeId.toLowerCase());
+        }
+    }
+    return names;
+}
+
+/**
+ * For Drive-linked projects, drop files whose Drive node no longer exists in the
+ * live folder listing (e.g. deleted on Drive but still cached in Redux).
+ */
+export function filterStaleDriveAttachments(
+    files: FileItem[],
+    liveDriveFileIds: ReadonlySet<string>,
+    isDriveLinkedProject: boolean
+): FileItem[] {
+    if (!isDriveLinkedProject) {
+        return files;
+    }
+
+    return files.filter((file) => {
+        const driveNodeId = file.source === 'drive' ? file.id : file.attachment?.driveNodeId;
+        if (!driveNodeId) {
+            return true;
+        }
+        return liveDriveFileIds.has(driveNodeId);
+    });
 }

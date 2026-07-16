@@ -31,7 +31,7 @@ import {
     selectProvisionalAttachments,
     selectSpaceById,
 } from '../../redux/selectors';
-import { clearProvisionalAttachments } from '../../redux/slices/core/attachments';
+import { clearProvisionalAttachments, upsertAttachment } from '../../redux/slices/core/attachments';
 import {
     locallyDeleteConversationFromLocalRequest,
     pushConversationRequest,
@@ -143,6 +143,12 @@ const ProjectDetailViewInner = () => {
                 // Send the message using the helper function
                 // sendMessage returns a thunk, so we need to dispatch it
                 console.log('Sending message...');
+                const sentAttachmentIds = provisionalAttachments.map((a) => a.id);
+                for (const att of provisionalAttachments) {
+                    if (!att.spaceId) {
+                        dispatch(upsertAttachment({ ...att, conversationContext: true }));
+                    }
+                }
                 await dispatch(
                     sendMessage({
                         applicationContext: {
@@ -181,7 +187,7 @@ const ProjectDetailViewInner = () => {
                 // Clear mention-only provisionals now that the message has been sent.
                 // Uploaded provisionals (non-mention) were already promoted to the project
                 // space by sendMessage → assignProvisionalAttachmentsToSpace.
-                dispatch(clearProvisionalAttachments());
+                dispatch(clearProvisionalAttachments({ preserveIds: sentAttachmentIds }));
                 console.log('Message sent successfully');
             } catch (error) {
                 console.error('Error in handleSendInProject:', error);

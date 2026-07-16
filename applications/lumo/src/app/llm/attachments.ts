@@ -5,8 +5,10 @@ import type { User } from '@proton/shared/lib/interfaces';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { DbApi } from '../indexedDb/db';
 import type { AttachmentMap } from '../redux/slices/core/attachments';
+import { SearchService } from '../services/search/searchService';
 import { deserializeAttachment } from '../serialization';
 import { type Attachment, type Message, isShallowAttachment } from '../types';
+import { refreshAttachmentFromSearchIndex } from '../util/resolveProjectFiles';
 
 // Supported image MIME types
 const IMAGE_MIME_TYPES = [
@@ -144,21 +146,39 @@ export async function fillAttachmentData(
     attachments: Attachment[],
     attachmentMap: AttachmentMap,
     user: User | undefined,
-    spaceDek: AesGcmCryptoKey | undefined
+    spaceDek: AesGcmCryptoKey | undefined,
+    spaceId?: string
 ): Promise<Attachment[]> {
     const isNotShallow = (a: Attachment) => !isShallowAttachment(a);
-    // Try to fill some or all from Redux (attachmentMap comes from the Redux state)
     const attachments1 = attachments.map((a) => attachmentMap[a.id] ?? a);
     if (attachments1.every(isNotShallow)) {
-        return attachments1;
+        return attachments1.map((a) => refreshIndexedAttachmentFromIndex(a, user, spaceId));
     }
-    // If some unfilled attachments remain, try to get them via IndexedDB. However, this only works if we're in
-    // authenticated mode, otherwise we can't get a `dbApi` (handle to IndexedDB) due to the absence of user
-    // credentials.
     const dbApi = user && spaceDek ? new DbApi(user.ID) : undefined;
     if (dbApi) {
         await dbApi.initialize();
     }
-    const fillIfNotShallow = (a: Attachment) => (isNotShallow(a) ? a : fillOneAttachmentData(a, user, spaceDek, dbApi));
-    return Promise.all(attachments.map(fillIfNotShallow));
+    const fillIfNotShallow = async (a: Attachment): Promise<Attachment> => {
+        if (isNotShallow(a)) {
+            return refreshIndexedAttachmentFromIndex(a, user, spaceId);
+        }
+        const fromRedux = attachmentMap[a.id];
+        if (fromRedux && isNotShallow(fromRedux)) {
+            return refreshIndexedAttachmentFromIndex(fromRedux, user, spaceId);
+        }
+        const filled = await fillOneAttachmentData(a, user, spaceDek, dbApi);
+        return refreshIndexedAttachmentFromIndex(filled, user, spaceId);
+    };
+    return Promise.all(attachments1.map(fillIfNotShallow));
+}
+
+function refreshIndexedAttachmentFromIndex(
+    attachment: Attachment,
+    user: User | undefined,
+    spaceId?: string
+): Attachment {
+    if (!user?.ID || isImageAttachment(attachment)) {
+        return attachment;
+    }
+    return refreshAttachmentFromSearchIndex(attachment, SearchService.get(user.ID), spaceId);
 }
