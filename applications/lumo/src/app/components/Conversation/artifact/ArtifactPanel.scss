@@ -7,6 +7,15 @@
 	min-block-size: 44px;
 }
 
+// Small unseen-revision indicator dot, offset to overlap the corner of the artifact-switcher
+// icon it's rendered against — no utility class covers this absolute badge positioning.
+.artifact-unseen-dot {
+	inset-block-start: -2px;
+	inset-inline-end: -2px;
+	inline-size: 6px;
+	block-size: 6px;
+}
+
 .artifact-type-badge {
 	display: inline-flex;
 	align-items: center;
