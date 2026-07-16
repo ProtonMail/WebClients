@@ -72,12 +72,10 @@ export class Search {
         const oldStore = await this.openESReader();
 
         const fetchMessagesForIDs = async (ids: string[]) => {
-            performance.mark('search-read-messages-start');
             const storeMessages = await oldStore.readMessages(ids);
             this.unfilteredResults = this.unfilteredResults
                 ? this.unfilteredResults.concat(storeMessages)
                 : storeMessages;
-            performance.measure('search-read-messages', 'search-read-messages-start');
             this.applyFilters();
         };
 
