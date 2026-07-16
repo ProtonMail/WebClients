@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -266,8 +266,9 @@ const ConversationLayout = ({
     );
 };
 const ConversationComponent = (props: ConversationComponentProps) => {
+    const { messageChain } = useConversationActions();
     return (
-        <ArtifactProvider conversationId={props.conversation?.id}>
+        <ArtifactProvider conversationId={props.conversation?.id} linearChain={messageChain}>
             <ConversationLayout {...props} />
         </ArtifactProvider>
     );
